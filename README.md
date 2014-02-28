@@ -1,5 +1,7 @@
 # xPython
 
+[![Build Status](https://travis-ci.org/exercism/xpython.png?branch=master)](https://travis-ci.org/exercism/xpython)
+
 Exercism exercises in Python
 
 ## License
