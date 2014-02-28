@@ -1,0 +1,5 @@
+*.beam
+*.pyc
+*.swp
+.DS_Store
+tmp
