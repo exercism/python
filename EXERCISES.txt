@@ -1,5 +1,6 @@
 bob
 rna-transcription
+matrix
 word-count
 anagram
 beer-song
