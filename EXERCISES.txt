@@ -5,6 +5,7 @@ word-count
 anagram
 beer-song
 nucleotide-count
+difference-of-squares
 point-mutations
 phone-number
 grade-school
