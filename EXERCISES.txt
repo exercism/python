@@ -15,6 +15,7 @@ grains
 gigasecond
 triangle
 scrabble-score
+sieve
 roman-numerals
 binary
 prime-factors
