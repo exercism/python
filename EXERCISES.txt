@@ -6,6 +6,7 @@ anagram
 beer-song
 nucleotide-count
 series
+octal
 point-mutations
 phone-number
 grade-school
