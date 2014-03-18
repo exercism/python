@@ -10,6 +10,7 @@ grade-school
 robot-name
 etl
 leap
+sum-of-multiples
 space-age
 grains
 gigasecond
