@@ -4,6 +4,7 @@ word-count
 anagram
 beer-song
 nucleotide-count
+octal
 point-mutations
 phone-number
 grade-school
