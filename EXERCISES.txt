@@ -18,6 +18,7 @@ gigasecond
 triangle
 scrabble-score
 sieve
+luhn
 roman-numerals
 binary
 prime-factors
