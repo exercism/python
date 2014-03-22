@@ -22,6 +22,7 @@ palindrome-products
 triangle
 scrabble-score
 sieve
+nth-prime
 luhn
 roman-numerals
 binary
