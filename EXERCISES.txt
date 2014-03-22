@@ -6,6 +6,7 @@ anagram
 beer-song
 nucleotide-count
 series
+largest-series-product
 octal
 difference-of-squares
 point-mutations
