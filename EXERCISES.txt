@@ -18,6 +18,7 @@ sum-of-multiples
 space-age
 grains
 gigasecond
+palindrome-products
 triangle
 scrabble-score
 sieve
