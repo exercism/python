@@ -12,6 +12,7 @@ octal
 difference-of-squares
 point-mutations
 phone-number
+allergies
 grade-school
 robot-name
 etl
