@@ -2,6 +2,7 @@ bob
 rna-transcription
 matrix
 word-count
+twelve-days
 anagram
 beer-song
 nucleotide-count
@@ -11,6 +12,7 @@ octal
 difference-of-squares
 point-mutations
 phone-number
+allergies
 grade-school
 robot-name
 etl
@@ -29,3 +31,5 @@ roman-numerals
 binary
 prime-factors
 raindrops
+atbash-cipher
+wordy
