@@ -31,3 +31,5 @@ roman-numerals
 binary
 prime-factors
 raindrops
+atbash-cipher
+wordy
