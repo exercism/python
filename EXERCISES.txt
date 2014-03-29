@@ -15,6 +15,7 @@ phone-number
 allergies
 grade-school
 robot-name
+minesweeper
 etl
 leap
 sum-of-multiples
