@@ -25,6 +25,7 @@ gigasecond
 palindrome-products
 triangle
 scrabble-score
+secret-handshake
 sieve
 nth-prime
 luhn
