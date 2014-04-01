@@ -13,6 +13,7 @@ ocr-numbers
 difference-of-squares
 point-mutations
 phone-number
+pascals-triangle
 allergies
 grade-school
 robot-name
