@@ -9,6 +9,7 @@ nucleotide-count
 series
 largest-series-product
 octal
+ocr-numbers
 difference-of-squares
 point-mutations
 phone-number
