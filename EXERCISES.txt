@@ -7,6 +7,7 @@ anagram
 beer-song
 nucleotide-count
 series
+saddle-points
 largest-series-product
 octal
 ocr-numbers
