@@ -37,3 +37,4 @@ prime-factors
 raindrops
 atbash-cipher
 wordy
+pythagorean-triplet
