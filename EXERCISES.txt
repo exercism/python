@@ -25,6 +25,7 @@ space-age
 grains
 gigasecond
 palindrome-products
+meetup
 triangle
 scrabble-score
 secret-handshake
