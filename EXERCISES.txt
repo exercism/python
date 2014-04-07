@@ -28,6 +28,7 @@ gigasecond
 palindrome-products
 meetup
 triangle
+trinary
 scrabble-score
 secret-handshake
 sieve
