@@ -42,3 +42,4 @@ atbash-cipher
 wordy
 pythagorean-triplet
 hamming
+simple-cipher
