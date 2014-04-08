@@ -50,3 +50,4 @@ pythagorean-triplet
 hamming
 simple-cipher
 hexadecimal
+queen-attack
