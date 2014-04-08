@@ -41,3 +41,4 @@ raindrops
 atbash-cipher
 wordy
 pythagorean-triplet
+hamming
