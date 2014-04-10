@@ -3,6 +3,7 @@ rna-transcription
 matrix
 word-count
 twelve-days
+accumulate
 anagram
 beer-song
 nucleotide-count
