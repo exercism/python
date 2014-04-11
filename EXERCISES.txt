@@ -29,6 +29,7 @@ strain
 grains
 gigasecond
 palindrome-products
+kindergarten-garden
 meetup
 triangle
 trinary
