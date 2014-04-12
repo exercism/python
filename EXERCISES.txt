@@ -51,3 +51,4 @@ hamming
 house
 simple-cipher
 hexadecimal
+queen-attack
