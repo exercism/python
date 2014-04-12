@@ -48,5 +48,6 @@ atbash-cipher
 wordy
 pythagorean-triplet
 hamming
+house
 simple-cipher
 hexadecimal
