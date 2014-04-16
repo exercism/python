@@ -68,24 +68,17 @@ class MinesweeperTest(unittest.TestCase):
     @unittest.skip("Not implemented yet")
     def test_different_len(self):
         inp = ["+-+", "| |", "|*  |", "|  |", "+-+"]
-        with self.assertRaises(ValueError) as context:
-            board(inp)
-        self.assertEqual(context.exception.message, 'Invalid board')
+        self.assertRaisesRegex(ValueError, "^Invalid board", board, inp)
 
     @unittest.skip("Not implemented yet")
     def test_faulty_border(self):
         inp = ["+-----+", "*   * |", "+-- --+"]
-        with self.assertRaises(ValueError) as context:
-            board(inp)
-        self.assertEqual(context.exception.message, 'Invalid board')
+        self.assertRaisesRegex(ValueError, "^Invalid board", board, inp)
 
     @unittest.skip("Not implemented yet")
     def test_invalid_char(self):
         inp = ["+-----+", "|X  * |", "+-----+"]
-        with self.assertRaises(ValueError) as context:
-            board(inp)
-        self.assertEqual(context.exception.message, 'Invalid board')
-
+        self.assertRaisesRegex(ValueError, "^Invalid board", board, inp)
 
 if __name__ == '__main__':
     unittest.main()
