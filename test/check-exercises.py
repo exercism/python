@@ -56,8 +56,10 @@ def main():
     failures = []
     for test_file in glob.glob('./*/*_test.py'):
         name = assignment_name(test_file)
+        print('# ' + name)
         if check_assignment(name, test_file, modname_heuristic(test_file)):
             failures.append(name)
+        print('')
     if failures:
         print 'FAILURES: ' + ' '.join(failures)
         raise SystemExit(1)
