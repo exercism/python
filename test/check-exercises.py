@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 import os
 import ast
 import imp
@@ -62,10 +61,10 @@ def main():
             failures.append(name)
         print('')
     if failures:
-        print 'FAILURES: ' + ' '.join(failures)
+        print('FAILURES: ' + ' '.join(failures))
         raise SystemExit(1)
     else:
-        print 'SUCCESS!'
+        print('SUCCESS!')
 
 if __name__ == '__main__':
     main()

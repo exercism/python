@@ -1,2 +1,5 @@
 language: python
-script: ./test/check-exercises.py
+python:
+  - "2.7"
+  - "3.3"
+script: python ./test/check-exercises.py
