@@ -1,3 +1,11 @@
+""" Tests for the minesweeper exercise
+
+Implementation note:
+The board function must validate its input and raise a
+ValueError with a meaningfull error message if the
+input turns out to be malformed.
+"""
+
 try:
     from minesweeper import board
 except ImportError:
@@ -68,17 +76,17 @@ class MinesweeperTest(unittest.TestCase):
     @unittest.skip("Not implemented yet")
     def test_different_len(self):
         inp = ["+-+", "| |", "|*  |", "|  |", "+-+"]
-        self.assertRaisesRegex(ValueError, "^Invalid board", board, inp)
+        self.assertRaises(ValueError, board, inp)
 
     @unittest.skip("Not implemented yet")
     def test_faulty_border(self):
         inp = ["+-----+", "*   * |", "+-- --+"]
-        self.assertRaisesRegex(ValueError, "^Invalid board", board, inp)
+        self.assertRaises(ValueError, board, inp)
 
     @unittest.skip("Not implemented yet")
     def test_invalid_char(self):
         inp = ["+-----+", "|X  * |", "+-----+"]
-        self.assertRaisesRegex(ValueError, "^Invalid board", board, inp)
+        self.assertRaises(ValueError, board, inp)
 
 if __name__ == '__main__':
     unittest.main()
