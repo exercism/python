@@ -1,7 +1,15 @@
-from operator import add, div, mul, sub
+import sys
+from operator import add, mul, sub
 
-VALID_OPERATIONS = {"plus": add, "minus": sub, "times": mul, 
+if sys.version_info[0] == 2:
+    from operator import div
+else:
+    from operator import floordiv as div
+
+
+VALID_OPERATIONS = {"plus": add, "minus": sub, "times": mul,
                     "multiplied by": mul, "divided by": div}
+
 
 def calculate(stmt):
     if not (stmt.startswith("What is ") and stmt.endswith("?")):
