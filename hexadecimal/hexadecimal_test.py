@@ -1,11 +1,13 @@
-# To avoid trivial solutions, try to solve this problem without the 
+# To avoid trivial solutions, try to solve this problem without the
 # function int(s, base=16)
 
 from hexadecimal import hexa
 
 import unittest
 
+
 class HexadecimalTest(unittest.TestCase):
+
     def test_valid_hexa1(self):
         self.assertEqual(1, hexa('1'))
 
