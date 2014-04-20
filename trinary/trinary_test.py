@@ -2,6 +2,7 @@ from trinary import trinary
 
 import unittest
 
+
 class TrinaryTest(unittest.TestCase):
     def test_valid_trinary1(self):
         self.assertEqual(0, trinary('0'))
