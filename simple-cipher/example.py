@@ -5,7 +5,7 @@ import random
 class Cipher:
     def __init__(self, k=None):
         if k:
-            self.key = k.translate(None,punctuation+whitespace+digits).lower()
+            self.key = k.translate(str.maketrans(dict.fromkeys(punctuation+whitespace+digits))).lower()
         else:
             random.seed(time())
             self.key = ''.join(random.choice(ascii_lowercase) for i in range(100))
@@ -15,7 +15,7 @@ class Cipher:
         return ''.join(shift(c,k) for c,k in zip(s,xkey))
     
     def encode(self, s):
-        s = s.translate(None,punctuation+whitespace+digits).lower()
+        s = s.translate(str.maketrans(dict.fromkeys(punctuation+whitespace+digits))).lower()
         shift = lambda c,k: chr(((ord(c)+ord(k)-2*ord('a'))\
             % len(ascii_lowercase)) + ord('a'))
         return self.base_encode(s, shift)
