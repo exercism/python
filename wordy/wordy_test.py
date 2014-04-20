@@ -1,12 +1,11 @@
-try:
-    from wordy import calculate
-except ImportError:
-    raise SystemExit('Could not find wordy.py. Does it exist?')
-
 import os
 import unittest
 
+from wordy import calculate
+
+
 class WordyTest(unittest.TestCase):
+
     def test_simple_add_1(self):
         self.assertEqual(18, calculate("What is 5 plus 13?"))
 
@@ -52,7 +51,8 @@ class WordyTest(unittest.TestCase):
 
     @unittest.skipUnless('NO_SKIP' in os.environ, "Not implemented yet")
     def test_multiply_twice(self):
-        self.assertEqual(-12, calculate("What is 2 multiplied by -2 multiplied by 3?"))
+        self.assertEqual(-12,
+                         calculate("What is 2 multiplied by -2 multiplied by 3?"))
 
     @unittest.skipUnless('NO_SKIP' in os.environ, "Not implemented yet")
     def test_add_then_multiply(self):
@@ -60,31 +60,24 @@ class WordyTest(unittest.TestCase):
 
     @unittest.skipUnless('NO_SKIP' in os.environ, "Not implemented yet")
     def test_divide_twice(self):
-        self.assertEqual(16, calculate("What is -12000 divided by 25 divided by -30?"))
+        self.assertEqual(
+            16, calculate("What is -12000 divided by 25 divided by -30?"))
 
     @unittest.skipUnless('NO_SKIP' in os.environ, "Not implemented yet")
     def test_invalid_operation(self):
-        with self.assertRaises(ValueError) as context:
-            calculate("What is 4 xor 7?")
-        self.assertEqual(context.exception.message, 'Ill-formed question')
+        self.assertRaises(ValueError, calculate, "What is 4 xor 7?")
 
     @unittest.skipUnless('NO_SKIP' in os.environ, "Not implemented yet")
     def test_missing_operation(self):
-        with self.assertRaises(ValueError) as context:
-            calculate("What is 2 2 minus 3?")
-        self.assertEqual(context.exception.message, 'Ill-formed question')
+        self.assertRaises(ValueError, calculate, "What is 2 2 minus 3?")
 
     @unittest.skipUnless('NO_SKIP' in os.environ, "Not implemented yet")
     def test_missing_number(self):
-        with self.assertRaises(ValueError) as context:
-            calculate("What is 7 plus times -2?")
-        self.assertEqual(context.exception.message, 'Ill-formed question')
+        self.assertRaises(ValueError, calculate, "What is 7 plus times -2?")
 
     @unittest.skipUnless('NO_SKIP' in os.environ, "Not implemented yet")
     def test_irrelevant_question(self):
-        with self.assertRaises(ValueError) as context:
-            calculate("Which is greater, 3 or 2?")
-        self.assertEqual(context.exception.message, 'Ill-formed question')
+        self.assertRaises(ValueError, calculate, "Which is greater, 3 or 2?")
 
 
 if __name__ == '__main__':

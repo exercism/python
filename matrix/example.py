@@ -5,4 +5,4 @@ class Matrix(object):
 
     @property
     def columns(self):
-        return map(list, zip(*self.rows))
+        return [list(tup) for tup in zip(*self.rows)]
