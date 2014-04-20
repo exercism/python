@@ -2,7 +2,9 @@ from cipher import Caesar, Cipher
 
 import unittest
 
+
 class CipherTest(unittest.TestCase):
+
     def test_caesar_encode1(self):
         self.assertEqual('lwlvdzhvrphsurjudpplqjlqsbwkrq',
                          Caesar().encode('itisawesomeprogramminginpython'))
