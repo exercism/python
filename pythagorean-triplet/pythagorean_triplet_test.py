@@ -18,7 +18,7 @@
 # A primitive pythagorean triplet has its 3 componentes coprime. So, (3,4,5) is
 # a primitive pythagorean triplet since 3,4 and 5 don't have a common factor.
 # On the other hand, (6,8,10), although a pythagorean triplet, is not primitive
-# aince 2 divides all three components.
+# since 2 divides all three components.
 #
 # A method for finding all primitive pythagorean triplet is given in wikipedia
 # (http://en.wikipedia.org/wiki/Pythagorean_triple#Generating_a_triple). The
@@ -29,7 +29,7 @@
 #
 # The function primitive_triplets should then use the formula above with b set
 # to its argument and find all possible pairs (m,n) such that m>n, m-n is odd,
-# b=2*m*n and m and n are coprime. 
+# b=2*m*n and m and n are coprime.
 #
 #==============================================================================
 
@@ -37,56 +37,47 @@ from pythagorean_triplet import primitive_triplets, triplets_in_range, is_triple
 
 import unittest
 
+
 class PythagoreanTripletTest(unittest.TestCase):
+
     def test_triplet1(self):
-        ans = set([(3,4,5)])
+        ans = set([(3, 4, 5)])
         self.assertEqual(ans, primitive_triplets(4))
 
-#    @unittest.skip("Not implemented yet")
     def test_triplet2(self):
         ans = set([(13, 84, 85), (84, 187, 205), (84, 437, 445),
                    (84, 1763, 1765)])
         self.assertEqual(ans, primitive_triplets(84))
 
-#    @unittest.skip("Not implemented yet")
     def test_triplet3(self):
         ans = set([(29, 420, 421), (341, 420, 541), (420, 851, 949),
                    (420, 1189, 1261), (420, 1739, 1789), (420, 4891, 4909),
                    (420, 11021, 11029), (420, 44099, 44101)])
         self.assertEqual(ans, primitive_triplets(420))
 
-#    @unittest.skip("Not implemented yet")
     def test_triplet4(self):
         ans = set([(175, 288, 337), (288, 20735, 20737)])
         self.assertEqual(ans, primitive_triplets(288))
 
-#    @unittest.skip("Not implemented yet")
     def test_range1(self):
-        ans = set([(3,4,5),(6,8,10)])
+        ans = set([(3, 4, 5), (6, 8, 10)])
         self.assertEqual(ans, triplets_in_range(1, 10))
 
-#    @unittest.skip("Not implemented yet")
     def test_range2(self):
-        ans = set([(57,76,95),(60,63,87)])
+        ans = set([(57, 76, 95), (60, 63, 87)])
         self.assertEqual(ans, triplets_in_range(56, 95))
 
-#    @unittest.skip("Not implemented yet")
     def test_is_triplet1(self):
-        self.assertEqual(True, is_triplet((29,20,21)))
+        self.assertEqual(True, is_triplet((29, 20, 21)))
 
-#    @unittest.skip("Not implemented yet")
     def test_is_triplet2(self):
-        self.assertEqual(False, is_triplet((25,25,1225)))
+        self.assertEqual(False, is_triplet((25, 25, 1225)))
 
-#    @unittest.skip("Not implemented yet")
     def test_is_triplet3(self):
-        self.assertEqual(True, is_triplet((924,43,925)))
+        self.assertEqual(True, is_triplet((924, 43, 925)))
 
-#    @unittest.skip("Not implemented yet")
     def test_odd_number(self):
-        with self.assertRaises(ValueError) as context:
-            primitive_triplets(5)
-        self.assertEqual(context.exception.message, 'Argument must be divisible by 4')
+        self.assertRaises(ValueError, primitive_triplets, 5)
 
 
 if __name__ == '__main__':
