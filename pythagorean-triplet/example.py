@@ -1,35 +1,39 @@
 from itertools import product
+from functools import reduce
 from operator import mul
 from math import sqrt
+
 
 def primitive_triplets(nbr):
     if nbr % 4 != 0:
         raise ValueError('Argument must be divisible by 4')
-    prime_factors,powers = factor(nbr/2)
-    args = [(1,prime_factors[i1]**powers[i1]) for i1 in range(len(powers))]
+    prime_factors, powers = factor(nbr / 2)
+    args = [(1, prime_factors[i1] ** powers[i1]) for i1 in range(len(powers))]
     a = [reduce(mul, p) for p in product(*args)]
     a.sort()
-    factors = [(m,n) for m,n in zip(reversed(a),a) if m>n]
+    factors = [(m, n) for m, n in zip(reversed(a), a) if m > n]
     ts = set()
-    for m,n in factors:
-        l = [nbr, m*m-n*n,m*m+n*n]
+    for m, n in factors:
+        l = [nbr, m * m - n * n, m * m + n * n]
         l.sort()
         ts.update([tuple(l)])
     return ts
 
+
 def is_triplet(t):
     t = list(t)
     t.sort()
-    a,b,c = t
-    return c*c == a*a + b*b
+    a, b, c = t
+    return c * c == a * a + b * b
+
 
 def triplets_in_range(m, n):
     t = set()
-    for a in xrange(m,n+1):
-        for b in xrange(a+1,n+1):
-            c = int(sqrt(a*a + b*b)+0.5)
-            if c*c == a*a + b*b and c >= m and c <= n:
-                t.update([(a,b,c)])
+    for a in range(m, n + 1):
+        for b in range(a + 1, n + 1):
+            c = int(sqrt(a * a + b * b) + 0.5)
+            if c * c == a * a + b * b and c >= m and c <= n:
+                t.update([(a, b, c)])
     return t
 
 primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61,
@@ -45,10 +49,11 @@ primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61,
           839, 853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929, 937,
           941, 947, 953, 967, 971, 977, 983, 991, 997]
 
+
 def factor(n):
     global primes
     if n == 1:
-        return (1,),(0,)
+        return (1,), (0,)
     factors = []
     powers = []
     idx = 0
@@ -63,10 +68,4 @@ def factor(n):
             p += 1
             n /= prime
         powers.append(p)
-    return factors,powers
-    
-if __name__ == '__main__':
-    print primitive_triplets(4)
-    print primitive_triplets(84)
-    print primitive_triplets(288)
-    print triplets_in_range(50,100)
+    return factors, powers

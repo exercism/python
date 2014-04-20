@@ -1,4 +1,9 @@
-from string import maketrans
+import sys
+
+if sys.version_info[0] == 2:
+    from string import maketrans
+else:
+    maketrans = str.maketrans
 
 
 class DNA(object):
