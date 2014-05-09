@@ -7,7 +7,7 @@ else:
     from operator import floordiv as div
 
 
-VALID_OPERATIONS = {"plus": add, "minus": sub, "times": mul,
+VALID_OPERATIONS = {"plus": add, "minus": sub,
                     "multiplied by": mul, "divided by": div}
 
 
