@@ -23,7 +23,7 @@ class WordyTest(unittest.TestCase):
 
     @unittest.skipUnless('NO_SKIP' in os.environ, "Not implemented yet")
     def test_simple_mult(self):
-        self.assertEqual(21, calculate("What is 7 times 3?"))
+        self.assertEqual(21, calculate("What is 7 multiplied by 3?"))
 
     @unittest.skipUnless('NO_SKIP' in os.environ, "Not implemented yet")
     def test_simple_div(self):
@@ -73,7 +73,7 @@ class WordyTest(unittest.TestCase):
 
     @unittest.skipUnless('NO_SKIP' in os.environ, "Not implemented yet")
     def test_missing_number(self):
-        self.assertRaises(ValueError, calculate, "What is 7 plus times -2?")
+        self.assertRaises(ValueError, calculate, "What is 7 plus multiplied by -2?")
 
     @unittest.skipUnless('NO_SKIP' in os.environ, "Not implemented yet")
     def test_irrelevant_question(self):
