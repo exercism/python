@@ -52,3 +52,4 @@ house
 simple-cipher
 hexadecimal
 queen-attack
+zebra-puzzle
