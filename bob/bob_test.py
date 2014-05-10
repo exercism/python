@@ -105,7 +105,7 @@ class BobTests(unittest.TestCase):
             'Fine. Be that way!', self.bob.hey('    ')
         )
         
-    def test_pex(self):
+    def test_prolonged_silence_in_unicode(self):
         self.assertEqual( 
             'Fine. Be that way!', self.bob.hey('\u3000\u3000\u3000\ufeff\u0085\ufeff')
         )
