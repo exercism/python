@@ -104,6 +104,12 @@ class BobTests(unittest.TestCase):
         self.assertEqual(
             'Fine. Be that way!', self.bob.hey('    ')
         )
+        
+    def test_pex(self):
+        self.assertEqual( 
+            'Fine. Be that way!', self.bob.hey('\u3000\u3000\u3000\ufeff\u0085\ufeff')
+        )
+
 
 if __name__ == '__main__':
     unittest.main()
