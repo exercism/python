@@ -1,7 +1,7 @@
 try:
     from twelve_days import sing, verse, verses
 except ImportError:
-    raise SystemExit('Could not find twelve_days.py. Does it exist?')
+    raise SystemExit('Could not import sing, verse, or verses from twelve_days.py Does the file exist and contain all three functions?')
 
 import unittest
 
