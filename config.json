@@ -60,6 +60,9 @@
     "queen-attack",
     "zebra-puzzle"
   ],
+  "deprecated": [
+
+  ],
   "ignore": [
     "test"
   ]
