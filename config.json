@@ -59,5 +59,8 @@
     "hexadecimal",
     "queen-attack",
     "zebra-puzzle"
+  ],
+  "ignore": [
+    "test"
   ]
 }
