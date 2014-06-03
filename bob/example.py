@@ -1,4 +1,4 @@
-def hey(self, stimulus):
+def hey(stimulus):
     if _is_silence(stimulus):
         return 'Fine. Be that way!'
     elif _is_shouting(stimulus):
