@@ -1,9 +1,6 @@
-try:
-    import bob
-except ImportError:
-    raise SystemExit('Could not find bob.py. Does it exist?')
-
 import unittest
+
+import bob
 
 
 class BobTests(unittest.TestCase):

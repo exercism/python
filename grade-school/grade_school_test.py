@@ -1,9 +1,6 @@
-try:
-    from school import School
-except ImportError:
-    raise SystemExit('Could not find school.py. Does it exist?')
-
 import unittest
+
+from school import School
 
 
 class SchoolTest(unittest.TestCase):

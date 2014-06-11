@@ -1,10 +1,7 @@
-try:
-    from gigasecond import Gigasecond
-except ImportError:
-    raise SystemExit('Could not find gigasecond.py. Does it exist?')
-
 from datetime import date
 import unittest
+
+from gigasecond import Gigasecond
 
 
 class GigasecondTest(unittest.TestCase):

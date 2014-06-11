@@ -1,9 +1,6 @@
-try:
-    from beer import Beer
-except ImportError:
-    raise SystemExit('Could not find beer.py. Does it exist?')
-
 import unittest
+
+from beer import Beer
 
 
 class BeerTest(unittest.TestCase):

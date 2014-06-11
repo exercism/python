@@ -1,6 +1,6 @@
-from sublist import check_lists, SUBLIST, SUPERLIST, EQUAL, UNEQUAL
-
 import unittest
+
+from sublist import check_lists, SUBLIST, SUPERLIST, EQUAL, UNEQUAL
 
 
 class SublistTest(unittest.TestCase):

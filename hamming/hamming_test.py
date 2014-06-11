@@ -1,6 +1,6 @@
-from hamming import hamming
-
 import unittest
+
+from hamming import hamming
 
 # If the sequences have different lengths, assume the shorter one is extended
 # with nucleotides in such a way to guarantee the extra nucleotides are all

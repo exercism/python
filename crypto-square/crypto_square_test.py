@@ -1,6 +1,7 @@
+import unittest
+
 from crypto_square import encode, decode
 
-import unittest
 
 class CryptoSquareTest(unittest.TestCase):
     def test_empty_plain(self):

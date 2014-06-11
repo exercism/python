@@ -1,9 +1,6 @@
-try:
-    from anagram import Anagram
-except ImportError:
-    raise SystemExit('Could not find anagram.py. Does it exist?')
-
 import unittest
+
+from anagram import Anagram
 
 
 class AnagramTests(unittest.TestCase):

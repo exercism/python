@@ -1,9 +1,6 @@
-try:
-    from phone import Phone
-except ImportError:
-    raise SystemExit('Could not find phone.py. Does it exist?')
-
 import unittest
+
+from phone import Phone
 
 
 class PhoneTest(unittest.TestCase):

@@ -1,5 +1,6 @@
-from scrabble import Word
 import unittest
+
+from scrabble import Word
 
 
 class WordTest(unittest.TestCase):
