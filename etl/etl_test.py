@@ -1,9 +1,6 @@
-try:
-    import etl
-except ImportError:
-    raise SystemExit('Could not find etl.py. Does it exist?')
-
 import unittest
+
+import etl
 
 
 class TransformTest(unittest.TestCase):

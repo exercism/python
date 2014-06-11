@@ -1,9 +1,6 @@
-try:
-    from grains import on_square, total_after
-except ImportError:
-    raise SystemExit('Could not find grains.py. Does it exist?')
-
 import unittest
+
+from grains import on_square, total_after
 
 
 class GrainsTest(unittest.TestCase):

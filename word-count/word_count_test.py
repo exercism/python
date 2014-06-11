@@ -1,9 +1,6 @@
-try:
-    from wordcount import Phrase
-except ImportError:
-    raise SystemExit('Could not find wordcount.py. Does it exist?')
-
 import unittest
+
+from wordcount import Phrase
 
 
 class WordCountTests(unittest.TestCase):

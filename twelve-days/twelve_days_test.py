@@ -1,9 +1,6 @@
-try:
-    from twelve_days import sing, verse, verses
-except ImportError:
-    raise SystemExit('Could not import sing, verse, or verses from twelve_days.py Does the file exist and contain all three functions?')
-
 import unittest
+
+from twelve_days import sing, verse, verses
 
 
 class TwelveDaysTests(unittest.TestCase):

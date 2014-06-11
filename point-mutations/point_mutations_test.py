@@ -1,9 +1,6 @@
-try:
-    from dna import DNA
-except ImportError:
-    raise SystemExit('Could not find dna.py. Does it exist?')
-
 import unittest
+
+from dna import DNA
 
 
 class DNATest(unittest.TestCase):

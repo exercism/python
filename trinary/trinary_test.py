@@ -1,6 +1,6 @@
-from trinary import trinary
-
 import unittest
+
+from trinary import trinary
 
 
 class TrinaryTest(unittest.TestCase):

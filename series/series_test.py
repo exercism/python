@@ -1,9 +1,6 @@
-try:
-    from series import Series
-except ImportError:
-    raise SystemExit('Could not find series.py. Does it exist?')
-
 import unittest
+
+from series import Series
 
 
 class SeriesTest(unittest.TestCase):
