@@ -1,5 +1,6 @@
-from triangle import Triangle, TriangleError
 import unittest
+
+from triangle import Triangle, TriangleError
 
 
 class TriangleTests(unittest.TestCase):

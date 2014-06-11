@@ -6,13 +6,11 @@ ValueError with a meaningfull error message if the
 input turns out to be malformed.
 """
 
-try:
-    from minesweeper import board
-except ImportError:
-    raise SystemExit('Could not find minesweeper.py. Does it exist?')
-
 import os
 import unittest
+
+from minesweeper import board
+
 
 class MinesweeperTest(unittest.TestCase):
     def test_board1(self):

@@ -1,6 +1,7 @@
+import unittest
+
 from saddle_points import saddle_points
 
-import unittest
 
 class SaddlePointTest(unittest.TestCase):
     def test_one_saddle(self):

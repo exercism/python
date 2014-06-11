@@ -1,9 +1,6 @@
-try:
-    from luhn import Luhn
-except ImportError:
-    raise SystemExit('Could not find luhn.py. Does it exist?')
-
 import unittest
+
+from luhn import Luhn
 
 
 class LuhnTests(unittest.TestCase):

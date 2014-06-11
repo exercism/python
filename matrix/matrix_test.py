@@ -1,9 +1,6 @@
-try:
-    from matrix import Matrix
-except ImportError:
-    raise SystemExit('Could not find matrix.py. Does it exist?')
-
 import unittest
+
+from matrix import Matrix
 
 
 class MatrixTest(unittest.TestCase):

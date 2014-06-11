@@ -33,9 +33,10 @@
 #
 #==============================================================================
 
-from pythagorean_triplet import primitive_triplets, triplets_in_range, is_triplet
-
 import unittest
+
+from pythagorean_triplet import (primitive_triplets, triplets_in_range,
+                                 is_triplet)
 
 
 class PythagoreanTripletTest(unittest.TestCase):

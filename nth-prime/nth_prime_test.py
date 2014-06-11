@@ -1,9 +1,6 @@
-try:
-    from prime import nth_prime
-except ImportError:
-    raise SystemExit('Could not find prime.py. Does it exist?')
-
 import unittest
+
+from prime import nth_prime
 
 
 class NthPrimeTests(unittest.TestCase):

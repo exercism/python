@@ -1,8 +1,8 @@
 # Rhyme found in http://www.pitt.edu/~dash/type2035.html
 
-from house import rhyme
-
 import unittest
+
+from house import rhyme
 
 
 class VerseTest(unittest.TestCase):

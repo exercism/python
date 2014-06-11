@@ -1,9 +1,6 @@
-try:
-    from space_age import SpaceAge
-except ImportError:
-    raise SystemExit('Could not find space_age.py. Does it exist?')
-
 import unittest
+
+from space_age import SpaceAge
 
 
 class SpaceAgeTest(unittest.TestCase):

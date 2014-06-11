@@ -1,6 +1,6 @@
-from proverb import proverb
-
 import unittest
+
+from proverb import proverb
 
 
 class ProverbTest(unittest.TestCase):

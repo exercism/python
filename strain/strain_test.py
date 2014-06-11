@@ -1,6 +1,6 @@
-from strain import keep, discard
-
 import unittest
+
+from strain import keep, discard
 
 
 class StrainTest(unittest.TestCase):

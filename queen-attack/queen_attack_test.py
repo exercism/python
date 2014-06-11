@@ -1,6 +1,6 @@
-from queen_attack import board, can_attack
-
 import unittest
+
+from queen_attack import board, can_attack
 
 
 class QueenAttackTest(unittest.TestCase):

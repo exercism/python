@@ -1,9 +1,6 @@
-try:
-    from robot import Robot
-except ImportError:
-    raise SystemExit('Could not find robot.py. Does it exist?')
-
 import unittest
+
+from robot import Robot
 
 
 class RobotTest(unittest.TestCase):

@@ -1,10 +1,6 @@
-try:
-    from sieve import sieve
-except ImportError:
-    raise SystemExit('Could not find sieve.py. Does it exist?')
-
-
 import unittest
+
+from sieve import sieve
 
 
 class SieveTest(unittest.TestCase):
