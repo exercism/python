@@ -1,9 +1,6 @@
-try:
-    from octal import Octal
-except ImportError:
-    raise SystemExit('Could not find octal.py. Does it exist?')
-
 import unittest
+
+from octal import Octal
 
 
 class OctalTest(unittest.TestCase):

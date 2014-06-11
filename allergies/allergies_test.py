@@ -1,9 +1,6 @@
-try:
-    from allergies import Allergies
-except ImportError:
-    raise SystemExit('Could not find allergies.py. Does it exist?')
-
 import unittest
+
+from allergies import Allergies
 
 
 class AllergiesTests(unittest.TestCase):

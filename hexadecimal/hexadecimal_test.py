@@ -1,9 +1,9 @@
 # To avoid trivial solutions, try to solve this problem without the
 # function int(s, base=16)
 
-from hexadecimal import hexa
-
 import unittest
+
+from hexadecimal import hexa
 
 
 class HexadecimalTest(unittest.TestCase):

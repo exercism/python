@@ -1,7 +1,8 @@
-from handshake import handshake, code
-
 import os
 import unittest
+
+from handshake import handshake, code
+
 
 class HandshakeTest(unittest.TestCase):
     def test_shake_int(self):

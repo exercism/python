@@ -1,5 +1,6 @@
-from binary import Binary
 import unittest
+
+from binary import Binary
 
 
 class BinaryTests(unittest.TestCase):

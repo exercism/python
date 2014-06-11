@@ -1,5 +1,6 @@
-from raindrops import raindrops
 import unittest
+
+from raindrops import raindrops
 
 
 class RaindropsTest(unittest.TestCase):

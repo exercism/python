@@ -1,9 +1,6 @@
-try:
-    from difference_of_squares import difference, square_of_sum, sum_of_squares
-except ImportError:
-    raise SystemExit('Could not find difference_of_squares.py. Does it exist?')
-
 import unittest
+
+from difference_of_squares import difference, square_of_sum, sum_of_squares
 
 
 class DifferenceOfSquaresTest(unittest.TestCase):

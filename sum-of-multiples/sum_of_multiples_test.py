@@ -1,9 +1,6 @@
-try:
-    from sum_of_multiples import SumOfMultiples
-except ImportError:
-    raise SystemExit('Could not find sum_of_multiples.py. Does it exist?')
-
 import unittest
+
+from sum_of_multiples import SumOfMultiples
 
 
 class SumOfMultiplesTest(unittest.TestCase):

@@ -1,9 +1,6 @@
-try:
-    from year import Year
-except ImportError:
-    raise SystemExit('Could not find year.py. Does it exist?')
-
 import unittest
+
+from year import Year
 
 
 class YearTest(unittest.TestCase):
@@ -24,4 +21,3 @@ class YearTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-

@@ -11,12 +11,9 @@ palindrome itself, and factors is an iterable containing both factors of the
 palindrome in arbitrary order.
 """
 
-try:
-    from palindrome import smallest_palindrome, largest_palindrome
-except ImportError:
-    raise SystemExit('Could not find palindrome.py. Does it exist?')
-
 import unittest
+
+from palindrome import smallest_palindrome, largest_palindrome
 
 
 class PalindromesTests(unittest.TestCase):

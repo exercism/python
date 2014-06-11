@@ -1,4 +1,5 @@
 import unittest
+
 from zebra_puzzle import solution
 
 
