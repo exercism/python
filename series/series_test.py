@@ -1,3 +1,9 @@
+"""Tests for the series exercise
+
+Implementation note:
+The Series.slices method should raise a ValueError with a meaningful error
+message if its argument isn't a valid slice length.
+"""
 import unittest
 
 from series import Series
@@ -27,14 +33,10 @@ class SeriesTest(unittest.TestCase):
                          Series("01234").slices(5))
 
     def test_overly_long_slice(self):
-        self.assertRaisesRegexp(ValueError,
-                                "^Invalid slice length for this series: 4$",
-                                Series("012").slices, 4)
+        self.assertRaises(ValueError, Series("012").slices, 4)
 
     def test_overly_short_slice(self):
-        self.assertRaisesRegexp(ValueError,
-                                "^Invalid slice length for this series: 0$",
-                                Series("01234").slices, 0)
+        self.assertRaises(ValueError, Series("01234").slices, 0)
 
 
 if __name__ == '__main__':
