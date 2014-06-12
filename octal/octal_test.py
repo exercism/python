@@ -1,3 +1,9 @@
+"""Tests for the octal exercise
+
+Implementation note:
+If an instance of the Octal class is initialized with an invalid string,
+it must raise a ValueError with a meaningful error message.
+"""
 import unittest
 
 from octal import Octal
@@ -23,16 +29,13 @@ class OctalTest(unittest.TestCase):
         self.assertEqual(342391, Octal("1234567").to_decimal())
 
     def test_8_is_seen_as_invalid(self):
-        self.assertRaisesRegexp(ValueError, "^Invalid octal digit: 8$",
-                                Octal, "8")
+        self.assertRaises(ValueError, Octal, "8")
 
     def test_invalid_octal_is_recognized(self):
-        self.assertRaisesRegexp(ValueError, "^Invalid octal digit: c$",
-                                Octal, "carrot")
+        self.assertRaises(ValueError, Octal, "carrot")
 
     def test_6789_is_seen_as_invalid(self):
-        self.assertRaisesRegexp(ValueError, "^Invalid octal digit: 8$",
-                                Octal, "6789")
+        self.assertRaises(ValueError, Octal, "6789")
 
     def test_valid_octal_formatted_string_011_is_decimal_9(self):
         self.assertEqual(9, Octal("011").to_decimal())

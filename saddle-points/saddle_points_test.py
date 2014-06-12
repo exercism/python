@@ -1,3 +1,10 @@
+"""Tests for the saddle-points exercise
+
+Implementation note:
+The saddle_points function must validate the input matrix and raise a
+ValueError with a meaningful error message if the matrix turns out to be
+irregular.
+"""
 import unittest
 
 from saddle_points import saddle_points
@@ -20,8 +27,7 @@ class SaddlePointTest(unittest.TestCase):
         self.assertEqual(set(), saddle_points([]))
 
     def test_irregular_matrix(self):
-        with self.assertRaisesRegexp(ValueError, 'irregular matrix'):
-            saddle_points([[1,2,3],[2,3],[3,2,1]])
+        self.assertRaises(ValueError, saddle_points, [[1,2,3],[2,3],[3,2,1]])
 
 
 if __name__ == '__main__':
