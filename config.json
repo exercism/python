@@ -63,7 +63,7 @@
   "deprecated": [
 
   ],
-  "ignore": [
+  "ignored": [
     "test"
   ]
 }
