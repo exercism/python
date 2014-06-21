@@ -21,7 +21,7 @@ class MatrixTest(unittest.TestCase):
         self.assertEqual([16, 25, 36], matrix.rows[1])
 
     def test_extract_a_column(self):
-        matrix = Matrix("1 2 3\n4 5 6\n7 8 9\n 8 7 6")
+        matrix = Matrix("1 2 3\n4 5 6\n7 8 9\n8 7 6")
         self.assertEqual([1, 4, 7, 8], matrix.columns[0])
 
     def test_extract_another_column(self):
