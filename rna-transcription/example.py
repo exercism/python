@@ -6,11 +6,8 @@ else:
     maketrans = str.maketrans
 
 
-class DNA(object):
-    rna_translation = maketrans('AGCT', 'UCGA')
+DNA_TO_RNA = maketrans('AGCT', 'UCGA')
 
-    def __init__(self, strand):
-        self.strand = strand
 
-    def to_rna(self):
-        return self.strand.translate(self.rna_translation)
+def to_rna(dna_strand):
+    return dna_strand.translate(DNA_TO_RNA)
