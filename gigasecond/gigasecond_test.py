@@ -1,26 +1,26 @@
 from datetime import date
 import unittest
 
-from gigasecond import Gigasecond
+from gigasecond import add_gigasecond
 
 
 class GigasecondTest(unittest.TestCase):
     def test_1(self):
         self.assertEqual(
             date(2043, 1, 1),
-            Gigasecond(date(2011, 4, 25)).date
+            add_gigasecond(date(2011, 4, 25))
         )
 
     def test_2(self):
         self.assertEqual(
             date(2009, 2, 19),
-            Gigasecond(date(1977, 6, 13)).date
+            add_gigasecond(date(1977, 6, 13))
         )
 
     def test_3(self):
         self.assertEqual(
             date(1991, 3, 27),
-            Gigasecond(date(1959, 7, 19)).date
+            add_gigasecond(date(1959, 7, 19))
         )
 
     def test_yourself(self):
@@ -30,7 +30,7 @@ class GigasecondTest(unittest.TestCase):
 
         self.assertEqual(
             your_gigasecond,
-            Gigasecond(your_birthday).date
+            add_gigasecond(your_birthday)
         )
 
 if __name__ == '__main__':
