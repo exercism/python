@@ -1,28 +1,17 @@
-from collections import defaultdict
+from collections import Counter
 import re
 
 
-class Phrase(object):
-    def __init__(self, phrase):
-        self.phrase = phrase
+WORD_RE = re.compile(r'\w+')
 
-    def word_count(self):
-        'count words in the string'
-        counts = defaultdict(int)
 
-        for word in self._words():
-            counts[word] += 1
+def word_count(text):
+    """Return a Counter object that maps from the words contained in
+    the phrase to their respective counts
+    """
+    return Counter(_words(text))
 
-        return counts
 
-    def _words(self):
-        'get the words (no symbols or numbers) in the phrase'
-        words_re = re.compile(r'\w+')
-        sanitized = self._sanitize()
-
-        for word in words_re.finditer(sanitized):
-            yield word.group()
-
-    def _sanitize(self):
-        'sanitize the phrase'
-        return self.phrase.lower()
+def _words(text):
+    """Yield all the words, i.e. alphanumeric sequences, in the text """
+    return (match.group() for match in WORD_RE.finditer(text.lower()))
