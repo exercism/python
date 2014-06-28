@@ -1,5 +1,6 @@
-from roman import RomanNumeral
 import unittest
+
+import roman
 
 
 class RomanTest(unittest.TestCase):
@@ -25,11 +26,8 @@ class RomanTest(unittest.TestCase):
     }
 
     def test_numerals(self):
-        for arabic, roman in self.numerals.items():
-            self.assertEqual(
-                roman,
-                str(RomanNumeral(arabic))
-            )
+        for arabic, numeral in self.numerals.items():
+            self.assertEqual(numeral, roman.numeral(arabic))
 
 if __name__ == '__main__':
     unittest.main()
