@@ -1,3 +1,9 @@
+"""Tests for the nucleotide-count exercise
+
+Implementation note:
+The DNA.count method must raise a ValueError with a meaningful error message
+in case of a bad argument.
+"""
 import unittest
 
 from dna import DNA
@@ -23,7 +29,6 @@ class DNATest(unittest.TestCase):
 
     def test_counts_a_nucleotide_only_once(self):
         dna = DNA('CGATTGGG')
-        dna.count('T')
         self.assertEqual(2, dna.count('T'))
 
     def test_dna_has_no_uracil(self):
@@ -31,19 +36,15 @@ class DNATest(unittest.TestCase):
 
     def test_dna_counts_do_not_change_after_counting_uracil(self):
         dna = DNA('GATTACA')
-        dna.count('U')
         expected = {"A": 3, "T": 2, "C": 1, "G": 1}
         self.assertEqual(expected, dna.nucleotide_counts())
 
     def test_validates_nucleotides(self):
-        self.assertRaisesRegexp(
-            ValueError, '^. is not a nucleotide\.$',
-            DNA("GACT").count, 'X'
-        )
+        self.assertRaises(ValueError, DNA("GACT").count, 'X')
 
     def test_counts_all_nucleotides(self):
-        s = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
-        dna = DNA(s)
+        dna = DNA("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGT"
+                  "GTCTGATAGCAGC")
         expected = {'A': 20, 'T': 21, 'G': 17, 'C': 12}
         self.assertEqual(expected, dna.nucleotide_counts())
 
