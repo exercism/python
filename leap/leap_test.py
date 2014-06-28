@@ -1,23 +1,23 @@
 import unittest
 
-from year import Year
+from year import is_leap_year
 
 
 class YearTest(unittest.TestCase):
     def test_leap_year(self):
-        self.assertTrue(Year(1996).is_leap_year())
+        self.assertTrue(is_leap_year(1996))
 
     def test_non_leap_year(self):
-        self.assertFalse(Year(1997).is_leap_year())
+        self.assertFalse(is_leap_year(1997))
 
     def test_non_leap_even_year(self):
-        self.assertFalse(Year(1998).is_leap_year())
+        self.assertFalse(is_leap_year(1998))
 
     def test_century(self):
-        self.assertFalse(Year(1900).is_leap_year())
+        self.assertFalse(is_leap_year(1900))
 
     def test_exceptional_century(self):
-        self.assertTrue(Year(2400).is_leap_year())
+        self.assertTrue(is_leap_year(2400))
 
 if __name__ == '__main__':
     unittest.main()
