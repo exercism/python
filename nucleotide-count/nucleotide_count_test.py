@@ -1,52 +1,43 @@
 """Tests for the nucleotide-count exercise
 
 Implementation note:
-The DNA.count method must raise a ValueError with a meaningful error message
+The count function must raise a ValueError with a meaningful error message
 in case of a bad argument.
 """
 import unittest
 
-from dna import DNA
+from dna import count, nucleotide_counts
 
 
 class DNATest(unittest.TestCase):
     def test_empty_dna_string_has_no_adenosine(self):
-        self.assertEqual(0, DNA('').count('A'))
+        self.assertEqual(0, count('', 'A'))
 
     def test_empty_dna_string_has_no_nucleotides(self):
         expected = {'A': 0, 'T': 0, 'C': 0, 'G': 0}
-        self.assertEqual(expected, DNA("").nucleotide_counts())
+        self.assertEqual(expected, nucleotide_counts(""))
 
     def test_repetitive_cytidine_gets_counted(self):
-        self.assertEqual(5, DNA('CCCCC').count('C'))
+        self.assertEqual(5, count('CCCCC', 'C'))
 
     def test_repetitive_sequence_has_only_guanosine(self):
         expected = {'A': 0, 'T': 0, 'C': 0, 'G': 8}
-        self.assertEqual(expected, DNA('GGGGGGGG').nucleotide_counts())
+        self.assertEqual(expected, nucleotide_counts('GGGGGGGG'))
 
     def test_counts_only_thymidine(self):
-        self.assertEqual(1, DNA('GGGGGTAACCCGG').count('T'))
-
-    def test_counts_a_nucleotide_only_once(self):
-        dna = DNA('CGATTGGG')
-        self.assertEqual(2, dna.count('T'))
+        self.assertEqual(1, count('GGGGGTAACCCGG', 'T'))
 
     def test_dna_has_no_uracil(self):
-        self.assertEqual(0, DNA('GATTACA').count('U'))
-
-    def test_dna_counts_do_not_change_after_counting_uracil(self):
-        dna = DNA('GATTACA')
-        expected = {"A": 3, "T": 2, "C": 1, "G": 1}
-        self.assertEqual(expected, dna.nucleotide_counts())
+        self.assertEqual(0, count('GATTACA', 'U'))
 
     def test_validates_nucleotides(self):
-        self.assertRaises(ValueError, DNA("GACT").count, 'X')
+        with self.assertRaises(ValueError):
+            count("GACT", 'X')
 
     def test_counts_all_nucleotides(self):
-        dna = DNA("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGT"
-                  "GTCTGATAGCAGC")
+        dna = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
         expected = {'A': 20, 'T': 21, 'G': 17, 'C': 12}
-        self.assertEqual(expected, dna.nucleotide_counts())
+        self.assertEqual(expected, nucleotide_counts(dna))
 
 if __name__ == '__main__':
     unittest.main()
