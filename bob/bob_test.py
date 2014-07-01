@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
 import unittest
 
 import bob
@@ -68,12 +71,12 @@ class BobTests(unittest.TestCase):
 
     def test_shouting_with_umlauts(self):
         self.assertEqual(
-            'Woah, chill out!', bob.hey(u"\xdcML\xc4\xdcTS!")
+            'Woah, chill out!', bob.hey('ÜMLÄÜTS!')
         )
 
     def test_calmly_speaking_with_umlauts(self):
         self.assertEqual(
-            'Whatever.', bob.hey(u"\xdcML\xe4\xdcTS!")
+            'Whatever.', bob.hey('ÜMLäÜTS!')
         )
 
     def test_shouting_with_no_exclamation_mark(self):
@@ -98,7 +101,7 @@ class BobTests(unittest.TestCase):
 
     def test_prolonged_silence(self):
         self.assertEqual(
-            'Fine. Be that way!', bob.hey('    ')
+            'Fine. Be that way!', bob.hey('    \t')
         )
 
 if __name__ == '__main__':
