@@ -4,7 +4,7 @@ from robot import Robot
 
 
 class RobotTest(unittest.TestCase):
-    name_re = r'\w{2}\d{3}'
+    name_re = r'^[A-Z]{2}\d{3}$'
 
     def test_has_name(self):
         self.assertRegexpMatches(Robot().name, self.name_re)
