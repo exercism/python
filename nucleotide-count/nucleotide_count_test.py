@@ -26,10 +26,7 @@ class DNATest(unittest.TestCase):
 
     def test_counts_only_thymidine(self):
         self.assertEqual(1, count('GGGGGTAACCCGG', 'T'))
-
-    def test_dna_has_no_uracil(self):
-        self.assertEqual(0, count('GATTACA', 'U'))
-
+        
     def test_validates_nucleotides(self):
         with self.assertRaises(ValueError):
             count("GACT", 'X')
