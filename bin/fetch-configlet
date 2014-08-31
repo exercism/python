@@ -1,0 +1,8 @@
+#!/bin/bash
+
+LATEST=https://github.com/exercism/configlet/releases/latest
+
+VERSION="$(curl --head --silent $LATEST | awk -v FS=/ '/Location:/{print $NF}' | tr -d '\r')"
+URL=https://github.com/exercism/configlet/releases/download/$VERSION/configlet-linux-amd64.tgz
+
+curl -s --location $URL | tar xz -C bin/

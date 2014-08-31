@@ -5,4 +5,5 @@ python:
   - "3.4"
 script:
   - ./test/check-exercises.py
-  - ./bin/configlet-linux-amd64 .
+  - ./bin/fetch-configlet
+  - ./bin/configlet .
