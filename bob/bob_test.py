@@ -16,7 +16,7 @@ class BobTests(unittest.TestCase):
 
     def test_shouting(self):
         self.assertEqual(
-            'Woah, chill out!',
+            'Whoa, chill out!',
             bob.hey('WATCH OUT!')
         )
 
@@ -45,12 +45,12 @@ class BobTests(unittest.TestCase):
 
     def test_forceful_questions(self):
         self.assertEqual(
-            'Woah, chill out!', bob.hey('WHAT THE HELL WERE YOU THINKING?')
+            'Whoa, chill out!', bob.hey('WHAT THE HELL WERE YOU THINKING?')
         )
 
     def test_shouting_numbers(self):
         self.assertEqual(
-            'Woah, chill out!', bob.hey('1, 2, 3 GO!')
+            'Whoa, chill out!', bob.hey('1, 2, 3 GO!')
         )
 
     def test_only_numbers(self):
@@ -65,13 +65,13 @@ class BobTests(unittest.TestCase):
 
     def test_shouting_with_special_characters(self):
         self.assertEqual(
-            'Woah, chill out!',
+            'Whoa, chill out!',
             bob.hey('ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!')
         )
 
     def test_shouting_with_umlauts(self):
         self.assertEqual(
-            'Woah, chill out!', bob.hey('ÜMLÄÜTS!')
+            'Whoa, chill out!', bob.hey('ÜMLÄÜTS!')
         )
 
     def test_calmly_speaking_with_umlauts(self):
@@ -81,7 +81,7 @@ class BobTests(unittest.TestCase):
 
     def test_shouting_with_no_exclamation_mark(self):
         self.assertEqual(
-            'Woah, chill out!', bob.hey('I HATE YOU')
+            'Whoa, chill out!', bob.hey('I HATE YOU')
         )
 
     def test_statement_containing_question_mark(self):
