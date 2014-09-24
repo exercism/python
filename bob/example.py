@@ -2,7 +2,7 @@ def hey(stimulus):
     if _is_silence(stimulus):
         return 'Fine. Be that way!'
     elif _is_shouting(stimulus):
-        return 'Woah, chill out!'
+        return 'Whoa, chill out!'
     elif _is_question(stimulus):
         return 'Sure.'
     else:
