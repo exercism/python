@@ -22,22 +22,35 @@ class WordCountTests(unittest.TestCase):
             word_count('one fish two fish red fish blue fish')
         )
 
-    def test_ignore_punctuation(self):
+    def test_preserves_punctuation(self):
         self.assertEqual(
-            {'car': 1, 'carpet': 1, 'as': 1, 'java': 1, 'javascript': 1},
+            {'car': 1, 'carpet': 1, 'as': 1, 'java': 1, ':': 2, 'javascript!!&@$%^&': 1},
             word_count('car : carpet as java : javascript!!&@$%^&')
         )
 
     def test_include_numbers(self):
         self.assertEqual(
             {'testing': 2, '1': 1, '2': 1},
-            word_count('testing, 1, 2 testing')
+            word_count('testing 1 2 testing')
         )
 
-    def test_normalize_case(self):
+    def test_mixed_case(self):
         self.assertEqual(
-            {'go': 3},
+            {'go': 1, 'Go': 1, 'GO': 1},
             word_count('go Go GO')
+        )
+        
+    def test_multiple_spaces(self):
+      self.assertEqual(
+          {'wait': 1, 'for': 1, 'it': 1},
+          word_count('wait for       it')
+      )
+        
+    def test_newlines(self):
+        self.assertEqual(
+            {'rah': 2, 'ah': 3, 'roma': 2, 'ma': 1, 'ga': 2, 'oh': 1, 'la': 2, 
+            'want': 1, 'your': 1, 'bad': 1, 'romance': 1},
+            word_count('rah rah ah ah ah\nroma roma ma\nga ga oh la la\nwant your bad romance')
         )
 
 if __name__ == '__main__':
