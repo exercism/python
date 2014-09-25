@@ -20,7 +20,6 @@ class MinesweeperTest(unittest.TestCase):
                "|1*22*2|", "|111111|", "+------+"]
         self.assertEqual(out, board(inp))
 
-    @unittest.skipUnless('NO_SKIP' in os.environ, "Not implemented yet")
     def test_board2(self):
         inp = ["+-----+", "| * * |", "|     |", "|   * |", "|  * *|",
                "| * * |", "+-----+"]
@@ -28,43 +27,36 @@ class MinesweeperTest(unittest.TestCase):
                "|1*3*2|", "+-----+"]
         self.assertEqual(out, board(inp))
 
-    @unittest.skipUnless('NO_SKIP' in os.environ, "Not implemented yet")
     def test_board3(self):
         inp = ["+-----+", "| * * |", "+-----+"]
         out = ["+-----+", "|1*2*1|", "+-----+"]
         self.assertEqual(out, board(inp))
 
-    @unittest.skipUnless('NO_SKIP' in os.environ, "Not implemented yet")
     def test_board4(self):
         inp = ["+-+", "|*|", "| |", "|*|", "| |", "| |", "+-+"]
         out = ["+-+", "|*|", "|2|", "|*|", "|1|", "| |", "+-+"]
         self.assertEqual(out, board(inp))
 
-    @unittest.skipUnless('NO_SKIP' in os.environ, "Not implemented yet")
     def test_board5(self):
         inp = ["+-+", "|*|", "+-+"]
         out = ["+-+", "|*|", "+-+"]
         self.assertEqual(out, board(inp))
 
-    @unittest.skipUnless('NO_SKIP' in os.environ, "Not implemented yet")
     def test_board6(self):
         inp = ["+--+", "|**|", "|**|", "+--+"]
         out = ["+--+", "|**|", "|**|", "+--+"]
         self.assertEqual(out, board(inp))
 
-    @unittest.skipUnless('NO_SKIP' in os.environ, "Not implemented yet")
     def test_board7(self):
         inp = ["+--+", "|**|", "|**|", "+--+"]
         out = ["+--+", "|**|", "|**|", "+--+"]
         self.assertEqual(out, board(inp))
 
-    @unittest.skipUnless('NO_SKIP' in os.environ, "Not implemented yet")
     def test_board8(self):
         inp = ["+---+", "|***|", "|* *|", "|***|", "+---+"]
         out = ["+---+", "|***|", "|*8*|", "|***|", "+---+"]
         self.assertEqual(out, board(inp))
 
-    @unittest.skipUnless('NO_SKIP' in os.environ, "Not implemented yet")
     def test_board9(self):
         inp = ["+-----+", "|     |", "|   * |", "|     |", "|     |",
                "| *   |", "+-----+"]
@@ -72,17 +64,14 @@ class MinesweeperTest(unittest.TestCase):
                "|1*1  |", "+-----+"]
         self.assertEqual(out, board(inp))
 
-    @unittest.skipUnless('NO_SKIP' in os.environ, "Not implemented yet")
     def test_different_len(self):
         inp = ["+-+", "| |", "|*  |", "|  |", "+-+"]
         self.assertRaises(ValueError, board, inp)
 
-    @unittest.skipUnless('NO_SKIP' in os.environ, "Not implemented yet")
     def test_faulty_border(self):
         inp = ["+-----+", "*   * |", "+-- --+"]
         self.assertRaises(ValueError, board, inp)
 
-    @unittest.skipUnless('NO_SKIP' in os.environ, "Not implemented yet")
     def test_invalid_char(self):
         inp = ["+-----+", "|X  * |", "+-----+"]
         self.assertRaises(ValueError, board, inp)
