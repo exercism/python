@@ -1,6 +1,6 @@
 #
-# Skeleton file for the Python "Bob" exercise, to get you coding more quickly.
+# Skeleton file for the Python "Bob" exercise.
 #
 def hey(what)
 
-  return
+    return
