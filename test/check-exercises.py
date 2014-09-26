@@ -53,7 +53,6 @@ def assignment_name(test_file):
 
 
 def main():
-    os.environ['NO_SKIP'] = '1'  # execute all tests including "@skipped" ones
     failures = []
     for test_file in glob.glob('./*/*_test.py'):
         name = assignment_name(test_file)
