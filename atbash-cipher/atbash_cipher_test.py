@@ -12,33 +12,33 @@ class AtbashCipherTest(unittest.TestCase):
         self.assertEqual("bvh", encode("yes"))
 
     def test_encode_OMG(self):
-        self.assertEqual("lnt", encode("OMG"))
+        self.assertEqual("LNT", encode("OMG"))
 
     def test_encode_O_M_G(self):
-        self.assertEqual("lnt", encode("O M G"))
+        self.assertEqual("L N T", encode("O M G"))
 
     def test_encode_long_word(self):
-        self.assertEqual("nrmwy oldrm tob", encode("mindblowingly"))
+        self.assertEqual("nrmwyoldrmtob", encode("mindblowingly"))
 
     def test_encode_numbers(self):
-        self.assertEqual("gvhgr mt123 gvhgr mt",
+        self.assertEqual("Gvhgrmt, 1 2 3, gvhgrmt.",
                          encode("Testing, 1 2 3, testing."))
 
     def test_encode_sentence(self):
-        self.assertEqual("gifgs rhurx grlm",
+        self.assertEqual("Gifgs rh urxgrlm.",
                          encode("Truth is fiction."))
 
     def test_encode_all_things(self):
         plaintext = "The quick brown fox jumps over the lazy dog."
-        ciphertext = "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"
+        ciphertext = "Gsv jfrxp yildm ulc qfnkh levi gsv ozab wlt."
         self.assertEqual(ciphertext, encode(plaintext))
 
     def test_decode_word(self):
-        self.assertEqual("exercism", decode("vcvix rhn"))
+        self.assertEqual("exercism", decode("vcvixrhn"))
 
     def test_decode_sentence(self):
-        self.assertEqual("anobstacleisoftenasteppingstone",
-                         decode("zmlyh gzxov rhlug vmzhg vkkrm thglm v"))
+        self.assertEqual("an obstacle is often a stepping stone",
+                         decode("zm lyhgzxov rh lugvm z hgvkkrmt hglmv"))
 
 
 if __name__ == '__main__':
