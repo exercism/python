@@ -26,6 +26,11 @@ class HammingTest(unittest.TestCase):
     def test_hamming_distance_in_very_long_strand(self):
         self.assertEqual(9, hamming.distance('GGACGGATTCTG', 'AGGACGGATTCT'))
 
+    def test_hamming_distance_unequal_strings_1(self):
+        self.assertIsNone(hamming.distance('AAA', 'AAAG'))
+
+    def test_hamming_distance_unequal_strings_2(self):
+        self.assertIsNone(hamming.distance('AAAG', 'AAA'))
 
 if __name__ == '__main__':
     unittest.main()
