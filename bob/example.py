@@ -1,4 +1,6 @@
 def hey(stimulus):
+    stimulus = stimulus.strip()
+
     if _is_silence(stimulus):
         return 'Fine. Be that way!'
     elif _is_shouting(stimulus):
@@ -10,7 +12,7 @@ def hey(stimulus):
 
 
 def _is_silence(stimulus):
-    return stimulus.strip() == ''
+    return stimulus == ''
 
 
 def _is_shouting(stimulus):
