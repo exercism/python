@@ -2,7 +2,7 @@ def board(pos1, pos2):
     validate_position(pos1, pos2)
     x1, y1 = pos1
     x2, y2 = pos2
-    b = [['0']*8 for i in range(8)]
+    b = [['_'] * 8 for i in range(8)]
     b[x1][y1] = 'W'
     b[x2][y2] = 'B'
     return [''.join(r) for r in b]
