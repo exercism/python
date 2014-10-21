@@ -42,7 +42,10 @@ class OcrTest(unittest.TestCase):
         self.assertEqual(["   ", "  |", "  |", "   "], grid('1'))
 
     def test_invalid_digit(self):
-        self.assertRaises(ValueError, grid, '2')
+        self.assertRaises(ValueError, grid, '12')
+
+    def test_letter_input(self):
+        self.assertRaises(ValueError, grid, 'a')
 
 
 if __name__ == '__main__':
