@@ -5,13 +5,13 @@ from queen_attack import board, can_attack
 
 class QueenAttackTest(unittest.TestCase):
     def test_board1(self):
-        ans = ['00000000', '00000000', '000W0000', '00000000',
-               '00000000', '000000B0', '00000000', '00000000']
+        ans = ['________', '________', '___W____', '________',
+               '________', '______B_', '________', '________']
         self.assertEqual(ans, board((2, 3), (5, 6)))
 
     def test_board2(self):
-        ans = ['000000W0', '0000000B', '00000000', '00000000',
-               '00000000', '00000000', '00000000', '00000000']
+        ans = ['______W_', '_______B', '________', '________',
+               '________', '________', '________', '________']
         self.assertEqual(ans, board((0, 6), (1, 7)))
 
     def test_attack_true1(self):
