@@ -31,6 +31,14 @@ class LuhnTests(unittest.TestCase):
     def test_create_valid_number3(self):
         self.assertEqual(8372637564, Luhn.create(837263756))
 
+    def test_is_valid_can_be_called_repeatedly(self):
+        # This test was added, because we saw many implementations
+        # in which the first call to is_valid() worked, but the
+        # second call failed().
+        number = Luhn(8739567)
+        self.assertTrue(number.is_valid())
+        self.assertTrue(number.is_valid())
+
 
 if __name__ == '__main__':
     unittest.main()
