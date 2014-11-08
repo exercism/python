@@ -3,7 +3,7 @@ def on_square(number):
 
 
 def total_after(square):
-    return sum([
+    return sum(
         on_square(n + 1) for n
-        in range(0, square)
-    ])
+        in range(square)
+    )
