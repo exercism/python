@@ -1,6 +1,3 @@
-import math
-
-
 def period_converter(period):
     def inner(self):
         return round(
