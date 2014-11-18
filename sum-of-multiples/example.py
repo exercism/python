@@ -1,7 +1,7 @@
 class SumOfMultiples(object):
 
     def __init__(self, *args):
-        self.numbers = args if args else [3, 5]
+        self.numbers = args or (3, 5)
 
     def to(self, limit):
         return sum(n
@@ -9,5 +9,5 @@ class SumOfMultiples(object):
                    if self.is_multiple(n))
 
     def is_multiple(self, m):
-        return any(m % n == 0
+        return any(n != 0 and m % n == 0
                    for n in self.numbers)
