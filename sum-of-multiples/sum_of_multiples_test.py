@@ -1,3 +1,13 @@
+"""
+You can make the following assumptions about the inputs to the
+'sum_of_multiples' function:
+    * All input numbers are non-negative 'int's, i.e. natural numbers including
+      zero.
+    * If a list of factors is given, its elements are uniqe and sorted in
+      ascending order.
+    * If the 'factors' argument is missing, use the list [3, 5] instead.
+"""
+
 import unittest
 
 from sum_of_multiples import sum_of_multiples
