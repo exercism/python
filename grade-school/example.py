@@ -13,7 +13,5 @@ class School(object):
         return self.db[level]
 
     def sort(self):
-        return {
-            grade: tuple(sorted(students))
-            for grade, students in self.db.items()
-        }
+        return sorted((grade, tuple(sorted(students)))
+                      for grade, students in self.db.items())

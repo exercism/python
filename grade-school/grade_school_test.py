@@ -1,3 +1,5 @@
+from collections import Sequence
+from types import GeneratorType
 import unittest
 
 from school import School
@@ -35,16 +37,28 @@ class SchoolTest(unittest.TestCase):
         self.assertEqual(set(), self.school.grade(1))
 
     def test_sort_school(self):
-        self.school.add("Jennifer", 4)
-        self.school.add("Kareem", 6)
-        self.school.add("Christopher", 4)
-        self.school.add("Kyle", 3)
-        sorted_students = {
-            3: ("Kyle",),
-            4: ("Christopher", "Jennifer",),
-            6: ("Kareem",)
-        }
-        self.assertEqual(sorted_students, self.school.sort())
+        students = [
+            (3, ("Kyle",)),
+            (4, ("Christopher", "Jennifer",)),
+            (6, ("Kareem",))
+        ]
+
+        for grade, students_in_grade in students:
+            for student in students_in_grade:
+                self.school.add(student, grade)
+
+        result = self.school.sort()
+
+        # Attempts to catch false positives
+        self.assertTrue(isinstance(result, Sequence) or
+                        isinstance(result, GeneratorType) or
+                        callable(getattr(result, '__reversed__', False)))
+
+        result_list = list(result.items() if hasattr(result, "items")
+                           else result)
+
+        self.assertEqual(result_list, students)
+
 
 if __name__ == '__main__':
     unittest.main()
