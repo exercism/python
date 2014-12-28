@@ -70,7 +70,7 @@ class SublistTest(unittest.TestCase):
 
     def test_spread_sublist(self):
         multiples_of_3 = list(range(3, 200, 3))
-        multiples_of_15 = list(range(3, 200, 15))
+        multiples_of_15 = list(range(15, 200, 15))
         self.assertEqual(UNEQUAL,
                          check_lists(multiples_of_15, multiples_of_3))
 
