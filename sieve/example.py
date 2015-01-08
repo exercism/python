@@ -1,13 +1,8 @@
 def sieve(limit):
-    primes = []
-
-    sv = [True] * (limit + 1)
-    sv[:2] = [False, False]     # 0 and 1 aren't prime
-
-    for n in range(limit + 1):
-        if sv[n]:  # n is prime
-            for i in range(n * 2, limit + 1, n):    # mark all multiples of n
-                sv[i] = False
-            primes.append(n)
-
+    primes = [2]
+    prime_range = list(reversed(range(3, limit+1, 2)))
+    while prime_range:
+        prime = prime_range.pop()
+        prime_range = list(filter(lambda x: x % prime != 0, prime_range))
+        primes.append(prime)
     return primes
