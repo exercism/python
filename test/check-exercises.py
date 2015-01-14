@@ -5,6 +5,7 @@ import imp
 import glob
 import shutil
 import subprocess
+import sys
 import tempfile
 
 
@@ -53,18 +54,24 @@ def assignment_name(test_file):
 
 
 def main():
-    failures = []
-    for test_file in glob.glob('./*/*_test.py'):
-        name = assignment_name(test_file)
-        print('# ' + name)
-        if check_assignment(name, test_file, modname_heuristic(test_file)):
-            failures.append(name)
-        print('')
-    if failures:
-        print('FAILURES: ' + ' '.join(failures))
-        raise SystemExit(1)
+    if len(sys.argv) == 2:  # test a specific exercise
+        exercise_path = sys.argv[1].strip('/')
+        test_file = glob.glob('./{}/*_test.py'.format(exercise_path))[0]
+        check_assignment(assignment_name(test_file), test_file,
+                         modname_heuristic(test_file))
     else:
-        print('SUCCESS!')
+        failures = []
+        for test_file in glob.glob('./*/*_test.py'):
+            name = assignment_name(test_file)
+            print('# ' + name)
+            if check_assignment(name, test_file, modname_heuristic(test_file)):
+                failures.append(name)
+            print('')
+        if failures:
+            print('FAILURES: ' + ' '.join(failures))
+            raise SystemExit(1)
+        else:
+            print('SUCCESS!')
 
 if __name__ == '__main__':
     main()
