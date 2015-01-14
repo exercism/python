@@ -2,4 +2,5 @@
 *.pyc
 *.swp
 .DS_Store
+.ropeproject
 tmp
