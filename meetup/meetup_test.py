@@ -5,7 +5,7 @@ from meetup import meetup_day
 
 try:
     from meetup import MeetupDayException
-except:
+except ImportError:
     MeetupDayException = Exception
 
 class MeetupTest(unittest.TestCase):
