@@ -3,6 +3,10 @@ import unittest
 
 from meetup import meetup_day
 
+try:
+    from meetup import MeetupDayException
+except:
+    MeetupDayException = Exception
 
 class MeetupTest(unittest.TestCase):
     def test_monteenth_of_may_2013(self):
@@ -40,6 +44,14 @@ class MeetupTest(unittest.TestCase):
     def test_first_friday_of_december_2012(self):
         self.assertEqual(date(2012, 12, 7),
                          meetup_day(2012, 12, 'Friday', '1st'))
+
+    def test_fifth_monday_of_march_2015(self):
+        self.assertEqual(date(2015, 3, 30),
+                         meetup_day(2015, 3, 'Monday', '5th'))
+
+    def test_nonexistent_fifth_monday_of_february_2015(self):
+        self.assertRaises(MeetupDayException, meetup_day,
+                          2015, 2, 'Monday', '5th')
 
 if __name__ == '__main__':
     unittest.main()
