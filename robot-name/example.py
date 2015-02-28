@@ -6,6 +6,7 @@ class Robot(object):
 
     def __init__(self):
         self._name = None
+        self._past_names = set()
 
     def prefix(self):
         return ''.join([
@@ -21,7 +22,13 @@ class Robot(object):
 
     def get_name(self):
         if not self._name:
-            self._name = self.prefix() + self.suffix()
+
+            # Collision detection
+            while True:
+                self._name = self.prefix() + self.suffix()
+                if self._name not in self._past_names:
+                    self._past_names.add(self._name)
+                    break
 
         return self._name
 
