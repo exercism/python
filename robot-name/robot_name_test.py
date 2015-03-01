@@ -1,6 +1,7 @@
 import unittest
 
 from robot import Robot
+import random
 
 
 class RobotTest(unittest.TestCase):
@@ -21,8 +22,20 @@ class RobotTest(unittest.TestCase):
         )
 
     def test_rest_name(self):
+        # Set a seed
+        seed = "Totally random."
+
+        # Initialize RNG using the seed
+        random.seed(seed)
+
+        # Call the generator
         robot = Robot()
         name = robot.name
+
+        # Reinitialize RNG using seed
+        random.seed(seed)
+
+        # Call the generator again
         robot.reset()
         name2 = robot.name
         self.assertNotEqual(name, name2)
