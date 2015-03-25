@@ -32,6 +32,7 @@ class MinesweeperTest(unittest.TestCase):
                "+------+"]
         self.assertEqual(out, board(inp))
 
+    @unittest.skip("")
     def test_board2(self):
         inp = ["+-----+",
                "| * * |", 
@@ -49,6 +50,7 @@ class MinesweeperTest(unittest.TestCase):
                "+-----+"]
         self.assertEqual(out, board(inp))
 
+    @unittest.skip("")
     def test_board3(self):
         inp = ["+-----+",
                "| * * |",
@@ -58,6 +60,7 @@ class MinesweeperTest(unittest.TestCase):
                "+-----+"]
         self.assertEqual(out, board(inp))
 
+    @unittest.skip("")
     def test_board4(self):
         inp = ["+-+",
                "|*|",
@@ -75,6 +78,7 @@ class MinesweeperTest(unittest.TestCase):
                "+-+"]
         self.assertEqual(out, board(inp))
 
+    @unittest.skip("")
     def test_board5(self):
         inp = ["+-+",
                "|*|",
@@ -84,6 +88,7 @@ class MinesweeperTest(unittest.TestCase):
                "+-+"]
         self.assertEqual(out, board(inp))
 
+    @unittest.skip("")
     def test_board6(self):
         inp = ["+--+",
                "|**|",
@@ -95,6 +100,7 @@ class MinesweeperTest(unittest.TestCase):
                "+--+"]
         self.assertEqual(out, board(inp))
 
+    @unittest.skip("")
     def test_board7(self):
         inp = ["+--+",
                "|**|",
@@ -106,6 +112,7 @@ class MinesweeperTest(unittest.TestCase):
                "+--+"]
         self.assertEqual(out, board(inp))
 
+    @unittest.skip("")
     def test_board8(self):
         inp = ["+---+",
                "|***|",
@@ -119,6 +126,7 @@ class MinesweeperTest(unittest.TestCase):
                "+---+"]
         self.assertEqual(out, board(inp))
 
+    @unittest.skip("")
     def test_board9(self):
         inp = ["+-----+",
                "|     |",
@@ -136,6 +144,7 @@ class MinesweeperTest(unittest.TestCase):
                "+-----+"]
         self.assertEqual(out, board(inp))
 
+    @unittest.skip("")
     def test_different_len(self):
         inp = ["+-+",
                "| |",
@@ -144,12 +153,14 @@ class MinesweeperTest(unittest.TestCase):
                "+-+"]
         self.assertRaises(ValueError, board, inp)
 
+    @unittest.skip("")
     def test_faulty_border(self):
         inp = ["+-----+",
                "*   * |",
                "+-- --+"]
         self.assertRaises(ValueError, board, inp)
 
+    @unittest.skip("")
     def test_invalid_char(self):
         inp = ["+-----+",
                "|X  * |", 

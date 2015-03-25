@@ -9,11 +9,13 @@ class KindergartenGardenTests(unittest.TestCase):
         self.assertEqual("Radishes Clover Grass Grass".split(),
                          Garden("RC\nGG").plants("Alice"))
 
+    @unittest.skip("")
     def test_bob_and_charlies_gardens(self):
         garden = Garden("VVCCGG\nVVCCGG")
         self.assertEqual(["Clover"] * 4, garden.plants("Bob"))
         self.assertEqual(["Grass"] * 4, garden.plants("Charlie"))
 
+    @unittest.skip("")
     def test_full_garden(self):
         garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
         self.assertEqual("Violets Radishes Violets Radishes".split(),
@@ -25,6 +27,7 @@ class KindergartenGardenTests(unittest.TestCase):
         self.assertEqual("Grass Violets Clover Violets".split(),
                          garden.plants("Larry"))
 
+    @unittest.skip("")
     def test_disordered_test(self):
         garden = Garden("VCRRGVRG\nRVGCCGCV",
                         students="Samantha Patricia Xander Roger".split())

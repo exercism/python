@@ -11,6 +11,7 @@ class BeerTest(unittest.TestCase):
             "Take one down and pass it around, 7 bottles of beer on the wall.\n"
         )
 
+    @unittest.skip("")
     def test_verse_1(self):
         self.assertEqual(
             verse(1),
@@ -18,6 +19,7 @@ class BeerTest(unittest.TestCase):
             "Take it down and pass it around, no more bottles of beer on the wall.\n"
         )
 
+    @unittest.skip("")
     def test_verse_2(self):
         self.assertEqual(
             verse(2),
@@ -25,6 +27,7 @@ class BeerTest(unittest.TestCase):
             "Take one down and pass it around, 1 bottle of beer on the wall.\n"
         )
 
+    @unittest.skip("")
     def test_verse_0(self):
         self.assertEqual(
             verse(0),
@@ -32,6 +35,7 @@ class BeerTest(unittest.TestCase):
             "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
         )
 
+    @unittest.skip("")
     def test_songing_several_verses(self):
         self.assertEqual(
             song(8, 6),
@@ -46,6 +50,7 @@ class BeerTest(unittest.TestCase):
             "\n"
         )
 
+    @unittest.skip("")
     def test_song_all_the_rest_of_the_verses(self):
         self.assertEqual(
             song(3),
