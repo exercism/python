@@ -4,6 +4,6 @@ python:
   - "3.3"
   - "3.4"
 script:
-  - ./test/check-exercises.py
+  - ./test/check-exercises.bash
   - ./bin/fetch-configlet
   - ./bin/configlet .
