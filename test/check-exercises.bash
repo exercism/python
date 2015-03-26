@@ -1,32 +1,33 @@
 #!/bin/bash 
+#
+# Runs all tests including skipped ones.
+#
+TEST_FILES=$(find . -name *_test.py)
 
-#Run all tests including skipped ones.
-for file in $(find . -name *_test.py);
+for file in $TEST_FILES;
 do
-  dirname=$(dirname $file)
-  basename=$(basename $file)
+  EXERCISE_DIR=$(dirname $file)
+  TEST_FILE=$(basename $file)
+  EXAMPLE_FILE=$(echo $TEST_FILE | sed 's/_test//')
 
-  pushd $dirname  > /dev/null
-  example_file=$(grep -o '^from.*import.*' $basename |cut -f2 -d' ' | tail -1)
-  if [[ -z $example_file ]] || [ __future__ == $example_file ] \
-    || [ "unittest" == "$example_file" ]
+  pushd $EXERCISE_DIR  > /dev/null
+
+  # Protect Resources.
+  if [ -f $EXAMPLE_FILE ]
   then
-    example_file=$(echo $basename |cut -f1 -d'_')
+    mv $EXAMPLE_FILE ${EXAMPLE_FILE}.orig
   fi
 
-  if [ -f ${example_file}.py ]
-  then
-    cp ${example_file}.py ${example_file}.py.orig
-  fi
+  # Test.
+  cp example.py $EXAMPLE_FILE
+  sed '/@unittest.skip/d' $TEST_FILE | python
+  
+  # Cleanup.
+  rm $EXAMPLE_FILE
 
-  cp example.py ${example_file}.py
-  sed '/@unittest.skip/d' $(basename $file) | python
-  rm ${example_file}.py
-
-  if [ -f ${example_file}.py.orig ];
+  if [ -f ${EXAMPLE_FILE}.orig ];
   then
-    cp ${example_file}.py.orig ${example_file}.py
-    rm ${example_file}.py.orig
+    mv ${EXAMPLE_FILE}.orig ${EXAMPLE_FILE}
   fi
   popd > /dev/null
 done

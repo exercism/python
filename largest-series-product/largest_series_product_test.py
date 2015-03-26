@@ -8,7 +8,7 @@ Feel free to reuse your code for the series exercise!
 """
 import unittest
 
-from series import largest_product, slices
+from largest_series_product import largest_product, slices
 
 
 class SeriesTest(unittest.TestCase):

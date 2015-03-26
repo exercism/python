@@ -1,6 +1,6 @@
 import unittest
 
-from wordcount import word_count
+from word_count import word_count
 
 
 class WordCountTests(unittest.TestCase):

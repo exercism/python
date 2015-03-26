@@ -1,6 +1,6 @@
 import unittest
 
-from robot import Robot
+from robot_name import Robot
 import random
 
 

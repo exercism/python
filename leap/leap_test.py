@@ -1,6 +1,6 @@
 import unittest
 
-from year import is_leap_year
+from leap import is_leap_year
 
 
 class YearTest(unittest.TestCase):

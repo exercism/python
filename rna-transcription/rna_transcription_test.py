@@ -1,6 +1,6 @@
 import unittest
 
-from dna import to_rna
+from rna_transcription import to_rna
 
 
 class DNATests(unittest.TestCase):

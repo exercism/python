@@ -2,7 +2,7 @@ from collections import Sequence
 from types import GeneratorType
 import unittest
 
-from school import School
+from grade_school import School
 
 
 class SchoolTest(unittest.TestCase):
