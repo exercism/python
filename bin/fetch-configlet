@@ -18,7 +18,9 @@ ARCH=$(
 case $(uname -m) in
     *64*)
         echo 64bit;;
-    *32*)
+    *686*)
+        echo 32bit;;
+    *386*)
         echo 32bit;;
     *)
         echo 64bit;;
