@@ -1,27 +1,33 @@
 import unittest
 
-from scrabble import score
+from scrabble_score import score
 
 
 class WordTest(unittest.TestCase):
     def test_empty_word_scores_zero(self):
         self.assertEqual(0, score(""))
 
+    @unittest.skip("")
     def test_whitespace_scores_zero(self):
         self.assertEqual(0, score(" \t\n"))
 
+    @unittest.skip("")
     def test_scores_very_short_word(self):
         self.assertEqual(1, score('a'))
 
+    @unittest.skip("")
     def test_scores_other_very_short_word(self):
         self.assertEqual(4, score('f'))
 
+    @unittest.skip("")
     def test_simple_word_scores_the_number_of_letters(self):
         self.assertEqual(6, score("street"))
 
+    @unittest.skip("")
     def test_complicated_word_scores_more(self):
         self.assertEqual(22, score("quirky"))
 
+    @unittest.skip("")
     def test_scores_are_case_insensitive(self):
         self.assertEqual(20, score("MULTIBILLIONAIRE"))
 

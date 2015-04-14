@@ -20,47 +20,55 @@ class OcrTest(unittest.TestCase):
                                       "|_|",
                                       "   "]))
 
+    @unittest.skip("")
     def test_1(self):
         self.assertEqual('1', number(["   ",
                                       "  |",
                                       "  |",
                                       "   "]))
 
+    @unittest.skip("")
     def test_garbage(self):
         self.assertEqual('?', number([" _ ",
                                       " _|",
                                       "  |",
                                       "   "]))
 
+    @unittest.skip("")
     def test_last_line_nonblank(self):
         self.assertEqual('?', number(["   ",
                                       "  |",
                                       "  |",
                                       "| |"]))
 
+    @unittest.skip("")
     def test_unknown_char(self):
         self.assertEqual('?', number([" - ",
                                       " _|",
                                       " X|",
                                       "   "]))
 
+    @unittest.skip("")
     def test_too_short_row(self):
         self.assertRaises(ValueError, number, ["   ",
                                                " _|",
                                                " |",
                                                "   "])
 
+    @unittest.skip("")
     def test_insufficient_rows(self):
         self.assertRaises(ValueError, number, ["   ",
                                                " _|",
                                                " X|"])
 
+    @unittest.skip("")
     def test_grid0(self):
         self.assertEqual([" _ ",
                           "| |",
                           "|_|",
                           "   "], grid('0'))
 
+    @unittest.skip("")
     def test_grid1(self):
         self.assertEqual(["   ",
                           "  |",
