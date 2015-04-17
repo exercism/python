@@ -4,3 +4,5 @@
 .DS_Store
 .ropeproject
 tmp
+bin/configlet
+bin/configlet.exe
