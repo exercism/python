@@ -29,6 +29,12 @@ class SumOfMultiplesTest(unittest.TestCase):
     def test_configurable_7_13_17_to_20(self):
         self.assertEqual(51, sum_of_multiples(20, [7, 13, 17]))
 
+    def test_configurable_4_6_to_15(self):
+        self.assertEqual(30, sum_of_multiples(15, [4, 6]))
+
+    def test_configurable_5_6_8_to_150(self):
+        self.assertEqual(4419, sum_of_multiples(150, [5, 6, 8]))
+
     def test_configurable_43_47_to_10000(self):
         self.assertEqual(2203160, sum_of_multiples(10000, [43, 47]))
 
