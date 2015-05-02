@@ -63,6 +63,7 @@
     "trinary"
   ],
   "ignored": [
+    "docs",
     "test"
   ],
   "foregone": [
