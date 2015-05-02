@@ -8,7 +8,7 @@ You can either start by creating your own project for working with the Exercism 
 
 This is a Visual Studio template that comes pre-configured to work on the problems in as many languages as Visual Studio supports.
 
-![Solution Explorer](/img/setup/visualstudio/SolutionExplorer.png)
+![Solution Explorer](/img/SolutionExplorer.png)
 
 1. Download the [Exercism.io Visual Studio Template](https://github.com/rprouse/Exercism.VisualStudio) from GitHub by clicking the Download Zip button on the page.
 2. Unzip the template into your exercises directory, for example `C:\src\exercises`
@@ -23,11 +23,11 @@ This is a Visual Studio template that comes pre-configured to work on the proble
 10. The exercise you just fetched will appear greyed out. Right click on the folder and **Include In Project**
 11. Get coding...
 
-![Add files](/img/setup/visualstudio/AddFiles.png)
+![Add files](/img/AddFiles.png)
 
 To run the tests, you can do so at the command line, or within Visual Studio.
 
-![Test Explorer](/img/setup/visualstudio/TestExplorer.png)
+![Test Explorer](/img/TestExplorer.png)
 
 ## Code Style and Linting
 
