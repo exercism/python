@@ -4,6 +4,7 @@
   "repository": "https://github.com/exercism/xpython",
   "active": true,
   "problems": [
+    "hello-world",
     "bob",
     "leap",
     "word-count",
