@@ -22,7 +22,7 @@ class WordCountTests(unittest.TestCase):
             word_count('one fish two fish red fish blue fish')
         )
 
-    def test_preserves_punctuation(self):
+    def test_ignores_punctuation(self):
         self.assertEqual(
             {'car': 1, 'carpet': 1, 'as': 1, 'java': 1, 'javascript': 1},
             word_count('car : carpet as java : javascript!!&@$%^&')
