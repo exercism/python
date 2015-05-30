@@ -10,7 +10,7 @@ class BobTests(unittest.TestCase):
 
     def test_hello_without_name(self):
         self.assertEqual(
-            'Hello, world!',
+            'Hello, World!',
             hello_world.hello()
         )
     def test_hello_with_name(self):
