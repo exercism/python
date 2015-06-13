@@ -23,7 +23,7 @@ class WordTest(unittest.TestCase):
         self.assertEqual(22, score("quirky"))
 
     def test_scores_are_case_insensitive(self):
-        self.assertEqual(20, score("MULTIBILLIONAIRE"))
+        self.assertEqual(41, score("oxyphenbutazone"))
 
 if __name__ == '__main__':
     unittest.main()
