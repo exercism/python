@@ -5,12 +5,12 @@
   "active": true,
   "problems": [
     "hello-world",
-    "bob",
     "leap",
     "word-count",
     "rna-transcription",
     "hamming",
     "gigasecond",
+    "bob",
     "meetup",
     "difference-of-squares",
     "anagram",
