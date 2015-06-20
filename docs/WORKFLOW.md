@@ -49,11 +49,38 @@ $ cd exercism/python/bob
 $ py.test -x --ff bob_test.py
 ```
 
-### Running All Tests for All Exercises
+####Running All Tests for All Exercises
 
 ```bash
 $ cd exercism/python/
 $ py.test
+```
+
+####PDB
+
+Will drop you into the python debugger when a test fails.
+To learn how to use pdb, check out the [documentation](https://docs.python.org/2/library/pdb.html#debugger-commands).
+
+You may also be interested in watching [Clayton Parker's "So you think you can pdb?" PyCon 2015 talk](https://www.youtube.com/watch?v=P0pIW5tJrRM)
+
+```bash
+$ cd exercism/python/bob
+$ py.test --pdb bob_test.py
+```
+
+####PEP8
+
+PEP8 is the [python style guide](https://www.python.org/dev/peps/pep-0008/). If you would like to test for compliance to the style guide, install [pytest-pep8](https://pypi.python.org/pypi/pytest-pep8)
+
+```bash
+$ pip install pytest-pep8
+```
+
+and add the pep8 flag to your command
+
+```bash
+$ cd exercism/python/bob
+$ py.test --pep8 bob_test.py
 ```
 
 Read the [pytest documentation](http://pytest.org/latest/contents.html#toc) and [pytest-cache](http://pythonhosted.org/pytest-cache/) documentation to learn more.
