@@ -32,8 +32,10 @@ class AllergiesTests(unittest.TestCase):
              'chocolate pollen cats').split(),
             Allergies(255).list)
 
-    def test_ignore_non_allergen_score_parts(self):
-        self.assertEqual(['eggs'], Allergies(257).list)
+    # EXTRA CREDIT:
+    # This test should pass only with a specific type of solution:
+#    def test_ignore_non_allergen_score_parts(self):
+#        self.assertEqual(['eggs'], Allergies(257).list)
 
 
 if __name__ == '__main__':
