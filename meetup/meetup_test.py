@@ -56,7 +56,7 @@ class MeetupTest(unittest.TestCase):
 
     def test_nonexistent_fifth_monday_of_february_2015(self):
         self.assertRaises(MeetupDayException,
-                         meetup_day(2015, 2, 'Monday', '5th'))
+                          meetup_day(2015, 2, 'Monday', '5th'))
 
 if __name__ == '__main__':
     unittest.main()
