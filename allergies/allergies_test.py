@@ -21,19 +21,19 @@ class AllergiesTests(unittest.TestCase):
         self.assertFalse(allergies.is_allergic_to('strawberries'))
 
     def test_no_allergies_at_all(self):
-        self.assertEqual([], Allergies(0).list)
+        self.assertEqual([], Allergies(0).lst)
 
     def test_allergic_to_just_peanuts(self):
-        self.assertEqual(['peanuts'], Allergies(2).list)
+        self.assertEqual(['peanuts'], Allergies(2).lst)
 
     def test_allergic_to_everything(self):
         self.assertEqual(
-            ('eggs peanuts shellfish strawberries tomatoes '
-             'chocolate pollen cats').split(),
-            Allergies(255).list)
+            sorted(('eggs peanuts shellfish strawberries tomatoes '
+                    'chocolate pollen cats').split()),
+            sorted(Allergies(255).lst))
 
     def test_ignore_non_allergen_score_parts(self):
-        self.assertEqual(['eggs'], Allergies(257).list)
+        self.assertEqual(['eggs'], Allergies(257).lst)
 
 
 if __name__ == '__main__':

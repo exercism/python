@@ -18,6 +18,6 @@ class Allergies:
         return self.score & 1 << self._allergies.index(allergy)
 
     @property
-    def list(self):
+    def lst(self):
         return [allergy for allergy in self._allergies
                 if self.is_allergic_to(allergy)]
