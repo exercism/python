@@ -6,4 +6,3 @@ def word_count(text):
     the phrase to their respective counts
     """
     return Counter(text.split())
-    

@@ -39,18 +39,25 @@ class WordCountTests(unittest.TestCase):
             {'go': 1, 'Go': 1, 'GO': 1},
             word_count('go Go GO')
         )
-        
+
     def test_multiple_spaces(self):
       self.assertEqual(
           {'wait': 1, 'for': 1, 'it': 1},
           word_count('wait for       it')
       )
-        
+
     def test_newlines(self):
         self.assertEqual(
-            {'rah': 2, 'ah': 3, 'roma': 2, 'ma': 1, 'ga': 2, 'oh': 1, 'la': 2, 
+            {'rah': 2, 'ah': 3, 'roma': 2, 'ma': 1, 'ga': 2, 'oh': 1, 'la': 2,
             'want': 1, 'your': 1, 'bad': 1, 'romance': 1},
             word_count('rah rah ah ah ah\nroma roma ma\nga ga oh la la\nwant your bad romance')
+        )
+
+    def test_tabs(self):
+        self.assertEqual(
+            {'rah': 2, 'ah': 3, 'roma': 2, 'ma': 1, 'ga': 2, 'oh': 1, 'la': 2,
+            'want': 1, 'your': 1, 'bad': 1, 'romance': 1},
+            word_count('rah rah ah ah ah\troma roma ma\tga ga oh la la\twant your bad romance')
         )
 
 if __name__ == '__main__':
