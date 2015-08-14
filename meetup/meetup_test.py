@@ -8,6 +8,7 @@ try:
 except ImportError:
     MeetupDayException = Exception
 
+
 class MeetupTest(unittest.TestCase):
     def test_monteenth_of_may_2013(self):
         self.assertEqual(date(2013, 5, 13),
@@ -54,8 +55,8 @@ class MeetupTest(unittest.TestCase):
                          meetup_day(2015, 3, 'Monday', '5th'))
 
     def test_nonexistent_fifth_monday_of_february_2015(self):
-        self.assertRaises(MeetupDayException, meetup_day,
-                          2015, 2, 'Monday', '5th')
+        self.assertRaises(MeetupDayException,
+                          meetup_day(2015, 2, 'Monday', '5th'))
 
 if __name__ == '__main__':
     unittest.main()
