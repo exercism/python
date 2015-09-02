@@ -41,6 +41,10 @@ class CipherTest(unittest.TestCase):
         c = Cipher(key)
         self.assertEqual('gccwkixcltycv', c.encode('diffiehellman'))
 
+    def test_cipher_encode_short_key(self):
+        c = Cipher('abcd')
+        self.assertEqual('abcdabcd', c.encode('aaaaaaaa'))
+
     def test_cipher_compositiion1(self):
         key = 'duxrceqyaimciuucnelkeoxjhdyduucpmrxmaivacmybmsdrzwqxvbxsygzsabdjmdjabeorttiwinfrpmpogvabiofqexnohrqu'
         plaintext = 'adaywithoutlaughterisadaywasted'
