@@ -52,6 +52,13 @@ class CipherTest(unittest.TestCase):
         c = Cipher()
         self.assertEqual(plaintext, c.decode(c.encode(plaintext)))
 
+    def test_cipher_random_key(self):
+        c = Cipher()
+        self.assertTrue(len(c.key) >= 100,
+            'A random key must be generated when no key is given!')
+        self.assertTrue(c.key.islower() and c.key.isalpha(),
+            'All items in the key must be chars and lowercase!')
+
 
 if __name__ == '__main__':
     unittest.main()
