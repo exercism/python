@@ -5,13 +5,13 @@ import random
 
 class Cipher:
 
-    def __init__(self, k=None):
-        if k:
-            self.key = _normalize(k)
-        else:
+    def __init__(self, key=None):
+        if not key:
             random.seed(time())
-            self.key = ''.join(random.choice(ascii_lowercase)
-                               for i in range(100))
+            key = ''.join(random.choice(ascii_lowercase) for i in range(100))
+        elif not key.isalpha() or not key.islower():
+            raise ValueError('Wrong key parameter!')
+        self.key = key
 
     def base_encode(self, s, shift):
         xkey = self.key * (len(s) // len(self.key) + 1)

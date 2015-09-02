@@ -59,6 +59,10 @@ class CipherTest(unittest.TestCase):
         self.assertTrue(c.key.islower() and c.key.isalpha(),
             'All items in the key must be chars and lowercase!')
 
+    def test_cipher_wrong_key(self):
+        self.assertRaises(ValueError, Cipher, 'a1cde')
+        self.assertRaises(ValueError, Cipher, 'aBcde')
+
 
 if __name__ == '__main__':
     unittest.main()
