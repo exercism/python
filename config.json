@@ -50,7 +50,8 @@
     "ocr-numbers",
     "house",
     "triangle",
-    "zebra-puzzle"
+    "zebra-puzzle",
+    "rectangles"
   ],
   "deprecated": [
     "accumulate",
