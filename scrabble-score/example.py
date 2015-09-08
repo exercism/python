@@ -1,4 +1,4 @@
-SCRABBLE_POINTS = {
+POINTS = {
     'a': 1, 'b': 3, 'c': 3, 'd': 2, 'e': 1,
     'f': 4, 'g': 2, 'h': 4, 'i': 1, 'j': 8,
     'k': 5, 'l': 1, 'm': 3, 'n': 1, 'o': 1,
@@ -9,5 +9,6 @@ SCRABBLE_POINTS = {
 
 
 def score(word):
-    return sum(SCRABBLE_POINTS.get(letter, 0)
-               for letter in word.lower())
+    if not word.isalpha():
+        return 0
+    return sum(POINTS[letter] for letter in word.lower())
