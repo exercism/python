@@ -4,11 +4,11 @@ from scrabble import score
 
 
 class WordTest(unittest.TestCase):
-    def test_empty_word_scores_zero(self):
-        self.assertEqual(0, score(""))
-
-    def test_whitespace_scores_zero(self):
-        self.assertEqual(0, score(" \t\n"))
+    def test_invalid_word_scores_zero(self):
+        self.assertEqual(0, score(''))
+        self.assertEqual(0, score(' \t\n'))
+        self.assertEqual(0, score('hous3'))
+        self.assertEqual(0, score('wo rd'))
 
     def test_scores_very_short_word(self):
         self.assertEqual(1, score('a'))
