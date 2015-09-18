@@ -36,8 +36,8 @@ class WordCountTests(unittest.TestCase):
 
     def test_mixed_case(self):
         self.assertEqual(
-            {'go': 1, 'Go': 1, 'GO': 1},
-            word_count('go Go GO')
+            [3],
+            list(word_count('go Go GO').values())
         )
 
     def test_multiple_spaces(self):
