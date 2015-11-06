@@ -1,4 +1,5 @@
-gestures = ['wink','double blink','close your eyes','jump']
+gestures = ['wink', 'double blink', 'close your eyes', 'jump']
+
 
 def handshake(s):
     s = list(sanitize(s))
@@ -12,6 +13,7 @@ def handshake(s):
         seq.reverse()
     return seq
 
+
 def code(seq):
     if not seq or set(seq)-set(gestures):
         return '0'
@@ -19,27 +21,29 @@ def code(seq):
     if not s:
         s = ['1'] + find_subseq(reversed(seq))
     return "".join(s)
-    
+
+
 def sanitize(s):
-    if not(isinstance(s, int) or isinstance(s,str)):
+    if not(isinstance(s, int) or isinstance(s, str)):
         raise TypeError('Unknown type')
-    if isinstance(s,int):
+    if isinstance(s, int):
         if s < 0:
             return ""
         s = bin(s)[2:]
-    elif set(s)-set(['0','1']):
+    elif set(s)-set(['0', '1']):
         return ""
     if len(s) > 5:
         raise ValueError('Binary string too long')
     return "0"*(len(gestures)-len(s)) + s
-    
+
+
 def find_subseq(seq):
     idx = 0
     s = []
     for g in seq:
         if g not in gestures[idx:]:
             return []
-        newidx = gestures.index(g,idx) + 1
+        newidx = gestures.index(g, idx) + 1
         s.extend(['0']*(newidx-idx-1)+['1'])
         idx = newidx
     s.reverse()
