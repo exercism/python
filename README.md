@@ -13,8 +13,8 @@ Please see the [contributing guide](https://github.com/exercism/x-api/blob/maste
 We welcome both improvements to the existing exercises and new exercises.
 A pool of exercise ideas can be found in the [x-common repo](https://github.com/exercism/x-common).
 
-All exercises must be compatible with Python versions 2.7, 3.3 and 3.4.
-Therefore please test your changes at least with Python2.7 and Python3.4.
+All exercises must be compatible with Python versions 2.7 and 3.3 upwards.
+Therefore please test your changes at least with Python2.7 and Python3.5.
 
 To test a single exercise, say crypto-square, run:
 ```
@@ -22,7 +22,7 @@ python2.7 test/check_exercises.py crypto-square
 ```
 and
 ```
-python3.4 test/check_exercises.py crypto-square
+python3.5 test/check_exercises.py crypto-square
 ```
 
 To run the tests for all exercises type:
