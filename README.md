@@ -22,7 +22,7 @@ python2.7 test/check_exercises.py crypto-square
 ```
 and
 ```
-python3.4 test/check_exercises.py crypto-square
+python3.5 test/check_exercises.py crypto-square
 ```
 
 To run the tests for all exercises type:
