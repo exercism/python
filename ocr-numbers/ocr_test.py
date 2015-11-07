@@ -6,7 +6,6 @@ and raise ValueErrors with meaningful error messages
 if necessary.
 """
 
-import os
 import unittest
 
 from ocr import grid, number
@@ -101,7 +100,7 @@ class OcrTest(unittest.TestCase):
                           "                              "], grid(digits))
 
     def test_invalid_grid(self):
-       self.assertRaises(ValueError, grid, '123a')
+        self.assertRaises(ValueError, grid, '123a')
 
 if __name__ == '__main__':
     unittest.main()
