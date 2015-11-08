@@ -6,7 +6,6 @@ ValueError with a meaningfull error message if the
 input turns out to be malformed.
 """
 
-import os
 import unittest
 
 from minesweeper import board
@@ -34,7 +33,7 @@ class MinesweeperTest(unittest.TestCase):
 
     def test_board2(self):
         inp = ["+-----+",
-               "| * * |", 
+               "| * * |",
                "|     |",
                "|   * |",
                "|  * *|",
@@ -152,7 +151,7 @@ class MinesweeperTest(unittest.TestCase):
 
     def test_invalid_char(self):
         inp = ["+-----+",
-               "|X  * |", 
+               "|X  * |",
                "+-----+"]
         self.assertRaises(ValueError, board, inp)
 
