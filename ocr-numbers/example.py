@@ -3,7 +3,7 @@ COL = 3
 
 
 def split_ocr(ocr):
-    return [[ocr[i][COL*j:COL*(j+1)] for i in range(ROW)]
+    return [[ocr[i][COL * j:COL * (j + 1)] for i in range(ROW)]
             for j in range(len(ocr[0]) // COL)]
 
 ALL = ['    _  _     _  _  _  _  _  _ ',
