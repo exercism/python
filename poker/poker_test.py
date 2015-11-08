@@ -2,6 +2,7 @@ import unittest
 
 from poker import poker
 
+
 class PokerTest(unittest.TestCase):
     def test_one_hand(self):
         hand = '4S 5S 7H 8D JC'.split()
@@ -25,7 +26,8 @@ class PokerTest(unittest.TestCase):
     def test_two_double_pair(self):
         doublePair2and8 = '2S 8H 2S 8D JH'.split()
         doublePair4and5 = '4S 5H 4S 8D 5H'.split()
-        self.assertEqual([doublePair2and8], poker([doublePair2and8, doublePair4and5]))
+        self.assertEqual([doublePair2and8],
+                         poker([doublePair2and8, doublePair4and5]))
 
     def test_double_pair_vs_three(self):
         doublePair2and8 = '2S 8H 2S 8D JH'.split()
@@ -83,18 +85,21 @@ class PokerTest(unittest.TestCase):
     def test_square_vs_straight_flush(self):
         squareOf5 = '4S 5H 5S 5D 5H'.split()
         straightFlushTo9 = '5S 7S 8S 9S 6S'.split()
-        self.assertEqual([straightFlushTo9], poker([squareOf5, straightFlushTo9]))
+        self.assertEqual([straightFlushTo9],
+                         poker([squareOf5, straightFlushTo9]))
 
     def test_two_straight_flushes(self):
         straightFlushTo8 = '4H 6H 7H 8H 5H'.split()
         straightFlushTo9 = '5S 7S 8S 9S 6S'.split()
-        self.assertEqual([straightFlushTo9], poker([straightFlushTo8, straightFlushTo9]))
+        self.assertEqual([straightFlushTo9],
+                         poker([straightFlushTo8, straightFlushTo9]))
 
     def test_three_hand_with_tie(self):
         spadeStraightTo9 = "9S 8S 7S 6S 5S".split()
         diamondStraightTo9 = "9D 8D 7D 6D 5D".split()
         threeOf4 = "4D 4S 4H QS KS".split()
-        self.assertEqual([spadeStraightTo9, diamondStraightTo9], poker([spadeStraightTo9, diamondStraightTo9, threeOf4]))
+        self.assertEqual([spadeStraightTo9, diamondStraightTo9],
+                         poker([spadeStraightTo9, diamondStraightTo9, threeOf4]))
 
 if __name__ == '__main__':
     unittest.main()

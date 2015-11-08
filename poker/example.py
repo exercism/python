@@ -1,9 +1,10 @@
 def poker(hands):
     return allmax(hands, key=hand_rank)
 
+
 def allmax(iterable, key=None):
     result, maxval = [], None
-    key = key or (lambda x:x)
+    key = key or (lambda x: x)
     for x in iterable:
         xval = key(x)
         if not result or xval > maxval:
@@ -11,6 +12,7 @@ def allmax(iterable, key=None):
         elif xval == maxval:
             result.append(x)
     return result
+
 
 def hand_rank(hand):
     card_ranks = ["..23456789TJQKA".index(r) for r, s in hand]
