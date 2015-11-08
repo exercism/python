@@ -1,10 +1,10 @@
 ROW = 4
 COL = 3
 
+
 def split_ocr(ocr):
-    return [[ocr[i][COL*j:COL*(j+1)]
-	     for i in range(ROW)]
-	     for j in range(len(ocr[0])//COL)]
+    return [[ocr[i][COL * j:COL * (j + 1)] for i in range(ROW)]
+            for j in range(len(ocr[0]) // COL)]
 
 ALL = ['    _  _     _  _  _  _  _  _ ',
        '  | _| _||_||_ |_   ||_||_|| |',
@@ -16,7 +16,7 @@ OCR_LIST = [OCR_LIST[-1]] + OCR_LIST[:9]
 
 
 def number(ocr):
-    if (len(ocr) != ROW or len(ocr[0])%COL or
+    if (len(ocr) != ROW or len(ocr[0]) % COL or
             any(len(r) != len(ocr[0]) for r in ocr)):
         raise ValueError('Wrong grid size.')
     numbers = split_ocr(ocr)
