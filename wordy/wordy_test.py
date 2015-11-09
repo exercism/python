@@ -1,4 +1,3 @@
-import os
 import unittest
 
 from wordy import calculate
