@@ -10,10 +10,7 @@ class Triangle(object):
             raise TriangleError
 
     def _invalid_lengths(self):
-        return any([
-            side <= 0 for side in self.sides
-        ])
-        return s
+        return any([side <= 0 for side in self.sides])
 
     def _violates_inequality(self):
         x, y, z = self.sides
