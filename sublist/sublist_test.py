@@ -64,7 +64,7 @@ class SublistTest(unittest.TestCase):
         self.assertEqual(SUPERLIST, check_lists(l1, l2))
 
     def test_large_lists(self):
-        l1 = list(range(1000))*1000 + list(range(1000, 1100))
+        l1 = list(range(1000)) * 1000 + list(range(1000, 1100))
         l2 = list(range(900, 1050))
         self.assertEqual(SUPERLIST, check_lists(l1, l2))
 
