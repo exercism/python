@@ -8,6 +8,7 @@ try:
 except ImportError:
     MeetupDayException = Exception
 
+
 class MeetupTest(unittest.TestCase):
     def test_monteenth_of_may_2013(self):
         self.assertEqual(date(2013, 5, 13),
