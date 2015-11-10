@@ -6,6 +6,14 @@ python:
   - 3.4
   - 3.5
 
+install:
+  - pip install flake8
+
+before_script:
+  # ignore:
+  # * E501 - line length limit
+  - flake8 . --ignore=E501
+
 script:
   - ./test/check-exercises.py
   - ./bin/fetch-configlet
