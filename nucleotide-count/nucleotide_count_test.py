@@ -26,13 +26,14 @@ class DNATest(unittest.TestCase):
 
     def test_counts_only_thymidine(self):
         self.assertEqual(1, count('GGGGGTAACCCGG', 'T'))
-        
+
     def test_validates_nucleotides(self):
         with self.assertRaises(ValueError):
             count("GACT", 'X')
 
     def test_counts_all_nucleotides(self):
-        dna = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
+        dna = ('AGCTTTTCATTCTGACTGCAACGGGCAATATGTCT'
+               'CTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC')
         expected = {'A': 20, 'T': 21, 'G': 17, 'C': 12}
         self.assertEqual(expected, nucleotide_counts(dna))
 
