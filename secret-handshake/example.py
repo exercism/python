@@ -15,7 +15,7 @@ def handshake(s):
 
 
 def code(seq):
-    if not seq or set(seq)-set(gestures):
+    if not seq or set(seq) - set(gestures):
         return '0'
     s = find_subseq(seq)
     if not s:
@@ -30,11 +30,11 @@ def sanitize(s):
         if s < 0:
             return ""
         s = bin(s)[2:]
-    elif set(s)-set(['0', '1']):
+    elif set(s) - set(['0', '1']):
         return ""
     if len(s) > 5:
         raise ValueError('Binary string too long')
-    return "0"*(len(gestures)-len(s)) + s
+    return "0" * (len(gestures) - len(s)) + s
 
 
 def find_subseq(seq):
@@ -44,7 +44,7 @@ def find_subseq(seq):
         if g not in gestures[idx:]:
             return []
         newidx = gestures.index(g, idx) + 1
-        s.extend(['0']*(newidx-idx-1)+['1'])
+        s.extend(['0'] * (newidx - idx - 1) + ['1'])
         idx = newidx
     s.reverse()
     return s
