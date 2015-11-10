@@ -15,7 +15,7 @@ parts = [('lay in', 'the house that Jack built'),
 def verse(n):
     v = ['This is {}'.format(parts[n][1])]
     v.extend(['that {0} {1}'.format(parts[i][0], parts[i][1])
-              for i in range(n-1, -1, -1)])
+              for i in range(n - 1, -1, -1)])
     v[-1] += '.'
     return '\n'.join(v)
 
