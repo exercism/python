@@ -1,7 +1,7 @@
+import unittest
+
 from pascals_triangle import triangle, row, is_triangle
 
-import os
-import unittest
 
 class PascalsTriangleTest(unittest.TestCase):
     def test_triangle1(self):
