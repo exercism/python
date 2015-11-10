@@ -5,11 +5,11 @@ from accumulate import accumulate
 
 class AccumulateTest(unittest.TestCase):
     def test_empty_sequence(self):
-        self.assertEqual([], accumulate([], lambda x: x/2))
+        self.assertEqual([], accumulate([], lambda x: x / 2))
 
     def test_pow(self):
         self.assertEqual([1, 4, 9, 16, 25], accumulate([1, 2, 3, 4, 5],
-                         lambda x: x*x))
+                         lambda x: x * x))
 
     def test_divmod(self):
         inp = [10, 17, 23]
@@ -19,7 +19,7 @@ class AccumulateTest(unittest.TestCase):
     def test_composition(self):
         inp = [10, 17, 23]
         fn1 = lambda x: divmod(x, 7)
-        fn2 = lambda x: 7*x[0]+x[1]
+        fn2 = lambda x: 7 * x[0] + x[1]
         self.assertEqual(inp, accumulate(accumulate(inp, fn1), fn2))
 
     def test_capitalize(self):
@@ -30,7 +30,7 @@ class AccumulateTest(unittest.TestCase):
     def test_recursive(self):
         inp = list('abc')
         out = [['a1', 'a2', 'a3'], ['b1', 'b2', 'b3'], ['c1', 'c2', 'c3']]
-        fn = lambda x: accumulate(list('123'), lambda y: x+y)
+        fn = lambda x: accumulate(list('123'), lambda y: x + y)
         self.assertEqual(out, accumulate(inp, fn))
 
 
