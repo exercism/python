@@ -33,6 +33,7 @@
     "crypto-square",
     "sublist",
     "pythagorean-triplet",
+    "circular-buffer",
     "robot-name",
     "matrix",
     "nth-prime",
