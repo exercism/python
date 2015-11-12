@@ -74,8 +74,6 @@ class CircularBufferTest(unittest.TestCase):
             buf.read()
 
     def test_overwrite_non_full_buffer(self):
-        print
-        print
         buf = CircularBuffer(2)
         buf.overwrite('1')
         buf.overwrite('2')
