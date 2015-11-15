@@ -37,5 +37,9 @@ class DNATest(unittest.TestCase):
         expected = {'A': 20, 'T': 21, 'G': 17, 'C': 12}
         self.assertEqual(expected, nucleotide_counts(dna))
 
+    def test_validates_nucleotide_counts(self):
+        with self.assertRaises(ValueError):
+            nucleotide_counts('X')
+
 if __name__ == '__main__':
     unittest.main()

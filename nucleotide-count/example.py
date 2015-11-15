@@ -7,6 +7,8 @@ def count(strand, abbreviation):
 
 
 def nucleotide_counts(strand):
+    for x in strand:
+        _validate(x)
     return {
         abbr: strand.count(abbr)
         for abbr in 'ATGC'
