@@ -10,17 +10,20 @@ class RobotTest(unittest.TestCase):
     def test_has_name(self):
         self.assertRegexpMatches(Robot().name, self.name_re)
 
+    @unittest.skip('not yet implemented')
     def test_name_sticks(self):
         robot = Robot()
         robot.name
         self.assertEqual(robot.name, robot.name)
 
+    @unittest.skip('not yet implemented')
     def test_different_robots_have_different_names(self):
         self.assertNotEqual(
             Robot().name,
             Robot().name
         )
 
+    @unittest.skip('not yet implemented')
     def test_rest_name(self):
         # Set a seed
         seed = "Totally random."

@@ -10,36 +10,42 @@ class AnagramTests(unittest.TestCase):
             detect_anagrams('diaper', 'hello world zombies pants'.split())
         )
 
+    @unittest.skip('not yet implemented')
     def test_detect_simple_anagram(self):
         self.assertEqual(
             ['tan'],
             detect_anagrams('ant', 'tan stand at'.split())
         )
 
+    @unittest.skip('not yet implemented')
     def test_detect_multiple_anagrams(self):
         self.assertEqual(
             ['stream', 'maters'],
             detect_anagrams('master', 'stream pigeon maters'.split())
         )
 
+    @unittest.skip('not yet implemented')
     def test_does_not_confuse_different_duplicates(self):
         self.assertEqual(
             [],
             detect_anagrams('galea', ['eagle'])
         )
 
+    @unittest.skip('not yet implemented')
     def test_eliminate_anagram_subsets(self):
         self.assertEqual(
             [],
             detect_anagrams('good', 'dog goody'.split())
         )
 
+    @unittest.skip('not yet implemented')
     def test_detect_anagram(self):
         self.assertEqual(
             ['inlets'],
             detect_anagrams('listen', 'enlists google inlets banana'.split())
         )
 
+    @unittest.skip('not yet implemented')
     def test_multiple_anagrams(self):
         self.assertEqual(
             'gallery regally largely'.split(),
@@ -49,6 +55,7 @@ class AnagramTests(unittest.TestCase):
             )
         )
 
+    @unittest.skip('not yet implemented')
     def test_anagrams_are_case_insensitive(self):
         self.assertEqual(
             ['Carthorse'],
@@ -56,6 +63,7 @@ class AnagramTests(unittest.TestCase):
                             'cashregister Carthorse radishes'.split())
         )
 
+    @unittest.skip('not yet implemented')
     def test_same_word_isnt_anagram(self):
         self.assertEqual(
             [],

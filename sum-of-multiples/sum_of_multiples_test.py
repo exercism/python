@@ -17,30 +17,39 @@ class SumOfMultiplesTest(unittest.TestCase):
     def test_sum_to_1(self):
         self.assertEqual(0, sum_of_multiples(1))
 
+    @unittest.skip('not yet implemented')
     def test_sum_to_3(self):
         self.assertEqual(3, sum_of_multiples(4))
 
+    @unittest.skip('not yet implemented')
     def test_sum_to_10(self):
         self.assertEqual(23, sum_of_multiples(10))
 
+    @unittest.skip('not yet implemented')
     def test_sum_to_1000(self):
         self.assertEqual(233168, sum_of_multiples(1000))
 
+    @unittest.skip('not yet implemented')
     def test_configurable_7_13_17_to_20(self):
         self.assertEqual(51, sum_of_multiples(20, [7, 13, 17]))
 
+    @unittest.skip('not yet implemented')
     def test_configurable_4_6_to_15(self):
         self.assertEqual(30, sum_of_multiples(15, [4, 6]))
 
+    @unittest.skip('not yet implemented')
     def test_configurable_5_6_8_to_150(self):
         self.assertEqual(4419, sum_of_multiples(150, [5, 6, 8]))
 
+    @unittest.skip('not yet implemented')
     def test_configurable_43_47_to_10000(self):
         self.assertEqual(2203160, sum_of_multiples(10000, [43, 47]))
 
+    @unittest.skip('not yet implemented')
     def test_configurable_0_to_10(self):
         self.assertEqual(0, sum_of_multiples(10, [0]))
 
+    @unittest.skip('not yet implemented')
     def test_configurable_0_1_to_10(self):
         self.assertEqual(45, sum_of_multiples(10, [0, 1]))
 

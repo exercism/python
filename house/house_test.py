@@ -10,17 +10,20 @@ class VerseTest(unittest.TestCase):
         expected = 'This is the house that Jack built.'
         self.assertEqual(expected, verse(0))
 
+    @unittest.skip('not yet implemented')
     def test_verse_1(self):
         expected = 'This is the malt\n'\
                    'that lay in the house that Jack built.'
         self.assertEqual(expected, verse(1))
 
+    @unittest.skip('not yet implemented')
     def test_verse_2(self):
         expected = 'This is the rat\n'\
                    'that ate the malt\n'\
                    'that lay in the house that Jack built.'
         self.assertEqual(expected, verse(2))
 
+    @unittest.skip('not yet implemented')
     def test_verse_3(self):
         expected = 'This is the cat\n'\
                    'that killed the rat\n'\
@@ -28,6 +31,7 @@ class VerseTest(unittest.TestCase):
                    'that lay in the house that Jack built.'
         self.assertEqual(expected, verse(3))
 
+    @unittest.skip('not yet implemented')
     def test_verse_11(self):
         expected = 'This is the horse and the hound and the horn\n'\
                    'that belonged to the farmer sowing his corn\n'\
@@ -43,6 +47,7 @@ class VerseTest(unittest.TestCase):
                    'that lay in the house that Jack built.'
         self.assertEqual(expected, verse(11))
 
+    @unittest.skip('not yet implemented')
     def test_rhyme(self):
         expected = 'This is the house that Jack built.\n\n'\
                    'This is the malt\n'\
