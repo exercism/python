@@ -9,12 +9,14 @@ class ProverbTest(unittest.TestCase):
                    'And all for the want of a nail.'
         self.assertEqual(expected, proverb(['nail', 'shoe']))
 
+    @unittest.skip('not yet implemented')
     def test_short_list(self):
         expected = 'For want of a nail the shoe was lost.\n'\
                    'For want of a shoe the horse was lost.\n'\
                    'And all for the want of a nail.'
         self.assertEqual(expected, proverb(['nail', 'shoe', 'horse']))
 
+    @unittest.skip('not yet implemented')
     def test_long_list(self):
         expected = 'For want of a nail the shoe was lost.\n'\
                    'For want of a shoe the horse was lost.\n'\
@@ -22,11 +24,13 @@ class ProverbTest(unittest.TestCase):
                    'And all for the want of a nail.'
         self.assertEqual(expected, proverb(['nail', 'shoe', 'horse', 'rider']))
 
+    @unittest.skip('not yet implemented')
     def test_new_itens(self):
         expected = 'For want of a key the value was lost.\n'\
                    'And all for the want of a key.'
         self.assertEqual(expected, proverb(['key', 'value']))
 
+    @unittest.skip('not yet implemented')
     def test_whole_proverb(self):
         expected = 'For want of a nail the shoe was lost.\n'\
                    'For want of a shoe the horse was lost.\n'\
@@ -38,6 +42,7 @@ class ProverbTest(unittest.TestCase):
         self.assertEqual(expected, proverb(['nail', 'shoe', 'horse', 'rider',
                                             'message', 'battle', 'kingdom']))
 
+    @unittest.skip('not yet implemented')
     def test_qualifier(self):
         expected = 'For want of a nail the shoe was lost.\n'\
                    'For want of a shoe the horse was lost.\n'\

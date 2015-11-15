@@ -7,19 +7,20 @@ import hello_world
 
 
 class BobTests(unittest.TestCase):
-
     def test_hello_without_name(self):
         self.assertEqual(
             'Hello, World!',
             hello_world.hello()
         )
 
+    @unittest.skip('not yet implemented')
     def test_hello_with_name(self):
         self.assertEqual(
             'Hello, Jane!',
             hello_world.hello('Jane')
         )
 
+    @unittest.skip('not yet implemented')
     def test_hello_with_umlaut_name(self):
         self.assertEqual(
             'Hello, Jürgen!',

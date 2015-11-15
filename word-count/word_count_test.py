@@ -10,42 +10,49 @@ class WordCountTests(unittest.TestCase):
             word_count('word')
         )
 
+    @unittest.skip('not yet implemented')
     def test_count_one_of_each(self):
         self.assertEqual(
             {'one': 1, 'of': 1, 'each': 1},
             word_count('one of each')
         )
 
+    @unittest.skip('not yet implemented')
     def test_count_multiple_occurences(self):
         self.assertEqual(
             {'one': 1, 'fish': 4, 'two': 1, 'red': 1, 'blue': 1},
             word_count('one fish two fish red fish blue fish')
         )
 
+    @unittest.skip('not yet implemented')
     def test_preserves_punctuation(self):
         self.assertEqual(
             {'car': 1, 'carpet': 1, 'as': 1, 'java': 1, ':': 2, 'javascript!!&@$%^&': 1},
             word_count('car : carpet as java : javascript!!&@$%^&')
         )
 
+    @unittest.skip('not yet implemented')
     def test_include_numbers(self):
         self.assertEqual(
             {'testing': 2, '1': 1, '2': 1},
             word_count('testing 1 2 testing')
         )
 
+    @unittest.skip('not yet implemented')
     def test_mixed_case(self):
         self.assertEqual(
             [3],
             list(word_count('go Go GO').values())
         )
 
+    @unittest.skip('not yet implemented')
     def test_multiple_spaces(self):
         self.assertEqual(
             {'wait': 1, 'for': 1, 'it': 1},
             word_count('wait for       it')
         )
 
+    @unittest.skip('not yet implemented')
     def test_newlines(self):
         self.assertEqual(
             {'rah': 2, 'ah': 3, 'roma': 2, 'ma': 1, 'ga': 2, 'oh': 1, 'la': 2,
@@ -54,6 +61,7 @@ class WordCountTests(unittest.TestCase):
                        'ga ga oh la la\nwant your bad romance')
         )
 
+    @unittest.skip('not yet implemented')
     def test_tabs(self):
         self.assertEqual(
             {'rah': 2, 'ah': 3, 'roma': 2, 'ma': 1, 'ga': 2, 'oh': 1, 'la': 2,

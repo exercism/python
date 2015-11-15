@@ -10,12 +10,14 @@ class TransformTest(unittest.TestCase):
 
         self.assertEqual(expected, etl.transform(old))
 
+    @unittest.skip('not yet implemented')
     def test_transform_more_values(self):
         old = {1: ['WORLD', 'GSCHOOLERS']}
         expected = {'world': 1, 'gschoolers': 1}
 
         self.assertEqual(expected, etl.transform(old))
 
+    @unittest.skip('not yet implemented')
     def test_more_keys(self):
         old = {1: ['APPLE', 'ARTICHOKE'], 2: ['BOAT', 'BALLERINA']}
         expected = {
@@ -27,6 +29,7 @@ class TransformTest(unittest.TestCase):
 
         self.assertEqual(expected, etl.transform(old))
 
+    @unittest.skip('not yet implemented')
     def test_full_dataset(self):
         old = {
             1: "AEIOULNRST",
