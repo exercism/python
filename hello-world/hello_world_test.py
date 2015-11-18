@@ -6,7 +6,7 @@ import unittest
 import hello_world
 
 
-class BobTests(unittest.TestCase):
+class HelloWorldTests(unittest.TestCase):
 
     def test_hello_without_name(self):
         self.assertEqual(
@@ -14,10 +14,16 @@ class BobTests(unittest.TestCase):
             hello_world.hello()
         )
 
-    def test_hello_with_name(self):
+    def test_hello_with_sample_name(self):
         self.assertEqual(
-            'Hello, Jane!',
-            hello_world.hello('Jane')
+            'Hello, Alice!',
+            hello_world.hello('Alice')
+        )
+
+    def test_hello_with_other_sample_name(self):
+        self.assertEqual(
+            'Hello, Bob!',
+            hello_world.hello('Bob')
         )
 
     def test_hello_with_umlaut_name(self):
