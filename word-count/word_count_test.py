@@ -4,6 +4,7 @@ from wordcount import word_count
 
 
 class WordCountTests(unittest.TestCase):
+
     def test_count_one_word(self):
         self.assertEqual(
             {'word': 1},
@@ -36,8 +37,8 @@ class WordCountTests(unittest.TestCase):
 
     def test_mixed_case(self):
         self.assertEqual(
-            [3],
-            list(word_count('go Go GO').values())
+            [2, 3],
+            sorted(list(word_count('go Go GO Stop stop').values()))
         )
 
     def test_multiple_spaces(self):
