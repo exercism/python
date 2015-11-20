@@ -25,7 +25,7 @@ class WordCountTests(unittest.TestCase):
 
     def test_preserves_punctuation(self):
         self.assertEqual(
-            {'car': 1, 'carpet': 1, 'as': 1, 'java': 1, ':': 2, 'javascript!!&@$%^&': 1},
+            {'car': 1, 'carpet': 1, 'as': 1, 'java': 1, 'javascript': 1},
             word_count('car : carpet as java : javascript!!&@$%^&')
         )
 
@@ -61,6 +61,12 @@ class WordCountTests(unittest.TestCase):
              'want': 1, 'your': 1, 'bad': 1, 'romance': 1},
             word_count('rah rah ah ah ah\troma roma ma\tga ga oh la la\t'
                        'want your bad romance')
+        )
+
+    def test_non_alphanumeric(self):
+        self.assertEqual(
+            {'hey': 1, 'my': 1, 'spacebar': 1, 'is': 1, 'broken': 1},
+            word_count('hey,my_spacebar_is_broken.')
         )
 
 if __name__ == '__main__':
