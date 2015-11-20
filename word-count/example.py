@@ -2,7 +2,6 @@ from collections import Counter
 
 
 def word_count(text):
-    """Return a Counter object that maps from the words contained in
-    the phrase to their respective counts
-    """
-    return Counter(text.lower().split())
+    replace_nonalpha = lambda c: c.lower() if c.isalnum() else ' '
+    text = ''.join(replace_nonalpha(c) for c in text)
+    return Counter(text.split())
