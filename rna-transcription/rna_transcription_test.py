@@ -18,7 +18,7 @@ class DNATests(unittest.TestCase):
         self.assertEqual('U', to_rna('A'))
 
     def test_transcribes_all_occurences(self):
-        self.assertEqual('UGCACCAGAAUU', to_rna('ACGTGGTCTTAA'))
+        self.assertMultiLineEqual('UGCACCAGAAUU', to_rna('ACGTGGTCTTAA'))
 
 
 if __name__ == '__main__':
