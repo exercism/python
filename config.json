@@ -6,9 +6,10 @@
   "problems": [
     "hello-world",
     "leap",
-    "word-count",
+    "pangram",
     "rna-transcription",
     "hamming",
+    "word-count",
     "gigasecond",
     "bob",
     "meetup",
