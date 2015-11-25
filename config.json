@@ -30,6 +30,7 @@
     "luhn",
     "etl",
     "prime-factors",
+    "pig-latin",
     "simple-cipher",
     "scrabble-score",
     "crypto-square",
