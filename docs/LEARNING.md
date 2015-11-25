@@ -14,5 +14,7 @@ With this premise, a good, beginner friendly, starting point for those who don't
 - [Python3 Beginner Tutorial](https://www.youtube.com/playlist?list=PL1A2CSdiySGJd0LJRRSwQZbPZaDP0q67j)
 - [Learn Python The Hard Way (Book)](http://learnpythonthehardway.org/book/)
 - [Offical Python3 **Documentation** and **Reference**](https://docs.python.org/3/)
+- [The Python3 Tutorial](https://docs.python.org/3/tutorial/)
 - [Learn X in Y minutes (where X = Python3)](https://learnxinyminutes.com/docs/python3/)
 - [The Hitchhiker’s Guide to Python](http://docs.python-guide.org/en/latest/)
+- [Think Python](http://www.greenteapress.com/thinkpython/html/index.html)
