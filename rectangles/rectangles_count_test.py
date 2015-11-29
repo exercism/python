@@ -8,12 +8,8 @@ class WordTest(unittest.TestCase):
     def test_zero_area_1(self):
         assert 0 == count()
 
-    def test_zero_area_2(self):
-        lines = ""
-        assert 0 == count(lines)
-
     def test_empty_area(self):
-        lines = " "
+        lines = []
         assert 0 == count(lines)
 
     def test_one_rectangle(self):
