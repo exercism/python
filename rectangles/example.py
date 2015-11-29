@@ -12,26 +12,19 @@ class corners():
 
 
 # return corner on the same line
-def same_line(index, list):
-    for c in list:
-        if c.i == index:
-            return c
+def same_line(index, items):
+    return next((c for c in items if c.i == index), None)
 
 
 # return corner on the same column
-def same_col(index, list):
-    for c in list:
-        if c.j == index:
-            return c
+def same_col(index, items):
+    return next((c for c in items if c.j == index), None)
 
 
-def search_corners(input):
-    corner_list = []
-    for i in range(0, len(input)):
-        for j in range(0, len(input[i])):
-            if (input[i][j] == "+"):
-                corner_list.append(corners(i, j))
-    return corner_list
+def search_corners(table):
+    return [corners(i, j) for i, row in enumerate(table)
+            for j, col in enumerate(row)
+            if col == "+"]
 
 
 # validate that 4 points form a
@@ -51,24 +44,20 @@ def possible_rect(quartet):
     dy = abs(quartet[0].j - mid_y)
 
     # Check all the same distance from centroid are equals
-    for i in range(1, len(quartet)):
-        if abs(quartet[i].i - mid_x) != dx or abs(quartet[i].j - mid_y) != dy:
-            return False
-    return True
+    return all(dx == abs(c.i - mid_x) and dy == abs(c.j - mid_y)
+               for c in quartet[1:])
 
 
 # validate path between two corners
-def path(c1, c2, input):
+def path(c1, c2, table):
     if c1.i == c2.i:
-        for j in range(min(c1.j + 1, c2.j + 1), max(c1.j, c2.j)):
-            if input[c1.i][j] != "-" and input[c1.i][j] != "+":
-                return False
-        return True
+        bounds = (min(c1.j + 1, c2.j + 1), max(c1.j, c2.j))
+        return all(table[c1.i][j] in "-+" for j in range(*bounds))
     elif c1.j == c2.j:
-        for i in range(min(c1.i + 1, c2.i + 1), max(c1.i, c2.i)):
-            if input[i][c1.j] != "|" and input[i][c1.j] != "+":
-                return False
-        return True
+        bounds = (min(c1.i + 1, c2.i + 1), max(c1.i, c2.i))
+        return all(table[i][c1.j] in "|+" for i in range(*bounds))
+    else:
+        return False
 
 
 # validate path of rectangle
@@ -86,26 +75,16 @@ def validate_rect(rect, input):
 # count number of rectangles
 # inside ASCII in input lines
 def count(lines=""):
-    nb_rect = 0
     # test empty str
-    if lines == "":
-        return nb_rect
+    if not lines:
+        return 0
 
     corners = search_corners(lines)
-    # no corners in str
-    if len(corners) == 0:
-        return nb_rect
 
-    # now let the magic begins
+    # now let the magic begin
     # all combinations of 4 corners (python ftw)
-    q = list(itertools.combinations(corners, r=4))
-    rectangles = []
-    for el in q:
-        if (possible_rect(el)):
-            rectangles.append(el)
+    rectangles = (c for c in itertools.combinations(corners, r=4)
+                  if possible_rect(c))
 
     # validate path in found rectangles
-    for rect in rectangles:
-        if (validate_rect(rect, lines)):
-            nb_rect = nb_rect + 1
-    return nb_rect
+    return len([r for r in rectangles if validate_rect(r, lines)])
