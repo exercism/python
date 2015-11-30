@@ -23,6 +23,9 @@ class SumOfMultiplesTest(unittest.TestCase):
     def test_sum_to_10(self):
         self.assertEqual(23, sum_of_multiples(10))
 
+    def test_sum_to_100(self):
+        self.assertEqual(2318, sum_of_multiples(100))
+
     def test_sum_to_1000(self):
         self.assertEqual(233168, sum_of_multiples(1000))
 
