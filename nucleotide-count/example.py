@@ -1,4 +1,4 @@
-NUCLEOTIDES = 'ATCGU'
+NUCLEOTIDES = 'ATCG'
 
 
 def count(strand, abbreviation):
@@ -9,7 +9,7 @@ def count(strand, abbreviation):
 def nucleotide_counts(strand):
     return {
         abbr: strand.count(abbr)
-        for abbr in 'ATGC'
+        for abbr in NUCLEOTIDES
     }
 
 
