@@ -10,6 +10,7 @@ from binary import parse_binary
 
 
 class BinaryTests(unittest.TestCase):
+
     def test_binary_1_is_decimal_1(self):
         self.assertEqual(1, parse_binary("1"))
 
@@ -31,11 +32,17 @@ class BinaryTests(unittest.TestCase):
     def test_binary_10001101000_is_decimal_1128(self):
         self.assertEqual(1128, parse_binary("10001101000"))
 
-    def test_invalid_binary_raises_error(self):
+    def test_invalid_binary_text_only(self):
         self.assertRaises(ValueError, parse_binary, "carrot")
 
-    def test_invalid_binary_raises_error_2(self):
+    def test_invalid_binary_number_not_base2(self):
         self.assertRaises(ValueError, parse_binary, "102011")
+
+    def test_invalid_binary_numbers_with_text(self):
+        self.assertRaises(ValueError, parse_binary, "10nope")
+
+    def test_invalid_binary_text_with_numbers(self):
+        self.assertRaises(ValueError, parse_binary, "nope10")
 
 if __name__ == '__main__':
     unittest.main()
