@@ -1,5 +1,7 @@
 If Python isn't already available on your system follow the instructions at [the Hitchhiker's Guide to Python](http://docs.python-guide.org/en/latest/#getting-started) to install Python on your computer.
 
+If you intend to use Python for scientific computing or data analytics, consider instead installing the [Anaconda or Miniconda versions](https://www.continuum.io/downloads), in which additional relevant packages have been bundled in the installation.
+
 Exercism currently supports Python3.4, Python3.3 and Python2.7.
 
 
