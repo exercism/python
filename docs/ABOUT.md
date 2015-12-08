@@ -1,5 +1,3 @@
-##  About Python
-
 Python is a powerful programming language, it is well known as a "glue" that means: it is used with many other technologies. It is multi platform, runs everywhere. Is friendly and easy to learn. It is licensed as open source, most versions are compatible with the GPL with a few exceptions on old versions. But, one of the most cool things about Python is the community that is very helpful and collaborative. Take a look at: [About python](https://www.python.org/about/).
 
 
