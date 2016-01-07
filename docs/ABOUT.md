@@ -1,4 +1,4 @@
-Python is an exceptionally strong language for beginners because the code is highly readable and in many cases is as natural as reading a sentence in English. Code can be written and executed from the command line, in an interaction iPython session, or in a [Jupyter](http://jupyter.org) (iPython) notebook.
+Python is a strong language for beginners. There are many resources available for programmers of all levels, the code is highly readable, and in many cases phrases are comparable to those in the English language. Code can be written and executed from the command line, in an interactive iPython session, or in a [Jupyter](http://jupyter.org) (iPython) notebook.
 
 The most common form of Python is compiled in C. This is often invisible to the beginning programmer, but if there are uses for which exceptionally fast implementation is needed then C extensions can be written to optimize Python execution.
 
