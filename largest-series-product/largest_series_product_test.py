@@ -34,6 +34,12 @@ class SeriesTest(unittest.TestCase):
         series = "52677741234314237566414902593461595376319419139427"
         self.assertEqual(28350, largest_product(series, 6))
 
+    def test_string_with_all_zeroes(self):
+        self.assertEqual(0, largest_product("0000", 2))
+
+    def test_string_where_all_spans_contain_zero(self):
+        self.assertEqual(0, largest_product("99099", 3))
+
     def test_identity_with_empty_string(self):
         self.assertEqual(1, largest_product("", 0))
 
