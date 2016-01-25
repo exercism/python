@@ -10,6 +10,7 @@ def decode_if_needed(string):
 
 
 def word_count(text):
-    replace_nonalpha = lambda c: c.lower() if c.isalnum() else ' '
+    def replace_nonalpha(char):
+        return char.lower() if char.isalnum() else ' '
     text = ''.join(replace_nonalpha(c) for c in decode_if_needed(text))
     return Counter(text.split())
