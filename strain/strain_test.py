@@ -24,8 +24,7 @@ class StrainTest(unittest.TestCase):
     def test_discard_endswith(self):
         inp = ['dough', 'cash', 'plough', 'though', 'through', 'enough']
         out = ['cash']
-        fn = lambda x: str.endswith(x, 'ough')
-        self.assertEqual(out, discard(inp, fn))
+        self.assertEqual(out, discard(inp, lambda x: str.endswith(x, 'ough')))
 
     def test_keep_z(self):
         inp = ['zebra', 'arizona', 'apple', 'google', 'mozilla']
