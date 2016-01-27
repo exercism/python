@@ -7,6 +7,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import json
 
 
 def check_assignment(name, test_file, example_name):
@@ -54,19 +55,38 @@ def assignment_name(test_file):
 
 
 def main():
+    with open('./config.json') as json_file:
+        data = json.load(json_file)
+
+    problems = data['problems']
+    deprecated_problems = data['deprecated']
+
     if len(sys.argv) == 2:  # test a specific exercise
         exercise_path = sys.argv[1].strip('/')
-        test_file = glob.glob('./exercises/{}/*_test.py'.format(exercise_path))[0]
-        check_assignment(assignment_name(test_file), test_file,
-                         modname_heuristic(test_file))
+
+        test_file = None
+        if exercise_path in problems:
+            test_file = glob.glob(
+                './exercises/' + exercise_path + '/*_test.py'.format(exercise_path)
+            )[0]
+
+            check_assignment(assignment_name(test_file), test_file, modname_heuristic(test_file))
+        elif exercise_path in deprecated_problems:
+            print('This exercise is deprecated.')
+        else:
+            print('This exercise does not exist.')
     else:
         failures = []
-        for test_file in glob.glob('./exercises/*/*_test.py'):
+
+        for exercise in problems:
+            test_file = glob.glob('./exercises/' + exercise + '/*_test.py')[0]
+
             name = assignment_name(test_file)
             print('# ' + name)
             if check_assignment(name, test_file, modname_heuristic(test_file)):
                 failures.append(name)
             print('')
+
         if failures:
             print('FAILURES: ' + ' '.join(failures))
             raise SystemExit(1)
