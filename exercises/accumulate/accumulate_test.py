@@ -18,8 +18,8 @@ class AccumulateTest(unittest.TestCase):
 
     def test_composition(self):
         inp = [10, 17, 23]
-        self.assertEqual(inp, accumulate(accumulate(inp, lambda x: divmod(x, 7)),
-                         lambda x: 7 * x[0] + x[1]))
+        self.assertEqual(inp, accumulate(accumulate(inp, lambda x:
+                         divmod(x, 7)), lambda x: 7 * x[0] + x[1]))
 
     def test_capitalize(self):
         inp = ['hello', 'world']
