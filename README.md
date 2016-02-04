@@ -18,16 +18,16 @@ Therefore please test your changes at least with Python2.7 and Python3.5.
 
 To test a single exercise, say crypto-square, run:
 ```
-python2.7 test/check_exercises.py crypto-square
+python2.7 test/check-exercises.py crypto-square
 ```
 and
 ```
-python3.5 test/check_exercises.py crypto-square
+python3.5 test/check-exercises.py crypto-square
 ```
 
 To run the tests for all exercises type:
 ```
-python test/check_exercises.py
+python test/check-exercises.py
 ```
 
 ## Code Style
