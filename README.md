@@ -1,6 +1,6 @@
 # xPython
 
-[![Build Status](https://travis-ci.org/exercism/xpython.png?branch=master)](https://travis-ci.org/exercism/xpython)
+[![Build Status](https://travis-ci.org/exercism/xpython.png?branch=master)](https://travis-ci.org/exercism/xpython) [![Requirements Status](https://requires.io/github/exercism/xpython/requirements.svg?branch=master)](https://requires.io/github/exercism/xpython/requirements/?branch=master)
 
 Exercism exercises in Python
 
