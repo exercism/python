@@ -9,9 +9,7 @@ python:
   - 3.5
 
 install:
-  - pip install "flake8>=2.5,<2.5.99"
-  - pip install "pep8>=1.7,<1.7.99"
-  - pip install "pyflakes>=1.0,<1.0.99"
+  - pip install -r requirements-travis.txt
 
 before_script:
   - flake8 ./exercises/ --max-line-length=99 --select=E,W
