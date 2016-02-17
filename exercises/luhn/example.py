@@ -10,10 +10,10 @@ class Luhn(object):
                 for i, n in enumerate(old_digits, start=len(old_digits) % 2)]
 
     def checksum(self):
-        return sum(self.addends()) % 10
+        return sum(self.addends())
 
     def is_valid(self):
-        return self.checksum() == 0
+        return self.checksum() % 10 == 0
 
     @staticmethod
     def create(n):

@@ -16,10 +16,10 @@ class LuhnTests(unittest.TestCase):
                          Counter(Luhn(8631).addends()))
 
     def test_checksum1(self):
-        self.assertEqual(2, Luhn(4913).checksum())
+        self.assertEqual(22, Luhn(4913).checksum())
 
     def test_ckecksum2(self):
-        self.assertEqual(1, Luhn(201773).checksum())
+        self.assertEqual(21, Luhn(201773).checksum())
 
     def test_invalid_number(self):
         self.assertFalse(Luhn(738).is_valid())
