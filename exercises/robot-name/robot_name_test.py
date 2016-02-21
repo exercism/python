@@ -21,7 +21,7 @@ class RobotTest(unittest.TestCase):
             Robot().name
         )
 
-    def test_rest_name(self):
+    def test_reset_name(self):
         # Set a seed
         seed = "Totally random."
 
