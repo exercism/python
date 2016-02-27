@@ -2,7 +2,7 @@
 
 First of all, install `pytest` through `pip`.
 ```
-pip3 install pytest
+pip install pytest
 ```
 In case your system wouldn't be able to find `pip` and return a _command not found_, response,  [here](https://pip.pypa.io/en/stable/installing/) you can find a tutorial on how to install it.
 
