@@ -1,26 +1,17 @@
 """Tests for the largest-series-product exercise
 
 Implementation note:
-In case of invalid inputs to the 'slices' or 'largest_product' functions
+In case of invalid inputs to the 'largest_product' function
 your program should raise a ValueError with a meaningful error message.
 
 Feel free to reuse your code for the series exercise!
 """
 import unittest
 
-from series import largest_product, slices
+from series import largest_product
 
 
 class SeriesTest(unittest.TestCase):
-    def test_slices_of_two(self):
-        self.assertEqual([[9, 7], [7, 8], [8, 6], [6, 7],
-                          [7, 5], [5, 6], [6, 4]],
-                         slices("97867564", 2))
-
-    def test_overly_long_slice(self):
-        with self.assertRaises(ValueError):
-            slices("012", 4)
-
     def test_largest_product_of_2(self):
         self.assertEqual(72, largest_product("0123456789", 2))
 
