@@ -10,39 +10,41 @@ class SchoolTest(unittest.TestCase):
         self.school = School("Haleakala Hippy School")
 
     def test_an_empty_school(self):
-        self.assertEqual({}, self.school.db)
+        for n in range(1,9):
+            self.assertItemsEqual(set(), self.school.grade(n))
 
     def test_add_student(self):
         self.school.add("Aimee", 2)
-        self.assertEqual({2: {"Aimee"}}, self.school.db)
+        self.assertItemsEqual(("Aimee",), self.school.grade(2))
 
     def test_add_more_students_in_same_class(self):
         self.school.add("James", 2)
         self.school.add("Blair", 2)
         self.school.add("Paul", 2)
-        self.assertEqual({2: {"James", "Blair", "Paul"}}, self.school.db)
+        self.assertItemsEqual(("James", "Blair", "Paul"), self.school.grade(2))
 
     def test_add_students_to_different_grades(self):
         self.school.add("Chelsea", 3)
         self.school.add("Logan", 7)
-        self.assertEqual({3: {"Chelsea"}, 7: {"Logan"}}, self.school.db)
+        self.assertItemsEqual(("Chelsea",), self.school.grade(3))
+        self.assertItemsEqual(("Logan",), self.school.grade(7))
 
     def test_get_students_in_a_grade(self):
         self.school.add("Franklin", 5)
         self.school.add("Bradley", 5)
         self.school.add("Jeff", 1)
-        self.assertEqual({"Franklin", "Bradley"}, self.school.grade(5))
+        self.assertItemsEqual(("Franklin", "Bradley"), self.school.grade(5))
 
     def test_get_students_in_a_non_existant_grade(self):
-        self.assertEqual(set(), self.school.grade(1))
+        self.assertItemsEqual(set(), self.school.grade(1))
 
     def test_sort_school(self):
-        students = [
+        
+students = [
             (3, ("Kyle",)),
             (4, ("Christopher", "Jennifer",)),
             (6, ("Kareem",))
         ]
-
         for grade, students_in_grade in students:
             for student in students_in_grade:
                 self.school.add(student, grade)
