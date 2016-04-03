@@ -7,6 +7,7 @@ from school import School
 
 class SchoolTest(unittest.TestCase):
     def setUp(self):
+        # assertCountEqual is py3, py2 only knowns assetItemsEqual
         if not hasattr(self, 'assertCountEqual'):
             self.assertCountEqual = self.assertItemsEqual
         self.school = School("Haleakala Hippy School")
