@@ -48,7 +48,7 @@ If there are more details to add, put those into the body of the commit message.
 
 If you're interested, Tim Pope even has an [entire blog post](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html) on good commit messages.
 
-If you're new to Git take a look at [this short guide](http://help.exercism.io/git-workflow.html).
+If you're new to Git take a look at [this short guide](https://github.com/exercism/x-common/blob/master/CONTRIBUTING.md#git-basics).
 
 ## License
 
