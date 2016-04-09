@@ -14,6 +14,10 @@ class PangramTests(unittest.TestCase):
         self.assertTrue(
             is_pangram('the quick brown fox jumps over the lazy dog'))
 
+    def test_invalid_pangram(self):
+        self.assertFalse(
+            is_pangram('the quick brown fish jumps over the lazy dog'))
+
     def test_missing_x(self):
         self.assertFalse(is_pangram('a quick movement of the enemy will '
                                     'jeopardize five gunboats'))
