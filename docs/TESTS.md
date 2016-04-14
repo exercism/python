@@ -5,8 +5,7 @@ We recommend you install [pytest](http://pytest.org/latest/) and
 tool that will give you more flexibility over running your unit tests.
 
 ```bash
-pip install
-pytest pytest-cache
+pip install pytest pytest-cache
 ```
 
 If you get a `command not found` response from your system, you can find a
