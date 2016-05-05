@@ -70,7 +70,8 @@ py.test --ff bob_test.py
 ### Running All Tests for All Exercises
 
 ```bash
-cd exercism/python/ py.test
+cd exercism/python/
+py.test
 ```
 
 ## Recommended Workflow
@@ -78,7 +79,8 @@ cd exercism/python/ py.test
 We recommend you run this command while working on exercises.
 
 ```bash
-cd exercism/python/bob py.test -x --ff bob_test.py
+cd exercism/python/bob
+py.test -x --ff bob_test.py
 ```
 
 ## PDB
