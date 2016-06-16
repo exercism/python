@@ -74,7 +74,8 @@
   ],
   "ignored": [
     "docs",
-    "test"
+    "test",
+    "img"
   ],
   "foregone": [
 
