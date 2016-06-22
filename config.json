@@ -6,6 +6,7 @@
   "problems": [
     "hello-world",
     "leap",
+    "clock",
     "pangram",
     "rna-transcription",
     "hamming",
