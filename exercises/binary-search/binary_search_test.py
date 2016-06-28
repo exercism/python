@@ -9,7 +9,7 @@ class BinarySearchTests(unittest.TestCase):
         self.assertEqual(False, list_sorted([3,1,4,5,6]))
 
     def test_raises_value_error_if_not_sorted(self):
-        self.assertRaises(ValueError, binary_search([44,5,2,1,4], 6))
+        self.assertRaises(ValueError, binary_search,[44,5,2,1,4], 6)
 
     def test_list_item_not_found(self):
         self.assertEqual("Item not found", binary_search([1,2,3,4,5,6], 23))

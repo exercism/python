@@ -1,7 +1,7 @@
 
 def binary_search(search_list, value):
     if not list_sorted(search_list):
-        raise ValueError("This shit ain't sorted")
+        raise ValueError("The list must be sorted")
     else:
         low = 0
         high = len(search_list) - 1
