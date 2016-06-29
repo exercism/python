@@ -1,6 +1,6 @@
 import unittest
 
-from example import binary_search, list_sorted
+from example import binary_search
 
 
 class BinarySearchTests(unittest.TestCase):
@@ -12,7 +12,7 @@ class BinarySearchTests(unittest.TestCase):
         self.assertRaises(ValueError, binary_search, [],1)
 
     def test_list_item_not_found(self):
-        self.assertEqual("Item not found",
+        self.assertEqual("Item not found.",
                          binary_search([1, 2, 3, 4, 5, 6], 23))
 
     def test_list_item_found(self):
