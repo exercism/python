@@ -16,7 +16,7 @@ def binary_search(search_list, value):
 
 
 def list_sorted(search_list):
-    if not all(search_list[i] <= search_list[i + 1] for i in xrange(len(search_list) - 1)):
+    if not all(search_list[i] <= search_list[i + 1] for i in range(len(search_list) - 1)):
         raise ValueError("This list must be sorted.")
 
 
