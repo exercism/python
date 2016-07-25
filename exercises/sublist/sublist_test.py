@@ -4,6 +4,9 @@ from sublist import check_lists, SUBLIST, SUPERLIST, EQUAL, UNEQUAL
 
 
 class SublistTest(unittest.TestCase):
+    def test_unique_return_vals(self):
+        self.assertEqual(4, len(set([SUBLIST, SUPERLIST, EQUAL, UNEQUAL])))
+
     def test_empty_lists(self):
         self.assertEqual(EQUAL, check_lists([], []))
 
