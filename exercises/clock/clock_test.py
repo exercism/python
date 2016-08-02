@@ -122,7 +122,7 @@ class ClockTest(unittest.TestCase):
         self.assertNotEqual(Clock(14, 37), Clock(15, 37))
 
     def test_clocks_with_hour_overflow(self):
-        self.assertNotEqual(Clock(10, 37), Clock(34, 37))
+        self.assertEqual(Clock(10, 37), Clock(34, 37))
 
     def test_clocks_with_hour_overflow_by_several_days(self):
         self.assertEqual(Clock(3, 11), Clock(99, 11))
