@@ -1,7 +1,10 @@
 import unittest
 
-from circular_buffer import CircularBuffer
-from circular_buffer import BufferFullException, BufferEmptyException
+from circular_buffer import (
+    CircularBuffer,
+    BufferFullException,
+    BufferEmptyException
+)
 
 
 class CircularBufferTest(unittest.TestCase):

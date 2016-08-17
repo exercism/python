@@ -1,6 +1,6 @@
 import unittest
 
-from natural_numbers import is_perfect
+from perfect_numbers import is_perfect
 
 
 class PerfectNumbersTest(unittest.TestCase):

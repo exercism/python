@@ -1,6 +1,6 @@
 import unittest
 
-import roman
+import roman_numerals
 
 
 class RomanTest(unittest.TestCase):

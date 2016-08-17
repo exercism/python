@@ -6,7 +6,7 @@ in case of a bad argument.
 """
 import unittest
 
-from dna import count, nucleotide_counts
+from nucleotide_count import count, nucleotide_counts
 
 
 class DNATest(unittest.TestCase):

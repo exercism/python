@@ -1,6 +1,6 @@
 import unittest
 
-from beer import song, verse
+from beer_song import song, verse
 
 
 class BeerTest(unittest.TestCase):

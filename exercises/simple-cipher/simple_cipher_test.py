@@ -1,6 +1,6 @@
 import unittest
 
-from cipher import Caesar, Cipher
+from simple_cipher import Caesar, Cipher
 
 
 class CipherTest(unittest.TestCase):

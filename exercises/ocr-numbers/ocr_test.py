@@ -8,7 +8,7 @@ if necessary.
 
 import unittest
 
-from ocr import grid, number
+from ocr_numbers import grid, number
 
 
 class OcrTest(unittest.TestCase):

@@ -1,6 +1,6 @@
 import unittest
 
-from handshake import handshake, code
+from secret_handshake import handshake, code
 
 
 class HandshakeTest(unittest.TestCase):

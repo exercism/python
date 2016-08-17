@@ -1,6 +1,6 @@
 import unittest
 
-from dna import hamming_distance
+from point_mutations import hamming_distance
 
 
 class DNATest(unittest.TestCase):
