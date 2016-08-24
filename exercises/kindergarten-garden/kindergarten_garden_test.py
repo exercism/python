@@ -1,6 +1,6 @@
 import unittest
 
-from garden import Garden
+from kindergarten_garden import Garden
 
 
 class KindergartenGardenTests(unittest.TestCase):

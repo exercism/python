@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from wordcount import word_count
+from word_count import word_count
 
 
 # to be backwards compatible with the old Python 2.X

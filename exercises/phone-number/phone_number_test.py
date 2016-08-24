@@ -1,6 +1,6 @@
 import unittest
 
-from phone import Phone
+from phone_number import Phone
 
 
 class PhoneTest(unittest.TestCase):

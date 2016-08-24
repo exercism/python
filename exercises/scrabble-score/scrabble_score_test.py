@@ -1,6 +1,6 @@
 import unittest
 
-from scrabble import score
+from scrabble_score import score
 
 
 class WordTest(unittest.TestCase):

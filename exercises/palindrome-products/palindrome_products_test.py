@@ -13,7 +13,7 @@ palindrome in arbitrary order.
 
 import unittest
 
-from palindrome import smallest_palindrome, largest_palindrome
+from palindrome_products import smallest_palindrome, largest_palindrome
 
 
 class PalindromesTests(unittest.TestCase):
