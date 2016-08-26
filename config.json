@@ -80,8 +80,13 @@
     },
     {
       "slug": "clock",
-      "difficulty": 1,
+      "difficulty": 2,
       "topics": [
+          "classes",
+          "time",
+          "mathematics",
+          "logic",
+          "text formatting"
       ]
     },
     {
