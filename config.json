@@ -79,6 +79,9 @@
       "slug": "leap",
       "difficulty": 1,
       "topics": [
+          "control-flow (if-else statements)",
+          "booleans",
+          "logic"
       ]
     },
     {
