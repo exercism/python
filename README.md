@@ -7,7 +7,7 @@ Exercism exercises in Python
 
 ## Contributing Guide
 
-Please see the [contributing guide](https://github.com/exercism/x-api/blob/master/CONTRIBUTING.md#the-exercise-data)
+Please see the [contributing guide](https://github.com/exercism/x-common/blob/master/CONTRIBUTING.md)
 
 ## Working on the Exercises
 
@@ -33,8 +33,13 @@ python test/check-exercises.py
 
 ## Code Style
 
-The Python code in this repo is meant to largely obey the [PEP8 style guide](https://www.python.org/dev/peps/pep-0008/) (not all code does though).
-Try the [flake8](http://flake8.readthedocs.org/en/latest/) tool if you feel unsure about questions of style.
+The Python code in this repo is meant to largely obey the [PEP8 style guide](https://www.python.org/dev/peps/pep-0008/).
+
+This repo uses [flake8](http://flake8.readthedocs.org/en/latest/) to enforce the coding standard. When you submit a PR, it needs to pass the flake8 tool with no warnings, or it won't be accepted. Here are the settings used by the build system:
+
+```
+flake8 [your-code-here.py] --max-line-length=99 --select=E,W
+```
 
 ## Pull Requests
 
