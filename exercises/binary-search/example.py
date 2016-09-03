@@ -1,4 +1,3 @@
-
 def binary_search(search_list, value):
     list_empty(search_list)
     list_sorted(search_list)
@@ -16,10 +15,10 @@ def binary_search(search_list, value):
 
 
 def list_sorted(search_list):
-    if not all(search_list[i] <= search_list[i + 1] for i in range(len(search_list) - 1)):
+    if not sorted(search_list) == search_list:
         raise ValueError("This list must be sorted.")
 
 
 def list_empty(search_list):
-    if len(search_list) == 0:
+    if not search_list
         raise ValueError('This list has no items.')

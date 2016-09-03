@@ -19,7 +19,8 @@ class BinarySearchTests(unittest.TestCase):
         self.assertEqual(3, binary_search([1, 2, 3, 4, 5, 6, 7, 8], 4))
 
     def test_list_item_found_larger_list(self):
-        self.assertEqual(7, binary_search([1,5,6,7,8,9,12,14,16,22,47,100,123],14))
+        self.assertEqual(7, binary_search(
+            [1, 5, 6, 7, 8, 9, 12, 14, 16, 22, 47, 100, 123], 14))
 
 
 if __name__ == '__main__':
