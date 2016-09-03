@@ -59,7 +59,8 @@
     "triangle",
     "poker",
     "zebra-puzzle",
-    "rectangles"
+    "rectangles",
+    "binary-search"
   ],
   "deprecated": [
     "accumulate",
