@@ -20,5 +20,5 @@ def list_sorted(search_list):
 
 
 def list_empty(search_list):
-    if not search_list
+    if not search_list:
         raise ValueError('This list has no items.')
