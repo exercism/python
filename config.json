@@ -63,7 +63,8 @@
     "triangle",
     "poker",
     "zebra-puzzle",
-    "rectangles"
+    "rectangles",
+    "binary-search"
   ],
   "exercises": [
     {
