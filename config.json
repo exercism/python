@@ -437,6 +437,12 @@
       "difficulty": 1,
       "topics": [
       ]
+    },
+    {
+      "slug": "binary-search",
+      "difficulty": 1,
+      "topics": [
+      ]
     }
   ],
   "deprecated": [
