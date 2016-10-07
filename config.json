@@ -71,7 +71,7 @@
       "slug": "hello-world",
       "difficulty": 1,
       "topics": [
-          "control-flow (if-statements)",
+          "control-flow (if-else statements)",
           "optional values",
           "text formatting"
       ]
