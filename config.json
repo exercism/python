@@ -116,8 +116,13 @@
     },
     {
       "slug": "word-count",
-      "difficulty": 1,
+      "difficulty": 3,
       "topics": [
+          "strings",
+          "algorithms",
+          "logic",
+          "pattern recognition",
+          "text formatting"
       ]
     },
     {
