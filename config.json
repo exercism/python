@@ -112,6 +112,14 @@
       "slug": "hamming",
       "difficulty": 1,
       "topics": [
+          "control-flow (if-else statements)",
+          "control-flow (loops)",
+          "sequences",
+          "sets",
+          "strings",
+          "algorithms",
+          "filtering",
+          "logic"
       ]
     },
     {
