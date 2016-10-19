@@ -28,6 +28,7 @@
     "largest-series-product",
     "kindergarten-garden",
     "grade-school",
+    "flatten-array",
     "roman-numerals",
     "space-age",
     "grains",
@@ -218,6 +219,12 @@
     },
     {
       "slug": "grade-school",
+      "difficulty": 1,
+      "topics": [
+      ]
+    },
+    {
+      "slug": "flatten-array",
       "difficulty": 1,
       "topics": [
       ]
