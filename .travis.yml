@@ -8,6 +8,10 @@ python:
   - 3.4
   - 3.5
 
+matrix:
+  allow_failures:
+    - python: 'nightly'
+
 install:
   - pip install -r requirements-travis.txt
 
