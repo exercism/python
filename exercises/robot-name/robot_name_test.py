@@ -5,10 +5,15 @@ import random
 
 
 class RobotTest(unittest.TestCase):
+    # assertRegex() alias to adress DeprecationWarning
+    # assertRegexpMatches got renamed in version 3.2
+    if not hasattr(unittest.TestCase, "assertRegex"):
+        assertRegex = unittest.TestCase.assertRegexpMatches
+
     name_re = r'^[A-Z]{2}\d{3}$'
 
     def test_has_name(self):
-        self.assertRegexpMatches(Robot().name, self.name_re)
+        self.assertRegex(Robot().name, self.name_re)
 
     def test_name_sticks(self):
         robot = Robot()
@@ -39,7 +44,8 @@ class RobotTest(unittest.TestCase):
         robot.reset()
         name2 = robot.name
         self.assertNotEqual(name, name2)
-        self.assertRegexpMatches(name2, self.name_re)
+        self.assertRegex(name2, self.name_re)
+
 
 if __name__ == '__main__':
     unittest.main()
