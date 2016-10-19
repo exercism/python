@@ -107,6 +107,12 @@
       "slug": "rna-transcription",
       "difficulty": 1,
       "topics": [
+          "control-flow (if-else statements)",
+          "control-flow (loops)",
+          "maps",
+          "strings",
+          "logic",
+          "transforming"
       ]
     },
     {
