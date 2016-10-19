@@ -101,6 +101,12 @@
       "slug": "pangram",
       "difficulty": 1,
       "topics": [
+          "control-flow (loops)",
+          "control-flow (if-else statements)",
+          "strings",
+          "algorithms",
+          "filtering",
+          "logic"
       ]
     },
     {
