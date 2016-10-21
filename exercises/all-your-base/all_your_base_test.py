@@ -3,7 +3,7 @@ import unittest
 from all_your_base import rebase
 
 
-class BinaryTests(unittest.TestCase):
+class AllYourBaseTests(unittest.TestCase):
 
     def test_single_bit_to_one_decimal(self):
         self.assertEqual(rebase(2, [1], 10), [1])
