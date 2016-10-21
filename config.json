@@ -65,9 +65,16 @@
     "poker",
     "zebra-puzzle",
     "rectangles",
-    "binary-search"
+    "binary-search",
+    "isogram"
   ],
   "exercises": [
+    {
+      "slug": "isogram",
+      "difficulty": 1,
+      "topics": [
+      ]
+    },
     {
       "slug": "hello-world",
       "difficulty": 1,
