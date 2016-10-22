@@ -434,7 +434,7 @@
       "slug": "word-search",
       "difficulty": 6,
       "topics": [
-        "strings"
+        "strings",
         "searching"
       ]
     }
