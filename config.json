@@ -429,6 +429,15 @@
       "difficulty": 1,
       "topics": [
       ]
+    },
+    {
+      "slug": "grep",
+      "difficulty": 4,
+      "topics": [
+        "files",
+        "text formatting",
+        "searching"
+      ]
     }
   ],
   "deprecated": [
