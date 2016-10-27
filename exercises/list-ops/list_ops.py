@@ -1,55 +1,38 @@
+# Please, do not use the functions map, reduce, len, etc. and
+# other built-in python methods and try to solve it yourself.
+
+
 def map_clone(function, xs):
-    return (function(elem) for elem in xs)
+    return xs
 
 
 def length(xs):
-    return sum(1 for x in xs)
+    return xs
 
 
 def filter_clone(function, xs):
-    return (x for x in xs if function(x))
+    return xs
 
 
 def reverse(xs):
-    if not xs:
-        return []
-    else:
-        return xs[::-1]
+    return xs
 
 
 def append(xs, y):
-    xs[len(xs):] = [y]
     return xs
 
 
 def foldl(function, xs, acc):
-    if(len(xs) == 0):
-        return acc
-    else:
-        return foldl(function, xs[1:], function(acc, xs[0]))
+    return xs
 
 
 def foldr(function, xs, acc):
-    if(len(xs) == 0):
-        return acc
-    else:
-        return function(xs[0], foldr(function, xs[1:], acc))
+    return xs
 
 
 def flat(xs):
-    out = []
-    for item in xs:
-        if isinstance(item, (list, tuple)):
-            out.extend(flat(item))
-        else:
-            out.append(item)
-    return out
+    return xs
 
 
 def concat(xs, ys):
-    if not ys:
-        return xs
-    else:
-        for item in ys:
-            xs.append(item)
-        return xs
+    return xs
