@@ -3,6 +3,7 @@ class Element(object):
         self.value = value
         self.next = None
 
+
 class LinkedList(object):
     def __init__(self, head=None):
         self.head = head
@@ -16,14 +17,10 @@ class LinkedList(object):
         else:
             self.head = new_element
 
-
     def empty(self):
         return self.size == 0
 
     def peek(self):
         pass
-        if empty:
+        if self.empty:
             return None
-        else:
-            #iterate
-    end
