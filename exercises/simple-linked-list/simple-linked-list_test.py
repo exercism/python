@@ -1,6 +1,7 @@
 import unittest
 
-from simple-linked-list import LinkedList
+# from simple_linked_list import LinkedList
 
 
 class LinkedListTests(unittest.TestCase):
+    pass
