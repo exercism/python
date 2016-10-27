@@ -56,12 +56,12 @@ def assignment_name(test_file):
 def main():
     if len(sys.argv) == 2:  # test a specific exercise
         exercise_path = sys.argv[1].strip('/')
-        test_file = glob.glob('./{}/*_test.py'.format(exercise_path))[0]
+        test_file = glob.glob('./exercises/{}/*_test.py'.format(exercise_path))[0]
         check_assignment(assignment_name(test_file), test_file,
                          modname_heuristic(test_file))
     else:
         failures = []
-        for test_file in glob.glob('./*/*_test.py'):
+        for test_file in glob.glob('./exercises/*/*_test.py'):
             name = assignment_name(test_file)
             print('# ' + name)
             if check_assignment(name, test_file, modname_heuristic(test_file)):

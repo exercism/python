@@ -7,14 +7,17 @@ python:
   - 3.3
   - 3.4
   - 3.5
+  - nightly
+
+matrix:
+  allow_failures:
+    - python: nightly
 
 install:
-  - pip install flake8
+  - pip install -r requirements-travis.txt
 
 before_script:
-  # ignore:
-  # * E501 - line length limit
-  - flake8 . --ignore=E501
+  - flake8 ./exercises/ --max-line-length=99 --select=E,W
 
 script:
   - ./test/check-exercises.py

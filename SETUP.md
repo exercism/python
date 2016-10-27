@@ -6,4 +6,4 @@ For example, if you're submitting `bob.py` for the Bob exercise, the submit comm
 
 
 For more detailed information about running tests, code style and linting,
-please see the [help page](http://help.exercism.io/getting-started-with-python.html).
+please see the [help page](http://exercism.io/languages/python).
