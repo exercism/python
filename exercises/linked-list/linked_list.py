@@ -8,6 +8,6 @@ class Node(object):
         self.prev = prev
 
 
-class Deque(object):
+class LinkedList(object):
     def __init__(self):
         pass  # Complete the Deque class ...
