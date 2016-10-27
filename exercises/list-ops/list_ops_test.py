@@ -31,6 +31,9 @@ class ListOpsTest(unittest.TestCase):
             )
         )
 
+    def test_map_empty(self):
+        self.assertEqual([], list(map_clone(operator.index, [])))
+
     # tests for length
     def test_pos_leng(self):
         self.assertEqual(10, length((-1, 2, -3, 4, -5, 6, -7, 8, -9, 10)))
@@ -74,6 +77,9 @@ class ListOpsTest(unittest.TestCase):
     def test_append_range(self):
         self.assertEqual([100, range(1000)], append([100], range(1000)))
 
+    def test_append_to_empty(self):
+        self.assertEqual([42], append([], 42))
+
     # tests for foldl
     def test_foldl_sum(self):
         self.assertEqual(21, foldl(operator.add, [1, 2, 3, 4, 5, 6], 0))
@@ -81,20 +87,20 @@ class ListOpsTest(unittest.TestCase):
     def test_foldl_product(self):
         self.assertEqual(720, foldl(operator.mul, [1, 2, 3, 4, 5, 6], 1))
 
-    def test_foldl_minus(self):
+    def test_foldl_div(self):
+        self.assertEqual(0, foldl(operator.floordiv, [1, 2, 3, 4, 5, 6], 1))
+
+    def test_foldl_sub(self):
         self.assertEqual(-15, foldl(operator.sub, [1, 2, 3, 4, 5], 0))
 
     # tests for foldr
-    def test_foldr_quotient(self):
-        try:
-            self.assertEqual(0, foldr(operator.floordiv, [1, 2, 3, 4, 5], 1))
-        except ZeroDivisionError as e:
-            pass
+    def test_foldr_sub(self):
+        self.assertEqual(3, foldr(operator.sub, [1, 2, 3, 4, 5], 0))
 
-    def test_foldr_minus(self):
+    def test_foldr_add_str(self):
         self.assertEqual(
-            3, foldr((lambda x, y: operator.sub(x, y)), (1, 2, 3, 4, 5), 0)
-        )
+            "exercism!",
+            foldr(operator.add, ["e", "x", "e", "r", "c", "i", "s", "m"], "!"))
 
     # tests for flatten
     def test_flatten_nested(self):
@@ -102,6 +108,9 @@ class ListOpsTest(unittest.TestCase):
 
     def test_flatten_once(self):
         self.assertEqual(["x", "y", "z"], flat([["x", "y", "z"]]))
+
+    def test_flatten_empty(self):
+        self.assertEqual([], flat([]))
 
     # tests for concat
     def test_concat_two(self):
@@ -115,6 +124,13 @@ class ListOpsTest(unittest.TestCase):
             ["orange", "apple", "banana"],
             concat(['orange', 'apple', 'banana'], None)
         )
+
+    def test_concat_empty(self):
+        self.assertEqual(
+            [],
+            concat([], [])
+        )
+
 
 if __name__ == '__main__':
     unittest.main()
