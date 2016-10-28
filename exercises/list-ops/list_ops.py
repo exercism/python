@@ -1,5 +1,5 @@
-# Please, do not use the functions map, reduce, len, etc. and
-# other built-in python methods and try to solve it yourself.
+# Please, do not use the built-in python functions like map, reduce, len, etc.
+# that solve the same problems and try to solve it yourself instead.
 
 
 def map_clone(function, xs):
