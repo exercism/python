@@ -1,3 +1,4 @@
+<<<<<<< 71687b776e290a384fb03b8b5932d13bf9afa955
 <<<<<<< e2f6b831658936e2dcb9623291bc9f56bf5449d6
 class Element(object):
     def __init__(self, value):
@@ -27,6 +28,10 @@ class LinkedList(object):
             return None
 ||||||| merged common ancestors
 =======
+||||||| merged common ancestors
+
+=======
+>>>>>>> Fixing flake8 issues on test file
 class Element(object):
     def __init__(self, value):
         self.value = value

@@ -1,3 +1,4 @@
+<<<<<<< 71687b776e290a384fb03b8b5932d13bf9afa955
 <<<<<<< e2f6b831658936e2dcb9623291bc9f56bf5449d6
 import unittest
 
@@ -8,6 +9,10 @@ class LinkedListTests(unittest.TestCase):
     pass
 ||||||| merged common ancestors
 =======
+||||||| merged common ancestors
+<<<<<<< HEAD
+=======
+>>>>>>> Fixing flake8 issues on test file
 import unittest
 
 from simple_linked_list import LinkedList
@@ -74,7 +79,20 @@ class LinkedListTests(unittest.TestCase):
         self.assertEqual(1, self.slist.from_array(new_arr).head.value)
         self.assertEqual(4, self.slist.from_array(new_arr).get_peek())
 
-
 if __name__ == '__main__':
     unittest.main()
+<<<<<<< 71687b776e290a384fb03b8b5932d13bf9afa955
 >>>>>>> including test cases for simple-linked-list
+||||||| merged common ancestors
+||||||| merged common ancestors
+=======
+import unittest
+
+# from simple_linked_list import LinkedList
+
+
+class LinkedListTests(unittest.TestCase):
+    pass
+>>>>>>> cfd8524abecbda211a8cdb7fda8b651c7950e845
+=======
+>>>>>>> Fixing flake8 issues on test file
