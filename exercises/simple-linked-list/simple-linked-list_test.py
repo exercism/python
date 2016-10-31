@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import unittest
 
 from simple_linked_list import LinkedList
@@ -63,3 +64,13 @@ class LinkedListTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+||||||| merged common ancestors
+=======
+import unittest
+
+# from simple_linked_list import LinkedList
+
+
+class LinkedListTests(unittest.TestCase):
+    pass
+>>>>>>> cfd8524abecbda211a8cdb7fda8b651c7950e845
