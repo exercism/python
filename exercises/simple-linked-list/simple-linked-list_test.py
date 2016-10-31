@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import unittest
 
 from simple_linked_list import LinkedList
@@ -61,16 +60,5 @@ class LinkedListTests(unittest.TestCase):
         self.assertEqual(1, self.slist.from_array(new_arr).head.value)
         self.assertEqual(4, self.slist.from_array(new_arr).get_peek())
 
-
 if __name__ == '__main__':
     unittest.main()
-||||||| merged common ancestors
-=======
-import unittest
-
-# from simple_linked_list import LinkedList
-
-
-class LinkedListTests(unittest.TestCase):
-    pass
->>>>>>> cfd8524abecbda211a8cdb7fda8b651c7950e845
