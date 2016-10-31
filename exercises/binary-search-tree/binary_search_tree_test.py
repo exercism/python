@@ -2,6 +2,7 @@ import unittest
 
 from binary_search_tree import BST
 
+
 class BSTTests(unittest.TestCase):
     def setUp(self):
         self.tree = BST(4)
