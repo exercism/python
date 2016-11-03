@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+from __future__ import print_function
+
 import os
 import ast
 import imp
@@ -7,11 +9,13 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import json
 
 
-def check_assignment(name, test_file, example_name):
+def check_assignment(name, test_file):
     # Returns the exit code of the tests
     workdir = tempfile.mkdtemp(name)
+    example_name = modname_heuristic(test_file)
     try:
         test_file_out = os.path.join(workdir, os.path.basename(test_file))
         shutil.copyfile(test_file, test_file_out)
@@ -49,26 +53,49 @@ def is_module_missing(modname):
         return False
 
 
-def assignment_name(test_file):
-    return os.path.basename(test_file).rpartition('_')[0]
+def load_config():
+    try:
+        with open('./config.json') as json_file:
+            data = json.load(json_file)
+    except IOError:
+        print('FAIL: config.json file not found')
+        raise SystemExit(1)
+
+    try:
+        problems = [entry['slug'] for entry in data['exercises']]
+        deprecated_problems = data['deprecated']
+    except KeyError:
+        print('FAIL: config.json has an incorrect format')
+        raise SystemExit(1)
+
+    return problems, deprecated_problems
 
 
 def main():
+    problems, deprecated_problems = load_config()
+
     if len(sys.argv) == 2:  # test a specific exercise
-        exercise_path = sys.argv[1].strip('/')
-        test_file = glob.glob('./exercises/{}/*_test.py'.format(exercise_path))[0]
-        check_assignment(assignment_name(test_file), test_file,
-                         modname_heuristic(test_file))
+        name = sys.argv[1].strip('/')
+        test_file = glob.glob('./exercises/{}/*_test.py'.format(name))
+        if not test_file:
+            print('FAIL: File with test cases not found')
+            raise SystemExit(1)
+        check_assignment(name, test_file[0])
     else:
         failures = []
-        for test_file in glob.glob('./exercises/*/*_test.py'):
-            name = assignment_name(test_file)
-            print('# ' + name)
-            if check_assignment(name, test_file, modname_heuristic(test_file)):
-                failures.append(name)
+        for name in problems:
+            test_file = glob.glob('./exercises/{}/*_test.py'.format(name))
+            print('# ', name)
+            if not test_file:
+                print('FAIL: File with test cases not found')
+                failures.append('{} (FileNotFound)'.format(name))
+            else:
+                if check_assignment(name, test_file[0]):
+                    failures.append('{} (TestFailed)'.format(name))
             print('')
+
         if failures:
-            print('FAILURES: ' + ' '.join(failures))
+            print('FAILURES: ', ', '.join(failures))
             raise SystemExit(1)
         else:
             print('SUCCESS!')
