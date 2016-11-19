@@ -60,5 +60,6 @@ class LinkedListTests(unittest.TestCase):
         self.assertEqual(4, self.slist.from_array(new_arr).head.value)
         self.assertEqual(4, self.slist.from_array(new_arr).get_peek())
 
+
 if __name__ == '__main__':
     unittest.main()

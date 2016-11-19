@@ -56,7 +56,6 @@ class LinkedList(object):
             arr.append(current.value)
             current = current.next
         arr.append(current.value)
-        print arr
         return arr
 
     def from_array(self, arr=[]):
