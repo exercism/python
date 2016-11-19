@@ -1,5 +1,3 @@
-<<<<<<< 71687b776e290a384fb03b8b5932d13bf9afa955
-<<<<<<< e2f6b831658936e2dcb9623291bc9f56bf5449d6
 class Element(object):
     def __init__(self, value):
         self.value = value
@@ -9,69 +7,26 @@ class Element(object):
 class LinkedList(object):
     def __init__(self, head=None):
         self.head = head
-
-    def push(self, new_element):
-        current = self.head
-        if self.head:
-            while current.next:
-                current = current.next
-            current.next = new_element
-        else:
-            self.head = new_element
-
-    def empty(self):
-        return self.size == 0
-
-    def peek(self):
-        pass
-        if self.empty:
-            return None
-||||||| merged common ancestors
-=======
-||||||| merged common ancestors
-
-=======
->>>>>>> Fixing flake8 issues on test file
-class Element(object):
-    def __init__(self, value):
-        self.value = value
-        self.next = None
-
-
-class LinkedList(object):
-    def __init__(self, head=None):
-        self.head = head
-        self.peek = head
         self.size = 0
 
     def push(self, new_element):
-        current = self.head
-        if self.head:
-            while current.next:
-                current = current.next
-            current.next = Element(new_element)
-            self.peek = current.next
+        new_e = Element(new_element)
+
+        if self.empty():
+            self.head = new_e
         else:
-            self.head = Element(new_element)
-            self.peek = self.head
+            new_e.next = self.head
+            self.head = new_e
         self.size += 1
 
     def pop(self):
         if self.empty():
             return None
         else:
-            current = self.head
-            prev = None
-            while current.next:
-                prev = current
-                current = current.next
-            if prev:
-                e, prev.next = current.value, None
-            else:
-                e, prev = current.value, None
-            self.peek = prev
+            e = self.head
+            self.head = self.head.next
             self.size -= 1
-            return e
+            return e.value
 
     def empty(self):
         return self.size == 0
@@ -80,20 +35,16 @@ class LinkedList(object):
         if self.empty():
             return None
         else:
-<<<<<<< 9ca4ff25cf0edc3e68b8b5d4cfca60b0fd88499d
-            #iterate
-    end
->>>>>>> Adding data structures pop peak empty methods and test class
-||||||| merged common ancestors
-            #iterate
-    end
-=======
-            return self.peek.value
+            return self.head.value
 
     def reverse(self):
         new_list = LinkedList()
-        while self.size > 0:
-            new_list.push(self.pop())
+        if self.size > 0:
+            current = self.head
+            while current.next:
+                new_list.push(current.value)
+                current = current.next
+            new_list.push(current.value)
         return new_list
 
     def to_array(self):
@@ -105,6 +56,7 @@ class LinkedList(object):
             arr.append(current.value)
             current = current.next
         arr.append(current.value)
+        print arr
         return arr
 
     def from_array(self, arr=[]):
@@ -114,4 +66,3 @@ class LinkedList(object):
             for i in arr:
                 self.push(i)
         return self
->>>>>>> including test cases for simple-linked-list
