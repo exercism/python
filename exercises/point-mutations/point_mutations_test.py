@@ -31,5 +31,6 @@ class DNATest(unittest.TestCase):
         self.assertEqual(5, hamming_distance('GACTACGGACAGGGTAGGGAAT',
                                              'GACATCGCACACC'))
 
+
 if __name__ == '__main__':
     unittest.main()

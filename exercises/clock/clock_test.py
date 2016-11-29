@@ -157,5 +157,6 @@ class ClockTest(unittest.TestCase):
     def test_clocks_with_negative_hours_and_minutes_that_wrap(self):
         self.assertEqual(Clock(18, 7), Clock(-54, -11513))
 
+
 if __name__ == '__main__':
     unittest.main()

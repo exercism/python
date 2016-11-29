@@ -29,5 +29,6 @@ class SieveTest(unittest.TestCase):
                     953, 967, 971, 977, 983, 991, 997]
         self.assertEqual(expected, sieve(1000))
 
+
 if __name__ == '__main__':
     unittest.main()

@@ -52,5 +52,6 @@ class RaindropsTest(unittest.TestCase):
     def test_12121(self):
         self.assertEqual("12121", raindrops(12121))
 
+
 if __name__ == '__main__':
     unittest.main()

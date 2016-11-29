@@ -14,9 +14,7 @@ def primitive_triplets(nbr):
     factors = [(m, n) for m, n in zip(reversed(a), a) if m > n]
     ts = set()
     for m, n in factors:
-        l = [nbr, m * m - n * n, m * m + n * n]
-        l.sort()
-        ts.update([tuple(l)])
+        ts.update([tuple(sorted([nbr, m * m - n * n, m * m + n * n]))])
     return ts
 
 
@@ -35,6 +33,7 @@ def triplets_in_range(m, n):
             if c * c == a * a + b * b and c >= m and c <= n:
                 t.update([(a, b, c)])
     return t
+
 
 primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61,
           67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137,
