@@ -30,5 +30,6 @@ class RailFenceTests(unittest.TestCase):
             decode('133714114238148966225439541018335470986172518171757571896261', 6)
         )
 
+
 if __name__ == '__main__':
     unittest.main()

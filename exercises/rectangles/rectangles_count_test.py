@@ -68,5 +68,6 @@ class WordTest(unittest.TestCase):
                  ]
         assert 2 == count(lines)
 
+
 if __name__ == '__main__':
     unittest.main()

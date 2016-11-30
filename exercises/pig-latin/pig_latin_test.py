@@ -49,5 +49,6 @@ class PigLatinTests(unittest.TestCase):
     def test_word_beginning_with_xr(self):
         self.assertEqual("xrayay", translate("xray"))
 
+
 if __name__ == '__main__':
     unittest.main()

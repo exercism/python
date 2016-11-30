@@ -67,5 +67,6 @@ class AnagramTests(unittest.TestCase):
             detect_anagrams('go', 'go Go GO'.split())
         )
 
+
 if __name__ == '__main__':
     unittest.main()

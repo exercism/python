@@ -33,5 +33,6 @@ class WordCountTests(unittest.TestCase):
     def test_decode_unicode(self):
         self.assertMultiLineEqual('⏰⚽⚽⚽⭐⭐⏰', decode('⏰3⚽2⭐⏰'))
 
+
 if __name__ == '__main__':
     unittest.main()
