@@ -42,6 +42,18 @@ class AtbashCipherTest(unittest.TestCase):
             decode("zmlyh gzxov rhlug vmzhg vkkrm thglm v")
         )
 
+    def test_decode_numbers(self):
+        self.assertMultiLineEqual(
+            "testing123testing",
+            decode("gvhgr mt123 gvhgr mt")
+        )
+
+    def test_encode_decode(self):
+        self.assertMultiLineEqual(
+            "testing123testing",
+            decode(encode("Testing, 1 2 3, testing."))
+        )
+
 
 if __name__ == '__main__':
     unittest.main()
