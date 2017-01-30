@@ -45,6 +45,7 @@ class LinkedList(object):
             new_node.next = self.head
             self.head.prev = new_node
             self.head = new_node
+
     def __len__(self):
         count = 0
         current = self.head

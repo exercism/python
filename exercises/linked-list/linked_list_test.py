@@ -64,5 +64,6 @@ class LinkedListTests(unittest.TestCase):
         for value in values:
             self.assertEqual(value, next(iterator).value)
 
+
 if __name__ == '__main__':
     unittest.main()
