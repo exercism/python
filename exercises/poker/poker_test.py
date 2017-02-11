@@ -29,6 +29,18 @@ class PokerTest(unittest.TestCase):
         self.assertEqual([doublePair2and8],
                          poker([doublePair2and8, doublePair4and5]))
 
+    def test_two_double_pair_lower(self):
+        doublePair2and8 = '2S 8H 2S 8C JH'.split()
+        doublePair3and8 = '4S 3H 8S 8D 3H'.split()
+        self.assertEqual([doublePair3and8],
+                         poker([doublePair2and8, doublePair3and8]))
+
+    def test_two_double_pair_and_high(self):
+        doublePair2and8 = '2S 8H 2C 8C 3H'.split()
+        doublePair2and8high = '2D 2H 8S 8D AH'.split()
+        self.assertEqual([doublePair2and8high],
+                         poker([doublePair2and8high, doublePair2and8]))
+
     def test_double_pair_vs_three(self):
         doublePair2and8 = '2S 8H 2S 8D JH'.split()
         threeOf4 = '4S 5H 4S 8D 4H'.split()
