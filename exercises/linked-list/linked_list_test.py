@@ -44,6 +44,26 @@ class LinkedListTests(unittest.TestCase):
         self.assertEqual(50, self.list.pop())
         self.assertEqual(30, self.list.shift())
 
+    @unittest.skip("advanced")
+    def test_len(self):
+        self.assertEqual(0, len(self.list))
+        self.list.push(10)
+        self.list.push(20)
+        self.assertEqual(2, len(self.list))
+
+    @unittest.skip("advanced")
+    def test_iter(self):
+        values = [10, 20, 30, 40]
+        for value in values:
+            self.list.push(value)
+
+        for index, node in enumerate(self.list):
+            self.assertEqual(values[index], node.value)
+
+        iterator = iter(self.list)
+        for value in values:
+            self.assertEqual(value, next(iterator).value)
+
 
 if __name__ == '__main__':
     unittest.main()
