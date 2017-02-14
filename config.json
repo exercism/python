@@ -323,12 +323,6 @@
       ]
     },
     {
-      "slug": "binary",
-      "difficulty": 1,
-      "topics": [
-      ]
-    },
-    {
       "slug": "palindrome-products",
       "difficulty": 1,
       "topics": [
@@ -336,12 +330,6 @@
     },
     {
       "slug": "bracket-push",
-      "difficulty": 1,
-      "topics": [
-      ]
-    },
-    {
-      "slug": "hexadecimal",
       "difficulty": 1,
       "topics": [
       ]
@@ -440,7 +428,9 @@
     "proverb",
     "raindrops",
     "strain",
-    "trinary"
+    "trinary",
+    "binary",
+    "hexadecimal"
   ],
   "ignored": [
     "docs",
