@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 import unittest
 
-from run_length import encode, decode
+from run_length_encoding import encode, decode
 
 
 class WordCountTests(unittest.TestCase):

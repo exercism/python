@@ -1,8 +1,8 @@
-class Node(object):
+class Cipher(object):
     def __init__(self):
         pass
 
 
-class LinkedList(object):
+class Caesar(object):
     def __init__(self):
         pass

@@ -1,4 +1,4 @@
-class Allergies:
+class Allergies(object):
 
     _allergies = [
         "eggs",

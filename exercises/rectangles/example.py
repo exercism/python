@@ -1,7 +1,7 @@
 import itertools
 
 
-class corners():
+class corners(object):
     def __init__(self, i, j):
         # i, j are position of corner
         self.i = i

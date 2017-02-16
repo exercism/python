@@ -3,7 +3,7 @@ from time import time
 import random
 
 
-class Cipher:
+class Cipher(object):
 
     def __init__(self, key=None):
         if not key:
