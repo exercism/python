@@ -419,6 +419,14 @@
       ]
     },
     {
+      "slug": "all-your-base",
+      "difficulty": 4,
+      "topics": [
+        "integers",
+        "transforming"
+      ]
+    },
+    {
       "slug": "grep",
       "difficulty": 4,
       "topics": [
