@@ -38,5 +38,6 @@ class PerfectNumbersTest(unittest.TestCase):
     def test_seventh_perfect_number(self):
         self.assertTrue(is_perfect(137438691328))
 
+
 if __name__ == '__main__':
     unittest.main()

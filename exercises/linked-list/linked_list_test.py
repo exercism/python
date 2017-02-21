@@ -44,6 +44,24 @@ class LinkedListTests(unittest.TestCase):
         self.assertEqual(50, self.list.pop())
         self.assertEqual(30, self.list.shift())
 
+    @unittest.skip("extra-credit")
+    def test_length(self):
+        self.list.push(10)
+        self.list.push(20)
+        self.assertEqual(2, len(self.list))
+        self.list.shift()
+        self.assertEqual(1, len(self.list))
+        self.list.pop()
+        self.assertEqual(0, len(self.list))
+
+    @unittest.skip("extra-credit")
+    def test_iterator(self):
+        self.list.push(10)
+        self.list.push(20)
+        iterator = iter(self.list)
+        self.assertEqual(10, next(iterator))
+        self.assertEqual(20, next(iterator))
+
 
 if __name__ == '__main__':
     unittest.main()

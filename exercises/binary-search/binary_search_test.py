@@ -37,5 +37,6 @@ class BinarySearchTests(unittest.TestCase):
     def test_empty_array(self):
         self.assertRaises(ValueError, binary_search, [], 1)
 
+
 if __name__ == '__main__':
     unittest.main()

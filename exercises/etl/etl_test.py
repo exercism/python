@@ -49,5 +49,6 @@ class TransformTest(unittest.TestCase):
 
         self.assertEqual(expected, etl.transform(old))
 
+
 if __name__ == '__main__':
     unittest.main()

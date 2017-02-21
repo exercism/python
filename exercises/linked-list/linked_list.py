@@ -1,4 +1,5 @@
 # Skeleton file for the Python "linked-list" exercise.
+# Implement the LinkedList class
 
 
 class Node(object):
@@ -10,4 +11,4 @@ class Node(object):
 
 class LinkedList(object):
     def __init__(self):
-        pass  # Complete the Deque class ...
+        pass
