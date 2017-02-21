@@ -72,33 +72,31 @@ def load_config():
 
 
 def main():
-    problems, deprecated_problems = load_config()
+    if len(sys.argv) >= 2:
+        # test specific exercises
+        exercises = [exercise.strip('/') for exercise in sys.argv[1:]]
+    else:
+        # load exercises from config-file
+        exercises, _ = load_config()
 
-    if len(sys.argv) == 2:  # test a specific exercise
-        name = sys.argv[1].strip('/')
-        test_file = glob.glob('./exercises/{}/*_test.py'.format(name))
+    failures = []
+    for exercise in exercises:
+        test_file = glob.glob('./exercises/{}/*_test.py'.format(exercise))
+        print('# ', exercise)
         if not test_file:
             print('FAIL: File with test cases not found')
-            raise SystemExit(1)
-        check_assignment(name, test_file[0])
-    else:
-        failures = []
-        for name in problems:
-            test_file = glob.glob('./exercises/{}/*_test.py'.format(name))
-            print('# ', name)
-            if not test_file:
-                print('FAIL: File with test cases not found')
-                failures.append('{} (FileNotFound)'.format(name))
-            else:
-                if check_assignment(name, test_file[0]):
-                    failures.append('{} (TestFailed)'.format(name))
-            print('')
-
-        if failures:
-            print('FAILURES: ', ', '.join(failures))
-            raise SystemExit(1)
+            failures.append('{} (FileNotFound)'.format(exercise))
         else:
-            print('SUCCESS!')
+            if check_assignment(exercise, test_file[0]):
+                failures.append('{} (TestFailed)'.format(exercise))
+        print('')
+
+    if failures:
+        print('FAILURES: ', ', '.join(failures))
+        raise SystemExit(1)
+    else:
+        print('SUCCESS!')
+
 
 if __name__ == '__main__':
     main()
