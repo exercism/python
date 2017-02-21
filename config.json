@@ -417,6 +417,14 @@
       "difficulty": 1,
       "topics": [
       ]
+    },
+    {
+      "slug": "word-search",
+      "difficulty": 6,
+      "topics": [
+        "strings",
+        "searching"
+      ]
     }
   ],
   "deprecated": [
