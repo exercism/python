@@ -119,5 +119,6 @@ class BobTests(unittest.TestCase):
             'Whatever.', bob.hey('This is a statement with trailing whitespace   ')
         )
 
+
 if __name__ == '__main__':
     unittest.main()

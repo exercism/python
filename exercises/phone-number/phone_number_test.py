@@ -36,5 +36,6 @@ class PhoneTest(unittest.TestCase):
         number = Phone("11234567890")
         self.assertEqual("(123) 456-7890", number.pretty())
 
+
 if __name__ == '__main__':
     unittest.main()

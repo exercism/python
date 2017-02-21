@@ -84,5 +84,6 @@ class WordCountTests(unittest.TestCase):
             word_count('до🖖свидания!')
         )
 
+
 if __name__ == '__main__':
     unittest.main()

@@ -66,5 +66,6 @@ class BeerTest(unittest.TestCase):
             "99 bottles of beer on the wall.\n\n"
         )
 
+
 if __name__ == '__main__':
     unittest.main()

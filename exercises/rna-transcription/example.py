@@ -6,8 +6,13 @@ else:
     maketrans = str.maketrans
 
 
-DNA_TO_RNA = maketrans('AGCT', 'UCGA')
+DNA_CHARS = 'AGCT'
+DNA_TO_RNA = maketrans(DNA_CHARS, 'UCGA')
 
 
 def to_rna(dna_strand):
+    valid_chars = set(DNA_CHARS)
+    if any(char not in valid_chars for char in dna_strand):
+        return ''
+
     return dna_strand.translate(DNA_TO_RNA)

@@ -32,5 +32,6 @@ class GrainsTest(unittest.TestCase):
         self.assertEqual(9223372036854775808, on_square(64))
         self.assertEqual(18446744073709551615, total_after(64))
 
+
 if __name__ == '__main__':
     unittest.main()

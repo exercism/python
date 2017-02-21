@@ -101,5 +101,6 @@ class PokerTest(unittest.TestCase):
         self.assertEqual([spadeStraightTo9, diamondStraightTo9],
                          poker([spadeStraightTo9, diamondStraightTo9, threeOf4]))
 
+
 if __name__ == '__main__':
     unittest.main()

@@ -44,5 +44,6 @@ class BinaryTests(unittest.TestCase):
     def test_invalid_binary_text_with_numbers(self):
         self.assertRaises(ValueError, parse_binary, "nope10")
 
+
 if __name__ == '__main__':
     unittest.main()
