@@ -419,6 +419,15 @@
       ]
     },
     {
+      "slug": "grep",
+      "difficulty": 4,
+      "topics": [
+        "files",
+        "text formatting",
+        "searching"
+      ]
+    },
+    {
       "slug": "word-search",
       "difficulty": 6,
       "topics": [
