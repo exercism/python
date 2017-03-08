@@ -1,15 +1,6 @@
-# -*- coding: utf-8 -*-
 import unittest
 
 from word_count import word_count
-
-
-# to be backwards compatible with the old Python 2.X
-def decode_if_needed(string):
-    try:
-        return string.decode('utf-8')
-    except AttributeError:
-        return string
 
 
 class WordCountTests(unittest.TestCase):
@@ -76,12 +67,6 @@ class WordCountTests(unittest.TestCase):
         self.assertEqual(
             {'hey': 1, 'my': 1, 'spacebar': 1, 'is': 1, 'broken': 1},
             word_count('hey,my_spacebar_is_broken.')
-        )
-
-    def test_unicode(self):
-        self.assertEqual(
-            {decode_if_needed('до'): 1, decode_if_needed('свидания'): 1},
-            word_count('до🖖свидания!')
         )
 
 
