@@ -45,6 +45,15 @@ class LuhnTests(unittest.TestCase):
     def test_input_digit_9_is_correctly_converted_to_output_digit_9(self):
         self.assertTrue(Luhn("091").is_valid())
 
+    def test_is_valid_can_be_called_repeatedly(self):
+        # Additional track specific test case
+        # This test was added, because we saw many implementations
+        # in which the first call to is_valid() worked, but the
+        # second call failed().
+        number = Luhn(8739567)
+        self.assertTrue(number.is_valid())
+        self.assertTrue(number.is_valid())
+
 
 if __name__ == '__main__':
     unittest.main()
