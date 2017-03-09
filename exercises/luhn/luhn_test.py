@@ -1,46 +1,56 @@
-from collections import Counter
+# -*- coding: utf-8 -*-
+
 import unittest
 
 from luhn import Luhn
 
 
 class LuhnTests(unittest.TestCase):
-    def test_addends(self):
-        # uses a Counter to avoid specifying order of return value
-        self.assertEqual(Counter([1, 4, 1, 4, 1]),
-                         Counter(Luhn(12121).addends()))
+    def test_single_digit_strings_can_not_be_valid(self):
+        self.assertFalse(Luhn("1").is_valid())
 
-    def test_addends_large(self):
-        # uses a Counter to avoid specifying order of return value
-        self.assertEqual(Counter([7, 6, 6, 1]),
-                         Counter(Luhn(8631).addends()))
+    def test_a_single_zero_is_invalid(self):
+        self.assertFalse(Luhn("0").is_valid())
 
-    def test_checksum1(self):
-        self.assertEqual(22, Luhn(4913).checksum())
+    def test_a_simple_valid_SIN_that_remains_valid_if_reversed(self):
+        self.assertTrue(Luhn("059").is_valid())
 
-    def test_ckecksum2(self):
-        self.assertEqual(21, Luhn(201773).checksum())
+    def test_a_simple_valid_SIN_that_becomes_invalid_if_reversed(self):
+        self.assertTrue(Luhn("59").is_valid())
 
-    def test_invalid_number(self):
-        self.assertFalse(Luhn(738).is_valid())
+    def test_a_valid_Canadian_SIN(self):
+        self.assertTrue(Luhn("055 444 285").is_valid())
 
-    def test_valid_number(self):
-        self.assertTrue(Luhn(8739567).is_valid())
+    def test_invalid_Canadian_SIN(self):
+        self.assertFalse(Luhn("055 444 286").is_valid())
 
-    def test_create_valid_number1(self):
-        self.assertEqual(1230, Luhn.create(123))
+    def test_invalid_credit_card(self):
+        self.assertFalse(Luhn("8273 1232 7352 0569").is_valid())
 
-    def test_create_valid_number2(self):
-        self.assertEqual(8739567, Luhn.create(873956))
+    def test_valid_strings_with_a_non_digit_included_become_invalid(self):
+        self.assertFalse(Luhn("055a 444 285").is_valid())
 
-    def test_create_valid_number3(self):
-        self.assertEqual(8372637564, Luhn.create(837263756))
+    def test_valid_strings_with_punctuation_included_become_invalid(self):
+        self.assertFalse(Luhn("055-444-285").is_valid())
+
+    def test_valid_strings_with_symbols_included_become_invalid(self):
+        self.assertFalse(Luhn("055£ 444$ 285").is_valid())
+
+    def test_single_zero_with_space_is_invalid(self):
+        self.assertFalse(Luhn("0").is_valid())
+
+    def test_more_than_a_single_zero_is_valid(self):
+        self.assertTrue(Luhn("0000 0").is_valid())
+
+    def test_input_digit_9_is_correctly_converted_to_output_digit_9(self):
+        self.assertTrue(Luhn("091").is_valid())
 
     def test_is_valid_can_be_called_repeatedly(self):
+        # Additional track specific test case
         # This test was added, because we saw many implementations
         # in which the first call to is_valid() worked, but the
         # second call failed().
-        number = Luhn(8739567)
+        number = Luhn("055 444 285")
         self.assertTrue(number.is_valid())
         self.assertTrue(number.is_valid())
 
