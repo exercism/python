@@ -3,8 +3,9 @@ import unittest
 from acronym import abbreviate
 
 
-class AcronymTest(unittest.TestCase):
+# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
 
+class AcronymTest(unittest.TestCase):
     def test_basic(self):
         self.assertEqual('PNG', abbreviate('Portable Network Graphics'))
 
@@ -19,6 +20,9 @@ class AcronymTest(unittest.TestCase):
 
     def test_all_caps_words(self):
         self.assertEqual('PHP', abbreviate('PHP: Hypertext Preprocessor'))
+
+    def test_non_acronym_all_caps_word(self):
+        self.assertEqual('GIMP', abbreviate('GNU Image Manipulation Program'))
 
     def test_hyphenated(self):
         self.assertEqual('CMOS', abbreviate('Complementary metal-oxide semiconductor'))
