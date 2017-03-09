@@ -3,6 +3,8 @@ import unittest
 from atbash_cipher import decode, encode
 
 
+# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+
 class AtbashCipherTest(unittest.TestCase):
 
     def test_encode_no(self):
@@ -48,6 +50,12 @@ class AtbashCipherTest(unittest.TestCase):
             decode("gvhgr mt123 gvhgr mt")
         )
 
+    def test_decode_all_the_letters(self):
+        ciphertext = "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"
+        plaintext = "thequickbrownfoxjumpsoverthelazydog"
+        self.assertMultiLineEqual(plaintext, decode(ciphertext))
+
+    # additional track specific test
     def test_encode_decode(self):
         self.assertMultiLineEqual(
             "testing123testing",
