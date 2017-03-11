@@ -25,7 +25,7 @@ def say(number, recursive=False):
     if number < k:
         if number % 100 == 0:
             return small[number // 100] + ' hundred'
-        return small[number // 100] + ' hundred and ' + say(number % 100, True)
+        return small[number // 100] + ' hundred and ' + say(number % 100)
 
     if number < m:
         if number % k == 0:
