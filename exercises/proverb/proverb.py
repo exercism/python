@@ -1,0 +1,2 @@
+def proverb():
+    pass

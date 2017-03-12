@@ -1,5 +1,5 @@
 
-class Clock:
+class Clock(object):
     'Clock that displays 24 hour clock that rollsover properly'
 
     def __init__(self, hour, minute):

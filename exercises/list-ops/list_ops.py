@@ -1,38 +1,34 @@
-# Please, do not use the built-in python functions like map, reduce, len, etc.
-# that solve the same problems and try to solve it yourself instead.
+def map_clone():
+    pass
 
 
-def map_clone(function, xs):
-    return xs
+def length():
+    pass
 
 
-def length(xs):
-    return xs
+def filter_clone():
+    pass
 
 
-def filter_clone(function, xs):
-    return xs
+def reverse():
+    pass
 
 
-def reverse(xs):
-    return xs
+def append():
+    pass
 
 
-def append(xs, y):
-    return xs
+def foldl():
+    pass
 
 
-def foldl(function, xs, acc):
-    return xs
+def foldr():
+    pass
 
 
-def foldr(function, xs, acc):
-    return xs
+def flat():
+    pass
 
 
-def flat(xs):
-    return xs
-
-
-def concat(xs, ys):
-    return xs
+def concat():
+    pass

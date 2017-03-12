@@ -1,0 +1,2 @@
+def translate():
+    pass

@@ -1,0 +1,2 @@
+def accumulate():
+    pass
