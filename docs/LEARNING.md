@@ -16,3 +16,4 @@ With this premise, a good, beginner friendly, starting point for those who don't
 - [Offical Python3 **Documentation** and **Reference**](https://docs.python.org/3/)
 - [Learn X in Y minutes (where X = Python3)](https://learnxinyminutes.com/docs/python3/)
 - [The Hitchhiker’s Guide to Python](http://docs.python-guide.org/en/latest/)
+- [PyCharm EDU **IDE** and **Courses**](https://www.jetbrains.com/pycharm-edu/)
