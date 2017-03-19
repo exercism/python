@@ -1,3 +1,4 @@
+import sys
 import unittest
 
 from allergies import Allergies
@@ -32,10 +33,14 @@ class AllergiesTests(unittest.TestCase):
                     'chocolate pollen cats').split()),
             sorted(Allergies(255).lst))
 
-    @unittest.skip('Extra Credit: Passes with a specific type of solution')
+    @unittest.skipUnless('-extra_credit' in sys.argv, 'Skipping extra_credit')
     def test_ignore_non_allergen_score_parts(self):
         self.assertEqual(['eggs'], Allergies(257).lst)
 
 
 if __name__ == '__main__':
+    try:
+        sys.argv.remove('-extra_credit')
+    except ValueError:
+        pass
     unittest.main()
