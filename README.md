@@ -15,18 +15,19 @@ We welcome both improvements to the existing exercises and new exercises.
 A pool of exercise ideas can be found in the [x-common repo](https://github.com/exercism/x-common).
 
 All exercises must be compatible with Python versions 2.7 and 3.3 upwards.
-Therefore please test your changes at least with Python2.7 and Python3.5.
+Therefore please test your changes with these versions.
 
-To test a single exercise, say crypto-square, run:
+Test a single exercise with Python 2.7:
 ```
 python2.7 test/check-exercises.py crypto-square
 ```
-and
+
+Test a single exercise with Python 3.3:
 ```
-python3.5 test/check-exercises.py crypto-square
+python3.3 test/check-exercises.py crypto-square
 ```
 
-To run the tests for all exercises type:
+Test all exercises:
 ```
 python test/check-exercises.py
 ```
