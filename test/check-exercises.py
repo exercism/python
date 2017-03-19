@@ -14,6 +14,10 @@ import json
 EXTRA_CREDIT_ASSIGNMENTS = ['allergies', 'linked-list']
 
 
+def python_executable_name():
+    return 'python{}.{}'.format(sys.version_info.major, sys.version_info.minor)
+
+
 def check_assignment(name, test_file):
     # Returns the exit code of the tests
     workdir = tempfile.mkdtemp(name)
@@ -24,8 +28,8 @@ def check_assignment(name, test_file):
         shutil.copyfile(os.path.join(os.path.dirname(test_file), 'example.py'),
                         os.path.join(workdir, '{}.py'.format(example_name)))
         if (name in EXTRA_CREDIT_ASSIGNMENTS):
-            return subprocess.call(['python', test_file_out, '-extra_credit'])
-        return subprocess.call(['python', test_file_out])
+            return subprocess.call([python_executable_name(), test_file_out, '-extra_credit'])
+        return subprocess.call([python_executable_name(), test_file_out])
     finally:
         shutil.rmtree(workdir)
 
@@ -94,6 +98,8 @@ def main():
             if check_assignment(exercise, test_file[0]):
                 failures.append('{} (TestFailed)'.format(exercise))
         print('')
+
+    print('TestEnvironment:', python_executable_name().capitalize(), end='\n\n')
 
     if failures:
         print('FAILURES: ', ', '.join(failures))
