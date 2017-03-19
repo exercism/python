@@ -2,6 +2,8 @@ import unittest
 from isogram import is_isogram
 
 
+# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+
 class TestIsogram(unittest.TestCase):
 
     def test_empty_string(self):
