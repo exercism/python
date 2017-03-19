@@ -12,6 +12,10 @@ import tempfile
 import json
 
 
+def python_executable_name():
+    return 'python{}.{}'.format(sys.version_info.major, sys.version_info.minor)
+
+
 def check_assignment(name, test_file):
     # Returns the exit code of the tests
     workdir = tempfile.mkdtemp(name)
@@ -21,7 +25,7 @@ def check_assignment(name, test_file):
         shutil.copyfile(test_file, test_file_out)
         shutil.copyfile(os.path.join(os.path.dirname(test_file), 'example.py'),
                         os.path.join(workdir, '{}.py'.format(example_name)))
-        return subprocess.call(['python', test_file_out])
+        return subprocess.call([python_executable_name(), test_file_out])
     finally:
         shutil.rmtree(workdir)
 
@@ -90,6 +94,8 @@ def main():
             if check_assignment(exercise, test_file[0]):
                 failures.append('{} (TestFailed)'.format(exercise))
         print('')
+
+    print('TestEnvironment:', python_executable_name().capitalize(), end='\n\n')
 
     if failures:
         print('FAILURES: ', ', '.join(failures))
