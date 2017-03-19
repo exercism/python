@@ -95,6 +95,8 @@ def main():
                 failures.append('{} (TestFailed)'.format(exercise))
         print('')
 
+    print('TestEnvironment:', python_executable_name().capitalize(), end='\n\n')
+
     if failures:
         print('FAILURES: ', ', '.join(failures))
         raise SystemExit(1)
