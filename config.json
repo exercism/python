@@ -34,6 +34,12 @@
       ]
     },
     {
+      "slug": "isogram",
+      "difficulty": 1,
+      "topics": [
+      ]
+    },
+    {
       "slug": "pangram",
       "difficulty": 1,
       "topics": [
