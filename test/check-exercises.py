@@ -29,7 +29,7 @@ def check_assignment(name, test_file):
                         os.path.join(workdir, '{}.py'.format(example_name)))
         if (name in EXTRA_CREDIT_ASSIGNMENTS):
             return subprocess.call([python_executable_name(), test_file_out,
-                                    '-extra_credit'])
+                                    '--extra-credit'])
         return subprocess.call([python_executable_name(), test_file_out])
     finally:
         shutil.rmtree(workdir)
