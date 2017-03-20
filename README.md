@@ -19,12 +19,12 @@ Therefore please test your changes with these versions.
 
 Test a single exercise with Python 2.7:
 ```
-python2.7 test/check-exercises.py crypto-square
+python2.7 test/check-exercises.py [exercise-name]
 ```
 
 Test a single exercise with Python 3.3:
 ```
-python3.3 test/check-exercises.py crypto-square
+python3.3 test/check-exercises.py [exercise-name]
 ```
 
 Test all exercises:
