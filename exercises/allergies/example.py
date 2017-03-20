@@ -1,14 +1,8 @@
 class Allergies(object):
 
     _allergies = [
-        "eggs",
-        "peanuts",
-        "shellfish",
-        "strawberries",
-        "tomatoes",
-        "chocolate",
-        "pollen",
-        "cats"
+        "eggs", "peanuts", "shellfish", "strawberries", "tomatoes",
+        "chocolate", "pollen", "cats"
     ]
 
     def __init__(self, score):
@@ -19,5 +13,7 @@ class Allergies(object):
 
     @property
     def lst(self):
-        return [allergy for allergy in self._allergies
-                if self.is_allergic_to(allergy)]
+        return [
+            allergy for allergy in self._allergies
+            if self.is_allergic_to(allergy)
+        ]

@@ -6,7 +6,6 @@ from all_your_base import rebase
 # test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
 
 class AllYourBaseTests(unittest.TestCase):
-
     def test_single_bit_to_one_decimal(self):
         self.assertEqual(rebase(2, [1], 10), [1])
 

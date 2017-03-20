@@ -6,7 +6,6 @@ if sys.version_info[0] == 2:
 else:
     maketrans = str.maketrans
 
-
 BLKSZ = 5
 trtbl = maketrans(ascii_lowercase, ascii_lowercase[::-1])
 
@@ -17,8 +16,8 @@ def base_trans(text):
 
 def encode(plain):
     cipher = base_trans(plain)
-    return " ".join([cipher[i:i + BLKSZ]
-                     for i in range(0, len(cipher), BLKSZ)])
+    return " ".join(
+        [cipher[i:i + BLKSZ] for i in range(0, len(cipher), BLKSZ)])
 
 
 def decode(ciphered):

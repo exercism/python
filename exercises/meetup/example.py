@@ -2,10 +2,10 @@ from calendar import Calendar
 
 
 def meetup_day(year, month, day_of_the_week, which):
-    candidates = [date
-                  for date in Calendar().itermonthdates(year, month)
-                  if date.month == month
-                  if date.strftime('%A') == day_of_the_week]
+    candidates = [
+        date for date in Calendar().itermonthdates(year, month)
+        if date.month == month if date.strftime('%A') == day_of_the_week
+    ]
     return _choice(which)(candidates)
 
 

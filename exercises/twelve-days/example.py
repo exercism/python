@@ -1,18 +1,14 @@
-GIFTS = ['twelve Drummers Drumming',
-         'eleven Pipers Piping',
-         'ten Lords-a-Leaping',
-         'nine Ladies Dancing',
-         'eight Maids-a-Milking',
-         'seven Swans-a-Swimming',
-         'six Geese-a-Laying',
-         'five Gold Rings',
-         'four Calling Birds',
-         'three French Hens',
-         'two Turtle Doves',
-         'a Partridge in a Pear Tree']
+GIFTS = [
+    'twelve Drummers Drumming', 'eleven Pipers Piping', 'ten Lords-a-Leaping',
+    'nine Ladies Dancing', 'eight Maids-a-Milking', 'seven Swans-a-Swimming',
+    'six Geese-a-Laying', 'five Gold Rings', 'four Calling Birds',
+    'three French Hens', 'two Turtle Doves', 'a Partridge in a Pear Tree'
+]
 
-ORDINAL = [None, 'first', 'second', 'third', 'fourth', 'fifth', 'sixth',
-           'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth']
+ORDINAL = [
+    None, 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh',
+    'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth'
+]
 
 
 def verse(n):
@@ -25,8 +21,7 @@ def verse(n):
 
 
 def verses(start, end):
-    return ''.join([verse(n) + '\n'
-                    for n in range(start, end + 1)])
+    return ''.join([verse(n) + '\n' for n in range(start, end + 1)])
 
 
 def sing():

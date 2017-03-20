@@ -7,7 +7,6 @@ from hexadecimal import hexa
 
 
 class HexadecimalTest(unittest.TestCase):
-
     def test_valid_hexa1(self):
         self.assertEqual(1, hexa('1'))
 

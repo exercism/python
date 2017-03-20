@@ -4,7 +4,6 @@ from simple_cipher import Caesar, Cipher
 
 
 class CipherTest(unittest.TestCase):
-
     def test_caesar_encode1(self):
         self.assertEqual('lwlvdzhvrphsurjudpplqjlqsbwkrq',
                          Caesar().encode('itisawesomeprogramminginpython'))
@@ -60,8 +59,9 @@ class CipherTest(unittest.TestCase):
 
     def test_cipher_random_key(self):
         c = Cipher()
-        self.assertTrue(len(c.key) >= 100,
-                        'A random key must be generated when no key is given!')
+        self.assertTrue(
+            len(c.key) >= 100,
+            'A random key must be generated when no key is given!')
         self.assertTrue(c.key.islower() and c.key.isalpha(),
                         'All items in the key must be chars and lowercase!')
 

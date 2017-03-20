@@ -1,14 +1,10 @@
 import unittest
 
-from circular_buffer import (
-    CircularBuffer,
-    BufferFullException,
-    BufferEmptyException
-)
+from circular_buffer import (CircularBuffer, BufferFullException,
+                             BufferEmptyException)
 
 
 class CircularBufferTest(unittest.TestCase):
-
     def test_read_empty_buffer(self):
         buf = CircularBuffer(1)
         with self.assertRaises(BufferEmptyException):

@@ -4,7 +4,6 @@ from twelve_days import sing, verse, verses
 
 
 class TwelveDaysTests(unittest.TestCase):
-
     def test_verse1(self):
         expected = ("On the first day of Christmas my true love gave to me, "
                     "a Partridge in a Pear Tree.\n")

@@ -4,7 +4,6 @@ from robot_simulator import Robot, NORTH, EAST, SOUTH, WEST
 
 
 class RobotTests(unittest.TestCase):
-
     def test_init(self):
         robot = Robot()
         self.assertEqual((0, 0), robot.coordinates)

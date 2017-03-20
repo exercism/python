@@ -2,8 +2,8 @@ import unittest
 
 from acronym import abbreviate
 
-
 # test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+
 
 class AcronymTest(unittest.TestCase):
     def test_basic(self):
@@ -25,7 +25,8 @@ class AcronymTest(unittest.TestCase):
         self.assertEqual('GIMP', abbreviate('GNU Image Manipulation Program'))
 
     def test_hyphenated(self):
-        self.assertEqual('CMOS', abbreviate('Complementary metal-oxide semiconductor'))
+        self.assertEqual('CMOS',
+                         abbreviate('Complementary metal-oxide semiconductor'))
 
 
 if __name__ == '__main__':

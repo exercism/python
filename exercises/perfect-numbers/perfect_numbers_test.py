@@ -4,7 +4,6 @@ from perfect_numbers import is_perfect
 
 
 class PerfectNumbersTest(unittest.TestCase):
-
     def test_first_perfect_number(self):
         self.assertTrue(is_perfect(6))
 

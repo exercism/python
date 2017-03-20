@@ -36,11 +36,7 @@ python test/check-exercises.py
 
 The Python code in this repo is meant to largely obey the [PEP8 style guide](https://www.python.org/dev/peps/pep-0008/).
 
-This repo uses [flake8](http://flake8.readthedocs.org/en/latest/) to enforce the coding standard. When you submit a PR, it needs to pass the flake8 tool with no warnings, or it won't be accepted. Here are the settings used by the build system:
-
-```
-flake8 [your-code-here.py] --max-line-length=99 --select=E,W
-```
+This repo uses [flake8](http://flake8.readthedocs.org/en/latest/) to enforce the coding standard. When you submit a PR, it needs to pass the flake8 tool with no warnings, or it won't be accepted.
 
 ## Pull Requests
 

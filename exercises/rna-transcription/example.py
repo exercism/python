@@ -5,7 +5,6 @@ if sys.version_info[0] == 2:
 else:
     maketrans = str.maketrans
 
-
 DNA_CHARS = 'AGCT'
 DNA_TO_RNA = maketrans(DNA_CHARS, 'UCGA')
 

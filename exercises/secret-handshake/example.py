@@ -24,7 +24,7 @@ def code(seq):
 
 
 def sanitize(s):
-    if not(isinstance(s, int) or isinstance(s, str)):
+    if not (isinstance(s, int) or isinstance(s, str)):
         raise TypeError('Unknown type')
     if isinstance(s, int):
         if s < 0:

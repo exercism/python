@@ -19,9 +19,9 @@ def _action(current_verse):
     if current_verse == 0:
         return "Go to the store and buy some more, "
     else:
-        return "Take %s down and pass it around, " % (
-            "one" if current_verse > 1 else "it"
-        )
+        return "Take %s down and pass it around, " % ("one"
+                                                      if current_verse > 1 else
+                                                      "it")
 
 
 def _next_bottle(current_verse):

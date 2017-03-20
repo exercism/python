@@ -8,7 +8,8 @@ class HandshakeTest(unittest.TestCase):
         self.assertEqual(['wink', 'jump'], handshake(9))
 
     def test_shake_bin1(self):
-        self.assertEqual(['close your eyes', 'double blink'], handshake('10110'))
+        self.assertEqual(['close your eyes', 'double blink'],
+                         handshake('10110'))
 
     def test_shake_bin2(self):
         self.assertEqual(['wink', 'close your eyes'], handshake('101'))

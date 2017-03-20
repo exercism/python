@@ -5,6 +5,7 @@ class Luhn(object):
     def addends(self):
         def luhn_transform(n):
             return (2 * n - 9) if (n > 4) else (2 * n)
+
         old_digits = [int(d) for d in str(self.string)]
         return [(luhn_transform(n) if (i % 2 == 0) else n)
                 for i, n in enumerate(old_digits, start=len(old_digits) % 2)]

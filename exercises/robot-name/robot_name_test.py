@@ -21,10 +21,7 @@ class RobotTest(unittest.TestCase):
         self.assertEqual(robot.name, robot.name)
 
     def test_different_robots_have_different_names(self):
-        self.assertNotEqual(
-            Robot().name,
-            Robot().name
-        )
+        self.assertNotEqual(Robot().name, Robot().name)
 
     def test_reset_name(self):
         # Set a seed

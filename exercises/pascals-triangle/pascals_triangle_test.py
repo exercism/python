@@ -9,8 +9,10 @@ class PascalsTriangleTest(unittest.TestCase):
         self.assertEqual(ans, triangle(4))
 
     def test_triangle2(self):
-        ans = ['1', '1 1', '1 2 1', '1 3 3 1', '1 4 6 4 1', '1 5 10 10 5 1',
-               '1 6 15 20 15 6 1']
+        ans = [
+            '1', '1 1', '1 2 1', '1 3 3 1', '1 4 6 4 1', '1 5 10 10 5 1',
+            '1 6 15 20 15 6 1'
+        ]
         self.assertEqual(ans, triangle(6))
 
     def test_is_triangle_true(self):
