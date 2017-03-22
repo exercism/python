@@ -111,7 +111,8 @@ class PokerTest(unittest.TestCase):
         diamondStraightTo9 = "9D 8D 7D 6D 5D".split()
         threeOf4 = "4D 4S 4H QS KS".split()
         self.assertEqual([spadeStraightTo9, diamondStraightTo9],
-                         poker([spadeStraightTo9, diamondStraightTo9, threeOf4]))
+                         poker([spadeStraightTo9, diamondStraightTo9,
+                               threeOf4]))
 
 
 if __name__ == '__main__':
