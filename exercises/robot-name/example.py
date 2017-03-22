@@ -9,16 +9,10 @@ class Robot(object):
         self._past_names = set()
 
     def prefix(self):
-        return ''.join([
-            random.choice(self.alphabet)
-            for _ in range(0, 2)
-        ])
+        return ''.join([random.choice(self.alphabet) for _ in range(0, 2)])
 
     def suffix(self):
-        return ''.join([
-            str(random.choice(range(0, 10)))
-            for _ in range(0, 3)
-        ])
+        return ''.join([str(random.choice(range(0, 10))) for _ in range(0, 3)])
 
     def get_name(self):
         if not self._name:

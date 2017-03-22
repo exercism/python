@@ -4,7 +4,6 @@ from diamond import make_diamond
 
 
 class DiamondTests(unittest.TestCase):
-
     def test_letter_A(self):
         self.assertMultiLineEqual('A\n', make_diamond('A'))
 

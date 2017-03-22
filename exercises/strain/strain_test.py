@@ -38,7 +38,8 @@ class StrainTest(unittest.TestCase):
     def test_keep_plus_discard(self):
         inp = ['1,2,3', 'one', 'almost!', 'love']
         out = ['one', 'love', '1,2,3', 'almost!']
-        self.assertEqual(out, keep(inp, str.isalpha) + discard(inp, str.isalpha))
+        self.assertEqual(out,
+                         keep(inp, str.isalpha) + discard(inp, str.isalpha))
 
 
 if __name__ == '__main__':

@@ -7,7 +7,6 @@ class BufferEmptyException(Exception):
 
 
 class CircularBuffer(object):
-
     def __init__(self, capacity):
         self.buffer = bytearray(capacity)
         self.read_point = 0

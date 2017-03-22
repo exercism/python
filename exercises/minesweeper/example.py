@@ -33,5 +33,6 @@ def verify_board(inp):
         raise ValueError("Invalid board")
     # Borders not as expected
     if any(inp[i1] != '+' + '-' * (rowlen - 2) + '+' for i1 in [0, -1]) or \
-       any(inp[i1][i2] != '|' for i1 in range(1, collen - 1) for i2 in [0, -1]):
+       any(inp[i1][i2] != '|' for i1 in range(1, collen - 1) for i2 in
+       [0, -1]):
         raise ValueError("Invalid board")

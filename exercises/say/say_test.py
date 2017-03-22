@@ -4,7 +4,6 @@ from say import say
 
 
 class SayTest(unittest.TestCase):
-
     def test_one(self):
         self.assertEqual("one", say(1))
 
@@ -30,8 +29,7 @@ class SayTest(unittest.TestCase):
         self.assertEqual("one thousand", say(1000))
 
     def test_one_thousand_two_hundred_thirty_four(self):
-        self.assertEqual("one thousand two hundred and thirty-four",
-                         say(1234))
+        self.assertEqual("one thousand two hundred and thirty-four", say(1234))
 
     def test_eight_hundred_and_ten_thousand(self):
         self.assertEqual("eight hundred and ten thousand", say(810000))
@@ -65,8 +63,7 @@ class SayTest(unittest.TestCase):
         self.assertEqual("nine hundred and eighty-seven billion " +
                          "six hundred and fifty-four million " +
                          "three hundred and twenty-one thousand " +
-                         "one hundred and twenty-three",
-                         say(987654321123))
+                         "one hundred and twenty-three", say(987654321123))
 
 
 if __name__ == '__main__':

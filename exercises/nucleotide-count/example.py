@@ -7,10 +7,7 @@ def count(strand, abbreviation):
 
 
 def nucleotide_counts(strand):
-    return {
-        abbr: strand.count(abbr)
-        for abbr in NUCLEOTIDES
-    }
+    return {abbr: strand.count(abbr) for abbr in NUCLEOTIDES}
 
 
 def _validate(abbreviation):

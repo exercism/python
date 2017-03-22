@@ -4,7 +4,6 @@ from run_length_encoding import encode, decode
 
 
 class WordCountTests(unittest.TestCase):
-
     def test_encode_empty_string(self):
         self.assertMultiLineEqual('', encode(''))
 

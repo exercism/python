@@ -1,4 +1,3 @@
-
 def _is_pling(number):
     return number % 3 == 0
 

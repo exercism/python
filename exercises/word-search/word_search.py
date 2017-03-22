@@ -16,7 +16,7 @@ class Point(object):
         return self.x == other.x and self.y == other.y
 
     def __ne__(self, other):
-        return not(self == other)
+        return not (self == other)
 
 
 class WordSearch(object):

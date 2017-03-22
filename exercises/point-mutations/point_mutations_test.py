@@ -28,8 +28,9 @@ class DNATest(unittest.TestCase):
         self.assertEqual(3, hamming_distance('AAACTAGGGG', 'AGGCTAGCGGTAGGAC'))
 
     def test_ignores_extra_length_on_original_strand_when_longer(self):
-        self.assertEqual(5, hamming_distance('GACTACGGACAGGGTAGGGAAT',
-                                             'GACATCGCACACC'))
+        self.assertEqual(5,
+                         hamming_distance('GACTACGGACAGGGTAGGGAAT',
+                                          'GACATCGCACACC'))
 
 
 if __name__ == '__main__':

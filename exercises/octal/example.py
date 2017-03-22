@@ -1,7 +1,6 @@
 def parse_octal(digits):
     digits = _validate_octal(digits)
-    return sum(int(digit) * 8 ** i
-               for (i, digit) in enumerate(reversed(digits)))
+    return sum(int(digit) * 8**i for (i, digit) in enumerate(reversed(digits)))
 
 
 def _validate_octal(digits):

@@ -4,7 +4,6 @@ from kindergarten_garden import Garden
 
 
 class KindergartenGardenTests(unittest.TestCase):
-
     def test_alices_garden(self):
         self.assertEqual("Radishes Clover Grass Grass".split(),
                          Garden("RC\nGG").plants("Alice"))
@@ -26,8 +25,9 @@ class KindergartenGardenTests(unittest.TestCase):
                          garden.plants("Larry"))
 
     def test_disordered_test(self):
-        garden = Garden("VCRRGVRG\nRVGCCGCV",
-                        students="Samantha Patricia Xander Roger".split())
+        garden = Garden(
+            "VCRRGVRG\nRVGCCGCV",
+            students="Samantha Patricia Xander Roger".split())
         self.assertEqual("Violets Clover Radishes Violets".split(),
                          garden.plants("Patricia"))
         self.assertEqual("Radishes Grass Clover Violets".split(),

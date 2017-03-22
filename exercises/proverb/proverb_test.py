@@ -35,8 +35,11 @@ class ProverbTest(unittest.TestCase):
                    'For want of a message the battle was lost.\n'\
                    'For want of a battle the kingdom was lost.\n'\
                    'And all for the want of a nail.'
-        self.assertEqual(expected, proverb(['nail', 'shoe', 'horse', 'rider',
-                                            'message', 'battle', 'kingdom']))
+        self.assertEqual(expected,
+                         proverb([
+                             'nail', 'shoe', 'horse', 'rider', 'message',
+                             'battle', 'kingdom'
+                         ]))
 
     def test_qualifier(self):
         expected = 'For want of a nail the shoe was lost.\n'\
@@ -46,9 +49,13 @@ class ProverbTest(unittest.TestCase):
                    'For want of a message the battle was lost.\n'\
                    'For want of a battle the kingdom was lost.\n'\
                    'And all for the want of a horseshoe nail.'
-        self.assertEqual(expected, proverb(['nail', 'shoe', 'horse', 'rider',
-                                            'message', 'battle', 'kingdom'],
-                                           qualifier='horseshoe'))
+        self.assertEqual(expected,
+                         proverb(
+                             [
+                                 'nail', 'shoe', 'horse', 'rider', 'message',
+                                 'battle', 'kingdom'
+                             ],
+                             qualifier='horseshoe'))
 
 
 if __name__ == '__main__':

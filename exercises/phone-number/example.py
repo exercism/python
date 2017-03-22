@@ -15,16 +15,11 @@ class Phone(object):
         return self.number[-4:]
 
     def pretty(self):
-        return "(%s) %s-%s" % (
-            self.area_code(),
-            self.exchange_code(),
-            self.subscriber_number()
-        )
+        return "(%s) %s-%s" % (self.area_code(), self.exchange_code(),
+                               self.subscriber_number())
 
     def _clean(self, number):
-        return self._normalize(
-            re.sub(r'[^\d]', '', number)
-        )
+        return self._normalize(re.sub(r'[^\d]', '', number))
 
     def _normalize(self, number):
         valid = len(number) == 10 or \

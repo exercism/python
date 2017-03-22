@@ -95,7 +95,7 @@ def main():
                 failures.append('{} (TestFailed)'.format(exercise))
         print('')
 
-    print('TestEnvironment:', python_executable_name().capitalize(), end='\n\n')
+    print('TestEnvironment:', python_executable_name().capitalize(), '\n')
 
     if failures:
         print('FAILURES: ', ', '.join(failures))

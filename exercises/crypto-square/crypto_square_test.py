@@ -4,7 +4,6 @@ from crypto_square import encode
 
 
 class CryptoSquareTest(unittest.TestCase):
-
     def test_empty_string(self):
         self.assertEqual('', encode(''))
 

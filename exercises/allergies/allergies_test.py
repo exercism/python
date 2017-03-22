@@ -4,7 +4,6 @@ from allergies import Allergies
 
 
 class AllergiesTests(unittest.TestCase):
-
     def test_no_allergies_means_not_allergic(self):
         allergies = Allergies(0)
         self.assertFalse(allergies.is_allergic_to('peanuts'))

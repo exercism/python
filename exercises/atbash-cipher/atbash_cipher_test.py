@@ -6,7 +6,6 @@ from atbash_cipher import decode, encode
 # test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
 
 class AtbashCipherTest(unittest.TestCase):
-
     def test_encode_no(self):
         self.assertMultiLineEqual("ml", encode("no"))
 
@@ -41,14 +40,11 @@ class AtbashCipherTest(unittest.TestCase):
     def test_decode_sentence(self):
         self.assertMultiLineEqual(
             "anobstacleisoftenasteppingstone",
-            decode("zmlyh gzxov rhlug vmzhg vkkrm thglm v")
-        )
+            decode("zmlyh gzxov rhlug vmzhg vkkrm thglm v"))
 
     def test_decode_numbers(self):
-        self.assertMultiLineEqual(
-            "testing123testing",
-            decode("gvhgr mt123 gvhgr mt")
-        )
+        self.assertMultiLineEqual("testing123testing",
+                                  decode("gvhgr mt123 gvhgr mt"))
 
     def test_decode_all_the_letters(self):
         ciphertext = "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"
@@ -57,10 +53,8 @@ class AtbashCipherTest(unittest.TestCase):
 
     # additional track specific test
     def test_encode_decode(self):
-        self.assertMultiLineEqual(
-            "testing123testing",
-            decode(encode("Testing, 1 2 3, testing."))
-        )
+        self.assertMultiLineEqual("testing123testing",
+                                  decode(encode("Testing, 1 2 3, testing.")))
 
 
 if __name__ == '__main__':

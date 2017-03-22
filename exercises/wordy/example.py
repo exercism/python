@@ -6,9 +6,12 @@ if sys.version_info[0] == 2:
 else:
     from operator import floordiv as div
 
-
-VALID_OPERATIONS = {"plus": add, "minus": sub,
-                    "multiplied by": mul, "divided by": div}
+VALID_OPERATIONS = {
+    "plus": add,
+    "minus": sub,
+    "multiplied by": mul,
+    "divided by": div
+}
 
 
 def calculate(stmt):
