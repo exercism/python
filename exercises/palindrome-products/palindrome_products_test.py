@@ -20,7 +20,7 @@ class PalindromesTests(unittest.TestCase):
     def test_largest_palindrome_from_single_digit_factors(self):
         value, factors = largest_palindrome(max_factor=9)
         self.assertEqual(9, value)
-        self.assertIn(set(factors), [{1, 9}, {3, 3}])
+        self.assertIn(set(factors), [{1, 9}, {3}])
 
     def test_largest_palindrome_from_double_digit_factors(self):
         value, factors = largest_palindrome(max_factor=99, min_factor=10)
