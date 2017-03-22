@@ -3,8 +3,9 @@ import unittest
 from rna_transcription import to_rna
 
 
-class DNATests(unittest.TestCase):
+# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
 
+class DNATests(unittest.TestCase):
     def test_transcribes_guanine_to_cytosine(self):
         self.assertEqual('C', to_rna('G'))
 
