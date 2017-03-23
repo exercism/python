@@ -3,38 +3,28 @@ import unittest
 from prime_factors import prime_factors
 
 
+# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+
 class PrimeFactorsTest(unittest.TestCase):
-    def test_1(self):
+    def test_no_factors(self):
         self.assertEqual(prime_factors(1), [])
 
-    def test_2(self):
+    def test_prime_number(self):
         self.assertEqual(prime_factors(2), [2])
 
-    def test_3(self):
-        self.assertEqual(prime_factors(3), [3])
-
-    def test_4(self):
-        self.assertEqual(prime_factors(4), [2, 2])
-
-    def test_6(self):
-        self.assertEqual(prime_factors(6), [2, 3])
-
-    def test_8(self):
-        self.assertEqual(prime_factors(8), [2, 2, 2])
-
-    def test_9(self):
+    def test_square_of_a_prime(self):
         self.assertEqual(prime_factors(9), [3, 3])
 
-    def test_27(self):
-        self.assertEqual(prime_factors(27), [3, 3, 3])
+    def test_cube_of_a_prime(self):
+        self.assertEqual(prime_factors(8), [2, 2, 2])
 
-    def test_625(self):
-        self.assertEqual(prime_factors(625), [5, 5, 5, 5])
+    def test_product_of_primes_and_non_primes(self):
+        self.assertEqual(prime_factors(12), [2, 2, 3])
 
-    def test_901255(self):
+    def test_product_of_primes(self):
         self.assertEqual(prime_factors(901255), [5, 17, 23, 461])
 
-    def test_93819012551(self):
+    def test_factors_include_a_large_prime(self):
         self.assertEqual(prime_factors(93819012551), [11, 9539, 894119])
 
 
