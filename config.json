@@ -23,17 +23,6 @@
       ]
     },
     {
-      "slug": "clock",
-      "difficulty": 2,
-      "topics": [
-          "classes",
-          "time",
-          "mathematics",
-          "logic",
-          "text formatting"
-      ]
-    },
-    {
       "slug": "isogram",
       "difficulty": 1,
       "topics": [
@@ -430,6 +419,17 @@
       "topics": [
         "integers",
         "transforming"
+      ]
+    },
+    {
+      "slug": "clock",
+      "difficulty": 2,
+      "topics": [
+          "classes",
+          "time",
+          "mathematics",
+          "logic",
+          "text formatting"
       ]
     },
     {
