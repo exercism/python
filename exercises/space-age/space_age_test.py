@@ -6,46 +6,46 @@ from space_age import SpaceAge
 class SpaceAgeTest(unittest.TestCase):
     def test_age_in_seconds(self):
         age = SpaceAge(1e6)
-        self.assertEqual(1e6, age.seconds)
+        self.assertEqual(age.seconds, 1e6)
 
     def test_age_in_earth_years(self):
         age = SpaceAge(1e9)
-        self.assertEqual(31.69, age.on_earth())
+        self.assertEqual(age.on_earth(), 31.69)
 
     def test_age_in_mercury_years(self):
         age = SpaceAge(2134835688)
-        self.assertEqual(67.65, age.on_earth())
-        self.assertEqual(280.88, age.on_mercury())
+        self.assertEqual(age.on_earth(), 67.65)
+        self.assertEqual(age.on_mercury(), 280.88)
 
     def test_age_in_venus_years(self):
         age = SpaceAge(189839836)
-        self.assertEqual(6.02, age.on_earth())
-        self.assertEqual(9.78, age.on_venus())
+        self.assertEqual(age.on_earth(), 6.02)
+        self.assertEqual(age.on_venus(), 9.78)
 
     def test_age_on_mars(self):
         age = SpaceAge(2329871239)
-        self.assertEqual(73.83, age.on_earth())
-        self.assertEqual(39.25, age.on_mars())
+        self.assertEqual(age.on_earth(), 73.83)
+        self.assertEqual(age.on_mars(), 39.25)
 
     def test_age_on_jupiter(self):
         age = SpaceAge(901876382)
-        self.assertEqual(28.58, age.on_earth())
-        self.assertEqual(2.41, age.on_jupiter())
+        self.assertEqual(age.on_earth(), 28.58)
+        self.assertEqual(age.on_jupiter(), 2.41)
 
     def test_age_on_saturn(self):
         age = SpaceAge(3e9)
-        self.assertEqual(95.06, age.on_earth())
-        self.assertEqual(3.23, age.on_saturn())
+        self.assertEqual(age.on_earth(), 95.06)
+        self.assertEqual(age.on_saturn(), 3.23)
 
     def test_age_on_uranus(self):
         age = SpaceAge(3210123456)
-        self.assertEqual(101.72, age.on_earth())
-        self.assertEqual(1.21, age.on_uranus())
+        self.assertEqual(age.on_earth(), 101.72)
+        self.assertEqual(age.on_uranus(), 1.21)
 
     def test_age_on_neptune(self):
         age = SpaceAge(8210123456)
-        self.assertEqual(260.16, age.on_earth())
-        self.assertEqual(1.58, age.on_neptune())
+        self.assertEqual(age.on_earth(), 260.16)
+        self.assertEqual(age.on_neptune(), 1.58)
 
 
 if __name__ == '__main__':

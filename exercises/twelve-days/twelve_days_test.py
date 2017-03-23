@@ -4,24 +4,23 @@ from twelve_days import sing, verse, verses
 
 
 class TwelveDaysTests(unittest.TestCase):
-
     def test_verse1(self):
         expected = ("On the first day of Christmas my true love gave to me, "
                     "a Partridge in a Pear Tree.\n")
-        self.assertEqual(expected, verse(1))
+        self.assertEqual(verse(1), expected)
 
     def test_verse2(self):
         expected = ("On the second day of Christmas my true love gave to me, "
                     "two Turtle Doves, "
                     "and a Partridge in a Pear Tree.\n")
-        self.assertEqual(expected, verse(2))
+        self.assertEqual(verse(2), expected)
 
     def test_verse3(self):
         expected = ("On the third day of Christmas my true love gave to me, "
                     "three French Hens, "
                     "two Turtle Doves, "
                     "and a Partridge in a Pear Tree.\n")
-        self.assertEqual(expected, verse(3))
+        self.assertEqual(verse(3), expected)
 
     def test_verse4(self):
         expected = ("On the fourth day of Christmas my true love gave to me, "
@@ -29,7 +28,7 @@ class TwelveDaysTests(unittest.TestCase):
                     "three French Hens, "
                     "two Turtle Doves, "
                     "and a Partridge in a Pear Tree.\n")
-        self.assertEqual(expected, verse(4))
+        self.assertEqual(verse(4), expected)
 
     def test_verse5(self):
         expected = ("On the fifth day of Christmas my true love gave to me, "
@@ -38,7 +37,7 @@ class TwelveDaysTests(unittest.TestCase):
                     "three French Hens, "
                     "two Turtle Doves, "
                     "and a Partridge in a Pear Tree.\n")
-        self.assertEqual(expected, verse(5))
+        self.assertEqual(verse(5), expected)
 
     def test_verse6(self):
         expected = ("On the sixth day of Christmas my true love gave to me, "
@@ -48,7 +47,7 @@ class TwelveDaysTests(unittest.TestCase):
                     "three French Hens, "
                     "two Turtle Doves, "
                     "and a Partridge in a Pear Tree.\n")
-        self.assertEqual(expected, verse(6))
+        self.assertEqual(verse(6), expected)
 
     def test_verse7(self):
         expected = ("On the seventh day of Christmas my true love gave to me, "
@@ -59,7 +58,7 @@ class TwelveDaysTests(unittest.TestCase):
                     "three French Hens, "
                     "two Turtle Doves, "
                     "and a Partridge in a Pear Tree.\n")
-        self.assertEqual(expected, verse(7))
+        self.assertEqual(verse(7), expected)
 
     def test_verse8(self):
         expected = ("On the eighth day of Christmas my true love gave to me, "
@@ -71,7 +70,7 @@ class TwelveDaysTests(unittest.TestCase):
                     "three French Hens, "
                     "two Turtle Doves, "
                     "and a Partridge in a Pear Tree.\n")
-        self.assertEqual(expected, verse(8))
+        self.assertEqual(verse(8), expected)
 
     def test_verse9(self):
         expected = ("On the ninth day of Christmas my true love gave to me, "
@@ -84,7 +83,7 @@ class TwelveDaysTests(unittest.TestCase):
                     "three French Hens, "
                     "two Turtle Doves, "
                     "and a Partridge in a Pear Tree.\n")
-        self.assertEqual(expected, verse(9))
+        self.assertEqual(verse(9), expected)
 
     def test_verse10(self):
         expected = ("On the tenth day of Christmas my true love gave to me, "
@@ -98,7 +97,7 @@ class TwelveDaysTests(unittest.TestCase):
                     "three French Hens, "
                     "two Turtle Doves, "
                     "and a Partridge in a Pear Tree.\n")
-        self.assertEqual(expected, verse(10))
+        self.assertEqual(verse(10), expected)
 
     def test_verse11(self):
         expected = ("On the eleventh day of Christmas "
@@ -114,7 +113,7 @@ class TwelveDaysTests(unittest.TestCase):
                     "three French Hens, "
                     "two Turtle Doves, "
                     "and a Partridge in a Pear Tree.\n")
-        self.assertEqual(expected, verse(11))
+        self.assertEqual(verse(11), expected)
 
     def test_verse12(self):
         expected = ("On the twelfth day of Christmas my true love gave to me, "
@@ -130,7 +129,7 @@ class TwelveDaysTests(unittest.TestCase):
                     "three French Hens, "
                     "two Turtle Doves, "
                     "and a Partridge in a Pear Tree.\n")
-        self.assertEqual(expected, verse(12))
+        self.assertEqual(verse(12), expected)
 
     def test_multiple_verses(self):
         expected = ("On the first day of Christmas my true love gave to me, "
@@ -142,7 +141,7 @@ class TwelveDaysTests(unittest.TestCase):
                     "three French Hens, "
                     "two Turtle Doves, "
                     "and a Partridge in a Pear Tree.\n\n")
-        self.assertEqual(expected, verses(1, 3))
+        self.assertEqual(verses(1, 3), expected)
 
     def test_the_whole_song(self):
         self.assertEqual(verses(1, 12), sing())

@@ -8,7 +8,6 @@ from circular_buffer import (
 
 
 class CircularBufferTest(unittest.TestCase):
-
     def test_read_empty_buffer(self):
         buf = CircularBuffer(1)
         with self.assertRaises(BufferEmptyException):
@@ -25,8 +24,8 @@ class CircularBufferTest(unittest.TestCase):
         buf = CircularBuffer(2)
         buf.write('1')
         buf.write('2')
-        self.assertEqual('1', buf.read())
-        self.assertEqual('2', buf.read())
+        self.assertEqual(buf.read(), '1')
+        self.assertEqual(buf.read(), '2')
         with self.assertRaises(BufferEmptyException):
             buf.read()
 
@@ -39,16 +38,16 @@ class CircularBufferTest(unittest.TestCase):
             buf.read()
         buf.write('1')
         buf.write('2')
-        self.assertEqual('1', buf.read())
+        self.assertEqual(buf.read(), '1')
         buf.write('3')
-        self.assertEqual('2', buf.read())
+        self.assertEqual(buf.read(), '2')
 
     def test_alternate_write_and_read(self):
         buf = CircularBuffer(2)
         buf.write('1')
-        self.assertEqual('1', buf.read())
+        self.assertEqual(buf.read(), '1')
         buf.write('2')
-        self.assertEqual('2', buf.read())
+        self.assertEqual(buf.read(), '2')
 
     def test_read_back_oldest_item(self):
         buf = CircularBuffer(3)
@@ -57,7 +56,7 @@ class CircularBufferTest(unittest.TestCase):
         buf.read()
         buf.write('3')
         buf.read()
-        self.assertEqual('3', buf.read())
+        self.assertEqual(buf.read(), '3')
 
     def test_write_full_buffer(self):
         buf = CircularBuffer(2)
@@ -71,8 +70,8 @@ class CircularBufferTest(unittest.TestCase):
         buf.write('1')
         buf.write('2')
         buf.overwrite('A')
-        self.assertEqual('2', buf.read())
-        self.assertEqual('A', buf.read())
+        self.assertEqual(buf.read(), '2')
+        self.assertEqual(buf.read(), 'A')
         with self.assertRaises(BufferEmptyException):
             buf.read()
 
@@ -80,8 +79,8 @@ class CircularBufferTest(unittest.TestCase):
         buf = CircularBuffer(2)
         buf.overwrite('1')
         buf.overwrite('2')
-        self.assertEqual('1', buf.read())
-        self.assertEqual('2', buf.read())
+        self.assertEqual(buf.read(), '1')
+        self.assertEqual(buf.read(), '2')
         with self.assertRaises(BufferEmptyException):
             buf.read()
 
@@ -97,11 +96,11 @@ class CircularBufferTest(unittest.TestCase):
             buf.write(c)
         buf.overwrite('A')
         buf.overwrite('B')
-        self.assertEqual('6', buf.read())
-        self.assertEqual('7', buf.read())
-        self.assertEqual('8', buf.read())
-        self.assertEqual('A', buf.read())
-        self.assertEqual('B', buf.read())
+        self.assertEqual(buf.read(), '6')
+        self.assertEqual(buf.read(), '7')
+        self.assertEqual(buf.read(), '8')
+        self.assertEqual(buf.read(), 'A')
+        self.assertEqual(buf.read(), 'B')
         with self.assertRaises(BufferEmptyException):
             buf.read()
 
