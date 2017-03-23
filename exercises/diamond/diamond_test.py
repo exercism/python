@@ -4,9 +4,8 @@ from diamond import make_diamond
 
 
 class DiamondTests(unittest.TestCase):
-
     def test_letter_A(self):
-        self.assertMultiLineEqual('A\n', make_diamond('A'))
+        self.assertMultiLineEqual(make_diamond('A'), 'A\n')
 
     def test_letter_C(self):
         result = ['  A  ',
@@ -14,7 +13,7 @@ class DiamondTests(unittest.TestCase):
                   'C   C',
                   ' B B ',
                   '  A  ']
-        self.assertMultiLineEqual('\n'.join(result) + '\n', make_diamond('C'))
+        self.assertMultiLineEqual(make_diamond('C'), '\n'.join(result) + '\n')
 
     def test_letter_E(self):
         result = ['    A    ',
@@ -26,7 +25,7 @@ class DiamondTests(unittest.TestCase):
                   '  C   C  ',
                   '   B B   ',
                   '    A    ']
-        self.assertMultiLineEqual('\n'.join(result) + '\n', make_diamond('E'))
+        self.assertMultiLineEqual(make_diamond('E'), '\n'.join(result) + '\n')
 
 
 if __name__ == '__main__':
