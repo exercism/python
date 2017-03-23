@@ -14,4 +14,5 @@ def encode(msg, rails):
 def decode(msg, rails):
     fence = fence_pattern(rails, len(msg))
     fence_msg = zip(msg, sorted(fence))
-    return ''.join(char for char, _ in sorted(fence_msg, key=lambda item: item[1][1]))
+    return ''.join(
+        char for char, _ in sorted(fence_msg, key=lambda item: item[1][1]))
