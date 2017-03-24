@@ -6,110 +6,110 @@ from clock import Clock
 class ClockTest(unittest.TestCase):
     # Test creating a new clock with an initial time.
     def test_on_the_hour(self):
-        self.assertEqual('08:00', str(Clock(8, 0)))
+        self.assertEqual(str(Clock(8, 0)), '08:00')
 
     def test_past_the_hour(self):
-        self.assertEqual('11:09', str(Clock(11, 9)))
+        self.assertEqual(str(Clock(11, 9)), '11:09')
 
     def test_midnight_is_zero_hours(self):
-        self.assertEqual('00:00', str(Clock(24, 0)))
+        self.assertEqual(str(Clock(24, 0)), '00:00')
 
     def test_hour_rolls_over(self):
-        self.assertEqual('01:00', str(Clock(25, 0)))
+        self.assertEqual(str(Clock(25, 0)), '01:00')
 
     def test_hour_rolls_over_continuously(self):
-        self.assertEqual('04:00', str(Clock(100, 0)))
+        self.assertEqual(str(Clock(100, 0)), '04:00')
 
     def test_sixty_minutes_is_next_hour(self):
-        self.assertEqual('02:00', str(Clock(1, 60)))
+        self.assertEqual(str(Clock(1, 60)), '02:00')
 
     def test_minutes_roll_over(self):
-        self.assertEqual('02:40', str(Clock(0, 160)))
+        self.assertEqual(str(Clock(0, 160)), '02:40')
 
     def test_minutes_roll_over_continuously(self):
-        self.assertEqual('04:43', str(Clock(0, 1723)))
+        self.assertEqual(str(Clock(0, 1723)), '04:43')
 
     def test_hour_and_minutes_roll_over(self):
-        self.assertEqual('03:40', str(Clock(25, 160)))
+        self.assertEqual(str(Clock(25, 160)), '03:40')
 
     def test_hour_and_minutes_roll_over_continuously(self):
-        self.assertEqual('11:01', str(Clock(201, 3001)))
+        self.assertEqual(str(Clock(201, 3001)), '11:01')
 
     def test_hour_and_minutes_roll_over_to_exactly_midnight(self):
-        self.assertEqual('00:00', str(Clock(72, 8640)))
+        self.assertEqual(str(Clock(72, 8640)), '00:00')
 
     def test_negative_hour(self):
-        self.assertEqual('23:15', str(Clock(-1, 15)))
+        self.assertEqual(str(Clock(-1, 15)), '23:15')
 
     def test_negative_hour_rolls_over(self):
-        self.assertEqual('23:00', str(Clock(-25, 0)))
+        self.assertEqual(str(Clock(-25, 0)), '23:00')
 
     def test_negative_hour_rolls_over_continuously(self):
-        self.assertEqual('05:00', str(Clock(-91, 0)))
+        self.assertEqual(str(Clock(-91, 0)), '05:00')
 
     def test_negative_minutes(self):
-        self.assertEqual('00:20', str(Clock(1, -40)))
+        self.assertEqual(str(Clock(1, -40)), '00:20')
 
     def test_negative_minutes_roll_over(self):
-        self.assertEqual('22:20', str(Clock(1, -160)))
+        self.assertEqual(str(Clock(1, -160)), '22:20')
 
     def test_negative_minutes_roll_over_continuously(self):
-        self.assertEqual('16:40', str(Clock(1, -4820)))
+        self.assertEqual(str(Clock(1, -4820)), '16:40')
 
     def test_negative_hour_and_minutes_both_roll_over(self):
-        self.assertEqual('20:20', str(Clock(-25, -160)))
+        self.assertEqual(str(Clock(-25, -160)), '20:20')
 
     def test_negative_hour_and_minutes_both_roll_over_continuously(self):
-        self.assertEqual('22:10', str(Clock(-121, -5810)))
+        self.assertEqual(str(Clock(-121, -5810)), '22:10')
 
     # Test adding and subtracting minutes.
     def test_add_minutes(self):
-        self.assertEqual('10:03', str(Clock(10, 0).add(3)))
+        self.assertEqual(str(Clock(10, 0).add(3)), '10:03')
 
     def test_add_no_minutes(self):
-        self.assertEqual('06:41', str(Clock(6, 41).add(0)))
+        self.assertEqual(str(Clock(6, 41).add(0)), '06:41')
 
     def test_add_to_next_hour(self):
-        self.assertEqual('01:25', str(Clock(0, 45).add(40)))
+        self.assertEqual(str(Clock(0, 45).add(40)), '01:25')
 
     def test_add_more_than_one_hour(self):
-        self.assertEqual('11:01', str(Clock(10, 0).add(61)))
+        self.assertEqual(str(Clock(10, 0).add(61)), '11:01')
 
     def test_add_more_than_two_hours_with_carry(self):
-        self.assertEqual('03:25', str(Clock(0, 45).add(160)))
+        self.assertEqual(str(Clock(0, 45).add(160)), '03:25')
 
     def test_add_across_midnight(self):
-        self.assertEqual('00:01', str(Clock(23, 59).add(2)))
+        self.assertEqual(str(Clock(23, 59).add(2)), '00:01')
 
     def test_add_more_than_one_day(self):
-        self.assertEqual('06:32', str(Clock(5, 32).add(1500)))
+        self.assertEqual(str(Clock(5, 32).add(1500)), '06:32')
 
     def test_add_more_than_two_days(self):
-        self.assertEqual('11:21', str(Clock(1, 1).add(3500)))
+        self.assertEqual(str(Clock(1, 1).add(3500)), '11:21')
 
     def test_subtract_minutes(self):
-        self.assertEqual('10:00', str(Clock(10, 3).add(-3)))
+        self.assertEqual(str(Clock(10, 3).add(-3)), '10:00')
 
     def test_subtract_to_previous_hour(self):
-        self.assertEqual('10:00', str(Clock(10, 3).add(-3)))
+        self.assertEqual(str(Clock(10, 3).add(-3)), '10:00')
 
     def test_subtract_more_than_an_hour(self):
-        self.assertEqual('09:33', str(Clock(10, 3).add(-30)))
+        self.assertEqual(str(Clock(10, 3).add(-30)), '09:33')
 
     def test_subtract_across_midnight(self):
-        self.assertEqual('08:53', str(Clock(10, 3).add(-70)))
+        self.assertEqual(str(Clock(10, 3).add(-70)), '08:53')
 
     def test_subtract_more_than_two_hours(self):
-        self.assertEqual('21:20', str(Clock(0, 0).add(-160)))
+        self.assertEqual(str(Clock(0, 0).add(-160)), '21:20')
 
     def test_subtract_more_than_two_hours_with_borrow(self):
-        self.assertEqual('03:35', str(Clock(6, 15).add(-160)))
+        self.assertEqual(str(Clock(6, 15).add(-160)), '03:35')
 
     def test_subtract_more_than_one_day(self):
-        self.assertEqual('04:32', str(Clock(5, 32).add(-1500)))
+        self.assertEqual(str(Clock(5, 32).add(-1500)), '04:32')
 
     def test_subtract_more_than_two_days(self):
-        self.assertEqual('00:20', str(Clock(2, 20).add(-3000)))
+        self.assertEqual(str(Clock(2, 20).add(-3000)), '00:20')
 
     # Construct two separate clocks, set times, test if they are equal.
     def test_clocks_with_same_time(self):

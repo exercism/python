@@ -17,28 +17,25 @@ def next_to(x, y):
 def solution():
     houses = first, _, middle, _, _ = range(5)
     orderings = list(permutations(houses))
-    result = next([{Englishman: "Englishman", Spaniard: "Spaniard",
-                    Ukranian: "Ukranian", Japanese: "Japanese",
-                    Norwegian: "Norwegian"}[x]
-                   for x in (water, zebra)]
-                  for (red, green, ivory, yellow, blue) in orderings
-                  if just_right_of(green, ivory)
-                  for (Englishman, Spaniard, Ukranian, Japanese, Norwegian) in orderings
-                  if Englishman is red
-                  if Norwegian is first
-                  if next_to(Norwegian, blue)
-                  for (coffee, tea, milk, oj, water) in orderings
-                  if coffee is green
-                  if Ukranian is tea
-                  if milk is middle
-                  for (OldGold, Kools, Chesterfields, LuckyStrike, Parliaments) in orderings
-                  if Kools is yellow
-                  if LuckyStrike is oj
-                  if Japanese is Parliaments
-                  for (dog, snails, fox, horse, zebra) in orderings
-                  if Spaniard is dog
-                  if OldGold is snails
-                  if next_to(Chesterfields, fox)
-                  if next_to(Kools, horse))
+    result = next(
+        [{
+            Englishman: "Englishman",
+            Spaniard: "Spaniard",
+            Ukranian: "Ukranian",
+            Japanese: "Japanese",
+            Norwegian: "Norwegian"
+        }[x] for x in (water, zebra)]
+        for (red, green, ivory, yellow, blue) in orderings
+        if just_right_of(green, ivory)
+        for (Englishman, Spaniard, Ukranian, Japanese, Norwegian) in orderings
+        if Englishman is red if Norwegian is first if next_to(Norwegian, blue)
+        for (coffee, tea, milk, oj, water) in orderings if coffee is green
+        if Ukranian is tea if milk is middle
+        for (OldGold, Kools, Chesterfields, LuckyStrike, Parliaments
+             ) in orderings if Kools is yellow if LuckyStrike is oj
+        if Japanese is Parliaments
+        for (dog, snails, fox, horse, zebra) in orderings if Spaniard is dog
+        if OldGold is snails if next_to(Chesterfields, fox)
+        if next_to(Kools, horse))
     return ("It is the {} who drinks the water.\n"
             "The {} keeps the zebra.").format(*result)

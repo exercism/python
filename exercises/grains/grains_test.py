@@ -6,32 +6,32 @@ from grains import SquareZeroError, SquareNegativeValueError, SquareGTSixtyFourE
 
 class GrainsTest(unittest.TestCase):
     def test_square_1(self):
-        self.assertEqual(1, on_square(1))
-        self.assertEqual(1, total_after(1))
+        self.assertEqual(on_square(1), 1)
+        self.assertEqual(total_after(1), 1)
 
     def test_square_2(self):
-        self.assertEqual(2, on_square(2))
-        self.assertEqual(3, total_after(2))
+        self.assertEqual(on_square(2), 2)
+        self.assertEqual(total_after(2), 3)
 
     def test_square_3(self):
-        self.assertEqual(4, on_square(3))
-        self.assertEqual(7, total_after(3))
+        self.assertEqual(on_square(3), 4)
+        self.assertEqual(total_after(3), 7)
 
     def test_square_4(self):
-        self.assertEqual(8, on_square(4))
-        self.assertEqual(15, total_after(4))
+        self.assertEqual(on_square(4), 8)
+        self.assertEqual(total_after(4), 15)
 
     def test_square_16(self):
-        self.assertEqual(32768, on_square(16))
-        self.assertEqual(65535, total_after(16))
+        self.assertEqual(on_square(16), 32768)
+        self.assertEqual(total_after(16), 65535)
 
     def test_square_32(self):
-        self.assertEqual(2147483648, on_square(32))
-        self.assertEqual(4294967295, total_after(32))
+        self.assertEqual(on_square(32), 2147483648)
+        self.assertEqual(total_after(32), 4294967295)
 
     def test_square_64(self):
-        self.assertEqual(9223372036854775808, on_square(64))
-        self.assertEqual(18446744073709551615, total_after(64))
+        self.assertEqual(on_square(64), 9223372036854775808)
+        self.assertEqual(total_after(64), 18446744073709551615)
 
     def test_square_0_raises_exception(self):
         self.assertRaises(SquareZeroError, on_square, 0)

@@ -7,25 +7,26 @@ from acronym import abbreviate
 
 class AcronymTest(unittest.TestCase):
     def test_basic(self):
-        self.assertEqual('PNG', abbreviate('Portable Network Graphics'))
+        self.assertEqual(abbreviate('Portable Network Graphics'), 'PNG')
 
     def test_lowercase_words(self):
-        self.assertEqual('ROR', abbreviate('Ruby on Rails'))
+        self.assertEqual(abbreviate('Ruby on Rails'), 'ROR')
 
     def test_camelcase(self):
-        self.assertEqual('HTML', abbreviate('HyperText Markup Language'))
+        self.assertEqual(abbreviate('HyperText Markup Language'), 'HTML')
 
     def test_punctuation(self):
-        self.assertEqual('FIFO', abbreviate('First In, First Out'))
+        self.assertEqual(abbreviate('First In, First Out'), 'FIFO')
 
     def test_all_caps_words(self):
-        self.assertEqual('PHP', abbreviate('PHP: Hypertext Preprocessor'))
+        self.assertEqual(abbreviate('PHP: Hypertext Preprocessor'), 'PHP')
 
     def test_non_acronym_all_caps_word(self):
-        self.assertEqual('GIMP', abbreviate('GNU Image Manipulation Program'))
+        self.assertEqual(abbreviate('GNU Image Manipulation Program'), 'GIMP')
 
     def test_hyphenated(self):
-        self.assertEqual('CMOS', abbreviate('Complementary metal-oxide semiconductor'))
+        self.assertEqual(
+            abbreviate('Complementary metal-oxide semiconductor'), 'CMOS')
 
 
 if __name__ == '__main__':
