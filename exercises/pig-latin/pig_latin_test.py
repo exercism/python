@@ -5,49 +5,49 @@ from pig_latin import translate
 
 class PigLatinTests(unittest.TestCase):
     def test_word_beginning_with_a(self):
-        self.assertEqual("appleay", translate("apple"))
+        self.assertEqual(translate("apple"), "appleay")
 
     def test_word_beginning_with_e(self):
-        self.assertEqual("earay", translate("ear"))
+        self.assertEqual(translate("ear"), "earay")
 
     def test_word_beginning_with_p(self):
-        self.assertEqual("igpay", translate("pig"))
+        self.assertEqual(translate("pig"), "igpay")
 
     def test_word_beginning_with_k(self):
-        self.assertEqual("oalakay", translate("koala"))
+        self.assertEqual(translate("koala"), "oalakay")
 
     def test_word_beginning_with_ch(self):
-        self.assertEqual("airchay", translate("chair"))
+        self.assertEqual(translate("chair"), "airchay")
 
     def test_word_beginning_with_qu(self):
-        self.assertEqual("eenquay", translate("queen"))
+        self.assertEqual(translate("queen"), "eenquay")
 
     def test_word_beginning_with_squ(self):
-        self.assertEqual("aresquay", translate("square"))
+        self.assertEqual(translate("square"), "aresquay")
 
     def test_word_beginning_with_th(self):
-        self.assertEqual("erapythay", translate("therapy"))
+        self.assertEqual(translate("therapy"), "erapythay")
 
     def test_word_beginning_with_thr(self):
-        self.assertEqual("ushthray", translate("thrush"))
+        self.assertEqual(translate("thrush"), "ushthray")
 
     def test_word_beginning_with_sch(self):
-        self.assertEqual("oolschay", translate("school"))
+        self.assertEqual(translate("school"), "oolschay")
 
     def test_translates_phrase(self):
-        self.assertEqual("ickquay astfay unray", translate("quick fast run"))
+        self.assertEqual(translate("quick fast run"), "ickquay astfay unray")
 
     def test_word_beginning_with_ye(self):
-        self.assertEqual("ellowyay", translate("yellow"))
+        self.assertEqual(translate("yellow"), "ellowyay")
 
     def test_word_beginning_with_yt(self):
-        self.assertEqual("yttriaay", translate("yttria"))
+        self.assertEqual(translate("yttria"), "yttriaay")
 
     def test_word_beginning_with_xe(self):
-        self.assertEqual("enonxay", translate("xenon"))
+        self.assertEqual(translate("xenon"), "enonxay")
 
     def test_word_beginning_with_xr(self):
-        self.assertEqual("xrayay", translate("xray"))
+        self.assertEqual(translate("xray"), "xrayay")
 
 
 if __name__ == '__main__':

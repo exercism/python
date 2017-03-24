@@ -1,7 +1,7 @@
 import unittest
+import random
 
 from robot_name import Robot
-import random
 
 
 class RobotTest(unittest.TestCase):

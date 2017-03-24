@@ -8,13 +8,13 @@ class TransformTest(unittest.TestCase):
         old = {1: ['WORLD']}
         expected = {'world': 1}
 
-        self.assertEqual(expected, etl.transform(old))
+        self.assertEqual(etl.transform(old), expected)
 
     def test_transform_more_values(self):
         old = {1: ['WORLD', 'GSCHOOLERS']}
         expected = {'world': 1, 'gschoolers': 1}
 
-        self.assertEqual(expected, etl.transform(old))
+        self.assertEqual(etl.transform(old), expected)
 
     def test_more_keys(self):
         old = {1: ['APPLE', 'ARTICHOKE'], 2: ['BOAT', 'BALLERINA']}
@@ -25,7 +25,7 @@ class TransformTest(unittest.TestCase):
             'ballerina': 2
         }
 
-        self.assertEqual(expected, etl.transform(old))
+        self.assertEqual(etl.transform(old), expected)
 
     def test_full_dataset(self):
         old = {
@@ -47,7 +47,7 @@ class TransformTest(unittest.TestCase):
             "z": 10
         }
 
-        self.assertEqual(expected, etl.transform(old))
+        self.assertEqual(etl.transform(old), expected)
 
 
 if __name__ == '__main__':

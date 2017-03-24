@@ -29,7 +29,7 @@ class MinesweeperTest(unittest.TestCase):
                "|1*22*2|",
                "|111111|",
                "+------+"]
-        self.assertEqual(out, board(inp))
+        self.assertEqual(board(inp), out)
 
     def test_board2(self):
         inp = ["+-----+",
@@ -46,7 +46,7 @@ class MinesweeperTest(unittest.TestCase):
                "|12*4*|",
                "|1*3*2|",
                "+-----+"]
-        self.assertEqual(out, board(inp))
+        self.assertEqual(board(inp), out)
 
     def test_board3(self):
         inp = ["+-----+",
@@ -55,7 +55,7 @@ class MinesweeperTest(unittest.TestCase):
         out = ["+-----+",
                "|1*2*1|",
                "+-----+"]
-        self.assertEqual(out, board(inp))
+        self.assertEqual(board(inp), out)
 
     def test_board4(self):
         inp = ["+-+",
@@ -72,7 +72,7 @@ class MinesweeperTest(unittest.TestCase):
                "|1|",
                "| |",
                "+-+"]
-        self.assertEqual(out, board(inp))
+        self.assertEqual(board(inp), out)
 
     def test_board5(self):
         inp = ["+-+",
@@ -81,7 +81,7 @@ class MinesweeperTest(unittest.TestCase):
         out = ["+-+",
                "|*|",
                "+-+"]
-        self.assertEqual(out, board(inp))
+        self.assertEqual(board(inp), out)
 
     def test_board6(self):
         inp = ["+--+",
@@ -92,7 +92,7 @@ class MinesweeperTest(unittest.TestCase):
                "|**|",
                "|**|",
                "+--+"]
-        self.assertEqual(out, board(inp))
+        self.assertEqual(board(inp), out)
 
     def test_board7(self):
         inp = ["+--+",
@@ -103,7 +103,7 @@ class MinesweeperTest(unittest.TestCase):
                "|**|",
                "|**|",
                "+--+"]
-        self.assertEqual(out, board(inp))
+        self.assertEqual(board(inp), out)
 
     def test_board8(self):
         inp = ["+---+",
@@ -116,7 +116,7 @@ class MinesweeperTest(unittest.TestCase):
                "|*8*|",
                "|***|",
                "+---+"]
-        self.assertEqual(out, board(inp))
+        self.assertEqual(board(inp), out)
 
     def test_board9(self):
         inp = ["+-----+",
@@ -133,7 +133,7 @@ class MinesweeperTest(unittest.TestCase):
                "|111  |",
                "|1*1  |",
                "+-----+"]
-        self.assertEqual(out, board(inp))
+        self.assertEqual(board(inp), out)
 
     def test_different_len(self):
         inp = ["+-+",
