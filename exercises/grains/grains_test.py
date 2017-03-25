@@ -1,7 +1,12 @@
 import unittest
 
-from grains import on_square, total_after
-from grains import SquareZeroError, SquareNegativeValueError, SquareGTSixtyFourError 
+from grains import (
+    on_square,
+    total_after,
+    SquareZeroError,
+    SquareNegativeValueError,
+    SquareGTSixtyFourError
+)
 
 
 class GrainsTest(unittest.TestCase):
@@ -44,6 +49,7 @@ class GrainsTest(unittest.TestCase):
     def test_square_gt_64_raises_exception(self):
         self.assertRaises(SquareGTSixtyFourError, on_square, 65)
         self.assertRaises(SquareGTSixtyFourError, total_after, 65)
+
 
 if __name__ == '__main__':
     unittest.main()
