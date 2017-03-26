@@ -30,6 +30,9 @@ class TestIsogram(unittest.TestCase):
     def test_made_up_name_that_is_an_isogram(self):
         self.assertTrue(is_isogram("Emily Jung Schwartzkopf"))
 
+    def test_duplicated_letter_not_at_the_beginning(self):
+        self.assertFalse(is_isogram("supercalifragi"))
+
 
 if __name__ == '__main__':
     unittest.main()
