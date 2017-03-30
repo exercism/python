@@ -1,14 +1,16 @@
+
+
 def rotational_cipher(message,key):
-    import string
-    alpha_lower = list(string.ascii_lowercase)
-    alpha_upper = list(string.ascii_uppercase)
+    """Preform a rotation cipher on a message.
+
+    Arguments:
+    message -- Message to be incoded in the form of a string
+    key -- The number of letters the charactors are to be shifted
+
+    Outputs:
+    coded_message -- A string containing the transposed message
+    """
     coded_message = ""
-    for char in list(message):
-        if char in alpha_lower:
-            char = alpha_lower[(alpha_lower.index(char) + key)%26]
-        elif char in alpha_upper:
-            char = alpha_upper[(alpha_upper.index(char) + key)%26]
-        coded_message = coded_message + char
     return coded_message
 
 
