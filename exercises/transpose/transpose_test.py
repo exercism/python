@@ -2,38 +2,27 @@ import unittest
 from transpose import transpose
 
 
+# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+
 class TransposeTests(unittest.TestCase):
     def test_empty_string(self):
         input_line = ""
         expected = ""
         self.assertEqual(
-            expected,
-            transpose(input_line)
+            transpose(input_line),
+            expected
         )
 
     def test_two_characters_in_a_row(self):
-        input_line = ["A1"]
-        expected = [
-            "A",
-            "1"
-        ]
         self.assertEqual(
-            "\n".join(expected),
-            transpose("\n".join(input_line))
+            transpose("A1"),
+            "\n".join(["A", "1"])
         )
 
     def test_two_characters_in_a_column(self):
-        input_line = [
-            "A",
-            "1"
-        ]
-        expected = [
-            "A1"
-        ]
-
         self.assertEqual(
-            "\n".join(expected),
-            transpose("\n".join(input_line))
+            transpose("\n".join(["A", "1"])),
+            "A1"
         )
 
     def test_simple(self):
@@ -48,8 +37,8 @@ class TransposeTests(unittest.TestCase):
         ]
 
         self.assertEqual(
-            '\n'.join(expected),
-            transpose('\n'.join(input_line))
+            transpose("\n".join(input_line)),
+            "\n".join(expected)
         )
 
     def test_single_line(self):
@@ -69,8 +58,8 @@ class TransposeTests(unittest.TestCase):
             "."
         ]
         self.assertEqual(
-            '\n'.join(expected),
-            transpose('\n'.join(input_line))
+            transpose("\n".join(input_line)),
+            "\n".join(expected)
         )
 
     def test_first_line_longer_than_second_line(self):
@@ -97,8 +86,8 @@ class TransposeTests(unittest.TestCase):
             "."
         ]
         self.assertEqual(
-            '\n'.join(expected),
-            transpose('\n'.join(input_line))
+            transpose("\n".join(input_line)),
+            "\n".join(expected)
         )
 
     def test_second_line_longer_than_first_line(self):
@@ -125,8 +114,8 @@ class TransposeTests(unittest.TestCase):
             " ."
         ]
         self.assertEqual(
-            '\n'.join(expected),
-            transpose('\n'.join(input_line))
+            transpose("\n".join(input_line)),
+            "\n".join(expected)
         )
 
     def test_square(self):
@@ -145,8 +134,8 @@ class TransposeTests(unittest.TestCase):
             "TREND"
         ]
         self.assertEqual(
-            '\n'.join(expected),
-            transpose('\n'.join(input_line))
+            transpose("\n".join(input_line)),
+            "\n".join(expected)
         )
 
     def test_rectangle(self):
@@ -167,8 +156,8 @@ class TransposeTests(unittest.TestCase):
             "EDGE"
         ]
         self.assertEqual(
-            '\n'.join(expected),
-            transpose('\n'.join(input_line))
+            transpose("\n".join(input_line)),
+            "\n".join(expected)
         )
 
     def test_triangle(self):
@@ -189,8 +178,8 @@ class TransposeTests(unittest.TestCase):
             "     R"
         ]
         self.assertEqual(
-            '\n'.join(expected),
-            transpose('\n'.join(input_line))
+            transpose("\n".join(input_line)),
+            "\n".join(expected)
         )
 
     def test_many_lines(self):
@@ -266,8 +255,8 @@ class TransposeTests(unittest.TestCase):
             "          ,"
         ]
         self.assertEqual(
-            '\n'.join(expected),
-            transpose('\n'.join(input_line))
+            transpose("\n".join(input_line)),
+            "\n".join(expected)
         )
 
 
