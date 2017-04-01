@@ -5,7 +5,7 @@ import rotational_cipher
 
 class RotationalCipher(unittest.TestCase):
     def test_hello(self):
-        self.assertEqual(rotational_cipher.rotational_cipher('hello',0),
+        self.assertEqual(rotational_cipher.rotational_cipher('hello', 0),
                          'hello')
 
     def test_space(self):
@@ -30,10 +30,10 @@ class RotationalCipher(unittest.TestCase):
             '... n 1000 GVZRF')
 
     def test_emptystring(self):
-        self.assertEqual(rotational_cipher.rotational_cipher('',13),'')
+        self.assertEqual(rotational_cipher.rotational_cipher('', 13), '')
 
     def test_numbers(self):
-        self.assertEqual(rotational_cipher.rotational_cipher('07041776!!%$$',13),
+        self.assertEqual(rotational_cipher.rotational_cipher('07041776!!%$$', 13),
                          '07041776!!%$$')
 
     def test_mixed(self):
@@ -49,8 +49,6 @@ class RotationalCipher(unittest.TestCase):
                                                 "Anymoreeee :'(",
                                                 -26),
             "Anymoreeee :'(")
-        
-
 
 
 if __name__ == '__main__':

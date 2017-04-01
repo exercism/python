@@ -1,6 +1,6 @@
 
 
-def rotational_cipher(message,key):
+def rotational_cipher(message, key):
     """Preform a rotation cipher on a message.
 
     Arguments:
@@ -12,5 +12,3 @@ def rotational_cipher(message,key):
     """
     coded_message = ""
     return coded_message
-
-
