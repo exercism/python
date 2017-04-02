@@ -19,7 +19,7 @@ class Point(object):
         return self.x == other.x and self.y == other.y
 
     def __ne__(self, other):
-        return not(self == other)
+        return not (self == other)
 
 
 DIRECTIONS = (Point(1, 0), Point(1, -1), Point(1, 1), Point(-1, -1),
@@ -40,15 +40,16 @@ class WordSearch(object):
         return self.rows[coordinate.y][coordinate.x]
 
     def find(self, word, position, direction):
-            current = copy.copy(position)
-            for letter in word:
-                if self.find_char(current) != letter:
-                    return
-                current += direction
-            return position, current - direction
+        current = copy.copy(position)
+        for letter in word:
+            if self.find_char(current) != letter:
+                return
+            current += direction
+        return position, current - direction
 
     def search(self, word):
-        positions = (Point(x, y) for x in range(self.width) for y in range(self.height))
+        positions = (Point(x, y)
+                     for x in range(self.width) for y in range(self.height))
         for pos in positions:
             for d in DIRECTIONS:
                 result = self.find(word, pos, d)
