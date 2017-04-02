@@ -1,57 +1,22 @@
-import copy
+def find_stop(row, column, word, puzzle):
+    directions = [(0, 1), (0, -1), (1, 0), (1, 1), (1, -1), (-1, 0), (-1, 1), (-1, -1)]
+    for d in directions:
+        row_number, column_number = row, column
+        for char_number, character in enumerate(word):
+            try:
+                if puzzle[row_number][column_number] != character:
+                    break
+            except IndexError:
+                break
+            if char_number == len(word) - 1:
+                return row_number, column_number
+            row_number += d[0]
+            column_number += d[1]
 
 
-class Point(object):
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-
-    def __repr__(self):
-        return 'Point({}:{})'.format(self.x, self.y)
-
-    def __add__(self, other):
-        return Point(self.x + other.x, self.y + other.y)
-
-    def __sub__(self, other):
-        return Point(self.x - other.x, self.y - other.y)
-
-    def __eq__(self, other):
-        return self.x == other.x and self.y == other.y
-
-    def __ne__(self, other):
-        return not(self == other)
-
-
-DIRECTIONS = (Point(1, 0), Point(1, -1), Point(1, 1), Point(-1, -1),
-              Point(0, -1), Point(0, 1), Point(-1, 1), Point(-1, 0))
-
-
-class WordSearch(object):
-    def __init__(self, puzzle):
-        self.rows = puzzle.split()
-        self.width = len(self.rows[0])
-        self.height = len(self.rows)
-
-    def find_char(self, coordinate):
-        if coordinate.x < 0 or coordinate.x >= self.width:
-            return
-        if coordinate.y < 0 or coordinate.y >= self.height:
-            return
-        return self.rows[coordinate.y][coordinate.x]
-
-    def find(self, word, position, direction):
-            current = copy.copy(position)
-            for letter in word:
-                if self.find_char(current) != letter:
-                    return
-                current += direction
-            return position, current - direction
-
-    def search(self, word):
-        positions = (Point(x, y) for x in range(self.width) for y in range(self.height))
-        for pos in positions:
-            for d in DIRECTIONS:
-                result = self.find(word, pos, d)
-                if result:
-                    return result
-        return None
+def search(puzzle, word):
+    for row_number, row in enumerate(puzzle):
+        for column_number, character in enumerate(row):
+            stop = find_stop(row_number, column_number, word, puzzle)
+            if stop:
+                return (row_number, column_number), stop
