@@ -3,6 +3,9 @@ from math import sqrt
 
 
 def nth_prime(n):
+    if n < 1:
+        raise ValueError('The parameter `n` has to be a positive number.')
+
     known = []
     candidates = prime_candidates()
 
