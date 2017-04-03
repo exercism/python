@@ -4,51 +4,49 @@ import rotational_cipher
 
 
 class RotationalCipher(unittest.TestCase):
-    def test_hello(self):
-        self.assertEqual(rotational_cipher.rotational_cipher('hello', 0),
-                         'hello')
+    def test_rotate_a_by_1(self):
+        self.assertEqual(rotational_cipher.rotate('a', 1), 'b')
 
-    def test_space(self):
+    def test_rotate_a_by_26(self):
+        self.assertEqual(rotational_cipher.rotate('a', 26), 'a')
+
+    def test_rotate_a_by_0(self):
+        self.assertEqual(rotational_cipher.rotate('a', 0), 'a')
+
+    def test_rotate_m_by_13(self):
+        self.assertEqual(rotational_cipher.rotate('m', 13), 'z')
+
+    def test_rotate_n_by_13_with_wrap_around_alphabet(self):
+        self.assertEqual(rotational_cipher.rotate('n', 13), 'a')
+
+    def test_rotate_capital_letters(self):
+        self.assertEqual(rotational_cipher.rotate('OMG', 5),'TRL')
+
+    def test_rotate_spaces(self):
+        self.assertEqual(rotational_cipher.rotate('O M G', 5),
+                         'T R L')
+
+    def test_rotate_numbers(self):
         self.assertEqual(
-            rotational_cipher.rotational_cipher(
-                                                'from the other side',
-                                                0),
-            'from the other side')
+            rotational_cipher.rotate(
+                                     'Testing 1 2 3 testing',
+                                     4),
+            'Xiwxmrk 1 2 3 xiwxmrk')
 
-    def test_ciphered(self):
+    def test_rotate_punctuation(self):
         self.assertEqual(
-            rotational_cipher.rotational_cipher(
-                                                'i must have called',
-                                                13),
-            'v zhfg unir pnyyrq')
+            rotational_cipher.rotate(
+                                     "Let's eat, Grandma!",
+                                     21),
+            "Gzo'n zvo, Bmviyhv!")
 
-    def test_mixed(self):
+    def test_rotate_all_letters(self):
         self.assertEqual(
-            rotational_cipher.rotational_cipher(
-                                                '... a 1000 TIMES',
-                                                13),
-            '... n 1000 GVZRF')
-
-    def test_emptystring(self):
-        self.assertEqual(rotational_cipher.rotational_cipher('', 13), '')
-
-    def test_numbers(self):
-        self.assertEqual(rotational_cipher.rotational_cipher('07041776!!%$$', 13),
-                         '07041776!!%$$')
-
-    def test_mixed(self):
-        self.assertEqual(
-            rotational_cipher.rotational_cipher(
-                                                "Doesn't tear you apart;",
-                                                27),
-            "Epfto'u ufbs zpv bqbsu;")
-
-    def test_mixed(self):
-        self.assertEqual(
-            rotational_cipher.rotational_cipher(
-                                                "Anymoreeee :'(",
-                                                -26),
-            "Anymoreeee :'(")
+            rotational_cipher.rotate(
+                                     "The quick brown fox jumps"\
+                                     " over the lazy dog.",
+                                     13),
+            "Gur dhvpx oebja sbk whzcf bire gur ynml qbt.")
 
 
 if __name__ == '__main__':
