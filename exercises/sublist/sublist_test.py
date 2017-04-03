@@ -76,6 +76,16 @@ class SublistTest(unittest.TestCase):
         multiples_of_15 = list(range(15, 200, 15))
         self.assertEqual(check_lists(multiples_of_15, multiples_of_3), UNEQUAL)
 
+    def test_double_digits(self):
+        l1 = [10]
+        l2 = [1, 0]
+        self.assertEqual(check_lists(l1, l2), UNEQUAL)
+
+    def test_inner_spaces(self):
+        l1 = ['a c']
+        l2 = ['a', 'c']
+        self.assertEqual(check_lists(l1, l2), UNEQUAL)
+
     def test_avoid_sets(self):
         self.assertEqual(check_lists([1, 3], [1, 2, 3]), UNEQUAL)
         self.assertEqual(check_lists([1, 2, 3], [1, 3]), UNEQUAL)
