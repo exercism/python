@@ -1,7 +1,9 @@
+from string import ascii_lowercase as alpha_lower
+from string import ascii_uppercase as alpha_upper
+ALPHA_LEN = len(alpha_lower)
+
+
 def rotate(message, key):
-    from string import ascii_lowercase as alpha_lower
-    from string import ascii_uppercase as alpha_upper
-    ALPHA_LEN = len(alpha_lower)
     coded_message = ""
     for char in message:
         if char in alpha_lower:
