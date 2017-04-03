@@ -102,6 +102,15 @@
       ]
     },
     {
+      "slug": "rotational-cipher",
+      "difficulty": 1,
+      "topics": [
+         "strings",
+         "logic",
+         "control-flow (loops)"
+      ]
+    },
+    {
       "slug": "difference-of-squares",
       "difficulty": 1,
       "topics": [
