@@ -20,7 +20,7 @@ class RotationalCipher(unittest.TestCase):
         self.assertEqual(rotational_cipher.rotate('n', 13), 'a')
 
     def test_rotate_capital_letters(self):
-        self.assertEqual(rotational_cipher.rotate('OMG', 5),'TRL')
+        self.assertEqual(rotational_cipher.rotate('OMG', 5), 'TRL')
 
     def test_rotate_spaces(self):
         self.assertEqual(rotational_cipher.rotate('O M G', 5),
@@ -43,7 +43,7 @@ class RotationalCipher(unittest.TestCase):
     def test_rotate_all_letters(self):
         self.assertEqual(
             rotational_cipher.rotate(
-                                     "The quick brown fox jumps"\
+                                     "The quick brown fox jumps"
                                      " over the lazy dog.",
                                      13),
             "Gur dhvpx oebja sbk whzcf bire gur ynml qbt.")

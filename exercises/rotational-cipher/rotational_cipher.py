@@ -1,4 +1,2 @@
-
-
 def rotate():
     pass
