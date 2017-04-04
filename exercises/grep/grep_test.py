@@ -3,6 +3,9 @@ import unittest
 
 from grep import grep
 
+
+# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+
 ILIADFILENAME = 'iliad.txt'
 ILIADCONTENTS = '''Achilles sing, O Goddess! Peleus' son;
 His wrath pernicious, who ten thousand woes
