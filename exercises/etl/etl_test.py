@@ -1,53 +1,42 @@
 import unittest
 
-import etl
+from etl import transform
 
+
+# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
 
 class TransformTest(unittest.TestCase):
-    def test_transform_one_value(self):
-        old = {1: ['WORLD']}
-        expected = {'world': 1}
+    def test_a_single_letter(self):
+        self.assertEqual(transform({1: ['A']}), {'a': 1})
 
-        self.assertEqual(etl.transform(old), expected)
+    def test_single_score_with_multiple_letters(self):
+        legacy_data = {1: ["A", "E", "I", "O", "U"]}
+        data = {"a": 1, "e": 1, "i": 1, "o": 1, "u": 1}
+        self.assertEqual(transform(legacy_data), data)
 
-    def test_transform_more_values(self):
-        old = {1: ['WORLD', 'GSCHOOLERS']}
-        expected = {'world': 1, 'gschoolers': 1}
+    def test_multiple_scores_with_multiple_letters(self):
+        legacy_data = {1: ["A", "E"], 2: ["D", "G"]}
+        data = {"a": 1, "d": 2, "e": 1, "g": 2}
+        self.assertEqual(transform(legacy_data), data)
 
-        self.assertEqual(etl.transform(old), expected)
-
-    def test_more_keys(self):
-        old = {1: ['APPLE', 'ARTICHOKE'], 2: ['BOAT', 'BALLERINA']}
-        expected = {
-            'apple': 1,
-            'artichoke': 1,
-            'boat': 2,
-            'ballerina': 2
+    def test_multiple_scores_with_differing_numbers_of_letters(self):
+        legacy_data = {
+            1: ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T"],
+            2: ["D", "G"],
+            3: ["B", "C", "M", "P"],
+            4: ["F", "H", "V", "W", "Y"],
+            5: ["K"],
+            8: ["J", "X"],
+            10: ["Q", "Z"]
         }
-
-        self.assertEqual(etl.transform(old), expected)
-
-    def test_full_dataset(self):
-        old = {
-            1: "AEIOULNRST",
-            2: "DG",
-            3: "BCMP",
-            4: "FHVWY",
-            5: "K",
-            8: "JX",
-            10: "QZ",
+        data = {
+            "a": 1, "b": 3, "c": 3, "d": 2, "e": 1, "f": 4,
+            "g": 2, "h": 4, "i": 1, "j": 8, "k": 5, "l": 1,
+            "m": 3, "n": 1, "o": 1, "p": 3, "q": 10, "r": 1,
+            "s": 1, "t": 1, "u": 1, "v": 4, "w": 4, "x": 8,
+            "y": 4, "z": 10
         }
-
-        expected = {
-            "a": 1, "b": 3, "c": 3, "d": 2, "e": 1,
-            "f": 4, "g": 2, "h": 4, "i": 1, "j": 8,
-            "k": 5, "l": 1, "m": 3, "n": 1, "o": 1,
-            "p": 3, "q": 10, "r": 1, "s": 1, "t": 1,
-            "u": 1, "v": 4, "w": 4, "x": 8, "y": 4,
-            "z": 10
-        }
-
-        self.assertEqual(etl.transform(old), expected)
+        self.assertEqual(transform(legacy_data), data)
 
 
 if __name__ == '__main__':
