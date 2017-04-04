@@ -77,8 +77,8 @@ class SublistTest(unittest.TestCase):
         self.assertEqual(check_lists(multiples_of_15, multiples_of_3), UNEQUAL)
 
     def test_double_digits(self):
-        l1 = [10]
-        l2 = [1, 0]
+        l1 = [1, 0, 1]
+        l2 = [10, 1]
         self.assertEqual(check_lists(l1, l2), UNEQUAL)
 
     def test_inner_spaces(self):
