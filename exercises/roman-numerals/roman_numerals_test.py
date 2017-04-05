@@ -3,6 +3,8 @@ import unittest
 import roman_numerals
 
 
+# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+
 class RomanTest(unittest.TestCase):
     numerals = {
         1: 'I',
