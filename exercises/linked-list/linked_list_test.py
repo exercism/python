@@ -1,3 +1,4 @@
+import sys
 import unittest
 
 from linked_list import LinkedList
@@ -43,7 +44,7 @@ class LinkedListTests(unittest.TestCase):
         self.assertEqual(self.list.pop(), 50)
         self.assertEqual(self.list.shift(), 30)
 
-    @unittest.skip("extra-credit")
+    @unittest.skipUnless('--extra-credit' in sys.argv, 'Skipping Extra Credit')
     def test_length(self):
         self.list.push(10)
         self.list.push(20)
@@ -53,7 +54,7 @@ class LinkedListTests(unittest.TestCase):
         self.list.pop()
         self.assertEqual(len(self.list), 0)
 
-    @unittest.skip("extra-credit")
+    @unittest.skipUnless('--extra-credit' in sys.argv, 'Skipping Extra Credit')
     def test_iterator(self):
         self.list.push(10)
         self.list.push(20)
@@ -63,4 +64,8 @@ class LinkedListTests(unittest.TestCase):
 
 
 if __name__ == '__main__':
+    try:
+        sys.argv.remove('--extra-credit')
+    except ValueError:
+        pass
     unittest.main()
