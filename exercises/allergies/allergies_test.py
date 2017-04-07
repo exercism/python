@@ -2,8 +2,14 @@ import unittest
 
 from allergies import Allergies
 
+# Python 2/3 compatibility
+if not hasattr(unittest.TestCase, 'assertCountEqual'):
+    unittest.TestCase.assertCountEqual = unittest.TestCase.assertItemsEqual
 
-class AllergiesTests(unittest.TestCase):
+
+# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+
+class AllergiesTests():
     def test_no_allergies_means_not_allergic(self):
         allergies = Allergies(0)
         self.assertFalse(allergies.is_allergic_to('peanuts'))
@@ -13,7 +19,7 @@ class AllergiesTests(unittest.TestCase):
     def test_is_allergic_to_eggs(self):
         self.assertTrue(Allergies(1).is_allergic_to('eggs'))
 
-    def test_has_the_right_allergies(self):
+    def test_allergic_to_eggs_in_addition_to_other_stuff(self):
         allergies = Allergies(5)
         self.assertTrue(allergies.is_allergic_to('eggs'))
         self.assertTrue(allergies.is_allergic_to('shellfish'))
@@ -22,18 +28,42 @@ class AllergiesTests(unittest.TestCase):
     def test_no_allergies_at_all(self):
         self.assertEqual(Allergies(0).lst, [])
 
+    def test_allergic_to_just_eggs(self):
+        self.assertEqual(Allergies(1).lst, ['eggs'])
+
     def test_allergic_to_just_peanuts(self):
         self.assertEqual(Allergies(2).lst, ['peanuts'])
 
-    def test_allergic_to_everything(self):
-        self.assertEqual(
-            sorted(Allergies(255).lst),
-            sorted(('eggs peanuts shellfish strawberries tomatoes '
-                    'chocolate pollen cats').split()))
+    def test_allergic_to_just_strawberries(self):
+        self.assertEqual(Allergies(8).lst, ['strawberries'])
 
-    @unittest.skip('Extra Credit: Passes with a specific type of solution')
-    def test_ignore_non_allergen_score_parts(self):
+    def test_allergic_to_eggs_and_peanuts(self):
+        self.assertCountEqual(Allergies(3).lst, ['eggs', 'peanuts'])
+
+    def test_allergic_to_more_than_eggs_but_not_peanuts(self):
+        self.assertCountEqual(Allergies(5).lst, ['eggs', 'shellfish'])
+
+    def test_allergic_to_lots_of_stuff(self):
+        self.assertCountEqual(
+            Allergies(248).lst,
+            ['strawberries', 'tomatoes', 'chocolate', 'pollen', 'cats'])
+
+    def test_allergic_to_everything(self):
+        self.assertCountEqual(
+            Allergies(255).lst, [
+                'eggs', 'peanuts', 'shellfish', 'strawberries', 'tomatoes',
+                'chocolate', 'pollen', 'cats'
+            ])
+
+    def test_ignore_non_allergen_score_parts_only_eggs(self):
         self.assertEqual(Allergies(257).lst, ['eggs'])
+
+    def test_ignore_non_allergen_score_parts(self):
+        self.assertCountEqual(
+            Allergies(509).lst, [
+                'eggs', 'shellfish', 'strawberries', 'tomatoes', 'chocolate',
+                'pollen', 'cats'
+            ])
 
 
 if __name__ == '__main__':
