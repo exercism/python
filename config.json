@@ -417,6 +417,12 @@
       ]
     },
     {
+      "slug": "book-store",
+      "difficulty": 1,
+      "topics": [
+      ]
+    },
+    {
       "slug": "linked-list",
       "difficulty": 1,
       "topics": [
