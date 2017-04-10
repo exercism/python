@@ -13,20 +13,8 @@ def total_after(square):
 
 def check_square_input(square):
     if square == 0:
-        raise SquareZeroError
+        raise ValueError("Square input of zero is invalid.")
     elif square < 0:
-        raise SquareNegativeValueError
+        raise ValueError("Negative square input is invalid.")
     elif square > 64:
-        raise SquareGTSixtyFourError
-
-
-class SquareZeroError(Exception):
-    pass
-
-
-class SquareNegativeValueError(Exception):
-    pass
-
-
-class SquareGTSixtyFourError(Exception):
-    pass
+        raise ValueError("Square input greater than 64 is invalid.")
