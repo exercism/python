@@ -3,9 +3,6 @@ import unittest
 from grains import (
     on_square,
     total_after,
-    SquareZeroError,
-    SquareNegativeValueError,
-    SquareGTSixtyFourError
 )
 
 
@@ -39,16 +36,22 @@ class GrainsTest(unittest.TestCase):
         self.assertEqual(total_after(64), 18446744073709551615)
 
     def test_square_0_raises_exception(self):
-        self.assertRaises(SquareZeroError, on_square, 0)
-        self.assertRaises(SquareZeroError, total_after, 0)
+        with self.assertRaises(ValueError):
+            on_square(0)
+        with self.assertRaises(ValueError):
+            total_after(0)
 
     def test_square_negative_raises_exception(self):
-        self.assertRaises(SquareNegativeValueError, on_square, -1)
-        self.assertRaises(SquareNegativeValueError, total_after, -1)
+        with self.assertRaises(ValueError):
+            on_square(-1)
+        with self.assertRaises(ValueError):
+            total_after(-1)
 
     def test_square_gt_64_raises_exception(self):
-        self.assertRaises(SquareGTSixtyFourError, on_square, 65)
-        self.assertRaises(SquareGTSixtyFourError, total_after, 65)
+        with self.assertRaises(ValueError):
+            on_square(65)
+        with self.assertRaises(ValueError):
+            total_after(65)
 
 
 if __name__ == '__main__':
