@@ -154,6 +154,12 @@ class MinesweeperTest(unittest.TestCase):
                "|X  * |",
                "+-----+"]
         self.assertRaises(ValueError, board, inp)
+        
+    def test_lack_border(self):
+        inp = ["+-----+",
+               "    * |",
+               "+-----+"]
+        self.assertRaises(ValueError, board, inp)
 
 
 if __name__ == '__main__':
