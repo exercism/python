@@ -1,6 +1,5 @@
 from collections import defaultdict
 
-
 RESULTS = dict(win=0, draw=1, loss=2)
 
 
@@ -20,14 +19,18 @@ def parse_game(game_line):
     return []
 
 
+def calculate_points(stats):
+    return stats[0] * 3 + stats[1]
+
+
 def format_table(results):
     table = ['Team                           | MP |  W |  D |  L |  P']
 
-    for team in sorted(results, key=results.get, reverse=True):
-        games = results[team]
-        points = games[0] * 3 + games[1]
+    for team, games in sorted(
+            results.items(), key=lambda g: (-calculate_points(g[1]), g[0])):
         team_fmt = '{0:30} | {1:2} | {3:2} | {4:2} | {5:2} | {2:2}'
-        table.append(team_fmt.format(team, sum(games), points, *games))
+        table.append(
+            team_fmt.format(team, sum(games), calculate_points(games), *games))
 
     return '\n'.join(table)
 
