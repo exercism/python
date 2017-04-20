@@ -463,6 +463,12 @@
         "strings",
         "searching"
       ]
+    },
+    {
+      "slug": "alphametics",
+      "difficulty": 6,
+      "topics": [
+      ]
     }
   ],
   "deprecated": [
