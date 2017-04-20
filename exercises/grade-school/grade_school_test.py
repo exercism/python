@@ -46,7 +46,7 @@ class SchoolTest(unittest.TestCase):
                     (6, ("Kareem", ))]
 
         for grade, students_in_grade in students[::-1]:
-            for student in students_in_grade:
+            for student in students_in_grade[::-1]:
                 self.school.add(student, grade)
 
         result = self.school.sort()
