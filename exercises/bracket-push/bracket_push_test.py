@@ -3,7 +3,7 @@ import unittest
 from bracket_push import check_brackets
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+# test cases adapted from `x-common//canonical-data.json` @ version: 1.1.0
 
 class BracketPushTests(unittest.TestCase):
     def test_paired_square_brackets(self):
@@ -17,6 +17,9 @@ class BracketPushTests(unittest.TestCase):
 
     def test_wrong_ordered_brackets(self):
         self.assertEqual(check_brackets("}{"), False)
+
+    def test_wrong_closing_bracket(self):
+        self.assertEqual(check_brackets("{]"), False)
 
     def test_paired_with_whitespace(self):
         self.assertEqual(check_brackets("{ }"), True)
