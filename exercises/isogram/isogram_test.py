@@ -1,8 +1,9 @@
 import unittest
+
 from isogram import is_isogram
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+# test cases adapted from `x-common//canonical-data.json` @ version: 1.1.0
 
 class TestIsogram(unittest.TestCase):
 
@@ -29,6 +30,9 @@ class TestIsogram(unittest.TestCase):
 
     def test_made_up_name_that_is_an_isogram(self):
         self.assertTrue(is_isogram("Emily Jung Schwartzkopf"))
+
+    def test_duplicated_character_in_the_middle(self):
+        self.assertFalse(is_isogram("accentor"))
 
 
 if __name__ == '__main__':

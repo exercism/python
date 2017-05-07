@@ -417,6 +417,12 @@
       ]
     },
     {
+      "slug": "book-store",
+      "difficulty": 1,
+      "topics": [
+      ]
+    },
+    {
       "slug": "linked-list",
       "difficulty": 1,
       "topics": [
@@ -467,6 +473,12 @@
     {
       "slug": "alphametics",
       "difficulty": 6,
+      "topics": [
+      ]
+    },
+    {
+      "slug": "tournament",
+      "difficulty": 1,
       "topics": [
       ]
     }
