@@ -469,6 +469,12 @@
         "strings",
         "searching"
       ]
+    },
+    {
+      "slug": "tournament",
+      "difficulty": 1,
+      "topics": [
+      ]
     }
   ],
   "deprecated": [
