@@ -469,6 +469,14 @@
         "strings",
         "searching"
       ]
+    },
+    {
+      "slug": "bowling",
+      "difficulty": 6,
+      "topics": [
+        "Algorithms",
+        "Control-flow (loops)"
+      ]
     }
   ],
   "deprecated": [
