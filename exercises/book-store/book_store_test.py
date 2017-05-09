@@ -3,7 +3,7 @@ import unittest
 from book_store import calculate_total
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.1
 
 class BookStoreTests(unittest.TestCase):
     def test_only_a_single_book(self):
