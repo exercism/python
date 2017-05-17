@@ -3,7 +3,7 @@ import unittest
 from difference_of_squares import difference, square_of_sum, sum_of_squares
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+# test cases adapted from `x-common//canonical-data.json` @ version: 1.1.0
 
 class DifferenceOfSquaresTest(unittest.TestCase):
     def test_square_of_sum_1(self):
