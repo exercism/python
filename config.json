@@ -488,6 +488,14 @@
       "topics": [
       ]
     }
+    {
+      "slug": "protein-translation",
+      "difficulty": 3,
+      "topics": [
+        "strings",
+        "pattern matching"
+      ]
+    }
   ],
   "deprecated": [
     "accumulate",
