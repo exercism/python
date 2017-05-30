@@ -1,3 +1,6 @@
-class Translation(object):
-    def __init__(self):
-        pass
+def of_codon():
+    pass
+
+
+def of_rna():
+    pass
