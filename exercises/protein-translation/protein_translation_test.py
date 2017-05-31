@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 import unittest
 
 from protein_translation import of_codon, of_rna
@@ -52,7 +51,7 @@ class ProteinTranslationTests(unittest.TestCase):
         self.assertEqual(expected, of_rna(strand))
 
     def test_invalid_codons(self):
-        with self.assertRaises(KeyError):
+        with self.assertRaises(ValueError):
             of_rna('CARROT')
 
 

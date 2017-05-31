@@ -1,7 +1,4 @@
-#!/usr/bin/env python
-
-# Lookup table
-codons = {'AUG': "Methionine", 'UUU': "Phenylalanine",
+CODONS = {'AUG': "Methionine", 'UUU': "Phenylalanine",
           'UUC': "Phenylalanine", 'UUA': "Leucine", 'UUG': "Leucine",
           'UCU': "Serine", 'UCC': "Serine", 'UCA': "Serine",
           'UCG': "Serine", 'UAU': "Tyrosine", 'UAC': "Tyrosine",
@@ -10,15 +7,19 @@ codons = {'AUG': "Methionine", 'UUU': "Phenylalanine",
 
 
 def of_codon(codon):
-    return codons[codon]
+    if codon not in CODONS:
+        raise ValueError('Invalid codon: %s' % codon)
+    return CODONS[codon]
 
 
 def of_rna(strand):
-    output = []
-    for i in range(0, len(strand), 3):
-        codon = strand[i:i+3]
-        if codons[codon] == 'STOP':
-            return output
-        output.append(codons[codon])
+    proteins = []
+    for codon in map(of_codon, _chunkstring(strand, 3)):
+        if codon == 'STOP':
+            break
+        proteins.append(codon)
+    return proteins
 
-    return output
+
+def _chunkstring(string, n):
+    return (string[i:n + i] for i in range(0, len(string), n))
