@@ -487,6 +487,12 @@
       "difficulty": 1,
       "topics": [
       ]
+    },
+    {
+      "slug": "scale-generator",
+      "difficulty": 3,
+      "topics": [
+      ]
     }
   ],
   "deprecated": [
