@@ -53,11 +53,6 @@ If you're interested, Tim Pope even has an [entire blog post](http://tbaggery.co
 
 If you're new to Git take a look at [this short guide](https://github.com/exercism/x-common/blob/master/CONTRIBUTING.md#git-basics).
 
-## License
-
-The MIT License (MIT)
-
-Copyright (c) 2014 Katrina Owen, _@kytrinyx.com
 
 ## Python icon
 The Python logo is an unregistered trademark. We are using a derived logo with the permission of the Python Software Foundation.
