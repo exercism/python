@@ -11,26 +11,23 @@ class Scale(object):
     def __init__(self, tonic, scale_name, pattern=None):
         self.tonic = tonic.capitalize()
         self.name = self.tonic + ' ' + scale_name
-        if pattern is None:
-            self.pattern = []
-        else:
-            self.pattern = pattern
-        self.chromatic_scale = self.CHROMATIC_SCALE
-        if tonic in self.FLAT_KEYS:
-            self.chromatic_scale = self.FLAT_CHROMATIC_SCALE
-        self.pitches = self.assign_pitches()
+        self.pattern = pattern
+        self.chromatic_scale = (self.FLAT_CHROMATIC_SCALE
+                                if tonic in self.FLAT_KEYS else
+                                self.CHROMATIC_SCALE)
+        self.pitches = self._assign_pitches()
 
-    def assign_pitches(self):
-        if not self.pattern:
-            return self.reorder_chromatic_scale()
+    def _assign_pitches(self):
+        if self.pattern is None:
+            return self._reorder_chromatic_scale()
         last_index = 0
         pitches = []
-        scale = self.reorder_chromatic_scale()
+        scale = self._reorder_chromatic_scale()
         for i, interval in enumerate(self.pattern):
             pitches.append(scale[last_index])
             last_index += self.ASCENDING_INTERVALS.index(interval) + 1
         return pitches
 
-    def reorder_chromatic_scale(self):
+    def _reorder_chromatic_scale(self):
         index = self.chromatic_scale.index(self.tonic)
         return self.chromatic_scale[index:] + self.chromatic_scale[:index]

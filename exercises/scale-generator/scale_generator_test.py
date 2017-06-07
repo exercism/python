@@ -45,7 +45,7 @@ class ScaleGeneratorTest(unittest.TestCase):
 
     def test_minor_scale(self):
         minor = Scale('f#', 'minor', 'MmMMmMM')
-        expected = ['F#', 'G#,', 'A', 'B', 'C#', 'D', 'E']
+        expected = ['F#', 'G#', 'A', 'B', 'C#', 'D', 'E']
         actual = minor.pitches
         self.assertEqual(expected, actual)
 
@@ -114,3 +114,6 @@ class ScaleGeneratorTest(unittest.TestCase):
         expected = ['G', 'G#', 'B', 'C#', 'D#', 'F', 'F#']
         actual = enigmatic.pitches
         self.assertEqual(expected, actual)
+
+if __name__ == '__main__':
+    unittest.main()
