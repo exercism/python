@@ -5,38 +5,53 @@
 
 Exercism exercises in Python
 
+
 ## Contributing Guide
 
 Please see the [contributing guide](https://github.com/exercism/x-common/blob/master/CONTRIBUTING.md)
 
+
 ## Working on the Exercises
 
 We welcome both improvements to the existing exercises and new exercises.
-A pool of exercise ideas can be found in the [x-common repo](https://github.com/exercism/x-common).
+A list of missing exercise can be found here: http://exercism.io/languages/python/todo
+
+
+### Conventions
+
+- We use minimalistic stub files for all exercises (#272).
+- We use `unittest` (Python Standard Library) and no 3rd-party-framework.
+- We use the parameter order `self.assertEqual(actual, expected)` (#440).
+
+
+### Testing
 
 All exercises must be compatible with Python versions 2.7 and 3.3 upwards.
-Therefore please test your changes with these versions.
 
-Test a single exercise with Python 2.7:
+To test a single exercise (e.g., with Python 2.7):
 ```
 python2.7 test/check-exercises.py [exercise-name]
 ```
 
-Test a single exercise with Python 3.3:
+To test all exercises (e.g., with Python 3):
 ```
-python3.3 test/check-exercises.py [exercise-name]
-```
-
-Test all exercises:
-```
-python test/check-exercises.py
+python3 test/check-exercises.py
 ```
 
-## Code Style
 
-The Python code in this repo is meant to follow the [PEP8 style guide](https://www.python.org/dev/peps/pep-0008/).
+### Code Style
 
-This repo uses [flake8](http://flake8.readthedocs.org/en/latest/) with default settings to enforce the coding standard. When you submit a PR, it needs to pass the flake8 tool with no warnings, or it won't be accepted.
+The Python code in this repo is meant to follow the [PEP8 style guide](https://www.python.org/dev/peps/pep-0008/) (a stylized version http://pep8.org).
+
+This repo uses [flake8](http://flake8.readthedocs.org/en/latest/) with default settings to enforce the coding standard.
+
+
+### CI build
+
+This repo uses `travis-ci` in the following configuration: [travis.yml](https://github.com/exercism/xpython/blob/master/.travis.yml)
+
+It will check automatically the code style, the problem configuration and runns the unittests with all supported Python versions.
+
 
 ## Pull Requests
 
