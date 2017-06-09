@@ -489,6 +489,14 @@
       ]
     },
     {
+      "slug": "scale-generator",
+      "difficulty": 3,
+      "topics": [
+        "strings",
+        "pattern matching"
+      ]
+    },
+    {
       "slug": "protein-translation",
       "difficulty": 3,
       "topics": [
