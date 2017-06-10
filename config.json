@@ -580,11 +580,6 @@
     "binary",
     "hexadecimal"
   ],
-  "ignored": [
-    "docs",
-    "test",
-    "img"
-  ],
   "foregone": [
 
   ]
