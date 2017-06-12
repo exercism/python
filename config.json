@@ -489,6 +489,14 @@
       ]
     },
     {
+      "slug": "two-bucket",
+      "difficulty": 5,
+      "topics": [
+        "strings",
+        "pattern matching"
+      ]
+    },
+    {
       "slug": "scale-generator",
       "difficulty": 3,
       "topics": [
