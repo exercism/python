@@ -1,7 +1,7 @@
-# xPython
+# Exercism Python Track
 
-[![Build Status](https://travis-ci.org/exercism/xpython.svg?branch=master)](https://travis-ci.org/exercism/xpython) [![Requirements Status](https://requires.io/github/exercism/xpython/requirements.svg?branch=master)](https://requires.io/github/exercism/xpython/requirements/?branch=master)
-[![Join the chat at https://gitter.im/exercism/xpython](https://badges.gitter.im/exercism/xpython.svg)](https://gitter.im/exercism/xpython?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/exercism/python.svg?branch=master)](https://travis-ci.org/exercism/python) [![Requirements Status](https://requires.io/github/exercism/python/requirements.svg?branch=master)](https://requires.io/github/exercism/python/requirements/?branch=master)
+[![Join the chat at https://gitter.im/exercism/python](https://badges.gitter.im/exercism/python.svg)](https://gitter.im/exercism/python?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Exercism exercises in Python
 
@@ -48,7 +48,7 @@ This repo uses [flake8](http://flake8.readthedocs.org/en/latest/) with default s
 
 ### CI build
 
-This repo uses `travis-ci` in the following configuration: [travis.yml](https://github.com/exercism/xpython/blob/master/.travis.yml)
+This repo uses `travis-ci` in the following configuration: [travis.yml](https://github.com/exercism/python/blob/master/.travis.yml)
 
 It will check automatically the code style, the problem configuration and runns the unittests with all supported Python versions.
 
