@@ -1,4 +1,6 @@
 def find_minimum_coins(total_change, coins):
+    if total_change < 0:
+        return -1
     min_coins_required = [1e9] * (total_change + 1)
     last_coin = [0]*(total_change + 1)
     min_coins_required[0] = 0
