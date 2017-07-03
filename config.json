@@ -565,6 +565,15 @@
         "strings",
         "pattern matching"
       ]
+    },
+    {
+      "slug": "change",
+      "difficulty": 4,
+      "topics": [
+        "Control-flow (loops)",
+        "Arrays",
+        "Algorithms"
+      ]
     }
   ],
   "deprecated": [
