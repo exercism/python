@@ -3,49 +3,175 @@ import unittest
 from custom_set import CustomSet
 
 class CustomSetTest(unittest.TestCase):
-    def setUp(self):
-        self.a = CustomSet()
-        for number in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]:
-            self.a.add(number)
-        self.b = CustomSet()
-        for number in [2,4,6,8,10,12,14,16,18,20]:
-            self.b.add(number)
-        self.c = self.a.copy()
-        self.d = CustomSet()
-        for number in [21,22,23,24,25,26,27,28,29,30]:
-            self.d.add(number)
-
     def test_empty(self):
         empty = CustomSet()
         self.assertTrue(empty.empty())
-        self.assertFalse(self.a.empty())
+    
+    def test_not_empty(self):
+        not_empty = CustomSet([1])
+        self.assertFalse(not_empty.empty())
+    
+    def test_empty_contains_nothing(self):
+        empty = CustomSet()
+        self.assertFalse(1 in empty)
+    
+    def test_simple_contains(self):
+        simple = CustomSet([1,2,3])
+        self.assertTrue(1 in simple)
+        self.assertTrue(2 in simple)
+        self.assertTrue(3 in simple)
+    
+    def test_simple_not_contains(self):
+        simple = CustomSet([1,2,3])
+        self.assertFalse(4 in simple)
+    
+    def test_empty_subset_of_empty(self):
+        empty = CustomSet()
+        self.assertTrue(empty.subset(CustomSet()))
+    
+    def test_empty_subset_of_not_empty(self):
+        empty = CustomSet()
+        not_empty = CustomSet([1])
+        self.assertTrue(not_empty.subset(empty))
+    
+    def test_non_empty_not_subset_of_empty(self):
+        empty = CustomSet()
+        not_empty = CustomSet([1])
+        self.assertFalse(empty.subset(not_empty))
+    
+    def test_set_is_subset_of_itself(self):
+        test_set = CustomSet([1,2,3])
+        self.assertTrue(test_set.subset(CustomSet([1,2,3])))
+    
+    def test_set_is_subset_of_larger(self):
+        test_set = CustomSet([1,2,3])
+        larger = CustomSet([1,2,3,4])
+        self.assertTrue(larger.subset(test_set))
+    
+    def test_set_is_not_subset_of_larger(self):
+        test_set = CustomSet([1,2,3])
+        larger = CustomSet([1,4,5,6])
+        self.assertFalse(larger.subset(test_set))
 
-    def test_subset(self):
-        self.assertTrue(self.a.subset(b))
+    def test_empty_disjoint_with_empty(self):
+        empty = CustomSet()
+        self.assertTrue(empty.disjoint(CustomSet()))
+    
+    def test_empty_disjoint_with_not_empty(self):
+        empty = CustomSet()
+        not_empty = CustomSet([1,2,3])
+        self.assertTrue(empty.disjoint(not_empty))
+    
+    def test_not_empty_disjoint_with_empty(self):
+        empty = CustomSet()
+        not_empty = CustomSet([1,2,3])
+        self.assertTrue(not_empty.disjoint(empty))
+    
+    def test_sets_that_share_element_not_disjoint(self):
+        seq = CustomSet([1,2,3])
+        odds = CustomSet([1,3,5])
+        self.assertFalse(odds.disjoint(seq))
+        self.assertFalse(seq.disjoint(odds))
+    
+    def test_sets_that_share_none_disjoint(self):
+        seq = CustomSet([1,2,3])
+        after = CustomSet([4,5,6])
 
-    def test_disjoint(self):
-        self.assertTrue(self.a.disjoint(d))
+        self.assertTrue(seq.disjoint(after))
+    
+    def test_set_with_same_elems_equal(self):
+        seq = CustomSet(1,2,3)
 
-    def test_equal(self):
-        self.assertTrue(self.a.equals(self.c))
+        self.assertEqual(seq, seq)
+    
+    def test_seq_with_different_elems_inequal(self):
+        seq = CustomSet(1,2,3)
+        after = CustomSet(4,5,6)
 
-    def test_intersection(self):
-        intersection = self.a.intersection(self.b)
-        self.assertEqual(intersection, self.b)
+        self.assertNotEqual(seq, after)
+    
+    def test_add_to_empty(self):
+        empty = CustomSet().add(1)
+        expected = CustomSet([1])
+        self.assertEqual(empty, expected)
+    
+    def test_add_to_not_empty(self):
+        not_empty = CustomSet(1,2,3).add(4)
+        expected = CustomSet(1,2,3,4)
+        self.assertEqual(not_empty, expected)
+    
+    def test_add_existing_elem(self):
+        test_set = CustomSet(1,2,3).add(1)
+        expected =  CustomSet(1,2,3)
+        self.assertEqual(test_set, expected)
+    
+    def test_empty_intersection(self):
+        empty_intersection = CustomSet().intersection(CustomSet())
+        expected = CustomSet()
+        self.assertEqual(empty_intersection, expected)
+    
+    def test_empty_and_non_empty_intersection(self):
+        empty = CustomSet()
+        non_empty = CustomSet(1,2,3)
+        self.assertEqual(non_empty.intersection(empty), empty)
+    
+    def test_none_shared_intersection(self):
+        test_set = CustomSet(1,2,3)
+        test_set_2 = CustomSet(4,5,6)
+        self.assertEqual(test_set.intersection(test_set_2), CustomSet())
+    
+    def test_shared_intersection(self):
+        expected = CustomSet(1,3)
+        self.assertEqual(
+            CustomSet(1,2,3).intersection(CustomSet(1,3,5)), 
+            expected)
+    
+    def test_empty_diff(self):
+        empty = CustomSet()
+        self.assertEqual(empty.difference(empty), CustomSet())
+    
+    def test_empty_non_empty_diff(self):
+        empty = CustomSet()
+        non_empty = CustomSet(1,2,3)
+        self.assertEqual(empty - non_empty, non_empty)
+        self.assertEqual(non_empty - empty, non_empty)
+    
+    def test_non_empty_diff(self):
+        test_set = CustomSet(1,2,3,4)
+        other_set = CustomSet(1,3,5,7)
 
-    def test_union(self):
-        union = self.a.union(self.b)
-        self.assertEqual(union, self.a)
-
-    def test_difference(self):
-        difference = self.a.difference(self.b)
-        self.assertEqual(difference, CustomSet([1,3,5,7,9,11,13,15,17,19]))
-
-    def test_clear(self):
-        self.assertEqual(self.a.clear(),CustomSet())
-
+        self.assertEqual(test_set - other_set, CustomSet(2,4))
+        self.assertEqual(other_set - test_set, CustomSet(5,7))
+    
+    def test_empty_union(self):
+        empty = CustomSet()
+        self.assertEqual(empty + empty, empty)
+    
+    def test_non_empty_empty_union(self):
+        non_empty = CustomSet(1,2,3)
+        empty = CustomSet()
+        
+        self.assertEqual(non_empty + empty, non_empty)
+        self.assertEqual(empty + non_empty,non_empty)
+    
+    def test_non_empty_union(self):
+        result = CustomSet(1,2,3) + CustomSet(2,3)
+        self.assertEqual(result, CustomSet(1,2,3))
+    
     def test_size(self):
-        self.assertEqual(self.b.size(), 10)
+        empty = CustomSet()
+        non_empty = CustomSet(1,2,3)
+        repeated = CustomSet(1,3,2,1,2,3)
 
-    def test_to_list(self):
-        self.assertEqual(self.b.to_list(), [2,4,6,8,10,12,14,16,18,20])
+        self.assertEqual(len(empty), 0)
+        self.assertEqual(len(non_empty), 3)
+        self.assertEqual(len(repeated), 3)
+    
+    def test_list(self):
+        empty = CustomSet()
+        non_empty = CustomSet(1,2,3)
+        repeated = CustomSet(1,3,2,1,3,2)
+
+        self.assertEqual(list(empty), [])
+        self.assertEqual(list(non_empty), [1,2,3])
+        self.assertEqual(list(repeated), [1,2,3])
