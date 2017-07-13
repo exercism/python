@@ -11,6 +11,7 @@ With this premise, a good, beginner friendly, starting point for those who don't
 
 ## Other Resources
 
+- [Automate the Boring Stuff with Python (Book)](https://automatetheboringstuff.com/)
 - [Python3 Beginner Tutorial](https://www.youtube.com/playlist?list=PL1A2CSdiySGJd0LJRRSwQZbPZaDP0q67j)
 - [Learn Python The Hard Way (Book)](http://learnpythonthehardway.org/book/)
 - [Offical Python3 **Documentation** and **Reference**](https://docs.python.org/3/)
