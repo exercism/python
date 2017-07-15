@@ -67,12 +67,11 @@ def load_config():
 
     try:
         problems = [entry['slug'] for entry in data['exercises']]
-        deprecated_problems = data['deprecated']
     except KeyError:
         print('FAIL: config.json has an incorrect format')
         raise SystemExit(1)
 
-    return problems, deprecated_problems
+    return problems
 
 
 def main():
@@ -81,7 +80,7 @@ def main():
         exercises = [exercise.strip('/') for exercise in sys.argv[1:]]
     else:
         # load exercises from config-file
-        exercises, _ = load_config()
+        exercises = load_config()
 
     failures = []
     for exercise in exercises:
