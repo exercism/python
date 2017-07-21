@@ -1,7 +1,5 @@
 {
-  "slug": "python",
   "language": "Python",
-  "repository": "https://github.com/exercism/python",
   "active": true,
   "exercises": [
     {
