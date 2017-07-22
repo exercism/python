@@ -563,6 +563,12 @@
         "strings",
         "pattern matching"
       ]
+    },
+    {
+      "slug": "simple-linked-list",
+      "difficulty": 1,
+      "topics": [
+      ]
     }
   ],
   "deprecated": [
