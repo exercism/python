@@ -563,6 +563,12 @@
         "strings",
         "pattern matching"
       ]
+    },
+    {
+      "slug": "binary-search-tree",
+      "difficulty": 1,
+      "topics": [
+      ]
     }
   ],
   "deprecated": [
