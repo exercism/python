@@ -499,6 +499,12 @@
       ]
     },
     {
+      "slug": "custom-set",
+      "difficulty": 2,
+      "topics":[
+      ]
+    },
+    {
       "slug": "all-your-base",
       "difficulty": 4,
       "topics": [
