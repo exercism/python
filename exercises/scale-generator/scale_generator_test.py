@@ -115,6 +115,10 @@ class ScaleGeneratorTest(unittest.TestCase):
         actual = enigmatic.pitches
         self.assertEqual(expected, actual)
 
+    def test_brokeninterval(self):
+        with self.assertRaises(ValueError):
+            enigmatic = Scale('G', 'enigmatic', 'mAMMMmM')
+
 
 if __name__ == '__main__':
     unittest.main()
