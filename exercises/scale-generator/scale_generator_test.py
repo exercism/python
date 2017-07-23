@@ -110,7 +110,7 @@ class ScaleGeneratorTest(unittest.TestCase):
         self.assertEqual(expected, actual)
 
     def test_enigmatic(self):
-        enigmatic = Scale('G', 'enigmatic', 'mAMMMmM')
+        enigmatic = Scale('G', 'enigmatic', 'mAMMMmm')
         expected = ['G', 'G#', 'B', 'C#', 'D#', 'F', 'F#']
         actual = enigmatic.pitches
         self.assertEqual(expected, actual)
