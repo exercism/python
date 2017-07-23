@@ -26,6 +26,8 @@ class Scale(object):
         for i, interval in enumerate(self.pattern):
             pitches.append(scale[last_index])
             last_index += self.ASCENDING_INTERVALS.index(interval) + 1
+        if pitches[0] != scale[last_index % len(scale)]:
+            raise ValueError()
         return pitches
 
     def _reorder_chromatic_scale(self):
