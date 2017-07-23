@@ -117,7 +117,7 @@ class ScaleGeneratorTest(unittest.TestCase):
 
     def test_brokeninterval(self):
         with self.assertRaises(ValueError):
-            enigmatic = Scale('G', 'enigmatic', 'mAMMMmM')
+            Scale('G', 'enigmatic', 'mAMMMmM')
 
 
 if __name__ == '__main__':
