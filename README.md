@@ -1,6 +1,6 @@
 # Exercism Python Track
 
-[![Build Status](https://travis-ci.org/exercism/python.svg?branch=master)](https://travis-ci.org/exercism/python) [![Requirements Status](https://requires.io/github/exercism/python/requirements.svg?branch=master)](https://requires.io/github/exercism/python/requirements/?branch=master)
+[![Build Status](https://travis-ci.org/exercism/python.svg?branch=master)](https://travis-ci.org/exercism/python) [![Requirements Status](https://pyup.io/repos/github/exercism/python/shield.svg)](https://pyup.io/repos/github/exercism/python/)
 [![Join the chat at https://gitter.im/exercism/python](https://badges.gitter.im/exercism/python.svg)](https://gitter.im/exercism/python?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Exercism exercises in Python
@@ -8,7 +8,7 @@ Exercism exercises in Python
 
 ## Contributing Guide
 
-Please see the [contributing guide](https://github.com/exercism/x-common/blob/master/CONTRIBUTING.md)
+Please see the [contributing guide](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/README.md)
 
 
 ## Working on the Exercises
@@ -66,7 +66,7 @@ If there are more details to add, put those into the body of the commit message.
 
 If you're interested, Tim Pope even has an [entire blog post](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html) on good commit messages.
 
-If you're new to Git take a look at [this short guide](https://github.com/exercism/x-common/blob/master/CONTRIBUTING.md#git-basics).
+If you're new to Git take a look at [this short guide](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/README.md#git-basics).
 
 
 ## Python icon
