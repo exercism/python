@@ -790,6 +790,18 @@
       ]
     },
     {
+      "uuid": "889df88a-767d-490f-92c4-552d8ec9de34",
+      "slug": "change",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "Control-flow (loops)",
+        "Arrays",
+        "Algorithms"
+      ]
+    },
+    {
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "slug": "accumulate",
       "deprecated": true
