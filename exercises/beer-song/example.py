@@ -1,9 +1,9 @@
 def song(first, last=0):
-    verses = ''
+    verses = []
     for number in reversed(range(last, first + 1)):
-        verses += verse(number) + '\n'
+        verses.append(verse(number))
 
-    return verses
+    return '\n'.join(verses)
 
 
 def verse(number):
