@@ -4,6 +4,7 @@ from collatz_conjecture import collatz_steps
 
 # Test cases adapted from `x-common//canonical-data.json` @ version: 1.1.1
 
+
 class CollatzConjectureTests(unittest.TestCase):
 
     def test_zero_steps_for_one(self):
@@ -25,6 +26,7 @@ class CollatzConjectureTests(unittest.TestCase):
         self.assertEqual(collatz_steps(-1), None)
 
         self.assertEqual(collatz_steps(-15), None)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -12,5 +12,6 @@ def collatz_steps(n):
 
     return step_count
 
+
 def is_odd(n):
     return n % 2 == 1
