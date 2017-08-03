@@ -3,6 +3,16 @@
   "active": true,
   "exercises": [
     {
+      "uuid": "33f689ee-1d9c-4908-a71c-f84bff3510df",
+      "slug": "collatz-conjecture",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+
+      ]
+    },
+    {
       "uuid": "f458c48a-4a05-4809-9168-8edd55179349",
       "slug": "hello-world",
       "core": false,
