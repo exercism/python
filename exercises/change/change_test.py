@@ -19,8 +19,8 @@ class ChangeTest(unittest.TestCase):
                          [21, 21, 21])
 
     def test_large_target_values(self):
-        self.assertEqual(find_minimum_coins(21, [2, 5, 10, 20, 50]),
-                         [2, 2, 2, 5, 10])
+        self.assertEqual(find_minimum_coins(219, [1, 5, 10, 20, 50]),
+                         [1, 1, 1, 1, 5, 10, 50, 50, 50, 50])
 
     def test_possible_change_without_unit_coins_available(self):
         self.assertEqual(find_minimum_coins(21, [2, 5, 10, 20, 50]),
