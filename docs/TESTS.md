@@ -4,9 +4,17 @@ We recommend you install [pytest](http://pytest.org/latest/) and
 [pytest-cache](http://pythonhosted.org/pytest-cache/). `pytest` is a testing
 tool that will give you more flexibility over running your unit tests.
 
+If you want to install the version of pytest that obeys Python 2.X syntax, then use `pip`:
+
 ```bash
 pip install pytest pytest-cache
 ```
+If you instead want the vesrion of pytest that obeys Python 3.X syntax, then use `pip3`:
+
+```bash
+pip3 install pytest pytest-cache
+```
+**Note:** Whichever version of pytest you install first will be the default one used.
 
 If you get a `command not found` response from your system, you can find a
 tutorial on how to install `pip`
@@ -29,7 +37,7 @@ an example here), place yourself in the directory where that exercise has been
 fetched and run:
 
 ```bash
-py.test bob_test.py
+pytest bob_test.py
 ```
 
 **Note:** To run the tests you need to pass the name of the testsuite file to
@@ -56,7 +64,7 @@ The above will run all the tests, whether they fail or not. If you'd rather stop
 the process and exit on the first failure, run:
 
 ```bash
-py.test -x bob_test.py
+pytest -x bob_test.py
 ```
 
 ### Failed Tests First
@@ -64,14 +72,14 @@ py.test -x bob_test.py
 `pytest-cache` remembers which tests failed, and can run those tests first.
 
 ```bash
-py.test --ff bob_test.py
+pytest --ff bob_test.py
 ```
 
 ### Running All Tests for All Exercises
 
 ```bash
 cd exercism/python/
-py.test
+pytest
 ```
 
 ## Recommended Workflow
@@ -80,7 +88,7 @@ We recommend you run this command while working on exercises.
 
 ```bash
 cd exercism/python/bob
-py.test -x --ff bob_test.py
+pytest -x --ff bob_test.py
 ```
 
 ## PDB
@@ -93,7 +101,7 @@ You may also be interested in watching [Clayton Parker's "So you think you can
 pdb?" PyCon 2015 talk](https://www.youtube.com/watch?v=P0pIW5tJrRM)
 
 ```bash
-py.test --pdb bob_test.py
+pytest --pdb bob_test.py
 ```
 
 ## PEP8
@@ -107,10 +115,16 @@ compliance to the style guide, install
 pip install pytest-pep8
 ```
 
+or, for Python 3.X syntax compliance...
+
+```bash
+pip install pytest-pep8
+```
+
 and add the pep8 flag to your command
 
 ```bash
-py.test --pep8 bob_test.py
+pytest --pep8 bob_test.py
 ```
 
 Read the [pytest documentation](http://pytest.org/latest/contents.html#toc) and
