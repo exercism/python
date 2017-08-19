@@ -802,6 +802,18 @@
       ]
     },
     {
+      "uuid": "bacb2184-025f-0980-38d6-34fb419e03a6d3d8b44",
+      "slug": "two-fer",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "control-flow (if-else statements)",
+        "optional values",
+        "text formatting"
+      ]
+    },
+    {
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "slug": "accumulate",
       "deprecated": true
