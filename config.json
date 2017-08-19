@@ -814,6 +814,16 @@
       ]
     },
     {
+      "uuid": "33f689ee-1d9c-4908-a71c-f84bff3510df",
+      "slug": "collatz-conjecture",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+            "control-flow (loops)"
+      ]
+    },
+    {
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "slug": "accumulate",
       "deprecated": true
