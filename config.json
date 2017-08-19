@@ -802,13 +802,25 @@
       ]
     },
     {
+      "uuid": "bacb2184-025f-0980-38d6-34fb419e03a6d3d8b44",
+      "slug": "two-fer",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "control-flow (if-else statements)",
+        "optional values",
+        "text formatting"
+      ]
+    },
+    {
       "uuid": "33f689ee-1d9c-4908-a71c-f84bff3510df",
       "slug": "collatz-conjecture",
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+            "control-flow (loops)"
       ]
     },
     {
