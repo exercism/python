@@ -34,6 +34,9 @@ class TestIsogram(unittest.TestCase):
     def test_duplicated_character_in_the_middle(self):
         self.assertFalse(is_isogram("accentor"))
 
+    def test_isogram_with_duplicated_letter_and_nonletter_character(self):
+        self.assertFalse(is_isogram("Aleph Bot Chap"))
+
 
 if __name__ == '__main__':
     unittest.main()
