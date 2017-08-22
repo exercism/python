@@ -15,7 +15,7 @@ So say you have a matrix like so:
 It has a saddle point at (1, 0).
 
 It's called a "saddle point" because it is greater than or equal to
-every element in its row and the less than or equal to every element in
+every element in its row and less than or equal to every element in
 its column.
 
 A matrix may have zero or more saddle points.
