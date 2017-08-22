@@ -118,7 +118,7 @@ pip install pytest-pep8
 or, for Python 3.X syntax compliance...
 
 ```bash
-pip install pytest-pep8
+pip3 install pytest-pep8
 ```
 
 and add the pep8 flag to your command
