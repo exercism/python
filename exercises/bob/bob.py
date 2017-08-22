@@ -1,2 +1,2 @@
-def hey():
+def hey(string):
     pass
