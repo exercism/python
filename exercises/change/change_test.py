@@ -27,6 +27,10 @@ class ChangeTest(unittest.TestCase):
         self.assertEqual(find_minimum_coins(21, [2, 5, 10, 20, 50]),
                          [2, 2, 2, 5, 10])
 
+    def test_another_possible_change_without_unit_coins_available(self):
+        self.assertEqual(find_minimum_coins(27, [4, 5]),
+                         [4, 4, 4, 5, 5, 5])
+
     def test_no_coins_make_0_change(self):
         self.assertEqual(find_minimum_coins(0, [1, 5, 10, 21, 25]), [])
 
