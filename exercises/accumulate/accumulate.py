@@ -1,2 +1,2 @@
-def accumulate():
+def accumulate(array, function):
     pass

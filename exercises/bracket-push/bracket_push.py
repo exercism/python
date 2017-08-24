@@ -1,2 +1,2 @@
-def check_brackets():
+def check_brackets(string):
     pass

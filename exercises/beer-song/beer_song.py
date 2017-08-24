@@ -1,6 +1,6 @@
-def verse():
+def verse(number):
     pass
 
 
-def song():
+def song(number1, number2=0):
     pass
