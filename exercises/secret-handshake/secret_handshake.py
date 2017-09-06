@@ -1,6 +1,6 @@
-def handshake():
+def handshake(s):
     pass
 
 
-def code():
+def code(seq):
     pass

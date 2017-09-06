@@ -1,6 +1,6 @@
-def keep():
+def keep(seq, pred):
     pass
 
 
-def discard():
+def discard(seq, pred):
     pass

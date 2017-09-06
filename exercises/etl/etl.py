@@ -1,2 +1,2 @@
-def transform():
+def transform(old):
     pass
