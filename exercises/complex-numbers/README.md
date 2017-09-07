@@ -1,6 +1,6 @@
 # Complex Numbers
 
-A complex number is a number in the form a + b * i where a and b are real and i satisfies i^2 = -1.
+A complex number is a number in the form `a + b * i` where `a` and `b` are real and `i` satisfies `i^2 = -1`.
 
 Assume the programming language you are using does not have an implementation of complex numbers.
 
@@ -16,7 +16,7 @@ please see the [help page](http://exercism.io/languages/python).
 
 ## Source
 
-Wikipedia https://en.wikipedia.org/wiki/Complex_number
+Wikipedia [https://en.wikipedia.org/wiki/Complex_number](https://en.wikipedia.org/wiki/Complex_number)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
