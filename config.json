@@ -824,6 +824,17 @@
       ]
     },
     {
+      "uuid": "7f4d5743-7ab8-42ca-b393-767f7e9a4e97",
+      "slug": "complex-numbers",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 6,
+      "topics": [
+        "tuples",
+        "mathematics"
+      ]
+    },
+    {
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "slug": "accumulate",
       "deprecated": true
