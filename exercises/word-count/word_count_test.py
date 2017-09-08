@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import unittest
 
 from word_count import word_count
@@ -11,62 +12,80 @@ class WordCountTests(unittest.TestCase):
             word_count('word')
         )
 
+    @unittest.skip("remove this line to run this test")
     def test_count_one_of_each(self):
         self.assertEqual(
             {'one': 1, 'of': 1, 'each': 1},
             word_count('one of each')
         )
 
+    @unittest.skip("remove this line to run this test")
     def test_count_multiple_occurences(self):
         self.assertEqual(
             {'one': 1, 'fish': 4, 'two': 1, 'red': 1, 'blue': 1},
             word_count('one fish two fish red fish blue fish')
         )
 
-    def test_ignores_punctuation(self):
+    @unittest.skip("remove this line to run this test")
+    def test_handles_cramped_lists(self):
+        self.assertEqual(
+            {'one': 1, 'two': 1, 'three': 1},
+            word_count('one,two,three')
+        )
+
+    @unittest.skip("remove this line to run this test")
+    def test_handles_expanded_lists(self):
+        self.assertEqual(
+            {'one': 1, 'two': 1, 'three': 1},
+            word_count('one,\ntwo,\nthree')
+        )
+
+    @unittest.skip("remove this line to run this test")
+    def test_ignore_punctuation(self):
         self.assertEqual(
             {'car': 1, 'carpet': 1, 'as': 1, 'java': 1, 'javascript': 1},
             word_count('car : carpet as java : javascript!!&@$%^&')
         )
 
+    @unittest.skip("remove this line to run this test")
     def test_include_numbers(self):
         self.assertEqual(
             {'testing': 2, '1': 1, '2': 1},
             word_count('testing 1 2 testing')
         )
 
-    def test_mixed_case(self):
+    @unittest.skip("remove this line to run this test")
+    def test_normalize_case(self):
         self.assertEqual(
             [2, 3],
             sorted(list(word_count('go Go GO Stop stop').values()))
         )
 
-    def test_multiple_spaces(self):
+    @unittest.skip("remove this line to run this test")
+    def test_with_apostrophes(self):
         self.assertEqual(
-            {'wait': 1, 'for': 1, 'it': 1},
-            word_count('wait for       it')
+            {
+                "first": 1,
+                "don't": 2,
+                "laugh": 1,
+                "then": 1,
+                "cry": 1
+            },
+            word_count("First: don't laugh. Then: don't cry.")
         )
 
-    def test_newlines(self):
+    @unittest.skip("remove this line to run this test")
+    def test_with_quotations(self):
         self.assertEqual(
-            {'rah': 2, 'ah': 3, 'roma': 2, 'ma': 1, 'ga': 2, 'oh': 1, 'la': 2,
-             'want': 1, 'your': 1, 'bad': 1, 'romance': 1},
-            word_count('rah rah ah ah ah\nroma roma ma\n'
-                       'ga ga oh la la\nwant your bad romance')
-        )
-
-    def test_tabs(self):
-        self.assertEqual(
-            {'rah': 2, 'ah': 3, 'roma': 2, 'ma': 1, 'ga': 2, 'oh': 1, 'la': 2,
-             'want': 1, 'your': 1, 'bad': 1, 'romance': 1},
-            word_count('rah rah ah ah ah\troma roma ma\tga ga oh la la\t'
-                       'want your bad romance')
-        )
-
-    def test_non_alphanumeric(self):
-        self.assertEqual(
-            {'hey': 1, 'my': 1, 'spacebar': 1, 'is': 1, 'broken': 1},
-            word_count('hey,my_spacebar_is_broken.')
+            {
+                "joe": 1,
+                "can't": 1,
+                "tell": 1,
+                "between": 1,
+                "large": 2,
+                "and": 1
+            },
+            word_count("Joe can't tell between 'large' and large.")
         )
 
 
