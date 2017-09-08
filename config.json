@@ -827,11 +827,11 @@
       "uuid": "7f4d5743-7ab8-42ca-b393-767f7e9a4e97",
       "slug": "complex-numbers",
       "core": false,
-      "unlocked_by": "leap",
+      "unlocked_by": null,
       "difficulty": 6,
       "topics": [
-        "Tuples",
-        "Mathematics"
+        "tuples",
+        "mathematics"
       ]
     },
     {
