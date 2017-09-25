@@ -14,6 +14,17 @@ The objectives are simple:
 
 If everything goes well, you will be ready to fetch your first real exercise.
 
+## Running the tests
+
+To run the tests run the command `python <exercise>_test.py`. Or run it with
+`-v` to be more verbose like this: `python <exercise>_test.py`. Using the
+`-f` flag will cause the test to fail at the first failure instead of it
+trying all cases before exiting.
+
+To run this exercises's tests for example, run this command:
+
+    python hello_world_test.py -v
+
 ### Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
