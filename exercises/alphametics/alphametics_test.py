@@ -9,17 +9,17 @@ class TestAlphametics(unittest.TestCase):
     def test_puzzle_with_three_letters(self):
         self.assertEqual(solve("I + BB == ILL"), {"I": 1, "B": 9, "L": 0})
 
-    def solution_must_have_unique_value_for_each_letter(self):
+    def test_invalid_solution_must_have_unique_value_for_each_letter(self):
         self.assertEqual(solve("A == B"), {})
 
-    def leading_zero_solution_is_invalid(self):
+    def test_invalid_leading_zero_solution(self):
         self.assertEqual(solve("ACA + DD == BD"), {})
 
     def test_puzzle_with_four_letters(self):
         self.assertEqual(
             solve("AS + A == MOM"), {"A": 9, "S": 2, "M": 1, "O": 0})
 
-    def puzzle_with_six_letters(self):
+    def test_puzzle_with_six_letters(self):
         self.assertEqual(
             solve("NO + NO + TOO == LATE"),
             {"N": 7,
