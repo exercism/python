@@ -1,2 +1,2 @@
-def proverb():
+def proverb(items, qualifier=''):
     pass

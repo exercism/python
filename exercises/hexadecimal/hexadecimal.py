@@ -1,2 +1,2 @@
-def hexa():
+def hexa(string):
     pass

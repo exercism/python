@@ -1,2 +1,2 @@
-def board():
+def board(inp):
     pass

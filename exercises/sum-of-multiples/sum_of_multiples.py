@@ -1,2 +1,2 @@
-def sum_of_multiples():
+def sum_of_multiples(limit, multiples):
     pass

@@ -1,6 +1,6 @@
-def encode():
+def encode(numbers):
     pass
 
 
-def decode():
+def decode(bytes):
     pass
