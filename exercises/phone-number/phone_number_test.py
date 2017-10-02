@@ -3,6 +3,8 @@ import unittest
 from phone_number import Phone
 
 
+# test cases adapted from `x-common//canonical-data.json` @ version: 1.2.0
+
 class PhoneTest(unittest.TestCase):
     def test_cleans_number(self):
         number = Phone("(223) 456-7890").number
@@ -12,16 +14,36 @@ class PhoneTest(unittest.TestCase):
         number = Phone("223.456.7890").number
         self.assertEqual(number, "2234567890")
 
+    def test_cleans_number_with_multiple_spaces(self):
+        number = Phone("223 456   7890   ").number
+        self.assertEqual(number, "2234567890")
+
+    def test_invalid_when_9_digits(self):
+        number = Phone("123456789").number
+        self.assertEqual(number, "0000000000")
+
+    def test_invalid_when_11_digits_and_first_not_1(self):
+        number = Phone("22234567890").number
+        self.assertEqual(number, "0000000000")
+
     def test_valid_when_11_digits_and_first_is_1(self):
         number = Phone("12234567890").number
         self.assertEqual(number, "2234567890")
 
-    def test_invalid_when_11_digits(self):
-        number = Phone("22234567890").number
+    def test_valid_when_11_digits_and_first_is_1_with_punctuation(self):
+        number = Phone("+1 (223) 456-7890").number
+        self.assertEqual(number, "2234567890")
+
+    def test_invalid_when_more_than_11_digits(self):
+        number = Phone("321234567890").number
         self.assertEqual(number, "0000000000")
 
-    def test_invalid_when_9_digits(self):
-        number = Phone("123456789").number
+    def test_invalid_with_letters(self):
+        number = Phone("123-abc-7890").number
+        self.assertEqual(number, "0000000000")
+
+    def test_invalid_with_punctuation(self):
+        number = Phone("123-@:!-7890").number
         self.assertEqual(number, "0000000000")
 
     def test_invalid_area_code(self):
@@ -32,6 +54,7 @@ class PhoneTest(unittest.TestCase):
         number = Phone("(223) 056-7890").number
         self.assertEqual(number, "0000000000")
 
+    # Track specific tests
     def test_area_code(self):
         number = Phone("2234567890")
         self.assertEqual(number.area_code(), "223")
