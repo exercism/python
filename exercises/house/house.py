@@ -1,4 +1,4 @@
-def verse():
+def verse(n):
     pass
 
 

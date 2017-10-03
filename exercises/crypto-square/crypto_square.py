@@ -1,2 +1,2 @@
-def encode():
+def encode(msg):
     pass

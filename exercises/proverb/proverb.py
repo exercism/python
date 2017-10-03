@@ -1,2 +1,2 @@
-def proverb():
+def proverb(itens, qualifier):
     pass
