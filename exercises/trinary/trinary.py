@@ -1,2 +1,2 @@
-def trinary():
+def trinary(s):
     pass
