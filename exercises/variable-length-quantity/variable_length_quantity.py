@@ -4,6 +4,3 @@ def encode(numbers):
 
 def decode(bytes):
     pass
-
-def encode_single(n):
-    pass
