@@ -60,9 +60,9 @@ We even :sparkling_heart: them if they contain well written commit messages!
 
 Please write the first line of your commit message in the following style:
 
-```exercise-name: Changes some things``` 
+```exercise-name: Change some things``` 
 
-If there are more details to add, put those into the body of the commit message.
+Please try to follow the [The seven rules of a great Git commit message](https://chris.beams.io/posts/git-commit/#seven-rules) like to capitalize the subject line and use the imperative mood. If there are more details to add, put those into the body of the commit message.
 
 If you're interested, Tim Pope even has an [entire blog post](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html) on good commit messages.
 
