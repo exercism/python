@@ -1,6 +1,6 @@
-def number():
+def number(ocr):
     pass
 
 
-def grid():
+def grid(digits):
     pass
