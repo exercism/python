@@ -1,2 +1,2 @@
-def check_lists():
+def check_lists(firstList, secondList):
     pass
