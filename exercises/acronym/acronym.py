@@ -1,2 +1,2 @@
-def abbreviate():
+def abbreviate(phrase):
     pass
