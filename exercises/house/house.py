@@ -1,6 +1,6 @@
-def verse():
+def verse(verse_text):
     pass
 
 
-def rhyme():
+def rhyme(rhyme_text):
     pass
