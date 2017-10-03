@@ -3,5 +3,4 @@ def divisor_generator(number):
 
 
 def is_perfect(number):
-''' A perfect number equals the sum of its positive divisors. '''
     pass
