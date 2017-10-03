@@ -1,2 +1,2 @@
-def calculate():
+def calculate(statement):
     pass
