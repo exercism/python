@@ -1,2 +1,2 @@
-def calculate():
+def calculate(stmt):
     pass
