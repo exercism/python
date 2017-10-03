@@ -1,5 +1,5 @@
 class Node(object):
-    def __init__(self):
+    def __init__(self, value, next=None, prev=None):
         pass
 
 
