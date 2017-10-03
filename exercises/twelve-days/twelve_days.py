@@ -1,7 +1,7 @@
 def verse(n):
     pass
 
-def verses(start,end):
+def verses(startvalue, endvalue):
     pass
 
 def sing():
