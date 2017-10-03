@@ -1,6 +1,6 @@
-def on_square():
+def on_square(integer):
     pass
 
 
-def total_after():
+def total_after(integer):
     pass
