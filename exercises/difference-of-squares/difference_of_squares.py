@@ -1,10 +1,10 @@
-def square_of_sum():
+def square_of_sum(value):
     pass
 
 
-def sum_of_squares():
+def sum_of_squares(value):
     pass
 
 
-def difference():
+def difference(value):
     pass
