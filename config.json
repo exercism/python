@@ -104,7 +104,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "mathematics",
+        "logic"
       ]
     },
     {
@@ -114,6 +115,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
+        "strings",
+        "text formatting",
 
       ]
     },
@@ -124,6 +127,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
+        "strings",
+        "text formatting",
 
       ]
     },
@@ -134,7 +139,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "strings",
+        "mathematics",
+        "text formatting",
       ]
     },
     {
@@ -156,6 +163,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
+        "mathematics",
+        "logic"
 
       ]
     },
@@ -166,7 +175,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "strings",
+        "algorithms",
+        "sets"
       ]
     },
     {
@@ -176,7 +187,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "lists",
+        "logic",
+        "algortihms"
       ]
     },
     {
@@ -196,7 +209,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "logic",
+        "strings",
+        "matrices",
+        "control-flow (if-else statements)"
       ]
     },
     {
@@ -206,7 +222,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "arrays",
+        "mathematics"
       ]
     },
     {
@@ -256,7 +273,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "strings",
+        "logic",
+        "algorithms",
+        "dynamic programming"
       ]
     },
     {
@@ -296,7 +316,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "strings",
+        "logic",
+        "text formatting",
+        "mathematics"
       ]
     },
     {
