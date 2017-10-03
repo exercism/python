@@ -1,2 +1,2 @@
-def detect_anagrams(string, array):
+def detect_anagrams(string, candidates):
     pass
