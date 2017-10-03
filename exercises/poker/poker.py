@@ -1,2 +1,2 @@
-def poker():
+def poker(hands):
     pass

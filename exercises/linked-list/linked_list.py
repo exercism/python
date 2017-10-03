@@ -18,7 +18,7 @@ class LinkedList(object):
 
     def unshift(self, value):
         pass
-    
+
     def __len__(self):
         pass
 
