@@ -1,2 +1,2 @@
-def hey(string):
+def hey(stimulus):
     pass
