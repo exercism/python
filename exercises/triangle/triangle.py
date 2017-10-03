@@ -3,7 +3,7 @@ class TriangleError(Exception):
 
 
 class Triangle(object):
-    def __init__(self , x, y,z):
+    def __init__(self, x, y, z):
         pass
 
     def kind(self):
