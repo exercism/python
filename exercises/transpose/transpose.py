@@ -1,2 +1,2 @@
-def transpose():
+def transpose(matrix):
     pass
