@@ -1,2 +1,2 @@
-def hello(input):
+def hello(name=''):
     pass
