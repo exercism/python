@@ -2,5 +2,5 @@ def verse(number):
     pass
 
 
-def song(number1, number2=0):
+def song(first, last=0):
     pass
