@@ -1,2 +1,2 @@
-def word_count():
+def word_count(text):
     pass
