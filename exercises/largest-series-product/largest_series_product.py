@@ -1,2 +1,2 @@
-def largest_product(digits):
+def largest_product(series, size):
     pass
