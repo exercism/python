@@ -1,2 +1,2 @@
-def parse_binary(string):
+def parse_binary(binary_string):
     pass
