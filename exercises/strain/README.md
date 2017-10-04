@@ -9,7 +9,9 @@ For example, given the collection of numbers:
 
 - 1, 2, 3, 4, 5
 
-And the predicate:
+And the predicate: 
+
+Note: _a predicate P(x) will be true or false, depending on whether x belongs to a set._ [Wikipedia - Predicate](https://en.wikipedia.org/wiki/Predicate_(mathematical_logic)))
 
 - is the number even?
 
