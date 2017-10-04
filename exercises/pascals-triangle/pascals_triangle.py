@@ -1,10 +1,10 @@
-def triangle(nth):
+def triangle(row_count):
     pass
 
 
-def is_triangle(t):
+def is_triangle(triangle):
     pass
 
 
-def row(nth):
+def row(row_count):
     pass
