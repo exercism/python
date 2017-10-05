@@ -1,2 +1,2 @@
-def encode(plaintext):
+def encode(plain_text):
     pass
