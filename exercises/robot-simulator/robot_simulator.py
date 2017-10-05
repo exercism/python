@@ -1,4 +1,8 @@
-NORTH, EAST, SOUTH, WEST = range(4)
+# Globals for the bearings
+EAST = "East"
+NORTH = "North"
+WEST = "West"
+SOUTH = "South"
 
 
 class Robot(object):
