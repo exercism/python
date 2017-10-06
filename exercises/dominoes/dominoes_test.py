@@ -108,3 +108,7 @@ class DominoesTest(unittest.TestCase):
     def refute_correct_chain(self, input_dominoes, output_chain):
         msg = 'There should be no valid chain for {}'.format(input_dominoes)
         self.assertIsNone(output_chain, msg)
+
+
+if __name__ == '__main__':
+    unittest.main()
