@@ -1,2 +1,2 @@
-def numeral(arabic):
+def numeral(number):
     pass
