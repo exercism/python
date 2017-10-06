@@ -1,2 +1,2 @@
-def rotate(string, key):
+def rotate(text, key):
     pass
