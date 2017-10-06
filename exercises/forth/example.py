@@ -9,7 +9,10 @@ def is_integer(string):
 def evaluate(input):
     defines = {}
     while input[0][0] == ':':
-        _, key, *values, _ = input.pop(0).split()
+        values = input.pop(0).split()
+        values.pop()
+        values.pop(0)
+        key = values.pop(0)
         if is_integer(key):
             return None
         defines[key] = values
@@ -29,7 +32,8 @@ def evaluate(input):
             elif word == '*':
                 stack.append(stack.pop() * stack.pop())
             elif word == '/':
-                stack.append(int(1 / stack.pop() * stack.pop()))
+                divider = stack.pop()
+                stack.append(int(stack.pop() / divider))
             elif word == 'dup':
                 stack.append(stack[-1])
             elif word == 'drop':
