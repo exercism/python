@@ -215,7 +215,7 @@ class ForthUserDefinedWordsTest(unittest.TestCase):
 
     def test_is_case_insensitive(self):
         input = [
-            ": foo dup",
+            ": foo dup ;",
             "1 FOO"
         ]
         expected = [1, 1]

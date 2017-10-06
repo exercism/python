@@ -1,2 +1,2 @@
-def evaluate(input):
+def evaluate(stack):
     pass
