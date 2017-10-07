@@ -75,8 +75,6 @@ class BankAccountTests(unittest.TestCase):
         with self.assertRaises(Exception):
             self.account.deposit(50)
 
-
-
     def test_withdraw_from_closed_account(self):
         self.account = BankAccount()
         self.account.open()
@@ -89,6 +87,46 @@ class BankAccountTests(unittest.TestCase):
         self.account = BankAccount()
         self.account.open()
         self.account.deposit(25)
+
+        with self.assertRaises(Exception):
+            self.account.withdraw(50)
+
+    def test_cannot_withdraw_negative(self):
+        self.account = BankAccount()
+        self.account.open()
+        self.account.deposit(100)
+
+        with self.assertRaises(Exception):
+            self.account.withdraw(-50)
+
+    def test_cannot_deposit_negative(self):
+        self.account = BankAccount()
+        self.account.open()
+
+        with self.assertRaises(Exception):
+            self.account.deposit(-50)
+
+        with self.assertRaises(Exception):
+            self.account.withdraw(50)
+
+    def test_cannot_withdraw_negative(self):
+        self.account = BankAccount()
+        self.account.open()
+        self.account.deposit(100)
+
+        with self.assertRaises(Exception):
+            self.account.withdraw(-50)
+
+    def test_cannot_deposit_negative(self):
+        self.account = BankAccount()
+        self.account.open()
+
+        with self.assertRaises(Exception):
+            self.account.deposit(-50)
+
+
+
+
 
         with self.assertRaises(Exception):
             self.account.withdraw(50)
