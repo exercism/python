@@ -130,8 +130,5 @@ class BankAccountTests(unittest.TestCase):
         for thread in threadlist:
             thread.start()
 
-
-
-
 if __name__ == '__main__':
     unittest.main();

@@ -4,13 +4,20 @@ class BankAccount(object):
 		pass
 
 	def getBalance(self):
-		return self.balance
+		if (self.open == True):
+			return self.balance
+		else:
+			raise Exception
 
 	def getBalance(self):
-		return self.balance
+		if (self.open == True):
+			return self.balance
+		else:
+			raise Exception
 
 	def open(self):
 		self.balance = 0
+		self.open = True
 
 	def deposit(self, amount):
 		self.lock.acquire()
