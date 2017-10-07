@@ -8,6 +8,32 @@ class BankAccountTests(unittest.TestCase):
         self.account = BankAccount()
         self.assertEqual(self.account.open(), 0)
 
+    def test_get_balance_0(self):
+        self.account = BankAccount()
+        self.account.open()
+
+        self.assertEqual(self.account.getBalance(), 0)
+
+    def test_get_balance_with_amount(self):
+        self.account = BankAccount()
+        self.account.open()
+        self.account.deposit(100)
+
+        self.assertEqual(self.account.getBalance(), 100)
+
+    def test_get_balance_0(self):
+        self.account = BankAccount()
+        self.account.open()
+
+        self.assertEqual(self.account.getBalance(), 0)
+
+    def test_get_balance_with_amount(self):
+        self.account = BankAccount()
+        self.account.open()
+        self.account.deposit(100)
+
+        self.assertEqual(self.account.getBalance(), 100)
+
     def test_deposit_into_account(self):
         self.account = BankAccount()
         self.account.open()

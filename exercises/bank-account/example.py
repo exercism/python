@@ -30,3 +30,6 @@ class BankAccount(object):
 		self.lock.acquire()
 		self.open = False
 		self.lock.release()
+        
+	def getBalance(self):
+		return self.balance
