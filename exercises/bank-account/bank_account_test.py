@@ -1,4 +1,5 @@
 import unittest
+import threading
 
 from example import BankAccount #to be changed later
 
@@ -75,6 +76,8 @@ class BankAccountTests(unittest.TestCase):
         with self.assertRaises(Exception):
             self.account.deposit(50)
 
+
+
     def test_withdraw_from_closed_account(self):
         self.account = BankAccount()
         self.account.open()
@@ -106,46 +109,6 @@ class BankAccountTests(unittest.TestCase):
         with self.assertRaises(Exception):
             self.account.deposit(-50)
 
-        with self.assertRaises(Exception):
-            self.account.withdraw(50)
-
-    def test_cannot_withdraw_negative(self):
-        self.account = BankAccount()
-        self.account.open()
-        self.account.deposit(100)
-
-        with self.assertRaises(Exception):
-            self.account.withdraw(-50)
-
-    def test_cannot_deposit_negative(self):
-        self.account = BankAccount()
-        self.account.open()
-
-        with self.assertRaises(Exception):
-            self.account.deposit(-50)
-
-
-
-
-
-        with self.assertRaises(Exception):
-            self.account.withdraw(50)
-
-    def test_cannot_withdraw_negative(self):
-        self.account = BankAccount()
-        self.account.open()
-        self.account.deposit(100)
-
-        with self.assertRaises(Exception):
-            self.account.withdraw(-50)
-
-    def test_cannot_deposit_negative(self):
-        self.account = BankAccount()
-        self.account.open()
-
-        with self.assertRaises(Exception):
-            self.account.deposit(-50)
-
 
 
     def test_can_handle_concurrent_transactions(self):
@@ -153,6 +116,8 @@ class BankAccountTests(unittest.TestCase):
             self.account.deposit(10)
             self.account.withdraw(1)
 
+        with self.assertRaises(Exception):
+            self.account.withdraw(-50)
 
         self.account = BankAccount()
         self.account.open()
@@ -167,6 +132,11 @@ class BankAccountTests(unittest.TestCase):
 
         for thread in threadlist:
             thread.start()
+
+        for thread in threadlist:
+            thread.join()
+
+        self.assertEqual(self.account.getBalance(), 900)
 
 if __name__ == '__main__':
     unittest.main();
