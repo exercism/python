@@ -814,6 +814,17 @@
       ]
     },
     {
+      "uuid": "f5503274-ac23-11e7-abc4-cec278b6b50a",
+      "slug": "connect",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "parsing",
+        "transforming"
+      ]
+    },
+    {
       "uuid": "33f689ee-1d9c-4908-a71c-f84bff3510df",
       "slug": "collatz-conjecture",
       "core": false,
