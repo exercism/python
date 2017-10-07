@@ -500,6 +500,17 @@
       ]
     },
     {
+      "uuid": "83a3ff95-c043-401c-bc2c-547d52344b02",
+      "slug": "bank-account",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "Classes",
+        "Concurrency"
+      ]
+    },
+    {
       "uuid": "d41238ce-359c-4a9a-81ea-ca5d2c4bb50d",
       "slug": "twelve-days",
       "core": false,

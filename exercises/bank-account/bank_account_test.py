@@ -1,7 +1,7 @@
 import unittest
 import threading
 
-from example import BankAccount #to be changed later
+from bank_account import BankAccount
 
 class BankAccountTests(unittest.TestCase):
 
