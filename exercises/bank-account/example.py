@@ -3,9 +3,14 @@ class BankAccount(object):
 	def __init__(self):
 		pass
 
+	def getBalance(self):
+		return self.balance
+
+	def getBalance(self):
+		return self.balance
+
 	def open(self):
 		self.balance = 0
-		return self.balance
 
 	def deposit(self, amount):
 		self.lock.acquire()

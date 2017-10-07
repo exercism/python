@@ -6,7 +6,9 @@ class BankAccountTests(unittest.TestCase):
 
     def test_newly_opened_account_has_zero_balance(self):
         self.account = BankAccount()
-        self.assertEqual(self.account.open(), 0)
+        self.account.open()
+
+        self.assertEqual(self.account.getBalance(), 0)
 
     def test_get_balance_0(self):
         self.account = BankAccount()
@@ -128,7 +130,6 @@ class BankAccountTests(unittest.TestCase):
         for thread in threadlist:
             thread.start()
 
-        self.assertEqual(self.account.deposit(100), 100)
 
 
 
