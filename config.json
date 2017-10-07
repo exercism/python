@@ -840,8 +840,8 @@
       "difficulty": 5,
       "topics": [
         "algorithms",
-        "control-flow (loops)",
-        "control-flow (if-else statements)"
+        "loops",
+        "conditionals"
       ]
     },
     {

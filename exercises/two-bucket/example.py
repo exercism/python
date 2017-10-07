@@ -17,43 +17,43 @@ The solution follows the following approach:
 '''
 
 
-def two_bucket(bucket_one, bucket_two, d, first):
+def two_bucket(bucket_one_cap, bucket_two_cap, desired_liters, first):
     if first == "one":
-        count = 0
-        m, n = 0, 0
+        moves = 0
+        bucket_one, bucket_two = 0, 0
         while(True):
-            if m == 0:
-                count += 1
-                m = bucket_one
-            elif n == bucket_two:
-                count += 1
-                n = 0
+            if bucket_one == 0:
+                moves += 1
+                bucket_one = bucket_one_cap
+            elif bucket_two == bucket_two_cap:
+                moves += 1
+                bucket_two = 0
             else:
-                count += 1
-                measure = min(m, bucket_two - n)
-                m -= measure
-                n += measure
-            if m == d:
-                return (count, "one", n)
-            elif n == d:
-                return (count, "two", m)
+                moves += 1
+                measure = min(bucket_one, bucket_two_cap - bucket_two)
+                bucket_one -= measure
+                bucket_two += measure
+            if bucket_one == desired_liters:
+                return (moves, "one", bucket_two)
+            elif bucket_two == desired_liters:
+                return (moves, "two", bucket_one)
 
     elif first == "two":
-        count = 0
-        m, n = 0, 0
+        moves = 0
+        bucket_one, bucket_two = 0, 0
         while(True):
-            if n == 0:
-                count += 1
-                n = bucket_two
-            elif m == bucket_one:
-                count += 1
-                m = 0
+            if bucket_two == 0:
+                moves += 1
+                bucket_two = bucket_two_cap
+            elif bucket_one == bucket_one_cap:
+                moves += 1
+                bucket_one = 0
             else:
-                count += 1
-                measure = min(n, bucket_one - m)
-                n -= measure
-                m += measure
-            if m == d:
-                return (count, "one", n)
-            elif n == d:
-                return (count, "two", m)
+                moves += 1
+                measure = min(bucket_two, bucket_one_cap - bucket_one)
+                bucket_two -= measure
+                bucket_one += measure
+            if bucket_one == desired_liters:
+                return (moves, "one", bucket_two)
+            elif bucket_two == desired_liters:
+                return (moves, "two", bucket_one)
