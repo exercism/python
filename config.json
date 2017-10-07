@@ -835,6 +835,15 @@
       ]
     },
     {
+      "slug": "two-bucket",
+      "difficulty": 5,
+      "topics": [
+        "algorithms",
+        "control-flow (loops)",
+        "control-flow (if-else statements)"
+      ]
+    },
+    {
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "slug": "accumulate",
       "deprecated": true
