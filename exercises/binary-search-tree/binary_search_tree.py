@@ -25,12 +25,14 @@ class BinarySearchTree(object):
                     else:
                         cur_node.left_node = TreeNode(value)
                         inserted = True
+                        return inserted
                 elif(value >  cur_node.value):
                     if(cur_node.right_node):
                         cur_node = cur_node.right_node
                     else:
                         cur_node.right_node = TreeNode(value)
-                        inserted = True                  
+                        inserted = True
+                        return inserted            
 
     def search(self, searched_number):
         cur_node = self.root
@@ -62,4 +64,3 @@ class BinarySearchTree(object):
             self.print_preorder(node.left_node)
             self.print_preorder(node.right_node)
             print(node.value)
-            
