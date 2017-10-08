@@ -19,11 +19,6 @@ class ListOpsTest(unittest.TestCase):
         self.assertEqual(list_ops.append([1, 2], [2, 3, 4, 5]),
                          [1, 2, 2, 3, 4, 5])
 
-    # additional test for append
-    def test_append_range(self):
-        self.assertEqual(
-            list_ops.append([100], range(1000)), [100, range(1000)])
-
     # tests for concat
     def test_concat_empty_list(self):
         self.assertEqual(list_ops.concat([]), [])
