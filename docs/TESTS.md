@@ -14,7 +14,7 @@ If you instead want the vesrion of pytest that obeys Python 3.X syntax, then use
 ```bash
 pip3 install pytest pytest-cache
 ```
-**Note:** Whichever version of pytest you install first will be the default one used.
+**Note:** Whichever version of pytest you install first will be the default one used whenever `pytest` is executed, regardless of whether you have installed both versions.
 
 If you get a `command not found` response from your system, you can find a
 tutorial on how to install `pip`
