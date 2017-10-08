@@ -7,6 +7,7 @@ class TreeNode(object):
     def __str__(self):
         return str(self.value)
 
+
 class BinarySearchTree(object):
     def __init__(self):
         self.root = None
@@ -28,13 +29,13 @@ class BinarySearchTree(object):
                         cur_node.left_node = TreeNode(value)
                         inserted = True
                         return inserted
-                elif(value >  cur_node.value):
+                elif(value > cur_node.value):
                     if(cur_node.right_node):
                         cur_node = cur_node.right_node
                     else:
                         cur_node.right_node = TreeNode(value)
                         inserted = True
-                        return inserted            
+                        return inserted
 
     def search(self, searched_number):
         cur_node = self.root
@@ -48,8 +49,7 @@ class BinarySearchTree(object):
                 cur_node = cur_node.right_node
             elif(searched_number == cur_node.value):
                 return cur_node
-                
-                    
+
     def print_inorder(self, node):
         if(node is not None):
             self.print_inorder(node.left_node)
@@ -67,10 +67,3 @@ class BinarySearchTree(object):
             self.print_preorder(node.left_node)
             self.print_preorder(node.right_node)
             print(node.value)
-
-arr = [1, 5, 7, 2, 50]
-bst = BinarySearchTree()
-for i in arr:
-    bst.add(i)
-
-print(bst.print_inorder(bst.root))

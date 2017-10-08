@@ -2,12 +2,13 @@ import unittest
 
 from binary_search_tree import BinarySearchTree
 
+
 class BinarySearchTreeTests(unittest.TestCase):
     bst = BinarySearchTree()
 
     def test_add_integer_number1(self):
         self.assertTrue(self.bst.add(7))
-    
+
     def test_add_integer_number2(self):
         self.assertTrue(self.bst.add(1))
 
@@ -28,7 +29,7 @@ class BinarySearchTreeTests(unittest.TestCase):
 
     def test_search_valid_number3(self):
         self.assertEqual(self.bst.search(1).value, 1)
-    
+
 
 if __name__ == '__main__':
     unittest.main()
