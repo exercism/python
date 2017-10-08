@@ -3,6 +3,7 @@ import threading
 
 from bank_account import BankAccount
 
+
 class BankAccountTests(unittest.TestCase):
 
     def test_newly_opened_account_has_zero_balance(self):
@@ -10,19 +11,6 @@ class BankAccountTests(unittest.TestCase):
         self.account.open()
 
         self.assertEqual(self.account.getBalance(), 0)
-
-    def test_get_balance_0(self):
-        self.account = BankAccount()
-        self.account.open()
-
-        self.assertEqual(self.account.getBalance(), 0)
-
-    def test_get_balance_with_amount(self):
-        self.account = BankAccount()
-        self.account.open()
-        self.account.deposit(100)
-
-        self.assertEqual(self.account.getBalance(), 100)
 
     def test_get_balance_0(self):
         self.account = BankAccount()
@@ -76,8 +64,6 @@ class BankAccountTests(unittest.TestCase):
         with self.assertRaises(Exception):
             self.account.deposit(50)
 
-
-
     def test_withdraw_from_closed_account(self):
         self.account = BankAccount()
         self.account.open()
@@ -109,8 +95,6 @@ class BankAccountTests(unittest.TestCase):
         with self.assertRaises(Exception):
             self.account.deposit(-50)
 
-
-
     def test_can_handle_concurrent_transactions(self):
         def increment_and_decrement(self):
             self.account.deposit(10)
@@ -124,9 +108,10 @@ class BankAccountTests(unittest.TestCase):
 
         threadlist = []
         threads = 100
-        i=0
-        while (i<threads):
-            thread = threading.Thread(target=increment_and_decrement, args=(self, ))
+        i = 0
+        while (i < threads):
+            thread = threading.Thread(target=increment_and_decrement,
+                                      args=(self, ))
             threadlist.append(thread)
             i += 1
 
@@ -138,5 +123,6 @@ class BankAccountTests(unittest.TestCase):
 
         self.assertEqual(self.account.getBalance(), 900)
 
+
 if __name__ == '__main__':
-    unittest.main();
+    unittest.main()
