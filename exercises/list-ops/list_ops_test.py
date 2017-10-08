@@ -29,13 +29,12 @@ class ListOpsTest(unittest.TestCase):
 
     # tests for filter_clone
     def test_filter_empty_list(self):
-        condition = lambda x: x % 2 == 1
-        self.assertEqual(list_ops.filter_clone(condition, []), [])
+        self.assertEqual(list_ops.filter_clone(lambda x: x % 2 == 1, []), [])
 
     def test_filter_nonempty_list(self):
-        condition = lambda x: x % 2 == 1
-        self.assertEqual(list_ops.filter_clone(condition, [1, 2, 3, 4, 5]),
-                         [1, 3, 5])
+        self.assertEqual(
+            list_ops.filter_clone(lambda x: x % 2 == 1, [1, 2, 3, 4, 5]),
+            [1, 3, 5])
 
     # tests for length
     def test_length_empty_list(self):
