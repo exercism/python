@@ -32,7 +32,7 @@ class ListOpsTest(unittest.TestCase):
         condition = lambda x: x % 2 == 1
         self.assertEqual(list_ops.filter_clone(condition, []), [])
 
-    def test_filter_empty_list(self):
+    def test_filter_nonempty_list(self):
         condition = lambda x: x % 2 == 1
         self.assertEqual(list_ops.filter_clone(condition, [1, 2, 3, 4, 5]),
                          [1, 3, 5])
