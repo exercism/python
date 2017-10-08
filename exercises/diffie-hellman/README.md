@@ -37,6 +37,10 @@ Bob calculates
 The calculations produce the same result!  Alice and Bob now share
 secret s.
 
+## Notes
+
+Python, as of version 3.6, includes two different random modules. The module called `random` is pseudo-random, meaning it does not generate true randomness, but follows and algorithm that simulates randomness. Since random numbers are generated through a known algorithm, they are not truly random. The `random` module is not correctly suited for crypotography and should not be used, because it is pseudo-random. In version 3.6, Python introduced the `secrets` module which is more cryptographically secure and produces more random numbers suited for cryptography. Since this is only an exercise, `random` is fine to use, but note that it would be very insecure if actually used for crypotgraphy.
+
 ### Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
