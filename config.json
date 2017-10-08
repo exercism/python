@@ -898,9 +898,22 @@
       "uuid": "6b7f7b1f-c388-4f4c-b924-84535cc5e1a0",
       "slug": "hexadecimal",
       "deprecated": true
+    },
+    {
+      "uuid": "6f196341-0ffc-9780-a7ca-1f817508247161cbcd9",
+      "slug": "binary-search-tree",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics":[
+        "recursion",
+        "classes",
+        "trees",
+        "searching",
+        "object_oriented_programming"
+      ]
     }
   ],
   "foregone": [
-
   ]
 }
