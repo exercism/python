@@ -1,2 +1,2 @@
-def spiral(n):
+def spiral(size):
     pass
