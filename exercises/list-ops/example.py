@@ -31,5 +31,6 @@ def foldr(function, xs, acc):
     else:
         return function(xs[0], foldr(function, xs[1:], acc))
 
+
 def reverse(xs):
     return xs[::-1]
