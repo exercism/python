@@ -1,8 +1,8 @@
-def map_clone():
+def append():
     pass
 
 
-def length():
+def concat():
     pass
 
 
@@ -10,11 +10,11 @@ def filter_clone():
     pass
 
 
-def reverse():
+def length():
     pass
 
 
-def append():
+def map_clone():
     pass
 
 
@@ -26,9 +26,5 @@ def foldr():
     pass
 
 
-def flat():
-    pass
-
-
-def concat():
+def reverse():
     pass
