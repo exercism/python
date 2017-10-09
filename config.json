@@ -835,6 +835,16 @@
       ]
     },
     {
+      "uuid": "8c89f739-05fb-7b80-b5f9-6ad079c750ba8302be8",
+      "slug": "two-bucket",
+      "difficulty": 5,
+      "topics": [
+        "algorithms",
+        "loops",
+        "conditionals"
+      ]
+    },
+    {
       "uuid": "4354f631-0cf5-9980-75e7-86d1c3da1f0d3f5e619",
       "slug": "dominoes",
       "core": false,
