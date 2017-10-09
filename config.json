@@ -832,7 +832,8 @@
       "topics": [
         "parsing",
         "tuples",
-        "optional_values"
+        "optional_values",
+        "classes"
       ]
     },
     {
