@@ -6,10 +6,10 @@ def is_integer(string):
         return False
 
 
-def evaluate(input):
+def evaluate(input_data):
     defines = {}
-    while input[0][0] == ':':
-        values = input.pop(0).split()
+    while input_data[0][0] == ':':
+        values = input_data.pop(0).split()
         values.pop()
         values.pop(0)
         key = values.pop(0)
@@ -17,14 +17,14 @@ def evaluate(input):
             return None
         defines[key] = values
     stack = []
-    input = input[-1].split()
-    while any(input):
-        word = input.pop(0).lower()
+    input_data = input_data[-1].split()
+    while any(input_data):
+        word = input_data.pop(0).lower()
         try:
             if is_integer(word):
                 stack.append(int(word))
             elif word in defines:
-                input = defines[word] + input
+                input_data = defines[word] + input_data
             elif word == '+':
                 stack.append(stack.pop() + stack.pop())
             elif word == '-':
