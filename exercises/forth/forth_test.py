@@ -1,6 +1,6 @@
 import unittest
 
-from example import evaluate, UnderflowError
+from example import evaluate, StackUnderflowError
 
 
 # test cases adapted from `x-common//canonical-data.json` @ version: 1.2.0
@@ -14,12 +14,12 @@ class ForthAdditionTest(unittest.TestCase):
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
         input_data = ["+"]
-        with self.assertRaises(UnderflowError):
+        with self.assertRaises(StackUnderflowError):
             evaluate(input_data)
 
     def test_errors_if_there_is_only_one_value_on_the_stack(self):
         input_data = ["1 +"]
-        with self.assertRaises(UnderflowError):
+        with self.assertRaises(StackUnderflowError):
             evaluate(input_data)
 
 
@@ -31,12 +31,12 @@ class ForthSubtractionTest(unittest.TestCase):
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
         input_data = ["-"]
-        with self.assertRaises(UnderflowError):
+        with self.assertRaises(StackUnderflowError):
             evaluate(input_data)
 
     def test_errors_if_there_is_only_one_value_on_the_stack(self):
         input_data = ["1 -"]
-        with self.assertRaises(UnderflowError):
+        with self.assertRaises(StackUnderflowError):
             evaluate(input_data)
 
 
@@ -48,12 +48,12 @@ class ForthMultiplicationTest(unittest.TestCase):
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
         input_data = ["*"]
-        with self.assertRaises(UnderflowError):
+        with self.assertRaises(StackUnderflowError):
             evaluate(input_data)
 
     def test_errors_if_there_is_only_one_value_on_the_stack(self):
         input_data = ["1 *"]
-        with self.assertRaises(UnderflowError):
+        with self.assertRaises(StackUnderflowError):
             evaluate(input_data)
 
 
@@ -75,12 +75,12 @@ class ForthDivisionTest(unittest.TestCase):
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
         input_data = ["/"]
-        with self.assertRaises(UnderflowError):
+        with self.assertRaises(StackUnderflowError):
             evaluate(input_data)
 
     def test_errors_if_there_is_only_one_value_on_the_stack(self):
         input_data = ["1 /"]
-        with self.assertRaises(UnderflowError):
+        with self.assertRaises(StackUnderflowError):
             evaluate(input_data)
 
 
@@ -109,7 +109,7 @@ class ForthDupTest(unittest.TestCase):
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
         input_data = ["dup"]
-        with self.assertRaises(UnderflowError):
+        with self.assertRaises(StackUnderflowError):
             evaluate(input_data)
 
 
@@ -131,7 +131,7 @@ class ForthDropTest(unittest.TestCase):
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
         input_data = ["drop"]
-        with self.assertRaises(UnderflowError):
+        with self.assertRaises(StackUnderflowError):
             evaluate(input_data)
 
 
@@ -153,12 +153,12 @@ class ForthSwapTest(unittest.TestCase):
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
         input_data = ["swap"]
-        with self.assertRaises(UnderflowError):
+        with self.assertRaises(StackUnderflowError):
             evaluate(input_data)
 
     def test_errors_if_there_is_only_one_value_on_the_stack(self):
         input_data = ["1 swap"]
-        with self.assertRaises(UnderflowError):
+        with self.assertRaises(StackUnderflowError):
             evaluate(input_data)
 
 
@@ -180,12 +180,12 @@ class ForthOverTest(unittest.TestCase):
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
         input_data = ["over"]
-        with self.assertRaises(UnderflowError):
+        with self.assertRaises(StackUnderflowError):
             evaluate(input_data)
 
     def test_errors_if_there_is_only_one_value_on_the_stack(self):
         input_data = ["1 over"]
-        with self.assertRaises(UnderflowError):
+        with self.assertRaises(StackUnderflowError):
             evaluate(input_data)
 
 

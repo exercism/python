@@ -1,4 +1,4 @@
-class UnderflowError(Exception):
+class StackUnderflowError(Exception):
     pass
 
 
@@ -54,5 +54,5 @@ def evaluate(input_data):
         except ZeroDivisionError:
             raise
         except IndexError:
-            raise UnderflowError()
+            raise StackUnderflowError()
     return stack
