@@ -839,7 +839,7 @@
       "slug": "forth",
       "core": false,
       "unlocked_by": null,
-      "difficulty": 10,
+      "difficulty": 5,
       "topics": [
         "parsing",
         "stacks"
