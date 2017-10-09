@@ -3,6 +3,9 @@ import unittest
 from forth import evaluate
 
 
+# test cases adapted from `x-common//canonical-data.json` @ version: 1.2.0
+
+
 class ForthAdditionTest(unittest.TestCase):
     def test_can_add_two_numbers(self):
         input_data = ["1 2 +"]
