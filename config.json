@@ -845,6 +845,18 @@
       ]
     },
     {
+        "uuid": "4f5f890d-0db4-5480-f79a-21057c37871b15133dc",
+        "slug": "zipper",
+        "core": false,
+        "unlocked_by": null,
+        "difficulty": 8,
+        "topics": [
+            "recursion",
+            "searching",
+            "trees"
+        ]
+    },
+    {
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "slug": "accumulate",
       "deprecated": true
