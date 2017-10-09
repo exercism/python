@@ -1,8 +1,12 @@
+class UnderflowError(Exception):
+    pass
+
+
 def is_integer(string):
     try:
         int(string)
         return True
-    except:
+    except ValueError:
         return False
 
 
@@ -14,7 +18,7 @@ def evaluate(input_data):
         values.pop(0)
         key = values.pop(0)
         if is_integer(key):
-            return None
+            raise ValueError()
         defines[key] = values
     stack = []
     input_data = input_data[-1].split()
@@ -33,6 +37,8 @@ def evaluate(input_data):
                 stack.append(stack.pop() * stack.pop())
             elif word == '/':
                 divider = stack.pop()
+                if divider == 0:
+                    raise ZeroDivisionError()
                 stack.append(int(stack.pop() / divider))
             elif word == 'dup':
                 stack.append(stack[-1])
@@ -44,7 +50,9 @@ def evaluate(input_data):
             elif word == 'over':
                 stack.append(stack[-2])
             else:
-                return None
-        except:
-            return None
+                raise ValueError()
+        except ZeroDivisionError:
+            raise
+        except IndexError:
+            raise UnderflowError()
     return stack
