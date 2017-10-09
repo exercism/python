@@ -3,7 +3,7 @@
 Creating a zipper for a binary tree.
 
 [Zippers](https://en.wikipedia.org/wiki/Zipper_%28data_structure%29) are
-a way purely functional of navigating within a data structure and
+a purely functional way of navigating within a data structure and
 manipulating it.  They essentially contain a data structure and a
 pointer into that data structure (called the focus).
 
