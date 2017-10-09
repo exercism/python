@@ -1,2 +1,2 @@
-def count(string):
+def count(ascii_diagram):
     pass
