@@ -15,23 +15,28 @@ class GoCounting:
     def valid(self, x, y):
         return x >= 0 and x < self.width and y >= 0 and y < self.height
 
-    def walk_board(self, x, y, visited_territory=[], visited_coords=[], visited_stones=[]):
+    def walk_board(self, x, y,
+                   visited_territory=[],
+                   visited_coords=[],
+                   visited_stones=[]):
         if not (x, y) in visited_coords and self.valid(x, y):
             s = self.board[y][x]
             if s in self.stones:
                 if s not in visited_stones:
                     return (visited_territory, visited_stones + [s])
-            else: # s is empty
+            else:  # s is empty
                 for d in self.directions:
-                    visited_territory, visited_stones = self.walk_board(x + d[0], y + d[1],
-                                                                        visited_territory + [(x, y)],
-                                                                        visited_coords + [(x, y)],
-                                                                        visited_stones)
+                    visited = self.walk_board(x + d[0], y + d[1],
+                                              visited_territory + [(x, y)],
+                                              visited_coords + [(x, y)],
+                                              visited_stones)
+                    visited_territory = visited[0]
+                    visited_stones = visited[1]
 
         return (visited_territory, visited_stones)
 
     def territoryFor(self, coord):
-        assert(len(coord) == 2)
+        assert len(coord) == 2
         x, y = coord[0], coord[1]
         if not self.valid(x, y) or self.board[y][x] in self.stones:
             return (self.none, set())

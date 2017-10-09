@@ -21,6 +21,7 @@ board9x9 = "\n".join([
     "   B B   "
 ])
 
+
 class GoCountingTest(unittest.TestCase):
     def test_5x5_for_black(self):
         board = gocounting.GoCounting(board5x5)
@@ -80,7 +81,8 @@ class GoCountingTest(unittest.TestCase):
         board = gocounting.GoCounting(board9x9)
         stone, territory = board.territoryFor((0, 8))
         self.assertEqual(stone, board.none)
-        self.assertEqual(territory, set([(2, 7), (2, 8), (1, 8), (0, 8), (0, 7)]))
+        self.assertEqual(territory,
+                         set([(2, 7), (2, 8), (1, 8), (0, 8), (0, 7)]))
 
 
 if __name__ == '__main__':
