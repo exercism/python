@@ -1,5 +1,5 @@
 class Cell(object):
-    def __init__(self, reactor, *, value=0, dependencies=set(),
+    def __init__(self, reactor, value=0, dependencies=set(),
                  updater=None):
         self.reactor = reactor
         self.index = len(reactor.cells)
