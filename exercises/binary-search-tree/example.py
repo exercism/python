@@ -37,17 +37,17 @@ class BinarySearchTree(object):
                         inserted = True
                         return inserted
 
-    def search(self, searched_number):
+    def search(self, search_number):
         cur_node = self.root
         found = False
         while not found:
             if(cur_node is None):
-                raise ValueError("Element not found")
-            elif(searched_number < cur_node.value):
+                return False
+            elif(search_number < cur_node.value):
                 cur_node = cur_node.left_node
-            elif(searched_number > cur_node.value):
+            elif(search_number > cur_node.value):
                 cur_node = cur_node.right_node
-            elif(searched_number == cur_node.value):
+            elif(search_number == cur_node.value):
                 return cur_node
 
     def print_inorder(self, node):
@@ -64,6 +64,6 @@ class BinarySearchTree(object):
 
     def print_postorder(self, node):
         if(node is not None):
-            self.print_preorder(node.left_node)
-            self.print_preorder(node.right_node)
+            self.print_postorder(node.right_node)
+            self.print_postorder(node.left_node)
             print(node.value)
