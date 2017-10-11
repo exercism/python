@@ -835,6 +835,16 @@
       ]
     },
     {
+      "uuid": "92e2d5f8-7d8a-4e81-a55c-52fa6be80c74",
+      "slug": "diffie-hellman",
+      "core": false,
+      "unlocked_by": "book-store",
+      "difficulty": 7,
+      "topics": [
+        "algorithms"
+      ]
+    },
+    {
       "uuid": "8c89f739-05fb-7b80-b5f9-6ad079c750ba8302be8",
       "slug": "two-bucket",
       "difficulty": 5,
