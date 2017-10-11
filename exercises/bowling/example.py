@@ -1,3 +1,6 @@
+MAX_PINS = 10
+NUM_FRAMES = 10
+NUM_ROLLS = 20
 
 
 class BowlingGame(object):
@@ -9,22 +12,50 @@ class BowlingGame(object):
         self.rolls.append(pins)
 
     def score(self):
-        i = 0
-        #0-19 rolls in a game
-        while (i < len(self.rolls)):
-            pins = self.rolls[i]
-            if (i <= 19):
-                # even numbers start a new frame
-                if (i % 2 == 0):
-                    # previous frame is a spare
-                    if ((self.rolls[i-1] + self.rolls[i-2]) == 10):
-                        pins = pins * 2
+        roll_index = 0
 
-                self.totalScore += pins
+        while (roll_index < len(self.rolls)-1):
+
+            #get the two rolls that make up a frame
+            roll1 = self.rolls[roll_index]
+            if(not self.isLastFrame(roll_index)):
+                roll2 = self.rolls[roll_index  + 1]
             else:
-                #20th roll means scored a spare at the end
-                self.totalScore += pins
+                roll2 = 0
 
-            i += 1
+            if (self.isStrike(roll1)):
+                self.totalScore += roll1 + self.stikeBonus(roll_index)
+                #frame should only advance by 1 roll if it was a strike
+                roll_index += 1
+            else:
+                if(self.isSpare(roll1, roll2)):
+                    self.totalScore += roll1 + roll2 + self.spareBonus(roll_index)
+                else:
+                    self.totalScore += roll1 + roll2
+                #frame should only advance by 2 rolls normally
+                roll_index += 2
 
         return self.totalScore
+
+    def isStrike(self, pins):
+        if (pins == MAX_PINS):
+            return True
+        else:
+            return False
+
+    def isSpare(self, roll1, roll2):
+        if (roll1 + roll2 == MAX_PINS):
+            return True
+        else:
+            return False
+
+    def stikeBonus(self, rollindex):
+        return self.rolls[rollindex + 1] + self.rolls[rollindex + 2]
+
+    def spareBonus(self, rollindex):
+        return self.rolls[rollindex + 2]
+
+    def isLastFrame(self, roll_index):
+        if(roll_index == len(self.rolls)):
+            return True
+        return False

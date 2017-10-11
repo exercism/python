@@ -70,5 +70,39 @@ class BowlingTests(unittest.TestCase):
 
         self.assertEqual(score, 17)
 
+    def test_a_strike_earns_ten_points_in_a_frame_with_a_single_roll(self):
+        rolls = [10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+        self.game = BowlingGame()
+
+        for roll in rolls:
+            self.game.roll(roll)
+        score = self.game.score()
+
+        self.assertEqual(score, 10)
+
+    def test_two_rolls_points_after_strike_are_counted_twice(self):
+        rolls = [10, 5, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+        self.game = BowlingGame()
+
+        for roll in rolls:
+            self.game.roll(roll)
+        score = self.game.score()
+
+        self.assertEqual(score, 26)
+
+    def test_consecutive_stikes_each_get_the_two_roll_bonus(self):
+        rolls = [10, 10, 10, 5, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+        self.game = BowlingGame()
+
+        for roll in rolls:
+            self.game.roll(roll)
+        score = self.game.score()
+
+        self.assertEqual(score, 81)
+
+
 if __name__ == '__main__':
     unittest.main()
