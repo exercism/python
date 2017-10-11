@@ -1,8 +1,9 @@
 # Globals for the bearings
-EAST = "East"
-NORTH = "North"
-WEST = "West"
-SOUTH = "South"
+# Change the values as you see fit
+EAST = None
+NORTH = None
+WEST = None
+SOUTH = None
 
 
 class Robot(object):
