@@ -1,6 +1,6 @@
-def count():
+def count(strand, nucleotide):
     pass
 
 
-def nucleotide_counts():
+def nucleotide_counts(strand):
     pass
