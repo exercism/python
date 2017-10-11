@@ -1,2 +1,2 @@
-def hey(incoming_words):
+def hey(phrase):
     pass
