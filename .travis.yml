@@ -21,6 +21,6 @@ before_script:
   - flake8
 
 script:
-  - ./test/check-exercises.py
   - ./bin/fetch-configlet
   - ./bin/configlet lint .
+  - ./test/check-exercises.py
