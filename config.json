@@ -67,6 +67,18 @@
       ]
     },
     {
+      "uuid": "ca970fee-71b4-41e1-a5c3-b23bf574eb33",
+      "slug": "bowling",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "classes",
+        "exception_handling"
+        "logic"
+      ]
+    },
+    {
       "uuid": "8648fa0c-d85f-471b-a3ae-0f8c05222c89",
       "slug": "hamming",
       "core": false,
