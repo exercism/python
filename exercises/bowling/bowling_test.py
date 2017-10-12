@@ -103,6 +103,62 @@ class BowlingTests(unittest.TestCase):
 
         self.assertEqual(score, 81)
 
+    def test_strike_in_last_frame_gets_two_roll_bonus_counted_once(self):
+        rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 7, 1]
+
+        self.game = BowlingGame()
+
+        for roll in rolls:
+            self.game.roll(roll)
+        score = self.game.score()
+
+        self.assertEqual(score, 18)
+
+    def test_rolling_spare_with_bonus_roll_does_not_get_bonus(self):
+        rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 7, 3]
+
+        self.game = BowlingGame()
+
+        for roll in rolls:
+            self.game.roll(roll)
+        score = self.game.score()
+
+        self.assertEqual(score, 20)
+
+    def test_strikes_with_the_two_bonus_rolls_do_not_get_bonus_rolls(self):
+        rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 10]
+
+        self.game = BowlingGame()
+
+        for roll in rolls:
+            self.game.roll(roll)
+        score = self.game.score()
+
+        self.assertEqual(score, 30)
+
+    def test_strike_with_bonus_after_spare_in_last_frame_gets_no_bonus(self):
+        rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3, 10]
+
+        self.game = BowlingGame()
+
+        for roll in rolls:
+            self.game.roll(roll)
+        score = self.game.score()
+
+        self.assertEqual(score, 20)
+
+    def test_all_strikes_is_a_perfect_game(self):
+
+        rolls = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+
+        self.game = BowlingGame()
+
+        for roll in rolls:
+            self.game.roll(roll)
+        score = self.game.score()
+
+        self.assertEqual(score, 300)
+
 
 if __name__ == '__main__':
     unittest.main()

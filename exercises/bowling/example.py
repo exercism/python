@@ -13,27 +13,30 @@ class BowlingGame(object):
 
     def score(self):
         roll_index = 0
+        frame_index = 1
 
-        while (roll_index < len(self.rolls)-1):
-
-            #get the two rolls that make up a frame
+        while (frame_index <= NUM_FRAMES):
+            # get the two rolls that make up a frame
             roll1 = self.rolls[roll_index]
             if(not self.isLastFrame(roll_index)):
-                roll2 = self.rolls[roll_index  + 1]
+                roll2 = self.rolls[roll_index + 1]
             else:
                 roll2 = 0
 
             if (self.isStrike(roll1)):
                 self.totalScore += roll1 + self.stikeBonus(roll_index)
-                #frame should only advance by 1 roll if it was a strike
+                # frame should only advance by 1 roll if it was a strike
                 roll_index += 1
             else:
                 if(self.isSpare(roll1, roll2)):
-                    self.totalScore += roll1 + roll2 + self.spareBonus(roll_index)
+                    self.totalScore += roll1 + roll2 + \
+                                       self.spareBonus(roll_index)
                 else:
                     self.totalScore += roll1 + roll2
-                #frame should only advance by 2 rolls normally
+                # frame should advance by 2 rolls normally
                 roll_index += 2
+
+            frame_index += 1
 
         return self.totalScore
 
