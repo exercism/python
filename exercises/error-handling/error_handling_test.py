@@ -29,7 +29,7 @@ class ErrorHandlingTest(unittest.TestCase):
         self.assertEqual(1, er.handle_error_by_returning_none('1'),
                          'Result of valid input should not be None')
         self.assertIsNone(er.handle_error_by_returning_none('a'),
-                        'Result of invalid input should be None')
+                          'Result of invalid input should be None')
 
     def test_return_tuple(self):
         successful_result, result = er.handle_error_by_returning_tuple('1')
