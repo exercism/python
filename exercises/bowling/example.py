@@ -1,6 +1,5 @@
 MAX_PINS = 10
 NUM_FRAMES = 10
-NUM_ROLLS = 20
 
 
 class BowlingGame(object):
@@ -8,18 +7,27 @@ class BowlingGame(object):
         self.rolls = []
         self.totalScore = 0
         self.currentFrame = Frame()
-        self.bonusRolls = 0
 
     def roll(self, pins):
+        # check that bonus rolls are valid
+        bonusRolls = 0
+        if (self.isBonusRoll()):
+            if (self.isSpare(self.currentFrame.getFrame()[0], self.currentFrame.getFrame()[1])):
+                bonusRolls = 1
+            elif (self.isStrike(self.currentFrame.getFrame()[0]) and bonusRolls == 0):
+                bonusRolls = 2
+            if (self.currentFrame.isOpen()):    # Frame still open
+                if (pins == MAX_PINS):  # can't roll a strike
+                    raise ValueError
+
         if (self.currentFrame.isOpen() == False):
             self.currentFrame = Frame()
+
         # valid roll between 0-10
-        if (self.isBonusRoll()):
-            self.bonusRolls += 1
         if (pins in range(MAX_PINS + 1)):
-                self.currentFrame.roll(pins)
+                self.currentFrame.roll(pins, bonusRolls)
                 # if we closed it add it to our rolls
-                if (self.currentFrame.isOpen() == False or self.bonusRolls >= 2):
+                if (self.currentFrame.isOpen() == False):
                     self.rolls.append(self.currentFrame)
         else:
             raise ValueError
@@ -88,14 +96,13 @@ class BowlingGame(object):
             bonusroll2 = self.rolls[frame_index+1].getFrame()[1]
         # edge case - if the last roll is a stike the bonus rolls needs to be
         # validated
-        print("Bonus roll: ", str(bonusroll1) + " + " + str(bonusroll2))
         if (not self.isStrike(bonusroll1) and (bonusroll1 + bonusroll2 > MAX_PINS)):
             raise ValueError
         else:
             return bonusroll1 + bonusroll2
 
     def spareBonus(self, frame_index):
-        return self.rolls[frame_index+1].getFrame()[0]
+        return  self.rolls[frame_index+1].getFrame()[0]
 
     def isLastFrame(self, frame_index):
         if(frame_index >= len(self.rolls)-1):
@@ -109,20 +116,32 @@ class Frame(object):
         self.rolls = [None, None]
         self.open = True
 
-    def roll(self, roll):
-        # if it's a strike we close the frame
-        if (roll == 10):
-            self.rolls[0] = 10
-            self.rolls[1] = 0
-            self.open = False
-        else:
-            # first roll, but frame is still open
-            if (self.rolls[0] is None):
+    def roll(self, roll, bonusRolls):
+        if (bonusRolls > 0):
+            if (bonusRolls == 1): # Spare
                 self.rolls[0] = roll
-            else:
-                # second roll, closes frame
-                self.rolls[1] = roll
+                self.rolls[1] = 0
                 self.open = False
+            elif (bonusRolls == 2):
+                if (self.rolls[0] is None):
+                    self.rolls[0] = roll
+                else:
+                    self.rolls[1] = roll
+                    self.open = False
+        else:
+            # if it's a strike we close the frame
+            if (roll == 10):
+                self.rolls[0] = 10
+                self.rolls[1] = 0
+                self.open = False
+            else:
+                # first roll, but frame is still open
+                if (self.rolls[0] is None):
+                    self.rolls[0] = roll
+                else:
+                    # second roll, closes frame
+                    self.rolls[1] = roll
+                    self.open = False
 
     def isOpen(self):
         return self.open
