@@ -9,7 +9,11 @@ class BowlingGame(object):
         self.totalScore = 0
 
     def roll(self, pins):
-        self.rolls.append(pins)
+        # valid roll between 0-10
+        if (pins in range(MAX_PINS + 1)):
+                self.rolls.append(pins)
+        else:
+            raise ValueError
 
     def score(self):
         roll_index = 0
@@ -28,6 +32,10 @@ class BowlingGame(object):
                 # frame should only advance by 1 roll if it was a strike
                 roll_index += 1
             else:
+                # Check that this is even a valid frame
+                if (roll1 + roll2 > MAX_PINS):
+                    raise ValueError
+
                 if(self.isSpare(roll1, roll2)):
                     self.totalScore += roll1 + roll2 + \
                                        self.spareBonus(roll_index)

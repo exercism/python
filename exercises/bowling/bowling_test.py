@@ -152,7 +152,6 @@ class BowlingTests(unittest.TestCase):
         self.assertEqual(score, 20)
 
     def test_all_strikes_is_a_perfect_game(self):
-
         rolls = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
 
         self.game = BowlingGame()
@@ -163,6 +162,53 @@ class BowlingTests(unittest.TestCase):
 
         self.assertEqual(score, 300)
 
+    def test_rolls_cannot_score_negative_points(self):
+        self.game = BowlingGame()
+
+        self.assertRaises(ValueError, self.game.roll, -11)
+
+    def test_a_roll_cannot_score_more_than_10_points(self):
+        self.game = BowlingGame()
+
+        self.assertRaises(ValueError, self.game.roll, 11)
+
+    def test_two_rolls_in_a_frame_cannot_score_more_than_10_points(self):
+        self.game = BowlingGame()
+        self.game.roll(5)
+        self.game.roll(6)
+
+        self.assertRaises(ValueError, self.game.score)
+
+    def test_bonus_after_strike_in_last_frame_cannot_score_more_than_10(self):
+        rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10]
+
+        self.game = BowlingGame()
+
+        for roll in rolls:
+            self.game.roll(roll)
+
+        self.assertRaises(ValueError, self.game.roll, 11)
+
+    def test_bonus_aft_last_frame_strk_cnt_be_more_than_10_if_1_is_strk(self):
+        rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10,
+                 10, 6]
+        self.game = BowlingGame()
+
+        for roll in rolls:
+            self.game.roll(roll)
+        score = self.game.score()
+
+        self.assertEqual(score, 26)
+
+    def test_bonus_aft_last_frame_strk_cnt_be_strk_if_first_is_not_strk(self):
+        rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10,
+                 6, 10]
+        self.game = BowlingGame()
+
+        for roll in rolls:
+            self.game.roll(roll)
+
+        self.assertRaises(ValueError, self.game.score)
 
 if __name__ == '__main__':
     unittest.main()
