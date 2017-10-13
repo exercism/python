@@ -855,6 +855,14 @@
       ]
     },
     {
+      "uuid": "1818f134-0ed9-e680-9b29-45ffd2b3344b0f841c7",
+      "slug": "markdown",
+      "difficulty": 3,
+      "topics": [
+        "refactoring"
+      ]
+    },
+    {
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "slug": "accumulate",
       "deprecated": true
