@@ -7,7 +7,7 @@ if not hasattr(unittest.TestCase, 'assertCountEqual'):
     unittest.TestCase.assertCountEqual = unittest.TestCase.assertItemsEqual
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
 class AllergiesTests(unittest.TestCase):
     def test_no_allergies_means_not_allergic(self):

@@ -33,7 +33,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "conditionals",
+        "loops",
+        "strings",
+        "algorithms"
       ]
     },
     {
@@ -104,7 +107,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "dates",
+        "time"
       ]
     },
     {
@@ -124,7 +128,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "strings",
+        "algorithms",
+        "text_formatting"
       ]
     },
     {
@@ -166,7 +172,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "strings",
+        "parsing",
+        "logic",
+        "algorithms"
       ]
     },
     {
@@ -860,6 +869,17 @@
       "difficulty": 3,
       "topics": [
         "refactoring"
+      ]
+    },
+    {
+      "uuid": "e348a307-078c-5280-65af-a159283d4e79438b755",
+      "slug": "forth",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "parsing",
+        "stacks"
       ]
     },
     {
