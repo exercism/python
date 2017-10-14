@@ -16,12 +16,12 @@ class BowlingGame(object):
 
         # is the second roll valid based off the first?
         if (self.currentFrame.isOpen() and
-            self.currentFrame.getFrame()[0] != None):
-            if(self.currentFrame.getFrame()[0] + pins > MAX_PINS):
-                raise ValueError
+            self.currentFrame.getFrame()[0] is not None):
+                if(self.currentFrame.getFrame()[0] + pins > MAX_PINS):
+                    raise ValueError
 
         # open a new frame if the last one has been closed
-        if (self.currentFrame.isOpen() == False):
+        if (self.currentFrame.isOpen() is False):
             self.currentFrame = Frame()
 
         # valid roll between 0-10
@@ -36,7 +36,7 @@ class BowlingGame(object):
                                        self.bonusRollsAccrued,
                                        self.bonusRollsSeen)
                 # if we closed it add it to our rolls
-                if (self.currentFrame.isOpen() == False):
+                if (self.currentFrame.isOpen() is False):
                     self.rolls.append(self.currentFrame)
                     # If this is the last frame did we earn any bonus rolls?
                     if (len(self.rolls) == NUM_FRAMES):
@@ -92,13 +92,14 @@ class BowlingGame(object):
             bonusroll2 = self.rolls[frame_index+1].getFrame()[1]
         # edge case - if the last roll is a stike the bonus rolls needs to be
         # validated
-        if (not self.isStrike(bonusroll1) and (bonusroll1 + bonusroll2 > MAX_PINS)):
+        if (not self.isStrike(bonusroll1) and
+            (bonusroll1 + bonusroll2 > MAX_PINS)):
             raise ValueError
         else:
             return bonusroll1 + bonusroll2
 
     def spareBonus(self, frame_index):
-        return  self.rolls[frame_index+1].getFrame()[0]
+        return self.rolls[frame_index+1].getFrame()[0]
 
     def isLastFrame(self, frame_index):
         if(frame_index >= len(self.rolls)-1):
@@ -122,6 +123,7 @@ class BowlingGame(object):
             return True
         else:
             return False
+
 
 class Frame(object):
 

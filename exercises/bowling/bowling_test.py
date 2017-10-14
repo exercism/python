@@ -226,6 +226,35 @@ class BowlingTests(unittest.TestCase):
 
         self.assertRaises(IndexError, self.game.roll, 0)
 
+    def test_bonus_rolls_for_strike_must_be_rolled_before_score_is_calc(self):
+        rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10]
+
+        self.game = BowlingGame()
+
+        for roll in rolls:
+            self.game.roll(roll)
+
+        self.assertRaises(IndexError, self.game.score)
+
+    def test_both_bonuses_for_strike_must_be_rolled_before_score(self):
+        rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10]
+
+        self.game = BowlingGame()
+
+        for roll in rolls:
+            self.game.roll(roll)
+
+        self.assertRaises(IndexError, self.game.score)
+
+    def test_bonus_rolls_for_spare_must_be_rolled_before_score_is_calc(self):
+        rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3]
+
+        self.game = BowlingGame()
+
+        for roll in rolls:
+            self.game.roll(roll)
+
+        self.assertRaises(IndexError, self.game.score)
 
 if __name__ == '__main__':
     unittest.main()
