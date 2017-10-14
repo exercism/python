@@ -764,7 +764,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "loops",
+        "maps",
+        "parsing",
+        "conditionals"
       ]
     },
     {
