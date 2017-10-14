@@ -561,7 +561,7 @@
       "topics": [
         "logic",
         "parsing",
-        "pattern matching",
+        "pattern_matching",
         "mathematics",
         "regular_expressions",
         "transforming",
