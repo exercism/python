@@ -902,6 +902,21 @@
       ]
     },
     {
+      "uuid": "7961c852-c87a-44b0-b152-efea3ac8555c",
+      "slug": "isbn-verifier",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "type_conversion",
+        "conditionals",
+        "strings",
+        "arrays",
+        "integers",
+        "parsing"
+      ]
+    },
+    {
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "slug": "accumulate",
       "deprecated": true
