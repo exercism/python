@@ -107,7 +107,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "dates",
+        "time"
       ]
     },
     {
@@ -194,7 +195,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "algorithms",
+        "arrays",
+        "loops",
+        "conditionals"
       ]
     },
     {
@@ -254,7 +258,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "loops",
+        "parsing",
+        "transforming",
+        "text_formatting"
       ]
     },
     {
@@ -484,7 +491,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "loops",
+        "conditionals",
+        "strings"
       ]
     },
     {
@@ -564,7 +573,13 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "logic",
+        "parsing",
+        "pattern_matching",
+        "mathematics",
+        "regular_expressions",
+        "transforming",
+        "type_conversion"
       ]
     },
     {
@@ -614,7 +629,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "strings",
+        "algorithms",
+        "transforming"
       ]
     },
     {
@@ -654,7 +671,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "searching",
+        "lists"
       ]
     },
     {
@@ -772,7 +790,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "loops",
+        "maps",
+        "parsing",
+        "conditionals"
       ]
     },
     {
@@ -860,6 +881,14 @@
         "algorithms",
         "loops",
         "conditionals"
+      ]
+    },
+    {
+      "uuid": "1818f134-0ed9-e680-9b29-45ffd2b3344b0f841c7",
+      "slug": "markdown",
+      "difficulty": 3,
+      "topics": [
+        "refactoring"
       ]
     },
     {
