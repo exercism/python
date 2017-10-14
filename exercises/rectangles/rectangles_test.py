@@ -3,7 +3,7 @@ import unittest
 from rectangles import count
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
 class WordTest(unittest.TestCase):
     def test_no_rows(self):
