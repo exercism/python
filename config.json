@@ -609,7 +609,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "strings",
+        "algorithms",
+        "transforming"
       ]
     },
     {
