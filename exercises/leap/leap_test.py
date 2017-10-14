@@ -3,7 +3,7 @@ import unittest
 from leap import is_leap_year
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
 class YearTest(unittest.TestCase):
     def test_year_not_divisible_by_4(self):
