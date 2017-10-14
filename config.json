@@ -479,7 +479,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "loops",
+        "conditionals",
+        "strings",
+        "control-flow (if-else statements)"
       ]
     },
     {
