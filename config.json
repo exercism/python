@@ -565,7 +565,13 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "logic",
+        "parsing",
+        "pattern_matching",
+        "mathematics",
+        "regular_expressions",
+        "transforming",
+        "type_conversion"
       ]
     },
     {
