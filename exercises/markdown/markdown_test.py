@@ -43,5 +43,6 @@ class TestMarkdown(unittest.TestCase):
             '<h1>Header!</h1><ul><li><strong>Bold Item</strong></li>'
             '<li><em>Italic Item</em></li></ul>')
 
+
 if __name__ == '__main__':
     unittest.main()
