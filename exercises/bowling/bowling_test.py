@@ -256,5 +256,6 @@ class BowlingTests(unittest.TestCase):
 
         self.assertRaises(IndexError, self.game.score)
 
+
 if __name__ == '__main__':
     unittest.main()

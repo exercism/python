@@ -16,9 +16,9 @@ class BowlingGame(object):
 
         # is the second roll valid based off the first?
         if (self.currentFrame.isOpen() and
-            self.currentFrame.getFrame()[0] is not None):
-                if(self.currentFrame.getFrame()[0] + pins > MAX_PINS):
-                    raise ValueError
+           self.currentFrame.getFrame()[0] is not None):
+            if(self.currentFrame.getFrame()[0] + pins > MAX_PINS):
+                raise ValueError
 
         # open a new frame if the last one has been closed
         if (self.currentFrame.isOpen() is False):
@@ -93,7 +93,7 @@ class BowlingGame(object):
         # edge case - if the last roll is a stike the bonus rolls needs to be
         # validated
         if (not self.isStrike(bonusroll1) and
-            (bonusroll1 + bonusroll2 > MAX_PINS)):
+           (bonusroll1 + bonusroll2 > MAX_PINS)):
             raise ValueError
         else:
             return bonusroll1 + bonusroll2
