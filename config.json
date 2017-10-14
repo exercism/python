@@ -858,6 +858,17 @@
       ]
     },
     {
+      "uuid": "e348a307-078c-5280-65af-a159283d4e79438b755",
+      "slug": "forth",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "parsing",
+        "stacks"
+      ]
+    },
+    {
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "slug": "accumulate",
       "deprecated": true
