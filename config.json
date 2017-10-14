@@ -870,6 +870,14 @@
       ]
     },
     {
+      "uuid": "1818f134-0ed9-e680-9b29-45ffd2b3344b0f841c7",
+      "slug": "markdown",
+      "difficulty": 3,
+      "topics": [
+        "refactoring"
+      ]
+    },
+    {
       "uuid": "e348a307-078c-5280-65af-a159283d4e79438b755",
       "slug": "forth",
       "core": false,
