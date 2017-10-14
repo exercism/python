@@ -21,7 +21,7 @@ def wrap(line, tag):
 def check_headers(line):
     pattern = '# (.*)'
     for i in range(6):
-        if re.fullmatch(pattern, line):
+        if re.match(pattern, line):
             return wrap(line[(i + 2):], 'h' + str(i + 1))
         pattern = '#' + pattern
     return line
@@ -50,7 +50,7 @@ def check_italic(line):
 def parse_line(line, in_list):
     res = check_headers(line)
 
-    list_match = re.fullmatch(r'\* (.*)', res)
+    list_match = re.match(r'\* (.*)', res)
 
     if (list_match):
         if not in_list:

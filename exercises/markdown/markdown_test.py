@@ -1,5 +1,5 @@
 import unittest
-from example import parse_markdown
+from markdown import parse_markdown
 
 
 class TestMarkdown(unittest.TestCase):

@@ -6,13 +6,13 @@ def parse_markdown(markdown):
     res = ''
     in_list = False
     for i in lines:
-        if re.fullmatch('###### (.*)', i) is not None:
+        if re.match('###### (.*)', i) is not None:
             i = '<h6>' + i[7:] + '</h6>'
-        elif re.fullmatch('## (.*)', i) is not None:
+        elif re.match('## (.*)', i) is not None:
             i = '<h2>' + i[3:] + '</h2>'
-        elif re.fullmatch('# (.*)', i) is not None:
+        elif re.match('# (.*)', i) is not None:
             i = '<h1>' + i[2:] + '</h1>'
-        m = re.fullmatch(r'\* (.*)', i)
+        m = re.match(r'\* (.*)', i)
         if m:
             if not in_list:
                 in_list = True
