@@ -681,7 +681,14 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "variables",
+        "lists",
+        "loops",
+        "filtering",
+        "searching",
+        "conditionals",
+        "callbacks",
+        "functional_programming"
       ]
     },
     {
