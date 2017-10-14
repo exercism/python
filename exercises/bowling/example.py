@@ -15,7 +15,8 @@ class BowlingGame(object):
             self.bonusRollsSeen += 1
 
         # is the second roll valid based off the first?
-        if (self.currentFrame.isOpen() and self.currentFrame.getFrame()[0] != None):
+        if (self.currentFrame.isOpen() and
+            self.currentFrame.getFrame()[0] != None):
             if(self.currentFrame.getFrame()[0] + pins > MAX_PINS):
                 raise ValueError
 
@@ -25,7 +26,15 @@ class BowlingGame(object):
 
         # valid roll between 0-10
         if (pins in range(MAX_PINS + 1)):
-                self.currentFrame.roll(pins, self.isBonusRoll(), self.bonusRollsAccrued, self.bonusRollsSeen)
+            # raise an error if the game is over and they try to roll again
+            if((len(self.rolls) == NUM_FRAMES) and
+               self.bonusRollsAccrued == 0):
+                raise IndexError
+            else:
+                self.currentFrame.roll(pins,
+                                       self.isBonusRoll(),
+                                       self.bonusRollsAccrued,
+                                       self.bonusRollsSeen)
                 # if we closed it add it to our rolls
                 if (self.currentFrame.isOpen() == False):
                     self.rolls.append(self.currentFrame)
@@ -46,25 +55,19 @@ class BowlingGame(object):
             roll1 = frame[0]
             roll2 = frame[1]
 
-            print ("roll1: " + str(roll1) + " roll2: " + str(roll2) + " frame: " + str(frame_index) + "/" + str(NUM_FRAMES-1))
-
             if (self.isStrike(roll1)):
-                print("adding " + str(roll1)  + " strike bonus " + str(self.stikeBonus(frame_index)))
                 self.totalScore += roll1 + self.stikeBonus(frame_index)
 
             else:
 
                 if(self.isSpare(roll1, roll2)):
-                    print("adding " + str(roll1) + " + " + str(roll2) + " spare bonus " + str(self.spareBonus(frame_index)))
                     self.totalScore += roll1 + roll2 + \
                                        self.spareBonus(frame_index)
                 else:
-                    print("adding " + str(roll1) + " + " + str(roll2))
                     self.totalScore += roll1 + roll2
 
             frame_index += 1
 
-        print(self.totalScore)
         return self.totalScore
 
     def isStrike(self, pins):
@@ -84,8 +87,6 @@ class BowlingGame(object):
         bonusroll2 = 0
         # need to go further out if the next on is a strike
         if (bonusroll1 == 10):
-            #if (self.isLastFrame(frame_index + 1) == False):
-                #print("next frame")
             bonusroll2 = self.rolls[frame_index+2].getFrame()[0]
         else:
             bonusroll2 = self.rolls[frame_index+1].getFrame()[1]
@@ -138,7 +139,7 @@ class Frame(object):
             # first roll, but frame is still open
             if (self.rolls[0] is None):
                 self.rolls[0] = roll
-                #we may need to close bonus roll frames before 2 have been seen
+                # may need to close bonus roll frames before 2 have been seen
                 if (bonusRoll and seenBonuses == accruedBonuses):
                     self.rolls[1] = 0
                     self.open = False

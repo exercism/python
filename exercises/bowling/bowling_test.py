@@ -208,23 +208,23 @@ class BowlingTests(unittest.TestCase):
 
         self.assertRaises(ValueError, self.game.roll, 10)
 
-    # def test_an_incomplete_game_cannot_be_scored(self):
-    #     rolls = [0, 0]
-    #     self.game = BowlingGame()
-    #
-    #     for roll in rolls:
-    #         self.game.roll(roll)
-    #
-    #     self.assertRaises(IndexError, self.game.score)
-    #
-    # def test_cannot_roll_if_there_are_already_ten_frames(self):
-    #     rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    #     self.game = BowlingGame()
-    #
-    #     for roll in rolls:
-    #         self.game.roll(roll)
-    #
-    #     self.assertRaises(ValueError, self.game.roll, 0)
+    def test_an_incomplete_game_cannot_be_scored(self):
+        rolls = [0, 0]
+        self.game = BowlingGame()
+
+        for roll in rolls:
+            self.game.roll(roll)
+
+        self.assertRaises(IndexError, self.game.score)
+
+    def test_cannot_roll_if_there_are_already_ten_frames(self):
+        rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        self.game = BowlingGame()
+
+        for roll in rolls:
+            self.game.roll(roll)
+
+        self.assertRaises(IndexError, self.game.roll, 0)
 
 
 if __name__ == '__main__':
