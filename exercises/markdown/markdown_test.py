@@ -2,7 +2,7 @@ import unittest
 from markdown import parse_markdown
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
 
 class TestMarkdown(unittest.TestCase):
