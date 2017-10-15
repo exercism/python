@@ -185,7 +185,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "classes",
+        "mathematics",
+        "bitwise_operations"
       ]
     },
     {
@@ -493,7 +495,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+            "algorithms",
+            "mathematics",
+            "loops",
+            "lists"
       ]
     },
     {
@@ -670,7 +675,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "lists",
+        "conditionals",
+        "loops",
+        "parsing"
       ]
     },
     {
