@@ -15,11 +15,11 @@ class PascalsTriangleTest(unittest.TestCase):
 
     def test_is_triangle_true(self):
         inp = ['1', '1 1', '1 2 1', '1 3 3 1', '1 4 6 4 1', '1 5 10 10 5 1']
-        self.assertTrue(is_triangle(inp))
+        self.assertIs(is_triangle(inp), True)
 
     def test_is_triangle_false(self):
         inp = ['1', '1 1', '1 2 1', '1 4 4 1']
-        self.assertFalse(is_triangle(inp))
+        self.assertIs(is_triangle(inp), False)
 
     def test_row1(self):
         ans = '1'
