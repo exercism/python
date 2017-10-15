@@ -805,7 +805,9 @@
       "unlocked_by": null,
       "difficulty": 6,
       "topics": [
-
+        "mathematics",
+        "logic",
+        "conditionals"
       ]
     },
     {
