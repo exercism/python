@@ -33,7 +33,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "conditionals",
+        "loops",
+        "strings",
+        "algorithms"
       ]
     },
     {
@@ -104,7 +107,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "dates",
+        "time"
       ]
     },
     {
@@ -124,7 +128,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "strings",
+        "algorithms",
+        "text_formatting"
       ]
     },
     {
@@ -166,7 +172,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "strings",
+        "parsing",
+        "logic",
+        "algorithms"
       ]
     },
     {
@@ -186,7 +195,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "algorithms",
+        "arrays",
+        "loops",
+        "conditionals"
       ]
     },
     {
@@ -196,7 +208,12 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "algorithms",
+        "classes",
+        "conditionals",
+        "loops",
+        "variables",
+        "tuples"
       ]
     },
     {
@@ -206,7 +223,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "algorithms",
+        "conditionals",
+        "lists",
+        "loops"
       ]
     },
     {
@@ -216,7 +236,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "algorithms",
+        "conditionals",
+        "loops",
+        "strings"
       ]
     },
     {
@@ -236,7 +259,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "strings",
+        "regular_expressions"
       ]
     },
     {
@@ -246,7 +270,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "loops",
+        "parsing",
+        "transforming",
+        "text_formatting"
       ]
     },
     {
@@ -346,7 +373,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "mathematics",
+        "algorithms",
+        "loops",
+        "logic"
       ]
     },
     {
@@ -366,7 +396,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "cryptography",
+        "strings",
+        "text_formatting"
       ]
     },
     {
@@ -386,7 +418,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "strings",
+        "text_formatting",
+        "transforming"
       ]
     },
     {
@@ -396,7 +430,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "lists",
+        "searching",
+        "loops",
+        "iteration"
       ]
     },
     {
@@ -476,7 +513,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "loops",
+        "conditionals",
+        "strings"
       ]
     },
     {
@@ -556,7 +595,13 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "logic",
+        "parsing",
+        "pattern_matching",
+        "mathematics",
+        "regular_expressions",
+        "transforming",
+        "type_conversion"
       ]
     },
     {
@@ -566,7 +611,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "pattern_matching",
+        "conditionals",
+        "strings",
+        "regular_expressions"
       ]
     },
     {
@@ -596,7 +644,11 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+		"conditionals",
+		"pattern_matching",
+		"classes",
+		"mathematics",
+		"object_oriented_programming"
       ]
     },
     {
@@ -606,7 +658,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "strings",
+        "algorithms",
+        "transforming"
       ]
     },
     {
@@ -626,7 +680,7 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "logic"
       ]
     },
     {
@@ -636,7 +690,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "algorithms",
+        "logic",
+        "pattern_recognition"
       ]
     },
     {
@@ -656,7 +712,14 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "variables",
+        "lists",
+        "loops",
+        "filtering",
+        "searching",
+        "conditionals",
+        "callbacks",
+        "functional_programming"
       ]
     },
     {
@@ -666,7 +729,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "loops",
+        "lists",
+        "recursion"
       ]
     },
     {
@@ -676,7 +741,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "lists",
+        "algorithms",
+        "conditionals"
       ]
     },
     {
@@ -696,7 +763,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "algorithms",
+        "bitwise_operations",
+        "transforming"
       ]
     },
     {
@@ -754,7 +823,9 @@
       "unlocked_by": null,
       "difficulty": 6,
       "topics": [
-
+        "mathematics",
+        "logic",
+        "conditionals"
       ]
     },
     {
@@ -764,7 +835,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "loops",
+        "maps",
+        "parsing",
+        "conditionals"
       ]
     },
     {
@@ -832,6 +906,45 @@
       "topics": [
         "tuples",
         "mathematics"
+      ]
+    },
+    {
+      "uuid": "92e2d5f8-7d8a-4e81-a55c-52fa6be80c74",
+      "slug": "diffie-hellman",
+      "core": false,
+      "unlocked_by": "book-store",
+      "difficulty": 7,
+      "topics": [
+        "algorithms"
+      ]
+    },
+    {
+      "uuid": "8c89f739-05fb-7b80-b5f9-6ad079c750ba8302be8",
+      "slug": "two-bucket",
+      "difficulty": 5,
+      "topics": [
+        "algorithms",
+        "loops",
+        "conditionals"
+      ]
+    },
+    {
+      "uuid": "1818f134-0ed9-e680-9b29-45ffd2b3344b0f841c7",
+      "slug": "markdown",
+      "difficulty": 3,
+      "topics": [
+        "refactoring"
+      ]
+    },
+    {
+      "uuid": "e348a307-078c-5280-65af-a159283d4e79438b755",
+      "slug": "forth",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "parsing",
+        "stacks"
       ]
     },
     {
