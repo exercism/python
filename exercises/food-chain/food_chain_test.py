@@ -12,14 +12,16 @@ I don't know why she swallowed the fly. Perhaps she'll die.
 
 I know an old lady who swallowed a bird.
 How absurd to swallow a bird!
-She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.
+She swallowed the bird to catch the spider that wriggled
+and jiggled and tickled inside her.
 She swallowed the spider to catch the fly.
 I don't know why she swallowed the fly. Perhaps she'll die.
 
 I know an old lady who swallowed a cat.
 Imagine that, to swallow a cat!
 She swallowed the cat to catch the bird.
-She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.
+She swallowed the bird to catch the spider that wriggled
+and jiggled and tickled inside her.
 She swallowed the spider to catch the fly.
 I don't know why she swallowed the fly. Perhaps she'll die.
 
@@ -27,7 +29,8 @@ I know an old lady who swallowed a dog.
 What a hog, to swallow a dog!
 She swallowed the dog to catch the cat.
 She swallowed the cat to catch the bird.
-She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.
+She swallowed the bird to catch the spider that wriggled
+and jiggled and tickled inside her. 
 She swallowed the spider to catch the fly.
 I don't know why she swallowed the fly. Perhaps she'll die.
 
@@ -36,7 +39,8 @@ Just opened her throat and swallowed a goat!
 She swallowed the goat to catch the dog.
 She swallowed the dog to catch the cat.
 She swallowed the cat to catch the bird.
-She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.
+She swallowed the bird to catch the spider that wriggled
+and jiggled and tickled inside her.
 She swallowed the spider to catch the fly.
 I don't know why she swallowed the fly. Perhaps she'll die.
 
@@ -46,7 +50,8 @@ She swallowed the cow to catch the goat.
 She swallowed the goat to catch the dog.
 She swallowed the dog to catch the cat.
 She swallowed the cat to catch the bird.
-She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.
+She swallowed the bird to catch the spider that wriggled
+and jiggled and tickled inside her.
 She swallowed the spider to catch the fly.
 I don't know why she swallowed the fly. Perhaps she'll die.
 
@@ -57,8 +62,11 @@ song = song.replace("\n", "").replace(" ", "").lower()
 
 class FoodChainTest(unittest.TestCase):
 
+
     def test_equality(self):
-        self.assertEqual(chain().replace("\n", "").replace(" ", "").lower(), song)
+        to_test = chain().replace("\n", "").replace(" ", "")
+        self.assertEqual(to_test.lower(),song)
+
 
 if __name__ == '__main__':
     unittest.main()
