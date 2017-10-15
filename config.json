@@ -208,7 +208,12 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "algorithms",
+        "classes",
+        "conditionals",
+        "loops",
+        "variables",
+        "tuples"
       ]
     },
     {
