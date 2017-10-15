@@ -66,10 +66,10 @@ def verses(letter):
 
 
 original = [verse.replace("\n", "").replace(" ", "").lower()
-for verse in verses(song)]
+            for verse in verses(song)]
 
 generated = [verse.replace("\n", "").replace(" ", "").lower()
-for verse in verses(chain())]
+             for verse in verses(chain())]
 
 
 class FoodChainTest(unittest.TestCase):
