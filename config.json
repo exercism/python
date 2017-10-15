@@ -713,7 +713,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "lists",
+        "algorithms",
+        "conditionals"
       ]
     },
     {
