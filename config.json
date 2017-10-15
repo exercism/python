@@ -590,7 +590,12 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "exception_handling",
+        "arrays",
+        "matrices",
+        "games",
+        "logic",
+        "mathematics"
       ]
     },
     {
