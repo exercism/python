@@ -597,7 +597,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "pattern_matching",
+        "conditionals",
+        "strings",
+        "regular_expressions"
       ]
     },
     {
