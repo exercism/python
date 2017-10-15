@@ -409,7 +409,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "strings",
+        "text_formatting",
+        "transforming"
       ]
     },
     {
