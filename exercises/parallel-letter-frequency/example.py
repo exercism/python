@@ -26,17 +26,15 @@ class LetterCounter(object):
 
 
 def count_letters(queue_of_texts, letter_to_frequency, worker_id):
-    while True:
+    while not queue_of_texts.empty():
+        sleep(worker_id + 1)
         line_input = queue_of_texts.get()
         if line_input is not None:
-            print('Worker {0} working on "{1}"'.format(worker_id, line_input))
             letters_in_line = Counter([x for x in line_input.lower() if
                                        x.isalpha()])
             letter_to_frequency.add_counter(letters_in_line)
-            queue_of_texts.task_done()
-            sleep(worker_id + 1)
-        else:
-            queue_of_texts.task_done()
+        queue_of_texts.task_done()
+        if line_input is None:
             break
 
 
