@@ -735,7 +735,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "algorithms",
+        "bitwise_operations",
+        "transforming"
       ]
     },
     {
