@@ -71,13 +71,13 @@ class PythagoreanTripletTest(unittest.TestCase):
         self.assertEqual(triplets_in_range(56, 95), ans)
 
     def test_is_triplet1(self):
-        self.assertTrue(is_triplet((29, 20, 21)))
+        self.assertIs(is_triplet((29, 20, 21)), True)
 
     def test_is_triplet2(self):
-        self.assertFalse(is_triplet((25, 25, 1225)))
+        self.assertIs(is_triplet((25, 25, 1225)), False)
 
     def test_is_triplet3(self):
-        self.assertTrue(is_triplet((924, 43, 925)))
+        self.assertIs(is_triplet((924, 43, 925)), True)
 
     def test_odd_number(self):
         self.assertRaises(ValueError, primitive_triplets, 5)
