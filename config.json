@@ -185,7 +185,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "classes",
+        "mathematics",
+        "bitwise_operations"
       ]
     },
     {
