@@ -649,7 +649,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "arrays",
+        "conditionals",
+        "loops",
+        "parsing"
       ]
     },
     {
