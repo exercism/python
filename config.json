@@ -956,6 +956,18 @@
       ]
     },
     {
+      "uuid": "f229746e-5ea9-4774-b3e0-9b9c2ebf9558",
+      "slug": "food-chain",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "algorithms",
+        "loops",
+        "conditionals"
+      ]
+    },
+    {
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "slug": "accumulate",
       "deprecated": true
