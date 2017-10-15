@@ -30,7 +30,7 @@ What a hog, to swallow a dog!
 She swallowed the dog to catch the cat.
 She swallowed the cat to catch the bird.
 She swallowed the bird to catch the spider that wriggled
-and jiggled and tickled inside her. 
+and jiggled and tickled inside her.
 She swallowed the spider to catch the fly.
 I don't know why she swallowed the fly. Perhaps she'll die.
 
@@ -60,12 +60,12 @@ She's dead, of course!"""
 
 song = song.replace("\n", "").replace(" ", "").lower()
 
-class FoodChainTest(unittest.TestCase):
 
+class FoodChainTest(unittest.TestCase):
 
     def test_equality(self):
         to_test = chain().replace("\n", "").replace(" ", "")
-        self.assertEqual(to_test.lower(),song)
+        self.assertEqual(to_test.lower(), song)
 
 
 if __name__ == '__main__':
