@@ -30,7 +30,7 @@ def chain():
                 verse += "It" + phrases[0] + "\n"
                 chain = chain.replace("<animal>", animal)
                 verse += chain
-                chain=swallowed+animal+" that"+phrases[0]+"\n"+chain
+                chain = swallowed+animal+" that"+phrases[0]+"\n"+chain
             else:
                 verse += phrases[number-1] + "\n"
                 chain = chain.replace("<animal>", animal)
