@@ -630,7 +630,11 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+		"conditionals",
+		"pattern_matching",
+		"classes",
+		"mathematics",
+		"object_oriented_programming"
       ]
     },
     {
