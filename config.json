@@ -219,7 +219,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "algorithms",
+        "conditionals",
+        "loops",
+        "strings"
       ]
     },
     {
