@@ -452,7 +452,19 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "conditionals",
+        "equality",
+        "loops",
+        "variables",
+        "lists",
+        "enumerations",
+        "sets",
+        "tuples",
+        "algorithms",
+        "filtering",
+        "logic",
+        "mathematics",
+        "searching"
       ]
     },
     {
