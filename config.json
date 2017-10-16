@@ -288,7 +288,7 @@
       "topics": [
 	"loops",
 	"logic",
-	"conditionals"	      
+	"conditionals"
       ]
     },
     {
@@ -298,8 +298,11 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
-      ]
+        "arrays",
+        "classes",
+        "optional_values",
+        "variables"
+        ]
     },
     {
       "uuid": "aadde1a8-ed7a-4242-bfc0-6dddfd382cf3",
