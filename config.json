@@ -651,7 +651,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "recursion",
+        "strings",
+        "pattern_recognition",
+        "text_formatting"
       ]
     },
     {
