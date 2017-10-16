@@ -484,7 +484,11 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "regular_expressions",
+        "strings",
+        "randomness",
+        "text_formatting",
+        "pattern_matching"
       ]
     },
     {
