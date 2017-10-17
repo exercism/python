@@ -569,7 +569,7 @@
         "conditionals",
         "loops",
         "arrays",
-        "integers"
+        "integers",
         "enumerations",
         "bitwise_operations",
         "logic",
