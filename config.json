@@ -342,7 +342,7 @@
       "difficulty": 1,
       "topics": [
         "mathematics",
-        "floating-point-numbers",
+        "floating_point_numbers",
         "integers",
         "conditionals"
       ]
