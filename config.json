@@ -577,7 +577,14 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "conditionals",
+        "loops",
+        "lists",
+        "integers",
+        "bitwise_operations",
+        "logic",
+        "mathematics",
+        "transforming"
       ]
     },
     {
