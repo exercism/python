@@ -420,7 +420,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+          "loops",
+          "strings",
+          "games",
+          "maps"
       ]
     },
     {
