@@ -341,7 +341,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "mathematics",
+        "floating-point-numbers",
+        "integers",
+        "conditionals"
       ]
     },
     {
