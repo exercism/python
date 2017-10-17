@@ -568,9 +568,8 @@
       "topics": [
         "conditionals",
         "loops",
-        "arrays",
+        "lists",
         "integers",
-        "enumerations",
         "bitwise_operations",
         "logic",
         "mathematics",
