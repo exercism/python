@@ -331,7 +331,12 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "conditionals",
+        "loops",
+        "integers",
+        "strings",
+        "logic",
+        "mathematics"
       ]
     },
     {
