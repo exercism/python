@@ -1,2 +1,2 @@
-def connect(board):
+def check_board(board):
     pass
