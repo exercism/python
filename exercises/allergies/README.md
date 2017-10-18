@@ -30,7 +30,7 @@ ignore those components of the score.  For example, if the allergy
 score is 257, your program should only report the eggs (1) allergy.
 
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

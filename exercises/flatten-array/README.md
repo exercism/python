@@ -11,7 +11,7 @@ input: [1,[2,3,null,4],[null],5]
 output: [1,2,3,4,5]
 
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

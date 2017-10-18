@@ -6,7 +6,7 @@ In functional languages list operations like `length`, `map`, and
 `reduce` are very common. Implement a series of basic list operations,
 without using existing functions.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

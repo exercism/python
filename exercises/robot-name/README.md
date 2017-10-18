@@ -15,7 +15,7 @@ The names must be random: they should not follow a predictable sequence.
 Random names means a risk of collisions. Your solution must ensure that
 every existing robot has a unique name.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

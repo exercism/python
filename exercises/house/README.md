@@ -106,7 +106,7 @@ that ate the malt
 that lay in the house that Jack built.
 ```
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

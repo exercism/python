@@ -32,7 +32,7 @@ Here are examples of integers as 32-bit values, and the variable length quantiti
 0FFFFFFF          FF FF FF 7F
 ```
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

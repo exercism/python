@@ -56,7 +56,7 @@ If you'd like, handle exponentials.
 32
 
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

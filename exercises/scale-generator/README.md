@@ -56,7 +56,7 @@ Here is a table of pitches with the names of their interval distance from the to
 |        |         | Dim 3rd | Aug 2nd | Dim 4th |         | Aug 4th | Dim 5th | Aug 5th | Dim 7th | Aug 6th | Dim 8ve |        |
 |        |         |         |         |         |         | Dim 5th |         |         |         |         |         |        |
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

@@ -17,7 +17,7 @@ There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 
 Find the product a * b * c.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

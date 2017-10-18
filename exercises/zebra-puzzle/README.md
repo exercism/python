@@ -25,7 +25,7 @@ drink different beverages and smoke different brands of cigarettes.
 Which of the residents drinks water?
 Who owns the zebra?
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

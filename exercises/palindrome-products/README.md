@@ -33,7 +33,7 @@ Given the range `[10, 99]` (both inclusive)...
 The smallest palindrome product is `121`. It's factors are `(11, 11)`.
 The largest palindrome product is `9009`. It's factors are `(91, 99)` and `(99, 91)`.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

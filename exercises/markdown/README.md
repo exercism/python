@@ -12,7 +12,7 @@ It would be helpful if you made notes of what you did in your refactoring in
 comments so reviewers can see that, but it isn't strictly necessary. The most
 important thing is to make the code better!
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

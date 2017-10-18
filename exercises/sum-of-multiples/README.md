@@ -11,7 +11,7 @@ The sum of these multiples is 78.
 Given a number, find the sum of the multiples of a given set of numbers,
 up to but not including that number.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

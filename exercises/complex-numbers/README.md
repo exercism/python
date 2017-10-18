@@ -4,7 +4,7 @@ A complex number is a number in the form `a + b * i` where `a` and `b` are real 
 
 Assume the programming language you are using does not have an implementation of complex numbers.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

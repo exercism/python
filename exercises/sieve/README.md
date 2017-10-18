@@ -27,7 +27,7 @@ Notice that this is a very specific algorithm, and the tests don't check
 that you've implemented the algorithm, only that you've come up with the
 correct list of primes.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

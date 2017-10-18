@@ -64,7 +64,7 @@ Sum the digits
 
 57 is not evenly divisible by 10, so this number is not valid.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

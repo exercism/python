@@ -63,7 +63,7 @@ The above diagram contains 6 rectangles:
 You may assume that the input is always a proper rectangle (i.e. the length of
 every line equals the length of the first line).
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

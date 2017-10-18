@@ -14,7 +14,7 @@ The objectives are simple:
 
 If everything goes well, you will be ready to fetch your first real exercise.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

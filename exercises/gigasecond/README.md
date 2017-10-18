@@ -4,7 +4,7 @@ Calculate the moment when someone has lived for 10^9 seconds.
 
 A gigasecond is 10^9 (1,000,000,000) seconds.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

@@ -8,7 +8,7 @@ the 6th prime is 13.
 If your language provides methods in the standard library to deal with prime
 numbers, pretend they don't exist and implement them yourself.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

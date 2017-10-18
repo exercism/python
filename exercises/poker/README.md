@@ -5,7 +5,7 @@ Pick the best hand(s) from a list of poker hands.
 See [wikipedia](https://en.wikipedia.org/wiki/List_of_poker_hands) for an
 overview of poker hands.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

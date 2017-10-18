@@ -59,7 +59,7 @@ While asking for Bob's plants would yield:
 
 - Clover, grass, clover, clover
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

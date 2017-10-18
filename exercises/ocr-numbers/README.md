@@ -78,7 +78,7 @@ Update your program to handle multiple numbers, one per line. When converting se
 
 Is converted to "123,456,789"
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

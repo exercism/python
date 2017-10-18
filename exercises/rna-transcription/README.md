@@ -18,7 +18,7 @@ each nucleotide with its complement:
 * `T` -> `A`
 * `A` -> `U`
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

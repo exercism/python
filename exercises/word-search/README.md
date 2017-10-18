@@ -26,7 +26,7 @@ vertical and diagonal.
 Given a puzzle and a list of words return the location of the first and last
 letter of each word.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

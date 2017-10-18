@@ -67,7 +67,7 @@ For a total of $51.20
 
 And $51.20 is the price with the biggest discount.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

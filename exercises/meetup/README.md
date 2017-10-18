@@ -23,7 +23,7 @@ Given examples of a meetup dates, each containing a month, day, year, and descri
 For example, if given "First Monday of January 2017", the correct meetup date is 2017/1/2
  
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

@@ -6,7 +6,7 @@ You should be able to add and subtract minutes to it.
 
 Two clocks that represent the same time should be equal to each other.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

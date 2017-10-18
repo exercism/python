@@ -8,7 +8,7 @@ Help generate some jargon by writing a program that converts a long name
 like Portable Network Graphics to its acronym (PNG).
 
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

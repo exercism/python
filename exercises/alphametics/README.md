@@ -31,7 +31,7 @@ a multi-digit number must not be zero.
 
 Write a function to solve alphametics puzzles.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

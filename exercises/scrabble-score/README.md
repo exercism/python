@@ -37,7 +37,7 @@ And to total:
 - You can play a double or a triple letter.
 - You can play a double or a triple word.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 
