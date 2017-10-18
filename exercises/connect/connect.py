@@ -1,0 +1,2 @@
+def connect(board):
+    pass
