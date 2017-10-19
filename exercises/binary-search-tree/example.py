@@ -58,7 +58,7 @@ class BinarySearchTree:
 
     def remove(self, num):
         node = self.__base_function(num)
-        if not node.num is None:
+        if node.num is not None:
             self.__replace_node(node)
             self.__size -= 1
             return True
