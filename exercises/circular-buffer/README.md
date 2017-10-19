@@ -31,24 +31,30 @@ If the buffer has 7 elements then it is completely full:
 When the buffer is full an error will be raised, alerting the client
 that further writes are blocked until a slot becomes free.
 
-The client can opt to overwrite the oldest data with a forced write. In
-this case, two more elements — A & B — are added and they overwrite the
-3 & 4:
+When the buffer is full, the client can opt to overwrite the oldest
+data with a forced write. In this case, two more elements — A & B —
+are added and they overwrite the 3 & 4:
 
     [6][7][8][9][A][B][5]
 
-Finally, if two elements are now removed then what would be returned is
-not 3 & 4 but 5 & 6 because A & B overwrote the 3 & the 4 yielding the
-buffer with:
+3 & 4 have been replaced by A & B making 5 now the oldest data in the
+buffer. Finally, if two elements are removed then what would be
+returned is 5 & 6 yielding the buffer:
 
     [ ][7][8][9][A][B][ ]
+
+Because there is space available, if the client again uses overwrite
+to store C & D then the space where 5 & 6 were stored previously will
+be used not the location of 7 & 8. 7 is still the oldest element and
+the buffer is once again full.
+
+    [D][7][8][9][A][B][C]
 
 ## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 
 For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
-
 
 For more detailed information about running tests, code style and linting,
 please see the [help page](http://exercism.io/languages/python).

@@ -4,7 +4,7 @@ Given two buckets of different size, demonstrate how to measure an exact number 
 
 Since this mathematical problem is fairly subject to interpretation / individual approach, the tests have been written specifically to expect one overarching solution.
 
-To help, the tests provide you with which bucket to fill first. That means, when starting with the larger bucket full, you are NOT allowed at any point to have the smaller bucket full and the larger bucket empty (aka, the opposite starting point); that would defeat the purpose of comparing both approaches! 
+To help, the tests provide you with which bucket to fill first. That means, when starting with the larger bucket full, you are NOT allowed at any point to have the smaller bucket full and the larger bucket empty (aka, the opposite starting point); that would defeat the purpose of comparing both approaches!
 
 Your program will take as input:
 - the size of bucket one, passed as a numeric value
@@ -17,9 +17,9 @@ Your program should determine:
 - which bucket should end up with the desired number of liters (let's say this is bucket A) - expects a String (either 'one' or 'two')
 - how many liters are left in the other bucket (bucket B) - expects a numeric value
 
-Note: any time a change is made to either or both buckets counts as one (1) move. 
+Note: any time a change is made to either or both buckets counts as one (1) move.
 
-Example: 
+Example:
 Bucket one can hold up to 7 liters, and bucket two can hold up to 11 liters. Let's say bucket one, at a given step, is holding 7 liters, and bucket two is holding 8 liters (7,8). If you empty bucket one and make no change to bucket two, leaving you with 0 liters and 8 liters respectively (0,8), that counts as one "move". Instead, if you had poured from bucket one into bucket two until bucket two was full, leaving you with 4 liters in bucket one and 11 liters in bucket two (4,11), that would count as only one "move" as well.
 
 To conclude, the only valid moves are:
@@ -34,7 +34,6 @@ Written with <3 at [Fullstack Academy](http://www.fullstackacademy.com/) by [Lin
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 
 For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
-
 
 For more detailed information about running tests, code style and linting,
 please see the [help page](http://exercism.io/languages/python).

@@ -4,14 +4,14 @@ Given an input text output it transposed.
 
 Roughly explained, the transpose of a matrix:
 
-```
+```text
 ABC
 DEF
 ```
 
 is given by:
 
-```
+```text
 AD
 BE
 CF
@@ -26,14 +26,14 @@ If the input has rows of different lengths, this is to be solved as follows:
 
 Therefore, transposing this matrix:
 
-```
+```text
 ABC
 DE
 ```
 
 results in:
 
-```
+```text
 AD
 BE
 C
@@ -41,21 +41,21 @@ C
 
 And transposing:
 
-```
+```text
 AB
 DEF
 ```
 
 results in:
 
-```
+```text
 AD
 BE
  F
 ```
 
 In general, all characters from the input should also be present in the transposed output.
-That means that if a column in the input text contains only spaces on its bottom-most row(s), 
+That means that if a column in the input text contains only spaces on its bottom-most row(s),
 the corresponding output row should contain the spaces in its right-most column(s).
 
 ## Submitting Exercises
@@ -63,7 +63,6 @@ the corresponding output row should contain the spaces in its right-most column(
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 
 For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
-
 
 For more detailed information about running tests, code style and linting,
 please see the [help page](http://exercism.io/languages/python).

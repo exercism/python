@@ -47,7 +47,7 @@ Given the key "aaaaaaaaaaaaaaaaaa", encoding the string "iamapandabear"
 would return the original "iamapandabear".
 
 Given the key "ddddddddddddddddd", encoding our string "iamapandabear"
-would return the obscured "lpdsdqgdehdu"
+would return the obscured "ldpdsdqgdehdu"
 
 In the example above, we've set a = 0 for the key value. So when the
 plaintext is added to the key, we end up with the same message coming
@@ -65,7 +65,7 @@ If someone doesn't submit a key at all, generate a truly random key of
 at least 100 characters in length, accessible via Cipher#key (the #
 syntax means instance variable)
 
-If the key submitted has capital letters or numbers, throw an
+If the key submitted has capital letters or numbers, throw a
 ValueError with a message to that effect.
 
 ## Extensions
@@ -88,7 +88,6 @@ on Wikipedia][dh] for one of the first implementations of this scheme.
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 
 For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
-
 
 For more detailed information about running tests, code style and linting,
 please see the [help page](http://exercism.io/languages/python).

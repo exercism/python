@@ -32,7 +32,6 @@ Use Flats:
 F, Bb, Eb, Ab, Db, Gb major
 d, g, c, f, bb, eb minor
 
-
 The diatonic scales, and all other scales that derive from the
 chromatic scale, are built upon intervals. An interval is the space
 between two pitches.
@@ -61,7 +60,6 @@ Here is a table of pitches with the names of their interval distance from the to
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 
 For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
-
 
 For more detailed information about running tests, code style and linting,
 please see the [help page](http://exercism.io/languages/python).

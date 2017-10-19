@@ -5,13 +5,15 @@ that matrix.
 
 So given a string with embedded newlines like:
 
-> 9 8 7  
-> 5 3 2  
-> 6 6 7  
+```text
+9 8 7
+5 3 2
+6 6 7
+```
 
 representing this matrix:
 
-```plain
+```text
     0  1  2
   |---------
 0 | 9  8  7
@@ -43,7 +45,6 @@ And its columns:
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 
 For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
-
 
 For more detailed information about running tests, code style and linting,
 please see the [help page](http://exercism.io/languages/python).

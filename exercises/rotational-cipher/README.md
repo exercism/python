@@ -13,7 +13,7 @@ The most commonly used rotational cipher is `ROT13`.
 
 A `ROT13` on the Latin alphabet would be as follows:
 
-```plain
+```text
 Plain:  abcdefghijklmnopqrstuvwxyz
 Cipher: nopqrstuvwxyzabcdefghijklm
 ```
@@ -23,6 +23,7 @@ It is stronger than the Atbash cipher because it has 27 possible keys, and 25 us
 Ciphertext is written out in the same formatting as the input including spaces and punctuation.
 
 ## Examples
+
 - ROT5  `omg` gives `trl`
 - ROT0  `c` gives `c`
 - ROT26 `Cool` gives `Cool`
@@ -34,7 +35,6 @@ Ciphertext is written out in the same formatting as the input including spaces a
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 
 For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
-
 
 For more detailed information about running tests, code style and linting,
 please see the [help page](http://exercism.io/languages/python).

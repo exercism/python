@@ -9,7 +9,7 @@ letter, the second with the second-last, and so on.
 
 An Atbash cipher for the Latin alphabet would be as follows:
 
-```plain
+```text
 Plain:  abcdefghijklmnopqrstuvwxyz
 Cipher: zyxwvutsrqponmlkjihgfedcba
 ```
@@ -23,6 +23,7 @@ being 5 letters, and punctuation is excluded. This is to make it harder to guess
 things based on word boundaries.
 
 ## Examples
+
 - Encoding `test` gives `gvhg`
 - Decoding `gvhg` gives `test`
 - Decoding `gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt` gives `thequickbrownfoxjumpsoverthelazydog`
@@ -32,7 +33,6 @@ things based on word boundaries.
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 
 For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
-
 
 For more detailed information about running tests, code style and linting,
 please see the [help page](http://exercism.io/languages/python).

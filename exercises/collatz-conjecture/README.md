@@ -9,24 +9,7 @@ always reach 1 eventually.
 
 Given a number n, return the number of steps required to reach 1.
 
-(Keep in mind that the Conjecture is only concerned with strictly positive
-integers, so your solution should return `None` if given 0 or a negative
-integer.)
-
 ## Examples
-
-Starting with n = 3, the steps would be as follows:
-
-0. 3
-1. 10
-2. 5
-3. 16
-4. 8
-5. 4
-6. 2
-7. 1
-
-Resulting in 7 steps. So for input n = 3, the return value would be 7.
 
 Starting with n = 12, the steps would be as follows:
 
@@ -43,12 +26,16 @@ Starting with n = 12, the steps would be as follows:
 
 Resulting in 9 steps. So for input n = 12, the return value would be 9.
 
+## Notes
+
+The Collatz Conjecture is only concerned with strictly positive integers, so your solution should raise a `ValueError` with a meaningful message if given 0 or a negative integer.
+
+
 ## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 
 For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
-
 
 For more detailed information about running tests, code style and linting,
 please see the [help page](http://exercism.io/languages/python).
