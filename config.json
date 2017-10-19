@@ -326,7 +326,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "recursion",
+        "lists",
+        "algorithms",
+        "transforming"
       ]
     },
     {
