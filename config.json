@@ -560,7 +560,14 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "algorithms",
+        "arrays",
+        "conditionals",
+        "lists",
+        "loops",
+        "mathematics",
+        "matrices",
+        "sets"
       ]
     },
     {
