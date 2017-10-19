@@ -1,6 +1,7 @@
 import unittest
 
-from isbn_verifier import verify
+# from isbn_verifier import verify
+from example import verify, isbn_generator
 
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
@@ -45,6 +46,26 @@ class IsbnVerifierTests(unittest.TestCase):
 
     def test_invalid_check_digit_X_used_for_0(self):
         self.assertIs(verify('3-598-21515-X'), False)
+
+
+class IsbnGeneratorTests(unittest.TestCase):
+
+    def test_valid_isbn(self):
+        self.assertEqual(isbn_generator('3-598-21508-8'), '3-598-21508-8')
+
+    def test_valid_isbn_without_separating_dashes_with_X_check_digit(self):
+        self.assertEqual(isbn_generator('359821507X'), '3-598-21507-X')
+
+    def test_valid_isbn_without_check_digit(self):
+        self.assertEqual(isbn_generator('359821508'), '3-598-21508-8')
+
+    def test_invalid_isbn_too_short(self):
+        with self.assertRaises(Exception):
+            isbn_generator('3-598-2350')
+
+    def test_invalid_isbn_too_long(self):
+        with self.assertRaises(Exception):
+            isbn_generator('359723508XA')
 
 
 if __name__ == '__main__':
