@@ -3,7 +3,7 @@ import unittest
 from binary_search_tree import BinarySearchTree
 
 
-class BinarySearchTreeTests(unittest.TestCase):    
+class BinarySearchTreeTests(unittest.TestCase):
     def test_add_one_value_in_tree(self):
         tree = BinarySearchTree()
         self.assertEqual(tree.add(3), True)
@@ -147,6 +147,7 @@ class BinarySearchTreeTests(unittest.TestCase):
         self.assertEqual(tree.size(), 4)
         tree.remove(2)
         self.assertEqual(tree.size(), 3)
+
 
 if __name__ == '__main__':
     unittest.main()
