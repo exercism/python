@@ -50,7 +50,7 @@ This repo uses [flake8](http://flake8.readthedocs.org/en/latest/) with default s
 
 This repo uses `travis-ci` in the following configuration: [travis.yml](https://github.com/exercism/python/blob/master/.travis.yml)
 
-It will check automatically the code style, the problem configuration and runns the unittests with all supported Python versions.
+It will automatically check the code style, the problem configuration, and run the unittests with all supported Python versions.
 
 
 ## Pull Requests
