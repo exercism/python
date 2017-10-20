@@ -71,3 +71,6 @@ If you're new to Git take a look at [this short guide](https://github.com/exerci
 
 ## Python icon
 The Python logo is an unregistered trademark. We are using a derived logo with the permission of the Python Software Foundation.
+
+## License
+This repository uses the [MIT License](/LICENSE).
