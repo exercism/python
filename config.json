@@ -142,7 +142,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "conditionals",
+        "dates",
+         "logic",
+         "pattern_recognition"
       ]
     },
     {
