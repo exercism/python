@@ -509,7 +509,11 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "algorithms",
+        "conditionals",
+        "classes",
+        "exception_handling",
+        "queues"
       ]
     },
     {
