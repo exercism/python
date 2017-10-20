@@ -8,34 +8,34 @@ from isogram import is_isogram
 class TestIsogram(unittest.TestCase):
 
     def test_empty_string(self):
-        self.assertIs(is_isogram(""), True)
+        self.assertTrue(is_isogram(""))
 
     def test_isogram_with_only_lower_case_characters(self):
-        self.assertIs(is_isogram("isogram"), True)
+        self.assertTrue(is_isogram("isogram"))
 
     def test_word_with_one_duplicated_character(self):
-        self.assertIs(is_isogram("eleven"), False)
+        self.assertFalse(is_isogram("eleven"))
 
     def test_longest_reported_english_isogram(self):
-        self.assertIs(is_isogram("subdermatoglyphic"), True)
+        self.assertTrue(is_isogram("subdermatoglyphic"))
 
     def test_word_with_duplicated_character_in_mixed_case(self):
-        self.assertIs(is_isogram("Alphabet"), False)
+        self.assertFalse(is_isogram("Alphabet"))
 
     def test_hypothetical_isogrammic_word_with_hyphen(self):
-        self.assertIs(is_isogram("thumbscrew-japingly"), True)
+        self.assertTrue(is_isogram("thumbscrew-japingly"))
 
     def test_isogram_with_duplicated_non_letter_character(self):
-        self.assertIs(is_isogram("Hjelmqvist-Gryb-Zock-Pfund-Wax"), True)
+        self.assertTrue(is_isogram("Hjelmqvist-Gryb-Zock-Pfund-Wax"))
 
     def test_made_up_name_that_is_an_isogram(self):
-        self.assertIs(is_isogram("Emily Jung Schwartzkopf"), True)
+        self.assertTrue(is_isogram("Emily Jung Schwartzkopf"))
 
     def test_duplicated_character_in_the_middle(self):
-        self.assertIs(is_isogram("accentor"), False)
+        self.assertFalse(is_isogram("accentor"))
 
     def test_isogram_with_duplicated_letter_and_nonletter_character(self):
-        self.assertIs(is_isogram("Aleph Bot Chap"), False)
+        self.assertFalse(is_isogram("Aleph Bot Chap"))
 
 
 if __name__ == '__main__':
