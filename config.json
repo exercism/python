@@ -118,7 +118,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "strings",
+        "equality",
+        "conditionals"
       ]
     },
     {
@@ -140,7 +142,11 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "strings",
+        "conditionals",
+        "dates",
+        "parsing",
+        "pattern_recognition"
       ]
     },
     {
@@ -503,7 +509,11 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "algorithms",
+        "conditionals",
+        "classes",
+        "exception_handling",
+        "queues"
       ]
     },
     {
@@ -585,7 +595,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+      	"algorithms",
+        "loops",
+        "mathematics",
+        "logic"
       ]
     },
     {
