@@ -654,7 +654,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "recursion",
+        "strings",
+        "stacks",
+        "parsing"
       ]
     },
     {
