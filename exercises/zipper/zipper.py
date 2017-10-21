@@ -1,14 +1,10 @@
 class Zipper(object):
     @staticmethod
     def from_tree(tree):
-        return Zipper(tree)
-
-    def __init__(self, root, parent=None):
-        self.root = dict(root)
-        self.parent = None if parent is None else dict(parent)
+        pass
 
     def value(self):
-        return self.root['value']
+        pass
 
     def set_value(self):
         pass
