@@ -2,6 +2,8 @@ import unittest
 
 from zipper import Zipper
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+
 
 def bt(value, left, right):
     return {
