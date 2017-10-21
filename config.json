@@ -547,7 +547,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+            "algorithms",
+            "cryptography",
+            "text_formatting",
+            "lists"
       ]
     },
     {
