@@ -19,9 +19,5 @@ For example, if you're submitting `bob.py` for the Bob exercise, the submit comm
 For more detailed information about running tests, code style and linting,
 please see the [help page](http://exercism.io/languages/python).
 
-## Source
-
-Problem 6 at Project Euler [http://projecteuler.net/problem=6](http://projecteuler.net/problem=6)
-
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
