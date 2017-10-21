@@ -22,6 +22,7 @@ A list of missing exercise can be found here: http://exercism.io/languages/pytho
 - We use minimalistic stub files for all exercises (#272).
 - We use `unittest` (Python Standard Library) and no 3rd-party-framework.
 - We use the parameter order `self.assertEqual(actual, expected)` (#440).
+- We use context managers (`with self.assertRaises(\<exception type\>):`) for testing for exceptions (#477).
 
 
 ### Testing
