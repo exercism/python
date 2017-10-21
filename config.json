@@ -550,7 +550,7 @@
             "algorithms",
             "cryptography",
             "text_formatting",
-            "arrays"
+            "lists"
       ]
     },
     {
