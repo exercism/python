@@ -718,7 +718,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "lists",
+        "parsing",
+        "pattern_recognition"
       ]
     },
     {
