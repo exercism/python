@@ -3,7 +3,7 @@ import unittest
 from sieve import sieve
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
 class SieveTest(unittest.TestCase):
     def test_no_primes_under_two(self):

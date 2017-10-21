@@ -3,7 +3,7 @@ import unittest
 from run_length_encoding import encode, decode
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
 class WordCountTests(unittest.TestCase):
     def test_encode_empty_string(self):
