@@ -118,7 +118,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "strings",
+        "equality",
+        "conditionals"
       ]
     },
     {
@@ -140,7 +142,11 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "strings",
+        "conditionals",
+        "dates",
+        "parsing",
+        "pattern_recognition"
       ]
     },
     {
@@ -507,7 +513,11 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "algorithms",
+        "conditionals",
+        "classes",
+        "exception_handling",
+        "queues"
       ]
     },
     {
@@ -541,7 +551,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+            "algorithms",
+            "cryptography",
+            "text_formatting",
+            "lists"
       ]
     },
     {
@@ -564,7 +577,13 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "algorithms",
+        "conditionals",
+        "lists",
+        "loops",
+        "mathematics",
+        "matrices",
+        "sets"
       ]
     },
     {
@@ -586,7 +605,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+      	"algorithms",
+        "loops",
+        "mathematics",
+        "logic"
       ]
     },
     {
@@ -636,7 +658,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "recursion",
+        "strings",
+        "stacks",
+        "parsing"
       ]
     },
     {
@@ -646,7 +671,11 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "lists",
+        "parsing",
+        "transformation",
+        "loops",
+        "games"
       ]
     },
     {
@@ -700,7 +729,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "lists",
+        "parsing",
+        "pattern_recognition"
       ]
     },
     {
@@ -1046,6 +1077,18 @@
         "loops",
         "conditionals"
       ]
+    },
+    {
+        "uuid": "4f5f890d-0db4-5480-f79a-21057c37871b15133dc",
+        "slug": "zipper",
+        "core": false,
+        "unlocked_by": null,
+        "difficulty": 8,
+        "topics": [
+            "recursion",
+            "searching",
+            "trees"
+        ]
     },
     {
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
