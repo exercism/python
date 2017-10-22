@@ -22,6 +22,7 @@ A list of missing exercise can be found here: http://exercism.io/languages/pytho
 - We use minimalistic stub files for all exercises (#272).
 - We use `unittest` (Python Standard Library) and no 3rd-party-framework.
 - We use the parameter order `self.assertEqual(actual, expected)` (#440).
+- We use context managers (`with self.assertRaises(\<exception type\>):`) for testing for exceptions (#477).
 
 
 ### Testing
@@ -50,7 +51,7 @@ This repo uses [flake8](http://flake8.readthedocs.org/en/latest/) with default s
 
 This repo uses `travis-ci` in the following configuration: [travis.yml](https://github.com/exercism/python/blob/master/.travis.yml)
 
-It will check automatically the code style, the problem configuration and runns the unittests with all supported Python versions.
+It will automatically check the code style, the problem configuration, and run the unittests with all supported Python versions.
 
 
 ## Pull Requests
@@ -71,3 +72,6 @@ If you're new to Git take a look at [this short guide](https://github.com/exerci
 
 ## Python icon
 The Python logo is an unregistered trademark. We are using a derived logo with the permission of the Python Software Foundation.
+
+## License
+This repository uses the [MIT License](/LICENSE).

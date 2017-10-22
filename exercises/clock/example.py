@@ -13,7 +13,7 @@ class Clock(object):
     def __eq__(self, other):
         return repr(self) == repr(other)
 
-    def add(self, minutes):
+    def __add__(self, minutes):
         self.minute += minutes
         return self.cleanup()
 
