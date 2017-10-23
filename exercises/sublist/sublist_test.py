@@ -3,7 +3,7 @@ import unittest
 from sublist import check_lists, SUBLIST, SUPERLIST, EQUAL, UNEQUAL
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
 class SublistTest(unittest.TestCase):
     def test_unique_return_values(self):

@@ -1,2 +1,2 @@
-def slices():
+def slices(series, length):
     pass

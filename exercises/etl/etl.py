@@ -1,2 +1,2 @@
-def transform():
+def transform(legacy_data):
     pass

@@ -49,17 +49,20 @@ class WordyTest(unittest.TestCase):
             calculate("What is -12000 divided by 25 divided by -30?"), 16)
 
     def test_invalid_operation(self):
-        self.assertRaises(ValueError, calculate, "What is 4 xor 7?")
+        with self.assertRaises(ValueError):
+            calculate("What is 4 xor 7?")
 
     def test_missing_operation(self):
-        self.assertRaises(ValueError, calculate, "What is 2 2 minus 3?")
+        with self.assertRaises(ValueError):
+            calculate("What is 2 2 minus 3?")
 
     def test_missing_number(self):
-        self.assertRaises(ValueError, calculate,
-                          "What is 7 plus multiplied by -2?")
+        with self.assertRaises(ValueError):
+            calculate("What is 7 plus multiplied by -2?")
 
     def test_irrelevant_question(self):
-        self.assertRaises(ValueError, calculate, "Which is greater, 3 or 2?")
+        with self.assertRaises(ValueError):
+            calculate("Which is greater, 3 or 2?")
 
 
 if __name__ == '__main__':
