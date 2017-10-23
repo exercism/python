@@ -19,8 +19,9 @@ class FileLike(object):
 
     def __enter__(self):
         self.open()
+        return self
 
-    def __exit__(self):
+    def __exit__(self, *args):
         self.close()
 
     def do_something(self):
@@ -50,7 +51,6 @@ class ErrorHandlingTest(unittest.TestCase):
 
     def test_filelike_objects_are_closed_on_exception(self):
         filelike_object = FileLike()
-        filelike_object.open()
         with self.assertRaises(Exception):
             er.filelike_objects_are_closed_on_exception(filelike_object)
         self.assertFalse(filelike_object.is_open,
@@ -58,7 +58,7 @@ class ErrorHandlingTest(unittest.TestCase):
         self.assertTrue(filelike_object.was_open,
                         'filelike_object should have been opened')
         self.assertTrue(filelike_object.did_something,
-                        'filelike_object should call did_something()')
+                        'filelike_object should call do_something()')
 
 
 if __name__ == '__main__':
