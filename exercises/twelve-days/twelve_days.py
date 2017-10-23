@@ -1,8 +1,8 @@
-def verse():
+def verse(n):
     pass
 
 
-def verses():
+def verses(start, end):
     pass
 
 
