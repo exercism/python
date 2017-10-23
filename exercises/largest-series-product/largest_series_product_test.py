@@ -11,7 +11,7 @@ import unittest
 from largest_series_product import largest_product
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
 class SeriesTest(unittest.TestCase):
     def test_finds_the_largest_product_if_span_equals_length(self):

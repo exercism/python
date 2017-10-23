@@ -3,7 +3,7 @@ import unittest
 from acronym import abbreviate
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class AcronymTest(unittest.TestCase):
     def test_basic(self):

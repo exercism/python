@@ -3,7 +3,7 @@ import unittest
 from phone_number import Phone
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class PhoneTest(unittest.TestCase):
     def test_cleans_number(self):
