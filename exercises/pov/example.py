@@ -21,7 +21,8 @@ class Tree(object):
     def __iter__(self):
         yield self.label
         for child in self.children:
-            yield from child
+            for gchild in child:
+                yield gchild
 
     def dup(self):
         return Tree(self.label, [c.dup() for c in self.children])
