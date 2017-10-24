@@ -1090,6 +1090,18 @@
         ]
     },
     {
+        "uuid": "55c818d6-04a8-2480-de83-9f85fd0d2eafa71935f",
+        "slug": "pov",
+        "core": false,
+        "unlocked_by": null,
+        "difficulty": 9,
+        "topics": [
+            "graphs",
+            "recursion",
+            "searching"
+        ]
+    },
+    {
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "slug": "accumulate",
       "deprecated": true
