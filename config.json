@@ -172,6 +172,22 @@
       ]
     },
     {
+      "uuid": "a9c2fbda-a1e4-42dd-842f-4de5bb361b91",
+      "slug": "dot-dsl",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "equality",
+        "classes",
+        "lists",
+        "maps",
+        "object_oriented_programming",
+        "test_driven_development",
+        "transforming"
+      ]
+    },
+    {
       "uuid": "43eaf8bd-0b4d-4ea9-850a-773f013325ef",
       "slug": "anagram",
       "core": false,
