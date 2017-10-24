@@ -373,11 +373,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "bitwise-operations",
-        "control-flow-(if-else-statements)",
+        "bitwise_operations",
         "integers",
         "mathematics",
-        "type-conversion"
+        "type_conversion"
       ]
     },
     {
