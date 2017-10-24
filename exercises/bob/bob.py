@@ -1,2 +1,2 @@
-def hey():
+def hey(phrase):
     pass

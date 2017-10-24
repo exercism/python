@@ -1,2 +1,2 @@
-def raindrops():
+def raindrops(number):
     pass

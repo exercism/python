@@ -1,6 +1,6 @@
-def handshake():
+def handshake(number):
     pass
 
 
-def code():
+def code(secret_code):
     pass

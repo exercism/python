@@ -1,2 +1,2 @@
-def is_isogram():
+def is_isogram(string):
     pass

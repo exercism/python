@@ -1,10 +1,10 @@
-def fence_pattern():
+def fence_pattern(rails, message_size):
     pass
 
 
-def encode():
+def encode(rails, message):
     pass
 
 
-def decode():
+def decode(rails, encoded_message):
     pass

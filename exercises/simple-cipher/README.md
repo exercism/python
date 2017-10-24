@@ -66,7 +66,7 @@ at least 100 characters in length, accessible via Cipher#key (the #
 syntax means instance variable)
 
 If the key submitted has capital letters or numbers, throw an
-ArgumentError with a message to that effect.
+ValueError with a message to that effect.
 
 ## Extensions
 

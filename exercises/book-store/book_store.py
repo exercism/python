@@ -1,2 +1,2 @@
-def calculate_total():
+def calculate_total(books):
     pass
