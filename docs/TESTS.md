@@ -113,12 +113,12 @@ Will drop you into the python debugger when a test fails. To learn how to use
 pdb, check out the
 [documentation](https://docs.python.org/3/library/pdb.html#debugger-commands).
 
-You may also be interested in watching [Clayton Parker's "So you think you can
-pdb?" PyCon 2015 talk](https://www.youtube.com/watch?v=P0pIW5tJrRM)
-
 ```bash
 pytest --pdb bob_test.py
 ```
+
+You may also be interested in watching [Clayton Parker's "So you think you can
+pdb?" PyCon 2015 talk](https://www.youtube.com/watch?v=P0pIW5tJrRM).
 
 ## PEP8
 
