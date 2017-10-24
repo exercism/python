@@ -1,4 +1,4 @@
-def verse(n):
+def verse(day_number):
     pass
 
 
