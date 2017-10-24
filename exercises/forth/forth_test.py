@@ -1,6 +1,6 @@
 import unittest
 
-from example import evaluate, StackUnderflowError
+from forth import evaluate, StackUnderflowError
 
 
 # test cases adapted from `x-common//canonical-data.json` @ version: 1.2.0
