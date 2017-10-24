@@ -28,6 +28,9 @@ class Graph(object):
         self.edges = []
         self.attrs = {}
 
+        if not isinstance(data, list):
+            raise TypeError("Graph data malformed")
+
         for item in data:
             if (len(item) != 3 and
                 len(item) != 4):

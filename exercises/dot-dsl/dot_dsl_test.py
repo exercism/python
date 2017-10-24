@@ -70,6 +70,48 @@ class DotDslTest(unittest.TestCase):
             "bar": "true"
         })
 
+    def test_malformed_graph(self):
+        with self.assertRaises(TypeError):
+            Graph(1)
+
+        with self.assertRaises(TypeError):
+            Graph("problematic")
+
+    def test_malformed_graph_item(self):
+        with self.assertRaises(TypeError):
+            Graph([
+                ()
+            ])
+
+        with self.assertRaises(TypeError):
+            Graph([
+                (ATTR, )
+            ])
+
+    def test_malformed_attr(self):
+        with self.assertRaises(ValueError):
+            Graph([
+                (ATTR, 1, 2, 3)
+            ])
+
+    def test_malformed_node(self):
+        with self.assertRaises(ValueError):
+            Graph([
+                (NODE, 1, 2, 3)
+            ])
+
+    def test_malformed_EDGE(self):
+        with self.assertRaises(ValueError):
+            Graph([
+                (EDGE, 1, 2)
+            ])
+
+    def test_unknown_item(self):
+        with self.assertRaises(TypeError):
+            Graph([
+                (99, 1, 2)
+            ])
+
 
 if __name__ == '__main__':
     unittest.main()
