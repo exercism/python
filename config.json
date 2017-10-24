@@ -1090,6 +1090,16 @@
         ]
     },
     {
+      "uuid": "3a2a947a-01b3-1e80-e32b-de1756fd88365adf12e",
+      "slug": "error-handling",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "exception_handling"
+      ]
+    },
+    {
         "uuid": "55c818d6-04a8-2480-de83-9f85fd0d2eafa71935f",
         "slug": "pov",
         "core": false,
