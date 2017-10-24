@@ -42,23 +42,24 @@ class ErrorHandlingTest(unittest.TestCase):
 
     def test_return_tuple(self):
         successful_result, result = er.handle_error_by_returning_tuple('1')
-        self.assertTrue(successful_result, 'Valid input should be successful')
+        self.assertIs(True, successful_result,
+                      'Valid input should be successful')
         self.assertEqual(1, result, 'Result of valid input should not be None')
 
         failure_result, result = er.handle_error_by_returning_tuple('a')
-        self.assertFalse(failure_result,
-                         'Invalid input should not be successful')
+        self.assertIs(False, failure_result,
+                      'Invalid input should not be successful')
 
     def test_filelike_objects_are_closed_on_exception(self):
         filelike_object = FileLike()
         with self.assertRaises(Exception):
             er.filelike_objects_are_closed_on_exception(filelike_object)
-        self.assertFalse(filelike_object.is_open,
-                         'filelike_object should be closed')
-        self.assertTrue(filelike_object.was_open,
-                        'filelike_object should have been opened')
-        self.assertTrue(filelike_object.did_something,
-                        'filelike_object should call do_something()')
+        self.assertIs(False, filelike_object.is_open,
+                      'filelike_object should be closed')
+        self.assertIs(True, filelike_object.was_open,
+                      'filelike_object should have been opened')
+        self.assertIs(True, filelike_object.did_something,
+                      'filelike_object should call do_something()')
 
 
 if __name__ == '__main__':
