@@ -141,19 +141,22 @@ class MinesweeperTest(unittest.TestCase):
                "|*  |",
                "|  |",
                "+-+"]
-        self.assertRaises(ValueError, board, inp)
+        with self.assertRaises(ValueError):
+            board(inp)
 
     def test_faulty_border(self):
         inp = ["+-----+",
                "*   * |",
                "+-- --+"]
-        self.assertRaises(ValueError, board, inp)
+        with self.assertRaises(ValueError):
+            board(inp)
 
     def test_invalid_char(self):
         inp = ["+-----+",
                "|X  * |",
                "+-----+"]
-        self.assertRaises(ValueError, board, inp)
+        with self.assertRaises(ValueError):
+            board(inp)
 
 
 if __name__ == '__main__':

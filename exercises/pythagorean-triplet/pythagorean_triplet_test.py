@@ -80,7 +80,8 @@ class PythagoreanTripletTest(unittest.TestCase):
         self.assertIs(is_triplet((924, 43, 925)), True)
 
     def test_odd_number(self):
-        self.assertRaises(ValueError, primitive_triplets, 5)
+        with self.assertRaises(ValueError):
+            primitive_triplets(5)
 
 
 if __name__ == '__main__':

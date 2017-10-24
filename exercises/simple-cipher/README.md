@@ -83,6 +83,23 @@ on Wikipedia][dh] for one of the first implementations of this scheme.
 [1]: https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Caesar_cipher_left_shift_of_3.svg/320px-Caesar_cipher_left_shift_of_3.svg.png
 [dh]: http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange
 
+## Should I use random or secrets?
+
+Python, as of version 3.6, includes two different random modules.
+
+The module called `random` is pseudo-random, meaning it does not generate
+true randomness, but follows an algorithm that simulates randomness.
+Since random numbers are generated through a known algorithm, they are not truly random.
+
+The `random` module is not correctly suited for cryptography and should not be used,
+precisely because it is pseudo-random.
+
+For this reason, in version 3.6, Python introduced the `secrets` module, which generates
+cryptographically strong random numbers that provide the greater security required for cryptography.
+
+Since this is only an exercise, `random` is fine to use, but note that **it would be
+very insecure if actually used for cryptography.**
+
 ## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
