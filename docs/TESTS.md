@@ -4,21 +4,37 @@ We recommend you install [pytest](http://pytest.org/latest/) and
 [pytest-cache](http://pythonhosted.org/pytest-cache/). `pytest` is a testing
 tool that will give you more flexibility over running your unit tests.
 
-If you want to install the version of pytest that obeys Python 2.X syntax, then use `pip`:
+If you want to install `pytest` for Python 2, then use `pip`.
 
 ```bash
 pip install pytest pytest-cache
 ```
-If you instead want the vesrion of pytest that obeys Python 3.X syntax, then use `pip3`:
+If you instead want the version of `pytest` for Python 3, then use `pip3`.
 
 ```bash
 pip3 install pytest pytest-cache
 ```
-**Note:** Whichever version of pytest you install first will be the default one used whenever `pytest` is executed, regardless of whether you have installed both versions.
 
 If you get a `command not found` response from your system, you can find a
 tutorial on how to install `pip`
 [here](https://pip.pypa.io/en/stable/installing/).
+
+**Note:** Whichever version of `pytest` you install last will be the default one used whenever `pytest` is executed, regardless of whether you have installed both versions.
+
+If you want to check what the default version of `pytest` being used is, run the following:
+
+```bash
+pytest --version
+```
+
+If you have either version of `pytest` installed and you want to specifically run one of the versions, you can run that version by using `python` with the `-m` flag.
+
+For example, you could run the Python 3 version of pytest like so:
+
+```bash
+$ python3 -m pytest --version
+This is pytest version 3.2.3, imported from /usr/local/lib/python3.5/dist-packages/pytest.py
+```
 
 If you choose not to install `pytest`, you can still run tests individually and
 skip the rest of this tutorial:
@@ -109,19 +125,13 @@ pytest --pdb bob_test.py
 PEP8 is the [Style Guide for Python
 Code](https://www.python.org/dev/peps/pep-0008/). If you would like to test for
 compliance to the style guide, install
-[pytest-pep8](https://pypi.python.org/pypi/pytest-pep8)
+[pytest-pep8](https://pypi.python.org/pypi/pytest-pep8).
 
 ```bash
 pip install pytest-pep8
 ```
 
-or, for Python 3.X syntax compliance...
-
-```bash
-pip3 install pytest-pep8
-```
-
-and add the pep8 flag to your command
+Then, just add the `--pep8` flag to your command
 
 ```bash
 pytest --pep8 bob_test.py
