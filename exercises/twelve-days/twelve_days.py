@@ -1,8 +1,8 @@
-def verse():
+def verse(day_number):
     pass
 
 
-def verses():
+def verses(start, end):
     pass
 
 
