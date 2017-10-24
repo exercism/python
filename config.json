@@ -373,7 +373,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "bitwise_operations",
+        "integers",
+        "mathematics",
+        "type_conversion"
       ]
     },
     {
