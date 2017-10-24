@@ -10,7 +10,7 @@ class YearTest(unittest.TestCase):
         self.assertIs(is_leap_year(2015), False)
 
     def test_year_divisible_by_4_not_divisible_by_100(self):
-        self.assertIs(is_leap_year(2016), True)
+        self.assertIs(is_leap_year(1996), True)
 
     def test_year_divisible_by_100_not_divisible_by_400(self):
         self.assertIs(is_leap_year(2100), False)
