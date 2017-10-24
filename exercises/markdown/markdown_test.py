@@ -2,7 +2,7 @@ import unittest
 from markdown import parse_markdown
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 
 class TestMarkdown(unittest.TestCase):
@@ -37,8 +37,8 @@ class TestMarkdown(unittest.TestCase):
 
     def test_unordered_lists(self):
         self.assertEqual(parse_markdown('* Item 1\n* Item 2'),
-                         '<ul><li><p>Item 1</p></li>'
-                         '<li><p>Item 2</p></li></ul>')
+                         '<ul><li>Item 1</li>'
+                         '<li>Item 2</li></ul>')
 
     def test_little_bit_of_everything(self):
         self.assertEqual(parse_markdown(
