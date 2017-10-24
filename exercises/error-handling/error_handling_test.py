@@ -35,30 +35,30 @@ class ErrorHandlingTest(unittest.TestCase):
             er.handle_error_by_throwing_exception()
 
     def test_return_none(self):
-        self.assertEqual(1, er.handle_error_by_returning_none('1'),
+        self.assertEqual(er.handle_error_by_returning_none('1'), 1,
                          'Result of valid input should not be None')
         self.assertIsNone(er.handle_error_by_returning_none('a'),
                           'Result of invalid input should be None')
 
     def test_return_tuple(self):
         successful_result, result = er.handle_error_by_returning_tuple('1')
-        self.assertIs(True, successful_result,
+        self.assertIs(successful_result, True,
                       'Valid input should be successful')
-        self.assertEqual(1, result, 'Result of valid input should not be None')
+        self.assertEqual(result, 1, 'Result of valid input should not be None')
 
         failure_result, result = er.handle_error_by_returning_tuple('a')
-        self.assertIs(False, failure_result,
+        self.assertIs(failure_result, False,
                       'Invalid input should not be successful')
 
     def test_filelike_objects_are_closed_on_exception(self):
         filelike_object = FileLike()
         with self.assertRaises(Exception):
             er.filelike_objects_are_closed_on_exception(filelike_object)
-        self.assertIs(False, filelike_object.is_open,
+        self.assertIs(filelike_object.is_open, False,
                       'filelike_object should be closed')
-        self.assertIs(True, filelike_object.was_open,
+        self.assertIs(filelike_object.was_open, True,
                       'filelike_object should have been opened')
-        self.assertIs(True, filelike_object.did_something,
+        self.assertIs(filelike_object.did_something, True,
                       'filelike_object should call do_something()')
 
 
