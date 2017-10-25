@@ -3,7 +3,7 @@ import unittest
 from isogram import is_isogram
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class TestIsogram(unittest.TestCase):
 
