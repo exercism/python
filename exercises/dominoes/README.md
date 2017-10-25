@@ -7,14 +7,14 @@ correct domino chain (the dots on one half of a stone match the dots on the
 neighbouring half of an adjacent stone) and that dots on the halfs of the stones
 which don't have a neighbour (the first and last stone) match each other.
 
-For example given the stones `21`, `23` and `13` you should compute something
-like `12 23 31` or `32 21 13` or `13 32 21` etc, where the first and last numbers are the same.
+For example given the stones `(2, 1)`, `(2, 3)` and `(1, 3)` you should compute something
+like `(1, 2) (2, 3) (3, 1)` or `(3, 2) (2, 1) (1, 3)` or `(1, 3) (3, 2) (2, 1)` etc, where the first and last numbers are the same.
 
-For stones 12, 41 and 23 the resulting chain is not valid: 41 12 23's first and last numbers are not the same. 4 != 3
+For stones `(1, 2)`, `(4, 1)` and `(2, 3)` the resulting chain is not valid: `(4, 1) (1, 2) (2, 3)`'s first and last numbers are not the same. 4 != 3
 
 Some test cases may use duplicate stones in a chain solution, assume that multiple Domino sets are being used.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 
