@@ -2,13 +2,16 @@ import unittest
 
 from pangram import is_pangram
 
-
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+# test cases adapted from `x-common//canonical-data.json` @ version: 1.3.0
 
 class PangramTests(unittest.TestCase):
+    
     def test_sentence_empty(self):
         self.assertIs(is_pangram(''), False)
 
+    def test_recognizes_a_perfect_lower_case_pangram(self):
+        self.assertIs(is_pangram('abcdefghijklmnopqrstuvwxyz'), True)
+        
     def test_pangram_with_only_lower_case(self):
         self.assertIs(
             is_pangram('the quick brown fox jumps over the lazy dog'),
@@ -20,11 +23,9 @@ class PangramTests(unittest.TestCase):
                        'jeopardize five gunboats'),
             False)
 
-    def test_another_missing_character_x(self):
-        self.assertIs(
-            is_pangram('the quick brown fish jumps over the lazy dog'),
-            False)
-
+    def test_another_missing_character(self):
+        self.assertIs(is_pangram('five boxing wizards jump quickly at it'), False)
+    
     def test_pangram_with_underscores(self):
         self.assertIs(
             is_pangram('the_quick_brown_fox_jumps_over_the_lazy_dog'),
@@ -42,14 +43,20 @@ class PangramTests(unittest.TestCase):
 
     def test_pangram_with_mixedcase_and_punctuation(self):
         self.assertIs(
-            is_pangram('"Five quacking Zephyrs jolt my wax bed."'),
+            is_pangram('\"Five quacking Zephyrs jolt my wax bed.\"'),
             True)
 
     def test_upper_and_lower_case_versions_of_the_same_character(self):
         self.assertIs(
-            is_pangram('the quick brown fox jumped over the lazy FOX'),
+            is_pangram('the quick brown fox jumped over the lazy FX'),
+            False)
+        
+    #Additional test for track
+    
+    def test_another_missing_character_x(self):
+        self.assertIs(
+            is_pangram('the quick brown fish jumps over the lazy dog'),
             False)
 
-
-if __name__ == '__main__':
+If __name__ == '__main__':
     unittest.main()
