@@ -55,7 +55,7 @@ class ComplexNumbersTest(unittest.TestCase):
         self.assertEqual(first_input.sub(second_input).real, 2)
         self.assertEqual(first_input.sub(second_input).imaginary, 0)
 
-    def test_substract_numbers_with_real_and_imaginary_part(self):
+    def test_subtract_numbers_with_real_and_imaginary_part(self):
         first_input = ComplexNumber(1, 2)
         second_input = ComplexNumber(-2, -2)
         self.assertEqual(first_input.sub(second_input).real, 3)

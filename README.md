@@ -19,10 +19,12 @@ A list of missing exercise can be found here: http://exercism.io/languages/pytho
 
 ### Conventions
 
-- We use minimalistic stub files for all exercises (#272).
+- We use minimalistic stub files for all exercises ([#272](https://github.com/exercism/python/issues/272)).
 - We use `unittest` (Python Standard Library) and no 3rd-party-framework.
-- We use the parameter order `self.assertEqual(actual, expected)` (#440).
-- We use context managers (`with self.assertRaises(\<exception type\>):`) for testing for exceptions (#477).
+- We use the parameter order `self.assertEqual(actual, expected)` ([#440](https://github.com/exercism/python/issues/440)).
+- We use context managers (`with self.assertRaises(\<exception type\>):`) for testing for exceptions ([#477](https://github.com/exercism/python/issues/477)).
+- We use `assertIs(actual, True)` and `assertIs(actual, False)` rather than `assertTrue(actual)` or `assertFalse(actual)` ([#419](https://github.com/exercism/python/pull/419)).
+- We use a comment string in the test file to reference the version of the exercise's `canonical-data.json` that tests were adapted from (wording can be found in: [#784](https://github.com/exercism/python/issues/784)).
 
 
 ### Testing
@@ -56,18 +58,18 @@ It will automatically check the code style, the problem configuration, and run t
 
 ## Pull Requests
 
-We :heart: pull requests! 
+We :heart: pull requests!
 We even :sparkling_heart: them if they contain well written commit messages!
 
 Please write the first line of your commit message in the following style:
 
-```exercise-name: Change some things``` 
+```exercise-name: Change some things```
 
 Please try to follow the [The seven rules of a great Git commit message](https://chris.beams.io/posts/git-commit/#seven-rules) like to capitalize the subject line and use the imperative mood. If there are more details to add, put those into the body of the commit message.
 
 If you're interested, Tim Pope even has an [entire blog post](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html) on good commit messages.
 
-If you're new to Git take a look at [this short guide](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/README.md#git-basics).
+If you're new to Git, take a look at [this short guide](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/README.md#git-basics).
 
 
 ## Python icon
