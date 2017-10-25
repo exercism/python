@@ -53,9 +53,7 @@ def grep(pattern, files, flags=None):
     # Default value
     if flags is None:
         flags = ''
-    
     matched_lines = []
-
     for file_name in files:
         with open(file_name) as f:
             for line_number, line in enumerate(f.readlines(), start=1):
