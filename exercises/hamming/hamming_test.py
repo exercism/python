@@ -6,10 +6,10 @@ import hamming
 # Tests adapted from `problem-specifications//canonical-data.json` @ v2.0.1
 
 class HammingTest(unittest.TestCase):
-    
-    def test_identical_strands(self):
+
+    def test_empty_strands(self):
         self.assertEqual(hamming.distance("", ""), 0)
-    
+
     def test_identical_strands(self):
         self.assertEqual(hamming.distance("A", "A"), 0)
 
