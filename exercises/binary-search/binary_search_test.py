@@ -2,6 +2,7 @@ import unittest
 
 from binary_search import binary_search
 
+
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
 class BinarySearchTests(unittest.TestCase):
