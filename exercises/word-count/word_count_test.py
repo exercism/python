@@ -55,19 +55,6 @@ class WordCountTests(unittest.TestCase):
             sorted(list(word_count('go Go GO Stop stop').values()))
         )
 
-    def test_apostrophes(self):
-        self.assertEqual(
-            {'first': 1, 'don\'t': 2, 'laugh': 1, 'then': 1, 'cry': 1},
-            word_count("First: don't laugh. Then: don't cry.")
-        )
-
-    def test_quotations(self):
-        self.assertEqual(
-            {'joe': 1, 'can\'t': 1, 'tell': 1, 'between': 1, 'large': 2,
-             'and': 1},
-            word_count("Joe can't tell between 'large' and large.")
-        )
-
     # Additional tests for this track
 
     def test_multiple_spaces(self):
