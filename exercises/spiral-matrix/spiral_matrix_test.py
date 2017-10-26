@@ -5,6 +5,7 @@ from spiral_matrix import spiral
 # Tests are based on the version 1.0.0 of:
 # https://github.com/exercism/problem-specifications/blob/master/exercises/spiral-matrix/canonical-data.json
 
+
 class SpiralMatrixTest(unittest.TestCase):
     def test_spiral_matrix_of_0(self):
         self.assertEqual(spiral(0), [])
