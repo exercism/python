@@ -6,14 +6,14 @@ import rotational_cipher
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class RotationalCipher(unittest.TestCase):
+    def test_rotate_a_by_0(self):
+        self.assertEqual(rotational_cipher.rotate('a', 0), 'a')
+
     def test_rotate_a_by_1(self):
         self.assertEqual(rotational_cipher.rotate('a', 1), 'b')
 
     def test_rotate_a_by_26(self):
         self.assertEqual(rotational_cipher.rotate('a', 26), 'a')
-
-    def test_rotate_a_by_0(self):
-        self.assertEqual(rotational_cipher.rotate('a', 0), 'a')
 
     def test_rotate_m_by_13(self):
         self.assertEqual(rotational_cipher.rotate('m', 13), 'z')
