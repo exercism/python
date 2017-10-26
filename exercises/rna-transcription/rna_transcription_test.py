@@ -11,7 +11,7 @@ class DNATests(unittest.TestCase):
         self.assertEqual(to_rna('C'), 'G')
 
     def test_transcribes_guanine_to_cytosine(self):
-        self.assertEqual(to_rna('G'), 'C')   
+        self.assertEqual(to_rna('G'), 'C')
 
     def test_transcribes_thymine_to_adenine(self):
         self.assertEqual(to_rna('T'), 'A')
