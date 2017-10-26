@@ -3,6 +3,8 @@ import unittest
 from word_count import word_count
 
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+
 class WordCountTests(unittest.TestCase):
 
     def test_count_one_word(self):
@@ -23,6 +25,18 @@ class WordCountTests(unittest.TestCase):
             word_count('one fish two fish red fish blue fish')
         )
 
+    def test_cramped_lists(self):
+        self.assertEqual(
+            {'one': 1, 'two': 1, 'three': 1},
+            word_count("one,two,three")
+        )
+
+    def test_expanded_lists(self):
+        self.assertEqual(
+            {'one': 1, 'two': 1, 'three': 1},
+            word_count("one,\ntwo,\nthree")
+        )
+
     def test_ignores_punctuation(self):
         self.assertEqual(
             {'car': 1, 'carpet': 1, 'as': 1, 'java': 1, 'javascript': 1},
@@ -40,6 +54,21 @@ class WordCountTests(unittest.TestCase):
             [2, 3],
             sorted(list(word_count('go Go GO Stop stop').values()))
         )
+
+    def test_apostrophes(self):
+        self.assertEqual(
+            {'first': 1, 'don\'t': 2, 'laugh': 1, 'then': 1, 'cry': 1},
+            word_count("First: don't laugh. Then: don't cry.")
+        )
+
+    def test_quotations(self):
+        self.assertEqual(
+            {'joe': 1, 'can\'t': 1, 'tell': 1, 'between': 1, 'large': 2,
+             'and': 1},
+            word_count("Joe can't tell between 'large' and large.")
+        )
+
+    # Additional tests for this track
 
     def test_multiple_spaces(self):
         self.assertEqual(
