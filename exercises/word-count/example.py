@@ -1,8 +1,10 @@
+import re
+
 from collections import Counter
 
 
+WORDS = re.compile("[a-zA-Z0-9]+(['][a-z]+)?")
+
+
 def word_count(text):
-    def replace_nonalpha(char):
-        return char.lower() if char.isalnum() else ' '
-    text = ''.join(replace_nonalpha(c) for c in text)
-    return Counter(text.split())
+    return Counter(word.group(0).lower() for word in WORDS.finditer(text))
