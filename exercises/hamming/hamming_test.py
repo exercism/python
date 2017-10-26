@@ -46,9 +46,6 @@ class HammingTest(unittest.TestCase):
     def test_large_distance_in_off_by_one_strand(self):
         self.assertEqual(hamming.distance("GGACGGATTCTG", "AGGACGGATTCT"), 9)
 
-    def test_empty_strands(self):
-        self.assertEqual(hamming.distance("", ""), 0)
-
     def test_disallow_first_strand_longer(self):
         with self.assertRaises(ValueError):
             hamming.distance("AATG", "AAA")
