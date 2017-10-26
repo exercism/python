@@ -32,10 +32,10 @@ class HammingTest(unittest.TestCase):
         self.assertEqual(hamming.distance("ACCAGGG", "ACTATGG"), 2)
 
     def test_non_unique_character_in_first_strand(self):
-        self.assertEqual(hamming.distance("AGA", "AGG"), 1)
+        self.assertEqual(hamming.distance("AAG", "AAA"), 1)
 
     def test_non_unique_character_in_second_strand(self):
-        self.assertEqual(hamming.distance("AGG", "AGA"), 1)
+        self.assertEqual(hamming.distance("AAA", "AAG"), 1)
 
     def test_same_nucleotides_in_different_positions(self):
         self.assertEqual(hamming.distance("TAG", "GAT"), 2)
