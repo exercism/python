@@ -19,6 +19,36 @@
       "link_text": null,
       "link_url": null,
       "avatar_url": null
+    },
+    {
+      "github_username": "N-Parsons",
+      "show_on_website": true,
+      "alumnus": false,
+      "name": "Nathan Parsons",
+      "bio": "Python fits with how I think and allows me to quickly write powerful, maintainable, and extensible code.",
+      "link_text": null,
+      "link_url": null,
+      "avatar_url": null
+    },
+    {
+      "github_username": "m-a-ge",
+      "show_on_website": false,
+      "alumnus": false,
+      "name": null,
+      "bio": null,
+      "link_text": null,
+      "link_url": null,
+      "avatar_url": null
+    },
+    {
+      "github_username": "cmccandless",
+      "show_on_website": false,
+      "alumnus": false,
+      "name": null,
+      "bio": null,
+      "link_text": null,
+      "link_url": null,
+      "avatar_url": null
     }
   ],
   "docs_url": "https://github.com/exercism/docs/blob/master/maintaining-a-track/maintainer-configuration.md"
