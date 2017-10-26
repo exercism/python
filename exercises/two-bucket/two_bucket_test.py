@@ -5,8 +5,8 @@ exercism/problem-specifications/exercises/two-bucket/canonical-data.json
 
 import unittest
 
-
 from two_bucket import two_bucket
+
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
