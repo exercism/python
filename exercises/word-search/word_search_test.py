@@ -137,28 +137,8 @@ class WordSearchTests(unittest.TestCase):
             self.example.search('ecmascript'),
             (Point(9, 0), Point(9, 9))
         )
-        self.assertEqual(
-            self.example.search('clojure'),
-            (Point(0, 9), Point(6, 9))
-        )
-        self.assertEqual(
-            self.example.search('elixir'),
-            (Point(5, 4), Point(0, 4))
-        )
 
     def test_vertical_words_bottom_to_top(self):
-        self.assertEqual(
-            self.example.search('ecmascript'),
-            (Point(9, 0), Point(9, 9))
-        )
-        self.assertEqual(
-            self.example.search('clojure'),
-            (Point(0, 9), Point(6, 9))
-        )
-        self.assertEqual(
-            self.example.search('elixir'),
-            (Point(5, 4), Point(0, 4))
-        )
         self.assertEqual(
             self.example.search('rust'),
             (Point(8, 4), Point(8, 1))
@@ -166,47 +146,11 @@ class WordSearchTests(unittest.TestCase):
 
     def test_diagonal_words_top_left_to_bottom_right(self):
         self.assertEqual(
-            self.example.search('ecmascript'),
-            (Point(9, 0), Point(9, 9))
-        )
-        self.assertEqual(
-            self.example.search('clojure'),
-            (Point(0, 9), Point(6, 9))
-        )
-        self.assertEqual(
-            self.example.search('elixir'),
-            (Point(5, 4), Point(0, 4))
-        )
-        self.assertEqual(
-            self.example.search('rust'),
-            (Point(8, 4), Point(8, 1))
-        )
-        self.assertEqual(
             self.example.search('java'),
             (Point(0, 0), Point(3, 3))
         )
 
     def test_diagonal_upper_bottom_right_to_top_left(self):
-        self.assertEqual(
-            self.example.search('ecmascript'),
-            (Point(9, 0), Point(9, 9))
-        )
-        self.assertEqual(
-            self.example.search('clojure'),
-            (Point(0, 9), Point(6, 9))
-        )
-        self.assertEqual(
-            self.example.search('elixir'),
-            (Point(5, 4), Point(0, 4))
-        )
-        self.assertEqual(
-            self.example.search('rust'),
-            (Point(8, 4), Point(8, 1))
-        )
-        self.assertEqual(
-            self.example.search('java'),
-            (Point(0, 0), Point(3, 3))
-        )
         self.assertEqual(
             self.example.search('lua'),
             (Point(7, 8), Point(5, 6))
@@ -214,101 +158,17 @@ class WordSearchTests(unittest.TestCase):
 
     def test_diagonal_upper_bottom_left_to_top_right(self):
         self.assertEqual(
-            self.example.search('ecmascript'),
-            (Point(9, 0), Point(9, 9))
-        )
-        self.assertEqual(
-            self.example.search('clojure'),
-            (Point(0, 9), Point(6, 9))
-        )
-        self.assertEqual(
-            self.example.search('elixir'),
-            (Point(5, 4), Point(0, 4))
-        )
-        self.assertEqual(
-            self.example.search('rust'),
-            (Point(8, 4), Point(8, 1))
-        )
-        self.assertEqual(
-            self.example.search('java'),
-            (Point(0, 0), Point(3, 3))
-        )
-        self.assertEqual(
-            self.example.search('lua'),
-            (Point(7, 8), Point(5, 6))
-        )
-        self.assertEqual(
             self.example.search('lisp'),
             (Point(2, 5), Point(5, 2))
         )
 
     def test_diagonal_upper_top_right_to_bottom_left(self):
         self.assertEqual(
-            self.example.search('ecmascript'),
-            (Point(9, 0), Point(9, 9))
-        )
-        self.assertEqual(
-            self.example.search('clojure'),
-            (Point(0, 9), Point(6, 9))
-        )
-        self.assertEqual(
-            self.example.search('elixir'),
-            (Point(5, 4), Point(0, 4))
-        )
-        self.assertEqual(
-            self.example.search('rust'),
-            (Point(8, 4), Point(8, 1))
-        )
-        self.assertEqual(
-            self.example.search('java'),
-            (Point(0, 0), Point(3, 3))
-        )
-        self.assertEqual(
-            self.example.search('lua'),
-            (Point(7, 8), Point(5, 6))
-        )
-        self.assertEqual(
-            self.example.search('lisp'),
-            (Point(2, 5), Point(5, 2))
-        )
-        self.assertEqual(
             self.example.search('ruby'),
             (Point(7, 5), Point(4, 8))
         )
 
     def test_words_that_are_not_in_the_puzzle(self):
-        self.assertEqual(
-            self.example.search('ecmascript'),
-            (Point(9, 0), Point(9, 9))
-        )
-        self.assertEqual(
-            self.example.search('clojure'),
-            (Point(0, 9), Point(6, 9))
-        )
-        self.assertEqual(
-            self.example.search('elixir'),
-            (Point(5, 4), Point(0, 4))
-        )
-        self.assertEqual(
-            self.example.search('rust'),
-            (Point(8, 4), Point(8, 1))
-        )
-        self.assertEqual(
-            self.example.search('java'),
-            (Point(0, 0), Point(3, 3))
-        )
-        self.assertEqual(
-            self.example.search('lua'),
-            (Point(7, 8), Point(5, 6))
-        )
-        self.assertEqual(
-            self.example.search('lisp'),
-            (Point(2, 5), Point(5, 2))
-        )
-        self.assertEqual(
-            self.example.search('ruby'),
-            (Point(7, 5), Point(4, 8))
-        )
         self.assertIsNone(self.example.search('haskell'))
 
 
