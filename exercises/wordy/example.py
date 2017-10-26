@@ -14,19 +14,19 @@ VALID_OPERATIONS = {"plus": add, "minus": sub,
 def calculate(stmt):
     if not (stmt.startswith("What is ") and stmt.endswith("?")):
         raise ValueError("Ill-formed question")
-    l = stmt[8:-1].strip().lower().split()
-    if not l:
+    words = stmt[8:-1].strip().lower().split()
+    if not words:
         raise ValueError("Ill-formed question")
-    l.reverse()
+    words.reverse()
     try:
-        op1 = int(l.pop())
+        op1 = int(words.pop())
     except ValueError:
         raise ValueError("Ill-formed question")
-    while l:
-        oprt = [l.pop()]
-        while l:
+    while words:
+        oprt = [words.pop()]
+        while words:
             try:
-                next_tk = l.pop()
+                next_tk = words.pop()
                 op2 = int(next_tk)
                 break
             except ValueError:
