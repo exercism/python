@@ -42,9 +42,18 @@ def format_lines(matched_lines, files, flags):
     return ''.join(result)
 
 
-def grep(pattern, files, flags=''):
+def grep(pattern, files, flags=None):
+    """
+    Linux-like grep command.
+    :param pattern: [STRING]. Match pattern.
+    :param files: [LIST].
+    :param flags: [STRING]. Additional attributes.
+    :return: [STRING].
+    """
+    # Default value
+    if flags is None:
+        flags = ''
     matched_lines = []
-
     for file_name in files:
         with open(file_name) as f:
             for line_number, line in enumerate(f.readlines(), start=1):
