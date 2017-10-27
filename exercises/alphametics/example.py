@@ -32,8 +32,11 @@ def solve(an):
             for otest in permutations(dset - set(digtest), olen):
                 if any(map(lambda x: x == "0", otest[:leadotherlen])):
                     continue
-                alldict = dict(zip(combostg, "".join(digtest + otest)))
-                fulleval = [[int("".join([alldict[c] for c in w])) for w in s] for s in fullexp]
+                b = an
+                for c, v in zip(combostg, "".join(digtest + otest)):
+                    b = b.replace(c, v)
+                fulleval = [[int(w.strip())
+                             for w in s.split("+")] for s in b.split("==")]
                 if sum(fulleval[0]) == sum(fulleval[1]):
                     return dict(zip(combostg, map(int, digtest + otest)))
     return {}
