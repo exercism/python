@@ -6,6 +6,7 @@ from complex_numbers import ComplexNumber
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
+
 class ComplexNumbersTest(unittest.TestCase):
 
     def test_add_purely_real_numbers(self):
