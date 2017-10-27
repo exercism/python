@@ -11,8 +11,140 @@ import unittest
 from minesweeper import board
 
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+
 class MinesweeperTest(unittest.TestCase):
-    def test_board1(self):
+    # Tests in canonical data incompatible with board class
+    def test_no_rows(self):
+        with self.assertRaises(ValueError):
+            board([])
+
+    def test_no_columns(self):
+        with self.assertRaises(ValueError):
+            board([""])
+
+    def test_no_mines(self):
+        inp = ["+---+",
+               "|   |",
+               "|   |",
+               "|   |",
+               "+---+"]
+        out = ["+---+",
+               "|   |",
+               "|   |",
+               "|   |",
+               "+---+"]
+        self.assertEqual(board(inp), out)
+
+    def test_board_with_only_mines(self):
+        inp = ["+---+",
+               "|***|",
+               "|***|",
+               "|***|",
+               "+---+"]
+        out = ["+---+",
+               "|***|",
+               "|***|",
+               "|***|",
+               "+---+"]
+        self.assertEqual(board(inp), out)
+
+    def test_mine_surrounded_by_spaces(self):
+        inp = ["+---+",
+               "|   |",
+               "| * |",
+               "|   |",
+               "+---+"]
+        out = ["+---+",
+               "|111|",
+               "|1*1|",
+               "|111|",
+               "+---+"]
+        self.assertEqual(board(inp), out)
+
+    def test_space_surrounded_by_mines(self):
+        inp = ["+---+",
+               "|***|",
+               "|* *|",
+               "|***|",
+               "+---+"]
+        out = ["+---+",
+               "|***|",
+               "|*8*|",
+               "|***|",
+               "+---+"]
+        self.assertEqual(board(inp), out)
+
+    def test_horizontal_line(self):
+        inp = ["+-----+",
+               "| * * |",
+               "+-----+"]
+        out = ["+-----+",
+               "|1*2*1|",
+               "+-----+"]
+        self.assertEqual(board(inp), out)
+
+    def test_horizontal_line_mines_at_edges(self):
+        inp = ["+-----+",
+               "|*   *|",
+               "+-----+"]
+        out = ["+-----+",
+               "|*1 1*|",
+               "+-----+"]
+        self.assertEqual(board(inp), out)
+
+    def test_vertical_line(self):
+        inp = ["+-+",
+               "| |",
+               "|*|",
+               "| |",
+               "|*|",
+               "| |",
+               "+-+"]
+        out = ["+-+",
+               "|1|",
+               "|*|",
+               "|2|",
+               "|*|",
+               "|1|",
+               "+-+"]
+        self.assertEqual(board(inp), out)
+
+    def test_vertical_line_mines_at_edges(self):
+        inp = ["+-+",
+               "|*|",
+               "| |",
+               "| |",
+               "| |",
+               "|*|",
+               "+-+"]
+        out = ["+-+",
+               "|*|",
+               "|1|",
+               "| |",
+               "|1|",
+               "|*|",
+               "+-+"]
+        self.assertEqual(board(inp), out)
+
+    def test_cross(self):
+        inp = ["+-----+",
+               "|  *  |",
+               "|  *  |",
+               "|*****|",
+               "|  *  |",
+               "|  *  |",
+               "+-----+"]
+        out = ["+-----+",
+               "| 2*2 |",
+               "|25*52|",
+               "|*****|",
+               "|25*52|",
+               "| 2*2 |",
+               "+-----+"]
+        self.assertEqual(board(inp), out)
+
+    def test_large_board(self):
         inp = ["+------+",
                "| *  * |",
                "|  *   |",
@@ -31,93 +163,7 @@ class MinesweeperTest(unittest.TestCase):
                "+------+"]
         self.assertEqual(board(inp), out)
 
-    def test_board2(self):
-        inp = ["+-----+",
-               "| * * |",
-               "|     |",
-               "|   * |",
-               "|  * *|",
-               "| * * |",
-               "+-----+"]
-        out = ["+-----+",
-               "|1*2*1|",
-               "|11322|",
-               "| 12*2|",
-               "|12*4*|",
-               "|1*3*2|",
-               "+-----+"]
-        self.assertEqual(board(inp), out)
-
-    def test_board3(self):
-        inp = ["+-----+",
-               "| * * |",
-               "+-----+"]
-        out = ["+-----+",
-               "|1*2*1|",
-               "+-----+"]
-        self.assertEqual(board(inp), out)
-
-    def test_board4(self):
-        inp = ["+-+",
-               "|*|",
-               "| |",
-               "|*|",
-               "| |",
-               "| |",
-               "+-+"]
-        out = ["+-+",
-               "|*|",
-               "|2|",
-               "|*|",
-               "|1|",
-               "| |",
-               "+-+"]
-        self.assertEqual(board(inp), out)
-
-    def test_board5(self):
-        inp = ["+-+",
-               "|*|",
-               "+-+"]
-        out = ["+-+",
-               "|*|",
-               "+-+"]
-        self.assertEqual(board(inp), out)
-
-    def test_board6(self):
-        inp = ["+--+",
-               "|**|",
-               "|**|",
-               "+--+"]
-        out = ["+--+",
-               "|**|",
-               "|**|",
-               "+--+"]
-        self.assertEqual(board(inp), out)
-
-    def test_board7(self):
-        inp = ["+--+",
-               "|**|",
-               "|**|",
-               "+--+"]
-        out = ["+--+",
-               "|**|",
-               "|**|",
-               "+--+"]
-        self.assertEqual(board(inp), out)
-
-    def test_board8(self):
-        inp = ["+---+",
-               "|***|",
-               "|* *|",
-               "|***|",
-               "+---+"]
-        out = ["+---+",
-               "|***|",
-               "|*8*|",
-               "|***|",
-               "+---+"]
-        self.assertEqual(board(inp), out)
-
+    # Additional test for this track
     def test_board9(self):
         inp = ["+-----+",
                "|     |",
