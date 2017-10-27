@@ -27,28 +27,28 @@ class QueenAttackTest(unittest.TestCase):
         self.assertEqual(board((0, 6), (1, 7)), ans)
 
     def test_attack_true1(self):
-        self.assertTrue(can_attack((2, 3), (5, 6)))
+        self.assertIs(can_attack((2, 3), (5, 6)), True)
 
     def test_attack_true2(self):
-        self.assertTrue(can_attack((2, 6), (5, 3)))
+        self.assertIs(can_attack((2, 6), (5, 3)), True)
 
     def test_attack_true3(self):
-        self.assertTrue(can_attack((2, 4), (2, 7)))
+        self.assertIs(can_attack((2, 4), (2, 7)), True)
 
     def test_attack_true4(self):
-        self.assertTrue(can_attack((5, 4), (2, 4)))
+        self.assertIs(can_attack((5, 4), (2, 4)), True)
 
     def test_attack_true5(self):
-        self.assertTrue(can_attack((1, 1), (6, 6)))
+        self.assertIs(can_attack((1, 1), (6, 6)), True)
 
     def test_attack_true6(self):
-        self.assertTrue(can_attack((0, 6), (1, 7)))
+        self.assertIs(can_attack((0, 6), (1, 7)), True)
 
     def test_attack_false1(self):
-        self.assertFalse(can_attack((4, 2), (0, 5)))
+        self.assertIs(can_attack((4, 2), (0, 5)), False)
 
     def test_attack_false2(self):
-        self.assertFalse(can_attack((2, 3), (4, 7)))
+        self.assertIs(can_attack((2, 3), (4, 7)), False)
 
     # If either board or can_attack are called with an invalid board position
     # they should raise a ValueError with a meaningful error message.

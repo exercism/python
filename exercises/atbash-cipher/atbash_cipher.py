@@ -1,6 +1,6 @@
-def encode(string):
+def encode(plain_text):
     pass
 
 
-def decode(string):
+def decode(ciphered_text):
     pass

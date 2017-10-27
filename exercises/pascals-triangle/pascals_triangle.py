@@ -1,10 +1,10 @@
-def triangle():
+def triangle(row_count):
     pass
 
 
-def is_triangle():
+def is_triangle(triangle_rows_list):
     pass
 
 
-def row():
+def row(row_count):
     pass
