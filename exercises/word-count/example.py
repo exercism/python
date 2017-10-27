@@ -3,8 +3,8 @@ import re
 from collections import Counter
 
 
-WORDS = re.compile("[a-zA-Z0-9]+(['][a-z]+)?")
+WORDS = re.compile("[a-z0-9]+(['][a-z]+)?")
 
 
 def word_count(text):
-    return Counter(word.group(0).lower() for word in WORDS.finditer(text))
+    return Counter(word.group(0) for word in WORDS.finditer(text.lower()))
