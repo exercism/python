@@ -3,6 +3,8 @@ import unittest
 from robot_simulator import Robot, NORTH, EAST, SOUTH, WEST
 
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.0.0
+
 class RobotTests(unittest.TestCase):
     def test_init(self):
         robot = Robot()
@@ -32,19 +34,19 @@ class RobotTests(unittest.TestCase):
         self.assertEqual(robot.coordinates, (0, 1))
         self.assertEqual(robot.bearing, NORTH)
 
-    def test_advance_positive_east(self):
-        robot = Robot(EAST, 0, 0)
-        robot.advance()
-        self.assertEqual(robot.coordinates, (1, 0))
-        self.assertEqual(robot.bearing, EAST)
-
     def test_advance_negative_south(self):
         robot = Robot(SOUTH, 0, 0)
         robot.advance()
         self.assertEqual(robot.coordinates, (0, -1))
         self.assertEqual(robot.bearing, SOUTH)
 
-    def test_advance_positive_west(self):
+    def test_advance_positive_east(self):
+        robot = Robot(EAST, 0, 0)
+        robot.advance()
+        self.assertEqual(robot.coordinates, (1, 0))
+        self.assertEqual(robot.bearing, EAST)
+
+    def test_advance_negative_west(self):
         robot = Robot(WEST, 0, 0)
         robot.advance()
         self.assertEqual(robot.coordinates, (-1, 0))
