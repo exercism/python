@@ -49,8 +49,8 @@ class WordCountTests(unittest.TestCase):
 
     def test_mixed_case(self):
         self.assertEqual(
-            sorted(list(word_count('go Go GO Stop stop').values())),
-            [2, 3]
+            word_count('go Go GO Stop stop'),
+            {'go': 3, 'stop': 2}
         )
 
     def test_apostrophes(self):
