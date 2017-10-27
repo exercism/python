@@ -39,7 +39,7 @@ The implementations of `Node` and `Edge` provided in `dot_dsl.py`.
 
 Observe the test cases in `dot_dsl_test.py` to understand the DSL's design.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 
