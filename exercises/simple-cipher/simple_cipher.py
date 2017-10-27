@@ -1,5 +1,5 @@
 class Cipher(object):
-    def __init__(self, key):
+    def __init__(self, key=None):
         pass
 
     def encode(self, text):
