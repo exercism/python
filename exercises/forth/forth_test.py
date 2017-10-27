@@ -8,6 +8,11 @@ from forth import evaluate, StackUnderflowError
 
 class ForthParsingTest(unittest.TestCase):
     def test_empty_input_empty_stack(self):
+        input_data = []
+        expected = []
+        self.assertEqual(evaluate(input_data), expected)
+
+    def test_empty_line_empty_stack(self):
         input_data = [""]
         expected = []
         self.assertEqual(evaluate(input_data), expected)
