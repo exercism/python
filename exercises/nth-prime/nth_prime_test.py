@@ -3,7 +3,7 @@ import unittest
 from nth_prime import nth_prime
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
 class NthPrimeTests(unittest.TestCase):
     def test_first_prime(self):

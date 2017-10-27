@@ -2,6 +2,8 @@ import unittest
 
 from clock import Clock
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
+
 
 class ClockTest(unittest.TestCase):
     # Test creating a new clock with an initial time.
@@ -64,52 +66,52 @@ class ClockTest(unittest.TestCase):
 
     # Test adding and subtracting minutes.
     def test_add_minutes(self):
-        self.assertEqual(str(Clock(10, 0).add(3)), '10:03')
+        self.assertEqual(str(Clock(10, 0) + 3), '10:03')
 
     def test_add_no_minutes(self):
-        self.assertEqual(str(Clock(6, 41).add(0)), '06:41')
+        self.assertEqual(str(Clock(6, 41) + 0), '06:41')
 
     def test_add_to_next_hour(self):
-        self.assertEqual(str(Clock(0, 45).add(40)), '01:25')
+        self.assertEqual(str(Clock(0, 45) + 40), '01:25')
 
     def test_add_more_than_one_hour(self):
-        self.assertEqual(str(Clock(10, 0).add(61)), '11:01')
+        self.assertEqual(str(Clock(10, 0) + 61), '11:01')
 
     def test_add_more_than_two_hours_with_carry(self):
-        self.assertEqual(str(Clock(0, 45).add(160)), '03:25')
+        self.assertEqual(str(Clock(0, 45) + 160), '03:25')
 
     def test_add_across_midnight(self):
-        self.assertEqual(str(Clock(23, 59).add(2)), '00:01')
+        self.assertEqual(str(Clock(23, 59) + 2), '00:01')
 
     def test_add_more_than_one_day(self):
-        self.assertEqual(str(Clock(5, 32).add(1500)), '06:32')
+        self.assertEqual(str(Clock(5, 32) + 1500), '06:32')
 
     def test_add_more_than_two_days(self):
-        self.assertEqual(str(Clock(1, 1).add(3500)), '11:21')
+        self.assertEqual(str(Clock(1, 1) + 3500), '11:21')
 
     def test_subtract_minutes(self):
-        self.assertEqual(str(Clock(10, 3).add(-3)), '10:00')
+        self.assertEqual(str(Clock(10, 3) + -3), '10:00')
 
     def test_subtract_to_previous_hour(self):
-        self.assertEqual(str(Clock(10, 3).add(-3)), '10:00')
+        self.assertEqual(str(Clock(10, 3) + -3), '10:00')
 
     def test_subtract_more_than_an_hour(self):
-        self.assertEqual(str(Clock(10, 3).add(-30)), '09:33')
+        self.assertEqual(str(Clock(10, 3) + -30), '09:33')
 
     def test_subtract_across_midnight(self):
-        self.assertEqual(str(Clock(10, 3).add(-70)), '08:53')
+        self.assertEqual(str(Clock(10, 3) + -70), '08:53')
 
     def test_subtract_more_than_two_hours(self):
-        self.assertEqual(str(Clock(0, 0).add(-160)), '21:20')
+        self.assertEqual(str(Clock(0, 0) + -160), '21:20')
 
     def test_subtract_more_than_two_hours_with_borrow(self):
-        self.assertEqual(str(Clock(6, 15).add(-160)), '03:35')
+        self.assertEqual(str(Clock(6, 15) + -160), '03:35')
 
     def test_subtract_more_than_one_day(self):
-        self.assertEqual(str(Clock(5, 32).add(-1500)), '04:32')
+        self.assertEqual(str(Clock(5, 32) + -1500), '04:32')
 
     def test_subtract_more_than_two_days(self):
-        self.assertEqual(str(Clock(2, 20).add(-3000)), '00:20')
+        self.assertEqual(str(Clock(2, 20) + -3000), '00:20')
 
     # Construct two separate clocks, set times, test if they are equal.
     def test_clocks_with_same_time(self):

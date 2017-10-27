@@ -3,7 +3,7 @@ import unittest
 from anagram import detect_anagrams
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.1
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
 
 class AnagramTests(unittest.TestCase):
     def test_no_matches(self):
