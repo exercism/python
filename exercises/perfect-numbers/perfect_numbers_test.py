@@ -69,14 +69,14 @@ class DeficientNumbersTest(unittest.TestCase):
 
 class InvalidInputsTest(unittest.TestCase):
     def test_zero(self):
-        with self.assertRaisesRegex(
+        with self.assertRaisesRegexp(
                 ValueError,
                 ("Classification is only possible"
                  " for positive whole numbers.")):
             classify(0)
 
     def test_negative(self):
-        with self.assertRaisesRegex(
+        with self.assertRaisesRegexp(
                 ValueError,
                 ("Classification is only possible"
                  " for positive whole numbers.")):
