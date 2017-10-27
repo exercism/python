@@ -2,6 +2,8 @@ import unittest
 
 from clock import Clock
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
+
 
 class ClockTest(unittest.TestCase):
     # Test creating a new clock with an initial time.

@@ -772,6 +772,20 @@
       ]
     },
     {
+      "uuid": "6aacc273-0a33-8180-679e-c12c440c0fcf89e1fb6",
+      "slug": "tree-building",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+          "refactoring",
+          "sorting",
+          "trees",
+          "records",
+          "maps"
+      ]
+    },
+    {
       "uuid": "dcc0ee26-e384-4bd4-8c4b-613fa0bb8188",
       "slug": "poker",
       "core": false,
