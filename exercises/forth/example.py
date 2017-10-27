@@ -12,7 +12,7 @@ def is_integer(string):
 
 def evaluate(input_data):
     defines = {}
-    while input_data[0][0] == ':':
+    while input_data[0][:1] == ':':
         values = input_data.pop(0).split()
         values.pop()
         values.pop(0)
