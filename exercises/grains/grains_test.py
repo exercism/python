@@ -5,8 +5,8 @@ from grains import (
     total_after,
 )
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
 class GrainsTest(unittest.TestCase):
     def test_square_1(self):
