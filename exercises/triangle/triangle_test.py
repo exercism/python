@@ -3,7 +3,8 @@ import unittest
 from triangle import Triangle, TriangleError
 
 
-# Tests adapted from `problem-specifications/exercises/triangle/canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications/exercises/\
+# triangle/canonical-data.json` @ v1.0.0
 
 class TriangleTests(unittest.TestCase):
     def test_equilateral_triangles(self):
@@ -32,11 +33,11 @@ class TriangleTests(unittest.TestCase):
     # Additional tests for this track
 
     def test_illegal_triangles(self):
-        self.assertEqual(Triangle(0, 0, 0).kind(), "error")
-        self.assertEqual(Triangle(3, 4, -5).kind(), "error")
-        self.assertEqual(Triangle(1, 1, 3).kind(), "error")
-        self.assertEqual(Triangle(2, 4, 2).kind(), "error")
-        self.assertEqual(Triangle(7, 3, 2).kind(), "error")
+        self.assertRaise(TriangleError, Triangle(0, 0, 0).kind())
+        self.assertRaise(TriangleError, Triangle(3, 4, -5).kind())
+        self.assertRaise(TriangleError, Triangle(1, 1, 3).kind())
+        self.assertRaise(TriangleError, Triangle(2, 4, 2).kind())
+        self.assertRaise(TriangleError, Triangle(7, 3, 2).kind())
 
     def test_larger_equilateral_triangles_also_have_equal_sides(self):
         self.assertEqual(Triangle(10, 10, 10).kind(), "equilateral")
