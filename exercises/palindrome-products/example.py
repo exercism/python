@@ -8,7 +8,7 @@ def smallest_palindrome(max_factor, min_factor):
 
 def palindromes(max_factor, min_factor):
     if max_factor < min_factor:
-        raise ValueError("invalid input: min is {min_factor}"
+        raise ValueError("invalid input: min is {min_factor} "
                          "and max is {max_factor}"
                          .format(min_factor=min_factor,
                                  max_factor=max_factor))
