@@ -3,6 +3,8 @@ import unittest
 from binary_search import binary_search
 
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+
 class BinarySearchTests(unittest.TestCase):
     def test_finds_value_in_array_with_one_element(self):
         self.assertEqual(binary_search([6], 6), 0)
@@ -27,17 +29,20 @@ class BinarySearchTests(unittest.TestCase):
             5)
 
     def test_identifies_value_missing(self):
-        self.assertRaises(ValueError, binary_search, [1, 3, 4, 6, 8, 9, 11], 7)
+        with self.assertRaises(ValueError):
+            binary_search([1, 3, 4, 6, 8, 9, 11], 7)
 
     def test_value_smaller_than_arrays_minimum(self):
-        self.assertRaises(ValueError, binary_search, [1, 3, 4, 6, 8, 9, 11], 0)
+        with self.assertRaises(ValueError):
+            binary_search([1, 3, 4, 6, 8, 9, 11], 0)
 
     def test_value_larger_than_arrays_maximum(self):
-        self.assertRaises(ValueError, binary_search, [1, 3, 4, 6, 8, 9, 11],
-                          13)
+        with self.assertRaises(ValueError):
+            binary_search([1, 3, 4, 6, 8, 9, 11], 13)
 
     def test_empty_array(self):
-        self.assertRaises(ValueError, binary_search, [], 1)
+        with self.assertRaises(ValueError):
+            binary_search([], 1)
 
 
 if __name__ == '__main__':

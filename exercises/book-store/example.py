@@ -5,7 +5,7 @@ def _group_price(size):
     discounts = [0, .05, .1, .2, .25]
     if not (0 < size <= 5):
         raise ValueError('size must be in 1..' + len(discounts))
-    return 8 * size * (1 - discounts[size - 1])
+    return BOOK_PRICE * size * (1 - discounts[size - 1])
 
 
 def calculate_total(books, price_so_far=0.):
