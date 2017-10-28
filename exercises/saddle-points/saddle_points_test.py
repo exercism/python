@@ -11,6 +11,7 @@ from saddle_points import saddle_points
 
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+
 class SaddlePointTest(unittest.TestCase):
     def test_one_saddle(self):
         inp = [[9, 8, 7], [5, 3, 2], [6, 6, 7]]
