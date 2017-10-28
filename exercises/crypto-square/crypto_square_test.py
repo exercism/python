@@ -4,6 +4,7 @@ from crypto_square import encode
 
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v3.1.0
+
 class CryptoSquareTest(unittest.TestCase):
     def test_empty_string(self):
         self.assertEqual(encode(''), '')
@@ -29,25 +30,6 @@ class CryptoSquareTest(unittest.TestCase):
                    'god would have given us roots.'),
             'imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau '
         )
-
-    # Additional tests for this track
-
-    def test_perfect_square(self):
-        self.assertEqual(encode('ABCD'), 'ac bd')
-
-    def test_small_imperfect_square(self):
-        self.assertEqual(encode('This is easy!'), 'tis hsy ie sa')
-
-    def test_punctuation_and_numbers(self):
-        msg = '1, 2, 3, Go! Go, for God\'s sake!'
-        ciph = '1gga 2ook 3fde gos ors'
-        self.assertEqual(ciph, encode(msg))
-
-    def test_long_string(self):
-        msg = ('If man was meant to stay on the ground, god would have given '
-               'us roots.')
-        ciph = 'imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn sseoau'
-        self.assertEqual(encode(msg), ciph)
 
 
 if __name__ == '__main__':
