@@ -4,6 +4,7 @@ from flatten_array import flatten
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
+
 class FlattenArrayTests(unittest.TestCase):
 
     def test_no_nesting(self):
