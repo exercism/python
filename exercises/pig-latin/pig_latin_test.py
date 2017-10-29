@@ -64,15 +64,13 @@ class PigLatinTests(unittest.TestCase):
         self.assertEqual(translate("yellow"), "ellowyay")
 
     def test_y_after_initial_consonant_cluster(self):
-        self.assertEqual(translate("rhythm"),"ythmrhay")
+        self.assertEqual(translate("rhythm"), "ythmrhay")
 
     def test_y_as_second_letter_in_two_letter_word(self):
-        self.assertEqual(translate("my"),"ymay")
+        self.assertEqual(translate("my"), "ymay")
 
     def test_a_whole_phrase(self):
         self.assertEqual(translate("quick fast run"), "ickquay astfay unray")
-
-
 
 
 if __name__ == '__main__':
