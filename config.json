@@ -1128,22 +1128,7 @@
       "difficulty": 3,
       "topics": [
         "type_conversion",
-        "exception_handling"
-        "strings",
-        "arrays",
-        "integers",
-        "parsing"
-      ]
-    },
-    {
-      "uuid": "7961c852-c87a-44b0-b152-efea3ac8555c",
-      "slug": "isbn-verifier",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 3,
-      "topics": [
-        "type_conversion",
-        "conditionals",
+        "exception_handling",
         "strings",
         "arrays",
         "integers",
