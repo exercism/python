@@ -33,11 +33,12 @@ class TriangleTests(unittest.TestCase):
     # Additional tests for this track
 
     def test_illegal_triangles(self):
-        self.assertRaises(TriangleError, Triangle(0, 0, 0).kind())
-        self.assertRaises(TriangleError, Triangle(3, 4, -5).kind())
-        self.assertRaises(TriangleError, Triangle(1, 1, 3).kind())
-        self.assertRaises(TriangleError, Triangle(2, 4, 2).kind())
-        self.assertRaises(TriangleError, Triangle(7, 3, 2).kind())
+        with self.assertRaises(TriangleError):
+            Triangle(0, 0, 0).kind()
+            Triangle(3, 4, -5).kind()
+            Triangle(1, 1, 3).kind()
+            Triangle(2, 4, 2).kind()
+            Triangle(7, 3, 2).kind()
 
     def test_larger_equilateral_triangles_also_have_equal_sides(self):
         self.assertEqual(Triangle(10, 10, 10).kind(), "equilateral")
