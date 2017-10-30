@@ -1,6 +1,7 @@
 import re
 
-re_cons = re.compile('^([^aeiou]?qu|[^aeiou]+)([a-z]*)')
+
+re_cons = re.compile('^([^aeiou]?qu|[^aeiouy]+|y(?=[aeiou]))([a-z]*)')
 re_vowel = re.compile('^([aeiou]|y[^aeiou]|xr)[a-z]*')
 
 
