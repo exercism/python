@@ -539,7 +539,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "loops",
+        "type_conversion",
+        "integers",
+        "matrices"
       ]
     },
     {
@@ -769,6 +772,20 @@
         "strings",
         "algorithms",
         "transforming"
+      ]
+    },
+    {
+      "uuid": "6aacc273-0a33-8180-679e-c12c440c0fcf89e1fb6",
+      "slug": "tree-building",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+          "refactoring",
+          "sorting",
+          "trees",
+          "records",
+          "maps"
       ]
     },
     {
