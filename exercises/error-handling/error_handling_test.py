@@ -4,10 +4,11 @@ import error_handling as er
 
 
 class FileLike(object):
-    def __init__(self):
+    def __init__(self, fail_something=True):
         self.is_open = False
         self.was_open = False
         self.did_something = False
+        self.fail_something = fail_something
 
     def open(self):
         self.was_open = False
@@ -26,7 +27,8 @@ class FileLike(object):
 
     def do_something(self):
         self.did_something = True
-        raise Exception()
+        if self.fail_something:
+            raise Exception()
 
 
 class ErrorHandlingTest(unittest.TestCase):
@@ -51,9 +53,19 @@ class ErrorHandlingTest(unittest.TestCase):
                       'Invalid input should not be successful')
 
     def test_filelike_objects_are_closed_on_exception(self):
-        filelike_object = FileLike()
+        filelike_object = FileLike(fail_something=True)
         with self.assertRaises(Exception):
             er.filelike_objects_are_closed_on_exception(filelike_object)
+        self.assertIs(filelike_object.is_open, False,
+                      'filelike_object should be closed')
+        self.assertIs(filelike_object.was_open, True,
+                      'filelike_object should have been opened')
+        self.assertIs(filelike_object.did_something, True,
+                      'filelike_object should call do_something()')
+
+    def test_filelike_objects_are_closed_without_exception(self):
+        filelike_object = FileLike(fail_something=False)
+        er.filelike_objects_are_closed_on_exception(filelike_object)
         self.assertIs(filelike_object.is_open, False,
                       'filelike_object should be closed')
         self.assertIs(filelike_object.was_open, True,
