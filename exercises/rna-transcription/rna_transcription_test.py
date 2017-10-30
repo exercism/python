@@ -20,16 +20,19 @@ class DNATests(unittest.TestCase):
         self.assertEqual(to_rna('A'), 'U')
 
     def test_transcribes_all_occurences(self):
-        self.assertMultiLineEqual(to_rna('ACGTGGTCTTAA'), 'UGCACCAGAAUU')
+        self.assertEqual(to_rna('ACGTGGTCTTAA'), 'UGCACCAGAAUU')
 
     def test_correctly_handles_single_invalid_input(self):
-        self.assertEqual(to_rna('U'), '')
+        with self.assertRaises(ValueError):
+            to_rna('U')
 
     def test_correctly_handles_completely_invalid_input(self):
-        self.assertMultiLineEqual(to_rna('XXX'), '')
+        with self.assertRaises(ValueError):
+            to_rna('XXX')
 
     def test_correctly_handles_partially_invalid_input(self):
-        self.assertMultiLineEqual(to_rna('ACGTXXXCTTAA'), '')
+        with self.assertRaises(ValueError):
+            to_rna('ACGTXXXCTTAA')
 
 
 if __name__ == '__main__':
