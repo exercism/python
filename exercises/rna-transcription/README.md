@@ -18,7 +18,8 @@ each nucleotide with its complement:
 * `T` -> `A`
 * `A` -> `U`
 
-Your function will need to be able to handle invalid inputs, both partial (a few invalid bases) and completely invalid strings. In these cases it should return an empty string.
+Your function will need to be able to handle invalid inputs by raising a
+`ValueError` with a meaningful message.
 
 ## Submitting Exercises
 
