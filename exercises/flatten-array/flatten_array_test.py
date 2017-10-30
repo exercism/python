@@ -2,8 +2,8 @@ import unittest
 
 from flatten_array import flatten
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class FlattenArrayTests(unittest.TestCase):
 
@@ -39,7 +39,6 @@ class FlattenArrayTests(unittest.TestCase):
     def test_empty_nested_lists(self):
         self.assertEqual(flatten([[()]]), [])
 
-    # Additional tests for this track
     def test_strings(self):
         self.assertEqual(flatten(['0', ['1', '2']]), ['0', '1', '2'])
 
