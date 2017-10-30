@@ -30,7 +30,7 @@ def check_assignment(name, test_file):
         else:
             with open(test_file, 'r') as src_file:
                 lines = [line for line in src_file.readlines()
-                         if not line.strip().startswith('@unittest.skip(')]
+                         if not line.strip().startswith('@unittest.skip')]
             with open(test_file_out, 'w') as dst_file:
                 dst_file.writelines(lines)
         shutil.copyfile(os.path.join(os.path.dirname(test_file), 'example.py'),
