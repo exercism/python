@@ -1,6 +1,8 @@
 import unittest
 import gocounting
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+
 board5x5 = "\n".join([
     "  B  ",
     " B B ",
