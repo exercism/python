@@ -3,11 +3,14 @@ import unittest
 from pangram import is_pangram
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
 
 class PangramTests(unittest.TestCase):
     def test_sentence_empty(self):
         self.assertIs(is_pangram(''), False)
+
+    def test_perfect_lowercase_panagram(self):
+        self.assertIs(is_pangram('abcdefghijklmnopqrstuvwxyz'), True)
 
     def test_pangram_with_only_lower_case(self):
         self.assertIs(
@@ -20,9 +23,9 @@ class PangramTests(unittest.TestCase):
                        'jeopardize five gunboats'),
             False)
 
-    def test_another_missing_character_x(self):
+    def test_another_missing_character_h(self):
         self.assertIs(
-            is_pangram('the quick brown fish jumps over the lazy dog'),
+            is_pangram('five boxing wizards jump quickly at it'),
             False)
 
     def test_pangram_with_underscores(self):
