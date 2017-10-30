@@ -101,7 +101,8 @@ testcases = [
 class SieveTest(unittest.TestCase):
     def test_game(self):
         for t in testcases:
-            winner = connect.play(t["board"])
+            game = ConnectGame(t["board"])
+            winner = game.get_winner()
             expected = t["winner"] if t["winner"] else "None"
             got = winner if winner else "None"
             self.assertEqual(winner, t["winner"],

@@ -59,8 +59,3 @@ class ConnectGame:
         if self.check_player_is_winner(self.white):
             return self.white
         return self.none
-
-
-def play(board):
-    game = ConnectGame(board)
-    return game.get_winner()
