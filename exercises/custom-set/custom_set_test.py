@@ -149,7 +149,7 @@ class CustomSetTest(unittest.TestCase):
         self.assertEqual(set1.intersection(set2), expected)
 
     def test_intersection_contains_shared_elements_only(self):
-        set1 = CustomSet(1, 2, 3, 4)
+        set1 = CustomSet([1, 2, 3, 4])
         set2 = CustomSet([3, 2, 5])
         expected = CustomSet([2, 3])
         self.assertEqual(set1.intersection(set2), expected)
@@ -158,49 +158,49 @@ class CustomSetTest(unittest.TestCase):
         set1 = CustomSet()
         set2 = CustomSet()
         expected = CustomSet()
-        self.assertEqual(set1.difference(set2), expected)
+        self.assertEqual(set1 - set2, expected)
 
     def test_difference_of_empty_set_and_non_empty_set_is_empty_set(self):
         set1 = CustomSet()
-        set2 = CustomSet(3, 2, 5)
+        set2 = CustomSet([3, 2, 5])
         expected = CustomSet()
-        self.assertEqual(set1.difference(set2), expected)
+        self.assertEqual(set1 - set2, expected)
 
     def test_difference_of_non_empty_set_and_empty_set_is_non_empty_set(self):
         set1 = CustomSet([1, 2, 3, 4])
         set2 = CustomSet()
         expected = CustomSet([1, 2, 3, 4])
-        self.assertEqual(set1.difference(set2), expected)
+        self.assertEqual(set1 - set2, expected)
 
     def test_difference_of_non_empty_sets_elements_in_first_set_only(self):
         set1 = CustomSet([3, 2, 1])
         set2 = CustomSet([2, 4])
         expected = CustomSet([1, 3])
-        self.assertEqual(set1.difference(set2), expected)
+        self.assertEqual(set1 - set2, expected)
 
     def test_union_of_empty_sets_is_empty_set(self):
         set1 = CustomSet()
         set2 = CustomSet()
         expected = CustomSet()
-        self.assertEqual(set1.union(set2), expected)
+        self.assertEqual(set1 + set2, expected)
 
     def test_union_of_empty_set_and_non_empty_set_is_the_non_empty_set(self):
         set1 = CustomSet()
         set2 = CustomSet([2])
         expected = CustomSet([2])
-        self.assertEqual(set1.union(set2), expected)
+        self.assertEqual(set1 + set2, expected)
 
     def test_union_of_non_empty_set_and_empty_set_is_the_non_empty_set(self):
         set1 = CustomSet([1, 3])
         set2 = CustomSet()
         expected = CustomSet([1, 3])
-        self.assertEqual(set1.union(set2), expected)
+        self.assertEqual(set1 + set2, expected)
 
     def test_union_of_non_empty_sets_contains_all_unique_elements(self):
         set1 = CustomSet([1, 3])
         set2 = CustomSet([2, 3])
         expected = CustomSet([1, 2, 3])
-        self.assertEqual(set1.union(set2), expected)
+        self.assertEqual(set1 + set2, expected)
 
 
 if __name__ == '__main__':

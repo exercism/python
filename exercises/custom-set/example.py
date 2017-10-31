@@ -28,14 +28,14 @@ class CustomSet(object):
                 result.add(x)
         return result
 
-    def difference(self, other):
+    def __sub__(self, other):
         result = CustomSet()
         for x in self:
             if x not in other:
                 result.add(x)
         return result
 
-    def union(self, other):
+    def __add__(self, other):
         result = CustomSet(self.elements)
         for x in other:
             result.add(x)
