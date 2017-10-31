@@ -1,29 +1,42 @@
-from itertools import combinations, permutations
+from itertools import permutations
+from string import ascii_uppercase as acu, digits
+acuset = set(acu)
+dset = set(digits)
 
 
-def check_leading_zeros(*numbers):
-    return any(n[0] == '0' for n in numbers)
+def solve(an):
+    fullexp = [tuple(map(str.strip, s.split("+")))
+               for s in an.upper().split("==")]
+    digexp = [[w[-1] for w in s] for s in fullexp]
 
+    alphas = set("".join([w for s in fullexp for w in s]))
+    if not alphas <= acuset:
+        raise ValueError
+    leadchars = set([w[0] for s in fullexp for w in s])
+    digchars = set([x for s in digexp for x in s])
+    leadigchars = leadchars & digchars
+    leadigcharslen = len(leadigchars)
+    leadother = leadchars - leadigchars
+    leadotherlen = len(leadother)
 
-def test_equation(puzzle, substitutions):
-    equation = ''.join(substitutions.get(char) or char for char in puzzle)
-    left, right = equation.split(' == ')
-    left_numbers = left.split(' + ')
-
-    if check_leading_zeros(right, *left_numbers):
-        return False
-
-    return sum(map(int, left_numbers)) == int(right)
-
-
-def solve(puzzle):
-    letters = set(char for char in puzzle if char.isupper())
-    numbers = map(str, range(10))
-
-    for c in combinations(numbers, len(letters)):
-        for p in permutations(c):
-            substitutions = dict(zip(letters, p))
-            if test_equation(puzzle, substitutions):
-                return {k: int(v) for k, v in substitutions.items()}
-
-    return {}  # no solution found
+    digtuple = tuple(leadigchars) + tuple(set(digchars) - leadigchars)
+    othertuple = tuple(leadother) + tuple(alphas - digchars - leadother)
+    combostg = "".join(digtuple + othertuple)
+    olen = len(othertuple)
+    for digtest in permutations(digits, len(digtuple)):
+        if any(map(lambda x: x == "0", digtest[:leadigcharslen])):
+            continue
+        td = dict(zip(digtuple, digtest))
+        digeval = [[int(td[w]) for w in s] for s in digexp]
+        if (sum(digeval[0]) % 10) == (sum(digeval[1]) % 10):
+            for otest in permutations(dset - set(digtest), olen):
+                if any(map(lambda x: x == "0", otest[:leadotherlen])):
+                    continue
+                b = an
+                for c, v in zip(combostg, "".join(digtest + otest)):
+                    b = b.replace(c, v)
+                fulleval = [[int(w.strip())
+                             for w in s.split("+")] for s in b.split("==")]
+                if sum(fulleval[0]) == sum(fulleval[1]):
+                    return dict(zip(combostg, map(int, digtest + otest)))
+    return {}

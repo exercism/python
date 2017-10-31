@@ -12,7 +12,7 @@ def encode(msg):
     square_size = int(ceil(sqrt(len(msg))))
     square = _chunks_of(msg, square_size)
     return ' '.join([''.join(col)
-                     for col in zip_longest(*square, fillvalue='')])
+                     for col in zip_longest(*square, fillvalue=' ')])
 
 
 def _cleanse(s):
