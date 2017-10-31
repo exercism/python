@@ -1,2 +1,2 @@
-def is_leap_year():
+def is_leap_year(year):
     pass

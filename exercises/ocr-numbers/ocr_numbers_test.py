@@ -43,15 +43,17 @@ class OcrTest(unittest.TestCase):
                                  "   "]), '?')
 
     def test_too_short_row(self):
-        self.assertRaises(ValueError, number, ["   ",
-                                               " _|",
-                                               " |",
-                                               "   "])
+        with self.assertRaises(ValueError):
+            number(["   ",
+                    " _|",
+                    " |",
+                    "   "])
 
     def test_insufficient_rows(self):
-        self.assertRaises(ValueError, number, ["   ",
-                                               " _|",
-                                               " X|"])
+        with self.assertRaises(ValueError):
+            number(["   ",
+                    " _|",
+                    " X|"])
 
     def test_grid0(self):
         self.assertEqual(grid('0'), [" _ ",
@@ -114,7 +116,8 @@ class OcrTest(unittest.TestCase):
             ])
 
     def test_invalid_grid(self):
-        self.assertRaises(ValueError, grid, '123a')
+        with self.assertRaises(ValueError):
+            grid('123a')
 
 
 if __name__ == '__main__':

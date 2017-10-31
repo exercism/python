@@ -1,2 +1,2 @@
-def binary_search(array, number):
+def binary_search(list_of_numbers, number):
     pass
