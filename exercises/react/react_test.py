@@ -77,7 +77,7 @@ class ReactTest(unittest.TestCase):
         inputCell1 = reactor.create_input_cell(1)
         computeCell1 = reactor.create_compute_cell({inputCell1}, increment)
         observed = []
-        computeCell1.watchers.add(lambda sender, value: observed.append(value))
+        computeCell1.add_watcher(lambda sender, value: observed.append(value))
         self.assertEqual(observed, [])
         inputCell1.set_value(2)
         self.assertEqual(observed, [3])
@@ -88,7 +88,7 @@ class ReactTest(unittest.TestCase):
         computeCell1 = reactor.create_compute_cell({inputCell1}, minimum_of_2)
 
         CallbackManager.reset()
-        computeCell1.watchers.add(CallbackManager.count)
+        computeCell1.add_watcher(CallbackManager.count)
 
         inputCell1.set_value(1)
         self.assertEqual(CallbackManager.counter, 0)
@@ -103,14 +103,14 @@ class ReactTest(unittest.TestCase):
         computeCell1 = reactor.create_compute_cell({inputCell1}, increment)
 
         CallbackManager.reset()
-        computeCell1.watchers.add(CallbackManager.observe1)
-        computeCell1.watchers.add(CallbackManager.observe2)
+        computeCell1.add_watcher(CallbackManager.observe1)
+        computeCell1.add_watcher(CallbackManager.observe2)
 
         inputCell1.set_value(2)
         self.assertEqual(CallbackManager.observed1, [3])
         self.assertEqual(CallbackManager.observed2, [3])
 
-        computeCell1.watchers.remove(CallbackManager.observe1)
+        computeCell1.remove_watcher(CallbackManager.observe1)
         inputCell1.set_value(3)
         self.assertEqual(CallbackManager.observed1, [3])
         self.assertEqual(CallbackManager.observed2, [3, 4])
@@ -126,7 +126,7 @@ class ReactTest(unittest.TestCase):
                                                    product)
 
         CallbackManager.reset()
-        computeCell4.watchers.add(CallbackManager.count)
+        computeCell4.add_watcher(CallbackManager.count)
 
         inputCell1.set_value(3)
         self.assertEqual(CallbackManager.counter, 1)

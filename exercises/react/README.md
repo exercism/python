@@ -15,7 +15,7 @@ In addition, compute cells should allow for registering change notification
 callbacks.  Call a cell’s callbacks when the cell’s value in a new stable
 state has changed from the previous stable state.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 

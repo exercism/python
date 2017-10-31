@@ -14,6 +14,12 @@ class Cell(object):
             self.update()
             self.notify()
 
+    def add_watcher(self, watcher):
+        self.watchers.add(watcher)
+
+    def remove_watcher(self, watcher):
+        self.watchers.remove(watcher)
+
     def set_value(self, value, top=True):
         self.value = value
         for d in self.dependents:
