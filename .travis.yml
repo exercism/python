@@ -18,6 +18,7 @@ install:
   - pip install -r requirements-travis.txt
 
 before_script:
+  - ./bin/config.py lint
   - flake8
 
 script:
