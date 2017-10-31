@@ -9,7 +9,14 @@ def concat(lists):
 def filter_clone(function, xs):
     return [x for x in xs if function(x)]
 
-
+def intersect(list1, list2):
+    list3 = []
+    for el1 in list1:
+        for el2 in list2:
+            if list1 == list2
+                list3.append(list1)
+    return list3
+                
 def length(xs):
     return sum(1 for _ in xs)
 
