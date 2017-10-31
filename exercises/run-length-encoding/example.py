@@ -8,6 +8,6 @@ def decode(string):
 
 def encode(string):
     def single_helper(k, g):
-        l = len(list(g))
-        return k if l == 1 else str(l) + k
+        size = len(list(g))
+        return k if size == 1 else str(size) + k
     return ''.join(single_helper(key, group) for key, group in groupby(string))

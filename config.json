@@ -9,9 +9,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "control-flow (if-else statements)",
-        "optional values",
-        "text formatting"
+        "conditionals",
+        "optional_values",
+        "text_formatting"
       ]
     },
     {
@@ -21,7 +21,7 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "control-flow (if-else statements)",
+        "conditionals",
         "booleans",
         "logic"
       ]
@@ -46,8 +46,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "control-flow (loops)",
-        "control-flow (if-else statements)",
+        "loops",
+        "conditionals",
         "strings",
         "algorithms",
         "filtering",
@@ -61,8 +61,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "control-flow (if-else statements)",
-        "control-flow (loops)",
+        "conditionals",
+        "loops",
         "maps",
         "strings",
         "logic",
@@ -76,8 +76,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "control-flow (if-else statements)",
-        "control-flow (loops)",
+        "conditionals",
+        "loops",
         "sequences",
         "sets",
         "strings",
@@ -96,8 +96,8 @@
         "strings",
         "algorithms",
         "logic",
-        "pattern recognition",
-        "text formatting"
+        "pattern_recognition",
+        "text_formatting"
       ]
     },
     {
@@ -158,7 +158,7 @@
       "topics": [
         "strings",
         "logic",
-        "control-flow (loops)"
+        "loops"
       ]
     },
     {
@@ -373,7 +373,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "bitwise_operations",
+        "integers",
+        "mathematics",
+        "type_conversion"
       ]
     },
     {
@@ -476,8 +479,7 @@
       "topics": [
         "lists",
         "searching",
-        "loops",
-        "iteration"
+        "loops"
       ]
     },
     {
@@ -537,7 +539,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "loops",
+        "type_conversion",
+        "integers",
+        "matrices"
       ]
     },
     {
@@ -669,7 +674,7 @@
       "topics": [
         "lists",
         "parsing",
-        "transformation",
+        "transforming",
         "loops",
         "games"
       ]
@@ -767,6 +772,20 @@
         "strings",
         "algorithms",
         "transforming"
+      ]
+    },
+    {
+      "uuid": "6aacc273-0a33-8180-679e-c12c440c0fcf89e1fb6",
+      "slug": "tree-building",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+          "refactoring",
+          "sorting",
+          "trees",
+          "records",
+          "maps"
       ]
     },
     {
@@ -905,7 +924,7 @@
         "time",
         "mathematics",
         "logic",
-        "text formatting"
+        "text_formatting"
       ]
     },
     {
@@ -916,7 +935,7 @@
       "difficulty": 4,
       "topics": [
         "files",
-        "text formatting",
+        "text_formatting",
         "searching"
       ]
     },
@@ -964,7 +983,7 @@
       "difficulty": 3,
       "topics": [
         "strings",
-        "pattern matching"
+        "pattern_matching"
       ]
     },
     {
@@ -975,7 +994,7 @@
       "difficulty": 3,
       "topics": [
         "strings",
-        "pattern matching"
+        "pattern_matching"
       ]
     },
     {
@@ -985,9 +1004,9 @@
       "unlocked_by": null,
       "difficulty": 4,
       "topics": [
-        "Control-flow (loops)",
-        "Arrays",
-        "Algorithms"
+        "loops",
+        "arrays",
+        "algorithms"
       ]
     },
     {
@@ -997,9 +1016,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "control-flow (if-else statements)",
-        "optional values",
-        "text formatting"
+        "conditionals",
+        "optional_values",
+        "text_formatting"
       ]
     },
     {
@@ -1009,7 +1028,7 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-            "control-flow (loops)"
+        "loops"
       ]
     },
     {
@@ -1081,6 +1100,29 @@
         "unlocked_by": null,
         "difficulty": 8,
         "topics": [
+            "recursion",
+            "searching",
+            "trees"
+        ]
+    },
+    {
+      "uuid": "3a2a947a-01b3-1e80-e32b-de1756fd88365adf12e",
+      "slug": "error-handling",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "exception_handling"
+      ]
+    },
+    {
+        "uuid": "55c818d6-04a8-2480-de83-9f85fd0d2eafa71935f",
+        "slug": "pov",
+        "core": false,
+        "unlocked_by": null,
+        "difficulty": 9,
+        "topics": [
+            "graphs",
             "recursion",
             "searching",
             "trees"
