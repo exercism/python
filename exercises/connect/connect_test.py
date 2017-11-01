@@ -1,5 +1,7 @@
 import unittest
+
 import connect
+
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
@@ -100,16 +102,16 @@ testcases = [
 ]
 
 
-class SieveTest(unittest.TestCase):
+class ConnectTest(unittest.TestCase):
     def test_game(self):
-        for t in testcases:
-            game = ConnectGame(t["board"])
+        for testcase in testcases:
+            game = connect.ConnectGame(testcase["board"])
             winner = game.get_winner()
-            expected = t["winner"] if t["winner"] else "None"
+            expected = testcase["winner"] if testcase["winner"] else "None"
             got = winner if winner else "None"
-            self.assertEqual(winner, t["winner"],
+            self.assertEqual(winner, testcase["winner"],
                              "Test failed: %s, expected winner: %s, got: %s"
-                             % (t["description"], expected, got))
+                             % (testcase["description"], expected, got))
 
 
 if __name__ == '__main__':
