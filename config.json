@@ -867,11 +867,23 @@
       ]
     },
     {
+        "uuid": "8f3a3cf0-0a94-b080-c91b-d4f6c4b11c25a9dded0",
+        "slug": "simple-linked-list",
+        "core": false,
+        "unlocked_by": null,
+        "difficulty": 1,
+        "topics": [
+          "lists",
+          "algorithms",
+          "conditionals"
+        ]
+    },
+    {
       "uuid": "ca7a8b16-e5d5-4211-84f0-2f8e35b4a665",
       "slug": "linked-list",
       "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
+      "unlocked_by": "simple-linked-list",
+      "difficulty": 3,
       "topics": [
         "lists",
         "algorithms",
