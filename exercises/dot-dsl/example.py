@@ -49,4 +49,4 @@ class Graph(object):
                     raise ValueError("EDGE malformed")
                 self.edges.append(Edge(item[1], item[2], item[3]))
             else:
-                raise TypeError("Unknown item {}".format(item[0]))
+                raise ValueError("Unknown item {}".format(item[0]))

@@ -107,7 +107,7 @@ class DotDslTest(unittest.TestCase):
             ])
 
     def test_unknown_item(self):
-        with self.assertRaises(TypeError):
+        with self.assertRaises(ValueError):
             Graph([
                 (99, 1, 2)
             ])
