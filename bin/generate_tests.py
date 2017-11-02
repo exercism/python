@@ -153,6 +153,9 @@ def create_tests(spec_data, mode='method'):
     exercise = spec_data['exercise']
     module = exercise.replace('-', '')
     titlized = exercise.title().replace('-', '')
+    path_to_impl = get_impl_dir(exercise)
+    if not os.path.isdir(path_to_impl):
+        os.makedirs(path_to_impl)
     path_to_tests = get_test_file(exercise)
     with open(path_to_tests, 'w') as f_:
         with Tabbed(f_, 0) as f:
