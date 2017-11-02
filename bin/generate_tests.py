@@ -7,15 +7,27 @@ import sys
 import argparse
 
 arg_parser = argparse.ArgumentParser()
-arg_parser.add_argument('exercises', nargs='*', default=[])
-arg_parser.add_argument('-A', '--all', default=False, action='store_true')
-arg_parser.add_argument('-f', '--force', default=False, action='store_true')
-arg_parser.add_argument('--noop', default=False, action='store_true')
-arg_parser.add_argument('-v', '--verbose', default=False, action='store_true')
-arg_parser.add_argument('--mode', choices=['method', 'class'],
-                        default='method')
+arg_parser.add_argument('exercises', nargs='*', default=[],
+                        help='exercises for which to generate tests')
+arg_parser.add_argument('-A', '--all', default=False, action='store_true',
+                        help=('if enabled, will attempt to update tests for '
+                              'all known exercises'))
+arg_parser.add_argument('-f', '--force', default=False, action='store_true',
+                        help=('if enabled, will overwrite existing test cases '
+                              'even if they are already up-to-date'))
+arg_parser.add_argument('--noop', default=False, action='store_true',
+                        help=('if enabled, will report which test cases need '
+                              'updating without performing any actions on '
+                              'them'))
+arg_parser.add_argument('-v', '--verbose', default=False, action='store_true',
+                        help='enables verbose output')
+arg_parser.add_argument('--style', choices=['method', 'class'],
+                        default='method',
+                        help='test case style')
 arg_parser.add_argument('--spec', default='../problem-specifications/',
-                        dest='spec_path')
+                        dest='spec_path',
+                        help=('path to clone of exercism/problem-'
+                              'specifications repository'))
 
 CANONICAL_DATA = ('# Tests adapted from `problem-specifications//'
                   'canonical-data.json` @ v')
@@ -111,7 +123,7 @@ def get_inputs(test_case):
         yield '{}={}'.format(k, json.dumps(v))
 
 
-def write_test_case(exercise, mode, case, f):
+def write_test_case(exercise, style, case, f):
     def blank():
         f.writeline()
     module = exercise.replace('-', '')
@@ -130,7 +142,7 @@ def write_test_case(exercise, mode, case, f):
                     __f.writeline(line)
                 else:
                     writer = __f
-                if mode == 'class':
+                if style == 'class':
                     writer.write('sut = {}('.format(titlized))
                 else:
                     fmt = 'actual = {}.{}('
@@ -141,7 +153,7 @@ def write_test_case(exercise, mode, case, f):
                     if expected not in [False, True, None]:
                         expected = json.dumps(case['expected'])
                     writer.writeline('expected = {}'.format(expected))
-                    if mode == 'class':
+                    if style == 'class':
                         fmt = 'self.assertEqual(sut.{}(), expected)'
                         writer.writeline(fmt.format(case['property']))
                     else:
@@ -149,7 +161,7 @@ def write_test_case(exercise, mode, case, f):
     blank()
 
 
-def create_tests(spec_data, mode='method'):
+def create_tests(spec_data, style='method'):
     exercise = spec_data['exercise']
     module = exercise.replace('-', '')
     titlized = exercise.title().replace('-', '')
@@ -163,7 +175,7 @@ def create_tests(spec_data, mode='method'):
                 f.writeline()
             f.writeline('import unittest')
             blank()
-            if mode == 'class':
+            if style == 'class':
                 f.writeline('from {} import {}'.format(module, titlized))
             else:
                 f.writeline('import {}'.format(module))
@@ -182,7 +194,7 @@ def create_tests(spec_data, mode='method'):
                                                     _case['description'])
                         cases = case['cases'] + cases
                         continue
-                    write_test_case(exercise, mode, case, f)
+                    write_test_case(exercise, style, case, f)
             blank()
             f.writeline('if __name__ == "__main__":')
             with Tabbed(f) as _f:
@@ -204,7 +216,7 @@ def main(opts):
         else:
             needs_update.append(exercise)
             if not opts.noop:
-                create_tests(spec_data, opts.mode)
+                create_tests(spec_data, opts.style)
     if any(no_data):
         print('The following exercises have no canonical data:')
         for exercise in no_data:

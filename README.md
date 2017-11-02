@@ -16,6 +16,16 @@ Please see the [contributing guide](https://github.com/exercism/docs/blob/master
 We welcome both improvements to the existing exercises and new exercises.
 A list of missing exercise can be found here: http://exercism.io/languages/python/todo
 
+If you are implementing a new exercise or updating test cases:
+
+```Bash
+git clone git@github.com:exercism/problem-specifications.git problem-spec
+cd python
+./bin/generate_tests.py <exercise>
+```
+
+Make sure to review the generated test cases and make any sensible corrections.
+
 
 ### Conventions
 
