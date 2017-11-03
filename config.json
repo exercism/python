@@ -539,7 +539,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "loops",
+        "type_conversion",
+        "integers",
+        "matrices"
       ]
     },
     {
@@ -1111,6 +1114,19 @@
       "topics": [
         "exception_handling"
       ]
+    },
+    {
+        "uuid": "55c818d6-04a8-2480-de83-9f85fd0d2eafa71935f",
+        "slug": "pov",
+        "core": false,
+        "unlocked_by": null,
+        "difficulty": 9,
+        "topics": [
+            "graphs",
+            "recursion",
+            "searching",
+            "trees"
+        ]
     },
     {
       "uuid": "6f196341-0ffc-9780-a7ca-1f817508247161cbcd9",
