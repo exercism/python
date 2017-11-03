@@ -52,3 +52,20 @@ And if we then added 1, 5, and 7, it would look like this
       2       6
      / \     / \
     1   3   5   7
+
+
+## Submitting Exercises
+
+Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
+
+For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
+
+For more detailed information about running tests, code style and linting,
+please see the [help page](http://exercism.io/languages/python).
+
+## Source
+
+Wikipedia [https://en.wikipedia.org/wiki/Binary_search_tree](https://en.wikipedia.org/wiki/Binary_search_tree)
+
+## Submitting Incomplete Solutions
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.
