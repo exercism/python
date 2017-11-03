@@ -1,3 +1,5 @@
+from collections import deque
+
 class TreeNode(object):
     def __init__(self, value):
         self.value = value
@@ -22,7 +24,7 @@ class BinarySearchTree(object):
             cur_node = self.root
 
             while not inserted:
-                if(value < cur_node.value):
+                if(value <= cur_node.value):
                     if(cur_node.left_node):
                         cur_node = cur_node.left_node
                     else:
@@ -49,6 +51,17 @@ class BinarySearchTree(object):
                 cur_node = cur_node.right_node
             elif(search_number == cur_node.value):
                 return cur_node
+
+    def list(self):
+        elements = deque()
+        self.trav_inorder(self.root, elements)
+        return elements
+
+    def trav_inorder(self, node, elements):
+        if(node is not None):
+            self.trav_inorder(node.left_node, elements)
+            elements.append(node.value)
+            self.trav_inorder(node.right_node, elements)
 
     def print_inorder(self, node):
         if(node is not None):
