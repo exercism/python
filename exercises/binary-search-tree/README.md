@@ -1,3 +1,5 @@
+# Binary Search Tree
+
 Insert and search for numbers in a binary tree.
 
 When we need to represent sorted data, an array does not make a good
