@@ -1116,17 +1116,28 @@
       ]
     },
     {
-        "uuid": "55c818d6-04a8-2480-de83-9f85fd0d2eafa71935f",
-        "slug": "pov",
-        "core": false,
-        "unlocked_by": null,
-        "difficulty": 9,
-        "topics": [
-            "graphs",
-            "recursion",
-            "searching",
-            "trees"
-        ]
+      "uuid": "4354f631-0cf5-9980-75e7-86d1c3da1f0d3f5e619",
+      "slug": "dominoes",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 7,
+      "topics": [
+        "tuples",
+        "lists"
+      ]
+    },
+    {
+      "uuid": "55c818d6-04a8-2480-de83-9f85fd0d2eafa71935f",
+      "slug": "pov",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 9,
+      "topics": [
+        "graphs",
+        "recursion",
+        "searching",
+        "trees"
+      ]
     },
     {
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
