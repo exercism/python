@@ -10,11 +10,26 @@ class Node(object):
         return self._next
 
 
+class LinkedIterator(object):
+    def __init__(self, linked_list):
+        self.current = linked_list._head
+
+    def __next__(self):
+        if self.current is None:
+            raise StopIteration
+        value = self.current.value()
+        self.current = self.current.next()
+        return value
+
+
 class LinkedList(object):
     def __init__(self, values=[]):
         self._head = None
         self._len = 0
-        [self.add(v) for v in values]
+        [self.push(v) for v in values]
+
+    def __iter__(self):
+        return LinkedIterator(self)
 
     def __len__(self):
         return self._len
@@ -24,15 +39,10 @@ class LinkedList(object):
             raise EmptyListException()
         return self._head
 
-    def add(self, value):
+    def push(self, value):
         newNode = Node(value)
-        if self._head is None:
-            self._head = newNode
-        else:
-            current = self._head
-            while current.next() is not None:
-                current = current.next()
-            current._next = newNode
+        newNode._next = self._head
+        self._head = newNode
         self._len += 1
 
     def pop(self):
@@ -42,6 +52,9 @@ class LinkedList(object):
         ret = self._head.value()
         self._head = self._head.next()
         return ret
+
+    def reversed(self):
+        return LinkedList(self)
 
 
 class EmptyListException(Exception):

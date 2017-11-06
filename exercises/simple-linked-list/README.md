@@ -21,6 +21,11 @@ and provide functions to reverse a linked list and convert to and from arrays.
 When implementing this in a language with built-in linked lists,
 implement your own abstract data type.
 
+## Hints
+
+To support `list()`, see [implementing an iterator for a class.](https://docs.python.org/2/tutorial/classes.html#iterators)
+
+
 ## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.

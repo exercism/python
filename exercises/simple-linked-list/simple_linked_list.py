@@ -13,10 +13,13 @@ class LinkedList(object):
     def head(self):
         pass
 
-    def add(self, value):
+    def push(self, value):
         pass
 
     def pop(self):
+        pass
+
+    def reversed(self):
         pass
 
 
