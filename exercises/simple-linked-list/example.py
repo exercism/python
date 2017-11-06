@@ -13,6 +13,10 @@ class Node(object):
 class LinkedIterator(object):
     def __init__(self, linked_list):
         self.current = linked_list._head
+        self.next = self.__next__
+
+    def __iter__(self):
+        return self
 
     def __next__(self):
         if self.current is None:
