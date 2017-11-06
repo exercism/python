@@ -2,6 +2,7 @@ import unittest
 
 from poker import poker
 
+
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
 class PokerTest(unittest.TestCase):
@@ -10,10 +11,10 @@ class PokerTest(unittest.TestCase):
         self.assertEqual(poker([hand]), [hand])
 
     def highest_card_wins(self):
-        firstHand = '4D 5S 6S 8D 3C'.split()
-        secondHand = '2S 4C 7S 9H 10H'.split()
-        thirdHand = '3S 4S 5D 6H JH'.split()
-        self.assertEqual(poker([firstHand, secondHand, thirdHand]), [thirdHand])
+        first = '4D 5S 6S 8D 3C'.split()
+        second = '2S 4C 7S 9H 10H'.split()
+        third = '3S 4S 5D 6H JH'.split()
+        self.assertEqual(poker([first, second, third]), [third])
 
     def tie_has_multiple_winners(self):
         first = '4D 5S 6S 8D 3C'.split()
@@ -154,7 +155,6 @@ class PokerTest(unittest.TestCase):
         straightFlushTo9 = '5S 7S 8S 9S 6S'.split()
         self.assertEqual(
             poker([straightFlushTo8, straightFlushTo9]), [straightFlushTo9])
-
 
 
 if __name__ == '__main__':
