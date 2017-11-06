@@ -4,6 +4,7 @@ import math
 
 from complex_numbers import ComplexNumber
 
+
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
 
@@ -105,9 +106,9 @@ class ComplexNumbersTest(unittest.TestCase):
     def test_conjugate_a_purely_real_number(self):
         input_number = ComplexNumber(5, 0)
         expected = ComplexNumber(5, 0)
-        self.assertEqual(expected.real, input_number.conjugate().real)
-        self.assertEqual(expected.imaginary,
-                         input_number.conjugate().imaginary)
+        self.assertEqual(input_number.conjugate().real, expected.real)
+        self.assertEqual(input_number.conjugate().imaginary,
+                         expected.imaginary)
 
     def test_conjugate_a_purely_imaginary_number(self):
         input_number = ComplexNumber(0, 5)
