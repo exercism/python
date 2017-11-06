@@ -13,7 +13,6 @@ class Node(object):
 class LinkedIterator(object):
     def __init__(self, linked_list):
         self.current = linked_list._head
-        self.next = self.__next__
 
     def __iter__(self):
         return self
@@ -24,6 +23,9 @@ class LinkedIterator(object):
         value = self.current.value()
         self.current = self.current.next()
         return value
+
+    def next(self):
+        return self.__next__()
 
 
 class LinkedList(object):
