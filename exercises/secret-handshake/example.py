@@ -7,7 +7,7 @@ def handshake(code):
     return actions if code < 16 else list(reversed(actions))
 
 
-def code(actions):
+def secret_code(actions):
     actions = [a for a in actions if a in gestures]
     result = sum(1 << i for i, action in enumerate(gestures)
                  if action in actions)

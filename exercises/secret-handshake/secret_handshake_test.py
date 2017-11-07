@@ -1,6 +1,6 @@
 import unittest
 
-from example import handshake, code
+from secret_handshake import handshake, secret_code
 
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
@@ -48,26 +48,26 @@ class HandshakeTest(unittest.TestCase):
     # Track-specific tests
 
     def test_code1(self):
-        self.assertEqual(code(['close your eyes', 'jump']), 12)
+        self.assertEqual(secret_code(['close your eyes', 'jump']), 12)
 
     def test_code2(self):
-        self.assertEqual(code(['wink', 'double blink']), 3)
+        self.assertEqual(secret_code(['wink', 'double blink']), 3)
 
     def test_code3(self):
-        self.assertEqual(code(['jump', 'double blink']), 26)
+        self.assertEqual(secret_code(['jump', 'double blink']), 26)
 
     def test_reversible1(self):
-        self.assertEqual(code(handshake(27)), 27)
+        self.assertEqual(secret_code(handshake(27)), 27)
 
     def test_reversible2(self):
-        self.assertEqual(code(handshake(1)), 1)
+        self.assertEqual(secret_code(handshake(1)), 1)
 
     def test_reversible3(self):
-        self.assertEqual(code(handshake(7)), 7)
+        self.assertEqual(secret_code(handshake(7)), 7)
 
     def test_reversible4(self):
         inp = ['wink', 'double blink', 'jump']
-        self.assertEqual(handshake(code(inp)), inp)
+        self.assertEqual(handshake(secret_code(inp)), inp)
 
 
 if __name__ == '__main__':
