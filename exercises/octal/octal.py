@@ -1,2 +1,2 @@
-def parse_octal():
+def parse_octal(digits):
     pass

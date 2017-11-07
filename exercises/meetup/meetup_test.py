@@ -10,7 +10,7 @@ except ImportError:
     MeetupDayException = Exception
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
 class MeetupTest(unittest.TestCase):
     def test_monteenth_of_may_2013(self):
@@ -399,8 +399,8 @@ class MeetupTest(unittest.TestCase):
             meetup_day(2015, 3, 'Monday', '5th'), date(2015, 3, 30))
 
     def test_nonexistent_fifth_monday_of_february_2015(self):
-        self.assertRaises(MeetupDayException, meetup_day, 2015, 2, 'Monday',
-                          '5th')
+        with self.assertRaises(MeetupDayException):
+            meetup_day(2015, 2, 'Monday', '5th')
 
 
 if __name__ == '__main__':

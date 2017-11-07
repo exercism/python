@@ -11,6 +11,9 @@ import sys
 import tempfile
 import json
 
+# Allow high-performance tests to be skipped
+ALLOW_SKIP = ['largest-series-product']
+
 
 def python_executable_name():
     return 'python{}.{}'.format(sys.version_info.major, sys.version_info.minor)
@@ -22,7 +25,14 @@ def check_assignment(name, test_file):
     example_name = modname_heuristic(test_file)
     try:
         test_file_out = os.path.join(workdir, os.path.basename(test_file))
-        shutil.copyfile(test_file, test_file_out)
+        if name in ALLOW_SKIP:
+            shutil.copyfile(test_file, test_file_out)
+        else:
+            with open(test_file, 'r') as src_file:
+                lines = [line for line in src_file.readlines()
+                         if not line.strip().startswith('@unittest.skip')]
+            with open(test_file_out, 'w') as dst_file:
+                dst_file.writelines(lines)
         shutil.copyfile(os.path.join(os.path.dirname(test_file), 'example.py'),
                         os.path.join(workdir, '{}.py'.format(example_name)))
         return subprocess.call([python_executable_name(), test_file_out])

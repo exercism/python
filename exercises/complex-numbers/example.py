@@ -12,8 +12,8 @@ class ComplexNumber(object):
         return ComplexNumber(r, i)
 
     def mul(self, other):
-        r = self.real * other.real
-        i = self.imaginary * other.imaginary
+        r = self.real * other.real - self.imaginary * other.imaginary
+        i = self.real * other.imaginary + self.imaginary * other.real
         return ComplexNumber(r, i)
 
     def sub(self, other):

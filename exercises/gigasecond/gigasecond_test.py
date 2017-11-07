@@ -5,7 +5,7 @@ from datetime import datetime
 from gigasecond import add_gigasecond
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
 class GigasecondTest(unittest.TestCase):
     def test_date_only_specification_of_time(self):
