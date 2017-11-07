@@ -7,10 +7,12 @@ string, your program should produce a decimal output. The
 program should handle invalid inputs.
 
 ## Note
+
 - Implement the conversion yourself.
   Do not use something else to perform the conversion for you.
 
 ## About Binary (Base-2)
+
 Decimal is a base-10 system.
 
 A number 23 in base 10 notation can be understood
@@ -28,12 +30,11 @@ Binary is similar, but uses powers of 2 rather than powers of 10.
 
 So: `101 => 1*2^2 + 0*2^1 + 1*2^0 => 1*4 + 0*2 + 1*1 => 4 + 1 => 5 base 10`.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 
 For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
-
 
 For more detailed information about running tests, code style and linting,
 please see the [help page](http://exercism.io/languages/python).

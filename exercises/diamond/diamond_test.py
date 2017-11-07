@@ -3,7 +3,7 @@ import unittest
 from diamond import make_diamond
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
 class DiamondTests(unittest.TestCase):
     def test_degenerate_case_with_a_single_row(self):

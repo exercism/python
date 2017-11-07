@@ -7,5 +7,5 @@ class BufferEmptyException(Exception):
 
 
 class CircularBuffer(object):
-    def __init__(self):
+    def __init__(self, capacity):
         pass
