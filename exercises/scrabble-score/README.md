@@ -6,7 +6,7 @@ Given a word, compute the scrabble score for that word.
 
 You'll need these:
 
-```plain
+```text
 Letter                           Value
 A, E, I, O, U, L, N, R, S, T       1
 D, G                               2
@@ -18,6 +18,7 @@ Q, Z                               10
 ```
 
 ## Examples
+
 "cabbage" should be scored as worth 14 points:
 
 - 3 points for C
@@ -34,15 +35,15 @@ And to total:
 - = 14
 
 ## Extensions
+
 - You can play a double or a triple letter.
 - You can play a double or a triple word.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 
 For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
-
 
 For more detailed information about running tests, code style and linting,
 please see the [help page](http://exercism.io/languages/python).
