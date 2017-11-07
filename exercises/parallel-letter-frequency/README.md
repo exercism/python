@@ -10,7 +10,7 @@ list of texts and that employs parallelism.
 The letters used consists of ASCII letters `a` to `z`, inclusive, and is case
 insensitive.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 
