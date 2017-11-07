@@ -144,7 +144,7 @@ class ComplexNumbersTest(unittest.TestCase):
         input_number = ComplexNumber(0, 1)
         self.assertEqual(input_number.imaginary, 1)
 
-    def test_maginary_part_of_a_number_with_real_and_imaginary_part(self):
+    def test_imaginary_part_of_a_number_with_real_and_imaginary_part(self):
         input_number = ComplexNumber(1, 2)
         self.assertEqual(input_number.imaginary, 2)
 
