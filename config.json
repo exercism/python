@@ -1043,6 +1043,19 @@
       ]
     },
     {
+      "uuid": "d4ddeb18-ac22-11e7-abc4-cec278b6b50a",
+      "slug": "go-counting",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "parsing",
+        "tuples",
+        "optional_values",
+        "classes"
+      ]
+    },
+    {
       "uuid": "7f4d5743-7ab8-42ca-b393-767f7e9a4e97",
       "slug": "complex-numbers",
       "core": false,
