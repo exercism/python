@@ -68,25 +68,25 @@ class ComplexNumbersTest(unittest.TestCase):
         input_number = ComplexNumber(1.0, 0.0)
         expected = ComplexNumber(0.5, 0.0)
         divider = ComplexNumber(2.0, 0.0)
-        self.assertEqual(expected.real, input_number.div(divider).real)
-        self.assertEqual(expected.imaginary,
-                         input_number.div(divider).imaginary)
+        self.assertEqual(input_number.div(divider).real, expected.real)
+        self.assertEqual(input_number.div(divider).imaginary,
+                         expected.imaginary)
 
     def test_divide_purely_imaginary_numbers(self):
         input_number = ComplexNumber(0, 1)
         expected = ComplexNumber(0.5, 0)
         divider = ComplexNumber(0, 2)
-        self.assertEqual(expected.real, input_number.div(divider).real)
-        self.assertEqual(expected.imaginary,
-                         input_number.div(divider).imaginary)
+        self.assertEqual(input_number.div(divider).real, expected.real)
+        self.assertEqual(input_number.div(divider).imaginary,
+                         expected.imaginary)
 
     def test_divide_numbers_with_real_and_imaginary_part(self):
         input_number = ComplexNumber(1, 2)
         expected = ComplexNumber(0.44, 0.08)
         divider = ComplexNumber(3, 4)
-        self.assertEqual(expected.real, input_number.div(divider).real)
-        self.assertEqual(expected.imaginary,
-                         input_number.div(divider).imaginary)
+        self.assertEqual(input_number.div(divider).real, expected.real)
+        self.assertEqual(input_number.div(divider).imaginary,
+                         expected.imaginary)
 
     def test_absolute_value_of_a_positive_purely_real_number(self):
         self.assertEqual(ComplexNumber(5, 0).abs(), 5)
@@ -113,16 +113,16 @@ class ComplexNumbersTest(unittest.TestCase):
     def test_conjugate_a_purely_imaginary_number(self):
         input_number = ComplexNumber(0, 5)
         expected = ComplexNumber(0, -5)
-        self.assertEqual(expected.real, input_number.conjugate().real)
-        self.assertEqual(expected.imaginary,
-                         input_number.conjugate().imaginary)
+        self.assertEqual(input_number.conjugate().real, expected.real)
+        self.assertEqual(input_number.conjugate().imaginary,
+                         expected.imaginary)
 
     def test_conjugate_a_number_with_real_and_imaginary_part(self):
         input_number = ComplexNumber(1, 1)
         expected = ComplexNumber(1, -1)
-        self.assertEqual(expected.real, input_number.conjugate().real)
-        self.assertEqual(expected.imaginary,
-                         input_number.conjugate().imaginary)
+        self.assertEqual(input_number.conjugate().real, expected.real)
+        self.assertEqual(input_number.conjugate().imaginary,
+                         expected.imaginary)
 
     def test_real_part_of_a_purely_real_number(self):
         input_number = ComplexNumber(1, 0)
@@ -151,20 +151,20 @@ class ComplexNumbersTest(unittest.TestCase):
     def test_eulers_identity_formula(self):
         input_number = ComplexNumber(0, math.pi)
         expected = ComplexNumber(-1, 0)
-        self.assertEqual(expected.real, input_number.exp().real)
-        self.assertEqual(expected.imaginary, input_number.exp().imaginary)
+        self.assertEqual(input_number.exp().real, expected.real)
+        self.assertEqual(input_number.exp().imaginary, expected.imaginary)
 
     def test_exponential_of_0(self):
         input_number = ComplexNumber(0, 0)
         expected = ComplexNumber(1, 0)
-        self.assertEqual(expected.real, input_number.exp().real)
-        self.assertEqual(expected.imaginary, input_number.exp().imaginary)
+        self.assertEqual(input_number.exp().real, expected.real)
+        self.assertEqual(input_number.exp().imaginary, expected.imaginary)
 
     def test_exponential_of_a_purely_real_number(self):
         input_number = ComplexNumber(1, 0)
         expected = ComplexNumber(math.e, 0)
-        self.assertEqual(expected.real, input_number.exp().real)
-        self.assertEqual(expected.imaginary, input_number.exp().imaginary)
+        self.assertEqual(input_number.exp().real, expected.real)
+        self.assertEqual(input_number.exp().imaginary, expected.imaginary)
 
 
 if __name__ == '__main__':
