@@ -1,4 +1,7 @@
 class Node(object):
+    def __init__(self, value):
+        pass
+
     def value(self):
         pass
 
@@ -7,6 +10,9 @@ class Node(object):
 
 
 class LinkedList(object):
+    def __init__(self, values=[]):
+        pass
+
     def __len__(self):
         pass
 
