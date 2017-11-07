@@ -1,25 +1,21 @@
-def map_clone(function, xs):
-    return [function(elem) for elem in xs]
+def append(xs, ys):
+    return concat([xs, ys])
 
 
-def length(xs):
-    return sum(1 for _ in xs)
+def concat(lists):
+    return [elem for lst in lists for elem in lst]
 
 
 def filter_clone(function, xs):
     return [x for x in xs if function(x)]
 
 
-def reverse(xs):
-    if not xs:
-        return []
-    else:
-        return xs[::-1]
+def length(xs):
+    return sum(1 for _ in xs)
 
 
-def append(xs, y):
-    xs[len(xs):] = [y]
-    return xs
+def map_clone(function, xs):
+    return [function(elem) for elem in xs]
 
 
 def foldl(function, xs, acc):
@@ -36,20 +32,5 @@ def foldr(function, xs, acc):
         return function(xs[0], foldr(function, xs[1:], acc))
 
 
-def flat(xs):
-    out = []
-    for item in xs:
-        if isinstance(item, list):
-            out.extend(flat(item))
-        else:
-            out.append(item)
-    return out
-
-
-def concat(xs, ys):
-    if not ys:
-        return xs
-    else:
-        for item in ys:
-            xs.append(item)
-        return xs
+def reverse(xs):
+    return xs[::-1]

@@ -3,7 +3,7 @@ import unittest
 from tournament import tally
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.3.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
 
 class TestTournament(unittest.TestCase):
     def test_just_the_header_if_no_input(self):

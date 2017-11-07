@@ -2,7 +2,7 @@ import unittest
 from transpose import transpose
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
 class TransposeTests(unittest.TestCase):
     def test_empty_string(self):

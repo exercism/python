@@ -9,7 +9,9 @@ For example, given the collection of numbers:
 
 - 1, 2, 3, 4, 5
 
-And the predicate:
+And the predicate: 
+
+Note: _a predicate P(x) will be true or false, depending on whether x belongs to a set._ [Wikipedia - Predicate](https://en.wikipedia.org/wiki/Predicate_(mathematical_logic)))
 
 - is the number even?
 
@@ -33,12 +35,11 @@ Keep your hands off that filter/reject/whatchamacallit functionality
 provided by your standard library!  Solve this one yourself using other
 basic tools instead.
 
-### Submitting Exercises
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 
 For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
-
 
 For more detailed information about running tests, code style and linting,
 please see the [help page](http://exercism.io/languages/python).
