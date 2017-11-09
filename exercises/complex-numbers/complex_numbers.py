@@ -2,16 +2,16 @@ class ComplexNumber(object):
     def __init__(self, real, imaginary):
         pass
 
-    def add(self, other):
+    def __add__(self, other):
         pass
 
-    def mul(self, other):
+    def __mul__(self, other):
         pass
 
-    def sub(self, other):
+    def __sub__(self, other):
         pass
 
-    def div(self, other):
+    def __truediv__(self, other):
         pass
 
     def abs(self):

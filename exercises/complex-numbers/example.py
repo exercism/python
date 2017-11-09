@@ -6,22 +6,25 @@ class ComplexNumber(object):
         self.real = real
         self.imaginary = imaginary
 
-    def add(self, other):
+    def __eq__(self, other):
+        return self.real == other.real and self.imaginary == other.imaginary
+
+    def __add__(self, other):
         r = self.real + other.real
         i = self.imaginary + other.imaginary
         return ComplexNumber(r, i)
 
-    def mul(self, other):
+    def __mul__(self, other):
         r = self.real * other.real - self.imaginary * other.imaginary
         i = self.real * other.imaginary + self.imaginary * other.real
         return ComplexNumber(r, i)
 
-    def sub(self, other):
+    def __sub__(self, other):
         r = self.real - other.real
         i = self.imaginary - other.imaginary
         return ComplexNumber(r, i)
 
-    def div(self, other):
+    def __truediv__(self, other):
         d = other.real * other.real + other.imaginary * other.imaginary
         r = (self.real * other.real + self.imaginary *
              other.imaginary) / float(d)
