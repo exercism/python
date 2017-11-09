@@ -1,5 +1,5 @@
 from itertools import permutations
-from string import ascii_uppercase as acu, digits
+from string import ascii_uppercase as acu
 acuset = set(acu)
 dset = set(range(10))
 nzdset = dset.copy()
@@ -25,9 +25,6 @@ def solve(an):
                 if letter not in expdict:
                     expdict[letter] = 0
                 expdict[letter] += esign * (10 ** p)
-
-    # Last digits expression only, to check
-    lowdigittexp = [[w[-1] for w in s] for s in alphaexp]
 
     # Extract all letters and check if they are really letters
     alldigits = set("".join([w for s in alphaexp for w in s]))
