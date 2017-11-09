@@ -1,0 +1,10 @@
+{
+  "binary_search_tree_test.py::BinarySearchTreeTests::test_add_float_number": true,
+  "binary_search_tree_test.py::BinarySearchTreeTests::test_add_integer_number1": true,
+  "binary_search_tree_test.py::BinarySearchTreeTests::test_add_integer_number2": true,
+  "binary_search_tree_test.py::BinarySearchTreeTests::test_add_integer_number3": true,
+  "binary_search_tree_test.py::BinarySearchTreeTests::test_add_integer_number4": true,
+  "binary_search_tree_test.py::BinarySearchTreeTests::test_search_valid_number1": true,
+  "binary_search_tree_test.py::BinarySearchTreeTests::test_search_valid_number2": true,
+  "binary_search_tree_test.py::BinarySearchTreeTests::test_search_valid_number3": true
+}
