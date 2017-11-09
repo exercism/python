@@ -18,8 +18,6 @@ class BinarySearchTree(object):
     def add(self, value):
         if(self.root is None):
             self.root = TreeNode(value)
-            inserted = True
-            return inserted
         else:
             inserted = False
             cur_node = self.root
@@ -31,21 +29,19 @@ class BinarySearchTree(object):
                     else:
                         cur_node.left_node = TreeNode(value)
                         inserted = True
-                        return inserted
                 elif(value > cur_node.value):
                     if(cur_node.right_node):
                         cur_node = cur_node.right_node
                     else:
                         cur_node.right_node = TreeNode(value)
                         inserted = True
-                        return inserted
 
     def search(self, search_number):
         cur_node = self.root
         found = False
         while not found:
             if(cur_node is None):
-                return False
+                return None
             elif(search_number < cur_node.value):
                 cur_node = cur_node.left_node
             elif(search_number > cur_node.value):
