@@ -27,7 +27,7 @@ def solve(an):
                 expdict[letter] += esign * (10 ** p)
 
     # Extract all letters and check if they are really letters
-    alldigits = set("".join([w for s in alphaexp for w in s]))
+    alldigits = set(expdict.keys())
     if not alldigits <= acuset:
         raise ValueError
 
