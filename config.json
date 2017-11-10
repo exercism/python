@@ -55,6 +55,20 @@
       ]
     },
     {
+      "uuid": "7126f86c-0e7f-7080-b4cb-3c8457dfcadcfe7e446",
+      "slug": "parallel-letter-frequency",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "threading",
+        "parallellism",
+        "loops",
+        "queues",
+        "strings"
+      ]
+    },
+    {
       "uuid": "ca7c5ef1-5135-4fb4-8e68-669ef0f2a51a",
       "slug": "rna-transcription",
       "core": false,
@@ -539,7 +553,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "loops",
+        "type_conversion",
+        "integers",
+        "matrices"
       ]
     },
     {
@@ -772,6 +789,20 @@
       ]
     },
     {
+      "uuid": "6aacc273-0a33-8180-679e-c12c440c0fcf89e1fb6",
+      "slug": "tree-building",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+          "refactoring",
+          "sorting",
+          "trees",
+          "records",
+          "maps"
+      ]
+    },
+    {
       "uuid": "dcc0ee26-e384-4bd4-8c4b-613fa0bb8188",
       "slug": "poker",
       "core": false,
@@ -850,11 +881,23 @@
       ]
     },
     {
+        "uuid": "8f3a3cf0-0a94-b080-c91b-d4f6c4b11c25a9dded0",
+        "slug": "simple-linked-list",
+        "core": false,
+        "unlocked_by": null,
+        "difficulty": 1,
+        "topics": [
+          "lists",
+          "algorithms",
+          "conditionals"
+        ]
+    },
+    {
       "uuid": "ca7a8b16-e5d5-4211-84f0-2f8e35b4a665",
       "slug": "linked-list",
       "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
+      "unlocked_by": "simple-linked-list",
+      "difficulty": 3,
       "topics": [
         "lists",
         "algorithms",
@@ -1005,6 +1048,17 @@
       ]
     },
     {
+      "uuid": "f5503274-ac23-11e7-abc4-cec278b6b50a",
+      "slug": "connect",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "parsing",
+        "transforming"
+      ]
+    },
+    {
       "uuid": "33f689ee-1d9c-4908-a71c-f84bff3510df",
       "slug": "collatz-conjecture",
       "core": false,
@@ -1012,6 +1066,19 @@
       "difficulty": 1,
       "topics": [
         "loops"
+      ]
+    },
+    {
+      "uuid": "d4ddeb18-ac22-11e7-abc4-cec278b6b50a",
+      "slug": "go-counting",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "parsing",
+        "tuples",
+        "optional_values",
+        "classes"
       ]
     },
     {
@@ -1096,6 +1163,41 @@
       "difficulty": 3,
       "topics": [
         "exception_handling"
+      ]
+    },
+    {
+      "uuid": "4354f631-0cf5-9980-75e7-86d1c3da1f0d3f5e619",
+      "slug": "dominoes",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 7,
+      "topics": [
+        "tuples",
+        "lists"
+      ]
+    },
+    {
+      "uuid": "55c818d6-04a8-2480-de83-9f85fd0d2eafa71935f",
+      "slug": "pov",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 9,
+      "topics": [
+        "graphs",
+        "recursion",
+        "searching",
+        "trees"
+      ]
+    },
+    {
+      "uuid": "21dacf48-0580-4d80-a6d2-257b07ad3cc47b02454",
+      "slug": "react",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 8,
+      "topics": [
+        "events",
+        "reactive_programming"
       ]
     },
     {
