@@ -68,7 +68,6 @@ def solve(an):
                            for let, dig in zip(t_lowdigs, t_digvals)])
             if testsum % 10 == 0:
                 # Low digit test passed, check the main digits
-                # print(lowdigdict)
                 # if there are no other digits that low digits,
                 # test the whole expression and return if OK
                 if len(maindigits) == 0:
