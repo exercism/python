@@ -55,7 +55,7 @@
       ]
     },
     {
-      "uuid": "7126f86c-0e7f-7080-b4cb-3c8457dfcadcfe7e446",
+      "uuid": "c4754efd-6d67-48bd-994e-4b07a217ffc3",
       "slug": "parallel-letter-frequency",
       "core": false,
       "unlocked_by": null,
@@ -789,7 +789,7 @@
       ]
     },
     {
-      "uuid": "6aacc273-0a33-8180-679e-c12c440c0fcf89e1fb6",
+      "uuid": "aeaed0e4-0973-4035-8bc5-07480849048f",
       "slug": "tree-building",
       "core": false,
       "unlocked_by": null,
@@ -881,7 +881,7 @@
       ]
     },
     {
-        "uuid": "8f3a3cf0-0a94-b080-c91b-d4f6c4b11c25a9dded0",
+        "uuid": "4c6edc8a-7bc0-4386-a653-d1091fe49301",
         "slug": "simple-linked-list",
         "core": false,
         "unlocked_by": null,
@@ -1036,7 +1036,7 @@
       ]
     },
     {
-      "uuid": "bacb2184-025f-0980-38d6-34fb419e03a6d3d8b44",
+      "uuid": "4177de10-f767-4306-b45d-5e9c08ef4753",
       "slug": "two-fer",
       "core": false,
       "unlocked_by": null,
@@ -1103,7 +1103,7 @@
       ]
     },
     {
-      "uuid": "8c89f739-05fb-7b80-b5f9-6ad079c750ba8302be8",
+      "uuid": "6f530d0c-d13e-4270-b120-e42c16691a66",
       "slug": "two-bucket",
       "difficulty": 5,
       "topics": [
@@ -1113,7 +1113,7 @@
       ]
     },
     {
-      "uuid": "1818f134-0ed9-e680-9b29-45ffd2b3344b0f841c7",
+      "uuid": "88610b9a-6d3e-4924-a092-6d2f907ed4e2",
       "slug": "markdown",
       "difficulty": 3,
       "topics": [
@@ -1121,7 +1121,7 @@
       ]
     },
     {
-      "uuid": "e348a307-078c-5280-65af-a159283d4e79438b755",
+      "uuid": "14e1dfe3-a45c-40c1-bf61-2e4f0cca5579",
       "slug": "forth",
       "core": false,
       "unlocked_by": null,
@@ -1144,19 +1144,19 @@
       ]
     },
     {
-        "uuid": "4f5f890d-0db4-5480-f79a-21057c37871b15133dc",
-        "slug": "zipper",
-        "core": false,
-        "unlocked_by": null,
-        "difficulty": 8,
-        "topics": [
-            "recursion",
-            "searching",
-            "trees"
-        ]
+      "uuid": "569210ea-71c1-4fd2-941e-6bf0d953019e",
+      "slug": "zipper",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 8,
+      "topics": [
+          "recursion",
+          "searching",
+          "trees"
+      ]
     },
     {
-      "uuid": "3a2a947a-01b3-1e80-e32b-de1756fd88365adf12e",
+      "uuid": "0dac0feb-e1c8-497e-9a1b-e96e0523eea6",
       "slug": "error-handling",
       "core": false,
       "unlocked_by": null,
@@ -1166,7 +1166,7 @@
       ]
     },
     {
-      "uuid": "4354f631-0cf5-9980-75e7-86d1c3da1f0d3f5e619",
+      "uuid": "54995590-65eb-4178-a527-0d7b1526a843",
       "slug": "dominoes",
       "core": false,
       "unlocked_by": null,
@@ -1177,7 +1177,7 @@
       ]
     },
     {
-      "uuid": "55c818d6-04a8-2480-de83-9f85fd0d2eafa71935f",
+      "uuid": "d98b1080-36d4-4357-b12a-685d204856bf",
       "slug": "pov",
       "core": false,
       "unlocked_by": null,
@@ -1190,7 +1190,7 @@
       ]
     },
     {
-      "uuid": "21dacf48-0580-4d80-a6d2-257b07ad3cc47b02454",
+      "uuid": "4c0d0d6b-347e-40ae-9b51-08555fe76cb9",
       "slug": "react",
       "core": false,
       "unlocked_by": null,
