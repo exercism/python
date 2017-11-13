@@ -10,5 +10,5 @@ class BinarySearchTree(object):
     def add(self, value):
         pass
 
-    def search(self, search_number):
+    def search(self, value):
         pass
