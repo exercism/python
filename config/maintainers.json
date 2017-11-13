@@ -12,10 +12,10 @@
     },
     {
       "github_username": "Dog",
-      "show_on_website": false,
+      "show_on_website": true,
       "alumnus": false,
-      "name": null,
-      "bio": null,
+      "name": "Dog",
+      "bio": "I can not only fetch JSON, but parse it too.",
       "link_text": null,
       "link_url": null,
       "avatar_url": null
