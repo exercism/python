@@ -46,7 +46,7 @@ class HandshakeTest(unittest.TestCase):
         self.assertEqual(handshake(0), [])
 
     # Track-specific tests
-    
+
     @unittest.skip('extra-credit')
     def test_code1(self):
         self.assertEqual(secret_code(['close your eyes', 'jump']), 12)
