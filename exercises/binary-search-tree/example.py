@@ -36,17 +36,17 @@ class BinarySearchTree(object):
                         cur_node.right_node = TreeNode(value)
                         inserted = True
 
-    def search(self, search_number):
+    def search(self, value):
         cur_node = self.root
         found = False
         while not found:
             if(cur_node is None):
                 return None
-            elif(search_number < cur_node.value):
+            elif(value < cur_node.value):
                 cur_node = cur_node.left_node
-            elif(search_number > cur_node.value):
+            elif(value > cur_node.value):
                 cur_node = cur_node.right_node
-            elif(search_number == cur_node.value):
+            elif(value == cur_node.value):
                 return cur_node
 
     def list(self):
