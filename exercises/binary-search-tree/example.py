@@ -59,21 +59,3 @@ class BinarySearchTree(object):
             self.trav_inorder(node.left_node, elements)
             elements.append(node.value)
             self.trav_inorder(node.right_node, elements)
-
-    def print_inorder(self, node):
-        if(node is not None):
-            self.print_inorder(node.left_node)
-            print(node.value)
-            self.print_inorder(node.right_node)
-
-    def print_preorder(self, node):
-        if(node is not None):
-            print(node.value)
-            self.print_preorder(node.left_node)
-            self.print_preorder(node.right_node)
-
-    def print_postorder(self, node):
-        if(node is not None):
-            self.print_postorder(node.right_node)
-            self.print_postorder(node.left_node)
-            print(node.value)
