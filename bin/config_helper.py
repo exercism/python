@@ -3,6 +3,7 @@ import argparse
 import contextlib
 import json
 import os
+import re
 import shutil
 from subprocess import check_output
 import sys
@@ -12,6 +13,8 @@ import unittest
 OK = 0
 RUN_FAIL = 1
 INVALID_USAGE = 2
+RGX_EXERCISE = r'^[a-z\-]+$'
+RGX_SNAKE_CASE = r'^[a-z_]+$'
 RGX_UUID = r'^[a-f\d]{8}(-[a-f\d]{4}){3}-[a-f\d]{12}$'
 COMMANDS = [
     'add',
@@ -54,11 +57,11 @@ def find_exercise(slug, config=None, config_file='config.json'):
 
 
 def valid_exercise(slug):
-    # TODO validate format
-    # raise argparse.ArgumentTypeError('exercise "{}" is not of the form '
-    #                                  '"exercise-slug"'.format(slug))
     if slug == 'null':
         return None
+    if not re.match(RGX_EXERCISE, slug):
+        raise argparse.ArgumentTypeError('exercise "{}" is not of the form '
+                                         '"exercise-slug"'.format(slug))
     return slug
 
 
@@ -71,11 +74,19 @@ def difficulty(value):
 
 
 def existing_topic(candidate):
-    # TODO validate format and confirm existence
-    # raise argparse.ArgumentTypeError('topic "{}" is not in snake_case '
-    #                                  'format'.format(candidate))
-    # raise argparse.ArgumentError('topic "{}" not found'.format(candidate))
-    return candidate
+    if not re.match(RGX_SNAKE_CASE, candidate):
+        raise argparse.ArgumentTypeError('topic "{}" is not in snake_case '
+                                         'format'.format(candidate))
+    try:
+        with open('TOPICS.TXT', 'r') as f:
+            lines = f.readlines()
+        topics = {line for line in map(lambda s: s.strip(), lines)
+                  if re.fullmatch(RGX_SNAKE_CASE, line) is not None}
+        if candidate in topics:
+            return candidate
+    except FileNotFoundError:
+        pass
+    raise argparse.ArgumentError('topic "{}" not found'.format(candidate))
 
 
 def generate_uuid():
@@ -83,7 +94,8 @@ def generate_uuid():
 
 
 CONFIG_PARSER = argparse.ArgumentParser(add_help=False)
-CONFIG_PARSER.add_argument('--config', default='config.json')
+CONFIG_PARSER.add_argument('--config', default='config.json',
+                           dest='config_file')
 
 EXERCISE_PARSER = argparse.ArgumentParser(add_help=False)
 EXERCISE_PARSER.add_argument('exercise', type=valid_exercise)
@@ -108,35 +120,35 @@ def add(*args):
         'difficulty': opts.difficulty,
         'topics': opts.topics
     }
-    config = load_config(opts.config)
+    config = load_config(opts.config_file)
     if find_exercise(opts.exercise, config=config) is not None:
         raise KeyError('exercise "{}" already exists!'.format(opts.exercise))
     config['exercises'].append(entry)
-    save_config(config, opts.config)
+    save_config(config, opts.config_file)
     return entry
 
 
 def edit(*args):
     # return modified entry
     opts = BASE_PARSER.parse_args(args)
-    config = load_config(opts.config)
+    config = load_config(opts.config_file)
     entry = find_exercise(opts.exercise, config)
     entry['core'] = opts.core
     entry['unlocked_by'] = opts.unlocked_by
     entry['difficulty'] = opts.difficulty
     entry['topics'] = opts.topics
-    save_config(config, opts.config)
+    save_config(config, opts.config_file)
     return entry
 
 
 def remove(*args):
     opts = BASE_PARSER.parse_args(args)
-    config = load_config(opts.config)
+    config = load_config(opts.config_file)
     for i in range(len(config['exercises'])):
         if config['exercises'][i]['slug'] == opts.exercise:
             break
     del config['exercises'][i]
-    save_config(config, opts.config)
+    save_config(config, opts.config_file)
     pass
 
 
@@ -144,15 +156,15 @@ def deprecate(*args):
     # return modified entry
     parser = argparse.ArgumentParser(parents=[CONFIG_PARSER])
     opts = parser.parse_args(args)
-    entry = find_exercise(opts.exercise, config_file=opts.config)
-    remove(opts.exercise, '--config', opts.config)
-    config = load_config(opts.config)
+    entry = find_exercise(opts.exercise, config_file=opts.config_file)
+    remove(opts.exercise, '--config', opts.config_file)
+    config = load_config(opts.config_file)
     config['exercises'].append({
         'uuid': entry['uuid'],
         'slug': opts.exercise,
         'deprecated': True
     })
-    save_config(config, opts.config)
+    save_config(config, opts.config_file)
     return {}
 
 
@@ -290,16 +302,16 @@ class ConfigHelperTest(unittest.TestCase):
         with stash_config():
             exercise = 'test-exercise'
             self.assertIsNone(find_exercise(exercise))
-            entry = main('add', exercise, '--topics', 'topic1')
-            self.assert_entry_fields(entry, exercise, topics=['topic1'])
+            entry = main('add', exercise, '--topics', 'lists')
+            self.assert_entry_fields(entry, exercise, topics=['lists'])
 
     def test_add_flag_topics_multiple(self):
         with stash_config():
             exercise = 'test-exercise'
             self.assertIsNone(find_exercise(exercise))
-            entry = main('add', exercise, '--topics', 't1', 't2', 't3')
+            entry = main('add', exercise, '--topics', 'lists', 'trees', 'maps')
             self.assert_entry_fields(entry, exercise,
-                                     topics=['t1', 't2', 't3'])
+                                     topics=['lists', 'trees', 'maps'])
 
     def test_add_cannot_add_existing_exercise(self):
         with stash_config():
@@ -308,3 +320,24 @@ class ConfigHelperTest(unittest.TestCase):
             main('add', exercise)
             with self.assertRaises(KeyError):
                 main('add', exercise)
+
+    def test_add_invalid_exercise(self):
+        with stash_config():
+            exercise = 'Try_me'
+            with self.assertRaises(SystemExit) as cm:
+                main('add', exercise)
+            self.assertEqual(cm.exception.code, INVALID_USAGE)
+
+    def test_add_invalid_topic(self):
+        with stash_config():
+            exercise = 'test-exercise'
+            with self.assertRaises(SystemExit) as cm:
+                main('add', exercise, '--topics', 'Topic')
+            self.assertEqual(cm.exception.code, INVALID_USAGE)
+
+    def test_add_non_existent_topic(self):
+        with stash_config():
+            exercise = 'test-exercise'
+            with self.assertRaises(SystemExit) as cm:
+                main('add', exercise, '--topics', 'topic')
+            self.assertEqual(cm.exception.code, INVALID_USAGE)
