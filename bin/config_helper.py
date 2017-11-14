@@ -55,7 +55,10 @@ def find_exercise(slug, config=None, config_file='config.json'):
 
 def valid_exercise(slug):
     # TODO validate format
-    # raise argparse.ArgumentTypeError('exercise "{}" is not of the form "exercise-slug"'.format(slug))
+    # raise argparse.ArgumentTypeError('exercise "{}" is not of the form '
+    #                                  '"exercise-slug"'.format(slug))
+    if slug == 'null':
+        return None
     return slug
 
 
@@ -69,7 +72,8 @@ def difficulty(value):
 
 def existing_topic(candidate):
     # TODO validate format and confirm existence
-    # raise argparse.ArgumentTypeError('topic "{}" is not in snake_case format'.format(candidate))
+    # raise argparse.ArgumentTypeError('topic "{}" is not in snake_case '
+    #                                  'format'.format(candidate))
     # raise argparse.ArgumentError('topic "{}" not found'.format(candidate))
     return candidate
 
@@ -84,15 +88,11 @@ CONFIG_PARSER.add_argument('--config', default='config.json')
 EXERCISE_PARSER = argparse.ArgumentParser(add_help=False)
 EXERCISE_PARSER.add_argument('exercise', type=valid_exercise)
 EXERCISE_PARSER.add_argument('--core', action='store_true', default=False)
-EXERCISE_PARSER.add_argument('--unlocked-by',
-                             default=None,
-                             dest='unlocked_by',
+EXERCISE_PARSER.add_argument('--unlocked-by', dest='unlocked_by', default=None,
                              type=valid_exercise)
-EXERCISE_PARSER.add_argument('--difficulty', default=1, type=difficulty)
-EXERCISE_PARSER.add_argument('--topics',
-                             nargs='*',
-                             default=[],
-                             type=existing_topic)
+EXERCISE_PARSER.add_argument('--difficulty', type=difficulty, default=1)
+EXERCISE_PARSER.add_argument('--topics', nargs='*', type=existing_topic,
+                             default=[])
 
 BASE_PARSER = argparse.ArgumentParser(parents=[CONFIG_PARSER, EXERCISE_PARSER])
 
@@ -120,12 +120,23 @@ def edit(*args):
     # return modified entry
     opts = BASE_PARSER.parse_args(args)
     config = load_config(opts.config)
-    entry = find_exercise(opts.exercise, )
-    return {}
+    entry = find_exercise(opts.exercise, config)
+    entry['core'] = opts.core
+    entry['unlocked_by'] = opts.unlocked_by
+    entry['difficulty'] = opts.difficulty
+    entry['topics'] = opts.topics
+    save_config(config, opts.config)
+    return entry
 
 
 def remove(*args):
     opts = BASE_PARSER.parse_args(args)
+    config = load_config(opts.config)
+    for i in range(len(config['exercises'])):
+        if config['exercises'][i]['slug'] == opts.exercise:
+            break
+    del config['exercises'][i]
+    save_config(config, opts.config)
     pass
 
 
@@ -133,13 +144,22 @@ def deprecate(*args):
     # return modified entry
     parser = argparse.ArgumentParser(parents=[CONFIG_PARSER])
     opts = parser.parse_args(args)
+    entry = find_exercise(opts.exercise, config_file=opts.config)
+    remove(opts.exercise, '--config', opts.config)
+    config = load_config(opts.config)
+    config['exercises'].append({
+        'uuid': entry['uuid'],
+        'slug': opts.exercise,
+        'deprecated': True
+    })
+    save_config(config, opts.config)
     return {}
 
 
 def lint(*args):
     # return list of violations
-    parser = argparse.ArgumentParser(parents=[CONFIG_PARSER])
-    opts = parser.parse_args(args)
+    # parser = argparse.ArgumentParser(parents=[CONFIG_PARSER])
+    # opts = parser.parse_args(args)
     return []
 
 
