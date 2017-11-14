@@ -98,12 +98,8 @@ BASE_PARSER = argparse.ArgumentParser(parents=[CONFIG_PARSER, EXERCISE_PARSER])
 
 
 def add(*args):
-    # return modified entry
     opts = BASE_PARSER.parse_args(args)
-    if QUICK_UUID:
-        uuid = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
-    else:
-        uuid = generate_uuid()
+    uuid = generate_uuid()
     entry = {
         'slug': opts.exercise,
         'uuid': uuid,
