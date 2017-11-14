@@ -60,23 +60,22 @@ def valid_exercise(slug):
     if slug == 'null':
         return None
     if not re.match(RGX_EXERCISE, slug):
-        raise argparse.ArgumentTypeError('exercise "{}" is not of the form '
-                                         '"exercise-slug"'.format(slug))
+        raise ValueError('exercise "{}" is not of the form '
+                         ''"exercise-slug"'.format(slug))
     return slug
 
 
 def difficulty(value):
     n = int(value)
     if n < 1 or n > 10:
-        raise argparse.ArgumentTypeError('difficulty must be an integer in '
-                                         'range 1..10')
+        raise ValueError('difficulty must be an integer in range 1..10')
     return n
 
 
 def existing_topic(candidate):
     if not re.match(RGX_SNAKE_CASE, candidate):
-        raise argparse.ArgumentTypeError('topic "{}" is not in snake_case '
-                                         'format'.format(candidate))
+        raise ValueError('topic "{}" is not in snake_case '
+                         'format'.format(candidate))
     if os.path.isfile(os.path.join(os.getcwd(), 'TOPICS.txt')):
         with open('TOPICS.txt', 'r') as f:
             lines = f.readlines()
@@ -84,7 +83,7 @@ def existing_topic(candidate):
                   if re.fullmatch(RGX_SNAKE_CASE, line) is not None}
         if candidate in topics:
             return candidate
-    raise argparse.ArgumentError('topic "{}" not found'.format(candidate))
+    raise ValueError('topic "{}" not found'.format(candidate))
 
 
 def generate_uuid():
