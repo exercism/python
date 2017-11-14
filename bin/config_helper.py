@@ -80,7 +80,7 @@ def existing_topic(candidate):
         with open('TOPICS.txt', 'r') as f:
             lines = f.readlines()
         topics = {line for line in map(lambda s: s.strip(), lines)
-                  if re.fullmatch(RGX_SNAKE_CASE, line) is not None}
+                  if re.match(RGX_SNAKE_CASE, line) is not None}
         if candidate in topics:
             return candidate
     raise ValueError('topic "{}" not found'.format(candidate))
