@@ -77,15 +77,13 @@ def existing_topic(candidate):
     if not re.match(RGX_SNAKE_CASE, candidate):
         raise argparse.ArgumentTypeError('topic "{}" is not in snake_case '
                                          'format'.format(candidate))
-    try:
-        with open('TOPICS.TXT', 'r') as f:
+    if os.path.isfile('TOPICS.txt'):
+        with open('TOPICS.txt', 'r') as f:
             lines = f.readlines()
         topics = {line for line in map(lambda s: s.strip(), lines)
                   if re.fullmatch(RGX_SNAKE_CASE, line) is not None}
         if candidate in topics:
             return candidate
-    except FileNotFoundError:
-        pass
     raise argparse.ArgumentError('topic "{}" not found'.format(candidate))
 
 
