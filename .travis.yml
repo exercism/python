@@ -19,7 +19,7 @@ install:
 
 before_script:
   - python -m pytest bin/config_helper.py
-  - ./bin/config.py lint
+  - ./bin/config_helper.py lint
   - flake8
 
 script:
