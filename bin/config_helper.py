@@ -4,10 +4,13 @@ import contextlib
 import json
 import os
 import shutil
+from subprocess import check_output
 import sys
 import tempfile
 import unittest
 
+OK = 0
+RUN_FAIL = 1
 INVALID_USAGE = 2
 RGX_UUID = r'^[a-f\d]{8}(-[a-f\d]{4}){3}-[a-f\d]{12}$'
 COMMANDS = [
@@ -71,9 +74,12 @@ def existing_topic(candidate):
     return candidate
 
 
+def generate_uuid():
+    return check_output(['configlet', 'uuid']).decode().strip()
+
+
 CONFIG_PARSER = argparse.ArgumentParser(add_help=False)
 CONFIG_PARSER.add_argument('--config', default='config.json')
-
 
 EXERCISE_PARSER = argparse.ArgumentParser(add_help=False)
 EXERCISE_PARSER.add_argument('exercise', type=valid_exercise)
@@ -88,15 +94,19 @@ EXERCISE_PARSER.add_argument('--topics',
                              default=[],
                              type=existing_topic)
 
+BASE_PARSER = argparse.ArgumentParser(parents=[CONFIG_PARSER, EXERCISE_PARSER])
+
 
 def add(*args):
-    # sys.exit(1) on error
     # return modified entry
-    parser = argparse.ArgumentParser(parents=[CONFIG_PARSER, EXERCISE_PARSER])
-    opts = parser.parse_args(args)
+    opts = BASE_PARSER.parse_args(args)
+    if QUICK_UUID:
+        uuid = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
+    else:
+        uuid = generate_uuid()
     entry = {
         'slug': opts.exercise,
-        'uuid': 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee',
+        'uuid': uuid,
         'core': opts.core,
         'unlocked_by': opts.unlocked_by,
         'difficulty': opts.difficulty,
@@ -111,22 +121,17 @@ def add(*args):
 
 
 def edit(*args):
-    # sys.exit(1) on error
     # return modified entry
-    parser = argparse.ArgumentParser(parents=[CONFIG_PARSER, EXERCISE_PARSER])
-    opts = parser.parse_args(args)
+    opts = BASE_PARSER.parse_args(args)
     return {}
 
 
 def remove(*args):
-    # sys.exit(1) on error
-    parser = argparse.ArgumentParser(parents=[CONFIG_PARSER, EXERCISE_PARSER])
-    opts = parser.parse_args(args)
+    opts = BASE_PARSER.parse_args(args)
     pass
 
 
 def deprecate(*args):
-    # sys.exit(1) on error
     # return modified entry
     parser = argparse.ArgumentParser(parents=[CONFIG_PARSER])
     opts = parser.parse_args(args)
@@ -134,7 +139,6 @@ def deprecate(*args):
 
 
 def lint(*args):
-    # sys.exit(1) on error
     # return list of violations
     parser = argparse.ArgumentParser(parents=[CONFIG_PARSER])
     opts = parser.parse_args(args)
@@ -151,18 +155,23 @@ def main(*args):
 
 
 if __name__ == '__main__':
-    ret = main(*sys.argv[1:])
+    try:
+        ret = main(*sys.argv[1:])
+    except KeyError:
+        sys.exit(INVALID_USAGE)
     if isinstance(ret, dict):
         for k, v in ret.items():
             print('{}: {}'.format(k, v))
     elif isinstance(ret, list):
         for item in ret:
             print(str(item))
+        if sys.argv[1] == 'lint' and any(ret):
+            sys.exit(RUN_FAIL)
     elif isinstance(ret, int):
         sys.exit(ret)
     elif ret is not None:
         print(str(ret))
-    sys.exit(0)
+    sys.exit(OK)
 
 
 @contextlib.contextmanager

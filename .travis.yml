@@ -18,11 +18,11 @@ install:
   - pip install -r requirements-travis.txt
 
 before_script:
+  - ./bin/fetch-configlet
   - python -m pytest bin/config_helper.py
   - ./bin/config_helper.py lint
   - flake8
 
 script:
-  - ./bin/fetch-configlet
   - ./bin/configlet lint .
   - ./test/check-exercises.py
