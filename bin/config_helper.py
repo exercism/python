@@ -75,7 +75,7 @@ def existing_topic(candidate):
 
 
 def generate_uuid():
-    return check_output(['configlet', 'uuid']).decode().strip()
+    return check_output(['bin/configlet', 'uuid']).decode().strip()
 
 
 CONFIG_PARSER = argparse.ArgumentParser(add_help=False)
@@ -119,6 +119,8 @@ def add(*args):
 def edit(*args):
     # return modified entry
     opts = BASE_PARSER.parse_args(args)
+    config = load_config(opts.config)
+    entry = find_exercise(opts.exercise, )
     return {}
 
 
