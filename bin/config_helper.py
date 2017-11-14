@@ -61,7 +61,7 @@ def valid_exercise(slug):
         return None
     if not re.match(RGX_EXERCISE, slug):
         raise ValueError('exercise "{}" is not of the form '
-                         ''"exercise-slug"'.format(slug))
+                         '"exercise-slug"'.format(slug))
     return slug
 
 
