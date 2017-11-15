@@ -130,10 +130,16 @@ def edit(*args):
     opts = BASE_PARSER.parse_args(args)
     config = load_config(opts.config_file)
     entry = find_exercise(opts.exercise, config)
-    entry['core'] = opts.core
-    entry['unlocked_by'] = opts.unlocked_by
-    entry['difficulty'] = opts.difficulty
-    entry['topics'] = opts.topics
+    if entry is None:
+        raise KeyError('exercise "{}" does not exist!'.format(opts.exercise))
+    if '--core' in args:
+        entry['core'] = opts.core
+    if '--unlocked-by' in args:
+        entry['unlocked_by'] = opts.unlocked_by
+    if '--difficulty' in args:
+        entry['difficulty'] = opts.difficulty
+    if '--topics' in args:
+        entry['topics'] = opts.topics
     save_config(config, opts.config_file)
     return entry
 
@@ -143,10 +149,10 @@ def remove(*args):
     config = load_config(opts.config_file)
     for i in range(len(config['exercises'])):
         if config['exercises'][i]['slug'] == opts.exercise:
-            break
-    del config['exercises'][i]
-    save_config(config, opts.config_file)
-    pass
+            del config['exercises'][i]
+            save_config(config, opts.config_file)
+            return
+    raise KeyError('exercise "{}" does not exist!'.format(opts.exercise))
 
 
 def deprecate(*args):
@@ -154,6 +160,8 @@ def deprecate(*args):
     parser = argparse.ArgumentParser(parents=[CONFIG_PARSER])
     opts = parser.parse_args(args)
     entry = find_exercise(opts.exercise, config_file=opts.config_file)
+    if entry is None:
+        raise KeyError('exercise "{}" does not exist!'.format(opts.exercise))
     remove(opts.exercise, '--config', opts.config_file)
     config = load_config(opts.config_file)
     config['exercises'].append({
@@ -237,15 +245,19 @@ class ConfigHelperTest(unittest.TestCase):
         self.assertIn('topics', entry)
         self.assertEqual(entry['topics'], topics)
 
-    def test_add_supported(self):
-        with stash_config():
-            main('add', 'test-exercise')
+    @contextlib.contextmanager
+    def assertExits(self, status_code=INVALID_USAGE):
+        with self.assertRaises(SystemExit) as cm:
+            yield
+        actual = cm.exception.code
+        msg = 'Status code "{}" received, expected "{}"'
+        msg = msg.format(actual, status_code)
+        self.assertEqual(actual, status_code, msg)
 
     def test_add_requires_exercise(self):
         with stash_config():
-            with self.assertRaises(SystemExit) as cm:
+            with self.assertExits():
                 main('add')
-            self.assertEqual(cm.exception.code, INVALID_USAGE)
 
     def test_add_returns_new_entry(self):
         with stash_config():
@@ -321,20 +333,123 @@ class ConfigHelperTest(unittest.TestCase):
     def test_add_invalid_exercise(self):
         with stash_config():
             exercise = 'Try_me'
-            with self.assertRaises(SystemExit) as cm:
+            with self.assertExits():
                 main('add', exercise)
-            self.assertEqual(cm.exception.code, INVALID_USAGE)
 
     def test_add_invalid_topic(self):
         with stash_config():
             exercise = 'test-exercise'
-            with self.assertRaises(SystemExit) as cm:
+            with self.assertExits():
                 main('add', exercise, '--topics', 'Topic')
-            self.assertEqual(cm.exception.code, INVALID_USAGE)
 
     def test_add_non_existent_topic(self):
         with stash_config():
             exercise = 'test-exercise'
-            with self.assertRaises(SystemExit) as cm:
+            with self.assertExits():
                 main('add', exercise, '--topics', 'topic')
-            self.assertEqual(cm.exception.code, INVALID_USAGE)
+
+    def test_edit_requires_exercise(self):
+        with stash_config():
+            with self.assertExits():
+                main('edit')
+
+    def test_edit_returns_modified_entry(self):
+        with stash_config():
+            exercise = 'test-exercise'
+            before = dict(main('add', exercise))
+            after = main('edit', exercise, '--core', '--difficulty', '3')
+            self.assert_entry_fields(after, exercise, core=True,
+                                     unlocked_by=before['unlocked_by'],
+                                     difficulty=3, topics=before['topics'])
+
+    def test_edit_modifies_entry_in_config(self):
+        with stash_config():
+            exercise = 'test-exercise'
+            before = dict(main('add', exercise))
+            self.assertIsNotNone(before)
+            main('edit', exercise, '--core', '--difficulty', '3')
+            after = find_exercise(exercise)
+            self.assert_entry_fields(after, exercise, core=True,
+                                     unlocked_by=before['unlocked_by'],
+                                     difficulty=3, topics=before['topics'])
+
+    def test_edit_flag_core(self):
+        with stash_config():
+            exercise = 'test-exercise'
+            before = dict(main('add', exercise))
+            self.assertIs(before['core'], False)
+            after = main('edit', exercise, '--core')
+            self.assertIs(after['core'], True)
+
+    def test_edit_flag_config(self):
+        with stash_config():
+            exercise = 'test-exercise'
+            before = dict(main('add', exercise, '--config', self.config_file))
+            main('edit', exercise, '--config', self.config_file, '--core')
+            after = find_exercise(exercise, config_file=self.config_file)
+            self.assertNotEqual(before['core'], after['core'])
+
+    def test_edit_flag_unlocked_by(self):
+        with stash_config():
+            parent_name = 'parent-exercise'
+            exercise = 'test-exercise'
+            main('add', parent_name)
+            before = dict(main('add', exercise))
+            self.assertIsNone(before['unlocked_by'])
+            after = main('edit', exercise, '--unlocked-by', parent_name)
+            self.assertNotEqual(before['unlocked_by'], after['unlocked_by'])
+            self.assertEqual(after['unlocked_by'], parent_name)
+
+    def test_edit_flag_unlocked_by_null(self):
+        with stash_config():
+            parent_name = 'parent-exercise'
+            exercise = 'test-exercise'
+            main('add', parent_name)
+            before = dict(main('add', exercise, '--unlocked-by', parent_name))
+            self.assertEqual(before['unlocked_by'], parent_name)
+            after = main('edit', exercise, '--unlocked-by', 'null')
+            self.assertIsNone(after['unlocked_by'])
+
+    def test_edit_flag_difficulty(self):
+        with stash_config():
+            exercise = 'test-exercise'
+            before = dict(main('add', exercise))
+            self.assertEqual(before['difficulty'], 1)
+            after = main('edit', exercise, '--difficulty', '3')
+            self.assertEqual(after['difficulty'], 3)
+
+    def test_edit_flag_topics_single(self):
+        with stash_config():
+            exercise = 'test-exercise'
+            before = dict(main('add', exercise))
+            self.assertEqual(before['topics'], [])
+            after = main('edit', exercise, '--topics', 'lists')
+            self.assertEqual(after['topics'], ['lists'])
+
+    def test_edit_flag_topics_multiple(self):
+        with stash_config():
+            exercise = 'test-exercise'
+            before = dict(main('add', exercise))
+            self.assertEqual(before['topics'], [])
+            after = main('edit', exercise, '--topics', 'lists', 'maps')
+            self.assertEqual(after['topics'], ['lists', 'maps'])
+
+    def test_edit_cannot_edit_non_existent_exercise(self):
+        with stash_config():
+            exercise = 'test-exercise'
+            with self.assertRaises(KeyError):
+                main('edit', exercise, '--core')
+
+    def test_edit_invalid_topic(self):
+        with stash_config():
+            exercise = 'test-exercise'
+            main('add', exercise)
+            with self.assertExits():
+                main('edit', exercise, '--topics', 'Topic')
+
+    def test_edit_non_existent_topic(self):
+        with stash_config():
+            exercise = 'test-exercise'
+            main('add', exercise)
+            with self.assertExits():
+                main('edit', exercise, '--topics', 'topic')
