@@ -10,6 +10,8 @@ import sys
 import tempfile
 import unittest
 
+QUICK_UUID = False
+
 OK = 0
 RUN_FAIL = 1
 INVALID_USAGE = 2
@@ -108,7 +110,11 @@ BASE_PARSER = argparse.ArgumentParser(parents=[CONFIG_PARSER, EXERCISE_PARSER])
 
 def add(*args):
     opts = BASE_PARSER.parse_args(args)
-    uuid = generate_uuid()
+    # For testing purposes
+    if QUICK_UUID:
+        uuid = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
+    else:
+        uuid = generate_uuid()
     entry = {
         'slug': opts.exercise,
         'uuid': uuid,
@@ -225,6 +231,8 @@ class ConfigHelperTest(unittest.TestCase):
         save_config(config_file=self.config_file)
         self.ctx = stash_config()
         self.ctx.__enter__()
+        global QUICK_UUID
+        QUICK_UUID = True
 
     def tearDown(self):
         shutil.rmtree(self.dir)
@@ -260,10 +268,13 @@ class ConfigHelperTest(unittest.TestCase):
                 main('add')
 
     def test_add_returns_new_entry(self):
+        global QUICK_UUID
+        QUICK_UUID = False
         with stash_config():
             exercise = 'test-exercise'
             entry = main('add', exercise)
             self.assert_entry_fields(entry, exercise)
+        QUICK_UUID = True
 
     def test_add_creates_new_entry_in_config(self):
         with stash_config():
