@@ -464,3 +464,33 @@ class ConfigHelperTest(unittest.TestCase):
             main('add', exercise)
             with self.assertExits():
                 main('edit', exercise, '--topics', 'topic')
+
+    def test_remove_requires_exercise(self):
+        with stash_config():
+            with self.assertExits():
+                main('remove')
+
+    def test_remove_removes_entry_in_config(self):
+        with stash_config():
+            exercise = 'test-exercise'
+            main('add', exercise)
+            self.assertIsNotNone(find_exercise(exercise))
+            main('remove', exercise)
+            self.assertIsNone(find_exercise(exercise))
+
+    def test_remove_flag_config(self):
+        with stash_config():
+            exercise = 'test-exercise'
+            main('add', exercise, '--config', self.config_file)
+            self.assertIsNotNone(find_exercise(exercise,
+                                               config_file=self.config_file))
+            main('remove', exercise, '--config', self.config_file)
+            self.assertIsNone(find_exercise(exercise,
+                                            config_file=self.config_file))
+
+    def test_remove_cannot_remove_non_existent_exercise(self):
+        with stash_config():
+            exercise = 'test-exercise'
+            self.assertIsNone(find_exercise(exercise))
+            with self.assertRaises(KeyError):
+                main('remove', exercise)
