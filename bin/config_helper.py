@@ -151,7 +151,9 @@ def edit(*args):
 
 
 def remove(*args):
-    opts = BASE_PARSER.parse_args(args)
+    parser = argparse.ArgumentParser(parents=[CONFIG_PARSER])
+    parser.add_argument('exercise', type=valid_exercise)
+    opts = parser.parse_args(args)
     config = load_config(opts.config_file)
     for i in range(len(config['exercises'])):
         if config['exercises'][i]['slug'] == opts.exercise:
@@ -162,21 +164,22 @@ def remove(*args):
 
 
 def deprecate(*args):
-    # return modified entry
     parser = argparse.ArgumentParser(parents=[CONFIG_PARSER])
+    parser.add_argument('exercise', type=valid_exercise)
     opts = parser.parse_args(args)
     entry = find_exercise(opts.exercise, config_file=opts.config_file)
     if entry is None:
         raise KeyError('exercise "{}" does not exist!'.format(opts.exercise))
     remove(opts.exercise, '--config', opts.config_file)
     config = load_config(opts.config_file)
-    config['exercises'].append({
+    entry = {
         'uuid': entry['uuid'],
         'slug': opts.exercise,
         'deprecated': True
-    })
+    }
+    config['exercises'].append(entry)
     save_config(config, opts.config_file)
-    return {}
+    return entry
 
 
 def lint(*args):
@@ -494,3 +497,55 @@ class ConfigHelperTest(unittest.TestCase):
             self.assertIsNone(find_exercise(exercise))
             with self.assertRaises(KeyError):
                 main('remove', exercise)
+
+    def test_deprecate_requires_exercise(self):
+        with stash_config():
+            with self.assertExits():
+                main('deprecate')
+
+    def test_deprecate_returns_modified_entry(self):
+        with stash_config():
+            exercise = 'test-exercise'
+            entry = main('add', exercise)
+            self.assertNotIn('deprecated', entry)
+            entry = main('deprecate', exercise)
+            self.assertIs(entry['deprecated'], True)
+
+    def test_deprecate_modifies_entry_in_config(self):
+        with stash_config():
+            exercise = 'test-exercise'
+            entry = main('add', exercise)
+            self.assertNotIn('deprecated', entry)
+            main('deprecate', exercise)
+            entry = find_exercise(exercise)
+            self.assertIs(entry['deprecated'], True)
+
+    def test_deprecate_flag_config(self):
+        with stash_config():
+            exercise = 'test-exercise'
+            entry = main('add', exercise, '--config', self.config_file)
+            self.assertNotIn('deprecated', entry)
+            main('deprecate', exercise, '--config', self.config_file)
+            entry = find_exercise(exercise, config_file=self.config_file)
+            self.assertIs(entry['deprecated'], True)
+
+    def test_deprecate_cannot_deprecate_non_existent_exercise(self):
+        with stash_config():
+            exercise = 'test-exercise'
+            self.assertIsNone(find_exercise(exercise))
+            with self.assertRaises(KeyError):
+                main('deprecate', exercise)
+
+    def test_deprecate_removes_unnecessary_keys(self):
+        with stash_config():
+            exercise = 'test-exercise'
+            entry = main('add', exercise)
+            self.assert_entry_fields(entry, exercise)
+            after = main('deprecate', exercise)
+            for key in entry.keys():
+                if key in ['uuid', 'slug']:
+                    continue
+                self.assertNotIn(key, after)
+            self.assertEqual(after['slug'], exercise)
+            self.assertIn('uuid', after)
+            self.assertIs(after['deprecated'], True)
