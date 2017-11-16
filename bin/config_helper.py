@@ -68,9 +68,9 @@ class StyleViolation(object):
         self.msg = msg
 
     def __str__(self):
-        msg = 'config.json({}): [CH{}]'.format(self.line_no, self.code)
+        msg = 'config.json:{}: [CH{}]'.format(self.line_no, self.code)
         if self.msg is not None:
-            msg += ' ' + self.msg
+            return ' '.join([msg, self.msg])
         return msg
 
     def __repr__(self):
