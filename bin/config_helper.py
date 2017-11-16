@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import argparse
+from collections import OrderedDict
 import contextlib
 import json
 import os
@@ -36,7 +37,11 @@ RGX_SNAKE_CASE = r'^[a-z_]+$'
 RGX_UUID = r'^[a-f\d]{8}(-[a-f\d]{4}){3}-[a-f\d]{12}$'
 
 
-def get_json_line(*patterns):
+def json_ordered_load(file_obj):
+    return json.load(file_obj, object_pairs_hook=OrderedDict)
+
+
+def json_get_line_no(*patterns):
     with open('config.json', 'r') as f:
         lines = f.readlines()
     line_no = 0
@@ -53,7 +58,7 @@ def get_json_line(*patterns):
 class StyleViolation(object):
     def __init__(self, code, line_no=-1, msg=None):
         self.code = code
-        self.code = code
+        self.line_no = line_no
         self.msg = msg
 
     def __str__(self):
@@ -197,17 +202,18 @@ class InvalidForegoneExercise(StyleViolation):
 
 
 def create_blank_config():
-    return {
+    return OrderedDict({
         'language': 'Python',
         'active': True,
         'exercises': [],
         'foregone': []
-    }
+    }.items())
 
 
 def load_config():
     with open('config.json', 'r') as f:
-        return json.load(f)
+        # return json.load(f)
+        return json_ordered_load(f)
 
 
 @contextlib.contextmanager
@@ -226,8 +232,7 @@ def save_config(config=None):
 
 def find_exercise(slug, config=None):
     if config is None:
-        with open('config.json', 'r') as f:
-            config = json.load(f)
+        config = load_config()
     if 'exercises' in config:
         for exercise in config['exercises']:
             if 'slug' in exercise and exercise['slug'] == slug:
@@ -295,14 +300,14 @@ def add(*args):
         uuid = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
     else:
         uuid = generate_uuid()
-    entry = {
+    entry = OrderedDict({
         'uuid': uuid,
         'slug': opts.exercise,
         'core': opts.core,
         'unlocked_by': opts.unlocked_by,
         'difficulty': opts.difficulty,
         'topics': opts.topics
-    }
+    }.items())
     with open_config() as config:
         if find_exercise(opts.exercise, config=config) is not None:
             msg = 'exercise "{}" already exists!'.format(opts.exercise)
@@ -358,7 +363,7 @@ def deprecate(*args):
 
 
 def lint_key(entry, slug, key, line_markers):
-    line_no = get_json_line(*line_markers)
+    line_no = json_get_line_no(*line_markers)
     if key == 'uuid':
         uuid = entry[key]
         if not valid_uuid(uuid):
@@ -396,7 +401,7 @@ def lint_key(entry, slug, key, line_markers):
                                          line_no)
         for topic in entry[key]:
             line_markers.append('"')
-            line_no = get_json_line(*line_markers)
+            line_no = json_get_line_no(*line_markers)
             try:
                 existing_topic(topic)
             except KeyError:
@@ -414,7 +419,7 @@ def lint_exercise(entry, line_markers):
     keys = list(entry.keys())
     for i, key in enumerate(KEYS):
         line_markers.append('"')
-        line_no = get_json_line(*line_markers)
+        line_no = json_get_line_no(*line_markers)
         if key not in entry:
             return MissingKey(slug, key, line_no)
         line_markers[-1] += key
@@ -432,7 +437,7 @@ def lint(*args):
     config = load_config()
     violations = []
     line_markers = ['"exercises"']
-    line_no = get_json_line(*line_markers) - 1
+    line_no = json_get_line_no(*line_markers) - 1
     if 'language' not in config:
         violations.append(MissingRootKey('language', line_no))
     elif config['language'] != LANGUAGE:
@@ -454,7 +459,7 @@ def lint(*args):
             if violation is not None:
                 violations.append(violation)
     line_markers.append(']')
-    line_no = get_json_line(*line_markers)
+    line_no = json_get_line_no(*line_markers)
     if 'foregone' not in config:
         violations.append(MissingRootKey('foregone', line_no))
     elif not isinstance(config['foregone'], list):
@@ -463,7 +468,7 @@ def lint(*args):
     else:
         for exercise in config['foregone']:
             line_markers.append('"')
-            line_no = get_json_line(*line_markers)
+            line_no = json_get_line_no(*line_markers)
             try:
                 valid_exercise(exercise)
             except ValueError:
