@@ -55,20 +55,6 @@
       ]
     },
     {
-      "uuid": "c4754efd-6d67-48bd-994e-4b07a217ffc3",
-      "slug": "parallel-letter-frequency",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 5,
-      "topics": [
-        "threading",
-        "parallellism",
-        "loops",
-        "queues",
-        "strings"
-      ]
-    },
-    {
       "uuid": "ca7c5ef1-5135-4fb4-8e68-669ef0f2a51a",
       "slug": "rna-transcription",
       "core": false,
@@ -1271,6 +1257,6 @@
     }
   ],
   "foregone": [
-
+      "parallel-letter-frequency"
   ]
 }
