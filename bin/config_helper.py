@@ -419,7 +419,6 @@ def lint_exercise(entry, line_markers):
         slug = None
     line_markers.append('{')
     keys = list(entry.keys())
-    print(entry)
     expected_keys = KEYS
     if 'deprecated' in entry:
         if entry['deprecated'] is not False:
