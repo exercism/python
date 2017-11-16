@@ -28,6 +28,12 @@ KEYS = [
     'topics'
 ]
 
+DEPRECATED_KEYS = [
+    'uuid',
+    'slug',
+    'deprecated'
+]
+
 
 OK = 0
 RUN_FAIL = 1
@@ -355,11 +361,12 @@ def deprecate(*args):
         raise KeyError('exercise "{}" does not exist!'.format(opts.exercise))
     remove(opts.exercise)
     with open_config() as config:
-        entry = OrderedDict({
+        entry = {
             'uuid': entry['uuid'],
             'slug': opts.exercise,
             'deprecated': True
-        }.items())
+        }
+        entry = OrderedDict((k, entry[k]) for k in DEPRECATED_KEYS)
         config['exercises'].append(entry)
     return entry
 
@@ -965,7 +972,7 @@ class ConfigHelperTest(unittest.TestCase):
             main('add', exercise)
             with open_config() as config:
                 entry = config['exercises'][0]
-                entry = dict(reversed([t for t in entry.items()]))
+                entry = OrderedDict(reversed([t for t in entry.items()]))
                 config['exercises'][0] = entry
             violations = main('lint')
             self.assertEqual(len(violations), 1)
