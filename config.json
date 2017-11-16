@@ -1091,6 +1091,8 @@
     {
       "uuid": "6f530d0c-d13e-4270-b120-e42c16691a66",
       "slug": "two-bucket",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 5,
       "topics": [
         "algorithms",
@@ -1101,6 +1103,8 @@
     {
       "uuid": "88610b9a-6d3e-4924-a092-6d2f907ed4e2",
       "slug": "markdown",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "refactoring"
