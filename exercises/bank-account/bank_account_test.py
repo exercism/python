@@ -53,7 +53,7 @@ class BankAccountTests(unittest.TestCase):
         self.account.open()
         self.account.close()
 
-        with self.assertRaises(Exception):
+        with self.assertRaises(ValueError):
             self.account.getBalance()
 
     def test_deposit_into_closed_account(self):
@@ -61,7 +61,7 @@ class BankAccountTests(unittest.TestCase):
         self.account.open()
         self.account.close()
 
-        with self.assertRaises(Exception):
+        with self.assertRaises(ValueError):
             self.account.deposit(50)
 
     def test_withdraw_from_closed_account(self):
@@ -69,7 +69,7 @@ class BankAccountTests(unittest.TestCase):
         self.account.open()
         self.account.close()
 
-        with self.assertRaises(Exception):
+        with self.assertRaises(ValueError):
             self.account.withdraw(50)
 
     def test_cannot_withdraw_more_than_deposited(self):
@@ -77,7 +77,7 @@ class BankAccountTests(unittest.TestCase):
         self.account.open()
         self.account.deposit(25)
 
-        with self.assertRaises(Exception):
+        with self.assertRaises(ValueError):
             self.account.withdraw(50)
 
     def test_cannot_withdraw_negative(self):
@@ -85,23 +85,20 @@ class BankAccountTests(unittest.TestCase):
         self.account.open()
         self.account.deposit(100)
 
-        with self.assertRaises(Exception):
+        with self.assertRaises(ValueError):
             self.account.withdraw(-50)
 
     def test_cannot_deposit_negative(self):
         self.account = BankAccount()
         self.account.open()
 
-        with self.assertRaises(Exception):
+        with self.assertRaises(ValueError):
             self.account.deposit(-50)
 
     def test_can_handle_concurrent_transactions(self):
         def increment_and_decrement(self):
             self.account.deposit(10)
             self.account.withdraw(1)
-
-        with self.assertRaises(Exception):
-            self.account.withdraw(-50)
 
         self.account = BankAccount()
         self.account.open()
