@@ -66,6 +66,38 @@ class StyleViolation(object):
         return json.dumps(self.__dict__)
 
 
+class MissingRootKey(StyleViolation):
+    code = 10
+
+    def __init__(self, key, line_no):
+        self.key = key
+        msg = 'root key "{}" not found'.format(key)
+        StyleViolation.__init__(self,
+                                MissingRootKey.code,
+                                line_no=line_no,
+                                msg=msg)
+
+
+class InvalidRootKeyValue(StyleViolation):
+    code = 20
+    msg = {
+        'language': ('language must be "{}"'.format(LANGUAGE)),
+        'active': ('active must be either true or false'),
+        'exercises': ('exercises must be a list'),
+        'foregone': ('foregone must be a list')
+    }
+
+    def __init__(self, key, value, line_no):
+        self.key = key
+        self.value = value
+        v_msg = 'Invalid root key value: '
+        v_msg += InvalidRootKeyValue.msg[key].format(key=key, value=value)
+        StyleViolation.__init__(self,
+                                InvalidRootKeyValue.code,
+                                line_no=line_no,
+                                msg=v_msg)
+
+
 class InvalidKeyValueFormat(StyleViolation):
     code = 100
     msg = {
@@ -147,6 +179,19 @@ class NonExistentTopic(StyleViolation):
         msg = msg.format(exercise, topic)
         StyleViolation.__init__(self,
                                 NonExistentTopic.code,
+                                line_no=line_no,
+                                msg=msg)
+
+
+class InvalidForegoneExercise(StyleViolation):
+    code = 300
+
+    def __init__(self, exercise, line_no):
+        self.exercise = exercise
+        msg = ('invalid foregone exercise; expected a string of the form '
+               '"foregone-exercise", found "{}"'.format(exercise))
+        StyleViolation.__init__(self,
+                                InvalidForegoneExercise.code,
                                 line_no=line_no,
                                 msg=msg)
 
@@ -312,6 +357,54 @@ def deprecate(*args):
     return entry
 
 
+def lint_key(entry, slug, key, line_markers):
+    line_no = get_json_line(*line_markers)
+    if key == 'uuid':
+        uuid = entry[key]
+        if not valid_uuid(uuid):
+            return InvalidKeyValueFormat(slug, key, uuid, line_no)
+    elif key == 'slug':
+        try:
+            valid_exercise(slug).upper()
+        except ValueError:
+            return InvalidKeyValueFormat(slug, key, slug, line_no)
+    elif key == 'core':
+        core = entry[key]
+        if not isinstance(core, bool):
+            return InvalidKeyValueFormat(slug, key, core, line_no)
+    elif key == 'unlocked_by':
+        unlocked_by = entry[key]
+        try:
+            if unlocked_by is not None:
+                valid_exercise(unlocked_by)
+                parent = find_exercise(unlocked_by)
+                if parent is None:
+                    return NonExistentExercise(slug, unlocked_by,
+                                               line_no)
+        except ValueError:
+            return InvalidKeyValueFormat(slug, key, unlocked_by,
+                                         line_no)
+    elif key == 'difficulty':
+        diff = entry[key]
+        try:
+            difficulty(diff)
+        except ValueError:
+            return InvalidKeyValueFormat(slug, key, diff, line_no)
+    elif key == 'topics':
+        if not isinstance(entry[key], list):
+            return InvalidKeyValueFormat(slug, key, entry[key],
+                                         line_no)
+        for topic in entry[key]:
+            line_markers.append('"')
+            line_no = get_json_line(*line_markers)
+            try:
+                existing_topic(topic)
+            except KeyError:
+                return NonExistentTopic(slug, topic, line_no)
+            except ValueError:
+                return InvalidKeyValueFormat(slug, key, topic, line_no)
+
+
 def lint_exercise(entry, line_markers):
     if 'slug' in entry:
         slug = entry['slug']
@@ -328,75 +421,54 @@ def lint_exercise(entry, line_markers):
         if keys[i] != key:
             return IncorrectKeyOrder(slug, key, keys[i], line_no)
         else:
-            if key == 'uuid':
-                uuid = entry[key]
-                if not valid_uuid(uuid):
-                    return InvalidKeyValueFormat(slug, key, uuid, line_no)
-            elif key == 'slug':
-                try:
-                    valid_exercise(slug).upper()
-                except ValueError:
-                    return InvalidKeyValueFormat(slug, key, slug, line_no)
-            elif key == 'core':
-                core = entry[key]
-                if not isinstance(core, bool):
-                    return InvalidKeyValueFormat(slug, key, core, line_no)
-            elif key == 'unlocked_by':
-                unlocked_by = entry[key]
-                try:
-                    if unlocked_by is not None:
-                        valid_exercise(unlocked_by)
-                        parent = find_exercise(unlocked_by)
-                        if parent is None:
-                            return NonExistentExercise(slug, unlocked_by,
-                                                       line_no)
-                except ValueError:
-                    return InvalidKeyValueFormat(slug, key, unlocked_by,
-                                                 line_no)
-            elif key == 'difficulty':
-                diff = entry[key]
-                try:
-                    difficulty(diff)
-                except ValueError:
-                    return InvalidKeyValueFormat(slug, key, diff, line_no)
-            elif key == 'topics':
-                if not isinstance(entry[key], list):
-                    return InvalidKeyValueFormat(slug, key, entry[key],
-                                                 line_no)
-                for topic in entry[key]:
-                    line_markers.append('"')
-                    line_no = get_json_line(*line_markers)
-                    try:
-                        existing_topic(topic)
-                    except KeyError:
-                        return NonExistentTopic(slug, topic, line_no)
-                    except ValueError:
-                        return InvalidKeyValueFormat(slug, key, topic, line_no)
+            violation = lint_key(entry, slug, key, line_markers)
+            if violation is not None:
+                return violation
 
 
 def lint(*args):
     parser = argparse.ArgumentParser()
     parser.parse_args(args)
     config = load_config()
-    if 'language' not in config:
-        raise 'TODO: CH11 language missing'
-    elif config['language'] != LANGUAGE:
-        raise 'TODO: CH21 language incorrect'
-    elif 'active' not in config:
-        raise 'TODO: CH12 active missing'
-    elif not isinstance(config['active'], bool):
-        raise 'TODO: CH22 active invalid'
-    if 'exercises' not in config:
-        raise 'TODO: CH13 exercises missing'
     violations = []
-    line_markers = ['exercises']
-    for entry in config['exercises']:
-        violation = lint_exercise(entry, line_markers)
-        if violation is not None:
-            violations.append(violation)
-    if 'foregone' in config:
-        # TODO: lint foregone
-        pass
+    line_markers = ['"exercises"']
+    line_no = get_json_line(*line_markers) - 1
+    if 'language' not in config:
+        violations.append(MissingRootKey('language', line_no))
+    elif config['language'] != LANGUAGE:
+        violations.append(InvalidRootKeyValue('language', config['language'],
+                                              line_no))
+    if 'active' not in config:
+        violations.append(MissingRootKey('active', line_no))
+    elif not isinstance(config['active'], bool):
+        violations.append(InvalidRootKeyValue('active', config['active'],
+                                              line_no))
+    if 'exercises' not in config:
+        violations.append(MissingRootKey('exercises', line_no))
+    elif not isinstance(config['exercises'], list):
+        violations.append(InvalidRootKeyValue('exercises', config['exercises'],
+                                              line_no))
+    else:
+        for entry in config['exercises']:
+            violation = lint_exercise(entry, line_markers)
+            if violation is not None:
+                violations.append(violation)
+    line_markers.append(']')
+    line_no = get_json_line(*line_markers)
+    if 'foregone' not in config:
+        violations.append(MissingRootKey('foregone', line_no))
+    elif not isinstance(config['foregone'], list):
+        violations.append(InvalidRootKeyValue('foregone', config['foregone'],
+                                              line_no))
+    else:
+        for exercise in config['foregone']:
+            line_markers.append('"')
+            line_no = get_json_line(*line_markers)
+            try:
+                valid_exercise(exercise)
+            except ValueError:
+                violation = InvalidForegoneExercise(exercise, line_no)
+                violations.append(violation)
     return violations
 
 
@@ -730,7 +802,12 @@ class ConfigHelperTest(unittest.TestCase):
         kwargs = dict(kwargs)
         self.assertIsInstance(violation, violation_type)
         self.assertEqual(violation.code, violation_type.code)
-        if violation_type == InvalidKeyValueFormat:
+        if violation_type == MissingRootKey:
+            self.assertEqual(violation.key, kwargs['key'])
+        elif violation_type == InvalidRootKeyValue:
+            self.assertEqual(violation.key, kwargs['key'])
+            self.assertEqual(violation.value, kwargs['value'])
+        elif violation_type == InvalidKeyValueFormat:
             if violation.key == 'slug':
                 self.assertEqual(violation.exercise, kwargs['value'])
             else:
@@ -750,7 +827,9 @@ class ConfigHelperTest(unittest.TestCase):
         elif violation_type == NonExistentTopic:
             self.assertEqual(violation.exercise, kwargs['exercise'])
             self.assertEqual(violation.topic, kwargs['topic'])
-        
+        elif violation_type == InvalidForegoneExercise:
+            self.assertEqual(violation.exercise, kwargs['exercise'])
+
     def assertInvalidKeyValue(self, key, value):
         with blank_config():
             exercise = 'test-exercise'
@@ -762,6 +841,56 @@ class ConfigHelperTest(unittest.TestCase):
             self.assertEqual(len(violations), 1)
             self.assertViolation(InvalidKeyValueFormat, violations[0],
                                  exercise=exercise, key=key, value=value)
+
+    def assertMissingRootKey(self, key):
+        with blank_config():
+            key = 'language'
+            with open_config() as config:
+                del config[key]
+            violations = main('lint')
+            self.assertEqual(len(violations), 1)
+            self.assertViolation(MissingRootKey, violations[0], key=key)
+
+    def test_lint_ch10_missing_root_key_language(self):
+        self.assertMissingRootKey('language')
+
+    def test_lint_ch10_missing_root_key_active(self):
+        self.assertMissingRootKey('active')
+
+    def test_lint_ch10_missing_root_key_exercises(self):
+        self.assertMissingRootKey('exercises')
+
+    def test_lint_ch10_missing_root_key_foregone(self):
+        self.assertMissingRootKey('foregone')
+
+    def assertInvalidRootKeyValue(self, key, value):
+        with blank_config():
+            with open_config() as config:
+                config[key] = value
+            violations = main('lint')
+            self.assertEqual(len(violations), 1)
+            self.assertViolation(InvalidRootKeyValue, violations[0],
+                                 key=key, value=value)
+
+    def test_lint_ch20_invalid_root_key_value_language(self):
+        self.assertInvalidRootKeyValue('language', None)
+        self.assertInvalidRootKeyValue('language', 'Java')
+        self.assertInvalidRootKeyValue('language', 'python')
+        self.assertInvalidRootKeyValue('language', 'PYTHON')
+
+    def test_lint_ch20_invalid_root_key_value_active(self):
+        self.assertInvalidRootKeyValue('active', None)
+        self.assertInvalidRootKeyValue('active', 'True')
+        self.assertInvalidRootKeyValue('active', 'false')
+        self.assertInvalidRootKeyValue('active', 'yes')
+
+    def test_lint_ch20_invalid_root_key_value_exercises(self):
+        self.assertInvalidRootKeyValue('exercises', None)
+        self.assertInvalidRootKeyValue('exercises', {})
+
+    def test_lint_ch20_invalid_root_key_value_foregone(self):
+        self.assertInvalidRootKeyValue('foregone', None)
+        self.assertInvalidRootKeyValue('foregone', {})
 
     def test_lint_ch100_invalid_key_value_format_uuid(self):
         self.assertInvalidKeyValue('uuid', 'bad_uuid')
@@ -863,3 +992,16 @@ class ConfigHelperTest(unittest.TestCase):
             self.assertEqual(len(violations), 1)
             self.assertViolation(NonExistentTopic, violations[0],
                                  exercise=exercise, topic=topic)
+
+    def assertInvalidForegoneExercise(self, exercise):
+        with blank_config():
+            with open_config() as config:
+                config['foregone'].append(exercise)
+            violations = main('lint')
+            self.assertEqual(len(violations), 1)
+            self.assertViolation(InvalidForegoneExercise, violations[0],
+                                 exercise=exercise)
+
+    def test_lint_ch300_invalid_foregone_exercise(self):
+        self.assertInvalidForegoneExercise('123_')
+        self.assertInvalidForegoneExercise(None)
