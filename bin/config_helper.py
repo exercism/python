@@ -355,11 +355,11 @@ def deprecate(*args):
         raise KeyError('exercise "{}" does not exist!'.format(opts.exercise))
     remove(opts.exercise)
     with open_config() as config:
-        entry = {
+        entry = OrderedDict({
             'uuid': entry['uuid'],
             'slug': opts.exercise,
             'deprecated': True
-        }
+        }.items())
         config['exercises'].append(entry)
     return entry
 
