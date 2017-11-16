@@ -546,7 +546,7 @@ def blank_config():
         yield
 
 
-class ConfigHelperTest(unittest.TestCase):
+class ConfigHelperCommandTest(unittest.TestCase):
     def setUp(self):
         self.ctx = stash_config()
         self.ctx.__enter__()
@@ -580,12 +580,14 @@ class ConfigHelperTest(unittest.TestCase):
         msg = msg.format(actual, status_code)
         self.assertEqual(actual, status_code, msg)
 
-    def test_add_requires_exercise(self):
+
+class AddTest(ConfigHelperCommandTest):
+    def test_requires_exercise(self):
         with stash_config():
             with self.assertExits():
                 main('add')
 
-    def test_add_returns_new_entry(self):
+    def test_returns_new_entry(self):
         global QUICK_UUID
         QUICK_UUID = False
         with stash_config():
@@ -594,7 +596,7 @@ class ConfigHelperTest(unittest.TestCase):
             self.assert_entry_fields(entry, exercise)
         QUICK_UUID = True
 
-    def test_add_creates_new_entry_in_config(self):
+    def test_creates_new_entry_in_config(self):
         with stash_config():
             exercise = 'test-exercise'
             self.assertIsNone(find_exercise(exercise))
@@ -603,14 +605,14 @@ class ConfigHelperTest(unittest.TestCase):
             self.assertIsNotNone(entry)
             self.assert_entry_fields(entry, exercise)
 
-    def test_add_flag_core(self):
+    def test_flag_core(self):
         with stash_config():
             exercise = 'test-exercise'
             self.assertIsNone(find_exercise(exercise))
             entry = main('add', exercise, '--core')
             self.assert_entry_fields(entry, exercise, core=True)
 
-    def test_add_flag_unlocked_by(self):
+    def test_flag_unlocked_by(self):
         with stash_config():
             unlocked_by = 'parent-exercise'
             exercise = 'test-exercise'
@@ -620,21 +622,21 @@ class ConfigHelperTest(unittest.TestCase):
             entry = main('add', exercise, '--unlocked-by', unlocked_by)
             self.assert_entry_fields(entry, exercise, unlocked_by=unlocked_by)
 
-    def test_add_flag_difficulty(self):
+    def test_flag_difficulty(self):
         with stash_config():
             exercise = 'test-exercise'
             self.assertIsNone(find_exercise(exercise))
             entry = main('add', exercise, '--difficulty', '9')
             self.assert_entry_fields(entry, exercise, difficulty=9)
 
-    def test_add_flag_topics_single(self):
+    def test_flag_topics_single(self):
         with stash_config():
             exercise = 'test-exercise'
             self.assertIsNone(find_exercise(exercise))
             entry = main('add', exercise, '--topics', 'lists')
             self.assert_entry_fields(entry, exercise, topics=['lists'])
 
-    def test_add_flag_topics_multiple(self):
+    def test_flag_topics_multiple(self):
         with stash_config():
             exercise = 'test-exercise'
             self.assertIsNone(find_exercise(exercise))
@@ -642,7 +644,7 @@ class ConfigHelperTest(unittest.TestCase):
             self.assert_entry_fields(entry, exercise,
                                      topics=['lists', 'trees', 'maps'])
 
-    def test_add_cannot_add_existing_exercise(self):
+    def test_cannot_add_existing_exercise(self):
         with stash_config():
             exercise = 'test-exercise'
             self.assertIsNone(find_exercise(exercise))
@@ -650,30 +652,32 @@ class ConfigHelperTest(unittest.TestCase):
             with self.assertRaises(KeyError):
                 main('add', exercise)
 
-    def test_add_invalid_exercise(self):
+    def test_invalid_exercise(self):
         with stash_config():
             exercise = 'Try_me'
             with self.assertExits():
                 main('add', exercise)
 
-    def test_add_invalid_topic(self):
+    def test_invalid_topic(self):
         with stash_config():
             exercise = 'test-exercise'
             with self.assertExits():
                 main('add', exercise, '--topics', 'Topic')
 
-    def test_add_non_existent_topic(self):
+    def test_non_existent_topic(self):
         with stash_config():
             exercise = 'test-exercise'
             with self.assertRaises(KeyError):
                 main('add', exercise, '--topics', 'topic')
 
-    def test_edit_requires_exercise(self):
+
+class EditTest(ConfigHelperCommandTest):
+    def test_requires_exercise(self):
         with stash_config():
             with self.assertExits():
                 main('edit')
 
-    def test_edit_returns_modified_entry(self):
+    def test_returns_modified_entry(self):
         with stash_config():
             exercise = 'test-exercise'
             before = dict(main('add', exercise))
@@ -682,7 +686,7 @@ class ConfigHelperTest(unittest.TestCase):
                                      unlocked_by=before['unlocked_by'],
                                      difficulty=3, topics=before['topics'])
 
-    def test_edit_modifies_entry_in_config(self):
+    def test_modifies_entry_in_config(self):
         with stash_config():
             exercise = 'test-exercise'
             before = dict(main('add', exercise))
@@ -693,7 +697,7 @@ class ConfigHelperTest(unittest.TestCase):
                                      unlocked_by=before['unlocked_by'],
                                      difficulty=3, topics=before['topics'])
 
-    def test_edit_flag_core(self):
+    def test_flag_core(self):
         with stash_config():
             exercise = 'test-exercise'
             before = dict(main('add', exercise))
@@ -701,7 +705,7 @@ class ConfigHelperTest(unittest.TestCase):
             after = main('edit', exercise, '--core')
             self.assertIs(after['core'], True)
 
-    def test_edit_flag_unlocked_by(self):
+    def test_flag_unlocked_by(self):
         with stash_config():
             parent_name = 'parent-exercise'
             exercise = 'test-exercise'
@@ -712,7 +716,7 @@ class ConfigHelperTest(unittest.TestCase):
             self.assertNotEqual(before['unlocked_by'], after['unlocked_by'])
             self.assertEqual(after['unlocked_by'], parent_name)
 
-    def test_edit_flag_unlocked_by_null(self):
+    def test_flag_unlocked_by_null(self):
         with stash_config():
             parent_name = 'parent-exercise'
             exercise = 'test-exercise'
@@ -722,7 +726,7 @@ class ConfigHelperTest(unittest.TestCase):
             after = main('edit', exercise, '--unlocked-by', 'null')
             self.assertIsNone(after['unlocked_by'])
 
-    def test_edit_flag_difficulty(self):
+    def test_flag_difficulty(self):
         with stash_config():
             exercise = 'test-exercise'
             before = dict(main('add', exercise))
@@ -730,7 +734,7 @@ class ConfigHelperTest(unittest.TestCase):
             after = main('edit', exercise, '--difficulty', '3')
             self.assertEqual(after['difficulty'], 3)
 
-    def test_edit_flag_topics_single(self):
+    def test_flag_topics_single(self):
         with stash_config():
             exercise = 'test-exercise'
             before = dict(main('add', exercise))
@@ -738,7 +742,7 @@ class ConfigHelperTest(unittest.TestCase):
             after = main('edit', exercise, '--topics', 'lists')
             self.assertEqual(after['topics'], ['lists'])
 
-    def test_edit_flag_topics_multiple(self):
+    def test_flag_topics_multiple(self):
         with stash_config():
             exercise = 'test-exercise'
             before = dict(main('add', exercise))
@@ -746,32 +750,34 @@ class ConfigHelperTest(unittest.TestCase):
             after = main('edit', exercise, '--topics', 'lists', 'maps')
             self.assertEqual(after['topics'], ['lists', 'maps'])
 
-    def test_edit_cannot_edit_non_existent_exercise(self):
+    def test_cannot_edit_non_existent_exercise(self):
         with stash_config():
             exercise = 'test-exercise'
             with self.assertRaises(KeyError):
                 main('edit', exercise, '--core')
 
-    def test_edit_invalid_topic(self):
+    def test_invalid_topic(self):
         with stash_config():
             exercise = 'test-exercise'
             main('add', exercise)
             with self.assertExits():
                 main('edit', exercise, '--topics', 'Topic')
 
-    def test_edit_non_existent_topic(self):
+    def test_non_existent_topic(self):
         with stash_config():
             exercise = 'test-exercise'
             main('add', exercise)
             with self.assertRaises(KeyError):
                 main('edit', exercise, '--topics', 'topic')
 
-    def test_remove_requires_exercise(self):
+
+class RemoveTest(ConfigHelperCommandTest):
+    def test_requires_exercise(self):
         with stash_config():
             with self.assertExits():
                 main('remove')
 
-    def test_remove_removes_entry_in_config(self):
+    def test_removes_entry_in_config(self):
         with stash_config():
             exercise = 'test-exercise'
             main('add', exercise)
@@ -779,19 +785,21 @@ class ConfigHelperTest(unittest.TestCase):
             main('remove', exercise)
             self.assertIsNone(find_exercise(exercise))
 
-    def test_remove_cannot_remove_non_existent_exercise(self):
+    def test_cannot_remove_non_existent_exercise(self):
         with stash_config():
             exercise = 'test-exercise'
             self.assertIsNone(find_exercise(exercise))
             with self.assertRaises(KeyError):
                 main('remove', exercise)
 
-    def test_deprecate_requires_exercise(self):
+
+class DeprecateTest(ConfigHelperCommandTest):
+    def test_requires_exercise(self):
         with stash_config():
             with self.assertExits():
                 main('deprecate')
 
-    def test_deprecate_returns_modified_entry(self):
+    def test_returns_modified_entry(self):
         with stash_config():
             exercise = 'test-exercise'
             entry = main('add', exercise)
@@ -799,7 +807,7 @@ class ConfigHelperTest(unittest.TestCase):
             entry = main('deprecate', exercise)
             self.assertIs(entry['deprecated'], True)
 
-    def test_deprecate_modifies_entry_in_config(self):
+    def test_modifies_entry_in_config(self):
         with stash_config():
             exercise = 'test-exercise'
             entry = main('add', exercise)
@@ -808,14 +816,14 @@ class ConfigHelperTest(unittest.TestCase):
             entry = find_exercise(exercise)
             self.assertIs(entry['deprecated'], True)
 
-    def test_deprecate_cannot_deprecate_non_existent_exercise(self):
+    def test_cannot_deprecate_non_existent_exercise(self):
         with stash_config():
             exercise = 'test-exercise'
             self.assertIsNone(find_exercise(exercise))
             with self.assertRaises(KeyError):
                 main('deprecate', exercise)
 
-    def test_deprecate_removes_unnecessary_keys(self):
+    def test_removes_unnecessary_keys(self):
         with stash_config():
             exercise = 'test-exercise'
             entry = main('add', exercise)
@@ -829,6 +837,8 @@ class ConfigHelperTest(unittest.TestCase):
             self.assertIn('uuid', after)
             self.assertIs(after['deprecated'], True)
 
+
+class LintTest(ConfigHelperCommandTest):
     def assertViolation(self, violation_type, violation, **kwargs):
         kwargs = dict(kwargs)
         self.assertIsInstance(violation, violation_type)
@@ -882,18 +892,6 @@ class ConfigHelperTest(unittest.TestCase):
             self.assertEqual(len(violations), 1)
             self.assertViolation(MissingRootKey, violations[0], key=key)
 
-    def test_lint_ch10_missing_root_key_language(self):
-        self.assertMissingRootKey('language')
-
-    def test_lint_ch10_missing_root_key_active(self):
-        self.assertMissingRootKey('active')
-
-    def test_lint_ch10_missing_root_key_exercises(self):
-        self.assertMissingRootKey('exercises')
-
-    def test_lint_ch10_missing_root_key_foregone(self):
-        self.assertMissingRootKey('foregone')
-
     def assertInvalidRootKeyValue(self, key, value):
         with blank_config():
             with open_config() as config:
@@ -902,59 +900,6 @@ class ConfigHelperTest(unittest.TestCase):
             self.assertEqual(len(violations), 1)
             self.assertViolation(InvalidRootKeyValue, violations[0],
                                  key=key, value=value)
-
-    def test_lint_ch20_invalid_root_key_value_language(self):
-        self.assertInvalidRootKeyValue('language', None)
-        self.assertInvalidRootKeyValue('language', 'Java')
-        self.assertInvalidRootKeyValue('language', 'python')
-        self.assertInvalidRootKeyValue('language', 'PYTHON')
-
-    def test_lint_ch20_invalid_root_key_value_active(self):
-        self.assertInvalidRootKeyValue('active', None)
-        self.assertInvalidRootKeyValue('active', 'True')
-        self.assertInvalidRootKeyValue('active', 'false')
-        self.assertInvalidRootKeyValue('active', 'yes')
-
-    def test_lint_ch20_invalid_root_key_value_exercises(self):
-        self.assertInvalidRootKeyValue('exercises', None)
-        self.assertInvalidRootKeyValue('exercises', {})
-
-    def test_lint_ch20_invalid_root_key_value_foregone(self):
-        self.assertInvalidRootKeyValue('foregone', None)
-        self.assertInvalidRootKeyValue('foregone', {})
-
-    def test_lint_ch100_invalid_key_value_format_uuid(self):
-        self.assertInvalidKeyValue('uuid', 'bad_uuid')
-        legacy_uuid = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaaaaaaaa'
-        self.assertInvalidKeyValue('uuid', legacy_uuid)
-
-    def test_lint_ch100_invalid_key_value_format_slug(self):
-        self.assertInvalidKeyValue('slug', '123_')
-        self.assertInvalidKeyValue('slug', None)
-
-    def test_lint_ch100_invalid_key_value_format_core(self):
-        self.assertInvalidKeyValue('core', None)
-        self.assertInvalidKeyValue('core', 'true')
-        self.assertInvalidKeyValue('core', 'false')
-        self.assertInvalidKeyValue('core', 'yes')
-        self.assertInvalidKeyValue('core', 'no')
-
-    def test_lint_ch100_invalid_key_value_format_unlocked_by(self):
-        self.assertInvalidKeyValue('unlocked_by', '123_')
-        self.assertInvalidKeyValue('unlocked_by', 'NONE')
-        self.assertInvalidKeyValue('unlocked_by', 'None')
-
-    def test_lint_ch100_invalid_key_value_format_difficulty(self):
-        self.assertInvalidKeyValue('difficulty', '123_')
-        self.assertInvalidKeyValue('difficulty', 'hard')
-        self.assertInvalidKeyValue('difficulty', 11)
-        self.assertInvalidKeyValue('difficulty', 0)
-
-    def test_lint_ch100_invalid_key_value_format_topics(self):
-        self.assertInvalidKeyValue('topics', ['TOPIC'])
-        self.assertInvalidKeyValue('topics', ['LISTS'])
-        self.assertInvalidKeyValue('topics', None)
-        self.assertInvalidKeyValue('topics', 'lists')
 
     def assertInvalidDeprecatedValue(self, value):
         with blank_config():
@@ -970,14 +915,94 @@ class ConfigHelperTest(unittest.TestCase):
             self.assertViolation(InvalidKeyValueFormat, violations[0],
                                  exercise=exercise, key=key, value=value)
 
-    def test_lint_ch100_invalid_key_value_format_deprecated(self):
+
+class CH10Test(LintTest):
+    def test_missing_root_key_language(self):
+        self.assertMissingRootKey('language')
+
+    def test_missing_root_key_active(self):
+        self.assertMissingRootKey('active')
+
+    def test_missing_root_key_exercises(self):
+        self.assertMissingRootKey('exercises')
+
+    def test_missing_root_key_foregone(self):
+        self.assertMissingRootKey('foregone')
+
+
+class CH20Test(LintTest):
+    def test_invalid_root_key_value_language(self):
+        self.assertInvalidRootKeyValue('language', None)
+        self.assertInvalidRootKeyValue('language', 'Java')
+        self.assertInvalidRootKeyValue('language', 'python')
+        self.assertInvalidRootKeyValue('language', 'PYTHON')
+
+    def test_invalid_root_key_value_active(self):
+        self.assertInvalidRootKeyValue('active', None)
+        self.assertInvalidRootKeyValue('active', 'True')
+        self.assertInvalidRootKeyValue('active', 'false')
+        self.assertInvalidRootKeyValue('active', 'yes')
+
+    def test_invalid_root_key_value_exercises(self):
+        self.assertInvalidRootKeyValue('exercises', None)
+        self.assertInvalidRootKeyValue('exercises', {})
+
+    def test_invalid_root_key_value_foregone(self):
+        self.assertInvalidRootKeyValue('foregone', None)
+        self.assertInvalidRootKeyValue('foregone', {})
+
+
+class CH100Test(LintTest):
+    def test_invalid_key_value_format_uuid(self):
+        self.assertInvalidKeyValue('uuid', 'bad_uuid')
+        legacy_uuid = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaaaaaaaa'
+        self.assertInvalidKeyValue('uuid', legacy_uuid)
+
+    def test_invalid_key_value_format_slug(self):
+        self.assertInvalidKeyValue('slug', '123_')
+        self.assertInvalidKeyValue('slug', None)
+
+    def test_invalid_key_value_format_core(self):
+        self.assertInvalidKeyValue('core', None)
+        self.assertInvalidKeyValue('core', 'true')
+        self.assertInvalidKeyValue('core', 'false')
+        self.assertInvalidKeyValue('core', 'yes')
+        self.assertInvalidKeyValue('core', 'no')
+
+    def test_invalid_key_value_format_unlocked_by(self):
+        self.assertInvalidKeyValue('unlocked_by', '123_')
+        self.assertInvalidKeyValue('unlocked_by', 'NONE')
+        self.assertInvalidKeyValue('unlocked_by', 'None')
+
+    def test_invalid_key_value_format_difficulty(self):
+        self.assertInvalidKeyValue('difficulty', '123_')
+        self.assertInvalidKeyValue('difficulty', 'hard')
+        self.assertInvalidKeyValue('difficulty', 11)
+        self.assertInvalidKeyValue('difficulty', 0)
+
+    def test_invalid_key_value_format_topics(self):
+        self.assertInvalidKeyValue('topics', ['TOPIC'])
+        self.assertInvalidKeyValue('topics', ['LISTS'])
+        self.assertInvalidKeyValue('topics', None)
+        self.assertInvalidKeyValue('topics', 'lists')
+
+    def test_invalid_key_value_format_deprecated(self):
         self.assertInvalidDeprecatedValue(None)
         self.assertInvalidDeprecatedValue([])
         self.assertInvalidDeprecatedValue('yes')
         self.assertInvalidDeprecatedValue('True')
         self.assertInvalidDeprecatedValue('false')
 
-    def test_lint_ch110_bad_key_order(self):
+
+class CH110Test(LintTest):
+    def test_correct_key_order(self):
+        with blank_config():
+            exercise = 'test-exercise'
+            main('add', exercise)
+            violations = main('lint')
+            self.assertEqual(len(violations), 0)
+
+    def test_bad_key_order(self):
         with blank_config():
             exercise = 'test-exercise'
             main('add', exercise)
@@ -991,7 +1016,16 @@ class ConfigHelperTest(unittest.TestCase):
                                  exercise=exercise, expected=KEYS[0],
                                  actual=list(entry.keys())[0])
 
-    def test_lint_ch120_missing_key(self):
+
+class CH120Test(LintTest):
+    def test_no_keys_missing(self):
+        with blank_config():
+            exercise = 'test-exercise'
+            main('add', exercise)
+            violations = main('lint')
+            self.assertEqual(len(violations), 0)
+
+    def test_missing_key(self):
         with blank_config():
             exercise = 'test-exercise'
             with open_config() as config:
@@ -1005,7 +1039,7 @@ class ConfigHelperTest(unittest.TestCase):
             self.assertViolation(MissingKey, violations[0],
                                  exercise=exercise, key=key)
 
-    def test_lint_ch120_missing_key_slug(self):
+    def test_missing_key_slug(self):
         with blank_config():
             exercise = 'test-exercise'
             main('add', exercise)
@@ -1018,7 +1052,22 @@ class ConfigHelperTest(unittest.TestCase):
             self.assertViolation(MissingKey, violations[0],
                                  exercise=exercise, key=key)
 
-    def test_lint_ch201_non_existent_exercise(self):
+
+class CH201Test(LintTest):
+    def test_existing_exercise(self):
+        with blank_config():
+            exercise = 'test-exercise'
+            parent = 'non-existent'
+            main('add', parent)
+            main('add', exercise)
+            with open_config() as config:
+                entry = find_exercise(exercise, config)
+                key = 'unlocked_by'
+                entry[key] = parent
+            violations = main('lint')
+            self.assertEqual(len(violations), 0)
+
+    def test_non_existent_exercise(self):
         with blank_config():
             exercise = 'test-exercise'
             parent = 'non-existent'
@@ -1032,7 +1081,20 @@ class ConfigHelperTest(unittest.TestCase):
             self.assertViolation(NonExistentExercise, violations[0],
                                  exercise=exercise, unlocked_by=parent)
 
-    def test_lint_ch202_non_existent_topic(self):
+
+class CH202Test(LintTest):
+    def test_existing_topic(self):
+        with blank_config():
+            exercise = 'test-exercise'
+            topic = 'lists'
+            main('add', exercise)
+            with open_config() as config:
+                entry = find_exercise(exercise, config)
+                entry['topics'].append(topic)
+            violations = main('lint')
+            self.assertEqual(len(violations), 0)
+
+    def test_non_existent_topic(self):
         with blank_config():
             exercise = 'test-exercise'
             topic = 'topic_parsing'
@@ -1045,6 +1107,8 @@ class ConfigHelperTest(unittest.TestCase):
             self.assertViolation(NonExistentTopic, violations[0],
                                  exercise=exercise, topic=topic)
 
+
+class CH300Test(LintTest):
     def assertInvalidForegoneExercise(self, exercise):
         with blank_config():
             with open_config() as config:
@@ -1054,6 +1118,19 @@ class ConfigHelperTest(unittest.TestCase):
             self.assertViolation(InvalidForegoneExercise, violations[0],
                                  exercise=exercise)
 
-    def test_lint_ch300_invalid_foregone_exercise(self):
+    def test_valid_exercise_name(self):
+        with blank_config():
+            exercise = 'test-exercise'
+            with open_config() as config:
+                config['foregone'].append(exercise)
+            violations = main('lint')
+            self.assertEqual(len(violations), 0)
+
+    def test_invalid_exercise_name_uppercase(self):
+        self.assertInvalidForegoneExercise('TEST-EXERCISE')
+
+    def test_invalid_exercise_name_numeric(self):
         self.assertInvalidForegoneExercise('123_')
+
+    def test_invalid_exercise_name_none(self):
         self.assertInvalidForegoneExercise(None)
