@@ -51,8 +51,8 @@ def json_get_line_no(*patterns):
                 line_no += 1
             line_no += 1
         except IndexError:
-            return line_no
-    return line_no + 1
+            return -1
+    return line_no
 
 
 class StyleViolation(object):
@@ -110,6 +110,7 @@ class InvalidKeyValueFormat(StyleViolation):
                  'a new UUID with configlet'),
         'slug': ('{exercise}.slug: expected a string of the '
                  'form "exercise-slug", found "{value}"'),
+        'deprecated': '{exercise}.core: expected true or false, found "{value}"',
         'core': '{exercise}.core: expected true or false, found "{value}"',
         'unlocked_by': ('{exercise}.unlocked_by: expected null or a string '
                         'of the form "exercise-slug", found "{value}"'),
@@ -212,7 +213,6 @@ def create_blank_config():
 
 def load_config():
     with open('config.json', 'r') as f:
-        # return json.load(f)
         return json_ordered_load(f)
 
 
@@ -300,14 +300,15 @@ def add(*args):
         uuid = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
     else:
         uuid = generate_uuid()
-    entry = OrderedDict({
+    entry = {
         'uuid': uuid,
         'slug': opts.exercise,
         'core': opts.core,
         'unlocked_by': opts.unlocked_by,
         'difficulty': opts.difficulty,
         'topics': opts.topics
-    }.items())
+    }
+    entry = OrderedDict((k, entry[k]) for k in KEYS)
     with open_config() as config:
         if find_exercise(opts.exercise, config=config) is not None:
             msg = 'exercise "{}" already exists!'.format(opts.exercise)
@@ -373,10 +374,10 @@ def lint_key(entry, slug, key, line_markers):
             valid_exercise(slug).upper()
         except ValueError:
             return InvalidKeyValueFormat(slug, key, slug, line_no)
-    elif key == 'core':
-        core = entry[key]
-        if not isinstance(core, bool):
-            return InvalidKeyValueFormat(slug, key, core, line_no)
+    elif key in ['core', 'deprecated']:
+        value = entry[key]
+        if not isinstance(value, bool):
+            return InvalidKeyValueFormat(slug, key, value, line_no)
     elif key == 'unlocked_by':
         unlocked_by = entry[key]
         try:
@@ -417,7 +418,14 @@ def lint_exercise(entry, line_markers):
         slug = None
     line_markers.append('{')
     keys = list(entry.keys())
-    for i, key in enumerate(KEYS):
+    print(entry)
+    expected_keys = KEYS
+    if 'deprecated' in entry:
+        if entry['deprecated'] is not False:
+            expected_keys = ['uuid', 'slug', 'deprecated']
+    else:
+        expected_keys = KEYS
+    for i, key in enumerate(expected_keys):
         line_markers.append('"')
         line_no = json_get_line_no(*line_markers)
         if key not in entry:
@@ -929,6 +937,27 @@ class ConfigHelperTest(unittest.TestCase):
         self.assertInvalidKeyValue('topics', ['LISTS'])
         self.assertInvalidKeyValue('topics', None)
         self.assertInvalidKeyValue('topics', 'lists')
+
+    def assertInvalidDeprecatedValue(self, value):
+        with blank_config():
+            exercise = 'test-exercise'
+            key = 'deprecated'
+            main('add', exercise)
+            main('deprecate', exercise)
+            with open_config() as config:
+                entry = find_exercise(exercise, config)
+                entry[key] = value
+            violations = main('lint')
+            self.assertEqual(len(violations), 1)
+            self.assertViolation(InvalidKeyValueFormat, violations[0],
+                                 exercise=exercise, key=key, value=value)
+
+    def test_lint_ch100_invalid_key_value_format_deprecated(self):
+        self.assertInvalidDeprecatedValue(None)
+        self.assertInvalidDeprecatedValue([])
+        self.assertInvalidDeprecatedValue('yes')
+        self.assertInvalidDeprecatedValue('True')
+        self.assertInvalidDeprecatedValue('false')
 
     def test_lint_ch110_bad_key_order(self):
         with blank_config():
