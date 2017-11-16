@@ -289,19 +289,21 @@ def generate_uuid():
 BASE_PARSER = argparse.ArgumentParser(add_help=False)
 BASE_PARSER.add_argument('exercise', type=valid_exercise)
 
-EXERCISE_PARSER = argparse.ArgumentParser(parents=[BASE_PARSER])
-
-EXERCISE_PARSER_EXT = argparse.ArgumentParser(parents=[BASE_PARSER])
-EXERCISE_PARSER_EXT.add_argument('--core', action='store_true', default=False)
-EXERCISE_PARSER_EXT.add_argument('--unlocked-by', dest='unlocked_by',
-                                 default=None, type=valid_exercise)
-EXERCISE_PARSER_EXT.add_argument('--difficulty', type=difficulty, default=1)
-EXERCISE_PARSER_EXT.add_argument('--topics', nargs='*', type=existing_topic,
-                                 default=[])
+EXERCISE_PARSER = argparse.ArgumentParser(parents=[BASE_PARSER],
+                                          add_help=False)
+EXERCISE_PARSER.add_argument('--core', action='store_true', default=False)
+EXERCISE_PARSER.add_argument('--unlocked-by', dest='unlocked_by',
+                             default=None, type=valid_exercise)
+EXERCISE_PARSER.add_argument('--difficulty', type=difficulty, default=1)
+EXERCISE_PARSER.add_argument('--topics', nargs='*', type=existing_topic,
+                             default=[])
 
 
 def add(*args):
-    opts = EXERCISE_PARSER_EXT.parse_args(args)
+    usage = 'config_helper.py add [-h] exercise'
+    parser = argparse.ArgumentParser(parents=[EXERCISE_PARSER],
+                                     usage=usage)
+    opts = parser.parse_args(args)
     # For testing purposes
     if QUICK_UUID:
         uuid = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
@@ -325,8 +327,10 @@ def add(*args):
 
 
 def edit(*args):
-    # return modified entry
-    opts = EXERCISE_PARSER_EXT.parse_args(args)
+    usage = 'config_helper.py edit [-h] exercise'
+    parser = argparse.ArgumentParser(parents=[EXERCISE_PARSER],
+                                     usage=usage)
+    opts = parser.parse_args(args)
     with open_config() as config:
         entry = find_exercise(opts.exercise, config)
         if entry is None:
@@ -344,7 +348,10 @@ def edit(*args):
 
 
 def remove(*args):
-    opts = EXERCISE_PARSER.parse_args(args)
+    usage = 'config_helper.py remove [-h] exercise'
+    parser = argparse.ArgumentParser(parents=[BASE_PARSER],
+                                     usage=usage)
+    opts = parser.parse_args(args)
     config = load_config()
     for i in range(len(config['exercises'])):
         if config['exercises'][i]['slug'] == opts.exercise:
@@ -355,7 +362,10 @@ def remove(*args):
 
 
 def deprecate(*args):
-    opts = EXERCISE_PARSER.parse_args(args)
+    usage = 'config_helper.py deprecate [-h] exercise'
+    parser = argparse.ArgumentParser(parents=[BASE_PARSER],
+                                     usage=usage)
+    opts = parser.parse_args(args)
     entry = find_exercise(opts.exercise)
     if entry is None:
         raise KeyError('exercise "{}" does not exist!'.format(opts.exercise))
@@ -447,7 +457,8 @@ def lint_exercise(entry, line_markers):
 
 
 def lint(*args):
-    parser = argparse.ArgumentParser()
+    usage = 'config_helper.py lint [-h] exercise'
+    parser = argparse.ArgumentParser(usage=usage)
     parser.parse_args(args)
     config = load_config()
     violations = []
