@@ -110,7 +110,8 @@ class InvalidKeyValueFormat(StyleViolation):
                  'a new UUID with configlet'),
         'slug': ('{exercise}.slug: expected a string of the '
                  'form "exercise-slug", found "{value}"'),
-        'deprecated': '{exercise}.core: expected true or false, found "{value}"',
+        'deprecated': ('{exercise}.core: expected true or false, '
+                       'found "{value}"'),
         'core': '{exercise}.core: expected true or false, found "{value}"',
         'unlocked_by': ('{exercise}.unlocked_by: expected null or a string '
                         'of the form "exercise-slug", found "{value}"'),
