@@ -3,11 +3,12 @@ import threading
 
 class BankAccount(object):
     def __init__(self):
+        self.open = False
         self.lock = threading.Lock()
 
     def getBalance(self):
         self.lock.acquire()
-        if (self.open is True):
+        if (self.open):
             self.lock.release()
             return self.balance
         else:
@@ -22,7 +23,7 @@ class BankAccount(object):
 
     def deposit(self, amount):
         self.lock.acquire()
-        if (self.open is True and amount > 0):
+        if (self.open and amount > 0):
             self.balance += amount
             self.lock.release()
         else:
@@ -31,7 +32,7 @@ class BankAccount(object):
 
     def withdraw(self, amount):
         self.lock.acquire()
-        if (self.open is True and self.balance >= amount and amount > 0):
+        if (self.open and self.balance >= amount and amount > 0):
             self.balance -= amount
             self.lock.release()
         else:

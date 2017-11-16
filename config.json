@@ -506,8 +506,9 @@
       "unlocked_by": null,
       "difficulty": 4,
       "topics": [
-        "Classes",
-        "Concurrency"
+        "classes",
+        "concurrency",
+        "conditionals"
       ]
     },
     {
