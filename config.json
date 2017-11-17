@@ -1,5 +1,6 @@
 {
   "language": "Python",
+  "blurb": "Python is a clear and powerful object-oriented programming language with an elegant and easy-to-read syntax. It is ideal for prototyping and ad-hoc tasks, but also sees wide use in scientific computing, web development, and automation.",
   "active": true,
   "exercises": [
     {
@@ -1191,7 +1192,7 @@
       ]
     },
     {
-      "uuid": "6f196341-0ffc-9780-a7ca-1f817508247161cbcd9",
+      "uuid": "df7cd9b9-283a-4466-accf-98c4a7609450",
       "slug": "binary-search-tree",
       "core": false,
       "unlocked_by": null,
