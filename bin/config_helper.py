@@ -62,10 +62,11 @@ def json_get_line_no(*patterns):
 
 
 class StyleViolation(object):
-    def __init__(self, code, line_no=-1, msg=None):
-        self.code = code
+    code = -1
+
+    def __init__(self, line_no=-1):
+        self.code = type(self).code
         self.line_no = line_no
-        self.msg = msg
 
     def __str__(self):
         msg = 'config.json:{}: [CH{}]'.format(self.line_no, self.code)
@@ -82,62 +83,56 @@ class MissingRootKey(StyleViolation):
 
     def __init__(self, key, line_no):
         self.key = key
-        msg = 'root key "{}" not found'.format(key)
-        StyleViolation.__init__(self,
-                                MissingRootKey.code,
-                                line_no=line_no,
-                                msg=msg)
+        self.msg = 'root key "{}" not found'.format(key)
+        StyleViolation.__init__(self, line_no=line_no)
 
 
 class InvalidRootKeyValue(StyleViolation):
     code = 20
-    msg = {
-        'language': ('language must be "{}"'.format(LANGUAGE)),
-        'active': ('active must be either true or false'),
-        'exercises': ('exercises must be a list'),
-        'foregone': ('foregone must be a list')
-    }
 
     def __init__(self, key, value, line_no):
         self.key = key
         self.value = value
-        v_msg = 'Invalid root key value: '
-        v_msg += InvalidRootKeyValue.msg[key].format(key=key, value=value)
-        StyleViolation.__init__(self,
-                                InvalidRootKeyValue.code,
-                                line_no=line_no,
-                                msg=v_msg)
+        StyleViolation.__init__(self, line_no=line_no)
+
+    @property
+    def msg(self):
+        return ('Invalid root key value: ' +
+                {
+                    'language': ('language must be "{}"'.format(LANGUAGE)),
+                    'active': ('active must be either true or false'),
+                    'exercises': ('exercises must be a list'),
+                    'foregone': ('foregone must be a list')
+                }[self.key].format(self.__dict__))
 
 
 class InvalidKeyValueFormat(StyleViolation):
     code = 100
-    msg = {
-        'uuid': ('{exercise}.uuid: invalid; please generate '
-                 'a new UUID with configlet'),
-        'slug': ('{exercise}.slug: expected a string of the '
-                 'form "exercise-slug", found "{value}"'),
-        'deprecated': ('{exercise}.core: expected true or false, '
-                       'found "{value}"'),
-        'core': '{exercise}.core: expected true or false, found "{value}"',
-        'unlocked_by': ('{exercise}.unlocked_by: expected null or a string '
-                        'of the form "exercise-slug", found "{value}"'),
-        'difficulty': ('{exercise}.difficulty: expected an integer in '
-                       'range [1..10], found {value}'),
-        'topics': ('{exercise}.topics: expected a string of the form '
-                   '"snake_case", found "{value}"')
-    }
 
     def __init__(self, exercise, key, value, line_no):
         self.exercise = exercise
         self.key = key
         self.value = value
-        msg = InvalidKeyValueFormat.msg[key].format(exercise=exercise,
-                                                    key=key,
-                                                    value=value)
-        StyleViolation.__init__(self,
-                                InvalidKeyValueFormat.code,
-                                line_no=line_no,
-                                msg=msg)
+        StyleViolation.__init__(self, line_no=line_no)
+
+    @property
+    def msg(self):
+        return {
+            'uuid': ('{exercise}.uuid: invalid; please generate '
+                     'a new UUID with configlet'),
+            'slug': ('{exercise}.slug: expected a string of the '
+                     'form "exercise-slug", found "{value}"'),
+            'deprecated': ('{exercise}.core: expected true or false, '
+                           'found "{value}"'),
+            'core': '{exercise}.core: expected true or false, found "{value}"',
+            'unlocked_by': ('{exercise}.unlocked_by: expected null or a '
+                            'string of the form "exercise-slug", found '
+                            '"{value}"'),
+            'difficulty': ('{exercise}.difficulty: expected an integer in '
+                           'range [1..10], found {value}'),
+            'topics': ('{exercise}.topics: expected a string of the form '
+                       '"snake_case", found "{value}"')
+        }.format(self.__dict__)
 
 
 class IncorrectKeyOrder(StyleViolation):
@@ -148,11 +143,8 @@ class IncorrectKeyOrder(StyleViolation):
         self.expected = expected
         self.actual = actual
         msg = '{}: keys out of order; expected "{}", found "{}"'
-        msg = msg.format(exercise, expected, actual)
-        StyleViolation.__init__(self,
-                                IncorrectKeyOrder.code,
-                                line_no=line_no,
-                                msg=msg)
+        self.msg = msg.format(exercise, expected, actual)
+        StyleViolation.__init__(self, line_no=line_no)
 
 
 class MissingKey(StyleViolation):
@@ -161,11 +153,8 @@ class MissingKey(StyleViolation):
     def __init__(self, exercise, key, line_no):
         self.exercise = exercise
         self.key = key
-        msg = '{}.{} not found'.format(exercise, key)
-        StyleViolation.__init__(self,
-                                MissingKey.code,
-                                line_no=line_no,
-                                msg=msg)
+        self.msg = '{}.{} not found'.format(exercise, key)
+        StyleViolation.__init__(self, line_no=line_no)
 
 
 class NonExistentExercise(StyleViolation):
@@ -175,11 +164,8 @@ class NonExistentExercise(StyleViolation):
         self.exercise = exercise
         self.unlocked_by = unlocked_by
         msg = '{}.unlocked_by: exercise "{}" not found'
-        msg = msg.format(exercise, unlocked_by)
-        StyleViolation.__init__(self,
-                                NonExistentExercise.code,
-                                line_no=line_no,
-                                msg=msg)
+        self.msg = msg.format(exercise, unlocked_by)
+        StyleViolation.__init__(self, line_no=line_no)
 
 
 class NonExistentTopic(StyleViolation):
@@ -189,11 +175,8 @@ class NonExistentTopic(StyleViolation):
         self.exercise = exercise
         self.topic = topic
         msg = '{}.topics: topic "{}" not found'
-        msg = msg.format(exercise, topic)
-        StyleViolation.__init__(self,
-                                NonExistentTopic.code,
-                                line_no=line_no,
-                                msg=msg)
+        self.msg = msg.format(exercise, topic)
+        StyleViolation.__init__(self, line_no=line_no)
 
 
 class InvalidForegoneExercise(StyleViolation):
@@ -201,12 +184,9 @@ class InvalidForegoneExercise(StyleViolation):
 
     def __init__(self, exercise, line_no):
         self.exercise = exercise
-        msg = ('invalid foregone exercise; expected a string of the form '
-               '"foregone-exercise", found "{}"'.format(exercise))
-        StyleViolation.__init__(self,
-                                InvalidForegoneExercise.code,
-                                line_no=line_no,
-                                msg=msg)
+        self.msg = ('invalid foregone exercise; expected a string of the form '
+                    '"foregone-exercise", found "{}"'.format(exercise))
+        StyleViolation.__init__(self, line_no=line_no)
 
 
 def create_blank_config():
@@ -546,6 +526,13 @@ def blank_config():
         yield
 
 
+@contextlib.contextmanager
+def singleton_config(exercise='test-exercise'):
+    with blank_config():
+        main('add', exercise)
+        yield
+
+
 class ConfigHelperCommandTest(unittest.TestCase):
     def setUp(self):
         self.ctx = stash_config()
@@ -835,88 +822,73 @@ class DeprecateTest(ConfigHelperCommandTest):
                 self.assertNotIn(key, after)
             self.assertEqual(after['slug'], exercise)
             self.assertIn('uuid', after)
+            self.assertEqual(after['uuid'], entry['uuid'])
             self.assertIs(after['deprecated'], True)
 
 
 class LintTest(ConfigHelperCommandTest):
-    def assertViolation(self, violation_type, violation, **kwargs):
+    def matchesViolation(self, violation, **kwargs):
         kwargs = dict(kwargs)
-        self.assertIsInstance(violation, violation_type)
-        self.assertEqual(violation.code, violation_type.code)
+        violation_type = type(violation)
         if violation_type == MissingRootKey:
-            self.assertEqual(violation.key, kwargs['key'])
+            return violation.key == kwargs['key']
         elif violation_type == InvalidRootKeyValue:
-            self.assertEqual(violation.key, kwargs['key'])
-            self.assertEqual(violation.value, kwargs['value'])
+            return (violation.key == kwargs['key'] and
+                    violation.value == kwargs['value'])
         elif violation_type == InvalidKeyValueFormat:
             if violation.key == 'slug':
-                self.assertEqual(violation.exercise, kwargs['value'])
+                exercise_key = 'value'
             else:
-                self.assertEqual(violation.exercise, kwargs['exercise'])
-            self.assertEqual(violation.key, kwargs['key'])
+                exercise_key = 'exercise'
+            return (violation.exercise == kwargs[exercise_key] and
+                    violation.key == kwargs['key'])
         elif violation_type == MissingKey:
-            if violation.key != 'slug':
-                self.assertEqual(violation.exercise, kwargs['exercise'])
-            self.assertEqual(violation.key, kwargs['key'])
+            return ((violation.key == 'slug' or
+                     violation.exercise == kwargs['exercise']) and
+                    violation.key == kwargs['key'])
         elif violation_type == IncorrectKeyOrder:
-            self.assertEqual(violation.exercise, kwargs['exercise'])
-            self.assertEqual(violation.expected, kwargs['expected'])
-            self.assertEqual(violation.actual, kwargs['actual'])
+            return (violation.exercise == kwargs['exercise'] and
+                    violation.expected == kwargs['expected'] and
+                    violation.actual == kwargs['actual'])
         elif violation_type == NonExistentExercise:
-            self.assertEqual(violation.exercise, kwargs['exercise'])
-            self.assertEqual(violation.unlocked_by, kwargs['unlocked_by'])
+            return (violation.exercise == kwargs['exercise'] and
+                    violation.unlocked_by == kwargs['unlocked_by'])
         elif violation_type == NonExistentTopic:
-            self.assertEqual(violation.exercise, kwargs['exercise'])
-            self.assertEqual(violation.topic, kwargs['topic'])
+            return (violation.exercise == kwargs['exercise'] and
+                    violation.topic == kwargs['topic'])
         elif violation_type == InvalidForegoneExercise:
-            self.assertEqual(violation.exercise, kwargs['exercise'])
+            return violation.exercise == kwargs['exercise']
+        return False
 
-    def assertInvalidKeyValue(self, key, value):
-        with blank_config():
-            exercise = 'test-exercise'
-            entry = main('add', exercise)
-            with open_config() as config:
-                entry = find_exercise(exercise, config)
-                entry[key] = value
-            violations = main('lint')
-            self.assertEqual(len(violations), 1)
-            self.assertViolation(InvalidKeyValueFormat, violations[0],
-                                 exercise=exercise, key=key, value=value)
+    def assertViolation(self, violation_type, **kwargs):
+        for violation in self.violations(violation_type):
+            if violation.code == violation_type.code:
+                if self.matchesViolation(violation, **kwargs):
+                    return
+        fail_msg = 'matching violation of type "{}" not found'
+        self.fail(fail_msg.format(violation_type))
 
+    def assertNoViolations(self, violation_type):
+        violations = self.violations(violation_type)
+        self.assertEqual(violations, [])
+
+    def violations(self, *types):
+        return [v for v in main('lint')
+                if type(v) in types]
+
+
+class CH10Test(LintTest):
     def assertMissingRootKey(self, key):
         with blank_config():
             key = 'language'
             with open_config() as config:
                 del config[key]
-            violations = main('lint')
-            self.assertEqual(len(violations), 1)
-            self.assertViolation(MissingRootKey, violations[0], key=key)
+            self.assertViolation(MissingRootKey, key=key)
 
-    def assertInvalidRootKeyValue(self, key, value):
+    def test_no_missing_root_keys(self):
         with blank_config():
-            with open_config() as config:
-                config[key] = value
-            violations = main('lint')
-            self.assertEqual(len(violations), 1)
-            self.assertViolation(InvalidRootKeyValue, violations[0],
-                                 key=key, value=value)
+            self.assertNoViolations(MissingRootKey)
 
-    def assertInvalidDeprecatedValue(self, value):
-        with blank_config():
-            exercise = 'test-exercise'
-            key = 'deprecated'
-            main('add', exercise)
-            main('deprecate', exercise)
-            with open_config() as config:
-                entry = find_exercise(exercise, config)
-                entry[key] = value
-            violations = main('lint')
-            self.assertEqual(len(violations), 1)
-            self.assertViolation(InvalidKeyValueFormat, violations[0],
-                                 exercise=exercise, key=key, value=value)
-
-
-class CH10Test(LintTest):
     def test_missing_root_key_language(self):
         self.assertMissingRootKey('language')
 
@@ -931,99 +903,243 @@ class CH10Test(LintTest):
 
 
 class CH20Test(LintTest):
-    def test_invalid_root_key_value_language(self):
-        self.assertInvalidRootKeyValue('language', None)
-        self.assertInvalidRootKeyValue('language', 'Java')
-        self.assertInvalidRootKeyValue('language', 'python')
-        self.assertInvalidRootKeyValue('language', 'PYTHON')
+    def assertRootKeyValue(self, key, value, valid=False):
+        with blank_config():
+            with open_config() as config:
+                config[key] = value
+            if valid:
+                self.assertNoViolations(InvalidRootKeyValue)
+            else:
+                self.assertViolation(InvalidRootKeyValue,
+                                     key=key,
+                                     value=value)
 
-    def test_invalid_root_key_value_active(self):
-        self.assertInvalidRootKeyValue('active', None)
-        self.assertInvalidRootKeyValue('active', 'True')
-        self.assertInvalidRootKeyValue('active', 'false')
-        self.assertInvalidRootKeyValue('active', 'yes')
+    def test_language_valid(self):
+        self.assertRootKeyValue('language', LANGUAGE, valid=True)
 
-    def test_invalid_root_key_value_exercises(self):
-        self.assertInvalidRootKeyValue('exercises', None)
-        self.assertInvalidRootKeyValue('exercises', {})
+    def test_language_none(self):
+        self.assertRootKeyValue('language', None)
 
-    def test_invalid_root_key_value_foregone(self):
-        self.assertInvalidRootKeyValue('foregone', None)
-        self.assertInvalidRootKeyValue('foregone', {})
+    def test_language_different_language(self):
+        self.assertRootKeyValue('language', 'Pseudocode')
+
+    def test_language_lowercase(self):
+        self.assertRootKeyValue('language', LANGUAGE.lower())
+
+    def test_language_uppercase(self):
+        self.assertRootKeyValue('language', LANGUAGE.upper())
+
+    def test_active_true(self):
+        self.assertRootKeyValue('active', True, valid=True)
+
+    def test_active_false(self):
+        self.assertRootKeyValue('active', False, valid=True)
+
+    def test_active_none(self):
+        self.assertRootKeyValue('active', None)
+
+    def test_active_true_string(self):
+        self.assertRootKeyValue('active', 'true')
+
+    def test_active_false_string(self):
+        self.assertRootKeyValue('active', 'false')
+
+    def test_active_yes(self):
+        self.assertRootKeyValue('active', 'yes')
+
+    def test_active_no(self):
+        self.assertRootKeyValue('active', 'no')
+
+    def test_exercises_empty(self):
+        self.assertRootKeyValue('exercises', [], valid=True)
+
+    def test_exercises_none(self):
+        self.assertRootKeyValue('exercises', None)
+
+    def test_exercises_non_list(self):
+        self.assertRootKeyValue('exercises', {})
+
+    def test_foregone_empty(self):
+        self.assertRootKeyValue('foregone', [], valid=True)
+
+    def test_foregone_single(self):
+        self.assertRootKeyValue('foregone', ['test-exercise'], valid=True)
+
+    def test_foregone_multiple(self):
+        foregone = ['parent', 'test-exercise', 'outdated']
+        self.assertRootKeyValue('foregone', foregone, valid=True)
+
+    def test_foregone_none(self):
+        self.assertRootKeyValue('foregone', None)
+
+    def test_foregone_non_list(self):
+        self.assertRootKeyValue('foregone', {})
 
 
 class CH100Test(LintTest):
-    def test_invalid_key_value_format_uuid(self):
-        self.assertInvalidKeyValue('uuid', 'bad_uuid')
+    def assertKeyValue(self, key, value, valid=False, deprecate=False):
+        exercise = 'test-exercise'
+        with singleton_config(exercise):
+            if deprecate:
+                main('deprecate', exercise)
+            with open_config() as config:
+                find_exercise(exercise, config)[key] = value
+            if valid:
+                self.assertNoViolations(InvalidKeyValueFormat)
+            else:
+                self.assertViolation(InvalidKeyValueFormat,
+                                     exercise=exercise,
+                                     key=key, value=value)
+
+    def test_uuid_valid(self):
+        valid_uuid = generate_uuid()
+        self.assertKeyValue('uuid', valid_uuid, valid=True)
+
+    def test_uuid_invalid(self):
+        self.assertKeyValue('uuid', 'bad_uuid')
+
+    def test_uuid_legacy(self):
         legacy_uuid = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaaaaaaaa'
-        self.assertInvalidKeyValue('uuid', legacy_uuid)
+        self.assertKeyValue('uuid', legacy_uuid)
 
-    def test_invalid_key_value_format_slug(self):
-        self.assertInvalidKeyValue('slug', '123_')
-        self.assertInvalidKeyValue('slug', None)
+    def test_slug_valid(self):
+        self.assertKeyValue('slug', 'test-exercise', valid=True)
 
-    def test_invalid_key_value_format_core(self):
-        self.assertInvalidKeyValue('core', None)
-        self.assertInvalidKeyValue('core', 'true')
-        self.assertInvalidKeyValue('core', 'false')
-        self.assertInvalidKeyValue('core', 'yes')
-        self.assertInvalidKeyValue('core', 'no')
+    def test_slug_uppercase(self):
+        self.assertKeyValue('slug', 'TEST-EXERCISE')
 
-    def test_invalid_key_value_format_unlocked_by(self):
-        self.assertInvalidKeyValue('unlocked_by', '123_')
-        self.assertInvalidKeyValue('unlocked_by', 'NONE')
-        self.assertInvalidKeyValue('unlocked_by', 'None')
+    def test_slug_snake_case(self):
+        self.assertKeyValue('slug', 'test_exercise')
 
-    def test_invalid_key_value_format_difficulty(self):
-        self.assertInvalidKeyValue('difficulty', '123_')
-        self.assertInvalidKeyValue('difficulty', 'hard')
-        self.assertInvalidKeyValue('difficulty', 11)
-        self.assertInvalidKeyValue('difficulty', 0)
+    def test_slug_numeric(self):
+        self.assertKeyValue('slug', '123')
 
-    def test_invalid_key_value_format_topics(self):
-        self.assertInvalidKeyValue('topics', ['TOPIC'])
-        self.assertInvalidKeyValue('topics', ['LISTS'])
-        self.assertInvalidKeyValue('topics', None)
-        self.assertInvalidKeyValue('topics', 'lists')
+    def test_slug_none(self):
+        self.assertKeyValue('slug', None)
 
-    def test_invalid_key_value_format_deprecated(self):
-        self.assertInvalidDeprecatedValue(None)
-        self.assertInvalidDeprecatedValue([])
-        self.assertInvalidDeprecatedValue('yes')
-        self.assertInvalidDeprecatedValue('True')
-        self.assertInvalidDeprecatedValue('false')
+    def test_core_true(self):
+        self.assertKeyValue('core', True, valid=True)
+
+    def test_core_false(self):
+        self.assertKeyValue('core', False, valid=True)
+
+    def test_core_none(self):
+        self.assertKeyValue('core', None)
+
+    def test_core_true_string(self):
+        self.assertKeyValue('core', 'true')
+
+    def test_core_false_string(self):
+        self.assertKeyValue('core', 'false')
+
+    def test_core_yes(self):
+        self.assertKeyValue('core', 'yes')
+
+    def test_core_no(self):
+        self.assertKeyValue('core', 'no')
+
+    def test_unlocked_by_null(self):
+        self.assertKeyValue('unlocked_by', None, valid=True)
+
+    def test_unlocked_by_valid_exercise(self):
+        self.assertKeyValue('unlocked_by', 'test-exercise', valid=True)
+
+    def test_unlocked_by_uppercase(self):
+        self.assertKeyValue('unlocked_by', 'TEST-EXERCISE')
+
+    def test_unlocked_by_snake_case(self):
+        self.assertKeyValue('unlocked_by', 'test_exercise')
+
+    def test_unlocked_by_numeric(self):
+        self.assertKeyValue('unlocked_by', '123')
+
+    def test_unlocked_by_none_string(self):
+        self.assertKeyValue('unlocked_by', 'NONE')
+        self.assertKeyValue('unlocked_by', 'None')
+
+    def test_difficulty(self):
+        for i in range(1, 11):
+            self.assertKeyValue('difficulty', i, valid=True)
+
+    def test_difficulty_alphanumeric(self):
+        self.assertKeyValue('difficulty', '123_abc')
+
+    def test_difficulty_semantic(self):
+        self.assertKeyValue('difficulty', 'hard')
+
+    def test_difficulty_too_high(self):
+        self.assertKeyValue('difficulty', 11)
+
+    def test_difficulty_too_low(self):
+        self.assertKeyValue('difficulty', 0)
+
+    def test_topics_valid_empty(self):
+        self.assertKeyValue('topics', [], valid=True)
+
+    def test_topics_valid_single(self):
+        self.assertKeyValue('topics', ['lists'], valid=True)
+
+    def test_topics_valid_multiple(self):
+        self.assertKeyValue('topics', ['lists', 'maps', 'trees'], valid=True)
+
+    def test_topics_uppercase_non_existent(self):
+        self.assertKeyValue('topics', ['TOPIC'])
+
+    def test_topics_uppercase_existing(self):
+        self.assertKeyValue('topics', ['LISTS'])
+
+    def test_topics_none(self):
+        self.assertKeyValue('topics', None)
+
+    def test_topics_non_list(self):
+        self.assertKeyValue('topics', 'lists')
+
+    def test_deprecate_true(self):
+        self.assertKeyValue('deprecated', True, valid=True, deprecate=True)
+
+    def test_deprecate_false(self):
+        self.assertKeyValue('deprecated', False, valid=True, deprecate=True)
+
+    def test_deprecate_none(self):
+        self.assertKeyValue('deprecated', None, deprecate=True)
+
+    def test_deprecate_true_string(self):
+        self.assertKeyValue('deprecated', 'true', deprecate=True)
+
+    def test_deprecate_false_string(self):
+        self.assertKeyValue('deprecated', 'false', deprecate=True)
+
+    def test_deprecate_yes(self):
+        self.assertKeyValue('deprecated', 'yes', deprecate=True)
+
+    def test_deprecate_no(self):
+        self.assertKeyValue('deprecated', 'no', deprecate=True)
 
 
 class CH110Test(LintTest):
     def test_correct_key_order(self):
-        with blank_config():
-            exercise = 'test-exercise'
-            main('add', exercise)
-            violations = main('lint')
-            self.assertEqual(len(violations), 0)
+        exercise = 'test-exercise'
+        with singleton_config(exercise):
+            self.assertNoViolations(IncorrectKeyOrder)
 
     def test_bad_key_order(self):
-        with blank_config():
-            exercise = 'test-exercise'
-            main('add', exercise)
+        exercise = 'test-exercise'
+        with singleton_config(exercise):
             with open_config() as config:
                 entry = config['exercises'][0]
                 entry = OrderedDict(reversed([t for t in entry.items()]))
                 config['exercises'][0] = entry
-            violations = main('lint')
-            self.assertEqual(len(violations), 1)
-            self.assertViolation(IncorrectKeyOrder, violations[0],
-                                 exercise=exercise, expected=KEYS[0],
+            self.assertViolation(IncorrectKeyOrder,
+                                 exercise=exercise,
+                                 expected=KEYS[0],
                                  actual=list(entry.keys())[0])
 
 
 class CH120Test(LintTest):
     def test_no_keys_missing(self):
-        with blank_config():
-            exercise = 'test-exercise'
-            main('add', exercise)
-            violations = main('lint')
-            self.assertEqual(len(violations), 0)
+        exercise = 'test-exercise'
+        with singleton_config(exercise):
+            self.assertNoViolations(MissingKey)
 
     def test_missing_key(self):
         with blank_config():
@@ -1032,99 +1148,89 @@ class CH120Test(LintTest):
                 entry = {
                     'slug': exercise
                 }
-                key = [k for k in KEYS if k not in entry][0]
+                missing_keys = [k for k in KEYS if k not in entry]
+                key = missing_keys[0]
                 config['exercises'].append(entry)
-            violations = main('lint')
-            self.assertEqual(len(violations), 1)
-            self.assertViolation(MissingKey, violations[0],
-                                 exercise=exercise, key=key)
+            if len(missing_keys) == 1:
+                self.assertNoViolations(MissingKey)
+            else:
+                self.assertViolation(MissingKey, exercise=exercise, key=key)
 
     def test_missing_key_slug(self):
-        with blank_config():
-            exercise = 'test-exercise'
-            main('add', exercise)
+        exercise = 'test-exercise'
+        with singleton_config(exercise):
             with open_config() as config:
                 entry = find_exercise(exercise, config)
                 key = 'slug'
                 del entry[key]
             violations = main('lint')
             self.assertEqual(len(violations), 1)
-            self.assertViolation(MissingKey, violations[0],
-                                 exercise=exercise, key=key)
+            self.assertViolation(MissingKey, exercise=exercise, key=key)
 
 
 class CH201Test(LintTest):
-    def test_existing_exercise(self):
-        with blank_config():
-            exercise = 'test-exercise'
-            parent = 'non-existent'
-            main('add', parent)
-            main('add', exercise)
+    @contextlib.contextmanager
+    def setup_test(self, parent, exists):
+        exercise = 'test-exercise'
+        with singleton_config(exercise):
+            if exists:
+                main('add', parent)
             with open_config() as config:
                 entry = find_exercise(exercise, config)
-                key = 'unlocked_by'
-                entry[key] = parent
-            violations = main('lint')
-            self.assertEqual(len(violations), 0)
+                entry['unlocked_by'] = parent
+            yield
+
+    def test_existing_exercise(self):
+        parent = 'existent'
+        with self.setup_test(parent, True):
+            self.assertNoViolations(NonExistentExercise)
 
     def test_non_existent_exercise(self):
-        with blank_config():
-            exercise = 'test-exercise'
-            parent = 'non-existent'
-            main('add', exercise)
-            with open_config() as config:
-                entry = find_exercise(exercise, config)
-                key = 'unlocked_by'
-                entry[key] = parent
-            violations = main('lint')
-            self.assertEqual(len(violations), 1)
-            self.assertViolation(NonExistentExercise, violations[0],
-                                 exercise=exercise, unlocked_by=parent)
+        parent = 'non-existent'
+        with self.setup_test(parent, False):
+            self.assertViolation(NonExistentExercise,
+                                 exercise='test-exercise',
+                                 unlocked_by=parent)
 
 
 class CH202Test(LintTest):
-    def test_existing_topic(self):
-        with blank_config():
-            exercise = 'test-exercise'
-            topic = 'lists'
-            main('add', exercise)
+    @contextlib.contextmanager
+    def setup_test(self, topic):
+        exercise = 'test-exercise'
+        with singleton_config(exercise):
             with open_config() as config:
                 entry = find_exercise(exercise, config)
                 entry['topics'].append(topic)
-            violations = main('lint')
-            self.assertEqual(len(violations), 0)
+            yield
+
+    def test_existing_topic(self):
+        with self.setup_test('lists'):
+            self.assertNoViolations(NonExistentTopic)
 
     def test_non_existent_topic(self):
-        with blank_config():
-            exercise = 'test-exercise'
-            topic = 'topic_parsing'
-            main('add', exercise)
-            with open_config() as config:
-                entry = find_exercise(exercise, config)
-                entry['topics'].append(topic)
-            violations = main('lint')
-            self.assertEqual(len(violations), 1)
-            self.assertViolation(NonExistentTopic, violations[0],
-                                 exercise=exercise, topic=topic)
+        topic = 'topic_parsing'
+        with self.setup_test(topic):
+            self.assertViolation(NonExistentTopic,
+                                 exercise='test-exercise',
+                                 topic=topic)
 
 
 class CH300Test(LintTest):
-    def assertInvalidForegoneExercise(self, exercise):
+    @contextlib.contextmanager
+    def setup_test(self, exercise):
         with blank_config():
             with open_config() as config:
                 config['foregone'].append(exercise)
-            violations = main('lint')
-            self.assertEqual(len(violations), 1)
-            self.assertViolation(InvalidForegoneExercise, violations[0],
+            yield
+
+    def assertInvalidForegoneExercise(self, exercise):
+        with self.setup_test(exercise):
+            self.assertViolation(InvalidForegoneExercise,
                                  exercise=exercise)
 
     def test_valid_exercise_name(self):
-        with blank_config():
-            exercise = 'test-exercise'
-            with open_config() as config:
-                config['foregone'].append(exercise)
-            violations = main('lint')
-            self.assertEqual(len(violations), 0)
+        with self.setup_test('test-exercise'):
+            self.assertNoViolations(InvalidForegoneExercise)
 
     def test_invalid_exercise_name_uppercase(self):
         self.assertInvalidForegoneExercise('TEST-EXERCISE')
