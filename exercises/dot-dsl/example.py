@@ -32,8 +32,8 @@ class Graph(object):
             raise TypeError("Graph data malformed")
 
         for item in data:
-            if len(item) != 3 and len(item) != 4:
-                raise TypeError("Graph item malformed")
+            if len(item) < 3:
+                raise TypeError("Graph item incomplete")
 
             type_ = item[0]
             if type_ == ATTR:
