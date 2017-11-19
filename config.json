@@ -181,7 +181,8 @@
         "equality",
         "classes",
         "lists",
-        "maps",
+        "domain_specific_languages",
+        "graphs",
         "object_oriented_programming",
         "test_driven_development",
         "transforming"
