@@ -39,8 +39,7 @@ def get_arch():
 OS = get_os()
 ARCH = get_arch()
 
-with urlopen(LATEST) as resp:
-    url = resp.geturl()
+url = urlopen(LATEST).geturl()
 VERSION = re.search('tag/(v\d+\.\d+\.\d+)$', url).group(1)
 if OS == 'windows':
     EXT = 'zip'
