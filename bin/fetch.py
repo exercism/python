@@ -23,8 +23,7 @@ try:
     from urllib.error import HTTPError
 except ImportError:
     # Python 2
-    from urllib2 import urlopen
-    from urllib2.error import HTTPError
+    from urllib2 import urlopen, HTTPError
 
 
 def fetch(*args):
