@@ -46,5 +46,5 @@ if OS == 'windows':
 else:
     EXT = 'tgz'
 URL = ('https://github.com/exercism/configlet/releases/download/{}/'
-       'configlet-{}-{}.{}}')
+       'configlet-{}-{}.{}')
 sys.exit(fetch('-x', '--dir', 'bin', URL.format(VERSION, OS, ARCH, EXT)))
