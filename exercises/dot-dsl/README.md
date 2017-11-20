@@ -24,6 +24,21 @@ connected by a green line on a yellow background.
 
 Create a DSL similar to the dot language.
 
+## Description of DSL
+
+A graph, in this DSL, is an object of type `Graph`, taking a list of one 
+or more
+
++ attributes
++ nodes
++ edges
+
+described as tuples.
+
+The implementations of `Node` and `Edge` provided in `dot_dsl.py`.
+
+Observe the test cases in `dot_dsl_test.py` to understand the DSL's design.
+
 ## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
