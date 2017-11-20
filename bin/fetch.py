@@ -61,4 +61,4 @@ def fetch(*args):
 
 
 if __name__ == '__main__':
-    sys.exit(fetch(sys.argv[1:]))
+    sys.exit(fetch(*sys.argv[1:]))
