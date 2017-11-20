@@ -2,6 +2,7 @@ import unittest
 
 from protein_translation import of_codon, of_rna
 
+# Tests adapted from problem-specifications/canonical-data.json @ v1.0.0
 
 class ProteinTranslationTests(unittest.TestCase):
 
@@ -35,24 +36,30 @@ class ProteinTranslationTests(unittest.TestCase):
         for codon in ['UAA', 'UAG', 'UGA']:
             self.assertEqual('STOP', of_codon(codon))
 
-    def test_translates_rna_strand_into_correct_protein(self):
+    def test_translates_rna_strand_into_correct_protein_list(self):
         strand = 'AUGUUUUGG'
         expected = ['Methionine', 'Phenylalanine', 'Tryptophan']
         self.assertEqual(expected, of_rna(strand))
 
-    def test_stops_translation_if_stop_codon_present(self):
+    def test_stops_translation_if_stop_codon_at_beginning_of_sequence(self):
+        strand = 'UAGUGG'
+        expected = []
+        self.assertEqual(expected, of_rna(strand))
+
+    def test_stops_translation_if_stop_codon_at_end_of_two_codon_sequence(self):
+        strand = 'UGGUAG'
+        expected = ['Tryptophan']
+        self.assertEqual(expected, of_rna(strand))
+
+    def test_stops_translation_if_stop_codon_at_end_of_three_codon_sequence(self):
         strand = 'AUGUUUUAA'
         expected = ['Methionine', 'Phenylalanine']
         self.assertEqual(expected, of_rna(strand))
 
-    def test_stops_translation_of_longer_strand(self):
+    def test_stops_translation_if_stop_codon_in_middle_of_six_codon_sequence(self):
         strand = 'UGGUGUUAUUAAUGGUUU'
-        expected = ['Tryptophan', 'Cysteine', 'Tyrosine']
+        expected = ['Tryptophan','Cysteine','Tyrosine']
         self.assertEqual(expected, of_rna(strand))
-
-    def test_invalid_codons(self):
-        with self.assertRaises(ValueError):
-            of_rna('CARROT')
 
 
 if __name__ == '__main__':
