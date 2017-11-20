@@ -1,4 +1,4 @@
 #!/bin/bash
 
 URL=https://raw.githubusercontent.com/exercism/problem-specifications/master/TOPICS.txt
-curl -s --location $URL > TOPICS.txt
+./bin/fetch.py $URL

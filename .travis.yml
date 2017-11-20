@@ -19,7 +19,7 @@ install:
 
 before_script:
   - flake8
-  - ./bin/fetch-configlet
+  - ./bin/fetch-configlet.py
   - ./bin/fetch-topics
   - python -m pytest bin/config_helper.py
   - ./bin/config_helper.py lint
