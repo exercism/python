@@ -764,6 +764,23 @@
       ]
     },
     {
+      "uuid": "a9c2fbda-a1e4-42dd-842f-4de5bb361b91",
+      "slug": "dot-dsl",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "equality",
+        "classes",
+        "lists",
+        "domain_specific_languages",
+        "graphs",
+        "object_oriented_programming",
+        "test_driven_development",
+        "transforming"
+      ]
+    },
+    {
       "uuid": "dc6e61a2-e9b9-4406-ba5c-188252afbba1",
       "slug": "transpose",
       "core": false,
