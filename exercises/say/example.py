@@ -12,7 +12,7 @@ def say(number, recursive=False):
     if number < 0:
         raise ValueError('number is negative')
     if number >= t:
-        raise ValueError('number is too large: %s' % str(number))
+        raise ValueError('number is too large: {}'.format(number))
 
     if number < 20:
         return small[number] if not recursive else 'and ' + small[number]
