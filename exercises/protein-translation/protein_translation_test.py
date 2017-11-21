@@ -51,8 +51,18 @@ class ProteinTranslationTests(unittest.TestCase):
         self.assertEqual(expected, of_rna(strand))
 
     def test_invalid_codons(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             of_rna('CARROT')
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':
