@@ -8,14 +8,14 @@ if PLATFORM == 'nt':
     import zipfile
 
     def extractall(archive):
-        with zipfile.ZipFile(archive, 'r') as zip:
-            zip.extractall()
+        with zipfile.ZipFile(archive, 'r') as zip_file:
+            zip_file.extractall()
 else:
     import tarfile
 
     def extractall(archive):
-        with tarfile.open(archive, mode='r:gz') as tar:
-            tar.extractall()
+        with tarfile.open(archive, mode='r:gz') as tar_file:
+            tar_file.extractall()
 
 try:
     # Python 3
