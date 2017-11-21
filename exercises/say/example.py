@@ -10,9 +10,9 @@ def say(number, recursive=False):
     k, m, b, t = 1e3, 1e6, 1e9, 1e12
 
     if number < 0:
-        raise AttributeError('number is negative')
+        raise ValueError('number is negative')
     if number >= t:
-        raise AttributeError('number is too large: %s' % str(number))
+        raise ValueError('number is too large: %s' % str(number))
 
     if number < 20:
         return small[number] if not recursive else 'and ' + small[number]
