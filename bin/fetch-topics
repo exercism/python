@@ -1,4 +1,0 @@
-#!/bin/bash
-
-URL=https://raw.githubusercontent.com/exercism/problem-specifications/master/TOPICS.txt
-./bin/fetch.py $URL
