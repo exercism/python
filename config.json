@@ -1,5 +1,6 @@
 {
   "language": "Python",
+  "blurb": "Python is a clear and powerful object-oriented programming language with an elegant and easy-to-read syntax. It is ideal for prototyping and ad-hoc tasks, but also sees wide use in scientific computing, web development, and automation.",
   "active": true,
   "exercises": [
     {
@@ -9,9 +10,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "control-flow (if-else statements)",
-        "optional values",
-        "text formatting"
+        "conditionals",
+        "optional_values",
+        "text_formatting"
       ]
     },
     {
@@ -21,7 +22,7 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "control-flow (if-else statements)",
+        "conditionals",
         "booleans",
         "logic"
       ]
@@ -46,8 +47,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "control-flow (loops)",
-        "control-flow (if-else statements)",
+        "loops",
+        "conditionals",
         "strings",
         "algorithms",
         "filtering",
@@ -61,8 +62,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "control-flow (if-else statements)",
-        "control-flow (loops)",
+        "conditionals",
+        "loops",
         "maps",
         "strings",
         "logic",
@@ -76,8 +77,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "control-flow (if-else statements)",
-        "control-flow (loops)",
+        "conditionals",
+        "loops",
         "sequences",
         "sets",
         "strings",
@@ -96,8 +97,8 @@
         "strings",
         "algorithms",
         "logic",
-        "pattern recognition",
-        "text formatting"
+        "pattern_recognition",
+        "text_formatting"
       ]
     },
     {
@@ -158,7 +159,7 @@
       "topics": [
         "strings",
         "logic",
-        "control-flow (loops)"
+        "loops"
       ]
     },
     {
@@ -479,8 +480,7 @@
       "topics": [
         "lists",
         "searching",
-        "loops",
-        "iteration"
+        "loops"
       ]
     },
     {
@@ -540,7 +540,10 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+        "loops",
+        "type_conversion",
+        "integers",
+        "matrices"
       ]
     },
     {
@@ -672,7 +675,7 @@
       "topics": [
         "lists",
         "parsing",
-        "transformation",
+        "transforming",
         "loops",
         "games"
       ]
@@ -790,6 +793,20 @@
       ]
     },
     {
+      "uuid": "aeaed0e4-0973-4035-8bc5-07480849048f",
+      "slug": "tree-building",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+          "refactoring",
+          "sorting",
+          "trees",
+          "records",
+          "maps"
+      ]
+    },
+    {
       "uuid": "dcc0ee26-e384-4bd4-8c4b-613fa0bb8188",
       "slug": "poker",
       "core": false,
@@ -868,11 +885,23 @@
       ]
     },
     {
+        "uuid": "4c6edc8a-7bc0-4386-a653-d1091fe49301",
+        "slug": "simple-linked-list",
+        "core": false,
+        "unlocked_by": null,
+        "difficulty": 1,
+        "topics": [
+          "lists",
+          "algorithms",
+          "conditionals"
+        ]
+    },
+    {
       "uuid": "ca7a8b16-e5d5-4211-84f0-2f8e35b4a665",
       "slug": "linked-list",
       "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
+      "unlocked_by": "simple-linked-list",
+      "difficulty": 3,
       "topics": [
         "lists",
         "algorithms",
@@ -925,7 +954,7 @@
         "time",
         "mathematics",
         "logic",
-        "text formatting"
+        "text_formatting"
       ]
     },
     {
@@ -936,7 +965,7 @@
       "difficulty": 4,
       "topics": [
         "files",
-        "text formatting",
+        "text_formatting",
         "searching"
       ]
     },
@@ -984,7 +1013,7 @@
       "difficulty": 3,
       "topics": [
         "strings",
-        "pattern matching"
+        "pattern_matching"
       ]
     },
     {
@@ -995,7 +1024,7 @@
       "difficulty": 3,
       "topics": [
         "strings",
-        "pattern matching"
+        "pattern_matching"
       ]
     },
     {
@@ -1005,21 +1034,32 @@
       "unlocked_by": null,
       "difficulty": 4,
       "topics": [
-        "Control-flow (loops)",
-        "Arrays",
-        "Algorithms"
+        "loops",
+        "arrays",
+        "algorithms"
       ]
     },
     {
-      "uuid": "bacb2184-025f-0980-38d6-34fb419e03a6d3d8b44",
+      "uuid": "4177de10-f767-4306-b45d-5e9c08ef4753",
       "slug": "two-fer",
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "control-flow (if-else statements)",
-        "optional values",
-        "text formatting"
+        "conditionals",
+        "optional_values",
+        "text_formatting"
+      ]
+    },
+    {
+      "uuid": "f5503274-ac23-11e7-abc4-cec278b6b50a",
+      "slug": "connect",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "parsing",
+        "transforming"
       ]
     },
     {
@@ -1029,7 +1069,20 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-            "control-flow (loops)"
+        "loops"
+      ]
+    },
+    {
+      "uuid": "d4ddeb18-ac22-11e7-abc4-cec278b6b50a",
+      "slug": "go-counting",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "parsing",
+        "tuples",
+        "optional_values",
+        "classes"
       ]
     },
     {
@@ -1054,8 +1107,10 @@
       ]
     },
     {
-      "uuid": "8c89f739-05fb-7b80-b5f9-6ad079c750ba8302be8",
+      "uuid": "6f530d0c-d13e-4270-b120-e42c16691a66",
       "slug": "two-bucket",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 5,
       "topics": [
         "algorithms",
@@ -1064,15 +1119,17 @@
       ]
     },
     {
-      "uuid": "1818f134-0ed9-e680-9b29-45ffd2b3344b0f841c7",
+      "uuid": "88610b9a-6d3e-4924-a092-6d2f907ed4e2",
       "slug": "markdown",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "refactoring"
       ]
     },
     {
-      "uuid": "e348a307-078c-5280-65af-a159283d4e79438b755",
+      "uuid": "14e1dfe3-a45c-40c1-bf61-2e4f0cca5579",
       "slug": "forth",
       "core": false,
       "unlocked_by": null,
@@ -1095,16 +1152,75 @@
       ]
     },
     {
-        "uuid": "4f5f890d-0db4-5480-f79a-21057c37871b15133dc",
-        "slug": "zipper",
-        "core": false,
-        "unlocked_by": null,
-        "difficulty": 8,
-        "topics": [
-            "recursion",
-            "searching",
-            "trees"
-        ]
+      "uuid": "569210ea-71c1-4fd2-941e-6bf0d953019e",
+      "slug": "zipper",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 8,
+      "topics": [
+          "recursion",
+          "searching",
+          "trees"
+      ]
+    },
+    {
+      "uuid": "0dac0feb-e1c8-497e-9a1b-e96e0523eea6",
+      "slug": "error-handling",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "exception_handling"
+      ]
+    },
+    {
+      "uuid": "54995590-65eb-4178-a527-0d7b1526a843",
+      "slug": "dominoes",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 7,
+      "topics": [
+        "tuples",
+        "lists"
+      ]
+    },
+    {
+      "uuid": "d98b1080-36d4-4357-b12a-685d204856bf",
+      "slug": "pov",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 9,
+      "topics": [
+        "graphs",
+        "recursion",
+        "searching",
+        "trees"
+      ]
+    },
+    {
+      "uuid": "4c0d0d6b-347e-40ae-9b51-08555fe76cb9",
+      "slug": "react",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 8,
+      "topics": [
+        "events",
+        "reactive_programming"
+      ]
+    },
+    {
+      "uuid": "df7cd9b9-283a-4466-accf-98c4a7609450",
+      "slug": "binary-search-tree",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics":[
+        "recursion",
+        "classes",
+        "trees",
+        "searching",
+        "object_oriented_programming"
+      ]
     },
     {
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
@@ -1163,6 +1279,6 @@
     }
   ],
   "foregone": [
-
+      "parallel-letter-frequency"
   ]
 }
