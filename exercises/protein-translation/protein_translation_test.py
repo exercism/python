@@ -4,6 +4,7 @@ from protein_translation import of_codon, of_rna
 
 # Tests adapted from problem-specifications/canonical-data.json @ v1.0.0
 
+
 class ProteinTranslationTests(unittest.TestCase):
 
     def test_AUG_translates_to_methionine(self):
@@ -46,19 +47,22 @@ class ProteinTranslationTests(unittest.TestCase):
         expected = []
         self.assertEqual(expected, of_rna(strand))
 
-    def test_stops_translation_if_stop_codon_at_end_of_two_codon_sequence(self):
+    def test_stops_translation_if_stop_codon_at_end_of_two_codon_sequence(
+            self):
         strand = 'UGGUAG'
         expected = ['Tryptophan']
         self.assertEqual(expected, of_rna(strand))
 
-    def test_stops_translation_if_stop_codon_at_end_of_three_codon_sequence(self):
+    def test_stops_translation_if_stop_codon_at_end_of_three_codon_sequence(
+            self):
         strand = 'AUGUUUUAA'
         expected = ['Methionine', 'Phenylalanine']
         self.assertEqual(expected, of_rna(strand))
 
-    def test_stops_translation_if_stop_codon_in_middle_of_six_codon_sequence(self):
+    def test_stops_translation_if_stop_codon_in_middle_of_six_codon_sequence(
+            self):
         strand = 'UGGUGUUAUUAAUGGUUU'
-        expected = ['Tryptophan','Cysteine','Tyrosine']
+        expected = ['Tryptophan', 'Cysteine', 'Tyrosine']
         self.assertEqual(expected, of_rna(strand))
 
 
