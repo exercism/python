@@ -16,24 +16,30 @@ except ImportError:
 
 def get_os():
     os = platform.system()
-    if os.startswith('Darwin'):
-        return 'mac'
-    elif os.startswith('Windows'):
-        return 'windows'
-    else:
-        return 'linux'
+    mappings = {
+        'Darwin': 'mac',
+        'Windows': 'windows'
+    }
+    for k, v in mappings.items():
+        if os.startswith(k):
+            return v
+    return 'linux'
 
 
 def get_arch():
     arch = platform.machine()
-    if '64' in arch:
-        return '64bit'
-    elif '686' in arch:
-        return '32bit'
-    elif '386' in arch:
-        return '32bit'
-    else:
-        return '64bit'
+    mappings = {
+        '64': '64bit',
+        '686': '32bit',
+        '386': '32bit',
+        'armv5': 'arm-v5',
+        'armv6': 'arm-v6',
+        'armv7': 'arm-v6'
+    }
+    for k, v in mappings.items():
+        if k in arch:
+            return v
+    return '64bit'
 
 
 OS = get_os()
