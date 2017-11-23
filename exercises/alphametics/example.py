@@ -1,98 +1,82 @@
 from itertools import permutations
-from string import ascii_uppercase as acu
-acuset = set(acu)
-dset = set(range(10))
-nzdset = dset.copy()
-nzdset.remove(0)
+
+
+def digPerms(digset, nzcharset, okzcharset):
+    nzcnt = len(nzcharset)
+    okzcnt = len(okzcharset)
+    totcnt = nzcnt + okzcnt
+    nzdigset = digset - set((0,))
+    nzdigsetcnt = len(nzdigset)
+    digsetcnt = len(digset)
+    if totcnt < 1:
+        return [()]
+    elif digsetcnt < totcnt or nzdigsetcnt < nzcnt:
+        return []
+    elif nzcnt == 0 or digsetcnt == nzdigsetcnt:
+        return permutations(digset, totcnt)
+    elif okzcnt == 0:
+        return permutations(nzdigset, totcnt)
+    else:
+        return filter(lambda x: all(x[:nzcnt]),
+                      permutations(digset, totcnt))
+
+
+def check_rec(eqparams, tracecombo=(dict(), 0, set(range(10))), p=0):
+    maxp, tchars, unzchars, uokzchars = eqparams
+    prevdict, cover, remdigs = tracecombo
+    if p == maxp:
+        if cover == 0:
+            return prevdict
+        else:
+            return dict()
+    diglets = tuple(unzchars[p]) + tuple(uokzchars[p])
+    for newdigs in digPerms(remdigs, unzchars[p], uokzchars[p]):
+        testdict = prevdict.copy()
+        testdict.update(zip(diglets, newdigs))
+        testsum = cover + sum([testdict[c] * v
+                               for c, v in tchars[p].items()])
+        d, r = divmod(testsum, 10)
+        if r == 0:
+            rectest = check_rec(eqparams,
+                                (testdict, d, remdigs - set(newdigs)),
+                                p + 1)
+            if len(rectest) > 0:
+                return rectest
+    return dict()
 
 
 def solve(an):
-    # Break down to words
-    an = an.upper()
-    alphaexp = [tuple(map(str.strip, s.split("+")))
-                for s in an.split("==")]
-    # Sum powers of 10 for letters ready for computation
-    expdict = dict()
-    loexpdict = dict()
-    for si, s in enumerate(alphaexp):
-        esign = 1 - (si << 1)
-        for t in s:
-            lowletter = t[-1]
-            if lowletter not in loexpdict:
-                loexpdict[lowletter] = 0
-            loexpdict[lowletter] += esign
-            for p, letter in enumerate(reversed(t)):
-                if letter not in expdict:
-                    expdict[letter] = 0
-                expdict[letter] += esign * (10 ** p)
+    fullexp = [list(map(lambda x: list(reversed(x.strip())), s.split("+")))
+               for s in an.strip().upper().split("==")]
+    maxp = max([len(w) for s in fullexp for w in s])
+    nzchars = set([w[-1] for s in fullexp for w in s])
 
-    # Extract all letters and check if they are really letters
-    alldigits = set(expdict.keys())
-    if not alldigits <= acuset:
-        raise ValueError
+    unzchars = []
+    uokzchars = []
+    tchars = []
+    for i in range(maxp):
+        tchars.append(dict())
+        unzchars.append(set())
+        uokzchars.append(set())
 
-    # extract high and low digigts
-    hidigits = set([w[0] for s in alphaexp for w in s])
-    lodigits = set([w[-1] for s in alphaexp for w in s])
+    for si, s in enumerate(fullexp):
+        sgn = 1 - (si << 1)
+        for w in s:
+            for p, c in enumerate(w):
+                if c not in tchars[p]:
+                    tchars[p][c] = 0
+                tchars[p][c] += sgn
 
-    # Break down low digits to nonzeros (also high digits) and possible zeros
-    lonzdigits = lodigits & hidigits
-    lorestdigits = lodigits - lonzdigits
-
-    # Main digits, all but not low
-    maindigits = alldigits - lodigits
-
-    # Break down main digit list into nonzeroees and possible zeroes
-    mainnzdigits = maindigits & hidigits
-    mainrestdigits = maindigits - mainnzdigits
-
-    # change sets to tuples to guarantee the stable order
-    t_lorestdigits = tuple(lorestdigits)
-    t_lonzdigits = tuple(lonzdigits)
-    t_lowdigs = t_lorestdigits + t_lonzdigits
-
-    t_mainrestdigits = tuple(mainrestdigits)
-    t_mainnzdigits = tuple(mainnzdigits)
-    t_maindigs = t_mainrestdigits + t_mainnzdigits
-    t_alldigs = t_lowdigs + t_maindigs
-
-    # Check all possible digit permunations with zeros
-    for lorest in permutations(dset, len(lorestdigits)):
-        remnzdigs = nzdset - set(lorest)
-        # Generate addtional non-zero digit permutations
-        for lonz in permutations(remnzdigs, len(lonzdigits)):
-            # Build a dictionary for to test the expression
-            t_digvals = lorest + lonz
-            # Evaluate the expression sides
-            testsum = sum([dig * loexpdict[let]
-                           for let, dig in zip(t_lowdigs, t_digvals)])
-            if testsum % 10 == 0:
-                # Low digit test passed, check the main digits
-                # if there are no other digits that low digits,
-                # test the whole expression and return if OK
-                if len(maindigits) == 0:
-                    testsum = sum([dig * expdict[let]
-                                   for let, dig in zip(t_lowdigs, t_digvals)])
-                    if testsum == 0:
-                        return dict(zip(t_lowdigs, t_digvals))
+    totchars = set()
+    for p, chardict in enumerate(tchars):
+        for c, cnt in chardict.copy().items():
+            if cnt == 0:
+                del chardict[c]
+            elif c not in totchars:
+                if c in nzchars:
+                    unzchars[p].add(c)
                 else:
-                    # non-assigned digits
-                    remdigs = dset - set(t_digvals)
-                    # non-assigned without 0
-                    remnzdigs = remdigs - set((0,))
-                    # permutations for the rest of the digits
-                    for mainrest in permutations(remdigs,
-                                                 len(t_mainrestdigits)):
-                        lastnzdigs = remnzdigs - set(mainrest)
-                        # permutations for the non-zero rest of the digits
-                        for mainnz in permutations(lastnzdigs,
-                                                   len(t_mainnzdigits)):
-                            # Evaluate
-                            t_alldigvals = lorest + lonz + mainrest + mainnz
-                            testsum = sum([dig * expdict[let]
-                                           for let, dig in zip(t_alldigs,
-                                                               t_alldigvals)])
-                            if testsum == 0:
-                                return dict(zip(t_alldigs, t_alldigvals))
+                    uokzchars[p].add(c)
+                totchars.add(c)
 
-    return {}
+    return check_rec((maxp, tchars, unzchars, uokzchars))
