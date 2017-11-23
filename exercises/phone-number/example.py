@@ -9,15 +9,15 @@ class Phone(object):
         self.subscriber_number = self.number[-4:]
 
     def pretty(self):
-        return "(%s) %s-%s" % (
+        return "({}) {}-{}".format(
             self.area_code,
             self.exchange_code,
-            self.subscriber_number
+            self.subscriber_number,
         )
 
     def _clean(self, number):
         return self._normalize(
-            re.sub(r'[^\d]', '', number)
+            re.sub(r'[^\d]', '', number),
         )
 
     def _normalize(self, number):
