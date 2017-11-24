@@ -13,7 +13,7 @@ class LocaleInfo:
 
 
 class LedgerEntry(object):
-    def __init__(self, date: datetime, desc: str, chg: float):
+    def __init__(self, date, desc, chg):
         self.Date = date
         self.Desc = desc
         self.Chg = chg
@@ -21,11 +21,12 @@ class LedgerEntry(object):
 
 class Ledger(object):
     @staticmethod
-    def CreateEntry(date: str, desc: str, chng: int):
-        return LedgerEntry(datetime.strptime(date, '%Y-%m-%d'), desc, chng / 100.0)
+    def CreateEntry(date, desc, chng):
+        return LedgerEntry(datetime.strptime(date, '%Y-%m-%d'), desc,
+                           chng / 100.0)
 
     @staticmethod
-    def CreateCulture(cur: str, loc: str):
+    def CreateCulture(cur, loc):
         curSymb = None
         curNeg = 0
         thoSep = None
@@ -47,7 +48,7 @@ class Ledger(object):
                     curSymb = "$"
                     curNeg = 12
                     thoSep = '.'
-                    sigPos = 3  # The sign should immediately precede the value.
+                    sigPos = 3  # The sign should immediately precede the value
                     datPat = "%d/%m/%Y"
 
             if cur == "EUR":
@@ -59,7 +60,7 @@ class Ledger(object):
                     curSymb = "€"
                     curNeg = 12
                     thoSep = '.'
-                    sigPos = 3  # The sign should immediately precede the value.
+                    sigPos = 3  # The sign should immediately precede the value
                     datPat = "%d/%m/%Y"
 
         loc_info = LocaleInfo(loc)
@@ -71,7 +72,7 @@ class Ledger(object):
         return loc_info
 
     @staticmethod
-    def PrintHead(loc: str):
+    def PrintHead(loc):
         if loc == "en-US":
             return "Date       | Description               | Change       "
 
@@ -82,7 +83,7 @@ class Ledger(object):
                 raise Exception("Invalid locale")
 
     @staticmethod
-    def Date(loc_info, date: datetime) -> str:
+    def Date(loc_info, date):
         return datetime.strftime(date, loc_info.ShortDatePattern)
 
     @staticmethod
@@ -95,21 +96,21 @@ class Ledger(object):
         return desc
 
     @staticmethod
-    def Change(loc_info: LocaleInfo, cgh: float):
+    def Change(loc_info, cgh):
 
-        locale.setlocale(locale.LC_ALL, loc_info.loc.replace('-', '_'))  # Convert "nl-NL" to "nl_NL"
+        locale.setlocale(locale.LC_ALL, loc_info.loc.replace('-', '_'))
         locale._override_localeconv = {
             'mon_thousands_sep': loc_info.ThousandsSeparator,
             'currency_symbol': loc_info.CurrencySymbol,
             'n_sign_posn': loc_info.SignPosition,
         }
 
-        res = locale.currency(cgh, True, True) if cgh < 0.0 else locale.currency(cgh, True, True) + " "
+        res = locale.currency(cgh, True, True) + "" if cgh < 0.0 else " "
 
         return res
 
     @staticmethod
-    def PrintEntry(loc_info, entry: LedgerEntry):
+    def PrintEntry(loc_info, entry):
 
         formatted = ""
 
@@ -130,7 +131,7 @@ class Ledger(object):
         return sorted(entries, key=lambda x: x.Chg)
 
     @staticmethod
-    def Format(currency: str, locale: str, entries: list):
+    def Format(currency, locale, entries):
 
         formatted = ""
         formatted += Ledger.PrintHead(locale)
