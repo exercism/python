@@ -33,15 +33,22 @@ def check_rec(eqparams, tracecombo=(dict(), 0, set(range(10))), p=0):
         else:
             return dict()
     diglets = uchars[p]
+    partsum = cover
+    remexp = []
+    for c, v in tchars[p]:
+        if c in prevdict:
+            partsum += v * prevdict[c]
+        else:
+            remexp.append((c, v))
     for newdigs in digPerms(remdigs, unzchars[p], uokzchars[p]):
-        testdict = prevdict.copy()
-        testdict.update(zip(diglets, newdigs))
-        testsum = cover + sum([testdict[c] * v
-                               for c, v in tchars[p]])
+        newdict = dict(zip(diglets, newdigs))
+        testsum = partsum + sum([newdict[c] * v
+                                 for c, v in remexp])
         d, r = divmod(testsum, 10)
         if r == 0:
+            newdict.update(prevdict)
             rectest = check_rec(eqparams,
-                                (testdict, d, remdigs - set(newdigs)),
+                                (newdict, d, remdigs - set(newdigs)),
                                 p + 1)
             if len(rectest) > 0:
                 return rectest
