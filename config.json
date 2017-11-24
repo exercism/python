@@ -27,6 +27,18 @@
         "logic"
       ]
     },
+        {
+      "uuid": "d563aa38-9793-4c59-9cfe-d8d0f1552dd1",
+      "slug": "ledger",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "globalization",
+        "refactoring",
+        "strings"
+      ]
+    },
     {
       "uuid": "d1a98c79-d3cc-4035-baab-0e334d2b6a57",
       "slug": "isogram",
