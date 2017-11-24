@@ -87,7 +87,6 @@ class LedgerTest(unittest.TestCase):
 
         self.assertEqual(Ledger.Format(currency, locale, entries), expected)
 
-    # @pytest.mark.skip('Should fail; Bad Date Format Expected')
     def test_dutch_locale(self):
         currency = 'USD'
         locale = 'nl-NL'
@@ -95,11 +94,10 @@ class LedgerTest(unittest.TestCase):
             Ledger.CreateEntry('2015-03-12', 'Buy present', 123456),
         ]
         expected = 'Datum      | Omschrijving              | Verandering  \n' \
-                   '12-03-2015 | Buy present               |   $ 1.234,56 '
+                   '12/03/2015 | Buy present               |   $ 1.234,56 '
 
         self.assertEqual(Ledger.Format(currency, locale, entries), expected)
 
-    # @pytest.mark.skip('Should fail; Bad Date Format Expected')
     def test_dutch_negative_number_with_3_digits_before_decimal_point(self):
         currency = 'USD'
         locale = 'nl-NL'
@@ -107,7 +105,7 @@ class LedgerTest(unittest.TestCase):
             Ledger.CreateEntry('2015-03-12', 'Buy present', -12345),
         ]
         expected = 'Datum      | Omschrijving              | Verandering  \n' \
-                   '12-03-2015 | Buy present               |     $ -123,45'
+                   '12/03/2015 | Buy present               |     $ -123,45'
 
         self.assertEqual(Ledger.Format(currency, locale, entries), expected)
 

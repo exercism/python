@@ -97,7 +97,6 @@ class Ledger(object):
 
     @staticmethod
     def Change(loc_info, cgh):
-
         locale.setlocale(locale.LC_ALL, loc_info.loc.replace('-', '_'))
         locale._override_localeconv = {
             'mon_thousands_sep': loc_info.ThousandsSeparator,
@@ -105,7 +104,8 @@ class Ledger(object):
             'n_sign_posn': loc_info.SignPosition,
         }
 
-        res = locale.currency(cgh, True, True) + "" if cgh < 0.0 else " "
+        res = locale.currency(cgh, True, True)
+        res = res if cgh < 0.0 else res + " "
 
         return res
 
