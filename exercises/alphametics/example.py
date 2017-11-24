@@ -1,4 +1,4 @@
-from itertools import permutations
+from itertools import permutations, chain, product
 
 
 def digPerms(digset, nzcharset, okzcharset):
@@ -17,8 +17,11 @@ def digPerms(digset, nzcharset, okzcharset):
     elif okzcnt == 0:
         return permutations(nzdigset, totcnt)
     else:
-        return filter(lambda x: all(x[:nzcnt]),
-                      permutations(digset, totcnt))
+        poslst = list(range(nzcnt, totcnt))
+        return chain(permutations(nzdigset, totcnt),
+                     map(lambda x: x[0][:x[1]] + (0,) + x[0][x[1]:],
+                         product(permutations(nzdigset, totcnt - 1),
+                                 poslst)))
 
 
 def check_rec(eqparams, tracecombo=(dict(), 0, set(range(10))), p=0):
