@@ -25,19 +25,19 @@ def digPerms(digset, nzcharset, okzcharset):
 
 
 def check_rec(eqparams, tracecombo=(dict(), 0, set(range(10))), p=0):
-    maxp, tchars, unzchars, uokzchars = eqparams
+    maxp, tchars, unzchars, uokzchars, uchars = eqparams
     prevdict, cover, remdigs = tracecombo
     if p == maxp:
         if cover == 0:
             return prevdict
         else:
             return dict()
-    diglets = tuple(unzchars[p]) + tuple(uokzchars[p])
+    diglets = uchars[p]
     for newdigs in digPerms(remdigs, unzchars[p], uokzchars[p]):
         testdict = prevdict.copy()
         testdict.update(zip(diglets, newdigs))
         testsum = cover + sum([testdict[c] * v
-                               for c, v in tchars[p].items()])
+                               for c, v in tchars[p]])
         d, r = divmod(testsum, 10)
         if r == 0:
             rectest = check_rec(eqparams,
@@ -56,6 +56,7 @@ def solve(an):
 
     unzchars = []
     uokzchars = []
+    uchars = []
     tchars = []
     for i in range(maxp):
         tchars.append(dict())
@@ -72,7 +73,7 @@ def solve(an):
 
     totchars = set()
     for p, chardict in enumerate(tchars):
-        for c, cnt in chardict.copy().items():
+        for c, cnt in tuple(chardict.items()):
             if cnt == 0:
                 del chardict[c]
             elif c not in totchars:
@@ -81,5 +82,6 @@ def solve(an):
                 else:
                     uokzchars[p].add(c)
                 totchars.add(c)
-
-    return check_rec((maxp, tchars, unzchars, uokzchars))
+        uchars.append(tuple(unzchars[p]) + tuple(uokzchars[p]))
+        tchars[p] = tuple(chardict.items())
+    return check_rec([maxp, tchars, unzchars, uokzchars, uchars])
