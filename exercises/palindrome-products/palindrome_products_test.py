@@ -60,29 +60,21 @@ class PalindromesTests(unittest.TestCase):
         self.assertEqual(factors, {frozenset((9901, 9999))})
 
     def test_empty_for_smallest_palindrome_if_none_in_range(self):
-        with self.assertRaisesRegexp(
-                ValueError,
-                "no palindrome with factors in the range 1002 to 1003"):
+        with self.assertRaises(ValueError):
             value, factors = smallest_palindrome(min_factor=1002,
                                                  max_factor=1003)
 
     def test_empty_for_largest_palindrome_if_none_in_range(self):
-        with self.assertRaisesRegexp(
-                ValueError,
-                "no palindrome with factors in the range 15 to 15"):
+        with self.assertRaises(ValueError):
             value, factors = largest_palindrome(min_factor=15, max_factor=15)
 
     def test_error_for_smallest_if_min_is_more_than_max(self):
-        with self.assertRaisesRegexp(
-                ValueError,
-                "invalid input: min is 10000 and max is 1"):
+        with self.assertRaises(ValueError):
             value, factors = smallest_palindrome(min_factor=10000,
                                                  max_factor=1)
 
     def test_error_for_largest_if_min_is_more_than_max(self):
-        with self.assertRaisesRegexp(
-                ValueError,
-                "invalid input: min is 2 and max is 1"):
+        with self.assertRaises(ValueError):
             value, factors = largest_palindrome(min_factor=2, max_factor=1)
 
 
