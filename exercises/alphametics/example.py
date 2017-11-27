@@ -25,9 +25,14 @@ def digPerms(digset, nzcharset, okzcharset):
 
 
 def check_rec(eqparams, tracecombo=(dict(), 0, set(range(10))), p=0):
-    maxp, tchars, unzchars, uokzchars, uchars = eqparams
+    maxp, tchars, unzchars, uokzchars, uchars, letfactors, maxgenp = eqparams
     prevdict, cover, remdigs = tracecombo
-    if p == maxp:
+    if p > maxgenp:
+        if sum([prevdict[c] * v for c, v in letfactors]) == 0:
+            return prevdict
+        else:
+            return False
+    elif p == maxp:
         if cover == 0:
             return prevdict
         else:
@@ -79,13 +84,13 @@ def solve(an):
                     letfactors[c] = 0
                 letfactors[c] += sgn * (10 ** p)
 
-    for c, mult in letfactors.items():
+    for c, mult in tuple(letfactors.items()):
         if mult > 0:
             sgn, amult = 1, mult
         elif mult < 0:
             sgn, amult = -1, -mult
         else:
-            continue
+            del letfactors[c]
         p = 0
         while amult != 0:
             amult, r = divmod(amult, 10)
@@ -94,16 +99,18 @@ def solve(an):
             p += 1
 
     totchars = set()
+    maxgenp = 0
     for p, chardict in enumerate(tchars):
         for c, cnt in tuple(chardict.items()):
-            if cnt == 0:
-                del chardict[c]
-            elif c not in totchars:
+            if c not in totchars:
                 if c in nzchars:
                     unzchars[p].add(c)
                 else:
                     uokzchars[p].add(c)
                 totchars.add(c)
         uchars.append(tuple(unzchars[p]) + tuple(uokzchars[p]))
+        if len(uchars) != 0:
+            maxgenp = p
         tchars[p] = tuple(chardict.items())
-    return check_rec([maxp, tchars, unzchars, uokzchars, uchars])
+    return check_rec([maxp, tchars, unzchars, uokzchars, uchars,
+                      tuple(letfactors.items()), maxgenp])
