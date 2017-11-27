@@ -70,13 +70,28 @@ def solve(an):
         unzchars.append(set())
         uokzchars.append(set())
 
+    letfactors = dict()
     for si, s in enumerate(fullexp):
         sgn = 1 - (si << 1)
         for w in s:
             for p, c in enumerate(w):
-                if c not in tchars[p]:
-                    tchars[p][c] = 0
-                tchars[p][c] += sgn
+                if c not in letfactors:
+                    letfactors[c] = 0
+                letfactors[c] += sgn * (10 ** p)
+
+    for c, mult in letfactors.items():
+        if mult > 0:
+            sgn, amult = 1, mult
+        elif mult < 0:
+            sgn, amult = -1, -mult
+        else:
+            continue
+        p = 0
+        while amult != 0:
+            amult, r = divmod(amult, 10)
+            if r != 0:
+                tchars[p][c] = r * sgn
+            p += 1
 
     totchars = set()
     for p, chardict in enumerate(tchars):
