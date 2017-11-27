@@ -5,12 +5,12 @@ def digPerms(digset, nzcharset, okzcharset):
     nzcnt = len(nzcharset)
     okzcnt = len(okzcharset)
     totcnt = nzcnt + okzcnt
+    if totcnt < 1:
+        return [()]
     nzdigset = digset - set((0,))
     nzdigsetcnt = len(nzdigset)
     digsetcnt = len(digset)
-    if totcnt < 1:
-        return [()]
-    elif digsetcnt < totcnt or nzdigsetcnt < nzcnt:
+    if digsetcnt < totcnt or nzdigsetcnt < nzcnt:
         return []
     elif nzcnt == 0 or digsetcnt == nzdigsetcnt:
         return permutations(digset, totcnt)
