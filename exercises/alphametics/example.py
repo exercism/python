@@ -25,14 +25,9 @@ def digPerms(digset, nzcharset, okzcharset):
 
 
 def check_rec(eqparams, tracecombo=(dict(), 0, set(range(10))), p=0):
-    maxp, tchars, unzchars, uokzchars, uchars, letfactors, maxgenp = eqparams
+    maxp, tchars, unzchars, uokzchars, uchars = eqparams
     prevdict, cover, remdigs = tracecombo
-    if p > maxgenp:
-        if sum([prevdict[c] * v for c, v in letfactors]) == 0:
-            return prevdict
-        else:
-            return False
-    elif p == maxp:
+    if p == maxp:
         if cover == 0:
             return prevdict
         else:
@@ -75,42 +70,25 @@ def solve(an):
         unzchars.append(set())
         uokzchars.append(set())
 
-    letfactors = dict()
     for si, s in enumerate(fullexp):
         sgn = 1 - (si << 1)
         for w in s:
             for p, c in enumerate(w):
-                if c not in letfactors:
-                    letfactors[c] = 0
-                letfactors[c] += sgn * (10 ** p)
-
-    for c, mult in tuple(letfactors.items()):
-        if mult > 0:
-            sgn, amult = 1, mult
-        elif mult < 0:
-            sgn, amult = -1, -mult
-        else:
-            del letfactors[c]
-        p = 0
-        while amult != 0:
-            amult, r = divmod(amult, 10)
-            if r != 0:
-                tchars[p][c] = r * sgn
-            p += 1
+                if c not in tchars[p]:
+                    tchars[p][c] = 0
+                tchars[p][c] += sgn
 
     totchars = set()
-    maxgenp = 0
     for p, chardict in enumerate(tchars):
         for c, cnt in tuple(chardict.items()):
-            if c not in totchars:
+            if cnt == 0:
+                del chardict[c]
+            elif c not in totchars:
                 if c in nzchars:
                     unzchars[p].add(c)
                 else:
                     uokzchars[p].add(c)
                 totchars.add(c)
         uchars.append(tuple(unzchars[p]) + tuple(uokzchars[p]))
-        if len(uchars) != 0:
-            maxgenp = p
         tchars[p] = tuple(chardict.items())
-    return check_rec([maxp, tchars, unzchars, uokzchars, uchars,
-                      tuple(letfactors.items()), maxgenp])
+    return check_rec([maxp, tchars, unzchars, uokzchars, uchars])
