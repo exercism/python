@@ -11,23 +11,23 @@ class BowlingGame(object):
         self.bonusRollsSeen = 0
 
     def roll(self, pins):
-        if (self.isBonusRoll()):
+        if self.isBonusRoll():
             self.bonusRollsSeen += 1
 
         # is the second roll valid based off the first?
         if (self.currentFrame.isOpen() and
            self.currentFrame.getFrame()[0] is not None):
-            if(self.currentFrame.getFrame()[0] + pins > MAX_PINS):
+            if self.currentFrame.getFrame()[0] + pins > MAX_PINS:
                 raise ValueError
 
         # open a new frame if the last one has been closed
-        if (self.currentFrame.isOpen() is False):
+        if not self.currentFrame.isOpen():
             self.currentFrame = Frame()
 
         # valid roll between 0-10
-        if (pins in range(MAX_PINS + 1)):
+        if pins in range(MAX_PINS + 1):
             # raise an error if the game is over and they try to roll again
-            if((len(self.rolls) == NUM_FRAMES) and
+            if ((len(self.rolls) == NUM_FRAMES) and
                self.bonusRollsAccrued == 0):
                 raise IndexError
             else:
@@ -36,10 +36,10 @@ class BowlingGame(object):
                                        self.bonusRollsAccrued,
                                        self.bonusRollsSeen)
                 # if we closed it add it to our rolls
-                if (self.currentFrame.isOpen() is False):
+                if not self.currentFrame.isOpen():
                     self.rolls.append(self.currentFrame)
                     # If this is the last frame did we earn any bonus rolls?
-                    if (len(self.rolls) == NUM_FRAMES):
+                    if len(self.rolls) == NUM_FRAMES:
                         self.bonusRollsEarned()
                         print(self.bonusRollsAccrued)
         else:
@@ -55,12 +55,10 @@ class BowlingGame(object):
             roll1 = frame[0]
             roll2 = frame[1]
 
-            if (self.isStrike(roll1)):
+            if self.isStrike(roll1):
                 self.totalScore += roll1 + self.stikeBonus(frame_index)
-
             else:
-
-                if(self.isSpare(roll1, roll2)):
+                if self.isSpare(roll1, roll2):
                     self.totalScore += roll1 + roll2 + \
                                        self.spareBonus(frame_index)
                 else:
@@ -71,22 +69,16 @@ class BowlingGame(object):
         return self.totalScore
 
     def isStrike(self, pins):
-        if (pins == MAX_PINS):
-            return True
-        else:
-            return False
+        return True if pins == MAX_PINS else False
 
     def isSpare(self, roll1, roll2):
-        if (roll1 + roll2 == MAX_PINS):
-            return True
-        else:
-            return False
+        return True if roll1 + roll2 == MAX_PINS else False
 
     def stikeBonus(self, frame_index):
         bonusroll1 = self.rolls[frame_index+1].getFrame()[0]
         bonusroll2 = 0
         # need to go further out if the next on is a strike
-        if (bonusroll1 == 10):
+        if bonusroll1 == 10:
             bonusroll2 = self.rolls[frame_index+2].getFrame()[0]
         else:
             bonusroll2 = self.rolls[frame_index+1].getFrame()[1]
@@ -102,16 +94,14 @@ class BowlingGame(object):
         return self.rolls[frame_index+1].getFrame()[0]
 
     def isLastFrame(self, frame_index):
-        if(frame_index >= len(self.rolls)-1):
-            return True
-        return False
+        return True if frame_index >= len(self.rolls)-1 else False
 
     def bonusRollsEarned(self):
-        if (len(self.rolls) == NUM_FRAMES):
+        if len(self.rolls) == NUM_FRAMES:
             lastFrame = self.rolls[NUM_FRAMES-1].getFrame()
-            if (self.isStrike(lastFrame[0])):
+            if self.isStrike(lastFrame[0]):
                 self.bonusRollsAccrued = 2
-            elif (self.isSpare(lastFrame[0], lastFrame[1])):
+            elif self.isSpare(lastFrame[0], lastFrame[1]):
                 self.bonusRollsAccrued = 1
         else:
             self.bonusRollsAccrued = 0
@@ -119,10 +109,7 @@ class BowlingGame(object):
 
     def isBonusRoll(self):
         # if we've already seen all
-        if (len(self.rolls) >= NUM_FRAMES):
-            return True
-        else:
-            return False
+        return True if len(self.rolls) >= NUM_FRAMES else False
 
 
 class Frame(object):
@@ -133,16 +120,16 @@ class Frame(object):
 
     def roll(self, roll, bonusRoll, accruedBonuses, seenBonuses):
         # if it's a strike we close the frame
-        if (roll == 10):
+        if roll == 10:
             self.rolls[0] = 10
             self.rolls[1] = 0
             self.open = False
         else:
             # first roll, but frame is still open
-            if (self.rolls[0] is None):
+            if self.rolls[0] is None:
                 self.rolls[0] = roll
                 # may need to close bonus roll frames before 2 have been seen
-                if (bonusRoll and seenBonuses == accruedBonuses):
+                if bonusRoll and seenBonuses == accruedBonuses:
                     self.rolls[1] = 0
                     self.open = False
             else:
