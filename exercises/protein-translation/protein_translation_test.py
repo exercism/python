@@ -3,6 +3,8 @@ import unittest
 from protein_translation import of_codon, of_rna
 
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
+
 class ProteinTranslationTests(unittest.TestCase):
 
     def test_AUG_translates_to_methionine(self):
@@ -35,14 +37,29 @@ class ProteinTranslationTests(unittest.TestCase):
         for codon in ['UAA', 'UAG', 'UGA']:
             self.assertEqual('STOP', of_codon(codon))
 
+    def test_stops_translation_if_stop_at_beginning(self):
+        strand = 'UAGUGG'
+        expected = []
+        self.assertEqual(expected, of_rna(strand))
+
+    def test_stops_translation_if_stop_at_end(self):
+        strand = 'UGGUAG'
+        expected = ['Tryptophan']
+        self.assertEqual(expected, of_rna(strand))
+
     def test_translates_rna_strand_into_correct_protein(self):
         strand = 'AUGUUUUGG'
         expected = ['Methionine', 'Phenylalanine', 'Tryptophan']
         self.assertEqual(expected, of_rna(strand))
 
-    def test_stops_translation_if_stop_codon_present(self):
+    def test_stops_translation_if_stop_codon_at_end_present(self):
         strand = 'AUGUUUUAA'
         expected = ['Methionine', 'Phenylalanine']
+        self.assertEqual(expected, of_rna(strand))
+
+    def test_stops_translation_if_stop_codon_in_middle_present(self):
+        strand = 'UGGUAGUGG'
+        expected = ['Tryptophan']
         self.assertEqual(expected, of_rna(strand))
 
     def test_stops_translation_of_longer_strand(self):
