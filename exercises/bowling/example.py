@@ -3,7 +3,8 @@ NUM_FRAMES = 10
 
 
 class BowlingGame(object):
-    """This class manages the Bowling Game including the roll and score methods"""
+    """This class manages the Bowling Game including the roll and score 
+    methods"""
     def __init__(self):
         self.rolls = []
         self.totalScore = 0
@@ -19,8 +20,8 @@ class BowlingGame(object):
         if (self.currentFrame.isOpen() and
            self.currentFrame.getFrame()[0] is not None):
             if self.currentFrame.getFrame()[0] + pins > MAX_PINS:
-                raise ValueError("This roll will cause the current "
-                    "frame to be getter than the max number of pins")
+                raise ValueError("This roll will cause the current frame  "
+                                "to be getter than the max number of pins")
 
         # open a new frame if the last one has been closed
         if not self.currentFrame.isOpen():
@@ -31,7 +32,8 @@ class BowlingGame(object):
             # raise an error if the game is over and they try to roll again
             if ((len(self.rolls) == NUM_FRAMES) and
                self.bonusRollsAccrued == 0):
-                raise IndexError("Max Frames have been reached.  Too many "  "rolls")
+                raise IndexError("Max Frames have been reached.  Too many "
+                                "rolls")
             else:
                 self.currentFrame.roll(pins,
                                        self.isBonusRoll(),
@@ -44,7 +46,8 @@ class BowlingGame(object):
                     if len(self.rolls) == NUM_FRAMES:
                         self.bonusRollsEarned()
         else:
-            raise ValueError("Amount of pins rolled is greater than the max ""number of pins")
+            raise ValueError("Amount of pins rolled is greater than the max "
+                            "number of pins")
 
     def score(self):
         frame_index = 0
@@ -86,7 +89,8 @@ class BowlingGame(object):
         # validated
         if (not self.isStrike(bonusroll1) and
            (bonusroll1 + bonusroll2 > MAX_PINS)):
-            raise ValueError("The bonus rolls total to greater than the max ""number of pins")
+            raise ValueError("The bonus rolls total to greater than the max "
+                            "number of pins")
         else:
             return bonusroll1 + bonusroll2
 
@@ -112,8 +116,9 @@ class BowlingGame(object):
         return True if len(self.rolls) >= NUM_FRAMES else False
 
 
-"""This class is for internal use only.  It divides up the array of rolls into Frame objects"""
 class Frame(object):
+"""This class is for internal use only.  It divides up the array of rolls into
+Frame objects"""
 
     def __init__(self):
         self.rolls = [None, None]
