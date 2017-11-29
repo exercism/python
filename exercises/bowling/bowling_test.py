@@ -10,7 +10,6 @@ class BowlingTests(unittest.TestCase):
 
     def roll(self, rolls):
         [self.game.roll(roll) for roll in rolls]
-        
 
     def roll_and_score(self, rolls):
         self.roll(rolls)
