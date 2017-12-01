@@ -15,13 +15,13 @@ class TransposeTests(unittest.TestCase):
 
     def test_two_characters_in_a_row(self):
         self.assertEqual(
-            transpose("A1"),
+            "\n".join(transpose("A1")),
             "\n".join(["A", "1"])
         )
 
     def test_two_characters_in_a_column(self):
         self.assertEqual(
-            transpose("\n".join(["A", "1"])),
+            transpose(["A", "1"]),
             "A1"
         )
 
@@ -37,7 +37,7 @@ class TransposeTests(unittest.TestCase):
         ]
 
         self.assertEqual(
-            transpose("\n".join(input_line)),
+            "\n".join(transpose(input_line)),
             "\n".join(expected)
         )
 
@@ -58,7 +58,7 @@ class TransposeTests(unittest.TestCase):
             "."
         ]
         self.assertEqual(
-            transpose("\n".join(input_line)),
+            "\n".join(transpose(input_line)),
             "\n".join(expected)
         )
 
@@ -86,7 +86,7 @@ class TransposeTests(unittest.TestCase):
             "."
         ]
         self.assertEqual(
-            transpose("\n".join(input_line)),
+            "\n".join(transpose(input_line)),
             "\n".join(expected)
         )
 
@@ -114,7 +114,7 @@ class TransposeTests(unittest.TestCase):
             " ."
         ]
         self.assertEqual(
-            transpose("\n".join(input_line)),
+            "\n".join(transpose(input_line)),
             "\n".join(expected)
         )
 
@@ -134,7 +134,7 @@ class TransposeTests(unittest.TestCase):
             "TREND"
         ]
         self.assertEqual(
-            transpose("\n".join(input_line)),
+            "\n".join(transpose(input_line)),
             "\n".join(expected)
         )
 
@@ -156,7 +156,7 @@ class TransposeTests(unittest.TestCase):
             "EDGE"
         ]
         self.assertEqual(
-            transpose("\n".join(input_line)),
+            "\n".join(transpose(input_line)),
             "\n".join(expected)
         )
 
@@ -178,7 +178,7 @@ class TransposeTests(unittest.TestCase):
             "     R"
         ]
         self.assertEqual(
-            transpose("\n".join(input_line)),
+            "\n".join(transpose(input_line)),
             "\n".join(expected)
         )
 
@@ -255,7 +255,7 @@ class TransposeTests(unittest.TestCase):
             "          ,"
         ]
         self.assertEqual(
-            transpose("\n".join(input_line)),
+            "\n".join(transpose(input_line)),
             "\n".join(expected)
         )
 
