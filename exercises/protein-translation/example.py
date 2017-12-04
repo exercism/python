@@ -12,7 +12,7 @@ def of_codon(codon):
     return CODONS[codon]
 
 
-def of_rna(strand):
+def proteins(strand):
     proteins = []
     for codon in map(of_codon, _chunkstring(strand, 3)):
         if codon == 'STOP':
