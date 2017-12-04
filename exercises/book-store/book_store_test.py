@@ -68,10 +68,10 @@ class BookStoreTests(unittest.TestCase):
             places=2)
 
     def test_four_groups_of_4_are_cheaper_than_2_groups_each_of_5_and_3(self):
-       self.assertAlmostEqual(
-           calculate_total([1, 1, 2, 2, 3, 3, 4, 5, 1, 1, 2, 2, 3, 3, 4, 5]),
-           102.40,
-           places=2)
+        self.assertAlmostEqual(
+            calculate_total([1, 1, 2, 2, 3, 3, 4, 5, 1, 1, 2, 2, 3, 3, 4, 5]),
+            102.40,
+            places=2)
 
 
 if __name__ == '__main__':
