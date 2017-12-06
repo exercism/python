@@ -64,11 +64,11 @@ class SayTest(unittest.TestCase):
                                 "one hundred and twenty-three"))
 
     def test_number_to_large(self):
-        with self.assertRaises(AttributeError):
+        with self.assertRaises(ValueError):
             say(1e12)
 
     def test_number_negative(self):
-        with self.assertRaises(AttributeError):
+        with self.assertRaises(ValueError):
             say(-1)
 
 

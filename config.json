@@ -169,7 +169,7 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+	"mathematics"
       ]
     },
     {
@@ -761,6 +761,23 @@
 		"classes",
 		"mathematics",
 		"object_oriented_programming"
+      ]
+    },
+    {
+      "uuid": "a9c2fbda-a1e4-42dd-842f-4de5bb361b91",
+      "slug": "dot-dsl",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "equality",
+        "classes",
+        "lists",
+        "domain_specific_languages",
+        "graphs",
+        "object_oriented_programming",
+        "test_driven_development",
+        "transforming"
       ]
     },
     {
