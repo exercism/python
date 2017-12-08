@@ -27,7 +27,7 @@ def get_extreme_palindrome_with_factors(max_factor, min_factor, extreme):
                          .format(min_factor=min_factor,
                                  max_factor=max_factor))
 
-    return (palin, set(map(frozenset, factor_pairs)))
+    return (palin, factor_pairs)
 
 
 def palindromes(max_factor, min_factor, reverse=False):
