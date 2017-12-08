@@ -970,6 +970,18 @@
       ]
     },
     {
+      "uuid": "666fda78-851e-4bb0-a416-953528f46bd7",
+      "slug": "spiral-matrix",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "algorithms",
+        "control-flow (loops)",
+        "lists"
+      ]
+    },
+    {
       "uuid": "ecc97fc6-2e72-4325-9b67-b56c83b13a91",
       "slug": "grep",
       "core": false,
