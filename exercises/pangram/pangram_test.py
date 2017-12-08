@@ -3,7 +3,7 @@ import unittest
 from pangram import is_pangram
 
 
-# # Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
 
 class PangramTests(unittest.TestCase):
 
@@ -45,19 +45,12 @@ class PangramTests(unittest.TestCase):
 
     def test_pangram_with_mixedcase_and_punctuation(self):
         self.assertIs(
-            is_pangram('\"Five quacking Zephyrs jolt my wax bed.\"'),
+            is_pangram('"Five quacking Zephyrs jolt my wax bed."'),
             True)
 
     def test_upper_and_lower_case_versions_of_the_same_character(self):
         self.assertIs(
             is_pangram('the quick brown fox jumped over the lazy FX'),
-            False)
-
-    # Additional test for track
-
-    def test_another_missing_character_x(self):
-        self.assertIs(
-            is_pangram('the quick brown fish jumps over the lazy dog'),
             False)
 
 
