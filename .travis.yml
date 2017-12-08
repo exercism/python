@@ -19,8 +19,11 @@ install:
 
 before_script:
   - flake8
+  - ./bin/fetch-configlet.py
+  - ./bin/fetch-topics.py
+  - python -m pytest bin/config_helper.py
+  - ./bin/config_helper.py lint
 
 script:
-  - ./bin/fetch-configlet
   - ./bin/configlet lint .
   - ./test/check-exercises.py
