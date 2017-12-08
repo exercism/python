@@ -14,7 +14,7 @@ class ComplexNumber(object):
     def __truediv__(self, other):
         pass
 
-    def abs(self):
+    def __abs__(self):
         pass
 
     def conjugate(self):

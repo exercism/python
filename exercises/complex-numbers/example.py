@@ -32,7 +32,7 @@ class ComplexNumber(object):
              self.real * other.imaginary) / float(d)
         return ComplexNumber(r, i)
 
-    def abs(self):
+    def __abs__(self):
         square_sum = self.real * self.real + self.imaginary * self.imaginary
         return math.sqrt(square_sum)
 

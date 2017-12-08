@@ -85,19 +85,19 @@ class ComplexNumbersTest(unittest.TestCase):
         self.assertEqual(input_number / divider, expected)
 
     def test_absolute_value_of_a_positive_purely_real_number(self):
-        self.assertEqual(ComplexNumber(5, 0).abs(), 5)
+        self.assertEqual(abs(ComplexNumber(5, 0)), 5)
 
     def test_absolute_value_of_a_negative_purely_real_number(self):
-        self.assertEqual(ComplexNumber(-5, 0).abs(), 5)
+        self.assertEqual(abs(ComplexNumber(-5, 0)), 5)
 
     def test_absolute_value_of_imaginary_number_positive_imaginary_part(self):
-        self.assertEqual(ComplexNumber(0, 5).abs(), 5)
+        self.assertEqual(abs(ComplexNumber(0, 5)), 5)
 
     def test_absolute_value_of_imaginary_number_negative_imaginary_part(self):
-        self.assertEqual(ComplexNumber(0, -5).abs(), 5)
+        self.assertEqual(abs(ComplexNumber(0, -5)), 5)
 
     def test_absolute_value_of_a_number_with_real_and_imaginary_part(self):
-        self.assertEqual(ComplexNumber(3, 4).abs(), 5)
+        self.assertEqual(abs(ComplexNumber(3, 4)), 5)
 
     def test_conjugate_a_purely_real_number(self):
         input_number = ComplexNumber(5, 0)
