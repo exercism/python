@@ -85,7 +85,6 @@ class PalindromesTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             value, factors = largest_palindrome(min_factor=2, max_factor=1)
 
-
     def normalize_factors(self, factors):
         return {tuple(sorted(factor_pair) for factor_pair in factors)}
 
