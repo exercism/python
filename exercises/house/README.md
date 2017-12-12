@@ -1,6 +1,6 @@
 # House
 
-Output the nursery rhyme 'This is the House that Jack Built'.
+Recite the nursery rhyme 'This is the House that Jack Built'.
 
 > [The] process of placing a phrase of clause within another phrase of
 > clause is called embedding. It is through the processes of recursion
@@ -104,6 +104,21 @@ that killed the rat
 that ate the malt
 that lay in the house that Jack built.
 ```
+
+## Exception messages
+
+Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
+indicate what the source of the error is. This makes your code more readable and helps significantly with debugging. Not
+every exercise will require you to raise an exception, but for those that do, the tests will only pass if you include
+a message.
+
+To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
+`raise Exception`, you shold write:
+
+```python
+raise Exception("Meaningful message indicating the source of the error")
+```
+
 
 ## Submitting Exercises
 

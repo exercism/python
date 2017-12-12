@@ -20,7 +20,7 @@ class LinkedListTest(unittest.TestCase):
 
     def test_error_on_empty_list_head(self):
         sut = LinkedList()
-        with self.assertRaises(EmptyListException):
+        with self.assertRaisesWithMessage(EmptyListException):
             sut.head()
 
     def test_singleton_list_has_head(self):
@@ -51,12 +51,12 @@ class LinkedListTest(unittest.TestCase):
     def test_pop_from_singleton_list_removes_head(self):
         sut = LinkedList([1])
         self.assertEqual(sut.pop(), 1)
-        with self.assertRaises(EmptyListException):
+        with self.assertRaisesWithMessage(EmptyListException):
             sut.head()
 
     def test_error_on_empty_list_pop(self):
         sut = LinkedList()
-        with self.assertRaises(EmptyListException):
+        with self.assertRaisesWithMessage(EmptyListException):
             sut.pop()
 
     def test_push_and_pop(self):
@@ -106,6 +106,16 @@ class LinkedListTest(unittest.TestCase):
     def test_reverse_non_empty_list(self):
         sut = LinkedList([1, 2, 3])
         self.assertEqual(list(sut.reversed()), [1, 2, 3])
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':
