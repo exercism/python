@@ -151,6 +151,18 @@
       ]
     },
     {
+      "uuid": "e9b0defc-dac5-11e7-9296-cec278b6b50a",
+      "slug": "armstrong-numbers",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "mathematics",
+        "algorithms",
+        "loops"
+      ]
+    },
+    {
       "uuid": "4c408aab-80b9-475d-9c06-b01cd0fcd08f",
       "slug": "rotational-cipher",
       "core": false,
@@ -169,7 +181,7 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+	"mathematics"
       ]
     },
     {
