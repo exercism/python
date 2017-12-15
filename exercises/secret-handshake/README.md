@@ -54,7 +54,7 @@ please see the [help page](http://exercism.io/languages/python).
 
 ## Source
 
-Bert, in Mary Poppins [http://www.imdb.com/character/ch0011238/quotes](http://www.imdb.com/character/ch0011238/quotes)
+Bert, in Mary Poppins http://www.imdb.com/title/tt0058331/quotes/qt0437047
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
