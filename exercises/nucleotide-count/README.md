@@ -2,8 +2,8 @@
 
 Given a single stranded DNA string, compute how many times each nucleotide occurs in the string.
 
-The genetic language of every living thing on the planet is DNA. 
-DNA is a large molecule that is built from an extremely long sequence of individual elements called nucleotides. 
+The genetic language of every living thing on the planet is DNA.
+DNA is a large molecule that is built from an extremely long sequence of individual elements called nucleotides.
 4 types exist in DNA and these differ only slightly and can be represented as the following symbols: 'A' for adenine, 'C' for cytosine, 'G' for guanine, and 'T' thymine.
 
 Here is an analogy:
@@ -11,6 +11,21 @@ Here is an analogy:
 - nucleotides are to DNA as
 - legos are to lego houses as
 - words are to sentences as...
+
+## Exception messages
+
+Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
+indicate what the source of the error is. This makes your code more readable and helps significantly with debugging. Not
+every exercise will require you to raise an exception, but for those that do, the tests will only pass if you include
+a message.
+
+To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
+`raise Exception`, you shold write:
+
+```python
+raise Exception("Meaningful message indicating the source of the error")
+```
+
 
 ## Submitting Exercises
 

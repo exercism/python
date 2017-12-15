@@ -139,13 +139,23 @@ class MinesweeperTest(unittest.TestCase):
         inp = [" ",
                "*  ",
                "  "]
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             board(inp)
 
     def test_invalid_char(self):
         inp = ["X  * "]
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             board(inp)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

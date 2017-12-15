@@ -29,20 +29,30 @@ class BinarySearchTests(unittest.TestCase):
             5)
 
     def test_identifies_value_missing(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             binary_search([1, 3, 4, 6, 8, 9, 11], 7)
 
     def test_value_smaller_than_arrays_minimum(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             binary_search([1, 3, 4, 6, 8, 9, 11], 0)
 
     def test_value_larger_than_arrays_maximum(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             binary_search([1, 3, 4, 6, 8, 9, 11], 13)
 
     def test_empty_array(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             binary_search([], 1)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':
