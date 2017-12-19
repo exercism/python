@@ -33,13 +33,13 @@ class OcrTest(unittest.TestCase):
                                   "   "]), '?')
 
     def test_line_number_not_multiple_of_four(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             convert([" _ ",
                      "| |",
                      "   "])
 
     def test_col_number_not_multiple_of_three(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             convert(["    ",
                      "   |",
                      "   |",
@@ -136,6 +136,16 @@ class OcrTest(unittest.TestCase):
             "         "
         ]
         self.assertEqual(convert(input_grid), "123,456,789")
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

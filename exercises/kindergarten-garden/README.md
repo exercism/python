@@ -9,8 +9,8 @@ actual dirt, and grow actual plants.
 
 They've chosen to grow grass, clover, radishes, and violets.
 
-To this end, the children have put little cups along the window sills, and 
-planted one type of plant in each cup, choosing randomly from the available 
+To this end, the children have put little cups along the window sills, and
+planted one type of plant in each cup, choosing randomly from the available
 types of seeds.
 
 ```text
@@ -25,7 +25,7 @@ There are 12 children in the class:
 - Eve, Fred, Ginny, Harriet,
 - Ileana, Joseph, Kincaid, and Larry.
 
-Each child gets 4 cups, two on each row. Their teacher assigns cups to 
+Each child gets 4 cups, two on each row. Their teacher assigns cups to
 the children alphabetically by their names.
 
 The following diagram represents Alice's plants:
@@ -58,6 +58,21 @@ Then if asked for Alice's plants, it should provide:
 While asking for Bob's plants would yield:
 
 - Clover, grass, clover, clover
+
+## Exception messages
+
+Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
+indicate what the source of the error is. This makes your code more readable and helps significantly with debugging. Not
+every exercise will require you to raise an exception, but for those that do, the tests will only pass if you include
+a message.
+
+To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
+`raise Exception`, you shold write:
+
+```python
+raise Exception("Meaningful message indicating the source of the error")
+```
+
 
 ## Submitting Exercises
 

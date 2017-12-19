@@ -53,6 +53,20 @@ And if we then added 1, 5, and 7, it would look like this
      / \     / \
     1   3   5   7
 
+## Exception messages
+
+Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
+indicate what the source of the error is. This makes your code more readable and helps significantly with debugging. Not
+every exercise will require you to raise an exception, but for those that do, the tests will only pass if you include
+a message.
+
+To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
+`raise Exception`, you shold write:
+
+```python
+raise Exception("Meaningful message indicating the source of the error")
+```
+
 
 ## Submitting Exercises
 
@@ -65,7 +79,7 @@ please see the [help page](http://exercism.io/languages/python).
 
 ## Source
 
-Wikipedia [https://en.wikipedia.org/wiki/Binary_search_tree](https://en.wikipedia.org/wiki/Binary_search_tree)
+Josh Cheek [https://twitter.com/josh_cheek](https://twitter.com/josh_cheek)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

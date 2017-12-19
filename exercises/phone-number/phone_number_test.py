@@ -19,11 +19,11 @@ class PhoneTest(unittest.TestCase):
         self.assertEqual(number, "2234567890")
 
     def test_invalid_when_9_digits(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             Phone("123456789")
 
     def test_invalid_when_11_digits_and_first_not_1(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             Phone("22234567890")
 
     def test_valid_when_11_digits_and_first_is_1(self):
@@ -35,23 +35,23 @@ class PhoneTest(unittest.TestCase):
         self.assertEqual(number, "2234567890")
 
     def test_invalid_when_more_than_11_digits(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             Phone("321234567890")
 
     def test_invalid_with_letters(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             Phone("123-abc-7890")
 
     def test_invalid_with_punctuation(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             Phone("123-@:!-7890")
 
     def test_invalid_area_code(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             Phone("(123) 456-7890")
 
     def test_invalid_exchange_code(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             Phone("(223) 056-7890")
 
     # Track specific tests
@@ -66,6 +66,16 @@ class PhoneTest(unittest.TestCase):
     def test_pretty_print_with_full_us_phone_number(self):
         number = Phone("12234567890")
         self.assertEqual(number.pretty(), "(223) 456-7890")
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':
