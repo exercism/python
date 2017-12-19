@@ -37,12 +37,22 @@ class SeriesTest(unittest.TestCase):
             [[0, 1, 2, 3, 4]], )
 
     def test_overly_long_slice(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             slices("012", 4)
 
     def test_overly_short_slice(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             slices("01234", 0)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':
