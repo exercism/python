@@ -16,6 +16,8 @@ import unittest
 from palindrome_products import smallest_palindrome, largest_palindrome
 
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+
 def set_recursive(collection):
     return frozenset(
         set_recursive(e) if hasattr(e, '__iter__') else e for e in collection
