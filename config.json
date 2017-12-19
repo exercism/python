@@ -1,5 +1,6 @@
 {
   "language": "Python",
+  "blurb": "Python is a clear and powerful object-oriented programming language with an elegant and easy-to-read syntax. It is ideal for prototyping and ad-hoc tasks, but also sees wide use in scientific computing, web development, and automation.",
   "active": true,
   "exercises": [
     {
@@ -52,20 +53,6 @@
         "algorithms",
         "filtering",
         "logic"
-      ]
-    },
-    {
-      "uuid": "c4754efd-6d67-48bd-994e-4b07a217ffc3",
-      "slug": "parallel-letter-frequency",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 5,
-      "topics": [
-        "threading",
-        "parallellism",
-        "loops",
-        "queues",
-        "strings"
       ]
     },
     {
@@ -164,6 +151,18 @@
       ]
     },
     {
+      "uuid": "e9b0defc-dac5-11e7-9296-cec278b6b50a",
+      "slug": "armstrong-numbers",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "mathematics",
+        "algorithms",
+        "loops"
+      ]
+    },
+    {
       "uuid": "4c408aab-80b9-475d-9c06-b01cd0fcd08f",
       "slug": "rotational-cipher",
       "core": false,
@@ -182,7 +181,7 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-
+	"mathematics"
       ]
     },
     {
@@ -777,6 +776,23 @@
       ]
     },
     {
+      "uuid": "a9c2fbda-a1e4-42dd-842f-4de5bb361b91",
+      "slug": "dot-dsl",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "equality",
+        "classes",
+        "lists",
+        "domain_specific_languages",
+        "graphs",
+        "object_oriented_programming",
+        "test_driven_development",
+        "transforming"
+      ]
+    },
+    {
       "uuid": "dc6e61a2-e9b9-4406-ba5c-188252afbba1",
       "slug": "transpose",
       "core": false,
@@ -1105,6 +1121,8 @@
     {
       "uuid": "6f530d0c-d13e-4270-b120-e42c16691a66",
       "slug": "two-bucket",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 5,
       "topics": [
         "algorithms",
@@ -1115,6 +1133,8 @@
     {
       "uuid": "88610b9a-6d3e-4924-a092-6d2f907ed4e2",
       "slug": "markdown",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "refactoring"
@@ -1201,6 +1221,20 @@
       ]
     },
     {
+      "uuid": "df7cd9b9-283a-4466-accf-98c4a7609450",
+      "slug": "binary-search-tree",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics":[
+        "recursion",
+        "classes",
+        "trees",
+        "searching",
+        "object_oriented_programming"
+      ]
+    },
+    {
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "slug": "accumulate",
       "deprecated": true
@@ -1257,6 +1291,6 @@
     }
   ],
   "foregone": [
-
+      "parallel-letter-frequency"
   ]
 }

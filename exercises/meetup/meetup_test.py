@@ -399,8 +399,18 @@ class MeetupTest(unittest.TestCase):
             meetup_day(2015, 3, 'Monday', '5th'), date(2015, 3, 30))
 
     def test_nonexistent_fifth_monday_of_february_2015(self):
-        with self.assertRaises(MeetupDayException):
+        with self.assertRaisesWithMessage(MeetupDayException):
             meetup_day(2015, 2, 'Monday', '5th')
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

@@ -3,7 +3,7 @@ import unittest
 from book_store import calculate_total
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class BookStoreTests(unittest.TestCase):
     def test_only_a_single_book(self):
@@ -65,6 +65,12 @@ class BookStoreTests(unittest.TestCase):
         self.assertAlmostEqual(
             calculate_total([1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 2]),
             75.20,
+            places=2)
+
+    def test_four_groups_of_4_are_cheaper_than_2_groups_each_of_5_and_3(self):
+        self.assertAlmostEqual(
+            calculate_total([1, 1, 2, 2, 3, 3, 4, 5, 1, 1, 2, 2, 3, 3, 4, 5]),
+            102.40,
             places=2)
 
 

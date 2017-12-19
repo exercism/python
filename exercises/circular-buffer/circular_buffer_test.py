@@ -12,7 +12,7 @@ from circular_buffer import (
 class CircularBufferTest(unittest.TestCase):
     def test_read_empty_buffer(self):
         buf = CircularBuffer(1)
-        with self.assertRaises(BufferEmptyException):
+        with self.assertRaisesWithMessage(BufferEmptyException):
             buf.read()
 
     def test_read_just_written_item(self):
@@ -24,7 +24,7 @@ class CircularBufferTest(unittest.TestCase):
         buf = CircularBuffer(1)
         buf.write('1')
         self.assertEqual(buf.read(), '1')
-        with self.assertRaises(BufferEmptyException):
+        with self.assertRaisesWithMessage(BufferEmptyException):
             buf.read()
 
     def test_write_and_read_back_multiple_items_ordered(self):
@@ -37,7 +37,7 @@ class CircularBufferTest(unittest.TestCase):
     def test_full_buffer_cant_written(self):
         buf = CircularBuffer(1)
         buf.write('1')
-        with self.assertRaises(BufferFullException):
+        with self.assertRaisesWithMessage(BufferFullException):
             buf.write('2')
 
     def test_alternate_write_and_read(self):
@@ -60,7 +60,7 @@ class CircularBufferTest(unittest.TestCase):
         buf = CircularBuffer(1)
         buf.write('1')
         buf.clear()
-        with self.assertRaises(BufferEmptyException):
+        with self.assertRaisesWithMessage(BufferEmptyException):
             buf.read()
 
     def test_clear_free_buffer_for_write(self):
@@ -95,7 +95,7 @@ class CircularBufferTest(unittest.TestCase):
         buf = CircularBuffer(2)
         buf.write('1')
         buf.write('2')
-        with self.assertRaises(BufferFullException):
+        with self.assertRaisesWithMessage(BufferFullException):
             buf.write('A')
 
     def test_over_write_replaces_oldest_remaning_item(self):
@@ -109,6 +109,16 @@ class CircularBufferTest(unittest.TestCase):
         self.assertEqual(buf.read(), '3')
         self.assertEqual(buf.read(), '4')
         self.assertEqual(buf.read(), '5')
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

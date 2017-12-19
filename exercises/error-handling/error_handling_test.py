@@ -28,12 +28,12 @@ class FileLike(object):
     def do_something(self):
         self.did_something = True
         if self.fail_something:
-            raise Exception()
+            raise Exception("Failed while doing something")
 
 
 class ErrorHandlingTest(unittest.TestCase):
     def test_throw_exception(self):
-        with self.assertRaises(Exception):
+        with self.assertRaisesWithMessage(Exception):
             er.handle_error_by_throwing_exception()
 
     def test_return_none(self):
@@ -54,7 +54,7 @@ class ErrorHandlingTest(unittest.TestCase):
 
     def test_filelike_objects_are_closed_on_exception(self):
         filelike_object = FileLike(fail_something=True)
-        with self.assertRaises(Exception):
+        with self.assertRaisesWithMessage(Exception):
             er.filelike_objects_are_closed_on_exception(filelike_object)
         self.assertIs(filelike_object.is_open, False,
                       'filelike_object should be closed')
@@ -72,6 +72,16 @@ class ErrorHandlingTest(unittest.TestCase):
                       'filelike_object should have been opened')
         self.assertIs(filelike_object.did_something, True,
                       'filelike_object should call do_something()')
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

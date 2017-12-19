@@ -7,6 +7,17 @@ def divisor_generator(n):
                 yield n // i
 
 
-def is_perfect(n):
+def classify(n):
     ''' A perfect number equals the sum of its positive divisors. '''
-    return sum(divisor_generator(n)) + 1 == n
+    if n <= 0:
+        raise ValueError("Classification is only possible" +
+                         " for positive whole numbers.")
+
+    aliquot_sum = sum(divisor_generator(n)) + (1 if n > 1 else 0)
+
+    if aliquot_sum < n:
+        return "deficient"
+    elif aliquot_sum == n:
+        return "perfect"
+    else:
+        return "abundant"
