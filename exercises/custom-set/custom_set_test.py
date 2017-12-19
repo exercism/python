@@ -3,7 +3,7 @@ import unittest
 from custom_set import CustomSet
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class CustomSetTest(unittest.TestCase):
     def test_sets_with_no_elements_are_empty(self):
@@ -104,6 +104,11 @@ class CustomSetTest(unittest.TestCase):
     def test_sets_with_different_elements_are_not_equal(self):
         set1 = CustomSet([1, 2, 3])
         set2 = CustomSet([1, 2, 4])
+        self.assertNotEqual(set1, set2)
+
+    def test_set_is_not_equal_to_larger_set_with_same_elements(self):
+        set1 = CustomSet([1, 2, 3])
+        set2 = CustomSet([1, 2, 3, 4])
         self.assertNotEqual(set1, set2)
 
     def test_add_to_empty_set(self):
