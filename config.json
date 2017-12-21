@@ -71,6 +71,21 @@
       ]
     },
     {
+      "uuid": "7961c852-c87a-44b0-b152-efea3ac8555c",
+      "slug": "isbn-verifier",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "type_conversion",
+        "conditionals",
+        "strings",
+        "arrays",
+        "integers",
+        "parsing"
+      ]
+    },
+    {
       "uuid": "8648fa0c-d85f-471b-a3ae-0f8c05222c89",
       "slug": "hamming",
       "core": false,
@@ -1182,7 +1197,12 @@
       "unlocked_by": null,
       "difficulty": 3,
       "topics": [
-        "exception_handling"
+        "type_conversion",
+        "exception_handling",
+        "strings",
+        "arrays",
+        "integers",
+        "parsing"
       ]
     },
     {
