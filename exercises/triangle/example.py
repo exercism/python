@@ -7,7 +7,7 @@ class Triangle(object):
         self.sides = (x, y, z)
 
         if self._invalid_lengths() or self._violates_inequality():
-            raise TriangleError
+            raise TriangleError("Side lengths are invalid for a triangle")
 
     def _invalid_lengths(self):
         return any([side <= 0 for side in self.sides])

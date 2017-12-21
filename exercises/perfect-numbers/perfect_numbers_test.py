@@ -2,8 +2,8 @@ import unittest
 
 from perfect_numbers import classify
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
 
 class PerfectNumbersTest(unittest.TestCase):
     def test_smallest_perfect_number(self):
@@ -69,12 +69,22 @@ class DeficientNumbersTest(unittest.TestCase):
 
 class InvalidInputsTest(unittest.TestCase):
     def test_zero(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             classify(0)
 
     def test_negative(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             classify(-1)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

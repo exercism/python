@@ -29,4 +29,4 @@ class Phone(object):
         if valid:
             return number[-10:]
         else:
-            raise ValueError()
+            raise ValueError("{} is not a valid phone number".format(number))

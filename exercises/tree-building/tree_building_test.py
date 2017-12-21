@@ -108,7 +108,7 @@ class TestBuildingTest(unittest.TestCase):
             Record(1, 0)
         ]
         # Root parent_id should be equal to record_id(0)
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             BuildTree(records)
 
     def test_no_root_node(self):
@@ -117,7 +117,7 @@ class TestBuildingTest(unittest.TestCase):
             Record(2, 0)
         ]
         # Record with record_id 0 (root) is missing
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             BuildTree(records)
 
     def test_non_continuous(self):
@@ -128,7 +128,7 @@ class TestBuildingTest(unittest.TestCase):
             Record(0, 0)
         ]
         # Record with record_id 3 is missing
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             BuildTree(records)
 
     def test_cycle_directly(self):
@@ -142,7 +142,7 @@ class TestBuildingTest(unittest.TestCase):
             Record(6, 3)
         ]
         # Cycle caused by Record 2 with parent_id pointing to itself
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             BuildTree(records)
 
     def test_cycle_indirectly(self):
@@ -156,7 +156,7 @@ class TestBuildingTest(unittest.TestCase):
             Record(6, 3)
         ]
         # Cycle caused by Record 2 with parent_id(6) greater than record_id(2)
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             BuildTree(records)
 
     def test_higher_id_parent_of_lower_id(self):
@@ -166,7 +166,7 @@ class TestBuildingTest(unittest.TestCase):
             Record(1, 2)
         ]
         # Record 1 have parent_id(2) greater than record_id(1)
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             BuildTree(records)
 
     def assert_node_is_branch(self, node, node_id, children_count):
@@ -177,6 +177,16 @@ class TestBuildingTest(unittest.TestCase):
     def assert_node_is_leaf(self, node, node_id):
         self.assertEqual(node.node_id, node_id)
         self.assertEqual(len(node.children), 0)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

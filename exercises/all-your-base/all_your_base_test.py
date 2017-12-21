@@ -44,40 +44,50 @@ class AllYourBaseTests(unittest.TestCase):
         self.assertEqual(rebase(7, [0, 6, 0], 10), [4, 2])
 
     def test_first_base_is_one(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             rebase(1, [], 10)
 
     def test_first_base_is_zero(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             rebase(0, [], 10)
 
     def test_first_base_is_negative(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             rebase(-2, [1], 10)
 
     def test_negative_digit(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             rebase(2, [1, -1, 1, 0, 1, 0], 10)
 
     def test_invalid_positive_digit(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             rebase(2, [1, 2, 1, 0, 1, 0], 10)
 
     def test_second_base_is_one(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             rebase(2, [1, 0, 1, 0, 1, 0], 1)
 
     def test_second_base_is_zero(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             rebase(10, [7], 0)
 
     def test_second_base_is_negative(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             rebase(2, [1], -7)
 
     def test_both_bases_are_negative(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             rebase(-2, [1], -7)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

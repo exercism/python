@@ -9,9 +9,7 @@ For example, given the collection of numbers:
 
 - 1, 2, 3, 4, 5
 
-And the predicate: 
-
-Note: _a predicate P(x) will be true or false, depending on whether x belongs to a set._ [Wikipedia - Predicate](https://en.wikipedia.org/wiki/Predicate_(mathematical_logic)))
+And the predicate:
 
 - is the number even?
 
@@ -34,6 +32,21 @@ language.
 Keep your hands off that filter/reject/whatchamacallit functionality
 provided by your standard library!  Solve this one yourself using other
 basic tools instead.
+
+## Exception messages
+
+Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
+indicate what the source of the error is. This makes your code more readable and helps significantly with debugging. Not
+every exercise will require you to raise an exception, but for those that do, the tests will only pass if you include
+a message.
+
+To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
+`raise Exception`, you shold write:
+
+```python
+raise Exception("Meaningful message indicating the source of the error")
+```
+
 
 ## Submitting Exercises
 

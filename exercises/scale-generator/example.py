@@ -13,8 +13,8 @@ class Scale(object):
         self.name = self.tonic + ' ' + scale_name
         self.pattern = pattern
         self.chromatic_scale = (self.FLAT_CHROMATIC_SCALE
-                                if tonic in self.FLAT_KEYS else
-                                self.CHROMATIC_SCALE)
+                                if tonic in self.FLAT_KEYS
+                                else self.CHROMATIC_SCALE)
         self.pitches = self._assign_pitches()
 
     def _assign_pitches(self):
@@ -27,7 +27,7 @@ class Scale(object):
             pitches.append(scale[last_index])
             last_index += self.ASCENDING_INTERVALS.index(interval) + 1
         if pitches[0] != scale[last_index % len(scale)]:
-            raise ValueError()
+            raise ValueError("Interval is broken")
         return pitches
 
     def _reorder_chromatic_scale(self):
