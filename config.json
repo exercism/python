@@ -1197,12 +1197,7 @@
       "unlocked_by": null,
       "difficulty": 3,
       "topics": [
-        "type_conversion",
-        "exception_handling",
-        "strings",
-        "arrays",
-        "integers",
-        "parsing"
+        "exception_handling"
       ]
     },
     {
