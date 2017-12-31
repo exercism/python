@@ -7,3 +7,5 @@ tmp
 bin/configlet
 bin/configlet.exe
 .idea/
+.cache
+__pycache__

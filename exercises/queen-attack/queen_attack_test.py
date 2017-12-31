@@ -14,19 +14,19 @@ class QueenAttackTest(unittest.TestCase):
             self.fail("Unexpected Exception")
 
     def test_queen_negative_row(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             board((1, 1), (-2, 2))
 
     def test_queen_invalid_row(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             board((1, 1), (8, 4))
 
     def test_queen_negative_column(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             board((1, 1), (2, -2))
 
     def test_queen_invalid_column(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             board((1, 1), (4, 8))
 
     def test_attack_false(self):
@@ -55,15 +55,15 @@ class QueenAttackTest(unittest.TestCase):
     # If either board or can_attack are called with an invalid board position
     # they should raise a ValueError with a meaningful error message.
     def test_invalid_position_can_attack(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             can_attack((0, 0), (7, 8))
 
     def test_queens_same_position_board(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             board((2, 2), (2, 2))
 
     def test_queens_same_position_can_attack(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             can_attack((2, 2), (2, 2))
 
     def test_board1(self):
@@ -87,6 +87,16 @@ class QueenAttackTest(unittest.TestCase):
                '________',
                '________']
         self.assertEqual(board((0, 6), (1, 7)), ans)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

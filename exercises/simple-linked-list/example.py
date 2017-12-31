@@ -42,7 +42,7 @@ class LinkedList(object):
 
     def head(self):
         if self._head is None:
-            raise EmptyListException()
+            raise EmptyListException("The list is empty")
         return self._head
 
     def push(self, value):
@@ -53,7 +53,7 @@ class LinkedList(object):
 
     def pop(self):
         if self._head is None:
-            raise EmptyListException()
+            raise EmptyListException("The list is empty")
         self._len -= 1
         ret = self._head.value()
         self._head = self._head.next()

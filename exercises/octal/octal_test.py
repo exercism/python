@@ -29,16 +29,29 @@ class OctalTest(unittest.TestCase):
         self.assertEqual(parse_octal("1234567"), 342391)
 
     def test_8_is_seen_as_invalid(self):
-        self.assertRaises(ValueError, parse_octal, "8")
+        with self.assertRaisesWithMessage(ValueError):
+            parse_octal("8")
 
     def test_invalid_octal_is_recognized(self):
-        self.assertRaises(ValueError, parse_octal, "carrot")
+        with self.assertRaisesWithMessage(ValueError):
+            parse_octal("carrot")
 
     def test_6789_is_seen_as_invalid(self):
-        self.assertRaises(ValueError, parse_octal, "6789")
+        with self.assertRaisesWithMessage(ValueError):
+            parse_octal("6789")
 
     def test_valid_octal_formatted_string_011_is_decimal_9(self):
         self.assertEqual(parse_octal("011"), 9)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':
