@@ -31,6 +31,11 @@ Implement the following operations:
 
 Assume the programming language you are using does not have an implementation of complex numbers.
 
+## Hints
+
+See [Emulating numeric types](https://docs.python.org/2/reference/datamodel.html#emulating-numeric-types) for help on operator overloading.
+
+
 ## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
