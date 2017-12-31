@@ -1,2 +1,2 @@
-def proverb(rhyme_text):
+def proverb(rhyme_items):
     pass

@@ -55,6 +55,21 @@ Here is a table of pitches with the names of their interval distance from the to
 |        |         | Dim 3rd | Aug 2nd | Dim 4th |         | Aug 4th | Dim 5th | Aug 5th | Dim 7th | Aug 6th | Dim 8ve |        |
 |        |         |         |         |         |         | Dim 5th |         |         |         |         |         |        |
 
+## Exception messages
+
+Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
+indicate what the source of the error is. This makes your code more readable and helps significantly with debugging. Not
+every exercise will require you to raise an exception, but for those that do, the tests will only pass if you include
+a message.
+
+To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
+`raise Exception`, you shold write:
+
+```python
+raise Exception("Meaningful message indicating the source of the error")
+```
+
+
 ## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
