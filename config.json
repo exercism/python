@@ -28,6 +28,16 @@
       ]
     },
     {
+      "uuid": "d39f86fe-db56-461c-8a93-d87058af8366",
+      "slug": "reverse-string",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "strings"
+      ]
+    },
+    {
       "uuid": "d1a98c79-d3cc-4035-baab-0e334d2b6a57",
       "slug": "isogram",
       "core": false,
