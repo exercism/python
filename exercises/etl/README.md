@@ -1,4 +1,4 @@
-# Etl
+# ETL
 
 We are going to do the `Transform` step of an Extract-Transform-Load.
 
@@ -45,6 +45,21 @@ A final note about scoring, Scrabble is played around the world in a
 variety of languages, each with its own unique scoring table. For
 example, an "E" is scored at 2 in the Māori-language version of the
 game while being scored at 4 in the Hawaiian-language version.
+
+## Exception messages
+
+Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
+indicate what the source of the error is. This makes your code more readable and helps significantly with debugging. Not
+every exercise will require you to raise an exception, but for those that do, the tests will only pass if you include
+a message.
+
+To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
+`raise Exception`, you shold write:
+
+```python
+raise Exception("Meaningful message indicating the source of the error")
+```
+
 
 ## Submitting Exercises
 

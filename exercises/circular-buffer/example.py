@@ -25,7 +25,7 @@ class CircularBuffer(object):
 
     def write(self, data):
         if all(self.buffer):
-            raise BufferFullException
+            raise BufferFullException("Circular buffer is full")
         self._update_buffer(data)
         self.write_point = (self.write_point + 1) % len(self.buffer)
 
@@ -37,7 +37,7 @@ class CircularBuffer(object):
 
     def read(self):
         if not any(self.buffer):
-            raise BufferEmptyException
+            raise BufferEmptyException("Circular buffer is empty")
         data = chr(self.buffer[self.read_point])
         self.buffer[self.read_point] = 0
         self.read_point = (self.read_point + 1) % len(self.buffer)
