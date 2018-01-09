@@ -1,0 +1,2 @@
+def reverse(input=''):
+    pass
