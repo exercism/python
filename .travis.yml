@@ -19,8 +19,8 @@ install:
 
 before_script:
   - flake8
-
-script:
   - ./bin/fetch-configlet
   - ./bin/configlet lint .
+
+script:
   - ./test/check-exercises.py
