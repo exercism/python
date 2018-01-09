@@ -9,7 +9,7 @@ Given a range of numbers, find the largest and smallest palindromes which
 are products of numbers within that range.
 
 Your solution should return the largest and smallest palindromes, along with the
-factors of each within the range. If the largest or smallest palindrome has more 
+factors of each within the range. If the largest or smallest palindrome has more
 than one pair of factors within the range, then return all the pairs.
 
 ## Example 1
@@ -31,6 +31,21 @@ Given the range `[10, 99]` (both inclusive)...
 
 The smallest palindrome product is `121`. Its factors are `(11, 11)`.
 The largest palindrome product is `9009`. Its factors are `(91, 99)`.
+
+## Exception messages
+
+Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
+indicate what the source of the error is. This makes your code more readable and helps significantly with debugging. Not
+every exercise will require you to raise an exception, but for those that do, the tests will only pass if you include
+a message.
+
+To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
+`raise Exception`, you shold write:
+
+```python
+raise Exception("Meaningful message indicating the source of the error")
+```
+
 
 ## Submitting Exercises
 

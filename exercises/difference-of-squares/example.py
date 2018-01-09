@@ -1,11 +1,11 @@
-def square_of_sum(n):
-    sum_ = n * (n + 1) / 2
+def square_of_sum(count):
+    sum_ = count * (count + 1) / 2
     return sum_ * sum_
 
 
-def sum_of_squares(n):
-    return sum(m * m for m in range(n + 1))
+def sum_of_squares(count):
+    return sum(m * m for m in range(count + 1))
 
 
-def difference(n):
-    return square_of_sum(n) - sum_of_squares(n)
+def difference(count):
+    return square_of_sum(count) - sum_of_squares(count)
