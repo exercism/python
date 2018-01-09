@@ -28,6 +28,16 @@
       ]
     },
     {
+      "uuid": "d39f86fe-db56-461c-8a93-d87058af8366",
+      "slug": "reverse-string",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "strings"
+      ]
+    },
+    {
       "uuid": "d1a98c79-d3cc-4035-baab-0e334d2b6a57",
       "slug": "isogram",
       "core": false,
@@ -1288,9 +1298,11 @@
       "uuid": "6b7f7b1f-c388-4f4c-b924-84535cc5e1a0",
       "slug": "hexadecimal",
       "deprecated": true
+    },
+    {
+      "uuid": "da03fca4-4606-48d8-9137-6e40396f7759",
+      "slug": "parallel-letter-frequency",
+      "deprecated": true
     }
-  ],
-  "foregone": [
-      "parallel-letter-frequency"
   ]
 }

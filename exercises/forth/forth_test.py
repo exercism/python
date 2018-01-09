@@ -31,13 +31,23 @@ class ForthAdditionTest(unittest.TestCase):
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
         input_data = ["+"]
-        with self.assertRaises(StackUnderflowError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(input_data)
 
     def test_errors_if_there_is_only_one_value_on_the_stack(self):
         input_data = ["1 +"]
-        with self.assertRaises(StackUnderflowError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(input_data)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 class ForthSubtractionTest(unittest.TestCase):
@@ -48,13 +58,23 @@ class ForthSubtractionTest(unittest.TestCase):
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
         input_data = ["-"]
-        with self.assertRaises(StackUnderflowError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(input_data)
 
     def test_errors_if_there_is_only_one_value_on_the_stack(self):
         input_data = ["1 -"]
-        with self.assertRaises(StackUnderflowError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(input_data)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 class ForthMultiplicationTest(unittest.TestCase):
@@ -65,13 +85,23 @@ class ForthMultiplicationTest(unittest.TestCase):
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
         input_data = ["*"]
-        with self.assertRaises(StackUnderflowError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(input_data)
 
     def test_errors_if_there_is_only_one_value_on_the_stack(self):
         input_data = ["1 *"]
-        with self.assertRaises(StackUnderflowError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(input_data)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 class ForthDivisionTest(unittest.TestCase):
@@ -87,18 +117,28 @@ class ForthDivisionTest(unittest.TestCase):
 
     def test_errors_if_dividing_by_zero(self):
         input_data = ["4 0 /"]
-        with self.assertRaises(ZeroDivisionError):
+        with self.assertRaisesWithMessage(ZeroDivisionError):
             evaluate(input_data)
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
         input_data = ["/"]
-        with self.assertRaises(StackUnderflowError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(input_data)
 
     def test_errors_if_there_is_only_one_value_on_the_stack(self):
         input_data = ["1 /"]
-        with self.assertRaises(StackUnderflowError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(input_data)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 class ForthCombinedArithmeticTest(unittest.TestCase):
@@ -126,8 +166,18 @@ class ForthDupTest(unittest.TestCase):
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
         input_data = ["dup"]
-        with self.assertRaises(StackUnderflowError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(input_data)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 class ForthDropTest(unittest.TestCase):
@@ -148,8 +198,18 @@ class ForthDropTest(unittest.TestCase):
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
         input_data = ["drop"]
-        with self.assertRaises(StackUnderflowError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(input_data)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 class ForthSwapTest(unittest.TestCase):
@@ -170,13 +230,23 @@ class ForthSwapTest(unittest.TestCase):
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
         input_data = ["swap"]
-        with self.assertRaises(StackUnderflowError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(input_data)
 
     def test_errors_if_there_is_only_one_value_on_the_stack(self):
         input_data = ["1 swap"]
-        with self.assertRaises(StackUnderflowError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(input_data)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 class ForthOverTest(unittest.TestCase):
@@ -197,13 +267,23 @@ class ForthOverTest(unittest.TestCase):
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
         input_data = ["over"]
-        with self.assertRaises(StackUnderflowError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(input_data)
 
     def test_errors_if_there_is_only_one_value_on_the_stack(self):
         input_data = ["1 over"]
-        with self.assertRaises(StackUnderflowError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(input_data)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 class ForthUserDefinedWordsTest(unittest.TestCase):
@@ -258,13 +338,23 @@ class ForthUserDefinedWordsTest(unittest.TestCase):
 
     def test_cannot_redefine_numbers(self):
         input_data = [": 1 2 ;"]
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             evaluate(input_data)
 
     def test_errors_if_executing_a_non_existent_word(self):
         input_data = ["foo"]
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             evaluate(input_data)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

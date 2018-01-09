@@ -32,20 +32,30 @@ class BinaryTests(unittest.TestCase):
         self.assertEqual(parse_binary("10001101000"), 1128)
 
     def test_invalid_binary_text_only(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             parse_binary("carrot")
 
     def test_invalid_binary_number_not_base2(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             parse_binary("102011")
 
     def test_invalid_binary_numbers_with_text(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             parse_binary("10nope")
 
     def test_invalid_binary_text_with_numbers(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             parse_binary("nope10")
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

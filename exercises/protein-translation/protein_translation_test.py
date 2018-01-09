@@ -65,6 +65,16 @@ class ProteinTranslationTests(unittest.TestCase):
         expected = ['Tryptophan', 'Cysteine', 'Tyrosine']
         self.assertEqual(expected, proteins(strand))
 
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
+
 
 if __name__ == '__main__':
     unittest.main()

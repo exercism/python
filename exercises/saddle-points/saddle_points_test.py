@@ -38,8 +38,18 @@ class SaddlePointTest(unittest.TestCase):
 
     def test_irregular_matrix(self):
         inp = [[3, 2, 1], [0, 1], [2, 1, 0]]
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             saddle_points(inp)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

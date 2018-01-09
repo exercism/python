@@ -1,4 +1,4 @@
-# Ocr Numbers
+# OCR Numbers
 
 Given a 3 x 4 grid of pipes, underscores, and spaces, determine which number is
 represented, or whether it is garbled.
@@ -77,6 +77,21 @@ Update your program to handle multiple numbers, one per line. When converting se
 ```
 
 Is converted to "123,456,789"
+
+## Exception messages
+
+Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
+indicate what the source of the error is. This makes your code more readable and helps significantly with debugging. Not
+every exercise will require you to raise an exception, but for those that do, the tests will only pass if you include
+a message.
+
+To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
+`raise Exception`, you shold write:
+
+```python
+raise Exception("Meaningful message indicating the source of the error")
+```
+
 
 ## Submitting Exercises
 
