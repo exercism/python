@@ -64,12 +64,22 @@ class SayTest(unittest.TestCase):
                                 "one hundred and twenty-three"))
 
     def test_number_to_large(self):
-        with self.assertRaises(AttributeError):
+        with self.assertRaisesWithMessage(ValueError):
             say(1e12)
 
     def test_number_negative(self):
-        with self.assertRaises(AttributeError):
+        with self.assertRaisesWithMessage(ValueError):
             say(-1)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

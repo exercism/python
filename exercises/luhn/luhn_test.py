@@ -39,7 +39,7 @@ class LuhnTests(unittest.TestCase):
         self.assertIs(Luhn("055£ 444$ 285").is_valid(), False)
 
     def test_single_zero_with_space_is_invalid(self):
-        self.assertIs(Luhn("0").is_valid(), False)
+        self.assertIs(Luhn(" 0").is_valid(), False)
 
     def test_more_than_a_single_zero_is_valid(self):
         self.assertIs(Luhn("0000 0").is_valid(), True)

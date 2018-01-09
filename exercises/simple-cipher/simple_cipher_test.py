@@ -68,10 +68,20 @@ class CipherTest(unittest.TestCase):
                         'All items in the key must be chars and lowercase!')
 
     def test_cipher_wrong_key(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             Cipher('a1cde')
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             Cipher('aBcde')
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

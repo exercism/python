@@ -51,22 +51,32 @@ class WordyTest(unittest.TestCase):
             calculate("What is -12 divided by 2 divided by -3?"), 2)
 
     def test_unknown_operation(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             calculate("What is 52 cubed?")
 
     def test_non_math_question(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             calculate("Who is the President of the United States?")
 
     # Additional tests for this track
 
     def test_missing_operation(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             calculate("What is 2 2 minus 3?")
 
     def test_missing_number(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             calculate("What is 7 plus multiplied by -2?")
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

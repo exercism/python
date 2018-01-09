@@ -2,8 +2,8 @@ import unittest
 
 from pov import Tree
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.1
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.1
 
 class PovTest(unittest.TestCase):
     def assertTreeEquals(self, result, expected):
@@ -110,7 +110,7 @@ class PovTest(unittest.TestCase):
 
     def test_errors_if_target_does_not_exist_in_singleton_tree(self):
         tree = Tree('x')
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             tree.fromPov('nonexistent')
 
     def test_errors_if_target_does_not_exist_in_large_tree(self):
@@ -122,7 +122,7 @@ class PovTest(unittest.TestCase):
             Tree('sibling-0'),
             Tree('sibling-1')
         ])
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             tree.fromPov('nonexistent')
 
     def test_find_path_between_two_nodes(self):
@@ -180,7 +180,7 @@ class PovTest(unittest.TestCase):
             Tree('sibling-0'),
             Tree('sibling-1')
         ])
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             tree.pathTo('x', 'nonexistent')
 
     def test_errors_if_source_does_not_exist(self):
@@ -192,8 +192,18 @@ class PovTest(unittest.TestCase):
             Tree('sibling-0'),
             Tree('sibling-1')
         ])
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             tree.pathTo('nonexistent', 'x')
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':
