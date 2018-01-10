@@ -1,10 +1,10 @@
-class TriangleError(Exception):
+def equilateral(sides):
     pass
 
 
-class Triangle(object):
-    def __init__(self, side_a, side_b, side_c):
-        pass
+def isosceles(sides):
+    pass
 
-    def kind(self):
-        pass
+
+def scalene(sides):
+    pass
