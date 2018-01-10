@@ -1,18 +1,23 @@
-def song(first, last=0):
-    verses = ''
-    for number in reversed(range(last, first + 1)):
-        verses += verse(number) + '\n'
-
-    return verses
+def recite(start, take=1):
+    results = []
+    for i in range(start, start - take, -1):
+        results.extend(verse(i))
+        if i > start - take + 1:
+            results.append('')
+    return results
 
 
 def verse(number):
-    return ''.join([
-        "{} of beer on the wall, ".format(_bottles(number).capitalize()),
-        "{} of beer.\n".format(_bottles(number)),
-        _action(number),
-        _next_bottle(number),
-    ])
+    return [
+        ''.join([
+            "{} of beer on the wall, ".format(_bottles(number).capitalize()),
+            "{} of beer.".format(_bottles(number))
+        ]),
+        ''.join([
+            _action(number),
+            _next_bottle(number)
+        ])
+    ]
 
 
 def _action(current_verse):
@@ -25,7 +30,7 @@ def _action(current_verse):
 
 
 def _next_bottle(current_verse):
-    return "{} of beer on the wall.\n".format(
+    return "{} of beer on the wall.".format(
         _bottles(_next_verse(current_verse)),
     )
 
