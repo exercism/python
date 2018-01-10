@@ -1,5 +1,8 @@
 import unittest
-import builtins
+try:
+    import builtins
+except ImportError:
+    import __builtin__ as builtins
 
 from grep import grep
 
