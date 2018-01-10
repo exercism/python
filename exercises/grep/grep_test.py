@@ -1,4 +1,5 @@
 import unittest
+import builtins
 
 from grep import grep
 
@@ -39,7 +40,7 @@ FILENAMES = [
     MIDSUMMERNIGHTFILENAME,
     PARADISELOSTFILENAME,
 ]
-__builtins__['FILES'] = {}
+builtins.FILES = {}
 
 
 class File(object):
@@ -63,23 +64,23 @@ class File(object):
         pass
 
 
-__builtins__['oldopen'] = __builtins__['open']
+builtins.oldopen = builtins.open
 
 
 def open(name, mode='r', *args, **kwargs):
     if name in FILENAMES:
-        if mode == 'w' or name not in __builtins__['FILES']:
-            __builtins__['FILES'][name] = File(name)
-        return __builtins__['FILES'][name]
+        if mode == 'w' or name not in builtins.FILES:
+            builtins.FILES[name] = File(name)
+        return builtins.FILES[name]
     else:
-        return __builtins__['oldopen'](name, mode, *args, **kwargs)
+        return builtins.oldopen(name, mode, *args, **kwargs)
 
 
-__builtins__['open'] = open
+builtins.open = open
 
 
 def remove_file(file_name):
-    del __builtins__['FILES'][file_name]
+    del builtins.FILES[file_name]
 
 
 def create_file(name, contents):
@@ -90,15 +91,14 @@ def create_file(name, contents):
 class GrepTest(unittest.TestCase):
     @classmethod
     def setUpClass(self):
-        self.maxDiff = 1000
-        __builtins__['open'] = open
+        builtins.open = open
         create_file(ILIADFILENAME, ILIADCONTENTS)
         create_file(MIDSUMMERNIGHTFILENAME, MIDSUMMERNIGHTCONTENTS)
         create_file(PARADISELOSTFILENAME, PARADISELOSTCONTENTS)
 
     @classmethod
     def tearDownClass(self):
-        __builtins__['open'] = __builtins__['oldopen']
+        builtins.open = builtins.oldopen
         remove_file(ILIADFILENAME)
         remove_file(MIDSUMMERNIGHTFILENAME)
         remove_file(PARADISELOSTFILENAME)
