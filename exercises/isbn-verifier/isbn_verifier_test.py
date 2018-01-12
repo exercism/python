@@ -3,7 +3,7 @@ import unittest
 from isbn_verifier import verify
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.2.0
 
 class IsbnVerifierTests(unittest.TestCase):
 
@@ -45,6 +45,9 @@ class IsbnVerifierTests(unittest.TestCase):
 
     def test_invalid_check_digit_X_used_for_0(self):
         self.assertIs(verify('3-598-21515-X'), False)
+
+    def test_valid_empty_isbn(self):
+        self.assertIs(verify(''), False)
 
 
 if __name__ == '__main__':
