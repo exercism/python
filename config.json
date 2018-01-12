@@ -80,7 +80,6 @@
         "type_conversion",
         "conditionals",
         "strings",
-        "arrays",
         "integers",
         "parsing"
       ]
