@@ -3,19 +3,19 @@
 Given a diagram, determine which plants each child in the kindergarten class is
 responsible for.
 
-The kindergarten class is learning about growing plants. The teachers
+The kindergarten class is learning about growing plants. The teacher
 thought it would be a good idea to give them actual seeds, plant them in
 actual dirt, and grow actual plants.
 
 They've chosen to grow grass, clover, radishes, and violets.
 
-To this end, they've put little styrofoam cups along the window sills,
-and planted one type of plant in each cup, choosing randomly from the
-available types of seeds.
+To this end, the children have put little cups along the window sills, and
+planted one type of plant in each cup, choosing randomly from the available
+types of seeds.
 
-```plain
+```text
 [window][window][window]
-........................ # each dot represents a styrofoam cup
+........................ # each dot represents a cup
 ........................
 ```
 
@@ -25,27 +25,27 @@ There are 12 children in the class:
 - Eve, Fred, Ginny, Harriet,
 - Ileana, Joseph, Kincaid, and Larry.
 
-Each child gets 4 cups, two on each row. The children are assigned to
-cups in alphabetical order.
+Each child gets 4 cups, two on each row. Their teacher assigns cups to
+the children alphabetically by their names.
 
 The following diagram represents Alice's plants:
 
-```plain
+```text
 [window][window][window]
 VR......................
 RG......................
 ```
 
-So in the row nearest the window, she has a violet and a radish; in the
-row behind that, she has a radish and some grass.
+In the first row, nearest the windows, she has a violet and a radish.  In the
+second row she has a radish and some grass.
 
 Your program will be given the plants from left-to-right starting with
 the row nearest the windows. From this, it should be able to determine
-which plants belong to which students.
+which plants belong to each student.
 
 For example, if it's told that the garden looks like so:
 
-```plain
+```text
 [window][window][window]
 VRCGVVRVCGGCCGVRGCVCGCGV
 VRCCCGCRRGVCGCRVVCVGCGCV
@@ -59,12 +59,26 @@ While asking for Bob's plants would yield:
 
 - Clover, grass, clover, clover
 
-### Submitting Exercises
+## Exception messages
+
+Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
+indicate what the source of the error is. This makes your code more readable and helps significantly with debugging. Not
+every exercise will require you to raise an exception, but for those that do, the tests will only pass if you include
+a message.
+
+To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
+`raise Exception`, you shold write:
+
+```python
+raise Exception("Meaningful message indicating the source of the error")
+```
+
+
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 
 For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
-
 
 For more detailed information about running tests, code style and linting,
 please see the [help page](http://exercism.io/languages/python).

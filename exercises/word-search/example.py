@@ -28,7 +28,7 @@ DIRECTIONS = (Point(1, 0), Point(1, -1), Point(1, 1), Point(-1, -1),
 
 class WordSearch(object):
     def __init__(self, puzzle):
-        self.rows = puzzle.split()
+        self.rows = puzzle
         self.width = len(self.rows[0])
         self.height = len(self.rows)
 

@@ -11,149 +11,151 @@ import unittest
 from minesweeper import board
 
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+
 class MinesweeperTest(unittest.TestCase):
-    def test_board1(self):
-        inp = ["+------+",
-               "| *  * |",
-               "|  *   |",
-               "|    * |",
-               "|   * *|",
-               "| *  * |",
-               "|      |",
-               "+------+"]
-        out = ["+------+",
-               "|1*22*1|",
-               "|12*322|",
-               "| 123*2|",
-               "|112*4*|",
-               "|1*22*2|",
-               "|111111|",
-               "+------+"]
+
+    def test_no_rows(self):
+        self.assertEqual(board([]), [])
+
+    def test_no_columns(self):
+        self.assertEqual(board([""]), [""])
+
+    def test_no_mines(self):
+        inp = ["   ",
+               "   ",
+               "   "]
+        out = ["   ",
+               "   ",
+               "   "]
         self.assertEqual(board(inp), out)
 
-    def test_board2(self):
-        inp = ["+-----+",
-               "| * * |",
-               "|     |",
-               "|   * |",
-               "|  * *|",
-               "| * * |",
-               "+-----+"]
-        out = ["+-----+",
-               "|1*2*1|",
-               "|11322|",
-               "| 12*2|",
-               "|12*4*|",
-               "|1*3*2|",
-               "+-----+"]
+    def test_board_with_only_mines(self):
+        inp = ["***",
+               "***",
+               "***"]
+        out = ["***",
+               "***",
+               "***"]
         self.assertEqual(board(inp), out)
 
-    def test_board3(self):
-        inp = ["+-----+",
-               "| * * |",
-               "+-----+"]
-        out = ["+-----+",
-               "|1*2*1|",
-               "+-----+"]
+    def test_mine_surrounded_by_spaces(self):
+        inp = ["   ",
+               " * ",
+               "   "]
+        out = ["111",
+               "1*1",
+               "111"]
         self.assertEqual(board(inp), out)
 
-    def test_board4(self):
-        inp = ["+-+",
-               "|*|",
-               "| |",
-               "|*|",
-               "| |",
-               "| |",
-               "+-+"]
-        out = ["+-+",
-               "|*|",
-               "|2|",
-               "|*|",
-               "|1|",
-               "| |",
-               "+-+"]
+    def test_space_surrounded_by_mines(self):
+        inp = ["***",
+               "* *",
+               "***"]
+        out = ["***",
+               "*8*",
+               "***"]
         self.assertEqual(board(inp), out)
 
-    def test_board5(self):
-        inp = ["+-+",
-               "|*|",
-               "+-+"]
-        out = ["+-+",
-               "|*|",
-               "+-+"]
+    def test_horizontal_line(self):
+        inp = [" * * "]
+        out = ["1*2*1"]
         self.assertEqual(board(inp), out)
 
-    def test_board6(self):
-        inp = ["+--+",
-               "|**|",
-               "|**|",
-               "+--+"]
-        out = ["+--+",
-               "|**|",
-               "|**|",
-               "+--+"]
+    def test_horizontal_line_mines_at_edges(self):
+        inp = ["*   *"]
+        out = ["*1 1*"]
         self.assertEqual(board(inp), out)
 
-    def test_board7(self):
-        inp = ["+--+",
-               "|**|",
-               "|**|",
-               "+--+"]
-        out = ["+--+",
-               "|**|",
-               "|**|",
-               "+--+"]
+    def test_vertical_line(self):
+        inp = [" ",
+               "*",
+               " ",
+               "*",
+               " "]
+        out = ["1",
+               "*",
+               "2",
+               "*",
+               "1"]
         self.assertEqual(board(inp), out)
 
-    def test_board8(self):
-        inp = ["+---+",
-               "|***|",
-               "|* *|",
-               "|***|",
-               "+---+"]
-        out = ["+---+",
-               "|***|",
-               "|*8*|",
-               "|***|",
-               "+---+"]
+    def test_vertical_line_mines_at_edges(self):
+        inp = ["*",
+               " ",
+               " ",
+               " ",
+               "*"]
+        out = ["*",
+               "1",
+               " ",
+               "1",
+               "*"]
         self.assertEqual(board(inp), out)
 
+    def test_cross(self):
+        inp = ["  *  ",
+               "  *  ",
+               "*****",
+               "  *  ",
+               "  *  "]
+        out = [" 2*2 ",
+               "25*52",
+               "*****",
+               "25*52",
+               " 2*2 "]
+        self.assertEqual(board(inp), out)
+
+    def test_large_board(self):
+        inp = [" *  * ",
+               "  *   ",
+               "    * ",
+               "   * *",
+               " *  * ",
+               "      "]
+        out = ["1*22*1",
+               "12*322",
+               " 123*2",
+               "112*4*",
+               "1*22*2",
+               "111111"]
+        self.assertEqual(board(inp), out)
+
+    # Additional test for this track
     def test_board9(self):
-        inp = ["+-----+",
-               "|     |",
-               "|   * |",
-               "|     |",
-               "|     |",
-               "| *   |",
-               "+-----+"]
-        out = ["+-----+",
-               "|  111|",
-               "|  1*1|",
-               "|  111|",
-               "|111  |",
-               "|1*1  |",
-               "+-----+"]
+        inp = ["     ",
+               "   * ",
+               "     ",
+               "     ",
+               " *   "]
+        out = ["  111",
+               "  1*1",
+               "  111",
+               "111  ",
+               "1*1  "]
         self.assertEqual(board(inp), out)
 
     def test_different_len(self):
-        inp = ["+-+",
-               "| |",
-               "|*  |",
-               "|  |",
-               "+-+"]
-        self.assertRaises(ValueError, board, inp)
-
-    def test_faulty_border(self):
-        inp = ["+-----+",
-               "*   * |",
-               "+-- --+"]
-        self.assertRaises(ValueError, board, inp)
+        inp = [" ",
+               "*  ",
+               "  "]
+        with self.assertRaisesWithMessage(ValueError):
+            board(inp)
 
     def test_invalid_char(self):
-        inp = ["+-----+",
-               "|X  * |",
-               "+-----+"]
-        self.assertRaises(ValueError, board, inp)
+        inp = ["X  * "]
+        with self.assertRaisesWithMessage(ValueError):
+            board(inp)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

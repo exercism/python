@@ -3,20 +3,20 @@
 To try and encourage more sales of different books from a popular 5 book
 series, a bookshop has decided to offer discounts on multiple book purchases.
 
-One copy of any of the five books costs $8. 
+One copy of any of the five books costs $8.
 
 If, however, you buy two different books, you get a 5%
 discount on those two books.
 
-If you buy 3 different books, you get a 10% discount. 
+If you buy 3 different books, you get a 10% discount.
 
 If you buy 4 different books, you get a 20% discount.
 
-If you buy all 5, you get a 25% discount. 
+If you buy all 5, you get a 25% discount.
 
 Note: that if you buy four books, of which 3 are
 different titles, you get a 10% discount on the 3 that
-form part of a set, but the fourth book still costs $8. 
+form part of a set, but the fourth book still costs $8.
 
 Your mission is to write a piece of code to calculate the
 price of any conceivable shopping basket (containing only
@@ -30,7 +30,7 @@ For example, how much does this basket of books cost?
 - 2 copies of the third book
 - 1 copy of the fourth book
 - 1 copy of the fifth book
- 
+
 One way of grouping these 8 books is:
 
 - 1 group of 5 --> 25% discount (1st,2nd,3rd,4th,5th)
@@ -67,12 +67,26 @@ For a total of $51.20
 
 And $51.20 is the price with the biggest discount.
 
-### Submitting Exercises
+## Exception messages
+
+Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
+indicate what the source of the error is. This makes your code more readable and helps significantly with debugging. Not
+every exercise will require you to raise an exception, but for those that do, the tests will only pass if you include
+a message.
+
+To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
+`raise Exception`, you shold write:
+
+```python
+raise Exception("Meaningful message indicating the source of the error")
+```
+
+
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 
 For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
-
 
 For more detailed information about running tests, code style and linting,
 please see the [help page](http://exercism.io/languages/python).

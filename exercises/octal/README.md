@@ -8,11 +8,13 @@ Implement octal to decimal conversion.  Given an octal input
 string, your program should produce a decimal output.
 
 ## Note
+
 - Implement the conversion yourself.
   Do not use something else to perform the conversion for you.
 - Treat invalid input as octal 0.
 
 ## About Octal (Base-8)
+
 Decimal is a base-10 system.
 
 A number 233 in base 10 notation can be understood
@@ -25,7 +27,8 @@ as a linear combination of powers of 10:
 - All these values are summed.
 
 So:
-```
+
+```text
    233 # decimal
  = 2*10^2 + 3*10^1 + 3*10^0
  = 2*100  + 3*10   + 3*1
@@ -34,7 +37,8 @@ So:
 Octal is similar, but uses powers of 8 rather than powers of 10.
 
 So:
-```
+
+```text
    233 # octal
  = 2*8^2 + 3*8^1 + 3*8^0
  = 2*64  + 3*8   + 3*1
@@ -42,12 +46,26 @@ So:
  = 155
 ```
 
-### Submitting Exercises
+## Exception messages
+
+Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
+indicate what the source of the error is. This makes your code more readable and helps significantly with debugging. Not
+every exercise will require you to raise an exception, but for those that do, the tests will only pass if you include
+a message.
+
+To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
+`raise Exception`, you shold write:
+
+```python
+raise Exception("Meaningful message indicating the source of the error")
+```
+
+
+## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
 
 For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
-
 
 For more detailed information about running tests, code style and linting,
 please see the [help page](http://exercism.io/languages/python).

@@ -8,6 +8,8 @@ import unittest
 from two_bucket import two_bucket
 
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+
 class TwoBucketTest(unittest.TestCase):
     def test_bucket_one_size_3_bucket_two_size_5_start_with_bucket_one(self):
         self.assertEqual(two_bucket(3, 5, 1, "one"), (4, "one", 5))
@@ -25,7 +27,7 @@ class TwoBucketTest(unittest.TestCase):
         self.assertEqual(two_bucket(1, 3, 3, "two"), (1, "two", 0))
 
     def test_bucket_one_size_2_bucket_two_size_3_start_with_bucket_one(self):
-        self.assertEqual(two_bucket(2, 3, 3, "one"), (4, "two", 1))
+        self.assertEqual(two_bucket(2, 3, 3, "one"), (2, "two", 2))
 
 
 if __name__ == '__main__':

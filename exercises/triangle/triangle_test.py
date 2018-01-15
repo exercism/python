@@ -34,19 +34,34 @@ class TriangleTests(unittest.TestCase):
         self.assertEqual(Triangle(0.4, 0.6, 0.3).kind(), "scalene")
 
     def test_triangles_with_no_size_are_illegal(self):
-        self.assertRaises(TriangleError, Triangle, 0, 0, 0)
+        with self.assertRaisesWithMessage(TriangleError):
+            Triangle(0, 0, 0)
 
     def test_triangles_with_negative_sides_are_illegal(self):
-        self.assertRaises(TriangleError, Triangle, 3, 4, -5)
+        with self.assertRaisesWithMessage(TriangleError):
+            Triangle(3, 4, -5)
 
     def test_triangles_violating_triangle_inequality_are_illegal(self):
-        self.assertRaises(TriangleError, Triangle, 1, 1, 3)
+        with self.assertRaisesWithMessage(TriangleError):
+            Triangle(1, 1, 3)
 
     def test_triangles_violating_triangle_inequality_are_illegal_2(self):
-        self.assertRaises(TriangleError, Triangle, 2, 4, 2)
+        with self.assertRaisesWithMessage(TriangleError):
+            Triangle(2, 4, 2)
 
     def test_triangles_violating_triangle_inequality_are_illegal_3(self):
-        self.assertRaises(TriangleError, Triangle, 7, 3, 2)
+        with self.assertRaisesWithMessage(TriangleError):
+            Triangle(7, 3, 2)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

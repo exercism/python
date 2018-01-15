@@ -76,9 +76,9 @@ def validate_rect(rect, input):
     # validate connection at every corner
     # with neighbours on the same line and col
     for i in range(0, len(rect)):
-        l = same_line(rect[i].i, rect[0:i] + rect[i + 1:])
-        c = same_col(rect[i].j, rect[0:i] + rect[i + 1:])
-        if not path(rect[i], l, input) or not path(rect[i], c, input):
+        line = same_line(rect[i].i, rect[0:i] + rect[i + 1:])
+        column = same_col(rect[i].j, rect[0:i] + rect[i + 1:])
+        if not path(rect[i], line, input) or not path(rect[i], column, input):
             return False
     return True
 

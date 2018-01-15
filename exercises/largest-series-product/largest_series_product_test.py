@@ -11,7 +11,7 @@ import unittest
 from largest_series_product import largest_product
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
 class SeriesTest(unittest.TestCase):
     def test_finds_the_largest_product_if_span_equals_length(self):
@@ -45,7 +45,7 @@ class SeriesTest(unittest.TestCase):
         self.assertEqual(largest_product("99099", 3), 0)
 
     def test_rejects_span_longer_than_string_length(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             largest_product("123", 4)
 
     def test_reports_1_for_empty_string_and_empty_product_0_span(self):
@@ -55,15 +55,15 @@ class SeriesTest(unittest.TestCase):
         self.assertEqual(largest_product("123", 0), 1)
 
     def test_rejects_empty_string_and_nonzero_span(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             largest_product("", 1)
 
     def test_rejects_invalid_character_in_digits(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             largest_product("1234a5", 2)
 
     def test_rejects_negative_span(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             largest_product("12345", -1)
 
     @unittest.skip("extra-credit")
@@ -86,6 +86,16 @@ class SeriesTest(unittest.TestCase):
             "71094050775410022569831552000559357297257163626956188267042825248"
             "3600823257530420752963450")
         self.assertEqual(largest_product(series, 13), 23514624000)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

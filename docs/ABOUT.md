@@ -9,7 +9,7 @@ This is often invisible to the beginning programmer, but if there are uses for w
 
 Python was started by Guido van Rossum in 1989.
 Its name is an homage to the comedy troupe Monty Python. 
-Python 2 is used widely but support may end by 2020.
+Python 2 is used widely but support [may end by 2020](https://www.python.org/dev/peps/pep-0373/#id2).
 Python 3 was introduced in 2008 and is beginning to be adopted more widely.
 They are similar, but users will encounter [some differences](http://blog.teamtreehouse.com/python-2-vs-python-3). 
 Python development is shepherded by [The Python Software Foundation](https://www.python.org/about/) and there are active community-based user groups worldwide.

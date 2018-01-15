@@ -1,42 +1,90 @@
 import unittest
 
-from perfect_numbers import is_perfect
+from perfect_numbers import classify
 
+
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
 
 class PerfectNumbersTest(unittest.TestCase):
+    def test_smallest_perfect_number(self):
+        self.assertIs(classify(6), "perfect")
 
-    def test_first_perfect_number(self):
-        self.assertTrue(is_perfect(6))
+    def test_medium_perfect_number(self):
+        self.assertIs(classify(28), "perfect")
 
-    def test_no_perfect_number(self):
-        self.assertFalse(is_perfect(8))
+    def test_large_perfect_number(self):
+        self.assertIs(classify(33550336), "perfect")
 
-    def test_second_perfect_number(self):
-        self.assertTrue(is_perfect(28))
-
-    def test_abundant(self):
-        self.assertFalse(is_perfect(20))
-
-    def test_answer_to_the_ultimate_question_of_life(self):
-        self.assertFalse(is_perfect(42))
-
+    # Additional tests for this track
     def test_third_perfect_number(self):
-        self.assertTrue(is_perfect(496))
-
-    def test_odd_abundant(self):
-        self.assertFalse(is_perfect(945))
+        self.assertIs(classify(496), "perfect")
 
     def test_fourth_perfect_number(self):
-        self.assertTrue(is_perfect(8128))
-
-    def test_fifth_perfect_number(self):
-        self.assertTrue(is_perfect(33550336))
+        self.assertIs(classify(8128), "perfect")
 
     def test_sixth_perfect_number(self):
-        self.assertTrue(is_perfect(8589869056))
+        self.assertIs(classify(8589869056), "perfect")
 
     def test_seventh_perfect_number(self):
-        self.assertTrue(is_perfect(137438691328))
+        self.assertIs(classify(137438691328), "perfect")
+
+
+class AbundantNumbersTest(unittest.TestCase):
+    def test_smallest_abundant_number(self):
+        self.assertIs(classify(12), "abundant")
+
+    def test_medium_abundant_number(self):
+        self.assertIs(classify(30), "abundant")
+
+    def test_large_abundant_number(self):
+        self.assertIs(classify(33550335), "abundant")
+
+    # Additional tests for this track
+    def test_answer_to_the_ultimate_question_of_life(self):
+        self.assertIs(classify(42), "abundant")
+
+    def test_odd_abundant(self):
+        self.assertIs(classify(945), "abundant")
+
+    def test_even_abundant(self):
+        self.assertIs(classify(20), "abundant")
+
+
+class DeficientNumbersTest(unittest.TestCase):
+    def test_smallest_prime_deficient_number(self):
+        self.assertIs(classify(2), "deficient")
+
+    def test_smallest_nonprime_deficient_number(self):
+        self.assertIs(classify(4), "deficient")
+
+    def test_medium_deficient_number(self):
+        self.assertIs(classify(32), "deficient")
+
+    def test_large_deficient_number(self):
+        self.assertIs(classify(33550337), "deficient")
+
+    def test_edge_case(self):
+        self.assertIs(classify(1), "deficient")
+
+
+class InvalidInputsTest(unittest.TestCase):
+    def test_zero(self):
+        with self.assertRaisesWithMessage(ValueError):
+            classify(0)
+
+    def test_negative(self):
+        with self.assertRaisesWithMessage(ValueError):
+            classify(-1)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+        except AttributeError:
+            pass
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':
