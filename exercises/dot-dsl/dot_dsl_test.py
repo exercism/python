@@ -71,46 +71,56 @@ class DotDslTest(unittest.TestCase):
         })
 
     def test_malformed_graph(self):
-        with self.assertRaises(TypeError):
+        with self.assertRaisesWithMessage(TypeError):
             Graph(1)
 
-        with self.assertRaises(TypeError):
+        with self.assertRaisesWithMessage(TypeError):
             Graph("problematic")
 
     def test_malformed_graph_item(self):
-        with self.assertRaises(TypeError):
+        with self.assertRaisesWithMessage(TypeError):
             Graph([
                 ()
             ])
 
-        with self.assertRaises(TypeError):
+        with self.assertRaisesWithMessage(TypeError):
             Graph([
                 (ATTR, )
             ])
 
     def test_malformed_attr(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             Graph([
                 (ATTR, 1, 2, 3)
             ])
 
     def test_malformed_node(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             Graph([
                 (NODE, 1, 2, 3)
             ])
 
     def test_malformed_EDGE(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             Graph([
                 (EDGE, 1, 2)
             ])
 
     def test_unknown_item(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             Graph([
                 (99, 1, 2)
             ])
+
+    # Utility methods
+    def setUp(self):
+        try:
+            self.assertRaisesRegex
+        except AttributeError:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':
