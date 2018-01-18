@@ -55,7 +55,7 @@ class File(object):
         return self.contents
 
     def readlines(self):
-        return [l + '\n' for l in self.read().split('\n') if l]
+        return [line + '\n' for line in self.read().split('\n') if line]
 
     def write(self, data):
         self.contents += data
@@ -67,21 +67,26 @@ class File(object):
         pass
 
 
+# Store builtin defintion of open()
 builtins.oldopen = builtins.open
 
 
 def open(name, mode='r', *args, **kwargs):
+    # if name is a mocked file name, lookup corresponding mocked file
     if name in FILENAMES:
         if mode == 'w' or name not in builtins.FILES:
             builtins.FILES[name] = File(name)
         return builtins.FILES[name]
+    # else call builtin open()
     else:
         return builtins.oldopen(name, mode, *args, **kwargs)
 
 
+# Override builtin open with mock-file-enabled one
 builtins.open = open
 
 
+# remove mocked file contents
 def remove_file(file_name):
     del builtins.FILES[file_name]
 
