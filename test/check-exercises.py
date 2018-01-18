@@ -48,7 +48,7 @@ def load_config():
 
     try:
         problems = [entry['slug'] for entry in data['exercises']
-                    if "deprecated" not in entry and "foregone" not in entry]
+                    if "deprecated" not in entry]
     except KeyError:
         print('FAIL: config.json has an incorrect format')
         raise SystemExit(1)
