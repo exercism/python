@@ -2,20 +2,23 @@ class CustomSet(object):
     def __init__(self, elements=[]):
         self.elements = list(elements)
 
-    def empty(self):
-        return not any(self.elements)
+    def isempty(self):
+        return not self.elements
 
     def __iter__(self):
         return iter(self.elements)
 
-    def subset(self, other):
+    def __contains__(self, element):
+        return element in self.elements
+
+    def issubset(self, other):
         return all(x in other for x in self)
 
-    def disjoint(self, other):
+    def isdisjoint(self, other):
         return all(x not in other for x in self)
 
     def __eq__(self, other):
-        return self.subset(other) and other.subset(self)
+        return self.issubset(other) and other.issubset(self)
 
     def add(self, element):
         if element not in self:

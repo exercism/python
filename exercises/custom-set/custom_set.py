@@ -2,16 +2,16 @@ class CustomSet(object):
     def __init__(self, elements=[]):
         pass
 
-    def empty(self):
+    def isempty(self):
         pass
 
-    def __iter__(self):
+    def __contains__(self, element):
         pass
 
-    def subset(self, other):
+    def issubset(self, other):
         pass
 
-    def disjoint(self, other):
+    def isdisjoint(self, other):
         pass
 
     def __eq__(self, other):
