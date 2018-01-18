@@ -98,8 +98,7 @@ class TestVLQ(unittest.TestCase):
     # Utility functions
     def setUp(self):
         try:
-            with self.assertRaisesRegex(AttributeError, r".+"):
-                raise AttributeError('x')
+            self.assertRaisesRegex
         except AttributeError:
             self.assertRaisesRegex = self.assertRaisesRegexp
 
