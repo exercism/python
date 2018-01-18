@@ -53,7 +53,7 @@ class DotDslTest(unittest.TestCase):
             (ATTR, "title", "Testing Attrs"),
             (NODE, "a", {"color": "green"}),
             (NODE, "c", {}),
-            (NODE, "b", {"label", "Beta!"}),
+            (NODE, "b", {"label": "Beta!"}),
             (EDGE, "b", "c", {}),
             (EDGE, "a", "b", {"color": "blue"}),
             (ATTR, "bar", "true")
@@ -61,7 +61,7 @@ class DotDslTest(unittest.TestCase):
 
         self.assertEqual(g.nodes, [Node("a", {"color": "green"}),
                                    Node("c", {}),
-                                   Node("b", {"label", "Beta!"})])
+                                   Node("b", {"label": "Beta!"})])
         self.assertEqual(g.edges, [Edge("b", "c", {}),
                                    Edge("a", "b", {"color": "blue"})])
         self.assertEqual(g.attrs, {
