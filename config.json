@@ -28,6 +28,16 @@
       ]
     },
     {
+      "uuid": "d39f86fe-db56-461c-8a93-d87058af8366",
+      "slug": "reverse-string",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "strings"
+      ]
+    },
+    {
       "uuid": "d1a98c79-d3cc-4035-baab-0e334d2b6a57",
       "slug": "isogram",
       "core": false,
@@ -68,6 +78,20 @@
         "strings",
         "logic",
         "transforming"
+      ]
+    },
+    {
+      "uuid": "7961c852-c87a-44b0-b152-efea3ac8555c",
+      "slug": "isbn-verifier",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "type_conversion",
+        "conditionals",
+        "strings",
+        "integers",
+        "parsing"
       ]
     },
     {
@@ -1235,6 +1259,16 @@
       ]
     },
     {
+        "uuid": "bb07c236-062c-2980-483a-a221e4724445dcd6f32",
+        "slug": "custom-set",
+        "core": false,
+        "unlocked_by": null,
+        "difficulty": 5,
+        "topics": [
+            "sets"
+        ]
+    },
+    {
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "slug": "accumulate",
       "deprecated": true
@@ -1288,9 +1322,11 @@
       "uuid": "6b7f7b1f-c388-4f4c-b924-84535cc5e1a0",
       "slug": "hexadecimal",
       "deprecated": true
+    },
+    {
+      "uuid": "da03fca4-4606-48d8-9137-6e40396f7759",
+      "slug": "parallel-letter-frequency",
+      "deprecated": true
     }
-  ],
-  "foregone": [
-      "parallel-letter-frequency"
   ]
 }
