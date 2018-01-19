@@ -46,11 +46,11 @@ class PhoneTest(unittest.TestCase):
         with self.assertRaisesWithMessage(ValueError):
             Phone("123-@:!-7890")
 
-    def test_invalid_area_code(self):
+    def test_invalid_when_area_code_does_start_with_1(self):
         with self.assertRaisesWithMessage(ValueError):
             Phone("(123) 456-7890")
 
-    def test_invalid_exchange_code(self):
+    def test_invalid_when_exchange_code_does_start_with_1(self):
         with self.assertRaisesWithMessage(ValueError):
             Phone("(223) 056-7890")
 
@@ -70,9 +70,9 @@ class PhoneTest(unittest.TestCase):
     # Utility functions
     def setUp(self):
         try:
-            self.assertRaisesRegex = self.assertRaisesRegexp
+            self.assertRaisesRegex
         except AttributeError:
-            pass
+            self.assertRaisesRegex = self.assertRaisesRegexp
 
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
