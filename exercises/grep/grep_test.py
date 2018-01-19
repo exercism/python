@@ -43,7 +43,7 @@ FILENAMES = [
     MIDSUMMERNIGHTFILENAME,
     PARADISELOSTFILENAME,
 ]
-builtins.FILES = {}
+FILES = {}
 
 
 class File(object):
@@ -67,28 +67,27 @@ class File(object):
         pass
 
 
-# Store builtin defintion of open()
+# Store builtin definition of open()
 builtins.oldopen = builtins.open
 
 
 def open(name, mode='r', *args, **kwargs):
     # if name is a mocked file name, lookup corresponding mocked file
     if name in FILENAMES:
-        if mode == 'w' or name not in builtins.FILES:
-            builtins.FILES[name] = File(name)
-        return builtins.FILES[name]
+        if mode == 'w' or name not in FILES:
+            FILES[name] = File(name)
+        return FILES[name]
     # else call builtin open()
     else:
         return builtins.oldopen(name, mode, *args, **kwargs)
 
 
-# Override builtin open with mock-file-enabled one
 builtins.open = open
 
 
 # remove mocked file contents
 def remove_file(file_name):
-    del builtins.FILES[file_name]
+    del FILES[file_name]
 
 
 def create_file(name, contents):
@@ -99,6 +98,7 @@ def create_file(name, contents):
 class GrepTest(unittest.TestCase):
     @classmethod
     def setUpClass(self):
+        # Override builtin open() with mock-file-enabled one
         builtins.open = open
         create_file(ILIADFILENAME, ILIADCONTENTS)
         create_file(MIDSUMMERNIGHTFILENAME, MIDSUMMERNIGHTCONTENTS)
@@ -106,10 +106,11 @@ class GrepTest(unittest.TestCase):
 
     @classmethod
     def tearDownClass(self):
-        builtins.open = builtins.oldopen
         remove_file(ILIADFILENAME)
         remove_file(MIDSUMMERNIGHTFILENAME)
         remove_file(PARADISELOSTFILENAME)
+        # Restore builtin open()
+        builtins.open = builtins.oldopen
 
     def test_one_file_one_match_no_flags(self):
         self.assertMultiLineEqual(
