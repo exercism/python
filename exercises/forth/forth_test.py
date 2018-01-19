@@ -42,9 +42,9 @@ class ForthAdditionTest(unittest.TestCase):
     # Utility functions
     def setUp(self):
         try:
-            self.assertRaisesRegex = self.assertRaisesRegexp
+            self.assertRaisesRegex
         except AttributeError:
-            pass
+            self.assertRaisesRegex = self.assertRaisesRegexp
 
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
@@ -69,9 +69,9 @@ class ForthSubtractionTest(unittest.TestCase):
     # Utility functions
     def setUp(self):
         try:
-            self.assertRaisesRegex = self.assertRaisesRegexp
+            self.assertRaisesRegex
         except AttributeError:
-            pass
+            self.assertRaisesRegex = self.assertRaisesRegexp
 
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
@@ -96,9 +96,9 @@ class ForthMultiplicationTest(unittest.TestCase):
     # Utility functions
     def setUp(self):
         try:
-            self.assertRaisesRegex = self.assertRaisesRegexp
+            self.assertRaisesRegex
         except AttributeError:
-            pass
+            self.assertRaisesRegex = self.assertRaisesRegexp
 
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
@@ -133,9 +133,9 @@ class ForthDivisionTest(unittest.TestCase):
     # Utility functions
     def setUp(self):
         try:
-            self.assertRaisesRegex = self.assertRaisesRegexp
+            self.assertRaisesRegex
         except AttributeError:
-            pass
+            self.assertRaisesRegex = self.assertRaisesRegexp
 
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
@@ -172,9 +172,9 @@ class ForthDupTest(unittest.TestCase):
     # Utility functions
     def setUp(self):
         try:
-            self.assertRaisesRegex = self.assertRaisesRegexp
+            self.assertRaisesRegex
         except AttributeError:
-            pass
+            self.assertRaisesRegex = self.assertRaisesRegexp
 
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
@@ -204,9 +204,9 @@ class ForthDropTest(unittest.TestCase):
     # Utility functions
     def setUp(self):
         try:
-            self.assertRaisesRegex = self.assertRaisesRegexp
+            self.assertRaisesRegex
         except AttributeError:
-            pass
+            self.assertRaisesRegex = self.assertRaisesRegexp
 
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
@@ -241,9 +241,9 @@ class ForthSwapTest(unittest.TestCase):
     # Utility functions
     def setUp(self):
         try:
-            self.assertRaisesRegex = self.assertRaisesRegexp
+            self.assertRaisesRegex
         except AttributeError:
-            pass
+            self.assertRaisesRegex = self.assertRaisesRegexp
 
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
@@ -278,9 +278,9 @@ class ForthOverTest(unittest.TestCase):
     # Utility functions
     def setUp(self):
         try:
-            self.assertRaisesRegex = self.assertRaisesRegexp
+            self.assertRaisesRegex
         except AttributeError:
-            pass
+            self.assertRaisesRegex = self.assertRaisesRegexp
 
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
@@ -349,9 +349,9 @@ class ForthUserDefinedWordsTest(unittest.TestCase):
     # Utility functions
     def setUp(self):
         try:
-            self.assertRaisesRegex = self.assertRaisesRegexp
+            self.assertRaisesRegex
         except AttributeError:
-            pass
+            self.assertRaisesRegex = self.assertRaisesRegexp
 
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")

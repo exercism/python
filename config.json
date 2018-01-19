@@ -93,6 +93,20 @@
       ]
     },
     {
+      "uuid": "7961c852-c87a-44b0-b152-efea3ac8555c",
+      "slug": "isbn-verifier",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "type_conversion",
+        "conditionals",
+        "strings",
+        "integers",
+        "parsing"
+      ]
+    },
+    {
       "uuid": "8648fa0c-d85f-471b-a3ae-0f8c05222c89",
       "slug": "hamming",
       "core": false,
@@ -1255,6 +1269,16 @@
         "searching",
         "object_oriented_programming"
       ]
+    },
+    {
+        "uuid": "bb07c236-062c-2980-483a-a221e4724445dcd6f32",
+        "slug": "custom-set",
+        "core": false,
+        "unlocked_by": null,
+        "difficulty": 5,
+        "topics": [
+            "sets"
+        ]
     },
     {
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
