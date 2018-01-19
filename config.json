@@ -1259,6 +1259,16 @@
       ]
     },
     {
+        "uuid": "bb07c236-062c-2980-483a-a221e4724445dcd6f32",
+        "slug": "custom-set",
+        "core": false,
+        "unlocked_by": null,
+        "difficulty": 5,
+        "topics": [
+            "sets"
+        ]
+    },
+    {
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "slug": "accumulate",
       "deprecated": true
