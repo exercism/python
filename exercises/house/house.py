@@ -1,4 +1,4 @@
-def verse():
+def verse(verse_num):
     pass
 
 
