@@ -1,30 +1,20 @@
-class TriangleError(Exception):
-    pass
+def valid(sides):
+    return (
+        sum(sorted(sides)[:2]) >= sorted(sides)[2] and
+        all(s > 0 for s in sides)
+    )
 
 
-class Triangle(object):
-    def __init__(self, x, y, z):
-        self.sides = (x, y, z)
+def is_equilateral(sides):
+    return valid(sides) and all(sides[0] == s for s in sides)
 
-        if self._invalid_lengths() or self._violates_inequality():
-            raise TriangleError("Side lengths are invalid for a triangle")
 
-    def _invalid_lengths(self):
-        return any([side <= 0 for side in self.sides])
+def is_isosceles(sides):
+    return (
+        valid(sides) and
+        any(s1 == s2 for s1, s2 in zip(sorted(sides), sorted(sides)[1:]))
+    )
 
-    def _violates_inequality(self):
-        x, y, z = self.sides
-        return any([
-            x + y <= z,
-            x + z <= y,
-            y + z <= x,
-        ])
 
-    def kind(self):
-        distinct = len(set(self.sides))
-        if distinct == 1:
-            return 'equilateral'
-        elif distinct == 2:
-            return 'isosceles'
-        else:
-            return 'scalene'
+def is_scalene(sides):
+    return valid(sides) and not is_isosceles(sides)
