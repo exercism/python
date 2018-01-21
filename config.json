@@ -1271,7 +1271,7 @@
     {
         "uuid": "b0c7cf95-6470-4c1a-8eaa-6775310926a2",
         "slug": "spiral-matrix",
-        "core": "false",
+        "core": false,
         "unlocked_by": null,
         "difficulty": 2,
         "topics": [
