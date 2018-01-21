@@ -2,6 +2,7 @@ import unittest
 
 from spiral_matrix import spiral
 
+
 class SpiralMatrixTest(unittest.TestCase):
     def test_spiral_matrix_with_size_0(self):
         self.assertEqual(spiral(0), [])
@@ -30,6 +31,7 @@ class SpiralMatrixTest(unittest.TestCase):
                                      [15, 24, 25, 20, 7],
                                      [14, 23, 22, 21, 8],
                                      [13, 12, 11, 10, 9]])
+
 
 if __name__ == '__main__':
     unittest.main()

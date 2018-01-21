@@ -8,4 +8,4 @@ def spiral(size):
             j += dj[x % 4]
             sm[i][j] = el
             el += 1
-    return sm 
+    return sm
