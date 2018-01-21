@@ -1245,6 +1245,17 @@
       ]
     },
     {
+      "uuid": "adad6be5-855d-4d61-b14a-22e468ba5b44",
+      "slug": "hangman",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics":[
+        "events",
+        "reactive_programming"
+      ]
+    },
+    {
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "slug": "accumulate",
       "deprecated": true

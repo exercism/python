@@ -1,6 +1,6 @@
 import unittest
 
-from example import Hangman
+from hangman import Hangman
 
 
 # Adapt from c-sharp track

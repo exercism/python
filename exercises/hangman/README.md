@@ -1,4 +1,5 @@
-# Need edit
+Hangman
+
 Implement the logic of the hangman game using functional reactive programming.
 
 Hangman is a simple word guessing game.
