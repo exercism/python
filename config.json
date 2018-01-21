@@ -1269,6 +1269,19 @@
         ]
     },
     {
+        "uuid": "b0c7cf95-6470-4c1a-8eaa-6775310926a2",
+        "slug": "spiral-matrix",
+        "core": "false",
+        "unlocked_by": null,
+        "difficulty": 2,
+        "topics": [
+            "algorithms",
+            "control-flow",
+            "lists",
+            "logic"
+        ]
+    },
+    {
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "slug": "accumulate",
       "deprecated": true
