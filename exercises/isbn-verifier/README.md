@@ -4,7 +4,7 @@ Check if a given ISBN-10 is valid.
 
 ## Functionality
 
-Given an unkown string the program should check if the provided string is a valid ISBN-10.
+Given an unknown string the program should check if the provided string is a valid ISBN-10.
 Putting this into place requires some thinking about preprocessing/parsing of the string prior to calculating the check digit for the ISBN.
 
 The program should allow for ISBN-10 without the separating dashes to be verified as well.
