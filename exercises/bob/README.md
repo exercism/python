@@ -2,9 +2,11 @@
 
 Bob is a lackadaisical teenager. In conversation, his responses are very limited.
 
-Bob answers 'Sure.' if you ask him a question.
+Bob answers 'Sure.' if you ask him a question, which should ends with a question mark.
 
-He answers 'Whoa, chill out!' if you yell at him.
+He answers 'Whoa, chill out!' if you yell at him. By definition, a yelling phrase should contain letters which are all uppercase.
+
+He replies 'Calm down, I know what I'm doing!' if you shout at him with forceful questions, which are questioning in a yelling mood.
 
 He says 'Fine. Be that way!' if you address him without actually saying
 anything.
