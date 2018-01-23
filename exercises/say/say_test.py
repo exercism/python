@@ -63,7 +63,7 @@ class SayTest(unittest.TestCase):
                                 "three hundred and twenty-one thousand "
                                 "one hundred and twenty-three"))
 
-    def test_number_to_large(self):
+    def test_number_too_large(self):
         with self.assertRaisesWithMessage(ValueError):
             say(1e12)
 
