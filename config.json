@@ -1266,7 +1266,8 @@
       "difficulty": 5,
       "topics":[
         "events",
-        "reactive_programming"
+        "reactive_programming",
+        "strings"
       ]
     },
     {
