@@ -2,6 +2,7 @@ import unittest
 
 from spiral_matrix import spiral
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class SpiralMatrixTest(unittest.TestCase):
     def test_spiral_matrix_with_size_0(self):
