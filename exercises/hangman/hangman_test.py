@@ -3,7 +3,7 @@ import unittest
 from hangman import Hangman
 
 
-# Adapt from c-sharp track
+# Tests adapted from csharp//hangman/HangmanTest.cs
 class HangmanTests(unittest.TestCase):
     def test_initially_9_failures_are_allowed(self):
         game = Hangman('foo')
