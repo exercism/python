@@ -18,7 +18,7 @@ def evaluate(input_data):
         values = input_data.pop(0).split()
         values.pop()
         values.pop(0)
-        key = values.pop(0)
+        key = values.pop(0).lower()
         if is_integer(key):
             raise ValueError("Integers cannot be redefined")
         defines[key] = values
