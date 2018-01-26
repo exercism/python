@@ -2,6 +2,7 @@ import unittest
 
 from spiral_matrix import spiral
 
+
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 
