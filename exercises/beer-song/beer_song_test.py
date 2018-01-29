@@ -5,6 +5,87 @@ from beer_song import recite
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v2.1.0
 
+class BeerTest(unittest.TestCase):
+    def test_first_generic_verse(self):
+        expected = [
+            "99 bottles of beer on the wall, 99 bottles of beer.",
+            "Take one down and pass it around, 98 bottles of beer on the wall."
+        ]
+        self.assertEqual(recite(start=99), expected)
+
+    def test_last_generic_verse(self):
+        expected = [
+            "3 bottles of beer on the wall, 3 bottles of beer.",
+            "Take one down and pass it around, 2 bottles of beer on the wall."
+        ]
+        self.assertEqual(recite(start=3), expected)
+
+    def test_verse_with_two_bottles(self):
+        expected = [
+            "2 bottles of beer on the wall, 2 bottles of beer.",
+            "Take one down and pass it around, 1 bottle of beer on the wall."
+        ]
+        self.assertEqual(recite(start=2), expected)
+
+    def test_verse_with_one_bottle(self):
+        expected = [
+            "1 bottle of beer on the wall, 1 bottle of beer.",
+            (
+                "Take it down and pass it around, "
+                "no more bottles of beer on the wall."
+            )
+        ]
+        self.assertEqual(recite(start=1), expected)
+
+    def test_verse_with_zero_bottles(self):
+        expected = [
+            "No more bottles of beer on the wall, no more bottles of beer.",
+            (
+                "Go to the store and buy some more, "
+                "99 bottles of beer on the wall."
+            )
+        ]
+        self.assertEqual(recite(start=0), expected)
+
+    def test_first_two_verses(self):
+        expected = [
+            "99 bottles of beer on the wall, 99 bottles of beer.",
+            (
+                "Take one down and pass it around, "
+                "98 bottles of beer on the wall."
+            ),
+            "",
+            "98 bottles of beer on the wall, 98 bottles of beer.",
+            "Take one down and pass it around, 97 bottles of beer on the wall."
+        ]
+        self.assertEqual(recite(start=99, take=2), expected)
+
+    def test_last_three_verses(self):
+        expected = [
+            "2 bottles of beer on the wall, 2 bottles of beer.",
+            "Take one down and pass it around, 1 bottle of beer on the wall.",
+            "",
+            "1 bottle of beer on the wall, 1 bottle of beer.",
+            (
+                "Take it down and pass it around, "
+                "no more bottles of beer on the wall."
+            ),
+            "",
+            "No more bottles of beer on the wall, no more bottles of beer.",
+            (
+                "Go to the store and buy some more, "
+                "99 bottles of beer on the wall."
+            )
+        ]
+        self.assertEqual(recite(start=2, take=3), expected)
+
+    def test_all_verses(self):
+        self.assertEqual(recite(start=99, take=100), SONG)
+
+
+if __name__ == '__main__':
+    unittest.main()
+
 SONG = [
     "99 bottles of beer on the wall, 99 bottles of beer.",
     "Take one down and pass it around, 98 bottles of beer on the wall.",
@@ -306,85 +387,3 @@ SONG = [
     "No more bottles of beer on the wall, no more bottles of beer.",
     "Go to the store and buy some more, 99 bottles of beer on the wall."
 ]
-
-
-class BeerTest(unittest.TestCase):
-    def test_first_generic_verse(self):
-        expected = [
-            "99 bottles of beer on the wall, 99 bottles of beer.",
-            "Take one down and pass it around, 98 bottles of beer on the wall."
-        ]
-        self.assertEqual(recite(start=99), expected)
-
-    def test_last_generic_verse(self):
-        expected = [
-            "3 bottles of beer on the wall, 3 bottles of beer.",
-            "Take one down and pass it around, 2 bottles of beer on the wall."
-        ]
-        self.assertEqual(recite(start=3), expected)
-
-    def test_verse_with_two_bottles(self):
-        expected = [
-            "2 bottles of beer on the wall, 2 bottles of beer.",
-            "Take one down and pass it around, 1 bottle of beer on the wall."
-        ]
-        self.assertEqual(recite(start=2), expected)
-
-    def test_verse_with_one_bottle(self):
-        expected = [
-            "1 bottle of beer on the wall, 1 bottle of beer.",
-            (
-                "Take it down and pass it around, "
-                "no more bottles of beer on the wall."
-            )
-        ]
-        self.assertEqual(recite(start=1), expected)
-
-    def test_verse_with_zero_bottles(self):
-        expected = [
-            "No more bottles of beer on the wall, no more bottles of beer.",
-            (
-                "Go to the store and buy some more, "
-                "99 bottles of beer on the wall."
-            )
-        ]
-        self.assertEqual(recite(start=0), expected)
-
-    def test_first_two_verses(self):
-        expected = [
-            "99 bottles of beer on the wall, 99 bottles of beer.",
-            (
-                "Take one down and pass it around, "
-                "98 bottles of beer on the wall."
-            ),
-            "",
-            "98 bottles of beer on the wall, 98 bottles of beer.",
-            "Take one down and pass it around, 97 bottles of beer on the wall."
-        ]
-        self.assertEqual(recite(start=99, take=2), expected)
-
-    def test_last_three_verses(self):
-        expected = [
-            "2 bottles of beer on the wall, 2 bottles of beer.",
-            "Take one down and pass it around, 1 bottle of beer on the wall.",
-            "",
-            "1 bottle of beer on the wall, 1 bottle of beer.",
-            (
-                "Take it down and pass it around, "
-                "no more bottles of beer on the wall."
-            ),
-            "",
-            "No more bottles of beer on the wall, no more bottles of beer.",
-            (
-                "Go to the store and buy some more, "
-                "99 bottles of beer on the wall."
-            )
-        ]
-        self.assertEqual(recite(start=2, take=3), expected)
-
-    def test_all_verses(self):
-        self.assertEqual(recite(start=99, take=100), SONG)
-
-
-if __name__ == '__main__':
-    unittest.main()
