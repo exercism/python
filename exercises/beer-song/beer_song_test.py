@@ -82,6 +82,7 @@ class BeerTest(unittest.TestCase):
     def test_all_verses(self):
         self.assertEqual(recite(start=99, take=100), SONG)
 
+
 SONG = [
     "99 bottles of beer on the wall, 99 bottles of beer.",
     "Take one down and pass it around, 98 bottles of beer on the wall.",
