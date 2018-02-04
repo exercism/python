@@ -35,6 +35,7 @@ Assume the programming language you are using does not have an implementation of
 
 See [Emulating numeric types](https://docs.python.org/2/reference/datamodel.html#emulating-numeric-types) for help on operator overloading.
 
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
