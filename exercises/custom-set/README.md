@@ -1,4 +1,4 @@
-# Custom-Set
+# Custom Set
 
 Create a custom set type.
 

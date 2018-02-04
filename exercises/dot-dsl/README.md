@@ -1,4 +1,4 @@
-# Dot Dsl
+# DOT DSL
 
 Write a Domain Specific Language similar to the Graphviz dot language.
 
