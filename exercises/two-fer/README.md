@@ -26,7 +26,6 @@ To raise a message with an exception, just write it as an argument to the except
 raise Exception("Meaningful message indicating the source of the error")
 ```
 
-
 ## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
@@ -38,7 +37,7 @@ please see the [help page](http://exercism.io/languages/python).
 
 ## Source
 
-This is an exercise to introduce users to basic programming constructs, just after Hello World. [https://en.wikipedia.org/wiki/Two-fer](https://en.wikipedia.org/wiki/Two-fer)
+[https://en.wikipedia.org/wiki/Two-fer](https://en.wikipedia.org/wiki/Two-fer)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

@@ -49,7 +49,6 @@ To raise a message with an exception, just write it as an argument to the except
 raise Exception("Meaningful message indicating the source of the error")
 ```
 
-
 ## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
