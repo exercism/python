@@ -63,7 +63,7 @@ class SayTest(unittest.TestCase):
                                 "three hundred and twenty-one thousand "
                                 "one hundred and twenty-three"))
 
-    def test_number_to_large(self):
+    def test_number_too_large(self):
         with self.assertRaisesWithMessage(ValueError):
             say(1e12)
 
@@ -74,9 +74,9 @@ class SayTest(unittest.TestCase):
     # Utility functions
     def setUp(self):
         try:
-            self.assertRaisesRegex = self.assertRaisesRegexp
+            self.assertRaisesRegex
         except AttributeError:
-            pass
+            self.assertRaisesRegex = self.assertRaisesRegexp
 
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
