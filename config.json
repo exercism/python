@@ -81,18 +81,6 @@
       ]
     },
     {
-      "uuid": "ca970fee-71b4-41e1-a5c3-b23bf574eb33",
-      "slug": "bowling",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 5,
-      "topics": [
-        "classes",
-        "exception_handling",
-        "logic"
-      ]
-    },
-    {
       "uuid": "7961c852-c87a-44b0-b152-efea3ac8555c",
       "slug": "isbn-verifier",
       "core": false,
@@ -1015,6 +1003,18 @@
         "files",
         "text_formatting",
         "searching"
+      ]
+    },
+    {
+      "uuid": "ca970fee-71b4-41e1-a5c3-b23bf574eb33",
+      "slug": "bowling",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "classes",
+        "exception_handling",
+        "logic"
       ]
     },
     {
