@@ -6,9 +6,6 @@ from bowling import BowlingGame
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
 
 class BowlingTests(unittest.TestCase):
-    def setUp(self):
-        self.game = BowlingGame()
-
     def roll(self, rolls):
         [self.game.roll(roll) for roll in rolls]
 
@@ -200,6 +197,7 @@ class BowlingTests(unittest.TestCase):
 
     # Utility functions
     def setUp(self):
+        self.game = BowlingGame()
         try:
             self.assertRaisesRegex
         except AttributeError:
