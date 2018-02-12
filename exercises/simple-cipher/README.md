@@ -58,15 +58,13 @@ would get the same thing as the Caesar Cipher.
 
 The weakest link in any cipher is the human being. Let's make your
 substitution cipher a little more fault tolerant by providing a source
-of randomness and ensuring that the key is not composed of numbers or
-capital letters.
+of randomness and ensuring that the key contains only lowercase letters.
 
 If someone doesn't submit a key at all, generate a truly random key of
-at least 100 characters in length, accessible via Cipher#key (the #
-syntax means instance variable)
+at least 100 characters in length.
 
-If the key submitted has capital letters or numbers, raise a
-ValueError with a message to that effect.
+If the key submitted is not composed only of lowercase letters, your
+solution should handle the error in a language-appropriate way.
 
 ## Extensions
 
@@ -115,12 +113,11 @@ To raise a message with an exception, just write it as an argument to the except
 raise Exception("Meaningful message indicating the source of the error")
 ```
 
-
 ## Submitting Exercises
 
-Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
+Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/simple-cipher` directory.
 
-For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
+You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Workspace`.
 
 For more detailed information about running tests, code style and linting,
 please see the [help page](http://exercism.io/languages/python).
