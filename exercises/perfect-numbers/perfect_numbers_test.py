@@ -3,7 +3,7 @@ import unittest
 from perfect_numbers import classify
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class PerfectNumbersTest(unittest.TestCase):
     def test_smallest_perfect_number(self):
