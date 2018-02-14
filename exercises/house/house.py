@@ -1,6 +1,2 @@
-def verse(verse_num):
-    pass
-
-
-def rhyme():
+def verse(start_verse, end_verse):
     pass
