@@ -3,7 +3,7 @@ import unittest
 from poker import poker
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class PokerTest(unittest.TestCase):
     def test_single_hand_wins(self):
