@@ -3,6 +3,8 @@ import unittest
 from twelve_days import sing, verse, verses
 
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+
 class TwelveDaysTests(unittest.TestCase):
     def test_verse1(self):
         expected = ("On the first day of Christmas my true love gave to me, "
