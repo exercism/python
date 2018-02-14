@@ -3,7 +3,7 @@ import unittest
 from bowling import BowlingGame
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class BowlingTests(unittest.TestCase):
     def setUp(self):
