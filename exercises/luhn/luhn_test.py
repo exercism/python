@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import unittest
 
 from luhn import Luhn
@@ -34,7 +36,7 @@ class LuhnTests(unittest.TestCase):
         self.assertIs(Luhn("055-444-285").is_valid(), False)
 
     def test_valid_strings_with_symbols_included_become_invalid(self):
-        self.assertIs(Luhn("055Â£ 444$ 285").is_valid(), False)
+        self.assertIs(Luhn("055£ 444$ 285").is_valid(), False)
 
     def test_single_zero_with_space_is_invalid(self):
         self.assertIs(Luhn(" 0").is_valid(), False)
