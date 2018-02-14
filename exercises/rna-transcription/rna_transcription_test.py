@@ -3,7 +3,7 @@ import unittest
 from rna_transcription import to_rna
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class DNATests(unittest.TestCase):
 
