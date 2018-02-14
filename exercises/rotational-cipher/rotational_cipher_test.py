@@ -3,7 +3,7 @@ import unittest
 import rotational_cipher
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class RotationalCipher(unittest.TestCase):
     def test_rotate_a_by_0(self):
