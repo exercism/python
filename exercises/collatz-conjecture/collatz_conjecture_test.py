@@ -2,8 +2,8 @@ import unittest
 
 from collatz_conjecture import collatz_steps
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.1
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class CollatzConjectureTests(unittest.TestCase):
 
