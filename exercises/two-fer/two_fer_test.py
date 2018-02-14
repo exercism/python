@@ -2,8 +2,8 @@ import unittest
 
 import two_fer
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class Two_Fer_test(unittest.TestCase):
     def test_empty(self):
