@@ -19,6 +19,7 @@ def _specified_verse(verse_num):
     v[-1] += '.'
     return '\n'.join(v)
 
+
 def verse(start_verse, end_verse):
     if start_verse == end_verse:
         return _specified_verse(start_verse - 1)
