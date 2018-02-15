@@ -37,6 +37,19 @@ To raise a message with an exception, just write it as an argument to the except
 raise Exception("Meaningful message indicating the source of the error")
 ```
 
+## Running the tests
+
+To run the tests run the command `python -m pytest spiral_matrix_test.py`
+(`py.test spiral_matrix_test.py` for Python 2; `pytest <exercise>_test.py` for Python 3). Or run it with
+`-v` to be more verbose like this: `pytest spiral_matrix_test.py`. Using the
+`-x` flag will cause the test to fail at the first failure instead of it
+trying all cases before exiting.
+
+To run this exercises's tests for example, run this command:
+```
+python -m pytest spiral_matrix_test.py -v
+```
+
 ## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/spiral-matrix` directory.
