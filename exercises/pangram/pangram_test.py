@@ -3,7 +3,7 @@ import unittest
 from pangram import is_pangram
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
 
 class PangramTests(unittest.TestCase):
 
