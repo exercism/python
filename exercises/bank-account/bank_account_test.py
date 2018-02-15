@@ -96,12 +96,12 @@ class BankAccountTests(unittest.TestCase):
             time.sleep(0.001)
             self.account.withdraw(5)
 
-        # Greatly improve the chance of an operation being interuppted
+        # Greatly improve the chance of an operation being interrupted
         # by thread switch, thus testing synchronization effectively
         try:
             sys.setswitchinterval(1e-12)
         except AttributeError:
-            # Python 2 compatible
+            # For Python 2 compatibility
             sys.setcheckinterval(1)
 
         threads = []
