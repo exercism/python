@@ -6,14 +6,15 @@ The **North American Numbering Plan (NANP)** is a telephone numbering system use
 
 NANP numbers are ten-digit numbers consisting of a three-digit Numbering Plan Area code, commonly known as *area code*, followed by a seven-digit local number. The first three digits of the local number represent the *exchange code*, followed by the unique four-digit number which is the *subscriber number*.
 
-
 The format is usually represented as
-```
+
+```text
 (NXX)-NXX-XXXX
 ```
+
 where `N` is any digit from 2 through 9 and `X` is any digit from 0 through 9.
 
-Your task is to clean up differently formated telephone numbers by removing punctuation and the country code (1) if present.
+Your task is to clean up differently formatted telephone numbers by removing punctuation and the country code (1) if present.
 
 For example, the inputs
 - `+1 (613)-995-0253`
@@ -27,12 +28,25 @@ should all produce the output
 
 **Note:** As this exercise only deals with telephone numbers used in NANP-countries, only 1 is considered a valid country code.
 
-### Submitting Exercises
+## Exception messages
 
-Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
+Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
+indicate what the source of the error is. This makes your code more readable and helps significantly with debugging. Not
+every exercise will require you to raise an exception, but for those that do, the tests will only pass if you include
+a message.
 
-For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
+To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
+`raise Exception`, you shold write:
 
+```python
+raise Exception("Meaningful message indicating the source of the error")
+```
+
+## Submitting Exercises
+
+Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/phone-number` directory.
+
+You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Workspace`.
 
 For more detailed information about running tests, code style and linting,
 please see the [help page](http://exercism.io/languages/python).

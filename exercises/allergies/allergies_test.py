@@ -7,23 +7,23 @@ if not hasattr(unittest.TestCase, 'assertCountEqual'):
     unittest.TestCase.assertCountEqual = unittest.TestCase.assertItemsEqual
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
 class AllergiesTests(unittest.TestCase):
     def test_no_allergies_means_not_allergic(self):
         allergies = Allergies(0)
-        self.assertFalse(allergies.is_allergic_to('peanuts'))
-        self.assertFalse(allergies.is_allergic_to('cats'))
-        self.assertFalse(allergies.is_allergic_to('strawberries'))
+        self.assertIs(allergies.is_allergic_to('peanuts'), False)
+        self.assertIs(allergies.is_allergic_to('cats'), False)
+        self.assertIs(allergies.is_allergic_to('strawberries'), False)
 
     def test_is_allergic_to_eggs(self):
-        self.assertTrue(Allergies(1).is_allergic_to('eggs'))
+        self.assertIs(Allergies(1).is_allergic_to('eggs'), True)
 
     def test_allergic_to_eggs_in_addition_to_other_stuff(self):
         allergies = Allergies(5)
-        self.assertTrue(allergies.is_allergic_to('eggs'))
-        self.assertTrue(allergies.is_allergic_to('shellfish'))
-        self.assertFalse(allergies.is_allergic_to('strawberries'))
+        self.assertIs(allergies.is_allergic_to('eggs'), True)
+        self.assertIs(allergies.is_allergic_to('shellfish'), True)
+        self.assertIs(allergies.is_allergic_to('strawberries'), False)
 
     def test_no_allergies_at_all(self):
         self.assertEqual(Allergies(0).lst, [])

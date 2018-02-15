@@ -1,6 +1,2 @@
-def of_codon():
-    pass
-
-
-def of_rna():
+def proteins(strand):
     pass

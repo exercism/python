@@ -3,7 +3,7 @@ import unittest
 from say import say
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
 class SayTest(unittest.TestCase):
     def test_zero(self):
@@ -63,13 +63,23 @@ class SayTest(unittest.TestCase):
                                 "three hundred and twenty-one thousand "
                                 "one hundred and twenty-three"))
 
-    def test_number_to_large(self):
-        with self.assertRaises(AttributeError):
+    def test_number_too_large(self):
+        with self.assertRaisesWithMessage(ValueError):
             say(1e12)
 
     def test_number_negative(self):
-        with self.assertRaises(AttributeError):
+        with self.assertRaisesWithMessage(ValueError):
             say(-1)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex
+        except AttributeError:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

@@ -1,2 +1,2 @@
-def add_gigasecond():
+def add_gigasecond(birth_date):
     pass

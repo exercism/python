@@ -28,7 +28,7 @@ class DNATest(unittest.TestCase):
         self.assertEqual(count('GGGGGTAACCCGG', 'T'), 1)
 
     def test_validates_nucleotides(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             count("GACT", 'X')
 
     def test_counts_all_nucleotides(self):
@@ -36,6 +36,16 @@ class DNATest(unittest.TestCase):
                'CTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC')
         expected = {'A': 20, 'T': 21, 'G': 17, 'C': 12}
         self.assertEqual(nucleotide_counts(dna), expected)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex
+        except AttributeError:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

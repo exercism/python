@@ -116,8 +116,18 @@ class ScaleGeneratorTest(unittest.TestCase):
         self.assertEqual(expected, actual)
 
     def test_brokeninterval(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             Scale('G', 'enigmatic', 'mAMMMmM')
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex
+        except AttributeError:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

@@ -3,7 +3,7 @@ import unittest
 from rail_fence_cipher import encode, decode
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.1
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
 
 class RailFenceTests(unittest.TestCase):
     def test_encode_with_two_rails(self):

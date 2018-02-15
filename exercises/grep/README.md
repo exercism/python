@@ -3,14 +3,14 @@
 Search a file for lines matching a regular expression pattern. Return the line
 number and contents of each matching line.
 
-The Unix [`grep`](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/grep.html) command can be used to search for lines in one or more files 
+The Unix [`grep`](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/grep.html) command can be used to search for lines in one or more files
 that match a user-provided search query (known as the *pattern*).
 
 The `grep` command takes three arguments:
 
-1. The pattern used to match lines in a file. 
+1. The pattern used to match lines in a file.
 2. Zero or more flags to customize the matching behavior.
-3. One or more files in which to search for matching lines. 
+3. One or more files in which to search for matching lines.
 
 Your task is to implement the `grep` function, which should read the contents
 of the specified files, find the lines that match the specified pattern
@@ -20,18 +20,18 @@ in the first file being output first.
 
 As an example, suppose there is a file named "input.txt" with the following contents:
 
-<pre>
+```text
 hello
 world
 hello again
-</pre>
+```
 
 If we were to call `grep "hello" input.txt`, the returned string should be:
 
-<pre>
+```text
 hello
 hello again
-</pre>
+```
 
 ### Flags
 
@@ -46,30 +46,43 @@ As said earlier, the `grep` command should also support the following flags:
 If we run `grep -n "hello" input.txt`, the `-n` flag will require the matching
 lines to be prefixed with its line number:
 
-<pre>
+```text
 1:hello
 3:hello again
-</pre>
+```
 
-And if we run `grep -i "HELLO" input.txt`, we'll do a case-insensitive match, 
+And if we run `grep -i "HELLO" input.txt`, we'll do a case-insensitive match,
 and the output will be:
 
-<pre>
+```text
 hello
 hello again
-</pre>
+```
 
 The `grep` command should support multiple flags at once.
 
 For example, running `grep -l -v "hello" file1.txt file2.txt` should
 print the names of files that do not contain the string "hello".
 
-### Submitting Exercises
+## Exception messages
 
-Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
+Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
+indicate what the source of the error is. This makes your code more readable and helps significantly with debugging. Not
+every exercise will require you to raise an exception, but for those that do, the tests will only pass if you include
+a message.
 
-For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
+To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
+`raise Exception`, you shold write:
 
+```python
+raise Exception("Meaningful message indicating the source of the error")
+```
+
+## Submitting Exercises
+
+Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/grep` directory.
+
+You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Workspace`.
 
 For more detailed information about running tests, code style and linting,
 please see the [help page](http://exercism.io/languages/python).

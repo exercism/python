@@ -2,14 +2,15 @@
 from __future__ import print_function
 
 import os
-import ast
-import imp
 import glob
 import shutil
 import subprocess
 import sys
 import tempfile
 import json
+
+# Allow high-performance tests to be skipped
+ALLOW_SKIP = ['largest-series-product']
 
 
 def python_executable_name():
@@ -19,42 +20,22 @@ def python_executable_name():
 def check_assignment(name, test_file):
     # Returns the exit code of the tests
     workdir = tempfile.mkdtemp(name)
-    example_name = modname_heuristic(test_file)
+    example_name = name.replace("-", "_")
     try:
         test_file_out = os.path.join(workdir, os.path.basename(test_file))
-        shutil.copyfile(test_file, test_file_out)
+        if name in ALLOW_SKIP:
+            shutil.copyfile(test_file, test_file_out)
+        else:
+            with open(test_file, 'r') as src_file:
+                lines = [line for line in src_file.readlines()
+                         if not line.strip().startswith('@unittest.skip')]
+            with open(test_file_out, 'w') as dst_file:
+                dst_file.writelines(lines)
         shutil.copyfile(os.path.join(os.path.dirname(test_file), 'example.py'),
                         os.path.join(workdir, '{}.py'.format(example_name)))
         return subprocess.call([python_executable_name(), test_file_out])
     finally:
         shutil.rmtree(workdir)
-
-
-def modname_heuristic(test_file):
-    with open(test_file) as f:
-        tree = ast.parse(f.read(), filename=test_file)
-    # return the first nonexistent module that the tests import
-    for node in ast.walk(tree):
-        for modname in possible_module_names(node):
-            if is_module_missing(modname):
-                return modname
-
-
-def possible_module_names(node):
-    if isinstance(node, ast.Import):
-        for alias in node.names:
-            yield alias.name
-    elif isinstance(node, ast.ImportFrom):
-        yield node.module
-
-
-def is_module_missing(modname):
-    try:
-        imp.find_module(modname)
-    except ImportError:
-        return True
-    else:
-        return False
 
 
 def load_config():
@@ -66,7 +47,8 @@ def load_config():
         raise SystemExit(1)
 
     try:
-        problems = [entry['slug'] for entry in data['exercises']]
+        problems = [entry['slug'] for entry in data['exercises']
+                    if "deprecated" not in entry]
     except KeyError:
         print('FAIL: config.json has an incorrect format')
         raise SystemExit(1)

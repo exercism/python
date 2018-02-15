@@ -9,24 +9,7 @@ always reach 1 eventually.
 
 Given a number n, return the number of steps required to reach 1.
 
-(Keep in mind that the Conjecture is only concerned with strictly positive
-integers, so your solution should return `None` if given 0 or a negative
-integer.)
-
 ## Examples
-
-Starting with n = 3, the steps would be as follows:
-
-0. 3
-1. 10
-2. 5
-3. 16
-4. 8
-5. 4
-6. 2
-7. 1
-
-Resulting in 7 steps. So for input n = 3, the return value would be 7.
 
 Starting with n = 12, the steps would be as follows:
 
@@ -43,12 +26,30 @@ Starting with n = 12, the steps would be as follows:
 
 Resulting in 9 steps. So for input n = 12, the return value would be 9.
 
-### Submitting Exercises
+## Notes
 
-Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
+The Collatz Conjecture is only concerned with strictly positive integers, so your solution should raise a `ValueError` with a meaningful message if given 0 or a negative integer.
 
-For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
 
+## Exception messages
+
+Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
+indicate what the source of the error is. This makes your code more readable and helps significantly with debugging. Not
+every exercise will require you to raise an exception, but for those that do, the tests will only pass if you include
+a message.
+
+To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
+`raise Exception`, you shold write:
+
+```python
+raise Exception("Meaningful message indicating the source of the error")
+```
+
+## Submitting Exercises
+
+Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/collatz-conjecture` directory.
+
+You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Workspace`.
 
 For more detailed information about running tests, code style and linting,
 please see the [help page](http://exercism.io/languages/python).

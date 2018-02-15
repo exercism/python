@@ -1,6 +1,2 @@
-def number():
-    pass
-
-
-def grid():
+def convert(input_grid):
     pass
