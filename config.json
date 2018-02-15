@@ -1006,6 +1006,18 @@
       ]
     },
     {
+      "uuid": "ca970fee-71b4-41e1-a5c3-b23bf574eb33",
+      "slug": "bowling",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "classes",
+        "exception_handling",
+        "logic"
+      ]
+    },
+    {
       "uuid": "dc2917d5-aaa9-43d9-b9f4-a32919fdbe18",
       "slug": "word-search",
       "core": false,
@@ -1266,6 +1278,18 @@
         "difficulty": 5,
         "topics": [
             "sets"
+        ]
+    },
+    {
+        "uuid": "b0c7cf95-6470-4c1a-8eaa-6775310926a2",
+        "slug": "spiral-matrix",
+        "core": false,
+        "unlocked_by": null,
+        "difficulty": 2,
+        "topics": [
+            "algorithms",
+            "control-flow",
+            "lists"
         ]
     },
     {
