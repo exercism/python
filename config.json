@@ -1352,5 +1352,8 @@
       "slug": "parallel-letter-frequency",
       "deprecated": true
     }
-  ]
+  ],
+  "foregone": [
+    "lens-person"
+  ],
 }
