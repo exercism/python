@@ -7,7 +7,7 @@ from circular_buffer import (
 )
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class CircularBufferTest(unittest.TestCase):
     def test_read_empty_buffer(self):
