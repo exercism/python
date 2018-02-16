@@ -3,7 +3,7 @@ import unittest
 from prime_factors import prime_factors
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class PrimeFactorsTest(unittest.TestCase):
     def test_no_factors(self):
