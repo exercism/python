@@ -3,7 +3,7 @@ import unittest
 from atbash_cipher import decode, encode
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class AtbashCipherTest(unittest.TestCase):
     def test_encode_no(self):
