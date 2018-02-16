@@ -3,7 +3,7 @@ import unittest
 from bowling import BowlingGame
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class BowlingTests(unittest.TestCase):
     def setUp(self):
@@ -187,6 +187,21 @@ class BowlingTests(unittest.TestCase):
         self.roll(rolls)
 
         self.assertRaises(IndexError, self.game.score)
+
+    def test_cannot_roll_after_bonus_roll_for_spare(self):
+        rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3, 2]
+
+        self.roll(rolls)
+
+        self.assertRaises(IndexError, self.game.roll, 2)
+
+    def test_cannot_roll_after_bonus_rolls_for_strike(self):
+        rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10,
+                 3, 2]
+
+        self.roll(rolls)
+
+        self.assertRaises(IndexError, self.game.roll, 2)
 
 
 if __name__ == '__main__':
