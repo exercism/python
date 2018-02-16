@@ -17,6 +17,10 @@ class Clock(object):
         self.minute += minutes
         return self.cleanup()
 
+    def __sub__(self, minutes):
+        self.minute -= minutes
+        return self.cleanup()
+
     def cleanup(self):
         self.hour += self.minute // 60
         self.hour %= 24

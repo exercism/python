@@ -2,15 +2,15 @@ import unittest
 
 from zipper import Zipper
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 def bt(value, left, right):
     return {
         'value': value,
         'left': left,
         'right': right
-        }
+    }
 
 
 def leaf(value):

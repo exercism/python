@@ -8,9 +8,8 @@ class Scale(object):
     FLAT_KEYS = ['F', 'Bb', 'Eb', 'Ab', 'Db', 'Gb', 'd', 'g', 'c', 'f', 'bb',
                  'eb']
 
-    def __init__(self, tonic, scale_name, pattern=None):
+    def __init__(self, tonic, pattern=None):
         self.tonic = tonic.capitalize()
-        self.name = self.tonic + ' ' + scale_name
         self.pattern = pattern
         self.chromatic_scale = (self.FLAT_CHROMATIC_SCALE
                                 if tonic in self.FLAT_KEYS

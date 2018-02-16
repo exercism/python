@@ -8,7 +8,7 @@ import unittest
 from two_bucket import two_bucket
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
 
 class TwoBucketTest(unittest.TestCase):
     def test_bucket_one_size_3_bucket_two_size_5_start_with_bucket_one(self):

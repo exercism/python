@@ -3,7 +3,7 @@ import unittest
 from pov import Tree
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.1
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class PovTest(unittest.TestCase):
     def assertTreeEquals(self, result, expected):

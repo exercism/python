@@ -2,7 +2,7 @@ import unittest
 
 from kindergarten_garden import Garden
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 
 class KindergartenGardenTests(unittest.TestCase):

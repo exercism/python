@@ -3,6 +3,8 @@ import unittest
 from react import Reactor
 
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+
 class CallbackManager(object):
     counter = 0
     observed1 = []

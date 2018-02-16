@@ -3,6 +3,8 @@ import unittest
 from zebra_puzzle import solution
 
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+
 class ZebraPuzzleTest(unittest.TestCase):
     def test_solution(self):
         self.assertEqual(solution(),

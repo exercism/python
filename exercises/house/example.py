@@ -12,7 +12,7 @@ parts = [('lay in', 'the house that Jack built'),
          ('', 'the horse and the hound and the horn')]
 
 
-def verse(verse_num):
+def _specified_verse(verse_num):
     v = ['This is {}'.format(parts[verse_num][1])]
     v.extend(['that {0} {1}'.format(parts[i][0], parts[i][1])
               for i in range(verse_num - 1, -1, -1)])
@@ -20,5 +20,10 @@ def verse(verse_num):
     return '\n'.join(v)
 
 
-def rhyme():
-    return "\n\n".join(verse(n) for n in range(len(parts)))
+def verse(start_verse, end_verse):
+    if start_verse == end_verse:
+        return _specified_verse(start_verse - 1)
+    else:
+        return "\n\n".join(
+            _specified_verse(n)
+            for n in range(start_verse-1, end_verse))

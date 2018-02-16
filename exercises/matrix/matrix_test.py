@@ -3,6 +3,8 @@ import unittest
 from matrix import Matrix
 
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+
 class MatrixTest(unittest.TestCase):
     def test_extract_a_row(self):
         matrix = Matrix("1 2\n10 20")
