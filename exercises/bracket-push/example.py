@@ -1,4 +1,4 @@
-def check_brackets(string):
+def is_paired(string):
     counterparts = {')': '(', '}': '{', ']': '['}
 
     stack = []
