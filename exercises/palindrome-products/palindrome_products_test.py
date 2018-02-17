@@ -16,7 +16,7 @@ import unittest
 from palindrome_products import smallest_palindrome, largest_palindrome
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class PalindromesTests(unittest.TestCase):
     def test_smallest_palindrome_from_single_digit_factors(self):
@@ -60,24 +60,34 @@ class PalindromesTests(unittest.TestCase):
         self.assertFactorsEqual(factors, {(9901, 9999)})
 
     def test_empty_for_smallest_palindrome_if_none_in_range(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             value, factors = smallest_palindrome(min_factor=1002,
                                                  max_factor=1003)
 
     def test_empty_for_largest_palindrome_if_none_in_range(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             value, factors = largest_palindrome(min_factor=15, max_factor=15)
 
     def test_error_for_smallest_if_min_is_more_than_max(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             value, factors = smallest_palindrome(min_factor=10000,
                                                  max_factor=1)
 
     def test_error_for_largest_if_min_is_more_than_max(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             value, factors = largest_palindrome(min_factor=2, max_factor=1)
 
     # Utility methods
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex
+        except AttributeError:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
     def assertFactorsEqual(self, actual, expected):
         self.assertEqual(set(map(frozenset, actual)),
