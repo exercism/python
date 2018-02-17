@@ -1,67 +1,69 @@
 import unittest
 
-from twelve_days import sing, verse, verses
+from twelve_days import recite
 
 
-class TwelveDaysTests(unittest.TestCase):
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+
+class VerseTests(unittest.TestCase):
     def test_verse1(self):
-        expected = ("On the first day of Christmas my true love gave to me, "
-                    "a Partridge in a Pear Tree.\n")
-        self.assertEqual(verse(1), expected)
+        expected = ["On the first day of Christmas my true love gave to me, "
+                    "a Partridge in a Pear Tree."]
+        self.assertEqual(recite(1, 1), expected)
 
     def test_verse2(self):
-        expected = ("On the second day of Christmas my true love gave to me, "
+        expected = ["On the second day of Christmas my true love gave to me, "
                     "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.\n")
-        self.assertEqual(verse(2), expected)
+                    "and a Partridge in a Pear Tree."]
+        self.assertEqual(recite(2, 2), expected)
 
     def test_verse3(self):
-        expected = ("On the third day of Christmas my true love gave to me, "
+        expected = ["On the third day of Christmas my true love gave to me, "
                     "three French Hens, "
                     "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.\n")
-        self.assertEqual(verse(3), expected)
+                    "and a Partridge in a Pear Tree."]
+        self.assertEqual(recite(3, 3), expected)
 
     def test_verse4(self):
-        expected = ("On the fourth day of Christmas my true love gave to me, "
+        expected = ["On the fourth day of Christmas my true love gave to me, "
                     "four Calling Birds, "
                     "three French Hens, "
                     "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.\n")
-        self.assertEqual(verse(4), expected)
+                    "and a Partridge in a Pear Tree."]
+        self.assertEqual(recite(4, 4), expected)
 
     def test_verse5(self):
-        expected = ("On the fifth day of Christmas my true love gave to me, "
+        expected = ["On the fifth day of Christmas my true love gave to me, "
                     "five Gold Rings, "
                     "four Calling Birds, "
                     "three French Hens, "
                     "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.\n")
-        self.assertEqual(verse(5), expected)
+                    "and a Partridge in a Pear Tree."]
+        self.assertEqual(recite(5, 5), expected)
 
     def test_verse6(self):
-        expected = ("On the sixth day of Christmas my true love gave to me, "
+        expected = ["On the sixth day of Christmas my true love gave to me, "
                     "six Geese-a-Laying, "
                     "five Gold Rings, "
                     "four Calling Birds, "
                     "three French Hens, "
                     "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.\n")
-        self.assertEqual(verse(6), expected)
+                    "and a Partridge in a Pear Tree."]
+        self.assertEqual(recite(6, 6), expected)
 
     def test_verse7(self):
-        expected = ("On the seventh day of Christmas my true love gave to me, "
+        expected = ["On the seventh day of Christmas my true love gave to me, "
                     "seven Swans-a-Swimming, "
                     "six Geese-a-Laying, "
                     "five Gold Rings, "
                     "four Calling Birds, "
                     "three French Hens, "
                     "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.\n")
-        self.assertEqual(verse(7), expected)
+                    "and a Partridge in a Pear Tree."]
+        self.assertEqual(recite(7, 7), expected)
 
     def test_verse8(self):
-        expected = ("On the eighth day of Christmas my true love gave to me, "
+        expected = ["On the eighth day of Christmas my true love gave to me, "
                     "eight Maids-a-Milking, "
                     "seven Swans-a-Swimming, "
                     "six Geese-a-Laying, "
@@ -69,11 +71,11 @@ class TwelveDaysTests(unittest.TestCase):
                     "four Calling Birds, "
                     "three French Hens, "
                     "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.\n")
-        self.assertEqual(verse(8), expected)
+                    "and a Partridge in a Pear Tree."]
+        self.assertEqual(recite(8, 8), expected)
 
     def test_verse9(self):
-        expected = ("On the ninth day of Christmas my true love gave to me, "
+        expected = ["On the ninth day of Christmas my true love gave to me, "
                     "nine Ladies Dancing, "
                     "eight Maids-a-Milking, "
                     "seven Swans-a-Swimming, "
@@ -82,11 +84,11 @@ class TwelveDaysTests(unittest.TestCase):
                     "four Calling Birds, "
                     "three French Hens, "
                     "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.\n")
-        self.assertEqual(verse(9), expected)
+                    "and a Partridge in a Pear Tree."]
+        self.assertEqual(recite(9, 9), expected)
 
     def test_verse10(self):
-        expected = ("On the tenth day of Christmas my true love gave to me, "
+        expected = ["On the tenth day of Christmas my true love gave to me, "
                     "ten Lords-a-Leaping, "
                     "nine Ladies Dancing, "
                     "eight Maids-a-Milking, "
@@ -96,11 +98,11 @@ class TwelveDaysTests(unittest.TestCase):
                     "four Calling Birds, "
                     "three French Hens, "
                     "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.\n")
-        self.assertEqual(verse(10), expected)
+                    "and a Partridge in a Pear Tree."]
+        self.assertEqual(recite(10, 10), expected)
 
     def test_verse11(self):
-        expected = ("On the eleventh day of Christmas "
+        expected = ["On the eleventh day of Christmas "
                     "my true love gave to me, "
                     "eleven Pipers Piping, "
                     "ten Lords-a-Leaping, "
@@ -112,11 +114,11 @@ class TwelveDaysTests(unittest.TestCase):
                     "four Calling Birds, "
                     "three French Hens, "
                     "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.\n")
-        self.assertEqual(verse(11), expected)
+                    "and a Partridge in a Pear Tree."]
+        self.assertEqual(recite(11, 11), expected)
 
     def test_verse12(self):
-        expected = ("On the twelfth day of Christmas my true love gave to me, "
+        expected = ["On the twelfth day of Christmas my true love gave to me, "
                     "twelve Drummers Drumming, "
                     "eleven Pipers Piping, "
                     "ten Lords-a-Leaping, "
@@ -128,23 +130,137 @@ class TwelveDaysTests(unittest.TestCase):
                     "four Calling Birds, "
                     "three French Hens, "
                     "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.\n")
-        self.assertEqual(verse(12), expected)
+                    "and a Partridge in a Pear Tree."]
+        self.assertEqual(recite(12, 12), expected)
 
-    def test_multiple_verses(self):
-        expected = ("On the first day of Christmas my true love gave to me, "
-                    "a Partridge in a Pear Tree.\n\n"
+
+class LyricsTests(unittest.TestCase):
+    def test_first_three_verses_of_the_song(self):
+        expected = ["On the first day of Christmas my true love gave to me, "
+                    "a Partridge in a Pear Tree.",
                     "On the second day of Christmas my true love gave to me, "
                     "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.\n\n"
+                    "and a Partridge in a Pear Tree.",
                     "On the third day of Christmas my true love gave to me, "
                     "three French Hens, "
                     "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.\n\n")
-        self.assertEqual(verses(1, 3), expected)
+                    "and a Partridge in a Pear Tree."]
+        self.assertEqual(recite(1, 3), expected)
+
+    def test_three_verses_from_the_middle_of_the_song(self):
+        expected = ["On the fourth day of Christmas my true love gave to me, "
+                    "four Calling Birds, "
+                    "three French Hens, "
+                    "two Turtle Doves, "
+                    "and a Partridge in a Pear Tree.",
+                    "On the fifth day of Christmas my true love gave to me, "
+                    "five Gold Rings, "
+                    "four Calling Birds, "
+                    "three French Hens, "
+                    "two Turtle Doves, "
+                    "and a Partridge in a Pear Tree.",
+                    "On the sixth day of Christmas my true love gave to me, "
+                    "six Geese-a-Laying, "
+                    "five Gold Rings, "
+                    "four Calling Birds, "
+                    "three French Hens, "
+                    "two Turtle Doves, "
+                    "and a Partridge in a Pear Tree."]
+        self.assertEqual(recite(4, 6), expected)
 
     def test_the_whole_song(self):
-        self.assertEqual(verses(1, 12), sing())
+        expected = ["On the first day of Christmas my true love gave to me, "
+                    "a Partridge in a Pear Tree.",
+                    "On the second day of Christmas my true love gave to me, "
+                    "two Turtle Doves, "
+                    "and a Partridge in a Pear Tree.",
+                    "On the third day of Christmas my true love gave to me, "
+                    "three French Hens, "
+                    "two Turtle Doves, "
+                    "and a Partridge in a Pear Tree.",
+                    "On the fourth day of Christmas my true love gave to me, "
+                    "four Calling Birds, "
+                    "three French Hens, "
+                    "two Turtle Doves, "
+                    "and a Partridge in a Pear Tree.",
+                    "On the fifth day of Christmas my true love gave to me, "
+                    "five Gold Rings, "
+                    "four Calling Birds, "
+                    "three French Hens, "
+                    "two Turtle Doves, "
+                    "and a Partridge in a Pear Tree.",
+                    "On the sixth day of Christmas my true love gave to me, "
+                    "six Geese-a-Laying, "
+                    "five Gold Rings, "
+                    "four Calling Birds, "
+                    "three French Hens, "
+                    "two Turtle Doves, "
+                    "and a Partridge in a Pear Tree.",
+                    "On the seventh day of Christmas my true love gave to me, "
+                    "seven Swans-a-Swimming, "
+                    "six Geese-a-Laying, "
+                    "five Gold Rings, "
+                    "four Calling Birds, "
+                    "three French Hens, "
+                    "two Turtle Doves, "
+                    "and a Partridge in a Pear Tree.",
+                    "On the eighth day of Christmas my true love gave to me, "
+                    "eight Maids-a-Milking, "
+                    "seven Swans-a-Swimming, "
+                    "six Geese-a-Laying, "
+                    "five Gold Rings, "
+                    "four Calling Birds, "
+                    "three French Hens, "
+                    "two Turtle Doves, "
+                    "and a Partridge in a Pear Tree.",
+                    "On the ninth day of Christmas my true love gave to me, "
+                    "nine Ladies Dancing, "
+                    "eight Maids-a-Milking, "
+                    "seven Swans-a-Swimming, "
+                    "six Geese-a-Laying, "
+                    "five Gold Rings, "
+                    "four Calling Birds, "
+                    "three French Hens, "
+                    "two Turtle Doves, "
+                    "and a Partridge in a Pear Tree.",
+                    "On the tenth day of Christmas my true love gave to me, "
+                    "ten Lords-a-Leaping, "
+                    "nine Ladies Dancing, "
+                    "eight Maids-a-Milking, "
+                    "seven Swans-a-Swimming, "
+                    "six Geese-a-Laying, "
+                    "five Gold Rings, "
+                    "four Calling Birds, "
+                    "three French Hens, "
+                    "two Turtle Doves, "
+                    "and a Partridge in a Pear Tree.",
+                    "On the eleventh day of Christmas "
+                    "my true love gave to me, "
+                    "eleven Pipers Piping, "
+                    "ten Lords-a-Leaping, "
+                    "nine Ladies Dancing, "
+                    "eight Maids-a-Milking, "
+                    "seven Swans-a-Swimming, "
+                    "six Geese-a-Laying, "
+                    "five Gold Rings, "
+                    "four Calling Birds, "
+                    "three French Hens, "
+                    "two Turtle Doves, "
+                    "and a Partridge in a Pear Tree.",
+                    "On the twelfth day of Christmas my true love gave to me, "
+                    "twelve Drummers Drumming, "
+                    "eleven Pipers Piping, "
+                    "ten Lords-a-Leaping, "
+                    "nine Ladies Dancing, "
+                    "eight Maids-a-Milking, "
+                    "seven Swans-a-Swimming, "
+                    "six Geese-a-Laying, "
+                    "five Gold Rings, "
+                    "four Calling Birds, "
+                    "three French Hens, "
+                    "two Turtle Doves, "
+                    "and a Partridge in a Pear Tree."]
+        self.assertEqual(recite(1, 12), expected)
 
 
 if __name__ == '__main__':
