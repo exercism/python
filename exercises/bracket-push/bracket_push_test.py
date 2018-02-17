@@ -3,7 +3,7 @@ import unittest
 from bracket_push import check_brackets
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class BracketPushTests(unittest.TestCase):
     def test_paired_square_brackets(self):
