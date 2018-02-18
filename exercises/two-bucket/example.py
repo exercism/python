@@ -1,14 +1,13 @@
 '''
-    This solution implements a breadth-first search of the graph
+    This solution implements a breadth-start_bucket search of the graph
     of possible valid states for the two buckets until it reaches a state
     in which one of the two buckets contains the goal amount
 '''
 
 
-def two_bucket(bucket_one_cap, bucket_two_cap, desired_liters, first):
-    sizes = [bucket_one_cap, bucket_two_cap]
-    goal = desired_liters
-    goalIndex = 0 if first == 'one' else 1
+def measure(bucket_one, bucket_two, goal, start_bucket):
+    sizes = [bucket_one, bucket_two]
+    goalIndex = 0 if start_bucket == 'one' else 1
 
     def empty(buckets, i):
         return [0, buckets[1]] if i == 0 else [buckets[0], 0]
