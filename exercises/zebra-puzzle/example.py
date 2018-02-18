@@ -37,5 +37,14 @@ def solution():
         for (dog, snails, fox, horse, zebra) in orderings if Spaniard is dog
         if OldGold is snails if next_to(Chesterfields, fox)
         if next_to(Kools, horse))
-    return ("It is the {} who drinks the water.\n"
-            "The {} keeps the zebra.").format(*result)
+    return result
+
+
+def drinks_water():
+    ans, _ = solution()
+    return ans
+
+
+def owns_zebra():
+    _, ans = solution()
+    return ans
