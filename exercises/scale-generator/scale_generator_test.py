@@ -3,6 +3,8 @@ import unittest
 from scale_generator import Scale
 
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+
 class ScaleGeneratorTest(unittest.TestCase):
 
     # Test chromatic scales
