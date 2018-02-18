@@ -1,4 +1,3 @@
-
 class Clock(object):
     'Clock that displays 24 hour clock that rollsover properly'
 
@@ -15,6 +14,10 @@ class Clock(object):
 
     def __add__(self, minutes):
         self.minute += minutes
+        return self.cleanup()
+
+    def __sub__(self, minutes):
+        self.minute -= minutes
         return self.cleanup()
 
     def cleanup(self):
