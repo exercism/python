@@ -3,12 +3,9 @@ import unittest
 from pov import Tree
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.1
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class PovTest(unittest.TestCase):
-    def assertTreeEquals(self, result, expected):
-        self.assertEqual(result, expected,
-                         '{} != {}'.format(result, expected))
 
     def test_singleton_returns_same_tree(self):
         tree = Tree('x')
@@ -204,6 +201,10 @@ class PovTest(unittest.TestCase):
 
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
+
+    def assertTreeEquals(self, result, expected):
+        self.assertEqual(result, expected,
+                         '{} != {}'.format(result, expected))
 
 
 if __name__ == '__main__':
