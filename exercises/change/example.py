@@ -1,6 +1,6 @@
 def find_minimum_coins(total_change, coins):
     if total_change < 0:
-        return -1
+        raise ValueError("cannot find negative change values")
     min_coins_required = [1e9] * (total_change + 1)
     last_coin = [0]*(total_change + 1)
     min_coins_required[0] = 0
@@ -15,7 +15,7 @@ def find_minimum_coins(total_change, coins):
                     last_coin[change] = change - coin
         min_coins_required[change] = final_result
     if min_coins_required[total_change] == 1e9:
-        return -1
+        raise ValueError("no combination can add up to target")
     else:
         last_coin_value = total_change
         array = []
