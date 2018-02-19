@@ -2,8 +2,8 @@ import unittest
 
 from change import find_minimum_coins
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class ChangeTest(unittest.TestCase):
     def test_single_coin_change(self):
@@ -37,13 +37,26 @@ class ChangeTest(unittest.TestCase):
         self.assertEqual(find_minimum_coins(0, [1, 5, 10, 21, 25]), [])
 
     def test_error_testing_for_change_smaller_than_smallest_coin(self):
-        self.assertEqual(find_minimum_coins(3, [5, 10]), -1)
+        with self.assertRaisesWithMessage(ValueError):
+            find_minimum_coins(3, [5, 10])
 
     def test_error_if_no_combination_can_add_up_to_target(self):
-        self.assertEqual(find_minimum_coins(94, [5, 10]), -1)
+        with self.assertRaisesWithMessage(ValueError):
+            find_minimum_coins(94, [5, 10])
 
     def test_cannot_find_negative_change_values(self):
-        self.assertEqual(find_minimum_coins(-5, [1, 2, 5]), -1)
+        with self.assertRaisesWithMessage(ValueError):
+            find_minimum_coins(-5, [1, 2, 5])
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex
+        except AttributeError:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == "__main__":
