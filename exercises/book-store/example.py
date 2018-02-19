@@ -1,4 +1,4 @@
-BOOK_PRICE = 8
+BOOK_PRICE = 800
 
 
 def _group_price(size):
