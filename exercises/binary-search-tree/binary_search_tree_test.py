@@ -1,6 +1,6 @@
 import unittest
 
-from example import BinarySearchTree, TreeNode
+from binary_search_tree import BinarySearchTree, TreeNode
 
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
