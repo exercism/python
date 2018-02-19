@@ -6,9 +6,6 @@ from bowling import BowlingGame
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
 
 class BowlingTests(unittest.TestCase):
-    def setUp(self):
-        self.game = BowlingGame()
-
     def roll(self, rolls):
         [self.game.roll(roll) for roll in rolls]
 
@@ -120,23 +117,27 @@ class BowlingTests(unittest.TestCase):
 
     def test_rolls_cannot_score_negative_points(self):
 
-        self.assertRaises(ValueError, self.game.roll, -11)
+        with self.assertRaisesWithMessage(ValueError):
+            self.game.roll(-11)
 
     def test_a_roll_cannot_score_more_than_10_points(self):
 
-        self.assertRaises(ValueError, self.game.roll, 11)
+        with self.assertRaisesWithMessage(ValueError):
+            self.game.roll(11)
 
     def test_two_rolls_in_a_frame_cannot_score_more_than_10_points(self):
         self.game.roll(5)
 
-        self.assertRaises(ValueError, self.game.roll, 6)
+        with self.assertRaisesWithMessage(ValueError):
+            self.game.roll(6)
 
     def test_bonus_after_strike_in_last_frame_cannot_score_more_than_10(self):
         rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10]
 
         self.roll(rolls)
 
-        self.assertRaises(ValueError, self.game.roll, 11)
+        with self.assertRaisesWithMessage(ValueError):
+            self.game.roll(11)
 
     def test_bonus_aft_last_frame_strk_can_be_more_than_10_if_1_is_strk(self):
         rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10,
@@ -151,42 +152,59 @@ class BowlingTests(unittest.TestCase):
 
         self.roll(rolls)
 
-        self.assertRaises(ValueError, self.game.roll, 10)
+        with self.assertRaisesWithMessage(ValueError):
+            self.game.roll(10)
 
     def test_an_incomplete_game_cannot_be_scored(self):
         rolls = [0, 0]
 
         self.roll(rolls)
 
-        self.assertRaises(IndexError, self.game.score)
+        with self.assertRaisesWithMessage(IndexError):
+            self.game.score()
 
     def test_cannot_roll_if_there_are_already_ten_frames(self):
         rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
         self.roll(rolls)
 
-        self.assertRaises(IndexError, self.game.roll, 0)
+        with self.assertRaisesWithMessage(IndexError):
+            self.game.roll(0)
 
     def test_bonus_rolls_for_strike_must_be_rolled_before_score_is_calc(self):
         rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10]
 
         self.roll(rolls)
 
-        self.assertRaises(IndexError, self.game.score)
+        with self.assertRaisesWithMessage(IndexError):
+            self.game.score()
 
     def test_both_bonuses_for_strike_must_be_rolled_before_score(self):
         rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10]
 
         self.roll(rolls)
 
-        self.assertRaises(IndexError, self.game.score)
+        with self.assertRaisesWithMessage(IndexError):
+            self.game.score()
 
     def test_bonus_rolls_for_spare_must_be_rolled_before_score_is_calc(self):
         rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3]
 
         self.roll(rolls)
 
-        self.assertRaises(IndexError, self.game.score)
+        with self.assertRaisesWithMessage(IndexError):
+            self.game.score()
+
+    # Utility functions
+    def setUp(self):
+        self.game = BowlingGame()
+        try:
+            self.assertRaisesRegex
+        except AttributeError:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':
