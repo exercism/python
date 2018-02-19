@@ -1,2 +1,6 @@
-def solution():
+def drinks_water():
+    pass
+
+
+def owns_zebra():
     pass
