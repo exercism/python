@@ -41,7 +41,7 @@ class Tree(object):
             tree.children.append(child.remove(node))
         return tree
 
-    def fromPov(self, from_node):
+    def from_pov(self, from_node):
         stack = [self]
         visited = set()
         while stack:
@@ -55,8 +55,8 @@ class Tree(object):
                 stack.append(child.add(tree.remove(child.label)))
         raise ValueError("Tree could not be reoriented")
 
-    def pathTo(self, from_node, to_node):
-        reordered = self.fromPov(from_node)
+    def path_to(self, from_node, to_node):
+        reordered = self.from_pov(from_node)
         stack = reordered.children
         path = [from_node]
         while path[-1] != to_node:
