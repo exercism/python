@@ -3,7 +3,7 @@ import unittest
 from crypto_square import encode
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v3.1.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v3.2.0
 
 class CryptoSquareTest(unittest.TestCase):
     def test_empty_string(self):
