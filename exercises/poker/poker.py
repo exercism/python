@@ -1,2 +1,2 @@
-def poker(hand):
+def best_hands(hands):
     pass
