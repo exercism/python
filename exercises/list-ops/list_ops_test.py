@@ -4,7 +4,7 @@ import operator
 import list_ops
 
 
-# Tests adapted from problem-specifications//canonical-data.json @ v2.0.0
+# Tests adapted from problem-specifications//canonical-data.json @ v2.2.0
 
 class ListOpsTest(unittest.TestCase):
 
