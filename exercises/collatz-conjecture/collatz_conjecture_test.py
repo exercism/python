@@ -2,8 +2,8 @@ import unittest
 
 from collatz_conjecture import collatz_steps
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.1
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class CollatzConjectureTests(unittest.TestCase):
 
@@ -20,12 +20,22 @@ class CollatzConjectureTests(unittest.TestCase):
         self.assertEqual(collatz_steps(1000000), 152)
 
     def test_zero_is_invalid_input(self):
-        self.assertEqual(collatz_steps(0), None)
+        with self.assertRaisesWithMessage(ValueError):
+            collatz_steps(0)
 
     def test_negative_number_is_invalid_input(self):
-        self.assertEqual(collatz_steps(-1), None)
+        with self.assertRaisesWithMessage(ValueError):
+            collatz_steps(-15)
 
-        self.assertEqual(collatz_steps(-15), None)
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex
+        except AttributeError:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':
