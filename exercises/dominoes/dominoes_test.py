@@ -3,7 +3,7 @@ import unittest
 from dominoes import chain
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.1.0
 
 class DominoesTest(unittest.TestCase):
     def test_empty_input_empty_output(self):

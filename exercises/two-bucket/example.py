@@ -5,10 +5,9 @@
 '''
 
 
-def two_bucket(bucket_one_cap, bucket_two_cap, desired_liters, first):
-    sizes = [bucket_one_cap, bucket_two_cap]
-    goal = desired_liters
-    goalIndex = 0 if first == 'one' else 1
+def measure(bucket_one, bucket_two, goal, start_bucket):
+    sizes = [bucket_one, bucket_two]
+    goalIndex = 0 if start_bucket == 'one' else 1
 
     def empty(buckets, i):
         return [0, buckets[1]] if i == 0 else [buckets[0], 0]
