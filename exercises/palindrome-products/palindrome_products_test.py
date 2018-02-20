@@ -77,8 +77,6 @@ class PalindromesTests(unittest.TestCase):
         with self.assertRaisesWithMessage(ValueError):
             value, factors = largest_palindrome(min_factor=2, max_factor=1)
 
-    # Utility methods
-
     # Utility functions
     def setUp(self):
         try:
