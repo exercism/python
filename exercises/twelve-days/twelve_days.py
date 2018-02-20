@@ -1,10 +1,2 @@
-def verse(day_number):
-    pass
-
-
-def verses(start, end):
-    pass
-
-
-def sing():
+def recite(start_verse, end_verse):
     pass

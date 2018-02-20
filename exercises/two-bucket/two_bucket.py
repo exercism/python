@@ -1,2 +1,2 @@
-def two_bucket(bucket_one_cap, bucket_two_cap, desired_liters, first):
+def measure(bucket_one, bucket_two, goal, start_bucket):
     pass

@@ -3,7 +3,7 @@ import unittest
 from custom_set import CustomSet
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
 
 class CustomSetTest(unittest.TestCase):
     def test_sets_with_no_elements_are_empty(self):
