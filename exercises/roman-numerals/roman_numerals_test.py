@@ -3,7 +3,7 @@ import unittest
 import roman_numerals
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class RomanTest(unittest.TestCase):
     numerals = {
@@ -16,6 +16,7 @@ class RomanTest(unittest.TestCase):
         9: 'IX',
         27: 'XXVII',
         48: 'XLVIII',
+        49: 'XLIX',
         59: 'LIX',
         93: 'XCIII',
         141: 'CXLI',
