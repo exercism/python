@@ -1,8 +1,8 @@
-def is_paired(string):
+def is_paired(input_string):
     counterparts = {')': '(', '}': '{', ']': '['}
 
     stack = []
-    for char in string:
+    for char in input_string:
         if char in counterparts.values():
             stack.append(char)
         elif char in counterparts:
