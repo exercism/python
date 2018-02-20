@@ -1,6 +1,10 @@
 class Point(object):
     def __init__(self, x, y):
-        pass
+        self.x = None
+        self.y = None
+
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y
 
 
 class WordSearch(object):
