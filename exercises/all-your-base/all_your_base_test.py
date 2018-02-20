@@ -3,7 +3,7 @@ import unittest
 from all_your_base import rebase
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.3.0
 
 class AllYourBaseTests(unittest.TestCase):
 
@@ -43,15 +43,15 @@ class AllYourBaseTests(unittest.TestCase):
     def test_leading_zeros(self):
         self.assertEqual(rebase(7, [0, 6, 0], 10), [4, 2])
 
-    def test_first_base_is_one(self):
+    def test_input_base_is_one(self):
         with self.assertRaisesWithMessage(ValueError):
-            rebase(1, [], 10)
+            rebase(1, [0], 10)
 
-    def test_first_base_is_zero(self):
+    def test_input_base_is_zero(self):
         with self.assertRaisesWithMessage(ValueError):
             rebase(0, [], 10)
 
-    def test_first_base_is_negative(self):
+    def test_input_base_is_negative(self):
         with self.assertRaisesWithMessage(ValueError):
             rebase(-2, [1], 10)
 
@@ -63,15 +63,15 @@ class AllYourBaseTests(unittest.TestCase):
         with self.assertRaisesWithMessage(ValueError):
             rebase(2, [1, 2, 1, 0, 1, 0], 10)
 
-    def test_second_base_is_one(self):
+    def test_output_base_is_one(self):
         with self.assertRaisesWithMessage(ValueError):
             rebase(2, [1, 0, 1, 0, 1, 0], 1)
 
-    def test_second_base_is_zero(self):
+    def test_output_base_is_zero(self):
         with self.assertRaisesWithMessage(ValueError):
             rebase(10, [7], 0)
 
-    def test_second_base_is_negative(self):
+    def test_output_base_is_negative(self):
         with self.assertRaisesWithMessage(ValueError):
             rebase(2, [1], -7)
 
