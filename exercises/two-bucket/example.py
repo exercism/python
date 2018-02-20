@@ -1,5 +1,5 @@
 '''
-    This solution implements a breadth-start_bucket search of the graph
+    This solution implements a breadth-first search of the graph
     of possible valid states for the two buckets until it reaches a state
     in which one of the two buckets contains the goal amount
 '''
