@@ -1,2 +1,2 @@
-def rebase(from_base, digits, to_base):
+def rebase(input_base, digits, output_base):
     pass
