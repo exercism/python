@@ -1,2 +1,2 @@
-def check_brackets(input_string):
+def is_paired(input_string):
     pass
