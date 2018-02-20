@@ -1,36 +1,42 @@
 import unittest
-from ddt import ddt, data, unpack
+from ddt import ddt, idata, unpack
 
 from acronym import abbreviate
 
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
 
-class AnnotatedCase(dict):
+def create_case(name, *args):
+    class AnnotatedCase(dict):
+        pass
     case_args = ('phrase', 'expected')
+    case = AnnotatedCase()
+    setattr(case, '__name__', name)
+    for k, v in zip(case_args, args):
+        case[k] = v
+    return case
 
-    def __init__(self, name, *args):
-        setattr(self, '__name__', name)
-        for k, v in zip(AnnotatedCase.case_args, args):
-            self[k] = v
+
+def annotated_data(**kwargs):
+    def dec(function):
+        @idata(create_case(k, *v) for k, v in kwargs.items())
+        def wrapper(*args, **kwargs):
+            function(args[0], **args[1])
+        return wrapper
+    return dec
 
 
 @ddt
 class AcronymTest(unittest.TestCase):
-    @data(
-        AnnotatedCase('basic', "Portable Network Graphics", 'PNG'),
-        AnnotatedCase('lowercase words', 'Ruby on Rails', 'ROR'),
-        AnnotatedCase('punctuation', 'First In, First Out', 'FIFO'),
-        AnnotatedCase(
-            'all caps word',
-            'GNU Image Manipulation Program',
-            'GIMP'
-        ),
-        AnnotatedCase(
-            'punctuation without whitespace',
+    @annotated_data(
+        basic=['Portable Network Graphics', 'PNG'],
+        lowercase_words=['Ruby on Rails', 'ROR'],
+        punctuation=['First In, First Out', 'FIFO'],
+        all_caps_word=['GNU Image Manipulation Program', 'GIMP'],
+        punctuation_without_whitespace=[
             'Complementary metal-oxide semiconductor',
             'CMOS'
-        ),
+        ],
     )
     @unpack
     def test_abbreviate(self, phrase, expected):
