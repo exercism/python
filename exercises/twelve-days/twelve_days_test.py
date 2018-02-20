@@ -136,130 +136,15 @@ class VerseTests(unittest.TestCase):
 
 class LyricsTests(unittest.TestCase):
     def test_first_three_verses_of_the_song(self):
-        expected = ["On the first day of Christmas my true love gave to me, "
-                    "a Partridge in a Pear Tree.",
-                    "On the second day of Christmas my true love gave to me, "
-                    "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.",
-                    "On the third day of Christmas my true love gave to me, "
-                    "three French Hens, "
-                    "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree."]
+        expected = [recite(n, n)[0] for n in range(1, 4)]
         self.assertEqual(recite(1, 3), expected)
 
     def test_three_verses_from_the_middle_of_the_song(self):
-        expected = ["On the fourth day of Christmas my true love gave to me, "
-                    "four Calling Birds, "
-                    "three French Hens, "
-                    "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.",
-                    "On the fifth day of Christmas my true love gave to me, "
-                    "five Gold Rings, "
-                    "four Calling Birds, "
-                    "three French Hens, "
-                    "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.",
-                    "On the sixth day of Christmas my true love gave to me, "
-                    "six Geese-a-Laying, "
-                    "five Gold Rings, "
-                    "four Calling Birds, "
-                    "three French Hens, "
-                    "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree."]
+        expected = [recite(n, n)[0] for n in range(4, 7)]
         self.assertEqual(recite(4, 6), expected)
 
     def test_the_whole_song(self):
-        expected = ["On the first day of Christmas my true love gave to me, "
-                    "a Partridge in a Pear Tree.",
-                    "On the second day of Christmas my true love gave to me, "
-                    "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.",
-                    "On the third day of Christmas my true love gave to me, "
-                    "three French Hens, "
-                    "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.",
-                    "On the fourth day of Christmas my true love gave to me, "
-                    "four Calling Birds, "
-                    "three French Hens, "
-                    "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.",
-                    "On the fifth day of Christmas my true love gave to me, "
-                    "five Gold Rings, "
-                    "four Calling Birds, "
-                    "three French Hens, "
-                    "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.",
-                    "On the sixth day of Christmas my true love gave to me, "
-                    "six Geese-a-Laying, "
-                    "five Gold Rings, "
-                    "four Calling Birds, "
-                    "three French Hens, "
-                    "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.",
-                    "On the seventh day of Christmas my true love gave to me, "
-                    "seven Swans-a-Swimming, "
-                    "six Geese-a-Laying, "
-                    "five Gold Rings, "
-                    "four Calling Birds, "
-                    "three French Hens, "
-                    "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.",
-                    "On the eighth day of Christmas my true love gave to me, "
-                    "eight Maids-a-Milking, "
-                    "seven Swans-a-Swimming, "
-                    "six Geese-a-Laying, "
-                    "five Gold Rings, "
-                    "four Calling Birds, "
-                    "three French Hens, "
-                    "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.",
-                    "On the ninth day of Christmas my true love gave to me, "
-                    "nine Ladies Dancing, "
-                    "eight Maids-a-Milking, "
-                    "seven Swans-a-Swimming, "
-                    "six Geese-a-Laying, "
-                    "five Gold Rings, "
-                    "four Calling Birds, "
-                    "three French Hens, "
-                    "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.",
-                    "On the tenth day of Christmas my true love gave to me, "
-                    "ten Lords-a-Leaping, "
-                    "nine Ladies Dancing, "
-                    "eight Maids-a-Milking, "
-                    "seven Swans-a-Swimming, "
-                    "six Geese-a-Laying, "
-                    "five Gold Rings, "
-                    "four Calling Birds, "
-                    "three French Hens, "
-                    "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.",
-                    "On the eleventh day of Christmas "
-                    "my true love gave to me, "
-                    "eleven Pipers Piping, "
-                    "ten Lords-a-Leaping, "
-                    "nine Ladies Dancing, "
-                    "eight Maids-a-Milking, "
-                    "seven Swans-a-Swimming, "
-                    "six Geese-a-Laying, "
-                    "five Gold Rings, "
-                    "four Calling Birds, "
-                    "three French Hens, "
-                    "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree.",
-                    "On the twelfth day of Christmas my true love gave to me, "
-                    "twelve Drummers Drumming, "
-                    "eleven Pipers Piping, "
-                    "ten Lords-a-Leaping, "
-                    "nine Ladies Dancing, "
-                    "eight Maids-a-Milking, "
-                    "seven Swans-a-Swimming, "
-                    "six Geese-a-Laying, "
-                    "five Gold Rings, "
-                    "four Calling Birds, "
-                    "three French Hens, "
-                    "two Turtle Doves, "
-                    "and a Partridge in a Pear Tree."]
+        expected = [recite(n, n)[0] for n in range(1, 13)]
         self.assertEqual(recite(1, 12), expected)
 
 
