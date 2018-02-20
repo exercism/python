@@ -11,7 +11,7 @@ import unittest
 from ocr_numbers import convert
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class OcrTest(unittest.TestCase):
     def test_recognizes_0(self):
