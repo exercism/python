@@ -1,6 +1,6 @@
 def collatz_steps(n):
     if n <= 0:
-        return
+        raise ValueError("input should be positive")
 
     step_count = 0
     while n > 1:

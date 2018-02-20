@@ -1,4 +1,4 @@
-def poker(hands):
+def best_hands(hands):
     return allmax(hands, key=hand_rank)
 
 
@@ -15,12 +15,13 @@ def allmax(iterable, key=None):
 
 
 def hand_rank(hand):
+    hand = hand.replace("10", "T").split()
     card_ranks = ["..23456789TJQKA".index(r) for r, s in hand]
     groups = [(card_ranks.count(i), i) for i in set(card_ranks)]
     groups.sort(reverse=True)
     counts, ranks = zip(*groups)
-    if ranks == [14, 5, 4, 3, 2]:
-        ranks = [5, 4, 3, 2, 1]
+    if ranks == (14, 5, 4, 3, 2):
+        ranks = (5, 4, 3, 2, 1)
     straight = (len(counts) == 5) and (max(ranks) - min(ranks) == 4)
     flush = len(set([s for r, s in hand])) == 1
     return (9 if counts == (5,) else
