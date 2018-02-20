@@ -1,46 +1,28 @@
 import unittest
-from ddt import ddt, idata, unpack
+from ddt import ddt, unpack
+from ddt_ext import annotated_data
 
 from all_your_base import rebase
 
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v2.3.0
 
-def create_case(name, *args):
-    class AnnotatedCase(dict):
-        pass
-    case_args = ('input_base', 'digits', 'output_base', 'expected')
-    case = AnnotatedCase()
-    setattr(case, '__name__', name)
-    for k, v in zip(case_args, args):
-        case[k] = v
-    return case
-
-
-def annotated_data(**kwargs):
-    def dec(function):
-        @idata(create_case(k, *v) for k, v in kwargs.items())
-        def wrapper(*args, **kwargs):
-            function(args[0], **args[1])
-        return wrapper
-    return dec
-
 
 @ddt
 class AllYourBaseTests(unittest.TestCase):
     @annotated_data(
-        single_bit_to_one_decimal=[2, [1], 10, [1]],
-        binary_to_single_decimal=[2, [1, 0, 1], 10, [5]],
-        single_decimal_to_binary=[10, [5], 2, [1, 0, 1]],
-        binary_to_multiple_decimal=[2, [1, 0, 1, 0, 1, 0], 10, [4, 2]],
-        decimal_to_binary=[10, [4, 2], 2, [1, 0, 1, 0, 1, 0]],
-        trinary_to_hexadecimal=[3, [1, 1, 2, 0], 16, [2, 10]],
-        hexadecimal_to_trinary=[16, [2, 10], 3, [1, 1, 2, 0]],
-        fifteen_bit_integer=[97, [3, 46, 60], 73, [6, 10, 45]],
-        empty_list=[2, [], 10, []],
-        single_zero=[10, [0], 2, []],
-        multiple_zeros=[10, [0, 0, 0], 2, []],
-        leading_zeros=[7, [0, 6, 0], 10, [4, 2]]
+        single_bit_to_one_decimal=(2, [1], 10, [1]),
+        binary_to_single_decimal=(2, [1, 0, 1], 10, [5]),
+        single_decimal_to_binary=(10, [5], 2, [1, 0, 1]),
+        binary_to_multiple_decimal=(2, [1, 0, 1, 0, 1, 0], 10, [4, 2]),
+        decimal_to_binary=(10, [4, 2], 2, [1, 0, 1, 0, 1, 0]),
+        trinary_to_hexadecimal=(3, [1, 1, 2, 0], 16, [2, 10]),
+        hexadecimal_to_trinary=(16, [2, 10], 3, [1, 1, 2, 0]),
+        fifteen_bit_integer=(97, [3, 46, 60], 73, [6, 10, 45]),
+        empty_list=(2, [], 10, []),
+        single_zero=(10, [0], 2, []),
+        multiple_zeros=(10, [0, 0, 0], 2, []),
+        leading_zeros=(7, [0, 6, 0], 10, [4, 2]),
     )
     @unpack
     def test_rebase(self, input_base, digits, output_base, expected):
