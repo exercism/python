@@ -93,13 +93,13 @@ class ClockTest(unittest.TestCase):
         self.assertEqual(str(Clock(10, 3) - 3), '10:00')
 
     def test_subtract_to_previous_hour(self):
-        self.assertEqual(str(Clock(10, 3) - 3), '10:00')
-
-    def test_subtract_more_than_an_hour(self):
         self.assertEqual(str(Clock(10, 3) - 30), '09:33')
 
-    def test_subtract_across_midnight(self):
+    def test_subtract_more_than_an_hour(self):
         self.assertEqual(str(Clock(10, 3) - 70), '08:53')
+
+    def test_subtract_across_midnight(self):
+        self.assertEqual(str(Clock(0, 3) - 4), '23:59')
 
     def test_subtract_more_than_two_hours(self):
         self.assertEqual(str(Clock(0, 0) - 160), '21:20')
