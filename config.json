@@ -951,9 +951,10 @@
       "unlocked_by": null,
       "difficulty": 2,
       "topics": [
+        "equality",
         "classes",
-        "arithmetic",
-        "operator_overloading"
+        "floating_point_numbers",
+        "mathematics"
       ]
     },
     {
