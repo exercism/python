@@ -18,7 +18,7 @@ def _choice(which):
     def _func(dates):
         if ix < len(dates):
             return dates[ix]
-        raise MeetupDayException
+        raise MeetupDayException('day does not exist')
     return _func
 
 
