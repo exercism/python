@@ -3,7 +3,7 @@ import unittest
 from perfect_numbers import classify
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class PerfectNumbersTest(unittest.TestCase):
     def test_smallest_perfect_number(self):
@@ -15,19 +15,6 @@ class PerfectNumbersTest(unittest.TestCase):
     def test_large_perfect_number(self):
         self.assertIs(classify(33550336), "perfect")
 
-    # Additional tests for this track
-    def test_third_perfect_number(self):
-        self.assertIs(classify(496), "perfect")
-
-    def test_fourth_perfect_number(self):
-        self.assertIs(classify(8128), "perfect")
-
-    def test_sixth_perfect_number(self):
-        self.assertIs(classify(8589869056), "perfect")
-
-    def test_seventh_perfect_number(self):
-        self.assertIs(classify(137438691328), "perfect")
-
 
 class AbundantNumbersTest(unittest.TestCase):
     def test_smallest_abundant_number(self):
@@ -38,16 +25,6 @@ class AbundantNumbersTest(unittest.TestCase):
 
     def test_large_abundant_number(self):
         self.assertIs(classify(33550335), "abundant")
-
-    # Additional tests for this track
-    def test_answer_to_the_ultimate_question_of_life(self):
-        self.assertIs(classify(42), "abundant")
-
-    def test_odd_abundant(self):
-        self.assertIs(classify(945), "abundant")
-
-    def test_even_abundant(self):
-        self.assertIs(classify(20), "abundant")
 
 
 class DeficientNumbersTest(unittest.TestCase):
