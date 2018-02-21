@@ -15,3 +15,7 @@ def _choice(which):
 
     ix = -1 if (which == 'last') else (int(which[0]) - 1)
     return lambda dates: dates[ix]
+
+
+class MeetupDayException(Exception):
+    pass
