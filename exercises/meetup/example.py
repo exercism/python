@@ -14,6 +14,7 @@ def _choice(which):
         return lambda dates: next(d for d in dates if 13 <= d.day <= 19)
 
     ix = -1 if (which == 'last') else (int(which[0]) - 1)
+
     def _func(dates):
         if ix < len(dates):
             return dates[ix]
