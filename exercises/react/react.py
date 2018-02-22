@@ -1,17 +1,19 @@
-class Cell(object):
-    def set_value(value):
-        pass
-
-    def add_watcher(self, watcher_callback):
-        pass
-
-    def remove_watcher(self, watcher_callback):
-        pass
+class InputCell(object):
+    def __init__(self, initial_value):
+        self.value = None
 
 
-class Reactor(object):
-    def create_input_cell(self, value):
+class ComputeCell(object):
+    def __init__(self, inputs, compute_function):
+        self.value = None
+
+    def add_callback(self, callback):
         pass
 
-    def create_compute_cell(self, dependencies, updater_callback):
+    def remove_callback(self, callback):
         pass
+
+
+class Callback(object):
+    def __init__(self):
+        self.values = None

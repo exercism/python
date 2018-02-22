@@ -1,135 +1,148 @@
 import unittest
 
-from react import Reactor
+from react import InputCell, ComputeCell, Callback
 
 
-class CallbackManager(object):
-    counter = 0
-    observed1 = []
-    observed2 = []
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
-    @staticmethod
-    def reset():
-        CallbackManager.counter = 0
-        CallbackManager.observed1 = []
-        CallbackManager.observed2 = []
+class ReactTests(unittest.TestCase):
+    def test_input_cells_have_a_value(self):
+        input_ = InputCell(10)
+        self.assertEqual(input_.value, 10)
 
-    @staticmethod
-    def count(sender, value):
-        CallbackManager.counter += 1
+    def test_can_set_input_cell_value(self):
+        input_ = InputCell(4)
+        input_.value = 20
+        self.assertEqual(input_.value, 20)
 
-    @staticmethod
-    def observe1(sender, value):
-        CallbackManager.observed1.append(value)
+    def test_compute_cells_calculate_initial_value(self):
+        input_ = InputCell(1)
+        output = ComputeCell([input_], lambda inputs: inputs[0] + 1)
+        self.assertEqual(output.value, 2)
 
-    @staticmethod
-    def observe2(sender, value):
-        CallbackManager.observed2.append(value)
+    def test_compute_cells_take_inputs_in_right_order(self):
+        one = InputCell(1)
+        two = InputCell(2)
+        output = ComputeCell(
+            [one, two],
+            lambda inputs: inputs[0] + inputs[1]*10
+        )
+        self.assertEqual(output.value, 21)
 
+    def test_compute_cells_update_value_when_dependencies_are_changed(self):
+        input_ = InputCell(1)
+        output = ComputeCell([input_], lambda inputs: inputs[0] + 1)
 
-def increment(values):
-    return values[0] + 1
+        input_.value = 3
+        self.assertEqual(output.value, 4)
 
+    def test_compute_cells_can_depend_on_other_compute_cells(self):
+        input_ = InputCell(1)
+        times_two = ComputeCell([input_], lambda inputs: inputs[0] * 2)
+        times_thirty = ComputeCell([input_], lambda inputs: inputs[0] * 30)
+        output = ComputeCell(
+            [times_two, times_thirty],
+            lambda inputs: inputs[0] + inputs[1]
+        )
 
-def decrement(values):
-    return values[0] - 1
+        self.assertEqual(output.value, 32)
+        input_.value = 3
+        self.assertEqual(output.value, 96)
 
+    def test_compute_cells_fire_callbacks(self):
+        input_ = InputCell(1)
+        output = ComputeCell([input_], lambda inputs: inputs[0] + 1)
+        callback1 = Callback()
 
-def product(values):
-    return values[0] * values[1]
+        output.add_callback(callback1)
+        input_.value = 3
+        self.assertEqual(callback1.values, [4])
 
+    def test_callback_cells_only_fire_on_change(self):
+        input_ = InputCell(1)
+        output = ComputeCell(
+            [input_],
+            lambda inputs: 111 if inputs[0] < 3 else 222
+        )
+        callback1 = Callback()
 
-def minimum_of_2(values):
-    return values[0] + 1 if values[0] > 2 else 2
+        output.add_callback(callback1)
+        input_.value = 2
+        self.assertEqual(callback1.values, [])
+        input_.value = 4
+        self.assertEqual(callback1.values, [222])
 
+    def test_callbacks_can_be_added_and_removed(self):
+        input_ = InputCell(11)
+        output = ComputeCell([input_], lambda inputs: inputs[0] + 1)
+        callback1 = Callback()
+        callback2 = Callback()
+        callback3 = Callback()
 
-class ReactTest(unittest.TestCase):
-    def test_setting_input_changes_value(self):
-        reactor = Reactor()
-        inputCell1 = reactor.create_input_cell(1)
-        self.assertEqual(inputCell1.value, 1)
-        inputCell1.set_value(2)
-        self.assertEqual(inputCell1.value, 2)
+        output.add_callback(callback1)
+        output.add_callback(callback2)
+        input_.value = 31
+        output.remove_callback(callback1)
+        output.add_callback(callback3)
+        input_.value = 41
 
-    def test_computed_cell_determined_by_dependencies(self):
-        reactor = Reactor()
-        inputCell1 = reactor.create_input_cell(1)
-        computeCell1 = reactor.create_compute_cell({inputCell1}, increment)
+        self.assertEqual(callback1.values, [32])
+        self.assertEqual(callback2.values, [32, 42])
+        self.assertEqual(callback3.values, [42])
 
-        self.assertEqual(computeCell1.value, 2)
-        inputCell1.set_value(2)
-        self.assertEqual(computeCell1.value, 3)
+    def test_removing_a_callback_multiple_times(self):
+        """Guard against incorrect implementations which store their
+        callbacks in an array."""
+        input_ = InputCell(1)
+        output = ComputeCell([input_], lambda inputs: inputs[0] + 1)
+        callback1 = Callback()
+        callback2 = Callback()
 
-    def test_compute_cells_determined_by_other_compute_cells(self):
-        reactor = Reactor()
-        inputCell1 = reactor.create_input_cell(1)
-        computeCell1 = reactor.create_compute_cell({inputCell1}, increment)
-        computeCell2 = reactor.create_compute_cell({inputCell1}, decrement)
-        computeCell3 = reactor.create_compute_cell({computeCell1,
-                                                    computeCell2},
-                                                   product)
-        self.assertEqual(computeCell3.value, 0)
-        inputCell1.set_value(3)
-        self.assertEqual(computeCell3.value, 8)
+        output.add_callback(callback1)
+        output.add_callback(callback2)
+        output.remove_callback(callback1)
+        output.remove_callback(callback1)
+        output.remove_callback(callback1)
+        input_.value = 2
 
-    def test_compute_cells_can_have_callbacks(self):
-        reactor = Reactor()
-        inputCell1 = reactor.create_input_cell(1)
-        computeCell1 = reactor.create_compute_cell({inputCell1}, increment)
-        observed = []
-        computeCell1.add_watcher(lambda sender, value: observed.append(value))
-        self.assertEqual(observed, [])
-        inputCell1.set_value(2)
-        self.assertEqual(observed, [3])
+        self.assertEqual(callback1.values, [])
+        self.assertEqual(callback2.values, [3])
 
-    def test_callbacks__only_trigger_on_change(self):
-        reactor = Reactor()
-        inputCell1 = reactor.create_input_cell(1)
-        computeCell1 = reactor.create_compute_cell({inputCell1}, minimum_of_2)
+    def test_callbacks_should_only_be_called_once(self):
+        """Guard against incorrect implementations which call a callback
+        function multiple times when multiple dependencies change."""
+        input_ = InputCell(1)
+        plus_one = ComputeCell([input_], lambda inputs: inputs[0] + 1)
+        minus_one1 = ComputeCell([input_], lambda inputs: inputs[0] - 1)
+        minus_one2 = ComputeCell([minus_one1], lambda inputs: inputs[0] - 1)
+        output = ComputeCell(
+            [plus_one, minus_one2],
+            lambda inputs: inputs[0] * inputs[1]
+        )
+        callback1 = Callback()
 
-        CallbackManager.reset()
-        computeCell1.add_watcher(CallbackManager.count)
+        output.add_callback(callback1)
+        input_.value = 4
+        self.assertEqual(callback1.values, [10])
 
-        inputCell1.set_value(1)
-        self.assertEqual(CallbackManager.counter, 0)
-        inputCell1.set_value(2)
-        self.assertEqual(CallbackManager.counter, 0)
-        inputCell1.set_value(3)
-        self.assertEqual(CallbackManager.counter, 1)
+    def test_callbacks_not_called_so_long_as_output_not_changed(self):
+        """Guard against incorrect implementations which call callbacks
+        if dependencies change but output value doesn't change."""
+        input_ = InputCell(1)
+        plus_one = ComputeCell([input_], lambda inputs: inputs[0] + 1)
+        minus_one = ComputeCell([input_], lambda inputs: inputs[0] - 1)
+        always_two = ComputeCell(
+            [plus_one, minus_one],
+            lambda inputs: inputs[0] - inputs[1]
+        )
+        callback1 = Callback()
 
-    def test_callbacks_can_be_removed(self):
-        reactor = Reactor()
-        inputCell1 = reactor.create_input_cell(1)
-        computeCell1 = reactor.create_compute_cell({inputCell1}, increment)
-
-        CallbackManager.reset()
-        computeCell1.add_watcher(CallbackManager.observe1)
-        computeCell1.add_watcher(CallbackManager.observe2)
-
-        inputCell1.set_value(2)
-        self.assertEqual(CallbackManager.observed1, [3])
-        self.assertEqual(CallbackManager.observed2, [3])
-
-        computeCell1.remove_watcher(CallbackManager.observe1)
-        inputCell1.set_value(3)
-        self.assertEqual(CallbackManager.observed1, [3])
-        self.assertEqual(CallbackManager.observed2, [3, 4])
-
-    def test_callbacks_only_called_once(self):
-        reactor = Reactor()
-        inputCell1 = reactor.create_input_cell(1)
-        computeCell1 = reactor.create_compute_cell({inputCell1}, increment)
-        computeCell2 = reactor.create_compute_cell({inputCell1}, decrement)
-        computeCell3 = reactor.create_compute_cell({computeCell2}, decrement)
-        computeCell4 = reactor.create_compute_cell({computeCell1,
-                                                    computeCell3},
-                                                   product)
-
-        CallbackManager.reset()
-        computeCell4.add_watcher(CallbackManager.count)
-
-        inputCell1.set_value(3)
-        self.assertEqual(CallbackManager.counter, 1)
+        always_two.add_callback(callback1)
+        input_.value = 2
+        input_.value = 3
+        input_.value = 4
+        input_.value = 5
+        self.assertEqual(callback1.values, [])
 
 
 if __name__ == '__main__':
