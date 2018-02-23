@@ -74,16 +74,33 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests run the command `python -m pytest rail_fence_cipher_test.py`
-(`py.test rail_fence_cipher_test.py` for Python 2; `pytest <exercise>_test.py` for Python 3). Or run it with
-`-v` to be more verbose like this: `pytest rail_fence_cipher_test.py`. Using the
-`-x` flag will cause the test to fail at the first failure instead of it
-trying all cases before exiting.
+To run the tests, run the appropriate command below:
 
-To run this exercises's tests for example, run this command:
-```
-python -m pytest rail_fence_cipher_test.py -v
-```
+| Python Version | Command |
+| --- | --- |
+| 2.7 | `py.test rail_fence_cipher_test.py` |
+| 3.3+ | `pytest rail_fence_cipher_test.py` |
+| 2.7, 3.3+ | `python -m pytest rail_fence_cipher_test.py` |
+
+<table>
+    <tr>
+        <td colspan="2"><strong>Common pytest options</strong></td>
+    </tr>
+    <tr>
+        <td>-v</td>
+        <td>enable verbose output</td>
+    </tr>
+    <tr>
+        <td>-x</td>
+        <td>stop running tests on first failure</td>
+    </tr>
+    <tr>
+        <td>--ff</td>
+        <td>run failures from previous test before running other tests</td>
+    </tr>
+</table>
+
+For other options, see `python -m pytest -h`
 
 ## Submitting Exercises
 
