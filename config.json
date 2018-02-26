@@ -230,7 +230,8 @@
       "topics": [
         "classes",
         "mathematics",
-        "bitwise_operations"
+        "bitwise_operations",
+        "enumerations"
       ]
     },
     {
@@ -271,7 +272,8 @@
         "algorithms",
         "conditionals",
         "lists",
-        "loops"
+        "loops",
+        "mathematics"
       ]
     },
     {
@@ -1130,7 +1132,8 @@
       "unlocked_by": "sum-of-multiples",
       "difficulty": 1,
       "topics": [
-        "loops"
+        "loops",
+        "mathematics"
       ]
     },
     {
@@ -1142,8 +1145,8 @@
       "topics": [
         "parsing",
         "tuples",
-        "optional_values",
-        "classes"
+        "classes",
+        "control-flow"
       ]
     },
     {
@@ -1154,7 +1157,8 @@
       "difficulty": 6,
       "topics": [
         "tuples",
-        "mathematics"
+        "mathematics",
+        "equality"
       ]
     },
     {
@@ -1176,7 +1180,8 @@
       "topics": [
         "algorithms",
         "loops",
-        "conditionals"
+        "conditionals",
+        "control-flow"
       ]
     },
     {
@@ -1186,7 +1191,8 @@
       "unlocked_by": null,
       "difficulty": 3,
       "topics": [
-        "refactoring"
+        "refactoring",
+        "text_formatting"
       ]
     },
     {
@@ -1267,6 +1273,7 @@
       "topics": [
         "events",
         "reactive_programming",
+        "callbacks"
       ]
     },
     {
