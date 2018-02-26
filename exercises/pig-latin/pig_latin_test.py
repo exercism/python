@@ -3,7 +3,7 @@ import unittest
 from pig_latin import translate
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class PigLatinTests(unittest.TestCase):
     def test_word_beginning_with_a(self):

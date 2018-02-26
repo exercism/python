@@ -1,3 +1,3 @@
 class Scale(object):
-    def __init__(self, tonic, scale_name, pattern=None):
-        pass
+    def __init__(self, tonic, intervals=None):
+        self.pitches = None

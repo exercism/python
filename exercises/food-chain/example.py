@@ -43,3 +43,12 @@ def chain():
         song += verse
 
     return song
+
+
+def verses(letter):
+    return letter.replace('die.', 'die.slice').split('slice')
+
+
+def recite(start_verse, end_verse):
+    generated = [verse.replace("\n", "") for verse in verses(chain())]
+    return generated[start_verse-1:end_verse]

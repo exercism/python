@@ -3,7 +3,7 @@ import unittest
 from forth import evaluate, StackUnderflowError
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.5.0
 # Tests for case-insensitivity are track-specific
 
 class ForthParsingTest(unittest.TestCase):
