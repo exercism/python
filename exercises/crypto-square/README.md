@@ -45,11 +45,10 @@ The message above is coded as:
 imtgdvsfearwermayoogoanouuiontnnlvtwttddesaohghnsseoau
 ```
 
-Output the encoded text in chunks.  Phrases that fill perfect rectangles
-`(r X c)` should be output `c` chunks of `r` length, separated by spaces.
-Phrases that do not fill perfect rectangles will have `n` empty spaces.
-Those spaces should be distributed evenly, added to the end of the last
-`n` chunks.
+Output the encoded text in chunks that fill perfect rectangles `(r X c)`,
+with `c` chunks of `r` length, separated by spaces. For phrases that are
+`n` characters short of the perfect rectangle, pad each of the last `n`
+chunks with a single trailing space.
 
 ```text
 imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau 
@@ -77,11 +76,29 @@ every exercise will require you to raise an exception, but for those that do, th
 a message.
 
 To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
-`raise Exception`, you shold write:
+`raise Exception`, you should write:
 
 ```python
 raise Exception("Meaningful message indicating the source of the error")
 ```
+
+## Running the tests
+
+To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+
+- Python 2.7: `py.test crypto_square_test.py`
+- Python 3.3+: `pytest crypto_square_test.py`
+
+Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+`python -m pytest crypto_square_test.py`
+
+### Common `pytest` options
+
+- `-v` : enable verbose output
+- `-x` : stop running tests on first failure
+- `--ff` : run failures from previous test before running other test cases
+
+For other options, see `python -m pytest -h`
 
 ## Submitting Exercises
 
@@ -97,4 +114,5 @@ please see the [help page](http://exercism.io/languages/python).
 J Dalbey's Programming Practice problems [http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html](http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

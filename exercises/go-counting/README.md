@@ -11,6 +11,8 @@ Write a function that determines the territory of each player. You may
 assume that any stones that have been stranded in enemy territory have
 already been taken off the board.
 
+Write a function that determines the territory which includes a specified coordinate.
+
 Multiple empty intersections may be encircled at once and for encircling
 only horizontal and vertical neighbours count. In the following diagram
 the stones which matter are marked "O" and the stones that don't are
@@ -41,11 +43,29 @@ every exercise will require you to raise an exception, but for those that do, th
 a message.
 
 To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
-`raise Exception`, you shold write:
+`raise Exception`, you should write:
 
 ```python
 raise Exception("Meaningful message indicating the source of the error")
 ```
+
+## Running the tests
+
+To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+
+- Python 2.7: `py.test go_counting_test.py`
+- Python 3.3+: `pytest go_counting_test.py`
+
+Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+`python -m pytest go_counting_test.py`
+
+### Common `pytest` options
+
+- `-v` : enable verbose output
+- `-x` : stop running tests on first failure
+- `--ff` : run failures from previous test before running other test cases
+
+For other options, see `python -m pytest -h`
 
 ## Submitting Exercises
 
@@ -57,4 +77,5 @@ For more detailed information about running tests, code style and linting,
 please see the [help page](http://exercism.io/languages/python).
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

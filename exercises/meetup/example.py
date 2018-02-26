@@ -14,4 +14,13 @@ def _choice(which):
         return lambda dates: next(d for d in dates if 13 <= d.day <= 19)
 
     ix = -1 if (which == 'last') else (int(which[0]) - 1)
-    return lambda dates: dates[ix]
+
+    def _func(dates):
+        if ix < len(dates):
+            return dates[ix]
+        raise MeetupDayException('day does not exist')
+    return _func
+
+
+class MeetupDayException(Exception):
+    pass

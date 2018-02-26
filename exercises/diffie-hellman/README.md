@@ -62,11 +62,29 @@ every exercise will require you to raise an exception, but for those that do, th
 a message.
 
 To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
-`raise Exception`, you shold write:
+`raise Exception`, you should write:
 
 ```python
 raise Exception("Meaningful message indicating the source of the error")
 ```
+
+## Running the tests
+
+To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+
+- Python 2.7: `py.test diffie_hellman_test.py`
+- Python 3.3+: `pytest diffie_hellman_test.py`
+
+Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+`python -m pytest diffie_hellman_test.py`
+
+### Common `pytest` options
+
+- `-v` : enable verbose output
+- `-x` : stop running tests on first failure
+- `--ff` : run failures from previous test before running other test cases
+
+For other options, see `python -m pytest -h`
 
 ## Submitting Exercises
 
@@ -82,4 +100,5 @@ please see the [help page](http://exercism.io/languages/python).
 Wikipedia, 1024 bit key from www.cryptopp.com/wiki. [http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange](http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

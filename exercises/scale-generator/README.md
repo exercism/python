@@ -4,13 +4,13 @@ Given a tonic, or starting note, and a set of intervals, generate
 the musical scale starting with the tonic and following the
 specified interval pattern.
 
-Scales in Western music are based on the chromatic (12-note) scale.This
+Scales in Western music are based on the chromatic (12-note) scale. This
 scale can be expressed as the following group of pitches:
 
 A, A#, B, C, C#, D, D#, E, F, F#, G, G#
 
-A given sharp note (indicated by a #), can also be expressed as the flat
-of the note above it (indicated by a b), so the chromatic scale can also be
+A given sharp note (indicated by a #) can also be expressed as the flat
+of the note above it (indicated by a b) so the chromatic scale can also be
 written like this:
 
 A, Bb, B, C, Db, D, Eb, E, F, Gb, G, Ab
@@ -20,9 +20,9 @@ collection. They have seven pitches, and are called diatonic scales.
 The collection of notes in these scales is written with either sharps or
 flats, depending on the tonic. Here is a list of which are which:
 
-No Accidentals:
+No Sharps or Flats:
 C major
-A minor
+a minor
 
 Use Sharps:
 G, D, A, E, B, F# major
@@ -43,17 +43,10 @@ a "whole step" or "major second" (written as an upper-case "M"). The
 diatonic scales are built using only these two intervals between
 adjacent notes.
 
-Non-diatonic scales can contain the same letter twice, and can contain other intervals.
-Sometimes they may be smaller than usual (diminished, written "D"), or larger
-(augmented, written "A").  Intervals larger than an augmented second have other names.
-
-Here is a table of pitches with the names of their interval distance from the tonic (A).
-
-|   A    |    A#   |    B    |    C    |    C#   |    D    |    D#   |    E    |    F    |    F#   |    G    |    G#   |    A   |
-|:------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:------:|
-| Unison | Min 2nd | Maj 2nd | Min 3rd | Maj 3rd | Per 4th | Tritone | Per 5th | Min 6th | Maj 6th | Min 7th | Maj 7th | Octave |
-|        |         | Dim 3rd | Aug 2nd | Dim 4th |         | Aug 4th | Dim 5th | Aug 5th | Dim 7th | Aug 6th | Dim 8ve |        |
-|        |         |         |         |         |         | Dim 5th |         |         |         |         |         |        |
+Non-diatonic scales can contain other intervals.  An "augmented first"
+interval, written "A", has two interceding notes (e.g., from A to C or
+Db to E). There are also smaller and larger intervals, but they will not
+figure into this exercise.
 
 ## Exception messages
 
@@ -63,11 +56,29 @@ every exercise will require you to raise an exception, but for those that do, th
 a message.
 
 To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
-`raise Exception`, you shold write:
+`raise Exception`, you should write:
 
 ```python
 raise Exception("Meaningful message indicating the source of the error")
 ```
+
+## Running the tests
+
+To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+
+- Python 2.7: `py.test scale_generator_test.py`
+- Python 3.3+: `pytest scale_generator_test.py`
+
+Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+`python -m pytest scale_generator_test.py`
+
+### Common `pytest` options
+
+- `-v` : enable verbose output
+- `-x` : stop running tests on first failure
+- `--ff` : run failures from previous test before running other test cases
+
+For other options, see `python -m pytest -h`
 
 ## Submitting Exercises
 
@@ -79,4 +90,5 @@ For more detailed information about running tests, code style and linting,
 please see the [help page](http://exercism.io/languages/python).
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
