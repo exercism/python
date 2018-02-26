@@ -896,8 +896,8 @@
     {
       "uuid": "818c6472-b734-4ff4-8016-ce540141faec",
       "slug": "list-ops",
-      "core": false,
-      "unlocked_by": "grade-school",
+      "core": true,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "variables",
