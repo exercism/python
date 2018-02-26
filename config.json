@@ -945,6 +945,19 @@
       ]
     },
     {
+      "uuid": "1d21cd68-10ac-427d-be6d-77152bceacc4",
+      "slug": "rational-numbers",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "equality",
+        "classes",
+        "floating_point_numbers",
+        "mathematics"
+      ]
+    },
+    {
       "uuid": "a7bc6837-59e4-46a1-89a2-a5aa44f5e66e",
       "slug": "diamond",
       "core": false,
