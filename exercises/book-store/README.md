@@ -81,6 +81,23 @@ To raise a message with an exception, just write it as an argument to the except
 raise Exception("Meaningful message indicating the source of the error")
 ```
 
+## Running the tests
+
+To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+
+- Python 2.7: `py.test book_store_test.py`
+- Python 3.3+: `pytest book_store_test.py`
+
+Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+`python -m pytest book_store_test.py`
+
+### Common pytest options
+- -v : enable verbose output
+- -x : stop running tests on first failure
+- --ff : run failures from previous test before running other test cases
+
+For other options, see `python -m pytest -h`
+
 ## Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/book-store` directory.
