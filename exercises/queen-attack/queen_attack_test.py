@@ -53,10 +53,6 @@ class QueenAttackTest(unittest.TestCase):
         self.assertIs(Queen(2, 2).can_attack(Queen(5, 5)), True)
 
     # Track-specific tests
-    def test_invalid_position_can_attack(self):
-        with self.assertRaisesWithMessage(ValueError):
-            Queen(0, 0).can_attack(Queen(7, 8))
-
     def test_queens_same_position_can_attack(self):
         with self.assertRaisesWithMessage(ValueError):
             Queen(2, 2).can_attack(Queen(2, 2))
