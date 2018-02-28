@@ -65,6 +65,6 @@ class Callback(object):
 
     @property
     def values(self):
-        results = self._values.copy()
-        self._values.clear()
+        results = self._values[:]
+        self._values = []
         return results
