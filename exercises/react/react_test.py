@@ -58,7 +58,7 @@ class ReactTests(unittest.TestCase):
         input_.value = 3
         self.assertEqual(callback1.values, [4])
 
-    def test_callback_cells_only_fire_on_change(self):
+    def test_callbacks_only_fire_on_change(self):
         input_ = InputCell(1)
         output = ComputeCell(
             [input_],
