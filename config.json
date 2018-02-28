@@ -1047,7 +1047,7 @@
       "uuid": "66466141-485c-470d-b73b-0a3d5a957c3d",
       "slug": "alphametics",
       "core": false,
-      "unlocked_by": "etl",
+      "unlocked_by": "book-store",
       "difficulty": 6,
       "topics": [
         "mathematics",
@@ -1210,7 +1210,7 @@
       "uuid": "f229746e-5ea9-4774-b3e0-9b9c2ebf9558",
       "slug": "food-chain",
       "core": false,
-      "unlocked_by": "house",
+      "unlocked_by": "allergies",
       "difficulty": 4,
       "topics": [
         "algorithms",
@@ -1304,7 +1304,7 @@
       "uuid": "b0c7cf95-6470-4c1a-8eaa-6775310926a2",
       "slug": "spiral-matrix",
       "core": false,
-      "unlocked_by": "matrix",
+      "unlocked_by": "saddle-points",
       "difficulty": 2,
       "topics": [
         "algorithms",
