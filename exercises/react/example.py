@@ -65,4 +65,6 @@ class Callback(object):
 
     @property
     def values(self):
-        return self._values
+        results = self._values.copy()
+        self._values.clear()
+        return results

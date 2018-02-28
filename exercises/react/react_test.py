@@ -3,7 +3,7 @@ import unittest
 from react import InputCell, ComputeCell, Callback
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class ReactTests(unittest.TestCase):
     def test_input_cells_have_a_value(self):
@@ -71,6 +71,17 @@ class ReactTests(unittest.TestCase):
         self.assertEqual(callback1.values, [])
         input_.value = 4
         self.assertEqual(callback1.values, [222])
+
+    def test_callbacks_do_not_report_already_reported_values(self):
+        input_ = InputCell(1)
+        output = ComputeCell([input_], lambda inputs: inputs[0] + 1)
+        callback1 = Callback()
+
+        output.add_callback(callback1)
+        input_.value = 2
+        self.assertEqual(callback1.values, [3])
+        input_.value = 3
+        self.assertEqual(callback1.values, [4])
 
     def test_callbacks_can_be_added_and_removed(self):
         input_ = InputCell(11)
