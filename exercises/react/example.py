@@ -1,3 +1,6 @@
+from collections import defaultdict
+
+
 class Cell(object):
     def __init__(self):
         self._watchers = []
@@ -31,6 +34,7 @@ class ComputeCell(Cell):
         self.inputs = inputs
         self.func = compute_function
         self.callbacks = set()
+        self.callback_values = defaultdict(list)
         self.compute()
         self._register_inputs()
 
@@ -46,7 +50,7 @@ class ComputeCell(Cell):
         if new_val != self._value:
             self.value = new_val
             for cb in self.callbacks:
-                cb.add_value(new_val)
+                self.callback_values[cb].append(cb(new_val))
 
     def add_callback(self, callback):
         self.callbacks.add(callback)
@@ -55,16 +59,7 @@ class ComputeCell(Cell):
         if callback in self.callbacks:
             self.callbacks.remove(callback)
 
-
-class Callback(object):
-    def __init__(self):
-        self._values = []
-
-    def add_value(self, value):
-        self._values.append(value)
-
-    @property
-    def values(self):
-        results = self._values[:]
-        self._values = []
+    def expect_callback_values(self, callback):
+        results = self.callback_values[callback]
+        del self.callback_values[callback]
         return results

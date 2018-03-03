@@ -13,7 +13,5 @@ class ComputeCell(object):
     def remove_callback(self, callback):
         pass
 
-
-class Callback(object):
-    def __init__(self):
-        self.values = None
+    def expect_callback_values(self, callback):
+        pass
