@@ -72,7 +72,7 @@ every exercise will require you to raise an exception, but for those that do, th
 a message.
 
 To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
-`raise Exception`, you shold write:
+`raise Exception`, you should write:
 
 ```python
 raise Exception("Meaningful message indicating the source of the error")
@@ -88,10 +88,11 @@ To run the tests, run the appropriate command below ([why they are different](ht
 Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
 `python -m pytest grep_test.py`
 
-### Common pytest options
-- -v : enable verbose output
-- -x : stop running tests on first failure
-- --ff : run failures from previous test before running other test cases
+### Common `pytest` options
+
+- `-v` : enable verbose output
+- `-x` : stop running tests on first failure
+- `--ff` : run failures from previous test before running other test cases
 
 For other options, see `python -m pytest -h`
 
@@ -109,4 +110,5 @@ please see the [help page](http://exercism.io/languages/python).
 Conversation with Nate Foster. [http://www.cs.cornell.edu/Courses/cs3110/2014sp/hw/0/ps0.pdf](http://www.cs.cornell.edu/Courses/cs3110/2014sp/hw/0/ps0.pdf)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

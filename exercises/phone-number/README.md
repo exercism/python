@@ -36,7 +36,7 @@ every exercise will require you to raise an exception, but for those that do, th
 a message.
 
 To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
-`raise Exception`, you shold write:
+`raise Exception`, you should write:
 
 ```python
 raise Exception("Meaningful message indicating the source of the error")
@@ -52,10 +52,11 @@ To run the tests, run the appropriate command below ([why they are different](ht
 Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
 `python -m pytest phone_number_test.py`
 
-### Common pytest options
-- -v : enable verbose output
-- -x : stop running tests on first failure
-- --ff : run failures from previous test before running other test cases
+### Common `pytest` options
+
+- `-v` : enable verbose output
+- `-x` : stop running tests on first failure
+- `--ff` : run failures from previous test before running other test cases
 
 For other options, see `python -m pytest -h`
 
@@ -73,4 +74,5 @@ please see the [help page](http://exercism.io/languages/python).
 Event Manager by JumpstartLab [http://tutorials.jumpstartlab.com/projects/eventmanager.html](http://tutorials.jumpstartlab.com/projects/eventmanager.html)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
