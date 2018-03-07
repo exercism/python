@@ -17,7 +17,7 @@ class SgfTree(object):
         if len(self.children) != len(other.children):
             return False
         for a, b in zip(self.children, other.children):
-            if a != b:
+            if not (a == b):
                 return False
         return True
 
