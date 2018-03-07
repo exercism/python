@@ -1,6 +1,6 @@
 import unittest
 
-from example import parse, SgfTree
+from sgf_parsing import parse, SgfTree
 
 
 class SgfParsingTest(unittest.TestCase):
