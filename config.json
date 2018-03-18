@@ -1284,6 +1284,18 @@
       ]
     },
     {
+      "uuid": "adad6be5-855d-4d61-b14a-22e468ba5b44",
+      "slug": "hangman",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics":[
+        "events",
+        "reactive_programming",
+        "strings"
+      ]
+    },
+    {
         "uuid": "bb07c236-062c-2980-483a-a221e4724445dcd6f32",
         "slug": "custom-set",
         "core": false,
