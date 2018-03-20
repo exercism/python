@@ -22,6 +22,9 @@ class RNATranscriptionTests(unittest.TestCase):
     def test_transcribes_all_occurrences(self):
         self.assertEqual(to_rna('ACGTGGTCTTAA'), 'UGCACCAGAAUU')
 
+    def test_raises_valueerror(self):
+        self.assertRaises(ValueError, to_rna, 'BBB')
+
 
 if __name__ == '__main__':
     unittest.main()
