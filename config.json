@@ -1313,6 +1313,29 @@
       ]
     },
     {
+      "uuid": "0d6325d1-c0a3-456e-9a92-cea0559e82ed",
+      "slug": "sgf-parsing",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 7,
+      "topics": [
+        "parsing",
+        "trees"
+      ]
+    },
+    {
+      "uuid": "83a3ff95-c043-401c-bc2c-547d52344b02",
+      "slug": "bank-account",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "classes",
+        "concurrency",
+        "conditionals"
+      ]
+    },
+    {
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "slug": "accumulate",
       "deprecated": true
@@ -1372,5 +1395,8 @@
       "slug": "parallel-letter-frequency",
       "deprecated": true
     }
+  ],
+  "foregone": [
+    "lens-person"
   ]
 }
