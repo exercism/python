@@ -957,6 +957,19 @@
       ]
     },
     {
+      "uuid": "1d21cd68-10ac-427d-be6d-77152bceacc4",
+      "slug": "rational-numbers",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "equality",
+        "classes",
+        "floating_point_numbers",
+        "mathematics"
+      ]
+    },
+    {
       "uuid": "a7bc6837-59e4-46a1-89a2-a5aa44f5e66e",
       "slug": "diamond",
       "core": false,
@@ -1305,6 +1318,17 @@
         ]
     },
     {
+        "uuid": "0d6325d1-c0a3-456e-9a92-cea0559e82ed",
+        "slug": "sgf-parsing",
+        "core": false,
+        "unlocked_by": null,
+        "difficulty": 7,
+        "topics": [
+          "parsing",
+          "trees"
+        ]
+    },
+    {
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "slug": "accumulate",
       "deprecated": true
@@ -1364,5 +1388,8 @@
       "slug": "parallel-letter-frequency",
       "deprecated": true
     }
+  ],
+  "foregone": [
+    "lens-person"
   ]
 }

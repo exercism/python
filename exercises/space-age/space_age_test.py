@@ -3,7 +3,7 @@ import unittest
 from space_age import SpaceAge
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class SpaceAgeTest(unittest.TestCase):
 
