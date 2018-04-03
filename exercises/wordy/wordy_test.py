@@ -3,7 +3,7 @@ import unittest
 from wordy import calculate
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class WordyTest(unittest.TestCase):
     def test_addition(self):
@@ -71,9 +71,9 @@ class WordyTest(unittest.TestCase):
     # Utility functions
     def setUp(self):
         try:
-            self.assertRaisesRegex = self.assertRaisesRegexp
+            self.assertRaisesRegex
         except AttributeError:
-            pass
+            self.assertRaisesRegex = self.assertRaisesRegexp
 
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")

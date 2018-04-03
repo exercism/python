@@ -81,6 +81,20 @@
       ]
     },
     {
+      "uuid": "7961c852-c87a-44b0-b152-efea3ac8555c",
+      "slug": "isbn-verifier",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "type_conversion",
+        "conditionals",
+        "strings",
+        "integers",
+        "parsing"
+      ]
+    },
+    {
       "uuid": "8648fa0c-d85f-471b-a3ae-0f8c05222c89",
       "slug": "hamming",
       "core": false,
@@ -653,6 +667,18 @@
       ]
     },
     {
+      "uuid": "83a3ff95-c043-401c-bc2c-547d52344b02",
+      "slug": "bank-account",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "classes",
+        "concurrency",
+        "conditionals"
+      ]
+    },
+    {
       "uuid": "d41238ce-359c-4a9a-81ea-ca5d2c4bb50d",
       "slug": "twelve-days",
       "core": false,
@@ -931,6 +957,19 @@
       ]
     },
     {
+      "uuid": "1d21cd68-10ac-427d-be6d-77152bceacc4",
+      "slug": "rational-numbers",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "equality",
+        "classes",
+        "floating_point_numbers",
+        "mathematics"
+      ]
+    },
+    {
       "uuid": "a7bc6837-59e4-46a1-89a2-a5aa44f5e66e",
       "slug": "diamond",
       "core": false,
@@ -989,6 +1028,18 @@
         "files",
         "text_formatting",
         "searching"
+      ]
+    },
+    {
+      "uuid": "ca970fee-71b4-41e1-a5c3-b23bf574eb33",
+      "slug": "bowling",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "classes",
+        "exception_handling",
+        "logic"
       ]
     },
     {
@@ -1245,6 +1296,39 @@
       ]
     },
     {
+        "uuid": "bb07c236-062c-2980-483a-a221e4724445dcd6f32",
+        "slug": "custom-set",
+        "core": false,
+        "unlocked_by": null,
+        "difficulty": 5,
+        "topics": [
+            "sets"
+        ]
+    },
+    {
+        "uuid": "b0c7cf95-6470-4c1a-8eaa-6775310926a2",
+        "slug": "spiral-matrix",
+        "core": false,
+        "unlocked_by": null,
+        "difficulty": 2,
+        "topics": [
+            "algorithms",
+            "control-flow",
+            "lists"
+        ]
+    },
+    {
+        "uuid": "0d6325d1-c0a3-456e-9a92-cea0559e82ed",
+        "slug": "sgf-parsing",
+        "core": false,
+        "unlocked_by": null,
+        "difficulty": 7,
+        "topics": [
+          "parsing",
+          "trees"
+        ]
+    },
+    {
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "slug": "accumulate",
       "deprecated": true
@@ -1304,5 +1388,8 @@
       "slug": "parallel-letter-frequency",
       "deprecated": true
     }
+  ],
+  "foregone": [
+    "lens-person"
   ]
 }

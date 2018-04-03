@@ -11,7 +11,7 @@ import unittest
 from minesweeper import board
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class MinesweeperTest(unittest.TestCase):
 
@@ -150,9 +150,9 @@ class MinesweeperTest(unittest.TestCase):
     # Utility functions
     def setUp(self):
         try:
-            self.assertRaisesRegex = self.assertRaisesRegexp
+            self.assertRaisesRegex
         except AttributeError:
-            pass
+            self.assertRaisesRegex = self.assertRaisesRegexp
 
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")

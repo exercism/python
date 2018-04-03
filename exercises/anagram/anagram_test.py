@@ -3,19 +3,12 @@ import unittest
 from anagram import detect_anagrams
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class AnagramTests(unittest.TestCase):
     def test_no_matches(self):
         candidates = ["hello", "world", "zombies", "pants"]
         self.assertEqual(detect_anagrams("diaper", candidates), [])
-
-    def test_detects_simple_anagram(self):
-        candidates = ["tan", "stand", "at"]
-        self.assertEqual(detect_anagrams("ant", candidates), ["tan"])
-
-    def test_does_not_detect_false_positives(self):
-        self.assertEqual(detect_anagrams("galea", ["eagle"]), [])
 
     def test_detects_two_anagrams(self):
         candidates = ["stream", "pigeon", "maters"]
@@ -37,10 +30,6 @@ class AnagramTests(unittest.TestCase):
             detect_anagrams("allergy", candidates),
             ["gallery", "regally", "largely"])
 
-    def test_does_not_detect_identical_words(self):
-        candidates = ["corn", "dark", "Corn", "rank", "CORN", "cron", "park"]
-        self.assertEqual(detect_anagrams("corn", candidates), ["cron"])
-
     def test_does_not_detect_non_anagrams_with_identical_checksum(self):
         self.assertEqual(detect_anagrams("mass", ["last"]), [])
 
@@ -49,7 +38,7 @@ class AnagramTests(unittest.TestCase):
         self.assertEqual(
             detect_anagrams("Orchestra", candidates), ["Carthorse"])
 
-    def test_detects_anagrams_using_case_insensitive_subjec(self):
+    def test_detects_anagrams_using_case_insensitive_subject(self):
         candidates = ["cashregister", "carthorse", "radishes"]
         self.assertEqual(
             detect_anagrams("Orchestra", candidates), ["carthorse"])
@@ -58,9 +47,6 @@ class AnagramTests(unittest.TestCase):
         candidates = ["cashregister", "Carthorse", "radishes"]
         self.assertEqual(
             detect_anagrams("orchestra", candidates), ["Carthorse"])
-
-    def test_does_not_detect_a_word_as_its_own_anagram(self):
-        self.assertEqual(detect_anagrams("banana", ["Banana"]), [])
 
     def test_does_not_detect_a_anagram_if_the_original_word_is_repeated(self):
         self.assertEqual(detect_anagrams("go", ["go Go GO"]), [])

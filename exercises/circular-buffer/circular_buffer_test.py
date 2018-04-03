@@ -7,7 +7,7 @@ from circular_buffer import (
 )
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class CircularBufferTest(unittest.TestCase):
     def test_read_empty_buffer(self):
@@ -34,7 +34,7 @@ class CircularBufferTest(unittest.TestCase):
         self.assertEqual(buf.read(), '1')
         self.assertEqual(buf.read(), '2')
 
-    def test_full_buffer_cant_written(self):
+    def test_cant_write_to_full_buffer(self):
         buf = CircularBuffer(1)
         buf.write('1')
         with self.assertRaisesWithMessage(BufferFullException):
@@ -70,7 +70,7 @@ class CircularBufferTest(unittest.TestCase):
         buf.write('2')
         self.assertEqual(buf.read(), '2')
 
-    def test_clear_does_nothin_empty_buffer(self):
+    def test_clear_does_nothing_on_empty_buffer(self):
         buf = CircularBuffer(1)
         buf.clear()
         buf.write('1')
@@ -91,14 +91,7 @@ class CircularBufferTest(unittest.TestCase):
         self.assertEqual(buf.read(), '2')
         self.assertEqual(buf.read(), '3')
 
-    def test_write_full_buffer(self):
-        buf = CircularBuffer(2)
-        buf.write('1')
-        buf.write('2')
-        with self.assertRaisesWithMessage(BufferFullException):
-            buf.write('A')
-
-    def test_over_write_replaces_oldest_remaning_item(self):
+    def test_overwrite_replaces_oldest_remaining_item(self):
         buf = CircularBuffer(3)
         buf.write('1')
         buf.write('2')
@@ -113,9 +106,9 @@ class CircularBufferTest(unittest.TestCase):
     # Utility functions
     def setUp(self):
         try:
-            self.assertRaisesRegex = self.assertRaisesRegexp
+            self.assertRaisesRegex
         except AttributeError:
-            pass
+            self.assertRaisesRegex = self.assertRaisesRegexp
 
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")

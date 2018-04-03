@@ -13,18 +13,35 @@ every exercise will require you to raise an exception, but for those that do, th
 a message.
 
 To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
-`raise Exception`, you shold write:
+`raise Exception`, you should write:
 
 ```python
 raise Exception("Meaningful message indicating the source of the error")
 ```
 
+## Running the tests
+
+To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+
+- Python 2.7: `py.test poker_test.py`
+- Python 3.3+: `pytest poker_test.py`
+
+Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+`python -m pytest poker_test.py`
+
+### Common `pytest` options
+
+- `-v` : enable verbose output
+- `-x` : stop running tests on first failure
+- `--ff` : run failures from previous test before running other test cases
+
+For other options, see `python -m pytest -h`
 
 ## Submitting Exercises
 
-Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
+Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/poker` directory.
 
-For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
+You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Workspace`.
 
 For more detailed information about running tests, code style and linting,
 please see the [help page](http://exercism.io/languages/python).
@@ -34,4 +51,5 @@ please see the [help page](http://exercism.io/languages/python).
 Inspired by the training course from Udacity. [https://www.udacity.com/course/viewer#!/c-cs212/](https://www.udacity.com/course/viewer#!/c-cs212/)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

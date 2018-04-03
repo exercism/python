@@ -3,7 +3,7 @@ import unittest
 import hamming
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.0.1
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.1.0
 
 class HammingTest(unittest.TestCase):
 
@@ -57,9 +57,9 @@ class HammingTest(unittest.TestCase):
     # Utility functions
     def setUp(self):
         try:
-            self.assertRaisesRegex = self.assertRaisesRegexp
+            self.assertRaisesRegex
         except AttributeError:
-            pass
+            self.assertRaisesRegex = self.assertRaisesRegexp
 
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")

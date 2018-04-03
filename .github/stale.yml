@@ -9,6 +9,7 @@ exemptLabels:
   - epic
   - enhancement
   - beginner friendly
+  - awaiting review
 # Label to use when marking an issue as stale
 staleLabel: abandoned
 # Comment to post when marking an issue as stale. Set to `false` to disable

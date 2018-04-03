@@ -3,7 +3,7 @@ import unittest
 from phone_number import Phone
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
 
 class PhoneTest(unittest.TestCase):
     def test_cleans_number(self):
@@ -46,13 +46,21 @@ class PhoneTest(unittest.TestCase):
         with self.assertRaisesWithMessage(ValueError):
             Phone("123-@:!-7890")
 
-    def test_invalid_when_area_code_does_start_with_1(self):
+    def test_invalid_if_area_code_starts_with_0(self):
+        with self.assertRaisesWithMessage(ValueError):
+            Phone("(023) 456-7890")
+
+    def test_invalid_if_area_code_starts_with_1(self):
         with self.assertRaisesWithMessage(ValueError):
             Phone("(123) 456-7890")
 
-    def test_invalid_when_exchange_code_does_start_with_1(self):
+    def test_invalid_if_exchange_code_starts_with_0(self):
         with self.assertRaisesWithMessage(ValueError):
             Phone("(223) 056-7890")
+
+    def test_invalid_if_exchange_code_starts_with_1(self):
+        with self.assertRaisesWithMessage(ValueError):
+            Phone("(223) 156-7890")
 
     # Track specific tests
     def test_area_code(self):
@@ -70,9 +78,9 @@ class PhoneTest(unittest.TestCase):
     # Utility functions
     def setUp(self):
         try:
-            self.assertRaisesRegex = self.assertRaisesRegexp
+            self.assertRaisesRegex
         except AttributeError:
-            pass
+            self.assertRaisesRegex = self.assertRaisesRegexp
 
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
