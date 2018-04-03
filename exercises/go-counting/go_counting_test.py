@@ -2,90 +2,97 @@ import unittest
 import go_counting
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
-board5x5 = "\n".join([
+board5x5 = [
     "  B  ",
     " B B ",
     "B W B",
     " W W ",
     "  W  "
-])
-
-board9x9 = "\n".join([
-    "  B   B  ",
-    "B   B   B",
-    "WBBBWBBBW",
-    "W W W W W",
-    "         ",
-    " W W W W ",
-    "B B   B B",
-    " W BBB W ",
-    "   B B   "
-])
+]
 
 
 class GoCountingTest(unittest.TestCase):
-    def test_5x5_for_black(self):
+    def test_black_corner_territory_on_5x5_board(self):
         board = go_counting.Board(board5x5)
-        stone, territory = board.territoryFor((0, 1))
+        stone, territory = board.territory(x=0, y=1)
         self.assertEqual(stone, go_counting.BLACK)
-        self.assertEqual(territory, set([(0, 0), (0, 1), (1, 0)]))
+        self.assertSetEqual(territory, {(0, 0), (0, 1), (1, 0)})
 
-    def test_5x5_for_white(self):
+    def test_white_center_territory_on_5x5_board(self):
         board = go_counting.Board(board5x5)
-        stone, territory = board.territoryFor((2, 3))
+        stone, territory = board.territory(x=2, y=3)
         self.assertEqual(stone, go_counting.WHITE)
-        self.assertEqual(territory, set([(2, 3)]))
+        self.assertSetEqual(territory, {(2, 3)})
 
-    def test_5x5_for_open_territory(self):
+    def test_open_corner_territory_on_5x5_board(self):
         board = go_counting.Board(board5x5)
-        stone, territory = board.territoryFor((1, 4))
+        stone, territory = board.territory(x=1, y=4)
         self.assertEqual(stone, go_counting.NONE)
-        self.assertEqual(territory, set([(0, 3), (0, 4), (1, 4)]))
+        self.assertSetEqual(territory, {(0, 3), (0, 4), (1, 4)})
 
-    def test_5x5_for_non_territory(self):
+    def test_a_stone_and_not_a_territory_on_5x5_board(self):
         board = go_counting.Board(board5x5)
-        stone, territory = board.territoryFor((1, 1))
+        stone, territory = board.territory(x=1, y=1)
         self.assertEqual(stone, go_counting.NONE)
-        self.assertEqual(territory, set())
+        self.assertSetEqual(territory, set())
 
-    def test_5x5_for_valid_coordinate(self):
+    def test_invalid_because_x_is_too_low(self):
         board = go_counting.Board(board5x5)
-        stone, territory = board.territoryFor((-1, 1))
-        self.assertEqual(stone, go_counting.NONE)
-        self.assertEqual(territory, set())
+        with self.assertRaisesWithMessage(ValueError):
+            board.territory(x=-1, y=1)
 
-    def test_5x5_for_valid_coordinate2(self):
+    def test_invalid_because_x_is_too_high(self):
         board = go_counting.Board(board5x5)
-        stone, territory = board.territoryFor((1, 5))
-        self.assertEqual(stone, go_counting.NONE)
-        self.assertEqual(territory, set())
+        with self.assertRaisesWithMessage(ValueError):
+            board.territory(x=5, y=1)
 
-    def test_one_territory_whole_board(self):
-        board = go_counting.Board(" ")
+    def test_invalid_because_y_is_too_low(self):
+        board = go_counting.Board(board5x5)
+        with self.assertRaisesWithMessage(ValueError):
+            board.territory(x=1, y=-1)
+
+    def test_invalid_because_y_is_too_high(self):
+        board = go_counting.Board(board5x5)
+        with self.assertRaisesWithMessage(ValueError):
+            board.territory(x=1, y=5)
+
+    def test_one_territory_is_the_whole_board(self):
+        board = go_counting.Board([" "])
         territories = board.territories()
-        self.assertEqual(territories[go_counting.BLACK], set())
-        self.assertEqual(territories[go_counting.WHITE], set())
-        self.assertEqual(territories[go_counting.NONE], set([(0, 0)]))
+        self.assertSetEqual(territories[go_counting.BLACK], set())
+        self.assertSetEqual(territories[go_counting.WHITE], set())
+        self.assertSetEqual(territories[go_counting.NONE], {(0, 0)})
 
     def test_two_territories_rectangular_board(self):
-        input_board = "\n".join([
+        input_board = [
             " BW ",
             " BW "
-        ])
+        ]
         board = go_counting.Board(input_board)
         territories = board.territories()
-        self.assertEqual(territories[go_counting.BLACK], set([(0, 0), (0, 1)]))
-        self.assertEqual(territories[go_counting.WHITE], set([(3, 0), (3, 1)]))
-        self.assertEqual(territories[go_counting.NONE], set())
+        self.assertSetEqual(territories[go_counting.BLACK], {(0, 0), (0, 1)})
+        self.assertSetEqual(territories[go_counting.WHITE], {(3, 0), (3, 1)})
+        self.assertSetEqual(territories[go_counting.NONE], set())
 
-    def test_9x9_for_open_territory(self):
-        board = go_counting.Board(board9x9)
-        stone, territory = board.territoryFor((0, 8))
-        self.assertEqual(stone, go_counting.NONE)
-        self.assertEqual(territory,
-                         set([(2, 7), (2, 8), (1, 8), (0, 8), (0, 7)]))
+    def test_two_region_rectangular_board(self):
+        input_board = [" B "]
+        board = go_counting.Board(input_board)
+        territories = board.territories()
+        self.assertSetEqual(territories[go_counting.BLACK], {(0, 0), (2, 0)})
+        self.assertSetEqual(territories[go_counting.WHITE], set())
+        self.assertSetEqual(territories[go_counting.NONE], set())
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex
+        except AttributeError:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':
