@@ -10,7 +10,7 @@ import tempfile
 import json
 
 # Allow high-performance tests to be skipped
-ALLOW_SKIP = ['largest-series-product']
+ALLOW_SKIP = ['alphametics', 'largest-series-product']
 
 
 def python_executable_name():
