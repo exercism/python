@@ -8,7 +8,7 @@ DIRECTIONS = [(0, 1), (0, -1), (1, 0), (-1, 0)]
 
 class Board:
     def __init__(self, board):
-        self.board = board.splitlines()
+        self.board = board
         self.width = len(self.board[0])
         self.height = len(self.board)
 
@@ -35,10 +35,10 @@ class Board:
 
         return (visited_territory, visited_stones)
 
-    def territoryFor(self, coord):
-        assert len(coord) == 2
-        x, y = coord[0], coord[1]
-        if not self.valid(x, y) or self.board[y][x] in STONES:
+    def territory(self, x, y):
+        if not self.valid(x, y):
+            raise ValueError('invalid coordinate')
+        if self.board[y][x] in STONES:
             return (NONE, set())
 
         visited_territory, visited_stones = self.walk(x, y)
@@ -55,7 +55,7 @@ class Board:
         for y in range(self.height):
             for x in range(self.width):
                 if not (x, y) in visited:
-                    owner, owned_territories = self.territoryFor((x, y))
+                    owner, owned_territories = self.territory(x, y)
                     result[owner].update(owned_territories)
                     visited.update(owned_territories)
 
