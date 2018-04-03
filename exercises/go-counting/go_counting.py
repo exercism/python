@@ -9,12 +9,13 @@ class Board:
     def __init__(self, board):
         pass
 
-    def territoryFor(self, coord):
+    def territory(self, x, y):
         """Find the owner and the territories given a coordinate on
            the board
 
         Args:
-            coord ((int,int)): Coordinate on the board
+            x (int): Column on the board
+            y (int): Row on the board
 
         Returns:
             (str, set): A tuple, the first element being the owner
