@@ -3,7 +3,7 @@ import unittest
 from bracket_push import is_paired
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
 
 class BracketPushTests(unittest.TestCase):
     def test_paired_square_brackets(self):
@@ -23,6 +23,9 @@ class BracketPushTests(unittest.TestCase):
 
     def test_paired_with_whitespace(self):
         self.assertEqual(is_paired("{ }"), True)
+
+    def test_partially_paired_brackets(self):
+        self.assertEqual(is_paired("{[])"), False)
 
     def test_simple_nested_brackets(self):
         self.assertEqual(is_paired("{[]}"), True)

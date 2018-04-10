@@ -3,7 +3,7 @@ import unittest
 from isbn_verifier import verify
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.2.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.4.0
 
 class IsbnVerifierTests(unittest.TestCase):
 
@@ -20,7 +20,7 @@ class IsbnVerifierTests(unittest.TestCase):
         self.assertIs(verify('3-598-21507-A'), False)
 
     def test_invalid_character_in_isbn(self):
-        self.assertIs(verify('3-598-2K507-0'), False)
+        self.assertIs(verify('3-598-P1581-X'), False)
 
     def test_invalid_X_other_than_check_digit(self):
         self.assertIs(verify('3-598-2X507-9'), False)
@@ -48,6 +48,9 @@ class IsbnVerifierTests(unittest.TestCase):
 
     def test_valid_empty_isbn(self):
         self.assertIs(verify(''), False)
+
+    def test_input_is_nine_characters(self):
+        self.assertIs(verify('134456729'), False)
 
 
 if __name__ == '__main__':
