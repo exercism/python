@@ -149,6 +149,21 @@
       ]
     },
     {
+      "uuid": "22f937e5-52a7-4956-9dde-61c985251a6b",
+      "slug": "yacht",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "conditionals",
+        "equality",
+        "games",
+        "integers",
+        "pattern_matching",
+        "sequences"
+      ]
+    },
+    {
       "uuid": "505e7bdb-e18d-45fd-9849-0bf33492efd9",
       "slug": "run-length-encoding",
       "core": false,
