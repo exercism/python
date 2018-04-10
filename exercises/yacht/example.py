@@ -1,9 +1,22 @@
 from collections import Counter
 from functools import partial
 
+YACHT = 0
+ONES = 1
+TWOS = 2
+THREES = 3
+FOURS = 4
+FIVES = 5
+SIXES = 6
+FULL_HOUSE = 7
+FOUR_OF_A_KIND = 8
+LITTLE_STRAIGHT = 9
+BIG_STRAIGHT = 10
+CHOICE = 11
+
 
 def ns(number, dice):
-    return number * len([n for n in dice if n == number])
+    return sum(n for n in dice if n == number)
 
 
 def full_house(dice):
@@ -29,24 +42,24 @@ def yacht(dice):
     return 50 if len(set(dice)) == 1 else 0
 
 
-categories = {
-    "ones": partial(ns, 1),
-    "twos": partial(ns, 2),
-    "threes": partial(ns, 3),
-    "fours": partial(ns, 4),
-    "fives": partial(ns, 5),
-    "sixes": partial(ns, 6),
-    "full house": full_house,
-    "four of a kind": four_of_a_kind,
-    "little straight": little_straight,
-    "big straight": big_straight,
-    "choice": sum,
-    "yacht": yacht,
-}
+functions = [
+    yacht,
+    partial(ns, 1),
+    partial(ns, 2),
+    partial(ns, 3),
+    partial(ns, 4),
+    partial(ns, 5),
+    partial(ns, 6),
+    full_house,
+    four_of_a_kind,
+    little_straight,
+    big_straight,
+    sum,
+]
 
 
 def score(dice, category):
     try:
-        return categories[category](dice)
+        return functions[category](dice)
     except IndexError:
         raise ValueError("no such category")
