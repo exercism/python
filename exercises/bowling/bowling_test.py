@@ -119,7 +119,7 @@ class BowlingTests(unittest.TestCase):
     def test_rolls_cannot_score_negative_points(self):
 
         with self.assertRaisesWithMessage(ValueError):
-            self.game.roll(11)
+            self.game.roll(-1)
 
     def test_a_roll_cannot_score_more_than_10_points(self):
 
