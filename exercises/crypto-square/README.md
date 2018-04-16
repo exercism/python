@@ -45,11 +45,10 @@ The message above is coded as:
 imtgdvsfearwermayoogoanouuiontnnlvtwttddesaohghnsseoau
 ```
 
-Output the encoded text in chunks.  Phrases that fill perfect rectangles
-`(r X c)` should be output `c` chunks of `r` length, separated by spaces.
-Phrases that do not fill perfect rectangles will have `n` empty spaces.
-Those spaces should be distributed evenly, added to the end of the last
-`n` chunks.
+Output the encoded text in chunks that fill perfect rectangles `(r X c)`,
+with `c` chunks of `r` length, separated by spaces. For phrases that are
+`n` characters short of the perfect rectangle, pad each of the last `n`
+chunks with a single trailing space.
 
 ```text
 imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau 
