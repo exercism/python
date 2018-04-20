@@ -1,11 +1,13 @@
 import unittest
+from functools import partial
 
 from react import InputCell, ComputeCell
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.0.0
 
 class ReactTests(unittest.TestCase):
+
     def test_input_cells_have_a_value(self):
         input_ = InputCell(10)
         self.assertEqual(input_.value, 10)
@@ -53,12 +55,12 @@ class ReactTests(unittest.TestCase):
         input_ = InputCell(1)
         output = ComputeCell([input_], lambda inputs: inputs[0] + 1)
 
-        def callback1(value):
-            return value
+        observer = []
+        callback1 = self.callback_factory(observer)
 
         output.add_callback(callback1)
         input_.value = 3
-        self.assertEqual(output.expect_callback_values(callback1), [4])
+        self.assertEqual(observer[-1], 4)
 
     def test_callbacks_only_fire_on_change(self):
         input_ = InputCell(1)
@@ -67,51 +69,67 @@ class ReactTests(unittest.TestCase):
             lambda inputs: 111 if inputs[0] < 3 else 222
         )
 
-        def callback1(value):
-            return value
+        observer = []
+        callback1 = self.callback_factory(observer)
 
         output.add_callback(callback1)
         input_.value = 2
-        self.assertEqual(output.expect_callback_values(callback1), [])
+        self.assertEqual(observer, [])
         input_.value = 4
-        self.assertEqual(output.expect_callback_values(callback1), [222])
+        self.assertEqual(observer[-1], 222)
 
     def test_callbacks_do_not_report_already_reported_values(self):
         input_ = InputCell(1)
         output = ComputeCell([input_], lambda inputs: inputs[0] + 1)
 
-        def callback1(value):
-            return value
+        observer = []
+        callback1 = self.callback_factory(observer)
 
         output.add_callback(callback1)
         input_.value = 2
-        self.assertEqual(output.expect_callback_values(callback1), [3])
+        self.assertEqual(observer[-1], 3)
         input_.value = 3
-        self.assertEqual(output.expect_callback_values(callback1), [4])
+        self.assertEqual(observer[-1], 4)
+
+    def test_callbacks_can_fire_from_multiple_cells(self):
+        input_ = InputCell(1)
+        plus_one = ComputeCell([input_], lambda inputs: inputs[0] + 1)
+        minus_one = ComputeCell([input_], lambda inputs: inputs[0] - 1)
+
+        cb1_observer, cb2_observer = [], []
+        callback1 = self.callback_factory(cb1_observer)
+        callback2 = self.callback_factory(cb2_observer)
+
+        plus_one.add_callback(callback1)
+        minus_one.add_callback(callback2)
+        input_.value = 10
+
+        self.assertEqual(cb1_observer[-1], 11)
+        self.assertEqual(cb2_observer[-1], 9)
 
     def test_callbacks_can_be_added_and_removed(self):
         input_ = InputCell(11)
         output = ComputeCell([input_], lambda inputs: inputs[0] + 1)
 
-        def callback1(value):
-            return value
-
-        def callback2(value):
-            return value
-
-        def callback3(value):
-            return value
+        cb1_observer, cb2_observer, cb3_observer = [], [], []
+        callback1 = self.callback_factory(cb1_observer)
+        callback2 = self.callback_factory(cb2_observer)
+        callback3 = self.callback_factory(cb3_observer)
 
         output.add_callback(callback1)
         output.add_callback(callback2)
         input_.value = 31
+        self.assertEqual(cb1_observer[-1], 32)
+        self.assertEqual(cb2_observer[-1], 32)
+
         output.remove_callback(callback1)
         output.add_callback(callback3)
         input_.value = 41
+        self.assertEqual(cb2_observer[-1], 42)
+        self.assertEqual(cb3_observer[-1], 42)
 
-        self.assertEqual(output.expect_callback_values(callback1), [32])
-        self.assertEqual(output.expect_callback_values(callback2), [32, 42])
-        self.assertEqual(output.expect_callback_values(callback3), [42])
+        # Expect callback1 not to be called.
+        self.assertEqual(len(cb1_observer), 1)
 
     def test_removing_a_callback_multiple_times(self):
         """Guard against incorrect implementations which store their
@@ -119,11 +137,9 @@ class ReactTests(unittest.TestCase):
         input_ = InputCell(1)
         output = ComputeCell([input_], lambda inputs: inputs[0] + 1)
 
-        def callback1(value):
-            return value
-
-        def callback2(value):
-            return value
+        cb1_observer, cb2_observer = [], []
+        callback1 = self.callback_factory(cb1_observer)
+        callback2 = self.callback_factory(cb2_observer)
 
         output.add_callback(callback1)
         output.add_callback(callback2)
@@ -132,8 +148,8 @@ class ReactTests(unittest.TestCase):
         output.remove_callback(callback1)
         input_.value = 2
 
-        self.assertEqual(output.expect_callback_values(callback1), [])
-        self.assertEqual(output.expect_callback_values(callback2), [3])
+        self.assertEqual(cb1_observer, [])
+        self.assertEqual(cb2_observer[-1], 3)
 
     def test_callbacks_should_only_be_called_once(self):
         """Guard against incorrect implementations which call a callback
@@ -147,12 +163,12 @@ class ReactTests(unittest.TestCase):
             lambda inputs: inputs[0] * inputs[1]
         )
 
-        def callback1(value):
-            return value
+        observer = []
+        callback1 = self.callback_factory(observer)
 
         output.add_callback(callback1)
         input_.value = 4
-        self.assertEqual(output.expect_callback_values(callback1), [10])
+        self.assertEqual(observer[-1], 10)
 
     def test_callbacks_not_called_so_long_as_output_not_changed(self):
         """Guard against incorrect implementations which call callbacks
@@ -165,15 +181,21 @@ class ReactTests(unittest.TestCase):
             lambda inputs: inputs[0] - inputs[1]
         )
 
-        def callback1(value):
-            return value
+        observer = []
+        callback1 = self.callback_factory(observer)
 
         always_two.add_callback(callback1)
         input_.value = 2
         input_.value = 3
         input_.value = 4
         input_.value = 5
-        self.assertEqual(always_two.expect_callback_values(callback1), [])
+        self.assertEqual(observer, [])
+
+    # Utility functions.
+    def callback_factory(self, observer):
+        def callback(observer, value):
+            observer.append(value)
+        return partial(callback, observer)
 
 
 if __name__ == '__main__':
