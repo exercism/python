@@ -3,7 +3,7 @@ import unittest
 from pov import Tree
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
 
 class PovTest(unittest.TestCase):
 
@@ -157,6 +157,17 @@ class PovTest(unittest.TestCase):
         ])
         expected = ['x', 'parent', 'grandparent', 'uncle', 'cousin-1']
         self.assertEqual(tree.path_to('x', 'cousin-1'), expected)
+
+    def test_can_find_path_not_involving_root(self):
+        tree = Tree('grandparent', [
+            Tree('parent', [
+                Tree('x'),
+                Tree('sibling-0'),
+                Tree('sibling-1')
+            ])
+        ])
+        expected = ['x', 'parent', 'sibling-1']
+        self.assertEqual(tree.path_to('x', 'sibling-1'), expected)
 
     def test_can_find_path_from_nodes_other_than_x(self):
         tree = Tree('parent', [
