@@ -19,7 +19,7 @@ category chosen.
     Sixes           6 × number of sixes     2 3 4 5 6 scores 6
     Full House      Total of the dice       3 3 3 5 5 scores 19
     Four of a Kind  Total of the four dice  4 4 4 4 6 scores 16
-    Little Straight 30 points               1 2 3 4 5 scores 30 
+    Little Straight 30 points               1 2 3 4 5 scores 30
     Big Straight    30 points               2 3 4 5 6 scores 30
     Choice          Sum of the dice         2 3 3 4 6 scores 18
     Yacht           50 points               4 4 4 4 4 scores 50
@@ -28,7 +28,7 @@ If the dice do not satisfy the requirements of a category, the score is zero.
 If, for example, *Four Of A Kind* is entered in the *Yacht* category, zero
 points are scored. A *Yacht* scores zero if entered in the *Full House* category.
 
-## Task 
+## Task
 Given a list of values for five dice and a category, your solution should return
 the score of the dice for that category. If the dice do not satisfy the requirements
 of the category your solution should return 0. You can assume that five values
