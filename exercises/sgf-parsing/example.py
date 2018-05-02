@@ -66,7 +66,7 @@ def parse(input_string):
         if stack[0] == '\\':
             stack.pop(0)
         ch = stack.pop(0)
-        return ' ' if ch in '\n\t' else ch
+        return ' ' if ch in ['\t'] else ch
 
     def peek():
         return stack[0]
