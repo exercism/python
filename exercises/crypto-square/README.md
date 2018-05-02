@@ -12,11 +12,15 @@ regarded as forming a rectangle when printed with intervening newlines.
 
 For example, the sentence
 
-> If man was meant to stay on the ground, god would have given us roots.
+```text
+"If man was meant to stay on the ground, god would have given us roots."
+```
 
 is normalized to:
 
-> ifmanwasmeanttostayonthegroundgodwouldhavegivenusroots
+```text
+"ifmanwasmeanttostayonthegroundgodwouldhavegivenusroots"
+```
 
 The plaintext should be organized in to a rectangle.  The size of the
 rectangle (`r x c`) should be decided by the length of the message,
@@ -27,13 +31,13 @@ Our normalized text is 54 characters long, dictating a rectangle with
 `c = 8` and `r = 7`:
 
 ```text
-ifmanwas
-meanttos
-tayonthe
-groundgo
-dwouldha
-vegivenu
-sroots
+"ifmanwas"
+"meanttos"
+"tayonthe"
+"groundgo"
+"dwouldha"
+"vegivenu"
+"sroots  "
 ```
 
 The coded message is obtained by reading down the columns going left to
@@ -42,7 +46,7 @@ right.
 The message above is coded as:
 
 ```text
-imtgdvsfearwermayoogoanouuiontnnlvtwttddesaohghnsseoau
+"imtgdvsfearwermayoogoanouuiontnnlvtwttddesaohghnsseoau"
 ```
 
 Output the encoded text in chunks that fill perfect rectangles `(r X c)`,
@@ -51,21 +55,21 @@ with `c` chunks of `r` length, separated by spaces. For phrases that are
 chunks with a single trailing space.
 
 ```text
-imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau 
+"imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau "
 ```
 
 Notice that were we to stack these, we could visually decode the
 cyphertext back in to the original message:
 
 ```text
-imtgdvs
-fearwer
-mayoogo
-anouuio
-ntnnlvt
-wttddes
-aohghn
-sseoau
+"imtgdvs"
+"fearwer"
+"mayoogo"
+"anouuio"
+"ntnnlvt"
+"wttddes"
+"aohghn "
+"sseoau "
 ```
 
 ## Exception messages
