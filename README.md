@@ -29,7 +29,7 @@ A list of missing exercise can be found here: http://exercism.io/languages/pytho
 
 ### Testing
 
-All exercises must be compatible with Python versions 2.7 and 3.3 upwards.
+All exercises must be compatible with Python versions 2.7 and 3.4 upwards.
 
 To test a single exercise (e.g., with Python 2.7):
 ```
