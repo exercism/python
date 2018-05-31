@@ -7,10 +7,39 @@ import math
 from complex_numbers import ComplexNumber
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
-
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
 
 class ComplexNumbersTest(unittest.TestCase):
+
+    def test_real_part_of_a_purely_real_number(self):
+        input_number = ComplexNumber(1, 0)
+        self.assertEqual(input_number.real, 1)
+
+    def test_real_part_of_a_purely_imaginary_number(self):
+        input_number = ComplexNumber(0, 1)
+        self.assertEqual(input_number.real, 0)
+
+    def test_real_part_of_a_number_with_real_and_imaginary_part(self):
+        input_number = ComplexNumber(1, 2)
+        self.assertEqual(input_number.real, 1)
+
+    def test_imaginary_part_of_a_purely_real_number(self):
+        input_number = ComplexNumber(1, 0)
+        self.assertEqual(input_number.imaginary, 0)
+
+    def test_imaginary_part_of_a_purely_imaginary_number(self):
+        input_number = ComplexNumber(0, 1)
+        self.assertEqual(input_number.imaginary, 1)
+
+    def test_imaginary_part_of_a_number_with_real_and_imaginary_part(self):
+        input_number = ComplexNumber(1, 2)
+        self.assertEqual(input_number.imaginary, 2)
+
+    def test_imaginary_unit(self):
+        first_input = ComplexNumber(0, 1)
+        second_input = ComplexNumber(0, 1)
+        expected = ComplexNumber(-1, 0)
+        self.assertEqual(first_input * second_input, expected)
 
     def test_add_purely_real_numbers(self):
         first_input = ComplexNumber(1, 0)
@@ -120,30 +149,6 @@ class ComplexNumbersTest(unittest.TestCase):
         self.assertEqual(input_number.conjugate().imaginary,
                          expected.imaginary)
 
-    def test_real_part_of_a_purely_real_number(self):
-        input_number = ComplexNumber(1, 0)
-        self.assertEqual(input_number.real, 1)
-
-    def test_real_part_of_a_purely_imaginary_number(self):
-        input_number = ComplexNumber(0, 1)
-        self.assertEqual(input_number.real, 0)
-
-    def test_real_part_of_a_number_with_real_and_imaginary_part(self):
-        input_number = ComplexNumber(1, 2)
-        self.assertEqual(input_number.real, 1)
-
-    def test_imaginary_part_of_a_purely_real_number(self):
-        input_number = ComplexNumber(1, 0)
-        self.assertEqual(input_number.imaginary, 0)
-
-    def test_imaginary_part_of_a_purely_imaginary_number(self):
-        input_number = ComplexNumber(0, 1)
-        self.assertEqual(input_number.imaginary, 1)
-
-    def test_imaginary_part_of_a_number_with_real_and_imaginary_part(self):
-        input_number = ComplexNumber(1, 2)
-        self.assertEqual(input_number.imaginary, 2)
-
     def test_eulers_identity_formula(self):
         input_number = ComplexNumber(0, math.pi)
         expected = ComplexNumber(-1, 0)
@@ -159,6 +164,12 @@ class ComplexNumbersTest(unittest.TestCase):
     def test_exponential_of_a_purely_real_number(self):
         input_number = ComplexNumber(1, 0)
         expected = ComplexNumber(math.e, 0)
+        self.assertEqual(input_number.exp().real, expected.real)
+        self.assertEqual(input_number.exp().imaginary, expected.imaginary)
+
+    def test_exponential_of_a_number_with_real_and_imaginary_part(self):
+        input_number = ComplexNumber(math.log(2), math.pi)
+        expected = ComplexNumber(-2, 0)
         self.assertEqual(input_number.exp().real, expected.real)
         self.assertEqual(input_number.exp().imaginary, expected.imaginary)
 

@@ -3,23 +3,23 @@ import unittest
 from alphametics import solve
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class TestAlphametics(unittest.TestCase):
-    def test_puzzle_with_03_letters(self):
+    def test_puzzle_with_three_letters(self):
         self.assertEqual(solve("I + BB == ILL"), {"I": 1, "B": 9, "L": 0})
 
-    def test_invalid_solution_must_have_unique_value_for_each_letter(self):
+    def test_solution_must_have_unique_value_for_each_letter(self):
         self.assertEqual(solve("A == B"), {})
 
-    def test_invalid_leading_zero_solution(self):
+    def test_leading_zero_solution_is_invalid(self):
         self.assertEqual(solve("ACA + DD == BD"), {})
 
-    def test_puzzle_with_04_letters(self):
+    def test_puzzle_with_four_letters(self):
         self.assertEqual(
             solve("AS + A == MOM"), {"A": 9, "S": 2, "M": 1, "O": 0})
 
-    def test_puzzle_with_06_letters(self):
+    def test_puzzle_with_six_letters(self):
         self.assertEqual(
             solve("NO + NO + TOO == LATE"),
             {"N": 7,
@@ -29,7 +29,7 @@ class TestAlphametics(unittest.TestCase):
              "A": 0,
              "E": 2})
 
-    def test_puzzle_with_07_letters(self):
+    def test_puzzle_with_seven_letters(self):
         self.assertEqual(
             solve("HE + SEES + THE == LIGHT"),
             {"E": 4,
@@ -40,7 +40,7 @@ class TestAlphametics(unittest.TestCase):
              "S": 9,
              "T": 7})
 
-    def test_puzzle_with_08_letters(self):
+    def test_puzzle_with_eight_letters(self):
         self.assertEqual(
             solve("SEND + MORE == MONEY"),
             {"S": 9,
@@ -52,7 +52,7 @@ class TestAlphametics(unittest.TestCase):
              "R": 8,
              "Y": 2})
 
-    def test_puzzle_with_10_letters(self):
+    def test_puzzle_with_ten_letters(self):
         self.assertEqual(
             solve("AND + A + STRONG + OFFENSE + AS + A + GOOD == DEFENSE"),
             {"A": 5,
@@ -64,6 +64,47 @@ class TestAlphametics(unittest.TestCase):
              "O": 2,
              "R": 1,
              "S": 6,
+             "T": 9})
+
+    @unittest.skip("extra-credit")
+    def test_puzzle_with_ten_letters_and_199_addends(self):
+        self.assertEqual(
+            solve(
+                "THIS + A + FIRE + THEREFORE + FOR + ALL + HISTORIES + I + "
+                "TELL + A + TALE + THAT + FALSIFIES + ITS + TITLE + TIS + "
+                "A + LIE + THE + TALE + OF + THE + LAST + FIRE + HORSES + "
+                "LATE + AFTER + THE + FIRST + FATHERS + FORESEE + THE + "
+                "HORRORS + THE + LAST + FREE + TROLL + TERRIFIES + THE + "
+                "HORSES + OF + FIRE + THE + TROLL + RESTS + AT + THE + "
+                "HOLE + OF + LOSSES + IT + IS + THERE + THAT + SHE + STORES + "
+                "ROLES + OF + LEATHERS + AFTER + SHE + SATISFIES + HER + "
+                "HATE + OFF + THOSE + FEARS + A + TASTE + RISES + AS + SHE + "
+                "HEARS + THE + LEAST + FAR + HORSE + THOSE + FAST + HORSES + "
+                "THAT + FIRST + HEAR + THE + TROLL + FLEE + OFF + TO + THE + "
+                "FOREST + THE + HORSES + THAT + ALERTS + RAISE + THE + STARES "
+                "+ OF + THE + OTHERS + AS + THE + TROLL + ASSAILS + AT + THE "
+                "+ TOTAL + SHIFT + HER + TEETH + TEAR + HOOF + OFF + TORSO + "
+                "AS + THE + LAST + HORSE + FORFEITS + ITS + LIFE + THE + "
+                "FIRST + FATHERS + HEAR + OF + THE + HORRORS + THEIR + FEARS "
+                "+ THAT + THE + FIRES + FOR + THEIR + FEASTS + ARREST + AS + "
+                "THE + FIRST + FATHERS + RESETTLE + THE + LAST + OF + THE + "
+                "FIRE + HORSES + THE + LAST + TROLL + HARASSES + THE + FOREST "
+                "+ HEART + FREE + AT + LAST + OF + THE + LAST + TROLL + ALL + "
+                "OFFER + THEIR + FIRE + HEAT + TO + THE + ASSISTERS + FAR + "
+                "OFF + THE + TROLL + FASTS + ITS + LIFE + SHORTER + AS + "
+                "STARS + RISE + THE + HORSES + REST + SAFE + AFTER + ALL + "
+                "SHARE + HOT + FISH + AS + THEIR + AFFILIATES + TAILOR + A + "
+                "ROOFS + FOR + THEIR + SAFE == FORTRESSES"
+            ),
+            {"A": 1,
+             "E": 0,
+             "F": 5,
+             "H": 8,
+             "I": 7,
+             "L": 2,
+             "O": 6,
+             "R": 3,
+             "S": 4,
              "T": 9})
 
 

@@ -29,28 +29,24 @@ def parse_markdown(markdown):
                     curr = m1.group(1) + '<em>' + m1.group(2) + \
                         '</em>' + m1.group(3)
                     is_italic = True
-                if is_italic or is_bold:
-                    i = '<ul><li>' + curr + '</li>'
-                else:
-                    i = '<ul><li><p>' + curr + '</p></li>'
+                i = '<ul><li>' + curr + '</li>'
             else:
                 is_bold = False
                 is_italic = False
                 curr = m.group(1)
                 m1 = re.match('(.*)__(.*)__(.*)', curr)
                 if m1:
-                    curr = m1.group(1) + '<strong>' + \
-                        m1.group(2) + '</strong>' + m1.group(3)
                     is_bold = True
                 m1 = re.match('(.*)_(.*)_(.*)', curr)
                 if m1:
+                    is_italic = True
+                if is_bold:
+                    curr = m1.group(1) + '<strong>' + \
+                        m1.group(2) + '</strong>' + m1.group(3)
+                if is_italic:
                     curr = m1.group(1) + '<em>' + m1.group(2) + \
                         '</em>' + m1.group(3)
-                    is_italic = True
-                if is_italic or is_bold:
-                    i = '<li>' + curr + '</li>'
-                else:
-                    i = '<li><p>' + curr + '</p></li>'
+                i = '<li>' + curr + '</li>'
         else:
             if in_list:
                 i = '</ul>+i'

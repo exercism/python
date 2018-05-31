@@ -39,7 +39,7 @@ Make sure to review the generated test cases and make any sensible corrections.
 
 ### Testing
 
-All exercises must be compatible with Python versions 2.7 and 3.3 upwards.
+All exercises must be compatible with Python versions 2.7 and 3.4 upwards.
 
 To test a single exercise (e.g., with Python 2.7):
 ```

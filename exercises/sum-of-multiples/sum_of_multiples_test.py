@@ -12,7 +12,7 @@ import unittest
 from sum_of_multiples import sum_of_multiples
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class SumOfMultiplesTest(unittest.TestCase):
     def test_multiples_of_3_or_5_up_to_1(self):

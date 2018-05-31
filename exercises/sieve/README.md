@@ -5,8 +5,8 @@ number.
 
 The Sieve of Eratosthenes is a simple, ancient algorithm for finding all
 prime numbers up to any given limit. It does so by iteratively marking as
-composite (i.e. not prime) the multiples of each prime,
-starting with the multiples of 2.
+composite (i.e. not prime) the multiples of each prime, starting with the
+multiples of 2. It does not use any division or remainder operation.
 
 Create your range, starting at two and continuing up to and including the given limit. (i.e. [2, limit])
 
@@ -25,7 +25,9 @@ https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 
 Notice that this is a very specific algorithm, and the tests don't check
 that you've implemented the algorithm, only that you've come up with the
-correct list of primes.
+correct list of primes. A good first test is to check that you do not use
+division or remainder operations (div, /, mod or % depending on the
+language).
 
 ## Exception messages
 
@@ -35,11 +37,29 @@ every exercise will require you to raise an exception, but for those that do, th
 a message.
 
 To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
-`raise Exception`, you shold write:
+`raise Exception`, you should write:
 
 ```python
 raise Exception("Meaningful message indicating the source of the error")
 ```
+
+## Running the tests
+
+To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+
+- Python 2.7: `py.test sieve_test.py`
+- Python 3.4+: `pytest sieve_test.py`
+
+Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+`python -m pytest sieve_test.py`
+
+### Common `pytest` options
+
+- `-v` : enable verbose output
+- `-x` : stop running tests on first failure
+- `--ff` : run failures from previous test before running other test cases
+
+For other options, see `python -m pytest -h`
 
 ## Submitting Exercises
 
@@ -55,4 +75,5 @@ please see the [help page](http://exercism.io/languages/python).
 Sieve of Eratosthenes at Wikipedia [http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes](http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

@@ -2,8 +2,8 @@ import unittest
 
 from clock import Clock
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.2.1
 
 class ClockTest(unittest.TestCase):
     # Test creating a new clock with an initial time.
@@ -90,28 +90,28 @@ class ClockTest(unittest.TestCase):
         self.assertEqual(str(Clock(1, 1) + 3500), '11:21')
 
     def test_subtract_minutes(self):
-        self.assertEqual(str(Clock(10, 3) + -3), '10:00')
+        self.assertEqual(str(Clock(10, 3) - 3), '10:00')
 
     def test_subtract_to_previous_hour(self):
-        self.assertEqual(str(Clock(10, 3) + -3), '10:00')
+        self.assertEqual(str(Clock(10, 3) - 30), '09:33')
 
     def test_subtract_more_than_an_hour(self):
-        self.assertEqual(str(Clock(10, 3) + -30), '09:33')
+        self.assertEqual(str(Clock(10, 3) - 70), '08:53')
 
     def test_subtract_across_midnight(self):
-        self.assertEqual(str(Clock(10, 3) + -70), '08:53')
+        self.assertEqual(str(Clock(0, 3) - 4), '23:59')
 
     def test_subtract_more_than_two_hours(self):
-        self.assertEqual(str(Clock(0, 0) + -160), '21:20')
+        self.assertEqual(str(Clock(0, 0) - 160), '21:20')
 
     def test_subtract_more_than_two_hours_with_borrow(self):
-        self.assertEqual(str(Clock(6, 15) + -160), '03:35')
+        self.assertEqual(str(Clock(6, 15) - 160), '03:35')
 
     def test_subtract_more_than_one_day(self):
-        self.assertEqual(str(Clock(5, 32) + -1500), '04:32')
+        self.assertEqual(str(Clock(5, 32) - 1500), '04:32')
 
     def test_subtract_more_than_two_days(self):
-        self.assertEqual(str(Clock(2, 20) + -3000), '00:20')
+        self.assertEqual(str(Clock(2, 20) - 3000), '00:20')
 
     # Construct two separate clocks, set times, test if they are equal.
     def test_clocks_with_same_time(self):

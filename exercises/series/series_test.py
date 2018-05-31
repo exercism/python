@@ -9,40 +9,39 @@ import unittest
 from series import slices
 
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+
 class SeriesTest(unittest.TestCase):
-    def test_slices_of_one(self):
-        self.assertEqual(
-            slices("01234", 1),
-            [[0], [1], [2], [3], [4]], )
+    def test_slices_of_one_from_one(self):
+        self.assertEqual(slices("1", 1), ["1"])
+
+    def test_slices_of_one_from_two(self):
+        self.assertEqual(slices("12", 1), ["1", "2"])
 
     def test_slices_of_two(self):
-        self.assertEqual(
-            slices("97867564", 2),
-            [[9, 7], [7, 8], [8, 6], [6, 7], [7, 5], [5, 6], [6, 4]], )
+        self.assertEqual(slices("35", 2), ["35"])
 
-    def test_slices_of_three(self):
-        self.assertEqual(
-            slices("97867564", 3),
-            [[9, 7, 8], [7, 8, 6], [8, 6, 7], [6, 7, 5], [7, 5, 6], [5, 6, 4]],
-        )
+    def test_slices_of_two_overlap(self):
+        self.assertEqual(slices("9142", 2), ["91", "14", "42"])
 
-    def test_slices_of_four(self):
-        self.assertEqual(
-            slices("01234", 4),
-            [[0, 1, 2, 3], [1, 2, 3, 4]], )
+    def test_slices_can_include_duplicates(self):
+        self.assertEqual(slices("777777", 3), ["777", "777", "777", "777"])
 
-    def test_slices_of_five(self):
-        self.assertEqual(
-            slices("01234", 5),
-            [[0, 1, 2, 3, 4]], )
-
-    def test_overly_long_slice(self):
+    def test_slice_length_is_too_large(self):
         with self.assertRaisesWithMessage(ValueError):
-            slices("012", 4)
+            slices("12345", 6)
 
-    def test_overly_short_slice(self):
+    def test_slice_length_cannot_be_zero(self):
         with self.assertRaisesWithMessage(ValueError):
-            slices("01234", 0)
+            slices("12345", 0)
+
+    def test_slice_length_cannot_be_negative(self):
+        with self.assertRaisesWithMessage(ValueError):
+            slices("123", -1)
+
+    def test_empty_series_is_invalid(self):
+        with self.assertRaisesWithMessage(ValueError):
+            slices("", 1)
 
     # Utility functions
     def setUp(self):
