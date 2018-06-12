@@ -5,7 +5,7 @@ from variable_length_quantity import encode, decode
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
-class TestVLQ(unittest.TestCase):
+class VariableLengthQuantityTest(unittest.TestCase):
     def test_zero(self):
         self.assertEqual(encode([0x0]), [0x0])
 

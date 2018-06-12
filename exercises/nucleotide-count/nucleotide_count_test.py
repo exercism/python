@@ -9,7 +9,7 @@ import unittest
 from nucleotide_count import count, nucleotide_counts
 
 
-class DNATest(unittest.TestCase):
+class NucleotideCountTest(unittest.TestCase):
     def test_empty_dna_string_has_no_adenosine(self):
         self.assertEqual(count('', 'A'), 0)
 

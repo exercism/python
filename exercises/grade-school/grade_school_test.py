@@ -5,7 +5,7 @@ from types import GeneratorType
 from grade_school import School
 
 
-class SchoolTest(unittest.TestCase):
+class GradeSchoolTest(unittest.TestCase):
     def setUp(self):
         # assertCountEqual is py3, py2 only knowns assetItemsEqual
         if not hasattr(self, 'assertCountEqual'):

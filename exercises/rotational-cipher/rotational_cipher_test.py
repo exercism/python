@@ -5,7 +5,7 @@ import rotational_cipher
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-class RotationalCipher(unittest.TestCase):
+class RotationalCipherTest(unittest.TestCase):
     def test_rotate_a_by_0(self):
         self.assertEqual(rotational_cipher.rotate('a', 0), 'a')
 

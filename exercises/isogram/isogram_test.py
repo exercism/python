@@ -5,7 +5,7 @@ from isogram import is_isogram
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-class TestIsogram(unittest.TestCase):
+class IsogramTest(unittest.TestCase):
 
     def test_empty_string(self):
         self.assertIs(is_isogram(""), True)

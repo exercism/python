@@ -7,7 +7,7 @@ from luhn import Luhn
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
-class LuhnTests(unittest.TestCase):
+class LuhnTest(unittest.TestCase):
     def test_single_digit_strings_can_not_be_valid(self):
         self.assertIs(Luhn("1").is_valid(), False)
 

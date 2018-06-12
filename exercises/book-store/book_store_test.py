@@ -5,7 +5,7 @@ from book_store import calculate_total
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
 
-class BookStoreTests(unittest.TestCase):
+class BookStoreTest(unittest.TestCase):
     def test_only_a_single_book(self):
         self.assertEqual(calculate_total([1]), 800)
 

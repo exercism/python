@@ -9,7 +9,7 @@ import unittest
 from binary import parse_binary
 
 
-class BinaryTests(unittest.TestCase):
+class BinaryTest(unittest.TestCase):
     def test_binary_1_is_decimal_1(self):
         self.assertEqual(parse_binary("1"), 1)
 

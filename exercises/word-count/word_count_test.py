@@ -5,7 +5,7 @@ from word_count import word_count
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-class WordCountTests(unittest.TestCase):
+class WordCountTest(unittest.TestCase):
 
     def test_count_one_word(self):
         self.assertEqual(

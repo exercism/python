@@ -5,7 +5,7 @@ from anagram import detect_anagrams
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-class AnagramTests(unittest.TestCase):
+class AnagramTest(unittest.TestCase):
     def test_no_matches(self):
         candidates = ["hello", "world", "zombies", "pants"]
         self.assertEqual(detect_anagrams("diaper", candidates), [])

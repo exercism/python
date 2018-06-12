@@ -5,7 +5,7 @@ from bowling import BowlingGame
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-class BowlingTests(unittest.TestCase):
+class BowlingTest(unittest.TestCase):
 
     def roll(self, rolls):
         [self.game.roll(roll) for roll in rolls]

@@ -5,7 +5,7 @@ from reverse_string import reverse
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
-class ReverseStringTests(unittest.TestCase):
+class ReverseStringTest(unittest.TestCase):
     def test_empty_string(self):
             self.assertEqual(reverse(''), '')
 

@@ -5,7 +5,7 @@ from armstrong_numbers import is_armstrong
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
-class ArmstrongTests(unittest.TestCase):
+class ArmstrongNumbersTest(unittest.TestCase):
 
     def test_single_digit_numbers_are_armstrong_numbers(self):
         self.assertIs(is_armstrong(5), True)

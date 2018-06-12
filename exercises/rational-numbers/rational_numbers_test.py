@@ -7,7 +7,7 @@ from rational_numbers import Rational
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
-class RationalTests(unittest.TestCase):
+class RationalNumbersTest(unittest.TestCase):
 
     # Test addition
     def test_add_two_positive(self):

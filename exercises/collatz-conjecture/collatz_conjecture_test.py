@@ -5,7 +5,7 @@ from collatz_conjecture import collatz_steps
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-class CollatzConjectureTests(unittest.TestCase):
+class CollatzConjectureTest(unittest.TestCase):
 
     def test_zero_steps_for_one(self):
         self.assertEqual(collatz_steps(1), 0)

@@ -3,7 +3,7 @@ import unittest
 from linked_list import LinkedList
 
 
-class LinkedListTests(unittest.TestCase):
+class LinkedListTest(unittest.TestCase):
     def setUp(self):
         self.list = LinkedList()
 

@@ -5,7 +5,7 @@ from beer_song import recite
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v2.1.0
 
-class BeerTest(unittest.TestCase):
+class BeerSongTest(unittest.TestCase):
     def test_first_generic_verse(self):
         expected = [
             "99 bottles of beer on the wall, 99 bottles of beer.",

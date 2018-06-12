@@ -6,7 +6,7 @@ from react import InputCell, ComputeCell
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v2.0.0
 
-class ReactTests(unittest.TestCase):
+class ReactTest(unittest.TestCase):
 
     def test_input_cells_have_a_value(self):
         input_ = InputCell(10)

@@ -5,7 +5,7 @@ from two_fer import two_fer
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-class Two_Fer_test(unittest.TestCase):
+class TwoFerTest(unittest.TestCase):
     def test_no_name_given(self):
         self.assertEqual(two_fer(), 'One for you, one for me.')
 

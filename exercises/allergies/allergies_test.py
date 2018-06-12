@@ -9,7 +9,7 @@ if not hasattr(unittest.TestCase, 'assertCountEqual'):
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
-class AllergiesTests(unittest.TestCase):
+class AllergiesTest(unittest.TestCase):
     def test_no_allergies_means_not_allergic(self):
         allergies = Allergies(0)
         self.assertIs(allergies.is_allergic_to('peanuts'), False)

@@ -5,7 +5,7 @@ from secret_handshake import handshake, secret_code
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-class HandshakeTest(unittest.TestCase):
+class SecretHandshakeTest(unittest.TestCase):
     def test_wink_for_1(self):
         self.assertEqual(handshake(1), ['wink'])
 

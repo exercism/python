@@ -5,7 +5,7 @@ from pig_latin import translate
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-class PigLatinTests(unittest.TestCase):
+class PigLatinTest(unittest.TestCase):
     def test_word_beginning_with_a(self):
         self.assertEqual(translate("apple"), "appleay")
 

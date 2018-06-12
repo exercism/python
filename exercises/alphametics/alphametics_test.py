@@ -5,7 +5,7 @@ from alphametics import solve
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-class TestAlphametics(unittest.TestCase):
+class AlphameticsTest(unittest.TestCase):
     def test_puzzle_with_three_letters(self):
         self.assertEqual(solve("I + BB == ILL"), {"I": 1, "B": 9, "L": 0})
 

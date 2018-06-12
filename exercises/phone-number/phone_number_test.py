@@ -5,7 +5,7 @@ from phone_number import Phone
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
 
-class PhoneTest(unittest.TestCase):
+class PhoneNumberTest(unittest.TestCase):
     def test_cleans_number(self):
         number = Phone("(223) 456-7890").number
         self.assertEqual(number, "2234567890")
