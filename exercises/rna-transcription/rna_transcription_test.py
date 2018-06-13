@@ -5,7 +5,7 @@ from rna_transcription import to_rna
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-class RNATranscriptionTests(unittest.TestCase):
+class RnaTranscriptionTest(unittest.TestCase):
 
     def test_transcribes_cytosine_to_guanine(self):
         self.assertEqual(to_rna('C'), 'G')

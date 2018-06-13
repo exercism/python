@@ -5,7 +5,7 @@ from bracket_push import is_paired
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
 
-class BracketPushTests(unittest.TestCase):
+class BracketPushTest(unittest.TestCase):
     def test_paired_square_brackets(self):
         self.assertEqual(is_paired("[]"), True)
 

@@ -5,7 +5,7 @@ from tournament import tally
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
 
-class TestTournament(unittest.TestCase):
+class TournamentTest(unittest.TestCase):
     def test_just_the_header_if_no_input(self):
         self.assertEqual(
             tally(''),

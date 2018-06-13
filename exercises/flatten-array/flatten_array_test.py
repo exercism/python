@@ -5,7 +5,7 @@ from flatten_array import flatten
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-class FlattenArrayTests(unittest.TestCase):
+class FlattenArrayTest(unittest.TestCase):
 
     def test_no_nesting(self):
         self.assertEqual(flatten([0, 1, 2]), [0, 1, 2])

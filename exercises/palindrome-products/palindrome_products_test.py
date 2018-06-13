@@ -18,7 +18,7 @@ from palindrome_products import smallest_palindrome, largest_palindrome
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
-class PalindromesTests(unittest.TestCase):
+class PalindromeProductsTest(unittest.TestCase):
     def test_smallest_palindrome_from_single_digit_factors(self):
         value, factors = smallest_palindrome(min_factor=1, max_factor=9)
         self.assertEqual(value, 1)

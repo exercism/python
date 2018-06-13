@@ -5,7 +5,7 @@ from binary_search_tree import BinarySearchTree, TreeNode
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
-class BinarySearchTreeTests(unittest.TestCase):
+class BinarySearchTreeTest(unittest.TestCase):
 
     def test_data_is_retained(self):
         expected = TreeNode('4', None, None)

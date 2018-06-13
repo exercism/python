@@ -5,7 +5,7 @@ from twelve_days import recite
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
-class VerseTests(unittest.TestCase):
+class TwelveDaysTest(unittest.TestCase):
     def test_verse1(self):
         expected = ["On the first day of Christmas my true love gave to me, "
                     "a Partridge in a Pear Tree."]
@@ -133,8 +133,6 @@ class VerseTests(unittest.TestCase):
                     "and a Partridge in a Pear Tree."]
         self.assertEqual(recite(12, 12), expected)
 
-
-class LyricsTests(unittest.TestCase):
     def test_first_three_verses_of_the_song(self):
         expected = [recite(n, n)[0] for n in range(1, 4)]
         self.assertEqual(recite(1, 3), expected)

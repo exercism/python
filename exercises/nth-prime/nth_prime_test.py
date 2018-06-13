@@ -5,7 +5,7 @@ from nth_prime import nth_prime
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v2.1.0
 
-class NthPrimeTests(unittest.TestCase):
+class NthPrimeTest(unittest.TestCase):
     def test_first_prime(self):
         self.assertEqual(nth_prime(1), 2)
 

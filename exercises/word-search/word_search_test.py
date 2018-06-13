@@ -5,7 +5,7 @@ from word_search import WordSearch, Point
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-class WordSearchTests(unittest.TestCase):
+class WordSearchTest(unittest.TestCase):
 
     def test_initial_game_grid(self):
         puzzle = ['jefblpepre']

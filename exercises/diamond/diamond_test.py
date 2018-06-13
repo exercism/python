@@ -5,7 +5,7 @@ from diamond import make_diamond
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
-class DiamondTests(unittest.TestCase):
+class DiamondTest(unittest.TestCase):
     def test_degenerate_case_with_a_single_row(self):
         self.assertMultiLineEqual(make_diamond('A'), 'A\n')
 

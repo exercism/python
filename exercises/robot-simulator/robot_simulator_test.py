@@ -5,7 +5,7 @@ from robot_simulator import Robot, NORTH, EAST, SOUTH, WEST
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v2.2.0
 
-class RobotTests(unittest.TestCase):
+class RobotSimulatorTest(unittest.TestCase):
     def test_init(self):
         robot = Robot()
         self.assertEqual(robot.coordinates, (0, 0))

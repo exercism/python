@@ -4,7 +4,7 @@ from markdown import parse_markdown
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-class TestMarkdown(unittest.TestCase):
+class MarkdownTest(unittest.TestCase):
 
     def test_paragraph(self):
         self.assertEqual(parse_markdown('This will be a paragraph'),

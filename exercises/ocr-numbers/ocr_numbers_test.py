@@ -13,7 +13,7 @@ from ocr_numbers import convert
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
-class OcrTest(unittest.TestCase):
+class OcrNumbersTest(unittest.TestCase):
     def test_recognizes_0(self):
         self.assertEqual(convert([" _ ",
                                   "| |",

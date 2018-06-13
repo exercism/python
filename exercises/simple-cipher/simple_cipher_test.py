@@ -3,7 +3,7 @@ import unittest
 from simple_cipher import Caesar, Cipher
 
 
-class CipherTest(unittest.TestCase):
+class SimpleCipherTest(unittest.TestCase):
     def test_caesar_encode1(self):
         self.assertEqual(Caesar().encode('itisawesomeprogramminginpython'),
                          'lwlvdzhvrphsurjudpplqjlqsbwkrq')

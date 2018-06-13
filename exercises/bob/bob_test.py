@@ -5,7 +5,7 @@ import bob
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-class BobTests(unittest.TestCase):
+class BobTest(unittest.TestCase):
     def test_stating_something(self):
         self.assertEqual(bob.hey("Tom-ay-to, tom-aaaah-to."), "Whatever.")
 

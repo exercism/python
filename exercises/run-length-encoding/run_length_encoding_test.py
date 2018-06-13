@@ -5,7 +5,7 @@ from run_length_encoding import encode, decode
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
-class RunLengthEncodingTests(unittest.TestCase):
+class RunLengthEncodingTest(unittest.TestCase):
     def test_encode_empty_string(self):
         self.assertMultiLineEqual(encode(''), '')
 

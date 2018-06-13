@@ -7,7 +7,7 @@ from house import recite
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v2.1.0
 
-class VerseTest(unittest.TestCase):
+class HouseTest(unittest.TestCase):
     def test_verse_one(self):
         expected = ["This is the house that Jack built."]
         self.assertEqual(recite(1, 1), expected)

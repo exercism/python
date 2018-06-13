@@ -5,7 +5,7 @@ from scrabble_score import score
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
-class WordTest(unittest.TestCase):
+class ScrabbleScoreTest(unittest.TestCase):
     def test_lowercase_letter(self):
         self.assertEqual(score("a"), 1)
 

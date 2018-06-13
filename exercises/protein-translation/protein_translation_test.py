@@ -5,7 +5,7 @@ from protein_translation import proteins
 
 # Tests adapted from problem-specifications/canonical-data.json @ v1.1.0
 
-class ProteinTranslationTests(unittest.TestCase):
+class ProteinTranslationTest(unittest.TestCase):
 
     def test_AUG_translates_to_methionine(self):
         self.assertEqual(proteins('AUG'), ['Methionine'])

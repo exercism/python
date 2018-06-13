@@ -5,7 +5,7 @@ import hello_world
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
-class HelloWorldTests(unittest.TestCase):
+class HelloWorldTest(unittest.TestCase):
     def test_hello(self):
         self.assertEqual(hello_world.hello(), 'Hello, World!')
 

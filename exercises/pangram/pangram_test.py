@@ -5,7 +5,7 @@ from pangram import is_pangram
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
 
-class PangramTests(unittest.TestCase):
+class PangramTest(unittest.TestCase):
 
     def test_sentence_empty(self):
         self.assertIs(is_pangram(''), False)

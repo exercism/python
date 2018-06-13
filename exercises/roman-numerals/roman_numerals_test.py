@@ -5,7 +5,7 @@ import roman_numerals
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-class RomanTest(unittest.TestCase):
+class RomanNumeralsTest(unittest.TestCase):
     numerals = {
         1: 'I',
         2: 'II',

@@ -6,7 +6,7 @@ import unittest
 from bank_account import BankAccount
 
 
-class BankAccountTests(unittest.TestCase):
+class BankAccountTest(unittest.TestCase):
 
     def setUp(self):
         self.account = BankAccount()

@@ -13,7 +13,7 @@ from largest_series_product import largest_product
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
-class SeriesTest(unittest.TestCase):
+class LargestSeriesProductTest(unittest.TestCase):
     def test_finds_the_largest_product_if_span_equals_length(self):
         self.assertEqual(largest_product("29", 2), 18)
 
