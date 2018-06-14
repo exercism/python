@@ -1,78 +1,12 @@
 import unittest
+import re
 
-from simple_cipher import Caesar, Cipher
+from simple_cipher import Cipher
 
+
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
 class SimpleCipherTest(unittest.TestCase):
-    def test_caesar_encode1(self):
-        self.assertEqual(Caesar().encode('itisawesomeprogramminginpython'),
-                         'lwlvdzhvrphsurjudpplqjlqsbwkrq')
-
-    def test_caesar_encode2(self):
-        self.assertEqual(Caesar().encode('venividivici'), 'yhqlylglylfl')
-
-    def test_caesar_encode3(self):
-        self.assertEqual(Caesar().encode('\'Twas the night before Christmas'),
-                         'wzdvwkhqljkwehiruhfkulvwpdv')
-
-    def test_caesar_encode_with_numbers(self):
-        self.assertEqual(Caesar().encode('1, 2, 3, Go!'), 'jr')
-
-    def test_caesar_decode(self):
-        self.assertEqual(Caesar().decode('yhqlylglylfl'), 'venividivici')
-
-    def test_cipher_encode1(self):
-        c = Cipher('a')
-        self.assertEqual(
-            c.encode('itisawesomeprogramminginpython'),
-            'itisawesomeprogramminginpython')
-
-    def test_cipher_encode2(self):
-        c = Cipher('aaaaaaaaaaaaaaaaaaaaaa')
-        self.assertEqual(
-            c.encode('itisawesomeprogramminginpython'),
-            'itisawesomeprogramminginpython')
-
-    def test_cipher_encode3(self):
-        c = Cipher('dddddddddddddddddddddd')
-        self.assertEqual(c.encode('venividivici'), 'yhqlylglylfl')
-
-    def test_cipher_encode4(self):
-        key = ('duxrceqyaimciuucnelkeoxjhdyduucpmrxmaivacmybmsdrzwqxvbxsy'
-               'gzsabdjmdjabeorttiwinfrpmpogvabiofqexnohrqu')
-        c = Cipher(key)
-        self.assertEqual(c.encode('diffiehellman'), 'gccwkixcltycv')
-
-    def test_cipher_encode_short_key(self):
-        c = Cipher('abcd')
-        self.assertEqual(c.encode('aaaaaaaa'), 'abcdabcd')
-
-    def test_cipher_compositiion1(self):
-        key = ('duxrceqyaimciuucnelkeoxjhdyduucpmrxmaivacmybmsdrzwqxvbxsy'
-               'gzsabdjmdjabeorttiwinfrpmpogvabiofqexnohrqu')
-        plaintext = 'adaywithoutlaughterisadaywasted'
-        c = Cipher(key)
-        self.assertEqual(c.decode(c.encode(plaintext)), plaintext)
-
-    def test_cipher_compositiion2(self):
-        plaintext = 'adaywithoutlaughterisadaywasted'
-        c = Cipher()
-        self.assertEqual(c.decode(c.encode(plaintext)), plaintext)
-
-    def test_cipher_random_key(self):
-        c = Cipher()
-        self.assertTrue(
-            len(c.key) >= 100,
-            'A random key must be generated when no key is given!')
-        self.assertTrue(c.key.islower() and c.key.isalpha(),
-                        'All items in the key must be chars and lowercase!')
-
-    def test_cipher_wrong_key(self):
-        with self.assertRaisesWithMessage(ValueError):
-            Cipher('a1cde')
-        with self.assertRaisesWithMessage(ValueError):
-            Cipher('aBcde')
-
     # Utility functions
     def setUp(self):
         try:
@@ -82,6 +16,71 @@ class SimpleCipherTest(unittest.TestCase):
 
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
+
+
+class RandomKeyCipherTest(SimpleCipherTest):
+    def test_can_encode(self):
+        cipher = Cipher()
+        self.assertEqual(cipher.encode('aaaaaaaaaa'), cipher.key[:10])
+
+    def test_can_decode(self):
+        cipher = Cipher()
+        plaintext = 'aaaaaaaaaa'
+        self.assertEqual(cipher.decode(cipher.key[:len(plaintext)]), plaintext)
+
+    def test_is_reversible(self):
+        cipher = Cipher()
+        plaintext = 'abcdefghij'
+        self.assertEqual(cipher.decode(cipher.encode(plaintext)), plaintext)
+
+    def test_key_is_only_made_of_lowercase_letters(self):
+        self.assertIsNotNone(re.match('^[a-z]+$', Cipher().key))
+
+
+class SubstitutionCipherTest(SimpleCipherTest):
+    def test_can_encode(self):
+        cipher = Cipher('abcdefghij')
+        self.assertEqual(cipher.encode('aaaaaaaaaa'), cipher.key)
+
+    def test_can_decode(self):
+        cipher = Cipher('abcdefghij')
+        self.assertEqual(cipher.decode(cipher.key), 'aaaaaaaaaa')
+
+    def test_is_reversible(self):
+        cipher = Cipher('abcdefghij')
+        plaintext = 'abcdefghij'
+        self.assertEqual(cipher.decode(cipher.encode(plaintext)), plaintext)
+
+    def test_can_double_shift_encode(self):
+        plaintext = 'iamapandabear'
+        cipher = Cipher(plaintext)
+        self.assertEqual(cipher.encode(plaintext), 'qayaeaagaciai')
+
+    def test_can_wrap_on_encode(self):
+        cipher = Cipher('abcdefghij')
+        self.assertEqual(cipher.encode('zzzzzzzzzz'), 'zabcdefghi')
+
+    def test_can_wrap_on_decode(self):
+        cipher = Cipher('abcdefghij')
+        self.assertEqual(cipher.decode('zabcdefghi'), 'zzzzzzzzzz')
+
+    def test_can_handle_messages_longer_than_key(self):
+        cipher = Cipher('abc')
+        self.assertEqual(cipher.encode('iamapandabear'), 'iboaqcnecbfcr')
+
+
+class IncorrectKeyCipher(SimpleCipherTest):
+    def test_throws_an_error_with_all_uppercase_key(self):
+        with self.assertRaisesWithMessage(ValueError):
+            Cipher('ABCDEF')
+
+    def test_throws_an_error_with_a_numeric_key(self):
+        with self.assertRaisesWithMessage(ValueError):
+            Cipher('12345')
+
+    def test_throws_an_error_with_empty_key(self):
+        with self.assertRaisesWithMessage(ValueError):
+            Cipher('')
 
 
 if __name__ == '__main__':
