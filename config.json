@@ -1355,6 +1355,18 @@
       ]
     },
     {
+      "slug": "ledger",
+      "uuid": "c2e9d08d-1a58-4d9a-a797-cea265973bd4",
+      "core": false,
+      "unlocked_by": "markdown",
+      "difficulty": 5,
+      "topics": [
+        "globalization",
+        "refactoring",
+        "strings"
+      ]
+    },
+    {
       "slug": "accumulate",
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "core": false,
