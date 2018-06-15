@@ -75,7 +75,7 @@ class LedgerTest(unittest.TestCase):
         ]
         expected = '\n'.join([
             'Date       | Description               | Change       ',
-            '01/01/2015 | Something                 |    ($1234.56)',
+            '01/01/2015 | Freude schoner Gotterf... |    ($1234.56)',
         ])
         self.assertEqual(format_entries(currency, locale, entries), expected)
 
