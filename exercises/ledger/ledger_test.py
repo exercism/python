@@ -106,6 +106,18 @@ class LedgerTest(unittest.TestCase):
         ])
         self.assertEqual(format_entries(currency, locale, entries), expected)
 
+    def test_dutch_locale_and_euros(self):
+        currency = 'EUR'
+        locale = 'nl_NL'
+        entries = [
+            create_entry('2015-03-12', 'Buy present', 123456),
+        ]
+        expected = '\n'.join([
+            'Datum      | Omschrijving              | Verandering  ',
+            u'12-03-2015 | Buy present               |   € 1.234,56 ',
+        ])
+        self.assertEqual(format_entries(currency, locale, entries), expected)
+
     def test_dutch_negative_number_with_3_digits_before_decimal_point(self):
         currency = 'USD'
         locale = 'nl_NL'
