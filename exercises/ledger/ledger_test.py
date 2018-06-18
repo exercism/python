@@ -1,9 +1,12 @@
+# -*- coding: utf-8 -*-
 import unittest
 
 from ledger import format_entries, create_entry
 
 
 class LedgerTest(unittest.TestCase):
+    maxDiff = 5000
+
     def test_empty_ledger(self):
         currency = 'USD'
         locale = 'en_US'
@@ -41,7 +44,7 @@ class LedgerTest(unittest.TestCase):
         currency = 'USD'
         locale = 'en_US'
         entries = [
-            create_entry('2015-01-01', 'Get present', 1000),
+            create_entry('2015-01-02', 'Get present', 1000),
             create_entry('2015-01-01', 'Buy present', -1000),
         ]
         expected = '\n'.join([
@@ -75,7 +78,7 @@ class LedgerTest(unittest.TestCase):
         ]
         expected = '\n'.join([
             'Date       | Description               | Change       ',
-            '01/01/2015 | Freude schoner Gotterf... |    ($1234.56)',
+            '01/01/2015 | Freude schoner Gotterf... |   ($1,234.56)',
         ])
         self.assertEqual(format_entries(currency, locale, entries), expected)
 
@@ -87,7 +90,7 @@ class LedgerTest(unittest.TestCase):
         ]
         expected = '\n'.join([
             'Date       | Description               | Change       ',
-            '01/01/2015 | Buy present               |      (€10.00)',
+            u'01/01/2015 | Buy present               |      (€10.00)',
         ])
         self.assertEqual(format_entries(currency, locale, entries), expected)
 
@@ -98,8 +101,8 @@ class LedgerTest(unittest.TestCase):
             create_entry('2015-03-12', 'Buy present', 123456),
         ]
         expected = '\n'.join([
-            'Date       | Description               | Change       ',
-            '12-03-2015 | Buy present               |    ($1234.56)',
+            'Datum      | Omschrijving              | Verandering  ',
+            '12-03-2015 | Buy present               |   $ 1.234,56 ',
         ])
         self.assertEqual(format_entries(currency, locale, entries), expected)
 
@@ -110,8 +113,8 @@ class LedgerTest(unittest.TestCase):
             create_entry('2015-03-12', 'Buy present', -12345),
         ]
         expected = '\n'.join([
-            'Date       | Description               | Change       ',
-            '12-03-2015 | Buy present               |     $ -123,45',
+            'Datum      | Omschrijving              | Verandering  ',
+            '12-03-2015 | Buy present               |    $ -123,45 ',
         ])
         self.assertEqual(format_entries(currency, locale, entries), expected)
 
@@ -123,7 +126,7 @@ class LedgerTest(unittest.TestCase):
         ]
         expected = '\n'.join([
             'Date       | Description               | Change       ',
-            '12-03-2015 | Buy present               |     ($123,45)',
+            '03/12/2015 | Buy present               |     ($123.45)',
         ])
         self.assertEqual(format_entries(currency, locale, entries), expected)
 
