@@ -4,7 +4,7 @@ import re
 from simple_cipher import Cipher
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class SimpleCipherTest(unittest.TestCase):
     # Utility functions
@@ -21,7 +21,8 @@ class SimpleCipherTest(unittest.TestCase):
 class RandomKeyCipherTest(SimpleCipherTest):
     def test_can_encode(self):
         cipher = Cipher()
-        self.assertEqual(cipher.encode('aaaaaaaaaa'), cipher.key[:10])
+        plaintext = 'aaaaaaaaaa'
+        self.assertEqual(cipher.encode(plaintext), cipher.key[:len(plaintext)])
 
     def test_can_decode(self):
         cipher = Cipher()
