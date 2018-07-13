@@ -5,7 +5,7 @@ import unittest
 from house import recite
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.1.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.2.0
 
 class HouseTest(unittest.TestCase):
     def test_verse_one(self):
