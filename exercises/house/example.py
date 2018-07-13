@@ -16,7 +16,7 @@ def verse(verse_num):
     v = ['This is {}'.format(parts[verse_num][1])]
     v.extend(['that {0} {1}'.format(*parts[i])
               for i in range(verse_num - 1, -1, -1)])
-    return ''.join(v)
+    return ' '.join(v)
 
 
 def recite(start_verse, end_verse):
