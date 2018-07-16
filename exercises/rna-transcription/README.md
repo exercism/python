@@ -18,9 +18,6 @@ each nucleotide with its complement:
 * `T` -> `A`
 * `A` -> `U`
 
-Your function will need to be able to handle invalid inputs by raising a `ValueError` with a meaningful message.
-
-
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
@@ -60,7 +57,7 @@ Note that, when trying to submit an exercise, make sure the solution is in the `
 You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Workspace`.
 
 For more detailed information about running tests, code style and linting,
-please see the [help page](http://exercism.io/languages/python).
+please see [Running the Tests](http://exercism.io/tracks/python/tests).
 
 ## Source
 
