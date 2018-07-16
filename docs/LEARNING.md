@@ -1,4 +1,4 @@
-# Learning Python From Scratch
+## Learning Python From Scratch
 Python is, as Wikipedia goes, a powerful *general-purpose high-level programming language*. It basically means that it can be used to write a wide variety of different kinds of software, from videogames to HTTP servers to command-line tools.
 
 One of the main characteristics that differentiates Python from other programming languages is its strong emphasis on readability and code cleaness. In fact, differently from other languages like JavaScript or C++, in Python code indentation has a syntactical meaning and you are forced to chose and adhere to a writing style (e.g. don't mix *tabs* and *spaces* for identation; don't use two spaces where you should use four etc.). Yes, forced: the Python interpreter will raise SyntaxErrors if it recognize wrong indentation.
