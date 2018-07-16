@@ -1,4 +1,4 @@
-# Installing `pytest`
+## Installing `pytest`
 
 We recommend you install [pytest](http://pytest.org/latest/) and
 [pytest-cache](http://pythonhosted.org/pytest-cache/). `pytest` is a testing
@@ -44,9 +44,9 @@ cd exercism/python/bob
 python bob_test.py
 ```
 
-# Running the Tests
+## Running the Tests
 
-## Run All Tests
+### Run All Tests
 
 To run all tests for a specific exercise (we will take the `bob.py` exercise as
 an example here), place yourself in the directory where that exercise has been
@@ -73,9 +73,9 @@ Ran 0 tests in 0.000s
 OK
 ```
 
-## More `pytest` Examples
+### More `pytest` Examples
 
-### Stop After First Failure
+#### Stop After First Failure
 The above will run all the tests, whether they fail or not. If you'd rather stop
 the process and exit on the first failure, run:
 
@@ -83,7 +83,7 @@ the process and exit on the first failure, run:
 pytest -x bob_test.py
 ```
 
-### Failed Tests First
+#### Failed Tests First
 
 `pytest-cache` remembers which tests failed, and can run those tests first.
 
@@ -91,7 +91,7 @@ pytest -x bob_test.py
 pytest --ff bob_test.py
 ```
 
-### Running All Tests for All Exercises
+#### Running All Tests for All Exercises
 
 ```bash
 cd exercism/python/
