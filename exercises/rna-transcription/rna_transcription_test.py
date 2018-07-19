@@ -22,6 +22,12 @@ class RnaTranscriptionTest(unittest.TestCase):
     def test_transcribes_all_occurrences(self):
         self.assertEqual(to_rna('ACGTGGTCTTAA'), 'UGCACCAGAAUU')
 
+    def test_raise_value_error_with_invalid_nucleotide(self):
+        self.assertRaises(ValueError, to_rna, "ACGB")
+
+    def test_raise_value_error_with_lowercase_nucleotide(self):
+        self.assertRaises(ValueError, to_rna, "aCG")
+
 
 if __name__ == '__main__':
     unittest.main()
