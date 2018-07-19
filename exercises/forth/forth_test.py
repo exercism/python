@@ -3,8 +3,7 @@ import unittest
 from forth import evaluate, StackUnderflowError
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.5.0
-# Tests for case-insensitivity are track-specific
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.6.0
 
 class ForthParsingTest(unittest.TestCase):
     def test_numbers_just_get_pushed_to_stack(self):
@@ -301,6 +300,25 @@ class ForthUserDefinedWordsTest(unittest.TestCase):
             "3 4 +"
         ]
         expected = [12]
+        self.assertEqual(evaluate(input_data), expected)
+
+    def test_can_use_different_words_with_same_name(self):
+        input_data = [
+            ": foo 5 ;",
+            ": bar foo ;",
+            ": foo 6 ;",
+            "bar foo"
+        ]
+        expected = [5, 6]
+        self.assertEqual(evaluate(input_data), expected)
+
+    def test_can_define_word_that_uses_word_with_same_name(self):
+        input_data = [
+            ": foo 10 ;",
+            ": foo foo 1 + ;",
+            "foo"
+        ]
+        expected = [11]
         self.assertEqual(evaluate(input_data), expected)
 
     def test_cannot_redefine_numbers(self):
