@@ -29,6 +29,11 @@ class SaddlePointsTest(unittest.TestCase):
         expected = set([(0, 1), (1, 1), (2, 1)])
         self.assertEqual(saddle_points(matrix), expected)
 
+    def test_identify_multiple_saddle_points_in_row(self):
+        matrix = [[6, 7, 8], [5, 5, 5], [6, 5, 6]]
+        expected = set([(1, 0), (1, 1), (1, 2)])
+        self.assertEqual(saddle_points(matrix), expected)
+
     def test_identify_saddle_point_in_bottom_right_corner(self):
         matrix = [[8, 7, 9], [6, 7, 6], [3, 2, 5]]
         expected = set([(2, 2)])
