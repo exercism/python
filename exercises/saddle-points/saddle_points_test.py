@@ -10,7 +10,7 @@ import unittest
 from saddle_points import saddle_points
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class SaddlePointsTest(unittest.TestCase):
     def test_identify_single_saddle_point(self):
@@ -30,7 +30,7 @@ class SaddlePointsTest(unittest.TestCase):
         self.assertEqual(saddle_points(matrix), expected)
 
     def test_identify_multiple_saddle_points_in_row(self):
-        matrix = [[6, 7, 8], [5, 5, 5], [6, 5, 6]]
+        matrix = [[6, 7, 8], [5, 5, 5], [7, 5, 6]]
         expected = set([(1, 0), (1, 1), (1, 2)])
         self.assertEqual(saddle_points(matrix), expected)
 
