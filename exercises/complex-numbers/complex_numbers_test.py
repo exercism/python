@@ -152,26 +152,30 @@ class ComplexNumbersTest(unittest.TestCase):
     def test_eulers_identity_formula(self):
         input_number = ComplexNumber(0, math.pi)
         expected = ComplexNumber(-1, 0)
-        self.assertEqual(input_number.exp().real, expected.real)
-        self.assertEqual(input_number.exp().imaginary, expected.imaginary)
+        actual = input_number.exp()
+        self.assertAlmostEqual(actual.real, expected.real)
+        self.assertAlmostEqual(actual.imaginary, expected.imaginary)
 
     def test_exponential_of_0(self):
         input_number = ComplexNumber(0, 0)
         expected = ComplexNumber(1, 0)
-        self.assertEqual(input_number.exp().real, expected.real)
-        self.assertEqual(input_number.exp().imaginary, expected.imaginary)
+        actual = input_number.exp()
+        self.assertAlmostEqual(actual.real, expected.real)
+        self.assertAlmostEqual(actual.imaginary, expected.imaginary)
 
     def test_exponential_of_a_purely_real_number(self):
         input_number = ComplexNumber(1, 0)
         expected = ComplexNumber(math.e, 0)
-        self.assertEqual(input_number.exp().real, expected.real)
-        self.assertEqual(input_number.exp().imaginary, expected.imaginary)
+        actual = input_number.exp()
+        self.assertAlmostEqual(actual.real, expected.real)
+        self.assertAlmostEqual(actual.imaginary, expected.imaginary)
 
     def test_exponential_of_a_number_with_real_and_imaginary_part(self):
         input_number = ComplexNumber(math.log(2), math.pi)
         expected = ComplexNumber(-2, 0)
-        self.assertEqual(input_number.exp().real, expected.real)
-        self.assertEqual(input_number.exp().imaginary, expected.imaginary)
+        actual = input_number.exp()
+        self.assertAlmostEqual(actual.real, expected.real)
+        self.assertAlmostEqual(actual.imaginary, expected.imaginary)
 
 
 if __name__ == '__main__':
