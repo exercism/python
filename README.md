@@ -14,7 +14,7 @@ Please see the [contributing guide](https://github.com/exercism/docs/blob/master
 ## Working on the Exercises
 
 We welcome both improvements to the existing exercises and new exercises.
-A list of missing exercise can be found here: http://exercism.io/languages/python/todo
+A list of missing exercise can be found here: https://github.com/exercism/python/issues/417#issuecomment-366040062
 
 
 ### Conventions
