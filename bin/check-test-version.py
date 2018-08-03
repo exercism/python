@@ -127,7 +127,9 @@ def check_test_version(
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         formatter_class=CustomFormatter,
-        epilog="Results are of the form:\n  <exercise>: <referenced>!=<current>"
+        epilog=(
+            "Results are of the form:\n  <exercise>: <referenced>!=<current>"
+        )
     )
     parser._optionals.title = 'options'
     parser.add_argument(
