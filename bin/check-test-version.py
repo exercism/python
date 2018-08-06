@@ -266,12 +266,12 @@ if __name__ == '__main__':
         create_issue=opts.create_issue,
     )
     if opts.version:
-        print('check-test-version.py v1.0')
+        print('check-test-version.py v1.1')
         sys.exit(0)
     result = True
     if opts.only is None:
         for exercise in os.listdir('exercises'):
-            if exercise in opts.ignore:
+            if opts.ignore and exercise in opts.ignore:
                 continue
             if os.path.isdir(os.path.join('exercises', exercise)):
                 result = check_test_version(exercise, **kwargs) and result
