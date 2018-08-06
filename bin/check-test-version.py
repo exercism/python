@@ -5,6 +5,7 @@ import re
 import argparse
 import os
 import sys
+from create_issue import GitHub
 
 if sys.version_info[0] == 3:
     FileNotFoundError = OSError
@@ -22,6 +23,7 @@ DEFAULT_SPEC_PATH = os.path.join(
     '..',
     'problem-specifications'
 )
+gh = None
 
 with open('config.json') as f:
     config = json.load(f)
@@ -53,6 +55,19 @@ def get_test_file_path(exercise):
     )
 
 
+def get_test_file_url(exercise):
+    return '/'.join([
+        'https://github.com',
+        'exercism',
+        'python',
+        'blob',
+        'master',
+        'exercises',
+        exercise,
+        exercise.replace('-', '_') + '_test.py'
+    ])
+
+
 def get_canonical_data_path(exercise, spec_path=DEFAULT_SPEC_PATH):
     return os.path.join(
         spec_path,
@@ -60,6 +75,19 @@ def get_canonical_data_path(exercise, spec_path=DEFAULT_SPEC_PATH):
         exercise,
         'canonical-data.json'
     )
+
+
+def get_canonical_data_url(exercise):
+    return '/'.join([
+        'https://github.com',
+        'exercism',
+        'problem-specifications',
+        'blob',
+        'master',
+        'exercises',
+        exercise,
+        'canonical-data.json'
+    ])
 
 
 def get_referenced_version(exercise):
@@ -88,6 +116,31 @@ def is_deprecated(exercise):
     return False
 
 
+def create_issue_for_exercise(exercise, available_data_version):
+    title = '{}: update tests to v{}'.format(exercise, available_data_version)
+    body = (
+        'The [test suite]({}) for {} is out of date and needs updated to '
+        'conform to the [latest canonical data]({}).'
+    ).format(
+        get_test_file_url(exercise),
+        exercise,
+        get_canonical_data_url(exercise),
+    )
+    labels = [
+        'beginner friendly',
+        'help wanted',
+        'enhancement',
+    ]
+    issue = gh.create_issue(
+        'exercism',
+        'python',
+        title,
+        body=body,
+        labels=labels
+    )
+    return issue['number']
+
+
 def check_test_version(
     exercise,
     spec=DEFAULT_SPEC_PATH,
@@ -96,6 +149,8 @@ def check_test_version(
     name_only=False,
     has_data=False,
     include_deprecated=False,
+    create_issue=False,
+    token=None,
 ):
     if not include_deprecated and is_deprecated(exercise):
         return True
@@ -111,16 +166,22 @@ def check_test_version(
     if not no_color:
         status = status_color + status + bcolors.ENDC
     if not up_to_date or print_ok:
-        if name_only:
-            print(exercise)
+        if create_issue:
+            issue_number = create_issue_for_exercise(exercise, available)
+            issue_info = '(#{})'.format(issue_number)
         else:
-            print('[ {} ] {}: {}{}{}'.format(
+            issue_info = ''
+        if name_only:
+            baseline = exercise
+        else:
+            baseline = '[ {} ] {}: {}{}{}'.format(
                 status,
                 exercise,
                 referenced,
                 '=' if up_to_date else '!=',
                 available
-            ))
+            )
+        print(' '.join((baseline, issue_info)))
     return up_to_date
 
 
@@ -140,7 +201,12 @@ if __name__ == '__main__':
     parser.add_argument(
         '-o', '--only',
         metavar='<exercise>',
-        help='Check just the exercise specified (by the slug)/'
+        help='Check just the exercise specified (by the slug).',
+    )
+    parser.add_argument(
+        '--ignore',
+        action='append',
+        help='Check all except exercise[s] specified (by the slug).',
     )
     parser.add_argument(
         '-p', '--spec-path',
@@ -175,13 +241,29 @@ if __name__ == '__main__':
         action='store_true',
         help='Print exercise names only.'
     )
+    g = parser.add_argument_group('issue creation')
+    g.add_argument(
+        '--create-issue',
+        action='store_true',
+        help='Create issue for out-of-date exercises'
+    )
+    g.add_argument(
+        '-t', '--token',
+        help='GitHub personal access token (permissions: repo)'
+    )
     opts = parser.parse_args()
+    if opts.create_issue:
+        if opts.token is not None:
+            gh = GitHub(api_token=opts.token)
+        else:
+            gh = GitHub()
     kwargs = dict(
         spec=opts.spec_path,
         no_color=opts.no_color,
         print_ok=opts.verbose,
         name_only=opts.name_only,
         has_data=opts.has_data,
+        create_issue=opts.create_issue,
     )
     if opts.version:
         print('check-test-version.py v1.0')
@@ -189,6 +271,8 @@ if __name__ == '__main__':
     result = True
     if opts.only is None:
         for exercise in os.listdir('exercises'):
+            if exercise in opts.ignore:
+                continue
             if os.path.isdir(os.path.join('exercises', exercise)):
                 result = check_test_version(exercise, **kwargs) and result
     else:
