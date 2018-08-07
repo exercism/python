@@ -47,6 +47,15 @@ class bcolors:
     UNDERLINE = '\033[4m'
 
 
+def verify_spec_location(path):
+    with open(os.path.join(path, 'package.json')) as f:
+        data = json.load(f)
+    if data['name'] != 'problem-specifications':
+        raise ValueError(
+            '{} is not the problem-specifications directory'.format(path)
+        )
+
+
 def get_test_file_path(exercise):
     return os.path.join(
         'exercises',
@@ -211,7 +220,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '-p', '--spec-path',
         default=DEFAULT_SPEC_PATH,
-        metavar='<path/to/track>',
+        metavar='<path/to/spec>',
         help='The location of the problem-specifications directory.'
     )
     g = parser.add_argument_group('output')
@@ -252,6 +261,7 @@ if __name__ == '__main__':
         help='GitHub personal access token (permissions: repo)'
     )
     opts = parser.parse_args()
+    verify_spec_location(opts.spec_path)
     if opts.create_issue:
         if opts.token is not None:
             gh = GitHub(api_token=opts.token)
