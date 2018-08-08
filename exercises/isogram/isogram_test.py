@@ -3,7 +3,7 @@ import unittest
 from isogram import is_isogram
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
 
 class IsogramTest(unittest.TestCase):
 
@@ -15,6 +15,9 @@ class IsogramTest(unittest.TestCase):
 
     def test_word_with_one_duplicated_character(self):
         self.assertIs(is_isogram("eleven"), False)
+
+    def test_word_with_one_duplicated_character_from_end_of_alphabet(self):
+        self.assertIs(is_isogram("zzyzx"), False)
 
     def test_longest_reported_english_isogram(self):
         self.assertIs(is_isogram("subdermatoglyphic"), True)
