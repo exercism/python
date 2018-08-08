@@ -202,7 +202,7 @@
       "topics": [
         "algorithms",
         "loops",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -224,7 +224,7 @@
       "unlocked_by": "leap",
       "difficulty": 1,
       "topics": [
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -249,8 +249,7 @@
       "topics": [
         "bitwise_operations",
         "classes",
-        "enumerations",
-        "mathematics"
+        "enumerations"
       ]
     },
     {
@@ -292,7 +291,7 @@
         "conditionals",
         "lists",
         "loops",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -316,7 +315,7 @@
       "difficulty": 1,
       "topics": [
         "integers",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -352,7 +351,8 @@
       "topics": [
         "conditionals",
         "logic",
-        "loops"
+        "loops",
+        "math"
       ]
     },
     {
@@ -407,7 +407,6 @@
         "integers",
         "logic",
         "loops",
-        "mathematics",
         "strings"
       ]
     },
@@ -420,8 +419,7 @@
       "topics": [
         "conditionals",
         "floating_point_numbers",
-        "integers",
-        "mathematics"
+        "integers"
       ]
     },
     {
@@ -433,7 +431,6 @@
       "topics": [
         "bitwise_operations",
         "integers",
-        "mathematics",
         "type_conversion"
       ]
     },
@@ -447,7 +444,6 @@
         "algorithms",
         "conditionals",
         "loops",
-        "mathematics",
         "pattern_matching",
         "security"
       ]
@@ -474,7 +470,7 @@
         "algorithms",
         "logic",
         "loops",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -555,7 +551,7 @@
         "lists",
         "logic",
         "loops",
-        "mathematics",
+        "math",
         "searching",
         "sets",
         "tuples",
@@ -626,7 +622,7 @@
         "algorithms",
         "lists",
         "loops",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -640,7 +636,6 @@
         "conditionals",
         "lists",
         "loops",
-        "mathematics",
         "matrices",
         "sets"
       ]
@@ -667,7 +662,7 @@
         "algorithms",
         "logic",
         "loops",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -683,7 +678,6 @@
         "lists",
         "logic",
         "loops",
-        "mathematics",
         "transforming"
       ]
     },
@@ -707,7 +701,7 @@
       "difficulty": 1,
       "topics": [
         "loops",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -748,7 +742,6 @@
         "exception_handling",
         "games",
         "logic",
-        "mathematics",
         "matrices"
       ]
     },
@@ -760,7 +753,6 @@
       "difficulty": 1,
       "topics": [
         "logic",
-        "mathematics",
         "parsing",
         "pattern_matching",
         "regular_expressions",
@@ -815,7 +807,6 @@
       "topics": [
         "classes",
         "conditionals",
-        "mathematics",
         "object_oriented_programming",
         "pattern_matching"
       ]
@@ -975,7 +966,7 @@
         "classes",
         "equality",
         "floating_point_numbers",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -1010,6 +1001,7 @@
       "difficulty": 4,
       "topics": [
         "integers",
+        "math",
         "transforming"
       ]
     },
@@ -1022,7 +1014,6 @@
       "topics": [
         "classes",
         "logic",
-        "mathematics",
         "text_formatting",
         "time"
       ]
@@ -1070,8 +1061,7 @@
       "difficulty": 6,
       "topics": [
         "conditionals",
-        "logic",
-        "mathematics"
+        "logic"
       ]
     },
     {
@@ -1152,7 +1142,7 @@
       "difficulty": 1,
       "topics": [
         "loops",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -1176,7 +1166,7 @@
       "difficulty": 6,
       "topics": [
         "equality",
-        "mathematics",
+        "math",
         "tuples"
       ]
     },
@@ -1187,7 +1177,8 @@
       "unlocked_by": "book-store",
       "difficulty": 7,
       "topics": [
-        "algorithms"
+        "algorithms",
+        "math"
       ]
     },
     {
