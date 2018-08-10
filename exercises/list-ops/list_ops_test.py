@@ -4,7 +4,7 @@ import operator
 import list_ops
 
 
-# Tests adapted from problem-specifications//canonical-data.json @ v2.2.0
+# Tests adapted from problem-specifications//canonical-data.json @ v2.3.0
 
 class ListOpsTest(unittest.TestCase):
 
@@ -26,6 +26,11 @@ class ListOpsTest(unittest.TestCase):
     def test_concat_list_of_lists(self):
         self.assertEqual(list_ops.concat([[1, 2], [3], [], [4, 5, 6]]),
                          [1, 2, 3, 4, 5, 6])
+
+    def test_concat_list_of_nested_lists(self):
+        self.assertEqual(
+            list_ops.concat([[[1], [2]], [[3]], [[]], [[4, 5, 6]]]),
+            [[1], [2], [3], [], [4, 5, 6]])
 
     # tests for filter_clone
     def test_filter_empty_list(self):
