@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 from __future__ import print_function
-import json
-import re
+
 import argparse
+import json
 import os
+import re
 import sys
+from glob import glob
+
 from create_issue import GitHub
 
 if sys.version_info[0] == 3:
@@ -209,6 +212,7 @@ if __name__ == '__main__':
     )
     parser.add_argument(
         '-o', '--only',
+        default='*',
         metavar='<exercise>',
         help='Check just the exercise specified (by the slug).',
     )
@@ -279,12 +283,10 @@ if __name__ == '__main__':
         print('check-test-version.py v1.1')
         sys.exit(0)
     result = True
-    if opts.only is None:
-        for exercise in os.listdir('exercises'):
-            if opts.ignore and exercise in opts.ignore:
-                continue
-            if os.path.isdir(os.path.join('exercises', exercise)):
-                result = check_test_version(exercise, **kwargs) and result
-    else:
-        result = check_test_version(opts.only, **kwargs)
+    for exercise in glob(os.path.join('exercises', opts.only)):
+        exercise = exercise.split(os.path.sep)[-1]
+        if opts.ignore and exercise in opts.ignore:
+            continue
+        if os.path.isdir(os.path.join('exercises', exercise)):
+            result = check_test_version(exercise, **kwargs) and result
     sys.exit(0 if result else 1)
