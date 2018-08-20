@@ -17,7 +17,7 @@ else:
 
 VERSION_PATTERN = '(\d+\.\d+\.\d+)'
 CANONICAL_PATTERN = (
-    '# Tests adapted from `problem-specifications//canonical-data.json` '
+    '# Tests adapted from `?problem-specifications//canonical-data.json`? '
     '@ v' + VERSION_PATTERN
 )
 rgx_version = re.compile(VERSION_PATTERN)
