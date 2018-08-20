@@ -3,7 +3,7 @@ import unittest
 from protein_translation import proteins
 
 
-# Tests adapted from problem-specifications/canonical-data.json @ v1.1.0
+# Tests adapted from problem-specifications/canonical-data.json @ v1.1.1
 
 class ProteinTranslationTest(unittest.TestCase):
 
@@ -57,6 +57,12 @@ class ProteinTranslationTest(unittest.TestCase):
             self):
         strand = 'AUGUUUUAA'
         expected = ['Methionine', 'Phenylalanine']
+        self.assertEqual(proteins(strand), expected)
+
+    def test_stops_translation_if_stop_codon_in_middle_of_three_codon_sequence(
+            self):
+        strand = 'UGGUAGUGG'
+        expected = ['Tryptophan']
         self.assertEqual(proteins(strand), expected)
 
     def test_stops_translation_if_stop_codon_in_middle_of_six_codon_sequence(
