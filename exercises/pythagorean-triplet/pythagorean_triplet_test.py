@@ -1,38 +1,3 @@
-#
-# =============================================================================
-# The test cases below assume two functions are defined:
-#
-#   - triplets_in_range(min, max)
-#       Compute all pythagorean triplets (a,b,c) with min <= a,b,c <= max
-#
-#   - primitive_triplets(b)
-#       Find all primitive pythagorean triplets having b as one of their
-#       components
-#
-#       Args:
-#          b - an integer divisible by 4 (see explanantion below)
-#
-# Note that in the latter function the components other than the argument can
-# be quite large.
-#
-# A primitive pythagorean triplet has its 3 componentes coprime. So, (3,4,5) is
-# a primitive pythagorean triplet since 3,4 and 5 don't have a common factor.
-# On the other hand, (6,8,10), although a pythagorean triplet, is not primitive
-# since 2 divides all three components.
-#
-# A method for finding all primitive pythagorean triplet is given in wikipedia
-# (http://en.wikipedia.org/wiki/Pythagorean_triple#Generating_a_triple). The
-# triplet a=(m^2-n^2), b=2*m*n and c=(m^2+n^2), where m and n are coprime and
-# m-n>0 is odd, generate a primitive triplet. Note that this implies that b has
-# to be divisible by 4 and a and c are odd. Also note that we may have either
-# a>b or b>a.
-#
-# The function primitive_triplets should then use the formula above with b set
-# to its argument and find all possible pairs (m,n) such that m>n, m-n is odd,
-# b=2*m*n and m and n are coprime.
-#
-# =============================================================================
-
 import unittest
 
 from pythagorean_triplet import (
