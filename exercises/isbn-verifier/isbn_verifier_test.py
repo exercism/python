@@ -52,7 +52,7 @@ class IsbnVerifierTest(unittest.TestCase):
     def test_input_is_nine_characters(self):
         self.assertIs(verify('134456729'), False)
 
-    def test_invalid_characters_are_not_ignore(self):
+    def test_invalid_characters_are_not_ignored(self):
         self.assertIs(verify('3132P34035'), False)
 
     def test_input_is_too_long_but_contains_a_valid_isbn(self):
