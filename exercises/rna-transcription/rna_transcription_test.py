@@ -3,9 +3,12 @@ import unittest
 from rna_transcription import to_rna
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
 
 class RnaTranscriptionTest(unittest.TestCase):
+
+    def test_empty_rna_sequence(self):
+        self.assertEqual(to_rna(""), "")
 
     def test_transcribes_cytosine_to_guanine(self):
         self.assertEqual(to_rna('C'), 'G')
