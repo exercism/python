@@ -3,7 +3,7 @@ import unittest
 from book_store import calculate_total
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
 
 class BookStoreTest(unittest.TestCase):
     def test_only_a_single_book(self):
@@ -29,6 +29,9 @@ class BookStoreTest(unittest.TestCase):
 
     def test_two_groups_of_4_is_cheaper_than_group_of_5_plus_group_of_3(self):
         self.assertEqual(calculate_total([1, 1, 2, 2, 3, 3, 4, 5]), 5120)
+
+    def test_two_groups_of_4_is_cheaper_than_groups_of_5_and_3(self):
+        self.assertEqual(calculate_total([1, 1, 2, 3, 4, 4, 5, 5]), 5120)
 
     def test_group_of_4_plus_group_of_2_is_cheaper_than_2_groups_of_3(self):
         self.assertEqual(calculate_total([1, 1, 2, 2, 3, 4]), 4080)

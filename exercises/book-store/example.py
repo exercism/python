@@ -1,3 +1,4 @@
+from collections import Counter
 BOOK_PRICE = 800
 
 
@@ -12,12 +13,16 @@ def calculate_total(books, price_so_far=0.):
     if not books:
         return price_so_far
 
-    groups = list(set(books))
+    reordered_books = []
+    groups = []
+    for value, count in Counter(books).most_common():
+        reordered_books = reordered_books + [value] * count
+        groups.append(value)
     min_price = float('inf')
 
     for i in range(len(groups)):
 
-        remaining_books = books[:]
+        remaining_books = reordered_books[:]
 
         for v in groups[:i + 1]:
             remaining_books.remove(v)
