@@ -3,6 +3,8 @@ import unittest
 from sgf_parsing import parse, SgfTree
 
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+
 class SgfParsingTest(unittest.TestCase):
     def test_empty_input(self):
         input_string = ''
@@ -30,7 +32,7 @@ class SgfParsingTest(unittest.TestCase):
         self.assertEqual(parse(input_string), expected)
 
     def test_properties_without_delimiter(self):
-        input_string = '(;a)'
+        input_string = '(;A)'
         with self.assertRaisesWithMessage(ValueError):
             parse(input_string)
 
