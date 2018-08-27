@@ -3,7 +3,7 @@ import unittest
 from atbash_cipher import decode, encode
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class AtbashCipherTest(unittest.TestCase):
     def test_encode_no(self):
@@ -49,6 +49,14 @@ class AtbashCipherTest(unittest.TestCase):
     def test_decode_all_the_letters(self):
         ciphertext = "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"
         plaintext = "thequickbrownfoxjumpsoverthelazydog"
+        self.assertMultiLineEqual(decode(ciphertext), plaintext)
+
+    def test_decode_with_too_many_spaces(self):
+        self.assertMultiLineEqual(decode("vc vix    r hn"), "exercism")
+
+    def test_decode_with_no_spaces(self):
+        ciphertext = "zmlyhgzxovrhlugvmzhgvkkrmthglmv"
+        plaintext = "anobstacleisoftenasteppingstone"
         self.assertMultiLineEqual(decode(ciphertext), plaintext)
 
     # additional track specific test
