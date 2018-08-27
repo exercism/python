@@ -72,10 +72,13 @@ def parse(input_string):
         return stack[0]
 
     def pop_until(ch):
-        v = ''
-        while peek() != ch:
-            v += pop()
-        return v
+        try:
+            v = ''
+            while peek() != ch:
+                v += pop()
+            return v
+        except IndexError:
+            raise ValueError('Unable to find {}'.format(ch))
     while stack:
         assert_that(pop() == '(' and peek() == ';')
         while pop() == ';':
