@@ -3,7 +3,7 @@ import unittest
 from isogram import is_isogram
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.5.0
 
 class IsogramTest(unittest.TestCase):
 
@@ -24,6 +24,9 @@ class IsogramTest(unittest.TestCase):
 
     def test_word_with_duplicated_character_in_mixed_case(self):
         self.assertIs(is_isogram("Alphabet"), False)
+
+    def test_word_with_duplicated_character_in_mixed_case_lowercase_first(self):
+        self.assertIs(is_isogram("alphAbet"), False)
 
     def test_hypothetical_isogrammic_word_with_hyphen(self):
         self.assertIs(is_isogram("thumbscrew-japingly"), True)
