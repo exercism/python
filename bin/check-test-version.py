@@ -50,6 +50,15 @@ class bcolors:
     UNDERLINE = '\033[4m'
 
 
+def cjust(string, width, fillchar=' '):
+    while len(string) < width:
+        string = fillchar + string
+        if len(string) >= width:
+            break
+        string += fillchar
+    return string
+
+
 def verify_spec_location(path):
     with open(os.path.join(path, 'package.json')) as f:
         data = json.load(f)
@@ -172,9 +181,10 @@ def check_test_version(
     referenced = get_referenced_version(exercise)
     up_to_date = available == referenced
     if up_to_date:
-        status, status_color = '  OK  ', bcolors.OKGREEN
+        status, status_color = 'OK', bcolors.OKGREEN
     else:
         status, status_color = 'NOT OK', bcolors.FAIL
+    status = cjust(status, 8)
     if not no_color:
         status = status_color + status + bcolors.ENDC
     if not up_to_date or print_ok:
@@ -186,7 +196,7 @@ def check_test_version(
         if name_only:
             baseline = exercise
         else:
-            baseline = '[ {} ] {}: {}{}{}'.format(
+            baseline = '[{}] {}: {}{}{}'.format(
                 status,
                 exercise,
                 referenced,
