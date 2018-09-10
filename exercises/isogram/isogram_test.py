@@ -3,7 +3,7 @@ import unittest
 from isogram import is_isogram
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.5.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.6.0
 
 class IsogramTest(unittest.TestCase):
 
@@ -39,6 +39,9 @@ class IsogramTest(unittest.TestCase):
 
     def test_duplicated_character_in_the_middle(self):
         self.assertIs(is_isogram("accentor"), False)
+
+    def test_same_first_and_last_characters(self):
+        self.assertIs(is_isogram("angola"), False)
 
     # Additional tests for this track
 
