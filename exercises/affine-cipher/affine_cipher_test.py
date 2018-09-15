@@ -43,7 +43,7 @@ class AffineCipherTest(unittest.TestCase):
 
     def test_decode_sentence(self):
         self.assertMultiLineEqual(
-        decode("qdwju nqcro muwhn odqun oppmd aunwd o", 19, 16),
+            decode("qdwju nqcro muwhn odqun oppmd aunwd o", 19, 16),
             "anobstacleisoftenasteppingstone")
 
     def test_decode_numbers(self):
@@ -61,8 +61,8 @@ class AffineCipherTest(unittest.TestCase):
             "thequickbrownfoxjumpsoverthelazydog")
 
     def test_decode_with_too_many_spaces(self):
-        self.assertMultiLineEqual(decode("vszzm    cly   yd cg    qdp", 15, 16),
-                                  "jollygreengiant")
+        self.assertMultiLineEqual(
+            decode("vszzm    cly   yd cg    qdp", 15, 16), "jollygreengiant")
 
     def test_decode_with_a_not_coprime_to_alphabet_size(self):
         self.assertRaises(ValueError, decode, "Test", 13, 5)
