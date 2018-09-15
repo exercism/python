@@ -1369,19 +1369,19 @@
       ]
     },
     {
-        "slug": "affine-cipher",
-        "uuid": "02bf6783-fc74-47e9-854f-44d22eb1b6f8",
-        "core": false,
-        "unlocked_by": "atbash-cipher",
-        "difficulty": 5,
-        "topics": [
-          "algorithms",
-          "cryptography",
-          "exception_handling",
-          "loops",
-          "math",
-          "strings"
-        ]
+      "slug": "affine-cipher",
+      "uuid": "02bf6783-fc74-47e9-854f-44d22eb1b6f8",
+      "core": false,
+      "unlocked_by": "grade-school",
+      "difficulty": 5,
+      "topics": [
+        "algorithms",
+        "cryptography",
+        "exception_handling",
+        "loops",
+        "math",
+        "strings"
+      ]
     },
     {
       "slug": "accumulate",
