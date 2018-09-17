@@ -3,7 +3,7 @@ import unittest
 from bob import hey
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
 
 class BobTest(unittest.TestCase):
     def test_stating_something(self):
@@ -79,7 +79,7 @@ class BobTest(unittest.TestCase):
 
     def test_multiple_line_question(self):
         self.assertEqual(
-            hey("\nDoes this cryogenic chamber make me look fat?\nno"),
+            hey("\nDoes this cryogenic chamber make me look fat?\nNo."),
             "Whatever.")
 
     def test_starting_with_whitespace(self):
