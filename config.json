@@ -1377,9 +1377,6 @@
       "topics": [
         "algorithms",
         "cryptography",
-        "exception_handling",
-        "loops",
-        "math",
         "strings"
       ]
     },
