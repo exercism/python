@@ -137,7 +137,11 @@ def is_deprecated(exercise):
     return False
 
 
-def create_issue_for_exercise(exercise, available_data_version):
+def create_issue_for_exercise(
+    exercise,
+    available_data_version,
+    extra_labels=None
+):
     title = '{}: update tests to v{}'.format(exercise, available_data_version)
     body = (
         'The [test suite]({}) for {} is out of date and needs updated to '
@@ -152,6 +156,8 @@ def create_issue_for_exercise(exercise, available_data_version):
         'help wanted',
         'enhancement',
     ]
+    if extra_labels is not None:
+        labels = list(set(labels + extra_labels))
     issue = gh.create_issue(
         'exercism',
         'python',
@@ -274,6 +280,15 @@ if __name__ == '__main__':
         '-t', '--token',
         help='GitHub personal access token (permissions: repo)'
     )
+    g.add_argument(
+        '--labels',
+        nargs='+',
+        metavar='LABEL',
+        help=(
+            'additional issue labels ("beginner friendly", "enhancement", and '
+            '"help wanted" are always set)'
+        )
+    )
     opts = parser.parse_args()
     verify_spec_location(opts.spec_path)
     if opts.create_issue:
@@ -288,6 +303,7 @@ if __name__ == '__main__':
         name_only=opts.name_only,
         has_data=opts.has_data,
         create_issue=opts.create_issue,
+        extra_labels=opts.labels,
     )
     if opts.version:
         print('check-test-version.py v1.1')
