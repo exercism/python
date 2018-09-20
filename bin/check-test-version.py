@@ -178,6 +178,7 @@ def check_test_version(
     include_deprecated=False,
     create_issue=False,
     token=None,
+    extra_labels=None,
 ):
     if not include_deprecated and is_deprecated(exercise):
         return True
@@ -195,7 +196,11 @@ def check_test_version(
         status = status_color + status + bcolors.ENDC
     if not up_to_date or print_ok:
         if create_issue:
-            issue_number = create_issue_for_exercise(exercise, available)
+            issue_number = create_issue_for_exercise(
+                exercise,
+                available,
+                extra_labels
+            )
             issue_info = '(#{})'.format(issue_number)
         else:
             issue_info = ''
