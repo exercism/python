@@ -3,7 +3,7 @@ import unittest
 from change import find_minimum_coins
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
 
 class ChangeTest(unittest.TestCase):
     def test_single_coin_change(self):
