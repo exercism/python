@@ -1,0 +1,48 @@
+{% macro import(modname, imports=[]) %}
+{% if imports|length > 0 %}
+from {{ modname }} import {{ imports|join(", ") }}
+{% else %}
+import {{ modname }}
+{% endif %}
+{% endmacro %}
+
+{% macro add_test(class_name, setup=False, error=False, cases=[]) %}
+class {{ class_name }}Test(unittest.TestCase):
+    {%- if setup %}
+    {{ add_setup(error=error)|indent(4) }}
+    {% endif -%}
+    {%- for case in cases %}
+    def test_{{ case.PY_TEST_NAME }}(self):
+        {%- if not case.PY_IS_ERROR %}
+        {{- add_assert_equal(case.PY_TEST_FUNC, case.input, case.expected)|indent(8) }}
+        {% else %}
+        {{- add_assert_raises(case.PY_TEST_FUNC, case.input, case.expected.error)|indent(8) }}
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+{% macro add_setup(error=False) %}
+# Utility functions
+def setUp(self):
+{%- if error %}
+    try:
+        self.assertRaisesRegex
+    except AttributeError:
+        self.assertRaisesRegex = self.assertRaisesRegexp
+{%- endif -%}
+{% endmacro %}
+
+{% macro add_assert_equal(func, input, expect) %}
+{% if not input %}
+self.assertEqual({{ func }}(), "{{ expect }}")
+{% elif input|length == 1 %}
+self.assertEqual({{ func }}("{{ input.phrase }}"), "{{ expect }}")
+{% else %}
+FIXME
+{% endif %}
+{% endmacro %}
+
+{% macro add_assert_raises(func, input, error) %}
+self.assertRaisesRegex({{ func }}(), "{{ error }}")
+{% endmacro %}
+
