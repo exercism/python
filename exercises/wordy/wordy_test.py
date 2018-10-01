@@ -2,8 +2,8 @@ import unittest
 
 from wordy import calculate
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class WordyTest(unittest.TestCase):
     def test_addition(self):
@@ -51,12 +51,14 @@ class WordyTest(unittest.TestCase):
             calculate("What is -12 divided by 2 divided by -3?"), 2)
 
     def test_unknown_operation(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaisesWithMessage(ValueError) as error:
             calculate("What is 52 cubed?")
+            self.assertEqual("unknown operation", str(error.exception))
 
     def test_non_math_question(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaisesWithMessage(ValueError) as error:
             calculate("Who is the President of the United States?")
+            self.assertEqual("unknown operation", str(error.exception))
 
     # Additional tests for this track
 
