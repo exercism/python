@@ -3,7 +3,7 @@ import unittest
 from acronym import abbreviate
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.5.0
 
 class AcronymTest(unittest.TestCase):
     def test_basic(self):
@@ -26,6 +26,10 @@ class AcronymTest(unittest.TestCase):
         self.assertEqual(
             abbreviate("Rolling On The Floor Laughing So Hard That "
                        "My Dogs Came Over And Licked Me"), "ROTFLSHTMDCOALM")
+
+    def test_consecutive_delimiters(self):
+        self.assertEqual(
+            abbreviate('Something - I made up from thin air'), 'SIMUFTA')
 
 
 if __name__ == '__main__':
