@@ -1,4 +1,4 @@
-def primitive_triplets(number_in_triplet):
+def triplets_with_sum(sum_of_triplet):
     pass
 
 
