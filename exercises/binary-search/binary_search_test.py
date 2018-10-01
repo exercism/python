@@ -2,8 +2,8 @@ import unittest
 
 from binary_search import binary_search
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class BinarySearchTest(unittest.TestCase):
     def test_finds_value_in_array_with_one_element(self):
