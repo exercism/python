@@ -10,6 +10,7 @@ import unittest
 
 from largest_series_product import largest_product
 
+
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class LargestSeriesProductTest(unittest.TestCase):
