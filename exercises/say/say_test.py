@@ -2,8 +2,7 @@ import unittest
 
 from say import say
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
-
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class SayTest(unittest.TestCase):
     def test_zero(self):
@@ -53,14 +52,12 @@ class SayTest(unittest.TestCase):
                                 "one hundred and twenty-three"))
 
     def test_number_too_large(self):
-        with self.assertRaisesWithMessage(ValueError) as error:
+        with self.assertRaisesWithMessage(ValueError):
             say(1e12)
-            self.assertTrue(len(str(error.exception)) > 0)
 
     def test_number_negative(self):
-        with self.assertRaisesWithMessage(ValueError) as error:
+        with self.assertRaisesWithMessage(ValueError):
             say(-1)
-            self.assertTrue(len(str(error.exception)) > 0)
 
     # Utility functions
     def setUp(self):
