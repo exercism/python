@@ -62,19 +62,19 @@ class PhoneNumberTest(unittest.TestCase):
         with self.assertRaisesWithMessage(ValueError):
             Phone("(223) 156-7890")
 
-    def test_invalid_if_area_code_starts_with_0_on_valid_11_digit_number(self):
+    def test_invalid_if_area_code_starts_with_0_on_valid_11_digit_number(self):  # noqa: E501
         with self.assertRaisesWithMessage(ValueError):
             Phone("1 (023) 456-7890")
 
-    def test_invalid_if_area_code_starts_with_1_on_valid_11_digit_number(self):
+    def test_invalid_if_area_code_starts_with_1_on_valid_11_digit_number(self):  # noqa: E501
         with self.assertRaisesWithMessage(ValueError):
             Phone("1 (123) 456-7890")
 
-    def test_invalid_if_exchange_code_starts_with_0_on_valid_11_digit_number(self):
+    def test_invalid_if_exchange_code_starts_with_0_on_valid_11_digit_number(self):  # noqa: E501
         with self.assertRaisesWithMessage(ValueError):
             Phone("1 (223) 056-7890")
 
-    def test_invalid_if_exchange_code_starts_with_1_on_valid_11_digit_number(self):
+    def test_invalid_if_exchange_code_starts_with_1_on_valid_11_digit_number(self):  # noqa: E501
         with self.assertRaisesWithMessage(ValueError):
             Phone("1 (223) 156-7890")
 
