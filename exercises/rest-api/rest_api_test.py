@@ -4,7 +4,7 @@ import json
 from rest_api import RestAPI
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
 
 class RestAPITest(unittest.TestCase):
     def test_no_users(self):
