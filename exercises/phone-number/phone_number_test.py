@@ -3,7 +3,7 @@ import unittest
 from phone_number import Phone
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.6.0
 
 class PhoneNumberTest(unittest.TestCase):
     def test_cleans_number(self):
@@ -61,6 +61,22 @@ class PhoneNumberTest(unittest.TestCase):
     def test_invalid_if_exchange_code_starts_with_1(self):
         with self.assertRaisesWithMessage(ValueError):
             Phone("(223) 156-7890")
+
+    def test_invalid_if_area_code_starts_with_0_on_valid_11_digit_number(self):
+        with self.assertRaisesWithMessage(ValueError):
+            Phone("1 (023) 456-7890")
+
+    def test_invalid_if_area_code_starts_with_1_on_valid_11_digit_number(self):
+        with self.assertRaisesWithMessage(ValueError):
+            Phone("1 (123) 456-7890")
+
+    def test_invalid_exchange_code_starts_with_0_valid_11_digit_number(self):
+        with self.assertRaisesWithMessage(ValueError):
+            Phone("1 (223) 056-7890")
+
+    def test_invalid_exchange_code_starts_with_1_valid_11_digit_number(self):
+        with self.assertRaisesWithMessage(ValueError):
+            Phone("1 (223) 156-7890")
 
     # Track specific tests
     def test_area_code(self):
