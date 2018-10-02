@@ -1,6 +1,3 @@
-from math import gcd
-
-
 def triplets_in_range(min, max):
     result = set([x for b in
                   range(4, max + 1, 4) for x in
@@ -11,11 +8,17 @@ def triplets_in_range(min, max):
             if a >= min:
                 result.add((a, b, c))
             a, b, c = (a + x, b + y, c + z)
-    return set([(a, b, c) for a, b, c in result if a >= min and c <= max])
+    return set([(d, e, f) for d, e, f in result if d >= min and f <= max])
 
 
 def maxMin(a, b):
     return (a, b) if a > b else (b, a)
+
+
+def gcd(x, y):
+    while (y != 0):
+        x, y = y, x % y
+    return x
 
 
 def primitive_triplets(b):
