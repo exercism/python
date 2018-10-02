@@ -3,7 +3,7 @@ import unittest
 from forth import evaluate, StackUnderflowError
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.6.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.7.0
 
 class ForthUtilities(unittest.TestCase):
     # Utility functions
@@ -133,12 +133,12 @@ class ForthDupTest(ForthUtilities):
 
 class ForthDropTest(ForthUtilities):
     def test_removes_the_top_value_on_the_stack_if_it_is_the_only_one(self):
-        input_data = ["1 DROP"]
+        input_data = ["1 drop"]
         expected = []
         self.assertEqual(evaluate(input_data), expected)
 
     def test_removes_the_top_value_on_the_stack_if_it_not_the_only_one(self):
-        input_data = ["3 4 DROP"]
+        input_data = ["3 4 drop"]
         expected = [3]
         self.assertEqual(evaluate(input_data), expected)
 
@@ -150,12 +150,12 @@ class ForthDropTest(ForthUtilities):
 
 class ForthSwapTest(ForthUtilities):
     def test_swaps_only_two_values_on_stack(self):
-        input_data = ["1 2 SWAP"]
+        input_data = ["1 2 swap"]
         expected = [2, 1]
         self.assertEqual(evaluate(input_data), expected)
 
     def test_swaps_two_two_values_on_stack(self):
-        input_data = ["1 2 3 SWAP"]
+        input_data = ["1 2 3 swap"]
         expected = [1, 3, 2]
         self.assertEqual(evaluate(input_data), expected)
 
@@ -172,12 +172,12 @@ class ForthSwapTest(ForthUtilities):
 
 class ForthOverTest(ForthUtilities):
     def test_copies_the_second_element_if_there_are_only_two(self):
-        input_data = ["1 2 OVER"]
+        input_data = ["1 2 over"]
         expected = [1, 2, 1]
         self.assertEqual(evaluate(input_data), expected)
 
     def test_copies_the_second_element_if_there_are_more_than_two(self):
-        input_data = ["1 2 3 OVER"]
+        input_data = ["1 2 3 over"]
         expected = [1, 2, 3, 2]
         self.assertEqual(evaluate(input_data), expected)
 
