@@ -3,7 +3,7 @@ import unittest
 from wordy import calculate
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class WordyTest(unittest.TestCase):
     def test_addition(self):
