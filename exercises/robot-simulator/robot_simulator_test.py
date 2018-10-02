@@ -32,16 +32,16 @@ class RobotSimulatorTest(unittest.TestCase):
         self.assertEqual(robot.bearing, SOUTH)
 
     def test_turn_right(self):
-        direcA=[NORTH, EAST, SOUTH, WEST] 
-        direcB=[EAST, SOUTH, WEST, NORTH]
+        direcA = [NORTH, EAST, SOUTH, WEST] 
+        direcB = [EAST, SOUTH, WEST, NORTH]
         for x in range(len(direcA)):
             robot = Robot(direcA[x], 0, 0)
             robot.turn_right()
             self.assertEqual(robot.bearing, direcB[x])
 
     def test_turn_left(self):
-        direcA=[NORTH, EAST, SOUTH, WEST]
-        direcB=[WEST, NORTH, EAST, SOUTH]
+        direcA = [NORTH, EAST, SOUTH, WEST]
+        direcB = [WEST, NORTH, EAST, SOUTH]
         for x in direcA:
             robot = Robot(direcA[x], 0, 0)
             robot.turn_left()
