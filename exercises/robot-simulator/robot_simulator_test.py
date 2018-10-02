@@ -1,6 +1,6 @@
 import unittest
 
-from example import Robot, NORTH, EAST, SOUTH, WEST
+from robot_simulator import Robot, NORTH, EAST, SOUTH, WEST
 
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v2.3.0
@@ -13,7 +13,7 @@ class RobotSimulatorTest(unittest.TestCase):
             robot.turn_around()
 
     def test_invalid_direction(self):
-        with self.assertRaises(Exception) as e:
+        with self.assertRaises(Exception):
             robot = Robot(NORTHWEST, 1, 1)
 
     def test_init(self):
@@ -32,7 +32,7 @@ class RobotSimulatorTest(unittest.TestCase):
         self.assertEqual(robot.bearing, SOUTH)
 
     def test_turn_right(self):
-        direcA=[NORTH, EAST, SOUTH, WEST]
+        direcA=[NORTH, EAST, SOUTH, WEST] 
         direcB=[EAST, SOUTH, WEST, NORTH]
         for x in range(len(direcA)):
             robot = Robot(direcA[x], 0, 0)
