@@ -1,21 +1,8 @@
-{% import '__macros.j2' as macros %}
+{% from '__macros.j2' import make_import, make_tests %}
 import unittest
+{{ make_import(data) }}
 
-{{ macros.import(PY_MODULE, PY_FROM_IMPORTS) }}
-
-# Tests adapted from `problem-specifications//canonical-data.json` @ {{ version }}
-
-{% if PY_TEST_CLASS is defined %}
-{{ macros.add_test(PY_TEST_CLASS, 
-                   setup=PY_TEST_CLASS_NEEDS_SETUP, 
-                   error=PY_TEST_CLASS_HAS_ERROR, 
-                   cases=cases|rejectattr(cases.cases)) }}
-{% endif %}
-{% for case in cases if case.cases %}
-{{ macros.add_test(case.PY_TEST_CLASS,
-                   setup=case.PY_TEST_CLASS_NEEDS_SETUP,
-                   error=case.PY_TEST_CLASS_HAS_ERROR,
-                   cases=case.cases) }}
-{% endfor %}
+# Tests adapted from `problem-specifications//canonical-data.json` @ {{ data.version }}
+{{ make_tests(data) }}
 if __name__ == '__main__':
     unittest.main()

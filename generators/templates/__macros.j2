@@ -1,24 +1,31 @@
-{% macro import(modname, imports=[]) %}
-{% if imports|length > 0 %}
-from {{ modname }} import {{ imports|join(", ") }}
-{% else %}
-import {{ modname }}
+{% macro make_import(data) %}
+{%- if data.properties | length > 0 %}
+from {{ data.exercise | to_snake }} import {{ data.properties | map("to_snake") | join(", ") }}
+{%- else %}
+import {{ data.exercise | to_snake }}
 {% endif %}
 {% endmacro %}
 
-{% macro add_test(class_name, setup=False, error=False, cases=[]) %}
-class {{ class_name }}Test(unittest.TestCase):
-    {%- if setup %}
-    {{ add_setup(error=error)|indent(4) }}
-    {% endif -%}
-    {%- for case in cases %}
-    def test_{{ case.PY_TEST_NAME }}(self):
-        {%- if not case.PY_IS_ERROR %}
-        {{- add_assert_equal(case.PY_TEST_FUNC, case.input, case.expected)|indent(8) }}
-        {% else %}
-        {{- add_assert_raises(case.PY_TEST_FUNC, case.input, case.expected.error)|indent(8) }}
+{% macro make_tests(data) %}
+class {{ data.exercise | to_camel }}Test(unittest.TestCase):
+    {%- if data.has_error %}
+    {{ add_setup(error=data.has_error) | indent(4) }}
+    {% endif %}
+    {%- for case in data.cases recursive %}
+        {%- if case.cases %}
+        {%- if loop.nextitem is defined %}
+        {{ "#" * loop.depth }} {{ case.description }}
         {% endif %}
-    {% endfor %}
+        {{- loop(case.cases) }}
+        {%- else %}
+        def test_{{ case.description | to_snake }}(self):
+            {%- if case | is_error %}
+            {{- add_assert_raises(case) | indent(12) }}
+            {%- else %}
+            {{- add_assert_equal(case) | indent(12) }}
+            {% endif %}
+        {%- endif %}
+    {%- endfor %}
 {% endmacro %}
 
 {% macro add_setup(error=False) %}
@@ -32,17 +39,15 @@ def setUp(self):
 {%- endif -%}
 {% endmacro %}
 
-{% macro add_assert_equal(func, input, expect) %}
-{% if not input %}
-self.assertEqual({{ func }}(), "{{ expect }}")
-{% elif input|length == 1 %}
-self.assertEqual({{ func }}("{{ input.phrase }}"), "{{ expect }}")
-{% else %}
-FIXME
+{% macro add_assert_equal(case) %}
+{%- if not case.input %}
+self.assertEqual({{ case.property | to_snake }}(), {{ case | format_expect }})
+{%- else %}
+self.assertEqual({{ case.property | to_snake }}({{ case | format_input }}), {{ case | format_expect }})
 {% endif %}
 {% endmacro %}
 
-{% macro add_assert_raises(func, input, error) %}
-self.assertRaisesRegex({{ func }}(), "{{ error }}")
+{% macro add_assert_raises(case) %}
+self.assertRaisesRegex({{ case.property | to_snake }}({{ case | format_input }}), {{ case | format_expect }})
 {% endmacro %}
 
