@@ -1,6 +1,6 @@
 import unittest
 
-from robot_simulator import Robot, NORTH, EAST, SOUTH, WEST
+from example import Robot, NORTH, EAST, SOUTH, WEST
 
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v2.3.0
@@ -32,16 +32,16 @@ class RobotSimulatorTest(unittest.TestCase):
         self.assertEqual(robot.bearing, SOUTH)
 
     def test_turn_right(self):
-        direcA=[NORTH,EAST,SOUTH,WEST]
-        direcB=[EAST,SOUTH,WEST,NORTH]
+        direcA=[NORTH, EAST, SOUTH, WEST]
+        direcB=[EAST, SOUTH, WEST, NORTH]
         for x in range(len(direcA)):
             robot = Robot(direcA[x], 0, 0)
             robot.turn_right()
             self.assertEqual(robot.bearing, direcB[x])
 
     def test_turn_left(self):
-        direcA=[NORTH,EAST,SOUTH,WEST]
-        direcB=[WEST,NORTH,EAST,SOUTH]
+        direcA=[NORTH, EAST, SOUTH, WEST]
+        direcB=[WEST, NORTH, EAST, SOUTH]
         for x in direcA:
             robot = Robot(direcA[x], 0, 0)
             robot.turn_left()
@@ -71,7 +71,7 @@ class RobotSimulatorTest(unittest.TestCase):
         self.assertEqual(robot.coordinates, (-1, 0))
         self.assertEqual(robot.bearing, WEST)
 
-     def test_simulate_prog1(self):
+    def test_simulate_prog1(self):
         robot = Robot(NORTH, 0, 0)
         robot.simulate("LAAARALA")
         self.assertEqual(robot.coordinates, (-4, 1))
