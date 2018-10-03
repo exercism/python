@@ -1,51 +1,52 @@
 import unittest
 
-from robot_simulator import Robot, NORTH, EAST, SOUTH, WEST
+from example import Robot, NORTH, EAST, SOUTH, WEST
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.3.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.2.0
 
 class RobotSimulatorTest(unittest.TestCase):
-
-    def test_invalid_instruction(self):
-        robot = Robot()
-        with self.assertRaises(Exception):
-            robot.turn_around()
-
-    def test_invalid_direction(self):
-        with self.assertRaises(Exception):
-            robot = Robot(NORTHWEST, 1, 1)
-
     def test_init(self):
         robot = Robot()
         self.assertEqual(robot.coordinates, (0, 0))
         self.assertEqual(robot.bearing, NORTH)
 
     def test_setup(self):
-        robot = Robot(NORTH, 1, 1)
-        self.assertEqual(robot.coordinates, (1, 1))
-        self.assertEqual(robot.bearing, NORTH)
-
-    def test_neg_position(self):
-        robot = Robot(SOUTH, -1, -1)
-        self.assertEqual(robot.coordinates, (-1, -1))
+        robot = Robot(SOUTH, -1, 1)
+        self.assertEqual(robot.coordinates, (-1, 1))
         self.assertEqual(robot.bearing, SOUTH)
 
     def test_turn_right(self):
-        direcA = [NORTH, EAST, SOUTH, WEST] 
-        direcB = [EAST, SOUTH, WEST, NORTH]
-        for x in range(len(direcA)):
-            robot = Robot(direcA[x], 0, 0)
+        dirA = [EAST, SOUTH, WEST, NORTH]
+        dirB = [SOUTH, WEST, NORTH, EAST]
+        for x in range(len(dirA)):
+            robot = Robot(dirA[x], 0, 0)
             robot.turn_right()
-            self.assertEqual(robot.bearing, direcB[x])
+            self.assertEqual(robot.bearing, dirB[x])
+
+    def test_change_direction_right(self):
+       A = [NORTH, EAST, SOUTH, WEST]
+       B = [EAST, SOUTH, WEST, NORTH]
+       for x in range(len(A)):
+            robot = Robot(A[x], 0, 0)
+            robot.simulate("R")
+            self.assertEqual(robot.bearing, B[x])
+
+    def test_change_direction_left(self):
+        A = [NORTH, WEST, SOUTH, EAST]
+        B = [WEST, SOUTH, EAST, NORTH]
+        for x in range(len(A)):
+            robot = Robot(A[x], 0, 0)
+            robot.simulate("L")
+            self.assertEqual(robot.bearing, B[x])
 
     def test_turn_left(self):
-        direcA = [NORTH, EAST, SOUTH, WEST]
-        direcB = [WEST, NORTH, EAST, SOUTH]
-        for x in direcA:
-            robot = Robot(direcA[x], 0, 0)
+        dirA = [EAST, SOUTH, WEST, NORTH]
+        dirB = [NORTH, EAST, SOUTH, WEST]
+        for x in range(len(dirA)):
+            robot = Robot(dirA[x], 0, 0)
             robot.turn_left()
-            self.assertEqual(robot.bearing, direcB[x])
+            self.assertEqual(robot.bearing, dirB[x])
 
     def test_advance_positive_north(self):
         robot = Robot(NORTH, 0, 0)
