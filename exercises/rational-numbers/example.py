@@ -1,7 +1,5 @@
 from __future__ import division
 
-from fractions import gcd
-
 
 class Rational(object):
     """
@@ -56,3 +54,9 @@ class Rational(object):
 
     def __rpow__(self, base):
         return base ** (self.numer / self.denom)
+
+
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
