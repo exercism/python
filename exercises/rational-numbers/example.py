@@ -1,25 +1,22 @@
 from __future__ import division
 
-from fractions import gcd
+try:
+    from math import gcd
+except ImportError:
+    from fractions import gcd
 
 
 class Rational(object):
-    """
-    Toyish implementation of rational numbers. For production purpose,
-    please use `fractions.Fraction` in standard library instead.
-    """
     def __init__(self, numer, denom):
-        self.numer, self.denom = self._reduce(numer, denom)
+        # abs used for backward compatibility with fractions.gcd
+        gcd_num = abs(gcd(numer, denom))
 
-    def _reduce(self, numer, denom):
-        if numer == 0:
-            n, d = 0, 1
-        else:
-            g = gcd(numer, denom)
-            n, d = int(numer/g), int(denom/g)
-            if n > 0 and d < 0:
-                n, d = -n, -d
-        return n, d
+        self.numer = numer // gcd_num
+        self.denom = denom // gcd_num
+
+        if self.denom < 0:
+            self.numer *= -1
+            self.denom *= -1
 
     def __eq__(self, other):
         return self.numer == other.numer and self.denom == other.denom
@@ -28,16 +25,11 @@ class Rational(object):
         return '{}/{}'.format(self.numer, self.denom)
 
     def __add__(self, other):
-        return Rational(
-            self.numer*other.denom + self.denom*other.numer,
-            self.denom*other.denom
-        )
+        numer = (self.numer * other.denom) + (other.numer * self.denom)
+        return Rational(numer, other.denom * self.denom)
 
     def __sub__(self, other):
-        return Rational(
-            self.numer*other.denom - self.denom*other.numer,
-            self.denom*other.denom
-        )
+        return self + (-other)
 
     def __mul__(self, other):
         return Rational(self.numer * other.numer, self.denom * other.denom)
@@ -46,13 +38,13 @@ class Rational(object):
         return Rational(self.numer * other.denom, self.denom * other.numer)
 
     def __abs__(self):
-        if self.numer >= 0:
-            return self
-        else:
-            return Rational(-self.numer, self.denom)
+        return Rational(abs(self.numer), self.denom)
 
     def __pow__(self, power):
-        return Rational(self.numer ** power, self.denom ** power)
+        return Rational(pow(self.numer, power), pow(self.denom, power))
 
     def __rpow__(self, base):
         return base ** (self.numer / self.denom)
+
+    def __neg__(self):
+        return Rational(self.numer * (-1), self.denom)
