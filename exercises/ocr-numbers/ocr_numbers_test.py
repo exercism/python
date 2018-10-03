@@ -11,7 +11,7 @@ import unittest
 from ocr_numbers import convert
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class OcrNumbersTest(unittest.TestCase):
     def test_recognizes_0(self):
@@ -26,7 +26,7 @@ class OcrNumbersTest(unittest.TestCase):
                                   "  |",
                                   "   "]), '1')
 
-    def test_unreadable(self):
+    def test_unreadable_but_correctly_sized(self):
         self.assertEqual(convert(["   ",
                                   "  _",
                                   "  |",
