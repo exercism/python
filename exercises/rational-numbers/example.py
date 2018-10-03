@@ -1,9 +1,9 @@
 from __future__ import division
 
 try:
-	from math import gcd
+    from math import gcd
 except ImportError:
-	from fractions import gcd
+    from fractions import gcd
 
 
 class Rational(object):
