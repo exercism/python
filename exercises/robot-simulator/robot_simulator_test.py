@@ -25,9 +25,9 @@ class RobotSimulatorTest(unittest.TestCase):
             self.assertEqual(robot.bearing, dirB[x])
 
     def test_change_direction_right(self):
-       A = [NORTH, EAST, SOUTH, WEST]
-       B = [EAST, SOUTH, WEST, NORTH]
-       for x in range(len(A)):
+        A = [NORTH, EAST, SOUTH, WEST]
+        B = [EAST, SOUTH, WEST, NORTH]
+        for x in range(len(A)):
             robot = Robot(A[x], 0, 0)
             robot.simulate("R")
             self.assertEqual(robot.bearing, B[x])
