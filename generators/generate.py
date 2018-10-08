@@ -71,7 +71,8 @@ def get_properties(data):
     def _get_properties(obj):
         if "cases" in obj:
             for case in obj["cases"]:
-                yield from get_properties(case)
+                for prop in get_properties(case):
+                    yield prop
             return
         yield obj["property"]
 
