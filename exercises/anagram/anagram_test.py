@@ -3,7 +3,7 @@ import unittest
 from anagram import find_anagrams
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
 
 class AnagramTest(unittest.TestCase):
     def test_no_matches(self):
@@ -54,8 +54,9 @@ class AnagramTest(unittest.TestCase):
     def test_anagrams_must_use_all_letters_exactly_once(self):
         self.assertEqual(find_anagrams("tapper", ["patter"]), [])
 
-    def test_capital_word_is_not_own_anagram(self):
-        self.assertEqual(find_anagrams("BANANA", ["Banana"]), [])
+    def test_words_are_not_anagrams_of_themselves_case_insensitive(self):
+        candidates = ["BANANA", "Banana", "banana"]
+        self.assertEqual(find_anagrams("BANANA", candidates), [])
 
 
 if __name__ == '__main__':
