@@ -100,7 +100,7 @@ def format_expect(case):
     return repr(case["expected"])
 
 
-def main():
+def main(args=None):
     """
     Provide the CLI.
     """
@@ -132,7 +132,7 @@ def main():
         help="yapf autoreformat style to use: (%(default)s)")
     parser.add_argument("exercises", nargs="*")
 
-    args = parser.parse_args()
+    args = parser.parse_args(args)
 
     # validate the config file
     if not args.config.is_file():
