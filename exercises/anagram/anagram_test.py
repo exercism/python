@@ -58,5 +58,6 @@ class AnagramTest(unittest.TestCase):
         candidates = ["BANANA", "Banana", "banana"]
         self.assertEqual(find_anagrams("BANANA", candidates), [])
 
+
 if __name__ == '__main__':
     unittest.main()
