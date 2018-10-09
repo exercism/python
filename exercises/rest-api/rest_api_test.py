@@ -47,7 +47,7 @@ class RestAPITest(unittest.TestCase):
         }
         api = RestAPI(database)
         payload = json.dumps({
-            'users': 'Bob'
+            'users': ['Bob']
         })
         response = api.get('/users', payload)
         expected = {
