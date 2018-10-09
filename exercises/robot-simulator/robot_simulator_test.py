@@ -73,28 +73,23 @@ class RobotSimulatorTest(unittest.TestCase):
         self.assertEqual(robot.coordinates, (-1, 0))
         self.assertEqual(robot.bearing, WEST)
 
-    #  - instructions to move east and north
-
-    def test_move_east_north(self):
+    def test_move_east_north_from_README(self):
         robot = Robot(NORTH, 7, 3)
         robot.simulate("RAALAL")
         self.assertEqual(robot.coordinates, (9, 4))
         self.assertEqual(robot.bearing, WEST)
-    #  - instructions to move west and north
 
     def test_move_west_north(self):
         robot = Robot(NORTH, 0, 0)
         robot.simulate("LAAARALA")
         self.assertEqual(robot.coordinates, (-4, 1))
         self.assertEqual(robot.bearing, WEST)
-    #  - instructions to move west and south
 
     def test_move_west_south(self):
         robot = Robot(EAST, 2, -7)
         robot.simulate("RRAAAAALA")
         self.assertEqual(robot.coordinates, (-3, -8))
         self.assertEqual(robot.bearing, SOUTH)
-    #  - instructions to move east and north
 
     def test_move_east_north(self):
         robot = Robot(SOUTH, 8, 4)
