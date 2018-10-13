@@ -12,7 +12,7 @@ import unittest
 from sum_of_multiples import sum_of_multiples
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
 
 class SumOfMultiplesTest(unittest.TestCase):
     def test_multiples_of_3_or_5_up_to_1(self):
@@ -53,6 +53,9 @@ class SumOfMultiplesTest(unittest.TestCase):
 
     def test_multiples_of_an_empty_list_up_to_10000(self):
         self.assertEqual(sum_of_multiples(10000, []), 0)
+
+    def test_multiples_of_0(self):
+        self.assertEqual(sum_of_multiples(1, [0]), 0)
 
 
 if __name__ == '__main__':
