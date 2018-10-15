@@ -4,7 +4,7 @@ import json
 from rest_api import RestAPI
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.2
 
 class RestAPITest(unittest.TestCase):
     def test_no_users(self):
@@ -47,7 +47,7 @@ class RestAPITest(unittest.TestCase):
         }
         api = RestAPI(database)
         payload = json.dumps({
-            'users': 'Bob'
+            'users': ['Bob']
         })
         response = api.get('/users', payload)
         expected = {
