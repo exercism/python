@@ -6,6 +6,7 @@ import json
 import re
 import logging
 from argparse import ArgumentParser
+from collections import OrderedDict
 from pathlib import Path
 from itertools import repeat
 from string import punctuation, whitespace
@@ -79,16 +80,26 @@ def get_properties(data):
     return sorted(set(_get_properties(data)))
 
 
-def format_input(case):
+def format_input(case, n_args=None):
     """
     Format the case's input values for use in a function call.
+
+    By default converts all arguments to positional form.
+
+    If n_args is provided, convert only the first n argss to positional form.
     """
-    raw = case["input"]
-    if len(raw) == 1:
-        return repr(list(raw.values())[0])
-    if any(k.isdigit() for k in raw):
-        return repr(raw)
-    return ", ".join("{0}={1!r}".format(*i) for i in raw.items())
+    raw = list(case["input"].items())
+    n_args = len(raw) if n_args is None else n_args
+    result = []
+    for _ in range(n_args):
+        arg = raw.pop(0)[1]
+        if isinstance(arg, dict):
+            result.extend(map(repr, arg.values()))
+        else:
+            result.append(repr(arg))
+    while raw:
+        result.append("{0}={1!s}".format(raw.pop(0)))
+    return ", ".join(result)
 
 
 def format_expect(case):
@@ -97,6 +108,9 @@ def format_expect(case):
     """
     if is_error(case):
         return repr(case["expected"]["error"])
+    expected = case["expected"]
+    if isinstance(expected, dict):
+        return "{" + ", ".join("{0!r}: {1!r}".format(*i) for i in expected.items()) + "}"
     return repr(case["expected"])
 
 
@@ -126,6 +140,11 @@ def main(args=None):
         default="./exercises",
         help="path to the output directory: (%(default)s)")
     parser.add_argument(
+        "-n",
+        "--no-autoformat",
+        action="store_true",
+        help="disable yapf autoreformat")
+    parser.add_argument(
         "-s",
         "--style",
         default=style.DEFAULT_STYLE,
@@ -150,7 +169,7 @@ def main(args=None):
     # set verbosity
     if args.verbose:
         LOGGER.setLevel(logging.DEBUG if args.verbose > 1 else logging.INFO)
-
+    
     # build the Jinja2 template environment
     env = Environment(
         loader=PackageLoader(__name__, "templates"),
@@ -177,7 +196,7 @@ def main(args=None):
             LOGGER.warning("No canonical data found for %s: skipping",
                            exercise)
             continue
-        data = json.loads(canonical.read_text(), object_pairs_hook=dict)
+        data = json.loads(canonical.read_text(), object_pairs_hook=OrderedDict)
         data["has_error"] = has_error(data)
         data["properties"] = get_properties(data)
         template = env.select_template(
@@ -190,14 +209,15 @@ def main(args=None):
             out_file = out_dir.joinpath("{0}_test.py".format(
                 to_snake(exercise)))
             out_file.write_text(code)
-            try:
-                FormatFile(
-                    str(out_file),
-                    style_config=args.style,
-                    in_place=True,
-                    verify=True)
-            except SyntaxError:
-                LOGGER.exception("Unable to reformat %s: skipping", exercise)
+            if not args.no_autoformat:
+                try:
+                    FormatFile(
+                        str(out_file),
+                        style_config=args.style,
+                        in_place=True,
+                        verify=True)
+                except SyntaxError:
+                    LOGGER.exception("Unable to reformat %s: skipping", exercise)
         except TemplateError:
             LOGGER.exception("Unable to render %s: skipping", exercise)
             continue

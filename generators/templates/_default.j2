@@ -1,8 +1,12 @@
-{% from '__macros.j2' import make_import, make_tests %}
+{%- from '__macros.j2' import make_import, make_tests -%}
 import unittest
+
 {{ make_import(data) }}
 
+
 # Tests adapted from `problem-specifications//canonical-data.json` @ v{{ data.version }}
+
 {{ make_tests(data) }}
+
 if __name__ == '__main__':
     unittest.main()
