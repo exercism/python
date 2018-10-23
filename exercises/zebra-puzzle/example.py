@@ -21,16 +21,16 @@ def solution():
         [{
             Englishman: "Englishman",
             Spaniard: "Spaniard",
-            Ukranian: "Ukranian",
+            Ukrainian: "Ukrainian",
             Japanese: "Japanese",
             Norwegian: "Norwegian"
         }[x] for x in (water, zebra)]
         for (red, green, ivory, yellow, blue) in orderings
         if just_right_of(green, ivory)
-        for (Englishman, Spaniard, Ukranian, Japanese, Norwegian) in orderings
+        for (Englishman, Spaniard, Ukrainian, Japanese, Norwegian) in orderings
         if Englishman is red if Norwegian is first if next_to(Norwegian, blue)
         for (coffee, tea, milk, oj, water) in orderings if coffee is green
-        if Ukranian is tea if milk is middle
+        if Ukrainian is tea if milk is middle
         for (OldGold, Kools, Chesterfields, LuckyStrike, Parliaments
              ) in orderings if Kools is yellow if LuckyStrike is oj
         if Japanese is Parliaments
