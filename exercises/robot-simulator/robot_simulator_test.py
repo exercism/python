@@ -91,7 +91,7 @@ class RobotSimulatorTest(unittest.TestCase):
     def test_instructions_to_move_east_and_north(self):
         robot = Robot(NORTH, 7, 3)
         robot.simulate("RAALAL")
-        self.assertEqual(robot.coordinates,(9, 4))
+        self.assertEqual(robot.coordinates, (9, 4))
         self.assertEqual(robot.bearing, WEST)
 
     def test_simulate_prog1(self):
