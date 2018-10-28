@@ -17,7 +17,9 @@ class HighScores(object):
     @property
     def report(self):
         difference = self.highest - self.latest
-        result_qualifier = "" if difference <= 0 else "{} short of ".format(difference)
+        result_qualifier = (
+            "" if difference <= 0 else "{} short of ".format(difference)
+        )
         return "Your latest score was {}. That's {}your personal best!".format(
             self.latest, result_qualifier
         )
