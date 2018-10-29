@@ -2,16 +2,18 @@ from collections import defaultdict
 
 
 class School(object):
-    def __init__(self, name):
-        self.name = name
+    def __init__(self,):
         self.db = defaultdict(set)
 
-    def add(self, student, grade):
-        self.db[grade].add(student)
+    def add_student(self, name, grade):
+        self.db[grade].add(name)
 
-    def grade(self, level):
-        return self.db[level]
+    def roster(self):
+        return [
+            name
+            for grade, names in sorted(self.db.items())
+            for name in sorted(names)
+        ]
 
-    def sort(self):
-        return sorted((grade, tuple(sorted(students)))
-                      for grade, students in self.db.items())
+    def grade(self, grade_number):
+        return sorted(self.db[grade_number])

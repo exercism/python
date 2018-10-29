@@ -11,15 +11,21 @@ def is_integer(string):
 
 
 def evaluate(input_data):
+    if not input_data:
+        return []
     defines = {}
-    while input_data[0][0] == ':':
+    while input_data[0][:1] == ':':
         values = input_data.pop(0).split()
         values.pop()
         values.pop(0)
-        key = values.pop(0)
+        key = values.pop(0).lower()
         if is_integer(key):
-            raise ValueError()
-        defines[key] = values
+            raise ValueError("Integers cannot be redefined")
+        defines[key] = [
+            x
+            for v in values
+            for x in defines.get(v, [v])
+        ]
     stack = []
     input_data = input_data[-1].split()
     while any(input_data):
@@ -36,10 +42,10 @@ def evaluate(input_data):
             elif word == '*':
                 stack.append(stack.pop() * stack.pop())
             elif word == '/':
-                divider = stack.pop()
-                if divider == 0:
-                    raise ZeroDivisionError()
-                stack.append(int(stack.pop() / divider))
+                divisor = stack.pop()
+                if divisor == 0:
+                    raise ZeroDivisionError("Attempted to divide by zero")
+                stack.append(int(stack.pop() / divisor))
             elif word == 'dup':
                 stack.append(stack[-1])
             elif word == 'drop':
@@ -50,9 +56,7 @@ def evaluate(input_data):
             elif word == 'over':
                 stack.append(stack[-2])
             else:
-                raise ValueError()
-        except ZeroDivisionError:
-            raise
+                raise ValueError("{} has not been defined".format(word))
         except IndexError:
-            raise StackUnderflowError()
+            raise StackUnderflowError("Insufficient number of items in stack")
     return stack

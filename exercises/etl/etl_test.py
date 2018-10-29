@@ -5,7 +5,7 @@ from etl import transform
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
-class TransformTest(unittest.TestCase):
+class EtlTest(unittest.TestCase):
     def test_a_single_letter(self):
         self.assertEqual(transform({1: ['A']}), {'a': 1})
 

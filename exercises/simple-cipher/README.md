@@ -47,7 +47,7 @@ Given the key "aaaaaaaaaaaaaaaaaa", encoding the string "iamapandabear"
 would return the original "iamapandabear".
 
 Given the key "ddddddddddddddddd", encoding our string "iamapandabear"
-would return the obscured "lpdsdqgdehdu"
+would return the obscured "ldpdsdqgdehdu"
 
 In the example above, we've set a = 0 for the key value. So when the
 plaintext is added to the key, we end up with the same message coming
@@ -58,15 +58,13 @@ would get the same thing as the Caesar Cipher.
 
 The weakest link in any cipher is the human being. Let's make your
 substitution cipher a little more fault tolerant by providing a source
-of randomness and ensuring that the key is not composed of numbers or
-capital letters.
+of randomness and ensuring that the key contains only lowercase letters.
 
 If someone doesn't submit a key at all, generate a truly random key of
-at least 100 characters in length, accessible via Cipher#key (the #
-syntax means instance variable)
+at least 100 characters in length.
 
-If the key submitted has capital letters or numbers, throw an
-ValueError with a message to that effect.
+If the key submitted is not composed only of lowercase letters, your
+solution should handle the error in a language-appropriate way.
 
 ## Extensions
 
@@ -83,19 +81,69 @@ on Wikipedia][dh] for one of the first implementations of this scheme.
 [1]: https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Caesar_cipher_left_shift_of_3.svg/320px-Caesar_cipher_left_shift_of_3.svg.png
 [dh]: http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange
 
-### Submitting Exercises
+## Should I use random or secrets?
 
-Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
+Python, as of version 3.6, includes two different random modules.
 
-For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
+The module called `random` is pseudo-random, meaning it does not generate
+true randomness, but follows an algorithm that simulates randomness.
+Since random numbers are generated through a known algorithm, they are not truly random.
 
+The `random` module is not correctly suited for cryptography and should not be used,
+precisely because it is pseudo-random.
+
+For this reason, in version 3.6, Python introduced the `secrets` module, which generates
+cryptographically strong random numbers that provide the greater security required for cryptography.
+
+Since this is only an exercise, `random` is fine to use, but note that **it would be
+very insecure if actually used for cryptography.**
+
+
+## Exception messages
+
+Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
+indicate what the source of the error is. This makes your code more readable and helps significantly with debugging. Not
+every exercise will require you to raise an exception, but for those that do, the tests will only pass if you include
+a message.
+
+To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
+`raise Exception`, you should write:
+
+```python
+raise Exception("Meaningful message indicating the source of the error")
+```
+
+## Running the tests
+
+To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+
+- Python 2.7: `py.test simple_cipher_test.py`
+- Python 3.4+: `pytest simple_cipher_test.py`
+
+Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+`python -m pytest simple_cipher_test.py`
+
+### Common `pytest` options
+
+- `-v` : enable verbose output
+- `-x` : stop running tests on first failure
+- `--ff` : run failures from previous test before running other test cases
+
+For other options, see `python -m pytest -h`
+
+## Submitting Exercises
+
+Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/simple-cipher` directory.
+
+You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Workspace`.
 
 For more detailed information about running tests, code style and linting,
-please see the [help page](http://exercism.io/languages/python).
+please see [Running the Tests](http://exercism.io/tracks/python/tests).
 
 ## Source
 
 Substitution Cipher at Wikipedia [http://en.wikipedia.org/wiki/Substitution_cipher](http://en.wikipedia.org/wiki/Substitution_cipher)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

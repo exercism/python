@@ -3,9 +3,9 @@ import unittest
 from variable_length_quantity import encode, decode
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-class TestVLQ(unittest.TestCase):
+class VariableLengthQuantityTest(unittest.TestCase):
     def test_zero(self):
         self.assertEqual(encode([0x0]), [0x0])
 
@@ -81,11 +81,11 @@ class TestVLQ(unittest.TestCase):
         self.assertEqual(decode([0x8f, 0xff, 0xff, 0xff, 0x7f]), [0xffffffff])
 
     def test_incomplete_sequence_causes_error(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             decode([0xff])
 
     def test_incomplete_sequence_causes_error_even_if_value_is_zero(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             decode([0x80])
 
     def test_multiple_values(self):
@@ -94,6 +94,16 @@ class TestVLQ(unittest.TestCase):
                     0x0, 0xff, 0x7f, 0x81, 0x80, 0x0]),
             [0x2000, 0x123456, 0xfffffff, 0x0, 0x3fff, 0x4000]
         )
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex
+        except AttributeError:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

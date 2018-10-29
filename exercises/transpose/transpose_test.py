@@ -2,9 +2,9 @@ import unittest
 from transpose import transpose
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
-class TransposeTests(unittest.TestCase):
+class TransposeTest(unittest.TestCase):
     def test_empty_string(self):
         input_line = ""
         expected = ""
@@ -14,15 +14,25 @@ class TransposeTests(unittest.TestCase):
         )
 
     def test_two_characters_in_a_row(self):
+        input_line = "A1"
+        expected = [
+            "A",
+            "1"
+        ]
         self.assertEqual(
-            transpose("A1"),
-            "\n".join(["A", "1"])
+            transpose(input_line),
+            "\n".join(expected)
         )
 
     def test_two_characters_in_a_column(self):
+        input_line = [
+            "A",
+            "1"
+        ]
+        expected = "A1"
         self.assertEqual(
-            transpose("\n".join(["A", "1"])),
-            "A1"
+            transpose("\n".join(input_line)),
+            expected
         )
 
     def test_simple(self):
@@ -35,7 +45,6 @@ class TransposeTests(unittest.TestCase):
             "B2",
             "C3"
         ]
-
         self.assertEqual(
             transpose("\n".join(input_line)),
             "\n".join(expected)
@@ -182,77 +191,31 @@ class TransposeTests(unittest.TestCase):
             "\n".join(expected)
         )
 
-    def test_many_lines(self):
+    def test_mixed_line_length(self):
         input_line = [
-            "Chor. Two households, both alike in dignity,",
-            "In fair Verona, where we lay our scene,",
-            "From ancient grudge break to new mutiny,",
-            "Where civil blood makes civil hands unclean.",
-            "From forth the fatal loins of these two foes",
-            "A pair of star-cross'd lovers take their life;",
-            "Whose misadventur'd piteous overthrows",
-            "Doth with their death bury their parents' strife.",
-            "The fearful passage of their death-mark'd love,",
-            "And the continuance of their parents' rage,",
-            "Which, but their children's end, naught could remove,",
-            "Is now the two hours' traffic of our stage;",
-            "The which if you with patient ears attend,",
-            "What here shall miss, our toil shall strive to mend."
+            "The longest line.",
+            "A long line.",
+            "A longer line.",
+            "A line."
         ]
         expected = [
-            "CIFWFAWDTAWITW",
-            "hnrhr hohnhshh",
-            "o oeopotedi ea",
-            "rfmrmash  cn t",
-            ".a e ie fthow ",
-            " ia fr weh,whh",
-            "Trnco miae  ie",
-            "w ciroitr btcr",
-            "oVivtfshfcuhhe",
-            " eeih a uote  ",
-            "hrnl sdtln  is",
-            "oot ttvh tttfh",
-            "un bhaeepihw a",
-            "saglernianeoyl",
-            "e,ro -trsui ol",
-            "h uofcu sarhu ",
-            "owddarrdan o m",
-            "lhg to'egccuwi",
-            "deemasdaeehris",
-            "sr als t  ists",
-            ",ebk 'phool'h,",
-            "  reldi ffd   ",
-            "bweso tb  rtpo",
-            "oea ileutterau",
-            "t kcnoorhhnatr",
-            "hl isvuyee'fi ",
-            " atv es iisfet",
-            "ayoior trr ino",
-            "l  lfsoh  ecti",
-            "ion   vedpn  l",
-            "kuehtteieadoe ",
-            "erwaharrar,fas",
-            "   nekt te  rh",
-            "ismdsehphnnosa",
-            "ncuse ra-tau l",
-            " et  tormsural",
-            "dniuthwea'g t ",
-            "iennwesnr hsts",
-            "g,ycoi tkrttet",
-            "n ,l r s'a anr",
-            "i  ef  'dgcgdi",
-            "t  aol   eoe,v",
-            "y  nei sl,u; e",
-            ",  .sf to l   ",
-            "     e rv d  t",
-            "     ; ie    o",
-            "       f, r   ",
-            "       e  e  m",
-            "       .  m  e",
-            "          o  n",
-            "          v  d",
-            "          e  .",
-            "          ,"
+            "TAAA",
+            "h   ",
+            "elll",
+            " ooi",
+            "lnnn",
+            "ogge",
+            "n e.",
+            "glr",
+            "ei ",
+            "snl",
+            "tei",
+            " .n",
+            "l e",
+            "i .",
+            "n",
+            "e",
+            "."
         ]
         self.assertEqual(
             transpose("\n".join(input_line)),

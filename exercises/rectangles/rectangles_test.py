@@ -3,9 +3,9 @@ import unittest
 from rectangles import count
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
-class WordTest(unittest.TestCase):
+class RectanglesTest(unittest.TestCase):
     def test_no_rows(self):
         self.assertEqual(count([]), 0)
 

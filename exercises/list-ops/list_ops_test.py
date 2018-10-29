@@ -4,122 +4,96 @@ import operator
 import list_ops
 
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.3.0
+
 class ListOpsTest(unittest.TestCase):
 
-    # tests for map
-    def test_map_square(self):
+    # test for append
+    def test_append_empty_lists(self):
+        self.assertEqual(list_ops.append([], []), [])
+
+    def test_append_empty_list_to_list(self):
+        self.assertEqual(list_ops.append([], [1, 2, 3, 4]), [1, 2, 3, 4])
+
+    def test_append_nonempty_lists(self):
+        self.assertEqual(list_ops.append([1, 2], [2, 3, 4, 5]),
+                         [1, 2, 2, 3, 4, 5])
+
+    # tests for concat
+    def test_concat_empty_list(self):
+        self.assertEqual(list_ops.concat([]), [])
+
+    def test_concat_list_of_lists(self):
+        self.assertEqual(list_ops.concat([[1, 2], [3], [], [4, 5, 6]]),
+                         [1, 2, 3, 4, 5, 6])
+
+    def test_concat_list_of_nested_lists(self):
         self.assertEqual(
-            list_ops.map_clone(lambda x: x**2,
-                               [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
-            [1, 4, 9, 16, 25, 36, 49, 64, 81, 100])
+            list_ops.concat([[[1], [2]], [[3]], [[]], [[4, 5, 6]]]),
+            [[1], [2], [3], [], [4, 5, 6]])
 
-    def test_map_cube(self):
+    # tests for filter_clone
+    def test_filter_empty_list(self):
+        self.assertEqual(list_ops.filter_clone(lambda x: x % 2 == 1, []), [])
+
+    def test_filter_nonempty_list(self):
         self.assertEqual(
-            list_ops.map_clone(lambda x: x**3,
-                               [-1, 2, -3, 4, -5, 6, -7, 8, -9, 10]),
-            [-1, 8, -27, 64, -125, 216, -343, 512, -729, 1000])
-
-    def test_map_absolute(self):
-        self.assertEqual(
-            list_ops.map_clone(lambda x: abs(x),
-                               [-1, 2, -3, 4, -5, 6, -7, 8, -9, 10]),
-            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-
-    def test_map_empty(self):
-        self.assertEqual(list_ops.map_clone(operator.index, []), [])
-
-    # tests for length
-    def test_pos_leng(self):
-        self.assertEqual(
-            list_ops.length([-1, 2, -3, 4, -5, 6, -7, 8, -9, 10]), 10)
-
-    def test_empty_len(self):
-        self.assertEqual(list_ops.length([]), 0)
-
-    # tests for filter
-    def test_filter_odd(self):
-        self.assertEqual(
-            list_ops.filter_clone(lambda x: x % 2 != 0, [1, 2, 3, 4, 5, 6]),
+            list_ops.filter_clone(lambda x: x % 2 == 1, [1, 2, 3, 4, 5]),
             [1, 3, 5])
 
-    def test_filter_even(self):
-        self.assertEqual(
-            list_ops.filter_clone(lambda x: x % 2 == 0, [1, 2, 3, 4, 5, 6]),
-            [2, 4, 6])
+    # tests for length
+    def test_length_empty_list(self):
+        self.assertEqual(list_ops.length([]), 0)
 
-    # tests for reverse
-    def test_reverse_small(self):
-        self.assertEqual(list_ops.reverse([3, 2, 1]), [1, 2, 3])
+    def test_length_nonempty_list(self):
+        self.assertEqual(list_ops.length([1, 2, 3, 4]), 4)
 
-    def test_reverse_mixed_types(self):
-        self.assertEqual(
-            list_ops.reverse(["xyz", 4.0, "cat", 1]), [1, "cat", 4.0, "xyz"])
+    # tests for map_clone
+    def test_map_empty_list(self):
+        self.assertEqual(list_ops.map_clone(lambda x: x + 1, []), [])
 
-    def test_reverse_empty(self):
-        self.assertEqual(list_ops.reverse([]), [])
-
-    # tests for append
-    def test_append_tuple(self):
-        self.assertEqual(
-            list_ops.append(["10", "python"], "hello"),
-            ["10", "python", "hello"])
-
-    def test_append_range(self):
-        self.assertEqual(
-            list_ops.append([100], range(1000)), [100, range(1000)])
-
-    def test_append_to_empty(self):
-        self.assertEqual(list_ops.append([], 42), [42])
+    def test_map_nonempty_list(self):
+        self.assertEqual(list_ops.map_clone(lambda x: x + 1, [1, 3, 5, 7]),
+                         [2, 4, 6, 8])
 
     # tests for foldl
-    def test_foldl_sum(self):
-        self.assertEqual(
-            list_ops.foldl(operator.add, [1, 2, 3, 4, 5, 6], 0), 21)
+    def test_foldl_empty_list(self):
+        self.assertEqual(list_ops.foldl(operator.mul, [], 2), 2)
 
-    def test_foldl_product(self):
-        self.assertEqual(
-            list_ops.foldl(operator.mul, [1, 2, 3, 4, 5, 6], 1), 720)
+    def test_foldl_nonempty_list_addition(self):
+        self.assertEqual(list_ops.foldl(operator.add, [1, 2, 3, 4], 5), 15)
 
-    def test_foldl_div(self):
-        self.assertEqual(
-            list_ops.foldl(operator.floordiv, [1, 2, 3, 4, 5, 6], 1), 0)
-
-    def test_foldl_sub(self):
-        self.assertEqual(list_ops.foldl(operator.sub, [1, 2, 3, 4, 5], 0), -15)
+    def test_foldl_nonempty_list_floordiv(self):
+        self.assertEqual(list_ops.foldl(operator.floordiv, [2, 5], 5), 0)
 
     # tests for foldr
-    def test_foldr_sub(self):
-        self.assertEqual(list_ops.foldr(operator.sub, [1, 2, 3, 4, 5], 0), 3)
+    def test_foldr_empty_list(self):
+        self.assertEqual(list_ops.foldr(operator.mul, [], 2), 2)
 
+    def test_foldr_nonempty_list_addition(self):
+        self.assertEqual(list_ops.foldr(operator.add, [1, 2, 3, 4], 5), 15)
+
+    def test_foldr_nonempty_list_floordiv(self):
+        self.assertEqual(list_ops.foldr(operator.floordiv, [2, 5], 5), 2)
+
+    # additional test for foldr
     def test_foldr_add_str(self):
         self.assertEqual(
             list_ops.foldr(operator.add,
                            ["e", "x", "e", "r", "c", "i", "s", "m"], "!"),
             "exercism!")
 
-    # tests for flatten
-    def test_flatten_nested(self):
-        self.assertEqual(list_ops.flat([[[1, 2], [3]], [[4]]]), [1, 2, 3, 4])
+    # tests for reverse
+    def test_reverse_empty_list(self):
+        self.assertEqual(list_ops.reverse([]), [])
 
-    def test_flatten_once(self):
-        self.assertEqual(list_ops.flat([["x", "y", "z"]]), ["x", "y", "z"])
+    def test_reverse_nonempty_list(self):
+        self.assertEqual(list_ops.reverse([1, 3, 5, 7]), [7, 5, 3, 1])
 
-    def test_flatten_empty(self):
-        self.assertEqual(list_ops.flat([]), [])
-
-    # tests for concat
-    def test_concat_two(self):
+    # additional test for reverse
+    def test_reverse_mixed_types(self):
         self.assertEqual(
-            list_ops.concat([1, 3, 5, 8], [9, 4, 5, 6]),
-            [1, 3, 5, 8, 9, 4, 5, 6])
-
-    def test_concat_nothing(self):
-        self.assertEqual(
-            list_ops.concat(['orange', 'apple', 'banana'], None),
-            ["orange", "apple", "banana"])
-
-    def test_concat_empty(self):
-        self.assertEqual(list_ops.concat([], []), [])
+            list_ops.reverse(["xyz", 4.0, "cat", 1]), [1, "cat", 4.0, "xyz"])
 
 
 if __name__ == '__main__':

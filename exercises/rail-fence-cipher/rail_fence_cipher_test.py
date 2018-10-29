@@ -3,9 +3,9 @@ import unittest
 from rail_fence_cipher import encode, decode
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
-class RailFenceTests(unittest.TestCase):
+class RailFenceCipherTest(unittest.TestCase):
     def test_encode_with_two_rails(self):
         self.assertMultiLineEqual(
             encode('XOXOXOXOXOXOXOXOXO', 2), 'XXXXXXXXXOOOOOOOOO')

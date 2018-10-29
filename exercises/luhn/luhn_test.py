@@ -5,9 +5,9 @@ import unittest
 from luhn import Luhn
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-class LuhnTests(unittest.TestCase):
+class LuhnTest(unittest.TestCase):
     def test_single_digit_strings_can_not_be_valid(self):
         self.assertIs(Luhn("1").is_valid(), False)
 
@@ -39,13 +39,16 @@ class LuhnTests(unittest.TestCase):
         self.assertIs(Luhn("055£ 444$ 285").is_valid(), False)
 
     def test_single_zero_with_space_is_invalid(self):
-        self.assertIs(Luhn("0").is_valid(), False)
+        self.assertIs(Luhn(" 0").is_valid(), False)
 
     def test_more_than_a_single_zero_is_valid(self):
         self.assertIs(Luhn("0000 0").is_valid(), True)
 
     def test_input_digit_9_is_correctly_converted_to_output_digit_9(self):
         self.assertIs(Luhn("091").is_valid(), True)
+
+    def test_strings_with_non_digits_is_invalid(self):
+        self.assertIs(Luhn(":9").is_valid(), False)
 
     def test_is_valid_can_be_called_repeatedly(self):
         # Additional track specific test case

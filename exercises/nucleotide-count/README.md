@@ -1,44 +1,62 @@
 # Nucleotide Count
 
-Given a DNA string, compute how many times each nucleotide occurs in the string.
+Given a single stranded DNA string, compute how many times each nucleotide occurs in the string.
 
-DNA is represented by an alphabet of the following symbols: 'A', 'C',
-'G', and 'T'.
+The genetic language of every living thing on the planet is DNA.
+DNA is a large molecule that is built from an extremely long sequence of individual elements called nucleotides.
+4 types exist in DNA and these differ only slightly and can be represented as the following symbols: 'A' for adenine, 'C' for cytosine, 'G' for guanine, and 'T' thymine.
 
-Each symbol represents a nucleotide, which is a fancy name for the
-particular molecules that happen to make up a large part of DNA.
-
-Shortest intro to biochemistry EVAR:
-
+Here is an analogy:
 - twigs are to birds nests as
-- nucleotides are to DNA and RNA as
-- amino acids are to proteins as
-- sugar is to starch as
-- oh crap lipids
+- nucleotides are to DNA as
+- legos are to lego houses as
+- words are to sentences as...
 
-I'm not going to talk about lipids because they're crazy complex.
+## Exception messages
 
-So back to nucleotides.
+Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
+indicate what the source of the error is. This makes your code more readable and helps significantly with debugging. Not
+every exercise will require you to raise an exception, but for those that do, the tests will only pass if you include
+a message.
 
-DNA contains four types of them: adenine (`A`), cytosine (`C`), guanine
-(`G`), and thymine (`T`).
+To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
+`raise Exception`, you should write:
 
-RNA contains a slightly different set of nucleotides, but we don't care
-about that for now.
+```python
+raise Exception("Meaningful message indicating the source of the error")
+```
 
-### Submitting Exercises
+## Running the tests
 
-Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
+To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
 
-For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
+- Python 2.7: `py.test nucleotide_count_test.py`
+- Python 3.4+: `pytest nucleotide_count_test.py`
 
+Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+`python -m pytest nucleotide_count_test.py`
+
+### Common `pytest` options
+
+- `-v` : enable verbose output
+- `-x` : stop running tests on first failure
+- `--ff` : run failures from previous test before running other test cases
+
+For other options, see `python -m pytest -h`
+
+## Submitting Exercises
+
+Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/nucleotide-count` directory.
+
+You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Workspace`.
 
 For more detailed information about running tests, code style and linting,
-please see the [help page](http://exercism.io/languages/python).
+please see [Running the Tests](http://exercism.io/tracks/python/tests).
 
 ## Source
 
 The Calculating DNA Nucleotides_problem at Rosalind [http://rosalind.info/problems/dna/](http://rosalind.info/problems/dna/)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

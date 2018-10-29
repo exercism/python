@@ -9,7 +9,7 @@ import unittest
 from binary import parse_binary
 
 
-class BinaryTests(unittest.TestCase):
+class BinaryTest(unittest.TestCase):
     def test_binary_1_is_decimal_1(self):
         self.assertEqual(parse_binary("1"), 1)
 
@@ -32,16 +32,30 @@ class BinaryTests(unittest.TestCase):
         self.assertEqual(parse_binary("10001101000"), 1128)
 
     def test_invalid_binary_text_only(self):
-        self.assertRaises(ValueError, parse_binary, "carrot")
+        with self.assertRaisesWithMessage(ValueError):
+            parse_binary("carrot")
 
     def test_invalid_binary_number_not_base2(self):
-        self.assertRaises(ValueError, parse_binary, "102011")
+        with self.assertRaisesWithMessage(ValueError):
+            parse_binary("102011")
 
     def test_invalid_binary_numbers_with_text(self):
-        self.assertRaises(ValueError, parse_binary, "10nope")
+        with self.assertRaisesWithMessage(ValueError):
+            parse_binary("10nope")
 
     def test_invalid_binary_text_with_numbers(self):
-        self.assertRaises(ValueError, parse_binary, "nope10")
+        with self.assertRaisesWithMessage(ValueError):
+            parse_binary("nope10")
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex
+        except AttributeError:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

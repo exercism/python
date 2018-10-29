@@ -3,13 +3,25 @@ import unittest
 from kindergarten_garden import Garden
 
 
-class KindergartenGardenTests(unittest.TestCase):
-    def test_alices_garden(self):
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.1
+
+class KindergartenGardenTest(unittest.TestCase):
+    def test_garden_with_single_student(self):
         self.assertEqual(
             Garden("RC\nGG").plants("Alice"),
             "Radishes Clover Grass Grass".split())
 
-    def test_bob_and_charlies_gardens(self):
+    def test_different_garden_with_single_student(self):
+        self.assertEqual(
+            Garden("VC\nRC").plants("Alice"),
+            "Violets Clover Radishes Clover".split())
+
+    def test_garden_with_two_students(self):
+        garden = Garden("VVCG\nVVRC")
+        self.assertEqual(
+            garden.plants("Bob"), "Clover Grass Radishes Clover".split())
+
+    def test_multiple_students_for_the_same_garden_with_three_students(self):
         garden = Garden("VVCCGG\nVVCCGG")
         self.assertEqual(garden.plants("Bob"), ["Clover"] * 4)
         self.assertEqual(garden.plants("Charlie"), ["Grass"] * 4)
@@ -26,6 +38,7 @@ class KindergartenGardenTests(unittest.TestCase):
         self.assertEqual(
             garden.plants("Larry"), "Grass Violets Clover Violets".split())
 
+    # Additional tests for this track
     def test_disordered_test(self):
         garden = Garden(
             "VCRRGVRG\nRVGCCGCV",

@@ -9,24 +9,7 @@ always reach 1 eventually.
 
 Given a number n, return the number of steps required to reach 1.
 
-(Keep in mind that the Conjecture is only concerned with strictly positive
-integers, so your solution should return `None` if given 0 or a negative
-integer.)
-
 ## Examples
-
-Starting with n = 3, the steps would be as follows:
-
-0. 3
-1. 10
-2. 5
-3. 16
-4. 8
-5. 4
-6. 2
-7. 1
-
-Resulting in 7 steps. So for input n = 3, the return value would be 7.
 
 Starting with n = 12, the steps would be as follows:
 
@@ -43,19 +26,56 @@ Starting with n = 12, the steps would be as follows:
 
 Resulting in 9 steps. So for input n = 12, the return value would be 9.
 
-### Submitting Exercises
+## Notes
 
-Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
+The Collatz Conjecture is only concerned with strictly positive integers, so your solution should raise a `ValueError` with a meaningful message if given 0 or a negative integer.
 
-For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
 
+## Exception messages
+
+Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
+indicate what the source of the error is. This makes your code more readable and helps significantly with debugging. Not
+every exercise will require you to raise an exception, but for those that do, the tests will only pass if you include
+a message.
+
+To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
+`raise Exception`, you should write:
+
+```python
+raise Exception("Meaningful message indicating the source of the error")
+```
+
+## Running the tests
+
+To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+
+- Python 2.7: `py.test collatz_conjecture_test.py`
+- Python 3.4+: `pytest collatz_conjecture_test.py`
+
+Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+`python -m pytest collatz_conjecture_test.py`
+
+### Common `pytest` options
+
+- `-v` : enable verbose output
+- `-x` : stop running tests on first failure
+- `--ff` : run failures from previous test before running other test cases
+
+For other options, see `python -m pytest -h`
+
+## Submitting Exercises
+
+Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/collatz-conjecture` directory.
+
+You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Workspace`.
 
 For more detailed information about running tests, code style and linting,
-please see the [help page](http://exercism.io/languages/python).
+please see [Running the Tests](http://exercism.io/tracks/python/tests).
 
 ## Source
 
 An unsolved problem in mathematics named after mathematician Lothar Collatz [https://en.wikipedia.org/wiki/3x_%2B_1_problem](https://en.wikipedia.org/wiki/3x_%2B_1_problem)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

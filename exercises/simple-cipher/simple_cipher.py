@@ -1,8 +1,9 @@
 class Cipher(object):
-    def __init__(self):
+    def __init__(self, key=None):
         pass
 
+    def encode(self, text):
+        pass
 
-class Caesar(object):
-    def __init__(self):
+    def decode(self, text):
         pass

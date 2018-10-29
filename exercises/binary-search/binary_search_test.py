@@ -2,8 +2,10 @@ import unittest
 
 from binary_search import binary_search
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-class BinarySearchTests(unittest.TestCase):
+
+class BinarySearchTest(unittest.TestCase):
     def test_finds_value_in_array_with_one_element(self):
         self.assertEqual(binary_search([6], 6), 0)
 
@@ -27,17 +29,30 @@ class BinarySearchTests(unittest.TestCase):
             5)
 
     def test_identifies_value_missing(self):
-        self.assertRaises(ValueError, binary_search, [1, 3, 4, 6, 8, 9, 11], 7)
+        with self.assertRaisesWithMessage(ValueError):
+            binary_search([1, 3, 4, 6, 8, 9, 11], 7)
 
     def test_value_smaller_than_arrays_minimum(self):
-        self.assertRaises(ValueError, binary_search, [1, 3, 4, 6, 8, 9, 11], 0)
+        with self.assertRaisesWithMessage(ValueError):
+            binary_search([1, 3, 4, 6, 8, 9, 11], 0)
 
     def test_value_larger_than_arrays_maximum(self):
-        self.assertRaises(ValueError, binary_search, [1, 3, 4, 6, 8, 9, 11],
-                          13)
+        with self.assertRaisesWithMessage(ValueError):
+            binary_search([1, 3, 4, 6, 8, 9, 11], 13)
 
     def test_empty_array(self):
-        self.assertRaises(ValueError, binary_search, [], 1)
+        with self.assertRaisesWithMessage(ValueError):
+            binary_search([], 1)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex
+        except AttributeError:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

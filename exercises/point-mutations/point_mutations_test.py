@@ -3,7 +3,7 @@ import unittest
 from point_mutations import hamming_distance
 
 
-class DNATest(unittest.TestCase):
+class PointMutationsTest(unittest.TestCase):
     def test_no_difference_between_empty_strands(self):
         self.assertEqual(hamming_distance('', ''), 0)
 

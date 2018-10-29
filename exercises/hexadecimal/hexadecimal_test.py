@@ -35,8 +35,18 @@ class HexadecimalTest(unittest.TestCase):
         self.assertEqual(hexa('00fff0'), 65520)
 
     def test_invalid_hexa(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesWithMessage(ValueError):
             hexa('carrot')
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex
+        except AttributeError:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

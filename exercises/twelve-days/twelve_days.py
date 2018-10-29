@@ -1,10 +1,2 @@
-def verse():
-    pass
-
-
-def verses():
-    pass
-
-
-def sing():
+def recite(start_verse, end_verse):
     pass

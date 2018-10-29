@@ -4,7 +4,7 @@ import random
 from robot_name import Robot
 
 
-class RobotTest(unittest.TestCase):
+class RobotNameTest(unittest.TestCase):
     # assertRegex() alias to adress DeprecationWarning
     # assertRegexpMatches got renamed in version 3.2
     if not hasattr(unittest.TestCase, "assertRegex"):

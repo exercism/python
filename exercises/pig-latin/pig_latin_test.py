@@ -3,9 +3,9 @@ import unittest
 from pig_latin import translate
 
 
-# test cases adapted from `x-common//canonical-data.json` @ version: 1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-class PigLatinTests(unittest.TestCase):
+class PigLatinTest(unittest.TestCase):
     def test_word_beginning_with_a(self):
         self.assertEqual(translate("apple"), "appleay")
 
@@ -29,9 +29,6 @@ class PigLatinTests(unittest.TestCase):
 
     def test_word_beginning_with_k(self):
         self.assertEqual(translate("koala"), "oalakay")
-
-    def test_word_beginning_with_y(self):
-        self.assertEqual(translate("yellow"), "ellowyay")
 
     def test_word_beginning_with_x(self):
         self.assertEqual(translate("xenon"), "enonxay")
@@ -62,6 +59,15 @@ class PigLatinTests(unittest.TestCase):
 
     def test_word_beginning_with_xr(self):
         self.assertEqual(translate("xray"), "xrayay")
+
+    def test_y_is_treated_like_a_consonant_at_the_beginning_of_a_word(self):
+        self.assertEqual(translate("yellow"), "ellowyay")
+
+    def test_y_is_treated_like_a_vowel_at_the_end_of_a_consonant_cluster(self):
+        self.assertEqual(translate("rhythm"), "ythmrhay")
+
+    def test_y_as_second_letter_in_two_letter_word(self):
+        self.assertEqual(translate("my"), "ymay")
 
     def test_a_whole_phrase(self):
         self.assertEqual(translate("quick fast run"), "ickquay astfay unray")

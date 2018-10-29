@@ -1,16 +1,10 @@
 import unittest
-
 from datetime import date
 
-from meetup import meetup_day
-
-try:
-    from meetup import MeetupDayException
-except ImportError:
-    MeetupDayException = Exception
+from meetup import meetup_day, MeetupDayException
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class MeetupTest(unittest.TestCase):
     def test_monteenth_of_may_2013(self):
@@ -399,8 +393,18 @@ class MeetupTest(unittest.TestCase):
             meetup_day(2015, 3, 'Monday', '5th'), date(2015, 3, 30))
 
     def test_nonexistent_fifth_monday_of_february_2015(self):
-        self.assertRaises(MeetupDayException, meetup_day, 2015, 2, 'Monday',
-                          '5th')
+        with self.assertRaisesWithMessage(MeetupDayException):
+            meetup_day(2015, 2, 'Monday', '5th')
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex
+        except AttributeError:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

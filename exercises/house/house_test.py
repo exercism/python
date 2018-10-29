@@ -2,127 +2,155 @@
 
 import unittest
 
-from house import rhyme, verse
+from house import recite
 
 
-class VerseTest(unittest.TestCase):
-    def test_verse_0(self):
-        expected = 'This is the house that Jack built.'
-        self.assertEqual(verse(0), expected)
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.2.0
 
-    def test_verse_1(self):
-        expected = 'This is the malt\n'\
-                   'that lay in the house that Jack built.'
-        self.assertEqual(verse(1), expected)
+class HouseTest(unittest.TestCase):
+    def test_verse_one(self):
+        expected = ["This is the house that Jack built."]
+        self.assertEqual(recite(1, 1), expected)
 
-    def test_verse_2(self):
-        expected = 'This is the rat\n'\
-                   'that ate the malt\n'\
-                   'that lay in the house that Jack built.'
-        self.assertEqual(verse(2), expected)
+    def test_verse_two(self):
+        expected = [
+            "This is the malt "
+            "that lay in the house that Jack built."
+        ]
+        self.assertEqual(recite(2, 2), expected)
 
-    def test_verse_3(self):
-        expected = 'This is the cat\n'\
-                   'that killed the rat\n'\
-                   'that ate the malt\n'\
-                   'that lay in the house that Jack built.'
-        self.assertEqual(verse(3), expected)
+    def test_verse_three(self):
+        expected = [
+            "This is the rat "
+            "that ate the malt "
+            "that lay in the house that Jack built."
+        ]
+        self.assertEqual(recite(3, 3), expected)
+
+    def test_verse_four(self):
+        expected = [
+            "This is the cat "
+            "that killed the rat "
+            "that ate the malt "
+            "that lay in the house that Jack built."
+        ]
+        self.assertEqual(recite(4, 4), expected)
+
+    def test_verse_five(self):
+        expected = [
+            "This is the dog "
+            "that worried the cat "
+            "that killed the rat "
+            "that ate the malt "
+            "that lay in the house that Jack built."
+        ]
+        self.assertEqual(recite(5, 5), expected)
+
+    def test_verse_six(self):
+        expected = [
+            "This is the cow with the crumpled horn "
+            "that tossed the dog "
+            "that worried the cat "
+            "that killed the rat "
+            "that ate the malt "
+            "that lay in the house that Jack built."
+        ]
+        self.assertEqual(recite(6, 6), expected)
+
+    def test_verse_seven(self):
+        expected = [
+            "This is the maiden all forlorn "
+            "that milked the cow with the crumpled horn "
+            "that tossed the dog "
+            "that worried the cat "
+            "that killed the rat "
+            "that ate the malt "
+            "that lay in the house that Jack built."
+        ]
+        self.assertEqual(recite(7, 7), expected)
+
+    def test_verse_eight(self):
+        expected = [
+            "This is the man all tattered and torn "
+            "that kissed the maiden all forlorn "
+            "that milked the cow with the crumpled horn "
+            "that tossed the dog "
+            "that worried the cat "
+            "that killed the rat "
+            "that ate the malt "
+            "that lay in the house that Jack built."
+        ]
+        self.assertEqual(recite(8, 8), expected)
+
+    def test_verse_nine(self):
+        expected = [
+            "This is the priest all shaven and shorn "
+            "that married the man all tattered and torn "
+            "that kissed the maiden all forlorn "
+            "that milked the cow with the crumpled horn "
+            "that tossed the dog "
+            "that worried the cat "
+            "that killed the rat "
+            "that ate the malt "
+            "that lay in the house that Jack built."
+        ]
+        self.assertEqual(recite(9, 9), expected)
+
+    def test_verse_10(self):
+        expected = [
+            "This is the rooster that crowed in the morn "
+            "that woke the priest all shaven and shorn "
+            "that married the man all tattered and torn "
+            "that kissed the maiden all forlorn "
+            "that milked the cow with the crumpled horn "
+            "that tossed the dog "
+            "that worried the cat "
+            "that killed the rat "
+            "that ate the malt "
+            "that lay in the house that Jack built."
+        ]
+        self.assertEqual(recite(10, 10), expected)
 
     def test_verse_11(self):
-        expected = 'This is the horse and the hound and the horn\n'\
-                   'that belonged to the farmer sowing his corn\n'\
-                   'that kept the rooster that crowed in the morn\n'\
-                   'that woke the priest all shaven and shorn\n'\
-                   'that married the man all tattered and torn\n'\
-                   'that kissed the maiden all forlorn\n'\
-                   'that milked the cow with the crumpled horn\n'\
-                   'that tossed the dog\n'\
-                   'that worried the cat\n'\
-                   'that killed the rat\n'\
-                   'that ate the malt\n'\
-                   'that lay in the house that Jack built.'
-        self.assertEqual(verse(11), expected)
+        expected = [
+            "This is the farmer sowing his corn "
+            "that kept the rooster that crowed in the morn "
+            "that woke the priest all shaven and shorn "
+            "that married the man all tattered and torn "
+            "that kissed the maiden all forlorn "
+            "that milked the cow with the crumpled horn "
+            "that tossed the dog "
+            "that worried the cat "
+            "that killed the rat "
+            "that ate the malt "
+            "that lay in the house that Jack built."
+        ]
+        self.assertEqual(recite(11, 11), expected)
 
-    def test_rhyme(self):
-        expected = 'This is the house that Jack built.\n\n'\
-                   'This is the malt\n'\
-                   'that lay in the house that Jack built.\n\n'\
-                   'This is the rat\n'\
-                   'that ate the malt\n'\
-                   'that lay in the house that Jack built.\n\n'\
-                   'This is the cat\n'\
-                   'that killed the rat\n'\
-                   'that ate the malt\n'\
-                   'that lay in the house that Jack built.\n\n'\
-                   'This is the dog\n'\
-                   'that worried the cat\n'\
-                   'that killed the rat\n'\
-                   'that ate the malt\n'\
-                   'that lay in the house that Jack built.\n\n'\
-                   'This is the cow with the crumpled horn\n'\
-                   'that tossed the dog\n'\
-                   'that worried the cat\n'\
-                   'that killed the rat\n'\
-                   'that ate the malt\n'\
-                   'that lay in the house that Jack built.\n\n'\
-                   'This is the maiden all forlorn\n'\
-                   'that milked the cow with the crumpled horn\n'\
-                   'that tossed the dog\n'\
-                   'that worried the cat\n'\
-                   'that killed the rat\n'\
-                   'that ate the malt\n'\
-                   'that lay in the house that Jack built.\n\n'\
-                   'This is the man all tattered and torn\n'\
-                   'that kissed the maiden all forlorn\n'\
-                   'that milked the cow with the crumpled horn\n'\
-                   'that tossed the dog\n'\
-                   'that worried the cat\n'\
-                   'that killed the rat\n'\
-                   'that ate the malt\n'\
-                   'that lay in the house that Jack built.\n\n'\
-                   'This is the priest all shaven and shorn\n'\
-                   'that married the man all tattered and torn\n'\
-                   'that kissed the maiden all forlorn\n'\
-                   'that milked the cow with the crumpled horn\n'\
-                   'that tossed the dog\n'\
-                   'that worried the cat\n'\
-                   'that killed the rat\n'\
-                   'that ate the malt\n'\
-                   'that lay in the house that Jack built.\n\n'\
-                   'This is the rooster that crowed in the morn\n'\
-                   'that woke the priest all shaven and shorn\n'\
-                   'that married the man all tattered and torn\n'\
-                   'that kissed the maiden all forlorn\n'\
-                   'that milked the cow with the crumpled horn\n'\
-                   'that tossed the dog\n'\
-                   'that worried the cat\n'\
-                   'that killed the rat\n'\
-                   'that ate the malt\n'\
-                   'that lay in the house that Jack built.\n\n'\
-                   'This is the farmer sowing his corn\n'\
-                   'that kept the rooster that crowed in the morn\n'\
-                   'that woke the priest all shaven and shorn\n'\
-                   'that married the man all tattered and torn\n'\
-                   'that kissed the maiden all forlorn\n'\
-                   'that milked the cow with the crumpled horn\n'\
-                   'that tossed the dog\n'\
-                   'that worried the cat\n'\
-                   'that killed the rat\n'\
-                   'that ate the malt\n'\
-                   'that lay in the house that Jack built.\n\n'\
-                   'This is the horse and the hound and the horn\n'\
-                   'that belonged to the farmer sowing his corn\n'\
-                   'that kept the rooster that crowed in the morn\n'\
-                   'that woke the priest all shaven and shorn\n'\
-                   'that married the man all tattered and torn\n'\
-                   'that kissed the maiden all forlorn\n'\
-                   'that milked the cow with the crumpled horn\n'\
-                   'that tossed the dog\n'\
-                   'that worried the cat\n'\
-                   'that killed the rat\n'\
-                   'that ate the malt\n'\
-                   'that lay in the house that Jack built.'
-        self.assertEqual(rhyme(), expected)
+    def test_verse_12(self):
+        expected = [
+            "This is the horse and the hound and the horn "
+            "that belonged to the farmer sowing his corn "
+            "that kept the rooster that crowed in the morn "
+            "that woke the priest all shaven and shorn "
+            "that married the man all tattered and torn "
+            "that kissed the maiden all forlorn "
+            "that milked the cow with the crumpled horn "
+            "that tossed the dog "
+            "that worried the cat "
+            "that killed the rat "
+            "that ate the malt "
+            "that lay in the house that Jack built."
+        ]
+        self.assertEqual(recite(12, 12), expected)
+
+    def test_multiple_verses(self):
+        expected = [recite(i, i)[0] for i in range(4, 9)]
+        self.assertEqual(recite(4, 8), expected)
+
+    def test_full_rhyme(self):
+        expected = [recite(i, i)[0] for i in range(1, 13)]
+        self.assertEqual(recite(1, 12), expected)
 
 
 if __name__ == '__main__':
