@@ -5,7 +5,7 @@ def matches(line, pattern, flags):
 
     if '-x' in flags:  # match entire lines
         if len(pattern) != len(line.rstrip()):
-            return False
+            return False if '-v' not in flags else True  # ugly inverted
 
     if '-v' in flags:  # invert matching
         return pattern not in line
