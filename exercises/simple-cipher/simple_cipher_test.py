@@ -4,7 +4,7 @@ import re
 from simple_cipher import Cipher
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class SimpleCipherTest(unittest.TestCase):
     # Utility functions
@@ -68,20 +68,6 @@ class SubstitutionCipherTest(SimpleCipherTest):
     def test_can_handle_messages_longer_than_key(self):
         cipher = Cipher('abc')
         self.assertEqual(cipher.encode('iamapandabear'), 'iboaqcnecbfcr')
-
-
-class IncorrectKeyCipher(SimpleCipherTest):
-    def test_throws_an_error_with_all_uppercase_key(self):
-        with self.assertRaisesWithMessage(ValueError):
-            Cipher('ABCDEF')
-
-    def test_throws_an_error_with_a_numeric_key(self):
-        with self.assertRaisesWithMessage(ValueError):
-            Cipher('12345')
-
-    def test_throws_an_error_with_empty_key(self):
-        with self.assertRaisesWithMessage(ValueError):
-            Cipher('')
 
 
 if __name__ == '__main__':
