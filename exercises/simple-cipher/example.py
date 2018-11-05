@@ -10,8 +10,6 @@ class Cipher(object):
         if key is None:
             random.seed(time())
             key = ''.join(random.choice(ascii_lowercase) for i in range(100))
-        elif not key or not key.isalpha() or not key.islower():
-            raise ValueError('Wrong key parameter!')
         self.key = key
 
     def encode(self, text):
