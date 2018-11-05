@@ -7,7 +7,7 @@ except ImportError:
 from grep import grep
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 ILIADFILENAME = 'iliad.txt'
 ILIADCONTENTS = '''Achilles sing, O Goddess! Peleus' son;
@@ -103,6 +103,7 @@ class GrepTest(unittest.TestCase):
         create_file(ILIADFILENAME, ILIADCONTENTS)
         create_file(MIDSUMMERNIGHTFILENAME, MIDSUMMERNIGHTCONTENTS)
         create_file(PARADISELOSTFILENAME, PARADISELOSTCONTENTS)
+        self.maxDiff = None
 
     @classmethod
     def tearDownClass(self):
@@ -192,6 +193,12 @@ class GrepTest(unittest.TestCase):
             "That Shepherd, who first taught the chosen Seed\n"
         )
 
+    def test_one_file_one_match_file_flag_takes_precedence_over_line(self):
+        self.assertMultiLineEqual(
+            grep("ten", [ILIADFILENAME], "-n -l"),
+            ILIADFILENAME + '\n'
+        )
+
     def test_one_file_no_matches_various_flags(self):
         self.assertMultiLineEqual(
             grep("Gandalf", [ILIADFILENAME], "-n -l -x -i"),
@@ -271,6 +278,44 @@ class GrepTest(unittest.TestCase):
         self.assertMultiLineEqual(
             grep("Frodo", FILENAMES, "-n -l -x -i"),
             ""
+        )
+
+    def test_multiple_files_several_matches_file_flag_takes_precedence(self):
+        self.assertMultiLineEqual(
+            grep("who", FILENAMES, "-n -l"),
+            ILIADFILENAME + '\n' + PARADISELOSTFILENAME + '\n'
+        )
+
+    def test_multiple_files_several_matches_inverted_match_entire_lines(self):
+        expected = (
+            "iliad.txt:Achilles sing, O Goddess! Peleus' son;\n"
+            "iliad.txt:His wrath pernicious, who ten thousand woes\n"
+            "iliad.txt:Caused to Achaia's host, sent many a soul\n"
+            "iliad.txt:And Heroes gave (so stood the will of Jove)\n"
+            "iliad.txt:To dogs and to all ravening fowls a prey,\n"
+            "iliad.txt:When fierce dispute had separated once\n"
+            "iliad.txt:The noble Chief Achilles from the son\n"
+            "iliad.txt:Of Atreus, Agamemnon, King of men.\n"
+            "midsummer-night.txt:I do entreat your grace to pardon me.\n"
+            "midsummer-night.txt:I know not by what power I am made bold,\n"
+            "midsummer-night.txt:Nor how it may concern my modesty,\n"
+            "midsummer-night.txt:In such a presence here to plead my thoughts;"
+            "\nmidsummer-night.txt:But I beseech your grace that I may know\n"
+            "midsummer-night.txt:The worst that may befall me in this case,\n"
+            "midsummer-night.txt:If I refuse to wed Demetrius.\n"
+            "paradise-lost.txt:Of Mans First Disobedience, and the Fruit\n"
+            "paradise-lost.txt:Of that Forbidden Tree, whose mortal tast\n"
+            "paradise-lost.txt:Brought Death into the World, and all our woe,"
+            "\nparadise-lost.txt:With loss of Eden, till one greater Man\n"
+            "paradise-lost.txt:Restore us, and regain the blissful Seat,\n"
+            "paradise-lost.txt:Sing Heav'nly Muse, that on the secret top\n"
+            "paradise-lost.txt:Of Oreb, or of Sinai, didst inspire\n"
+            "paradise-lost.txt:That Shepherd, who first taught the chosen Seed"
+            "\n"
+        )
+        self.assertMultiLineEqual(
+            grep("Illustrious into Ades premature,", FILENAMES, "-x -v"),
+            expected
         )
 
 

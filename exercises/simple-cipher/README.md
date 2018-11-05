@@ -63,9 +63,6 @@ of randomness and ensuring that the key contains only lowercase letters.
 If someone doesn't submit a key at all, generate a truly random key of
 at least 100 characters in length.
 
-If the key submitted is not composed only of lowercase letters, your
-solution should handle the error in a language-appropriate way.
-
 ## Extensions
 
 Shift ciphers work by making the text slightly odd, but are vulnerable
