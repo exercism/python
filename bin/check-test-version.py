@@ -15,7 +15,7 @@ if sys.version_info[0] == 3:
 else:
     FileNotFoundError = IOError
 
-VERSION_PATTERN = '(\d+\.\d+\.\d+)'
+VERSION_PATTERN = r'(\d+\.\d+\.\d+)'
 CANONICAL_PATTERN = (
     '# Tests adapted from `?problem-specifications//canonical-data.json`? '
     '@ v' + VERSION_PATTERN
