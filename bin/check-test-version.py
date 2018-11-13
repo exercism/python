@@ -297,6 +297,10 @@ if __name__ == '__main__':
     opts = parser.parse_args()
     verify_spec_location(opts.spec_path)
     if opts.create_issue:
+        if opts.token is None:
+            if os.path.isfile('.github.api_token'):
+                with open('.github.api_token') as f:
+                    opts.token = f.read().strip()
         if opts.token is not None:
             gh = GitHub(api_token=opts.token)
         else:
