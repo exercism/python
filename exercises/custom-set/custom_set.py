@@ -23,8 +23,8 @@ class CustomSet(object):
     def intersection(self, other):
         pass
 
-    def difference(self, other):
+    def __sub__(self, other):
         pass
 
-    def union(self, other):
+    def __add__(self, other):
         pass
