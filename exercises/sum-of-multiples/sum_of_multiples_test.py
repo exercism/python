@@ -54,6 +54,11 @@ class SumOfMultiplesTest(unittest.TestCase):
     def test_multiples_of_an_empty_list_up_to_10000(self):
         self.assertEqual(sum_of_multiples(10000, []), 0)
 
+    def test_the_only_multiple_of_0_is_0(self):
+        self.assertEqual(sum_of_multiples(1, [0]), 0)
+
+    def test_the_factor_0_does_not_affect_the_sum_of_multiples_of_other_factor(self):
+        self.assertEqual(sum_of_multiples(4, [3, 0]), 3)
 
 if __name__ == '__main__':
     unittest.main()
