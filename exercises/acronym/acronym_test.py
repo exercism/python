@@ -34,6 +34,6 @@ class AcronymTest(unittest.TestCase):
     def test_apostrophes(self):
         self.assertEqual(abbreviate('Halley\'s Comet'), 'HC')
 
-
+        
 if __name__ == '__main__':
     unittest.main()
