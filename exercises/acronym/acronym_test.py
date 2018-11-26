@@ -1,9 +1,9 @@
 import unittest
 
-from acronym import abbreviate
+from example import abbreviate
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.5.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.6.0
 
 class AcronymTest(unittest.TestCase):
     def test_basic(self):
@@ -30,6 +30,9 @@ class AcronymTest(unittest.TestCase):
     def test_consecutive_delimiters(self):
         self.assertEqual(
             abbreviate('Something - I made up from thin air'), 'SIMUFTA')
+
+    def test_apostrophes(self):
+        self.assertEqual(abbreviate('Halley\'s Comet'), 'HC')
 
 
 if __name__ == '__main__':
