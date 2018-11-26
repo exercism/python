@@ -1,6 +1,6 @@
 import unittest
 
-from example import abbreviate
+from acronym import abbreviate
 
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.6.0
