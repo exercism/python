@@ -1,28 +1,23 @@
 from math import sqrt, ceil
+try:
+    # Python 3
+    from math import gcd
+except ImportError:
+    # Python 2
+    from fractions import gcd
 
 
-def triplets_in_range(min, max):
+def triplets_in_range(range_start, range_end):
     result = []
-    for b in range(4, max + 1, 4):
+    for b in range(4, range_end + 1, 4):
         for x, y, z in primitive_triplets(b):
             a, b, c = (x, y, z)
-            while a < min:
+            while a < range_start:
                 a, b, c = (a + x, b + y, c + z)
-            while c <= max:
+            while c <= range_end:
                 result.append((a, b, c))
                 a, b, c = (a + x, b + y, c + z)
     return result
-
-
-def gcd(x, y):
-    """gcd(x, 0) = x and gcd(x, y) = gcd(y, x % y).
-    See Euclidean Algorithm
-    (https://en.wikipedia.org/wiki/Greatest_common_divisor#Using_Euclid's_algorithm)
-    for more information
-    """
-    while (y != 0):
-        x, y = y, x % y
-    return x
 
 
 def primitive_triplets(b):
