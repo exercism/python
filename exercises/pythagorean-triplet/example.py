@@ -1,37 +1,61 @@
+from math import sqrt, ceil
+
+
 def triplets_in_range(min, max):
-    result = set([x for b in
-                  range(4, max + 1, 4) for x in
-                  primitive_triplets(b)])
-    for x, y, z in set(result):
-        a, b, c = (2 * x, 2 * y, 2 * z)
-        while c <= max:
-            if a >= min:
-                result.add((a, b, c))
-            a, b, c = (a + x, b + y, c + z)
-    return set([(d, e, f) for d, e, f in result if d >= min and f <= max])
-
-
-def maxMin(a, b):
-    return (a, b) if a > b else (b, a)
+    result = []
+    for b in range(4, max + 1, 4):
+        for x, y, z in primitive_triplets(b):
+            a, b, c = (x, y, z)
+            while a < min:
+                a, b, c = (a + x, b + y, c + z)
+            while c <= max:
+                result.append((a, b, c))
+                a, b, c = (a + x, b + y, c + z)
+    return result
 
 
 def gcd(x, y):
+    """gcd(x, 0) = x and gcd(x, y) = gcd(y, x % y).
+    See Euclidean Algorithm
+    (https://en.wikipedia.org/wiki/Greatest_common_divisor#Using_Euclid's_algorithm)
+    for more information
+    """
     while (y != 0):
         x, y = y, x % y
     return x
 
 
 def primitive_triplets(b):
-    if b % 4 != 0:
-        raise ValueError('b must be divisible by 4')
-    b2 = int(b / 2)
-    return set([(x[1], x[0], c) for x, c in
-                [(maxMin(m2 - n2, b), m2 + n2) for m, n, m2, n2 in
-                 [(m, n, int(m * m), int(n * n)) for m, n in
-                  set([maxMin(m, int(b2 / m)) for m in
-                       range(2, b2 + 1)
-                       if b2 % m == 0])
-                  if (m - n) % 2 == 1 and gcd(m, n) == 1]]])
+    """See Euclid's formula
+    (https://en.wikipedia.org/wiki/Pythagorean_triple#Generating_a_triple)
+    for more information
+    """
+    # Since b = 2mn, divide out the 2 beforehand
+    # b_div_2 = mn
+    b_div_2 = b // 2
+    sqrt_b_div_2 = sqrt(b_div_2)
+    # Since m > n > 0, 1 <= n < ceil(sqrt_b_div_2)
+    n_range = range(1, int(ceil(sqrt_b_div_2)))
+    return {
+        (a, b, c)
+        for (a, b), c in (
+            # m2 - n2 <> b, so guarantee order by sorting them
+            (sorted((m2 - n2, b)), m2 + n2)
+            # Square m and n
+            for m2, n2 in (
+                (m * m, n * n)
+                # Get (m, n) pairs
+                for m, n in (
+                    (b_div_2 // n, n)
+                    for n in n_range
+                    if b_div_2 % n == 0
+                )
+                # (m, n) pair is only valid if (m - n) is odd and
+                # gcd(m, n) = 1
+                if (m - n) % 2 == 1 and gcd(m, n) == 1
+            )
+        )
+    }
 
 
 def is_triplet(x):
@@ -40,9 +64,11 @@ def is_triplet(x):
 
 
 def triplets_with_sum(triplet_sum):
-    triplets = triplets_in_range(1, triplet_sum // 2)
-    output = set()
-    for triplet in triplets:
-        if sum(triplet) == triplet_sum:
-            output.add(triplet)
-    return output
+    # Incidentally, the above algorithm guarantees no duplicates,
+    # so converting to a set in not technically required.
+    # However, the tests require a set, so use set comprehension anyway.
+    return {
+        triplet
+        for triplet in triplets_in_range(1, triplet_sum // 2)
+        if sum(triplet) == triplet_sum
+    }
