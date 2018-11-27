@@ -9,7 +9,7 @@ You can make the following assumptions about the inputs to the
 
 import unittest
 
-from example import sum_of_multiples
+from sum_of_multiples import sum_of_multiples
 
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.5.0
