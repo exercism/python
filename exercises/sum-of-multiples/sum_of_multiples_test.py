@@ -9,7 +9,7 @@ You can make the following assumptions about the inputs to the
 
 import unittest
 
-from sum_of_multiples import sum_of_multiples
+from example import sum_of_multiples
 
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.5.0
@@ -61,8 +61,8 @@ class SumOfMultiplesTest(unittest.TestCase):
         self.assertEqual(sum_of_multiples(4, [0, 3]), 3)
 
     def test_multiples_of_2_3_5_7_or_11_up_to_10000(self):
-        self.assertEqual(sum_of_multiples(10000, 
-                [2, 3, 5, 7, 11]), 39614537)
+        self.assertEqual(sum_of_multiples(10000,
+                        [2, 3, 5, 7, 11]), 39614537)
 
 
 if __name__ == '__main__':
