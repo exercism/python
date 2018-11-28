@@ -8,7 +8,7 @@ from wordy import calculate
 class WordyTest(unittest.TestCase):
 
     def test_just_a_number(self):
-        self.assertEqual(calculate('What is 5'), 5)
+        self.assertEqual(calculate('What is 5?'), 5)
 
     def test_addition(self):
         self.assertEqual(calculate("What is 1 plus 1?"), 2)
