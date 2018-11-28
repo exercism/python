@@ -48,6 +48,9 @@ class BracketPushTest(unittest.TestCase):
     def test_paried_and_incomplete_brackets(self):
         self.assertEqual(is_paired("{}["), False)
 
+    def test_too_many_closing_brackets(self):
+        self.assertEqual(is_paired('[]]'), False)
+
     def test_math_expression(self):
         self.assertEqual(
             is_paired("(((185 + 223.85) * 15) - 543)/2"), True)
