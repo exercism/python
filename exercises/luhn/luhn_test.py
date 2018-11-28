@@ -29,6 +29,9 @@ class LuhnTest(unittest.TestCase):
     def test_invalid_credit_card(self):
         self.assertIs(Luhn("8273 1232 7352 0569").is_valid(), False)
 
+    def test_valid_number_with_an_even_number_of_digits(self):
+        self.assertIs(Luhn("095 245 88").is_valid(), True)
+
     def test_valid_strings_with_a_non_digit_included_become_invalid(self):
         self.assertIs(Luhn("055a 444 285").is_valid(), False)
 
