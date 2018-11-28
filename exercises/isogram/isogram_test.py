@@ -31,6 +31,9 @@ class IsogramTest(unittest.TestCase):
     def test_hypothetical_isogrammic_word_with_hyphen(self):
         self.assertIs(is_isogram("thumbscrew-japingly"), True)
 
+    def test_hypothetical_word_with_duplicated_character_following_hyphen(self):
+        self.assertIs(is_isogram("thumbscrew-jappingly"), False)
+
     def test_isogram_with_duplicated_hyphen(self):
         self.assertIs(is_isogram("six-year-old"), True)
 
