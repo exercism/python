@@ -23,6 +23,7 @@ A list of missing exercise can be found here: https://github.com/exercism/python
 - We use `unittest` (Python Standard Library) and no 3rd-party-framework.
 - We use the parameter order `self.assertEqual(actual, expected)` ([#440](https://github.com/exercism/python/issues/440)).
 - We use context managers (`with self.assertRaises(\<exception type\>):`) for testing for exceptions ([#477](https://github.com/exercism/python/issues/477)).
+- We use an established utility method to confirm that expected exceptions contain a non-empty message. This method must be included for any test class with an exception-based test case ([#1080](https://github.com/exercism/python/issues/1080#issuecomment-442068539)).
 - We use `assertIs(actual, True)` and `assertIs(actual, False)` rather than `assertTrue(actual)` or `assertFalse(actual)` ([#419](https://github.com/exercism/python/pull/419)).
 - We use a comment string in the test file to reference the version of the exercise's `canonical-data.json` that tests were adapted from (wording can be found in: [#784](https://github.com/exercism/python/issues/784)).
 
