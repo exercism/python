@@ -114,8 +114,7 @@ class BankAccountTest(unittest.TestCase):
         account.open()
         account.deposit(1000)
 
-        for _ in range(10):
-            self.adjust_balance_concurrently(account)
+        self.adjust_balance_concurrently(account)
 
         self.assertEqual(account.get_balance(), 1000)
 
