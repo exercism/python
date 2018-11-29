@@ -34,11 +34,10 @@ def primitive_triplets(limit):
     """
     for m, n in euclidian_coprimes(limit):
         m2, n2 = m * m, n * n
-        a = m2 - n2
-        b = 2 * m * n
+        a, b, c = m2 - n2, 2 * m * n, m2 + n2
         if a > b:
             a, b = b, a
-        yield a, b, m2 + n2
+        yield a, b, c
 
 
 def is_triplet(x):
