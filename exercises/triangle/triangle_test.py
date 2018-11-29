@@ -3,7 +3,7 @@ import unittest
 from triangle import is_equilateral, is_isosceles, is_scalene
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class is_equilateralTests(unittest.TestCase):
     def test_true_if_all_sides_are_equal(self):
