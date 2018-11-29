@@ -18,37 +18,27 @@ def triplets_in_range(range_start, range_end):
                 a, b, c = (a + x, b + y, c + z)
 
 
-def primitive_triplets(b):
+def euclidian_coprimes(limit):
+    mn = limit // 2
+    for n in range(1, int(ceil(sqrt(mn)))):
+        if mn % n == 0:
+            m = mn // n
+            if (m - n) % 2 == 1 and gcd(m, n) == 1:
+                yield m, n
+
+
+def primitive_triplets(limit):
     """See Euclid's formula
     (https://en.wikipedia.org/wiki/Pythagorean_triple#Generating_a_triple)
     for more information
     """
-    # Since b = 2mn, divide out the 2 beforehand
-    # b_div_2 = mn
-    b_div_2 = b // 2
-    sqrt_b_div_2 = sqrt(b_div_2)
-    # Since m > n > 0, 1 <= n < ceil(sqrt_b_div_2)
-    n_range = range(1, int(ceil(sqrt_b_div_2)))
-    return {
-        (a, b, c)
-        for (a, b), c in (
-            # m2 - n2 <> b, so guarantee order by sorting them
-            (sorted((m2 - n2, b)), m2 + n2)
-            # Square m and n
-            for m2, n2 in (
-                (m * m, n * n)
-                # Get (m, n) pairs
-                for m, n in (
-                    (b_div_2 // n, n)
-                    for n in n_range
-                    if b_div_2 % n == 0
-                )
-                # (m, n) pair is only valid if (m - n) is odd and
-                # gcd(m, n) = 1
-                if (m - n) % 2 == 1 and gcd(m, n) == 1
-            )
-        )
-    }
+    for m, n in euclidian_coprimes(limit):
+        m2, n2 = m * m, n * n
+        a = m2 - n2
+        b = 2 * m * n
+        if a > b:
+            a, b = b, a
+        yield a, b, m2 + n2
 
 
 def is_triplet(x):
