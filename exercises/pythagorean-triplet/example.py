@@ -1,37 +1,43 @@
-def triplets_in_range(min, max):
-    result = set([x for b in
-                  range(4, max + 1, 4) for x in
-                  primitive_triplets(b)])
-    for x, y, z in set(result):
-        a, b, c = (2 * x, 2 * y, 2 * z)
-        while c <= max:
-            if a >= min:
-                result.add((a, b, c))
-            a, b, c = (a + x, b + y, c + z)
-    return set([(d, e, f) for d, e, f in result if d >= min and f <= max])
+from math import sqrt, ceil
+try:
+    # Python 3
+    from math import gcd
+except ImportError:
+    # Python 2
+    from fractions import gcd
 
 
-def maxMin(a, b):
-    return (a, b) if a > b else (b, a)
+def triplets_in_range(range_start, range_end):
+    for b in range(4, range_end + 1, 4):
+        for x, y, z in primitive_triplets(b):
+            a, b, c = (x, y, z)
+            while a < range_start:
+                a, b, c = (a + x, b + y, c + z)
+            while c <= range_end:
+                yield (a, b, c)
+                a, b, c = (a + x, b + y, c + z)
 
 
-def gcd(x, y):
-    while (y != 0):
-        x, y = y, x % y
-    return x
+def euclidian_coprimes(limit):
+    mn = limit // 2
+    for n in range(1, int(ceil(sqrt(mn)))):
+        if mn % n == 0:
+            m = mn // n
+            if (m - n) % 2 == 1 and gcd(m, n) == 1:
+                yield m, n
 
 
-def primitive_triplets(b):
-    if b % 4 != 0:
-        raise ValueError('b must be divisible by 4')
-    b2 = int(b / 2)
-    return set([(x[1], x[0], c) for x, c in
-                [(maxMin(m2 - n2, b), m2 + n2) for m, n, m2, n2 in
-                 [(m, n, int(m * m), int(n * n)) for m, n in
-                  set([maxMin(m, int(b2 / m)) for m in
-                       range(2, b2 + 1)
-                       if b2 % m == 0])
-                  if (m - n) % 2 == 1 and gcd(m, n) == 1]]])
+def primitive_triplets(limit):
+    """See Euclid's formula
+    (https://en.wikipedia.org/wiki/Pythagorean_triple#Generating_a_triple)
+    for more information
+    """
+    for m, n in euclidian_coprimes(limit):
+        m2, n2 = m * m, n * n
+        a, b, c = m2 - n2, 2 * m * n, m2 + n2
+        if a > b:
+            a, b = b, a
+        yield a, b, c
 
 
 def is_triplet(x):
@@ -40,9 +46,11 @@ def is_triplet(x):
 
 
 def triplets_with_sum(triplet_sum):
-    triplets = triplets_in_range(1, triplet_sum // 2)
-    output = set()
-    for triplet in triplets:
-        if sum(triplet) == triplet_sum:
-            output.add(triplet)
-    return output
+    # Incidentally, the above algorithm guarantees no duplicates,
+    # so converting to a set in not technically required.
+    # However, the tests require a set, so use set comprehension anyway.
+    return {
+        triplet
+        for triplet in triplets_in_range(1, triplet_sum // 2)
+        if sum(triplet) == triplet_sum
+    }
