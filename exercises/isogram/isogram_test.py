@@ -3,7 +3,7 @@ import unittest
 from isogram import is_isogram
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.6.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.7.0
 
 class IsogramTest(unittest.TestCase):
 
@@ -30,6 +30,9 @@ class IsogramTest(unittest.TestCase):
 
     def test_hypothetical_isogrammic_word_with_hyphen(self):
         self.assertIs(is_isogram("thumbscrew-japingly"), True)
+
+    def test_hypothetical_word_with_duplicate_character_following_hyphen(self):
+        self.assertIs(is_isogram("thumbscrew-jappingly"), False)
 
     def test_isogram_with_duplicated_hyphen(self):
         self.assertIs(is_isogram("six-year-old"), True)
