@@ -3,22 +3,21 @@ import math
 
 
 class Character:
-    character = {}
-
     def __init__(self):
-        self.character = {
-            'strength': self.ability(),
-            'dexterity': self.ability(),
-            'constitution': self.ability(),
-            'intelligence': self.ability(),
-            'wisdom': self.ability(),
-            'charisma': self.ability()
-            }
-        self.character['hitpoints'] = 10 + self.modifier(
-                    self.character['constitution'])
+        self.strength = self.ability()
+        self.dexterity = self.ability()
+        self.constitution = self.ability()
+        self.intelligence = self.ability()
+        self.wisdom = self.ability()
+        self.charisma = self.ability()
+        self.hitpoints = 10 + modifier(self.constitution)
 
     def ability(self):
-        return random.randint(3, 18)
+        dice_rolls = sorted(
+            [random.randint(1, 6)
+                for _ in range(4)])
+        return sum(dice_rolls[1:])
 
-    def modifier(self, value):
-        return math.floor((value-10)/2)
+
+def modifier(value):
+    return math.floor((value-10)/2)

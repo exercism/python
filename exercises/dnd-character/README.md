@@ -1,4 +1,4 @@
-# Acronym
+# Dnd Character
 
 For a game of [Dungeons & Dragons][DND], each player starts by generating a
 character they can play with. This character has, among other things, six
@@ -50,11 +50,11 @@ raise Exception("Meaningful message indicating the source of the error")
 
 To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
 
-- Python 2.7: `py.test acronym_test.py`
-- Python 3.4+: `pytest acronym_test.py`
+- Python 2.7: `py.test dnd_character_test.py`
+- Python 3.4+: `pytest dnd_character_test.py`
 
 Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
-`python -m pytest acronym_test.py`
+`python -m pytest dnd_character_test.py`
 
 ### Common `pytest` options
 
@@ -66,7 +66,7 @@ For other options, see `python -m pytest -h`
 
 ## Submitting Exercises
 
-Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/acronym` directory.
+Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/dnd-character` directory.
 
 You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Workspace`.
 
@@ -75,7 +75,7 @@ please see [Running the Tests](http://exercism.io/tracks/python/tests).
 
 ## Source
 
-Simon Shine, Erik Schierboom [https://github.com/exercism](https://github.com/exercism/problem-specifications/issues/616#issuecomment-437358945)
+Simon Shine, Erik Schierboom [https://github.com/exercism/problem-specifications/issues/616#issuecomment-437358945](https://github.com/exercism/problem-specifications/issues/616#issuecomment-437358945)
 
 ## Submitting Incomplete Solutions
 
