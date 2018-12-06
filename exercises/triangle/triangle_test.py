@@ -38,13 +38,13 @@ class is_isoscelesTests(unittest.TestCase):
     def test_false_if_no_sides_are_equal(self):
         self.assertIs(is_isosceles([2, 3, 4]), False)
 
-    def test_violation_of_triangle_inequality_not_is_isosceles_1(self):
+    def test_violation_of_triangle_inequality_is_not_isosceles_1(self):
         self.assertIs(is_isosceles([1, 1, 3]), False)
 
-    def test_violation_of_triangle_inequality_not_is_isosceles_2(self):
+    def test_violation_of_triangle_inequality_is_not_isosceles_2(self):
         self.assertIs(is_isosceles([1, 3, 1]), False)
 
-    def test_violation_of_triangle_inequality_not_is_isosceles_3(self):
+    def test_violation_of_triangle_inequality_is_not_isosceles_3(self):
         self.assertIs(is_isosceles([3, 1, 1]), False)
 
     def test_sides_may_be_floats(self):
