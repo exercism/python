@@ -24,5 +24,6 @@ class SgfTree(object):
     def __ne__(self, other):
         return not self == other
 
+
 def parse(input_string):
     pass

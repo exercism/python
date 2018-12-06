@@ -84,8 +84,8 @@ class SgfParsingTest(unittest.TestCase):
     def test_multiple_properties(self):
         input_string = '(;A[b]C[d])'
         expected = SgfTree(
-            properties={'A' : ['b'],
-                        'C' : ['d']}
+            properties={'A': ['b'],
+                        'C': ['d']}
         )
         self.assertEqual(parse(input_string), expected)
 
