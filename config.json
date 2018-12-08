@@ -1394,6 +1394,17 @@
       ]
     },
     {
+        "slug": "dnd-character",
+        "uuid": "58625685-b5cf-4e8a-b3aa-bff54da0689d",
+        "core": false,
+        "unlocked_by": null,
+        "difficult": 1,
+        "topics": [
+            "randomness",
+            "integers"
+        ]
+    },
+    {
       "slug": "accumulate",
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "core": false,
