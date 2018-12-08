@@ -7,94 +7,122 @@ from bank_account import BankAccount
 
 
 class BankAccountTest(unittest.TestCase):
-
-    def setUp(self):
-        self.account = BankAccount()
-
     def test_newly_opened_account_has_zero_balance(self):
-        self.account.open()
-        self.assertEqual(self.account.get_balance(), 0)
+        account = BankAccount()
+        account.open()
+        self.assertEqual(account.get_balance(), 0)
 
     def test_can_deposit_money(self):
-        self.account.open()
-        self.account.deposit(100)
-        self.assertEqual(self.account.get_balance(), 100)
+        account = BankAccount()
+        account.open()
+        account.deposit(100)
+        self.assertEqual(account.get_balance(), 100)
 
     def test_can_deposit_money_sequentially(self):
-        self.account.open()
-        self.account.deposit(100)
-        self.account.deposit(50)
+        account = BankAccount()
+        account.open()
+        account.deposit(100)
+        account.deposit(50)
 
-        self.assertEqual(self.account.get_balance(), 150)
+        self.assertEqual(account.get_balance(), 150)
 
     def test_can_withdraw_money(self):
-        self.account.open()
-        self.account.deposit(100)
-        self.account.withdraw(50)
+        account = BankAccount()
+        account.open()
+        account.deposit(100)
+        account.withdraw(50)
 
-        self.assertEqual(self.account.get_balance(), 50)
+        self.assertEqual(account.get_balance(), 50)
 
     def test_can_withdraw_money_sequentially(self):
-        self.account.open()
-        self.account.deposit(100)
-        self.account.withdraw(20)
-        self.account.withdraw(80)
+        account = BankAccount()
+        account.open()
+        account.deposit(100)
+        account.withdraw(20)
+        account.withdraw(80)
 
-        self.assertEqual(self.account.get_balance(), 0)
+        self.assertEqual(account.get_balance(), 0)
 
     def test_checking_balance_of_closed_account_throws_error(self):
-        self.account.open()
-        self.account.close()
+        account = BankAccount()
+        account.open()
+        account.close()
 
-        with self.assertRaises(ValueError):
-            self.account.get_balance()
+        with self.assertRaisesWithMessage(ValueError):
+            account.get_balance()
 
     def test_deposit_into_closed_account(self):
-        self.account.open()
-        self.account.close()
+        account = BankAccount()
+        account.open()
+        account.close()
 
-        with self.assertRaises(ValueError):
-            self.account.deposit(50)
+        with self.assertRaisesWithMessage(ValueError):
+            account.deposit(50)
 
     def test_withdraw_from_closed_account(self):
-        self.account.open()
-        self.account.close()
+        account = BankAccount()
+        account.open()
+        account.close()
 
-        with self.assertRaises(ValueError):
-            self.account.withdraw(50)
+        with self.assertRaisesWithMessage(ValueError):
+            account.withdraw(50)
+
+    def test_close_already_closed_account(self):
+        account = BankAccount()
+        with self.assertRaisesWithMessage(ValueError):
+            account.close()
+
+    def test_open_already_opened_account(self):
+        account = BankAccount()
+        account.open()
+        with self.assertRaisesWithMessage(ValueError):
+            account.open()
+
+    def test_reopened_account_does_not_retain_balance(self):
+        account = BankAccount()
+        account.open()
+        account.deposit(50)
+        account.close()
+        account.open()
+        self.assertEqual(account.get_balance(), 0)
 
     def test_cannot_withdraw_more_than_deposited(self):
-        self.account.open()
-        self.account.deposit(25)
+        account = BankAccount()
+        account.open()
+        account.deposit(25)
 
         with self.assertRaises(ValueError):
-            self.account.withdraw(50)
+            account.withdraw(50)
 
     def test_cannot_withdraw_negative(self):
-        self.account.open()
-        self.account.deposit(100)
+        account = BankAccount()
+        account.open()
+        account.deposit(100)
 
-        with self.assertRaises(ValueError):
-            self.account.withdraw(-50)
+        with self.assertRaisesWithMessage(ValueError):
+            account.withdraw(-50)
 
     def test_cannot_deposit_negative(self):
-        self.account.open()
+        account = BankAccount()
+        account.open()
 
-        with self.assertRaises(ValueError):
-            self.account.deposit(-50)
+        with self.assertRaisesWithMessage(ValueError):
+            account.deposit(-50)
 
     def test_can_handle_concurrent_transactions(self):
-        self.account.open()
-        self.account.deposit(1000)
+        account = BankAccount()
+        account.open()
+        account.deposit(1000)
 
-        for _ in range(10):
-            self.adjust_balance_concurrently()
+        self.adjust_balance_concurrently(account)
 
-    def adjust_balance_concurrently(self):
+        self.assertEqual(account.get_balance(), 1000)
+
+    def adjust_balance_concurrently(self, account):
         def transact():
-            self.account.deposit(5)
+            account.deposit(5)
             time.sleep(0.001)
-            self.account.withdraw(5)
+            account.withdraw(5)
 
         # Greatly improve the chance of an operation being interrupted
         # by thread switch, thus testing synchronization effectively
@@ -104,16 +132,21 @@ class BankAccountTest(unittest.TestCase):
             # For Python 2 compatibility
             sys.setcheckinterval(1)
 
-        threads = []
-        for _ in range(1000):
-            t = threading.Thread(target=transact)
-            threads.append(t)
-            t.start()
-
+        threads = [threading.Thread(target=transact) for _ in range(1000)]
+        for thread in threads:
+            thread.start()
         for thread in threads:
             thread.join()
 
-        self.assertEqual(self.account.get_balance(), 1000)
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex
+        except AttributeError:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

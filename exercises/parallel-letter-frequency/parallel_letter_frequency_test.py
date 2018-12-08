@@ -22,7 +22,7 @@ class ParallelLetterFrequencyTest(unittest.TestCase):
         self.assertDictEqual(actual, expected)
 
     def test_punctuations(self):
-        actual = calculate(['[]\;,', './{}|', ':"<>?'])
+        actual = calculate([r'[]\;,', './{}|', ':"<>?'])
         expected = {}
         self.assertDictEqual(actual, expected)
 

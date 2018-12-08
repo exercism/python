@@ -3,7 +3,7 @@ import unittest
 import hamming
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.1.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.1.1
 
 class HammingTest(unittest.TestCase):
 

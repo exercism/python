@@ -168,6 +168,19 @@
       ]
     },
     {
+      "uuid": "574d6323-5ff5-4019-9ebe-0067daafba13",
+      "slug": "high-scores",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "control-flow (if-else statements)",
+        "sequences",
+        "text_formatting"
+      ]
+    },
+    {
+      "uuid": "505e7bdb-e18d-45fd-9849-0bf33492efd9",
       "slug": "run-length-encoding",
       "uuid": "505e7bdb-e18d-45fd-9849-0bf33492efd9",
       "core": false,
