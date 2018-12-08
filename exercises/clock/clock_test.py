@@ -58,6 +58,9 @@ class ClockTest(unittest.TestCase):
     def test_negative_minutes_roll_over_continuously(self):
         self.assertEqual(str(Clock(1, -4820)), '16:40')
 
+    def test_negative_sixty_minutes_is_previous_hour(self):
+        self.asertEqual(str(Clock(2, -60)), '01:00')
+
     def test_negative_hour_and_minutes_both_roll_over(self):
         self.assertEqual(str(Clock(-25, -160)), '20:20')
 
