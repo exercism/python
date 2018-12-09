@@ -1,0 +1,63 @@
+cases:
+  - description: "complete distance in single nucleotide strands"
+    property: "distance"
+    input:
+      strand1: "A"
+      strand2: "G"
+    expected: 1
+
+  - description: "complete distance in small strands"
+    property: "distance"
+    input: 
+      strand1: "AG" 
+      strand2: "CT"
+    expected: 2
+
+  - description: "small distance in small strands"
+    property: "distance"
+    input: 
+      strand1: "AT" 
+      strand2: "CT"
+    expected: 1
+
+  - description: "small distance"
+    property: "distance"
+    input: 
+      strand1: "GGACG" 
+      strand2: "GGTCG"
+    expected: 1
+
+  - description: "small distance in long strands"
+    property: "distance"
+    input: 
+      strand1: "ACCAGGG" 
+      strand2: "ACTATGG"
+    expected: 2
+
+  - description: "non unique character in first strand"
+    property: "distance"
+    input: 
+      strand1: "AAG" 
+      strand2: "AAA"
+    expected: 1
+
+  - description: "non unique character in second strand"
+    property: "distance"
+    input: 
+      strand1: "AAA" 
+      strand2: "AAG"
+    expected: 1
+
+  - description: "same nucleotides in different positions"
+    property: "distance"
+    input:
+      strand1: "TAG" 
+      strand2: "GAT"
+    expected: 2
+
+  - description: "large distance"
+    property: "distance"
+    input: 
+      strand1: "GATACA" 
+      strand2: "GCATAA"
+    expected: 4

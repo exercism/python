@@ -1,0 +1,4 @@
+properties_map:
+  equilateral: is_equilateral
+  isosceles: is_isosceles
+  scalene: is_scalene

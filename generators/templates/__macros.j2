@@ -1,6 +1,6 @@
 {% macro make_import(data) %}
 {% if data.properties | length > 0 %}
-from {{ data.exercise | to_snake }} import {{ data.properties | map("to_snake") | join(", ") }}
+from {{ data.exercise | to_snake }} import {{ data.properties | map("remap_property") | map("to_snake") | join(", ") }}
 {% else %}
 import {{ data.exercise | to_snake }}
 {% endif %}
@@ -8,51 +8,73 @@ import {{ data.exercise | to_snake }}
 
 {% macro make_tests(data) %}
 class {{ data.exercise | to_camel }}Test(unittest.TestCase):
-    {% for case in data.cases recursive %}
-        {% if case.cases %}
-        {#% if loop.nextitem is defined %#}
-        {#{ "#" * loop.depth }} {{ case.description }#}
-        {#% endif %#}
-        {{ loop(case.cases) }}
-        {% else %}
-        def test_{{ case.description | to_snake }}(self):
-            {% if case | is_error %}
-            {{- add_assert_raises(case) | indent(12) }}
-            {% else %}
-            {{- add_assert_equal(case) | indent(12) }}
-            {% endif %}
-        {% endif %}
-    {% endfor %}
+{{ add_cases(data.cases) }}
+    {% if data.track_cases %}
+    # Track-specific test cases
+{{ add_cases(data.track_cases) }}
+    {% endif %}
     {% if data.has_error %}
-    {{ add_setup(error=data.has_error) | indent(8) }}
+{{ add_setup(error=data.has_error) }}
     {% endif %}
 {% endmacro %}
 
 {% macro add_setup(error=False) %}
-# Utility functions
-def setUp(self):
-{%- if error %}
-    try:
-        self.assertRaisesRegex
-    except AttributeError:
-        self.assertRaisesRegex = self.assertRaisesRegexp
+    # Utility functions
+    def setUp(self):
+{% if error %}
+        try:
+            self.assertRaisesRegex
+        except AttributeError:
+            self.assertRaisesRegex = self.assertRaisesRegexp
 {% endif %}
 {% if error %}
-def assertRaisesWithMessage(self, exception):
-    return self.assertRaisesRegex(exception, r".+")
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 {% endif %}
 {% endmacro %}
 
-{% macro add_assert_equal(case) -%}
-{% if not case.input -%}
-    self.assertEqual({{ case.property | to_snake }}(), {{ case | format_expect }})
-{% else -%}
-    self.assertEqual({{ case.property | to_snake }}({{ case | format_input }}), {{ case | format_expect }})
+{% macro add_cases(cases) %}
+{% for case in cases recursive %}
+{% if case.cases %}
+{#% if loop.nextitem is defined %#}
+{#{ "#" * loop.depth }} {{ case.description }#}
+{#% endif %#}
+{{ loop(case.cases) }}
+{% else %}
+{% if case | should_skip %}
+    @unittest.skip("{{ case | should_skip }}")
+{% endif %}
+    def test_{{ case.description | to_snake }}(self):
+{% if case | is_error %}
+{{ add_assert_raises(case) }}
+{% elif case | format_expect in ['True', 'False'] %}
+    {{ add_assert_is(case) }}
+{% else %}
+{{ add_assert_equal(case) }}
+{% endif %}
+{% endif %}
+{% endfor %}
+{% endmacro %}
+
+{% macro add_assert_is(case) %}
+{% if not case.input %}
+        self.assertIs({{ case.property | remap_property | to_snake }}(), {{ case | format_expect }})
+{% else %}
+        self.assertIs({{ case.property | remap_property | to_snake }}({{ case | format_input }}), {{ case | format_expect }})
 {% endif %}
 {% endmacro %}
 
-{% macro add_assert_raises(case) -%}
-    with self.assertRaisesWithMessage(ValueError):
-        {{ case.property | to_snake }}({{ case | format_input }})
+{% macro add_assert_equal(case) %}
+        expected = {{ case | format_expect }}
+{% if not case.input %}
+        self.assertEqual({{ case.property | remap_property | to_snake }}(), expected)
+{% else %}
+        self.assertEqual({{ case.property | remap_property | to_snake }}({{ case | format_input }}), expected)
+{% endif %}
+{% endmacro %}
+
+{% macro add_assert_raises(case) %}
+        with self.assertRaisesWithMessage(ValueError):
+            {{ case.property | remap_property | to_snake }}({{ case | format_input }})
 {% endmacro %}
 

@@ -9,3 +9,6 @@ bin/configlet.exe
 .idea/
 .cache
 __pycache__
+
+# virtual environments
+venv

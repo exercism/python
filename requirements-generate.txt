@@ -1,2 +1,4 @@
 Jinja2==2.10
 yapf==0.24.0
+MarkupSafe==1.1.0
+PyYAML==3.13

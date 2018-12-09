@@ -1,0 +1,4 @@
+skip_tests:
+  - description: "puzzle with ten letters and 199 addends"
+    property: "solve"
+    message: "extra-credit"

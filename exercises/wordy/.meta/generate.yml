@@ -1,0 +1,15 @@
+properties_map:
+  answer: calculate
+cases:
+  - description: "missing operation"
+    property: "answer"
+    input:
+      question: "What is 2 2 minus 3?"
+    expected:
+      error: "An operation is missingh"
+  - description: "missing number"
+    property: "answer"
+    input:
+      question: "What is 7 plus multiplied by -2?"
+    expected:
+      error: "A number is missing."

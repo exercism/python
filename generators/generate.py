@@ -7,13 +7,19 @@ import re
 import logging
 from argparse import ArgumentParser
 from collections import OrderedDict
-from pathlib import Path
+from functools import partial
 from itertools import repeat
+from pathlib import Path
 from string import punctuation, whitespace
 
 # 3rd party imports:
 from jinja2 import Environment, PackageLoader, select_autoescape, TemplateError
 from yapf.yapflib.yapf_api import FormatFile, style
+from yaml import load, dump
+try:
+    from yaml import CLoader as Loader, CDumper as Dumper
+except ImportError:
+    from yaml import Loader, Dumper
 
 logging.basicConfig(format="%(levelname)s: %(message)s")
 LOGGER = logging.getLogger(__name__)
@@ -42,6 +48,19 @@ def to_camel(string):
     Convert pretty much anything to CamelCase.
     """
     return "".join(w.title() for w in to_snake(string).split("_"))
+
+
+def should_skip(case, tests=None):
+    """
+    Determins if the given case should be skipped.
+    """
+    for test in tests or []:
+        prop = case.get("property")
+        description = case.get("description")
+        if prop and prop == test["property"]:
+            if description and re.match(test["description"], description):
+                return test.get("message", "extra-credit")
+    return False
 
 
 def is_error(case):
@@ -80,6 +99,23 @@ def get_properties(data):
     return sorted(set(_get_properties(data)))
 
 
+def remap_property(string, properties_map=None):
+    """
+    Builds a function that maps a property name to a new name, if required.
+    """
+    return (properties_map or {}).get(string, string)
+
+
+def prefer_double_quotes(string):
+    """
+    Prefer double quotes on a string that does not embed them.
+    """
+    if string.startswith("'") and string.endswith("'"):
+        if '"' not in string:
+            return '"' + string[1:-1] + '"'
+    return string
+
+
 def format_input(case, n_args=None):
     """
     Format the case's input values for use in a function call.
@@ -88,15 +124,20 @@ def format_input(case, n_args=None):
 
     If n_args is provided, convert only the first n argss to positional form.
     """
+    if isinstance(case["input"], str):
+        return case["input"]
     raw = list(case["input"].items())
     n_args = len(raw) if n_args is None else n_args
     result = []
     for _ in range(n_args):
         arg = raw.pop(0)[1]
         if isinstance(arg, dict):
-            result.extend(map(repr, arg.values()))
+            result.extend(map(prefer_double_quotes, map(repr, arg.values())))
+        elif isinstance(arg, list):
+            result.append("[" + ", ".join(
+                map(prefer_double_quotes, map(repr, arg))) + "]")
         else:
-            result.append(repr(arg))
+            result.append(prefer_double_quotes(repr(arg)))
     while raw:
         result.append("{0}={1!s}".format(raw.pop(0)))
     return ", ".join(result)
@@ -107,11 +148,18 @@ def format_expect(case):
     Format the case's expected values for use in a function call.
     """
     if is_error(case):
-        return repr(case["expected"]["error"])
+        return prefer_double_quotes(repr(case["expected"]["error"]))
     expected = case["expected"]
     if isinstance(expected, dict):
-        return "{" + ", ".join("{0!r}: {1!r}".format(*i) for i in expected.items()) + "}"
-    return repr(case["expected"])
+        pairs = []
+        for k, v in expected.items():
+            pairs.append("{0}: {1}".format(
+                prefer_double_quotes(repr(k)), prefer_double_quotes(repr(v))))
+        return "{" + ", ".join(pairs) + "}"
+    if isinstance(expected, list):
+        return "[" + ", ".join(map(prefer_double_quotes, map(repr,
+                                                             expected))) + "]"
+    return prefer_double_quotes(repr(case["expected"]))
 
 
 def main(args=None):
@@ -169,16 +217,6 @@ def main(args=None):
     # set verbosity
     if args.verbose:
         LOGGER.setLevel(logging.DEBUG if args.verbose > 1 else logging.INFO)
-    
-    # build the Jinja2 template environment
-    env = Environment(
-        loader=PackageLoader(__name__, "templates"),
-        autoescape=select_autoescape([]))
-    env.filters["to_snake"] = to_snake
-    env.filters["to_camel"] = to_camel
-    env.filters["is_error"] = is_error
-    env.filters["format_input"] = format_input
-    env.filters["format_expect"] = format_expect
 
     # get the (possibly limited) list of exercises to generate
     config = json.loads(args.config.read_text())
@@ -196,9 +234,47 @@ def main(args=None):
             LOGGER.warning("No canonical data found for %s: skipping",
                            exercise)
             continue
+
+        exercise_overrides = {}
+        exercise_override_file = args.output.joinpath(exercise, '.meta',
+                                                      'generate.yml')
+        if exercise_override_file.is_file():
+            LOGGER.info("Using override file for %s", exercise)
+            exercise_overrides = load(exercise_override_file.read_text())
+
+        # build the Jinja2 template environment
+        env = Environment(
+            loader=PackageLoader(__name__, "templates"),
+            autoescape=select_autoescape([]),
+            trim_blocks=True, lstrip_blocks=True, keep_trailing_newline=True)
+        env.filters["to_snake"] = to_snake
+        env.filters["to_camel"] = to_camel
+        env.filters["is_error"] = is_error
+        env.filters["format_input"] = format_input
+        env.filters["format_expect"] = format_expect
+        env.filters["should_skip"] = lambda c: False
+        env.filters["remap_property"] = lambda p: p
+
+        exercise_properties_map = exercise_overrides.get("properties_map", {})
+        if "skip_tests" in exercise_overrides:
+            env.filters["should_skip"] = partial(
+                should_skip, tests=exercise_overrides["skip_tests"])
+
+        if "properties_map" in exercise_overrides:
+            env.filters["remap_property"] = partial(
+                remap_property,
+                properties_map=exercise_overrides["properties_map"])
+
         data = json.loads(canonical.read_text(), object_pairs_hook=OrderedDict)
         data["has_error"] = has_error(data)
         data["properties"] = get_properties(data)
+        data["track_cases"] = []
+
+        if "cases" in exercise_overrides:
+            exercise_cases = exercise_overrides["cases"]
+            data["has_error"] = data["has_error"] or has_error({"cases": exercise_cases})
+            data["track_cases"] = exercise_cases
+
         template = env.select_template(
             ["{0}.j2".format(exercise), "_default.j2"])
         try:
@@ -217,7 +293,8 @@ def main(args=None):
                         in_place=True,
                         verify=True)
                 except SyntaxError:
-                    LOGGER.exception("Unable to reformat %s: skipping", exercise)
+                    LOGGER.exception("Unable to reformat %s: skipping",
+                                     exercise)
         except TemplateError:
             LOGGER.exception("Unable to render %s: skipping", exercise)
             continue

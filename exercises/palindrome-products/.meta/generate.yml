@@ -1,0 +1,3 @@
+properties_map:
+  largest: largest_palindrome
+  smallest: smallest_palindrome

@@ -1,0 +1,10 @@
+cases:
+  - description: "empty nested lists"
+    property: "flatten"
+    input: '[[()]]'
+    expected: []
+  - description: "strings"
+    property: "flatten"
+    input:
+      array: ['0', ['1', '2']]
+    expected: ['0', '1', '2']

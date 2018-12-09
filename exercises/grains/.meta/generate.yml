@@ -1,0 +1,22 @@
+properties_map:
+  square: on_square
+  total: total_after
+cases:
+  - description: "total of square 0 raises an exception"
+    property: "total"
+    input:
+      square: 0
+    expected:
+      error: "square must be between 1 and 64"
+  - description: "total of negative square raises an exception"
+    property: "square"
+    input:
+      square: -1
+    expected:
+      error: "square must be between 1 and 64"
+  - description: "square greater than 64 raises an exception"
+    property: "square"
+    input:
+      square: 65
+    expected: 
+      error: "square must be between 1 and 64"

@@ -1,0 +1,6 @@
+cases:
+  - description: "duplicated letter and nonletter character"
+    property: "isIsogram"
+    input:
+      phrase: "Aleph Bot Chap"
+    expected: false

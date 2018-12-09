@@ -1,0 +1,20 @@
+properties_map:
+  annotate: board
+cases:
+  - description: "board9"
+    property: "annotate"
+    input:
+      minefield: ["     ", "   * ", "     ", "     ", " *   "]
+    expected: ["  111", "  1*1", "  111", "111  ", "1*1  "]
+  - description: "different length"
+    property: "annotate"
+    input:
+      minefield: [" ", "*  ", "  "]
+    expected:
+      error: "Board rows must be of the same length"
+  - description: "invalid character"
+    property: "annotate"
+    input:
+      minefield: ["X  * "]
+    expected:
+      error: "Illegal characters not allowed."
