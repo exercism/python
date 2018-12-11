@@ -3,7 +3,7 @@ import unittest
 from sgf_parsing import parse, SgfTree
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class SgfParsingTest(unittest.TestCase):
     def test_empty_input(self):
@@ -78,6 +78,14 @@ class SgfParsingTest(unittest.TestCase):
         input_string = '(;A[\\]b\nc\nd\t\te \n\\]])'
         expected = SgfTree(
             properties={'A': [']b\nc\nd  e \n]']}
+        )
+        self.assertEqual(parse(input_string), expected)
+
+    def test_multiple_properties(self):
+        input_string = '(;A[b]C[d])'
+        expected = SgfTree(
+            properties={'A': ['b'],
+                        'C': ['d']}
         )
         self.assertEqual(parse(input_string), expected)
 
