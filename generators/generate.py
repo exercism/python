@@ -17,8 +17,10 @@ from jinja2 import Environment, PackageLoader, select_autoescape, TemplateError
 from yapf.yapflib.yapf_api import FormatFile, style
 from yaml import load, dump
 try:
+    # attempt to load libyaml C-extension if available
     from yaml import CLoader as Loader, CDumper as Dumper
 except ImportError:
+    # otherwise fall back on slower pure-Python version
     from yaml import Loader, Dumper
 
 logging.basicConfig(format="%(levelname)s: %(message)s")
