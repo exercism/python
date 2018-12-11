@@ -47,7 +47,7 @@ class BinarySearchTest(unittest.TestCase):
     # Utility functions
     def setUp(self):
         try:
-            self.assertRaisesRegex
+            self.assertRaisesRegexgit 
         except AttributeError:
             self.assertRaisesRegex = self.assertRaisesRegexp
 
