@@ -1397,7 +1397,7 @@
         "slug": "dnd-character",
         "uuid": "58625685-b5cf-4e8a-b3aa-bff54da0689d",
         "core": false,
-        "unlocked_by": null,
+        "unlocked_by": "robot-name",
         "difficult": 1,
         "topics": [
             "randomness",
