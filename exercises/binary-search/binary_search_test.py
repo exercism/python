@@ -2,7 +2,7 @@ import unittest
 
 from binary_search import binary_search
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
 
 
 class BinarySearchTest(unittest.TestCase):
@@ -44,10 +44,14 @@ class BinarySearchTest(unittest.TestCase):
         with self.assertRaisesWithMessage(ValueError):
             binary_search([], 1)
 
+    def test_bounds_cross(self):
+        with self.assertRaisesWithMessage(ValueError):
+            binary_search([1, 2], 0)
+
     # Utility functions
     def setUp(self):
         try:
-            self.assertRaisesRegexgit 
+            self.assertRaisesRegex
         except AttributeError:
             self.assertRaisesRegex = self.assertRaisesRegexp
 
