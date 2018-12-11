@@ -5,14 +5,14 @@ class HighScores(object):
     def latest(self):
         return self.scores[-1]
 
-    def highest(self):
+    def personal_best(self):
         return max(self.scores)
 
-    def top(self):
+    def personal_top(self):
         return sorted(self.scores, reverse=True)[:3]
 
     def report(self):
-        difference = self.highest() - self.latest()
+        difference = self.personal_best() - self.latest()
         result_qualifier = (
             "" if difference <= 0 else "{} short of ".format(difference)
         )
