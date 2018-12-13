@@ -3,7 +3,7 @@ import unittest
 from dnd_character import Character, modifier
 
 
-# Tests adapted from 'problem-specifications//canonical-data.json' @ v1.0.0
+# Tests adapted from 'problem-specifications//canonical-data.json' @ v1.1.0
 
 class DnDCharacterTest(unittest.TestCase):
     def test_modifier_for_score_3_is_n4(self):
@@ -68,6 +68,10 @@ class DnDCharacterTest(unittest.TestCase):
         self.assertEqual(
             Char.hitpoints,
             10 + modifier(Char.constitution))
+
+    def test_each_ability_is_only_calculated_once(self):
+        Char = Character()
+        self.assertEqual(Char.strength, Char.strength)
 
 
 if __name__ == '__main__':
