@@ -55,16 +55,16 @@ class DnDCharacterTest(unittest.TestCase):
         self.assertEqual(modifier(18), 4)
 
     def test_random_ability_is_within_range(self):
-        self.assertIn(Character().ability(), range(3, 18))
+        self.assertIn(Character().ability(), range(3, 19))
 
     def test_random_character_is_valid(self):
         Char = Character()
-        self.assertIn(Char.strength, range(3, 18))
-        self.assertIn(Char.dexterity, range(3, 18))
-        self.assertIn(Char.constitution, range(3, 18))
-        self.assertIn(Char.intelligence, range(3, 18))
-        self.assertIn(Char.wisdom, range(3, 18))
-        self.assertIn(Char.charisma, range(3, 18))
+        self.assertIn(Char.strength, range(3, 19))
+        self.assertIn(Char.dexterity, range(3, 19))
+        self.assertIn(Char.constitution, range(3, 19))
+        self.assertIn(Char.intelligence, range(3, 19))
+        self.assertIn(Char.wisdom, range(3, 19))
+        self.assertIn(Char.charisma, range(3, 19))
         self.assertEqual(
             Char.hitpoints,
             10 + modifier(Char.constitution))
