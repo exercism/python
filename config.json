@@ -120,6 +120,19 @@
       ]
     },
     {
+      "slug": "kindergarten-garden",
+      "uuid": "42a2916c-ef03-44ac-b6d8-7eda375352c2",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "arrays",
+        "classes",
+        "optional_values",
+        "variables"
+      ]
+    },
+    {
       "slug": "luhn",
       "uuid": "34dde040-672e-472f-bf2e-b87b6f9933c0",
       "core": true,
@@ -465,19 +478,6 @@
         "logic",
         "loops",
         "math"
-      ]
-    },
-    {
-      "slug": "kindergarten-garden",
-      "uuid": "42a2916c-ef03-44ac-b6d8-7eda375352c2",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "arrays",
-        "classes",
-        "optional_values",
-        "variables"
       ]
     },
     {
