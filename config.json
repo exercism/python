@@ -458,7 +458,7 @@
       "slug": "largest-series-product",
       "uuid": "21624a3e-6e43-4c0e-94b0-dee5cdaaf2aa",
       "core": false,
-      "unlocked_by": "leap",
+      "unlocked_by": "acronym",
       "difficulty": 1,
       "topics": [
         "conditionals",
@@ -562,7 +562,7 @@
       "slug": "prime-factors",
       "uuid": "41dd9178-76b4-4f78-b71a-b5ff8d12645b",
       "core": false,
-      "unlocked_by": "leap",
+      "unlocked_by": "hamming",
       "difficulty": 1,
       "topics": [
         "algorithms",
@@ -625,7 +625,7 @@
       "slug": "pythagorean-triplet",
       "uuid": "7b53865e-a981-46e0-8e47-6f8e1f3854b3",
       "core": false,
-      "unlocked_by": "leap",
+      "unlocked_by": "isogram",
       "difficulty": 1,
       "topics": [
         "algorithms",
@@ -728,7 +728,7 @@
       "slug": "perfect-numbers",
       "uuid": "c23ae7a3-3095-4608-8720-ee9ce8938f26",
       "core": false,
-      "unlocked_by": "leap",
+      "unlocked_by": "raindrops",
       "difficulty": 1,
       "topics": [
         "algorithms",
@@ -862,7 +862,7 @@
       "slug": "triangle",
       "uuid": "f0bc144f-3226-4e53-93ee-e60316b29e31",
       "core": false,
-      "unlocked_by": "leap",
+      "unlocked_by": "matrix",
       "difficulty": 1,
       "topics": [
         "classes",
@@ -1184,7 +1184,7 @@
       "slug": "complex-numbers",
       "uuid": "7f4d5743-7ab8-42ca-b393-767f7e9a4e97",
       "core": false,
-      "unlocked_by": "leap",
+      "unlocked_by": "isogram",
       "difficulty": 6,
       "topics": [
         "equality",
