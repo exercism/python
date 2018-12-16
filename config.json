@@ -133,6 +133,21 @@
       ]
     },
     {
+      "slug": "grade-school",
+      "uuid": "aadde1a8-ed7a-4242-bfc0-6dddfd382cf3",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "conditionals",
+        "filtering",
+        "integers",
+        "lists",
+        "sorting",
+        "strings"
+      ]
+    },
+    {
       "slug": "luhn",
       "uuid": "34dde040-672e-472f-bf2e-b87b6f9933c0",
       "core": true,
@@ -478,21 +493,6 @@
         "logic",
         "loops",
         "math"
-      ]
-    },
-    {
-      "slug": "grade-school",
-      "uuid": "aadde1a8-ed7a-4242-bfc0-6dddfd382cf3",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "conditionals",
-        "filtering",
-        "integers",
-        "lists",
-        "sorting",
-        "strings"
       ]
     },
     {
