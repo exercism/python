@@ -227,7 +227,7 @@
       "slug": "isbn-verifier",
       "uuid": "7961c852-c87a-44b0-b152-efea3ac8555c",
       "core": false,
-      "unlocked_by": "bob",
+      "unlocked_by": "matrix",
       "difficulty": 1,
       "topics": [
         "conditionals",
@@ -241,7 +241,7 @@
       "slug": "word-count",
       "uuid": "04316811-0bc3-4377-8ff5-5a300ba41d61",
       "core": false,
-      "unlocked_by": "bob",
+      "unlocked_by": "high-scores",
       "difficulty": 3,
       "topics": [
         "algorithms",
@@ -265,8 +265,8 @@
     {
       "slug": "bob",
       "uuid": "009a80e2-7901-4d3b-9af2-cdcbcc0b49ae",
-      "core": true,
-      "unlocked_by": null,
+      "core": false,
+      "unlocked_by": "isogram",
       "difficulty": 1,
       "topics": [
         "conditionals",
@@ -332,7 +332,7 @@
       "slug": "rotational-cipher",
       "uuid": "4c408aab-80b9-475d-9c06-b01cd0fcd08f",
       "core": false,
-      "unlocked_by": "bob",
+      "unlocked_by": "luhn",
       "difficulty": 1,
       "topics": [
         "logic",
@@ -354,7 +354,7 @@
       "slug": "anagram",
       "uuid": "43eaf8bd-0b4d-4ea9-850a-773f013325ef",
       "core": false,
-      "unlocked_by": "bob",
+      "unlocked_by": "matrix",
       "difficulty": 1,
       "topics": [
         "algorithms",
@@ -716,7 +716,7 @@
       "slug": "beer-song",
       "uuid": "b7984882-65df-4993-a878-7872c776592a",
       "core": false,
-      "unlocked_by": "bob",
+      "unlocked_by": "scrabble-score",
       "difficulty": 1,
       "topics": [
         "conditionals",
@@ -768,7 +768,7 @@
       "slug": "bracket-push",
       "uuid": "45229a7c-6703-4240-8287-16645881a043",
       "core": false,
-      "unlocked_by": "bob",
+      "unlocked_by": "isogram",
       "difficulty": 1,
       "topics": [
         "parsing",
@@ -1266,7 +1266,7 @@
       "slug": "error-handling",
       "uuid": "0dac0feb-e1c8-497e-9a1b-e96e0523eea6",
       "core": false,
-      "unlocked_by": "bob",
+      "unlocked_by": "hamming",
       "difficulty": 3,
       "topics": [
         "exception_handling"
