@@ -200,6 +200,18 @@
       ]
     },
     {
+      "slug": "book-store",
+      "uuid": "4899b2ef-675f-4d14-b68a-1a457de91276",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "lists",
+        "loops",
+        "recursion"
+      ]
+    },
+    {
       "slug": "leap",
       "uuid": "b6acda85-5f62-4d9c-bb4f-42b7a360355a",
       "core": false,
@@ -978,18 +990,6 @@
         "loops",
         "searching",
         "variables"
-      ]
-    },
-    {
-      "slug": "book-store",
-      "uuid": "4899b2ef-675f-4d14-b68a-1a457de91276",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "lists",
-        "loops",
-        "recursion"
       ]
     },
     {
