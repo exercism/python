@@ -334,7 +334,7 @@
       "slug": "meetup",
       "uuid": "a5aff23f-7829-403f-843a-d3312dca31e8",
       "core": false,
-      "unlocked_by": "list-ops",
+      "unlocked_by": "twelve-days",
       "difficulty": 1,
       "topics": [
         "conditionals",
@@ -435,7 +435,7 @@
       "slug": "sieve",
       "uuid": "ad0192e6-7742-4922-a53e-791e25eb9ba3",
       "core": false,
-      "unlocked_by": "binary-search",
+      "unlocked_by": "twelve-days",
       "difficulty": 1,
       "topics": [
         "algorithms",
@@ -512,7 +512,7 @@
       "slug": "roman-numerals",
       "uuid": "bffe2007-717a-44ee-b628-b9c86a5001e8",
       "core": false,
-      "unlocked_by": "list-ops",
+      "unlocked_by": "clock",
       "difficulty": 1,
       "topics": [
         "conditionals",
@@ -589,7 +589,7 @@
       "slug": "simple-cipher",
       "uuid": "09b2f396-00d7-4d89-ac47-5c444e00dd99",
       "core": false,
-      "unlocked_by": "list-ops",
+      "unlocked_by": "isogram",
       "difficulty": 1,
       "topics": [
         "cryptography",
@@ -952,8 +952,8 @@
     {
       "slug": "binary-search",
       "uuid": "a8288e93-93c5-4e0f-896c-2a376f6f6e5e",
-      "core": true,
-      "unlocked_by": null,
+      "core": false,
+      "unlocked_by": "luhn",
       "difficulty": 1,
       "topics": [
         "algorithms",
@@ -966,8 +966,8 @@
     {
       "slug": "list-ops",
       "uuid": "818c6472-b734-4ff4-8016-ce540141faec",
-      "core": true,
-      "unlocked_by": null,
+      "core": false,
+      "unlocked_by": "clock",
       "difficulty": 1,
       "topics": [
         "callbacks",
@@ -1057,7 +1057,7 @@
       "slug": "all-your-base",
       "uuid": "a2ff75f9-8b2c-4c4b-975d-913711def9ab",
       "core": false,
-      "unlocked_by": "list-ops",
+      "unlocked_by": "clock",
       "difficulty": 4,
       "topics": [
         "integers",
@@ -1137,7 +1137,7 @@
       "slug": "change",
       "uuid": "889df88a-767d-490f-92c4-552d8ec9de34",
       "core": false,
-      "unlocked_by": "binary-search",
+      "unlocked_by": "clock",
       "difficulty": 4,
       "topics": [
         "algorithms",
@@ -1276,7 +1276,7 @@
       "slug": "dominoes",
       "uuid": "54995590-65eb-4178-a527-0d7b1526a843",
       "core": false,
-      "unlocked_by": "binary-search",
+      "unlocked_by": "tournament",
       "difficulty": 7,
       "topics": [
         "lists",
