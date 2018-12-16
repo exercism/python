@@ -320,7 +320,7 @@
       "slug": "armstrong-numbers",
       "uuid": "e9b0defc-dac5-11e7-9296-cec278b6b50a",
       "core": false,
-      "unlocked_by": "sum-of-multiples",
+      "unlocked_by": "two-fer",
       "difficulty": 1,
       "topics": [
         "algorithms",
@@ -379,7 +379,7 @@
       "slug": "series",
       "uuid": "aa4c2e85-b8f8-4309-9708-d8ff805054c2",
       "core": false,
-      "unlocked_by": "sum-of-multiples",
+      "unlocked_by": "high-scores",
       "difficulty": 1,
       "topics": [
         "algorithms",
@@ -433,8 +433,8 @@
     {
       "slug": "sum-of-multiples",
       "uuid": "6e0caa0a-6a1a-4f03-bf0f-e07711f4b069",
-      "core": true,
-      "unlocked_by": null,
+      "core": false,
+      "unlocked_by": "isogram",
       "difficulty": 1,
       "topics": [
         "integers",
@@ -741,7 +741,7 @@
       "slug": "secret-handshake",
       "uuid": "0d5b2a0e-31ff-4c8c-a155-0406f7dca3ae",
       "core": false,
-      "unlocked_by": "sum-of-multiples",
+      "unlocked_by": "scrabble-score",
       "difficulty": 1,
       "topics": [
         "bitwise_operations",
@@ -824,7 +824,7 @@
       "slug": "phone-number",
       "uuid": "f384c6f8-987d-41a2-b504-e50506585526",
       "core": false,
-      "unlocked_by": "sum-of-multiples",
+      "unlocked_by": "high-scores",
       "difficulty": 1,
       "topics": [
         "conditionals",
@@ -1160,7 +1160,7 @@
       "slug": "collatz-conjecture",
       "uuid": "33f689ee-1d9c-4908-a71c-f84bff3510df",
       "core": false,
-      "unlocked_by": "sum-of-multiples",
+      "unlocked_by": "matrix",
       "difficulty": 1,
       "topics": [
         "loops",
