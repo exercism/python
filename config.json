@@ -175,6 +175,17 @@
       ]
     },
     {
+      "slug": "markdown",
+      "uuid": "88610b9a-6d3e-4924-a092-6d2f907ed4e2",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "refactoring",
+        "text_formatting"
+      ]
+    },
+    {
       "slug": "twelve-days",
       "uuid": "d41238ce-359c-4a9a-81ea-ca5d2c4bb50d",
       "core": true,
@@ -1214,17 +1225,6 @@
         "conditionals",
         "control_flow",
         "loops"
-      ]
-    },
-    {
-      "slug": "markdown",
-      "uuid": "88610b9a-6d3e-4924-a092-6d2f907ed4e2",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 3,
-      "topics": [
-        "refactoring",
-        "text_formatting"
       ]
     },
     {
