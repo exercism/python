@@ -366,8 +366,8 @@
     {
       "slug": "allergies",
       "uuid": "83627e35-4689-4d9b-a81b-284c2c084466",
-      "core": true,
-      "unlocked_by": null,
+      "core": false,
+      "unlocked_by": "isogram",
       "difficulty": 1,
       "topics": [
         "bitwise_operations",
@@ -601,7 +601,7 @@
       "slug": "crypto-square",
       "uuid": "e8685468-8006-480f-87c6-6295700def38",
       "core": false,
-      "unlocked_by": "allergies",
+      "unlocked_by": "clock",
       "difficulty": 1,
       "topics": [
         "strings",
@@ -849,7 +849,7 @@
       "slug": "house",
       "uuid": "7c2e93ae-d265-4481-b583-a496608c6031",
       "core": false,
-      "unlocked_by": "allergies",
+      "unlocked_by": "clock",
       "difficulty": 1,
       "topics": [
         "pattern_recognition",
@@ -904,7 +904,7 @@
       "slug": "tree-building",
       "uuid": "aeaed0e4-0973-4035-8bc5-07480849048f",
       "core": false,
-      "unlocked_by": "allergies",
+      "unlocked_by": "twelve-days",
       "difficulty": 3,
       "topics": [
         "maps",
@@ -1045,7 +1045,7 @@
       "slug": "variable-length-quantity",
       "uuid": "aa4332bd-fc38-47a4-8bff-e1b660798418",
       "core": false,
-      "unlocked_by": "allergies",
+      "unlocked_by": "luhn",
       "difficulty": 1,
       "topics": [
         "algorithms",
@@ -1242,7 +1242,7 @@
       "slug": "food-chain",
       "uuid": "f229746e-5ea9-4774-b3e0-9b9c2ebf9558",
       "core": false,
-      "unlocked_by": "allergies",
+      "unlocked_by": "tournament",
       "difficulty": 4,
       "topics": [
         "algorithms",
