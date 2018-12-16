@@ -68,6 +68,20 @@
       ]
     },
     {
+      "slug": "word-count",
+      "uuid": "04316811-0bc3-4377-8ff5-5a300ba41d61",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "algorithms",
+        "logic",
+        "pattern_recognition",
+        "strings",
+        "text_formatting"
+      ]
+    },
+    {
       "slug": "hamming",
       "uuid": "8648fa0c-d85f-471b-a3ae-0f8c05222c89",
       "core": true,
@@ -297,20 +311,6 @@
         "parsing",
         "strings",
         "type_conversion"
-      ]
-    },
-    {
-      "slug": "word-count",
-      "uuid": "04316811-0bc3-4377-8ff5-5a300ba41d61",
-      "core": false,
-      "unlocked_by": "high-scores",
-      "difficulty": 3,
-      "topics": [
-        "algorithms",
-        "logic",
-        "pattern_recognition",
-        "strings",
-        "text_formatting"
       ]
     },
     {
