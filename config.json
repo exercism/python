@@ -700,8 +700,8 @@
     {
       "slug": "saddle-points",
       "uuid": "71c96c5f-f3b6-4358-a9c6-fc625e2edda2",
-      "core": true,
-      "unlocked_by": null,
+      "core": false,
+      "unlocked_by": "matrix",
       "difficulty": 1,
       "topics": [
         "algorithms",
@@ -757,7 +757,7 @@
       "slug": "palindrome-products",
       "uuid": "fa795dcc-d390-4e98-880c-6e8e638485e3",
       "core": false,
-      "unlocked_by": "saddle-points",
+      "unlocked_by": "matrix",
       "difficulty": 1,
       "topics": [
         "loops",
@@ -1033,7 +1033,7 @@
       "slug": "diamond",
       "uuid": "a7bc6837-59e4-46a1-89a2-a5aa44f5e66e",
       "core": false,
-      "unlocked_by": "saddle-points",
+      "unlocked_by": "tournament",
       "difficulty": 1,
       "topics": [
         "lists",
@@ -1171,7 +1171,7 @@
       "slug": "go-counting",
       "uuid": "d4ddeb18-ac22-11e7-abc4-cec278b6b50a",
       "core": false,
-      "unlocked_by": "saddle-points",
+      "unlocked_by": "twelve-days",
       "difficulty": 4,
       "topics": [
         "classes",
@@ -1207,7 +1207,7 @@
       "slug": "two-bucket",
       "uuid": "6f530d0c-d13e-4270-b120-e42c16691a66",
       "core": false,
-      "unlocked_by": "saddle-points",
+      "unlocked_by": "luhn",
       "difficulty": 5,
       "topics": [
         "algorithms",
@@ -1300,7 +1300,7 @@
       "slug": "react",
       "uuid": "4c0d0d6b-347e-40ae-9b51-08555fe76cb9",
       "core": false,
-      "unlocked_by": "saddle-points",
+      "unlocked_by": "twelve-days",
       "difficulty": 8,
       "topics": [
         "callbacks",
@@ -1336,7 +1336,7 @@
       "slug": "spiral-matrix",
       "uuid": "b0c7cf95-6470-4c1a-8eaa-6775310926a2",
       "core": false,
-      "unlocked_by": "saddle-points",
+      "unlocked_by": "tournament",
       "difficulty": 2,
       "topics": [
         "algorithms",
