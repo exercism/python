@@ -224,17 +224,6 @@
       ]
     },
     {
-      "slug": "rest-api",
-      "uuid": "2abe6eed-c7e4-4ad7-91e3-778bc5176726",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 8,
-      "topics": [
-        "parsing",
-        "strings"
-      ]
-    },
-    {
       "slug": "book-store",
       "uuid": "4899b2ef-675f-4d14-b68a-1a457de91276",
       "core": true,
@@ -256,6 +245,17 @@
         "booleans",
         "conditionals",
         "logic"
+      ]
+    },
+    {
+      "slug": "rest-api",
+      "uuid": "2abe6eed-c7e4-4ad7-91e3-778bc5176726",
+      "core": false,
+      "unlocked_by": "tournament",
+      "difficulty": 8,
+      "topics": [
+        "parsing",
+        "strings"
       ]
     },
     {
