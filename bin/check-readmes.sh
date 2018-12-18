@@ -12,7 +12,7 @@ for exercise in $(ls -d exercises/*/); do
     if [ -d "$meta_dir" ]; then
         meta_timestamp="$(get_timestamp "$meta_dir")"
         readme_timestamp="$(get_timestamp "${exercise}README.md")"
-        if [ "$meta_timestamp" -ge "$readme_timestamp" ]; then
+        if [ "$meta_timestamp" -gt "$readme_timestamp" ]; then
             ret=1
             echo "$(basename "$exercise"): .meta/ contents newer than README. Please regenerate it with configlet."
         fi
