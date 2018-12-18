@@ -32,6 +32,7 @@ before_script:
   - flake8
   - ./bin/fetch-configlet
   - ./bin/configlet lint .
+  - ./bin/check-readmes.sh
 
 script:
   - ./test/check-exercises.py
