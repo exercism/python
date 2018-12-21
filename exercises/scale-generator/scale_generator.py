@@ -1,3 +1,9 @@
 class Scale(object):
-    def __init__(self, tonic, intervals=None):
-        self.pitches = None
+    def __init__(self, tonic):
+        pass
+
+    def chromatic(self):
+        pass
+
+    def interval(self, intervals):
+        pass
