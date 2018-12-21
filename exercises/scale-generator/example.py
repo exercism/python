@@ -1,5 +1,4 @@
 class Scale(object):
-
     ASCENDING_INTERVALS = ['m', 'M', 'A']
     CHROMATIC_SCALE = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A',
                        'A#', 'B']
@@ -11,22 +10,22 @@ class Scale(object):
     def __init__(self, tonic, intervals=None):
         self.tonic = tonic.capitalize()
         self.intervals = intervals
-        self.chromatic_scale = (self.FLAT_CHROMATIC_SCALE
-                                if tonic in self.FLAT_KEYS
-                                else self.CHROMATIC_SCALE)
-        self.pitches = self._assign_pitches()
+        self.chromatic_scale = (
+            self.FLAT_CHROMATIC_SCALE
+            if tonic in self.FLAT_KEYS
+            else self.CHROMATIC_SCALE
+        )
 
-    def _assign_pitches(self):
-        if self.intervals is None:
-            return self._reorder_chromatic_scale()
+    def chromatic(self):
+        return self._reorder_chromatic_scale()
+
+    def interval(self, intervals):
         last_index = 0
         pitches = []
         scale = self._reorder_chromatic_scale()
-        for i, interval in enumerate(self.intervals):
+        for i, interval in enumerate(intervals):
             pitches.append(scale[last_index])
             last_index += self.ASCENDING_INTERVALS.index(interval) + 1
-        if pitches[0] != scale[last_index % len(scale)]:
-            raise ValueError("Interval is broken")
         return pitches
 
     def _reorder_chromatic_scale(self):
