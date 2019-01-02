@@ -4,6 +4,9 @@ from {{ data.exercise | to_snake }} import {{ data.properties | map("remap_prope
 {% else %}
 import {{ data.exercise | to_snake }}
 {% endif %}
+{%- if data.imports | length > 0 %}
+from {{ data.exercise | to_snake }} import ({{ data.imports | join(", ") }})
+{% endif %}
 {% endmacro %}
 
 {% macro make_tests(data) %}

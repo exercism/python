@@ -119,6 +119,10 @@ def prefer_double_quotes(string):
 
 
 def format_input(case, n_args=None):
+    format_input_with_mappings({})
+
+
+def format_input_with_mappings(input_mappings, case, n_args=None):
     """
     Format the case's input values for use in a function call.
 
@@ -132,8 +136,10 @@ def format_input(case, n_args=None):
     n_args = len(raw) if n_args is None else n_args
     result = []
     for _ in range(n_args):
-        arg = raw.pop(0)[1]
-        if isinstance(arg, dict):
+        name, arg = raw.pop(0)
+        if name in input_mappings:
+            result.append(input_mappings[name](arg))
+        elif isinstance(arg, dict):
             result.extend(map(prefer_double_quotes, map(repr, arg.values())))
         elif isinstance(arg, list):
             result.append("[" + ", ".join(
@@ -276,10 +282,20 @@ def main(args=None):
                 remap_property,
                 properties_map=exercise_overrides["properties_map"])
 
+        if "inputs_map" in exercise_overrides:
+            env.filters["format_input"] = partial(
+                format_input_with_mappings,
+                {
+                    k: eval(v)
+                    for k, v in exercise_overrides["inputs_map"].items()
+                }
+            )
+
         data = json.loads(canonical.read_text(), object_pairs_hook=OrderedDict)
         data["has_error"] = has_error(data)
         data["properties"] = get_properties(data)
         data["track_cases"] = []
+        data["imports"] = exercise_overrides.get("imports", [])
 
         if "cases" in exercise_overrides:
             exercise_cases = exercise_overrides["cases"]
