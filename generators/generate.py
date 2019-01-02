@@ -185,7 +185,11 @@ def main(args=None):
         help="path to the Python track config.json file: (%(default)s)")
     parser.add_argument(
         "-o",
-        "--output",
+        "--only",
+        help="generate tests for just the exercise specified")
+    parser.add_argument(
+        "-d",
+        "--output-dir",
         type=Path,
         default="./exercises",
         help="path to the output directory: (%(default)s)")
@@ -226,6 +230,11 @@ def main(args=None):
         e["slug"]
         for e in config["exercises"] if not e.get("deprecated")
     }
+    if args.only is not None:
+        if args.only not in exercises:
+            LOGGER.error(f'"{args.only}" is not a valid exercise')
+            exit(1)
+        exercises = {args.only}
     if args.exercises:
         exercises = set(args.exercises).intersection(exercises)
 
@@ -238,7 +247,7 @@ def main(args=None):
             continue
 
         exercise_overrides = {}
-        exercise_override_file = args.output.joinpath(exercise, '.meta',
+        exercise_override_file = args.output_dir.joinpath(exercise, '.meta',
                                                       'generate.yml')
         if exercise_override_file.is_file():
             LOGGER.info("Using override file for %s", exercise)
@@ -281,7 +290,7 @@ def main(args=None):
             ["{0}.j2".format(exercise), "_default.j2"])
         try:
             code = template.render(data=data)
-            out_dir = args.output.joinpath(exercise)
+            out_dir = args.output_dir.joinpath(exercise)
             if not out_dir.exists():
                 out_dir.mkdir(parents=True)
             out_file = out_dir.joinpath("{0}_test.py".format(
