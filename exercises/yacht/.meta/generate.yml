@@ -1,0 +1,15 @@
+imports:
+  - YACHT
+  - ONES
+  - TWOS
+  - THREES
+  - FOURS
+  - FIVES
+  - SIXES
+  - FULL_HOUSE
+  - FOUR_OF_A_KIND
+  - LITTLE_STRAIGHT
+  - BIG_STRAIGHT
+  - CHOICE
+inputs_map:
+  category: "lambda c: c.upper().replace(' ', '_')"
