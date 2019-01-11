@@ -22,7 +22,7 @@ class SaddlePointsTest(unittest.TestCase):
 
     def test_matrix_with_one_elem_has_single_saddle_point(self):
         matrix = [[1]]
-        self.assertEqual(saddle_points(matrix), set([(0, 0)]))
+        self.assertEqual(saddle_points(matrix), set([(1, 1)]))
 
     def test_identify_lack_of_saddle_points_when_there_are_none(self):
         matrix = [[1, 2, 3], [3, 1, 2], [2, 3, 1]]
