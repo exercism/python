@@ -37,7 +37,7 @@ class LuhnTest(unittest.TestCase):
 
     def test_valid_strings_with_non_digit_added_at_end_become_invalid(self):
         self.assertis(Luhn("059a").is_valid(), False)
-        
+
     def test_valid_strings_with_punctuation_included_become_invalid(self):
         self.assertIs(Luhn("055-444-285").is_valid(), False)
 
