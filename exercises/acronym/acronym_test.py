@@ -3,7 +3,7 @@ import unittest
 from acronym import abbreviate
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.6.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.7.0
 
 class AcronymTest(unittest.TestCase):
     def test_basic(self):
@@ -33,6 +33,9 @@ class AcronymTest(unittest.TestCase):
 
     def test_apostrophes(self):
         self.assertEqual(abbreviate("Halley's Comet"), 'HC')
+
+    def test_underscore_emphasis(self):
+        self.assertEqual(abbreviate("The Road _Not_ Taken"), 'TRNT')
 
 
 if __name__ == '__main__':

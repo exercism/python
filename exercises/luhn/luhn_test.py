@@ -5,7 +5,7 @@ import unittest
 from luhn import Luhn
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
 
 class LuhnTest(unittest.TestCase):
     def test_single_digit_strings_can_not_be_valid(self):
@@ -34,6 +34,9 @@ class LuhnTest(unittest.TestCase):
 
     def test_valid_strings_with_a_non_digit_included_become_invalid(self):
         self.assertIs(Luhn("055a 444 285").is_valid(), False)
+
+    def test_valid_strings_with_non_digit_added_at_end_become_invalid(self):
+        self.assertIs(Luhn("059a").is_valid(), False)
 
     def test_valid_strings_with_punctuation_included_become_invalid(self):
         self.assertIs(Luhn("055-444-285").is_valid(), False)
