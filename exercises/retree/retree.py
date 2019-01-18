@@ -1,2 +1,2 @@
-def TreeFromTraversals(preorder, inorder):
+def treeFromTraversals(preorder, inorder):
     pass

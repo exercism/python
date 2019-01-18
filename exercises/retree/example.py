@@ -1,4 +1,4 @@
-def TreeFromTraversals(preorder, inorder):
+def treeFromTraversals(preorder, inorder):
     if len(preorder) != len(inorder):
         raise ValueError("traversals must have the same length")
     if set(preorder) != set(inorder):
@@ -9,7 +9,9 @@ def TreeFromTraversals(preorder, inorder):
         return {}
     value = preorder.pop(0)
     index = inorder.index(value)
-    lio, rio = inorder[:index], inorder[index+1:]
-    left = TreeFromTraversals([x for x in preorder if x in lio], lio)
-    right = TreeFromTraversals([x for x in preorder if x in rio], rio)
+    left_inorder, right_inorder = inorder[:index], inorder[index+1:]
+    left_preorder = [x for x in preorder if x in left_inorder]
+    right_preorder = [x for x in preorder if x in right_inorder]
+    left = TreeFromTraversals(left_preorder, left_inorder)
+    right = TreeFromTraversals(right_preorder, right_inorder)
     return {"v": value, "l": left, "r": right}

@@ -1413,6 +1413,20 @@
         ]
     },
     {
+      "slug": "retree",
+      "uuid": "18467e72-e3b0-403c-896a-ce337f96e6f7",
+      "core": false,
+      "unlocked_by": "markdown",
+      "difficulty": 7,
+      "topics": [
+        "functional_programming",
+        "pattern_recognition",
+        "recursion",
+        "transforming",
+        "trees"
+      ]
+    },
+    {
       "slug": "accumulate",
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "core": false,
