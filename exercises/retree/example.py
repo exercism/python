@@ -12,6 +12,6 @@ def treeFromTraversals(preorder, inorder):
     left_inorder, right_inorder = inorder[:index], inorder[index+1:]
     left_preorder = [x for x in preorder if x in left_inorder]
     right_preorder = [x for x in preorder if x in right_inorder]
-    left = TreeFromTraversals(left_preorder, left_inorder)
-    right = TreeFromTraversals(right_preorder, right_inorder)
+    left = treeFromTraversals(left_preorder, left_inorder)
+    right = treeFromTraversals(right_preorder, right_inorder)
     return {"v": value, "l": left, "r": right}
