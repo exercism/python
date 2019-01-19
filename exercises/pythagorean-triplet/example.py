@@ -40,11 +40,6 @@ def primitive_triplets(limit):
         yield a, b, c
 
 
-def is_triplet(x):
-    a, b, c = sorted(x)
-    return a * a + b * b == c * c
-
-
 def triplets_with_sum(triplet_sum):
     # Incidentally, the above algorithm guarantees no duplicates,
     # so converting to a set in not technically required.
