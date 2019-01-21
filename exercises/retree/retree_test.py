@@ -15,15 +15,37 @@ class TwoFerTest(unittest.TestCase):
     def test_tree_with_one_item(self):
         preorder = ["a"]
         inorder = ["a"]
-        expected = {"v": "a", "l": {}, "r": {}}
+        expected = {
+            "v": "a",
+            "l": {},
+            "r": {}
+        }
         self.assertEqual(tree_from_traversals(preorder, inorder), expected)
 
     def test_tree_with_many_items(self):
         preorder = ["a", "i", "x", "f", "r"]
         inorder = ["i", "a", "f", "x", "r"]
-        expected = {"v": "a", "l": {"v": "i", "l": {}, "r": {}},
-                    "r": {"v": "x", "l": {"v": "f", "l": {}, "r": {}},
-                          "r": {"v": "r", "l": {}, "r": {}}}}
+        expected = {
+            "v": "a",
+            "l": {
+                "v": "i",
+                "l": {},
+                "r": {}
+            },
+            "r": {
+                "v": "x",
+                "l": {
+                    "v": "f",
+                    "l": {},
+                    "r": {}
+                },
+                "r": {
+                    "v": "r",
+                    "l": {},
+                    "r": {}
+                }
+            }
+        }
         self.assertEqual(tree_from_traversals(preorder, inorder), expected)
 
     def test_reject_traverals_of_different_length(self):
