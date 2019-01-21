@@ -1,4 +1,4 @@
-def treeFromTraversals(preorder, inorder):
+def tree_from_traversals(preorder, inorder):
     if len(preorder) != len(inorder):
         raise ValueError("traversals must have the same length")
     if set(preorder) != set(inorder):
