@@ -7,30 +7,30 @@ from protein_translation import proteins
 
 class ProteinTranslationTest(unittest.TestCase):
 
-    def test_AUG_translates_to_methionine(self):
+    def test_aug_translates_to_methionine(self):
         self.assertEqual(proteins('AUG'), ['Methionine'])
 
-    def test_identifies_Phenylalanine_codons(self):
+    def test_identifies_phenylalanine_codons(self):
         for codon in ['UUU', 'UUC']:
             self.assertEqual(proteins(codon), ['Phenylalanine'])
 
-    def test_identifies_Leucine_codons(self):
+    def test_identifies_leucine_codons(self):
         for codon in ['UUA', 'UUG']:
             self.assertEqual(proteins(codon), ['Leucine'])
 
-    def test_identifies_Serine_codons(self):
+    def test_identifies_serine_codons(self):
         for codon in ['UCU', 'UCC', 'UCA', 'UCG']:
             self.assertEqual(proteins(codon), ['Serine'])
 
-    def test_identifies_Tyrosine_codons(self):
+    def test_identifies_tyrosine_codons(self):
         for codon in ['UAU', 'UAC']:
             self.assertEqual(proteins(codon), ['Tyrosine'])
 
-    def test_identifies_Cysteine_codons(self):
+    def test_identifies_cysteine_codons(self):
         for codon in ['UGU', 'UGC']:
             self.assertEqual(proteins(codon), ['Cysteine'])
 
-    def test_identifies_Tryptophan_codons(self):
+    def test_identifies_tryptophan_codons(self):
         self.assertEqual(proteins('UGG'), ['Tryptophan'])
 
     def test_identifies_stop_codons(self):

@@ -1,7 +1,7 @@
 import itertools
 
 
-class corners(object):
+class Corners(object):
     def __init__(self, i, j):
         # i, j are position of corner
         self.i = i
@@ -30,7 +30,7 @@ def search_corners(input):
     for i in range(0, len(input)):
         for j in range(0, len(input[i])):
             if (input[i][j] == "+"):
-                corner_list.append(corners(i, j))
+                corner_list.append(Corners(i, j))
     return corner_list
 
 

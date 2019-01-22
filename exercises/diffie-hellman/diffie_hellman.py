@@ -1,10 +1,10 @@
-def private_key(p):
+def private_key(prime):
     pass
 
 
-def public_key(p, g, private):
+def public_key(prime_p, prime_g, private):
     pass
 
 
-def secret(p, public, private):
+def secret(prime, public, private):
     pass

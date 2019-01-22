@@ -5,7 +5,7 @@ from triangle import is_equilateral, is_isosceles, is_scalene
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-class is_equilateralTests(unittest.TestCase):
+class IsEquilateralTests(unittest.TestCase):
     def test_true_if_all_sides_are_equal(self):
         self.assertIs(is_equilateral([2, 2, 2]), True)
 
@@ -22,7 +22,7 @@ class is_equilateralTests(unittest.TestCase):
         self.assertIs(is_equilateral([0.5, 0.5, 0.5]), True)
 
 
-class is_isoscelesTests(unittest.TestCase):
+class IsIsoscelesTests(unittest.TestCase):
     def test_true_if_last_two_sides_are_equal(self):
         self.assertIs(is_isosceles([3, 4, 4]), True)
 
@@ -51,7 +51,7 @@ class is_isoscelesTests(unittest.TestCase):
         self.assertIs(is_isosceles([0.5, 0.4, 0.5]), True)
 
 
-class is_scaleneTests(unittest.TestCase):
+class IsScaleneTests(unittest.TestCase):
     def test_true_if_no_sides_are_equal(self):
         self.assertIs(is_scalene([5, 4, 6]), True)
 

@@ -1,0 +1,12 @@
+[flake8]
+ignore-names =
+    - setUp
+    - tearDown
+    - setUpClass
+    - tearDownClass
+	- setUpTestData
+	- assertRaisesWithMessage
+    - assertFactorsEqual
+    - assertTreeEqual
+    - test_encode_OMG
+    - test_encode_O_M_G

@@ -10,7 +10,7 @@ class Node():
         self.children = []
 
 
-def BuildTree(records):
+def build_tree(records):
     root = None
     records.sort(key=lambda x: x.record_id)
     ordered_id = [i.record_id for i in records]

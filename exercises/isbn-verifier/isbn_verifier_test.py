@@ -13,22 +13,22 @@ class IsbnVerifierTest(unittest.TestCase):
     def test_invalid_check_digit(self):
         self.assertIs(verify('3-598-21508-9'), False)
 
-    def test_valid_with_X_check_digit(self):
+    def test_valid_with_x_check_digit(self):
         self.assertIs(verify('3-598-21507-X'), True)
 
-    def test_invalid_check_digit_other_than_X(self):
+    def test_invalid_check_digit_other_than_x(self):
         self.assertIs(verify('3-598-21507-A'), False)
 
     def test_invalid_character_in_isbn(self):
         self.assertIs(verify('3-598-P1581-X'), False)
 
-    def test_invalid_X_other_than_check_digit(self):
+    def test_invalid_x_other_than_check_digit(self):
         self.assertIs(verify('3-598-2X507-9'), False)
 
     def test_valid_isbn_without_separating_dashes(self):
         self.assertIs(verify('3598215088'), True)
 
-    def test_valid_isbn_without_separating_dashes_with_X_check_digit(self):
+    def test_valid_isbn_without_separating_dashes_with_x_check_digit(self):
         self.assertIs(verify('359821507X'), True)
 
     def test_invalid_isbn_without_check_digit_and_dashes(self):
@@ -43,7 +43,7 @@ class IsbnVerifierTest(unittest.TestCase):
     def test_invalid_isbn_without_check_digit(self):
         self.assertIs(verify('3-598-21507'), False)
 
-    def test_invalid_check_digit_X_used_for_0(self):
+    def test_invalid_check_digit_x_used_for_0(self):
         self.assertIs(verify('3-598-21515-X'), False)
 
     def test_valid_empty_isbn(self):

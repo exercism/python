@@ -97,16 +97,16 @@ def create_file(name, contents):
 
 class GrepTest(unittest.TestCase):
     @classmethod
-    def setUpClass(self):
+    def setUpClass(cls):
         # Override builtin open() with mock-file-enabled one
         builtins.open = open
         create_file(ILIADFILENAME, ILIADCONTENTS)
         create_file(MIDSUMMERNIGHTFILENAME, MIDSUMMERNIGHTCONTENTS)
         create_file(PARADISELOSTFILENAME, PARADISELOSTCONTENTS)
-        self.maxDiff = None
+        cls.maxDiff = None
 
     @classmethod
-    def tearDownClass(self):
+    def tearDownClass(cls):
         remove_file(ILIADFILENAME)
         remove_file(MIDSUMMERNIGHTFILENAME)
         remove_file(PARADISELOSTFILENAME)

@@ -11,7 +11,7 @@ to reduce the number of permutations
 """
 
 
-def digPerms(digset, nzcharset, okzcharset):
+def dig_perms(digset, nzcharset, okzcharset):
     """This function creates permutations given the set of digits,
        letters not alllowed to be 0, and letters allowed to be 0
     """
@@ -88,7 +88,7 @@ def check_rec(eqparams, tracecombo=(dict(), 0, set(range(10))), p=0):
             remexp.append((c, v))
     # Generate permutations for the remaining digits and currecnt level
     # non-zero letters and zero-allowed letters
-    for newdigs in digPerms(remdigs, unzchars[p], uokzchars[p]):
+    for newdigs in dig_perms(remdigs, unzchars[p], uokzchars[p]):
         # build the dictionary for the new letters and this level
         newdict = dict(zip(diglets, newdigs))
         # complete the partial sum into test sum using the current permutation

@@ -12,11 +12,11 @@ class ChangeTest(unittest.TestCase):
     def test_multiple_coin_change(self):
         self.assertEqual(find_minimum_coins(15, [1, 5, 10, 25, 100]), [5, 10])
 
-    def test_change_with_Lilliputian_Coins(self):
+    def test_change_with_lilliputian_coins(self):
         self.assertEqual(find_minimum_coins(23, [1, 4, 15, 20, 50]),
                          [4, 4, 15])
 
-    def test_change_with_Lower_Elbonia_Coins(self):
+    def test_change_with_lower_elbonia_coins(self):
         self.assertEqual(find_minimum_coins(63, [1, 5, 10, 21, 25]),
                          [21, 21, 21])
 

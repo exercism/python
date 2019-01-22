@@ -39,7 +39,7 @@ class CustomFormatter(
     pass
 
 
-class bcolors:
+class Colors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
     OKGREEN = '\033[92m'
@@ -188,12 +188,12 @@ def check_test_version(
     referenced = get_referenced_version(exercise)
     up_to_date = available == referenced
     if up_to_date:
-        status, status_color = 'OK', bcolors.OKGREEN
+        status, status_color = 'OK', Colors.OKGREEN
     else:
-        status, status_color = 'NOT OK', bcolors.FAIL
+        status, status_color = 'NOT OK', Colors.FAIL
     status = cjust(status, 8)
     if not no_color:
-        status = status_color + status + bcolors.ENDC
+        status = status_color + status + Colors.ENDC
     if not up_to_date or print_ok:
         if create_issue:
             issue_number = create_issue_for_exercise(

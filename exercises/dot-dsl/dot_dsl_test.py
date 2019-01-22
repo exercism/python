@@ -100,7 +100,7 @@ class DotDslTest(unittest.TestCase):
                 (NODE, 1, 2, 3)
             ])
 
-    def test_malformed_EDGE(self):
+    def test_malformed_edge(self):
         with self.assertRaisesWithMessage(ValueError):
             Graph([
                 (EDGE, 1, 2)

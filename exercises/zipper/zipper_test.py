@@ -47,22 +47,22 @@ class ZipperTest(unittest.TestCase):
     def test_set_value(self):
         t1, t2, _, _ = self.create_trees()
         zipper = Zipper.from_tree(t1)
-        updatedZipper = zipper.left().set_value(5)
-        tree = updatedZipper.to_tree()
+        updated_zipper = zipper.left().set_value(5)
+        tree = updated_zipper.to_tree()
         self.assertEqual(tree, t2)
 
     def test_set_left_with_value(self):
         t1, _, t3, _ = self.create_trees()
         zipper = Zipper.from_tree(t1)
-        updatedZipper = zipper.left().set_left(self.leaf(5))
-        tree = updatedZipper.to_tree()
+        updated_zipper = zipper.left().set_left(self.leaf(5))
+        tree = updated_zipper.to_tree()
         self.assertEqual(tree, t3)
 
     def test_set_right_to_none(self):
         t1, _, _, t4 = self.create_trees()
         zipper = Zipper.from_tree(t1)
-        updatedZipper = zipper.left().set_right(None)
-        tree = updatedZipper.to_tree()
+        updated_zipper = zipper.left().set_right(None)
+        tree = updated_zipper.to_tree()
         self.assertEqual(tree, t4)
 
     def test_different_paths_to_same_zipper(self):

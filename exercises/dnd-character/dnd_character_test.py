@@ -58,20 +58,20 @@ class DnDCharacterTest(unittest.TestCase):
         self.assertIn(Character().ability(), range(3, 19))
 
     def test_random_character_is_valid(self):
-        Char = Character()
-        self.assertIn(Char.strength, range(3, 19))
-        self.assertIn(Char.dexterity, range(3, 19))
-        self.assertIn(Char.constitution, range(3, 19))
-        self.assertIn(Char.intelligence, range(3, 19))
-        self.assertIn(Char.wisdom, range(3, 19))
-        self.assertIn(Char.charisma, range(3, 19))
+        char = Character()
+        self.assertIn(char.strength, range(3, 19))
+        self.assertIn(char.dexterity, range(3, 19))
+        self.assertIn(char.constitution, range(3, 19))
+        self.assertIn(char.intelligence, range(3, 19))
+        self.assertIn(char.wisdom, range(3, 19))
+        self.assertIn(char.charisma, range(3, 19))
         self.assertEqual(
-            Char.hitpoints,
-            10 + modifier(Char.constitution))
+            char.hitpoints,
+            10 + modifier(char.constitution))
 
     def test_each_ability_is_only_calculated_once(self):
-        Char = Character()
-        self.assertEqual(Char.strength, Char.strength)
+        char = Character()
+        self.assertEqual(char.strength, char.strength)
 
 
 if __name__ == '__main__':

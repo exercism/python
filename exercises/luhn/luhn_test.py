@@ -14,16 +14,16 @@ class LuhnTest(unittest.TestCase):
     def test_a_single_zero_is_invalid(self):
         self.assertIs(Luhn("0").is_valid(), False)
 
-    def test_a_simple_valid_SIN_that_remains_valid_if_reversed(self):
+    def test_a_simple_valid_sin_that_remains_valid_if_reversed(self):
         self.assertIs(Luhn("059").is_valid(), True)
 
-    def test_a_simple_valid_SIN_that_becomes_invalid_if_reversed(self):
+    def test_a_simple_valid_sin_that_becomes_invalid_if_reversed(self):
         self.assertIs(Luhn("59").is_valid(), True)
 
-    def test_a_valid_Canadian_SIN(self):
+    def test_a_valid_canadian_sin(self):
         self.assertIs(Luhn("055 444 285").is_valid(), True)
 
-    def test_invalid_Canadian_SIN(self):
+    def test_invalid_canadian_sin(self):
         self.assertIs(Luhn("055 444 286").is_valid(), False)
 
     def test_invalid_credit_card(self):

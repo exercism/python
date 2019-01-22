@@ -13,19 +13,19 @@ class Node():
         self.children = []
 
 
-def validateRecord(record):
+def validate_record(record):
     if record.equal_id() and record.record_id != 0:
         raise ValueError("Only root should have equal record and parent id")
     elif not record.equal_id() and record.parent_id >= record.record_id:
         raise ValueError("Node record_id should be smaller than its parent_id")
 
 
-def BuildTree(records):
+def build_tree(records):
     parent_dict = {}
     node_dict = {}
     ordered_id = sorted((i.record_id for i in records))
     for record in records:
-        validateRecord(record)
+        validate_record(record)
         parent_dict[record.record_id] = record.parent_id
         node_dict[record.record_id] = Node(record.record_id)
 

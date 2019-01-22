@@ -9,7 +9,7 @@ class PovTest(unittest.TestCase):
 
     def test_singleton_returns_same_tree(self):
         tree = Tree('x')
-        self.assertTreeEquals(tree.from_pov('x'), tree)
+        self.assertTreeEqual(tree.from_pov('x'), tree)
 
     def test_can_reroot_tree_with_parent_and_one_sibling(self):
         tree = Tree('parent', [
@@ -21,7 +21,7 @@ class PovTest(unittest.TestCase):
                 Tree('sibling')
             ])
         ])
-        self.assertTreeEquals(tree.from_pov('x'), expected)
+        self.assertTreeEqual(tree.from_pov('x'), expected)
 
     def test_can_reroot_tree_with_parent_and_many_siblings(self):
         tree = Tree('parent', [
@@ -37,7 +37,7 @@ class PovTest(unittest.TestCase):
                 Tree('c')
             ])
         ])
-        self.assertTreeEquals(tree.from_pov('x'), expected)
+        self.assertTreeEqual(tree.from_pov('x'), expected)
 
     def test_can_reroot_a_tree_with_new_root_deeply_nested(self):
         tree = Tree('level-0', [
@@ -58,7 +58,7 @@ class PovTest(unittest.TestCase):
                 ])
             ])
         ])
-        self.assertTreeEquals(tree.from_pov('x'), expected)
+        self.assertTreeEqual(tree.from_pov('x'), expected)
 
     def test_moves_children_of_new_root_to_same_level_as_former_parent(self):
         tree = Tree('parent', [
@@ -72,7 +72,7 @@ class PovTest(unittest.TestCase):
             Tree('kid-0'),
             Tree('kid-1')
         ])
-        self.assertTreeEquals(tree.from_pov('x'), expected)
+        self.assertTreeEqual(tree.from_pov('x'), expected)
 
     def test_can_reroot_complex_tree_with_cousins(self):
         tree = Tree('grandparent', [
@@ -103,7 +103,7 @@ class PovTest(unittest.TestCase):
                 ])
             ])
         ])
-        self.assertTreeEquals(tree.from_pov('x'), expected)
+        self.assertTreeEqual(tree.from_pov('x'), expected)
 
     def test_errors_if_target_does_not_exist_in_singleton_tree(self):
         tree = Tree('x')
@@ -213,7 +213,7 @@ class PovTest(unittest.TestCase):
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
 
-    def assertTreeEquals(self, result, expected):
+    def assertTreeEqual(self, result, expected):
         self.assertEqual(result, expected,
                          '{} != {}'.format(result, expected))
 

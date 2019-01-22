@@ -46,9 +46,9 @@ class LinkedList(object):
         return self._head
 
     def push(self, value):
-        newNode = Node(value)
-        newNode._next = self._head
-        self._head = newNode
+        new_node = Node(value)
+        new_node._next = self._head
+        self._head = new_node
         self._len += 1
 
     def pop(self):

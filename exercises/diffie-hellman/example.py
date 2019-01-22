@@ -1,13 +1,13 @@
 import random
 
 
-def private_key(p):
-    return random.randint(2, p-1)
+def private_key(prime):
+    return random.randint(2, prime - 1)
 
 
-def public_key(p, g, a):
-    return pow(g, a, p)
+def public_key(prime_p, prime_g, private_key):
+    return pow(prime_g, private_key, prime_p)
 
 
-def secret(p, B, a):
-    return pow(B, a, p)
+def secret(prime, public_key_b, private_key_a):
+    return pow(public_key_b, private_key_a, prime)

@@ -4,7 +4,7 @@ BASE_COST = 800
 discount = [1.0, 1.0, 0.95, 0.9, 0.8, 0.75]
 
 
-def groupCost(g):
+def group_cost(g):
     return len(g) * discount[len(g)]
 
 
@@ -13,7 +13,7 @@ class Grouping:
         self.groups = [set()] if groups is None else groups
 
     def total(self):
-        return sum(map(groupCost, self.groups)) * BASE_COST
+        return sum(map(group_cost, self.groups)) * BASE_COST
 
     def dup(self):
         return Grouping(list(map(set, self.groups)))

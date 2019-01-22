@@ -2,16 +2,16 @@ BLKSZ = 5
 ALPHSZ = 26
 
 
-def modInverse(a, ALPHSZ):
-    a = a % ALPHSZ
-    for x in range(1, ALPHSZ):
-        if ((a * x) % ALPHSZ == 1):
+def mod_inverse(a, alpha_size):
+    a = a % alpha_size
+    for x in range(1, alpha_size):
+        if ((a * x) % alpha_size == 1):
             return x
     return 1
 
 
 def translate(text, a, b, mode):
-    inv = modInverse(a, ALPHSZ)
+    inv = mod_inverse(a, ALPHSZ)
     if inv == 1:
         raise ValueError("a and alphabet size must be coprime.")
 
