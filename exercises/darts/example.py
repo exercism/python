@@ -1,7 +1,7 @@
 from math import sqrt
 
 
-def Score(x, y):
+def score(x, y):
     dart_location = sqrt(x * x + y * y)
 
     if dart_location <= 1.0:

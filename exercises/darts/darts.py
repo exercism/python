@@ -1,2 +1,2 @@
-def Score(x, y):
+def score(x, y):
     pass
