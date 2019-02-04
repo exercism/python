@@ -1426,6 +1426,17 @@
       ]
     },
     {
+      "slug": "darts",
+      "uuid": "cb581e2c-66ab-4221-9884-44bacb7c4ebe",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+          "conditionals",
+          "math"
+      ]
+    },
+    {
       "slug": "accumulate",
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "core": false,
