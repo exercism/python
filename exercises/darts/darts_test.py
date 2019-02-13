@@ -2,7 +2,7 @@ import unittest
 from darts import score
 
 
-# Tests adapted from 'problem-specifications//canonical-data.json' @ 1.1.0
+# Tests adapted from 'problem-specifications//canonical-data.json' @ v1.1.0
 
 class darts_test(unittest.TestCase):
     def test_dart_lands_outside_target(self):
