@@ -3,7 +3,7 @@ import unittest
 import hamming
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.2.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.3.0
 
 class HammingTest(unittest.TestCase):
 
@@ -29,6 +29,14 @@ class HammingTest(unittest.TestCase):
     def test_disallow_second_strand_longer(self):
         with self.assertRaisesWithMessage(ValueError):
             hamming.distance("ATA", "AGTG")
+
+    def test_disallow_left_empty_strand(self):
+        with self.assertRaisesWithMessage(ValueError):
+            hamming.distance("", "G")
+
+    def test_disallow_right_empty_strand(self):
+        with self.assertRaisesWithMessage(ValueError):
+            hamming.distance("G", "")
 
     # Utility functions
     def setUp(self):
