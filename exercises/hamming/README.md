@@ -1,33 +1,28 @@
 # Hamming
 
-Calculate the Hamming difference between two DNA strands.
+Calculate the Hamming Distance between two DNA strands.
 
-A mutation is simply a mistake that occurs during the creation or
-copying of a nucleic acid, in particular DNA. Because nucleic acids are
-vital to cellular functions, mutations tend to cause a ripple effect
-throughout the cell. Although mutations are technically mistakes, a very
-rare mutation may equip the cell with a beneficial attribute. In fact,
-the macro effects of evolution are attributable by the accumulated
-result of beneficial microscopic mutations over many generations.
+Your body is made up of cells that contain DNA. Those cells regularly
+wear out and need replacing, which they achieve by dividing into
+daughter cells. In fact, the average human body experiences about 10
+quadrillion cell divisions in a lifetime!
 
-The simplest and most common type of nucleic acid mutation is a point
-mutation, which replaces one base with another at a single nucleotide.
+When cells divide, their DNA replicates too. Sometimes during this
+process mistakes happen and single pieces of DNA get encoded with the
+incorrect information. If we compare two strands of DNA and count the
+differences between them we can see how many mistakes occurred. This is
+known as the "Hamming Distance".
 
-By counting the number of differences between two homologous DNA strands
-taken from different genomes with a common ancestor, we get a measure of
-the minimum number of point mutations that could have occurred on the
-evolutionary path between the two strands.
-
-This is called the 'Hamming distance'.
-
-It is found by comparing two DNA strands and counting how many of the
-nucleotides are different from their equivalent in the other string.
+We read DNA using the letters C,A,G and T. Two strands might look like this:
 
     GAGCCTACTAACGGGAT
     CATCGTAATGACGGCCT
     ^ ^ ^  ^ ^    ^^
 
-The Hamming distance between these two DNA strands is 7.
+They have 7 differences, and therefore the Hamming Distance is 7.
+
+The Hamming Distance is useful for lots of things in science, not just biology,
+so it's a nice phrase to be familiar with :)
 
 # Implementation notes
 
