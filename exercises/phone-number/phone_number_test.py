@@ -40,7 +40,11 @@ class PhoneNumberTest(unittest.TestCase):
 
     def test_invalid_with_letters(self):
         with self.assertRaisesWithMessage(ValueError):
-            Phone("123-abc-7890")
+            Phone("123-abc-7890")    
+
+    def test_invalid_with_letter_and_ten_numbers(self):
+        with self.assertRaisesWithMessage(ValueError):
+            Phone("223a4567890")
 
     def test_invalid_with_punctuation(self):
         with self.assertRaisesWithMessage(ValueError):
