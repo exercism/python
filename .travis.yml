@@ -11,7 +11,8 @@ matrix:
   include:
     - python: 3.4
       dist: trusty
-    - stage: housekeeping
+    - env:
+        - HOUSEKEEPING=1
       install: skip
       before_script: ./bin/fetch-configlet
       script:
