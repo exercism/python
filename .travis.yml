@@ -10,7 +10,7 @@ matrix:
   include:
     - stage: housekeeping
       install: skip
-      before_script: .bin/fetch-configlet
+      before_script: ./bin/fetch-configlet
       script:
         - ./bin/configlet lint.
         - ./bin/check-readmes.sh
@@ -36,6 +36,8 @@ matrix:
     - <<: *test
       python: 3.4
       dist: trusty
+    - <<: *test
+      python: 3.5
     - <<: *test
       python: 3.6
     - <<: *test
