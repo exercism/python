@@ -9,15 +9,13 @@ python:
 
 matrix:
   include:
+    # Python 3.4 not supported in xenial
     - python: 3.4
       dist: trusty
-    - language: generic
-      install: skip
-      before_script: 
-        - ./bin/check-readmes.sh
-        - ./bin/fetch-configlet
-      script:
-        - ./bin/configlet lint .
+    - env: JOB=HOUSEKEEPING
+      install: ./bin/fetch-configlet
+      before_script: ./bin/check-readmes.sh
+      script: ./bin/configlet lint .
   allow_failures:
     - python: nightly
 
