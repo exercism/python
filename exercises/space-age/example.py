@@ -16,7 +16,7 @@ class SpaceAge(object):
     on_mars = period_converter(59354294.4)
     on_jupiter = period_converter(374335776.0)
     on_saturn = period_converter(929596608.0)
-    on_uranus = period_converter(2661041808.0)
+    on_uranus = period_converter(2651370019.3)
     on_neptune = period_converter(5200418592.0)
 
     def __init__(self, seconds):
