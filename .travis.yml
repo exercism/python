@@ -12,7 +12,7 @@ matrix:
       install: skip
       before_script: ./bin/fetch-configlet
       script:
-        - ./bin/configlet lint.
+        - ./bin/configlet lint .
         - ./bin/check-readmes.sh
     - &lint
       stage: lint
