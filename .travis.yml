@@ -11,13 +11,13 @@ matrix:
   include:
     - python: 3.4
       dist: trusty
-    - env:
-        - HOUSEKEEPING=1
+    - language: generic
       install: skip
-      before_script: ./bin/fetch-configlet
+      before_script: 
+        - ./bin/check-readmes.sh
+        - ./bin/fetch-configlet
       script:
         - ./bin/configlet lint .
-        - ./bin/check-readmes.sh
   allow_failures:
     - python: nightly
 
