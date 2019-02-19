@@ -1,51 +1,30 @@
 language: python
 dist: xenial
-
-stages:
-  - housekeeping
-  - lint
-  - test
+  
+python:
+  - 2.7
+  - 3.5
+  - 3.6
+  - 3.7
 
 matrix:
   include:
+    - python: 3.4
+      dist: trusty
     - stage: housekeeping
       install: skip
       before_script: ./bin/fetch-configlet
       script:
         - ./bin/configlet lint .
         - ./bin/check-readmes.sh
-    - &lint
-      stage: lint
-      script: flake8
-      python: 2.7
-    - <<: *lint
-      python: 3.4
-      dist: trusty
-    - <<: *lint
-      python: 3.5
-    - <<: *lint
-      python: 3.6
-    - <<: *lint
-      python: 3.7
-    - <<: *lint
-      python: nightly
-    - &test
-      stage: test
-      script: ./test/check-exercises.py
-      python: 2.7
-    - <<: *test
-      python: 3.4
-      dist: trusty
-    - <<: *test
-      python: 3.5
-    - <<: *test
-      python: 3.6
-    - <<: *test
-      python: 3.7
-    - <<: *test
-      python: nightly
   allow_failures:
     - python: nightly
 
 install:
   - pip install -r requirements-travis.txt
+
+before_script:
+  - flake8
+  
+script: 
+  - ./test/check-exercises.py
