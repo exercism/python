@@ -13,8 +13,7 @@ matrix:
     # Python 3.4 not supported in xenial
     - python: 3.4
       dist: trusty
-    - language: shell
-      env: JOB=HOUSEKEEPING
+    - env: JOB=HOUSEKEEPING
       install: ./bin/fetch-configlet
       before_script: ./bin/check-readmes.sh
       script: ./bin/configlet lint .
