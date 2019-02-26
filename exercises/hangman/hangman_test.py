@@ -26,7 +26,7 @@ class HangmanTests(unittest.TestCase):
         try:
             game.guess('x')
         except Exception as e:
-            self.assertEquals(e.message, "Game already ended, you lose")
+            self.assertEquals((str(e)), "Game already ended, you lose")
 
     def test_feeding_a_correct_letter_removes_underscores(self):
         game = Hangman('foobar')
@@ -85,7 +85,7 @@ class HangmanTests(unittest.TestCase):
         try:
             game.guess('x')
         except Exception as e:
-            self.assertEquals(e.message, "Game already ended, you win")
+            self.assertEquals(str(e), "Game already ended, you win")
 
     def assertRaisesWithMessage(self, exception, message):
         self.assertRaisesRegexp(exception, message)
