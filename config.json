@@ -173,6 +173,20 @@
       ]
     },
     {
+      "slug": "luhn",
+      "uuid": "34dde040-672e-472f-bf2e-b87b6f9933c0",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "algorithms",
+        "conditionals",
+        "loops",
+        "pattern_matching",
+        "security"
+      ]
+    },
+    {
       "slug": "clock",
       "uuid": "459fda78-851e-4bb0-a416-953528f46bd7",
       "core": true,
@@ -219,20 +233,6 @@
         "lists",
         "loops",
         "recursion"
-      ]
-    },
-    {
-      "slug": "luhn",
-      "uuid": "34dde040-672e-472f-bf2e-b87b6f9933c0",
-      "core": false,
-      "unlocked_by": "grade-school",
-      "difficulty": 4,
-      "topics": [
-        "algorithms",
-        "conditionals",
-        "loops",
-        "pattern_matching",
-        "security"
       ]
     },
     {
@@ -393,7 +393,7 @@
       "slug": "rotational-cipher",
       "uuid": "4c408aab-80b9-475d-9c06-b01cd0fcd08f",
       "core": false,
-      "unlocked_by": "grade-school",
+      "unlocked_by": "luhn",
       "difficulty": 1,
       "topics": [
         "logic",
@@ -986,7 +986,7 @@
       "slug": "binary-search",
       "uuid": "a8288e93-93c5-4e0f-896c-2a376f6f6e5e",
       "core": false,
-      "unlocked_by": "grade-school",
+      "unlocked_by": "luhn",
       "difficulty": 1,
       "topics": [
         "algorithms",
@@ -1066,7 +1066,7 @@
       "slug": "variable-length-quantity",
       "uuid": "aa4332bd-fc38-47a4-8bff-e1b660798418",
       "core": false,
-      "unlocked_by": "grade-school",
+      "unlocked_by": "luhn",
       "difficulty": 1,
       "topics": [
         "algorithms",
@@ -1228,7 +1228,7 @@
       "slug": "two-bucket",
       "uuid": "6f530d0c-d13e-4270-b120-e42c16691a66",
       "core": false,
-      "unlocked_by": "grade-school",
+      "unlocked_by": "luhn",
       "difficulty": 5,
       "topics": [
         "algorithms",
