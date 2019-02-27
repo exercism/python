@@ -1,5 +1,6 @@
 import unittest
 
+import hangman
 from hangman import Hangman
 
 
@@ -8,7 +9,7 @@ from hangman import Hangman
 class HangmanTests(unittest.TestCase):
     def test_initially_9_failures_are_allowed(self):
         game = Hangman('foo')
-        self.assertEqual(game.get_status(), "ongoing")
+        self.assertEqual(game.get_status(), hangman.STATUS_ONGOING)
         self.assertEqual(game.remainingGuesses, 9)
 
     def test_initially_no_letters_are_guessed(self):
@@ -22,22 +23,20 @@ class HangmanTests(unittest.TestCase):
         for i in range(10):
             game.guess('x')
 
-        self.assertEqual(game.get_status(), 'lose')
-        try:
+        self.assertEqual(game.get_status(), hangman.STATUS_LOSE)
+        with self.assertRaisesWithMessage(ValueError):
             game.guess('x')
-        except Exception as e:
-            self.assertEquals((str(e)), "Game already ended, you lose")
 
     def test_feeding_a_correct_letter_removes_underscores(self):
         game = Hangman('foobar')
 
         game.guess('b')
-        self.assertEqual(game.get_status(), 'ongoing')
+        self.assertEqual(game.get_status(), hangman.STATUS_ONGOING)
         self.assertEqual(game.remainingGuesses, 9)
         self.assertEqual(game.get_masked_word(), '___b__')
 
         game.guess('o')
-        self.assertEqual(game.get_status(), 'ongoing')
+        self.assertEqual(game.get_status(), hangman.STATUS_ONGOING)
         self.assertEqual(game.remainingGuesses, 9)
         self.assertEqual(game.get_masked_word(), '_oob__')
 
@@ -45,12 +44,12 @@ class HangmanTests(unittest.TestCase):
         game = Hangman('foobar')
 
         game.guess('b')
-        self.assertEqual(game.get_status(), 'ongoing')
+        self.assertEqual(game.get_status(), hangman.STATUS_ONGOING)
         self.assertEqual(game.remainingGuesses, 9)
         self.assertEqual(game.get_masked_word(), '___b__')
 
         game.guess('b')
-        self.assertEqual(game.get_status(), 'ongoing')
+        self.assertEqual(game.get_status(), hangman.STATUS_ONGOING)
         self.assertEqual(game.remainingGuesses, 8)
         self.assertEqual(game.get_masked_word(), '___b__')
 
@@ -58,37 +57,42 @@ class HangmanTests(unittest.TestCase):
         game = Hangman('hello')
 
         game.guess('b')
-        self.assertEqual(game.get_status(), 'ongoing')
-        self.assertEqual(game.get_status(), 'ongoing')
+        self.assertEqual(game.get_status(), hangman.STATUS_ONGOING)
+        self.assertEqual(game.get_status(), hangman.STATUS_ONGOING)
         self.assertEqual(game.remainingGuesses, 8)
         self.assertEqual(game.get_masked_word(), '_____')
 
         game.guess('e')
-        self.assertEqual(game.get_status(), 'ongoing')
+        self.assertEqual(game.get_status(), hangman.STATUS_ONGOING)
         self.assertEqual(game.remainingGuesses, 8)
         self.assertEqual(game.get_masked_word(), '_e___')
 
         game.guess('l')
-        self.assertEqual(game.get_status(), 'ongoing')
+        self.assertEqual(game.get_status(), hangman.STATUS_ONGOING)
         self.assertEqual(game.remainingGuesses, 8)
         self.assertEqual(game.get_masked_word(), '_ell_')
 
         game.guess('o')
-        self.assertEqual(game.get_status(), 'ongoing')
+        self.assertEqual(game.get_status(), hangman.STATUS_ONGOING)
         self.assertEqual(game.remainingGuesses, 8)
         self.assertEqual(game.get_masked_word(), '_ello')
 
         game.guess('h')
-        self.assertEqual(game.get_status(), 'win')
+        self.assertEqual(game.get_status(), hangman.STATUS_WIN)
         self.assertEqual(game.get_masked_word(), 'hello')
 
-        try:
+        with self.assertRaisesWithMessage(ValueError):
             game.guess('x')
-        except Exception as e:
-            self.assertEquals(str(e), "Game already ended, you win")
 
-    def assertRaisesWithMessage(self, exception, message):
-        self.assertRaisesRegexp(exception, message)
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex
+        except AttributeError:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
 
 if __name__ == '__main__':

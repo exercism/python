@@ -15,7 +15,7 @@ class Hangman:
 
     def guess(self, char):
         if self.status != STATUS_ONGOING:
-            raise Exception("Game already ended, you " + self.status)
+            raise ValueError("Game already ended, you " + self.status)
 
         self.update_remaining_guesses(char)
         self.update_masked_word()
