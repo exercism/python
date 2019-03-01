@@ -1,8 +1,8 @@
 # Game status categories
 # Change the values as you see fit
-STATUS_WIN = None
-STATUS_LOSE = None
-STATUS_ONGOING = None
+STATUS_WIN = "win"
+STATUS_LOSE = "lose"
+STATUS_ONGOING = "ongoing"
 
 
 class Hangman(object):

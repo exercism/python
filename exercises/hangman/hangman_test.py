@@ -58,7 +58,6 @@ class HangmanTests(unittest.TestCase):
 
         game.guess('b')
         self.assertEqual(game.get_status(), hangman.STATUS_ONGOING)
-        self.assertEqual(game.get_status(), hangman.STATUS_ONGOING)
         self.assertEqual(game.remainingGuesses, 8)
         self.assertEqual(game.get_masked_word(), '_____')
 
