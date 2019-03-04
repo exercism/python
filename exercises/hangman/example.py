@@ -5,7 +5,7 @@ STATUS_ONGOING = "ongoing"
 
 class Hangman:
     def __init__(self, word):
-        self.remainingGuesses = 9
+        self.remaining_guesses = 9
         self.status = STATUS_ONGOING
         self.word = word
         self.masked_word = ''
@@ -31,14 +31,14 @@ class Hangman:
 
     def update_remaining_guesses(self, char):
         if char not in self.word or char in self.guesses:
-            self.remainingGuesses -= 1
+            self.remaining_guesses -= 1
         else:
             self.guesses.append(char)
 
     def update_status(self):
         if self.masked_word == self.word:
             self.status = STATUS_WIN
-        elif self.remainingGuesses < 0:
+        elif self.remaining_guesses < 0:
             self.status = STATUS_LOSE
         else:
             self.status = STATUS_ONGOING
