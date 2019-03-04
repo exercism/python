@@ -83,6 +83,15 @@ class HangmanTests(unittest.TestCase):
         with self.assertRaisesWithMessage(ValueError):
             game.guess('x')
 
+    def test_winning_on_last_guess_still_counts_as_a_win(self):
+        game = Hangman('aaa')
+        for ch in 'bcdefghij':
+            game.guess(ch)
+        game.guess('a')
+        self.assertEqual(game.remaining_guesses, 0)
+        self.assertEqual(game.get_status(), hangman.STATUS_WIN)
+        self.assertEqual(game.get_masked_word(), 'aaa')
+
     # Utility functions
     def setUp(self):
         try:
