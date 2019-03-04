@@ -16,7 +16,7 @@ import unittest
 from palindrome_products import smallest_palindrome, largest_palindrome
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class PalindromeProductsTest(unittest.TestCase):
     def test_smallest_palindrome_from_single_digit_factors(self):
@@ -60,13 +60,14 @@ class PalindromeProductsTest(unittest.TestCase):
         self.assertFactorsEqual(factors, {(9901, 9999)})
 
     def test_empty_for_smallest_palindrome_if_none_in_range(self):
-        with self.assertRaisesWithMessage(ValueError):
-            value, factors = smallest_palindrome(min_factor=1002,
-                                                 max_factor=1003)
+        value, factors = smallest_palindrome(min_factor=1002, max_factor=1003)
+        self.assertIsNone(value)
+        self.assertEqual(factors, [])
 
     def test_empty_for_largest_palindrome_if_none_in_range(self):
-        with self.assertRaisesWithMessage(ValueError):
-            value, factors = largest_palindrome(min_factor=15, max_factor=15)
+        value, factors = largest_palindrome(min_factor=15, max_factor=15)
+        self.assertIsNone(value)
+        self.assertEqual(factors, [])
 
     def test_error_for_smallest_if_min_is_more_than_max(self):
         with self.assertRaisesWithMessage(ValueError):

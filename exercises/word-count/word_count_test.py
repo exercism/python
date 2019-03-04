@@ -3,7 +3,7 @@ import unittest
 from word_count import word_count
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
 
 class WordCountTest(unittest.TestCase):
 
@@ -72,6 +72,12 @@ class WordCountTest(unittest.TestCase):
         self.assertEqual(
             word_count(' multiple   whitespaces'),
             {'multiple': 1, 'whitespaces': 1}
+        )
+
+    def test_alternating_word_separators(self):
+        self.assertEqual(
+            word_count(",\n,one,\n ,two \n 'three'"),
+            {'one': 1, 'two': 1, 'three': 1}
         )
 
     # Additional tests for this track
