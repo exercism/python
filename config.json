@@ -1338,8 +1338,6 @@
       "unlocked_by": null,
       "difficulty": 5,
       "topics": [
-        "events",
-        "reactive_programming",
         "strings"
       ]
     },
