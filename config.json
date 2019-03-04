@@ -38,6 +38,7 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
+        "classes",
         "control-flow (if-else statements)",
         "sequences",
         "text_formatting"
