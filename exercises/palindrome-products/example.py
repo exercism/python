@@ -27,10 +27,7 @@ def get_extreme_palindrome_with_factors(max_factor, min_factor, extreme):
             break
 
     if factor_pairs is None or len(factor_pairs) == 0:
-        raise ValueError("no palindrome with factors in the "
-                         "range {min_factor} to {max_factor}"
-                         .format(min_factor=min_factor,
-                                 max_factor=max_factor))
+        return (None, [])
 
     return (palin, factor_pairs)
 

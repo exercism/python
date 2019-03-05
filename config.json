@@ -32,24 +32,13 @@
       ]
     },
     {
-      "slug": "acronym",
-      "uuid": "038c7f7f-02f6-496f-9e16-9372621cc4cd",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "regular_expressions",
-        "strings"
-      ]
-    },
-    {
-      "uuid": "574d6323-5ff5-4019-9ebe-0067daafba13",
       "slug": "high-scores",
+      "uuid": "574d6323-5ff5-4019-9ebe-0067daafba13",
       "core": true,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "control-flow (if-else statements)",
+        "control_flow_if_else_statements",
         "sequences",
         "text_formatting"
       ]
@@ -65,20 +54,6 @@
         "loops",
         "matrices",
         "type_conversion"
-      ]
-    },
-    {
-      "slug": "word-count",
-      "uuid": "04316811-0bc3-4377-8ff5-5a300ba41d61",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 3,
-      "topics": [
-        "algorithms",
-        "logic",
-        "pattern_recognition",
-        "strings",
-        "text_formatting"
       ]
     },
     {
@@ -120,6 +95,32 @@
       ]
     },
     {
+      "slug": "twelve-days",
+      "uuid": "d41238ce-359c-4a9a-81ea-ca5d2c4bb50d",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "lists",
+        "strings",
+        "text_formatting"
+      ]
+    },
+    {
+      "slug": "word-count",
+      "uuid": "04316811-0bc3-4377-8ff5-5a300ba41d61",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "algorithms",
+        "logic",
+        "pattern_recognition",
+        "strings",
+        "text_formatting"
+      ]
+    },
+    {
       "slug": "scrabble-score",
       "uuid": "d081446b-f26b-41a2-ab7f-dd7f6736ecfe",
       "core": true,
@@ -129,6 +130,17 @@
         "games",
         "loops",
         "maps",
+        "strings"
+      ]
+    },
+    {
+      "slug": "acronym",
+      "uuid": "038c7f7f-02f6-496f-9e16-9372621cc4cd",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "regular_expressions",
         "strings"
       ]
     },
@@ -195,18 +207,6 @@
       "difficulty": 3,
       "topics": [
         "refactoring",
-        "text_formatting"
-      ]
-    },
-    {
-      "slug": "twelve-days",
-      "uuid": "d41238ce-359c-4a9a-81ea-ca5d2c4bb50d",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 5,
-      "topics": [
-        "lists",
-        "strings",
         "text_formatting"
       ]
     },
@@ -351,7 +351,6 @@
       ]
     },
     {
-      "uuid": "505e7bdb-e18d-45fd-9849-0bf33492efd9",
       "slug": "run-length-encoding",
       "uuid": "505e7bdb-e18d-45fd-9849-0bf33492efd9",
       "core": false,
@@ -1333,6 +1332,16 @@
       ]
     },
     {
+      "slug": "hangman",
+      "uuid": "adad6be5-855d-4d61-b14a-22e468ba5b44",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "strings"
+      ]
+    },
+    {
       "slug": "custom-set",
       "uuid": "bb07c236-062c-2980-483a-a221e4724445dcd6f32",
       "core": false,
@@ -1402,15 +1411,15 @@
       ]
     },
     {
-        "slug": "dnd-character",
-        "uuid": "58625685-b5cf-4e8a-b3aa-bff54da0689d",
-        "core": false,
-        "unlocked_by": null,
-        "difficulty": 1,
-        "topics": [
-            "randomness",
-            "integers"
-        ]
+      "slug": "dnd-character",
+      "uuid": "58625685-b5cf-4e8a-b3aa-bff54da0689d",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "integers",
+        "randomness"
+      ]
     },
     {
       "slug": "retree",
@@ -1432,8 +1441,8 @@
       "unlocked_by": null,
       "difficulty": 2,
       "topics": [
-          "conditionals",
-          "math"
+        "conditionals",
+        "math"
       ]
     },
     {
