@@ -4,7 +4,7 @@ import operator
 import list_ops
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.3.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.4.0
 
 class ListOpsTest(unittest.TestCase):
 
@@ -89,6 +89,10 @@ class ListOpsTest(unittest.TestCase):
 
     def test_reverse_nonempty_list(self):
         self.assertEqual(list_ops.reverse([1, 3, 5, 7]), [7, 5, 3, 1])
+
+    def test_reverse_list_of_lists_not_flattened(self):
+        self.assertEqual(list_ops.reverse([[1, 2], [3], [], [4, 5, 6]]),
+                         [[4, 5, 6], [], [3], [1, 2]])
 
     # additional test for reverse
     def test_reverse_mixed_types(self):

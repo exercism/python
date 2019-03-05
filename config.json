@@ -32,14 +32,14 @@
       ]
     },
     {
-      "uuid": "574d6323-5ff5-4019-9ebe-0067daafba13",
       "slug": "high-scores",
+      "uuid": "574d6323-5ff5-4019-9ebe-0067daafba13",
       "core": true,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "classes",
-        "control-flow (if-else statements)",
+        "control_flow_if_else_statements",
         "sequences",
         "text_formatting"
       ]
@@ -352,7 +352,6 @@
       ]
     },
     {
-      "uuid": "505e7bdb-e18d-45fd-9849-0bf33492efd9",
       "slug": "run-length-encoding",
       "uuid": "505e7bdb-e18d-45fd-9849-0bf33492efd9",
       "core": false,
@@ -1334,6 +1333,16 @@
       ]
     },
     {
+      "slug": "hangman",
+      "uuid": "adad6be5-855d-4d61-b14a-22e468ba5b44",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "strings"
+      ]
+    },
+    {
       "slug": "custom-set",
       "uuid": "bb07c236-062c-2980-483a-a221e4724445dcd6f32",
       "core": false,
@@ -1403,15 +1412,15 @@
       ]
     },
     {
-        "slug": "dnd-character",
-        "uuid": "58625685-b5cf-4e8a-b3aa-bff54da0689d",
-        "core": false,
-        "unlocked_by": null,
-        "difficulty": 1,
-        "topics": [
-            "randomness",
-            "integers"
-        ]
+      "slug": "dnd-character",
+      "uuid": "58625685-b5cf-4e8a-b3aa-bff54da0689d",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "integers",
+        "randomness"
+      ]
     },
     {
       "slug": "retree",
@@ -1433,8 +1442,8 @@
       "unlocked_by": null,
       "difficulty": 2,
       "topics": [
-          "conditionals",
-          "math"
+        "conditionals",
+        "math"
       ]
     },
     {
