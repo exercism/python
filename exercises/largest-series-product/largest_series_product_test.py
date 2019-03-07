@@ -88,12 +88,6 @@ class LargestSeriesProductTest(unittest.TestCase):
         self.assertEqual(largest_product(series, 13), 23514624000)
 
     # Utility functions
-    def setUp(self):
-        try:
-            self.assertRaisesRegex
-        except AttributeError:
-            self.assertRaisesRegex = self.assertRaisesRegexp
-
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
 

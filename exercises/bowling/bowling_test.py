@@ -216,10 +216,6 @@ class BowlingTest(unittest.TestCase):
     # Utility functions
     def setUp(self):
         self.game = BowlingGame()
-        try:
-            self.assertRaisesRegex
-        except AttributeError:
-            self.assertRaisesRegex = self.assertRaisesRegexp
 
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")

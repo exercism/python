@@ -138,12 +138,6 @@ class OcrNumbersTest(unittest.TestCase):
         self.assertEqual(convert(input_grid), "123,456,789")
 
     # Utility functions
-    def setUp(self):
-        try:
-            self.assertRaisesRegex
-        except AttributeError:
-            self.assertRaisesRegex = self.assertRaisesRegexp
-
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
 

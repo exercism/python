@@ -79,12 +79,6 @@ class PalindromeProductsTest(unittest.TestCase):
             value, factors = largest_palindrome(min_factor=2, max_factor=1)
 
     # Utility functions
-    def setUp(self):
-        try:
-            self.assertRaisesRegex
-        except AttributeError:
-            self.assertRaisesRegex = self.assertRaisesRegexp
-
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
 

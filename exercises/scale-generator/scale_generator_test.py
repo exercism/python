@@ -80,12 +80,6 @@ class ScaleGeneratorTest(unittest.TestCase):
         self.assertEqual(Scale('G').interval('mAMMMmm'), expected)
 
     # Utility functions
-    def setUp(self):
-        try:
-            self.assertRaisesRegex
-        except AttributeError:
-            self.assertRaisesRegex = self.assertRaisesRegexp
-
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
 

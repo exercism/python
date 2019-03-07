@@ -38,12 +38,6 @@ class NucleotideCountTest(unittest.TestCase):
         self.assertEqual(nucleotide_counts(dna), expected)
 
     # Utility functions
-    def setUp(self):
-        try:
-            self.assertRaisesRegex
-        except AttributeError:
-            self.assertRaisesRegex = self.assertRaisesRegexp
-
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
 
