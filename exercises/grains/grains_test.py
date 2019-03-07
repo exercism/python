@@ -52,12 +52,6 @@ class GrainsTest(unittest.TestCase):
         self.assertEqual(total_after(64), 18446744073709551615)
 
     # Utility functions
-    def setUp(self):
-        try:
-            self.assertRaisesRegex
-        except AttributeError:
-            self.assertRaisesRegex = self.assertRaisesRegexp
-
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
 
