@@ -29,12 +29,6 @@ class NthPrimeTest(unittest.TestCase):
                          [nth_prime(n) for n in range(1, 21)])
 
     # Utility functions
-    def setUp(self):
-        try:
-            self.assertRaisesRegex
-        except AttributeError:
-            self.assertRaisesRegex = self.assertRaisesRegexp
-
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
 

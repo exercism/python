@@ -90,12 +90,6 @@ class SgfParsingTest(unittest.TestCase):
         self.assertEqual(parse(input_string), expected)
 
     # Utility functions
-    def setUp(self):
-        try:
-            self.assertRaisesRegex
-        except AttributeError:
-            self.assertRaisesRegex = self.assertRaisesRegexp
-
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
 
