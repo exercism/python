@@ -62,12 +62,12 @@ class PalindromeProductsTest(unittest.TestCase):
     def test_empty_for_smallest_palindrome_if_none_in_range(self):
         value, factors = smallest_palindrome(min_factor=1002, max_factor=1003)
         self.assertIsNone(value)
-        self.assertEqual(factors, [])
+        self.assertFactorsEqual(factors, [])
 
     def test_empty_for_largest_palindrome_if_none_in_range(self):
         value, factors = largest_palindrome(min_factor=15, max_factor=15)
         self.assertIsNone(value)
-        self.assertEqual(factors, [])
+        self.assertFactorsEqual(factors, [])
 
     def test_error_for_smallest_if_min_is_more_than_max(self):
         with self.assertRaisesWithMessage(ValueError):
