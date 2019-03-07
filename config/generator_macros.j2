@@ -32,12 +32,6 @@ from {{ exercise | to_snake }} import ({% if imports -%}
 {%- endmacro %}
 
 {% macro utility() -%}# Utility functions
-    def setUp(self):
-        try:
-            self.assertRaisesRegex
-        except AttributeError:
-            self.assertRaisesRegex = self.assertRaisesRegexp
-
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
 {%- endmacro %}

@@ -302,12 +302,6 @@ class MeetupTest(unittest.TestCase):
             meetup(2015, 2, "5th", "Monday")
 
     # Utility functions
-    def setUp(self):
-        try:
-            self.assertRaisesRegex
-        except AttributeError:
-            self.assertRaisesRegex = self.assertRaisesRegexp
-
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
 
