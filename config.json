@@ -32,8 +32,8 @@
       ]
     },
     {
-      "uuid": "574d6323-5ff5-4019-9ebe-0067daafba13",
       "slug": "high-scores",
+      "uuid": "574d6323-5ff5-4019-9ebe-0067daafba13",
       "core": true,
       "unlocked_by": null,
       "difficulty": 1,
