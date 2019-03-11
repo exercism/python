@@ -1,0 +1,2 @@
+def value(colors):
+    pass
