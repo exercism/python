@@ -35,6 +35,7 @@ For more information see
 [wikipedia](https://en.wikipedia.org/wiki/Go_%28game%29) or [Sensei's
 Library](http://senseis.xmp.net/).
 
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
@@ -51,11 +52,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest go_counting_test.py`
 
-- Python 3.4+: `pytest go_counting_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest go_counting_test.py`
 
 ### Common `pytest` options

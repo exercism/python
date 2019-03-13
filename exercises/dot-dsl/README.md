@@ -6,10 +6,9 @@ A [Domain Specific Language
 (DSL)](https://en.wikipedia.org/wiki/Domain-specific_language) is a
 small language optimized for a specific domain.
 
-For example the dot language of [Graphviz](http://graphviz.org) allows
-you to write a textual description of a graph which is then transformed
-into a picture by one of the graphviz tools (such as `dot`). A simple
-graph looks like this:
+For example the [DOT language](https://en.wikipedia.org/wiki/DOT_(graph_description_language)) allows
+you to write a textual description of a graph which is then transformed into a picture by one of
+the [Graphviz](http://graphviz.org/) tools (such as `dot`). A simple graph looks like this:
 
     graph {
         graph [bgcolor="yellow"]
@@ -40,6 +39,7 @@ The implementations of `Node` and `Edge` provided in `dot_dsl.py`.
 Observe the test cases in `dot_dsl_test.py` to understand the DSL's design.
 
 
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
@@ -56,11 +56,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest dot_dsl_test.py`
 
-- Python 3.4+: `pytest dot_dsl_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest dot_dsl_test.py`
 
 ### Common `pytest` options

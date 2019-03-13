@@ -6,14 +6,14 @@ on each square doubles.
 There once was a wise servant who saved the life of a prince. The king
 promised to pay whatever the servant could dream up. Knowing that the
 king loved chess, the servant told the king he would like to have grains
-of wheat. One grain on the first square of a chess board. Two grains on
-the next. Four on the third, and so on.
+of wheat. One grain on the first square of a chess board, with the number
+of grains doubling on each successive square.
 
-There are 64 squares on a chessboard.
+There are 64 squares on a chessboard (where square 1 has one grain, square 2 has two grains, and so on).
 
 Write code that shows:
-- how many grains were on each square, and
-- the total number of grains
+- how many grains were on a given square, and
+- the total number of grains on the chessboard
 
 ## For bonus points
 
@@ -25,6 +25,7 @@ are some additional things you could try:
 
 Then please share your thoughts in a comment on the submission. Did this
 experiment make the code better? Worse? Did you learn anything from it?
+
 
 ## Exception messages
 
@@ -42,11 +43,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest grains_test.py`
 
-- Python 3.4+: `pytest grains_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest grains_test.py`
 
 ### Common `pytest` options

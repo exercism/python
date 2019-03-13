@@ -50,6 +50,7 @@ the buffer is once again full.
 
     [D][7][8][9][A][B][C]
 
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
@@ -66,11 +67,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest circular_buffer_test.py`
 
-- Python 3.4+: `pytest circular_buffer_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest circular_buffer_test.py`
 
 ### Common `pytest` options

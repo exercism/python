@@ -8,11 +8,11 @@ So say you have a matrix like so:
     1  2  3
   |---------
 1 | 9  8  7
-2 | 5  3  2     <--- saddle point at (2,1)
+2 | 5  3  2     <--- saddle point at column 1, row 2, with value 5
 3 | 6  6  7
 ```
 
-It has a saddle point at (2, 1).
+It has a saddle point at column 1, row 2.
 
 It's called a "saddle point" because it is greater than or equal to
 every element in its row and less than or equal to every element in
@@ -23,8 +23,11 @@ A matrix may have zero or more saddle points.
 Your code should be able to provide the (possibly empty) list of all the
 saddle points for any given matrix.
 
+The matrix can have a different number of rows and columns (Non square).
+
 Note that you may find other definitions of matrix saddle points online,
 but the tests for this exercise follow the above unambiguous definition.
+
 
 ## Exception messages
 
@@ -42,11 +45,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest saddle_points_test.py`
 
-- Python 3.4+: `pytest saddle_points_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest saddle_points_test.py`
 
 ### Common `pytest` options

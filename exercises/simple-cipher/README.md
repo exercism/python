@@ -13,8 +13,8 @@ for A, and so with the others."
 
 Ciphers are very straight-forward algorithms that allow us to render
 text less readable while still allowing easy deciphering. They are
-vulnerable to many forms of cryptoanalysis, but we are lucky that
-generally our little sisters are not cryptoanalysts.
+vulnerable to many forms of cryptanalysis, but we are lucky that
+generally our little sisters are not cryptanalysts.
 
 The Caesar Cipher was used for some messages from Julius Caesar that
 were sent afield. Now Caesar knew that the cipher wasn't very good, but
@@ -61,7 +61,7 @@ substitution cipher a little more fault tolerant by providing a source
 of randomness and ensuring that the key contains only lowercase letters.
 
 If someone doesn't submit a key at all, generate a truly random key of
-at least 100 characters in length.
+at least 100 alphanumeric characters in length.
 
 ## Extensions
 
@@ -96,6 +96,7 @@ Since this is only an exercise, `random` is fine to use, but note that **it woul
 very insecure if actually used for cryptography.**
 
 
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
@@ -112,11 +113,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest simple_cipher_test.py`
 
-- Python 3.4+: `pytest simple_cipher_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest simple_cipher_test.py`
 
 ### Common `pytest` options

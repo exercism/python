@@ -18,9 +18,10 @@ An SGF file may look like this:
 
 This is a tree with three nodes:
 
-- The top level node has two properties: FF\[4\] (key = "FF", value =
-  "4") and C\[root\](key = "C", value = "root"). (FF indicates the
-  version of SGF and C is a comment.)
+- The top level node has three properties: FF\[4\] (key = "FF", value
+  = "4"), C\[root\](key = "C", value = "root") and SZ\[19\] (key =
+  "SZ", value = "19"). (FF indicates the version of SGF, C is a
+  comment and SZ is the size of the board.)
   - The top level node has a single child which has a single property:
     B\[aa\].  (Black plays on the point encoded as "aa", which is the
     1-1 point (which is a stupid place to play)).
@@ -64,6 +65,7 @@ structure of properties. You do not need to encode knowledge about the
 data types of properties, just use the rules for the
 [text](http://www.red-bean.com/sgf/sgf4.html#text) type everywhere.
 
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
@@ -80,11 +82,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest sgf_parsing_test.py`
 
-- Python 3.4+: `pytest sgf_parsing_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest sgf_parsing_test.py`
 
 ### Common `pytest` options

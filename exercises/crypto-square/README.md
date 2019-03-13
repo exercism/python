@@ -59,7 +59,7 @@ chunks with a single trailing space.
 ```
 
 Notice that were we to stack these, we could visually decode the
-cyphertext back in to the original message:
+ciphertext back in to the original message:
 
 ```text
 "imtgdvs"
@@ -71,6 +71,7 @@ cyphertext back in to the original message:
 "aohghn "
 "sseoau "
 ```
+
 
 ## Exception messages
 
@@ -88,11 +89,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest crypto_square_test.py`
 
-- Python 3.4+: `pytest crypto_square_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest crypto_square_test.py`
 
 ### Common `pytest` options

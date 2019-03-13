@@ -10,6 +10,7 @@ input: [1,[2,3,null,4],[null],5]
 
 output: [1,2,3,4,5]
 
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
@@ -26,11 +27,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest flatten_array_test.py`
 
-- Python 3.4+: `pytest flatten_array_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest flatten_array_test.py`
 
 ### Common `pytest` options
