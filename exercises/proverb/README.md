@@ -16,6 +16,7 @@ And all for the want of a nail.
 
 Note that the list of inputs may vary; your solution should be able to handle lists of arbitrary length and content. No line of the output text should be a static, unchanging string; all should vary according to the input given.
 
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
@@ -32,12 +33,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest proverb_test.py`
 
-- Python 2.7: `py.test proverb_test.py`
-- Python 3.4+: `pytest proverb_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest proverb_test.py`
 
 ### Common `pytest` options

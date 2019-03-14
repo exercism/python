@@ -29,6 +29,7 @@ allergens that score 256, 512, 1024, etc.).  Your program should
 ignore those components of the score.  For example, if the allergy
 score is 257, your program should only report the eggs (1) allergy.
 
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
@@ -45,12 +46,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest allergies_test.py`
 
-- Python 2.7: `py.test allergies_test.py`
-- Python 3.4+: `pytest allergies_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest allergies_test.py`
 
 ### Common `pytest` options

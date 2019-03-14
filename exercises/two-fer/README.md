@@ -18,9 +18,9 @@ One for you, one for me.
 
 Here are some examples:
 
-|Name    |String to return 
+|Name    |String to return
 |:-------|:------------------
-|Alice   |One for Alice, one for me. 
+|Alice   |One for Alice, one for me.
 |Bob     |One for Bob, one for me.
 |        |One for you, one for me.
 |Zaphod  |One for Zaphod, one for me.
@@ -41,12 +41,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest two_fer_test.py`
 
-- Python 2.7: `py.test two_fer_test.py`
-- Python 3.4+: `pytest two_fer_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest two_fer_test.py`
 
 ### Common `pytest` options

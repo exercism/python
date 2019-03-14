@@ -37,12 +37,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest hangman_test.py`
 
-- Python 2.7: `py.test hangman_test.py`
-- Python 3.4+: `pytest hangman_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest hangman_test.py`
 
 ### Common `pytest` options

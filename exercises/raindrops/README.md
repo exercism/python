@@ -15,6 +15,7 @@ The rules of `raindrops` are that if a given number:
 - 30 has both 3 and 5 as factors, but not 7, so the result would be "PlingPlang".
 - 34 is not factored by 3, 5, or 7, so the result would be "34".
 
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
@@ -31,12 +32,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest raindrops_test.py`
 
-- Python 2.7: `py.test raindrops_test.py`
-- Python 3.4+: `pytest raindrops_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest raindrops_test.py`
 
 ### Common `pytest` options
