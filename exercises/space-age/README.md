@@ -17,6 +17,7 @@ be able to say that they're 31.69 Earth-years old.
 If you're wondering why Pluto didn't make the cut, go watch [this
 youtube video](http://www.youtube.com/watch?v=Z_2gbGXzFbs).
 
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
@@ -33,12 +34,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest space_age_test.py`
 
-- Python 2.7: `py.test space_age_test.py`
-- Python 3.4+: `pytest space_age_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest space_age_test.py`
 
 ### Common `pytest` options
