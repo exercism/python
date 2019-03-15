@@ -1,11 +1,11 @@
 import unittest
 
-from retree import tree_from_traversals
+from satellite import tree_from_traversals
 
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
-class TwoFerTest(unittest.TestCase):
+class SatelliteTest(unittest.TestCase):
     def test_empty_tree(self):
         preorder = []
         inorder = []
