@@ -73,5 +73,6 @@ class SubstitutionCipherTest(SimpleCipherTest):
         cipher = Cipher('abc')
         self.assertEqual(cipher.decode('iboaqcnecbfcr'), 'iamapandabear')
 
+
 if __name__ == '__main__':
     unittest.main()
