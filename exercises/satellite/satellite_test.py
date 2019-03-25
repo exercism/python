@@ -3,7 +3,7 @@ import unittest
 from satellite import tree_from_traversals
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.0.0
 
 class SatelliteTest(unittest.TestCase):
     def test_empty_tree(self):
