@@ -1423,7 +1423,7 @@
       ]
     },
     {
-      "slug": "retree",
+      "slug": "satellite",
       "uuid": "18467e72-e3b0-403c-896a-ce337f96e6f7",
       "core": false,
       "unlocked_by": "markdown",
@@ -1548,6 +1548,16 @@
     {
       "slug": "resistor-color",
       "uuid": "d17bee9c-e803-4745-85ea-864f255fb04e",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "arrays"
+      ]
+    },
+    {
+      "slug": "resistor-colors",
+      "uuid": "089f06a6-0759-479c-8c00-d699525a1e22",
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
