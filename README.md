@@ -39,7 +39,7 @@ python2.7 test/check-exercises.py [exercise-name]
 
 To test all exercises (e.g., with Python 3):
 ```
-python3 test/check-exercises.py
+python3 -m pytest test/check-exercises.py
 ```
 
 
