@@ -5,11 +5,12 @@ from leap import is_leap_year
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.5.1
 
+
 class LeapTest(unittest.TestCase):
     def test_year_not_divisible_by_4(self):
         self.assertIs(is_leap_year(2015), False)
 
-    def year_divisible_by_2_not_divisible_by_4(self):
+    def test_year_divisible_by_2_not_divisible_by_4(self):
         self.assertIs(is_leap_year(1970), False)
 
     def test_year_divisible_by_4_not_divisible_by_100(self):
