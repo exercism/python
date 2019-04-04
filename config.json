@@ -1572,7 +1572,9 @@
       "unlocked_by": "change",
       "difficulty": 1,
       "topics": [
-        "algorithms"
+        "algorithms",
+        "lists",
+        "loops"
       ]
     }
   ]
