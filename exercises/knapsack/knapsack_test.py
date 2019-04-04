@@ -8,26 +8,31 @@ from knapsack import solve_knapsack
 class ChangeTest(unittest.TestCase):
     def test_no_items(self):
         self.assertEqual(solve_knapsack(100, []), 0)
+
     def test_one_item_too_heavy(self):
-        self.assertEqual(solve_knapsack(10, [{"weight": 100, "value": 1}]), 0)
+        self.assertEqual(solve_knapsack(10, [{"weight":100, "value":1}]), 0)
+
     def test_cannot_be_greedy_by_weight(self):
         self.assertEqual(solve_knapsack(10,
                                         [{"weight": 2, "value": 5},
                                          {"weight": 2, "value": 5},
                                          {"weight": 2, "value": 5},
                                          {"weight": 2, "value": 5},
-                                         {"weight": 10,"value":  21}]), 21)
+                                         {"weight": 10, "value": 21}]), 21)
+
     def test_cannot_be_greedy_by_value(self):
         self.assertEqual(solve_knapsack(10, [{"weight": 2, "value": 20},
                                              {"weight": 2, "value": 20},
                                              {"weight": 2, "value": 20},
                                              {"weight": 2, "value": 20},
                                              {"weight": 10, "value": 50}]), 80)
+
     def test_example_knapsack(self):
         self.assertEqual(solve_knapsack(10, [{"weight": 5, "value": 10},
                                              {"weight": 4, "value": 40},
                                              {"weight": 6, "value": 30},
                                              {"weight": 4, "value": 50}]), 90)
+
     def test_eight_items(self):
         self.assertEqual(solve_knapsack(104, [{"weight": 25, "value": 350},
                                               {"weight": 35, "value": 400},
@@ -37,8 +42,9 @@ class ChangeTest(unittest.TestCase):
                                               {"weight": 3, "value": 8},
                                               {"weight": 2, "value": 5},
                                               {"weight": 2, "value": 5}]), 900)
+
     def test_fifteen_items(self):
-        self.assertEqual(solve_knapsack(104, [{"weight": 70, "value": 135},
+        self.assertEqual(solve_knapsack(750, [{"weight": 70, "value": 135},
                                               {"weight": 73, "value": 139},
                                               {"weight": 77, "value": 149},
                                               {"weight": 80, "value": 150},
@@ -52,4 +58,18 @@ class ChangeTest(unittest.TestCase):
                                               {"weight": 113, "value":  214},
                                               {"weight": 115, "value":  221},
                                               {"weight": 118, "value":  229},
-                                              {"weight": 120, "value":  240}]), 1458)
+                                              {"weight": 120, "value": 240}]), 1458)
+
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex
+        except AttributeError:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
+
+
+if __name__ == "__main__":
+    unittest.main()
