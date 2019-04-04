@@ -9,47 +9,47 @@ class ChangeTest(unittest.TestCase):
     def test_no_items(self):
         self.assertEqual(solve_knapsack(100, []), 0)
     def test_one_item_too_heavy(self):
-        self.assertEqual(solve_knapsack(10, [(100, 1)]), 0)
+        self.assertEqual(solve_knapsack(10, [{"weight": 100, "value": 1}]), 0)
     def test_cannot_be_greedy_by_weight(self):
         self.assertEqual(solve_knapsack(10,
-                                        [(2, 5),
-                                         (2, 5),
-                                         (2, 5),
-                                         (2, 5),
-                                         (10, 21)]), 21)
+                                        [{"weight": 2, "value": 5},
+                                         {"weight": 2, "value": 5},
+                                         {"weight": 2, "value": 5},
+                                         {"weight": 2, "value": 5},
+                                         {"weight": 10,"value":  21}]), 21)
     def test_cannot_be_greedy_by_value(self):
-        self.assertEqual(solve_knapsack(10, [(2, 20),
-                                             (2, 20),
-                                             (2, 20),
-                                             (2, 20),
-                                             (10, 50)]), 80)
+        self.assertEqual(solve_knapsack(10, [{"weight": 2, "value": 20},
+                                             {"weight": 2, "value": 20},
+                                             {"weight": 2, "value": 20},
+                                             {"weight": 2, "value": 20},
+                                             {"weight": 10, "value": 50}]), 80)
     def test_example_knapsack(self):
-        self.assertEqual(solve_knapsack(10, [(5, 10),
-                                             (4, 40),
-                                             (6, 30),
-                                             (4, 50)]), 90)
+        self.assertEqual(solve_knapsack(10, [{"weight": 5, "value": 10},
+                                             {"weight": 4, "value": 40},
+                                             {"weight": 6, "value": 30},
+                                             {"weight": 4, "value": 50}]), 90)
     def test_eight_items(self):
-        self.assertEqual(solve_knapsack(104, [(25, 350),
-                                              (35, 400),
-                                              (45, 450),
-                                              (5, 20),
-                                              (25, 70),
-                                              (3, 8),
-                                              (2, 5),
-                                              (2, 5)]), 900)
+        self.assertEqual(solve_knapsack(104, [{"weight": 25, "value": 350},
+                                              {"weight": 35, "value": 400},
+                                              {"weight": 45, "value": 450},
+                                              {"weight": 5, "value": 20},
+                                              {"weight": 25, "value": 70},
+                                              {"weight": 3, "value": 8},
+                                              {"weight": 2, "value": 5},
+                                              {"weight": 2, "value": 5}]), 900)
     def test_fifteen_items(self):
-        self.assertEqual(solve_knapsack(104, [(70, 135),
-                                              (73, 139),
-                                              (77, 149),
-                                              (80, 150),
-                                              (82, 156),
-                                              (87, 163),
-                                              (90, 173),
-                                              (94, 184),
-                                              (98, 192),
-                                              (106, 201),
-                                              (110, 210),
-                                              (113, 214),
-                                              (115, 221),
-                                              (118, 229),
-                                              (120, 240)]), 1458)
+        self.assertEqual(solve_knapsack(104, [{"weight": 70, "value": 135},
+                                              {"weight": 73, "value": 139},
+                                              {"weight": 77, "value": 149},
+                                              {"weight": 80, "value": 150},
+                                              {"weight": 82, "value": 156},
+                                              {"weight": 87, "value": 163},
+                                              {"weight": 90, "value": 173},
+                                              {"weight": 94, "value": 184},
+                                              {"weight": 98, "value": 192},
+                                              {"weight": 106, "value":  201},
+                                              {"weight": 110, "value":  210},
+                                              {"weight": 113, "value":  214},
+                                              {"weight": 115, "value":  221},
+                                              {"weight": 118, "value":  229},
+                                              {"weight": 120, "value":  240}]), 1458)
