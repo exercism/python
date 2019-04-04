@@ -3,9 +3,9 @@ def solve_knapsack(max_weight, items):
     for weight in range(1, max_weight + 1):
         for i, item in enumerate(items, 1):
             if item["weight"] <= weight:
-                value_with_item = item["value"] + t[weight - item["weight"]][i - 1]
+                value = item["value"] + t[weight - item["weight"]][i - 1]
                 value_without_item = t[weight][i - 1]
-                t[weight][i] = max(value_with_item, value_without_item)
+                t[weight][i] = max(value, value_without_item)
             else:
                 t[weight][i] = t[weight][i - 1]
     return t[max_weight][len(items)]

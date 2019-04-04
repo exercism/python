@@ -10,7 +10,7 @@ class ChangeTest(unittest.TestCase):
         self.assertEqual(solve_knapsack(100, []), 0)
 
     def test_one_item_too_heavy(self):
-        self.assertEqual(solve_knapsack(10, [{"weight":100, "value":1}]), 0)
+        self.assertEqual(solve_knapsack(10, [{"weight": 100, "value": 1}]), 0)
 
     def test_cannot_be_greedy_by_weight(self):
         self.assertEqual(solve_knapsack(10,
@@ -44,21 +44,22 @@ class ChangeTest(unittest.TestCase):
                                               {"weight": 2, "value": 5}]), 900)
 
     def test_fifteen_items(self):
-        self.assertEqual(solve_knapsack(750, [{"weight": 70, "value": 135},
-                                              {"weight": 73, "value": 139},
-                                              {"weight": 77, "value": 149},
-                                              {"weight": 80, "value": 150},
-                                              {"weight": 82, "value": 156},
-                                              {"weight": 87, "value": 163},
-                                              {"weight": 90, "value": 173},
-                                              {"weight": 94, "value": 184},
-                                              {"weight": 98, "value": 192},
-                                              {"weight": 106, "value":  201},
-                                              {"weight": 110, "value":  210},
-                                              {"weight": 113, "value":  214},
-                                              {"weight": 115, "value":  221},
-                                              {"weight": 118, "value":  229},
-                                              {"weight": 120, "value": 240}]), 1458)
+        self.assertEqual(solve_knapsack(750,
+                                        [{"weight": 70, "value": 135},
+                                         {"weight": 73, "value": 139},
+                                         {"weight": 77, "value": 149},
+                                         {"weight": 80, "value": 150},
+                                         {"weight": 82, "value": 156},
+                                         {"weight": 87, "value": 163},
+                                         {"weight": 90, "value": 173},
+                                         {"weight": 94, "value": 184},
+                                         {"weight": 98, "value": 192},
+                                         {"weight": 106, "value":  201},
+                                         {"weight": 110, "value":  210},
+                                         {"weight": 113, "value":  214},
+                                         {"weight": 115, "value":  221},
+                                         {"weight": 118, "value":  229},
+                                         {"weight": 120, "value": 240}]), 1458)
 
     # Utility functions
     def setUp(self):
