@@ -61,16 +61,6 @@ class ChangeTest(unittest.TestCase):
                                          {"weight": 118, "value":  229},
                                          {"weight": 120, "value": 240}]), 1458)
 
-    # Utility functions
-    def setUp(self):
-        try:
-            self.assertRaisesRegex
-        except AttributeError:
-            self.assertRaisesRegex = self.assertRaisesRegexp
-
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
 
 if __name__ == "__main__":
     unittest.main()
