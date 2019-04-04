@@ -1564,6 +1564,18 @@
       "topics": [
         "arrays"
       ]
+    },
+    {
+      "slug": "knapsack",
+      "uuid": "b0301d0b-d97a-4043-bd82-ba1edf8c1b16",
+      "core": false,
+      "unlocked_by": "clock",
+      "difficulty": 5,
+      "topics": [
+        "algorithms",
+        "lists",
+        "loops"
+      ]
     }
   ]
 }
