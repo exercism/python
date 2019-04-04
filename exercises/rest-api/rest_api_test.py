@@ -4,7 +4,7 @@ import json
 from rest_api import RestAPI
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.2
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.1
 
 class RestAPITest(unittest.TestCase):
     def test_no_users(self):
@@ -320,6 +320,56 @@ class RestAPITest(unittest.TestCase):
                     "owed_by": {
                     },
                     "balance": -1.0
+                }
+            ]
+        }
+        self.assertDictEqual(json.loads(response), expected)
+
+    def test_lender_owes_borrower_same_as_new_loan(self):
+        database = {
+            "users": [
+                {
+                    "name": "Adam",
+                    "owes": {
+                        "Bob": 3.0
+                    },
+                    "owed_by": {},
+                    "balance": -3.0
+                },
+                {
+                    "name": "Bob",
+                    "owes": {},
+                    "owed_by": {
+                        "Adam": 3.0
+                    },
+                    "balance": 3.0
+                }
+            ]
+        }
+        api = RestAPI(database)
+        payload = json.dumps({
+            'lender': 'Adam',
+            'borrower': 'Bob',
+            'amount': 3.0
+        })
+        response = api.post('/iou', payload)
+        expected = {
+            'users': [
+                {
+                    "name": "Adam",
+                    "owes": {
+                    },
+                    "owed_by": {
+                    },
+                    "balance": 0.0
+                },
+                {
+                    "name": "Bob",
+                    "owes": {
+                    },
+                    "owed_by": {
+                    },
+                    "balance": 0.0
                 }
             ]
         }
