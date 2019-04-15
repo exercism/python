@@ -323,5 +323,9 @@ if __name__ == '__main__':
         if opts.ignore and exercise in opts.ignore:
             continue
         if os.path.isdir(os.path.join('exercises', exercise)):
-            result = check_test_version(exercise, **kwargs) and result
+            try:
+                result = check_test_version(exercise, **kwargs) and result
+            except FileNotFoundError as e:
+                print(str(e))
+                result = False
     sys.exit(0 if result else 1)
