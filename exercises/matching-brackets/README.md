@@ -1,8 +1,9 @@
-# Bracket Push
+# Matching Brackets
 
 Given a string containing brackets `[]`, braces `{}`, parentheses `()`,
 or any combination thereof, verify that any and all pairs are matched
 and nested correctly.
+
 
 ## Exception messages
 
@@ -22,11 +23,11 @@ raise Exception("Meaningful message indicating the source of the error")
 
 To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
 
-- Python 2.7: `py.test bracket_push_test.py`
-- Python 3.4+: `pytest bracket_push_test.py`
+- Python 2.7: `py.test matching_brackets_test.py`
+- Python 3.4+: `pytest matching_brackets_test.py`
 
 Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
-`python -m pytest bracket_push_test.py`
+`python -m pytest matching_brackets_test.py`
 
 ### Common `pytest` options
 
@@ -38,7 +39,7 @@ For other options, see `python -m pytest -h`
 
 ## Submitting Exercises
 
-Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/bracket-push` directory.
+Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/matching-brackets` directory.
 
 You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Workspace`.
 
