@@ -10,6 +10,6 @@ The most common form of Python is compiled in C; this is often invisible to the 
 
 Python was started by Guido van Rossum in 1989; its name is an homage to the comedy troupe Monty Python.
 
-Python 2 is used widely but support [may end by 2020](https://www.python.org/dev/peps/pep-0373/#id2); it is highly recommended that beginners use Python 3 (they are similar, but users will encounter [some differences](http://blog.teamtreehouse.com/python-2-vs-python-3)).
+This track uses Python 3. It is highly recommended that students upgrade to at least Python 3.6 as some features used by this track may not be supported in earlier version of Python.
 
 Python development is shepherded by [The Python Software Foundation](https://www.python.org/about/) and there are active community-based user groups worldwide.
