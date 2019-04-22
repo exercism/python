@@ -1,3 +1,8 @@
-class HighScores(object):
-    def __init__(self, scores):
-        pass
+def latest(scores):
+    pass # Put your code here
+
+def personal_best(scores):
+    pass # Put your code here 
+
+def personal_top_three(scores):
+    pass # Put your code here

@@ -2,15 +2,7 @@
 
 Manage a game player's High Score list.
 
-Your task is to build a high-score component of the classic Frogger game, one of the highest selling and addictive games of all time, and a classic of the arcade era. Your task is to write methods that return the highest score from the list, the last added score and the three highest scores.
-
-In this exercise you're going to create a **class** and use lists to organize scores.  _Don't worry, it's not as complicated as you think!_ 
-
--   [**A First Look at Classes**](https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes) from the Python 3 documentation. 
--   [**How to Define a Class in Python**](https://realpython.com/python3-object-oriented-programming/#how-to-define-a-class-in-python) from the Real Python website.  
--   [**Data Structures in Python**](https://docs.python.org/3/tutorial/datastructures.html) from the Python 3 documentation.
-
-
+Your task is to build a high-score component of the classic Frogger game, one of the highest selling and addictive games of all time, and a classic of the arcade era. Your task is to write three functions that from the original score list will return the highest score, the last added score and the three highest scores respectivly.
 
 ## Exception messages
 
