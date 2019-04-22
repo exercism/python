@@ -7,7 +7,7 @@ from high_scores import latest, personal_best, personal_top_three
 
 
 class HighScoreTest(unittest.TestCase):
-    
+
     def test_latest_score(self):
         scores = [100, 0, 90, 30]
         expected = 30
