@@ -1,10 +1,10 @@
 def latest(scores):
-    pass  # Put your code here
+    pass
 
 
 def personal_best(scores):
-    pass  # Put your code here
+    pass
 
 
 def personal_top_three(scores):
-    pass  # Put your code here
+    pass
