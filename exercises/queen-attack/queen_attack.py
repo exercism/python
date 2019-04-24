@@ -1,6 +1,6 @@
-def board(white_position, black_position):
-    pass
+class Queen(object):
+    def __init__(self, row, column):
+        pass
 
-
-def can_attack(white_position, black_position):
-    pass
+    def can_attack(self, another_queen):
+        pass

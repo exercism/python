@@ -3,7 +3,9 @@ import unittest
 from word_count import word_count
 
 
-class WordCountTests(unittest.TestCase):
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
+
+class WordCountTest(unittest.TestCase):
 
     def test_count_one_word(self):
         self.assertEqual(
@@ -17,7 +19,7 @@ class WordCountTests(unittest.TestCase):
             {'one': 1, 'of': 1, 'each': 1}
         )
 
-    def test_count_multiple_occurences(self):
+    def test_count_multiple_occurrences_of_a_word(self):
         self.assertEqual(
             word_count('one fish two fish red fish blue fish'),
             {'one': 1, 'fish': 4, 'two': 1, 'red': 1, 'blue': 1}
@@ -47,7 +49,7 @@ class WordCountTests(unittest.TestCase):
             {'testing': 2, '1': 1, '2': 1}
         )
 
-    def test_mixed_case(self):
+    def test_normalize_case(self):
         self.assertEqual(
             word_count('go Go GO Stop stop'),
             {'go': 3, 'stop': 2}
@@ -66,21 +68,19 @@ class WordCountTests(unittest.TestCase):
              'and': 1}
         )
 
+    def test_multiple_spaces_not_detected_as_a_word(self):
+        self.assertEqual(
+            word_count(' multiple   whitespaces'),
+            {'multiple': 1, 'whitespaces': 1}
+        )
+
+    def test_alternating_word_separators(self):
+        self.assertEqual(
+            word_count(",\n,one,\n ,two \n 'three'"),
+            {'one': 1, 'two': 1, 'three': 1}
+        )
+
     # Additional tests for this track
-
-    def test_multiple_spaces(self):
-        self.assertEqual(
-            word_count('wait for       it'),
-            {'wait': 1, 'for': 1, 'it': 1}
-        )
-
-    def test_newlines(self):
-        self.assertEqual(
-            word_count('rah rah ah ah ah\nroma roma ma\n'
-                       'ga ga oh la la\nwant your bad romance'),
-            {'rah': 2, 'ah': 3, 'roma': 2, 'ma': 1, 'ga': 2, 'oh': 1, 'la': 2,
-             'want': 1, 'your': 1, 'bad': 1, 'romance': 1}
-        )
 
     def test_tabs(self):
         self.assertEqual(

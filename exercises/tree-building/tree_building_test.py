@@ -3,7 +3,7 @@ import unittest
 from tree_building import Record, BuildTree
 
 
-class TestBuildingTest(unittest.TestCase):
+class TreeBuildingTest(unittest.TestCase):
     """
         Record(record_id, parent_id): records given to be processed
         Node(node_id): Node in tree

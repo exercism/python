@@ -1,26 +1,32 @@
-sudo: false
-
 language: python
-
+dist: xenial
+  
 python:
   - 2.7
-  - 3.3
-  - 3.4
   - 3.5
   - 3.6
+  - 3.7
   - nightly
 
 matrix:
+  include:
+    # Python 3.4 not supported in xenial
+    - python: 3.4
+      dist: trusty
+    - env: JOB=HOUSEKEEPING
+      install: ./bin/fetch-configlet
+      before_script: ./bin/check-readmes.sh
+      script:
+        # May provide more useful output than configlet fmt
+        # if JSON is not valid or items are incomplete
+        - ./bin/configlet lint .
+        # Verify correct formatting in config.json
+        - ./bin/configlet fmt . && git diff --quiet
   allow_failures:
     - python: nightly
 
-install:
-  - pip install -r requirements-travis.txt
-
 before_script:
   - flake8
-  - ./bin/fetch-configlet
-  - ./bin/configlet lint .
-
-script:
+  
+script: 
   - ./test/check-exercises.py

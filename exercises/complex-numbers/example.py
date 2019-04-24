@@ -40,6 +40,6 @@ class ComplexNumber(object):
         return ComplexNumber(self.real, -1 * self.imaginary)
 
     def exp(self):
-        r = round(math.cos(self.imaginary), 8) * math.exp(self.real)
-        i = round(math.sin(self.imaginary), 8) * math.exp(self.real)
+        r = math.cos(self.imaginary) * math.exp(self.real)
+        i = math.sin(self.imaginary) * math.exp(self.real)
         return ComplexNumber(r, i)

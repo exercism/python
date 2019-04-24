@@ -18,10 +18,14 @@ def evaluate(input_data):
         values = input_data.pop(0).split()
         values.pop()
         values.pop(0)
-        key = values.pop(0)
+        key = values.pop(0).lower()
         if is_integer(key):
             raise ValueError("Integers cannot be redefined")
-        defines[key] = values
+        defines[key] = [
+            x
+            for v in values
+            for x in defines.get(v, [v])
+        ]
     stack = []
     input_data = input_data[-1].split()
     while any(input_data):

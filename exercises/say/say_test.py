@@ -3,7 +3,7 @@ import unittest
 from say import say
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class SayTest(unittest.TestCase):
     def test_zero(self):
@@ -25,9 +25,6 @@ class SayTest(unittest.TestCase):
         self.assertEqual(say(100), "one hundred")
 
     # additional track specific test
-    def test_one_hundred_twenty(self):
-        self.assertEqual(say(120), "one hundred and twenty")
-
     def test_one_hundred_twenty_three(self):
         self.assertEqual(say(123), "one hundred and twenty-three")
 
@@ -37,16 +34,8 @@ class SayTest(unittest.TestCase):
     def test_one_thousand_two_hundred_thirty_four(self):
         self.assertEqual(say(1234), "one thousand two hundred and thirty-four")
 
-    # additional track specific test
-    def test_eight_hundred_and_ten_thousand(self):
-        self.assertEqual(say(810000), "eight hundred and ten thousand")
-
     def test_one_million(self):
         self.assertEqual(say(1e6), "one million")
-
-    # additional track specific test
-    def test_one_million_two(self):
-        self.assertEqual(say(1000002), "one million and two")
 
     def test_1002345(self):
         self.assertEqual(

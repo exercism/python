@@ -3,9 +3,9 @@ import unittest
 from phone_number import Phone
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.7.0
 
-class PhoneTest(unittest.TestCase):
+class PhoneNumberTest(unittest.TestCase):
     def test_cleans_number(self):
         number = Phone("(223) 456-7890").number
         self.assertEqual(number, "2234567890")
@@ -46,13 +46,37 @@ class PhoneTest(unittest.TestCase):
         with self.assertRaisesWithMessage(ValueError):
             Phone("123-@:!-7890")
 
-    def test_invalid_when_area_code_does_start_with_1(self):
+    def test_invalid_if_area_code_starts_with_0(self):
+        with self.assertRaisesWithMessage(ValueError):
+            Phone("(023) 456-7890")
+
+    def test_invalid_if_area_code_starts_with_1(self):
         with self.assertRaisesWithMessage(ValueError):
             Phone("(123) 456-7890")
 
-    def test_invalid_when_exchange_code_does_start_with_1(self):
+    def test_invalid_if_exchange_code_starts_with_0(self):
         with self.assertRaisesWithMessage(ValueError):
             Phone("(223) 056-7890")
+
+    def test_invalid_if_exchange_code_starts_with_1(self):
+        with self.assertRaisesWithMessage(ValueError):
+            Phone("(223) 156-7890")
+
+    def test_invalid_if_area_code_starts_with_0_on_valid_11_digit_number(self):
+        with self.assertRaisesWithMessage(ValueError):
+            Phone("1 (023) 456-7890")
+
+    def test_invalid_if_area_code_starts_with_1_on_valid_11_digit_number(self):
+        with self.assertRaisesWithMessage(ValueError):
+            Phone("1 (123) 456-7890")
+
+    def test_invalid_exchange_code_starts_with_0_valid_11_digit_number(self):
+        with self.assertRaisesWithMessage(ValueError):
+            Phone("1 (223) 056-7890")
+
+    def test_invalid_exchange_code_starts_with_1_valid_11_digit_number(self):
+        with self.assertRaisesWithMessage(ValueError):
+            Phone("1 (223) 156-7890")
 
     # Track specific tests
     def test_area_code(self):

@@ -14,7 +14,7 @@ Please see the [contributing guide](https://github.com/exercism/docs/blob/master
 ## Working on the Exercises
 
 We welcome both improvements to the existing exercises and new exercises.
-A list of missing exercise can be found here: http://exercism.io/languages/python/todo
+A list of missing exercise can be found here: https://github.com/exercism/python/issues/417#issuecomment-366040062
 
 
 ### Conventions
@@ -23,13 +23,14 @@ A list of missing exercise can be found here: http://exercism.io/languages/pytho
 - We use `unittest` (Python Standard Library) and no 3rd-party-framework.
 - We use the parameter order `self.assertEqual(actual, expected)` ([#440](https://github.com/exercism/python/issues/440)).
 - We use context managers (`with self.assertRaises(\<exception type\>):`) for testing for exceptions ([#477](https://github.com/exercism/python/issues/477)).
+- We use an established utility method to confirm that expected exceptions contain a non-empty message. This method must be included for any test class with an exception-based test case ([#1080](https://github.com/exercism/python/issues/1080#issuecomment-442068539)).
 - We use `assertIs(actual, True)` and `assertIs(actual, False)` rather than `assertTrue(actual)` or `assertFalse(actual)` ([#419](https://github.com/exercism/python/pull/419)).
 - We use a comment string in the test file to reference the version of the exercise's `canonical-data.json` that tests were adapted from (wording can be found in: [#784](https://github.com/exercism/python/issues/784)).
 
 
 ### Testing
 
-All exercises must be compatible with Python versions 2.7 and 3.3 upwards.
+All exercises must be compatible with Python versions 2.7 and 3.4 upwards.
 
 To test a single exercise (e.g., with Python 2.7):
 ```
@@ -70,10 +71,6 @@ Please try to follow the [The seven rules of a great Git commit message](https:/
 If you're interested, Tim Pope even has an [entire blog post](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html) on good commit messages.
 
 If you're new to Git, take a look at [this short guide](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/README.md#git-basics).
-
-
-## Python icon
-The Python logo is an unregistered trademark. We are using a derived logo with the permission of the Python Software Foundation.
 
 ## License
 This repository uses the [MIT License](/LICENSE).

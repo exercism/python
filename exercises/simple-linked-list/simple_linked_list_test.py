@@ -5,7 +5,7 @@ from simple_linked_list import LinkedList, EmptyListException
 
 # No canonical data available for this exercise
 
-class LinkedListTest(unittest.TestCase):
+class SimpleLinkedListTest(unittest.TestCase):
     def test_empty_list_has_len_zero(self):
         sut = LinkedList()
         self.assertEqual(len(sut), 0)
@@ -42,7 +42,7 @@ class LinkedListTest(unittest.TestCase):
         self.assertEqual(len(sut), 1)
         self.assertEqual(sut.head().value(), 5)
 
-    def test_can_from_non_empty_list(self):
+    def test_can_pop_from_non_empty_list(self):
         sut = LinkedList([3, 4, 5])
         self.assertEqual(sut.pop(), 5)
         self.assertEqual(len(sut), 2)

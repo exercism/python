@@ -1,66 +1,60 @@
 import unittest
-from collections import Sequence
-from types import GeneratorType
 
 from grade_school import School
 
 
-class SchoolTest(unittest.TestCase):
-    def setUp(self):
-        # assertCountEqual is py3, py2 only knowns assetItemsEqual
-        if not hasattr(self, 'assertCountEqual'):
-            self.assertCountEqual = self.assertItemsEqual
-        self.school = School("Haleakala Hippy School")
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
-    def test_an_empty_school(self):
-        for n in range(1, 9):
-            self.assertCountEqual(self.school.grade(n), set())
+class GradeSchoolTest(unittest.TestCase):
+    def test_adding_student_adds_them_to_sorted_roster(self):
+        school = School()
+        school.add_student(name='Aimee', grade=2)
+        expected = ['Aimee']
+        self.assertEqual(school.roster(), expected)
 
-    def test_add_student(self):
-        self.school.add("Aimee", 2)
-        self.assertCountEqual(self.school.grade(2), ("Aimee", ))
+    def test_adding_more_students_adds_them_to_sorted_roster(self):
+        school = School()
+        school.add_student(name='Blair', grade=2)
+        school.add_student(name='James', grade=2)
+        school.add_student(name='Paul', grade=2)
+        expected = ['Blair', 'James', 'Paul']
+        self.assertEqual(school.roster(), expected)
 
-    def test_add_more_students_in_same_class(self):
-        self.school.add("James", 2)
-        self.school.add("Blair", 2)
-        self.school.add("Paul", 2)
-        self.assertCountEqual(self.school.grade(2), ("James", "Blair", "Paul"))
+    def test_students_in_different_grades_in_same_roster(self):
+        school = School()
+        school.add_student(name='Chelsea', grade=3)
+        school.add_student(name='Logan', grade=7)
+        expected = ['Chelsea', 'Logan']
+        self.assertEqual(school.roster(), expected)
 
-    def test_add_students_to_different_grades(self):
-        self.school.add("Chelsea", 3)
-        self.school.add("Logan", 7)
-        self.assertCountEqual(self.school.grade(3), ("Chelsea", ))
-        self.assertCountEqual(self.school.grade(7), ("Logan", ))
+    def test_roster_returns_empty_list_if_no_students_are_enrolled(self):
+        self.assertEqual(School().roster(), [])
 
-    def test_get_students_in_a_grade(self):
-        self.school.add("Franklin", 5)
-        self.school.add("Bradley", 5)
-        self.school.add("Jeff", 1)
-        self.assertCountEqual(self.school.grade(5), ("Franklin", "Bradley"))
+    def test_roster_is_sorted_by_grade_then_name(self):
+        school = School()
+        for name, grade in [
+            ('Peter', 2),
+            ('Anna', 1),
+            ('Barb', 1),
+            ('Zoe', 2),
+            ('Alex', 2),
+            ('Jim', 3),
+            ('Charlie', 1),
+        ]:
+            school.add_student(name, grade)
+        expected = ['Anna', 'Barb', 'Charlie', 'Alex', 'Peter', 'Zoe', 'Jim']
+        self.assertEqual(school.roster(), expected)
 
-    def test_get_students_in_a_non_existant_grade(self):
-        self.assertCountEqual(self.school.grade(1), set())
+    def test_grade_returns_students_in_that_grade_in_alphabetical_order(self):
+        school = School()
+        school.add_student(name='Franklin', grade=5)
+        school.add_student(name='Bradley', grade=5)
+        school.add_student(name='Jeff', grade=1)
+        expected = ['Bradley', 'Franklin']
+        self.assertEqual(school.grade(5), expected)
 
-    def test_sort_school(self):
-        students = [(3, ("Kyle", )), (4, ("Christopher", "Jennifer", )),
-                    (6, ("Kareem", ))]
-
-        for grade, students_in_grade in students[::-1]:
-            for student in students_in_grade[::-1]:
-                self.school.add(student, grade)
-
-        result = self.school.sort()
-
-        # Attempts to catch false positives
-        self.assertTrue(
-            isinstance(result, Sequence) or
-            isinstance(result, GeneratorType) or
-            callable(getattr(result, '__reversed__', False)))
-
-        result_list = list(result.items()
-                           if hasattr(result, "items") else result)
-
-        self.assertEqual(students, result_list)
+    def test_grade_returns_empty_list_if_no_students_are_in_that_grade(self):
+        self.assertEqual(School().grade(1), [])
 
 
 if __name__ == '__main__':

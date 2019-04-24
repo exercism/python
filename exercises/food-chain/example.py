@@ -43,3 +43,21 @@ def chain():
         song += verse
 
     return song
+
+
+def verses(letter):
+    return letter.replace('die.', 'die.slice').split('slice')
+
+
+def recite(start_verse, end_verse):
+    generated = [verse.strip().split("\n") for verse in verses(chain())]
+    if start_verse == end_verse:
+        return generated[start_verse-1]
+    else:
+        result = []
+        for i in range(start_verse-1, end_verse):
+            result += generated[i] + [""]
+
+        # Pop out the last empty string
+        result.pop()
+        return result

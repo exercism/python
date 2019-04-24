@@ -1,29 +1,49 @@
-BOOK_PRICE = 8
+from functools import reduce
+
+BASE_COST = 800
+discount = [1.0, 1.0, 0.95, 0.9, 0.8, 0.75]
 
 
-def _group_price(size):
-    discounts = [0, .05, .1, .2, .25]
-    if not (0 < size <= 5):
-        raise ValueError('size must be in 1..' + len(discounts))
-    return BOOK_PRICE * size * (1 - discounts[size - 1])
+def groupCost(g):
+    return len(g) * discount[len(g)]
 
 
-def calculate_total(books, price_so_far=0.):
-    if not books:
-        return price_so_far
+class Grouping:
+    def __init__(self, groups=None):
+        self.groups = [set()] if groups is None else groups
 
-    groups = list(set(books))
-    min_price = float('inf')
+    def total(self):
+        return sum(map(groupCost, self.groups)) * BASE_COST
 
-    for i in range(len(groups)):
+    def dup(self):
+        return Grouping(list(map(set, self.groups)))
 
-        remaining_books = books[:]
+    def add_to_valid(self, b):
+        """Returns all possible groupings from current grouping adding book b
+        """
+        other = self.dup()
+        other.groups.sort(key=lambda g: len(g))
+        results = []
+        for i, g in enumerate(other.groups):
+            if b not in g:
+                o2 = other.dup()
+                o2.groups[i].add(b)
+                results.append(o2)
+        if not results:
+            other.groups.append(set([b]))
+            return [other]
+        return results
 
-        for v in groups[:i + 1]:
-            remaining_books.remove(v)
+    def __lt__(self, other):
+        return self.total() < other.total()
 
-        price = calculate_total(remaining_books,
-                                price_so_far + _group_price(i + 1))
-        min_price = min(min_price, price)
 
-    return min_price
+def step(rs, b):
+    return [g for r in rs for g in r.add_to_valid(b)]
+
+
+def calculate_total(books):
+    if len(books) == 0:
+        return 0
+    start = Grouping([{books[0]}])
+    return round(min(reduce(step, books[1:], [start])).total())

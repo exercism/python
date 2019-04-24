@@ -1,6 +1,2 @@
-def verse(number):
-    pass
-
-
-def song(number1, number2=0):
+def recite(start, take=1):
     pass

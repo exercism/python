@@ -12,11 +12,15 @@ regarded as forming a rectangle when printed with intervening newlines.
 
 For example, the sentence
 
-> If man was meant to stay on the ground, god would have given us roots.
+```text
+"If man was meant to stay on the ground, god would have given us roots."
+```
 
 is normalized to:
 
-> ifmanwasmeanttostayonthegroundgodwouldhavegivenusroots
+```text
+"ifmanwasmeanttostayonthegroundgodwouldhavegivenusroots"
+```
 
 The plaintext should be organized in to a rectangle.  The size of the
 rectangle (`r x c`) should be decided by the length of the message,
@@ -27,13 +31,13 @@ Our normalized text is 54 characters long, dictating a rectangle with
 `c = 8` and `r = 7`:
 
 ```text
-ifmanwas
-meanttos
-tayonthe
-groundgo
-dwouldha
-vegivenu
-sroots
+"ifmanwas"
+"meanttos"
+"tayonthe"
+"groundgo"
+"dwouldha"
+"vegivenu"
+"sroots  "
 ```
 
 The coded message is obtained by reading down the columns going left to
@@ -42,31 +46,30 @@ right.
 The message above is coded as:
 
 ```text
-imtgdvsfearwermayoogoanouuiontnnlvtwttddesaohghnsseoau
+"imtgdvsfearwermayoogoanouuiontnnlvtwttddesaohghnsseoau"
 ```
 
-Output the encoded text in chunks.  Phrases that fill perfect rectangles
-`(r X c)` should be output `c` chunks of `r` length, separated by spaces.
-Phrases that do not fill perfect rectangles will have `n` empty spaces.
-Those spaces should be distributed evenly, added to the end of the last
-`n` chunks.
+Output the encoded text in chunks that fill perfect rectangles `(r X c)`,
+with `c` chunks of `r` length, separated by spaces. For phrases that are
+`n` characters short of the perfect rectangle, pad each of the last `n`
+chunks with a single trailing space.
 
 ```text
-imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau 
+"imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau "
 ```
 
 Notice that were we to stack these, we could visually decode the
 cyphertext back in to the original message:
 
 ```text
-imtgdvs
-fearwer
-mayoogo
-anouuio
-ntnnlvt
-wttddes
-aohghn
-sseoau
+"imtgdvs"
+"fearwer"
+"mayoogo"
+"anouuio"
+"ntnnlvt"
+"wttddes"
+"aohghn "
+"sseoau "
 ```
 
 ## Exception messages
@@ -77,25 +80,43 @@ every exercise will require you to raise an exception, but for those that do, th
 a message.
 
 To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
-`raise Exception`, you shold write:
+`raise Exception`, you should write:
 
 ```python
 raise Exception("Meaningful message indicating the source of the error")
 ```
 
+## Running the tests
+
+To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+
+- Python 2.7: `py.test crypto_square_test.py`
+- Python 3.4+: `pytest crypto_square_test.py`
+
+Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+`python -m pytest crypto_square_test.py`
+
+### Common `pytest` options
+
+- `-v` : enable verbose output
+- `-x` : stop running tests on first failure
+- `--ff` : run failures from previous test before running other test cases
+
+For other options, see `python -m pytest -h`
 
 ## Submitting Exercises
 
-Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
+Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/crypto-square` directory.
 
-For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
+You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Workspace`.
 
 For more detailed information about running tests, code style and linting,
-please see the [help page](http://exercism.io/languages/python).
+please see [Running the Tests](http://exercism.io/tracks/python/tests).
 
 ## Source
 
 J Dalbey's Programming Practice problems [http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html](http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

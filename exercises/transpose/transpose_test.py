@@ -4,7 +4,7 @@ from transpose import transpose
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
-class TransposeTests(unittest.TestCase):
+class TransposeTest(unittest.TestCase):
     def test_empty_string(self):
         input_line = ""
         expected = ""

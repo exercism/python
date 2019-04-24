@@ -7,8 +7,3 @@ class Cipher(object):
 
     def decode(self, text):
         pass
-
-
-class Caesar(object):
-    def __init__(self):
-        pass

@@ -20,14 +20,9 @@ def verse(day_number):
     if len(gifts) > 1:
         gifts[:-1] = [', '.join(gifts[:-1])]
     gifts = ', and '.join(gifts)
-    return 'On the {} day of Christmas my true love gave to me, {}.\n'.format(
+    return 'On the {} day of Christmas my true love gave to me: {}.'.format(
         ORDINAL[day_number], gifts)
 
 
-def verses(start, end):
-    return ''.join([verse(n) + '\n'
-                    for n in range(start, end + 1)])
-
-
-def sing():
-    return verses(1, 12)
+def recite(start, end):
+    return [verse(n) for n in range(start, end + 1)]

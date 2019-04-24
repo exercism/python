@@ -3,121 +3,81 @@ import unittest
 from scale_generator import Scale
 
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.0.0
+
 class ScaleGeneratorTest(unittest.TestCase):
 
-    def test_naming_scale(self):
-        chromatic = Scale('c', 'chromatic')
-        expected = 'C chromatic'
-        actual = chromatic.name
-        self.assertEqual(expected, actual)
+    # Test chromatic scales
+    def test_chromatic_scale_with_sharps(self):
+        expected = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#',
+                    'G', 'G#', 'A', 'A#', 'B']
+        self.assertEqual(Scale('C').chromatic(), expected)
 
-    def test_chromatic_scale(self):
-        chromatic = Scale('C', 'chromatic')
-        expected = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#',
-                    'B']
-        actual = chromatic.pitches
-        self.assertEqual(expected, actual)
+    def test_chromatic_scale_with_flats(self):
+        expected = ['F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B',
+                    'C', 'Db', 'D', 'Eb', 'E']
+        self.assertEqual(Scale('F').chromatic(), expected)
 
-    def test_another_chromatic_scale(self):
-        chromatic = Scale('F', 'chromatic')
-        expected = ['F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb',
-                    'E']
-        actual = chromatic.pitches
-        self.assertEqual(expected, actual)
-
-    def test_naming_major_scale(self):
-        major = Scale('G', 'major', 'MMmMMMm')
-        expected = 'G major'
-        actual = major.name
-        self.assertEqual(expected, actual)
-
-    def test_major_scale(self):
-        major = Scale('C', 'major', 'MMmMMMm')
+    # Test scales with specified intervals
+    def test_simple_major_scale(self):
         expected = ['C', 'D', 'E', 'F', 'G', 'A', 'B']
-        actual = major.pitches
-        self.assertEqual(expected, actual)
+        self.assertEqual(Scale('C').interval('MMmMMMm'), expected)
 
-    def test_another_major_scale(self):
-        major = Scale('G', 'major', 'MMmMMMm')
+    def test_major_scale_with_sharps(self):
         expected = ['G', 'A', 'B', 'C', 'D', 'E', 'F#']
-        actual = major.pitches
-        self.assertEqual(expected, actual)
+        self.assertEqual(Scale('G').interval('MMmMMMm'), expected)
 
-    def test_minor_scale(self):
-        minor = Scale('f#', 'minor', 'MmMMmMM')
+    def test_major_scale_with_flats(self):
+        expected = ['F', 'G', 'A', 'Bb', 'C', 'D', 'E']
+        self.assertEqual(Scale('F').interval('MMmMMMm'), expected)
+
+    def test_minor_scale_with_sharps(self):
         expected = ['F#', 'G#', 'A', 'B', 'C#', 'D', 'E']
-        actual = minor.pitches
-        self.assertEqual(expected, actual)
+        self.assertEqual(Scale('f#').interval('MmMMmMM'), expected)
 
-    def test_another_minor_scale(self):
-        minor = Scale('bb', 'minor', 'MmMMmMM')
+    def test_minor_scale_with_flats(self):
         expected = ['Bb', 'C', 'Db', 'Eb', 'F', 'Gb', 'Ab']
-        actual = minor.pitches
-        self.assertEqual(expected, actual)
+        self.assertEqual(Scale('bb').interval('MmMMmMM'), expected)
 
     def test_dorian_mode(self):
-        dorian = Scale('d', 'dorian', 'MmMMMmM')
         expected = ['D', 'E', 'F', 'G', 'A', 'B', 'C']
-        actual = dorian.pitches
-        self.assertEqual(expected, actual)
+        self.assertEqual(Scale('d').interval('MmMMMmM'), expected)
 
     def test_mixolydian_mode(self):
-        mixolydian = Scale('Eb', 'mixolydian', 'MMmMMmM')
         expected = ['Eb', 'F', 'G', 'Ab', 'Bb', 'C', 'Db']
-        actual = mixolydian.pitches
-        self.assertEqual(expected, actual)
+        self.assertEqual(Scale('Eb').interval('MMmMMmM'), expected)
 
     def test_lydian_mode(self):
-        lydian = Scale('a', 'lydian', 'MMMmMMm')
         expected = ['A', 'B', 'C#', 'D#', 'E', 'F#', 'G#']
-        actual = lydian.pitches
-        self.assertEqual(expected, actual)
+        self.assertEqual(Scale('a').interval('MMMmMMm'), expected)
 
     def test_phrygian_mode(self):
-        phrygian = Scale('e', 'phrygian', 'mMMMmMM')
         expected = ['E', 'F', 'G', 'A', 'B', 'C', 'D']
-        actual = phrygian.pitches
-        self.assertEqual(expected, actual)
+        self.assertEqual(Scale('e').interval('mMMMmMM'), expected)
 
     def test_locrian_mode(self):
-        locrian = Scale('g', 'locrian', 'mMMmMMM')
         expected = ['G', 'Ab', 'Bb', 'C', 'Db', 'Eb', 'F']
-        actual = locrian.pitches
-        self.assertEqual(expected, actual)
+        self.assertEqual(Scale('g').interval('mMMmMMM'), expected)
 
     def test_harmonic_minor(self):
-        harmonic_minor = Scale('d', 'harmonic_minor', 'MmMMmAm')
         expected = ['D', 'E', 'F', 'G', 'A', 'Bb', 'Db']
-        actual = harmonic_minor.pitches
-        self.assertEqual(expected, actual)
+        self.assertEqual(Scale('d').interval('MmMMmAm'), expected)
 
     def test_octatonic(self):
-        octatonic = Scale('C', 'octatonic', 'MmMmMmMm')
         expected = ['C', 'D', 'D#', 'F', 'F#', 'G#', 'A', 'B']
-        actual = octatonic.pitches
-        self.assertEqual(expected, actual)
+        self.assertEqual(Scale('C').interval('MmMmMmMm'), expected)
 
     def test_hexatonic(self):
-        hexatonic = Scale('Db', 'hexatonic', 'MMMMMM')
         expected = ['Db', 'Eb', 'F', 'G', 'A', 'B']
-        actual = hexatonic.pitches
-        self.assertEqual(expected, actual)
+        self.assertEqual(Scale('Db').interval('MMMMMM'), expected)
 
     def test_pentatonic(self):
-        pentatonic = Scale('A', 'pentatonic', 'MMAMA')
         expected = ['A', 'B', 'C#', 'E', 'F#']
-        actual = pentatonic.pitches
-        self.assertEqual(expected, actual)
+        self.assertEqual(Scale('A').interval('MMAMA'), expected)
 
     def test_enigmatic(self):
-        enigmatic = Scale('G', 'enigmatic', 'mAMMMmm')
         expected = ['G', 'G#', 'B', 'C#', 'D#', 'F', 'F#']
-        actual = enigmatic.pitches
-        self.assertEqual(expected, actual)
-
-    def test_brokeninterval(self):
-        with self.assertRaisesWithMessage(ValueError):
-            Scale('G', 'enigmatic', 'mAMMMmM')
+        self.assertEqual(Scale('G').interval('mAMMMmm'), expected)
 
     # Utility functions
     def setUp(self):

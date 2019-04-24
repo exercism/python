@@ -10,11 +10,7 @@ import tempfile
 import json
 
 # Allow high-performance tests to be skipped
-ALLOW_SKIP = ['largest-series-product']
-
-
-def python_executable_name():
-    return 'python{}.{}'.format(sys.version_info.major, sys.version_info.minor)
+ALLOW_SKIP = ['alphametics', 'largest-series-product']
 
 
 def check_assignment(name, test_file):
@@ -33,7 +29,7 @@ def check_assignment(name, test_file):
                 dst_file.writelines(lines)
         shutil.copyfile(os.path.join(os.path.dirname(test_file), 'example.py'),
                         os.path.join(workdir, '{}.py'.format(example_name)))
-        return subprocess.call([python_executable_name(), test_file_out])
+        return subprocess.call([sys.executable, test_file_out])
     finally:
         shutil.rmtree(workdir)
 
@@ -76,7 +72,7 @@ def main():
                 failures.append('{} (TestFailed)'.format(exercise))
         print('')
 
-    print('TestEnvironment:', python_executable_name().capitalize(), '\n\n')
+    print('TestEnvironment:', sys.executable.capitalize(), '\n\n')
 
     if failures:
         print('FAILURES: ', ', '.join(failures))
