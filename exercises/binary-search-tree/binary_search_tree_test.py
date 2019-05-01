@@ -9,20 +9,20 @@ class BinarySearchTreeTest(unittest.TestCase):
 
     def test_data_is_retained(self):
         expected = TreeNode('4', None, None)
-        self.assertTreeEqual(BinarySearchTree(['4']).data(), expected)
+        self.assertEqual(BinarySearchTree(['4']).data(), expected)
 
     # Test inserting data at proper node
     def test_smaller_data_at_left_node(self):
         expected = TreeNode('4', TreeNode('2', None, None), None)
-        self.assertTreeEqual(BinarySearchTree(['4', '2']).data(), expected)
+        self.assertEqual(BinarySearchTree(['4', '2']).data(), expected)
 
     def test_same_number_at_left_node(self):
         expected = TreeNode('4', TreeNode('4', None, None), None)
-        self.assertTreeEqual(BinarySearchTree(['4', '4']).data(), expected)
+        self.assertEqual(BinarySearchTree(['4', '4']).data(), expected)
 
     def test_greater_number_at_right_node(self):
         expected = TreeNode('4', None, TreeNode('5', None, None))
-        self.assertTreeEqual(BinarySearchTree(['4', '5']).data(), expected)
+        self.assertEqual(BinarySearchTree(['4', '5']).data(), expected)
 
     def test_can_create_complex_tree(self):
         expected = TreeNode(
@@ -38,7 +38,7 @@ class BinarySearchTreeTest(unittest.TestCase):
                 TreeNode('7', None, None)
             )
         )
-        self.assertTreeEqual(
+        self.assertEqual(
             BinarySearchTree(['4', '2', '6', '1', '3', '5', '7']).data(),
             expected
         )
@@ -69,7 +69,7 @@ class BinarySearchTreeTest(unittest.TestCase):
         )
 
     # Utilities
-    def assertTreeEqual(self, tree_one, tree_two):
+    def assertEqual(self, tree_one, tree_two):
         try:
             self.compare_tree(tree_one, tree_two)
         except AssertionError:
