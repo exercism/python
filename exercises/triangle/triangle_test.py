@@ -3,19 +3,19 @@ import unittest
 from triangle import is_equilateral, is_isosceles, is_scalene
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.1
 
 class is_equilateralTests(unittest.TestCase):
-    def test_true_if_all_sides_are_equal(self):
+    def test_all_sides_are_equal(self):
         self.assertIs(is_equilateral([2, 2, 2]), True)
 
-    def test_false_if_any_side_is_unequal(self):
+    def test_any_side_is_unequal(self):
         self.assertIs(is_equilateral([2, 3, 2]), False)
 
-    def test_false_if_no_sides_are_equal(self):
+    def test_no_sides_are_equal(self):
         self.assertIs(is_equilateral([5, 4, 6]), False)
 
-    def test_false_if_all_sides_are_zero(self):
+    def test_all_zero_sides_is_not_a_triangle(self):
         self.assertIs(is_equilateral([0, 0, 0]), False)
 
     def test_sides_may_be_floats(self):
@@ -23,28 +23,28 @@ class is_equilateralTests(unittest.TestCase):
 
 
 class is_isoscelesTests(unittest.TestCase):
-    def test_true_if_last_two_sides_are_equal(self):
+    def test_last_two_sides_are_equal(self):
         self.assertIs(is_isosceles([3, 4, 4]), True)
 
-    def test_true_if_first_two_sides_are_equal(self):
+    def test_first_two_sides_are_equal(self):
         self.assertIs(is_isosceles([4, 4, 3]), True)
 
-    def test_true_if_first_and_last_sides_are_equal(self):
+    def test_first_and_last_sides_are_equal(self):
         self.assertIs(is_isosceles([4, 3, 4]), True)
 
-    def test_is_equilateral_triangles_are_also_is_isosceles(self):
+    def test_equilateral_triangles_are_also_isosceles(self):
         self.assertIs(is_isosceles([4, 4, 4]), True)
 
-    def test_false_if_no_sides_are_equal(self):
+    def test_no_sides_are_equal(self):
         self.assertIs(is_isosceles([2, 3, 4]), False)
 
-    def test_violation_of_triangle_inequality_is_not_isosceles_1(self):
+    def test_first_triangle_inequality_violation(self):
         self.assertIs(is_isosceles([1, 1, 3]), False)
 
-    def test_violation_of_triangle_inequality_is_not_isosceles_2(self):
+    def test_second_triangle_inequality_violation(self):
         self.assertIs(is_isosceles([1, 3, 1]), False)
 
-    def test_violation_of_triangle_inequality_is_not_isosceles_3(self):
+    def test_third_triangle_inequality_violation(self):
         self.assertIs(is_isosceles([3, 1, 1]), False)
 
     def test_sides_may_be_floats(self):
@@ -52,16 +52,16 @@ class is_isoscelesTests(unittest.TestCase):
 
 
 class is_scaleneTests(unittest.TestCase):
-    def test_true_if_no_sides_are_equal(self):
+    def test_no_sides_are_equal(self):
         self.assertIs(is_scalene([5, 4, 6]), True)
 
-    def test_false_if_all_sides_are_equal(self):
+    def test_all_sides_are_equal(self):
         self.assertIs(is_scalene([4, 4, 4]), False)
 
-    def test_false_if_two_sides_are_equal(self):
+    def test_two_sides_are_equal(self):
         self.assertIs(is_scalene([4, 4, 3]), False)
 
-    def test_violation_of_triangle_inequality_not_is_scalene(self):
+    def test_may_not_violate_triangle_inequality(self):
         self.assertIs(is_scalene([7, 3, 2]), False)
 
     def test_sides_may_be_floats(self):
