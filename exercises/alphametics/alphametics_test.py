@@ -10,10 +10,10 @@ class AlphameticsTest(unittest.TestCase):
         self.assertEqual(solve("I + BB == ILL"), {"I": 1, "B": 9, "L": 0})
 
     def test_solution_must_have_unique_value_for_each_letter(self):
-        self.assertEqual(solve("A == B"), {})
+        self.assertEqual(solve("A == B"), None)
 
     def test_leading_zero_solution_is_invalid(self):
-        self.assertEqual(solve("ACA + DD == BD"), {})
+        self.assertEqual(solve("ACA + DD == BD"), None)
 
     def test_puzzle_with_two_digits_final_carry(self):
         self.assertEqual(
