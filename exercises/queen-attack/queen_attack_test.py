@@ -3,7 +3,7 @@ import unittest
 from queen_attack import Queen
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.2.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.3.0
 
 class QueenAttackTest(unittest.TestCase):
 
@@ -50,7 +50,7 @@ class QueenAttackTest(unittest.TestCase):
         self.assertIs(Queen(2, 2).can_attack(Queen(1, 1)), True)
 
     def test_attack_diagonal4(self):
-        self.assertIs(Queen(2, 2).can_attack(Queen(5, 5)), True)
+        self.assertIs(Queen(1, 7).can_attack(Queen(0, 6)), True)
 
     # Track-specific tests
     def test_queens_same_position_can_attack(self):
