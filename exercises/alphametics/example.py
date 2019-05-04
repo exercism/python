@@ -108,11 +108,11 @@ def check_rec(eqparams, tracecombo=(dict(), 0, set(range(10))), p=0):
             # if the recursive call returned a non-empty dictionary
             # this means the recursion has found a solution
             # otherwise, proceed to the new permutation
-            if len(rectest) > 0:
+            if rectest and len(rectest) > 0:
                 return rectest
     # if no permutations are avaialble or no
-    # permutation gave the result return the empty dictionary
-    return dict()
+    # permutation gave the result return None
+    return None
 
 
 def solve(an):
