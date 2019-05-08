@@ -38,7 +38,7 @@ def format_table(results):
 def tally(data):
     table = defaultdict(lambda: [0, 0, 0])
 
-    for line in data.split('\n'):
+    for line in data:
         for team, result in parse_game(line):
             table[team][result] += 1
 
