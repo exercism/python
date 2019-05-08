@@ -34,7 +34,6 @@ def format_table(results):
     return table
 
 
-
 def tally(data):
     table = defaultdict(lambda: [0, 0, 0])
 
