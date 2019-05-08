@@ -23,6 +23,7 @@ def calculate_points(stats):
     return stats[0] * 3 + stats[1]
 
 
+
 def format_table(results):
     table = ['Team                           | MP |  W |  D |  L |  P']
 
@@ -37,7 +38,7 @@ def format_table(results):
 
 def tally(data):
     table = defaultdict(lambda: [0, 0, 0])
-    
+
     for line in data:
         for team, result in parse_game(line):
             table[team][result] += 1
