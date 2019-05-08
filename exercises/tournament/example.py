@@ -31,8 +31,8 @@ def format_table(results):
         team_fmt = '{0:30} | {1:2} | {3:2} | {4:2} | {5:2} | {2:2}'
         table.append(
             team_fmt.format(team, sum(games), calculate_points(games), *games))
+    return table
 
-    return '\n'.join(table)
 
 
 def tally(data):
@@ -40,6 +40,9 @@ def tally(data):
 
     for line in data:
         for team, result in parse_game(line):
+            print(team)
+            print(result)
+            print(table)
             table[team][result] += 1
 
     return format_table(table)
