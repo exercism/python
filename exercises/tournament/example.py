@@ -39,9 +39,6 @@ def tally(data):
 
     for line in data:
         for team, result in parse_game(line):
-            print(team)
-            print(result)
-            print(table)
             table[team][result] += 1
 
     return format_table(table)
