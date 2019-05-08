@@ -23,7 +23,6 @@ def calculate_points(stats):
     return stats[0] * 3 + stats[1]
 
 
-
 def format_table(results):
     table = ['Team                           | MP |  W |  D |  L |  P']
 
