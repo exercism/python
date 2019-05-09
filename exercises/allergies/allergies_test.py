@@ -22,7 +22,7 @@ class AllergiesTest(unittest.TestCase):
 
     def test_allergic_to_something_but_not_eggs(self):
         self.assertIs(Allergies(2).allergic_to("eggs"), False)
-        
+
     def test_eggs_allergic_to_everything(self):
         self.assertIs(Allergies(255).allergic_to("eggs"), True)
 
