@@ -44,10 +44,10 @@ class KindergartenGardenTest(unittest.TestCase):
             "VCRRGVRG\nRVGCCGCV",
             students="Samantha Patricia Xander Roger".split())
         self.assertEqual(
-            garden.plants("Patricia"),
+            garden.plants("Samantha"),
             "Violets Clover Radishes Violets".split())
         self.assertEqual(
-            garden.plants("Xander"), "Radishes Grass Clover Violets".split())
+            garden.plants("Roger"), "Radishes Grass Clover Violets".split())
 
 
 if __name__ == '__main__':
