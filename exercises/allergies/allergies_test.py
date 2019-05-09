@@ -10,8 +10,7 @@ if not hasattr(unittest.TestCase, 'assertCountEqual'):
 # Tests adapted from `problem-specifications//canonical-data.json` @ v2.0.0
 
 class AllergiesTest(unittest.TestCase):
-
-
+    
     def test_eggs_not_allergic_to_anything(self):
         self.assertIs(Allergies(0).allergic_to("eggs"), False)
 
@@ -23,10 +22,9 @@ class AllergiesTest(unittest.TestCase):
 
     def test_allergic_to_something_but_not_eggs(self):
         self.assertIs(Allergies(2).allergic_to("eggs"), False)
-
+        
     def test_eggs_allergic_to_everything(self):
         self.assertIs(Allergies(255).allergic_to("eggs"), True)
-
 
     def test_peanuts_not_allergic_to_anything(self):
         self.assertIs(Allergies(0).allergic_to("peanuts"), False)
@@ -43,7 +41,6 @@ class AllergiesTest(unittest.TestCase):
     def test_peanuts_allergic_to_everything(self):
         self.assertIs(Allergies(255).allergic_to("peanuts"), True)
 
-
     def test_shellfish_not_allergic_to_anything(self):
         self.assertIs(Allergies(0).allergic_to("shellfish"), False)
 
@@ -59,7 +56,6 @@ class AllergiesTest(unittest.TestCase):
     def test_shellfish_allergic_to_everything(self):
         self.assertIs(Allergies(255).allergic_to("shellfish"), True)
 
-
     def test_strawberries_not_allergic_to_anything(self):
         self.assertIs(Allergies(0).allergic_to("strawberries"), False)
 
@@ -74,7 +70,6 @@ class AllergiesTest(unittest.TestCase):
 
     def test_strawberries_allergic_to_everything(self):
         self.assertIs(Allergies(255).allergic_to("strawberries"), True)
-
 
     def test_tomatoes_not_allergic_to_anything(self):
         self.assertIs(Allergies(0).allergic_to("tomatoes"), False)
@@ -107,7 +102,6 @@ class AllergiesTest(unittest.TestCase):
     def test_chocolate_alergic_to_everything(self):
         self.assertIs(Allergies(255).allergic_to("chocolate"), True)
 
-
     def test_pollen_not_alergic_to_anything(self):
         self.assertIs(Allergies(0).allergic_to("pollen"), False)
 
@@ -123,7 +117,6 @@ class AllergiesTest(unittest.TestCase):
     def test_pollen_allergic_to_everything(self):
         self.assertIs(Allergies(255).allergic_to("pollen"), True)
 
-
     def test_cats_not_allergic_to_anything(self):
         self.assertIs(Allergies(0).allergic_to("cats"), False)
 
@@ -138,7 +131,6 @@ class AllergiesTest(unittest.TestCase):
 
     def test_cats_allergic_to_everything(self):
         self.assertIs(Allergies(255).allergic_to('cats'),True)
-
 
     def test_no_allergies(self):
         self.assertEqual(Allergies(0).lst, [])
@@ -176,7 +168,6 @@ class AllergiesTest(unittest.TestCase):
                 'eggs', 'shellfish', 'strawberries', 'tomatoes', 'chocolate',
                 'pollen', 'cats'
             ])
-
 
 if __name__ == '__main__':
     unittest.main()
