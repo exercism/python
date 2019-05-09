@@ -10,7 +10,7 @@ if not hasattr(unittest.TestCase, 'assertCountEqual'):
 # Tests adapted from `problem-specifications//canonical-data.json` @ v2.0.0
 
 class AllergiesTest(unittest.TestCase):
-    
+
     def test_eggs_not_allergic_to_anything(self):
         self.assertIs(Allergies(0).allergic_to("eggs"), False)
 
@@ -86,7 +86,6 @@ class AllergiesTest(unittest.TestCase):
     def test_tomatoes_allergic_to_everything(self):
         self.assertIs(Allergies(255).allergic_to("tomatoes"), True)
 
-
     def test_chocolate_not_allergic_to_anything(self):
         self.assertIs(Allergies(0).allergic_to("chocolate"), False)
 
@@ -121,16 +120,16 @@ class AllergiesTest(unittest.TestCase):
         self.assertIs(Allergies(0).allergic_to("cats"), False)
 
     def test_allergic_only_to_cats(self):
-        self.assertIs(Allergies(128).allergic_to("cats"),True)
+        self.assertIs(Allergies(128).allergic_to("cats"), True)
 
     def test_allergic_to_cats_and_something_else(self):
-        self.assertIs(Allergies(192).allergic_to("cats"),True)
+        self.assertIs(Allergies(192).allergic_to("cats"), True)
 
     def test_allergic_to_something_but_not_cats(self):
-        self.assertIs(Allergies(64).allergic_to("cats"),False)
+        self.assertIs(Allergies(64).allergic_to("cats"), False)
 
     def test_cats_allergic_to_everything(self):
-        self.assertIs(Allergies(255).allergic_to('cats'),True)
+        self.assertIs(Allergies(255).allergic_to('cats'), True)
 
     def test_no_allergies(self):
         self.assertEqual(Allergies(0).lst, [])
