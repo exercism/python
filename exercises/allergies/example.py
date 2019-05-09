@@ -14,7 +14,7 @@ class Allergies(object):
     def __init__(self, score):
         self.score = score
 
-    def is_allergic_to(self, allergy):
+    def allergic_to(self, allergy):
         return bool(self.score & 1 << self._allergies.index(allergy))
 
     @property
