@@ -20,4 +20,4 @@ class Allergies(object):
     @property
     def lst(self):
         return [allergy for allergy in self._allergies
-                if self.is_allergic_to(allergy)]
+                if self.allergic_to(allergy)]
