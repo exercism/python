@@ -798,7 +798,7 @@
       ]
     },
     {
-      "slug": "bracket-push",
+      "slug": "matching-brackets",
       "uuid": "45229a7c-6703-4240-8287-16645881a043",
       "core": false,
       "unlocked_by": "isogram",
@@ -1447,6 +1447,38 @@
       ]
     },
     {
+      "slug": "resistor-color",
+      "uuid": "d17bee9c-e803-4745-85ea-864f255fb04e",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "arrays"
+      ]
+    },
+    {
+      "slug": "resistor-color-duo",
+      "uuid": "089f06a6-0759-479c-8c00-d699525a1e22",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "arrays"
+      ]
+    },
+    {
+      "slug": "knapsack",
+      "uuid": "b0301d0b-d97a-4043-bd82-ba1edf8c1b16",
+      "core": false,
+      "unlocked_by": "clock",
+      "difficulty": 5,
+      "topics": [
+        "algorithms",
+        "lists",
+        "loops"
+      ]
+    },
+    {
       "slug": "accumulate",
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "core": false,
@@ -1544,26 +1576,6 @@
       "difficulty": 0,
       "topics": null,
       "deprecated": true
-    },
-    {
-      "slug": "resistor-color",
-      "uuid": "d17bee9c-e803-4745-85ea-864f255fb04e",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "arrays"
-      ]
-    },
-    {
-      "slug": "resistor-colors",
-      "uuid": "089f06a6-0759-479c-8c00-d699525a1e22",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "arrays"
-      ]
     }
   ]
 }

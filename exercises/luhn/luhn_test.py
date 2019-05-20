@@ -5,7 +5,7 @@ import unittest
 from luhn import Luhn
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.5.0
 
 class LuhnTest(unittest.TestCase):
     def test_single_digit_strings_can_not_be_valid(self):
@@ -32,9 +32,6 @@ class LuhnTest(unittest.TestCase):
     def test_valid_number_with_an_even_number_of_digits(self):
         self.assertIs(Luhn("095 245 88").is_valid(), True)
 
-    def test_valid_strings_with_a_non_digit_included_become_invalid(self):
-        self.assertIs(Luhn("055a 444 285").is_valid(), False)
-
     def test_valid_strings_with_non_digit_added_at_end_become_invalid(self):
         self.assertIs(Luhn("059a").is_valid(), False)
 
@@ -53,7 +50,10 @@ class LuhnTest(unittest.TestCase):
     def test_input_digit_9_is_correctly_converted_to_output_digit_9(self):
         self.assertIs(Luhn("091").is_valid(), True)
 
-    def test_strings_with_non_digits_is_invalid(self):
+    def test_using_ascii_value_for_non_doubled_non_digit_isnot_allowed(self):
+        self.assertIs(Luhn("055b 444 285").is_valid(), False)
+
+    def test_using_ascii_value_for_doubled_non_digit_isnot_allowed(self):
         self.assertIs(Luhn(":9").is_valid(), False)
 
     def test_is_valid_can_be_called_repeatedly(self):

@@ -1,11 +1,11 @@
 import unittest
 
-from resistor_colors import value
+from resistor_color_duo import value
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.0.0
 
-class ResistorColorsTest(unittest.TestCase):
+class ResistorColorDuoTest(unittest.TestCase):
     def test_brown_and_black(self):
         self.assertEqual(value(['brown', 'black']), 10)
 
