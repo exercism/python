@@ -1,4 +1,4 @@
-def binary_search(search_list, value):
+def find(search_list, value):
     low = 0
     high = len(search_list) - 1
     while low <= high:
