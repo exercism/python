@@ -30,12 +30,14 @@ class SaddlePointsTest(unittest.TestCase):
 
     def test_identify_multiple_saddle_points_in_column(self):
         matrix = [[4, 5, 4], [3, 5, 5], [1, 5, 4]]
-        expected = [{"row": 1, "column": 2}, {"row": 2, "column": 2}, {"row": 3, "column": 2}]
+        expected = [{"row": 1, "column": 2}, {"row": 2, "column": 2},
+                    {"row": 3, "column": 2}]
         self.assertEqual(saddle_points(matrix), expected)
 
     def test_identify_multiple_saddle_points_in_row(self):
         matrix = [[6, 7, 8], [5, 5, 5], [7, 5, 6]]
-        expected = [{"row": 2, "column": 1}, {"row": 2, "column": 2}, {"row": 2, "column": 3}]
+        expected = [{"row": 2, "column": 1}, {"row": 2, "column": 2},
+                    {"row": 2, "column": 3}]
         self.assertEqual(saddle_points(matrix), expected)
 
     def test_identify_saddle_point_in_bottom_right_corner(self):
@@ -45,15 +47,18 @@ class SaddlePointsTest(unittest.TestCase):
 
     def test_non_square_matrix_with_2_saddle_points(self):
         matrix = [[3, 1, 3], [3, 2, 4]]
-        self.assertEqual(saddle_points(matrix), [{"row": 1, "column": 1}, {"row": 1, "column": 3}])
+        self.assertEqual(saddle_points(matrix), [{"row": 1, "column": 1},
+                                                 {"row": 1, "column": 3}])
 
     def test_single_column_matrix_has_saddle_point_min_value(self):
         matrix = [[2], [1], [4], [1]]
-        self.assertEqual(saddle_points(matrix), [{"row": 2, "column": 1}, {"row": 4, "column": 1}])
+        self.assertEqual(saddle_points(matrix), [{"row": 2, "column": 1},
+                                                 {"row": 4, "column": 1}])
 
     def test_single_row_matrix_has_saddle_point_in_max_value(self):
         matrix = [[2, 5, 3, 5]]
-        self.assertEqual(saddle_points(matrix), [{"row": 1, "column": 2}, {"row": 1, "column": 4}])
+        self.assertEqual(saddle_points(matrix), [{"row": 1, "column": 2},
+                                                 {"row": 1, "column": 4}])
 
     # Additional tests for this track
 
