@@ -1,11 +1,11 @@
-def saddle_points(matrix):
-    if not matrix:
-        return [{}]
-    if any(len(row) != len(matrix[0]) for row in matrix):
+def saddle_points(m):
+    if not m:
+        return set()
+    if any(len(r) != len(m[0]) for r in m):
         raise ValueError('irregular matrix')
-    mmax = [max(row) for row in matrix]
-    mmin = [min(col) for col in zip(*matrix)]
-    points = [{"row": index + 1, "column": col_index + 1} for index in range(len(matrix))
-              for col_index in range(len(matrix[0])) if mmax[index] == mmin[col_index]]
+    mmax = [max(r) for r in m]
+    mmin = [min(c) for c in zip(*m)]
+    points = [(i+1, j+1) for i in range(len(m))
+              for j in range(len(m[0])) if mmax[i] == mmin[j]]
 
-    return points or [{}]
+    return set(points)
