@@ -3,7 +3,7 @@ import unittest
 from bob import response
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.5.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
 
 class BobTest(unittest.TestCase):
     def test_stating_something(self):
