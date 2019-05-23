@@ -5,8 +5,8 @@ from collatz_conjecture import steps
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.1
 
-class CollatzConjectureTest(unittest.TestCase):
 
+class CollatzConjectureTest(unittest.TestCase):
     def test_zero_steps_for_one(self):
         self.assertEqual(steps(1), 0)
 
@@ -38,5 +38,5 @@ class CollatzConjectureTest(unittest.TestCase):
         return self.assertRaisesRegex(exception, r".+")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
