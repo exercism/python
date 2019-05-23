@@ -4,8 +4,8 @@ BASE_COST = 800
 discount = [1.0, 1.0, 0.95, 0.9, 0.8, 0.75]
 
 
-def groupCost(g):
-    return len(g) * discount[len(g)]
+def group_cost(group):
+    return len(group) * discount[len(group)]
 
 
 class Grouping:
@@ -13,24 +13,25 @@ class Grouping:
         self.groups = [set()] if groups is None else groups
 
     def total(self):
-        return sum(map(groupCost, self.groups)) * BASE_COST
+        return sum(map(group_cost, self.groups)) * BASE_COST
 
     def dup(self):
         return Grouping(list(map(set, self.groups)))
 
-    def add_to_valid(self, b):
-        """Returns all possible groupings from current grouping adding book b
+    def add_to_valid(self, book):
+        """Returns all possible groupings from the
+        current grouping adding book
         """
         other = self.dup()
         other.groups.sort(key=lambda g: len(g))
         results = []
-        for i, g in enumerate(other.groups):
-            if b not in g:
-                o2 = other.dup()
-                o2.groups[i].add(b)
-                results.append(o2)
+        for index, group in enumerate(other.groups):
+            if book not in group:
+                other2 = other.dup()
+                other2.groups[index].add(book)
+                results.append(other2)
         if not results:
-            other.groups.append(set([b]))
+            other.groups.append(set([book]))
             return [other]
         return results
 
@@ -38,12 +39,13 @@ class Grouping:
         return self.total() < other.total()
 
 
-def step(rs, b):
-    return [g for r in rs for g in r.add_to_valid(b)]
+def step(basket, book):
+    return [group for groupings in basket
+            for group in groupings.add_to_valid(book)]
 
 
-def calculate_total(books):
-    if len(books) == 0:
+def total(basket):
+    if len(basket) == 0:
         return 0
-    start = Grouping([{books[0]}])
-    return round(min(reduce(step, books[1:], [start])).total())
+    start = Grouping([{basket[0]}])
+    return round(min(reduce(step, basket[1:], [start])).total())
