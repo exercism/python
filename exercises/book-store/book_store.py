@@ -1,2 +1,2 @@
-def calculate_total(books):
+def total(basket):
     pass
