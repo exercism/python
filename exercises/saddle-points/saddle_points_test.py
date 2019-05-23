@@ -10,7 +10,7 @@ import unittest
 from saddle_points import saddle_points
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.6.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.5.0
 
 class SaddlePointsTest(unittest.TestCase):
     def test_identify_single_saddle_point(self):
