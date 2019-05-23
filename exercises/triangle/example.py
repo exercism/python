@@ -5,16 +5,16 @@ def valid(sides):
     )
 
 
-def is_equilateral(sides):
+def equilateral(sides):
     return valid(sides) and all(sides[0] == s for s in sides)
 
 
-def is_isosceles(sides):
+def isosceles(sides):
     return (
         valid(sides) and
         any(s1 == s2 for s1, s2 in zip(sorted(sides), sorted(sides)[1:]))
     )
 
 
-def is_scalene(sides):
-    return valid(sides) and not is_isosceles(sides)
+def scalene(sides):
+    return valid(sides) and not isosceles(sides)
