@@ -1,2 +1,2 @@
-def hey(phrase):
+def response(hey_bob):
     pass
