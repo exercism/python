@@ -1,4 +1,4 @@
-def collatz_steps(n):
+def steps(n):
     if n <= 0:
         raise ValueError("input should be positive")
 
