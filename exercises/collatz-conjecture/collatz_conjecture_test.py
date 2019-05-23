@@ -1,6 +1,6 @@
 import unittest
 
-from collatz_conjecture import collatz_steps
+from collatz_conjecture import steps
 
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.1
@@ -8,24 +8,24 @@ from collatz_conjecture import collatz_steps
 class CollatzConjectureTest(unittest.TestCase):
 
     def test_zero_steps_for_one(self):
-        self.assertEqual(collatz_steps(1), 0)
+        self.assertEqual(steps(1), 0)
 
     def test_divide_if_even(self):
-        self.assertEqual(collatz_steps(16), 4)
+        self.assertEqual(steps(16), 4)
 
     def test_even_and_odd_steps(self):
-        self.assertEqual(collatz_steps(12), 9)
+        self.assertEqual(steps(12), 9)
 
     def test_large_number_of_even_and_odd_steps(self):
-        self.assertEqual(collatz_steps(1000000), 152)
+        self.assertEqual(steps(1000000), 152)
 
     def test_zero_is_invalid_input(self):
         with self.assertRaisesWithMessage(ValueError):
-            collatz_steps(0)
+            steps(0)
 
     def test_negative_number_is_invalid_input(self):
         with self.assertRaisesWithMessage(ValueError):
-            collatz_steps(-15)
+            steps(-15)
 
     # Utility functions
     def setUp(self):
