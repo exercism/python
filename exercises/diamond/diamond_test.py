@@ -1,19 +1,19 @@
 import unittest
 
-from diamond import make_diamond
+from diamond import rows
 
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class DiamondTest(unittest.TestCase):
     def test_degenerate_case_with_a_single_row(self):
-        self.assertMultiLineEqual(make_diamond('A'), 'A\n')
+        self.assertEqual(rows('A'), ['A'])
 
     def test_degenerate_case_with_two_rows(self):
         result = [' A ',
                   'B B',
                   ' A ']
-        self.assertMultiLineEqual(make_diamond('B'), '\n'.join(result) + '\n')
+        self.assertEqual(rows('B'), result)
 
     def test_smallest_non_degenerate_case_with_odd_diamond_side_length(self):
         result = ['  A  ',
@@ -21,7 +21,7 @@ class DiamondTest(unittest.TestCase):
                   'C   C',
                   ' B B ',
                   '  A  ']
-        self.assertMultiLineEqual(make_diamond('C'), '\n'.join(result) + '\n')
+        self.assertEqual(rows('C'), result)
 
     def test_smallest_non_degenerate_case_with_even_diamond_side_length(self):
         result = ['   A   ',
@@ -31,7 +31,7 @@ class DiamondTest(unittest.TestCase):
                   ' C   C ',
                   '  B B  ',
                   '   A   ']
-        self.assertMultiLineEqual(make_diamond('D'), '\n'.join(result) + '\n')
+        self.assertEqual(rows('D'), result)
 
     def test_largest_possible_diamond(self):
         result = ['                         A                         ',
@@ -85,7 +85,7 @@ class DiamondTest(unittest.TestCase):
                   '                       C   C                       ',
                   '                        B B                        ',
                   '                         A                         ']
-        self.assertMultiLineEqual(make_diamond('Z'), '\n'.join(result) + '\n')
+        self.assertEqual(rows('Z'), result)
 
 
 if __name__ == '__main__':

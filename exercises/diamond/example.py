@@ -1,15 +1,15 @@
-def make_diamond(letter):
-    rows = ord(letter) - 64
-    cols = rows * 2 - 1
-    half = make_half(rows, cols)
-    return ''.join(half + half[-2::-1])
+def rows(letter):
+    lines = ord(letter) - 64
+    columns = lines * 2 - 1
+    half = make_half(lines, columns)
+    return half + half[-2::-1]
 
 
-def make_half(rows, cols):
+def make_half(lines, columns):
     diamond_half = []
-    for x in range(rows):
-        row = [' '] * cols
-        row[rows - 1 - x] = chr(x + 65)
-        row[rows - 1 + x] = chr(x + 65)
-        diamond_half.append(''.join(row) + '\n')
+    for number in range(lines):
+        row = [' '] * columns
+        row[lines - 1 - number] = chr(number + 65)
+        row[lines - 1 + number] = chr(number + 65)
+        diamond_half.append(''.join(row))
     return diamond_half
