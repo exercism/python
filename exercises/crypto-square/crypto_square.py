@@ -1,2 +1,2 @@
-def encode(plain_text):
+def cipher_text(plain_text):
     pass
