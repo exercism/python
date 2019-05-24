@@ -1,2 +1,2 @@
-def make_diamond(letter):
+def rows(letter):
     pass
