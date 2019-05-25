@@ -1,2 +1,2 @@
-def chain(dominoes):
+def can_chain(dominoes):
     pass
