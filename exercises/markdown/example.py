@@ -5,10 +5,12 @@ def parse_markdown(markdown):
     lines = markdown.split('\n')
     html = ''
     in_list = False
+    in_list_append = False
     for line in lines:
-        res = parse_line(line, in_list)
+        res = parse_line(line, in_list, in_list_append)
         html += res['line']
         in_list = res['in_list']
+        in_list_append = res['in_list_append']
     if in_list:
         html += '</ul>'
     return html
@@ -47,7 +49,7 @@ def check_italic(line):
         return None
 
 
-def parse_line(line, in_list):
+def parse_line(line, in_list, in_list_append):
     res = check_headers(line)
 
     list_match = re.match(r'\* (.*)', res)
@@ -60,7 +62,7 @@ def parse_line(line, in_list):
             res = wrap(list_match.group(1), 'li')
     else:
         if in_list:
-            res += '</ul>'
+            in_list_append = True
             in_list = False
 
     if not re.match('<h|<ul|<li', res):
@@ -74,7 +76,12 @@ def parse_line(line, in_list):
     while check_italic(res):
         res = check_italic(res)
 
+    if in_list_append:
+        res = '</ul>' + res
+        in_list_append = False
+
     return {
         'line': res,
-        'in_list': in_list
+        'in_list': in_list,
+        'in_list_append': in_list_append
     }
