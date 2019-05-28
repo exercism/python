@@ -11,7 +11,7 @@ VALID_OPERATIONS = {"plus": add, "minus": sub,
                     "multiplied by": mul, "divided by": div}
 
 
-def calculate(stmt):
+def answer(stmt):
     if not (stmt.startswith("What is ") and stmt.endswith("?")):
         raise ValueError("Ill-formed question")
     words = stmt[8:-1].strip().lower().split()
