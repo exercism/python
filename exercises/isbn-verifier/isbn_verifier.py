@@ -1,2 +1,2 @@
-def verify(isbn):
+def is_valid(isbn):
     pass

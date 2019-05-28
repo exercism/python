@@ -1,5 +1,5 @@
 from datetime import timedelta
 
 
-def add_gigasecond(moment):
+def add(moment):
     return moment + timedelta(seconds=1e9)
