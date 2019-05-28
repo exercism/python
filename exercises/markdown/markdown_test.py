@@ -2,7 +2,7 @@ import unittest
 from markdown import parse_markdown
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
 
 class MarkdownTest(unittest.TestCase):
 
@@ -63,6 +63,13 @@ class MarkdownTest(unittest.TestCase):
         self.assertEqual(
             parse_markdown('This is a paragraph with # and * in the text'),
             '<p>This is a paragraph with # and * in the text</p>')
+
+    def test_unordered_lists_close_properly_with_preceding_and_following_lines(
+            self):
+        self.assertEqual(
+            parse_markdown('# Start a list\n* Item 1\n* Item 2\nEnd a list'),
+            '<h1>Start a list</h1><ul><li>Item 1</li>'
+            '<li>Item 2</li></ul><p>End a list</p>')
 
 
 if __name__ == '__main__':
