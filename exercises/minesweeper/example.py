@@ -4,7 +4,7 @@ def annotate(minefield):
     verify_board(minefield)
     row_len = len(minefield[0])
     col_len = len(minefield)
-    board = [list(r) for r in minefield]
+    board = [list(row) for row in minefield]
 
     for index1 in range(col_len):
         for index2 in range(row_len):
@@ -23,7 +23,7 @@ def annotate(minefield):
                 continue
 
             board[index1][index2] = str(counts)
-    return ["".join(r) for r in board]
+    return ["".join(row) for row in board]
 
 
 def verify_board(minefield):
