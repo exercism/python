@@ -1,4 +1,4 @@
-def append(xs, ys):
+def append(list1, list2):
     pass
 
 
@@ -6,25 +6,25 @@ def concat(lists):
     pass
 
 
-def filter_clone(function, xs):
+def filter(function, list):
     pass
 
 
-def length(xs):
+def length(list):
     pass
 
 
-def map_clone(function, xs):
+def map(function, list):
     pass
 
 
-def foldl(function, xs, acc):
+def foldl(function, list, initial):
     pass
 
 
-def foldr(function, xs, acc):
+def foldr(function, list, initial):
     pass
 
 
-def reverse(xs):
+def reverse(list):
     pass

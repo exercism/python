@@ -34,11 +34,11 @@ class ListOpsTest(unittest.TestCase):
 
     # tests for filter_clone
     def test_filter_empty_list(self):
-        self.assertEqual(list_ops.filter_clone(lambda x: x % 2 == 1, []), [])
+        self.assertEqual(list_ops.filter(lambda x: x % 2 == 1, []), [])
 
     def test_filter_nonempty_list(self):
         self.assertEqual(
-            list_ops.filter_clone(lambda x: x % 2 == 1, [1, 2, 3, 4, 5]),
+            list_ops.filter(lambda x: x % 2 == 1, [1, 2, 3, 4, 5]),
             [1, 3, 5])
 
     # tests for length
@@ -50,10 +50,10 @@ class ListOpsTest(unittest.TestCase):
 
     # tests for map_clone
     def test_map_empty_list(self):
-        self.assertEqual(list_ops.map_clone(lambda x: x + 1, []), [])
+        self.assertEqual(list_ops.map(lambda x: x + 1, []), [])
 
     def test_map_nonempty_list(self):
-        self.assertEqual(list_ops.map_clone(lambda x: x + 1, [1, 3, 5, 7]),
+        self.assertEqual(list_ops.map(lambda x: x + 1, [1, 3, 5, 7]),
                          [2, 4, 6, 8])
 
     # tests for foldl
