@@ -1,2 +1,2 @@
-def meetup_day(year, month, day_of_the_week, which):
+def meetup(year, month, week, day_of_week):
     pass
