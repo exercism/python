@@ -1,2 +1,2 @@
-def add_gigasecond(moment):
+def add(moment):
     pass

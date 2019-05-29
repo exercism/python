@@ -20,7 +20,7 @@ def build_chain(chain, domino):
     return None
 
 
-def chain(dominoes):
+def can_chain(dominoes):
     if not any(dominoes):
         return []
     for perm in permutations(dominoes):

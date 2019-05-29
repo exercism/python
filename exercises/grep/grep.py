@@ -1,2 +1,2 @@
-def grep(pattern, files, flags=''):
+def grep(pattern, flags, files):
     pass
