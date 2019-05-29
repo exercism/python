@@ -11,10 +11,10 @@ VALID_OPERATIONS = {"plus": add, "minus": sub,
                     "multiplied by": mul, "divided by": div}
 
 
-def calculate(stmt):
-    if not (stmt.startswith("What is ") and stmt.endswith("?")):
+def answer(question):
+    if not (question.startswith("What is ") and question.endswith("?")):
         raise ValueError("Ill-formed question")
-    words = stmt[8:-1].strip().lower().split()
+    words = question[8:-1].strip().lower().split()
     if not words:
         raise ValueError("Ill-formed question")
     words.reverse()
