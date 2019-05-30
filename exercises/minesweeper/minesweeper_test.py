@@ -22,23 +22,39 @@ class MinesweeperTest(unittest.TestCase):
         self.assertEqual(annotate([""]), [""])
 
     def test_no_mines(self):
-        minefield = ["   ", "   ", "   "]
-        out = ["   ", "   ", "   "]
+        minefield = ["   ",
+                     "   ",
+                     "   "]
+        out = ["   ",
+               "   ",
+               "   "]
         self.assertEqual(annotate(minefield), out)
 
     def test_annotate_with_only_mines(self):
-        minefield = ["***", "***", "***"]
-        out = ["***", "***", "***"]
+        minefield = ["***",
+                     "***",
+                     "***"]
+        out = ["***",
+               "***",
+               "***"]
         self.assertEqual(annotate(minefield), out)
 
     def test_mine_surrounded_by_spaces(self):
-        minefield = ["   ", " * ", "   "]
-        out = ["111", "1*1", "111"]
+        minefield = ["   ",
+                     " * ",
+                     "   "]
+        out = ["111",
+               "1*1",
+               "111"]
         self.assertEqual(annotate(minefield), out)
 
     def test_space_surrounded_by_mines(self):
-        minefield = ["***", "* *", "***"]
-        out = ["***", "*8*", "***"]
+        minefield = ["***",
+                     "* *",
+                     "***"]
+        out = ["***",
+               "*8*",
+               "***"]
         self.assertEqual(annotate(minefield), out)
 
     def test_horizontal_line(self):
@@ -52,34 +68,77 @@ class MinesweeperTest(unittest.TestCase):
         self.assertEqual(annotate(minefield), out)
 
     def test_vertical_line(self):
-        minefield = [" ", "*", " ", "*", " "]
-        out = ["1", "*", "2", "*", "1"]
+        minefield = [" ",
+                     "*",
+                     " ",
+                     "*",
+                     " "]
+        out = ["1",
+               "*",
+               "2",
+               "*",
+               "1"]
         self.assertEqual(annotate(minefield), out)
 
     def test_vertical_line_mines_at_edges(self):
-        minefield = ["*", " ", " ", " ", "*"]
-        out = ["*", "1", " ", "1", "*"]
+        minefield = ["*",
+                     " ",
+                     " ",
+                     " ",
+                     "*"]
+        out = ["*",
+               "1",
+               " ",
+               "1",
+               "*"]
         self.assertEqual(annotate(minefield), out)
 
     def test_cross(self):
-        minefield = ["  *  ", "  *  ", "*****", "  *  ", "  *  "]
-        out = [" 2*2 ", "25*52", "*****", "25*52", " 2*2 "]
+        minefield = ["  *  ",
+                     "  *  ",
+                     "*****",
+                     "  *  ",
+                     "  *  "]
+        out = [" 2*2 ",
+               "25*52",
+               "*****",
+               "25*52",
+               " 2*2 "]
         self.assertEqual(annotate(minefield), out)
 
     def test_large_annotate(self):
-        minefield = [" *  * ", "  *   ", "    * ",
-                     "   * *", " *  * ", "      "]
-        out = ["1*22*1", "12*322", " 123*2", "112*4*", "1*22*2", "111111"]
+        minefield = [" *  * ",
+                     "  *   ",
+                     "    * ",
+                     "   * *",
+                     " *  * ",
+                     "      "]
+        out = ["1*22*1",
+               "12*322",
+               " 123*2",
+               "112*4*",
+               "1*22*2",
+               "111111"]
         self.assertEqual(annotate(minefield), out)
 
     # Additional test for this track
     def test_annotate9(self):
-        minefield = ["     ", "   * ", "     ", "     ", " *   "]
-        out = ["  111", "  1*1", "  111", "111  ", "1*1  "]
+        minefield = ["     ",
+                     "   * ",
+                     "     ",
+                     "     ",
+                     " *   "]
+        out = ["  111",
+               "  1*1",
+               "  111",
+               "111  ",
+               "1*1  "]
         self.assertEqual(annotate(minefield), out)
 
     def test_different_len(self):
-        minefield = [" ", "*  ", "  "]
+        minefield = [" ",
+                     "*  ",
+                     "  "]
         with self.assertRaisesWithMessage(ValueError):
             annotate(minefield)
 
