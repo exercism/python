@@ -48,7 +48,7 @@ class ListOpsTest(unittest.TestCase):
     def test_length_nonempty_list(self):
         self.assertEqual(list_ops.length([1, 2, 3, 4]), 4)
 
-    # tests for map_clone
+    # tests for map
     def test_map_empty_list(self):
         self.assertEqual(list_ops.map(lambda x: x + 1, []), [])
 
