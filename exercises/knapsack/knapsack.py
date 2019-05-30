@@ -1,2 +1,2 @@
-def solve_knapsack(max_weight, items):
+def maximum_value(maximum_weight, items):
     pass
