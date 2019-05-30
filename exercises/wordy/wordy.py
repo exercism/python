@@ -1,2 +1,2 @@
-def calculate(question):
+def answer(question):
     pass
