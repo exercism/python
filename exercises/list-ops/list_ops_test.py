@@ -32,7 +32,7 @@ class ListOpsTest(unittest.TestCase):
             list_ops.concat([[[1], [2]], [[3]], [[]], [[4, 5, 6]]]),
             [[1], [2], [3], [], [4, 5, 6]])
 
-    # tests for filter_clone
+    # tests for filter
     def test_filter_empty_list(self):
         self.assertEqual(list_ops.filter(lambda x: x % 2 == 1, []), [])
 
