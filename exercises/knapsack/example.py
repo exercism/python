@@ -1,11 +1,15 @@
-def solve_knapsack(max_weight, items):
-    t = [[0 for _ in range(len(items) + 1)] for _ in range(max_weight + 1)]
-    for weight in range(1, max_weight + 1):
-        for i, item in enumerate(items, 1):
+def maximum_value(maximum_weight, items):
+    totals = [[0 for _ in range(len(items) + 1)]
+              for _ in range(maximum_weight + 1)]
+
+    for weight in range(1, maximum_weight + 1):
+        for index, item in enumerate(items, 1):
             if item["weight"] <= weight:
-                value = item["value"] + t[weight - item["weight"]][i - 1]
-                value_without_item = t[weight][i - 1]
-                t[weight][i] = max(value, value_without_item)
+                value = item["value"] + \
+                        totals[weight - item["weight"]][index - 1]
+
+                value_without_item = totals[weight][index - 1]
+                totals[weight][index] = max(value, value_without_item)
             else:
-                t[weight][i] = t[weight][i - 1]
-    return t[max_weight][len(items)]
+                totals[weight][index] = totals[weight][index - 1]
+    return totals[maximum_weight][len(items)]

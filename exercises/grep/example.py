@@ -23,7 +23,7 @@ def format_files(matched_lines):
     return result
 
 
-def format_lines(matched_lines, files, flags):
+def format_lines(matched_lines, flags, files):
     result = []
 
     for file_name, line_number, line in matched_lines:
@@ -42,7 +42,7 @@ def format_lines(matched_lines, files, flags):
     return ''.join(result)
 
 
-def grep(pattern, files, flags=''):
+def grep(pattern, flags, files):
     matched_lines = []
 
     for file_name in files:
@@ -54,4 +54,4 @@ def grep(pattern, files, flags=''):
     if '-l' in flags:
         return format_files(matched_lines)
 
-    return format_lines(matched_lines, files, flags)
+    return format_lines(matched_lines, flags, files)
