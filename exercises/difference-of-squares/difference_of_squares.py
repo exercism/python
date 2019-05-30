@@ -6,5 +6,5 @@ def sum_of_squares(number):
     pass
 
 
-def difference(number):
+def difference_of_squares(number):
     pass
