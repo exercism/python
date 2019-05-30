@@ -1,7 +1,7 @@
 import re
 
 
-def parse_markdown(markdown):
+def parse(markdown):
     lines = markdown.split('\n')
     res = ''
     in_list = False
