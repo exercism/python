@@ -1,2 +1,2 @@
-def word_count(phrase):
+def count_words(sentence):
     pass
