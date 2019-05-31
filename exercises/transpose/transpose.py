@@ -1,2 +1,2 @@
-def transpose(input_lines):
+def transpose(lines):
     pass
