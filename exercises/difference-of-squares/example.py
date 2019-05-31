@@ -5,7 +5,7 @@ def square_of_sum(number):
 
 def sum_of_squares(number):
     numerator = number * (number + 1) * (2 * number + 1)
-    return numerator/6
+    return numerator / 6
 
 
 def difference_of_squares(number):
