@@ -1,35 +1,40 @@
-def board(inp):
-    if(inp == []):
+def annotate(minefield):
+    if(minefield == []):
         return []
-    verify_board(inp)
-    rowlen = len(inp[0])
-    collen = len(inp)
-    b = [list(r) for r in inp]
-    for i1 in range(collen):
-        for i2 in range(rowlen):
-            if b[i1][i2] != ' ':
+    verify_board(minefield)
+    row_len = len(minefield[0])
+    col_len = len(minefield)
+    board = [list(row) for row in minefield]
+
+    for index1 in range(col_len):
+        for index2 in range(row_len):
+            if board[index1][index2] != ' ':
                 continue
-            low = max(i2 - 1, 0)
-            high = min(i2 + 2, rowlen + 2)
-            cnt = inp[i1][low:high].count('*')
-            if(i1 > 0):
-                cnt += inp[i1 - 1][low:high].count('*')
-            if(i1 < collen - 1):
-                cnt += inp[i1 + 1][low:high].count('*')
-            if cnt == 0:
+
+            low = max(index2 - 1, 0)
+            high = min(index2 + 2, row_len + 2)
+            counts = minefield[index1][low:high].count('*')
+
+            if(index1 > 0):
+                counts += minefield[index1 - 1][low:high].count('*')
+            if(index1 < col_len - 1):
+                counts += minefield[index1 + 1][low:high].count('*')
+            if counts == 0:
                 continue
-            b[i1][i2] = str(cnt)
-    return ["".join(r) for r in b]
+
+            board[index1][index2] = str(counts)
+    return ["".join(row) for row in board]
 
 
-def verify_board(inp):
+def verify_board(minefield):
     # Rows with different lengths
-    rowlen = len(inp[0])
-    if not all(len(r) == rowlen for r in inp):
+    row_len = len(minefield[0])
+    if not all(len(row) == row_len for row in minefield):
         raise ValueError("Invalid board")
+
     # Unknown character in board
-    cset = set()
-    for r in inp:
-        cset.update(r)
-    if cset - set(' *'):
+    character_set = set()
+    for row in minefield:
+        character_set.update(row)
+    if character_set - set(' *'):
         raise ValueError("Invalid board")

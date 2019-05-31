@@ -1,3 +1,3 @@
-def board(input_board_array):
+def annotate(minefield):
     # Function body starts here
     pass
