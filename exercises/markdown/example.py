@@ -1,16 +1,16 @@
 import re
 
 
-def parse_markdown(markdown):
+def parse(markdown):
     lines = markdown.split('\n')
     html = ''
     in_list = False
     in_list_append = False
     for line in lines:
-        res = parse_line(line, in_list, in_list_append)
-        html += res['line']
-        in_list = res['in_list']
-        in_list_append = res['in_list_append']
+        result = parse_line(line, in_list, in_list_append)
+        html += result['line']
+        in_list = result['in_list']
+        in_list_append = result['in_list_append']
     if in_list:
         html += '</ul>'
     return html
@@ -22,9 +22,9 @@ def wrap(line, tag):
 
 def check_headers(line):
     pattern = '# (.*)'
-    for i in range(6):
+    for index in range(6):
         if re.match(pattern, line):
-            return wrap(line[(i + 2):], 'h' + str(i + 1))
+            return wrap(line[(index + 2):], 'h' + str(index + 1))
         pattern = '#' + pattern
     return line
 
@@ -50,38 +50,39 @@ def check_italic(line):
 
 
 def parse_line(line, in_list, in_list_append):
-    res = check_headers(line)
+    result = check_headers(line)
 
-    list_match = re.match(r'\* (.*)', res)
+    list_match = re.match(r'\* (.*)', result)
 
     if (list_match):
         if not in_list:
-            res = '<ul>' + wrap(list_match.group(1), 'li')
+            result = '<ul>' + wrap(list_match.group(1), 'li')
             in_list = True
         else:
-            res = wrap(list_match.group(1), 'li')
+            result = wrap(list_match.group(1), 'li')
     else:
         if in_list:
             in_list_append = True
             in_list = False
 
-    if not re.match('<h|<ul|<li', res):
-        res = wrap(res, 'p')
+    if not re.match('<h|<ul|<li', result):
+        result = wrap(result, 'p')
 
     if list_match is None:
-        res = re.sub('(.*)(<li>)(.*)(</li>)(.*)', r'\1\2<p>\3</p>\4\5', res)
+        result = re.sub('(.*)(<li>)(.*)(</li>)(.*)',
+                        r'\1\2<p>\3</p>\4\5', result)
 
-    while check_bold(res):
-        res = check_bold(res)
-    while check_italic(res):
-        res = check_italic(res)
+    while check_bold(result):
+        result = check_bold(result)
+    while check_italic(result):
+        result = check_italic(result)
 
     if in_list_append:
-        res = '</ul>' + res
+        result = '</ul>' + result
         in_list_append = False
 
     return {
-        'line': res,
+        'line': result,
         'in_list': in_list,
         'in_list_append': in_list_append
     }
