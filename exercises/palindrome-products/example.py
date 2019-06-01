@@ -15,9 +15,9 @@ def get_extreme_palindrome_with_factors(max_factor, min_factor, extreme):
                                     reverse=(extreme == "largest"))
     factor_pairs = None
     for palindrome in palindromes_found:
-        factor_pairs = ((fact, palindrome // fact)
-                        for fact in range(min_factor, max_factor + 1)
-                        if palindrome % fact == 0)
+        factor_pairs = ((factor, palindrome // factor)
+                        for factor in range(min_factor, max_factor + 1)
+                        if palindrome % factor == 0)
         factor_pairs = list(pair for pair in factor_pairs
                             if min_factor <= pair[1] <= max_factor)
         if len(factor_pairs) > 0:
