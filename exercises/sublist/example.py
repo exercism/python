@@ -1,29 +1,23 @@
-SUBLIST = 0
-SUPERLIST = 1
-EQUAL = 2
-UNEQUAL = 3
+def sublist(list_one, list_two):
+    if list_one == list_two:
+        return "equal"
+    if contains(list_one, list_two):
+        return "superlist"
+    if contains(list_two, list_one):
+        return "sublist"
+    return "unequal"
 
 
-def check_lists(l1, l2):
-    if l1 == l2:
-        return EQUAL
-    if contains(l1, l2):
-        return SUPERLIST
-    if contains(l2, l1):
-        return SUBLIST
-    return UNEQUAL
-
-
-def contains(l1, l2):
-    if not l2:
+def contains(list_one, list_two):
+    if not list_two:
         return True
-    if len(l2) > len(l1):
+    if len(list_two) > len(list_one):
         return False
-    for i in range(len(l1) - len(l2) + 1):
-        if l1[i] != l2[0]:
+    for i in range(len(list_one) - len(list_two) + 1):
+        if list_one[i] != list_two[0]:
             continue
-        for j in range(len(l2)):
-            if l1[i + j] != l2[j]:
+        for j in range(len(list_two)):
+            if list_one[i + j] != list_two[j]:
                 break
         else:
             return True
