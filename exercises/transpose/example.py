@@ -1,6 +1,6 @@
-def transpose(input_lines):
-    lines = [line.replace(' ', '_') for line in input_lines.splitlines()]
-    lines = [line.ljust(len(max(lines, key=len))) for line in lines]
-    lines = [''.join(line) for line in zip(*lines)]
-    lines = [line.rstrip().replace('_', ' ') for line in lines]
-    return '\n'.join(lines)
+def transpose(lines):
+    rows = [row.replace(' ', '_') for row in lines.splitlines()]
+    rows = [row.ljust(len(max(rows, key=len))) for row in rows]
+    rows = [''.join(row) for row in zip(*rows)]
+    rows = [row.rstrip().replace('_', ' ') for row in rows]
+    return '\n'.join(rows)
