@@ -1,3 +1,5 @@
+
+from __future__ import division
 from itertools import chain
 from math import log10, floor, ceil
 
