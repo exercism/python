@@ -7,15 +7,15 @@ except ImportError:
     from fractions import gcd
 
 
-def triplets_in_range(range_start, range_end):
-    for b in range(4, range_end + 1, 4):
+def triplets_in_range(start, end):
+    for b in range(4, end + 1, 4):
         for x, y, z in primitive_triplets(b):
-            a, b, c = (x, y, z)
-            while a < range_start:
-                a, b, c = (a + x, b + y, c + z)
-            while c <= range_end:
-                yield (a, b, c)
-                a, b, c = (a + x, b + y, c + z)
+            a, b, c = [x, y, z]
+            while a < start:
+                a, b, c = [a + x, b + y, c + z]
+            while c <= end:
+                yield [a, b, c]
+                a, b, c = [a + x, b + y, c + z]
 
 
 def euclidian_coprimes(limit):
@@ -40,12 +40,12 @@ def primitive_triplets(limit):
         yield a, b, c
 
 
-def triplets_with_sum(triplet_sum):
+def triplets_with_sum(number):
     # Incidentally, the above algorithm guarantees no duplicates,
     # so converting to a set in not technically required.
     # However, the tests require a set, so use set comprehension anyway.
-    return {
-        triplet
-        for triplet in triplets_in_range(1, triplet_sum // 2)
-        if sum(triplet) == triplet_sum
-    }
+    return sorted(
+        triplet for triplet
+        in triplets_in_range(1, number // 2)
+        if sum(triplet) == number
+    )
