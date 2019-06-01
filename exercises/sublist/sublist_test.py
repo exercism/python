@@ -1,6 +1,6 @@
 import unittest
 
-from example import sublist
+from sublist import sublist
 
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
