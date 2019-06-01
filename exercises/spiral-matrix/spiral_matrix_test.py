@@ -6,7 +6,7 @@ from spiral_matrix import spiral_matrix
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 
-class Spiral_matrixMatrixTest(unittest.TestCase):
+class SpiralMatrixTest(unittest.TestCase):
     def test_empty_spiral(self):
         self.assertEqual(spiral_matrix(0), [
         ])
