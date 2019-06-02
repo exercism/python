@@ -30,14 +30,14 @@ A list of missing exercise can be found here: https://github.com/exercism/python
 
 ### Testing
 
-All exercises must be compatible with Python versions 2.7 and 3.4 upwards.
+All exercises must be compatible with Python version 3.6 upwards.
 
-To test a single exercise (e.g., with Python 2.7):
+To test a single exercise:
 ```
-python2.7 test/check-exercises.py [exercise-name]
+python3 test/check-exercises.py [exercise-name]
 ```
 
-To test all exercises (e.g., with Python 3):
+To test all exercises:
 ```
 python3 test/check-exercises.py
 ```
