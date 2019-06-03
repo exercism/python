@@ -4,12 +4,7 @@ We recommend you install [pytest](http://pytest.org/latest/) and
 [pytest-cache](http://pythonhosted.org/pytest-cache/). `pytest` is a testing
 tool that will give you more flexibility over running your unit tests.
 
-If you want to install `pytest` for Python 2, then use `pip`.
-
-```bash
-pip install pytest pytest-cache
-```
-If you instead want the version of `pytest` for Python 3, then use `pip3`.
+To install `pytest`, run the following command:
 
 ```bash
 pip3 install pytest pytest-cache
@@ -19,21 +14,10 @@ If you get a `command not found` response from your system, you can find a
 tutorial on how to install `pip`
 [here](https://pip.pypa.io/en/stable/installing/).
 
-**Note:** Whichever version of `pytest` you install last will be the default one used whenever `pytest` is executed, regardless of whether you have installed both versions.
-
 If you want to check what the default version of `pytest` being used is, run the following:
 
 ```bash
 pytest --version
-```
-
-If you have either version of `pytest` installed and you want to specifically run one of the versions, you can run that version by using `python` with the `-m` flag.
-
-For example, you could run the Python 3 version of pytest like so:
-
-```bash
-$ python3 -m pytest --version
-This is pytest version 3.2.3, imported from /usr/local/lib/python3.5/dist-packages/pytest.py
 ```
 
 If you choose not to install `pytest`, you can still run tests individually and
