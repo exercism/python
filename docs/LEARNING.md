@@ -7,13 +7,13 @@ This might look like a limit at the beginning but, as you will advance in your l
 
 For its own nature, exercism assumes that you already have a grasp of the language syntax before starting doing exercises. At least at a point where you can write simple functions in Python. From there on, you can continue your learning as you will advance in the exercism track and gradually explore new constructs and concepts.
 
-With this premise, a good, beginner friendly, starting point for those who don't have any experience in other languages might be the Python course on [Codecademy.com](https://www.codecademy.com/). It will help you get an understanding of the Python syntax with which you will be able to start solving exercises here on exercism.
+With this premise, a good, beginner friendly, starting point for those who don't have any experience in other languages might be the Python course on [Sololearn.com](https://www.sololearn.com/Course/Python/). It will help you get an understanding of the Python syntax with which you will be able to start solving exercises here on exercism.
 
 ## Other Resources
 
 - [Automate the Boring Stuff with Python (Book)](https://automatetheboringstuff.com/)
 - [Python3 Beginner Tutorial](https://www.youtube.com/playlist?list=PL1A2CSdiySGJd0LJRRSwQZbPZaDP0q67j)
-- [Learn Python The Hard Way (Book)](http://learnpythonthehardway.org/book/)
+- [Learn Python - An Interactive Tutorial](https://www.learnpython.org/)
 - [Offical Python3 **Documentation** and **Reference**](https://docs.python.org/3/)
 - [Learn X in Y minutes (where X = Python3)](https://learnxinyminutes.com/docs/python3/)
 - [The Hitchhiker’s Guide to Python](http://docs.python-guide.org/en/latest/)
