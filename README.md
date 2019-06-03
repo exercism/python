@@ -30,7 +30,7 @@ A list of missing exercise can be found here: https://github.com/exercism/python
 
 ### Testing
 
-All exercises must be compatible with Python version 3.6 upwards.
+All exercises must be compatible with Python version 3.4 upwards.
 
 To test a single exercise:
 ```
