@@ -3,7 +3,7 @@ import unittest
 from reverse_string import reverse
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class ReverseStringTest(unittest.TestCase):
     def test_empty_string(self):
@@ -20,7 +20,9 @@ class ReverseStringTest(unittest.TestCase):
 
     def test_a_palindrome(self):
         self.assertEqual(reverse('racecar'), 'racecar')
-
+    
+    def test_an_even_sized_word(self):
+        self.assertEqual(reverse('drawer'), 'reward')
 
 if __name__ == '__main__':
     unittest.main()
