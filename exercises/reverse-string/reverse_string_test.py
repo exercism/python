@@ -20,9 +20,10 @@ class ReverseStringTest(unittest.TestCase):
 
     def test_a_palindrome(self):
         self.assertEqual(reverse('racecar'), 'racecar')
-    
+
     def test_an_even_sized_word(self):
         self.assertEqual(reverse('drawer'), 'reward')
+
 
 if __name__ == '__main__':
     unittest.main()
