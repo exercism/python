@@ -2,8 +2,8 @@ import unittest
 
 import roman_numerals
 
-
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+
 
 class RomanNumeralsTest(unittest.TestCase):
     numerals = {
@@ -30,7 +30,7 @@ class RomanNumeralsTest(unittest.TestCase):
 
     def test_numerals(self):
         for arabic, numeral in self.numerals.items():
-            self.assertEqual(roman_numerals.numeral(arabic), numeral)
+            self.assertEqual(roman_numerals.roman(arabic), numeral)
 
 
 if __name__ == '__main__':
