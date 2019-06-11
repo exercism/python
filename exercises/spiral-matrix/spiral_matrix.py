@@ -1,2 +1,2 @@
-def spiral(size):
+def spiral_matrix(size):
     pass
