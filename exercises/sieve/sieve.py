@@ -1,2 +1,2 @@
-def sieve(limit):
+def primes(limit):
     pass
