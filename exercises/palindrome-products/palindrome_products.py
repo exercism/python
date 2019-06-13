@@ -1,6 +1,6 @@
-def largest(min, max):
+def largest(min_factor, max_factor):
     pass
 
 
-def smallest(min, max):
+def smallest(min_factor, max_factor):
     pass

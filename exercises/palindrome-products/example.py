@@ -1,15 +1,16 @@
-
 from __future__ import division
 from itertools import chain
 from math import log10, floor, ceil
 
 
-def largest(min, max):
-    return get_extreme_palindrome_with_factors(max, min, "largest")
+def largest(min_factor, max_factor):
+    return get_extreme_palindrome_with_factors(max_factor, min_factor,
+                                               "largest")
 
 
-def smallest(max, min):
-    return get_extreme_palindrome_with_factors(max, min, "smallest")
+def smallest(max_factor, min_factor):
+    return get_extreme_palindrome_with_factors(max_factor, min_factor,
+                                               "smallest")
 
 
 def get_extreme_palindrome_with_factors(max_factor, min_factor, extreme):
