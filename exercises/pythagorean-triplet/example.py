@@ -10,12 +10,12 @@ except ImportError:
 def triplets_in_range(start, end):
     for b in range(4, end + 1, 4):
         for x, y, z in primitive_triplets(b):
-            a, b, c = [x, y, z]
+            a, b, c = (x, y, z)
             while a < start:
-                a, b, c = [a + x, b + y, c + z]
+                a, b, c = (a + x, b + y, c + z)
             while c <= end:
-                yield [a, b, c]
-                a, b, c = [a + x, b + y, c + z]
+                yield (a, b, c)
+                a, b, c = (a + x, b + y, c + z)
 
 
 def euclidian_coprimes(limit):
@@ -44,8 +44,8 @@ def triplets_with_sum(number):
     # Incidentally, the above algorithm guarantees no duplicates,
     # so converting to a set in not technically required.
     # However, the tests require a set, so use set comprehension anyway.
-    return sorted(
+    return {
         triplet for triplet
         in triplets_in_range(1, number // 2)
         if sum(triplet) == number
-    )
+    }
