@@ -12,7 +12,7 @@ class Luhn(object):
     def checksum(self):
         return sum(self.addends())
 
-    def is_valid(self):
+    def valid(self):
         if len(self.card_num) <= 1 or not self.card_num.isdigit():
             return False
         return self.checksum() % 10 == 0
