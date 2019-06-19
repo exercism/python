@@ -2,8 +2,12 @@ import unittest
 
 from anagram import find_anagrams
 
+# Python 2/3 compatibility
+if not hasattr(unittest.TestCase, 'assertCountEqual'):
+    unittest.TestCase.assertCountEqual = unittest.TestCase.assertItemsEqual
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
+
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.1
 
 class AnagramTest(unittest.TestCase):
     def test_no_matches(self):
@@ -12,7 +16,7 @@ class AnagramTest(unittest.TestCase):
 
     def test_detects_two_anagrams(self):
         candidates = ["stream", "pigeon", "maters"]
-        self.assertEqual(
+        self.assertCountEqual(
             find_anagrams("master", candidates), ["stream", "maters"])
 
     def test_does_not_detect_anagram_subsets(self):
@@ -26,7 +30,7 @@ class AnagramTest(unittest.TestCase):
         candidates = [
             "gallery", "ballerina", "regally", "clergy", "largely", "leading"
         ]
-        self.assertEqual(
+        self.assertCountEqual(
             find_anagrams("allergy", candidates),
             ["gallery", "regally", "largely"])
 
@@ -48,7 +52,7 @@ class AnagramTest(unittest.TestCase):
         self.assertEqual(
             find_anagrams("orchestra", candidates), ["Carthorse"])
 
-    def test_does_not_detect_a_anagram_if_the_original_word_is_repeated(self):
+    def test_does_not_detect_an_anagram_if_the_original_word_is_repeated(self):
         self.assertEqual(find_anagrams("go", ["go Go GO"]), [])
 
     def test_anagrams_must_use_all_letters_exactly_once(self):
