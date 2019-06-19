@@ -1,11 +1,17 @@
+SUBLIST = 0
+SUPERLIST = 1
+EQUAL = 2
+UNEQUAL = 3
+
+
 def sublist(list_one, list_two):
     if list_one == list_two:
-        return "equal"
+        return EQUAL
     if contains(list_one, list_two):
-        return "superlist"
+        return SUPERLIST
     if contains(list_two, list_one):
-        return "sublist"
-    return "unequal"
+        return SUBLIST
+    return UNEQUAL
 
 
 def contains(list_one, list_two):
