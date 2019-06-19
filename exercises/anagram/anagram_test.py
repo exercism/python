@@ -12,7 +12,7 @@ class AnagramTest(unittest.TestCase):
 
     def test_detects_two_anagrams(self):
         candidates = ["stream", "pigeon", "maters"]
-        self.assertEqual(
+        self.assertCountEqual(
             find_anagrams("master", candidates), ["stream", "maters"])
 
     def test_does_not_detect_anagram_subsets(self):
@@ -26,7 +26,7 @@ class AnagramTest(unittest.TestCase):
         candidates = [
             "gallery", "ballerina", "regally", "clergy", "largely", "leading"
         ]
-        self.assertEqual(
+        self.assertCountEqual(
             find_anagrams("allergy", candidates),
             ["gallery", "regally", "largely"])
 
