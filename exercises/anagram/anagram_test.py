@@ -6,6 +6,7 @@ from anagram import find_anagrams
 if not hasattr(unittest.TestCase, 'assertCountEqual'):
     unittest.TestCase.assertCountEqual = unittest.TestCase.assertItemsEqual
 
+
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.1
 
 class AnagramTest(unittest.TestCase):
