@@ -3,7 +3,7 @@ import unittest
 from anagram import find_anagrams
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.1
 
 class AnagramTest(unittest.TestCase):
     def test_no_matches(self):
@@ -48,7 +48,7 @@ class AnagramTest(unittest.TestCase):
         self.assertEqual(
             find_anagrams("orchestra", candidates), ["Carthorse"])
 
-    def test_does_not_detect_a_anagram_if_the_original_word_is_repeated(self):
+    def test_does_not_detect_an_anagram_if_the_original_word_is_repeated(self):
         self.assertEqual(find_anagrams("go", ["go Go GO"]), [])
 
     def test_anagrams_must_use_all_letters_exactly_once(self):
