@@ -8,7 +8,7 @@ from wordy import answer
 class WordyTest(unittest.TestCase):
 
     def test_just_a_number(self):
-        self.assertEqual(answer('What is 5?'), 5)
+        self.assertEqual(answer("What is 5?"), 5)
 
     def test_addition(self):
         self.assertEqual(answer("What is 1 plus 1?"), 2)
@@ -45,14 +45,16 @@ class WordyTest(unittest.TestCase):
 
     def test_multiple_multiplication(self):
         self.assertEqual(
-            answer("What is 2 multiplied by -2 multiplied by 3?"), -12)
+            answer("What is 2 multiplied by -2 multiplied by 3?"), -12
+            )
 
     def test_addition_and_multiplication(self):
         self.assertEqual(answer("What is -3 plus 7 multiplied by -2?"), -8)
 
     def test_multiple_division(self):
         self.assertEqual(
-            answer("What is -12 divided by 2 divided by -3?"), 2)
+            answer("What is -12 divided by 2 divided by -3?"), 2
+            )
 
     def test_unknown_operation(self):
         with self.assertRaisesWithMessage(ValueError):
@@ -64,27 +66,27 @@ class WordyTest(unittest.TestCase):
 
     def test_reject_problem_missing_an_operand(self):
         with self.assertRaisesWithMessage(ValueError):
-            answer('What is 1 plus?')
+            answer("What is 1 plus?")
 
     def test_reject_problem_with_no_operands_or_operators(self):
         with self.assertRaisesWithMessage(ValueError):
-            answer('What is?')
+            answer("What is?")
 
     def test_reject_two_operations_in_a_row(self):
         with self.assertRaisesWithMessage(ValueError):
-            answer('What is 1 plus plus 2?')
+            answer("What is 1 plus plus 2?")
 
     def test_reject_two_numbers_in_a_row(self):
         with self.assertRaisesWithMessage(ValueError):
-            answer('What is 1 plus 2 1?')
+            answer("What is 1 plus 2 1?")
 
     def test_reject_postfix_notation(self):
         with self.assertRaisesWithMessage(ValueError):
-            answer('What is 1 2 plus?')
+            answer("What is 1 2 plus?")
 
     def test_reject_prefix_notation(self):
         with self.assertRaisesWithMessage(ValueError):
-            answer('What is plus 1 2?')
+            answer("What is plus 1 2?")
 
     # Additional tests for this track
 
