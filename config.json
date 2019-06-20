@@ -273,7 +273,7 @@
       "slug": "pangram",
       "uuid": "bebf7ae6-1c35-48bc-926b-e053a975eb10",
       "core": false,
-      "unlocked_by": "hello-world",
+      "unlocked_by": "two-fer",
       "difficulty": 1,
       "topics": [
         "algorithms",
@@ -694,7 +694,7 @@
       "slug": "robot-name",
       "uuid": "bf30b17f-6b71-4bb5-815a-88f8181b89ae",
       "core": false,
-      "unlocked_by": "hello-world",
+      "unlocked_by": "two-fer",
       "difficulty": 1,
       "topics": [
         "pattern_matching",
