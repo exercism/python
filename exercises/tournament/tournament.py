@@ -1,2 +1,2 @@
-def tally(tournament_results):
+def tally(rows):
     pass
