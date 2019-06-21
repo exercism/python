@@ -19,23 +19,23 @@ def answer(question):
         raise ValueError("Ill-formed question")
     words.reverse()
     try:
-        op1 = int(words.pop())
+        main_value = int(words.pop())
     except ValueError:
         raise ValueError("Ill-formed question")
     while words:
-        oprt = [words.pop()]
+        operation = [words.pop()]
         while words:
             try:
-                next_tk = words.pop()
-                op2 = int(next_tk)
+                next_to_evaluate = words.pop()
+                second_value = int(next_to_evaluate)
                 break
             except ValueError:
-                oprt.append(next_tk)
+                operation.append(next_to_evaluate)
         else:
             raise ValueError("Ill-formed question")
-        oprt = " ".join(oprt)
+        operation = " ".join(operation)
         try:
-            op1 = VALID_OPERATIONS[oprt](op1, op2)
+            main_value = VALID_OPERATIONS[operation](main_value, second_value)
         except KeyError:
             raise ValueError("Ill-formed question")
-    return op1
+    return main_value
