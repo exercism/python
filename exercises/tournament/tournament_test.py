@@ -12,7 +12,7 @@ class TournamentTest(unittest.TestCase):
             ['Team                           | MP |  W |  D |  L |  P']
         )
 
-    def test_a_win_is_three_points_and_a_loss_is_zero_points(self):
+    def test_a_win_is_three_points_a_loss_is_zero_points(self):
         results = ['Allegoric Alaskans;Blithering Badgers;win']
         table = ['Team                           | MP |  W |  D |  L |  P',
                  'Allegoric Alaskans             |  1 |  1 |  0 |  0 |  3',
@@ -82,7 +82,7 @@ class TournamentTest(unittest.TestCase):
 
         self.assertEqual(tally(results), table)
 
-    def test_incomplete_competitionnot_not_all_pairs_have_played(self):
+    def test_incomplete_competition_not_all_pairs_have_played(self):
         results = ['Allegoric Alaskans;Blithering Badgers;loss',
                    'Devastating Donkeys;Allegoric Alaskans;loss',
                    'Courageous Californians;Blithering Badgers;draw',
