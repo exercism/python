@@ -35,12 +35,11 @@ class ComplexNumbersTest(unittest.TestCase):
         input_number = ComplexNumber(1, 2)
         self.assertEqual(input_number.imaginary, 2)
 
-    def test_complex_number_equality_and_inequality(self):
-        input_number = ComplexNumber(1, 2)
-        other_number = ComplexNumber(2, 1)
-        expected = ComplexNumber(1, 2)
-        self.assertEqual(input_number, expected)
-        self.assertNotEqual(other_number, expected)
+    def test_equality_of_complex_numbers(self):
+        self.assertEqual(ComplexNumber(1, 2), ComplexNumber(1, 2))
+
+    def test_inequality_of_complex_numbers(self):
+        self.assertNotEqual(ComplexNumber(1, 2), ComplexNumber(2, 1))
 
     def test_imaginary_unit(self):
         first_input = ComplexNumber(0, 1)
