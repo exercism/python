@@ -2,6 +2,9 @@ class ComplexNumber(object):
     def __init__(self, real, imaginary):
         pass
 
+    def __eq__(self, other):
+        pass
+
     def __add__(self, other):
         pass
 
