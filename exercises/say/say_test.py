@@ -54,7 +54,7 @@ class SayTest(unittest.TestCase):
 
     def test_number_too_large(self):
         with self.assertRaisesWithMessage(ValueError):
-            say(1e12)
+            say(10**12)
 
     def test_number_negative(self):
         with self.assertRaisesWithMessage(ValueError):
