@@ -35,7 +35,7 @@ class SayTest(unittest.TestCase):
         self.assertEqual(say(1234), "one thousand two hundred and thirty-four")
 
     def test_one_million(self):
-        self.assertEqual(say(1e6), "one million")
+        self.assertEqual(say(1_000_000), "one million")
 
     def test_1002345(self):
         self.assertEqual(
@@ -43,7 +43,7 @@ class SayTest(unittest.TestCase):
             "one million two thousand three hundred and forty-five")
 
     def test_one_billion(self):
-        self.assertEqual(say(1e9), "one billion")
+        self.assertEqual(say(1_000_000_000), "one billion")
 
     def test_987654321123(self):
         self.assertEqual(
@@ -54,7 +54,7 @@ class SayTest(unittest.TestCase):
 
     def test_number_too_large(self):
         with self.assertRaisesWithMessage(ValueError):
-            say(1e12)
+            say(1_000_000_000_000)
 
     def test_number_negative(self):
         with self.assertRaisesWithMessage(ValueError):
