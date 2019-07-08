@@ -39,7 +39,11 @@ class ComplexNumbersTest(unittest.TestCase):
         self.assertEqual(ComplexNumber(1, 2), ComplexNumber(1, 2))
 
     def test_inequality_of_complex_numbers(self):
-        self.assertNotEqual(ComplexNumber(1, 2), ComplexNumber(2, 1))
+        number = ComplexNumber(1, 2)
+        number_different_real_part = ComplexNumber(2, 2)
+        number_different_imaginary_part = ComplexNumber(1, 1)
+        self.assertNotEqual(number, number_different_real_part)
+        self.assertNotEqual(number, number_different_imaginary_part)
 
     def test_imaginary_unit(self):
         first_input = ComplexNumber(0, 1)
