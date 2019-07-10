@@ -16,7 +16,7 @@ class DotDslTest(unittest.TestCase):
             (NODE, "a", {})
         ])
 
-        self.assertEqual(g.nodes, [Node("a")])
+        self.assertEqual(g.nodes, [Node("a", {})])
         self.assertEqual(g.edges, [])
         self.assertEqual(g.attrs, {})
 
