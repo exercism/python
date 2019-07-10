@@ -24,8 +24,12 @@ class Garden(object):
             start = idx * 2
             stop = start + 2
             self.cups.setdefault(student, [])
-            self.cups[student].extend(self.PLANTS[p] for p in front[start:stop])
-            self.cups[student].extend(self.PLANTS[p] for p in back[start:stop])
+            self.cups[student].extend(
+                self.PLANTS[p] for p in front[start:stop]
+            )
+            self.cups[student].extend(
+                self.PLANTS[p] for p in back[start:stop]
+            )
 
     def plants(self, student):
         return self.cups.get(student, [])
