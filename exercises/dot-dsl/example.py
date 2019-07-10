@@ -2,7 +2,7 @@ NODE, EDGE, ATTR = range(3)
 
 
 class Node(object):
-    def __init__(self, name, attrs={}):
+    def __init__(self, name, attrs):
         self.name = name
         self.attrs = attrs
 
@@ -11,7 +11,7 @@ class Node(object):
 
 
 class Edge(object):
-    def __init__(self, src, dst, attrs={}):
+    def __init__(self, src, dst, attrs):
         self.src = src
         self.dst = dst
         self.attrs = attrs
@@ -23,10 +23,13 @@ class Edge(object):
 
 
 class Graph(object):
-    def __init__(self, data=[]):
+    def __init__(self, data=None):
         self.nodes = []
         self.edges = []
         self.attrs = {}
+
+        if data is None:
+            data = []
 
         if not isinstance(data, list):
             raise TypeError("Graph data malformed")
