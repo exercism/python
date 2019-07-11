@@ -14,6 +14,7 @@ matrix:
     - python: 3.4
       dist: trusty
     - env: JOB=HOUSEKEEPING
+      python: 3.7
       install: ./bin/fetch-configlet
       before_script: ./bin/check-readmes.sh
       script:
@@ -22,8 +23,13 @@ matrix:
         - ./bin/configlet lint .
         # Verify correct formatting in config.json
         - ./bin/configlet fmt . && git diff --quiet
+    - env: JOB=CANONICAL_SYNC
+      python: 3.7
+      install: git clone https://github.com/exercism/problem-specifications spec
+      script: ./bin/check-test-version.py -v -p spec
   allow_failures:
     - python: nightly
+    - env: JOB=CANONICAL_SYNC
 
 before_script:
   - flake8
