@@ -26,6 +26,7 @@ matrix:
     - env: JOB=CANONICAL_SYNC
       python: 3.7
       install: git clone https://github.com/exercism/problem-specifications spec
+      before_script: []
       script: ./bin/check-test-version.py -v -p spec
   allow_failures:
     - python: nightly
