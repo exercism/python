@@ -7,7 +7,7 @@ if not hasattr(unittest.TestCase, 'assertCountEqual'):
     unittest.TestCase.assertCountEqual = unittest.TestCase.assertItemsEqual
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.1
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.5.0
 
 class AnagramTest(unittest.TestCase):
     def test_no_matches(self):
@@ -33,6 +33,9 @@ class AnagramTest(unittest.TestCase):
         self.assertCountEqual(
             find_anagrams("allergy", candidates),
             ["gallery", "regally", "largely"])
+
+    def test_detects_multiple_anagrams_with_different_case(self):
+        self.assertEqual(find_anagrams("nose", ["Eons", "ONES"]), ["Eons", "ONES"])
 
     def test_does_not_detect_non_anagrams_with_identical_checksum(self):
         self.assertEqual(find_anagrams("mass", ["last"]), [])
@@ -61,6 +64,10 @@ class AnagramTest(unittest.TestCase):
     def test_words_are_not_anagrams_of_themselves_case_insensitive(self):
         candidates = ["BANANA", "Banana", "banana"]
         self.assertEqual(find_anagrams("BANANA", candidates), [])
+
+    def test_words_other_than_themselves_can_be_anagrams(self):
+        candidates = ["Listen", "Silent", "LISTEN"]
+        self.assertEqual(find_anagrams("LISTEN", candidates), ["Silent"])
 
 
 if __name__ == '__main__':
