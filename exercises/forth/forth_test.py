@@ -3,7 +3,7 @@ import unittest
 from forth import evaluate, StackUnderflowError
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.7.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.7.1
 
 class ForthUtilities(unittest.TestCase):
     # Utility functions
