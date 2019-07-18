@@ -35,7 +35,8 @@ class AnagramTest(unittest.TestCase):
             ["gallery", "regally", "largely"])
 
     def test_detects_multiple_anagrams_with_different_case(self):
-        self.assertEqual(find_anagrams("nose", ["Eons", "ONES"]), ["Eons", "ONES"])
+        candidates = ["Eons", "ONES"]
+        self.assertEqual(find_anagrams("nose", candidates), ["Eons", "ONES"])
 
     def test_does_not_detect_non_anagrams_with_identical_checksum(self):
         self.assertEqual(find_anagrams("mass", ["last"]), [])
