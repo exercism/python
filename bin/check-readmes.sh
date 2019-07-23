@@ -8,8 +8,7 @@ get_timestamp()
 
 ret=0
 
-bin/generate_tests.py
-if ! git diff --quiet; then
+if ! (bin/generate_tests.py && git diff --quiet); then
     ret=1
     echo "Generated tests do not match current templates. Please run bin/generate_test.py to resolve."
 fi
