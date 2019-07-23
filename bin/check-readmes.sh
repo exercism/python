@@ -7,12 +7,6 @@ get_timestamp()
 }
 
 ret=0
-
-if ! (bin/generate_tests.py && git diff --quiet); then
-    ret=1
-    echo "Generated tests do not match current templates. Please run bin/generate_test.py to resolve."
-fi
-
 for exercise in $(ls -d exercises/*/); do
     meta_dir="${exercise}.meta"
     hints_file="${meta_dir}/HINTS.md"

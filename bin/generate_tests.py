@@ -5,8 +5,9 @@ import logging
 import os
 import re
 import sys
+import tempfile
 from glob import glob
-from subprocess import check_call
+from subprocess import check_call, CalledProcessError, DEVNULL
 
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 
@@ -40,7 +41,7 @@ def format_file(path):
     check_call(['black', '-q', path])
 
 
-def generate_exercise(env, spec_path, exercise):
+def generate_exercise(env, spec_path, exercise, check=False):
     slug = os.path.basename(exercise)
     try:
         spec = load_canonical(slug, spec_path)
@@ -50,8 +51,21 @@ def generate_exercise(env, spec_path, exercise):
             tests_path = os.path.join(
                 exercise, f'{snake_case(slug)}_test.py'
             )
-            with open(tests_path, 'w') as f:
-                f.write(template.render(**spec))
+            rendered = template.render(**spec)
+            if check:
+                tmp_f, tmp_path = tempfile.mkstemp()
+                tmp_f.write(rendered)
+                tmp_f.close()
+                try:
+                    check_call(['diff', tests_path, tmp_path], stdout=DEVNULL, stderr=DEVNULL)
+                except CalledProcessError:
+                    logger.error(f'{slug}: check failed; tests must be regenerated with bin/generate_tests.py')
+                    sys.exit(1)
+                finally:
+                    os.remove(tmp_path)
+            else:
+                with open(tests_path, 'w') as f:
+                    f.write(rendered)
             format_file(tests_path)
             print(f'{slug} generated at {tests_path}')
         except TemplateNotFound:
@@ -60,13 +74,13 @@ def generate_exercise(env, spec_path, exercise):
         logger.info(f'{slug}: no canonical data found; skipping')
 
 
-def generate(exercise_glob, spec_path=DEFAULT_SPEC_LOCATION, **kwargs):
+def generate(exercise_glob, spec_path=DEFAULT_SPEC_LOCATION, check=False, **kwargs):
     loader = FileSystemLoader('exercises')
     env = Environment(loader=loader, keep_trailing_newline=True)
     env.filters['snake_case'] = snake_case
     env.filters['title_case'] = title_case
     for exercise in glob(os.path.join('exercises', exercise_glob)):
-        generate_exercise(env, spec_path, exercise)
+        generate_exercise(env, spec_path, exercise, check)
 
 
 if __name__ == '__main__':
@@ -82,6 +96,7 @@ if __name__ == '__main__':
     )
     parser.add_argument('-v', '--verbose', action='store_true')
     parser.add_argument('-p', '--spec-path', default=DEFAULT_SPEC_LOCATION)
+    parser.add_argument('--check', action='store_true')
     opts = parser.parse_args()
     if opts.verbose:
         logger.setLevel(logging.INFO)
