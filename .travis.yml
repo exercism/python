@@ -15,7 +15,9 @@ matrix:
       dist: trusty
     - env: JOB=HOUSEKEEPING
       python: 3.7
-      install: ./bin/fetch-configlet
+      install:
+        - ./bin/fetch-configlet
+        - pip install -r requirements-generator.txt
       before_script: ./bin/check-readmes.sh
       script:
         # May provide more useful output than configlet fmt
