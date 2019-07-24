@@ -5,11 +5,10 @@ import logging
 import os
 import re
 import sys
-import tempfile
 from glob import glob
 from itertools import repeat
 from string import punctuation, whitespace
-from subprocess import DEVNULL, CalledProcessError, check_call
+from subprocess import CalledProcessError, check_call
 
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 
@@ -57,6 +56,14 @@ def format_file(path):
     check_call(['black', '-q', path])
 
 
+def compare_existing(rendered, tests_path):
+    if not os.path.isfile(tests_path):
+        return False
+    with open(tests_path) as f:
+        current = f.read()
+    return rendered == current
+
+
 def generate_exercise(env, spec_path, exercise, check=False):
     slug = os.path.basename(exercise)
     try:
@@ -69,21 +76,14 @@ def generate_exercise(env, spec_path, exercise, check=False):
             )
             rendered = template.render(**spec)
             if check:
-                tmp_f, tmp_path = tempfile.mkstemp()
-                tmp_f.write(rendered)
-                tmp_f.close()
-                try:
-                    check_call(['diff', tests_path, tmp_path], stdout=DEVNULL, stderr=DEVNULL)
-                except CalledProcessError:
+                if not compare_existing(rendered, tests_path):
                     logger.error(f'{slug}: check failed; tests must be regenerated with bin/generate_tests.py')
                     sys.exit(1)
-                finally:
-                    os.remove(tmp_path)
             else:
                 with open(tests_path, 'w') as f:
                     f.write(rendered)
-            format_file(tests_path)
-            print(f'{slug} generated at {tests_path}')
+                format_file(tests_path)
+                print(f'{slug} generated at {tests_path}')
         except TemplateNotFound:
             logger.info(f'{slug}: no template found; skipping')
     except FileNotFoundError:
