@@ -136,7 +136,7 @@ def generate_exercise(env, spec_path, exercise, check=False):
             else:
                 shutil.move(tmp.name, tests_path)
                 print(f'{slug} generated at {tests_path}')
-        except TemplateNotFound:
+        except TemplateNotFound as e:
             logger.debug(str(e))
             logger.info(f'{slug}: no template found; skipping')
     except FileNotFoundError as e:
