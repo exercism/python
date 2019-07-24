@@ -7,7 +7,9 @@ import re
 import sys
 import tempfile
 from glob import glob
-from subprocess import check_call, CalledProcessError, DEVNULL
+from itertools import repeat
+from string import punctuation, whitespace
+from subprocess import DEVNULL, CalledProcessError, check_call
 
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 
@@ -21,12 +23,26 @@ logger = logging.getLogger('generator')
 logger.setLevel(logging.WARN)
 
 
-def snake_case(string):
-    return '_'.join(RGX_WORDS.split(string)).lower()
+def replace_all(string, chars, rep):
+    """
+    Replace any char in chars with rep, reduce runs and strip terminal ends.
+    """
+    trans = str.maketrans(dict(zip(chars, repeat(rep))))
+    return re.sub("{0}+".format(re.escape(rep)), rep,
+                  string.translate(trans)).strip(rep)
 
 
-def title_case(string):
-    return''.join(word.title() for word in RGX_WORDS.split(string))
+def to_snake(string):
+    """
+    Convert pretty much anything to to_snake.
+    """
+    clean = re.sub("(.)([A-Z][a-z]+)", r"\1_\2", string)
+    clean = re.sub("([a-z0-9])([A-Z])", r"\1_\2", clean).lower()
+    return replace_all(clean, whitespace + punctuation, "_")
+
+
+def camel_case(string):
+    return ''.join(w.title() for w in to_snake(string).split('_'))
 
 
 def load_canonical(exercise, spec_path):
@@ -49,7 +65,7 @@ def generate_exercise(env, spec_path, exercise, check=False):
         try:
             template = env.get_template(template_path)
             tests_path = os.path.join(
-                exercise, f'{snake_case(slug)}_test.py'
+                exercise, f'{to_snake(slug)}_test.py'
             )
             rendered = template.render(**spec)
             if check:
@@ -77,8 +93,8 @@ def generate_exercise(env, spec_path, exercise, check=False):
 def generate(exercise_glob, spec_path=DEFAULT_SPEC_LOCATION, check=False, **kwargs):
     loader = FileSystemLoader('exercises')
     env = Environment(loader=loader, keep_trailing_newline=True)
-    env.filters['snake_case'] = snake_case
-    env.filters['title_case'] = title_case
+    env.filters['to_snake'] = to_snake
+    env.filters['camel_case'] = camel_case
     for exercise in glob(os.path.join('exercises', exercise_glob)):
         generate_exercise(env, spec_path, exercise, check)
 
