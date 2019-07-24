@@ -1,4 +1,17 @@
 #!/usr/bin/env python3.7
+"""
+Generates exercise test suites using an exercise's canonical-data.json
+(found in problem-specifications) and $exercise/.meta/template.j2.
+If either does not exist, generation will not be attempted.
+
+Usage:
+    generate_tests.py           Generates tests for all exercises
+    generate_tests.py two-fer   Generates tests for two-fer exercise
+    generate_tests.py t*        Generates tests for all exercises matching t*
+
+    generate_tests.py --check           Checks if test files are out of sync with templates
+    generate_tests.py --check two-fer   Checks if two-fer test file is out of sync with template
+"""
 import argparse
 import json
 import logging
@@ -41,10 +54,16 @@ def to_snake(string):
 
 
 def camel_case(string):
+    """
+    Convert pretty much anything to CamelCase.
+    """
     return ''.join(w.title() for w in to_snake(string).split('_'))
 
 
 def load_canonical(exercise, spec_path):
+    """
+    Loads the canonical data for an exercise as a nested dictionary
+    """
     full_path = os.path.join(
         spec_path, 'exercises', exercise, 'canonical-data.json'
     )
@@ -53,10 +72,16 @@ def load_canonical(exercise, spec_path):
 
 
 def format_file(path):
+    """
+    Runs black auto-formatter on file at path
+    """
     check_call(['black', '-q', path])
 
 
 def compare_existing(rendered, tests_path):
+    """
+    Returns true if contents of file at tests_path match rendered
+    """
     if not os.path.isfile(tests_path):
         return False
     with open(tests_path) as f:
@@ -65,6 +90,11 @@ def compare_existing(rendered, tests_path):
 
 
 def generate_exercise(env, spec_path, exercise, check=False):
+    """
+    Renders test suite for exercise and if check is:
+    True: verifies that current tests file matches rendered
+    False: saves rendered to tests file
+    """
     slug = os.path.basename(exercise)
     try:
         spec = load_canonical(slug, spec_path)
@@ -91,6 +121,9 @@ def generate_exercise(env, spec_path, exercise, check=False):
 
 
 def generate(exercise_glob, spec_path=DEFAULT_SPEC_LOCATION, check=False, **kwargs):
+    """
+    Primary entry point. Generates test files for all exercises matching exercise_glob
+    """
     loader = FileSystemLoader('exercises')
     env = Environment(loader=loader, keep_trailing_newline=True)
     env.filters['to_snake'] = to_snake
