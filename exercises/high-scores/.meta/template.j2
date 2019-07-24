@@ -8,7 +8,9 @@ import unittest
 
 from {{ exercise | to_snake }} import (
     {%- for prop in properties %}
+    {%- if prop != "scores" %}
     {{ prop | to_snake }},
+    {% endif -%}
     {%- endfor %}
 )
 
@@ -21,7 +23,9 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {{- testcase(subcase) -}}
     {% endfor %}
     {%- else %}
+    {%- if case["property"] != "scores" %}
     {{- testcase(case) -}}
+    {% endif -%}
     {% endif -%}
     {% endfor %}
 

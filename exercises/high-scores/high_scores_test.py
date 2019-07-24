@@ -1,16 +1,11 @@
 import unittest
 
-from high_scores import latest, personal_best, personal_top_three, scores
+from high_scores import latest, personal_best, personal_top_three
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v4.0.0
 
 
 class HighScoresTest(unittest.TestCase):
-    def test_list_of_scores(self):
-        scores = [30, 50, 20, 70]
-        expected = [30, 50, 20, 70]
-        self.assertEqual(scores(scores), expected)
-
     def test_latest_score(self):
         scores = [100, 0, 90, 30]
         expected = 30
