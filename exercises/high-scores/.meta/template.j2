@@ -1,0 +1,30 @@
+{%- macro testcase(case) %}
+    def test_{{ case["description"] | to_snake }}(self):
+        scores = {{ case["input"]["scores"] }}
+        expected = {{ case["expected"] }}
+        self.assertEqual({{ case["property"] | to_snake }}(scores), expected)
+{% endmacro -%}
+import unittest
+
+from {{ exercise | to_snake }} import (
+    {%- for prop in properties %}
+    {{ prop | to_snake }},
+    {%- endfor %}
+)
+
+# Tests adapted from `problem-specifications//canonical-data.json` @ v{{ version }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {%- for case in cases -%}
+    {%- if "cases" in case -%}
+    {%- for subcase in case["cases"] -%}
+    {{- testcase(subcase) -}}
+    {% endfor %}
+    {%- else %}
+    {{- testcase(case) -}}
+    {% endif -%}
+    {% endfor %}
+
+
+if __name__ == '__main__':
+    unittest.main()

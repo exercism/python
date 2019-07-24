@@ -63,6 +63,19 @@ def camel_case(string):
     return ''.join(w.title() for w in to_snake(string).split('_'))
 
 
+def get_tested_properties(spec):
+    """
+    Get set of tested properties from spec. Include nested cases.
+    """
+    props = set()
+    for case in spec["cases"]:
+        if "property" in case:
+            props.add(case["property"])
+        if "cases" in case:
+            props.update(get_tested_properties(case))
+    return sorted(props)
+
+
 def load_canonical(exercise, spec_path):
     """
     Loads the canonical data for an exercise as a nested dictionary
@@ -71,7 +84,9 @@ def load_canonical(exercise, spec_path):
         spec_path, 'exercises', exercise, 'canonical-data.json'
     )
     with open(full_path) as f:
-        return json.load(f)
+        spec = json.load(f)
+    spec["properties"] = get_tested_properties(spec)
+    return spec
 
 
 def format_file(path):
@@ -122,8 +137,10 @@ def generate_exercise(env, spec_path, exercise, check=False):
                 shutil.move(tmp.name, tests_path)
                 print(f'{slug} generated at {tests_path}')
         except TemplateNotFound:
+            logger.debug(str(e))
             logger.info(f'{slug}: no template found; skipping')
-    except FileNotFoundError:
+    except FileNotFoundError as e:
+        logger.debug(str(e))
         logger.info(f'{slug}: no canonical data found; skipping')
 
 
@@ -155,5 +172,5 @@ if __name__ == '__main__':
     parser.add_argument('--check', action='store_true')
     opts = parser.parse_args()
     if opts.verbose:
-        logger.setLevel(logging.INFO)
+        logger.setLevel(logging.DEBUG)
     generate(**opts.__dict__)
