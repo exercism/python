@@ -18,13 +18,13 @@ import json
 import logging
 import os
 import re
-import tempfile
 import shutil
 import sys
 from glob import glob
 from itertools import repeat
 from string import punctuation, whitespace
 from subprocess import CalledProcessError, check_call
+from tempfile import NamedTemporaryFile
 
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 
@@ -108,19 +108,18 @@ def generate_exercise(env, spec_path, exercise, check=False):
                 exercise, f'{to_snake(slug)}_test.py'
             )
             rendered = template.render(**spec)
-            tmp_fd, tmp_path = tempfile.mkstemp()
-            os.write(tmp_fd, rendered)
-            os.close(tmp_fd)
-            format_file(tmp_path)
+            with NamedTemporaryFile('w', delete=False) as tmp:
+                tmp.write(rendered)
+            format_file(tmp.name)
             if check:
                 try:
-                    if not filecmp.cmp(tmp_path, tests_path):
+                    if not filecmp.cmp(tmp.name, tests_path):
                         logger.error(f'{slug}: check failed; tests must be regenerated with bin/generate_tests.py')
                         sys.exit(1)
                 finally:
-                    os.remove(tmp_path)
+                    os.remove(tmp.name)
             else:
-                shutil.move(tmp_path, tests_path)
+                shutil.move(tmp.name, tests_path)
                 print(f'{slug} generated at {tests_path}')
         except TemplateNotFound:
             logger.info(f'{slug}: no template found; skipping')
