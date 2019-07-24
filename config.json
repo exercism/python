@@ -32,6 +32,18 @@
       ]
     },
     {
+      "slug": "raindrops",
+      "uuid": "82d82e32-cb30-4119-8862-d019563dd1e3",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "conditionals",
+        "integers",
+        "text_formatting"
+      ]
+    },
+    {
       "slug": "high-scores",
       "uuid": "574d6323-5ff5-4019-9ebe-0067daafba13",
       "core": true,
@@ -73,14 +85,6 @@
         "sets",
         "strings"
       ]
-    },
-    {
-      "slug": "raindrops",
-      "uuid": "82d82e32-cb30-4119-8862-d019563dd1e3",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 2,
-      "topics": null
     },
     {
       "slug": "isogram",
@@ -381,7 +385,7 @@
       "slug": "armstrong-numbers",
       "uuid": "e9b0defc-dac5-11e7-9296-cec278b6b50a",
       "core": false,
-      "unlocked_by": "two-fer",
+      "unlocked_by": "raindrops",
       "difficulty": 1,
       "topics": [
         "algorithms",
