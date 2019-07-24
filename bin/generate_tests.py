@@ -13,15 +13,18 @@ Usage:
     generate_tests.py --check two-fer   Checks if two-fer test file is out of sync with template
 """
 import argparse
+import filecmp
 import json
 import logging
 import os
 import re
+import shutil
 import sys
 from glob import glob
 from itertools import repeat
 from string import punctuation, whitespace
 from subprocess import CalledProcessError, check_call
+from tempfile import NamedTemporaryFile
 
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 
@@ -105,14 +108,18 @@ def generate_exercise(env, spec_path, exercise, check=False):
                 exercise, f'{to_snake(slug)}_test.py'
             )
             rendered = template.render(**spec)
+            with NamedTemporaryFile('w', delete=False) as tmp:
+                tmp.write(rendered)
+            format_file(tmp.name)
             if check:
-                if not compare_existing(rendered, tests_path):
-                    logger.error(f'{slug}: check failed; tests must be regenerated with bin/generate_tests.py')
-                    sys.exit(1)
+                try:
+                    if not filecmp.cmp(tmp.name, tests_path):
+                        logger.error(f'{slug}: check failed; tests must be regenerated with bin/generate_tests.py')
+                        sys.exit(1)
+                finally:
+                    os.remove(tmp.name)
             else:
-                with open(tests_path, 'w') as f:
-                    f.write(rendered)
-                format_file(tests_path)
+                shutil.move(tmp.name, tests_path)
                 print(f'{slug} generated at {tests_path}')
         except TemplateNotFound:
             logger.info(f'{slug}: no template found; skipping')
