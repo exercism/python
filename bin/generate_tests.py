@@ -109,8 +109,8 @@ def generate_exercise(env, spec_path, exercise, check=False):
             )
             rendered = template.render(**spec)
             tmp_fd, tmp_path = tempfile.mkstemp()
-            tmp_fd.write(rendered)
-            tmp_fd.close()
+            os.write(tmp_fd, rendered)
+            os.close(tmp_fd)
             format_file(tmp_path)
             if check:
                 try:
