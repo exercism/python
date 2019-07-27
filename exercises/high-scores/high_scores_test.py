@@ -40,6 +40,19 @@ class HighScoresTest(unittest.TestCase):
         scores = [40]
         expected = [40]
         self.assertEqual(personal_top_three(scores), expected)
+        
+    def test_all_do_not_modify_original_list(self):
+        scores = [40, 20, 50, 30]
+        expected = scores.copy()
+
+        personal_top_three(scores)
+        self.assertEqual(scores, expected)
+
+        latest(scores)
+        self.assertEqual(scores, expected)
+
+        personal_best(scores)
+        self.assertEqual(scores, expected)
 
 
 if __name__ == "__main__":
