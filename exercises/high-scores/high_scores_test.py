@@ -43,7 +43,7 @@ class HighScoresTest(unittest.TestCase):
         
     def test_all_do_not_modify_original_list(self):
         scores = [40, 20, 50, 30]
-        expected = scores.copy()
+        expected = [40, 20, 50, 30]
 
         personal_top_three(scores)
         self.assertEqual(scores, expected)
