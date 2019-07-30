@@ -76,6 +76,13 @@ def get_tested_properties(spec):
     return sorted(props)
 
 
+def error_case(case):
+    return (
+        isinstance(case["expected"], dict) and
+        "error" in case["expected"]
+    )
+
+
 def load_canonical(exercise, spec_path):
     """
     Loads the canonical data for an exercise as a nested dictionary
@@ -148,10 +155,11 @@ def generate(exercise_glob, spec_path=DEFAULT_SPEC_LOCATION, check=False, **kwar
     """
     Primary entry point. Generates test files for all exercises matching exercise_glob
     """
-    loader = FileSystemLoader('exercises')
+    loader = FileSystemLoader(['config', 'exercises'])
     env = Environment(loader=loader, keep_trailing_newline=True)
     env.filters['to_snake'] = to_snake
     env.filters['camel_case'] = camel_case
+    env.tests['error_case'] = error_case
     for exercise in glob(os.path.join('exercises', exercise_glob)):
         generate_exercise(env, spec_path, exercise, check)
 
