@@ -2,11 +2,10 @@ import unittest
 
 import hamming
 
-
 # Tests adapted from `problem-specifications//canonical-data.json` @ v2.3.0
 
-class HammingTest(unittest.TestCase):
 
+class HammingTest(unittest.TestCase):
     def test_empty_strands(self):
         self.assertEqual(hamming.distance("", ""), 0)
 
@@ -49,5 +48,5 @@ class HammingTest(unittest.TestCase):
         return self.assertRaisesRegex(exception, r".+")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
