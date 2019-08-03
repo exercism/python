@@ -41,6 +41,27 @@ class HighScoresTest(unittest.TestCase):
         expected = [40]
         self.assertEqual(personal_top_three(scores), expected)
 
+    def test_latest_doesnt_mutate_scores(self):
+        # make sure latest doesn't affect/damage our original object
+        scores = [20, 10, 30]
+        scores_backup = list(scores)
+        _unused = latest(scores)
+        self.assertEqual(scores, scores_backup)
+
+    def test_personal_best_doesnt_mutate_scores(self):
+        # make sure personal_best doesn't affect/damage our original object
+        scores = [20, 10, 30, 50, 40, 10]
+        scores_backup = list(scores)
+        _unused = personal_best(scores)
+        self.assertEqual(scores, scores_backup)
+
+    def test_personal_top_three_doesnt_mutate_scores(self):
+        # make sure personal_top_three doesn't affect/damage our original object
+        scores = [10, 30, 90, 30, 100, 20, 10, 0, 30, 40, 40, 70, 70]
+        scores_backup = list(scores)
+        _unused = personal_top_three(scores)
+        self.assertEqual(scores, scores_backup)
+
 
 if __name__ == "__main__":
     unittest.main()
