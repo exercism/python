@@ -1,3 +1,4 @@
+from copy import deepcopy
 import unittest
 
 from high_scores import latest, personal_best, personal_top_three
@@ -13,9 +14,10 @@ class HighScoresTest(unittest.TestCase):
 
     def test_latest_score_doesnt_modify(self):
         scores = [100, 0, 90, 30]
-        score_length_before_call = len(scores)
+        scores_before_call = deepcopy(scores)
         latest(scores)
-        self.assertEqual(len(scores), score_length_before_call)
+        # test we didn't sort/reverse
+        self.assertEqual(scores, scores_before_call)
 
     def test_personal_best(self):
         scores = [40, 100, 70]
@@ -24,9 +26,9 @@ class HighScoresTest(unittest.TestCase):
 
     def test_personal_best_doesnt_modify(self):
         scores = [40, 100, 70]
-        score_length_before_call = len(scores)
+        scores_before_call = deepcopy(scores)
         personal_best(scores)
-        self.assertEqual(len(scores), score_length_before_call)
+        self.assertEqual(scores, scores_before_call)
 
     def test_personal_top_three_from_a_list_of_scores(self):
         scores = [10, 30, 90, 30, 100, 20, 10, 0, 30, 40, 40, 70, 70]
@@ -55,9 +57,9 @@ class HighScoresTest(unittest.TestCase):
 
     def test_personal_top_doesnt_modify(self):
         scores = [40, 100, 70]
-        score_length_before_call = len(scores)
+        scores_before_call = deepcopy(scores)
         personal_top_three(scores)
-        self.assertEqual(len(scores), score_length_before_call)
+        self.assertEqual(scores, scores_before_call)
 
 if __name__ == "__main__":
     unittest.main()
