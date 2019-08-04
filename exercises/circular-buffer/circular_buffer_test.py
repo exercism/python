@@ -7,47 +7,47 @@ from circular_buffer import (
 )
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class CircularBufferTest(unittest.TestCase):
-    def test_read_empty_buffer(self):
+    def test_reading_empty_buffer_should_fail(self):
         buf = CircularBuffer(1)
         with self.assertRaisesWithMessage(BufferEmptyException):
             buf.read()
 
-    def test_read_just_written_item(self):
+    def test_can_read_an_item_just_written(self):
         buf = CircularBuffer(1)
         buf.write('1')
         self.assertEqual(buf.read(), '1')
 
-    def test_write_and_read_back_one_item(self):
+    def test_each_item_may_only_be_read_once(self):
         buf = CircularBuffer(1)
         buf.write('1')
         self.assertEqual(buf.read(), '1')
         with self.assertRaisesWithMessage(BufferEmptyException):
             buf.read()
 
-    def test_write_and_read_back_multiple_items_ordered(self):
+    def test_items_are_read_in_the_order_they_are_written(self):
         buf = CircularBuffer(2)
         buf.write('1')
         buf.write('2')
         self.assertEqual(buf.read(), '1')
         self.assertEqual(buf.read(), '2')
 
-    def test_cant_write_to_full_buffer(self):
+    def test_full_buffer_cant_be_written_to(self):
         buf = CircularBuffer(1)
         buf.write('1')
         with self.assertRaisesWithMessage(BufferFullException):
             buf.write('2')
 
-    def test_alternate_write_and_read(self):
+    def test_a_read_frees_up_capacity_for_another_write(self):
         buf = CircularBuffer(1)
         buf.write('1')
         self.assertEqual(buf.read(), '1')
         buf.write('2')
         self.assertEqual(buf.read(), '2')
 
-    def test_read_back_oldest_item(self):
+    def test_read_position_is_maintained_across_multiple_writes(self):
         buf = CircularBuffer(3)
         buf.write('1')
         buf.write('2')
@@ -56,14 +56,14 @@ class CircularBufferTest(unittest.TestCase):
         self.assertEqual(buf.read(), '2')
         self.assertEqual(buf.read(), '3')
 
-    def test_clearing_buffer(self):
+    def test_items_cleared_out_of_buffer_cant_be_read(self):
         buf = CircularBuffer(1)
         buf.write('1')
         buf.clear()
         with self.assertRaisesWithMessage(BufferEmptyException):
             buf.read()
 
-    def test_clear_free_buffer_for_write(self):
+    def test_clear_frees_up_capacity_for_another_write(self):
         buf = CircularBuffer(1)
         buf.write('1')
         buf.clear()
@@ -76,14 +76,14 @@ class CircularBufferTest(unittest.TestCase):
         buf.write('1')
         self.assertEqual(buf.read(), '1')
 
-    def test_overwrite_non_full_buffer(self):
+    def test_overwrite_acts_like_write_on_non_full_buffer(self):
         buf = CircularBuffer(2)
         buf.write('1')
         buf.overwrite('2')
         self.assertEqual(buf.read(), '1')
         self.assertEqual(buf.read(), '2')
 
-    def test_overwrite_replaces_oldest_item(self):
+    def test_overwrite_replaces_the_oldest_item_on_full_buffer(self):
         buf = CircularBuffer(2)
         buf.write('1')
         buf.write('2')
@@ -91,7 +91,7 @@ class CircularBufferTest(unittest.TestCase):
         self.assertEqual(buf.read(), '2')
         self.assertEqual(buf.read(), '3')
 
-    def test_overwrite_replaces_oldest_remaining_item(self):
+    def test_overwrite_replaces_the_oldest_item_remaining_in_buffer_following_a_read(self):
         buf = CircularBuffer(3)
         buf.write('1')
         buf.write('2')
@@ -102,6 +102,18 @@ class CircularBufferTest(unittest.TestCase):
         self.assertEqual(buf.read(), '3')
         self.assertEqual(buf.read(), '4')
         self.assertEqual(buf.read(), '5')
+
+    def test_initial_clear_does_not_affect_wrapping_around(self):
+        buf = CircularBuffer(2)
+        buf.clear()
+        buf.write('1')
+        buf.write('2')
+        buf.overwrite('3')
+        buf.overwrite('4')
+        self.assertEqual(buf.read(), '3')
+        self.assertEqual(buf.read(), '4')
+        with self.assertRaisesWithMessage(BufferEmptyException):
+            buf.read()
 
     # Utility functions
     def setUp(self):
