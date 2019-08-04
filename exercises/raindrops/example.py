@@ -1,10 +1,16 @@
-DROPS = ((3, 'Pling'), (5, 'Plang'), (7, 'Plong'))
-
-
-def convert(number):
+def convert(number: int) -> str:
     """
     Converts a number to a string according to the raindrop sounds.
     """
+  
+    result = ''
+    if number % 3 == 0:
+      result += 'Pling'
+    if number % 5 == 0:
+      result += 'Plang'
+    if number % 7 == 0:
+      result += 'Plong'
 
-    return "".join(sound for factor, sound
-                   in DROPS if number % factor == 0) or str(number)
+    if not result:
+        result = str(number)
+    return result
