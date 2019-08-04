@@ -9,12 +9,13 @@ get_timestamp()
 ret=0
 for exercise in $(ls -d exercises/*/); do
     meta_dir="${exercise}.meta"
-    if [ -d "$meta_dir" ]; then
-        meta_timestamp="$(get_timestamp "$meta_dir")"
+    hints_file="${meta_dir}/HINTS.md"
+    if [ -f "$hints_file" ]; then
+        hints_timestamp="$(get_timestamp "$hints_file")"
         readme_timestamp="$(get_timestamp "${exercise}README.md")"
-        if [ "$meta_timestamp" -gt "$readme_timestamp" ]; then
+        if [ "$hints_timestamp" -gt "$readme_timestamp" ]; then
             ret=1
-            echo "$(basename "$exercise"): .meta/ contents newer than README. Please regenerate it with configlet."
+            echo "$(basename "$exercise"): .meta/HINTS.md contents newer than README. Please regenerate README with configlet."
         fi
     fi
 done
