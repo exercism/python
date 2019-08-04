@@ -3,7 +3,7 @@ import unittest
 from word_count import count_words
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
 
 class WordCountTest(unittest.TestCase):
 
@@ -66,6 +66,13 @@ class WordCountTest(unittest.TestCase):
             count_words("Joe can't tell between 'large' and large."),
             {'joe': 1, "can't": 1, 'tell': 1, 'between': 1, 'large': 2,
              'and': 1}
+        )
+
+    def test_substring_from_the_beginning(self):
+        self.assertEqual(
+            count_words("Joe can't tell between app, apple and a."),
+            {'joe': 1, "can't": 1, 'tell': 1, 'between': 1,
+             'app': 1, 'apple': 1, 'and': 1, 'a':1}
         )
 
     def test_multiple_spaces_not_detected_as_a_word(self):
