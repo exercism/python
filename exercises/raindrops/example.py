@@ -1,4 +1,4 @@
-def convert(number: int) -> str:
+def convert(number):
     """
     Converts a number to a string according to the raindrop sounds.
     """
