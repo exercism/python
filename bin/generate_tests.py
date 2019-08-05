@@ -78,9 +78,20 @@ def get_tested_properties(spec):
 
 def error_case(case):
     return (
+        "expected" in case and
         isinstance(case["expected"], dict) and
         "error" in case["expected"]
     )
+
+
+def has_error_case(cases):
+    cases = cases[:]
+    while cases:
+        case = cases.pop(0)
+        if error_case(case):
+            return True
+        cases.extend(case.get("cases", []))
+    return False
 
 
 def load_canonical(exercise, spec_path):
@@ -129,6 +140,7 @@ def generate_exercise(env, spec_path, exercise, check=False):
             tests_path = os.path.join(
                 exercise, f'{to_snake(slug)}_test.py'
             )
+            spec["has_error_case"] = has_error_case(spec["cases"])
             rendered = template.render(**spec)
             with NamedTemporaryFile('w', delete=False) as tmp:
                 tmp.write(rendered)
