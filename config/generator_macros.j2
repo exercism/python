@@ -1,3 +1,10 @@
+{# Usage: {%- import "generator_macros.j2" as macros -%} #}
+{# {{ macros.canonical_ref(version) }} #}
+
+{% macro canonical_ref(version) -%}
+# Tests adapted from `problem-specifications//canonical-data.json` @ v{{ version }}
+{%- endmacro %}
+
 {% macro utility() -%}# Utility functions
     def setUp(self):
         try:
