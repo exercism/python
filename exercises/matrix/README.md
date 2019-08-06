@@ -47,7 +47,6 @@ In this exercise you're going to create a **class**.  _Don't worry, it's not as 
 -   [**Data Structures in Python**](https://docs.python.org/3/tutorial/datastructures.html) from the Python 3 documentation.
 
 
-
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to

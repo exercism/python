@@ -21,7 +21,6 @@ be described in the language/track specific files of the exercise.
 
 Please ignore the part regarding FRP library, a third party library is not required for this exercise.
 
-
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to

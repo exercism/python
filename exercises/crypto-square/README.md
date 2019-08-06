@@ -59,7 +59,7 @@ chunks with a single trailing space.
 ```
 
 Notice that were we to stack these, we could visually decode the
-cyphertext back in to the original message:
+ciphertext back in to the original message:
 
 ```text
 "imtgdvs"
