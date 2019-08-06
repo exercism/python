@@ -1,8 +1,31 @@
 {# Usage: {%- import "generator_macros.j2" as macros -%} #}
-{# {{ macros.canonical_ref(version) }} #}
+{# {{ macros.linebreak(text) }} #}
+
+{%- macro linebreak(s) %}
+{%- set parts = s.split(": ") -%}
+"{{ parts[0] }}: "
+{% for part in parts[1].split(", ") %}
+"{{ part }}{% if not loop.last %}, {% endif %}"
+{%- endfor %}
+{% endmacro -%}
+
+{% macro properties(exercise, properties) -%}
+from {{ exercise | to_snake }} import {% for prop in properties -%}
+    {{ prop | to_snake }}
+    {%- if not loop.last %}, {% endif -%}
+{% endfor %}
+{% endmacro -%}
 
 {% macro canonical_ref(version) -%}
 # Tests adapted from `problem-specifications//canonical-data.json` @ v{{ version }}
+{%- endmacro %}
+
+{% macro header(exercise, props, version) -%}
+import unittest
+
+{{ properties(exercise, props) }}
+
+{{ canonical_ref(version) }}
 {%- endmacro %}
 
 {% macro utility() -%}# Utility functions
@@ -14,4 +37,12 @@
 
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
+{%- endmacro %}
+
+{% macro footer(has_error_case) -%}
+{% if has_error_case %}
+{{ utility() }}
+{% endif %}
+if __name__ == '__main__':
+    unittest.main()
 {%- endmacro %}
