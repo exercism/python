@@ -1,0 +1,29 @@
+{%- import "generator_macros.j2" as macros -%}
+{%- macro test_call(case) %}
+            {{ case["property"] | to_snake }}(
+                {% for arg in case["input"].values() -%}
+                "{{ arg }}",
+                {% endfor %}
+            )
+{% endmacro -%}
+import unittest
+
+from {{ exercise | to_snake }} import {% for prop in properties -%}
+    {{ prop | to_snake }}{% if not loop.last %}, {% endif -%}
+{% endfor %}
+
+{{ macros.canonical_ref(version) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {# All test cases in this exercise are nested, so use two for loops -#}
+    {% for case in cases -%}{% for case in case["cases"] -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        self.assertIs(
+            {{- test_call(case) }},
+            {{ case["expected"] }}
+        )
+    {% endfor %}{% endfor %}
+
+
+if __name__ == '__main__':
+    unittest.main()

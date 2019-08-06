@@ -3,7 +3,7 @@ import unittest
 from etl import transform
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.0.0
 
 class EtlTest(unittest.TestCase):
     def test_a_single_letter(self):

@@ -14,16 +14,29 @@ matrix:
     - python: 3.4
       dist: trusty
     - env: JOB=HOUSEKEEPING
-      install: ./bin/fetch-configlet
+      python: 3.7
+      install:
+        - ./bin/fetch-configlet
+        - git clone https://github.com/exercism/problem-specifications spec
+        - pip install -r requirements-generator.txt
       before_script: ./bin/check-readmes.sh
       script:
+        - bin/generate_tests.py -p spec --check
         # May provide more useful output than configlet fmt
         # if JSON is not valid or items are incomplete
         - ./bin/configlet lint .
         # Verify correct formatting in config.json
         - ./bin/configlet fmt . && git diff --quiet
+    - env: JOB=CANONICAL_SYNC
+      python: 3.7
+      install:
+        - pip install requests
+        - git clone https://github.com/exercism/problem-specifications spec
+      before_script: []
+      script: ./bin/check-test-version.py -v -p spec
   allow_failures:
     - python: nightly
+    - env: JOB=CANONICAL_SYNC
 
 before_script:
   - flake8

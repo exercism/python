@@ -1,82 +1,89 @@
 import unittest
 
-from word_count import word_count
+from word_count import count_words
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
 
 class WordCountTest(unittest.TestCase):
 
     def test_count_one_word(self):
         self.assertEqual(
-            word_count('word'),
+            count_words('word'),
             {'word': 1}
         )
 
-    def test_count_one_of_each(self):
+    def test_count_one_of_each_word(self):
         self.assertEqual(
-            word_count('one of each'),
+            count_words('one of each'),
             {'one': 1, 'of': 1, 'each': 1}
         )
 
-    def test_count_multiple_occurrences_of_a_word(self):
+    def test_multiple_occurrences_of_a_word(self):
         self.assertEqual(
-            word_count('one fish two fish red fish blue fish'),
+            count_words('one fish two fish red fish blue fish'),
             {'one': 1, 'fish': 4, 'two': 1, 'red': 1, 'blue': 1}
         )
 
-    def test_cramped_list(self):
+    def test_handles_cramped_lists(self):
         self.assertEqual(
-            word_count('one,two,three'),
+            count_words('one,two,three'),
             {'one': 1, 'two': 1, 'three': 1}
         )
 
-    def test_expanded_list(self):
+    def test_handles_expanded_lists(self):
         self.assertEqual(
-            word_count('one,\ntwo,\nthree'),
+            count_words('one,\ntwo,\nthree'),
             {'one': 1, 'two': 1, 'three': 1}
         )
 
-    def test_ignores_punctuation(self):
+    def test_ignore_punctuation(self):
         self.assertEqual(
-            word_count('car : carpet as java : javascript!!&@$%^&'),
+            count_words('car : carpet as java : javascript!!&@$%^&'),
             {'car': 1, 'carpet': 1, 'as': 1, 'java': 1, 'javascript': 1}
         )
 
     def test_include_numbers(self):
         self.assertEqual(
-            word_count('testing 1 2 testing'),
+            count_words('testing 1 2 testing'),
             {'testing': 2, '1': 1, '2': 1}
         )
 
     def test_normalize_case(self):
         self.assertEqual(
-            word_count('go Go GO Stop stop'),
+            count_words('go Go GO Stop stop'),
             {'go': 3, 'stop': 2}
         )
 
-    def test_apostrophes(self):
+    def test_with_apostrophes(self):
         self.assertEqual(
-            word_count("First: don't laugh. Then: don't cry."),
+            count_words("First: don't laugh. Then: don't cry."),
             {'first': 1, "don't": 2, 'laugh': 1, 'then': 1, 'cry': 1}
         )
 
-    def test_quotations(self):
+    def test_with_quotations(self):
         self.assertEqual(
-            word_count("Joe can't tell between 'large' and large."),
+            count_words("Joe can't tell between 'large' and large."),
             {'joe': 1, "can't": 1, 'tell': 1, 'between': 1, 'large': 2,
              'and': 1}
         )
 
+    def test_substring_from_the_beginning(self):
+        self.assertEqual(
+            count_words("Joe can't tell between app, apple and a."),
+            {'joe': 1, "can't": 1, 'tell': 1, 'between': 1,
+             'app': 1, 'apple': 1, 'and': 1, 'a':1}
+        )
+
     def test_multiple_spaces_not_detected_as_a_word(self):
         self.assertEqual(
-            word_count(' multiple   whitespaces'),
+            count_words(' multiple   whitespaces'),
             {'multiple': 1, 'whitespaces': 1}
         )
 
-    def test_alternating_word_separators(self):
+    def test_alternating_word_separators_not_detected_as_a_word(self):
         self.assertEqual(
-            word_count(",\n,one,\n ,two \n 'three'"),
+            count_words(",\n,one,\n ,two \n 'three'"),
             {'one': 1, 'two': 1, 'three': 1}
         )
 
@@ -84,15 +91,15 @@ class WordCountTest(unittest.TestCase):
 
     def test_tabs(self):
         self.assertEqual(
-            word_count('rah rah ah ah ah\troma roma ma\tga ga oh la la\t'
-                       'want your bad romance'),
+            count_words('rah rah ah ah ah\troma roma ma\tga ga oh la la\t'
+                        'want your bad romance'),
             {'rah': 2, 'ah': 3, 'roma': 2, 'ma': 1, 'ga': 2, 'oh': 1, 'la': 2,
              'want': 1, 'your': 1, 'bad': 1, 'romance': 1}
         )
 
     def test_non_alphanumeric(self):
         self.assertEqual(
-            word_count('hey,my_spacebar_is_broken.'),
+            count_words('hey,my_spacebar_is_broken.'),
             {'hey': 1, 'my': 1, 'spacebar': 1, 'is': 1, 'broken': 1}
         )
 

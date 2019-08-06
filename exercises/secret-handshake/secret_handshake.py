@@ -1,4 +1,4 @@
-def handshake(code):
+def commands(number):
     pass
 
 
