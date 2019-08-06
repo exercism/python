@@ -11,7 +11,6 @@ In this exercise, you're going to use and manipulate lists. Python lists are ver
 - [**Python Lists (Google for Education)**](https://developers.google.com/edu/python/lists)
 
 
-
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
