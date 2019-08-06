@@ -112,10 +112,12 @@ def load_additional_tests(exercise):
     Loads additional tests from .meta/additional_tests.json
     """
     full_path = os.path.join(exercise, '.meta', 'additional_tests.json')
-    if not os.path.isfile(full_path):
+    try:
+        with open(full_path) as f:
+            data = json.load(f)
+        return data.get("cases", [])
+    except FileNotFoundError:
         return []
-    with open(full_path) as f:
-        return json.load(f)
 
 
 def format_file(path):
