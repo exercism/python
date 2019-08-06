@@ -1,13 +1,13 @@
 # Raindrops
 
-In this variant of the children's game [Fizz Buzz](https://en.wikipedia.org/wiki/Fizz_buzz) -- which has often been used as a screening exercise in technical job interviews -- your task is to convert an _integer_ into a _string_ that contains raindrop sounds corresponding to certain factors. A factor is a smaller number that evenly divides into a larger, the simplest way to test if a one number is a factor of another is to use the [modulo operation](https://en.wikipedia.org/wiki/Modulo_operation), which in Python is represented by the `%` operator.
+Your task is to convert a number into a string that contains raindrop sounds corresponding to certain potential factors. A factor is a number that evenly divides into another number, leaving no remainder. The simplest way to test if a one number is a factor of another is to use the [modulo operation](https://en.wikipedia.org/wiki/Modulo_operation).
 
-The rules of `raindrops` are quite simple; if a given **number**:
+The rules of `raindrops` are that if a given number:
 
-- has 3 as a factor, add 'Pling' to the result string.
-- has 5 as a factor, add 'Plang' to the result string.
-- has 7 as a factor, add 'Plong' to the result string.
-- _does not_ have any of 3, 5, or 7 as a factor, the result string should be the digits of **number**.
+- has 3 as a factor, add 'Pling' to the result.
+- has 5 as a factor, add 'Plang' to the result.
+- has 7 as a factor, add 'Plong' to the result.
+- _does not_ have any of 3, 5, or 7 as a factor, the result should be the digits of the number.
 
 ## Examples
 
@@ -58,7 +58,7 @@ please see [Running the Tests](http://exercism.io/tracks/python/tests).
 
 ## Source
 
-A variation on a famous interview question intended to weed out potential candidates. [http://jumpstartlab.com](http://jumpstartlab.com)
+A variation on FizzBuzz, a famous technical interview question that is intended to weed out potential candidates. That question is itself derived from Fizz Buzz, a popular children's game for teaching division. [https://en.wikipedia.org/wiki/Fizz_buzz](https://en.wikipedia.org/wiki/Fizz_buzz)
 
 ## Submitting Incomplete Solutions
 
