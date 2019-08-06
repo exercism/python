@@ -111,7 +111,7 @@ def load_additional_tests(exercise):
     """
     Loads additional tests from .meta/additional_tests.json
     """
-    full_path = os.path.join(exercise, '.meta', 'additional_tests.json')
+    full_path = os.path.join('exercises', exercise, '.meta', 'additional_tests.json')
     try:
         with open(full_path) as f:
             data = json.load(f)
@@ -148,7 +148,7 @@ def generate_exercise(env, spec_path, exercise, check=False):
     try:
         spec = load_canonical(slug, spec_path)
         additional_tests = load_additional_tests(slug)
-        spec["cases"].extend(additional_tests)
+        spec["additional_cases"] = additional_tests
         template_path = os.path.join(slug, '.meta', 'template.j2')
         try:
             template = env.get_template(template_path)
