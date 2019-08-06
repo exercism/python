@@ -107,6 +107,17 @@ def load_canonical(exercise, spec_path):
     return spec
 
 
+def load_additional_tests(exercise):
+    """
+    Loads additional tests from .meta/additional_tests.json
+    """
+    full_path = os.path.join(exercise, '.meta', 'additional_tests.json')
+    if not os.path.isfile(full_path):
+        return []
+    with open(full_path) as f:
+        return json.load(f)
+
+
 def format_file(path):
     """
     Runs black auto-formatter on file at path
@@ -134,6 +145,8 @@ def generate_exercise(env, spec_path, exercise, check=False):
     slug = os.path.basename(exercise)
     try:
         spec = load_canonical(slug, spec_path)
+        additional_tests = load_additional_tests(slug)
+        spec["cases"].extend(additional_tests)
         template_path = os.path.join(slug, '.meta', 'template.j2')
         try:
             template = env.get_template(template_path)
