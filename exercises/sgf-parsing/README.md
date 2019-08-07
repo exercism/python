@@ -65,7 +65,6 @@ structure of properties. You do not need to encode knowledge about the
 data types of properties, just use the rules for the
 [text](http://www.red-bean.com/sgf/sgf4.html#text) type everywhere.
 
-
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
