@@ -1,4 +1,4 @@
-{%- import "generator_macros.j2" as macros -%}
+{%- import "generator_macros.j2" as macros with context -%}
 {% macro test_case(case) -%}
     {%- set input = case["input"] -%}
     def test_{{ case["description"] | to_snake }}(self):
@@ -7,7 +7,7 @@
             {{ case["expected"] }}
         )
 {%- endmacro %}
-{{ macros.header(exercise, properties, version)}}
+{{ macros.header()}}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
@@ -15,4 +15,4 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% endfor %}
 
 
-{{ macros.footer(has_error_case) }}
+{{ macros.footer() }}

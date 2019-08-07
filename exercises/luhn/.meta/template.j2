@@ -1,4 +1,4 @@
-{%- import "generator_macros.j2" as macros -%}
+{%- import "generator_macros.j2" as macros with context -%}
 {%- macro test_case(group_name, case) -%}
     {%- set input = case["input"] -%}
     def test_{{ group_name | to_snake }}_
@@ -17,11 +17,7 @@
             {% endfor %}]
         )
 {% endmacro -%}
-import unittest
-
-from {{ exercise | to_snake }} import Luhn
-
-{{ macros.canonical_ref(version) }}
+{{ macros.header(["Luhn"]) }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases %}
@@ -46,4 +42,4 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         self.assertIs(number.valid(), True)
         self.assertIs(number.valid(), True)
 
-{{ macros.footer(has_error_case) }}
+{{ macros.footer() }}

@@ -9,23 +9,26 @@
 {%- endfor %}
 {% endmacro -%}
 
-{% macro properties(exercise, properties) -%}
-from {{ exercise | to_snake }} import {% for prop in properties -%}
-    {{ prop | to_snake }}
-    {%- if not loop.last %}, {% endif -%}
-{% endfor %}
-{% endmacro -%}
-
-{% macro canonical_ref(version) -%}
+{% macro canonical_ref() -%}
 # Tests adapted from `problem-specifications//canonical-data.json` @ v{{ version }}
 {%- endmacro %}
 
-{% macro header(exercise, props, version) -%}
+{% macro header(imports=[], ignore=[]) -%}
 import unittest
 
-{{ properties(exercise, props) }}
+from {{ exercise | to_snake }} import ({% if imports -%}
+{% for name in imports -%}
+    {{ name }},
+{% endfor %}
+{%- else -%}
+{% for prop in properties -%}
+    {%- if prop not in ignore -%}
+    {{ prop | to_snake }},
+    {%- endif -%}
+{% endfor %}
+{%- endif %})
 
-{{ canonical_ref(version) }}
+{{ canonical_ref() }}
 {%- endmacro %}
 
 {% macro utility() -%}# Utility functions
