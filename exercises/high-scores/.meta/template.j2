@@ -1,20 +1,11 @@
+{%- import "generator_macros.j2" as macros with context -%}
 {%- macro testcase(case) %}
     def test_{{ case["description"] | to_snake }}(self):
         scores = {{ case["input"]["scores"] }}
         expected = {{ case["expected"] }}
         self.assertEqual({{ case["property"] | to_snake }}(scores), expected)
 {% endmacro -%}
-import unittest
-
-from {{ exercise | to_snake }} import (
-    {%- for prop in properties %}
-    {%- if prop != "scores" %}
-    {{ prop | to_snake }},
-    {% endif -%}
-    {%- endfor %}
-)
-
-# Tests adapted from `problem-specifications//canonical-data.json` @ v{{ version }}
+{{ macros.header(ignore=["scores"]) }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {%- for case in cases -%}

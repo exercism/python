@@ -1,8 +1,5 @@
-import unittest
-
-from {{ exercise | to_snake }} import {{ exercise | to_snake }}
-
-# Tests adapted from `problem-specifications//canonical-data.json` @ v{{ version }}
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.header() }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
@@ -14,6 +11,4 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         {% endif %}
     {% endfor %}
 
-
-if __name__ == "__main__":
-    unittest.main()
+{{ macros.footer() }}

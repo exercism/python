@@ -1,15 +1,10 @@
-import unittest
-
-import {{ exercise | to_snake }}
-
-# Tests adapted from `problem-specifications//canonical-data.json` @ v{{ version }}
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.header() }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
     def test_{{ case["description"] | to_snake }}(self):
-        self.assertEqual({{ exercise | to_snake }}.{{ case["property"] }}(), "{{ case["expected"] }}")
+        self.assertEqual({{ case["property"] }}(), "{{ case["expected"] }}")
     {% endfor %}
 
-
-if __name__ == '__main__':
-    unittest.main()
+{{ macros.footer() }}

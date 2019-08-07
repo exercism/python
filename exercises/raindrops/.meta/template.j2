@@ -1,4 +1,4 @@
-{%- import "generator_macros.j2" as macros -%}
+{%- import "generator_macros.j2" as macros with context -%}
 {%- macro test_call(case) %}
             {{ case["property"] | to_snake }}(
                 {% for arg in case["input"].values() -%}
@@ -6,13 +6,7 @@
                 {% endfor %}
             )
 {% endmacro -%}
-import unittest
-
-from {{ exercise | to_snake }} import {% for prop in properties -%}
-    {{ prop | to_snake }}{% if not loop.last %}, {% endif -%}
-{% endfor %}
-
-{{ macros.canonical_ref(version) }}
+{{ macros.header() }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
@@ -23,6 +17,4 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         )
     {% endfor %}
 
-
-if __name__ == '__main__':
-    unittest.main()
+{{ macros.footer() }}
