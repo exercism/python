@@ -1,5 +1,5 @@
-{%- import "generator_macros.j2" as macros -%}
-{{ macros.header(exercise, properties, version) }}
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.header() }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {# All test cases in this exercise are nested, so use two for loops -#}
@@ -20,4 +20,4 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
             {{- input["endVerse"] }}), expected)
     {% endfor %}{% endfor %}
 
-{{ macros.footer(has_error_case) }}
+{{ macros.footer() }}

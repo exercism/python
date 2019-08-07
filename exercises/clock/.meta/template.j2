@@ -1,0 +1,31 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{%- macro clock(obj) -%}
+Clock({{ obj["hour"] }}, {{ obj["minute"] }})
+{%- endmacro -%}
+{{ macros.header(["Clock"])}}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for casegroup in cases -%}
+    # {{ casegroup["description"].title() }}
+    {% for case in casegroup["cases"] -%}
+    {%- set input = case["input"] -%}
+    {%- set prop = case["property"] -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        self.assert
+            {%- if prop == "equal" -%}
+                {% if not case["expected"] %}Not{% endif %}Equal(
+                {{- clock(input["clock1"]) }},
+                {{- clock(input["clock2"]) }}
+            {% else -%}
+                Equal(str({{ clock(input) }}
+                {%- if prop == "add" %} + {{ input["value"] }}
+                {%- elif prop == "subtract" %} - {{ input["value"] }}
+                {%- endif %}), "
+                {{- case["expected"] }}"
+            {%- endif %}
+        )
+
+    {% endfor %}
+    {%- endfor %}
+
+{{ macros.footer() }}
