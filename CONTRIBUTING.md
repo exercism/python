@@ -9,7 +9,7 @@ This document supplements the [Exercism contributing guide]; all contributors sh
   * [Implementing an exercise](#implementing-an-exercise)
     + [Exercise structure](#exercise-structure)
     + [Generating Exercise READMEs](#generating-exercise-readmes)
-      - [Requirements:](#requirements-)
+      - [Requirements](#requirements)
       - [Generating all READMEs](#generating-all-readmes)
       - [Generating a single README](#generating-a-single-readme)
     + [Implementing tests](#implementing-tests)
@@ -76,7 +76,7 @@ Files:
 
 ### Generating Exercise READMEs
 
-#### Requirements:
+#### Requirements
 - A local clone of the [problem-specifications] repository.
 - [configlet]: may be obtained either by
   - (**Recommended**) Following installation instructions at the above link
