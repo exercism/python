@@ -46,31 +46,31 @@ Files:
 <table>
 <tr>
     <td>fake_exercise.py </td>
-    <td>Solution stub (See exercises/hello-world/hello_world.py)<td>
+    <td>Solution stub (See exercises/hello-world/hello_world.py)</td>
 </tr>
 <tr>
     <td>fake_exercise_test.py </td>
-    <td>Contains exercise tests (See exercises/hello-world/hello_world_test.py)<td>
+    <td>Contains exercise tests (See exercises/hello-world/hello_world_test.py)</td>
 </tr>
 <tr>
     <td>example.py </td>
-    <td>Example solution used to verify the tests (See exercises/hello-world/example.py)<td>
+    <td>Example solution used to verify the tests (See exercises/hello-world/example.py)</td>
 </tr>
 <tr>
     <td>.meta/additional_tests.json </td>
-    <td>Defines track-specific test cases (See exercises/word-count/.meta/additional_tests.json)<td>
+    <td>Defines track-specific test cases (See exercises/word-count/.meta/additional_tests.json)</td>
 </tr>
 <tr>
     <td>.meta/hints.md </td>
-    <td>Contains track-specific hints that are included on README generation (See exercises/high-scores/.meta/hints.md)<td>
+    <td>Contains track-specific hints that are included on README generation (See exercises/high-scores/.meta/hints.md)</td>
 </tr>
 <tr>
     <td>.meta/template.j2 </td>
-    <td>Test generation template (See exercises/hello-world/.meta/template.j2)<td>
+    <td>Test generation template (See exercises/hello-world/.meta/template.j2)</td>
 </tr>
 <tr>
     <td>README.md </td>
-    <td>Exercise README (See exercises/hello-world/hello_world.py)<td>
+    <td>Exercise README (See exercises/hello-world/hello_world.py)</td>
 </tr>
 </table>
 
