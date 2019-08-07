@@ -81,7 +81,7 @@ class PhoneNumberTest(unittest.TestCase):
     # Track specific tests
     def test_area_code(self):
         number = Phone("2234567890")
-        self.assertEqual(number.area_code(), "223")
+        self.assertEqual(number.area_code, "223")
 
     def test_pretty_print(self):
         number = Phone("2234567890")
