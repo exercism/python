@@ -218,9 +218,23 @@ if __name__ == '__main__':
         )
     )
     parser.add_argument('-v', '--verbose', action='store_true')
-    parser.add_argument('-p', '--spec-path', default=DEFAULT_SPEC_LOCATION)
-    parser.add_argument('--stop-on-failure', action='store_true')
-    parser.add_argument('--check', action='store_true')
+    parser.add_argument(
+        '-p', '--spec-path',
+        default=DEFAULT_SPEC_LOCATION,
+        help=(
+            'path to clone of exercism/problem-specifications '
+            '(default: %(default)s)'
+        )
+    )
+    parser.add_argument(
+        '--stop-on-failure',
+        action='store_true'
+    )
+    parser.add_argument(
+        '--check',
+        action='store_true',
+        help='check if tests are up-to-date, but do not modify test files'
+    )
     opts = parser.parse_args()
     if opts.verbose:
         logger.setLevel(logging.DEBUG)
