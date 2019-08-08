@@ -62,6 +62,11 @@ class TestScaleneTriangle(unittest.TestCase):
     def test_two_sides_are_equal(self):
         self.assertIs(scalene([4, 4, 3]), False)
 
+	# Additional tests for this track
+
+    def test_two_sides_are_equal_and_third_side_is_larger(self):
+        self.assertIs(scalene([3, 3, 4]), False)
+
     def test_may_not_violate_triangle_inequality(self):
         self.assertIs(scalene([7, 3, 2]), False)
 
