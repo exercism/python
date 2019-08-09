@@ -9,6 +9,8 @@ import shlex
 from subprocess import check_call, DEVNULL, CalledProcessError
 import sys
 
+DEFAULT_SPEC_LOCATION = os.path.join("..", "problem-specifications")
+
 logging.basicConfig(format="%(levelname)s:%(message)s")
 logger = logging.getLogger("generator")
 logger.setLevel(logging.WARN)
@@ -39,7 +41,7 @@ def exec_cmd(cmd):
         return False
 
 
-def generate_template(exercise, spec_path="../problem-specifications"):
+def generate_template(exercise, spec_path):
     return exec_cmd(f'bin/generate_tests.py -p "{spec_path}" {exercise}')
 
 
@@ -47,10 +49,10 @@ def run_tests(exercise):
     return exec_cmd(f"test/check-exercises.py {exercise}")
 
 
-def get_status(exercise):
+def get_status(exercise, spec_path):
     template_path = get_template_path(exercise)
     if os.path.isfile(template_path):
-        if generate_template(exercise):
+        if generate_template(exercise, spec_path):
             if run_tests(exercise):
                 logging.info(f"{exercise}: OK")
                 return TemplateStatus.OK
@@ -68,6 +70,14 @@ if __name__ == "__main__":
     parser.add_argument("-v", "--verbose", action="store_true")
     parser.add_argument("-q", "--quiet", action="store_true")
     parser.add_argument("--stop-on-failure", action="store_true")
+    parser.add_argument(
+        "-p",
+        "--spec-path",
+        default=DEFAULT_SPEC_LOCATION,
+        help=(
+            "path to clone of exercism/problem-specifications " "(default: %(default)s)"
+        ),
+    )
     opts = parser.parse_args()
     if opts.quiet:
         logger.setLevel(logging.FATAL)
@@ -79,7 +89,7 @@ if __name__ == "__main__":
         lambda e: fnmatch(e["slug"], opts.exercise_pattern), config["exercises"]
     ):
         slug = exercise["slug"]
-        status = get_status(slug)
+        status = get_status(slug, opts.spec_path)
         if status != TemplateStatus.OK:
             result = False
             logger.error(f"{slug}: {status.name}")

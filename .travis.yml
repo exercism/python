@@ -33,7 +33,9 @@ matrix:
         - pip install requests
         - git clone https://github.com/exercism/problem-specifications spec
       before_script: []
-      script: ./bin/check-test-version.py -v -p spec
+      script:
+        - ./bin/check-test-version.py -v -p spec
+        - ./bin/template_status.py -v -p spec
   allow_failures:
     - python: nightly
     - env: JOB=CANONICAL_SYNC
