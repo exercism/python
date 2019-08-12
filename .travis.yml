@@ -35,8 +35,8 @@ matrix:
         - git clone https://github.com/exercism/problem-specifications spec
       before_script: []
       script:
-        - ./bin/check-test-version.py -v -p spec
-        - ./bin/template_status.py -v -p spec
+        - echo "Test Version Status" && ./bin/check-test-version.py -p spec
+        - echo "Test Template Status" && ./bin/template_status.py -v -p spec
   allow_failures:
     - python: nightly
     - env: JOB=CANONICAL_SYNC

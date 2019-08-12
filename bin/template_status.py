@@ -22,6 +22,9 @@ class TemplateStatus(Enum):
     INVALID = auto()
     TEST_FAILURE = auto()
 
+    def __lt__(self, other):
+        return self.value < other.value
+
 
 with open("config.json") as f:
     config = json.load(f)
@@ -33,10 +36,10 @@ def get_template_path(exercise):
     return os.path.join(exercises_dir, exercise, ".meta", "template.j2")
 
 
-def exec_cmd(cmd, verbose=False):
+def exec_cmd(cmd):
     try:
         args = shlex.split(cmd)
-        if verbose:
+        if logger.isEnabledFor(logging.DEBUG):
             check_call(args)
         else:
             check_call(args, stderr=DEVNULL, stdout=DEVNULL)
@@ -74,7 +77,7 @@ def get_status(exercise, spec_path):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("exercise_pattern", nargs="?", default="*", metavar="EXERCISE")
-    parser.add_argument("-v", "--verbose", action="store_true")
+    parser.add_argument("-v", "--verbose", action="count", default=0)
     parser.add_argument("-q", "--quiet", action="store_true")
     parser.add_argument("--stop-on-failure", action="store_true")
     parser.add_argument(
@@ -88,8 +91,10 @@ if __name__ == "__main__":
     opts = parser.parse_args()
     if opts.quiet:
         logger.setLevel(logging.FATAL)
-    elif opts.verbose:
+    elif opts.verbose >= 2:
         logger.setLevel(logging.DEBUG)
+    elif opts.verbose >= 1:
+        logger.setLevel(logging.INFO)
 
     if not os.path.isdir(opts.spec_path):
         logger.error(f"{opts.spec_path} is not a directory")
@@ -98,18 +103,33 @@ if __name__ == "__main__":
     logger.debug(f"problem-specifications path is {opts.spec_path}")
 
     result = True
+    buckets = {
+        TemplateStatus.MISSING: [],
+        TemplateStatus.INVALID: [],
+        TemplateStatus.TEST_FAILURE: [],
+    }
     for exercise in filter(
         lambda e: fnmatch(e["slug"], opts.exercise_pattern), config["exercises"]
     ):
+        if exercise.get('deprecated', False):
+            continue
         slug = exercise["slug"]
         status = get_status(slug, opts.spec_path)
-        if status != TemplateStatus.OK:
-            result = False
-            logger.error(f"{slug}: {status.name}")
-            if opts.stop_on_failure:
-                break
-        else:
+        if status == TemplateStatus.OK:
             logger.info(f"{slug}: {status.name}")
+        else:
+            buckets[status].append(slug)
+            result = False
+            if opts.stop_on_failure:
+                logger.error(f"{slug}: {status.name}")
+                break
+
+    if not opts.quiet and not opts.stop_on_failure:
+        for status, bucket in sorted(buckets.items()):
+            if bucket:
+                print(f"The following exercises have status '{status.name}'")
+                for exercise in sorted(bucket):
+                    print(f'  {exercise}')
 
     if not result:
         sys.exit(1)
