@@ -38,7 +38,8 @@ def exec_cmd(cmd, verbose=False):
         out = check_output(shlex.split(cmd), stderr=STDOUT)
         logger.debug(out.decode())
         return True
-    except CalledProcessError:
+    except CalledProcessError as e:
+        logger.debug(str(e))
         return False
 
 
@@ -88,6 +89,7 @@ if __name__ == "__main__":
     if not os.path.isdir(opts.spec_path):
         logger.error(f'{opts.spec_path} is not a directory')
         sys.exit(1)
+    logger.debug(f'problem-specifications path is {opts.spec_path}')
 
     result = True
     for exercise in filter(
