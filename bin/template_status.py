@@ -39,6 +39,7 @@ def exec_cmd(cmd, verbose=False):
         logger.debug(out.decode())
         return True
     except CalledProcessError as e:
+        logger.debug(out.decode())
         logger.debug(str(e))
         return False
 
