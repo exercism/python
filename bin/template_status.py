@@ -85,6 +85,10 @@ if __name__ == "__main__":
     elif opts.verbose:
         logger.setLevel(logging.DEBUG)
 
+    if not os.path.isdir(opts.spec_path):
+        logger.error(f'{opts.spec_path} is not a directory')
+        sys.exit(1)
+
     result = True
     for exercise in filter(
         lambda e: fnmatch(e["slug"], opts.exercise_pattern), config["exercises"]
