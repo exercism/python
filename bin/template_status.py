@@ -47,11 +47,13 @@ def exec_cmd(cmd, verbose=False):
 
 
 def generate_template(exercise, spec_path):
-    return exec_cmd(f'bin/generate_tests.py --verbose --spec-path "{spec_path}" {exercise}')
+    script = os.path.abspath("bin/generate_tests.py")
+    return exec_cmd(f'{script} --verbose --spec-path "{spec_path}" {exercise}')
 
 
 def run_tests(exercise):
-    return exec_cmd(f"test/check-exercises.py {exercise}")
+    script = os.path.abspath("bin/test/check-exercises.py")
+    return exec_cmd(f"{script} {exercise}")
 
 
 def get_status(exercise, spec_path):
@@ -90,10 +92,10 @@ if __name__ == "__main__":
         logger.setLevel(logging.DEBUG)
 
     if not os.path.isdir(opts.spec_path):
-        logger.error(f'{opts.spec_path} is not a directory')
+        logger.error(f"{opts.spec_path} is not a directory")
         sys.exit(1)
     opts.spec_path = os.path.abspath(opts.spec_path)
-    logger.debug(f'problem-specifications path is {opts.spec_path}')
+    logger.debug(f"problem-specifications path is {opts.spec_path}")
 
     result = True
     for exercise in filter(
