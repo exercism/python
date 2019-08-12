@@ -44,7 +44,7 @@ def exec_cmd(cmd, verbose=False):
 
 
 def generate_template(exercise, spec_path):
-    return exec_cmd(f'bin/generate_tests.py --verbose -p "{spec_path}" {exercise}')
+    return exec_cmd(f'bin/generate_tests.py --verbose --spec-path "{spec_path}" {exercise}')
 
 
 def run_tests(exercise):
@@ -89,6 +89,7 @@ if __name__ == "__main__":
     if not os.path.isdir(opts.spec_path):
         logger.error(f'{opts.spec_path} is not a directory')
         sys.exit(1)
+    opts.spec_path = os.path.abspath(opts.spec_path)
     logger.debug(f'problem-specifications path is {opts.spec_path}')
 
     result = True
