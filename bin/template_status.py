@@ -6,7 +6,7 @@ import json
 import logging
 import os
 import shlex
-from subprocess import check_output, STDOUT, CalledProcessError
+from subprocess import check_call, DEVNULL, CalledProcessError
 import sys
 
 DEFAULT_SPEC_LOCATION = os.path.join("..", "problem-specifications")
@@ -35,11 +35,13 @@ def get_template_path(exercise):
 
 def exec_cmd(cmd, verbose=False):
     try:
-        out = check_output(shlex.split(cmd), stderr=STDOUT)
-        logger.debug(out.decode())
+        args = shlex.split(cmd)
+        if verbose:
+            check_call(args)
+        else:
+            check_call(args, stderr=DEVNULL, stdout=DEVNULL)
         return True
     except CalledProcessError as e:
-        logger.debug(out.decode())
         logger.debug(str(e))
         return False
 
