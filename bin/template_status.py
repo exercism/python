@@ -44,7 +44,7 @@ def exec_cmd(cmd, verbose=False):
 
 
 def generate_template(exercise, spec_path):
-    return exec_cmd(f'bin/generate_tests.py -p "{spec_path}" {exercise}')
+    return exec_cmd(f'bin/generate_tests.py --verbose -p "{spec_path}" {exercise}')
 
 
 def run_tests(exercise):
