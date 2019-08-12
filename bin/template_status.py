@@ -52,7 +52,7 @@ def generate_template(exercise, spec_path):
 
 
 def run_tests(exercise):
-    script = os.path.abspath("bin/test/check-exercises.py")
+    script = os.path.abspath("test/check-exercises.py")
     return exec_cmd(f"{script} {exercise}")
 
 
