@@ -22,9 +22,17 @@ class MatrixTest(unittest.TestCase):
         matrix = Matrix("1 2 3\n4 5 6\n7 8 9\n8 7 6")
         self.assertEqual(matrix.row(3), [7, 8, 9])
 
+    def test_extract_row_from_a_column_matrix(self):
+        matrix = Matrix("1\n2\n3")
+        self.assertEqual(matrix.row(1), [1])
+
     def test_extract_column_from_one_number_matrix(self):
         matrix = Matrix("1")
         self.assertEqual(matrix.column(1), [1])
+
+    def test_extract_column_from_a_column_matrix(self):
+        matrix = Matrix("1\n2\n3")
+        self.assertEqual(matrix.column(1), [1, 2, 3])
 
     def test_can_extract_column(self):
         matrix = Matrix("1 2 3\n4 5 6\n7 8 9")
