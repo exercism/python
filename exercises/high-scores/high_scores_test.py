@@ -41,6 +41,20 @@ class HighScoresTest(unittest.TestCase):
         expected = [40]
         self.assertEqual(personal_top_three(scores), expected)
 
+    def test_latest_not_modify_scores_data(self):
+        scores = [100, 0, 90, 30]
+        latest(scores)
+        self.assertEqual(scores, [100, 0, 90, 30])
+
+    def test_personal_best_not_modify_scores_data(self):
+        scores = [40, 100, 70]
+        personal_best(scores)
+        self.assertEqual(scores, [40, 100, 70])
+
+    def test_personal_top_three_not_modify_scores_data(self):
+        scores = [10, 30, 90, 30, 100, 20, 10, 0, 30, 40, 40, 70, 70]
+        personal_top_three(scores)
+        self.assertEqual(scores, [10, 30, 90, 30, 100, 20, 10, 0, 30, 40, 40, 70, 70])
 
 if __name__ == "__main__":
     unittest.main()
