@@ -1,4 +1,4 @@
-# Dnd Character
+# D&D Character
 
 For a game of [Dungeons & Dragons][DND], each player starts by generating a
 character they can play with. This character has, among other things, six

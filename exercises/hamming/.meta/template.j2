@@ -1,16 +1,12 @@
-{%- import "generator_macros.j2" as macros -%}
+{%- import "generator_macros.j2" as macros with context -%}
 {%- macro test_call(case) %}
-            {{ exercise | to_snake }}.{{ case["property"] }}(
+            {{ case["property"] }}(
                 {% for arg in case["input"].values() -%}
                 "{{ arg }}",
                 {% endfor %}
             )
 {% endmacro -%}
-import unittest
-
-import {{ exercise | to_snake }}
-
-# Tests adapted from `problem-specifications//canonical-data.json` @ v{{ version }}
+{{ macros.header() }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
@@ -28,6 +24,4 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
 
     {{ macros.utility() }}
 
-
-if __name__ == '__main__':
-    unittest.main()
+{{ macros.footer() }}

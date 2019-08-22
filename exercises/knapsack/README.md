@@ -36,7 +36,6 @@ In this example, Bob should take the second and fourth item to maximize his
 value, which, in this case, is 90. He cannot get more than 90 as his
 knapsack has a weight limit of 10.
 
-
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to

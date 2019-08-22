@@ -26,7 +26,7 @@ from string import punctuation, whitespace
 from subprocess import CalledProcessError, check_call
 from tempfile import NamedTemporaryFile
 
-from jinja2 import Environment, FileSystemLoader, TemplateNotFound
+from jinja2 import Environment, FileSystemLoader, TemplateNotFound, UndefinedError
 
 VERSION = '0.1.0'
 
@@ -78,9 +78,20 @@ def get_tested_properties(spec):
 
 def error_case(case):
     return (
+        "expected" in case and
         isinstance(case["expected"], dict) and
         "error" in case["expected"]
     )
+
+
+def has_error_case(cases):
+    cases = cases[:]
+    while cases:
+        case = cases.pop(0)
+        if error_case(case):
+            return True
+        cases.extend(case.get("cases", []))
+    return False
 
 
 def load_canonical(exercise, spec_path):
@@ -94,6 +105,19 @@ def load_canonical(exercise, spec_path):
         spec = json.load(f)
     spec["properties"] = get_tested_properties(spec)
     return spec
+
+
+def load_additional_tests(exercise):
+    """
+    Loads additional tests from .meta/additional_tests.json
+    """
+    full_path = os.path.join('exercises', exercise, '.meta', 'additional_tests.json')
+    try:
+        with open(full_path) as f:
+            data = json.load(f)
+        return data.get("cases", [])
+    except FileNotFoundError:
+        return []
 
 
 def format_file(path):
@@ -123,35 +147,47 @@ def generate_exercise(env, spec_path, exercise, check=False):
     slug = os.path.basename(exercise)
     try:
         spec = load_canonical(slug, spec_path)
+        additional_tests = load_additional_tests(slug)
+        spec["additional_cases"] = additional_tests
         template_path = os.path.join(slug, '.meta', 'template.j2')
-        try:
-            template = env.get_template(template_path)
-            tests_path = os.path.join(
-                exercise, f'{to_snake(slug)}_test.py'
-            )
-            rendered = template.render(**spec)
-            with NamedTemporaryFile('w', delete=False) as tmp:
-                tmp.write(rendered)
-            format_file(tmp.name)
-            if check:
-                try:
-                    if not filecmp.cmp(tmp.name, tests_path):
-                        logger.error(f'{slug}: check failed; tests must be regenerated with bin/generate_tests.py')
-                        sys.exit(1)
-                finally:
-                    os.remove(tmp.name)
-            else:
-                shutil.move(tmp.name, tests_path)
-                print(f'{slug} generated at {tests_path}')
-        except TemplateNotFound as e:
-            logger.debug(str(e))
-            logger.info(f'{slug}: no template found; skipping')
+        template = env.get_template(template_path)
+        tests_path = os.path.join(
+            exercise, f'{to_snake(slug)}_test.py'
+        )
+        spec["has_error_case"] = has_error_case(spec["cases"])
+        logger.info(f'{slug}: attempting render')
+        rendered = template.render(**spec)
+        with NamedTemporaryFile('w', delete=False) as tmp:
+            tmp.write(rendered)
+        format_file(tmp.name)
+        if check:
+            try:
+                if not filecmp.cmp(tmp.name, tests_path):
+                    logger.error(f'{slug}: check failed; tests must be regenerated with bin/generate_tests.py')
+                    return False
+            finally:
+                os.remove(tmp.name)
+        else:
+            shutil.move(tmp.name, tests_path)
+            print(f'{slug} generated at {tests_path}')
+    except (TypeError, UndefinedError) as e:
+        logger.debug(str(e))
+        logger.error(f'{slug}: generation failed')
+        return False
+    except TemplateNotFound as e:
+        logger.debug(str(e))
+        logger.info(f'{slug}: no template found; skipping')
     except FileNotFoundError as e:
         logger.debug(str(e))
         logger.info(f'{slug}: no canonical data found; skipping')
+    return True
 
 
-def generate(exercise_glob, spec_path=DEFAULT_SPEC_LOCATION, check=False, **kwargs):
+def generate(
+    exercise_glob, spec_path=DEFAULT_SPEC_LOCATION,
+    stop_on_failure=False, check=False,
+    **kwargs
+):
     """
     Primary entry point. Generates test files for all exercises matching exercise_glob
     """
@@ -160,8 +196,14 @@ def generate(exercise_glob, spec_path=DEFAULT_SPEC_LOCATION, check=False, **kwar
     env.filters['to_snake'] = to_snake
     env.filters['camel_case'] = camel_case
     env.tests['error_case'] = error_case
+    result = True
     for exercise in glob(os.path.join('exercises', exercise_glob)):
-        generate_exercise(env, spec_path, exercise, check)
+        if not generate_exercise(env, spec_path, exercise, check):
+            result = False
+            if stop_on_failure:
+                break
+    if not result:
+        sys.exit(1)
 
 
 if __name__ == '__main__':
@@ -176,8 +218,23 @@ if __name__ == '__main__':
         )
     )
     parser.add_argument('-v', '--verbose', action='store_true')
-    parser.add_argument('-p', '--spec-path', default=DEFAULT_SPEC_LOCATION)
-    parser.add_argument('--check', action='store_true')
+    parser.add_argument(
+        '-p', '--spec-path',
+        default=DEFAULT_SPEC_LOCATION,
+        help=(
+            'path to clone of exercism/problem-specifications '
+            '(default: %(default)s)'
+        )
+    )
+    parser.add_argument(
+        '--stop-on-failure',
+        action='store_true'
+    )
+    parser.add_argument(
+        '--check',
+        action='store_true',
+        help='check if tests are up-to-date, but do not modify test files'
+    )
     opts = parser.parse_args()
     if opts.verbose:
         logger.setLevel(logging.DEBUG)
