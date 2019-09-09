@@ -1,37 +1,48 @@
-sudo: false
-
 language: python
+dist: xenial
+  
+python:
+  - 2.7
+  - 3.5
+  - 3.6
+  - 3.7
+  - nightly
 
 matrix:
   include:
-    - python: 2.7
-      dist: trusty
-      sudo: false
+    # Python 3.4 not supported in xenial
     - python: 3.4
       dist: trusty
-      sudo: false
-    - python: 3.5
-      dist: trusty
-      sudo: false
-    - python: 3.6
-      dist: trusty
-      sudo: false
-    - python: 3.7
-      dist: xenial
-      sudo: true
-    - python: nightly
-      dist: trusty
-      sudo: false
+    - env: JOB=HOUSEKEEPING
+      python: 3.7
+      install:
+        - ./bin/fetch-configlet
+        - git clone https://github.com/exercism/problem-specifications spec
+        - pip install -r requirements-generator.txt
+      before_script: ./bin/check-readmes.sh
+      script:
+        - bin/generate_tests.py -p spec --check
+        # May provide more useful output than configlet fmt
+        # if JSON is not valid or items are incomplete
+        - ./bin/configlet lint .
+        # Verify correct formatting in config.json
+        - ./bin/configlet fmt . && git diff --quiet
+    - env: JOB=CANONICAL_SYNC
+      python: 3.7
+      install:
+        - pip install requests
+        - pip install -r requirements-generator.txt
+        - git clone https://github.com/exercism/problem-specifications spec
+      before_script: []
+      script:
+        - echo "Test Version Status" && ./bin/check-test-version.py -p spec
+        - echo "Test Template Status" && ./bin/template_status.py -v -p spec
   allow_failures:
     - python: nightly
-
-install:
-  - pip install -r requirements-travis.txt
+    - env: JOB=CANONICAL_SYNC
 
 before_script:
   - flake8
-  - ./bin/fetch-configlet
-  - ./bin/configlet lint .
-
-script:
+  
+script: 
   - ./test/check-exercises.py

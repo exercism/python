@@ -4,7 +4,7 @@ import yacht
 from yacht import score
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
 class YachtTest(unittest.TestCase):
     def test_yacht(self):
@@ -31,7 +31,7 @@ class YachtTest(unittest.TestCase):
     def test_yacht_counted_as_threes(self):
         self.assertEqual(score([3, 3, 3, 3, 3], yacht.THREES), 15)
 
-    def test_yacht_of_threes_counted_as_fives(self):
+    def test_yacht_of_3s_counted_as_fives(self):
         self.assertEqual(score([3, 3, 3, 3, 3], yacht.FIVES), 0)
 
     def test_sixes(self):
@@ -59,7 +59,7 @@ class YachtTest(unittest.TestCase):
         self.assertEqual(score([3, 3, 3, 3, 3], yacht.FOUR_OF_A_KIND), 12)
 
     def test_full_house_is_not_four_of_a_kind(self):
-        self.assertEqual(score([3, 5, 4, 1, 2], yacht.FOUR_OF_A_KIND), 0)
+        self.assertEqual(score([3, 3, 3, 5, 5], yacht.FOUR_OF_A_KIND), 0)
 
     def test_little_straight(self):
         self.assertEqual(score([3, 5, 4, 1, 2], yacht.LITTLE_STRAIGHT), 30)
@@ -73,7 +73,7 @@ class YachtTest(unittest.TestCase):
     def test_no_pairs_but_not_a_little_straight(self):
         self.assertEqual(score([1, 2, 3, 4, 6], yacht.LITTLE_STRAIGHT), 0)
 
-    def test_min_1_max_5_but_not_a_little_straight(self):
+    def test_minimum_is_1_maximum_is_5_but_not_a_little_straight(self):
         self.assertEqual(score([1, 1, 3, 4, 5], yacht.LITTLE_STRAIGHT), 0)
 
     def test_big_straight(self):
@@ -81,6 +81,9 @@ class YachtTest(unittest.TestCase):
 
     def test_big_straight_as_little_straight(self):
         self.assertEqual(score([6, 5, 4, 3, 2], yacht.LITTLE_STRAIGHT), 0)
+
+    def test_no_pairs_but_not_a_big_straight(self):
+        self.assertEqual(score([6, 5, 4, 3, 1], yacht.BIG_STRAIGHT), 0)
 
     def test_choice(self):
         self.assertEqual(score([3, 3, 5, 6, 6], yacht.CHOICE), 23)

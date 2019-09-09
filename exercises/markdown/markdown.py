@@ -1,10 +1,11 @@
 import re
 
 
-def parse_markdown(markdown):
+def parse(markdown):
     lines = markdown.split('\n')
     res = ''
     in_list = False
+    in_list_append = False
     for i in lines:
         if re.match('###### (.*)', i) is not None:
             i = '<h6>' + i[7:] + '</h6>'
@@ -49,7 +50,7 @@ def parse_markdown(markdown):
                 i = '<li>' + curr + '</li>'
         else:
             if in_list:
-                i = '</ul>+i'
+                in_list_append = True
                 in_list = False
 
         m = re.match('<h|<ul|<p|<li', i)
@@ -61,6 +62,9 @@ def parse_markdown(markdown):
         m = re.match('(.*)_(.*)_(.*)', i)
         if m:
             i = m.group(1) + '<em>' + m.group(2) + '</em>' + m.group(3)
+        if in_list_append:
+            i = '</ul>' + i
+            in_list_append = False
         res += i
     if in_list:
         res += '</ul>'

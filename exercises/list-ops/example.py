@@ -1,36 +1,36 @@
-def append(xs, ys):
-    return concat([xs, ys])
+def append(list1, list2):
+    return concat([list1, list2])
 
 
 def concat(lists):
-    return [elem for lst in lists for elem in lst]
+    return [element for list in lists for element in list]
 
 
-def filter_clone(function, xs):
-    return [x for x in xs if function(x)]
+def filter(function, list):
+    return [item for item in list if function(item)]
 
 
-def length(xs):
-    return sum(1 for _ in xs)
+def length(list):
+    return sum(1 for _ in list)
 
 
-def map_clone(function, xs):
-    return [function(elem) for elem in xs]
+def map(function, list):
+    return [function(element) for element in list]
 
 
-def foldl(function, xs, acc):
-    if len(xs) == 0:
-        return acc
+def foldl(function, list, initial):
+    if len(list) == 0:
+        return initial
     else:
-        return foldl(function, xs[1:], function(acc, xs[0]))
+        return foldl(function, list[1:], function(initial, list[0]))
 
 
-def foldr(function, xs, acc):
-    if len(xs) == 0:
-        return acc
+def foldr(function, list, initial):
+    if len(list) == 0:
+        return initial
     else:
-        return function(xs[0], foldr(function, xs[1:], acc))
+        return function(list[0], foldr(function, list[1:], initial))
 
 
-def reverse(xs):
-    return xs[::-1]
+def reverse(list):
+    return list[::-1]

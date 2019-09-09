@@ -7,21 +7,22 @@ else:
     from itertools import zip_longest
 
 
-def encode(msg):
-    msg = _cleanse(msg)
-    square_size = int(ceil(sqrt(len(msg))))
-    square = _chunks_of(msg, square_size)
-    return ' '.join([''.join(col)
-                     for col in zip_longest(*square, fillvalue=' ')])
+def cipher_text(plain_text):
+    plain_text = _cleanse(plain_text)
+    square_size = int(ceil(sqrt(len(plain_text))))
+    square = _chunks_of(plain_text, square_size)
+    return ' '.join([''.join(column)
+                     for column in zip_longest(*square, fillvalue=' ')])
 
 
-def _cleanse(s):
+def _cleanse(text):
     """Lowercase a string and remove punctuation and whitespace
     """
-    return ''.join([c for c in s if c.isalnum()]).lower()
+    return ''.join([character for character in text
+                    if character.isalnum()]).lower()
 
 
-def _chunks_of(s, n):
-    if len(s) <= n:
-        return [s]
-    return [s[:n]] + _chunks_of(s[n:], n)
+def _chunks_of(text, num):
+    if len(text) <= num:
+        return [text]
+    return [text[:num]] + _chunks_of(text[num:], num)

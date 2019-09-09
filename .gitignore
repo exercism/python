@@ -8,6 +8,7 @@ bin/configlet
 bin/configlet.exe
 .idea/
 .cache
+.pytest_cache
 __pycache__
 
 # virtual environments

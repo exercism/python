@@ -1,11 +1,11 @@
 import unittest
 
-from bracket_push import is_paired
+from matching_brackets import is_paired
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.5.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.0.0
 
-class BracketPushTest(unittest.TestCase):
+class MatchingBracketsTest(unittest.TestCase):
     def test_paired_square_brackets(self):
         self.assertEqual(is_paired("[]"), True)
 

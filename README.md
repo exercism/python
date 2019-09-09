@@ -8,7 +8,8 @@ Exercism exercises in Python
 
 ## Contributing Guide
 
-Please see the [contributing guide](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/README.md)
+Please see the [Exercism contributing guide](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/README.md)
+and the [Python track contributing guide](CONTRIBUTING.md)
 
 
 ## Working on the Exercises
@@ -71,10 +72,6 @@ Please try to follow the [The seven rules of a great Git commit message](https:/
 If you're interested, Tim Pope even has an [entire blog post](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html) on good commit messages.
 
 If you're new to Git, take a look at [this short guide](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/README.md#git-basics).
-
-
-## Python icon
-The Python logo is an unregistered trademark. We are using a derived logo with the permission of the Python Software Foundation.
 
 ## License
 This repository uses the [MIT License](/LICENSE).

@@ -4,7 +4,7 @@ import operator
 import list_ops
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.3.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.4.0
 
 class ListOpsTest(unittest.TestCase):
 
@@ -32,13 +32,13 @@ class ListOpsTest(unittest.TestCase):
             list_ops.concat([[[1], [2]], [[3]], [[]], [[4, 5, 6]]]),
             [[1], [2], [3], [], [4, 5, 6]])
 
-    # tests for filter_clone
+    # tests for filter
     def test_filter_empty_list(self):
-        self.assertEqual(list_ops.filter_clone(lambda x: x % 2 == 1, []), [])
+        self.assertEqual(list_ops.filter(lambda x: x % 2 == 1, []), [])
 
     def test_filter_nonempty_list(self):
         self.assertEqual(
-            list_ops.filter_clone(lambda x: x % 2 == 1, [1, 2, 3, 4, 5]),
+            list_ops.filter(lambda x: x % 2 == 1, [1, 2, 3, 4, 5]),
             [1, 3, 5])
 
     # tests for length
@@ -48,12 +48,12 @@ class ListOpsTest(unittest.TestCase):
     def test_length_nonempty_list(self):
         self.assertEqual(list_ops.length([1, 2, 3, 4]), 4)
 
-    # tests for map_clone
+    # tests for map
     def test_map_empty_list(self):
-        self.assertEqual(list_ops.map_clone(lambda x: x + 1, []), [])
+        self.assertEqual(list_ops.map(lambda x: x + 1, []), [])
 
     def test_map_nonempty_list(self):
-        self.assertEqual(list_ops.map_clone(lambda x: x + 1, [1, 3, 5, 7]),
+        self.assertEqual(list_ops.map(lambda x: x + 1, [1, 3, 5, 7]),
                          [2, 4, 6, 8])
 
     # tests for foldl
@@ -89,6 +89,10 @@ class ListOpsTest(unittest.TestCase):
 
     def test_reverse_nonempty_list(self):
         self.assertEqual(list_ops.reverse([1, 3, 5, 7]), [7, 5, 3, 1])
+
+    def test_reverse_list_of_lists_not_flattened(self):
+        self.assertEqual(list_ops.reverse([[1, 2], [3], [], [4, 5, 6]]),
+                         [[4, 5, 6], [], [3], [1, 2]])
 
     # additional test for reverse
     def test_reverse_mixed_types(self):

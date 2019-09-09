@@ -1,0 +1,16 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{%- macro testcase(case) %}
+    def test_{{ case["description"] | to_snake }}(self):
+        matrix = Matrix("{{ case["input"]["string"] | replace('\n', '\\n') }}")
+        self.assertEqual(matrix.{{ case["property"] | to_snake }}({{ case["input"]["index"]}} ), {{ case["expected"] }})
+{% endmacro -%}
+{{ macros.header(["Matrix"])}}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {%- for case in cases -%}
+    {{- testcase(case) -}}
+    {% endfor %}
+
+
+if __name__ == '__main__':
+    unittest.main()

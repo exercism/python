@@ -5,7 +5,7 @@ import unittest
 from rational_numbers import Rational
 
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
 class RationalNumbersTest(unittest.TestCase):
 
@@ -71,8 +71,14 @@ class RationalNumbersTest(unittest.TestCase):
     def test_absolute_value_of_positive(self):
         self.assertEqual(abs(Rational(1, 2)), Rational(1, 2))
 
+    def test_absolute_value_of_positive_negative_numerator_denominator(self):
+        self.assertEqual(abs(Rational(-1, -2)), Rational(1, 2))
+
     def test_absolute_value_of_negative(self):
         self.assertEqual(abs(Rational(-1, 2)), Rational(1, 2))
+
+    def test_absolute_value_of_negative_with_negative_denominator(self):
+        self.assertEqual(abs(Rational(1, -2)), Rational(1, 2))
 
     def test_absolute_value_of_zero(self):
         self.assertEqual(abs(Rational(0, 1)), Rational(0, 1))

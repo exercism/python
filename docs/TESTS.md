@@ -1,6 +1,6 @@
 ## Installing `pytest`
 
-We recommend you install [pytest](http://pytest.org/latest/) and
+We recommend you install [pytest](http://pytest.org/en/latest/) and
 [pytest-cache](http://pythonhosted.org/pytest-cache/). `pytest` is a testing
 tool that will give you more flexibility over running your unit tests.
 

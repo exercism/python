@@ -22,16 +22,6 @@
       "bio": "I can not only fetch JSON, but parse it too."
     },
     {
-      "github_username": "N-Parsons",
-      "alumnus": false,
-      "show_on_website": true,
-      "name": "Nathan Parsons",
-      "link_text": null,
-      "link_url": null,
-      "avatar_url": null,
-      "bio": "Python fits with how I think and allows me to quickly write powerful, maintainable, and extensible code."
-    },
-    {
       "github_username": "m-a-ge",
       "alumnus": false,
       "show_on_website": false,
@@ -50,6 +40,16 @@
       "link_url": null,
       "avatar_url": null,
       "bio": "Big fan of homemade bread and reusable code."
+    },
+    {
+      "github_username": "yawpitch",
+      "alumnus": false,
+      "show_on_website": true,
+      "name": "Michael Morehouse",
+      "link_text": "My Techie Blog",
+      "link_url": "https://yawpitchroll.com/",
+      "avatar_url": null,
+      "bio": "Although Python wasn't my first -- and won't be my last -- programming language, it remains my favorite for introducing others to the joys, the pains, the infrequent ecstacies, and the occasional terrors of life before the REPL."
     }
   ]
 }

@@ -1,2 +1,2 @@
-def nth_prime(positive_number):
+def prime(number):
     pass

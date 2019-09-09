@@ -1,10 +1,10 @@
-def is_equilateral(sides):
+def equilateral(sides):
     pass
 
 
-def is_isosceles(sides):
+def isosceles(sides):
     pass
 
 
-def is_scalene(sides):
+def scalene(sides):
     pass
