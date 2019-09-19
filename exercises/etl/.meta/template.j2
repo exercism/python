@@ -3,7 +3,7 @@
     {%- set input = case["input"] -%}
     def test_{{ case["description"] | to_snake }}(self):
         legacy_data =  { {% for key, value in case["input"]["legacy"].items() %}
-                            {{key}}: {{value}}{{ "," if not loop.last else "" }}{% endfor %} }
+                            {{key}}: {{value}},{% endfor %} }
         data = {{case["expected"]}}
         self.assertEqual(
             {{ case["property"] | to_snake }}(legacy_data), data
