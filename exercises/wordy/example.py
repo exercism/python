@@ -13,7 +13,7 @@ VALID_OPERATIONS = {"plus": add, "minus": sub,
 
 def answer(question):
     if not (question.startswith("What is ") and question.endswith("?")):
-        raise ValueError("Ill-formed question")
+        raise ValueError("unknown operation")
     words = question[8:-1].strip().lower().split()
     if not words:
         raise ValueError("Ill-formed question")

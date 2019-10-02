@@ -2,101 +2,124 @@ import unittest
 
 from wordy import answer
 
-
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.5.0
 
-class WordyTest(unittest.TestCase):
 
+class WordyTest(unittest.TestCase):
     def test_just_a_number(self):
-        self.assertEqual(answer("What is 5?"), 5)
+        value = "What is 5?"
+        expected = 5
+        self.assertEqual(answer(value), expected)
 
     def test_addition(self):
-        self.assertEqual(answer("What is 1 plus 1?"), 2)
+        value = "What is 1 plus 1?"
+        expected = 2
+        self.assertEqual(answer(value), expected)
 
     def test_more_addition(self):
-        self.assertEqual(answer("What is 53 plus 2?"), 55)
+        value = "What is 53 plus 2?"
+        expected = 55
+        self.assertEqual(answer(value), expected)
 
     def test_addition_with_negative_numbers(self):
-        self.assertEqual(answer("What is -1 plus -10?"), -11)
+        value = "What is -1 plus -10?"
+        expected = -11
+        self.assertEqual(answer(value), expected)
 
     def test_large_addition(self):
-        self.assertEqual(answer("What is 123 plus 45678?"), 45801)
+        value = "What is 123 plus 45678?"
+        expected = 45801
+        self.assertEqual(answer(value), expected)
 
     def test_subtraction(self):
-        self.assertEqual(answer("What is 4 minus -12?"), 16)
+        value = "What is 4 minus -12?"
+        expected = 16
+        self.assertEqual(answer(value), expected)
 
     def test_multiplication(self):
-        self.assertEqual(answer("What is -3 multiplied by 25?"), -75)
+        value = "What is -3 multiplied by 25?"
+        expected = -75
+        self.assertEqual(answer(value), expected)
 
     def test_division(self):
-        self.assertEqual(answer("What is 33 divided by -3?"), -11)
+        value = "What is 33 divided by -3?"
+        expected = -11
+        self.assertEqual(answer(value), expected)
 
     def test_multiple_additions(self):
-        self.assertEqual(answer("What is 1 plus 1 plus 1?"), 3)
+        value = "What is 1 plus 1 plus 1?"
+        expected = 3
+        self.assertEqual(answer(value), expected)
 
     def test_addition_and_subtraction(self):
-        self.assertEqual(answer("What is 1 plus 5 minus -2?"), 8)
+        value = "What is 1 plus 5 minus -2?"
+        expected = 8
+        self.assertEqual(answer(value), expected)
 
     def test_multiple_subtraction(self):
-        self.assertEqual(answer("What is 20 minus 4 minus 13?"), 3)
+        value = "What is 20 minus 4 minus 13?"
+        expected = 3
+        self.assertEqual(answer(value), expected)
 
     def test_subtraction_then_addition(self):
-        self.assertEqual(answer("What is 17 minus 6 plus 3?"), 14)
+        value = "What is 17 minus 6 plus 3?"
+        expected = 14
+        self.assertEqual(answer(value), expected)
 
     def test_multiple_multiplication(self):
-        self.assertEqual(
-            answer("What is 2 multiplied by -2 multiplied by 3?"), -12
-            )
+        value = "What is 2 multiplied by -2 multiplied by 3?"
+        expected = -12
+        self.assertEqual(answer(value), expected)
 
     def test_addition_and_multiplication(self):
-        self.assertEqual(answer("What is -3 plus 7 multiplied by -2?"), -8)
+        value = "What is -3 plus 7 multiplied by -2?"
+        expected = -8
+        self.assertEqual(answer(value), expected)
 
     def test_multiple_division(self):
-        self.assertEqual(
-            answer("What is -12 divided by 2 divided by -3?"), 2
-            )
+        value = "What is -12 divided by 2 divided by -3?"
+        expected = 2
+        self.assertEqual(answer(value), expected)
 
     def test_unknown_operation(self):
+        value = "What is 52 cubed?"
         with self.assertRaisesWithMessage(ValueError):
-            answer("What is 52 cubed?")
+            answer(value)
 
     def test_non_math_question(self):
+        value = "Who is the President of the United States?"
         with self.assertRaisesWithMessage(ValueError):
-            answer("Who is the President of the United States?")
+            answer(value)
 
     def test_reject_problem_missing_an_operand(self):
+        value = "What is 1 plus?"
         with self.assertRaisesWithMessage(ValueError):
-            answer("What is 1 plus?")
+            answer(value)
 
     def test_reject_problem_with_no_operands_or_operators(self):
+        value = "What is?"
         with self.assertRaisesWithMessage(ValueError):
-            answer("What is?")
+            answer(value)
 
     def test_reject_two_operations_in_a_row(self):
+        value = "What is 1 plus plus 2?"
         with self.assertRaisesWithMessage(ValueError):
-            answer("What is 1 plus plus 2?")
+            answer(value)
 
     def test_reject_two_numbers_in_a_row(self):
+        value = "What is 1 plus 2 1?"
         with self.assertRaisesWithMessage(ValueError):
-            answer("What is 1 plus 2 1?")
+            answer(value)
 
     def test_reject_postfix_notation(self):
+        value = "What is 1 2 plus?"
         with self.assertRaisesWithMessage(ValueError):
-            answer("What is 1 2 plus?")
+            answer(value)
 
     def test_reject_prefix_notation(self):
+        value = "What is plus 1 2?"
         with self.assertRaisesWithMessage(ValueError):
-            answer("What is plus 1 2?")
-
-    # Additional tests for this track
-
-    def test_missing_operation(self):
-        with self.assertRaisesWithMessage(ValueError):
-            answer("What is 2 2 minus 3?")
-
-    def test_missing_number(self):
-        with self.assertRaisesWithMessage(ValueError):
-            answer("What is 7 plus multiplied by -2?")
+            answer(value)
 
     # Utility functions
     def setUp(self):
@@ -109,5 +132,5 @@ class WordyTest(unittest.TestCase):
         return self.assertRaisesRegex(exception, r".+")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
