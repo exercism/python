@@ -91,19 +91,19 @@ class BowlingTest(unittest.TestCase):
     def test_rolls_cannot_score_negative_points(self):
         rolls = []
         game = self.roll_new_game(rolls)
-        with self.assertRaisesWithMessage(StandardError):
+        with self.assertRaisesWithMessage(BaseException):
             game.roll(-1)
 
     def test_a_roll_cannot_score_more_than_10_points(self):
         rolls = []
         game = self.roll_new_game(rolls)
-        with self.assertRaisesWithMessage(StandardError):
+        with self.assertRaisesWithMessage(BaseException):
             game.roll(11)
 
     def test_two_rolls_in_a_frame_cannot_score_more_than_10_points(self):
         rolls = [5]
         game = self.roll_new_game(rolls)
-        with self.assertRaisesWithMessage(StandardError):
+        with self.assertRaisesWithMessage(BaseException):
             game.roll(6)
 
     def test_bonus_roll_after_a_strike_in_the_last_frame_cannot_score_more_than_10_points(
@@ -111,7 +111,7 @@ class BowlingTest(unittest.TestCase):
     ):
         rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10]
         game = self.roll_new_game(rolls)
-        with self.assertRaisesWithMessage(StandardError):
+        with self.assertRaisesWithMessage(BaseException):
             game.roll(11)
 
     def test_two_bonus_rolls_after_a_strike_in_the_last_frame_cannot_score_more_than_10_points(
@@ -119,7 +119,7 @@ class BowlingTest(unittest.TestCase):
     ):
         rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 5]
         game = self.roll_new_game(rolls)
-        with self.assertRaisesWithMessage(StandardError):
+        with self.assertRaisesWithMessage(BaseException):
             game.roll(6)
 
     def test_two_bonus_rolls_after_a_strike_in_the_last_frame_can_score_more_than_10_points_if_one_is_a_strike(
@@ -134,7 +134,7 @@ class BowlingTest(unittest.TestCase):
     ):
         rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 6]
         game = self.roll_new_game(rolls)
-        with self.assertRaisesWithMessage(StandardError):
+        with self.assertRaisesWithMessage(BaseException):
             game.roll(10)
 
     def test_second_bonus_roll_after_a_strike_in_the_last_frame_cannot_score_more_than_10_points(
@@ -142,25 +142,25 @@ class BowlingTest(unittest.TestCase):
     ):
         rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10]
         game = self.roll_new_game(rolls)
-        with self.assertRaisesWithMessage(StandardError):
+        with self.assertRaisesWithMessage(BaseException):
             game.roll(11)
 
     def test_an_unstarted_game_cannot_be_scored(self):
         rolls = []
         game = self.roll_new_game(rolls)
-        with self.assertRaisesWithMessage(StandardError):
+        with self.assertRaisesWithMessage(BaseException):
             game.roll()
 
     def test_an_incomplete_game_cannot_be_scored(self):
         rolls = [0, 0]
         game = self.roll_new_game(rolls)
-        with self.assertRaisesWithMessage(StandardError):
+        with self.assertRaisesWithMessage(BaseException):
             game.roll()
 
     def test_cannot_roll_if_game_already_has_ten_frames(self):
         rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         game = self.roll_new_game(rolls)
-        with self.assertRaisesWithMessage(StandardError):
+        with self.assertRaisesWithMessage(BaseException):
             game.roll(0)
 
     def test_bonus_rolls_for_a_strike_in_the_last_frame_must_be_rolled_before_score_can_be_calculated(
@@ -168,7 +168,7 @@ class BowlingTest(unittest.TestCase):
     ):
         rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10]
         game = self.roll_new_game(rolls)
-        with self.assertRaisesWithMessage(StandardError):
+        with self.assertRaisesWithMessage(BaseException):
             game.roll()
 
     def test_both_bonus_rolls_for_a_strike_in_the_last_frame_must_be_rolled_before_score_can_be_calculated(
@@ -176,7 +176,7 @@ class BowlingTest(unittest.TestCase):
     ):
         rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10]
         game = self.roll_new_game(rolls)
-        with self.assertRaisesWithMessage(StandardError):
+        with self.assertRaisesWithMessage(BaseException):
             game.roll()
 
     def test_bonus_roll_for_a_spare_in_the_last_frame_must_be_rolled_before_score_can_be_calculated(
@@ -184,19 +184,19 @@ class BowlingTest(unittest.TestCase):
     ):
         rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3]
         game = self.roll_new_game(rolls)
-        with self.assertRaisesWithMessage(StandardError):
+        with self.assertRaisesWithMessage(BaseException):
             game.roll()
 
     def test_cannot_roll_after_bonus_roll_for_spare(self):
         rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3, 2]
         game = self.roll_new_game(rolls)
-        with self.assertRaisesWithMessage(StandardError):
+        with self.assertRaisesWithMessage(BaseException):
             game.roll(2)
 
     def test_cannot_roll_after_bonus_rolls_for_strike(self):
         rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 3, 2]
         game = self.roll_new_game(rolls)
-        with self.assertRaisesWithMessage(StandardError):
+        with self.assertRaisesWithMessage(BaseException):
             game.roll(2)
 
     # Utility functions

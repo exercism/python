@@ -5,7 +5,7 @@
         rolls = {{ input["previousRolls"] }}
         game = self.roll_new_game(rolls)
         {% if case is error_case -%}
-        with self.assertRaisesWithMessage(StandardError):
+        with self.assertRaisesWithMessage(BaseException):
             game.roll({{ input["roll"] }})
         {% else -%}
         self.assertEqual(game.score(), {{ case["expected"] }})
