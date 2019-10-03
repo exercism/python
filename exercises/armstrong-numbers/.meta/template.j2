@@ -7,7 +7,7 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         input = {{ case["input"]["number"] }}
         expected = {{ case["expected"] }}
         self.assertEqual({{ case["property"] | to_snake }}(input), expected)
-    {% endfor %}
 
+    {% endfor %}
 
 {{ macros.footer() }}
