@@ -1,0 +1,22 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{% macro test_case(case, translate) -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        self.assertEqual({{ case["property"] }}({{ case["input"]["listOne"] }}, {{ case["input"]["listTwo"] }}),
+                         {{ translate[case["expected"]] }})
+{%- endmacro %}
+{{ macros.header(imports=["sublist", "SUBLIST", "SUPERLIST", "EQUAL", "UNEQUAL"]) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {%- set translate = {"equal": "EQUAL", "unequal": "UNEQUAL", "sublist": "SUBLIST", "superlist": "SUPERLIST"} %}
+    {% for case in cases -%}
+    {{ test_case(case, translate) }}
+    {% endfor %}
+    {% if additional_cases | length -%}
+
+    # Additional tests for this track
+
+    {% for case in additional_cases -%}
+    {{ test_case(case, translate) }}
+    {% endfor %}
+    {%- endif %}
+{{ macros.footer() }}
