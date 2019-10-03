@@ -7,11 +7,11 @@ from zebra_puzzle import drinks_water, owns_zebra
 
 class ZebraPuzzleTest(unittest.TestCase):
     def test_resident_who_drinks_water(self):
-        expected = Norwegian
+        expected = "Norwegian"
         self.assertEqual(drinksWater(), expected)
 
     def test_resident_who_owns_zebra(self):
-        expected = Japanese
+        expected = "Japanese"
         self.assertEqual(ownsZebra(), expected)
 
 
