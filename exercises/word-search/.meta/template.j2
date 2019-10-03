@@ -4,16 +4,17 @@
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
     def test_{{ case["description"] | to_snake }}(self):
-        puzzle = {{ case["input"]["grid"] }}
+        puzzle = WordSearch({{ case["input"]["grid"] }})
         {%- for word in case["input"]["wordsToSearchFor"] %}
-        search_answer = WordSearch(puzzle).search('{{ word }}')
+        {%- set search_answer = "puzzle.search('{}')".format(word) -%}
         {%- if case["expected"][word] is none %}
-        self.assertIsNone(search_answer)
+        self.assertIsNone({{ search_answer }})
         {%- else %}
-        self.assertEqual(search_answer,
+        {%- set expected = case["expected"][word] %}
+        self.assertEqual({{ search_answer }},
             (
-            Point({{ case["expected"][word]["start"]["column"] - 1 }}, {{ case["expected"][word]["start"]["row"] - 1 }}),
-            Point({{ case["expected"][word]["end"]["column"] - 1 }}, {{ case["expected"][word]["end"]["row"] - 1}}))
+            Point({{ expected["start"]["column"] - 1 }}, {{ expected["start"]["row"] - 1 }}),
+            Point({{ expected["end"]["column"] - 1 }}, {{ expected["end"]["row"] - 1}}))
             )
         {%- endif %}
         {%- endfor %}
