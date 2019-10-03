@@ -20,6 +20,4 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         {%- endif %}
     {% endfor %}
 
-    {{ macros.utility() }}
-
-{{ macros.footer() }}
+{{ macros.footer(has_error_case) }}
