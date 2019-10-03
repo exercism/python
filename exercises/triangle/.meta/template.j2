@@ -5,7 +5,7 @@
 class {{ case["description"] | camel_case }}Test(unittest.TestCase):
     {% for case in case["cases"] %}
     def test_{{ case["description"] | to_snake }}(self):
-        self.assertEqual({{ case["property"] }}({{ case["input"]["sides"] }}), {{ case["expected"] }})
+        self.assertIs({{ case["property"] }}({{ case["input"]["sides"] }}), {{ case["expected"] }})
 
     {% endfor %}
 {% endfor %}
