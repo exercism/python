@@ -8,52 +8,51 @@ from binary_search import find
 class BinarySearchTest(unittest.TestCase):
     def test_finds_a_value_in_an_array_with_one_element(self):
         expected = 0
-        self.assertEqual(find("[6]", "6"), expected)
+        self.assertEqual(find([6], 6), expected)
 
     def test_finds_a_value_in_the_middle_of_an_array(self):
         expected = 3
-        self.assertEqual(find("[1, 3, 4, 6, 8, 9, 11]", "6"), expected)
+        self.assertEqual(find([1, 3, 4, 6, 8, 9, 11], 6), expected)
 
     def test_finds_a_value_at_the_beginning_of_an_array(self):
         expected = 0
-        self.assertEqual(find("[1, 3, 4, 6, 8, 9, 11]", "1"), expected)
+        self.assertEqual(find([1, 3, 4, 6, 8, 9, 11], 1), expected)
 
     def test_finds_a_value_at_the_end_of_an_array(self):
         expected = 6
-        self.assertEqual(find("[1, 3, 4, 6, 8, 9, 11]", "11"), expected)
+        self.assertEqual(find([1, 3, 4, 6, 8, 9, 11], 11), expected)
 
     def test_finds_a_value_in_an_array_of_odd_length(self):
         expected = 9
         self.assertEqual(
-            find("[1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634]", "144"),
-            expected,
+            find([1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634], 144), expected
         )
 
     def test_finds_a_value_in_an_array_of_even_length(self):
         expected = 5
         self.assertEqual(
-            find("[1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]", "21"), expected
+            find([1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377], 21), expected
         )
 
     def test_identifies_that_a_value_is_not_included_in_the_array(self):
         with self.assertRaisesWithMessage(ValueError):
-            find("[1, 3, 4, 6, 8, 9, 11]", "7")
+            find([1, 3, 4, 6, 8, 9, 11], 7)
 
     def test_a_value_smaller_than_the_array_s_smallest_value_is_not_found(self):
         with self.assertRaisesWithMessage(ValueError):
-            find("[1, 3, 4, 6, 8, 9, 11]", "0")
+            find([1, 3, 4, 6, 8, 9, 11], 0)
 
     def test_a_value_larger_than_the_array_s_largest_value_is_not_found(self):
         with self.assertRaisesWithMessage(ValueError):
-            find("[1, 3, 4, 6, 8, 9, 11]", "13")
+            find([1, 3, 4, 6, 8, 9, 11], 13)
 
     def test_nothing_is_found_in_an_empty_array(self):
         with self.assertRaisesWithMessage(ValueError):
-            find("[]", "1")
+            find([], 1)
 
     def test_nothing_is_found_when_the_left_and_right_bounds_cross(self):
         with self.assertRaisesWithMessage(ValueError):
-            find("[1, 2]", "0")
+            find([1, 2], 0)
 
     # Utility functions
     def setUp(self):

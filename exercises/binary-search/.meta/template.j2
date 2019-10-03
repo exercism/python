@@ -2,9 +2,8 @@
 
 {%- macro test_call(case) %}
             {{ case["property"] }}(
-                {% for arg in case["input"].values() -%}
-                "{{ arg }}",
-                {% endfor %}
+                {{ case["input"]["array"] }},
+                {{ case["input"]["value"] }}
             )
 {% endmacro -%}
 
