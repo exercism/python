@@ -17,6 +17,7 @@ import filecmp
 import json
 import logging
 import os
+import posixpath
 import re
 import shutil
 import sys
@@ -149,7 +150,7 @@ def generate_exercise(env, spec_path, exercise, check=False):
         spec = load_canonical(slug, spec_path)
         additional_tests = load_additional_tests(slug)
         spec["additional_cases"] = additional_tests
-        template_path = os.path.join(slug, '.meta', 'template.j2')
+        template_path = posixpath.join(slug, '.meta', 'template.j2')
         template = env.get_template(template_path)
         tests_path = os.path.join(
             exercise, f'{to_snake(slug)}_test.py'
