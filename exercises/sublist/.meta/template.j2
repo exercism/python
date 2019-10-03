@@ -11,10 +11,12 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
     {{ test_case(case, translate) }}
     {% endfor %}
-    {% if additional_cases | length -%}
 
     # Additional tests for this track
+    def test_unique_return_values(self):
+        self.assertEqual(len(set([SUBLIST, SUPERLIST, EQUAL, UNEQUAL])), 4)
 
+    {% if additional_cases | length -%}
     {% for case in additional_cases -%}
     {{ test_case(case, translate) }}
     {% endfor %}
