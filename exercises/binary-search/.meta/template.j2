@@ -16,8 +16,7 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         with self.assertRaisesWithMessage(ValueError):
             {{- test_call(case) }}
         {%- else %}
-        expected = {{ case["expected"] }}
-        self.assertEqual({{- test_call(case) }}, expected)
+        self.assertEqual({{- test_call(case) }}, {{ case["expected"] }})
         {%- endif %}
     {% endfor %}
 

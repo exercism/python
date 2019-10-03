@@ -7,32 +7,24 @@ from binary_search import find
 
 class BinarySearchTest(unittest.TestCase):
     def test_finds_a_value_in_an_array_with_one_element(self):
-        expected = 0
-        self.assertEqual(find([6], 6), expected)
+        self.assertEqual(find([6], 6), 0)
 
     def test_finds_a_value_in_the_middle_of_an_array(self):
-        expected = 3
-        self.assertEqual(find([1, 3, 4, 6, 8, 9, 11], 6), expected)
+        self.assertEqual(find([1, 3, 4, 6, 8, 9, 11], 6), 3)
 
     def test_finds_a_value_at_the_beginning_of_an_array(self):
-        expected = 0
-        self.assertEqual(find([1, 3, 4, 6, 8, 9, 11], 1), expected)
+        self.assertEqual(find([1, 3, 4, 6, 8, 9, 11], 1), 0)
 
     def test_finds_a_value_at_the_end_of_an_array(self):
-        expected = 6
-        self.assertEqual(find([1, 3, 4, 6, 8, 9, 11], 11), expected)
+        self.assertEqual(find([1, 3, 4, 6, 8, 9, 11], 11), 6)
 
     def test_finds_a_value_in_an_array_of_odd_length(self):
-        expected = 9
         self.assertEqual(
-            find([1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634], 144), expected
+            find([1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634], 144), 9
         )
 
     def test_finds_a_value_in_an_array_of_even_length(self):
-        expected = 5
-        self.assertEqual(
-            find([1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377], 21), expected
-        )
+        self.assertEqual(find([1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377], 21), 5)
 
     def test_identifies_that_a_value_is_not_included_in_the_array(self):
         with self.assertRaisesWithMessage(ValueError):
