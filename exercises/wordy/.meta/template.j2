@@ -4,17 +4,15 @@
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
     def test_{{ case["description"] | to_snake }}(self):
+        {%- set question = case["input"]["question"] %}
         value = "{{ case["input"]["question"] }}"
         {%- if case is error_case %}
         with self.assertRaisesWithMessage(ValueError):
-            {{ case["property"] }}(value)
+            {{ case["property"] }}("{{ question }}")
         {%- else %}
-        expected = {{ case["expected"] }}
-        self.assertEqual({{ case["property"] }}(value), expected)
+        self.assertEqual({{ case["property"] }}("{{ question }}"), {{ case["expected"] }})
         {%- endif %}
 
     {% endfor %}
 
-    {{ macros.utility() }}
-
-{{ macros.footer() }}
+{{ macros.footer(has_error_case) }}
