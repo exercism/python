@@ -1,13 +1,27 @@
 {%- import "generator_macros.j2" as macros with context -%}
+
+{%- macro test_call(case) %}
+            {{ case["property"] }}(
+                {% for arg in case["input"].values() -%}
+                "{{ arg }}",
+                {% endfor %}
+            )
+{% endmacro -%}
+
 {{ macros.header() }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
     def test_{{ case["description"] | to_snake }}(self):
-        input_array = {{ case["input"]["array"] }}
-        input_search_value = {{ case["input"]["value"] }}
+        {%- if case is error_case %}
+        with self.assertRaisesWithMessage(ValueError):
+            {{- test_call(case) }}
+        {%- else %}
         expected = {{ case["expected"] }}
-        self.assertEqual({{ case["property"] }}(input_array, input_search_value), expected)
+        self.assertEqual({{- test_call(case) }}, expected)
+        {%- endif %}
     {% endfor %}
+
+    {{ macros.utility() }}
 
 {{ macros.footer() }}
