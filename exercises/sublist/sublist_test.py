@@ -57,10 +57,11 @@ class SublistTest(unittest.TestCase):
     def test_same_digits_but_different_numbers(self):
         self.assertEqual(sublist([1, 0, 1], [10, 1]), UNEQUAL)
 
-    # Additional tests for this track
+    # Hardcoded tests for this track
     def test_unique_return_values(self):
         self.assertEqual(len(set([SUBLIST, SUPERLIST, EQUAL, UNEQUAL])), 4)
 
+    # Additional tests for this track
     def test_inner_spaces(self):
         self.assertEqual(sublist(["a c"], ["a", "c"]), UNEQUAL)
 

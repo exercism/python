@@ -1,0 +1,20 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.header(imports=imports, ignore=ignore) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases -%}
+    {{ test_case(case) }}
+    {% endfor %}
+
+    {% if hardcoded_tests | length -%}
+    # Hardcoded tests for this track
+{{ hardcoded_tests }}
+    {%- endif %}
+
+    {% if additional_cases | length -%}
+    # Additional tests for this track
+    {% for case in additional_cases -%}
+    {{ test_case(case) }}
+    {% endfor %}
+    {%- endif %}
+{{ macros.footer() }}
