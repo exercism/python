@@ -83,6 +83,16 @@ class WordyTest(unittest.TestCase):
         with self.assertRaisesWithMessage(ValueError):
             answer("What is plus 1 2?")
 
+    # Additional tests for this track
+
+    def test_missing_operation(self):
+        with self.assertRaisesWithMessage(ValueError):
+            answer("What is 2 2 minus 3?")
+
+    def test_missing_number(self):
+        with self.assertRaisesWithMessage(ValueError):
+            answer("What is 7 plus multiplied by -2?")
+
     # Utility functions
     def setUp(self):
         try:
