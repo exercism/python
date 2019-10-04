@@ -16,7 +16,6 @@
 {% macro header(imports=[], ignore=[]) -%}
 import unittest
 
-import {{ exercise }}
 from {{ exercise | to_snake }} import ({% if imports -%}
 {% for name in imports -%}
     {{ name }},
