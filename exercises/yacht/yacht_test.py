@@ -4,6 +4,7 @@ import yacht
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
+
 class YachtTest(unittest.TestCase):
     def test_yacht(self):
         self.assertEqual(yacht.score([5, 5, 5, 5, 5], yacht.YACHT), 50)
