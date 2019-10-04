@@ -1,0 +1,30 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{% macro call_op(op) -%}
+buf.{{ op["operation"] }}(
+    {% if "item" in op -%}
+    "{{ op["item"] }}"
+    {%- endif -%}
+)
+{%- endmacro -%}
+{{ macros.header(["CircularBuffer"]) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases %}
+    {%- set input = case["input"] -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        buf = CircularBuffer({{ input["capacity"] }})
+        {% for op in input["operations"] -%}
+        {% if op.get("should_succeed", True) -%}
+        {% if "expected" in op -%}
+        self.assertEqual({{ call_op(op) }}, "{{ op["expected"] }}")
+        {% else -%}
+        {{ call_op(op) }}
+        {% endif -%}
+        {% else -%}
+        with self.assertRaisesWithMessage(BaseException):
+            {{ call_op(op) }}
+        {% endif -%}
+        {% endfor %}
+    {% endfor %}
+
+{{ macros.footer(True) }}
