@@ -11,7 +11,7 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         self.assertEqual(
             {{ exercise }}.{{ case["property"] }}(
                 {{case["input"]["dice"]}},
-                {{ exercise }}.{{case["input"]["category"].upper().replace(' ', '_')}}
+                {{ exercise }}.{{ case["input"]["category"] | to_snake | upper }}
                 ),
             {{ case["expected"] }})
 
