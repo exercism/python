@@ -24,7 +24,8 @@ import sys
 from glob import glob
 from itertools import repeat
 from string import punctuation, whitespace
-from subprocess import CalledProcessError, check_call
+from black import reformat_one, WriteBack, FileMode, Report
+from pathlib import Path
 from tempfile import NamedTemporaryFile
 
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound, UndefinedError
@@ -125,7 +126,7 @@ def format_file(path):
     """
     Runs black auto-formatter on file at path
     """
-    check_call(['black', '-q', path])
+    reformat_one(Path(path), False, WriteBack.YES, FileMode(), Report(quiet=True))
 
 
 def compare_existing(rendered, tests_path):
