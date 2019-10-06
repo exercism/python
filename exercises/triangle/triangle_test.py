@@ -2,11 +2,10 @@ import unittest
 
 from triangle import equilateral, isosceles, scalene
 
-
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.1
 
 
-class TestEquilateralTriangle(unittest.TestCase):
+class EquilateralTriangleTest(unittest.TestCase):
     def test_all_sides_are_equal(self):
         self.assertIs(equilateral([2, 2, 2]), True)
 
@@ -23,7 +22,7 @@ class TestEquilateralTriangle(unittest.TestCase):
         self.assertIs(equilateral([0.5, 0.5, 0.5]), True)
 
 
-class TestIsoscelesTriangle(unittest.TestCase):
+class IsoscelesTriangleTest(unittest.TestCase):
     def test_last_two_sides_are_equal(self):
         self.assertIs(isosceles([3, 4, 4]), True)
 
@@ -52,7 +51,7 @@ class TestIsoscelesTriangle(unittest.TestCase):
         self.assertIs(isosceles([0.5, 0.4, 0.5]), True)
 
 
-class TestScaleneTriangle(unittest.TestCase):
+class ScaleneTriangleTest(unittest.TestCase):
     def test_no_sides_are_equal(self):
         self.assertIs(scalene([5, 4, 6]), True)
 
@@ -61,11 +60,6 @@ class TestScaleneTriangle(unittest.TestCase):
 
     def test_two_sides_are_equal(self):
         self.assertIs(scalene([4, 4, 3]), False)
-
-	# Additional tests for this track
-
-    def test_two_sides_are_equal_and_third_side_is_larger(self):
-        self.assertIs(scalene([3, 3, 4]), False)
 
     def test_may_not_violate_triangle_inequality(self):
         self.assertIs(scalene([7, 3, 2]), False)
