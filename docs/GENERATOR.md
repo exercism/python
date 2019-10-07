@@ -112,7 +112,7 @@ Additional Resources:
 3. Make the appropriate changes to the template file until it produces
   valid test code, referencing the exercise's `canonical-data.json` for
   input names and case structure.
-    - Use the [available macros](config/generator_macros.j2) to avoid re-writing standardized sections.
+    - Use the [available macros](../config/generator_macros.j2) to avoid re-writing standardized sections.
     - If you are implementing a template for an existing exercise,
     matching the exact structure of the existing test file is not a
     requirement, but minimizing differences will make PR review a much smoother process for everyone involved.
