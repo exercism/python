@@ -121,18 +121,6 @@ def load_additional_tests(exercise):
         return []
 
 
-def load_hardcoded_tests(exercise):
-    """
-    Loads hardcoded tests from .meta/hardcoded_tests.j2
-    """
-    full_path = os.path.join('exercises', exercise, '.meta', 'hardcoded_tests.j2')
-    try:
-        with open(full_path) as f:
-            return f.read()
-    except FileNotFoundError:
-        return ""
-
-
 def format_file(path):
     """
     Runs black auto-formatter on file at path
@@ -162,8 +150,6 @@ def generate_exercise(env, spec_path, exercise, check=False):
         spec = load_canonical(slug, spec_path)
         additional_tests = load_additional_tests(slug)
         spec["additional_cases"] = additional_tests
-        hardcoded_tests = load_hardcoded_tests(slug)
-        spec["hardcoded_tests"] = hardcoded_tests
         template_path = posixpath.join(slug, '.meta', 'template.j2')
         template = env.get_template(template_path)
         tests_path = os.path.join(
