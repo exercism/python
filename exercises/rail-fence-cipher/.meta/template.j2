@@ -1,0 +1,16 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.header() }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for supercase in cases %}
+        {% for case in supercase["cases"] -%}
+        def test_{{ case["description"] | to_snake }}(self):
+            {%- set msg = case["input"]["msg"] %}
+            {%- set rails = case["input"]["rails"] %}
+            {%- set expected = case["expected"] %}
+            self.assertMultiLineEqual({{ case["property"] }}('{{ msg }}', {{ rails }}), '{{ expected }}')
+            
+        {% endfor %}
+    {% endfor %}
+
+{{ macros.footer() }}
