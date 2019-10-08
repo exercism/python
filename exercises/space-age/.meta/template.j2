@@ -9,15 +9,5 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         self.assertEqual(SpaceAge({{ seconds }}).on_{{ planet | lower }}(), {{ case["expected"] }})
 
     {% endfor %}
-    {% if additional_cases | length -%}
-
-    # Additional tests for this track
-
-    {% for case in additional_cases -%}
-    def test_{{ case["description"] | to_snake }}(self):
-        {%- set seconds = case["input"]["seconds"] %}
-        self.assertEqual(SpaceAge({{ seconds }}).seconds, {{  case["expected"]}})
-    {% endfor %}
-    {%- endif %}
 
 {{ macros.footer() }}
