@@ -2,11 +2,10 @@ import unittest
 
 from wordy import answer
 
-
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.5.0
 
-class WordyTest(unittest.TestCase):
 
+class WordyTest(unittest.TestCase):
     def test_just_a_number(self):
         self.assertEqual(answer("What is 5?"), 5)
 
@@ -44,17 +43,13 @@ class WordyTest(unittest.TestCase):
         self.assertEqual(answer("What is 17 minus 6 plus 3?"), 14)
 
     def test_multiple_multiplication(self):
-        self.assertEqual(
-            answer("What is 2 multiplied by -2 multiplied by 3?"), -12
-            )
+        self.assertEqual(answer("What is 2 multiplied by -2 multiplied by 3?"), -12)
 
     def test_addition_and_multiplication(self):
         self.assertEqual(answer("What is -3 plus 7 multiplied by -2?"), -8)
 
     def test_multiple_division(self):
-        self.assertEqual(
-            answer("What is -12 divided by 2 divided by -3?"), 2
-            )
+        self.assertEqual(answer("What is -12 divided by 2 divided by -3?"), 2)
 
     def test_unknown_operation(self):
         with self.assertRaisesWithMessage(ValueError):
@@ -109,5 +104,5 @@ class WordyTest(unittest.TestCase):
         return self.assertRaisesRegex(exception, r".+")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
