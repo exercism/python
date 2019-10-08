@@ -12,4 +12,4 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {{ test_case(case) }}
     {% endfor %}
     {%- endif %}
-{{ macros.footer() }}
+{{ macros.footer(has_error_case) }}
