@@ -43,37 +43,6 @@ class SecretHandshakeTest(unittest.TestCase):
     def test_do_nothing_for_zero(self):
         self.assertEqual(commands(0), [])
 
-    # Additional tests for this track
-
-    @unittest.skip("extra-credit")
-    def test_code1(self):
-        self.assertEqual(secret_code(["close your eyes", "jump"]), 12)
-
-    @unittest.skip("extra-credit")
-    def test_code2(self):
-        self.assertEqual(secret_code(["wink", "double blink"]), 3)
-
-    @unittest.skip("extra-credit")
-    def test_code3(self):
-        self.assertEqual(secret_code(["jump", "double blink"]), 26)
-
-    @unittest.skip("extra-credit")
-    def test_reversible1(self):
-        self.assertEqual(secret_code(commands(27)), 27)
-
-    @unittest.skip("extra-credit")
-    def test_reversible2(self):
-        self.assertEqual(secret_code(commands(1)), 1)
-
-    @unittest.skip("extra-credit")
-    def test_reversible3(self):
-        self.assertEqual(secret_code(commands(7)), 7)
-
-    @unittest.skip("extra-credit")
-    def test_reversible4(self):
-        inp = ["wink", "double blink", "jump"]
-        self.assertEqual(commands(secret_code(inp)), inp)
-
 
 if __name__ == "__main__":
     unittest.main()

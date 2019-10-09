@@ -9,28 +9,4 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% endfor %}
     {% endfor %}
 
-    {% if additional_cases | length -%}
-
-    # Additional tests for this track
-
-    {% for case in additional_cases -%}
-    @unittest.skip("extra-credit")
-    def test_{{ case["description"] | to_snake }}(self):
-        {% set exp = case["expected"] -%}
-        {% if case["input"]["inner_func"] -%}
-        {% set func = case["input"]["inner_func"] -%}
-        {% if func["input"] | string | length > 25 -%}
-        inp = {{ func["input"] }}
-        {% set eval = case["property"] ~ "(" ~ func["property"] ~ "(inp))" -%}
-        {% set exp = "inp" -%}
-        {% else -%}
-        {% set eval = case["property"] ~ "(" ~ func["property"] ~ "(" ~ func["input"] ~ "))" -%}
-        {% endif -%}
-        {% else -%}
-        {% set eval = case["property"] ~ "(" ~ case["input"]["commands"] ~ ")" -%}
-        {% endif -%}
-        self.assertEqual({{ eval }}, {{ exp }})
-    {% endfor %}
-    {%- endif %}
-
 {{ macros.footer() }}
