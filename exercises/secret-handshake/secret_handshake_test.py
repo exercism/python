@@ -1,6 +1,6 @@
 import unittest
 
-from secret_handshake import commands, secret_code
+from secret_handshake import commands
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 

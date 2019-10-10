@@ -1,5 +1,5 @@
 {%- import "generator_macros.j2" as macros with context -%}
-{{ macros.header(["commands","secret_code"]) }}
+{{ macros.header() }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for supercase in cases -%}
