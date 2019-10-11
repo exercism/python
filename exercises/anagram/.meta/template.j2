@@ -1,0 +1,15 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.header() }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        candidates = {{ case["input"]["candidates"] }}
+        self.assertEqual(
+            {{ case["property"] | to_snake }}("{{ case["input"]["subject"] }}", candidates),
+            {{ case["expected"] }}
+        )
+
+    {% endfor %}
+
+{{ macros.footer() }}
