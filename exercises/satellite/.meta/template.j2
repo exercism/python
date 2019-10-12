@@ -11,7 +11,7 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
             {{ case["property"] | to_snake }}(preorder, inorder)
         {% else %}
         expected = {{ case["expected"] }}
-        self.assertEqual({{ case["property"] | to_snake }}, expected)
+        self.assertEqual({{ case["property"] | to_snake }}(preorder, inorder), expected)
         {% endif %}
     {% endfor %}
 

@@ -11,14 +11,14 @@ class SatelliteTest(unittest.TestCase):
         inorder = []
 
         expected = {}
-        self.assertEqual(tree_from_traversals, expected)
+        self.assertEqual(tree_from_traversals(preorder, inorder), expected)
 
     def test_tree_with_one_item(self):
         preorder = ["a"]
         inorder = ["a"]
 
         expected = {"v": "a", "l": {}, "r": {}}
-        self.assertEqual(tree_from_traversals, expected)
+        self.assertEqual(tree_from_traversals(preorder, inorder), expected)
 
     def test_tree_with_many_items(self):
         preorder = ["a", "i", "x", "f", "r"]
@@ -33,7 +33,7 @@ class SatelliteTest(unittest.TestCase):
                 "r": {"v": "r", "l": {}, "r": {}},
             },
         }
-        self.assertEqual(tree_from_traversals, expected)
+        self.assertEqual(tree_from_traversals(preorder, inorder), expected)
 
     def test_reject_traversals_of_different_length(self):
         preorder = ["a", "b"]
