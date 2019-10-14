@@ -11,9 +11,8 @@
         {% if case["property"] == "move" %}robot.move("{{case["input"]["instructions"]}}")
         {% endif %}
        
-        self.assertEqual({{case["expected"]["position"]["x"]}}, robot.coordinates["x"])
-        self.assertEqual({{case["expected"]["position"]["y"]}}, robot.coordinates["y"])
-        self.assertEqual({{case["expected"]["direction"] | upper }}, robot.direction)
+        self.assertEqual(robot.coordinates, ({{case["expected"]["position"]["x"]}}, {{case["expected"]["position"]["y"]}}))
+        self.assertEqual(robot.direction, {{case["expected"]["direction"] | upper }})
 {%- endmacro %}
 
 {{ macros.header(imports=["Robot", "NORTH", "EAST", "SOUTH", "WEST"]) }}
