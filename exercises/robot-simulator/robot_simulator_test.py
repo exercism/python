@@ -2,101 +2,158 @@ import unittest
 
 from robot_simulator import Robot, NORTH, EAST, SOUTH, WEST
 
-
 # Tests adapted from `problem-specifications//canonical-data.json` @ v3.2.0
+
 
 class RobotSimulatorTest(unittest.TestCase):
 
-    def test_create_robot_at_origin_facing_north(self):
+    # Test create robot
+    def test_at_origin_facing_north(self):
         robot = Robot(NORTH, 0, 0)
-        self.assertEqual(robot.coordinates, (0, 0))
-        self.assertEqual(robot.bearing, NORTH)
 
-    def test_create_robot_at_negative_position_facing_south(self):
+        self.assertEqual(0, robot.coordinates["x"])
+        self.assertEqual(0, robot.coordinates["y"])
+        self.assertEqual(NORTH, robot.direction)
+
+    def test_at_negative_position_facing_south(self):
         robot = Robot(SOUTH, -1, -1)
-        self.assertEqual(robot.coordinates, (-1, -1))
-        self.assertEqual(robot.bearing, SOUTH)
 
-    def test_rotating_clockwise(self):
-        dirA = [NORTH, EAST, SOUTH, WEST]
-        dirB = [EAST, SOUTH, WEST, NORTH]
-        for x in range(len(dirA)):
-            robot = Robot(dirA[x], 0, 0)
-            robot.turn_right()
-            self.assertEqual(robot.bearing, dirB[x])
+        self.assertEqual(-1, robot.coordinates["x"])
+        self.assertEqual(-1, robot.coordinates["y"])
+        self.assertEqual(SOUTH, robot.direction)
 
-    def test_rotating_clockwise_by_simulate_R(self):
-        A = [NORTH, EAST, SOUTH, WEST]
-        B = [EAST, SOUTH, WEST, NORTH]
-        for x in range(len(A)):
-            robot = Robot(A[x], 0, 0)
-            robot.simulate("R")
-            self.assertEqual(robot.bearing, B[x])
-
-    def test_rotating_counter_clockwise(self):
-        dirA = [NORTH, EAST, SOUTH, WEST]
-        dirB = [WEST, NORTH, EAST, SOUTH]
-        for x in range(len(dirA)):
-            robot = Robot(dirA[x], 0, 0)
-            robot.turn_left()
-            self.assertEqual(robot.bearing, dirB[x])
-
-    def test_rotating_counter_clockwise_by_simulate_L(self):
-        A = [NORTH, WEST, SOUTH, EAST]
-        B = [WEST, SOUTH, EAST, NORTH]
-        for x in range(len(A)):
-            robot = Robot(A[x], 0, 0)
-            robot.simulate("L")
-            self.assertEqual(robot.bearing, B[x])
-
-    def test_moving_forward_one_facing_north_increments_Y(self):
+    # Test rotating clockwise
+    def test_changes_north_to_east(self):
         robot = Robot(NORTH, 0, 0)
-        robot.advance()
-        self.assertEqual(robot.coordinates, (0, 1))
-        self.assertEqual(robot.bearing, NORTH)
+        robot.move("R")
 
-    def test_moving_forward_one_facing_south_decrements_Y(self):
-        robot = Robot(SOUTH, 0, 0)
-        robot.advance()
-        self.assertEqual(robot.coordinates, (0, -1))
-        self.assertEqual(robot.bearing, SOUTH)
+        self.assertEqual(0, robot.coordinates["x"])
+        self.assertEqual(0, robot.coordinates["y"])
+        self.assertEqual(EAST, robot.direction)
 
-    def test_moving_forward_one_facing_east_increments_X(self):
+    def test_changes_east_to_south(self):
         robot = Robot(EAST, 0, 0)
-        robot.advance()
-        self.assertEqual(robot.coordinates, (1, 0))
-        self.assertEqual(robot.bearing, EAST)
+        robot.move("R")
 
-    def test_moving_forward_one_facing_west_decrements_X(self):
+        self.assertEqual(0, robot.coordinates["x"])
+        self.assertEqual(0, robot.coordinates["y"])
+        self.assertEqual(SOUTH, robot.direction)
+
+    def test_changes_south_to_west(self):
+        robot = Robot(SOUTH, 0, 0)
+        robot.move("R")
+
+        self.assertEqual(0, robot.coordinates["x"])
+        self.assertEqual(0, robot.coordinates["y"])
+        self.assertEqual(WEST, robot.direction)
+
+    def test_changes_west_to_north(self):
         robot = Robot(WEST, 0, 0)
-        robot.advance()
-        self.assertEqual(robot.coordinates, (-1, 0))
-        self.assertEqual(robot.bearing, WEST)
+        robot.move("R")
 
-    def test_series_of_instructions_moving_east_and_north_from_README(self):
-        robot = Robot(NORTH, 7, 3)
-        robot.simulate("RAALAL")
-        self.assertEqual(robot.coordinates, (9, 4))
-        self.assertEqual(robot.bearing, WEST)
+        self.assertEqual(0, robot.coordinates["x"])
+        self.assertEqual(0, robot.coordinates["y"])
+        self.assertEqual(NORTH, robot.direction)
 
-    def test_series_of_instructions_moving_west_and_north(self):
+    # Test rotating counter-clockwise
+    def test_changes_north_to_west(self):
         robot = Robot(NORTH, 0, 0)
-        robot.simulate("LAAARALA")
-        self.assertEqual(robot.coordinates, (-4, 1))
-        self.assertEqual(robot.bearing, WEST)
+        robot.move("L")
 
-    def test_series_of_instructions_moving_west_and_south(self):
+        self.assertEqual(0, robot.coordinates["x"])
+        self.assertEqual(0, robot.coordinates["y"])
+        self.assertEqual(WEST, robot.direction)
+
+    def test_changes_west_to_south(self):
+        robot = Robot(WEST, 0, 0)
+        robot.move("L")
+
+        self.assertEqual(0, robot.coordinates["x"])
+        self.assertEqual(0, robot.coordinates["y"])
+        self.assertEqual(SOUTH, robot.direction)
+
+    def test_changes_south_to_east(self):
+        robot = Robot(SOUTH, 0, 0)
+        robot.move("L")
+
+        self.assertEqual(0, robot.coordinates["x"])
+        self.assertEqual(0, robot.coordinates["y"])
+        self.assertEqual(EAST, robot.direction)
+
+    def test_changes_east_to_north(self):
+        robot = Robot(EAST, 0, 0)
+        robot.move("L")
+
+        self.assertEqual(0, robot.coordinates["x"])
+        self.assertEqual(0, robot.coordinates["y"])
+        self.assertEqual(NORTH, robot.direction)
+
+    # Test moving forward one
+    def test_facing_north_increments_y(self):
+        robot = Robot(NORTH, 0, 0)
+        robot.move("A")
+
+        self.assertEqual(0, robot.coordinates["x"])
+        self.assertEqual(1, robot.coordinates["y"])
+        self.assertEqual(NORTH, robot.direction)
+
+    def test_facing_south_decrements_y(self):
+        robot = Robot(SOUTH, 0, 0)
+        robot.move("A")
+
+        self.assertEqual(0, robot.coordinates["x"])
+        self.assertEqual(-1, robot.coordinates["y"])
+        self.assertEqual(SOUTH, robot.direction)
+
+    def test_facing_east_increments_x(self):
+        robot = Robot(EAST, 0, 0)
+        robot.move("A")
+
+        self.assertEqual(1, robot.coordinates["x"])
+        self.assertEqual(0, robot.coordinates["y"])
+        self.assertEqual(EAST, robot.direction)
+
+    def test_facing_west_decrements_x(self):
+        robot = Robot(WEST, 0, 0)
+        robot.move("A")
+
+        self.assertEqual(-1, robot.coordinates["x"])
+        self.assertEqual(0, robot.coordinates["y"])
+        self.assertEqual(WEST, robot.direction)
+
+    # Test follow series of instructions
+    def test_moving_east_and_north_from_readme(self):
+        robot = Robot(NORTH, 7, 3)
+        robot.move("RAALAL")
+
+        self.assertEqual(9, robot.coordinates["x"])
+        self.assertEqual(4, robot.coordinates["y"])
+        self.assertEqual(WEST, robot.direction)
+
+    def test_moving_west_and_north(self):
+        robot = Robot(NORTH, 0, 0)
+        robot.move("LAAARALA")
+
+        self.assertEqual(-4, robot.coordinates["x"])
+        self.assertEqual(1, robot.coordinates["y"])
+        self.assertEqual(WEST, robot.direction)
+
+    def test_moving_west_and_south(self):
         robot = Robot(EAST, 2, -7)
-        robot.simulate("RRAAAAALA")
-        self.assertEqual(robot.coordinates, (-3, -8))
-        self.assertEqual(robot.bearing, SOUTH)
+        robot.move("RRAAAAALA")
 
-    def test_series_of_instructions_moving_east_and_north(self):
+        self.assertEqual(-3, robot.coordinates["x"])
+        self.assertEqual(-8, robot.coordinates["y"])
+        self.assertEqual(SOUTH, robot.direction)
+
+    def test_moving_east_and_north(self):
         robot = Robot(SOUTH, 8, 4)
-        robot.simulate("LAAARRRALLLL")
-        self.assertEqual(robot.coordinates, (11, 5))
-        self.assertEqual(robot.bearing, NORTH)
+        robot.move("LAAARRRALLLL")
+
+        self.assertEqual(11, robot.coordinates["x"])
+        self.assertEqual(5, robot.coordinates["y"])
+        self.assertEqual(NORTH, robot.direction)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
