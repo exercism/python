@@ -36,7 +36,7 @@ class Robot(object):
     def turn_right(self):
         self.compass.right()
 
-    def simulate(self, commands):
+    def move(self, commands):
         instructions = {'A': self.advance,
                         'R': self.turn_right,
                         'L': self.turn_left}
