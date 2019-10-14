@@ -4,8 +4,9 @@
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
     def test_{{ case["description"] | to_snake }}(self):
+        value = {{ case["input"]["value"] }}
         expected = {{ case["expected"] }}
-        self.assertEqual({{ case["property"] }}({{ case["input"]["value"] }}), expected)
+        self.assertEqual({{ case["property"] }}(value), expected)
 
     {% endfor %}
 
