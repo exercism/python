@@ -1,4 +1,9 @@
 {%- import "generator_macros.j2" as macros with context -%}
+
+# Python 2/3 compatibility
+if not hasattr(unittest.TestCase, 'assertCountEqual'):
+    unittest.TestCase.assertCountEqual = unittest.TestCase.assertItemsEqual
+
 {{ macros.header() }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):

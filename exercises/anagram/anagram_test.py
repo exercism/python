@@ -1,11 +1,10 @@
+# Python 2/3 compatibility
+if not hasattr(unittest.TestCase, "assertCountEqual"):
+    unittest.TestCase.assertCountEqual = unittest.TestCase.assertItemsEqual
+
 import unittest
 
 from anagram import find_anagrams
-
-# Python 2/3 compatibility
-if not hasattr(unittest.TestCase, 'assertCountEqual'):
-    unittest.TestCase.assertCountEqual = unittest.TestCase.assertItemsEqual
-
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.5.0
 
