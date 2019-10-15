@@ -1,0 +1,19 @@
+{%- import "generator_macros.j2" as macros with context -%}
+
+{{ macros.header() }}
+
+# Python 2/3 compatibility
+if not hasattr(unittest.TestCase, 'assertCountEqual'):
+    unittest.TestCase.assertCountEqual = unittest.TestCase.assertItemsEqual
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        {% if not case["input"]["n"] -%}
+        self.assertCountEqual({{ case["property"] | to_snake }}[], {{ case["expected"] }})
+        {% else -%}
+        self.assertCountEqual({{ case["property"] | to_snake }}({{ case["input"]["n"] }}), {{ case["expected"] }})
+        {% endif %}
+    {% endfor %}
+
+{{ macros.footer() }}
