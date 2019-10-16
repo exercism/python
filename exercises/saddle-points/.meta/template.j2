@@ -13,30 +13,23 @@ irregular.
     def test_{{ case["description"] | to_snake }}(self):
         {% if input["matrix"][0] -%}
         matrix = {{ input["matrix"] }}
-        {%- else -%} matrix = [] {% endif %}
-        {% if expected|length > 2 -%}
-        expected = {{ list_points(expected) }}
-        self.assertEqual({{ case["property"] | to_snake }}(matrix), expected)
         {% else -%}
-        self.assertEqual(
-            {{- case["property"] | to_snake }}(matrix), {{ list_points(expected) }})
-        {%- endif %}
-{%- endmacro -%}
+        matrix = []
+        {% endif -%}
+        {% if case is error_case -%}
+        with self.assertRaisesWithMessage(ValueError):
+            {{- case["property"] | to_snake }}(matrix)
+        {% else -%}
+        self.assertEqual({{ case["property"] | to_snake }}(matrix), {{ expected }})
+        {% endif -%}
+{% endmacro -%}
 
 {% macro list_points(points) -%}
     {% if points -%}
     {{ points | sort(attribute="column") }}
     {% else -%}
-    [{}]
+    []
     {% endif %}
-{%- endmacro -%}
-
-{% macro error_case(case) -%}
-    {%- set input = case["input"] -%}
-    def test_{{ case["description"] | to_snake }}(self):
-        matrix = {{ input["matrix"] }}
-        with self.assertRaisesWithMessage(ValueError):
-            {{- case["property"] | to_snake }}(matrix)
 {%- endmacro %}
 
 {{ macros.header()}}
@@ -50,7 +43,7 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
 
     {% if additional_cases | length -%}
     {% for case in additional_cases -%}
-    {{ error_case(case) }}
+    {{ test_case(case) }}
     {% endfor %}
     {%- endif %}
 
