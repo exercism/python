@@ -20,7 +20,10 @@ irregular.
         with self.assertRaisesWithMessage(ValueError):
             {{- case["property"] | to_snake }}(matrix)
         {% else -%}
-        self.assertCountEqual({{ case["property"] | to_snake }}(matrix), {{ expected }})
+        self.assertEqual(
+        sorted({{ case["property"] | to_snake }}(matrix), key=lambda d: (d["row"],d["column"])),
+        sorted({{ expected }}, key=lambda d: (d["row"],d["column"]))
+        )
         {% endif -%}
 {% endmacro -%}
 
