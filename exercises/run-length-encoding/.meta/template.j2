@@ -1,0 +1,36 @@
+{%- import "generator_macros.j2" as macros with context -%}
+
+{% macro test_case(case, tmod) -%}
+    {%- set input = case["input"] -%}
+    def test_{{ tmod }}{{ case["description"] | to_snake }}(self):
+        self.assertMultiLineEqual(
+            {% if case["property"] == "consistency" -%}
+            decode(encode("{{ ', '.join(input.values()) }}")),
+            {% else -%}
+            {{ case["property"] | to_snake }}("{{ ', '.join(input.values()) }}"),
+            {% endif -%}
+            "{{ case["expected"] }}"
+        )
+{%- endmacro %}
+
+{{ macros.header(['encode','decode'])}}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for supercase in cases -%}
+    
+    {%- set title_modifier = "" -%}
+    {%- if "encode" in supercase["description"] -%}
+    {%- set title_modifier = "encode_" -%}
+    {%- endif -%}
+    {%- if "decode" in supercase["description"] -%}
+    {% if title_modifier -%}{% set title_modifier = "" -%}{% else -%}
+    {%- set title_modifier = "decode_" -%}{% endif -%}{# if both encode and decode, no modifier #}
+    {%- endif -%}
+
+    {% for case in supercase["cases"] -%}
+    {{ test_case(case, title_modifier) }}
+    {% endfor %}
+    {% endfor %}
+
+
+{{ macros.footer() }}
