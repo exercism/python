@@ -20,7 +20,7 @@ irregular.
         with self.assertRaisesWithMessage(ValueError):
             {{- case["property"] | to_snake }}(matrix)
         {% else -%}
-        self.assertEqual({{ case["property"] | to_snake }}(matrix), {{ expected }})
+        self.assertCountEqual({{ case["property"] | to_snake }}(matrix), {{ expected }})
         {% endif -%}
 {% endmacro -%}
 
