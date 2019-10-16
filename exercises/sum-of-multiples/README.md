@@ -8,6 +8,13 @@ we get 3, 5, 6, 9, 10, 12, 15, and 18.
 
 The sum of these multiples is 78.
 
+You can make the following assumptions about the inputs to the
+`sum_of_multiples` function:
+* All input numbers are non-negative `int`s, i.e. natural numbers
+including zero.
+* A list of factors must be given, and its elements are unique
+and sorted in ascending order.
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
