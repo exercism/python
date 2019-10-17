@@ -25,15 +25,7 @@ irregular.
         sorted({{ expected }}, key=lambda d: (d["row"],d["column"]))
         )
         {% endif -%}
-{% endmacro -%}
-
-{% macro list_points(points) -%}
-    {% if points -%}
-    {{ points | sort(attribute="column") }}
-    {% else -%}
-    []
-    {% endif %}
-{%- endmacro %}
+{% endmacro %}
 
 {{ macros.header()}}
 
