@@ -29,7 +29,7 @@ from tempfile import NamedTemporaryFile
 
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound, UndefinedError
 
-VERSION = '0.1.0'
+VERSION = '0.1.1'
 
 DEFAULT_SPEC_LOCATION = os.path.join('..', 'problem-specifications')
 RGX_WORDS = re.compile(r'[-_\s]|(?=[A-Z])')
@@ -160,7 +160,13 @@ def generate_exercise(env, spec_path, exercise, check=False):
         rendered = template.render(**spec)
         with NamedTemporaryFile('w', delete=False) as tmp:
             tmp.write(rendered)
-        format_file(tmp.name)
+        try:
+            logger.debug(f'{slug}: formatting tmp file')
+            format_file(tmp.name)
+        except FileNotFoundError as e:
+            logger.error(f'{slug}: the black utility must be installed')
+            return False
+
         if check:
             try:
                 if not filecmp.cmp(tmp.name, tests_path):
@@ -192,6 +198,10 @@ def generate(
     """
     Primary entry point. Generates test files for all exercises matching exercise_glob
     """
+    # black must be installed or all test files will error
+    if not shutil.which("black"):
+        logger.error("the black utility must be installed")
+        sys.exit(1)
     loader = FileSystemLoader(['config', 'exercises'])
     env = Environment(loader=loader, keep_trailing_newline=True)
     env.filters['to_snake'] = to_snake
