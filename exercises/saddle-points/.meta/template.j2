@@ -5,7 +5,7 @@ The saddle_points function must validate the input matrix and raise a
 ValueError with a meaningful error message if the matrix turns out to be
 irregular.
 """
-{%- import "generator_macros.j2" as macros with context -%}
+{% import "generator_macros.j2" as macros with context -%}
 
 {% macro test_case(case) -%}
     {%- set input = case["input"] -%}
@@ -21,13 +21,16 @@ irregular.
             {{- case["property"] | to_snake }}(matrix)
         {% else -%}
         self.assertEqual(
-        sorted({{ case["property"] | to_snake }}(matrix), key=lambda d: (d["row"],d["column"])),
-        sorted({{ expected }}, key=lambda d: (d["row"],d["column"]))
+        sorted_points({{ case["property"] | to_snake }}(matrix)),
+        sorted_points({{ expected }})
         )
         {% endif -%}
-{% endmacro %}
+{% endmacro -%}
 
 {{ macros.header()}}
+
+def sorted_points(point_list):
+    return sorted(point_list, key=lambda p: (p["row"], p["column"]))
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
