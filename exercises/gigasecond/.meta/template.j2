@@ -1,4 +1,5 @@
 {%- import "generator_macros.j2" as macros with context -%}
+from datetime import datetime
 {{ macros.header() }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
