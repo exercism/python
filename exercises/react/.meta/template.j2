@@ -1,0 +1,48 @@
+{%- import "generator_macros.j2" as macros with context -%}
+from functools import partial
+{{ macros.header(imports=['InputCell', 'ComputeCell']) }}
+{% set types = {'input': 'InputCell', 'compute': 'ComputeCell'} -%}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases -%}
+    {% set cells = case['input']['cells'] -%}
+    {% set operations = case['input']['operations'] -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        {% for cell in cells -%}
+        {% set name = cell['name']|replace('input', 'input_') -%}
+        {% if cell['type'] == 'input' -%}
+        {{ name }} = {{ types[cell['type']] }}({{ cell['initial_value'] }})
+        {% elif cell['type'] == 'compute' -%}
+        {% if 'if' in cell['compute_function'] -%}
+        {{ name }} = {{ types[cell['type']] }}([{{ cell['inputs']|join(', ')|replace('input', 'input_') }}])
+        {% else -%}
+        {{ name }} = {{ types[cell['type']] }}([{{ cell['inputs']|join(', ')|replace('input', 'input_') }}], lambda inputs: {{ cell['compute_function'] }})
+        {% endif -%}
+        {% endif -%}
+
+        {% endfor -%}
+
+        {% for operation in operations -%}
+        {% if operation['type'] == 'expect_cell_value' -%}
+        self.assertEqual({{ operation['cell']|replace('input', 'input_') }}.value, {{ operation.value }})
+        {% elif operation['type'] == 'set_value' -%}
+        {{ operation['cell']|replace('input', 'input_') }}.value = {{ operation.value }}
+        {% elif operation['type'] == 'add_callback' -%}
+        {{ operation['cell']|replace('input', 'input_') }}.add_callback({{ operation.name }})
+        {% elif operation['type'] == 'remove_callback' -%}
+        {{ operation['cell']|replace('input', 'input_') }}.remove_callback({{ operation.name }})
+        {% else -%}
+        {% endif -%}
+
+        {% endfor %}
+
+    {% endfor %}
+    # Utility functions.
+    def callback_factory(self, observer):
+        def callback(observer, value):
+            observer.append(value)
+
+        return partial(callback, observer)
+
+
+{{ macros.footer() }}
