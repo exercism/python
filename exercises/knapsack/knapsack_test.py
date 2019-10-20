@@ -7,7 +7,7 @@ from knapsack import maximum_value
 
 class KnapsackTest(unittest.TestCase):
     def test_no_items(self):
-        self.assertEqual(maximum_value(100, {}), 0)
+        self.assertEqual(maximum_value(100, []), 0)
 
     def test_one_item_too_heavy(self):
         self.assertEqual(maximum_value(10, [{"weight": 100, "value": 1}]), 0)
