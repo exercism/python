@@ -20,12 +20,12 @@ palindrome in arbitrary order.
 {%- macro test_case(case) -%}
     {%- set expected = case["expected"] -%}
     def test_{{ case["description"] | to_snake }}(self):
-    {%- if expected["error"] is string %}
+    {%- if case is error_case %}
         with self.assertRaisesWithMessage(ValueError):
             {{ value_factor_unpacking(case) }}
     {%- else %}
         {{ value_factor_unpacking(case) }}
-        {%- if expected["value"] == None %}
+        {%- if expected["value"] is none %}
         self.assertIsNone(value)
         {%- else %}
         self.assertEqual(value, {{ expected["value"] }})
