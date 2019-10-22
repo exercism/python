@@ -10,33 +10,31 @@
 } -%}
 
 {% macro test_case_arithmetic(case) -%}
-    {%- set input = case["input"] -%}
-    {%- set expected = case["expected"] -%}
-    {%- set left = "Rational({}, {})".format(input["r1"][0], input["r1"][1]) -%}
-    {%- set right = "Rational({}, {})".format(input["r2"][0], input["r2"][1]) -%}
-    {%- set expected = "Rational({}, {})".format(expected[0], expected[1]) -%}
+    {%- set r1 = "Rational({}, {})".format(case["input"]["r1"][0], case["input"]["r1"][1]) -%}
+    {%- set r2 = "Rational({}, {})".format(case["input"]["r2"][0], case["input"]["r2"][1]) -%}
+    {%- set expected = "Rational({}, {})".format(case["expected"][0], case["expected"][1]) -%}
     {%- set operator = operators[case["property"]] -%}
 
     def test_{{ case["description"] | to_snake }}(self):
-        self.assertEqual({{left}} {{operator}} {{right}}, {{expected}})
+        self.assertEqual({{r1}} {{operator}} {{r2}}, {{expected}})
 {%- endmacro %}
 
 {% macro test_case_absolutevalue(case) -%}
-    {%- set left = "Rational({}, {})".format(case["input"]["r"][0], case["input"]["r"][1]) -%}
+    {%- set r = "Rational({}, {})".format(case["input"]["r"][0], case["input"]["r"][1]) -%}
     {%- set expected = "Rational({}, {})".format(case["expected"][0], case["expected"][1]) -%}
     {%- set method = case["property"] -%}
     def test_{{ case["description"] | to_snake }}(self):
-        self.assertEqual({{method}}({{left}}), {{expected}})
+        self.assertEqual({{method}}({{r}}), {{expected}})
 {%- endmacro %}
 
 {% macro test_case_exponentiation(case) -%}
-    {%- set left = "Rational({}, {})".format(case["input"]["r"][0], case["input"]["r"][1]) -%}
-    {%- set right = case["input"]["n"] -%}
+    {%- set r = "Rational({}, {})".format(case["input"]["r"][0], case["input"]["r"][1]) -%}
+    {%- set n = case["input"]["n"] -%}
     {%- set expected = "Rational({}, {})".format(case["expected"][0], case["expected"][1]) -%}
     {%- set operator = operators[case["property"]] -%}
 
     def test_{{ case["description"] | to_snake }}(self):
-        self.assertEqual({{left}} {{operator}} {{right}}, {{expected}})
+        self.assertEqual({{r}} {{operator}} {{n}}, {{expected}})
 {%- endmacro %}
 
 {% macro test_case_exponentiation_real(case) -%}
