@@ -2,12 +2,12 @@
 {{ macros.header() }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
-    {% for case in cases -%}
+    {% for case in cases %}
     def test_{{ case["description"] | to_snake }}(self):
-        value = {{ case["input"]["heyBob"] }}
-        expected = {{ case["expected"] }}
-        self.assertEqual({{ case["property"] }}(value), expected)
-
+        {%- set value = case["input"]["heyBob"] %}
+        {%- set argument = value.strip().replace("\n", "") %}
+        {% set expected = case["expected"] %}
+        self.assertEqual({{case["property"]}}("{{argument}}"), "{{expected}}")
     {% endfor %}
 
 {{ macros.footer() }}
