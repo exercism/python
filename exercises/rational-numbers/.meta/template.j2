@@ -19,7 +19,7 @@
         pass
 {%- endmacro %}
 
-{{ macros.header() }}
+{{ macros.header(imports=["Rational"]) }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for mathtypescases in cases %}
