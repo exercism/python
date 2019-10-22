@@ -1,6 +1,6 @@
 import unittest
 
-from rational_numbers import abs, add, div, exprational, expreal, mul, reduce, sub
+from rational_numbers import Rational
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
@@ -12,112 +12,120 @@ class RationalNumbersTest(unittest.TestCase):
     # Addition
 
     def test_add_two_positive_rational_numbers(self):
-        pass
+        self.assertEqual(Rational(1, 2) + Rational(2, 3), Rational(7, 6))
 
     def test_add_a_positive_rational_number_and_a_negative_rational_number(self):
-        pass
+        self.assertEqual(Rational(1, 2) + Rational(-2, 3), Rational(-1, 6))
 
     def test_add_two_negative_rational_numbers(self):
-        pass
+        self.assertEqual(Rational(-1, 2) + Rational(-2, 3), Rational(-7, 6))
 
     def test_add_a_rational_number_to_its_additive_inverse(self):
-        pass
+        self.assertEqual(Rational(1, 2) + Rational(-1, 2), Rational(0, 1))
 
     # Subtraction
 
     def test_subtract_two_positive_rational_numbers(self):
-        pass
+        self.assertEqual(Rational(1, 2) - Rational(2, 3), Rational(-1, 6))
 
     def test_subtract_a_positive_rational_number_and_a_negative_rational_number(self):
-        pass
+        self.assertEqual(Rational(1, 2) - Rational(-2, 3), Rational(7, 6))
 
     def test_subtract_two_negative_rational_numbers(self):
-        pass
+        self.assertEqual(Rational(-1, 2) - Rational(-2, 3), Rational(1, 6))
 
     def test_subtract_a_rational_number_from_itself(self):
-        pass
+        self.assertEqual(Rational(1, 2) - Rational(1, 2), Rational(0, 1))
 
     # Multiplication
 
     def test_multiply_two_positive_rational_numbers(self):
-        pass
+        self.assertEqual(Rational(1, 2) * Rational(2, 3), Rational(1, 3))
 
     def test_multiply_a_negative_rational_number_by_a_positive_rational_number(self):
-        pass
+        self.assertEqual(Rational(-1, 2) * Rational(2, 3), Rational(-1, 3))
 
     def test_multiply_two_negative_rational_numbers(self):
-        pass
+        self.assertEqual(Rational(-1, 2) * Rational(-2, 3), Rational(1, 3))
 
     def test_multiply_a_rational_number_by_its_reciprocal(self):
-        pass
+        self.assertEqual(Rational(1, 2) * Rational(2, 1), Rational(1, 1))
 
     def test_multiply_a_rational_number_by_1(self):
-        pass
+        self.assertEqual(Rational(1, 2) * Rational(1, 1), Rational(1, 2))
 
     def test_multiply_a_rational_number_by_0(self):
-        pass
+        self.assertEqual(Rational(1, 2) * Rational(0, 1), Rational(0, 1))
 
     # Division
 
     def test_divide_two_positive_rational_numbers(self):
-        pass
+        self.assertEqual(Rational(1, 2) / Rational(2, 3), Rational(3, 4))
 
     def test_divide_a_positive_rational_number_by_a_negative_rational_number(self):
-        pass
+        self.assertEqual(Rational(1, 2) / Rational(-2, 3), Rational(-3, 4))
 
     def test_divide_two_negative_rational_numbers(self):
-        pass
+        self.assertEqual(Rational(-1, 2) / Rational(-2, 3), Rational(3, 4))
 
     def test_divide_a_rational_number_by_1(self):
-        pass
+        self.assertEqual(Rational(1, 2) / Rational(1, 1), Rational(1, 2))
 
     # Tests of type: Absolute value
 
-    # Absolute value of a positive rational number
+    def test_absolute_value_of_a_positive_rational_number(self):
+        # yyy
+        pass
 
-    # Absolute value of a positive rational number with negative numerator and denominator
+    def test_absolute_value_of_a_positive_rational_number_with_negative_numerator_and_denominator(
+        self
+    ):
+        # yyy
+        pass
 
-    # Absolute value of a negative rational number
+    def test_absolute_value_of_a_negative_rational_number(self):
+        # yyy
+        pass
 
-    # Absolute value of a negative rational number with negative denominator
+    def test_absolute_value_of_a_negative_rational_number_with_negative_denominator(
+        self
+    ):
+        # yyy
+        pass
 
-    # Absolute value of zero
+    def test_absolute_value_of_zero(self):
+        # yyy
+        pass
 
     # Tests of type: Exponentiation of a rational number
 
-    # Raise a positive rational number to a positive integer power
+    def test_raise_a_positive_rational_number_to_a_positive_integer_power(self):
+        # xxx
+        pass
 
-    # Raise a negative rational number to a positive integer power
+    def test_raise_a_negative_rational_number_to_a_positive_integer_power(self):
+        # xxx
+        pass
 
-    # Raise zero to an integer power
+    def test_raise_zero_to_an_integer_power(self):
+        # xxx
+        pass
 
-    # Raise one to an integer power
+    def test_raise_one_to_an_integer_power(self):
+        # xxx
+        pass
 
-    # Raise a positive rational number to the power of zero
+    def test_raise_a_positive_rational_number_to_the_power_of_zero(self):
+        # xxx
+        pass
 
-    # Raise a negative rational number to the power of zero
+    def test_raise_a_negative_rational_number_to_the_power_of_zero(self):
+        # xxx
+        pass
 
     # Tests of type: Exponentiation of a real number to a rational number
 
-    # Raise a real number to a positive rational number
-
-    # Raise a real number to a negative rational number
-
-    # Raise a real number to a zero rational number
-
     # Tests of type: Reduction to lowest terms
-
-    # Reduce a positive rational number to lowest terms
-
-    # Reduce a negative rational number to lowest terms
-
-    # Reduce a rational number with a negative denominator to lowest terms
-
-    # Reduce zero to lowest terms
-
-    # Reduce an integer to lowest terms
-
-    # Reduce one to lowest terms
 
 
 if __name__ == "__main__":

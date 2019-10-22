@@ -1,9 +1,22 @@
 {%- import "generator_macros.j2" as macros with context -%}
 
+{%- set operators = {
+    "add": "+",
+    "sub": "-",
+    "mul": "*",
+    "div": "/"
+} -%}
 
 {% macro test_case_arithmetic(case) -%}
+    {%- set input = case["input"] -%}
+    {%- set expected = case["expected"] -%}
+    {%- set left = "Rational({}, {})".format(input["r1"][0], input["r1"][1]) -%}
+    {%- set right = "Rational({}, {})".format(input["r2"][0], input["r2"][1]) -%}
+    {%- set expected = "Rational({}, {})".format(expected[0], expected[1]) -%}
+    {%- set operator = operators[case["property"]] -%}
+
     def test_{{ case["description"] | to_snake }}(self):
-        pass
+        self.assertEqual({{left}} {{operator}} {{right}}, {{expected}})
 {%- endmacro %}
 
 {% macro test_case_absolutevalue(case) -%}
@@ -24,17 +37,21 @@
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for mathtypescases in cases %}
     # Tests of type: {{ mathtypescases["description"] }}
-        {% for mathoperationcases in mathtypescases["cases"] %}
+        {% if mathtypescases["description"] == 'Arithmetic' %}
+            {% for mathoperationcases in mathtypescases["cases"] %}
     # {{ mathoperationcases["description"] }}
-            {% for case in mathoperationcases["cases"] %}
-                {% if mathtypescases["description"] == 'Arithmetic' %}
+                {% for case in mathoperationcases["cases"] %}
     {{ test_case_arithmetic(case) }}
-                {% elif mathtypescases["description"] == 'Absolute value' %}
+                {% endfor %}
+            {% endfor %}
+        {% else %}
+            {% for case in mathtypescases["cases"] %}
+                {% if mathtypescases["description"] == 'Absolute value' %}
     {{ test_case_absolutevalue(case) }}
                 {% elif mathtypescases["description"] == 'Exponentiation of a rational number' %}
     {{ test_case_exponentiation(case) }}
                 {% endif %}
             {% endfor %}
-        {% endfor %}
+        {% endif %}
     {% endfor %}
 {{ macros.footer() }}
