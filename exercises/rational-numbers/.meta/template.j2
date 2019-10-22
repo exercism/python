@@ -5,7 +5,8 @@
     "sub": "-",
     "mul": "*",
     "div": "/",
-    "exprational": "**"
+    "exprational": "**",
+    "expreal": "**"
 } -%}
 
 {% macro test_case_arithmetic(case) -%}
@@ -38,6 +39,24 @@
         self.assertEqual({{left}} {{operator}} {{right}}, {{expected}})
 {%- endmacro %}
 
+{% macro test_case_exponentiation_real(case) -%}
+    {%- set x = case["input"]["x"] -%}
+    {%- set r = "Rational({}, {})".format(case["input"]["r"][0], case["input"]["r"][1]) -%}
+    {%- set expected = case["expected"] -%}
+    {%- set operator = operators[case["property"]] -%}
+
+    def test_{{ case["description"] | to_snake }}(self):
+        self.assertEqual({{x}} {{operator}} {{r}}, {{expected}})
+{%- endmacro %}
+
+{% macro test_case_reduction(case) -%}
+    {%- set r = "Rational({}, {})".format(case["input"]["r"][0], case["input"]["r"][1]) -%}
+    {%- set expected = "Rational({}, {})".format(case["expected"][0], case["expected"][1]) -%}
+
+    def test_{{ case["description"] | to_snake }}(self):
+        self.assertEqual({{r}}, {{expected}})
+{%- endmacro %}
+
 {{ macros.header(imports=["Rational"]) }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
@@ -56,6 +75,10 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {{ test_case_absolutevalue(case) }}
                 {% elif mathtypescases["description"] == 'Exponentiation of a rational number' %}
     {{ test_case_exponentiation(case) }}
+                {% elif mathtypescases["description"] == 'Exponentiation of a real number to a rational number' %}
+    {{ test_case_exponentiation_real(case) }}
+                {% elif mathtypescases["description"] == 'Reduction to lowest terms' %}
+    {{ test_case_reduction(case) }}
                 {% endif %}
             {% endfor %}
         {% endif %}

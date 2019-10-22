@@ -114,7 +114,34 @@ class RationalNumbersTest(unittest.TestCase):
 
     # Tests of type: Exponentiation of a real number to a rational number
 
+    def test_raise_a_real_number_to_a_positive_rational_number(self):
+        self.assertEqual(8 ** Rational(4, 3), 16.0)
+
+    def test_raise_a_real_number_to_a_negative_rational_number(self):
+        self.assertEqual(9 ** Rational(-1, 2), 0.3333333333333333)
+
+    def test_raise_a_real_number_to_a_zero_rational_number(self):
+        self.assertEqual(2 ** Rational(0, 1), 1.0)
+
     # Tests of type: Reduction to lowest terms
+
+    def test_reduce_a_positive_rational_number_to_lowest_terms(self):
+        self.assertEqual(Rational(2, 4), Rational(1, 2))
+
+    def test_reduce_a_negative_rational_number_to_lowest_terms(self):
+        self.assertEqual(Rational(-4, 6), Rational(-2, 3))
+
+    def test_reduce_a_rational_number_with_a_negative_denominator_to_lowest_terms(self):
+        self.assertEqual(Rational(3, -9), Rational(-1, 3))
+
+    def test_reduce_zero_to_lowest_terms(self):
+        self.assertEqual(Rational(0, 6), Rational(0, 1))
+
+    def test_reduce_an_integer_to_lowest_terms(self):
+        self.assertEqual(Rational(-14, 7), Rational(-2, 1))
+
+    def test_reduce_one_to_lowest_terms(self):
+        self.assertEqual(Rational(13, 13), Rational(1, 1))
 
 
 if __name__ == "__main__":
