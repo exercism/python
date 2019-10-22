@@ -14,7 +14,7 @@ def test_{{ case["description"] | to_snake }}(self):
     {% set b = input["key"]["b"] -%}
     {% set expected = case["expected"] -%}
     {% set function = case["property"] -%}
-    {% if "error" in expected -%}
+    {% if case is error_case -%}
     with self.assertRaisesWithMessage(ValueError):
         {{ function }}("{{ phrase }}", {{ a }}, {{ b }})
     {% else -%}
