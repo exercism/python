@@ -7,7 +7,7 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         {%- set coins = case["input"]["coins"] %}
         {%- set target = case["input"]["target"] %}
         {%- set expected = case["expected"] %}
-        {%- if case["expected"] is mapping %}
+        {%- if case is error_case %}
         with self.assertRaisesWithMessage(ValueError):
             {{case["property"] |to_snake }}({{coins}}, {{target}})
         {% else %}
@@ -15,5 +15,4 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         {% endif %}
     {% endfor %}
 
-{{ macros.utility() }}
-{{ macros.footer() }}
+{{ macros.footer(has_error_case) }}
