@@ -32,6 +32,16 @@ Given the range `[10, 99]` (both inclusive)...
 The smallest palindrome product is `121`. Its factors are `(11, 11)`.
 The largest palindrome product is `9009`. Its factors are `(91, 99)`.
 
+## Notes regarding the implementation of `smallest` and `largest`:
+
+Both functions must take two keyword arguments:
+- `max_factor`: int
+- `min_factor`: int, default 0
+
+Their return value must be a tuple (value, factors) where value is the
+palindrome itself, and factors is an iterable containing both factors of the
+palindrome in arbitrary order.
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
