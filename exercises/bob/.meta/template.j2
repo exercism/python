@@ -5,8 +5,8 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases %}
     def test_{{ case["description"] | to_snake }}(self):
         {%- set value = case["input"]["heyBob"] %}
-        {%- set argument = value.strip().replace("\n", "") %}
-        {% set expected = case["expected"] %}
+	{%- set argument = value.replace("\n", "\\n").replace("\r", "\\r").replace("\t","\\t") %}
+        {%- set expected = case["expected"] %}
         self.assertEqual({{case["property"]}}("{{argument}}"), "{{expected}}")
     {% endfor %}
 
