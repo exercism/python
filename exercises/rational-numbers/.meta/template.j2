@@ -55,30 +55,42 @@
         self.assertEqual({{r}}, {{expected}})
 {%- endmacro %}
 
+{% macro render_arithmetic_cases(mathtypescases) -%}
+
+    {% for mathoperationcases in mathtypescases["cases"] %}
+    # {{ mathoperationcases["description"] }}
+        {% for case in mathoperationcases["cases"] %}
+    {{ test_case_arithmetic(case) }}
+        {% endfor %}
+    {% endfor %}
+
+{%- endmacro %}
+
+{% macro render_other_cases(mathtypescases) -%}
+
+    {% for case in mathtypescases["cases"] %}
+        {% if mathtypescases["description"] == 'Absolute value' %}
+    {{ test_case_absolutevalue(case) }}
+        {% elif mathtypescases["description"] == 'Exponentiation of a rational number' %}
+    {{ test_case_exponentiation(case) }}
+        {% elif mathtypescases["description"] == 'Exponentiation of a real number to a rational number' %}
+    {{ test_case_exponentiation_real(case) }}
+        {% elif mathtypescases["description"] == 'Reduction to lowest terms' %}
+    {{ test_case_reduction(case) }}
+        {% endif %}
+    {% endfor %}
+
+{%- endmacro %}
+
 {{ macros.header(imports=["Rational"]) }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for mathtypescases in cases %}
     # Tests of type: {{ mathtypescases["description"] }}
         {% if mathtypescases["description"] == 'Arithmetic' %}
-            {% for mathoperationcases in mathtypescases["cases"] %}
-    # {{ mathoperationcases["description"] }}
-                {% for case in mathoperationcases["cases"] %}
-    {{ test_case_arithmetic(case) }}
-                {% endfor %}
-            {% endfor %}
+            {{ render_arithmetic_cases(mathtypescases) }}
         {% else %}
-            {% for case in mathtypescases["cases"] %}
-                {% if mathtypescases["description"] == 'Absolute value' %}
-    {{ test_case_absolutevalue(case) }}
-                {% elif mathtypescases["description"] == 'Exponentiation of a rational number' %}
-    {{ test_case_exponentiation(case) }}
-                {% elif mathtypescases["description"] == 'Exponentiation of a real number to a rational number' %}
-    {{ test_case_exponentiation_real(case) }}
-                {% elif mathtypescases["description"] == 'Reduction to lowest terms' %}
-    {{ test_case_reduction(case) }}
-                {% endif %}
-            {% endfor %}
+            {{ render_other_cases(mathtypescases) }}
         {% endif %}
     {% endfor %}
 {{ macros.footer() }}
