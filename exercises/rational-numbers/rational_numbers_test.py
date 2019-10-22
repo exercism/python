@@ -74,28 +74,23 @@ class RationalNumbersTest(unittest.TestCase):
     # Tests of type: Absolute value
 
     def test_absolute_value_of_a_positive_rational_number(self):
-        # yyy
-        pass
+        self.assertEqual(abs(Rational(1, 2)), Rational(1, 2))
 
     def test_absolute_value_of_a_positive_rational_number_with_negative_numerator_and_denominator(
         self
     ):
-        # yyy
-        pass
+        self.assertEqual(abs(Rational(-1, -2)), Rational(1, 2))
 
     def test_absolute_value_of_a_negative_rational_number(self):
-        # yyy
-        pass
+        self.assertEqual(abs(Rational(-1, 2)), Rational(1, 2))
 
     def test_absolute_value_of_a_negative_rational_number_with_negative_denominator(
         self
     ):
-        # yyy
-        pass
+        self.assertEqual(abs(Rational(1, -2)), Rational(1, 2))
 
     def test_absolute_value_of_zero(self):
-        # yyy
-        pass
+        self.assertEqual(abs(Rational(0, 1)), Rational(0, 1))
 
     # Tests of type: Exponentiation of a rational number
 
