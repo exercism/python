@@ -29,8 +29,6 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {{ test_case(case) }}
     {% endfor -%}    
 
-    {{ macros.utility() }}
-
     def assertFactorsEqual(self, actual, expected):
         self.assertEqual(set(map(frozenset, actual)), set(map(frozenset, expected)))
 

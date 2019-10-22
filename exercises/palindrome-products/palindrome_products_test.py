@@ -64,6 +64,9 @@ class PalindromeProductsTest(unittest.TestCase):
         with self.assertRaisesWithMessage(ValueError):
             value, factors = largest(min_factor=2, max_factor=1)
 
+    def assertFactorsEqual(self, actual, expected):
+        self.assertEqual(set(map(frozenset, actual)), set(map(frozenset, expected)))
+
     # Utility functions
     def setUp(self):
         try:
@@ -73,9 +76,6 @@ class PalindromeProductsTest(unittest.TestCase):
 
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
-
-    def assertFactorsEqual(self, actual, expected):
-        self.assertEqual(set(map(frozenset, actual)), set(map(frozenset, expected)))
 
 
 if __name__ == "__main__":
