@@ -38,6 +38,7 @@ Additionally, the following template filters are added for convenience:
 - `to_snake`: Converts a string to snake_case (ex: `{{ "CamelCaseString" | to_snake }}` -> `camel_case_string`)
 - `camel_case`: Converts a string to CamelCase (ex: `{{ "snake_case_string" | camel_case }}` -> `SnakeCaseString` )
 - `error_case`: Checks if a test case expects an error to be thrown (ex: `{% for case in cases%}{% if case is error_case}`)
+- `regex_replace`: Regex string replacement (ex: `{{ "abc123" | regex_replace("\\d", "D") }}` -> `abcDDD`)
 
 ### Conventions
 
