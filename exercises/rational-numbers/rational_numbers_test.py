@@ -95,28 +95,22 @@ class RationalNumbersTest(unittest.TestCase):
     # Tests of type: Exponentiation of a rational number
 
     def test_raise_a_positive_rational_number_to_a_positive_integer_power(self):
-        # xxx
-        pass
+        self.assertEqual(Rational(1, 2) ** 3, Rational(1, 8))
 
     def test_raise_a_negative_rational_number_to_a_positive_integer_power(self):
-        # xxx
-        pass
+        self.assertEqual(Rational(-1, 2) ** 3, Rational(-1, 8))
 
     def test_raise_zero_to_an_integer_power(self):
-        # xxx
-        pass
+        self.assertEqual(Rational(0, 1) ** 5, Rational(0, 1))
 
     def test_raise_one_to_an_integer_power(self):
-        # xxx
-        pass
+        self.assertEqual(Rational(1, 1) ** 4, Rational(1, 1))
 
     def test_raise_a_positive_rational_number_to_the_power_of_zero(self):
-        # xxx
-        pass
+        self.assertEqual(Rational(1, 2) ** 0, Rational(1, 1))
 
     def test_raise_a_negative_rational_number_to_the_power_of_zero(self):
-        # xxx
-        pass
+        self.assertEqual(Rational(-1, 2) ** 0, Rational(1, 1))
 
     # Tests of type: Exponentiation of a real number to a rational number
 

@@ -4,7 +4,8 @@
     "add": "+",
     "sub": "-",
     "mul": "*",
-    "div": "/"
+    "div": "/",
+    "exprational": "**"
 } -%}
 
 {% macro test_case_arithmetic(case) -%}
@@ -28,10 +29,13 @@
 {%- endmacro %}
 
 {% macro test_case_exponentiation(case) -%}
-    {%- set input = case["input"] -%}
+    {%- set left = "Rational({}, {})".format(case["input"]["r"][0], case["input"]["r"][1]) -%}
+    {%- set right = case["input"]["n"] -%}
+    {%- set expected = "Rational({}, {})".format(case["expected"][0], case["expected"][1]) -%}
+    {%- set operator = operators[case["property"]] -%}
+
     def test_{{ case["description"] | to_snake }}(self):
-        # xxx
-        pass
+        self.assertEqual({{left}} {{operator}} {{right}}, {{expected}})
 {%- endmacro %}
 
 {{ macros.header(imports=["Rational"]) }}
