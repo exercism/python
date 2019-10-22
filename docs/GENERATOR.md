@@ -34,6 +34,11 @@ structure for the exercise you're working on, please consult
 error to be thrown (ex: `False`)
 - `additional_cases`: similar structure to `cases`, but is populated from the exercise's `.meta/additional_tests.json` file if one exists (for an example, see `exercises/word-count/.meta/additional_tests.json`)
 
+Additionally, the following template filters are added for convenience:
+- `to_snake`: Converts a string to snake_case (ex: `{{ "CamelCaseString" | to_snake }}` -> `camel_case_string`)
+- `camel_case`: Converts a string to CamelCase (ex: `{{ "snake_case_string" | camel_case }}` -> `SnakeCaseString` )
+- `error_case`: Checks if a test case expects an error to be thrown (ex: `{% for case in cases%}{% if case is error_case}`)
+
 ### Conventions
 
 - General-use macros for highly repeated template structures are defined in `config/generator_macros.j2`.
