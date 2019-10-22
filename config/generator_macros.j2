@@ -42,8 +42,8 @@ from {{ exercise | to_snake }} import ({% if imports -%}
         return self.assertRaisesRegex(exception, r".+")
 {%- endmacro %}
 
-{% macro footer(has_error_case) -%}
-{% if has_error_case %}
+{% macro footer(_has_error_case) -%}
+{% if has_error_case or _has_error_case %}
 {{ utility() }}
 {% endif %}
 if __name__ == '__main__':
