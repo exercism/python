@@ -4,14 +4,14 @@
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
     def test_{{ case["description"] | to_snake }}(self):
-        preorder = {{ case["input"]["preorder"] }}
-        inorder = {{ case["input"]["inorder"] }}
-        {% if "Reject" in case["description"] %}
+        {%- set coins = case["input"]["coins"] %}
+        {%- set target = case["input"]["target"] %}
+        {%- set expected = case["expected"] %}
+        {%- if case is error_case %}
         with self.assertRaisesWithMessage(ValueError):
-            {{ case["property"] | to_snake }}(preorder, inorder)
+            {{case["property"] |to_snake }}({{coins}}, {{target}})
         {% else %}
-        expected = {{ case["expected"] }}
-        self.assertEqual({{ case["property"] | to_snake }}(preorder, inorder), expected)
+        self.assertEqual({{ case["property"] |to_snake }}({{coins}}, {{target}}), {{expected}})
         {% endif %}
     {% endfor %}
 

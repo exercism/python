@@ -95,6 +95,10 @@ def has_error_case(cases):
     return False
 
 
+def regex_replace(s, find, repl):
+    return re.sub(find, repl, s)
+
+
 def load_canonical(exercise, spec_path):
     """
     Loads the canonical data for an exercise as a nested dictionary
@@ -206,6 +210,7 @@ def generate(
     env = Environment(loader=loader, keep_trailing_newline=True)
     env.filters['to_snake'] = to_snake
     env.filters['camel_case'] = camel_case
+    env.filters['regex_replace'] = regex_replace
     env.tests['error_case'] = error_case
     result = True
     for exercise in glob(os.path.join('exercises', exercise_glob)):
