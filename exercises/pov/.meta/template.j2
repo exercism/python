@@ -34,7 +34,7 @@
     Tree("{{ tree["label"] }}"
     {%- if tree["children"] %}, [
         {%- for child_tree in tree["children"] %}
-        {{ write_tree(child_tree) | indent(4,True,True) }}{% if not loop.last %}, {% endif %}
+        {{ write_tree(child_tree) | indent(4,True,True) }},
         {%- endfor %}
         ]{% endif %})
 {%- endmacro -%}
