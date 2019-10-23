@@ -115,13 +115,13 @@ class RationalNumbersTest(unittest.TestCase):
     # Tests of type: Exponentiation of a real number to a rational number
 
     def test_raise_a_real_number_to_a_positive_rational_number(self):
-        self.assertEqual(8 ** Rational(4, 3), 16.0)
+        self.assertAlmostEqual(8 ** Rational(4, 3), 16.0, places=8)
 
     def test_raise_a_real_number_to_a_negative_rational_number(self):
-        self.assertEqual(9 ** Rational(-1, 2), 0.3333333333333333)
+        self.assertAlmostEqual(9 ** Rational(-1, 2), 0.3333333333333333, places=8)
 
     def test_raise_a_real_number_to_a_zero_rational_number(self):
-        self.assertEqual(2 ** Rational(0, 1), 1.0)
+        self.assertAlmostEqual(2 ** Rational(0, 1), 1.0, places=8)
 
     # Tests of type: Reduction to lowest terms
 

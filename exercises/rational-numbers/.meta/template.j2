@@ -44,7 +44,7 @@
     {%- set operator = operators[case["property"]] -%}
 
     def test_{{ case["description"] | to_snake }}(self):
-        self.assertEqual({{x}} {{operator}} {{r}}, {{expected}})
+        self.assertAlmostEqual({{x}} {{operator}} {{r}}, {{expected}}, places=8)
 {%- endmacro %}
 
 {% macro test_case_reduction(case) -%}
