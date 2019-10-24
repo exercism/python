@@ -13,4 +13,4 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         self.assertEqual({{ case["property"] }}("{{ input["series"] }}", {{ input["sliceLength"] }}), {{ case["expected"] }})
         {% endif %}
     {% endfor %}
-{{ macros.footer(True) }}
+{{ macros.footer() }}
