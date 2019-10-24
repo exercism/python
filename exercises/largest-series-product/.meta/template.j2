@@ -1,25 +1,20 @@
 {%- import "generator_macros.j2" as macros with context -%}
-
-{% macro test_case(case) -%}
-def test_{{ case["description"] | to_snake }}(self):
-    {% set input = case["input"] -%}
-    {% set digits = input["digits"] -%}
-    {% set span = input["span"] -%}
-    {% set expected = case["expected"] -%}
-    {% set function = case["property"] -%}
-    {%- if case is error_case %}
-        with self.assertRaisesWithMessage(ValueError):
-            {{ function }}("{{ digits }}", {{ span }})
-    {% else %}
-        self.assertEqual({{ function }}("{{ digits }}", {{ span }}), {{ expected }})
-    {% endif %}
-{%- endmacro %}
-
 {{ macros.header() }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
-    {{ test_case(case) }}
+    def test_{{ case["description"] | to_snake }}(self):
+        {% set input = case["input"] -%}
+        {% set digits = input["digits"] -%}
+        {% set span = input["span"] -%}
+        {% set expected = case["expected"] -%}
+        {% set function = case["property"] -%}
+        {%- if case is error_case -%}
+        with self.assertRaisesWithMessage(ValueError):
+            {{ function }}("{{ digits }}", {{ span }})
+        {% else -%}
+        self.assertEqual({{ function }}("{{ digits }}", {{ span }}), {{ expected }})
+        {% endif %}
     {% endfor %}
 
 {{ macros.footer(True) }}
