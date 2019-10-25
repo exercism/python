@@ -2,12 +2,11 @@ import unittest
 
 from all_your_base import rebase
 
-
 # Tests adapted from `problem-specifications//canonical-data.json` @ v2.3.0
 
-class AllYourBaseTest(unittest.TestCase):
 
-    def test_single_bit_to_one_decimal(self):
+class AllYourBaseTest(unittest.TestCase):
+    def test_single_bit_one_to_decimal(self):
         self.assertEqual(rebase(2, [1], 10), [1])
 
     def test_binary_to_single_decimal(self):
@@ -32,13 +31,13 @@ class AllYourBaseTest(unittest.TestCase):
         self.assertEqual(rebase(97, [3, 46, 60], 73), [6, 10, 45])
 
     def test_empty_list(self):
-        self.assertEqual(rebase(2, [], 10), [])
+        self.assertEqual(rebase(2, [], 10), [0])
 
     def test_single_zero(self):
-        self.assertEqual(rebase(10, [0], 2), [])
+        self.assertEqual(rebase(10, [0], 2), [0])
 
-    def test_multiple_zeroes(self):
-        self.assertEqual(rebase(10, [0, 0, 0], 2), [])
+    def test_multiple_zeros(self):
+        self.assertEqual(rebase(10, [0, 0, 0], 2), [0])
 
     def test_leading_zeros(self):
         self.assertEqual(rebase(7, [0, 6, 0], 10), [4, 2])
@@ -90,5 +89,5 @@ class AllYourBaseTest(unittest.TestCase):
         return self.assertRaisesRegex(exception, r".+")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
