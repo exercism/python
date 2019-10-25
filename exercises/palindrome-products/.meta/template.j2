@@ -1,0 +1,35 @@
+{%- import "generator_macros.j2" as macros with context -%}
+
+{%- macro value_factor_unpacking(case) -%}
+    {%- set input = case["input"] -%}
+    value, factors = {{ case["property"] }}(min_factor={{ input["min"] }}, max_factor={{ input["max"] }})
+{%- endmacro -%}
+
+{%- macro test_case(case) -%}
+    {%- set expected = case["expected"] -%}
+    def test_{{ case["description"] | to_snake }}(self):
+    {%- if case is error_case %}
+        with self.assertRaisesWithMessage(ValueError):
+            {{ value_factor_unpacking(case) }}
+    {%- else %}
+        {{ value_factor_unpacking(case) }}
+        {%- if expected["value"] is none %}
+        self.assertIsNone(value)
+        {%- else %}
+        self.assertEqual(value, {{ expected["value"] }})
+        {%- endif %}
+        self.assertFactorsEqual(factors, {{ expected["factors"] }})
+    {%- endif %}
+{% endmacro %}
+
+{{ macros.header() }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases -%}
+    {{ test_case(case) }}
+    {% endfor -%}    
+
+    def assertFactorsEqual(self, actual, expected):
+        self.assertEqual(set(map(frozenset, actual)), set(map(frozenset, expected)))
+
+{{ macros.footer() }}
