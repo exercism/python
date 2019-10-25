@@ -1,17 +1,9 @@
-"""Tests for the largest-series-product exercise
-
-Implementation note:
-In case of invalid inputs to the 'largest_product' function
-your program should raise a ValueError with a meaningful error message.
-
-Feel free to reuse your code from the 'series' exercise!
-"""
 import unittest
 
 from largest_series_product import largest_product
 
-
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+
 
 class LargestSeriesProductTest(unittest.TestCase):
     def test_finds_the_largest_product_if_span_equals_length(self):
@@ -34,9 +26,9 @@ class LargestSeriesProductTest(unittest.TestCase):
 
     def test_can_get_the_largest_product_of_a_big_number(self):
         self.assertEqual(
-            largest_product(
-                "73167176531330624919225119674426574742355349194934", 6),
-            23520)
+            largest_product("73167176531330624919225119674426574742355349194934", 6),
+            23520,
+        )
 
     def test_reports_zero_if_the_only_digits_are_zero(self):
         self.assertEqual(largest_product("0000", 2), 0)
@@ -49,9 +41,11 @@ class LargestSeriesProductTest(unittest.TestCase):
             largest_product("123", 4)
 
     def test_reports_1_for_empty_string_and_empty_product_0_span(self):
+        # There may be some confusion about whether this should be 1 or error.The reasoning for it being 1 is this:There is one 0-character string contained in the empty string.That's the empty string itself.The empty product is 1 (the identity for multiplication).Therefore LSP('', 0) is 1.It's NOT the case that LSP('', 0) takes max of an empty list.So there is no error.Compare against LSP('123', 4):There are zero 4-character strings in '123'.So LSP('123', 4) really DOES take the max of an empty list.So LSP('123', 4) errors and LSP('', 0) does NOT.
         self.assertEqual(largest_product("", 0), 1)
 
     def test_reports_1_for_nonempty_string_and_empty_product_0_span(self):
+        # As above, there is one 0-character string in '123'.So again no error. It's the empty product, 1.
         self.assertEqual(largest_product("123", 0), 1)
 
     def test_rejects_empty_string_and_nonzero_span(self):
@@ -66,27 +60,6 @@ class LargestSeriesProductTest(unittest.TestCase):
         with self.assertRaisesWithMessage(ValueError):
             largest_product("12345", -1)
 
-    @unittest.skip("extra-credit")
-    def test_project_euler_big_number(self):
-        series = (
-            "73167176531330624919225119674426574742355349194934969835203127745"
-            "06326239578318016984801869478851843858615607891129494954595017379"
-            "58331952853208805511125406987471585238630507156932909632952274430"
-            "43557668966489504452445231617318564030987111217223831136222989342"
-            "33803081353362766142828064444866452387493035890729629049156044077"
-            "23907138105158593079608667017242712188399879790879227492190169972"
-            "08880937766572733300105336788122023542180975125454059475224352584"
-            "90771167055601360483958644670632441572215539753697817977846174064"
-            "95514929086256932197846862248283972241375657056057490261407972968"
-            "65241453510047482166370484403199890008895243450658541227588666881"
-            "16427171479924442928230863465674813919123162824586178664583591245"
-            "66529476545682848912883142607690042242190226710556263211111093705"
-            "44217506941658960408071984038509624554443629812309878799272442849"
-            "09188845801561660979191338754992005240636899125607176060588611646"
-            "71094050775410022569831552000559357297257163626956188267042825248"
-            "3600823257530420752963450")
-        self.assertEqual(largest_product(series, 13), 23514624000)
-
     # Utility functions
     def setUp(self):
         try:
@@ -98,5 +71,5 @@ class LargestSeriesProductTest(unittest.TestCase):
         return self.assertRaisesRegex(exception, r".+")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
