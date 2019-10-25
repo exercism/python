@@ -1,3 +1,4 @@
+from __future__ import division
 import unittest
 
 from rational_numbers import Rational

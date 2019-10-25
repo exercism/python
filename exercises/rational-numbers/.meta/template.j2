@@ -82,6 +82,7 @@
 
 {%- endmacro %}
 
+from __future__ import division
 {{ macros.header(imports=["Rational"]) }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
