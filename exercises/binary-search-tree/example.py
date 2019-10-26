@@ -1,3 +1,5 @@
+# Basic building block of BinarySearchTree which holds data and reference
+# to left and right TreeNodes
 class TreeNode(object):
     def __init__(self, data, left=None, right=None):
         self.data = data
