@@ -1,6 +1,12 @@
 {%- import "generator_macros.j2" as macros with context -%}
 import re
 {{ macros.header(imports=['Cipher']) }}
+{%- macro convert_js(s) -%}
+{{ s |
+    regex_replace("\\.substring\\((\\d+), ([^)]+)\\)", "[\\1:\\2]") |
+    regex_replace("(\w+)\\.length", "len(\\1)")
+}}
+{%- endmacro %}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
 {{ macros.utility() }}
@@ -30,6 +36,7 @@ class {{ cases["description"] | camel_case }}Test({{ exercise | camel_case }}Tes
             {% else -%}
             {% set expected = "'" ~ expected ~ "'" -%}
             {% endif -%}
+            {%- set expected = convert_js(expected) -%}
             {% if plaintext -%}
             plaintext = '{{ plaintext }}'
             {% endif -%}
@@ -45,6 +52,7 @@ class {{ cases["description"] | camel_case }}Test({{ exercise | camel_case }}Tes
             {% else -%}
             {% set ciphertext = "'" ~ ciphertext ~ "'" -%}
             {% endif -%}
+            {%- set ciphertext = convert_js(ciphertext).replace("expected", expected) -%}
             self.assertEqual(cipher.{{ property }}({{ ciphertext }}), {{ expected }})
             {% endif -%}
 
