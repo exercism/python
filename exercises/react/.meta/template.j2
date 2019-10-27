@@ -8,6 +8,14 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% set cells = case['input']['cells'] -%}
     {% set operations = case['input']['operations'] -%}
     def test_{{ case["description"] | to_snake }}(self):
+        {% if case["comments"] -%}
+        """
+        {% for comment in case["comments"] -%}
+        {{ comment }}
+        {% endfor -%}
+        """
+        {% endif -%}
+        {% set expect_callbacks_not_to_be_called = [] -%}
         {% for cell in cells -%}
         {% set name = cell['name']|replace('input', 'input_') -%}
         {% if cell['type'] == 'input' -%}
@@ -27,6 +35,16 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         self.assertEqual({{ operation['cell']|replace('input', 'input_') }}.value, {{ operation.value }})
         {% elif operation['type'] == 'set_value' -%}
         {{ operation['cell']|replace('input', 'input_') }}.value = {{ operation.value }}
+        {% if operation['expect_callbacks'] -%}
+        {% for expect_callback, value in operation['expect_callbacks'].items() -%}
+        self.assertEqual({{ expect_callback }}[-1], {{ value }})
+        {% endfor -%}
+        {% endif -%}
+        {% if operation['expect_callbacks_not_to_be_called'] -%}
+        {% for not_expect_callback in operation['expect_callbacks_not_to_be_called'] -%}
+        self.assertEqual({{ not_expect_callback }}, [])
+        {% endfor -%}
+        {% endif -%}
         {% elif operation['type'] == 'add_callback' -%}
         {{ operation['cell']|replace('input', 'input_') }}.add_callback({{ operation.name }})
         {% elif operation['type'] == 'remove_callback' -%}
