@@ -1,0 +1,24 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{% macro test_case(case) -%}
+    {%- set input = case["input"] -%}
+    def test_{{ case["description"] | to_snake }}(self):
+    {%- if case["expected"]["error"] is string %}
+        with self.assertRaisesWithMessage(ValueError):
+            {{ case["property"] | to_snake }}({{input["number"]}})
+    {% else %}
+        self.assertIs(
+            {{ case["property"] | to_snake }}({{input["number"]}}),
+            "{{ case["expected"] }}"
+        )
+    {% endif %}
+{%- endmacro %}
+{{ macros.header()}}
+
+{% for case in cases -%}
+class {{ case["description"] | camel_case }}Test(unittest.TestCase):
+    {% for subcase in case["cases"] -%}
+    {{ test_case(subcase) }}
+    {% endfor %}
+{% endfor %}
+
+{{ macros.footer() }}
