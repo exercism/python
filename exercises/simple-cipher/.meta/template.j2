@@ -36,6 +36,7 @@ class {{ cases["description"] | camel_case }}Test({{ exercise | camel_case }}Tes
             {% else -%}
             {% set expected = "'" ~ expected ~ "'" -%}
             {% endif -%}
+            {%- set expected = convert_js(expected) -%}
             {% if plaintext -%}
             plaintext = '{{ plaintext }}'
             {% endif -%}
