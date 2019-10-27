@@ -1,6 +1,12 @@
 {%- import "generator_macros.j2" as macros with context -%}
 import re
 {{ macros.header(imports=['Cipher']) }}
+{%- macro convert_js(s) -%}
+{{ s |
+    regex_replace("\\.substring\\((\\d+), ([^)]+)\\)", "[\\1:\\2]") |
+    regex_replace("(\w+)\\.length", "len(\\1)")
+}}
+{%- endmacro %}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
 {{ macros.utility() }}
