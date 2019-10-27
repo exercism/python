@@ -22,12 +22,11 @@ class RandomKeyCipherTest(SimpleCipherTest):
     def test_can_encode(self):
         cipher = Cipher()
         plaintext = "aaaaaaaaaa"
-        self.assertEqual(cipher.encode(plaintext), cipher.key[: len(plaintext)])
+        self.assertEqual(cipher.encode(plaintext), cipher.key[0 : len(plaintext)])
 
     def test_can_decode(self):
         cipher = Cipher()
-        plaintext = "aaaaaaaaaa"
-        self.assertEqual(cipher.decode(cipher.key[: len(plaintext)]), plaintext)
+        self.assertEqual(cipher.decode(cipher.key[0 : len("aaaaaaaaaa")]), "aaaaaaaaaa")
 
     def test_is_reversible(self):
         cipher = Cipher()
