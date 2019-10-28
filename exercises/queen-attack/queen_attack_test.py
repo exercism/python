@@ -2,54 +2,53 @@ import unittest
 
 from queen_attack import Queen
 
-
 # Tests adapted from `problem-specifications//canonical-data.json` @ v2.3.0
 
-class QueenAttackTest(unittest.TestCase):
 
+class QueenAttackTest(unittest.TestCase):
     # Test creation of Queens with valid and invalid positions
-    def test_queen_valid_position(self):
+    def test_queen_with_a_valid_position(self):
         try:
             Queen(2, 2)
         except ValueError:
             self.fail("Unexpected Exception")
 
-    def test_queen_negative_row(self):
+    def test_queen_must_have_positive_row(self):
         with self.assertRaisesWithMessage(ValueError):
             Queen(-2, 2)
 
-    def test_queen_invalid_row(self):
+    def test_queen_must_have_row_on_board(self):
         with self.assertRaisesWithMessage(ValueError):
             Queen(8, 4)
 
-    def test_queen_negative_column(self):
+    def test_queen_must_have_positive_column(self):
         with self.assertRaisesWithMessage(ValueError):
             Queen(2, -2)
 
-    def test_queen_invalid_column(self):
+    def test_queen_must_have_column_on_board(self):
         with self.assertRaisesWithMessage(ValueError):
             Queen(4, 8)
 
     # Test the ability of one queen to attack another
-    def test_attack_false(self):
+    def test_can_not_attack(self):
         self.assertIs(Queen(2, 4).can_attack(Queen(6, 6)), False)
 
-    def test_attack_same_row(self):
+    def test_can_attack_on_same_row(self):
         self.assertIs(Queen(2, 4).can_attack(Queen(2, 6)), True)
 
-    def test_attack_same_column(self):
+    def test_can_attack_on_same_column(self):
         self.assertIs(Queen(4, 5).can_attack(Queen(2, 5)), True)
 
-    def test_attack_diagonal1(self):
+    def test_can_attack_on_first_diagonal(self):
         self.assertIs(Queen(2, 2).can_attack(Queen(0, 4)), True)
 
-    def test_attack_diagonal2(self):
+    def test_can_attack_on_second_diagonal(self):
         self.assertIs(Queen(2, 2).can_attack(Queen(3, 1)), True)
 
-    def test_attack_diagonal3(self):
+    def test_can_attack_on_third_diagonal(self):
         self.assertIs(Queen(2, 2).can_attack(Queen(1, 1)), True)
 
-    def test_attack_diagonal4(self):
+    def test_can_attack_on_fourth_diagonal(self):
         self.assertIs(Queen(1, 7).can_attack(Queen(0, 6)), True)
 
     # Track-specific tests
@@ -68,5 +67,5 @@ class QueenAttackTest(unittest.TestCase):
         return self.assertRaisesRegex(exception, r".+")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
