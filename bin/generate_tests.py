@@ -150,6 +150,13 @@ def generate_exercise(env, spec_path, exercise, check=False):
     False: saves rendered to tests file
     """
     slug = os.path.basename(exercise)
+    meta_dir = os.path.join(exercise, '.meta')
+    plugins = None
+    if os.path.isfile(os.path.join(meta_dir, 'plugins.py')):
+        import sys
+        sys.path.append(meta_dir)
+        import plugins
+        sys.path.pop()
     try:
         spec = load_canonical(slug, spec_path)
         additional_tests = load_additional_tests(slug)
@@ -160,6 +167,7 @@ def generate_exercise(env, spec_path, exercise, check=False):
             exercise, f'{to_snake(slug)}_test.py'
         )
         spec["has_error_case"] = has_error_case(spec["cases"])
+        spec["plugins"] = plugins
         logger.info(f'{slug}: attempting render')
         rendered = template.render(**spec)
         with NamedTemporaryFile('w', delete=False) as tmp:
