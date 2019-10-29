@@ -24,7 +24,7 @@ import sys
 from glob import glob
 from itertools import repeat
 from string import punctuation, whitespace
-from subprocess import CalledProcessError, check_call
+from subprocess import check_call
 from tempfile import NamedTemporaryFile
 
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound, UndefinedError
