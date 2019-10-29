@@ -195,7 +195,7 @@ def generate_exercise(env, spec_path, exercise, check=False):
         else:
             shutil.move(tmp.name, tests_path)
             print(f"{slug} generated at {tests_path}")
-    except (TypeError, UndefinedError) as e:
+    except (TypeError, UndefinedError, SyntaxError) as e:
         logger.debug(str(e))
         logger.error(f"{slug}: generation failed")
         return False
@@ -205,10 +205,6 @@ def generate_exercise(env, spec_path, exercise, check=False):
     except FileNotFoundError as e:
         logger.debug(str(e))
         logger.info(f"{slug}: no canonical data found; skipping")
-    except SyntaxError as e:
-        logger.debug(str(e))
-        logger.info(f"{slug}: SyntaxError in {plugins_source}")
-        return False
     return True
 
 
