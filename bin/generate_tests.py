@@ -151,7 +151,6 @@ def generate_exercise(env, spec_path, exercise, check=False):
     """
     slug = os.path.basename(exercise)
     meta_dir = os.path.join(exercise, ".meta")
-    plugins = None
     plugins_module = None
     plugins_name = "plugins"
     plugins_source = os.path.join(meta_dir, f"{plugins_name}.py")
