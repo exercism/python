@@ -155,14 +155,14 @@ def generate_exercise(env, spec_path, exercise, check=False):
     plugins_module = None
     plugins_name = "plugins"
     plugins_source = os.path.join(meta_dir, f"{plugins_name}.py")
-    if os.path.isfile(plugins_source):
-        plugins_spec = importlib.util.spec_from_file_location(
-            plugins_name, plugins_source
-        )
-        plugins_module = importlib.util.module_from_spec(plugins_spec)
-        sys.modules[plugins_name] = plugins_module
-        plugins_spec.loader.exec_module(plugins_module)
     try:
+        if os.path.isfile(plugins_source):
+            plugins_spec = importlib.util.spec_from_file_location(
+                plugins_name, plugins_source
+            )
+            plugins_module = importlib.util.module_from_spec(plugins_spec)
+            sys.modules[plugins_name] = plugins_module
+            plugins_spec.loader.exec_module(plugins_module)
         spec = load_canonical(slug, spec_path)
         additional_tests = load_additional_tests(slug)
         spec["additional_cases"] = additional_tests
@@ -205,6 +205,10 @@ def generate_exercise(env, spec_path, exercise, check=False):
     except FileNotFoundError as e:
         logger.debug(str(e))
         logger.info(f"{slug}: no canonical data found; skipping")
+    except SyntaxError as e:
+        logger.debug(str(e))
+        logger.info(f"{slug}: SyntaxError in {plugins_source}")
+        return False
     return True
 
 
