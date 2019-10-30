@@ -8,9 +8,6 @@
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
     def test_{{ case["description"] | to_snake }}(self):
-        {%- if "comments" in case %}
-        # {{ case["comments"] | join('') }}
-        {%- endif %}
         {%- if case is error_case %}
         with self.assertRaisesWithMessage(ValueError):
             {{- test_call(case) | indent(width=8) }}
