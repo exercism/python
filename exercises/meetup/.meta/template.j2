@@ -6,7 +6,6 @@
         {%- set input.month = case["input"]["month"] %}
         {%- set input.week = case["input"]["week"] %}
         {%- set input.dayofweek = case["input"]["dayofweek"] %}
-        {%- set week_replace = {"first":"1st", "second":"2nd"} %}
         {%- for (k, v) in {"first":"1st", "second":"2nd", "third":"3rd", "fourth":"4th", "fifth":"5th"}.items() %}
               {%- set input.week = input.week.replace(k, v) %}
         {%- endfor %}
