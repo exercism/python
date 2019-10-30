@@ -20,5 +20,5 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         self.assertEqual({{- test_call(case) }}, {{ case["expected"] }})
         {%- endif %}
     {% endfor %}
-
+{{ macros.utility() }}
 {{ macros.footer() }}

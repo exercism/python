@@ -63,6 +63,16 @@ class MinesweeperTest(unittest.TestCase):
         with self.assertRaisesWithMessage(ValueError):
             annotate(["X  * "])
 
+    # Utility functions
+    def setUp(self):
+        try:
+            self.assertRaisesRegex
+        except AttributeError:
+            self.assertRaisesRegex = self.assertRaisesRegexp
+
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
+
 
 if __name__ == "__main__":
     unittest.main()
