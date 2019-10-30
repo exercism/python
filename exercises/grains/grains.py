@@ -2,5 +2,5 @@ def square(number):
     pass
 
 
-def total(number):
+def total():
     pass
