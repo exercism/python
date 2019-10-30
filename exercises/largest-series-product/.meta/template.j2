@@ -8,7 +8,7 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         {% set digits = input["digits"] -%}
         {% set span = input["span"] -%}
         {% set expected = case["expected"] -%}
-        {% set function = to_snake(case["property"]) -%}
+        {% set function = case["property"] | to_snake -%}
         {%- if case is error_case -%}
         with self.assertRaisesWithMessage(ValueError):
             {{ function }}("{{ digits }}", {{ span }})
