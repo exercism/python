@@ -1,0 +1,35 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.header() }}
+
+{% set filenames = {"iliad.txt": "[ILIADFILENAME]", "midsummer-night.txt": "[MIDSUMMERNIGHTFILENAME]", "paradise-lost.txt": "[PARADISELOSTFILENAME]", "iliad.txt midsummer-night.txt paradise-lost.txt": "FILENAMES"} -%}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    @classmethod
+    def setUpClass(self):
+        ...
+    @classmethod
+    def tearDownClass(self):
+        ...
+
+{% set suite_tests = cases -%}
+
+{% for cases in suite_tests -%}
+    # {{ cases["description"] }}
+    {% for case in cases["cases"] -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        {% if case['input']['expected']|join(" ") in filenames -%}
+        self.assertMultiLineEqual(grep("{{ case['input']['pattern'] }}", "{{ case['input']['flags']|join(" ") }}", {{ filenames[case['input']['files']|join(" ")] }}),
+        {{ filenames[case['input']['expected']|join(" ")] }}
+        {% else -%}
+        self.assertMultiLineEqual(grep("{{ case['input']['pattern'] }}", "{{ case['input']['flags']|join(" ") }}", {{ filenames[case['input']['files']|join(" ")] }}),
+        {% for line in case["expected"] -%}
+        "{{ line }}\n"
+        {% endfor -%}
+        {% endif -%}
+        )
+
+    {% endfor %}
+
+{% endfor %}
+
+{{ macros.footer() }}
