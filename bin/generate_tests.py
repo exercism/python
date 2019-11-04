@@ -184,7 +184,7 @@ def generate_exercise(env, spec_path, exercise, check=False):
 
         if check:
             try:
-                if not filecmp.cmp(tmp.name, tests_path):
+                if not filecmp.cmp(tmp.name, tests_path, shallow=False):
                     logger.error(
                         f"{slug}: check failed; tests must be regenerated with bin/generate_tests.py"
                     )
