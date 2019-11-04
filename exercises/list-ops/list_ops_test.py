@@ -7,8 +7,8 @@ from list_ops import (
     foldr,
     length,
     reverse,
-    map as list_ops_map,
     filter as list_ops_filter,
+    map as list_ops_map,
 )
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v2.4.0
