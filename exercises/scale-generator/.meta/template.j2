@@ -1,0 +1,30 @@
+{%- import "generator_macros.j2" as macros with context -%}
+
+{% macro test_case(case) -%}
+    {%- set tonic = case["input"]["tonic"] -%}
+    {%- set intervals = case["input"]["intervals"] -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        expected = {{ case["expected"]  }}
+        self.assertEqual(
+            Scale("{{ tonic }}").
+            {{ case["property"] | to_snake }}({{ "\"" ~ intervals ~ "\"" if intervals }}),
+            expected
+        )
+{%- endmacro %}
+
+{% macro test_supercase(supercase) -%}
+    # Test {{ supercase["description"] | lower }}
+    {% for case in supercase["cases"] -%}
+    {{ test_case(case) }}
+    {% endfor %}
+{%- endmacro %}
+
+{{ macros.header(["Scale"])}}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for supercase in cases %}
+    {{ test_supercase(supercase) }}
+    {% endfor %}
+
+
+{{ macros.footer() }}

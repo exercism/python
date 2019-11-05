@@ -1,0 +1,47 @@
+{%- import "generator_macros.j2" as macros with context -%}
+
+{% macro test_case(case) -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        input_string = '{{ case["input"]["encoded"] }}'
+        {% if case["expected"]["error"] -%}
+        with self.assertRaisesWithMessage(ValueError):
+            {{ case["property"] | to_snake }}(input_string)
+        {% else -%}
+        expected = {{ sgftree(case["expected"]) }}
+        self.assertEqual({{ case["property"] | to_snake }}(input_string), expected)
+        {% endif %}
+{%- endmacro -%}
+
+{% macro sgftree(tree) -%}
+    {% set properties = tree["properties"] -%}
+    SgfTree(
+    {%- if properties -%}
+    properties={{ list_properties(properties) }}
+    {%- endif -%}
+    {%- if tree["children"] -%}
+    , children=[
+    {%- for child in tree["children"] -%}
+    SgfTree({{ child["properties"] }}){% if not loop.last %}, {% endif %}
+    {%- endfor %}]
+    {%- endif %}{# tree["children"] #})
+{%- endmacro -%}
+
+{% macro list_properties(properties) -%}
+    {
+    {%- for key, values in properties.items() -%}
+    '{{ key }}':[
+    {%- for value in values -%}
+    '{{ value }}'{% if not loop.last %}, {% endif -%}
+    {% endfor -%}]
+    {%- if not loop.last %}, {% endif -%}
+    {% endfor -%} }
+{%- endmacro -%}
+
+{{ macros.header(["parse","SgfTree"])}}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases %}
+    {{ test_case(case) }}
+    {%- endfor -%}
+
+{{ macros.footer() }}

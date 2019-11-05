@@ -1,0 +1,39 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{% macro test_case(case) -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        {%- set input = namespace() %}
+        {%- set input.year = case["input"]["year"] %}
+        {%- set input.month = case["input"]["month"] %}
+        {%- set input.week = case["input"]["week"] %}
+        {%- set input.dayofweek = case["input"]["dayofweek"] %}
+        {%- for (k, v) in {"first":"1st", "second":"2nd", "third":"3rd", "fourth":"4th", "fifth":"5th"}.items() %}
+              {%- set input.week = input.week.replace(k, v) %}
+        {%- endfor %}
+        {%- if case is error_case %}
+        with self.assertRaisesWithMessage(MeetupDayException):
+            {{ case["property"] }}({{ input.year }}, {{ input.month }}, "{{ input.week }}", "{{ input.dayofweek }}")
+        {%- else %}
+        {%- set (year, month, day) = case["expected"].replace("-0", "-").split("-") %}
+        self.assertEqual({{ case["property"] }}(
+            {{ input.year }}, {{ input.month }}, "{{ input.week }}", "{{ input.dayofweek }}"), date({{ year }}, {{ month }}, {{ day }}))
+        {% endif %}
+{%- endmacro %}
+
+from datetime import date
+{{ macros.header(imports=["meetup", "MeetupDayException"]) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases -%}
+    {{ test_case(case) }}
+    {% endfor %}
+    {% if additional_cases | length -%}
+
+    # Additional tests for this track
+
+    {% for case in additional_cases -%}
+    {{ test_case(case) }}
+    {% endfor %}
+    {%- endif %}
+
+
+{{ macros.footer(True) }}
