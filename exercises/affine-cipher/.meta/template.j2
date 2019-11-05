@@ -1,0 +1,32 @@
+{%- import "generator_macros.j2" as macros with context -%}
+
+{% macro test_supercase(supercase) %}
+{% for case in supercase["cases"] -%}
+{{ test_case(case) | indent(4,True,True) }}
+{% endfor %}
+{% endmacro %}
+
+{% macro test_case(case) -%}
+def test_{{ case["description"] | to_snake }}(self):
+    {% set input = case["input"] -%}
+    {% set phrase = input["phrase"] -%}
+    {% set a = input["key"]["a"] -%}
+    {% set b = input["key"]["b"] -%}
+    {% set expected = case["expected"] -%}
+    {% set function = case["property"] -%}
+    {% if case is error_case -%}
+    with self.assertRaisesWithMessage(ValueError):
+        {{ function }}("{{ phrase }}", {{ a }}, {{ b }})
+    {% else -%}
+    self.assertEqual({{ function }}("{{ phrase }}", {{ a }}, {{ b }}), "{{ expected }}")
+    {% endif -%}
+{%- endmacro %}
+
+{{ macros.header() }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for supercase in cases -%}
+    {{ test_supercase(supercase) }}
+    {% endfor %}
+
+{{ macros.footer(True) }}

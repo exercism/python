@@ -1,5 +1,5 @@
 class TreeNode(object):
-    def __init__(self, data, left, right):
+    def __init__(self, data, left=None, right=None):
         self.data = data
         self.left = left
         self.right = right
@@ -17,7 +17,7 @@ class BinarySearchTree(object):
 
     def add(self, data):
         if self.root is None:
-            self.root = TreeNode(data, None, None)
+            self.root = TreeNode(data)
             return
         inserted = False
         cur_node = self.root
@@ -27,13 +27,13 @@ class BinarySearchTree(object):
                 if cur_node.left:
                     cur_node = cur_node.left
                 else:
-                    cur_node.left = TreeNode(data, None, None)
+                    cur_node.left = TreeNode(data)
                     inserted = True
             elif data > cur_node.data:
                 if cur_node.right:
                     cur_node = cur_node.right
                 else:
-                    cur_node.right = TreeNode(data, None, None)
+                    cur_node.right = TreeNode(data)
                     inserted = True
 
     def _inorder_traverse(self, node, elements):

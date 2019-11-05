@@ -4,30 +4,30 @@ NORTH, EAST, SOUTH, WEST = range(4)
 class Compass(object):
     compass = [NORTH, EAST, SOUTH, WEST]
 
-    def __init__(self, bearing=NORTH):
-        self.bearing = bearing
+    def __init__(self, direction=NORTH):
+        self.direction = direction
 
     def left(self):
-        self.bearing = self.compass[self.bearing - 1]
+        self.direction = self.compass[self.direction - 1]
 
     def right(self):
-        self.bearing = self.compass[(self.bearing + 1) % 4]
+        self.direction = self.compass[(self.direction + 1) % 4]
 
 
 class Robot(object):
-    def __init__(self, bearing=NORTH, x=0, y=0):
-        self.compass = Compass(bearing)
+    def __init__(self, direction=NORTH, x=0, y=0):
+        self.compass = Compass(direction)
         self.x = x
         self.y = y
 
     def advance(self):
-        if self.bearing == NORTH:
+        if self.direction == NORTH:
             self.y += 1
-        elif self.bearing == SOUTH:
+        elif self.direction == SOUTH:
             self.y -= 1
-        elif self.bearing == EAST:
+        elif self.direction == EAST:
             self.x += 1
-        elif self.bearing == WEST:
+        elif self.direction == WEST:
             self.x -= 1
 
     def turn_left(self):
@@ -36,7 +36,7 @@ class Robot(object):
     def turn_right(self):
         self.compass.right()
 
-    def simulate(self, commands):
+    def move(self, commands):
         instructions = {'A': self.advance,
                         'R': self.turn_right,
                         'L': self.turn_left}
@@ -45,8 +45,8 @@ class Robot(object):
                 instructions[cmd]()
 
     @property
-    def bearing(self):
-        return self.compass.bearing
+    def direction(self):
+        return self.compass.direction
 
     @property
     def coordinates(self):
