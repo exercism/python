@@ -13,6 +13,12 @@ in the input; the digits need not be *numerically consecutive*.
 For the input `'73167176531330624919225119674426574742355349194934'`,
 the largest product for a series of 6 digits is 23520.
 
+Implementation note:
+In case of invalid inputs to the 'largest_product' function
+your program should raise a ValueError with a meaningful error message.
+Feel free to reuse your code from the 'series' exercise!
+
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to

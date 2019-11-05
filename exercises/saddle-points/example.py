@@ -1,6 +1,6 @@
 def saddle_points(matrix):
     if not matrix:
-        return [{}]
+        return []
     if any(len(row) != len(matrix[0]) for row in matrix):
         raise ValueError('irregular matrix')
     mmax = [max(row) for row in matrix]
@@ -10,4 +10,4 @@ def saddle_points(matrix):
               for col_index in range(len(matrix[0]))
               if mmax[index] == mmin[col_index]]
 
-    return points or [{}]
+    return points or []
