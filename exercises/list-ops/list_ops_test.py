@@ -11,14 +11,14 @@ from list_ops import (
     map as list_ops_map,
 )
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.4.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.4.1
 
 
 class ListOpsTest(unittest.TestCase):
     def test_append_empty_lists(self):
         self.assertEqual(append([], []), [])
 
-    def test_append_empty_list_to_list(self):
+    def test_append_list_to_empty_list(self):
         self.assertEqual(append([], [1, 2, 3, 4]), [1, 2, 3, 4])
 
     def test_append_non_empty_lists(self):
