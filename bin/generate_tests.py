@@ -182,12 +182,11 @@ def generate_exercise(env, spec_path, exercise, check=False):
                 if not os.path.isfile(tests_path):
                     logger.debug(f"{slug}: tests file {tests_path} not found")
                     check_ok = False
-                if not filecmp.cmp(tmp.name, tests_path):
+                if check_ok and not filecmp.cmp(tmp.name, tests_path):
                     with open(tests_path) as f:
                         current_lines = f.readlines()
                     with open(tmp.name) as f:
                         rendered_lines = f.readlines()
-                    # rendered_lines = rendered.splitlines(keepends=True)
                     diff = difflib.unified_diff(
                         current_lines,
                         rendered_lines,
