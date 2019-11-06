@@ -1,27 +1,28 @@
 {%- import "generator_macros.j2" as macros with context -%}
 {{ macros.header(imports=imports, ignore=ignore) }}
 
-class {{ exercise | camel_case }}Test(unittest.TestCase):
-    {% for case in cases -%}
-        {% if "cases" in case -%}
-            {% for nestedcase in case -%}
-    {{ test_case(nestedcase) }}
-            {% endfor %}
-        {%- else -%}
+{%- macro test_cases_recursive(cases) -%}
+{% for case in cases -%}
+{% if "cases" in case %}
+    # {{ case["description"] }}
+    {{ test_cases_recursive(case["cases"]) }}
+{% else %}
     {{ test_case(case) }}
-        {%- endif %}
-    {% endfor %}
+{% endif -%}
+{% endfor -%}
+{% endmacro %}
+
+{% if not additional_tests -%}
+{%- macro additional_tests() -%}
+    {{ test_cases_recursive(additional_cases) }}
+{% endmacro %}
+{%- endif %}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {{ test_cases_recursive(cases) }}
 
     {% if additional_cases | length -%}
     # Additional tests for this track
-    {% for case in additional_cases -%}
-        {% if "cases" in case -%}
-            {% for nestedcase in case -%}
-    {{ test_case(nestedcase) }}
-            {% endfor %}
-        {%- else -%}
-    {{ test_case(case) }}
-        {%- endif %}
-    {% endfor %}
+    {{ additional_tests() }}
     {%- endif %}
 {{ macros.footer() }}
