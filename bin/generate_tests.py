@@ -245,7 +245,7 @@ def generate(
     env.filters["regex_replace"] = regex_replace
     env.tests["error_case"] = error_case
     result = True
-    for exercise in glob(os.path.join("exercises", exercise_glob)):
+    for exercise in sorted(glob(os.path.join("exercises", exercise_glob))):
         if not generate_exercise(env, spec_path, exercise, check):
             result = False
             if stop_on_failure:
