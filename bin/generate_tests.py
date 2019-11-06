@@ -13,6 +13,7 @@ Usage:
     generate_tests.py --check two-fer   Checks if two-fer test file is out of sync with template
 """
 import argparse
+import difflib
 import filecmp
 import importlib.util
 import json
@@ -171,12 +172,13 @@ def generate_exercise(env, spec_path, exercise, check=False):
         spec["has_error_case"] = has_error_case(spec["cases"])
         if plugins_module is not None:
             spec[plugins_name] = plugins_module
-        logger.info(f"{slug}: attempting render")
+        logger.debug(f"{slug}: attempting render")
         rendered = template.render(**spec)
         with NamedTemporaryFile("w", delete=False) as tmp:
+            logger.debug(f"{slug}: writing render to tmp file {tmp.name}")
             tmp.write(rendered)
         try:
-            logger.debug(f"{slug}: formatting tmp file")
+            logger.debug(f"{slug}: formatting tmp file {tmp.name}")
             format_file(tmp.name)
         except FileNotFoundError as e:
             logger.error(f"{slug}: the black utility must be installed")
@@ -184,14 +186,41 @@ def generate_exercise(env, spec_path, exercise, check=False):
 
         if check:
             try:
+                check_ok = True
+                if not os.path.isfile(tmp.name):
+                    logger.debug(f"{slug}: tmp file {tmp.name} not found")
+                    check_ok = False
+                if not os.path.isfile(tests_path):
+                    logger.debug(f"{slug}: tests file {tests_path} not found")
+                    check_ok = False
                 if not filecmp.cmp(tmp.name, tests_path):
+                    with open(tests_path) as f:
+                        current_lines = f.readlines()
+                    with open(tmp.name) as f:
+                        rendered_lines = f.readlines()
+                    # rendered_lines = rendered.splitlines(keepends=True)
+                    diff = difflib.unified_diff(
+                        current_lines,
+                        rendered_lines,
+                        fromfile=f"[current] {os.path.basename(tests_path)}",
+                        tofile=f"[generated] {tmp.name}",
+                    )
+                    logger.debug(f"{slug}: ##### DIFF START #####")
+                    for line in diff:
+                        logger.debug(line.strip())
+                    logger.debug(f"{slug}: ##### DIFF END #####")
+                    check_ok = False
+                if not check_ok:
                     logger.error(
                         f"{slug}: check failed; tests must be regenerated with bin/generate_tests.py"
                     )
                     return False
+                logger.debug(f"{slug}: check passed")
             finally:
+                logger.debug(f"{slug}: removing tmp file {tmp.name}")
                 os.remove(tmp.name)
         else:
+            logger.debug(f"{slug}: moving tmp file {tmp.name}->{tests_path}")
             shutil.move(tmp.name, tests_path)
             print(f"{slug} generated at {tests_path}")
     except (TypeError, UndefinedError, SyntaxError) as e:
