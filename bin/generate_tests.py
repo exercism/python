@@ -133,17 +133,6 @@ def format_file(path):
     check_call(["black", "-q", path])
 
 
-def compare_existing(rendered, tests_path):
-    """
-    Returns true if contents of file at tests_path match rendered
-    """
-    if not os.path.isfile(tests_path):
-        return False
-    with open(tests_path) as f:
-        current = f.read()
-    return rendered == current
-
-
 def generate_exercise(env, spec_path, exercise, check=False):
     """
     Renders test suite for exercise and if check is:
