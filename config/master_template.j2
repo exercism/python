@@ -3,13 +3,25 @@
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
+        {% if "cases" in case -%}
+            {% for nestedcase in case -%}
+    {{ test_case(nestedcase) }}
+            {% endfor %}
+        {%- else -%}
     {{ test_case(case) }}
+        {%- endif %}
     {% endfor %}
 
     {% if additional_cases | length -%}
     # Additional tests for this track
     {% for case in additional_cases -%}
+        {% if "cases" in case -%}
+            {% for nestedcase in case -%}
+    {{ test_case(nestedcase) }}
+            {% endfor %}
+        {%- else -%}
     {{ test_case(case) }}
+        {%- endif %}
     {% endfor %}
     {%- endif %}
 {{ macros.footer() }}
