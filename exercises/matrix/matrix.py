@@ -1,4 +1,4 @@
-class Matrix(object):
+class Matrix:
     def __init__(self, matrix_string):
         pass
 

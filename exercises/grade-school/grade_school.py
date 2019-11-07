@@ -1,4 +1,4 @@
-class School(object):
+class School:
     def __init__(self):
         pass
 

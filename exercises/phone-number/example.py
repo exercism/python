@@ -1,7 +1,7 @@
 import re
 
 
-class Phone(object):
+class Phone:
     def __init__(self, number):
         self.number = self._clean(number)
         self.area_code = self.number[:3]

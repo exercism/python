@@ -1,7 +1,7 @@
 from __future__ import division
 
 
-class Rational(object):
+class Rational:
     def __init__(self, numer, denom):
         self.numer = None
         self.denom = None

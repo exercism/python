@@ -3,7 +3,7 @@ import unittest
 import error_handling as er
 
 
-class FileLike(object):
+class FileLike:
     def __init__(self, fail_something=True):
         self.is_open = False
         self.was_open = False

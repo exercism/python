@@ -8,7 +8,7 @@ def period_converter(period):
     return inner
 
 
-class SpaceAge(object):
+class SpaceAge:
 
     on_mercury = period_converter(7600530.24)
     on_venus = period_converter(19413907.2)

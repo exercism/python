@@ -1,4 +1,4 @@
-class Queen(object):
+class Queen:
     def __init__(self, row, column):
         if not 0 <= row <= 7 or not 0 <= column <= 7:
             raise ValueError("Invalid queen position: queen out of the board")
