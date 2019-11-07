@@ -1,0 +1,58 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{% macro lambdify(function) -%}
+    {% set function = function.replace("(", "", 1).replace(")", "", 1).replace(" ->", ":") %}
+    {% set function = function.replace("modulo", "%") %}
+    {% set function = function.replace("/", "//") %}
+    lambda {{function}}
+{%- endmacro %}
+
+{% macro stringify(elem) -%}
+    {% if elem is string %}
+    "{{ elem }}"
+    {%- else -%}
+    {{ elem }}
+    {%- endif -%}
+{%- endmacro %}
+
+{% macro test_case(case) -%}
+    {%- set input = case["input"] -%}
+    def test_{{ case["property"] | to_snake }}_{{ case["description"] | to_snake }}(self):
+        self.assertEqual(
+    {%- if case["property"] == "filter" or case["property"] == "map" -%}
+            list_ops_
+    {%- endif -%}
+        {{ case["property"] | to_snake }}(
+    {%- if case["property"] == "append" -%}
+            {{ input["list1"] }}, {{ input["list2"] }}
+    {%- elif case["property"] == "concat" -%}
+            {{ input["lists"] }}
+    {%- elif case["property"] == "filter" or case["property"] == "map" -%}
+            {{ lambdify(input["function"]) }}, {{ input["list"] }}
+    {%- elif case["property"] == "length" or case["property"] == "reverse" -%}
+            {{ input["list"] }}
+    {%- elif case["property"] == "foldl" or case["property"] == "foldr" -%}
+            {{ lambdify(input["function"]) }}, {{ input["list"] }}, {{ stringify(input["initial"]) }}
+    {%- endif -%}
+            ),
+            {{ stringify(case["expected"]) }}
+        )
+{%- endmacro %}
+{{ macros.header(imports=["append", "concat", "foldl", "foldr", "length", "reverse", "filter as list_ops_filter", "map as list_ops_map"]) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for casegroup in cases -%}
+    {% for case in casegroup["cases"] -%}
+    {{ test_case(case) }}
+    {% endfor %}
+    {% endfor %}
+    {% if additional_cases | length -%}
+
+    # Additional tests for this track
+
+    {% for case in additional_cases -%}
+    {{ test_case(case) }}
+    {% endfor %}
+    {%- endif %}
+
+
+{{ macros.footer() }}
