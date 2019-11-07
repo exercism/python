@@ -21,7 +21,7 @@ matrix:
         - pip install -r requirements-generator.txt
       before_script: ./bin/check-readmes.sh
       script:
-        - bin/generate_tests.py -p spec --check
+        - bin/generate_tests.py --verbose -p spec --check
         # May provide more useful output than configlet fmt
         # if JSON is not valid or items are incomplete
         - ./bin/configlet lint .

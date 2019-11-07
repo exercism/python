@@ -1,0 +1,22 @@
+{
+  "cases": [
+    {
+      "description": "foldr add string",
+      "property": "foldr",
+      "input": {
+        "list": ["e", "x", "e", "r", "c", "i", "s", "m"],
+        "initial": "!",
+        "function": "(x, y) -> x + y"
+      },
+      "expected": "exercism!"
+    },
+    {
+      "description": "reverse mixed types",
+      "property": "reverse",
+      "input": {
+        "list": ["xyz", 4.0, "cat", 1]
+      },
+      "expected": [1, "cat", 4.0, "xyz"]
+    }
+  ]
+}
