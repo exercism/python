@@ -10,7 +10,7 @@ In this exercise you have to create some code that counts the number of
 mines adjacent to a given empty square and replaces that square with the
 count.
 
-The board is a rectangle composed of blank space (' ') characters. A mine 
+The board is a rectangle composed of blank space (' ') characters. A mine
 is represented by an asterisk ('\*') character.
 
 If a given space has no adjacent mines at all, leave that square blank.
@@ -42,6 +42,7 @@ ValueError with a *meaningful* error message if the
 input turns out to be malformed.
 
 
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
@@ -58,12 +59,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest minesweeper_test.py`
 
-- Python 2.7: `py.test minesweeper_test.py`
-- Python 3.4+: `pytest minesweeper_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest minesweeper_test.py`
 
 ### Common `pytest` options

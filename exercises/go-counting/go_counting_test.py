@@ -85,12 +85,6 @@ class GoCountingTest(unittest.TestCase):
         self.assertSetEqual(territories[go_counting.NONE], set())
 
     # Utility functions
-    def setUp(self):
-        try:
-            self.assertRaisesRegex
-        except AttributeError:
-            self.assertRaisesRegex = self.assertRaisesRegexp
-
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
 

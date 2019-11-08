@@ -10,7 +10,7 @@ def truncate(s, length=25):
     return s[:length - 3] + '...'
 
 
-class LCInfo(object):
+class LCInfo:
     def __init__(self, locale, currency, columns):
         self.columns = columns
         if locale == 'en_US':

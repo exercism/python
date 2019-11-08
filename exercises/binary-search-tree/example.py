@@ -1,4 +1,4 @@
-class TreeNode(object):
+class TreeNode:
     def __init__(self, data, left=None, right=None):
         self.data = data
         self.left = left
@@ -9,7 +9,7 @@ class TreeNode(object):
         return fmt.format(self.data, self.left, self.right)
 
 
-class BinarySearchTree(object):
+class BinarySearchTree:
     def __init__(self, tree_data):
         self.root = None
         for data in tree_data:

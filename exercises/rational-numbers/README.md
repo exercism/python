@@ -28,6 +28,7 @@ Your implementation of rational numbers should always be reduced to lowest terms
 
 Assume that the programming language you are using does not have an implementation of rational numbers.
 
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
@@ -44,12 +45,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest rational_numbers_test.py`
 
-- Python 2.7: `py.test rational_numbers_test.py`
-- Python 3.4+: `pytest rational_numbers_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest rational_numbers_test.py`
 
 ### Common `pytest` options

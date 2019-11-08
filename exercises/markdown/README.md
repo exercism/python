@@ -14,6 +14,7 @@ It would be helpful if you made notes of what you did in your refactoring in
 comments so reviewers can see that, but it isn't strictly necessary. The most
 important thing is to make the code better!
 
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
@@ -30,12 +31,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest markdown_test.py`
 
-- Python 2.7: `py.test markdown_test.py`
-- Python 3.4+: `pytest markdown_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest markdown_test.py`
 
 ### Common `pytest` options

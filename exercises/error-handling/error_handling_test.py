@@ -3,7 +3,7 @@ import unittest
 import error_handling as er
 
 
-class FileLike(object):
+class FileLike:
     def __init__(self, fail_something=True):
         self.is_open = False
         self.was_open = False
@@ -74,12 +74,6 @@ class ErrorHandlingTest(unittest.TestCase):
                       'filelike_object should call do_something()')
 
     # Utility functions
-    def setUp(self):
-        try:
-            self.assertRaisesRegex
-        except AttributeError:
-            self.assertRaisesRegex = self.assertRaisesRegexp
-
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
 

@@ -1,4 +1,4 @@
-class Node(object):
+class Node:
     def __init__(self, value):
         self._value = value
         self._next = None
@@ -10,7 +10,7 @@ class Node(object):
         return self._next
 
 
-class LinkedIterator(object):
+class LinkedIterator:
     def __init__(self, linked_list):
         self.current = linked_list._head
 
@@ -28,7 +28,7 @@ class LinkedIterator(object):
         return self.__next__()
 
 
-class LinkedList(object):
+class LinkedList:
     def __init__(self, values=[]):
         self._head = None
         self._len = 0
