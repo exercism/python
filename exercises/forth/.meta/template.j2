@@ -1,0 +1,11 @@
+{%- extends "master_template.j2" -%}
+
+{% macro test_case(case) -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        {%- if case is error_case %}
+        with self.assertRaisesWithMessage(ValueError):
+            {{ case["property"] }}({{ case["input"]["instructions"] }})
+        {%- else %}
+        self.assertEqual({{ case["property"] }}({{ case["input"]["instructions"] }}), {{ case["expected"] }})
+        {%- endif %}
+{%- endmacro %}

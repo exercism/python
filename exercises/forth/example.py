@@ -1,7 +1,3 @@
-class StackUnderflowError(Exception):
-    pass
-
-
 def is_integer(string):
     try:
         int(string)
@@ -44,7 +40,7 @@ def evaluate(input_data):
             elif word == '/':
                 divisor = stack.pop()
                 if divisor == 0:
-                    raise ZeroDivisionError("Attempted to divide by zero")
+                    raise ValueError("Attempted to divide by zero")
                 stack.append(int(stack.pop() / divisor))
             elif word == 'dup':
                 stack.append(stack[-1])
@@ -58,5 +54,5 @@ def evaluate(input_data):
             else:
                 raise ValueError("{} has not been defined".format(word))
         except IndexError:
-            raise StackUnderflowError("Insufficient number of items in stack")
+            raise ValueError("Insufficient number of items in stack")
     return stack
