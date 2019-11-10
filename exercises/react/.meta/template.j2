@@ -1,4 +1,16 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{%- macro conditional(s) -%}
+{%- set condition_start = s.find("if ") + 3 -%}
+{%- set condition_end = s.find(" then ") -%}
+{%- set condition = s[condition_start : condition_end] -%}
+{%- set if_true_start = condition_end + 6 -%}
+{%- set if_true_end = s.find(" else ") -%}
+{%- set if_true = s[if_true_start : if_true_end] -%}
+{%- set if_false_start = if_true_end + 6 -%}
+{%- set if_false = s[if_false_start :] -%}
+{{ if_true }} if {{ condition }} else {{ if_false }}
+{%- endmacro -%}
+
 from functools import partial
 {{ macros.header(imports=['InputCell', 'ComputeCell']) }}
 {% set types = {'input': 'InputCell', 'compute': 'ComputeCell'} -%}
@@ -15,7 +27,7 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         {{ name }} = {{ types[cell['type']] }}({{ cell['initial_value'] }})
         {% elif cell['type'] == 'compute' -%}
         {% if 'if' in cell['compute_function'] -%}
-        {{ name }} = {{ types[cell['type']] }}([{{ cell['inputs']|join(', ')|replace('input', 'input_') }}])
+        {{ name }} = {{ types[cell['type']] }}([{{ cell['inputs']|join(', ')|replace('input', 'input_') }}], lambda inputs: {{ conditional(cell['compute_function']) }})
         {% else -%}
         {{ name }} = {{ types[cell['type']] }}([{{ cell['inputs']|join(', ')|replace('input', 'input_') }}], lambda inputs: {{ cell['compute_function'] }})
         {% endif -%}
