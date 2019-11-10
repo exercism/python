@@ -11,7 +11,7 @@ else:
 total_workers = 3  # Maximum number of threads chosen arbitrarily
 
 
-class LetterCounter(object):
+class LetterCounter:
 
     def __init__(self):
         self.lock = Lock()

@@ -1,7 +1,7 @@
 import random
 
 
-class Robot(object):
+class Robot:
     alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
     def __init__(self):

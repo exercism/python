@@ -6,7 +6,7 @@ except ImportError:
     from fractions import gcd
 
 
-class Rational(object):
+class Rational:
     def __init__(self, numer, denom):
         # abs used for backward compatibility with fractions.gcd
         gcd_num = abs(gcd(numer, denom))

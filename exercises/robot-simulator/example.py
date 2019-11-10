@@ -1,7 +1,7 @@
 NORTH, EAST, SOUTH, WEST = range(4)
 
 
-class Compass(object):
+class Compass:
     compass = [NORTH, EAST, SOUTH, WEST]
 
     def __init__(self, direction=NORTH):
@@ -14,7 +14,7 @@ class Compass(object):
         self.direction = self.compass[(self.direction + 1) % 4]
 
 
-class Robot(object):
+class Robot:
     def __init__(self, direction=NORTH, x=0, y=0):
         self.compass = Compass(direction)
         self.x = x

@@ -68,12 +68,6 @@ class PalindromeProductsTest(unittest.TestCase):
         self.assertEqual(set(map(frozenset, actual)), set(map(frozenset, expected)))
 
     # Utility functions
-    def setUp(self):
-        try:
-            self.assertRaisesRegex
-        except AttributeError:
-            self.assertRaisesRegex = self.assertRaisesRegexp
-
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
 

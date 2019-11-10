@@ -46,12 +46,6 @@ class ChangeTest(unittest.TestCase):
             find_fewest_coins([1, 2, 5], -5)
 
     # Utility functions
-    def setUp(self):
-        try:
-            self.assertRaisesRegex
-        except AttributeError:
-            self.assertRaisesRegex = self.assertRaisesRegexp
-
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
 
