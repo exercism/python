@@ -8,13 +8,6 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% set cells = case['input']['cells'] -%}
     {% set operations = case['input']['operations'] -%}
     def test_{{ case["description"] | to_snake }}(self):
-        {% if case["comments"] -%}
-        """
-        {% for comment in case["comments"] -%}
-        {{ comment }}
-        {% endfor -%}
-        """
-        {% endif -%}
         {% set expect_callbacks_not_to_be_called = [] -%}
         {% for cell in cells -%}
         {% set name = cell['name']|replace('input', 'input_') -%}
