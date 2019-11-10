@@ -8,12 +8,10 @@ import re
 }}
 {%- endmacro %}
 
-class {{ exercise | camel_case }}Test(unittest.TestCase):
-{{ macros.utility() }}
 {% set suite_tests = cases -%}
 
 {% for cases in suite_tests -%}
-class {{ cases["description"] | camel_case }}Test({{ exercise | camel_case }}Test):
+class {{ cases["description"] | camel_case }}Test(unittest.TestCase):
     {% for case in cases["cases"] -%}
         def test_{{ case["description"].split('.')[0] | to_snake }}(self):
             {% set property = case["property"] -%}

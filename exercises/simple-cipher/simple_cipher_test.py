@@ -6,19 +6,7 @@ from simple_cipher import Cipher
 # Tests adapted from `problem-specifications//canonical-data.json` @ v2.0.0
 
 
-class SimpleCipherTest(unittest.TestCase):
-    # Utility functions
-    def setUp(self):
-        try:
-            self.assertRaisesRegex
-        except AttributeError:
-            self.assertRaisesRegex = self.assertRaisesRegexp
-
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
-
-class RandomKeyCipherTest(SimpleCipherTest):
+class RandomKeyCipherTest(unittest.TestCase):
     def test_can_encode(self):
         cipher = Cipher()
         plaintext = "aaaaaaaaaa"
@@ -37,7 +25,7 @@ class RandomKeyCipherTest(SimpleCipherTest):
         self.assertIsNotNone(re.match("^[a-z]+$", Cipher().key))
 
 
-class SubstitutionCipherTest(SimpleCipherTest):
+class SubstitutionCipherTest(unittest.TestCase):
     def test_can_encode(self):
         cipher = Cipher("abcdefghij")
         plaintext = "aaaaaaaaaa"
