@@ -2,11 +2,15 @@
 {% set imports = ["Board", "WHITE", "BLACK", "NONE"] %}
 
 {% macro tuplify(territory_list) -%}
-    [
+    {%- if territory_list %}
+    {
     {%- for v in territory_list %}
     ({{ v | join(', ') }}),
     {%- endfor %}
-    ]
+    }
+    {%- else %}
+    set()
+    {%- endif %}
 {%- endmacro %}
 
 
@@ -20,11 +24,11 @@
         {%- if "owner" in case["expected"] %}
         stone, territory = board.territory(x={{ case["input"]["x"] }}, y={{ case["input"]["y"] }})
         self.assertEqual(stone, {{ case["expected"]["owner"] }})
-        self.assertSetEqual(territory, set({{ tuplify(case["expected"]["territory"]) }}))
+        self.assertSetEqual(territory, {{ tuplify(case["expected"]["territory"]) }})
         {%- else %}
         territories = board.territories()
         {%- for (k, v) in case["expected"].items() %}
-        self.assertSetEqual(territories[{{k.replace("territory", "") | upper }}], set({{tuplify(v)}}))
+        self.assertSetEqual(territories[{{k.replace("territory", "") | upper }}], {{tuplify(v)}})
         {%- endfor %}
         {%- endif %}
         {%- endif %}
