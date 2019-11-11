@@ -1,6 +1,6 @@
 import unittest
 
-from forth import evaluate
+from forth import evaluate, StackUnderflowError
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.7.1
 
@@ -18,11 +18,11 @@ class ForthTest(unittest.TestCase):
         self.assertEqual(evaluate(["1 2 +"]), [3])
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(["+"])
 
     def test_errors_if_there_is_only_one_value_on_the_stack(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(["1 +"])
 
     # subtraction
@@ -31,11 +31,11 @@ class ForthTest(unittest.TestCase):
         self.assertEqual(evaluate(["3 4 -"]), [-1])
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(["-"])
 
     def test_errors_if_there_is_only_one_value_on_the_stack(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(["1 -"])
 
     # multiplication
@@ -44,11 +44,11 @@ class ForthTest(unittest.TestCase):
         self.assertEqual(evaluate(["2 4 *"]), [8])
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(["*"])
 
     def test_errors_if_there_is_only_one_value_on_the_stack(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(["1 *"])
 
     # division
@@ -60,15 +60,16 @@ class ForthTest(unittest.TestCase):
         self.assertEqual(evaluate(["8 3 /"]), [2])
 
     def test_errors_if_dividing_by_zero(self):
-        with self.assertRaisesWithMessage(ValueError):
+        # divide by zero
+        with self.assertRaisesWithMessage(ZeroDivisionError):
             evaluate(["4 0 /"])
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(["/"])
 
     def test_errors_if_there_is_only_one_value_on_the_stack(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(["1 /"])
 
     # combined arithmetic
@@ -88,7 +89,7 @@ class ForthTest(unittest.TestCase):
         self.assertEqual(evaluate(["1 2 dup"]), [1, 2, 2])
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(["dup"])
 
     # drop
@@ -100,7 +101,7 @@ class ForthTest(unittest.TestCase):
         self.assertEqual(evaluate(["1 2 drop"]), [1])
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(["drop"])
 
     # swap
@@ -112,11 +113,11 @@ class ForthTest(unittest.TestCase):
         self.assertEqual(evaluate(["1 2 3 swap"]), [1, 3, 2])
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(["swap"])
 
     def test_errors_if_there_is_only_one_value_on_the_stack(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(["1 swap"])
 
     # over
@@ -128,11 +129,11 @@ class ForthTest(unittest.TestCase):
         self.assertEqual(evaluate(["1 2 3 over"]), [1, 2, 3, 2])
 
     def test_errors_if_there_is_nothing_on_the_stack(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(["over"])
 
     def test_errors_if_there_is_only_one_value_on_the_stack(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(["1 over"])
 
     # user-defined words
