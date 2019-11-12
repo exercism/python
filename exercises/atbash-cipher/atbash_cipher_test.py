@@ -7,74 +7,57 @@ from atbash_cipher import decode, encode
 
 class AtbashCipherTest(unittest.TestCase):
     def test_encode_yes(self):
-        value = "yes"
-        expected = "bvh"
-        self.assertEqual(encode(value), expected)
+        self.assertEqual(encode("yes"), "bvh")
 
     def test_encode_no(self):
-        value = "no"
-        expected = "ml"
-        self.assertEqual(encode(value), expected)
+        self.assertEqual(encode("no"), "ml")
 
     def test_encode_omg(self):
-        value = "OMG"
-        expected = "lnt"
-        self.assertEqual(encode(value), expected)
+        self.assertEqual(encode("OMG"), "lnt")
 
     def test_encode_spaces(self):
-        value = "O M G"
-        expected = "lnt"
-        self.assertEqual(encode(value), expected)
+        self.assertEqual(encode("O M G"), "lnt")
 
     def test_encode_mindblowingly(self):
-        value = "mindblowingly"
-        expected = "nrmwy oldrm tob"
-        self.assertEqual(encode(value), expected)
+        self.assertEqual(encode("mindblowingly"), "nrmwy oldrm tob")
 
     def test_encode_numbers(self):
-        value = "Testing,1 2 3, testing."
-        expected = "gvhgr mt123 gvhgr mt"
-        self.assertEqual(encode(value), expected)
+        self.assertEqual(encode("Testing,1 2 3, testing."), "gvhgr mt123 gvhgr mt")
 
     def test_encode_deep_thought(self):
-        value = "Truth is fiction."
-        expected = "gifgs rhurx grlm"
-        self.assertEqual(encode(value), expected)
+        self.assertEqual(encode("Truth is fiction."), "gifgs rhurx grlm")
 
     def test_encode_all_the_letters(self):
-        value = "The quick brown fox jumps over the lazy dog."
-        expected = "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"
-        self.assertEqual(encode(value), expected)
+        self.assertEqual(
+            encode("The quick brown fox jumps over the lazy dog."),
+            "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt",
+        )
 
     def test_decode_exercism(self):
-        value = "vcvix rhn"
-        expected = "exercism"
-        self.assertEqual(decode(value), expected)
+        self.assertEqual(decode("vcvix rhn"), "exercism")
 
     def test_decode_a_sentence(self):
-        value = "zmlyh gzxov rhlug vmzhg vkkrm thglm v"
-        expected = "anobstacleisoftenasteppingstone"
-        self.assertEqual(decode(value), expected)
+        self.assertEqual(
+            decode("zmlyh gzxov rhlug vmzhg vkkrm thglm v"),
+            "anobstacleisoftenasteppingstone",
+        )
 
     def test_decode_numbers(self):
-        value = "gvhgr mt123 gvhgr mt"
-        expected = "testing123testing"
-        self.assertEqual(decode(value), expected)
+        self.assertEqual(decode("gvhgr mt123 gvhgr mt"), "testing123testing")
 
     def test_decode_all_the_letters(self):
-        value = "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"
-        expected = "thequickbrownfoxjumpsoverthelazydog"
-        self.assertEqual(decode(value), expected)
+        self.assertEqual(
+            decode("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"),
+            "thequickbrownfoxjumpsoverthelazydog",
+        )
 
     def test_decode_with_too_many_spaces(self):
-        value = "vc vix    r hn"
-        expected = "exercism"
-        self.assertEqual(decode(value), expected)
+        self.assertEqual(decode("vc vix    r hn"), "exercism")
 
     def test_decode_with_no_spaces(self):
-        value = "zmlyhgzxovrhlugvmzhgvkkrmthglmv"
-        expected = "anobstacleisoftenasteppingstone"
-        self.assertEqual(decode(value), expected)
+        self.assertEqual(
+            decode("zmlyhgzxovrhlugvmzhgvkkrmthglmv"), "anobstacleisoftenasteppingstone"
+        )
 
 
 if __name__ == "__main__":
