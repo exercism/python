@@ -59,6 +59,8 @@ class AlphameticsTest(unittest.TestCase):
             },
         )
 
+    # Reason to skip this test at https://github.com/exercism/python/pull/1358
+    @unittest.skip("extra-credit")
     def test_puzzle_with_ten_letters_and_199_addends(self):
         self.assertEqual(
             solve(
