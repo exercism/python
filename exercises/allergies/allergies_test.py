@@ -126,31 +126,31 @@ class AllergiesTest(unittest.TestCase):
     def test_cats_allergic_to_everything(self):
         self.assertIs(Allergies(255).allergic_to("cats"), True)
 
-    def test_(self):
+    def test_no_allergies(self):
         self.assertEqual(Allergies(0).lst, [])
 
-    def test_(self):
+    def test_just_eggs(self):
         self.assertEqual(Allergies(1).lst, ["eggs"])
 
-    def test_(self):
+    def test_just_peanuts(self):
         self.assertEqual(Allergies(2).lst, ["peanuts"])
 
-    def test_(self):
+    def test_just_strawberries(self):
         self.assertEqual(Allergies(8).lst, ["strawberries"])
 
-    def test_(self):
+    def test_eggs_and_peanuts(self):
         self.assertEqual(Allergies(3).lst, ["eggs", "peanuts"])
 
-    def test_(self):
+    def test_more_than_eggs_but_not_peanuts(self):
         self.assertEqual(Allergies(5).lst, ["eggs", "shellfish"])
 
-    def test_(self):
+    def test_lots_of_stuff(self):
         self.assertEqual(
             Allergies(248).lst,
             ["strawberries", "tomatoes", "chocolate", "pollen", "cats"],
         )
 
-    def test_(self):
+    def test_everything(self):
         self.assertEqual(
             Allergies(255).lst,
             [
@@ -165,7 +165,7 @@ class AllergiesTest(unittest.TestCase):
             ],
         )
 
-    def test_(self):
+    def test_no_allergen_score_parts(self):
         self.assertEqual(
             Allergies(509).lst,
             [

@@ -7,9 +7,9 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% set property = subcase["property"] -%}
     {% set expected = subcase["expected"] -%}
     {% set score = subcase["input"]["score"] -%}
+    {% set description = subcase["description"] | to_snake -%}
     {% if property != "list" -%}
     {% set item = subcase["input"]["item"] -%}
-    {% set description = subcase["description"] | to_snake -%}
     {% if item not in description -%}
     def test_{{ item }}_{{ description }}(self):
     {%- else -%}
