@@ -1,0 +1,21 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.header(imports=["Allergies"]) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases -%}
+    {% for subcase in case["cases"] -%}
+    def test_{{ subcase["description"] | to_snake }}(self):
+        {% set property = subcase["property"] -%}
+        {% set expected = subcase["expected"] -%}
+        {% set score = subcase["input"]["score"] -%}
+        {% if property != "list" -%}
+        {% set item = subcase["input"]["item"] -%}
+        self.assertEqual({{ exercise | camel_case }}({{ score }}).{{ subcase["property"] | to_snake }}("{{ item }}"), {{ expected }})
+        {% else -%}
+        self.assertEqual({{ exercise | camel_case }}({{ score }}).lst, {{ expected }})
+        {% endif %}
+
+    {% endfor %}
+    {% endfor %}
+
+{{ macros.footer() }}
