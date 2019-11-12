@@ -12,7 +12,7 @@ class AnagramTest(unittest.TestCase):
 
     def test_detects_two_anagrams(self):
         candidates = ["stream", "pigeon", "maters"]
-        self.assertEqual(find_anagrams("master", candidates), ["stream", "maters"])
+        self.assertCountEqual(find_anagrams("master", candidates), ["stream", "maters"])
 
     def test_does_not_detect_anagram_subsets(self):
         candidates = ["dog", "goody"]
@@ -24,13 +24,13 @@ class AnagramTest(unittest.TestCase):
 
     def test_detects_three_anagrams(self):
         candidates = ["gallery", "ballerina", "regally", "clergy", "largely", "leading"]
-        self.assertEqual(
+        self.assertCountEqual(
             find_anagrams("allergy", candidates), ["gallery", "regally", "largely"]
         )
 
     def test_detects_multiple_anagrams_with_different_case(self):
         candidates = ["Eons", "ONES"]
-        self.assertEqual(find_anagrams("nose", candidates), ["Eons", "ONES"])
+        self.assertCountEqual(find_anagrams("nose", candidates), ["Eons", "ONES"])
 
     def test_does_not_detect_non_anagrams_with_identical_checksum(self):
         candidates = ["last"]
