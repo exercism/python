@@ -1,10 +1,18 @@
 {%- import "generator_macros.j2" as macros with context -%}
 {{ macros.header()}}
 
+{% macro tuplify(dominoes_list) -%}
+    [
+    {%- for v in dominoes_list %}
+    ({{ v | join(', ') }}),
+    {%- endfor %}
+    ]
+{%- endmacro %}
+
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
     def test_{{ case["description"] | to_snake }}(self):
-        input_dominoes = {{ case["input"]["dominoes"] }}
+        input_dominoes = {{ tuplify(case["input"]["dominoes"]) }}
         output_chain = can_chain(input_dominoes)
 
         {%- if case["expected"] %}

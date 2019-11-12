@@ -12,66 +12,66 @@ class DominoesTest(unittest.TestCase):
         self.assert_correct_chain(input_dominoes, output_chain)
 
     def test_singleton_input_singleton_output(self):
-        input_dominoes = [[1, 1]]
+        input_dominoes = [(1, 1)]
         output_chain = can_chain(input_dominoes)
         self.assert_correct_chain(input_dominoes, output_chain)
 
     def test_singleton_that_can_t_be_chained(self):
-        input_dominoes = [[1, 2]]
+        input_dominoes = [(1, 2)]
         output_chain = can_chain(input_dominoes)
         self.refute_correct_chain(input_dominoes, output_chain)
 
     def test_three_elements(self):
-        input_dominoes = [[1, 2], [3, 1], [2, 3]]
+        input_dominoes = [(1, 2), (3, 1), (2, 3)]
         output_chain = can_chain(input_dominoes)
         self.assert_correct_chain(input_dominoes, output_chain)
 
     def test_can_reverse_dominoes(self):
-        input_dominoes = [[1, 2], [1, 3], [2, 3]]
+        input_dominoes = [(1, 2), (1, 3), (2, 3)]
         output_chain = can_chain(input_dominoes)
         self.assert_correct_chain(input_dominoes, output_chain)
 
     def test_can_t_be_chained(self):
-        input_dominoes = [[1, 2], [4, 1], [2, 3]]
+        input_dominoes = [(1, 2), (4, 1), (2, 3)]
         output_chain = can_chain(input_dominoes)
         self.refute_correct_chain(input_dominoes, output_chain)
 
     def test_disconnected_simple(self):
-        input_dominoes = [[1, 1], [2, 2]]
+        input_dominoes = [(1, 1), (2, 2)]
         output_chain = can_chain(input_dominoes)
         self.refute_correct_chain(input_dominoes, output_chain)
 
     def test_disconnected_double_loop(self):
-        input_dominoes = [[1, 2], [2, 1], [3, 4], [4, 3]]
+        input_dominoes = [(1, 2), (2, 1), (3, 4), (4, 3)]
         output_chain = can_chain(input_dominoes)
         self.refute_correct_chain(input_dominoes, output_chain)
 
     def test_disconnected_single_isolated(self):
-        input_dominoes = [[1, 2], [2, 3], [3, 1], [4, 4]]
+        input_dominoes = [(1, 2), (2, 3), (3, 1), (4, 4)]
         output_chain = can_chain(input_dominoes)
         self.refute_correct_chain(input_dominoes, output_chain)
 
     def test_need_backtrack(self):
-        input_dominoes = [[1, 2], [2, 3], [3, 1], [2, 4], [2, 4]]
+        input_dominoes = [(1, 2), (2, 3), (3, 1), (2, 4), (2, 4)]
         output_chain = can_chain(input_dominoes)
         self.assert_correct_chain(input_dominoes, output_chain)
 
     def test_separate_loops(self):
-        input_dominoes = [[1, 2], [2, 3], [3, 1], [1, 1], [2, 2], [3, 3]]
+        input_dominoes = [(1, 2), (2, 3), (3, 1), (1, 1), (2, 2), (3, 3)]
         output_chain = can_chain(input_dominoes)
         self.assert_correct_chain(input_dominoes, output_chain)
 
     def test_nine_elements(self):
         input_dominoes = [
-            [1, 2],
-            [5, 3],
-            [3, 1],
-            [1, 2],
-            [2, 4],
-            [1, 6],
-            [2, 3],
-            [3, 4],
-            [5, 6],
+            (1, 2),
+            (5, 3),
+            (3, 1),
+            (1, 2),
+            (2, 4),
+            (1, 6),
+            (2, 3),
+            (3, 4),
+            (5, 6),
         ]
         output_chain = can_chain(input_dominoes)
         self.assert_correct_chain(input_dominoes, output_chain)
