@@ -139,19 +139,19 @@ class AllergiesTest(unittest.TestCase):
         self.assertEqual(Allergies(8).lst, ["strawberries"])
 
     def test_eggs_and_peanuts(self):
-        self.assertEqual(Allergies(3).lst, ["eggs", "peanuts"])
+        self.assertCountEqual(Allergies(3).lst, ["eggs", "peanuts"])
 
     def test_more_than_eggs_but_not_peanuts(self):
-        self.assertEqual(Allergies(5).lst, ["eggs", "shellfish"])
+        self.assertCountEqual(Allergies(5).lst, ["eggs", "shellfish"])
 
     def test_lots_of_stuff(self):
-        self.assertEqual(
+        self.assertCountEqual(
             Allergies(248).lst,
             ["strawberries", "tomatoes", "chocolate", "pollen", "cats"],
         )
 
     def test_everything(self):
-        self.assertEqual(
+        self.assertCountEqual(
             Allergies(255).lst,
             [
                 "eggs",
@@ -166,7 +166,7 @@ class AllergiesTest(unittest.TestCase):
         )
 
     def test_no_allergen_score_parts(self):
-        self.assertEqual(
+        self.assertCountEqual(
             Allergies(509).lst,
             [
                 "eggs",

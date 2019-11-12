@@ -18,7 +18,11 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         self.assertIs({{ exercise | camel_case }}({{ score }}).{{ property | to_snake }}("{{ item }}"), {{ expected }})
     {% else -%}
     def test_{{ description }}(self):
+    {%- if expected|length <= 1 %}
         self.assertEqual({{ exercise | camel_case }}({{ score }}).lst, {{ expected }})
+    {%- else %}
+        self.assertCountEqual({{ exercise | camel_case }}({{ score }}).lst, {{ expected }})
+    {%- endif %}
     {% endif %}
 
     {% endfor %}
