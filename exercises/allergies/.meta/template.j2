@@ -4,16 +4,22 @@
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
     {% for subcase in case["cases"] -%}
-    def test_{{ subcase["description"] | to_snake }}(self):
-        {% set property = subcase["property"] -%}
-        {% set expected = subcase["expected"] -%}
-        {% set score = subcase["input"]["score"] -%}
-        {% if property != "list" -%}
-        {% set item = subcase["input"]["item"] -%}
+    {% set property = subcase["property"] -%}
+    {% set expected = subcase["expected"] -%}
+    {% set score = subcase["input"]["score"] -%}
+    {% if property != "list" -%}
+    {% set item = subcase["input"]["item"] -%}
+    {% set description = subcase["description"] | to_snake -%}
+    {% if item not in description -%}
+    def test_{{ item }}_{{ description }}(self):
+    {%- else -%}
+    def test_{{ description }}(self):
+    {%- endif %}
         self.assertIs({{ exercise | camel_case }}({{ score }}).{{ property | to_snake }}("{{ item }}"), {{ expected }})
-        {% else -%}
-        self.assertCountEqual({{ exercise | camel_case }}({{ score }}).lst, {{ expected }})
-        {% endif %}
+    {% else -%}
+    def test_{{ description }}(self):
+        self.assertEqual({{ exercise | camel_case }}({{ score }}).lst, {{ expected }})
+    {% endif %}
 
     {% endfor %}
     {% endfor %}
