@@ -1,0 +1,31 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.header(imports=[ exercise | camel_case ]) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases -%}
+    {% for subcase in case["cases"] -%}
+    {% set property = subcase["property"] -%}
+    {% set expected = subcase["expected"] -%}
+    {% set score = subcase["input"]["score"] -%}
+    {% set description = subcase["description"] | to_snake -%}
+    {% if property != "list" -%}
+    {% set item = subcase["input"]["item"] -%}
+    {% if item not in description -%}
+    def test_{{ item }}_{{ description }}(self):
+    {%- else -%}
+    def test_{{ description }}(self):
+    {%- endif %}
+        self.assertIs({{ exercise | camel_case }}({{ score }}).{{ property | to_snake }}("{{ item }}"), {{ expected }})
+    {% else -%}
+    def test_{{ description }}(self):
+    {%- if expected|length <= 1 %}
+        self.assertEqual({{ exercise | camel_case }}({{ score }}).lst, {{ expected }})
+    {%- else %}
+        self.assertCountEqual({{ exercise | camel_case }}({{ score }}).lst, {{ expected }})
+    {%- endif %}
+    {% endif %}
+
+    {% endfor %}
+    {% endfor %}
+
+{{ macros.footer() }}
