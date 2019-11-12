@@ -10,9 +10,9 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         {% set score = subcase["input"]["score"] -%}
         {% if property != "list" -%}
         {% set item = subcase["input"]["item"] -%}
-        self.assertEqual({{ exercise | camel_case }}({{ score }}).{{ property | to_snake }}("{{ item }}"), {{ expected }})
+        self.assertIs({{ exercise | camel_case }}({{ score }}).{{ property | to_snake }}("{{ item }}"), {{ expected }})
         {% else -%}
-        self.assertEqual({{ exercise | camel_case }}({{ score }}).lst, {{ expected }})
+        self.assertCountEqual({{ exercise | camel_case }}({{ score }}).lst, {{ expected }})
         {% endif %}
 
     {% endfor %}
