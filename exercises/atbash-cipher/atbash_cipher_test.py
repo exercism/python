@@ -7,57 +7,55 @@ from atbash_cipher import decode, encode
 
 class AtbashCipherTest(unittest.TestCase):
     def test_encode_yes(self):
-        self.assertMultiLineEqual(encode("yes"), "bvh")
+        self.assertEqual(encode("yes"), "bvh")
 
     def test_encode_no(self):
-        self.assertMultiLineEqual(encode("no"), "ml")
+        self.assertEqual(encode("no"), "ml")
 
     def test_encode_omg(self):
-        self.assertMultiLineEqual(encode("OMG"), "lnt")
+        self.assertEqual(encode("OMG"), "lnt")
 
     def test_encode_spaces(self):
-        self.assertMultiLineEqual(encode("O M G"), "lnt")
+        self.assertEqual(encode("O M G"), "lnt")
 
     def test_encode_mindblowingly(self):
-        self.assertMultiLineEqual(encode("mindblowingly"), "nrmwy oldrm tob")
+        self.assertEqual(encode("mindblowingly"), "nrmwy oldrm tob")
 
     def test_encode_numbers(self):
-        self.assertMultiLineEqual(
-            encode("Testing,1 2 3, testing."), "gvhgr mt123 gvhgr mt"
-        )
+        self.assertEqual(encode("Testing,1 2 3, testing."), "gvhgr mt123 gvhgr mt")
 
     def test_encode_deep_thought(self):
-        self.assertMultiLineEqual(encode("Truth is fiction."), "gifgs rhurx grlm")
+        self.assertEqual(encode("Truth is fiction."), "gifgs rhurx grlm")
 
     def test_encode_all_the_letters(self):
-        self.assertMultiLineEqual(
+        self.assertEqual(
             encode("The quick brown fox jumps over the lazy dog."),
             "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt",
         )
 
     def test_decode_exercism(self):
-        self.assertMultiLineEqual(decode("vcvix rhn"), "exercism")
+        self.assertEqual(decode("vcvix rhn"), "exercism")
 
     def test_decode_a_sentence(self):
-        self.assertMultiLineEqual(
+        self.assertEqual(
             decode("zmlyh gzxov rhlug vmzhg vkkrm thglm v"),
             "anobstacleisoftenasteppingstone",
         )
 
     def test_decode_numbers(self):
-        self.assertMultiLineEqual(decode("gvhgr mt123 gvhgr mt"), "testing123testing")
+        self.assertEqual(decode("gvhgr mt123 gvhgr mt"), "testing123testing")
 
     def test_decode_all_the_letters(self):
-        self.assertMultiLineEqual(
+        self.assertEqual(
             decode("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"),
             "thequickbrownfoxjumpsoverthelazydog",
         )
 
     def test_decode_with_too_many_spaces(self):
-        self.assertMultiLineEqual(decode("vc vix    r hn"), "exercism")
+        self.assertEqual(decode("vc vix    r hn"), "exercism")
 
     def test_decode_with_no_spaces(self):
-        self.assertMultiLineEqual(
+        self.assertEqual(
             decode("zmlyhgzxovrhlugvmzhgvkkrmthglmv"), "anobstacleisoftenasteppingstone"
         )
 
