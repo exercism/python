@@ -16,8 +16,18 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {{ testdef }}
     {%- endif %}
         {% set expected = case["expected"] -%}
+        {% if value|length > 100 -%}
+        {% for line in value | wrap_overlong(width=62) -%}
+        {% if loop.index == 1 -%}
+        puzzle = {{ line }}
+        {% else -%}
+                 {{ line }}
+        {% endif -%}
+        {% endfor %}
+        self.assertEqual({{ case["property"] }}(puzzle), {{ expected }})
+        {% else -%}
         self.assertEqual({{ case["property"] }}("{{ value }}"), {{ expected }})
-
+        {% endif %}
     {% endfor %}
 
 {{ macros.footer() }}
