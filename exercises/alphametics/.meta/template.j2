@@ -16,7 +16,7 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {{ testdef }}
     {%- endif %}
         {% set expected = case["expected"] -%}
-        {% if value|length > 100 -%}
+        {% if long_test -%}
         {% for line in value | wrap_overlong(width=62) -%}
         {% if loop.index == 1 -%}
         puzzle = {{ line }}
