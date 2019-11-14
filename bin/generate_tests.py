@@ -28,6 +28,7 @@ from itertools import repeat
 from string import punctuation, whitespace
 from subprocess import check_call
 from tempfile import NamedTemporaryFile
+from textwrap import wrap
 
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound, UndefinedError
 
@@ -65,6 +66,13 @@ def camel_case(string):
     Convert pretty much anything to CamelCase.
     """
     return "".join(w.title() for w in to_snake(string).split("_"))
+
+
+def wrap_overlong(string, width=70):
+    """
+    Break an overly long string literal into escaped lines.
+    """
+    return ["{0!r} \\".format(w) for w in wrap(string, width)]
 
 
 def get_tested_properties(spec):
@@ -242,6 +250,7 @@ def generate(
     env = Environment(loader=loader, keep_trailing_newline=True)
     env.filters["to_snake"] = to_snake
     env.filters["camel_case"] = camel_case
+    env.filters["wrap_overlong"] = wrap_overlong
     env.filters["regex_replace"] = regex_replace
     env.tests["error_case"] = error_case
     result = True
