@@ -59,9 +59,10 @@ class AlphameticsTest(unittest.TestCase):
             },
         )
 
-    # Reason to skip this test at https://github.com/exercism/python/pull/1358
+    # See https://github.com/exercism/python/pull/1358
     @unittest.skip("extra-credit")
     def test_puzzle_with_ten_letters_and_199_addends(self):
+        """This test may take a long time to run. Please be patient when running it."""
         puzzle = (
             "THIS + A + FIRE + THEREFORE + FOR + ALL + HISTORIES + I + TELL"
             "+ A + TALE + THAT + FALSIFIES + ITS + TITLE + TIS + A + LIE +"

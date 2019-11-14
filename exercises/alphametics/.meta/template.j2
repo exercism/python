@@ -4,14 +4,19 @@
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases[0]["cases"] -%}
     {% set description = case["description"] | to_snake -%}
+    {% set testdef = "def test_" ~ description ~ "(self):" -%}
     {% set value = case["input"]["puzzle"] -%}
-    {% if value|length > 100 -%}
-    # Reason to skip this test at https://github.com/exercism/python/pull/1358
+    {% set long_test = value|length > 100 -%}
+    {% if long_test -%}
+    # See https://github.com/exercism/python/pull/1358
     @unittest.skip("extra-credit")
-    {% endif %}
-    def test_{{ description }}(self):
+    {{ testdef }}
+        """This test may take a long time to run. Please be patient when running it."""
+    {%- else %}
+    {{ testdef }}
+    {%- endif %}
         {% set expected = case["expected"] -%}
-        {% if value|length > 100 -%}
+        {% if long_test -%}
         {% for line in value | wrap_overlong(width=62) -%}
         {% if loop.index == 1 -%}
         puzzle = {{ line }}
