@@ -1,0 +1,36 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{%- import "local_macros.j2" as macros1 -%}
+{% set class_name = exercise | camel_case -%}
+{{ macros.header([class_name]) }}
+
+class {{ class_name }}Test(unittest.TestCase):
+    {% for case in cases -%}
+    {% for subcase in case["cases"] -%}
+    def test_{{ subcase["description"] | to_snake }}(self):
+        {% set expected = subcase["expected"] -%}
+        {% if "set" in subcase["input"] -%}
+        {% set list = subcase["input"]["set"] -%}
+        {% if list|length > 0 -%}
+        sut = {{ class_name }}({{ list }})
+        {%- else -%}
+        sut = {{ class_name }}()
+        {%- endif %}
+        {% if subcase["property"] == "contains" -%}
+        {%- if expected == true -%}
+        self.assertIn({{ subcase["input"]["element"] }}, sut)
+        {%- else -%}
+        self.assertNotIn({{ subcase["input"]["element"] }}, sut)
+        {% endif -%}
+        {%- else -%}
+        self.assertIs(sut.is{{ subcase["property"] }}(), {{ expected }})
+        {% endif -%}
+        {%- else -%}
+        set1 = {{ class_name }}({{ subcase["input"]["set1"] }})
+        set2 = {{ class_name }}({{ subcase["input"]["set2"] }})
+        self.assertEqual(set1, set2)
+        {% endif %}
+
+    {% endfor %}
+    {% endfor %}
+
+{{ macros.footer() }}
