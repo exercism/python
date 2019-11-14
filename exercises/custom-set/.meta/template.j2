@@ -1,5 +1,4 @@
 {%- import "generator_macros.j2" as macros with context -%}
-{%- import "local_macros.j2" as macros1 -%}
 {% set class_name = exercise | camel_case -%}
 {{ macros.header([class_name]) }}
 
@@ -8,6 +7,7 @@ class {{ class_name }}Test(unittest.TestCase):
     {% for subcase in case["cases"] -%}
     def test_{{ subcase["description"] | to_snake }}(self):
         {% set expected = subcase["expected"] -%}
+        {% set property = subcase["property"] -%}
         {% if "set" in subcase["input"] -%}
         {% set list = subcase["input"]["set"] -%}
         {% if list|length > 0 -%}
@@ -15,20 +15,49 @@ class {{ class_name }}Test(unittest.TestCase):
         {%- else -%}
         sut = {{ class_name }}()
         {%- endif %}
-        {% if subcase["property"] == "contains" -%}
+        {% if property == "contains" -%}
         {%- if expected == true -%}
         self.assertIn({{ subcase["input"]["element"] }}, sut)
         {%- else -%}
         self.assertNotIn({{ subcase["input"]["element"] }}, sut)
         {% endif -%}
         {%- else -%}
-        self.assertIs(sut.is{{ subcase["property"] }}(), {{ expected }})
+        self.assertIs(sut.is{{ property }}(), {{ expected }})
         {% endif -%}
         {%- else -%}
-        set1 = {{ class_name }}({{ subcase["input"]["set1"] }})
-        set2 = {{ class_name }}({{ subcase["input"]["set2"] }})
+        {% set list1 = subcase["input"]["set1"] -%}
+        {% if list1|length > 0 -%}
+        set1 = {{ class_name }}({{ list1 }})
+        {%- else -%}
+        set1 = {{ class_name }}()
+        {%- endif %}
+        {% set list2 = subcase["input"]["set2"] -%}
+        {% if list2|length > 0 -%}
+        set2 = {{ class_name }}({{ list2 }})
+        {%- else -%}
+        set2 = {{ class_name }}()
+        {%- endif %}
+        {% if expected is mapping -%}
+        {% if expected|length > 0 -%}
+        expected = {{ class_name }}({{ expected }})
+        {%- else -%}
+        expected = {{ class_name }}()
+        {%- endif %}
+        {% endif -%}
+        {% if property == "equal" -%}
+        {%- if expected == true -%}
         self.assertEqual(set1, set2)
-        {% endif %}
+        {%- else -%}
+        self.assertNotEqual(set1, set2)
+        {%- endif -%}
+        {%- elif property == "intersection" -%}
+        self.assertEqual(set1.{{ property }}(set2), expected)
+        {%- elif property == "difference" -%}
+        self.assertEqual(set1 - set2, expected)
+        {%- else -%}
+        self.assertEqual(set1.{{ property }}(set2), {{ expected }})
+        {%- endif %}
+        {%- endif %}
 
     {% endfor %}
     {% endfor %}
