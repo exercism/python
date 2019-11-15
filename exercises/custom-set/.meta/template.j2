@@ -37,7 +37,7 @@ class {{ class_name }}Test(unittest.TestCase):
         {%- else -%}
         set2 = {{ class_name }}()
         {%- endif %}
-        {% if expected is mapping -%}
+        {% if expected is iterable -%}
         {% if expected|length > 0 -%}
         expected = {{ class_name }}({{ expected }})
         {%- else -%}
@@ -54,8 +54,10 @@ class {{ class_name }}Test(unittest.TestCase):
         self.assertEqual(set1.{{ property }}(set2), expected)
         {%- elif property == "difference" -%}
         self.assertEqual(set1 - set2, expected)
+        {%- elif property == "union" -%}
+        self.assertEqual(set1.{{ property }}(set2), expected)
         {%- else -%}
-        self.assertEqual(set1.{{ property }}(set2), {{ expected }})
+        self.assertEqual(set1.is{{ property }}(set2), {{ expected }})
         {%- endif %}
         {%- endif %}
 
