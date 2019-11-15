@@ -1,6 +1,8 @@
 {%- import "generator_macros.j2" as macros with context -%}
 {% set class_name = exercise | camel_case -%}
-{{ macros.header([class_name]) }}
+# {{ macros.header([class_name]) }}
+
+{{ macros.header() }}
 
 class {{ class_name }}Test(unittest.TestCase):
     {% for case in cases -%}
@@ -14,19 +16,10 @@ class {{ class_name }}Test(unittest.TestCase):
         sut = {{ class_name }}({{ list }})
         {%- else -%}
         sut = {{ class_name }}()
-        {%- endif %}
-        {% if property == "contains" -%}
-        {%- if expected == true -%}
-        self.assertIn({{ subcase["input"]["element"] }}, sut)
-        {%- else -%}
-        self.assertNotIn({{ subcase["input"]["element"] }}, sut)
-        {% endif -%}
-        {%- else -%}
-        self.assertIs(sut.is{{ property }}(), {{ expected }})
-        {% endif -%}
+        {%- endif -%}
         {%- else -%}
         {% set list1 = subcase["input"]["set1"] -%}
-        {% if list1|length > 0 -%}
+        {%- if list1|length > 0 -%}
         set1 = {{ class_name }}({{ list1 }})
         {%- else -%}
         set1 = {{ class_name }}()
@@ -38,13 +31,24 @@ class {{ class_name }}Test(unittest.TestCase):
         set2 = {{ class_name }}()
         {%- endif %}
         {% if expected is iterable -%}
-        {% if expected|length > 0 -%}
+        {%- if expected|length > 0 -%}
         expected = {{ class_name }}({{ expected }})
         {%- else -%}
         expected = {{ class_name }}()
+        {%- endif -%}
+        {%- endif -%}
         {%- endif %}
+        {% if property == "contains" -%}
+        {%- if expected == true -%}
+        self.assertIn({{ subcase["input"]["element"] }}, sut)
+        {%- else -%}
+        self.assertNotIn({{ subcase["input"]["element"] }}, sut)
         {% endif -%}
-        {% if property == "equal" -%}
+        {%- elif property == "difference" -%}
+        self.assertEqual(set1 - set2, expected)
+        {%- elif property == "empty" -%}
+        self.assertIs(sut.is{{ property }}(), {{ expected }})
+        {%- elif property == "equal" -%}
         {%- if expected == true -%}
         self.assertEqual(set1, set2)
         {%- else -%}
@@ -52,15 +56,11 @@ class {{ class_name }}Test(unittest.TestCase):
         {%- endif -%}
         {%- elif property == "intersection" -%}
         self.assertEqual(set1.{{ property }}(set2), expected)
-        {%- elif property == "difference" -%}
-        self.assertEqual(set1 - set2, expected)
         {%- elif property == "union" -%}
-        self.assertEqual(set1.{{ property }}(set2), expected)
+        self.assertEqual(set1 + set2, expected)
         {%- else -%}
-        self.assertEqual(set1.is{{ property }}(set2), {{ expected }})
+        self.assertIs(set1.is{{ property }}(set2), {{ expected }})
         {%- endif %}
-        {%- endif %}
-
     {% endfor %}
     {% endfor %}
 
