@@ -27,13 +27,13 @@ class {{ class_name }}Test(unittest.TestCase):
         set2 = {{ class_name }}({{ list2 }})
         {%- else -%}
         set2 = {{ class_name }}()
+        {%- endif -%}
         {%- endif %}
         {% if expected is iterable -%}
         {%- if expected|length > 0 -%}
         expected = {{ class_name }}({{ expected }})
         {%- else -%}
         expected = {{ class_name }}()
-        {%- endif -%}
         {%- endif -%}
         {%- endif %}
         {% if property == "add" -%}

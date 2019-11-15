@@ -8,22 +8,27 @@ from custom_set import CustomSet
 class CustomSetTest(unittest.TestCase):
     def test_sets_with_no_elements_are_empty(self):
         sut = CustomSet()
+
         self.assertIs(sut.isempty(), True)
 
     def test_sets_with_elements_are_not_empty(self):
         sut = CustomSet([1])
+
         self.assertIs(sut.isempty(), False)
 
     def test_nothing_is_contained_in_an_empty_set(self):
         sut = CustomSet()
+
         self.assertNotIn(1, sut)
 
     def test_when_the_element_is_in_the_set(self):
         sut = CustomSet([1, 2, 3])
+
         self.assertIn(1, sut)
 
     def test_when_the_element_is_not_in_the_set(self):
         sut = CustomSet([1, 2, 3])
+
         self.assertNotIn(4, sut)
 
     def test_empty_set_is_a_subset_of_another_empty_set(self):
@@ -130,16 +135,19 @@ class CustomSetTest(unittest.TestCase):
 
     def test_add_to_empty_set(self):
         sut = CustomSet()
+        expected = CustomSet([3])
         sut.add(3)
         self.assertEqual(sut, expected)
 
     def test_add_to_non_empty_set(self):
         sut = CustomSet([1, 2, 4])
+        expected = CustomSet([1, 2, 3, 4])
         sut.add(3)
         self.assertEqual(sut, expected)
 
     def test_adding_an_existing_element_does_not_change_the_set(self):
         sut = CustomSet([1, 2, 3])
+        expected = CustomSet([1, 2, 3])
         sut.add(3)
         self.assertEqual(sut, expected)
 
