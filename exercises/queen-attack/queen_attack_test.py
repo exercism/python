@@ -8,10 +8,7 @@ from queen_attack import Queen
 class QueenAttackTest(unittest.TestCase):
     # Test creation of Queens with valid and invalid positions
     def test_queen_with_a_valid_position(self):
-        try:
-            Queen(2, 2)
-        except ValueError:
-            self.fail("Unexpected Exception")
+        Queen(2, 2)
 
     def test_queen_must_have_positive_row(self):
         with self.assertRaisesWithMessage(ValueError):

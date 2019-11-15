@@ -15,10 +15,7 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         {% else -%}
         {% set queen = case["input"]["queen"]["position"] -%}
         {% if case["expected"] == 0 -%}
-        try:
-            Queen({{ queen["row"] }}, {{ queen["column"] }})
-        except ValueError:
-            self.fail("Unexpected Exception")
+        Queen({{ queen["row"] }}, {{ queen["column"] }})
         {% else -%}
         with self.assertRaisesWithMessage(ValueError):
             Queen({{ queen["row"] }}, {{ queen["column"] }})
