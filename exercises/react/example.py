@@ -1,4 +1,4 @@
-class Cell(object):
+class Cell:
     def __init__(self):
         self._watchers = []
         self._value = None

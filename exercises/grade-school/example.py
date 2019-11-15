@@ -1,7 +1,7 @@
 from collections import defaultdict
 
 
-class School(object):
+class School:
     def __init__(self,):
         self.db = defaultdict(set)
 

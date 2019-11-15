@@ -1,0 +1,28 @@
+{%- import "generator_macros.j2" as macros with context -%}
+
+{% macro test_case(case) -%}
+    {%- set input = case["input"] -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        robot = Robot(
+            {{case["input"]["direction"] | upper }},
+            {{case["input"]["position"]["x"]}}, 
+            {{case["input"]["position"]["y"]}}
+        )        
+        {% if case["property"] == "move" %}robot.move("{{case["input"]["instructions"]}}")
+        {% endif %}
+       
+        self.assertEqual(robot.coordinates, ({{case["expected"]["position"]["x"]}}, {{case["expected"]["position"]["y"]}}))
+        self.assertEqual(robot.direction, {{case["expected"]["direction"] | upper }})
+{%- endmacro %}
+
+{{ macros.header(imports=["Robot", "NORTH", "EAST", "SOUTH", "WEST"]) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for supercase in cases %}
+    # Test {{ supercase["description"] | lower }}
+    {% for case in supercase["cases"] -%}
+    {{ test_case(case) }}
+    {% endfor %}{% endfor %}
+
+
+{{ macros.footer() }}

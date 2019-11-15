@@ -1,11 +1,11 @@
-class Node(object):
+class Node:
     def __init__(self, value, succeeding=None, prev=None):
         self.value = value
         self.succeeding = succeeding
         self.prev = prev
 
 
-class LinkedList(object):
+class LinkedList:
     def __init__(self):
         self.head = None
         self.tail = None

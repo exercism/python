@@ -1,7 +1,7 @@
 from json import dumps
 
 
-class Tree(object):
+class Tree:
     def __init__(self, label, children=[]):
         self.label = label
         self.children = children

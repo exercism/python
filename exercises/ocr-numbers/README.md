@@ -40,10 +40,10 @@ Update your program to recognize multi-character binary strings, replacing garbl
 Update your program to recognize all numbers 0 through 9, both individually and as part of a larger string.
 
 ```text
- _ 
+ _
  _|
-|_ 
-   
+|_
+
 ```
 
 Is converted to "2"
@@ -62,21 +62,22 @@ Is converted to "1234567890"
 Update your program to handle multiple numbers, one per line. When converting several lines, join the lines with commas.
 
 ```text
-    _  _ 
+    _  _
   | _| _|
   ||_  _|
-         
-    _  _ 
-|_||_ |_ 
+
+    _  _
+|_||_ |_
   | _||_|
-         
- _  _  _ 
+
+ _  _  _
   ||_||_|
   ||_| _|
-         
+
 ```
 
 Is converted to "123,456,789"
+
 
 ## Exception messages
 
@@ -94,12 +95,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest ocr_numbers_test.py`
 
-- Python 2.7: `py.test ocr_numbers_test.py`
-- Python 3.4+: `pytest ocr_numbers_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest ocr_numbers_test.py`
 
 ### Common `pytest` options

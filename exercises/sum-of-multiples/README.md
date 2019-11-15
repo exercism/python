@@ -8,6 +8,13 @@ we get 3, 5, 6, 9, 10, 12, 15, and 18.
 
 The sum of these multiples is 78.
 
+You can make the following assumptions about the inputs to the
+`sum_of_multiples` function:
+* All input numbers are non-negative `int`s, i.e. natural numbers
+including zero.
+* A list of factors must be given, and its elements are unique
+and sorted in ascending order.
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
@@ -24,12 +31,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest sum_of_multiples_test.py`
 
-- Python 2.7: `py.test sum_of_multiples_test.py`
-- Python 3.4+: `pytest sum_of_multiples_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest sum_of_multiples_test.py`
 
 ### Common `pytest` options

@@ -1,4 +1,4 @@
-class Node(object):
+class Node:
     def __init__(self, value):
         pass
 
@@ -9,7 +9,7 @@ class Node(object):
         pass
 
 
-class LinkedList(object):
+class LinkedList:
     def __init__(self, values=[]):
         pass
 

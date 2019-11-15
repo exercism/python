@@ -14,7 +14,7 @@ def triplets_in_range(start, end):
             while a < start:
                 a, b, c = (a + x, b + y, c + z)
             while c <= end:
-                yield (a, b, c)
+                yield [a, b, c]
                 a, b, c = (a + x, b + y, c + z)
 
 
@@ -41,11 +41,8 @@ def primitive_triplets(limit):
 
 
 def triplets_with_sum(number):
-    # Incidentally, the above algorithm guarantees no duplicates,
-    # so converting to a set in not technically required.
-    # However, the tests require a set, so use set comprehension anyway.
-    return {
+    return [
         triplet for triplet
         in triplets_in_range(1, number // 2)
         if sum(triplet) == number
-    }
+        ]

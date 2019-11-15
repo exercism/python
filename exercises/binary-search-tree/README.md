@@ -53,6 +53,7 @@ And if we then added 1, 5, and 7, it would look like this
      / \     / \
     1   3   5   7
 
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
@@ -69,12 +70,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest binary_search_tree_test.py`
 
-- Python 2.7: `py.test binary_search_tree_test.py`
-- Python 3.4+: `pytest binary_search_tree_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest binary_search_tree_test.py`
 
 ### Common `pytest` options

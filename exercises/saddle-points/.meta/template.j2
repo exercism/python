@@ -1,0 +1,49 @@
+"""Tests for the saddle-points exercise
+
+Implementation note:
+The saddle_points function must validate the input matrix and raise a
+ValueError with a meaningful error message if the matrix turns out to be
+irregular.
+"""
+{% import "generator_macros.j2" as macros with context -%}
+
+{% macro test_case(case) -%}
+    {%- set input = case["input"] -%}
+    {%- set expected = case["expected"] -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        {% if input["matrix"][0] -%}
+        matrix = {{ input["matrix"] }}
+        {% else -%}
+        matrix = []
+        {% endif -%}
+        {% if case is error_case -%}
+        with self.assertRaisesWithMessage(ValueError):
+            {{- case["property"] | to_snake }}(matrix)
+        {% else -%}
+        self.assertEqual(
+        sorted_points({{ case["property"] | to_snake }}(matrix)),
+        sorted_points({{ expected }})
+        )
+        {% endif -%}
+{% endmacro -%}
+
+{{ macros.header()}}
+
+def sorted_points(point_list):
+    return sorted(point_list, key=lambda p: (p["row"], p["column"]))
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases -%}
+    {{ test_case(case) }}
+    {% endfor %}
+
+    # Additional tests for this track
+
+    {% if additional_cases | length -%}
+    {% for case in additional_cases -%}
+    {{ test_case(case) }}
+    {% endfor %}
+    {%- endif %}
+
+
+{{ macros.footer(True) }}

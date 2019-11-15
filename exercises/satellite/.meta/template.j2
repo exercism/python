@@ -1,0 +1,18 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.header() }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        preorder = {{ case["input"]["preorder"] }}
+        inorder = {{ case["input"]["inorder"] }}
+        {% if "Reject" in case["description"] %}
+        with self.assertRaisesWithMessage(ValueError):
+            {{ case["property"] | to_snake }}(preorder, inorder)
+        {% else %}
+        expected = {{ case["expected"] }}
+        self.assertEqual({{ case["property"] | to_snake }}(preorder, inorder), expected)
+        {% endif %}
+    {% endfor %}
+
+{{ macros.footer() }}

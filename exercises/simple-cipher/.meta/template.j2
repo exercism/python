@@ -1,0 +1,63 @@
+{%- import "generator_macros.j2" as macros with context -%}
+import re
+{{ macros.header(imports=['Cipher']) }}
+{%- macro convert_js(s) -%}
+{{ s |
+    regex_replace("\\.substring\\((\\d+), ([^)]+)\\)", "[\\1:\\2]") |
+    regex_replace("(\w+)\\.length", "len(\\1)")
+}}
+{%- endmacro %}
+
+{% set suite_tests = cases -%}
+
+{% for cases in suite_tests -%}
+class {{ cases["description"] | camel_case }}Test(unittest.TestCase):
+    {% for case in cases["cases"] -%}
+        def test_{{ case["description"].split('.')[0] | to_snake }}(self):
+            {% set property = case["property"] -%}
+            {% set key, plaintext, ciphertext = case["input"]["key"], case["input"]["plaintext"], case["input"]["ciphertext"] -%}
+            {% set expected = case["expected"] -%}
+            {% if property == "key" -%}
+            self.assertIsNotNone(re.match('{{ expected["match"] }}', Cipher().key))
+            {% else -%}
+            {% if key -%}
+            cipher = Cipher('{{ key }}')
+            {% else -%}
+            cipher = Cipher()
+            {% endif -%}
+            {% if "cipher.key" in expected -%}
+            {% set expected = expected -%}
+            {% elif expected == plaintext -%}
+            {% set expected = 'plaintext' -%}
+            {% elif expected == key -%}
+            {% set expected = 'cipher.key' -%}
+            {% else -%}
+            {% set expected = "'" ~ expected ~ "'" -%}
+            {% endif -%}
+            {%- set expected = convert_js(expected) -%}
+            {% if plaintext -%}
+            plaintext = '{{ plaintext }}'
+            {% endif -%}
+            {% if property == "encode" -%}
+            self.assertEqual(cipher.{{ property }}(plaintext), {{ expected }})
+            {% elif property == "decode" -%}
+            {% if "cipher.key" in ciphertext -%}
+            {% set ciphertext = ciphertext -%}
+            {% elif "cipher.encode" in ciphertext -%}
+            {% set ciphertext = ciphertext ~ '(plaintext)' -%}
+            {% elif ciphertext == key -%}
+            {% set ciphertext = 'cipher.key' -%}
+            {% else -%}
+            {% set ciphertext = "'" ~ ciphertext ~ "'" -%}
+            {% endif -%}
+            {%- set ciphertext = convert_js(ciphertext).replace("expected", expected) -%}
+            self.assertEqual(cipher.{{ property }}({{ ciphertext }}), {{ expected }})
+            {% endif -%}
+
+            {% endif %}
+
+    {% endfor %}
+
+{% endfor %}
+
+{{ macros.footer() }}

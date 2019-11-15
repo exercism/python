@@ -1,0 +1,53 @@
+{
+  "exercise": "minesweeper",
+  "version": "1.1.0",
+  "comments": [
+    " The expected outputs are represented as arrays of strings to   ",
+    " improve readability in this JSON file.                         ",
+    " Your track may choose whether to present the input as a single ",
+    " string (concatenating all the lines) or as the list.           "
+  ],
+  "cases": [
+    {
+      "description": "annotate 9",
+      "property": "annotate",
+      "input": {
+        "minefield": [
+	        "     ",
+          "   * ",
+          "     ",
+          "     ",
+          " *   "
+	      ]
+      },
+      "expected": [
+        "  111",
+        "  1*1",
+        "  111",
+        "111  ",
+        "1*1  "
+      ]
+    },
+    {
+      "description": "different len",
+      "property": "annotate",
+      "input": {
+        "minefield": [
+	        " ",
+          "*  ",
+          "  "
+	      ]
+      },
+      "expected": {"error": "The minefield must have a consistent length"}
+    },
+    {
+      "description": "invalid char",
+      "property": "annotate",
+      "input": {
+        "minefield": ["X  * "]
+      },
+      "expected": {"error": "The minefield contains an invalid character"}
+
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-class Garden(object):
+class Garden:
 
     STUDENTS = [
         "Alice",

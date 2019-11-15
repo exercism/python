@@ -1,0 +1,21 @@
+{%- extends "master_template.j2" -%}
+{% set imports = ["evaluate", "StackUnderflowError"] %}
+
+{% macro test_case(case) -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        {%- if case is error_case %}
+        {%- if case["expected"]["error"] == "divide by zero" %}
+        # {{ case["expected"]["error"] }}
+        with self.assertRaisesWithMessage(ZeroDivisionError):
+        {%- else %}
+        {%- if "stack" in case["expected"]["error"] %}
+        with self.assertRaisesWithMessage(StackUnderflowError):
+        {%- else %}
+        with self.assertRaisesWithMessage(ValueError):
+        {%- endif %}
+        {%- endif %}
+            {{ case["property"] }}({{ case["input"]["instructions"] }})
+        {%- else %}
+        self.assertEqual({{ case["property"] }}({{ case["input"]["instructions"] }}), {{ case["expected"] }})
+        {%- endif %}
+{%- endmacro %}

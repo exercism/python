@@ -1,7 +1,7 @@
 import json
 
 
-class RestAPI(object):
+class RestAPI:
     def __init__(self, database=None):
         self.database = database or {'users': []}
 
