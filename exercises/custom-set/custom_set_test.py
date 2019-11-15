@@ -1,22 +1,6 @@
-# import unittest
-
-from custom_set import CustomSet
-
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
-
 import unittest
 
-from custom_set import (
-    add,
-    contains,
-    difference,
-    disjoint,
-    empty,
-    equal,
-    intersection,
-    subset,
-    union,
-)
+from custom_set import CustomSet
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
 
@@ -146,15 +130,18 @@ class CustomSetTest(unittest.TestCase):
 
     def test_add_to_empty_set(self):
         sut = CustomSet()
-        self.assertIs(set1.isadd(set2), [3])
+        sut.add(3)
+        self.assertEqual(sut, expected)
 
     def test_add_to_non_empty_set(self):
         sut = CustomSet([1, 2, 4])
-        self.assertIs(set1.isadd(set2), [1, 2, 3, 4])
+        sut.add(3)
+        self.assertEqual(sut, expected)
 
     def test_adding_an_existing_element_does_not_change_the_set(self):
         sut = CustomSet([1, 2, 3])
-        self.assertIs(set1.isadd(set2), [1, 2, 3])
+        sut.add(3)
+        self.assertEqual(sut, expected)
 
     def test_intersection_of_two_empty_sets_is_an_empty_set(self):
         set1 = CustomSet()

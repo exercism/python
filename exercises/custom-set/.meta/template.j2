@@ -1,8 +1,6 @@
 {%- import "generator_macros.j2" as macros with context -%}
 {% set class_name = exercise | camel_case -%}
-# {{ macros.header([class_name]) }}
-
-{{ macros.header() }}
+{{ macros.header([class_name]) }}
 
 class {{ class_name }}Test(unittest.TestCase):
     {% for case in cases -%}
@@ -25,7 +23,7 @@ class {{ class_name }}Test(unittest.TestCase):
         set1 = {{ class_name }}()
         {%- endif %}
         {% set list2 = subcase["input"]["set2"] -%}
-        {% if list2|length > 0 -%}
+        {%- if list2|length > 0 -%}
         set2 = {{ class_name }}({{ list2 }})
         {%- else -%}
         set2 = {{ class_name }}()
@@ -38,12 +36,15 @@ class {{ class_name }}Test(unittest.TestCase):
         {%- endif -%}
         {%- endif -%}
         {%- endif %}
-        {% if property == "contains" -%}
+        {% if property == "add" -%}
+        sut.{{ property }}({{ subcase["input"]["element"] }})
+        self.assertEqual(sut, expected)
+        {%- elif property == "contains" -%}
         {%- if expected == true -%}
         self.assertIn({{ subcase["input"]["element"] }}, sut)
         {%- else -%}
         self.assertNotIn({{ subcase["input"]["element"] }}, sut)
-        {% endif -%}
+        {%- endif -%}
         {%- elif property == "difference" -%}
         self.assertEqual(set1 - set2, expected)
         {%- elif property == "empty" -%}
