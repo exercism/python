@@ -33,6 +33,4 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         with self.assertRaisesWithMessage(ValueError):
             Queen(2, 2).can_attack(Queen(2, 2))
 
-{{ macros.utility() }}
-
 {{ macros.footer() }}
