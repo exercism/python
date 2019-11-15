@@ -1,0 +1,16 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.header() }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases -%}
+    {% set input = case["input"] -%}
+    {% set expected = case["expected"] -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        {% if expected["error"] -%}
+        with self.assertRaisesWithMessage(ValueError):
+            {{ case["property"] }}("{{ input["series"] }}", {{ input["sliceLength"] }})
+        {% else -%}
+        self.assertEqual({{ case["property"] }}("{{ input["series"] }}", {{ input["sliceLength"] }}), {{ case["expected"] }})
+        {% endif %}
+    {% endfor %}
+{{ macros.footer() }}

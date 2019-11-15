@@ -4,7 +4,7 @@ import random
 from itertools import cycle
 
 
-class Cipher(object):
+class Cipher:
 
     def __init__(self, key=None):
         if key is None:

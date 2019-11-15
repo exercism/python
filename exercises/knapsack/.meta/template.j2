@@ -1,0 +1,17 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.header() }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        {%- set weight = case["input"]["maximumWeight"] %}
+        {%- set items = case["input"]["items"] %}
+        {%- set expected = case["expected"] %}
+        {%- if not items %}
+            self.assertEqual({{case["property"] |to_snake}}({{weight}},[]), {{expected}})
+        {% else %}
+            self.assertEqual({{ case["property"] |to_snake }}({{weight}}, {{items}}), {{expected}})
+        {% endif%}
+    {% endfor %}
+
+{{ macros.footer() }}

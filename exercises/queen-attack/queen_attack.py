@@ -1,4 +1,4 @@
-class Queen(object):
+class Queen:
     def __init__(self, row, column):
         pass
 

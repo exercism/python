@@ -1,4 +1,4 @@
-class Luhn(object):
+class Luhn:
     def __init__(self, card_num):
         pass
 

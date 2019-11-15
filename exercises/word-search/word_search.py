@@ -1,4 +1,4 @@
-class Point(object):
+class Point:
     def __init__(self, x, y):
         self.x = None
         self.y = None
@@ -7,7 +7,7 @@ class Point(object):
         return self.x == other.x and self.y == other.y
 
 
-class WordSearch(object):
+class WordSearch:
     def __init__(self, puzzle):
         pass
 

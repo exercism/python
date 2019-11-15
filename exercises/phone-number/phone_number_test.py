@@ -92,12 +92,6 @@ class PhoneNumberTest(unittest.TestCase):
         self.assertEqual(number.pretty(), "(223) 456-7890")
 
     # Utility functions
-    def setUp(self):
-        try:
-            self.assertRaisesRegex
-        except AttributeError:
-            self.assertRaisesRegex = self.assertRaisesRegexp
-
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
 

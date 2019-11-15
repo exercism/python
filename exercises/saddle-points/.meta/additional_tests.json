@@ -1,0 +1,18 @@
+{
+  "cases": [
+    {
+      "description": "irregular Matrix",
+      "property": "saddlePoints",
+      "input": {
+        "matrix": [
+          [3, 2, 1],
+          [0, 1],
+          [2, 1, 0]
+        ]
+      },
+      "expected": {
+        "error": "irregular matrix"
+      }
+    }
+  ]
+}
