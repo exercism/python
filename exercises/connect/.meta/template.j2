@@ -5,8 +5,6 @@
     def test_{{ case["description"] | to_snake }}(self):
         game = ConnectGame("""{{ case["input"]["board"] | join("\n               ") }}""")
         winner = game.get_winner()
-        self.assertEqual(winner, "{{ case["expected"] }}",
-                         "Test failed: \"%s\", expected winner: %s, got: %s"
-                             % ("{{ case["description"] }}", "{{ case["expected"] | default("None", true)}}", winner if winner else "None"))
+        self.assertEqual(winner, "{{ case["expected"] }}")
 
 {%- endmacro %}
