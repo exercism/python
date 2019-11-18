@@ -7,7 +7,7 @@ class ConnectGame:
     none = ""
 
     def __init__(self, lines):
-        self.board = self.make_board(lines)
+        self.board = ConnectGame.make_board(lines)
         assert len(self.board) > 0
 
         self.width = len(self.board[0])
@@ -18,9 +18,10 @@ class ConnectGame:
             assert len(l) == self.width
 
     def valid(self, x, y):
-        return x >= 0 and x < self.width and y >= 0 and y < self.height
+        return 0 <= x < self.width and 0 <= y < self.height
 
-    def make_board(self, lines):
+    @staticmethod
+    def make_board(lines):
         return ["".join(l.split()) for l in lines.splitlines()]
 
     def player_reach_dest(self, player, x, y):
