@@ -1,5 +1,7 @@
 #!/bin/bash
 
+SPEC="${1:-spec}"
+
 get_timestamp()
 {
     path="$1"
@@ -8,15 +10,19 @@ get_timestamp()
 
 ret=0
 for exercise in $(ls -d exercises/*/); do
-    meta_dir="${exercise}.meta"
-    hints_file="${meta_dir}/HINTS.md"
+    exercise="${exercise%/}"
+    slug="$(basename "$exercise")"
+    meta_dir="${exercise}/.meta"
+    hints_file="${meta_dir}/hints.md"
+    readme="${exercise}/README.md"
     if [ -f "$hints_file" ]; then
-        hints_timestamp="$(get_timestamp "$hints_file")"
-        readme_timestamp="$(get_timestamp "${exercise}README.md")"
-        if [ "$hints_timestamp" -gt "$readme_timestamp" ]; then
-            ret=1
-            echo "$(basename "$exercise"): .meta/HINTS.md contents newer than README. Please regenerate README with configlet."
+        bin/configlet generate -p "$SPEC" -o "${slug}" .
+        if ! git diff --quiet "${readme}"; then
+            echo "$slug: README is out-of-date. Please regenerate README with configlet."
+        else
+            echo "$slug ok"
         fi
+        git checkout -- "${readme}"
     fi
 done
 
