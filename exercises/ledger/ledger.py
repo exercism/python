@@ -2,7 +2,7 @@
 from datetime import datetime
 
 
-class LedgerEntry(object):
+class LedgerEntry:
     def __init__(self):
         self.date = None
         self.description = None

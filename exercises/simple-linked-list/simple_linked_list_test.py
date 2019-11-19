@@ -108,12 +108,6 @@ class SimpleLinkedListTest(unittest.TestCase):
         self.assertEqual(list(sut.reversed()), [1, 2, 3])
 
     # Utility functions
-    def setUp(self):
-        try:
-            self.assertRaisesRegex
-        except AttributeError:
-            self.assertRaisesRegex = self.assertRaisesRegexp
-
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
 

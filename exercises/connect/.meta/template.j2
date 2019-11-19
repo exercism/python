@@ -1,0 +1,10 @@
+{%- extends "master_template.j2" -%}
+{% set imports = ["ConnectGame"] %}
+
+{% macro test_case(case) -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        game = ConnectGame("""{{ case["input"]["board"] | join("\n               ") }}""")
+        winner = game.get_winner()
+        self.assertEqual(winner, "{{ case["expected"] }}")
+
+{%- endmacro %}

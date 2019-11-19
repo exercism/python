@@ -1,4 +1,4 @@
-class Scale(object):
+class Scale:
     def __init__(self, tonic):
         pass
 

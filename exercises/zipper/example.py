@@ -1,4 +1,4 @@
-class Zipper(object):
+class Zipper:
     @staticmethod
     def from_tree(tree):
         return Zipper(dict(tree), [])

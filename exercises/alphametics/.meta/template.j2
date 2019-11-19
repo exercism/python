@@ -1,0 +1,33 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.header() }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases[0]["cases"] -%}
+    {% set description = case["description"] | to_snake -%}
+    {% set testdef = "def test_" ~ description ~ "(self):" -%}
+    {% set value = case["input"]["puzzle"] -%}
+    {% set long_test = value|length > 100 -%}
+    {% if long_test -%}
+    # See https://github.com/exercism/python/pull/1358
+    @unittest.skip("extra-credit")
+    {{ testdef }}
+        """This test may take a long time to run. Please be patient when running it."""
+    {%- else %}
+    {{ testdef }}
+    {%- endif %}
+        {% set expected = case["expected"] -%}
+        {% if long_test -%}
+        {% for line in value | wrap_overlong(width=62) -%}
+        {% if loop.index == 1 -%}
+        puzzle = {{ line }}
+        {% else -%}
+                 {{ line }}
+        {% endif -%}
+        {% endfor %}
+        self.assertEqual({{ case["property"] }}(puzzle), {{ expected }})
+        {% else -%}
+        self.assertEqual({{ case["property"] }}("{{ value }}"), {{ expected }})
+        {% endif %}
+    {% endfor %}
+
+{{ macros.footer() }}

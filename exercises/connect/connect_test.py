@@ -1,118 +1,112 @@
 import unittest
 
-import connect
-
+from connect import ConnectGame
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
-testcases = [
-    {
-        "description": "an empty board has no winner",
-        "board":
-        """ . . . . .
-             . . . . .
-              . . . . .
-               . . . . .
-                . . . . .""",
-        "winner": ""
-    },
-    {
-        "description": "O can win on a 1x1 board",
-        "board": "O",
-        "winner": "O"
-    },
-    {
-        "description": "X can win on a 1x1 board",
-        "board": "X",
-        "winner": "X"
-    },
-    {
-        "description": "only edges does not make a winner",
-        "board":
-            """ O O O X
-                 X . . X
-                  X . . X
-                   X O O O""",
-        "winner": ""
-    },
-    {
-        "description": "illegal diagonal does not make a winner",
-        "board":
-            """ X O . .
-                 O X X X
-                  O X O .
-                   . O X .
-                    X X O O""",
-        "winner": ""
-    },
-    {
-        "description": "nobody wins crossing adjacent angles",
-        "board":
-            """ X . . .
-                 . X O .
-                  O . X O
-                   . O . X
-                    . . O .""",
-        "winner": ""
-    },
-    {
-        "description": "X wins crossing from left to right",
-        "board":
-            """ . O . .
-                 O X X X
-                  O X O .
-                   X X O X
-                    . O X .""",
-        "winner": "X"
-    },
-    {
-        "description": "X wins using a convoluted path",
-        "board":
-            """ . X X . .
-                 X . X . X
-                  . X . X .
-                   . X X . .
-                    O O O O O""",
-        "winner": "X"
-    },
-    {
-        "description": "O wins crossing from top to bottom",
-        "board":
-            """ . O . .
-                 O X X X
-                  O O O .
-                   X X O X
-                    . O X .""",
-        "winner": "O"
-    },
-    {
-        "description": "X wins using a spiral path",
-        "board":
-            """ O X X X X X X X X
-                 O X O O O O O O O
-                  O X O X X X X X O
-                   O X O X O O O X O
-                    O X O X X X O X O
-                     O X O O O X O X O
-                      O X X X X X O X O
-                       O O O O O O O X O
-                        X X X X X X X X O """,
-        "winner": "X"
-    },
-]
-
 
 class ConnectTest(unittest.TestCase):
-    def test_game(self):
-        for testcase in testcases:
-            game = connect.ConnectGame(testcase["board"])
-            winner = game.get_winner()
-            expected = testcase["winner"] if testcase["winner"] else "None"
-            got = winner if winner else "None"
-            self.assertEqual(winner, testcase["winner"],
-                             "Test failed: %s, expected winner: %s, got: %s"
-                             % (testcase["description"], expected, got))
+    def test_an_empty_board_has_no_winner(self):
+        game = ConnectGame(
+            """. . . . .
+                . . . . .
+                 . . . . .
+                  . . . . .
+                   . . . . ."""
+        )
+        winner = game.get_winner()
+        self.assertEqual(winner, "")
+
+    def test_x_can_win_on_a_1x1_board(self):
+        game = ConnectGame("""X""")
+        winner = game.get_winner()
+        self.assertEqual(winner, "X")
+
+    def test_o_can_win_on_a_1x1_board(self):
+        game = ConnectGame("""O""")
+        winner = game.get_winner()
+        self.assertEqual(winner, "O")
+
+    def test_only_edges_does_not_make_a_winner(self):
+        game = ConnectGame(
+            """O O O X
+                X . . X
+                 X . . X
+                  X O O O"""
+        )
+        winner = game.get_winner()
+        self.assertEqual(winner, "")
+
+    def test_illegal_diagonal_does_not_make_a_winner(self):
+        game = ConnectGame(
+            """X O . .
+                O X X X
+                 O X O .
+                  . O X .
+                   X X O O"""
+        )
+        winner = game.get_winner()
+        self.assertEqual(winner, "")
+
+    def test_nobody_wins_crossing_adjacent_angles(self):
+        game = ConnectGame(
+            """X . . .
+                . X O .
+                 O . X O
+                  . O . X
+                   . . O ."""
+        )
+        winner = game.get_winner()
+        self.assertEqual(winner, "")
+
+    def test_x_wins_crossing_from_left_to_right(self):
+        game = ConnectGame(
+            """. O . .
+                O X X X
+                 O X O .
+                  X X O X
+                   . O X ."""
+        )
+        winner = game.get_winner()
+        self.assertEqual(winner, "X")
+
+    def test_o_wins_crossing_from_top_to_bottom(self):
+        game = ConnectGame(
+            """. O . .
+                O X X X
+                 O O O .
+                  X X O X
+                   . O X ."""
+        )
+        winner = game.get_winner()
+        self.assertEqual(winner, "O")
+
+    def test_x_wins_using_a_convoluted_path(self):
+        game = ConnectGame(
+            """. X X . .
+                X . X . X
+                 . X . X .
+                  . X X . .
+                   O O O O O"""
+        )
+        winner = game.get_winner()
+        self.assertEqual(winner, "X")
+
+    def test_x_wins_using_a_spiral_path(self):
+        game = ConnectGame(
+            """O X X X X X X X X
+                O X O O O O O O O
+                 O X O X X X X X O
+                  O X O X O O O X O
+                   O X O X X X O X O
+                    O X O O O X O X O
+                     O X X X X X O X O
+                      O O O O O O O X O
+                       X X X X X X X X O"""
+        )
+        winner = game.get_winner()
+        self.assertEqual(winner, "X")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

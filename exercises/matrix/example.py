@@ -1,4 +1,4 @@
-class Matrix(object):
+class Matrix:
     def __init__(self, s):
         self.rows = [[int(n) for n in row.split()]
                      for row in s.split('\n')]

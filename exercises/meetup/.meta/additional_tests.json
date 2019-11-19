@@ -1,0 +1,26 @@
+{
+  "cases": [
+    {
+      "description": "fifth Monday of March 2015",
+      "property": "meetup",
+      "input": {
+        "year": 2015,
+        "month": 3,
+        "week": "5th",
+        "dayofweek": "Monday"
+      },
+      "expected": "2015-03-30"
+    },
+    {
+      "description": "nonexistent fifth Monday of February 2015",
+      "property": "meetup",
+      "input": {
+        "year": 2015,
+        "month": 2,
+        "week": "5th",
+        "dayofweek": "Monday"
+      },
+      "expected": {"error": "day does not exist"}
+    }
+  ]
+}

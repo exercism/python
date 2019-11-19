@@ -1,4 +1,4 @@
-class Cipher(object):
+class Cipher:
     def __init__(self, key=None):
         pass
 

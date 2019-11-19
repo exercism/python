@@ -5,7 +5,7 @@ STATUS_LOSE = "lose"
 STATUS_ONGOING = "ongoing"
 
 
-class Hangman(object):
+class Hangman:
     def __init__(self, word):
         self.remaining_guesses = 9
         self.status = STATUS_ONGOING
