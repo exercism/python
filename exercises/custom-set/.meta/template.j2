@@ -1,4 +1,5 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{# {%- import "custom_set/.meta/local_macros.j2" as local_macros -%} #}
 {% set class_name = exercise | camel_case -%}
 {{ macros.header([class_name]) }}
 
@@ -10,32 +11,16 @@ class {{ class_name }}Test(unittest.TestCase):
         {% set property = subcase["property"] -%}
         {% if "set" in subcase["input"] -%}
         {% set list = subcase["input"]["set"] -%}
-        {% if list|length > 0 -%}
-        sut = {{ class_name }}({{ list }})
-        {%- else -%}
-        sut = {{ class_name }}()
-        {%- endif -%}
+        {{ macros.empty_set("sut", list, class_name) }}
         {%- else -%}
         {% set list1 = subcase["input"]["set1"] -%}
-        {%- if list1|length > 0 -%}
-        set1 = {{ class_name }}({{ list1 }})
-        {%- else -%}
-        set1 = {{ class_name }}()
-        {%- endif %}
+        {{ macros.empty_set("set1", list1, class_name) }}
         {% set list2 = subcase["input"]["set2"] -%}
-        {%- if list2|length > 0 -%}
-        set2 = {{ class_name }}({{ list2 }})
-        {%- else -%}
-        set2 = {{ class_name }}()
-        {%- endif -%}
-        {%- endif %}
+        {{ macros.empty_set("set2", list2, class_name) }}
+        {% endif %}
         {% if expected is iterable -%}
-        {%- if expected|length > 0 -%}
-        expected = {{ class_name }}({{ expected }})
-        {%- else -%}
-        expected = {{ class_name }}()
-        {%- endif -%}
-        {%- endif %}
+        {{ macros.empty_set("expected", expected, class_name) }}
+        {% endif %}
         {% if property == "add" -%}
         sut.{{ property }}({{ subcase["input"]["element"] }})
         self.assertEqual(sut, expected)
