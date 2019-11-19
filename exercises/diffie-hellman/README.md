@@ -54,7 +54,6 @@ cryptographically strong random numbers that provide the greater security requir
 Since this is only an exercise, `random` is fine to use, but note that **it would be
 very insecure if actually used for cryptography.**
 
-
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
