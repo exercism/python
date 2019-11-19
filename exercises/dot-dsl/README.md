@@ -2,8 +2,8 @@
 
 A [Domain Specific Language
 (DSL)](https://en.wikipedia.org/wiki/Domain-specific_language) is a
-small language optimized for a specific domain. Since a DSL is
-targeted, it can greatly impact productivity/understanding by allowing the
+small language optimized for a specific domain. Since a DSL is 
+targeted, it can greatly impact productivity/understanding by allowing the 
 writer to declare *what* they want rather than *how*.
 
 One problem area where they are applied are complex customizations/configurations.
@@ -27,14 +27,14 @@ Write a Domain Specific Language similar to the Graphviz dot language.
 
 Our DSL is similar to the Graphviz dot language in that our DSL will be used
 to create graph data structures. However, unlike the DOT Language, our DSL will
-be an internal DSL for use only in our language.
+be an internal DSL for use only in our language. 
 
 More information about the difference between internal and external DSLs can be
 found [here](https://martinfowler.com/bliki/DomainSpecificLanguage.html).
 
 ## Description of DSL
 
-A graph, in this DSL, is an object of type `Graph`, taking a list of one
+A graph, in this DSL, is an object of type `Graph`, taking a list of one 
 or more
 
 + attributes
@@ -46,7 +46,6 @@ described as tuples.
 The implementations of `Node` and `Edge` provided in `dot_dsl.py`.
 
 Observe the test cases in `dot_dsl_test.py` to understand the DSL's design.
-
 
 
 ## Exception messages
