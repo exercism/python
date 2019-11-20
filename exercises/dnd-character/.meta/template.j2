@@ -1,0 +1,30 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.header() }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases[0]["cases"] -%}
+    def test_{{ case["description"] | replace("-","n") | to_snake }}(self):
+        {% set value = case["input"]["score"] -%}
+        {% set expected = case["expected"] -%}
+        self.assertEqual({{ case["property"] }}({{ value }}), {{ expected }})
+
+    {% endfor %}
+
+    def test_random_ability_is_within_range(self):
+        self.assertIn(Character().ability(), range(3, 19))
+
+    def test_random_character_is_valid(self):
+        Char = Character()
+        self.assertIn(Char.strength, range(3, 19))
+        self.assertIn(Char.dexterity, range(3, 19))
+        self.assertIn(Char.constitution, range(3, 19))
+        self.assertIn(Char.intelligence, range(3, 19))
+        self.assertIn(Char.wisdom, range(3, 19))
+        self.assertIn(Char.charisma, range(3, 19))
+        self.assertEqual(Char.hitpoints, 10 + modifier(Char.constitution))
+
+    def test_each_ability_is_only_calculated_once(self):
+        Char = Character()
+        self.assertEqual(Char.strength, Char.strength)
+
+{{ macros.footer() }}
