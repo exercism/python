@@ -15,8 +15,8 @@ Usage:
 import sys
 
 _py = sys.version_info
-if _py.major < 3 or (_py.major == 3 and _py.minor < 7):
-    print("Python version must be at least 3.7")
+if _py.major < 3 or (_py.major == 3 and _py.minor < 6):
+    print("Python version must be at least 3.6")
     sys.exit(1)
 
 import argparse
