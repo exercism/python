@@ -1,6 +1,6 @@
 import unittest
 
-from dnd_character import ability, character, modifier, strength
+from dnd_character import Character, modifier
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
