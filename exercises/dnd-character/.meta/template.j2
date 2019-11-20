@@ -12,20 +12,22 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% endfor %}
 
     def test_random_ability_is_within_range(self):
-        self.assertIn(Character().ability(), range(3, 19))
+        score = Character().{{ cases[1]["property"] }}()
+        self.assertTrue({{ cases[1]["expected"] | replace("&&","and") }})
 
     def test_random_character_is_valid(self):
         Char = Character()
-        self.assertIn(Char.strength, range(3, 19))
-        self.assertIn(Char.dexterity, range(3, 19))
-        self.assertIn(Char.constitution, range(3, 19))
-        self.assertIn(Char.intelligence, range(3, 19))
-        self.assertIn(Char.wisdom, range(3, 19))
-        self.assertIn(Char.charisma, range(3, 19))
-        self.assertEqual(Char.hitpoints, 10 + modifier(Char.constitution))
+        {% for ability in cases[2]["expected"] -%}
+        {% set statement = cases[2]["expected"][ability] | replace("&&","and") | replace(ability, ["Char.", ability ]|join("")) -%}
+        {% if ability == "hitpoints" -%}
+        {% set statement = statement | replace("constitution","Char.constitution") -%}
+        {%- endif -%}
+        self.assertTrue({{ statement }})
+        {% endfor %}
 
     def test_each_ability_is_only_calculated_once(self):
         Char = Character()
-        self.assertEqual(Char.strength, Char.strength)
+        {% set ability = cases[3]["property"] -%}
+        self.assertTrue({{ cases[3]["expected"] | replace(ability , ["Char.", ability]|join(""))}})
 
 {{ macros.footer() }}
