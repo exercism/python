@@ -14,17 +14,17 @@ class {{ class }}Test(unittest.TestCase):
         {% endif %}
     {% endfor %}
 
-    # Track specific tests
-    def test_area_code(self):
-        number = {{ class }}("2234567890")
-        self.assertEqual(number.area_code, "223")
-
-    def test_pretty_print(self):
-        number = {{ class }}("2234567890")
-        self.assertEqual(number.pretty(), "(223) 456-7890")
-
-    def test_pretty_print_with_full_us_phone_number(self):
-        number = {{ class }}("12234567890")
-        self.assertEqual(number.pretty(), "(223) 456-7890")
+    # Additional tests for this track
+    {% for case in additional_cases["cases"] -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        {% set property = case["property"] -%}
+        {% if property == "area_code" -%}
+        {% set method = "" -%}
+        {% else -%}
+        {% set method = ".()" -%}
+        {% endif -%}
+        number = {{ class }}("{{ case["input"]["phrase"] }}")
+        self.assertEqual(number.{{ case["property"] }}{{ method }}, {{ case["expected"] }})
+    {% endfor %}
 
 {{ macros.footer() }}
