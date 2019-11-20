@@ -1,0 +1,14 @@
+{%- import "generator_macros.j2" as macros with context -%}
+from datetime import datetime
+{{ macros.header() }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases[0]["cases"] -%}
+    def {{ case["description"] | to_snake }}(self):
+        test_value = "{{ case["input"]["moment"] }}"
+        expected = "{{ case["expected"] }}"
+        self.assertEqual({{ case["property"] }}(test_value), expected)
+    {% endfor %}
+    
+
+{{ macros.footer() }}
