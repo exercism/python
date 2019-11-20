@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.7
+#!/usr/bin/env python3
 """
 Generates exercise test suites using an exercise's canonical-data.json
 (found in problem-specifications) and $exercise/.meta/template.j2.
@@ -12,6 +12,13 @@ Usage:
     generate_tests.py --check           Checks if test files are out of sync with templates
     generate_tests.py --check two-fer   Checks if two-fer test file is out of sync with template
 """
+import sys
+
+_py = sys.version_info
+if _py.major < 3 or (_py.major == 3 and _py.minor < 6):
+    print("Python version must be at least 3.6")
+    sys.exit(1)
+
 import argparse
 import difflib
 import filecmp
@@ -22,7 +29,6 @@ import os
 import posixpath
 import re
 import shutil
-import sys
 from glob import glob
 from itertools import repeat
 from string import punctuation, whitespace
@@ -32,7 +38,7 @@ from textwrap import wrap
 
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound, UndefinedError
 
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 
 DEFAULT_SPEC_LOCATION = os.path.join("..", "problem-specifications")
 RGX_WORDS = re.compile(r"[-_\s]|(?=[A-Z])")
