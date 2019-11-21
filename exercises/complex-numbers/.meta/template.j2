@@ -46,9 +46,4 @@ import math
             ComplexNumber({{ case["input"]["z1"][0] }}, {{ case["input"]["z1"][1]}}),
             ComplexNumber({{ case["input"]["z2"][0] }}, {{ case["input"]["z2"][1] }}))
         {% endif %}
-{#        self.assertEqual(input_number.imaginary, 1)
-        game = ConnectGame("""{{ case["input"]["board"] | join("\n               ") }}""")
-        winner = game.get_winner()
-        self.assertEqual(winner, "{{ case["expected"] }}")
-#}
 {%- endmacro %}
