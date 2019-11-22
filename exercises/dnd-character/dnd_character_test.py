@@ -56,21 +56,21 @@ class DndCharacterTest(unittest.TestCase):
 
     def test_random_ability_is_within_range(self):
         score = Character().ability()
-        self.assertTrue(score >= 3 and score <= 18)
+        self.assertIs(score >= 3 and score <= 18, True)
 
     def test_random_character_is_valid(self):
         Char = Character()
-        self.assertTrue(Char.strength >= 3 and Char.strength <= 18)
-        self.assertTrue(Char.dexterity >= 3 and Char.dexterity <= 18)
-        self.assertTrue(Char.constitution >= 3 and Char.constitution <= 18)
-        self.assertTrue(Char.intelligence >= 3 and Char.intelligence <= 18)
-        self.assertTrue(Char.wisdom >= 3 and Char.wisdom <= 18)
-        self.assertTrue(Char.charisma >= 3 and Char.charisma <= 18)
-        self.assertTrue(Char.hitpoints == 10 + modifier(Char.constitution))
+        self.assertIs(Char.strength >= 3 and Char.strength <= 18, True)
+        self.assertIs(Char.dexterity >= 3 and Char.dexterity <= 18, True)
+        self.assertIs(Char.constitution >= 3 and Char.constitution <= 18, True)
+        self.assertIs(Char.intelligence >= 3 and Char.intelligence <= 18, True)
+        self.assertIs(Char.wisdom >= 3 and Char.wisdom <= 18, True)
+        self.assertIs(Char.charisma >= 3 and Char.charisma <= 18, True)
+        self.assertIs(Char.hitpoints == 10 + modifier(Char.constitution), True)
 
     def test_each_ability_is_only_calculated_once(self):
         Char = Character()
-        self.assertTrue(Char.strength == Char.strength)
+        self.assertIs(Char.strength == Char.strength, True)
 
 
 if __name__ == "__main__":
