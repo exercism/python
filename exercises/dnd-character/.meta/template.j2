@@ -1,0 +1,41 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{% set class = exercise | camel_case -%}
+{{ macros.header(["Character", "modifier"]) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for supercase in cases -%}
+    {% set property = supercase["property"] -%}
+    {% set description = supercase["description"] | to_snake -%}
+    {% if "cases" in supercase -%}
+    {% for case in supercase["cases"] -%}
+    def test_{{ case["description"] | replace("-","n") | to_snake }}(self):
+        {% set value = case["input"]["score"] -%}
+        {% set expected = case["expected"] -%}
+        self.assertEqual({{ case["property"] }}({{ value }}), {{ expected }})
+    {% endfor %}
+
+    {% elif property == "ability" -%}
+    def test_{{ description }}(self):
+        score = Character().{{ property }}()
+        self.assertIs({{ supercase["expected"] | replace("&&","and") }}, True)
+
+    {% elif property == "character" -%}
+    def test_{{ description}}(self):
+        Char = Character()
+        {% for ability in supercase["expected"] -%}
+        {% set statement = supercase["expected"][ability] | replace("&&","and") | replace(ability, ["Char.", ability ]|join("")) -%}
+        {% if ability == "hitpoints" -%}
+        {% set statement = statement | replace("constitution","Char.constitution") -%}
+        {%- endif -%}
+        self.assertIs({{ statement }}, True)
+        {% endfor %}
+
+    {% elif property == "strength" -%}
+    def test_{{ description }}(self):
+        Char = Character()
+        self.assertIs({{ supercase["expected"] | replace(property , ["Char.", property]|join(""))}}, True)
+
+    {%- endif -%}
+    {% endfor %}
+
+{{ macros.footer() }}
