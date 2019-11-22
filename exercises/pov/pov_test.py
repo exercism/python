@@ -92,12 +92,12 @@ class PovTest(unittest.TestCase):
     def test_can_find_path_to_parent(self):
         tree = Tree("parent", [Tree("x"), Tree("sibling")])
         expected = ["x", "parent"]
-        self.assertEquals(tree.path_to("x", "parent"), expected)
+        self.assertEqual(tree.path_to("x", "parent"), expected)
 
     def test_can_find_path_to_sibling(self):
         tree = Tree("parent", [Tree("a"), Tree("x"), Tree("b"), Tree("c")])
         expected = ["x", "parent", "b"]
-        self.assertEquals(tree.path_to("x", "b"), expected)
+        self.assertEqual(tree.path_to("x", "b"), expected)
 
     def test_can_find_path_to_cousin(self):
         tree = Tree(
@@ -115,7 +115,7 @@ class PovTest(unittest.TestCase):
             ],
         )
         expected = ["x", "parent", "grandparent", "uncle", "cousin-1"]
-        self.assertEquals(tree.path_to("x", "cousin-1"), expected)
+        self.assertEqual(tree.path_to("x", "cousin-1"), expected)
 
     def test_can_find_path_not_involving_root(self):
         tree = Tree(
@@ -123,12 +123,12 @@ class PovTest(unittest.TestCase):
             [Tree("parent", [Tree("x"), Tree("sibling-0"), Tree("sibling-1")])],
         )
         expected = ["x", "parent", "sibling-1"]
-        self.assertEquals(tree.path_to("x", "sibling-1"), expected)
+        self.assertEqual(tree.path_to("x", "sibling-1"), expected)
 
     def test_can_find_path_from_nodes_other_than_x(self):
         tree = Tree("parent", [Tree("a"), Tree("x"), Tree("b"), Tree("c")])
         expected = ["a", "parent", "c"]
-        self.assertEquals(tree.path_to("a", "c"), expected)
+        self.assertEqual(tree.path_to("a", "c"), expected)
 
     def test_errors_if_destination_does_not_exist(self):
         tree = Tree(
