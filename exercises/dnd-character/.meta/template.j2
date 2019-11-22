@@ -5,6 +5,7 @@
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for supercase in cases -%}
     {% set property = supercase["property"] -%}
+    {% set description = supercase["description"] | to_snake -%}
     {% if "cases" in supercase -%}
     {% for case in supercase["cases"] -%}
     def test_{{ case["description"] | replace("-","n") | to_snake }}(self):
@@ -14,12 +15,12 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% endfor %}
 
     {% elif property == "ability" -%}
-    def test_random_ability_is_within_range(self):
+    def test_{{ description }}(self):
         score = Character().{{ property }}()
-        self.assertIs({{ cases[1]["expected"] | replace("&&","and") }}, True)
+        self.assertIs({{ supercase["expected"] | replace("&&","and") }}, True)
 
     {% elif property == "character" -%}
-    def test_random_character_is_valid(self):
+    def test_{{ description}}(self):
         Char = Character()
         {% for ability in supercase["expected"] -%}
         {% set statement = supercase["expected"][ability] | replace("&&","and") | replace(ability, ["Char.", ability ]|join("")) -%}
@@ -30,9 +31,8 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         {% endfor %}
 
     {% elif property == "strength" -%}
-    def test_each_ability_is_only_calculated_once(self):
+    def test_{{ description }}(self):
         Char = Character()
-        {% set ability = supercase["property"] -%}
         self.assertIs({{ supercase["expected"] | replace(property , ["Char.", property]|join(""))}}, True)
 
     {%- endif -%}
