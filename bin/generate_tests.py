@@ -37,6 +37,7 @@ from tempfile import NamedTemporaryFile
 from textwrap import wrap
 
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound, UndefinedError
+from dateutil.parser import parse
 
 VERSION = "0.2.1"
 
@@ -79,6 +80,26 @@ def wrap_overlong(string, width=70):
     Break an overly long string literal into escaped lines.
     """
     return ["{0!r} \\".format(w) for w in wrap(string, width)]
+
+
+def parse_datetime(string, strip_module=False):
+    """
+    Parse a (hopefully ISO 8601) datestamp to a datetime object and
+    return its repr for use in a jinja2 template.
+
+    If used the template will need to import the datetime module.
+
+        import datetime
+
+    However if strip_module is True then the template will need to 
+    import the datetime _class_ instead.
+
+        from datetime import datetime
+    """
+    result = repr(parse(string))
+    if strip_module:
+        return result.replace("datetime.", "", 1)
+    return result
 
 
 def get_tested_properties(spec):
@@ -258,6 +279,7 @@ def generate(
     env.filters["camel_case"] = camel_case
     env.filters["wrap_overlong"] = wrap_overlong
     env.filters["regex_replace"] = regex_replace
+    env.filters["parse_datetime"] = parse_datetime
     env.tests["error_case"] = error_case
     result = True
     for exercise in sorted(glob(os.path.join("exercises", exercise_glob))):
