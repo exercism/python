@@ -83,8 +83,8 @@ class BookStoreTest(unittest.TestCase):
         table = 10240
         self.assertEqual(total(results), table)
 
-    def test_one_group_of_five_and_two_groups_of_four(self):
-        results = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3]
+    def test_two_groups_of_four_and_a_group_of_five(self):
+        results = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 5, 5]
         table = 8120
         self.assertEqual(total(results), table)
 
