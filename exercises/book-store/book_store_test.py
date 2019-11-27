@@ -2,7 +2,7 @@ import unittest
 
 from book_store import total
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.5.0
 
 
 class BookStoreTest(unittest.TestCase):
@@ -87,6 +87,12 @@ class BookStoreTest(unittest.TestCase):
         results = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 5, 5]
         table = 8120
         self.assertEqual(total(results), table)
+
+    def test_shuffled_book_order(self):
+        results = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3]
+        table = 8120
+        self.assertEqual(total(results), table)
+
 
 if __name__ == "__main__":
     unittest.main()

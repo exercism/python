@@ -47,6 +47,6 @@ def step(basket, book):
 def total(basket):
     if len(basket) == 0:
         return 0
-    basket.sort()
+    basket = sorted(basket)
     start = Grouping([{basket[0]}])
     return round(min(reduce(step, basket[1:], [start])).total())
