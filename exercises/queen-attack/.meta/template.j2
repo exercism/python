@@ -9,7 +9,12 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         {% if case["property"] == "canAttack" -%}
         {% set white_queen = case["input"]["white_queen"]["position"] -%}
         {% set black_queen = case["input"]["black_queen"]["position"] -%}
+        {% if case is error_case -%}
+        with self.assertRaisesWithMessage(ValueError):
+            Queen({{ white_queen["row"] }}, {{ white_queen["column"] }}).can_attack(Queen({{ black_queen["row"] }}, {{ black_queen["column"] }}))
+        {% else -%}
         self.assertIs(Queen({{ white_queen["row"] }}, {{ white_queen["column"] }}).can_attack(Queen({{ black_queen["row"] }}, {{ black_queen["column"] }})), {{ case["expected"] }})
+        {% endif %}
         {% else -%}
         {% set queen = case["input"]["queen"]["position"] -%}
         {% if case is error_case -%}
@@ -28,9 +33,11 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% endfor %}
 
 {% endfor %}
+    {% if additional_cases | length -%}
     # Track-specific tests
-    def test_queens_same_position_can_attack(self):
-        with self.assertRaisesWithMessage(ValueError):
-            Queen(2, 2).can_attack(Queen(2, 2))
+    {% for case in additional_cases -%}
+    {{ test_case(case) }}
+    {% endfor %}
+    {% endif %}
 
 {{ macros.footer() }}
