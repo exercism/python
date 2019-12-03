@@ -14,11 +14,11 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         self.assertIs(Queen({{ white_queen["row"] }}, {{ white_queen["column"] }}).can_attack(Queen({{ black_queen["row"] }}, {{ black_queen["column"] }})), {{ case["expected"] }})
         {% else -%}
         {% set queen = case["input"]["queen"]["position"] -%}
-        {% if case["expected"] == 0 -%}
-        Queen({{ queen["row"] }}, {{ queen["column"] }})
-        {% else -%}
+        {% if case is error_case -%}
         with self.assertRaisesWithMessage(ValueError):
             Queen({{ queen["row"] }}, {{ queen["column"] }})
+        {% else -%}
+        Queen({{ queen["row"] }}, {{ queen["column"] }})
         {% endif %}
         {% endif %}
 
