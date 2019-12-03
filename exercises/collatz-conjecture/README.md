@@ -31,7 +31,6 @@ Resulting in 9 steps. So for input n = 12, the return value would be 9.
 The Collatz Conjecture is only concerned with strictly positive integers, so your solution should raise a `ValueError` with a meaningful message if given 0 or a negative integer.
 
 
-
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to

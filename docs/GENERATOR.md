@@ -125,7 +125,7 @@ Additional Resources:
 
 
 
-[Jinja2]: https://jinja.pocoo.org/
+[Jinja2]: https://palletsprojects.com/p/jinja/
 [Jinja Documentation]: https://jinja.palletsprojects.com/en/2.10.x/
 [Primer on Jinja Templating]: https://realpython.com/primer-on-jinja-templating/
 [Python Jinja tutorial]: http://zetcode.com/python/jinja/

@@ -23,7 +23,7 @@
 {%- macro test_path_to(case) -%}
         {% if case["expected"] -%}
         expected = {{ case["expected"] }}
-        self.assertEquals(tree.{{ case["property"] | to_snake }}("{{ case["input"]["from"] }}", "{{ case["input"]["to"]}}"), expected)
+        self.assertEqual(tree.{{ case["property"] | to_snake }}("{{ case["input"]["from"] }}", "{{ case["input"]["to"]}}"), expected)
         {% else -%}
         with self.assertRaisesWithMessage(ValueError):
             tree.{{ case["property"] | to_snake }}("{{ case["input"]["from"] }}", "{{ case["input"]["to"]}}")
