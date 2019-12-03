@@ -4,9 +4,7 @@
 class {{ exercise | camel_case }}Test(unittest.TestCase):
 {% set suite_tests = cases -%}
 
-{% for cases in suite_tests -%}
-    # {{ cases["description"] }}
-    {% for case in cases["cases"] -%}
+{%- macro test_case(case) -%}
     def test_{{ case["description"] | to_snake }}(self):
         {% if case["property"] == "canAttack" -%}
         {% set white_queen = case["input"]["white_queen"]["position"] -%}
@@ -21,7 +19,12 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         Queen({{ queen["row"] }}, {{ queen["column"] }})
         {% endif %}
         {% endif %}
+{%- endmacro -%}
 
+{% for cases in suite_tests -%}
+    # {{ cases["description"] }}
+    {% for case in cases["cases"] -%}
+    {{ test_case(case) }}
     {% endfor %}
 
 {% endfor %}
