@@ -14,12 +14,16 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
 {% set suite_tests = cases -%}
 
 {%- macro test_case(case) -%}
+    {% set expected = case['expected'] -%}
+    {% set pattern = case['input']['pattern'] -%}
+    {% set flags = case['input']['flags'] -%}
+    {% set files = case['input']['files'] -%}
     def test_{{ case["description"] | to_snake }}(self):
-        {% if case['input']['expected']|join(" ") in filenames -%}
-        self.assertMultiLineEqual(grep("{{ case['input']['pattern'] }}", "{{ case['input']['flags']|join(" ") }}", {{ filenames[case['input']['files']|join(" ")] }}),
-        {{ filenames[case['input']['expected']|join(" ")] }}
+        {% if expected|join(" ") in filenames -%}
+        self.assertMultiLineEqual(grep("{{ pattern }}", "{{ flags|join(" ") }}", {{ filenames[case['input']['files']|join(" ")] }}),
+        {{ filenames[expected|join(" ")] }}
         {% else -%}
-        self.assertMultiLineEqual(grep("{{ case['input']['pattern'] }}", "{{ case['input']['flags']|join(" ") }}", {{ filenames[case['input']['files']|join(" ")] }}),
+        self.assertMultiLineEqual(grep("{{ pattern }}", "{{ flags|join(" ") }}", {{ filenames[case['input']['files']|join(" ")] }}),
         {% for line in case["expected"] -%}
         "{{ line }}\n"
         {% endfor -%}
