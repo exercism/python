@@ -110,6 +110,14 @@ def regex_replace(s, find, repl):
     return re.sub(find, repl, s)
 
 
+def regex_find(s, find):
+    return re.findall(find, s)
+
+
+def regex_split(s, find):
+    return re.split(find, s)
+
+
 def create_variable_name(base, prefix="", suffix=""):
     return f"{prefix}{base}{suffix}"
 
@@ -257,6 +265,8 @@ def generate(
     env.filters["wrap_overlong"] = wrap_overlong
     env.filters["regex_replace"] = regex_replace
     env.filters["create_variable_name"] = create_variable_name
+    env.filters["regex_find"] = regex_find
+    env.filters["regex_split"] = regex_split
     env.tests["error_case"] = error_case
     result = True
     for exercise in sorted(glob(os.path.join("exercises", exercise_glob))):

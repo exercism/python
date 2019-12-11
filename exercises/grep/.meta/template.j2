@@ -1,7 +1,8 @@
 {%- import "generator_macros.j2" as macros with context -%}
 {{ macros.header() }}
 
-{% set filenames = ["iliad.txt", "midsummer-night.txt", "paradise-lost.txt"] -%}
+{% set filenames = comments | join("\n") | regex_find("[a-z-]*\.txt") -%}
+{% set contents = comments | join("\n") | regex_split("[a-z-]*\.txt") -%}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     @classmethod
