@@ -4,6 +4,12 @@
 {% set filenames = comments | join("\n") | regex_find("[a-z-]*\.txt") -%}
 {% set contents = comments | join("\n") | regex_split("[a-z-]*\.txt") -%}
 
+{% for filename, content in filenames | zip(contents[1:]) %}
+{{ filename | regex_replace("\.txt|\-", "") | create_variable_name(suffix="filename") | upper }} = "{{ filename }}"
+{{ filename | regex_replace("\.txt|\-", "") | create_variable_name(suffix="contents") | upper }} = """{{ content | regex_replace("\||\-", "") | regex_replace("\s*\n\s*", "\n") | trim }}"""
+{% endfor %}
+FILENAMES = [{{ filenames | map('regex_replace', "\.txt|\-", "") | map("create_variable_name", suffix="filename") | map('upper') | list | join(",") }}]
+
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     @classmethod
     def setUpClass(self):

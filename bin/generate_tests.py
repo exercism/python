@@ -267,6 +267,7 @@ def generate(
     env.filters["create_variable_name"] = create_variable_name
     env.filters["regex_find"] = regex_find
     env.filters["regex_split"] = regex_split
+    env.filters["zip"] = zip
     env.tests["error_case"] = error_case
     result = True
     for exercise in sorted(glob(os.path.join("exercises", exercise_glob))):
