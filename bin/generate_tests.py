@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.7
+#!/usr/bin/env python3
 """
 Generates exercise test suites using an exercise's canonical-data.json
 (found in problem-specifications) and $exercise/.meta/template.j2.
@@ -12,6 +12,13 @@ Usage:
     generate_tests.py --check           Checks if test files are out of sync with templates
     generate_tests.py --check two-fer   Checks if two-fer test file is out of sync with template
 """
+import sys
+
+_py = sys.version_info
+if _py.major < 3 or (_py.major == 3 and _py.minor < 6):
+    print("Python version must be at least 3.6")
+    sys.exit(1)
+
 import argparse
 import difflib
 import filecmp
@@ -22,7 +29,6 @@ import os
 import posixpath
 import re
 import shutil
-import sys
 from glob import glob
 from itertools import repeat
 from string import punctuation, whitespace
@@ -31,8 +37,9 @@ from tempfile import NamedTemporaryFile
 from textwrap import wrap
 
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound, UndefinedError
+from dateutil.parser import parse
 
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 
 DEFAULT_SPEC_LOCATION = os.path.join("..", "problem-specifications")
 RGX_WORDS = re.compile(r"[-_\s]|(?=[A-Z])")
@@ -73,6 +80,26 @@ def wrap_overlong(string, width=70):
     Break an overly long string literal into escaped lines.
     """
     return ["{0!r} \\".format(w) for w in wrap(string, width)]
+
+
+def parse_datetime(string, strip_module=False):
+    """
+    Parse a (hopefully ISO 8601) datestamp to a datetime object and
+    return its repr for use in a jinja2 template.
+
+    If used the template will need to import the datetime module.
+
+        import datetime
+
+    However if strip_module is True then the template will need to 
+    import the datetime _class_ instead.
+
+        from datetime import datetime
+    """
+    result = repr(parse(string))
+    if strip_module:
+        return result.replace("datetime.", "", 1)
+    return result
 
 
 def get_tested_properties(spec):
@@ -268,6 +295,7 @@ def generate(
     env.filters["regex_find"] = regex_find
     env.filters["regex_split"] = regex_split
     env.filters["zip"] = zip
+    env.filters["parse_datetime"] = parse_datetime
     env.tests["error_case"] = error_case
     result = True
     for exercise in sorted(glob(os.path.join("exercises", exercise_glob))):

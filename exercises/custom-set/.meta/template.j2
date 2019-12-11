@@ -1,0 +1,48 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{% set class_name = exercise | camel_case -%}
+{{ macros.header([class_name]) }}
+
+class {{ class_name }}Test(unittest.TestCase):
+    {% for case in cases -%}
+    {% for subcase in case["cases"] -%}
+    def test_{{ subcase["description"] | to_snake }}(self):
+        {% set expected = subcase["expected"] -%}
+        {% set property = subcase["property"] -%}
+        {% if "set" in subcase["input"] -%}
+        {% set list = subcase["input"]["set"] -%}
+        {{ macros.empty_set("sut", list, class_name) }}
+        {% else -%}
+        {% set list1 = subcase["input"]["set1"] -%}
+        {{ macros.empty_set("set1", list1, class_name) }}
+        {% set list2 = subcase["input"]["set2"] -%}
+        {{ macros.empty_set("set2", list2, class_name) }}
+        {% endif -%}
+        {% if expected is iterable -%}
+        {{ macros.empty_set("expected", expected, class_name) }}
+        {% elif expected == true -%}
+        {%- set flag = "" -%}
+        {% else -%}
+        {%- set flag = "Not" -%}
+        {% endif -%}
+        {% if property == "add" -%}
+        sut.{{ property }}({{ subcase["input"]["element"] }})
+        self.assertEqual(sut, expected)
+        {% elif property == "contains" -%}
+        self.assert{{ flag }}In({{ subcase["input"]["element"] }}, sut)
+        {% elif property == "difference" -%}
+        self.assertEqual(set1 - set2, expected)
+        {% elif property == "empty" -%}
+        self.assertIs(sut.is{{ property }}(), {{ expected }})
+        {% elif property == "equal" -%}
+        self.assert{{ flag }}Equal(set1, set2)
+        {% elif property == "intersection" -%}
+        self.assertEqual(set1.{{ property }}(set2), expected)
+        {% elif property == "union" -%}
+        self.assertEqual(set1 + set2, expected)
+        {% else -%}
+        self.assertIs(set1.is{{ property }}(set2), {{ expected }})
+        {% endif %}
+    {% endfor %}
+    {% endfor %}
+
+{{ macros.footer() }}

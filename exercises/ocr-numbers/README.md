@@ -40,10 +40,10 @@ Update your program to recognize multi-character binary strings, replacing garbl
 Update your program to recognize all numbers 0 through 9, both individually and as part of a larger string.
 
 ```text
- _
+ _ 
  _|
-|_
-
+|_ 
+   
 ```
 
 Is converted to "2"
@@ -62,21 +62,25 @@ Is converted to "1234567890"
 Update your program to handle multiple numbers, one per line. When converting several lines, join the lines with commas.
 
 ```text
-    _  _
+    _  _ 
   | _| _|
   ||_  _|
-
-    _  _
-|_||_ |_
+         
+    _  _ 
+|_||_ |_ 
   | _||_|
-
- _  _  _
+         
+ _  _  _ 
   ||_||_|
   ||_| _|
-
+         
 ```
 
 Is converted to "123,456,789"
+
+## Hints
+
+Your converter should validate its input and raise a ValueError with a meaningful message if it receives a string that isn't a valid OCR number.
 
 
 ## Exception messages
