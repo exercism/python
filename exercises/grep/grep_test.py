@@ -3,6 +3,10 @@ import unittest
 from grep import grep
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+try:
+    import builtins
+except ImportError:
+    import __builtin__ as builtins
 
 
 ILIADFILENAME = "iliad.txt"
@@ -37,15 +41,75 @@ That Shepherd, who first taught the chosen Seed"""
 
 FILENAMES = [ILIADFILENAME, MIDSUMMERNIGHTFILENAME, PARADISELOSTFILENAME]
 
+FILES = {}
+
+
+class File:
+    def __init__(self, name=""):
+        self.name = name
+        self.contents = ""
+
+    def read(self):
+        return self.contents
+
+    def readlines(self):
+        return [line + "\n" for line in self.read().split("\n") if line]
+
+    def write(self, data):
+        self.contents += data
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *args):
+        pass
+
+
+# Store builtin definition of open()
+builtins.oldopen = builtins.open
+
+
+def open(name, mode="r", *args, **kwargs):
+    # if name is a mocked file name, lookup corresponding mocked file
+    if name in FILENAMES:
+        if mode == "w" or name not in FILES:
+            FILES[name] = File(name)
+        return FILES[name]
+    # else call builtin open()
+    else:
+        return builtins.oldopen(name, mode, *args, **kwargs)
+
+
+builtins.open = open
+
+
+# remove mocked file contents
+def remove_file(file_name):
+    del FILES[file_name]
+
+
+def create_file(name, contents):
+    with open(name, "w") as f:
+        f.write(contents)
+
 
 class GrepTest(unittest.TestCase):
     @classmethod
     def setUpClass(self):
-        ...
+        # Override builtin open() with mock-file-enabled one
+        builtins.open = open
+        create_file(ILIADFILENAME, ILIADCONTENTS)
+        create_file(MIDSUMMERNIGHTFILENAME, MIDSUMMERNIGHTCONTENTS)
+        create_file(PARADISELOSTFILENAME, PARADISELOSTCONTENTS)
+        self.maxDiff = None
 
     @classmethod
     def tearDownClass(self):
-        ...
+        remove_file(ILIADFILENAME)
+        remove_file(MIDSUMMERNIGHTFILENAME)
+        remove_file(PARADISELOSTFILENAME)
+        # Restore builtin open()
+        builtins.open = builtins.oldopen
 
     # Test grepping a single file
     def test_one_file_one_match_no_flags(self):
