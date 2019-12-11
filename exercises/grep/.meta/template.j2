@@ -1,7 +1,7 @@
 {%- import "generator_macros.j2" as macros with context -%}
 {{ macros.header() }}
 
-{% set filenames = {"iliad.txt": "[ILIADFILENAME]", "midsummer-night.txt": "[MIDSUMMERNIGHTFILENAME]", "paradise-lost.txt": "[PARADISELOSTFILENAME]", "iliad.txt midsummer-night.txt paradise-lost.txt": "FILENAMES"} -%}
+{% set filenames = ["iliad.txt", "midsummer-night.txt", "paradise-lost.txt"] -%}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     @classmethod
@@ -19,15 +19,22 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% set flags = case['input']['flags'] -%}
     {% set files = case['input']['files'] -%}
     def test_{{ case["description"] | to_snake }}(self):
-        {% if expected|join(" ") in filenames -%}
-        self.assertMultiLineEqual(grep("{{ pattern }}", "{{ flags|join(" ") }}", {{ filenames[case['input']['files']|join(" ")] }}),
-        {{ filenames[expected|join(" ")] }}
+        {% if files == filenames -%}
+        {% set filename = "FILENAMES" -%}
         {% else -%}
-        self.assertMultiLineEqual(grep("{{ pattern }}", "{{ flags|join(" ") }}", {{ filenames[case['input']['files']|join(" ")] }}),
-        {% for line in case["expected"] -%}
-        "{{ line }}\n"
-        {% endfor -%}
+        {% set filename = "[" + files[0] | regex_replace("\.txt|\-", "") | create_variable_name(suffix="filename") | upper + "]" -%}
         {% endif -%}
+        self.assertMultiLineEqual(
+            grep("{{ pattern }}", "{{ flags|join(" ") }}", {{ filename }}),
+            {% if expected == [] -%}
+            ""
+            {% elif "-l" in flags -%}
+            {{ expected | map('regex_replace', "\.txt|\-", "") | map("create_variable_name", suffix="filename") | map('upper') | join(' + "\\n" + ') }} + "\n"
+            {% else %}
+            {% for e in expected -%}
+            "{{ e }}\n"
+            {% endfor %}
+            {% endif %}
         )
 {%- endmacro -%}
 

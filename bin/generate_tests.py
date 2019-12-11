@@ -110,6 +110,10 @@ def regex_replace(s, find, repl):
     return re.sub(find, repl, s)
 
 
+def create_variable_name(base, prefix="", suffix=""):
+    return f"{prefix}{base}{suffix}"
+
+
 def load_canonical(exercise, spec_path):
     """
     Loads the canonical data for an exercise as a nested dictionary
@@ -252,6 +256,7 @@ def generate(
     env.filters["camel_case"] = camel_case
     env.filters["wrap_overlong"] = wrap_overlong
     env.filters["regex_replace"] = regex_replace
+    env.filters["create_variable_name"] = create_variable_name
     env.tests["error_case"] = error_case
     result = True
     for exercise in sorted(glob(os.path.join("exercises", exercise_glob))):
