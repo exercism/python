@@ -1,0 +1,25 @@
+{
+  "cases": [
+    {
+      "description": "queens same position can attack",
+      "property": "canAttack",
+      "input": {
+        "white_queen": {
+          "position": {
+            "row": 2,
+            "column": 2
+          }
+        },
+        "black_queen": {
+          "position": {
+            "row": 2,
+            "column": 2
+          }
+        }
+      },
+      "expected": {
+        "error": "Invalid queen position: both queens in the same square"
+      }
+    }
+  ]
+}

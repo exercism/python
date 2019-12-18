@@ -1,10 +1,11 @@
 language: python
 dist: xenial
-  
+
 python:
   - 3.5
   - 3.6
   - 3.7
+  - 3.8
   - nightly
 
 matrix:
@@ -42,6 +43,6 @@ matrix:
 
 before_script:
   - flake8
-  
-script: 
+
+script:
   - ./test/check-exercises.py

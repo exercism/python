@@ -1,0 +1,29 @@
+{
+    "exercise": "phone-number",
+    "version": "1.7.0",
+    "cases": [{
+            "description": "area code",
+            "property": "area_code",
+            "input": {
+                "phrase": "2234567890"
+            },
+            "expected": "223"
+        },
+        {
+            "description": "pretty print",
+            "property": "pretty",
+            "input": {
+                "phrase": "2234567890"
+            },
+            "expected": "(223) 456-7890"
+        },
+        {
+            "description": "pretty print with full US phone number",
+            "property": "pretty",
+            "input": {
+                "phrase": "12234567890"
+            },
+            "expected": "(223) 456-7890"
+        }
+    ]
+}

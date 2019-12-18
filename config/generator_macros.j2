@@ -43,3 +43,11 @@ from {{ exercise | to_snake }} import ({% if imports -%}
 if __name__ == '__main__':
     unittest.main()
 {%- endmacro %}
+
+{% macro empty_set(set, list, class_name) -%}
+{%- if list|length > 0 -%}
+{{ set }} = {{ class_name }}({{ list }})
+{%- else -%}
+{{ set }} = {{ class_name }}()
+{%- endif %}
+{%- endmacro %}

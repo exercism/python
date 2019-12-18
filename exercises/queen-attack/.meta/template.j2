@@ -1,0 +1,43 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.header(imports=['Queen']) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+{% set suite_tests = cases -%}
+
+{%- macro test_case(case) -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        {% if case["property"] == "canAttack" -%}
+        {% set white_queen = case["input"]["white_queen"]["position"] -%}
+        {% set black_queen = case["input"]["black_queen"]["position"] -%}
+        {% if case is error_case -%}
+        with self.assertRaisesWithMessage(ValueError):
+            Queen({{ white_queen["row"] }}, {{ white_queen["column"] }}).can_attack(Queen({{ black_queen["row"] }}, {{ black_queen["column"] }}))
+        {% else -%}
+        self.assertIs(Queen({{ white_queen["row"] }}, {{ white_queen["column"] }}).can_attack(Queen({{ black_queen["row"] }}, {{ black_queen["column"] }})), {{ case["expected"] }})
+        {% endif %}
+        {% else -%}
+        {% set queen = case["input"]["queen"]["position"] -%}
+        {% if case is error_case -%}
+        with self.assertRaisesWithMessage(ValueError):
+            Queen({{ queen["row"] }}, {{ queen["column"] }})
+        {% else -%}
+        Queen({{ queen["row"] }}, {{ queen["column"] }})
+        {% endif %}
+        {% endif %}
+{%- endmacro -%}
+
+{% for cases in suite_tests -%}
+    # {{ cases["description"] }}
+    {% for case in cases["cases"] -%}
+    {{ test_case(case) }}
+    {% endfor %}
+
+{% endfor %}
+    {% if additional_cases | length -%}
+    # Track-specific tests
+    {% for case in additional_cases -%}
+    {{ test_case(case) }}
+    {% endfor %}
+    {% endif %}
+
+{{ macros.footer() }}
