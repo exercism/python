@@ -2,7 +2,7 @@ import unittest
 
 from grade_school import School
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
 
 
 class GradeSchoolTest(unittest.TestCase):
@@ -21,7 +21,7 @@ class GradeSchoolTest(unittest.TestCase):
         self.assertEqual(school.roster(), expected)
 
     def test_adding_students_to_different_grades_adds_them_to_the_same_sorted_roster(
-        self
+        self,
     ):
         school = School()
         school.add_student(name="Chelsea", grade=3)
