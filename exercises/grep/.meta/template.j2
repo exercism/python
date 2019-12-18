@@ -1,19 +1,15 @@
 {%- import "generator_macros.j2" as macros with context -%}
 {{ macros.header() }}
-try:
-    import builtins
-except ImportError:
-    import __builtin__ as builtins
+import builtins
 
 {% set filenames = comments | join("\n") | regex_find("[a-z-]*\.txt") -%}
-{% set contents = comments | join("\n") | regex_split("[a-z-]*\.txt") -%}
+{% set contents = (comments | join("\n") | regex_split("[a-z-]*\.txt"))[1:] -%}
 
-{% for filename, content in filenames | zip(contents[1:]) %}
-{{ filename | regex_replace("\.txt|\-", "") | create_variable_name(suffix="filename") | upper }} = "{{ filename }}"
-{{ filename | regex_replace("\.txt|\-", "") | create_variable_name(suffix="contents") | upper }} = """{{ content | regex_replace("\||\-", "") | regex_replace("\s*\n\s*", "\n") | trim }}"""
-{% endfor %}
-FILENAMES = [{{ filenames | map('regex_replace', "\.txt|\-", "") | map("create_variable_name", suffix="filename") | map('upper') | list | join(",") }}]
-
+FILE_TEXT = {
+    {% for filename, content in filenames | zip(contents) -%}
+    "{{ filename }}": """{{ plugins.clean_filetext(content) }}""",
+    {% endfor %}
+}
 FILES = {}
 
 
@@ -44,16 +40,13 @@ builtins.oldopen = builtins.open
 
 def open(name, mode='r', *args, **kwargs):
     # if name is a mocked file name, lookup corresponding mocked file
-    if name in FILENAMES:
+    if name in FILE_TEXT:
         if mode == 'w' or name not in FILES:
             FILES[name] = File(name)
         return FILES[name]
     # else call builtin open()
     else:
         return builtins.oldopen(name, mode, *args, **kwargs)
-
-
-builtins.open = open
 
 
 # remove mocked file contents
@@ -67,19 +60,17 @@ def create_file(name, contents):
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     @classmethod
-    def setUpClass(self):
+    def setUpClass(cls):
         # Override builtin open() with mock-file-enabled one
         builtins.open = open
-        create_file(ILIADFILENAME, ILIADCONTENTS)
-        create_file(MIDSUMMERNIGHTFILENAME, MIDSUMMERNIGHTCONTENTS)
-        create_file(PARADISELOSTFILENAME, PARADISELOSTCONTENTS)
-        self.maxDiff = None
+        for name, text in FILE_TEXT.items():
+            create_file(name, text)
+        cls.maxDiff = None
 
     @classmethod
-    def tearDownClass(self):
-        remove_file(ILIADFILENAME)
-        remove_file(MIDSUMMERNIGHTFILENAME)
-        remove_file(PARADISELOSTFILENAME)
+    def tearDownClass(cls):
+        for name in FILE_TEXT:
+            remove_file(name)
         # Restore builtin open()
         builtins.open = builtins.oldopen
 
@@ -91,17 +82,10 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% set flags = case['input']['flags'] -%}
     {% set files = case['input']['files'] -%}
     def test_{{ case["description"] | to_snake }}(self):
-        {% if files == filenames -%}
-        {% set filename = "FILENAMES" -%}
-        {% else -%}
-        {% set filename = "[" + files[0] | regex_replace("\.txt|\-", "") | create_variable_name(suffix="filename") | upper + "]" -%}
-        {% endif -%}
         self.assertMultiLineEqual(
-            grep("{{ pattern }}", "{{ flags|join(" ") }}", {{ filename }}),
+            grep("{{ pattern }}", "{{ flags|join(" ") }}", {{ files }}),
             {% if expected == [] -%}
             ""
-            {% elif "-l" in flags -%}
-            {{ expected | map('regex_replace', "\.txt|\-", "") | map("create_variable_name", suffix="filename") | map('upper') | join(' + "\\n" + ') }} + "\n"
             {% else %}
             {% for e in expected -%}
             "{{ e }}\n"

@@ -91,7 +91,7 @@ def parse_datetime(string, strip_module=False):
 
         import datetime
 
-    However if strip_module is True then the template will need to 
+    However if strip_module is True then the template will need to
     import the datetime _class_ instead.
 
         from datetime import datetime
@@ -143,10 +143,6 @@ def regex_find(s, find):
 
 def regex_split(s, find):
     return re.split(find, s)
-
-
-def create_variable_name(base, prefix="", suffix=""):
-    return f"{prefix}{base}{suffix}"
 
 
 def load_canonical(exercise, spec_path):
@@ -291,7 +287,6 @@ def generate(
     env.filters["camel_case"] = camel_case
     env.filters["wrap_overlong"] = wrap_overlong
     env.filters["regex_replace"] = regex_replace
-    env.filters["create_variable_name"] = create_variable_name
     env.filters["regex_find"] = regex_find
     env.filters["regex_split"] = regex_split
     env.filters["zip"] = zip
