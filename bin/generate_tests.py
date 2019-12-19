@@ -91,7 +91,7 @@ def parse_datetime(string, strip_module=False):
 
         import datetime
 
-    However if strip_module is True then the template will need to 
+    However if strip_module is True then the template will need to
     import the datetime _class_ instead.
 
         from datetime import datetime
@@ -135,6 +135,14 @@ def has_error_case(cases):
 
 def regex_replace(s, find, repl):
     return re.sub(find, repl, s)
+
+
+def regex_find(s, find):
+    return re.findall(find, s)
+
+
+def regex_split(s, find):
+    return re.split(find, s)
 
 
 def load_canonical(exercise, spec_path):
@@ -279,6 +287,9 @@ def generate(
     env.filters["camel_case"] = camel_case
     env.filters["wrap_overlong"] = wrap_overlong
     env.filters["regex_replace"] = regex_replace
+    env.filters["regex_find"] = regex_find
+    env.filters["regex_split"] = regex_split
+    env.filters["zip"] = zip
     env.filters["parse_datetime"] = parse_datetime
     env.tests["error_case"] = error_case
     result = True

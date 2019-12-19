@@ -1,0 +1,105 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.header() }}
+import builtins
+
+{% set filenames = comments | join("\n") | regex_find("[a-z-]*\.txt") -%}
+{% set contents = (comments | join("\n") | regex_split("[a-z-]*\.txt"))[1:] -%}
+
+FILE_TEXT = {
+    {% for filename, content in filenames | zip(contents) -%}
+    "{{ filename }}": """{{ plugins.clean_filetext(content) }}""",
+    {% endfor %}
+}
+FILES = {}
+
+
+class File:
+    def __init__(self, name=''):
+        self.name = name
+        self.contents = ''
+
+    def read(self):
+        return self.contents
+
+    def readlines(self):
+        return [line + '\n' for line in self.read().split('\n') if line]
+
+    def write(self, data):
+        self.contents += data
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *args):
+        pass
+
+
+# Store builtin definition of open()
+builtins.oldopen = builtins.open
+
+
+def open(name, mode='r', *args, **kwargs):
+    # if name is a mocked file name, lookup corresponding mocked file
+    if name in FILE_TEXT:
+        if mode == 'w' or name not in FILES:
+            FILES[name] = File(name)
+        return FILES[name]
+    # else call builtin open()
+    else:
+        return builtins.oldopen(name, mode, *args, **kwargs)
+
+
+# remove mocked file contents
+def remove_file(file_name):
+    del FILES[file_name]
+
+
+def create_file(name, contents):
+    with open(name, 'w') as f:
+        f.write(contents)
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        # Override builtin open() with mock-file-enabled one
+        builtins.open = open
+        for name, text in FILE_TEXT.items():
+            create_file(name, text)
+        cls.maxDiff = None
+
+    @classmethod
+    def tearDownClass(cls):
+        for name in FILE_TEXT:
+            remove_file(name)
+        # Restore builtin open()
+        builtins.open = builtins.oldopen
+
+{% set suite_tests = cases -%}
+
+{%- macro test_case(case) -%}
+    {% set expected = case['expected'] -%}
+    {% set pattern = case['input']['pattern'] -%}
+    {% set flags = case['input']['flags'] -%}
+    {% set files = case['input']['files'] -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        self.assertMultiLineEqual(
+            grep("{{ pattern }}", "{{ flags|join(" ") }}", {{ files }}),
+            {% if expected == [] -%}
+            ""
+            {% else %}
+            {% for e in expected -%}
+            "{{ e }}\n"
+            {% endfor %}
+            {% endif %}
+        )
+{%- endmacro -%}
+
+{% for cases in suite_tests -%}
+    # {{ cases["description"] }}
+    {% for case in cases["cases"] -%}
+    {{ test_case(case) }}
+    {% endfor %}
+
+{% endfor %}
+
+{{ macros.footer() }}
