@@ -1,19 +1,25 @@
 import unittest
 
-from forth import evaluate, StackUnderflowError
+from forth import (
+    evaluate,
+    StackUnderflowError,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.7.1
 
 
 class ForthTest(unittest.TestCase):
+    # Utility functions
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
 
-    # parsing and numbers
 
+class ParsingAndNumbersTest(ForthTest):
     def test_numbers_just_get_pushed_onto_the_stack(self):
         self.assertEqual(evaluate(["1 2 3 4 5"]), [1, 2, 3, 4, 5])
 
-    # addition
 
+class AdditionTest(ForthTest):
     def test_can_add_two_numbers(self):
         self.assertEqual(evaluate(["1 2 +"]), [3])
 
@@ -25,8 +31,8 @@ class ForthTest(unittest.TestCase):
         with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(["1 +"])
 
-    # subtraction
 
+class SubtractionTest(ForthTest):
     def test_can_subtract_two_numbers(self):
         self.assertEqual(evaluate(["3 4 -"]), [-1])
 
@@ -38,8 +44,8 @@ class ForthTest(unittest.TestCase):
         with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(["1 -"])
 
-    # multiplication
 
+class MultiplicationTest(ForthTest):
     def test_can_multiply_two_numbers(self):
         self.assertEqual(evaluate(["2 4 *"]), [8])
 
@@ -51,8 +57,8 @@ class ForthTest(unittest.TestCase):
         with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(["1 *"])
 
-    # division
 
+class DivisionTest(ForthTest):
     def test_can_divide_two_numbers(self):
         self.assertEqual(evaluate(["12 3 /"]), [4])
 
@@ -72,16 +78,16 @@ class ForthTest(unittest.TestCase):
         with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(["1 /"])
 
-    # combined arithmetic
 
+class CombinedArithmeticTest(ForthTest):
     def test_addition_and_subtraction(self):
         self.assertEqual(evaluate(["1 2 + 4 -"]), [-1])
 
     def test_multiplication_and_division(self):
         self.assertEqual(evaluate(["2 4 * 3 /"]), [2])
 
-    # dup
 
+class DupTest(ForthTest):
     def test_copies_a_value_on_the_stack(self):
         self.assertEqual(evaluate(["1 dup"]), [1, 1])
 
@@ -92,8 +98,8 @@ class ForthTest(unittest.TestCase):
         with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(["dup"])
 
-    # drop
 
+class DropTest(ForthTest):
     def test_removes_the_top_value_on_the_stack_if_it_is_the_only_one(self):
         self.assertEqual(evaluate(["1 drop"]), [])
 
@@ -104,8 +110,8 @@ class ForthTest(unittest.TestCase):
         with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(["drop"])
 
-    # swap
 
+class SwapTest(ForthTest):
     def test_swaps_the_top_two_values_on_the_stack_if_they_are_the_only_ones(self):
         self.assertEqual(evaluate(["1 2 swap"]), [2, 1])
 
@@ -120,8 +126,8 @@ class ForthTest(unittest.TestCase):
         with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(["1 swap"])
 
-    # over
 
+class OverTest(ForthTest):
     def test_copies_the_second_element_if_there_are_only_two(self):
         self.assertEqual(evaluate(["1 2 over"]), [1, 2, 1])
 
@@ -136,8 +142,8 @@ class ForthTest(unittest.TestCase):
         with self.assertRaisesWithMessage(StackUnderflowError):
             evaluate(["1 over"])
 
-    # user-defined words
 
+class UserDefinedWordsTest(ForthTest):
     def test_can_consist_of_built_in_words(self):
         self.assertEqual(evaluate([": dup-twice dup dup ;", "1 dup-twice"]), [1, 1, 1])
 
@@ -171,8 +177,8 @@ class ForthTest(unittest.TestCase):
         with self.assertRaisesWithMessage(ValueError):
             evaluate(["foo"])
 
-    # case-insensitivity
 
+class CaseInsensitivityTest(ForthTest):
     def test_dup_is_case_insensitive(self):
         self.assertEqual(evaluate(["1 DUP Dup dup"]), [1, 1, 1, 1])
 
