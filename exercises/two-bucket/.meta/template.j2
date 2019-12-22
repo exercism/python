@@ -12,7 +12,7 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
             (
                 {{ case["expected"]["moves"] }},
                 "{{ case["expected"]["goalBucket"] }}",
-                {{ case["expected"]["otherBucket"] }},
+                {{ case["expected"]["otherBucket"] }}
             ))
 
     {% endfor %}

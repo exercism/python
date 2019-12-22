@@ -10,7 +10,7 @@ import math
 
 {%- macro formatValue(val) -%}
 {% if val is iterable and val is not string -%}
-    ComplexNumber({% for part in val %}{{ translate_math(part) }},{% endfor %})
+    ComplexNumber({% for part in val %}{{ translate_math(part) }}{{ "," if not loop.last }}{% endfor %})
 {%- else -%}
     {{ translate_math(val) }}
 {%- endif -%}
