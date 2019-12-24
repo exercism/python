@@ -1,5 +1,6 @@
-{%- extends "master_template.j2" -%}
+{%- import "generator_macros.j2" as macros with context -%}
 {% set imports = ["evaluate", "StackUnderflowError"] %}
+{{ macros.header(imports=imports, ignore=ignore) }}
 
 {% macro test_case(case) -%}
     def test_{{ case["description"] | to_snake }}(self):
@@ -19,3 +20,19 @@
         self.assertEqual({{ case["property"] }}({{ case["input"]["instructions"] }}), {{ case["expected"] }})
         {%- endif %}
 {%- endmacro %}
+
+{%- macro superclass() -%}
+    {{ exercise | camel_case }}Test
+{%- endmacro -%}
+
+class {{ superclass() }}(unittest.TestCase):
+    {{ macros.utility() }}
+
+{% for case in cases -%}
+class {{ case["description"] | camel_case }}Test({{ superclass() }}):
+    {% for subcase in case["cases"] -%}
+    {{ test_case(subcase) }}
+    {% endfor %}
+{% endfor %}
+
+{{ macros.footer() }}
