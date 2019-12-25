@@ -12,9 +12,9 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         payload = json.dumps({{ input["payload"] }})
         {%- endif %}
         response = api.{{ case["property"] }}(
-            "{{ input["url"] }}",
+            "{{ input["url"] }}"
             {%- if "payload" in input %}
-            payload,
+            , payload
             {%- endif %}
         )
         expected = {{ case["expected"] }}
