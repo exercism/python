@@ -57,3 +57,11 @@ class SayTest(unittest.TestCase):
     def test_numbers_above_999_999_999_999_are_out_of_range(self):
         with self.assertRaisesWithMessage(ValueError):
             say(1000000000000)
+
+    # Utility functions
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
+
+
+if __name__ == "__main__":
+    unittest.main()
