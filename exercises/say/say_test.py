@@ -2,8 +2,8 @@ import unittest
 
 from say import say
 
-
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+
 
 class SayTest(unittest.TestCase):
     def test_zero(self):
@@ -24,46 +24,44 @@ class SayTest(unittest.TestCase):
     def test_one_hundred(self):
         self.assertEqual(say(100), "one hundred")
 
-    # additional track specific test
     def test_one_hundred_twenty_three(self):
-        self.assertEqual(say(123), "one hundred and twenty-three")
+        self.assertEqual(say(123), "one hundred twenty-three")
 
     def test_one_thousand(self):
         self.assertEqual(say(1000), "one thousand")
 
     def test_one_thousand_two_hundred_thirty_four(self):
-        self.assertEqual(say(1234), "one thousand two hundred and thirty-four")
+        self.assertEqual(say(1234), "one thousand two hundred thirty-four")
 
     def test_one_million(self):
         self.assertEqual(say(1000000), "one million")
 
-    def test_1002345(self):
+    def test_one_million_two_thousand_three_hundred_forty_five(self):
         self.assertEqual(
-            say(1002345),
-            "one million two thousand three hundred and forty-five")
+            say(1002345), "one million two thousand three hundred forty-five"
+        )
 
     def test_one_billion(self):
         self.assertEqual(say(1000000000), "one billion")
 
-    def test_987654321123(self):
+    def test_a_big_number(self):
         self.assertEqual(
-            say(987654321123), ("nine hundred and eighty-seven billion "
-                                "six hundred and fifty-four million "
-                                "three hundred and twenty-one thousand "
-                                "one hundred and twenty-three"))
+            say(987654321123),
+            "nine hundred eighty-seven billion six hundred fifty-four million three hundred twenty-one thousand one hundred twenty-three",
+        )
 
-    def test_number_too_large(self):
-        with self.assertRaisesWithMessage(ValueError):
-            say(1000000000000)
-
-    def test_number_negative(self):
+    def test_numbers_below_zero_are_out_of_range(self):
         with self.assertRaisesWithMessage(ValueError):
             say(-1)
+
+    def test_numbers_above_999_999_999_999_are_out_of_range(self):
+        with self.assertRaisesWithMessage(ValueError):
+            say(1000000000000)
 
     # Utility functions
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

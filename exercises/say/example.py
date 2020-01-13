@@ -15,7 +15,7 @@ def say(number, recursive=False):
         raise ValueError('number is too large: {}'.format(number))
 
     if number < 20:
-        return small[number] if not recursive else 'and ' + small[number]
+        return small[number] if not recursive else  + small[number]
 
     if number < 100:
         if number % 10 == 0:
@@ -25,7 +25,7 @@ def say(number, recursive=False):
     if number < k:
         if number % 100 == 0:
             return small[number // 100] + ' hundred'
-        return small[number // 100] + ' hundred and ' + say(number % 100)
+        return small[number // 100] + ' hundred ' + say(number % 100)
 
     if number < m:
         if number % k == 0:
