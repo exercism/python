@@ -24,34 +24,19 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
             self.assertEqual(binary_search_tree({{ case["input"]["treeData"]}}).test_call(case), "{{ case["expected"] }}")
         {%- endif %}
         {%- endif %}
-    {% endfor %}
+    {%-endfor %}
    
    # Utilities
-   def build_tree(data) :
-         root=None
-         for data in tree_data:
-            root=add(root,data)
-         return root
-    
-   def add(root, data):
-        if root is None:
-            root = TreeNode(data)
-            return root
-        cur_node = root
-
-        while true:
-            if data <= cur_node.data:
-                if cur_node.left:
-                    cur_node = cur_node.left
-                else:
-                    cur_node.left = TreeNode(data)
-                    return root
-            elif data > cur_node.data:
-                if cur_node.right:
-                    cur_node = cur_node.right
-                else:
-                    cur_node.right = TreeNode(data)
-                    return root
+   def build_tree(expected) :
+        {% set data =expected['data'] -%}
+        {% set left = expected['left'] -%}
+        {% set right = expected['right'] -%}
+        root = TreeNode({{data}})
+        if left :
+            root.left=build_tree(left) 
+        if right : 
+            root.right= build_tree(right)
+            
 
     def assertTreeEqual(self, tree_one, tree_two):
         try:
