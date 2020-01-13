@@ -5,9 +5,8 @@
 None
 {%- else -%}
 TreeNode("{{ tree_obj["data"] }}",
-    {{- build_tree(tree_obj["left"]) }},
-    {{- build_tree(tree_obj["right"]) -}}
-)
+    {{- build_tree(tree_obj["left"]) -}},
+    {{- build_tree(tree_obj["right"]) -}})
 {%- endif -%}
 {%- endmacro -%}
 
@@ -23,13 +22,10 @@ TreeNode("{{ tree_obj["data"] }}",
         {%- set assertion = "assertEqual" %}
         expected = {{ expected }}
     {%- endif %}
-        self.{{ assertion }}(
-            BinarySearchTree({{ tree_data }}).{{ prop | to_snake }}(),
-            expected
-        )
+        self.{{ assertion }}(BinarySearchTree({{ tree_data }}).{{ prop | to_snake }}(),expected)
 {%- endmacro -%}
 
-{{ macros.header(imports=["BinarySearchTree", "TreeNode"]) }}
+{{ macros.header (imports=["BinarySearchTree", "TreeNode"]) }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
 {%- for case in cases %}
