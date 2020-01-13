@@ -1,0 +1,82 @@
+{%- import "generator_macros.j2" as macros with context -%}
+
+{%- macro test_call(case) %}
+        {{ case["property"] }}()
+{% endmacro -%}
+
+{{ macros.header() }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases -%}
+    
+    def test_{{ case["description"] | to_snake }}(self):
+        {%- if case is error_case %}
+        with self.assertRaisesWithMessage(ValueError):
+            {{- test_call(case) }}
+        {%- else %}
+       
+        {% if case["property"] == "data" %}
+        {% if case["input"]["treeData"] != null %}
+            expected = build_tree({{case["input"]["treeData"]}})
+            self.assertTreeEqual(  binary_search_tree( {{ case["input"]["treeData"]}}).test_call(case), expected)
+        {%- endif %}
+        {%- elif case["property"] == "sortedData" %}
+            self.assertEqual(binary_search_tree({{ case["input"]["treeData"]}}).test_call(case), "{{ case["expected"] }}")
+        {%- endif %}
+        {%- endif %}
+    {% endfor %}
+   
+   # Utilities
+   def build_tree(data) :
+         root=None
+         for data in tree_data:
+            root=add(root,data)
+         return root
+    
+   def add(root, data):
+        if root is None:
+            root = TreeNode(data)
+            return root
+        cur_node = root
+
+        while true:
+            if data <= cur_node.data:
+                if cur_node.left:
+                    cur_node = cur_node.left
+                else:
+                    cur_node.left = TreeNode(data)
+                    return root
+            elif data > cur_node.data:
+                if cur_node.right:
+                    cur_node = cur_node.right
+                else:
+                    cur_node.right = TreeNode(data)
+                    return root
+
+    def assertTreeEqual(self, tree_one, tree_two):
+        try:
+            self.compare_tree(tree_one, tree_two)
+        except AssertionError:
+            raise AssertionError("{} != {}".format(tree_one, tree_two))
+
+    def compare_tree(self, tree_one, tree_two):
+        self.assertEqual(tree_one.data, tree_two.data)
+
+        # Compare left tree nodes
+        if tree_one.left and tree_two.left:
+            self.compare_tree(tree_one.left, tree_two.left)
+        elif tree_one.left is None and tree_two.left is None:
+            pass
+        else:
+            raise AssertionError
+
+        # Compare right tree nodes
+        if tree_one.right and tree_two.right:
+            self.compare_tree(tree_one.right, tree_two.right)
+        elif tree_one.right is None and tree_two.right is None:
+            pass
+        else:
+            raise AssertionError
+
+
+{{ macros.footer() }}
