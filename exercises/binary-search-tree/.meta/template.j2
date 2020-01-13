@@ -1,43 +1,48 @@
 {%- import "generator_macros.j2" as macros with context -%}
 
-{%- macro test_call(case) %}
-        {{ case["property"] }}()
-{% endmacro -%}
+{%- macro build_tree(tree_obj) -%}
+{%- if tree_obj is none -%}
+None
+{%- else -%}
+TreeNode("{{ tree_obj["data"] }}",
+    {{- build_tree(tree_obj["left"]) }},
+    {{- build_tree(tree_obj["right"]) -}}
+)
+{%- endif -%}
+{%- endmacro -%}
 
-{{ macros.header() }}
+{%- macro test_case(case) %}
+    def test_{{ case["description"] | to_snake }}(self):
+    {%- set prop = case["property"] -%}
+    {%- set tree_data = case["input"]["treeData"] -%}
+    {%- set expected = case["expected"] -%}
+    {%- if expected is mapping %}
+        {%- set assertion = "assertTreeEqual" %}
+        expected = {{ build_tree(expected) }}
+    {% else %}
+        {%- set assertion = "assertEqual" %}
+        expected = {{ expected }}
+    {%- endif %}
+        self.{{ assertion }}(
+            BinarySearchTree({{ tree_data }}).{{ prop | to_snake }}(),
+            expected
+        )
+{%- endmacro -%}
+
+{{ macros.header(imports=["BinarySearchTree", "TreeNode"]) }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
-    {% for case in cases -%}
-    
-    def test_{{ case["description"] | to_snake }}(self):
-        {%- if case is error_case %}
-        with self.assertRaisesWithMessage(ValueError):
-            {{- test_call(case) }}
-        {%- else %}
-       
-        {% if case["property"] == "data" %}
-        {% if case["input"]["treeData"] != null %}
-            expected = build_tree({{case["input"]["treeData"]}})
-            self.assertTreeEqual(  binary_search_tree( {{ case["input"]["treeData"]}}).test_call(case), expected)
-        {%- endif %}
-        {%- elif case["property"] == "sortedData" %}
-            self.assertEqual(binary_search_tree({{ case["input"]["treeData"]}}).test_call(case), "{{ case["expected"] }}")
-        {%- endif %}
-        {%- endif %}
-    {%-endfor %}
-   
-   # Utilities
-   def build_tree(expected) :
-        {% set data =expected['data'] -%}
-        {% set left = expected['left'] -%}
-        {% set right = expected['right'] -%}
-        root = TreeNode({{data}})
-        if left :
-            root.left=build_tree(left) 
-        if right : 
-            root.right= build_tree(right)
-            
+{%- for case in cases %}
+    {%- if "cases" in case %}
+        {%- for subcase in case["cases"] %}
+            {{ test_case(subcase) }}
+        {%- endfor %}
+    {%- else -%}
+        {{ test_case(case) }}
+    {%- endif %}
+{%- endfor %}
 
+   # Utilities
     def assertTreeEqual(self, tree_one, tree_two):
         try:
             self.compare_tree(tree_one, tree_two)
