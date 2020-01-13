@@ -1,0 +1,25 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.header(imports=["WordSearch", "Point"]) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        puzzle = WordSearch({{ case["input"]["grid"] }})
+        {%- for word in case["input"]["wordsToSearchFor"] %}
+        {%- set search_answer = "puzzle.search('{}')".format(word) -%}
+        {%- if case["expected"][word] is none %}
+        self.assertIsNone({{ search_answer }})
+        {%- else %}
+        {%- set expected = case["expected"][word] %}
+        self.assertEqual({{ search_answer }},
+            (
+            Point({{ expected["start"]["column"] - 1 }}, {{ expected["start"]["row"] - 1 }}),
+            Point({{ expected["end"]["column"] - 1 }}, {{ expected["end"]["row"] - 1}}))
+            )
+        {%- endif %}
+        {%- endfor %}
+
+    {% endfor %}
+
+{{ macros.footer() }}
+
