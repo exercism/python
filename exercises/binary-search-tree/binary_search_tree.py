@@ -1,5 +1,5 @@
 class TreeNode:
-    def __init__(self, data, left, right):
+    def __init__(self, data, left=None, right=None):
         self.data = None
         self.left = None
         self.right = None

@@ -1,0 +1,68 @@
+{%- import "generator_macros.j2" as macros with context -%}
+
+{%- macro build_tree(tree_obj) -%}
+{%- if tree_obj is none -%}
+None
+{%- else -%}
+TreeNode("{{ tree_obj["data"] }}",
+    {{- build_tree(tree_obj["left"]) -}},
+    {{- build_tree(tree_obj["right"]) -}})
+{%- endif -%}
+{%- endmacro -%}
+
+{%- macro test_case(case) %}
+    def test_{{ case["description"] | to_snake }}(self):
+    {%- set prop = case["property"] -%}
+    {%- set tree_data = case["input"]["treeData"] -%}
+    {%- set expected = case["expected"] -%}
+    {%- if expected is mapping %}
+        {%- set assertion = "assertTreeEqual" %}
+        expected = {{ build_tree(expected) }}
+    {%- else %}
+        {%- set assertion = "assertEqual" %}
+        expected = {{ expected }}
+    {%- endif %}
+        self.{{ assertion }}(BinarySearchTree({{ tree_data }}).{{ prop | to_snake }}(),expected)
+{%- endmacro -%}
+
+{{ macros.header (imports=["BinarySearchTree", "TreeNode"]) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+{%- for case in cases %}
+    {%- if "cases" in case %}
+        {%- for subcase in case["cases"] %}
+            {{ test_case(subcase) }}
+        {%- endfor %}
+    {%- else -%}
+        {{ test_case(case) }}
+    {%- endif %}
+{%- endfor %}
+
+   # Utilities
+    def assertTreeEqual(self, tree_one, tree_two):
+        try:
+            self.compare_tree(tree_one, tree_two)
+        except AssertionError:
+            raise AssertionError("{} != {}".format(tree_one, tree_two))
+
+    def compare_tree(self, tree_one, tree_two):
+        self.assertEqual(tree_one.data, tree_two.data)
+
+        # Compare left tree nodes
+        if tree_one.left and tree_two.left:
+            self.compare_tree(tree_one.left, tree_two.left)
+        elif tree_one.left is None and tree_two.left is None:
+            pass
+        else:
+            raise AssertionError
+
+        # Compare right tree nodes
+        if tree_one.right and tree_two.right:
+            self.compare_tree(tree_one.right, tree_two.right)
+        elif tree_one.right is None and tree_two.right is None:
+            pass
+        else:
+            raise AssertionError
+
+
+{{ macros.footer() }}
