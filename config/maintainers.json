@@ -60,6 +60,16 @@
       "link_url": null,
       "avatar_url": null,
       "bio": null
+    },
+    {
+      "github_username": "sebito91",
+      "alumnus": false,
+      "show_on_website": false,
+      "name": "Sebastian Borza",
+      "link_text": "sborza.com",
+      "link_url": "https://www.sborza.com/",
+      "avatar_url": null,
+      "bio": "I'm a Canadian (based in Chicago) golang, C and python developer working on projects within the gaming, finance and data-science worlds respectively. My favorite freetime task is coding challenges and I'm more than happy to help people talk through solutions!"
     }
   ]
 }
