@@ -1,0 +1,54 @@
+{%- import "generator_macros.j2" as macros with context -%}
+
+{%- macro build_tree(tree_obj) -%}
+{%- if tree_obj is none -%}
+null
+{%- else -%}
+self.bt("{{ tree_obj["value"] }}",
+    {{- build_tree(tree_obj["left"]) -}},
+    {{- build_tree(tree_obj["right"]) -}})
+{%- endif -%}
+{%- endmacro -%}
+
+{%- macro makeOperations(operations) -%}
+{%- if operations is none -%}
+{% set ns = namespace(operation_str = "") %}
+{%- else -%}
+{%- for operation in operations %}
+{%- if loop.first %}
+        {% set ns.operation_str = "." + operation + "()" %}
+    {% else %} 
+        {% set ns.operasion_str = ns.operasion_str+ "." + operation +" ()" %}
+    {%- endif -%}
+{%- endfor %}
+{% set ns.operasion_str =  ns.operasion_str+ ".to_tree()" %}
+{%- endif -%}
+{%- endmacro -%}
+   
+{%- macro test_case(case) %}
+    def test_{{ case["description"] | to_snake }}(self):
+    {%- set operations= case["input"]["operations"] -%}
+    {%- set initialTree = case["input"]["initialTree"] -%}
+    {%- set expected = case["expected"] -%}
+    {%- set operation= makeOperations(operations)  -%}
+    initialTreeBT = {{ build_tree( initialTree)}}
+    expected =  {{ build_tree(expected["value"]) }}
+    zipper = Zipper.from_tree(initialTreeBT).{{operation}}
+    self.{{ assertion }}(zipper.{{ prop | to_snake }}(),expected)
+{%- endmacro -%}
+
+{{ macros.header (imports=["Zipper"]) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+{%- for case in cases %}
+    {{ test_case(case) }}
+{%- endfor %}
+
+def bt(self, value, left=null, right=null):
+        return {
+            'value': value,
+            'left':  left,
+            'right': right
+        }
+
+{{ macros.footer() }}

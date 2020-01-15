@@ -18,7 +18,8 @@ TreeNode("{{ tree_obj["data"] }}",
     {%- if expected is mapping %}
         {%- set assertion = "assertTreeEqual" %}
         expected = {{ build_tree(expected) }}
-    {% else %}
+    {%- else %}
+
         {%- set assertion = "assertEqual" %}
         expected = {{ expected }}
     {%- endif %}

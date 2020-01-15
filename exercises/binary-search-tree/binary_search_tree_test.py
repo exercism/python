@@ -1,9 +1,13 @@
 import unittest
 
+<<<<<<< HEAD
 from binary_search_tree import (
     BinarySearchTree,
     TreeNode,
 )
+=======
+from binary_search_tree import BinarySearchTree, TreeNode
+>>>>>>> master
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 
@@ -11,22 +15,34 @@ from binary_search_tree import (
 class BinarySearchTreeTest(unittest.TestCase):
     def test_data_is_retained(self):
         expected = TreeNode("4", None, None)
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
         self.assertTreeEqual(BinarySearchTree(["4"]).data(), expected)
 
     def test_smaller_number_at_left_node(self):
         expected = TreeNode("4", TreeNode("2", None, None), None)
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
         self.assertTreeEqual(BinarySearchTree(["4", "2"]).data(), expected)
 
     def test_same_number_at_left_node(self):
         expected = TreeNode("4", TreeNode("4", None, None), None)
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
         self.assertTreeEqual(BinarySearchTree(["4", "4"]).data(), expected)
 
     def test_greater_number_at_right_node(self):
         expected = TreeNode("4", None, TreeNode("5", None, None))
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
         self.assertTreeEqual(BinarySearchTree(["4", "5"]).data(), expected)
 
     def test_can_create_complex_tree(self):
