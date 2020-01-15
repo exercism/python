@@ -1,8 +1,8 @@
 NODE, EDGE, ATTR = range(3)
 
 
-class Node(object):
-    def __init__(self, name, attrs={}):
+class Node:
+    def __init__(self, name, attrs):
         self.name = name
         self.attrs = attrs
 
@@ -10,8 +10,8 @@ class Node(object):
         return self.name == other.name and self.attrs == other.attrs
 
 
-class Edge(object):
-    def __init__(self, src, dst, attrs={}):
+class Edge:
+    def __init__(self, src, dst, attrs):
         self.src = src
         self.dst = dst
         self.attrs = attrs
@@ -22,6 +22,6 @@ class Edge(object):
                 self.attrs == other.attrs)
 
 
-class Graph(object):
-    def __init__(self, data=[]):
+class Graph:
+    def __init__(self, data=None):
         pass

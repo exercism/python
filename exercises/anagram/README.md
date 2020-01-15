@@ -1,10 +1,12 @@
 # Anagram
 
-Given a word and a list of possible anagrams, select the correct sublist.
+An anagram is a rearrangement of letters to form a new word.
+Given a word and a list of candidates, select the sublist of anagrams of the given word.
 
 Given `"listen"` and a list of candidates like `"enlists" "google"
 "inlets" "banana"` the program should return a list containing
 `"inlets"`.
+
 
 ## Exception messages
 
@@ -22,12 +24,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest anagram_test.py`
 
-- Python 2.7: `py.test anagram_test.py`
-- Python 3.4+: `pytest anagram_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest anagram_test.py`
 
 ### Common `pytest` options

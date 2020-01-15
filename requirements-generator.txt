@@ -1,0 +1,4 @@
+black==19.3b0
+flake8==3.7.8
+Jinja2==2.10.1
+python-dateutil==2.8.1

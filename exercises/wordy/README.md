@@ -2,6 +2,14 @@
 
 Parse and evaluate simple math word problems returning the answer as an integer.
 
+## Iteration 0 — Numbers
+
+Problems with no operations simply evaluate to the number given.
+
+> What is 5?
+
+Evaluates to 5.
+
 ## Iteration 1 — Addition
 
 Add two numbers together.
@@ -43,6 +51,14 @@ left-to-right, _ignoring the typical order of operations._
 
 15  (i.e. not 9)
 
+## Iteration 4 — Errors
+
+The parser should reject:
+
+* Unsupported operations ("What is 52 cubed?")
+* Non-math questions ("Who is the President of the United States")
+* Word problems with invalid syntax ("What is 1 plus plus 2?")
+
 ## Bonus — Exponentials
 
 If you'd like, handle exponentials.
@@ -50,6 +66,7 @@ If you'd like, handle exponentials.
 > What is 2 raised to the 5th power?
 
 32
+
 
 ## Exception messages
 
@@ -67,12 +84,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest wordy_test.py`
 
-- Python 2.7: `py.test wordy_test.py`
-- Python 3.4+: `pytest wordy_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest wordy_test.py`
 
 ### Common `pytest` options

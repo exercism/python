@@ -1,4 +1,4 @@
-class Allergies(object):
+class Allergies:
 
     def __init__(self, score):
         pass

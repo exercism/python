@@ -1,2 +1,2 @@
-def count(ascii_diagram):
+def rectangles(strings):
     pass

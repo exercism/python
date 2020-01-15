@@ -7,15 +7,24 @@ which,
 a**2 + b**2 = c**2
 ```
 
+and such that,
+
+```text
+a < b < c
+```
+
 For example,
 
 ```text
 3**2 + 4**2 = 9 + 16 = 25 = 5**2.
 ```
 
-There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+Given an input integer N, find all Pythagorean triplets for which `a + b + c = N`.
 
-Find the product a * b * c.
+For example, with N = 1000, there is exactly one Pythagorean triplet for which `a + b + c = 1000`: `{200, 375, 425}`.
+
+*NOTE*: The description above mentions mathematical sets, but also that a Pythagorean Triplet {a, b, c} _must_ be ordered such that a < b < c (ascending order). This makes Python's `set` type unsuited to this exercise, since it is an inherently unordered container. Therefore please return a list of lists instead (i.e. `[[a, b, c]]`). You can generate the triplets themselves in whatever order you would like, as the enclosing list's order will be ignored in the tests.
+
 
 ## Exception messages
 
@@ -33,12 +42,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest pythagorean_triplet_test.py`
 
-- Python 2.7: `py.test pythagorean_triplet_test.py`
-- Python 3.4+: `pytest pythagorean_triplet_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest pythagorean_triplet_test.py`
 
 ### Common `pytest` options

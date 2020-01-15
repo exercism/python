@@ -1,10 +1,10 @@
-def prime_factors(number):
+def factors(value):
     factors = []
     divisor = 2
-    while number > 1:
-        while number % divisor == 0:
+    while value > 1:
+        while value % divisor == 0:
             factors.append(divisor)
-            number /= divisor
+            value /= divisor
 
         divisor += 1
 

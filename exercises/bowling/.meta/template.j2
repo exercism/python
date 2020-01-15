@@ -1,0 +1,28 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{% macro test_case(case) -%}
+    {%- set input = case["input"] -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        rolls = {{ input["previousRolls"] }}
+        game = self.roll_new_game(rolls)
+        {% if case is error_case -%}
+        with self.assertRaisesWithMessage(Exception):
+            game.roll({{ input["roll"] }})
+        {% else -%}
+        self.assertEqual(game.score(), {{ case["expected"] }})
+        {% endif %}
+{%- endmacro %}
+{{ macros.header(["BowlingGame"]) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    def roll_new_game(self, rolls):
+        game = BowlingGame()
+        for roll in rolls:
+            game.roll(roll)
+        return game
+
+    {% for case in cases -%}
+    {{ test_case(case) }}
+    {% endfor %}
+
+
+{{ macros.footer() }}

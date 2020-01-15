@@ -1,7 +1,7 @@
 MAX_FRAME = 10
 
 
-class Frame(object):
+class Frame:
     def __init__(self, idx):
         self.idx = idx
         self.throws = []
@@ -38,7 +38,7 @@ class Frame(object):
         return result
 
 
-class BowlingGame(object):
+class BowlingGame:
     def __init__(self):
         self.current_frame_idx = 0
         self.bonus_throws = []

@@ -1,0 +1,48 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{%- macro test_case(group_name, case) -%}
+    {%- set input = case["input"] -%}
+    def test_{{ group_name | to_snake }}_
+    {{- case["description"] | to_snake }}(self):
+        garden = Garden(
+            "{{ input["diagram"].replace("\n", "\\n") }}"
+            {%- if "students" in input -%}
+            , students={{ input["students"] }}
+            {%- endif %}
+        )
+        self.assertEqual(
+            garden.{{- case["property"] | to_snake -}}
+            ("{{ input["student"] }}"),
+            [{% for val in case["expected"] -%}
+            "{{ val | camel_case }}"{{- "," if not loop.last }}
+            {% endfor %}]
+        )
+{% endmacro -%}
+{{ macros.header(["Garden"]) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for casegroup in cases %}
+    {%- set group_name = casegroup["description"] -%}
+    {%- for case in casegroup["cases"] %}
+    {%- if "input" in case %}
+        {{- test_case(group_name, case) }}
+    {%- elif "cases" in case %}
+    {%- for subcase in case["cases"] %}
+        {{- test_case(group_name, subcase) }}
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+    {%- if additional_cases | length %}
+
+    # Additional tests for this track
+
+    {% for casegroup in additional_cases -%}
+    {% for case in casegroup["cases"] -%}
+    {{ test_case(casegroup["description"], case) }}
+    {% endfor %}
+    {%- endfor %}
+    {%- endif %}
+
+
+
+{{ macros.footer() }}

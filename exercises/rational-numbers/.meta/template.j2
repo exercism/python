@@ -1,0 +1,97 @@
+{%- import "generator_macros.j2" as macros with context -%}
+
+{%- set operators = {
+    "add": "+",
+    "sub": "-",
+    "mul": "*",
+    "div": "/",
+    "exprational": "**",
+    "expreal": "**"
+} -%}
+
+{% macro test_case_arithmetic(case) -%}
+    {%- set r1 = "Rational({}, {})".format(case["input"]["r1"][0], case["input"]["r1"][1]) -%}
+    {%- set r2 = "Rational({}, {})".format(case["input"]["r2"][0], case["input"]["r2"][1]) -%}
+    {%- set expected = "Rational({}, {})".format(case["expected"][0], case["expected"][1]) -%}
+    {%- set operator = operators[case["property"]] -%}
+
+    def test_{{ case["description"] | to_snake }}(self):
+        self.assertEqual({{r1}} {{operator}} {{r2}}, {{expected}})
+{%- endmacro %}
+
+{% macro test_case_absolutevalue(case) -%}
+    {%- set r = "Rational({}, {})".format(case["input"]["r"][0], case["input"]["r"][1]) -%}
+    {%- set expected = "Rational({}, {})".format(case["expected"][0], case["expected"][1]) -%}
+    {%- set method = case["property"] -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        self.assertEqual({{method}}({{r}}), {{expected}})
+{%- endmacro %}
+
+{% macro test_case_exponentiation(case) -%}
+    {%- set r = "Rational({}, {})".format(case["input"]["r"][0], case["input"]["r"][1]) -%}
+    {%- set n = case["input"]["n"] -%}
+    {%- set expected = "Rational({}, {})".format(case["expected"][0], case["expected"][1]) -%}
+    {%- set operator = operators[case["property"]] -%}
+
+    def test_{{ case["description"] | to_snake }}(self):
+        self.assertEqual({{r}} {{operator}} {{n}}, {{expected}})
+{%- endmacro %}
+
+{% macro test_case_exponentiation_real(case) -%}
+    {%- set x = case["input"]["x"] -%}
+    {%- set r = "Rational({}, {})".format(case["input"]["r"][0], case["input"]["r"][1]) -%}
+    {%- set expected = case["expected"] -%}
+    {%- set operator = operators[case["property"]] -%}
+
+    def test_{{ case["description"] | to_snake }}(self):
+        self.assertAlmostEqual({{x}} {{operator}} {{r}}, {{expected}}, places=8)
+{%- endmacro %}
+
+{% macro test_case_reduction(case) -%}
+    {%- set r = "Rational({}, {})".format(case["input"]["r"][0], case["input"]["r"][1]) -%}
+    {%- set expected = "Rational({}, {})".format(case["expected"][0], case["expected"][1]) -%}
+
+    def test_{{ case["description"] | to_snake }}(self):
+        self.assertEqual({{r}}, {{expected}})
+{%- endmacro %}
+
+{% macro render_arithmetic_cases(mathtypescases) -%}
+
+    {% for mathoperationcases in mathtypescases["cases"] %}
+    # {{ mathoperationcases["description"] }}
+        {% for case in mathoperationcases["cases"] %}
+    {{ test_case_arithmetic(case) }}
+        {% endfor %}
+    {% endfor %}
+
+{%- endmacro %}
+
+{% macro render_other_cases(mathtypescases) -%}
+
+    {% for case in mathtypescases["cases"] %}
+        {% if mathtypescases["description"] == 'Absolute value' %}
+    {{ test_case_absolutevalue(case) }}
+        {% elif mathtypescases["description"] == 'Exponentiation of a rational number' %}
+    {{ test_case_exponentiation(case) }}
+        {% elif mathtypescases["description"] == 'Exponentiation of a real number to a rational number' %}
+    {{ test_case_exponentiation_real(case) }}
+        {% elif mathtypescases["description"] == 'Reduction to lowest terms' %}
+    {{ test_case_reduction(case) }}
+        {% endif %}
+    {% endfor %}
+
+{%- endmacro %}
+
+from __future__ import division
+{{ macros.header(imports=["Rational"]) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for mathtypescases in cases %}
+    # Tests of type: {{ mathtypescases["description"] }}
+        {% if mathtypescases["description"] == 'Arithmetic' %}
+            {{ render_arithmetic_cases(mathtypescases) }}
+        {% else %}
+            {{ render_other_cases(mathtypescases) }}
+        {% endif %}
+    {% endfor %}
+{{ macros.footer() }}

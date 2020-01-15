@@ -179,12 +179,6 @@ class TreeBuildingTest(unittest.TestCase):
         self.assertEqual(len(node.children), 0)
 
     # Utility functions
-    def setUp(self):
-        try:
-            self.assertRaisesRegex
-        except AttributeError:
-            self.assertRaisesRegex = self.assertRaisesRegexp
-
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
 

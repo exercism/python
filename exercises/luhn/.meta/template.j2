@@ -1,0 +1,45 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{%- macro test_case(group_name, case) -%}
+    {%- set input = case["input"] -%}
+    def test_{{ group_name | to_snake }}_
+    {{- case["description"] | to_snake }}(self):
+        garden = Garden(
+            "{{ input["diagram"].replace("\n", "\\n") }}"
+            {%- if "students" in input -%}
+            , students={{ input["students"] }}
+            {%- endif %}
+        )
+        self.assertEqual(
+            garden.{{- case["property"] | to_snake -}}
+            ("{{ input["student"] }}"),
+            [{% for val in case["expected"] -%}
+            "{{ val | camel_case }}",
+            {% endfor %}]
+        )
+{% endmacro -%}
+{{ macros.header(["Luhn"]) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases %}
+    def test_{{ case["description"] | to_snake }}(self):
+        self.assertIs(Luhn("
+            {{- case["input"]["value"] }}").
+            {{- case["property"] }}(), {{ case["expected"] -}}
+        )
+    {% endfor %}
+
+    {# This test was explicitly included because it is
+        significantly different in structure from the other tests,
+        and does not make sense to template in using an
+        additional_tests.json file-#}
+    # Additional tests for this track
+
+    def test_is_valid_can_be_called_repeatedly(self):
+        # This test was added, because we saw many implementations
+        # in which the first call to valid() worked, but the
+        # second call failed().
+        number = Luhn("055 444 285")
+        self.assertIs(number.valid(), True)
+        self.assertIs(number.valid(), True)
+
+{{ macros.footer() }}

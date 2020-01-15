@@ -1,2 +1,2 @@
-def raindrops(number):
+def convert(number):
     pass

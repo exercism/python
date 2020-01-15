@@ -1,0 +1,35 @@
+{%- extends "master_template.j2" -%}
+{% set imports = ["Board", "WHITE", "BLACK", "NONE"] %}
+
+{% macro tuplify(territory_list) -%}
+    {%- if territory_list %}
+    {
+    {%- for v in territory_list %}
+    ({{ v | join(', ') }}){{ "," if not loop.last }}
+    {%- endfor %}
+    }
+    {%- else %}
+    set()
+    {%- endif %}
+{%- endmacro %}
+
+
+{% macro test_case(case) -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        board = Board({{ case["input"]["board"] }})
+        {%- if case is error_case %}
+        with self.assertRaisesWithMessage(ValueError):
+            board.territory(x={{ case["input"]["x"] }}, y={{ case["input"]["y"] }})
+        {%- else %}
+        {%- if "owner" in case["expected"] %}
+        stone, territory = board.territory(x={{ case["input"]["x"] }}, y={{ case["input"]["y"] }})
+        self.assertEqual(stone, {{ case["expected"]["owner"] }})
+        self.assertSetEqual(territory, {{ tuplify(case["expected"]["territory"]) }})
+        {%- else %}
+        territories = board.territories()
+        {%- for (k, v) in case["expected"].items() %}
+        self.assertSetEqual(territories[{{k.replace("territory", "") | upper }}], {{tuplify(v)}})
+        {%- endfor %}
+        {%- endif %}
+        {%- endif %}
+{%- endmacro %}

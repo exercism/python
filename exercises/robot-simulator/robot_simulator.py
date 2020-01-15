@@ -1,4 +1,4 @@
-# Globals for the bearings
+# Globals for the directions
 # Change the values as you see fit
 EAST = None
 NORTH = None
@@ -6,6 +6,6 @@ WEST = None
 SOUTH = None
 
 
-class Robot(object):
-    def __init__(self, bearing=NORTH, x=0, y=0):
+class Robot:
+    def __init__(self, direction=NORTH, x=0, y=0):
         pass

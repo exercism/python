@@ -1,0 +1,25 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{%- macro testcase(case) %}
+    def test_{{ case["description"] | to_snake }}(self):
+        scores = {{ case["input"]["scores"] }}
+        expected = {{ case["expected"] }}
+        self.assertEqual({{ case["property"] | to_snake }}(scores), expected)
+{% endmacro -%}
+{{ macros.header(ignore=["scores"]) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {%- for case in cases -%}
+    {%- if "cases" in case -%}
+    {%- for subcase in case["cases"] -%}
+    {{- testcase(subcase) -}}
+    {% endfor %}
+    {%- else %}
+    {%- if case["property"] != "scores" %}
+    {{- testcase(case) -}}
+    {% endif -%}
+    {% endif -%}
+    {% endfor %}
+
+
+if __name__ == '__main__':
+    unittest.main()

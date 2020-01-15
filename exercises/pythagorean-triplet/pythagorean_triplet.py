@@ -1,8 +1,8 @@
-def triplets_with_sum(sum_of_triplet):
+def triplets_with_sum(number):
     pass
 
 
-def triplets_in_range(range_start, range_end):
+def triplets_in_range(start, end):
     pass
 
 

@@ -1,0 +1,27 @@
+{%- import "generator_macros.j2" as macros with context -%}
+
+{%- macro list_int_to_hex(integers) %}
+            [
+                {% for integer in integers -%}
+                {{ "0x{:x}".format(integer) }}{{- "," if not loop.last }}
+                {% endfor %}
+            ]
+{% endmacro -%}
+
+{{ macros.header() }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases -%}
+        {%- for sub_case in case.cases %}
+    def test_{{ sub_case["description"] | to_snake }}(self):
+        {%- if sub_case is error_case %}
+        with self.assertRaisesWithMessage(ValueError):
+            {{ sub_case["property"] }}({{ list_int_to_hex(sub_case["input"]["integers"]) }})
+        {%- else %}
+        self.assertEqual({{ sub_case["property"] }}({{ list_int_to_hex(sub_case["input"]["integers"]) }}), {{ list_int_to_hex(sub_case["expected"]) }})
+        {%- endif %}
+        {% endfor -%}
+
+    {% endfor %}
+
+{{ macros.footer() }}

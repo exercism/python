@@ -16,7 +16,7 @@ class DotDslTest(unittest.TestCase):
             (NODE, "a", {})
         ])
 
-        self.assertEqual(g.nodes, [Node("a")])
+        self.assertEqual(g.nodes, [Node("a", {})])
         self.assertEqual(g.edges, [])
         self.assertEqual(g.attrs, {})
 
@@ -113,12 +113,6 @@ class DotDslTest(unittest.TestCase):
             ])
 
     # Utility methods
-    def setUp(self):
-        try:
-            self.assertRaisesRegex
-        except AttributeError:
-            self.assertRaisesRegex = self.assertRaisesRegexp
-
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
 

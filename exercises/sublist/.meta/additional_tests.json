@@ -1,0 +1,31 @@
+{
+  "cases": [
+    {
+      "description": "inner spaces",
+      "property": "sublist",
+      "input": {
+        "listOne": ["a c"],
+        "listTwo": ["a", "c"]
+      },
+      "expected": "unequal"
+    },
+    {
+      "description": "large lists",
+      "property": "sublist",
+      "input": {
+        "listOne": "list(range(1000)) * 1000 + list(range(1000, 1100))",
+        "listTwo": "list(range(900, 1050))"
+      },
+      "expected": "superlist"
+    },
+    {
+      "description": "spread sublist",
+      "property": "sublist",
+      "input": {
+        "listOne": "list(range(3, 200, 3))",
+        "listTwo": "list(range(15, 200, 15))"
+      },
+      "expected": "unequal"
+    }
+  ]
+}

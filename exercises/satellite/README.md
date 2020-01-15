@@ -1,4 +1,4 @@
-# Retree
+# Satellite
 
 Imagine you need to transmit a binary tree to a satellite approaching Alpha
 Centauri and you have limited bandwidth. Since the tree has no repeating
@@ -28,6 +28,7 @@ Note: the first item in the pre-order traversal is always the root.
 
 [wiki]: https://en.wikipedia.org/wiki/Tree_traversal
 
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
@@ -44,13 +45,10 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422$
+To run the tests, run `pytest satellite_test.py`
 
-- Python 2.7: `py.test retree_test.py`
-- Python 3.4+: `pytest retree_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
-`python -m pytest retree_test.py`
+Alternatively, you can tell Python to run the pytest module:
+`python -m pytest satellite_test.py`
 
 ### Common `pytest` options
 
@@ -62,7 +60,7 @@ For other options, see `python -m pytest -h`
 
 ## Submitting Exercises
 
-Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/retree` directory.
+Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/satellite` directory.
 
 You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Workspace`.
 

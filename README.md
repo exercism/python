@@ -1,6 +1,6 @@
 # Exercism Python Track
 
-[![Build Status](https://travis-ci.org/exercism/python.svg?branch=master)](https://travis-ci.org/exercism/python) [![Requirements Status](https://pyup.io/repos/github/exercism/python/shield.svg)](https://pyup.io/repos/github/exercism/python/)
+[![Build Status](https://travis-ci.org/exercism/python.svg?branch=master)](https://travis-ci.org/exercism/python)
 [![Join the chat at https://gitter.im/exercism/python](https://badges.gitter.im/exercism/python.svg)](https://gitter.im/exercism/python?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Exercism exercises in Python
@@ -8,7 +8,8 @@ Exercism exercises in Python
 
 ## Contributing Guide
 
-Please see the [contributing guide](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/README.md)
+Please see the [Exercism contributing guide](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/README.md)
+and the [Python track contributing guide](CONTRIBUTING.md)
 
 
 ## Working on the Exercises
@@ -30,14 +31,14 @@ A list of missing exercise can be found here: https://github.com/exercism/python
 
 ### Testing
 
-All exercises must be compatible with Python versions 2.7 and 3.4 upwards.
+All exercises must be compatible with Python version 3.4 upwards.
 
-To test a single exercise (e.g., with Python 2.7):
+To test a single exercise:
 ```
-python2.7 test/check-exercises.py [exercise-name]
+python3 test/check-exercises.py [exercise-name]
 ```
 
-To test all exercises (e.g., with Python 3):
+To test all exercises:
 ```
 python3 test/check-exercises.py
 ```

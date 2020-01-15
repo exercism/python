@@ -15,6 +15,7 @@ In our particular instance of the game, the target rewards with 4 different amou
 The outer circle has a radius of 10 units (This is equivalent to the total radius for the entire target), the middle circle a radius of 5 units, and the inner circle a radius of 1. Of course, they are all centered to the same point (That is, the circles are [concentric](http://mathworld.wolfram.com/ConcentricCircles.html)) defined by the coordinates (0, 0).
 
 Write a function that given a point in the target (defined by its `real` cartesian coordinates `x` and `y`), returns the correct amount earned by a dart landing in that point.
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
@@ -31,12 +32,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest darts_test.py`
 
-- Python 2.7: `py.test darts_test.py`
-- Python 3.4+: `pytest darts_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest darts_test.py`
 
 ### Common `pytest` options
@@ -58,7 +56,7 @@ please see [Running the Tests](http://exercism.io/tracks/python/tests).
 
 ## Source
 
-Inspired by an excersie created by a professor Della Paolera in Argentina
+Inspired by an exercise created by a professor Della Paolera in Argentina
 
 ## Submitting Incomplete Solutions
 

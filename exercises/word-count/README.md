@@ -1,15 +1,35 @@
 # Word Count
 
-Given a phrase, count the occurrences of each word in that phrase.
+Given a phrase, count the occurrences of each _word_ in that phrase.
 
-For example for the input `"olly olly in come free"`
+For the purposes of this exercise you can expect that a _word_ will always be one of:
+
+1. A _number_ composed of one or more ASCII digits (ie "0" or "1234") OR
+2. A _simple word_ composed of one or more ASCII letters (ie "a" or "they") OR
+3. A _contraction_ of two _simple words_ joined by a single apostrophe (ie "it's" or "they're")
+
+When counting words you can assume the following rules:
+
+1. The count is _case insensitive_ (ie "You", "you", and "YOU" are 3 uses of the same word)
+2. The count is _unordered_; the tests will ignore how words and counts are ordered
+3. Other than the apostrophe in a _contraction_ all forms of _punctuation_ are ignored
+4. The words can be separated by _any_ form of whitespace (ie "\t", "\n", " ")
+
+For example, for the phrase `"That's the password: 'PASSWORD 123'!", cried the Special Agent.\nSo I fled.` the count would be:
 
 ```text
-olly: 2
-in: 1
-come: 1
-free: 1
+that's: 1
+the: 2
+password: 2
+123: 1
+cried: 1
+special: 1
+agent: 1
+so: 1
+i: 1
+fled: 1
 ```
+
 
 ## Exception messages
 
@@ -27,12 +47,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest word_count_test.py`
 
-- Python 2.7: `py.test word_count_test.py`
-- Python 3.4+: `pytest word_count_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest word_count_test.py`
 
 ### Common `pytest` options

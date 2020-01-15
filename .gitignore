@@ -7,6 +7,9 @@ tmp
 bin/configlet
 bin/configlet.exe
 .idea/
+.vscode/
+.mypy_cache/
 .cache
 .pytest_cache
 __pycache__
+.venv

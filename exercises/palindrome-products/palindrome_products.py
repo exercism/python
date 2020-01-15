@@ -1,6 +1,6 @@
-def largest_palindrome(max_factor, min_factor):
+def largest(min_factor, max_factor):
     pass
 
 
-def smallest_palindrome(max_factor, min_factor):
+def smallest(min_factor, max_factor):
     pass

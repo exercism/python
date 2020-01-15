@@ -1,2 +1,2 @@
-def prime_factors(natural_number):
+def factors(value):
     pass

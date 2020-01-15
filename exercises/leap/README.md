@@ -13,9 +13,6 @@ on every year that is evenly divisible by 4
 For example, 1997 is not a leap year, but 1996 is.  1900 is not a leap
 year, but 2000 is.
 
-If your language provides a method in the standard library that does
-this look-up, pretend it doesn't exist and implement it yourself.
-
 ## Notes
 
 Though our exercise adopts some very simple rules, there is more to
@@ -25,6 +22,7 @@ For a delightful, four minute explanation of the whole leap year
 phenomenon, go watch [this youtube video][video].
 
 [video]: http://www.youtube.com/watch?v=xX96xng7sAE
+
 
 ## Exception messages
 
@@ -42,12 +40,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest leap_test.py`
 
-- Python 2.7: `py.test leap_test.py`
-- Python 3.4+: `pytest leap_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest leap_test.py`
 
 ### Common `pytest` options

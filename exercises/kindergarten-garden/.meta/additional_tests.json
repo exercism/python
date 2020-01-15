@@ -1,0 +1,29 @@
+{
+  "cases": [
+    {
+      "description": "students are unordered",
+      "cases": [
+        {
+          "description": "first student",
+          "property": "plants",
+          "input": {
+            "diagram": "VCRRGVRG\nRVGCCGCV",
+            "students": ["Samantha", "Patricia", "Xander", "Roger"],
+            "student": "Patricia"
+          },
+          "expected": ["Violets", "Clover", "Radishes", "Violets"]
+        },
+        {
+          "description": "last student",
+          "property": "plants",
+          "input": {
+            "diagram": "VCRRGVRG\nRVGCCGCV",
+            "students": ["Samantha", "Patricia", "Xander", "Roger"],
+            "student": "Xander"
+          },
+          "expected": ["Radishes", "Grass", "Clover", "Violets"]
+        }
+      ]
+    }
+  ]
+}

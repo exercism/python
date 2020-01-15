@@ -1,0 +1,20 @@
+{
+  "cases": [
+    {
+      "description": "Missing operation",
+      "property": "answer",
+      "input": {
+        "question": "What is 2 2 minus 3?"
+      },
+      "expected": {"error": "unknown operation"}
+    },
+    {
+      "description": "Missing number",
+      "property": "answer",
+      "input": {
+        "question": "What is 7 plus multiplied by -2?"
+      },
+      "expected": {"error": "unknown operation"}
+    }
+  ]
+}

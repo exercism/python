@@ -2,57 +2,45 @@ import unittest
 
 from pangram import is_pangram
 
+# Tests adapted from `problem-specifications//canonical-data.json` @ v2.0.0
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.1
 
 class PangramTest(unittest.TestCase):
+    def test_empty_sentence(self):
+        self.assertIs(is_pangram(""), False)
 
-    def test_sentence_empty(self):
-        self.assertIs(is_pangram(''), False)
+    def test_perfect_lower_case(self):
+        self.assertIs(is_pangram("abcdefghijklmnopqrstuvwxyz"), True)
 
-    def test_recognizes_a_perfect_lower_case_pangram(self):
-        self.assertIs(is_pangram('abcdefghijklmnopqrstuvwxyz'), True)
+    def test_only_lower_case(self):
+        self.assertIs(is_pangram("the quick brown fox jumps over the lazy dog"), True)
 
-    def test_pangram_with_only_lower_case(self):
+    def test_missing_the_letter_x(self):
         self.assertIs(
-            is_pangram('the quick brown fox jumps over the lazy dog'),
-            True)
+            is_pangram("a quick movement of the enemy will jeopardize five gunboats"),
+            False,
+        )
 
-    def test_missing_character_x(self):
+    def test_missing_the_letter_h(self):
+        self.assertIs(is_pangram("five boxing wizards jump quickly at it"), False)
+
+    def test_with_underscores(self):
+        self.assertIs(is_pangram("the_quick_brown_fox_jumps_over_the_lazy_dog"), True)
+
+    def test_with_numbers(self):
         self.assertIs(
-            is_pangram('a quick movement of the enemy will '
-                       'jeopardize five gunboats'),
-            False)
-
-    def test_another_missing_character(self):
-        self.assertIs(is_pangram('five boxing wizards jump quickly at it'),
-                      False)
-
-    def test_pangram_with_underscores(self):
-        self.assertIs(
-            is_pangram('the_quick_brown_fox_jumps_over_the_lazy_dog'),
-            True)
-
-    def test_pangram_with_numbers(self):
-        self.assertIs(
-            is_pangram('the 1 quick brown fox jumps over the 2 lazy dogs'),
-            True)
+            is_pangram("the 1 quick brown fox jumps over the 2 lazy dogs"), True
+        )
 
     def test_missing_letters_replaced_by_numbers(self):
-        self.assertIs(
-            is_pangram('7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog'),
-            False)
+        self.assertIs(is_pangram("7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog"), False)
 
-    def test_pangram_with_mixedcase_and_punctuation(self):
-        self.assertIs(
-            is_pangram('"Five quacking Zephyrs jolt my wax bed."'),
-            True)
+    def test_mixed_case_and_punctuation(self):
+        self.assertIs(is_pangram('"Five quacking Zephyrs jolt my wax bed."'), True)
 
-    def test_upper_and_lower_case_versions_of_the_same_character(self):
-        self.assertIs(
-            is_pangram('the quick brown fox jumped over the lazy FX'),
-            False)
+    def test_case_insensitive(self):
+        self.assertIs(is_pangram("the quick brown fox jumps over with lazy FX"), False)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

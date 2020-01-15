@@ -1,4 +1,4 @@
-class BowlingGame(object):
+class BowlingGame:
     def __init__(self):
         pass
 

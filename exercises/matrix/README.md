@@ -47,7 +47,6 @@ In this exercise you're going to create a **class**.  _Don't worry, it's not as 
 -   [**Data Structures in Python**](https://docs.python.org/3/tutorial/datastructures.html) from the Python 3 documentation.
 
 
-
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
@@ -64,12 +63,9 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
+To run the tests, run `pytest matrix_test.py`
 
-- Python 2.7: `py.test matrix_test.py`
-- Python 3.4+: `pytest matrix_test.py`
-
-Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
+Alternatively, you can tell Python to run the pytest module:
 `python -m pytest matrix_test.py`
 
 ### Common `pytest` options

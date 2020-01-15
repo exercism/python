@@ -1,0 +1,20 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{% macro test_case(case) -%}
+    {%- set input = case["input"] -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        legacy_data =  { {% for key, value in case["input"]["legacy"].items() %}
+                            {{key}}: {{value}}{{ "," if not loop.last }}{% endfor %} }
+        data = {{case["expected"]}}
+        self.assertEqual(
+            {{ case["property"] | to_snake }}(legacy_data), data
+        )
+{%- endmacro %}
+{{ macros.header()}}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for supercase in cases %}{% for case in supercase["cases"] -%}
+    {{ test_case(case) }}
+    {% endfor %}{% endfor %}
+
+
+{{ macros.footer() }}

@@ -1,0 +1,55 @@
+{%- import "generator_macros.j2" as macros with context -%}
+
+{%- macro test_case(case) %}
+    def test_{{ case["description"] | to_snake }}(self):
+        tree = {{ write_tree(case["input"]["tree"]) }}
+        {% if case["property"] == "fromPov" -%}
+        {{ test_from_pov(case) }}
+        {%- elif case["property"] == "pathTo" -%}
+        {{ test_path_to(case) }}
+        {%- endif -%}
+{% endmacro -%}
+
+{%- macro test_from_pov(case) -%}
+        {% if case["expected"] -%}
+        expected = {{ write_tree(case["expected"]) }}
+        self.assertTreeEquals(tree.{{ case["property"] | to_snake }}("{{ case["input"]["from"] }}"), expected)
+        {% else -%}
+        with self.assertRaisesWithMessage(ValueError):
+            tree.{{ case["property"] | to_snake }}("{{ case["input"]["from"] }}")
+        {% endif -%}
+{% endmacro -%}
+
+{%- macro test_path_to(case) -%}
+        {% if case["expected"] -%}
+        expected = {{ case["expected"] }}
+        self.assertEqual(tree.{{ case["property"] | to_snake }}("{{ case["input"]["from"] }}", "{{ case["input"]["to"]}}"), expected)
+        {% else -%}
+        with self.assertRaisesWithMessage(ValueError):
+            tree.{{ case["property"] | to_snake }}("{{ case["input"]["from"] }}", "{{ case["input"]["to"]}}")
+        {% endif -%}
+{% endmacro -%}
+
+{%- macro write_tree(tree) -%}
+    Tree("{{ tree["label"] }}"
+    {%- if tree["children"] %}, [
+        {%- for child_tree in tree["children"] %}
+        {{ write_tree(child_tree) | indent(4,True,True) }}{{- "," if not loop.last }}
+        {%- endfor %}
+        ]{% endif %})
+{%- endmacro -%}
+
+{{ macros.header(["Tree"]) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for supercase in cases -%}
+    {%- for case in supercase["cases"] %}
+    {{- test_case(case) }}
+    {%- endfor %}
+    {%- endfor %}
+
+# Custom Utility Functions
+    def assertTreeEquals(self, result, expected):
+          self.assertEqual(result, expected,
+                           '{} != {}'.format(result, expected))
+{{ macros.footer(True) }}

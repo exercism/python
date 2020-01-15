@@ -1,0 +1,24 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.header(imports=["RestAPI"]) }}
+import json
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for casegroup in cases -%}{%- for case in casegroup["cases"] -%}
+    {%- set input = case["input"] -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        database = {{ input["database"] }}
+        api = RestAPI(database)
+        {% if "payload" in input -%}
+        payload = json.dumps({{ input["payload"] }})
+        {%- endif %}
+        response = api.{{ case["property"] }}(
+            "{{ input["url"] }}"
+            {%- if "payload" in input %}
+            , payload
+            {%- endif %}
+        )
+        expected = {{ case["expected"] }}
+        self.assertDictEqual(json.loads(response), expected)
+    {% endfor %}{% endfor %}
+
+{{ macros.footer() }}

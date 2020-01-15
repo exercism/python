@@ -1,4 +1,4 @@
-class SgfTree(object):
+class SgfTree:
     def __init__(self, properties=None, children=None):
         self.properties = properties or {}
         self.children = children or []

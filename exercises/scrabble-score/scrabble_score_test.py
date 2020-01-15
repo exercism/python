@@ -2,8 +2,8 @@ import unittest
 
 from scrabble_score import score
 
-
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+
 
 class ScrabbleScoreTest(unittest.TestCase):
     def test_lowercase_letter(self):
@@ -40,5 +40,5 @@ class ScrabbleScoreTest(unittest.TestCase):
         self.assertEqual(score("abcdefghijklmnopqrstuvwxyz"), 87)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

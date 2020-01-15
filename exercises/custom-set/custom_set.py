@@ -1,4 +1,4 @@
-class CustomSet(object):
+class CustomSet:
     def __init__(self, elements=[]):
         pass
 

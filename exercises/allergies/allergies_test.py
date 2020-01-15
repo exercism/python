@@ -2,15 +2,10 @@ import unittest
 
 from allergies import Allergies
 
-# Python 2/3 compatibility
-if not hasattr(unittest.TestCase, 'assertCountEqual'):
-    unittest.TestCase.assertCountEqual = unittest.TestCase.assertItemsEqual
-
-
 # Tests adapted from `problem-specifications//canonical-data.json` @ v2.0.0
 
-class AllergiesTest(unittest.TestCase):
 
+class AllergiesTest(unittest.TestCase):
     def test_eggs_not_allergic_to_anything(self):
         self.assertIs(Allergies(0).allergic_to("eggs"), False)
 
@@ -98,10 +93,10 @@ class AllergiesTest(unittest.TestCase):
     def test_allergic_to_something_but_not_chocolate(self):
         self.assertIs(Allergies(80).allergic_to("chocolate"), False)
 
-    def test_chocolate_alergic_to_everything(self):
+    def test_chocolate_allergic_to_everything(self):
         self.assertIs(Allergies(255).allergic_to("chocolate"), True)
 
-    def test_pollen_not_alergic_to_anything(self):
+    def test_pollen_not_allergic_to_anything(self):
         self.assertIs(Allergies(0).allergic_to("pollen"), False)
 
     def test_allergic_only_to_pollen(self):
@@ -129,45 +124,61 @@ class AllergiesTest(unittest.TestCase):
         self.assertIs(Allergies(64).allergic_to("cats"), False)
 
     def test_cats_allergic_to_everything(self):
-        self.assertIs(Allergies(255).allergic_to('cats'), True)
+        self.assertIs(Allergies(255).allergic_to("cats"), True)
 
     def test_no_allergies(self):
         self.assertEqual(Allergies(0).lst, [])
 
     def test_just_eggs(self):
-        self.assertEqual(Allergies(1).lst, ['eggs'])
+        self.assertEqual(Allergies(1).lst, ["eggs"])
 
     def test_just_peanuts(self):
-        self.assertEqual(Allergies(2).lst, ['peanuts'])
+        self.assertEqual(Allergies(2).lst, ["peanuts"])
 
     def test_just_strawberries(self):
-        self.assertEqual(Allergies(8).lst, ['strawberries'])
+        self.assertEqual(Allergies(8).lst, ["strawberries"])
 
     def test_eggs_and_peanuts(self):
-        self.assertCountEqual(Allergies(3).lst, ['eggs', 'peanuts'])
+        self.assertCountEqual(Allergies(3).lst, ["eggs", "peanuts"])
 
     def test_more_than_eggs_but_not_peanuts(self):
-        self.assertCountEqual(Allergies(5).lst, ['eggs', 'shellfish'])
+        self.assertCountEqual(Allergies(5).lst, ["eggs", "shellfish"])
 
     def test_lots_of_stuff(self):
         self.assertCountEqual(
             Allergies(248).lst,
-            ['strawberries', 'tomatoes', 'chocolate', 'pollen', 'cats'])
+            ["strawberries", "tomatoes", "chocolate", "pollen", "cats"],
+        )
 
     def test_everything(self):
         self.assertCountEqual(
-            Allergies(255).lst, [
-                'eggs', 'peanuts', 'shellfish', 'strawberries', 'tomatoes',
-                'chocolate', 'pollen', 'cats'
-            ])
+            Allergies(255).lst,
+            [
+                "eggs",
+                "peanuts",
+                "shellfish",
+                "strawberries",
+                "tomatoes",
+                "chocolate",
+                "pollen",
+                "cats",
+            ],
+        )
 
     def test_no_allergen_score_parts(self):
         self.assertCountEqual(
-            Allergies(509).lst, [
-                'eggs', 'shellfish', 'strawberries', 'tomatoes', 'chocolate',
-                'pollen', 'cats'
-            ])
+            Allergies(509).lst,
+            [
+                "eggs",
+                "shellfish",
+                "strawberries",
+                "tomatoes",
+                "chocolate",
+                "pollen",
+                "cats",
+            ],
+        )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

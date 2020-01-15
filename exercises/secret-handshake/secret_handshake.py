@@ -1,6 +1,2 @@
-def handshake(code):
-    pass
-
-
-def secret_code(actions):
+def commands(number):
     pass
