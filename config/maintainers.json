@@ -80,6 +80,16 @@
       "link_url": null,
       "avatar_url": null,
       "bio": "Python lover. Instigator. Chaser of shiny objects."
+    },
+    {
+      "github_username": "davidgerva",
+      "alumnus": false,
+      "show_on_website": false,
+      "name": "David Gervasoni",
+      "link_text": null,
+      "link_url": null,
+      "avatar_url": null,
+      "bio": "Software Engineer. I am interested in algorithmic trading and machine learning with a curiosity for AI."
     }
   ]
 }
