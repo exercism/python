@@ -100,6 +100,16 @@
       "link_url": "https://paparomeo.dev/",
       "avatar_url": null,
       "bio": "Coding is a passion I would love others to discover and share."
+    },
+    {
+      "github_username": "aldraco",
+      "alumnus": false,
+      "show_on_website": false,
+      "name": "Ashley Drake",
+      "link_text": "https://aldra.co",
+      "link_url": "https://aldra.co",
+      "avatar_url": null,
+      "bio": "Software Engineer. I enjoy writing organized code and getting outside once in a while."
     }
   ]
 }
