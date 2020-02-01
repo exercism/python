@@ -2,7 +2,7 @@ import unittest
 
 from word_count import count_words
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.5.0
 
 
 class WordCountTest(unittest.TestCase):
@@ -77,6 +77,9 @@ class WordCountTest(unittest.TestCase):
             count_words(",\n,one,\n ,two \n 'three'"), {"one": 1, "two": 1, "three": 1}
         )
 
+    def test_multiple_apostrophes_are_ignored(self):
+        self.assertEqual(count_words("''hey''"), {"hey": 1})
+
     # Additional tests for this track
 
     def test_tabs(self):
@@ -106,10 +109,7 @@ class WordCountTest(unittest.TestCase):
         )
 
     def test_multiple_apostrophes_ignored(self):
-        self.assertEqual(
-            count_words("''hey''"),
-            {"hey": 1},
-        )
+        self.assertEqual(count_words("''hey''"), {"hey": 1})
 
 
 if __name__ == "__main__":
