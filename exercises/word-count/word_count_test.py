@@ -77,9 +77,6 @@ class WordCountTest(unittest.TestCase):
             count_words(",\n,one,\n ,two \n 'three'"), {"one": 1, "two": 1, "three": 1}
         )
 
-    def test_multiple_apostrophes_are_ignored(self):
-        self.assertEqual(count_words("''hey''"), {"hey": 1})
-
     # Additional tests for this track
 
     def test_tabs(self):
