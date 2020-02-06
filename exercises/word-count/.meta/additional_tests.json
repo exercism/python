@@ -33,6 +33,16 @@
         "is": 1,
         "broken": 1
       }
+    },
+    {
+      "description": "multiple apostrophes ignored",
+      "property": "countWords",
+      "input": {
+        "sentence": "''hey''"
+      },
+      "expected": {
+        "hey": 1
+      }
     }
   ]
 }
