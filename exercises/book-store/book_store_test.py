@@ -83,6 +83,18 @@ class BookStoreTest(unittest.TestCase):
         table = 10240
         self.assertEqual(total(results), table)
 
+    # Additional tests for this track
+
+    def test_two_groups_of_four_and_a_group_of_five(self):
+        results = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 5, 5]
+        table = 8120
+        self.assertEqual(total(results), table)
+
+    def test_shuffled_book_order(self):
+        results = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3]
+        table = 8120
+        self.assertEqual(total(results), table)
+
 
 if __name__ == "__main__":
     unittest.main()

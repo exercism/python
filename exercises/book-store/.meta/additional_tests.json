@@ -1,0 +1,22 @@
+{
+  "cases": [
+    {
+      "property": "total",
+      "description": "Two groups of four and a group of five",
+      "comments": ["Suggested grouping, [[1,2,3,4],[1,2,3,5],[1,2,3,4,5]]. Solutions can pass all the other tests if they just try to group without using any groups of 5. This test case breaks that since it requires both 4-groups and 5-groups."],
+      "input": {
+        "basket": [1,1,1,2,2,2,3,3,3,4,4,5,5]
+      },
+      "expected": 8120
+    },
+    {
+      "property": "total",
+      "description": "Shuffled book order",
+      "comments": ["Suggested grouping, [[1,2,3,4],[1,2,3,5],[1,2,3,4,5]]. All the other tests give the books in sorted order.  Robust solutions should be able to handle any order"],
+      "input": {
+        "basket": [1,2,3,4,5,1,2,3,4,5,1,2,3]
+      },
+      "expected": 8120
+    }
+  ]
+}
