@@ -2,7 +2,7 @@ import unittest
 
 from luhn import Luhn
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.6.1
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.7.0
 
 
 class LuhnTest(unittest.TestCase):
@@ -26,6 +26,9 @@ class LuhnTest(unittest.TestCase):
 
     def test_invalid_credit_card(self):
         self.assertIs(Luhn("8273 1232 7352 0569").valid(), False)
+
+    def test_invalid_long_number_with_an_even_remainder(self):
+        self.assertIs(Luhn("1 2345 6789 1234 5678 9012").valid(), False)
 
     def test_valid_number_with_an_even_number_of_digits(self):
         self.assertIs(Luhn("095 245 88").valid(), True)
