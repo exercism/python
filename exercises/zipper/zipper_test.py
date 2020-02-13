@@ -2,75 +2,316 @@ import unittest
 
 from zipper import Zipper
 
-
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
+
 class ZipperTest(unittest.TestCase):
-    def bt(self, value, left, right):
-        return {
-            'value': value,
-            'left': left,
-            'right': right
+    def test_data_is_retained(self):
+
+        initial = {
+            "value": 1,
+            "left": {
+                "value": 2,
+                "left": None,
+                "right": {"value": 3, "left": None, "right": None},
+            },
+            "right": {"value": 4, "left": None, "right": None},
         }
 
-    def leaf(self, value):
-        return self.bt(value, None, None)
+        expected = {
+            "value": 1,
+            "left": {
+                "value": 2,
+                "left": None,
+                "right": {"value": 3, "left": None, "right": None},
+            },
+            "right": {"value": 4, "left": None, "right": None},
+        }
 
-    def create_trees(self):
-        t1 = self.bt(1, self.bt(2, None, self.leaf(3)), self.leaf(4))
-        t2 = self.bt(1, self.bt(5, None, self.leaf(3)), self.leaf(4))
-        t3 = self.bt(1, self.bt(2, self.leaf(5), self.leaf(3)), self.leaf(4))
-        t4 = self.bt(1, self.leaf(2), self.leaf(4))
-        return (t1, t2, t3, t4)
+        zipper = Zipper.from_tree(initial)
+        result = zipper.to_tree()
+        self.assertEqual(result, expected)
 
-    def test_data_is_retained(self):
-        t1, _, _, _ = self.create_trees()
-        zipper = Zipper.from_tree(t1)
-        tree = zipper.to_tree()
-        self.assertEqual(tree, t1)
+    def test_left_right_and_value(self):
 
-    def test_left_and_right_value(self):
-        t1, _, _, _ = self.create_trees()
-        zipper = Zipper.from_tree(t1)
-        self.assertEqual(zipper.left().right().value(), 3)
+        initial = {
+            "value": 1,
+            "left": {
+                "value": 2,
+                "left": None,
+                "right": {"value": 3, "left": None, "right": None},
+            },
+            "right": {"value": 4, "left": None, "right": None},
+        }
+
+        zipper = Zipper.from_tree(initial)
+        result = zipper.left().right().value()
+        self.assertEqual(result, 3)
 
     def test_dead_end(self):
-        t1, _, _, _ = self.create_trees()
-        zipper = Zipper.from_tree(t1)
-        self.assertIsNone(zipper.left().left())
+
+        initial = {
+            "value": 1,
+            "left": {
+                "value": 2,
+                "left": None,
+                "right": {"value": 3, "left": None, "right": None},
+            },
+            "right": {"value": 4, "left": None, "right": None},
+        }
+
+        zipper = Zipper.from_tree(initial)
+        result = zipper.left().left()
+        self.assertIsNone(result)
 
     def test_tree_from_deep_focus(self):
-        t1, _, _, _ = self.create_trees()
-        zipper = Zipper.from_tree(t1)
-        self.assertEqual(zipper.left().right().to_tree(), t1)
+
+        initial = {
+            "value": 1,
+            "left": {
+                "value": 2,
+                "left": None,
+                "right": {"value": 3, "left": None, "right": None},
+            },
+            "right": {"value": 4, "left": None, "right": None},
+        }
+
+        expected = {
+            "value": 1,
+            "left": {
+                "value": 2,
+                "left": None,
+                "right": {"value": 3, "left": None, "right": None},
+            },
+            "right": {"value": 4, "left": None, "right": None},
+        }
+
+        zipper = Zipper.from_tree(initial)
+        result = zipper.left().right().to_tree()
+        self.assertEqual(result, expected)
+
+    def test_traversing_up_from_top(self):
+
+        initial = {
+            "value": 1,
+            "left": {
+                "value": 2,
+                "left": None,
+                "right": {"value": 3, "left": None, "right": None},
+            },
+            "right": {"value": 4, "left": None, "right": None},
+        }
+
+        zipper = Zipper.from_tree(initial)
+        result = zipper.up()
+        self.assertIsNone(result)
+
+    def test_left_right_and_up(self):
+
+        initial = {
+            "value": 1,
+            "left": {
+                "value": 2,
+                "left": None,
+                "right": {"value": 3, "left": None, "right": None},
+            },
+            "right": {"value": 4, "left": None, "right": None},
+        }
+
+        zipper = Zipper.from_tree(initial)
+        result = zipper.left().up().right().up().left().right().value()
+        self.assertEqual(result, 3)
 
     def test_set_value(self):
-        t1, t2, _, _ = self.create_trees()
-        zipper = Zipper.from_tree(t1)
-        updatedZipper = zipper.left().set_value(5)
-        tree = updatedZipper.to_tree()
-        self.assertEqual(tree, t2)
 
-    def test_set_left_with_value(self):
-        t1, _, t3, _ = self.create_trees()
-        zipper = Zipper.from_tree(t1)
-        updatedZipper = zipper.left().set_left(self.leaf(5))
-        tree = updatedZipper.to_tree()
-        self.assertEqual(tree, t3)
+        initial = {
+            "value": 1,
+            "left": {
+                "value": 2,
+                "left": None,
+                "right": {"value": 3, "left": None, "right": None},
+            },
+            "right": {"value": 4, "left": None, "right": None},
+        }
 
-    def test_set_right_to_none(self):
-        t1, _, _, t4 = self.create_trees()
-        zipper = Zipper.from_tree(t1)
-        updatedZipper = zipper.left().set_right(None)
-        tree = updatedZipper.to_tree()
-        self.assertEqual(tree, t4)
+        expected = {
+            "value": 1,
+            "left": {
+                "value": 5,
+                "left": None,
+                "right": {"value": 3, "left": None, "right": None},
+            },
+            "right": {"value": 4, "left": None, "right": None},
+        }
+
+        zipper = Zipper.from_tree(initial)
+        result = zipper.left().set_value(5).to_tree()
+        self.assertEqual(result, expected)
+
+    def test_set_value_after_traversing_up(self):
+
+        initial = {
+            "value": 1,
+            "left": {
+                "value": 2,
+                "left": None,
+                "right": {"value": 3, "left": None, "right": None},
+            },
+            "right": {"value": 4, "left": None, "right": None},
+        }
+
+        expected = {
+            "value": 1,
+            "left": {
+                "value": 5,
+                "left": None,
+                "right": {"value": 3, "left": None, "right": None},
+            },
+            "right": {"value": 4, "left": None, "right": None},
+        }
+
+        zipper = Zipper.from_tree(initial)
+        result = zipper.left().right().up().set_value(5).to_tree()
+        self.assertEqual(result, expected)
+
+    def test_set_left_with_leaf(self):
+
+        initial = {
+            "value": 1,
+            "left": {
+                "value": 2,
+                "left": None,
+                "right": {"value": 3, "left": None, "right": None},
+            },
+            "right": {"value": 4, "left": None, "right": None},
+        }
+
+        expected = {
+            "value": 1,
+            "left": {
+                "value": 2,
+                "left": {"value": 5, "left": None, "right": None},
+                "right": {"value": 3, "left": None, "right": None},
+            },
+            "right": {"value": 4, "left": None, "right": None},
+        }
+
+        zipper = Zipper.from_tree(initial)
+        result = (
+            zipper.left().set_left({"value": 5, "left": None, "right": None}).to_tree()
+        )
+        self.assertEqual(result, expected)
+
+    def test_set_right_with_null(self):
+
+        initial = {
+            "value": 1,
+            "left": {
+                "value": 2,
+                "left": None,
+                "right": {"value": 3, "left": None, "right": None},
+            },
+            "right": {"value": 4, "left": None, "right": None},
+        }
+
+        expected = {
+            "value": 1,
+            "left": {"value": 2, "left": None, "right": None},
+            "right": {"value": 4, "left": None, "right": None},
+        }
+
+        zipper = Zipper.from_tree(initial)
+        result = zipper.left().set_right(None).to_tree()
+        self.assertEqual(result, expected)
+
+    def test_set_right_with_subtree(self):
+
+        initial = {
+            "value": 1,
+            "left": {
+                "value": 2,
+                "left": None,
+                "right": {"value": 3, "left": None, "right": None},
+            },
+            "right": {"value": 4, "left": None, "right": None},
+        }
+
+        expected = {
+            "value": 1,
+            "left": {
+                "value": 2,
+                "left": None,
+                "right": {"value": 3, "left": None, "right": None},
+            },
+            "right": {
+                "value": 6,
+                "left": {"value": 7, "left": None, "right": None},
+                "right": {"value": 8, "left": None, "right": None},
+            },
+        }
+
+        zipper = Zipper.from_tree(initial)
+        result = zipper.set_right(
+            {
+                "value": 6,
+                "left": {"value": 7, "left": None, "right": None},
+                "right": {"value": 8, "left": None, "right": None},
+            }
+        ).to_tree()
+        self.assertEqual(result, expected)
+
+    def test_set_value_on_deep_focus(self):
+
+        initial = {
+            "value": 1,
+            "left": {
+                "value": 2,
+                "left": None,
+                "right": {"value": 3, "left": None, "right": None},
+            },
+            "right": {"value": 4, "left": None, "right": None},
+        }
+
+        expected = {
+            "value": 1,
+            "left": {
+                "value": 2,
+                "left": None,
+                "right": {"value": 5, "left": None, "right": None},
+            },
+            "right": {"value": 4, "left": None, "right": None},
+        }
+
+        zipper = Zipper.from_tree(initial)
+        result = zipper.left().right().set_value(5).to_tree()
+        self.assertEqual(result, expected)
 
     def test_different_paths_to_same_zipper(self):
-        t1, _, _, _ = self.create_trees()
-        zipper = Zipper.from_tree(t1)
-        self.assertEqual(zipper.left().up().right().to_tree(),
-                         zipper.right().to_tree())
+
+        initial = {
+            "value": 1,
+            "left": {
+                "value": 2,
+                "left": None,
+                "right": {"value": 3, "left": None, "right": None},
+            },
+            "right": {"value": 4, "left": None, "right": None},
+        }
+        result = Zipper.from_tree(initial).left().up().right().to_tree()
+
+        final = {
+            "value": 1,
+            "left": {
+                "value": 2,
+                "left": None,
+                "right": {"value": 3, "left": None, "right": None},
+            },
+            "right": {"value": 4, "left": None, "right": None},
+        }
+        expected = Zipper.from_tree(final).right().to_tree()
+
+        self.assertEqual(result, expected)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
