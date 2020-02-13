@@ -2,9 +2,8 @@
 {% macro test_case(case) -%}
     {%- set input = case["input"] -%}
     def test_{{ case["description"] | to_snake }}(self):
-        results = {{ input["basket"] }}
-        table = {{ case["expected"] }}
-        self.assertEqual({{ case["property"] }}(results), table)
+        basket = {{ input["basket"] }}
+        self.assertEqual({{ case["property"] }}(basket), {{ case["expected"] }})
 {%- endmacro %}
 {{ macros.header() }}
 
