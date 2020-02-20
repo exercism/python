@@ -39,4 +39,9 @@ def fetch_configlet():
 
 
 if __name__ == "__main__":
-    sys.exit(fetch_configlet())
+    max_retries = 5
+    for i in range(max_retries):
+        ret = fetch_configlet()
+        if ret == 0:
+            break
+    sys.exit(ret)
