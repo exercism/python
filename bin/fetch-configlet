@@ -19,8 +19,7 @@ def get_os():
         return "mac"
     elif os_.startswith("Windows"):
         return "windows"
-    else:
-        return "linux"
+    return "linux"
 
 
 def get_arch():
