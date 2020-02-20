@@ -13,42 +13,46 @@ def download_and_extract(url):
     file.extractall(path='bin/')
 
 
-def parse_arch(arch):
-    if '64' in arch:
+def get_os():
+    _os = platform.platform()
+    if _os.startswith("Darwin"):
+        return "mac"
+    elif _os.startswith("Windows"):
+        return "windows"
+    else:
+        return "linux"
+
+
+def get_arch():
+    if sys.maxsize > 2**32:
         return '64bit'
-    elif '686' in arch or '386' in arch:
+    else:
         return '32bit'
-    return '64bit'
-
-
-def is_64bites():
-    return sys.maxsize > 2**32
 
 
 def fetch_configlet():
-    os = platform.uname().system.lower()
-    if is_64bites():
-        arch = '64bit'
-    else:
-        arch = '32bit'
     latest = "https://api.github.com/repos/exercism/configlet/releases/latest"
     resp = requests.get(latest)
     data = resp.json()
     version = data["tag_name"]
-    name = f"configlet-{os.lower()}-{arch}.tgz"
+    machine_info = f"{get_os()}-{get_arch()}"
+    name = f"configlet-{machine_info}.tgz"
     for asset in data["assets"]:
-        print("{name}".format(**asset))
         if asset["name"] == name:
-            print(f"Downloading configlet {version} for {os}-{arch}")
+            print(f"Downloading configlet {version} for {machine_info}")
             download_and_extract(asset["browser_download_url"])
             return 0
     return 1
 
 
-if __name__ == "__main__":
+def main():
     max_retries = 5
     for i in range(max_retries):
         ret = fetch_configlet()
         if ret == 0:
             break
-    sys.exit(ret)
+    return ret
+
+
+if __name__ == "__main__":
+    sys.exit(main())
