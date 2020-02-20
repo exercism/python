@@ -1,13 +1,26 @@
 {%- import "generator_macros.j2" as macros with context -%}
-{{ macros.header() }}
-
-class {{ exercise | camel_case }}Test(unittest.TestCase):
-    {% for casegroup in cases %}{% for case in casegroup["cases"] -%}
+{% macro test_case(case) -%}
     {%- set input = case["input"] -%}
     def test_{{ case["description"] | to_snake }}(self):
         basket = {{ input["basket"] }}
         self.assertEqual({{ case["property"] }}(basket), {{ case["expected"] }})
+{%- endmacro %}
+{{ macros.header() }}
 
-    {% endfor %}{% endfor %}
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for casegroup in cases %}
+    {% for case in casegroup["cases"] -%}
+    {{ test_case(case) }}
+    {% endfor %}
+    {% endfor %}
+
+    {% if additional_cases | length -%}
+
+    # Additional tests for this track
+
+    {% for case in additional_cases -%}
+    {{ test_case(case) }}
+    {% endfor %}
+    {%- endif %}
 
 {{ macros.footer() }}
