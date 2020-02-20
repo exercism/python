@@ -29,7 +29,7 @@
         {%- endif %}
 {%- endmacro %}
 
-{%- macro same_result_from_operations(input, expected) %}
+{%- macro same_result_from_operations(input, expected) -%}
         initial = {{ input["initialTree"] }}
         result = Zipper.from_tree(initial){{ chain(input["operations"]) }}.to_tree()
 
