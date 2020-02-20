@@ -110,6 +110,16 @@
       "link_url": "https://aldra.co",
       "avatar_url": null,
       "bio": "Software Engineer. I enjoy writing organized code and getting outside once in a while."
+    },
+    {
+      "github_username": "khoivan88",
+      "alumnus": false,
+      "show_on_website": false,
+      "name": "Khoi Van",
+      "link_text": "My github",
+      "link_url": "https://github.com/khoivan88",
+      "avatar_url": null,
+      "bio": "I am a chemist, actually, and recently got into coding and enjoy how much it can dramatically improve other fields"
     }
   ]
 }
