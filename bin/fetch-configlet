@@ -15,9 +15,9 @@ def download_and_extract(url):
 
 def get_os():
     os_ = platform.platform()
-    if os_.startswith("Darwin"):
+    if os_ == "Darwin":
         return "mac"
-    elif os_.startswith("Windows"):
+    elif os_ == "Windows":
         return "windows"
     return "linux"
 
