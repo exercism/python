@@ -7,7 +7,6 @@ from zipper import Zipper
 
 class ZipperTest(unittest.TestCase):
     def test_data_is_retained(self):
-
         initial = {
             "value": 1,
             "left": {
@@ -33,7 +32,6 @@ class ZipperTest(unittest.TestCase):
         self.assertEqual(result, expected)
 
     def test_left_right_and_value(self):
-
         initial = {
             "value": 1,
             "left": {
@@ -49,7 +47,6 @@ class ZipperTest(unittest.TestCase):
         self.assertEqual(result, 3)
 
     def test_dead_end(self):
-
         initial = {
             "value": 1,
             "left": {
@@ -65,7 +62,6 @@ class ZipperTest(unittest.TestCase):
         self.assertIsNone(result)
 
     def test_tree_from_deep_focus(self):
-
         initial = {
             "value": 1,
             "left": {
@@ -91,7 +87,6 @@ class ZipperTest(unittest.TestCase):
         self.assertEqual(result, expected)
 
     def test_traversing_up_from_top(self):
-
         initial = {
             "value": 1,
             "left": {
@@ -107,7 +102,6 @@ class ZipperTest(unittest.TestCase):
         self.assertIsNone(result)
 
     def test_left_right_and_up(self):
-
         initial = {
             "value": 1,
             "left": {
@@ -123,7 +117,6 @@ class ZipperTest(unittest.TestCase):
         self.assertEqual(result, 3)
 
     def test_set_value(self):
-
         initial = {
             "value": 1,
             "left": {
@@ -149,7 +142,6 @@ class ZipperTest(unittest.TestCase):
         self.assertEqual(result, expected)
 
     def test_set_value_after_traversing_up(self):
-
         initial = {
             "value": 1,
             "left": {
@@ -175,7 +167,6 @@ class ZipperTest(unittest.TestCase):
         self.assertEqual(result, expected)
 
     def test_set_left_with_leaf(self):
-
         initial = {
             "value": 1,
             "left": {
@@ -203,7 +194,6 @@ class ZipperTest(unittest.TestCase):
         self.assertEqual(result, expected)
 
     def test_set_right_with_null(self):
-
         initial = {
             "value": 1,
             "left": {
@@ -225,7 +215,6 @@ class ZipperTest(unittest.TestCase):
         self.assertEqual(result, expected)
 
     def test_set_right_with_subtree(self):
-
         initial = {
             "value": 1,
             "left": {
@@ -261,7 +250,6 @@ class ZipperTest(unittest.TestCase):
         self.assertEqual(result, expected)
 
     def test_set_value_on_deep_focus(self):
-
         initial = {
             "value": 1,
             "left": {
@@ -287,7 +275,6 @@ class ZipperTest(unittest.TestCase):
         self.assertEqual(result, expected)
 
     def test_different_paths_to_same_zipper(self):
-
         initial = {
             "value": 1,
             "left": {
