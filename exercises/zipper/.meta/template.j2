@@ -11,7 +11,7 @@
         {%- endif %}
 {%- endmacro -%}
 
-{%- macro expected_value(input, expected) %}
+{%- macro expected_value(input, expected) -%}
         initial = {{ input["initialTree"] }}
 
         {% if expected["type"] == "tree" %}
@@ -54,4 +54,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
 {%- endfor %}
 
 {{ macros.footer() }}
-
