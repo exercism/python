@@ -1,0 +1,56 @@
+{%- import "generator_macros.j2" as macros with context -%}
+
+{%- macro test_case(case) %}
+    {%- set input = case["input"] -%}
+    {%- set expected = case["expected"] -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        {%- if case["property"] == "sameResultFromOperations" %}
+        {{ same_result_from_operations(input, expected) }}
+        {%- else %}
+        {{ expected_value(input, expected) }}
+        {%- endif %}
+{%- endmacro -%}
+
+{%- macro expected_value(input, expected) -%}
+        initial = {{ input["initialTree"] }}
+
+        {% if expected["type"] == "tree" %}
+        expected = {{ expected["value"] }}
+        {%- endif %}
+
+        zipper = Zipper.from_tree(initial)
+        result = zipper{{ chain(input["operations"]) }}
+        {%- if expected["type"] == "tree" %}
+        self.assertEqual(result, expected) 
+        {%- elif expected["value"] is none %}
+        self.assertIsNone(result)
+        {%- else %}
+        self.assertEqual(result, {{ expected["value"] }})
+        {%- endif %}
+{%- endmacro %}
+
+{%- macro same_result_from_operations(input, expected) -%}
+        initial = {{ input["initialTree"] }}
+        result = Zipper.from_tree(initial){{ chain(input["operations"]) }}.to_tree()
+
+        final = {{ expected["initialTree"] }}
+        expected = Zipper.from_tree(final){{ chain(expected["operations"]) }}.to_tree()
+
+        self.assertEqual(result, expected)
+{%- endmacro %}
+
+
+{%- macro chain(operations) %}
+    {%- for op in operations -%}
+        .{{ op["operation"] }}({{ op["item"] }})
+    {%- endfor %}
+{%- endmacro -%}
+
+{{ macros.header (imports=["Zipper"]) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+{%- for case in cases %}
+    {{ test_case(case) }}
+{%- endfor %}
+
+{{ macros.footer() }}
