@@ -1,32 +1,42 @@
-#!/bin/bash
+#!/usr/bin/env python3.7
+import io
+import tarfile
+import platform
+import requests
+import sys
 
-LATEST=https://github.com/exercism/configlet/releases/latest
 
-OS=$(
-case $(uname) in
-    (Darwin*)
-        echo "mac";;
-    (Linux*)
-        echo "linux";;
-    (Windows*)
-        echo "windows";;
-    (*)
-        echo "linux";;
-esac)
+def download_and_extract(url):
+    resp = requests.get(url)
+    print('extracting...')
+    file = tarfile.open(fileobj=io.BytesIO(resp.content), mode='r:gz')
+    file.extractall(path='bin/')
 
-ARCH=$(
-case $(uname -m) in
-    (*64*)
-        echo 64bit;;
-    (*686*)
-        echo 32bit;;
-    (*386*)
-        echo 32bit;;
-    (*)
-        echo 64bit;;
-esac)
 
-VERSION="$(curl --head --silent $LATEST | awk -v FS=/ '/Location:/{print $NF}' | tr -d '\r')"
-URL=https://github.com/exercism/configlet/releases/download/$VERSION/configlet-$OS-${ARCH}.tgz
+def parse_arch(arch):
+    if '64' in arch:
+        return '64bit'
+    elif '686' in arch or '386' in arch:
+        return '32bit'
+    return '64bit'
 
-curl -s --location $URL | tar xz -C bin/
+
+def fetch_configlet():
+    os, *_, arch = platform.uname()
+    arch = parse_arch(arch)
+    latest = "https://api.github.com/repos/exercism/configlet/releases/latest"
+    resp = requests.get(latest)
+    data = resp.json()
+    version = data["tag_name"]
+    name = f"configlet-{os.lower()}-{arch}.tgz"
+    for asset in data["assets"]:
+        print("{name}".format(**asset))
+        if asset["name"] == name:
+            print(f"Downloading configlet {version} for {os}-{arch}")
+            download_and_extract(asset["browser_download_url"])
+            return 0
+    return 1
+
+
+if __name__ == "__main__":
+    sys.exit(fetch_configlet())
