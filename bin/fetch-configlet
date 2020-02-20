@@ -24,10 +24,7 @@ def get_os():
 
 
 def get_arch():
-    if sys.maxsize > 2**32:
-        return '64bit'
-    else:
-        return '32bit'
+    return '64bit' if sys.maxsize > 2**32 else '32bit'
 
 
 def fetch_configlet():
