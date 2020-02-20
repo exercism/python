@@ -21,9 +21,16 @@ def parse_arch(arch):
     return '64bit'
 
 
+def is_64bites():
+    return sys.maxsize > 2**32
+
+
 def fetch_configlet():
-    os, *_, arch = platform.uname()
-    arch = parse_arch(arch)
+    os = platform.uname().system.lower()
+    if is_64bites():
+        arch = '64bit'
+    else:
+        arch = '32bit'
     latest = "https://api.github.com/repos/exercism/configlet/releases/latest"
     resp = requests.get(latest)
     data = resp.json()
