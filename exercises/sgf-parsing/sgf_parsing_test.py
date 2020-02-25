@@ -70,7 +70,7 @@ class SgfParsingTest(unittest.TestCase):
         self.assertEqual(parse(input_string), expected)
 
     def test_escaped_property(self):
-        input_string = "(;A[\]b\nc\nd\t\te \n\]])"
+        input_string = "(;A[\\]b\nc\nd\t\te \n\\]])"
         expected = SgfTree(properties={"A": ["]b\nc\nd  e \n]"]})
         self.assertEqual(parse(input_string), expected)
 
