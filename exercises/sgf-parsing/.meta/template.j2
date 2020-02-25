@@ -2,7 +2,7 @@
 
 {% macro test_case(case) -%}
     def test_{{ case["description"] | to_snake }}(self):
-        input_string = '{{ case["input"]["encoded"] }}'
+        input_string = '{{ case["input"]["encoded"] | escape_invalid_escapes }}'
         {% if case["expected"]["error"] -%}
         with self.assertRaisesWithMessage(ValueError):
             {{ case["property"] | to_snake }}(input_string)
