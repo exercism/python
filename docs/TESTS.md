@@ -121,6 +121,6 @@ Then, just add the `--pep8` flag to your command
 pytest --pep8 bob_test.py
 ```
 
-Read the [pytest documentation](http://pytest.org/latest/contents.html#toc) and
+Read the [pytest documentation](https://docs.pytest.org/en/latest/contents.html) and
 [pytest-cache](http://pythonhosted.org/pytest-cache/) documentation to learn
 more.
