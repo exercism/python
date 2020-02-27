@@ -1,5 +1,59 @@
-# How to implement an Python concept exercise
+# How to implement a Python concept exercise
 
-TODO: describe how to implement a concept exercise for the Python track. For inspiration, check out the [C# version of this file][csharp-implementing].
+This document describes the steps required to implement a concept exercise for the Python track. As this document is generic, the following placeholders are used:
 
-[csharp-implementing]: ../../csharp/reference/implementing-a-concept-exercise.md
+- `<SLUG>`: the name of the exercise in kebab-case (e.g. `anonymous-methods`).
+- `<NAME>`: the name of the exercise in snake_case (e.g. `anonymous_methods`).
+
+Before implementing the exercise, please make sure you have a good understanding of what the exercise should be teaching (and what not). This information can be found in the exercise's GitHub issue.
+
+To implement a concept exercise, the following files need to be created:
+
+```
+languages
+└── python
+    └── exercises
+        └── concept
+            └── <SLUG>
+                ├── .docs
+                |   ├── instructions.md
+                |   ├── introduction.md
+                |   ├── hints.md
+                |   └── after.md
+                ├── .meta
+                |   ├── config.json
+                |   └── example.py
+                ├── <NAME>.py
+                └── <NAME>_test.py
+        └── practice
+            └── <SLUG>
+                ├── .docs
+                |   ├── instructions.md
+                |   ├── introduction.md
+                |   ├── hints.md
+                |   └── after.md
+                ├── .meta
+                |   ├── config.json
+                |   └── example.py
+                ├── <NAME>.py
+                └── <NAME>_test.py
+
+```
+
+## Step 1: add track-specific files
+
+These are files specific to the Python track:
+- `src/<NAME>.py`: the stub implementation file, which is the starting point for students to work on the exercise.
+- `test/<NAME>_test.py`: the test suite.
+- `.meta/example.py`: an example implementation that passes all the tests.
+
+## Step 2: add common files
+
+How to create the files common to all tracks is described in the [how to implement a concept exercise document][how-to-implement-a-concept-exercise].
+
+## Inspiration
+
+When implementing an exercise, it can be very useful to look at already implemented Python exercises. You can also check the exercise's [general concepts documents][reference] to see if other languages have already implemented an exercise for that concept.
+
+[reference]: ../../../reference
+[how-to-implement-a-concept-exercise]: ../../../docs/maintainers/generic-how-to-implement-a-concept-exercise.md
