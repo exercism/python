@@ -18,7 +18,7 @@ def open_mock(fname, *args, **kwargs):
     except KeyError:
         raise RuntimeError("Expected one of {0!r}: got {1!r}".format(list(FILE_TEXT.keys()), fname))
 
-@mock.patch("grep.open", name="open", side_effect=open_mock)
+@mock.patch("grep.open", name="open", side_effect=open_mock, create=True)
 @mock.patch("io.StringIO", name="StringIO", wraps=io.StringIO)
 class {{ exercise | camel_case }}Test(unittest.TestCase):
 {% set suite_tests = cases -%}
