@@ -1,16 +1,26 @@
 #!/usr/bin/env python3.7
+from datetime import datetime, timezone
 import io
-import tarfile
+import json
 import platform
-import requests
 import sys
+import tarfile
+import time
+from urllib.request import urlopen
 
 
 def download_and_extract(url):
-    resp = requests.get(url)
-    print('extracting...')
-    file = tarfile.open(fileobj=io.BytesIO(resp.content), mode='r:gz')
-    file.extractall(path='bin/')
+    with urlopen(url) as request:
+        status = request.status
+        if status >= 400:
+            print(f"Unexpected {status} status from download server.")
+            time.sleep(5)
+            return 1
+        response = request.read()
+    print("extracting...")
+    file = tarfile.open(fileobj=io.BytesIO(response), mode="r:gz")
+    file.extractall(path="bin/")
+    return 0
 
 
 def get_os():
@@ -23,21 +33,40 @@ def get_os():
 
 
 def get_arch():
-    return '64bit' if sys.maxsize > 2**32 else '32bit'
+    return "64bit" if sys.maxsize > 2 ** 32 else "32bit"
 
 
 def fetch_configlet():
-    latest = "https://api.github.com/repos/exercism/configlet/releases/latest"
-    resp = requests.get(latest)
-    data = resp.json()
-    version = data["tag_name"]
+    with urlopen(
+        "https://api.github.com/repos/exercism/configlet/releases/latest"
+    ) as request:
+        status = request.status
+        headers = dict(request.getheaders())
+        response = request.read()
+    if status >= 500:
+        print(f"Sleeping due to {status} response from API.")
+        time.sleep(5)
+        return 1
+    if status == 403:
+        wait_until = datetime.fromtimestamp(
+            headers["X-RateLimit-Reset"], timezone.utc
+        )
+        delta = wait_until - datetime.now(timezone.utc)
+        seconds = delta.total_seconds()
+        wait = seconds + 5 if seconds > 5 else 5
+        print(f"Rate limited, sleeping {wait} seconds.")
+        time.sleep(wait)
+        return 1
+    if status >= 400:
+        sys.exit(f"Received unexpected {status} response from API.")
+    data = json.loads(response.decode())
+        version = data["tag_name"]
     machine_info = f"{get_os()}-{get_arch()}"
     name = f"configlet-{machine_info}.tgz"
     for asset in data["assets"]:
         if asset["name"] == name:
             print(f"Downloading configlet {version} for {machine_info}")
-            download_and_extract(asset["browser_download_url"])
-            return 0
+            return download_and_extract(asset["browser_download_url"])
     return 1
 
 
