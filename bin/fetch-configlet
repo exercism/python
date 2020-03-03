@@ -60,7 +60,7 @@ def fetch_configlet():
     if status >= 400:
         sys.exit(f"Received unexpected {status} response from API.")
     data = json.loads(response.decode())
-        version = data["tag_name"]
+    version = data["tag_name"]
     machine_info = f"{get_os()}-{get_arch()}"
     name = f"configlet-{machine_info}.tgz"
     for asset in data["assets"]:
