@@ -9,17 +9,20 @@ import time
 from urllib.request import urlopen
 
 
+BACKOFF_TIME = 5
+MAX_RETRIES = 5
+
 def download_and_extract(url):
     with urlopen(url) as request:
         status = request.status
         if status >= 400:
             print(f"Unexpected {status} status from download server.")
-            time.sleep(5)
+            time.sleep(BACKOFF_TIME)
             return 1
         response = request.read()
     print("extracting...")
-    file = tarfile.open(fileobj=io.BytesIO(response), mode="r:gz")
-    file.extractall(path="bin/")
+    with tarfile.open(fileobj=io.BytesIO(response), mode="r:*") as file:
+        file.extractall(path="bin/")
     return 0
 
 
@@ -49,17 +52,17 @@ def fetch_configlet():
         return 1
     if status == 403:
         wait_until = datetime.fromtimestamp(
-            headers["X-RateLimit-Reset"], timezone.utc
+            int(headers["X-RateLimit-Reset"]), timezone.utc
         )
         delta = wait_until - datetime.now(timezone.utc)
         seconds = delta.total_seconds()
-        wait = seconds + 5 if seconds > 5 else 5
+        wait = seconds + 5 if seconds > BACKOFF_TIME else BACKOFF_TIME
         print(f"Rate limited, sleeping {wait} seconds.")
         time.sleep(wait)
         return 1
     if status >= 400:
         sys.exit(f"Received unexpected {status} response from API.")
-    data = json.loads(response.decode())
+    data = json.loads(response.decode("utf-8"))
     version = data["tag_name"]
     machine_info = f"{get_os()}-{get_arch()}"
     name = f"configlet-{machine_info}.tgz"
@@ -71,8 +74,7 @@ def fetch_configlet():
 
 
 def main():
-    max_retries = 5
-    for i in range(max_retries):
+    for i in range(MAX_RETRIES):
         ret = fetch_configlet()
         if ret == 0:
             break
