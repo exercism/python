@@ -93,7 +93,7 @@
     },
     {
       "github_username": "paparomeo",
-      "alumnus": false,
+      "alumnus": true,
       "show_on_website": false,
       "name": "Pedro Romano",
       "link_text": "My (inactive) blog",
