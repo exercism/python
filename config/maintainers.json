@@ -92,6 +92,16 @@
       "bio": "Software Engineer. I am interested in algorithmic trading and machine learning with a curiosity for AI."
     },
     {
+      "github_username": "paparomeo",
+      "alumnus": false,
+      "show_on_website": false,
+      "name": "Pedro Romano",
+      "link_text": "My (inactive) blog",
+      "link_url": "https://paparomeo.dev/",
+      "avatar_url": null,
+      "bio": "Coding is a passion I would love others to discover and share."
+    },
+    {
       "github_username": "aldraco",
       "alumnus": false,
       "show_on_website": false,
