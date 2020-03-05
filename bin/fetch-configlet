@@ -18,12 +18,12 @@ def download_and_extract(url):
         if status >= 400:
             print(f"Unexpected {status} status from download server.")
             time.sleep(BACKOFF_TIME)
-            return 1
+            return False
         response = request.read()
     print("extracting...")
     with tarfile.open(fileobj=io.BytesIO(response), mode="r:*") as file:
         file.extractall(path="bin/")
-    return 0
+    return True
 
 
 def get_os():
@@ -69,12 +69,14 @@ def fetch_configlet():
     for asset in data["assets"]:
         if asset["name"] == name:
             print(f"Downloading configlet {version} for {machine_info}")
-            return download_and_extract(asset["browser_download_url"])
+            for _ in range(MAX_RETRIES):
+                if download_and_extract(asset["browser_download_url"]):
+                    return 0
     return 1
 
 
 def main():
-    for i in range(MAX_RETRIES):
+    for _ in range(MAX_RETRIES):
         ret = fetch_configlet()
         if ret == 0:
             break
