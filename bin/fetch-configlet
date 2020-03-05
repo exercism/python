@@ -7,19 +7,29 @@ import sys
 import tarfile
 import time
 from urllib.request import urlopen
+from urllib.error import HTTPError, URLError
 
 
-BACKOFF_TIME = 5
+BACKOFF_TIME = 5  # in seconds
 MAX_RETRIES = 5
 
 def download_and_extract(url):
-    with urlopen(url) as request:
-        status = request.status
-        if status >= 400:
-            print(f"Unexpected {status} status from download server.")
-            time.sleep(BACKOFF_TIME)
-            return False
-        response = request.read()
+    try:
+        with urlopen(url) as request:
+            status = request.status
+            response = request.read()
+    except HTTPError as err:
+        status = err.code
+        response = err.reason
+    except URLError as err:
+        print(err.reason)
+        time.sleep(BACKOFF_TIME)
+        return False
+    if status >= 400:
+        print(f"Unexpected {status} status from download server.")
+        time.sleep(BACKOFF_TIME)
+        return False
+
     print("extracting...")
     with tarfile.open(fileobj=io.BytesIO(response), mode="r:*") as file:
         file.extractall(path="bin/")
@@ -40,15 +50,24 @@ def get_arch():
 
 
 def fetch_configlet():
-    with urlopen(
-        "https://api.github.com/repos/exercism/configlet/releases/latest"
-    ) as request:
+    try:
+        with urlopen(
+            "https://api.github.com/repos/exercism/configlet/releases/latest"
+        ) as request:
         status = request.status
         headers = dict(request.getheaders())
         response = request.read()
+    except HTTPError as err:
+        status = err.code
+        headers = err.headers
+        response = err.reason
+    except URLError as err:
+        print(err.reason)
+        time.sleep(BACKOFF_TIME)
+        return 1
     if status >= 500:
         print(f"Sleeping due to {status} response from API.")
-        time.sleep(5)
+        time.sleep(BACKOFF_TIME)
         return 1
     if status == 403:
         wait_until = datetime.fromtimestamp(
