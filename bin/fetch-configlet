@@ -54,9 +54,9 @@ def fetch_configlet():
         with urlopen(
             "https://api.github.com/repos/exercism/configlet/releases/latest"
         ) as request:
-        status = request.status
-        headers = dict(request.getheaders())
-        response = request.read()
+            status = request.status
+            headers = dict(request.getheaders())
+            response = request.read()
     except HTTPError as err:
         status = err.code
         headers = err.headers
