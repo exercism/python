@@ -2,6 +2,7 @@
 from datetime import datetime, timezone
 import io
 import json
+import logging
 import platform
 import sys
 import tarfile
@@ -10,8 +11,12 @@ from urllib.request import urlopen
 from urllib.error import HTTPError, URLError
 
 
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__file__)
+
 BACKOFF_TIME = 5  # in seconds
 MAX_RETRIES = 5
+
 
 def download_and_extract(url):
     try:
@@ -22,15 +27,15 @@ def download_and_extract(url):
         status = err.code
         response = err.reason
     except URLError as err:
-        print(err.reason)
+        logger.error(err.reason)
         time.sleep(BACKOFF_TIME)
         return False
     if status >= 400:
-        print(f"Unexpected {status} status from download server.")
+        logger.error(f"Unexpected {status} status from download server.")
         time.sleep(BACKOFF_TIME)
         return False
 
-    print("extracting...")
+    logger.info("extracting...")
     with tarfile.open(fileobj=io.BytesIO(response), mode="r:*") as file:
         file.extractall(path="bin/")
     return True
@@ -62,11 +67,11 @@ def fetch_configlet():
         headers = err.headers
         response = err.reason
     except URLError as err:
-        print(err.reason)
+        logger.error(err.reason)
         time.sleep(BACKOFF_TIME)
         return 1
     if status >= 500:
-        print(f"Sleeping due to {status} response from API.")
+        logger.info(f"Sleeping due to {status} response from API.")
         time.sleep(BACKOFF_TIME)
         return 1
     if status == 403:
@@ -76,18 +81,19 @@ def fetch_configlet():
         delta = wait_until - datetime.now(timezone.utc)
         seconds = delta.total_seconds()
         wait = seconds + 5 if seconds > BACKOFF_TIME else BACKOFF_TIME
-        print(f"Rate limited, sleeping {wait} seconds.")
+        logger.info(f"Rate limited, sleeping {wait} seconds.")
         time.sleep(wait)
         return 1
     if status >= 400:
-        sys.exit(f"Received unexpected {status} response from API.")
+        logger.error(f"Received unexpected {status} response from API.")
+        return 1
     data = json.loads(response.decode("utf-8"))
     version = data["tag_name"]
     machine_info = f"{get_os()}-{get_arch()}"
     name = f"configlet-{machine_info}.tgz"
     for asset in data["assets"]:
         if asset["name"] == name:
-            print(f"Downloading configlet {version} for {machine_info}")
+            logger.info(f"Downloading configlet {version} for {machine_info}")
             for _ in range(MAX_RETRIES):
                 if download_and_extract(asset["browser_download_url"]):
                     return 0
