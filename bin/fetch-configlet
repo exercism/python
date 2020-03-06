@@ -1,16 +1,39 @@
 #!/usr/bin/env python3.7
+from datetime import datetime, timezone
 import io
-import tarfile
+import json
 import platform
-import requests
 import sys
+import tarfile
+import time
+from urllib.request import urlopen
+from urllib.error import HTTPError, URLError
 
+
+BACKOFF_TIME = 5  # in seconds
+MAX_RETRIES = 5
 
 def download_and_extract(url):
-    resp = requests.get(url)
-    print('extracting...')
-    file = tarfile.open(fileobj=io.BytesIO(resp.content), mode='r:gz')
-    file.extractall(path='bin/')
+    try:
+        with urlopen(url) as request:
+            status = request.status
+            response = request.read()
+    except HTTPError as err:
+        status = err.code
+        response = err.reason
+    except URLError as err:
+        print(err.reason)
+        time.sleep(BACKOFF_TIME)
+        return False
+    if status >= 400:
+        print(f"Unexpected {status} status from download server.")
+        time.sleep(BACKOFF_TIME)
+        return False
+
+    print("extracting...")
+    with tarfile.open(fileobj=io.BytesIO(response), mode="r:*") as file:
+        file.extractall(path="bin/")
+    return True
 
 
 def get_os():
@@ -23,27 +46,56 @@ def get_os():
 
 
 def get_arch():
-    return '64bit' if sys.maxsize > 2**32 else '32bit'
+    return "64bit" if sys.maxsize > 2 ** 32 else "32bit"
 
 
 def fetch_configlet():
-    latest = "https://api.github.com/repos/exercism/configlet/releases/latest"
-    resp = requests.get(latest)
-    data = resp.json()
+    try:
+        with urlopen(
+            "https://api.github.com/repos/exercism/configlet/releases/latest"
+        ) as request:
+            status = request.status
+            headers = dict(request.getheaders())
+            response = request.read()
+    except HTTPError as err:
+        status = err.code
+        headers = err.headers
+        response = err.reason
+    except URLError as err:
+        print(err.reason)
+        time.sleep(BACKOFF_TIME)
+        return 1
+    if status >= 500:
+        print(f"Sleeping due to {status} response from API.")
+        time.sleep(BACKOFF_TIME)
+        return 1
+    if status == 403:
+        wait_until = datetime.fromtimestamp(
+            int(headers["X-RateLimit-Reset"]), timezone.utc
+        )
+        delta = wait_until - datetime.now(timezone.utc)
+        seconds = delta.total_seconds()
+        wait = seconds + 5 if seconds > BACKOFF_TIME else BACKOFF_TIME
+        print(f"Rate limited, sleeping {wait} seconds.")
+        time.sleep(wait)
+        return 1
+    if status >= 400:
+        sys.exit(f"Received unexpected {status} response from API.")
+    data = json.loads(response.decode("utf-8"))
     version = data["tag_name"]
     machine_info = f"{get_os()}-{get_arch()}"
     name = f"configlet-{machine_info}.tgz"
     for asset in data["assets"]:
         if asset["name"] == name:
             print(f"Downloading configlet {version} for {machine_info}")
-            download_and_extract(asset["browser_download_url"])
-            return 0
+            for _ in range(MAX_RETRIES):
+                if download_and_extract(asset["browser_download_url"]):
+                    return 0
     return 1
 
 
 def main():
-    max_retries = 5
-    for i in range(max_retries):
+    for _ in range(MAX_RETRIES):
         ret = fetch_configlet()
         if ret == 0:
             break

@@ -16,7 +16,6 @@ matrix:
     - env: JOB=HOUSEKEEPING
       python: 3.7
       install:
-        - pip install requests
         - ./bin/fetch-configlet
         - git clone https://github.com/exercism/problem-specifications spec
         - pip install -r requirements-generator.txt
