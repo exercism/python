@@ -31,7 +31,7 @@ def download_and_extract(url):
         time.sleep(BACKOFF_TIME)
         return False
     if status >= 400:
-        logger.error(f"Unexpected {status} status from download server.")
+        logger.error(f"Unexpected {status} status from download server: {response}")
         time.sleep(BACKOFF_TIME)
         return False
 
@@ -67,11 +67,11 @@ def fetch_configlet():
         headers = err.headers
         response = err.reason
     except URLError as err:
-        logger.error(err.reason)
+        logger.exception(err)
         time.sleep(BACKOFF_TIME)
         return 1
     if status >= 500:
-        logger.info(f"Sleeping due to {status} response from API.")
+        logger.info(f"Sleeping due to {status} response from API: {response}")
         time.sleep(BACKOFF_TIME)
         return 1
     if status == 403:
@@ -85,7 +85,7 @@ def fetch_configlet():
         time.sleep(wait)
         return 1
     if status >= 400:
-        logger.error(f"Received unexpected {status} response from API.")
+        logger.error(f"Received unexpected {status} response from API: {response}")
         return 1
     data = json.loads(response.decode("utf-8"))
     version = data["tag_name"]
