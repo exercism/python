@@ -41,6 +41,14 @@ class PangramTest(unittest.TestCase):
     def test_case_insensitive(self):
         self.assertIs(is_pangram("the quick brown fox jumps over with lazy FX"), False)
 
+    def test_all_letters_checked(self):
+        alphabet = ''
+        for c in range(ord('a'), ord('z')+1):
+            alphabet += chr(c)
+        for c in range(ord('a'), ord('z')+1):
+            s = alphabet.replace(chr(c), '')
+            self.assertIs(is_pangram(s), False)
+
 
 if __name__ == "__main__":
     unittest.main()
