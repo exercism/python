@@ -1,0 +1,20 @@
+{
+  "cases": [
+    {
+      "description": "sentence without lower bound",
+      "property": "isPangram",
+      "input": {
+        "sentence": "bcdefghijklmnopqrstuvwxyz"
+      },
+      "expected": false
+    },
+    {
+      "description": "sentence without upper bound",
+      "property": "isPangram",
+      "input": {
+        "sentence": "abcdefghijklmnopqrstuvwxy"
+      },
+      "expected": false
+    }
+  ]
+}
