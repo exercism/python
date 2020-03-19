@@ -41,6 +41,14 @@ class PangramTest(unittest.TestCase):
     def test_case_insensitive(self):
         self.assertIs(is_pangram("the quick brown fox jumps over with lazy FX"), False)
 
+    # Additional tests for this track
+
+    def test_sentence_without_lower_bound(self):
+        self.assertIs(is_pangram("bcdefghijklmnopqrstuvwxyz"), False)
+
+    def test_sentence_without_upper_bound(self):
+        self.assertIs(is_pangram("abcdefghijklmnopqrstuvwxy"), False)
+
 
 if __name__ == "__main__":
     unittest.main()
