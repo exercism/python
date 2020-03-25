@@ -13,8 +13,8 @@ def add_callbacks(case):
         callbacks.append(op["name"])
         observers.append(f'{sufix.format(i=i + 1)}observer')
 
-    super_string = f'\n        {", ".join(observers)} = {", ".join(len(callbacks) * ["[]"])}\n'
+    assignment_block = f'\n        {", ".join(observers)} = {", ".join(len(callbacks) * ["[]"])}\n'
     for callback, observer in zip(callbacks, observers):
-        super_string += f'        {callback} = self.callback_factory({observer})\n'
+        assignment_block += f'        {callback} = self.callback_factory({observer})\n'
 
-    return super_string, dict(zip(callbacks, observers))
+    return assignment_block, dict(zip(callbacks, observers))
