@@ -56,6 +56,10 @@ class ReactTest(unittest.TestCase):
     def test_callback_cells_only_fire_on_change(self):
         input_ = InputCell(1)
         output = ComputeCell([input_], lambda inputs: 111 if inputs[0] < 3 else 222)
+
+        observer = []
+        callback1 = self.callback_factory(observer)
+
         output.add_callback(callback1)
         input_.value = 2
         self.assertEqual(observer, [])
@@ -87,7 +91,6 @@ class ReactTest(unittest.TestCase):
         plus_one.add_callback(callback1)
         minus_one.add_callback(callback2)
         input_.value = 10
-
         self.assertEqual(cb1_observer[-1], 11)
         self.assertEqual(cb2_observer[-1], 9)
 
@@ -105,27 +108,31 @@ class ReactTest(unittest.TestCase):
         input_.value = 31
         self.assertEqual(cb1_observer[-1], 32)
         self.assertEqual(cb2_observer[-1], 32)
-
         output.remove_callback(callback1)
         output.add_callback(callback3)
         input_.value = 41
         self.assertEqual(cb2_observer[-1], 42)
         self.assertEqual(cb3_observer[-1], 42)
+        self.assertEqual(cb1_observer, [])
 
     def test_removing_a_callback_multiple_times_doesn_t_interfere_with_other_callbacks(
         self
     ):
         input_ = InputCell(1)
         output = ComputeCell([input_], lambda inputs: inputs[0] + 1)
+
+        cb1_observer, cb2_observer = [], []
+        callback1 = self.callback_factory(cb1_observer)
+        callback2 = self.callback_factory(cb2_observer)
+
         output.add_callback(callback1)
         output.add_callback(callback2)
         output.remove_callback(callback1)
         output.remove_callback(callback1)
         output.remove_callback(callback1)
         input_.value = 2
-
-        self.assertEqual(cb1_observer, [])
         self.assertEqual(cb2_observer[-1], 3)
+        self.assertEqual(cb1_observer, [])
 
     def test_callbacks_should_only_be_called_once_even_if_multiple_dependencies_change(
         self
@@ -137,6 +144,10 @@ class ReactTest(unittest.TestCase):
         output = ComputeCell(
             [plus_one, minus_one2], lambda inputs: inputs[0] * inputs[1]
         )
+
+        observer = []
+        callback1 = self.callback_factory(observer)
+
         output.add_callback(callback1)
         input_.value = 4
         self.assertEqual(observer[-1], 10)
@@ -150,10 +161,17 @@ class ReactTest(unittest.TestCase):
         always_two = ComputeCell(
             [plus_one, minus_one], lambda inputs: inputs[0] - inputs[1]
         )
+
+        observer = []
+        callback1 = self.callback_factory(observer)
+
         always_two.add_callback(callback1)
         input_.value = 2
+        self.assertEqual(observer, [])
         input_.value = 3
+        self.assertEqual(observer, [])
         input_.value = 4
+        self.assertEqual(observer, [])
         input_.value = 5
         self.assertEqual(observer, [])
 
