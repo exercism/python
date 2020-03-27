@@ -1,0 +1,31 @@
+{
+  "cases": [
+    {
+      "description": "equality of complex numbers",
+      "property": "eq",
+      "input": {
+        "z1": [1, 2],
+        "z2": [1, 2]
+      },
+      "expected": true
+    },
+    {
+      "description": "inequality of real part",
+      "property": "eq",
+      "input": {
+        "z1": [1, 2],
+        "z2": [2, 2]
+      },
+      "expected": false
+    },
+    {
+      "description": "inequality of imaginary part",
+      "property": "eq",
+      "input": {
+        "z1": [1, 2],
+        "z2": [1, 1]
+      },
+      "expected": false
+    }
+  ]
+}

@@ -18,6 +18,8 @@ creating test files from the canonical data.
 ## Script Usage
 
 Test generation requires a local copy of the [problem-specifications] repository.
+The script should be run from the root `python` directory, in order to correctly
+access the exercises.
 
 Run `bin/generate_tests.py --help` for usage information.
 

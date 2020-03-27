@@ -1,0 +1,62 @@
+from __future__ import division
+import math
+
+{% extends "master_template.j2" -%}
+{%- set imports = ["ComplexNumber"] -%}
+
+{%- macro translate_math(item) -%}
+{{ item | replace("pi", "math.pi") | replace("e", "math.e") | replace("ln", "math.log") }}
+{%- endmacro %}
+
+{%- macro formatValue(val) -%}
+{% if val is iterable and val is not string -%}
+    ComplexNumber({% for part in val %}{{ translate_math(part) }}{{ "," if not loop.last }}{% endfor %})
+{%- else -%}
+    {{ translate_math(val) }}
+{%- endif -%}
+{%- endmacro -%}
+
+{%- macro smartAssert(case) -%}
+self.assert
+{%- if case["property"] in ["exp", "div"] -%}Almost
+{%- elif case["property"] == "eq" and not case["expected"] -%}Not
+{%- endif -%}Equal
+{%- endmacro -%}
+
+{%- macro operator(prop) -%}
+{% if prop == "add" -%}+
+{%- elif prop == "sub" -%}-
+{%- elif prop == "mul" -%}*
+{%- elif prop == "div" -%}/
+{%- endif -%}
+{%- endmacro -%}
+
+{% macro test_case(case) -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        {% set input = case["input"] -%}
+        {%- set prop = case["property"] -%}
+        {%- set is_callable = prop not in ["real", "imaginary"] -%}
+        {%- set is_builtin = prop in ["abs"] -%}
+        {%- set expected = formatValue(case["expected"]) -%}
+        {%- if input|length == 1 -%}
+            {%- set z = formatValue(input["z"]) -%}
+            {% if is_builtin -%}
+                {%- set actual = prop ~ "(" ~ z ~ ")" -%}
+            {%- else -%}
+                {%- set actual = z ~ "." ~ prop -%}
+                {%- if is_callable -%}
+                    {%- set actual = actual ~ "()" -%}
+                {%- endif -%}
+            {%- endif -%}
+        {%- else -%}
+            {%- set z1 = formatValue(input["z1"]) -%}
+            {%- set z2 = formatValue(input["z2"]) -%}
+            {%- if prop == "eq" -%}
+                {%- set actual = z1 -%}
+                {%- set expected = z2 -%}
+            {%- else -%}
+                {%- set actual = z1 ~ operator(prop) ~ z2 -%}
+            {% endif -%}
+        {%- endif -%}
+        {{ smartAssert(case) }}({{ actual }}, {{expected}})
+{%- endmacro %}

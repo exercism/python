@@ -5,7 +5,7 @@
     {%- if territory_list %}
     {
     {%- for v in territory_list %}
-    ({{ v | join(', ') }}),
+    ({{ v | join(', ') }}){{ "," if not loop.last }}
     {%- endfor %}
     }
     {%- else %}

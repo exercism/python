@@ -13,7 +13,7 @@
             garden.{{- case["property"] | to_snake -}}
             ("{{ input["student"] }}"),
             [{% for val in case["expected"] -%}
-            "{{ val | camel_case }}",
+            "{{ val | camel_case }}"{{- "," if not loop.last }}
             {% endfor %}]
         )
 {% endmacro -%}

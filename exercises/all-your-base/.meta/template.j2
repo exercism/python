@@ -3,7 +3,7 @@
 {%- macro func_call(case) -%}
     {{ case["property"] }}(
         {% for arg in case["input"].values() %}
-            {{ arg }},
+            {{ arg }}{{- "," if not loop.last }}
         {% endfor %}
     )
 {%- endmacro -%}

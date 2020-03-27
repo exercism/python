@@ -3,7 +3,7 @@
 {%- macro list_int_to_hex(integers) %}
             [
                 {% for integer in integers -%}
-                {{ "0x{:x}".format(integer) }},
+                {{ "0x{:x}".format(integer) }}{{- "," if not loop.last }}
                 {% endfor %}
             ]
 {% endmacro -%}

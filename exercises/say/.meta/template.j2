@@ -1,11 +1,11 @@
 {%- import "generator_macros.j2" as macros with context -%}
+
 {%- macro test_call(case) %}
             {{ case["property"] }}(
-                {% for arg in case["input"].values() -%}
-                "{{ arg }}"{{ "," if not loop.last }}
-                {% endfor %}
+                {{ case["input"]["number"] }}
             )
 {% endmacro -%}
+
 {{ macros.header() }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
@@ -15,10 +15,7 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         with self.assertRaisesWithMessage(ValueError):
             {{- test_call(case) }}
         {%- else %}
-        self.assertEqual(
-            {{- test_call(case) }},
-            {{ case["expected"] }}
-        )
+        self.assertEqual({{- test_call(case) }}, "{{ case["expected"] }}")
         {%- endif %}
     {% endfor %}
 

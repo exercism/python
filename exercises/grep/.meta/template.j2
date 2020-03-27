@@ -1,0 +1,52 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.header() }}
+import io
+from unittest import mock
+
+{% set filenames = comments | join("\n") | regex_find("[a-z-]*\.txt") -%}
+{% set contents = (comments | join("\n") | regex_split("[a-z-]*\.txt"))[1:] -%}
+
+FILE_TEXT = {
+    {% for filename, content in filenames | zip(contents) -%}
+    "{{ filename }}": """{{ plugins.clean_filetext(content) }}\n""",
+    {% endfor %}
+}
+
+def open_mock(fname, *args, **kwargs):
+    try:
+        return io.StringIO(FILE_TEXT[fname])
+    except KeyError:
+        raise RuntimeError("Expected one of {0!r}: got {1!r}".format(list(FILE_TEXT.keys()), fname))
+
+@mock.patch("grep.open", name="open", side_effect=open_mock, create=True)
+@mock.patch("io.StringIO", name="StringIO", wraps=io.StringIO)
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+{% set suite_tests = cases -%}
+
+{%- macro test_case(case) -%}
+    {% set expected = case['expected'] -%}
+    {% set pattern = case['input']['pattern'] -%}
+    {% set flags = case['input']['flags'] -%}
+    {% set files = case['input']['files'] -%}
+    def test_{{ case["description"] | to_snake }}(self, mock_file, mock_open):
+        self.assertMultiLineEqual(
+            grep("{{ pattern }}", "{{ flags|join(" ") }}", {{ files }}),
+            {% if expected == [] -%}
+            ""
+            {% else %}
+            {% for e in expected -%}
+            "{{ e }}\n"
+            {% endfor %}
+            {% endif %}
+        )
+{%- endmacro -%}
+
+{% for cases in suite_tests -%}
+    # {{ cases["description"] }}
+    {% for case in cases["cases"] -%}
+    {{ test_case(case) }}
+    {% endfor %}
+
+{% endfor %}
+
+{{ macros.footer() }}

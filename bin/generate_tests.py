@@ -91,7 +91,7 @@ def parse_datetime(string, strip_module=False):
 
         import datetime
 
-    However if strip_module is True then the template will need to 
+    However if strip_module is True then the template will need to
     import the datetime _class_ instead.
 
         from datetime import datetime
@@ -101,6 +101,47 @@ def parse_datetime(string, strip_module=False):
         return result.replace("datetime.", "", 1)
     return result
 
+INVALID_ESCAPE_RE = re.compile(
+    r"""
+    \\(?!                           # a backslash NOT followed by
+        newline                     # the literal newline
+    |[                              # OR precisely one of
+        \\                          # another backslash
+        '                           # the single quote
+        "                           # the double quote
+        a                           # the ASCII bell
+        b                           # the ASCII backspace
+        f                           # the ASCII formfeed
+        n                           # the ASCII linefeed
+        r                           # the ASCII carriage return
+        t                           # the ASCII horizontal tab
+        v                           # the ASCII vertical tab
+    ]|                              # OR
+        o(?:[0-8]{1,3})             # an octal value
+    |                               # OR
+        x(?:[0-9A-Fa-f]{2})         # a hexidecimal value
+    |                               # OR
+        N                           # a unicode char name composed of
+        \{                          # an opening brace
+            [A-Z][A-Z\ \-]*[A-Z]    # uppercase WORD, WORDs (or WORD-WORDs)
+        \}                          # and a closing brace
+    |                               # OR
+        u(?:[0-9A-Fa-f]{4})         # a 16-bit unicode char
+    |                               # OR
+        U(?:[0-9A-Fa-f]{8})         # a 32-bit unicode char
+    )""", flags=re.VERBOSE)
+
+def escape_invalid_escapes(string):
+    """
+    Some canonical data includes invalid escape sequences, which
+    need to be properly escaped before template render.
+    """
+    return INVALID_ESCAPE_RE.sub(r"\\\\", string)
+
+ALL_VALID = r"\newline\\\'\"\a\b\f\n\r\t\v\o123" \
+            r"\xFF\N{GREATER-THAN SIGN}\u0394\U00000394"
+
+assert ALL_VALID == escape_invalid_escapes(ALL_VALID)
 
 def get_tested_properties(spec):
     """
@@ -135,6 +176,14 @@ def has_error_case(cases):
 
 def regex_replace(s, find, repl):
     return re.sub(find, repl, s)
+
+
+def regex_find(s, find):
+    return re.findall(find, s)
+
+
+def regex_split(s, find):
+    return re.split(find, s)
 
 
 def load_canonical(exercise, spec_path):
@@ -279,7 +328,11 @@ def generate(
     env.filters["camel_case"] = camel_case
     env.filters["wrap_overlong"] = wrap_overlong
     env.filters["regex_replace"] = regex_replace
+    env.filters["regex_find"] = regex_find
+    env.filters["regex_split"] = regex_split
+    env.filters["zip"] = zip
     env.filters["parse_datetime"] = parse_datetime
+    env.filters["escape_invalid_escapes"] = escape_invalid_escapes
     env.tests["error_case"] = error_case
     result = True
     for exercise in sorted(glob(os.path.join("exercises", exercise_glob))):

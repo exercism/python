@@ -2,7 +2,7 @@ import unittest
 
 from bob import response
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v1.6.0
 
 
 class BobTest(unittest.TestCase):
@@ -27,17 +27,16 @@ class BobTest(unittest.TestCase):
         self.assertEqual(response("fffbbcbeab?"), "Sure.")
 
     def test_talking_forcefully(self):
-        self.assertEqual(response("Let's go make out behind the gym!"), "Whatever.")
+        self.assertEqual(response("Hi there!"), "Whatever.")
 
     def test_using_acronyms_in_regular_speech(self):
         self.assertEqual(
-            response("It's OK if you don't want to go to the DMV."), "Whatever."
+            response("It's OK if you don't want to go work for NASA."), "Whatever."
         )
 
     def test_forceful_question(self):
         self.assertEqual(
-            response("WHAT THE HELL WERE YOU THINKING?"),
-            "Calm down, I know what I'm doing!",
+            response("WHAT'S GOING ON?"), "Calm down, I know what I'm doing!"
         )
 
     def test_shouting_numbers(self):
@@ -56,7 +55,7 @@ class BobTest(unittest.TestCase):
         )
 
     def test_shouting_with_no_exclamation_mark(self):
-        self.assertEqual(response("I HATE THE DMV"), "Whoa, chill out!")
+        self.assertEqual(response("I HATE THE DENTIST"), "Whoa, chill out!")
 
     def test_statement_containing_question_mark(self):
         self.assertEqual(response("Ending with ? means a question."), "Whatever.")
