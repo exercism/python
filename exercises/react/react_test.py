@@ -48,6 +48,7 @@ class ReactTest(unittest.TestCase):
 
         observer = []
         callback1 = self.callback_factory(observer)
+
         output.add_callback(callback1)
         input_.value = 3
         self.assertEqual(observer[-1], 4)
@@ -58,6 +59,7 @@ class ReactTest(unittest.TestCase):
 
         observer = []
         callback1 = self.callback_factory(observer)
+
         output.add_callback(callback1)
         input_.value = 2
         self.assertEqual(observer, [])
@@ -70,6 +72,7 @@ class ReactTest(unittest.TestCase):
 
         observer = []
         callback1 = self.callback_factory(observer)
+
         output.add_callback(callback1)
         input_.value = 2
         self.assertEqual(observer[-1], 3)
@@ -84,6 +87,7 @@ class ReactTest(unittest.TestCase):
         cb1_observer, cb2_observer = [], []
         callback1 = self.callback_factory(cb1_observer)
         callback2 = self.callback_factory(cb2_observer)
+
         plus_one.add_callback(callback1)
         minus_one.add_callback(callback2)
         input_.value = 10
@@ -98,6 +102,7 @@ class ReactTest(unittest.TestCase):
         callback1 = self.callback_factory(cb1_observer)
         callback2 = self.callback_factory(cb2_observer)
         callback3 = self.callback_factory(cb3_observer)
+
         output.add_callback(callback1)
         output.add_callback(callback2)
         input_.value = 31
@@ -119,6 +124,7 @@ class ReactTest(unittest.TestCase):
         cb1_observer, cb2_observer = [], []
         callback1 = self.callback_factory(cb1_observer)
         callback2 = self.callback_factory(cb2_observer)
+
         output.add_callback(callback1)
         output.add_callback(callback2)
         output.remove_callback(callback1)
@@ -141,6 +147,7 @@ class ReactTest(unittest.TestCase):
 
         observer = []
         callback1 = self.callback_factory(observer)
+
         output.add_callback(callback1)
         input_.value = 4
         self.assertEqual(observer[-1], 10)
@@ -157,6 +164,7 @@ class ReactTest(unittest.TestCase):
 
         observer = []
         callback1 = self.callback_factory(observer)
+
         always_two.add_callback(callback1)
         input_.value = 2
         self.assertEqual(observer, [])
