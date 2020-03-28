@@ -6,12 +6,12 @@ def add_callbacks(case):
     if len(operations) == 0:
         return '', {}
 
-    sufix = ''
+    suffix = ''
     if len(operations) > 1:
-        sufix = 'cb{i}_'
+        suffix = 'cb{i}_'
     for i, op in enumerate(operations):
         callbacks.append(op["name"])
-        observers.append(f'{sufix.format(i=i + 1)}observer')
+        observers.append(f'{suffix.format(i=i + 1)}observer')
 
     assignment_block = f'\n        {", ".join(observers)} = {", ".join(len(callbacks) * ["[]"])}\n'
     for callback, observer in zip(callbacks, observers):
