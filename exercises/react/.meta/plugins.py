@@ -11,8 +11,5 @@ def add_callbacks(case):
         callbacks.append(op["name"])
         observers.append((f"cb{i + 1}_" if has_prefix else "") + "observer")
 
-    assignment_block = f'\n        {", ".join(observers)} = {", ".join(len(callbacks) * ["[]"])}\n'
-    for callback, observer in zip(callbacks, observers):
-        assignment_block += f'        {callback} = self.callback_factory({observer})\n'
-
+    assignment_block = f'{", ".join(observers)} = {", ".join(len(callbacks) * ["[]"])}'
     return assignment_block, dict(zip(callbacks, observers))
