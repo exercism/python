@@ -35,13 +35,13 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
 
         {% endfor -%}
 
-        {% set assignment_block, callbacks_observers = plugins["add_callbacks"](case) -%}
+        {% set assignment_block, callbacks_observers = plugins["add_callbacks"](operations) -%}
         {% if assignment_block != '' %}
         {{ assignment_block }}
-        {% endif -%}
         {% for callback, observer in callbacks_observers.items() -%}
         {{ callback }} = self.callback_factory({{ observer }})
-        {% endfor -%}
+        {% endfor %}
+        {% endif -%}
 
         {% for operation in operations -%}
         {% if operation['type'] == 'expect_cell_value' -%}

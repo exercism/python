@@ -1,7 +1,7 @@
-def add_callbacks(case):
+def add_callbacks(operations):
     observers = []
     callbacks = []
-    operations = [op for op in case["input"]["operations"] if op["type"] == "add_callback"]
+    operations = [op for op in operations if op["type"] == "add_callback"]
 
     if not operations:
         return '', {}
