@@ -57,11 +57,8 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         self.assertEqual({{ callbacks_observers[not_expect_callback] }}, [])
         {% endfor -%}
         {% endif -%}
-        {% elif operation['type'] == 'add_callback' -%}
-        {{ operation['cell']|replace('input', 'input_') }}.add_callback({{ operation.name }})
-        {% elif operation['type'] == 'remove_callback' -%}
-        {{ operation['cell']|replace('input', 'input_') }}.remove_callback({{ operation.name }})
         {% else -%}
+        {{ operation['cell']|replace('input', 'input_') }}.{{ operation['type'] }}({{ operation.name }})
         {% endif -%}
 
         {% endfor %}
