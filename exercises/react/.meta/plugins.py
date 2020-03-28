@@ -1,9 +1,9 @@
 def add_callbacks(case):
     observers = []
     callbacks = []
-    operations = list(filter(lambda op: op["type"] == "add_callback", case["input"]["operations"]))
+    operations = [op for op in case["input"]["operations"] if op["type"] == "add_callback"]
 
-    if len(operations) == 0:
+    if not operations:
         return '', {}
 
     suffix = ''
