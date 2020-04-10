@@ -1,6 +1,14 @@
 # How to implement a Python concept exercise
 
-This document describes the steps required to implement a concept exercise for the Python track. As this document is generic, the following placeholders are used:
+This document describes the steps required to implement a concept exercise for the Python track.
+
+**Please please please read the docs before starting.** Posting PRs without reading these docs will be a lot more frustrating for you during the review cycle, and exhaust Exercism's maintainers' time. So, before diving into the implementation, please read the following documents:
+
+- [The features of v3][docs-features-of-v3].
+- [Rationale for v3][docs-rationale-for-v3].
+- [What are concept exercise and how they are structured?][docs-concept-exercises]
+
+As this document is generic, the following placeholders are used:
 
 - `<SLUG>`: the name of the exercise in kebab-case (e.g. `anonymous-methods`).
 - `<NAME>`: the name of the exercise in snake_case (e.g. `anonymous_methods`).
@@ -43,6 +51,7 @@ languages
 ## Step 1: add track-specific files
 
 These are files specific to the Python track:
+
 - `src/<NAME>.py`: the stub implementation file, which is the starting point for students to work on the exercise.
 - `test/<NAME>_test.py`: the test suite.
 - `.meta/example.py`: an example implementation that passes all the tests.
@@ -57,3 +66,6 @@ When implementing an exercise, it can be very useful to look at already implemen
 
 [reference]: ../../../reference
 [how-to-implement-a-concept-exercise]: ../../../docs/maintainers/generic-how-to-implement-a-concept-exercise.md
+[docs-concept-exercises]: ../../../docs/concept-exercises.md
+[docs-rationale-for-v3]: ../../../docs/rationale-for-v3.md
+[docs-features-of-v3]: ../../../docs/features-of-v3.md
