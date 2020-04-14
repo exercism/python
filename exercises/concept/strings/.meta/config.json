@@ -1,8 +1,9 @@
 {
-  "contributors": [
+  "authors": [
     {
       "github_username": "aldraco",
       "exercism_username": "aldraco"
     }
-  ]
+  ],
+  "forked_from": ["csharp/strings"]
 }
