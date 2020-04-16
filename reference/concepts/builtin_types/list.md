@@ -1,6 +1,6 @@
 # `list`
 
-Lists are dynamic arrays that can be resized by Python at runtime. They are homogenous, meaning they are able to hold any data type, including other lists,  and can even contain themselves (recursive data structures are relatively simple in Python).
+Lists are dynamic arrays that can be resized by Python at runtime. They are homogenous, meaning they are able to hold any data type, including other lists, and can even contain themselves (recursive data structures are relatively simple in Python).
 
 Simple flat lists are used extensively in [variable-length-quantity][variable-length-quantity], [markdown][markdown], and [robot-simulator][robot-simulator].
 

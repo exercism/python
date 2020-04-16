@@ -9,4 +9,3 @@ See [docs][docs].
 [docs]: https://docs.python.org/3/library/functions.html#len
 [hamming]: ../../exercise-concepts/hamming.md
 [variable-length-quantity]: ../../exercise-concepts/variable-length-quantity.md
-

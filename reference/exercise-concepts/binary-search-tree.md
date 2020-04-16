@@ -80,4 +80,3 @@ class BinarySearchTree:
 - [Lists][lists]: knowledge of lists and iteration on lists is required for this exercise
 - [Conditional structures][conditional-structures]: knowledge of conditional conceptis and `if...else` statements are required
 - [Methods of list][methods-of-list]: the use of methods of list could be useful in this exercise. Methods like `append`, `pop`...
-

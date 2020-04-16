@@ -78,4 +78,3 @@ There are also various solutions involving lists, but these all come with O(N) l
 - [Property Decorator][property-decorator]: this exercise relies on the `@property` decorator to provide read-only dynamic access to the current list of allergens
 - [Membership Testing][membership-testing]: this exercise relies on testing membership of a value in a collection of values
 - [Lookup Efficiency][lookup-efficiency]: an efficient solution requires knowing that membership testing is O(1) in **dict** and the **enum.Enum** variants, but is O(N) in **list** and other sequential types
-

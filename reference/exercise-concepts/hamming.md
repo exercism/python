@@ -4,7 +4,7 @@
 
 From the current [example.py](https://github.com/exercism/python/blob/master/exercises/hamming/example.py):
 
-``` python
+```python
 def distance(s1, s2):
     if len(s1) != len(s2):
         raise ValueError("Sequences not of equal length.")
@@ -20,12 +20,12 @@ def distance(s1, s2):
 - [Strings][strings]: strings are used generally
 - [Builtin functions][builtin-functions]: strings have a length, accessible by calling `len()`, a builtin python function
 - [Iterable][iterable]: strings are iterable, which provides a lot of opportunity to leverage Python functions against them
-- [Immutable][immutable]: strings are immutable (*immutability*)
+- [Immutable][immutable]: strings are immutable (_immutability_)
 - [Booleans][booleans]: this solution uses Boolean values (`True` / `False`)
 - [Inequality][inequality]: this solution checks if `a` is not equal to `b`.
 - [Booleans are integers][booleans-are-integers]: Booleans values are just named aliases for the integers 1 (`True`) and 0 (`False`)
 - [Zip][zip]: builtin that joins multiple iterables into a single one
-- [Enumeration][enumeration]: `zip()` in this solution creates an iterable, which is iterated over by using the `for ... in ` syntax
+- [Enumeration][enumeration]: `zip()` in this solution creates an iterable, which is iterated over by using the `for ... in` syntax
 - [Sum][sum]: another builtin that operates on iterables
 - [Tuple unpacking][tuple-unpacking]: the values in an iterable can be unpacked into variables and used, i.e. `for a, b in zip(s1, s2)`
 - [Exception handling][exception-handling]: the exercise requires Exception handling
@@ -42,4 +42,3 @@ def distance(s1, s2):
 - [Builtin Function][builtin-functions]: Python has several handy builtin functions in the stdlib that can operate on many types of data, e.g. `len()`, `max()`, `min()`. Under the hood these are implemented via dunder methods - if an object (and everything in Python is an object) implements the correct dunder methods (see that topic for more information), it can support use in these functions. (For example, if an object implements `__len__`, the len(<object>) will return that value.) Because these functions are not strictly tied to any data type, they can be used almost anywhere, and will crop up again and again as we learn Python. Docs: https://docs.python.org/3/library/functions.html
 - [Polymorphism][polymorphism]: Python is "dynamically typed," meaning that variable names are bound to objects only, not to a particular type. You can assign `foo` to a string, and then reassign it to an `int` with no issues. "Polymorphism" formally means that different types respond to the same function - so the ability to add custom class instances together using `+`, for example, shows how Python can define the same function against different types.
 - [Duck Typing][duck-typing]: Python is also a good example of "Duck typing," to wit, "if it walks like a duck, talks like a duck, it's a duck.". This is accomplished partly with "magic" or "dunder" methods (double-under) that provide various interfaces to an object. If an object implements `__iter__` and `__next__`, it can be iterated through; it doesn't matter what type the object actually is.
-
