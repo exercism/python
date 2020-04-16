@@ -1,6 +1,6 @@
 # PEP 8 Style
 
-Unlike most earlier languages -- and many newer -- Python has an "official" style guide, and has had one for quite some time. 
+Unlike most earlier languages -- and many newer -- Python has an "official" style guide, and has had one for quite some time.
 
 > One of [Python creator Guido von Rossum]'s key insights is that code is read much more often than it is written. The guidelines provided here are intended to improve the readability of code and make it consistent across the wide spectrum of Python code. As [PEP 20](zen_of_python.md) says, "Readability counts".
 

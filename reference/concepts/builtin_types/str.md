@@ -4,7 +4,7 @@ Python's [string][general-concept-string] type, which always holds encoded [Unic
 
 A useful concept to know to solve the [hamming][hamming] exercise.
 
- TODO: ADD MORE DETAIL
+TODO: ADD MORE DETAIL
 
 See the Python documentation entries for the [immutable][immutability] [text sequence type][docs-text-sequence-type]. You'll also want to familiarize yourself with the use of [`str` as a casting function][docs-str-as-function], as well as the many [string methods][docs-string-methods] available to use on the type.
 

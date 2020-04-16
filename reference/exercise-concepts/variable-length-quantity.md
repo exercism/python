@@ -42,6 +42,7 @@ def decode(bytes_):
 ```
 
 ## Concepts
+
 - [Loops][loops]: the knowledge of `while` and `for` loops are useful to solve this exercise
 - [Comparison][comparison]: concept required to solve the exercise, `==`, `>`, `<`
 - [Builtin Functions][builtin-functions]: the `sum()` built-in function is a useful concept to solve the exercise
