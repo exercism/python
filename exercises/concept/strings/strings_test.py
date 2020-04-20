@@ -1,5 +1,5 @@
 import unittest
-from loglines import extract_message, change_log_level, reformat
+from strings import extract_message, change_log_level, reformat
 
 
 class TestLogLines(unittest.TestCase):
