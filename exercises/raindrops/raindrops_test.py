@@ -61,6 +61,9 @@ class RaindropsTest(unittest.TestCase):
 
     def test_the_sound_for_3125_is_plang_as_it_has_a_factor_5(self):
         self.assertEqual(convert(3125), "Plang")
+        
+    def test_non_int_supplied(self):
+        self.assertRaises('TypeError', convert('not an int'))
 
 
 if __name__ == "__main__":
