@@ -10,7 +10,7 @@ One for X, one for me.
 
 Where X is the given name.
 
-However, if the name is missing, return the string:
+However, if the name is missing or empty, return the string:
 
 ```text
 One for you, one for me.
