@@ -69,8 +69,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests 
         git clone https://github.com/exercism/problem-specifications spec
-        # pip install --no-index dependencies/*
-        pip install -r requirements-generator.txt 
+        pip install --no-index dependencies/*
     - name: Test version status
       run: |
         ./bin/check-test-version.py -p spec
