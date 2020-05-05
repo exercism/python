@@ -11,17 +11,21 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.8
+    - name: Set up Python 3.7
       uses: actions/setup-python@v1
       with:
-        python-version: 3.4
+        python-version: 3.7
+    - name: Housekeeping
+      run: |
+        ./bin/fetch-configlet
+        git clone https://github.com/exercism/problem-specifications spec
+        pip install -r requirements-generator.txt
     - name: Check readmes
-    - run: ./bin/check-readmes.sh
+      run: |
+        ./bin/check-readmes.sh
     - name: Generate tests
       run: |
         bin/generate_tests.py --verbose -p spec --check
