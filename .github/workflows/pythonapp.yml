@@ -68,8 +68,9 @@ jobs:
     - name: Download & Install dependencies
       run: |
         pip install requests 
-        git clone https://github.com/exercism/problem-specifications spec
-        pip install --no-index dependencies/*
+        # git clone https://github.com/exercism/problem-specifications spec
+        # pip install --no-index dependencies/*
+        pip install -r requirements-generator.txt 
     - name: Test version status
       run: |
         ./bin/check-test-version.py -p spec
