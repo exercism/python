@@ -21,8 +21,6 @@ jobs:
     - name: Housekeeping
       run: |
         ./bin/fetch-configlet
-        git clone https://github.com/exercism/problem-specifications spec
-        pip install -r requirements-generator.txt
     - name: Check readmes
       run: |
         ./bin/check-readmes.sh
