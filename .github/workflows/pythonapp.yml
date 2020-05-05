@@ -65,15 +65,11 @@ jobs:
     - uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
-    - name: cd ls
-      run: |
-        cd dependencies
-        ls -la
     - name: Download & Install dependencies
       run: |
         pip install requests 
         git clone https://github.com/exercism/problem-specifications spec
-        pip install --no-index dependencies/pydeps/*
+        pip install --no-index dependencies/*
     - name: Test version status
       run: |
         ./bin/check-test-version.py -p spec
