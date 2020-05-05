@@ -71,6 +71,7 @@ jobs:
         pip install requests 
         git clone https://github.com/exercism/problem-specifications spec
         pip install --no-index dependencies/*
+    - uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
     - name: Test version status
