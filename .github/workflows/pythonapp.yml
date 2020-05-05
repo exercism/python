@@ -24,6 +24,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 
         git clone https://github.com/exercism/problem-specifications spec
+        pip download -r requirements-generator.txt -d pydeps
         pip install --no-index pydeps/*
     - name: Upload dependency artifact
       uses: actions/upload-artifact@v1
@@ -56,12 +57,11 @@ jobs:
       matrix:
         python-version: [3.5, 3.6, 3.7, 3.8]
     steps:
-   - name: Download dependency artifact
-     uses: actions/download-artifact@v1
-     with:
-       name: dependencies
+    - name: Download dependency artifact
+      uses: actions/download-artifact@v1
+      with:
+        name: dependencies
 
-    - uses: actions/checkout@v2
     - uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
@@ -70,7 +70,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests 
         git clone https://github.com/exercism/problem-specifications spec
-        pip install --no-index dependencies/*
+        # pip install --no-index dependencies/*
+        pip install -r requirements-generator.txt 
     - name: Test version status
       run: |
         ./bin/check-test-version.py -p spec
