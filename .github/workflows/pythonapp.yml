@@ -61,7 +61,6 @@ jobs:
       uses: actions/download-artifact@v1
       with:
         name: dependencies
-
     - uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
