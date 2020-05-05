@@ -24,14 +24,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 
         git clone https://github.com/exercism/problem-specifications spec
-        pip download -r requirements-generator.txt -d pydeps
-        pip install --no-index pydeps/*
-    - name: Upload dependency artifact
-      uses: actions/upload-artifact@v1
-      with:
-        name: dependencies
-        path: pydeps
-        
+        pip install -r requirements-generator.txt
+        # pip install --no-index pydeps/*
+    # - name: Upload dependency artifact
+    #   uses: actions/upload-artifact@v1
+    #   with:
+    #     name: dependencies
+    #     path: pydeps
+    #     
     - name: Check readmes
       run: |
         ./bin/check-readmes.sh
@@ -57,11 +57,11 @@ jobs:
       matrix:
         python-version: [3.5, 3.6, 3.7, 3.8]
     steps:
-    - name: Download dependency artifact
-      uses: actions/download-artifact@v1
-      with:
-        name: dependencies
-
+#    - name: Download dependency artifact
+#      uses: actions/download-artifact@v1
+#      with:
+#        name: dependencies
+#
     - uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
