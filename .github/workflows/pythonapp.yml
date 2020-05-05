@@ -1,0 +1,81 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Exercises check
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  housekeeping:
+    runs-on: ubuntu-16.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+    - name: Download & Install dependencies
+      run: |
+        ./bin/fetch-configlet
+        python -m pip install --upgrade pip
+        pip install flake8 
+        git clone https://github.com/exercism/problem-specifications spec
+        pip download -r requirements-generator.txt -d pydeps
+        pip install --no-index pydeps/*
+    - name: Upload dependency artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: dependencies
+        path: pydeps
+
+    - name: Check readmes
+      run: |
+        ./bin/check-readmes.sh
+    - name: Generate tests
+      run: |
+        bin/generate_tests.py --verbose -p spec --check
+        # May provide more useful output than configlet fmt
+        # if JSON is not valid or items are incomplete
+        ./bin/configlet lint .
+        # Verify correct formatting in config.json
+        ./bin/configlet fmt . && git diff --quiet   
+    - name: Lint with flake8
+      run: |
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    
+  canonical_sync:
+    runs-on: ubuntu-16.04
+    needs: housekeeping
+    strategy:
+      matrix:
+        python-version: [3.5, 3.6, 3.7, 3.8]
+    steps:
+    - name: Download dependency artifact
+      uses: actions/download-artifact@v1
+      with:
+        name: dependencies
+
+    - uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Download & Install dependencies
+      run: |
+        pip install requests 
+        git clone https://github.com/exercism/problem-specifications spec
+        pip install --no-index dependencies/pydeps/*
+    - name: Test version status
+      run: |
+        ./bin/check-test-version.py -p spec
+    - name:  Test template status
+      run: |
+        ./bin/template_status.py -v -p spec
+    - name: Run unit tests
+      run: |
+        ./test/check-exercises.py
