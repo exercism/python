@@ -71,13 +71,13 @@ jobs:
       run: |
         ./bin/check-test-version.py -p spec
     - name:  Test template status
+      continue-on-error: true
       run: |
         ./bin/template_status.py -v -p spec
 
   check_exercises:
     runs-on: ubuntu-16.04
     needs: canonical_sync
-    continue-on-error: true
     strategy:
       matrix:
         python-version: [3.5, 3.6, 3.7, 3.8]
