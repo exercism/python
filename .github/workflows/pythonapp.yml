@@ -53,6 +53,7 @@ jobs:
   canonical_sync:
     runs-on: ubuntu-16.04
     needs: housekeeping
+    continue-on-error: true
     steps:
     - uses: actions/checkout@v2
     - name: Download dependency artifact
