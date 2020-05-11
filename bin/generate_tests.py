@@ -59,12 +59,19 @@ def replace_all(string, chars, rep):
     )
 
 
+def to_snake_base(string):
+    """
+    Converts string to to_snake.
+    """
+    clean = re.sub("(.)([A-Z][a-z]+)", r"\1_\2", string)
+    return re.sub("([a-z0-9])([A-Z])", r"\1_\2", clean).lower()
+
+
 def to_snake(string):
     """
     Convert pretty much anything to to_snake.
     """
-    clean = re.sub("(.)([A-Z][a-z]+)", r"\1_\2", string)
-    clean = re.sub("([a-z0-9])([A-Z])", r"\1_\2", clean).lower()
+    clean = to_snake_base(string)
     return replace_all(clean, whitespace + punctuation, "_")
 
 
@@ -325,6 +332,7 @@ def generate(
     loader = FileSystemLoader(["config", "exercises"])
     env = Environment(loader=loader, keep_trailing_newline=True)
     env.filters["to_snake"] = to_snake
+    env.filters["to_snake_base"] = to_snake_base
     env.filters["camel_case"] = camel_case
     env.filters["wrap_overlong"] = wrap_overlong
     env.filters["regex_replace"] = regex_replace

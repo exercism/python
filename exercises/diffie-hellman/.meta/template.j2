@@ -1,0 +1,35 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{% set class = exercise | camel_case -%}
+{{ macros.header(["private_key", "public_key", "secret"]) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases -%}
+    {% set property = case["property"] | to_snake -%}
+    {% set description = case["description"] | to_snake -%}
+    {% set expected = case['expected'] %}
+    {% set input = case['input'] %}
+    {% if property == "private_key_is_in_range" -%}
+    def test_{{ description }}(self):
+        primes = [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+        for i in primes:
+            self.assertTrue(1 < private_key(i) < i)
+    {% elif property == "private_key_is_random" -%}
+    def test_{{ description }}(self):
+        p = 2147483647
+        private_keys = []
+        for i in range(5):
+            private_keys.append(private_key(p))
+        self.assertEqual(len(set(private_keys)), len(private_keys))
+    {% elif property == "key_exchange"%}
+    def test_{{ description }}(self):
+        {% for key, val in input.items() -%}
+            {{ key | to_snake }} = {{ val  | string | to_snake_base }}
+        {% endfor -%}
+        self.assertTrue({{ expected | to_snake_base }})
+    {%  else %}
+    def test_{{ description }}(self):
+        self.assertEqual({{ expected }}, {{ property }}(*{{ input.values() | list }} ))
+    {%- endif -%}
+    {% endfor %}
+
+{{ macros.footer() }}
