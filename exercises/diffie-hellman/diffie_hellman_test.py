@@ -9,7 +9,7 @@ class DiffieHellmanTest(unittest.TestCase):
     def test_private_key_is_in_range_1_p(self):
         primes = [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
         for p in primes:
-            self.assertTrue(p < private_key(p) < p)
+            self.assertTrue(1 < private_key(p) < p)
 
     def test_private_key_is_random(self):
         """
