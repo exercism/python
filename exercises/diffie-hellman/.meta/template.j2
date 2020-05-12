@@ -23,9 +23,9 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% elif property == "key_exchange"%}
     def test_{{ description }}(self):
         {% for key, val in input.items() -%}
-            {{ key | to_snake }} = {{ val  | string | to_snake_base }}
+            {{ key | to_snake }} = {{ val | string | to_snake(wordchars_only=True) }}
         {% endfor -%}
-        self.assertTrue({{ expected | to_snake_base }})
+        self.assertTrue({{ expected | to_snake(wordchars_only=True) }})
     {%  else %}
     def test_{{ description }}(self):
         self.assertEqual({{ expected }}, {{ property }}(*{{ input.values() | list }} ))
