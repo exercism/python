@@ -14,7 +14,7 @@ category chosen.
 | -------- | ----- | ----------- | ------- |
 | Ones | 1 × number of ones | Any combination	| 1 1 1 4 5 scores 3 |
 | Twos | 2 × number of twos | Any combination | 2 2 3 4 5 scores 4 |
-| Threes | 3 × number of threes | Any combination | 3 3 3 3 3 scores 15 |
+| Threes | 3 × number of threes | Any combination | 3 3 3 3 4 scores 12 |
 | Fours | 4 × number of fours | Any combination | 1 2 3 3 5 scores 0 |
 | Fives | 5 × number of fives| Any combination | 5 1 5 2 5 scores 15 |
 | Sixes | 6 × number of sixes | Any combination | 2 3 4 5 6 scores 6 |
