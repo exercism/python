@@ -1,16 +1,16 @@
-### General
+## General
 
 - The [Python documentation for `str`][python-str-doc] has an overview of the Python `str` type.
 
-### 1. Get message from a log line
+## 1. Get message from a log line
 
 - Strings in Python have [lots of convenient instance methods][str-type-methods] for cleaning, splitting, manipulating, and creating new strings. Extracting values from a string could be done by splitting it based on a substring, for example.
 
-### 2. Get log level from a log line
+## 2. Get log level from a log line
 
 - Strings also have methods that help convert letters from lower to uppercase and vice-versa.
 
-### 3. Reformat a log line
+## 3. Reformat a log line
 
 Strings are immutable, but can be combined together to make new strings, or have elements replaced. This goal can be accomplished by using string methods, or operators like `+` or `+=` (which are overloaded to work with strings).
 Python also has a concept of string formatting, like many other languages.
