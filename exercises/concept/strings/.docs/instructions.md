@@ -10,7 +10,7 @@ There are three different log levels:
 
 You have three tasks, each of which will take a log line and ask you to do something with it.
 
-### 1. Extract a message from a log line
+## 1. Extract a message from a log line
 
 Implement a function to return a log line's message:
 
@@ -26,7 +26,7 @@ The message should be trimmed of any whitespace.
 'Invalid operation.'
 ```
 
-### 2. Change a message's loglevel.
+## 2. Change a message's loglevel.
 
 Implement a function that replaces a log line's current log level with a new one:
 
@@ -35,7 +35,7 @@ Implement a function that replaces a log line's current log level with a new one
 '[ERROR]: Fatal Error.'
 ```
 
-### 3. Reformat a log line
+## 3. Reformat a log line
 
 Implement a function that reformats the log line, putting the message first and the log level after it in parentheses:
 
