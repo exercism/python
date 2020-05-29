@@ -1,5 +1,3 @@
-# Design
-
 ## Goal
 
 The goal of this exercise is to teach the student about Python strings, and familiarize them with string manipulation in Python.
