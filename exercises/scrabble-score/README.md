@@ -34,6 +34,17 @@ And to total:
 - = `5 + 9`
 - = 14
 
+## Bad Examples
+
+Don't do this:
+
+```
+scores = { 'a':1, 'b':3, 'c':3..., 'z':10}
+```
+That's missing the point. The challenge is to make a readable, maintainable, structure using dict/tuples/lists/etc and then using your pythonista skills, transform that into a structure which can be easily accessed by the function `score(word`)`.  
+
+Adding up scores is easy - we're looking for data transformation skills here!
+
 ## Extensions
 
 - You can play a double or a triple letter.
