@@ -107,6 +107,9 @@ class WordCountTest(unittest.TestCase):
 
     def test_multiple_apostrophes_ignored(self):
         self.assertEqual(count_words("''hey''"), {"hey": 1})
+        
+    def test_with_apostrophes_youre(self):
+        self.assertEqual(count_words("you're"), {"you're": 1})
 
 
 if __name__ == "__main__":
