@@ -42,8 +42,8 @@ class WordCountTest(unittest.TestCase):
 
     def test_with_apostrophes(self):
         self.assertEqual(
-            count_words("First: don't laugh. Then: don't cry."),
-            {"first": 1, "don't": 2, "laugh": 1, "then": 1, "cry": 1},
+            count_words("You're unflappable. First: don't laugh. Then: don't cry."),
+            {"you're": 1, "unflappable": 1, "first": 1, "don't": 2, "laugh": 1, "then": 1, "cry": 1},
         )
 
     def test_with_quotations(self):
@@ -107,9 +107,6 @@ class WordCountTest(unittest.TestCase):
 
     def test_multiple_apostrophes_ignored(self):
         self.assertEqual(count_words("''hey''"), {"hey": 1})
-        
-    def test_with_apostrophes_youre(self):
-        self.assertEqual(count_words("you're"), {"you're": 1})
 
 
 if __name__ == "__main__":
