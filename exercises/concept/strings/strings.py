@@ -1,7 +1,7 @@
-def change_log_level():
+def extract_message():
     pass
 
-def extract_message():
+def change_log_level():
     pass
 
 def reformat():
