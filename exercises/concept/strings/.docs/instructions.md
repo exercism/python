@@ -12,7 +12,7 @@ You have three tasks, each of which will take a log line and ask you to do somet
 
 ## 1. Extract a message from a log line
 
-Implement a function to return a log line's message:
+Implement the `extract_message` to return a log line's message:
 
 ```python
 >>> extract_message("[ERROR]: Invalid operation")
@@ -28,7 +28,7 @@ The message should be trimmed of any whitespace.
 
 ## 2. Change a message's loglevel.
 
-Implement a function that replaces a log line's current log level with a new one:
+Implement the `change_log_level` function to replace a log line's current log level with a new one:
 
 ```python
 >>> change_log_level("[INFO]: Fatal Error.", "ERROR")
@@ -37,7 +37,7 @@ Implement a function that replaces a log line's current log level with a new one
 
 ## 3. Reformat a log line
 
-Implement a function that reformats the log line, putting the message first and the log level after it in parentheses:
+Implement the `reformat` function to reformat the log line, putting the message first and the log level after it in parentheses:
 
 ```python
 >>> reformat("[INFO]: Operation completed")
