@@ -19,7 +19,7 @@ def say(number, recursive=False):
 
     if number < 100:
         if number % 10 == 0:
-            return small[number]
+            return tens[number]
         return tens[number // 10 * 10] + '-' + small[number % 10]
 
     if number < k:
