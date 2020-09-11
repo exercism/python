@@ -2,7 +2,7 @@ def say(number, recursive=False):
     small = dict(enumerate((
         'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight',
         'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen',
-        'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty')))
+        'sixteen', 'seventeen', 'eighteen', 'nineteen')))
 
     tens = {20: 'twenty', 30: 'thirty', 40: 'forty', 50: 'fifty',
             60: 'sixty', 70: 'seventy', 80: 'eighty', 90: 'ninety'}
@@ -19,7 +19,7 @@ def say(number, recursive=False):
 
     if number < 100:
         if number % 10 == 0:
-            return small[number]
+            return tens[number]
         return tens[number // 10 * 10] + '-' + small[number % 10]
 
     if number < k:

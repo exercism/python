@@ -19,4 +19,15 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         {%- endif %}
     {% endfor %}
 
+    # Additional tests for this track
+    {% for case in additional_cases -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        {%- if case is error_case %}
+        with self.assertRaisesWithMessage(ValueError):
+            {{- test_call(case) }}
+        {%- else %}
+        self.assertEqual({{- test_call(case) }}, "{{ case["expected"] }}")
+        {%- endif %}
+    {% endfor %}
+
 {{ macros.footer() }}

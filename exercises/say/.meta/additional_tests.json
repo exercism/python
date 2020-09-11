@@ -1,0 +1,12 @@
+{
+    "cases": [
+        {
+            "description": "one hundred seventy",
+            "property": "say",
+            "input": {
+                "number": 170
+            },
+            "expected": "one hundred seventy"
+        }
+    ]
+}
