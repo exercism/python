@@ -1,8 +1,6 @@
 import unittest
 
-from say import (
-    say,
-)
+from say import say
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
