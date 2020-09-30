@@ -14,7 +14,7 @@ and the [Python track contributing guide](CONTRIBUTING.md)
 
 ## Working on the Exercises
 
-We welcome both improvements to the existing exercises and new exercises.
+We welcome both improvements to the existing exercises and new exercises as well.
 A list of missing exercise can be found here: https://github.com/exercism/python/issues/417#issuecomment-366040062
 
 
