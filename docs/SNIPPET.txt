@@ -7,4 +7,4 @@ cart = {
 bill = sum(prices[item] * cart[item]
            for item in cart)
 
-print(f'I have to pay {bill:.2f}')
+print(f'I have to pay Rs{bill:.2f}')
