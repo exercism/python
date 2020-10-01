@@ -58,7 +58,7 @@ This repo uses `travis-ci` in the following configuration: [travis.yml](https://
 It will automatically check the code style, the problem configuration, and run the unittests with all supported Python versions.
 
 
-## Pull Requests
+## Git Hub Pull Requests
 
 We :heart: pull requests!
 We even :sparkling_heart: them if they contain well written commit messages!
