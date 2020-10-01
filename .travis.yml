@@ -10,7 +10,7 @@ python:
 
 matrix:
   include:
-    # Python 3.4 not supported in xenial
+    # Python 3.4 not supported in xenial so defined separately 
     - python: 3.4
       dist: trusty
     - env: JOB=HOUSEKEEPING
