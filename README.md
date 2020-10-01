@@ -1,4 +1,4 @@
-# Exercism Python Track
+# Exercism Python Track - An Amazing project.
 
 [![Build Status](https://travis-ci.org/exercism/python.svg?branch=master)](https://travis-ci.org/exercism/python)
 [![Join the chat at https://gitter.im/exercism/python](https://badges.gitter.im/exercism/python.svg)](https://gitter.im/exercism/python?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -21,7 +21,7 @@ A list of missing exercise can be found here: https://github.com/exercism/python
 ### Conventions
 
 - We use minimalistic stub files for all exercises ([#272](https://github.com/exercism/python/issues/272)).
-- We use `unittest` (Python Standard Library) and no 3rd-party-framework.
+- We use `unittest` (Python Standard Library) and no Third-party-framework.
 - We use the parameter order `self.assertEqual(actual, expected)` ([#440](https://github.com/exercism/python/issues/440)).
 - We use context managers (`with self.assertRaises(\<exception type\>):`) for testing for exceptions ([#477](https://github.com/exercism/python/issues/477)).
 - We use an established utility method to confirm that expected exceptions contain a non-empty message. This method must be included for any test class with an exception-based test case ([#1080](https://github.com/exercism/python/issues/1080#issuecomment-442068539)).
