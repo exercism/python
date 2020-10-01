@@ -1,4 +1,5 @@
-# Poker
+# Poker 
+# pocker for funearning with exercised
 
 Pick the best hand(s) from a list of poker hands.
 
