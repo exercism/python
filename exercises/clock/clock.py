@@ -1,3 +1,4 @@
+# this is a class called clock that we initialize with init
 class Clock:
     def __init__(self, hour, minute):
         pass
