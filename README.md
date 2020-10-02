@@ -7,6 +7,7 @@ Exercism exercises in Python
 
 
 ## Contributing Guide
+## Amazing project
 
 Please see the [Exercism contributing guide](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/README.md)
 and the [Python track contributing guide](CONTRIBUTING.md)
