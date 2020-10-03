@@ -58,6 +58,10 @@ class SayTest(unittest.TestCase):
         with self.assertRaisesWithMessage(ValueError):
             say(1000000000000)
 
+    # Additional tests for this track
+    def test_one_hundred_seventy(self):
+        self.assertEqual(say(170), "one hundred seventy")
+
     # Utility functions
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")

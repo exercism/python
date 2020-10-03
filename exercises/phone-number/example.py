@@ -9,7 +9,7 @@ class PhoneNumber:
         self.subscriber_number = self.number[-4:]
 
     def pretty(self):
-        return "({}) {}-{}".format(
+        return "({})-{}-{}".format(
             self.area_code, self.exchange_code, self.subscriber_number
         )
 

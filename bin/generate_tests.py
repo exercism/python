@@ -59,13 +59,16 @@ def replace_all(string, chars, rep):
     )
 
 
-def to_snake(string):
+def to_snake(string, wordchars_only=False):
     """
     Convert pretty much anything to to_snake.
+
+    By default whitespace and punctuation will be converted
+    to underscores as well, pass wordchars_only=True to preserve these as is.
     """
     clean = re.sub("(.)([A-Z][a-z]+)", r"\1_\2", string)
     clean = re.sub("([a-z0-9])([A-Z])", r"\1_\2", clean).lower()
-    return replace_all(clean, whitespace + punctuation, "_")
+    return clean if wordchars_only else replace_all(clean, whitespace + punctuation, "_")
 
 
 def camel_case(string):
