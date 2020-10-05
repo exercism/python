@@ -1,0 +1,21 @@
+class Temperature():
+    def __init__(self,temp):
+        self.temp = temp
+        
+    def celsius(self):
+        return ((5/9)*(self.temp - 32))
+    
+    def fahrenheit(self):
+        return (((self.temp*(9/5)+32)))
+    
+t=input('Enter the temperature:')
+degree = int(t[:-1])
+convention = t[-1]
+con = Temperature(degree)
+if convention.upper() == 'F':
+    print(con.celsius())
+elif convention.upper() == 'C':
+    print(con.fahrenheit())
+else:
+    print('Invalid temperature value, please put the correct one')
+    quit()
