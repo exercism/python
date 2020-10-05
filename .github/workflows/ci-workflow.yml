@@ -28,23 +28,25 @@ jobs:
     - name: Check readmes
       run: |
         ./bin/check-readmes.sh
-    - name: Generate tests
+    - name: Check config.json integrity
       run: |
-        bin/generate_tests.py --verbose -p spec --check
         # May provide more useful output than configlet fmt
         # if JSON is not valid or items are incomplete
         ./bin/configlet lint .
         # Verify correct formatting in config.json
         ./bin/configlet fmt . && git diff --quiet   
+    #- name: Generate tests
+    #  run: |
+    #    bin/generate_tests.py --verbose -p spec --check
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Test version status
-      run: |
-        ./bin/check-test-version.py -p spec
+    #- name: Test version status
+    #  run: |
+    #    ./bin/check-test-version.py -p spec
     - name:  Test template status
       continue-on-error: true
       run: |
