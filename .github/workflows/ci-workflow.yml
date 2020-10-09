@@ -20,7 +20,6 @@ jobs:
         python-version: 3.7
     - name: Download & Install dependencies
       run: |
-        ./bin/fetch-configlet
         python -m pip install --upgrade pip
         pip install flake8 requests
         git clone https://github.com/exercism/problem-specifications spec
@@ -28,13 +27,17 @@ jobs:
     - name: Check readmes
       run: |
         ./bin/check-readmes.sh
+    - name: Fetch configlet
+      uses: exercism/github-actions/configlet-ci@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Check config.json integrity
       run: |
         # May provide more useful output than configlet fmt
         # if JSON is not valid or items are incomplete
-        ./bin/configlet lint .
+        configlet lint .
         # Verify correct formatting in config.json
-        ./bin/configlet fmt . && git diff --quiet   
+        configlet fmt . && git diff --quiet   
     #- name: Generate tests
     #  run: |
     #    bin/generate_tests.py --verbose -p spec --check
