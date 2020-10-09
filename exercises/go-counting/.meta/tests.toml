@@ -1,0 +1,34 @@
+[canonical-tests]
+
+# Black corner territory on 5x5 board
+"94d0c01a-17d0-424c-aab5-2736d0da3939" = true
+
+# White center territory on 5x5 board
+"b33bec54-356a-485c-9c71-1142a9403213" = true
+
+# Open corner territory on 5x5 board
+"def7d124-422e-44ae-90e5-ceda09399bda" = true
+
+# A stone and not a territory on 5x5 board
+"57d79036-2618-47f4-aa87-56c06d362e3d" = true
+
+# Invalid because X is too low for 5x5 board
+"0c84f852-e032-4762-9010-99f6a001da96" = true
+
+# Invalid because X is too high for 5x5 board
+"6f867945-9b2c-4bdd-b23e-b55fe2069a68" = true
+
+# Invalid because Y is too low for 5x5 board
+"d67aaffd-fdf1-4e7f-b9e9-79897402b64a" = true
+
+# Invalid because Y is too high for 5x5 board
+"14f23c25-799e-4371-b3e5-777a2c30357a" = true
+
+# One territory is the whole board
+"37fb04b5-98c1-4b96-8c16-af2d13624afd" = true
+
+# Two territory rectangular board
+"9a1c59b7-234b-495a-8d60-638489f0fc0a" = true
+
+# Two region rectangular board
+"d1645953-1cd5-4221-af6f-8164f96249e1" = true

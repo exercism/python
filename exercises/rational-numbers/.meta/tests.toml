@@ -1,0 +1,115 @@
+[canonical-tests]
+
+# Add two positive rational numbers
+"0ba4d988-044c-4ed5-9215-4d0bb8d0ae9f" = true
+
+# Add a positive rational number and a negative rational number
+"88ebc342-a2ac-4812-a656-7b664f718b6a" = true
+
+# Add two negative rational numbers
+"92ed09c2-991e-4082-a602-13557080205c" = true
+
+# Add a rational number to its additive inverse
+"6e58999e-3350-45fb-a104-aac7f4a9dd11" = true
+
+# Subtract two positive rational numbers
+"47bba350-9db1-4ab9-b412-4a7e1f72a66e" = true
+
+# Subtract a positive rational number and a negative rational number
+"93926e2a-3e82-4aee-98a7-fc33fb328e87" = true
+
+# Subtract two negative rational numbers
+"a965ba45-9b26-442b-bdc7-7728e4b8d4cc" = true
+
+# Subtract a rational number from itself
+"0df0e003-f68e-4209-8c6e-6a4e76af5058" = true
+
+# Multiply two positive rational numbers
+"34fde77a-75f4-4204-8050-8d3a937958d3" = true
+
+# Multiply a negative rational number by a positive rational number
+"6d015cf0-0ea3-41f1-93de-0b8e38e88bae" = true
+
+# Multiply two negative rational numbers
+"d1bf1b55-954e-41b1-8c92-9fc6beeb76fa" = true
+
+# Multiply a rational number by its reciprocal
+"a9b8f529-9ec7-4c79-a517-19365d779040" = true
+
+# Multiply a rational number by 1
+"d89d6429-22fa-4368-ab04-9e01a44d3b48" = true
+
+# Multiply a rational number by 0
+"0d95c8b9-1482-4ed7-bac9-b8694fa90145" = true
+
+# Divide two positive rational numbers
+"1de088f4-64be-4e6e-93fd-5997ae7c9798" = true
+
+# Divide a positive rational number by a negative rational number
+"7d7983db-652a-4e66-981a-e921fb38d9a9" = true
+
+# Divide two negative rational numbers
+"1b434d1b-5b38-4cee-aaf5-b9495c399e34" = true
+
+# Divide a rational number by 1
+"d81c2ebf-3612-45a6-b4e0-f0d47812bd59" = true
+
+# Absolute value of a positive rational number
+"5fee0d8e-5955-4324-acbe-54cdca94ddaa" = true
+
+# Absolute value of a positive rational number with negative numerator and denominator
+"3cb570b6-c36a-4963-a380-c0834321bcaa" = true
+
+# Absolute value of a negative rational number
+"6a05f9a0-1f6b-470b-8ff7-41af81773f25" = true
+
+# Absolute value of a negative rational number with negative denominator
+"5d0f2336-3694-464f-8df9-f5852fda99dd" = true
+
+# Absolute value of zero
+"f8e1ed4b-9dca-47fb-a01e-5311457b3118" = true
+
+# Raise a positive rational number to a positive integer power
+"ea2ad2af-3dab-41e7-bb9f-bd6819668a84" = true
+
+# Raise a negative rational number to a positive integer power
+"8168edd2-0af3-45b1-b03f-72c01332e10a" = true
+
+# Raise zero to an integer power
+"e2f25b1d-e4de-4102-abc3-c2bb7c4591e4" = true
+
+# Raise one to an integer power
+"431cac50-ab8b-4d58-8e73-319d5404b762" = true
+
+# Raise a positive rational number to the power of zero
+"7d164739-d68a-4a9c-b99f-dd77ce5d55e6" = true
+
+# Raise a negative rational number to the power of zero
+"eb6bd5f5-f880-4bcd-8103-e736cb6e41d1" = true
+
+# Raise a real number to a positive rational number
+"30b467dd-c158-46f5-9ffb-c106de2fd6fa" = true
+
+# Raise a real number to a negative rational number
+"6e026bcc-be40-4b7b-ae22-eeaafc5a1789" = true
+
+# Raise a real number to a zero rational number
+"9f866da7-e893-407f-8cd2-ee85d496eec5" = true
+
+# Reduce a positive rational number to lowest terms
+"0a63fbde-b59c-4c26-8237-1e0c73354d0a" = true
+
+# Reduce a negative rational number to lowest terms
+"f87c2a4e-d29c-496e-a193-318c503e4402" = true
+
+# Reduce a rational number with a negative denominator to lowest terms
+"3b92ffc0-5b70-4a43-8885-8acee79cdaaf" = true
+
+# Reduce zero to lowest terms
+"c9dbd2e6-5ac0-4a41-84c1-48b645b4f663" = true
+
+# Reduce an integer to lowest terms
+"297b45ad-2054-4874-84d4-0358dc1b8887" = true
+
+# Reduce one to lowest terms
+"a73a17fe-fe8c-4a1c-a63b-e7579e333d9e" = true

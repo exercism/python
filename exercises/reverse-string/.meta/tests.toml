@@ -1,0 +1,19 @@
+[canonical-tests]
+
+# an empty string
+"c3b7d806-dced-49ee-8543-933fd1719b1c" = true
+
+# a word
+"01ebf55b-bebb-414e-9dec-06f7bb0bee3c" = true
+
+# a capitalized word
+"0f7c07e4-efd1-4aaa-a07a-90b49ce0b746" = true
+
+# a sentence with punctuation
+"71854b9c-f200-4469-9f5c-1e8e5eff5614" = true
+
+# a palindrome
+"1f8ed2f3-56f3-459b-8f3e-6d8d654a1f6c" = true
+
+# an even-sized word
+"b9e7dec1-c6df-40bd-9fa3-cd7ded010c4c" = true

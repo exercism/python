@@ -1,0 +1,34 @@
+[canonical-tests]
+
+# trinary 1 is decimal 1
+"a7a79a9e-5606-454c-9cdb-4f3c0ca46931" = true
+
+# trinary 2 is decimal 2
+"39240078-13e2-4eb8-87c4-aeffa7d64130" = true
+
+# trinary 10 is decimal 3
+"81900d67-7e07-4d41-a71e-86f1cd72ce1f" = true
+
+# trinary 11 is decimal 4
+"7a8d5341-f88a-4c60-9048-4d5e017fa701" = true
+
+# trinary 100 is decimal 9
+"6b3c37f6-d6b3-4575-85c0-19f48dd101af" = true
+
+# trinary 112 is decimal 14
+"a210b2b8-d333-4e19-9e59-87cabdd2a0ba" = true
+
+# trinary 222 is decimal 26
+"5ae03472-b942-42ce-ba00-e84a7dc86dd8" = true
+
+# trinary 1122000120 is decimal 32091
+"d4fabf94-6149-4d1e-b42f-b34dc3ddef8f" = true
+
+# invalid trinary digits returns 0
+"34be152d-38f3-4dcf-b5ab-9e14fe2f7161" = true
+
+# invalid word as input returns 0
+"b57aa24d-3da2-4787-9429-5bc94d3112d6" = true
+
+# invalid numbers with letters as input returns 0
+"673c2057-5d89-483c-87fa-139da6927b90" = true

@@ -1,0 +1,22 @@
+[canonical-tests]
+
+# Adding a student adds them to the sorted roster
+"6d0a30e4-1b4e-472e-8e20-c41702125667" = true
+
+# Adding more student adds them to the sorted roster
+"233be705-dd58-4968-889d-fb3c7954c9cc" = true
+
+# Adding students to different grades adds them to the same sorted roster
+"75a51579-d1d7-407c-a2f8-2166e984e8ab" = true
+
+# Roster returns an empty list if there are no students enrolled
+"a3f0fb58-f240-4723-8ddc-e644666b85cc" = true
+
+# Student names with grades are displayed in the same sorted roster
+"180a8ff9-5b94-43fc-9db1-d46b4a8c93b6" = true
+
+# Grade returns the students in that grade in alphabetical order
+"1bfbcef1-e4a3-49e8-8d22-f6f9f386187e" = true
+
+# Grade returns an empty list if there are no students in that grade
+"5e67aa3c-a3c6-4407-a183-d8fe59cd1630" = true

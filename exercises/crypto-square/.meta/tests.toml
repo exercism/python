@@ -1,0 +1,22 @@
+[canonical-tests]
+
+# empty plaintext results in an empty ciphertext
+"407c3837-9aa7-4111-ab63-ec54b58e8e9f" = true
+
+# Lowercase
+"64131d65-6fd9-4f58-bdd8-4a2370fb481d" = true
+
+# Remove spaces
+"63a4b0ed-1e3c-41ea-a999-f6f26ba447d6" = true
+
+# Remove punctuation
+"1b5348a1-7893-44c1-8197-42d48d18756c" = true
+
+# 9 character plaintext results in 3 chunks of 3 characters
+"8574a1d3-4a08-4cec-a7c7-de93a164f41a" = true
+
+# 8 character plaintext results in 3 chunks, the last one with a trailing space
+"a65d3fa1-9e09-43f9-bcec-7a672aec3eae" = true
+
+# 54 character plaintext results in 7 chunks, the last two with trailing spaces
+"fbcb0c6d-4c39-4a31-83f6-c473baa6af80" = true

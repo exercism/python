@@ -1,0 +1,46 @@
+[canonical-tests]
+
+# first day a partridge in a pear tree
+"c0b5a5e6-c89d-49b1-a6b2-9f523bff33f7" = true
+
+# second day two turtle doves
+"1c64508a-df3d-420a-b8e1-fe408847854a" = true
+
+# third day three french hens
+"a919e09c-75b2-4e64-bb23-de4a692060a8" = true
+
+# fourth day four calling birds
+"9bed8631-ec60-4894-a3bb-4f0ec9fbe68d" = true
+
+# fifth day five gold rings
+"cf1024f0-73b6-4545-be57-e9cea565289a" = true
+
+# sixth day six geese-a-laying
+"50bd3393-868a-4f24-a618-68df3d02ff04" = true
+
+# seventh day seven swans-a-swimming
+"8f29638c-9bf1-4680-94be-e8b84e4ade83" = true
+
+# eighth day eight maids-a-milking
+"7038d6e1-e377-47ad-8c37-10670a05bc05" = true
+
+# ninth day nine ladies dancing
+"37a800a6-7a56-4352-8d72-0f51eb37cfe8" = true
+
+# tenth day ten lords-a-leaping
+"10b158aa-49ff-4b2d-afc3-13af9133510d" = true
+
+# eleventh day eleven pipers piping
+"08d7d453-f2ba-478d-8df0-d39ea6a4f457" = true
+
+# twelfth day twelve drummers drumming
+"0620fea7-1704-4e48-b557-c05bf43967f0" = true
+
+# recites first three verses of the song
+"da8b9013-b1e8-49df-b6ef-ddec0219e398" = true
+
+# recites three verses from the middle of the song
+"c095af0d-3137-4653-ad32-bfb899eda24c" = true
+
+# recites the whole song
+"20921bc9-cc52-4627-80b3-198cbbfcf9b7" = true

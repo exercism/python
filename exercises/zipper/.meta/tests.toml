@@ -1,0 +1,40 @@
+[canonical-tests]
+
+# data is retained
+"771c652e-0754-4ef0-945c-0675d12ef1f5" = true
+
+# left, right and value
+"d7dcbb92-47fc-4d01-b81a-df3353bc09ff" = true
+
+# dead end
+"613d8286-b05c-4453-b205-e6f9c5966339" = true
+
+# tree from deep focus
+"dda31af7-1c68-4e29-933a-c9d198d94284" = true
+
+# traversing up from top
+"1e3072a6-f85b-430b-b014-cdb4087e3577" = true
+
+# left, right, and up
+"b8505f6a-aed4-4c2e-824f-a0ed8570d74b" = true
+
+# set_value
+"47df1a27-b709-496e-b381-63a03b82ea5f" = true
+
+# set_value after traversing up
+"16a1f1a8-dbed-456d-95ac-1cbb6093e0ab" = true
+
+# set_left with leaf
+"535a91af-a02e-49cd-8d2c-ecb6e4647174" = true
+
+# set_right with null
+"b3f60c4b-a788-4ffd-be5d-1e69aee61de3" = true
+
+# set_right with subtree
+"e91c221d-7b90-4604-b4ec-46638a673a12" = true
+
+# set_value on deep focus
+"c246be85-6648-4e9c-866f-b08cd495149a" = true
+
+# different paths to same zipper
+"47aa85a0-5240-48a4-9f42-e2ac636710ea" = true

@@ -1,0 +1,52 @@
+[canonical-tests]
+
+# valid isbn number
+"0caa3eac-d2e3-4c29-8df8-b188bc8c9292" = true
+
+# invalid isbn check digit
+"19f76b53-7c24-45f8-87b8-4604d0ccd248" = true
+
+# valid isbn number with a check digit of 10
+"4164bfee-fb0a-4a1c-9f70-64c6a1903dcd" = true
+
+# check digit is a character other than X
+"3ed50db1-8982-4423-a993-93174a20825c" = true
+
+# invalid character in isbn
+"c19ba0c4-014f-4dc3-a63f-ff9aefc9b5ec" = true
+
+# X is only valid as a check digit
+"28025280-2c39-4092-9719-f3234b89c627" = true
+
+# valid isbn without separating dashes
+"f6294e61-7e79-46b3-977b-f48789a4945b" = true
+
+# isbn without separating dashes and X as check digit
+"185ab99b-3a1b-45f3-aeec-b80d80b07f0b" = true
+
+# isbn without check digit and dashes
+"7725a837-ec8e-4528-a92a-d981dd8cf3e2" = true
+
+# too long isbn and no dashes
+"47e4dfba-9c20-46ed-9958-4d3190630bdf" = true
+
+# too short isbn
+"737f4e91-cbba-4175-95bf-ae630b41fb60" = true
+
+# isbn without check digit
+"5458a128-a9b6-4ff8-8afb-674e74567cef" = true
+
+# check digit of X should not be used for 0
+"70b6ad83-d0a2-4ca7-a4d5-a9ab731800f7" = true
+
+# empty isbn
+"94610459-55ab-4c35-9b93-ff6ea1a8e562" = true
+
+# input is 9 characters
+"7bff28d4-d770-48cc-80d6-b20b3a0fb46c" = true
+
+# invalid characters are not ignored
+"ed6e8d1b-382c-4081-8326-8b772c581fec" = true
+
+# input is too long but contains a valid isbn
+"fb5e48d8-7c03-4bfb-a088-b101df16fdc3" = true

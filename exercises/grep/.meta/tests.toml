@@ -1,0 +1,76 @@
+[canonical-tests]
+
+# One file, one match, no flags
+"9049fdfd-53a7-4480-a390-375203837d09" = true
+
+# One file, one match, print line numbers flag
+"76519cce-98e3-46cd-b287-aac31b1d77d6" = true
+
+# One file, one match, case-insensitive flag
+"af0b6d3c-e0e8-475e-a112-c0fc10a1eb30" = true
+
+# One file, one match, print file names flag
+"ff7af839-d1b8-4856-a53e-99283579b672" = true
+
+# One file, one match, match entire lines flag
+"8625238a-720c-4a16-81f2-924ec8e222cb" = true
+
+# One file, one match, multiple flags
+"2a6266b3-a60f-475c-a5f5-f5008a717d3e" = true
+
+# One file, several matches, no flags
+"842222da-32e8-4646-89df-0d38220f77a1" = true
+
+# One file, several matches, print line numbers flag
+"4d84f45f-a1d8-4c2e-a00e-0b292233828c" = true
+
+# One file, several matches, match entire lines flag
+"0a483b66-315b-45f5-bc85-3ce353a22539" = true
+
+# One file, several matches, case-insensitive flag
+"3d2ca86a-edd7-494c-8938-8eeed1c61cfa" = true
+
+# One file, several matches, inverted flag
+"1f52001f-f224-4521-9456-11120cad4432" = true
+
+# One file, no matches, various flags
+"7a6ede7f-7dd5-4364-8bf8-0697c53a09fe" = true
+
+# One file, one match, file flag takes precedence over line flag
+"3d3dfc23-8f2a-4e34-abd6-7b7d140291dc" = true
+
+# One file, several matches, inverted and match entire lines flags
+"87b21b24-b788-4d6e-a68b-7afe9ca141fe" = true
+
+# Multiple files, one match, no flags
+"ba496a23-6149-41c6-a027-28064ed533e5" = true
+
+# Multiple files, several matches, no flags
+"4539bd36-6daa-4bc3-8e45-051f69f5aa95" = true
+
+# Multiple files, several matches, print line numbers flag
+"9fb4cc67-78e2-4761-8e6b-a4b57aba1938" = true
+
+# Multiple files, one match, print file names flag
+"aeee1ef3-93c7-4cd5-af10-876f8c9ccc73" = true
+
+# Multiple files, several matches, case-insensitive flag
+"d69f3606-7d15-4ddf-89ae-01df198e6b6c" = true
+
+# Multiple files, several matches, inverted flag
+"82ef739d-6701-4086-b911-007d1a3deb21" = true
+
+# Multiple files, one match, match entire lines flag
+"77b2eb07-2921-4ea0-8971-7636b44f5d29" = true
+
+# Multiple files, one match, multiple flags
+"e53a2842-55bb-4078-9bb5-04ac38929989" = true
+
+# Multiple files, no matches, various flags
+"9c4f7f9a-a555-4e32-bb06-4b8f8869b2cb" = true
+
+# Multiple files, several matches, file flag takes precedence over line number flag
+"ba5a540d-bffd-481b-bd0c-d9a30f225e01" = true
+
+# Multiple files, several matches, inverted and match entire lines flags
+"ff406330-2f0b-4b17-9ee4-4b71c31dd6d2" = true
