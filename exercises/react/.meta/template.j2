@@ -34,7 +34,7 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
 
         {% endfor -%}
 
-        {% set assignment_block, callbacks_observers = plugins["add_callbacks"](operations) -%}
+        {% set assignment_block, callbacks_observers, callbacks_values = plugins["add_callbacks"](operations, cells) -%}
         {% if assignment_block != '' %}
         {{ assignment_block }}
         {% for callback, observer in callbacks_observers.items() -%}
@@ -54,7 +54,11 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         {% endif -%}
         {% if operation['expect_callbacks_not_to_be_called'] -%}
         {% for not_expect_callback in operation['expect_callbacks_not_to_be_called'] -%}
+        {% if case["description"] == 'callbacks can be added and removed' -%}
+        self.assertEqual({{ callbacks_observers[not_expect_callback] }}, {{ callbacks_values[not_expect_callback]['values'] }})
+        {% else -%}
         self.assertEqual({{ callbacks_observers[not_expect_callback] }}, [])
+        {% endif -%}
         {% endfor -%}
         {% endif -%}
         {% else -%}

@@ -3,7 +3,7 @@ import unittest
 
 from react import InputCell, ComputeCell
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.0.0
+# Tests adapted from `problem-specifications//canonical-data.json` @ v
 class ReactTest(unittest.TestCase):
     def test_input_cells_have_a_value(self):
         input_ = InputCell(10)
@@ -113,7 +113,7 @@ class ReactTest(unittest.TestCase):
         input_.value = 41
         self.assertEqual(cb2_observer[-1], 42)
         self.assertEqual(cb3_observer[-1], 42)
-        self.assertEqual(cb1_observer, [])
+        self.assertEqual(cb1_observer, [32])
 
     def test_removing_a_callback_multiple_times_doesn_t_interfere_with_other_callbacks(
         self
