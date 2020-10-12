@@ -1,0 +1,40 @@
+[canonical-tests]
+
+# empty input
+"2668d5dc-109f-4f71-b9d5-8d06b1d6f1cd" = true
+
+# tree with no nodes
+"84ded10a-94df-4a30-9457-b50ccbdca813" = true
+
+# node without tree
+"0a6311b2-c615-4fa7-800e-1b1cbb68833d" = true
+
+# node without properties
+"8c419ed8-28c4-49f6-8f2d-433e706110ef" = true
+
+# single node tree
+"8209645f-32da-48fe-8e8f-b9b562c26b49" = true
+
+# multiple properties
+"6c995856-b919-4c75-8fd6-c2c3c31b37dc" = true
+
+# properties without delimiter
+"a771f518-ec96-48ca-83c7-f8d39975645f" = true
+
+# all lowercase property
+"6c02a24e-6323-4ed5-9962-187d19e36bc8" = true
+
+# upper and lowercase property
+"8772d2b1-3c57-405a-93ac-0703b671adc1" = true
+
+# two nodes
+"a759b652-240e-42ec-a6d2-3a08d834b9e2" = true
+
+# two child trees
+"cc7c02bc-6097-42c4-ab88-a07cb1533d00" = true
+
+# multiple property values
+"724eeda6-00db-41b1-8aa9-4d5238ca0130" = true
+
+# escaped property
+"11c36323-93fc-495d-bb23-c88ee5844b8c" = true

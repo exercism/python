@@ -1,0 +1,31 @@
+[canonical-tests]
+
+# data is retained
+"e9c93a78-c536-4750-a336-94583d23fafa" = true
+
+# smaller number at left node
+"7a95c9e8-69f6-476a-b0c4-4170cb3f7c91" = true
+
+# same number at left node
+"22b89499-9805-4703-a159-1a6e434c1585" = true
+
+# greater number at right node
+"2e85fdde-77b1-41ed-b6ac-26ce6b663e34" = true
+
+# can create complex tree
+"dd898658-40ab-41d0-965e-7f145bf66e0b" = true
+
+# can sort single number
+"9e0c06ef-aeca-4202-b8e4-97f1ed057d56" = true
+
+# can sort if second number is smaller than first
+"425e6d07-fceb-4681-a4f4-e46920e380bb" = true
+
+# can sort if second number is same as first
+"bd7532cc-6988-4259-bac8-1d50140079ab" = true
+
+# can sort if second number is greater than first
+"b6d1b3a5-9d79-44fd-9013-c83ca92ddd36" = true
+
+# can sort complex tree
+"d00ec9bd-1288-4171-b968-d44d0808c1c8" = true

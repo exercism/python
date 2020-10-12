@@ -1,0 +1,58 @@
+[canonical-tests]
+
+# 1 is a single I
+"19828a3a-fbf7-4661-8ddd-cbaeee0e2178" = true
+
+# 2 is two I's
+"f088f064-2d35-4476-9a41-f576da3f7b03" = true
+
+# 3 is three I's
+"b374a79c-3bea-43e6-8db8-1286f79c7106" = true
+
+# 4, being 5 - 1, is IV
+"05a0a1d4-a140-4db1-82e8-fcc21fdb49bb" = true
+
+# 5 is a single V
+"57c0f9ad-5024-46ab-975d-de18c430b290" = true
+
+# 6, being 5 + 1, is VI
+"20a2b47f-e57f-4797-a541-0b3825d7f249" = true
+
+# 9, being 10 - 1, is IX
+"ff3fb08c-4917-4aab-9f4e-d663491d083d" = true
+
+# 20 is two X's
+"2bda64ca-7d28-4c56-b08d-16ce65716cf6" = true
+
+# 48 is not 50 - 2 but rather 40 + 8
+"a1f812ef-84da-4e02-b4f0-89c907d0962c" = true
+
+# 49 is not 40 + 5 + 4 but rather 50 - 10 + 10 - 1
+"607ead62-23d6-4c11-a396-ef821e2e5f75" = true
+
+# 50 is a single L
+"d5b283d4-455d-4e68-aacf-add6c4b51915" = true
+
+# 90, being 100 - 10, is XC
+"46b46e5b-24da-4180-bfe2-2ef30b39d0d0" = true
+
+# 100 is a single C
+"30494be1-9afb-4f84-9d71-db9df18b55e3" = true
+
+# 60, being 50 + 10, is LX
+"267f0207-3c55-459a-b81d-67cec7a46ed9" = true
+
+# 400, being 500 - 100, is CD
+"cdb06885-4485-4d71-8bfb-c9d0f496b404" = true
+
+# 500 is a single D
+"6b71841d-13b2-46b4-ba97-dec28133ea80" = true
+
+# 900, being 1000 - 100, is CM
+"432de891-7fd6-4748-a7f6-156082eeca2f" = true
+
+# 1000 is a single M
+"e6de6d24-f668-41c0-88d7-889c0254d173" = true
+
+# 3000 is three M's
+"bb550038-d4eb-4be2-a9ce-f21961ac3bc6" = true

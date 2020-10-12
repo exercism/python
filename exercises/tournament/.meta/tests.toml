@@ -1,0 +1,34 @@
+[canonical-tests]
+
+# just the header if no input
+"67e9fab1-07c1-49cf-9159-bc8671cc7c9c" = true
+
+# a win is three points, a loss is zero points
+"1b4a8aef-0734-4007-80a2-0626178c88f4" = true
+
+# a win can also be expressed as a loss
+"5f45ac09-4efe-46e7-8ddb-75ad85f86e05" = true
+
+# a different team can win
+"fd297368-efa0-442d-9f37-dd3f9a437239" = true
+
+# a draw is one point each
+"26c016f9-e753-4a93-94e9-842f7b4d70fc" = true
+
+# There can be more than one match
+"731204f6-4f34-4928-97eb-1c307ba83e62" = true
+
+# There can be more than one winner
+"49dc2463-42af-4ea6-95dc-f06cc5776adf" = true
+
+# There can be more than two teams
+"6d930f33-435c-4e6f-9e2d-63fa85ce7dc7" = true
+
+# typical input
+"97022974-0c8a-4a50-8fe7-e36bdd8a5945" = true
+
+# incomplete competition (not all pairs have played)
+"fe562f0d-ac0a-4c62-b9c9-44ee3236392b" = true
+
+# ties broken alphabetically
+"3aa0386f-150b-4f99-90bb-5195e7b7d3b8" = true

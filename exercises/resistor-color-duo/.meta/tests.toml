@@ -1,0 +1,16 @@
+[canonical-tests]
+
+# Brown and black
+"ce11995a-5b93-4950-a5e9-93423693b2fc" = true
+
+# Blue and grey
+"7bf82f7a-af23-48ba-a97d-38d59406a920" = true
+
+# Yellow and violet
+"f1886361-fdfd-4693-acf8-46726fe24e0c" = true
+
+# Orange and orange
+"77a8293d-2a83-4016-b1af-991acc12b9fe" = true
+
+# Ignore additional colors
+"0c4fb44f-db7c-4d03-afa8-054350f156a8" = true

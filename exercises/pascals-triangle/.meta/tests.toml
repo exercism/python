@@ -1,0 +1,25 @@
+[canonical-tests]
+
+# zero rows
+"9920ce55-9629-46d5-85d6-4201f4a4234d" = true
+
+# single row
+"70d643ce-a46d-4e93-af58-12d88dd01f21" = true
+
+# two rows
+"a6e5a2a2-fc9a-4b47-9f4f-ed9ad9fbe4bd" = true
+
+# three rows
+"97206a99-79ba-4b04-b1c5-3c0fa1e16925" = true
+
+# four rows
+"565a0431-c797-417c-a2c8-2935e01ce306" = true
+
+# five rows
+"06f9ea50-9f51-4eb2-b9a9-c00975686c27" = true
+
+# six rows
+"c3912965-ddb4-46a9-848e-3363e6b00b13" = true
+
+# ten rows
+"6cb26c66-7b57-4161-962c-81ec8c99f16b" = true

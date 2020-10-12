@@ -1,0 +1,46 @@
+[canonical-tests]
+
+# binary 0 is decimal 0
+"567fc71e-1013-4915-9285-bca0648c0844" = true
+
+# binary 1 is decimal 1
+"c0824fb1-6a0a-4e9a-a262-c6c00af99fa8" = true
+
+# binary 10 is decimal 2
+"4d2834fb-3cc3-4159-a8fd-da1098def8ed" = true
+
+# binary 11 is decimal 3
+"b7b2b649-4a7c-4808-9eb9-caf00529bac6" = true
+
+# binary 100 is decimal 4
+"de761aff-73cd-43c1-9e1f-0417f07b1e4a" = true
+
+# binary 1001 is decimal 9
+"7849a8f7-f4a1-4966-963e-503282d6814c" = true
+
+# binary 11010 is decimal 26
+"836a101c-aecb-473b-ba78-962408dcda98" = true
+
+# binary 10001101000 is decimal 1128
+"1c6822a4-8584-438b-8dd4-40f0f0b66371" = true
+
+# binary ignores leading zeros
+"91ffe632-8374-4016-b1d1-d8400d9f940d" = true
+
+# 2 is not a valid binary digit
+"44f7d8b1-ddc3-4751-8be3-700a538b421c" = true
+
+# a number containing a non-binary digit is invalid
+"c263a24d-6870-420f-b783-628feefd7b6e" = true
+
+# a number with trailing non-binary characters is invalid
+"8d81305b-0502-4a07-bfba-051c5526d7f2" = true
+
+# a number with leading non-binary characters is invalid
+"a7f79b6b-039a-4d42-99b4-fcee56679f03" = true
+
+# a number with internal non-binary characters is invalid
+"9e0ece9d-b8aa-46a0-a22b-3bed2e3f741e" = true
+
+# a number and a word whitespace separated is invalid
+"46c8dd65-0c32-4273-bb0d-f2b111bccfbd" = true

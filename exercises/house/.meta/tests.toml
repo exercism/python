@@ -1,0 +1,43 @@
+[canonical-tests]
+
+# verse one - the house that jack built
+"28a540ff-f765-4348-9d57-ae33f25f41f2" = true
+
+# verse two - the malt that lay
+"ebc825ac-6e2b-4a5e-9afd-95732191c8da" = true
+
+# verse three - the rat that ate
+"1ed8bb0f-edb8-4bd1-b6d4-b64754fe4a60" = true
+
+# verse four - the cat that killed
+"64b0954e-8b7d-4d14-aad0-d3f6ce297a30" = true
+
+# verse five - the dog that worried
+"1e8d56bc-fe31-424d-9084-61e6111d2c82" = true
+
+# verse six - the cow with the crumpled horn
+"6312dc6f-ab0a-40c9-8a55-8d4e582beac4" = true
+
+# verse seven - the maiden all forlorn
+"68f76d18-6e19-4692-819c-5ff6a7f92feb" = true
+
+# verse eight - the man all tattered and torn
+"73872564-2004-4071-b51d-2e4326096747" = true
+
+# verse nine - the priest all shaven and shorn
+"0d53d743-66cb-4351-a173-82702f3338c9" = true
+
+# verse 10 - the rooster that crowed in the morn
+"452f24dc-8fd7-4a82-be1a-3b4839cfeb41" = true
+
+# verse 11 - the farmer sowing his corn
+"97176f20-2dd3-4646-ac72-cffced91ea26" = true
+
+# verse 12 - the horse and the hound and the horn
+"09824c29-6aad-4dcd-ac98-f61374a6a8b7" = true
+
+# multiple verses
+"d2b980d3-7851-49e1-97ab-1524515ec200" = true
+
+# full rhyme
+"0311d1d0-e085-4f23-8ae7-92406fb3e803" = true
