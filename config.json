@@ -1483,6 +1483,18 @@
       ]
     },
     {
+      "slug": "paasio",
+      "uuid": "ec36f9ed-f376-43d9-90ee-be0bea0cfc98",
+      "core": false,
+      "unlocked_by": "book-store",
+      "difficulty": 5,
+      "topics": [
+        "classes",
+        "interfaces",
+        "networking"
+      ]
+    },
+    {
       "slug": "accumulate",
       "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
       "core": false,
