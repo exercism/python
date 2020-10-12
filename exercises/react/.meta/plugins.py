@@ -1,13 +1,13 @@
 def add_callbacks(operations):
     observers = []
     callbacks = []
-    operations = [op for op in operations if op["type"] == "add_callback"]
+    add_operations = [op for op in operations if op["type"] == "add_callback"]
 
-    if not operations:
+    if not add_operations:
         return '', {}
 
-    has_prefix = len(operations) > 1
-    for i, op in enumerate(operations):
+    has_prefix = len(add_operations) > 1
+    for i, op in enumerate(add_operations):
         callbacks.append(op["name"])
         observers.append((f"cb{i + 1}_" if has_prefix else "") + "observer")
 
