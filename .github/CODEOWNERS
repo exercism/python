@@ -1,1 +1,7 @@
 * @exercism/python
+
+# Maintainers 
+config/maintainers.json @exercism/maintainers-admin
+
+# Code owners
+.github/CODEOWNERS      @exercism/maintainers-admin
