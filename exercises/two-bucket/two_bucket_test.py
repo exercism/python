@@ -2,7 +2,7 @@ import unittest
 
 from two_bucket import measure
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class TwoBucketTest(unittest.TestCase):

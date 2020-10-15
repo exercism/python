@@ -2,7 +2,7 @@ import unittest
 
 from sum_of_multiples import sum_of_multiples
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.5.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class SumOfMultiplesTest(unittest.TestCase):

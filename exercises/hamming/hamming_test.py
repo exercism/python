@@ -2,7 +2,7 @@ import unittest
 
 from hamming import distance
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.3.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class HammingTest(unittest.TestCase):

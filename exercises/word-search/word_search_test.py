@@ -2,7 +2,7 @@ import unittest
 
 from word_search import WordSearch, Point
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.1
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class WordSearchTest(unittest.TestCase):

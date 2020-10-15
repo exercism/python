@@ -2,7 +2,7 @@ import unittest
 
 from pythagorean_triplet import triplets_with_sum
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 # Python 2/3 compatibility
 if not hasattr(unittest.TestCase, "assertCountEqual"):

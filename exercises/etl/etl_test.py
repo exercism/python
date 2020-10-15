@@ -2,7 +2,7 @@ import unittest
 
 from etl import transform
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.0.1
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class EtlTest(unittest.TestCase):

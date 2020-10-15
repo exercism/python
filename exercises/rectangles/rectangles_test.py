@@ -2,7 +2,7 @@ import unittest
 
 from rectangles import rectangles
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class RectanglesTest(unittest.TestCase):

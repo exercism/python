@@ -2,7 +2,7 @@ import unittest
 
 from grep import grep
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 import io
 from unittest import mock
 

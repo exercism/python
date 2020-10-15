@@ -2,7 +2,7 @@ import unittest
 
 from variable_length_quantity import decode, encode
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class VariableLengthQuantityTest(unittest.TestCase):

@@ -2,7 +2,7 @@ import unittest
 
 from isbn_verifier import is_valid
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.7.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class IsbnVerifierTest(unittest.TestCase):

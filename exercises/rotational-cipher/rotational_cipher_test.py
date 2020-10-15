@@ -2,7 +2,7 @@ import unittest
 
 from rotational_cipher import rotate
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class RotationalCipherTest(unittest.TestCase):

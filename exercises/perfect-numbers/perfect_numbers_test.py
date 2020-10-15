@@ -2,7 +2,7 @@ import unittest
 
 from perfect_numbers import classify
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class PerfectNumbersTest(unittest.TestCase):

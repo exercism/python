@@ -2,7 +2,7 @@ import unittest
 
 from zipper import Zipper
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class ZipperTest(unittest.TestCase):

@@ -2,7 +2,7 @@ import unittest
 
 from queen_attack import Queen
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.3.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class QueenAttackTest(unittest.TestCase):

@@ -2,7 +2,7 @@ import unittest
 
 from armstrong_numbers import is_armstrong_number
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class ArmstrongNumbersTest(unittest.TestCase):

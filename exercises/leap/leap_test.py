@@ -2,7 +2,7 @@ import unittest
 
 from leap import leap_year
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.6.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class LeapTest(unittest.TestCase):

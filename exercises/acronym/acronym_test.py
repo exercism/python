@@ -2,7 +2,7 @@ import unittest
 
 from acronym import abbreviate
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.7.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class AcronymTest(unittest.TestCase):
