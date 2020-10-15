@@ -6,7 +6,7 @@ from diffie_hellman import private_key, public_key, secret
 
 
 class DiffieHellmanTest(unittest.TestCase):
-    def test_private_key_is_in_range_1_p(self):
+    def test_private_key_is_greater_than_1_and_less_than_p(self):
         primes = [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
         for p in primes:
             self.assertTrue(1 < private_key(p) < p)
