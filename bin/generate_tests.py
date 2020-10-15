@@ -20,28 +20,33 @@ if _py.major < 3 or (_py.major == 3 and _py.minor < 6):
     sys.exit(1)
 
 import argparse
+from contextlib import contextmanager
+from datetime import datetime
 import difflib
 import filecmp
 import importlib.util
 import json
 import logging
-import os
-import posixpath
+from pathlib import Path
 import re
 import shutil
-from glob import glob
 from itertools import repeat
 from string import punctuation, whitespace
 from subprocess import check_call
+import toml
 from tempfile import NamedTemporaryFile
 from textwrap import wrap
+from typing import Any, Dict, List, NoReturn, Union
 
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound, UndefinedError
 from dateutil.parser import parse
 
-VERSION = "0.2.1"
+VERSION = "0.3.0"
 
-DEFAULT_SPEC_LOCATION = os.path.join("..", "problem-specifications")
+TypeJSON = Dict[str, Any]
+
+PROBLEM_SPEC_REPO = "https://github.com/exercism/problem-specifications.git"
+DEFAULT_SPEC_LOCATION = Path(".problem-specifications")
 RGX_WORDS = re.compile(r"[-_\s]|(?=[A-Z])")
 
 logging.basicConfig()
@@ -49,7 +54,7 @@ logger = logging.getLogger("generator")
 logger.setLevel(logging.WARN)
 
 
-def replace_all(string, chars, rep):
+def replace_all(string: str, chars: Union[str, List[str]], rep: str) -> str:
     """
     Replace any char in chars with rep, reduce runs and strip terminal ends.
     """
@@ -59,7 +64,7 @@ def replace_all(string, chars, rep):
     )
 
 
-def to_snake(string, wordchars_only=False):
+def to_snake(string: str, wordchars_only: bool = False) -> str:
     """
     Convert pretty much anything to to_snake.
 
@@ -71,21 +76,21 @@ def to_snake(string, wordchars_only=False):
     return clean if wordchars_only else replace_all(clean, whitespace + punctuation, "_")
 
 
-def camel_case(string):
+def camel_case(string: str) -> str:
     """
     Convert pretty much anything to CamelCase.
     """
     return "".join(w.title() for w in to_snake(string).split("_"))
 
 
-def wrap_overlong(string, width=70):
+def wrap_overlong(string: str, width: int = 70) -> List[str]:
     """
     Break an overly long string literal into escaped lines.
     """
     return ["{0!r} \\".format(w) for w in wrap(string, width)]
 
 
-def parse_datetime(string, strip_module=False):
+def parse_datetime(string: str, strip_module: bool = False) -> datetime:
     """
     Parse a (hopefully ISO 8601) datestamp to a datetime object and
     return its repr for use in a jinja2 template.
@@ -134,7 +139,7 @@ INVALID_ESCAPE_RE = re.compile(
         U(?:[0-9A-Fa-f]{8})         # a 32-bit unicode char
     )""", flags=re.VERBOSE)
 
-def escape_invalid_escapes(string):
+def escape_invalid_escapes(string: str) -> str:
     """
     Some canonical data includes invalid escape sequences, which
     need to be properly escaped before template render.
@@ -146,7 +151,7 @@ ALL_VALID = r"\newline\\\'\"\a\b\f\n\r\t\v\o123" \
 
 assert ALL_VALID == escape_invalid_escapes(ALL_VALID)
 
-def get_tested_properties(spec):
+def get_tested_properties(spec: TypeJSON) -> List[str]:
     """
     Get set of tested properties from spec. Include nested cases.
     """
@@ -159,7 +164,7 @@ def get_tested_properties(spec):
     return sorted(props)
 
 
-def error_case(case):
+def error_case(case: TypeJSON) -> bool:
     return (
         "expected" in case
         and isinstance(case["expected"], dict)
@@ -167,7 +172,7 @@ def error_case(case):
     )
 
 
-def has_error_case(cases):
+def has_error_case(cases: List[TypeJSON]) -> bool:
     cases = cases[:]
     while cases:
         case = cases.pop(0)
@@ -177,62 +182,117 @@ def has_error_case(cases):
     return False
 
 
-def regex_replace(s, find, repl):
+def regex_replace(s: str, find: str, repl: str) -> str:
     return re.sub(find, repl, s)
 
 
-def regex_find(s, find):
+def regex_find(s: str, find: str) -> List[Any]:
     return re.findall(find, s)
 
 
-def regex_split(s, find):
+def regex_split(s: str, find: str) -> List[str]:
     return re.split(find, s)
 
 
-def load_canonical(exercise, spec_path):
+def load_tests_toml(exercise: str) -> Dict[str, bool]:
+    """
+    Loads test case opt-in/out data for an exercise as a dictionary
+    """
+    full_path = Path("exercises") / exercise / ".meta/tests.toml"
+    with full_path.open() as f:
+        opts = toml.load(f)
+    return opts
+
+
+def filter_test_cases(cases: List[TypeJSON], opts: Dict[str, bool]) -> List[TypeJSON]:
+    """
+    Returns a filtered copy of `cases` where only cases whose UUID is marked True in
+    `opts` are included.
+    """
+    filtered = []
+    for case in cases:
+        if "uuid" in case:
+            uuid = case["uuid"]
+            if opts.get(uuid, False):
+                filtered.append(case)
+            else:
+                logger.debug(f"uuid {uuid} either missing or marked false")
+        elif "cases" in case:
+            subfiltered = filter_test_cases(case["cases"], opts)
+            if subfiltered:
+                case_copy = dict(case)
+                case_copy["cases"] = subfiltered
+                filtered.append(case_copy)
+    return filtered
+
+
+def load_canonical(exercise: str, spec_path: Path) -> TypeJSON:
     """
     Loads the canonical data for an exercise as a nested dictionary
     """
-    full_path = os.path.join(spec_path, "exercises", exercise, "canonical-data.json")
-    with open(full_path) as f:
+    full_path = spec_path / "exercises" / exercise / "canonical-data.json"
+    with full_path.open() as f:
         spec = json.load(f)
     spec["properties"] = get_tested_properties(spec)
+    test_opts = load_tests_toml(exercise)
+    num_cases = len(spec["cases"])
+    logger.debug(f"#cases={num_cases}")
+    spec["cases"] = filter_test_cases(spec["cases"], test_opts["canonical-tests"])
+    num_cases = len(spec["cases"])
+    logger.debug(f"#cases={num_cases} after filter")
     return spec
 
 
-def load_additional_tests(exercise):
+def load_additional_tests(exercise: str) -> List[TypeJSON]:
     """
     Loads additional tests from .meta/additional_tests.json
     """
-    full_path = os.path.join("exercises", exercise, ".meta", "additional_tests.json")
+    full_path = Path("exercises") / exercise / ".meta/additional_tests.json"
     try:
-        with open(full_path) as f:
+        with full_path.open() as f:
             data = json.load(f)
         return data.get("cases", [])
     except FileNotFoundError:
         return []
 
 
-def format_file(path):
+def format_file(path: Path) -> NoReturn:
     """
     Runs black auto-formatter on file at path
     """
     check_call(["black", "-q", path])
 
 
-def generate_exercise(env, spec_path, exercise, check=False):
+@contextmanager
+def clone_if_missing(repo: str, directory: Union[str, Path, None] = None):
+    if directory is None:
+        directory = repo.split("/")[-1].split(".")[0]
+    directory = Path(directory)
+    if not directory.is_dir():
+        temp_clone = True
+        check_call(["git", "clone", repo, str(directory)])
+    else:
+        temp_clone = False
+    try:
+        yield directory
+    finally:
+        if temp_clone:
+            shutil.rmtree(directory)
+
+
+def generate_exercise(env: Environment, spec_path: Path, exercise: Path, check: bool = False):
     """
     Renders test suite for exercise and if check is:
     True: verifies that current tests file matches rendered
     False: saves rendered to tests file
     """
-    slug = os.path.basename(exercise)
-    meta_dir = os.path.join(exercise, ".meta")
+    slug = exercise.name
+    meta_dir = exercise / ".meta"
     plugins_module = None
     plugins_name = "plugins"
-    plugins_source = os.path.join(meta_dir, f"{plugins_name}.py")
+    plugins_source = meta_dir / f"{plugins_name}.py"
     try:
-        if os.path.isfile(plugins_source):
+        if plugins_source.is_file():
             plugins_spec = importlib.util.spec_from_file_location(
                 plugins_name, plugins_source
             )
@@ -242,9 +302,9 @@ def generate_exercise(env, spec_path, exercise, check=False):
         spec = load_canonical(slug, spec_path)
         additional_tests = load_additional_tests(slug)
         spec["additional_cases"] = additional_tests
-        template_path = posixpath.join(slug, ".meta", "template.j2")
-        template = env.get_template(template_path)
-        tests_path = os.path.join(exercise, f"{to_snake(slug)}_test.py")
+        template_path = Path(slug) / ".meta" / "template.j2"
+        template = env.get_template(str(template_path))
+        tests_path = exercise / f"{to_snake(slug)}_test.py"
         spec["has_error_case"] = has_error_case(spec["cases"])
         if plugins_module is not None:
             spec[plugins_name] = plugins_module
@@ -252,10 +312,11 @@ def generate_exercise(env, spec_path, exercise, check=False):
         rendered = template.render(**spec)
         with NamedTemporaryFile("w", delete=False) as tmp:
             logger.debug(f"{slug}: writing render to tmp file {tmp.name}")
+            tmpfile = Path(tmp.name)
             tmp.write(rendered)
         try:
-            logger.debug(f"{slug}: formatting tmp file {tmp.name}")
-            format_file(tmp.name)
+            logger.debug(f"{slug}: formatting tmp file {tmpfile}")
+            format_file(tmpfile)
         except FileNotFoundError as e:
             logger.error(f"{slug}: the black utility must be installed")
             return False
@@ -263,22 +324,22 @@ def generate_exercise(env, spec_path, exercise, check=False):
         if check:
             try:
                 check_ok = True
-                if not os.path.isfile(tmp.name):
-                    logger.debug(f"{slug}: tmp file {tmp.name} not found")
+                if not tmpfile.is_file():
+                    logger.debug(f"{slug}: tmp file {tmpfile} not found")
                     check_ok = False
-                if not os.path.isfile(tests_path):
+                if not tests_path.is_file():
                     logger.debug(f"{slug}: tests file {tests_path} not found")
                     check_ok = False
-                if check_ok and not filecmp.cmp(tmp.name, tests_path):
-                    with open(tests_path) as f:
+                if check_ok and not filecmp.cmp(tmpfile, tests_path):
+                    with tests_path.open() as f:
                         current_lines = f.readlines()
-                    with open(tmp.name) as f:
+                    with tmpfile.open() as f:
                         rendered_lines = f.readlines()
                     diff = difflib.unified_diff(
                         current_lines,
                         rendered_lines,
-                        fromfile=f"[current] {os.path.basename(tests_path)}",
-                        tofile=f"[generated] {tmp.name}",
+                        fromfile=f"[current] {tests_path.name}",
+                        tofile=f"[generated] {tmpfile.name}",
                     )
                     logger.debug(f"{slug}: ##### DIFF START #####")
                     for line in diff:
@@ -292,11 +353,11 @@ def generate_exercise(env, spec_path, exercise, check=False):
                     return False
                 logger.debug(f"{slug}: check passed")
             finally:
-                logger.debug(f"{slug}: removing tmp file {tmp.name}")
-                os.remove(tmp.name)
+                logger.debug(f"{slug}: removing tmp file {tmpfile}")
+                tmpfile.unlink()
         else:
-            logger.debug(f"{slug}: moving tmp file {tmp.name}->{tests_path}")
-            shutil.move(tmp.name, tests_path)
+            logger.debug(f"{slug}: moving tmp file {tmpfile}->{tests_path}")
+            shutil.move(tmpfile, tests_path)
             print(f"{slug} generated at {tests_path}")
     except (TypeError, UndefinedError, SyntaxError) as e:
         logger.debug(str(e))
@@ -312,11 +373,11 @@ def generate_exercise(env, spec_path, exercise, check=False):
 
 
 def generate(
-    exercise_glob,
-    spec_path=DEFAULT_SPEC_LOCATION,
-    stop_on_failure=False,
-    check=False,
-    **kwargs,
+    exercise_glob: str,
+    spec_path: Path = DEFAULT_SPEC_LOCATION,
+    stop_on_failure: bool = False,
+    check: bool = False,
+    **_,
 ):
     """
     Primary entry point. Generates test files for all exercises matching exercise_glob
@@ -338,7 +399,7 @@ def generate(
     env.filters["escape_invalid_escapes"] = escape_invalid_escapes
     env.tests["error_case"] = error_case
     result = True
-    for exercise in sorted(glob(os.path.join("exercises", exercise_glob))):
+    for exercise in sorted(Path("exercises").glob(exercise_glob)):
         if not generate_exercise(env, spec_path, exercise, check):
             result = False
             if stop_on_failure:
@@ -360,6 +421,7 @@ if __name__ == "__main__":
         "-p",
         "--spec-path",
         default=DEFAULT_SPEC_LOCATION,
+        type=Path,
         help=(
             "path to clone of exercism/problem-specifications " "(default: %(default)s)"
         ),
@@ -373,4 +435,5 @@ if __name__ == "__main__":
     opts = parser.parse_args()
     if opts.verbose:
         logger.setLevel(logging.DEBUG)
-    generate(**opts.__dict__)
+    with clone_if_missing(repo=PROBLEM_SPEC_REPO, directory=opts.spec_path):
+        generate(**opts.__dict__)
