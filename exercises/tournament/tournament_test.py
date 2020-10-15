@@ -2,7 +2,7 @@ import unittest
 
 from tournament import tally
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.4.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class TournamentTest(unittest.TestCase):

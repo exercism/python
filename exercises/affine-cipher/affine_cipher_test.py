@@ -2,7 +2,7 @@ import unittest
 
 from affine_cipher import decode, encode
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.0.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class AffineCipherTest(unittest.TestCase):

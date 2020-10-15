@@ -2,7 +2,7 @@ import unittest
 
 from bob import response
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.6.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class BobTest(unittest.TestCase):

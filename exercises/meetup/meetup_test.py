@@ -3,7 +3,7 @@ import unittest
 
 from meetup import meetup, MeetupDayException
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class MeetupTest(unittest.TestCase):

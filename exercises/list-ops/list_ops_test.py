@@ -11,7 +11,7 @@ from list_ops import (
     map as list_ops_map,
 )
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.4.1
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class ListOpsTest(unittest.TestCase):

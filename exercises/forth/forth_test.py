@@ -2,7 +2,7 @@ import unittest
 
 from forth import evaluate, StackUnderflowError
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.7.1
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class ForthTest(unittest.TestCase):

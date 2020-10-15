@@ -2,7 +2,7 @@ import unittest
 
 from all_your_base import rebase
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.3.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class AllYourBaseTest(unittest.TestCase):

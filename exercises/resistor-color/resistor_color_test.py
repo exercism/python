@@ -2,7 +2,7 @@ import unittest
 
 from resistor_color import color_code, colors
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class ResistorColorTest(unittest.TestCase):

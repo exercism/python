@@ -2,7 +2,7 @@ import unittest
 
 from nth_prime import prime
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.1.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 def prime_range(n):

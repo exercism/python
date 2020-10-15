@@ -2,7 +2,7 @@ import unittest
 
 from custom_set import CustomSet
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class CustomSetTest(unittest.TestCase):

@@ -2,7 +2,7 @@ import unittest
 
 from triangle import equilateral, isosceles, scalene
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.1
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class EquilateralTriangleTest(unittest.TestCase):

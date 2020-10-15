@@ -2,7 +2,7 @@ import unittest
 
 from dnd_character import Character, modifier
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class DndCharacterTest(unittest.TestCase):

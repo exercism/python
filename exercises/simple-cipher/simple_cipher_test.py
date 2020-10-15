@@ -3,7 +3,7 @@ import unittest
 
 from simple_cipher import Cipher
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.0.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class RandomKeyCipherTest(unittest.TestCase):

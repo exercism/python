@@ -2,7 +2,7 @@ import unittest
 
 from run_length_encoding import encode, decode
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class RunLengthEncodingTest(unittest.TestCase):

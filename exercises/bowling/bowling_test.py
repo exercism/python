@@ -2,7 +2,7 @@ import unittest
 
 from bowling import BowlingGame
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class BowlingTest(unittest.TestCase):

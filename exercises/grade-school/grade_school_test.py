@@ -2,7 +2,7 @@ import unittest
 
 from grade_school import School
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class GradeSchoolTest(unittest.TestCase):

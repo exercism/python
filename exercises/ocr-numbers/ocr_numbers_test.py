@@ -2,7 +2,7 @@ import unittest
 
 from ocr_numbers import convert
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class OcrNumbersTest(unittest.TestCase):

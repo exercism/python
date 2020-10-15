@@ -2,7 +2,7 @@ import unittest
 
 from difference_of_squares import difference_of_squares, square_of_sum, sum_of_squares
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class DifferenceOfSquaresTest(unittest.TestCase):

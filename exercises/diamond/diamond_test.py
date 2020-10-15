@@ -2,7 +2,7 @@ import unittest
 
 from diamond import rows
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class DiamondTest(unittest.TestCase):

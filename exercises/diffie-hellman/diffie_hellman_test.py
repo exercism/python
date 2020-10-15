@@ -2,7 +2,7 @@ import unittest
 
 from diffie_hellman import private_key, public_key, secret
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class DiffieHellmanTest(unittest.TestCase):

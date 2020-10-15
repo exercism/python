@@ -2,7 +2,7 @@ import unittest
 
 from reverse_string import reverse
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class ReverseStringTest(unittest.TestCase):

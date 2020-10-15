@@ -2,7 +2,7 @@ import unittest
 
 from pig_latin import translate
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class PigLatinTest(unittest.TestCase):
