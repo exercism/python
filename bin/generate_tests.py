@@ -226,7 +226,7 @@ def filter_test_cases(cases: List[TypeJSON], opts: Dict[str, bool]) -> List[Type
     return filtered
 
 
-def load_canonical(exercise: str, spec_path: Path) -> TypeJSON:
+def load_canonical(exercise: str, spec_path: Path, test_opts: Dict[str, bool]) -> TypeJSON:
     """
     Loads the canonical data for an exercise as a nested dictionary
     """
@@ -234,12 +234,7 @@ def load_canonical(exercise: str, spec_path: Path) -> TypeJSON:
     with full_path.open() as f:
         spec = json.load(f)
     spec["properties"] = get_tested_properties(spec)
-    test_opts = load_tests_toml(exercise)
-    num_cases = len(spec["cases"])
-    logger.debug(f"#cases={num_cases}")
     spec["cases"] = filter_test_cases(spec["cases"], test_opts["canonical-tests"])
-    num_cases = len(spec["cases"])
-    logger.debug(f"#cases={num_cases} after filter")
     return spec
 
 
@@ -299,7 +294,12 @@ def generate_exercise(env: Environment, spec_path: Path, exercise: Path, check: 
             plugins_module = importlib.util.module_from_spec(plugins_spec)
             sys.modules[plugins_name] = plugins_module
             plugins_spec.loader.exec_module(plugins_module)
-        spec = load_canonical(slug, spec_path)
+        try:
+            test_opts = load_tests_toml(slug)
+        except FileNotFoundError:
+            logger.error(f"{slug}: tests.toml not found; please run canonical_data_syncer")
+            return False
+        spec = load_canonical(slug, spec_path, test_opts)
         additional_tests = load_additional_tests(slug)
         spec["additional_cases"] = additional_tests
         template_path = Path(slug) / ".meta" / "template.j2"
