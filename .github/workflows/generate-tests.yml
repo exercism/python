@@ -1,0 +1,50 @@
+name: Run Test Generator
+
+on:
+  issue_comment:
+      types: [created]
+
+jobs:
+  generate:
+    name: Generate Tests
+    if: github.event.issue.pull_request != '' && contains(github.event.comment.body, '/generate-tests')
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Setup SSH deploy key'
+        run: |
+          mkdir ~/.ssh
+          echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+
+      - name: 'Checkout code'
+        run: |
+          PR_DATA="/tmp/pr.json"
+          jq -r ".issue.pull_request.url" "$GITHUB_EVENT_PATH" | \
+            xargs curl --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' -o "$PR_DATA" --url
+          HEAD_REF=$(jq -r ".head.ref" "$PR_DATA")
+          HEAD_REPO=$(jq -r '.head.repo.ssh_url' "$PR_DATA")
+          git clone $HEAD_REPO .
+          git checkout -b "$HEAD_REF" "origin/$HEAD_REF"
+
+      - name: Install generator dependencies
+        run: python3 -m pip install -r requirements-generator.txt
+
+      - name: Run Test Generator
+        run: python3 bin/generate_tests.py -v
+
+      - name: Push changes to branch
+        run: |
+            # Check if there is nothing to commit (i.e. no test changes made)
+            if [ -z "$(git status --porcelain)" ]; then
+              echo "Tests already generated."
+              exit 0
+            fi
+
+            # Setup the git user (required to commit anything)
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+            git config --global user.name "github-actions[bot]"
+
+            # Commit the changes
+            git add .
+            git commit -m "Generate tests"
+            git push
