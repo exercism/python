@@ -1,1 +1,46 @@
-[]
+[
+  {
+    "url": "https://github.com/exercism/v3/blob/master/languages/python/reference/concepts/builtin_types/tuple.md",
+    "description": "tuple"
+  },
+  {
+    "url": "https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range",
+    "description": "sequence types"
+  },
+  {
+    "url": "https://docs.python.org/3/library/stdtypes.html#common-sequence-operations",
+    "description": "common sequence operations"
+  },
+  {
+    "url": "https://nedbatchelder.com/blog/201608/lists_vs_tuples.html",
+    "description": "Lists vs Tuples"
+  },
+  {
+    "url": "http://e-scribe.com/post/understanding-tuples-vs-lists-in-python/",
+    "description": "Understanding tuples vs lists in Python"
+  },
+  {
+    "url": "https://jtauber.com/blog/2006/04/15/python_tuples_are_not_just_constant_lists/",
+    "description": "Tuples are not just constant lists"
+  },
+  {
+    "url": "https://www.asmeurer.com/blog/posts/tuples/#fn:list",
+    "description": "A different view of tuples"
+  },
+  {
+    "url": "https://docs.python.org/3/glossary.html#hashable",
+    "description": "hashable"
+  },
+  {
+    "url": "https://docs.python.org/3/library/collections.html#module-collections",
+    "description": "Collections"
+  },
+  {
+    "url": "https://docs.python.org/3/library/dataclasses.html",
+    "description": "dataclass"
+  },
+  {
+    "url": "https://stackoverflow.com/questions/51671699/data-classes-vs-typing-namedtuple-primary-use-cases",
+    "description": "pros and cons of dataclasses"
+  }
+]
