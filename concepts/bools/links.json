@@ -1,1 +1,30 @@
-[]
+[
+  {
+    "url": "https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values",
+    "description": "boolean values"
+  },
+  {
+    "url": "https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not",
+    "description": "boolean-operators"
+  },
+  {
+    "url": "https://docs.python.org/3/library/stdtypes.html#truth",
+    "description": "Truth Value Testing"
+  },
+  {
+    "url": "https://docs.python.org/3/library/functions.html#bool",
+    "description": "bool() function"
+  },
+  {
+    "url": "https://problemsolvingwithpython.com/04-Data-Types-and-Variables/04.02-Boolean-Data-Type/",
+    "description": "Problem Solving with Python - Boolean Data Type"
+  },
+  {
+    "url": "https://docs.quantifiedcode.com/python-anti-patterns/readability/comparison_to_true.html",
+    "description": "Python Anti-Patterns  Comparing things to True in the Wrong Way"
+  },
+  {
+    "url": "https://www.python.org/dev/peps/pep-0285/",
+    "description": "PEP285 - Adding a bool type"
+  }
+]
