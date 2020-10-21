@@ -1,1 +1,136 @@
-[]
+[
+  { "url": "https://docs.python.org/3/", "description": "Python" },
+  {
+    "url": "https://stackoverflow.com/questions/11328920/is-python-strongly-typed",
+    "description": "dynamic and strongly"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Object-oriented_programming",
+    "description": "object-oriented"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Duck_typing",
+    "description": "duck typing"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Gradual_typing",
+    "description": "gradual typing"
+  },
+  {
+    "url": "https://docs.python.org/3/library/typing.html",
+    "description": "type hints"
+  },
+  {
+    "url": "https://docs.python.org/3/reference/datamodel.html",
+    "description": "everything in Python is an object"
+  },
+  {
+    "url": "https://www.python.org/psf/",
+    "description": "Python Software Foundation"
+  },
+  { "url": "https://www.python.org/psf/membership/", "description": "members" },
+  {
+    "url": "https://www.python.org/dev/peps/",
+    "description": "Python Enhancement Proposals or PEPs"
+  },
+  {
+    "url": "https://docs.python.org/3/reference/lexical_analysis.html#indentation",
+    "description": "significant indentation"
+  },
+  {
+    "url": "https://www.python.org/dev/peps/pep-0020/",
+    "description": "zen of Python (PEP 20)"
+  },
+  {
+    "url": "https://docs.python.org/3/reference/simple_stmts.html#assignment-statements",
+    "description": "assigned"
+  },
+  {
+    "url": "https://docs.python.org/3/reference/executionmodel.html#naming-and-binding",
+    "description": "names"
+  },
+  {
+    "url": "https://realpython.com/python-variables/",
+    "description": "Variables"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Snake_case",
+    "description": "TODO: add description"
+  },
+  {
+    "url": "https://www.python.org/dev/peps/pep-0008/",
+    "description": "PEP 8"
+  },
+  {
+    "url": "https://docs.python.org/3/tutorial/modules.html",
+    "description": "module"
+  },
+  {
+    "url": "https://docs.python.org/3/reference/compound_stmts.html#function",
+    "description": "functions"
+  },
+  {
+    "url": "https://docs.python.org/3/reference/datamodel.html#the-standard-type-hierarchy",
+    "description": "objects"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Turtles_all_the_way_down",
+    "description": "turtles all the way down"
+  },
+  {
+    "url": "https://docs.python.org/3/reference/datamodel.html#classes",
+    "description": "class"
+  },
+  {
+    "url": "https://docs.python.org/3/c-api/method.html#method-objects",
+    "description": "methods"
+  },
+  {
+    "url": "https://docs.python.org/3/reference/datamodel.html#modules",
+    "description": "module"
+  },
+  {
+    "url": "https://docs.python.org/3/tutorial/controlflow.html#defining-functions",
+    "description": "function definition"
+  },
+  {
+    "url": "https://docs.python.org/3/glossary.html#term-parameter",
+    "description": "parameters"
+  },
+  {
+    "url": "https://docs.python.org/3/tutorial/controlflow.html#more-on-defining-functions",
+    "description": "vary"
+  },
+  {
+    "url": "https://docs.python.org/3/reference/lexical_analysis.html#indentation",
+    "description": "indentation"
+  },
+  {
+    "url": "https://docs.python.org/3/reference/simple_stmts.html#return",
+    "description": "TODO: add description"
+  },
+  {
+    "url": "https://docs.python.org/3/library/constants.html",
+    "description": "TODO: add description"
+  },
+  {
+    "url": "https://docs.python.org/3/reference/expressions.html#calls",
+    "description": "called"
+  },
+  {
+    "url": "https://docs.python.org/3/tutorial/controlflow.html#default-argument-values",
+    "description": "default arguments"
+  },
+  {
+    "url": "https://realpython.com/python-comments-guide/#python-commenting-basics",
+    "description": "Comments"
+  },
+  {
+    "url": "https://docs.python.org/3/tutorial/controlflow.html#tut-docstrings",
+    "description": "docstring"
+  },
+  {
+    "url": "https://docs.python.org/3/library/doctest.html",
+    "description": "doctests"
+  }
+]
