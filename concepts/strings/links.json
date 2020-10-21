@@ -1,1 +1,30 @@
-[]
+[
+  {
+    "url": "https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str",
+    "description": "text sequence type - str"
+  },
+  {
+    "url": "https://docs.python.org/3/library/stdtypes.html#string-methods",
+    "description": "string methods"
+  },
+  {
+    "url": "https://docs.python.org/3/library/stdtypes.html#common-sequence-operations",
+    "description": "common sequence operations"
+  },
+  {
+    "url": "https://realpython.com/python-strings/",
+    "description": "string and character data in python"
+  },
+  {
+    "url": "https://realpython.com/python-string-formatting/",
+    "description": "string formatting best practices"
+  },
+  {
+    "url": "https://docs.python.org/3/library/string.html",
+    "description": "string - common string operations and formatting"
+  },
+  {
+    "url": "https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/",
+    "description": "joel-on-text"
+  }
+]
