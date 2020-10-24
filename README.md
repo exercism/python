@@ -38,7 +38,7 @@ To test a single exercise:
 python3 test/check-exercises.py [exercise-name]
 ```
 
-To test all exercises:
+You can test your skills at :
 ```
 python3 test/check-exercises.py
 ```
