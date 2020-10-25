@@ -20,6 +20,10 @@
     "description": "Problem Solving with Python - Boolean Data Type"
   },
   {
+    "url": "https://docs.python.org/3/library/stdtypes.html#comparisons",
+    "description": "Comparisons in Python"
+  },
+  {
     "url": "https://docs.quantifiedcode.com/python-anti-patterns/readability/comparison_to_true.html",
     "description": "Python Anti-Patterns  Comparing things to True in the Wrong Way"
   },

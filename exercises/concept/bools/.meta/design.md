@@ -25,7 +25,7 @@ The goal of this exercise is to teach the student how [`bool`](https://github.co
 
 ## Prerequisites
 
-- `builtin-types`
+- `basics`
 - `comparison-operators`
 
 ## Resources
@@ -33,3 +33,4 @@ The goal of this exercise is to teach the student how [`bool`](https://github.co
 - [Boolean Operations — and, or, not](https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not)
 - [Built-in Functions - bool](https://docs.python.org/3/library/functions.html#bool)
 - [Truth Value Testing](https://docs.python.org/3/library/stdtypes.html#truth)
+- [Comparisons](https://docs.python.org/3/library/stdtypes.html#comparisons)
