@@ -1,0 +1,12 @@
+{
+  "authors": [
+    {
+      "github_username": "j08k",
+      "exercism_username": "j08k"
+    }
+  ],
+  "editor": {
+    "solution_files": ["dicts.py"],
+    "test_files": ["dicts_test.py"]
+  }
+}

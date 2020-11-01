@@ -1,0 +1,12 @@
+{
+  "authors": [
+    {
+      "github_username": "bethanyg",
+      "exercism_username": "BethanyG"
+    }
+  ],
+  "editor": {
+    "solution_files": ["tuples.py"],
+    "test_files": ["tuples_test.py"]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "authors": [
+    {
+      "github_username": "mohanrajanr",
+      "exercism_username": "mohanrajanr"
+    }
+  ],
+  "editor": {
+    "solution_files": ["enums.py"],
+    "test_files": ["enums_test.py"]
+  },
+  "forked_from": ["csharp/enums"]
+}

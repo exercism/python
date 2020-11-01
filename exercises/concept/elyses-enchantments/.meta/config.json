@@ -1,0 +1,12 @@
+{
+  "authors": [
+    {
+      "github_username": "itamargal",
+      "exercism_username": "itamargal"
+    }
+  ],
+  "editor": {
+    "solution_files": ["lists.py"],
+    "test_files": ["lists_test.py"]
+  }
+}

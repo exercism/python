@@ -1,0 +1,20 @@
+{
+  "authors": [
+    {
+      "github_username": "neenjaw",
+      "exercism_username": "neenjaw"
+    }
+  ],
+  "contributors": [
+    {
+      "github_username": "cmccandless",
+      "exercism_username": "cmccandless"
+    }
+  ],
+  "editor": {
+    "solution_files": ["arcade_game.py"],
+    "test_files": ["arcade_game_test.py"]
+  },
+  "forked_from": ["elixir/booleans"],
+  "language_versions": ">=3.5"
+}
