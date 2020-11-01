@@ -1,0 +1,13 @@
+{
+  "authors": [
+    {
+      "github_username": "BethanyG",
+      "exercism_username": "BethanyG"
+    }
+  ],
+  "editor": {
+    "solution_files": ["lasagna.py"],
+    "test_files": ["lasagna_test.py"]
+  },
+  "forked_from": ["csharp/basics", "ruby/basics"]
+}

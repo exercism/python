@@ -1,0 +1,12 @@
+{
+  "authors": [
+    {
+      "github_username": "bethanyg",
+      "exercism_username": "BethanyG"
+    }
+  ],
+  "editor": {
+    "solution_files": ["sets.py"],
+    "test_files": ["sets_test.py"]
+  }
+}

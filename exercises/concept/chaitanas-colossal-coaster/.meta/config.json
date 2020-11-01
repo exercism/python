@@ -1,0 +1,16 @@
+{
+  "authors": [
+    {
+      "github_username": "mohanrajanr",
+      "exercism_username": "mohanrajanr"
+    },
+    {
+      "github_username": "BethanyG",
+      "exercism_username": "BethanyG"
+    }
+  ],
+  "editor": {
+    "solution_files": ["list_methods.py"],
+    "test_files": ["list_methods_test.py"]
+  }
+}

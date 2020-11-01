@@ -1,0 +1,13 @@
+{
+  "authors": [
+    {
+      "github_username": "aldraco",
+      "exercism_username": "aldraco"
+    }
+  ],
+  "editor": {
+    "solution_files": ["strings.py"],
+    "test_files": ["strings_test.py"]
+  },
+  "forked_from": ["csharp/strings"]
+}
