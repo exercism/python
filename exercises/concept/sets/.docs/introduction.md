@@ -1,8 +1,8 @@
-In Python, a [set](https://docs.python.org/3/library/stdtypes.html#set) is an _unordered_ collection of distinct _hashable_ objects. Like most collections, sets can hold any (or multiple) data type(s) -- as long as those types can be [hashed](https://docs.python.org/3.7/glossary.html#term-hashable).  Sets come in two flavors:  _mutable_ (`set`) and _immutable_ (`frozenset`).
+In Python, a [set](https://docs.python.org/3/library/stdtypes.html#set) is an _unordered_ collection of distinct _hashable_ objects. Like most collections, sets can hold any (or multiple) data type(s) -- as long as those types can be [hashed](https://docs.python.org/3.7/glossary.html#term-hashable). Sets come in two flavors: _mutable_ (`set`) and _immutable_ (`frozenset`).
 
 Sets are most commonly used to remove duplicates from sequences, test for membership (_finding supersets & subsets_), and performing "set math" (_union, intersection, difference & symmetric difference_).
 
-Like other collection types such as `dict`, `list`, & `tuple`, `sets`  support membership testing through  `in`, length calculation through `len()` & _iteration_ via `for item in set`.  Unlike the `sequence types` `string`, `list` & `tuple`, `sets` are neither ordered nor indexed, and **do not support** indexing, slicing, sorting, or other sequence behavior.
+Like other collection types such as `dict`, `list`, & `tuple`, `sets` support membership testing through `in`, length calculation through `len()` & _iteration_ via `for item in set`. Unlike the `sequence types` `string`, `list` & `tuple`, `sets` are neither ordered nor indexed, and **do not support** indexing, slicing, sorting, or other sequence behavior.
 
 ## Set Construction
 
