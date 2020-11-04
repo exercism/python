@@ -1,3 +1,5 @@
+## basics
+
 Python is a dynamic and strongly typed object-oriented programming language. It supports both imperative (_object-oriented, procedural_) and declarative (_functional, concurrent_) programming paradigms. Python emphasizes code readability and (similar to Haskell) uses significant whitespace.
 
 Objects are assigned to names in Python via the `=` or _assignment operator_. _Variables_ are written in [`snake_case`](https://en.wikipedia.org/wiki/Snake_case), and _constants_ (usually) in `SCREAMING_SNAKE_CASE`. A name (_variable or constant_) is not itself _typed_, and can be attached or re-attached to different objects over its lifetime:
