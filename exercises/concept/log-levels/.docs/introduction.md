@@ -1,3 +1,5 @@
+## enums
+
 In Python, an enum is a set of names that are bound to unique `literal`, or `constant` values. Enums are defined the way classes are defined in python.
 
 ```python

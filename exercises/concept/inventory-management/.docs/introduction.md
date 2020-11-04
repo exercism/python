@@ -1,3 +1,5 @@
+## dicts
+
 A _dictionary_ is Python's primary mapping type that connects _hashable keys_ with values. The looking up of keys is more efficient than searching through an array, but does require more memory.
 
 ## Dict construction
