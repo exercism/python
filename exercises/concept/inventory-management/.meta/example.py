@@ -13,8 +13,8 @@ def add_items(inventory, items):
 
 def delete_items(inventory, items):
     for item in items:
-        inventory.setdefault(item, 0)
-        inventory[item] = max(inventory[item] - 1, 0)
+        if item in inventory:
+            inventory[item] = max(inventory[item] - 1, 0)
     return inventory
 
 

@@ -1,75 +1,65 @@
 ## dicts
 
-A _dictionary_ is Python's primary mapping type that connects _hashable keys_ with values. The looking up of keys is more efficient than searching through an array, but does require more memory.
+A _**dictionary**_ is Python's primary mapping type that associates a _hashable key_ with a value. The lookup by key is more efficient than searching through an array, but does require more memory.
 
 ## Dict construction
 
-Dictionaries can be created in various ways. You can either use the `dict()` class constructor or the literal declaration of a _dict_.
+Dictionaries can be created in various ways. Two simple options are the use the `dict()` class constructor or the dict literal declaration with key-value pairs.
 
 ### Use the `dict()` constructor
 
 ```python
->>> bear = dict(name="Black Bear", amount=5, land_animal=True)
-{'name': 'Panda', 'amount': 15, 'land_animal': True}
+>>> bear = dict(name="Black Bear", speed=40, land_animal=True)
+{'name': 'Black Bear', 'speed': 40, 'land_animal': True}
 ```
 
 ### Declare a _dict_ literal
 
 ```python
->>> whale = {"name":"Blue Whale", "amount":2, "land_animal":False}
-{'name': 'Dolphin', 'amount': 2, 'land_animal': False}
+>>> whale = {"name": "Blue Whale", "speed": 35, "land_animal": False}
+{'name': 'Blue Whale', 'speed': 35, 'land_animal': False}
 ```
 
-With literal declaration keep in mind that _keys_ are replaced with _data types_ and the `=` is replaced with a `:`.
+With the dict literal declaration keep in mind that _keys_ are of _data types_ `str` and the colon `:` is used instead of an equal sign `=`.
 
 ## Accessing values
 
-You can access items in a dictionary in two ways, using the _key_ of the value.
+You can access an item in a dictionary using the _key_ of the value.
 
 ### Using _square brackets_ after the dict object
 
 ```python
->>> request_brackets = bear["amount"]
-5
+>>> bear["speed"]
+40
 ```
 
 ### Using `.get()`
 
 ```python
->>> request_get = whale.get("name")
-Blue Whale
+>>> whale.get("name")
+'Blue Whale'
 ```
 
 ## Changing values
 
-You can easily change a value of an item using it's _key_.
+You can easily change a value of an item using its _key_.
 
 ```python
 >>> bear["name"] = "Grizzly Bear"
-{'name': 'Grizzly Bear', 'amount': 5, 'land_animal': True}
+{'name': 'Grizzly Bear', 'speed': 40, 'land_animal': True}
 
->>> whale["amount"] = 7
-{'name': 'Blue Whale', 'amount': 7, 'land_animal': False}
+>>> whale["speed"] = 25
+{'name': 'Blue Whale', 'speed': 25, 'land_animal': False}
 ```
 
 ## Looping through a dictionary
 
-Looping through a dictionary using a `for` loop only returns the _keys_ of the items.
+Looping through a dictionary using `for item in dict` will iterate over the _keys_, but you can access the _values_ by using _square brackets_.
 
 ```python
 >>> for key in bear:
->>>     print(key)
-name
-amount
-land_animal
-```
-
-But you can also make a `for` loop return the _values_ of a dictionary with a simple trick.
-
-```python
->>> for key in whale:
->>>    print(whale[key])
-Blue Whale
-7
-False
+>>>     (key, bear[key])
+('name', 'Black Bear')
+('speed', 40)
+('land_animal', True)
 ```

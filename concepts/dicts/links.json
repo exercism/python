@@ -1,0 +1,34 @@
+[
+  {
+    "url": "https://docs.python.org/3/glossary.html#term-hashable",
+    "description": "term-hashable"
+  },
+  {
+    "url": "https://docs.python.org/3/library/stdtypes.html#mapping-types-dict",
+    "description": "mapping-types-dict"
+  },
+  {
+    "url": "https://docs.python.org/3/tutorial/datastructures.html#dictionaries",
+    "description": "dicts-docs"
+  },
+  {
+    "url": "https://www.w3schools.com/python/python_dictionaries.asp",
+    "description": "how-to"
+  },
+  {
+    "url": "https://docs.python.org/3/library/collections.html",
+    "description": "collections-docs"
+  },
+  {
+    "url": "https://docs.python.org/3/library/collections.html#collections.Counter",
+    "description": "counter-dicts"
+  },
+  {
+    "url": "https://docs.python.org/3/library/collections.html#collections.OrderedDict",
+    "description": "ordered-dicts-docs"
+  },
+  {
+    "url": "https://docs.python.org/2/library/collections.html#collections.defaultdict",
+    "description": "default-dicts"
+  }
+]
