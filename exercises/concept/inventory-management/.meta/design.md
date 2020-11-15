@@ -4,7 +4,7 @@
 
 The goal of this exercise is to teach the basics of the `dict` (dictionary, mapping) data type in Python.
 
-## Things to teach
+## Learning objectives
 
 - create a `dict` via constructor and literal.
 - access values in a `dict` via `keys`.
@@ -15,7 +15,7 @@ The goal of this exercise is to teach the basics of the `dict` (dictionary, mapp
 - iterate through a `dict` using `dict.keys()`, `dict.values()`, or `dict.items()`.
 - `dict` method `setdefault()`
 
-## Things not to teach
+## Out of scope
 
 - Dictionary comprehensions
 - `dict` methods such as `get()` or `clear()`.
