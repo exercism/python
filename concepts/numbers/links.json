@@ -1,0 +1,38 @@
+[
+  {
+    "url": "https://docs.python.org/3/library/functions.html#int",
+    "description": "integers"
+  },
+  {
+    "url": "https://docs.python.org/3/library/functions.html#float",
+    "description": "floats"
+  },
+  {
+    "url": "https://docs.python.org/3/library/functions.html#complexh",
+    "description": "complex numbers"
+  },
+  {
+    "url": "https://docs.python.org/3/library/fractions.html",
+    "description": "fractions"
+  },
+  {
+    "url": "https://docs.python.org/3/library/decimal.html#module-decimal",
+    "description": "Decimals"
+  },
+  {
+    "url": "https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex",
+    "description": "Arithmetic Operations"
+  },
+  {
+    "url": "https://docs.python.org/3/reference/expressions.html#operator-precedence",
+    "description": "Operator Precedence"
+  },
+  {
+    "url": "https://docs.python.org/3.9/library/cmath.html",
+    "description": "cmath:  mathematical operations for complex numbers"
+  },
+  {
+    "URL": "https://docs.python.org/3/library/numeric.html",
+    "description": "Pythons Numerical and Mathematical Modules"
+  }
+]
