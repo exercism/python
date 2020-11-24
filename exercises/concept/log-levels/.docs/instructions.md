@@ -24,7 +24,7 @@ Define a `LogLevel` enum that has six elements corresponding to the above log le
 - `Error`
 - `Fatal`
 
-Defind the `parse_log_level` function which will take the 1 parameter, the log message. Return the Type of Log Level the log message belongs to.
+Define the `parse_log_level` function which will take the 1 parameter, the log message. Return the Type of Log Level the log message belongs to.
 
 Note: The `LogLevel` enum has to be defined on top of the file (outside the function).
 
