@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://docs.python.org/3/library/enum.html",
+    "description": "enum documentation"
+  },
+  {
+    "url": "https://www.w3schools.com/python/ref_keyword_is.asp",
+    "description": "identity keyword"
+  },
+  {
+    "url": "https://docs.python.org/3/library/enum.html#using-auto",
+    "description": "enum auto documentation"
+  },
+  {
+    "url": "https://docs.python.org/3/library/enum.html#functional-api",
+    "description": "enum functional api"
+  },
+  {
+    "url": "https://docs.python.org/3/library/enum.html#restricted-enum-subclassing",
+    "description": "restricted enum"
+  }
+]

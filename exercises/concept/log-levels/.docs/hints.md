@@ -4,21 +4,28 @@
 
 ## 1. Parse log level
 
-- You need to use string splits to split the log message to multiple parts.
-- Once you have the required part of the string split you can use LogLevel(`string`) to return
+- Use [`str.split`](https://www.w3schools.com/python/ref_string_split.asp) to extract the log level from the message.
+- With the extracted part of the string, access and return the enum member using `LogLevel(string)`.
 
 ## 2. Support unknown log level
 
-- You need to first check if the value is in the LogLevel enum before calling LogLevel(`string`) and return.
+- Create a new Unknown log level member in the existing enum.
+- Check if the extracted part of the string is a value of the enum `LogLevel`.
+- If the value does not match any of the enum member values, then return the Unknown member of `LogLevel`.
 
 ## 3. Convert log line to short format
 
-- You need to do an if else with all the members of the LogLevel and return the String along with the int value as per the given format. ( You need to use a `==` operator )
+- Find the code (an integer) of the log level based on the log level, multiple solutions are possible: if statements, another enum or any other solution.
+- Use string formatting to return a properly formatted code level and message.
 
 ## 4. Create an Alias
 
-- You just have to return the newly created alias value to the function output.
+- Create the new alias member named Warn in the existing enum.
+- Return the newly created member.
 
 ## 5. All Member Names and Values
 
-- You need to iterate over all the members in the enum and return a tuple containing (member.name, member.value) in a list.
+- Iterate on all the members of the enum and return a list of tuple.
+- The tuple can be constructed with `(item1, item2)`.
+- The name and value of the enum can be accessed with `member.name` and `member.value`.
+- Return the list containing all the tuples.
