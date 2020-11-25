@@ -19,7 +19,7 @@ The goal of this exercise is to teach the student how Enums ([Enumerations](http
   - Enum members are iterable in member definition order, but iteration will not include aliases.
   - An ordered mapping of names to members can be retrieved via **members**.items()
   - enumeration members are compared by identity, using the is/is not keywords
-  - Ordered comparison (<, >, <=, '>=) between enumeration valuesis not supported, and will throw aTypeError`.
+  - Ordered comparison (<, >, <=, '>=) between enumeration values is not supported, and will throw aTypeError`.
   - Equality/inequality comparison is defined, and == and != can be used.
   - Comparisons between enumeration values and non-enumeration values will always return False
 

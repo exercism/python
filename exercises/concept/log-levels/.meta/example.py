@@ -1,5 +1,6 @@
 from enum import Enum
 
+
 class LogLevel(Enum):
     Trace = 'TRC'
     Debug = 'DBG'
@@ -9,6 +10,7 @@ class LogLevel(Enum):
     Error = 'ERR'
     Fatal = 'FTL'
     Unknown = 'UKN'
+
 
 class LogLevelInt(Enum):
     Trace = 0
@@ -20,21 +22,25 @@ class LogLevelInt(Enum):
     Fatal = 7
     Unknown = 42
 
+
 def parse_log_level(message):
     str_split = message.split(":")
-    log_values = [level.value for level in LogLevel]
-    if str_split[0][1:-1] in log_values:
-        return LogLevel(str_split[0][1:-1])
+    lvl = str_split[0][1:-1]
+    if lvl in [level.value for level in LogLevel]:
+        return LogLevel(lvl)
     return LogLevel.Unknown
+
 
 def convert_to_short_log(log_level, message):
     return "{}:{}".format(LogLevelInt[log_level.name].value, message)
 
-def return_alias():
+
+def get_warn_alias():
     return LogLevel.Warn
 
-def return_members(enum_class):
+
+def get_members():
     out_list = list()
-    for member in enum_class:
+    for member in LogLevel:
         out_list.append((member.name, member.value))
     return out_list
