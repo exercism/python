@@ -1,10 +1,8 @@
 ## list-methods
 
-Python allows you to manipulate `list` in a lot of ways. A `list` is simple a collection of objects. They are mutable, ordered and indexed. Let's look at the methods that are available to manipulate a `list` object.
+Python allows you to manipulate a [`list`][list] in a lot of ways. Remember: when you manipulate a list with a list-method, you are _mutating the original list_. That is, **you will alter the list** object that the list-method is being called on. If you do not want to change your original list, you will need to copy it via `.copy()` or some other technique.
 
-When you manipulate a list with a list-method, you are changing the properties of the list you pass. That is, **you will alter the list** object that is being used with the list-method. If you do not want to change the original list, you need to copy the list and then work on the copied list.
-
-To begin, you first need a `list` object to use the functions.
+To begin, you will need a `list` object to apply the methods to.
 
 ```python
 ex_list = list() # (or)  ex_list = []
@@ -12,15 +10,9 @@ print(ex_list)
 #=> []
 ```
 
-## Add an Item to the List
+### Adding an Item to the List
 
-Topics to discuss:
-
-1. `append`
-2. `insert`
-3. `extend`
-
-If you want to add an item to an existing list, you use the list-method `append()` for it. As the name represent, it appends the item to the **end** of the list.
+If you want to add an item to an existing list, you can use the list-method `.append()` . As the name states, it _appends_ the item to the **end** (right-hand side) of the list.
 
 ```python
 ex_list = [1, 2, 3]
@@ -29,14 +21,14 @@ print(ex_list)
 #=> [1, 2, 3, 9]
 ```
 
-There is another way to add an item to the list. `insert()` method also gives you the ability to add the item to a particular index in the list.
+Another way to add an item to the list is to `.insert()` an item. This method gives you the ability to add the item at particular index in the list.
 
-`insert` takes 2 parameters.
+`.insert()` takes 2 parameters:
 
-1. index at which you want to add the item
-2. item
+1. index of the item _before which_ you want the new item to appear
+2. the item to be inserted
 
-Note: if the index is 0, the item will be added to the first of the list. if the index is more than or equal to the length of the list, then item will be added to the last of the list (like the append function)
+Note: if the given index is 0, the item will be added to front of the list. If the supplied index is greater than or equal to the length of the list, the item will be added in the last position, and is the equivalent of using `.append()`.
 
 ```python
 ex_list = [1, 2, 3]
@@ -48,8 +40,7 @@ print(ex_list)
 #=> [-2, 0, 1, 2, 3]
 ```
 
-If you have another list object who's content you need to be copied to your list, then you can use the `extend` function.
-The extend function takes an iterable as its parameter.
+If you have an iterable that you would like to _combine_ with your current list (concatenating the two), you can use the `.extend()` method. `.extend()` will unpack the supplied iterable and add its elements in order to your list (_using `.append()` in this circumstance would add the entire iterable as a **single element**._).
 
 ```python
 ex_list = [1, 2, 3]
@@ -64,26 +55,21 @@ print(ex_list)
 #=> [1, 2, 3, 5, 6, 7, 8, 9]
 ```
 
-# Removing Items from the list
+### Removing Items
 
-Topics to discuss:
-
-1. `remove`
-2. `pop`
-3. `clear`
-
-If you want to remove an item from a list, you can use the `remove` function which takes one parameter. Feed the function with the item you want to remove from the list. the `remove` function will throw a `ValueError` if the item does not exist in the loop.
+If you want to delete an element, you can use `.remove()` and pass the item you want removed from the list. `.remove()` will throw a `ValueError` if the item to be removed is not in the list.
 
 ```python
-ex_list = [1, 2, 3]
-ex_list.remove(2)
-print(ex_list)
-#=> [1, 3]
-ex_list.remove(0)
-#=> ValueError: list.remove(x): x not in list
+>>> ex_list = [1, 2, 3]
+>>> ex_list.remove(2)
+>>> print(ex_list)
+[1, 3]
+
+>>> ex_list.remove(0)
+ValueError: list.remove(x): x not in list
 ```
 
-There is another way to remove an item from the list. If you know the index of the item which you want to remove, you can use `pop` function. Pop takes 1 parameter, the index of the item you need to remove, and return it to you. If you specify an index more than the length of the list, you will get an `IndexError`. If you dont specify an index, the function will remove the last element and return it to you.
+Alternatively, using the `.pop()` function will both remove **and** `return` an element for use. `.pop()` takes 1 parameter -- the index of the item you need to remove and receive. If you specify an index number higher than the length of the list, you will get an `IndexError`. If an index is not specified, the last element of the list will be removed and returned to you.
 
 ```python
 ex_list = [1, 2, 3]
@@ -95,7 +81,7 @@ ex_list.pop()
 #=> [2]
 ```
 
-If you want to clear the list (ie: all the items in the list), then you can use the `clear` function. It does not take any parameter as input but will remove all the elements in the list.
+If you'd like to remove all the items from the list you can use the `.clear()` method. It does not have any parameters.
 
 ```python
 ex_list = [1, 2, 3]
@@ -104,9 +90,9 @@ print(ex_list)
 #=> []
 ```
 
-## Reverse the list
+### Reversing and reordering
 
-The items in the list can be reordered in the reverse order with the `reverse` function.
+Items in the list can be reordered in reverse with `.reverse()`.
 
 ```python
 ex_list = [1, 2, 3]
@@ -115,11 +101,7 @@ print(ex_list)
 #=> [3, 2, 1]
 ```
 
-## Sort the list
-
-When you have an random ordered list of items, you can sort them with the help of `sort` function. If you have items that are alphanumerical, you dont have to provide any inputs to sort.
-
-ex: you have list of numbers, or you have a list of names and you want to sort them
+You can re-order your list _**in place**_ with the help of the `.sort()` method. Internally, python uses [`Timsort`][timsort] to arrange the list. If the elements are alphanumerical, you don't have to provide any arguments to `.sort()`. Optionally, you can define a custom key for sorting criteria. The Python docs offer some [additional tips and techniques for sorting][sorting how to] lists effectively.
 
 ```python
 ex_list = ["Tony", "Natasha", "Thor", "Bruce"]
@@ -137,13 +119,11 @@ print(ex_list)
 #=> ["Tony", "Thor", "Natasha", "Bruce"]
 ```
 
-If you have a list of items that are complex, you can use the key parameter in the sort. Lets see more about this later.
+For cases where changing your original list is undesirable, the built-in [`sorted()`][sorted] can be used to return a new, sorted copy of your original list.
 
-Internally, python uses `Timsort` to sort the list.
+### Occurrences of an item in the list.
 
-## Occurances of an item in the list.
-
-You can find the occurances of an element in the list with the help of the `count` function. It takes one parameter which will be the item, for which you need to find the number of occurances.
+You can find the number of occurrences of an element in the list with the help of `.count()`. It takes the element you need to tally as its argument, and returns the total number of times it appears on the list.
 
 ```python
 ex_list = [1, 4, 7, 8, 2, 9, 2, 1, 1, 0, 4, 3]
@@ -151,9 +131,9 @@ ex_list.count(1)
 #=> 3
 ```
 
-## Find the Index of the Item.
+### Finding the index of items.
 
-If you want to find the index of an item you want in the list, you can use the `index` function. If you have multiple occurances of the same item, it will provide you the index of the first occurance. If you do not have any occurances of the item, then you will have a `ValueError` raised.
+`.index()` will provide you the index number of the first occurrence of the item you pass in. If you do not have any occurrences of the item, a `ValueError` is raised. If you do not need the exact position of an item and are only checking that it is present on the list, the built-in `in` operator is more efficient.
 
 Index starts with 0.
 
@@ -165,7 +145,7 @@ ex_list.index(10)
 #=>ValueError: 10 is not in list
 ```
 
-You can also provide a start (and an end) to the index from where you need the search has to happen for the item.
+You can provide start and end indices to search within a specific section of the list.
 
 ```python
 ex_list = [1, 4, 7, 8, 2, 9, 2, 1, 1, 0, 4, 3]
@@ -173,21 +153,60 @@ ex_list.index(4, 2, 12)
 #=> 10
 ```
 
-## Copy a List.
+### Making Copies
 
-Lists are a collection of items which are referenced to an index, Hence if you do an assignment of a list object to another variable. Any change you make to the assigned variable will also have an impact on the original variable.
+Remember that _names_ in python are just labels that reference an underlying object. This creates a few surprises when working with lists.
 
 ```python
-ex_list = ["Tony", "Natasha", "Thor", "Bruce"]
+>>> ex_list = ["Tony", "Natasha", "Thor", "Bruce"]
+
+#assigning a second name *does not copy* the references in the list.
 new_list = ex_list
+
+#using either name will mutate the *common* list
 new_list.append("Clarke")
 print(new_list)
 #=> ["Tony", "Natasha", "Thor", "Bruce", "Clarke"]
+
 print(ex_list)
 #=> ["Tony", "Natasha", "Thor", "Bruce", "Clarke"]
 ```
 
-You need to use the `copy` function in order to do a `shallow_copy` of the list. ( More about `shallow_copy` and `deep_copy` later.)
+This referencing issue becomes exacerbated with operating on nested/multiplied lists.
+
+```python
+from pprint import pprint
+
+#this will produce a game grid that is 8x8, pre-populated wtih zeros
+>>> game_grid = [[0]*8] *8
+
+>>> pprint(game_grid)
+[[0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0]]
+
+#lets put an x in the bottom righ corner
+>>> game_grid[7][7] = "X"
+
+#that doesn't work, because all of the rows are referencing the same underlying list
+>>> pprint(game_grid)
+[[0, 0, 0, 0, 0, 0, 0, 'X'],
+ [0, 0, 0, 0, 0, 0, 0, 'X'],
+ [0, 0, 0, 0, 0, 0, 0, 'X'],
+ [0, 0, 0, 0, 0, 0, 0, 'X'],
+ [0, 0, 0, 0, 0, 0, 0, 'X'],
+ [0, 0, 0, 0, 0, 0, 0, 'X'],
+ [0, 0, 0, 0, 0, 0, 0, 'X'],
+ [0, 0, 0, 0, 0, 0, 0, 'X']]
+
+```
+
+To create a second copy of a list, you need to _slice_ or explicitly use the `.copy()` method, which will make a second set of references that can then be changed without the danger of unintentional mutation of elements. However, if your list contains _variables_ or nested data structures, those second-level references will **not be copied** (_To copy an entire tree of containers, references, and objects, you need to use `.deep_copy()` or a `list comprehension`-- more on that later._). For a detailed explanation of list behavior, see this excellent [making a game board][making a game board] article.
 
 ```python
 ex_list = ["Tony", "Natasha", "Thor", "Bruce"]
@@ -197,4 +216,46 @@ print(new_list)
 #=> ["Tony", "Natasha", "Thor", "Bruce", "Clarke"]
 print(ex_list)
 #=> ["Tony", "Natasha", "Thor", "Bruce"]
+
+
+from pprint import pprint
+
+#this loop will safely produce a game grid that is 8x8, pre-populated wtih zeros
+>>> game_grid = []
+>>> filled_row = [0] * 8
+
+>>> for row in range(8):
+...    game_grid.append(filled_row.copy())
+
+>>> pprint(game_grid)
+[[0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0]]
+
+#lets put an x in the bottom righ corner
+>>> game_grid[7][7] = "X"
+
+#now the game grid works the way we expect it to
+>>> pprint(game_grid)
+
+[[0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 'X']]
+
 ```
+
+[list]: https://docs.python.org/3/tutorial/datastructures.html
+[timsort]: https://en.wikipedia.org/wiki/Timsort
+[sorted]: https://docs.python.org/3/library/functions.html#sorted
+[sorting how to]: https://docs.python.org/3/howto/sorting.html
+[making a game board]: https://nedbatchelder.com/blog/201308/names_and_values_making_a_game_board.html

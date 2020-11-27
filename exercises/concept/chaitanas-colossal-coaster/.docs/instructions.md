@@ -1,11 +1,11 @@
-You own a theme park. And for some reason, you own only one ride. The biggest roller coaster in the world. Although, you have only one ride, people stand in line for hours for the ride.
+Chaitana owns a very popular theme park. For some reason, she only has one ride in the very center of beautifully landscaped grounds: The Biggest Roller Coaster in the World. Although there is only this one attraction, people travel from all over and stand in line for hours just for a chance at taking a ride.
 
-You do have 2 queues for this ride.
+There are two queues for this ride.
 
 1. Normal Queue
-2. Express Queue ( Also known as Fast-track Queue) - people pay extra to get faster access to the ride.
+2. Express Queue ( Also known as the Fast-track Queue) - people pay extra to get faster access to the Collossal Coaster.
 
-You are given a tasks to finish the following functions for the completion of this exercise.
+You've been asked to write some code to better manage the guests at the park. You need to finish the following functions as soon as possible, before the guests (and your boss!) get cranky.
 
 ## 1. Add Me to the queue
 
@@ -28,7 +28,7 @@ add_me_to_the_queue(express_queue=["Tony", "Bruce"], normal_queue=["RobotGuy", "
 
 ## 2. Where are my friends
 
-One guy came late to the park and wants to join with his friends. He doesn't know where they are standing but wants to join with them.
+One guy came late to the park but wants to join in with his friends anyways. He has no idea where they're standing, and he can't get any reception to call them.
 
 Define the `find_his_friend()` function that takes 2 parameters `queue, friend_name`.
 
@@ -57,7 +57,7 @@ add_person_with_his_friends(queue=["Natasha", "Steve", "Tchalla", "Wanda", "Rock
 
 ## 4. Mean person in the queue
 
-You just heard from the queue that there is a mean person in the queue and you need to throw him out.
+You just heard from the queue that there is a really mean person shoving, shouting, and making trouble. You need to throw them out for bad behavior.
 
 Define the `remove_the_mean_person()` function that takes 2 parameters `queue, person_name`.
 
@@ -71,7 +71,7 @@ remove_the_mean_person(queue=["Natasha", "Steve", "Eltran", "Wanda", "Rocket"], 
 
 # 5. DoppelGangers
 
-You may not have seen 2 people look like the same person before but you sure would have seen people with the same name. It looks like today you are seeing the same scenario. You want to know how many times a name has occured in the queue.
+You may not have seen 2 unrelated people who look exactly the same, but you've _definitely_ seen unrelated people with the same name exact name! It looks like today there is a lot of that happening. You want to know how many times a particular name has occured in the queue.
 
 Define the `how_many_dopplegangers()` function that takes 2 parameters `queue, person_name`.
 
@@ -85,11 +85,11 @@ how_many_dopplegangers(queue=["Natasha", "Steve", "Eltran", "Natasha", "Rocket"]
 #=> 2
 ```
 
-## 6. Remove the last guy
+## 6. Remove the last person
 
-There is an overcrowd in the queue and you need to remove the last person out. You will have to define the function `remove_the_last_person()` that takes 1 parameter `queue` which will be called again and again till the queue count is back to normal. Queue is the list of people standing in the queue.
+Sadly, there is overcrowding in the queue today and you need to remove the last person in line (_you'll give them a voucher to come back for free when its less crowded_). You'll have to define the function `remove_the_last_person()` that takes 1 parameter `queue` which will be called again and again till the queue count is back to normal. Queue is the list of people standing in the queue.
 
-You should also return the name of the person who was removed.
+You should also return the name of the person who was removed, so you can write them a voucher.
 
 ```python
 remove_the_last_person(queue=["Natasha", "Steve", "Eltran", "Natasha", "Rocket"])
