@@ -8,11 +8,15 @@
     "description": "common sequence operations"
   },
   {
-    "url": "https://realpython.com/python-string-formatting/",
-    "description": "string formatting best practices"
+    "url": "https://realpython.com/python-strings/",
+    "description": "strings and character data in Python"
   },
   {
     "url": "https://www.programiz.com/python-programming/string",
     "description": "more string operations and functions"
+  },
+  {
+    "url": "https://realpython.com/python-string-formatting/",
+    "description": "string formatting best practices"
   }
 ]
