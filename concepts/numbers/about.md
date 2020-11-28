@@ -72,7 +72,6 @@ Numbers containing a decimal point (_with or without any numbers following_) are
 3.45
 >>> type(3.45)
 <class 'float'>
-
 ```
 
 Appending `j` or `J` to a number creates an _imaginary number_ -- a `complex` number with a zero real part. `ints` or `floats` can then be added to an imaginary number to create a `complex` number with both real and imaginary parts:
@@ -91,7 +90,7 @@ Appending `j` or `J` to a number creates an _imaginary number_ -- a `complex` nu
 
 Python fully supports arithmetic between these different number types, and will convert narrower numbers to match their less narrow counterparts when used with the binary arithmetic operators (`+`, `-`, `*`, `/`, `//`, and `%`).
 
-Python considers `ints` narrower than `floats`, which are considered narrower than `complex` numbers. Comparisons between different number types behaves as as if the _exact_ values of those numbers were being compared:
+Python considers `ints` narrower than `floats`, which are considered narrower than `complex` numbers. Comparisons between different number types behave as if the _exact_ values of those numbers were being compared:
 
 ```python
 #the int is widened to a float here, and a float is returned
