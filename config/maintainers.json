@@ -120,6 +120,16 @@
       "link_url": "https://github.com/j08k",
       "avatar_url": null,
       "bio": "Just someone who loves coding. Python is what I'm really good at, but trying to get into JS and C#."
+    },
+    {
+      "github_username": "valentin-p",
+      "alumnus": false,
+      "show_on_website": false,
+      "name": null,
+      "link_text": null,
+      "link_url": null,
+      "avatar_url": null,
+      "bio": null
     }
   ]
 }
