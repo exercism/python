@@ -18,7 +18,7 @@ This concept exercise should make the student aware of the existence of some lis
 - return count of the element in a list with the count() method
 - add iterable elements to the end of a list with the extend() method
 - return the index of the element in a list with the index() method
-- understand wich data in a list can be sorted and/or compared
+- understand which data in a list can be sorted and/or compared
 
 ## Out of scope
 
@@ -45,7 +45,6 @@ This concept exercise should make the student aware of the existence of some lis
 
 - basics
 - booleans
-- dicts
 - methods
 - object
 - iterables
