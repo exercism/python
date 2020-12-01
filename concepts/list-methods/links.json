@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://docs.python.org/3/tutorial/datastructures.html#more-on-lists",
+    "description": "data structure: lists"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Timsort",
+    "description": "Timsort algorithm"
+  },
+  {
+    "url": "https://docs.python.org/3/library/functions.html#sorted",
+    "description": "sorted method"
+  },
+  {
+    "url": "https://docs.python.org/3/howto/sorting.html",
+    "description": "Sorting: How To"
+  }
+]
