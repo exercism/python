@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-readonly LATEST='https://api.github.com/repos/exercism/canonical-data-syncer/releases/latest'
+readonly FINAL_RELEASE='https://api.github.com/repos/exercism/canonical-data-syncer/releases/33439231' # v0.17.0
 
 case "$(uname)" in
     (Darwin*)   OS='mac'     ;;
@@ -35,7 +35,7 @@ fi
 FILENAME="canonical_data_syncer-${OS}-${ARCH}.${EXT}"
 
 get_url () {
-    curl --header "$HEADER" -s "$LATEST" |
+    curl --header "$HEADER" -s --location "${FINAL_RELEASE}" |
         awk -v filename=$FILENAME '$1 ~ /browser_download_url/ && $2 ~ filename { print $2 }' |
         tr -d '"'
 }
