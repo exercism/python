@@ -1,6 +1,6 @@
-In Python, a [list][list] is a mutable collection of items in _sequence_. Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold reference to any (or multiple) data type(s) - including other lists. Like any [sequence][sequence type], items are referenced by 0-based index number, and can be copied in whole or in part via _slice notation_. Lists support all [common sequence operations][common sequence operations], as well as [mutable sequence operations][mutable sequence operations] like `.append()` and `.reverse()`. They can be iterated over in a loop by using the `for item in` construct.
+In Python, a [list][list] is a mutable collection of items in _sequence_. Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold reference to any (or multiple) data type(s) - including other lists. Like any [sequence][sequence type], items are referenced by 0-based index number, and can be copied in whole or in part via _slice notation_. Lists support all [common sequence operations][common sequence operations], as well as [mutable sequence operations][mutable sequence operations] like `.append()` and `.reverse()`. They can be iterated over in a loop by using the `for item in <list>` construct.
 
-Under the hood, lists are implemented as [dynamic arrays][dynamic array] -- similar to Java's [`Arraylist`][arraylist] type. Lists are most often used to store groups of similar data (_strings, numbers, sets etc._) of unknown length (_the number of entries may arbitrarily expand or shrink_). Accessing items in a list, checking for membership via `in`, or appending items to the "right-hand" side of a list are all very efficient. Appending to the "left-hand" side or inserting into the middle of a list is much _less_ efficient because it requires shifting items to keep them in sequence.
+Under the hood, `lists` are implemented as [dynamic arrays][dynamic array] -- similar to Java's [`Arraylist`][arraylist] type. Lists are most often used to store groups of similar data (_strings, numbers, sets etc._) of unknown length. Accessing items, checking for membership via `in`, or appending items to the "right-hand" side of a list are all very efficient. Appending to the "left-hand" side or inserting into the middle of a list is much _less_ efficient because it requires shifting items to keep them in sequence.
 
 Because lists are mutable and can contain references to arbitrary objects, they take up more memory space than a fixed-size `array.array` type of the same apparent length. Despite this, lists are an extremely flexible and useful data structure and many built-in methods and operations in Python produce lists as their output.
 
@@ -30,19 +30,9 @@ For readability, line breaks can be used when there are many elements or nested 
                         "Tulip",
                         "Fuchsia",
                         "Cyclamen",
-                        "Lavender",
-                        "Daisy",
-                        "Jasmine",
-                        "Hydrangea",
-                        "Hyacinth",
-                        "Peony",
-                        "Dahlia",
-                        "Dandelion",
-                        "Tuberose",
-                        "Ranunculus"
+                        "Lavender"
                       ]
-['Rose', 'Sunflower', 'Poppy', 'Pansy', 'Tulip', 'Fuchsia', 'Cyclamen', 'Lavender', 'Daisy', 'Jasmine', 'Hydrangea', 'Hyacinth', 'Peony', 'Dahlia', 'Dandelion', 'Tuberose', 'Ranunculus']
-
+['Rose', 'Sunflower', 'Poppy', 'Pansy', 'Tulip', 'Fuchsia', 'Cyclamen', 'Lavender']
 >>> nested_data_structures = [
                                  {"fish": "gold", "monkey": "brown", "parrot" : "grey"},
                                  ("fish", "mammal", "bird"),
@@ -79,13 +69,7 @@ Results when using a list constructor with a string or a dict may be surprising:
 ['अ', 'भ', '्', 'य', 'ा', 'स']
 
 """
-The iteration default for dictionaries is over the keys.
-"""
-source_data = {"fish": "gold", "monkey": "brown"}
->>> multiple_elements_dict_1 = list(source_data)
-['fish', 'monkey']
-
-Because the constructor will only take _iterables_ (or nothing) as arguments, objects that are _not_ iterable will throw a type error. Consequently, it is much easier to create a one-item list via the literal method.
+Because the `list` constructor will only take _iterables_ (or nothing) as arguments, objects that are _not_ iterable will throw a type error. Consequently, it is much easier to create a one-item list via the literal method.
 
 ```python
 
@@ -126,50 +110,13 @@ Slicing does not modify the original `list`. Instead, you get a new list with co
 You can also slice a list using a `step` parameter with the notation `[start:stop:step]`. Using a `step` will "skip over" or filter the list elements (_for example, a `step` of 2 will be every other element in the range_).
 
 ```python
-
 >>> colors = ["Red", "Purple", "Green", "Yellow", "Orange", "Pink", "Blue", "Grey"]
-
 # If there is no step parameter, the step is assumed to be 1.
 >>> middle_colors = colors[2:6]
 ["Green", "Yellow", "Orange", "Pink"]
-
 # If the stop parameter is omitted, the slice will stop at the end of the list.
 >>> primary_colors = colors[0::3]
 ["Red", "Yellow", "Blue"]
-```
-
-The method `.pop()` can be used to both remove and return a value at a given index:
-
-```python
-
->>> breakfast_foods = ["Oatmeal", "Fruit Salad", "Eggs", "Toast"]
-
-# Fruit Salad is at index 1 or index -3.
->>> breakfast_foods = ["Oatmeal", "Fruit Salad", "Eggs", "Toast"]
->>> fruit_on_the_side = breakfast_foods.pop(-3)
-'Fruit Salad'
-
->>> print(breakfast_foods)
-['Oatmeal', 'Eggs', 'Toast']
-
-```
-
-The method `.insert()` can be used to add an element at a specific position. The index given is the element _*before which to insert*_. `list.insert(0,element)` will insert at the front of the list and `list.insert(len(list), element)` is the equivalent of calling `list.append(element)`.
-
-```python
-
-breakfast_foods = ["Oatmeal", "Fruit Salad", "Eggs", "Toast"]
-
-# Adding bacon to the mix before index 3 or index -1.
->>> breakfast_foods.insert(3,"Bacon")
->>> print(breakfast_foods)
-['Oatmeal', 'Fruit Salad', 'Eggs', 'Bacon', 'Toast']
-
-
-# Adding coffee in the first position.
->>> breakfast_foods.insert(0, "Coffee")
->>> print(breakfast_foods)
-['Coffee', 'Oatmeal', 'Fruit Salad', 'Eggs', 'Bacon', 'Toast']
 ```
 
 ## Working with lists
@@ -198,19 +145,6 @@ Blue
 
 ```
 
-One common way to compose a list of values is to use `list.append()` with a loop:
-
-```python
-
->>> cubes_to_1000 = []
-
->>> for number in range(11):
-...    cubes_to_1000.append(number**3)
-
->>> print(cubles_to_1000)
-[0, 1, 8, 27, 64, 125, 216, 343, 512, 729, 1000]
-```
-
 Lists can be combined via various techniques:
 
 ```python
@@ -226,27 +160,7 @@ Lists can be combined via various techniques:
 ['cat', 'dog', 'elephant', 'cat', 'dog', 'elephant', 'cat', 'dog', 'elephant']
 
 
-# A more efficent method of combining 2 lists is to use slice asignment or appending in a loop
-# by mutating one of the original lists.
-first_one = ["cat", "Tabby"]
-second_one = ["George", 5]
 
-# This assigns the second list to index 0 in the first list.
->>> first_one[0:0] = second_one
->>> first_one
-["George", 5, "cat", "Tabby"]
-
-# This loops through the first list and appends it's items to the end of the second list.
->>> for item in first_one:
->>>      second_one.append(item)
-...
->>> print(second_one)
-["George", 5, "cat", "Tabby"]
-```
-
-## Related data types
-
-Lists are often used as _stacks_ and _queues_ -- although their underlying implementation makes prepending and inserting slow. The [collections][collections] module offers a [deque][deque] variant optimized for fast appends and pops from either end that is implemented as a [doubly linked list][doubly linked list]. Nested lists are also used to model small _matrices_ -- although the [Numpy][numpy] and [Pandas][pandas] libraries are much more robust for efficient matrix and tabular data manipulation. The collections module also provides a `UserList` type that can be customized to fit specialized list needs.
 
 [list]: https://docs.python.org/3/library/stdtypes.html#list
 [tuple]: https://docs.python.org/3/library/stdtypes.html#tuple
@@ -258,3 +172,4 @@ Lists are often used as _stacks_ and _queues_ -- although their underlying imple
 [dynamic array]: https://en.wikipedia.org/wiki/Dynamic_array
 [arraylist]: https://beginnersbook.com/2013/12/java-arraylist/
 [doubly linked list]: https://en.wikipedia.org/wiki/Doubly_linked_list
+```

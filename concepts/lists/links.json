@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://docs.python.org/3/tutorial/datastructures.html",
+    "description": "Python Tutorial: Lists"
+  },
+  {
+    "url": "https://docs.python.org/3/library/stdtypes.html#list",
+    "description": "Lists Type in Python Docs"
+  },
+  {
+    "url": "https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range",
+    "description": "Sequence Types in Python Docs"
+  },
+  {
+    "url": "https://realpython.com/python-lists-tuples/",
+    "description": "Real Python: Lists and Tuples"
+  }
+]
