@@ -3,7 +3,7 @@ Python has three different types of built-in numbers: integers ([`int`][int]), f
 Whole numbers (_including hex, octals and binary numbers_) **without** decimal places are identified as `ints`:
 
 ```python
-#whole number
+# Ints are whole numbers.
 >>> 1234
 1234
 >>> type(1234)
@@ -16,7 +16,7 @@ Whole numbers (_including hex, octals and binary numbers_) **without** decimal p
 Hex numbers are written/printed with `0x` prefix:
 
 ```python
-#hex number
+# Hex numbers start with 0x.
 >>> 0x17
 23
 >>> type(0x17)
@@ -26,7 +26,7 @@ Hex numbers are written/printed with `0x` prefix:
 Octals are written with a `0o` prefix:
 
 ```python
-#octal number
+# Octal numbers start with a 0o.
 >>> 0o446
 294
 >>> type(0o446)
@@ -36,7 +36,7 @@ Octals are written with a `0o` prefix:
 Binary numbers are prefixed with `0b`, and written with only zeros and ones:
 
 ```python
-#binary number
+# Binary numbers are made up of 0s and 1s.
 >>> 0b1100110
 102
 >>> type(0b1100110)
@@ -93,23 +93,23 @@ Python fully supports arithmetic between these different number types, and will 
 Python considers `ints` narrower than `floats`, which are considered narrower than `complex` numbers. Comparisons between different number types behave as if the _exact_ values of those numbers were being compared:
 
 ```python
-#the int is widened to a float here, and a float is returned
+# The int is widened to a float here, and a float is returned.
 >>> 3 + 4.0
 7.0
 
-#the int is widened to a complex number, and a complex number is returned
+# The int is widened to a complex number, and a complex number is returned.
 >>> 6/(3+2j)
 (2+2j)
 
-#division always returns a float, even if integers are used
+# Division always returns a float, even if integers are used.
 >>> 6/2
 3.0
 
-#if an int result is needed, you can use floor division to truncate the result
+# If an int result is needed, you can use floor division to truncate the result.
 >>> 6//2
 3
 
-#when comparing, exact values are used
+# When comparing, exact values are used.
 >>> 23 == 0x17
 True
 
@@ -120,7 +120,7 @@ True
 True
 ```
 
-All numbers (except complex) support all [arithmetic operations][arithmetic operations], evaluated according to [operator precedence][operator precedence]. Support for mathematical functions (beyond `+`, `-`, `/`) for complex numbers can be found in the [cmath][cmath] module.
+All numbers (except complex) support all [arithmetic operations][arethmetic-operations], evaluated according to [operator precedence][operator precedence]. Support for mathematical functions (beyond `+`, `-`, `/`) for complex numbers can be found in the [cmath][cmath] module.
 
 ### Precision & Representation
 
@@ -137,6 +137,6 @@ For a more detailed discussions of the issues and limitations of floating point 
 [decimals]: https://docs.python.org/3/library/decimal.html#module-decimal
 [0.30000000000000004.com]: https://0.30000000000000004.com/
 [cmath]: https://docs.python.org/3.9/library/cmath.html
-[arethmetic operations]: https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
+[arethmetic-operations]: https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
 [operator precedence]: https://docs.python.org/3/reference/expressions.html#operator-precedence
 [floating point math]: https://docs.python.org/3.9/tutorial/floatingpoint.html

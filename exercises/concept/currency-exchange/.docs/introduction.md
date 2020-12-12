@@ -6,15 +6,21 @@ There are three different kinds of built-in numbers in Python : `ints`, `floats`
 
 `ints` are whole numbers. e.g. `1234`, `-10`, `20201278`.
 
+Integers in Python have [arbitrary precision][arbitrary-precision] -- the amount of digits is limited only by the available memory of the host system.
+
 ### floats
 
-`floats` are numbers containing a decimal point. e.g. `0.0`,`3.14`,`-9.01`. Floats in Python are of [_arbitrary precision_][arbitrary-precision].
+`floats` are numbers containing a decimal point. e.g. `0.0`,`3.14`,`-9.01`.
 
-You can see more details in the following resources:
+Floating point numbers are usually implemented in Python using a `double` in C (_15 decimal places of precision_), but will vary in representation based on the host system and other implementation details. This can create some surprises when working with floats, but is "good enough" for most situations.
+
+You can see more details and discussions in the following resources:
 
 - [Python numeric type documentation][numeric-type-docs]
+- [The Python Tutorial][floating point math]
 - [Documentation for `int()` built in][`int()` built in]
 - [Documentation for `float()` built in][`float()` built in]
+- [0.30000000000000004.com][0.30000000000000004.com]
 
 ## Arithmetic
 
@@ -66,3 +72,5 @@ To convert a float to an integer, you can use `int()`. Also, to convert an integ
 [numeric-type-docs]: https://docs.python.org/3/library/stdtypes.html#typesnumeric
 [`int()` built in]: https://docs.python.org/3/library/functions.html#int
 [`float()` built in]: https://docs.python.org/3/library/functions.html#float
+[0.30000000000000004.com]: https://0.30000000000000004.com/
+[floating point math]: https://docs.python.org/3.9/tutorial/floatingpoint.html
