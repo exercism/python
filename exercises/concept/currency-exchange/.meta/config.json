@@ -1,0 +1,28 @@
+{
+  "authors": [
+    {
+      "github_username": "Ticktakto",
+      "exercism_username": "Ticktakto"
+    },
+    {
+      "github_username": "Yabby1997",
+      "exercism_username": "Yabby1997"
+    },
+    {
+      "github_username": "limm-jk",
+      "exercism_username": "limm-jk"
+    },
+    {
+      "github_username": "OMEGA-Y",
+      "exercism_username": "OMEGA-Y"
+    },
+    {
+      "github_username": "wnstj2007",
+      "exercism_username": "wnstj2007"
+    }
+  ],
+  "editor": {
+    "solution_files": ["exchange.py"],
+    "test_files": ["exchange_test.py"]
+  }
+}
