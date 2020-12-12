@@ -22,7 +22,7 @@
     }
   ],
   "editor": {
-    "solution_files": ["exchange.py"],
-    "test_files": ["exchange_test.py"]
+    "solution_files": ["numbers.py"],
+    "test_files": ["numbers_test.py"]
   }
 }
