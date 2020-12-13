@@ -33,6 +33,9 @@ For readability, line breaks can be used when there are many elements or nested 
                         "Lavender"
                       ]
 ['Rose', 'Sunflower', 'Poppy', 'Pansy', 'Tulip', 'Fuchsia', 'Cyclamen', 'Lavender']
+
+
+# Each data structure is on its own line to help clarify what they are.
 >>> nested_data_structures = [
                                  {"fish": "gold", "monkey": "brown", "parrot" : "grey"},
                                  ("fish", "mammal", "bird"),
@@ -58,29 +61,32 @@ The `list()` constructor can be used empty or with an _iterable_ as an argument.
 
 Results when using a list constructor with a string or a dict may be surprising:
 
-````python
+```python
 
 # String elements (Unicode code points) are iterated through and added *individually*.
 >>> multiple_elements_string = list("Timbuktu")
 ['T', 'i', 'm', 'b', 'u', 'k', 't', 'u']
 
 
+# Unicode separators and positioning code points are also added *individually*.
 >>> multiple_code_points_string = list('अभ्यास')
 ['अ', 'भ', '्', 'य', 'ा', 'स']
+```
 
-"""
 Because the `list` constructor will only take _iterables_ (or nothing) as arguments, objects that are _not_ iterable will throw a type error. Consequently, it is much easier to create a one-item list via the literal method.
 
 ```python
 
+# Numbers are not iterable, and so attempting to create a list with a number passed to the constructor fails.
 >>> one_element = list(16)
 Traceback (most recent call last):
    File "<stdin>", line 1, in <module>
    TypeError: 'int' object is not iterable
 
+# Tuples *are* iterable, so passing a one-element tuple to the constructor does work, but it's awkward
 >>> one_element_from_iterable = list((16,))
 [16]
-````
+```
 
 ## Accessing elements
 
@@ -104,18 +110,20 @@ Items inside lists (_like the sequence types `string` and `tuple`_), can be acce
 'Oatmeal'
 ```
 
-You can access a portion of a list with _slice notation_ (`[start:stop]`). A _slice_ is defined as the sequence of items in a list at position `index` such that `start <= index < stop`.
+You can access a portion of a list with _slice notation_ (`[start:stop]`). A _slice_ is defined as the sequence of items in a list at position `index` such that `start <= index < stop`. _Slicing_ does not modify the original `list`. Instead, you get a new list with copies of all the elements you asked for.
 
-Slicing does not modify the original `list`. Instead, you get a new list with copies of all the elements you asked for.
-You can also slice a list using a `step` parameter with the notation `[start:stop:step]`. Using a `step` will "skip over" or filter the list elements (_for example, a `step` of 2 will be every other element in the range_).
+You can also slice a list using a `step` parameter with the notation `[start:stop:step]`. Using a `step` will "skip over" or filter the list elements (_for example, a `step` of 2 will be every other element in the range_):
 
 ```python
 >>> colors = ["Red", "Purple", "Green", "Yellow", "Orange", "Pink", "Blue", "Grey"]
+
 # If there is no step parameter, the step is assumed to be 1.
 >>> middle_colors = colors[2:6]
 ["Green", "Yellow", "Orange", "Pink"]
-# If the stop parameter is omitted, the slice will stop at the end of the list.
->>> primary_colors = colors[0::3]
+
+# If the start or stop parameters are omitted, the slice will
+# start at index zero, and will stop at the end of the list.
+>>> primary_colors = colors[::3]
 ["Red", "Yellow", "Blue"]
 ```
 
@@ -124,8 +132,9 @@ You can also slice a list using a `step` parameter with the notation `[start:sto
 Lists supply an _iterator_, and can be looped through/over in the same manner as other _sequence types_:
 
 ```python
-
 >>> colors = ["Orange", "Green", "Grey", "Blue"]
+
+#  Looping through the list and printing out each element.
 >>> for item in colors:
 ...     print(item)
 ...
@@ -135,6 +144,8 @@ Grey
 Blue
 
 >>> numbers_to_cube = [5, 13, 12, 16]
+
+# Looping through the list and printing out the cube of each element.
 >>> for number in numbers_to_cube:
 ...     print(number*3)
 ...
@@ -152,7 +163,6 @@ Lists can be combined via various techniques:
 >>> new_via_concatenate = ["George", 5] + ["cat", "Tabby"]
 ["George", 5, "cat", "Tabby"]
 
-
 # Likewise, using the multiplication operator * is the equivalent of using + n times.
 >>> first_group = ["cat", "dog", "elephant"]
 
@@ -169,4 +179,3 @@ Lists can be combined via various techniques:
 [mutable sequence operations]: https://docs.python.org/3/library/stdtypes.html#typesseq-mutable
 [dynamic array]: https://en.wikipedia.org/wiki/Dynamic_array
 [arraylist]: https://beginnersbook.com/2013/12/java-arraylist/
-[doubly linked list]: https://en.wikipedia.org/wiki/Doubly_linked_list
