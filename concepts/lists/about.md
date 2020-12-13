@@ -258,3 +258,7 @@ Lists are often used as _stacks_ and _queues_ -- although their underlying imple
 [dynamic array]: https://en.wikipedia.org/wiki/Dynamic_array
 [arraylist]: https://beginnersbook.com/2013/12/java-arraylist/
 [doubly linked list]: https://en.wikipedia.org/wiki/Doubly_linked_list
+[collections]: https://docs.python.org/3/library/collections.html
+[deque]: https://docs.python.org/3/library/collections.html#collections.deque
+[numpy]: https://numpy.org/
+[pandas]: https://pandas.pydata.org/
