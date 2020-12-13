@@ -226,7 +226,7 @@ Lists can be combined via various techniques:
 ['cat', 'dog', 'elephant', 'cat', 'dog', 'elephant', 'cat', 'dog', 'elephant']
 
 
-# A more efficent method of combining 2 lists is to use slice asignment or appending in a loop
+# A more efficient method of combining 2 lists is to use slice assignment or appending in a loop
 # by mutating one of the original lists.
 first_one = ["cat", "Tabby"]
 second_one = ["George", 5]
