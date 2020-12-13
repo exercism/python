@@ -14,9 +14,9 @@
 - Common Sequence type methods such as `min()`, `max()`, `x.index()`, `x.count()`, `len()`
 - Slicing or slice notation ([start:stop:step])
 - Additional builtin functions as they relate to this data structure (e.g. `sorted()`, `enumerate()`, `reversed()`, or `hash()`.
-- Knowing that tuples can be used as objects in other data structures, -- e.g. " a "List of tuples", "tuples as keys in Dictionaries", ,or "A Set of tuples".
+- Knowing that tuples can be used as objects in other data structures, -- e.g. " a "List of tuples", "tuples as keys in Dictionaries", or "A Set of tuples".
 - Hash-ability and when a tuple is not hash-able.
-- Related [collections](https://docs.python.org/3/library/collections.html#collections.namedtuple)) module with `namedtuple()`
+- Related [collections](https://docs.python.org/3/library/collections.html#collections.namedtuple) module with `namedtuple()`
 - Related [dataclass](https://docs.python.org/3.7/library/dataclasses.html) and `@dataclass` decorator
 - Memory storage and performance characteristics.
 
