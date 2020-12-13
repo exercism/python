@@ -1,24 +1,14 @@
-Python allows you to manipulate a [`list`][list] in a lot of ways. A `list` is simple a collection of objects of [type `List`][list std type]. They are mutable, ordered and indexed. Let's look at the methods that are available to manipulate a `list` object.
+In Python, a [`list`][list std type] is a mutable collection of items in _sequence_. Like most collections (see the built-ins tuple, dict and set), lists can hold reference to any (or multiple) data type(s) - including other lists.
 
-When you manipulate a list with a list-method, you are changing the properties of the list you pass. That is, **you will alter the list** object that is being used with the list-method. If you do not want to change the original list, you need to copy the list and then work on the copied list.
+Like any [sequence type][sequence type], items are referenced by 0-based index number and can be copied in whole or in part via _slice notation_. Lists support all [common sequence operations][common sequence operations], as well as [mutable sequence operations][mutable sequence operations]. They can be iterated over in a loop by using the for `item in <list>` construct.
 
-To begin, you first need a `list` object to apply the methods to.
+Python also provides many useful [methods][list-methods] for working with lists. Let's take a look at some of them.
 
-```python
->>> empty_list = list() # (or) empty_list = []
->>> empty_list
-[]
-```
+Keep in mind that when you manipulate a list with a list-method, **you alter the list** object that has been passed. If you do not wish to mutate your original `list`, you will need to make a copy of it via slice or `list.copy()`.
 
-# Add Items to a list
+### Adding Items
 
-Methods to add items:
-
-1. `list.append()`
-2. `list.insert()`
-3. `list.extend()`
-
-If you want to add an item after all the items of an existing list, you use the list-method `append()` for it. As the name indicates, `append()` attaches the item at the **end** of the list.
+If you want to add an item to the end of an existing list, use `list.append()`:
 
 ```python
 >>> numbers = [1, 2, 3]
@@ -27,14 +17,14 @@ If you want to add an item after all the items of an existing list, you use the 
 [1, 2, 3, 9]
 ```
 
-Rather than appending, the `insert()` method gives you the ability to add the item to a _specific index_ in the list.
+Rather than _appending_, `list.insert()` gives you the ability to add the item to a _specific index_ in the list.
 
-`.insert()` takes 2 parameters:
+`list.insert()` takes 2 parameters:
 
-1. the index of the item before which you want the new item to appear
+1. the index of the item _before which_ you want the new item to appear
 2. the item to be inserted
 
-Note: If the given index is 0, the item will be added to the start of the list. If the supplied index is greater than the last index of the list, the item will be added in the last position, this is the equivalent of using the `append()` method.
+**Note**: If the given index is 0, the item will be added to the start of the list. If the supplied index is greater than the last index on the list, the item will be added in the final position -- the equivalent of using `list.append()`.
 
 ```python
 >>> numbers = [1, 2, 3]
@@ -46,9 +36,7 @@ Note: If the given index is 0, the item will be added to the start of the list. 
 [-2, 0, 1, 2, 3]
 ```
 
-If you have an iterable that you would like to _combine_ with your current list (concatenating the two), you can use the `list.extend()` method. `extend()` will unpack the supplied iterable and add its elements, in the same order, to your list (_using `.append()` in this circumstance would add the entire iterable as a **single item**._).
-
-The extend method takes an iterable as its parameter:
+If you have an iterable that you would like to _combine_ with your current list (concatenating the two), `list.extend()` can be used. `list.extend()` will _unpack_ the supplied iterable, adding its elements in the same order to the end of your list (_using `.append()` in this circumstance would add the entire iterable as a **single item**._).
 
 ```python
 >>> numbers = [1, 2, 3]
@@ -63,26 +51,26 @@ The extend method takes an iterable as its parameter:
 [1, 2, 3, 5, 6, 7, 8, 9]
 ```
 
-# Remove Items from a list
+<br>
 
-Methods to remove items:
+### Removing Items
 
-1. `list.remove()`
-2. `list.pop()`
-3. `list.clear()`
-
-If you want to delete an item from a list, you can use the `list.remove()` method, passing the item to be removed as an argument. `remove()` will throw a `ValueError` if the item is not present in the list.
+To delete an item from a list use `list.remove()`, passing the item to be removed as an argument. `list.remove()` will throw a `ValueError` if the item is not present in the list.
 
 ```python
 >>> numbers = [1, 2, 3]
 >>> numbers.remove(2)
 >>> numbers
 [1, 3]
+
+# Trying to remove a value that is not in the list throws a ValueError
 >>> numbers.remove(0)
 ValueError: list.remove(x): x not in list
 ```
 
-Alternatively, using the `list.pop()` method will both remove **and** `return` an element for use. `pop()` takes one optional parameter: the index of the item you need to remove and receive. If you specify an index number higher than the length of the list, you will get an `IndexError`. If the optional index argument is not specified, the last element of the list will be removed and returned to you.
+Alternatively, using the `list.pop()` method will both remove **and** `return` an element for use.
+
+`list.pop()` takes one optional parameter: the index of the item you need to remove and receive. If the optional index argument is not specified, the last element of the list will be removed and returned to you. If you specify an index number higher than the length of the list, you will get an `IndexError`.
 
 ```python
 >>> numbers = [1, 2, 3]
@@ -94,9 +82,13 @@ Alternatively, using the `list.pop()` method will both remove **and** `return` a
 3
 >>> numbers
 [2]
+>>> numbers.pop(1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: pop index out of range
 ```
 
-If you want to remove all the items from a `list` you can use the `list.clear()` method. It does not take any parameters.
+If you want to remove all items from a `list`, use `list.clear()`. It does not take any parameters.
 
 ```python
 >>> numbers = [1, 2, 3]
@@ -105,29 +97,31 @@ If you want to remove all the items from a `list` you can use the `list.clear()`
 []
 ```
 
-# Reverse and reorder a list
+<br>
+
+### Reversing and reordering
 
 You can reverse the order of a list with the `list.reverse()` method.
 
 ```python
->>> numbers = [1, 2, 3, 0]
+>>> numbers = [1, 2, 3]
 >>> numbers.reverse()
 >>> numbers
-[0, 3, 2, 1]
+[3, 2, 1]
 ```
 
-A list can be re-ordered _**in place**_ with the help of the `list.sort()` method. Internally, Python uses [`Timsort`][timsort] to arrange the list. The default order is _ascending_. The Python docs offer some [additional tips and techniques for sorting][sorting how to] lists effectively.
-
-If you have a list of names and you want to sort them:
+A list can be re-ordered _**in place**_ with the help of `list.sort()`. Internally, Python uses [`Timsort`][timsort] to arrange the list. The default order is _ascending_. Take a look at the Python docs for some [additional tips and techniques for sorting][sorting how to] lists effectively.
 
 ```python
 >>> names = ["Tony", "Natasha", "Thor", "Bruce"]
+
+# The default sort order is *ascending*.
 >>> names.sort()
 >>> names
 ["Bruce", "Natasha", "Thor", "Tony"]
 ```
 
-If you want the sort to be in descending order, you can pass the reverse argument:
+If you want the sort to be in descending order, pass the `reverse=True` argument:
 
 ```python
 >>> names = ["Tony", "Natasha", "Thor", "Bruce"]
@@ -136,11 +130,13 @@ If you want the sort to be in descending order, you can pass the reverse argumen
 ["Tony", "Thor", "Natasha", "Bruce"]
 ```
 
-For cases where changing your original list is undesirable, the built-in [`sorted()`][sorted] can be used to return a new, sorted copy of your original list.
+For cases where sorting the original list is undesirable, the built-in [`sorted()`][sorted] can be used to return a new, sorted copy of your original list.
 
-# Occurrences of an item in a list
+<br>
 
-You can find the occurrences of an element in a list with the help of `list.count()`. It takes the item you need to tally as its argument and returns the total number of times it appears on the list.
+### Occurrences of an item in a list
+
+You can find the number of occurrences of an element in a list with the help of `list.count()`. It takes the item you need to tally as its argument and returns the total number of times it appears on the list.
 
 ```python
 >>> items = [1, 4, 7, 8, 2, 9, 2, 1, 1, 0, 4, 3]
@@ -148,9 +144,11 @@ You can find the occurrences of an element in a list with the help of `list.coun
 3
 ```
 
-# Find the index of an item
+<br>
 
-The `list.index()` method will give you the index number of the _first occurrence_ of an item you pass in. If there are no occurrences of the item, a `ValueError` is raised. If you do not need the exact position of an item and are only checking that it is present inside the list, the built-in `in` operator is more efficient.
+### Finding the index of items
+
+`list.index()` will return the index number of the _first occurrence_ of an item passed in. If there are no occurrences, a `ValueError` is raised. If you don't need the exact position of an item and are only checking that it is present inside the list, the built-in `in` operator is more efficient.
 
 Indexing is zero-based, meaning the position of the first item is `0`.
 
@@ -162,7 +160,7 @@ Indexing is zero-based, meaning the position of the first item is `0`.
 ValueError: 10 is not in list
 ```
 
-You can provide start and end indices to search within a specific section of the list.
+You can also provide `start` and `end` indices to search within a specific section of the list:
 
 ```python
 >>> names = ["Tina", "Leo", "Thomas", "Tina", "Emily", "Justin"]
@@ -172,61 +170,49 @@ You can provide start and end indices to search within a specific section of the
 3
 ```
 
-# Make a copy of a list
+<br>
 
-Remember that variables in Python are labels that point to underlying objects.
+### Making Copies
 
-Lists are _collections_ of object references ordered by an index. If you assign a list object to a new variable name, any change you make to the list using the new variable name will also _impact_ the original variable. Both variable names point to the **same list object** which is modified.
+Remember that variables in Python are labels that point to underlying objects and `lists` are _container_ objects that hold references to their collected items.
+
+Assigning a `list` object to a new variable _name_ does not copy the object or its data. Any change made to the items in the `list` using the new variable name will also _impact the original_.
+
+To avoid this complicaton, you must make a `shallow_copy` via `list.copy()` or slice. A `shallow_copy` will create a new `list` object, but **will not** create new objects for the contained list _items_. However, this type of copy will be enough for you to add or remove items from the two `list` objects independantly. (More about the differences between a shallow_copy and a deep_copy a little later).
 
 ```python
 >>> actual_names = ["Tony", "Natasha", "Thor", "Bruce"]
 
-# Both variable names point to the same list
+# Assinging a new variable name does not make a copy of the container or its data.
 >>> same_list = actual_names
 
+#  Altering the list via the new name is the same as altering the list via the old name.
 >>> same_list.append("Clarke")
 >>> same_list
 ["Tony", "Natasha", "Thor", "Bruce", "Clarke"]
 >>> actual_names
 ["Tony", "Natasha", "Thor", "Bruce", "Clarke"]
-```
 
-If you need to use a new list, use the `list.copy()` method or a _slice_ to make a `shallow_copy` of the list. Using `copy()` or slicing will create a new list _object_, but will not create new objects for the list items. (More about the differences between a `shallow_copy` and a `deep_copy` later).
+#  Likewise, altering the data in the list via the original nane will also alter the data under the new name.
+>>> actual_names[0] = "Wanda"
+>>> same_list
+['Wanda', 'Natasha', 'Thor', 'Bruce', 'Clarke']
 
-```python
->>> names = ["Tony", "Natasha", "Thor", "Bruce"]
-
-# The two list objects are independents, but they contain of the same items.
->>> new_list = names.copy()
-
->>> new_list.append("Clarke")
->>> new_list
+# If you copy the list, there will be two seperate list objects which can be changed independantly.
+>>> copied_list = actual_names.copy()
+>>> copied_list[0] = "Tony"
+>>> actual_names
+['Wanda', 'Natasha', 'Thor', 'Bruce', 'Clarke']
+>>> copied_list
 ["Tony", "Natasha", "Thor", "Bruce", "Clarke"]
->>> names
-["Tony", "Natasha", "Thor", "Bruce"]
 ```
 
-_Slicing_ will also make a second set of references that can then be changed without the danger of unintentional mutation of elements:
-
-```python
->>> names = ["Tony", "Natasha", "Thor", "Bruce"]
-
-# This is equivalent to using names.copy()
->>> new_list = names[:]
-
->>> new_list.append("Clarke")
->>> new_list
-["Tony", "Natasha", "Thor", "Bruce", "Clarke"]
->>> names
-["Tony", "Natasha", "Thor", "Bruce"]
-```
-
-This reference constraint becomes exacerbated when working with nested/multiplied lists:
+This reference complication becomes exacerbated when working with nested or multiplied lists:
 
 ```python
 from pprint import pprint
 
-# This will produce a game grid that is 8x8, pre-populated with zeros
+# This will produce a game grid that is 8x8, pre-populated with zeros.
 >>> game_grid = [[0]*8] *8
 
 >>> pprint(game_grid)
@@ -239,10 +225,10 @@ from pprint import pprint
  [0, 0, 0, 0, 0, 0, 0, 0],
  [0, 0, 0, 0, 0, 0, 0, 0]]
 
-# An attempt to put a "X" in the bottom right corner
+# An attempt to put a "X" in the bottom right corner.
 >>> game_grid[7][7] = "X"
 
-# This doesn't work because all the rows are referencing the same underlying list object.
+# This attempt doesn't work because all the rows are referencing the same underlying list object.
 >>> pprint(game_grid)
 [[0, 0, 0, 0, 0, 0, 0, 'X'],
  [0, 0, 0, 0, 0, 0, 0, 'X'],
@@ -254,7 +240,7 @@ from pprint import pprint
  [0, 0, 0, 0, 0, 0, 0, 'X']]
 ```
 
-As mentioned earlier, if your list contains _variables_ or nested data structures, those second-level references will **not be copied** via `copy()` or slice. To copy an entire tree of containers, references, and objects, you need to use `list.deep_copy()` or a `list comprehension`. For a detailed explanation of list behaviors, see this excellent [making a game board][making a game board] article.
+In this circumstance, a `shallow_copy` is enough to allow the behavior we'd like:
 
 ```python
 from pprint import pprint
@@ -263,7 +249,7 @@ from pprint import pprint
 >>> game_grid = []
 >>> filled_row = [0] * 8
 >>> for row in range(8):
-...    game_grid.append(filled_row.copy())
+...    game_grid.append(filled_row.copy()) # This is making a new shallow copy of the inner list object each iteration.
 
 >>> pprint(game_grid)
 [[0, 0, 0, 0, 0, 0, 0, 0],
@@ -275,10 +261,10 @@ from pprint import pprint
  [0, 0, 0, 0, 0, 0, 0, 0],
  [0, 0, 0, 0, 0, 0, 0, 0]]
 
-# An attempt to put a "X" in the bottom right corner
+# An attempt to put a "X" in the bottom right corner.
 >>> game_grid[7][7] = "X"
 
-# The game grid now works the way we expect it to
+# The game grid now works the way we expect it to!
 >>> pprint(game_grid)
 [[0, 0, 0, 0, 0, 0, 0, 0],
  [0, 0, 0, 0, 0, 0, 0, 0],
@@ -290,7 +276,42 @@ from pprint import pprint
  [0, 0, 0, 0, 0, 0, 0, 'X']]
 ```
 
-[list]: https://docs.python.org/3/tutorial/datastructures.html#more-on-lists
+But as mentioned earlier, lists are containers of _references_. If your list contains variables or nested data structures, those second-level references will **not be copied** via `shallow_copy`. Changing the underlying objects will affect _both_ copies, since each `list` will still have references pointing to the same items.
+
+```python
+from pprint import pprint
+
+>>> pprint(game_grid)
+[[0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 'X']]
+
+# We'd like a new board, so we make a shallow copy.
+>>> new_game_grid = game_grid.copy()
+
+# But a shallow copy doesn't copy the contained references or objects.
+>>> new_game_grid[0][0] = 'X'
+
+# So changing the items in the copy also changes the originals items.
+>>>  pprint(game_grid)
+[['X', 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 'X']]
+```
+
+For a detailed explanation of list and nested list behaviors, take a look at this excellent [making a game board in Python][making a game board] article.
+
+[list-methods]: https://docs.python.org/3/tutorial/datastructures.html#more-on-lists
 [list std type]: https://docs.python.org/3.9/library/stdtypes.html#list
 [timsort]: https://en.wikipedia.org/wiki/Timsort
 [sorted]: https://docs.python.org/3/library/functions.html#sorted

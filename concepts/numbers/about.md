@@ -13,7 +13,7 @@ Whole numbers (_including hex, octals and binary numbers_) **without** decimal p
 -12
 ```
 
-Hex numbers are written/printed with `0x` prefix:
+Hex numbers are prefixed with `0x`:
 
 ```python
 # Hex numbers start with 0x.
@@ -23,7 +23,7 @@ Hex numbers are written/printed with `0x` prefix:
 <class 'int'>
 ```
 
-Octals are written with a `0o` prefix:
+Octals are prefixed with a `0o`:
 
 ```python
 # Octal numbers start with a 0o.
@@ -65,7 +65,7 @@ Each of these `int` displays can be converted into the other via constructor:
 1234
 ```
 
-Numbers containing a decimal point (_with or without any numbers following_) are identified as `floats`:
+Numbers containing a decimal point (with or without fractional parts) are identified as `floats`:
 
 ```python
 >>> 3.45
