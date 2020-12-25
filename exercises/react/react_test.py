@@ -3,7 +3,7 @@ import unittest
 
 from react import InputCell, ComputeCell
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v
+# Tests adapted from `problem-specifications//canonical-data.json`
 class ReactTest(unittest.TestCase):
     def test_input_cells_have_a_value(self):
         input_ = InputCell(10)
