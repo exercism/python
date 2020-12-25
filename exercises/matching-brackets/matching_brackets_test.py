@@ -2,7 +2,7 @@ import unittest
 
 from matching_brackets import is_paired
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.0.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class MatchingBracketsTest(unittest.TestCase):

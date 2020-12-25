@@ -2,7 +2,7 @@ import unittest
 
 from robot_simulator import Robot, NORTH, EAST, SOUTH, WEST
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v3.2.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class RobotSimulatorTest(unittest.TestCase):

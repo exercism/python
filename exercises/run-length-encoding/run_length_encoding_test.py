@@ -2,7 +2,7 @@ import unittest
 
 from run_length_encoding import encode, decode
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class RunLengthEncodingTest(unittest.TestCase):
@@ -45,7 +45,7 @@ class RunLengthEncodingTest(unittest.TestCase):
     def test_decode_multiple_whitespace_mixed_in_string(self):
         self.assertMultiLineEqual(decode("2 hs2q q2w2 "), "  hsqq qww  ")
 
-    def test_decode_lower_case_string(self):
+    def test_decode_lowercase_string(self):
         self.assertMultiLineEqual(decode("2a3b4c"), "aabbbcccc")
 
     def test_encode_followed_by_decode_gives_original_string(self):

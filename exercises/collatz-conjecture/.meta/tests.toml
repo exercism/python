@@ -1,0 +1,19 @@
+[canonical-tests]
+
+# zero steps for one
+"540a3d51-e7a6-47a5-92a3-4ad1838f0bfd" = true
+
+# divide if even
+"3d76a0a6-ea84-444a-821a-f7857c2c1859" = true
+
+# even and odd steps
+"754dea81-123c-429e-b8bc-db20b05a87b9" = true
+
+# large number of even and odd steps
+"ecfd0210-6f85-44f6-8280-f65534892ff6" = true
+
+# zero is an error
+"7d4750e6-def9-4b86-aec7-9f7eb44f95a3" = true
+
+# negative value is an error
+"c6c795bf-a288-45e9-86a1-841359ad426d" = true

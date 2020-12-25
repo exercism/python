@@ -2,7 +2,7 @@ import unittest
 
 from sublist import sublist, SUBLIST, SUPERLIST, EQUAL, UNEQUAL
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class SublistTest(unittest.TestCase):

@@ -5,7 +5,7 @@ from robot_name import Robot
 
 
 class RobotNameTest(unittest.TestCase):
-    # assertRegex() alias to adress DeprecationWarning
+    # assertRegex() alias to address DeprecationWarning
     # assertRegexpMatches got renamed in version 3.2
     if not hasattr(unittest.TestCase, "assertRegex"):
         assertRegex = unittest.TestCase.assertRegexpMatches

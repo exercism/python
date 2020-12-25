@@ -2,7 +2,7 @@ import unittest
 
 import yacht
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class YachtTest(unittest.TestCase):

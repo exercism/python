@@ -1,0 +1,40 @@
+[canonical-tests]
+
+# parses normal text as a paragraph
+"e75c8103-a6b8-45d9-84ad-e68520545f6e" = true
+
+# parsing italics
+"69a4165d-9bf8-4dd7-bfdc-536eaca80a6a" = true
+
+# parsing bold text
+"ec345a1d-db20-4569-a81a-172fe0cad8a1" = true
+
+# mixed normal, italics and bold text
+"51164ed4-5641-4909-8fab-fbaa9d37d5a8" = true
+
+# with h1 header level
+"ad85f60d-0edd-4c6a-a9b1-73e1c4790d15" = true
+
+# with h2 header level
+"d0f7a31f-6935-44ac-8a9a-1e8ab16af77f" = true
+
+# with h6 header level
+"13b5f410-33f5-44f0-a6a7-cfd4ab74b5d5" = true
+
+# unordered lists
+"25288a2b-8edc-45db-84cf-0b6c6ee034d6" = true
+
+# With a little bit of everything
+"7bf92413-df8f-4de8-9184-b724f363c3da" = true
+
+# with markdown symbols in the header text that should not be interpreted
+"0b3ed1ec-3991-4b8b-8518-5cb73d4a64fe" = true
+
+# with markdown symbols in the list item text that should not be interpreted
+"113a2e58-78de-4efa-90e9-20972224d759" = true
+
+# with markdown symbols in the paragraph text that should not be interpreted
+"e65e46e2-17b7-4216-b3ac-f44a1b9bcdb4" = true
+
+# unordered lists close properly with preceding and following lines
+"f0bbbbde-0f52-4c0c-99ec-be4c60126dd4" = true

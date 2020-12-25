@@ -1,0 +1,34 @@
+name: "Close stale issues"
+
+on:
+  schedule:
+    - cron: "30 1 * * *"
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v3
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          days-before-stale: 21
+          days-before-close: 7
+          exempt-issue-labels: 'discussion,pinned,epic,enhancement,beginner friendly,maintainer action required'
+          stale-issue-label: abandoned
+          stale-issue-message: >
+            This issue has been automatically marked as `abandoned`
+            because it has not had recent activity. It will be closed if no
+            further activity occurs. Thank you
+            for your contributions.
+          close-issue-message: >
+            Closing stale issue. If this issue is still relevant,
+            please reopen it.
+          exempt-pr-labels: 'pinned,enhancement,awaiting review,maintainer action required'
+          stale-pr-label: abandoned
+          stale-pr-message: >
+            This pull request has been automatically marked as `abandoned`
+            because it has not had recent activity. It will be closed if no
+            further activity occurs. Thank you for your contributions.
+          close-pr-message: >
+            Closing stale pull request. If you are still working on this,
+            please reopen this pull request.

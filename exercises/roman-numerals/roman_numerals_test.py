@@ -2,7 +2,7 @@ import unittest
 
 from roman_numerals import roman
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 class RomanNumeralsTest(unittest.TestCase):
     def test_1_is_a_single_i(self):
         self.assertEqual(roman(1), "I")

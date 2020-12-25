@@ -2,7 +2,7 @@ import unittest
 
 from perfect_numbers import classify
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class PerfectNumbersTest(unittest.TestCase):
@@ -45,11 +45,11 @@ class DeficientNumbersTest(unittest.TestCase):
 
 
 class InvalidInputsTest(unittest.TestCase):
-    def test_zero_is_rejected_not_a_natural_number(self):
+    def test_zero_is_rejected_as_it_is_not_a_positive_integer(self):
         with self.assertRaisesWithMessage(ValueError):
             classify(0)
 
-    def test_negative_integer_is_rejected_not_a_natural_number(self):
+    def test_negative_integer_is_rejected_as_it_is_not_a_positive_integer(self):
         with self.assertRaisesWithMessage(ValueError):
             classify(-1)
 

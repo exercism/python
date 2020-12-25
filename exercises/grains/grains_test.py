@@ -2,7 +2,7 @@ import unittest
 
 from grains import square, total
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class GrainsTest(unittest.TestCase):

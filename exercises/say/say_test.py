@@ -2,7 +2,7 @@ import unittest
 
 from say import say
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class SayTest(unittest.TestCase):
@@ -57,6 +57,10 @@ class SayTest(unittest.TestCase):
     def test_numbers_above_999_999_999_999_are_out_of_range(self):
         with self.assertRaisesWithMessage(ValueError):
             say(1000000000000)
+
+    # Additional tests for this track
+    def test_one_hundred_seventy(self):
+        self.assertEqual(say(170), "one hundred seventy")
 
     # Utility functions
     def assertRaisesWithMessage(self, exception):

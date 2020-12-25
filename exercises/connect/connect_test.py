@@ -2,7 +2,7 @@ import unittest
 
 from connect import ConnectGame
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class ConnectTest(unittest.TestCase):

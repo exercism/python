@@ -2,7 +2,7 @@ import unittest
 
 from food_chain import recite
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v2.1.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class FoodChainTest(unittest.TestCase):

@@ -1,0 +1,46 @@
+[canonical-tests]
+
+# zero
+"5d22a120-ba0c-428c-bd25-8682235d83e8" = true
+
+# one
+"9b5eed77-dbf6-439d-b920-3f7eb58928f6" = true
+
+# fourteen
+"7c499be1-612e-4096-a5e1-43b2f719406d" = true
+
+# twenty
+"f541dd8e-f070-4329-92b4-b7ce2fcf06b4" = true
+
+# twenty-two
+"d78601eb-4a84-4bfa-bf0e-665aeb8abe94" = true
+
+# one hundred
+"e417d452-129e-4056-bd5b-6eb1df334dce" = true
+
+# one hundred twenty-three
+"d6924f30-80ba-4597-acf6-ea3f16269da8" = true
+
+# one thousand
+"3d83da89-a372-46d3-b10d-de0c792432b3" = true
+
+# one thousand two hundred thirty-four
+"865af898-1d5b-495f-8ff0-2f06d3c73709" = true
+
+# one million
+"b6a3f442-266e-47a3-835d-7f8a35f6cf7f" = true
+
+# one million two thousand three hundred forty-five
+"2cea9303-e77e-4212-b8ff-c39f1978fc70" = true
+
+# one billion
+"3e240eeb-f564-4b80-9421-db123f66a38f" = true
+
+# a big number
+"9a43fed1-c875-4710-8286-5065d73b8a9e" = true
+
+# numbers below zero are out of range
+"49a6a17b-084e-423e-994d-a87c0ecc05ef" = true
+
+# numbers above 999,999,999,999 are out of range
+"4d6492eb-5853-4d16-9d34-b0f61b261fd9" = true

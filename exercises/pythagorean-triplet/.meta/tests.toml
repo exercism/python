@@ -1,0 +1,22 @@
+[canonical-tests]
+
+# triplets whose sum is 12
+"a19de65d-35b8-4480-b1af-371d9541e706" = true
+
+# triplets whose sum is 108
+"48b21332-0a3d-43b2-9a52-90b2a6e5c9f5" = true
+
+# triplets whose sum is 1000
+"dffc1266-418e-4daa-81af-54c3e95c3bb5" = true
+
+# no matching triplets for 1001
+"5f86a2d4-6383-4cce-93a5-e4489e79b186" = true
+
+# returns all matching triplets
+"bf17ba80-1596-409a-bb13-343bdb3b2904" = true
+
+# several matching triplets
+"9d8fb5d5-6c6f-42df-9f95-d3165963ac57" = true
+
+# triplets for large number
+"f5be5734-8aa0-4bd1-99a2-02adcc4402b4" = true

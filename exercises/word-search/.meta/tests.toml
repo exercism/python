@@ -1,0 +1,61 @@
+[canonical-tests]
+
+# Should accept an initial game grid and a target search word
+"b4057815-0d01-41f0-9119-6a91f54b2a0a" = true
+
+# Should locate one word written left to right
+"6b22bcc5-6cbf-4674-931b-d2edbff73132" = true
+
+# Should locate the same word written left to right in a different position
+"ff462410-434b-442d-9bc3-3360c75f34a8" = true
+
+# Should locate a different left to right word
+"a02febae-6347-443e-b99c-ab0afb0b8fca" = true
+
+# Should locate that different left to right word in a different position
+"e42e9987-6304-4e13-8232-fa07d5280130" = true
+
+# Should locate a left to right word in two line grid
+"9bff3cee-49b9-4775-bdfb-d55b43a70b2f" = true
+
+# Should locate a left to right word in three line grid
+"851a35fb-f499-4ec1-9581-395a87903a22" = true
+
+# Should locate a left to right word in ten line grid
+"2f3dcf84-ba7d-4b75-8b8d-a3672b32c035" = true
+
+# Should locate that left to right word in a different position in a ten line grid
+"006d4856-f365-4e84-a18c-7d129ce9eefb" = true
+
+# Should locate a different left to right word in a ten line grid
+"eff7ac9f-ff11-443e-9747-40850c12ab60" = true
+
+# Should locate multiple words
+"dea39f86-8c67-4164-8884-13bfc48bd13b" = true
+
+# Should locate a single word written right to left
+"29e6a6a5-f80c-48a6-8e68-05bbbe187a09" = true
+
+# Should locate multiple words written in different horizontal directions
+"3cf34428-b43f-48b6-b332-ea0b8836011d" = true
+
+# Should locate words written top to bottom
+"2c8cd344-a02f-464b-93b6-8bf1bd890003" = true
+
+# Should locate words written bottom to top
+"9ee1e43d-e59d-4c32-9a5f-6a22d4a1550f" = true
+
+# Should locate words written top left to bottom right
+"6a21a676-f59e-4238-8e88-9f81015afae9" = true
+
+# Should locate words written bottom right to top left
+"c9125189-1861-4b0d-a14e-ba5dab29ca7c" = true
+
+# Should locate words written bottom left to top right
+"b19e2149-7fc5-41ec-a8a9-9bc6c6c38c40" = true
+
+# Should locate words written top right to bottom left
+"69e1d994-a6d7-4e24-9b5a-db76751c2ef8" = true
+
+# Should fail to locate a word that is not in the puzzle
+"695531db-69eb-463f-8bad-8de3bf5ef198" = true

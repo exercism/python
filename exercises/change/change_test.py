@@ -2,7 +2,7 @@ import unittest
 
 from change import find_fewest_coins
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.3.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class ChangeTest(unittest.TestCase):

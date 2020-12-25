@@ -2,7 +2,7 @@ import unittest
 
 from zebra_puzzle import drinks_water, owns_zebra
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class ZebraPuzzleTest(unittest.TestCase):

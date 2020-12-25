@@ -1,0 +1,16 @@
+[canonical-tests]
+
+# private key is in range 1 .. p
+"1b97bf38-4307-418e-bfd2-446ffc77588d" = true
+
+# private key is random
+"68b2a5f7-7755-44c3-97b2-d28d21f014a9" = true
+
+# can calculate public key using private key
+"b4161d8e-53a1-4241-ae8f-48cc86527f22" = true
+
+# can calculate secret using other party's public key
+"cd02ad45-3f52-4510-99cc-5161dad948a8" = true
+
+# key exchange
+"17f13c61-a111-4075-9a1f-c2d4636dfa60" = true

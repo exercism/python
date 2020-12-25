@@ -1,0 +1,40 @@
+[canonical-tests]
+
+# no rows
+"485b7bab-4150-40aa-a8db-73013427d08c" = true
+
+# no columns
+"076929ed-27e8-45dc-b14b-08279944dc49" = true
+
+# no rectangles
+"0a8abbd1-a0a4-4180-aa4e-65c1b1a073fa" = true
+
+# one rectangle
+"a4ba42e9-4e7f-4973-b7c7-4ce0760ac6cd" = true
+
+# two rectangles without shared parts
+"ced06550-83da-4d23-98b7-d24152e0db93" = true
+
+# five rectangles with shared parts
+"5942d69a-a07c-41c8-8b93-2d13877c706a" = true
+
+# rectangle of height 1 is counted
+"82d70be4-ab37-4bf2-a433-e33778d3bbf1" = true
+
+# rectangle of width 1 is counted
+"57f1bc0e-2782-401e-ab12-7c01d8bfc2e0" = true
+
+# 1x1 square is counted
+"ef0bb65c-bd80-4561-9535-efc4067054f9" = true
+
+# only complete rectangles are counted
+"e1e1d444-e926-4d30-9bf3-7d8ec9a9e330" = true
+
+# rectangles can be of different sizes
+"ca021a84-1281-4a56-9b9b-af14113933a4" = true
+
+# corner is required for a rectangle to be complete
+"51f689a7-ef3f-41ae-aa2f-5ea09ad897ff" = true
+
+# large input with many rectangles
+"d78fe379-8c1b-4d3c-bdf7-29bfb6f6dc66" = true

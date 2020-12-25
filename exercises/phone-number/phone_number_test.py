@@ -2,7 +2,7 @@ import unittest
 
 from phone_number import PhoneNumber
 
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.7.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class PhoneNumberTest(unittest.TestCase):
@@ -85,11 +85,11 @@ class PhoneNumberTest(unittest.TestCase):
 
     def test_pretty_print(self):
         number = PhoneNumber("2234567890")
-        self.assertEqual(number.pretty(), "(223) 456-7890")
+        self.assertEqual(number.pretty(), "(223)-456-7890")
 
     def test_pretty_print_with_full_us_phone_number(self):
         number = PhoneNumber("12234567890")
-        self.assertEqual(number.pretty(), "(223) 456-7890")
+        self.assertEqual(number.pretty(), "(223)-456-7890")
 
     # Utility functions
     def assertRaisesWithMessage(self, exception):

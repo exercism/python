@@ -15,7 +15,7 @@
             "input": {
                 "phrase": "2234567890"
             },
-            "expected": "(223) 456-7890"
+            "expected": "(223)-456-7890"
         },
         {
             "description": "pretty print with full US phone number",
@@ -23,7 +23,7 @@
             "input": {
                 "phrase": "12234567890"
             },
-            "expected": "(223) 456-7890"
+            "expected": "(223)-456-7890"
         }
     ]
 }
