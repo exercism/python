@@ -1,5 +1,3 @@
-## bools
-
 Python represents true and false values with the `bool` type. There are only two values: `True` and `False`. These values can be bound to a variable:
 
 ```python
