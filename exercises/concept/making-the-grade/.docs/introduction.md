@@ -1,5 +1,3 @@
-## loops
-
 ## Loops in Python
 
 There are 2 general ways in Python to loop through objects.

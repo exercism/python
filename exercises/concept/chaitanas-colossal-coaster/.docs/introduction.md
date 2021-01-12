@@ -1,5 +1,3 @@
-## list-methods
-
 In Python, a [`list`][list std type] is a mutable collection of items in _sequence_. Like most collections (see the built-ins tuple, dict and set), lists can hold reference to any (or multiple) data type(s) - including other lists.
 
 Like any [sequence type][sequence type], items are referenced by 0-based index number and can be copied in whole or in part via _slice notation_. Lists support all [common sequence operations][common sequence operations], as well as [mutable sequence operations][mutable sequence operations]. They can be iterated over in a loop by using the for `item in <list>` construct.
