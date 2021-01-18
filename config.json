@@ -1282,9 +1282,7 @@
       "core": false,
       "unlocked_by": "hamming",
       "difficulty": 3,
-      "topics": [
-        "exception_handling"
-      ], 
+      "topics": null, 
       "deprecated": true
     },
     {
