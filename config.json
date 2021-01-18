@@ -1280,11 +1280,10 @@
       "slug": "error-handling",
       "uuid": "0dac0feb-e1c8-497e-9a1b-e96e0523eea6",
       "core": false,
-      "unlocked_by": "hamming",
-      "difficulty": 3,
-      "topics": [
-        "exception_handling"
-      ]
+      "unlocked_by": null,
+      "difficulty": 0,
+      "topics": null,
+      "deprecated": true
     },
     {
       "slug": "dominoes",
