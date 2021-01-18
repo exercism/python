@@ -1284,7 +1284,8 @@
       "difficulty": 3,
       "topics": [
         "exception_handling"
-      ]
+      ], 
+      "deprecated": true
     },
     {
       "slug": "dominoes",
