@@ -2,7 +2,7 @@ import unittest
 import random
 from io import StringIO
 import sys
-from example import (
+from lists import (
     to_list,
     list_twice,
     concatenate_lists,
@@ -40,7 +40,7 @@ class TestToList(unittest.TestCase):
         )
 
     def test_5_random_ints(self):
-        _list = [random.randint(0, 100) for i in range(5)]
+        _list = [random.randint(0, 100) for _ in range(5)]
         self.assertEqual(_list, to_list(*_list))
 
     def test_too_few_args(self):

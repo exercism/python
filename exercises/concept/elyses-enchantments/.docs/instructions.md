@@ -1,8 +1,6 @@
 ## Instructions
 
-As a magician-to-be, Elyse needs to practice some basics. She has a stack of cards that she wants to manipulate. In this exercise we'll use lists to help Elyse perform her card tricks.
-
-[//]: # 'Creating Lists'
+As a magician-to-be, Elyse needs to practice some basics. She has a stack of cards that she wants to manipulate. In this exercise, we'll use lists to help Elyse perform her card tricks.
 
 ## 1. Creating a List
 
@@ -15,20 +13,16 @@ Implement a function `to_list` that takes five arguments and returns a single li
 ['10H', 'JH', 'QH', 'KH', 'AH']
 ```
 
-[//]: # 'Create Lists Using the `list` Type'
-
 ## 2. Creating a copy of a List
 
 In a traditional deck of cards, each card is unique and only occurs once. But for some magic tricks, Elyse needs to sneak in duplicate copies of some cards.
 
-Implement a function `list_twice` that takes a single list as its only argument, and returns a list which consists of two copies of the input list:
+Implement a function `list_twice` that takes a single list as its only argument, and returns a list consisting of two copies of the list of cards in parameter:
 
 ```python
 >>> list_twice(['AC', 'AD', 'AH', 'AS'])
 [['AC', 'AD', 'AH', 'AS'], ['AC', 'AD', 'AH', 'AS']]
 ```
-
-[//]: # 'Concatenating Lists Using the `+` Operator'
 
 ## 3. Concatenating Lists
 
@@ -40,8 +34,6 @@ Implement a function `concatenate_lists` that takes two lists and returns a sing
 >>> concatenate_lists(['2C', '2H', '2D'], ['KC', 'KD'])
 ['2C', '2H', '2D', 'KC', 'KD']
 ```
-
-[//]: # 'Checking for List Membership using the `in` keyword'
 
 ## 4. Testing List Membership
 
@@ -57,11 +49,9 @@ True
 False
 ```
 
-[//]: # 'Accessing List Elements by Index'
-
 ## 5. Accessing List Elements by Index
 
-For some tricks, Elyse needs to be able to take cards from the top and bottom of the deck through slight-of-hand.
+For some tricks, Elyse needs to be able to take cards from the top and bottom of the deck through a Sleight of hand.
 
 Implement a function `first_and_last` that returns the first and last elements from a list:
 
@@ -70,11 +60,9 @@ Implement a function `first_and_last` that returns the first and last elements f
 ['2C', 'KD']
 ```
 
-[//]: # 'Accessing Sublists by Slicing'
-
 ## 6. Accessing Sublists by Slicing
 
-For other tricks, Elyse needs to be able to take some cards from inbetween other cards through slight-of-hand.
+For other tricks, Elyse needs to be able to pick cards in the middle of the deck of cards through a Sleight of hand.
 
 Implement a function `interior_of_list` that returns all elements of a list _except_ for the first and last elements:
 
@@ -108,7 +96,7 @@ Implement a function `unshuffle` that "unshuffles" a set of cards by appending t
 
 ## 7. Iterating Over List Items
 
-For some tricks, Elyse guesses all the cards in a volunteers hands and names them out loud.
+For some tricks, Elyse guesses all the cards in a volunteer's hands and names them out loud.
 
 Implement a function `print_list` that prints each element of a list on a separate line:
 

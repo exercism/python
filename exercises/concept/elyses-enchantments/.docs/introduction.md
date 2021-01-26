@@ -10,81 +10,93 @@ A list can be declared as a _literal_ with square `[]` brackets and commas betwe
 
 ```python
 >>> no_elements = []
+>>> no_elements
 []
 
 >>> one_element = ["Guava"]
-["Guava"]
+>>> one_element
+['Guava']
 
 >>> elements_separated_with_commas = ["Parrot", "Bird", 334782]
-["Parrot", "Bird", 334782]
+>>> elements_separated_with_commas
+['Parrot', 'Bird', 334782]
 ```
 
 For readability, line breaks can be used when there are many elements or nested data structures within a list:
 
 ```python
->>> lots_of_entries =[
-                        "Rose",
-                        "Sunflower",
-                        "Poppy",
-                        "Pansy",
-                        "Tulip",
-                        "Fuchsia",
-                        "Cyclamen",
-                        "Lavender"
-                      ]
+>>> lots_of_entries = [
+      "Rose",
+      "Sunflower",
+      "Poppy",
+      "Pansy",
+      "Tulip",
+      "Fuchsia",
+      "Cyclamen",
+      "Lavender"
+   ]
+>>> lots_of_entries
 ['Rose', 'Sunflower', 'Poppy', 'Pansy', 'Tulip', 'Fuchsia', 'Cyclamen', 'Lavender']
-
 
 # Each data structure is on its own line to help clarify what they are.
 >>> nested_data_structures = [
-                                 {"fish": "gold", "monkey": "brown", "parrot" : "grey"},
-                                 ("fish", "mammal", "bird"),
-                                 ['water', 'jungle', 'sky']
-                             ]
-[{"fish": "gold", "monkey": "brown", "parrot" : "grey"}, ("fish", "mammal", "bird"), ['water', 'jungle', 'sky']]
+      {"fish": "gold", "monkey": "brown", "parrot": "grey"},
+      ("fish", "mammal", "bird"),
+      ['water', 'jungle', 'sky']
+   ]
+>>> nested_data_structures
+[{'fish': 'gold', 'monkey': 'brown', 'parrot': 'grey'}, ('fish', 'mammal', 'bird'), ['water', 'jungle', 'sky']]
 ```
 
 The `list()` constructor can be used empty or with an _iterable_ as an argument. Elements in the iterable are cycled through by the constructor and added to the list in order:
 
 ```python
 >>> no_elements = list()
+>>> no_elements
 []
 
 # The tuple is unpacked and each element is added.
->>> multiple_elements_tuple = list(("Parrot", "Bird", 334782))
-["Parrot", "Bird", 334782]
+>>> multiple_elements_from_tuple = list(("Parrot", "Bird", 334782))
+>>> multiple_elements_from_tuple
+['Parrot', 'Bird', 334782]
 
 # The set is unpacked and each element is added.
->>> multiple_elements_set = list({2, 3, 5, 7, 11})
-[2,3,5,7,11]
+>>> multiple_elements_from_set = list({2, 3, 5, 7, 11})
+>>> multiple_elements_from_set
+[2, 3, 5, 7, 11]
 ```
 
 Results when using a list constructor with a string or a dict may be surprising:
 
 ```python
-
 # String elements (Unicode code points) are iterated through and added *individually*.
 >>> multiple_elements_string = list("Timbuktu")
+>>> multiple_elements_string
 ['T', 'i', 'm', 'b', 'u', 'k', 't', 'u']
-
 
 # Unicode separators and positioning code points are also added *individually*.
 >>> multiple_code_points_string = list('अभ्यास')
+>>> multiple_code_points_string
 ['अ', 'भ', '्', 'य', 'ा', 'स']
+
+# The iteration default for dictionaries is over the keys, so only key data is inserted into the list.
+>>> source_data = {"fish": "gold", "monkey": "brown"}
+>>> multiple_elements_dict_1 = list(source_data)
+['fish', 'monkey']
 ```
 
 Because the `list` constructor will only take _iterables_ (or nothing) as arguments, objects that are _not_ iterable will throw a type error. Consequently, it is much easier to create a one-item list via the literal method.
 
 ```python
-
 # Numbers are not iterable, and so attempting to create a list with a number passed to the constructor fails.
 >>> one_element = list(16)
 Traceback (most recent call last):
-   File "<stdin>", line 1, in <module>
-   TypeError: 'int' object is not iterable
+  File "<stdin>", line 1, in <module>
+TypeError: 'int' object is not iterable
 
 # Tuples *are* iterable, so passing a one-element tuple to the constructor does work, but it's awkward
 >>> one_element_from_iterable = list((16,))
+>>> one_element_from_iterable
 [16]
 ```
 
@@ -99,14 +111,13 @@ Items inside lists (_like the sequence types `string` and `tuple`_), can be acce
  |_**-6**_ |_**-5**_ |_**-4**_ |_**-3**_ |_**-2**_ |_**-1**_ | <----
 
 ```python
-
 >>> breakfast_foods = ["Oatmeal", "Fruit Salad", "Eggs", "Toast"]
 
 # Oatmeal is at index 0 or index -4.
->>> first_breakfast_food = breakfast_foods[0]
+>>> breakfast_foods[0]
 'Oatmeal'
 
->>> first_breakfast_food = breakfast_foods[-4]
+>>> breakfast_foods[-4]
 'Oatmeal'
 ```
 
@@ -119,12 +130,14 @@ You can also slice a list using a `step` parameter with the notation `[start:sto
 
 # If there is no step parameter, the step is assumed to be 1.
 >>> middle_colors = colors[2:6]
-["Green", "Yellow", "Orange", "Pink"]
+>>> middle_colors
+['Green', 'Yellow', 'Orange', 'Pink']
 
 # If the start or stop parameters are omitted, the slice will
 # start at index zero, and will stop at the end of the list.
 >>> primary_colors = colors[::3]
-["Red", "Yellow", "Blue"]
+>>> primary_colors
+['Red', 'Yellow', 'Blue']
 ```
 
 ## Working with lists
@@ -132,9 +145,8 @@ You can also slice a list using a `step` parameter with the notation `[start:sto
 Lists supply an _iterator_, and can be looped through/over in the same manner as other _sequence types_:
 
 ```python
->>> colors = ["Orange", "Green", "Grey", "Blue"]
-
 #  Looping through the list and printing out each element.
+>>> colors = ["Orange", "Green", "Grey", "Blue"]
 >>> for item in colors:
 ...     print(item)
 ...
@@ -143,9 +155,8 @@ Green
 Grey
 Blue
 
->>> numbers_to_cube = [5, 13, 12, 16]
-
 # Looping through the list and printing out the cube of each element.
+>>> numbers_to_cube = [5, 13, 12, 16]
 >>> for number in numbers_to_cube:
 ...     print(number*3)
 ...
@@ -153,20 +164,20 @@ Blue
 39
 36
 48
-
 ```
 
 Lists can be combined via various techniques:
 
 ```python
-# Using the plus + operator unpacks each list and creates a new list, but it is not efficent.
->>> new_via_concatenate = ["George", 5] + ["cat", "Tabby"]
-["George", 5, "cat", "Tabby"]
+# Using the plus + operator unpacks each list and creates a new list, but it is not efficient.
+>>> concatenated_list = ["George", 5] + ["cat", "Tabby"]
+>>> concatenated_list
+['George', 5, 'cat', 'Tabby']
 
 # Likewise, using the multiplication operator * is the equivalent of using + n times.
 >>> first_group = ["cat", "dog", "elephant"]
-
 >>> multiplied_group = first_group * 3
+>>> multiplied_group
 ['cat', 'dog', 'elephant', 'cat', 'dog', 'elephant', 'cat', 'dog', 'elephant']
 ```
 
