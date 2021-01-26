@@ -26,7 +26,7 @@
 - To access an element use the square brackets notation.
 - Remember that the first element of the `list` is at index 0
 - In python, negative indexing starts the count from the end. This mean that you can find the last element of the `list` at index -1.
-- This function should [return](https://www.w3schools.com/python/ref_keyword_return.asp) a `list` containig two elements.
+- This function should [return](https://www.w3schools.com/python/ref_keyword_return.asp) a `list` containing two elements.
 
 ## 6. Accessing Sublists by Slicing
 
