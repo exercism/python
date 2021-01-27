@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://docs.python.org/3/library/stdtypes.html#str.format",
+    "description": "Docs: str.format()"
+  },
+  {
+    "url": "https://docs.python.org/3/reference/lexical_analysis.html#f-strings",
+    "description": "Docs: f-strings"
+  },
+  {
+    "url": "https://realpython.com/python-formatted-output/",
+    "description": "Complete formatting guide"
+  },
+  {
+    "url": "https://www.python.org/dev/peps/pep-3101/#standard-format-specifiers",
+    "description": "PEP: format specifier"
+  }
+]
