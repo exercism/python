@@ -29,7 +29,7 @@ def check_assignment(name: str, test_file: Path) -> int:
         if not exemplar_file.is_file():
             exemplar_file = exemplar_file.with_name('example.py')
         print(exemplar_file)
-        shutil.copyfile(exemplar_file, workdir / f'{example_name}.py')
+        shutil.copyfile(exemplar_file, workdir / '{}.py'.format(example_name))
         return subprocess.call([sys.executable, test_file_out])
     finally:
         shutil.rmtree(workdir)
@@ -41,14 +41,14 @@ def load_config():
         with config_file.open() as json_file:
             data = json.load(json_file)
     except IOError:
-        print(f'FAIL: {config_file} file not found')
+        print('FAIL: {} file not found'.format(config_file))
         raise SystemExit(1)
 
     try:
         problems = [entry['slug'] for entry in data['exercises']
                     if "deprecated" not in entry]
     except KeyError:
-        print(f'FAIL: {config_file} has an incorrect format')
+        print('FAIL: {} has an incorrect format'.format(config_file))
         raise SystemExit(1)
 
     return problems
