@@ -1,51 +1,54 @@
 #!/usr/bin/env python3
 
-import os
-import glob
 import shutil
 import subprocess
 import sys
 import tempfile
 import json
+from pathlib import Path
 
 # Allow high-performance tests to be skipped
 ALLOW_SKIP = ['alphametics', 'largest-series-product']
 
 
-def check_assignment(name, test_file):
+def check_assignment(name: str, test_file: Path) -> int:
     # Returns the exit code of the tests
-    workdir = tempfile.mkdtemp(name)
+    workdir = Path(tempfile.mkdtemp(name))
     example_name = name.replace("-", "_")
     try:
-        test_file_out = os.path.join(workdir, os.path.basename(test_file))
+        test_file_out = workdir / test_file.name
         if name in ALLOW_SKIP:
             shutil.copyfile(test_file, test_file_out)
         else:
-            with open(test_file, 'r') as src_file:
+            with test_file.open('r') as src_file:
                 lines = [line for line in src_file.readlines()
                          if not line.strip().startswith('@unittest.skip')]
-            with open(test_file_out, 'w') as dst_file:
+            with test_file_out.open('w') as dst_file:
                 dst_file.writelines(lines)
-        shutil.copyfile(os.path.join(os.path.dirname(test_file), 'example.py'),
-                        os.path.join(workdir, '{}.py'.format(example_name)))
+        exemplar_file = test_file.with_name('exemplar.py')
+        if not exemplar_file.is_file():
+            exemplar_file = exemplar_file.with_name('example.py')
+        print(exemplar_file)
+        shutil.copyfile(exemplar_file, workdir / f'{example_name}.py')
         return subprocess.call([sys.executable, test_file_out])
     finally:
         shutil.rmtree(workdir)
 
 
 def load_config():
+    config_file = Path('config.json')
     try:
-        with open('./config.json') as json_file:
+        with config_file.open() as json_file:
             data = json.load(json_file)
     except IOError:
-        print('FAIL: config.json file not found')
+        print(f'FAIL: {config_file} file not found')
         raise SystemExit(1)
 
     try:
         problems = [entry['slug'] for entry in data['exercises']
                     if "deprecated" not in entry]
     except KeyError:
-        print('FAIL: config.json has an incorrect format')
+        print(f'FAIL: {config_file} has an incorrect format')
         raise SystemExit(1)
 
     return problems
@@ -60,14 +63,15 @@ def main():
         exercises = load_config()
 
     failures = []
+    exercises_dir = Path('exercises')
     for exercise in exercises:
-        test_file = glob.glob('./exercises/{}/*_test.py'.format(exercise))
+        test_file = next((exercises_dir / exercise).glob('*_test.py'), None)
         print('# ', exercise)
         if not test_file:
             print('FAIL: File with test cases not found')
             failures.append('{} (FileNotFound)'.format(exercise))
         else:
-            if check_assignment(exercise, test_file[0]):
+            if check_assignment(exercise, test_file):
                 failures.append('{} (TestFailed)'.format(exercise))
         print('')
 

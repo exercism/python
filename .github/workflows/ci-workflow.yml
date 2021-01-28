@@ -5,8 +5,9 @@ name: Exercises check
 
 on:
   push:
-    branches: 
+    branches:
       - master
+      - main
   pull_request:
 
 jobs:
@@ -67,7 +68,7 @@ jobs:
     needs: housekeeping
     strategy:
       matrix:
-        python-version: [3.5, 3.6, 3.7, 3.8]
+        python-version: [3.6, 3.7, 3.8, 3.9]
     steps:
     - uses: actions/checkout@v2
 
