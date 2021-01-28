@@ -41,7 +41,7 @@ languages
                 ├── .meta
                 |   ├── config.json
                 |   ├── design.md
-                |   └── example.py
+                |   └── exemplar.py
                 ├── <CONCEPT_NAME>.py
                 └── <CONCEPT_NAME>_test.py
 
@@ -57,7 +57,7 @@ These are files specific to the Python track, and can be added in any order:
 - `<SLUG>/<CONCEPT_NAME>_test.py`
   The test suite a submitted solution will be tested against. Tests should be written using [`unittest.TestCase`][unittest] ([example test file][example-testfile]). We do use PyTest as our test runner, but please check with a maintainer before using any PyTest-specific methods.
 
-- `.meta/example.py`
+- `.meta/exemplar.py`
   An idiomatic implementation that passes all the provided tests. This solution file should only use **syntax & concepts introduced in the concept exercise itself, or one of its prerequisites.**. This means avoiding the use of `classes`, `comprehensions`, `generators`, `slice assignment`, `regex`, `filter/map/reduce`, standard library modules (_like `datetime`_), or 3rd-party libraries unless the exercise has introduced these concepts or they appear in the exercise's prerequisite tree. Please follow the [PEP8][pep8] formatting guidelines. Additionally, we'd like you to avoid any single-letter or cryptic variable names.
 
 ## Step 2: Add exercise documentation files
