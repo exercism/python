@@ -5,8 +5,9 @@
       "exercism_username": "BethanyG"
     }
   ],
-  "editor": {
-    "solution_files": ["sets.py"],
-    "test_files": ["sets_test.py"]
+  "files": {
+    "solution": ["sets.py"],
+    "test": ["sets_test.py"],
+    "exemplar": [".meta/exemplar.py"]
   }
 }

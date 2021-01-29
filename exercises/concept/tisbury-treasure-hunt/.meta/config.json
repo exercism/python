@@ -5,8 +5,9 @@
       "exercism_username": "BethanyG"
     }
   ],
-  "editor": {
-    "solution_files": ["tuples.py"],
-    "test_files": ["tuples_test.py"]
+  "files": {
+    "solution": ["tuples.py"],
+    "test": ["tuples_test.py"],
+    "exemplar": [".meta/exemplar.py"]
   }
 }

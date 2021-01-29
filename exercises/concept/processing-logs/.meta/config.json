@@ -5,9 +5,10 @@
       "exercism_username": "aldraco"
     }
   ],
-  "editor": {
-    "solution_files": ["strings.py"],
-    "test_files": ["strings_test.py"]
+  "files": {
+    "solution": ["strings.py"],
+    "test": ["strings_test.py"],
+    "exemplar": [".meta/exemplar.py"]
   },
   "forked_from": ["csharp/strings"]
 }
