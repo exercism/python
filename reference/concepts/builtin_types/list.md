@@ -14,9 +14,9 @@ See the Python documentation entries for the [mutable][mutation] [`list` type][d
 [markdown]: ../../exercise-concepts/markdown.md
 [robot-simulator]: ../../exercise-concepts/robot-simulator.md
 [matrix]: ../../exercise-concepts/matrix.md
-[mutation]: ../../../../../reference/concepts/mutation.md
-[general-concept-array]: ../../../../../reference/types/array.md
-[general-concept-list]: ../../../../../reference/types/list.md
+[mutation]: https://github.com/exercism/v3/blob/main/reference/concepts/mutation.md
+[general-concept-array]: https://github.com/exercism/v3/blob/main/reference/types/array.md
+[general-concept-list]: https://github.com/exercism/v3/blob/main/reference/types/list.md
 [docs-list-type]: https://docs.python.org/3/library/stdtypes.html#typesseq-list
 [docs-list-as-function]: https://docs.python.org/3/library/stdtypes.html#list
 [docs-sequence-types]: https://docs.python.org/3/library/stdtypes.html#typesseq

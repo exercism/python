@@ -6,7 +6,7 @@ TODO: ADD MORE DETAIL
 
 See the Python documentation entries for the [immutable][immutable] [`range` type][docs-range-type] and its [constructor][range-as-function]. This is Python's most commonly used tool for efficiently working with a [sequential collection][docs-sequence-types] of [`int`][int] values.
 
-[immutable]: ../../../../../reference/concepts/immutability.md
+[immutable]: https://github.com/exercism/v3/blob/main/reference/concepts/immutability.md
 [docs-range-type]: https://docs.python.org/3/library/stdtypes.html#typesseq-range
 [docs-range-as-function]: https://docs.python.org/3/library/stdtypes.html#range
 [docs-sequence-types]: https://docs.python.org/3/library/stdtypes.html#typesseq
