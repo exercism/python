@@ -32,17 +32,6 @@ jobs:
       run: |
         ./bin/check-readmes.sh
 
-    - name: Fetch configlet
-      uses: exercism/github-actions/configlet-ci@main
-
-    - name: Check config.json integrity
-      run: |
-        # May provide more useful output than configlet fmt
-        # if JSON is not valid or items are incomplete
-        configlet lint .
-        # Verify correct formatting in config.json
-        configlet fmt . && git diff --quiet
-
     #- name: Generate tests
     #  run: |
     #    bin/generate_tests.py --verbose -p spec --check
