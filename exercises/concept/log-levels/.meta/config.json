@@ -11,9 +11,10 @@
       "exercism_username": "mohanrajanr"
     }
   ],
-  "editor": {
-    "solution_files": ["enums.py"],
-    "test_files": ["enums_test.py"]
+  "files": {
+    "solution": ["enums.py"],
+    "test": ["enums_test.py"],
+    "exemplar": [".meta/exemplar.py"]
   },
   "forked_from": ["csharp/enums"]
 }

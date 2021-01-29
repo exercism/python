@@ -15,8 +15,9 @@
       "exercism_username": "BethanyG"
     }
   ],
-  "editor": {
-    "solution_files": ["list_methods.py"],
-    "test_files": ["list_methods_test.py"]
+  "files": {
+    "solution": ["list_methods.py"],
+    "test": ["list_methods_test.py"],
+    "exemplar": [".meta/exemplar.py"]
   }
 }

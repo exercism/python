@@ -5,8 +5,9 @@
       "exercism_username": "olivia"
     }
   ],
-  "editor": {
-    "solution_files": ["string_methods.py"],
-    "test_files": ["string_methods_test.py"]
+  "files": {
+    "solution": ["string_methods.py"],
+    "test": ["string_methods_test.py"],
+    "exemplar": [".meta/exemplar.py"]
   }
 }

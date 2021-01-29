@@ -14,5 +14,10 @@
       "github_username": "valentin-p",
       "exercism_username": "valentin-p"
     }
-  ]
+  ],
+  "files": {
+    "solution": [],
+    "test": [],
+    "exemplar": [".meta/exemplar.py"]
+  }
 }

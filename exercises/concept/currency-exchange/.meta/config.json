@@ -21,8 +21,9 @@
       "exercism_username": "wnstj2007"
     }
   ],
-  "editor": {
-    "solution_files": ["numbers.py"],
-    "test_files": ["numbers_test.py"]
+  "files": {
+    "solution": ["numbers.py"],
+    "test": ["numbers_test.py"],
+    "exemplar": [".meta/exemplar.py"]
   }
 }

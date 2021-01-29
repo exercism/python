@@ -15,8 +15,9 @@
       "exercism_username": "itamargal"
     }
   ],
-  "editor": {
-    "solution_files": ["lists.py"],
-    "test_files": ["lists_test.py"]
+  "files": {
+    "solution": ["lists.py"],
+    "test": ["lists_test.py"],
+    "exemplar": [".meta/exemplar.py"]
   }
 }

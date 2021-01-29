@@ -11,9 +11,10 @@
       "exercism_username": "cmccandless"
     }
   ],
-  "editor": {
-    "solution_files": ["arcade_game.py"],
-    "test_files": ["arcade_game_test.py"]
+  "files": {
+    "solution": ["arcade_game.py"],
+    "test": ["arcade_game_test.py"],
+    "exemplar": [".meta/exemplar.py"]
   },
   "forked_from": ["elixir/booleans"],
   "language_versions": ">=3.5"

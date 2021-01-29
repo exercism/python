@@ -5,9 +5,10 @@
       "exercism_username": "BethanyG"
     }
   ],
-  "editor": {
-    "solution_files": ["lasagna.py"],
-    "test_files": ["lasagna_test.py"]
+  "files": {
+    "solution": ["lasagna.py"],
+    "test": ["lasagna_test.py"],
+    "exemplar": [".meta/exemplar.py"]
   },
   "forked_from": ["csharp/basics", "ruby/basics"]
 }
