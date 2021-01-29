@@ -50,7 +50,7 @@ class TestConditionals(unittest.TestCase):
         test_return = reactor_efficency(
             voltage=100, current=30, theoretical_max_power=5000)
         self.assertEqual(
-            test_return, 'orange', msg=f"Expected orange but returned {test_return}
+            test_return, 'orange', msg=f"Expected orange but returned {test_return}"
         )
 
     def test_reactor_efficency_set3(self):
