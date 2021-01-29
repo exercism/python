@@ -1,5 +1,6 @@
 {
   "language": "Python",
+  "slug": "python",
   "active": true,
   "status": {
     "concept_exercises": false,
