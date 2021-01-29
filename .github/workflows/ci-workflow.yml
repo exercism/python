@@ -33,7 +33,7 @@ jobs:
         ./bin/check-readmes.sh
 
     - name: Fetch configlet
-      uses: exercism/github-actions/configlet-ci@master
+      uses: exercism/github-actions/configlet-ci@main
 
     - name: Check config.json integrity
       run: |
