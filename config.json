@@ -1295,7 +1295,8 @@
       "unlocked_by": null,
       "difficulty": 0,
       "topics": null,
-      "deprecated": true
+      "deprecated": true,
+      "status": "deprecated"
     },
     {
       "slug": "dominoes",
@@ -1512,7 +1513,8 @@
       "unlocked_by": null,
       "difficulty": 0,
       "topics": null,
-      "deprecated": true
+      "deprecated": true,
+      "status": "deprecated"
     },
     {
       "slug": "nucleotide-count",
@@ -1521,7 +1523,8 @@
       "unlocked_by": null,
       "difficulty": 0,
       "topics": null,
-      "deprecated": true
+      "deprecated": true,
+      "status": "deprecated"
     },
     {
       "slug": "octal",
@@ -1530,7 +1533,8 @@
       "unlocked_by": null,
       "difficulty": 0,
       "topics": null,
-      "deprecated": true
+      "deprecated": true,
+      "status": "deprecated"
     },
     {
       "slug": "pascals-triangle",
@@ -1539,7 +1543,8 @@
       "unlocked_by": null,
       "difficulty": 0,
       "topics": null,
-      "deprecated": true
+      "deprecated": true,
+      "status": "deprecated"
     },
     {
       "slug": "point-mutations",
@@ -1548,7 +1553,8 @@
       "unlocked_by": null,
       "difficulty": 0,
       "topics": null,
-      "deprecated": true
+      "deprecated": true,
+      "status": "deprecated"
     },
     {
       "slug": "proverb",
@@ -1557,7 +1563,8 @@
       "unlocked_by": null,
       "difficulty": 0,
       "topics": null,
-      "deprecated": true
+      "deprecated": true,
+      "status": "deprecated"
     },
     {
       "slug": "strain",
@@ -1566,7 +1573,8 @@
       "unlocked_by": null,
       "difficulty": 0,
       "topics": null,
-      "deprecated": true
+      "deprecated": true,
+      "status": "deprecated"
     },
     {
       "slug": "trinary",
@@ -1575,7 +1583,8 @@
       "unlocked_by": null,
       "difficulty": 0,
       "topics": null,
-      "deprecated": true
+      "deprecated": true,
+      "status": "deprecated"
     },
     {
       "slug": "binary",
@@ -1584,7 +1593,8 @@
       "unlocked_by": null,
       "difficulty": 0,
       "topics": null,
-      "deprecated": true
+      "deprecated": true,
+      "status": "deprecated"
     },
     {
       "slug": "hexadecimal",
@@ -1593,7 +1603,8 @@
       "unlocked_by": null,
       "difficulty": 0,
       "topics": null,
-      "deprecated": true
+      "deprecated": true,
+      "status": "deprecated"
     },
     {
       "slug": "parallel-letter-frequency",
@@ -1602,7 +1613,8 @@
       "unlocked_by": null,
       "difficulty": 0,
       "topics": null,
-      "deprecated": true
+      "deprecated": true,
+      "status": "deprecated"
     }
   ]
 }
