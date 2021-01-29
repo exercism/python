@@ -10,6 +10,10 @@
   },
   "blurb": "Python is a clear and powerful object-oriented programming language with an elegant and easy-to-read syntax. It is ideal for prototyping and ad-hoc tasks, but also sees wide use in scientific computing, web development, and automation.",
   "version": 3,
+  "online_editor": {
+    "indent_style": "space",
+    "indent_size": 4
+  },
   "foregone": [
     "lens-person"
   ],
