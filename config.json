@@ -14,9 +14,6 @@
     "indent_style": "space",
     "indent_size": 4
   },
-  "foregone": [
-    "lens-person"
-  ],
   "exercises": {
     "practice": [
       {
@@ -1604,6 +1601,9 @@
           "trees"
         ]
       }
+    ],
+    "foregone": [
+      "lens-person"
     ]
   }
 }
