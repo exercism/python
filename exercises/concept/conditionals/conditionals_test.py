@@ -57,14 +57,14 @@ class TestConditionals(unittest.TestCase):
         test_return = reactor_efficency(
             voltage=100, current=28, theoretical_max_power=5000)
         self.assertEqual(
-            test_return, 'red', msg=f"Expected red but returned {test_return}
+            test_return, 'red', msg=f"Expected red but returned {test_return}"
         )
 
     def test_reactor_efficency_set4(self):
         test_return = reactor_efficency(
             voltage=100, current=10, theoretical_max_power=5000)
         self.assertEqual(
-            test_return, 'black', msg=f"Expected black but returned {test_return}
+            test_return, 'black', msg=f"Expected black but returned {test_return}"
         )
 
 # End of second function testing
@@ -81,61 +81,61 @@ class TestConditionals(unittest.TestCase):
         test_return = fail_safe(
             temperature=100, neutrons_produced_per_second=50, threshold=5000)
         self.assertEqual(
-            test_return, 'LOW', msg=f"Expected LOW but returned {test_return}
+            test_return, 'LOW', msg=f"Expected LOW but returned {test_return}"
         )
 
     def test_fail_safe_set2(self):
         test_return = fail_safe(
             temperature=100, neutrons_produced_per_second=12, threshold=4000)
         self.assertEqual(
-            test_return, 'LOW', msg=f"Expected LOW but returned {test_return}
+            test_return, 'LOW', msg=f"Expected LOW but returned {test_return}"
         )
 
     def test_fail_safe_set3(self):
         test_return = fail_safe(
             temperature=100, neutrons_produced_per_second=10, threshold=3000)
         self.assertEqual(
-            test_return, 'LOW', msg=f"Expected LOW but returned {test_return}
+            test_return, 'LOW', msg=f"Expected LOW but returned {test_return}"
         )
 
     def test_fail_safe_set4(self):
         test_return = fail_safe(
             temperature=100, neutrons_produced_per_second=55, threshold=5000)
         self.assertEqual(
-            test_return, 'NORMAL', msg=f"Expected NORMAL but returned {test_return}
+            test_return, 'NORMAL', msg=f"Expected NORMAL but returned {test_return}"
         )
 
     def test_fail_safe_set5(self):
         test_return = fail_safe(
             temperature=100, neutrons_produced_per_second=45, threshold=5000)
         self.assertEqual(
-            test_return, 'NORMAL', msg=f"Expected NORMAL but returned {test_return}
+            test_return, 'NORMAL', msg=f"Expected NORMAL but returned {test_return}"
         )
 
     def test_fail_safe_set6(self):
         test_return = fail_safe(
             temperature=100, neutrons_produced_per_second=50, threshold=5000)
         self.assertEqual(
-            test_return, 'NORMAL', msg=f"Expected NORMAL but returned {test_return}
+            test_return, 'NORMAL', msg=f"Expected NORMAL but returned {test_return}"
         )
 
     def test_fail_safe_set7(self):
         test_return = fail_safe(
             temperature=1000, neutrons_produced_per_second=35, threshold=5000)
         self.assertEqual(
-            test_return, 'DANGER', msg=f"Expected DANGER but returned {test_return}
+            test_return, 'DANGER', msg=f"Expected DANGER but returned {test_return}"
         )
 
     def test_fail_safe_set8(self):
         test_return = fail_safe(
             temperature=1000, neutrons_produced_per_second=30, threshold=5000)
         self.assertEqual(
-            test_return, 'DANGER', msg=f"Expected DANGER but returned {test_return}
+            test_return, 'DANGER', msg=f"Expected DANGER but returned {test_return}"
         )
 
     def test_fail_safe_set9(self):
         test_return = fail_safe(
             temperature=1000, neutrons_produced_per_second=25, threshold=5000)
         self.assertEqual(
-            test_return, 'DANGER', msg=f"Expected DANGER but returned {test_return}
+            test_return, 'DANGER', msg=f"Expected DANGER but returned {test_return}"
         )
