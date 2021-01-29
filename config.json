@@ -15,6 +15,175 @@
     "indent_size": 4
   },
   "exercises": {
+    "concept": [
+      {
+        "slug": "processing-logs",
+        "name": "Processing Logs",
+        "uuid": "5a9b42fb-ddf4-424b-995d-f9952ea63c37",
+        "concepts": [
+          "strings"
+        ],
+        "prerequisites": [
+          "basics"
+        ]
+      },
+      {
+        "slug": "tisbury-treasure-hunt",
+        "name": "Tisbury Treasure Hunt",
+        "uuid": "7ecd42c1-2ed5-487a-bc89-71c9cbad9b05",
+        "concepts": [
+          "tuples"
+        ],
+        "prerequisites": [
+          "bools",
+          "loops",
+          "conditionals",
+          "numbers"
+        ]
+      },
+      {
+        "slug": "guidos-gorgeous-lasagna",
+        "name": "Guido's Gorgeous Lasagna",
+        "uuid": "dfd7dc01-3544-4f61-a063-af8530d6e601",
+        "concepts": [
+          "basics"
+        ],
+        "prerequisites": []
+      },
+      {
+        "slug": "ghost-gobble-arcade-game",
+        "name": "Ghost Gobble Arcade Game",
+        "uuid": "c050470d-ef22-4187-aaac-239e07955a4d",
+        "concepts": [
+          "bools"
+        ],
+        "prerequisites": [
+          "basics"
+        ]
+      },
+      {
+        "slug": "pretty-leaflet",
+        "name": "Pretty Leaflet",
+        "uuid": "5b813a3a-1983-470b-91a1-9f2c0b327ab7",
+        "concepts": [
+          "string-formatting"
+        ],
+        "prerequisites": [
+          "strings",
+          "classes",
+          "loops",
+          "lists"
+        ]
+      },
+      {
+        "slug": "inventory-management",
+        "name": "Inventory Management",
+        "uuid": "0558b66c-f2c8-4ff3-846a-4ac87a8660d9",
+        "concepts": [
+          "dicts"
+        ],
+        "prerequisites": [
+          "loops",
+          "lists",
+          "tuples"
+        ]
+      },
+      {
+        "slug": "log-levels",
+        "name": "Log Levels",
+        "uuid": "083f29eb-734f-4d4a-9f27-3e8ceedc29b1",
+        "concepts": [
+          "enums"
+        ],
+        "prerequisites": [
+          "classes",
+          "conditionals",
+          "comprehensions",
+          "loops",
+          "sequences",
+          "string-formatting",
+          "string-methods",
+          "tuples"
+        ]
+      },
+      {
+        "slug": "elyses-enchantments",
+        "name": "Elyse's Enchantments",
+        "uuid": "d76958ce-3a5b-4e4c-9388-b109f67cf23a",
+        "concepts": [
+          "lists"
+        ],
+        "prerequisites": [
+          "conditionals",
+          "strings"
+        ]
+      },
+      {
+        "slug": "chaitanas-colossal-coaster",
+        "name": "Chaitana's Colossal Coaster",
+        "uuid": "f326f3f8-1ab0-4d3d-8f42-5130fe5af841",
+        "concepts": [
+          "list-methods"
+        ],
+        "prerequisites": [
+          "lists"
+        ]
+      },
+      {
+        "slug": "restaurant-rozalynn",
+        "name": "Restaurant Rozalynn",
+        "uuid": "72c9aa99-20be-4e96-8ade-56c26d598498",
+        "concepts": [
+          "none"
+        ],
+        "prerequisites": [
+          "bools",
+          "conditionals",
+          "functions",
+          "dict-methods",
+          "list-methods",
+          "loops"
+        ]
+      },
+      {
+        "slug": "making-the-grade",
+        "name": "Making the Grade",
+        "uuid": "f6a8d4bd-4ead-438f-b44f-d3578be1702f",
+        "concepts": [
+          "loops"
+        ],
+        "prerequisites": [
+          "basics",
+          "comparisons",
+          "conditionals",
+          "lists",
+          "strings"
+        ]
+      },
+      {
+        "slug": "little-sisters-essay",
+        "name": "Little Sister's Essay",
+        "uuid": "09c322bc-5c04-480b-8441-fd9ef5c7a3b4",
+        "concepts": [
+          "string-methods"
+        ],
+        "prerequisites": [
+          "basics",
+          "strings"
+        ]
+      },
+      {
+        "slug": "currency-exchange",
+        "name": "Currency Exchange",
+        "uuid": "1335ca33-3af0-4720-bcf2-bfa68ffc6862",
+        "concepts": [
+          "numbers"
+        ],
+        "prerequisites": [
+          "basics"
+        ]
+      }
+    ],
     "practice": [
       {
         "slug": "hello-world",
