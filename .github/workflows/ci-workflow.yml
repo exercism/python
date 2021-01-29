@@ -47,10 +47,12 @@ jobs:
     #  run: |
     #    ./bin/check-test-version.py -p spec
 
-    - name:  Test template status
-      continue-on-error: true
-      run: |
-        ./bin/template_status.py -v -p spec
+    # TODO: cmccandless: directory and config.json structure changed in v3 migration,
+    #                    updates needed to tooling
+    # - name:  Test template status
+    #   continue-on-error: true
+    #   run: |
+    #     ./bin/template_status.py -v -p spec
 
   canonical_sync:
     runs-on: ubuntu-16.04
@@ -65,6 +67,8 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
-    - name: Check exercises
-      run: |
-        ./test/check-exercises.py
+    # TODO: cmccandless: directory and config.json structure changed in v3 migration,
+    #                    updates needed to tooling
+    # - name: Check exercises
+    #   run: |
+    #     ./test/check-exercises.py
