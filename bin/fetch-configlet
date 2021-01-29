@@ -1,112 +1,58 @@
-#!/usr/bin/env python3.7
-from datetime import datetime, timezone
-import io
-import json
-import logging
-import platform
-import sys
-import tarfile
-import time
-from urllib.request import urlopen
-from urllib.error import HTTPError, URLError
+#!/usr/bin/env bash
 
+set -eo pipefail
 
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+readonly LATEST='https://api.github.com/repos/exercism/configlet/releases/latest'
 
-BACKOFF_TIME = 5  # in seconds
-MAX_RETRIES = 5
+case "$(uname)" in
+  Darwin*)   os='mac'     ;;
+  Linux*)    os='linux'   ;;
+  Windows*)  os='windows' ;;
+  MINGW*)    os='windows' ;;
+  MSYS_NT-*) os='windows' ;;
+  *)         os='linux'   ;;
+esac
 
+case "${os}" in
+  windows*) ext='zip' ;;
+  *)        ext='tgz' ;;
+esac
 
-def download_and_extract(url):
-    try:
-        with urlopen(url) as request:
-            status = request.status
-            response = request.read()
-    except HTTPError as err:
-        status = err.code
-        response = err.reason
-    except URLError as err:
-        logger.error(err.reason)
-        time.sleep(BACKOFF_TIME)
-        return False
-    if status >= 400:
-        logger.error(f"Unexpected {status} status from download server: {response}")
-        time.sleep(BACKOFF_TIME)
-        return False
+case "$(uname -m)" in
+  *64*)  arch='64bit' ;;
+  *686*) arch='32bit' ;;
+  *386*) arch='32bit' ;;
+  *)     arch='64bit' ;;
+esac
 
-    logger.info("extracting...")
-    with tarfile.open(fileobj=io.BytesIO(response), mode="r:*") as file:
-        file.extractall(path="bin/")
-    return True
+curlopts=(
+  --silent
+  --show-error
+  --fail
+  --location
+  --retry 3
+)
 
+if [[ -n "${GITHUB_TOKEN}" ]]; then
+  curlopts+=(--header "authorization: Bearer ${GITHUB_TOKEN}")
+fi
 
-def get_os():
-    os_ = platform.platform()
-    if os_ == "Darwin":
-        return "mac"
-    elif os_ == "Windows":
-        return "windows"
-    return "linux"
+suffix="${os}-${arch}.${ext}"
 
+get_download_url() {
+  curl "${curlopts[@]}" --header 'Accept: application/vnd.github.v3+json' "${LATEST}" |
+    grep "\"browser_download_url\": \".*/download/.*/configlet.*${suffix}\"$" |
+    cut -d'"' -f4
+}
 
-def get_arch():
-    return "64bit" if sys.maxsize > 2 ** 32 else "32bit"
+download_url="$(get_download_url)"
+output_dir="bin"
+output_path="${output_dir}/latest-configlet.${ext}"
+curl "${curlopts[@]}" --output "${output_path}" "${download_url}"
 
+case "${ext}" in
+  *zip) unzip "${output_path}" -d "${output_dir}"   ;;
+  *)    tar xzf "${output_path}" -C "${output_dir}" ;;
+esac
 
-def fetch_configlet():
-    try:
-        with urlopen(
-            "https://api.github.com/repos/exercism/configlet/releases/latest"
-        ) as request:
-            status = request.status
-            headers = dict(request.getheaders())
-            response = request.read()
-    except HTTPError as err:
-        status = err.code
-        headers = err.headers
-        response = err.reason
-    except URLError as err:
-        logger.exception(err)
-        time.sleep(BACKOFF_TIME)
-        return 1
-    if status >= 500:
-        logger.info(f"Sleeping due to {status} response from API: {response}")
-        time.sleep(BACKOFF_TIME)
-        return 1
-    if status == 403:
-        wait_until = datetime.fromtimestamp(
-            int(headers["X-RateLimit-Reset"]), timezone.utc
-        )
-        delta = wait_until - datetime.now(timezone.utc)
-        seconds = delta.total_seconds()
-        wait = seconds + 5 if seconds > BACKOFF_TIME else BACKOFF_TIME
-        logger.info(f"Rate limited, sleeping {wait} seconds.")
-        time.sleep(wait)
-        return 1
-    if status >= 400:
-        logger.error(f"Received unexpected {status} response from API: {response}")
-        return 1
-    data = json.loads(response.decode("utf-8"))
-    version = data["tag_name"]
-    machine_info = f"{get_os()}-{get_arch()}"
-    name = f"configlet-{machine_info}.tgz"
-    for asset in data["assets"]:
-        if asset["name"] == name:
-            logger.info(f"Downloading configlet {version} for {machine_info}")
-            for _ in range(MAX_RETRIES):
-                if download_and_extract(asset["browser_download_url"]):
-                    return 0
-    return 1
-
-
-def main():
-    for _ in range(MAX_RETRIES):
-        ret = fetch_configlet()
-        if ret == 0:
-            break
-    return ret
-
-
-if __name__ == "__main__":
-    sys.exit(main())
+rm -f "${output_path}"
