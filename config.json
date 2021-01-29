@@ -1787,5 +1787,67 @@
     "foregone": [
       "lens-person"
     ]
-  }
+  },
+  "concepts": [
+    {
+      "uuid": "d1aee0de-68ca-468b-a808-289bd905e837",
+      "slug": "basics",
+      "name": "Basics",
+      "blurb": "TODO: add blurb for basics concept"
+    },
+    {
+      "uuid": "ae8ba59d-5be3-45cd-869d-1a654249c60a",
+      "slug": "bools",
+      "name": "Bools",
+      "blurb": "TODO: add blurb for bools concept"
+    },
+    {
+      "uuid": "4e6fcb5c-23db-4788-b043-9817cbfa1b9a",
+      "slug": "for-loops",
+      "name": "For Loops",
+      "blurb": "TODO: add blurb for for-loops concept"
+    },
+    {
+      "uuid": "f82fd15e-d7ad-4478-b7cb-d94705557827",
+      "slug": "functions",
+      "name": "Functions",
+      "blurb": "TODO: add blurb for functions concept"
+    },
+    {
+      "uuid": "cb6d5297-5752-4f4b-a6e9-899410efc13e",
+      "slug": "if-keyword",
+      "name": "If Keyword",
+      "blurb": "TODO: add blurb for if-keyword concept"
+    },
+    {
+      "uuid": "90751178-4bcd-491b-a3f6-03bb5964dcfe",
+      "slug": "in-keyword",
+      "name": "In Keyword",
+      "blurb": "TODO: add blurb for in-keyword concept"
+    },
+    {
+      "uuid": "e0656e6f-25c7-4653-a700-a2c1f27a1cd9",
+      "slug": "integers",
+      "name": "Integers",
+      "blurb": "TODO: add blurb for integers concept"
+    },
+    {
+      "uuid": "50cc2099-4eb2-40b9-8f7a-e5cd56b8ef88",
+      "slug": "return-keyword",
+      "name": "Return Keyword",
+      "blurb": "TODO: add blurb for return-keyword concept"
+    },
+    {
+      "uuid": "1eec0dde-4599-450f-909d-2b20ea40e73d",
+      "slug": "strings",
+      "name": "Strings",
+      "blurb": "TODO: add blurb for strings concept"
+    },
+    {
+      "uuid": "5894fb84-c313-464c-86f0-cd5e3eceeab1",
+      "slug": "tuples",
+      "name": "Tuples",
+      "blurb": "TODO: add blurb for tuples concept"
+    }
+  ]
 }
