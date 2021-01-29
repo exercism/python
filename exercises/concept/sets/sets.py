@@ -17,6 +17,3 @@ def sets_difference(set_1, set_2):
 
 def remove_shared_elements(set_1, set_2):
     return set_1 ^ set_2
-
-def sub_and_super_sets(set_1, set_2):
-
