@@ -4,12 +4,15 @@ from enum import Enum, auto
 from fnmatch import fnmatch
 import json
 import logging
-import os
+from pathlib import Path
 import shlex
 from subprocess import check_call, DEVNULL, CalledProcessError
 import sys
 
-DEFAULT_SPEC_LOCATION = os.path.join("..", "problem-specifications")
+from data import Config, ExerciseInfo
+from test_exercises import check_assignment
+
+DEFAULT_SPEC_LOCATION = Path('spec')
 
 logging.basicConfig(format="%(levelname)s:%(message)s")
 logger = logging.getLogger("generator")
@@ -26,16 +29,6 @@ class TemplateStatus(Enum):
         return self.value < other.value
 
 
-with open("config.json") as f:
-    config = json.load(f)
-
-exercises_dir = os.path.abspath("exercises")
-
-
-def get_template_path(exercise):
-    return os.path.join(exercises_dir, exercise, ".meta", "template.j2")
-
-
 def exec_cmd(cmd):
     try:
         args = shlex.split(cmd)
@@ -49,22 +42,20 @@ def exec_cmd(cmd):
         return False
 
 
-def generate_template(exercise, spec_path):
-    script = os.path.abspath("bin/generate_tests.py")
-    return exec_cmd(f'{script} --verbose --spec-path "{spec_path}" {exercise}')
+def generate_template(exercise: ExerciseInfo, spec_path: Path) -> bool:
+    script = Path('bin/generate_tests.py')
+    return exec_cmd(f'{script} --verbose --spec-path "{spec_path}" {exercise.slug}')
 
 
-def run_tests(exercise):
-    script = os.path.abspath("test/check-exercises.py")
-    return exec_cmd(f"{script} {exercise}")
+def run_tests(exercise: ExerciseInfo) -> bool:
+    return check_assignment(exercise, quiet=True) == 0
 
 
-def get_status(exercise, spec_path):
-    template_path = get_template_path(exercise)
-    if os.path.isfile(template_path):
+def get_status(exercise: ExerciseInfo, spec_path: Path):
+    if exercise.template_path.is_file():
         if generate_template(exercise, spec_path):
             if run_tests(exercise):
-                logging.info(f"{exercise}: OK")
+                logging.info(f"{exercise.slug}: OK")
                 return TemplateStatus.OK
             else:
                 return TemplateStatus.TEST_FAILURE
@@ -84,6 +75,7 @@ if __name__ == "__main__":
         "-p",
         "--spec-path",
         default=DEFAULT_SPEC_LOCATION,
+        type=Path,
         help=(
             "path to clone of exercism/problem-specifications " "(default: %(default)s)"
         ),
@@ -96,10 +88,10 @@ if __name__ == "__main__":
     elif opts.verbose >= 1:
         logger.setLevel(logging.INFO)
 
-    if not os.path.isdir(opts.spec_path):
+    if not opts.spec_path.is_dir():
         logger.error(f"{opts.spec_path} is not a directory")
         sys.exit(1)
-    opts.spec_path = os.path.abspath(opts.spec_path)
+    opts.spec_path = opts.spec_path.absolute()
     logger.debug(f"problem-specifications path is {opts.spec_path}")
 
     result = True
@@ -108,20 +100,24 @@ if __name__ == "__main__":
         TemplateStatus.INVALID: [],
         TemplateStatus.TEST_FAILURE: [],
     }
+    config = Config.load()
     for exercise in filter(
-        lambda e: fnmatch(e["slug"], opts.exercise_pattern), config["exercises"]
+        lambda e: fnmatch(e.slug, opts.exercise_pattern),
+        config.exercises.all()
     ):
-        if exercise.get('deprecated', False):
+        if exercise.deprecated:
             continue
-        slug = exercise["slug"]
-        status = get_status(slug, opts.spec_path)
+        if exercise.type == 'concept':
+            # Concept exercises are not generated
+            continue
+        status = get_status(exercise, opts.spec_path)
         if status == TemplateStatus.OK:
-            logger.info(f"{slug}: {status.name}")
+            logger.info(f"{exercise.slug}: {status.name}")
         else:
-            buckets[status].append(slug)
+            buckets[status].append(exercise.slug)
             result = False
             if opts.stop_on_failure:
-                logger.error(f"{slug}: {status.name}")
+                logger.error(f"{exercise.slug}: {status.name}")
                 break
 
     if not opts.quiet and not opts.stop_on_failure:

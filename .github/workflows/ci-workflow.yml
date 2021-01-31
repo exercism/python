@@ -69,4 +69,4 @@ jobs:
 
     - name: Check exercises
       run: |
-        ./bin/test-exercises.py
+        ./bin/test_exercises.py

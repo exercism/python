@@ -12,7 +12,7 @@ from data import Config, ExerciseInfo
 ALLOW_SKIP = ['alphametics', 'largest-series-product']
 
 
-def check_assignment(exercise: ExerciseInfo) -> int:
+def check_assignment(exercise: ExerciseInfo, quiet=False) -> int:
     # Returns the exit code of the tests
     workdir = Path(tempfile.mkdtemp(exercise.slug))
     solution_file = exercise.solution_stub.name
@@ -27,7 +27,11 @@ def check_assignment(exercise: ExerciseInfo) -> int:
             with test_file_out.open('w') as dst_file:
                 dst_file.writelines(lines)
         shutil.copyfile(exercise.exemplar_file, workdir / solution_file)
-        return subprocess.call([sys.executable, test_file_out])
+        kwargs = {}
+        if quiet:
+            kwargs['stdout'] = subprocess.DEVNULL
+            kwargs['stderr'] = subprocess.DEVNULL
+        return subprocess.run([sys.executable, test_file_out], **kwargs).returncode
     finally:
         shutil.rmtree(workdir)
 
