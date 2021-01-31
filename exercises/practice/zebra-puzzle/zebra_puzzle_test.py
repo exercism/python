@@ -1,6 +1,9 @@
 import unittest
 
-from zebra_puzzle import drinks_water, owns_zebra
+from zebra_puzzle import (
+    drinks_water,
+    owns_zebra,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

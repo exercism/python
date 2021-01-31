@@ -1,6 +1,8 @@
 import unittest
 
-from book_store import total
+from book_store import (
+    total,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 
@@ -63,7 +65,7 @@ class BookStoreTest(unittest.TestCase):
         self.assertEqual(total(basket), 7520)
 
     def test_four_groups_of_four_are_cheaper_than_two_groups_each_of_five_and_three(
-        self
+        self,
     ):
         basket = [1, 1, 2, 2, 3, 3, 4, 5, 1, 1, 2, 2, 3, 3, 4, 5]
         self.assertEqual(total(basket), 10240)

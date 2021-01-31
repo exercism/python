@@ -1,6 +1,8 @@
 import unittest
 
-from nth_prime import prime
+from nth_prime import (
+    prime,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

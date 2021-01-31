@@ -1,6 +1,8 @@
 import unittest
 
-from pythagorean_triplet import triplets_with_sum
+from pythagorean_triplet import (
+    triplets_with_sum,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

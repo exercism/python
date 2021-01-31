@@ -1,6 +1,9 @@
 import unittest
 
-from affine_cipher import decode, encode
+from affine_cipher import (
+    decode,
+    encode,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

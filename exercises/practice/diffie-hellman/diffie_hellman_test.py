@@ -1,6 +1,10 @@
 import unittest
 
-from diffie_hellman import private_key, public_key, secret
+from diffie_hellman import (
+    private_key,
+    public_key,
+    secret,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 
@@ -24,13 +28,27 @@ class DiffieHellmanTest(unittest.TestCase):
         p = 23
         g = 5
         private_key = 6
-        self.assertEqual(8, public_key(p, g, private_key))
+        self.assertEqual(
+            8,
+            public_key(
+                p,
+                g,
+                private_key,
+            ),
+        )
 
     def test_can_calculate_secret_using_other_party_s_public_key(self):
         p = 23
         their_public_key = 19
         my_private_key = 6
-        self.assertEqual(2, secret(p, their_public_key, my_private_key))
+        self.assertEqual(
+            2,
+            secret(
+                p,
+                their_public_key,
+                my_private_key,
+            ),
+        )
 
     def test_key_exchange(self):
         p = 23

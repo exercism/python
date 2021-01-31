@@ -1,6 +1,8 @@
 import unittest
 
-from tournament import tally
+from tournament import (
+    tally,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

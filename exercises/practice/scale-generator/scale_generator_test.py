@@ -1,6 +1,8 @@
 import unittest
 
-from scale_generator import Scale
+from scale_generator import (
+    Scale,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

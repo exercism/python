@@ -1,6 +1,8 @@
 import unittest
 
-from series import slices
+from series import (
+    slices,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

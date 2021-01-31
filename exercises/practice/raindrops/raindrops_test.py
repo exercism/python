@@ -1,6 +1,8 @@
 import unittest
 
-from raindrops import convert
+from raindrops import (
+    convert,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 
@@ -22,7 +24,7 @@ class RaindropsTest(unittest.TestCase):
         self.assertEqual(convert(6), "Pling")
 
     def test_2_to_the_power_3_does_not_make_a_raindrop_sound_as_3_is_the_exponent_not_the_base(
-        self
+        self,
     ):
         self.assertEqual(convert(8), "8")
 

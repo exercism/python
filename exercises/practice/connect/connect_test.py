@@ -1,6 +1,8 @@
 import unittest
 
-from connect import ConnectGame
+from connect import (
+    ConnectGame,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

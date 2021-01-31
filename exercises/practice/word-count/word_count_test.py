@@ -1,6 +1,8 @@
 import unittest
 
-from word_count import count_words
+from word_count import (
+    count_words,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

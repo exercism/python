@@ -1,6 +1,8 @@
 import unittest
 
-from matching_brackets import is_paired
+from matching_brackets import (
+    is_paired,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

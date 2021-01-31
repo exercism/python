@@ -1,6 +1,8 @@
 import unittest
 
-from scrabble_score import score
+from scrabble_score import (
+    score,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

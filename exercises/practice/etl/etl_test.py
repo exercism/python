@@ -1,6 +1,8 @@
 import unittest
 
-from etl import transform
+from etl import (
+    transform,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

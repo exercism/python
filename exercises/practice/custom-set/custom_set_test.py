@@ -1,6 +1,8 @@
 import unittest
 
-from custom_set import CustomSet
+from custom_set import (
+    CustomSet,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 
@@ -154,7 +156,7 @@ class CustomSetTest(unittest.TestCase):
         self.assertEqual(set1.intersection(set2), expected)
 
     def test_intersection_of_two_sets_with_shared_elements_is_a_set_of_the_shared_elements(
-        self
+        self,
     ):
         set1 = CustomSet([1, 2, 3, 4])
         set2 = CustomSet([3, 2, 5])
@@ -180,7 +182,7 @@ class CustomSetTest(unittest.TestCase):
         self.assertEqual(set1 - set2, expected)
 
     def test_difference_of_two_non_empty_sets_is_a_set_of_elements_that_are_only_in_the_first_set(
-        self
+        self,
     ):
         set1 = CustomSet([3, 2, 1])
         set2 = CustomSet([2, 4])

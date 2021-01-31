@@ -1,6 +1,8 @@
 import unittest
 
-from sum_of_multiples import sum_of_multiples
+from sum_of_multiples import (
+    sum_of_multiples,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 
@@ -52,7 +54,7 @@ class SumOfMultiplesTest(unittest.TestCase):
         self.assertEqual(sum_of_multiples(4, [3, 0]), 3)
 
     def test_solutions_using_include_exclude_must_extend_to_cardinality_greater_than_3(
-        self
+        self,
     ):
         self.assertEqual(sum_of_multiples(10000, [2, 3, 5, 7, 11]), 39614537)
 

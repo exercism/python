@@ -1,6 +1,8 @@
 import unittest
 
-from all_your_base import rebase
+from all_your_base import (
+    rebase,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

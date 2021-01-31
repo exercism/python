@@ -1,6 +1,8 @@
 import unittest
 
-from space_age import SpaceAge
+from space_age import (
+    SpaceAge,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

@@ -1,6 +1,8 @@
 import unittest
 
-from satellite import tree_from_traversals
+from satellite import (
+    tree_from_traversals,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

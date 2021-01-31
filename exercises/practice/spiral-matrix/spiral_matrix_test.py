@@ -1,6 +1,8 @@
 import unittest
 
-from spiral_matrix import spiral_matrix
+from spiral_matrix import (
+    spiral_matrix,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

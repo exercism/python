@@ -1,6 +1,10 @@
 import unittest
 
-from triangle import equilateral, isosceles, scalene
+from triangle import (
+    equilateral,
+    isosceles,
+    scalene,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

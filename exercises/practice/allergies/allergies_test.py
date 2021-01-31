@@ -1,6 +1,8 @@
 import unittest
 
-from allergies import Allergies
+from allergies import (
+    Allergies,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

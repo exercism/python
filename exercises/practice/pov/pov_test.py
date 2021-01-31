@@ -1,6 +1,8 @@
 import unittest
 
-from pov import Tree
+from pov import (
+    Tree,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

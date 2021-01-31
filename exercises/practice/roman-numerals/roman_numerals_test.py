@@ -1,6 +1,8 @@
 import unittest
 
-from roman_numerals import roman
+from roman_numerals import (
+    roman,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 class RomanNumeralsTest(unittest.TestCase):

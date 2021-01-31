@@ -1,6 +1,8 @@
 import unittest
 
-from pangram import is_pangram
+from pangram import (
+    is_pangram,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

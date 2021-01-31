@@ -1,7 +1,9 @@
 from __future__ import division
 import unittest
 
-from rational_numbers import Rational
+from rational_numbers import (
+    Rational,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 
@@ -78,7 +80,7 @@ class RationalNumbersTest(unittest.TestCase):
         self.assertEqual(abs(Rational(1, 2)), Rational(1, 2))
 
     def test_absolute_value_of_a_positive_rational_number_with_negative_numerator_and_denominator(
-        self
+        self,
     ):
         self.assertEqual(abs(Rational(-1, -2)), Rational(1, 2))
 
@@ -86,7 +88,7 @@ class RationalNumbersTest(unittest.TestCase):
         self.assertEqual(abs(Rational(-1, 2)), Rational(1, 2))
 
     def test_absolute_value_of_a_negative_rational_number_with_negative_denominator(
-        self
+        self,
     ):
         self.assertEqual(abs(Rational(1, -2)), Rational(1, 2))
 

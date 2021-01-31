@@ -1,6 +1,11 @@
 import unittest
 
-from go_counting import Board, WHITE, BLACK, NONE
+from go_counting import (
+    Board,
+    WHITE,
+    BLACK,
+    NONE,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

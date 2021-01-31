@@ -1,6 +1,8 @@
 import unittest
 
-from minesweeper import annotate
+from minesweeper import (
+    annotate,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

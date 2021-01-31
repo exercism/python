@@ -1,6 +1,8 @@
 import unittest
 
-from bob import response
+from bob import (
+    response,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

@@ -1,6 +1,8 @@
 import unittest
 
-from rna_transcription import to_rna
+from rna_transcription import (
+    to_rna,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

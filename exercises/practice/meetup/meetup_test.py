@@ -1,7 +1,10 @@
 from datetime import date
 import unittest
 
-from meetup import meetup, MeetupDayException
+from meetup import (
+    meetup,
+    MeetupDayException,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

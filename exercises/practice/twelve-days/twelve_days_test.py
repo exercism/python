@@ -1,6 +1,8 @@
 import unittest
 
-from twelve_days import recite
+from twelve_days import (
+    recite,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

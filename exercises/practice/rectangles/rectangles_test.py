@@ -1,6 +1,8 @@
 import unittest
 
-from rectangles import rectangles
+from rectangles import (
+    rectangles,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

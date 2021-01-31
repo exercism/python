@@ -1,6 +1,8 @@
 import unittest
 
-from luhn import Luhn
+from luhn import (
+    Luhn,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 
