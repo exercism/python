@@ -71,4 +71,4 @@ jobs:
     #                    updates needed to tooling
     # - name: Check exercises
     #   run: |
-    #     ./test/check-exercises.py
+    #     ./bin/test-exercises.py
