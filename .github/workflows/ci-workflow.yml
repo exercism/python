@@ -61,6 +61,10 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
+    - name: Install dataclasses package
+      if: ${{ matrix.python-version == '3.6' }}
+      run: pip install dataclasses
+
     - name: Check exercises
       run: |
         ./bin/test_exercises.py
