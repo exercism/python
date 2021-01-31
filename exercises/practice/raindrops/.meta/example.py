@@ -2,7 +2,7 @@ def convert(number):
     """
     Converts a number to a string according to the raindrop sounds.
     """
-  
+
     result = ''
     if number % 3 == 0:
         result += 'Pling'
