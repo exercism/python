@@ -297,8 +297,8 @@ def generate_exercise(env: Environment, spec_path: Path, exercise: Path, check: 
         try:
             test_opts = load_tests_toml(exercise)
         except FileNotFoundError:
-            logger.error(f"{slug}: tests.toml not found; please run canonical_data_syncer")
-            return False
+            logger.error(f"{slug}: tests.toml not found; skipping.")
+            return True
         spec = load_canonical(slug, spec_path, test_opts)
         additional_tests = load_additional_tests(exercise)
         spec["additional_cases"] = additional_tests
