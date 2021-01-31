@@ -1,6 +1,8 @@
 import unittest
 
-from hamming import distance
+from hamming import (
+    distance,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

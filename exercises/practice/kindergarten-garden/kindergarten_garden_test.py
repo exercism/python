@@ -1,6 +1,8 @@
 import unittest
 
-from kindergarten_garden import Garden
+from kindergarten_garden import (
+    Garden,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 
@@ -32,23 +34,23 @@ class KindergartenGardenTest(unittest.TestCase):
         garden = Garden("VVCCGG\nVVCCGG")
         self.assertEqual(garden.plants("Charlie"), ["Grass", "Grass", "Grass", "Grass"])
 
-    def test_full_garden_first_student_s_garden(self):
+    def test_full_garden_for_alice_first_student_s_garden(self):
         garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
         self.assertEqual(
             garden.plants("Alice"), ["Violets", "Radishes", "Violets", "Radishes"]
         )
 
-    def test_full_garden_second_student_s_garden(self):
+    def test_full_garden_for_bob_second_student_s_garden(self):
         garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
         self.assertEqual(garden.plants("Bob"), ["Clover", "Grass", "Clover", "Clover"])
 
-    def test_full_garden_second_to_last_student_s_garden(self):
+    def test_full_garden_for_kincaid_second_to_last_student_s_garden(self):
         garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
         self.assertEqual(
             garden.plants("Kincaid"), ["Grass", "Clover", "Clover", "Grass"]
         )
 
-    def test_full_garden_last_student_s_garden(self):
+    def test_full_garden_for_larry_last_student_s_garden(self):
         garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
         self.assertEqual(
             garden.plants("Larry"), ["Grass", "Violets", "Clover", "Violets"]

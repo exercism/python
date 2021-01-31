@@ -1,6 +1,8 @@
 import unittest
 
-from zipper import Zipper
+from zipper import (
+    Zipper,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

@@ -1,6 +1,8 @@
 import unittest
 
-from leap import leap_year
+from leap import (
+    leap_year,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 
@@ -24,7 +26,7 @@ class LeapTest(unittest.TestCase):
     def test_year_divisible_by_100_but_not_by_3_is_still_not_a_leap_year(self):
         self.assertIs(leap_year(1900), False)
 
-    def test_year_divisible_by_400_in_leap_year(self):
+    def test_year_divisible_by_400_is_leap_year(self):
         self.assertIs(leap_year(2000), True)
 
     def test_year_divisible_by_400_but_not_by_125_is_still_a_leap_year(self):

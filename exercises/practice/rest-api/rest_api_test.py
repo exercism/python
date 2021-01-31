@@ -1,6 +1,8 @@
 import unittest
 
-from rest_api import RestAPI
+from rest_api import (
+    RestAPI,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 import json

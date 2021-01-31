@@ -1,6 +1,8 @@
 import unittest
 
-from knapsack import maximum_value
+from knapsack import (
+    maximum_value,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

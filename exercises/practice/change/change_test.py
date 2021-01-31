@@ -1,6 +1,8 @@
 import unittest
 
-from change import find_fewest_coins
+from change import (
+    find_fewest_coins,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

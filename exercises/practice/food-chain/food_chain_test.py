@@ -1,6 +1,8 @@
 import unittest
 
-from food_chain import recite
+from food_chain import (
+    recite,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

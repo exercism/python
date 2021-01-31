@@ -1,6 +1,8 @@
 import unittest
 
-from diamond import rows
+from diamond import (
+    rows,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

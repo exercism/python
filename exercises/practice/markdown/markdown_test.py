@@ -1,6 +1,8 @@
 import unittest
 
-from markdown import parse
+from markdown import (
+    parse,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 
@@ -50,7 +52,7 @@ class MarkdownTest(unittest.TestCase):
         )
 
     def test_with_markdown_symbols_in_the_header_text_that_should_not_be_interpreted(
-        self
+        self,
     ):
         self.assertEqual(
             parse("# This is a header with # and * in the text"),
@@ -58,7 +60,7 @@ class MarkdownTest(unittest.TestCase):
         )
 
     def test_with_markdown_symbols_in_the_list_item_text_that_should_not_be_interpreted(
-        self
+        self,
     ):
         self.assertEqual(
             parse("* Item 1 with a # in the text\n* Item 2 with * in the text"),
@@ -66,7 +68,7 @@ class MarkdownTest(unittest.TestCase):
         )
 
     def test_with_markdown_symbols_in_the_paragraph_text_that_should_not_be_interpreted(
-        self
+        self,
     ):
         self.assertEqual(
             parse("This is a paragraph with # and * in the text"),

@@ -1,6 +1,8 @@
 import unittest
 
-from matrix import Matrix
+from matrix import (
+    Matrix,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

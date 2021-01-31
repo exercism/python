@@ -1,6 +1,9 @@
 import unittest
 
-from run_length_encoding import encode, decode
+from run_length_encoding import (
+    encode,
+    decode,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

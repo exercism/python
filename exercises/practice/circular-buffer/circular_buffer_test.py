@@ -1,6 +1,8 @@
 import unittest
 
-from circular_buffer import CircularBuffer
+from circular_buffer import (
+    CircularBuffer,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 
@@ -88,7 +90,7 @@ class CircularBufferTest(unittest.TestCase):
         self.assertEqual(buf.read(), "3")
 
     def test_overwrite_replaces_the_oldest_item_remaining_in_buffer_following_a_read(
-        self
+        self,
     ):
         buf = CircularBuffer(3)
         buf.write("1")

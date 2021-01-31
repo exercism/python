@@ -1,6 +1,8 @@
 import unittest
 
-from anagram import find_anagrams
+from anagram import (
+    find_anagrams,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

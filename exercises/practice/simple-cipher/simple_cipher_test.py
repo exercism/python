@@ -1,7 +1,9 @@
 import re
 import unittest
 
-from simple_cipher import Cipher
+from simple_cipher import (
+    Cipher,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

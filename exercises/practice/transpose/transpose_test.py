@@ -1,6 +1,8 @@
 import unittest
 
-from transpose import transpose
+from transpose import (
+    transpose,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

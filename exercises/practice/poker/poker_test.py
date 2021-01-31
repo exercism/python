@@ -1,6 +1,8 @@
 import unittest
 
-from poker import best_hands
+from poker import (
+    best_hands,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 
@@ -29,7 +31,7 @@ class PokerTest(unittest.TestCase):
         )
 
     def test_multiple_hands_with_the_same_high_cards_tie_compares_next_highest_ranked_down_to_last_card(
-        self
+        self,
     ):
         self.assertEqual(
             best_hands(["3S 5H 6S 8D 7H", "2S 5D 6D 8C 7S"]), ["3S 5H 6S 8D 7H"]
@@ -56,14 +58,14 @@ class PokerTest(unittest.TestCase):
         )
 
     def test_both_hands_have_two_pairs_with_the_same_highest_ranked_pair_tie_goes_to_low_pair(
-        self
+        self,
     ):
         self.assertEqual(
             best_hands(["2S QS 2C QD JH", "JD QH JS 8D QC"]), ["JD QH JS 8D QC"]
         )
 
     def test_both_hands_have_two_identically_ranked_pairs_tie_goes_to_remaining_card_kicker(
-        self
+        self,
     ):
         self.assertEqual(
             best_hands(["JD QH JS 8D QC", "JS QS JC 2D QD"]), ["JD QH JS 8D QC"]
@@ -80,7 +82,7 @@ class PokerTest(unittest.TestCase):
         )
 
     def test_with_multiple_decks_two_players_can_have_same_three_of_a_kind_ties_go_to_highest_remaining_cards(
-        self
+        self,
     ):
         self.assertEqual(
             best_hands(["4S AH AS 7C AD", "4S AH AS 8C AD"]), ["4S AH AS 8C AD"]
@@ -107,7 +109,7 @@ class PokerTest(unittest.TestCase):
         )
 
     def test_even_though_an_ace_is_usually_high_a_5_high_straight_is_the_lowest_scoring_straight(
-        self
+        self,
     ):
         self.assertEqual(
             best_hands(["2H 3C 4D 5D 6H", "4S AH 3S 2D 5H"]), ["2H 3C 4D 5D 6H"]
@@ -119,7 +121,7 @@ class PokerTest(unittest.TestCase):
         )
 
     def test_both_hands_have_a_flush_tie_goes_to_high_card_down_to_the_last_one_if_necessary(
-        self
+        self,
     ):
         self.assertEqual(
             best_hands(["4H 7H 8H 9H 6H", "2S 4S 5S 6S 7S"]), ["4H 7H 8H 9H 6H"]
@@ -136,7 +138,7 @@ class PokerTest(unittest.TestCase):
         )
 
     def test_with_multiple_decks_both_hands_have_a_full_house_with_the_same_triplet_tie_goes_to_the_pair(
-        self
+        self,
     ):
         self.assertEqual(
             best_hands(["5H 5S 5D 9S 9D", "5H 5S 5D 8S 8D"]), ["5H 5S 5D 9S 9D"]
@@ -153,7 +155,7 @@ class PokerTest(unittest.TestCase):
         )
 
     def test_with_multiple_decks_both_hands_with_identical_four_of_a_kind_tie_determined_by_kicker(
-        self
+        self,
     ):
         self.assertEqual(
             best_hands(["3S 3H 2S 3D 3C", "3S 3H 4S 3D 3C"]), ["3S 3H 4S 3D 3C"]

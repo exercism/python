@@ -1,6 +1,8 @@
 import unittest
 
-from beer_song import recite
+from beer_song import (
+    recite,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

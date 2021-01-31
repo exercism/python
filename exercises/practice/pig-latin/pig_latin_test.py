@@ -1,6 +1,8 @@
 import unittest
 
-from pig_latin import translate
+from pig_latin import (
+    translate,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

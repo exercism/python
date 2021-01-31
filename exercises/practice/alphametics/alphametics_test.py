@@ -1,6 +1,8 @@
 import unittest
 
-from alphametics import solve
+from alphametics import (
+    solve,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

@@ -1,6 +1,8 @@
 import unittest
 
-from grep import grep
+from grep import (
+    grep,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 import io

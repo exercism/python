@@ -1,6 +1,9 @@
 import unittest
 
-from word_search import WordSearch, Point
+from word_search import (
+    WordSearch,
+    Point,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 
@@ -15,7 +18,7 @@ class WordSearchTest(unittest.TestCase):
         self.assertEqual(puzzle.search("clojure"), (Point(0, 0), Point(6, 0)))
 
     def test_should_locate_the_same_word_written_left_to_right_in_a_different_position(
-        self
+        self,
     ):
         puzzle = WordSearch(["mtclojurer"])
         self.assertEqual(puzzle.search("clojure"), (Point(2, 0), Point(8, 0)))
@@ -25,7 +28,7 @@ class WordSearchTest(unittest.TestCase):
         self.assertEqual(puzzle.search("coffee"), (Point(0, 0), Point(5, 0)))
 
     def test_should_locate_that_different_left_to_right_word_in_a_different_position(
-        self
+        self,
     ):
         puzzle = WordSearch(["xcoffeezlp"])
         self.assertEqual(puzzle.search("coffee"), (Point(1, 0), Point(6, 0)))
@@ -56,7 +59,7 @@ class WordSearchTest(unittest.TestCase):
         self.assertEqual(puzzle.search("clojure"), (Point(0, 9), Point(6, 9)))
 
     def test_should_locate_that_left_to_right_word_in_a_different_position_in_a_ten_line_grid(
-        self
+        self,
     ):
         puzzle = WordSearch(
             [
@@ -114,7 +117,7 @@ class WordSearchTest(unittest.TestCase):
         self.assertEqual(puzzle.search("elixir"), (Point(5, 0), Point(0, 0)))
 
     def test_should_locate_multiple_words_written_in_different_horizontal_directions(
-        self
+        self,
     ):
         puzzle = WordSearch(
             [

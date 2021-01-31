@@ -1,6 +1,9 @@
 import unittest
 
-from rail_fence_cipher import decode, encode
+from rail_fence_cipher import (
+    decode,
+    encode,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

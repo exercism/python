@@ -1,6 +1,8 @@
 import unittest
 
-from sieve import primes
+from sieve import (
+    primes,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

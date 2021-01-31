@@ -1,30 +1,33 @@
 import unittest
 
-from grains import square, total
+from grains import (
+    square,
+    total,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class GrainsTest(unittest.TestCase):
-    def test_1(self):
+    def test_grains_on_square_1(self):
         self.assertEqual(square(1), 1)
 
-    def test_2(self):
+    def test_grains_on_square_2(self):
         self.assertEqual(square(2), 2)
 
-    def test_3(self):
+    def test_grains_on_square_3(self):
         self.assertEqual(square(3), 4)
 
-    def test_4(self):
+    def test_grains_on_square_4(self):
         self.assertEqual(square(4), 8)
 
-    def test_16(self):
+    def test_grains_on_square_16(self):
         self.assertEqual(square(16), 32768)
 
-    def test_32(self):
+    def test_grains_on_square_32(self):
         self.assertEqual(square(32), 2147483648)
 
-    def test_64(self):
+    def test_grains_on_square_64(self):
         self.assertEqual(square(64), 9223372036854775808)
 
     def test_square_0_raises_an_exception(self):

@@ -1,6 +1,9 @@
 import unittest
 
-from forth import evaluate, StackUnderflowError
+from forth import (
+    evaluate,
+    StackUnderflowError,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

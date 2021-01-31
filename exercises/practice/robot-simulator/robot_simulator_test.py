@@ -1,6 +1,12 @@
 import unittest
 
-from robot_simulator import Robot, NORTH, EAST, SOUTH, WEST
+from robot_simulator import (
+    Robot,
+    NORTH,
+    EAST,
+    SOUTH,
+    WEST,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

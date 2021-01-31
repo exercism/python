@@ -1,6 +1,8 @@
 import unittest
 
-from isbn_verifier import is_valid
+from isbn_verifier import (
+    is_valid,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

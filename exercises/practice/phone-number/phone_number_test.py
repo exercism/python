@@ -1,6 +1,8 @@
 import unittest
 
-from phone_number import PhoneNumber
+from phone_number import (
+    PhoneNumber,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 

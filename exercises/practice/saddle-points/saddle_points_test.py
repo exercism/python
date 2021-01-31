@@ -7,7 +7,9 @@ irregular.
 """
 import unittest
 
-from saddle_points import saddle_points
+from saddle_points import (
+    saddle_points,
+)
 
 # Tests adapted from `problem-specifications//canonical-data.json`
 
@@ -73,7 +75,7 @@ class SaddlePointsTest(unittest.TestCase):
         )
 
     def test_can_identify_that_saddle_points_in_a_single_column_matrix_are_those_with_the_minimum_value(
-        self
+        self,
     ):
         matrix = [[2], [1], [4], [1]]
         self.assertEqual(
@@ -82,7 +84,7 @@ class SaddlePointsTest(unittest.TestCase):
         )
 
     def test_can_identify_that_saddle_points_in_a_single_row_matrix_are_those_with_the_maximum_value(
-        self
+        self,
     ):
         matrix = [[2, 5, 3, 5]]
         self.assertEqual(
