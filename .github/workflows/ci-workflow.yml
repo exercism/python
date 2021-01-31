@@ -28,13 +28,13 @@ jobs:
         git clone https://github.com/exercism/problem-specifications spec
         pip install -r requirements-generator.txt
 
-    - name: Check readmes
-      run: |
-        ./bin/check-readmes.sh
+    # - name: Check readmes
+    #   run: |
+    #     ./bin/check-readmes.sh
 
-    #- name: Generate tests
-    #  run: |
-    #    bin/generate_tests.py --verbose -p spec --check
+    - name: Generate tests
+      run: |
+       bin/generate_tests.py --verbose -p spec --check
 
     - name: Lint with flake8
       run: |
@@ -43,16 +43,10 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
-    #- name: Test version status
-    #  run: |
-    #    ./bin/check-test-version.py -p spec
-
-    # TODO: cmccandless: directory and config.json structure changed in v3 migration,
-    #                    updates needed to tooling
-    # - name:  Test template status
-    #   continue-on-error: true
-    #   run: |
-    #     ./bin/template_status.py -v -p spec
+    - name:  Test template status
+      continue-on-error: true
+      run: |
+        ./bin/template_status.py -v -p spec
 
   canonical_sync:
     runs-on: ubuntu-16.04
