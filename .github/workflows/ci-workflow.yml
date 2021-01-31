@@ -67,8 +67,6 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
-    # TODO: cmccandless: directory and config.json structure changed in v3 migration,
-    #                    updates needed to tooling
-    # - name: Check exercises
-    #   run: |
-    #     ./bin/test-exercises.py
+    - name: Check exercises
+      run: |
+        ./bin/test-exercises.py
