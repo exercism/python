@@ -194,11 +194,11 @@ def regex_split(s: str, find: str) -> List[str]:
     return re.split(find, s)
 
 
-def load_tests_toml(exercise: str) -> Dict[str, bool]:
+def load_tests_toml(exercise: Path) -> Dict[str, bool]:
     """
     Loads test case opt-in/out data for an exercise as a dictionary
     """
-    full_path = Path("exercises") / exercise / ".meta/tests.toml"
+    full_path = exercise / ".meta/tests.toml"
     with full_path.open() as f:
         opts = toml.load(f)
     return opts
@@ -238,11 +238,11 @@ def load_canonical(exercise: str, spec_path: Path, test_opts: Dict[str, bool]) -
     return spec
 
 
-def load_additional_tests(exercise: str) -> List[TypeJSON]:
+def load_additional_tests(exercise: Path) -> List[TypeJSON]:
     """
     Loads additional tests from .meta/additional_tests.json
     """
-    full_path = Path("exercises") / exercise / ".meta/additional_tests.json"
+    full_path = exercise / ".meta/additional_tests.json"
     try:
         with full_path.open() as f:
             data = json.load(f)
@@ -295,14 +295,14 @@ def generate_exercise(env: Environment, spec_path: Path, exercise: Path, check: 
             sys.modules[plugins_name] = plugins_module
             plugins_spec.loader.exec_module(plugins_module)
         try:
-            test_opts = load_tests_toml(slug)
+            test_opts = load_tests_toml(exercise)
         except FileNotFoundError:
             logger.error(f"{slug}: tests.toml not found; please run canonical_data_syncer")
             return False
         spec = load_canonical(slug, spec_path, test_opts)
-        additional_tests = load_additional_tests(slug)
+        additional_tests = load_additional_tests(exercise)
         spec["additional_cases"] = additional_tests
-        template_path = Path(slug) / ".meta" / "template.j2"
+        template_path = exercise.relative_to("exercises") / ".meta/template.j2"
         template = env.get_template(str(template_path))
         tests_path = exercise / f"{to_snake(slug)}_test.py"
         spec["has_error_case"] = has_error_case(spec["cases"])
@@ -399,7 +399,7 @@ def generate(
     env.filters["escape_invalid_escapes"] = escape_invalid_escapes
     env.tests["error_case"] = error_case
     result = True
-    for exercise in sorted(Path("exercises").glob(exercise_glob)):
+    for exercise in sorted(Path("exercises/practice").glob(exercise_glob)):
         if not generate_exercise(env, spec_path, exercise, check):
             result = False
             if stop_on_failure:
