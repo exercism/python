@@ -65,12 +65,11 @@ class ExerciseInfo:
     def exemplar_file(self):
         if self.type == 'concept':
             return self.meta_dir / 'exemplar.py'
-        # return self.meta_dir / 'example.py'
-        return self.path / 'example.py'
+        return self.meta_dir / 'example.py'
 
     @property
     def template_path(self):
-        return self.meta_dir / '.template.j2'
+        return self.meta_dir / 'template.j2'
 
 
 @dataclass
