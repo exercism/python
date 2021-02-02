@@ -191,12 +191,14 @@ one of these tools can be used, or you can use your favorite method of generatin
 
 ## Implementation Notes
 
-In General, tests should be written using `unittest.TestCase` and the test file should be named `<EXERCISE-NAME>_test.py`.
-
-While we do use PyTest as our test runner and for some implantation tests, please check with a maintainer before using  a PyTest test method, fixture,  or feature.
-
 Code in the `.meta/examplar.py` file should **only use syntax & concepts introduced in this exercise or one of its prerequisite exercises.** 
 Please **do not use** comprehensions, generator expressions, or other syntax not previously covered.  Please also follow [PEP8](https://www.python.org/dev/peps/pep-0008/) guidelines.
+
+In General, tests should be written using `unittest.TestCase` and the test file should be named `<EXERCISE-NAME>_test.py`.
+
+While we do use [PyTest](https://docs.pytest.org/en/stable/) as our test runner and for some implementation tests, please check with a maintainer before using  a PyTest test method, fixture,  or feature.
+
+Our markdown and JSON files are checked against [prettier](https://prettier.io/) .  We recommend [setting prettier up locally](https://prettier.io/docs/en/install.html) and running it prior to submitting your PR  to avoid any CI errors.  
 
 
 
