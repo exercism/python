@@ -14,13 +14,14 @@ Usage:
 """
 import sys
 
+from githelp import Repo
+
 _py = sys.version_info
 if _py.major < 3 or (_py.major == 3 and _py.minor < 6):
     print("Python version must be at least 3.6")
     sys.exit(1)
 
 import argparse
-from contextlib import contextmanager
 from datetime import datetime
 import difflib
 import filecmp
@@ -40,6 +41,8 @@ from typing import Any, Dict, List, NoReturn, Union
 
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound, UndefinedError
 from dateutil.parser import parse
+
+from githelp import clone_if_missing, Repo
 
 VERSION = "0.3.0"
 
@@ -258,21 +261,41 @@ def format_file(path: Path) -> NoReturn:
     check_call(["black", "-q", path])
 
 
-@contextmanager
-def clone_if_missing(repo: str, directory: Union[str, Path, None] = None):
-    if directory is None:
-        directory = repo.split("/")[-1].split(".")[0]
-    directory = Path(directory)
-    if not directory.is_dir():
-        temp_clone = True
-        check_call(["git", "clone", repo, str(directory)])
-    else:
-        temp_clone = False
+def check_template(slug: str, tests_path: Path, tmpfile: Path):
     try:
-        yield directory
+        check_ok = True
+        if not tmpfile.is_file():
+            logger.debug(f"{slug}: tmp file {tmpfile} not found")
+            check_ok = False
+        if not tests_path.is_file():
+            logger.debug(f"{slug}: tests file {tests_path} not found")
+            check_ok = False
+        if check_ok and not filecmp.cmp(tmpfile, tests_path):
+            with tests_path.open() as f:
+                current_lines = f.readlines()
+            with tmpfile.open() as f:
+                rendered_lines = f.readlines()
+            diff = difflib.unified_diff(
+                current_lines,
+                rendered_lines,
+                fromfile=f"[current] {tests_path.name}",
+                tofile=f"[generated] {tmpfile.name}",
+            )
+            logger.debug(f"{slug}: ##### DIFF START #####")
+            for line in diff:
+                logger.debug(line.strip())
+            logger.debug(f"{slug}: ##### DIFF END #####")
+            check_ok = False
+        if not check_ok:
+            logger.error(
+                f"{slug}: check failed; tests must be regenerated with bin/generate_tests.py"
+            )
+            return False
+        logger.debug(f"{slug}: check passed")
     finally:
-        if temp_clone:
-            shutil.rmtree(directory)
+        logger.debug(f"{slug}: removing tmp file {tmpfile}")
+        tmpfile.unlink()
+    return True
 
 
 def generate_exercise(env: Environment, spec_path: Path, exercise: Path, check: bool = False):
@@ -322,39 +345,7 @@ def generate_exercise(env: Environment, spec_path: Path, exercise: Path, check: 
             return False
 
         if check:
-            try:
-                check_ok = True
-                if not tmpfile.is_file():
-                    logger.debug(f"{slug}: tmp file {tmpfile} not found")
-                    check_ok = False
-                if not tests_path.is_file():
-                    logger.debug(f"{slug}: tests file {tests_path} not found")
-                    check_ok = False
-                if check_ok and not filecmp.cmp(tmpfile, tests_path):
-                    with tests_path.open() as f:
-                        current_lines = f.readlines()
-                    with tmpfile.open() as f:
-                        rendered_lines = f.readlines()
-                    diff = difflib.unified_diff(
-                        current_lines,
-                        rendered_lines,
-                        fromfile=f"[current] {tests_path.name}",
-                        tofile=f"[generated] {tmpfile.name}",
-                    )
-                    logger.debug(f"{slug}: ##### DIFF START #####")
-                    for line in diff:
-                        logger.debug(line.strip())
-                    logger.debug(f"{slug}: ##### DIFF END #####")
-                    check_ok = False
-                if not check_ok:
-                    logger.error(
-                        f"{slug}: check failed; tests must be regenerated with bin/generate_tests.py"
-                    )
-                    return False
-                logger.debug(f"{slug}: check passed")
-            finally:
-                logger.debug(f"{slug}: removing tmp file {tmpfile}")
-                tmpfile.unlink()
+            return check_template(slug, tests_path, tmpfile)
         else:
             logger.debug(f"{slug}: moving tmp file {tmpfile}->{tests_path}")
             shutil.move(tmpfile, tests_path)
@@ -435,5 +426,5 @@ if __name__ == "__main__":
     opts = parser.parse_args()
     if opts.verbose:
         logger.setLevel(logging.DEBUG)
-    with clone_if_missing(repo=PROBLEM_SPEC_REPO, directory=opts.spec_path):
+    with clone_if_missing(repo=Repo.ProblemSpecifications, directory=opts.spec_path):
         generate(**opts.__dict__)
