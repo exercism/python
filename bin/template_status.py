@@ -1,35 +1,35 @@
 #!/usr/bin/env python3.7
 import argparse
-from enum import Enum, auto
+from argparse import Namespace
+from enum import IntEnum, auto
 from fnmatch import fnmatch
-import json
 import logging
 from pathlib import Path
 import shlex
 from subprocess import check_call, DEVNULL, CalledProcessError
 import sys
+from typing import Dict, List, Any, Iterator
 
 from data import Config, ExerciseInfo
+from generate_tests import clone_if_missing
+from githelp import Repo
 from test_exercises import check_assignment
 
-DEFAULT_SPEC_LOCATION = Path('spec')
+DEFAULT_SPEC_LOCATION = Path('.problem-specifications')
 
 logging.basicConfig(format="%(levelname)s:%(message)s")
 logger = logging.getLogger("generator")
 logger.setLevel(logging.WARN)
 
 
-class TemplateStatus(Enum):
+class TemplateStatus(IntEnum):
     OK = auto()
     MISSING = auto()
     INVALID = auto()
     TEST_FAILURE = auto()
 
-    def __lt__(self, other):
-        return self.value < other.value
 
-
-def exec_cmd(cmd):
+def exec_cmd(cmd: str) -> bool:
     try:
         args = shlex.split(cmd)
         if logger.isEnabledFor(logging.DEBUG):
@@ -51,7 +51,7 @@ def run_tests(exercise: ExerciseInfo) -> bool:
     return check_assignment(exercise, quiet=True) == 0
 
 
-def get_status(exercise: ExerciseInfo, spec_path: Path):
+def get_status(exercise: ExerciseInfo, spec_path: Path) -> TemplateStatus:
     if exercise.template_path.is_file():
         if generate_template(exercise, spec_path):
             if run_tests(exercise):
@@ -63,6 +63,25 @@ def get_status(exercise: ExerciseInfo, spec_path: Path):
             return TemplateStatus.INVALID
     else:
         return TemplateStatus.MISSING
+
+
+def set_loglevel(opts: Namespace):
+    if opts.quiet:
+        logger.setLevel(logging.FATAL)
+    elif opts.verbose >= 2:
+        logger.setLevel(logging.DEBUG)
+    elif opts.verbose >= 1:
+        logger.setLevel(logging.INFO)
+
+
+def filter_exercises(exercises: List[ExerciseInfo], pattern: str) -> Iterator[ExerciseInfo]:
+    for exercise in exercises:
+        if not exercise.get("deprecated", False):
+            if exercise.type == 'concept':
+                # Concept exercises are not generated
+                continue
+            if fnmatch(exercise["slug"], pattern):
+                yield exercise
 
 
 if __name__ == "__main__":
@@ -81,51 +100,37 @@ if __name__ == "__main__":
         ),
     )
     opts = parser.parse_args()
-    if opts.quiet:
-        logger.setLevel(logging.FATAL)
-    elif opts.verbose >= 2:
-        logger.setLevel(logging.DEBUG)
-    elif opts.verbose >= 1:
-        logger.setLevel(logging.INFO)
+    set_loglevel(opts)
 
     if not opts.spec_path.is_dir():
         logger.error(f"{opts.spec_path} is not a directory")
         sys.exit(1)
-    opts.spec_path = opts.spec_path.absolute()
-    logger.debug(f"problem-specifications path is {opts.spec_path}")
+    with clone_if_missing(repo=Repo.ProblemSpecifications, directory=opts.spec_path):
 
-    result = True
-    buckets = {
-        TemplateStatus.MISSING: [],
-        TemplateStatus.INVALID: [],
-        TemplateStatus.TEST_FAILURE: [],
-    }
-    config = Config.load()
-    for exercise in filter(
-        lambda e: fnmatch(e.slug, opts.exercise_pattern),
-        config.exercises.all()
-    ):
-        if exercise.deprecated:
-            continue
-        if exercise.type == 'concept':
-            # Concept exercises are not generated
-            continue
-        status = get_status(exercise, opts.spec_path)
-        if status == TemplateStatus.OK:
-            logger.info(f"{exercise.slug}: {status.name}")
-        else:
-            buckets[status].append(exercise.slug)
-            result = False
-            if opts.stop_on_failure:
-                logger.error(f"{exercise.slug}: {status.name}")
-                break
+        result = True
+        buckets = {
+            TemplateStatus.MISSING: [],
+            TemplateStatus.INVALID: [],
+            TemplateStatus.TEST_FAILURE: [],
+        }
+        config = Config.load()
+        for exercise in filter_exercises(config.exercises.all()):
+            status = get_status(exercise, opts.spec_path)
+            if status == TemplateStatus.OK:
+                logger.info(f"{exercise.slug}: {status.name}")
+            else:
+                buckets[status].append(exercise.slug)
+                result = False
+                if opts.stop_on_failure:
+                    logger.error(f"{exercise.slug}: {status.name}")
+                    break
 
-    if not opts.quiet and not opts.stop_on_failure:
-        for status, bucket in sorted(buckets.items()):
-            if bucket:
-                print(f"The following exercises have status '{status.name}'")
-                for exercise in sorted(bucket):
-                    print(f'  {exercise}')
+        if not opts.quiet and not opts.stop_on_failure:
+            for status, bucket in sorted(buckets.items()):
+                if bucket:
+                    print(f"The following exercises have status '{status.name}'")
+                    for exercise in sorted(bucket):
+                        print(f'  {exercise}')
 
-    if not result:
-        sys.exit(1)
+        if not result:
+            sys.exit(1)
