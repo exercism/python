@@ -30,7 +30,7 @@
         "uuid": "7ecd42c1-2ed5-487a-bc89-71c9cbad9b05",
         "concepts": ["tuples"],
         "prerequisites": ["bools", "loops", "conditionals", "numbers"],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "guidos-gorgeous-lasagna",
@@ -46,7 +46,7 @@
         "uuid": "c050470d-ef22-4187-aaac-239e07955a4d",
         "concepts": ["bools"],
         "prerequisites": ["basics"],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "pretty-leaflet",
@@ -132,7 +132,7 @@
         "uuid": "09c322bc-5c04-480b-8441-fd9ef5c7a3b4",
         "concepts": ["string-methods"],
         "prerequisites": ["basics", "strings"],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "currency-exchange",
