@@ -233,8 +233,8 @@ def load_canonical(exercise: str, spec_path: Path, test_opts: Dict[str, bool]) -
     full_path = spec_path / "exercises" / exercise / "canonical-data.json"
     with full_path.open() as f:
         spec = json.load(f)
-    spec["properties"] = get_tested_properties(spec)
     spec["cases"] = filter_test_cases(spec["cases"], test_opts["canonical-tests"])
+    spec["properties"] = get_tested_properties(spec)
     return spec
 
 
