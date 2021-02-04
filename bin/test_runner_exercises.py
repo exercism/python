@@ -63,9 +63,6 @@ def main():
     failures = []
     for exercise in exercises:
         print('# ', exercise.slug)
-        if exercise.slug in ['making-the-grade']:
-            print('skipping')
-            continue
         if not exercise.test_file:
             print('FAIL: File with test cases not found')
             failures.append('{} (FileNotFound)'.format(exercise.slug))
@@ -83,5 +80,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# FAILURES:  pretty-leaflet (TestFailed), elyses-enchantments (TestFailed), currency-exchange (TestFailed), forth (TestFailed), paasio (TestFailed), error-handling (TestFailed)
