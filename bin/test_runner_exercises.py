@@ -34,19 +34,14 @@ def check_assignment(exercise: ExerciseInfo) -> int:
             tmp_meta.mkdir(exist_ok=True)
             shutil.copy2(exercise.config_file, tmp_meta / exercise.config_file.name)
         args = ['./bin/run.sh', exercise.slug, workdir, workdir, '-v']
-        subprocess.run(
-            args,
-            cwd='/opt/test-runner',
-            # capture_output=True
-        )
+        subprocess.run(args, cwd='/opt/test-runner')
         results_file = workdir / 'results.json'
-        with results_file.open() as f:
-            results = json.load(f)
-        # print(json.dumps(results, indent=2))
-        if results['status'] == 'pass':
-            return 0
-        else:
-            return 1
+        if results_file.is_file():
+            with results_file.open() as f:
+                results = json.load(f)
+            if results['status'] == 'pass':
+                return 0
+        return 1
     finally:
         shutil.rmtree(workdir)
 
