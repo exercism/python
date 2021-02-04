@@ -89,6 +89,10 @@ class ExerciseInfo:
     def template_path(self):
         return self.meta_dir / 'template.j2'
 
+    @property
+    def config_file(self):
+        return self.meta_dir / 'config.json'
+
 
 @dataclass
 class Exercises:

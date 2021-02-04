@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  test-runner:
+    image: exercism/python-test-runner
+    working_dir: /python
+    entrypoint: ./bin/test_runner_exercises.py
+    volumes:
+      - .:/python
