@@ -33,7 +33,7 @@ def check_assignment(exercise: ExerciseInfo) -> int:
             tmp_meta = workdir / '.meta'
             tmp_meta.mkdir(exist_ok=True)
             shutil.copy2(exercise.config_file, tmp_meta / exercise.config_file.name)
-        args = ['./bin/run.sh', exercise.slug, workdir, workdir, '-v']
+        args = ['./bin/run.sh', exercise.slug, workdir, workdir]
         subprocess.run(args, cwd='/opt/test-runner')
         results_file = workdir / 'results.json'
         if results_file.is_file():
