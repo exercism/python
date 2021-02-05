@@ -1428,7 +1428,7 @@
     {
       "title": "Extensible",
       "content": "Need to call Fortran from a web API? Done. Need to process images using C?  Python can do that.",
-      "icon": "TODO"
+      "icon": ""
     },
     {
       "title": "Flexible",
