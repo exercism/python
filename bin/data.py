@@ -114,6 +114,13 @@ class Concept:
 
 
 @dataclass
+class Feature:
+    title: str
+    content: str
+    icon: str
+
+
+@dataclass
 class Config:
     language: str
     slug: str
@@ -124,7 +131,7 @@ class Config:
     online_editor: EditorSettings
     exercises: Exercises
     concepts: List[Concept]
-    key_features: List[Any] = None
+    key_features: List[Feature] = None
     tags: List[Any] = None
 
     def __post_init__(self):
