@@ -4,5 +4,10 @@
       "github_username": "sachsom95",
       "exercism_username": "sachsom95"
     }
-  ]
+  ],
+  "files": {
+    "solution": ["conditionals.py"],
+    "test": ["conditionals_test.py"],
+    "exemplar": [".meta/exemplar.py"]
+  }
 }
