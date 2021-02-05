@@ -16,8 +16,8 @@
     }
   ],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": ["string_formatting.py"],
+    "test": ["string_formatting_test.py"],
     "exemplar": [".meta/exemplar.py"]
   }
 }
