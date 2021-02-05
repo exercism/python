@@ -1,7 +1,10 @@
 {
-    "files": {
-        "solution": ["paasio.py"],
-        "test": ["paasio_test.py", "test_utils.py"],
-        "exemplar": [".meta/example.py"]
-    }
+  "authors": [],
+  "files": {
+    "solution": ["paasio.py"],
+    "test": ["paasio_test.py", "test_utils.py"],
+    "example": [".meta/example.py"]
+  },
+  "source": "Brian Matsuo",
+  "source_url": "https://github.com/bmatsuo"
 }
