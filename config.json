@@ -1414,7 +1414,38 @@
       "blurb": "TODO: add blurb for tuples concept"
     }
   ],
-  "key_features": [],
+  "key_features": [
+    {
+      "title": "Batteries Included",
+      "content": "Epic & well-documented standard library. Need more? Use a PyPi package - there's one for everything.",
+      "icon": "TODO"
+    },
+    {
+      "title": "Easy",
+      "content": "Human-friendly Syntax and a vibrant, supportive community. Quick to learn & intuitive to use.",
+      "icon": "TODO"
+    },
+    {
+      "title": "Extensible",
+      "content": "Need to call Fortran from a web API? Done. Need to process images using C?  Python can do that.",
+      "icon": "TODO"
+    },
+    {
+      "title": "Flexible",
+      "content": "Duck, dynamic, & strong typing.  Easy to debug. Fun for experiments, robust for large applications.",
+      "icon": "TODO"
+    },
+    {
+      "title": "Multi-paradigm",
+      "content": "OOP, structured, functional, & aspect-oriented. Adaptable to how you structure your programs.",
+      "icon": ""
+    },
+    {
+      "title": "Ubiquitous",
+      "content": "Accepted for almost any use. Easily interface with other languages & execute almost everywhere.",
+      "icon": ""
+    }
+  ],
   "tags": [
     "paradigm/imperative",
     "paradigm/object_oriented",
