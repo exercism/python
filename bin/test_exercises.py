@@ -53,7 +53,7 @@ def main():
             failures.append('{} (FileNotFound)'.format(exercise.slug))
         else:
             if check_assignment(exercise):
-                failures.append('{} (TestFailed)'.format(exercise))
+                failures.append('{} (TestFailed)'.format(exercise.slug))
         print('')
 
     print('TestEnvironment:', sys.executable.capitalize(), '\n\n')
