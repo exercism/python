@@ -8,9 +8,9 @@ from pathlib import Path
 import shlex
 from subprocess import check_call, DEVNULL, CalledProcessError
 import sys
-from typing import Dict, List, Any, Iterator
+from typing import List, Iterator
 
-from data import Config, ExerciseInfo
+from data import Config, ExerciseInfo, ExerciseStatus
 from generate_tests import clone_if_missing
 from githelp import Repo
 from test_exercises import check_assignment
@@ -76,7 +76,7 @@ def set_loglevel(opts: Namespace):
 
 def filter_exercises(exercises: List[ExerciseInfo], pattern: str) -> Iterator[ExerciseInfo]:
     for exercise in exercises:
-        if not exercise.get("deprecated", False):
+        if exercise.status != ExerciseStatus.Deprecated:
             if exercise.type == 'concept':
                 # Concept exercises are not generated
                 continue

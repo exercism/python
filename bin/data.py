@@ -1,3 +1,4 @@
+from enum import Enum
 from dataclasses import dataclass, asdict
 import json
 from pathlib import Path
@@ -12,10 +13,26 @@ class TrackStatus:
     analyzer: bool = False
 
 
+class IndentStyle(str, Enum):
+    Space = 'space'
+    Tab = 'tab'
+
+
 @dataclass
 class EditorSettings:
-    indent_style: str = 'space'
+    indent_style: IndentStyle = IndentStyle.Space
     indent_size: int = 4
+
+    def __post_init__(self):
+        if isinstance(self.indent_style, str):
+            self.indent_style = IndentStyle(self.indent_style)
+
+
+class ExerciseStatus(str, Enum):
+    Active = 'active'
+    WIP = 'wip'
+    Beta = 'beta'
+    Deprecated = 'deprecated'
 
 
 @dataclass
@@ -26,11 +43,10 @@ class ExerciseInfo:
     uuid: str
     prerequisites: List[str]
     type: str = 'practice'
-    deprecated: bool = False
+    status: ExerciseStatus = ExerciseStatus.Active
 
     # concept only
     concepts: List[str] = None
-    status: str = 'wip'
 
     # practice only
     difficulty: int = 1
@@ -44,6 +60,8 @@ class ExerciseInfo:
             self.topics = []
         if self.practices is None:
             self.practices = []
+        if isinstance(self.status, str):
+            self.status = ExerciseStatus(self.status)
 
     @property
     def solution_stub(self):
@@ -101,7 +119,7 @@ class Exercises:
     def all(self, include_deprecated=False):
         _all = self.concept + self.practice
         if not include_deprecated:
-            _all = [e for e in _all if not e.deprecated]
+            _all = [e for e in _all if e.status != ExerciseStatus.Deprecated]
         return _all
 
 
