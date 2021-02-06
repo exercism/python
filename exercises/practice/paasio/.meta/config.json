@@ -1,0 +1,5 @@
+{
+    "files": {
+        "test": ["paasio_test.py", "test_utils.py"]
+    }
+}
