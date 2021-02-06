@@ -2,7 +2,7 @@ def estimate_value(budget, exchange_rate):
 	return budget / exchange_rate
 
 
-def get_changes(budget, exchanging_value):
+def get_change(budget, exchanging_value):
 	return budget - exchanging_value
 
 
