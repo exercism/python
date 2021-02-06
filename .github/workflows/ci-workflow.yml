@@ -65,6 +65,9 @@ jobs:
       if: ${{ matrix.python-version == '3.6' }}
       run: pip install dataclasses
 
+    - name: Install pytest
+      run: pip install pytest
+
     - name: Check exercises
       run: |
         ./bin/test_exercises.py
