@@ -22,8 +22,8 @@
     }
   ],
   "files": {
-    "solution": ["numbers.py"],
-    "test": ["numbers_test.py"],
+    "solution": ["exchange.py"],
+    "test": ["exchange_test.py"],
     "exemplar": [".meta/exemplar.py"]
   }
 }
