@@ -1,4 +1,4 @@
-In this exercise, you are helping your younger sister edit her paper for school. The teacher is looking for correct punctuation, grammar, and excellent choice of words.
+In this exercise you are helping your younger sister edit her paper for school. The teacher is looking for correct punctuation, grammar, and excellent choice of words.
 
 You have four tasks to clean up and modify strings.
 
