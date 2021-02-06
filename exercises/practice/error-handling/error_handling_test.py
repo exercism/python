@@ -1,7 +1,7 @@
 import unittest
 
 import error_handling as er
-from test_helpers import FileLike
+from test_utils import FileLike
 
 
 class ErrorHandlingTest(unittest.TestCase):
