@@ -31,7 +31,7 @@ def check_assignment(exercise: ExerciseInfo, quiet=False) -> int:
         if quiet:
             kwargs['stdout'] = subprocess.DEVNULL
             kwargs['stderr'] = subprocess.DEVNULL
-        return subprocess.run([sys.executable, test_file_out], **kwargs).returncode
+        return subprocess.run([sys.executable, '-m', 'pytest', test_file_out], **kwargs).returncode
     finally:
         shutil.rmtree(workdir)
 
