@@ -5,8 +5,8 @@ def check_sentence_ending(sentence):
     return sentence.endswith(".")
 
 def clean_up_spacing(sentence):
-    new_sentence = sentence.strip()
-    return new_sentence
+    clean_sentence = sentence.strip()
+    return clean_sentence
 
 def replace_word_choice(sentence, new_word, old_word):
     better_sentence = sentence.replace(new_word, old_word)
