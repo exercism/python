@@ -1,5 +1,7 @@
 {
     "files": {
-        "test": ["paasio_test.py", "test_utils.py"]
+        "solution": ["paasio.py"],
+        "test": ["paasio_test.py", "test_utils.py"],
+        "exemplar": [".meta/example.py"]
     }
 }
