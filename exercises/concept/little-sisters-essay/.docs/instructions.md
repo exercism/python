@@ -32,7 +32,7 @@ This function should replace all instances of the `old_word` with the `new_word`
 
 ## 4. Replace words with a synonym
 
-To make the paper even better, you can replace some of the adjectives with synonyms. Write a function `replace_word_choice()` that takes `sentence`, `old_word`, and `new_word` as parameters. This function should replace all instances of the `old_word` with the `new_word` and return the updated sentence. The function should return a `str`.
+To make the paper _even better_, you can replace some of the adjectives with synonyms. Write the function `replace_word_choice()` that takes `sentence`, `old_word`, and `new_word` as parameters. This function should replace all instances of the `old_word` with the `new_word`, and return a new `str` with the updated sentence.
 
 ```python
 >>> replace_word_choice("I bake good cakes.", "good", "amazing")
