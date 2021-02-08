@@ -7,6 +7,7 @@ from test_utils import MockSock, MockFile, MockException, ZEN, SuperMock
 
 from paasio import MeteredFile, MeteredSocket
 
+
 class PaasioTest(unittest.TestCase):
     def test_meteredsocket_context_manager(self):
         wrapped = MockSock()
@@ -34,7 +35,9 @@ class PaasioTest(unittest.TestCase):
                 socket.recv(4096)
         self.assertFalse(mock.__enter__.called)
         mock.__exit__.assert_called_once_with(
-            MockException, err.exception, ANY,
+            MockException,
+            err.exception,
+            ANY,
         )
         self.assertEqual(exception, err.exception)
 
@@ -48,7 +51,9 @@ class PaasioTest(unittest.TestCase):
             socket.recv(4096)
         self.assertFalse(mock.__enter__.called)
         mock.__exit__.assert_called_once_with(
-            MockException, exception, ANY,
+            MockException,
+            exception,
+            ANY,
         )
 
     def test_meteredsocket_recv_once(self):
@@ -220,14 +225,11 @@ class PaasioTest(unittest.TestCase):
         self.assertFalse(mock.__enter__.called)
         mock.__exit__.assert_called_once_with(None, None, None)
         self.assertEqual(2, len(mock.mock_calls))
-        with self.assertRaisesRegex(
-            ValueError, "I/O operation on closed file."
-        ):
+        with self.assertRaisesRegex(ValueError, "I/O operation on closed file."):
             file.read()
-        with self.assertRaisesRegex(
-            ValueError, "I/O operation on closed file."
-        ):
+        with self.assertRaisesRegex(ValueError, "I/O operation on closed file."):
             file.write(b"data")
+
     @patch("paasio.super", create=True, new_callable=SuperMock)
     def test_meteredfile_context_manager_exception_raise(self, super_mock):
         exception = MockException("Should raise")
@@ -241,9 +243,12 @@ class PaasioTest(unittest.TestCase):
                 file.read()
         self.assertFalse(mock.__enter__.called)
         mock.__exit__.assert_called_once_with(
-            MockException, err.exception, ANY,
+            MockException,
+            err.exception,
+            ANY,
         )
         self.assertEqual(exception, err.exception)
+
     @patch("paasio.super", create=True, new_callable=SuperMock)
     def test_meteredfile_context_manager_exception_suppress(self, super_mock):
         exception = MockException("Should suppress")
@@ -256,8 +261,11 @@ class PaasioTest(unittest.TestCase):
             file.read()
         self.assertFalse(mock.__enter__.called)
         mock.__exit__.assert_called_once_with(
-            MockException, exception, ANY,
+            MockException,
+            exception,
+            ANY,
         )
+
     @patch("paasio.super", create=True, new_callable=SuperMock)
     def test_meteredfile_iteration(self, super_mock):
         mock = NonCallableMagicMock(wraps=MockFile(ZEN), autospec=True)
@@ -266,9 +274,7 @@ class PaasioTest(unittest.TestCase):
         file = MeteredFile()
         for line in file:
             actual_reads += line
-            self.assertLess(
-                0, mock.readline.call_count, "File's readline not called"
-            )
+            self.assertLess(0, mock.readline.call_count, "File's readline not called")
             self.assertGreater(
                 50, mock.readline.call_count, "Possible infinte loop detected"
             )
@@ -276,6 +282,7 @@ class PaasioTest(unittest.TestCase):
         self.assertFalse(mock.__iter__.called)
         self.assertEqual(len(ZEN), file.read_bytes)
         self.assertEqual(ZEN, actual_reads)
+
     @patch("paasio.super", create=True, new_callable=SuperMock)
     def test_meteredfile_read_once(self, super_mock):
         mock = NonCallableMagicMock(wraps=MockFile(ZEN), autospec=True)
@@ -302,6 +309,7 @@ class PaasioTest(unittest.TestCase):
         self.assertEqual((len(ZEN)), file.read_bytes)
         self.assertEqual(1, file.read_ops)
         self.assertEqual(mock.read.call_count, file.read_ops)
+
     @patch("paasio.super", create=True, new_callable=SuperMock)
     def test_meteredfile_read_multiple(self, super_mock):
         wrapped = MockFile(ZEN)
@@ -315,6 +323,7 @@ class PaasioTest(unittest.TestCase):
         self.assertEqual(5, file.read_ops)
         self.assertEqual(150, file.read_bytes)
         self.assertEqual(5, mock.read.call_count)
+
     @patch("paasio.super", create=True, new_callable=SuperMock)
     def test_meteredfile_read_multiple_chunk(self, super_mock):
         wrapped = MockFile(ZEN, chunk=20)
@@ -341,6 +350,7 @@ class PaasioTest(unittest.TestCase):
         self.assertEqual(7, file.read_ops)
         self.assertEqual(73, file.read_bytes)
         self.assertEqual(7, mock.read.call_count)
+
     @patch("paasio.super", create=True, new_callable=SuperMock)
     def test_meteredfile_read_under_size(self, super_mock):
         wrapped = MockFile(ZEN, chunk=257)  # largish odd number
@@ -352,6 +362,7 @@ class PaasioTest(unittest.TestCase):
         self.assertEqual(1, file.read_ops)
         self.assertEqual(257, file.read_bytes)
         self.assertEqual(1, mock.read.call_count)
+
     @patch("paasio.super", create=True, new_callable=SuperMock)
     def test_meteredfile_write_once(self, super_mock):
         wrapped = MockFile(chunk=257)  # largish odd number
@@ -364,6 +375,7 @@ class PaasioTest(unittest.TestCase):
         self.assertEqual(1, file.write_ops)
         self.assertEqual(257, file.write_bytes)
         self.assertEqual(1, mock.write.call_count)
+
     @patch("paasio.super", create=True, new_callable=SuperMock)
     def test_meteredfile_write_multiple(self, super_mock):
         wrapped = MockFile()
@@ -381,6 +393,7 @@ class PaasioTest(unittest.TestCase):
         self.assertEqual(4, file.write_ops)
         self.assertEqual(39, file.write_bytes)
         self.assertEqual(4, mock.write.call_count)
+
     @patch("paasio.super", create=True, new_callable=SuperMock)
     def test_meteredfile_write_under_size(self, super_mock):
         wrapped = MockFile(chunk=257)  # largish odd number
@@ -393,6 +406,7 @@ class PaasioTest(unittest.TestCase):
         self.assertEqual(1, file.write_ops)
         self.assertEqual(123, file.write_bytes)
         self.assertEqual(1, mock.write.call_count)
+
     @patch("paasio.super", create=True, new_callable=SuperMock)
     def test_meteredfile_stats_read_only(self, super_mock):
         mock = NonCallableMagicMock(wraps=MockFile(ZEN), autospec=True)
