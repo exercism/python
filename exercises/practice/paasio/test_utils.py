@@ -4,7 +4,6 @@ import io
 import os
 
 
-
 ZEN = b"""Beautiful is better than ugly.
 Explicit is better than implicit.
 Simple is better than complex.
@@ -84,14 +83,10 @@ class MockSock:
         if self.__closed:
             raise OSError(errno.EBADF, os.strerror(errno.EBADF))
         if bufsize is None:
-            raise TypeError(
-                "'NoneType' object cannot be interpreted as an integer"
-            )
+            raise TypeError("'NoneType' object cannot be interpreted as an integer")
         if not isinstance(flags, int):
             raise TypeError(
-                "an integer is required (got type {})".format(
-                    type(flags).__name__
-                )
+                "an integer is required (got type {})".format(type(flags).__name__)
             )
         self.flags = flags
         if self.__exception is not None:
@@ -106,9 +101,7 @@ class MockSock:
             raise OSError(errno.EBADF, os.strerror(errno.EBADF))
         if not isinstance(flags, int):
             raise TypeError(
-                "an integer is required (got type {})".format(
-                    type(flags).__name__
-                )
+                "an integer is required (got type {})".format(type(flags).__name__)
             )
         self.flags = flags
         if self.__chunk is None:
@@ -130,9 +123,7 @@ class SuperMock:
         if frame is None:
             raise RuntimeError("Could not get current frame object")
         stack = inspect.getouterframes(frame)
-        if any(
-            frame[3] == "__init__" and "paasio" in frame[1] for frame in stack
-        ):
+        if any(frame[3] == "__init__" and "paasio" in frame[1] for frame in stack):
             return self
         else:
             return self.mock_object
