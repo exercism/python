@@ -11,7 +11,8 @@ import shutil
 import subprocess
 import sys
 import tempfile
-from data import Config, ExerciseConfig, ExerciseInfo
+from typing import List
+from data import Config, ExerciseConfig, ExerciseInfo, ExerciseStatus
 
 # Allow high-performance tests to be skipped
 ALLOW_SKIP = ['alphametics', 'largest-series-product']
@@ -144,6 +145,8 @@ def get_cli() -> argparse.ArgumentParser:
         print('No runners registered!')
         raise SystemExit(1)
     parser.add_argument('-q', '--quiet', action='store_true')
+    parser.add_argument('--deprecated', action='store_true', help='include deprecated exercises', dest='include_deprecated')
+    parser.add_argument('--wip', action='store_true', help='include WIP exercises', dest='include_wip')
     parser.add_argument('-r', '--runner', choices=runners, default=runners[0])
     parser.add_argument('exercises', nargs='*')
     return parser
@@ -152,7 +155,12 @@ def get_cli() -> argparse.ArgumentParser:
 def main():
     opts = get_cli().parse_args()
     config = Config.load()
-    exercises = config.exercises.all()
+    status_filter = {ExerciseStatus.Active, ExerciseStatus.Beta}
+    if opts.include_deprecated:
+        status_filter.add(ExerciseStatus.Deprecated)
+    if opts.include_wip:
+        status_filter.add(ExerciseStatus.WIP)
+    exercises = config.exercises.all(status_filter)
     if opts.exercises:
         # test specific exercises
         exercises = [
@@ -165,7 +173,7 @@ def main():
         if not_found:
             for slug in not_found:
                 if slug not in exercises:
-                    print(f"unknown exercise '{slug}'")
+                    print(f"unknown or disabled exercise '{slug}'")
             raise SystemExit(1)
 
     print(f'TestEnvironment: {sys.executable.capitalize()}')
