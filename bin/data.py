@@ -1,5 +1,6 @@
 from enum import Enum
 from dataclasses import dataclass, asdict
+from itertools import chain
 import json
 from pathlib import Path
 from typing import List, Any
@@ -151,11 +152,11 @@ class Exercises:
                 ]
             )
 
-    def all(self, include_deprecated=False):
-        _all = self.concept + self.practice
-        if not include_deprecated:
-            _all = [e for e in _all if e.status != ExerciseStatus.Deprecated]
-        return _all
+    def all(self, status_filter={ExerciseStatus.Active, ExerciseStatus.Beta}):
+        return [
+            e for e in chain(self.concept, self.practice)
+            if e.status in status_filter
+        ]
 
 
 @dataclass
