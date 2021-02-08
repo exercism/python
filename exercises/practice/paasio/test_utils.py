@@ -1,11 +1,9 @@
 import errno
 import io
 import inspect
-import logging
 import os
 
 
-LOGGER = logging.getLogger(__name__)
 
 ZEN = b"""Beautiful is better than ugly.
 Explicit is better than implicit.
