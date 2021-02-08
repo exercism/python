@@ -36,6 +36,34 @@ class ExerciseStatus(str, Enum):
 
 
 @dataclass
+class ExerciseFiles:
+    solution: List[str]
+    test: List[str]
+    exemplar: List[str]
+
+
+@dataclass
+class ExerciseConfig:
+    files: ExerciseFiles
+    authors: List[str] = None
+    forked_from: str = None
+    contributors: List[str] = None
+    language_versions: List[str] = None
+
+    def __post_init__(self):
+        if isinstance(self.files, dict):
+            self.files = ExerciseFiles(**self.files)
+        for attr in ['authors', 'contributors', 'language_versions']:
+            if getattr(self, attr) is None:
+                setattr(self, attr, [])
+
+    @classmethod
+    def load(cls, config_file: Path) -> 'ExerciseConfig':
+        with config_file.open() as f:
+            return cls(**json.load(f))
+
+
+@dataclass
 class ExerciseInfo:
     path: Path
     slug: str
@@ -92,6 +120,9 @@ class ExerciseInfo:
     @property
     def config_file(self):
         return self.meta_dir / 'config.json'
+
+    def load_config(self) -> ExerciseConfig:
+        return ExerciseConfig.load(self.config_file)
 
 
 @dataclass
