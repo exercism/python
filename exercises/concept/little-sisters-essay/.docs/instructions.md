@@ -22,7 +22,8 @@ True
 
 ## 3. Clean up spacing
 
-To make the paper _even better_, you can replace some of the adjectives with synonyms. Write the function `replace_word_choice()` that takes `sentence`, `old_word`, and `new_word` as parameters.
+To make the paper look professional, unnecessary spacing needs to be removed. Implement the function `remove_extra_spaces()` which `sentence` as a parameter, and removes extra whitespace at the beginning and at the end of the sentence. 
+This function should return a `str`.
 This function should replace all instances of the `old_word` with the `new_word`, and return a new `str` with the updated sentence.
 
 ```python
