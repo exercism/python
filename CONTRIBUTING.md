@@ -109,7 +109,7 @@ Example solution files serve two purposes:
       "unlocked_by": null,
       "difficulty": 2,
       "topics": null,
-      "deprecated": true
+      "status": "deprecated"
     },
 ```
 

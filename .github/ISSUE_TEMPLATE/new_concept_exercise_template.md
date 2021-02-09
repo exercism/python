@@ -1,4 +1,14 @@
-This issue describes how to implement the `<concept-SLUG>` concept exercise for the python track.
+---
+name: "[ MAINTAINERS ] Implement New Concept Exercise"
+about: Use this template to create an issue for implementing a new concept exericse.
+title: "[V3]: Implement new Concept Exercise: <CONCEPT SLUG>"
+labels: "new exercise :sparkles:",  help wanted
+assignees: ''
+
+---
+
+
+This issue describes how to implement the `<CONCEPT-SLUG>` concept exercise for the python track.
 
 
 
@@ -9,6 +19,8 @@ This issue describes how to implement the `<concept-SLUG>` concept exercise for 
 - [The features of v3](https://github.com/exercism/docs/tree/main/product)
 - [The Anatomy of Exercism](https://github.com/exercism/docs/tree/main/anatomy) & [The Anatomy of a Language Track](https://github.com/exercism/docs/tree/main/anatomy/tracks)
 - [Concepts](https://github.com/exercism/docs/blob/main/anatomy/tracks/concepts.md) & [Concept Exercises](https://github.com/exercism/docs/blob/main/anatomy/tracks/concept-exercises.md)
+- [Exercism Formatting and Style Guide](https://github.com/exercism/docs/blob/main/anatomy/tracks/style-guide.md)
+- [Exercism Markdown Specification](https://github.com/exercism/docs/blob/main/contributing/standards/markdown.md)
 
 
 
@@ -22,65 +34,42 @@ Watching the following video is also helpful. It is a bit outdated, but is good 
 
 This concept exercise is meant to teach an understanding/use of`<concept-SLUG>`.
 
-[Add additional detail here as needed]
+[replace this comment with additional detail for the Goal if needed. Otherwise just delete.]
 
 
 
 ## Learning objectives
 
-[Please list the learning objectives of this concept exercise here.  See the below list for an example.]
-
-
-
------**example** please replace with this exericses' learning objectives. --------
+[_Please list the learning objectives of this concept exercise here.  See the below list for an example.
 
 - understanding (_and using the concept_) that the `==` operator calls the dunder method `__eq__()` on a specific object, and uses that object's implementation for comparison.  Where no implementation is present, the default `__eq__()` from _generic_ `object` is used.
 - the same applies for operators `<`, `<=`, `!=`, `>=`, `>` and correspondents dunder methods `__lt__`, `__le__`, `__ne__`, `__ge__`, `__gt__`
 - overriding the default implementation of the `__eq__()` dunder method on a specific object to customize comparison behavior.
 - overriding the default implementations of the `__lt__`, `__le__`, `__ne__`, `__ge__`, `__gt__` dunder methods on a specific object to customize comparison behavior.
-- return the singleton `NotImplemented` if the called operation is not implemented
-
----------------.--------------------------------------------------------------------------------
+- return the singleton `NotImplemented` if the called operation is not implemented]
 
 
 
-##Out of scope
+## Out of scope
 
-[Please list the concept considerations that will NOT be covered, and are out of scope.  See the below list for an example.]
+[_Please list the concept considerations that will NOT be covered, and are out of scope.  See the below list for an example.
 
-
-
------**example** please replace with this exercises' out of scope list. --------
-
-- performance considerations
-
----------------.--------------------------------------------------------------------------------
-
+- customizaton options
+- performance considerations]
 
 
 ## Concepts
 
-[Please list the concepts/methods that will  be included in the exercise.  See the below list for an example.]
-
-
-
------**example** please replace with this exercises' concepts list. --------
+[_Please list the concepts/methods that will  be included in the exercise.  See the below list for an example.
 
 - `__eq__`, `__lt__`, `__le__`, `__ne__`, `__ge__`, `__gt__` dunder methods
 - comparison behavior customization
-- dunder methods override
-
----------------.--------------------------------------------------------------------------------
-
+- dunder methods override]
 
 
 ## Prerequisites
 
-[Please list the concepts the student needs to complete/understand before solving this exercise.  See the below list for an example.]
-
-
-
------**example** please replace with this exercises' prerequisites list. --------
+[_Please list the concepts the student needs to complete/understand before solving this exercise.  See the below list for an example.
 
 - Method overriding
 - Comparison priority in Python
@@ -93,15 +82,12 @@ This concept exercise is meant to teach an understanding/use of`<concept-SLUG>`.
 - `classes`
 - `numbers`
 - `sequences`
-- `iteration`
-
----------------.--------------------------------------------------------------------------------
-
+- `iteration`]
 
 
 ## Resources to refer to
 
-[Below, list/link to resources that the exercise writer can use or consult in writing the exercise.  This list is a suggestion to get them started writing.]
+[_Below, list/link to resources that the exercise writer can use or consult in writing the exercise.  This list is a suggestion to get them started writing.]
 
 
 
@@ -113,7 +99,7 @@ This concept exercise is meant to teach an understanding/use of`<concept-SLUG>`.
 
 * ### Hints
 
-  ​	For more information on writing hints see [hints](https://github.com/exercism/docs/blob/main/anatomy/tracks/concept-exercises.md#file-docshintsmd)
+  For more information on writing hints see [hints](https://github.com/exercism/docs/blob/main/anatomy/tracks/concept-exercises.md#file-docshintsmd)
 
   * You can refer to one or more of the resources linked above, or analogous resources from a trusted source.  We prefer using links within the  [Python Docs](https://docs.python.org/3/) as the primary go-to, but other resources listed above are also good.
 
@@ -122,14 +108,13 @@ This concept exercise is meant to teach an understanding/use of`<concept-SLUG>`.
 * ### `links.json`
 
   *  The same resources can be used for the [ `concepts/links.json`](https://github.com/exercism/docs/blob/main/anatomy/tracks/concepts.md#file-linksjson)  file, if it doesn't already exist.
-  *  If there are particularly good/interesting informations sources for this concept that extend or supplement the concept exercise material, please add them to this document.
+  *  If there are particularly good/interesting informations sources for this concept that extend or supplement the concept exercise material, please add them to the `links.json` document.
 
 
 
 ## Concept Description
 
-[Link to the concept `about.md` file in the Concept section below.  If the file still needs to be written, please link to the **GitHub issue** filed for the concept `about.md` file.]
-
+[_Link to the concept `about.md` file in the Concept section below.  If the file still needs to be written, please link to the **GitHub issue** filed for the concept `about.md` file._]
 
 
 Please see the following for more details on these files:  [concepts](https://github.com/exercism/docs/blob/main/anatomy/tracks/concepts.md#file-linksjson)
@@ -142,23 +127,29 @@ Please see the following for more details on these files:  [concepts](https://gi
 
   For more information, see [Exercise `introduction.md`](https://github.com/exercism/docs/blob/main/anatomy/tracks/concept-exercises.md#file-docsintroductionmd)
 
-​           This should summarize  the above document, with  enough information for the student to complete the tasks in the concept exercise.
+  * This should summarize  the above document, with  enough information for the student to complete the tasks in the concept exercise.
 
 * ### Concept `introduction.md`
 
   For more information, see [Concept `introduction.md`](https://github.com/exercism/docs/blob/main/anatomy/tracks/concepts.md#file-introductionmd)
 
-​         This should also be a summary of the above document, and will provide a brief introduction of the concept for a student who has **not yet** completed the concept exercise.
+  * This should also be a summary of the above document, and will provide a brief introduction of the concept for a student who has **not yet** completed the concept exercise.
 
 
+## Test-runner
+[_note any specialized files or changes needed to support the tests for this concept_]
+
+No changes required.
 
 ## Representer
+[_note any specalized files, actions or changes needed to support representations of possilbe solutions for this concept_]
 
 No changes required.
 
 
 
 ## Analyzer
+[_not any specalized comments, files, actions or changes needed to support the analysis of solutions for this concept_]
 
 No changes required.
 
@@ -181,7 +172,6 @@ one of these tools can be used, or you can use your favorite method of generatin
 
 
 ## Implementation Notes
-
 
 
 Code in the `.meta/examplar.py` file should **only use syntax & concepts introduced in this exercise or one of its prerequisite exercises.**

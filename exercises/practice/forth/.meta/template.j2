@@ -2,8 +2,8 @@
 {% set imports = ["evaluate", "StackUnderflowError"] %}
 {{ macros.header(imports=imports, ignore=ignore) }}
 
-{% macro test_case(case) -%}
-    def test_{{ case["description"] | to_snake }}(self):
+{% macro test_case(group, case) -%}
+    def test_{{ group | to_snake }}_{{ case["description"] | to_snake }}(self):
         {%- if case is error_case %}
         {%- if case["expected"]["error"] == "divide by zero" %}
         # {{ case["expected"]["error"] }}
@@ -21,17 +21,10 @@
         {%- endif %}
 {%- endmacro %}
 
-{%- macro superclass() -%}
-    {{ exercise | camel_case }}Test
-{%- endmacro -%}
-
-class {{ superclass() }}(unittest.TestCase):
-    {{ macros.utility() }}
-
-{% for case in cases -%}
-class {{ case["description"] | camel_case }}Test({{ superclass() }}):
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+{% for case in cases %}
     {% for subcase in case["cases"] -%}
-    {{ test_case(subcase) }}
+    {{ test_case(case["description"], subcase) }}
     {% endfor %}
 {% endfor %}
 

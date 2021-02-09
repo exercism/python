@@ -1,9 +1,9 @@
 import unittest
-from numbers import *
+from exchange import *
 
 
 class TestNumbers(unittest.TestCase):
-    
+
     # Problem 1
     def test_estimate_value(self):
         input_data = [
@@ -68,7 +68,7 @@ class TestNumbers(unittest.TestCase):
         for input, output in zip(input_data, output_data):
             with self.subTest(input=input, output=output):
                 self.assertEqual(exchangeable_value(input[0], input[1], input[2], input[3]), output)
-        
+
     # Problem 6
     def test_unexchangeable_value(self):
 
@@ -87,5 +87,3 @@ class TestNumbers(unittest.TestCase):
         for input, output in zip(input_data, output_data):
             with self.subTest(input=input, output=output):
                 self.assertEqual(unexchangeable_value(input[0], input[1], input[2], input[3]), output)
-
-    

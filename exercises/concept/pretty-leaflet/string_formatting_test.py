@@ -2,7 +2,7 @@ import unittest
 from string_formatting import Leaflet
 
 
-class test_string_formatting(unittest.TestCase):
+class TestStringFormatting(unittest.TestCase):
     def test_header(self):
         self.assertEqual(Leaflet('', [], []).header, '',
                          msg="Expected an empty header, "
