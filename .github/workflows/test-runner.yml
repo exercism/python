@@ -1,0 +1,15 @@
+name: Test Runner
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test-runner:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run test-runner
+        run: docker-compose run test-runner
