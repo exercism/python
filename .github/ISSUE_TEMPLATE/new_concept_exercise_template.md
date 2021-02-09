@@ -38,11 +38,10 @@ This concept exercise is meant to teach an understanding/use of`<concept-SLUG>`.
 
 ## Learning objectives
 
-[_Please list the learning objectives of this concept exercise here.  See the below list for an example._]
+[_Please list the learning objectives of this concept exercise here.  See the below for an example.]
 
 
-
------**example** replace with this exericses' learning objectives. --------
+`replace the list below with this exericses' learning objectives.`
 
 - understanding (_and using the concept_) that the `==` operator calls the dunder method `__eq__()` on a specific object, and uses that object's implementation for comparison.  Where no implementation is present, the default `__eq__()` from _generic_ `object` is used.
 - the same applies for operators `<`, `<=`, `!=`, `>=`, `>` and correspondents dunder methods `__lt__`, `__le__`, `__ne__`, `__ge__`, `__gt__`
@@ -50,21 +49,20 @@ This concept exercise is meant to teach an understanding/use of`<concept-SLUG>`.
 - overriding the default implementations of the `__lt__`, `__le__`, `__ne__`, `__ge__`, `__gt__` dunder methods on a specific object to customize comparison behavior.
 - return the singleton `NotImplemented` if the called operation is not implemented
 
----------------.--------------------------------------------------------------------------------
 
 
 
-##Out of scope
+## Out of scope
 
 [_Please list the concept considerations that will NOT be covered, and are out of scope.  See the below list for an example._]
 
 
 
------**example** please replace with this exercises' out of scope list. --------
+`replace the list below with this exercises' out of scope list.`
 
 - performance considerations
+- cutomiztion options
 
----------------.--------------------------------------------------------------------------------
 
 
 
@@ -74,13 +72,11 @@ This concept exercise is meant to teach an understanding/use of`<concept-SLUG>`.
 
 
 
------**example** please replace with this exercises' concepts list. --------
+`replace the list below with this exercises' concepts list.`
 
 - `__eq__`, `__lt__`, `__le__`, `__ne__`, `__ge__`, `__gt__` dunder methods
 - comparison behavior customization
 - dunder methods override
-
----------------.--------------------------------------------------------------------------------
 
 
 
@@ -90,7 +86,7 @@ This concept exercise is meant to teach an understanding/use of`<concept-SLUG>`.
 
 
 
------**example** please replace with this exercises' prerequisites list. --------
+`replace the list below with this exercises' prerequisites list.`
 
 - Method overriding
 - Comparison priority in Python
@@ -104,8 +100,6 @@ This concept exercise is meant to teach an understanding/use of`<concept-SLUG>`.
 - `numbers`
 - `sequences`
 - `iteration`
-
----------------.--------------------------------------------------------------------------------
 
 
 
@@ -125,7 +119,7 @@ This concept exercise is meant to teach an understanding/use of`<concept-SLUG>`.
 
   ​	For more information on writing hints see [hints](https://github.com/exercism/docs/blob/main/anatomy/tracks/concept-exercises.md#file-docshintsmd)
 
-  * You can refer to one or more of the resources linked above, or analogous resources from a trusted source.  We prefer using links within the  [Python Docs](https://docs.python.org/3/) as the primary go-to, but other resources listed above are also good.
+  * You can refer to one or more of the resources linked in the section above, or analogous resources from a trusted source.  We prefer using links within the  [Python Docs](https://docs.python.org/3/) as the primary go-to, but other resources listed above are also good.
 
 
 
@@ -166,18 +160,17 @@ Please see the following for more details on these files:  [concepts](https://gi
 
 No changes required.
 
+
 ## Representer
 [_note any specalized files, actions or changes needed to support representations of possilbe solutions for this concept_]
 
 No changes required.
 
 
-
 ## Analyzer
 [_not any specalized comments, files, actions or changes needed to support the analysis of solutions for this concept_]
 
 No changes required.
-
 
 
 ## Exercise UUID
