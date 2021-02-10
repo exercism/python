@@ -22,9 +22,8 @@ True
 
 ## 3. Clean up spacing
 
-To make the paper look professional, unnecessary spacing needs to be removed. Implement the function `remove_extra_spaces()` which `sentence` as a parameter, and removes extra whitespace at the beginning and at the end of the sentence. 
-This function should return a `str`.
-This function should replace all instances of the `old_word` with the `new_word`, and return a new `str` with the updated sentence.
+To make the paper look professional, unnecessary spacing needs to be removed.
+Implement the function `remove_extra_spaces()` which `sentence` as a parameter, that removes extra whitespace at the beginning and the end of the sentence, and return a new `str` with the updated sentence.
 
 ```python
 >>> remove_extra_spaces(" I like to go on hikes with my dog.  ")
@@ -33,7 +32,8 @@ This function should replace all instances of the `old_word` with the `new_word`
 
 ## 4. Replace words with a synonym
 
-To make the paper _even better_, you can replace some of the adjectives with synonyms. Write the function `replace_word_choice()` that takes `sentence`, `old_word`, and `new_word` as parameters. This function should replace all instances of the `old_word` with the `new_word`, and return a new `str` with the updated sentence.
+To make the paper _even better_, you can replace some of the adjectives with synonyms. Write the function `replace_word_choice()` that takes `sentence`, `old_word`, and `new_word` as parameters.
+This function should replace all instances of the `old_word` with the `new_word`, and return a new `str` with the updated sentence.
 
 ```python
 >>> replace_word_choice("I bake good cakes.", "good", "amazing")
