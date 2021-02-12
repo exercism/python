@@ -1,3 +1,15 @@
+:wave: Thank you for your interest in contributing to the exercism Python track!  
+
+:warning: **Please Note** :warning:
+
+We are currently in the middle of re-arranging and re-configuring  our track for exercism V3. 
+
+We're **super-excited** :tada: :rocket: -- _and we really want you to be involved!_ -- but all that inital configuration work means **our maintainers can't accept unsolicited contributions at this time.**
+
+Please check our [issue list](https://github.com/exercism/python/labels/help%20wanted) for tasks we've flagged as `[help wanted]`  -- _and check back_ -- we'll be adding (_many more!_) tasks with that flag in the coming weeks as we update our documentation and identify exercises, documents, and bugs that need to be worked on before our V3 launch.
+
+---
+
 # Exercism Python Track
 
 [![Build Status](https://github.com/exercism/python/workflows/Exercises%20check/badge.svg)](https://github.com/exercism/python/actions?query=workflow%3A%22Exercises+check%22)
@@ -5,15 +17,6 @@
 
 Exercism exercises in Python  
 
-:wave: Thank you for your interest in contributing to the exercism Python track!  
-
-:warning: **Please Note** :warning:
-
-We are currently in the middle of re-arranging and re-configuring  our track for exercism V3. 
-
-We're **super-excited** :tada: :rocket: -- _and we really want you to be involved!_ -- but all that inital configuration work means our maintainers can't accept unsolicited contributions at this time.
-
-Please check our [issue list](https://github.com/exercism/python/labels/help%20wanted) for tasks we've flagged as `[help wanted]`  -- _and check back_ -- we'll be adding (_many more!_) tasks with that flag in the coming weeks as we update our documentation and identify exercises, documents, and bugs that need to be worked on before our V3 launch.
 
 ## Contributing Guide
 
