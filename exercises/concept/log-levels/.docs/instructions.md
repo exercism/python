@@ -1,3 +1,5 @@
+# Instructions
+
 In this exercise, you'll be processing log messages with six severity levels.
 
 Each log line is a string formatted as follows: `"[<LVL>]: <MESSAGE>"`.

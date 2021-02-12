@@ -1,4 +1,4 @@
-## String Methods in Python
+# String Methods in Python
 
 A string (`str`) in Python is a sequence of Unicode code points which
 include letters, numbers, symbols, punctuation, etc. Strings

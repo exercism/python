@@ -1,3 +1,5 @@
+# Instructions
+
 Your friend Chandler plans to visit exotic countries all around the world. Sadly, Chandler's math skills aren't good. He's pretty worried about being scammed with currency exchange during his trip - and he wants you to make a currency calculator for him. Here's his specification for the app:
 
 ## 1. Estimate value after exchange

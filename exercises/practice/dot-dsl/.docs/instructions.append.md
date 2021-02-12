@@ -1,4 +1,4 @@
-## Description of DSL
+# Description of DSL
 
 A graph, in this DSL, is an object of type `Graph`, taking a list of one 
 or more

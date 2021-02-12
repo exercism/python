@@ -1,4 +1,4 @@
-## string-formatting
+# string-formatting
 
 The Python `str` built-in can be initialized using two robust string formatting methods : `f-strings` and `str.format()`. String interpolation with `f'{variable}'` is preferred because it is an easily read, complete, and very fast module. When an internationalization-friendly or more flexible approach is needed, `str.format()` allows creating almost all the other `str` variations you might need.
 

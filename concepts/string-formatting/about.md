@@ -1,3 +1,5 @@
+# About
+
 ## String Formatting in Python
 
 The [Zen of Python][zen-of-python] asserts there should be "one _obvious_ way to do something in Python". But when it comes to string formatting, things are a little .... _less zen_. It can be surprising to find out that there are **four** main ways to perform string formatting in Python - each for a different scenario.

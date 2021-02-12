@@ -1,4 +1,4 @@
-## Should I use random or secrets?
+# Should I use random or secrets?
 
 Python, as of version 3.6, includes two different random modules.
 

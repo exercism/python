@@ -1,3 +1,5 @@
+# Hints
+
 ## General
 
 ## 1. Creating a List

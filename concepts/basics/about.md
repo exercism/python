@@ -1,4 +1,4 @@
-## basics
+# basics
 
 [Python][python docs] is a [dynamic and strongly][dynamic typing in python] typed [object-oriented][object oriented programming] programming language. It employs both [duck typing][duck typing] and [gradual typing][gradual typing], via [type hints][type hints]. It supports multiple programming paradigms including both imperative (_object-oriented, procedural_) and declarative (_functional, concurrent_) flavors. But do not be fooled: while programming across paradigms is fully _supported_, [everything in Python is an object][everythings an object].
 

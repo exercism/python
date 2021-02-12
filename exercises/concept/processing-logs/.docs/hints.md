@@ -1,3 +1,5 @@
+# Hints
+
 ## General
 
 - The [Python documentation for `str`][python-str-doc] has an overview of the Python `str` type.

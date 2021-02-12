@@ -1,3 +1,5 @@
+# Hints
+
 ## General
 
 - [The Python Tutorial](https://docs.python.org/3/tutorial/introduction.html) can be a great introduction.

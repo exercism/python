@@ -1,4 +1,4 @@
-## Notes regarding the implementation of `smallest` and `largest`:
+# Notes regarding the implementation of `smallest` and `largest`:
 
 Both functions must take two keyword arguments:
 - `max_factor`: int

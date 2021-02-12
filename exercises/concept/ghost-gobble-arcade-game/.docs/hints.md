@@ -1,3 +1,5 @@
+# Hints
+
 ## General
 
 - Don't worry about how the arguments are derived, just focus on combining the arguments to return the intended result.

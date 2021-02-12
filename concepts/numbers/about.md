@@ -1,3 +1,5 @@
+# About
+
 Python has three different types of built-in numbers: integers ([`int`][int]), floating-point ([`float`][float]), and complex ([`complex`][complex]). Fractions ([`fractions.Fraction`][fractions]) and Decimals ([`decimal.Decimal`][decimals]) are also available via import from the standard library.
 
 Whole numbers (_including hex, octals and binary numbers_) **without** decimal places are identified as `ints`:

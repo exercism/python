@@ -1,3 +1,5 @@
+# Hints
+
 ## General
 
 - [Introduction to string methods in Python][string-method-docs]

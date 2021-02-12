@@ -1,3 +1,5 @@
+# Instructions append
+
 In this exercise you're going to create a **class**.  _Don't worry, it's not as complicated as you think!_ 
 
 -   [**A First Look at Classes**](https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes) from the Python 3 documentation. 

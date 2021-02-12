@@ -1,3 +1,5 @@
+# Tests
+
 ## Installing `pytest`
 
 We recommend you install [pytest](http://pytest.org/en/latest/) and

@@ -1,3 +1,5 @@
+# After
+
 All variables that are assigned `None` point to the same object. New instances of `None` are not created, that is `None` by nature is of type Singleton.
 
 Example, when you assign 2 variables with `None`, both point to the same object.

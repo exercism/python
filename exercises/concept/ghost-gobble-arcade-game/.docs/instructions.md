@@ -1,3 +1,5 @@
+# Instructions
+
 In this exercise, you need to implement some rules from [Pac-Man, the classic arcade-game](https://en.wikipedia.org/wiki/Pac-Man).
 
 You have four rules to implement, all related to the game states.

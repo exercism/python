@@ -1,3 +1,5 @@
+# Hints
+
 ## General
 
 - Make sure you are comfortable with using the `in` concept while looping through in for loops.

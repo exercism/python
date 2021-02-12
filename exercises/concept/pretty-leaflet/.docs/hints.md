@@ -1,3 +1,5 @@
+# Hints
+
 ## General
 
 Use only f-strings or the `format()` method to build a leaflet containing basic information about an event.

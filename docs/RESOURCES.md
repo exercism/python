@@ -1,4 +1,4 @@
-## Recommended learning resources
+# Recommended learning resources
 
 * [The Python Tutorial](https://docs.python.org/3/tutorial/)
 * [Learn Python The Hard Way](http://learnpythonthehardway.org/book/)
