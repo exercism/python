@@ -88,7 +88,7 @@ Appending `j` or `J` to a number creates an _imaginary number_ -- a `complex` nu
 (3.5+4j)
 ```
 
-### Arithmetic
+## Arithmetic
 
 Python fully supports arithmetic between these different number types, and will convert narrower numbers to match their less narrow counterparts when used with the binary arithmetic operators (`+`, `-`, `*`, `/`, `//`, and `%`).
 
@@ -124,7 +124,7 @@ True
 
 All numbers (except complex) support all [arithmetic operations][arethmetic-operations], evaluated according to [operator precedence][operator precedence]. Support for mathematical functions (beyond `+`, `-`, `/`) for complex numbers can be found in the [cmath][cmath] module.
 
-### Precision & Representation
+## Precision & Representation
 
 Integers in Python have [arbitrary precision](https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic) -- the amount of digits is limited only by the available memory of the host system.
 
