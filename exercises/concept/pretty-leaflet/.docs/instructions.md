@@ -1,3 +1,5 @@
+# Instructions
+
 Your acquaintance Erin needs to print thousands of handbills for multiple events and they need your help! They've asked you to create the layout for a leaflet containing a header, an optional date, and a list of artists -- each associated with a _unicode icon_. The goal is to `print` and distribute your cool new leaflet design - and you'll need all your Python string formatting skills to succeed.
 
 ## 1. Create the class with a capitalized header

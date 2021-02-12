@@ -1,3 +1,5 @@
+# Hints
+
 ## General
 
 - [The Python Dictionary Tutorial](https://docs.python.org/3/tutorial/datastructures.html#dictionaries) can be a great introduction.

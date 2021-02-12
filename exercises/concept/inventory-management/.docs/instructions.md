@@ -1,3 +1,5 @@
+# Instructions
+
 In this exercise, you will be managing an inventory system.
 
 The inventory should be organized by the item name and it should keep track of the number of items available.

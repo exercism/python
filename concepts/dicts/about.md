@@ -1,3 +1,5 @@
+# About
+
 A dictionary in Python is a data structure that associates [hashable][term-hashable] _keys_ to _values_ and can be known in other programming languages as a [hash table or hashmap][hashtable-wikipedia]. In Python, it's considered a [mapping type][mapping-types-dict]. `dicts` enable the retrieval of a value in constant time, given the key.
 
 Compared to searching for a value within a list or array (_without knowing the index position_), a dictionary uses significantly more memory, but has very rapid retrieval. It's especially useful in scenarios where the collection is large and must be accessed frequently.

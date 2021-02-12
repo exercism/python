@@ -1,3 +1,5 @@
+# About
+
 Pythons `str` (_string_) type can be very powerful. At its core, a `str` is an immutable [text sequence][text sequence] of [Unicode code points][unicode code points]. There is no separate "character" or "rune" type in Python.
 
 Like any [sequence type][sequence type], code points within a `str` can be referenced by 0-based index number and can be copied in whole or in part via _slice notation_. Since there is no separate “character” type, indexing a string produces a new `str` of length 1:

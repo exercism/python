@@ -1,3 +1,5 @@
+# Tools
+
 ## Visual Studio on Windows
 
 Follow the installation instructions for [Python Tools for Visual Studio](https://pytools.codeplex.com/wikipage?title=PTVS%20Installation)

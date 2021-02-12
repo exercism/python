@@ -1,3 +1,5 @@
+# Design
+
 ## Goal
 
 The goal of this exercise is to teach the student how Enums ([Enumerations](https://en.wikipedia.org/wiki/Enumerated_type)) are implemented & used in Python. We will teach this through Pythons Enum class/type.

@@ -1,4 +1,4 @@
-## Installing Python
+# Installing Python
 
 If Python isn't already available on your system follow the instructions at [the Hitchhiker's Guide to Python](http://docs.python-guide.org/en/latest/starting/installation/) to install Python on your computer.
 

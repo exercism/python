@@ -1,3 +1,5 @@
+# Introduction
+
 In Python, a [set](https://docs.python.org/3/library/stdtypes.html#set) is an _unordered_ collection of distinct _hashable_ objects. Like most collections, sets can hold any (or multiple) data type(s) -- as long as those types can be [hashed](https://docs.python.org/3.7/glossary.html#term-hashable). Sets come in two flavors: _mutable_ (`set`) and _immutable_ (`frozenset`).
 
 Sets are most commonly used to remove duplicates from sequences, test for membership (_finding supersets & subsets_), and performing "set math" (_union, intersection, difference & symmetric difference_).

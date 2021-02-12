@@ -1,3 +1,5 @@
+# Instructions
+
 The exercise has 6 challenges to complete.
 
 You are the Maître D' of a hotel restaurant. Your task is to manage the seating arrangements for the dining room according to the number of seats available today, number of reservations, and the "walk in" guests currently waiting to be seated. For the purposes of this exercise, seating is assigned by first available empty seat.

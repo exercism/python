@@ -1,3 +1,5 @@
+# Instructions
+
 ## Instructions
 
 As a magician-to-be, Elyse needs to practice some basics. She has a stack of cards that she wants to manipulate. In this exercise, we'll use lists to help Elyse perform her card tricks.

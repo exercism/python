@@ -1,3 +1,5 @@
+# Learning
+
 ## Learning Python From Scratch
 Python is, as Wikipedia goes, a powerful *general-purpose high-level programming language*. It basically means that it can be used to write a wide variety of different kinds of software, from videogames to HTTP servers to command-line tools.
 

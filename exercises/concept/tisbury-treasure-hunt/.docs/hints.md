@@ -1,3 +1,5 @@
+# Hints
+
 ## General
 
 - [Tuples](https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences) are immutable.

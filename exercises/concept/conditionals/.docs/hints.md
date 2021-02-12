@@ -1,1 +1,1 @@
-## placeholder text for hints.md
+# placeholder text for hints.md

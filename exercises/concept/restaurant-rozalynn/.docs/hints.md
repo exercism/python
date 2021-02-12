@@ -1,3 +1,5 @@
+# Hints
+
 ## General
 
 - In Python, `None` is frequently used as a placeholder to represent the **absence of a value** for a variable, object, or argument.
