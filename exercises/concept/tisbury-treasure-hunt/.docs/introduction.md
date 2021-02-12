@@ -6,7 +6,7 @@ In Python, a [tuple](https://docs.python.org/3/library/stdtypes.html#tuple) is a
 
 Tuples can be formed in multiple ways, using either the `tuple` class constructor or the `tuple` literal declaration.
 
-#### Using the `tuple()` constructor:
+### Using the `tuple()` constructor:
 
 ```python
 #elements are iterated through and added to the tuple in order
@@ -17,7 +17,7 @@ Tuples can be formed in multiple ways, using either the `tuple` class constructo
 ("Parrot", "Bird", 334782)
 ```
 
-#### Declaring a tuple _literal_ :
+### Declaring a tuple _literal_ :
 
 ```python
 >>> elements_separated_with_commas = "Parrot", "Bird", 334782

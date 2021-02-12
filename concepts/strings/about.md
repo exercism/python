@@ -41,7 +41,7 @@ For a deep dive on what information a string encodes (or, _"how does the compute
 
 Strings can be transformed by [various methods][str-methods], split into code points via [`.split()`][str-split], or joined together into larger strings via [`.join()`][str-join] or `+`. Due to their _immutability_, any transformations applied to strings return new `str` objects.
 
-### Construction
+## Construction
 
 The simplest way to create a `str` literal is by delimiting it with `"` or `'`. Strings can also be written across multiple lines by using triple quotes (`"""` or `'''`) .
 
@@ -91,11 +91,11 @@ Finally, the [`str()` constructor][str-constructor] can be used to create/coerce
 'hen egg rooster'
 ```
 
-### Formatting
+## Formatting
 
 Python provides a rich set of tools for [formatting][str-formatting] and [templating][template-strings] strings, as well as more sophisticated text processing through the [re (_regular expressions_)][re], [difflib (_sequence comparison_)][difflib], and [textwrap][textwrap] modules. For a great introduction to string formatting in Python, see [this post at Real Python][real python string formatting]. For more details on string methods, see [Strings and Character Data in Python][strings and characters] at the same site.
 
-### Related types and encodings
+## Related types and encodings
 
 In addition to `str` (a _text_ sequence), Python has corresponding [binary sequence types][binary sequence types] summarized under [binary data services][binary data services] -- `bytes` (a _binary_ sequence), `bytearray`, and `memoryview` for the efficient storage and handling of binary data. Additionally, [Streams][streams] allow sending and receiving binary data over a network connection without using callbacks.
 

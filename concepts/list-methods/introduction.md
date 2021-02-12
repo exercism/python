@@ -8,7 +8,7 @@ Python also provides some additional [methods][list-methods] for working with li
 
 Keep in mind that when you manipulate a list with a list-method, **you alter the list** object that has been passed. If you do not wish to mutate your original `list`, you will need to make a copy of it via slice or `.copy()`.
 
-### Adding Items
+## Adding Items
 
 If you want to add an item to the end of an existing list, use `list.append()`:
 
@@ -53,7 +53,7 @@ If you have an iterable that you would like to _combine_ with your current list 
 [1, 2, 3, 5, 6, 7, 8, 9]
 ```
 
-### Removing Items
+## Removing Items
 
 To delete an item from a list use `list.remove()`, passing the item to be removed as an argument. `list.remove()` will throw a `ValueError` if the item is not present in the list.
 
@@ -97,7 +97,7 @@ If you want to remove all items from a `list`, use `list.clear()`. It does not t
 []
 ```
 
-### Reversing and reordering
+## Reversing and reordering
 
 You can reverse the order of a list with the `list.reverse()` method.
 
@@ -130,7 +130,7 @@ If you want the sort to be in descending order, pass the `reverse=True` argument
 
 For cases where sorting the original list is undesirable, the built-in [`sorted()`][sorted] can be used to return a new, sorted copy of your original list.
 
-### Occurrences of an item in a list
+## Occurrences of an item in a list
 
 You can find the number of occurrences of an element in a list with the help of `list.count()`. It takes the item you need to tally as its argument and returns the total number of times it appears on the list.
 
@@ -140,7 +140,7 @@ You can find the number of occurrences of an element in a list with the help of 
 3
 ```
 
-### Finding the index of items
+## Finding the index of items
 
 `list.index()` will return the index number of the _first occurrence_ of an item passed in. If there are no occurrences, a `ValueError` is raised. If you don't need the exact position of an item and are only checking that it is present inside the list, the built-in `in` operator is more efficient.
 
@@ -164,7 +164,7 @@ You can also provide `start` and `end` indices to search within a specific secti
 3
 ```
 
-### Making Copies
+## Making Copies
 
 Remember that variables in Python are labels that point to underlying objects.
 

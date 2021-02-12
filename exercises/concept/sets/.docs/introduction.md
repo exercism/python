@@ -10,7 +10,7 @@ Like other collection types such as `dict`, `list`, & `tuple`, `sets` support me
 
 Sets can be formed multiple ways, using either the `set` class constructor or the `set` literal declaration.
 
-#### Using the `set()` constructor:
+### Using the `set()` constructor:
 
 ```python
 #elements are iterated through and added to the set.  Sets are unordered, duplicates are not allowed.
@@ -21,7 +21,7 @@ Sets can be formed multiple ways, using either the `set` class constructor or th
 {'Seagull', 'Kingfisher', 'Pelican', 'Parrot'}
 ```
 
-#### Declaring a set _literal_ via `{}``:
+### Declaring a set _literal_ via `{}``:
 
 ```python
 #Because sets use the same {} as dictionaries, you cannot declare an empty set with {}
