@@ -20,7 +20,7 @@ Exercism exercises in Python
 
 ## Contributing Guide
 
-Our WIP V3 documenatation can be found here:  [exercism V3](https://github.com/exercism/docs).
+Our WIP V3 documentation can be found here:  [exercism V3](https://github.com/exercism/docs).
 
 
 ### Testing
