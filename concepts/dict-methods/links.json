@@ -1,0 +1,46 @@
+[
+  {
+    "url": "https://docs.python.org/3/glossary.html#term-hashable",
+    "description": "What is hashable?"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Hash_table",
+    "description": "What is a hashtable?"
+  },
+  {
+    "url": "https://docs.python.org/3/library/stdtypes.html#mapping-types-dict",
+    "description": "Pythons mapping type."
+  },
+  {
+    "url": "https://docs.python.org/3/tutorial/datastructures.html#dictionaries",
+    "description": "Python Tutorial: dictionaries"
+  },
+  {
+    "url": "https://realpython.com/python-dicts/",
+    "description": "Real Python: Dictionaries in Python."
+  },
+  {
+    "url": "https://docs.python.org/3/library/stdtypes.html#dict.fromkeys",
+    "description": "Classmethod fromkeys"
+  },
+  {
+    "url": "https://docs.python.org/3/library/collections.html",
+    "description": "Python Collections Module."
+  },
+  {
+    "url": "https://docs.python.org/3/library/stdtypes.html#dict-views",
+    "description": "dict views"
+  },
+  {
+    "url": "https://blog.finxter.com/python-dictionary",
+    "description": "Python Dictionary - The Ultimate Guide"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=lyDLAutA88s",
+    "description": "David Beazley: PyData Keynote - Built in Super Heroes"
+  },
+  {
+    "url": "https://docs.python.org/3/howto/sorting.html",
+    "description": "The Python Docs Sorting How-to."
+  }
+]
