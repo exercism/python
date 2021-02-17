@@ -194,6 +194,14 @@ class Feature:
 
 
 @dataclass
+class FilePatterns:
+    solution: List[str]
+    test: List[str]
+    example: List[str]
+    exemplar: List[str]
+
+
+@dataclass
 class Config:
     language: str
     slug: str
@@ -206,6 +214,7 @@ class Config:
     concepts: List[Concept]
     key_features: List[Feature] = None
     tags: List[Any] = None
+    files: FilePatterns = None
 
     def __post_init__(self):
         if isinstance(self.status, dict):
@@ -214,6 +223,8 @@ class Config:
             self.online_editor = EditorSettings(**self.online_editor)
         if isinstance(self.exercises, dict):
             self.exercises = Exercises(**self.exercises)
+        if isinstance(self.files, dict):
+            self.files = FilePatterns(**self.files)
         self.concepts = [
             (Concept(**c) if isinstance(c, dict) else c) for c in self.concepts
         ]
