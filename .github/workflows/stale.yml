@@ -13,7 +13,13 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           days-before-stale: 21
           days-before-close: 7
-          exempt-issue-labels: 'discussion,pinned 📌,epic,enhancement 🦄 ⭐,beginner friendly 🐥,maintainer action required ❕'
+
+          # Milestones on an issue or a PR exempted from being marked as stale.
+          exempt-milestones: true
+          # Exempt all issues with milestones from being marked as stale.
+          exempt-all-issue-milestones: true
+
+          exempt-issue-labels: 'discussion 💬,pinned 📌,enhancement 🦄 ⭐,beginner friendly 🐥,maintainer action required ❕'
           stale-issue-label: abandoned 🏚
           stale-issue-message: >
             This issue has been automatically marked as `abandoned 🏚`
