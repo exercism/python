@@ -1,0 +1,127 @@
+- name: abandoned 🏚️
+  description: null
+  color: cfcdaa
+- name: bug 🐛
+  description: null
+  color: b60205
+- name: chore 🔧
+  description: null
+  color: 293028
+- name: claimed 🐾
+  description: For new exercises being written by contributors and maintainers.
+  color: fff034
+- name: dependencies
+  description: Pull requests that update a dependency file
+  color: 257fe3
+- name: discussion 💬
+  description: null
+  color: 257fe3
+- name: do not merge 🚧
+  description: Don't merge until this label is removed.
+  color: fbca04
+- name: documentation 📚
+  description: null
+  color: 257fe3
+- name: duplicate
+  description: null
+  color: e6e6e6
+- name: enhancement 🦄⭐
+  description: Changing current behaviour or enhancing/adding to what's already there.
+  color: b5f7ff
+- name: experimental 🔬
+  description: Speculative functionality or implementation
+  color: ffffff
+- name: first-timers only 🐣
+  description: Issues reserved for first contributions.
+  color: 000000
+- name: good first issue
+  description: Good issue for a new contributor to this project/repo.
+  color: bed643
+- name: good first patch
+  description: Good fix/patch for a new contributor to this project/repo.
+  color: bed643
+- name: ❔question❔
+  description: I have a proposal or question about things, but nothing is broken.
+  color: 293028
+- name: hacktoberfest-accepted ☑️
+  description: null
+  color: f5a623
+- name: hacktoberfest 🍁
+  description: null
+  color: fef2c0
+- name: help wanted
+  description: We'd like your help with this.
+  color: bd10e0
+- name: improve documentation 💖
+  description: specific improvements to documentation on the track, the exercises, or the
+    repo.
+  color: ffffff
+- name: improve exercise 💖
+  description: null
+  color: ffffff
+- name: improve reference docs 💖
+  description: for issues with links, introductions, or about docs for concepts
+  color: ffffff
+- name: improve test case 💖
+  description: improve test case(s) for an exercise
+  color: ffffff
+- name: in-progress 🌿
+  description: null
+  color: ffffff
+- name: invalid
+  description: null
+  color: e6e6e6
+- name: maintainer action required❕
+  description: A maintainer needs to take action on this.
+  color: b60205
+- name: maintainer chore 🔧
+  description: null
+  color: 000000
+- name: new documentation ✨
+  description: null
+  color: 5331b5
+- name: new exercise ✨
+  description: null
+  color: 5331b5
+- name: new reference doc ✨
+  description: null
+  color: 5331b5
+- name: new test case ✨
+  description: null
+  color: 5331b5
+- name: on hold ✋
+  description: Action should stop on this issue or PR for now.
+  color: fef2c0
+- name: pinned 📌
+  description: Do no mark stale or invalid.
+  color: ffd141
+- name: please review 👀
+  description: null
+  color: 257fe3
+- name: spam 🚫
+  description: This is a spam/nusace issue or PR.
+  color: ffffff
+- name: security 🚨
+  description: Security issue or patch.
+  color: ffffff
+- name: status/draft
+  description: This is in draft and open for comment/suggestion.
+  color: dea3ea
+- name: status/wontfix 🙅🏽‍️
+  description: While this may be an issue, it will not be fixed at this time.
+  color: dea3ea
+- name: v3-migration 🤖
+  description: Preparing for Exercism v3
+  color: e99695
+- name: wip/content-checking ☑️
+  description: content checking tasks for exercises that are in development
+  color: a389f1
+- name: wip/proof-reading 👀
+  description: proof reading tasks for exercises that are in development
+  color: a389f1
+- name: wip/story-writing ✍️
+  description: story writing tasks for exercises that are in development
+  color: a389f1
+- name: wip/style-guideline-checking 📐
+  description: style guideline tasks for exercises that are in development
+  color: a389f1
