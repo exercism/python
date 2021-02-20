@@ -19,7 +19,7 @@ jobs:
           # Exempt all issues with milestones from being marked as stale.
           exempt-all-issue-milestones: true
 
-          exempt-issue-labels: 'discussion 💬,pinned 📌,enhancement 🦄 ⭐,beginner friendly 🐥,maintainer action required ❕'
+          exempt-issue-labels: 'discussion 💬,pinned 📌,enhancement 🦄 ⭐,beginner friendly,maintainer action required ❕'
           stale-issue-label: abandoned 🏚
           stale-issue-message: >
             This issue has been automatically marked as `abandoned 🏚`
@@ -29,7 +29,7 @@ jobs:
           close-issue-message: >
             Closing stale issue. If this issue is still relevant,
             please reopen it.
-          exempt-pr-labels: 'pinned 📌,enhancement 🦄 ⭐,awaiting review 👀,maintainer action required ❕'
+          exempt-pr-labels: 'pinned 📌,enhancement 🦄 ⭐,please review 👀,maintainer action required ❕'
           stale-pr-label: abandoned 🏚
           stale-pr-message: >
             This pull request has been automatically marked as `abandoned 🏚`
