@@ -1,139 +1,187 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# numbers just get pushed onto the stack
-"9962203f-f00a-4a85-b404-8a8ecbcec09d" = true
+[9962203f-f00a-4a85-b404-8a8ecbcec09d]
+description = "numbers just get pushed onto the stack"
+include = true
 
-# can add two numbers
-"9e69588e-a3d8-41a3-a371-ea02206c1e6e" = true
+[9e69588e-a3d8-41a3-a371-ea02206c1e6e]
+description = "can add two numbers"
+include = true
 
-# errors if there is nothing on the stack
-"52336dd3-30da-4e5c-8523-bdf9a3427657" = true
+[52336dd3-30da-4e5c-8523-bdf9a3427657]
+description = "errors if there is nothing on the stack"
+include = true
 
-# errors if there is only one value on the stack
-"06efb9a4-817a-435e-b509-06166993c1b8" = true
+[06efb9a4-817a-435e-b509-06166993c1b8]
+description = "errors if there is only one value on the stack"
+include = true
 
-# can subtract two numbers
-"09687c99-7bbc-44af-8526-e402f997ccbf" = true
+[09687c99-7bbc-44af-8526-e402f997ccbf]
+description = "can subtract two numbers"
+include = true
 
-# errors if there is nothing on the stack
-"5d63eee2-1f7d-4538-b475-e27682ab8032" = true
+[5d63eee2-1f7d-4538-b475-e27682ab8032]
+description = "errors if there is nothing on the stack"
+include = true
 
-# errors if there is only one value on the stack
-"b3cee1b2-9159-418a-b00d-a1bb3765c23b" = true
+[b3cee1b2-9159-418a-b00d-a1bb3765c23b]
+description = "errors if there is only one value on the stack"
+include = true
 
-# can multiply two numbers
-"5df0ceb5-922e-401f-974d-8287427dbf21" = true
+[5df0ceb5-922e-401f-974d-8287427dbf21]
+description = "can multiply two numbers"
+include = true
 
-# errors if there is nothing on the stack
-"9e004339-15ac-4063-8ec1-5720f4e75046" = true
+[9e004339-15ac-4063-8ec1-5720f4e75046]
+description = "errors if there is nothing on the stack"
+include = true
 
-# errors if there is only one value on the stack
-"8ba4b432-9f94-41e0-8fae-3b3712bd51b3" = true
+[8ba4b432-9f94-41e0-8fae-3b3712bd51b3]
+description = "errors if there is only one value on the stack"
+include = true
 
-# can divide two numbers
-"e74c2204-b057-4cff-9aa9-31c7c97a93f5" = true
+[e74c2204-b057-4cff-9aa9-31c7c97a93f5]
+description = "can divide two numbers"
+include = true
 
-# performs integer division
-"54f6711c-4b14-4bb0-98ad-d974a22c4620" = true
+[54f6711c-4b14-4bb0-98ad-d974a22c4620]
+description = "performs integer division"
+include = true
 
-# errors if dividing by zero
-"a5df3219-29b4-4d2f-b427-81f82f42a3f1" = true
+[a5df3219-29b4-4d2f-b427-81f82f42a3f1]
+description = "errors if dividing by zero"
+include = true
 
-# errors if there is nothing on the stack
-"1d5bb6b3-6749-4e02-8a79-b5d4d334cb8a" = true
+[1d5bb6b3-6749-4e02-8a79-b5d4d334cb8a]
+description = "errors if there is nothing on the stack"
+include = true
 
-# errors if there is only one value on the stack
-"d5547f43-c2ff-4d5c-9cb0-2a4f6684c20d" = true
+[d5547f43-c2ff-4d5c-9cb0-2a4f6684c20d]
+description = "errors if there is only one value on the stack"
+include = true
 
-# addition and subtraction
-"ee28d729-6692-4a30-b9be-0d830c52a68c" = true
+[ee28d729-6692-4a30-b9be-0d830c52a68c]
+description = "addition and subtraction"
+include = true
 
-# multiplication and division
-"40b197da-fa4b-4aca-a50b-f000d19422c1" = true
+[40b197da-fa4b-4aca-a50b-f000d19422c1]
+description = "multiplication and division"
+include = true
 
-# copies a value on the stack
-"c5758235-6eef-4bf6-ab62-c878e50b9957" = true
+[c5758235-6eef-4bf6-ab62-c878e50b9957]
+description = "copies a value on the stack"
+include = true
 
-# copies the top value on the stack
-"f6889006-5a40-41e7-beb3-43b09e5a22f4" = true
+[f6889006-5a40-41e7-beb3-43b09e5a22f4]
+description = "copies the top value on the stack"
+include = true
 
-# errors if there is nothing on the stack
-"40b7569c-8401-4bd4-a30d-9adf70d11bc4" = true
+[40b7569c-8401-4bd4-a30d-9adf70d11bc4]
+description = "errors if there is nothing on the stack"
+include = true
 
-# removes the top value on the stack if it is the only one
-"1971da68-1df2-4569-927a-72bf5bb7263c" = true
+[1971da68-1df2-4569-927a-72bf5bb7263c]
+description = "removes the top value on the stack if it is the only one"
+include = true
 
-# removes the top value on the stack if it is not the only one
-"8929d9f2-4a78-4e0f-90ad-be1a0f313fd9" = true
+[8929d9f2-4a78-4e0f-90ad-be1a0f313fd9]
+description = "removes the top value on the stack if it is not the only one"
+include = true
 
-# errors if there is nothing on the stack
-"6dd31873-6dd7-4cb8-9e90-7daa33ba045c" = true
+[6dd31873-6dd7-4cb8-9e90-7daa33ba045c]
+description = "errors if there is nothing on the stack"
+include = true
 
-# swaps the top two values on the stack if they are the only ones
-"3ee68e62-f98a-4cce-9e6c-8aae6c65a4e3" = true
+[3ee68e62-f98a-4cce-9e6c-8aae6c65a4e3]
+description = "swaps the top two values on the stack if they are the only ones"
+include = true
 
-# swaps the top two values on the stack if they are not the only ones
-"8ce869d5-a503-44e4-ab55-1da36816ff1c" = true
+[8ce869d5-a503-44e4-ab55-1da36816ff1c]
+description = "swaps the top two values on the stack if they are not the only ones"
+include = true
 
-# errors if there is nothing on the stack
-"74ba5b2a-b028-4759-9176-c5c0e7b2b154" = true
+[74ba5b2a-b028-4759-9176-c5c0e7b2b154]
+description = "errors if there is nothing on the stack"
+include = true
 
-# errors if there is only one value on the stack
-"dd52e154-5d0d-4a5c-9e5d-73eb36052bc8" = true
+[dd52e154-5d0d-4a5c-9e5d-73eb36052bc8]
+description = "errors if there is only one value on the stack"
+include = true
 
-# copies the second element if there are only two
-"a2654074-ba68-4f93-b014-6b12693a8b50" = true
+[a2654074-ba68-4f93-b014-6b12693a8b50]
+description = "copies the second element if there are only two"
+include = true
 
-# copies the second element if there are more than two
-"c5b51097-741a-4da7-8736-5c93fa856339" = true
+[c5b51097-741a-4da7-8736-5c93fa856339]
+description = "copies the second element if there are more than two"
+include = true
 
-# errors if there is nothing on the stack
-"6e1703a6-5963-4a03-abba-02e77e3181fd" = true
+[6e1703a6-5963-4a03-abba-02e77e3181fd]
+description = "errors if there is nothing on the stack"
+include = true
 
-# errors if there is only one value on the stack
-"ee574dc4-ef71-46f6-8c6a-b4af3a10c45f" = true
+[ee574dc4-ef71-46f6-8c6a-b4af3a10c45f]
+description = "errors if there is only one value on the stack"
+include = true
 
-# can consist of built-in words
-"ed45cbbf-4dbf-4901-825b-54b20dbee53b" = true
+[ed45cbbf-4dbf-4901-825b-54b20dbee53b]
+description = "can consist of built-in words"
+include = true
 
-# execute in the right order
-"2726ea44-73e4-436b-bc2b-5ff0c6aa014b" = true
+[2726ea44-73e4-436b-bc2b-5ff0c6aa014b]
+description = "execute in the right order"
+include = true
 
-# can override other user-defined words
-"9e53c2d0-b8ef-4ad8-b2c9-a559b421eb33" = true
+[9e53c2d0-b8ef-4ad8-b2c9-a559b421eb33]
+description = "can override other user-defined words"
+include = true
 
-# can override built-in words
-"669db3f3-5bd6-4be0-83d1-618cd6e4984b" = true
+[669db3f3-5bd6-4be0-83d1-618cd6e4984b]
+description = "can override built-in words"
+include = true
 
-# can override built-in operators
-"588de2f0-c56e-4c68-be0b-0bb1e603c500" = true
+[588de2f0-c56e-4c68-be0b-0bb1e603c500]
+description = "can override built-in operators"
+include = true
 
-# can use different words with the same name
-"ac12aaaf-26c6-4a10-8b3c-1c958fa2914c" = true
+[ac12aaaf-26c6-4a10-8b3c-1c958fa2914c]
+description = "can use different words with the same name"
+include = true
 
-# can define word that uses word with the same name
-"53f82ef0-2750-4ccb-ac04-5d8c1aefabb1" = true
+[53f82ef0-2750-4ccb-ac04-5d8c1aefabb1]
+description = "can define word that uses word with the same name"
+include = true
 
-# cannot redefine numbers
-"35958cee-a976-4a0f-9378-f678518fa322" = true
+[35958cee-a976-4a0f-9378-f678518fa322]
+description = "cannot redefine numbers"
+include = true
 
-# errors if executing a non-existent word
-"5180f261-89dd-491e-b230-62737e09806f" = true
+[5180f261-89dd-491e-b230-62737e09806f]
+description = "errors if executing a non-existent word"
+include = true
 
-# DUP is case-insensitive
-"7b83bb2e-b0e8-461f-ad3b-96ee2e111ed6" = true
+[7b83bb2e-b0e8-461f-ad3b-96ee2e111ed6]
+description = "DUP is case-insensitive"
+include = true
 
-# DROP is case-insensitive
-"339ed30b-f5b4-47ff-ab1c-67591a9cd336" = true
+[339ed30b-f5b4-47ff-ab1c-67591a9cd336]
+description = "DROP is case-insensitive"
+include = true
 
-# SWAP is case-insensitive
-"ee1af31e-1355-4b1b-bb95-f9d0b2961b87" = true
+[ee1af31e-1355-4b1b-bb95-f9d0b2961b87]
+description = "SWAP is case-insensitive"
+include = true
 
-# OVER is case-insensitive
-"acdc3a49-14c8-4cc2-945d-11edee6408fa" = true
+[acdc3a49-14c8-4cc2-945d-11edee6408fa]
+description = "OVER is case-insensitive"
+include = true
 
-# user-defined words are case-insensitive
-"5934454f-a24f-4efc-9fdd-5794e5f0c23c" = true
+[5934454f-a24f-4efc-9fdd-5794e5f0c23c]
+description = "user-defined words are case-insensitive"
+include = true
 
-# definitions are case-insensitive
-"037d4299-195f-4be7-a46d-f07ca6280a06" = true
+[037d4299-195f-4be7-a46d-f07ca6280a06]
+description = "definitions are case-insensitive"
+include = true

@@ -1,85 +1,115 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# single hand always wins
-"161f485e-39c2-4012-84cf-bec0c755b66c" = true
+[161f485e-39c2-4012-84cf-bec0c755b66c]
+description = "single hand always wins"
+include = true
 
-# highest card out of all hands wins
-"370ac23a-a00f-48a9-9965-6f3fb595cf45" = true
+[370ac23a-a00f-48a9-9965-6f3fb595cf45]
+description = "highest card out of all hands wins"
+include = true
 
-# a tie has multiple winners
-"d94ad5a7-17df-484b-9932-c64fc26cff52" = true
+[d94ad5a7-17df-484b-9932-c64fc26cff52]
+description = "a tie has multiple winners"
+include = true
 
-# multiple hands with the same high cards, tie compares next highest ranked, down to last card
-"61ed83a9-cfaa-40a5-942a-51f52f0a8725" = true
+[61ed83a9-cfaa-40a5-942a-51f52f0a8725]
+description = "multiple hands with the same high cards, tie compares next highest ranked, down to last card"
+include = true
 
-# one pair beats high card
-"f7175a89-34ff-44de-b3d7-f6fd97d1fca4" = true
+[f7175a89-34ff-44de-b3d7-f6fd97d1fca4]
+description = "one pair beats high card"
+include = true
 
-# highest pair wins
-"e114fd41-a301-4111-a9e7-5a7f72a76561" = true
+[e114fd41-a301-4111-a9e7-5a7f72a76561]
+description = "highest pair wins"
+include = true
 
-# two pairs beats one pair
-"935bb4dc-a622-4400-97fa-86e7d06b1f76" = true
+[935bb4dc-a622-4400-97fa-86e7d06b1f76]
+description = "two pairs beats one pair"
+include = true
 
-# both hands have two pairs, highest ranked pair wins
-"c8aeafe1-6e3d-4711-a6de-5161deca91fd" = true
+[c8aeafe1-6e3d-4711-a6de-5161deca91fd]
+description = "both hands have two pairs, highest ranked pair wins"
+include = true
 
-# both hands have two pairs, with the same highest ranked pair, tie goes to low pair
-"88abe1ba-7ad7-40f3-847e-0a26f8e46a60" = true
+[88abe1ba-7ad7-40f3-847e-0a26f8e46a60]
+description = "both hands have two pairs, with the same highest ranked pair, tie goes to low pair"
+include = true
 
-# both hands have two identically ranked pairs, tie goes to remaining card (kicker)
-"15a7a315-0577-47a3-9981-d6cf8e6f387b" = true
+[15a7a315-0577-47a3-9981-d6cf8e6f387b]
+description = "both hands have two identically ranked pairs, tie goes to remaining card (kicker)"
+include = true
 
-# three of a kind beats two pair
-"21e9f1e6-2d72-49a1-a930-228e5e0195dc" = true
+[21e9f1e6-2d72-49a1-a930-228e5e0195dc]
+description = "three of a kind beats two pair"
+include = true
 
-# both hands have three of a kind, tie goes to highest ranked triplet
-"c2fffd1f-c287-480f-bf2d-9628e63bbcc3" = true
+[c2fffd1f-c287-480f-bf2d-9628e63bbcc3]
+description = "both hands have three of a kind, tie goes to highest ranked triplet"
+include = true
 
-# with multiple decks, two players can have same three of a kind, ties go to highest remaining cards
-"eb856cc2-481c-4b0d-9835-4d75d07a5d9d" = true
+[eb856cc2-481c-4b0d-9835-4d75d07a5d9d]
+description = "with multiple decks, two players can have same three of a kind, ties go to highest remaining cards"
+include = true
 
-# a straight beats three of a kind
-"a858c5d9-2f28-48e7-9980-b7fa04060a60" = true
+[a858c5d9-2f28-48e7-9980-b7fa04060a60]
+description = "a straight beats three of a kind"
+include = true
 
-# aces can end a straight (10 J Q K A)
-"73c9c756-e63e-4b01-a88d-0d4491a7a0e3" = true
+[73c9c756-e63e-4b01-a88d-0d4491a7a0e3]
+description = "aces can end a straight (10 J Q K A)"
+include = true
 
-# aces can start a straight (A 2 3 4 5)
-"76856b0d-35cd-49ce-a492-fe5db53abc02" = true
+[76856b0d-35cd-49ce-a492-fe5db53abc02]
+description = "aces can start a straight (A 2 3 4 5)"
+include = true
 
-# both hands with a straight, tie goes to highest ranked card
-"6980c612-bbff-4914-b17a-b044e4e69ea1" = true
+[6980c612-bbff-4914-b17a-b044e4e69ea1]
+description = "both hands with a straight, tie goes to highest ranked card"
+include = true
 
-# even though an ace is usually high, a 5-high straight is the lowest-scoring straight
-"5135675c-c2fc-4e21-9ba3-af77a32e9ba4" = true
+[5135675c-c2fc-4e21-9ba3-af77a32e9ba4]
+description = "even though an ace is usually high, a 5-high straight is the lowest-scoring straight"
+include = true
 
-# flush beats a straight
-"c601b5e6-e1df-4ade-b444-b60ce13b2571" = true
+[c601b5e6-e1df-4ade-b444-b60ce13b2571]
+description = "flush beats a straight"
+include = true
 
-# both hands have a flush, tie goes to high card, down to the last one if necessary
-"4d90261d-251c-49bd-a468-896bf10133de" = true
+[4d90261d-251c-49bd-a468-896bf10133de]
+description = "both hands have a flush, tie goes to high card, down to the last one if necessary"
+include = true
 
-# full house beats a flush
-"3a19361d-8974-455c-82e5-f7152f5dba7c" = true
+[3a19361d-8974-455c-82e5-f7152f5dba7c]
+description = "full house beats a flush"
+include = true
 
-# both hands have a full house, tie goes to highest-ranked triplet
-"eb73d0e6-b66c-4f0f-b8ba-bf96bc0a67f0" = true
+[eb73d0e6-b66c-4f0f-b8ba-bf96bc0a67f0]
+description = "both hands have a full house, tie goes to highest-ranked triplet"
+include = true
 
-# with multiple decks, both hands have a full house with the same triplet, tie goes to the pair
-"34b51168-1e43-4c0d-9b32-e356159b4d5d" = true
+[34b51168-1e43-4c0d-9b32-e356159b4d5d]
+description = "with multiple decks, both hands have a full house with the same triplet, tie goes to the pair"
+include = true
 
-# four of a kind beats a full house
-"d61e9e99-883b-4f99-b021-18f0ae50c5f4" = true
+[d61e9e99-883b-4f99-b021-18f0ae50c5f4]
+description = "four of a kind beats a full house"
+include = true
 
-# both hands have four of a kind, tie goes to high quad
-"2e1c8c63-e0cb-4214-a01b-91954490d2fe" = true
+[2e1c8c63-e0cb-4214-a01b-91954490d2fe]
+description = "both hands have four of a kind, tie goes to high quad"
+include = true
 
-# with multiple decks, both hands with identical four of a kind, tie determined by kicker
-"892ca75d-5474-495d-9f64-a6ce2dcdb7e1" = true
+[892ca75d-5474-495d-9f64-a6ce2dcdb7e1]
+description = "with multiple decks, both hands with identical four of a kind, tie determined by kicker"
+include = true
 
-# straight flush beats four of a kind
-"923bd910-dc7b-4f7d-a330-8b42ec10a3ac" = true
+[923bd910-dc7b-4f7d-a330-8b42ec10a3ac]
+description = "straight flush beats four of a kind"
+include = true
 
-# both hands have straight flush, tie goes to highest-ranked card
-"d0927f70-5aec-43db-aed8-1cbd1b6ee9ad" = true
+[d0927f70-5aec-43db-aed8-1cbd1b6ee9ad]
+description = "both hands have straight flush, tie goes to highest-ranked card"
+include = true

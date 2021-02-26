@@ -1,25 +1,35 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# age on Earth
-"84f609af-5a91-4d68-90a3-9e32d8a5cd34" = true
+[84f609af-5a91-4d68-90a3-9e32d8a5cd34]
+description = "age on Earth"
+include = true
 
-# age on Mercury
-"ca20c4e9-6054-458c-9312-79679ffab40b" = true
+[ca20c4e9-6054-458c-9312-79679ffab40b]
+description = "age on Mercury"
+include = true
 
-# age on Venus
-"502c6529-fd1b-41d3-8fab-65e03082b024" = true
+[502c6529-fd1b-41d3-8fab-65e03082b024]
+description = "age on Venus"
+include = true
 
-# age on Mars
-"9ceadf5e-a0d5-4388-9d40-2c459227ceb8" = true
+[9ceadf5e-a0d5-4388-9d40-2c459227ceb8]
+description = "age on Mars"
+include = true
 
-# age on Jupiter
-"42927dc3-fe5e-4f76-a5b5-f737fc19bcde" = true
+[42927dc3-fe5e-4f76-a5b5-f737fc19bcde]
+description = "age on Jupiter"
+include = true
 
-# age on Saturn
-"8469b332-7837-4ada-b27c-00ee043ebcad" = true
+[8469b332-7837-4ada-b27c-00ee043ebcad]
+description = "age on Saturn"
+include = true
 
-# age on Uranus
-"999354c1-76f8-4bb5-a672-f317b6436743" = true
+[999354c1-76f8-4bb5-a672-f317b6436743]
+description = "age on Uranus"
+include = true
 
-# age on Neptune
-"80096d30-a0d4-4449-903e-a381178355d8" = true
+[80096d30-a0d4-4449-903e-a381178355d8]
+description = "age on Neptune"
+include = true

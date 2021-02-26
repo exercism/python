@@ -1,31 +1,43 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# an empty board has no winner
-"6eff0df4-3e92-478d-9b54-d3e8b354db56" = true
+[6eff0df4-3e92-478d-9b54-d3e8b354db56]
+description = "an empty board has no winner"
+include = true
 
-# X can win on a 1x1 board
-"298b94c0-b46d-45d8-b34b-0fa2ea71f0a4" = true
+[298b94c0-b46d-45d8-b34b-0fa2ea71f0a4]
+description = "X can win on a 1x1 board"
+include = true
 
-# O can win on a 1x1 board
-"763bbae0-cb8f-4f28-bc21-5be16a5722dc" = true
+[763bbae0-cb8f-4f28-bc21-5be16a5722dc]
+description = "O can win on a 1x1 board"
+include = true
 
-# only edges does not make a winner
-"819fde60-9ae2-485e-a024-cbb8ea68751b" = true
+[819fde60-9ae2-485e-a024-cbb8ea68751b]
+description = "only edges does not make a winner"
+include = true
 
-# illegal diagonal does not make a winner
-"2c56a0d5-9528-41e5-b92b-499dfe08506c" = true
+[2c56a0d5-9528-41e5-b92b-499dfe08506c]
+description = "illegal diagonal does not make a winner"
+include = true
 
-# nobody wins crossing adjacent angles
-"41cce3ef-43ca-4963-970a-c05d39aa1cc1" = true
+[41cce3ef-43ca-4963-970a-c05d39aa1cc1]
+description = "nobody wins crossing adjacent angles"
+include = true
 
-# X wins crossing from left to right
-"cd61c143-92f6-4a8d-84d9-cb2b359e226b" = true
+[cd61c143-92f6-4a8d-84d9-cb2b359e226b]
+description = "X wins crossing from left to right"
+include = true
 
-# O wins crossing from top to bottom
-"73d1eda6-16ab-4460-9904-b5f5dd401d0b" = true
+[73d1eda6-16ab-4460-9904-b5f5dd401d0b]
+description = "O wins crossing from top to bottom"
+include = true
 
-# X wins using a convoluted path
-"c3a2a550-944a-4637-8b3f-1e1bf1340a3d" = true
+[c3a2a550-944a-4637-8b3f-1e1bf1340a3d]
+description = "X wins using a convoluted path"
+include = true
 
-# X wins using a spiral path
-"17e76fa8-f731-4db7-92ad-ed2a285d31f3" = true
+[17e76fa8-f731-4db7-92ad-ed2a285d31f3]
+description = "X wins using a spiral path"
+include = true

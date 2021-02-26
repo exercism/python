@@ -1,40 +1,55 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# data is retained
-"771c652e-0754-4ef0-945c-0675d12ef1f5" = true
+[771c652e-0754-4ef0-945c-0675d12ef1f5]
+description = "data is retained"
+include = true
 
-# left, right and value
-"d7dcbb92-47fc-4d01-b81a-df3353bc09ff" = true
+[d7dcbb92-47fc-4d01-b81a-df3353bc09ff]
+description = "left, right and value"
+include = true
 
-# dead end
-"613d8286-b05c-4453-b205-e6f9c5966339" = true
+[613d8286-b05c-4453-b205-e6f9c5966339]
+description = "dead end"
+include = true
 
-# tree from deep focus
-"dda31af7-1c68-4e29-933a-c9d198d94284" = true
+[dda31af7-1c68-4e29-933a-c9d198d94284]
+description = "tree from deep focus"
+include = true
 
-# traversing up from top
-"1e3072a6-f85b-430b-b014-cdb4087e3577" = true
+[1e3072a6-f85b-430b-b014-cdb4087e3577]
+description = "traversing up from top"
+include = true
 
-# left, right, and up
-"b8505f6a-aed4-4c2e-824f-a0ed8570d74b" = true
+[b8505f6a-aed4-4c2e-824f-a0ed8570d74b]
+description = "left, right, and up"
+include = true
 
-# set_value
-"47df1a27-b709-496e-b381-63a03b82ea5f" = true
+[47df1a27-b709-496e-b381-63a03b82ea5f]
+description = "set_value"
+include = true
 
-# set_value after traversing up
-"16a1f1a8-dbed-456d-95ac-1cbb6093e0ab" = true
+[16a1f1a8-dbed-456d-95ac-1cbb6093e0ab]
+description = "set_value after traversing up"
+include = true
 
-# set_left with leaf
-"535a91af-a02e-49cd-8d2c-ecb6e4647174" = true
+[535a91af-a02e-49cd-8d2c-ecb6e4647174]
+description = "set_left with leaf"
+include = true
 
-# set_right with null
-"b3f60c4b-a788-4ffd-be5d-1e69aee61de3" = true
+[b3f60c4b-a788-4ffd-be5d-1e69aee61de3]
+description = "set_right with null"
+include = true
 
-# set_right with subtree
-"e91c221d-7b90-4604-b4ec-46638a673a12" = true
+[e91c221d-7b90-4604-b4ec-46638a673a12]
+description = "set_right with subtree"
+include = true
 
-# set_value on deep focus
-"c246be85-6648-4e9c-866f-b08cd495149a" = true
+[c246be85-6648-4e9c-866f-b08cd495149a]
+description = "set_value on deep focus"
+include = true
 
-# different paths to same zipper
-"47aa85a0-5240-48a4-9f42-e2ac636710ea" = true
+[47aa85a0-5240-48a4-9f42-e2ac636710ea]
+description = "different paths to same zipper"
+include = true

@@ -1,52 +1,71 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# empty lists
-"97319c93-ebc5-47ab-a022-02a1980e1d29" = true
+[97319c93-ebc5-47ab-a022-02a1980e1d29]
+description = "empty lists"
+include = true
 
-# empty list within non empty list
-"de27dbd4-df52-46fe-a336-30be58457382" = true
+[de27dbd4-df52-46fe-a336-30be58457382]
+description = "empty list within non empty list"
+include = true
 
-# non empty list contains empty list
-"5487cfd1-bc7d-429f-ac6f-1177b857d4fb" = true
+[5487cfd1-bc7d-429f-ac6f-1177b857d4fb]
+description = "non empty list contains empty list"
+include = true
 
-# list equals itself
-"1f390b47-f6b2-4a93-bc23-858ba5dda9a6" = true
+[1f390b47-f6b2-4a93-bc23-858ba5dda9a6]
+description = "list equals itself"
+include = true
 
-# different lists
-"7ed2bfb2-922b-4363-ae75-f3a05e8274f5" = true
+[7ed2bfb2-922b-4363-ae75-f3a05e8274f5]
+description = "different lists"
+include = true
 
-# false start
-"3b8a2568-6144-4f06-b0a1-9d266b365341" = true
+[3b8a2568-6144-4f06-b0a1-9d266b365341]
+description = "false start"
+include = true
 
-# consecutive
-"dc39ed58-6311-4814-be30-05a64bc8d9b1" = true
+[dc39ed58-6311-4814-be30-05a64bc8d9b1]
+description = "consecutive"
+include = true
 
-# sublist at start
-"d1270dab-a1ce-41aa-b29d-b3257241ac26" = true
+[d1270dab-a1ce-41aa-b29d-b3257241ac26]
+description = "sublist at start"
+include = true
 
-# sublist in middle
-"81f3d3f7-4f25-4ada-bcdc-897c403de1b6" = true
+[81f3d3f7-4f25-4ada-bcdc-897c403de1b6]
+description = "sublist in middle"
+include = true
 
-# sublist at end
-"43bcae1e-a9cf-470e-923e-0946e04d8fdd" = true
+[43bcae1e-a9cf-470e-923e-0946e04d8fdd]
+description = "sublist at end"
+include = true
 
-# at start of superlist
-"76cf99ed-0ff0-4b00-94af-4dfb43fe5caa" = true
+[76cf99ed-0ff0-4b00-94af-4dfb43fe5caa]
+description = "at start of superlist"
+include = true
 
-# in middle of superlist
-"b83989ec-8bdf-4655-95aa-9f38f3e357fd" = true
+[b83989ec-8bdf-4655-95aa-9f38f3e357fd]
+description = "in middle of superlist"
+include = true
 
-# at end of superlist
-"26f9f7c3-6cf6-4610-984a-662f71f8689b" = true
+[26f9f7c3-6cf6-4610-984a-662f71f8689b]
+description = "at end of superlist"
+include = true
 
-# first list missing element from second list
-"0a6db763-3588-416a-8f47-76b1cedde31e" = true
+[0a6db763-3588-416a-8f47-76b1cedde31e]
+description = "first list missing element from second list"
+include = true
 
-# second list missing element from first list
-"83ffe6d8-a445-4a3c-8795-1e51a95e65c3" = true
+[83ffe6d8-a445-4a3c-8795-1e51a95e65c3]
+description = "second list missing element from first list"
+include = true
 
-# order matters to a list
-"0d7ee7c1-0347-45c8-9ef5-b88db152b30b" = true
+[0d7ee7c1-0347-45c8-9ef5-b88db152b30b]
+description = "order matters to a list"
+include = true
 
-# same digits but different numbers
-"5f47ce86-944e-40f9-9f31-6368aad70aa6" = true
+[5f47ce86-944e-40f9-9f31-6368aad70aa6]
+description = "same digits but different numbers"
+include = true

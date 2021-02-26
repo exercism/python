@@ -1,28 +1,39 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# garden with single student
-"1fc316ed-17ab-4fba-88ef-3ae78296b692" = true
+[1fc316ed-17ab-4fba-88ef-3ae78296b692]
+description = "garden with single student"
+include = true
 
-# different garden with single student
-"acd19dc1-2200-4317-bc2a-08f021276b40" = true
+[acd19dc1-2200-4317-bc2a-08f021276b40]
+description = "different garden with single student"
+include = true
 
-# garden with two students
-"c376fcc8-349c-446c-94b0-903947315757" = true
+[c376fcc8-349c-446c-94b0-903947315757]
+description = "garden with two students"
+include = true
 
-# second student's garden
-"2d620f45-9617-4924-9d27-751c80d17db9" = true
+[2d620f45-9617-4924-9d27-751c80d17db9]
+description = "second student's garden"
+include = true
 
-# third student's garden
-"57712331-4896-4364-89f8-576421d69c44" = true
+[57712331-4896-4364-89f8-576421d69c44]
+description = "third student's garden"
+include = true
 
-# first student's garden
-"149b4290-58e1-40f2-8ae4-8b87c46e765b" = true
+[149b4290-58e1-40f2-8ae4-8b87c46e765b]
+description = "first student's garden"
+include = true
 
-# second student's garden
-"ba25dbbc-10bd-4a37-b18e-f89ecd098a5e" = true
+[ba25dbbc-10bd-4a37-b18e-f89ecd098a5e]
+description = "second student's garden"
+include = true
 
-# second to last student's garden
-"6bb66df7-f433-41ab-aec2-3ead6e99f65b" = true
+[6bb66df7-f433-41ab-aec2-3ead6e99f65b]
+description = "second to last student's garden"
+include = true
 
-# last student's garden
-"d7edec11-6488-418a-94e6-ed509e0fa7eb" = true
+[d7edec11-6488-418a-94e6-ed509e0fa7eb]
+description = "last student's garden"
+include = true

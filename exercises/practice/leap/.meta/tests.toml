@@ -1,28 +1,39 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# year not divisible by 4 in common year
-"6466b30d-519c-438e-935d-388224ab5223" = true
+[6466b30d-519c-438e-935d-388224ab5223]
+description = "year not divisible by 4 in common year"
+include = true
 
-# year divisible by 2, not divisible by 4 in common year
-"ac227e82-ee82-4a09-9eb6-4f84331ffdb0" = true
+[ac227e82-ee82-4a09-9eb6-4f84331ffdb0]
+description = "year divisible by 2, not divisible by 4 in common year"
+include = true
 
-# year divisible by 4, not divisible by 100 in leap year
-"4fe9b84c-8e65-489e-970b-856d60b8b78e" = true
+[4fe9b84c-8e65-489e-970b-856d60b8b78e]
+description = "year divisible by 4, not divisible by 100 in leap year"
+include = true
 
-# year divisible by 4 and 5 is still a leap year
-"7fc6aed7-e63c-48f5-ae05-5fe182f60a5d" = true
+[7fc6aed7-e63c-48f5-ae05-5fe182f60a5d]
+description = "year divisible by 4 and 5 is still a leap year"
+include = true
 
-# year divisible by 100, not divisible by 400 in common year
-"78a7848f-9667-4192-ae53-87b30c9a02dd" = true
+[78a7848f-9667-4192-ae53-87b30c9a02dd]
+description = "year divisible by 100, not divisible by 400 in common year"
+include = true
 
-# year divisible by 100 but not by 3 is still not a leap year
-"9d70f938-537c-40a6-ba19-f50739ce8bac" = true
+[9d70f938-537c-40a6-ba19-f50739ce8bac]
+description = "year divisible by 100 but not by 3 is still not a leap year"
+include = true
 
-# year divisible by 400 in leap year
-"42ee56ad-d3e6-48f1-8e3f-c84078d916fc" = true
+[42ee56ad-d3e6-48f1-8e3f-c84078d916fc]
+description = "year divisible by 400 in leap year"
+include = true
 
-# year divisible by 400 but not by 125 is still a leap year
-"57902c77-6fe9-40de-8302-587b5c27121e" = true
+[57902c77-6fe9-40de-8302-587b5c27121e]
+description = "year divisible by 400 but not by 125 is still a leap year"
+include = true
 
-# year divisible by 200, not divisible by 400 in common year
-"c30331f6-f9f6-4881-ad38-8ca8c12520c1" = true
+[c30331f6-f9f6-4881-ad38-8ca8c12520c1]
+description = "year divisible by 200, not divisible by 400 in common year"
+include = true

@@ -1,37 +1,51 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# finds the smallest palindrome from single digit factors
-"5cff78fe-cf02-459d-85c2-ce584679f887" = true
+[5cff78fe-cf02-459d-85c2-ce584679f887]
+description = "finds the smallest palindrome from single digit factors"
+include = true
 
-# finds the largest palindrome from single digit factors
-"0853f82c-5fc4-44ae-be38-fadb2cced92d" = true
+[0853f82c-5fc4-44ae-be38-fadb2cced92d]
+description = "finds the largest palindrome from single digit factors"
+include = true
 
-# find the smallest palindrome from double digit factors
-"66c3b496-bdec-4103-9129-3fcb5a9063e1" = true
+[66c3b496-bdec-4103-9129-3fcb5a9063e1]
+description = "find the smallest palindrome from double digit factors"
+include = true
 
-# find the largest palindrome from double digit factors
-"a10682ae-530a-4e56-b89d-69664feafe53" = true
+[a10682ae-530a-4e56-b89d-69664feafe53]
+description = "find the largest palindrome from double digit factors"
+include = true
 
-# find smallest palindrome from triple digit factors
-"cecb5a35-46d1-4666-9719-fa2c3af7499d" = true
+[cecb5a35-46d1-4666-9719-fa2c3af7499d]
+description = "find smallest palindrome from triple digit factors"
+include = true
 
-# find the largest palindrome from triple digit factors
-"edab43e1-c35f-4ea3-8c55-2f31dddd92e5" = true
+[edab43e1-c35f-4ea3-8c55-2f31dddd92e5]
+description = "find the largest palindrome from triple digit factors"
+include = true
 
-# find smallest palindrome from four digit factors
-"4f802b5a-9d74-4026-a70f-b53ff9234e4e" = true
+[4f802b5a-9d74-4026-a70f-b53ff9234e4e]
+description = "find smallest palindrome from four digit factors"
+include = true
 
-# find the largest palindrome from four digit factors
-"787525e0-a5f9-40f3-8cb2-23b52cf5d0be" = true
+[787525e0-a5f9-40f3-8cb2-23b52cf5d0be]
+description = "find the largest palindrome from four digit factors"
+include = true
 
-# empty result for smallest if no palindrome in the range
-"58fb1d63-fddb-4409-ab84-a7a8e58d9ea0" = true
+[58fb1d63-fddb-4409-ab84-a7a8e58d9ea0]
+description = "empty result for smallest if no palindrome in the range"
+include = true
 
-# empty result for largest if no palindrome in the range
-"9de9e9da-f1d9-49a5-8bfc-3d322efbdd02" = true
+[9de9e9da-f1d9-49a5-8bfc-3d322efbdd02]
+description = "empty result for largest if no palindrome in the range"
+include = true
 
-# error result for smallest if min is more than max
-"12e73aac-d7ee-4877-b8aa-2aa3dcdb9f8a" = true
+[12e73aac-d7ee-4877-b8aa-2aa3dcdb9f8a]
+description = "error result for smallest if min is more than max"
+include = true
 
-# error result for largest if min is more than max
-"eeeb5bff-3f47-4b1e-892f-05829277bd74" = true
+[eeeb5bff-3f47-4b1e-892f-05829277bd74]
+description = "error result for largest if min is more than max"
+include = true

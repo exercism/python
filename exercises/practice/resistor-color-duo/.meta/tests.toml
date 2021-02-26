@@ -1,16 +1,23 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# Brown and black
-"ce11995a-5b93-4950-a5e9-93423693b2fc" = true
+[ce11995a-5b93-4950-a5e9-93423693b2fc]
+description = "Brown and black"
+include = true
 
-# Blue and grey
-"7bf82f7a-af23-48ba-a97d-38d59406a920" = true
+[7bf82f7a-af23-48ba-a97d-38d59406a920]
+description = "Blue and grey"
+include = true
 
-# Yellow and violet
-"f1886361-fdfd-4693-acf8-46726fe24e0c" = true
+[f1886361-fdfd-4693-acf8-46726fe24e0c]
+description = "Yellow and violet"
+include = true
 
-# Orange and orange
-"77a8293d-2a83-4016-b1af-991acc12b9fe" = true
+[77a8293d-2a83-4016-b1af-991acc12b9fe]
+description = "Orange and orange"
+include = true
 
-# Ignore additional colors
-"0c4fb44f-db7c-4d03-afa8-054350f156a8" = true
+[0c4fb44f-db7c-4d03-afa8-054350f156a8]
+description = "Ignore additional colors"
+include = true

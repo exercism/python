@@ -1,25 +1,35 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# extract row from one number matrix
-"ca733dab-9d85-4065-9ef6-a880a951dafd" = true
+[ca733dab-9d85-4065-9ef6-a880a951dafd]
+description = "extract row from one number matrix"
+include = true
 
-# can extract row
-"5c93ec93-80e1-4268-9fc2-63bc7d23385c" = true
+[5c93ec93-80e1-4268-9fc2-63bc7d23385c]
+description = "can extract row"
+include = true
 
-# extract row where numbers have different widths
-"2f1aad89-ad0f-4bd2-9919-99a8bff0305a" = true
+[2f1aad89-ad0f-4bd2-9919-99a8bff0305a]
+description = "extract row where numbers have different widths"
+include = true
 
-# can extract row from non-square matrix with no corresponding column
-"68f7f6ba-57e2-4e87-82d0-ad09889b5204" = true
+[68f7f6ba-57e2-4e87-82d0-ad09889b5204]
+description = "can extract row from non-square matrix with no corresponding column"
+include = true
 
-# extract column from one number matrix
-"e8c74391-c93b-4aed-8bfe-f3c9beb89ebb" = true
+[e8c74391-c93b-4aed-8bfe-f3c9beb89ebb]
+description = "extract column from one number matrix"
+include = true
 
-# can extract column
-"7136bdbd-b3dc-48c4-a10c-8230976d3727" = true
+[7136bdbd-b3dc-48c4-a10c-8230976d3727]
+description = "can extract column"
+include = true
 
-# can extract column from non-square matrix with no corresponding row
-"ad64f8d7-bba6-4182-8adf-0c14de3d0eca" = true
+[ad64f8d7-bba6-4182-8adf-0c14de3d0eca]
+description = "can extract column from non-square matrix with no corresponding row"
+include = true
 
-# extract column where numbers have different widths
-"9eddfa5c-8474-440e-ae0a-f018c2a0dd89" = true
+[9eddfa5c-8474-440e-ae0a-f018c2a0dd89]
+description = "extract column where numbers have different widths"
+include = true

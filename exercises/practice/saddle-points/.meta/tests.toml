@@ -1,28 +1,39 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# Can identify single saddle point
-"3e374e63-a2e0-4530-a39a-d53c560382bd" = true
+[3e374e63-a2e0-4530-a39a-d53c560382bd]
+description = "Can identify single saddle point"
+include = true
 
-# Can identify that empty matrix has no saddle points
-"6b501e2b-6c1f-491f-b1bb-7f278f760534" = true
+[6b501e2b-6c1f-491f-b1bb-7f278f760534]
+description = "Can identify that empty matrix has no saddle points"
+include = true
 
-# Can identify lack of saddle points when there are none
-"8c27cc64-e573-4fcb-a099-f0ae863fb02f" = true
+[8c27cc64-e573-4fcb-a099-f0ae863fb02f]
+description = "Can identify lack of saddle points when there are none"
+include = true
 
-# Can identify multiple saddle points in a column
-"6d1399bd-e105-40fd-a2c9-c6609507d7a3" = true
+[6d1399bd-e105-40fd-a2c9-c6609507d7a3]
+description = "Can identify multiple saddle points in a column"
+include = true
 
-# Can identify multiple saddle points in a row
-"3e81dce9-53b3-44e6-bf26-e328885fd5d1" = true
+[3e81dce9-53b3-44e6-bf26-e328885fd5d1]
+description = "Can identify multiple saddle points in a row"
+include = true
 
-# Can identify saddle point in bottom right corner
-"88868621-b6f4-4837-bb8b-3fad8b25d46b" = true
+[88868621-b6f4-4837-bb8b-3fad8b25d46b]
+description = "Can identify saddle point in bottom right corner"
+include = true
 
-# Can identify saddle points in a non square matrix
-"5b9499ca-fcea-4195-830a-9c4584a0ee79" = true
+[5b9499ca-fcea-4195-830a-9c4584a0ee79]
+description = "Can identify saddle points in a non square matrix"
+include = true
 
-# Can identify that saddle points in a single column matrix are those with the minimum value
-"ee99ccd2-a1f1-4283-ad39-f8c70f0cf594" = true
+[ee99ccd2-a1f1-4283-ad39-f8c70f0cf594]
+description = "Can identify that saddle points in a single column matrix are those with the minimum value"
+include = true
 
-# Can identify that saddle points in a single row matrix are those with the maximum value
-"63abf709-a84b-407f-a1b3-456638689713" = true
+[63abf709-a84b-407f-a1b3-456638689713]
+description = "Can identify that saddle points in a single row matrix are those with the maximum value"
+include = true

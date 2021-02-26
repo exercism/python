@@ -1,46 +1,63 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# finds the largest product if span equals length
-"7c82f8b7-e347-48ee-8a22-f672323324d4" = true
+[7c82f8b7-e347-48ee-8a22-f672323324d4]
+description = "finds the largest product if span equals length"
+include = true
 
-# can find the largest product of 2 with numbers in order
-"88523f65-21ba-4458-a76a-b4aaf6e4cb5e" = true
+[88523f65-21ba-4458-a76a-b4aaf6e4cb5e]
+description = "can find the largest product of 2 with numbers in order"
+include = true
 
-# can find the largest product of 2
-"f1376b48-1157-419d-92c2-1d7e36a70b8a" = true
+[f1376b48-1157-419d-92c2-1d7e36a70b8a]
+description = "can find the largest product of 2"
+include = true
 
-# can find the largest product of 3 with numbers in order
-"46356a67-7e02-489e-8fea-321c2fa7b4a4" = true
+[46356a67-7e02-489e-8fea-321c2fa7b4a4]
+description = "can find the largest product of 3 with numbers in order"
+include = true
 
-# can find the largest product of 3
-"a2dcb54b-2b8f-4993-92dd-5ce56dece64a" = true
+[a2dcb54b-2b8f-4993-92dd-5ce56dece64a]
+description = "can find the largest product of 3"
+include = true
 
-# can find the largest product of 5 with numbers in order
-"673210a3-33cd-4708-940b-c482d7a88f9d" = true
+[673210a3-33cd-4708-940b-c482d7a88f9d]
+description = "can find the largest product of 5 with numbers in order"
+include = true
 
-# can get the largest product of a big number
-"02acd5a6-3bbf-46df-8282-8b313a80a7c9" = true
+[02acd5a6-3bbf-46df-8282-8b313a80a7c9]
+description = "can get the largest product of a big number"
+include = true
 
-# reports zero if the only digits are zero
-"76dcc407-21e9-424c-a98e-609f269622b5" = true
+[76dcc407-21e9-424c-a98e-609f269622b5]
+description = "reports zero if the only digits are zero"
+include = true
 
-# reports zero if all spans include zero
-"6ef0df9f-52d4-4a5d-b210-f6fae5f20e19" = true
+[6ef0df9f-52d4-4a5d-b210-f6fae5f20e19]
+description = "reports zero if all spans include zero"
+include = true
 
-# rejects span longer than string length
-"5d81aaf7-4f67-4125-bf33-11493cc7eab7" = true
+[5d81aaf7-4f67-4125-bf33-11493cc7eab7]
+description = "rejects span longer than string length"
+include = true
 
-# reports 1 for empty string and empty product (0 span)
-"06bc8b90-0c51-4c54-ac22-3ec3893a079e" = true
+[06bc8b90-0c51-4c54-ac22-3ec3893a079e]
+description = "reports 1 for empty string and empty product (0 span)"
+include = true
 
-# reports 1 for nonempty string and empty product (0 span)
-"3ec0d92e-f2e2-4090-a380-70afee02f4c0" = true
+[3ec0d92e-f2e2-4090-a380-70afee02f4c0]
+description = "reports 1 for nonempty string and empty product (0 span)"
+include = true
 
-# rejects empty string and nonzero span
-"6d96c691-4374-4404-80ee-2ea8f3613dd4" = true
+[6d96c691-4374-4404-80ee-2ea8f3613dd4]
+description = "rejects empty string and nonzero span"
+include = true
 
-# rejects invalid character in digits
-"7a38f2d6-3c35-45f6-8d6f-12e6e32d4d74" = true
+[7a38f2d6-3c35-45f6-8d6f-12e6e32d4d74]
+description = "rejects invalid character in digits"
+include = true
 
-# rejects negative span
-"5fe3c0e5-a945-49f2-b584-f0814b4dd1ef" = true
+[5fe3c0e5-a945-49f2-b584-f0814b4dd1ef]
+description = "rejects negative span"
+include = true

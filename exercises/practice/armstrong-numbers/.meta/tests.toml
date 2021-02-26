@@ -1,28 +1,39 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# Zero is an Armstrong number
-"c1ed103c-258d-45b2-be73-d8c6d9580c7b" = true
+[c1ed103c-258d-45b2-be73-d8c6d9580c7b]
+description = "Zero is an Armstrong number"
+include = true
 
-# Single digit numbers are Armstrong numbers
-"579e8f03-9659-4b85-a1a2-d64350f6b17a" = true
+[579e8f03-9659-4b85-a1a2-d64350f6b17a]
+description = "Single digit numbers are Armstrong numbers"
+include = true
 
-# There are no 2 digit Armstrong numbers
-"2d6db9dc-5bf8-4976-a90b-b2c2b9feba60" = true
+[2d6db9dc-5bf8-4976-a90b-b2c2b9feba60]
+description = "There are no 2 digit Armstrong numbers"
+include = true
 
-# Three digit number that is an Armstrong number
-"509c087f-e327-4113-a7d2-26a4e9d18283" = true
+[509c087f-e327-4113-a7d2-26a4e9d18283]
+description = "Three digit number that is an Armstrong number"
+include = true
 
-# Three digit number that is not an Armstrong number
-"7154547d-c2ce-468d-b214-4cb953b870cf" = true
+[7154547d-c2ce-468d-b214-4cb953b870cf]
+description = "Three digit number that is not an Armstrong number"
+include = true
 
-# Four digit number that is an Armstrong number
-"6bac5b7b-42e9-4ecb-a8b0-4832229aa103" = true
+[6bac5b7b-42e9-4ecb-a8b0-4832229aa103]
+description = "Four digit number that is an Armstrong number"
+include = true
 
-# Four digit number that is not an Armstrong number
-"eed4b331-af80-45b5-a80b-19c9ea444b2e" = true
+[eed4b331-af80-45b5-a80b-19c9ea444b2e]
+description = "Four digit number that is not an Armstrong number"
+include = true
 
-# Seven digit number that is an Armstrong number
-"f971ced7-8d68-4758-aea1-d4194900b864" = true
+[f971ced7-8d68-4758-aea1-d4194900b864]
+description = "Seven digit number that is an Armstrong number"
+include = true
 
-# Seven digit number that is not an Armstrong number
-"7ee45d52-5d35-4fbd-b6f1-5c8cd8a67f18" = true
+[7ee45d52-5d35-4fbd-b6f1-5c8cd8a67f18]
+description = "Seven digit number that is not an Armstrong number"
+include = true

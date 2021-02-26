@@ -1,16 +1,23 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# no primes under two
-"88529125-c4ce-43cc-bb36-1eb4ddd7b44f" = true
+[88529125-c4ce-43cc-bb36-1eb4ddd7b44f]
+description = "no primes under two"
+include = true
 
-# find first prime
-"4afe9474-c705-4477-9923-840e1024cc2b" = true
+[4afe9474-c705-4477-9923-840e1024cc2b]
+description = "find first prime"
+include = true
 
-# find primes up to 10
-"974945d8-8cd9-4f00-9463-7d813c7f17b7" = true
+[974945d8-8cd9-4f00-9463-7d813c7f17b7]
+description = "find primes up to 10"
+include = true
 
-# limit is prime
-"2e2417b7-3f3a-452a-8594-b9af08af6d82" = true
+[2e2417b7-3f3a-452a-8594-b9af08af6d82]
+description = "limit is prime"
+include = true
 
-# find primes up to 1000
-"92102a05-4c7c-47de-9ed0-b7d5fcd00f21" = true
+[92102a05-4c7c-47de-9ed0-b7d5fcd00f21]
+description = "find primes up to 1000"
+include = true

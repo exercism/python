@@ -1,52 +1,71 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# valid isbn number
-"0caa3eac-d2e3-4c29-8df8-b188bc8c9292" = true
+[0caa3eac-d2e3-4c29-8df8-b188bc8c9292]
+description = "valid isbn number"
+include = true
 
-# invalid isbn check digit
-"19f76b53-7c24-45f8-87b8-4604d0ccd248" = true
+[19f76b53-7c24-45f8-87b8-4604d0ccd248]
+description = "invalid isbn check digit"
+include = true
 
-# valid isbn number with a check digit of 10
-"4164bfee-fb0a-4a1c-9f70-64c6a1903dcd" = true
+[4164bfee-fb0a-4a1c-9f70-64c6a1903dcd]
+description = "valid isbn number with a check digit of 10"
+include = true
 
-# check digit is a character other than X
-"3ed50db1-8982-4423-a993-93174a20825c" = true
+[3ed50db1-8982-4423-a993-93174a20825c]
+description = "check digit is a character other than X"
+include = true
 
-# invalid character in isbn
-"c19ba0c4-014f-4dc3-a63f-ff9aefc9b5ec" = true
+[c19ba0c4-014f-4dc3-a63f-ff9aefc9b5ec]
+description = "invalid character in isbn"
+include = true
 
-# X is only valid as a check digit
-"28025280-2c39-4092-9719-f3234b89c627" = true
+[28025280-2c39-4092-9719-f3234b89c627]
+description = "X is only valid as a check digit"
+include = true
 
-# valid isbn without separating dashes
-"f6294e61-7e79-46b3-977b-f48789a4945b" = true
+[f6294e61-7e79-46b3-977b-f48789a4945b]
+description = "valid isbn without separating dashes"
+include = true
 
-# isbn without separating dashes and X as check digit
-"185ab99b-3a1b-45f3-aeec-b80d80b07f0b" = true
+[185ab99b-3a1b-45f3-aeec-b80d80b07f0b]
+description = "isbn without separating dashes and X as check digit"
+include = true
 
-# isbn without check digit and dashes
-"7725a837-ec8e-4528-a92a-d981dd8cf3e2" = true
+[7725a837-ec8e-4528-a92a-d981dd8cf3e2]
+description = "isbn without check digit and dashes"
+include = true
 
-# too long isbn and no dashes
-"47e4dfba-9c20-46ed-9958-4d3190630bdf" = true
+[47e4dfba-9c20-46ed-9958-4d3190630bdf]
+description = "too long isbn and no dashes"
+include = true
 
-# too short isbn
-"737f4e91-cbba-4175-95bf-ae630b41fb60" = true
+[737f4e91-cbba-4175-95bf-ae630b41fb60]
+description = "too short isbn"
+include = true
 
-# isbn without check digit
-"5458a128-a9b6-4ff8-8afb-674e74567cef" = true
+[5458a128-a9b6-4ff8-8afb-674e74567cef]
+description = "isbn without check digit"
+include = true
 
-# check digit of X should not be used for 0
-"70b6ad83-d0a2-4ca7-a4d5-a9ab731800f7" = true
+[70b6ad83-d0a2-4ca7-a4d5-a9ab731800f7]
+description = "check digit of X should not be used for 0"
+include = true
 
-# empty isbn
-"94610459-55ab-4c35-9b93-ff6ea1a8e562" = true
+[94610459-55ab-4c35-9b93-ff6ea1a8e562]
+description = "empty isbn"
+include = true
 
-# input is 9 characters
-"7bff28d4-d770-48cc-80d6-b20b3a0fb46c" = true
+[7bff28d4-d770-48cc-80d6-b20b3a0fb46c]
+description = "input is 9 characters"
+include = true
 
-# invalid characters are not ignored
-"ed6e8d1b-382c-4081-8326-8b772c581fec" = true
+[ed6e8d1b-382c-4081-8326-8b772c581fec]
+description = "invalid characters are not ignored"
+include = true
 
-# input is too long but contains a valid isbn
-"fb5e48d8-7c03-4bfb-a088-b101df16fdc3" = true
+[fb5e48d8-7c03-4bfb-a088-b101df16fdc3]
+description = "input is too long but contains a valid isbn"
+include = true
