@@ -1,85 +1,115 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# Yacht
-"3060e4a5-4063-4deb-a380-a630b43a84b6" = true
+[3060e4a5-4063-4deb-a380-a630b43a84b6]
+description = "Yacht"
+include = true
 
-# Not Yacht
-"15026df2-f567-482f-b4d5-5297d57769d9" = true
+[15026df2-f567-482f-b4d5-5297d57769d9]
+description = "Not Yacht"
+include = true
 
-# Ones
-"36b6af0c-ca06-4666-97de-5d31213957a4" = true
+[36b6af0c-ca06-4666-97de-5d31213957a4]
+description = "Ones"
+include = true
 
-# Ones, out of order
-"023a07c8-6c6e-44d0-bc17-efc5e1b8205a" = true
+[023a07c8-6c6e-44d0-bc17-efc5e1b8205a]
+description = "Ones, out of order"
+include = true
 
-# No ones
-"7189afac-cccd-4a74-8182-1cb1f374e496" = true
+[7189afac-cccd-4a74-8182-1cb1f374e496]
+description = "No ones"
+include = true
 
-# Twos
-"793c4292-dd14-49c4-9707-6d9c56cee725" = true
+[793c4292-dd14-49c4-9707-6d9c56cee725]
+description = "Twos"
+include = true
 
-# Fours
-"dc41bceb-d0c5-4634-a734-c01b4233a0c6" = true
+[dc41bceb-d0c5-4634-a734-c01b4233a0c6]
+description = "Fours"
+include = true
 
-# Yacht counted as threes
-"f6125417-5c8a-4bca-bc5b-b4b76d0d28c8" = true
+[f6125417-5c8a-4bca-bc5b-b4b76d0d28c8]
+description = "Yacht counted as threes"
+include = true
 
-# Yacht of 3s counted as fives
-"464fc809-96ed-46e4-acb8-d44e302e9726" = true
+[464fc809-96ed-46e4-acb8-d44e302e9726]
+description = "Yacht of 3s counted as fives"
+include = true
 
-# Sixes
-"e8a036e0-9d21-443a-8b5f-e15a9e19a761" = true
+[e8a036e0-9d21-443a-8b5f-e15a9e19a761]
+description = "Sixes"
+include = true
 
-# Full house two small, three big
-"51cb26db-6b24-49af-a9ff-12f53b252eea" = true
+[51cb26db-6b24-49af-a9ff-12f53b252eea]
+description = "Full house two small, three big"
+include = true
 
-# Full house three small, two big
-"1822ca9d-f235-4447-b430-2e8cfc448f0c" = true
+[1822ca9d-f235-4447-b430-2e8cfc448f0c]
+description = "Full house three small, two big"
+include = true
 
-# Two pair is not a full house
-"b208a3fc-db2e-4363-a936-9e9a71e69c07" = true
+[b208a3fc-db2e-4363-a936-9e9a71e69c07]
+description = "Two pair is not a full house"
+include = true
 
-# Four of a kind is not a full house
-"b90209c3-5956-445b-8a0b-0ac8b906b1c2" = true
+[b90209c3-5956-445b-8a0b-0ac8b906b1c2]
+description = "Four of a kind is not a full house"
+include = true
 
-# Yacht is not a full house
-"32a3f4ee-9142-4edf-ba70-6c0f96eb4b0c" = true
+[32a3f4ee-9142-4edf-ba70-6c0f96eb4b0c]
+description = "Yacht is not a full house"
+include = true
 
-# Four of a Kind
-"b286084d-0568-4460-844a-ba79d71d79c6" = true
+[b286084d-0568-4460-844a-ba79d71d79c6]
+description = "Four of a Kind"
+include = true
 
-# Yacht can be scored as Four of a Kind
-"f25c0c90-5397-4732-9779-b1e9b5f612ca" = true
+[f25c0c90-5397-4732-9779-b1e9b5f612ca]
+description = "Yacht can be scored as Four of a Kind"
+include = true
 
-# Full house is not Four of a Kind
-"9f8ef4f0-72bb-401a-a871-cbad39c9cb08" = true
+[9f8ef4f0-72bb-401a-a871-cbad39c9cb08]
+description = "Full house is not Four of a Kind"
+include = true
 
-# Little Straight
-"b4743c82-1eb8-4a65-98f7-33ad126905cd" = true
+[b4743c82-1eb8-4a65-98f7-33ad126905cd]
+description = "Little Straight"
+include = true
 
-# Little Straight as Big Straight
-"7ac08422-41bf-459c-8187-a38a12d080bc" = true
+[7ac08422-41bf-459c-8187-a38a12d080bc]
+description = "Little Straight as Big Straight"
+include = true
 
-# Four in order but not a little straight
-"97bde8f7-9058-43ea-9de7-0bc3ed6d3002" = true
+[97bde8f7-9058-43ea-9de7-0bc3ed6d3002]
+description = "Four in order but not a little straight"
+include = true
 
-# No pairs but not a little straight
-"cef35ff9-9c5e-4fd2-ae95-6e4af5e95a99" = true
+[cef35ff9-9c5e-4fd2-ae95-6e4af5e95a99]
+description = "No pairs but not a little straight"
+include = true
 
-# Minimum is 1, maximum is 5, but not a little straight
-"fd785ad2-c060-4e45-81c6-ea2bbb781b9d" = true
+[fd785ad2-c060-4e45-81c6-ea2bbb781b9d]
+description = "Minimum is 1, maximum is 5, but not a little straight"
+include = true
 
-# Big Straight
-"35bd74a6-5cf6-431a-97a3-4f713663f467" = true
+[35bd74a6-5cf6-431a-97a3-4f713663f467]
+description = "Big Straight"
+include = true
 
-# Big Straight as little straight
-"87c67e1e-3e87-4f3a-a9b1-62927822b250" = true
+[87c67e1e-3e87-4f3a-a9b1-62927822b250]
+description = "Big Straight as little straight"
+include = true
 
-# No pairs but not a big straight
-"c1fa0a3a-40ba-4153-a42d-32bc34d2521e" = true
+[c1fa0a3a-40ba-4153-a42d-32bc34d2521e]
+description = "No pairs but not a big straight"
+include = true
 
-# Choice
-"207e7300-5d10-43e5-afdd-213e3ac8827d" = true
+[207e7300-5d10-43e5-afdd-213e3ac8827d]
+description = "Choice"
+include = true
 
-# Yacht as choice
-"b524c0cf-32d2-4b40-8fb3-be3500f3f135" = true
+[b524c0cf-32d2-4b40-8fb3-be3500f3f135]
+description = "Yacht as choice"
+include = true

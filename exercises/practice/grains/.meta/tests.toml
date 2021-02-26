@@ -1,34 +1,47 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# 1
-"9fbde8de-36b2-49de-baf2-cd42d6f28405" = true
+[9fbde8de-36b2-49de-baf2-cd42d6f28405]
+description = "1"
+include = true
 
-# 2
-"ee1f30c2-01d8-4298-b25d-c677331b5e6d" = true
+[ee1f30c2-01d8-4298-b25d-c677331b5e6d]
+description = "2"
+include = true
 
-# 3
-"10f45584-2fc3-4875-8ec6-666065d1163b" = true
+[10f45584-2fc3-4875-8ec6-666065d1163b]
+description = "3"
+include = true
 
-# 4
-"a7cbe01b-36f4-4601-b053-c5f6ae055170" = true
+[a7cbe01b-36f4-4601-b053-c5f6ae055170]
+description = "4"
+include = true
 
-# 16
-"c50acc89-8535-44e4-918f-b848ad2817d4" = true
+[c50acc89-8535-44e4-918f-b848ad2817d4]
+description = "16"
+include = true
 
-# 32
-"acd81b46-c2ad-4951-b848-80d15ed5a04f" = true
+[acd81b46-c2ad-4951-b848-80d15ed5a04f]
+description = "32"
+include = true
 
-# 64
-"c73b470a-5efb-4d53-9ac6-c5f6487f227b" = true
+[c73b470a-5efb-4d53-9ac6-c5f6487f227b]
+description = "64"
+include = true
 
-# square 0 raises an exception
-"1d47d832-3e85-4974-9466-5bd35af484e3" = true
+[1d47d832-3e85-4974-9466-5bd35af484e3]
+description = "square 0 raises an exception"
+include = true
 
-# negative square raises an exception
-"61974483-eeb2-465e-be54-ca5dde366453" = true
+[61974483-eeb2-465e-be54-ca5dde366453]
+description = "negative square raises an exception"
+include = true
 
-# square greater than 64 raises an exception
-"a95e4374-f32c-45a7-a10d-ffec475c012f" = true
+[a95e4374-f32c-45a7-a10d-ffec475c012f]
+description = "square greater than 64 raises an exception"
+include = true
 
-# returns the total number of grains on the board
-"6eb07385-3659-4b45-a6be-9dc474222750" = true
+[6eb07385-3659-4b45-a6be-9dc474222750]
+description = "returns the total number of grains on the board"
+include = true

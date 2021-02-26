@@ -1,31 +1,43 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# empty sentence
-"64f61791-508e-4f5c-83ab-05de042b0149" = true
+[64f61791-508e-4f5c-83ab-05de042b0149]
+description = "empty sentence"
+include = true
 
-# perfect lower case
-"74858f80-4a4d-478b-8a5e-c6477e4e4e84" = true
+[74858f80-4a4d-478b-8a5e-c6477e4e4e84]
+description = "perfect lower case"
+include = true
 
-# only lower case
-"61288860-35ca-4abe-ba08-f5df76ecbdcd" = true
+[61288860-35ca-4abe-ba08-f5df76ecbdcd]
+description = "only lower case"
+include = true
 
-# missing the letter 'x'
-"6564267d-8ac5-4d29-baf2-e7d2e304a743" = true
+[6564267d-8ac5-4d29-baf2-e7d2e304a743]
+description = "missing the letter 'x'"
+include = true
 
-# missing the letter 'h'
-"c79af1be-d715-4cdb-a5f2-b2fa3e7e0de0" = true
+[c79af1be-d715-4cdb-a5f2-b2fa3e7e0de0]
+description = "missing the letter 'h'"
+include = true
 
-# with underscores
-"d835ec38-bc8f-48e4-9e36-eb232427b1df" = true
+[d835ec38-bc8f-48e4-9e36-eb232427b1df]
+description = "with underscores"
+include = true
 
-# with numbers
-"8cc1e080-a178-4494-b4b3-06982c9be2a8" = true
+[8cc1e080-a178-4494-b4b3-06982c9be2a8]
+description = "with numbers"
+include = true
 
-# missing letters replaced by numbers
-"bed96b1c-ff95-45b8-9731-fdbdcb6ede9a" = true
+[bed96b1c-ff95-45b8-9731-fdbdcb6ede9a]
+description = "missing letters replaced by numbers"
+include = true
 
-# mixed case and punctuation
-"938bd5d8-ade5-40e2-a2d9-55a338a01030" = true
+[938bd5d8-ade5-40e2-a2d9-55a338a01030]
+description = "mixed case and punctuation"
+include = true
 
-# case insensitive
-"2577bf54-83c8-402d-a64b-a2c0f7bb213a" = true
+[2577bf54-83c8-402d-a64b-a2c0f7bb213a]
+description = "case insensitive"
+include = true

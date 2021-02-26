@@ -1,34 +1,47 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# wink for 1
-"b8496fbd-6778-468c-8054-648d03c4bb23" = true
+[b8496fbd-6778-468c-8054-648d03c4bb23]
+description = "wink for 1"
+include = true
 
-# double blink for 10
-"83ec6c58-81a9-4fd1-bfaf-0160514fc0e3" = true
+[83ec6c58-81a9-4fd1-bfaf-0160514fc0e3]
+description = "double blink for 10"
+include = true
 
-# close your eyes for 100
-"0e20e466-3519-4134-8082-5639d85fef71" = true
+[0e20e466-3519-4134-8082-5639d85fef71]
+description = "close your eyes for 100"
+include = true
 
-# jump for 1000
-"b339ddbb-88b7-4b7d-9b19-4134030d9ac0" = true
+[b339ddbb-88b7-4b7d-9b19-4134030d9ac0]
+description = "jump for 1000"
+include = true
 
-# combine two actions
-"40499fb4-e60c-43d7-8b98-0de3ca44e0eb" = true
+[40499fb4-e60c-43d7-8b98-0de3ca44e0eb]
+description = "combine two actions"
+include = true
 
-# reverse two actions
-"9730cdd5-ef27-494b-afd3-5c91ad6c3d9d" = true
+[9730cdd5-ef27-494b-afd3-5c91ad6c3d9d]
+description = "reverse two actions"
+include = true
 
-# reversing one action gives the same action
-"0b828205-51ca-45cd-90d5-f2506013f25f" = true
+[0b828205-51ca-45cd-90d5-f2506013f25f]
+description = "reversing one action gives the same action"
+include = true
 
-# reversing no actions still gives no actions
-"9949e2ac-6c9c-4330-b685-2089ab28b05f" = true
+[9949e2ac-6c9c-4330-b685-2089ab28b05f]
+description = "reversing no actions still gives no actions"
+include = true
 
-# all possible actions
-"23fdca98-676b-4848-970d-cfed7be39f81" = true
+[23fdca98-676b-4848-970d-cfed7be39f81]
+description = "all possible actions"
+include = true
 
-# reverse all possible actions
-"ae8fe006-d910-4d6f-be00-54b7c3799e79" = true
+[ae8fe006-d910-4d6f-be00-54b7c3799e79]
+description = "reverse all possible actions"
+include = true
 
-# do nothing for zero
-"3d36da37-b31f-4cdb-a396-d93a2ee1c4a5" = true
+[3d36da37-b31f-4cdb-a396-d93a2ee1c4a5]
+description = "do nothing for zero"
+include = true

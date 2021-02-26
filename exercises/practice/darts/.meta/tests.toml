@@ -1,40 +1,55 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# Missed target
-"9033f731-0a3a-4d9c-b1c0-34a1c8362afb" = true
+[9033f731-0a3a-4d9c-b1c0-34a1c8362afb]
+description = "Missed target"
+include = true
 
-# On the outer circle
-"4c9f6ff4-c489-45fd-be8a-1fcb08b4d0ba" = true
+[4c9f6ff4-c489-45fd-be8a-1fcb08b4d0ba]
+description = "On the outer circle"
+include = true
 
-# On the middle circle
-"14378687-ee58-4c9b-a323-b089d5274be8" = true
+[14378687-ee58-4c9b-a323-b089d5274be8]
+description = "On the middle circle"
+include = true
 
-# On the inner circle
-"849e2e63-85bd-4fed-bc3b-781ae962e2c9" = true
+[849e2e63-85bd-4fed-bc3b-781ae962e2c9]
+description = "On the inner circle"
+include = true
 
-# Exactly on centre
-"1c5ffd9f-ea66-462f-9f06-a1303de5a226" = true
+[1c5ffd9f-ea66-462f-9f06-a1303de5a226]
+description = "Exactly on centre"
+include = true
 
-# Near the centre
-"b65abce3-a679-4550-8115-4b74bda06088" = true
+[b65abce3-a679-4550-8115-4b74bda06088]
+description = "Near the centre"
+include = true
 
-# Just within the inner circle
-"66c29c1d-44f5-40cf-9927-e09a1305b399" = true
+[66c29c1d-44f5-40cf-9927-e09a1305b399]
+description = "Just within the inner circle"
+include = true
 
-# Just outside the inner circle
-"d1012f63-c97c-4394-b944-7beb3d0b141a" = true
+[d1012f63-c97c-4394-b944-7beb3d0b141a]
+description = "Just outside the inner circle"
+include = true
 
-# Just within the middle circle
-"ab2b5666-b0b4-49c3-9b27-205e790ed945" = true
+[ab2b5666-b0b4-49c3-9b27-205e790ed945]
+description = "Just within the middle circle"
+include = true
 
-# Just outside the middle circle
-"70f1424e-d690-4860-8caf-9740a52c0161" = true
+[70f1424e-d690-4860-8caf-9740a52c0161]
+description = "Just outside the middle circle"
+include = true
 
-# Just within the outer circle
-"a7dbf8db-419c-4712-8a7f-67602b69b293" = true
+[a7dbf8db-419c-4712-8a7f-67602b69b293]
+description = "Just within the outer circle"
+include = true
 
-# Just outside the outer circle
-"e0f39315-9f9a-4546-96e4-a9475b885aa7" = true
+[e0f39315-9f9a-4546-96e4-a9475b885aa7]
+description = "Just outside the outer circle"
+include = true
 
-# Asymmetric position between the inner and middle circles
-"045d7d18-d863-4229-818e-b50828c75d19" = true
+[045d7d18-d863-4229-818e-b50828c75d19]
+description = "Asymmetric position between the inner and middle circles"
+include = true

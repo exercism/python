@@ -1,22 +1,31 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# no items
-"a4d7d2f0-ad8a-460c-86f3-88ba709d41a7" = true
+[a4d7d2f0-ad8a-460c-86f3-88ba709d41a7]
+description = "no items"
+include = true
 
-# one item, too heavy
-"1d39e98c-6249-4a8b-912f-87cb12e506b0" = true
+[1d39e98c-6249-4a8b-912f-87cb12e506b0]
+description = "one item, too heavy"
+include = true
 
-# five items (cannot be greedy by weight)
-"833ea310-6323-44f2-9d27-a278740ffbd8" = true
+[833ea310-6323-44f2-9d27-a278740ffbd8]
+description = "five items (cannot be greedy by weight)"
+include = true
 
-# five items (cannot be greedy by value)
-"277cdc52-f835-4c7d-872b-bff17bab2456" = true
+[277cdc52-f835-4c7d-872b-bff17bab2456]
+description = "five items (cannot be greedy by value)"
+include = true
 
-# example knapsack
-"81d8e679-442b-4f7a-8a59-7278083916c9" = true
+[81d8e679-442b-4f7a-8a59-7278083916c9]
+description = "example knapsack"
+include = true
 
-# 8 items
-"f23a2449-d67c-4c26-bf3e-cde020f27ecc" = true
+[f23a2449-d67c-4c26-bf3e-cde020f27ecc]
+description = "8 items"
+include = true
 
-# 15 items
-"7c682ae9-c385-4241-a197-d2fa02c81a11" = true
+[7c682ae9-c385-4241-a197-d2fa02c81a11]
+description = "15 items"
+include = true

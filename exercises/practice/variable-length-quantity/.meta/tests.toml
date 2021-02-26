@@ -1,79 +1,107 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# zero
-"35c9db2e-f781-4c52-b73b-8e76427defd0" = true
+[35c9db2e-f781-4c52-b73b-8e76427defd0]
+description = "zero"
+include = true
 
-# arbitrary single byte
-"be44d299-a151-4604-a10e-d4b867f41540" = true
+[be44d299-a151-4604-a10e-d4b867f41540]
+description = "arbitrary single byte"
+include = true
 
-# largest single byte
-"ea399615-d274-4af6-bbef-a1c23c9e1346" = true
+[ea399615-d274-4af6-bbef-a1c23c9e1346]
+description = "largest single byte"
+include = true
 
-# smallest double byte
-"77b07086-bd3f-4882-8476-8dcafee79b1c" = true
+[77b07086-bd3f-4882-8476-8dcafee79b1c]
+description = "smallest double byte"
+include = true
 
-# arbitrary double byte
-"63955a49-2690-4e22-a556-0040648d6b2d" = true
+[63955a49-2690-4e22-a556-0040648d6b2d]
+description = "arbitrary double byte"
+include = true
 
-# largest double byte
-"29da7031-0067-43d3-83a7-4f14b29ed97a" = true
+[29da7031-0067-43d3-83a7-4f14b29ed97a]
+description = "largest double byte"
+include = true
 
-# smallest triple byte
-"3345d2e3-79a9-4999-869e-d4856e3a8e01" = true
+[3345d2e3-79a9-4999-869e-d4856e3a8e01]
+description = "smallest triple byte"
+include = true
 
-# arbitrary triple byte
-"5df0bc2d-2a57-4300-a653-a75ee4bd0bee" = true
+[5df0bc2d-2a57-4300-a653-a75ee4bd0bee]
+description = "arbitrary triple byte"
+include = true
 
-# largest triple byte
-"f51d8539-312d-4db1-945c-250222c6aa22" = true
+[f51d8539-312d-4db1-945c-250222c6aa22]
+description = "largest triple byte"
+include = true
 
-# smallest quadruple byte
-"da78228b-544f-47b7-8bfe-d16b35bbe570" = true
+[da78228b-544f-47b7-8bfe-d16b35bbe570]
+description = "smallest quadruple byte"
+include = true
 
-# arbitrary quadruple byte
-"11ed3469-a933-46f1-996f-2231e05d7bb6" = true
+[11ed3469-a933-46f1-996f-2231e05d7bb6]
+description = "arbitrary quadruple byte"
+include = true
 
-# largest quadruple byte
-"d5f3f3c3-e0f1-4e7f-aad0-18a44f223d1c" = true
+[d5f3f3c3-e0f1-4e7f-aad0-18a44f223d1c]
+description = "largest quadruple byte"
+include = true
 
-# smallest quintuple byte
-"91a18b33-24e7-4bfb-bbca-eca78ff4fc47" = true
+[91a18b33-24e7-4bfb-bbca-eca78ff4fc47]
+description = "smallest quintuple byte"
+include = true
 
-# arbitrary quintuple byte
-"5f34ff12-2952-4669-95fe-2d11b693d331" = true
+[5f34ff12-2952-4669-95fe-2d11b693d331]
+description = "arbitrary quintuple byte"
+include = true
 
-# maximum 32-bit integer input
-"7489694b-88c3-4078-9864-6fe802411009" = true
+[7489694b-88c3-4078-9864-6fe802411009]
+description = "maximum 32-bit integer input"
+include = true
 
-# two single-byte values
-"f9b91821-cada-4a73-9421-3c81d6ff3661" = true
+[f9b91821-cada-4a73-9421-3c81d6ff3661]
+description = "two single-byte values"
+include = true
 
-# two multi-byte values
-"68694449-25d2-4974-ba75-fa7bb36db212" = true
+[68694449-25d2-4974-ba75-fa7bb36db212]
+description = "two multi-byte values"
+include = true
 
-# many multi-byte values
-"51a06b5c-de1b-4487-9a50-9db1b8930d85" = true
+[51a06b5c-de1b-4487-9a50-9db1b8930d85]
+description = "many multi-byte values"
+include = true
 
-# one byte
-"baa73993-4514-4915-bac0-f7f585e0e59a" = true
+[baa73993-4514-4915-bac0-f7f585e0e59a]
+description = "one byte"
+include = true
 
-# two bytes
-"72e94369-29f9-46f2-8c95-6c5b7a595aee" = true
+[72e94369-29f9-46f2-8c95-6c5b7a595aee]
+description = "two bytes"
+include = true
 
-# three bytes
-"df5a44c4-56f7-464e-a997-1db5f63ce691" = true
+[df5a44c4-56f7-464e-a997-1db5f63ce691]
+description = "three bytes"
+include = true
 
-# four bytes
-"1bb58684-f2dc-450a-8406-1f3452aa1947" = true
+[1bb58684-f2dc-450a-8406-1f3452aa1947]
+description = "four bytes"
+include = true
 
-# maximum 32-bit integer
-"cecd5233-49f1-4dd1-a41a-9840a40f09cd" = true
+[cecd5233-49f1-4dd1-a41a-9840a40f09cd]
+description = "maximum 32-bit integer"
+include = true
 
-# incomplete sequence causes error
-"e7d74ba3-8b8e-4bcb-858d-d08302e15695" = true
+[e7d74ba3-8b8e-4bcb-858d-d08302e15695]
+description = "incomplete sequence causes error"
+include = true
 
-# incomplete sequence causes error, even if value is zero
-"aa378291-9043-4724-bc53-aca1b4a3fcb6" = true
+[aa378291-9043-4724-bc53-aca1b4a3fcb6]
+description = "incomplete sequence causes error, even if value is zero"
+include = true
 
-# multiple values
-"a91e6f5a-c64a-48e3-8a75-ce1a81e0ebee" = true
+[a91e6f5a-c64a-48e3-8a75-ce1a81e0ebee]
+description = "multiple values"
+include = true

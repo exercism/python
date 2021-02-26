@@ -1,19 +1,27 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# encode with two rails
-"46dc5c50-5538-401d-93a5-41102680d068" = true
+[46dc5c50-5538-401d-93a5-41102680d068]
+description = "encode with two rails"
+include = true
 
-# encode with three rails
-"25691697-fbd8-4278-8c38-b84068b7bc29" = true
+[25691697-fbd8-4278-8c38-b84068b7bc29]
+description = "encode with three rails"
+include = true
 
-# encode with ending in the middle
-"384f0fea-1442-4f1a-a7c4-5cbc2044002c" = true
+[384f0fea-1442-4f1a-a7c4-5cbc2044002c]
+description = "encode with ending in the middle"
+include = true
 
-# decode with three rails
-"cd525b17-ec34-45ef-8f0e-4f27c24a7127" = true
+[cd525b17-ec34-45ef-8f0e-4f27c24a7127]
+description = "decode with three rails"
+include = true
 
-# decode with five rails
-"dd7b4a98-1a52-4e5c-9499-cbb117833507" = true
+[dd7b4a98-1a52-4e5c-9499-cbb117833507]
+description = "decode with five rails"
+include = true
 
-# decode with six rails
-"93e1ecf4-fac9-45d9-9cd2-591f47d3b8d3" = true
+[93e1ecf4-fac9-45d9-9cd2-591f47d3b8d3]
+description = "decode with six rails"
+include = true

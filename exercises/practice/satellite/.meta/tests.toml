@@ -1,19 +1,27 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# Empty tree
-"8df3fa26-811a-4165-9286-ff9ac0850d19" = true
+[8df3fa26-811a-4165-9286-ff9ac0850d19]
+description = "Empty tree"
+include = true
 
-# Tree with one item
-"f945ccfc-05e3-47d7-825b-0270559d43ad" = true
+[f945ccfc-05e3-47d7-825b-0270559d43ad]
+description = "Tree with one item"
+include = true
 
-# Tree with many items
-"a0121d5f-37b0-48dd-9c64-cba4c4464135" = true
+[a0121d5f-37b0-48dd-9c64-cba4c4464135]
+description = "Tree with many items"
+include = true
 
-# Reject traversals of different length
-"6074041f-4891-4d81-a128-401050c2a3b0" = true
+[6074041f-4891-4d81-a128-401050c2a3b0]
+description = "Reject traversals of different length"
+include = true
 
-# Reject inconsistent traversals of same length
-"27916ce4-45f3-4d8b-8528-496fedc157ca" = true
+[27916ce4-45f3-4d8b-8528-496fedc157ca]
+description = "Reject inconsistent traversals of same length"
+include = true
 
-# Reject traversals with repeated items
-"d86a3d72-76a9-43b5-9d3a-e64cb1216035" = true
+[d86a3d72-76a9-43b5-9d3a-e64cb1216035]
+description = "Reject traversals with repeated items"
+include = true

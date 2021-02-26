@@ -1,46 +1,63 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# Only a single book
-"17146bd5-2e80-4557-ab4c-05632b6b0d01" = true
+[17146bd5-2e80-4557-ab4c-05632b6b0d01]
+description = "Only a single book"
+include = true
 
-# Two of the same book
-"cc2de9ac-ff2a-4efd-b7c7-bfe0f43271ce" = true
+[cc2de9ac-ff2a-4efd-b7c7-bfe0f43271ce]
+description = "Two of the same book"
+include = true
 
-# Empty basket
-"5a86eac0-45d2-46aa-bbf0-266b94393a1a" = true
+[5a86eac0-45d2-46aa-bbf0-266b94393a1a]
+description = "Empty basket"
+include = true
 
-# Two different books
-"158bd19a-3db4-4468-ae85-e0638a688990" = true
+[158bd19a-3db4-4468-ae85-e0638a688990]
+description = "Two different books"
+include = true
 
-# Three different books
-"f3833f6b-9332-4a1f-ad98-6c3f8e30e163" = true
+[f3833f6b-9332-4a1f-ad98-6c3f8e30e163]
+description = "Three different books"
+include = true
 
-# Four different books
-"1951a1db-2fb6-4cd1-a69a-f691b6dd30a2" = true
+[1951a1db-2fb6-4cd1-a69a-f691b6dd30a2]
+description = "Four different books"
+include = true
 
-# Five different books
-"d70f6682-3019-4c3f-aede-83c6a8c647a3" = true
+[d70f6682-3019-4c3f-aede-83c6a8c647a3]
+description = "Five different books"
+include = true
 
-# Two groups of four is cheaper than group of five plus group of three
-"78cacb57-911a-45f1-be52-2a5bd428c634" = true
+[78cacb57-911a-45f1-be52-2a5bd428c634]
+description = "Two groups of four is cheaper than group of five plus group of three"
+include = true
 
-# Two groups of four is cheaper than groups of five and three
-"f808b5a4-e01f-4c0d-881f-f7b90d9739da" = true
+[f808b5a4-e01f-4c0d-881f-f7b90d9739da]
+description = "Two groups of four is cheaper than groups of five and three"
+include = true
 
-# Group of four plus group of two is cheaper than two groups of three
-"fe96401c-5268-4be2-9d9e-19b76478007c" = true
+[fe96401c-5268-4be2-9d9e-19b76478007c]
+description = "Group of four plus group of two is cheaper than two groups of three"
+include = true
 
-# Two each of first 4 books and 1 copy each of rest
-"68ea9b78-10ad-420e-a766-836a501d3633" = true
+[68ea9b78-10ad-420e-a766-836a501d3633]
+description = "Two each of first 4 books and 1 copy each of rest"
+include = true
 
-# Two copies of each book
-"c0a779d5-a40c-47ae-9828-a340e936b866" = true
+[c0a779d5-a40c-47ae-9828-a340e936b866]
+description = "Two copies of each book"
+include = true
 
-# Three copies of first book and 2 each of remaining
-"18fd86fe-08f1-4b68-969b-392b8af20513" = true
+[18fd86fe-08f1-4b68-969b-392b8af20513]
+description = "Three copies of first book and 2 each of remaining"
+include = true
 
-# Three each of first 2 books and 2 each of remaining books
-"0b19a24d-e4cf-4ec8-9db2-8899a41af0da" = true
+[0b19a24d-e4cf-4ec8-9db2-8899a41af0da]
+description = "Three each of first 2 books and 2 each of remaining books"
+include = true
 
-# Four groups of four are cheaper than two groups each of five and three
-"bb376344-4fb2-49ab-ab85-e38d8354a58d" = true
+[bb376344-4fb2-49ab-ab85-e38d8354a58d]
+description = "Four groups of four are cheaper than two groups each of five and three"
+include = true

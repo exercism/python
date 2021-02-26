@@ -1,37 +1,51 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# empty input = empty output
-"31a673f2-5e54-49fe-bd79-1c1dae476c9c" = true
+[31a673f2-5e54-49fe-bd79-1c1dae476c9c]
+description = "empty input = empty output"
+include = true
 
-# singleton input = singleton output
-"4f99b933-367b-404b-8c6d-36d5923ee476" = true
+[4f99b933-367b-404b-8c6d-36d5923ee476]
+description = "singleton input = singleton output"
+include = true
 
-# singleton that can't be chained
-"91122d10-5ec7-47cb-b759-033756375869" = true
+[91122d10-5ec7-47cb-b759-033756375869]
+description = "singleton that can't be chained"
+include = true
 
-# three elements
-"be8bc26b-fd3d-440b-8e9f-d698a0623be3" = true
+[be8bc26b-fd3d-440b-8e9f-d698a0623be3]
+description = "three elements"
+include = true
 
-# can reverse dominoes
-"99e615c6-c059-401c-9e87-ad7af11fea5c" = true
+[99e615c6-c059-401c-9e87-ad7af11fea5c]
+description = "can reverse dominoes"
+include = true
 
-# can't be chained
-"51f0c291-5d43-40c5-b316-0429069528c9" = true
+[51f0c291-5d43-40c5-b316-0429069528c9]
+description = "can't be chained"
+include = true
 
-# disconnected - simple
-"9a75e078-a025-4c23-8c3a-238553657f39" = true
+[9a75e078-a025-4c23-8c3a-238553657f39]
+description = "disconnected - simple"
+include = true
 
-# disconnected - double loop
-"0da0c7fe-d492-445d-b9ef-1f111f07a301" = true
+[0da0c7fe-d492-445d-b9ef-1f111f07a301]
+description = "disconnected - double loop"
+include = true
 
-# disconnected - single isolated
-"b6087ff0-f555-4ea0-a71c-f9d707c5994a" = true
+[b6087ff0-f555-4ea0-a71c-f9d707c5994a]
+description = "disconnected - single isolated"
+include = true
 
-# need backtrack
-"2174fbdc-8b48-4bac-9914-8090d06ef978" = true
+[2174fbdc-8b48-4bac-9914-8090d06ef978]
+description = "need backtrack"
+include = true
 
-# separate loops
-"167bb480-dfd1-4318-a20d-4f90adb4a09f" = true
+[167bb480-dfd1-4318-a20d-4f90adb4a09f]
+description = "separate loops"
+include = true
 
-# nine elements
-"cd061538-6046-45a7-ace9-6708fe8f6504" = true
+[cd061538-6046-45a7-ace9-6708fe8f6504]
+description = "nine elements"
+include = true

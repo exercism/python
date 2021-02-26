@@ -1,28 +1,39 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# square of sum 1
-"e46c542b-31fc-4506-bcae-6b62b3268537" = true
+[e46c542b-31fc-4506-bcae-6b62b3268537]
+description = "square of sum 1"
+include = true
 
-# square of sum 5
-"9b3f96cb-638d-41ee-99b7-b4f9c0622948" = true
+[9b3f96cb-638d-41ee-99b7-b4f9c0622948]
+description = "square of sum 5"
+include = true
 
-# square of sum 100
-"54ba043f-3c35-4d43-86ff-3a41625d5e86" = true
+[54ba043f-3c35-4d43-86ff-3a41625d5e86]
+description = "square of sum 100"
+include = true
 
-# sum of squares 1
-"01d84507-b03e-4238-9395-dd61d03074b5" = true
+[01d84507-b03e-4238-9395-dd61d03074b5]
+description = "sum of squares 1"
+include = true
 
-# sum of squares 5
-"c93900cd-8cc2-4ca4-917b-dd3027023499" = true
+[c93900cd-8cc2-4ca4-917b-dd3027023499]
+description = "sum of squares 5"
+include = true
 
-# sum of squares 100
-"94807386-73e4-4d9e-8dec-69eb135b19e4" = true
+[94807386-73e4-4d9e-8dec-69eb135b19e4]
+description = "sum of squares 100"
+include = true
 
-# difference of squares 1
-"44f72ae6-31a7-437f-858d-2c0837adabb6" = true
+[44f72ae6-31a7-437f-858d-2c0837adabb6]
+description = "difference of squares 1"
+include = true
 
-# difference of squares 5
-"005cb2bf-a0c8-46f3-ae25-924029f8b00b" = true
+[005cb2bf-a0c8-46f3-ae25-924029f8b00b]
+description = "difference of squares 5"
+include = true
 
-# difference of squares 100
-"b1bf19de-9a16-41c0-a62b-1f02ecc0b036" = true
+[b1bf19de-9a16-41c0-a62b-1f02ecc0b036]
+description = "difference of squares 100"
+include = true

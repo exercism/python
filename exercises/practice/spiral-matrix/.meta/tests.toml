@@ -1,19 +1,27 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# empty spiral
-"8f584201-b446-4bc9-b132-811c8edd9040" = true
+[8f584201-b446-4bc9-b132-811c8edd9040]
+description = "empty spiral"
+include = true
 
-# trivial spiral
-"e40ae5f3-e2c9-4639-8116-8a119d632ab2" = true
+[e40ae5f3-e2c9-4639-8116-8a119d632ab2]
+description = "trivial spiral"
+include = true
 
-# spiral of size 2
-"cf05e42d-eb78-4098-a36e-cdaf0991bc48" = true
+[cf05e42d-eb78-4098-a36e-cdaf0991bc48]
+description = "spiral of size 2"
+include = true
 
-# spiral of size 3
-"1c475667-c896-4c23-82e2-e033929de939" = true
+[1c475667-c896-4c23-82e2-e033929de939]
+description = "spiral of size 3"
+include = true
 
-# spiral of size 4
-"05ccbc48-d891-44f5-9137-f4ce462a759d" = true
+[05ccbc48-d891-44f5-9137-f4ce462a759d]
+description = "spiral of size 4"
+include = true
 
-# spiral of size 5
-"f4d2165b-1738-4e0c-bed0-c459045ae50d" = true
+[f4d2165b-1738-4e0c-bed0-c459045ae50d]
+description = "spiral of size 5"
+include = true

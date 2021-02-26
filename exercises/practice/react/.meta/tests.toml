@@ -1,43 +1,59 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# input cells have a value
-"c51ee736-d001-4f30-88d1-0c8e8b43cd07" = true
+[c51ee736-d001-4f30-88d1-0c8e8b43cd07]
+description = "input cells have a value"
+include = true
 
-# an input cell's value can be set
-"dedf0fe0-da0c-4d5d-a582-ffaf5f4d0851" = true
+[dedf0fe0-da0c-4d5d-a582-ffaf5f4d0851]
+description = "an input cell's value can be set"
+include = true
 
-# compute cells calculate initial value
-"5854b975-f545-4f93-8968-cc324cde746e" = true
+[5854b975-f545-4f93-8968-cc324cde746e]
+description = "compute cells calculate initial value"
+include = true
 
-# compute cells take inputs in the right order
-"25795a3d-b86c-4e91-abe7-1c340e71560c" = true
+[25795a3d-b86c-4e91-abe7-1c340e71560c]
+description = "compute cells take inputs in the right order"
+include = true
 
-# compute cells update value when dependencies are changed
-"c62689bf-7be5-41bb-b9f8-65178ef3e8ba" = true
+[c62689bf-7be5-41bb-b9f8-65178ef3e8ba]
+description = "compute cells update value when dependencies are changed"
+include = true
 
-# compute cells can depend on other compute cells
-"5ff36b09-0a88-48d4-b7f8-69dcf3feea40" = true
+[5ff36b09-0a88-48d4-b7f8-69dcf3feea40]
+description = "compute cells can depend on other compute cells"
+include = true
 
-# compute cells fire callbacks
-"abe33eaf-68ad-42a5-b728-05519ca88d2d" = true
+[abe33eaf-68ad-42a5-b728-05519ca88d2d]
+description = "compute cells fire callbacks"
+include = true
 
-# callback cells only fire on change
-"9e5cb3a4-78e5-4290-80f8-a78612c52db2" = true
+[9e5cb3a4-78e5-4290-80f8-a78612c52db2]
+description = "callback cells only fire on change"
+include = true
 
-# callbacks do not report already reported values
-"ada17cb6-7332-448a-b934-e3d7495c13d3" = true
+[ada17cb6-7332-448a-b934-e3d7495c13d3]
+description = "callbacks do not report already reported values"
+include = true
 
-# callbacks can fire from multiple cells
-"ac271900-ea5c-461c-9add-eeebcb8c03e5" = true
+[ac271900-ea5c-461c-9add-eeebcb8c03e5]
+description = "callbacks can fire from multiple cells"
+include = true
 
-# callbacks can be added and removed
-"95a82dcc-8280-4de3-a4cd-4f19a84e3d6f" = true
+[95a82dcc-8280-4de3-a4cd-4f19a84e3d6f]
+description = "callbacks can be added and removed"
+include = true
 
-# removing a callback multiple times doesn't interfere with other callbacks
-"f2a7b445-f783-4e0e-8393-469ab4915f2a" = true
+[f2a7b445-f783-4e0e-8393-469ab4915f2a]
+description = "removing a callback multiple times doesn't interfere with other callbacks"
+include = true
 
-# callbacks should only be called once even if multiple dependencies change
-"daf6feca-09e0-4ce5-801d-770ddfe1c268" = true
+[daf6feca-09e0-4ce5-801d-770ddfe1c268]
+description = "callbacks should only be called once even if multiple dependencies change"
+include = true
 
-# callbacks should not be called if dependencies change but output value doesn't change
-"9a5b159f-b7aa-4729-807e-f1c38a46d377" = true
+[9a5b159f-b7aa-4729-807e-f1c38a46d377]
+description = "callbacks should not be called if dependencies change but output value doesn't change"
+include = true

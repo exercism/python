@@ -1,55 +1,75 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# cleans the number
-"79666dce-e0f1-46de-95a1-563802913c35" = true
+[79666dce-e0f1-46de-95a1-563802913c35]
+description = "cleans the number"
+include = true
 
-# cleans numbers with dots
-"c360451f-549f-43e4-8aba-fdf6cb0bf83f" = true
+[c360451f-549f-43e4-8aba-fdf6cb0bf83f]
+description = "cleans numbers with dots"
+include = true
 
-# cleans numbers with multiple spaces
-"08f94c34-9a37-46a2-a123-2a8e9727395d" = true
+[08f94c34-9a37-46a2-a123-2a8e9727395d]
+description = "cleans numbers with multiple spaces"
+include = true
 
-# invalid when 9 digits
-"598d8432-0659-4019-a78b-1c6a73691d21" = true
+[598d8432-0659-4019-a78b-1c6a73691d21]
+description = "invalid when 9 digits"
+include = true
 
-# invalid when 11 digits does not start with a 1
-"57061c72-07b5-431f-9766-d97da7c4399d" = true
+[57061c72-07b5-431f-9766-d97da7c4399d]
+description = "invalid when 11 digits does not start with a 1"
+include = true
 
-# valid when 11 digits and starting with 1
-"9962cbf3-97bb-4118-ba9b-38ff49c64430" = true
+[9962cbf3-97bb-4118-ba9b-38ff49c64430]
+description = "valid when 11 digits and starting with 1"
+include = true
 
-# valid when 11 digits and starting with 1 even with punctuation
-"fa724fbf-054c-4d91-95da-f65ab5b6dbca" = true
+[fa724fbf-054c-4d91-95da-f65ab5b6dbca]
+description = "valid when 11 digits and starting with 1 even with punctuation"
+include = true
 
-# invalid when more than 11 digits
-"c6a5f007-895a-4fc5-90bc-a7e70f9b5cad" = true
+[c6a5f007-895a-4fc5-90bc-a7e70f9b5cad]
+description = "invalid when more than 11 digits"
+include = true
 
-# invalid with letters
-"63f38f37-53f6-4a5f-bd86-e9b404f10a60" = true
+[63f38f37-53f6-4a5f-bd86-e9b404f10a60]
+description = "invalid with letters"
+include = true
 
-# invalid with punctuations
-"4bd97d90-52fd-45d3-b0db-06ab95b1244e" = true
+[4bd97d90-52fd-45d3-b0db-06ab95b1244e]
+description = "invalid with punctuations"
+include = true
 
-# invalid if area code starts with 0
-"d77d07f8-873c-4b17-8978-5f66139bf7d7" = true
+[d77d07f8-873c-4b17-8978-5f66139bf7d7]
+description = "invalid if area code starts with 0"
+include = true
 
-# invalid if area code starts with 1
-"c7485cfb-1e7b-4081-8e96-8cdb3b77f15e" = true
+[c7485cfb-1e7b-4081-8e96-8cdb3b77f15e]
+description = "invalid if area code starts with 1"
+include = true
 
-# invalid if exchange code starts with 0
-"4d622293-6976-413d-b8bf-dd8a94d4e2ac" = true
+[4d622293-6976-413d-b8bf-dd8a94d4e2ac]
+description = "invalid if exchange code starts with 0"
+include = true
 
-# invalid if exchange code starts with 1
-"4cef57b4-7d8e-43aa-8328-1e1b89001262" = true
+[4cef57b4-7d8e-43aa-8328-1e1b89001262]
+description = "invalid if exchange code starts with 1"
+include = true
 
-# invalid if area code starts with 0 on valid 11-digit number
-"9925b09c-1a0d-4960-a197-5d163cbe308c" = true
+[9925b09c-1a0d-4960-a197-5d163cbe308c]
+description = "invalid if area code starts with 0 on valid 11-digit number"
+include = true
 
-# invalid if area code starts with 1 on valid 11-digit number
-"3f809d37-40f3-44b5-ad90-535838b1a816" = true
+[3f809d37-40f3-44b5-ad90-535838b1a816]
+description = "invalid if area code starts with 1 on valid 11-digit number"
+include = true
 
-# invalid if exchange code starts with 0 on valid 11-digit number
-"e08e5532-d621-40d4-b0cc-96c159276b65" = true
+[e08e5532-d621-40d4-b0cc-96c159276b65]
+description = "invalid if exchange code starts with 0 on valid 11-digit number"
+include = true
 
-# invalid if exchange code starts with 1 on valid 11-digit number
-"57b32f3d-696a-455c-8bf1-137b6d171cdf" = true
+[57b32f3d-696a-455c-8bf1-137b6d171cdf]
+description = "invalid if exchange code starts with 1 on valid 11-digit number"
+include = true

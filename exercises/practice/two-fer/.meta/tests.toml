@@ -1,10 +1,15 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# no name given
-"1cf3e15a-a3d7-4a87-aeb3-ba1b43bc8dce" = true
+[1cf3e15a-a3d7-4a87-aeb3-ba1b43bc8dce]
+description = "no name given"
+include = true
 
-# a name given
-"b4c6dbb8-b4fb-42c2-bafd-10785abe7709" = true
+[b4c6dbb8-b4fb-42c2-bafd-10785abe7709]
+description = "a name given"
+include = true
 
-# another name given
-"3549048d-1a6e-4653-9a79-b0bda163e8d5" = true
+[3549048d-1a6e-4653-9a79-b0bda163e8d5]
+description = "another name given"
+include = true

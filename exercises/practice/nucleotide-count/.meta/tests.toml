@@ -1,16 +1,23 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# empty strand
-"3e5c30a8-87e2-4845-a815-a49671ade970" = true
+[3e5c30a8-87e2-4845-a815-a49671ade970]
+description = "empty strand"
+include = true
 
-# can count one nucleotide in single-character input
-"a0ea42a6-06d9-4ac6-828c-7ccaccf98fec" = true
+[a0ea42a6-06d9-4ac6-828c-7ccaccf98fec]
+description = "can count one nucleotide in single-character input"
+include = true
 
-# strand with repeated nucleotide
-"eca0d565-ed8c-43e7-9033-6cefbf5115b5" = true
+[eca0d565-ed8c-43e7-9033-6cefbf5115b5]
+description = "strand with repeated nucleotide"
+include = true
 
-# strand with multiple nucleotides
-"40a45eac-c83f-4740-901a-20b22d15a39f" = true
+[40a45eac-c83f-4740-901a-20b22d15a39f]
+description = "strand with multiple nucleotides"
+include = true
 
-# strand with invalid nucleotides
-"b4c47851-ee9e-4b0a-be70-a86e343bd851" = true
+[b4c47851-ee9e-4b0a-be70-a86e343bd851]
+description = "strand with invalid nucleotides"
+include = true

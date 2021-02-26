@@ -1,58 +1,79 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# ability modifier for score 3 is -4
-"1e9ae1dc-35bd-43ba-aa08-e4b94c20fa37" = true
+[1e9ae1dc-35bd-43ba-aa08-e4b94c20fa37]
+description = "ability modifier for score 3 is -4"
+include = true
 
-# ability modifier for score 4 is -3
-"cc9bb24e-56b8-4e9e-989d-a0d1a29ebb9c" = true
+[cc9bb24e-56b8-4e9e-989d-a0d1a29ebb9c]
+description = "ability modifier for score 4 is -3"
+include = true
 
-# ability modifier for score 5 is -3
-"5b519fcd-6946-41ee-91fe-34b4f9808326" = true
+[5b519fcd-6946-41ee-91fe-34b4f9808326]
+description = "ability modifier for score 5 is -3"
+include = true
 
-# ability modifier for score 6 is -2
-"dc2913bd-6d7a-402e-b1e2-6d568b1cbe21" = true
+[dc2913bd-6d7a-402e-b1e2-6d568b1cbe21]
+description = "ability modifier for score 6 is -2"
+include = true
 
-# ability modifier for score 7 is -2
-"099440f5-0d66-4b1a-8a10-8f3a03cc499f" = true
+[099440f5-0d66-4b1a-8a10-8f3a03cc499f]
+description = "ability modifier for score 7 is -2"
+include = true
 
-# ability modifier for score 8 is -1
-"cfda6e5c-3489-42f0-b22b-4acb47084df0" = true
+[cfda6e5c-3489-42f0-b22b-4acb47084df0]
+description = "ability modifier for score 8 is -1"
+include = true
 
-# ability modifier for score 9 is -1
-"c70f0507-fa7e-4228-8463-858bfbba1754" = true
+[c70f0507-fa7e-4228-8463-858bfbba1754]
+description = "ability modifier for score 9 is -1"
+include = true
 
-# ability modifier for score 10 is 0
-"6f4e6c88-1cd9-46a0-92b8-db4a99b372f7" = true
+[6f4e6c88-1cd9-46a0-92b8-db4a99b372f7]
+description = "ability modifier for score 10 is 0"
+include = true
 
-# ability modifier for score 11 is 0
-"e00d9e5c-63c8-413f-879d-cd9be9697097" = true
+[e00d9e5c-63c8-413f-879d-cd9be9697097]
+description = "ability modifier for score 11 is 0"
+include = true
 
-# ability modifier for score 12 is +1
-"eea06f3c-8de0-45e7-9d9d-b8cab4179715" = true
+[eea06f3c-8de0-45e7-9d9d-b8cab4179715]
+description = "ability modifier for score 12 is +1"
+include = true
 
-# ability modifier for score 13 is +1
-"9c51f6be-db72-4af7-92ac-b293a02c0dcd" = true
+[9c51f6be-db72-4af7-92ac-b293a02c0dcd]
+description = "ability modifier for score 13 is +1"
+include = true
 
-# ability modifier for score 14 is +2
-"94053a5d-53b6-4efc-b669-a8b5098f7762" = true
+[94053a5d-53b6-4efc-b669-a8b5098f7762]
+description = "ability modifier for score 14 is +2"
+include = true
 
-# ability modifier for score 15 is +2
-"8c33e7ca-3f9f-4820-8ab3-65f2c9e2f0e2" = true
+[8c33e7ca-3f9f-4820-8ab3-65f2c9e2f0e2]
+description = "ability modifier for score 15 is +2"
+include = true
 
-# ability modifier for score 16 is +3
-"c3ec871e-1791-44d0-b3cc-77e5fb4cd33d" = true
+[c3ec871e-1791-44d0-b3cc-77e5fb4cd33d]
+description = "ability modifier for score 16 is +3"
+include = true
 
-# ability modifier for score 17 is +3
-"3d053cee-2888-4616-b9fd-602a3b1efff4" = true
+[3d053cee-2888-4616-b9fd-602a3b1efff4]
+description = "ability modifier for score 17 is +3"
+include = true
 
-# ability modifier for score 18 is +4
-"bafd997a-e852-4e56-9f65-14b60261faee" = true
+[bafd997a-e852-4e56-9f65-14b60261faee]
+description = "ability modifier for score 18 is +4"
+include = true
 
-# random ability is within range
-"4f28f19c-2e47-4453-a46a-c0d365259c14" = true
+[4f28f19c-2e47-4453-a46a-c0d365259c14]
+description = "random ability is within range"
+include = true
 
-# random character is valid
-"385d7e72-864f-4e88-8279-81a7d75b04ad" = true
+[385d7e72-864f-4e88-8279-81a7d75b04ad]
+description = "random character is valid"
+include = true
 
-# each ability is only calculated once
-"2ca77b9b-c099-46c3-a02c-0d0f68ffa0fe" = true
+[2ca77b9b-c099-46c3-a02c-0d0f68ffa0fe]
+description = "each ability is only calculated once"
+include = true

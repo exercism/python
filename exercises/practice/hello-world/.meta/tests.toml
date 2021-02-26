@@ -1,4 +1,7 @@
-[canonical-tests]
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
 
-# Say Hi!
-"af9ffe10-dc13-42d8-a742-e7bdafac449d" = true
+[af9ffe10-dc13-42d8-a742-e7bdafac449d]
+description = "Say Hi!"
+include = true
