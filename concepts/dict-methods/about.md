@@ -10,7 +10,7 @@ It's especially useful in scenarios where the collection of items is large and m
 ## Dictionary Methods
 
 The `dict` class in Python provides many useful [methods][dict-methods] for working with dictionaries.
-Some were introduced in the conecpt for `dicts`.
+Some were introduced in the concept for `dicts`.
 Here are a few more - along with some techniques for iterating through and manipulating `dicts`.
 
 To quickly populate a dictionary with various `keys` and default values, the _class method_ [`dict.fromkeys(iterable, <default value>)`][fromkeys] will iterate through the `keys` and create a new `dict`.  All `values` will be set to the `default` value provided.
@@ -139,7 +139,7 @@ Where keys in the two dictionaries _overlap_, the `value` in `dict_one` will be 
 
 Python 3.9 introduces a different means of merging `dicts`:  the `union` operators.
 `dict | other_dict` will create a **new** `dict`, made up of the `key:value` pairs of `dict` and `other_dict`.
-When both dictionaries share keys, the `other_dict` values will take precidence.
+When both dictionaries share keys, the `other_dict` values will take precedence.
 `dict |= other` will behave similar to `dict.update()`, but in this case, `other` can be either a `dict` or an iterable of `key:value` pairs.
 
 ```python
@@ -169,7 +169,7 @@ When both dictionaries share keys, the `other_dict` values will take precidence.
 
 ## Tips and Tricks
 
-As of Python 3.6, `dicts` preserve the order in which items are inserted, allowing ordered iteration using `.items()`.  As of Python 3.8, `dict` _views_ are reversable, allowing keys, values or items to be iterated over reverse of insertion order by using `reversed(dict.keys())`, `reversed(dict.values())`, or `reversed(dict.items())`.
+As of Python 3.6, `dicts` preserve the order in which items are inserted, allowing ordered iteration using `.items()`.  As of Python 3.8, `dict` _views_ are reversible, allowing keys, values or items to be iterated over reverse of insertion order by using `reversed(dict.keys())`, `reversed(dict.values())`, or `reversed(dict.items())`.
 
 ```python
 >>> palette_II = {'Factory Stone Purple': '#7c677f', 'Green Treeline': '#478559', 'Purple baseline': '#161748'}
@@ -189,7 +189,7 @@ As of Python 3.6, `dicts` preserve the order in which items are inserted, allowi
 
 ```
 
-While `dict` does not have a built-in sorting method, it is possible to sort a dictionary _view_ by keys or values using the built-in `sorted()` with `dict.items()`.  The sorted view can then be used to create a new, sorted dictionary.  Unless a _sort key_ is specified, the defalut sort is over dictionary keys.
+While `dict` does not have a built-in sorting method, it is possible to sort a dictionary _view_ by keys or values using the built-in `sorted()` with `dict.items()`.  The sorted view can then be used to create a new, sorted dictionary.  Unless a _sort key_ is specified, the default sort is over dictionary keys.
 
 ```python
 >>> color_palette = {'Grassy Green': '#9bc400', 
@@ -220,7 +220,7 @@ While `dict` does not have a built-in sorting method, it is possible to sort a d
 
 ```
 
-Swapping keys and values reliably in a dictionary takes a little more work, but can be effienctly accomplished via a loop using `dict.items()`.  However, if values are not unique, extra checks are required.  Both methods assume that `dict` keys and values are _hashable_.
+Swapping keys and values reliably in a dictionary takes a little more work, but can be efferently accomplished via a loop using `dict.items()`.  However, if values are not unique, extra checks are required.  Both methods assume that `dict` keys and values are _hashable_.
 
 ```python
 
@@ -276,14 +276,14 @@ color_reference = {'Purple Mountains Majesty': '#8076a3',
                                 (44, 23, 0, 72): 'Purple Tinged Grey','#F3F3F3': 'Cloud',
                                 (243, 243, 243): 'Cloud',(0, 0, 0, 5): 'Cloud'}
 
->>> consolodated_colors = {}
+>>> consolidated_colors = {}
 >>> for key, value in extended_color_reference.items():
-...    if value in consolodated_colors:
-...        consolodated_colors[value].append(key)
+...    if value in consolidated_colors:
+...        consolidated_colors[value].append(key)
 ...    else:
-...        consolodated_colors[value] = [key]
+...        consolidated_colors[value] = [key]
 
->>> consolodated_colors
+>>> consolidated_colors
 {'Purple Mountains Majesty': ['#8076a3', (128, 118, 163), (21, 28, 0, 36)],
  'Misty Mountain Pink': ['#f9c5bd', (249, 197, 189), (0, 21, 24, 2)],
  'Factory Stone Purple': ['#7c677f', (124, 103, 127), (2, 19, 0, 50)],
