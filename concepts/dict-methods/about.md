@@ -220,7 +220,7 @@ While `dict` does not have a built-in sorting method, it is possible to sort a d
 
 ```
 
-Swapping keys and values reliably in a dictionary takes a little more work, but can be efferently accomplished via a loop using `dict.items()`.  However, if values are not unique, extra checks are required.  Both methods assume that `dict` keys and values are _hashable_.
+Swapping keys and values reliably in a dictionary takes a little more work, but can be accomplished via a loop using `dict.items()`.  But if the values stored in the `dict` are not unique, extra checks are required.  Both methods assume that `dict` keys and values are _hashable_.
 
 ```python
 
