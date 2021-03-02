@@ -70,6 +70,7 @@ class ExerciseConfig:
     language_versions: List[str] = None
     source: str = None
     source_url: str = None
+    blurb: str = None
 
     def __post_init__(self):
         if isinstance(self.files, dict):
