@@ -43,6 +43,7 @@ from jinja2 import Environment, FileSystemLoader, TemplateNotFound, UndefinedErr
 from dateutil.parser import parse
 
 from githelp import clone_if_missing, Repo
+from data import TestsTOML
 
 VERSION = "0.3.0"
 
@@ -197,17 +198,7 @@ def regex_split(s: str, find: str) -> List[str]:
     return re.split(find, s)
 
 
-def load_tests_toml(exercise: Path) -> Dict[str, bool]:
-    """
-    Loads test case opt-in/out data for an exercise as a dictionary
-    """
-    full_path = exercise / ".meta/tests.toml"
-    with full_path.open() as f:
-        opts = toml.load(f)
-    return opts
-
-
-def filter_test_cases(cases: List[TypeJSON], opts: Dict[str, bool]) -> List[TypeJSON]:
+def filter_test_cases(cases: List[TypeJSON], opts: TestsTOML) -> List[TypeJSON]:
     """
     Returns a filtered copy of `cases` where only cases whose UUID is marked True in
     `opts` are included.
@@ -216,10 +207,11 @@ def filter_test_cases(cases: List[TypeJSON], opts: Dict[str, bool]) -> List[Type
     for case in cases:
         if "uuid" in case:
             uuid = case["uuid"]
-            if opts.get(uuid, False):
+            case_opts = opts.cases.get(uuid, None)
+            if case_opts is not None and case_opts.include:
                 filtered.append(case)
             else:
-                logger.debug(f"uuid {uuid} either missing or marked false")
+                logger.debug(f"uuid {uuid} either missing or not marked for include")
         elif "cases" in case:
             subfiltered = filter_test_cases(case["cases"], opts)
             if subfiltered:
@@ -229,14 +221,14 @@ def filter_test_cases(cases: List[TypeJSON], opts: Dict[str, bool]) -> List[Type
     return filtered
 
 
-def load_canonical(exercise: str, spec_path: Path, test_opts: Dict[str, bool]) -> TypeJSON:
+def load_canonical(exercise: str, spec_path: Path, test_opts: TestsTOML) -> TypeJSON:
     """
     Loads the canonical data for an exercise as a nested dictionary
     """
     full_path = spec_path / "exercises" / exercise / "canonical-data.json"
     with full_path.open() as f:
         spec = json.load(f)
-    spec["cases"] = filter_test_cases(spec["cases"], test_opts["canonical-tests"])
+    spec["cases"] = filter_test_cases(spec["cases"], test_opts)
     spec["properties"] = get_tested_properties(spec)
     return spec
 
@@ -318,7 +310,7 @@ def generate_exercise(env: Environment, spec_path: Path, exercise: Path, check: 
             sys.modules[plugins_name] = plugins_module
             plugins_spec.loader.exec_module(plugins_module)
         try:
-            test_opts = load_tests_toml(exercise)
+            test_opts = TestsTOML.load(meta_dir / "tests.toml")
         except FileNotFoundError:
             logger.error(f"{slug}: tests.toml not found; skipping.")
             return True

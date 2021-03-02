@@ -3,7 +3,8 @@ from dataclasses import dataclass, asdict
 from itertools import chain
 import json
 from pathlib import Path
-from typing import List, Any
+import toml
+from typing import List, Any, Dict
 
 
 @dataclass
@@ -241,6 +242,25 @@ class Config:
         except IOError:
             print(f"FAIL: {path} file not found")
             raise SystemExit(1)
+
+
+@dataclass
+class TestCaseTOML:
+    uuid: str
+    description: str
+    include: bool = False
+    comment: str = ''
+
+
+@dataclass
+class TestsTOML:
+    cases: Dict[str, TestCaseTOML]
+
+    @classmethod
+    def load(cls, toml_path: Path):
+        with toml_path.open() as f:
+            data = toml.load(f)
+        return cls({uuid: TestCaseTOML(uuid, *opts) for uuid, opts in data.items()})
 
 
 if __name__ == "__main__":
