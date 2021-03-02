@@ -1,4 +1,5 @@
 {
+  "blurb": "Implement run-length encoding and decoding.",
   "authors": [],
   "files": {
     "solution": [],

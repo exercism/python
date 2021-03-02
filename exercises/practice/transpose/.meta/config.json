@@ -1,4 +1,5 @@
 {
+  "blurb": "Take input text and output it transposed.",
   "authors": [],
   "files": {
     "solution": [],
