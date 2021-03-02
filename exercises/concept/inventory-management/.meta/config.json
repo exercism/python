@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for inventory-management exercise",
   "authors": [
     {
       "github_username": "j08k",
@@ -16,8 +17,14 @@
     }
   ],
   "files": {
-    "solution": ["dicts.py"],
-    "test": ["dicts_test.py"],
-    "exemplar": [".meta/exemplar.py"]
+    "solution": [
+      "dicts.py"
+    ],
+    "test": [
+      "dicts_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
   }
 }

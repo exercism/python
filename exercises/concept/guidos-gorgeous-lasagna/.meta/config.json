@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for guidos-gorgeous-lasagna exercise",
   "authors": [
     {
       "github_username": "BethanyG",
@@ -6,9 +7,18 @@
     }
   ],
   "files": {
-    "solution": ["lasagna.py"],
-    "test": ["lasagna_test.py"],
-    "exemplar": [".meta/exemplar.py"]
+    "solution": [
+      "lasagna.py"
+    ],
+    "test": [
+      "lasagna_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
   },
-  "forked_from": ["csharp/basics", "ruby/basics"]
+  "forked_from": [
+    "csharp/basics",
+    "ruby/basics"
+  ]
 }

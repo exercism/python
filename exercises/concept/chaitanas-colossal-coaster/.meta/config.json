@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for chaitanas-colossal-coaster exercise",
   "contributors": [
     {
       "github_username": "valentin-p",
@@ -16,8 +17,14 @@
     }
   ],
   "files": {
-    "solution": ["list_methods.py"],
-    "test": ["list_methods_test.py"],
-    "exemplar": [".meta/exemplar.py"]
+    "solution": [
+      "list_methods.py"
+    ],
+    "test": [
+      "list_methods_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
   }
 }

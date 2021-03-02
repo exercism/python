@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for ghost-gobble-arcade-game exercise",
   "authors": [
     {
       "github_username": "neenjaw",
@@ -12,10 +13,18 @@
     }
   ],
   "files": {
-    "solution": ["arcade_game.py"],
-    "test": ["arcade_game_test.py"],
-    "exemplar": [".meta/exemplar.py"]
+    "solution": [
+      "arcade_game.py"
+    ],
+    "test": [
+      "arcade_game_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
   },
-  "forked_from": ["elixir/booleans"],
+  "forked_from": [
+    "elixir/booleans"
+  ],
   "language_versions": ">=3.5"
 }

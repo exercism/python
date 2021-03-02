@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for little-sisters-essay exercise",
   "contributors": [
     {
       "github_username": "valentin-p",
@@ -16,8 +17,14 @@
     }
   ],
   "files": {
-    "solution": ["string_methods.py"],
-    "test": ["string_methods_test.py"],
-    "exemplar": [".meta/exemplar.py"]
+    "solution": [
+      "string_methods.py"
+    ],
+    "test": [
+      "string_methods_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
   }
 }

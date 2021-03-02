@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for currency-exchange exercise",
   "authors": [
     {
       "github_username": "Ticktakto",
@@ -22,8 +23,14 @@
     }
   ],
   "files": {
-    "solution": ["exchange.py"],
-    "test": ["exchange_test.py"],
-    "exemplar": [".meta/exemplar.py"]
+    "solution": [
+      "exchange.py"
+    ],
+    "test": [
+      "exchange_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
   }
 }
