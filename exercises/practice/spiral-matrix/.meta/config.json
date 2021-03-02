@@ -1,4 +1,5 @@
 {
+  "blurb": " Given the size, return a square matrix of numbers in spiral order.",
   "authors": [],
   "files": {
     "solution": [],

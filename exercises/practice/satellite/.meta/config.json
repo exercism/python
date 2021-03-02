@@ -1,4 +1,5 @@
 {
+  "blurb": "Rebuild binary trees from pre-order and in-order traversals.",
   "authors": [],
   "files": {
     "solution": [],

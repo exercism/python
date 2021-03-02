@@ -1,4 +1,5 @@
 {
+  "blurb": "Compute the prime factors of a given natural number.",
   "authors": [],
   "files": {
     "solution": [],

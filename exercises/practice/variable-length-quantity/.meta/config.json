@@ -1,4 +1,5 @@
 {
+  "blurb": "Implement variable length quantity encoding and decoding.",
   "authors": [],
   "files": {
     "solution": [],
