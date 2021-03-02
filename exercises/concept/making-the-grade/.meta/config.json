@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for making-the-grade exercise",
   "authors": [
     {
       "github_username": "mohanrajanr",
@@ -10,8 +11,14 @@
     }
   ],
   "files": {
-    "solution": ["loops.py"],
-    "test": ["loops_test.py"],
-    "exemplar": [".meta/exemplar.py"]
+    "solution": [
+      "loops.py"
+    ],
+    "test": [
+      "loops_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
   }
 }

@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for elyses-enchantments exercise",
   "contributors": [
     {
       "github_username": "valentin-p",
@@ -16,8 +17,14 @@
     }
   ],
   "files": {
-    "solution": ["lists.py"],
-    "test": ["lists_test.py"],
-    "exemplar": [".meta/exemplar.py"]
+    "solution": [
+      "lists.py"
+    ],
+    "test": [
+      "lists_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
   }
 }

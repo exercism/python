@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for processing-logs exercise",
   "authors": [
     {
       "github_username": "aldraco",
@@ -6,9 +7,17 @@
     }
   ],
   "files": {
-    "solution": ["strings.py"],
-    "test": ["strings_test.py"],
-    "exemplar": [".meta/exemplar.py"]
+    "solution": [
+      "strings.py"
+    ],
+    "test": [
+      "strings_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
   },
-  "forked_from": ["csharp/strings"]
+  "forked_from": [
+    "csharp/strings"
+  ]
 }

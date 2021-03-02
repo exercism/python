@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for sets exercise",
   "authors": [
     {
       "github_username": "bethanyg",
@@ -6,8 +7,14 @@
     }
   ],
   "files": {
-    "solution": ["sets.py"],
-    "test": ["sets_test.py"],
-    "exemplar": [".meta/exemplar.py"]
+    "solution": [
+      "sets.py"
+    ],
+    "test": [
+      "sets_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
   }
 }

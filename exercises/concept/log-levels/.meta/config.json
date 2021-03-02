@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for log-levels exercise",
   "contributors": [
     {
       "github_username": "valentin-p",
@@ -12,9 +13,17 @@
     }
   ],
   "files": {
-    "solution": ["enums.py"],
-    "test": ["enums_test.py"],
-    "exemplar": [".meta/exemplar.py"]
+    "solution": [
+      "enums.py"
+    ],
+    "test": [
+      "enums_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
   },
-  "forked_from": ["csharp/enums"]
+  "forked_from": [
+    "csharp/enums"
+  ]
 }

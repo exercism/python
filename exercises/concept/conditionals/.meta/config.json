@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for conditionals exercise",
   "authors": [
     {
       "github_username": "sachsom95",
@@ -6,8 +7,14 @@
     }
   ],
   "files": {
-    "solution": ["conditionals.py"],
-    "test": ["conditionals_test.py"],
-    "exemplar": [".meta/exemplar.py"]
+    "solution": [
+      "conditionals.py"
+    ],
+    "test": [
+      "conditionals_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
   }
 }

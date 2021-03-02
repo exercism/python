@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for restaurant-rozalynn exercise",
   "authors": [
     {
       "github_username": "mohanrajanr",
@@ -10,8 +11,14 @@
     }
   ],
   "files": {
-    "solution": ["none.py"],
-    "test": ["none_test.py"],
-    "exemplar": [".meta/exemplar.py"]
+    "solution": [
+      "none.py"
+    ],
+    "test": [
+      "none_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
   }
 }

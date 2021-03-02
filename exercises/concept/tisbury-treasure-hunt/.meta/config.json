@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for tisbury-treasure-hunt exercise",
   "authors": [
     {
       "github_username": "bethanyg",
@@ -6,8 +7,14 @@
     }
   ],
   "files": {
-    "solution": ["tuples.py"],
-    "test": ["tuples_test.py"],
-    "exemplar": [".meta/exemplar.py"]
+    "solution": [
+      "tuples.py"
+    ],
+    "test": [
+      "tuples_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
   }
 }

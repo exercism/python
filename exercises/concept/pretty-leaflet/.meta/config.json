@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for pretty-leaflet exercise",
   "contributors": [
     {
       "github_username": "j08k",
@@ -16,8 +17,14 @@
     }
   ],
   "files": {
-    "solution": ["string_formatting.py"],
-    "test": ["string_formatting_test.py"],
-    "exemplar": [".meta/exemplar.py"]
+    "solution": [
+      "string_formatting.py"
+    ],
+    "test": [
+      "string_formatting_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
   }
 }
