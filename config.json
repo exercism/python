@@ -915,49 +915,86 @@
         "slug": "saddle-points",
         "name": "Saddle Points",
         "uuid": "71c96c5f-f3b6-4358-a9c6-fc625e2edda2",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-          "algorithms",
+        "practices": [
           "conditionals",
+          "comparisons",
+          "iteration",
           "lists",
+          "list-methods",
+          "list-comprehensions",
+          "other-comprehensions",
           "loops",
-          "matrices",
+          "raising-and-handling-errors",
+          "sequences",
           "sets"
-        ]
+        ],
+        "prerequisites": [
+          "basics",
+          "conditionals",
+          "comparisons",
+          "iteration",
+          "itertools",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "other-comprehensions",
+          "loops",
+          "raising-and-handling-errors",
+          "sequences",
+          "sets"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "triangle",
         "name": "Triangle",
         "uuid": "f0bc144f-3226-4e53-93ee-e60316b29e31",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-          "classes",
+        "practices": ["bools", "comparisons"],
+        "prerequisites": [
+          "basics",
+          "bools",
           "conditionals",
-          "object_oriented_programming",
-          "pattern_matching"
-        ]
+          "comparisons",
+          "loops",
+          "numbers"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "grains",
         "name": "Grains",
         "uuid": "a24e6d34-9952-44f4-a0cd-02c7fedb4875",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["bitwise_operations", "integers", "type_conversion"]
+        "practices": ["numbers", "raising-and-handling-errors"],
+        "prerequisites": [
+          "basics",
+          "numbers",
+          "loops",
+          "raising-and-handling-errors"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "prime-factors",
         "name": "Prime Factors",
         "uuid": "41dd9178-76b4-4f78-b71a-b5ff8d12645b",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["algorithms", "logic", "loops", "math"]
+        "practices": [
+          "conditionals",
+          "comparisons",
+          "lists",
+          "list-methods",
+          "loops",
+          "numbers"
+        ],
+        "prerequisites": [
+          "basics",
+          "conditionals",
+          "comparisons",
+          "lists",
+          "list-methods",
+          "loops",
+          "numbers"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "allergies",
