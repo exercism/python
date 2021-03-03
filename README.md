@@ -2,7 +2,7 @@
 
 :warning: **Please Note** :warning:
 
-We are currently in the middle of re-arranging and re-configuring  our track for exercism V3. 
+We are currently in the middle of re-arranging and re-configuring  our track for exercism Version3. 
 
 We're **super-excited** :tada: :rocket: -- _and we really want you to be involved!_ -- but all that inital configuration work means **our maintainers can't accept unsolicited contributions at this time.**
 
