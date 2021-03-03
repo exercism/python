@@ -194,55 +194,88 @@
         "slug": "high-scores",
         "name": "High Scores",
         "uuid": "574d6323-5ff5-4019-9ebe-0067daafba13",
-        "practices": [
-          "sequences and common sequence operations",
-          "lists",
-          "list-methods"
-        ],
-        "prerequisites": [
-          "basics",
-          "lists",
-          "list-methods",
-          "sequences and common sequence operations"
-        ],
-        "difficulty": 1,
-        "topics": ["classes", "conditionals", "sequences", "text_formatting"]
+        "practices": ["sequences", "lists", "list-methods"],
+        "prerequisites": ["basics", "lists", "list-methods", "sequences"],
+        "difficulty": 1
       },
       {
         "slug": "matrix",
         "name": "Matrix",
         "uuid": "b564927a-f08f-4287-9e8d-9bd5daa7081f",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "topics": ["integers", "loops", "matrices", "type_conversion"]
+        "practices": [
+          "classes",
+          "list-methods",
+          "list-comprehensions",
+          "sequences",
+          "string-methods",
+          "string-mehtods-splitting"
+        ],
+        "prerequisites": [
+          "basics",
+          "classes",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "numbers",
+          "sequences",
+          "strings",
+          "string-methods",
+          "string-mehtods-splitting"
+        ],
+        "difficulty": 2
       },
       {
         "slug": "hamming",
         "name": "Hamming",
         "uuid": "8648fa0c-d85f-471b-a3ae-0f8c05222c89",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "topics": [
-          "algorithms",
+        "practices": [
+          "generator-expressions",
           "conditionals",
-          "filtering",
-          "logic",
-          "loops",
+          "comparisons",
+          "raising-and-handling-errors",
           "sequences",
-          "sets",
-          "strings"
-        ]
+          "iteration",
+          "itertools"
+        ],
+        "prerequisites": [
+          "basics",
+          "loops",
+          "lists",
+          "list-comprehensions",
+          "generator-expressions",
+          "conditionals",
+          "comparisons",
+          "numbers",
+          "raising-and-handling-errors",
+          "sequences",
+          "iteration",
+          "itertools"
+        ],
+        "difficulty": 2
       },
       {
         "slug": "isogram",
         "name": "Isogram",
         "uuid": "d1a98c79-d3cc-4035-baab-0e334d2b6a57",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": ["algorithms", "conditionals", "loops", "strings"]
+        "practices": [
+          "sets",
+          "strings",
+          "string-methods",
+          "comparisons"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "comparisons",
+          "loops",
+          "strings",
+          "string-methods",
+          "sequences",
+          "sets"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "twelve-days",
