@@ -258,12 +258,7 @@
         "slug": "isogram",
         "name": "Isogram",
         "uuid": "d1a98c79-d3cc-4035-baab-0e334d2b6a57",
-        "practices": [
-          "sets",
-          "strings",
-          "string-methods",
-          "comparisons"
-        ],
+        "practices": ["sets", "strings", "string-methods", "comparisons"],
         "prerequisites": [
           "basics",
           "bools",
@@ -493,10 +488,7 @@
         "slug": "markdown",
         "name": "Markdown",
         "uuid": "88610b9a-6d3e-4924-a092-6d2f907ed4e2",
-        "practices": [
-          "regular-expressions",
-          "functions"
-        ],
+        "practices": ["regular-expressions", "functions"],
         "prerequisites": [
           "basics",
           "conditionals",
@@ -1097,11 +1089,7 @@
         "slug": "etl",
         "name": "Etl",
         "uuid": "a3b24ef2-303a-494e-8804-e52a67ef406b",
-        "practices": [
-          "dicts",
-          "dict-methods",
-          "other-comprehensions"
-        ],
+        "practices": ["dicts", "dict-methods", "other-comprehensions"],
         "prerequisites": [
           "basics",
           "list-comprehensions",
