@@ -598,9 +598,7 @@
         "slug": "pangram",
         "name": "Pangram",
         "uuid": "bebf7ae6-1c35-48bc-926b-e053a975eb10",
-        "practices": [
-          "sets"
-        ],
+        "practices": ["sets"],
         "prerequisites": [
           "basics",
           "bools",
@@ -699,31 +697,86 @@
         "slug": "perfect-numbers",
         "name": "Perfect Numbers",
         "uuid": "c23ae7a3-3095-4608-8720-ee9ce8938f26",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["algorithms", "logic", "loops", "math"]
+        "practices": [
+          "bools",
+          "comparisons",
+          "conditionals",
+          "lists",
+          "list-comprehensions",
+          "loops",
+          "numbers",
+          "raising-and-handling-errors"
+        ],
+        "prerequisites": [
+          "basices",
+          "bools",
+          "comparisons",
+          "conditionals",
+          "lists",
+          "list-comprehensions",
+          "loops",
+          "numbers",
+          "raising-and-handling-errors",
+          "strings"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "phone-number",
         "name": "Phone Number",
         "uuid": "f384c6f8-987d-41a2-b504-e50506585526",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
+        "practices": [
+          "classes",
           "conditionals",
-          "pattern_matching",
-          "regular_expressions",
-          "strings"
-        ]
+          "comparisons",
+          "lists",
+          "list-comprehensions",
+          "loops",
+          "numbers",
+          "raising-and-handling-errors",
+          "sequences",
+          "strings",
+          "string-methods",
+          "string-formatting"
+        ],
+        "prerequisites": [
+          "basics",
+          "classes",
+          "conditionals",
+          "comparisons",
+          "lists",
+          "list-comprehensions",
+          "loops",
+          "numbers",
+          "raising-and-handling-errors",
+          "sequences",
+          "strings",
+          "string-methods",
+          "string-formatting"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "series",
         "name": "Series",
         "uuid": "aa4c2e85-b8f8-4309-9708-d8ff805054c2",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "list-comprehensions",
+          "sequences",
+          "raising-and-handling-errors"
+        ],
+        "prerequisites": [
+          "basics",
+          "conditionals",
+          "comparisons",
+          "lists",
+          "list-comprehensions",
+          "loops",
+          "sequences",
+          "numbers",
+          "raising-and-handling-errors",
+          "strings"
+        ],
         "difficulty": 1,
         "topics": ["algorithms", "arrays", "conditionals", "loops"]
       },
@@ -731,10 +784,24 @@
         "slug": "anagram",
         "name": "Anagram",
         "uuid": "43eaf8bd-0b4d-4ea9-850a-773f013325ef",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["algorithms", "logic", "parsing", "strings"]
+        "practices": [
+          "lists",
+          "list-comprehensions",
+          "strings",
+          "string-methods"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "comparisons",
+          "lists",
+          "list-comprehensions",
+          "loops",
+          "strings",
+          "string-methods"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "collatz-conjecture",
