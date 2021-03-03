@@ -1028,8 +1028,30 @@
         "slug": "atbash-cipher",
         "name": "Atbash Cipher",
         "uuid": "02b91a90-244d-479e-a039-0e1d328c0be9",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "conditionals",
+          "loops",
+          "lists",
+          "sequences",
+          "list-comprehensions",
+          "list-methods",
+          "strings",
+          "string-methods",
+          "string-formatting"
+        ],
+        "prerequisites": [
+          "basics",
+          "conditionals",
+          "loops",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "list-methods",
+          "strings",
+          "string-methods",
+          "string-formatting",
+          "sequences"
+        ],
         "difficulty": 1,
         "topics": ["algorithms", "conditionals", "loops", "strings"]
       },
@@ -1058,19 +1080,53 @@
         "slug": "flatten-array",
         "name": "Flatten Array",
         "uuid": "07481204-fe88-4aa2-995e-d40d1ae15070",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["algorithms", "lists", "recursion", "transforming"]
+        "practices": [
+          "conditionals",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "none"
+        ],
+        "prerequisites": [
+          "basics",
+          "conditionals",
+          "strings",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "none"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "sublist",
         "name": "Sublist",
         "uuid": "cc5eb848-09bc-458c-8fb6-3a17687cb4eb",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["lists", "loops", "searching"]
+        "practices": [
+          "bools",
+          "comparisons",
+          "fuctions",
+          "strings",
+          "string-methods",
+          "lists",
+          "loops",
+          "sequences"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "comparisons",
+          "fuctions",
+          "strings",
+          "string-methods",
+          "lists",
+          "loops",
+          "sequences"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "binary-search-tree",
