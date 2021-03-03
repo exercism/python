@@ -558,15 +558,48 @@
           "sequences",
           "tuples"
         ],
-        "difficulty": 5,
-        "topics": ["conditionals", "loops", "maps", "parsing"]
+        "difficulty": 5
       },
       {
         "slug": "book-store",
         "name": "Book Store",
         "uuid": "4899b2ef-675f-4d14-b68a-1a457de91276",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "functions",
+          "functools",
+          "collections",
+          "conditionals",
+          "comparisons",
+          "dicts",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "other-comprehensions",
+          "generator-expressions",
+          "sets"
+        ],
+        "prerequisites": [
+          "basics",
+          "functions",
+          "functools",
+          "collections",
+          "conditionals",
+          "comparisons",
+          "dicts",
+          "dict-methods",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "other-comprehensions",
+          "generators",
+          "generator-expressions",
+          "sequences",
+          "tuples",
+          "sets",
+          "numbers"
+        ],
         "difficulty": 5,
         "topics": ["lists", "loops", "recursion"]
       },
