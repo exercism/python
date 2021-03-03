@@ -1000,51 +1000,104 @@
         "slug": "allergies",
         "name": "Allergies",
         "uuid": "83627e35-4689-4d9b-a81b-284c2c084466",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["bitwise_operations", "classes", "enumerations"]
+        "practices": [
+          "classes",
+          "class-customization",
+          "conditionals",
+          "comparisons",
+          "dicts",
+          "dict-methods",
+          "loops",
+          "numbers"
+        ],
+        "prerequisites": [
+          "basics",
+          "classes",
+          "class-customization",
+          "conditionals",
+          "comparisons",
+          "dicts",
+          "dict-methods",
+          "loops",
+          "numbers"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "bob",
         "name": "Bob",
         "uuid": "009a80e2-7901-4d3b-9af2-cdcbcc0b49ae",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["conditionals", "equality", "strings"]
+        "practices": [
+          "conditionals",
+          "comparisons",
+          "strings",
+          "string-methods"
+        ],
+        "prerequisites": [
+          "basics",
+          "conditionals",
+          "comparisons",
+          "strings",
+          "string-methods"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "matching-brackets",
         "name": "Matching Brackets",
         "uuid": "45229a7c-6703-4240-8287-16645881a043",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["parsing", "recursion", "stacks", "strings"]
+        "practices": [
+          "bools",
+          "conditionals",
+          "comparisons",
+          "lists",
+          "list-methods",
+          "loops"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "comparisons",
+          "lists",
+          "list-methods",
+          "loops",
+          "strings",
+          "string-methods"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "pythagorean-triplet",
         "name": "Pythagorean Triplet",
         "uuid": "7b53865e-a981-46e0-8e47-6f8e1f3854b3",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-          "algorithms",
+        "practices": [
+          "bools",
           "conditionals",
-          "enumerations",
-          "equality",
-          "filtering",
+          "comparisons",
+          "iteration",
+          "itertools",
           "lists",
-          "logic",
+          "list-methods",
           "loops",
-          "math",
-          "searching",
-          "sets",
-          "tuples",
-          "variables"
-        ]
+          "sequences",
+          "numbers"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "comparisons",
+          "iteration",
+          "itertools",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "sequences",
+          "numbers"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "simple-cipher",
