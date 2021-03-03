@@ -777,8 +777,7 @@
           "raising-and-handling-errors",
           "strings"
         ],
-        "difficulty": 1,
-        "topics": ["algorithms", "arrays", "conditionals", "loops"]
+        "difficulty": 1
       },
       {
         "slug": "anagram",
@@ -807,43 +806,110 @@
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
         "uuid": "33f689ee-1d9c-4908-a71c-f84bff3510df",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["loops", "math"]
+        "practices": [
+          "conditionals",
+          "comparisons",
+          "loops",
+          "numbers",
+          "raising-and-handling-errors"
+        ],
+        "prerequisites": [
+          "basics",
+          "conditionals",
+          "comparisons",
+          "loops",
+          "numbers",
+          "raising-and-handling-errors"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "difference-of-squares",
         "name": "Difference Of Squares",
         "uuid": "913b6099-d75a-4c27-8243-476081752c31",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["math"]
+        "practices": [
+          "basics",
+          "conditionals",
+          "comparisons",
+          "loops",
+          "numbers"
+        ],
+        "prerequisites": [
+          "basics",
+          "conditionals",
+          "comparisons",
+          "loops",
+          "numbers"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "isbn-verifier",
         "name": "Isbn Verifier",
         "uuid": "7961c852-c87a-44b0-b152-efea3ac8555c",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
+        "practices": [
+          "bools",
           "conditionals",
-          "integers",
-          "parsing",
+          "comparisons",
+          "lists",
+          "loops",
+          "numbers",
+          "sequences",
           "strings",
-          "type_conversion"
-        ]
+          "string-methods"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "comparisons",
+          "lists",
+          "list-comprehensions",
+          "loops",
+          "numbers",
+          "sequences",
+          "strings",
+          "string-methods"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "palindrome-products",
         "name": "Palindrome Products",
         "uuid": "fa795dcc-d390-4e98-880c-6e8e638485e3",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["loops", "math"]
+        "practices": [
+          "bools",
+          "conditionals",
+          "comparisons",
+          "functions",
+          "funciton-arguments",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "numbers",
+          "raising-and-handling-errors",
+          "sequences",
+          "strings",
+          "string-methods"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "comparisons",
+          "functions",
+          "funciton-arguments",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "numbers",
+          "raising-and-handling-errors",
+          "sequences",
+          "strings",
+          "string-methods"
+        ],
+        "difficulty": 2
       },
       {
         "slug": "saddle-points",
