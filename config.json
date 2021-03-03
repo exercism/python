@@ -311,7 +311,7 @@
         "practices": [
           "strings",
           "string-methods",
-          "regex",
+          "regular-expressions",
           "itertools",
           "dicts"
         ],
@@ -320,7 +320,7 @@
           "loops",
           "strings",
           "string-methods",
-          "regex",
+          "regular-expressions",
           "itertools",
           "dicts"
         ],
@@ -356,7 +356,7 @@
         "uuid": "038c7f7f-02f6-496f-9e16-9372621cc4cd",
         "practices": [
           "list-comprehnsions",
-          "regex",
+          "regular-expressions",
           "strings",
           "string-methods",
           "string-methods-splitting"
@@ -365,7 +365,7 @@
           "basics",
           "list-comprehensions",
           "loops",
-          "regex",
+          "regular-expressions",
           "strings",
           "string-methods",
           "string-methods-splitting"
@@ -469,26 +469,95 @@
         "slug": "clock",
         "name": "Clock",
         "uuid": "459fda78-851e-4bb0-a416-953528f46bd7",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "topics": ["classes", "logic", "text_formatting", "time"]
+        "practices": [
+          "classes",
+          "class-composition",
+          "class-customization",
+          "rich-compairisons",
+          "string-formatting"
+        ],
+        "prerequisites": [
+          "basics",
+          "classes",
+          "class-composition",
+          "class-customization",
+          "comparisons",
+          "rich-compairisons",
+          "numbers",
+          "strings",
+          "string-formatting"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "markdown",
         "name": "Markdown",
         "uuid": "88610b9a-6d3e-4924-a092-6d2f907ed4e2",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": ["refactoring", "text_formatting"]
+        "practices": [
+          "regular-expressions",
+          "functions"
+        ],
+        "prerequisites": [
+          "basics",
+          "conditionals",
+          "comparisons",
+          "functions",
+          "iteration",
+          "loops",
+          "regular-expressions",
+          "sequences",
+          "strings",
+          "string-methods",
+          "string-methods-splitting",
+          "string-formatting"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "tournament",
         "name": "Tournament",
         "uuid": "49377a3f-38ba-4d61-b94c-a54cfc9034d0",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "collections",
+          "anonymous-functions",
+          "string-formatting",
+          "string-methods-splitting",
+          "dicts",
+          "dict-methods",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "other-comprehensions",
+          "generators",
+          "generator-expressions",
+          "raising-and-handling-errors",
+          "sequences",
+          "tuples"
+        ],
+        "prerequisites": [
+          "basics",
+          "functions",
+          "collections",
+          "higher-order-functions",
+          "anonymous-functions",
+          "strings",
+          "string-formatting",
+          "string-methods",
+          "string-methods-splitting",
+          "dicts",
+          "dict-methods",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "other-comprehensions",
+          "generators",
+          "generator-expressions",
+          "raising-and-handling-errors",
+          "sequences",
+          "tuples"
+        ],
         "difficulty": 5,
         "topics": ["conditionals", "loops", "maps", "parsing"]
       },
