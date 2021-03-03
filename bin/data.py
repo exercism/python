@@ -248,7 +248,7 @@ class Config:
 class TestCaseTOML:
     uuid: str
     description: str
-    include: bool = False
+    include: bool = True
     comment: str = ''
 
 
