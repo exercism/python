@@ -600,8 +600,7 @@
           "sets",
           "numbers"
         ],
-        "difficulty": 5,
-        "topics": ["lists", "loops", "recursion"]
+        "difficulty": 5
       },
       {
         "slug": "pangram",
@@ -1038,10 +1037,22 @@
         "slug": "etl",
         "name": "Etl",
         "uuid": "a3b24ef2-303a-494e-8804-e52a67ef406b",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["loops", "maps", "transforming"]
+        "practices": [
+          "dicts",
+          "dict-methods",
+          "other-comprehensions"
+        ],
+        "prerequisites": [
+          "basics",
+          "list-comprehensions",
+          "loops",
+          "other-comprehensions",
+          "dicts",
+          "dict-methods",
+          "strings",
+          "string-methods"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "flatten-array",
