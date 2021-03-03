@@ -281,43 +281,94 @@
         "slug": "twelve-days",
         "name": "Twelve Days",
         "uuid": "d41238ce-359c-4a9a-81ea-ca5d2c4bb50d",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5,
-        "topics": ["lists", "strings", "text_formatting"]
+        "practices": [
+          "conditionals",
+          "lists",
+          "list-methods",
+          "loops",
+          "sequences",
+          "string-methods",
+          "string-formatting"
+        ],
+        "prerequisites": [
+          "basics",
+          "conditionals",
+          "comparisons",
+          "lists",
+          "list-methods",
+          "loops",
+          "sequences",
+          "strings",
+          "string-methods",
+          "string-formatting"
+        ],
+        "difficulty": 5
       },
       {
         "slug": "word-count",
         "name": "Word Count",
         "uuid": "04316811-0bc3-4377-8ff5-5a300ba41d61",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
-          "algorithms",
-          "logic",
-          "pattern_recognition",
+        "practices": [
           "strings",
-          "text_formatting"
-        ]
+          "string-methods",
+          "regex",
+          "itertools",
+          "dicts"
+        ],
+        "prerequisites": [
+          "basics",
+          "loops",
+          "strings",
+          "string-methods",
+          "regex",
+          "itertools",
+          "dicts"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "scrabble-score",
         "name": "Scrabble Score",
         "uuid": "d081446b-f26b-41a2-ab7f-dd7f6736ecfe",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": ["games", "loops", "maps", "strings"]
+        "practices": [
+          "lists",
+          "list-comprehensions",
+          "loops",
+          "dicts",
+          "dict-methods",
+          "string-methods"
+        ],
+        "prerequisites": [
+          "basics",
+          "lists",
+          "list-comprehensions",
+          "loops",
+          "dicts",
+          "dict-methods",
+          "strings",
+          "string-methods"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "acronym",
         "name": "Acronym",
         "uuid": "038c7f7f-02f6-496f-9e16-9372621cc4cd",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["regular_expressions", "strings"]
+        "practices": [
+          "list-comprehnsions",
+          "regex",
+          "strings",
+          "string-methods"
+        ],
+        "prerequisites": [
+          "basics",
+          "list-comprehensions",
+          "loops",
+          "regex",
+          "strings",
+          "string-methods"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "kindergarten-garden",
