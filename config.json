@@ -994,17 +994,56 @@
         "slug": "say",
         "name": "Say",
         "uuid": "2f86ce8e-47c7-4858-89fc-e7729feb0f2f",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["loops", "parsing", "text_formatting", "transforming"]
+        "practices": [
+          "loops",
+          "conditionals",
+          "dicts",
+          "lists",
+          "numbers",
+          "sequences",
+          "strings",
+          "string-methods",
+          "string-methods-splitting",
+          "raising-and-handling-errors"
+        ],
+        "prerequisites": [
+          "basics",
+          "conditionals",
+          "loops",
+          "dicts",
+          "lists",
+          "sequences",
+          "numbers",
+          "strings",
+          "string-methods",
+          "string-methods-splitting",
+          "raising-and-handling-errors"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "wordy",
         "name": "Wordy",
         "uuid": "af50bb9a-e400-49ce-966f-016c31720be1",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "loops",
+          "dicts",
+          "strings",
+          "string-methods",
+          "string-methods-splitting",
+          "raising-and-handling-errors",
+          "numbers"
+        ],
+        "prerequisites": [
+          "basics",
+          "dicts",
+          "loops",
+          "strings",
+          "string-methods",
+          "string-methods-splitting",
+          "raising-and-handling-errors",
+          "numbers"
+        ],
         "difficulty": 1,
         "topics": [
           "logic",
@@ -1052,8 +1091,7 @@
           "string-formatting",
           "sequences"
         ],
-        "difficulty": 1,
-        "topics": ["algorithms", "conditionals", "loops", "strings"]
+        "difficulty": 1
       },
       {
         "slug": "etl",
