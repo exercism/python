@@ -358,7 +358,8 @@
           "list-comprehnsions",
           "regex",
           "strings",
-          "string-methods"
+          "string-methods",
+          "string-methods-splitting"
         ],
         "prerequisites": [
           "basics",
@@ -366,7 +367,8 @@
           "loops",
           "regex",
           "strings",
-          "string-methods"
+          "string-methods",
+          "string-methods-splitting"
         ],
         "difficulty": 3
       },
@@ -374,41 +376,94 @@
         "slug": "kindergarten-garden",
         "name": "Kindergarten Garden",
         "uuid": "42a2916c-ef03-44ac-b6d8-7eda375352c2",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["arrays", "classes", "optional_values", "variables"]
+        "practices": [
+          "classes",
+          "class-customization",
+          "dicts",
+          "list-comprehensions",
+          "other-comprehensions",
+          "iteration",
+          "itertools",
+          "sequences",
+          "string-methods",
+          "sring-methods-splitting"
+        ],
+        "prerequisites": [
+          "basics",
+          "classes",
+          "class-customization",
+          "dicts",
+          "functions",
+          "function-argumets",
+          "list-comprehensions",
+          "other-comprehensions",
+          "loops",
+          "iteration",
+          "itertools",
+          "sequences",
+          "strings",
+          "string-methods",
+          "sring-methods-splitting"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "grade-school",
         "name": "Grade School",
         "uuid": "aadde1a8-ed7a-4242-bfc0-6dddfd382cf3",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-          "conditionals",
-          "filtering",
-          "integers",
+        "practices": [
+          "classes",
+          "dict-methods",
+          "collections",
           "lists",
-          "sorting",
-          "strings"
-        ]
+          "list-methods",
+          "list-comprehensions",
+          "sequences"
+        ],
+        "prerequisites": [
+          "basics",
+          "classes",
+          "dicts",
+          "dict-methods",
+          "collections",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "sequences"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "luhn",
         "name": "Luhn",
         "uuid": "34dde040-672e-472f-bf2e-b87b6f9933c0",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "topics": [
-          "algorithms",
+        "practices": [
+          "bools",
+          "classes",
           "conditionals",
+          "comparisons",
           "loops",
-          "pattern_matching",
-          "security"
-        ]
+          "sequences",
+          "numbers"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "classes",
+          "conditionals",
+          "comparisons",
+          "iteration",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "sequences",
+          "strings",
+          "string-methods",
+          "string-formatting",
+          "numbers"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "clock",
