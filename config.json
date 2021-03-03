@@ -598,50 +598,102 @@
         "slug": "pangram",
         "name": "Pangram",
         "uuid": "bebf7ae6-1c35-48bc-926b-e053a975eb10",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-          "algorithms",
+        "practices": [
+          "sets"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
           "conditionals",
-          "filtering",
-          "logic",
           "loops",
-          "strings"
-        ]
+          "strings",
+          "string-methods",
+          "sets"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "robot-name",
         "name": "Robot Name",
         "uuid": "bf30b17f-6b71-4bb5-815a-88f8181b89ae",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-          "pattern_matching",
-          "randomness",
-          "regular_expressions",
+        "practices": [
+          "bools",
+          "classes",
+          "class-customization",
+          "conditionals",
+          "comparisons",
+          "string-methods"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "classes",
+          "class-customization",
+          "conditionals",
+          "comparisons",
+          "lists",
+          "list-comprehensions",
+          "loops",
+          "sets",
           "strings",
-          "text_formatting"
-        ]
+          "string-methods"
+        ],
+        "difficulty": 2
       },
       {
         "slug": "protein-translation",
         "name": "Protein Translation",
         "uuid": "c89243f3-703e-4fe0-8e43-f200eedf2825",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": ["pattern_matching", "strings"]
+        "practices": [
+          "conditionals",
+          "dicts",
+          "dict-methods",
+          "lists",
+          "list-comprehensions",
+          "loops",
+          "sequences",
+          "strings",
+          "string-methods"
+        ],
+        "prerequisites": [
+          "basics",
+          "conditionals",
+          "dicts",
+          "dict-methods",
+          "lists",
+          "list-comprehensions",
+          "loops",
+          "none",
+          "sequences",
+          "strings",
+          "string-methods"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "armstrong-numbers",
         "name": "Armstrong Numbers",
         "uuid": "e9b0defc-dac5-11e7-9296-cec278b6b50a",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["algorithms", "loops", "math"]
+        "practices": [
+          "comparisons",
+          "list-comprehensions",
+          "generator-expressions",
+          "numbers",
+          "strings",
+          "string-methods"
+        ],
+        "prerequisites": [
+          "basics",
+          "comparisons",
+          "lists",
+          "loops",
+          "list-comprehensions",
+          "generator-expressions",
+          "numbers",
+          "strings",
+          "string-methods"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "perfect-numbers",
