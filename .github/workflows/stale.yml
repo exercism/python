@@ -19,7 +19,7 @@ jobs:
           # Exempt all issues with milestones from being marked as stale.
           exempt-all-issue-milestones: true
 
-          exempt-issue-labels: 'discussion 💬,pinned 📌,enhancement 🦄 ⭐,beginner friendly,maintainer action required❕,on hold  ✋🏽'
+          exempt-issue-labels: 'discussion 💬,pinned 📌,enhancement 🦄 ⭐,beginner friendly,maintainer action required❕,on hold ✋🏽'
           stale-issue-label: abandoned 🏚
           stale-issue-message: >
             This issue has been automatically marked as `abandoned 🏚`
