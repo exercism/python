@@ -126,6 +126,7 @@ x = "foo"  #this is an in-line comment
 
 The first statement of a function body can optionally be a [_docstring_][docstring], which concisely summarizes the function or object's purpose. These docstrings are read by automated documentation tools, and are returned by calling **doc** on the function, method, or class. . They are recommended for programs of any size where documentation is needed:
 
+
 ```python
 #an example on a user-defined function
 def number_to_the_power_of(number_one, number_two):
