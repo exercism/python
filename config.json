@@ -1103,43 +1103,132 @@
         "slug": "simple-cipher",
         "name": "Simple Cipher",
         "uuid": "09b2f396-00d7-4d89-ac47-5c444e00dd99",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["cryptography", "strings", "text_formatting"]
+        "practices": [
+          "classes",
+          "conditionals",
+          "comparisons",
+          "list",
+          "list-methods",
+          "list-comprehensions",
+          "numbers",
+          "strings",
+          "string-methods"
+        ],
+        "prerequisites": [
+          "basics",
+          "classes",
+          "conditionals",
+          "comparisons",
+          "list",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "none",
+          "numbers",
+          "strings",
+          "string-methods"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "sum-of-multiples",
         "name": "Sum Of Multiples",
         "uuid": "6e0caa0a-6a1a-4f03-bf0f-e07711f4b069",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["integers", "math"]
+        "practices": [
+          "conditionals",
+          "comparisons",
+          "lists",
+          "list-comprehensions",
+          "other-comprehensions",
+          "loops",
+          "numbers",
+          "sets"
+        ],
+        "prerequisites": [
+          "basics",
+          "conditionals",
+          "comparisons",
+          "lists",
+          "list-comprehensions",
+          "other-comprehensions",
+          "loops",
+          "numbers",
+          "sets"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "complex-numbers",
         "name": "Complex Numbers",
         "uuid": "7f4d5743-7ab8-42ca-b393-767f7e9a4e97",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 6,
-        "topics": ["equality", "math", "tuples"]
+        "practices": [
+          "classes",
+          "class-customization",
+          "class-inheritance",
+          "comparisons",
+          "rich-comparisons",
+          "numbers"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "classes",
+          "class-customization",
+          "class-inheritance",
+          "comparisons",
+          "rich-comparisons",
+          "numbers",
+          "strings",
+          "string-formatting"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "meetup",
         "name": "Meetup",
         "uuid": "a5aff23f-7829-403f-843a-d3312dca31e8",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
+        "practices": [
+          "bools",
+          "classes",
+          "class-customization",
+          "class-composition",
+          "class-inheritance",
           "conditionals",
-          "dates",
-          "parsing",
-          "pattern_recognition",
-          "strings"
-        ]
+          "dicts",
+          "dict-methods",
+          "lists",
+          "list-methods",
+          "loops",
+          "raising-and-handling-errors",
+          "user-defined-errors",
+          "sequences",
+          "strings",
+          "string-methods",
+          "string-formatting"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "classes",
+          "class-customization",
+          "class-composition",
+          "class-inheritance",
+          "conditionals",
+          "comparisons",
+          "dicts",
+          "dict-methods",
+          "lists",
+          "list-methods",
+          "loops",
+          "raising-and-handling-errors",
+          "user-defined-errors",
+          "sequences",
+          "strings",
+          "string-methods",
+          "string-formatting"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "sieve",
