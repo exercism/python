@@ -1,7 +1,7 @@
-gestures = ['wink', 'double blink', 'close your eyes', 'jump']
+gestures = ["jump", "close your eyes", "double blink", "wink"]
 
 
-def commands(number):
-    actions = [gestures[i] for i in range(len(gestures))
-               if (number >> i) % 2 == 1]
-    return actions if number < 16 else list(reversed(actions))
+def commands(binary_str):
+    reverse, *bits = [digit == "1" for digit in binary_str]
+    actions = [gesture for gesture, bit in zip(gestures, bits) if bit]
+    return actions if reverse else actions[::-1]

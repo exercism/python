@@ -1,2 +1,2 @@
-def commands(number):
+def commands(binary_str):
     pass
