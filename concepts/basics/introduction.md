@@ -19,6 +19,7 @@ Objects are [assigned][assignment statements] to [names][naming and binding] in 
 
 Constants are usually defined on a [module][module] or _global_ level, and although they _can_ be changed, they are _intended_ to be named only once. Their `SCREAMING_SNAKE_CASE` is a message to other developers that the assignment should not be altered:
 
+
 ```python
 # All caps signal that this is intended as a constant
 MY_FIRST_CONSTANT = 16
