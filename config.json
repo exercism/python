@@ -2139,53 +2139,113 @@
         "slug": "list-ops",
         "name": "List Ops",
         "uuid": "818c6472-b734-4ff4-8016-ce540141faec",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-          "callbacks",
-          "conditionals",
-          "filtering",
-          "functional_programming",
+        "practices": [
           "lists",
+          "list-methods",
+          "list-comprehensions",
           "loops",
-          "searching",
-          "variables"
-        ]
+          "sequences"
+        ],
+        "prerequisites": [
+          "conditionals",
+          "comparisons",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "sequences"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "queen-attack",
         "name": "Queen Attack",
         "uuid": "b280c252-5320-4e53-8294-1385d564eb02",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["arrays", "exception_handling", "games", "logic", "matrices"]
+        "practices": [
+          "bools",
+          "classes",
+          "conditionals",
+          "comparisons",
+          "numbers",
+          "raising-and-handling-errors",
+          "strings",
+          "string-methods",
+          "string-formatting"
+        ],
+        "prerequisites": [
+          "bools",
+          "classes",
+          "conditionals",
+          "comparisons",
+          "numbers",
+          "raising-and-handling-errors",
+          "strings",
+          "string-methods",
+          "string-formatting"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "ca474c47-57bb-4995-bf9a-b6937479de29",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-          "algorithms",
+        "practices": [
           "classes",
+          "class-customization",
+          "comparisons",
           "conditionals",
+          "dicts",
+          "dict-methods",
+          "lists",
           "loops",
-          "tuples",
-          "variables"
-        ]
+          "numbers",
+          "tuples"
+        ],
+        "prerequisites": [
+          "basics",
+          "classes",
+          "class-customization",
+          "comparisons",
+          "conditionals",
+          "dicts",
+          "dict-methods",
+          "functions",
+          "function-arguments",
+          "lists",
+          "loops",
+          "numbers",
+          "tuples"
+        ],
+        "difficulty": 2
       },
       {
         "slug": "roman-numerals",
         "name": "Roman Numerals",
         "uuid": "bffe2007-717a-44ee-b628-b9c86a5001e8",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["conditionals", "integers", "logic", "loops", "strings"]
+        "practices": [
+          "basics",
+          "conditionals",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "numbers",
+          "sequences",
+          "strings",
+          "string-methods"
+        ],
+        "prerequisites": [
+          "basics",
+          "conditionals",
+          "lists",
+          "list-methods",
+          "loops",
+          "numbers",
+          "sequences",
+          "strings",
+          "string-methods"
+        ],
+        "difficulty": 2
       },
       {
         "slug": "simple-linked-list",
