@@ -2251,37 +2251,132 @@
         "slug": "simple-linked-list",
         "name": "Simple Linked List",
         "uuid": "4c6edc8a-7bc0-4386-a653-d1091fe49301",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["algorithms", "conditionals", "lists"]
+        "practices": [
+          "bools",
+          "classes",
+          "class-customization",
+          "conditionals",
+          "comparisons",
+          "loops",
+          "numbers",
+          "operator-overloading",
+          "raising-and-handling-errors",
+          "strings"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "classes",
+          "class-customization",
+          "conditionals",
+          "comparisons",
+          "loops",
+          "numbers",
+          "operator-overloading",
+          "raising-and-handling-errors",
+          "strings"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "linked-list",
         "name": "Linked List",
         "uuid": "ca7a8b16-e5d5-4211-84f0-2f8e35b4a665",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": ["algorithms", "conditionals", "lists"]
+        "practices": [
+          "classes",
+          "class-customization",
+          "conditionals",
+          "comparisons",
+          "function-arguments",
+          "iteration",
+          "iterators",
+          "numbers",
+          "none",
+          "operator-overloading"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "classes",
+          "class-customization",
+          "conditionals",
+          "comparisons",
+          "function-arguments",
+          "iteration",
+          "iterators",
+          "lists",
+          "loops",
+          "numbers",
+          "none",
+          "operator-overloading"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "all-your-base",
         "name": "All Your Base",
         "uuid": "a2ff75f9-8b2c-4c4b-975d-913711def9ab",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "topics": ["integers", "math", "transforming"]
+        "practices": [
+          "bools",
+          "conditionals",
+          "comparisons",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "numbers",
+          "raising-and-handling-errors",
+          "sequences",
+          "strings",
+          "string-methods"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "comparisons",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "numbers",
+          "raising-and-handling-errors",
+          "sequences",
+          "strings",
+          "string-methods"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "change",
         "name": "Change",
         "uuid": "889df88a-767d-490f-92c4-552d8ec9de34",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "topics": ["algorithms", "arrays", "loops"]
+        "practices": [
+          "bools",
+          "conditionals",
+          "comparisons",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "numbers",
+          "raising-and-handling-errors",
+          "sequences"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "comparisons",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "numbers",
+          "raising-and-handling-errors",
+          "sequences"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "dot-dsl",
