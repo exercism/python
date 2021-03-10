@@ -3431,10 +3431,24 @@
         "slug": "diffie-hellman",
         "name": "Diffie Hellman",
         "uuid": "92e2d5f8-7d8a-4e81-a55c-52fa6be80c74",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 7,
-        "topics": ["algorithms", "math"]
+        "practices": [
+          "bools",
+          "conditionals",
+          "comparisons",
+          "loops",
+          "numbers",
+          "sequences"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "comparisons",
+          "loops",
+          "numbers",
+          "sequences"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "accumulate",
@@ -3560,19 +3574,48 @@
         "slug": "dnd-character",
         "name": "Dnd Character",
         "uuid": "58625685-b5cf-4e8a-b3aa-bff54da0689d",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["integers", "randomness"]
+        "practices": [
+          "bools",
+          "classes",
+          "class-customization",
+          "conditionals",
+          "comparisons",
+          "dicts",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "numbers"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "classes",
+          "class-customization",
+          "conditionals",
+          "comparisons",
+          "dicts",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "numbers"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "gigasecond",
         "name": "Gigasecond",
         "uuid": "22606e91-57f3-44cf-ab2d-94f6ee6402e8",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["dates", "time"]
+        "practices": ["numbers"],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "comparisons",
+          "numbers"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "leap",
