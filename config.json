@@ -3687,51 +3687,101 @@
         "slug": "rna-transcription",
         "name": "Rna Transcription",
         "uuid": "ca7c5ef1-5135-4fb4-8e68-669ef0f2a51a",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
+        "practices": [
+          "bools",
           "conditionals",
-          "logic",
+          "comparisons",
           "loops",
-          "maps",
           "strings",
-          "transforming"
-        ]
+          "string-methods",
+          "string-formatting"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "comparisons",
+          "loops",
+          "strings",
+          "string-methods",
+          "string-formatting"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "space-age",
         "name": "Space Age",
         "uuid": "f8303c4d-bbbb-495b-b61b-0f617f7c9a13",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": ["conditionals", "floating_point_numbers", "integers"]
+        "practices": [
+          "bools",
+          "classes",
+          "comparisons",
+          "dicts",
+          "lists",
+          "list-methods",
+          "loops",
+          "numbers"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "classes",
+          "comparisons",
+          "dicts",
+          "lists",
+          "list-methods",
+          "loops",
+          "numbers"
+        ],
+        "difficulty": 2
       },
       {
         "slug": "yacht",
         "name": "Yacht",
         "uuid": "22f937e5-52a7-4956-9dde-61c985251a6b",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
+        "practices": [
+          "bools",
           "conditionals",
-          "equality",
-          "games",
-          "integers",
-          "pattern_matching",
-          "sequences"
-        ]
+          "comparisons",
+          "dicts",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "numbers",
+          "sequences",
+          "strings"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "comparisons",
+          "dicts",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "numbers",
+          "sequences",
+          "strings",
+          "string-methods",
+          "string-formatting"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "darts",
         "name": "Darts",
         "uuid": "cb581e2c-66ab-4221-9884-44bacb7c4ebe",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "topics": ["conditionals", "math"]
+        "practices": ["bools", "conditionals", "comparisons", "numbers"],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "comparisons",
+          "numbers"
+        ],
+        "difficulty": 2
       },
       {
         "slug": "bank-account",
