@@ -208,7 +208,7 @@
           "list-comprehensions",
           "sequences",
           "string-methods",
-          "string-mehtods-splitting"
+          "string-methods-splitting"
         ],
         "prerequisites": [
           "basics",
@@ -221,7 +221,7 @@
           "sequences",
           "strings",
           "string-methods",
-          "string-mehtods-splitting"
+          "string-methods-splitting"
         ],
         "difficulty": 2
       },
@@ -350,7 +350,7 @@
         "name": "Acronym",
         "uuid": "038c7f7f-02f6-496f-9e16-9372621cc4cd",
         "practices": [
-          "list-comprehnsions",
+          "list-comprehensions",
           "regular-expressions",
           "strings",
           "string-methods",
@@ -381,7 +381,7 @@
           "itertools",
           "sequences",
           "string-methods",
-          "sring-methods-splitting"
+          "string-methods-splitting"
         ],
         "prerequisites": [
           "basics",
@@ -389,7 +389,7 @@
           "class-customization",
           "dicts",
           "functions",
-          "function-argumets",
+          "function-arguments",
           "list-comprehensions",
           "other-comprehensions",
           "loops",
@@ -398,7 +398,7 @@
           "sequences",
           "strings",
           "string-methods",
-          "sring-methods-splitting"
+          "string-methods-splitting"
         ],
         "difficulty": 3
       },
@@ -468,7 +468,7 @@
           "classes",
           "class-composition",
           "class-customization",
-          "rich-compairisons",
+          "rich-comparisons",
           "string-formatting"
         ],
         "prerequisites": [
@@ -477,7 +477,7 @@
           "class-composition",
           "class-customization",
           "comparisons",
-          "rich-compairisons",
+          "rich-comparisons",
           "numbers",
           "strings",
           "string-formatting"
@@ -708,7 +708,7 @@
           "raising-and-handling-errors"
         ],
         "prerequisites": [
-          "basices",
+          "basics",
           "bools",
           "comparisons",
           "conditionals",
@@ -882,7 +882,7 @@
           "conditionals",
           "comparisons",
           "functions",
-          "funciton-arguments",
+          "function-arguments",
           "list-methods",
           "list-comprehensions",
           "loops",
@@ -898,7 +898,7 @@
           "conditionals",
           "comparisons",
           "functions",
-          "funciton-arguments",
+          "function-arguments",
           "lists",
           "list-methods",
           "list-comprehensions",
@@ -1297,8 +1297,8 @@
           "classes",
           "conditionals",
           "comparisons",
-          "fuctions",
-          "funciton-arguments",
+          "functions",
+          "function-arguments",
           "lists",
           "list-methods",
           "list-comprehensions",
@@ -1313,8 +1313,8 @@
           "classes",
           "conditionals",
           "comparisons",
-          "fuctions",
-          "funciton-arguments",
+          "functions",
+          "function-arguments",
           "lists",
           "list-methods",
           "list-comprehensions",
@@ -1438,7 +1438,7 @@
         "practices": [
           "conditionals",
           "comparisons",
-          "fuctions",
+          "functions",
           "higher-order-functions",
           "functional-tools",
           "anonymous-functions",
@@ -1453,7 +1453,7 @@
           "basics",
           "conditionals",
           "comparisons",
-          "fuctions",
+          "functions",
           "functional-tools",
           "higher-order-functions",
           "iteration",
@@ -1829,7 +1829,7 @@
         "practices": [
           "bools",
           "comparisons",
-          "fuctions",
+          "functions",
           "strings",
           "string-methods",
           "lists",
@@ -1841,7 +1841,7 @@
           "bools",
           "conditionals",
           "comparisons",
-          "fuctions",
+          "functions",
           "strings",
           "string-methods",
           "lists",
@@ -1857,7 +1857,7 @@
         "practices": [
           "classes",
           "class-customization",
-          "class-compostion",
+          "class-composition",
           "conditionals",
           "comparisons",
           "iteration",
@@ -1876,7 +1876,7 @@
           "classes",
           "class-customization",
           "class-inheritance",
-          "class-compostion",
+          "class-composition",
           "conditionals",
           "comparisons",
           "iteration",
@@ -2089,7 +2089,7 @@
           "itertools",
           "numbers",
           "sequences",
-          "string-mehtods"
+          "string-methods"
         ],
         "prerequisites": [
           "conditionals",
@@ -2103,7 +2103,7 @@
           "numbers",
           "sequences",
           "strings",
-          "string-mehthods",
+          "string-methods",
           "string-formatting"
         ],
         "difficulty": 2
