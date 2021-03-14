@@ -640,7 +640,7 @@ _These datatypes will very rarely be encountered in the wild, the first because 
 [powers-of-two]: ./concepts/powers_of_two.md
 [property-decorator]: ./concepts/property_decorator.md
 [python-enhancement-proposals]: ./concepts/python_enhancement_proposals.md
-[python-exercises]: https://github.com/exercism/v3/tree/master/languages/python/exercises
+[python-exercises]: ./exercises_summary.md
 [pythonic]: ./concepts/pythonic.md
 [raise]: ./concepts/raise.md
 [recursion]: ../../../reference/concepts/recursion.md
