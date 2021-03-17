@@ -64,7 +64,7 @@
     {
       "github_username": "bethanyg",
       "alumnus": false,
-      "show_on_website": false,
+      "show_on_website": true,
       "name": "Bethany Garcia",
       "link_text": null,
       "link_url": null,
