@@ -10,7 +10,7 @@ You can either start by creating your own project for working with the Exercism 
 
 This is a Visual Studio template that comes pre-configured to work on the problems in as many languages as Visual Studio supports.
 
-![Solution Explorer](/docs/img/SolutionExplorer.png)
+![Solution Explorer](https://raw.githubusercontent.com/exercism/python/main/docs/img/SolutionExplorer.png)
 
 1. Download the [Exercism.io Visual Studio Template](https://github.com/rprouse/Exercism.VisualStudio) from GitHub by clicking the Download Zip button on the page.
 2. Unzip the template into your exercises directory, for example `C:\src\exercises`
@@ -25,11 +25,11 @@ This is a Visual Studio template that comes pre-configured to work on the proble
 10. The exercise you just fetched will appear greyed out. Right click on the folder and **Include In Project**
 11. Get coding...
 
-![Add files](/docs/img/AddFiles.png)
+![Add files](https://raw.githubusercontent.com/exercism/python/main/docs/img/AddFiles.png)
 
 To run the tests, you can do so at the command line, or within Visual Studio.
 
-![Test Explorer](/docs/img/TestExplorer.png)
+![Test Explorer](https://raw.githubusercontent.com/exercism/python/main/docs/img/TestExplorer.png)
 
 ## Code Style and Linting
 
