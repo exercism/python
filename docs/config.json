@@ -1,0 +1,32 @@
+{
+  "docs": [
+    {
+      "uuid": "1a929207-2cd2-4e2b-810a-5c4c67fddade",
+      "slug": "installation",
+      "path": "docs/INSTALLATION.md",
+      "title": "Installing Python locally",
+      "blurb": "Learn how to install Python locally to solve Exercism's exercises on your own machine"
+    },
+    {
+      "uuid": "8508154c-70e2-4f98-8262-20190db15c1f",
+      "slug": "learning",
+      "path": "docs/LEARNING.md",
+      "title": "How to learn Python",
+      "blurb": "An overview of how to get started from scratch with Python"
+    },
+    {
+      "uuid": "8666f259-de7d-4928-ae6f-15ff6fe6bb74",
+      "slug": "tests",
+      "path": "docs/TESTS.md",
+      "title": "Testing on the Python track",
+      "blurb": "Learn how to test your Python exercises on Exercism"
+    },
+    {
+      "uuid": "73ced51d-76d0-45af-952c-8a6d7b5f3f7a",
+      "slug": "resources",
+      "path": "docs/RESOURCES.md",
+      "title": "Useful Python resources",
+      "blurb": "A collection of useful resources to help you master Python"
+    }
+  ]
+}
