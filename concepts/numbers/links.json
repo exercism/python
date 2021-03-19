@@ -32,7 +32,7 @@
     "description": "cmath:  mathematical operations for complex numbers"
   },
   {
-    "URL": "https://docs.python.org/3/library/numeric.html",
+    "url": "https://docs.python.org/3/library/numeric.html",
     "description": "Pythons Numerical and Mathematical Modules"
   }
 ]
