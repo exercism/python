@@ -1,10 +1,7 @@
 {
   "blurb": "Learn about strings by processing log files.",
   "authors": [
-    {
-      "github_username": "aldraco",
-      "exercism_username": "aldraco"
-    }
+    "aldraco"
   ],
   "files": {
     "solution": [

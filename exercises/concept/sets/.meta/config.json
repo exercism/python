@@ -1,10 +1,7 @@
 {
   "blurb": "TODO: add blurb for sets exercise",
   "authors": [
-    {
-      "github_username": "bethanyg",
-      "exercism_username": "BethanyG"
-    }
+    "bethanyg"
   ],
   "files": {
     "solution": [

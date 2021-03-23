@@ -1,14 +1,8 @@
 {
   "blurb": "Learn about loops by grading and organzing your students exam scores.",
   "authors": [
-    {
-      "github_username": "mohanrajanr",
-      "exercism_username": "mohanrajanr"
-    },
-    {
-      "github_username": "BethanyG",
-      "exercism_username": "BethanyG"
-    }
+    "mohanrajanr",
+    "BethanyG"
   ],
   "files": {
     "solution": [

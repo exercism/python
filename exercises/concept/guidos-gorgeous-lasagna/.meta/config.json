@@ -1,10 +1,7 @@
 {
   "blurb": "Learn the basics of Python by cooking Guido's Gorgeous Lasagna.",
   "authors": [
-    {
-      "github_username": "BethanyG",
-      "exercism_username": "BethanyG"
-    }
+    "BethanyG"
   ],
   "files": {
     "solution": [
