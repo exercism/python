@@ -1,20 +1,11 @@
 {
   "blurb": "Learn about string methods while improving your little sister's school essay.",
   "contributors": [
-    {
-      "github_username": "valentin-p",
-      "exercism_username": "valentin-p"
-    },
-    {
-      "github_username": "bethanyg",
-      "exercism_username": "bethanyg"
-    }
+    "valentin-p",
+    "bethanyg"
   ],
   "authors": [
-    {
-      "github_username": "kimolivia",
-      "exercism_username": "olivia"
-    }
+    "kimolivia"
   ],
   "files": {
     "solution": [

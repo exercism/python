@@ -1,20 +1,11 @@
 {
   "blurb": "Learn about string formatting by \"prettifying\" promotional leaflets.",
   "contributors": [
-    {
-      "github_username": "j08k",
-      "exercism_username": "j08k"
-    },
-    {
-      "github_username": "BethanyG",
-      "exercism_username": "BethanyG"
-    }
+    "j08k",
+    "BethanyG"
   ],
   "authors": [
-    {
-      "github_username": "valentin-p",
-      "exercism_username": "valentin-p"
-    }
+    "valentin-p"
   ],
   "files": {
     "solution": [

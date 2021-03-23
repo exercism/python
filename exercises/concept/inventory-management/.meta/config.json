@@ -1,20 +1,11 @@
 {
   "blurb": "Learn about dicts by managing warehouse inventory.",
   "authors": [
-    {
-      "github_username": "j08k",
-      "exercism_username": "j08k"
-    }
+    "j08k"
   ],
   "contributors": [
-    {
-      "github_username": "valentin-p",
-      "exercism_username": "valentin-p"
-    },
-    {
-      "github_username": "bethanyG",
-      "exercism_username": "bethanyG"
-    }
+    "valentin-p",
+    "bethanyG"
   ],
   "files": {
     "solution": [

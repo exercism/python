@@ -1,10 +1,7 @@
 {
   "blurb": "Learn about conditionals by developing a simple control system for a Nuclear Reactor.",
   "authors": [
-    {
-      "github_username": "sachsom95",
-      "exercism_username": "sachsom95"
-    }
+    "sachsom95"
   ],
   "files": {
     "solution": [

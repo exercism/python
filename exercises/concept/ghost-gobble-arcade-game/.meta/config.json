@@ -1,16 +1,10 @@
 {
   "blurb": "Learn about bools by setting up the rules for the Ghost Gobble arcade game.",
   "authors": [
-    {
-      "github_username": "neenjaw",
-      "exercism_username": "neenjaw"
-    }
+    "neenjaw"
   ],
   "contributors": [
-    {
-      "github_username": "cmccandless",
-      "exercism_username": "cmccandless"
-    }
+    "cmccandless"
   ],
   "files": {
     "solution": [

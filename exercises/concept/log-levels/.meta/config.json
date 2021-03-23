@@ -1,16 +1,10 @@
 {
   "blurb": "Learn about enums by automating your tedious logging-level tasks.",
   "contributors": [
-    {
-      "github_username": "valentin-p",
-      "exercism_username": "valentin-p"
-    }
+    "valentin-p"
   ],
   "authors": [
-    {
-      "github_username": "mohanrajanr",
-      "exercism_username": "mohanrajanr"
-    }
+    "mohanrajanr"
   ],
   "files": {
     "solution": [
