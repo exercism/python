@@ -1,6 +1,15 @@
 {
   "blurb": "Reparent a graph on a selected node",
-  "authors": [],
+  "authors": [
+    "cmccandless"
+  ],
+  "contributors": [
+    "crsmi",
+    "Dog",
+    "N-Parsons",
+    "tqa236",
+    "yawpitch"
+  ],
   "files": {
     "solution": [
       "pov.py"

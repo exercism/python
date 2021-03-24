@@ -1,6 +1,14 @@
 {
   "blurb": "Refactor a tree building algorithm.",
-  "authors": [],
+  "authors": [
+    "clapmyhands"
+  ],
+  "contributors": [
+    "cmccandless",
+    "Dog",
+    "N-Parsons",
+    "tqa236"
+  ],
   "files": {
     "solution": [
       "tree_building.py"

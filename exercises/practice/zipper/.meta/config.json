@@ -1,6 +1,14 @@
 {
   "blurb": "Creating a zipper for a binary tree.",
-  "authors": [],
+  "authors": [
+    "cmccandless"
+  ],
+  "contributors": [
+    "Dog",
+    "N-Parsons",
+    "tqa236",
+    "yawpitch"
+  ],
   "files": {
     "solution": [
       "zipper.py"

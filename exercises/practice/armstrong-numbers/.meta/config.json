@@ -1,6 +1,16 @@
 {
   "blurb": "Determine if a number is an Armstrong number",
-  "authors": [],
+  "authors": [
+    "pheanex"
+  ],
+  "contributors": [
+    "BethanyG",
+    "cmccandless",
+    "Dog",
+    "K4cePhoenix",
+    "sukovanej",
+    "tqa236"
+  ],
   "files": {
     "solution": [
       "armstrong_numbers.py"

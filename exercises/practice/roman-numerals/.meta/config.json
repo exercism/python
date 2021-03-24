@@ -1,6 +1,22 @@
 {
   "blurb": "Write a function to convert from normal numbers to Roman Numerals.",
   "authors": [],
+  "contributors": [
+    "behrtam",
+    "BethanyG",
+    "cmccandless",
+    "Dog",
+    "dotrungkien",
+    "ikhadykin",
+    "kytrinyx",
+    "lowks",
+    "mpatibandla",
+    "N-Parsons",
+    "oalbe",
+    "pheanex",
+    "sjakobi",
+    "tqa236"
+  ],
   "files": {
     "solution": [
       "roman_numerals.py"

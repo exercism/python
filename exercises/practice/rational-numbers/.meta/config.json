@@ -1,6 +1,15 @@
 {
   "blurb": "Implement rational numbers.",
   "authors": [],
+  "contributors": [
+    "AnAccountForReportingBugs",
+    "BethanyG",
+    "cmccandless",
+    "Dog",
+    "GKotfis",
+    "omer-g",
+    "tqa236"
+  ],
   "files": {
     "solution": [
       "rational_numbers.py"

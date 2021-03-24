@@ -1,6 +1,17 @@
 {
   "blurb": "Implement a doubly linked list",
-  "authors": [],
+  "authors": [
+    "behrtam"
+  ],
+  "contributors": [
+    "cmccandless",
+    "Dog",
+    "frerich",
+    "Mofeywalker",
+    "N-Parsons",
+    "pheanex",
+    "tqa236"
+  ],
   "files": {
     "solution": [
       "linked_list.py"

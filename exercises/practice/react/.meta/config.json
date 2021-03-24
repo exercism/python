@@ -1,6 +1,14 @@
 {
   "blurb": "Implement a basic reactive system.",
-  "authors": [],
+  "authors": [
+    "cmccandless"
+  ],
+  "contributors": [
+    "Dog",
+    "N-Parsons",
+    "Nishant23",
+    "tqa236"
+  ],
   "files": {
     "solution": [
       "react.py"

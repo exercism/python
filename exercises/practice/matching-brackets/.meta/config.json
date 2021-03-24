@@ -1,6 +1,23 @@
 {
   "blurb": "Make sure the brackets and braces all match.",
-  "authors": [],
+  "authors": [
+    "behrtam"
+  ],
+  "contributors": [
+    "atg-abhishek",
+    "BethanyG",
+    "cmccandless",
+    "Dog",
+    "ikhadykin",
+    "kylecjo",
+    "N-Parsons",
+    "Nishant23",
+    "oalbe",
+    "pheanex",
+    "thomasjpfan",
+    "tqa236",
+    "yawpitch"
+  ],
   "files": {
     "solution": [
       "matching_brackets.py"

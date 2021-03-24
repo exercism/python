@@ -1,6 +1,22 @@
 {
   "blurb": "Given a word, compute the Scrabble score for that word.",
   "authors": [],
+  "contributors": [
+    "behrtam",
+    "cmccandless",
+    "Dog",
+    "ikhadykin",
+    "kotp",
+    "kytrinyx",
+    "lowks",
+    "N-Parsons",
+    "oalbe",
+    "parinporecha",
+    "Peque",
+    "pheanex",
+    "sjakobi",
+    "tqa236"
+  ],
   "files": {
     "solution": [
       "scrabble_score.py"

@@ -1,6 +1,13 @@
 {
   "blurb": "Create a custom set type.",
-  "authors": [],
+  "authors": [
+    "cmccandless"
+  ],
+  "contributors": [
+    "Dog",
+    "tqa236",
+    "vigneshhari"
+  ],
   "files": {
     "solution": [
       "custom_set.py"

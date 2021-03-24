@@ -1,6 +1,23 @@
 {
   "blurb": "Given a string representing a matrix of numbers, return the rows and columns of that matrix.",
-  "authors": [],
+  "authors": [
+    "sjakobi"
+  ],
+  "contributors": [
+    "AnAccountForReportingBugs",
+    "behrtam",
+    "BethanyG",
+    "cmccandless",
+    "danishprakash",
+    "Dog",
+    "kytrinyx",
+    "N-Parsons",
+    "oalbe",
+    "pheanex",
+    "simmol",
+    "tqa236",
+    "yawpitch"
+  ],
   "files": {
     "solution": [
       "matrix.py"

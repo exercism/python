@@ -1,6 +1,19 @@
 {
   "blurb": "Solve the zebra puzzle.",
-  "authors": [],
+  "authors": [
+    "sjakobi"
+  ],
+  "contributors": [
+    "behrtam",
+    "cmccandless",
+    "crsmi",
+    "Dog",
+    "lemoncurry",
+    "N-Parsons",
+    "oalbe",
+    "pheanex",
+    "tqa236"
+  ],
   "files": {
     "solution": [
       "zebra_puzzle.py"

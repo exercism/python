@@ -1,6 +1,21 @@
 {
   "blurb": "Manage robot factory settings.",
   "authors": [],
+  "contributors": [
+    "ariso353",
+    "behrtam",
+    "cmccandless",
+    "Dog",
+    "kytrinyx",
+    "lowks",
+    "N-Parsons",
+    "oalbe",
+    "pheanex",
+    "rootulp",
+    "sjakobi",
+    "tqa236",
+    "tstirrat15"
+  ],
   "files": {
     "solution": [
       "robot_name.py"

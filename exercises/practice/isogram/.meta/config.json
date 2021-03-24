@@ -1,6 +1,22 @@
 {
   "blurb": "Determine if a word or phrase is an isogram.",
-  "authors": [],
+  "authors": [
+    "behrtam"
+  ],
+  "contributors": [
+    "abhijitparida",
+    "cmccandless",
+    "Dog",
+    "ikhadykin",
+    "N-Parsons",
+    "Nishant23",
+    "olufotebig",
+    "rever0f",
+    "sdublish",
+    "thomasjpfan",
+    "tqa236",
+    "yawpitch"
+  ],
   "files": {
     "solution": [
       "isogram.py"

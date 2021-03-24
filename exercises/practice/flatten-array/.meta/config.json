@@ -1,6 +1,20 @@
 {
   "blurb": "Take a nested list and return a single list with all values except nil/null",
-  "authors": [],
+  "authors": [
+    "treyhunner"
+  ],
+  "contributors": [
+    "AiryShift",
+    "alexpjohnson",
+    "behrtam",
+    "cmccandless",
+    "Dog",
+    "ikhadykin",
+    "N-Parsons",
+    "pheanex",
+    "sharno",
+    "tqa236"
+  ],
   "files": {
     "solution": [
       "flatten_array.py"

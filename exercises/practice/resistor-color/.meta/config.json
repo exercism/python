@@ -1,6 +1,14 @@
 {
   "blurb": "Convert a resistor band's color to its numeric representation",
-  "authors": [],
+  "authors": [
+    "gabriel376"
+  ],
+  "contributors": [
+    "cmccandless",
+    "Dog",
+    "tqa236",
+    "yawpitch"
+  ],
   "files": {
     "solution": [
       "resistor_color.py"

@@ -1,6 +1,24 @@
 {
   "blurb": "Implement the classic method for composing secret messages called a square code.",
-  "authors": [],
+  "authors": [
+    "betegelse"
+  ],
+  "contributors": [
+    "behrtam",
+    "BethanyG",
+    "cmccandless",
+    "Dog",
+    "elyssonmr",
+    "kytrinyx",
+    "MrNaif2018",
+    "N-Parsons",
+    "oalbe",
+    "pheanex",
+    "sjakobi",
+    "tqa236",
+    "yawpitch",
+    "yo-ga"
+  ],
   "files": {
     "solution": [
       "crypto_square.py"

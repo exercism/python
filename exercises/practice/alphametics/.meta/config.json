@@ -1,6 +1,21 @@
 {
   "blurb": "Write a function to solve alphametics puzzles.",
-  "authors": [],
+  "authors": [
+    "behrtam"
+  ],
+  "contributors": [
+    "BethanyG",
+    "cmccandless",
+    "Dog",
+    "iandexter",
+    "ikhadykin",
+    "N-Parsons",
+    "nikamirrr",
+    "rfuentescruz",
+    "sukovanej",
+    "tqa236",
+    "yawpitch"
+  ],
   "files": {
     "solution": [
       "alphametics.py"

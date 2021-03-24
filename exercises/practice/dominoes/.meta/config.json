@@ -1,6 +1,16 @@
 {
   "blurb": "Make a chain of dominoes.",
-  "authors": [],
+  "authors": [
+    "cmccandless"
+  ],
+  "contributors": [
+    "BethanyG",
+    "Dog",
+    "dvermd",
+    "N-Parsons",
+    "tqa236",
+    "yawpitch"
+  ],
   "files": {
     "solution": [
       "dominoes.py"

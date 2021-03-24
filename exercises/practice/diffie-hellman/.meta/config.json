@@ -1,6 +1,14 @@
 {
   "blurb": "Diffie-Hellman key exchange.",
   "authors": [],
+  "contributors": [
+    "cmccandless",
+    "Dog",
+    "lucasloisp",
+    "N-Parsons",
+    "pyropy",
+    "tqa236"
+  ],
   "files": {
     "solution": [
       "diffie_hellman.py"

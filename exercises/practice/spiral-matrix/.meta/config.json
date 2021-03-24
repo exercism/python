@@ -1,6 +1,15 @@
 {
   "blurb": " Given the size, return a square matrix of numbers in spiral order.",
-  "authors": [],
+  "authors": [
+    "chgraef"
+  ],
+  "contributors": [
+    "cmccandless",
+    "crsmi",
+    "Dog",
+    "Grociu",
+    "tqa236"
+  ],
   "files": {
     "solution": [
       "spiral_matrix.py"

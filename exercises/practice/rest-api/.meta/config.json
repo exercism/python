@@ -1,6 +1,18 @@
 {
   "blurb": "Implement a RESTful API for tracking IOUs.",
-  "authors": [],
+  "authors": [
+    "cmccandless"
+  ],
+  "contributors": [
+    "AnAccountForReportingBugs",
+    "BethanyG",
+    "Dog",
+    "omer-g",
+    "rpalo",
+    "tqa236",
+    "vgerak",
+    "yawpitch"
+  ],
   "files": {
     "solution": [
       "rest_api.py"

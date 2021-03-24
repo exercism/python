@@ -1,6 +1,11 @@
 {
   "blurb": "Report network IO statistics",
-  "authors": [],
+  "authors": [
+    "AnAccountForReportingBugs"
+  ],
+  "contributors": [
+    "cmccandless"
+  ],
   "files": {
     "solution": [
       "paasio.py"

@@ -1,6 +1,18 @@
 {
   "blurb": "Create a program to solve a word search puzzle.",
-  "authors": [],
+  "authors": [
+    "behrtam"
+  ],
+  "contributors": [
+    "cmccandless",
+    "Dog",
+    "dvermd",
+    "josix",
+    "N-Parsons",
+    "pheanex",
+    "thomasjpfan",
+    "tqa236"
+  ],
   "files": {
     "solution": [
       "word_search.py"

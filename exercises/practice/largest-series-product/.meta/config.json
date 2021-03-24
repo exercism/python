@@ -1,6 +1,23 @@
 {
   "blurb": "Given a string of digits, calculate the largest product for a contiguous substring of digits of length n.",
-  "authors": [],
+  "authors": [
+    "sjakobi"
+  ],
+  "contributors": [
+    "alexpjohnson",
+    "behrtam",
+    "cmccandless",
+    "Dog",
+    "fortrieb",
+    "iandexter",
+    "ikhadykin",
+    "kytrinyx",
+    "N-Parsons",
+    "oalbe",
+    "petertseng",
+    "pheanex",
+    "tqa236"
+  ],
   "files": {
     "solution": [
       "largest_series_product.py"

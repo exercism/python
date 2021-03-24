@@ -1,6 +1,12 @@
 {
   "blurb": "Refactor a ledger printer.",
-  "authors": [],
+  "authors": [
+    "cmccandless"
+  ],
+  "contributors": [
+    "Dog",
+    "tqa236"
+  ],
   "files": {
     "solution": [
       "ledger.py"

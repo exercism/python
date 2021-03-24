@@ -1,6 +1,18 @@
 {
   "blurb": "Manage a player's High Score list",
-  "authors": [],
+  "authors": [
+    "behrtam"
+  ],
+  "contributors": [
+    "BethanyG",
+    "cmccandless",
+    "Dog",
+    "gabriel376",
+    "GascaK",
+    "simmol",
+    "tqa236",
+    "yawpitch"
+  ],
   "files": {
     "solution": [
       "high_scores.py"

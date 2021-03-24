@@ -1,6 +1,21 @@
 {
   "blurb": "Convert a trinary number, represented as a string (e.g. '102012'), to its decimal equivalent using first principles.",
-  "authors": [],
+  "authors": [
+    "betegelse"
+  ],
+  "contributors": [
+    "behrtam",
+    "cmccandless",
+    "Dog",
+    "ikhadykin",
+    "kytrinyx",
+    "N-Parsons",
+    "oalbe",
+    "pheanex",
+    "sharno",
+    "sjakobi",
+    "tqa236"
+  ],
   "files": {
     "solution": [
       "trinary.py"

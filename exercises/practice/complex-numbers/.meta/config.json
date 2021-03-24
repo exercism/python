@@ -1,6 +1,18 @@
 {
   "blurb": "Implement complex numbers.",
   "authors": [],
+  "contributors": [
+    "cmccandless",
+    "Dog",
+    "dvermd",
+    "gsbullmer",
+    "N-Parsons",
+    "pranasziaukas",
+    "susg",
+    "tqa236",
+    "trangttt",
+    "yawpitch"
+  ],
   "files": {
     "solution": [
       "complex_numbers.py"

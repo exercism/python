@@ -1,6 +1,19 @@
 {
   "blurb": "Tally the results of a small football competition.",
-  "authors": [],
+  "authors": [
+    "behrtam"
+  ],
+  "contributors": [
+    "BethanyG",
+    "cmccandless",
+    "Dog",
+    "Grociu",
+    "ikhadykin",
+    "mikeyny",
+    "N-Parsons",
+    "spencer51324312",
+    "tqa236"
+  ],
   "files": {
     "solution": [
       "tournament.py"

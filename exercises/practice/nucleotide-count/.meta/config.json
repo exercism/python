@@ -1,6 +1,22 @@
 {
   "blurb": "Given a DNA string, compute how many times each nucleotide occurs in the string.",
   "authors": [],
+  "contributors": [
+    "behrtam",
+    "cmccandless",
+    "Dog",
+    "ikhadykin",
+    "kytrinyx",
+    "lowks",
+    "mostlybadfly",
+    "N-Parsons",
+    "oalbe",
+    "Oniwa",
+    "orozcoadrian",
+    "pheanex",
+    "sjakobi",
+    "tqa236"
+  ],
   "files": {
     "solution": [
       "nucleotide_count.py"

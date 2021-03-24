@@ -1,6 +1,24 @@
 {
   "blurb": "Implement a binary search algorithm.",
-  "authors": [],
+  "authors": [
+    "michaelkunc"
+  ],
+  "contributors": [
+    "AnAccountForReportingBugs",
+    "behrtam",
+    "BethanyG",
+    "cmccandless",
+    "Dog",
+    "fortrieb",
+    "ikhadykin",
+    "kytrinyx",
+    "mpatibandla",
+    "N-Parsons",
+    "patricksjackson",
+    "pheanex",
+    "subkrish",
+    "tqa236"
+  ],
   "files": {
     "solution": [
       "binary_search.py"

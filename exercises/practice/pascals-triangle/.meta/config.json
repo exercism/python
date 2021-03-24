@@ -1,6 +1,23 @@
 {
   "blurb": "Compute Pascal's triangle up to a given number of rows.",
-  "authors": [],
+  "authors": [
+    "betegelse"
+  ],
+  "contributors": [
+    "behrtam",
+    "cmccandless",
+    "Dog",
+    "ikhadykin",
+    "ikkebr",
+    "kytrinyx",
+    "N-Parsons",
+    "oalbe",
+    "olufotebig",
+    "parinporecha",
+    "pheanex",
+    "sjakobi",
+    "tqa236"
+  ],
   "files": {
     "solution": [
       "pascals_triangle.py"

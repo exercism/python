@@ -1,6 +1,18 @@
 {
   "blurb": "Given two buckets of different size, demonstrate how to measure an exact number of liters.",
-  "authors": [],
+  "authors": [
+    "parthsharma2"
+  ],
+  "contributors": [
+    "cmccandless",
+    "Dog",
+    "dvermd",
+    "guaneec",
+    "ikhadykin",
+    "N-Parsons",
+    "tqa236",
+    "yawpitch"
+  ],
   "files": {
     "solution": [
       "two_bucket.py"

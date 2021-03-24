@@ -1,6 +1,17 @@
 {
   "blurb": "Refactor a Markdown parser",
-  "authors": [],
+  "authors": [
+    "Paul-Ilyin"
+  ],
+  "contributors": [
+    "BethanyG",
+    "cmccandless",
+    "Dog",
+    "N-Parsons",
+    "thomasjpfan",
+    "tqa236",
+    "xitanggg"
+  ],
   "files": {
     "solution": [
       "markdown.py"

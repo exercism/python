@@ -1,6 +1,21 @@
 {
   "blurb": "To try and encourage more sales of different books from a popular 5 book series, a bookshop has decided to offer discounts of multiple-book purchases.",
-  "authors": [],
+  "authors": [
+    "behrtam"
+  ],
+  "contributors": [
+    "BethanyG",
+    "cmccandless",
+    "Dog",
+    "ferhatelmas",
+    "hanksudo",
+    "ikhadykin",
+    "jackattack24",
+    "N-Parsons",
+    "thomasjpfan",
+    "tqa236",
+    "yawpitch"
+  ],
   "files": {
     "solution": [
       "book_store.py"

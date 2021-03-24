@@ -1,6 +1,24 @@
 {
   "blurb": "Calculate the date of meetups.",
-  "authors": [],
+  "authors": [
+    "sjakobi"
+  ],
+  "contributors": [
+    "acedrew",
+    "behrtam",
+    "BethanyG",
+    "cmccandless",
+    "Dog",
+    "dvermd",
+    "ikhadykin",
+    "kytrinyx",
+    "N-Parsons",
+    "oalbe",
+    "Peque",
+    "pheanex",
+    "tqa236",
+    "ZacharyRSmith"
+  ],
   "files": {
     "solution": [
       "meetup.py"
