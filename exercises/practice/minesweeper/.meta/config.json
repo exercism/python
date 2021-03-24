@@ -2,8 +2,14 @@
   "blurb": "Add the numbers to a minesweeper board",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "minesweeper.py"
+    ],
+    "test": [
+      "minesweeper_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   }
 }

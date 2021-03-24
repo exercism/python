@@ -2,8 +2,14 @@
   "blurb": "Implement a basic reactive system.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "react.py"
+    ],
+    "test": [
+      "react_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   }
 }

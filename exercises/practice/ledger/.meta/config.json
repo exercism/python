@@ -2,8 +2,14 @@
   "blurb": "Refactor a ledger printer.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "ledger.py"
+    ],
+    "test": [
+      "ledger_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   }
 }

@@ -2,8 +2,14 @@
   "blurb": "Make a chain of dominoes.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "dominoes.py"
+    ],
+    "test": [
+      "dominoes_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   }
 }

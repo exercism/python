@@ -2,8 +2,14 @@
   "blurb": "Parsing a Smart Game Format string.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "sgf_parsing.py"
+    ],
+    "test": [
+      "sgf_parsing_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   }
 }

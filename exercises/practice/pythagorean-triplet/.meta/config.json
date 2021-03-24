@@ -2,9 +2,15 @@
   "blurb": "There exists exactly one Pythagorean triplet for which a + b + c = 1000. Find the product a * b * c.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "pythagorean_triplet.py"
+    ],
+    "test": [
+      "pythagorean_triplet_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "Problem 9 at Project Euler",
   "source_url": "http://projecteuler.net/problem=9"

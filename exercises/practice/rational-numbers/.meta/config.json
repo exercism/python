@@ -2,9 +2,15 @@
   "blurb": "Implement rational numbers.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "rational_numbers.py"
+    ],
+    "test": [
+      "rational_numbers_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Rational_number"

@@ -2,8 +2,14 @@
   "blurb": "Count the rectangles in an ASCII diagram.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "rectangles.py"
+    ],
+    "test": [
+      "rectangles_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   }
 }

@@ -2,9 +2,15 @@
   "blurb": "Given a number n, determine what the nth prime is.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "nth_prime.py"
+    ],
+    "test": [
+      "nth_prime_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "A variation on Problem 7 at Project Euler",
   "source_url": "http://projecteuler.net/problem=7"

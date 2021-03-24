@@ -2,8 +2,14 @@
   "blurb": "Creating a zipper for a binary tree.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "zipper.py"
+    ],
+    "test": [
+      "zipper_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   }
 }

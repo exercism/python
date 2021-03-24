@@ -2,8 +2,14 @@
   "blurb": "Refactor a Markdown parser",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "markdown.py"
+    ],
+    "test": [
+      "markdown_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   }
 }

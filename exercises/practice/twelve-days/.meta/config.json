@@ -2,9 +2,15 @@
   "blurb": "Output the lyrics to 'The Twelve Days of Christmas'",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "twelve_days.py"
+    ],
+    "test": [
+      "twelve_days_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/The_Twelve_Days_of_Christmas_(song)"

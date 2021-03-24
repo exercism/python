@@ -2,8 +2,14 @@
   "blurb": "Implement a RESTful API for tracking IOUs.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "rest_api.py"
+    ],
+    "test": [
+      "rest_api_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   }
 }

@@ -2,8 +2,14 @@
   "blurb": "Count the scored points on a Go board.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "go_counting.py"
+    ],
+    "test": [
+      "go_counting_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   }
 }

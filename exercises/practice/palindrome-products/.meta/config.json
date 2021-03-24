@@ -2,9 +2,15 @@
   "blurb": "Detect palindrome products in a given range.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "palindrome_products.py"
+    ],
+    "test": [
+      "palindrome_products_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "Problem 4 at Project Euler",
   "source_url": "http://projecteuler.net/problem=4"

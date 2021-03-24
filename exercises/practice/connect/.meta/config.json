@@ -2,8 +2,14 @@
   "blurb": "Compute the result for a game of Hex / Polygon",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "connect.py"
+    ],
+    "test": [
+      "connect_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   }
 }

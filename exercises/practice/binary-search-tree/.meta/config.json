@@ -2,9 +2,15 @@
   "blurb": "Insert and search for numbers in a binary tree.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "binary_search_tree.py"
+    ],
+    "test": [
+      "binary_search_tree_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "Josh Cheek",
   "source_url": "https://twitter.com/josh_cheek"

@@ -2,9 +2,15 @@
   "blurb": "Given a DNA string, compute how many times each nucleotide occurs in the string.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "nucleotide_count.py"
+    ],
+    "test": [
+      "nucleotide_count_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "The Calculating DNA Nucleotides_problem at Rosalind",
   "source_url": "http://rosalind.info/problems/dna/"

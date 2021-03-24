@@ -2,9 +2,15 @@
   "blurb": "Given a string of digits, calculate the largest product for a contiguous substring of digits of length n.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "largest_series_product.py"
+    ],
+    "test": [
+      "largest_series_product_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "A variation on Problem 8 at Project Euler",
   "source_url": "http://projecteuler.net/problem=8"

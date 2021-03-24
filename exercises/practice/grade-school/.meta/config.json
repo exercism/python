@@ -2,9 +2,15 @@
   "blurb": "Given students' names along with the grade that they are in, create a roster for the school",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "grade_school.py"
+    ],
+    "test": [
+      "grade_school_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "A pairing session with Phil Battos at gSchool",
   "source_url": "http://gschool.it"

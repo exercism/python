@@ -2,8 +2,14 @@
   "blurb": "Implement various kinds of error handling and resource management",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "error_handling.py"
+    ],
+    "test": [
+      "error_handling_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   }
 }

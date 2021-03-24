@@ -2,9 +2,15 @@
   "blurb": "Compute Pascal's triangle up to a given number of rows.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "pascals_triangle.py"
+    ],
+    "test": [
+      "pascals_triangle_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "Pascal's Triangle at Wolfram Math World",
   "source_url": "http://mathworld.wolfram.com/PascalsTriangle.html"

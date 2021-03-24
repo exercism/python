@@ -2,8 +2,14 @@
   "blurb": "Generate musical scales, given a starting note and a set of intervals. ",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "scale_generator.py"
+    ],
+    "test": [
+      "scale_generator_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   }
 }

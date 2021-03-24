@@ -2,9 +2,15 @@
   "blurb": "Reverse a string",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "reverse_string.py"
+    ],
+    "test": [
+      "reverse_string_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "Introductory challenge to reverse an input string",
   "source_url": "https://medium.freecodecamp.org/how-to-reverse-a-string-in-javascript-in-3-different-ways-75e4763c68cb"
