@@ -1,6 +1,25 @@
 {
   "blurb": "Add the numbers to a minesweeper board",
-  "authors": [],
+  "authors": [
+    "betegelse"
+  ],
+  "contributors": [
+    "alexpjohnson",
+    "behrtam",
+    "BethanyG",
+    "cmccandless",
+    "Dog",
+    "fluxusfrequency",
+    "ikhadykin",
+    "kytrinyx",
+    "N-Parsons",
+    "oalbe",
+    "peterblazejewicz",
+    "pheanex",
+    "sjakobi",
+    "smalley",
+    "tqa236"
+  ],
   "files": {
     "solution": [],
     "test": [],

@@ -1,6 +1,16 @@
 {
   "blurb": "Write a Domain Specific Language similar to the Graphviz dot language",
-  "authors": [],
+  "authors": [
+    "ackerleytng"
+  ],
+  "contributors": [
+    "cmccandless",
+    "Dog",
+    "N-Parsons",
+    "pranasziaukas",
+    "tqa236",
+    "yawpitch"
+  ],
   "files": {
     "solution": [],
     "test": [],

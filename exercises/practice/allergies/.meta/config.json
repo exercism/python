@@ -1,6 +1,25 @@
 {
   "blurb": "Given a person's allergy score, determine whether or not they're allergic to a given item, and their full list of allergies.",
-  "authors": [],
+  "authors": [
+    "sjakobi"
+  ],
+  "contributors": [
+    "behrtam",
+    "BethanyG",
+    "cmccandless",
+    "Dog",
+    "iandexter",
+    "ikhadykin",
+    "kytrinyx",
+    "N-Parsons",
+    "oalbe",
+    "olufotebig",
+    "pheanex",
+    "spencer51324312",
+    "thomasjpfan",
+    "tqa236",
+    "ZacharyRSmith"
+  ],
   "files": {
     "solution": [],
     "test": [],

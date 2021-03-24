@@ -1,6 +1,30 @@
 {
   "blurb": "Detect saddle points in a matrix.",
-  "authors": [],
+  "authors": [
+    "betegelse"
+  ],
+  "contributors": [
+    "Alexhans",
+    "AnAccountForReportingBugs",
+    "behrtam",
+    "BethanyG",
+    "cmccandless",
+    "crsmi",
+    "ctholho",
+    "DocFogel",
+    "Dog",
+    "elyssonmr",
+    "ikhadykin",
+    "ilmanzo",
+    "kytrinyx",
+    "N-Parsons",
+    "oalbe",
+    "pheanex",
+    "pywkm",
+    "sjakobi",
+    "tqa236",
+    "yawpitch"
+  ],
   "files": {
     "solution": [],
     "test": [],

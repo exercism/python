@@ -1,6 +1,17 @@
 {
   "blurb": "Reverse a string",
-  "authors": [],
+  "authors": [
+    "sjwarner-bp"
+  ],
+  "contributors": [
+    "cmccandless",
+    "dmerejkowsky",
+    "Dog",
+    "flores-jacob",
+    "frerich",
+    "Grociu",
+    "tqa236"
+  ],
   "files": {
     "solution": [],
     "test": [],

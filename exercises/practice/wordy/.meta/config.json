@@ -1,6 +1,30 @@
 {
   "blurb": "Parse and evaluate simple math word problems returning the answer as an integer.",
-  "authors": [],
+  "authors": [
+    "betegelse"
+  ],
+  "contributors": [
+    "behrtam",
+    "BethanyG",
+    "cmccandless",
+    "Dog",
+    "dvermd",
+    "fluxusfrequency",
+    "fortrieb",
+    "Grociu",
+    "ikhadykin",
+    "jackattack24",
+    "kytrinyx",
+    "N-Parsons",
+    "Nishant23",
+    "oalbe",
+    "parinporecha",
+    "pheanex",
+    "rootulp",
+    "sjakobi",
+    "tqa236",
+    "yawpitch"
+  ],
   "files": {
     "solution": [],
     "test": [],

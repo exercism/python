@@ -1,6 +1,20 @@
 {
   "blurb": "Implement basic list operations",
-  "authors": [],
+  "authors": [
+    "behrtam"
+  ],
+  "contributors": [
+    "BethanyG",
+    "cmccandless",
+    "Dog",
+    "dvermd",
+    "gabriel376",
+    "N-Parsons",
+    "pheanex",
+    "rootulp",
+    "thomasjpfan",
+    "tqa236"
+  ],
   "files": {
     "solution": [],
     "test": [],

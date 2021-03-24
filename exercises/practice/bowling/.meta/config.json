@@ -1,6 +1,15 @@
 {
   "blurb": "Score a bowling game",
-  "authors": [],
+  "authors": [
+    "aes421"
+  ],
+  "contributors": [
+    "cmccandless",
+    "Dog",
+    "kytrinyx",
+    "tqa236",
+    "yawpitch"
+  ],
   "files": {
     "solution": [],
     "test": [],

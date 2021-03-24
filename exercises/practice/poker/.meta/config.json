@@ -1,6 +1,22 @@
 {
   "blurb": "Pick the best hand(s) from a list of poker hands.",
-  "authors": [],
+  "authors": [
+    "MartinDelille"
+  ],
+  "contributors": [
+    "behrtam",
+    "cmccandless",
+    "Dog",
+    "dvermd",
+    "ikhadykin",
+    "jnaulty",
+    "kytrinyx",
+    "N-Parsons",
+    "njgingrich",
+    "oalbe",
+    "pheanex",
+    "tqa236"
+  ],
   "files": {
     "solution": [],
     "test": [],

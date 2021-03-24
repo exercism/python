@@ -1,6 +1,20 @@
 {
   "blurb": "Search a file for lines matching a regular expression pattern. Return the line number and contents of each matching line.",
-  "authors": [],
+  "authors": [
+    "behrtam"
+  ],
+  "contributors": [
+    "beatorizu",
+    "BethanyG",
+    "carloscdias",
+    "cmccandless",
+    "Dog",
+    "ikhadykin",
+    "N-Parsons",
+    "thomasjpfan",
+    "tqa236",
+    "yawpitch"
+  ],
   "files": {
     "solution": [],
     "test": [],

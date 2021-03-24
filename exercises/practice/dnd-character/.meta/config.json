@@ -1,6 +1,14 @@
 {
   "blurb": "Randomly generate Dungeons & Dragons characters",
-  "authors": [],
+  "authors": [
+    "GascaK"
+  ],
+  "contributors": [
+    "cmccandless",
+    "Dog",
+    "tqa236",
+    "yawpitch"
+  ],
   "files": {
     "solution": [],
     "test": [],

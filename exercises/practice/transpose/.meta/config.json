@@ -1,6 +1,20 @@
 {
   "blurb": "Take input text and output it transposed.",
-  "authors": [],
+  "authors": [
+    "nithin-vijayan"
+  ],
+  "contributors": [
+    "behrtam",
+    "cmccandless",
+    "Dog",
+    "dvermd",
+    "Grociu",
+    "ikhadykin",
+    "N-Parsons",
+    "parinporecha",
+    "pheanex",
+    "tqa236"
+  ],
   "files": {
     "solution": [],
     "test": [],

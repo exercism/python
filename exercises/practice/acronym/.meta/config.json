@@ -1,6 +1,22 @@
 {
   "blurb": "Convert a long phrase to its acronym",
-  "authors": [],
+  "authors": [
+    "rootulp"
+  ],
+  "contributors": [
+    "AnAccountForReportingBugs",
+    "behrtam",
+    "cmccandless",
+    "Dog",
+    "GascaK",
+    "ikhadykin",
+    "N-Parsons",
+    "omer-g",
+    "pheanex",
+    "sjwarner-bp",
+    "thomasjpfan",
+    "tqa236"
+  ],
   "files": {
     "solution": [],
     "test": [],

@@ -1,6 +1,15 @@
 {
   "blurb": "Generate the lyrics of the song 'I Know an Old Lady Who Swallowed a Fly'",
-  "authors": [],
+  "authors": [
+    "luanjpb"
+  ],
+  "contributors": [
+    "cmccandless",
+    "Dog",
+    "kylecjo",
+    "N-Parsons",
+    "tqa236"
+  ],
   "files": {
     "solution": [],
     "test": [],

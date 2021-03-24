@@ -1,6 +1,14 @@
 {
   "blurb": "Implement the logic of the hangman game using functional reactive programming.",
-  "authors": [],
+  "authors": [
+    "junming403"
+  ],
+  "contributors": [
+    "cmccandless",
+    "Dog",
+    "tqa236",
+    "yawpitch"
+  ],
   "files": {
     "solution": [],
     "test": [],

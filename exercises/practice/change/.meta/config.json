@@ -1,6 +1,20 @@
 {
   "blurb": "Correctly determine change to be given using the least number of coins",
-  "authors": [],
+  "authors": [
+    "justani"
+  ],
+  "contributors": [
+    "BethanyG",
+    "cmccandless",
+    "Dog",
+    "ikhadykin",
+    "lucasdpau",
+    "N-Parsons",
+    "RJTK",
+    "sdublish",
+    "smalley",
+    "tqa236"
+  ],
   "files": {
     "solution": [],
     "test": [],

@@ -1,6 +1,23 @@
 {
   "blurb": "Given students' names along with the grade that they are in, create a roster for the school",
   "authors": [],
+  "contributors": [
+    "behrtam",
+    "cmccandless",
+    "de2Zotjes",
+    "Dog",
+    "hop",
+    "ikhadykin",
+    "kytrinyx",
+    "lowks",
+    "mambocab",
+    "Mofeywalker",
+    "N-Parsons",
+    "oalbe",
+    "pheanex",
+    "sjakobi",
+    "tqa236"
+  ],
   "files": {
     "solution": [],
     "test": [],

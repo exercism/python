@@ -1,6 +1,19 @@
 {
   "blurb": "Count the rectangles in an ASCII diagram.",
   "authors": [],
+  "contributors": [
+    "aboutroots",
+    "behrtam",
+    "BethanyG",
+    "cmccandless",
+    "Dog",
+    "dvermd",
+    "ikhadykin",
+    "N-Parsons",
+    "oalbe",
+    "pheanex",
+    "tqa236"
+  ],
   "files": {
     "solution": [],
     "test": [],

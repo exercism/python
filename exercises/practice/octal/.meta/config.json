@@ -1,6 +1,20 @@
 {
   "blurb": "Convert a octal number, represented as a string (e.g. '1735263'), to its decimal equivalent using first principles (i.e. no, you may not use built-in or external libraries to accomplish the conversion).",
-  "authors": [],
+  "authors": [
+    "sjakobi"
+  ],
+  "contributors": [
+    "behrtam",
+    "cmccandless",
+    "Dog",
+    "ikhadykin",
+    "jesserizzo",
+    "kytrinyx",
+    "N-Parsons",
+    "oalbe",
+    "pheanex",
+    "tqa236"
+  ],
   "files": {
     "solution": [],
     "test": [],

@@ -1,6 +1,28 @@
 {
   "blurb": "Given a word and a list of possible anagrams, select the correct sublist.",
   "authors": [],
+  "contributors": [
+    "behrtam",
+    "cmccandless",
+    "crazymykl",
+    "Dog",
+    "dotrungkien",
+    "henrik",
+    "ikhadykin",
+    "kytrinyx",
+    "lowks",
+    "markijbema",
+    "N-Parsons",
+    "n1k0",
+    "oalbe",
+    "pheanex",
+    "roadfoodr",
+    "sjakobi",
+    "thomasjpfan",
+    "tqa236",
+    "vgerak",
+    "yawpitch"
+  ],
   "files": {
     "solution": [],
     "test": [],

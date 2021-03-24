@@ -1,6 +1,18 @@
 {
   "blurb": "Generate musical scales, given a starting note and a set of intervals. ",
-  "authors": [],
+  "authors": [
+    "cptjackson"
+  ],
+  "contributors": [
+    "behrtam",
+    "cmccandless",
+    "crsmi",
+    "Dog",
+    "ikhadykin",
+    "N-Parsons",
+    "nikamirrr",
+    "tqa236"
+  ],
   "files": {
     "solution": [],
     "test": [],

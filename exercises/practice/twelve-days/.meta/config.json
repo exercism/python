@@ -1,6 +1,22 @@
 {
   "blurb": "Output the lyrics to 'The Twelve Days of Christmas'",
-  "authors": [],
+  "authors": [
+    "sjakobi"
+  ],
+  "contributors": [
+    "AbstractBeliefs",
+    "ackerleytng",
+    "behrtam",
+    "cmccandless",
+    "Dog",
+    "kytrinyx",
+    "N-Parsons",
+    "oalbe",
+    "PatrickMcSweeny",
+    "pheanex",
+    "rootulp",
+    "tqa236"
+  ],
   "files": {
     "solution": [],
     "test": [],

@@ -1,6 +1,25 @@
 {
   "blurb": "Detect palindrome products in a given range.",
-  "authors": [],
+  "authors": [
+    "sjakobi"
+  ],
+  "contributors": [
+    "AnAccountForReportingBugs",
+    "behrtam",
+    "BethanyG",
+    "cmccandless",
+    "deep110",
+    "Dog",
+    "emerali",
+    "gabriel376",
+    "ikhadykin",
+    "kytrinyx",
+    "N-Parsons",
+    "oalbe",
+    "pheanex",
+    "pywkm",
+    "tqa236"
+  ],
   "files": {
     "solution": [],
     "test": [],

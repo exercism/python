@@ -1,6 +1,19 @@
 {
   "blurb": "Implement encoding and decoding for the rail fence cipher.",
-  "authors": [],
+  "authors": [
+    "behrtam"
+  ],
+  "contributors": [
+    "akashsara",
+    "cmccandless",
+    "Dog",
+    "ikhadykin",
+    "jesserizzo",
+    "N-Parsons",
+    "pheanex",
+    "tqa236",
+    "yawpitch"
+  ],
   "files": {
     "solution": [],
     "test": [],
