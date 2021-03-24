@@ -2,9 +2,15 @@
   "blurb": "Implement a doubly linked list",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "linked_list.py"
+    ],
+    "test": [
+      "linked_list_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "Classic computer science topic"
 }

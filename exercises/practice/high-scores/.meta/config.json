@@ -2,9 +2,15 @@
   "blurb": "Manage a player's High Score list",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "high_scores.py"
+    ],
+    "test": [
+      "high_scores_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "Tribute to the eighties' arcade game Frogger"
 }

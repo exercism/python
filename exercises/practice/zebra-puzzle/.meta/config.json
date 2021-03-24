@@ -2,9 +2,15 @@
   "blurb": "Solve the zebra puzzle.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "zebra_puzzle.py"
+    ],
+    "test": [
+      "zebra_puzzle_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Zebra_Puzzle"

@@ -2,9 +2,15 @@
   "blurb": "Calculate the date of meetups.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "meetup.py"
+    ],
+    "test": [
+      "meetup_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "Jeremy Hinegardner mentioned a Boulder meetup that happens on the Wednesteenth of every month",
   "source_url": "https://twitter.com/copiousfreetime"

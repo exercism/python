@@ -2,9 +2,15 @@
   "blurb": "Search a file for lines matching a regular expression pattern. Return the line number and contents of each matching line.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "grep.py"
+    ],
+    "test": [
+      "grep_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "Conversation with Nate Foster.",
   "source_url": "http://www.cs.cornell.edu/Courses/cs3110/2014sp/hw/0/ps0.pdf"

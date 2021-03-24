@@ -2,8 +2,14 @@
   "blurb": "Count the frequency of letters in texts using parallel computation.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "parallel_letter_frequency.py"
+    ],
+    "test": [
+      "parallel_letter_frequency_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   }
 }

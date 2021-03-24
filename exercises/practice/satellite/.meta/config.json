@@ -2,8 +2,14 @@
   "blurb": "Rebuild binary trees from pre-order and in-order traversals.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "satellite.py"
+    ],
+    "test": [
+      "satellite_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   }
 }

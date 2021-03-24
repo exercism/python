@@ -2,9 +2,15 @@
   "blurb": "Given a number, find the sum of all the multiples of particular numbers up to but not including that number.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "sum_of_multiples.py"
+    ],
+    "test": [
+      "sum_of_multiples_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "A variation on Problem 1 at Project Euler",
   "source_url": "http://projecteuler.net/problem=1"

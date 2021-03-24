@@ -2,9 +2,15 @@
   "blurb": "Implement encoding and decoding for the rail fence cipher.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "rail_fence_cipher.py"
+    ],
+    "test": [
+      "rail_fence_cipher_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Transposition_cipher#Rail_Fence_cipher"

@@ -2,9 +2,15 @@
   "blurb": "Given a phrase, count the occurrences of each word in that phrase.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "word_count.py"
+    ],
+    "test": [
+      "word_count_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour."
 }

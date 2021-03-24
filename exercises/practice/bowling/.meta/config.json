@@ -2,9 +2,15 @@
   "blurb": "Score a bowling game",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "bowling.py"
+    ],
+    "test": [
+      "bowling_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "The Bowling Game Kata at but UncleBob",
   "source_url": "http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata"

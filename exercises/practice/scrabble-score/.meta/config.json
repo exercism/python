@@ -2,9 +2,15 @@
   "blurb": "Given a word, compute the Scrabble score for that word.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "scrabble_score.py"
+    ],
+    "test": [
+      "scrabble_score_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "Inspired by the Extreme Startup game",
   "source_url": "https://github.com/rchatley/extreme_startup"

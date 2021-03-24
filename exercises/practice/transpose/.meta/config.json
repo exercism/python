@@ -2,9 +2,15 @@
   "blurb": "Take input text and output it transposed.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "transpose.py"
+    ],
+    "test": [
+      "transpose_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "Reddit r/dailyprogrammer challenge #270 [Easy].",
   "source_url": "https://www.reddit.com/r/dailyprogrammer/comments/4msu2x/challenge_270_easy_transpose_the_input_text"

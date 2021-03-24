@@ -2,9 +2,15 @@
   "blurb": "Convert a long phrase to its acronym",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "acronym.py"
+    ],
+    "test": [
+      "acronym_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "Julien Vanier",
   "source_url": "https://github.com/monkbroc"

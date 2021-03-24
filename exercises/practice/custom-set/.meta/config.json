@@ -2,8 +2,14 @@
   "blurb": "Create a custom set type.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "custom_set.py"
+    ],
+    "test": [
+      "custom_set_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   }
 }

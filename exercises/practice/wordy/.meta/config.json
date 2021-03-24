@@ -2,9 +2,15 @@
   "blurb": "Parse and evaluate simple math word problems returning the answer as an integer.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "wordy.py"
+    ],
+    "test": [
+      "wordy_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "Inspired by one of the generated questions in the Extreme Startup game.",
   "source_url": "https://github.com/rchatley/extreme_startup"

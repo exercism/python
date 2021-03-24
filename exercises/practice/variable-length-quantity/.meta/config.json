@@ -2,9 +2,15 @@
   "blurb": "Implement variable length quantity encoding and decoding.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "variable_length_quantity.py"
+    ],
+    "test": [
+      "variable_length_quantity_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   },
   "source": "A poor Splice developer having to implement MIDI encoding/decoding.",
   "source_url": "https://splice.com"

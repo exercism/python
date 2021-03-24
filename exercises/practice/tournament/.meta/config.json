@@ -2,8 +2,14 @@
   "blurb": "Tally the results of a small football competition.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "tournament.py"
+    ],
+    "test": [
+      "tournament_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   }
 }

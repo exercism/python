@@ -2,8 +2,14 @@
   "blurb": "Implement an evaluator for a very simple subset of Forth",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "forth.py"
+    ],
+    "test": [
+      "forth_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
   }
 }
