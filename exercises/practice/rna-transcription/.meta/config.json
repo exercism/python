@@ -1,6 +1,8 @@
 {
   "blurb": "Given a DNA strand, return its RNA Complement Transcription.",
-  "authors": ["BrianHicks"],
+  "authors": [
+    "BrianHicks"
+  ],
   "contributors": [
     "behrtam",
     "cmccandless",
@@ -14,7 +16,6 @@
     "lowks",
     "magnus-hogberg",
     "N-Parsons",
-    "oalbe",
     "pheanex",
     "sjakobi",
     "thomasjpfan",
