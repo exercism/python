@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for this concept",
-  "authors": [],
+  "blurb": "None is a singleton object frequently used to represent the *absence* of a value -- a placeholder to define a nil (empty, undefined, or null) variable, object, or argument. This \"placeholder\" can then be replaced by specific values or types later as needed.  None is also automatically returned from functions that do not have a return specified.",
+  "authors": ["mohanrajanr", "BethanyG"],
   "contributors": []
 }

@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for this concept",
-  "authors": [],
-  "contributors": []
+  "blurb": "Python represents true and false values with the 'bool' type. There are only two values: 'True' and 'False'. These values can be bound to a variable, used in comparisons, or returned from a function.  Bools are a subclass of 'int'.",
+  "authors": ["neenjaw"],
+  "contributors": ["cmccandless", "BethanyG"]
 }

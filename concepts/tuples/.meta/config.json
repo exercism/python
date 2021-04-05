@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for this concept",
-  "authors": [],
+  "blurb": "A tuple is an immutable collection of items in sequence. Like most collections, tuples can hold any/multiple data type(s) -- including other tuples. Tuples support all common sequence operations, and items are referenced by 0-based index number.  Tuples can be iterated over in a loop by using the \"for item in <tuple>\" syntax.",
+  "authors": ["BethanyG"],
   "contributors": []
 }
