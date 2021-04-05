@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for this concept",
-  "authors": [],
-  "contributors": []
+  "blurb": "A dictionary (\"dict\") is a data structure that associates hashable keys to values -- known in other programming languages as a hash table or hashmap. Like most collections, dicts can hold reference to any/multiple data type(s) -- including other dictionaries. \"dicts\" enable the retrieval of a value in constant time, given the key.",
+  "authors": ["j08k"],
+  "contributors": ["valentin-p", "bethanyG"]
 }

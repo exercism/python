@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for this concept",
-  "authors": [],
-  "contributors": []
+  "blurb": "Python is a dynamic and strongly typed object-oriented programming language. It employs both duck typing and gradual typing (via type hints). Variables can be bound and re-bound to any data type and are resolved at run-time. Python uses significant indentation (similar to Haskell) for code blocks and puts strong emphasis on code readability.",
+  "authors": ["BethanyG"],
+  "contributors": ["cmccandless"]
 }
