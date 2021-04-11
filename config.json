@@ -4039,12 +4039,12 @@
     },
     {
       "title": "Extensible",
-      "content": "Need to call Fortran from a web API? Done. Need to process images using C?  Python can do that.",
+      "content": "Need to call Fortran from a web API? Done. Need to process images using C? Python can do that.",
       "icon": ""
     },
     {
       "title": "Flexible",
-      "content": "Duck, dynamic, & strong typing.  Easy to debug. Fun for experiments, robust for large applications.",
+      "content": "Duck, dynamic, & strong typing. Easy to debug. Fun for experiments, robust for large applications.",
       "icon": ""
     },
     {
