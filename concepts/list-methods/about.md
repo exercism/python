@@ -132,7 +132,7 @@ If you want to sort a list in _descending_ order, pass a `reverse=True` argument
 ["Tony", "Thor", "Natasha", "Bruce"]
 ```
 
-For cases where mutating the original list is undesirable, the built-ins [`sorted()`][sorted] and [`reversed()`][reversed] can be used.  `sorted()` will return a sorted copy, and takes the same parameters as `<list>.sort()`. `reversed()` will return a reverse _iterator_ that can be used to build a new list copy.
+For cases where mutating the original list is undesirable, the built-in functions [`sorted()`][sorted] and [`reversed()`][reversed] can be used.  `sorted(<list>)` will return a sorted _copy_, and takes the same parameters as `<list>.sort()`. `reversed(<list>)` returns an _iterator_ that yields the list's items in reverse order. We'll talk about iterators more in later exercises.
 
 <br>
 
