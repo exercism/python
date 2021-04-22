@@ -151,7 +151,7 @@ The number of occurrences of an element in a list can be calculated with the hel
 
 ## Finding the index of items
 
-`list.index()` will return the index number of the _first occurrence_ of an item passed in. If there are no occurrences, a `ValueError` is raised. If the exact position of an item isn't needed, the built-in `in` operator is more efficient for checking simple membership.
+`<list>.index(<item>)` will return the index number of the _first occurrence_ of an item passed in. If there are no occurrences, a `ValueError` is raised. If the exact position of an item isn't needed, the built-in `in` operator is more efficient for checking if a list contains a given value.
 
 Indexing is zero-based, so the position of the first item is `0`.
 
