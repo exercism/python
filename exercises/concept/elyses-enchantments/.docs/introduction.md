@@ -2,7 +2,7 @@
 
 In Python, a [list][list] is a mutable collection of items in _sequence_. Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold reference to any (or multiple) data type(s) - including other lists.
 
-Like any [sequence][sequence type], items are referenced by 0-based index number, and can be copied in whole or in part via _slice notation_. Lists support all [common sequence operations][common sequence operations], as well as [mutable sequence operations][mutable sequence operations] such as `.append()` and `.reverse()`. They can be iterated over in a loop by using the `for item in <list>` construct.
+Like any [sequence][sequence type], items are referenced by 0-based index number, and can be copied in whole or in part via _slice notation_. `list`s support all [common sequence operations][common sequence operations], as well as [mutable sequence operations][mutable sequence operations] such as `<list>.append()` and `<list>.reverse()`. They can be iterated over in a loop by using the `for item in <list>` construct.
 
 Under the hood, `lists` are implemented as [dynamic arrays][dynamic array] -- similar to Java's [`Arraylist`][arraylist] type. Lists are most often used to store groups of similar data (_strings, numbers, sets etc._) of unknown length. Lists are an extremely flexible and useful data structure and many built-in methods and operations in Python produce lists as their output.
 
