@@ -178,7 +178,7 @@ You can also provide `start` and `end` indices to search within a specific secti
 
 Remember that variables in Python are labels that point to underlying objects and `lists` are _container_ objects that only hold references to their collected items.
 
-Assigning a `list` object to a new variable _name_ does not copy the object or any of its refrenced data. Any change made to the items in the `list` using the new variable name will also _impact the original_.
+Assigning a `list` object to a new variable _name_ does not copy the object or any of its referenced data. Any change made to the items in the `list` using the new variable name will also _impact the original_.
 
 `<list>.copy()` will create a new `list` object, but **will not** create new objects for the referenced list _elements_. This type of copy is usually enough to add or remove items from  two `list` objects independantly and avoid problems. But if there is a chance that the elements of the `list` might be accidentially mutated and a full copy of **all** refrences and objects is needed, [`copy.deepcopy()`][deepcopy] in the `copy` module should be used.
 
