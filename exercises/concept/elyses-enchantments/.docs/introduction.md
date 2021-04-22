@@ -104,7 +104,7 @@ TypeError: 'int' object is not iterable
 
 ## Accessing elements
 
-Items inside lists (_as well as items in other sequence types `string` & `tuple`_), can be accessed via 0-based index and _bracket notation_. Indexes can be from **`left`** --> **`right`** (_starting at zero_) or **`right`** --> **`left`** (_starting at -1_).
+Items inside lists (_as well as items in other sequence types `string` & `tuple`_) can be accessed via 0-based index and _bracket notation_. Indexes can be from **`left`** --> **`right`** (_starting at zero_) or **`right`** --> **`left`** (_starting at -1_).
 
 
 <table>
