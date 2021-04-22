@@ -111,7 +111,7 @@ The `list.reverse()` method will reverse the order of elements.
 [3, 2, 1]
 ```
 
-A list can be re-ordered _**in place**_ with the help of `list.sort()`. Internally, Python uses [`Timsort`][timsort] to arrange the list. The default order will be _ascending_. Take a look at the Python docs for some [additional tips and techniques for sorting][sorting how to] lists effectively.
+A list can be re-ordered _**in place**_ with the help of `<list>.sort()`. Internally, Python uses [`Timsort`][timsort] to arrange the list. The default order will be _ascending_. Take a look at the Python docs for some [additional tips and techniques for sorting][sorting how to] lists effectively.
 
 ```python
 >>> names = ["Tony", "Natasha", "Thor", "Bruce"]
