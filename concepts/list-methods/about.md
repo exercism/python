@@ -6,7 +6,7 @@ Lists support both [common][common sequence operations] and [mutable][mutable se
 
 Python provides many useful [methods][list-methods] for working with lists. Let's take a look at some of them.
 
-Keep in mind that when you manipulate a list with a list-method, **you alter the list** object that has been passed. If you do not wish to mutate your original `list`, you will need to at least make a `shallow copy` of it via slice or `<list>.copy()`.
+Keep in mind that when you manipulate a list with a list-method, **you alter the list** object that has been passed into the method. If you do not wish to mutate your original `list`, you will need to at least make a `shallow copy` of it via slice or `<list>.copy()`.
 
 ## Adding Items
 
