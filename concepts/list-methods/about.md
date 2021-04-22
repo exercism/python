@@ -123,7 +123,7 @@ List elements can also be sorted  _**in place**_ with the help of `list.sort()`.
 ["Bruce", "Natasha", "Thor", "Tony"]
 ```
 
-If you want the sort to be in _descending_ order, pass a `reverse=True` argument:
+If you want to sort a list in _descending_ order, pass a `reverse=True` argument:
 
 ```python
 >>> names = ["Tony", "Natasha", "Thor", "Bruce"]
