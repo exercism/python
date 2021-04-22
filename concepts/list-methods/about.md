@@ -176,7 +176,7 @@ You can also provide `start` and `end` indices to search within a specific secti
 
 ## Making Copies
 
-Remember that variables in Python are labels that point to underlying objects and `lists` are _container_ objects that only hold references to their collected items.
+Remember that variables in Python are labels that point to underlying objects and `lists` are _container_ objects that only hold references to their contained items.
 
 Assigning a `list` object to a new variable _name_ does not copy the object or any of its referenced data. Any change made to the items in the `list` using the new variable name will also _impact the original_.
 
