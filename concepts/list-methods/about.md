@@ -112,7 +112,7 @@ You can reverse the order of list elements _***in place**_ with `<list>.reverse(
 [3, 2, 1]
 ```
 
-List elements can also be sorted  _**in place**_ with the help of `list.sort()`. Internally, Python uses [`Timsort`][timsort] to arrange elements. The default order is _ascending_. Take a look at the Python docs for some [additional tips and techniques for sorting][sorting how to] lists effectively.
+List elements can also be sorted  _**in place**_ using `list.sort()`. Internally, Python uses [`Timsort`][timsort] to arrange elements. The default order is _ascending_. Take a look at the Python docs for some [additional tips and techniques for sorting][sorting how to] lists effectively.
 
 ```python
 >>> names = ["Tony", "Natasha", "Thor", "Bruce"]
