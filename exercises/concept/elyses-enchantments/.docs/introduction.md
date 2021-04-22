@@ -1,10 +1,10 @@
 # Introduction
 
-In Python, a [list][list] is a mutable collection of items in _sequence_. Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold reference to any (or multiple) data type(s) - including other lists. Like any [sequence][sequence type], items are referenced by 0-based index number, and can be copied in whole or in part via _slice notation_. Lists support all [common sequence operations][common sequence operations], as well as [mutable sequence operations][mutable sequence operations] like `.append()` and `.reverse()`. They can be iterated over in a loop by using the `for item in <list>` construct.
+In Python, a [list][list] is a mutable collection of items in _sequence_. Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold reference to any (or multiple) data type(s) - including other lists.
 
-Under the hood, `lists` are implemented as [dynamic arrays][dynamic array] -- similar to Java's [`Arraylist`][arraylist] type. Lists are most often used to store groups of similar data (_strings, numbers, sets etc._) of unknown length. Accessing items, checking for membership via `in`, or appending items to the "right-hand" side of a list are all very efficient. Appending to the "left-hand" side or inserting into the middle of a list is much _less_ efficient because it requires shifting items to keep them in sequence.
+Like any [sequence][sequence type], items are referenced by 0-based index number, and can be copied in whole or in part via _slice notation_. Lists support all [common sequence operations][common sequence operations], as well as [mutable sequence operations][mutable sequence operations] such as `.append()` and `.reverse()`. They can be iterated over in a loop by using the `for item in <list>` construct.
 
-Because lists are mutable and can contain references to arbitrary objects, they take up more memory space than a fixed-size `array.array` type of the same apparent length. Despite this, lists are an extremely flexible and useful data structure and many built-in methods and operations in Python produce lists as their output.
+Under the hood, `lists` are implemented as [dynamic arrays][dynamic array] -- similar to Java's [`Arraylist`][arraylist] type. Lists are most often used to store groups of similar data (_strings, numbers, sets etc._) of unknown length. Lists are an extremely flexible and useful data structure and many built-in methods and operations in Python produce lists as their output.
 
 ## Construction
 
@@ -104,13 +104,21 @@ TypeError: 'int' object is not iterable
 
 ## Accessing elements
 
-Items inside lists (_like the sequence types `string` and `tuple`_), can be accessed via 0-based index and _bracket notation_. Indexes can be from **`left`** --> **`right`** (_starting at zero_) or **`right`** --> **`left`** (_starting at -1_).
+Items inside lists (_as well as items in other sequence types `string` & `tuple`_), can be accessed via 0-based index and _bracket notation_. Indexes can be from **`left`** --> **`right`** (_starting at zero_) or **`right`** --> **`left`** (_starting at -1_).
 
-| **0** | **1** | **2** | **3** | **4** | **5** |\
- -------------------------\
- | P | y | t | h | o | n |\
- -------------------------\
- |_**-6**_ |_**-5**_ |_**-4**_ |_**-3**_ |_**-2**_ |_**-1**_ | <----
+
+<table>
+<tr>
+  <td style="vertical-align: top"> index from left ⟹<br><br><br><br><br><br><br></td><td style="vertical-align: middle">
+
+|  0<br>👇🏾 	|  1<br>👇🏾 	|  2<br>👇🏾 	|  3<br>👇🏾 	|  4<br>👇🏾 	|  5<br>👇🏾 	|
+|:--------:	|:--------:	|:--------:	|:--------:	|:--------:	|:--------:	|
+|     P    	|     y    	|     t    	|     h    	|     o    	|     n    	|
+| 👆🏾<br>-6 	| 👆🏾<br>-5 	| 👆🏾<br>-4 	| 👆🏾<br>-3 	| 👆🏾<br>-2 	| 👆🏾<br>-1 	|
+</td><td style="vertical-align: bottom"><br><br><br><br><br>⟸ index from right</td>
+</tr>
+</table>
+
 
 ```python
 >>> breakfast_foods = ["Oatmeal", "Fruit Salad", "Eggs", "Toast"]
@@ -121,11 +129,22 @@ Items inside lists (_like the sequence types `string` and `tuple`_), can be acce
 
 >>> breakfast_foods[-4]
 'Oatmeal'
+
+# Eggs are at index -2 or 2
+>>> breakfast_foods[-2]
+'Eggs'
+
+>>> breakfast_foods[2]
+'Eggs'
+
+# Toast is at -1
+>>> breakfast_foods[-1]
+'Toast'
 ```
 
-You can access a portion of a list with _slice notation_ (`[start:stop]`). A _slice_ is defined as the sequence of items in a list at position `index` such that `start <= index < stop`. _Slicing_ does not modify the original `list`. Instead, you get a new list with copies of all the elements you asked for.
+A portion of a list can be accessed via _slice notation_ (`<list>[start:stop]`). A _slice_ is defined as an element sequence at position `index`, such that `start <= index < stop`. _Slicing_ returns a copy of the "sliced" items and does not modify the original `list`.
 
-You can also slice a list using a `step` parameter with the notation `[start:stop:step]`. Using a `step` will "skip over" or filter the list elements (_for example, a `step` of 2 will be every other element in the range_):
+A `step` parameter can also be used `[start:stop:step]` to "skip over" or filter the list elements (_for example, a `step` of 2 will select every other element in the range_):
 
 ```python
 >>> colors = ["Red", "Purple", "Green", "Yellow", "Orange", "Pink", "Blue", "Grey"]
@@ -168,12 +187,12 @@ Blue
 48
 ```
 
-Lists can be combined via various techniques:
+Lists can also be combined via various techniques:
 
 ```python
 # Using the plus + operator unpacks each list and creates a new list, but it is not efficient.
->>> concatenated_list = ["George", 5] + ["cat", "Tabby"]
->>> concatenated_list
+>>> new_via_concatenate = ["George", 5] + ["cat", "Tabby"]
+>>> new_via_concatenate
 ['George', 5, 'cat', 'Tabby']
 
 # Likewise, using the multiplication operator * is the equivalent of using + n times.
@@ -181,7 +200,17 @@ Lists can be combined via various techniques:
 >>> multiplied_group = first_group * 3
 >>> multiplied_group
 ['cat', 'dog', 'elephant', 'cat', 'dog', 'elephant', 'cat', 'dog', 'elephant']
+
+# This loops through the first list and appends it's items to the end of the second list.
+>>> first_one = ["cat", "Tabby"]
+>>> second_one = ["George", 5]
+>>> for item in first_one:
+>>>      second_one.append(item)
+...
+>>> second_one
+['George', 5, 'cat', 'Tabby']
 ```
+
 
 [list]: https://docs.python.org/3/library/stdtypes.html#list
 [tuple]: https://docs.python.org/3/library/stdtypes.html#tuple
