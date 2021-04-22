@@ -2,7 +2,7 @@
 
 Chaitana owns a very popular theme park. She only has one ride in the very center of beautifully landscaped grounds: The Biggest Roller Coaster in the World(TM). Although there is only this one attraction, people travel from all over the world and stand in line for hours for the opportunity to ride Chaitana's hypercoaster.
 
-There are two queues for this ride, represented as `lists`:
+There are two queues for this ride, represented as `list`s:
 
 1. Normal Queue
 2. Express Queue (Also known as the Fast-track) - where people pay extra for priority access.
