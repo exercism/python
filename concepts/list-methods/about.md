@@ -1,12 +1,12 @@
 # About
 
-In Python, a [`list`][list std type] is a mutable collection of items in _sequence_. Like most collections (see the built-ins tuple, dict and set), lists can hold reference to any (or multiple) data type(s) - including other lists.
+A [`list`][list] is a mutable collection of items in _sequence_. Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold reference to any (or multiple) data type(s) - including other lists.  They can be copied in whole or in part via [slice notation][slice notation]. Like any [sequence][sequence type], elements within `lists` are referenced by `0-based index` number.
 
-Like any [sequence type][sequence type], items are referenced by 0-based index number and can be copied in whole or in part via _slice notation_. Lists support all [common sequence operations][common sequence operations], as well as [mutable sequence operations][mutable sequence operations]. They can be iterated over in a loop by using the for `item in <list>` construct.
+Lists support both [common][common sequence operations] and [mutable][mutable sequence operations] sequence opterations like `min()`/`max()`, `<list>.index()`, `.append()` and `.reverse()`. Items can be iterated over using the `for item in <list>` construct, and `for item in enumerate(<list)` can be used when both and item value and index are needed.
 
-Python also provides many useful [methods][list-methods] for working with lists. Let's take a look at some of them.
+Python provides many useful [methods][list-methods] for working with lists. Let's take a look at some of them.
 
-Keep in mind that when you manipulate a list with a list-method, **you alter the list** object that has been passed. If you do not wish to mutate your original `list`, you will need to make a copy of it via slice or `list.copy()`.
+Keep in mind that when you manipulate a list with a list-method, **you alter the list** object that has been passed. If you do not wish to mutate your original `list`, you will need to at least make a `shallow copy` of it via slice or `<list>.copy()`.
 
 ## Adding Items
 
@@ -103,7 +103,7 @@ If you want to remove all items from a `list`, use `list.clear()`. It does not t
 
 ## Reversing and reordering
 
-You can reverse the order of a list with the `list.reverse()` method.
+You can reverse the order of list elements _***in place**_ with `<list>.reverse()`.  This will mutate the original list.
 
 ```python
 >>> numbers = [1, 2, 3]
@@ -112,7 +112,7 @@ You can reverse the order of a list with the `list.reverse()` method.
 [3, 2, 1]
 ```
 
-A list can be re-ordered _**in place**_ with the help of `list.sort()`. Internally, Python uses [`Timsort`][timsort] to arrange the list. The default order is _ascending_. Take a look at the Python docs for some [additional tips and techniques for sorting][sorting how to] lists effectively.
+List elements can also be sorted  _**in place**_ with the help of `list.sort()`. Internally, Python uses [`Timsort`][timsort] to arrange elements. The default order is _ascending_. Take a look at the Python docs for some [additional tips and techniques for sorting][sorting how to] lists effectively.
 
 ```python
 >>> names = ["Tony", "Natasha", "Thor", "Bruce"]
@@ -123,7 +123,7 @@ A list can be re-ordered _**in place**_ with the help of `list.sort()`. Internal
 ["Bruce", "Natasha", "Thor", "Tony"]
 ```
 
-If you want the sort to be in descending order, pass the `reverse=True` argument:
+If you want the sort to be in _descending_ order, pass a `reverse=True` argument:
 
 ```python
 >>> names = ["Tony", "Natasha", "Thor", "Bruce"]
@@ -132,7 +132,7 @@ If you want the sort to be in descending order, pass the `reverse=True` argument
 ["Tony", "Thor", "Natasha", "Bruce"]
 ```
 
-For cases where sorting the original list is undesirable, the built-in [`sorted()`][sorted] can be used to return a new, sorted copy of your original list.
+For cases where mutating the original list is undesirable, the built-ins [`sorted()`][sorted] and [`reversed()`][reversed] can be used.  `sorted()` will return a sorted copy, and takes the same parameters as `<list>.sort()`. `reversed()` will return a reverse _iterator_ that can be used to build a new list copy.
 
 <br>
 
@@ -176,146 +176,27 @@ You can also provide `start` and `end` indices to search within a specific secti
 
 ## Making Copies
 
-Remember that variables in Python are labels that point to underlying objects and `lists` are _container_ objects that hold references to their collected items.
+Remember that variables in Python are labels that point to underlying objects and `lists` are _container_ objects that only hold references to their collected items.
 
-Assigning a `list` object to a new variable _name_ does not copy the object or its data. Any change made to the items in the `list` using the new variable name will also _impact the original_.
+Assigning a `list` object to a new variable _name_ does not copy the object or any of its refrenced data. Any change made to the items in the `list` using the new variable name will also _impact the original_.
 
-To avoid this complicaton, you must make a `shallow_copy` via `list.copy()` or slice. A `shallow_copy` will create a new `list` object, but **will not** create new objects for the contained list _items_. However, this type of copy will be enough for you to add or remove items from the two `list` objects independantly. (More about the differences between a shallow_copy and a deep_copy a little later).
+`<list>.copy()` will create a new `list` object, but **will not** create new objects for the referenced list _elements_. This type of copy is usually enough to add or remove items from  two `list` objects independantly and avoid problems. But if there is a chance that the elements of the `list` might be accidentially mutated and a full copy of **all** refrences and objects is needed, [`copy.deepcopy()`][deepcopy] in the `copy` module should be used.
 
-```python
->>> actual_names = ["Tony", "Natasha", "Thor", "Bruce"]
-
-# Assinging a new variable name does not make a copy of the container or its data.
->>> same_list = actual_names
-
-#  Altering the list via the new name is the same as altering the list via the old name.
->>> same_list.append("Clarke")
->>> same_list
-["Tony", "Natasha", "Thor", "Bruce", "Clarke"]
->>> actual_names
-["Tony", "Natasha", "Thor", "Bruce", "Clarke"]
-
-#  Likewise, altering the data in the list via the original nane will also alter the data under the new name.
->>> actual_names[0] = "Wanda"
->>> same_list
-['Wanda', 'Natasha', 'Thor', 'Bruce', 'Clarke']
-
-# If you copy the list, there will be two seperate list objects which can be changed independantly.
->>> copied_list = actual_names.copy()
->>> copied_list[0] = "Tony"
->>> actual_names
-['Wanda', 'Natasha', 'Thor', 'Bruce', 'Clarke']
->>> copied_list
-["Tony", "Natasha", "Thor", "Bruce", "Clarke"]
-```
-
-This reference complication becomes exacerbated when working with nested or multiplied lists:
-
-```python
-from pprint import pprint
-
-# This will produce a game grid that is 8x8, pre-populated with zeros.
->>> game_grid = [[0]*8] *8
-
->>> pprint(game_grid)
-[[0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0]]
-
-# An attempt to put a "X" in the bottom right corner.
->>> game_grid[7][7] = "X"
-
-# This attempt doesn't work because all the rows are referencing the same underlying list object.
->>> pprint(game_grid)
-[[0, 0, 0, 0, 0, 0, 0, 'X'],
- [0, 0, 0, 0, 0, 0, 0, 'X'],
- [0, 0, 0, 0, 0, 0, 0, 'X'],
- [0, 0, 0, 0, 0, 0, 0, 'X'],
- [0, 0, 0, 0, 0, 0, 0, 'X'],
- [0, 0, 0, 0, 0, 0, 0, 'X'],
- [0, 0, 0, 0, 0, 0, 0, 'X'],
- [0, 0, 0, 0, 0, 0, 0, 'X']]
-```
-
-In this circumstance, a `shallow_copy` is enough to allow the behavior we'd like:
-
-```python
-from pprint import pprint
-
-# This loop will safely produce a game grid that is 8x8, pre-populated with zeros
->>> game_grid = []
->>> filled_row = [0] * 8
->>> for row in range(8):
-...    game_grid.append(filled_row.copy()) # This is making a new shallow copy of the inner list object each iteration.
-
->>> pprint(game_grid)
-[[0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0]]
-
-# An attempt to put a "X" in the bottom right corner.
->>> game_grid[7][7] = "X"
-
-# The game grid now works the way we expect it to!
->>> pprint(game_grid)
-[[0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 'X']]
-```
-
-But as mentioned earlier, lists are containers of _references_. If your list contains variables or nested data structures, those second-level references will **not be copied** via `shallow_copy`. Changing the underlying objects will affect _both_ copies, since each `list` will still have references pointing to the same items.
-
-```python
-from pprint import pprint
-
->>> pprint(game_grid)
-[[0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 'X']]
-
-# We'd like a new board, so we make a shallow copy.
->>> new_game_grid = game_grid.copy()
-
-# But a shallow copy doesn't copy the contained references or objects.
->>> new_game_grid[0][0] = 'X'
-
-# So changing the items in the copy also changes the originals items.
->>>  pprint(game_grid)
-[['X', 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 0],
- [0, 0, 0, 0, 0, 0, 0, 'X']]
-```
-
-For a detailed explanation of list and nested list behaviors, take a look at this excellent [making a game board in Python][making a game board] article.
+For a detailed explanation of names, values, list, and nested list behavior, take a look at this excellent blog post from [Ned Batchelder][ned batchelder] -- [Names and values: making a game board][names and values].
 
 [list-methods]: https://docs.python.org/3/tutorial/datastructures.html#more-on-lists
-[list std type]: https://docs.python.org/3.9/library/stdtypes.html#list
 [timsort]: https://en.wikipedia.org/wiki/Timsort
 [sorted]: https://docs.python.org/3/library/functions.html#sorted
-[making a game board]: https://nedbatchelder.com/blog/201308/names_and_values_making_a_game_board.html
+[reversed]: https://docs.python.org/3/library/functions.html#reversed
 [sorting how to]: https://docs.python.org/3/howto/sorting.html
+[list]: https://docs.python.org/3/library/stdtypes.html#list
+[tuple]: https://docs.python.org/3/library/stdtypes.html#tuple
+[set]: https://docs.python.org/3/library/stdtypes.html#set
+[dict]: https://docs.python.org/3/library/stdtypes.html#dict
+[common sequence operations]: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations
+[slice notation]: https://docs.python.org/3/reference/expressions.html#slicings
+[sequence type]: https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
+[deepcopy]: https://docs.python.org/3/library/copy.html
+[mutable sequence operations]: https://docs.python.org/3/library/stdtypes.html#typesseq-mutable
+[names and values]: https://nedbatchelder.com/blog/201308/names_and_values_making_a_game_board.html
+[ned batchelder]: https://nedbatchelder.com/

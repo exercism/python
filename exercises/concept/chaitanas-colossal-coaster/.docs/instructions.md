@@ -1,22 +1,21 @@
 # Instructions
 
-Chaitana owns a very popular theme park. For some reason, she only has one ride in the very center of beautifully landscaped grounds: The Biggest Roller Coaster in the World. Although there is only one attraction, to have the opportunity to ride the hypercoaster, people come from all over and stand in line for hours.
+Chaitana owns a very popular theme park. She only has one ride in the very center of beautifully landscaped grounds: The Biggest Roller Coaster in the World(TM). Although there is only this one attraction, people travel from all over the world and stand in line for hours for the opportunity to ride Chaitana's hypercoaster.
 
-There are two queues for this ride:
+There are two queues for this ride, represented as `lists`:
 
 1. Normal Queue
-2. Express Queue (Also known as the Fast-track Queue) - People pay extra to access faster the Colossal Coaster.
+2. Express Queue (Also known as the Fast-track) - where people pay extra for priority access.
 
-You've been asked to write some code to better manage the guests at the park. You need to implement the following functions as soon as possible before the guests (and your boss!) get cranky.
+You've been asked to write some code to better manage the guests at the park. You need to implement the following functions as soon as possible before the guests (and your boss Chaitana!) get cranky.
 
 ## 1. Add Me to the queue
 
-Define the `add_me_to_the_queue()` function that takes 4 parameters `express_queue, normal_queue, ticket_type, person_name` and returns the queue to which the person is added.
+Define the `add_me_to_the_queue()` function that takes 4 parameters `express_queue, normal_queue, ticket_type, person_name` and returns the queue with the person's name added.
 
-1. express queue is a list
-2. normal queue is a list
-3. ticket_type is an `int` with 1 for the express queue and 0 for the normal queue.
-4. person_name is the name of the person to be added to the respective queue.
+
+1. ticket_type is an `int` with 1 == express_queue and 0 == normal_queue.
+2. person_name is the name (as a `str`) of the person to be added to the respective queue.
 
 Once you have added the name to the appropriate queue, return the queue that includes the new person.
 

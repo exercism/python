@@ -1,14 +1,18 @@
 # About
 
-In Python, a [`list`][list] is a mutable collection of items in _sequence_. Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold reference to any (or multiple) data type(s) - including other lists. Like any [sequence][sequence type], items are referenced by 0-based index number and can be copied in whole or in part via _slice notation_. Lists support all [common sequence operations][common sequence operations], as well as [mutable sequence operations][mutable sequence operations] like `.append()` and `.reverse()`. They can be iterated over in a loop by using the `for item in <list>` construct.
+A [`list`][list] is a mutable collection of items in _sequence_. Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold reference to any (or multiple) data type(s) - including other lists. Like any [sequence][sequence type], items are referenced by `0-based index` number and can be copied in whole or in part via [slice notation][slice notation].
 
-Under the hood, lists are implemented as [dynamic arrays][dynamic array] -- similar to Java's [`Arraylist`][arraylist] type. Lists are most often used to store groups of similar data (_strings, numbers, sets etc._) of unknown length (_the number of entries may arbitrarily expand or shrink_). Accessing items in a list, checking for membership via `in`, or appending items to the "right-hand" side of a list are all very efficient. Appending to the "left-hand" side or inserting into the middle of a list is much _less_ efficient because it requires shifting items to keep them in sequence.
+Lists support both [common][common sequence operations] and [mutable][mutable sequence operations] sequence opterations like `min()`/`max()`, `<list>.index()`, `.append()` and `.reverse()`. Items can be iterated over using the `for item in <list>` construct. `for item in enumerate(<list)` can be used when both the item value and item index are needed.
 
-Because lists are mutable and can contain references to arbitrary objects, they take up more memory space than a fixed-size `array.array` type of the same apparent length. Despite this, lists are an extremely flexible and useful data structure and many built-in methods and operations in Python produce lists as their output.
+Lists are implemented as [dynamic arrays][dynamic array] -- similar to Java's [`Arraylist`][arraylist] type, and are most often used to store groups of similar data (_strings, numbers, sets etc._) of unknown length (_the number of entries may arbitrarily expand or shrink_).
+
+Accessing elements, checking for membership via `in`, or appending items to the "right-hand" side of a list are all very efficient. Prepending (_appending to the "left-hand" side_) or inserting into the middle of a list are much _less_ efficient because those operations require shifting elements to keep them in sequence. For a  similar data structure that supports memory efficient appends/pops from both sides, see [`collections.deque`][deque], which has approximately the same O(1) performance in either direction.
+
+Because lists are mutable and can contain references to arbitrary objects, they also take up more space in memory than a fixed-size `array.array` type of the same apparent length. Despite this, lists are an extremely flexible and useful data structure and many built-in methods and operations in Python produce lists as their output.
 
 ## Construction
 
-A list can be declared as a _literal_ with square `[]` brackets and commas between elements:
+A list can be declared as a _list literal_ with square `[]` brackets and commas between elements:
 
 ```python
 >>> no_elements = []
@@ -88,7 +92,7 @@ Results when using a list constructor with a string or a dict may be surprising:
 ['fish', 'monkey']
 ```
 
-Because the `list()` constructor will only take iterables (or nothing) as arguments, objects that are **not** iterable will throw a type error. Consequently, it is much easier to create a one-item list via the literal method.
+Because the `list()` constructor will only take iterables (or nothing) as arguments, objects that are **not** iterable will raise a `TypeError`. Consequently, it is much easier to create a one-item list via the literal method.
 
 ```python
 # Numbers are not iterable, and so attempting to create a list with a number passed to the constructor fails.
@@ -105,25 +109,47 @@ TypeError: 'int' object is not iterable
 
 ## Accessing elements
 
-Items inside lists (_like the sequence types `string` and `tuple`_), can be accessed via 0-based index and _bracket notation_. Indexes can be from **`left`** --> **`right`** (_starting at zero_) or **`right`** --> **`left`** (_starting at -1_).
+Items inside lists (_as well as elements in other sequence types such as [`str`][string] & [`tuple`][tuple]_), can be accessed via `0-based index` and _bracket notation_. Indexes can be from **`left`** --> **`right`** (_starting at zero_) or **`right`** --> **`left`** (_starting at -1_).
 
-| **0**  | **1**  | **2**  | **3**  | **4**  | **5**  |
-| ------ | ------ | ------ | ------ | ------ | ------ |
-| P      | y      | t      | h      | o      | n      |
-| **-6** | **-5** | **-4** | **-3** | **-2** | **-1** |
+
+<table>
+<tr>
+  <td style="vertical-align: top"> index from left ⟹<br><br><br><br><br><br><br></td><td style="vertical-align: middle">
+
+|  0<br>👇🏾 	|  1<br>👇🏾 	|  2<br>👇🏾 	|  3<br>👇🏾 	|  4<br>👇🏾 	|  5<br>👇🏾 	|
+|:--------:	|:--------:	|:--------:	|:--------:	|:--------:	|:--------:	|
+|     P    	|     y    	|     t    	|     h    	|     o    	|     n    	|
+| 👆🏾<br>-6 	| 👆🏾<br>-5 	| 👆🏾<br>-4 	| 👆🏾<br>-3 	| 👆🏾<br>-2 	| 👆🏾<br>-1 	|
+</td><td style="vertical-align: bottom"><br><br><br><br><br>⟸ index from right</td>
+</tr>
+</table>
+
 
 ```python
-# Oatmeal is at index 0 or index -4.
 >>> breakfast_foods = ["Oatmeal", "Fruit Salad", "Eggs", "Toast"]
+
+# Oatmeal is at index 0 or index -4.
 >>> breakfast_foods[0]
 'Oatmeal'
+
 >>> breakfast_foods[-4]
 'Oatmeal'
+
+# Eggs are at index -2 or 2
+>>> breakfast_foods[-2]
+'Eggs'
+
+>>> breakfast_foods[2]
+'Eggs'
+
+# Toast is at -1
+>>> breakfast_foods[-1]
+'Toast'
 ```
 
-You can also access a portion of a list with _slice notation_ (`[start:stop]`). A _slice_ is defined as the sequence of items in a list at position `index` such that `start <= index < stop`. _Slicing_ does not modify the original `list`. Instead, you get a new list with (only) the elements you asked for.
+A section of a list can be accessed via _slice notation_ (`<list>[start:stop]`). A _slice_ is defined as an element sequence at position `index`, such that `start <= index < stop`. [_Slicing_][slice notation] returns a copy of the "sliced" items and does not modify the original `list`.
 
-You can also slice a list using a `step` parameter with the notation `[start:stop:step]`. Using a `step` will "skip over" or filter the list elements (_for example, a `step` of 2 will be every other element in the range_):
+A `step` parameter can also be used in the slice (`[start:stop:step]`) to "skip over" or filter the returned elements (_for example, a `step` of 2 will select every other element in the section_):
 
 ```python
 >>> colors = ["Red", "Purple", "Green", "Yellow", "Orange", "Pink", "Blue", "Grey"]
@@ -133,51 +159,17 @@ You can also slice a list using a `step` parameter with the notation `[start:sto
 >>> middle_colors
 ['Green', 'Yellow', 'Orange', 'Pink']
 
-# If the stop or start parameters are omitted, the slice will start at index zero and stop at the end of the list.
+# If the start or stop parameters are omitted, the slice will
+# start at index zero, and will stop at the end of the list.
 >>> primary_colors = colors[::3]
 >>> primary_colors
 ['Red', 'Yellow', 'Blue']
-
-# Omitting all parameters will produce a copy of the entire list
->>> a_new_copy = colors[:]
->>> a_new_copy
-['Red', 'Purple', 'Green', 'Yellow', 'Orange', 'Pink', 'Blue', 'Grey']
 ```
 
-The method `.pop()` can be used to both remove and return a value at a given index:
-
-```python
->>> breakfast_foods = ["Oatmeal", "Fruit Salad", "Eggs", "Toast"]
-
-# Fruit Salad is at index 1 or index -3.
->>> breakfast_foods = ["Oatmeal", "Fruit Salad", "Eggs", "Toast"]
->>> fruit_on_the_side = breakfast_foods.pop(-3)
->>> fruit_on_the_side
-'Fruit Salad'
-
->>> breakfast_foods
-['Oatmeal', 'Eggs', 'Toast']
-```
-
-The method `.insert()` can be used to add an element at a specific position. The index given is the element _*before which to insert*_. `list.insert(0,element)` will insert at the front of the list and `list.insert(len(list), element)` is the equivalent of calling `list.append(element)`.
-
-```python
->>> breakfast_foods = ["Oatmeal", "Fruit Salad", "Eggs", "Toast"]
-
-# Adding bacon to the mix before index 3 or index -1.
->>> breakfast_foods.insert(3, "Bacon")
->>> breakfast_foods
-['Oatmeal', 'Fruit Salad', 'Eggs', 'Bacon', 'Toast']
-
-# Adding coffee in the first position.
->>> breakfast_foods.insert(0, "Coffee")
->>> breakfast_foods
-['Coffee', 'Oatmeal', 'Fruit Salad', 'Eggs', 'Bacon', 'Toast']
-```
 
 ## Working with lists
 
-Lists supply an _iterator_, and can be looped through/over in the same manner as other _sequence types_:
+Lists supply an [_iterator_][iterator], and can be looped through/over in the same manner as other _sequence types_, using either `for item in <list>` or `for index, item in enumerate(<list>)`:
 
 ```python
 # Make a list, and then loop through it to print out the elements
@@ -190,6 +182,18 @@ Green
 Grey
 Blue
 
+
+# Print the same list, but with the indexes of the colors inculded
+>>> colors = ["Orange", "Green", "Grey", "Blue"]
+>>> for index, item in enumerate(colors):
+...     print(item, ":", index)
+...
+Orange : 0
+Green : 1
+Grey : 2
+Blue : 3
+
+
 # Start with a list of numbers and then loop through and print out their cubes.
 >>> numbers_to_cube = [5, 13, 12, 16]
 >>> for number in numbers_to_cube:
@@ -201,7 +205,7 @@ Blue
 48
 ```
 
-One common way to compose a list of values is to use `list.append()` within a loop:
+One common way to compose a list of values is to use `<list>.append()` within a loop:
 
 ```python
 >>> cubes_to_1000 = []
@@ -212,7 +216,7 @@ One common way to compose a list of values is to use `list.append()` within a lo
 [0, 1, 8, 27, 64, 125, 216, 343, 512, 729, 1000]
 ```
 
-Lists can be combined via various techniques:
+Lists can also be combined via various techniques:
 
 ```python
 # Using the plus + operator unpacks each list and creates a new list, but it is not efficient.
@@ -244,6 +248,145 @@ Lists can be combined via various techniques:
 ['George', 5, 'cat', 'Tabby']
 ```
 
+## Some cautions
+
+Recall that variables in Python are _labels_ that point to _underlying objects_. `lists` add one more layer as  _container objects_ -- they hold object references for their collected items.  This can lead to multiple potential issues when working with lists, if not handled properly.
+
+### Assigning more than one variable name
+Assigning a `list` object to a new variable _name_ **does not copy the `list` object nor its elements**. Any change made to the elements in the `list` under the _new_ name _impact the original_.
+
+Making a `shallow_copy` via `list.copy()` or slice will avoid this first-leve referencing complicaton. A `shallow_copy` will create a new `list` object, but **will not** create new objects for the contained list _elements_. This type of copy will usually be enough for you to add or remove items from the two `list` objects independantly, and effectively have two "seperate" lists. (More about the differences between a shallow_copy and a deep_copy a little later).
+
+```python
+>>> actual_names = ["Tony", "Natasha", "Thor", "Bruce"]
+
+# Assinging a new variable name does not make a copy of the container or its data.
+>>> same_list = actual_names
+
+#  Altering the list via the new name is the same as altering the list via the old name.
+>>> same_list.append("Clarke")
+>>> same_list
+["Tony", "Natasha", "Thor", "Bruce", "Clarke"]
+>>> actual_names
+["Tony", "Natasha", "Thor", "Bruce", "Clarke"]
+
+#  Likewise, altering the data in the list via the original nane will also alter the data under the new name.
+>>> actual_names[0] = "Wanda"
+>>> same_list
+['Wanda', 'Natasha', 'Thor', 'Bruce', 'Clarke']
+
+# If you copy the list, there will be two seperate list objects which can be changed independantly.
+>>> copied_list = actual_names.copy()
+>>> copied_list[0] = "Tony"
+>>> actual_names
+['Wanda', 'Natasha', 'Thor', 'Bruce', 'Clarke']
+>>> copied_list
+["Tony", "Natasha", "Thor", "Bruce", "Clarke"]
+```
+
+
+This reference complication becomes exacerbated when working with nested or multiplied lists (_the following examples are from the excellent 2013 [`Ned Batchelder`][ned batchelder] blog post [Names and values: making a game board][names and values]_):
+
+```python
+from pprint import pprint
+
+# This will produce a game grid that is 8x8, pre-populated with zeros.
+>>> game_grid = [[0]*8] *8
+
+>>> pprint(game_grid)
+[[0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0]]
+
+# An attempt to put a "X" in the bottom right corner.
+>>> game_grid[7][7] = "X"
+
+# This attempt doesn't work because all the rows are referencing the same underlying list object.
+>>> pprint(game_grid)
+[[0, 0, 0, 0, 0, 0, 0, 'X'],
+ [0, 0, 0, 0, 0, 0, 0, 'X'],
+ [0, 0, 0, 0, 0, 0, 0, 'X'],
+ [0, 0, 0, 0, 0, 0, 0, 'X'],
+ [0, 0, 0, 0, 0, 0, 0, 'X'],
+ [0, 0, 0, 0, 0, 0, 0, 'X'],
+ [0, 0, 0, 0, 0, 0, 0, 'X'],
+ [0, 0, 0, 0, 0, 0, 0, 'X']]
+```
+
+But in this circumstance, a `shallow_copy` is enough to allow the behavior we'd like:
+
+```python
+from pprint import pprint
+
+# This loop will safely produce a game grid that is 8x8, pre-populated with zeros
+>>> game_grid = []
+>>> filled_row = [0] * 8
+>>> for row in range(8):
+...    game_grid.append(filled_row.copy()) # This is making a new shallow copy of the inner list object each iteration.
+
+>>> pprint(game_grid)
+[[0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0]]
+
+# An attempt to put a "X" in the bottom right corner.
+>>> game_grid[7][7] = "X"
+
+# The game grid now works the way we expect it to!
+>>> pprint(game_grid)
+[[0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 'X']]
+```
+
+But as mentioned earlier, lists are containers of _references_, so there is a second layer of potential complicaton. If a list contains variables, objects, or nested data structures, those second-level references **will not be copied** via `shallow_copy` or slice. Mutating the underlying objects will then affect _any and all_ copies, since each `list` object only contains _references pointing to_ the contained elements.
+
+```python
+from pprint import pprint
+
+>>> pprint(game_grid)
+[[0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 'X']]
+
+# We'd like a new board, so we make a shallow copy.
+>>> new_game_grid = game_grid.copy()
+
+# But a shallow copy doesn't copy the contained references or objects.
+>>> new_game_grid[0][0] = 'X'
+
+# So changing the items in the copy also changes the originals items.
+>>>  pprint(game_grid)
+[['X', 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0, 'X']]
+```
+
 ## Related data types
 
 Lists are often used as _stacks_ and _queues_ -- although their underlying implementation makes prepending and inserting slow. The [collections][collections] module offers a [deque][deque] variant optimized for fast appends and pops from either end that is implemented as a [doubly linked list][doubly linked list]. Nested lists are also used to model small _matrices_ -- although the [Numpy][numpy] and [Pandas][pandas] libraries are much more robust for efficient matrix and tabular data manipulation. The collections module also provides a `UserList` type that can be customized to fit specialized list needs.
@@ -252,7 +395,10 @@ Lists are often used as _stacks_ and _queues_ -- although their underlying imple
 [tuple]: https://docs.python.org/3/library/stdtypes.html#tuple
 [dict]: https://docs.python.org/3/library/stdtypes.html#dict
 [set]: https://docs.python.org/3/library/stdtypes.html#set
+[string]: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
+[iterator]: https://docs.python.org/3/glossary.html#term-iterator
 [sequence type]: https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
+[slice notation]: https://docs.python.org/3/reference/expressions.html#slicings
 [common sequence operations]: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations
 [mutable sequence operations]: https://docs.python.org/3/library/stdtypes.html#typesseq-mutable
 [dynamic array]: https://en.wikipedia.org/wiki/Dynamic_array
@@ -262,3 +408,5 @@ Lists are often used as _stacks_ and _queues_ -- although their underlying imple
 [deque]: https://docs.python.org/3/library/collections.html#collections.deque
 [numpy]: https://numpy.org/
 [pandas]: https://pandas.pydata.org/
+[names and values]: https://nedbatchelder.com/blog/201308/names_and_values_making_a_game_board.html
+[ned batchelder]: https://nedbatchelder.com/
