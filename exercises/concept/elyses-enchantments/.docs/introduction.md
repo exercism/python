@@ -142,7 +142,7 @@ Items inside lists (_as well as items in other sequence types `string` & `tuple`
 'Toast'
 ```
 
-A portion of a list can be accessed via _slice notation_ (`<list>[start:stop]`). A _slice_ is defined as an element sequence at position `index`, such that `start <= index < stop`. _Slicing_ returns a copy of the "sliced" items and does not modify the original `list`.
+A section of the elements inside a list can be accessed via _slice notation_ (`<list>[start:stop]`). A _slice_ is defined as an element sequence at position `index`, such that `start <= index < stop`. _Slicing_ returns a copy of the "sliced" items and does not modify the original `list`.
 
 A `step` parameter can also be used `[start:stop:step]` to "skip over" or filter the list elements (_for example, a `step` of 2 will select every other element in the range_):
 
