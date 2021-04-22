@@ -37,7 +37,7 @@ It takes 2 parameters:
 [-2, 0, 1, 2, 3]
 ```
 
-`list.extend()` can be used to combine an existing list with the elements from another iterable (for example, a `set`, `tuple`, `str`, or `list`).  The iterable is _unpacked_ and elements are appended in order. (_using `.append()` in this circumstance would add the entire iterable as a **single item**._).
+`<list>.extend()` can be used to combine an existing list with the elements from another iterable (for example, a `set`, `tuple`, `str`, or `list`).  The iterable is _unpacked_ and elements are appended in order. (_Using `<list>.append()` in this circumstance would add the entire iterable as a **single item**._).
 
 ```python
 >>> numbers = [1, 2, 3]
