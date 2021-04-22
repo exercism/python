@@ -102,7 +102,7 @@ All elements can be removed from a `list` with `list.clear()`. It doesn't take a
 
 ## Reversing and reordering
 
-The `list.reverse()` method will reverse the order of elements.
+The `<list>.reverse()` method will reverse the order of elements in-place.
 
 ```python
 >>> numbers = [1, 2, 3]
