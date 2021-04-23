@@ -8,11 +8,10 @@ The goal of this exercise is to teach the basics of the `list` data type in Pyth
 
 - Create a `list` via constructor (`list()`) & literal (`[]`)
 - Combine two or more lists by concatenation via `+`
-- Check for an items membership/absence in a list using `in` and/or `not in`
+- Check for an items membership/absence in a list using `in`
 - Access items in a list via index (`bracket notation`)
 - Access a range of items in a list via list slicing (`[start:stop:step]`)
 - Iterate through a list using `for item in`
-- Understand that `lists` can store mixed/any data types
 - Understand that `lists` are mutable. Assigning a new value to a list index will change the value at that index.
 
 ## Out of scope
