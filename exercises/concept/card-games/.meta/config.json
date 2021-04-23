@@ -1,11 +1,12 @@
 {
-  "blurb": "Learn about lists by helping Elyse practice her playing card enchantments.",
+  "blurb": "Learn about lists by tracking hands in card games.",
   "contributors": [
-    "valentin-p",
-    "bethanyg"
+    "valentin-p"
   ],
   "authors": [
-    "itamargal"
+    "itamargal",
+    "isaacg",
+    "bethanyg"
   ],
   "files": {
     "solution": [
