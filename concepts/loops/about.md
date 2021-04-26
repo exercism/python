@@ -12,9 +12,6 @@ The keywords `break`, `continue`, and `else` help customize loop behavior.
 
 ```python
 
-# Lists are considered "truthy" in a boolean context if they
-# contain one or more values, and "falsy" if they are empty.
-
 >>> placeholders = ["spam", "ham", "eggs", "green_spam", "green_ham", "green_eggs"]
 
 >>> while 'eggs' in placeholders:
