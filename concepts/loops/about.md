@@ -1,5 +1,106 @@
 # About
 
+Python has two looping constructs.
+`while` loops for _indefinite_ (uncounted) iteration and `for` loops for _definite_, (counted) iteration.
+The keywords `break`, `continue`, and `else` help customize loop behavior.
+
+<br>
+
+## `While`
+
+[`while`][while statement] loops continue to exectute as long as the loop expression or "test" evaluates to `True` in a [`boolean context`][truth value testing], terminating when it evaluates to `False`.
+
+```python
+
+# Lists are considered "truthy" in a boolean context if they
+# contain one or more values, and "falsy" if they are empty.
+
+>>> placeholders = ["spam", "ham", "eggs", "green_spam", "green_ham", "green_eggs"]
+
+>>> while placeholders:
+...     print(placeholders.pop(0))
+...
+spam
+ham
+eggs
+green_spam
+green_ham
+green_eggs
+```
+
+<br>
+
+## `For`
+
+The basic [`for`][for statement] loop is better described as a _`for each`_ which cycles through the values of any [iterable object][iterable], terminating when there are no values returned from calling [`next()`][next built-in] (_raising a [`StopIteration`][stopiteration]_).
+
+```python
+
+>>> word_list = ["bird", "chicken", "barrel", "bongo"]
+
+>>> for word in word_list:
+...    if word.startswith("b"):
+...        print(f"{word.title()} starts with a B.")
+...    else:
+...        print(f"{word.title()} doesn't start with a B.")
+...
+Bird starts with a B.
+Chicken doesn't start with a B.
+Barrel starts with a B.
+Bongo starts with a B.
+
+```
+
+<br>
+
+## Sequence Object `range()`
+
+When there isn't a specific `iterable` given, the special [`range()`][range] sequence is used.  
+`range()` requires a number before which to `stop`, and can optionally take a `start` parameter.  
+If no `start` number is provided, the sequence will begin with 0.  
+`range()` objects are `lazy` (_values are generated on request_), support all [common sequence operations][common sequence operations], and take up a fixed amount of memory, no matter how long the sequence.
+Interestingly, `range()` [is not an iterator][range is not an iterator], and can be used many in non-looping contexts.
+
+```python
+# Here we use range to produce some numbers, rather than creating a list of them in memory.
+# The values will start with 1 and stop *before* 7
+
+>>> for number in range(1, 7):
+...    if number % 2 == 0:
+...       print(f"{number} is even.")
+...    else:
+...       print(f"{number} is odd.")
+1 is odd.
+2 is even.
+3 is odd.
+4 is even.
+5 is odd.
+6 is even.
+
+
+# range() can also take a *step* parameter.
+# Here we use range to produce only the "odd" numbers, starting with 3 and stopping *before* 15.
+
+>>> for number in range(3, 15, 2):
+...    if number % 2 == 0:
+...       print(f"{number} is even.")
+...    else:
+...       print(f"{number} is odd.")
+...
+3 is odd.
+5 is odd.
+7 is odd.
+9 is odd.
+11 is odd.
+13 is odd.
+
+```
+
+<br>
+
+## Values and Indexes with `enumerate()`
+
+If both values and indexes are needed, the built-in [`enumerate()`][enumerate] will return an [`iterator`][iterator] over (`index`, `value`) pairs:
 
 ```python
 
@@ -111,7 +212,7 @@ Found the above b-words, out of 6 words in the word list.
 ...        print("Found an S, stopping iteration.")
 ...        break
 ...# This is not run, because break was triggered
-... else: 
+... else:
 ...    print(f"Found the above b-words, out of {len(word_list)} words in the word list.")
 ...
 Bird (at index 0) starts with a B.
