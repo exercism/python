@@ -26,6 +26,8 @@ eggs
 
 >>> print(placeholders)
 ['green_spam', 'green_ham', 'green_eggs']
+```
+
 <br>
 
 ## `For`
@@ -53,9 +55,9 @@ Bongo starts with a B.
 
 ## Sequence Object `range()`
 
-When there isn't a specific `iterable` given, the special [`range()`][range] sequence is used.  
-`range()` requires a number before which to `stop`, and can optionally take a `start` parameter.  
-If no `start` number is provided, the sequence will begin with 0.  
+When there isn't a specific `iterable` given, the special [`range()`][range] sequence is used.
+`range()` requires a number before which to `stop`, and can optionally take a `start` parameter.
+If no `start` number is provided, the sequence will begin with 0.
 `range()` objects are `lazy` (_values are generated on request_), support all [common sequence operations][common sequence operations], and take up a fixed amount of memory, no matter how long the sequence.
 Interestingly, `range()` [is not an iterator][range is not an iterator], and can be used many in non-looping contexts.
 
@@ -98,7 +100,7 @@ Interestingly, `range()` [is not an iterator][range is not an iterator], and can
 
 ## Values and Indexes with `enumerate()`
 
-If both values and indexes are needed, the built-in [`enumerate()`][enumerate] will return an [`iterator`][iterator] over (`index`, `value`) pairs:
+If both values and indexes are needed, the built-in [`enumerate()`][enumerate] will return an [`iterator`][iterator] over (`index`, `value`) pairs.
 
 ```python
 
@@ -117,9 +119,11 @@ Bird (at index 0) starts with a B.
 Chicken (at index 1) doesn't start with a B.
 Barrel (at index 2) starts with a B.
 Apple (at index 3) doesn't start with a B.
+```
 
+The `enumerate()` function can also be set to *start* the index count at a different number.
 
-# enumerate() can also be set to *start* the index count at a different number.
+```python
 # Here, the index count will start at 1.
 
 >>> for position, word in enumerate(word_list, start=1):
@@ -209,26 +213,21 @@ Found the above b-words, out of 6 words in the word list.
 ...    if word.startswith("S"):
 ...        print("Found an S, stopping iteration.")
 ...        break
-...# This is not run, because break was triggered
-... else:
+...    
+       # This is not run, because break was triggered
 ...    print(f"Found the above b-words, out of {len(word_list)} words in the word list.")
 ...
 Bird (at index 0) starts with a B.
 Barrel (at index 2) starts with a B.
 Bongo (at index 3) starts with a B.
 Found an S, stopping iteration.
-
 ```
 
-[next built-in]: https://docs.python.org/3/library/functions.html#next
-[stopiteration]: https://docs.python.org/3/library/exceptions.html#StopIteration
 [loop else]: https://docs.python.org/3/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops
-[for statement]: https://docs.python.org/3/reference/compound_stmts.html#for
 [range]: https://docs.python.org/3/library/stdtypes.html#range
 [break statement]: https://docs.python.org/3/reference/simple_stmts.html#the-break-statement
 [continue statement]: https://docs.python.org/3/reference/simple_stmts.html#the-continue-statement
 [while statement]: https://docs.python.org/3/reference/compound_stmts.html#the-while-statement
-[iterable]: https://docs.python.org/3/glossary.html#term-iterable
 [truth value testing]: https://docs.python.org/3/library/stdtypes.html#truth-value-testing
 [enumerate]: https://docs.python.org/3/library/functions.html#enumerate
 [iterator]: https://docs.python.org/3/glossary.html#term-iterator
