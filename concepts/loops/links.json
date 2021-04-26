@@ -1,5 +1,9 @@
 [
   {
+    "url": "https://nedbatchelder.com/text/iter.html",
+    "description": "Ned Batchelder:  Loop Like a Native."
+  },
+  {
     "url": "https://docs.python.org/3/tutorial/controlflow.html#for-statements",
     "description": "Python Docs Tutorial: for statements"
   },
