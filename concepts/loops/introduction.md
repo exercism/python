@@ -1,7 +1,7 @@
 # Introduction
 
 There are two looping constructs.
-`while` loops for _indefinite_ (uncounted) iteration and `for` loops for _defininte_, (counted) iteration.
+`while` loops for _indefinite_ (uncounted) iteration and `for` loops for  _definite_, (counted) iteration.
 The keywords `break`, `continue`, and `else` help customize loop behavior.
 
 `while` loops continue to exectute as long as the loop expression or "test" evaluates to `True`, terminating when it evaluates to `False`.
