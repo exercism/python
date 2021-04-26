@@ -3,6 +3,7 @@
 Python has two looping constructs.
 `while` loops for _indefinite_ (uncounted) iteration and `for` loops for _definite_, (counted) iteration.
 The keywords `break`, `continue`, and `else` help customize loop behavior.
+`range()` and `enumerate()` help with loop counting and indexing.
 
 <br>
 
@@ -11,7 +12,6 @@ The keywords `break`, `continue`, and `else` help customize loop behavior.
 [`while`][while statement] loops continue to exectute as long as the loop expression or "test" evaluates to `True` in a [`boolean context`][truth value testing], terminating when it evaluates to `False`.
 
 ```python
-
 >>> placeholders = ["spam", "ham", "eggs", "green_spam", "green_ham", "green_eggs"]
 
 >>> while 'eggs' in placeholders:
@@ -45,7 +45,6 @@ Bird starts with a B.
 Chicken doesn't start with a B.
 Barrel starts with a B.
 Bongo starts with a B.
-
 ```
 
 <br>
@@ -55,6 +54,7 @@ Bongo starts with a B.
 When there isn't a specific `iterable` given, the special [`range()`][range] sequence is used.
 `range()` requires a number before which to `stop`, and can optionally take a `start` parameter.
 If no `start` number is provided, the sequence will begin with 0.
+
 `range()` objects are `lazy` (_values are generated on request_), support all [common sequence operations][common sequence operations], and take up a fixed amount of memory, no matter how long the sequence.
 Interestingly, `range()` [is not an iterator][range is not an iterator], and can be used many in non-looping contexts.
 
@@ -90,7 +90,6 @@ Interestingly, `range()` [is not an iterator][range is not an iterator], and can
 9 is odd.
 11 is odd.
 13 is odd.
-
 ```
 
 <br>
@@ -118,7 +117,7 @@ Barrel (at index 2) starts with a B.
 Apple (at index 3) doesn't start with a B.
 ```
 
-The `enumerate()` function can also be set to *start* the index count at a different number.
+The `enumerate()` function can also be set to _start_ the index count at a different number.
 
 ```python
 # Here, the index count will start at 1.
@@ -133,7 +132,6 @@ Bird (at position 1) starts with a B.
 Chicken (at position 2) doesn't start with a B.
 Barrel (at position 3) starts with a B.
 Apple (at position 4) doesn't start with a B.
-
 ```
 
 <br>
@@ -155,7 +153,6 @@ for index, word in enumerate(word_list):
 Barrel (at index 2) starts with a b.
 Bongo (at index 3) starts with a b.
 Bear (at index 6) starts with a b.
-
 ```
 
 [`break`][break statement] (_like in many C-related languages_) can be used to stop the iteration and "break out" of the innermost enclosing loop.
@@ -177,7 +174,6 @@ Chicken doesn't start with a B.
 Barrel (at index 2) starts with a B.
 Bongo (at index 3) starts with a B.
 loop broken.
-
 ```
 
 The loop [`else` clause][loop else] is unique to python, and can be used as a "wrap up" or "concluding" action for when iteration has been exhausted. `else` statements will not run if iteration terminates through a `break` statement.
@@ -210,9 +206,10 @@ Found the above b-words, out of 6 words in the word list.
 ...    if word.startswith("S"):
 ...        print("Found an S, stopping iteration.")
 ...        break
-...    
-       # This is not run, because break was triggered
-...    print(f"Found the above b-words, out of {len(word_list)} words in the word list.")
+
+...     # This is not run, because break was triggered
+...     else:
+...        print(f"Found the above b-words, out of {len(word_list)} words in the word list.")
 ...
 Bird (at index 0) starts with a B.
 Barrel (at index 2) starts with a B.
