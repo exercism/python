@@ -1,7 +1,7 @@
 def round_scores(student_scores):
     rounded = []
-    while scores:
-        rounded.append(round(scores.pop()))
+    while student_scores:
+        rounded.append(round(student_scores.pop()))
     return rounded
 
 def count_failed_students(student_scores):
@@ -19,9 +19,9 @@ def above_threshold(student_scores, threshold):
     return above_threshold
 
 def letter_grades(highest):
-    increment = round((highest - 40)/5)
+    increment = round((highest - 40)/4)
     scores = []
-    for score in range(40, highest, increment):
+    for score in range(41, highest, increment):
         scores.append(score)
     return scores
 
