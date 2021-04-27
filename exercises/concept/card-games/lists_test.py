@@ -1,7 +1,7 @@
 import unittest
 import random
 from lists import (
-    to_rounds,
+    get_rounds,
     concatenate_rounds,
     list_contains_round,
     card_average,
@@ -16,7 +16,7 @@ class TestToRounds(unittest.TestCase):
     def test_instructions_example(self):
         round_number = 27
         want = [27, 28, 29]
-        got = to_rounds(round_number)
+        got = get_rounds(round_number)
 
         self.assertEqual(
             want,
@@ -27,7 +27,7 @@ class TestToRounds(unittest.TestCase):
     def test_zero(self):
         round_number = 0
         want = [0, 1, 2]
-        got = to_rounds(round_number)
+        got = get_rounds(round_number)
 
         self.assertEqual(
             want,
@@ -38,7 +38,7 @@ class TestToRounds(unittest.TestCase):
     def test_random_int(self):
         round_number = random.randint(0, 100)
         want = [round_number + i for i in range(3)]
-        got = to_rounds(round_number)
+        got = get_rounds(round_number)
 
         self.assertEqual(
             want,
