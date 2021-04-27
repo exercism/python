@@ -185,7 +185,6 @@ class Concept:
     uuid: str
     slug: str
     name: str
-    blurb: str
 
 
 @dataclass
