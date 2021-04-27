@@ -2,22 +2,60 @@
 
 ## General
 
-- Make sure you are comfortable with using the `in` concept while looping through in for loops.
+- `while` loops are used for _indefinite_ (uncounted) iteration
+- `for` loops are used for _definite_, (counted) iteration.
+- The keywords `break` and `continue` help customize loop behavior.
+- `range(<start>, stop, <step>)` can be used to generate a sequence for a loop counter.
+- The bulit-in `enumerate()` will return (`<value>`, `<index>`) pairs to iterate over.
 
-You are a teacher and you are correcting papers of your students who wrote an exam you just conducted. You are tasked with the following activities.
+Also being familure with the following can help with completing the tasks:
 
-## 1. Failed Students
+- [`lists`][list]: indexing, nested lists, [`<list>.append`][append and pop], [`<list>.pop()`][append and pop].
+- [`str`][str]: `str()` constructor, using the `+` to concatenate strings, optionally, [`f-strings`][f-strings].
 
-- Iterate through the marks one by one. For each loop check if the mark is less than or equal to 40. If so, then increment a count and after iterating through all marks in the loop return the count.
+## 1. Rounding Scores
 
-## 2. Top Marks
+- `While` loops will continue to execute until their condition evaluates to `False`.
+- <list>.pop() will remove and return the last item in a list.
+- Empty `lists` evaluae to `False` (most empty objects in Python are "Falsy")
+-
 
-- Iterate through the list of marks one by one. If you find a mark which is more than x, just continue and go to the next mark.
+## 2. Non-Passing Students
 
-## 3. First K Students.
+- There's no need to declare loop counters or index counters when iterating through an object using a `for` loop.
+- A results counter does need to set up and _incremented_ -- you'll want to `return` it when the loop terminates.
+-
 
-- Start an index variable at 0 and loop through the elements till we reach the index variable equals to k. once that happens you can return the marks.
+## 3. The "Best"
 
-## 4. Full Marks
+- There's no need to declare loop counters or index counters when iterating through an object using a `for` loop.
+- Having an emptey list to add the "best" marks to is helpful here.
+- `<list>.append()` can help add things to the results list.
+-
 
-- There may be or may not be a student with full marks - 100. Either way you have to loop through all the marks and find whether we have a student with full marks else just return No Hundreds
+## 4. Calculating Letter Grades
+
+- [`range()`][range] can be helpful here to generate a sequence with the proper "F" -> "A" increments.
+- [`round()`][round] without parameters should round off increments nicely.
+- As with "the best" task, `<list>.append()` could be useful here to append items from `range()` into a results list.
+-
+
+## 5. Matching Names to Scores
+
+- [`enumerate()`][enumerate] could be helpful here.
+- If both lists are the same length and sorted the same way, could you use the index from one to retrieve a value from the other?
+-
+
+## 6. A "Perfect" Score
+
+- There may be or may not be a student with a score of 100, and you can't return "No perfect score." without checking all the scores.
+- The [`control flow`][control flow] satements `continue` and `break`break may be useful here to move past unwanted values.
+
+[list]: https://docs.python.org/3/library/stdtypes.html#list
+[str]: https://docs.python.org/3/library/stdtypes.html#str
+[f-strings]: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
+[append and pop]: https://docs.python.org/3/tutorial/datastructures.html#more-on-lists
+[enumerate]: https://docs.python.org/3/library/functions.html#enumerate
+[control flow]: https://docs.python.org/3/tutorial/controlflo.html#break-and-continue-statements-and-else-clauses-on-loops
+[range]: https://docs.python.org/3/tutorial/controlflow.html#the-range-function
+[round]: https://docs.python.org/3/library/functions.html#round
