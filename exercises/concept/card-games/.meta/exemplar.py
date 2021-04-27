@@ -1,4 +1,4 @@
-def to_rounds(number):
+def get_rounds(number):
     """Return a list of rounds that includes `number` and the next two."""
     return [number, number + 1, number + 2]
 
