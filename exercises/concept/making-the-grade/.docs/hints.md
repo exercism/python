@@ -35,10 +35,10 @@ Also being familure with the following can help with completing the tasks:
 
 ## 4. Calculating Letter Grades
 
+- These are _lower thresholds_.  The _lower threshold_ for a "D" is a score of **41**, since an "F" is **<= 40**.
 - [`range()`][range] can be helpful here to generate a sequence with the proper "F" -> "A" increments.
 - [`round()`][round] without parameters should round off increments nicely.
 - As with "the best" task, `<list>.append()` could be useful here to append items from `range()` into a results list.
--
 
 ## 5. Matching Names to Scores
 

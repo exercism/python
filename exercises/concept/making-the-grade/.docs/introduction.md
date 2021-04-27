@@ -7,6 +7,7 @@ The keywords `break`, `continue`, and `else` help customize loop behavior.
 <br>
 
 ## `While`
+
 [`while`][while statement] loops continue to exectute as long as the loop expression or "test" evaluates to `True` in a [`boolean context`][truth value testing], terminating when it evaluates to `False`.
 
 ```python
@@ -178,7 +179,6 @@ Bongo (at index 3) starts with a B.
 loop broken.
 
 ```
-
 
 [for statement]: https://docs.python.org/3/reference/compound_stmts.html#for
 [range]: https://docs.python.org/3/library/stdtypes.html#range

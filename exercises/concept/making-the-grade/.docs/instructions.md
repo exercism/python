@@ -54,10 +54,10 @@ Create the function `letter_grades()` that takes the `highest` score on the exam
 
 ```python
 >>> letter_grades(highest=100)
-[40, 52, 64, 76, 88]
+[41, 56, 71, 86]
 
 >>> letter_grades(highest=88)
-[40, 50, 60, 70, 80]
+[41, 53, 65, 77]
 ```
 
 
@@ -95,5 +95,3 @@ The function should `return` _the first_ [<name>, <score>] pair of the student w
 ```
 
 [round]: https://docs.python.org/3/library/functions.html#round
-
-
