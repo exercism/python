@@ -128,6 +128,7 @@
           "comparisons",
           "conditionals",
           "lists",
+          "list-methods",
           "strings"
         ],
         "status": "wip"
@@ -3454,120 +3455,329 @@
         "slug": "accumulate",
         "name": "Accumulate",
         "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 0,
-        "topics": null,
+        "practices": ["list-comprehensions"],
+        "prerequisites": [
+          "basics",
+          "loops",
+          "numbers",
+          "bools",
+          "conditionals",
+          "comparisons",
+          "lists"
+        ],
+        "difficulty": 2,
         "status": "deprecated"
       },
       {
         "slug": "binary",
         "name": "Binary",
         "uuid": "49127efa-1124-4f27-bee4-99992e3433de",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 0,
-        "topics": null,
+        "practices": [
+          "raising-and-handling-errors",
+          "numbers",
+          "loops",
+          "strings",
+          "conditionals"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "numbers",
+          "conditionals",
+          "loops",
+          "strings",
+          "string-methods",
+          "sequences",
+          "raising-and-handling-errors"
+        ],
+        "difficulty": 3,
         "status": "deprecated"
       },
       {
         "slug": "error-handling",
         "name": "Error Handling",
         "uuid": "0dac0feb-e1c8-497e-9a1b-e96e0523eea6",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 0,
-        "topics": null,
+        "practices": [
+          "classes",
+          "class-customization",
+          "class-inheritance",
+          "raising-and-handling-errors"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "classes",
+          "class-customization",
+          "class-inheritance",
+          "conditionals",
+          "comparisons",
+          "lists",
+          "loops",
+          "numbers",
+          "raising-and-handling-errors",
+          "strings",
+          "string-methods",
+          "tuples",
+          "raising-and-handling-errors"
+        ],
+        "difficulty": 3,
         "status": "deprecated"
       },
       {
         "slug": "hexadecimal",
         "name": "Hexadecimal",
         "uuid": "6b7f7b1f-c388-4f4c-b924-84535cc5e1a0",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 0,
-        "topics": null,
+        "practices": [
+          "dicts",
+          "numbers",
+          "loops",
+          "lists",
+          "list-comprehensions"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "comparisons",
+          "dicts",
+          "dict-methods",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "numbers",
+          "strings",
+          "string-methods"
+        ],
+        "difficulty": 3,
         "status": "deprecated"
       },
       {
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
         "uuid": "105f25ec-7ce2-4797-893e-05e3792ebd91",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 0,
-        "topics": null,
+        "practices": [
+          "lists",
+          "loops",
+          "dicts",
+          "dict-methods",
+          "strings",
+          "string-methods"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "comparisons",
+          "dicts",
+          "dict-methods",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "other-comprehensions",
+          "loops",
+          "strings",
+          "string-methods"
+        ],
+        "difficulty": 2,
         "status": "deprecated"
       },
       {
         "slug": "octal",
         "name": "Octal",
         "uuid": "4094d27f-4d03-4308-9fd7-9f3de312afec",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 0,
-        "topics": null,
+        "practices": [
+          "dicts",
+          "numbers",
+          "loops",
+          "lists",
+          "list-comprehensions"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "comparisons",
+          "dicts",
+          "dict-methods",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "numbers",
+          "strings",
+          "string-methods"
+        ],
+        "difficulty": 3,
         "status": "deprecated"
       },
       {
         "slug": "parallel-letter-frequency",
         "name": "Parallel Letter Frequency",
         "uuid": "da03fca4-4606-48d8-9137-6e40396f7759",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 0,
-        "topics": null,
+        "practices": ["lists", "loops", "strings", "string-methods", "dicts"],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "comparisons",
+          "dicts",
+          "dict-methods",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "numbers",
+          "strings",
+          "string-methods"
+        ],
+        "difficulty": 3,
         "status": "deprecated"
       },
       {
         "slug": "pascals-triangle",
         "name": "Pascals Triangle",
         "uuid": "e1e1c7d7-c1d9-4027-b90d-fad573182419",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 0,
-        "topics": null,
+        "practices": [
+          "lists",
+          "list-comprehensions",
+          "loops",
+          "strings",
+          "string-methods",
+          "dicts"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "comparisons",
+          "dicts",
+          "dict-methods",
+          "lists",
+          "list-methods",
+          "list-comprehensions",
+          "loops",
+          "numbers",
+          "strings",
+          "string-methods"
+        ],
+        "difficulty": 3,
         "status": "deprecated"
       },
       {
         "slug": "point-mutations",
         "name": "Point Mutations",
         "uuid": "d85ec4f2-c201-4eff-9f3a-831a0cc38e8d",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 0,
-        "topics": null,
+        "practices": [
+          "generator-expressions",
+          "conditionals",
+          "comparisons",
+          "raising-and-handling-errors",
+          "sequences",
+          "iteration",
+          "itertools"
+        ],
+        "prerequisites": [
+          "basics",
+          "loops",
+          "lists",
+          "list-comprehensions",
+          "generator-expressions",
+          "conditionals",
+          "comparisons",
+          "numbers",
+          "raising-and-handling-errors",
+          "sequences",
+          "iteration",
+          "itertools"
+        ],
+        "difficulty": 3,
         "status": "deprecated"
       },
       {
         "slug": "proverb",
         "name": "Proverb",
         "uuid": "9fd94229-f974-45bb-97ea-8bfe484f6eb3",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 0,
-        "topics": null,
+        "practices": [
+          "strings",
+          "string-methods",
+          "string-formatting",
+          "lists",
+          "sequences",
+          "loops"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "loops",
+          "lists",
+          "list-comprehensions",
+          "conditionals",
+          "comparisons",
+          "sequences",
+          "iteration",
+          "functions",
+          "none",
+          "function-arguments",
+          "strings",
+          "string-methods",
+          "string-formatting"
+        ],
+        "difficulty": 2,
         "status": "deprecated"
       },
       {
         "slug": "strain",
         "name": "Strain",
         "uuid": "b50b29a1-782d-4277-a4d4-23f635fbdaa6",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 0,
-        "topics": null,
+        "practices": ["conditionals", "list-comprehensions"],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "loops",
+          "lists",
+          "list-comprehensions",
+          "conditionals",
+          "comparisons",
+          "sequences",
+          "iteration",
+          "functions",
+          "function-arguments",
+          "strings",
+          "string-methods",
+          "string-formatting"
+        ],
+        "difficulty": 3,
         "status": "deprecated"
       },
       {
         "slug": "trinary",
         "name": "Trinary",
         "uuid": "061a6543-d51d-4619-891b-16f92c6435ca",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 0,
-        "topics": null,
+        "practices": [
+          "conditionals",
+          "list-comprehensions",
+          "lists",
+          "numbers",
+          "dicts"
+        ],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "dicts",
+          "loops",
+          "lists",
+          "list-comprehensions",
+          "conditionals",
+          "comparisons",
+          "sequences",
+          "numbers",
+          "sets",
+          "strings",
+          "string-methods",
+          "string-formatting"
+        ],
+        "difficulty": 4,
         "status": "deprecated"
       },
       {
@@ -3966,64 +4176,314 @@
   },
   "concepts": [
     {
+      "uuid": "ec7c3441-afd9-4f17-9029-8f2dcbd18f8b",
+      "slug": "aliasing",
+      "name": "Aliasing"
+    },
+    {
+      "uuid": "ca4ea094-9332-4730-b3e8-664ae4b99472",
+      "slug": "anonymous-functions",
+      "name": "Anonymous Functions"
+    },
+    {
       "uuid": "d1aee0de-68ca-468b-a808-289bd905e837",
       "slug": "basics",
-      "name": "Basics",
-      "blurb": "TODO: add blurb for basics concept"
+      "name": "Basics"
+    },
+    {
+      "uuid": "5236200f-3fc3-4e9c-8b29-b2db0bcb75a4",
+      "slug": "binary-data",
+      "name": "Binary Data"
+    },
+    {
+      "uuid": "f8e96e60-f746-4c7a-8dc9-df6b77eefdfa",
+      "slug": "bitflags",
+      "name": "Bitflags"
+    },
+    {
+      "uuid": "903335e5-b937-410b-ba03-43cf1ce1e3e9",
+      "slug": "bitwise-operators",
+      "name": "Bitwise Operators"
     },
     {
       "uuid": "ae8ba59d-5be3-45cd-869d-1a654249c60a",
       "slug": "bools",
-      "name": "Bools",
-      "blurb": "TODO: add blurb for bools concept"
+      "name": "Bools"
+    },
+    {
+      "uuid": "37e48203-fb9f-4199-b3a6-2ca70b752d99",
+      "slug": "bytes",
+      "name": "Bytes"
+    },
+    {
+      "uuid": "06dffa95-de97-4e79-a477-fd2791f3ea2a",
+      "slug": "class-composition",
+      "name": "Class Composition"
+    },
+    {
+      "uuid": "45e034cb-da74-4c75-b44b-816ecaae1f51",
+      "slug": "class-customization",
+      "name": "Class Customization"
+    },
+    {
+      "uuid": "13ace97e-bec2-4922-a667-ef80e1d3c2d1",
+      "slug": "class-inheritance",
+      "name": "Class Inheritance"
+    },
+    {
+      "uuid": "f06fae02-9c97-405f-af1e-59bdbe269efa",
+      "slug": "class-interfaces",
+      "name": "Class Interfaces"
+    },
+    {
+      "uuid": "20a50657-8506-4ba7-9db3-4acbb09652ab",
+      "slug": "classes",
+      "name": "Classes"
+    },
+    {
+      "uuid": "f5b4c8d1-dcd9-4941-8c01-94d436ce3555",
+      "slug": "collections",
+      "name": "Collections"
+    },
+    {
+      "uuid": "559cacb6-9d8f-4b45-99c3-5279cf920212",
+      "slug": "comparisons",
+      "name": "Comparisons"
+    },
+    {
+      "uuid": "f5ef6eec-1dad-4aac-bf48-2c00c945115d",
+      "slug": "complex-numbers",
+      "name": "Complex Numbers"
+    },
+    {
+      "uuid": "849519bf-0729-4c29-9cd6-15385e22b8eb",
+      "slug": "conditionals",
+      "name": "Conditionals"
+    },
+    {
+      "uuid": "ea7111fe-735f-48b5-a165-e4d3cea6c153",
+      "slug": "context-manager-customization",
+      "name": "Context Manager Customization"
+    },
+    {
+      "uuid": "ba20a459-99ac-4643-b386-8b90e9c94328",
+      "slug": "dataclasses-and-namedtuples",
+      "name": "Dataclasses And Namedtuples"
+    },
+    {
+      "uuid": "48ef77af-50f5-466e-a537-bcd016550058",
+      "slug": "decorators",
+      "name": "Decorators"
+    },
+    {
+      "uuid": "a9035674-b180-47c6-8c80-bfe7b6f15ae9",
+      "slug": "descriptors",
+      "name": "Descriptors"
+    },
+    {
+      "uuid": "81ea016b-0103-4dcd-94f7-649ff1cbb2d9",
+      "slug": "dict-methods",
+      "name": "Dict Methods"
+    },
+    {
+      "uuid": "61186660-e349-401a-ae28-9d23c7bba7d7",
+      "slug": "dicts",
+      "name": "Dicts"
+    },
+    {
+      "uuid": "8565ae2a-9bfc-4657-b471-8a8a61cbb7ea",
+      "slug": "enums",
+      "name": "Enums"
+    },
+    {
+      "uuid": "26b147e0-2cdc-4325-a6b4-6a2dd5bb69b1",
+      "slug": "function-arguments",
+      "name": "Function Arguments"
+    },
+    {
+      "uuid": "ecd4656b-7d45-445f-8481-3a4c67a48adc",
+      "slug": "functional-tools",
+      "name": "Functional Tools"
+    },
+    {
+      "uuid": "d817808c-76b4-43ab-a3bb-413f1a61347b",
+      "slug": "functions",
+      "name": "Functions"
+    },
+    {
+      "uuid": "ad15053b-7fb6-42cd-b9f6-2f9116cc0afa",
+      "slug": "functools",
+      "name": "Functools"
+    },
+    {
+      "uuid": "ce242e9e-8514-4628-b29f-f981d8e6fc98",
+      "slug": "generator-expressions",
+      "name": "Generator Expressions"
+    },
+    {
+      "uuid": "8e75fc1e-9a80-4c82-9dd3-bf883a3c7f8a",
+      "slug": "generators",
+      "name": "Generators"
+    },
+    {
+      "uuid": "52ae1ef3-6dac-4a93-81c8-05720d11d098",
+      "slug": "higher-order-functions",
+      "name": "Higher Order Functions"
+    },
+    {
+      "uuid": "e575384d-d5ae-47f1-a616-a5e3743a0472",
+      "slug": "iteration",
+      "name": "Iteration"
+    },
+    {
+      "uuid": "4dd8de52-60ac-4c73-bc66-411a1d9ea506",
+      "slug": "iterators",
+      "name": "Iterators"
+    },
+    {
+      "uuid": "8e8cd8b6-39d9-4ab1-83f1-9fdc85c0997b",
+      "slug": "itertools",
+      "name": "Itertools"
+    },
+    {
+      "uuid": "7533db6d-07ff-477d-a911-da366b9ef7aa",
+      "slug": "list-comprehensions",
+      "name": "List Comprehensions"
+    },
+    {
+      "uuid": "592f3c73-1d47-4da0-8ba6-ad7d2e050bdc",
+      "slug": "list-methods",
+      "name": "List Methods"
+    },
+    {
+      "uuid": "014b2e54-459c-4be9-8997-9da2f37b3740",
+      "slug": "lists",
+      "name": "Lists"
     },
     {
       "uuid": "4e6fcb5c-23db-4788-b043-9817cbfa1b9a",
-      "slug": "for-loops",
-      "name": "For Loops",
-      "blurb": "TODO: add blurb for for-loops concept"
+      "slug": "loops",
+      "name": "Loops"
     },
     {
-      "uuid": "f82fd15e-d7ad-4478-b7cb-d94705557827",
-      "slug": "functions",
-      "name": "Functions",
-      "blurb": "TODO: add blurb for functions concept"
+      "uuid": "5b8c09b9-4fb5-4922-827f-f6c2bed2b860",
+      "slug": "memoryview",
+      "name": "Memoryview"
     },
     {
-      "uuid": "cb6d5297-5752-4f4b-a6e9-899410efc13e",
-      "slug": "if-keyword",
-      "name": "If Keyword",
-      "blurb": "TODO: add blurb for if-keyword concept"
+      "uuid": "0a449447-a93b-4b0b-8694-bf48ee1bdeed",
+      "slug": "none",
+      "name": "None"
     },
     {
-      "uuid": "90751178-4bcd-491b-a3f6-03bb5964dcfe",
-      "slug": "in-keyword",
-      "name": "In Keyword",
-      "blurb": "TODO: add blurb for in-keyword concept"
+      "uuid": "dccbda6f-c620-41ad-91a3-13928079bdd0",
+      "slug": "number-variations",
+      "name": "Number Variations"
     },
     {
-      "uuid": "e0656e6f-25c7-4653-a700-a2c1f27a1cd9",
-      "slug": "integers",
-      "name": "Integers",
-      "blurb": "TODO: add blurb for integers concept"
+      "uuid": "a1616926-33cd-4b8e-a7d7-df73e916c66c",
+      "slug": "numbers",
+      "name": "Numbers"
     },
     {
-      "uuid": "50cc2099-4eb2-40b9-8f7a-e5cd56b8ef88",
-      "slug": "return-keyword",
-      "name": "Return Keyword",
-      "blurb": "TODO: add blurb for return-keyword concept"
+      "uuid": "bf1cab5d-4920-417b-bff5-40a79ef26d3e",
+      "slug": "operator-overloading",
+      "name": "Operator Overloading"
+    },
+    {
+      "uuid": "4b207533-befb-4eff-80c4-88e53a30a5f6",
+      "slug": "other-comprehensions",
+      "name": "Other Comprehensions"
+    },
+    {
+      "uuid": "069ccb3f-8f0f-42c1-9c18-2b31b164d1a5",
+      "slug": "raising-and-handling-errors",
+      "name": "Raising And Handling Errors"
+    },
+    {
+      "uuid": "d645bd16-81c2-4839-9d54-fdcbe999c342",
+      "slug": "regular-expressions",
+      "name": "Regular Expressions"
+    },
+    {
+      "uuid": "dd917984-02e0-46d8-8c3f-1989c366b778",
+      "slug": "rich-comparisons",
+      "name": "Rich Comparisons"
+    },
+    {
+      "uuid": "1e8320b7-4c4f-4099-8e49-213a79168cb7",
+      "slug": "sequences",
+      "name": "Sequences"
+    },
+    {
+      "uuid": "8021c889-b5e1-4cd1-8067-165b71556242",
+      "slug": "sets",
+      "name": "Sets"
+    },
+    {
+      "uuid": "a629488d-82c7-459d-bcca-2077b750780c",
+      "slug": "string-formatting",
+      "name": "String Formatting"
+    },
+    {
+      "uuid": "5c83eaf7-b0de-4279-a904-8531f7555266",
+      "slug": "string-methods",
+      "name": "String Methods"
+    },
+    {
+      "uuid": "a89ce4fb-ef49-4d4f-bbfb-b43d5a9645d7",
+      "slug": "string-methods-splitting",
+      "name": "String Methods Splitting"
     },
     {
       "uuid": "1eec0dde-4599-450f-909d-2b20ea40e73d",
       "slug": "strings",
-      "name": "Strings",
-      "blurb": "TODO: add blurb for strings concept"
+      "name": "Strings"
+    },
+    {
+      "uuid": "314bbf44-cabe-4d5f-91e9-6ccc7f8c8c1c",
+      "slug": "testing",
+      "name": "Testing"
+    },
+    {
+      "uuid": "8bdcd4dd-fca5-4d50-9367-c1f8e7529eb6",
+      "slug": "text-processing",
+      "name": "Text Processing"
     },
     {
       "uuid": "5894fb84-c313-464c-86f0-cd5e3eceeab1",
       "slug": "tuples",
-      "name": "Tuples",
-      "blurb": "TODO: add blurb for tuples concept"
+      "name": "Tuples"
+    },
+    {
+      "uuid": "c6a2e2ff-21b0-43d1-afa5-a2198e3b1f5a",
+      "slug": "type-hinting",
+      "name": "Type Hinting"
+    },
+    {
+      "uuid": "98d6cffa-b8f6-48a7-ac67-d06f31985d4b",
+      "slug": "unicode-regular-expressions",
+      "name": "Unicode Regular Expressions"
+    },
+    {
+      "uuid": "a5f2733f-f0f1-4943-84eb-d69c1180b358",
+      "slug": "unpacking-and-multiple-assignment",
+      "name": "Unpacking And Multiple Assignment"
+    },
+    {
+      "uuid": "eb6a1667-a3d6-4dff-b96a-d2dcf08ab20c",
+      "slug": "user-defined-errors",
+      "name": "User Defined Errors"
+    },
+    {
+      "uuid": "18a4d3d0-be6a-4724-89b9-7f21f0afd69e",
+      "slug": "walrus-operator",
+      "name": "Walrus Operator"
+    },
+    {
+      "uuid": "565f7618-4552-4eb0-b829-d6bacd03deaf",
+      "slug": "with-statement",
+      "name": "With Statement"
     }
   ],
   "key_features": [
