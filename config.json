@@ -672,7 +672,7 @@
       {
         "slug": "armstrong-numbers",
         "name": "Armstrong Numbers",
-        "uuid": "e9b0defc-dac5-11e7-9296-cec278b6b50a",
+        "uuid": "d9ceb246-b518-42b9-9fa3-112e25c7ecd8",
         "practices": [
           "comparisons",
           "list-comprehensions",
@@ -1258,7 +1258,7 @@
       {
         "slug": "tree-building",
         "name": "Tree Building",
-        "uuid": "aeaed0e4-0973-4035-8bc5-07480849048f",
+        "uuid": "da23e14f-1d87-4722-b887-347554d31afc",
         "practices": [
           "classes",
           "conditionals",
@@ -1292,7 +1292,7 @@
       {
         "slug": "go-counting",
         "name": "Go Counting",
-        "uuid": "d4ddeb18-ac22-11e7-abc4-cec278b6b50a",
+        "uuid": "8a9a437d-c967-4ea3-8ecb-6a9ad4380c03",
         "practices": [
           "bools",
           "classes",
@@ -1473,7 +1473,7 @@
       {
         "slug": "connect",
         "name": "Connect",
-        "uuid": "f5503274-ac23-11e7-abc4-cec278b6b50a",
+        "uuid": "5a038ad4-65c7-4c99-9916-faebb4f39b79",
         "practices": [
           "classes",
           "conditionals",
@@ -3284,7 +3284,7 @@
       {
         "slug": "custom-set",
         "name": "Custom Set",
-        "uuid": "bb07c236-062c-2980-483a-a221e4724445dcd6f32",
+        "uuid": "23a567b5-c184-4e65-9216-df7caba00d75",
         "practices": [
           "bools",
           "classes",
