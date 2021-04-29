@@ -53,7 +53,7 @@ Bongo starts with a B.
 
 <br>
 
-## Sequence Object `range()`
+## Sequence Object range()
 
 When there isn't a specific `iterable` given, the special [`range()`][range] sequence is used.  
 `range()` requires an `int` before which to `stop`, and can optionally take `start` and `step` parameters.  
