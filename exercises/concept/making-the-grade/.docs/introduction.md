@@ -96,7 +96,7 @@ If no start `int` is provided, the sequence will begin with 0.
 
 <br>
 
-## Values and Indexes with `enumerate()`
+## Values and Indexes with enumerate()
 
 If both values and indexes are needed, the built-in [`enumerate()`][enumerate] will return (`index`, `value`) pairs:
 
