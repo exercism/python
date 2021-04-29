@@ -24,8 +24,8 @@ class IndentStyle(str, Enum):
 class EditorSettings:
     indent_style: IndentStyle = IndentStyle.Space
     indent_size: int = 4
-    ace_editor_language: "python"
-    highlightjs_language: "python"
+    ace_editor_language: str = "python"
+    highlightjs_language: str = "python"
         
 
     def __post_init__(self):
