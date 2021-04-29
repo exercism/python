@@ -30,7 +30,7 @@ green_eggs
 
 <br>
 
-## `For`
+## For
 
 The basic [`for`][for statement] loop is better described as a _`for each`_ which cycles through the values of any [iterable object][iterable], terminating when there are no values returned from calling [`next()`][next built-in].
 
