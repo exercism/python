@@ -3618,8 +3618,7 @@
           "raising-and-handling-errors",
           "strings",
           "string-methods",
-          "tuples",
-          "raising-and-handling-errors"
+          "tuples"
         ],
         "difficulty": 3,
         "status": "deprecated"
