@@ -6,7 +6,7 @@ The keywords `break`, `continue`, and `else` help customize loop behavior.
 
 <br>
 
-## `While`
+## While
 
 [`while`][while statement] loops continue to exectute as long as the loop expression or "test" evaluates to `True` in a [`boolean context`][truth value testing], terminating when it evaluates to `False`.
 
