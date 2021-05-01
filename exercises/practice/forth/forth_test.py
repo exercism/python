@@ -145,7 +145,7 @@ class ForthTest(unittest.TestCase):
     def test_user_defined_words_can_define_word_that_uses_word_with_the_same_name(self):
         self.assertEqual(evaluate([": foo 10 ;", ": foo foo 1 + ;", "foo"]), [11])
 
-    def test_user_defined_words_cannot_redefine_numbers(self):
+    def test_user_defined_words_cannot_redefine_non_negative_numbers(self):
         with self.assertRaisesWithMessage(ValueError):
             evaluate([": 1 2 ;"])
 
