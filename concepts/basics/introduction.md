@@ -184,42 +184,27 @@ errors defaults to 'strict'.
 
 [assignment statements]: https://docs.python.org/3/reference/simple_stmts.html#assignment-statements
 [calls]: https://docs.python.org/3/reference/expressions.html#calls
-[classes]: https://docs.python.org/3/reference/datamodel.html#classes
 [comments]: https://realpython.com/python-comments-guide/#python-commenting-basics
 [default arguments]: https://docs.python.org/3/tutorial/controlflow.html#default-argument-values
 [docstring]: https://docs.python.org/3/tutorial/controlflow.html#tut-docstrings
 [doctests]: https://docs.python.org/3/library/doctest.html
 [duck typing]: https://en.wikipedia.org/wiki/Duck_typing
 [dynamic typing in python]: https://stackoverflow.com/questions/11328920/is-python-strongly-typed
-[everythings an object]: https://docs.python.org/3/reference/datamodel.html
 [function definition]: https://docs.python.org/3/tutorial/controlflow.html#defining-functions
-[functions]: https://docs.python.org/3/reference/compound_stmts.html#function
 [gradual typing]: https://en.wikipedia.org/wiki/Gradual_typing
 [indentation]: https://docs.python.org/3/reference/lexical_analysis.html#indentation
-[method objects]: https://docs.python.org/3/c-api/method.html#method-objects
 [module]: https://docs.python.org/3/tutorial/modules.html
 [more on functions]: https://docs.python.org/3/tutorial/controlflow.html#more-on-defining-functions
 [naming and binding]: https://docs.python.org/3/reference/executionmodel.html#naming-and-binding
 [none]: https://docs.python.org/3/library/constants.html
 [object oriented programming]: https://en.wikipedia.org/wiki/Object-oriented_programming
-[objects]: https://docs.python.org/3/reference/datamodel.html#the-standard-type-hierarchy
 [parameters]: https://docs.python.org/3/glossary.html#term-parameter
 [pep8]: https://www.python.org/dev/peps/pep-0008/
-[peps]: https://www.python.org/dev/peps/
-[psf membership]: https://www.python.org/psf/membership/
-[psf]: https://www.python.org/psf/
 [python docs]: https://docs.python.org/3/
-[python faqs]: https://docs.python.org/3/faq/index.html
-[python glossary of terms]: https://docs.python.org/3/glossary.html
-[python how tos]: https://docs.python.org/3/howto/index.html
-[python language reference]: https://docs.python.org/3/reference/index.html
-[python library reference]: https://docs.python.org/3/library/index.html
-[python tutorial]: https://docs.python.org/3/tutorial/index.html
 [return]: https://docs.python.org/3/reference/simple_stmts.html#return
 [significant indentation]: https://docs.python.org/3/reference/lexical_analysis.html#indentation
 [snake case]: https://en.wikipedia.org/wiki/Snake_case
 [the zen of python]: https://www.python.org/dev/peps/pep-0020/
-[turtles all the way down]: https://en.wikipedia.org/wiki/Turtles_all_the_way_down
 [type hints]: https://docs.python.org/3/library/typing.html
 [variables]: https://realpython.com/python-variables/
 [what is pythonic]: https://blog.startifact.com/posts/older/what-is-pythonic.html
