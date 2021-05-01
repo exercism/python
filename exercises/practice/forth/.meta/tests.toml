@@ -155,7 +155,7 @@ description = "can define word that uses word with the same name"
 include = true
 
 [35958cee-a976-4a0f-9378-f678518fa322]
-"description": "cannot redefine non-negative numbers"
+description = "cannot redefine non-negative numbers"
 include = true
 
 [5180f261-89dd-491e-b230-62737e09806f]
