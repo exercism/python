@@ -166,7 +166,7 @@ x = "foo"  # This is an in-line comment.
 ```
 
 The first statement of a function body can optionally be a [_docstring_][docstring], which concisely summarizes the function or object's purpose.
-Docstrings are read by automated documentation tools and are returned by calling `.__doc__()` on the function, method, or class name.
+Docstrings are read by automated documentation tools and are returned by calling `.__doc__` on the function, method, or class name.
 They are recommended for programs of any size where documentation is needed:
 
 ```python
