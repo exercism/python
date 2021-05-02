@@ -1,11 +1,16 @@
 import unittest
-from lasagna import EXPECTED_BAKE_TIME, bake_time_remaining, preparation_time_in_minutes, elapsed_time_in_minutes
-
+from lasagna import (
+    EXPECTED_BAKE_TIME,
+    bake_time_remaining,
+    preparation_time_in_minutes,
+    elapsed_time_in_minutes
+    )
 
 class LasagnaTest(unittest.TestCase):
 
     def test_EXPECTED_BAKE_TIME(self):
-        self.assertEqual(EXPECTED_BAKE_TIME, 40, msg="Expected a constant of EXPECTED_BAKE_TIME with a value of 40.")
+        self.assertEqual(EXPECTED_BAKE_TIME, 40,
+                         msg="Expected a constant of EXPECTED_BAKE_TIME with a value of 40.")
 
 
     def test_bake_time_remaining(self):
