@@ -4,92 +4,69 @@
 
 [88bf4b28-0de3-4883-93c7-db1b14aa806e]
 description = "just a number"
-include = true
 
 [bb8c655c-cf42-4dfc-90e0-152fcfd8d4e0]
 description = "addition"
-include = true
 
 [79e49e06-c5ae-40aa-a352-7a3a01f70015]
 description = "more addition"
-include = true
 
 [b345dbe0-f733-44e1-863c-5ae3568f3803]
 description = "addition with negative numbers"
-include = true
 
 [cd070f39-c4cc-45c4-97fb-1be5e5846f87]
 description = "large addition"
-include = true
 
 [0d86474a-cd93-4649-a4fa-f6109a011191]
 description = "subtraction"
-include = true
 
 [30bc8395-5500-4712-a0cf-1d788a529be5]
 description = "multiplication"
-include = true
 
 [34c36b08-8605-4217-bb57-9a01472c427f]
 description = "division"
-include = true
 
 [da6d2ce4-fb94-4d26-8f5f-b078adad0596]
 description = "multiple additions"
-include = true
 
 [7fd74c50-9911-4597-be09-8de7f2fea2bb]
 description = "addition and subtraction"
-include = true
 
 [b120ffd5-bad6-4e22-81c8-5512e8faf905]
 description = "multiple subtraction"
-include = true
 
 [4f4a5749-ef0c-4f60-841f-abcfaf05d2ae]
 description = "subtraction then addition"
-include = true
 
 [312d908c-f68f-42c9-aa75-961623cc033f]
 description = "multiple multiplication"
-include = true
 
 [38e33587-8940-4cc1-bc28-bfd7e3966276]
 description = "addition and multiplication"
-include = true
 
 [3c854f97-9311-46e8-b574-92b60d17d394]
 description = "multiple division"
-include = true
 
 [3ad3e433-8af7-41ec-aa9b-97b42ab49357]
 description = "unknown operation"
-include = true
 
 [8a7e85a8-9e7b-4d46-868f-6d759f4648f8]
 description = "Non math question"
-include = true
 
 [42d78b5f-dbd7-4cdb-8b30-00f794bb24cf]
 description = "reject problem missing an operand"
-include = true
 
 [c2c3cbfc-1a72-42f2-b597-246e617e66f5]
 description = "reject problem with no operands or operators"
-include = true
 
 [4b3df66d-6ed5-4c95-a0a1-d38891fbdab6]
 description = "reject two operations in a row"
-include = true
 
 [6abd7a50-75b4-4665-aa33-2030fd08bab1]
 description = "reject two numbers in a row"
-include = true
 
 [10a56c22-e0aa-405f-b1d2-c642d9c4c9de]
 description = "reject postfix notation"
-include = true
 
 [0035bc63-ac43-4bb5-ad6d-e8651b7d954e]
 description = "reject prefix notation"
-include = true

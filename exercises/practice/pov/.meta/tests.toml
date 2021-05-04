@@ -4,60 +4,45 @@
 
 [1b3cd134-49ad-4a7d-8376-7087b7e70792]
 description = "Results in the same tree if the input tree is a singleton"
-include = true
 
 [0778c745-0636-40de-9edd-25a8f40426f6]
 description = "Can reroot a tree with a parent and one sibling"
-include = true
 
 [fdfdef0a-4472-4248-8bcf-19cf33f9c06e]
 description = "Can reroot a tree with a parent and many siblings"
-include = true
 
 [cbcf52db-8667-43d8-a766-5d80cb41b4bb]
 description = "Can reroot a tree with new root deeply nested in tree"
-include = true
 
 [e27fa4fa-648d-44cd-90af-d64a13d95e06]
 description = "Moves children of the new root to same level as former parent"
-include = true
 
 [09236c7f-7c83-42cc-87a1-25afa60454a3]
 description = "Can reroot a complex tree with cousins"
-include = true
 
 [f41d5eeb-8973-448f-a3b0-cc1e019a4193]
 description = "Errors if target does not exist in a singleton tree"
-include = true
 
 [9dc0a8b3-df02-4267-9a41-693b6aff75e7]
 description = "Errors if target does not exist in a large tree"
-include = true
 
 [02d1f1d9-428d-4395-b026-2db35ffa8f0a]
 description = "Can find path to parent"
-include = true
 
 [d0002674-fcfb-4cdc-9efa-bfc54e3c31b5]
 description = "Can find path to sibling"
-include = true
 
 [c9877cd1-0a69-40d4-b362-725763a5c38f]
 description = "Can find path to cousin"
-include = true
 
 [9fb17a82-2c14-4261-baa3-2f3f234ffa03]
 description = "Can find path not involving root"
-include = true
 
 [5124ed49-7845-46ad-bc32-97d5ac7451b2]
 description = "Can find path from nodes other than x"
-include = true
 
 [f52a183c-25cc-4c87-9fc9-0e7f81a5725c]
 description = "Errors if destination does not exist"
-include = true
 
 [f4fe18b9-b4a2-4bd5-a694-e179155c2149]
 description = "Errors if source does not exist"
-include = true

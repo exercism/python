@@ -4,52 +4,39 @@
 
 [61559d5f-2cad-48fb-af53-d3973a9ee9ef]
 description = "count one word"
-include = true
 
 [5abd53a3-1aed-43a4-a15a-29f88c09cbbd]
 description = "count one of each word"
-include = true
 
 [2a3091e5-952e-4099-9fac-8f85d9655c0e]
 description = "multiple occurrences of a word"
-include = true
 
 [e81877ae-d4da-4af4-931c-d923cd621ca6]
 description = "handles cramped lists"
-include = true
 
 [7349f682-9707-47c0-a9af-be56e1e7ff30]
 description = "handles expanded lists"
-include = true
 
 [a514a0f2-8589-4279-8892-887f76a14c82]
 description = "ignore punctuation"
-include = true
 
 [d2e5cee6-d2ec-497b-bdc9-3ebe092ce55e]
 description = "include numbers"
-include = true
 
 [dac6bc6a-21ae-4954-945d-d7f716392dbf]
 description = "normalize case"
-include = true
 
 [4185a902-bdb0-4074-864c-f416e42a0f19]
 description = "with apostrophes"
-include = true
 
 [be72af2b-8afe-4337-b151-b297202e4a7b]
 description = "with quotations"
-include = true
 
 [8d6815fe-8a51-4a65-96f9-2fb3f6dc6ed6]
 description = "substrings from the beginning"
-include = true
 
 [c5f4ef26-f3f7-4725-b314-855c04fb4c13]
 description = "multiple spaces not detected as a word"
-include = true
 
 [50176e8a-fe8e-4f4c-b6b6-aa9cf8f20360]
 description = "alternating word separators not detected as a word"
-include = true

@@ -4,44 +4,33 @@
 
 [f46cda29-1ca5-4ef2-bd45-388a767e3db2]
 description = "lowercase letter"
-include = true
 
 [f7794b49-f13e-45d1-a933-4e48459b2201]
 description = "uppercase letter"
-include = true
 
 [eaba9c76-f9fa-49c9-a1b0-d1ba3a5b31fa]
 description = "valuable letter"
-include = true
 
 [f3c8c94e-bb48-4da2-b09f-e832e103151e]
 description = "short word"
-include = true
 
 [71e3d8fa-900d-4548-930e-68e7067c4615]
 description = "short, valuable word"
-include = true
 
 [d3088ad9-570c-4b51-8764-c75d5a430e99]
 description = "medium word"
-include = true
 
 [fa20c572-ad86-400a-8511-64512daac352]
 description = "medium, valuable word"
-include = true
 
 [9336f0ba-9c2b-4fa0-bd1c-2e2d328cf967]
 description = "long, mixed-case word"
-include = true
 
 [1e34e2c3-e444-4ea7-b598-3c2b46fd2c10]
 description = "english-like word"
-include = true
 
 [4efe3169-b3b6-4334-8bae-ff4ef24a7e4f]
 description = "empty input"
-include = true
 
 [3b305c1c-f260-4e15-a5b5-cb7d3ea7c3d7]
 description = "entire alphabet available"
-include = true

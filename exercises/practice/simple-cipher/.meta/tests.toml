@@ -4,48 +4,36 @@
 
 [b8bdfbe1-bea3-41bb-a999-b41403f2b15d]
 description = "Can encode"
-include = true
 
 [3dff7f36-75db-46b4-ab70-644b3f38b81c]
 description = "Can decode"
-include = true
 
 [8143c684-6df6-46ba-bd1f-dea8fcb5d265]
 description = "Is reversible. I.e., if you apply decode in a encoded result, you must see the same plaintext encode parameter as a result of the decode method"
-include = true
 
 [defc0050-e87d-4840-85e4-51a1ab9dd6aa]
 description = "Key is made only of lowercase letters"
-include = true
 
 [565e5158-5b3b-41dd-b99d-33b9f413c39f]
 description = "Can encode"
-include = true
 
 [d44e4f6a-b8af-4e90-9d08-fd407e31e67b]
 description = "Can decode"
-include = true
 
 [70a16473-7339-43df-902d-93408c69e9d1]
 description = "Is reversible. I.e., if you apply decode in a encoded result, you must see the same plaintext encode parameter as a result of the decode method"
-include = true
 
 [69a1458b-92a6-433a-a02d-7beac3ea91f9]
 description = "Can double shift encode"
-include = true
 
 [21d207c1-98de-40aa-994f-86197ae230fb]
 description = "Can wrap on encode"
-include = true
 
 [a3d7a4d7-24a9-4de6-bdc4-a6614ced0cb3]
 description = "Can wrap on decode"
-include = true
 
 [e31c9b8c-8eb6-45c9-a4b5-8344a36b9641]
 description = "Can encode messages longer than the key"
-include = true
 
 [93cfaae0-17da-4627-9a04-d6d1e1be52e3]
 description = "Can decode messages longer than the key"
-include = true

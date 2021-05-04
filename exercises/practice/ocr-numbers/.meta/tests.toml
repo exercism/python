@@ -4,68 +4,51 @@
 
 [5ee54e1a-b554-4bf3-a056-9a7976c3f7e8]
 description = "Recognizes 0"
-include = true
 
 [027ada25-17fd-4d78-aee6-35a19623639d]
 description = "Recognizes 1"
-include = true
 
 [3cce2dbd-01d9-4f94-8fae-419a822e89bb]
 description = "Unreadable but correctly sized inputs return ?"
-include = true
 
 [cb19b733-4e36-4cf9-a4a1-6e6aac808b9a]
 description = "Input with a number of lines that is not a multiple of four raises an error"
-include = true
 
 [235f7bd1-991b-4587-98d4-84206eec4cc6]
 description = "Input with a number of columns that is not a multiple of three raises an error"
-include = true
 
 [4a841794-73c9-4da9-a779-1f9837faff66]
 description = "Recognizes 110101100"
-include = true
 
 [70c338f9-85b1-4296-a3a8-122901cdfde8]
 description = "Garbled numbers in a string are replaced with ?"
-include = true
 
 [ea494ff4-3610-44d7-ab7e-72fdef0e0802]
 description = "Recognizes 2"
-include = true
 
 [1acd2c00-412b-4268-93c2-bd7ff8e05a2c]
 description = "Recognizes 3"
-include = true
 
 [eaec6a15-be17-4b6d-b895-596fae5d1329]
 description = "Recognizes 4"
-include = true
 
 [440f397a-f046-4243-a6ca-81ab5406c56e]
 description = "Recognizes 5"
-include = true
 
 [f4c9cf6a-f1e2-4878-bfc3-9b85b657caa0]
 description = "Recognizes 6"
-include = true
 
 [e24ebf80-c611-41bb-a25a-ac2c0f232df5]
 description = "Recognizes 7"
-include = true
 
 [b79cad4f-e264-4818-9d9e-77766792e233]
 description = "Recognizes 8"
-include = true
 
 [5efc9cfc-9227-4688-b77d-845049299e66]
 description = "Recognizes 9"
-include = true
 
 [f60cb04a-42be-494e-a535-3451c8e097a4]
 description = "Recognizes string of decimal numbers"
-include = true
 
 [b73ecf8b-4423-4b36-860d-3710bdb8a491]
 description = "Numbers separated by empty lines are recognized. Lines are joined by commas."
-include = true

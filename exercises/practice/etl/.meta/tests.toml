@@ -4,16 +4,12 @@
 
 [78a7a9f9-4490-4a47-8ee9-5a38bb47d28f]
 description = "single letter"
-include = true
 
 [60dbd000-451d-44c7-bdbb-97c73ac1f497]
 description = "single score with multiple letters"
-include = true
 
 [f5c5de0c-301f-4fdd-a0e5-df97d4214f54]
 description = "multiple scores with multiple letters"
-include = true
 
 [5db8ea89-ecb4-4dcd-902f-2b418cc87b9d]
 description = "multiple scores with differing numbers of letters"
-include = true

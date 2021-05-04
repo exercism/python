@@ -4,24 +4,18 @@
 
 [540a3d51-e7a6-47a5-92a3-4ad1838f0bfd]
 description = "zero steps for one"
-include = true
 
 [3d76a0a6-ea84-444a-821a-f7857c2c1859]
 description = "divide if even"
-include = true
 
 [754dea81-123c-429e-b8bc-db20b05a87b9]
 description = "even and odd steps"
-include = true
 
 [ecfd0210-6f85-44f6-8280-f65534892ff6]
 description = "large number of even and odd steps"
-include = true
 
 [7d4750e6-def9-4b86-aec7-9f7eb44f95a3]
 description = "zero is an error"
-include = true
 
 [c6c795bf-a288-45e9-86a1-841359ad426d]
 description = "negative value is an error"
-include = true

@@ -4,44 +4,33 @@
 
 [b55c24a9-a98d-4379-a08c-2adcf8ebeee8]
 description = "finds a value in an array with one element"
-include = true
 
 [73469346-b0a0-4011-89bf-989e443d503d]
 description = "finds a value in the middle of an array"
-include = true
 
 [327bc482-ab85-424e-a724-fb4658e66ddb]
 description = "finds a value at the beginning of an array"
-include = true
 
 [f9f94b16-fe5e-472c-85ea-c513804c7d59]
 description = "finds a value at the end of an array"
-include = true
 
 [f0068905-26e3-4342-856d-ad153cadb338]
 description = "finds a value in an array of odd length"
-include = true
 
 [fc316b12-c8b3-4f5e-9e89-532b3389de8c]
 description = "finds a value in an array of even length"
-include = true
 
 [da7db20a-354f-49f7-a6a1-650a54998aa6]
 description = "identifies that a value is not included in the array"
-include = true
 
 [95d869ff-3daf-4c79-b622-6e805c675f97]
 description = "a value smaller than the array's smallest value is not found"
-include = true
 
 [8b24ef45-6e51-4a94-9eac-c2bf38fdb0ba]
 description = "a value larger than the array's largest value is not found"
-include = true
 
 [f439a0fa-cf42-4262-8ad1-64bf41ce566a]
 description = "nothing is found in an empty array"
-include = true
 
 [2c353967-b56d-40b8-acff-ce43115eed64]
 description = "nothing is found when the left and right bounds cross"
-include = true

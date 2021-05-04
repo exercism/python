@@ -4,60 +4,45 @@
 
 [5d22a120-ba0c-428c-bd25-8682235d83e8]
 description = "zero"
-include = true
 
 [9b5eed77-dbf6-439d-b920-3f7eb58928f6]
 description = "one"
-include = true
 
 [7c499be1-612e-4096-a5e1-43b2f719406d]
 description = "fourteen"
-include = true
 
 [f541dd8e-f070-4329-92b4-b7ce2fcf06b4]
 description = "twenty"
-include = true
 
 [d78601eb-4a84-4bfa-bf0e-665aeb8abe94]
 description = "twenty-two"
-include = true
 
 [e417d452-129e-4056-bd5b-6eb1df334dce]
 description = "one hundred"
-include = true
 
 [d6924f30-80ba-4597-acf6-ea3f16269da8]
 description = "one hundred twenty-three"
-include = true
 
 [3d83da89-a372-46d3-b10d-de0c792432b3]
 description = "one thousand"
-include = true
 
 [865af898-1d5b-495f-8ff0-2f06d3c73709]
 description = "one thousand two hundred thirty-four"
-include = true
 
 [b6a3f442-266e-47a3-835d-7f8a35f6cf7f]
 description = "one million"
-include = true
 
 [2cea9303-e77e-4212-b8ff-c39f1978fc70]
 description = "one million two thousand three hundred forty-five"
-include = true
 
 [3e240eeb-f564-4b80-9421-db123f66a38f]
 description = "one billion"
-include = true
 
 [9a43fed1-c875-4710-8286-5065d73b8a9e]
 description = "a big number"
-include = true
 
 [49a6a17b-084e-423e-994d-a87c0ecc05ef]
 description = "numbers below zero are out of range"
-include = true
 
 [4d6492eb-5853-4d16-9d34-b0f61b261fd9]
 description = "numbers above 999,999,999,999 are out of range"
-include = true

@@ -4,32 +4,24 @@
 
 [9920ce55-9629-46d5-85d6-4201f4a4234d]
 description = "zero rows"
-include = true
 
 [70d643ce-a46d-4e93-af58-12d88dd01f21]
 description = "single row"
-include = true
 
 [a6e5a2a2-fc9a-4b47-9f4f-ed9ad9fbe4bd]
 description = "two rows"
-include = true
 
 [97206a99-79ba-4b04-b1c5-3c0fa1e16925]
 description = "three rows"
-include = true
 
 [565a0431-c797-417c-a2c8-2935e01ce306]
 description = "four rows"
-include = true
 
 [06f9ea50-9f51-4eb2-b9a9-c00975686c27]
 description = "five rows"
-include = true
 
 [c3912965-ddb4-46a9-848e-3363e6b00b13]
 description = "six rows"
-include = true
 
 [6cb26c66-7b57-4161-962c-81ec8c99f16b]
 description = "ten rows"
-include = true

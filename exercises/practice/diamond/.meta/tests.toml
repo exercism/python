@@ -4,20 +4,15 @@
 
 [202fb4cc-6a38-4883-9193-a29d5cb92076]
 description = "Degenerate case with a single 'A' row"
-include = true
 
 [bd6a6d78-9302-42e9-8f60-ac1461e9abae]
 description = "Degenerate case with no row containing 3 distinct groups of spaces"
-include = true
 
 [af8efb49-14ed-447f-8944-4cc59ce3fd76]
 description = "Smallest non-degenerate case with odd diamond side length"
-include = true
 
 [e0c19a95-9888-4d05-86a0-fa81b9e70d1d]
 description = "Smallest non-degenerate case with even diamond side length"
-include = true
 
 [82ea9aa9-4c0e-442a-b07e-40204e925944]
 description = "Largest possible diamond"
-include = true
