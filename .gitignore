@@ -13,5 +13,3 @@ bin/configlet.exe
 .pytest_cache
 __pycache__
 .venv
-bin/canonical_data_syncer
-bin/canonical_data_syncer.exe
