@@ -1,8 +1,120 @@
 # About
 
-Pythons `str` (_string_) type can be very powerful. At its core, a `str` is an immutable [text sequence][text sequence] of [Unicode code points][unicode code points]. There is no separate "character" or "rune" type in Python.
+A `str` in Python is an [immutable sequence][text sequence] of [Unicode code points][unicode code points].
+These could include letters, diacritical marks, positioning characters, numbers, currecy symbols, emoji, punctuation, space and line break characters, and more.
+Being immutable, a `str` object's value in memory doesn't change; methods that appear to modify a string return a new copy or instance of `str`.
 
-Like any [sequence type][sequence type], code points within a `str` can be referenced by 0-based index number and can be copied in whole or in part via _slice notation_. Since there is no separate “character” type, indexing a string produces a new `str` of length 1:
+For a deep dive on what information a string encodes (or, _"how does the computer know how to translate zeroes and ones into letters?"_), [this blog post is enduringly helpful][joel-on-text]. Additionally, the docs provide a [unicode HOWTO][unicode how-to] that discusses Pythons support for the Unicode specification in the `str`, `bytes` and `re` modules, and some common issues.
+
+A `str` literal can be declared via single `'` or double `"` quotes. The escape `\` character is available as needed.
+
+```python
+
+>>> single_quoted = 'These allow "double quoting" without "escape" characters.'
+
+>>> double_quoted = "These allow embedded 'single quoting', so you don't have to use an 'escape' character".
+```
+
+Muliti-line strings are declared with `'''` or `"""`.
+
+```python
+>>> triple_quoted =  '''Three single quotes or "double quotes" in a row allow for multi-line string literals.
+  Line break characters, tabs and other whitespace is fully supported.
+
+  You\'ll most often encounter these as "doc strings" or "doc tests" written just below the first line of a function or class definition.
+    They\'re often used with auto documentation ✍ tools.
+    '''
+```
+
+The [`str()` constructor][str-constructor] can be used to create/coerce strings from other objects:
+
+```python
+>>> my_number = 42
+>>> str(my_number)
+...
+"42"
+```
+
+While the `str()` constructor can be used to coerce strings from other objects, it _**will not iterate**_ through an object.
+This lack of iteration can have surprising results.
+
+```python
+>>> number_words = ["ਤਿੰਨ", "ਪੰਜ", "ਨੌ"]
+>>> str(number_words)
+...
+'["ਤਿੰਨ", "ਪੰਜ", "ਨੌ"]'
+```
+
+If a `list`, `tuple`, `set` or other collection of individual elements needs to be converted to a `str` type, [`<str>.join(<iterable>)`][str-join], is a better option:
+
+```python
+# To avoid surprises with iteration, str.join() the elements of an iterable.
+>>> chickens = ["hen", "egg", "rooster"]
+>>> ' '.join(chickens)
+'hen egg rooster'
+
+# Any string can be used as the joining element.
+>>> ' :: '.join(chickens)
+'hen :: egg :: rooster'
+
+>>> ' 🌿 '.join(chickens)
+'hen 🌿 egg 🌿 rooster'
+```
+
+Strings can also be concatenated using the `+` operator.
+This method should be used sparingly, as it is not very performant or easily maintained.
+
+```python
+language = "Ukrainian"
+number = "nine"
+word = "девять"
+
+sentence = word + " " + "means" + " " + number + " in " + language + "."
+
+>>> print(sentence)
+...
+"девять means nine in Ukrainian."
+```
+
+String literals that are part of a single expression and are separated only by white space are _implicitly concatenated_ into a single string literal:
+
+```python
+# Seperate strings within parenthesis will be *implicitly concatenated* by the interpreter.
+>>> ("I do not "
+"like "
+"green eggs and ham.") == "I do not like green eggs and ham."
+True
+```
+
+Strings can be broken into smaller strings via [`<str>.split(<separator>)`][str-split], which will return a `list` of substrings.
+Using `<str>.split()` without any arguments will split the string on whitespace.
+
+```python
+>>> cat_ipsum = "Destroy house in 5 seconds enslave the hooman."
+>>> cat_ipsum.split()
+...
+['Destroy', 'house', 'in', '5', 'seconds', 'enslave', 'the', 'hooman.']
+```
+
+Code points within a `str` can be referenced by 0-based index number and can be copied in whole or in part via _slice notation_, using [`<str>[<start>:stop:<step>]`][common sequence operations].
+
+```python
+noodles = "ก๋วยเตี๋ยว"
+
+>>> first_code_point = noodles[0]
+'ก'
+
+>> last_code_point = noodles[-1]
+'ว'
+
+>>> middle_four_points = noodels[3:7]
+'ยเตี'
+
+>> noodles_copy = noodles[:]
+"ก๋วยเตี๋ยว"
+```
+
+There is no separate “character” or "rune" type in Python, so indexing a string produces a new `str` of length 1:
 
 ```python
 
@@ -17,13 +129,15 @@ Like any [sequence type][sequence type], code points within a `str` can be refer
 True
 ```
 
-Strings support all [common sequence operations][common sequence operations]. Individual code points can be iterated through in a loop via **`for item in`**.
+Strings support all [common sequence operations][common sequence operations].
+Individual code points can be iterated through in a loop via `for item in <str>`.
+Indexes _with_ items can be iterated through in a loop via `for index, item in enumerate(<str>)`
 
 ```python
 
 >>> exercise = 'လေ့ကျင့်'
 
-#note that there are more code points than percieved glyphs or characters
+# Note that there are more code points than percieved glyphs or characters
 >>> for code_point in exercise:
 ...    print(code_point)
 ...
@@ -35,65 +149,28 @@ Strings support all [common sequence operations][common sequence operations]. In
 င
 ်
 ့
+
+# Using enumerate will give both the value and index position of each element.
+>>> for index, code_point in enumerate(exercise):
+...    print(index, ": ", code_point)
+...
+0 :  လ
+1 :  ေ
+2 :  ့
+3 :  က
+4 :  ျ
+5 :  င
+6 :  ်
+7 :  ့
 ```
 
-For a deep dive on what information a string encodes (or, _"how does the computer know how to translate zeroes and ones into letters?"_), [this blog post is enduringly helpful][joel-on-text]. Additionally, the docs provide a [unicode HOWTO][unicode how-to] that discusses Pythons support for the Unicode specification in the `str`, `bytes` and `re` modules, and some common issues.
+## String Methods
 
-Strings can be transformed by [various methods][str-methods], split into code points via [`.split()`][str-split], or joined together into larger strings via [`.join()`][str-join] or `+`. Due to their _immutability_, any transformations applied to strings return new `str` objects.
-
-## Construction
-
-The simplest way to create a `str` literal is by delimiting it with `"` or `'`. Strings can also be written across multiple lines by using triple quotes (`"""` or `'''`) .
-
-```python
-
->>> single_quoted = 'Single quotes allow "double quoting" without "escape" characters.'
-
->>> double_quoted = "Double quotes allow embedded 'single quoting' without 'escape' characters".
-
->>> triple_quoted =  '''Three single quotes or double quotes in a row allow for multi-line string literals.  You will most often encounter these as "doc strings" or "doc tests" written just below the first line of a function or class definition.  They are often used with auto documentation tools.'''
-String literals that are part of a single expression and are separated only by white space are _implicitly concatenated_ into a single string literal:
-
-
-#if you put seperate strings within parenthesis, they will be *implicitly concatenated* by the interpreter
->>> ("I do not "
-"like "
-"green eggs and ham.") == "I do not like green eggs and ham."
-True
-```
-
-Additionally, [interpolated][f-strings] strings (`f-strings`) can be formed:
-
-```python
-my_name = "Praveen"
-
-intro_string = f"Hi! My name is {my_name}, and I'm happy to be here!"
-
->>>print(intro_string)
-Hi! My name is Praveen, and I'm happy to be here!
-```
-
-Finally, the [`str()` constructor][str-constructor] can be used to create/coerce strings from other objects/types. However, the `str` constructor _**will not iterate**_ through an object , so if something like a `list` of individual elements needs to be connected, `.join()` is a better option:
-
-```python
->>> my_number = 675
->>> str(my_number)
-'675'
-
-#this is a bit surprising, as it will make the entire data structure, complete with the brackets, into a str
->>> my_list = ["hen", "egg", "rooster"]
->>> str(my_list)
-"['hen', 'egg', 'rooster']"
-
-
-#however, using .join() will iterate and form a string from individual elements
->>> ' '.join(my_list)
-'hen egg rooster'
-```
+To manipulate strings, Python provides a rich set of [string methods][str-methods] that can assist with searching, cleaning, splitting, transforming, translating, and many other operations.
 
 ## Formatting
 
-Python provides a rich set of tools for [formatting][str-formatting] and [templating][template-strings] strings, as well as more sophisticated text processing through the [re (_regular expressions_)][re], [difflib (_sequence comparison_)][difflib], and [textwrap][textwrap] modules. For a great introduction to string formatting in Python, see [this post at Real Python][real python string formatting]. For more details on string methods, see [Strings and Character Data in Python][strings and characters] at the same site.
+Python also provides a rich set of tools for [formatting][str-formatting] and [templating][template-strings] strings, as well as more sophisticated text processing through the [re (_regular expressions_)][re], [difflib (_sequence comparison_)][difflib], and [textwrap][textwrap] modules. For a great introduction to string formatting in Python, see [this post at Real Python][real python string formatting]. For more details on string methods, see [Strings and Character Data in Python][strings and characters] at the same site.
 
 ## Related types and encodings
 
@@ -101,12 +178,9 @@ In addition to `str` (a _text_ sequence), Python has corresponding [binary seque
 
 [text sequence]: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
 [unicode code points]: https://stackoverflow.com/questions/27331819/whats-the-difference-between-a-character-a-code-point-a-glyph-and-a-grapheme
-[sequence type]: https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
 [common sequence operations]: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations
 [joel-on-text]: https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/
 [str-methods]: https://docs.python.org/3/library/stdtypes.html#string-methods
-[str-join]: https://docs.python.org/3/library/stdtypes.html#str.join
-[f-strings]: https://en.wikipedia.org/wiki/String_interpolation
 [str-constructor]: https://docs.python.org/3/library/stdtypes.html#str
 [str-formatting]: https://docs.python.org/3/library/string.html#custom-string-formatting
 [template-strings]: https://docs.python.org/3/library/string.html#template-strings
@@ -120,3 +194,4 @@ In addition to `str` (a _text_ sequence), Python has corresponding [binary seque
 [unicode how-to]: https://docs.python.org/3/howto/unicode.html
 [str-split]: https://docs.python.org/3/library/stdtypes.html#str.split
 [binary data services]: https://docs.python.org/3/library/binary.html#binaryservices
+[str-join]: https://docs.python.org/3/library/stdtypes.html#str.join
