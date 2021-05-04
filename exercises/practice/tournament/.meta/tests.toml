@@ -4,44 +4,33 @@
 
 [67e9fab1-07c1-49cf-9159-bc8671cc7c9c]
 description = "just the header if no input"
-include = true
 
 [1b4a8aef-0734-4007-80a2-0626178c88f4]
 description = "a win is three points, a loss is zero points"
-include = true
 
 [5f45ac09-4efe-46e7-8ddb-75ad85f86e05]
 description = "a win can also be expressed as a loss"
-include = true
 
 [fd297368-efa0-442d-9f37-dd3f9a437239]
 description = "a different team can win"
-include = true
 
 [26c016f9-e753-4a93-94e9-842f7b4d70fc]
 description = "a draw is one point each"
-include = true
 
 [731204f6-4f34-4928-97eb-1c307ba83e62]
 description = "There can be more than one match"
-include = true
 
 [49dc2463-42af-4ea6-95dc-f06cc5776adf]
 description = "There can be more than one winner"
-include = true
 
 [6d930f33-435c-4e6f-9e2d-63fa85ce7dc7]
 description = "There can be more than two teams"
-include = true
 
 [97022974-0c8a-4a50-8fe7-e36bdd8a5945]
 description = "typical input"
-include = true
 
 [fe562f0d-ac0a-4c62-b9c9-44ee3236392b]
 description = "incomplete competition (not all pairs have played)"
-include = true
 
 [3aa0386f-150b-4f99-90bb-5195e7b7d3b8]
 description = "ties broken alphabetically"
-include = true

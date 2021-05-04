@@ -4,20 +4,15 @@
 
 [92fbe71c-ea52-4fac-bd77-be38023cacf7]
 description = "date only specification of time"
-include = true
 
 [6d86dd16-6f7a-47be-9e58-bb9fb2ae1433]
 description = "second test for date only specification of time"
-include = true
 
 [77eb8502-2bca-4d92-89d9-7b39ace28dd5]
 description = "third test for date only specification of time"
-include = true
 
 [c9d89a7d-06f8-4e28-a305-64f1b2abc693]
 description = "full time specified"
-include = true
 
 [09d4e30e-728a-4b52-9005-be44a58d9eba]
 description = "full time with day roll-over"
-include = true

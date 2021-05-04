@@ -4,60 +4,45 @@
 
 [17146bd5-2e80-4557-ab4c-05632b6b0d01]
 description = "Only a single book"
-include = true
 
 [cc2de9ac-ff2a-4efd-b7c7-bfe0f43271ce]
 description = "Two of the same book"
-include = true
 
 [5a86eac0-45d2-46aa-bbf0-266b94393a1a]
 description = "Empty basket"
-include = true
 
 [158bd19a-3db4-4468-ae85-e0638a688990]
 description = "Two different books"
-include = true
 
 [f3833f6b-9332-4a1f-ad98-6c3f8e30e163]
 description = "Three different books"
-include = true
 
 [1951a1db-2fb6-4cd1-a69a-f691b6dd30a2]
 description = "Four different books"
-include = true
 
 [d70f6682-3019-4c3f-aede-83c6a8c647a3]
 description = "Five different books"
-include = true
 
 [78cacb57-911a-45f1-be52-2a5bd428c634]
 description = "Two groups of four is cheaper than group of five plus group of three"
-include = true
 
 [f808b5a4-e01f-4c0d-881f-f7b90d9739da]
 description = "Two groups of four is cheaper than groups of five and three"
-include = true
 
 [fe96401c-5268-4be2-9d9e-19b76478007c]
 description = "Group of four plus group of two is cheaper than two groups of three"
-include = true
 
 [68ea9b78-10ad-420e-a766-836a501d3633]
 description = "Two each of first 4 books and 1 copy each of rest"
-include = true
 
 [c0a779d5-a40c-47ae-9828-a340e936b866]
 description = "Two copies of each book"
-include = true
 
 [18fd86fe-08f1-4b68-969b-392b8af20513]
 description = "Three copies of first book and 2 each of remaining"
-include = true
 
 [0b19a24d-e4cf-4ec8-9db2-8899a41af0da]
 description = "Three each of first 2 books and 2 each of remaining books"
-include = true
 
 [bb376344-4fb2-49ab-ab85-e38d8354a58d]
 description = "Four groups of four are cheaper than two groups each of five and three"
-include = true

@@ -4,124 +4,93 @@
 
 [9f98e133-eb7f-45b0-9676-cce001cd6f7a]
 description = "Real part of a purely real number"
-include = true
 
 [07988e20-f287-4bb7-90cf-b32c4bffe0f3]
 description = "Real part of a purely imaginary number"
-include = true
 
 [4a370e86-939e-43de-a895-a00ca32da60a]
 description = "Real part of a number with real and imaginary part"
-include = true
 
 [9b3fddef-4c12-4a99-b8f8-e3a42c7ccef6]
 description = "Imaginary part of a purely real number"
-include = true
 
 [a8dafedd-535a-4ed3-8a39-fda103a2b01e]
 description = "Imaginary part of a purely imaginary number"
-include = true
 
 [0f998f19-69ee-4c64-80ef-01b086feab80]
 description = "Imaginary part of a number with real and imaginary part"
-include = true
 
 [a39b7fd6-6527-492f-8c34-609d2c913879]
 description = "Imaginary unit"
-include = true
 
 [9a2c8de9-f068-4f6f-b41c-82232cc6c33e]
 description = "Add purely real numbers"
-include = true
 
 [657c55e1-b14b-4ba7-bd5c-19db22b7d659]
 description = "Add purely imaginary numbers"
-include = true
 
 [4e1395f5-572b-4ce8-bfa9-9a63056888da]
 description = "Add numbers with real and imaginary part"
-include = true
 
 [1155dc45-e4f7-44b8-af34-a91aa431475d]
 description = "Subtract purely real numbers"
-include = true
 
 [f95e9da8-acd5-4da4-ac7c-c861b02f774b]
 description = "Subtract purely imaginary numbers"
-include = true
 
 [f876feb1-f9d1-4d34-b067-b599a8746400]
 description = "Subtract numbers with real and imaginary part"
-include = true
 
 [8a0366c0-9e16-431f-9fd7-40ac46ff4ec4]
 description = "Multiply purely real numbers"
-include = true
 
 [e560ed2b-0b80-4b4f-90f2-63cefc911aaf]
 description = "Multiply purely imaginary numbers"
-include = true
 
 [4d1d10f0-f8d4-48a0-b1d0-f284ada567e6]
 description = "Multiply numbers with real and imaginary part"
-include = true
 
 [b0571ddb-9045-412b-9c15-cd1d816d36c1]
 description = "Divide purely real numbers"
-include = true
 
 [5bb4c7e4-9934-4237-93cc-5780764fdbdd]
 description = "Divide purely imaginary numbers"
-include = true
 
 [c4e7fef5-64ac-4537-91c2-c6529707701f]
 description = "Divide numbers with real and imaginary part"
-include = true
 
 [c56a7332-aad2-4437-83a0-b3580ecee843]
 description = "Absolute value of a positive purely real number"
-include = true
 
 [cf88d7d3-ee74-4f4e-8a88-a1b0090ecb0c]
 description = "Absolute value of a negative purely real number"
-include = true
 
 [bbe26568-86c1-4bb4-ba7a-da5697e2b994]
 description = "Absolute value of a purely imaginary number with positive imaginary part"
-include = true
 
 [3b48233d-468e-4276-9f59-70f4ca1f26f3]
 description = "Absolute value of a purely imaginary number with negative imaginary part"
-include = true
 
 [fe400a9f-aa22-4b49-af92-51e0f5a2a6d3]
 description = "Absolute value of a number with real and imaginary part"
-include = true
 
 [fb2d0792-e55a-4484-9443-df1eddfc84a2]
 description = "Conjugate a purely real number"
-include = true
 
 [e37fe7ac-a968-4694-a460-66cb605f8691]
 description = "Conjugate a purely imaginary number"
-include = true
 
 [f7704498-d0be-4192-aaf5-a1f3a7f43e68]
 description = "Conjugate a number with real and imaginary part"
-include = true
 
 [6d96d4c6-2edb-445b-94a2-7de6d4caaf60]
 description = "Euler's identity/formula"
-include = true
 
 [2d2c05a0-4038-4427-a24d-72f6624aa45f]
 description = "Exponential of 0"
-include = true
 
 [ed87f1bd-b187-45d6-8ece-7e331232c809]
 description = "Exponential of a purely real number"
-include = true
 
 [08eedacc-5a95-44fc-8789-1547b27a8702]
 description = "Exponential of a number with real and imaginary part"
-include = true

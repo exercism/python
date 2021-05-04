@@ -4,40 +4,30 @@
 
 [e0c08b07-9028-4d5f-91e1-d178fead8e1a]
 description = "puzzle with three letters"
-include = true
 
 [a504ee41-cb92-4ec2-9f11-c37e95ab3f25]
 description = "solution must have unique value for each letter"
-include = true
 
 [4e3b81d2-be7b-4c5c-9a80-cd72bc6d465a]
 description = "leading zero solution is invalid"
-include = true
 
 [8a3e3168-d1ee-4df7-94c7-b9c54845ac3a]
 description = "puzzle with two digits final carry"
-include = true
 
 [a9630645-15bd-48b6-a61e-d85c4021cc09]
 description = "puzzle with four letters"
-include = true
 
 [3d905a86-5a52-4e4e-bf80-8951535791bd]
 description = "puzzle with six letters"
-include = true
 
 [4febca56-e7b7-4789-97b9-530d09ba95f0]
 description = "puzzle with seven letters"
-include = true
 
 [12125a75-7284-4f9a-a5fa-191471e0d44f]
 description = "puzzle with eight letters"
-include = true
 
 [fb05955f-38dc-477a-a0b6-5ef78969fffa]
 description = "puzzle with ten letters"
-include = true
 
 [9a101e81-9216-472b-b458-b513a7adacf7]
 description = "puzzle with ten letters and 199 addends"
-include = true

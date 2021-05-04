@@ -4,36 +4,27 @@
 
 [5be01ffb-a814-47a8-a19f-490a5622ba07]
 description = "no users"
-include = true
 
 [382b70cc-9f6c-486d-9bee-fda2df81c803]
 description = "add user"
-include = true
 
 [d624e5e5-1abb-4f18-95b3-45d55c818dc3]
 description = "get single user"
-include = true
 
 [7a81b82c-7276-433e-8fce-29ce983a7c56]
 description = "both users have 0 balance"
-include = true
 
 [1c61f957-cf8c-48ba-9e77-b221ab068803]
 description = "borrower has negative balance"
-include = true
 
 [8a8567b3-c097-468a-9541-6bb17d5afc85]
 description = "lender has negative balance"
-include = true
 
 [29fb7c12-7099-4a85-a7c4-9c290d2dc01a]
 description = "lender owes borrower"
-include = true
 
 [ce969e70-163c-4135-a4a6-2c3a5da286f5]
 description = "lender owes borrower less than new loan"
-include = true
 
 [7f4aafd9-ae9b-4e15-a406-87a87bdf47a4]
 description = "lender owes borrower same as new loan"
-include = true

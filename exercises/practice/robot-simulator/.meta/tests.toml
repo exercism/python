@@ -4,72 +4,54 @@
 
 [c557c16d-26c1-4e06-827c-f6602cd0785c]
 description = "at origin facing north"
-include = true
 
 [bf0dffce-f11c-4cdb-8a5e-2c89d8a5a67d]
 description = "at negative position facing south"
-include = true
 
 [8cbd0086-6392-4680-b9b9-73cf491e67e5]
 description = "changes north to east"
-include = true
 
 [8abc87fc-eab2-4276-93b7-9c009e866ba1]
 description = "changes east to south"
-include = true
 
 [3cfe1b85-bbf2-4bae-b54d-d73e7e93617a]
 description = "changes south to west"
-include = true
 
 [5ea9fb99-3f2c-47bd-86f7-46b7d8c3c716]
 description = "changes west to north"
-include = true
 
 [fa0c40f5-6ba3-443d-a4b3-58cbd6cb8d63]
 description = "changes north to west"
-include = true
 
 [da33d734-831f-445c-9907-d66d7d2a92e2]
 description = "changes west to south"
-include = true
 
 [bd1ca4b9-4548-45f4-b32e-900fc7c19389]
 description = "changes south to east"
-include = true
 
 [2de27b67-a25c-4b59-9883-bc03b1b55bba]
 description = "changes east to north"
-include = true
 
 [f0dc2388-cddc-4f83-9bed-bcf46b8fc7b8]
 description = "facing north increments Y"
-include = true
 
 [2786cf80-5bbf-44b0-9503-a89a9c5789da]
 description = "facing south decrements Y"
-include = true
 
 [84bf3c8c-241f-434d-883d-69817dbd6a48]
 description = "facing east increments X"
-include = true
 
 [bb69c4a7-3bbf-4f64-b415-666fa72d7b04]
 description = "facing west decrements X"
-include = true
 
 [e34ac672-4ed4-4be3-a0b8-d9af259cbaa1]
 description = "moving east and north from README"
-include = true
 
 [f30e4955-4b47-4aa3-8b39-ae98cfbd515b]
 description = "moving west and north"
-include = true
 
 [3e466bf6-20ab-4d79-8b51-264165182fca]
 description = "moving west and south"
-include = true
 
 [41f0bb96-c617-4e6b-acff-a4b279d44514]
 description = "moving east and north"
-include = true

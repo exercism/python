@@ -4,64 +4,48 @@
 
 [2ee1d9af-1c43-416c-b41b-cefd7d4d2b2a]
 description = "encode yes"
-include = true
 
 [785bade9-e98b-4d4f-a5b0-087ba3d7de4b]
 description = "encode no"
-include = true
 
 [2854851c-48fb-40d8-9bf6-8f192ed25054]
 description = "encode OMG"
-include = true
 
 [bc0c1244-b544-49dd-9777-13a770be1bad]
 description = "encode O M G"
-include = true
 
 [381a1a20-b74a-46ce-9277-3778625c9e27]
 description = "encode mindblowingly"
-include = true
 
 [6686f4e2-753b-47d4-9715-876fdc59029d]
 description = "encode numbers"
-include = true
 
 [ae23d5bd-30a8-44b6-afbe-23c8c0c7faa3]
 description = "encode deep thought"
-include = true
 
 [c93a8a4d-426c-42ef-9610-76ded6f7ef57]
 description = "encode all the letters"
-include = true
 
 [0673638a-4375-40bd-871c-fb6a2c28effb]
 description = "encode with a not coprime to m"
-include = true
 
 [3f0ac7e2-ec0e-4a79-949e-95e414953438]
 description = "decode exercism"
-include = true
 
 [241ee64d-5a47-4092-a5d7-7939d259e077]
 description = "decode a sentence"
-include = true
 
 [33fb16a1-765a-496f-907f-12e644837f5e]
 description = "decode numbers"
-include = true
 
 [20bc9dce-c5ec-4db6-a3f1-845c776bcbf7]
 description = "decode all the letters"
-include = true
 
 [623e78c0-922d-49c5-8702-227a3e8eaf81]
 description = "decode with no spaces in input"
-include = true
 
 [58fd5c2a-1fd9-4563-a80a-71cff200f26f]
 description = "decode with too many spaces"
-include = true
 
 [b004626f-c186-4af9-a3f4-58f74cdb86d5]
 description = "decode with a not coprime to m"
-include = true

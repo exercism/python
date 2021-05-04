@@ -4,68 +4,51 @@
 
 [81ec11da-38dd-442a-bcf9-3de7754609a5]
 description = "paired square brackets"
-include = true
 
 [287f0167-ac60-4b64-8452-a0aa8f4e5238]
 description = "empty string"
-include = true
 
 [6c3615a3-df01-4130-a731-8ef5f5d78dac]
 description = "unpaired brackets"
-include = true
 
 [9d414171-9b98-4cac-a4e5-941039a97a77]
 description = "wrong ordered brackets"
-include = true
 
 [f0f97c94-a149-4736-bc61-f2c5148ffb85]
 description = "wrong closing bracket"
-include = true
 
 [754468e0-4696-4582-a30e-534d47d69756]
 description = "paired with whitespace"
-include = true
 
 [ba84f6ee-8164-434a-9c3e-b02c7f8e8545]
 description = "partially paired brackets"
-include = true
 
 [3c86c897-5ff3-4a2b-ad9b-47ac3a30651d]
 description = "simple nested brackets"
-include = true
 
 [2d137f2c-a19e-4993-9830-83967a2d4726]
 description = "several paired brackets"
-include = true
 
 [2e1f7b56-c137-4c92-9781-958638885a44]
 description = "paired and nested brackets"
-include = true
 
 [84f6233b-e0f7-4077-8966-8085d295c19b]
 description = "unopened closing brackets"
-include = true
 
 [9b18c67d-7595-4982-b2c5-4cb949745d49]
 description = "unpaired and nested brackets"
-include = true
 
 [a0205e34-c2ac-49e6-a88a-899508d7d68e]
 description = "paired and wrong nested brackets"
-include = true
 
 [ef47c21b-bcfd-4998-844c-7ad5daad90a8]
 description = "paired and incomplete brackets"
-include = true
 
 [a4675a40-a8be-4fc2-bc47-2a282ce6edbe]
 description = "too many closing brackets"
-include = true
 
 [99255f93-261b-4435-a352-02bdecc9bdf2]
 description = "math expression"
-include = true
 
 [8e357d79-f302-469a-8515-2561877256a1]
 description = "complex latex expression"
-include = true

@@ -4,20 +4,15 @@
 
 [75c65189-8aef-471a-81de-0a90c728160c]
 description = "first prime"
-include = true
 
 [2c38804c-295f-4701-b728-56dea34fd1a0]
 description = "second prime"
-include = true
 
 [56692534-781e-4e8c-b1f9-3e82c1640259]
 description = "sixth prime"
-include = true
 
 [fce1e979-0edb-412d-93aa-2c744e8f50ff]
 description = "big prime"
-include = true
 
 [bd0a9eae-6df7-485b-a144-80e13c7d55b2]
 description = "there is no zeroth prime"
-include = true

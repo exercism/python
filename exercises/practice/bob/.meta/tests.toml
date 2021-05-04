@@ -4,100 +4,75 @@
 
 [e162fead-606f-437a-a166-d051915cea8e]
 description = "stating something"
-include = true
 
 [73a966dc-8017-47d6-bb32-cf07d1a5fcd9]
 description = "shouting"
-include = true
 
 [d6c98afd-df35-4806-b55e-2c457c3ab748]
 description = "shouting gibberish"
-include = true
 
 [8a2e771d-d6f1-4e3f-b6c6-b41495556e37]
 description = "asking a question"
-include = true
 
 [81080c62-4e4d-4066-b30a-48d8d76920d9]
 description = "asking a numeric question"
-include = true
 
 [2a02716d-685b-4e2e-a804-2adaf281c01e]
 description = "asking gibberish"
-include = true
 
 [c02f9179-ab16-4aa7-a8dc-940145c385f7]
 description = "talking forcefully"
-include = true
 
 [153c0e25-9bb5-4ec5-966e-598463658bcd]
 description = "using acronyms in regular speech"
-include = true
 
 [a5193c61-4a92-4f68-93e2-f554eb385ec6]
 description = "forceful question"
-include = true
 
 [a20e0c54-2224-4dde-8b10-bd2cdd4f61bc]
 description = "shouting numbers"
-include = true
 
 [f7bc4b92-bdff-421e-a238-ae97f230ccac]
 description = "no letters"
-include = true
 
 [bb0011c5-cd52-4a5b-8bfb-a87b6283b0e2]
 description = "question with no letters"
-include = true
 
 [496143c8-1c31-4c01-8a08-88427af85c66]
 description = "shouting with special characters"
-include = true
 
 [e6793c1c-43bd-4b8d-bc11-499aea73925f]
 description = "shouting with no exclamation mark"
-include = true
 
 [aa8097cc-c548-4951-8856-14a404dd236a]
 description = "statement containing question mark"
-include = true
 
 [9bfc677d-ea3a-45f2-be44-35bc8fa3753e]
 description = "non-letters with question"
-include = true
 
 [8608c508-f7de-4b17-985b-811878b3cf45]
 description = "prattling on"
-include = true
 
 [bc39f7c6-f543-41be-9a43-fd1c2f753fc0]
 description = "silence"
-include = true
 
 [d6c47565-372b-4b09-b1dd-c40552b8378b]
 description = "prolonged silence"
-include = true
 
 [4428f28d-4100-4d85-a902-e5a78cb0ecd3]
 description = "alternate silence"
-include = true
 
 [66953780-165b-4e7e-8ce3-4bcb80b6385a]
 description = "multiple line question"
-include = true
 
 [5371ef75-d9ea-4103-bcfa-2da973ddec1b]
 description = "starting with whitespace"
-include = true
 
 [05b304d6-f83b-46e7-81e0-4cd3ca647900]
 description = "ending with whitespace"
-include = true
 
 [72bd5ad3-9b2f-4931-a988-dce1f5771de2]
 description = "other whitespace"
-include = true
 
 [12983553-8601-46a8-92fa-fcaa3bc4a2a0]
 description = "non-question ending with whitespace"
-include = true

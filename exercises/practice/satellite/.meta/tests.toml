@@ -4,24 +4,18 @@
 
 [8df3fa26-811a-4165-9286-ff9ac0850d19]
 description = "Empty tree"
-include = true
 
 [f945ccfc-05e3-47d7-825b-0270559d43ad]
 description = "Tree with one item"
-include = true
 
 [a0121d5f-37b0-48dd-9c64-cba4c4464135]
 description = "Tree with many items"
-include = true
 
 [6074041f-4891-4d81-a128-401050c2a3b0]
 description = "Reject traversals of different length"
-include = true
 
 [27916ce4-45f3-4d8b-8528-496fedc157ca]
 description = "Reject inconsistent traversals of same length"
-include = true
 
 [d86a3d72-76a9-43b5-9d3a-e64cb1216035]
 description = "Reject traversals with repeated items"
-include = true

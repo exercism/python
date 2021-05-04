@@ -4,24 +4,18 @@
 
 [c3b7d806-dced-49ee-8543-933fd1719b1c]
 description = "an empty string"
-include = true
 
 [01ebf55b-bebb-414e-9dec-06f7bb0bee3c]
 description = "a word"
-include = true
 
 [0f7c07e4-efd1-4aaa-a07a-90b49ce0b746]
 description = "a capitalized word"
-include = true
 
 [71854b9c-f200-4469-9f5c-1e8e5eff5614]
 description = "a sentence with punctuation"
-include = true
 
 [1f8ed2f3-56f3-459b-8f3e-6d8d654a1f6c]
 description = "a palindrome"
-include = true
 
 [b9e7dec1-c6df-40bd-9fa3-cd7ded010c4c]
 description = "an even-sized word"
-include = true

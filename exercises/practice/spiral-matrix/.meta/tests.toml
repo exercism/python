@@ -4,24 +4,18 @@
 
 [8f584201-b446-4bc9-b132-811c8edd9040]
 description = "empty spiral"
-include = true
 
 [e40ae5f3-e2c9-4639-8116-8a119d632ab2]
 description = "trivial spiral"
-include = true
 
 [cf05e42d-eb78-4098-a36e-cdaf0991bc48]
 description = "spiral of size 2"
-include = true
 
 [1c475667-c896-4c23-82e2-e033929de939]
 description = "spiral of size 3"
-include = true
 
 [05ccbc48-d891-44f5-9137-f4ce462a759d]
 description = "spiral of size 4"
-include = true
 
 [f4d2165b-1738-4e0c-bed0-c459045ae50d]
 description = "spiral of size 5"
-include = true
