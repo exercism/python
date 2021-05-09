@@ -146,6 +146,10 @@ class RationalNumbersTest(unittest.TestCase):
     def test_reduce_one_to_lowest_terms(self):
         self.assertEqual(Rational(13, 13), Rational(1, 1))
 
+    # Utility functions
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
+
 
 if __name__ == "__main__":
     unittest.main()
