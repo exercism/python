@@ -142,6 +142,10 @@ class RobotSimulatorTest(unittest.TestCase):
         self.assertEqual(robot.coordinates, (11, 5))
         self.assertEqual(robot.direction, NORTH)
 
+    # Utility functions
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
+
 
 if __name__ == "__main__":
     unittest.main()
