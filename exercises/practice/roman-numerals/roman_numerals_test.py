@@ -63,6 +63,10 @@ class RomanNumeralsTest(unittest.TestCase):
     def test_3000_is_mmm(self):
         self.assertEqual(roman(3000), "MMM")
 
+    # Utility functions
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
+
 
 if __name__ == "__main__":
     unittest.main()
