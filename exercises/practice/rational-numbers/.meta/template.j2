@@ -94,4 +94,4 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
             {{ render_other_cases(mathtypescases) }}
         {% endif %}
     {% endfor %}
-{{ macros.footer() }}
+{{ macros.footer(True) }}
