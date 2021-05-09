@@ -21,4 +21,4 @@ class {{ case["description"] | camel_case }}Test(unittest.TestCase):
     {% endfor %}
 {% endfor %}
 
-{{ macros.footer() }}
+{{ macros.footer(True) }}
