@@ -54,6 +54,10 @@ class RunLengthEncodingTest(unittest.TestCase):
     def test_encode_followed_by_decode_gives_original_string(self):
         self.assertMultiLineEqual(decode(encode("zzz ZZ  zZ")), "zzz ZZ  zZ")
 
+    # Utility functions
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
+
 
 if __name__ == "__main__":
     unittest.main()
