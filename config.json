@@ -20,18 +20,10 @@
     "average_run_time": 2.0
   },
   "files": {
-    "solution": [
-      "%{snake_slug}.py"
-    ],
-    "test": [
-      "%{snake_slug}_test.py"
-    ],
-    "example": [
-      ".meta/example.py"
-    ],
-    "exemplar": [
-      ".meta/exemplar.py"
-    ]
+    "solution": ["%{snake_slug}.py"],
+    "test": ["%{snake_slug}_test.py"],
+    "example": [".meta/example.py"],
+    "exemplar": [".meta/exemplar.py"]
   },
   "exercises": {
     "concept": [
@@ -39,36 +31,23 @@
         "slug": "processing-logs",
         "name": "Processing Logs",
         "uuid": "5a9b42fb-ddf4-424b-995d-f9952ea63c37",
-        "concepts": [
-          "strings"
-        ],
-        "prerequisites": [
-          "basics"
-        ],
+        "concepts": ["strings"],
+        "prerequisites": ["basics"],
         "status": "wip"
       },
       {
         "slug": "tisbury-treasure-hunt",
         "name": "Tisbury Treasure Hunt",
         "uuid": "7ecd42c1-2ed5-487a-bc89-71c9cbad9b05",
-        "concepts": [
-          "tuples"
-        ],
-        "prerequisites": [
-          "bools",
-          "loops",
-          "conditionals",
-          "numbers"
-        ],
+        "concepts": ["tuples"],
+        "prerequisites": ["bools", "loops", "conditionals", "numbers"],
         "status": "wip"
       },
       {
         "slug": "guidos-gorgeous-lasagna",
         "name": "Guido's Gorgeous Lasagna",
         "uuid": "dfd7dc01-3544-4f61-a063-af8530d6e601",
-        "concepts": [
-          "basics"
-        ],
+        "concepts": ["basics"],
         "prerequisites": [],
         "status": "wip"
       },
@@ -76,50 +55,39 @@
         "slug": "ghost-gobble-arcade-game",
         "name": "Ghost Gobble Arcade Game",
         "uuid": "c050470d-ef22-4187-aaac-239e07955a4d",
-        "concepts": [
-          "bools"
-        ],
-        "prerequisites": [
-          "basics"
-        ],
+        "concepts": ["bools"],
+        "prerequisites": ["basics"],
+        "status": "wip"
+      },
+      {
+        "slug": "black-jack",
+        "name": "Black Jack",
+        "uuid": "e1a6075e-0c5e-48cd-8c50-69140961a06a",
+        "concepts": ["comparisons"],
+        "prerequisites": ["basics"],
         "status": "wip"
       },
       {
         "slug": "pretty-leaflet",
         "name": "Pretty Leaflet",
         "uuid": "5b813a3a-1983-470b-91a1-9f2c0b327ab7",
-        "concepts": [
-          "string-formatting"
-        ],
-        "prerequisites": [
-          "strings",
-          "classes",
-          "loops",
-          "lists"
-        ],
+        "concepts": ["string-formatting"],
+        "prerequisites": ["strings", "classes", "loops", "lists"],
         "status": "wip"
       },
       {
         "slug": "inventory-management",
         "name": "Inventory Management",
         "uuid": "0558b66c-f2c8-4ff3-846a-4ac87a8660d9",
-        "concepts": [
-          "dicts"
-        ],
-        "prerequisites": [
-          "loops",
-          "lists",
-          "tuples"
-        ],
+        "concepts": ["dicts"],
+        "prerequisites": ["loops", "lists", "tuples"],
         "status": "wip"
       },
       {
         "slug": "log-levels",
         "name": "Log Levels",
         "uuid": "083f29eb-734f-4d4a-9f27-3e8ceedc29b1",
-        "concepts": [
-          "enums"
-        ],
+        "concepts": ["enums"],
         "prerequisites": [
           "classes",
           "conditionals",
@@ -136,34 +104,23 @@
         "slug": "elyses-enchantments",
         "name": "Elyse's Enchantments",
         "uuid": "d76958ce-3a5b-4e4c-9388-b109f67cf23a",
-        "concepts": [
-          "lists"
-        ],
-        "prerequisites": [
-          "conditionals",
-          "strings"
-        ],
+        "concepts": ["lists"],
+        "prerequisites": ["conditionals", "strings"],
         "status": "wip"
       },
       {
         "slug": "chaitanas-colossal-coaster",
         "name": "Chaitana's Colossal Coaster",
         "uuid": "f326f3f8-1ab0-4d3d-8f42-5130fe5af841",
-        "concepts": [
-          "list-methods"
-        ],
-        "prerequisites": [
-          "lists"
-        ],
+        "concepts": ["list-methods"],
+        "prerequisites": ["lists"],
         "status": "wip"
       },
       {
         "slug": "restaurant-rozalynn",
         "name": "Restaurant Rozalynn",
         "uuid": "72c9aa99-20be-4e96-8ade-56c26d598498",
-        "concepts": [
-          "none"
-        ],
+        "concepts": ["none"],
         "prerequisites": [
           "bools",
           "conditionals",
@@ -178,9 +135,7 @@
         "slug": "making-the-grade",
         "name": "Making the Grade",
         "uuid": "f6a8d4bd-4ead-438f-b44f-d3578be1702f",
-        "concepts": [
-          "loops"
-        ],
+        "concepts": ["loops"],
         "prerequisites": [
           "basics",
           "comparisons",
@@ -195,25 +150,16 @@
         "slug": "little-sisters-essay",
         "name": "Little Sister's Essay",
         "uuid": "09c322bc-5c04-480b-8441-fd9ef5c7a3b4",
-        "concepts": [
-          "string-methods"
-        ],
-        "prerequisites": [
-          "basics",
-          "strings"
-        ],
+        "concepts": ["string-methods"],
+        "prerequisites": ["basics", "strings"],
         "status": "wip"
       },
       {
         "slug": "currency-exchange",
         "name": "Currency Exchange",
         "uuid": "1335ca33-3af0-4720-bcf2-bfa68ffc6862",
-        "concepts": [
-          "numbers"
-        ],
-        "prerequisites": [
-          "basics"
-        ],
+        "concepts": ["numbers"],
+        "prerequisites": ["basics"],
         "status": "wip"
       }
     ],
@@ -230,15 +176,8 @@
         "slug": "two-fer",
         "name": "Two Fer",
         "uuid": "4177de10-f767-4306-b45d-5e9c08ef4753",
-        "practices": [
-          "string-formatting",
-          "function-arguments"
-        ],
-        "prerequisites": [
-          "basics",
-          "string-formatting",
-          "function-arguments"
-        ],
+        "practices": ["string-formatting", "function-arguments"],
+        "prerequisites": ["basics", "string-formatting", "function-arguments"],
         "difficulty": 1
       },
       {
@@ -269,17 +208,8 @@
         "slug": "high-scores",
         "name": "High Scores",
         "uuid": "574d6323-5ff5-4019-9ebe-0067daafba13",
-        "practices": [
-          "sequences",
-          "lists",
-          "list-methods"
-        ],
-        "prerequisites": [
-          "basics",
-          "lists",
-          "list-methods",
-          "sequences"
-        ],
+        "practices": ["sequences", "lists", "list-methods"],
+        "prerequisites": ["basics", "lists", "list-methods", "sequences"],
         "difficulty": 1
       },
       {
@@ -342,12 +272,7 @@
         "slug": "isogram",
         "name": "Isogram",
         "uuid": "d1a98c79-d3cc-4035-baab-0e334d2b6a57",
-        "practices": [
-          "sets",
-          "strings",
-          "string-methods",
-          "comparisons"
-        ],
+        "practices": ["sets", "strings", "string-methods", "comparisons"],
         "prerequisites": [
           "basics",
           "bools",
@@ -577,10 +502,7 @@
         "slug": "markdown",
         "name": "Markdown",
         "uuid": "88610b9a-6d3e-4924-a092-6d2f907ed4e2",
-        "practices": [
-          "regular-expressions",
-          "functions"
-        ],
+        "practices": ["regular-expressions", "functions"],
         "prerequisites": [
           "basics",
           "conditionals",
@@ -690,9 +612,7 @@
         "slug": "pangram",
         "name": "Pangram",
         "uuid": "bebf7ae6-1c35-48bc-926b-e053a975eb10",
-        "practices": [
-          "sets"
-        ],
+        "practices": ["sets"],
         "prerequisites": [
           "basics",
           "bools",
@@ -1043,10 +963,7 @@
         "slug": "triangle",
         "name": "Triangle",
         "uuid": "f0bc144f-3226-4e53-93ee-e60316b29e31",
-        "practices": [
-          "bools",
-          "comparisons"
-        ],
+        "practices": ["bools", "comparisons"],
         "prerequisites": [
           "basics",
           "bools",
@@ -1061,10 +978,7 @@
         "slug": "grains",
         "name": "Grains",
         "uuid": "a24e6d34-9952-44f4-a0cd-02c7fedb4875",
-        "practices": [
-          "numbers",
-          "raising-and-handling-errors"
-        ],
+        "practices": ["numbers", "raising-and-handling-errors"],
         "prerequisites": [
           "basics",
           "numbers",
@@ -1884,11 +1798,7 @@
         "slug": "etl",
         "name": "Etl",
         "uuid": "a3b24ef2-303a-494e-8804-e52a67ef406b",
-        "practices": [
-          "dicts",
-          "dict-methods",
-          "other-comprehensions"
-        ],
+        "practices": ["dicts", "dict-methods", "other-comprehensions"],
         "prerequisites": [
           "basics",
           "list-comprehensions",
@@ -3557,9 +3467,7 @@
         "slug": "accumulate",
         "name": "Accumulate",
         "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
-        "practices": [
-          "list-comprehensions"
-        ],
+        "practices": ["list-comprehensions"],
         "prerequisites": [
           "basics",
           "loops",
@@ -3718,13 +3626,7 @@
         "slug": "parallel-letter-frequency",
         "name": "Parallel Letter Frequency",
         "uuid": "da03fca4-4606-48d8-9137-6e40396f7759",
-        "practices": [
-          "lists",
-          "loops",
-          "strings",
-          "string-methods",
-          "dicts"
-        ],
+        "practices": ["lists", "loops", "strings", "string-methods", "dicts"],
         "prerequisites": [
           "basics",
           "bools",
@@ -3839,10 +3741,7 @@
         "slug": "strain",
         "name": "Strain",
         "uuid": "b50b29a1-782d-4277-a4d4-23f635fbdaa6",
-        "practices": [
-          "conditionals",
-          "list-comprehensions"
-        ],
+        "practices": ["conditionals", "list-comprehensions"],
         "prerequisites": [
           "basics",
           "bools",
@@ -3929,9 +3828,7 @@
         "slug": "gigasecond",
         "name": "Gigasecond",
         "uuid": "22606e91-57f3-44cf-ab2d-94f6ee6402e8",
-        "practices": [
-          "numbers"
-        ],
+        "practices": ["numbers"],
         "prerequisites": [
           "basics",
           "bools",
@@ -3945,27 +3842,15 @@
         "slug": "leap",
         "name": "Leap",
         "uuid": "b6acda85-5f62-4d9c-bb4f-42b7a360355a",
-        "practices": [
-          "bools",
-          "conditionals",
-          "numbers"
-        ],
-        "prerequisites": [
-          "basics",
-          "bools",
-          "conditionals",
-          "numbers"
-        ],
+        "practices": ["bools", "conditionals", "numbers"],
+        "prerequisites": ["basics", "bools", "conditionals", "numbers"],
         "difficulty": 1
       },
       {
         "slug": "resistor-color",
         "name": "Resistor Color",
         "uuid": "d17bee9c-e803-4745-85ea-864f255fb04e",
-        "practices": [
-          "lists",
-          "list-methods"
-        ],
+        "practices": ["lists", "list-methods"],
         "prerequisites": [
           "basics",
           "bools",
@@ -3980,12 +3865,7 @@
         "slug": "resistor-color-duo",
         "name": "Resistor Color Duo",
         "uuid": "089f06a6-0759-479c-8c00-d699525a1e22",
-        "practices": [
-          "lists",
-          "list-methods",
-          "numbers",
-          "sequences"
-        ],
+        "practices": ["lists", "list-methods", "numbers", "sequences"],
         "prerequisites": [
           "basics",
           "bools",
@@ -4114,12 +3994,7 @@
         "slug": "darts",
         "name": "Darts",
         "uuid": "cb581e2c-66ab-4221-9884-44bacb7c4ebe",
-        "practices": [
-          "bools",
-          "conditionals",
-          "comparisons",
-          "numbers"
-        ],
+        "practices": ["bools", "conditionals", "comparisons", "numbers"],
         "prerequisites": [
           "basics",
           "bools",
@@ -4308,9 +4183,7 @@
         "difficulty": 7
       }
     ],
-    "foregone": [
-      "lens-person"
-    ]
+    "foregone": ["lens-person"]
   },
   "concepts": [
     {
