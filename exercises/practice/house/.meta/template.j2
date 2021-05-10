@@ -2,8 +2,7 @@
 {{ macros.header()}}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
-    {% for casegroup in cases -%}
-    {% for case in casegroup["cases"] -%}
+    {% for case in cases -%}
     {%- set input = case["input"] -%}
     def test_{{ case["description"] | to_snake }}(self):
         self.assertEqual(
@@ -11,6 +10,5 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
             {{ case["expected"] }}
         )
     {% endfor %}
-    {% endfor %}
 
-{{ macros.footer(True) }}
+{{ macros.footer() }}

@@ -10,9 +10,7 @@
 {{ macros.header()}}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
-    {% for supercase in cases %}{% for case in supercase["cases"] -%}
+    {% for case in cases %}
     {{ test_case(case) }}
-    {% endfor %}{% endfor %}
-
-
-{{ macros.footer(True)}}
+    {% endfor %}
+{{ macros.footer() }}
