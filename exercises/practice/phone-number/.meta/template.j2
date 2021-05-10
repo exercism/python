@@ -3,7 +3,7 @@
 {{ macros.header([class]) }}
 
 class {{ class }}Test(unittest.TestCase):
-    {% for case in cases[0]["cases"] -%}
+    {% for case in cases -%}
     def test_{{ case["description"] | to_snake }}(self):
         {% if "error" in case["expected"] -%}
         with self.assertRaisesWithMessage(ValueError):
