@@ -3,13 +3,12 @@ from datetime import datetime
 {{ macros.header() }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
-    {% for supercase in cases -%}
-    {% for case in supercase["cases"] -%}
+    {% for case in cases -%}
     {% set input = case["input"]["moment"] | parse_datetime(strip_module=true) -%}
     {% set expected = case["expected"] | parse_datetime(strip_module=true) -%}
     def test_{{ case["description"] | to_snake }}(self):
         self.assertEqual({{ case["property"] }}({{ input }}), {{ expected }})
     {% endfor %}
-    {% endfor %}
 
-{{ macros.footer(True) }}
+
+{{ macros.footer() }}

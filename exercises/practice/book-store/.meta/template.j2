@@ -8,10 +8,8 @@
 {{ macros.header() }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
-    {% for casegroup in cases %}
-    {% for case in casegroup["cases"] -%}
+    {% for case in cases %}
     {{ test_case(case) }}
-    {% endfor %}
     {% endfor %}
 
     {% if additional_cases | length -%}

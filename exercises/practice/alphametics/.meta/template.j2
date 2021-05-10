@@ -2,7 +2,7 @@
 {{ macros.header() }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
-    {% for case in cases[0]["cases"] -%}
+    {% for case in cases -%}
     {% set description = case["description"] | to_snake -%}
     {% set testdef = "def test_" ~ description ~ "(self):" -%}
     {% set value = case["input"]["puzzle"] -%}
@@ -30,4 +30,4 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         {% endif %}
     {% endfor %}
 
-{{ macros.footer(True)}}
+{{ macros.footer()}}

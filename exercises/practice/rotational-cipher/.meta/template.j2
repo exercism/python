@@ -2,8 +2,7 @@
 {{ macros.header() }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
-    {% for supercase in cases %}
-        {% for case in supercase["cases"] -%}
+    {% for case in cases %}
         def test_{{ case["description"] | to_snake }}(self):
             {%- set text = case["input"]["text"] %}
             {%- set shiftKey = case["input"]["shiftKey"] %}
@@ -11,6 +10,5 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
             self.assertEqual({{ case["property"] }}("{{ text }}", {{ shiftKey }}), "{{ expected }}")
             
         {% endfor %}
-    {% endfor %}
 
-{{ macros.footer(True) }}
+{{ macros.footer() }}
