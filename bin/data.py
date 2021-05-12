@@ -50,10 +50,6 @@ class EditorSettings:
     indent_size: int = 4
     ace_editor_language: str = "python"
     highlightjs_language: str = "python"
-<<<<<<< HEAD
-
-=======
->>>>>>> Gracefully fail with user-friendly error text when unrecognized dataclass fields are detected
 
     def __post_init__(self):
         if isinstance(self.indent_style, str):
