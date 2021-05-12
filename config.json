@@ -16,6 +16,9 @@
     "ace_editor_language": "python",
     "highlightjs_language": "python"
   },
+  "test_runner": {
+    "average_run_time": 2.0
+  },
   "files": {
     "solution": [
       "%{snake_slug}.py"
