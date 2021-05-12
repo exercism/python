@@ -10,32 +10,48 @@ from typing import List, Any, Dict, Type
 
 def _custom_dataclass_init(self, *args, **kwargs):
     # print(self.__class__.__name__, "__init__")
-    positional_count = len([
-        f.name
-        for f in fields(self)
-        if isinstance(f.default, dataclasses._MISSING_TYPE)
-    ])
     names = [f.name for f in fields(self)]
-    for i, v in enumerate(args):
-        k = names[i]
+    used_names = set()
+
+    # Handle positional arguments
+    for v in args:
+        try:
+            k = names.pop(0)
+        except IndexError:
+            raise TypeError(f"__init__() given too many positional arguments")
         # print(f'setting {k}={v}')
         setattr(self, k, v)
-    if i < positional_count - 1:
-        raise TypeError(f"__init__() missing {positional_count - i - 1} required positional argument")
-    elif i >= len(names):
-        raise TypeError(f"__init__() too many positional arguments given")
+        used_names.add(k)
+
+    # Handle keyword arguments
     for k, v in kwargs.items():
         if k in names:
-            if hasattr(self, k):
-                raise TypeError(f"__init__() got multiple values for argument '{k}'")
             # print(f'setting {k}={v}')
             setattr(self, k, v)
+            used_names.add(k)
+        elif k in used_names:
+            raise TypeError(f"__init__() got multiple values for argument '{k}'")
         else:
             raise TypeError(
                 f"Unrecognized field '{k}' for dataclass {self.__class__.__name__}."
                 "\nIf this field is valid, please add it to the dataclass in data.py."
                 "\nIf adding an object-type field, please create a new dataclass for it."
             )
+
+    # Check for missing positional arguments
+    missing = [
+        f"'{f.name}'" for f in fields(self)
+        if isinstance(f.default, dataclasses._MISSING_TYPE) and f.name not in used_names
+    ]
+    if len(missing) == 1:
+        raise TypeError(f"__init__() missing 1 required positional argument: {missing[0]}")
+    elif len(missing) == 2:
+        raise TypeError(f"__init__() missing 2 required positional arguments: {' and '.join(missing)}")
+    elif len(missing) != 0:
+        missing[-1] = f"and {missing[-1]}"
+        raise TypeError(f"__init__() missing {len(missing)} required positional arguments: {', '.join(missing)}")
+
+    # Run post init if available
     if hasattr(self, "__post_init__"):
         self.__post_init__()
 
