@@ -21,12 +21,17 @@ class IndentStyle(str, Enum):
 
 
 @dataclass
+class TestRunnerSettings:
+    average_run_time: float = -1
+
+
+@dataclass
 class EditorSettings:
     indent_style: IndentStyle = IndentStyle.Space
     indent_size: int = 4
     ace_editor_language: str = "python"
     highlightjs_language: str = "python"
-        
+
 
     def __post_init__(self):
         if isinstance(self.indent_style, str):
@@ -218,6 +223,7 @@ class Config:
     concepts: List[Concept]
     key_features: List[Feature] = None
     tags: List[Any] = None
+    test_runner: TestRunnerSettings = None
     files: FilePatterns = None
 
     def __post_init__(self):
@@ -225,6 +231,8 @@ class Config:
             self.status = TrackStatus(**self.status)
         if isinstance(self.online_editor, dict):
             self.online_editor = EditorSettings(**self.online_editor)
+        if isinstance(self.test_runner, dict):
+            self.test_runner = TestRunnerSettings(**self.test_runner)
         if isinstance(self.exercises, dict):
             self.exercises = Exercises(**self.exercises)
         if isinstance(self.files, dict):
