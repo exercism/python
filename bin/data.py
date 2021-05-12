@@ -1,5 +1,5 @@
 from enum import Enum
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass, asdict, fields
 from itertools import chain
 import json
 from pathlib import Path
@@ -7,8 +7,25 @@ import toml
 from typing import List, Any, Dict
 
 
+def _custom_dataclass_init(self, **kwargs):
+    names = set([f.name for f in fields(self)])
+    for k, v in kwargs.items():
+        if k in names:
+            setattr(self, k, v)
+        else:
+            raise TypeError(
+                f"Unrecognized field '{k}' for dataclass {self.__class__.__name__}."
+                "\nIf this field is valid, please add it to the dataclass in data.py."
+                "\nIf adding an object-type field, please create a new dataclass for it."
+            )
+    if hasattr(self, "__post_init__"):
+        self.__post_init__()
+
+
 @dataclass
 class TrackStatus:
+    __init__ = _custom_dataclass_init
+
     concept_exercises: bool = False
     test_runner: bool = False
     representer: bool = False
@@ -27,11 +44,16 @@ class TestRunnerSettings:
 
 @dataclass
 class EditorSettings:
+    __init__ = _custom_dataclass_init
+
     indent_style: IndentStyle = IndentStyle.Space
     indent_size: int = 4
     ace_editor_language: str = "python"
     highlightjs_language: str = "python"
+<<<<<<< HEAD
 
+=======
+>>>>>>> Gracefully fail with user-friendly error text when unrecognized dataclass fields are detected
 
     def __post_init__(self):
         if isinstance(self.indent_style, str):
@@ -47,6 +69,8 @@ class ExerciseStatus(str, Enum):
 
 @dataclass
 class ExerciseFiles:
+    __init__ = _custom_dataclass_init
+
     solution: List[str]
     test: List[str]
     exemplar: List[str] = None
@@ -71,6 +95,8 @@ class ExerciseFiles:
 
 @dataclass
 class ExerciseConfig:
+    __init__ = _custom_dataclass_init
+
     files: ExerciseFiles
     authors: List[str] = None
     forked_from: str = None
@@ -95,6 +121,8 @@ class ExerciseConfig:
 
 @dataclass
 class ExerciseInfo:
+    __init__ = _custom_dataclass_init
+
     path: Path
     slug: str
     name: str
@@ -160,6 +188,8 @@ class ExerciseInfo:
 
 @dataclass
 class Exercises:
+    __init__ = _custom_dataclass_init
+
     concept: List[ExerciseInfo]
     practice: List[ExerciseInfo]
     foregone: List[str] = None
@@ -190,6 +220,8 @@ class Exercises:
 
 @dataclass
 class Concept:
+    __init__ = _custom_dataclass_init
+
     uuid: str
     slug: str
     name: str
@@ -197,6 +229,8 @@ class Concept:
 
 @dataclass
 class Feature:
+    __init__ = _custom_dataclass_init
+
     title: str
     content: str
     icon: str
@@ -204,6 +238,8 @@ class Feature:
 
 @dataclass
 class FilePatterns:
+    __init__ = _custom_dataclass_init
+
     solution: List[str]
     test: List[str]
     example: List[str]
@@ -212,6 +248,8 @@ class FilePatterns:
 
 @dataclass
 class Config:
+    __init__ = _custom_dataclass_init
+
     language: str
     slug: str
     active: bool
@@ -253,10 +291,15 @@ class Config:
         except IOError:
             print(f"FAIL: {path} file not found")
             raise SystemExit(1)
+        except TypeError as e:
+            print(f"FAIL: {e}")
+            raise SystemExit(1)
 
 
 @dataclass
 class TestCaseTOML:
+    __init__ = _custom_dataclass_init
+
     uuid: str
     description: str
     include: bool = True
@@ -265,6 +308,8 @@ class TestCaseTOML:
 
 @dataclass
 class TestsTOML:
+    __init__ = _custom_dataclass_init
+
     cases: Dict[str, TestCaseTOML]
 
     @classmethod
