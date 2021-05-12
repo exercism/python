@@ -10,38 +10,38 @@ from typing import List, Any, Dict, Type
 
 def _custom_dataclass_init(self, *args, **kwargs):
     # print(self.__class__.__name__, "__init__")
-    names = [f.name for f in fields(self)]
+    names = [field.name for field in fields(self)]
     used_names = set()
 
     # Handle positional arguments
-    for v in args:
+    for value in args:
         try:
-            k = names.pop(0)
+            name = names.pop(0)
         except IndexError:
             raise TypeError(f"__init__() given too many positional arguments")
         # print(f'setting {k}={v}')
-        setattr(self, k, v)
-        used_names.add(k)
+        setattr(self, name, value)
+        used_names.add(name)
 
     # Handle keyword arguments
-    for k, v in kwargs.items():
-        if k in names:
+    for name, value in kwargs.items():
+        if name in names:
             # print(f'setting {k}={v}')
-            setattr(self, k, v)
-            used_names.add(k)
-        elif k in used_names:
-            raise TypeError(f"__init__() got multiple values for argument '{k}'")
+            setattr(self, name, value)
+            used_names.add(name)
+        elif name in used_names:
+            raise TypeError(f"__init__() got multiple values for argument '{name}'")
         else:
             raise TypeError(
-                f"Unrecognized field '{k}' for dataclass {self.__class__.__name__}."
+                f"Unrecognized field '{name}' for dataclass {self.__class__.__name__}."
                 "\nIf this field is valid, please add it to the dataclass in data.py."
                 "\nIf adding an object-type field, please create a new dataclass for it."
             )
 
     # Check for missing positional arguments
     missing = [
-        f"'{f.name}'" for f in fields(self)
-        if isinstance(f.default, dataclasses._MISSING_TYPE) and f.name not in used_names
+        f"'{field.name}'" for field in fields(self)
+        if isinstance(field.default, dataclasses._MISSING_TYPE) and field.name not in used_names
     ]
     if len(missing) == 1:
         raise TypeError(f"__init__() missing 1 required positional argument: {missing[0]}")
@@ -321,8 +321,8 @@ class Config:
         except IOError:
             print(f"FAIL: {path} file not found")
             raise SystemExit(1)
-        except TypeError as e:
-            print(f"FAIL: {e}")
+        except TypeError as ex:
+            print(f"FAIL: {ex}")
             raise SystemExit(1)
 
 
