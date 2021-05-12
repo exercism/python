@@ -1,16 +1,34 @@
 from enum import Enum
 from dataclasses import dataclass, asdict, fields
+import dataclasses
 from itertools import chain
 import json
 from pathlib import Path
 import toml
-from typing import List, Any, Dict
+from typing import List, Any, Dict, Type
 
 
-def _custom_dataclass_init(self, **kwargs):
-    names = set([f.name for f in fields(self)])
+def _custom_dataclass_init(self, *args, **kwargs):
+    # print(self.__class__.__name__, "__init__")
+    positional_count = len([
+        f.name
+        for f in fields(self)
+        if isinstance(f.default, dataclasses._MISSING_TYPE)
+    ])
+    names = [f.name for f in fields(self)]
+    for i, v in enumerate(args):
+        k = names[i]
+        # print(f'setting {k}={v}')
+        setattr(self, k, v)
+    if i < positional_count - 1:
+        raise TypeError(f"__init__() missing {positional_count - i - 1} required positional argument")
+    elif i >= len(names):
+        raise TypeError(f"__init__() too many positional arguments given")
     for k, v in kwargs.items():
         if k in names:
+            if hasattr(self, k):
+                raise TypeError(f"__init__() got multiple values for argument '{k}'")
+            # print(f'setting {k}={v}')
             setattr(self, k, v)
         else:
             raise TypeError(
