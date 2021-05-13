@@ -17,16 +17,15 @@ The keywords `break`, `continue`, and `else` help customize loop behavior.
 
 >>> placeholders = ["spam", "ham", "eggs", "green_spam", "green_ham", "green_eggs"]
 
->>> while placeholders:
+>>> while 'eggs' in placeholders:
 ...     print(placeholders.pop(0))
 ...
 spam
 ham
 eggs
-green_spam
-green_ham
-green_eggs
-```
+
+>>> print(placeholders)
+['green_spam', 'green_ham', 'green_eggs']
 
 <br>
 
