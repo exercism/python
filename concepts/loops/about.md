@@ -26,7 +26,6 @@ eggs
 
 >>> print(placeholders)
 ['green_spam', 'green_ham', 'green_eggs']
-
 <br>
 
 ## `For`
