@@ -1,13 +1,17 @@
 # unit test here
 import unittest
 import pytest
-from conditionals import *
+from conditionals import (is_criticality_balanced,
+                          reactor_efficency,
+                          fail_safe
+                          )
 
 
 class TestConditionals(unittest.TestCase):
     # Checking the first condition using assertTrue and assertFalse
     # The values for arguments is not final and should be considered as placeholders
     # More test-cases  required for full testing
+
 
     @pytest.mark.task(taskno=1)
     def test_is_criticality_balanced_set1(self):
