@@ -44,5 +44,9 @@
 [comparisons]: https://docs.python.org/3/library/stdtypes.html#comparisons
 [python booleans]: https://realpython.com/python-boolean/
 [real python conditionals]: https://realpython.com/python-conditional-statements/
+<<<<<<< HEAD
 [control flow tools]: https://docs.python.org/3/tutorial/controlflow.html
 
+=======
+[control flow tools]: https://docs.python.org/3/tutorial/controlflow.html
+>>>>>>> Added hints file.
