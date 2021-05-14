@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for this concept",
-  "authors": ["bethanyg", "cmccandless"],
+  "blurb": "The conditionals 'if', 'elif' ('else + if'), and 'else' are used to control the flow of execution and make decisions in a program. Python doesn't have a formal case-switch statement ,and uses multiple 'elif's to serve a similar purpose. Conditionals pair with expressions and objects that must resolve to 'True' or 'False'.",
+  "authors": ["bethanyg", "sachsom95"],
   "contributors": []
 }
