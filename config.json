@@ -36,6 +36,14 @@
         "status": "wip"
       },
       {
+        "slug": "meltdown-mitigation",
+        "name": "Meltdown Mitigation",
+        "uuid": "50c88b36-e2e2-46e5-b6c4-bb7e714c375a",
+        "concepts": ["conditionals"],
+        "prerequisites": ["basics", "booleans", "comparisons"],
+        "status": "wip"
+      },
+      {
         "slug": "tisbury-treasure-hunt",
         "name": "Tisbury Treasure Hunt",
         "uuid": "7ecd42c1-2ed5-487a-bc89-71c9cbad9b05",
@@ -101,8 +109,8 @@
         "status": "wip"
       },
       {
-        "slug": "elyses-enchantments",
-        "name": "Elyse's Enchantments",
+        "slug": "card-games",
+        "name": "Card Games",
         "uuid": "d76958ce-3a5b-4e4c-9388-b109f67cf23a",
         "concepts": ["lists"],
         "prerequisites": ["conditionals", "strings"],
