@@ -1,21 +1,11 @@
 {
   "blurb": "Learn the basics of Python by cooking Guido's Gorgeous Lasagna.",
-  "authors": [
-    "BethanyG"
-  ],
+  "icon": "lasagna",
+  "authors": ["BethanyG"],
   "files": {
-    "solution": [
-      "lasagna.py"
-    ],
-    "test": [
-      "lasagna_test.py"
-    ],
-    "exemplar": [
-      ".meta/exemplar.py"
-    ]
+    "solution": ["lasagna.py"],
+    "test": ["lasagna_test.py"],
+    "exemplar": [".meta/exemplar.py"]
   },
-  "forked_from": [
-    "csharp/basics",
-    "ruby/basics"
-  ]
+  "forked_from": ["csharp/basics", "ruby/basics"]
 }
