@@ -1,18 +1,10 @@
 {
   "blurb": "Learn about loops by grading and organzing your students exam scores.",
-  "authors": [
-    "mohanrajanr",
-    "BethanyG"
-  ],
+  "icon": "circular-buffer",
+  "authors": ["mohanrajanr", "BethanyG"],
   "files": {
-    "solution": [
-      "loops.py"
-    ],
-    "test": [
-      "loops_test.py"
-    ],
-    "exemplar": [
-      ".meta/exemplar.py"
-    ]
+    "solution": ["loops.py"],
+    "test": ["loops_test.py"],
+    "exemplar": [".meta/exemplar.py"]
   }
 }

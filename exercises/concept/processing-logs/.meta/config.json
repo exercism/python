@@ -1,20 +1,11 @@
 {
   "blurb": "Learn about strings by processing log files.",
-  "authors": [
-    "aldraco"
-  ],
+  "icon": "isogram",
+  "authors": ["aldraco"],
   "files": {
-    "solution": [
-      "strings.py"
-    ],
-    "test": [
-      "strings_test.py"
-    ],
-    "exemplar": [
-      ".meta/exemplar.py"
-    ]
+    "solution": ["strings.py"],
+    "test": ["strings_test.py"],
+    "exemplar": [".meta/exemplar.py"]
   },
-  "forked_from": [
-    "csharp/strings"
-  ]
+  "forked_from": ["csharp/strings"]
 }

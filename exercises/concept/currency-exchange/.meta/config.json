@@ -1,21 +1,10 @@
 {
   "blurb": "Learn about numbers by solving Chandler's currency exchange conundrums.",
-  "authors": [
-    "Ticktakto",
-    "Yabby1997",
-    "limm-jk",
-    "OMEGA-Y",
-    "wnstj2007"
-  ],
+  "icon": "hyperia-forex",
+  "authors": ["Ticktakto", "Yabby1997", "limm-jk", "OMEGA-Y", "wnstj2007"],
   "files": {
-    "solution": [
-      "exchange.py"
-    ],
-    "test": [
-      "exchange_test.py"
-    ],
-    "exemplar": [
-      ".meta/exemplar.py"
-    ]
+    "solution": ["exchange.py"],
+    "test": ["exchange_test.py"],
+    "exemplar": [".meta/exemplar.py"]
   }
 }
