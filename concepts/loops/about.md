@@ -13,7 +13,6 @@ The keywords `break`, `continue`, and `else` help customize loop behavior.
 
 ```python
 >>> placeholders = ["spam", "ham", "eggs", "green_spam", "green_ham", "green_eggs"]
-
 >>> while 'eggs' in placeholders:
 ...     print(placeholders.pop(0))
 ...
@@ -117,11 +116,12 @@ Barrel (at index 2) starts with a B.
 Apple (at index 3) doesn't start with a B.
 ```
 
-The `enumerate()` function can also be set to _start_ the index count at a different number.
+
+The  `enumerate()` function can also be set to *start* the index count at a different number.
+
 
 ```python
 # Here, the index count will start at 1.
-
 >>> for position, word in enumerate(word_list, start=1):
 ...    if word.startswith("b"):
 ...        print(f"{word.title()} (at position {position}) starts with a B.")
