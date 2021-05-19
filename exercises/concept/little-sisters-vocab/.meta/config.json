@@ -7,3 +7,4 @@
     "test": ["strings_test.py"],
     "exemplar": [".meta/exemplar.py"]
   }
+}
