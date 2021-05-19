@@ -15,6 +15,7 @@ A `str` literal can be declared via single `'` or double `"` quotes. The escape 
 >>> double_quoted = "These allow embedded 'single quoting', so you don't have to use an 'escape' character".
 ```
 
+
 Muliti-line strings are declared with `'''` or `"""`.
 
 ```python
@@ -25,6 +26,7 @@ Muliti-line strings are declared with `'''` or `"""`.
     They\'re often used with auto documentation ✍ tools.
     '''
 ```
+
 
 The [`str()` constructor][str-constructor] can be used to create/coerce strings from other objects:
 
@@ -39,79 +41,43 @@ While the `str()` constructor can be used to coerce strings from other objects, 
 This lack of iteration can have surprising results.
 
 ```python
->>> number_words = ["ਤਿੰਨ", "ਪੰਜ", "ਨੌ"]
->>> str(number_words)
+>>> numbers = [1,3,5,7]
+>>> str(numbers)
 ...
-'["ਤਿੰਨ", "ਪੰਜ", "ਨੌ"]'
+'[1,3,5,7]'
 ```
 
-If a `list`, `tuple`, `set` or other collection of individual elements needs to be converted to a `str` type, [`<str>.join(<iterable>)`][str-join], is a better option:
+
+Code points within a `str` can be referenced by 0-based index number from the right:
 
 ```python
-# To avoid surprises with iteration, str.join() the elements of an iterable.
->>> chickens = ["hen", "egg", "rooster"]
->>> ' '.join(chickens)
-'hen egg rooster'
+creative = '창의적인'
 
-# Any string can be used as the joining element.
->>> ' :: '.join(chickens)
-'hen :: egg :: rooster'
+>>> creative[0]
+'창'
 
->>> ' 🌿 '.join(chickens)
-'hen 🌿 egg 🌿 rooster'
+>>> creative[2]
+'적'
+
+>>> creative[3]
+'인'
+
 ```
 
-Strings can also be concatenated using the `+` operator.
-This method should be used sparingly, as it is not very performant or easily maintained.
+Indexing also works from the left, starting with `-1`:
 
 ```python
-language = "Ukrainian"
-number = "nine"
-word = "девять"
+creative = '창의적인'
 
-sentence = word + " " + "means" + " " + number + " in " + language + "."
+>>> creative[-4]
+'창'
 
->>> print(sentence)
-...
-"девять means nine in Ukrainian."
-```
+>>> creative[-2]
+'적'
 
-String literals that are part of a single expression and are separated only by white space are _implicitly concatenated_ into a single string literal:
+>>> creative[-1]
+'인'
 
-```python
-# Seperate strings within parenthesis will be *implicitly concatenated* by the interpreter.
->>> ("I do not "
-"like "
-"green eggs and ham.") == "I do not like green eggs and ham."
-True
-```
-
-Strings can be broken into smaller strings via [`<str>.split(<separator>)`][str-split], which will return a `list` of substrings.
-Using `<str>.split()` without any arguments will split the string on whitespace.
-
-```python
->>> cat_ipsum = "Destroy house in 5 seconds enslave the hooman."
->>> cat_ipsum.split()
-...
-['Destroy', 'house', 'in', '5', 'seconds', 'enslave', 'the', 'hooman.']
-```
-
-Code points within a `str` can be referenced by 0-based index number and can be copied in whole or in part via _slice notation_, using [`<str>[<start>:stop:<step>]`][common sequence operations].
-
-```python
-noodles = "ก๋วยเตี๋ยว"
-
->>> first_code_point = noodles[0]
-'ก'
-
->> last_code_point = noodles[-1]
-'ว'
-
->>> middle_four_points = noodels[3:7]
-'ยเตี'
-
->> noodles_copy = noodles[:]
-"ก๋วยเตี๋ยว"
 ```
 
 There is no separate “character” or "rune" type in Python, so indexing a string produces a new `str` of length 1:
@@ -127,6 +93,93 @@ There is no separate “character” or "rune" type in Python, so indexing a str
 
 >>> website[0] == website[0:1] == 'e'
 True
+```
+
+
+Substrings can be selected via _slice notation_, using [`<str>[<start>:stop:<step>]`][common sequence operations] to produce a new string.
+Results exclude the `stop` index.
+If no `start` is given, the starting index will be 0.
+If no `stop` is given, the `stop` index will be the end of the string.
+
+
+```python
+moon_and_stars = '🌟🌟🌙🌟🌟⭐'
+
+>>> moon_and_stars[1:4]
+'🌟🌙🌟'
+
+>>> moon_and_stars[:3]
+'🌟🌟🌙'
+
+>>> moon_and_stars[3:]
+'🌟🌟⭐'
+
+>>> moon_and_stars[:-1]
+'🌟🌟🌙🌟🌟'
+
+>>> moon_and_stars[:-3]
+'🌟🌟🌙'
+```
+
+
+Strings can also be broken into smaller strings via [`<str>.split(<separator>)`][str-split], which will return a `list` of substrings.
+Using `<str>.split()` without any arguments will split the string on whitespace.
+
+
+```python
+>>> cat_ipsum = "Destroy house in 5 seconds command the hooman."
+>>> cat_ipsum.split()
+...
+['Destroy', 'house', 'in', '5', 'seconds', 'command', 'the', 'hooman.']
+
+
+>>> cat_words = "feline, four-footed, ferocious, furry"
+>>> cat_words.split(',')
+...
+['feline, four-footed, ferocious, furry']
+
+
+>>> colors = """red,
+orange,
+green,
+purple,
+yellow"""
+
+>>> colors.split(',\n')
+['red', 'orange', 'green', 'purple', 'yellow']
+```
+
+
+Strings can be concatenated using the `+` operator.
+This method should be used sparingly, as it is not very performant or easily maintained.
+
+```python
+language = "Ukrainian"
+number = "nine"
+word = "девять"
+
+sentence = word + " " + "means" + " " + number + " in " + language + "."
+
+>>> print(sentence)
+...
+"девять means nine in Ukrainian."
+```
+
+
+If a `list`, `tuple`, `set` or other collection of individual strings needs to be combined into a single `str`, [`<str>.join(<iterable>)`][str-join], is a better option:
+
+```python
+# str.join() makes a new string from the iterables elements.
+>>> chickens = ["hen", "egg", "rooster"]
+>>> ' '.join(chickens)
+'hen egg rooster'
+
+# Any string can be used as the joining element.
+>>> ' :: '.join(chickens)
+'hen :: egg :: rooster'
+
+>>> ' 🌿 '.join(chickens)
+'hen 🌿 egg 🌿 rooster'
 ```
 
 Strings support all [common sequence operations][common sequence operations].
@@ -167,6 +220,7 @@ Indexes _with_ items can be iterated through in a loop via `for index, item in e
 ## String Methods
 
 To manipulate strings, Python provides a rich set of [string methods][str-methods] that can assist with searching, cleaning, splitting, transforming, translating, and many other operations.
+
 
 ## Formatting
 
