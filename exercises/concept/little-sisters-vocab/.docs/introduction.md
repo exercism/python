@@ -70,7 +70,7 @@ creative = '창의적인'
 '인'
 ```
 
-Indexing also works from the left, starting with `-1`:
+Indexing also works from the right, starting with `-1`:
 
 ```python
 creative = '창의적인'
