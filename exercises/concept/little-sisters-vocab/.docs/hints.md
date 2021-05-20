@@ -34,6 +34,6 @@ There's four activities in the assignment, each with a set of text or words to w
 
 [python-str-doc]: https://docs.python.org/3/tutorial/introduction.html#strings
 
-[common sequence operations]https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
+[common sequence operations]: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
 [str-join]: https://docs.python.org/3/library/stdtypes.html#str.join
 [str-split]: https://docs.python.org/3/library/stdtypes.html#str.split
