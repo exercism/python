@@ -55,7 +55,7 @@ If a `list`, `tuple`, `set` or other collection of individual strings needs to b
 'hen 🌿 egg 🌿 rooster'
 ```
 
-Code points within a `str` can be referenced by 0-based index number from the right:
+Code points within a `str` can be referenced by 0-based index number from the left:
 
 ```python
 creative = '창의적인'
