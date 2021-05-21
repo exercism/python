@@ -1,16 +1,20 @@
 # About
 
-A [`list`][list] is a mutable collection of items in _sequence_. Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold references to any (or multiple) data type(s) - including other lists.  They can be copied in whole or in part via [slice notation][slice notation]. Like any [sequence][sequence type], elements within `lists` are referenced by `0-based index` number.
+A [`list`][list] is a mutable collection of items in _sequence_. Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold references to any (or multiple) data type(s) - including other lists.
+They're considered a [sequence][sequence type] in Python, and can be copied in whole or in part via [slice notation][slice notation].
+Like any sequence, elements within `lists` can be referenced by `0-based index` number from the left, or `-1-based index` number from the right.
 
-Lists support both [common][common sequence operations] and [mutable][mutable sequence operations] sequence opterations like `min(<list>)`/`max(<list>)`, `<list>.index()`, `<list>.append()` and `<list>.reverse()`. Items can be iterated over using the `for item in <list>` construct, and `for item in enumerate(<list>)` can be used when both the element and index are needed.
+Lists support both [common][common sequence operations] and [mutable][mutable sequence operations] sequence opterations like `min(<list>)`/`max(<list>)`, `<list>.index()`, `<list>.append()` and `<list>.reverse()`.
+Items can be iterated over using the `for item in <list>` construct, and `for item in enumerate(<list>)` can be used when both the element and element index are needed.
 
-Python provides many useful [methods][list-methods] for working with lists. Let's take a look at some of them.
+Python provides many useful [methods][list-methods] for working with lists.
 
-Keep in mind that when you manipulate a list with a list-method, **you alter the list** object that has been passed into the method. If you do not wish to mutate your original `list`, you will need to at least make a `shallow copy` of it via slice or `<list>.copy()`.
+Becasue `lists` are mutable, list-methods **alter the original list object** passed into the method.
+If mutation is undesirable, the original `list` needs to at least be copied via `shallow copy` via `slice` or `<list>.copy()`.
 
 ## Adding Items
 
-If you want to add an item to the end of an existing list, use `list.append()`:
+Adding items to the end of an existing list can be done via `<list>.append(<item>)`:
 
 ```python
 >>> numbers = [1, 2, 3]
@@ -19,26 +23,26 @@ If you want to add an item to the end of an existing list, use `list.append()`:
 [1, 2, 3, 9]
 ```
 
-Rather than _appending_, `list.insert()` gives you the ability to add the item to a _specific index_ in the list.
+Rather than _appending_, `<list>.insert(<index>, <item>)` adds the item to a _specific index_ within the list.
+`<index>` is the index of the item _before which_ you want the new item to appear.
+`<item>` is the element to be inserted.
 
-`list.insert()` takes 2 parameters:
-
-1. the index of the item _before which_ you want the new item to appear
-2. the item to be inserted
-
-**Note**: If the given index is 0, the item will be added to the start of the list. If the supplied index is greater than the last index on the list, the item will be added in the final position -- the equivalent of using `list.append()`.
+**Note**: If `<index>` is 0, the item will be added to the start of the list.
+If `<index>` is greater than the final index on the list, the item will be added in the final position -- the equivalent of using `<list>.append(<item>)`.
 
 ```python
 >>> numbers = [1, 2, 3]
 >>> numbers.insert(0, -2)
 >>> numbers
 [-2, 1, 2, 3]
+
 >>> numbers.insert(1, 0)
 >>> numbers
 [-2, 0, 1, 2, 3]
 ```
 
-If you have an iterable that you would like to _combine_ with your current list (concatenating the two), `list.extend()` can be used. `list.extend()` will _unpack_ the supplied iterable, adding its elements in the same order to the end of your list (_using `.append()` in this circumstance would add the entire iterable as a **single item**._).
+An `iterable` can be _combined_ with an existing list (concatenating the two) via `<list>.extend(<iterable>)`.
+`<list>.extend(<iterable>)` will _unpack_ the supplied iterable, adding its elements in the same order to the end of the target list (_using `<list>.append(<item>)` in this circumstance would add the entire iterable as a **single item**._).
 
 ```python
 >>> numbers = [1, 2, 3]
@@ -57,7 +61,8 @@ If you have an iterable that you would like to _combine_ with your current list 
 
 ## Removing Items
 
-To delete an item from a list use `list.remove()`, passing the item to be removed as an argument. `list.remove()` will throw a `ValueError` if the item is not present in the list.
+`<list>.remove(<item>)` can be used to remove an element from the list.
+`<list>.remove(<item>)` will throw a `ValueError` if the element is not present in the list.
 
 ```python
 >>> numbers = [1, 2, 3]
@@ -65,14 +70,16 @@ To delete an item from a list use `list.remove()`, passing the item to be remove
 >>> numbers
 [1, 3]
 
-# Trying to remove a value that is not in the list throws a ValueError
+# Trying to remove a value that is not in the list throws a ValueError.
 >>> numbers.remove(0)
 ValueError: list.remove(x): x not in list
 ```
 
-Alternatively, using the `list.pop()` method will both remove **and** `return` an element for use.
+Alternatively, using `<list>.pop(<item>)` method will both remove **and** `return` an element for use.
 
-`list.pop()` takes one optional parameter: the index of the item you need to remove and receive. If the optional index argument is not specified, the last element of the list will be removed and returned to you. If you specify an index number higher than the length of the list, you will get an `IndexError`.
+`<list>.pop(<item>)` takes one optional parameter: the `index` of the element to remove and return.
+If the optional `<index>` argument is not specified, the last element of the list will be removed and returned.
+If `<index>` is a higher number than the final index of the list, an `IndexError` will be thrown.
 
 ```python
 >>> numbers = [1, 2, 3]
@@ -82,15 +89,18 @@ Alternatively, using the `list.pop()` method will both remove **and** `return` a
 [2, 3]
 >>> numbers.pop()
 3
+
 >>> numbers
 [2]
+
+# This will throw an error because there is only index 0.
 >>> numbers.pop(1)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 IndexError: pop index out of range
 ```
 
-If you want to remove all items from a `list`, use `list.clear()`. It does not take any parameters.
+All items can be removed from a `list` via `<list>.clear()`. It does not take any parameters.
 
 ```python
 >>> numbers = [1, 2, 3]
@@ -103,7 +113,7 @@ If you want to remove all items from a `list`, use `list.clear()`. It does not t
 
 ## Reversing and reordering
 
-You can reverse the order of list elements _***in place**_ with `<list>.reverse()`.  This will mutate the original list.
+The order of list elements can be reversed  _**in place**_ with `<list>.reverse()`. This will mutate the original list.
 
 ```python
 >>> numbers = [1, 2, 3]
@@ -112,7 +122,10 @@ You can reverse the order of list elements _***in place**_ with `<list>.reverse(
 [3, 2, 1]
 ```
 
-List elements can also be sorted  _**in place**_ using `list.sort()`. Internally, Python uses [`Timsort`][timsort] to arrange elements. The default order is _ascending_. Take a look at the Python docs for some [additional tips and techniques for sorting][sorting how to] lists effectively.
+List elements can be sorted _**in place**_ using `<list>.sort()`.
+Internally, Python uses [`Timsort`][timsort] to arrange the elements.
+The default order is _ascending_.
+The Python docs have [additional tips and techniques for sorting][sorting how to] `lists` effectively.
 
 ```python
 >>> names = ["Tony", "Natasha", "Thor", "Bruce"]
@@ -123,7 +136,7 @@ List elements can also be sorted  _**in place**_ using `list.sort()`. Internally
 ["Bruce", "Natasha", "Thor", "Tony"]
 ```
 
-If you want to sort a list in _descending_ order, pass a `reverse=True` argument:
+To sort a list in _descending_ order, pass a `reverse=True` argument to the method:
 
 ```python
 >>> names = ["Tony", "Natasha", "Thor", "Bruce"]
@@ -132,13 +145,17 @@ If you want to sort a list in _descending_ order, pass a `reverse=True` argument
 ["Tony", "Thor", "Natasha", "Bruce"]
 ```
 
-For cases where mutating the original list is undesirable, the built-in functions [`sorted()`][sorted] and [`reversed()`][reversed] can be used.  `sorted(<list>)` will return a sorted _copy_, and takes the same parameters as `<list>.sort()`. `reversed(<list>)` returns an _iterator_ that yields the list's items in reverse order. We'll talk about iterators more in later exercises.
+For cases where mutating the original `list` is undesirable, the built-in functions [`sorted()`][sorted] and [`reversed()`][reversed] can be used.
+`sorted(<list>)` will return a sorted _copy_, and takes the same parameters as `<list>.sort()`.
+`reversed(<list>)` returns an _iterator_ that yields the list's items in reverse order.
+`Iterators` will be covered in detail in another exercise.
 
 <br>
 
 ## Occurrences of an item in a list
 
-You can find the number of occurrences of an element in a list with the help of `list.count()`. It takes the item you need to tally as its argument and returns the total number of times it appears on the list.
+Finding the number of occurrences of an element in a list can be done with the help of `<list>.count(<item>)`.
+It returns the total number of times `<item>` appears as an element in the list.
 
 ```python
 >>> items = [1, 4, 7, 8, 2, 9, 2, 1, 1, 0, 4, 3]
@@ -150,9 +167,9 @@ You can find the number of occurrences of an element in a list with the help of 
 
 ## Finding the index of items
 
-`list.index()` will return the index number of the _first occurrence_ of an item passed in. If there are no occurrences, a `ValueError` is raised. If you don't need the exact position of an item and are only checking that it is present inside the list, the built-in `in` operator is more efficient.
-
-Indexing is zero-based, meaning the position of the first item is `0`.
+`<list>.index(<item>)` will return the index number of the _first occurrence_ of an item passed in.
+If there are no occurrences, a `ValueError` is raised.
+Indexing is 0-based from the left, meaning the position of the first item is index `0`.
 
 ```python
 >>> items = [7, 4, 1, 0, 2, 5]
@@ -162,7 +179,7 @@ Indexing is zero-based, meaning the position of the first item is `0`.
 ValueError: 10 is not in list
 ```
 
-You can also provide `start` and `end` indices to search within a specific section of the list:
+Providing `start` and `end` indices will search within a specific section of the list:
 
 ```python
 >>> names = ["Tina", "Leo", "Thomas", "Tina", "Emily", "Justin"]
@@ -170,6 +187,14 @@ You can also provide `start` and `end` indices to search within a specific secti
 0
 >>> names.index("Tina", 2, 5)
 3
+```
+
+If the exact position of an element is not needed, the built-in `in` operator is more efficient for verifying membership.
+
+```python
+>>> names = ["Tina", "Leo", "Thomas", "Tina", "Emily", "Justin"]
+>>> "Thomas" in names
+True
 ```
 
 <br>
@@ -180,7 +205,7 @@ Remember that variables in Python are labels that point to underlying objects an
 
 Assigning a `list` object to a new variable _name_ does not copy the object or any of its referenced data. Any change made to the items in the `list` using the new variable name will also _impact the original_.
 
-`<list>.copy()` will create a new `list` object, but **will not** create new objects for the referenced list _elements_. This is called a `shallow copy`.  A `shallow copy` is usually enough when you want to add or remove items from one of the `list` objects without modifying the other.  But if there is any chance that the _underlying_ elements of a `list` might be accidentally mutated (_thereby mutating all related shallow copies_),  [`copy.deepcopy()`][deepcopy] in the `copy` module should be used to create a complete or "deep" copy of **all** references and objects.
+`<list>.copy()` will create a new `list` object, but **will not** create new objects for the referenced list _elements_. This is called a `shallow copy`. A `shallow copy` is usually enough when you want to add or remove items from one of the `list` objects without modifying the other. But if there is any chance that the _underlying_ elements of a `list` might be accidentally mutated (_thereby mutating all related shallow copies_), [`copy.deepcopy()`][deepcopy] in the `copy` module should be used to create a complete or "deep" copy of **all** references and objects.
 
 For a detailed explanation of names, values, list, and nested list behavior, take a look at this excellent blog post from [Ned Batchelder][ned batchelder] -- [Names and values: making a game board][names and values].
 
