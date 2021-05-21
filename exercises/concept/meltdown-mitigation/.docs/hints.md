@@ -8,9 +8,23 @@
 
 ## 1. Check for criticality
 
-- Comparison operators and boolean operations can be _combined_.
+- Comparison operators and boolean operations can be combined and used with conditionals.
 - Conditional expressions must evaluate to `True` or `False`.
 - `else` can be used for a code block that will execute when a conditional test returns `False`.
+
+  ```python
+     >>> item = 'blue'
+     >>> item_2 = 'green'
+     
+     >>>  if len(item) >=3 and len(item_2) < 5:
+            print('Both pass the test!')
+          elif len(item) >=3 or len(item_2) < 5:
+            print('One passes the test!')
+          else:
+            print('None pass the test!')
+    ...
+    One passes the test!
+  ```
 
 ## 2. Determine the Power output range
 
