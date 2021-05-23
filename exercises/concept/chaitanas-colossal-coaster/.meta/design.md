@@ -6,25 +6,25 @@ This concept exercise should make the student aware of the existence of some lis
 
 ## Learning objectives
 
-- understand when when it is appropriate to use methods of a list to operate with it
-- understand that a method of the list mutates the list and do not returns a new altered list
-- use one or more of the below methods to alter a list:
-- add a single element to the end of a list with the append() method
-- remove all items from a list with the clear() method
-- insert an element in a list with the insert() method
-- remove element at the given index with the pop() method
-- remove item from a list with the remove() method
-- reverses a list with the reverse() method
-- sorts elements of a list with the sort() method
-- return a shallow copy of a list with the copy() method
-- return count of the element in a list with the count() method
-- add iterable elements to the end of a list with the extend() method
-- return the index of the element in a list with the index() method
-- understand which data in a list can be sorted and/or compared
+- Understand when it is appropriate to use methods of a list to operate with it
+- Understand that a method of a list mutates the list and does not return a new altered list
+- Use one or more of the below methods to alter a list:
+    - Add a single item to the end of a list with the append() method
+    - Remove all items from a list with the clear() method
+    - Insert an item in a list with the insert() method
+    - Remove the item at the given index with the pop() method
+    - Remove an item from a list with the remove() method
+    - Reverse a list with the reverse() method
+    - Sort items of a list with the sort() method
+    - Return a shallow copy of a list with the copy() method
+    - Return the number of times an item occurs in a list with the count() method
+    - Add all items from another iterable to the end of a list with the extend() method
+    - Return the index of an item in a list with the index() method
+- Understand which data in a list can be sorted and/or compared
 
 ## Out of scope
 
-- performance considerations
+- Performance considerations
 
 ## Concepts
 
