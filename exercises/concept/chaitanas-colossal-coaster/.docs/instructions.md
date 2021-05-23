@@ -53,7 +53,7 @@ Define the `add_me_with_my_friends()` function that takes 3 parameters `queue, i
 
 ```python
 >>> add_me_with_my_friends(queue=["Natasha", "Steve", "Tchalla", "Wanda", "Rocket"], index=1, person_name="Bucky")
-["Natasha", "Steve", "Tchalla", "Wanda", "Rocket"]
+["Natasha", "Bucky", "Steve", "Tchalla", "Wanda", "Rocket"]
 ```
 
 ## 4. Mean person in the queue
