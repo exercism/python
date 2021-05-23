@@ -43,7 +43,7 @@ class TestListMethods(unittest.TestCase):
                 friend_name="Natasha",
             ),
             0,
-            msg="The Index of the friend to find is incorrect",
+            msg="The index of the friend to find is incorrect",
         )
 
     def test_find_my_friend_middle_of_queue(self):
@@ -53,7 +53,7 @@ class TestListMethods(unittest.TestCase):
                 friend_name="Steve",
             ),
             1,
-            msg="The Index of the friend to find is incorrect",
+            msg="The index of the friend to find is incorrect",
         )
 
     def test_find_my_friend_end_of_queue(self):
@@ -63,7 +63,7 @@ class TestListMethods(unittest.TestCase):
                 friend_name="Rocket",
             ),
             4,
-            msg="The Index of the friend to find is incorrect",
+            msg="The index of the friend to find is incorrect",
         )
 
     def test_add_me_with_my_friends_start_of_queue(self):
@@ -74,7 +74,7 @@ class TestListMethods(unittest.TestCase):
                 person_name="Bucky",
             ),
             ["Bucky", "Natasha", "Steve", "Tchalla", "Wanda", "Rocket"],
-            msg="The People added location were incorrect",
+            msg="The person was added to the wrong location in the queue or was not added at all",
         )
 
     def test_add_me_with_my_friends_middle_of_queue(self):
@@ -85,7 +85,7 @@ class TestListMethods(unittest.TestCase):
                 person_name="Bucky",
             ),
             ["Natasha", "Bucky", "Steve", "Tchalla", "Wanda", "Rocket"],
-            msg="The People added location were incorrect",
+            msg="The person was added to the wrong location in the queue or was not added at all",
         )
 
     def test_add_me_with_my_friends_end_of_queue(self):
@@ -96,7 +96,7 @@ class TestListMethods(unittest.TestCase):
                 person_name="Bucky",
             ),
             ["Natasha", "Steve", "Tchalla", "Wanda", "Rocket", "Bucky"],
-            msg="The People added location were incorrect",
+            msg="The person was added to the wrong location in the queue or was not added at all",
         )
 
     def test_remove_the_mean_person_middle_of_queue(self):
@@ -164,12 +164,12 @@ class TestListMethods(unittest.TestCase):
                 queue=["Natasha", "Steve", "Ultron", "Natasha", "Rocket"]
             ),
             "Rocket",
-            msg="The last person is not removed properly",
+            msg="The last person was not removed properly",
         )
 
     def test_sorted_names(self):
         self.assertListEqual(
             sorted_names(queue=["Steve", "Ultron", "Natasha", "Rocket"]),
             ["Natasha", "Rocket", "Steve", "Ultron"],
-            msg="The Queue is not properly sorted",
+            msg="The queue was not properly sorted",
         )
