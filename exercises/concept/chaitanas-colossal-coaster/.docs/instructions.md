@@ -9,7 +9,7 @@ There are two queues for this ride, represented as `list`s:
 
 You've been asked to write some code to better manage the guests at the park. You need to implement the following functions as soon as possible before the guests (and your boss, Chaitana!) get cranky.
 
-## 1. Add Me to the queue
+## 1. Add me to the queue
 
 Define the `add_me_to_the_queue()` function that takes 4 parameters `express_queue, normal_queue, ticket_type, person_name` and returns the queue with the person's name added.
 
@@ -31,7 +31,7 @@ Once you have added the name to the appropriate queue, return the queue that inc
 
 One person arrived late at the park but wants to join the queue with his friends. He has no idea where they're standing, and he can't get any reception to call them.
 
-Define the `find_his_friend()` function that takes 2 parameters `queue, friend_name`.
+Define the `find_my_friend()` function that takes 2 parameters `queue, friend_name`.
 
 1. queue is the list of people standing in the queue.
 2. friend_name is the name of the friend whose index you need to find.
@@ -39,20 +39,20 @@ Define the `find_his_friend()` function that takes 2 parameters `queue, friend_n
 Indexing starts at 0.
 
 ```python
->>> find_his_friend(queue=["Natasha", "Steve", "Tchalla", "Wanda", "Rocket"], friend_name="Steve")
+>>> find_my_friend(queue=["Natasha", "Steve", "Tchalla", "Wanda", "Rocket"], friend_name="Steve")
 1
 ```
 
 ## 3. Can I please join them?
 
-Define the `add_person_with_his_friends()` function that takes 3 parameters `queue, index, person_name`.
+Define the `add_me_with_my_friends()` function that takes 3 parameters `queue, index, person_name`.
 
 1. queue is the list of people standing in the queue.
 2. index is the position at which the person should be added.
 3. person_name is the name of the person to add at this position.
 
 ```python
->>> add_person_with_his_friends(queue=["Natasha", "Steve", "Tchalla", "Wanda", "Rocket"], index=1, person_name="Bucky")
+>>> add_me_with_my_friends(queue=["Natasha", "Steve", "Tchalla", "Wanda", "Rocket"], index=1, person_name="Bucky")
 ["Natasha", "Steve", "Tchalla", "Wanda", "Rocket"]
 ```
 
@@ -72,7 +72,7 @@ Define the `remove_the_mean_person()` function that takes 2 parameters `queue, p
 
 # 5. Namefellows
 
-You may not have seen two unrelated people who look exactly the same, but you've _definitely_ seen unrelated people with the same exact name (_name fellows or doppelgängers_)! It looks like today there are a lot of them. You want to know how many times a particular name occurs in the queue.
+You may not have seen two unrelated people who look exactly the same, but you've _definitely_ seen unrelated people with the same exact name (_namefellows or doppelgängers_)! It looks like today there are a lot of them. You want to know how many times a particular name occurs in the queue.
 
 Define the `how_many_namefellows()` function that takes 2 parameters `queue, person_name`.
 
@@ -88,7 +88,7 @@ Return the number of occurrences of person_name, as an `int`.
 
 ## 6. Remove the last person
 
-Sadly, it's overcrowded in the queue today and you need to remove the last person in line (_you'll give them a voucher to come back in the fast track another time_). You'll have to define the function `remove_the_last_person()` that takes 1 parameter `queue` which will be called again and again till the queue count is back to normal. The argument `queue` is the list of people standing in the queue.
+Sadly, it's overcrowded in the queue today and you need to remove the last person in line (_you'll give them a voucher to come back in the fast track another time_). You'll have to define the function `remove_the_last_person()` that takes 1 parameter `queue`, which is the list of people standing in the queue.
 
 You should also return the name of the person who was removed, so you can write them a voucher.
 
@@ -101,7 +101,7 @@ You should also return the name of the person who was removed, so you can write 
 
 For administrative purposes, you need to get the names in alphabetical order.
 
-Define the `sorted_names()` function that takes 1 argument: `queue`, which is the list of people standing in the queue.
+Define the `sorted_names()` function that takes 1 argument: `queue`, which is the list of people standing in the queue, and returns a sorted copy of the list.
 
 ```python
 >>> sorted_names(queue=["Natasha", "Steve", "Eltran", "Natasha", "Rocket"])
