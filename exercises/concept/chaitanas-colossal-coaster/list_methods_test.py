@@ -21,34 +21,34 @@ class TestListMethods(unittest.TestCase):
             msg="The person was not added to the queue correctly"
         )
 
-    def test_find_his_friend_set_1(self):
+    def test_find_my_friend_set_1(self):
         self.assertIs(
-            find_his_friend(queue=["Natasha", "Steve", "Tchalla", "Wanda", "Rocket"],
+            find_my_friend(queue=["Natasha", "Steve", "Tchalla", "Wanda", "Rocket"],
                             friend_name="Steve"),
             1,
             msg="The Index of the friend to find is incorrect"
         )
 
-    def test_find_his_friend_set_2(self):
+    def test_find_my_friend_set_2(self):
         self.assertIs(
-            find_his_friend(queue=["Natasha", "Steve", "Tchalla", "Wanda", "Rocket"],
+            find_my_friend(queue=["Natasha", "Steve", "Tchalla", "Wanda", "Rocket"],
                             friend_name="Rocket"),
             4,
             msg="The Index of the friend to find is incorrect"
         )
 
-    def test_add_person_with_his_friends_set_1(self):
+    def test_add_me_with_my_friends_set_1(self):
         self.assertListEqual(
-            add_person_with_his_friends(
+            add_me_with_my_friends(
                 queue=["Natasha", "Steve", "Tchalla", "Wanda", "Rocket"],
                 index=1, person_name="Bucky"),
             ["Natasha", "Bucky", "Steve", "Tchalla", "Wanda", "Rocket"],
             msg="The People added location were incorrect"
         )
 
-    def test_add_person_with_his_friends_set_2(self):
+    def test_add_me_with_my_friends_set_2(self):
         self.assertListEqual(
-            add_person_with_his_friends(
+            add_me_with_my_friends(
                 queue=["Natasha", "Steve", "Tchalla", "Wanda", "Rocket"],
                 index=0, person_name="Bucky"),
             ["Bucky", "Natasha", "Steve", "Tchalla", "Wanda", "Rocket"],
