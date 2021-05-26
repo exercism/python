@@ -5,7 +5,7 @@ They're considered a [sequence][sequence type] in Python, and can be copied in w
 Like any sequence, elements within `lists` can be referenced by `0-based index` number from the left, or `-1-based index` number from the right.
 
 Lists support both [common][common sequence operations] and [mutable][mutable sequence operations] sequence opterations like `min(<list>)`/`max(<list>)`, `<list>.index()`, `<list>.append()` and `<list>.reverse()`.
-Items can be iterated over using the `for item in <list>` construct, and `for item in enumerate(<list>)` can be used when both the element and element index are needed.
+Items can be iterated over using the `for item in <list>` construct, and `for index, item in enumerate(<list>)` can be used when both the element and element index are needed.
 
 Python provides many useful [methods][list-methods] for working with lists.
 
