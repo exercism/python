@@ -1,4 +1,5 @@
 import unittest
+import pytest
 from loops import (
     round_scores,
     count_failed_students,
@@ -11,6 +12,7 @@ from loops import (
 
 class MakingTheGradeTest(unittest.TestCase):
 
+    @pytest.mark.task(taskno=1)
     def test_round_scores(self):
         input_data = [
             [90.33, 40.5, 55.44, 70.05, 30.55, 25.45, 80.45, 95.3, 38.7, 40.3],
@@ -34,18 +36,21 @@ class MakingTheGradeTest(unittest.TestCase):
                                  msg=f'Expected: {results} but one or more {scores} were rounded incorrectly.')
 
 
+    @pytest.mark.task(taskno=2)
     def test_no_failed_students(self):
         scores = [89, 85, 42, 57, 90, 100, 95, 48, 70, 96]
         expected = 0
         self.assertEqual(count_failed_students(scores), expected,
         msg=f"Expected the count to be {expected}, but the count wasn't calculated correctly.")
 
+    @pytest.mark.task(taskno=2)
     def test_some_failed_students(self):
         scores = [40, 40, 35, 70, 30, 41, 90]
         expected = 4
         self.assertEqual(count_failed_students(scores), expected,
             msg=f"Expected the count to be {expected}, but the count wasn't calculated correctly.")
 
+    @pytest.mark.task(taskno=3)
     def test_above_threshold(self):
         input_data = [
             [40, 39, 95, 80, 25, 31, 70, 55, 40, 90],
@@ -69,6 +74,7 @@ class MakingTheGradeTest(unittest.TestCase):
                 self.assertEqual(above_threshold(score, threshold), result,
                                  msg=f'Expected: {result} but the number of scores above {threshold} is incorrect.')
 
+    @pytest.mark.task(taskno=4)
     def test_letter_grades(self):
         input_data = [100, 97, 85, 92, 81]
         result_data = [
@@ -86,6 +92,7 @@ class MakingTheGradeTest(unittest.TestCase):
                                  msg=f'Expected: {result} but the grade thresholds for a high score of {highest} are incorrect.')
 
 
+    @pytest.mark.task(taskno=5)
     def test_student_ranking(self):
         scores = [
             [100, 98, 92, 86, 70, 68, 67, 60, 50],
@@ -110,6 +117,7 @@ class MakingTheGradeTest(unittest.TestCase):
                 self.assertEqual(student_ranking(scores, names), results,
                                  msg=f'Expected: {results} but the rankings were compiled incorrectly.')
 
+    @pytest.mark.task(taskno=6)
     def test_perfect_score(self):
        input_data =  [
                         [['Rui', 60],['Joci', 58],['Sara', 91],['Kora', 93], ['Alex', 42],

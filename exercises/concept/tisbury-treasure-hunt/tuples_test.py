@@ -1,9 +1,11 @@
 import unittest
+import pytest
 from tuples import get_coordinate, convert_coordinate, compare_records, create_record, clean_up
 
 
 class TuplesTest(unittest.TestCase):
 
+    @pytest.mark.task(taskno=1)
     def test_get_coordinate(self):
         input_data = [("Scrimshaw Whale's Tooth", '2A'),
                                 ('Brass Spyglass', '4B'),
@@ -20,11 +22,13 @@ class TuplesTest(unittest.TestCase):
                                 ('Silver Seahorse', '4E')]
 
         result_data = ['2A', '4B', '1C', '6D', '7E', '7F', '6A', '8A', '5B', '8C', '1F', '3D', '4E']
+        number_of_variants = range(1, len(input_data) + 1)
 
-        for item, result  in zip(input_data, result_data):
-            with self.subTest("tuple/coordinate variants", item=item, result=result):
+        for variant, item, result  in zip(number_of_variants, input_data, result_data):
+            with self.subTest(f"variation #{variant}", item=item, result=result):
                 self.assertEqual(get_coordinate(item), result)
 
+    @pytest.mark.task(taskno=2)
     def test_convert_coordinate(self):
         input_data = ['2A', '4B', '1C', '6D', '7E', '7F', '6A', '8A', '5B', '8C', '1F', '3D', '4E']
         result_data = [('2', 'A'),
@@ -41,10 +45,13 @@ class TuplesTest(unittest.TestCase):
                                 ('3', 'D'),
                                 ('4', 'E')]
 
-        for item, result in zip(input_data, result_data):
-            with self.subTest("coordinate variants for conversion", item=item, result=result):
+        number_of_variants = range(1, len(input_data) + 1)
+
+        for variant, item, result in zip(number_of_variants, input_data, result_data):
+            with self.subTest(f"variation #{variant}", item=item, result=result):
                 self.assertEqual(convert_coordinate(item), result)
 
+    @pytest.mark.task(taskno=3)
     def test_compare_records(self):
         input_data = [
                                 (("Scrimshaw Whale's Tooth", '2A'), ('Deserted Docks', ('2', 'A') ,'Blue')),
@@ -59,11 +66,13 @@ class TuplesTest(unittest.TestCase):
                                 (('Carved Wooden Elephant', '8C'), ('Abandoned Lighthouse', ('4', 'B') ,'Blue'))
                             ]
         result_data = [True, True, True, True, True, False, False, False, False, False]
+        number_of_variants = range(1, len(input_data) + 1)
 
-        for item, result in zip(input_data, result_data):
-            with self.subTest("do the coordinates match once reformatted?", item=item, result=result):
+        for variant, item, result in zip(number_of_variants, input_data, result_data):
+            with self.subTest(f"variation #{variant}", item=item, result=result):
                 self.assertEqual(compare_records(item[0], item[1]), result)
 
+    @pytest.mark.task(taskno=4)
     def test_create_record(self):
         input_data=[
                             (('Angry Monkey Figurine', '5B'), ('Stormy Breakwater', ('5', 'B') ,'Purple')),
@@ -90,10 +99,13 @@ class TuplesTest(unittest.TestCase):
                                 'not a match'
                             ]
 
-        for item, result in zip(input_data, result_data):
-            with self.subTest("make record if coordinates match", item=item, result=result):
+        number_of_variants = range(1, len(input_data) + 1)
+
+        for variant, item, result in zip(number_of_variants, input_data, result_data):
+            with self.subTest(f"variation #{variant}", item=item, result=result):
                 self.assertEqual(create_record(item[0], item[1]), result)
 
+    @pytest.mark.task(taskno=5)
     def test_clean_up(self):
         input_data = (
                                 ("Scrimshaw Whale's Tooth", '2A', 'Deserted Docks', ('2', 'A'), 'Blue'),
