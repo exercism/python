@@ -13,7 +13,6 @@
   "online_editor": {
     "indent_style": "space",
     "indent_size": 4,
-    "ace_editor_language": "python",
     "highlightjs_language": "python"
   },
   "test_runner": {
