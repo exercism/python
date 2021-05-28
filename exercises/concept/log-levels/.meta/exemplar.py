@@ -28,7 +28,7 @@ def parse_log_level(message):
     lvl = str_split[0][1:-1]
     if lvl in [level.value for level in LogLevel]:
         return LogLevel(lvl)
-    return LogLevel.Unknown
+    return LogLevel("UKN")
 
 
 def convert_to_short_log(log_level, message):
@@ -36,7 +36,7 @@ def convert_to_short_log(log_level, message):
 
 
 def get_warn_alias():
-    return LogLevel.Warn
+    return LogLevel("WRN")
 
 
 def get_members():
