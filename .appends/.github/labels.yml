@@ -1,0 +1,196 @@
+- name: "abandoned"
+  description: ""
+  color: "ededed"
+
+- name: "abandoned 🏚"
+  description: ""
+  color: "ededed"
+
+- name: "abandoned 🏚️"
+  description: ""
+  color: "CFCDAA"
+
+- name: "bug 🐛"
+  description: ""
+  color: "B60205"
+
+- name: "chore 🔧"
+  description: ""
+  color: "293028"
+
+- name: "claimed 🐾"
+  description: "For new exercises being written by contributors and maintainers."
+  color: "FFF034"
+
+- name: "dependencies"
+  description: "Pull requests that update a dependency file"
+  color: "257FE3"
+
+- name: "discussion 💬"
+  description: ""
+  color: "257FE3"
+
+- name: "do not merge 🚧"
+  description: ""
+  color: "fbca04"
+
+- name: "documentation 📚"
+  description: ""
+  color: "257FE3"
+
+- name: "duplicate"
+  description: ""
+  color: "e6e6e6"
+
+- name: "enhancement 🦄 ⭐"
+  description: ""
+  color: "B5F7FF"
+
+- name: "experimental 🔬"
+  description: ""
+  color: "FFFFFF"
+
+- name: "first-timers only 🐣"
+  description: "Issues reserved for first contributions."
+  color: "000000"
+
+- name: "github_actions"
+  description: "Pull requests that update Github_actions code"
+  color: "000000"
+
+- name: "good first issue"
+  description: ""
+  color: "BED643"
+
+- name: "good first patch"
+  description: ""
+  color: "BED643"
+
+- name: "hacktoberfest 🍁"
+  description: ""
+  color: "FEF2C0"
+
+- name: "hacktoberfest-accepted ☑"
+  description: ""
+  color: "F5A623"
+
+- name: "help wanted"
+  description: ""
+  color: "BD10E0"
+
+- name: "improve documentation 💖"
+  description: ""
+  color: "FFFFFF"
+
+- name: "improve exercise 💖"
+  description: ""
+  color: "FFFFFF"
+
+- name: "improve reference docs 💖"
+  description: "for issues with links, introductions, or about docs for concepts"
+  color: "FFFFFF"
+
+- name: "improve test case 💖"
+  description: "improve test case(s) for an exercise"
+  color: "FFFFFF"
+
+- name: "in-progress 🌿"
+  description: ""
+  color: "FFFFFF"
+
+- name: "invalid"
+  description: ""
+  color: "e6e6e6"
+
+- name: "maintainer action required❕"
+  description: ""
+  color: "B60205"
+
+- name: "maintainer chore 🔧"
+  description: ""
+  color: "000000"
+
+- name: "new documentation ✨"
+  description: ""
+  color: "5331B5"
+
+- name: "new exercise ✨"
+  description: ""
+  color: "5331B5"
+
+- name: "new reference doc ✨"
+  description: ""
+  color: "5331B5"
+
+- name: "new test case :sparkles:"
+  description: ""
+  color: "5331B5"
+
+- name: "on hold ✋🏽"
+  description: ""
+  color: "FEF2C0"
+
+- name: "pinned 📌"
+  description: ""
+  color: "FFD141"
+
+- name: "please review  👀"
+  description: ""
+  color: "257FE3"
+
+- name: "python"
+  description: "Pull requests that update Python code"
+  color: "2b67c6"
+
+- name: "reputation/contributed_code/double_major"
+  description: ""
+  color: "0116C3"
+
+- name: "reputation/contributed_code/major"
+  description: "Code contribution is bigger than average"
+  color: "4DD2E1"
+
+- name: "reputation/contributed_code/minor"
+  description: ""
+  color: "17E47E"
+
+- name: "security 🚨"
+  description: "Security issue or patch"
+  color: "FFFFFF"
+
+- name: "spam 🚫"
+  description: ""
+  color: "FFFFFF"
+
+- name: "status/draft"
+  description: ""
+  color: "DEA3EA"
+
+- name: "status/wontfix  🙅🏽"
+  description: ""
+  color: "DEA3EA"
+
+- name: "v3-migration 🤖"
+  description: "Preparing for Exercism v3"
+  color: "E99695"
+
+- name: "wip/content-checking  ☑"
+  description: "content checking tasks for exercises that are in development"
+  color: "A389F1"
+
+- name: "wip/proof-reading 👀"
+  description: "proof reading tasks for exercises that are in development"
+  color: "A389F1"
+
+- name: "wip/story-writing  ✍"
+  description: "story writing tasks for exercises that are in development"
+  color: "A389F1"
+
+- name: "wip/style-guideline-checking 📐"
+  description: "style guideline tasks for exercises that are in development"
+  color: "A389F1"
+
+- name: "❔question❔"
+  description: ""
+  color: "293028"
+
