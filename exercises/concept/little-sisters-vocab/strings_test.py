@@ -1,8 +1,16 @@
 import unittest
-from strings import add_prefix_un, make_word_groups, remove_suffix_ness, noun_to_verb
+import pytest
+from strings import (
+    add_prefix_un,
+    make_word_groups,
+    remove_suffix_ness,
+    noun_to_verb
+)
 
 
 class TestStrings(unittest.TestCase):
+
+    @pytest.mark.task(taskno=1)
     def test_add_prefix_un(self):
         input_data = ["happy", "manageable", "fold", "eaten", "avoidable", "usual"]
         result_data = [f'un{item}' for item in input_data]
@@ -13,7 +21,7 @@ class TestStrings(unittest.TestCase):
                 self.assertEqual(add_prefix_un(word), result,
                                  msg=f'Expected: {result} but got a different word instead.')
 
-
+    @pytest.mark.task(taskno=2)
     def test_make_word_groups_en(self):
         input_data = ['en' ,'circle', 'fold', 'close','joy', 'lighten', 'tangle', 'able', 'code', 'culture']
         result_data = 'en :: encircle :: enfold :: enclose :: enjoy :: enlighten :: entangle :: enable :: encode :: enculture'
@@ -21,7 +29,7 @@ class TestStrings(unittest.TestCase):
         self.assertEqual(make_word_groups(input_data), result_data,
                          msg=f'Expected {result_data} but got something else instead.')
 
-
+    @pytest.mark.task(taskno=2)
     def test_make_word_groups_pre(self):
         input_data = ['pre', 'serve', 'dispose', 'position', 'requisite',  'digest',
                       'natal', 'addressed', 'adolescent', 'assumption', 'mature', 'compute']
@@ -32,7 +40,7 @@ class TestStrings(unittest.TestCase):
         self.assertEqual(make_word_groups(input_data), result_data,
                          msg=f'Expected {result_data} but got something else instead.')
 
-
+    @pytest.mark.task(taskno=2)
     def test_make_word_groups_auto(self):
         input_data = ['auto', 'didactic',  'graph', 'mate',  'chrome',  'centric',  'complete',
                      'echolalia',  'encoder', 'biography']
@@ -43,7 +51,7 @@ class TestStrings(unittest.TestCase):
         self.assertEqual(make_word_groups(input_data), result_data,
                          msg=f'Expected {result_data} but got something else instead.')
 
-
+    @pytest.mark.task(taskno=2)
     def test_make_words_groups_inter(self):
         input_data = ['inter',  'twine', 'connected', 'dependent', 'galactic', 'action',
                        'stellar', 'cellular', 'continental', 'axial', 'operative', 'disciplinary']
@@ -54,7 +62,7 @@ class TestStrings(unittest.TestCase):
         self.assertEqual(make_word_groups(input_data), result_data,
                          msg=f'Expected {result_data} but got something else instead.')
 
-
+    @pytest.mark.task(taskno=3)
     def test_remove_suffix_ness(self):
         input_data = ["heaviness", "sadness", "softness", "crabbiness", "lightness", "artiness", "edginess"]
         result_data = ["heavy", "sad", "soft", 'crabby', 'light', 'arty', 'edgy']
@@ -65,6 +73,7 @@ class TestStrings(unittest.TestCase):
                 self.assertEqual(remove_suffix_ness(word), result,
                                  msg=f'Expected: {result} but got a different word instead.')
 
+    @pytest.mark.task(taskno=4)
     def test_noun_to_verb(self):
         input_data = ['Look at the bright sky.',
                       'His expression went dark.',
