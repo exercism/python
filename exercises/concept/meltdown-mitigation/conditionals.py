@@ -48,4 +48,3 @@ def fail_safe(temperature, neutrons_produced_per_second, threshold):
     - `temperature * neutron per second` is not in the above-stated ranges ==  'DANGER'
     '''
     pass
-
