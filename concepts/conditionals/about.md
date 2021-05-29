@@ -5,7 +5,6 @@ Unlike many other programming langauges, Python versions 3.9 and below do not of
 Python 3.10 introduces a variant case-switch statement called `pattern matching`, which will be covered in another exercise.
 Conditional statements pair with expressions and objects that must resolve to `True` or `False` -- either by returning a `bool` directly, or by evaluating ["truthy" or "falsy"][truth value testing].
 
-
 ```python
 x = 10
 y = 5
@@ -77,7 +76,7 @@ Conditionals can also be nested.
 
 ```python
 >>> def driving_status(driver_age, test_score):
-        if test_score >= 80: 
+        if test_score >= 80:
             if 18 > driver_age >= 16:
                 return "Student driver, needs supervision."
             elif driver_age == 18:
@@ -107,7 +106,7 @@ Since these expressions can become hard to scan, it's recommended to use this si
 ```python
 def just_the_buzz(number):
     return 'Buzz!' if number % 5 == 0 else str(number)
-    
+
 >>> just_the_buzz(15)
 'Buzz!'
 
@@ -135,7 +134,6 @@ Nope. It's Falsey.
 >>> truthy_test(['bear', 'pig', 'giraffe'])
 This is Truthy.
 
-
 # Empty strings are considered Falsey.
 >>> truthy_test('')
 Nope. It's Falsey.
@@ -143,12 +141,11 @@ Nope. It's Falsey.
 >>> truthy_test('yes')
 This is Truthy.
 
-
 # 0 is also considered Falsey.
 >>> truthy_test(0)
 Nope. It's Falsey.
-```
 
+```
 
 [if statement]: https://docs.python.org/3/reference/compound_stmts.html#the-if-statement
 [control flow tools]: https://docs.python.org/3/tutorial/controlflow.html#more-control-flow-tools
@@ -156,4 +153,3 @@ Nope. It's Falsey.
 [truth value testing]: https://docs.python.org/3/library/stdtypes.html#truth-value-testing
 [boolean operations]: https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not
 [comparisons]: https://docs.python.org/3/library/stdtypes.html#comparisons
-
