@@ -1,9 +1,9 @@
 # Introduction
 
 The [conditionals][control flow tools] [`if`][if statement], `elif` (_a contraction of 'else and if'_) and `else` are used in Python to control the flow of execution and make decisions in a program.
-Unlike many other programming langauges, Python versions 3.9 and below do not offer a formal case-switch statement, using multiple `elif` statements to serve a similar purpose.
-Python 3.10 introduces a variant case-switch statement called `pattern matching`, which will be covered in another exercise.
-Conditional statements pair with expressions and objects that must resolve to `True` or `False` -- either by returning a `bool` directly, or by evaluating ["truthy" or "falsy"][truth value testing].
+Unlike many other programming languages, Python versions 3.9 and below do not offer a formal case-switch statement, instead using multiple `elif` statements to serve a similar purpose.
+Python 3.10 introduces a variant case-switch statement called `pattern matching`, which will be covered separately in another concept.
+Conditional statements use expressions that must resolve to `True` or `False` -- either by returning a `bool` directly, or by evaluating ["truthy" or "falsy"][truth value testing].
 
 
 ```python
@@ -79,5 +79,4 @@ else:
 [truth value testing]: https://docs.python.org/3/library/stdtypes.html#truth-value-testing
 [boolean operations]: https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not
 [comparisons]: https://docs.python.org/3/library/stdtypes.html#comparisons
-
 
