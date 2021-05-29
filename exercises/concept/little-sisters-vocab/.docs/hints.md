@@ -14,7 +14,7 @@ There's four activities in the assignment, each with a set of text or words to w
 
 ## 2. Add prefixes to word groups
 
-- Believe it or not, <str>.join() is all you need.
+- Believe it or not, `<str>.join()` is all you need.
 - Like `<str>.split()`, `<str>.join()` can take an arbitrary-length string, made up of any unicode code points.
 
 ## 3. Remove a suffix from a word

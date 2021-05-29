@@ -13,11 +13,11 @@ A `str` literal can be declared via single `'` or double `"` quotes. The escape 
 >>> double_quoted = "These allow embedded 'single quoting', so you don't have to use an 'escape' character".
 ```
 
-Muliti-line strings are declared with `'''` or `"""`.
+Multi-line strings are declared with `'''` or `"""`.
 
 ```python
 >>> triple_quoted =  '''Three single quotes or "double quotes" in a row allow for multi-line string literals.
-  Line break characters, tabs and other whitespace is fully supported.
+  Line break characters, tabs and other whitespace are fully supported.
 
   You\'ll most often encounter these as "doc strings" or "doc tests" written just below the first line of a function or class definition.
     They\'re often used with auto documentation ✍ tools.
