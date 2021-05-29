@@ -1,64 +1,97 @@
 # Instructions
 
-You are a teacher and you are correcting papers of your students who wrote an exam you just conducted. You are tasked with the following activities.
+You're a teaching assistant correcting student exams.  
+Keeping track of results manually is getting both tedious and mistake-prone.  
+You decide to make things a little more interesting by putting together some functions to count and calculate results for the class.
 
-## 1. Failed Students
+## 1. Rounding Scores
 
-Create the function `count_failed_students()` that takes one parameter: `student_marks`. This function should count the number of students who have failed the subject, returning the count as an integer. We say that a student has failed if their mark is less than or equal to **40**.
+While you can give "partial credit" on exam questions, overall exam scores have to be `int`s.  
+So before you can do anything else with the class scores, you need to go through the grades and turn any `float` scores into `ints`.  Lucky for you, Python has the built-in [`round()`][round] function you can use.
 
-Note: `Iterate` through the student marks to find out your answer.
-​
-Result should be an `int`.
+A score of 75.45 or 75.49 will round to 75.  A score of 43.50 or 43.59 will round to 44.  
+There shouldn't be any scores that have more than two places after the decimal point.
 
-```python
->>> count_failed_students(student_marks=[90,40,55,70,30]))
-2
-```
-
-## 2. Top Marks
-
-The Headmaster wants to find the group of top students. What qualifies student marks as `top marks` fluctuates, and you will need to find the student marks that are **greater than or equal to** the current threshold.
-
-Create the function `above_threshold()` where `student_marks` and `threshold` are the two required parameters:
-
-1. `student_marks` are a list of marks for each student
-2. `threshold` is the top mark threshold. Marks greater than or equal to this number are considered "top marks" .
-
-This function should return a `list` of all marks that are greater than or equal to a scoring threshold.
-
-**Note:** If you find a mark which is less than the threshold, you should `continue` to evaluating the next mark.​
+Create the function `round_scores()` that takes a `list` of `student_scores`.  
+This function should _consume_ the input `list` and `return` a new list with all the scores converted to `int`s.
 
 ```python
->>> above_threshold(student_marks=[90,40,55,70,30], 70)
-[90, 70]
+>>> student_scores = [90.33, 40.5, 55.44, 70.05, 30.55, 25.45, 80.45, 95.3, 38.7, 40.3]
+>>> round_scores(student_scores)
+...
+[40, 39, 95, 80, 25, 31, 70, 55, 40, 90]
 ```
 
-## 3. First K Students.
+## 2. Non-Passing Students
 
-Create the function `first_k_student_marks()` with parameters `student_marks` and `k`
+As you were grading the exam, you noticed some students weren't performing as well as you'd hoped.  
+But you were distracted, and forgot to note exactly _how many_ students.
 
-1. Student marks are a list of marks of each student
-2. k is the number of students.
-
-You need to return the first K number of student Marks. Once you reach K number of students, you should exit out of the loop.
+Create the function `count_failed_students()` that takes a `list` of `student_scores`. This function should count up the number of students who don't have passing scores and return that count as an integer. A student needs a score greater than **40** to achive a passing grade on the exam.
 
 ```python
->>> first_k_student_marks(student_marks=[90,80,100], k=1)
-[90]
+>>> count_failed_students(student_scores=[90,40,55,70,30,25,80,95,38,40])
+5
 ```
 
-## 4. Full Marks
+## 3. The "Best"
+
+The teacher you're assisting wants to find the group of students who've performed "the best" on this exam. What qualifies as "the best" fluctuates, so you'll need to find the student scores that are **greater than or equal to** the current threshold.
+
+Create the function `above_threshold()` taking `student_scores` (a list of grades), and `threshold` (the "top score" threshold) as parameters.  This function should return a `list` of all scores that are `>=` to `threshold`.
+
+```python
+>>> above_threshold(student_scores=[90,40,55,70,30,68,70,75,83,96], threshold=75)
+[90,75,83,96]
+```
+
+## 4. Calculating Letter Grades
+
+The teacher you're assisting likes to assign letter grades as well as mumeric scores.  
+Since students rarely score 100 on an exam, the "letter grade" lower thresholds are calculated based on the highest score achieved, and increment evenly between the high score and the failing threshold of **<= 40**.
+
+Create the function `letter_grades()` that takes the `highest` score on the exam as a parameter, and returns a `list` of lower score thresholds for each letter grade from "F" to "A".
+
+```python
+>>> letter_grades(highest=100)
+[41, 56, 71, 86]
+
+>>> letter_grades(highest=88)
+[41, 53, 65, 77]
+```
+
+
+## 5. Matching Names to Scores
+
+You have a list of exam scores in descending order, and another list of student names also sorted in descending order by their exam scores.  You'd like to match each student name with their exam score, and print out an overall class ranking.
+
+Create the function `student_ranking()` with parameters `student_scores` and `student_names`.  Match each student name on the `student_names` list with their score from the `student_scores` list.  You can assume each argument `list` will be sorted from highest score(er) to lowest score(er).  The function should return a `list` of strings with the format "<rank>. <student name> : <student score>".
+
+
+```python
+>>> student_scores = [100, 99, 90, 84, 66, 53, 47]
+>>> student_names =  ['Joci', 'Sara','Kora','Jan','John','Bern', 'Fred']
+>>> student_ranking(student_scores, student_names)
+...
+['1. Joci: 100', '2. Sara: 99', '3. Kora: 90', '4. Jan: 84', '5. John: 66', '6. Bern: 53', '7. Fred: 47']
+```
+
+## 6. A "Perfect" Score
+
+Although a "perfect" score of 100 is rare on an exam, it is interesting to know if at least one student has achieved it.
 
 Create the function `perfect_score()` with parameter `student_info`.
-`student_info` is a dictionary containing the names and marks of the students `{"Charles": 90, "Tony": 80}`
+`student_info` is a `list` of lists containing the name and score of each student: `[["Charles", 90], ["Tony", 80]]`.
+The function should `return` _the first_ [<name>, <score>] pair of the student who scored 100 on the exam.
 
-Find if we have any students who scored "full marks"(_100%_)on the exam. If we don't find any "full marks" in `student_info`, we should return "No hundreds"
-
-Return the first student who has scored full marks - 100.
+ If no 100 scores are found in `student_info`, "No perfect scores." should be returned.
 
 ```python
->>> perfect_score(student_info={"Charles": 90, "Tony": 80, "Alex":100})
-Alex
->>> perfect_score(student_info={"Charles": 90, "Tony": 80})
-No hundreds
+>>> perfect_score(student_info=[["Charles", 90], ["Tony", 80], ["Alex", 100]])
+["Alex", 100]
+
+>>> perfect_score(student_info=[["Charles", 90], ["Tony", 80]])
+"No perfect scores."
 ```
+
+[round]: https://docs.python.org/3/library/functions.html#round

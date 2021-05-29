@@ -2,7 +2,7 @@
 
 A [`list`][list] is a mutable collection of items in _sequence_. Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold reference to any (or multiple) data type(s) - including other lists.  They can be copied in whole or in part via [slice notation][slice notation]. Like any [sequence][sequence type], elements within `lists` are referenced by `0-based index` number.
 
-Lists support both [common][common sequence operations] and [mutable][mutable sequence operations] sequence opterations like `min()`/`max()`, `<list>.index()`, `.append()` and `.reverse()`. Items can be iterated over using the `for item in <list>` construct, and `for item in enumerate(<list)` can be used when both and item value and index are needed.
+Lists support both [common][common sequence operations] and [mutable][mutable sequence operations] sequence opterations like `min()`/`max()`, `<list>.index()`, `.append()` and `.reverse()`. Items can be iterated over using the `for item in <list>` construct, and `for index, item in enumerate(<list>)` can be used when both and item value and index are needed.
 
 Python provides many useful [methods][list-methods] for working with lists. Let's take a look at some of them.
 
@@ -22,7 +22,7 @@ To add an item to the end or "right-hand side" of an existing list, use `<list>.
 Rather than _appending_, `<list>.insert()` gives you the ability to add the item to a _specific index_ in the list.
 It takes 2 parameters:
 
-1. the index of the item _before which_ you want the new item to appear
+1. the index at which you want the item to be inserted
 2. the item to be inserted
 
 **Note**: If the given index is 0, the item will be added to the start ("left-hand side") of the list. If the supplied index is greater than the final index on the list, the item will be added in the final position -- the equivalent of using `<list>.append()`.

@@ -29,5 +29,5 @@ Make sure you have a good understanding of how to create and manipulate lists.
 
 ## 7. Sort the Queue List
 
-- You need to `sort` the queue and return the sorted list.
+- You need to `copy` the queue, `sort` it, and return the sorted copy.
 - The order is alphabetical, hence it should be sorted in ascending order.

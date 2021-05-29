@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "url": "https://nedbatchelder.com/text/iter.html",
+    "description": "Ned Batchelder:  Loop Like a Native."
+  },
+  {
+    "url": "https://docs.python.org/3/tutorial/controlflow.html#for-statements",
+    "description": "Python Docs Tutorial: for statements"
+  },
+  {
+    "url": "https://realpython.com/python-for-loop/",
+    "description": "Real Python: For Loops"
+  },
+  {
+    "url": "https://realpython.com/python-while-loop/",
+    "description": "Real Python: While Loops"
+  },
+  {
+    "url": "https://realpython.com/python-enumerate/",
+    "description": "Real Python: enumerate()"
+  },
+  {
+    "url": "https://docs.python.org/3/tutorial/controlflow.html#the-range-function/",
+    "description": "Python Docs:  range() function."
+  },
+  {
+    "url": "https://realpython.com/python-for-loop/#the-range-function",
+    "description": "Real Python: range()"
+  },
+  {
+    "url": "https://treyhunner.com/2018/02/python-range-is-not-an-iterator/",
+    "description": "Trey Hunner:  range() is not an iterator"
+  },
+  {
+    "url": "https://docs.python.org/3/library/exceptions.html#StopIteration",
+    "description": "Python Docs:  StopIteration Error"
+  },
+  {
+    "url": "https://docs.python.org/3/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops",
+    "description": "Python Docs:  Control Flow for Loops"
+  }
+]

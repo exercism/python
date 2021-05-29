@@ -7,11 +7,11 @@ def add_me_to_the_queue(express_queue, normal_queue, ticket_type, person_name):
         return normal_queue
 
 
-def find_his_friend(queue, friend_name):
+def find_my_friend(queue, friend_name):
     return queue.index(friend_name)
 
 
-def add_person_with_his_friends(queue, index, person_name):
+def add_me_with_my_friends(queue, index, person_name):
     queue.insert(index, person_name)
     return queue
 
