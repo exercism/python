@@ -110,6 +110,7 @@ If no `stop` is given, the `stop` index will be the end of the string.
 
 ```python
 moon_and_stars = '🌟🌟🌙🌟🌟⭐'
+sun_and_moon = sun_and_moon = '🌞🌙🌞🌙🌞🌙🌞🌙🌞'
 
 >>> moon_and_stars[1:4]
 '🌟🌙🌟'
@@ -125,7 +126,16 @@ moon_and_stars = '🌟🌟🌙🌟🌟⭐'
 
 >>> moon_and_stars[:-3]
 '🌟🌟🌙'
-```
+
+>>> sun_and_moon[::2]
+'🌞🌞🌞🌞🌞'
+
+>>> sun_and_moon[:-2:2]
+'🌞🌞🌞🌞'
+
+>>> sun_and_moon[1:-1:2]
+'🌙🌙🌙🌙'
+
 
 Strings can also be broken into smaller strings via [`<str>.split(<separator>)`][str-split], which will return a `list` of substrings.
 The list can then be further indexed or split, if needed.
