@@ -29,7 +29,7 @@
     "concept": [
       {
         "slug": "little-sisters-vocab",
-        "name": "Little Sisters Vocab",
+        "name": "Little Sister's Vocabulary",
         "uuid": "5a9b42fb-ddf4-424b-995d-f9952ea63c37",
         "concepts": ["strings"],
         "prerequisites": ["basics"],
