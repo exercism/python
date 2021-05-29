@@ -6,8 +6,6 @@
 - String methods [<str>.join()][str-join] and [<str>.split()][str-split] ar very helpful when processing strings.
 - The [Python Docs on Sequence Types][common sequence operations] has a rundown of operations common to all sequences, including `strings`, `lists`, `tuples`, and `ranges`.
 
-You're helping your younger sister with her English vocabulary homework, which she's finding very tedious. Her class is learning to create new words by adding _prefixes_ and _suffixes_, and have been given different sets of words to modify. The teacher is looking for correctly transformed words and correct spelling, given the word beginning or ending.
-
 There's four activities in the assignment, each with a set of text or words to work with.
 
 ## 1. Add a prefix to a word
