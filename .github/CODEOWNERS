@@ -1,5 +1,3 @@
-* @exercism/python
-
 # Maintainers 
 config/maintainers.json @exercism/maintainers-admin
 
@@ -8,4 +6,3 @@ config/maintainers.json @exercism/maintainers-admin
 
 # Changes to `fetch-configlet` should be made in the `exercism/configlet` repo
 bin/fetch-configlet     @exercism/maintainers-admin
-
