@@ -1,18 +1,22 @@
 [
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://docs.python.org/3/tutorial/controlflow.html#more-control-flow-tools",
+    "description": "Python Docs: Control flow tools."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://docs.python.org/3/library/stdtypes.html#truth-value-testing",
+    "description": "Python Docs:  Truth value testing."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not",
+    "description": "Python Docs:  Standard Types - boolean operations."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://docs.python.org/3/library/stdtypes.html#comparisons",
+    "description": "Python Docs:  Comparisons."
+  },
+  {
+    "url": "https://realpython.com/python-conditional-statements/",
+    "description": "Real Python:  Conditional statements in Python."
   }
 ]
