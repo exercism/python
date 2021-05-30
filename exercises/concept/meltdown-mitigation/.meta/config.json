@@ -1,0 +1,10 @@
+{
+  "blurb": "Learn about conditionals and avoid a meltdown by developing a simple control system for a Nuclear Reactor.",
+  "icon": "circular-buffer",
+  "authors": ["sachsom95", "BethanyG"],
+  "files": {
+    "solution": ["conditionals.py"],
+    "test": ["conditionals_test.py"],
+    "exemplar": [".meta/exemplar.py"]
+  }
+}
