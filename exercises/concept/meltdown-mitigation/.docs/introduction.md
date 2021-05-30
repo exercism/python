@@ -8,7 +8,6 @@ Python 3.10 introduces a variant case-switch statement called `pattern matching`
 
 Conditional statements use expressions that must resolve to `True` or `False` -- either by returning a `bool` directly, or by evaluating ["truthy" or "falsy"][truth value testing].
 
-
 ```python
 x = 10
 y = 5
@@ -75,7 +74,6 @@ else:
 >>> classic_fizzbuzz(13)
 '13'
 ```
-
 
 [if statement]: https://docs.python.org/3/reference/compound_stmts.html#the-if-statement
 [control flow tools]: https://docs.python.org/3/tutorial/controlflow.html#more-control-flow-tools
