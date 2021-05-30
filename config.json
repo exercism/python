@@ -100,8 +100,8 @@
         "status": "wip"
       },
       {
-        "slug": "elyses-enchantments",
-        "name": "Elyse's Enchantments",
+        "slug": "card-games",
+        "name": "Card Games",
         "uuid": "d76958ce-3a5b-4e4c-9388-b109f67cf23a",
         "concepts": ["lists"],
         "prerequisites": ["conditionals", "strings"],
