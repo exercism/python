@@ -1,18 +1,10 @@
 {
   "blurb": "Learn about None by managing the reservations at Restaurant Rozalynn.",
-  "authors": [
-    "mohanrajanr",
-    "BethanyG"
-  ],
+  "icon": "kindergarten-garden",
+  "authors": ["mohanrajanr", "BethanyG"],
   "files": {
-    "solution": [
-      "none.py"
-    ],
-    "test": [
-      "none_test.py"
-    ],
-    "exemplar": [
-      ".meta/exemplar.py"
-    ]
+    "solution": ["none.py"],
+    "test": ["none_test.py"],
+    "exemplar": [".meta/exemplar.py"]
   }
 }

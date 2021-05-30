@@ -1,5 +1,6 @@
 {
   "blurb": "Learn about loops by grading and organzing your students exam scores.",
+  "icon": "grep",
   "authors": ["mohanrajanr", "BethanyG"],
   "files": {
     "solution": ["loops.py"],

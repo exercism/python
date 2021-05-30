@@ -1,21 +1,11 @@
 {
   "blurb": "Learn about dicts by managing warehouse inventory.",
-  "authors": [
-    "j08k"
-  ],
-  "contributors": [
-    "valentin-p",
-    "bethanyG"
-  ],
+  "icon": "high-scores",
+  "authors": ["j08k"],
+  "contributors": ["valentin-p", "bethanyG"],
   "files": {
-    "solution": [
-      "dicts.py"
-    ],
-    "test": [
-      "dicts_test.py"
-    ],
-    "exemplar": [
-      ".meta/exemplar.py"
-    ]
+    "solution": ["dicts.py"],
+    "test": ["dicts_test.py"],
+    "exemplar": [".meta/exemplar.py"]
   }
 }
