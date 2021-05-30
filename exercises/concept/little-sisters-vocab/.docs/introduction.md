@@ -135,7 +135,7 @@ sun_and_moon = sun_and_moon = '🌞🌙🌞🌙🌞🌙🌞🌙🌞'
 
 >>> sun_and_moon[1:-1:2]
 '🌙🌙🌙🌙'
-
+```
 
 Strings can also be broken into smaller strings via [`<str>.split(<separator>)`][str-split], which will return a `list` of substrings.
 The list can then be further indexed or split, if needed.
