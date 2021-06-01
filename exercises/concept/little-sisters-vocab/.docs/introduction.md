@@ -155,7 +155,7 @@ Using `<str>.split()` without any arguments will split the string on whitespace.
 >>> cat_words = "feline, four-footed, ferocious, furry"
 >>> cat_words.split(',')
 ...
-['feline, four-footed, ferocious, furry']
+['feline', 'four-footed', 'ferocious', 'furry']
 ```
 
 Seperators for `<str>.split()` can be more than one character. The whole string will be used for matching.
