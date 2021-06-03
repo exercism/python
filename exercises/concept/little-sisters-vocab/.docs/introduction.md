@@ -110,7 +110,7 @@ If no `stop` is given, the `stop` index will be the end of the string.
 
 ```python
 moon_and_stars = '🌟🌟🌙🌟🌟⭐'
-sun_and_moon = sun_and_moon = '🌞🌙🌞🌙🌞🌙🌞🌙🌞'
+sun_and_moon = '🌞🌙🌞🌙🌞🌙🌞🌙🌞'
 
 >>> moon_and_stars[1:4]
 '🌟🌙🌟'
