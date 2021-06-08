@@ -256,8 +256,7 @@
           "comparisons",
           "raising-and-handling-errors",
           "sequences",
-          "iteration",
-          "itertools"
+          "iteration"
         ],
         "prerequisites": [
           "basics",
@@ -300,7 +299,6 @@
         "practices": [
           "conditionals",
           "lists",
-          "list-methods",
           "loops",
           "sequences",
           "string-methods",
@@ -393,16 +391,11 @@
         "name": "Kindergarten Garden",
         "uuid": "42a2916c-ef03-44ac-b6d8-7eda375352c2",
         "practices": [
-          "classes",
           "class-customization",
-          "dicts",
-          "list-comprehensions",
           "other-comprehensions",
-          "iteration",
           "itertools",
           "sequences",
-          "string-methods",
-          "string-methods-splitting"
+          "string-methods"
         ],
         "prerequisites": [
           "basics",
@@ -429,9 +422,7 @@
         "uuid": "aadde1a8-ed7a-4242-bfc0-6dddfd382cf3",
         "practices": [
           "classes",
-          "dict-methods",
           "collections",
-          "lists",
           "list-methods",
           "list-comprehensions",
           "sequences"
@@ -459,8 +450,7 @@
           "conditionals",
           "comparisons",
           "loops",
-          "sequences",
-          "numbers"
+          "sequences"
         ],
         "prerequisites": [
           "basics",
@@ -531,22 +521,14 @@
         "name": "Tournament",
         "uuid": "49377a3f-38ba-4d61-b94c-a54cfc9034d0",
         "practices": [
-          "collections",
           "anonymous-functions",
           "string-formatting",
           "string-methods-splitting",
-          "dicts",
           "dict-methods",
-          "lists",
-          "list-methods",
           "list-comprehensions",
-          "loops",
-          "other-comprehensions",
-          "generators",
           "generator-expressions",
           "raising-and-handling-errors",
-          "sequences",
-          "tuples"
+          "sequences"
         ],
         "prerequisites": [
           "basics",
@@ -581,13 +563,8 @@
           "functions",
           "functools",
           "collections",
-          "conditionals",
-          "comparisons",
           "dicts",
-          "lists",
           "list-methods",
-          "list-comprehensions",
-          "loops",
           "other-comprehensions",
           "generator-expressions",
           "sets"
@@ -667,11 +644,9 @@
           "conditionals",
           "dicts",
           "dict-methods",
-          "lists",
           "list-comprehensions",
           "loops",
           "sequences",
-          "strings",
           "string-methods"
         ],
         "prerequisites": [
@@ -748,15 +723,11 @@
         "uuid": "f384c6f8-987d-41a2-b504-e50506585526",
         "practices": [
           "classes",
-          "conditionals",
-          "comparisons",
-          "lists",
           "list-comprehensions",
           "loops",
           "numbers",
           "raising-and-handling-errors",
           "sequences",
-          "strings",
           "string-methods",
           "string-formatting"
         ],
@@ -876,7 +847,6 @@
           "loops",
           "numbers",
           "sequences",
-          "strings",
           "string-methods"
         ],
         "prerequisites": [
@@ -900,14 +870,9 @@
         "uuid": "fa795dcc-d390-4e98-880c-6e8e638485e3",
         "practices": [
           "bools",
-          "conditionals",
-          "comparisons",
-          "functions",
           "function-arguments",
           "list-methods",
           "list-comprehensions",
-          "loops",
-          "numbers",
           "raising-and-handling-errors",
           "sequences",
           "strings",
@@ -938,13 +903,10 @@
         "uuid": "71c96c5f-f3b6-4358-a9c6-fc625e2edda2",
         "practices": [
           "conditionals",
-          "comparisons",
-          "iteration",
           "lists",
           "list-methods",
           "list-comprehensions",
           "other-comprehensions",
-          "loops",
           "raising-and-handling-errors",
           "sequences",
           "sets"
@@ -1096,11 +1058,8 @@
           "bools",
           "conditionals",
           "comparisons",
-          "iteration",
           "itertools",
           "lists",
-          "list-methods",
-          "loops",
           "sequences",
           "numbers"
         ],
@@ -1128,8 +1087,6 @@
           "classes",
           "conditionals",
           "comparisons",
-          "list",
-          "list-methods",
           "list-comprehensions",
           "numbers",
           "strings",
@@ -1210,21 +1167,12 @@
         "name": "Meetup",
         "uuid": "a5aff23f-7829-403f-843a-d3312dca31e8",
         "practices": [
-          "bools",
-          "classes",
-          "class-customization",
-          "class-composition",
           "class-inheritance",
-          "conditionals",
-          "dicts",
           "dict-methods",
-          "lists",
           "list-methods",
           "loops",
-          "raising-and-handling-errors",
           "user-defined-errors",
           "sequences",
-          "strings",
           "string-methods",
           "string-formatting"
         ],
@@ -1281,14 +1229,10 @@
         "uuid": "da23e14f-1d87-4722-b887-347554d31afc",
         "practices": [
           "classes",
-          "conditionals",
-          "comparisons",
-          "lists",
           "list-methods",
           "list-comprehensions",
           "loops",
           "none",
-          "numbers",
           "raising-and-handling-errors",
           "sequences"
         ],
@@ -1314,16 +1258,11 @@
         "name": "Go Counting",
         "uuid": "8a9a437d-c967-4ea3-8ecb-6a9ad4380c03",
         "practices": [
-          "bools",
           "classes",
-          "conditionals",
-          "comparisons",
           "functions",
           "function-arguments",
-          "lists",
           "list-methods",
           "list-comprehensions",
-          "loops",
           "raising-and-handling-errors",
           "sequences",
           "sets"
@@ -1355,16 +1294,10 @@
         "uuid": "4c0d0d6b-347e-40ae-9b51-08555fe76cb9",
         "practices": [
           "conditionals",
-          "comparisons",
-          "classes",
           "class-customization",
           "class-inheritance",
           "descriptors",
-          "iteration",
-          "lists",
-          "list-methods",
           "list-comprehensions",
-          "loops",
           "raising-and-handling-errors",
           "sequences",
           "sets"
@@ -1393,8 +1326,6 @@
         "name": "Beer Song",
         "uuid": "b7984882-65df-4993-a878-7872c776592a",
         "practices": [
-          "conditionals",
-          "comparisons",
           "lists",
           "list-methods",
           "loops",
@@ -1457,13 +1388,10 @@
         "name": "Largest Series Product",
         "uuid": "21624a3e-6e43-4c0e-94b0-dee5cdaaf2aa",
         "practices": [
-          "conditionals",
-          "comparisons",
           "functions",
           "higher-order-functions",
           "functional-tools",
           "anonymous-functions",
-          "lists",
           "list-comprehensions",
           "numbers",
           "raising-and-handling-errors",
@@ -1496,17 +1424,11 @@
         "uuid": "5a038ad4-65c7-4c99-9916-faebb4f39b79",
         "practices": [
           "classes",
-          "conditionals",
-          "comparisons",
           "dicts",
           "iteration",
-          "lists",
           "list-methods",
-          "loops",
-          "numbers",
           "sequences",
           "sets",
-          "strings",
           "string-methods",
           "tuples"
         ],
@@ -1539,7 +1461,6 @@
           "bools",
           "conditionals",
           "comparisons",
-          "lists",
           "list-methods",
           "list-comprehensions",
           "loops",
@@ -1565,17 +1486,12 @@
         "name": "Ocr Numbers",
         "uuid": "98ca48ed-5818-442c-bce1-308c8b3b3b77",
         "practices": [
-          "conditionals",
-          "comparisons",
           "iteration",
-          "lists",
           "list-methods",
           "list-comprehensions",
-          "loops",
           "numbers",
           "raising-and-handling-errors",
           "sequences",
-          "strings",
           "string-methods"
         ],
         "prerequisites": [
@@ -1602,10 +1518,6 @@
         "name": "Poker",
         "uuid": "dcc0ee26-e384-4bd4-8c4b-613fa0bb8188",
         "practices": [
-          "bools",
-          "conditionals",
-          "comparisons",
-          "functions",
           "higher-order-functions",
           "iteration",
           "lists",
@@ -1637,15 +1549,11 @@
         "name": "Rectangles",
         "uuid": "4bebdd8d-a032-4993-85c5-7cc74fc89312",
         "practices": [
-          "bools",
-          "conditionals",
-          "comparisons",
           "iteration",
           "itertools",
           "lists",
           "list-methods",
           "list-comprehensions",
-          "loops",
           "numbers",
           "sequences",
           "strings"
@@ -1676,8 +1584,6 @@
         "uuid": "2f86ce8e-47c7-4858-89fc-e7729feb0f2f",
         "practices": [
           "loops",
-          "conditionals",
-          "dicts",
           "lists",
           "numbers",
           "sequences",
@@ -1724,31 +1630,17 @@
           "raising-and-handling-errors",
           "numbers"
         ],
-        "difficulty": 1,
-        "topics": [
-          "logic",
-          "parsing",
-          "pattern_matching",
-          "regular_expressions",
-          "transforming",
-          "type_conversion"
-        ]
+        "difficulty": 1
       },
       {
         "slug": "scale-generator",
         "name": "Scale Generator",
         "uuid": "8cd58325-61fc-46fd-85f9-425b4c41f3de",
         "practices": [
-          "bools",
           "classes",
-          "conditionals",
-          "comparisons",
-          "dicts",
           "dict-methods",
-          "lists",
           "list-methods",
           "list-comprehensions",
-          "loops",
           "sequences",
           "strings",
           "string-methods"
@@ -1783,7 +1675,6 @@
           "sequences",
           "list-comprehensions",
           "list-methods",
-          "strings",
           "string-methods",
           "string-formatting"
         ],
@@ -1875,18 +1766,12 @@
         "name": "Binary Search Tree",
         "uuid": "df7cd9b9-283a-4466-accf-98c4a7609450",
         "practices": [
-          "classes",
           "class-customization",
           "class-composition",
-          "conditionals",
-          "comparisons",
           "iteration",
-          "lists",
           "list-methods",
           "list-comprehensions",
-          "loops",
           "sequences",
-          "strings",
           "string-methods",
           "string-formatting"
         ],
@@ -1916,18 +1801,13 @@
         "name": "Affine Cipher",
         "uuid": "02bf6783-fc74-47e9-854f-44d22eb1b6f8",
         "practices": [
-          "bools",
-          "conditionals",
           "comparisons",
-          "iteration",
-          "lists",
-          "list-methods",
           "list-comprehensions",
           "loops",
           "numbers",
           "raising-and-handling-errors",
           "sequences",
-          "strings",
+          "string-methods",
           "string-formatting"
         ],
         "prerequisites": [
@@ -1961,10 +1841,7 @@
           "list-methods",
           "loops",
           "raising-and-handling-errors",
-          "sequences",
-          "strings",
-          "string-methods",
-          "string-formatting"
+          "sequences"
         ],
         "prerequisites": [
           "basics",
@@ -1989,12 +1866,8 @@
         "practices": [
           "conditionals",
           "comparisons",
-          "dicts",
-          "lists",
           "list-comprehensions",
-          "other-comprehensions",
           "loops",
-          "numbers",
           "strings",
           "string-methods"
         ],
@@ -2022,19 +1895,13 @@
         "uuid": "aa4332bd-fc38-47a4-8bff-e1b660798418",
         "practices": [
           "bytes",
-          "bitflags",
           "bitwise-operators",
           "conditionals",
           "comparisons",
-          "iteration",
-          "lists",
           "list-methods",
           "loops",
-          "numbers",
           "raising-and-handling-errors",
-          "sequences",
-          "strings",
-          "string-methods"
+          "sequences"
         ],
         "prerequisites": [
           "basics",
@@ -2061,17 +1928,12 @@
         "name": "Two Bucket",
         "uuid": "6f530d0c-d13e-4270-b120-e42c16691a66",
         "practices": [
-          "basics",
           "bools",
           "conditionals",
           "comparisons",
-          "dicts",
-          "dict-methods",
-          "iteration",
           "lists",
           "list-methods",
           "loops",
-          "numbers",
           "raising-and-handling-errors",
           "sequences"
         ],
@@ -2102,11 +1964,9 @@
         "practices": [
           "conditionals",
           "comparisons",
-          "lists",
           "list-methods",
           "list-comprehensions",
           "loops",
-          "itertools",
           "numbers",
           "sequences",
           "string-methods"
@@ -2188,7 +2048,6 @@
           "comparisons",
           "numbers",
           "raising-and-handling-errors",
-          "strings",
           "string-methods",
           "string-formatting"
         ],
@@ -2214,11 +2073,9 @@
           "class-customization",
           "comparisons",
           "conditionals",
-          "dicts",
           "dict-methods",
           "lists",
           "loops",
-          "numbers",
           "tuples"
         ],
         "prerequisites": [
@@ -2243,7 +2100,6 @@
         "name": "Roman Numerals",
         "uuid": "bffe2007-717a-44ee-b628-b9c86a5001e8",
         "practices": [
-          "basics",
           "conditionals",
           "lists",
           "list-methods",
@@ -2251,7 +2107,6 @@
           "loops",
           "numbers",
           "sequences",
-          "strings",
           "string-methods"
         ],
         "prerequisites": [
@@ -2273,16 +2128,13 @@
         "uuid": "4c6edc8a-7bc0-4386-a653-d1091fe49301",
         "practices": [
           "bools",
-          "classes",
           "class-customization",
           "conditionals",
-          "comparisons",
-          "loops",
-          "numbers",
           "operator-overloading",
           "rich-comparisons",
           "raising-and-handling-errors",
-          "strings"
+          "sequences",
+          "string-formatting"
         ],
         "prerequisites": [
           "basics",
@@ -2305,14 +2157,11 @@
         "name": "Linked List",
         "uuid": "ca7a8b16-e5d5-4211-84f0-2f8e35b4a665",
         "practices": [
-          "classes",
           "class-customization",
           "conditionals",
           "comparisons",
           "function-arguments",
-          "iteration",
           "iterators",
-          "numbers",
           "none",
           "operator-overloading",
           "rich-comparisons"
@@ -2341,18 +2190,14 @@
         "name": "All Your Base",
         "uuid": "a2ff75f9-8b2c-4c4b-975d-913711def9ab",
         "practices": [
-          "bools",
           "conditionals",
           "comparisons",
-          "lists",
           "list-methods",
           "list-comprehensions",
           "loops",
           "numbers",
           "raising-and-handling-errors",
-          "sequences",
-          "strings",
-          "string-methods"
+          "sequences"
         ],
         "prerequisites": [
           "basics",
@@ -2376,8 +2221,6 @@
         "name": "Change",
         "uuid": "889df88a-767d-490f-92c4-552d8ec9de34",
         "practices": [
-          "bools",
-          "conditionals",
           "comparisons",
           "lists",
           "list-methods",
@@ -2407,23 +2250,14 @@
         "name": "Dot Dsl",
         "uuid": "a9c2fbda-a1e4-42dd-842f-4de5bb361b91",
         "practices": [
-          "bools",
-          "classes",
           "class-customization",
-          "class-composition",
           "class-inheritance",
-          "conditionals",
-          "comparisons",
-          "dicts",
-          "lists",
           "list-methods",
-          "loops",
           "operator-overloading",
           "rich-comparisons",
           "raising-and-handling-errors",
           "sequences",
-          "strings",
-          "string-methods"
+          "sets"
         ],
         "prerequisites": [
           "basics",
@@ -2454,18 +2288,12 @@
         "name": "Knapsack",
         "uuid": "b0301d0b-d97a-4043-bd82-ba1edf8c1b16",
         "practices": [
-          "basics",
           "conditionals",
           "comparisons",
           "dicts",
-          "functions",
-          "itertools",
-          "lists",
-          "list-methods",
           "list-comprehensions",
           "loops",
-          "sequences",
-          "strings"
+          "sequences"
         ],
         "prerequisites": [
           "basics",
@@ -2489,22 +2317,10 @@
         "name": "Circular Buffer",
         "uuid": "77ee3b0e-a4e9-4257-bcfc-ff2c8f1477ab",
         "practices": [
-          "bools",
-          "classes",
           "class-customization",
-          "class-composition",
-          "class-inheritance",
-          "conditionals",
-          "comparisons",
-          "dicts",
-          "functions",
-          "function-arguments",
           "lists",
           "list-methods",
           "raising-and-handling-errors",
-          "sequences",
-          "strings",
-          "unpacking-and-multiple-assignment",
           "user-defined-errors"
         ],
         "prerequisites": [
@@ -2542,11 +2358,8 @@
         "practices": [
           "conditionals",
           "comparisons",
-          "iteration",
-          "lists",
           "list-methods",
           "list-comprehensions",
-          "loops",
           "regular-expressions",
           "sequences",
           "strings",
@@ -2576,9 +2389,6 @@
         "uuid": "dc6e61a2-e9b9-4406-ba5c-188252afbba1",
         "practices": [
           "bools",
-          "conditionals",
-          "comparisons",
-          "lists",
           "list-methods",
           "list-comprehensions",
           "loops",
@@ -2608,21 +2418,13 @@
         "name": "Grep",
         "uuid": "ecc97fc6-2e72-4325-9b67-b56c83b13a91",
         "practices": [
-          "bools",
           "conditionals",
-          "comparisons",
-          "dicts",
-          "functions",
           "function-arguments",
           "lists",
           "list-methods",
-          "list-comprehensions",
-          "other-comprehensions",
-          "loops",
           "sequences",
           "strings",
-          "string-formatting",
-          "unpacking-and-multiple-assignment",
+          "string-methods",
           "with-statement"
         ],
         "prerequisites": [
@@ -2651,21 +2453,13 @@
         "name": "Bowling",
         "uuid": "ca970fee-71b4-41e1-a5c3-b23bf574eb33",
         "practices": [
-          "bools",
           "classes",
           "class-customization",
           "conditionals",
           "comparisons",
           "lists",
-          "list-comprehensions",
-          "loops",
-          "numbers",
-          "operator-overloading",
-          "rich-comparisons",
           "raising-and-handling-errors",
-          "sequences",
-          "strings",
-          "tuples"
+          "sequences"
         ],
         "prerequisites": [
           "basics",
@@ -2693,18 +2487,12 @@
         "name": "Forth",
         "uuid": "14e1dfe3-a45c-40c1-bf61-2e4f0cca5579",
         "practices": [
-          "basics",
           "conditionals",
-          "comparisons",
-          "dicts",
           "lists",
-          "list-methods",
           "list-comprehensions",
           "loops",
-          "numbers",
           "raising-and-handling-errors",
           "sequences",
-          "strings",
           "string-methods",
           "user-defined-errors"
         ],
@@ -2736,20 +2524,13 @@
         "name": "Ledger",
         "uuid": "c2e9d08d-1a58-4d9a-a797-cea265973bd4",
         "practices": [
-          "bools",
-          "classes",
           "class-customization",
           "conditionals",
           "comparisons",
-          "dicts",
           "lists",
           "list-methods",
           "loops",
-          "operator-overloading",
-          "rich-comparisons",
           "sequences",
-          "strings",
-          "string-methods",
           "string-formatting"
         ],
         "prerequisites": [
@@ -2783,25 +2564,13 @@
         "name": "Word Search",
         "uuid": "dc2917d5-aaa9-43d9-b9f4-a32919fdbe18",
         "practices": [
-          "bools",
-          "classes",
           "class-customization",
           "conditionals",
           "comparisons",
-          "dataclasses-and-namedtuples",
-          "dicts",
-          "lists",
           "list-methods",
-          "list-comprehensions",
-          "iteration",
           "loops",
-          "numbers",
-          "none",
-          "operator-overloading",
           "rich-comparisons",
           "sequences",
-          "strings",
-          "string-methods",
           "string-formatting"
         ],
         "prerequisites": [
@@ -2834,20 +2603,14 @@
         "name": "Satellite",
         "uuid": "18467e72-e3b0-403c-896a-ce337f96e6f7",
         "practices": [
-          "conditionals",
-          "comparisons",
           "dicts",
+          "generators",
           "lists",
           "list-methods",
-          "list-comprehensions",
-          "other-comprehensions",
-          "loops",
-          "numbers",
           "raising-and-handling-errors",
           "recursion",
           "sequences",
-          "strings",
-          "string-methods"
+          "sets"
         ],
         "prerequisites": [
           "basics",
@@ -2875,17 +2638,10 @@
         "uuid": "569210ea-71c1-4fd2-941e-6bf0d953019e",
         "practices": [
           "bools",
-          "classes",
           "class-customization",
-          "conditionals",
-          "comparisons",
-          "dicts",
           "lists",
           "list-methods",
-          "list-comprehensions",
-          "loops",
           "none",
-          "numbers",
           "raising-and-handling-errors",
           "sequences",
           "strings"
@@ -2915,28 +2671,14 @@
         "name": "Pov",
         "uuid": "d98b1080-36d4-4357-b12a-685d204856bf",
         "practices": [
-          "bools",
-          "classes",
           "class-customization",
-          "class-inheritance",
-          "class-composition",
-          "conditionals",
-          "comparisons",
           "dicts",
-          "lists",
-          "list-methods",
           "list-comprehensions",
-          "other-comprehensions",
           "loops",
           "none",
-          "numbers",
-          "operator-overloading",
           "raising-and-handling-errors",
           "rich-comparisons",
-          "sequences",
-          "strings",
-          "string-methods",
-          "string-formatting"
+          "sequences"
         ],
         "prerequisites": [
           "basics",
@@ -2971,10 +2713,6 @@
         "name": "Diamond",
         "uuid": "a7bc6837-59e4-46a1-89a2-a5aa44f5e66e",
         "practices": [
-          "bools",
-          "conditionals",
-          "comparisons",
-          "dicts",
           "lists",
           "list-methods",
           "list-comprehensions",
@@ -3009,13 +2747,10 @@
           "conditionals",
           "comparisons",
           "lists",
-          "list-methods",
           "list-comprehensions",
           "loops",
-          "sequences",
-          "strings",
-          "string-methods",
-          "string-formatting"
+          "none",
+          "sequences"
         ],
         "prerequisites": [
           "basics",
@@ -3043,14 +2778,10 @@
         "practices": [
           "conditionals",
           "comparisons",
-          "iteration",
           "lists",
           "list-methods",
-          "list-comprehensions",
           "loops",
           "sequences",
-          "strings",
-          "string-methods",
           "string-formatting"
         ],
         "prerequisites": [
@@ -3078,18 +2809,11 @@
         "practices": [
           "conditionals",
           "comparisons",
-          "functools",
-          "iteration",
-          "itertools",
           "lists",
           "list-methods",
           "list-comprehensions",
-          "other-comprehensions",
           "loops",
-          "none",
-          "sequences",
-          "sets",
-          "tuples"
+          "sequences"
         ],
         "prerequisites": [
           "basics",
@@ -3123,24 +2847,13 @@
         "uuid": "2abe6eed-c7e4-4ad7-91e3-778bc5176726",
         "practices": [
           "classes",
-          "class-customization",
-          "class-inheritance",
-          "class-composition",
-          "conditionals",
-          "comparisons",
           "dicts",
-          "functools",
-          "lists",
-          "list-methods",
           "list-comprehensions",
-          "other-comprehensions",
           "loops",
           "none",
           "numbers",
           "sequences",
-          "strings",
-          "string-methods",
-          "string-formatting"
+          "sets"
         ],
         "prerequisites": [
           "basics",
@@ -3175,13 +2888,10 @@
           "conditionals",
           "comparisons",
           "lists",
-          "list-comprehensions",
           "loops",
           "numbers",
           "raising-and-handling-errors",
-          "sequences",
-          "strings",
-          "string-formatting"
+          "sequences"
         ],
         "prerequisites": [
           "basics",
@@ -3236,14 +2946,11 @@
         "practices": [
           "conditionals",
           "comparisons",
-          "iteration",
-          "lists",
           "list-methods",
           "list-comprehensions",
           "loops",
           "numbers",
           "sequences",
-          "strings",
           "string-methods"
         ],
         "prerequisites": [
@@ -3270,16 +2977,10 @@
           "bools",
           "conditionals",
           "comparisons",
-          "lists",
-          "list-methods",
-          "list-comprehensions",
-          "loops",
           "iteration",
           "itertools",
-          "recursion",
-          "sequences",
-          "strings",
-          "string-methods"
+          "lists",
+          "strings"
         ],
         "prerequisites": [
           "basics",
@@ -3305,24 +3006,12 @@
         "name": "Custom Set",
         "uuid": "23a567b5-c184-4e65-9216-df7caba00d75",
         "practices": [
-          "bools",
           "classes",
           "class-customization",
           "class-inheritance",
-          "conditionals",
-          "comparisons",
           "lists",
-          "list-methods",
-          "list-comprehensions",
-          "other-comprehensions",
-          "loops",
-          "numbers",
           "operator-overloading",
-          "raising-and-handling-errors",
-          "rich-comparisons",
-          "strings",
-          "string-methods",
-          "string-formatting"
+          "rich-comparisons"
         ],
         "prerequisites": [
           "basics",
@@ -3355,20 +3044,13 @@
         "name": "Paasio",
         "uuid": "ec36f9ed-f376-43d9-90ee-be0bea0cfc98",
         "practices": [
-          "bools",
-          "classes",
           "class-customization",
           "class-inheritance",
           "class-composition",
-          "conditionals",
-          "comparisons",
           "context-manager-customization",
           "decorators",
           "descriptors",
-          "raising-and-handling-errors",
-          "rich-comparisons",
-          "unpacking-and-multiple-assignment",
-          "with-statement"
+          "rich-comparisons"
         ],
         "prerequisites": [
           "basics",
@@ -3403,24 +3085,14 @@
         "name": "Alphametics",
         "uuid": "66466141-485c-470d-b73b-0a3d5a957c3d",
         "practices": [
-          "conditionals",
-          "comparisons",
           "dicts",
-          "iteration",
           "itertools",
-          "lists",
           "list-methods",
           "list-comprehensions",
           "other-comprehensions",
           "loops",
-          "numbers",
-          "raising-and-handling-errors",
           "sequences",
-          "sets",
-          "strings",
-          "string-methods",
-          "string-formatting",
-          "tuples"
+          "sets"
         ],
         "prerequisites": [
           "basics",
@@ -3657,12 +3329,12 @@
         "name": "Pascals Triangle",
         "uuid": "e1e1c7d7-c1d9-4027-b90d-fad573182419",
         "practices": [
+          "generators",
           "lists",
           "list-comprehensions",
           "loops",
-          "strings",
-          "string-methods",
-          "dicts"
+          "sequences",
+          "string-methods"
         ],
         "prerequisites": [
           "basics",
@@ -3803,13 +3475,8 @@
         "name": "Dnd Character",
         "uuid": "58625685-b5cf-4e8a-b3aa-bff54da0689d",
         "practices": [
-          "bools",
-          "classes",
           "class-customization",
-          "conditionals",
-          "comparisons",
           "dicts",
-          "lists",
           "list-methods",
           "list-comprehensions",
           "loops",
@@ -3971,8 +3638,6 @@
           "bools",
           "conditionals",
           "comparisons",
-          "dicts",
-          "lists",
           "list-methods",
           "list-comprehensions",
           "numbers",
@@ -4020,10 +3685,6 @@
           "classes",
           "class-customization",
           "conditionals",
-          "comparisons",
-          "enums",
-          "loops",
-          "none",
           "numbers",
           "raising-and-handling-errors",
           "with-statement"
@@ -4054,19 +3715,9 @@
           "class-customization",
           "conditionals",
           "comparisons",
-          "dicts",
-          "lists",
-          "list-methods",
-          "list-comprehensions",
-          "other-comprehensions",
-          "loops",
-          "numbers",
-          "operator-overloading",
           "raising-and-handling-errors",
           "sequences",
-          "strings",
-          "string-methods",
-          "string-formatting"
+          "strings"
         ],
         "prerequisites": [
           "basics",
@@ -4097,20 +3748,13 @@
         "uuid": "1d21cd68-10ac-427d-be6d-77152bceacc4",
         "practices": [
           "bools",
-          "classes",
           "class-customization",
           "conditionals",
           "comparisons",
-          "lists",
-          "list-methods",
-          "list-comprehensions",
-          "loops",
-          "none",
           "numbers",
           "operator-overloading",
           "raising-and-handling-errors",
-          "rich-comparisons",
-          "string-formatting"
+          "rich-comparisons"
         ],
         "prerequisites": [
           "basics",
@@ -4139,27 +3783,14 @@
         "name": "Sgf Parsing",
         "uuid": "0d6325d1-c0a3-456e-9a92-cea0559e82ed",
         "practices": [
-          "bools",
-          "classes",
           "class-customization",
-          "class-inheritance",
-          "conditionals",
-          "comparisons",
+          "decorators",
           "dicts",
-          "lists",
-          "list-methods",
-          "list-comprehensions",
-          "loops",
           "numbers",
           "operator-overloading",
           "raising-and-handling-errors",
-          "recursion",
           "regular-expressions",
-          "rich-comparisons",
-          "sequences",
-          "strings",
-          "string-methods",
-          "string-formatting"
+          "rich-comparisons"
         ],
         "prerequisites": [
           "basics",
