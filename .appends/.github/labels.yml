@@ -1,3 +1,8 @@
+# ----------------------------------------------------------------------------------------- #
+# These are the repository-specific labels that augment the Exercise-wide labels defined in #
+# https://github.com/exercism/org-wide-files/blob/main/global-files/.github/labels.yml.     #
+# ----------------------------------------------------------------------------------------- #
+
 - name: "abandoned"
   description: ""
   color: "ededed"
@@ -31,7 +36,7 @@
   color: "257FE3"
 
 - name: "do not merge 🚧"
-  description: ""
+  description: "Don't merge until this label is removed."
   color: "fbca04"
 
 - name: "documentation 📚"
@@ -43,11 +48,11 @@
   color: "e6e6e6"
 
 - name: "enhancement 🦄 ⭐"
-  description: ""
+  description: "Changing current behaviour or enhancing/adding to what's already there."
   color: "B5F7FF"
 
 - name: "experimental 🔬"
-  description: ""
+  description: "Speculative functionality or implementation."
   color: "FFFFFF"
 
 - name: "first-timers only 🐣"
@@ -59,11 +64,11 @@
   color: "000000"
 
 - name: "good first issue"
-  description: ""
+  description: "Good issue for a new contributor to this project/repo."
   color: "BED643"
 
 - name: "good first patch"
-  description: ""
+  description: "Good fix/patch for a new contributor to this project/repo."
   color: "BED643"
 
 - name: "hacktoberfest 🍁"
@@ -75,11 +80,11 @@
   color: "F5A623"
 
 - name: "help wanted"
-  description: ""
+  description: "We'd like your help with this."
   color: "BD10E0"
 
 - name: "improve documentation 💖"
-  description: ""
+  description: "specific improvements to documentation on the track, the exercises, or the repo."
   color: "FFFFFF"
 
 - name: "improve exercise 💖"
@@ -103,7 +108,7 @@
   color: "e6e6e6"
 
 - name: "maintainer action required❕"
-  description: ""
+  description: "A maintainer needs to take action on this."
   color: "B60205"
 
 - name: "maintainer chore 🔧"
@@ -127,11 +132,11 @@
   color: "5331B5"
 
 - name: "on hold ✋🏽"
-  description: ""
+  description: "Action should stop on this issue or PR for now."
   color: "FEF2C0"
 
 - name: "pinned 📌"
-  description: ""
+  description: "Do no mark stale or invalid."
   color: "FFD141"
 
 - name: "please review  👀"
@@ -142,37 +147,21 @@
   description: "Pull requests that update Python code"
   color: "2b67c6"
 
-- name: "reputation/contributed_code/double_major"
-  description: ""
-  color: "0116C3"
-
-- name: "reputation/contributed_code/major"
-  description: "Code contribution is bigger than average"
-  color: "4DD2E1"
-
-- name: "reputation/contributed_code/minor"
-  description: ""
-  color: "17E47E"
-
 - name: "security 🚨"
   description: "Security issue or patch"
   color: "FFFFFF"
 
 - name: "spam 🚫"
-  description: ""
+  description: "This is a spam/nuisance issue or PR."
   color: "FFFFFF"
 
 - name: "status/draft"
-  description: ""
+  description: "This is in draft and open for comment/suggestion."
   color: "DEA3EA"
 
 - name: "status/wontfix  🙅🏽"
-  description: ""
+  description: "While this may be an issue, it will not be fixed at this time.
   color: "DEA3EA"
-
-- name: "v3-migration 🤖"
-  description: "Preparing for Exercism v3"
-  color: "E99695"
 
 - name: "wip/content-checking  ☑"
   description: "content checking tasks for exercises that are in development"
@@ -191,6 +180,5 @@
   color: "A389F1"
 
 - name: "❔question❔"
-  description: ""
+  description: "I have a proposal or question about things, but nothing is broken."
   color: "293028"
-
