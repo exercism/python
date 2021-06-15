@@ -267,7 +267,7 @@
         "slug": "isogram",
         "name": "Isogram",
         "uuid": "d1a98c79-d3cc-4035-baab-0e334d2b6a57",
-        "practices": ["sets", "strings", "string-methods", "comparisons"],
+        "practices": ["sets", "strings", "string-methods"],
         "prerequisites": ["strings", "string-methods", "sets"],
         "difficulty": 3
       },
@@ -803,7 +803,7 @@
         "slug": "grains",
         "name": "Grains",
         "uuid": "a24e6d34-9952-44f4-a0cd-02c7fedb4875",
-        "practices": ["numbers", "raising-and-handling-errors"],
+        "practices": ["basics", "numbers"],
         "prerequisites": ["basics", "numbers"],
         "difficulty": 1
       },
@@ -898,7 +898,7 @@
         "slug": "simple-cipher",
         "name": "Simple Cipher",
         "uuid": "09b2f396-00d7-4d89-ac47-5c444e00dd99",
-        "practices": ["numbers"],
+        "practices": [],
         "prerequisites": [
           "basics",
           "classes",
@@ -1281,16 +1281,7 @@
         "slug": "say",
         "name": "Say",
         "uuid": "2f86ce8e-47c7-4858-89fc-e7729feb0f2f",
-        "practices": [
-          "loops",
-          "lists",
-          "numbers",
-          "sequences",
-          "strings",
-          "string-methods",
-          "string-methods-splitting",
-          "raising-and-handling-errors"
-        ],
+        "practices": ["loops", "lists", "string-methods-splitting"],
         "prerequisites": [
           "basics",
           "conditionals",
@@ -2035,7 +2026,6 @@
           "dataclasses-and-namedtuples",
           "iteration",
           "loops",
-          "numbers",
           "operator-overloading",
           "rich-comparisons",
           "strings",
@@ -2525,7 +2515,7 @@
         "slug": "accumulate",
         "name": "Accumulate",
         "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
-        "practices": ["list-comprehensions"],
+        "practices": [],
         "prerequisites": [
           "basics",
           "loops",
@@ -2542,13 +2532,7 @@
         "slug": "binary",
         "name": "Binary",
         "uuid": "49127efa-1124-4f27-bee4-99992e3433de",
-        "practices": [
-          "raising-and-handling-errors",
-          "numbers",
-          "loops",
-          "strings",
-          "conditionals"
-        ],
+        "practices": [],
         "prerequisites": [
           "basics",
           "bools",
@@ -2567,12 +2551,7 @@
         "slug": "error-handling",
         "name": "Error Handling",
         "uuid": "0dac0feb-e1c8-497e-9a1b-e96e0523eea6",
-        "practices": [
-          "classes",
-          "class-customization",
-          "class-inheritance",
-          "raising-and-handling-errors"
-        ],
+        "practices": [],
         "prerequisites": [
           "basics",
           "bools",
@@ -2596,13 +2575,7 @@
         "slug": "hexadecimal",
         "name": "Hexadecimal",
         "uuid": "6b7f7b1f-c388-4f4c-b924-84535cc5e1a0",
-        "practices": [
-          "dicts",
-          "numbers",
-          "loops",
-          "lists",
-          "list-comprehensions"
-        ],
+        "practices": [],
         "prerequisites": [
           "basics",
           "bools",
@@ -2625,14 +2598,7 @@
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
         "uuid": "105f25ec-7ce2-4797-893e-05e3792ebd91",
-        "practices": [
-          "lists",
-          "loops",
-          "dicts",
-          "dict-methods",
-          "strings",
-          "string-methods"
-        ],
+        "practices": [],
         "prerequisites": [
           "basics",
           "bools",
@@ -2655,13 +2621,7 @@
         "slug": "octal",
         "name": "Octal",
         "uuid": "4094d27f-4d03-4308-9fd7-9f3de312afec",
-        "practices": [
-          "dicts",
-          "numbers",
-          "loops",
-          "lists",
-          "list-comprehensions"
-        ],
+        "practices": [],
         "prerequisites": [
           "basics",
           "bools",
@@ -2684,7 +2644,7 @@
         "slug": "parallel-letter-frequency",
         "name": "Parallel Letter Frequency",
         "uuid": "da03fca4-4606-48d8-9137-6e40396f7759",
-        "practices": ["lists", "loops", "strings", "string-methods", "dicts"],
+        "practices": [],
         "prerequisites": [
           "basics",
           "bools",
@@ -2707,14 +2667,7 @@
         "slug": "pascals-triangle",
         "name": "Pascals Triangle",
         "uuid": "e1e1c7d7-c1d9-4027-b90d-fad573182419",
-        "practices": [
-          "generators",
-          "lists",
-          "list-comprehensions",
-          "loops",
-          "sequences",
-          "string-methods"
-        ],
+        "practices": [],
         "prerequisites": [
           "basics",
           "bools",
@@ -2737,15 +2690,7 @@
         "slug": "point-mutations",
         "name": "Point Mutations",
         "uuid": "d85ec4f2-c201-4eff-9f3a-831a0cc38e8d",
-        "practices": [
-          "generator-expressions",
-          "conditionals",
-          "comparisons",
-          "raising-and-handling-errors",
-          "sequences",
-          "iteration",
-          "itertools"
-        ],
+        "practices": [],
         "prerequisites": [
           "basics",
           "loops",
@@ -2767,14 +2712,7 @@
         "slug": "proverb",
         "name": "Proverb",
         "uuid": "9fd94229-f974-45bb-97ea-8bfe484f6eb3",
-        "practices": [
-          "strings",
-          "string-methods",
-          "string-formatting",
-          "lists",
-          "sequences",
-          "loops"
-        ],
+        "practices": [],
         "prerequisites": [
           "basics",
           "bools",
@@ -2799,7 +2737,7 @@
         "slug": "strain",
         "name": "Strain",
         "uuid": "b50b29a1-782d-4277-a4d4-23f635fbdaa6",
-        "practices": ["conditionals", "list-comprehensions"],
+        "practices": [],
         "prerequisites": [
           "basics",
           "bools",
@@ -2823,13 +2761,7 @@
         "slug": "trinary",
         "name": "Trinary",
         "uuid": "061a6543-d51d-4619-891b-16f92c6435ca",
-        "practices": [
-          "conditionals",
-          "list-comprehensions",
-          "lists",
-          "numbers",
-          "dicts"
-        ],
+        "practices": [],
         "prerequisites": [
           "basics",
           "bools",
@@ -2874,7 +2806,7 @@
         "slug": "gigasecond",
         "name": "Gigasecond",
         "uuid": "22606e91-57f3-44cf-ab2d-94f6ee6402e8",
-        "practices": ["numbers"],
+        "practices": [],
         "prerequisites": [],
         "difficulty": 1
       },
@@ -2898,8 +2830,16 @@
         "slug": "resistor-color-duo",
         "name": "Resistor Color Duo",
         "uuid": "089f06a6-0759-479c-8c00-d699525a1e22",
-        "practices": ["lists", "list-methods", "numbers", "sequences"],
-        "prerequisites": [],
+        "practices": [],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "comparisons",
+          "lists",
+          "list-methods",
+          "numbers",
+          "sequences"
+        ],
         "difficulty": 1
       },
       {
@@ -2982,8 +2922,8 @@
         "slug": "darts",
         "name": "Darts",
         "uuid": "cb581e2c-66ab-4221-9884-44bacb7c4ebe",
-        "practices": ["bools", "conditionals", "comparisons", "numbers"],
-        "prerequisites": ["numbers"],
+        "practices": ["numbers"],
+        "prerequisites": ["basics", "bools", "conditionals", "comparisons", "numbers"],
         "difficulty": 2
       },
       {
