@@ -1834,7 +1834,6 @@
         "practices": [
           "class-inheritance",
           "function-arguments",
-          "user-defined-errors",
           "unpacking-and-multiple-assignment",
           "user-defined-errors"
         ],
