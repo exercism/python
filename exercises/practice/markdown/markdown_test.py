@@ -29,16 +29,17 @@ class MarkdownTest(unittest.TestCase):
             "<p>This will <em>be</em> <strong>mixed</strong></p>",
         )
 
-    def test_with_h1_header_level(self):
-        self.assertEqual(parse("# This will be an h1"), "<h1>This will be an h1</h1>")
-
-    def test_with_h2_header_level(self):
-        self.assertEqual(parse("## This will be an h2"), "<h2>This will be an h2</h2>")
-
-    def test_with_h6_header_level(self):
-        self.assertEqual(
-            parse("###### This will be an h6"), "<h6>This will be an h6</h6>"
-        )
+    def test_headers_with_all_levels(self):
+        header_cases = [
+            ("# This will be an h1", "<h1>This will be an h1</h1>"),
+            ("## This will be an h2", "<h2>This will be an h2</h2>"),
+            ("### This will be an h3", "<h3This will be an h3</h3>"),
+            ("#### This will be an h4", "<h4>This will be an h4</h4>"),
+            ("##### This will be an h5", "<h5>This will be an h5</h5>"),
+            ("###### This will be an h6", "<h6>This will be an h6</h6>"),
+            
+        for case in header_cases:
+            self.assertEqual(parse(case[0], case[1]))
 
     def test_unordered_lists(self):
         self.assertEqual(
