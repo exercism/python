@@ -160,7 +160,7 @@
   color: "DEA3EA"
 
 - name: "status/wontfix  🙅🏽"
-  description: "While this may be an issue, it will not be fixed at this time.
+  description: "While this may be an issue, it will not be fixed at this time."
   color: "DEA3EA"
 
 - name: "wip/content-checking  ☑"
