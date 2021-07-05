@@ -7,5 +7,5 @@
     "test": ["lasagna_test.py"],
     "exemplar": [".meta/exemplar.py"]
   },
-  "forked_from": ["csharp/basics", "ruby/basics"]
+  "forked_from": ["csharp/lucians-luscious-lasagna", "ruby/lasagna"]
 }
