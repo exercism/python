@@ -8,6 +8,6 @@
     "test": ["arcade_game_test.py"],
     "exemplar": [".meta/exemplar.py"]
   },
-  "forked_from": ["elixir/booleans"],
+  "forked_from": ["elixir/pacman-rules"],
   "language_versions": ">=3.5"
 }
