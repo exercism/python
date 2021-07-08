@@ -22,9 +22,9 @@ jobs:
           # Only check issues and PRs with these labels
           any-of-labels: "x:status/claimed,claimed 🐾,dependencies,do not merge 🚧,duplicate,experimental 🔬,
             first-timers only 🐣,github_actions,good first issue,good first patch,hacktoberfest 🍁,
-            hacktoberfest-accepted ☑,in-progress 🌿,invalid,python,security 🚨,spam, wip/content-checking  ☑,
-            wip/proof-reading 👀,wip/story-writing  ✍,wip/style-guideline-checking 📐 🚫,status/draft,
-            status/wontfix  🙅🏽,❔question❔"
+            hacktoberfest-accepted ☑,in-progress 🌿,invalid,python,security 🚨, wip/content-checking  ☑,
+            wip/proof-reading 👀,wip/story-writing  ✍,wip/style-guideline-checking 📐,spam 🚫,status/draft,
+            status/wontfix  🙅🏽"
           stale-issue-label: abandoned 🏚
           stale-issue-message: >
             This issue has been automatically marked as `abandoned 🏚`
