@@ -3,17 +3,9 @@
 # https://github.com/exercism/org-wide-files/blob/main/global-files/.github/labels.yml.     #
 # ----------------------------------------------------------------------------------------- #
 
-- name: "abandoned"
-  description: ""
-  color: "ededed"
-
 - name: "abandoned 🏚"
   description: ""
   color: "ededed"
-
-- name: "abandoned 🏚️"
-  description: ""
-  color: "CFCDAA"
 
 - name: "bug 🐛"
   description: ""
