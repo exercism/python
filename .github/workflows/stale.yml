@@ -19,14 +19,12 @@ jobs:
           # Exempt all issues with milestones from being marked as stale.
           exempt-all-issue-milestones: true
 
-          exempt-issue-labels: "x:action/create,x:action/fix,x:action/improve,x:action/proofread,x:action/sync,
-            x:knowledge/none,x:knowledge/elementary,x:knowledge/intermediate,x:knowledge/advanced,x:module/analyzer,
-            x:module/concept,x:module/concept-exercise,x:module/generator,x:module/practice-exercise,x:module/representer,
-            x:module/test-runner,x:size/massive,x:status/claimed,x:type/ci,x:type/coding,x:type/content,x:type/docker,
-            x:type/docs,v3-migration 🤖,bug 🐛,claimed 🐾,discussion 💬,enhancement 🦄 ⭐,first-timers only 🐣
-            , good first issue,good first patch,help wanted,improve documentation 💖,improve exercise 💖,
-            improve reference docs 💖,improve test case 💖,maintainer action required❕,maintainer chore 🔧,
-            new documentation ✨,new exercise ✨,new reference doc ✨,new test case ✨,on hold ✋🏽,pinned 📌"
+          # Only check issues and PRs with these labels
+          any-of-labels: "x:status/claimed,claimed 🐾,dependencies,do not merge 🚧,duplicate,experimental 🔬,
+            first-timers only 🐣,github_actions,good first issue,good first patch,hacktoberfest 🍁,
+            hacktoberfest-accepted ☑,in-progress 🌿,invalid,python,security 🚨,spam, wip/content-checking  ☑,
+            wip/proof-reading 👀,wip/story-writing  ✍,wip/style-guideline-checking 📐 🚫,status/draft,
+            status/wontfix  🙅🏽,❔question❔"
           stale-issue-label: abandoned 🏚
           stale-issue-message: >
             This issue has been automatically marked as `abandoned 🏚`
@@ -36,14 +34,6 @@ jobs:
           close-issue-message: >
             Closing stale issue. If this issue is still relevant,
             please reopen it.
-          exempt-pr-labels:  "x:action/create,x:action/fix,x:action/improve,x:action/proofread,x:action/sync,
-            x:knowledge/none,x:knowledge/elementary,x:knowledge/intermediate,x:knowledge/advanced,x:module/analyzer,
-            x:module/concept,x:module/concept-exercise,x:module/generator,x:module/practice-exercise,x:module/representer,
-            x:module/test-runner,x:size/massive,x:status/claimed,x:type/ci,x:type/coding,x:type/content,x:type/docker,
-            x:type/docs,v3-migration 🤖,bug 🐛,claimed 🐾,discussion 💬,enhancement 🦄 ⭐,first-timers only 🐣
-            , good first issue,good first patch,help wanted,improve documentation 💖,improve exercise 💖,
-            improve reference docs 💖,improve test case 💖,maintainer action required❕,maintainer chore 🔧,
-            new documentation ✨,new exercise ✨,new reference doc ✨,new test case ✨,on hold ✋🏽,pinned 📌"
           stale-pr-label: 'abandoned 🏚'
           stale-pr-message: >
             This pull request has been automatically marked as `abandoned 🏚`
