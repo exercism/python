@@ -32,7 +32,7 @@
         "uuid": "5a9b42fb-ddf4-424b-995d-f9952ea63c37",
         "concepts": ["strings"],
         "prerequisites": ["basics"],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "meltdown-mitigation",
@@ -40,7 +40,7 @@
         "uuid": "50c88b36-e2e2-46e5-b6c4-bb7e714c375a",
         "concepts": ["conditionals"],
         "prerequisites": ["basics", "booleans", "comparisons"],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "tisbury-treasure-hunt",
@@ -48,7 +48,7 @@
         "uuid": "7ecd42c1-2ed5-487a-bc89-71c9cbad9b05",
         "concepts": ["tuples"],
         "prerequisites": ["bools", "loops", "conditionals", "numbers"],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "guidos-gorgeous-lasagna",
@@ -56,7 +56,7 @@
         "uuid": "dfd7dc01-3544-4f61-a063-af8530d6e601",
         "concepts": ["basics"],
         "prerequisites": [],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "ghost-gobble-arcade-game",
@@ -64,7 +64,7 @@
         "uuid": "c050470d-ef22-4187-aaac-239e07955a4d",
         "concepts": ["bools"],
         "prerequisites": ["basics"],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "black-jack",
@@ -72,7 +72,7 @@
         "uuid": "e1a6075e-0c5e-48cd-8c50-69140961a06a",
         "concepts": ["comparisons"],
         "prerequisites": ["basics"],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "pretty-leaflet",
@@ -80,7 +80,7 @@
         "uuid": "5b813a3a-1983-470b-91a1-9f2c0b327ab7",
         "concepts": ["string-formatting"],
         "prerequisites": ["strings", "classes", "loops", "lists"],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "inventory-management",
@@ -88,7 +88,7 @@
         "uuid": "0558b66c-f2c8-4ff3-846a-4ac87a8660d9",
         "concepts": ["dicts"],
         "prerequisites": ["loops", "lists", "tuples"],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "log-levels",
@@ -105,7 +105,7 @@
           "string-methods",
           "tuples"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "card-games",
@@ -113,7 +113,7 @@
         "uuid": "d76958ce-3a5b-4e4c-9388-b109f67cf23a",
         "concepts": ["lists"],
         "prerequisites": ["conditionals", "strings"],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "chaitanas-colossal-coaster",
@@ -121,7 +121,7 @@
         "uuid": "f326f3f8-1ab0-4d3d-8f42-5130fe5af841",
         "concepts": ["list-methods"],
         "prerequisites": ["lists"],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "restaurant-rozalynn",
@@ -136,7 +136,7 @@
           "list-methods",
           "loops"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "making-the-grade",
@@ -151,7 +151,7 @@
           "list-methods",
           "strings"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "little-sisters-essay",
@@ -159,7 +159,7 @@
         "uuid": "09c322bc-5c04-480b-8441-fd9ef5c7a3b4",
         "concepts": ["string-methods"],
         "prerequisites": ["basics", "strings"],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "currency-exchange",
@@ -167,7 +167,7 @@
         "uuid": "1335ca33-3af0-4720-bcf2-bfa68ffc6862",
         "concepts": ["numbers"],
         "prerequisites": ["basics"],
-        "status": "wip"
+        "status": "beta"
       }
     ],
     "practice": [
@@ -2923,7 +2923,13 @@
         "name": "Darts",
         "uuid": "cb581e2c-66ab-4221-9884-44bacb7c4ebe",
         "practices": ["numbers"],
-        "prerequisites": ["basics", "bools", "conditionals", "comparisons", "numbers"],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "comparisons",
+          "numbers"
+        ],
         "difficulty": 2
       },
       {
