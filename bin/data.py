@@ -135,6 +135,7 @@ class ExerciseConfig:
     source: str = None
     source_url: str = None
     blurb: str = None
+    icon: str = None
 
     def __post_init__(self):
         if isinstance(self.files, dict):
