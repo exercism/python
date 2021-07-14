@@ -72,7 +72,7 @@
         "uuid": "e1a6075e-0c5e-48cd-8c50-69140961a06a",
         "concepts": ["comparisons"],
         "prerequisites": ["basics"],
-        "status": "beta"
+        "status": "wip"
       },
       {
         "slug": "pretty-leaflet",
