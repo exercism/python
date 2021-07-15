@@ -1,6 +1,6 @@
 # Tests
 
-You can run the incluyded tests by typing `pytest <exercisename>_test.py` on the command line from within the exercise's directory.
+You can run the included tests by typing `pytest <exercisename>_test.py` on the command line from within the exercise's directory.
 
 You can also tell Python to run the pytest module on the command line from either within the exercise directory or with a path to the exercise directory.
 `python -m pytest <exercisename>_test.py` from within the exercise directory.
