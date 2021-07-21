@@ -1,18 +1,18 @@
 [
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://docs.python.org/3/library/stdtypes.html#set",
+    "description": "Python Documentation on Standard Types: Set"
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://realpython.com/python-sets/",
+    "description": "Real Python: Sets in Python."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://towardsdatascience.com/5-pythons-sets-problems-to-solve-before-your-coding-interview-41bb1d14ac25",
+    "description": "5 Problems with Sets to Solve (Towards Data Science)"
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "  http://notes.imt-decal.org/sets/cheat-sheet.html",
+    "description": "Set and Logic symbols cheat sheet."
   }
 ]
