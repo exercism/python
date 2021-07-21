@@ -1,38 +1,68 @@
-# Design
+## Goal
 
-## Learning Objectives
+The goal of this exercise is to teach the basics of [`sets`][set type] (_set type_) in Python.
 
-- Access values in a tuple via index using [] (bracket notation).
-- Create a tuple via constructor (tuple(_iterable_)) and/or literal (a,b,c or (a, b, c))
-- Understand that tuples are an **immutable data type** (like strings). Changing a tuple means creating a new copy.
-- Understand that tuples can contain other tuples. (e.g. tuples can be nested).
-- Create a new tuple from two or more previous tuples via concatenation using the `+` operator.
-- Iterate through a tuple using `for item in`.
-- Check for membership of an item in a given tuple using the `in` keyword.
-- Understand that it is the comma in a sequence that makes a tuple, and that the () are optional, except for denoting an empty tuple or when omitting them creates ambiguity.
 
-## Out of Scope
+## Learning objectives
 
-- Common Sequence type methods such as `min()`, `max()`, `x.index()`, `x.count()`, `len()`
-- Slicing or slice notation ([start:stop:step])
-- Additional builtin functions as they relate to this data structure (e.g. `sorted()`, `enumerate()`, `reversed()`, or `hash()`.
-- Knowing that tuples can be used as objects in other data structures, -- e.g. " a "List of tuples", "tuples as keys in Dictionaries", or "A Set of tuples".
-- Hash-ability and when a tuple is not hash-able.
-- Related [collections](https://docs.python.org/3/library/collections.html#collections.namedtuple) module with `namedtuple()`
-- Related [dataclass](https://docs.python.org/3.7/library/dataclasses.html) and `@dataclass` decorator
-- Memory storage and performance characteristics.
+*  understand that a set is an **unordered collection of distinct hashable objects**
+*  create a `set` via constructor (`set()`) and  literal (`{}`)
+*  de-dupe a list of elements by converting a sequence type such as a `list` to a `set` type
+*  check for a membership of an element in a given set via `in`
+*  set comparison functions and set comparison operators (`=<`, `>=`, `issubset()`, `issuperset()`, etc.)
+*  additional set operators (`union`, `intersection`, `difference`, and `symmetric_difference`)
+*  add values to a given set via `add()`
+*  remove values from a given set via `discard()`
+*  iterate through a given set by using `for item in <set>` and `for index, item in enumerate(<set>)`
+*  understand that iterating through a set twince may result in a different iteration order (_sets are unordered_)
+
+## Out of scope
+
+*  `frozenset()`
+*  `clear()` to delete all elements of a set
+*  check the length of a given set via `len()`
+*  `remove` as opposed to `discard` (_`remove` tosses a `keyerror` if the element is not present_)
+*   all forms/variants of `update()`
+*  remove (and use) a value from a given set via `pop()`
+*  make shallow copy(s) of a given set via `copy()`
+*  using additional builtins such as `sorted()`, `min()`, or `map()` with a set
+*  set comprehensions
 
 ## Concepts
 
-- `tuples`
+*  `sets`
+*  [`hashable`][term-hashable] objects
+* `set` comparisons
+* `set` operations
 
 ## Prerequisites
 
-- `booleans`
-- `for-loops`
-- `functions`
-- `if-keyword`
-- `in-keyword`
-- `integers`
-- `return-keyword`
-- `strings`
+* `basics`
+* `booleans`
+* `comparisons`
+* `dicts`
+* `lists`
+* `loops`
+
+## Resources to refer to
+
+*  [Set Types (Python Official Docs)][set types](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset)
+*   [Hashable (Python Official Docs Glossary)][term-hashable]
+*  [immutable (Python Official Docs Glossary)][term-immutable]
+
+### Hints
+
+Hints should link to the `Sets` section of the Python docs tutorial: [Sets][sets-tutorial], or equivelent resources.
+
+
+### After
+
+After, the student can explore comprehension syntax, although it will be taught in separate exercises. This would also be a good time to explore set comparisons via function &/or operator, or experimenting with the `issuperset()` & `issubset()` functions.
+
+
+
+[set type]: https://github.com/exercism/v3/blob/master/languages/python/reference/concepts/builtin_types/set.md
+[set types]: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
+[sets-tutorial]: https://docs.python.org/3/tutorial/datastructures.html#sets
+[term-hashable]: https://docs.python.org/3/glossary.html#term-hashable
+[term-immutable]: https://docs.python.org/3/glossary.html#term-immutable
