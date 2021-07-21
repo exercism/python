@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for this concept",
-  "authors": ["bethanyg", "cmccandless"],
+  "blurb": "A set is a mutable & unordered collection of hashable objects. Members must be unique, and sets are often used to quickly dedupe groups of items. They can be iterated over via \"for item in <set>\" or \"for index, item in enumerate(<set>)\", but do not support sequence-type behaviors like indexing, slicing, or sorting.",
+  "authors": ["bethanyg"],
   "contributors": []
 }
