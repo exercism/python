@@ -3366,32 +3366,32 @@
     {
       "title": "Batteries Included",
       "content": "Epic & well-documented standard library. Need more? Use a PyPi package - there's one for everything.",
-      "icon": "powerful.svg"
+      "icon": "powerful"
     },
     {
       "title": "Easy",
       "content": "Human-friendly Syntax and a vibrant, supportive community. Quick to learn & intuitive to use.",
-      "icon": "fun.svg"
+      "icon": "fun"
     },
     {
       "title": "Extensible",
       "content": "Need to call Fortran from a web API? Done. Need to process images using C? Python can do that.",
-      "icon": "extensible.svg"
+      "icon": "extensible"
     },
     {
       "title": "Flexible",
       "content": "Duck, dynamic, & strong typing. Easy to debug. Fun for experiments, robust for large applications.",
-      "icon": "interop.svg"
+      "icon": "interop"
     },
     {
       "title": "Multi-paradigm",
       "content": "OOP, structured, functional, & aspect-oriented. Adaptable to how you structure your programs.",
-      "icon": "multi-paradigm.svg"
+      "icon": "multi-paradigm"
     },
     {
       "title": "Ubiquitous",
       "content": "Accepted for almost any use. Easily interface with other languages & execute almost everywhere.",
-      "icon": "general-purpose.svg"
+      "icon": "general-purpose"
     }
   ],
   "tags": [
