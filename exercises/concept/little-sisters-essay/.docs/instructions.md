@@ -25,10 +25,11 @@ True
 ## 3. Clean up spacing
 
 To make the paper look professional, unnecessary spacing needs to be removed.
-Implement the function `remove_extra_spaces()` which `sentence` as a parameter, that removes extra whitespace at the beginning and the end of the sentence, and return a new `str` with the updated sentence.
+Implement the function `clean_up_spacing()` that takes  `sentence` as a parameter.  
+The function should remove extra whitespace at both the beginning and the end of the sentence, returning a new, updated sentence `str`.
 
 ```python
->>> remove_extra_spaces(" I like to go on hikes with my dog.  ")
+>>> clean_up_spacing(" I like to go on hikes with my dog.  ")
 "I like to go on hikes with my dog."
 ```
 
