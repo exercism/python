@@ -4,9 +4,9 @@ def capitalize_title(title):
 def check_sentence_ending(sentence):
     pass
 
-def remove_extra_spaces(sentence):
+def clean_up_spacing(sentence):
     pass
 
-def replace_word_choice(sentence, new_word, old_word):
+def replace_word_choice(sentence, old_word, new_word):
     pass
 
