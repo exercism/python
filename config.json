@@ -39,7 +39,7 @@
         "name": "Meltdown Mitigation",
         "uuid": "50c88b36-e2e2-46e5-b6c4-bb7e714c375a",
         "concepts": ["conditionals"],
-        "prerequisites": ["basics", "booleans", "comparisons"],
+        "prerequisites": ["basics", "booleans"],
         "status": "beta"
       },
       {
@@ -145,7 +145,6 @@
         "concepts": ["loops"],
         "prerequisites": [
           "basics",
-          "comparisons",
           "conditionals",
           "lists",
           "list-methods",
