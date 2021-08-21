@@ -1,10 +1,16 @@
 # Introduction
 
-In Python, a [list][list] is a mutable collection of items in _sequence_. Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold reference to any (or multiple) data type(s) - including other lists.
+A [`list`][list] is a mutable collection of items in _sequence_.
+Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold reference to any (or multiple) data type(s) - including other lists.
+Like any [sequence][sequence type], items can be accessed via `0-based index` number from the left and `-1-base index` from the right.
+Lists can be copied in whole or in part via [slice notation][slice notation] or `<list>.copy()`
 
-Like any [sequence][sequence type], items are referenced by 0-based index number, and can be copied in whole or in part via _slice notation_. `list`s support all [common sequence operations][common sequence operations], as well as [mutable sequence operations][mutable sequence operations] such as `<list>.append()` and `<list>.reverse()`. They can be iterated over in a loop by using the `for item in <list>` construct.
+Lists support both [common][common sequence operations] and [mutable][mutable sequence operations] sequence operations such as `min()`/`max()`, `<list>.index()`, `.append()` and `.reverse()`.
+List elements can be iterated over using the `for item in <list>` construct. `for item in enumerate(<list)` can be used when both the element index and the element value are needed.
 
-Under the hood, `lists` are implemented as [dynamic arrays][dynamic array] -- similar to Java's [`Arraylist`][arraylist] type. Lists are most often used to store groups of similar data (_strings, numbers, sets etc._) of unknown length. Lists are an extremely flexible and useful data structure and many built-in methods and operations in Python produce lists as their output.
+Under the hood, `lists` are implemented as [dynamic arrays][dynamic array] -- similar to Java's [`Arraylist`][arraylist] type.
+Lists are most often used to store groups of similar data (_strings, numbers, sets etc._) of unknown length.
+Lists are an extremely flexible and useful data structure and many built-in methods and operations in Python produce lists as their output.
 
 ## Construction
 
@@ -221,3 +227,5 @@ Lists can also be combined via various techniques:
 [mutable sequence operations]: https://docs.python.org/3/library/stdtypes.html#typesseq-mutable
 [dynamic array]: https://en.wikipedia.org/wiki/Dynamic_array
 [arraylist]: https://beginnersbook.com/2013/12/java-arraylist/
+
+[slice notation]: https://docs.python.org/3/reference/expressions.html#slicings
