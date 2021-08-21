@@ -173,7 +173,7 @@
         "name": "Cater Waiter",
         "uuid": "922f8d2d-87ec-4681-9654-4e0a36a558d4",
         "concepts": ["sets"],
-        "prerequisites": ["basics", "dicts", "lists",  "loops", "tuples"],
+        "prerequisites": ["basics", "dicts", "lists", "loops", "tuples"],
         "status": "beta"
       }
     ],
