@@ -1,18 +1,25 @@
 # About
 
-A [`list`][list] is a mutable collection of items in _sequence_. Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold reference to any (or multiple) data type(s) - including other lists. Like any [sequence][sequence type], items are referenced by `0-based index` number and can be copied in whole or in part via [slice notation][slice notation].
+A [`list`][list] is a mutable collection of items in _sequence_.
+Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold reference to any (or multiple) data type(s) - including other lists.
+Like any [sequence][sequence type], items can be accessed via `0-based index` number from the left and `-1-base index` from the right.
+Lists can be copied in whole or in part via [slice notation][slice notation] or `<list>.copy()`
 
-Lists support both [common][common sequence operations] and [mutable][mutable sequence operations] sequence opterations like `min()`/`max()`, `<list>.index()`, `.append()` and `.reverse()`. Items can be iterated over using the `for item in <list>` construct. `for item in enumerate(<list)` can be used when both the item value and item index are needed.
+Lists support both [common][common sequence operations] and [mutable][mutable sequence operations] sequence operations such as `min()`/`max()`, `<list>.index()`, `.append()` and `.reverse()`.
+List elements can be iterated over using the `for item in <list>` construct. `for item in enumerate(<list)` can be used when both the element index and the element value are needed.
 
 Lists are implemented as [dynamic arrays][dynamic array] -- similar to Java's [`Arraylist`][arraylist] type, and are most often used to store groups of similar data (_strings, numbers, sets etc._) of unknown length (_the number of entries may arbitrarily expand or shrink_).
 
-Accessing elements, checking for membership via `in`, or appending items to the "right-hand" side of a list are all very efficient. Prepending (_appending to the "left-hand" side_) or inserting into the middle of a list are much _less_ efficient because those operations require shifting elements to keep them in sequence. For a  similar data structure that supports memory efficient appends/pops from both sides, see [`collections.deque`][deque], which has approximately the same O(1) performance in either direction.
+Accessing elements, checking for membership via `in`, or appending items to the "right-hand" side of a list are all very efficient.
+Prepending (_appending to the "left-hand" side_) or inserting into the middle of a list are much _less_ efficient because those operations require shifting elements to keep them in sequence.
+For a similar data structure that supports memory efficient `appends`/`pops` from both sides, see [`collections.deque`][deque], which has approximately the same O(1) performance in either direction.
 
-Because lists are mutable and can contain references to arbitrary objects, they also take up more space in memory than a fixed-size `array.array` type of the same apparent length. Despite this, lists are an extremely flexible and useful data structure and many built-in methods and operations in Python produce lists as their output.
+Because lists are mutable and can contain references to arbitrary objects, they also take up more space in memory than a fixed-size [`array.array`][array.array] type of the same apparent length.
+Despite this, lists are an extremely flexible and useful data structure and many built-in methods and operations in Python produce lists as their output.
 
 ## Construction
 
-A list can be declared as a _list literal_ with square `[]` brackets and commas between elements:
+A `list` can be declared as a _literal_ with square `[]` brackets and commas between elements:
 
 ```python
 >>> no_elements = []
@@ -109,7 +116,7 @@ TypeError: 'int' object is not iterable
 
 ## Accessing elements
 
-Items inside lists (_as well as elements in other sequence types such as [`str`][string] & [`tuple`][tuple]_), can be accessed via `0-based index` and _bracket notation_. Indexes can be from **`left`** --> **`right`** (_starting at zero_) or **`right`** --> **`left`** (_starting at -1_).
+Items inside lists (_as well as elements in other sequence types such as [`str`][string] & [`tuple`][tuple]_), can be accessed using  _bracket notation_. Indexes can be from **`left`** --> **`right`** (_starting at zero_) or **`right`** --> **`left`** (_starting at -1_).
 
 
 <table>
@@ -250,12 +257,16 @@ Lists can also be combined via various techniques:
 
 ## Some cautions
 
-Recall that variables in Python are _labels_ that point to _underlying objects_. `lists` add one more layer as  _container objects_ -- they hold object references for their collected items.  This can lead to multiple potential issues when working with lists, if not handled properly.
+Recall that variables in Python are _labels_ that point to _underlying objects_.
+`lists` add one more layer as  _container objects_ -- they hold object references for their collected items.
+This can lead to multiple potential issues when working with lists, if not handled properly.
 
 ### Assigning more than one variable name
-Assigning a `list` object to a new variable _name_ **does not copy the `list` object nor its elements**. Any change made to the elements in the `list` under the _new_ name _impact the original_.
+Assigning a `list` object to a new variable _name_ **does not copy the `list` object nor its elements**.
+Any change made to the elements in the `list` under the _new_ name _impact the original_.
 
-Making a `shallow_copy` via `list.copy()` or slice will avoid this first-leve referencing complicaton. A `shallow_copy` will create a new `list` object, but **will not** create new objects for the contained list _elements_. This type of copy will usually be enough for you to add or remove items from the two `list` objects independantly, and effectively have two "seperate" lists. (More about the differences between a shallow_copy and a deep_copy a little later).
+Making a `shallow_copy` via `list.copy()` or slice will avoid this first-leve referencing complication.
+A `shallow_copy` will create a new `list` object, but **will not** create new objects for the contained list _elements_. This type of copy will usually be enough for you to add or remove items from the two `list` objects independently, and effectively have two "separate" lists.
 
 ```python
 >>> actual_names = ["Tony", "Natasha", "Thor", "Bruce"]
@@ -354,7 +365,9 @@ from pprint import pprint
  [0, 0, 0, 0, 0, 0, 0, 'X']]
 ```
 
-But as mentioned earlier, lists are containers of _references_, so there is a second layer of potential complicaton. If a list contains variables, objects, or nested data structures, those second-level references **will not be copied** via `shallow_copy` or slice. Mutating the underlying objects will then affect _any and all_ copies, since each `list` object only contains _references pointing to_ the contained elements.
+As mentioned earlier, lists are containers of _references_, so there is a second layer of potential complication.
+If a list contains variables, objects, or nested data structures, those second-level references **will not be copied** via `shallow_copy` or slice.
+Mutating the underlying objects will then affect _any and all_ copies, since each `list` object only contains _references pointing to_ the contained elements.
 
 ```python
 from pprint import pprint
@@ -389,7 +402,10 @@ from pprint import pprint
 
 ## Related data types
 
-Lists are often used as _stacks_ and _queues_ -- although their underlying implementation makes prepending and inserting slow. The [collections][collections] module offers a [deque][deque] variant optimized for fast appends and pops from either end that is implemented as a [doubly linked list][doubly linked list]. Nested lists are also used to model small _matrices_ -- although the [Numpy][numpy] and [Pandas][pandas] libraries are much more robust for efficient matrix and tabular data manipulation. The collections module also provides a `UserList` type that can be customized to fit specialized list needs.
+Lists are often used as _stacks_ and _queues_ -- although their underlying implementation makes prepending and inserting slow.
+The [collections][collections] module offers a [deque][deque] variant optimized for fast appends and pops from either end that is implemented as a [doubly linked list][doubly linked list].
+Nested lists are also used to model small _matrices_ -- although the [Numpy][numpy] and [Pandas][pandas] libraries are much more robust for efficient matrix and tabular data manipulation.
+The collections module also provides a `UserList` type that can be customized to fit specialized list needs.
 
 [list]: https://docs.python.org/3/library/stdtypes.html#list
 [tuple]: https://docs.python.org/3/library/stdtypes.html#tuple
@@ -410,3 +426,4 @@ Lists are often used as _stacks_ and _queues_ -- although their underlying imple
 [pandas]: https://pandas.pydata.org/
 [names and values]: https://nedbatchelder.com/blog/201308/names_and_values_making_a_game_board.html
 [ned batchelder]: https://nedbatchelder.com/
+[array.array]: https://docs.python.org/3/library/array.html
