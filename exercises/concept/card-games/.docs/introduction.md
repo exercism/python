@@ -6,7 +6,7 @@ Like any [sequence][sequence type], items can be accessed via `0-based index` nu
 Lists can be copied in whole or in part via [slice notation][slice notation] or `<list>.copy()`
 
 Lists support both [common][common sequence operations] and [mutable][mutable sequence operations] sequence operations such as `min()`/`max()`, `<list>.index()`, `.append()` and `.reverse()`.
-List elements can be iterated over using the `for item in <list>` construct. `for item in enumerate(<list)` can be used when both the element index and the element value are needed.
+List elements can be iterated over using the `for item in <list>` construct. `for index, item in enumerate(<list)` can be used when both the element index and the element value are needed.
 
 Under the hood, `lists` are implemented as [dynamic arrays][dynamic array] -- similar to Java's [`Arraylist`][arraylist] type.
 Lists are most often used to store groups of similar data (_strings, numbers, sets etc._) of unknown length.
