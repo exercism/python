@@ -9,7 +9,7 @@ Items can be iterated over using the `for item in <list>` construct, and `for in
 
 Python provides many useful [methods][list-methods] for working with lists.
 
-Becasue `lists` are mutable, list-methods **alter the original list object** passed into the method.
+Because `lists` are mutable, list-methods **alter the original list object** passed into the method.
 If mutation is undesirable, the original `list` needs to at least be copied via `shallow copy` via `slice` or `<list>.copy()`.
 
 ## Adding Items
@@ -205,7 +205,9 @@ Remember that variables in Python are labels that point to underlying objects an
 
 Assigning a `list` object to a new variable _name_ does not copy the object or any of its referenced data. Any change made to the items in the `list` using the new variable name will also _impact the original_.
 
-`<list>.copy()` will create a new `list` object, but **will not** create new objects for the referenced list _elements_. This is called a `shallow copy`. A `shallow copy` is usually enough when you want to add or remove items from one of the `list` objects without modifying the other. But if there is any chance that the _underlying_ elements of a `list` might be accidentally mutated (_thereby mutating all related shallow copies_), [`copy.deepcopy()`][deepcopy] in the `copy` module should be used to create a complete or "deep" copy of **all** references and objects.
+`<list>.copy()` will create a new `list` object, but **will not** create new objects for the referenced list _elements_. This is called a `shallow copy`.
+A `shallow copy` is usually enough when you want to add or remove items from one of the `list` objects without modifying the other.
+But if there is any chance that the _underlying_ elements of a `list` might be accidentally mutated (_thereby mutating all related shallow copies_), [`copy.deepcopy()`][deepcopy] in the `copy` module should be used to create a complete or "deep" copy of **all** references and objects.
 
 For a detailed explanation of names, values, list, and nested list behavior, take a look at this excellent blog post from [Ned Batchelder][ned batchelder] -- [Names and values: making a game board][names and values].
 
