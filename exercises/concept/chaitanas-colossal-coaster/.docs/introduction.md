@@ -1,12 +1,14 @@
 # Introduction
 
-A [`list`][list] is a mutable collection of items in _sequence_. Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold reference to any (or multiple) data type(s) - including other lists.  They can be copied in whole or in part via [slice notation][slice notation]. Like any [sequence][sequence type], elements within `lists` are referenced by `0-based index` number.
+A [`list`][list] is a mutable collection of items in _sequence_. Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold reference to any (or multiple) data type(s) - including other lists.  They can be copied in whole or in part via [slice notation][slice notation]. Like any [sequence][sequence type], elements within `lists` are referenced by `0-based index` number from the left, or `-1-based index` number from the right.
 
-Lists support both [common][common sequence operations] and [mutable][mutable sequence operations] sequence opterations like `min()`/`max()`, `<list>.index()`, `.append()` and `.reverse()`. Items can be iterated over using the `for item in <list>` construct, and `for index, item in enumerate(<list>)` can be used when both and item value and index are needed.
+Lists support both [common][common sequence operations] and [mutable][mutable sequence operations] sequence operations like `min(<list>)`/`max(<list>)`, `<list>.index()`, `<list>.append()` and `<list>.reverse()`.
+Elements inside a `list`  can be iterated over using the `for item in <list>` construct.
+`for index, item in enumerate(<list>)` can be used when both the element index and element value are needed.
 
 Python provides many useful [methods][list-methods] for working with lists. Let's take a look at some of them.
 
-Keep in mind that when you manipulate a list with a list-method, **you alter the list** object that has been passed. If you do not wish to mutate your original `list`, you will need to at least make a `shallow copy` of it via slice or `<list>.copy()`.
+But keep in mind that when you manipulate a `list` with a list-method, **you alter the list** object that has been passed. If you do not wish to mutate your original `list`, you will need to at least make a `shallow copy` of it via slice or `<list>.copy()`.
 
 ## Adding Items
 
@@ -181,10 +183,6 @@ ValueError: 10 is not in list
 [sequence type]: https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
 [common sequence operations]: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations
 [mutable sequence operations]: https://docs.python.org/3/library/stdtypes.html#typesseq-mutable
-[tuples]: https://github.com/exercism/python/tree/main/concepts/tuples
-[dicts]: https://github.com/exercism/python/tree/main/concepts/dicts
-[sets]: https://github.com/exercism/python/tree/main/concepts/sets
-
 [tuple]: https://docs.python.org/3/library/stdtypes.html#tuple
 [slice notation]: https://docs.python.org/3/reference/expressions.html#slicings
 [set]: https://docs.python.org/3/library/stdtypes.html#set
