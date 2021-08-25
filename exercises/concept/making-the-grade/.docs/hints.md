@@ -18,7 +18,6 @@ Also being familure with the following can help with completing the tasks:
 - `While` loops will continue to execute until their condition evaluates to `False`.
 - <list>.pop() will remove and return the last item in a list.
 - Empty `lists` evaluae to `False` (most empty objects in Python are "Falsy")
--
 
 ## 2. Non-Passing Students
 
@@ -31,7 +30,6 @@ Also being familure with the following can help with completing the tasks:
 - There's no need to declare loop counters or index counters when iterating through an object using a `for` loop.
 - Having an emptey list to add the "best" marks to is helpful here.
 - `<list>.append()` can help add things to the results list.
--
 
 ## 4. Calculating Letter Grades
 
@@ -44,7 +42,6 @@ Also being familure with the following can help with completing the tasks:
 
 - [`enumerate()`][enumerate] could be helpful here.
 - If both lists are the same length and sorted the same way, could you use the index from one to retrieve a value from the other?
--
 
 ## 6. A "Perfect" Score
 
