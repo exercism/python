@@ -1,13 +1,13 @@
 def round_scores(student_scores):
     '''
-    :param student_scores: list of student exame scores as float or int.
+    :param student_scores: list of student exam scores as float or int.
     :return: list of student scores *rounded* to nearest integer value.
     '''
     pass
 
 def count_failed_students(student_scores):
     '''
-    :param student_scores: list of integer studnet scores.
+    :param student_scores: list of integer student scores.
     :return: integer count of student scores at or below 40.
     '''
     pass
@@ -22,7 +22,7 @@ def above_threshold(student_scores, threshold):
 
 def letter_grades(highest):
     '''
-    :param highes: integer of higest exam score.
+    :param highest: integer of highest exam score.
     :return: list of integer score thresholds for each F-A letter grades.
     '''
     pass
