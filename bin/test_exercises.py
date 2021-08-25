@@ -46,11 +46,9 @@ def copy_solution_files(exercise: ExerciseInfo, workdir: Path, exercise_config: 
     if exercise_config is not None:
         solution_files = exercise_config.files.solution
         exemplar_files = exercise_config.files.exemplar
-        helper_files = exercise_config.files.editor
     else:
         solution_files = []
         exemplar_files = []
-        helper_files = []
     if not solution_files:
         solution_files.append(exercise.solution_stub.name)
     solution_files = [exercise.path / s for s in solution_files]
