@@ -1,8 +1,8 @@
-from sets_categories import (VEGAN_INTERSECTIONS,
-                             VEGETARIAN_INTERSECTIONS,
-                             PALEO_INTERSECTIONS,
-                             KETO_INTERSECTIONS,
-                             OMNIVORE_INTERSECTIONS)
+from sets_categories_data import (VEGAN_INTERSECTIONS,
+                                  VEGETARIAN_INTERSECTIONS,
+                                  PALEO_INTERSECTIONS,
+                                  KETO_INTERSECTIONS,
+                                  OMNIVORE_INTERSECTIONS)
 
 
 ###################################
