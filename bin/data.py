@@ -280,8 +280,9 @@ class FilePatterns:
     solution: List[str]
     test: List[str]
     example: List[str]
-    editor: List[str] = None
     exemplar: List[str]
+    editor: List[str] = None
+
 
 
 @dataclass
