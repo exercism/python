@@ -70,8 +70,10 @@ def copy_solution_files(exercise: ExerciseInfo, workdir: Path, exercise_config: 
 def copy_test_files(exercise: ExerciseInfo, workdir: Path, exercise_config = None):
     if exercise_config is not None:
         test_files = exercise_config.files.test
+        helper_files = exercise_config.files.editor
     else:
         test_files = []
+        helper_files = []
     if not test_files:
         test_files.append(exercise.test_file.name)
     for test_file_name in test_files:
