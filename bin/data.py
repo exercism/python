@@ -103,8 +103,9 @@ class ExerciseFiles:
 
     solution: List[str]
     test: List[str]
+    editor: List[str]
     exemplar: List[str] = None
-    editor: List[str] = None
+
 
     # practice exercises are different
     example: List[str] = None
