@@ -194,6 +194,17 @@ class ExerciseInfo:
         )
 
     @property
+    def helper_files(self):
+        return next(
+            (
+                p
+                for p in self.path.glob("*.py")
+                if p.name.endswith("_data.py") and p.name != "example.py"
+            ),
+            None,
+        )
+
+    @property
     def test_file(self):
         return next(self.path.glob("*_test.py"), None)
 
