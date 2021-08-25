@@ -1,17 +1,17 @@
 import unittest
 import pytest
-from sets_categories import (VEGAN,
-                             VEGETARIAN,
-                             KETO,
-                             PALEO,
-                             OMNIVORE,
-                             ALCOHOLS,
-                             SPECIAL_INGREDIENTS,
-                             VEGAN_INTERSECTIONS,
-                             VEGETARIAN_INTERSECTIONS,
-                             PALEO_INTERSECTIONS,
-                             KETO_INTERSECTIONS,
-                             OMNIVORE_INTERSECTIONS)
+from sets_categories_data import (VEGAN,
+                                  VEGETARIAN,
+                                  KETO,
+                                  PALEO,
+                                  OMNIVORE,
+                                  ALCOHOLS,
+                                  SPECIAL_INGREDIENTS,
+                                  VEGAN_INTERSECTIONS,
+                                  VEGETARIAN_INTERSECTIONS,
+                                  PALEO_INTERSECTIONS,
+                                  KETO_INTERSECTIONS,
+                                  OMNIVORE_INTERSECTIONS)
 
 from sets_test_data import (recipes_with_duplicates,
                             recipes_without_duplicates,
