@@ -103,7 +103,7 @@ class ExerciseFiles:
 
     solution: List[str]
     test: List[str]
-    editor: List[str]
+    editor: List[str] = None
     exemplar: List[str] = None
 
 
