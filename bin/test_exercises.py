@@ -71,7 +71,7 @@ def copy_solution_files(exercise: ExerciseInfo, workdir: Path, exercise_config: 
 
     helper_files = [exercise.path / helper for helper in helper_files]
     for helper_file in helper_files:
-        dist = wordir / helper_file.relative_to(exercise.path)
+        dist = workdir / helper_file.relative_to(exercise.path)
         copy_file(helper_file, dist)
 
 
