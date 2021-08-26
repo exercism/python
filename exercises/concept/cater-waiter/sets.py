@@ -1,6 +1,7 @@
 from sets_categories_data import (VEGAN,
                                   VEGETARIAN,
-                                  KETO, PALEO,
+                                  KETO,
+                                  PALEO,
                                   OMNIVORE,
                                   ALCOHOLS,
                                   SPECIAL_INGREDIENTS,
