@@ -52,6 +52,12 @@ def copy_solution_files(exercise: ExerciseInfo, workdir: Path, exercise_config: 
         exemplar_files = []
         helper_files = []
 
+    if helper_files:
+        helper_files = [exercise.path / h for h in helper_files]
+        for helper_file in helper_files:
+            dst = workdir / helper_file.relative_to(exercise.path)
+            copy_file(helper_file, dst)
+
     if not solution_files:
         solution_files.append(exercise.solution_stub.name)
     solution_files = [exercise.path / s for s in solution_files]
@@ -68,12 +74,6 @@ def copy_solution_files(exercise: ExerciseInfo, workdir: Path, exercise_config: 
             dst = workdir / solution_file.relative_to(exercise.path)
             copy_file(exemplar_file, dst)
 
-    if helper_files:
-        helper_files = [exercise.path / h for h in helper_files]
-        for helper_file in helper_files:
-            dist = workdir / helper_file.relative_to(exercise.path)
-            copy_file(helper_file, dist)
-
 
 def copy_test_files(exercise: ExerciseInfo, workdir: Path, exercise_config = None):
     if exercise_config is not None:
@@ -82,6 +82,13 @@ def copy_test_files(exercise: ExerciseInfo, workdir: Path, exercise_config = Non
     else:
         test_files = []
         helper_files = []
+
+    if helper_files:
+        for helper_file_name in helper_files:
+            helper_file = exercise.path / helper_file_name
+            helper_file_out = workdir / helper_file_name
+            copy_file(helper_file, helper_file_out, strip_skips=(exercise.slug not in ALLOW_SKIP))
+
     if not test_files:
         test_files.append(exercise.test_file.name)
 
@@ -90,11 +97,6 @@ def copy_test_files(exercise: ExerciseInfo, workdir: Path, exercise_config = Non
         test_file_out = workdir / test_file_name
         copy_file(test_file, test_file_out, strip_skips=(exercise.slug not in ALLOW_SKIP))
 
-    if helper_files is not None:
-        for helper_file_name in helper_files:
-            helper_file = exercise.path / helper_file_name
-            dst = workdir / helper_file.relative_to(exercise.path)
-            copy_file(helper_file, dst)
 
 def copy_exercise_files(exercise: ExerciseInfo, workdir: Path):
     exercise_config = None

@@ -194,7 +194,7 @@ class ExerciseInfo:
         )
 
     @property
-    def helper_files(self):
+    def helper_file(self):
         return next(self.path.glob("*_data.py"), None)
 
     @property
