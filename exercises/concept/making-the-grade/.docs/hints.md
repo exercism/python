@@ -22,8 +22,7 @@ Also being familiar with the following can help with completing the tasks:
 ## 2. Non-Passing Students
 
 - There's no need to declare `loop` counters or `index` counters when iterating through an object using a `for` loop.
-- A results counter does need to be set up and _incremented_ -- you'll want to `return` the count of non-passing students when the loop terminates.
--
+- A results counter does need to be set up and _incremented_ -- you'll want to `return` the count of non-passing students when the loop terminates. 
 
 ## 3. The "Best"
 
