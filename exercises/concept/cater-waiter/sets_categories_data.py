@@ -208,20 +208,3 @@ example_dishes = [
                    'cumin powder', 'onion', 'water', 'chickpea flour', 'coriander seeds', 'turmeric powder', 'hing',
                    'coriander powder', 'cinnamon powder', 'cilantro', 'garlic'}
                   ]
-
-one = {'salt', 'breadcrumbs', 'water', 'flour', 'celeriac', 'chickpea flour',
-       'soy sauce', 'parsley','sunflower oil', 'lemon', 'black pepper'}
-
-two = {'cornstarch', 'salt', 'vegetable oil', 'sugar', 'vegetable stock',
-       'water', 'tofu', 'soy sauce','lemon zest', 'lemon juice',
-       'black pepper','ginger', 'garlic'}
-
-three = {'salt', 'mixed herbs', 'silken tofu', 'smoked tofu', 'nutritional yeast',
-         'turmeric', 'soy sauce','garlic', 'lemon juice', 'olive oil',
-         'black pepper','spaghetti'}
-
-four = {'salt', 'mushrooms', 'sugar', 'barley malt', 'nutritional yeast','fresh basil',
-        'olive oil','honey', 'yeast', 'red onion', 'bell pepper','cashews', 'oregano',
-        'rosemary', 'garlic powder','tomatoes', 'water','flour', 'red pepper flakes', 'garlic'}
-
-(one & two | one & three | one & four | two & three | two & four | three & four)
