@@ -85,8 +85,8 @@ def copy_test_files(exercise: ExerciseInfo, workdir: Path, exercise_config = Non
     if helper_files is not None:
         for helper_file_name in helper_files:
             helper_file = exercise.path / helper_file_name
-            copy_file(helper_file, strip_skips=(exercise.slug not in ALLOW_SKIP))
-
+            dst = workdir / helper_file.relative_to(exercise.path)
+            copy_file(helper_file, dst)
 
 def copy_exercise_files(exercise: ExerciseInfo, workdir: Path):
     exercise_config = None
