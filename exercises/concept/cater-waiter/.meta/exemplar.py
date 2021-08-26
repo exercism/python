@@ -1,4 +1,4 @@
-from sets_categories import (VEGAN,
+from sets_categories_data import (VEGAN,
                              VEGETARIAN,
                              KETO,
                              PALEO,
