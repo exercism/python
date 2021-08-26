@@ -3,8 +3,8 @@
   "icon": "meetup",
   "authors": ["bethanyg"],
   "files": {
-    "solution": ["sets.py", "sets_categories_data.py"],
-    "test": ["sets_test.py","sets_test_data.py", "sets_categories_data.py"],
+    "solution": ["sets.py"],
+    "test": ["sets_test.py"],
     "exemplar": [".meta/exemplar.py"],
     "editor": ["sets_test_data.py", "sets_categories_data.py"]
   }
