@@ -68,10 +68,11 @@ def copy_solution_files(exercise: ExerciseInfo, workdir: Path, exercise_config: 
             dst = workdir / solution_file.relative_to(exercise.path)
             copy_file(exemplar_file, dst)
 
-    helper_files = [exercise.path / h for h in helper_files]
-    for helper_file in helper_files:
-        dist = workdir / helper_file.relative_to(exercise.path)
-        copy_file(helper_file, dist)
+    if helper_files:
+        helper_files = [exercise.path / h for h in helper_files]
+        for helper_file in helper_files:
+            dist = workdir / helper_file.relative_to(exercise.path)
+            copy_file(helper_file, dist)
 
 
 def copy_test_files(exercise: ExerciseInfo, workdir: Path, exercise_config = None):
