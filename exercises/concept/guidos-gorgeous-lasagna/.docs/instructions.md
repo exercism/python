@@ -6,7 +6,8 @@ You have five tasks, all related to cooking your recipe.
 
 ## 1. Define expected bake time in minutes
 
-Define an `EXPECTED_BAKE_TIME` constant that returns how many minutes the lasagna should bake in the oven. According to your cookbook, the Lasagna should be in the oven for 40 minutes:
+Define an `EXPECTED_BAKE_TIME` constant that returns how many minutes the lasagna should bake in the oven.
+According to your cookbook, the Lasagna should be in the oven for 40 minutes:
 
 ```python
 >>> lasagna.EXPECTED_BAKE_TIME
@@ -24,7 +25,8 @@ Implement the `bake_time_remaining()` function that takes the actual minutes the
 
 ## 3. Calculate preparation time in minutes
 
-Implement the `preparation_time_in_minutes()` function that takes the number of layers you want to add to the lasagna as an argument and returns how many minutes you would spend making them. Assume each layer takes 2 minutes to prepare.
+Implement the `preparation_time_in_minutes()` function that takes the number of layers you want to add to the lasagna as an argument and returns how many minutes you would spend making them.
+Assume each layer takes 2 minutes to prepare.
 
 ```python
 >>> preparation_time_in_minutes(2)
