@@ -1,9 +1,18 @@
 import unittest
 import pytest
+
+from sets import (clean_ingredients,
+                  check_drinks,
+                  categorize_dish,
+                  tag_special_ingredients,
+                  compile_ingredients,
+                  separate_appetizers,
+                  singleton_ingredients)
+
+
 from sets_categories_data import (VEGAN,
                                   VEGETARIAN,
-                                  KETO,
-                                  PALEO,
+                                  KETO, PALEO,
                                   OMNIVORE,
                                   ALCOHOLS,
                                   SPECIAL_INGREDIENTS,
@@ -25,15 +34,6 @@ from sets_test_data import (recipes_with_duplicates,
                             dishes_cleaned,
                             dishes_and_overlap,
                             singletons)
-
-
-from exemplar import (clean_ingredients,
-                      check_drinks,
-                      categorize_dish,
-                      tag_special_ingredients,
-                      compile_ingredients,
-                      separate_appetizers,
-                      singleton_ingredients,)
 
 
 class SetsTest(unittest.TestCase):
