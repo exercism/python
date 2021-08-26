@@ -1,23 +1,23 @@
 [
   {
-    "url": "https://www.python.org/psf/",
-    "description": "Python Software Foundation"
-  },
-  {
     "url": "https://docs.python.org/3/",
     "description": "Python documentation"
   },
   {
-    "url": "https://www.python.org/dev/peps/",
-    "description": "Python Enhancement Proposals or PEPs"
-  },
-  {
     "url": "https://www.python.org/dev/peps/pep-0020/",
-    "description": "the zen of Python (PEP 20)"
+    "description": "The Zen of Python (PEP 20)"
   },
   {
     "url": "https://www.python.org/dev/peps/pep-0008/",
     "description": "PEP 8"
+  },
+  {
+    "url": "https://www.python.org/psf-landing/",
+    "description": "Python Software Foundation"
+  },
+  {
+    "url": "https://www.python.org/dev/peps/",
+    "description": "Python Enhancement Proposals or PEPs"
   },
   {
     "url": "https://docs.python.org/3/reference/datamodel.html",
