@@ -76,13 +76,16 @@ def copy_test_files(exercise: ExerciseInfo, workdir: Path, exercise_config = Non
         helper_files = []
     if not test_files:
         test_files.append(exercise.test_file.name)
+
     for test_file_name in test_files:
         test_file = exercise.path / test_file_name
         test_file_out = workdir / test_file_name
         copy_file(test_file, test_file_out, strip_skips=(exercise.slug not in ALLOW_SKIP))
-    for helper_file_name in helper_files:
-        helper_file = exercise.path / helper_file_name
-        copy_file(helper_file, strip_skips=(exercise.slug not in ALLOW_SKIP))
+
+    if helper_files is not None:
+        for helper_file_name in helper_files:
+            helper_file = exercise.path / helper_file_name
+            copy_file(helper_file, strip_skips=(exercise.slug not in ALLOW_SKIP))
 
 
 def copy_exercise_files(exercise: ExerciseInfo, workdir: Path):
