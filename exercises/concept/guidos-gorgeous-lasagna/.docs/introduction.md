@@ -9,7 +9,7 @@ Python puts a strong emphasis on code readability and (_similar to Haskell_) use
 
 Objects are [assigned][assignment statements] to [names][naming and binding] via the _assignment operator_, `=`.
 [Variables][variables] are written in [`snake_case`][snake case], and _constants_ usually in `SCREAMING_SNAKE_CASE`.
-A `name` (_variable or constant_) is not itself _typed_, and can be attached or re-attached to different objects over its lifetime.
+A `name` (_variable or constant_) is not itself typed, and can be attached or re-attached to different objects over its lifetime.
 For extended naming conventions and advice, see [PEP 8][pep8].
 
 ```python
@@ -209,3 +209,4 @@ errors defaults to 'strict'.
 [type hints]: https://docs.python.org/3/library/typing.html
 [variables]: https://realpython.com/python-variables/
 [what is pythonic]: https://blog.startifact.com/posts/older/what-is-pythonic.html
+
