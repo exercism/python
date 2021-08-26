@@ -51,12 +51,15 @@ def copy_solution_files(exercise: ExerciseInfo, workdir: Path, exercise_config: 
         solution_files = []
         exemplar_files = []
         helper_files = []
+
     if not solution_files:
         solution_files.append(exercise.solution_stub.name)
-    solution_files = [exercise.path / s for s in solution_files]
+    solution_files = [exercise.path / file for file in solution_files]
+
     if not exemplar_files:
         exemplar_files.append(exercise.exemplar_file.relative_to(exercise.path))
-    exemplar_files = [exercise.path / e for e in exemplar_files]
+    exemplar_files = [exercise.path / exercise for exercise in exemplar_files]
+
     for solution_file, exemplar_file in zip_longest(solution_files, exemplar_files):
         if solution_file is None:
             copy_file(exemplar_file, workdir / exemplar_file.name)
@@ -65,6 +68,11 @@ def copy_solution_files(exercise: ExerciseInfo, workdir: Path, exercise_config: 
         else:
             dst = workdir / solution_file.relative_to(exercise.path)
             copy_file(exemplar_file, dst)
+
+    helper_files = [exercise.path / helper for helper in helper_files]
+    for helper_file in helper_files:
+        dist = wordir / helper_file.relative_to(exercise.path)
+        copy_file(helper_file, dist)
 
 
 def copy_test_files(exercise: ExerciseInfo, workdir: Path, exercise_config = None):
