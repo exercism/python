@@ -10,7 +10,7 @@
 
 - Comparison operators and boolean operations can be combined and used with conditionals.
 - Conditional expressions must evaluate to `True` or `False`.
-- `else` can be used for a code block that will execute when a conditional test returns `False`.
+- `else` can be used for a code block that will execute when all conditional tests returns `False`.
 
   ```python
      >>> item = 'blue'

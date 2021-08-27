@@ -25,7 +25,7 @@ When paired with `if`, an optional `else` code block will execute when the origi
 x = 5
 y = 10
 
-# The comparison '>' here returns the bool False,
+# The comparison '>' here returns the bool 'False',
 # so the 'else' block is executed instead of the 'if' block.
 if x > y:
     print("x is greater than y")
@@ -42,7 +42,7 @@ x = 5
 y = 10
 z = 20
 
-# The elif statement allows for the checking of more conditions.
+# The 'elif' statement allows for the checking of more conditions.
 if x > y:
     print("x is greater than y and z")
 elif y > z:
@@ -53,7 +53,7 @@ else:
 >>> z is great than x and y
 ```
 
-[Boolen operations][boolean operations] and [comparisons][comparisons] can be combined with conditionals for more complex testing:
+[Boolean operations][boolean operations] and [comparisons][comparisons] can be combined with conditionals for more complex testing:
 
 ```python
 

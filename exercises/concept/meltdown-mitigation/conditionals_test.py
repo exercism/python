@@ -16,26 +16,26 @@ class TestConditionals(unittest.TestCase):
     def test_is_criticality_balanced_set1(self):
 
         self.assertTrue(is_criticality_balanced(
-            temprature=750, neutrons_emitted=650), msg="Expected True but returned False")
+            temperature=750, neutrons_emitted=650), msg="Expected True but returned False")
 
     @pytest.mark.task(taskno=1)
     def test_is_criticality_balanced_set2(self):
 
         self.assertTrue(is_criticality_balanced(
-            temprature=799, neutrons_emitted=501), msg="Expected True but returned False")
+            temperature=799, neutrons_emitted=501), msg="Expected True but returned False")
 
     @pytest.mark.task(taskno=1)
     def test_is_criticality_balanced_set3(self):
 
         self.assertTrue(
-            is_criticality_balanced(temprature=500, neutrons_emitted=600), msg="Expected True but returned False"
+            is_criticality_balanced(temperature=500, neutrons_emitted=600), msg="Expected True but returned False"
         )
 
     @pytest.mark.task(taskno=1)
     def test_is_criticality_balanced_set4(self):
 
         self.assertFalse(
-            is_criticality_balanced(temprature=800, neutrons_emitted=500), msg="Expected False but returned True"
+            is_criticality_balanced(temperature=800, neutrons_emitted=500), msg="Expected False but returned True"
         )
 
 # End of first functions testing
