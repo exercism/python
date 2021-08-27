@@ -17,7 +17,7 @@
 ## 4. Calculate number of bills
 
 - You need to divide `budget` into `denomination`.
-- You need to use type casting _int_ to get exact number of bill.
+- You need to use type casting _int_ to get exact number of bills.
 - To remove decimal places from a `float`, you can convert it to `int`.
 
   **Note:** The `//` operator also does floor division. But, if the operand has `float`, the result is still `float`.
@@ -25,5 +25,5 @@
 ## 5. Calculate exchangeable value
 
 - You need to calculate `spread` percent of `exchange_rate` using multiplication operator and add it to `exchange_rate` to get the exchanged currency.
-- Actual rate need to be computed! add exchange rate and exchange fee.
+- Actual rate needs to be computed! Add exchange rate and exchange fee.
 - You can get exchanged money affected by commission by using divide operation and type casting _int_.
