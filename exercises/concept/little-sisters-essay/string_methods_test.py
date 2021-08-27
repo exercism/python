@@ -1,11 +1,9 @@
 import unittest
 import pytest
-from string_methods import (
-    capitalize_title,
-    check_sentence_ending,
-    clean_up_spacing,
-    replace_word_choice
-)
+from string_methods import (capitalize_title,
+                            check_sentence_ending,
+                            clean_up_spacing,
+                            replace_word_choice)
 
 
 class TestStringMethods(unittest.TestCase):
