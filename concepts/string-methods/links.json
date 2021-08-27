@@ -14,9 +14,5 @@
   {
     "url": "https://www.programiz.com/python-programming/string",
     "description": "more string operations and functions"
-  },
-  {
-    "url": "https://realpython.com/python-string-formatting/",
-    "description": "string formatting best practices"
   }
 ]
