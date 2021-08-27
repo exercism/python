@@ -1,14 +1,14 @@
-def is_criticality_balanced(temprature, neutrons_emitted):
+def is_criticality_balanced(temperature, neutrons_emitted):
     '''
 
-    :param temprature: int
+    :param temperature: int
     :param neutrons_emitted: int
-    :return:  boolen True if conditions met, False if not
+    :return:  boolean True if conditions met, False if not
 
     A reactor is said to be critical if it satisfies the following conditions:
-    - The temperature less than 800.
-    - The number of neutrons emitted per second greater than 500.
-    - The product of temperature and neutrons emitted per second less than 500000.
+    - The temperature is less than 800.
+    - The number of neutrons emitted per second is greater than 500.
+    - The product of temperature and neutrons emitted per second is less than 500000.
     '''
     pass
 
