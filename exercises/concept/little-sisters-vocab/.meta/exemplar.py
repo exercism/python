@@ -28,7 +28,7 @@ def make_word_groups(vocab_words):
 def remove_suffix_ness(word):
     '''
 
-    :param word: str of word to remvoe suffix from.
+    :param word: str of word to remove suffix from.
     :return: str of word with suffix removed & spelling adjusted.
 
     This function takes in a word and returns the base word with `ness` removed.
@@ -42,7 +42,7 @@ def remove_suffix_ness(word):
 def noun_to_verb(sentence, index):
     '''
 
-    :param sentence: str that uses the word in sentance
+    :param sentence: str that uses the word in sentence
     :param index:  index of the word to remove and transform
     :return:  str word that changes the extracted adjective to a verb.
 
