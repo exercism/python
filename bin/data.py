@@ -134,6 +134,7 @@ class ExerciseConfig:
     forked_from: str = None
     contributors: List[str] = None
     language_versions: List[str] = None
+    test_runner: bool = True
     source: str = None
     source_url: str = None
     blurb: str = None
