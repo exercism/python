@@ -25,6 +25,7 @@
     ],
     "example": [
       ".meta/example.py"
-    ]
+    ],
+    "test_runner": "false"
   }
 }
