@@ -128,7 +128,7 @@ appetizers = ['Kingfish Lettuce Cups','Avocado Deviled Eggs','Satay Steak Skewer
 Within in each category (_Vegan, Vegetarian, Paleo, Keto, Omnivore_), you're going to pull out ingredients that appear in only one dish.
 These "singleton" ingredients will be assigned a special shopper to ensure they're not forgotten in the rush to get everything else done.
 
-Implement the `singleton_ingredients(<dishes>, `<INTERSECTIONS>`)` function that takes a `list` of dishes and a `<CATEGORY>_INTERSECTIONS` constant for the same category.
+Implement the `singleton_ingredients(<dishes>, <INTERSECTIONS>`)` function that takes a `list` of dishes and a `<CATEGORY>_INTERSECTIONS` constant for the same category.
 Each dish is represented by a `set` of its ingredients.
 Each `<CATEGORY>_INTERSECTIONS` is a `set` of ingredients that appear in more than one dish in the category.
 Using set operations, your function should return a `set` of "singleton" ingredients (_ingredients appearing in only one dish in the category_).
