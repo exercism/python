@@ -5,7 +5,7 @@ It employs both [duck typing][duck typing] and [gradual typing][gradual typing] 
 It supports multiple programming paradigms including both imperative (_object-oriented, procedural_) and declarative (_functional, concurrent_) flavors.
 
 Python puts a strong emphasis on code readability and (_similar to Haskell_) uses [significant indentation][significant indentation] for function, method, and class definitions.
-The [zen of Python (PEP 20)][the zen of python] and [What is Pythonic? ][what is pythonic] lay out additional philosophies.
+The [zen of Python (PEP 20)][the zen of python] and [What is Pythonic?][what is pythonic] lay out additional philosophies.
 
 Objects are [assigned][assignment statements] to [names][naming and binding] via the _assignment operator_, `=`.
 [Variables][variables] are written in [`snake_case`][snake case], and _constants_ usually in `SCREAMING_SNAKE_CASE`.

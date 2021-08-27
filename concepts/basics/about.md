@@ -8,7 +8,7 @@ But do not be fooled: while programming across paradigms is fully _supported_, [
 Python was created by Guido van Rossum and first released in 1991. The [Python Software Foundation][psf] manages and directs resources for Python and CPython development and receives proposals for changes to the language from [members][psf membership] of the community via [Python Enhancement Proposals or PEPs][peps].
 
 Python puts a strong emphasis on code readability and (_similar to Haskell_) uses [significant indentation][significant indentation] to denote function, method, and class definitions.
-The [zen of Python (PEP 20)][the zen of python] and [What is Pythonic?][what is pythonic]lay out additional philosophies.
+The [zen of Python (PEP 20)][the zen of python] and [What is Pythonic?][what is pythonic] lay out additional philosophies.
 
 Complete documentation for the current release can be found at [docs.python.org][python docs].
 
