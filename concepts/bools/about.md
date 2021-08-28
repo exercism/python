@@ -23,11 +23,9 @@ Each of the operators has a different precedence, where `not` is evaluated befor
 
 ```python
 >>>not True and True
-...
 False
 
 >>>not (True and False)
-...
 True
 ```
 
@@ -48,31 +46,24 @@ A few `built-ins` are always considered `False` by definition:
 
 ```python
 >>>bool(None)
-...
 False
 
 >>>bool(1)
-...
 True
 
 >>>bool(0)
-...
 False
 
 >>>bool([1,2,3])
-...
 True
 
 >>>bool([])
-...
 False
 
 >>>bool({"Pig" : 1, "Cow": 3})
-...
 True
 
 >>>bool({})
-...
 False
 ```
 
@@ -85,11 +76,11 @@ When a object is used in a _boolean context_, it is evaluated transparently as _
 
 # This will print "True", as a non-empty string is considered a "truthy" value
 >>> if a:
->>>  print("True")
+...  print("True")
 
 # This will print "False", as an empty list is considered a "falsey" value
 >>> if not b:
->>>   print("False")
+...   print("False")
 ```
 
 
@@ -105,11 +96,9 @@ The `bool` type is implemented as a _sub-type_ of _int_.
 
 ```python
 >>>1 == True
-...
 True
 
 >>>0 == False
-...
 True
 ```
 
@@ -118,11 +107,9 @@ However, `bools` are **still different** from `ints`, as noted when comparing th
 
 ```python
 >>>1 is True
-...
 False
 
 >>>0 is False
-...
 False
 ```
 
@@ -139,11 +126,11 @@ It is considered a [Python anti-pattern][comparing to true in the wrong way] to 
 
 # Not "Pythonic"
 >>> if flag == True:
->>>    print("This works, but it's not considered Pythonic.")
+...    print("This works, but it's not considered Pythonic.")
 
 # A better way
 >>> if flag:
->>>    print("Pythonistas prefer this pattern as more Pythonic.")
+...    print("Pythonistas prefer this pattern as more Pythonic.")
 ```
 
 
