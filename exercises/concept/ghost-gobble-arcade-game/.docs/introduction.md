@@ -9,7 +9,7 @@ Python represents true and false values with the `bool` type.
 >>> false_variable = False
 ```
 
-We can evaluate boolean expressions using the `and`, `or`, and `not` operators:
+We can evaluate Boolean expressions using the `and`, `or`, and `not` operators:
 
 ```python
 >>> true_variable = True and True
