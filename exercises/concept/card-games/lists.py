@@ -4,6 +4,7 @@ def get_rounds(number):
      :param number: int - current round number.
      :return: list - current round and the two that follow.
     '''
+
     pass
 
 
@@ -14,6 +15,7 @@ def concatenate_rounds(rounds_1, rounds_2):
     :param rounds_2: list - second set of rounds played.
     :return: list - all rounds played.
     '''
+
     pass
 
 
@@ -24,6 +26,7 @@ def list_contains_round(rounds, number):
     :param number: int - round number.
     :return:  bool - was the round played?
     '''
+
     pass
 
 
@@ -33,7 +36,8 @@ def card_average(hand):
     :param hand: list - cards in hand.
     :return:  int - average value of the cards in the hand.
     '''
-   pass
+
+    pass
 
 
 def approx_average_is_average(hand):
@@ -42,6 +46,7 @@ def approx_average_is_average(hand):
     :param hand: list - cards in hand.
     :return: int - approximate average value of the cards in the hand.
     '''
+
     pass
 
 def average_even_is_average_odd(hand):
@@ -50,6 +55,7 @@ def average_even_is_average_odd(hand):
     :param hand: list - cards in hand.
     :return: int - approximate average value of the cards in the hand.
     '''
+
     pass
 
 def maybe_double_last(hand):
@@ -58,4 +64,5 @@ def maybe_double_last(hand):
     :param hand: list - cards in hand.
     :return: list - hand with Jacks (if present) value doubled.
     '''
+
     pass
