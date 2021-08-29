@@ -1,5 +1,5 @@
 {
-  "blurb": "A list is a mutable collection of items in a sequence. Like most collections, lists can hold any/multiple data type(s) -- including other lists. Lists support all common sequence operations as well as mutable sequence operations like \".append()\" and \".reverse()\". They can be iterated over using the \"for item in <list>\" syntax.",
+  "blurb": "A \"list\" is a mutable collection of items in sequence. Like most collections, lists can hold any/multiple data type(s) - including other lists. They support all common sequence operations as well as mutable sequence operations, and can be iterated over using the \"for item in <list>\" or \"for index, item in enumerate(<list>)\" syntax.",
   "authors": ["BethanyG"],
   "contributors": []
 }
