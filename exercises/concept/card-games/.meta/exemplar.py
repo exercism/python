@@ -16,7 +16,7 @@ def concatenate_rounds(rounds_1, rounds_2):
     :return: list - all rounds played.
     '''
 
-    return rounds1 + rounds2
+    return rounds_1 + rounds_2
 
 
 def list_contains_round(rounds, number):
