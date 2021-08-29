@@ -11,7 +11,7 @@ The following three tasks are all related to writing code for maintaining ideal 
 
 ## 1. Check for criticality
 
-The first thing a control system has to do is checking if the reactor is balanced in criticality.
+The first thing a control system has to do is check if the reactor is balanced in criticality.
 A reactor is said to be critical if it satisfies the following conditions:
 
 - The temperature is less than 800.
