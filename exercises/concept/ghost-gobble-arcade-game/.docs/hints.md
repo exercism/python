@@ -6,15 +6,15 @@
 
 ## 1. Define if Pac-Man can eat a ghost
 
-- You can use the [Boolean][boolean] [operators][boolean-operators] to combine arguments for a result.
+- You can use the [Boolean][boolean] [operators][Boolean-operators] to combine arguments for a result.
 
 ## 2. Define if Pac-Man scores
 
-- You can use the [Boolean][boolean] [operator][boolean-operators] to combine arguments for a result.
+- You can use the [Boolean][boolean] [operator][Boolean-operators] to combine arguments for a result.
 
 ## 3. Define if Pac-Man loses
 
-- You can use the [boolean][Boolean] [operator][boolean-operators] to combine arguments for a result.
+- You can use the [boolean][Boolean] [operator][Boolean-operators] to combine arguments for a result.
 
 ## 4. Define if Pac-Man wins
 
