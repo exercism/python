@@ -1,33 +1,35 @@
 # General
 
-Make sure you have a good understanding of how to create and manipulate lists.
+Make sure you have a good understanding of how to create and update lists.
 
 ## 1. Add Me to the queue
 
 - You need to find the ticket type with an `if-else` statement.
-- You can `append` the person to the queue based on the ticket type.
+- You can `append()` the person to the queue based on the ticket type.
 
 ## 2. Where are my friends
 
-- You need to find the `index` of the friend name from the queue.
+- You need to find the `index()` of the friend name from the queue.
 
 ## 3. Can I please join them?
 
-- Since you know the `index`, you need to `insert` the friend to the index in the queue.
+- Since you know the `index()`, you can `insert()` the friend into the queue at that point.
 
 ## 4. Mean person in the queue
 
-- You know the mean person name, you have to `remove` them from the queue.
+- You know the mean persons name, so you can `remove()` them from the queue.
 
 # 5. Namefellows
 
-- All you need is to `count` the occurrences of the name in the queue.
+-  `count()`-ing the occurrences of the `name` in the queue could be a good strategy here.
 
 ## 6. Remove the last person
 
-- Since you know that you need to remove the last person in the queue, you need to `pop` him/her out.
+- Although you could `remove()` the person by name, `pop()`-ing them out might be quicker.
 
 ## 7. Sort the Queue List
 
-- You need to `copy` the queue, `sort` it, and return the sorted copy.
-- The order is alphabetical, hence it should be sorted in ascending order.
+- Don't forget that You need to make a `copy()` of the queue to avoid mutating it and losing the original order.
+- Once you have a `copy()`, `sort()`-ing should be straightforward.
+- Order is alphabetical or _ascending_ sort.
+
