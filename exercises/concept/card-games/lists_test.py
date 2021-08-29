@@ -55,43 +55,26 @@ class TestToRounds(unittest.TestCase):
 class TestConcatenateRounds(unittest.TestCase):
 
     @pytest.mark.task(taskno=2)
-    def test_instructions_example(self):
-        rounds1 = [27, 28, 29]
-        rounds2 = [35, 36]
-        want = [27, 28, 29, 35, 36]
-        got = concatenate_rounds(rounds1, rounds2)
-
-        self.assertEqual(
-            want,
-            got,
-            msg=f'Expected {want} but got an incorrect result: {got!r}'
-        )
-
-    @pytest.mark.task(taskno=2)
     def test_empty(self):
-        rounds1 = []
-        rounds2 = []
+        rounds_1 = []
+        rounds_2 = []
         want = []
-        got = concatenate_rounds(rounds1, rounds2)
 
-        self.assertEqual(
+        self.assertEqual(concatenate_rounds(rounds_1, rounds_2),
             want,
-            got,
-            msg=f'Expected {want} but got an incorrect result: {got!r}'
+            msg=f'Expected {want} but got an incorrect result.'
         )
 
     @pytest.mark.task(taskno=2)
     def test_other(self):
-        rounds1 = [1, 2, 3]
-        rounds2 = [4, 5, 6]
+        rounds_1 = [1, 2, 3]
+        rounds_2 = [4, 5, 6]
         want = [1, 2, 3, 4, 5, 6]
-        got = concatenate_rounds(rounds1, rounds2)
 
-        self.assertEqual(
-            want,
-            got,
-            msg=f'Expected {want} but got an incorrect result: {got!r}'
-        )
+        self.assertEqual(concatenate_rounds(rounds_1, rounds_2),
+                         want,
+                         msg=f'Expected {want} but got an incorrect result.'
+                         )
 
 
 class TestListContainsRound(unittest.TestCase):
