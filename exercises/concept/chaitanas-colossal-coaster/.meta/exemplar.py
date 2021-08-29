@@ -30,5 +30,6 @@ def remove_the_last_person(queue):
 
 
 def sorted_names(queue):
-    queue.sort()
-    return queue
+    new_queue = queue[:]
+    new_queue.sort()
+    return new_queue
