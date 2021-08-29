@@ -18,7 +18,7 @@
 
 ## 4. Define if Pac-Man wins
 
-- You can use the [Boolean][boolean] [operator][boolean-operators] to combine arguments for a result.
+- You can use the [Boolean][boolean] [operator][Boolean-operators] to combine arguments for a result.
 
 [boolean]: https://docs.python.org/3/library/stdtypes.html#truth
 [Boolean-operators]: https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not
