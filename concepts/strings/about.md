@@ -1,7 +1,7 @@
 # About
 
 A `str` in Python is an [immutable sequence][text sequence] of [Unicode code points][unicode code points].
-These could include letters, diacritical marks, positioning characters, numbers, currency symbols, emoji, punctuation, space and line break characters, and more.
+These may include letters, diacritical marks, positioning characters, numbers, currency symbols, emoji, punctuation, space and line break characters, and more.
 
 For a deep dive on what information a string encodes (or, _"how does a computer know how to translate zeroes and ones into letters?"_), [this blog post is enduringly helpful][joel-on-text].
 The Python docs also provide a very detailed [unicode HOWTO][unicode how-to] that discusses Pythons support for the Unicode specification in the `str`, `bytes` and `re` modules, considerations for locales, and some common issues with encoding and translation.
@@ -26,9 +26,9 @@ Multi-line strings are declared with `'''` or `"""`.
 
 ```python
 >>> triple_quoted = '''Three single quotes or "double quotes" in a row allow for multi-line string literals.
-  Line break characters, tabs and other whitespace is fully supported.
-
-  You\'ll most often encounter these as "doc strings" or "doc tests" written just below the first line of a function or class definition.
+  Line break characters, tabs and other whitespace is fully supported. Remember - The escape "\" character is also available if needed (as can be seen below). 
+  
+  You\'ll most often encounter multi-line strings as "doc strings" or "doc tests" written just below the first line of a function or class definition.
     They\'re often used with auto documentation ✍ tools.
     '''
 ```
