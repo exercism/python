@@ -1,7 +1,7 @@
 # String Methods
 
 A `str` is an [immutable sequence][text sequence] of [Unicode code points][unicode code points].
-This could include letters, diacritical marks, positioning characters, numbers, currency symbols, emoji, punctuation, space and line breaks, and more.
+This may include letters, diacritical marks, positioning characters, numbers, currency symbols, emoji, punctuation, space and line breaks, and more.
 
 Strings implement all [common sequence operations][common sequence operations] and can be iterated through using `for item in <str>` or `for index, item in enumerate(<str>)` syntax.
  Individual code points (_strings of length 1_) can be referenced by `0-based index` number from the left, or `-1-based index` number from the right.
