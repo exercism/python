@@ -225,7 +225,7 @@ class TestApproxAverageIsAverage(unittest.TestCase):
 
     @pytest.mark.task(taskno=5)
     def test_other_false(self):
-        hand = [2, 3, 4, 7]
+        hand = [2, 3, 4, 7, 8]
         want = False
         got = approx_average_is_average(hand)
 
