@@ -49,7 +49,7 @@ Aazra and Rui are teammates competing in a pirate-themed treasure hunt.
 <br>
 
 But things are a bit disorganized: Azara's coordinates appear to be formatted and sorted differently from Rui's, and they have to keep looking from one list to the other to figure out which treasures go with which locations.
-  Being budding pythonistas, they've come to you for help in writing a small program (a set of functions, really) to better organize their hunt information.
+  Being budding pythonistas, they have come to you for help in writing a small program (a set of functions, really) to better organize their hunt information.
 
 
 ## 1. Extract coordinates
@@ -87,7 +87,7 @@ True
 
 ## 4. Combine matched records
 
-Implement the `create_record()` function that takes a `(treasure, coordinate)` pair from Azaras list and a `(location, coordinate, quadrant)` record from Ruis list and returns `(treasure, coordinate, location, coordinate, quadrant)` **if the coordinates match**. If the coordinates _do not_ match, return the string **"not a match"**
+Implement the `create_record()` function that takes a `(treasure, coordinate)` pair from Azaras list and a `(location, coordinate, quadrant)` record from Ruis' list and returns `(treasure, coordinate, location, coordinate, quadrant)` **if the coordinates match**. If the coordinates _do not_ match, return the string **"not a match"**
   Re-format the coordinate as needed for accurate comparison.
 
 
