@@ -1,17 +1,23 @@
 # About
 
 A [tuple][tuple] is an _immutable_ collection of items in _sequence_.
+
+
 Like most collections (_see the built-ins [`list`][list], [`dict`][dict] and [`set`][set]_), `tuples` can hold any (or multiple) data type(s) -- including other `tuples`.
-The elements of a tuple can be iterated over using the `for item in <tuple>` construct.
-If both element index and value are needed, `for index, item in enumerate(<tuple>)` can be used.
+  The elements of a tuple can be iterated over using the `for item in <tuple>` construct.
+  If both element index and value are needed, `for index, item in enumerate(<tuple>)` can be used.
+
+
 Like any [sequence][sequence], elements within `tuples` can be accessed via _bracket notation_ using a `0-based index` number from the left or a `-1-based index` number from the right.
- Tuples can be copied in whole or in part via _slice notation_ or `<tuple>.copy()`, and support all [common sequence operations][common sequence operations].
+  Tuples can be copied in whole or in part via _slice notation_ or `<tuple>.copy()`, and support all [common sequence operations][common sequence operations].
   Being _immutable_, `tuples` **do not** support [mutable sequence operations][mutable sequence operations].
 
-Tuples take up very little memory space compared to other collection types and have constant (_O(1)_) access time when using an index.
-However, they cannot be resized, sorted, or altered once created, so are less flexible when frequent changes or updates to data are needed.
-If frequent updates or expansions are required, a `list`, `collections.deque`, or `array.array` might be a better data structure.
 
+Tuples take up very little memory space compared to other collection types and have constant (_O(1)_) access time when using an index.
+  However, they cannot be resized, sorted, or altered once created, so are less flexible when frequent changes or updates to data are needed.
+  If frequent updates or expansions are required, a `list`, `collections.deque`, or `array.array` might be a better data structure.
+
+<br>
 
 ## Tuple Construction
 
@@ -209,15 +215,15 @@ The [`namedtuple()`][namedtuple] class in the [`collections`][collections] modul
 Additionally, users can adapt a [`dataclass`][dataclass] to provide similar named attribute functionality, with a some [pros and cons][dataclass pros and cons].
 
 
-[tuple]: https://github.com/exercism/v3/blob/master/languages/python/reference/concepts/builtin_types/tuple.md
-[list]: https://github.com/exercism/v3/blob/master/languages/python/reference/concepts/builtin_types/list.md
-[dict]: https://github.com/exercism/v3/blob/master/languages/python/reference/concepts/builtin_types/dict.md
-[set]: https://github.com/exercism/v3/blob/master/languages/python/reference/concepts/builtin_types/set.md
-[sequence]: https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
-[common sequence operations]: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations
-[namedtuple]: https://docs.python.org/3/library/collections.html#collections.namedtuple
 [collections]: https://docs.python.org/3/library/collections.html#module-collections
+[common sequence operations]: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations
 [dataclass pros and cons]: https://stackoverflow.com/questions/51671699/data-classes-vs-typing-namedtuple-primary-use-cases
 [dataclass]: https://docs.python.org/3/library/dataclasses.html
-[mutable sequence operations]: https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types
+[dict]: https://github.com/exercism/v3/blob/master/languages/python/reference/concepts/builtin_types/dict.md
 [hashability]: https://docs.python.org/3/glossary.html#hashable
+[list]: https://github.com/exercism/v3/blob/master/languages/python/reference/concepts/builtin_types/list.md
+[mutable sequence operations]: https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types
+[namedtuple]: https://docs.python.org/3/library/collections.html#collections.namedtuple
+[sequence]: https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
+[set]: https://github.com/exercism/v3/blob/master/languages/python/reference/concepts/builtin_types/set.md
+[tuple]: https://github.com/exercism/v3/blob/master/languages/python/reference/concepts/builtin_types/tuple.md
