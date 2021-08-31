@@ -4,18 +4,18 @@ A [tuple][tuple] is an _immutable_ collection of items in _sequence_.
 
 
 Like most collections (_see the built-ins [`list`][list], [`dict`][dict] and [`set`][set]_), `tuples` can hold any (or multiple) data type(s) -- including other `tuples`.
-  The elements of a tuple can be iterated over using the `for item in <tuple>` construct.
-  If both element index and value are needed, `for index, item in enumerate(<tuple>)` can be used.
+The elements of a tuple can be iterated over using the `for item in <tuple>` construct.
+If both element index and value are needed, `for index, item in enumerate(<tuple>)` can be used.
 
 
 Like any [sequence][sequence], elements within `tuples` can be accessed via _bracket notation_ using a `0-based index` number from the left or a `-1-based index` number from the right.
-  Tuples can be copied in whole or in part via _slice notation_ or `<tuple>.copy()`, and support all [common sequence operations][common sequence operations].
-  Being _immutable_, `tuples` **do not** support [mutable sequence operations][mutable sequence operations].
+Tuples can be copied in whole or in part via _slice notation_ or `<tuple>.copy()`, and support all [common sequence operations][common sequence operations].
+Being _immutable_, `tuples` **do not** support [mutable sequence operations][mutable sequence operations].
 
 
 Tuples take up very little memory space compared to other collection types and have constant (_O(1)_) access time when using an index.
-  However, they cannot be resized, sorted, or altered once created, so are less flexible when frequent changes or updates to data are needed.
-  If frequent updates or expansions are required, a `list`, `collections.deque`, or `array.array` might be a better data structure.
+However, they cannot be resized, sorted, or altered once created, so are less flexible when frequent changes or updates to data are needed.
+If frequent updates or expansions are required, a `list`, `collections.deque`, or `array.array` might be a better data structure.
 
 <br>
 
