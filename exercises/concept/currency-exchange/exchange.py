@@ -52,4 +52,3 @@ def exchangeable_value(budget, exchange_rate, spread, denomination):
     '''
 
     pass
-    
