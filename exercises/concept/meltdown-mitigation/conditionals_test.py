@@ -2,7 +2,7 @@
 import unittest
 import pytest
 from conditionals import (is_criticality_balanced,
-                          reactor_efficency,
+                          reactor_efficiency,
                           fail_safe
                           )
 
@@ -40,7 +40,7 @@ class TestConditionals(unittest.TestCase):
 
 # End of first functions testing
 
-# Test case for reactor_efficency()
+# Test case for reactor_ efficiency()
     # Checking the second condition using assertEqual
     # The values for arguments is not final and should be considered as placeholders
     # More test-cases  required for full testing
@@ -48,33 +48,33 @@ class TestConditionals(unittest.TestCase):
     # Need to verify if f-string based errors allowed
 
     @pytest.mark.task(taskno=2)
-    def test_reactor_efficency_set1(self):
+    def test_reactor_efficiency_set1(self):
 
-        test_return = reactor_efficency(
+        test_return = reactor_efficiency(
             voltage=100, current=50, theoretical_max_power=5000)
         self.assertEqual(
             test_return, 'green', msg=f"Expected green but returned {test_return}"
         )
 
     @pytest.mark.task(taskno=2)
-    def test_reactor_efficency_set2(self):
-        test_return = reactor_efficency(
+    def test_reactor_efficiency_set2(self):
+        test_return = reactor_efficiency(
             voltage=100, current=30, theoretical_max_power=5000)
         self.assertEqual(
             test_return, 'orange', msg=f"Expected orange but returned {test_return}"
         )
 
     @pytest.mark.task(taskno=2)
-    def test_reactor_efficency_set3(self):
-        test_return = reactor_efficency(
+    def test_reactor_efficiency_set3(self):
+        test_return = reactor_efficiency(
             voltage=100, current=28, theoretical_max_power=5000)
         self.assertEqual(
             test_return, 'red', msg=f"Expected red but returned {test_return}"
         )
 
     @pytest.mark.task(taskno=2)
-    def test_reactor_efficency_set4(self):
-        test_return = reactor_efficency(
+    def test_reactor_efficiency_set4(self):
+        test_return = reactor_efficiency(
             voltage=100, current=10, theoretical_max_power=5000)
         self.assertEqual(
             test_return, 'black', msg=f"Expected black but returned {test_return}"

@@ -18,7 +18,7 @@ def is_criticality_balanced(temperature, neutrons_emitted):
         return False
 
 
-def reactor_efficency(voltage, current, theoretical_max_power):
+def reactor_efficiency(voltage, current, theoretical_max_power):
     '''
 
     :param voltage: int
@@ -26,12 +26,12 @@ def reactor_efficency(voltage, current, theoretical_max_power):
     :param theoretical_max_power: int
     :return: str one of 'green', 'orange', 'red', or 'black'
 
-    Efficency can be grouped into 4 bands:
+    Efficiency can be grouped into 4 bands:
 
-    1. green  ->   80-100% efficency
-    2. orange ->   60-79% efficency
-    3. red    ->   30-59% efficency
-    4. black  ->   <30% efficent
+    1. green  ->   80-100% efficiency
+    2. orange ->   60-79% efficiency
+    3. red    ->   30-59% efficiency
+    4. black  ->   <30% efficient
 
     These percentage ranges are calculated as
     (generated power/ theoretical max power)*100
