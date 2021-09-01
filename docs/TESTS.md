@@ -1,53 +1,57 @@
 # Tests
 
-## Installing `pytest`
+## Tools to install
 
-We recommend you install [pytest](http://pytest.org/en/latest/) and
-[pytest-cache](http://pythonhosted.org/pytest-cache/). `pytest` is a testing
-tool that will give you more flexibility over running your unit tests.
+We recommend you install [pytest](http://pytest.org/en/latest/) with the following plugins:
 
-To install `pytest`, run the following command:
+-  [pytest-cache](http://pythonhosted.org/pytest-cache/)
+-  [pytest-subtests](https://github.com/pytest-dev/pytest-subtests)
+-  [pytest-pylint](https://github.com/carsongee/pytest-pylint)
+
+The PyTest [Getting Started Guide](https://docs.pytest.org/en/latest/getting-started.html) has quick general instructions, although they do not cover installing the plugins.
+Continue reading below for plugin installation.
+
+We also recommend [pylint](https://pylint.pycqa.org/en/latest/user_guide/), as it is part of our automated feedback on the website, and can be a very useful (if noisy!) code analysis tool.
+
+Pylint can be a bit much, so this [tutorial](https://pylint.pycqa.org/en/latest/tutorial.html) can be helpful for getting started, as can this overview of [Code Quality: Tools and Best Practices](https://realpython.com/python-code-quality/) from Real Python.
+
+
+### Installing `pytest`
+
+To install `pytest`, run the following command in the environment (_active `venv`, `conda env`, `docker container`, `vm` or other project space with Python 3.8 installed_):
 
 ```bash
-pip3 install pytest pytest-cache
+pip3 install pytest pytest-cache pytest-subtests pytest-pylint
 ```
 
 If you get a `command not found` response from your system, you can find a
 tutorial on how to install `pip`
 [here](https://pip.pypa.io/en/stable/installing/).
 
-If you want to check what the default version of `pytest` being used is, run the following:
+Once the installation has completed, you can check what the default version of `pytest` is by running the following:
 
 ```bash
 pytest --version
 ```
 
-If you choose not to install `pytest`, you can still run tests individually and
-skip the rest of this tutorial:
+## Testing
 
-```bash
-cd exercism/python/bob
-python bob_test.py
-```
+### Run All Tests for an Exercise
 
-## Running the Tests
-
-### Run All Tests
-
-To run all tests for a specific exercise (we will take the `bob.py` exercise as
-an example here), place yourself in the directory where that exercise has been
-fetched and run:
+To run all tests for a specific exercise (_we will take the `bob.py` exercise as
+an example here_), navigate to the directory where that exercise has been
+downloaded and run the following in the terminal:
 
 ```bash
 pytest bob_test.py
 ```
 
 **Note:** To run the tests you need to pass the name of the testsuite file to
-`pytest` (generally, the file ending with `_test.py`), **NOT** the file you
-created to solve the problem (which is your _implementation_). This is because
-in the latter case, since there are no defined test cases in your
-implementation, `pytest` will just return a positive result, specifying that
-it ran zero tests. Like this:
+`pytest` (_generally, this will be the file ending with `_test.py`_), **NOT** the file that was
+created to solve the exercsim problem (which is the _solution implementation_).
+`PyTest` needs the test definitions in the `_test.py` file in order to know how to call, run, and exercise the _solution implementation_ code.
+Since there are no test cases defined in the _solution implementation_, `pytest` will just return a positive result, specifying that it found and ran zero tests. Like this:
+
 
 ```
 =============================  bob.py  ==============================
@@ -59,7 +63,12 @@ Ran 0 tests in 0.000s
 OK
 ```
 
+
 ### More `pytest` Examples
+
+Below are some additional examples and details for getting up and running quickly with Pytest.
+[How to invoke pytest](https://docs.pytest.org/en/latest/how-to/usage.html#usage) and [pytest command-line flags](https://docs.pytest.org/en/latest/reference/reference.html#command-line-flags) offer full details on all of pytests run options.
+
 
 #### Stop After First Failure
 The above will run all the tests, whether they fail or not. If you'd rather stop
@@ -86,7 +95,7 @@ pytest
 
 ## Recommended Workflow
 
-We recommend you run this command while working on exercises.
+Try this command while working on exercises:
 
 ```bash
 cd exercism/python/bob
@@ -95,34 +104,10 @@ pytest -x --ff bob_test.py
 
 ## PDB
 
-Will drop you into the python debugger when a test fails. To learn how to use
-pdb, check out the
+Typing pdb on the command line will drop you into the python debugger when a test fails.
+To learn how to usepdb, check out the
 [documentation](https://docs.python.org/3/library/pdb.html#debugger-commands).
 
 ```bash
 pytest --pdb bob_test.py
 ```
-
-You may also be interested in watching [Clayton Parker's "So you think you can
-pdb?" PyCon 2015 talk](https://www.youtube.com/watch?v=P0pIW5tJrRM).
-
-## PEP8
-
-PEP8 is the [Style Guide for Python
-Code](https://www.python.org/dev/peps/pep-0008/). If you would like to test for
-compliance to the style guide, install
-[pytest-pep8](https://pypi.python.org/pypi/pytest-pep8).
-
-```bash
-pip install pytest-pep8
-```
-
-Then, just add the `--pep8` flag to your command
-
-```bash
-pytest --pep8 bob_test.py
-```
-
-Read the [pytest documentation](https://docs.pytest.org/en/latest/contents.html) and
-[pytest-cache](http://pythonhosted.org/pytest-cache/) documentation to learn
-more.
