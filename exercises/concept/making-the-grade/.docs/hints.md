@@ -52,6 +52,6 @@ Also being familiar with the following can help with completing the tasks:
 [f-strings]: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
 [append and pop]: https://docs.python.org/3/tutorial/datastructures.html#more-on-lists
 [enumerate]: https://docs.python.org/3/library/functions.html#enumerate
-[control flow]: https://docs.python.org/3/tutorial/controlflo.html#break-and-continue-statements-and-else-clauses-on-loops
+[control flow]: https://docs.python.org/3/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops
 [range]: https://docs.python.org/3/tutorial/controlflow.html#the-range-function
 [round]: https://docs.python.org/3/library/functions.html#round
