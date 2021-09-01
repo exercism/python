@@ -110,7 +110,7 @@ def separate_appetizers(dishes, appetizers):
     return list(set(dishes) - set(appetizers))
 
 
-def singleton_ingredients(intersection, dishes):
+def singleton_ingredients(dishes, intersection):
     '''
 
     :param intersection: constant - one of (VEGAN_INTERSECTION,VEGETARIAN_INTERSECTION,PALEO_INTERSECTION,
