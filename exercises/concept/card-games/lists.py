@@ -34,7 +34,7 @@ def card_average(hand):
     '''
 
     :param hand: list - cards in hand.
-    :return:  int - average value of the cards in the hand.
+    :return:  float - average value of the cards in the hand.
     '''
 
     pass
@@ -44,7 +44,7 @@ def approx_average_is_average(hand):
     '''
 
     :param hand: list - cards in hand.
-    :return: int - approximate average value of the cards in the hand.
+    :return: bool - is approximate average the same as true average?
     '''
 
     pass
@@ -53,7 +53,7 @@ def average_even_is_average_odd(hand):
     '''
 
     :param hand: list - cards in hand.
-    :return: int - approximate average value of the cards in the hand.
+    :return: bool - are even and odd averages equal?
     '''
 
     pass

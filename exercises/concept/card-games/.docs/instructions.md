@@ -76,7 +76,7 @@ In Black Joe, speed is important.
   She is hoping one of these calculations might come close to the average, but be quicker to calculate during game play. She'd like you to create a function to test her theory out.
 
 
-Implement a function `approx_average_is_average(<hand>)` that returns a boolean, indicating if either of Elyse's approximation formulas is the same as calculating the "full" average of a hand. For the sake of a simple median, we are going to assume the hand always has an odd number of card values.
+Implement a function `approx_average_is_average(<hand>)` that returns a Boolean, indicating if either of Elyse's approximation formulas is the same as calculating the "full" average of a hand. For the sake of a simple median, we are going to assume the hand always has an odd number of card values.
 
 
 ```python
@@ -95,7 +95,7 @@ False
 Intrigued by the results of her averaging experiment, Elyse is wondering if taking the average of _even_ values versus the average of _odd_ values would give the same results.
  Time for another test function!
 
-Implement a function `average_even_is_average_odd(<hand>)` that returns a boolean indicating if the average of the even valued cards is the same as the average of the odd valued cards.
+Implement a function `average_even_is_average_odd(<hand>)` that returns a Boolean indicating if the average of the even valued cards is the same as the average of the odd valued cards.
 
 
 ```python
