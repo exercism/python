@@ -38,12 +38,12 @@ Efficiency can be grouped into 4 bands:
 These percentage ranges are calculated as `(generated_power/theoretical_max_power)*100`
 where `generated_power = voltage * current`
 
-Implement the function `reactor_efficency()`, with three parameters: `voltage`,
+Implement the function `reactor_efficiency()`, with three parameters: `voltage`,
 `current`, and `theoretical_max_power`.
 This function should return the efficiency band of the reactor : 'green', 'orange', 'red', or 'black'.
 
 ```python
->>> reactor_efficency(200,50,1500)
+>>> reactor_efficiency(200,50,15000)
 'orange'
 ```
 
