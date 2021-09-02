@@ -93,7 +93,7 @@ Define the `remove_the_mean_person()` function that takes 2 parameters `queue` a
 ```
 
 
-# 5. Namefellows
+## 5. Namefellows
 
 You may not have seen two unrelated people who look exactly the same, but you have _definitely_ seen unrelated people with the exact same name (_namefellows_)!
  Today, it looks like there are a lot of them in attendance.
