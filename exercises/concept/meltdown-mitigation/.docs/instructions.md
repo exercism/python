@@ -56,14 +56,14 @@ Criticality can then be increased, decreased, or stopped by inserting (or removi
 Implement the function called `fail_safe()`, which takes 3 parameters: `temperature`,
 `neutrons_produced_per_second`, and `threshold`, and outputs a status code for the reactor.
 
-- If `temperature * neutrons_per_second` < 40% of `threshold`, output a status code of 'LOW'
+- If `temperature * neutrons_produced_per_second` < 40% of `threshold`, output a status code of 'LOW'
   indicating that control rods must be removed to produce power.
 
-- If `temperature * neutrons_per_second` are within plus or minus 10% of the `threshold`
+- If `temperature * neutrons_produced_per_second` are within plus or minus 10% of the `threshold`
   the reactor is in _criticality_ and the status code of 'NORMAL' should be output, indicating that the
   reactor is in optimum condition and control rods are in an idea position.
 
-- If `temperature * neutron_per_second` is not in the above-stated ranges, the reactor is
+- If `temperature * neutrons_produced_per_second` is not in the above-stated ranges, the reactor is
   going into meltdown and a status code of 'DANGER' must be passed to immediately shut down the reactor.
 
 ```python
