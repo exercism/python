@@ -32,7 +32,7 @@ class MakingTheGradeTest(unittest.TestCase):
 
         for variant, scores, results in zip(number_of_variants, input_data, result_data):
             with self.subTest(f"variation #{variant}", scores=scores, results=results):
-                self.assertEqual(round_scores(scores), results,
+                self.assertEqual(sorted(round_scores(scores)), sorted(results),
                                  msg=f'Expected: {results} but one or more {scores} were rounded incorrectly.')
 
 
