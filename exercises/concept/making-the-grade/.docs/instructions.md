@@ -14,7 +14,7 @@ There shouldn't be any scores that have more than two places after the decimal p
 
 Create the function `round_scores()` that takes a `list` of `student_scores`.
 This function should _consume_ the input `list` and `return` a new list with all the scores converted to `int`s.
-The order of the scores in the resulting list is not important.
+The order of the scores in the resulting `list` is not important.
 
 ```python
 >>> student_scores = [90.33, 40.5, 55.44, 70.05, 30.55, 25.45, 80.45, 95.3, 38.7, 40.3]
