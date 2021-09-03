@@ -95,7 +95,7 @@ class MakingTheGradeTest(unittest.TestCase):
     @pytest.mark.task(taskno=5)
     def test_student_ranking(self):
         scores = [
-            [100, 98, 92, 86, 70, 68, 67, 60, 50],
+            [100, 98, 92, 86, 70, 68, 67, 60],
             [82],
             [88, 73],
         ]
