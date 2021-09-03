@@ -74,7 +74,7 @@ You would like to match each student name with their exam score and print out an
 Create the function `student_ranking()` with parameters `student_scores` and `student_names`.
 Match each student name on the student_names `list` with their score from the student_scores `list`.
 You can assume each argument `list` will be sorted from highest score(er) to lowest score(er).
-The function should return a `list` of strings with the format "\<rank\>. \<student name\> : \<student score\>".
+The function should return a `list` of strings with the format `<rank>. <student name> : <student score>`.
 
 
 ```python
