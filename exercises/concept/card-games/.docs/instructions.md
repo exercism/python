@@ -92,10 +92,10 @@ False
 
 ## 6. More Averaging Techniques
 
-Intrigued by the results of her averaging experiment, Elyse is wondering if taking the average of _even_ values versus the average of _odd_ values would give the same results.
+Intrigued by the results of her averaging experiment, Elyse is wondering if taking the average of the cards at the _even_ positions versus the average of the cards at the _odd_ positions would give the same results.
  Time for another test function!
 
-Implement a function `average_even_is_average_odd(<hand>)` that returns a Boolean indicating if the average of the even valued cards is the same as the average of the odd valued cards.
+Implement a function `average_even_is_average_odd(<hand>)` that returns a Boolean indicating if the average of the cards at even indexes is the same as the average of the cards at odd indexes.
 
 
 ```python
