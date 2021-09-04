@@ -14,7 +14,8 @@ Continue reading below for plugin installation.
 We also recommend [pylint](https://pylint.pycqa.org/en/latest/user_guide/), as it is part of our automated feedback on the website, and can be a very useful (if noisy!) code analysis tool.
 
 Pylint can be a bit much, so this [tutorial](https://pylint.pycqa.org/en/latest/tutorial.html) can be helpful for getting started, as can this overview of [Code Quality: Tools and Best Practices](https://realpython.com/python-code-quality/) from Real Python.
-Finally, [this site])(https://pycodequ.al/docs/pylint-messages.html) is a great place to look up more human-readable descriptions of Pylint linting messages.
+
+Finally, [this site](https://pycodequ.al/docs/pylint-messages.html) is a great place to look up more human-readable descriptions of Pylint linting messages.
 
 
 ### Installing `pytest`
