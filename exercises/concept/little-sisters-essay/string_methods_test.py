@@ -26,12 +26,12 @@ class TestStringMethods(unittest.TestCase):
         self.assertEqual(check_sentence_ending("Fittonia are nice"), False)
 
     @pytest.mark.task(taskno=3)
-    def remove_extra_spaces_only_start(self):
+    def test_remove_extra_spaces_only_start(self):
         self.assertEqual(clean_up_spacing("  A rolling stone gathers no moss"),
                         "A rolling stone gathers no moss")
 
     @pytest.mark.task(taskno=3)
-    def remove_extra_spaces(self):
+    def test_remove_extra_spaces(self):
         self.assertEqual(clean_up_spacing("  Elephants can't jump.  "),
                         "Elephants can't jump.")
 
