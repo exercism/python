@@ -80,7 +80,7 @@
         "uuid": "5b813a3a-1983-470b-91a1-9f2c0b327ab7",
         "concepts": ["string-formatting"],
         "prerequisites": ["strings", "classes", "loops", "lists"],
-        "status": "beta"
+        "status": "wip"
       },
       {
         "slug": "inventory-management",
@@ -105,7 +105,7 @@
           "string-methods",
           "tuples"
         ],
-        "status": "beta"
+        "status": "wip"
       },
       {
         "slug": "card-games",
@@ -136,7 +136,7 @@
           "list-methods",
           "loops"
         ],
-        "status": "beta"
+        "status": "wip"
       },
       {
         "slug": "making-the-grade",
