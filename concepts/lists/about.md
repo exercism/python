@@ -225,12 +225,12 @@ Blue : 3
 # Start with a list of numbers and then loop through and print out their cubes.
 >>> numbers_to_cube = [5, 13, 12, 16]
 >>> for number in numbers_to_cube:
-...     print(number*3)
+...     print(number**3)
 ...
-15
-39
-36
-48
+125
+2197
+1728
+4096
 ```
 
 One common way to compose a list of values is to use `<list>.append()` within a loop:
