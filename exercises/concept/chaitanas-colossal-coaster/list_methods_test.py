@@ -61,7 +61,7 @@ class TestListMethods(unittest.TestCase):
         self.assertIs(
             find_my_friend(*params), result,
             msg="The index of the friend to find is incorrect"
-            )
+        )
 
     @pytest.mark.task(taskno=3)
     def test_add_me_with_my_friends_start_of_queue(self):
@@ -88,9 +88,9 @@ class TestListMethods(unittest.TestCase):
         params = (["Natasha", "Steve", "Tchalla", "Wanda", "Rocket"], 5, "Bucky")
         result = ["Natasha", "Steve", "Tchalla", "Wanda", "Rocket", "Bucky"]
 
-        self.assertListEqual( add_me_with_my_friends(*params), result,
-            msg="The person was added to the wrong location in the queue or was not added at all"
-        )
+        self.assertListEqual(add_me_with_my_friends(*params), result,
+                             msg="The person was added to the wrong location in the queue or was not added at all"
+                             )
 
     @pytest.mark.task(taskno=4)
     def test_remove_the_mean_person_middle_of_queue(self):
@@ -168,4 +168,4 @@ class TestListMethods(unittest.TestCase):
 
         self.assertListEqual(sorted_names(params), result,
                              msg="The queue was not properly sorted"
-        )
+                             )
