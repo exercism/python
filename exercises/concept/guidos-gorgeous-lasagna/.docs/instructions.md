@@ -48,7 +48,6 @@ This function should return the total number of minutes you've been cooking, or 
 Go back through the recipe, adding notes and documentation.
 
 ```python
-```python
 def total_time_in_minutes(number_of_layers, actual_bake_time):
     """
     Return elapsed cooking time.
