@@ -4,7 +4,8 @@ PREPARATION_TIME = 2
 
 
 def bake_time_remaining(elapsed_bake_time):
-    """
+    """Calculate the bake time remaining.
+
    :param elapsed_bake_time: int baking time already elapsed
    :return: int remaining bake time (in minutes) derived from 'EXPECTED_BAKE_TIME'
 
@@ -17,7 +18,7 @@ def bake_time_remaining(elapsed_bake_time):
 
 
 def preparation_time_in_minutes(number_of_layers):
-    """
+    """Calculate the preparation time.
 
     :param number_of_layers: int the number of lasagna layers made
     :return: int amount of prep time (in minutes), based on 2 minutes per layer added
@@ -30,7 +31,7 @@ def preparation_time_in_minutes(number_of_layers):
 
 
 def elapsed_time_in_minutes(number_of_layers, elapsed_bake_time):
-    """
+    """Calculate the elapsed time.
 
     :param number_of_layers: int the number of layers in the lasagna
     :param elapsed_bake_time: int elapsed cooking time
