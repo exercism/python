@@ -1,9 +1,9 @@
 import unittest
 import pytest
 from strings import (add_prefix_un,
-                    make_word_groups,
-                    remove_suffix_ness,
-                    noun_to_verb)
+                     make_word_groups,
+                     remove_suffix_ness,
+                     noun_to_verb)
 
 
 class TestStrings(unittest.TestCase):
@@ -21,7 +21,7 @@ class TestStrings(unittest.TestCase):
 
     @pytest.mark.task(taskno=2)
     def test_make_word_groups_en(self):
-        input_data = ['en' ,'circle', 'fold', 'close','joy', 'lighten', 'tangle', 'able', 'code', 'culture']
+        input_data = ['en', 'circle', 'fold', 'close', 'joy', 'lighten', 'tangle', 'able', 'code', 'culture']
         result_data = 'en :: encircle :: enfold :: enclose :: enjoy :: enlighten :: entangle :: enable :: encode :: enculture'
 
         self.assertEqual(make_word_groups(input_data), result_data,
@@ -29,10 +29,10 @@ class TestStrings(unittest.TestCase):
 
     @pytest.mark.task(taskno=2)
     def test_make_word_groups_pre(self):
-        input_data = ['pre', 'serve', 'dispose', 'position', 'requisite',  'digest',
+        input_data = ['pre', 'serve', 'dispose', 'position', 'requisite', 'digest',
                       'natal', 'addressed', 'adolescent', 'assumption', 'mature', 'compute']
         result_data = ('pre :: preserve :: predispose :: preposition :: prerequisite :: '
-                      'predigest :: prenatal :: preaddressed :: preadolescent :: preassumption :: '
+                       'predigest :: prenatal :: preaddressed :: preadolescent :: preassumption :: '
                        'premature :: precompute')
 
         self.assertEqual(make_word_groups(input_data), result_data,
@@ -40,19 +40,19 @@ class TestStrings(unittest.TestCase):
 
     @pytest.mark.task(taskno=2)
     def test_make_word_groups_auto(self):
-        input_data = ['auto', 'didactic',  'graph', 'mate',  'chrome',  'centric',  'complete',
-                     'echolalia',  'encoder', 'biography']
+        input_data = ['auto', 'didactic', 'graph', 'mate', 'chrome', 'centric', 'complete',
+                      'echolalia', 'encoder', 'biography']
         result_data = ('auto :: autodidactic :: autograph :: automate :: autochrome :: '
-                      'autocentric :: autocomplete :: autoecholalia :: autoencoder :: '
-                      'autobiography')
+                       'autocentric :: autocomplete :: autoecholalia :: autoencoder :: '
+                       'autobiography')
 
         self.assertEqual(make_word_groups(input_data), result_data,
                          msg=f'Expected {result_data} but got something else instead.')
 
     @pytest.mark.task(taskno=2)
     def test_make_words_groups_inter(self):
-        input_data = ['inter',  'twine', 'connected', 'dependent', 'galactic', 'action',
-                       'stellar', 'cellular', 'continental', 'axial', 'operative', 'disciplinary']
+        input_data = ['inter', 'twine', 'connected', 'dependent', 'galactic', 'action',
+                      'stellar', 'cellular', 'continental', 'axial', 'operative', 'disciplinary']
         result_data = ('inter :: intertwine :: interconnected :: interdependent :: '
                        'intergalactic :: interaction :: interstellar :: intercellular :: '
                        'intercontinental :: interaxial :: interoperative :: interdisciplinary')
@@ -83,8 +83,8 @@ class TestStrings(unittest.TestCase):
                       'Charles made weak crying noises.',
                       'The black oil got on the white dog.']
         index_data = [-2, -1, 3, 3, -1, -3, 5, 2, 1]
-        result_data = ['brighten','darken','harden','soften',
-                       'lighten','dampen','shorten','weaken','blacken']
+        result_data = ['brighten', 'darken', 'harden', 'soften',
+                       'lighten', 'dampen', 'shorten', 'weaken', 'blacken']
         number_of_variants = range(1, len(input_data) + 1)
 
         for variant, sentence, index, result in zip(number_of_variants, input_data, index_data, result_data):
