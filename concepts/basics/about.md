@@ -35,7 +35,7 @@ For extended naming conventions and formatting advice, see [PEP 8][pep8].
 "Last one, I promise"
 ```
 
-Constants are usually defined on a [module][module] or `global` level, and although they _can_ be changed, they are _intended_ to be named only once.
+Constants are usually defined on a [module][module] or `global` level, and although they _can_ be changed, they are _intended_ to be assigned only once.
 
 Their `SCREAMING_SNAKE_CASE` is a message to other developers that the assignment should not be altered.
 
