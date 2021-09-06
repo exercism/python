@@ -1,8 +1,10 @@
 # Implementation notes: exceptions
 
 This exercise expects the code to raise exceptions in certain circumstances.
-Exceptions are usually raised when an operation cannot be completed for some reason and there is no value that can be returned which would be correct.
-Therefore, an exception is raised.
+Exceptions are usually raised when an operation cannot be completed for some reason.
+If the operation cannot be completed, a return value cannot be computed and any value would be incorrect.
+Since any return value would be incorrect, we cannot use a normal return.
+Therefore, an exception is raised instead of returning a value.
 When raising an exception, the tests expect that the exception class in instantiated and contains a message.
 
 ```python
