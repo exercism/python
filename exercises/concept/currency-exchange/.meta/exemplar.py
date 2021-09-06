@@ -61,8 +61,8 @@ def exchangeable_value(budget, exchange_rate, spread, denomination):
 def unexchangeable_value(budget, exchange_rate, spread, denomination):
     """
 
-	:param budget: float - amount of money you are planning to exchange.
-	:param exchange_rate: float - unit value of the foreign currency.
+    :param budget: float - amount of money you are planning to exchange.
+    :param exchange_rate: float - unit value of the foreign currency.
 	:param spread: int - the percentage taken as an exchange fee.
 	:param denomination:  int - the value of a single bill.
 	:return: int - unexchangeable value
