@@ -14,17 +14,17 @@ class TestNumbers(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
     def test_estimate_value(self):
-        input_data = [(100000, 0.84),(700000, 10.1)]
+        input_data = [(100000, 0.84), (700000, 10.1)]
         output_data = [119047, 69306]
         number_of_variants = range(1, len(input_data) + 1)
 
         for variant, input, output in zip(number_of_variants, input_data, output_data):
-            with self.subTest(f"variation #{variant}",input=input, output=output):
+            with self.subTest(f"variation #{variant}", input=input, output=output):
                 self.assertEqual(int(estimate_value(input[0], input[1])), output)
 
     @pytest.mark.task(taskno=2)
     def test_get_change(self):
-        input_data = [(463000, 5000), (1250,120), (15000,1380)]
+        input_data = [(463000, 5000), (1250, 120), (15000, 1380)]
         output_data = [458000, 1130, 13620]
         number_of_variants = range(1, len(input_data) + 1)
 
@@ -45,7 +45,7 @@ class TestNumbers(unittest.TestCase):
     @pytest.mark.task(taskno=4)
     def test_get_number_of_bills(self):
         input_data = [(163270, 50000), (54361, 1000)]
-        output_data = [3,54]
+        output_data = [3, 54]
         number_of_variants = range(1, len(input_data) + 1)
 
         for variant, input, output in zip(number_of_variants, input_data, output_data):
