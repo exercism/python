@@ -26,7 +26,6 @@ class TestToRounds(unittest.TestCase):
             msg=f'Expected {want} but got an incorrect result: {got!r}'
         )
 
-
     @pytest.mark.task(taskno=1)
     def test_zero(self):
         round_number = 0
@@ -61,9 +60,9 @@ class TestConcatenateRounds(unittest.TestCase):
         want = []
 
         self.assertEqual(concatenate_rounds(rounds_1, rounds_2),
-            want,
-            msg=f'Expected {want} but got an incorrect result.'
-        )
+                         want,
+                         msg=f'Expected {want} but got an incorrect result.'
+                         )
 
     @pytest.mark.task(taskno=2)
     def test_other(self):
@@ -81,29 +80,29 @@ class TestListContainsRound(unittest.TestCase):
 
     @pytest.mark.task(taskno=3)
     def test_instructions_example_1(self):
-          rounds = [27, 28, 29, 35, 36]
-          round_number = 29
-          want = True
-          got = list_contains_round(rounds, round_number)
+        rounds = [27, 28, 29, 35, 36]
+        round_number = 29
+        want = True
+        got = list_contains_round(rounds, round_number)
 
-          self.assertEqual(
-              want,
-              got,
-              msg=f'Expected {want} but got an incorrect result: {got!r}'
-          )
+        self.assertEqual(
+            want,
+            got,
+            msg=f'Expected {want} but got an incorrect result: {got!r}'
+        )
 
     @pytest.mark.task(taskno=3)
     def test_instructions_example_2(self):
-          rounds = [27, 28, 29, 35, 36]
-          round_number = 30
-          want = False
-          got = list_contains_round(rounds, round_number)
+        rounds = [27, 28, 29, 35, 36]
+        round_number = 30
+        want = False
+        got = list_contains_round(rounds, round_number)
 
-          self.assertEqual(
-              want,
-              got,
-              msg=f'Expected {want} but got an incorrect result: {got!r}'
-          )
+        self.assertEqual(
+            want,
+            got,
+            msg=f'Expected {want} but got an incorrect result: {got!r}'
+        )
 
     @pytest.mark.task(taskno=3)
     def test_empty(self):
@@ -172,44 +171,43 @@ class TestCardAverage(unittest.TestCase):
         )
 
 
-
 class TestApproxAverageIsAverage(unittest.TestCase):
 
     @pytest.mark.task(taskno=5)
     def test_instructions_example_1(self):
-          hand = [1, 2, 3]
-          want = True
-          got = approx_average_is_average(hand)
+        hand = [1, 2, 3]
+        want = True
+        got = approx_average_is_average(hand)
 
-          self.assertEqual(
-              want,
-              got,
-              msg=f'Expected {want} but got an incorrect result: {got!r}'
-          )
+        self.assertEqual(
+            want,
+            got,
+            msg=f'Expected {want} but got an incorrect result: {got!r}'
+        )
 
     @pytest.mark.task(taskno=5)
     def test_instructions_example_2(self):
-          hand = [2, 3, 4, 8, 8]
-          want = True
-          got = approx_average_is_average(hand)
+        hand = [2, 3, 4, 8, 8]
+        want = True
+        got = approx_average_is_average(hand)
 
-          self.assertEqual(
-              want,
-              got,
-              msg=f'Expected {want} but got an incorrect result: {got!r}'
-          )
+        self.assertEqual(
+            want,
+            got,
+            msg=f'Expected {want} but got an incorrect result: {got!r}'
+        )
 
     @pytest.mark.task(taskno=5)
     def test_instructions_example_3(self):
-          hand = [1, 2, 3, 5, 9]
-          want = False
-          got = approx_average_is_average(hand)
+        hand = [1, 2, 3, 5, 9]
+        want = False
+        got = approx_average_is_average(hand)
 
-          self.assertEqual(
-              want,
-              got,
-              msg=f'Expected {want} but got an incorrect result: {got!r}'
-          )
+        self.assertEqual(
+            want,
+            got,
+            msg=f'Expected {want} but got an incorrect result: {got!r}'
+        )
 
     @pytest.mark.task(taskno=5)
     def test_other_true(self):
