@@ -31,10 +31,10 @@ def clean_up_spacing(sentence):
 def replace_word_choice(sentence, old_word, new_word):
     """
 
-   :param sentence: str a sentence to replace words in.
-   :param new_word: str replacement word
-   :param old_word: str word to replace
-   :return:  str input sentence with new words in place of old words
-   """
+    :param sentence: str a sentence to replace words in.
+    :param new_word: str replacement word
+    :param old_word: str word to replace
+    :return:  str input sentence with new words in place of old words
+    """
 
     pass
