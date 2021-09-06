@@ -49,8 +49,8 @@ def exchangeable_value(budget, exchange_rate, spread, denomination):
     :param exchange_rate: float - the unit value of the foreign currency.
 	:param spread: int - percentage that is taken as an exchange fee.
 	:param denomination: int - the value of a single bill.
-	:return: int - maximum value you can get
-	"""
+    :return: int - maximum value you can get
+    """
 
     exchange_fee = (exchange_rate / 100) * spread
     actual_rate = exchange_rate + exchange_fee
