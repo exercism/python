@@ -35,20 +35,19 @@ class MakingTheGradeTest(unittest.TestCase):
                 self.assertEqual(sorted(round_scores(scores)), sorted(results),
                                  msg=f'Expected: {results} but one or more {scores} were rounded incorrectly.')
 
-
     @pytest.mark.task(taskno=2)
     def test_no_failed_students(self):
         scores = [89, 85, 42, 57, 90, 100, 95, 48, 70, 96]
         expected = 0
         self.assertEqual(count_failed_students(scores), expected,
-        msg=f"Expected the count to be {expected}, but the count wasn't calculated correctly.")
+                         msg=f"Expected the count to be {expected}, but the count wasn't calculated correctly.")
 
     @pytest.mark.task(taskno=2)
     def test_some_failed_students(self):
         scores = [40, 40, 35, 70, 30, 41, 90]
         expected = 4
         self.assertEqual(count_failed_students(scores), expected,
-            msg=f"Expected the count to be {expected}, but the count wasn't calculated correctly.")
+                         msg=f"Expected the count to be {expected}, but the count wasn't calculated correctly.")
 
     @pytest.mark.task(taskno=3)
     def test_above_threshold(self):
@@ -91,7 +90,6 @@ class MakingTheGradeTest(unittest.TestCase):
                 self.assertEqual(letter_grades(highest), result,
                                  msg=f'Expected: {result} but the grade thresholds for a high score of {highest} are incorrect.')
 
-
     @pytest.mark.task(taskno=5)
     def test_student_ranking(self):
         scores = [
@@ -113,34 +111,34 @@ class MakingTheGradeTest(unittest.TestCase):
         number_of_variants = range(1, len(scores) + 1)
 
         for variant, scores, names, results in zip(number_of_variants, scores, names, result_data):
-            with self.subTest(f"variation #{variant}", scores=scores, names=names, results=results):\
-                self.assertEqual(student_ranking(scores, names), results,
-                                 msg=f'Expected: {results} but the rankings were compiled incorrectly.')
+            with self.subTest(f"variation #{variant}", scores=scores, names=names, results=results): \
+                    self.assertEqual(student_ranking(scores, names), results,
+                                     msg=f'Expected: {results} but the rankings were compiled incorrectly.')
 
     @pytest.mark.task(taskno=6)
     def test_perfect_score(self):
-       input_data =  [
-                        [['Rui', 60],['Joci', 58],['Sara', 91],['Kora', 93], ['Alex', 42],
-                         ['Jan', 81],['Lilliana', 40],['John', 60],['Bern', 28],['Vlad', 55]],
+        input_data = [
+            [['Rui', 60], ['Joci', 58], ['Sara', 91], ['Kora', 93], ['Alex', 42],
+             ['Jan', 81], ['Lilliana', 40], ['John', 60], ['Bern', 28], ['Vlad', 55]],
 
-                        [['Yoshi', 52],['Jan', 86], ['Raiana', 100], ['Betty', 60],
-                         ['Joci', 100],['Kora', 81],['Bern', 41], ['Rose', 94]],
+            [['Yoshi', 52], ['Jan', 86], ['Raiana', 100], ['Betty', 60],
+             ['Joci', 100], ['Kora', 81], ['Bern', 41], ['Rose', 94]],
 
-                        [['Joci', 100],['Vlad', 100],['Raiana', 100],['Alessandro', 100]],
-                        [['Jill', 30], ['Paul', 73],],
-                        []
-                    ]
-       result_data = [
-           "No perfect score.",
-           ['Raiana', 100],
-           ['Joci', 100],
-           "No perfect score.",
-           "No perfect score."
-       ]
+            [['Joci', 100], ['Vlad', 100], ['Raiana', 100], ['Alessandro', 100]],
+            [['Jill', 30], ['Paul', 73], ],
+            []
+        ]
+        result_data = [
+            "No perfect score.",
+            ['Raiana', 100],
+            ['Joci', 100],
+            "No perfect score.",
+            "No perfect score."
+        ]
 
-       number_of_variants = range(1, len(input_data) + 1)
+        number_of_variants = range(1, len(input_data) + 1)
 
-       for variant, scores, results in zip(number_of_variants, input_data, result_data):
-           with self.subTest(f"variation #{variant}", scores=scores, results=results):
-               self.assertEqual(perfect_score(scores), results,
-                                msg=f'Expected: {results} but got something different for perfect scores.')
+        for variant, scores, results in zip(number_of_variants, input_data, result_data):
+            with self.subTest(f"variation #{variant}", scores=scores, results=results):
+                self.assertEqual(perfect_score(scores), results,
+                                 msg=f'Expected: {results} but got something different for perfect scores.')
