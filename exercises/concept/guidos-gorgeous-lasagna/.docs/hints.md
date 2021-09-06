@@ -31,7 +31,7 @@
 
 ## 5. Update the recipe with notes
 
-- Clearly [commenting][comments] and [documenting][docstrings] your code is always recommended.
+- Clearly [commenting][comments] and [documenting][docstrings] your code according to [PEP257][PEP257] is always recommended.
 
 [the python tutorial]: https://docs.python.org/3/tutorial/introduction.html
 [numbers]: https://docs.python.org/3/tutorial/introduction.html#numbers
@@ -42,3 +42,4 @@
 [python as a calculator]: https://docs.python.org/3/tutorial/introduction.html#using-python-as-a-calculator
 [comments]: https://realpython.com/python-comments-guide/
 [docstrings]: https://docs.python.org/3/tutorial/controlflow.html#tut-docstrings
+[PEP257]: https://www.python.org/dev/peps/pep-0257/
