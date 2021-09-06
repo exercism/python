@@ -60,9 +60,9 @@ class TestConcatenateRounds(unittest.TestCase):
         want = []
 
         self.assertEqual(concatenate_rounds(rounds_1, rounds_2),
-                         want,
-                         msg=f'Expected {want} but got an incorrect result.'
-                         )
+            want,
+            msg=f'Expected {want} but got an incorrect result.'
+            )
 
     @pytest.mark.task(taskno=2)
     def test_other(self):
