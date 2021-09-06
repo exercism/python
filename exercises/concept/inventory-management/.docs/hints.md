@@ -23,7 +23,13 @@
 - You can use the `key in dict` that returns `True` if the key exists to make sure the value is in the dictionary before decrementing the number of items.
 - This function should [return a dict](https://www.w3schools.com/python/ref_keyword_return.asp).
 
-## 4. List the items that are in stock
+## 4. Remove an item from a dictionary
+
+- If item is in the dictionary, [remove it](https://www.w3schools.com/python/ref_dictionary_pop.asp).
+- If item is not in the dictionary, do nothing.
+- This function should [return a dict](https://www.w3schools.com/python/ref_keyword_return.asp).
+
+## 5. List the items that are in stock
 
 - You need [for loop](https://docs.python.org/3/tutorial/controlflow.html#for-statements) on the inventory and if the number of item is greater of `0` then append the tuple to a list.
 - You can use `dict.items()` to iterate on both the item and the value at the same time, `items()` returns a tuple that you can use as it is or deconstruct.

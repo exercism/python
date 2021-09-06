@@ -52,6 +52,21 @@ You can easily change a value of an item using its _key_.
 {'name': 'Blue Whale', 'speed': 25, 'land_animal': False}
 ```
 
+## Deleting values using keys
+
+You can delete an item from a dictionary using its _key_. The item is removed from the dictionary and the value is returned. `dict.pop` accepts second argument `default` that is returned if the key is not found. If no default is provided, a `KeyError` is raised.
+
+```python
+>>> bear.pop("name")
+'Grizzly Bear'
+>>> bear.pop("name", "Unknown")
+'Unknown'
+>>> bear.pop("name")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'name'
+```
+
 ## Looping through a dictionary
 
 Looping through a dictionary using `for item in dict` will iterate over the _keys_, but you can access the _values_ by using _square brackets_.

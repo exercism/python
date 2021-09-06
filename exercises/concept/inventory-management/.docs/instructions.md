@@ -42,7 +42,23 @@ Item counts should not fall below `0`, if the number of items in the list exceed
 {"coal":0, "wood":0, "diamond":1}
 ```
 
-## 4. Return the inventory content
+## 4. Remove an item from the inventory
+
+Implement the `remove_item()` function that removes an item entirely from an inventory:
+
+```python
+>>> remove_item({"coal":2, "wood":1, "diamond":2}, "coal")
+{"wood":1, "diamond":2}
+```
+
+If the item is not in the inventory, the function should return the inventory unchanged.
+
+```python
+>>> remove_item({"coal":2, "wood":1, "diamond":2}, "gold")
+{"coal":2, "wood":1, "diamond":2}
+```
+
+## 5. Return the inventory content
 
 Implement the `list_inventory()` function that takes an inventory and returns a list of `(item, quantity)` tuples. The list should only include the available items (with a quantity greater than zero):
 

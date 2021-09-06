@@ -38,6 +38,19 @@ def delete_items(inventory, items):
     return inventory
 
 
+def remove_item(inventory, item):
+    '''
+
+    :param inventory: dict - inventory dictionary.
+    :param item: str - item to remove from the inventory.
+    :return:  dict - updated inventory dictionary with item removed.
+    '''
+
+    if item in inventory:
+        inventory.pop(item)
+    return inventory
+
+
 def list_inventory(inventory):
     """
 

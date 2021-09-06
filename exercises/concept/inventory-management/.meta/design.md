@@ -12,6 +12,7 @@ The goal of this exercise is to teach the basics of the `dict` (dictionary, mapp
 - check for membership of a key in a given dictionary.
 - add new `key`:`value` pairs to the `dict`.
 - remove `key`:`value` pairs from the `dict`.
+- remove `key`:`value` pairs from the `dict` using `dict.pop()`.
 - iterate through a `dict` using `dict.keys()`, `dict.values()`, or `dict.items()`.
 - `dict` method `setdefault()`
 
