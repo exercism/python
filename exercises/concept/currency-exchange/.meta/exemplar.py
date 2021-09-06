@@ -1,10 +1,10 @@
 def estimate_value(budget, exchange_rate):
     """
 
-	:param budget: float - amount of money you are planning to exchange.
-	:param exchange_rate: float - unit value of the foreign currency.
-	:return: float - estimated value of the foreign currency you can receive
-	"""
+    :param budget: float - amount of money you are planning to exchange.
+    :param exchange_rate: float - unit value of the foreign currency.
+    :return: float - estimated value of the foreign currency you can receive
+    """
 
     return budget / exchange_rate
 
@@ -12,10 +12,10 @@ def estimate_value(budget, exchange_rate):
 def get_change(budget, exchanging_value):
     """
 
-	:param budget: float - amount of money you own.
-	:param exchanging_value: int - amount of your money you want to exchange now.
-	:return: float - amount left of your starting currency after exchanging
-	"""
+    :param budget: float - amount of money you own.
+    :param exchanging_value: int - amount of your money you want to exchange now.
+    :return: float - amount left of your starting currency after exchanging
+    """
 
     return budget - exchanging_value
 
@@ -23,10 +23,10 @@ def get_change(budget, exchanging_value):
 def get_value(denomination, number_of_bills):
     """
 
-	:param denomination: int - the value of a bill.
-	:param number_of_bills: int amount of bills you received.
-	:return: int - total value of bills you now have
-	"""
+    :param denomination: int - the value of a bill.
+    :param number_of_bills: int amount of bills you received.
+    :return: int - total value of bills you now have
+    """
 
     return number_of_bills * denomination
 
