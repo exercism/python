@@ -8,6 +8,7 @@ def estimate_value(budget, exchange_rate):
 
     pass
 
+
 def get_change(budget, exchanging_value):
     """
 
