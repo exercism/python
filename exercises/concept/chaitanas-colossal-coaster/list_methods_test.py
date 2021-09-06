@@ -89,7 +89,7 @@ class TestListMethods(unittest.TestCase):
         result = ["Natasha", "Steve", "Tchalla", "Wanda", "Rocket", "Bucky"]
 
         self.assertListEqual(add_me_with_my_friends(*params), result,
-                             msg="The person was added to the wrong location in the queue or was not added at all"
+              msg="The person was added to the wrong location in the queue or was not added at all"
                              )
 
     @pytest.mark.task(taskno=4)
