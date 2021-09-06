@@ -1973,14 +1973,7 @@
         "name": "Accumulate",
         "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
         "practices": [],
-        "prerequisites": [
-          "basics",
-          "loops",
-          "numbers",
-          "bools",
-          "conditionals",
-          "lists"
-        ],
+        "prerequisites": [],
         "difficulty": 2,
         "status": "deprecated"
       },
@@ -1989,15 +1982,7 @@
         "name": "Binary",
         "uuid": "49127efa-1124-4f27-bee4-99992e3433de",
         "practices": [],
-        "prerequisites": [
-          "basics",
-          "bools",
-          "numbers",
-          "conditionals",
-          "loops",
-          "strings",
-          "string-methods"
-        ],
+        "prerequisites": [],
         "difficulty": 3,
         "status": "deprecated"
       },
@@ -2006,17 +1991,7 @@
         "name": "Error Handling",
         "uuid": "0dac0feb-e1c8-497e-9a1b-e96e0523eea6",
         "practices": [],
-        "prerequisites": [
-          "basics",
-          "bools",
-          "conditionals",
-          "lists",
-          "loops",
-          "numbers",
-          "strings",
-          "string-methods",
-          "tuples"
-        ],
+        "prerequisites": [],
         "difficulty": 3,
         "status": "deprecated"
       },
@@ -2025,18 +2000,7 @@
         "name": "Hexadecimal",
         "uuid": "6b7f7b1f-c388-4f4c-b924-84535cc5e1a0",
         "practices": [],
-        "prerequisites": [
-          "basics",
-          "bools",
-          "conditionals",
-          "dicts",
-          "lists",
-          "list-methods",
-          "loops",
-          "numbers",
-          "strings",
-          "string-methods"
-        ],
+        "prerequisites": [],
         "difficulty": 3,
         "status": "deprecated"
       },
@@ -2045,17 +2009,7 @@
         "name": "Nucleotide Count",
         "uuid": "105f25ec-7ce2-4797-893e-05e3792ebd91",
         "practices": [],
-        "prerequisites": [
-          "basics",
-          "bools",
-          "conditionals",
-          "dicts",
-          "lists",
-          "list-methods",
-          "loops",
-          "strings",
-          "string-methods"
-        ],
+        "prerequisites": [],
         "difficulty": 2,
         "status": "deprecated"
       },
@@ -2064,18 +2018,7 @@
         "name": "Octal",
         "uuid": "4094d27f-4d03-4308-9fd7-9f3de312afec",
         "practices": [],
-        "prerequisites": [
-          "basics",
-          "bools",
-          "conditionals",
-          "dicts",
-          "lists",
-          "list-methods",
-          "loops",
-          "numbers",
-          "strings",
-          "string-methods"
-        ],
+        "prerequisites": [],
         "difficulty": 3,
         "status": "deprecated"
       },
@@ -2084,18 +2027,7 @@
         "name": "Parallel Letter Frequency",
         "uuid": "da03fca4-4606-48d8-9137-6e40396f7759",
         "practices": [],
-        "prerequisites": [
-          "basics",
-          "bools",
-          "conditionals",
-          "dicts",
-          "lists",
-          "list-methods",
-          "loops",
-          "numbers",
-          "strings",
-          "string-methods"
-        ],
+        "prerequisites": [],
         "difficulty": 3,
         "status": "deprecated"
       },
@@ -2104,18 +2036,7 @@
         "name": "Pascals Triangle",
         "uuid": "e1e1c7d7-c1d9-4027-b90d-fad573182419",
         "practices": [],
-        "prerequisites": [
-          "basics",
-          "bools",
-          "conditionals",
-          "dicts",
-          "lists",
-          "list-methods",
-          "loops",
-          "numbers",
-          "strings",
-          "string-methods"
-        ],
+        "prerequisites": [],
         "difficulty": 3,
         "status": "deprecated"
       },
@@ -2124,13 +2045,7 @@
         "name": "Point Mutations",
         "uuid": "d85ec4f2-c201-4eff-9f3a-831a0cc38e8d",
         "practices": [],
-        "prerequisites": [
-          "basics",
-          "loops",
-          "lists",
-          "conditionals",
-          "numbers"
-        ],
+        "prerequisites": [],
         "difficulty": 3,
         "status": "deprecated"
       },
@@ -2139,15 +2054,7 @@
         "name": "Proverb",
         "uuid": "9fd94229-f974-45bb-97ea-8bfe484f6eb3",
         "practices": [],
-        "prerequisites": [
-          "basics",
-          "bools",
-          "loops",
-          "lists",
-          "conditionals",
-          "strings",
-          "string-methods"
-        ],
+        "prerequisites": [],
         "difficulty": 2,
         "status": "deprecated"
       },
@@ -2156,15 +2063,7 @@
         "name": "Strain",
         "uuid": "b50b29a1-782d-4277-a4d4-23f635fbdaa6",
         "practices": [],
-        "prerequisites": [
-          "basics",
-          "bools",
-          "loops",
-          "lists",
-          "conditionals",
-          "strings",
-          "string-methods"
-        ],
+        "prerequisites": [],
         "difficulty": 3,
         "status": "deprecated"
       },
@@ -2173,18 +2072,7 @@
         "name": "Trinary",
         "uuid": "061a6543-d51d-4619-891b-16f92c6435ca",
         "practices": [],
-        "prerequisites": [
-          "basics",
-          "bools",
-          "dicts",
-          "loops",
-          "lists",
-          "conditionals",
-          "numbers",
-          "sets",
-          "strings",
-          "string-methods"
-        ],
+        "prerequisites": [],
         "difficulty": 4,
         "status": "deprecated"
       },
