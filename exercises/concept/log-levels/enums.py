@@ -1,5 +1,5 @@
-
 from enum import Enum
+
 
 class LogLevel(Enum):
     pass
