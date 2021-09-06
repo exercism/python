@@ -19,9 +19,11 @@ Complete documentation for the current release can be found at [docs.python.org]
 - [Python FAQs][python faqs]
 - [Python Glossary of Terms][python glossary of terms]
 
+
 ## Getting Started
 
 Objects are [assigned][assignment statements] to [names][naming and binding] in Python via the `=` or _assignment operator_. [Variables][variables] are written in [`snake_case`][snake case], and constants usually in `SCREAMING_SNAKE_CASE`.
+
 A `name` (_variable or constant_) is not itself typed, and can be attached or re-attached to different objects or values over its lifetime.
 For extended naming conventions and formatting advice, see [PEP 8][pep8].
 
@@ -34,6 +36,7 @@ For extended naming conventions and formatting advice, see [PEP 8][pep8].
 ```
 
 Constants are usually defined on a [module][module] or `global` level, and although they _can_ be changed, they are _intended_ to be named only once.
+
 Their `SCREAMING_SNAKE_CASE` is a message to other developers that the assignment should not be altered.
 
 ```python
@@ -62,8 +65,8 @@ Functions explicitly return a value or object via the [`return`][return] keyword
 
 ```python
 # Function definition on first line.
-def add_two_numbers(number_one, number_two):
-  return number_one + number_two  # Returns the sum of the numbers, and is indented by 2 spaces.
+>>> def add_two_numbers(number_one, number_two):
+...   return number_one + number_two  # Returns the sum of the numbers, and is indented by 2 spaces.
 
 >>> add_two_numbers(3, 4)
 7
@@ -97,12 +100,18 @@ Functions are [_called_][calls] using their name followed by `()`.
 The number of arguments passed in the parentheses must match the number of parameters in the original function definition unless [default arguments][default arguments] have been used.
 
 ```python
-def number_to_the_power_of(number_one, number_two):
-    '''Returns float or int.
-       Takes number_one and raises it to the power of number_two, returning the result.
-    '''
+>>> def number_to_the_power_of(number_one, number_two):
+        """Raise a number to an arbitrary power.
+        
+        :param number_one: int the base number.
+        :param number_two: int the power to raise the base number to.
+        :return: int - number raised to power of second number
+        
+        Takes number_one and raises it to the power of number_two, returning the result.
+        """
 
-    return number_one ** number_two
+...     return number_one ** number_two
+
 
 >>> number_to_the_power_of(3,3)
 27
@@ -122,9 +131,14 @@ Adding a [default value][default arguments] for a parameter can defend against s
 
 ```python
 def number_to_the_power_of_default(number_one, number_two=2):
-    '''Returns float or int.
-       Takes number_one and raises it to the power of number_two, returning the result.
-    '''
+    """Raise a number to an arbitrary power.
+    
+    :param number_one: int the base number.
+    :param number_two: int the power to raise the base number to.
+    :return: int - number raised to power of second number
+    
+    Takes number_one and raises it to the power of number_two, returning the result.
+    """
 
     return number_one ** number_two
 
@@ -169,16 +183,20 @@ x = "foo"  # This is an in-line comment.
 
 The first statement of a function body can optionally be a [_docstring_][docstring], which concisely summarizes the function or object's purpose.
 Docstrings are read by automated documentation tools and are returned by calling `.__doc__` on the function, method, or class name.
-They are recommended for programs of any size where documentation is needed:
+They are recommended for programs of any size where documentation is needed, and their conventions are laid out in [PEP257][PEP257]:
 
 
 ```python
 # An example on a user-defined function.
 def number_to_the_power_of(number_one, number_two):
-    '''Returns float or int.
-
-       Takes number_one and raises it to the power of number_two, returning the result.
-    '''
+    """Raise a number to an arbitrary power.
+    
+    :param number_one: int the base number.
+    :param number_two: int the power to raise the base number to.
+    :return: int - number raised to power of second number
+    
+    Takes number_one and raises it to the power of number_two, returning the result.
+    """
 
     return number_one ** number_two
 
@@ -204,6 +222,7 @@ errors defaults to 'strict'.
 Docstrings can also include [doctests][doctests], which are interactive examples of how a method or function should work.
 Doctests can be read and run by PyTest, or by importing the `doctest` module.
 
+[PEP257]: https://www.python.org/dev/peps/pep-0257/
 [assignment statements]: https://docs.python.org/3/reference/simple_stmts.html#assignment-statements
 [calls]: https://docs.python.org/3/reference/expressions.html#calls
 [classes]: https://docs.python.org/3/reference/datamodel.html#classes

@@ -1,11 +1,12 @@
 import unittest
 import pytest
 from lasagna import (
-    EXPECTED_BAKE_TIME,
-    bake_time_remaining,
-    preparation_time_in_minutes,
-    elapsed_time_in_minutes
-    )
+                    EXPECTED_BAKE_TIME,
+                    bake_time_remaining,
+                    preparation_time_in_minutes,
+                    elapsed_time_in_minutes
+                    )
+
 
 class LasagnaTest(unittest.TestCase):
 
@@ -46,9 +47,8 @@ class LasagnaTest(unittest.TestCase):
 
         for variant, layers, time, total_time in zip(number_of_variants, layer_data, time_data, result_data):
             with self.subTest(f"variation #{variant}", layers=layers, time=time, total_time=total_time):
-
                 failure_msg = f'Expected {time} minutes elapsed, but the timing was calculated incorrectly.'
-                self.assertEqual(elapsed_time_in_minutes(layers, time), total_time,msg=failure_msg)
+                self.assertEqual(elapsed_time_in_minutes(layers, time), total_time, msg=failure_msg)
 
     @pytest.mark.task(taskno=5)
     def test_docstrings_were_written(self):

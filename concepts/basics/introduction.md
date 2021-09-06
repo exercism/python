@@ -79,9 +79,14 @@ The number of arguments passed in the parentheses must match the number of param
 
 ```python
 def number_to_the_power_of(number_one, number_two):
-    '''Returns float or int.
-       Takes number_one and raises it to the power of number_two, returning the result.
-    '''
+    """Raise a number to an arbitrary power.
+    
+    :param number_one: int the base number.
+    :param number_two: int the power to raise the base number to.
+    :return: int - number raised to power of second number
+    
+    Takes number_one and raises it to the power of number_two, returning the result.
+    """
 
     return number_one ** number_two
 
@@ -103,10 +108,15 @@ Adding a [default value][default arguments] for a parameter can defend against s
 
 ```python
 def number_to_the_power_of_default(number_one, number_two=2):
-    '''Returns float or int.
-       Takes number_one and raises it to the power of number_two, returning the result.
-    '''
-
+    """Raise a number to an arbitrary power.
+    
+    :param number_one: int the base number.
+    :param number_two: int the power to raise the base number to.
+    :return: int - number raised to power of second number
+    
+    Takes number_one and raises it to the power of number_two, returning the result.
+    """
+    
     return number_one ** number_two
 
 >>> number_to_the_power_of_default(4)
@@ -151,15 +161,20 @@ x = "foo"  # This is an in-line comment.
 The first statement of a function body can optionally be a [_docstring_][docstring], which concisely summarizes the function or object's purpose.
 Docstrings are read by automated documentation tools and are returned by calling `.__doc__()` on the function, method, or class name.
 They can also function as [lightweight unit tests][doctests], which will be covered in a later exercise.
-They are recommended for programs of any size where documentation is needed:
+They are recommended for programs of any size where documentation is needed, and their conventions are laid out in [PEP257][PEP257]:
+
 
 ```python
 # An example on a user-defined function.
 def number_to_the_power_of(number_one, number_two):
-    '''Returns float or int.
-
-       Takes number_one and raises it to the power of number_two, returning the result.
-    '''
+    """Raise a number to an arbitrary power.
+    
+    :param number_one: int the base number.
+    :param number_two: int the power to raise the base number to.
+    :return: int - number raised to power of second number
+    
+    Takes number_one and raises it to the power of number_two, returning the result.
+    """
 
     return number_one ** number_two
 
@@ -182,6 +197,7 @@ encoding defaults to sys.getdefaultencoding().
 errors defaults to 'strict'.
 ```
 
+[PEP257]: https://www.python.org/dev/peps/pep-0257/
 [assignment statements]: https://docs.python.org/3/reference/simple_stmts.html#assignment-statements
 [calls]: https://docs.python.org/3/reference/expressions.html#calls
 [comments]: https://realpython.com/python-comments-guide/#python-commenting-basics
