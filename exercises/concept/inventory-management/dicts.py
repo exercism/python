@@ -30,6 +30,16 @@ def delete_items(inventory, items):
     pass
 
 
+def remove_item(inventory, item):
+    '''
+    :param inventory: dict - inventory dictionary.
+    :param item: str - item to remove from the inventory.
+    :return:  dict - updated inventory dictionary with item removed.
+    '''
+
+    pass
+
+
 def list_inventory(inventory):
     """
 
