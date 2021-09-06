@@ -291,46 +291,46 @@ class TestMaybeDoubleLast(unittest.TestCase):
     def test_instructions_example_1(self):
         hand = [5, 9, 11]
         want = [5, 9, 22]
-        maybe_double_last(hand)
+        got = maybe_double_last(hand)
 
         self.assertEqual(
-            hand,
             want,
-            msg=f'Expected {want} but got an incorrect result: {hand!r}'
+            got,
+            msg=f'Expected {want} but got an incorrect result: {got!r}'
         )
 
     @pytest.mark.task(taskno=7)
     def test_instructions_example_2(self):
         hand = [5, 9, 10]
         want = [5, 9, 10]
-        maybe_double_last(hand)
+        got = maybe_double_last(hand)
 
         self.assertEqual(
-            hand,
             want,
-            msg=f'Expected {want} but got an incorrect result: {hand!r}'
+            got,
+            msg=f'Expected {want} but got an incorrect result: {got!r}'
         )
 
     @pytest.mark.task(taskno=7)
     def test_other_doubles(self):
         hand = [1, 2, 11]
         want = [1, 2, 22]
-        maybe_double_last(hand)
+        got = maybe_double_last(hand)
 
         self.assertEqual(
-            hand,
             want,
-            msg=f'Expected {want} but got an incorrect result: {hand!r}'
+            got,
+            msg=f'Expected {want} but got an incorrect result: {got!r}'
         )
 
     @pytest.mark.task(taskno=7)
     def test_other_no_change(self):
         hand = [1, 2, 3]
         want = [1, 2, 3]
-        maybe_double_last(hand)
+        got = maybe_double_last(hand)
 
         self.assertEqual(
-            hand,
             want,
-            msg=f'Expected {want} but got an incorrect result: {hand!r}'
+            got,
+            msg=f'Expected {want} but got an incorrect result: {got!r}'
         )
