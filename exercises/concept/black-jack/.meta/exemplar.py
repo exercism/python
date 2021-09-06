@@ -8,7 +8,7 @@ def number_of_card(card):
 
 
 def number_of_ace(hand):
-    if hand+11 <= 21:
+    if hand + 11 <= 21:
         return 11
     else:
         return 1
