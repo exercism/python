@@ -24,12 +24,12 @@ def add_items(inventory, items):
     return inventory
 
 
-def delete_items(inventory, items):
+def decrement_items(inventory, items):
     """
 
     :param inventory: dict - inventory dictionary.
-    :param items: list - list of items to remove from the inventory.
-    :return:  dict - updated inventory dictionary with items removed.
+    :param items: list - list of items to decrement from the inventory.
+    :return:  dict - updated inventory dictionary with items decremented.
     """
 
     for item in items:
@@ -39,12 +39,12 @@ def delete_items(inventory, items):
 
 
 def remove_item(inventory, item):
-    '''
+    """
 
     :param inventory: dict - inventory dictionary.
     :param item: str - item to remove from the inventory.
     :return:  dict - updated inventory dictionary with item removed.
-    '''
+    """
 
     if item in inventory:
         inventory.pop(item)

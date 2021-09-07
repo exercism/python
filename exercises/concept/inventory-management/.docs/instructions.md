@@ -26,19 +26,19 @@ Implement the `add_items()` function that adds a list of items to an inventory:
 {"coal":2, "wood":2, "iron":1}
 ```
 
-## 3. Remove items from the inventory
+## 3. Decrement items from the inventory
 
-Implement the `delete_items()` function that removes every item in the list from an inventory:
+Implement the `decrement_items(<items>)` function that takes a `list` of items. The function should remove one from the available count in the inventory for each time an item appears on the `list`:
 
 ```python
->>> delete_items({"coal":3, "diamond":1, "iron":5}, ["diamond", "coal", "iron", "iron"])
+>>> decrement_items({"coal":3, "diamond":1, "iron":5}, ["diamond", "coal", "iron", "iron"])
 {"coal":2, "diamond":0, "iron":3}
 ```
 
-Item counts should not fall below `0`, if the number of items in the list exceeds the number of items available in the inventory, the listed quantity for that item should remain at `0` and the request for removing that item should be ignored.
+Item counts in the inventory should not fall below 0. If the number of times an item appears on the list exceeds the count available, the quantity listed for that item should remain at 0 and additional requests for removing counts should be ignored.
 
 ```python
->>> delete_items({"coal":2, "wood":1, "diamond":2}, ["coal", "coal", "wood", "wood", "diamond"])
+>>> decrement_items({"coal":2, "wood":1, "diamond":2}, ["coal", "coal", "wood", "wood", "diamond"])
 {"coal":0, "wood":0, "diamond":1}
 ```
 

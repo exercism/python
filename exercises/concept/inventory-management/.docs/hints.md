@@ -17,7 +17,7 @@
 - The function `add_items` can be used by the `create_inventory` function with an empty dictionary in parameter.
 - This function should [return a dict](https://www.w3schools.com/python/ref_keyword_return.asp).
 
-## 3. Delete items from a dictionary
+## 3. Decrement items in the dictionary
 
 - You need [for loop](https://docs.python.org/3/tutorial/controlflow.html#for-statements) to iterate the list of items, if the number of items is not `0` then [decrement](https://www.w3schools.com/python/gloss_python_assignment_operators.asp) the current number of items.
 - You can use the `key in dict` that returns `True` if the key exists to make sure the value is in the dictionary before decrementing the number of items.
