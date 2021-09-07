@@ -54,7 +54,7 @@ You can easily change a value of an item using its _key_.
 
 ## Deleting values using keys
 
-You can delete an item from a dictionary using its _key_. The item is removed from the dictionary and the value is returned. `dict.pop` accepts second argument `default` that is returned if the key is not found. If no default is provided, a `KeyError` is raised.
+You can delete an item from a dictionary using `dict.pop(<key>)`. This will remove the `(key`, `value`) pair from the dictionary and return the `value` for use. `dict.pop(<key>)` accepts second argument, `default` that is returned if the `key` is not found  (`dict.pop(<key>, <default>)`). Otherwise, a `KeyError` will be raised for any `key` that is missing.
 
 ```python
 >>> bear.pop("name")

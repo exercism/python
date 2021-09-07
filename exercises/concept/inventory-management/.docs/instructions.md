@@ -42,16 +42,16 @@ Item counts should not fall below `0`, if the number of items in the list exceed
 {"coal":0, "wood":0, "diamond":1}
 ```
 
-## 4. Remove an item from the inventory
+## 4. Remove an item entirely from the inventory
 
-Implement the `remove_item()` function that removes an item entirely from an inventory:
+Implement the `remove_item(<inventory>, <item>)` function that removes an item and its count entirely from an inventory:
 
 ```python
 >>> remove_item({"coal":2, "wood":1, "diamond":2}, "coal")
 {"wood":1, "diamond":2}
 ```
 
-If the item is not in the inventory, the function should return the inventory unchanged.
+If the item is not found in the inventory, the function should return the original inventory unchanged.
 
 ```python
 >>> remove_item({"coal":2, "wood":1, "diamond":2}, "gold")
