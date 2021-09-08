@@ -48,9 +48,9 @@ if x > y:
 elif y > z:
     print("y is greater than x and z")
 else:
-    print("z is great than x and y")
+    print("z is greater than x and y")
 ...
->>> z is great than x and y
+>>> z is greater than x and y
 ```
 
 [Boolean operations][boolean operations] and [comparisons][comparisons] can be combined with conditionals for more complex testing:
@@ -72,6 +72,22 @@ else:
 
 >>> classic_fizzbuzz(13)
 '13'
+```
+
+Bear in mind that in the special case where a function returns a boolean, it should not use an `if`.
+Rather it should return the condition directly.
+
+```python
+# DO NOT use `if` and return `True`
+>>> def is_leap_year(year):
+        if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
+            return True
+        else:
+            return False
+
+# instead return the condition directly
+>>> def is_leap_year(year):
+        return (year % 4 == 0 and year % 100 != 0) or year % 400 == 0
 ```
 
 [if statement]: https://docs.python.org/3/reference/compound_stmts.html#the-if-statement
