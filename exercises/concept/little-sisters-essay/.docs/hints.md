@@ -10,7 +10,7 @@
 
 ## 2. Check if each sentence ends with a period
 
-- You can use [string methods][endwith-method-docs] to check the ending of a string.
+- You can use [string methods][endswith-method-docs] to check the ending of a string.
 
 ## 3. Clean up spacing
 
