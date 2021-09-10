@@ -23,7 +23,7 @@ class TestConditionals(unittest.TestCase):
             self.assertEqual(
                 got,
                 expected,
-                msg=f"Expected {expected} but returned {got} with {temperature=} and {neutrons_emitted=}"
+                msg=f"Expected {expected} but returned {got} with T={temperature} and neutrinos={neutrons_emitted}"
             )
 
 
@@ -46,7 +46,7 @@ class TestConditionals(unittest.TestCase):
             self.assertEqual(
                 got,
                 expected,
-                msg=f"Expected {expected} but returned {got} with {voltage=}, {current=}, {theoretical_max_power=}"
+                msg=f"Expected {expected} but returned {got} with voltage={voltage}, current={current}, max_pow={theoretical_max_power}"
             )
 
 
@@ -70,7 +70,7 @@ class TestConditionals(unittest.TestCase):
             self.assertEqual(
                 got,
                 expected,
-                msg=f"Expected {expected} but returned {got} with {temperature=}, {neutrons_produced_per_second=}, {threshold=}"
+                msg=f"Expected {expected} but returned {got} with T={temperature}, neutrinos={neutrons_produced_per_second}, threshold={threshold}"
             )
 
     # End of third function testing
