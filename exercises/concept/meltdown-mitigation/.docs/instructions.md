@@ -37,7 +37,7 @@ Efficiency can be grouped into 4 bands:
 
 The percentage value can be calculated as `(generated_power/theoretical_max_power)*100`
 where `generated_power = voltage * current`.
-Note that the percentage value is usually not an integer number and take care of a
+Note that the percentage value is usually not an integer number, so make sure to consider the
 proper use of the `<` and `<=` comparisons.
 
 Implement the function `reactor_efficiency()`, with three parameters: `voltage`,
