@@ -89,7 +89,7 @@ True
 
 ## 4. Combine matched records
 
-Implement the `create_record()` function that takes a `(treasure, coordinate)` pair from Azaras list and a `(location, coordinate, quadrant)` record from Ruis' list and returns `(treasure, coordinate, location, coordinate, quadrant)` **if the coordinates match**.
+Implement the `create_record()` function that takes a `(treasure, coordinate)` pair from Azara's list and a `(location, coordinate, quadrant)` record from Rui's list and returns `(treasure, coordinate, location, coordinate, quadrant)` **if the coordinates match**.
 If the coordinates _do not_ match, return the string **"not a match"**
 Re-format the coordinate as needed for accurate comparison.
 
