@@ -36,7 +36,7 @@ When the method `display_icons` is called, the list of unicode code points passe
 ## 4. Display the finished leaflet
 
 Now you will use all the functions above, and combine them in the `print_leaflet` function.
-It should take an `event_name`, a list of `icons`, and an `event_date` list.
+It should take an `event_name`, a list of `icons`, a list of `authors`, and an `event_date` list.
 
 The poster should abide by the layout below.
 
