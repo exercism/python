@@ -7,5 +7,5 @@ def format_date(event_date):
 def display_icons(icons):
     pass
 
-def print_leaflet(event_name, icons, author, event_date=None):
+def print_leaflet(event_name, icons, authors, event_date=None):
     pass
