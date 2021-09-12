@@ -11,7 +11,7 @@ The `capitalize_header` function should take in an event name and return the cap
 "Fan meetup"
 ```
 
-## 2. Add an optional date
+## 2. Format the date
 
 Create a new method `format_date` which takes in a list which contains a date, month, and a year. It displays the formatted date with the format `<month_name> <date>, <year>`
 
