@@ -2,10 +2,6 @@ import calendar
 from typing import List, Optional
 
 
-CENTER_FORMAT = "*{: ^18}*"
-FULL_ROW = "*" * 20
-EMPTY_ROW = CENTER_FORMAT.format("")
-
 def capitalize_header(event_name: str) -> str:
     return event_name.capitalize()
 
@@ -20,21 +16,24 @@ def display_icons(icons: List[str]) -> List[str]:
         displayed.append(u"{}".format(icon))
     return displayed
 
-def print_leaflet(event_name: str, icons: List[str], authors, event_date: Optional[List[int]]=None):
+def print_leaflet(event_name: str, icons: List[str], authors: List[str], event_date: Optional[List[int]]=None):
+    row_full = ''.join(['*'] * 20)
+    empty_row = f'*{"":^18}*'
     event_name = capitalize_header(event_name)
-    date_string = format_date(event_date)
     icons = display_icons(icons)
+    date_string = format_date(event_date) if event_date is not None else ""
 
     poster = []
-    poster.append(FULL_ROW)
-    poster.append(EMPTY_ROW)
-    poster.append(CENTER_FORMAT.format("'" + event_name + "'"))
-    poster.append(EMPTY_ROW)
-    poster.append(CENTER_FORMAT.format(date_string))
-    poster.append(EMPTY_ROW)
-    for i, author in enumerate(authors):
-        current_icon = icons[i] if i < len(icons) else " "
-        space_width = 17 - len(current_icon) - len(author)
-        poster.append(CENTER_FORMAT.format(" {}{: ^{width}}{}  ".format(author, "", current_icon, width=space_width)))
-    poster.append(EMPTY_ROW)
-    poster.append(FULL_ROW)
+    poster.append(row_full)
+    poster.append(empty_row)
+    poster.append(f'*{event_name!r:^18}*')
+    poster.append(empty_row)
+    poster.append(f'*{date_string!s:^18}*')
+    poster.append(empty_row)
+    for i in range(len(authors)):
+        icon = icons[i] if i < len(icons) else '    '
+        poster.append(f'*{"":>1}{authors[i]:<11}{icon:>3}{"":>2}*')
+    poster.append(empty_row)
+    poster.append(row_full)
+
+    return '\n'.join(poster)
