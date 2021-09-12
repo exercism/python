@@ -8,6 +8,7 @@ Use only f-strings or the `format()` method to build a leaflet containing basic 
 - [Article on realpython.com][realpython-article]
 
 ## 1. Capitalize the header
+
 - Capitalize the title using the str method `capitalize`.
 
 ## 2. Format the date
