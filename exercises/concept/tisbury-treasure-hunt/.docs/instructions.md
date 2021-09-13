@@ -80,10 +80,10 @@ Re-format coordinates as needed for accurate comparison.
 
 
 ```python
->>> compare_records(('Brass Spyglass', '4B'),('Seaside Cottages', ("1", "C"), 'blue'))
+>>> compare_records(('Brass Spyglass', '4B'), ('Seaside Cottages', ('1', 'C'), 'blue'))
 False
 
->>> compare_records(('Model Ship in Large Bottle', '8A'), ('Harbor Managers Office', ("8", "A"), 'purple'))
+>>> compare_records(('Model Ship in Large Bottle', '8A'), ('Harbor Managers Office', ('8', 'A'), 'purple'))
 True
 ```
 
@@ -95,10 +95,10 @@ Re-format the coordinate as needed for accurate comparison.
 
 
 ```python
->>> create_record(('Brass Spyglass', '4B'),('Abandoned Lighthouse', ("4", "B"), 'Blue'))
-('Brass Spyglass', '4B', 'Abandoned Lighthouse', ("4", "B"), 'Blue')
+>>> create_record(('Brass Spyglass', '4B'), ('Abandoned Lighthouse', ('4', 'B'), 'Blue'))
+('Brass Spyglass', '4B', 'Abandoned Lighthouse', ('4', 'B'), 'Blue')
 
->>> create_record(('Brass Spyglass', '4B'),(("1", "C"), 'Seaside Cottages', 'blue'))
+>>> create_record(('Brass Spyglass', '4B'), (('1', 'C'), 'Seaside Cottages', 'blue'))
 "not a match"
 ```
 
@@ -110,11 +110,11 @@ Format and return the 'report' so that there is one cleaned record on each line.
 
 
 ```python
->>> clean_up((('Brass Spyglass', '4B', 'Abandoned Lighthouse', '("4", "B")', 'Blue'), ('Vintage Pirate Hat', '7E', 'Quiet Inlet (Island of Mystery)', '("7", "E")', 'Orange'), ('Crystal Crab', '6A', 'Old Schooner', '("6", "A")', 'Purple')))
+>>> clean_up((('Brass Spyglass', '4B', 'Abandoned Lighthouse', ('4', 'B'), 'Blue'), ('Vintage Pirate Hat', '7E', 'Quiet Inlet (Island of Mystery)', ('7', 'E'), 'Orange'), ('Crystal Crab', '6A', 'Old Schooner', ('6', 'A'), 'Purple')))
 
 """
-('Brass Spyglass', 'Abandoned Lighthouse', '("4", "B")', 'Blue')\n
-('Vintage Pirate Hat', 'Quiet Inlet (Island of Mystery)', '("7", "E")', 'Orange')\n
-('Crystal Crab', 'Old Schooner', '("6", "A")','Purple')\n
+('Brass Spyglass', 'Abandoned Lighthouse', ('4', 'B'), 'Blue')\n
+('Vintage Pirate Hat', 'Quiet Inlet (Island of Mystery)', ('7', 'E'), 'Orange')\n
+('Crystal Crab', 'Old Schooner', ('6', 'A'), 'Purple')\n
 """
 ```
