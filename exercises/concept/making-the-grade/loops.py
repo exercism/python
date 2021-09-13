@@ -39,7 +39,7 @@ def student_ranking(student_scores, student_names):
     """
      :param student_scores: list of scores in descending order.
      :param student_names: list of names in descending order by exam score.
-     :return: list of strings in format ["<rank>. <student name>: <score>"].
+     :return: list of strings in format ["<rank>. <score>: <student name>"].
      """
 
     pass
