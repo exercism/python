@@ -52,12 +52,13 @@ class LasagnaTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=5)
     def test_docstrings_were_written(self):
-        self.assertIsNotNone(elapsed_time_in_minutes.__doc__,
-                             msg="Expected a docstring for elapsed_time_in_minutes, but recieved None instead.")
-        self.assertIsNotNone(preparation_time_in_minutes.__doc__,
-                             msg="Expected a docstring for preparation_time_in_minutes, but recieved None instead.")
-        self.assertIsNotNone(bake_time_remaining.__doc__,
-                             msg="Expected a docstring for bake_time_remaining, but no docstring was found.")
+        functions = [bake_time_remaining, preparation_time_in_minutes, elapsed_time_in_minutes]
+        number_of_variants = range(1, len(functions) + 1)
+
+        for variant, function in zip(number_of_variants, functions):
+            with self.subTest(f"variation #{variant}", function=function):
+                failure_msg = msg = f'Expected a docstring for `{function.__name__}`, but received `None` instead.'
+                self.assertIsNotNone(function.__doc__, msg=failure_msg)
 
 
 if __name__ == "__main__":
