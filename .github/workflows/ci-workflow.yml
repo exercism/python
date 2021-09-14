@@ -49,7 +49,7 @@ jobs:
         ./bin/template_status.py -v -p .problem-specifications
 
   canonical_sync:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     needs: housekeeping
     strategy:
       matrix:
