@@ -44,7 +44,7 @@ def clean_up(combined_record_group):
     """
 
     :param combined_record_group: tuple of tuples - everything from both participants.
-    :return: tuple of tuples - everything "cleaned". Excess coordinates and information removed.
+    :return: string of tuples separated by newlines - everything "cleaned". Excess coordinates and information removed.
     """
 
     pass
