@@ -10,10 +10,9 @@ For each task, return a function (using a `lambda`).
 Implement `secret_add`. It should return a function which takes one argument and adds to it the argument passed in to `secret_add`.
 
 ```python
-adder = secret_add(2)
-adder(2)
-# => 4
-```
+>>> adder = secret_add(2)
+>>> adder(2)
+4
 
 ## 2. Create a multiplier
 
