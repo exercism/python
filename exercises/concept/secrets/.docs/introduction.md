@@ -1,12 +1,12 @@
 # Lambdas
 
-Python has a [`lambda`][lambdas] expression, which is a shorter way to create functions than using `def`. It looks like this:
+Python has a [`lambda`][lambdas] expression, which is a shorter way to create functions than using `def`. They are nameless, or **anonymous**, which means it is created without a name, unlike `def`. Since they are nameless, you can pass them directly into another function without giving it a name. It looks like this:
 
 ```python
 lambda num: num + 1
 ```
 
-In short, a `lambda expression` starts with the keyword `lambda`, followed by parameters (_separated by a comma, as you would do with a `def`-defined function_), a colon, and a `return` value.
+In short, a `lambda expression` starts with the keyword `lambda`, followed by parameters (_separated by a comma, as you would do with a `def`-defined function_), a colon, and a `return` value. 
 
 ```exercism/caution
 Be warned: unlike functional-first programming languages, Python's [lambdas][lambdas] are quite limited. They can only contain code that is computable as a single expression, and be written on a single line. [They can't contain statements.][statements]
