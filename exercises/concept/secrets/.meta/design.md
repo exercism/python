@@ -30,7 +30,7 @@ This concept exercise is meant to teach an understanding/creation/use of `lambda
 
 - `anonymous-functions`
 - `lambdas`
-- `functions`, 
+- `functions`
 - `higher-order functions`
 - `functions as arguments`
 - `functions as returns`
