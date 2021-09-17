@@ -13,15 +13,16 @@ Implement `secret_add`. It should return a function which takes one argument and
 >>> adder = secret_add(2)
 >>> adder(2)
 4
+```
 
 ## 2. Create a multiplier
 
 Implement `secret_multiply`. It should return a function which takes one argument and multiplies it by the secret passed in to `secret_multiply`.
 
 ```python
-multiplier = secret_multiply(7)
-multiplier(3)
-# => 21
+>>> multiplier = secret_multiply(7)
+>>> multiplier(3)
+21
 ```
 
 ## 3. Create a "max"-er
@@ -29,9 +30,9 @@ multiplier(3)
 Implement `secret_max`. It should return a function which takes one argument (a list of exactly two numbers) and returns either the secret passed into `secret_max`, or the argument passed into the function that `secret_max` returns, whichever one's **product** is bigger.
 
 ```python
-maxer = secret_max([7, 3])
-multiplier([2, 11])
-# => [2, 11]
+>>> maxer = secret_max([7, 3])
+>>> maxer([2, 11])
+[2, 11]
 ```
 
 ## 4. Create a function combiner
@@ -39,10 +40,10 @@ multiplier([2, 11])
 Implement `secret_combine`. It should return a function which takes one argument and applies to it the two functions passed in to `secret_combine` in order.
 
 ```python
-multiply = secret_multiply(7)
-divide = secret_add(3)
-combined = secret_combine(multiply, add)
+>>> multiply = secret_multiply(7)
+>>> divide = secret_add(3)
+>>> combined = secret_combine(multiply, add)
 
-combined(6)
-# => 25
+>>> combined(6)
+25
 ```
