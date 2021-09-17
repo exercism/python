@@ -1,9 +1,18 @@
 [
-  { "description": "Python Docs: Defining Functions", "url": "https://docs.python.org/3/tutorial/controlflow.html#defining-functions" },
-  { "description": "Python Docs Tutorial: Lambda Expressions", "url": "https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions" },
-  { "description": "Functions as Objects in Python", "url": "https://medium.com/python-pandemonium/function-as-objects-in-python-d5215e6d1b0d" },
-  { "description": "Composing Programs: Higher-Order Functions", "url": "https://composingprograms.com/pages/16-higher-order-functions.html" },
-  { "description": "Learn by Example:  Python Lambda Function", "url": "https://www.learnbyexample.org/python-lambda-function/" },
-  { "description": "Real Python: How to Use Python Lambda Fuctions", "url": "https://realpython.com/python-lambda/" },
-  { "description": "Trey Hunner: Overusing Lambda expressions in Python", "url": "https://treyhunner.com/2018/09/stop-writing-lambda-expressions/" }
+  {
+    "url": "http://example.com/",
+    "description": "TODO:  add new link (above) and write a short description here of the resource."
+  },
+  {
+    "url": "http://example.com/",
+    "description": "TODO:  add new link (above) and write a short description here of the resource."
+  },
+  {
+    "url": "http://example.com/",
+    "description": "TODO:  add new link (above) and write a short description here of the resource."
+  },
+  {
+    "url": "http://example.com/",
+    "description": "TODO:  add new link (above) and write a short description here of the resource."
+  }
 ]
