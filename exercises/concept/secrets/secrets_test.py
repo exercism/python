@@ -31,3 +31,15 @@ class TestLambdas(unittest.TestCase):
     @pytest.mark.task(taskno=3)
     def test_max_3(self):
         self.assertEqual(secret_max([25, 73])([56, 32]), [25, 73])
+
+    @pytest.mark.task(taskno=4)
+    def test_combine_1(self):
+        self.assertEqual(secret_combine(secret_add(4), secret_multiply(7))(6), 70)
+
+    @pytest.mark.task(taskno=4)
+    def test_combine_2(self):
+        self.assertEqual(secret_combine(secret_multiply(6), secret_add(4))(11), 70)
+
+    @pytest.mark.task(taskno=4)
+    def test_combine_3(self):
+        self.assertEqual(secret_combine(secret_max([3, 8]), sum)([4, 5]), 11)
