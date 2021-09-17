@@ -2,7 +2,7 @@ def secret_add(secret):
     return lambda addend: secret + addend
 
 def secret_multiply(secret):
-    return lambda multiplicand: secret - multiplicand
+    return lambda multiplicand: secret * multiplicand
 
 def secret_max(secret):
     return lambda num: max(secret, num, key=lambda l: l[0] * l[1])
