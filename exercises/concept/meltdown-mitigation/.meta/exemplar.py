@@ -1,8 +1,8 @@
 def is_criticality_balanced(temperature, neutrons_emitted):
     """Verify criticality is balanced.
 
-    :param temperature: temperature
-    :param neutrons_emitted: number of neutrons emitted per second
+    :param temperature: Union[int,float] temperature
+    :param neutrons_emitted: Union[int,float] number of neutrons emitted per second
     :return:  boolean True if conditions met, False if not
 
     A reactor is said to be critical if it satisfies the following conditions:
@@ -22,9 +22,9 @@ def is_criticality_balanced(temperature, neutrons_emitted):
 def reactor_efficiency(voltage, current, theoretical_max_power):
     """Assess reactor efficiency zone.
 
-    :param voltage: voltage
-    :param current: current
-    :param theoretical_max_power: power that correspods to a 100% efficiency
+    :param voltage: Union[int,float] voltage
+    :param current: Union[int,float] current
+    :param theoretical_max_power: Union[int,float] power that corresponds to a 100% efficiency
     :return: str one of 'green', 'orange', 'red', or 'black'
 
     Efficiency can be grouped into 4 bands:
@@ -57,9 +57,9 @@ def reactor_efficiency(voltage, current, theoretical_max_power):
 def fail_safe(temperature, neutrons_produced_per_second, threshold):
     """Assess and return safety range.
 
-    :param temperature:
-    :param neutrons_produced_per_second:
-    :param threshold:
+    :param temperature: Union[int,float]
+    :param neutrons_produced_per_second: Union[int,float]
+    :param threshold: Union[int,float]
     :return: str one of: 'LOW', 'NORMAL', 'DANGER'
 
     - `temperature * neutrons per second` < 40% of `threshold` == 'LOW'
