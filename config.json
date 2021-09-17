@@ -2279,6 +2279,32 @@
           "string-methods"
         ],
         "difficulty": 7
+      },
+      {
+        "slug": "secrets",
+        "name": "Secrets",
+        "uuid": "1e636fd3-6143-484e-a4fc-0ed6157fdfa1",
+        "concepts": ["anonymous-functions", "lambdas"],
+        "prerequisites": [
+          "basics",
+          "booleans",
+          "comparisons",
+          "dicts",
+          "dict-methods",
+          "functions",
+          "function-arguments",
+          "higher-order functions",
+          "iteration",
+          "lists",
+          "list-methods",
+          "numbers",
+          "sequences",
+          "sets",
+          "strings",
+          "string-methods",
+          "tuples"
+        ],
+        "difficulty": 3
       }
     ],
     "foregone": ["lens-person"]
