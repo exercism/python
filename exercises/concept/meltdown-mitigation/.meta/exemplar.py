@@ -69,7 +69,6 @@ def fail_safe(temperature, neutrons_produced_per_second, threshold):
     output = temperature * neutrons_produced_per_second
     operational_percentage = (output / threshold) * 100
     safety_range = 'UNKNOWN'
-    print(operational_percentage)
 
     if operational_percentage < 40:
         safety_range = 'LOW'
