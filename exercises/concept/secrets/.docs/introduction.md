@@ -6,7 +6,7 @@ Python has a [`lambda`][lambdas] expression, which is a shorter way to create fu
 add_one = lambda num: num + 1
 ```
 
-In a nutshell, a lambda starts with the keyword `lambda`, then the arguments (separated by a comma, as in a normal `def` function), a colon, and the return value. As they are simply a shorter way of defining a function than `def`, they can be executed in the same way (e.g. `add_one(3)`).
+In short, a `lambda expression` starts with the keyword `lambda`, followed by parameters (_separated by a comma, as you would dow with a `def`-defined function_), a colon, and a `return` value.
 
 ```exercism/caution
 Be warned: unlike functional-first programming languages, Python's [lambdas][lambdas] are quite limited. They can only contain code that is computable as a single expression, and be written on a single line. [They can't contain statements.][statements]
