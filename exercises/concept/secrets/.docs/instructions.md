@@ -35,7 +35,17 @@ Implement `secret_max`. It should return a function which takes one argument (a 
 [2, 11]
 ```
 
-## 4. Create a function combiner
+## 4. Create a sorter
+
+Implement `secret_sort`. It should take a number, `secret_index`, and return a lambda which takes one argument, a list of lists of an unknown amount of numbers. The lambda should return the list of lists, but sorted by `sublist[secret_index]`.
+
+```python
+>>> sorter = secret_sort(0)
+>>> sorter([[3, 120, 5], [1, 5, 2], [8, 2, 23]])
+[[1, 5, 2], [3, 120, 5], [8, 2, 23]]
+```
+
+## 5. Create a function combiner
 
 Implement `secret_combine`. It should return a function which takes one argument and applies to it the two functions passed in to `secret_combine` in order.
 
