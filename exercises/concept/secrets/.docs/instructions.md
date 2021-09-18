@@ -47,7 +47,7 @@ Implement `secret_sort`. It should take a number, `secret_index`, and return a l
 
 ## 5. Create a function combiner
 
-Implement `secret_combine`. It should return a function which takes one argument and applies to it the two functions passed in to `secret_combine` in order.
+Implement `secret_combine`. It should return a lambda which takes one argument and applies to it the two functions passed in to `secret_combine` in order.
 
 ```python
 >>> multiply = secret_multiply(7)
