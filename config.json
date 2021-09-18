@@ -2284,7 +2284,7 @@
         "slug": "secrets",
         "name": "Secrets",
         "uuid": "1e636fd3-6143-484e-a4fc-0ed6157fdfa1",
-        "concepts": ["anonymous-functions", "lambdas"],
+        "practices": ["anonymous-functions", "lambdas"],
         "prerequisites": [
           "basics",
           "booleans",
@@ -2293,7 +2293,7 @@
           "dict-methods",
           "functions",
           "function-arguments",
-          "higher-orderf-unctions",
+          "higher-order-functions",
           "iteration",
           "lists",
           "list-methods",
