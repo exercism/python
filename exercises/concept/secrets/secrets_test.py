@@ -50,4 +50,4 @@ class TestLambdas(unittest.TestCase):
 
     @pytest.mark.task(taskno=5)
     def test_combine_3(self):
-        self.assertEqual(secret_combine(secret_max([3, 8]), sum)([4, 5]), 11, msg="(secret_combine(secret_max([3, 8]), sum)([4, 5]) should be 11")
+        self.assertEqual(secret_combine(secret_max([3, 8]), sum)([4, 5]), 11, msg="secret_combine(secret_max([3, 8]), sum)([4, 5]) should be 11")
