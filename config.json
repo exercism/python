@@ -2304,7 +2304,7 @@
           "string-methods",
           "tuples"
         ],
-        "difficulty": 3
+        "status": "wip"
       }
     ],
     "foregone": ["lens-person"]
