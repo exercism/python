@@ -48,7 +48,6 @@ Successfully installed pytest-6.2.5 ...
 ```bash
 $ python3 -m pip install pytest pytest-cache pytest-subtests pytest-pylint
 Successfully installed pytest-6.2.5 ...
-
 ```
 
 To check if the installation was successful:
@@ -112,7 +111,8 @@ If you really want to be specific about what pytest returns on your screen, here
 
 #### Stop After First Failure [`-x`]
 
-Running the `pytest -x {exercise_test.py}` command, will run the tests like normal, but will stop the tests after the first failed test. This will help when you want to debug a single failure at a time.
+Running the `pytest -x {exercise_test.py}` command, will run the tests like normal, but will stop the tests after the first failed test.
+This will help when you want to debug a single failure at a time.
 
 ```bash
 $ python -m pytest -x example_test.py
@@ -128,7 +128,8 @@ FAILED example_test.py::ExampleTest::example_test_foo
 
 #### Failed Tests First [`--ff`]
 
-`pytest-cache` remembers which tests failed last time you ran `pytest`, running `pytest --ff {exercise_test.py}` will run those previously failed tests first, then it will continue with the rest of the tests. This might speed up your testing if you are making a lot of smaller fixes.
+`pytest-cache` remembers which tests failed last time you ran `pytest`, running `pytest --ff {exercise_test.py}` will run those previously failed tests first, then it will continue with the rest of the tests.  
+This might speed up your testing if you are making a lot of smaller fixes.
 
 ```bash
 $ python -m pytest --ff bob_test.py
@@ -162,7 +163,8 @@ $ python3 -m pytest --pdb bob_test.py
 =============== 4 passed in 0.15s ===============
 ```
 
-When a test fails, `PDB` allows you to look at variables and how your code responds. If you want to learn how to use the `PDB` module, have a look at the [Python Docs](https://docs.python.org/3/library/pdb.html#module-pdb) or [this](https://realpython.com/python-debugging-pdb/) Real Python article.
+When a test fails, `PDB` allows you to look at variables and how your code responds.
+If you want to learn how to use the `PDB` module, have a look at the [Python Docs](https://docs.python.org/3/library/pdb.html#module-pdb) or [this](https://realpython.com/python-debugging-pdb/) Real Python article.
 
 ## Extending your IDE
 
@@ -174,7 +176,9 @@ If you'd like to extend your IDE with some tools that will help you with testing
 
 **Note:** If you are running a [virtual environment](./tools.md) you do not need to _add to path_ as it should work fine.
 
-Typing `python3 -m` every time you want to run a module can get a little annoying. You can add the `Scripts` folder of your Python installation to your path. If you do not know where you have installed Python, run the following command in your terminal:
+Typing `python3 -m` every time you want to run a module can get a little annoying.
+You can add the `Scripts` folder of your Python installation to your path.
+If you do not know where you have installed Python, run the following command in your terminal:
 
 ```bash
 $ python3 -c "import os, sys; print(os.path.dirname(sys.executable))"
