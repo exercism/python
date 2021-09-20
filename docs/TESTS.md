@@ -1,108 +1,128 @@
 # Tests
 
-## Tools to install
+## Making sure
 
-We recommend you install [pytest](http://pytest.org/en/latest/) with the following plugins:
-
--  [pytest-cache](http://pythonhosted.org/pytest-cache/)
--  [pytest-subtests](https://github.com/pytest-dev/pytest-subtests)
--  [pytest-pylint](https://github.com/carsongee/pytest-pylint)
-
-The PyTest [Getting Started Guide](https://docs.pytest.org/en/latest/getting-started.html) has quick general instructions, although they do not cover installing the plugins.
-Continue reading below for plugin installation.
-
-We also recommend [pylint](https://pylint.pycqa.org/en/latest/user_guide/), as it is part of our automated feedback on the website, and can be a very useful (if noisy!) code analysis tool.
-
-Pylint can be a bit much, so this [tutorial](https://pylint.pycqa.org/en/latest/tutorial.html) can be helpful for getting started, as can this overview of [Code Quality: Tools and Best Practices](https://realpython.com/python-code-quality/) from Real Python.
-
-Finally, [this site](https://pycodequ.al/docs/pylint-messages.html) is a great place to look up more human-readable descriptions of Pylint linting messages.
-
-
-### Installing `pytest`
-
-To install `pytest`, run the following command in the environment (_active `venv`, `conda env`, `docker container`, `vm` or other project space with Python 3.8 installed_):
+The python track on Exercism.org uses Python 3.8 and above, make sure you are running Python 3.8 and above going to your terminal and typing:
 
 ```bash
-pip3 install pytest pytest-cache pytest-subtests pytest-pylint
+$ python3 --version
+Python 3.8.1
 ```
 
-If you get a `command not found` response from your system, you can find a
-tutorial on how to install `pip`
-[here](https://pip.pypa.io/en/stable/installing/).
+If your version is not `3.8.x` and above, update your Python installation by selecting a compatible version on the [Python downloads](https://www.python.org/downloads/) page.
 
-Once the installation has completed, you can check what the default version of `pytest` is by running the following:
+## Pytest
+
+_Official Pytest documentation can be found on the [Pytest Wiki](https://pytest.org/en/latest/) page._
+
+Pytest let's you test your solutions using our provided tests, it is what we use to validate your solutions on the website.
+
+### Installing
+
+Pytest can be installed and updated using the built-in Python utility `pip`. 
+
+#### Windows
+
+```powershell
+PS C:\Users\foobar> python3 -m pip install pytest pytest-cache pytest-subtests pytest-pylint
+Successfully installed pytest-6.2.5 ...
+```
+
+#### Linux / MacOS
 
 ```bash
-pytest --version
+$ sudo python3 -m pip install pytest pytest-cache pytest-subtests pytest-pylint
+Successfully installed pytest-6.2.5 ...
+
 ```
 
-## Testing
-
-### Run All Tests for an Exercise
-
-To run all tests for a specific exercise (_we will take the `bob.py` exercise as
-an example here_), navigate to the directory where that exercise has been
-downloaded and run the following in the terminal:
+To check if the installation was succesful:
 
 ```bash
-pytest bob_test.py
+$ python3 -m pytest --version
+pytest 6.2.5
 ```
 
-**Note:** To run the tests you need to pass the name of the testsuite file to
-`pytest` (_generally, this will be the file ending with `_test.py`_), **NOT** the file that was
-created to solve the exercsim problem (which is the _solution implementation_).
-`PyTest` needs the test definitions in the `_test.py` file in order to know how to call, run, and exercise the _solution implementation_ code.
-Since there are no test cases defined in the _solution implementation_, `pytest` will just return a positive result, specifying that it found and ran zero tests. Like this:
+If you do not want to precede every command with `python3 -m` please refer to [adding to PATH](#adding-to-path) at the end of this document.
 
+### Running the tests
 
-```
-=============================  bob.py  ==============================
-
----------------------------------------------------------------------
-
-Ran 0 tests in 0.000s
-
-OK
-```
-
-
-### More `pytest` Examples
-
-Below are some additional examples and details for getting up and running quickly with Pytest.
-[How to invoke pytest](https://docs.pytest.org/en/latest/how-to/usage.html#usage) and [pytest command-line flags](https://docs.pytest.org/en/latest/reference/reference.html#command-line-flags) offer full details on all of pytests run options.
-
-
-#### Stop After First Failure
-The above will run all the tests, whether they fail or not. If you'd rather stop
-the process and exit on the first failure, run:
+To run your test, go to the folder where the exercise is stored using `cd` in your terminal (_replace `{exercise-folder-location}` below with the path_). 
 
 ```bash
-pytest -x bob_test.py
+$ cd {exercise-folder-location}
 ```
 
-#### Failed Tests First
-
-`pytest-cache` remembers which tests failed, and can run those tests first.
+The file you'll want always ends with `_test.py`, this file contains the tests for your solution, and are the same tests run on the website. Now run the following command in your terminal, replacing `{exercise_test.py}` with the location/name of the the testing file:
 
 ```bash
-pytest --ff bob_test.py
+$ python3 -m pytest {exercise_test.py}
+==================== 7 passed in 0.08s ====================
 ```
 
-#### Running All Tests for All Exercises
+#### Failures
+
+When your code returns an incorrect or unexpected value, pytest returns all the failed tests and the returned and expected values of each. Look at the following failed test file:
 
 ```bash
-cd exercism/python/
-pytest
+$ python3 -m pytest {exercise_test.py}
+=================== FAILURES ====================
+______________ name_of_failed_test ______________
+# Test code inside of {exercise_test.py} that failed.
+...
+E		TypeOfError: ReturnedValue != ExpectedValue
+
+exercise_test.py:{line_of_failed_test}: TypeOfError
+============ short test summary info ============
+FAILED exercise_test.py::ExerciseTest::name_of_failed_test
+========== 1 failed, 2 passed in 0.13s ==========
 ```
 
-## Recommended Workflow
+### Extra arguments
 
-Try this command while working on exercises:
+If you really want to be specific about what Pytest returns on your screen, here are some handy arguments that will make Pytest return a more specific dataset.
+
+#### Stop After First Failure [`-x`]
+
+Running the `pytest -x {exercise_test.py}` command, will run the tests like normal, but will stop the tests when it encounters a failed test. This will help when you want to debug a single failure at a time.
 
 ```bash
-cd exercism/python/bob
-pytest -x --ff bob_test.py
+$ python -m pytest -x example_test.py
+=================== FAILURES ====================
+_______________ example_test_foo ________________
+...
+...
+============ short test summary info ============
+FAILED example_test.py::ExampleTest::example_test_foo
+!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!
+========== 1 failed, 5 passed in 0.28s ==========
 ```
+
+#### Failed Tests First [`--ff`]
+
+`pytest-cache` remembers which tests failed last time you ran `pytest`, running `pytest --ff {exercise_test.py}` will run those previously failed tests first, then it will continue with the rest of the tests. This might speed up your testing if you are making a lot of smaller fixes.
+
+```bash
+$ python -m pytest --ff bob_test.py
+```
+
+#### Recommended Workflow
+
+We recommend using the following commands to make your debugging easier and (possibly) faster:
+
+First change your working directory to the directory of the exercise you want to test:
+
+```bash
+cd path/to/exercise
+```
+
+Then, run the tests together with the previously explained arguments `-x` and`--ff`:
+
+```bash
+pytest -x -ff bob_test.py
+```
+
+This will test your solution. When `pytest` encounters a failed test, the program will stop and tell you which test failed. When you run the test again, `pytest` will first test that failed test, then continue with the rest.
 
 ## PDB
 
@@ -113,3 +133,11 @@ To learn how to usepdb, check out the
 ```bash
 pytest --pdb bob_test.py
 ```
+
+## Additional
+
+Here is some additional information, which could come in handy.
+
+### Adding to PATH
+
+TODO
