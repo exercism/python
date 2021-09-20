@@ -60,9 +60,9 @@ class TestConcatenateRounds(unittest.TestCase):
         want = []
 
         self.assertEqual(concatenate_rounds(rounds_1, rounds_2),
-            want,
-            msg=f'Expected {want} but got an incorrect result.'
-            )
+                         want,
+                         msg=f'Expected {want} but got an incorrect result.'
+                         )
 
     @pytest.mark.task(taskno=2)
     def test_other(self):
@@ -201,6 +201,18 @@ class TestApproxAverageIsAverage(unittest.TestCase):
     def test_instructions_example_3(self):
         hand = [1, 2, 3, 5, 9]
         want = False
+        got = approx_average_is_average(hand)
+
+        self.assertEqual(
+            want,
+            got,
+            msg=f'Expected {want} but got an incorrect result: {got!r}'
+        )
+
+    @pytest.mark.task(taskno=5)
+    def test_median_true(self):
+        hand = [1, 2, 4, 5, 8]
+        want = True
         got = approx_average_is_average(hand)
 
         self.assertEqual(
