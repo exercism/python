@@ -52,7 +52,14 @@ def approx_average_is_average(hand):
     :return: bool - is approximate average the same as true average?
     """
 
-    return card_average([hand[0], hand[-1]]) == card_average(hand)
+    real_average = card_average(hand)
+    if card_average([hand[0], hand[-1]]) == real_average:
+        is_same = True
+    elif hand[len(hand) // 2] == real_average:
+        is_same = True
+    else:
+        is_same = False
+    return is_same
 
 
 def average_even_is_average_odd(hand):
