@@ -1,15 +1,17 @@
 # Tests
 
-## Making sure
-
-The python track on Exercism.org uses Python 3.8 and above, make sure you are running Python 3.8 and above going to your terminal and typing:
-
-```bash
-$ python3 --version
-Python 3.8.1
-```
-
-If your version is not `3.8.x` and above, update your Python installation by selecting a compatible version on the [Python downloads](https://www.python.org/downloads/) page.
+1. [Pytest](#pytest)
+   - [Installation](#installing-pytest)
+   - [Running the tests](#running-the-tests)
+     - [Failing tests](#failures)
+   - [Extra arguments](#extra-arguments)
+     - [Stop test after first failure](#stop-after-first-failure-[-x])
+     - [Failed Tests First](#failed-tests-first-[--ff])
+     - [Recommended setup](#recommended-workflow)
+2. [Tools for your IDE](#extending-your-ide)
+3. [Additional testing tools](#additional-testing) TODO
+   - [Python Debugger in Pytest](#PDB) TODO
+   - [Adding python scripts to path](#adding-to-path) TODO
 
 ## Pytest
 
@@ -17,7 +19,7 @@ _Official Pytest documentation can be found on the [Pytest Wiki](https://pytest.
 
 Pytest let's you test your solutions using our provided tests, it is what we use to validate your solutions on the website.
 
-### Installing
+### Installing Pytest
 
 Pytest can be installed and updated using the built-in Python utility `pip`. 
 
@@ -124,19 +126,25 @@ pytest -x -ff bob_test.py
 
 This will test your solution. When `pytest` encounters a failed test, the program will stop and tell you which test failed. When you run the test again, `pytest` will first test that failed test, then continue with the rest.
 
-## PDB
+## Extending your IDE
+
+If you'd like to extend your IDE with some tools that will help you with testing/improving your code, check [this]() page. We go into multiple IDEs and editors and some handy extensions.
+
+## Additional testing
+
+Here is some additional information, which could come in handy.
+
+### PDB
+
+TODO
 
 Typing pdb on the command line will drop you into the python debugger when a test fails.
-To learn how to usepdb, check out the
+To learn how to use pdb, check out the
 [documentation](https://docs.python.org/3/library/pdb.html#debugger-commands).
 
 ```bash
 pytest --pdb bob_test.py
 ```
-
-## Additional
-
-Here is some additional information, which could come in handy.
 
 ### Adding to PATH
 
