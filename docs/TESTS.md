@@ -26,11 +26,13 @@ Pylint can be a bit much, so this [tutorial from pycqa.orgl](https://pylint.pycq
 
 ---
 
+
 ## Pytest
 
 _Official pytest documentation can be found on the [pytest Wiki](https://pytest.org/en/latest/) page._
 
 Pytest lets you test your solutions using our provided tests, and is what we use to validate your solutions on the website.
+
 
 ### Installing pytest
 
@@ -152,16 +154,13 @@ Then, run the tests together with the previously explained arguments `-x` and`--
 pytest -x -ff bob_test.py
 ```
 
-This will test your solution. When `pytest` encounters a failed test, the program will stop and tell you which test failed. When you run the test again, `pytest` will first test that failed test, then continue with the rest.
+This will test your solution. When `pytest` encounters a failed test, the program will stop and tell you which test failed.
+When you run the test again, `pytest` will first test that failed test, then continue with the rest.
+
 
 #### Using PDB, the Python Debugger, with pytest
 
 If you want to truly debug like a pro, use the `--pdb` argument after the `pytest` command.
-
-```bash
-$ python3 -m pytest --pdb bob_test.py
-=============== 4 passed in 0.15s ===============
-```
 
 When a test fails, `PDB` allows you to look at variables and how your code responds.
 If you want to learn how to use the `PDB` module, have a look at the [Python Docs](https://docs.python.org/3/library/pdb.html#module-pdb) or [this](https://realpython.com/python-debugging-pdb/) Real Python article.
