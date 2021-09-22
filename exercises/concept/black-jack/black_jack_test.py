@@ -57,53 +57,53 @@ class BlackJackTest(unittest.TestCase):
     @pytest.mark.task(taskno=3)
     def test_is_blackjack(self):
         data = [
-            (['A', 'K'], True),
-            (['10', 'A'], True),
-            (['10', '9'], False),
-            (['A', 'A'], False),
+            (('A', 'K'), True),
+            (('10', 'A'), True),
+            (('10', '9'), False),
+            (('A', 'A'), False),
         ]
 
         for variant, (hand, blackjack) in enumerate(data, 1):
             with self.subTest(f'variation #{variant}', input=hand, output=blackjack):
                 self.assertEqual(
                     blackjack,
-                    is_blackjack(hand),
+                    is_blackjack(*hand),
                     msg=f'Hand {hand} {"is" if blackjack else "is not"} a blackjack.'
                 )
 
     @pytest.mark.task(taskno=4)
     def test_can_split_pairs(self):
         data = [
-            (['Q', 'K'], True),
-            (['6', '6'], True),
-            (['A', 'A'], True),
-            (['10', 'A'], False),
-            (['10', '9'], False),
+            (('Q', 'K'), True),
+            (('6', '6'), True),
+            (('A', 'A'), True),
+            (('10', 'A'), False),
+            (('10', '9'), False),
         ]
 
         for variant, (hand, split_pairs) in enumerate(data, 1):
             with self.subTest(f'variation #{variant}', input=hand, output=split_pairs):
                 self.assertEqual(
                     split_pairs,
-                    can_split_pairs(hand),
+                    can_split_pairs(*hand),
                     msg=f'Hand {hand} {"can" if split_pairs else "cannot"} be split into pairs.'
                 )
 
     @pytest.mark.task(taskno=5)
     def test_can_double_down(self):
         data = [
-            (['A', '9'], True),
-            (['K', 'A'], True),
-            (['4', '5'], True),
-            (['A', 'A'], False),
-            (['10', '2'], False),
-            (['10', '9'], False),
+            (('A', '9'), True),
+            (('K', 'A'), True),
+            (('4', '5'), True),
+            (('A', 'A'), False),
+            (('10', '2'), False),
+            (('10', '9'), False),
         ]
 
         for variant, (hand, double_down) in enumerate(data, 1):
             with self.subTest(f'variation #{variant}', input=hand, output=double_down):
                 self.assertEqual(
                     double_down,
-                    can_double_down(hand),
+                    can_double_down(*hand),
                     msg=f'Hand {hand} {"can" if double_down else "cannot"} be doubled down.'
                 )

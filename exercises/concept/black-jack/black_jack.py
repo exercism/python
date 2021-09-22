@@ -18,30 +18,33 @@ def value_of_ace(hand_value):
     pass
 
 
-def is_blackjack(hand):
+def is_blackjack(card_one, card_two):
     """
 
-    :param hand: list - a pair of cards in hand.
+    :param card_one: str - first card in hand.
+    :param card_two: str - second card in hand.
     :return: bool - if the hand is a blackjack (two cards worth 21).
     """
 
     pass
 
 
-def can_split_pairs(hand):
+def can_split_pairs(card_one, card_two):
     """
 
-    :param hand: list - a pair of cards in hand.
+    :param card_one: str - first card in hand.
+    :param card_two: str - second card in hand.
     :return: bool - if the hand can be split into two pairs (i.e. cards are of the same value).
     """
 
     pass
 
 
-def can_double_down(hand):
+def can_double_down(card_one, card_two):
     """
 
-    :param hand: list - a pair of cards in hand.
+    :param card_one: str - first card in hand.
+    :param card_two: str - second card in hand.
     :return: bool - if the hand can be doubled down (i.e. totals 9, 10 or 11 points).
     """
 
