@@ -42,15 +42,15 @@ You have to decide how to score the upcoming ace card so that your hand won't ex
 
 If the first two cards are an ace and a ten-card, giving a count of 21 in two cards, it is known as blackjack.
 
-Define the `is_blackjack` function with a parameter `hand`, which is a pair of cards.
+Define the `is_blackjack` function with parameters `card_one` and `card_two`, which are a pair of cards.
 Determine if the hand is a blackjack.
 
 **Note** : You can do this in many ways. If you can, use a way to check if there is an ace and a ten-card in the list.
 
 ```python
->>> is_blackjack(['A', 'K'])
+>>> is_blackjack('A', 'K')
 True
->>> is_blackjack(['10', '9'])
+>>> is_blackjack('10', '9')
 False
 ```
 
@@ -60,12 +60,12 @@ If the first two cards are of the same value,
 such as two sixes, or a _Q_ and _K_ a player may choose to treat them as two separate hands.
 It is known as splitting pairs.
 
-Define the `can_split_pairs` function with a parameter `hand`, which is a pair of cards.
+Define the `can_split_pairs` function with parameters `card_one` and `card_two`, which are a pair of cards.
 Determine if the hand can be split into two pairs.
 ```python
->>> can_split_pairs(['Q', 'K'])
+>>> can_split_pairs('Q', 'K')
 True
->>> can_split_pairs(['10', 'A'])
+>>> can_split_pairs('10', 'A')
 False
 ```
 
@@ -74,12 +74,12 @@ False
 When the original two cards dealt total 9, 10, or 11 points
 a player can place an additional bet equal to the original bet, known as doubling down.
 
-Define the `can_double_down` function with a parameter `hand`, which is a pair of cards.
+Define the `can_double_down` function with parameters `card_one` and `card_two`, which are a pair of cards.
 Determine if the hand can be doubled down.
 ```python
->>> can_double_down(['A', '9'])
+>>> can_double_down('A', '9')
 True
->>> can_double_down(['10', '2'])
+>>> can_double_down('10', '2')
 False
 ```
 
