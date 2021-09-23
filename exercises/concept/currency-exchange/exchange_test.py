@@ -1,26 +1,26 @@
 import unittest
 import pytest
 from exchange import (
-    estimate_value,
+    exchange_money,
     get_change,
-    get_value,
+    get_value_of_bills,
     get_number_of_bills,
     exchangeable_value,
-    unexchangeable_value
+    non_exchangeable_value
 )
 
 
 class TestNumbers(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
-    def test_estimate_value(self):
+    def test_exchange_money(self):
         input_data = [(100000, 0.84), (700000, 10.1)]
         output_data = [119047, 69306]
         number_of_variants = range(1, len(input_data) + 1)
 
         for variant, input, output in zip(number_of_variants, input_data, output_data):
             with self.subTest(f"variation #{variant}", input=input, output=output):
-                self.assertEqual(int(estimate_value(input[0], input[1])), output)
+                self.assertEqual(int(exchange_money(input[0], input[1])), output)
 
     @pytest.mark.task(taskno=2)
     def test_get_change(self):
@@ -33,14 +33,14 @@ class TestNumbers(unittest.TestCase):
                 self.assertEqual(get_change(input[0], input[1]), output)
 
     @pytest.mark.task(taskno=3)
-    def test_get_value(self):
+    def test_get_value_of_bills(self):
         input_data = [(10000, 128), (50, 360), (200, 200)]
         output_data = [1280000, 18000, 40000]
         number_of_variants = range(1, len(input_data) + 1)
 
         for variant, input, output in zip(number_of_variants, input_data, output_data):
             with self.subTest(f"variation #{variant}", input=input, output=output):
-                self.assertEqual(get_value(input[0], input[1]), output)
+                self.assertEqual(get_value_of_bills(input[0], input[1]), output)
 
     @pytest.mark.task(taskno=4)
     def test_get_number_of_bills(self):
@@ -69,7 +69,7 @@ class TestNumbers(unittest.TestCase):
                 self.assertEqual(exchangeable_value(input[0], input[1], input[2], input[3]), output)
 
     @pytest.mark.task(taskno=6)
-    def test_unexchangeable_value(self):
+    def test_non_exchangeable_value(self):
         input_data = [
             (100000, 10.61, 10, 1),
             (1500, 0.84, 25, 40),
@@ -81,4 +81,5 @@ class TestNumbers(unittest.TestCase):
 
         for variant, input, output in zip(number_of_variants, input_data, output_data):
             with self.subTest(f"variation #{variant}", input=input, output=output):
-                self.assertEqual(unexchangeable_value(input[0], input[1], input[2], input[3]), output)
+                self.assertEqual(non_exchangeable_value(input[0], input[1], input[2],
+                                                      input[3]), output)
