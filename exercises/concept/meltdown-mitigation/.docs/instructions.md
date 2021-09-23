@@ -30,17 +30,17 @@ True
 Once the reactor has started producing power its efficiency needs to be determined.
 Efficiency can be grouped into 4 bands:
 
-1. green -> efficiency of 80% or more,
-2. orange -> efficiency of less than 80% but at least 60%,
-3. red -> efficiency below 60%, but still 30% or more,
-4. black ->  less than 30% efficient.
+1. `green` -> efficiency of 80% or more,
+2. `orange` -> efficiency of less than 80% but at least 60%,
+3. `red` -> efficiency below 60%, but still 30% or more,
+4. `black` ->  less than 30% efficient.
 
 The percentage value can be calculated as `(generated_power/theoretical_max_power)*100`
-where `generated_power = voltage * current`.
+where `generated_power` = `voltage` * `current`.
 Note that the percentage value is usually not an integer number, so make sure to consider the
 proper use of the `<` and `<=` comparisons.
 
-Implement the function `reactor_efficiency()`, with three parameters: `voltage`,
+Implement the function `reactor_efficiency(<voltage>, <current>, <theoretical_max_power>)`, with three parameters: `voltage`,
 `current`, and `theoretical_max_power`.
 This function should return the efficiency band of the reactor : 'green', 'orange', 'red', or 'black'.
 
