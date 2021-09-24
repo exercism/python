@@ -1,35 +1,46 @@
 # Tools
 
-## Visual Studio on Windows
+IMPORTANT TODO: UPDATE URL PATHS OF IMAGES
 
-Follow the installation instructions for [Python Tools for Visual Studio](https://pytools.codeplex.com/wikipage?title=PTVS%20Installation)
+Before you can start coding, make sure that you have the proper version of Python installed. Exercism currently supports `Python 3.8` and above. For more information, please refer to [Installing Python locally](https://exercism.org/docs/tracks/python/installation).
 
-You can either start by creating your own project for working with the Exercism problems or you can download a Visual Studio solution that is already set up.
+## Visual Studio Code
 
-### Exercism.io Visual Studio Template
+Visual studio code (VS Code) is a code editor created by Microsoft. It is not specialized to work for a specific programming language, but to be an editor that can do everything. You can extend the editor using extensions, but it comes with some great extensions as well.
 
-This is a Visual Studio template that comes pre-configured to work on the problems in as many languages as Visual Studio supports.
+### Python for VS Code
 
-![Solution Explorer](https://raw.githubusercontent.com/exercism/python/main/docs/img/SolutionExplorer.png)
+_Extension-id: ms-python.python_
 
-1. Download the [Exercism.io Visual Studio Template](https://github.com/rprouse/Exercism.VisualStudio) from GitHub by clicking the Download Zip button on the page.
-2. Unzip the template into your exercises directory, for example `C:\src\exercises`
-2. Install the [Exercism CLI](http://exercism.io/cli)
-3. Open a command prompt to your exercise directory
-4. Add your API key to exercism `exercism configure --key=YOUR_API_KEY`
-5. Configure your source directory in exercism `exercism configure --dir=C:\src\exercises`
-6. [Fetch your first exercise](http://exercism.io/languages/python) `exercism fetch python hello-world`
-7. Open the Exercism solution in Visual Studio
-8. Expand the Exercism.python project
-9. Click on **Show All Files** in Solution Explorer (See below)
-10. The exercise you just fetched will appear greyed out. Right click on the folder and **Include In Project**
-11. Get coding...
+![Python Extension Header on VS Code](C:\Users\jobko\OneDrive\Documenten\GitHub\python\docs\img\VSCode-EXT-Python-Header.png)
 
-![Add files](https://raw.githubusercontent.com/exercism/python/main/docs/img/AddFiles.png)
+The Python extension from Microsoft is extremely useful because of its range of features. Notably it supports testing and has a testing explorer! It has many other features that you can view on [its homepage](https://marketplace.visualstudio.com/items?itemName=ms-python.python). 
 
-To run the tests, you can do so at the command line, or within Visual Studio.
+#### Selecting the interpreter
 
-![Test Explorer](https://raw.githubusercontent.com/exercism/python/main/docs/img/TestExplorer.png)
+The Python extensions supports the switching multiple `interpreters`, this way you can use different Python versions for different projects. This is also useful for when you are using `venv` or `conda`, which you find more about [here]().
+
+![Interpreter selection]()
+
+Click on the "Select interpreter" button in the lower left-hand of your window, another window should pop up where you can select the interpreter you want to use.
+
+![Interpreter selection PT2](C:\Users\jobko\OneDrive\Documenten\GitHub\python\docs\img\VSCode-EXT-Python-SelectInterpreter-2.png)
+
+Here, click on the Python installation you want to use and you can start coding!
+
+#### Included testing
+
+The Python extension comes with a `Testing` tab on your side-bar. This can be really useful to test your solutions with. 
+
+![Python Testing Tab](C:\Users\jobko\OneDrive\Documenten\GitHub\python\docs\img\VSCode-EXT-Python-TestingConfiguration.png)
+
+Configuration is easy, click on the `Configure Python Tests` button. A window will pop up asking you to select a _testing framework_, select `pytest` (find more about the installation of Pytest [here](/TESTS.md)) and then select the directory where the extension can find the tests. If the tests are in your current directory, select `root`.
+
+![Tests Statuses](C:\Users\jobko\OneDrive\Documenten\GitHub\python\docs\img\VSCode-EXT-Python-TestsStatuses.png)
+
+It will now show a collapsible tree of all the directories containing tests, it even shows you every test per file. Hovering over a directory or file will show a play button that, when pressed, runs all the tests inside of it. Pressing the play button on  a single test will only run that specific test, handy for when you're trying to fix a specific problem.
+
+
 
 ## Code Style and Linting
 
@@ -41,4 +52,4 @@ It can be pretty picky though, so take its results with a grain of salt.
 If you don't agree with one of its points, that's a good topic for a discussion in the comments for your program!
 
 If you'd rather have a tool take care of your style issues, take a look at [autopep8](https://github.com/hhatto/autopep8)!
-Run `autopep8 -d mycode.py` to get a diff of the changes it proposes and `autopep8 -i mycode.py` to format the code inplace!
+Run `autopep8 -d mycode.py` to get a diff of the changes it proposes and `autopep8 -i mycode.py` to format the code in place!
