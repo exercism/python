@@ -51,7 +51,7 @@ Implement the `make_word_groups(<vocab_words>)` function that takes a `vocab_wor
 >> make_word_groups(['auto', 'didactic', 'graph', 'mate'])
 'auto :: autodidactic :: autograph :: automate'
 
->>> make_word_groups(['inter', 'twine', 'connected', 'dependant'])
+>>> make_word_groups(['inter', 'twine', 'connected', 'dependent'])
 'inter :: intertwine :: interconnected :: interdependent'
 ```
 
