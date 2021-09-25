@@ -51,7 +51,7 @@ This function should return the total value of the given *bills*.
 Create the `get_number_of_bills()` function, taking `budget` and `denomination`.
 
 This function should return the *number of bills* that you can get using the *budget*.
-
+**Note: ** You can only receive _whole bills_, not fractions of bills,  so remember to divide accordingly.
 ```python
 >>> get_number_of_bills(127.5, 5)
 25
