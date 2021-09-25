@@ -61,7 +61,8 @@ This function should return the *number of bills* that you can get using the *bu
 
 Create the `exchangeable_value()` function, taking `budget`, `exchange_rate`, `spread`, and `denomination`.
 
-Parameter `spread` is the *percentage taken* as exchange fee. If `1.00 EUR == 1.20 USD` and the *spread* is `10%`, the actual exchange will be: `1.00 EUR == 1.32 USD`.
+Parameter `spread` is the *percentage taken* as an exchange fee.
+If `1.00 EUR == 1.20 USD` and the *spread* is `10`, the actual exchange will be: `1.00 EUR == 1.32 USD`.
 
 This function should return the maximum available value after *exchange rate* and the *denomination*.
 
