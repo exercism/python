@@ -64,7 +64,8 @@ Create the `exchangeable_value()` function, taking `budget`, `exchange_rate`, `s
 Parameter `spread` is the *percentage taken* as an exchange fee.
 If `1.00 EUR == 1.20 USD` and the *spread* is `10`, the actual exchange will be: `1.00 EUR == 1.32 USD`.
 
-This function should return the maximum available value after *exchange rate* and the *denomination*.
+This function should return the maximum value of the new currency after calculating the *exchange rate* plus the *spread*.
+Remember that the currency *denomination* is a whole number, and cannot be sub-divided.
 
 **Note:** Returned value should be `int` type.
 
