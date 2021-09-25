@@ -65,7 +65,7 @@ def non_exchangeable_value(budget, exchange_rate, spread, denomination):
     :param exchange_rate: float - unit value of the foreign currency.
     :param spread: int - the percentage taken as an exchange fee.
     :param denomination:  int - the value of a single bill.
-    :return: int - non_exchangeable value.
+    :return: int - the value that cannot be exchanged, due to the denomination.
     """
 
     exchange_fee = (exchange_rate / 100) * spread
