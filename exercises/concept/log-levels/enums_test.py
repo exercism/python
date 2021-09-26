@@ -10,7 +10,7 @@ from enums import (
 )
 
 
-class TestEnums(unittest.TestCase):
+class EnumsTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
     def test_parse_log_level_set_ing(self):

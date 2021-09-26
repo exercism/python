@@ -5,7 +5,7 @@ from conditionals import (is_criticality_balanced,
                           fail_safe)
 
 
-class TestConditionals(unittest.TestCase):
+class MeltdownMitigationTest(unittest.TestCase):
     """Test cases for Meltdown mitigation exercise.
     """
 

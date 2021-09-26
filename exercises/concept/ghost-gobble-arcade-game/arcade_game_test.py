@@ -3,7 +3,7 @@ import pytest
 from arcade_game import eat_ghost, score, lose, win
 
 
-class TestArcadeGame(unittest.TestCase):
+class GhostGobbleGameTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
     def test_ghost_gets_eaten(self):

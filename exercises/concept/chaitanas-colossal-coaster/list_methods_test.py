@@ -12,7 +12,7 @@ from list_methods import (
 )
 
 
-class TestListMethods(unittest.TestCase):
+class ListMethodsTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
     def test_add_me_to_the_queue_set_normal_queue(self):

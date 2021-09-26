@@ -7,7 +7,7 @@ from black_jack import (
 )
 
 
-class TestComparisons(unittest.TestCase):
+class BlackJackTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
     def test_number_of_card(self):

@@ -10,7 +10,7 @@ from none import (
 )
 
 
-class TestNoneType(unittest.TestCase):
+class RestaurantRozalynnTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
     def test_new_seating_chart_1(self):

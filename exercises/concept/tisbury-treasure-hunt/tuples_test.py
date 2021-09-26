@@ -3,7 +3,7 @@ import pytest
 from tuples import get_coordinate, convert_coordinate, compare_records, create_record, clean_up
 
 
-class TuplesTest(unittest.TestCase):
+class TisburyTreasureTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
     def test_get_coordinate(self):
