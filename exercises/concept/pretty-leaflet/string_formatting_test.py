@@ -6,7 +6,7 @@ from string_formatting import (capitalize_header,
                                print_leaflet)
 
 
-class TestStringFormatting(unittest.TestCase):
+class PrettyLeafletTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
     def test_header(self):

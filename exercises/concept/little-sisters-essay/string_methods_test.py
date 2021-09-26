@@ -6,7 +6,7 @@ from string_methods import (capitalize_title,
                             replace_word_choice)
 
 
-class TestStringMethods(unittest.TestCase):
+class LittleSistersEssayTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
     def test_capitalize_word(self):

@@ -10,7 +10,7 @@ from exchange import (
 )
 
 
-class TestNumbers(unittest.TestCase):
+class CurrencyExchangeTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
     def test_exchange_money(self):

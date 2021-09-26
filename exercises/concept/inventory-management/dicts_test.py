@@ -3,7 +3,7 @@ import pytest
 from dicts import create_inventory, add_items, decrement_items, remove_item, list_inventory
 
 
-class test_inventory(unittest.TestCase):
+class InventoryTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
     def test_create_inventory(self):

@@ -6,7 +6,7 @@ from strings import (add_prefix_un,
                      noun_to_verb)
 
 
-class TestStrings(unittest.TestCase):
+class LittleSistersVocabTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
     def test_add_prefix_un(self):
