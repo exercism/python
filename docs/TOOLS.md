@@ -4,8 +4,8 @@ A list of tools, IDEs and editors that can help you write and debug your _Python
 
 *Disclaimer: This is a collection of tools that are popular in our community. We do not have any financial affiliation with any of the tools listed below. We think these tools do their job and there are most certainly other tools that can do those jobs as well.*
 
-Before you can start coding, make sure that you have the proper version of Python installed.  
-Exercism currently supports `Python 3.8` and above.  
+Before you can start coding, make sure that you have the proper version of Python installed.
+Exercism currently supports `Python 3.8` and above.
 For more information, please refer to [Installing Python locally](https://exercism.org/docs/tracks/Python/installation).
 
 ---
@@ -187,8 +187,13 @@ Sublime Text comes with a lot of tools already, but some of these tools could ma
 
 [Jupyter lab](https://jupyter.org/install) is an in-browser code editor that runs on your machine, combining the ability to write Markdown along side executable code and data. Jupyter supports multiple programming languages via `kernels` and can display graphs and tables as well as code and text.
 
-Jupyter comes pre-packaged with Anaconda.  You can also install it in a **virtual environment** using `pip` or `conda`.  Jupyter will use that environment and its Python version. Jupyter is most well-known for its code "notebooks". It is commonly used among data-scientists.
+Jupyter comes pre-packaged with Anaconda.
+You can also install it in a **virtual environment** using `pip` or `conda`.
+Jupyter will use that environment and its Python version. Jupyter is most well-known for its code "notebooks".
+It is commonly used among data-scientists.
 
 #### Notable extensions
 
-The built-in tools for Jupyter Lab are sufficient for almost all exercises on Exercism. Most extensions to Jupyter focus more on data-science applications and not general-purpose programming. Explore extensions at your own pleasure.
+The built-in tools for Jupyter Lab are sufficient for almost all exercises on Exercism.
+Most extensions to Jupyter focus more on data-science applications and not general-purpose programming.
+Explore extensions at your own pleasure.
