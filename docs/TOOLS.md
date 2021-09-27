@@ -185,7 +185,8 @@ Sublime Text comes with a lot of tools already, but some of these tools could ma
 
 ### JupyterLab
 
-[Jupyter lab](https://jupyter.org/install) is an in-browser code editor that runs on your machine, combining the ability to write Markdown along side executable code and data. Jupyter supports multiple programming languages via `kernels` and can display graphs and tables as well as code and text.
+[Jupyter lab](https://jupyter.org/install) is an in-browser code editor that runs on your machine, combining the ability to write Markdown along side executable code and data.
+Jupyter supports multiple programming languages via `kernels` and can display graphs and tables as well as code and text.
 
 Jupyter comes pre-packaged with Anaconda.
 You can also install it in a **virtual environment** using `pip` or `conda`.
