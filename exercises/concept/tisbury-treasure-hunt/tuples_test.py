@@ -138,3 +138,6 @@ class TisburyTreasureTest(unittest.TestCase):
 ('Silver Seahorse', 'Hidden Spring (Island of Mystery)', ('4', 'E'), 'Yellow')\n"""
 
         self.assertEqual(clean_up(input_data), result_data)
+
+if __name__ == "__main__":
+    unittest.main()
