@@ -1,21 +1,33 @@
 # General
 
-- [The Python Comparisons Tutorial][the python comparisons tutorial] and [Python comparisons examples][python comparisons examples] can be a great introduction.
+[The Python comparisons tutorial][python comparisons tutorial] and [Python comparisons examples][python comparisons examples] are a great introduction covering the content of this exercise.
 
-## 1. Calculate the number of card
+## 1. Calculate the value of a card
 
-- You can use the [equality comparison operator][equality comparison operator] to get the number of the card.
+- You can use the equality comparison operator `==` to determine specific cards, e.g. `card == 'J'`.
+- You can use the [`int` constructor][int constructor] to get an integer number from an integer literal, e.g. `int(card)`.
 
-## 2. Calculate the number of Ace
+## 2. Calculate the value of an ace
 
-- You can use the [order comparisons operator][order comparisons operator]to decide the value of ace without the sum of hand exceeding 21.
+- You can use the order comparison operator `>` to decide the appropriate course of action, e.g. `hand_value + 11 > 21`.
 
-## 3. Judge Blackjack
+## 3. Determine Blackjack
 
-- You can use the [membership test operations][membership test operations] in `if` or `elif` syntax to find black-jack from the first two cards in your hand.
+- You can use the [`if`/`elif`/`else` syntax][if syntax] to handle different combinations of cards.
+- You can reuse the already implemented `value_of_card` function.
 
-[the python comparisons tutorial]: https://docs.python.org/3/reference/expressions.html#comparisons
+## 4. Splitting pairs
+
+- You can handle the `A` case (when at least one of the cards in an ace) separately.
+
+## 5. Doubling down
+
+- You can chain comparison operators, e.g. `9 <= hand_value <= 11`.
+- You can use the [conditional expression][conditional expression] (sometimes called a "ternary operator")
+to shorten simple `if`/`else` statements, e.g. `1 if card == 'A' else value_of_card(card)`.
+
+[python comparisons tutorial]: https://docs.python.org/3/reference/expressions.html#comparisons
 [python comparisons examples]: https://www.tutorialspoint.com/python/comparison_operators_example.htm
-[equality comparison operator]: https://docs.python.org/3/reference/expressions.html#comparisons
-[order comparisons operator]: https://docs.python.org/3/reference/expressions.html#comparisons
-[membership test operations]: https://docs.python.org/3/reference/expressions.html#comparisons
+[int constructor]: https://docs.python.org/3/library/functions.html#int
+[if syntax]: https://docs.python.org/3/tutorial/controlflow.html#if-statements
+[conditional expression]: https://docs.python.org/3/reference/expressions.html#conditional-expressions
