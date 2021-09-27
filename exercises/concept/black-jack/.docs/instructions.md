@@ -4,15 +4,16 @@ In this exercise you are going to implement some rules of [Blackjack][blackjack]
 such as the way the game is played and scored.
 
 **Note** : In this exercise, _A_ means ace, _J_ means jack, _Q_ means queen, and _K_ means king cards.
+A [standard 52-card deck][standard_deck] is assumed.
 
 ## 1. Calculate the value of a card
 
 In Blackjack, it is up to each individual player if an ace is worth 1 or 11 points.
-Face cards are worth 10 points and any other card is worth its pip value.
+Face cards (_J_, _Q_, _K_) are worth 10 points and any other card is worth its pip (numerical) value.
 
 Define the `value_of_card` function with a parameter `card`.
 The value of _J_, _Q_ or _K_ is 10.
-Otherwise, return the pip value of a card.
+Otherwise, return the numerical value of a card.
 Ace can take multiple values so let's ignore _A_ for the time being.
 
 ```python
@@ -84,3 +85,4 @@ False
 ```
 
 [blackjack]: https://en.wikipedia.org/wiki/Blackjack
+[standard_deck]: https://en.wikipedia.org/wiki/Standard_52-card_deck

@@ -2,7 +2,7 @@ def value_of_card(card):
     """
 
     :param card: str - given card.
-    :return: int - value of a given card (face card = 10, pip value otherwise).
+    :return: int - value of a given card (J, Q, K = 10, numerical value otherwise).
     """
 
     pass
