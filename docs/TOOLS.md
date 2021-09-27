@@ -46,6 +46,16 @@ The Python plugin also comes with some other features that can help you debug an
 
 [Config reference](https://code.visualstudio.com/docs/python/settings-reference) - If you want to make your Python development on VS Code behave exactly like you want it to, view this reference guide. It explains options for the extension that can really improve your coding experience.
 
+## PyCharm
+
+PyCharm is an *Integrated Development Environment* built by JetBrains. It is specialized to work for Python and is commonly used among professionals. You can also extend it's features using plugins, but out-of-the-box it comes with a load of features pre-installed.
+
+### Selecting the interpreter
+
+Open your project, then navigate to `File` >> `Settings` >> `Project: ...` >> `Python Interpreter`. Click on the dropdown menu and select the environment you will be using. If the environment you would like to use is not in the list click on the `Show All...` button:
+
+![Interpreter Selection Dropdown](./img/PyCharm-Config-InterpreterDropDown.png)
+
 ## Code Style and Linting
 
 There's a style guide called [PEP8](http://legacy.python.org/dev/peps/pep-0008/) that many Python projects adhere to.
