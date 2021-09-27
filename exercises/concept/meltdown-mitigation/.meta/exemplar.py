@@ -55,26 +55,25 @@ def reactor_efficiency(voltage, current, theoretical_max_power):
 
 
 def fail_safe(temperature, neutrons_produced_per_second, threshold):
-    """Assess and return safety range.
+    """Assess and return status code for the reactor.
 
     :param temperature: value of the temperature (integer or float)
     :param neutrons_produced_per_second: neutron flux (integer or float)
     :param threshold: threshold (integer or float)
     :return: str one of: 'LOW', 'NORMAL', 'DANGER'
 
-    - `temperature * neutrons per second` < 40% of `threshold` == 'LOW'
+    - `temperature * neutrons per second` < 90% of `threshold` == 'LOW'
     - `temperature * neutrons per second` +/- 10% of `threshold` == 'NORMAL'
     - `temperature * neutron per second` is not in the above-stated ranges ==  'DANGER'
     """
     output = temperature * neutrons_produced_per_second
     operational_percentage = (output / threshold) * 100
-    safety_range = 'UNKNOWN'
 
-    if operational_percentage < 40:
-        safety_range = 'LOW'
-    elif 90 <= operational_percentage <= 110:
-        safety_range = 'NORMAL'
+    if operational_percentage < 90:
+        status_code = 'LOW'
+    elif operational_percentage <= 110:
+        status_code = 'NORMAL'
     else:
-        safety_range = 'DANGER'
+        status_code = 'DANGER'
 
-    return safety_range
+    return status_code

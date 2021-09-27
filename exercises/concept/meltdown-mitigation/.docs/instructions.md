@@ -58,7 +58,7 @@ Criticality can then be increased, decreased, or stopped by inserting (or removi
 Implement the function called `fail_safe()`, which takes 3 parameters: `temperature`,
 `neutrons_produced_per_second`, and `threshold`, and outputs a status code for the reactor.
 
-- If `temperature * neutrons_produced_per_second` < 40% of `threshold`, output a status code of 'LOW'
+- If `temperature * neutrons_produced_per_second` < 90% of `threshold`, output a status code of 'LOW'
   indicating that control rods must be removed to produce power.
 
 - If `temperature * neutrons_produced_per_second` are within plus or minus 10% of the `threshold`

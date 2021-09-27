@@ -41,7 +41,7 @@ def reactor_efficiency(voltage, current, theoretical_max_power):
 
 
 def fail_safe(temperature, neutrons_produced_per_second, threshold):
-    """Assess and return safety range.
+    """Assess and return status code for the reactor.
 
     :param temperature: value of the temperature (integer or float)
     :param neutrons_produced_per_second: neutron flux (integer or float)
