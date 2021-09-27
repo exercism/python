@@ -14,7 +14,7 @@ Face cards (_J_, _Q_, _K_) are worth 10 points and any other card is worth its p
 Define the `value_of_card` function with a parameter `card`.
 The value of _J_, _Q_ or _K_ is 10.
 Otherwise, return the numerical value of a card.
-Ace can take multiple values so let's ignore _A_ for the time being.
+An ace can take on multiple values so let's ignore _A_ for the time being.
 
 ```python
 >>> value_of_card('K')
@@ -23,14 +23,15 @@ Ace can take multiple values so let's ignore _A_ for the time being.
 4
 ```
 
-## 2. Calculate the value of ace
+## 2. Calculate the value of an ace
 
-As mentioned before, ace can be worth either 1 or 11 points.
-At the same time, players try to get as close to 21 as possible, without going over 21.
+As mentioned before, an ace can be worth _either_ 1 or 11 points.
+At the same time, players are trying to get as close to 21 as possible, without going _over_ 21.
 
-Define the `value_of_ace` function with a parameter `hand_value`,
+Define the `value_of_ace(<hand_value>)` function with a parameter `hand_value`,
 which is the total hand value before getting an ace card.
-You have to decide how to score the upcoming ace card so that your hand won't exceed 21 if possible.
+You now have to decide if the upcoming ace card will be scored as a 1 or 11.
+The value of the hand with the ace needs to be as high as possible _without_ going over 21.
 
 ```python
 >>> value_of_ace(19)
@@ -43,10 +44,11 @@ You have to decide how to score the upcoming ace card so that your hand won't ex
 
 If the first two cards are an ace and a ten-card, giving a count of 21 in two cards, it is known as blackjack.
 
-Define the `is_blackjack` function with parameters `card_one` and `card_two`, which are a pair of cards.
-Determine if the hand is a blackjack.
+Define the `is_blackjack(<card_one>, <card_two>)` function with parameters `card_one` and `card_two`, which are a pair of cards.
+Determine if the two-card hand is a blackjack.
 
-**Note** : You can do this in many ways. If you can, use a way to check if there is an ace and a ten-card in the list.
+**Note** : This calculation can be done in many ways.
+ If possible, check if there is an ace and a ten-card in the hand.
 
 ```python
 >>> is_blackjack('A', 'K')
@@ -59,10 +61,10 @@ False
 
 If the first two cards are of the same value,
 such as two sixes, or a _Q_ and _K_ a player may choose to treat them as two separate hands.
-It is known as splitting pairs.
+This is known as "splitting pairs".
 
-Define the `can_split_pairs` function with parameters `card_one` and `card_two`, which are a pair of cards.
-Determine if the hand can be split into two pairs.
+Define the `can_split_pairs(<card_one>, <card_two>)` function with parameters `card_one` and `card_two`, which are a pair of cards.
+Determine if this two-card hand can be split into two pairs.
 ```python
 >>> can_split_pairs('Q', 'K')
 True
@@ -73,10 +75,11 @@ False
 ## 5. Doubling down
 
 When the original two cards dealt total 9, 10, or 11 points
-a player can place an additional bet equal to the original bet, known as doubling down.
+a player can place an additional bet equal to the original bet.
+This is known as "doubling down".
 
-Define the `can_double_down` function with parameters `card_one` and `card_two`, which are a pair of cards.
-Determine if the hand can be doubled down.
+Define the `can_double_down(<card_one>, <card_two>)` function with parameters `card_one` and `card_two`, which are a pair of cards.
+Determine if the two-card hand can be "doubled down".
 ```python
 >>> can_double_down('A', '9')
 True
