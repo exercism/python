@@ -31,7 +31,6 @@ class MeltdownMitigationTest(unittest.TestCase):
                 msg=f"Expected {expected} but returned {got} with T={temperature} and neutrinos={neutrons_emitted}"
                 self.assertEqual(got, expected, msg)
 
-
     @pytest.mark.task(taskno=2)
     def test_reactor_efficiency(self):
         voltage = 10
@@ -39,9 +38,9 @@ class MeltdownMitigationTest(unittest.TestCase):
 
         # The numbers are chosen so that current == 10 x percentage
         test_data = ((1000, 'green'), (999, 'green'), (800, 'green'),
-                    (799, 'orange'), (700, 'orange'), (600, 'orange'),
-                    (599, 'red'), (560, 'red'), (400, 'red'), (300, 'red'),
-                    (299, 'black'), (200, 'black'), (0, 'black'))
+                     (799, 'orange'), (700, 'orange'), (600, 'orange'),
+                     (599, 'red'), (560, 'red'), (400, 'red'), (300, 'red'),
+                     (299, 'black'), (200, 'black'), (0, 'black'))
 
         for variant, data in enumerate(test_data, start=1):
             current, expected = data
@@ -52,16 +51,14 @@ class MeltdownMitigationTest(unittest.TestCase):
                     f"max_pow={theoretical_max_power}"
                 self.assertEqual(got, expected, msg)
 
-
-
     @pytest.mark.task(taskno=3)
     def test_fail_safe(self):
         temperature = 10
         threshold = 10000
-        test_data = ((399, 'LOW'), (300, 'LOW'),(1, 'LOW'),
-                    (0, 'LOW'), (901, 'NORMAL'), (1000, 'NORMAL'),
-                    (1099, 'NORMAL'), (899, 'DANGER'), (700, 'DANGER'),
-                    (400, 'DANGER'), (1101, 'DANGER'), (1200, 'DANGER'))
+        test_data = ((399, 'LOW'), (300, 'LOW'), (1, 'LOW'),
+                     (0, 'LOW'), (901, 'NORMAL'), (1000, 'NORMAL'),
+                     (1099, 'NORMAL'), (899, 'LOW'), (700, 'LOW'),
+                     (400, 'LOW'), (1101, 'DANGER'), (1200, 'DANGER'))
 
         for variant, data in enumerate(test_data, start=1):
             neutrons_produced_per_second, expected = data
