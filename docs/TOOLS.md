@@ -4,7 +4,9 @@ A list of tools, IDEs and editors that can help you write and debug your _Python
 
 *Disclaimer: This is a collection of tools that are popular in our community. We do not have any financial affiliation with any of the tools listed below. We think these tools do their job and there are most certainly other tools that can do those jobs as well.*
 
-Before you can start coding, make sure that you have the proper version of Python installed. Exercism currently supports `Python 3.8` and above. For more information, please refer to [Installing Python locally](https://exercism.org/docs/tracks/Python/installation).
+Before you can start coding, make sure that you have the proper version of Python installed.  
+Exercism currently supports `Python 3.8` and above.  
+For more information, please refer to [Installing Python locally](https://exercism.org/docs/tracks/Python/installation).
 
 ---
 
@@ -97,7 +99,9 @@ The Python extension from Microsoft is extremely useful because of its range of 
 
 ##### Selecting the interpreter
 
-The Python extensions supports the switching between multiple `interpreters`. This allows you to use different Python environments for different projects. This is also useful for when you are using `venv` or `conda`, which you can find more about in the [environments section](#environments).
+The Python extensions supports the switching between multiple `interpreters`.
+This allows you to use different Python environments for different projects.
+This is also useful for when you are using `venv` or `conda`, which you can find more about in the [environments section](#environments).
 
 Click on the "Select interpreter" button in the lower left-hand of your window, another window should pop up where you can select the interpreter you want to use.
 
