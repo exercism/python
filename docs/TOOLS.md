@@ -67,7 +67,23 @@ Some other features that we won't cover in this guide, but are really useful for
 
 [Debug Tools](https://www.jetbrains.com/help/pycharm/debugging-code.html) - Debugging in PyCharm can get really extensive, but can be really useful as well. Start here to learn how to properly debug using PyCharm.
 
+## Spyder IDE
 
+Spyder is a python IDE tailored for the scientific community. It packs some really good debugging utilities and it has an integrated *IPython terminal*. Out-of-the-box it does not come with support for *Unittests* and *Pytests*, but there is an official plugin available.
+
+### Selecting the interpreter
+
+To change the interpreter, go to `tools` >> `Preferences` >> `Python interpreter`. You can either select the global interpreter defined by Spyder or you can enter the path to your own Python environment.
+
+![Spyder Python Interpreter Selection](.\img\Spyder-Config-Interpreter.png)
+
+Do not forget to click `Apply` once you selected your interpreter.
+
+### Other features
+
+[Spyder Unittest](https://github.com/spyder-ide/spyder-unittest/releases/latest) - If you want to have a built-in interface for you tests, install this plugin. Clicking the link will bring you to the latest release on GitHub.
+
+[Code analyzer](https://docs.spyder-ide.org/current/panes/pylint.html#using-the-code-analyzer) - An integrated tool for analyzing your code, detecting bad practices, and catching bugs before you run your program. You can also configure it to only catch [PEP 8](https://www.python.org/dev/peps/pep-0008/) violations.
 
 ## Code Style and Linting
 
