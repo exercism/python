@@ -2,11 +2,18 @@
 
 IMPORTANT TODO: UPDATE URL PATHS OF IMAGES
 
-Before you can start coding, make sure that you have the proper version of Python installed. Exercism currently supports `Python 3.8` and above. For more information, please refer to [Installing Python locally](https://exercism.org/docs/tracks/python/installation).
+A list of tools, IDEs and editors that can help you write and debug your *python* code.
+
+*Disclaimer: This is a collection of tools that are popular in our community. We do not have any financial affiliation with any of the tools listed below. We think these tools do their job and there are most certainly other tools that can do those jobs as well.*
+
+Before you can start coding, make sure that you have the proper version of python installed. Exercism currently supports `Python 3.8` and above. For more information, please refer to [Installing Python locally](https://exercism.org/docs/tracks/python/installation).
+
+---
 
 - [Environments](#environments)
   - [Virtualenv](#venv)
   - [Conda](#conda)
+
 - [Editors and IDEs](#visual-studio-code)
   - [VS Code](#visual-studio-code)
     - [Selecting an interpreter](#selecting-the-interpreter)
@@ -169,15 +176,3 @@ Do not forget to click `Apply` once you selected your interpreter.
 [Debugging](https://docs.spyder-ide.org/current/panes/debugging.html) - This tool will help you debug your code, it allows you to set a `breakpoint` on a line. The debugging tool will then let you go through your python code and quickly notice where it goes wrong.
 
 [Variable Explorer](https://docs.spyder-ide.org/current/panes/variableexplorer.html) - This tool is really useful in combination with the debugger. It allows you to view all the active variables in your code and it even allows editing of the values inside those variables.
-
-## Code Style and Linting
-
-There's a style guide called [PEP8](http://legacy.python.org/dev/peps/pep-0008/) that many Python projects adhere to.
-Read it when you get a chance!
-
-If you just want a quick overview of some problems in your code, use [pylint](http://www.pylint.org/)!
-It can be pretty picky though, so take its results with a grain of salt.
-If you don't agree with one of its points, that's a good topic for a discussion in the comments for your program!
-
-If you'd rather have a tool take care of your style issues, take a look at [autopep8](https://github.com/hhatto/autopep8)!
-Run `autopep8 -d mycode.py` to get a diff of the changes it proposes and `autopep8 -i mycode.py` to format the code in place!
