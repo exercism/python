@@ -20,7 +20,7 @@ For more information, please refer to [Installing Python locally](https://exerci
   - [Sublime text](#sublime-text)
   - [JupyterLab](#jupyterlab)
 
----
+
 
 ## Environments
 
