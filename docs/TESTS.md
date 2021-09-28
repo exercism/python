@@ -1,17 +1,24 @@
 # Tests
 
+TODO: Change links to constant URL, not relative.
+
 1. [Pytest](#pytest)
    - [Installation](#installing-pytest)
+     - [Virtual environments](#virtual-environments)
    - [Running the tests](#running-the-tests)
      - [Failing tests](#failures)
    - [Extra arguments](#extra-arguments)
      - [Stop test after first failure](#stop-after-first-failure-[-x])
      - [Failed Tests First](#failed-tests-first-[--ff])
      - [Recommended setup](#recommended-workflow)
+     - [Python Debugger in Pytest](#python-debugger)
 2. [Tools for your IDE](#extending-your-ide)
-3. [Additional testing tools](#additional-testing) TODO
-   - [Python Debugger in Pytest](#PDB) TODO
+3. [Additional Information](#additional-information)
    - [Adding python scripts to path](#adding-to-path) TODO
+
+
+
+---
 
 ## Pytest
 
@@ -46,6 +53,17 @@ pytest 6.2.5
 ```
 
 If you do not want to precede every command with `python3 -m` please refer to [adding to PATH](#adding-to-path) at the end of this document.
+
+#### Virtual environments
+
+*For more information about virtual environments please refer to the [TOOLS](.\TOOLS.md) file.* 
+
+When installing Pytest or any other module(s), make sure that you have [activated your environment](.\TOOLS.md#activating-your-environment). After which you can run:
+
+```bash
+$ pip install pytest pytest-cache pytest-subtests pytest-pylint
+Successfully installed pytest-6.2.5 ...
+```
 
 ### Running the tests
 
@@ -126,27 +144,53 @@ pytest -x -ff bob_test.py
 
 This will test your solution. When `pytest` encounters a failed test, the program will stop and tell you which test failed. When you run the test again, `pytest` will first test that failed test, then continue with the rest.
 
-## Extending your IDE
+#### Python Debugger
 
-If you'd like to extend your IDE with some tools that will help you with testing/improving your code, check [this]() page. We go into multiple IDEs and editors and some handy extensions.
-
-## Additional testing
-
-Here is some additional information, which could come in handy.
-
-### PDB
-
-TODO
-
-Typing pdb on the command line will drop you into the python debugger when a test fails.
-To learn how to use pdb, check out the
-[documentation](https://docs.python.org/3/library/pdb.html#debugger-commands).
+If you want to truly debug like a pro, use the `--pdb` argument after the `pytest` command. 
 
 ```bash
-pytest --pdb bob_test.py
+$ python3 -m pytest --pdb bob_test.py
 ```
+
+When a test fails it allows you to look at variables and how your code responds. If you want to learn how to really use `PDB` module, have a look at the [Python Docs](https://docs.python.org/3/library/pdb.html#module-pdb) or [this](https://realpython.com/python-debugging-pdb/) Real Python article.
+
+## Extending your IDE
+
+If you'd like to extend your IDE with some tools that will help you with testing/improving your code, check [this]() page. We go into multiple IDEs and editors and some useful extensions.
+
+## Additional information
 
 ### Adding to PATH
 
+**Note:** If you are running a [virtual environment](.\TOOLS.md) you do not need to *add to path* as it should work fine.
+
+Preceding every module you want to run with `python3 -m` might get a little annoying. You can add the `Scripts` folder of your Python installation to your path. If you do not know where you have installed Python, run the following command in your terminal:
+
+```bash
+$ python3 -c "import os, sys; print(os.path.dirname(sys.executable))"
+{python_directory}
+```
+
+The *returned* directory is where your Python version is installed, in this tutorial it is referred to as `{python_directory}`.
+
+#### Windows
+
+Click the `Windows Start` button and lookup *Edit the system environment variables* and press enter. Next press, `Environment Variables...`:
+
+![Press the blue button, lol](.\img\Windows-SystemProperties.png)
+
+Then find the `Path` variable in your *User variables*, select it, and click `Edit...`:
+
+![Selecting the path variable](.\img\Windows-EnvironmentVariables.png)
+
+Then add a new line, as shown in the picture, replacing `{python_directory}` with your Python installation's directory:
+
+![Add python to path](.\img\Windows-AddPythonPath.png)
+
+#### MacOS X
+
 TODO
 
+#### Linux
+
+TODO
