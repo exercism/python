@@ -26,13 +26,11 @@ Pylint can be a bit much, so this [tutorial from pycqa.orgl](https://pylint.pycq
 
 ---
 
-
 ## Pytest
 
 _Official pytest documentation can be found on the [pytest Wiki](https://pytest.org/en/latest/) page._
 
 Pytest lets you test your solutions using our provided tests, and is what we use to validate your solutions on the website.
-
 
 ### Installing pytest
 
@@ -50,6 +48,7 @@ Successfully installed pytest-6.2.5 ...
 ```bash
 $ python3 -m pip install pytest pytest-cache pytest-subtests pytest-pylint
 Successfully installed pytest-6.2.5 ...
+
 ```
 
 To check if the installation was successful:
@@ -113,8 +112,7 @@ If you really want to be specific about what pytest returns on your screen, here
 
 #### Stop After First Failure [`-x`]
 
-Running the `pytest -x {exercise_test.py}` command, will run the tests like normal, but will stop the tests after the first failed test.
-This will help when you want to debug a single failure at a time.
+Running the `pytest -x {exercise_test.py}` command, will run the tests like normal, but will stop the tests after the first failed test. This will help when you want to debug a single failure at a time.
 
 ```bash
 $ python -m pytest -x example_test.py
@@ -130,8 +128,7 @@ FAILED example_test.py::ExampleTest::example_test_foo
 
 #### Failed Tests First [`--ff`]
 
-`pytest-cache` remembers which tests failed last time you ran `pytest`, running `pytest --ff {exercise_test.py}` will run those previously failed tests first, then it will continue with the rest of the tests.  
-This might speed up your testing if you are making a lot of smaller fixes.
+`pytest-cache` remembers which tests failed last time you ran `pytest`, running `pytest --ff {exercise_test.py}` will run those previously failed tests first, then it will continue with the rest of the tests. This might speed up your testing if you are making a lot of smaller fixes.
 
 ```bash
 $ python -m pytest --ff bob_test.py
@@ -154,16 +151,18 @@ Then, run the tests together with the previously explained arguments `-x` and`--
 pytest -x -ff bob_test.py
 ```
 
-This will test your solution. When `pytest` encounters a failed test, the program will stop and tell you which test failed.
-When you run the test again, `pytest` will first test that failed test, then continue with the rest.
-
+This will test your solution. When `pytest` encounters a failed test, the program will stop and tell you which test failed. When you run the test again, `pytest` will first test that failed test, then continue with the rest.
 
 #### Using PDB, the Python Debugger, with pytest
 
 If you want to truly debug like a pro, use the `--pdb` argument after the `pytest` command.
 
-When a test fails, `PDB` allows you to look at variables and how your code responds.
-If you want to learn how to use the `PDB` module, have a look at the [Python Docs](https://docs.python.org/3/library/pdb.html#module-pdb) or [this](https://realpython.com/python-debugging-pdb/) Real Python article.
+```bash
+$ python3 -m pytest --pdb bob_test.py
+=============== 4 passed in 0.15s ===============
+```
+
+When a test fails, `PDB` allows you to look at variables and how your code responds. If you want to learn how to use the `PDB` module, have a look at the [Python Docs](https://docs.python.org/3/library/pdb.html#module-pdb) or [this](https://realpython.com/python-debugging-pdb/) Real Python article.
 
 ## Extending your IDE
 
@@ -175,9 +174,7 @@ If you'd like to extend your IDE with some tools that will help you with testing
 
 **Note:** If you are running a [virtual environment](./tools.md) you do not need to _add to path_ as it should work fine.
 
-Typing `python3 -m` every time you want to run a module can get a little annoying.
-You can add the `Scripts` folder of your Python installation to your path.
-If you do not know where you have installed Python, run the following command in your terminal:
+Typing `python3 -m` every time you want to run a module can get a little annoying. You can add the `Scripts` folder of your Python installation to your path. If you do not know where you have installed Python, run the following command in your terminal:
 
 ```bash
 $ python3 -c "import os, sys; print(os.path.dirname(sys.executable))"
@@ -217,4 +214,3 @@ markers =
 Whenever you run your tests, make sure that this file is in your _root_ or _working_ directory for Exercism exercises.
 
 _More information on customizing pytest can be found in the [PyTest docs](https://docs.pytest.org/en/6.2.x/customize.html#pytest-ini)_
-
