@@ -68,17 +68,31 @@ From this terminal you can now run `pip` commands. All of the packages installed
 
 ### Conda
 
+*Latest download can be found [here](https://www.anaconda.com/products/individual)*
 
+Packaged with *Anaconda*, `conda` environments are similar to [venv environments](#venv) with the key difference being that `conda` can support the `R programming language`. Anaconda is most commonly used by researchers and data scientists, because of its set of tools and programs tailored to them. The [Spyder IDE](#spider-ide) is one of the tools that comes with Anaconda.
 
+To create a new `conda` environment, go to the *Anaconda Navigator*. Click on `environments` and then press the `Create` button. Fill in a name for your `conda` environment, select Python `3.8 or above` and click `Create`:
 
+![Creating New Conda Environment](.\img\Anaconda-Conda-New.png)
+
+#### Activating your virtual environment
+
+Activating your `conda` environment is easy, just click the `►` button next to your *environment*, then press `Open Terminal`. This should open a new terminal with an interface for your `conda` environment inside.
+
+From here you can run regular `pip` commands and other modules that you have installed inside your environment. All libraries will automatically be installed inside the `conda` environment.
 
 ---
 
-## Visual Studio Code
+
+
+## Editors and IDEs
+
+### Visual Studio Code
 
 Visual studio code (VS Code) is a code editor created by Microsoft. It is not specialized to work for a specific programming language, but to be an editor that can do everything. You can extend the editor using extensions, but it comes with some great extensions as well.
 
-### Python for VS Code
+#### Python for VS Code
 
 _Extension-id: ms-python.python_
 
@@ -86,7 +100,7 @@ _Extension-id: ms-python.python_
 
 The Python extension from Microsoft is extremely useful because of its range of features. Notably it supports testing and has a testing explorer! It has many other features that you can view on [its homepage](https://marketplace.visualstudio.com/items?itemName=ms-python.python). 
 
-#### Selecting the interpreter
+##### Selecting the interpreter
 
 The Python extensions supports the switching between multiple `interpreters`, this way you can use different Python environments for different projects. This is also useful for when you are using `venv` or `conda`, which you find more about [here]().
 
@@ -94,7 +108,7 @@ Click on the "Select interpreter" button in the lower left-hand of your window, 
 
 ![Interpreter selection PT2](.\img\VSCode-EXT-Python-SelectInterpreter-2.png)
 
-#### Other features
+##### Other features
 
 The Python plugin also comes with some other features that can help you debug and improve your python code, here are some of those tools.
 
@@ -110,11 +124,11 @@ The Python plugin also comes with some other features that can help you debug an
 
 ---
 
-## PyCharm
+### PyCharm
 
 PyCharm is an *Integrated Development Environment* built by JetBrains. It is specialized to work for Python and is commonly used among professionals. You can also extend it's features using plugins, but out-of-the-box it comes with a load of features pre-installed.
 
-### Selecting the interpreter
+#### Selecting the interpreter
 
 Open your project, then navigate to `File` >> `Settings` >> `Project: ...` >> `Python Interpreter`. Click on the dropdown menu and select the environment you will be using. If the environment you would like to use is not in the list click on the `Show All...` button:
 
@@ -124,7 +138,7 @@ From there click on the `+` button to add a new interpreter. Select the type of 
 
 ![Add New Interpreter](.\img\PyCharm-Config-InterpreterNew.png)
 
-### Other features
+#### Other features
 
 Some other features that we won't cover in this guide, but are really useful for development are:
 
@@ -134,11 +148,11 @@ Some other features that we won't cover in this guide, but are really useful for
 
 ---
 
-## Spyder IDE
+### Spyder IDE
 
 Spyder is a python IDE tailored for the scientific community. It packs some really good debugging utilities and it has an integrated *IPython terminal*. Out-of-the-box it does not come with support for *Unittests* and *Pytests*, but there is an official plugin available.
 
-### Selecting the interpreter
+#### Selecting the interpreter
 
 To change the interpreter, go to `tools` >> `Preferences` >> `Python interpreter`. You can either select the global interpreter defined by Spyder or you can enter the path to your own Python environment.
 
@@ -146,7 +160,7 @@ To change the interpreter, go to `tools` >> `Preferences` >> `Python interpreter
 
 Do not forget to click `Apply` once you selected your interpreter.
 
-### Other features
+#### Other features
 
 [Spyder Unittest](https://github.com/spyder-ide/spyder-unittest/releases/latest) - If you want to have a built-in interface for you tests, install this plugin. Clicking the link will bring you to the latest release on GitHub.
 
