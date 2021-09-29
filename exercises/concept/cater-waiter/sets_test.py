@@ -12,7 +12,8 @@ from sets import (clean_ingredients,
 
 from sets_categories_data import (VEGAN,
                                   VEGETARIAN,
-                                  KETO, PALEO,
+                                  KETO,
+                                  PALEO,
                                   OMNIVORE,
                                   ALCOHOLS,
                                   SPECIAL_INGREDIENTS,
@@ -40,70 +41,63 @@ class SetsTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
     def test_clean_ingredients(self):
-        input_data =  recipes_with_duplicates
-        result_data = recipes_without_duplicates
-        number_of_variants = range(1, len(input_data) + 1)
+        test_data = zip(recipes_with_duplicates[::3], recipes_without_duplicates[::3])
 
-        for variant, item, result  in zip(number_of_variants, input_data, result_data):
-            with self.subTest(f"variation #{variant}", item=item, result=result):
-                self.assertEqual(clean_ingredients(item[0], item[1]), (result[1], result[2]))
+        for variant, (item, result) in enumerate(test_data, start=1):
+            with self.subTest(f"variation #{variant}", item=item[0], result=result[1]):
+                error_msg = f"Expected a cleaned ingredient list for {item[0]}, but the ingredients aren't cleaned as expected."
+                self.assertEqual(clean_ingredients(item[0], item[1]), (result[1], result[2]), msg=error_msg)
 
     @pytest.mark.task(taskno=2)
     def test_check_drinks(self):
-        input_data = all_drinks
-        result_data = drink_names
-        number_of_variants = range(1, len(input_data) + 1)
+        test_data = zip(all_drinks[::2], drink_names[::2])
 
-        for variant, item, result  in zip(number_of_variants, input_data, result_data):
+        for variant, (item, result)  in enumerate(test_data, start=1):
             with self.subTest(f"variation #{variant}", item=item, result=result):
-                self.assertEqual(check_drinks(item[0], item[1]), (result))
+                error_msg = f"Expected {result} for {item}, but got something else instead."
+                self.assertEqual(check_drinks(item[0], item[1]), (result), msg=error_msg)
 
     @pytest.mark.task(taskno=3)
     def test_categorize_dish(self):
-        input_data = sorted(recipes_without_duplicates, reverse=True)
-        result_data = dishes_categorized
-        number_of_variants = range(1, len(input_data) + 1)
+        test_data = zip(sorted(recipes_without_duplicates, reverse=True)[::3], dishes_categorized[::3])
 
-        for variant, item, result  in zip(number_of_variants, input_data, result_data):
+        for variant, (item, result)  in enumerate(test_data, start=1):
             with self.subTest(f"variation #{variant}", item=item, result=result):
-                self.assertEqual(categorize_dish(item[1], item[2]), (result))
+                error_message = f"Exptected category {result} for {item[0]}, but got a different category instead."
+                self.assertEqual(categorize_dish(item[1], item[2]), (result), msg=error_message)
 
     @pytest.mark.task(taskno=4)
     def test_tag_special_ingredients(self):
-        input_data = dishes_to_special_label
-        result_data = dishes_labeled
-        number_of_variants = range(1, len(input_data) + 1)
+        test_data = zip(dishes_to_special_label[::3], dishes_labeled[::3])
 
-        for variant, item, result  in zip(number_of_variants, input_data, result_data):
+        for variant, (item, result)  in enumerate(test_data, start=1):
             with self.subTest(f"variation #{variant}", item=item, result=result):
-                self.assertEqual(tag_special_ingredients(item), (result))
+                error_message = f"Expected {result} for {item}, but got something else instead."
+                self.assertEqual(tag_special_ingredients(item), (result), msg=error_message)
 
     @pytest.mark.task(taskno=5)
     def test_compile_ingredients(self):
-        input_data = ingredients_only
-        result_data = [VEGAN, VEGETARIAN, PALEO, KETO, OMNIVORE]
-        number_of_variants = number_of_variants = range(1, len(input_data) + 1)
+        test_data = zip(ingredients_only, [VEGAN, VEGETARIAN, PALEO, KETO, OMNIVORE])
 
-        for variant, item, result  in zip(number_of_variants, input_data, result_data):
+        for variant, (item, result)  in enumerate(test_data, start=1):
             with self.subTest(f"variation #{variant}", item=item, result=result):
-                self.assertEqual(compile_ingredients(item), (result))
+                error_message = "Expected a proper set of combined ingredients, but something went wrong."
+                self.assertEqual(compile_ingredients(item), (result), msg=error_message)
 
     @pytest.mark.task(taskno=6)
     def test_separate_appetizers(self):
-        input_data = dishes_and_appetizers
-        result_data = dishes_cleaned
-        number_of_variants = number_of_variants = range(1, len(input_data) + 1)
+        test_data = zip(dishes_and_appetizers, dishes_cleaned)
 
-        for variant, item, result  in zip(number_of_variants, input_data, result_data):
+        for variant, (item, result) in enumerate(test_data, start=1):
             with self.subTest(f"variation #{variant}", item=item, result=result):
-                self.assertEqual(sorted(separate_appetizers(item[0], item[1])), (sorted(result)))
+                error_message = "Expected only appetizers returned, but some dishes remain in the group."
+                self.assertEqual(sorted(separate_appetizers(item[0], item[1])), (sorted(result)), msg=error_message)
 
     @pytest.mark.task(taskno=7)
     def test_singleton_ingredients(self):
-        input_data = dishes_and_overlap
-        result_data = singletons
-        number_of_variants = number_of_variants = range(1, len(input_data) + 1)
+        test_data = zip(dishes_and_overlap, singletons)
 
-        for variant, item, result  in zip(number_of_variants, input_data, result_data):
+        for variant, (item, result) in enumerate(test_data, start=1):
             with self.subTest(f"variation #{variant}", item=item, result=result):
-                self.assertEqual(singleton_ingredients(item[0], item[1]), (result))
+                error_message = "Expected only ingredients that belong to exactly one dish, but got multi-dish ingredients instead."
+                self.assertEqual(singleton_ingredients(item[0], item[1]), (result), msg=error_message)
