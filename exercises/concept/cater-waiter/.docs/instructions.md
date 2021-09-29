@@ -50,11 +50,11 @@ All dishes will "fit" into one of the categories imported from `categories.py` (
 >>> from categories import VEGAN, VEGETARIAN, PALEO, KETO, OMNIVORE
 
 
->>> categorize_dish(('Sticky Lemon Tofu', ['tofu', 'soy sauce', 'salt', 'black pepper', 'cornstarch', 'vegetable oil', 'garlic', 'ginger', 'water', 'vegetable stock', 'lemon juice', 'lemon zest', 'sugar']))
+>>> categorize_dish('Sticky Lemon Tofu', ['tofu', 'soy sauce', 'salt', 'black pepper', 'cornstarch', 'vegetable oil', 'garlic', 'ginger', 'water', 'vegetable stock', 'lemon juice', 'lemon zest', 'sugar'])
 ...
 'Sticky Lemon Tofu: VEGAN'
 
->>> categorize_dish(('Shrimp Bacon and Crispy Chickpea Tacos with Salsa de Guacamole', ['shrimp', 'bacon', 'avocado', 'chickpeas', 'fresh tortillas', 'sea salt', 'guajillo chile', 'slivered almonds', 'olive oil', 'butter', 'black pepper', 'garlic', 'onion']))
+>>> categorize_dish('Shrimp Bacon and Crispy Chickpea Tacos with Salsa de Guacamole', ['shrimp', 'bacon', 'avocado', 'chickpeas', 'fresh tortillas', 'sea salt', 'guajillo chile', 'slivered almonds', 'olive oil', 'butter', 'black pepper', 'garlic', 'onion'])
 ...
 'Shrimp Bacon and Crispy Chickpea Tacos with Salsa de Guacamole: OMNIVORE'
 ```
@@ -76,9 +76,9 @@ Dish ingredients inside a `list` may or may not have duplicates.
 ...
 ('Ginger Glazed Tofu Cutlets', {'garlic','soy sauce','tofu'})
 
->>> tag_special_ingredients(('Arugula and Roasted Pork Salad', ['pork tenderloin', 'arugula', 'pears', 'blue cheese', 'pinenuts', 'balsamic vinegar', 'onions', 'black pepper']))
+>>> tag_special_ingredients(('Arugula and Roasted Pork Salad', ['pork tenderloin', 'arugula', 'pears', 'blue cheese', 'pine nuts', 'balsamic vinegar', 'onions', 'black pepper']))
 ...
-('Arugula and Roasted Pork Salad', {'blue cheese', 'pinenuts', 'pork tenderloin'})
+('Arugula and Roasted Pork Salad', {'pork tenderloin', 'blue cheese', 'pine nuts', 'onions'})
 ```
 
 ## 5. Compile a "Master List" of Ingredients
