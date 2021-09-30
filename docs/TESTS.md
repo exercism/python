@@ -2,21 +2,23 @@
 
 TODO: Change links to constant URL, not relative.
 
-1. [Pytest](#pytest)
-   - [Installation](#installing-pytest)
-     - [Virtual environments](#virtual-environments)
-   - [Running the tests](#running-the-tests)
-     - [Failing tests](#failures)
-   - [Extra arguments](#extra-arguments)
-     - [Stop test after first failure](#stop-after-first-failure-[-x])
-     - [Failed Tests First](#failed-tests-first-[--ff])
-     - [Recommended setup](#recommended-workflow)
-     - [Python Debugger in Pytest](#python-debugger)
-2. [Tools for your IDE](#extending-your-ide)
-3. [Additional Information](#additional-information)
-   - [Adding python scripts to path](#adding-to-path) TODO
-
-
+- [Tests](#tests)
+  - [Pytest](#pytest)
+    - [Installing Pytest](#installing-pytest)
+      - [Windows](#windows)
+      - [Linux / MacOS](#linux--macos)
+      - [Virtual environments](#virtual-environments)
+    - [Running the tests](#running-the-tests)
+      - [Failures](#failures)
+    - [Extra arguments](#extra-arguments)
+      - [Stop After First Failure [`-x`]](#stop-after-first-failure--x)
+      - [Failed Tests First [`--ff`]](#failed-tests-first---ff)
+      - [Recommended Workflow](#recommended-workflow)
+      - [Python Debugger](#python-debugger)
+  - [Extending your IDE](#extending-your-ide)
+  - [Additional information](#additional-information)
+    - [Adding to PATH](#adding-to-path)
+      - [Windows](#windows-1)
 
 ---
 
@@ -28,7 +30,7 @@ Pytest let's you test your solutions using our provided tests, it is what we use
 
 ### Installing Pytest
 
-Pytest can be installed and updated using the built-in Python utility `pip`. 
+Pytest can be installed and updated using the built-in Python utility `pip`.
 
 #### Windows
 
@@ -56,7 +58,7 @@ If you do not want to precede every command with `python3 -m` please refer to [a
 
 #### Virtual environments
 
-*For more information about virtual environments please refer to the [TOOLS](.\TOOLS.md) file.* 
+*For more information about virtual environments please refer to the [TOOLS](.\TOOLS.md) file.*
 
 When installing Pytest or any other module(s), make sure that you have [activated your environment](.\TOOLS.md#activating-your-environment). After which you can run:
 
@@ -67,7 +69,7 @@ Successfully installed pytest-6.2.5 ...
 
 ### Running the tests
 
-To run your test, go to the folder where the exercise is stored using `cd` in your terminal (_replace `{exercise-folder-location}` below with the path_). 
+To run your test, go to the folder where the exercise is stored using `cd` in your terminal (_replace `{exercise-folder-location}` below with the path_).
 
 ```bash
 $ cd {exercise-folder-location}
@@ -90,7 +92,7 @@ $ python3 -m pytest {exercise_test.py}
 ______________ name_of_failed_test ______________
 # Test code inside of {exercise_test.py} that failed.
 ...
-E		TypeOfError: ReturnedValue != ExpectedValue
+E   TypeOfError: ReturnedValue != ExpectedValue
 
 exercise_test.py:{line_of_failed_test}: TypeOfError
 ============ short test summary info ============
@@ -124,6 +126,7 @@ FAILED example_test.py::ExampleTest::example_test_foo
 
 ```bash
 $ python -m pytest --ff bob_test.py
+==================== 7 passed in 503s ====================
 ```
 
 #### Recommended Workflow
@@ -150,13 +153,14 @@ If you want to truly debug like a pro, use the `--pdb` argument after the `pytes
 
 ```bash
 $ python3 -m pytest --pdb bob_test.py
+=============== 4 passed in 0.15s ===============
 ```
 
 When a test fails it allows you to look at variables and how your code responds. If you want to learn how to really use `PDB` module, have a look at the [Python Docs](https://docs.python.org/3/library/pdb.html#module-pdb) or [this](https://realpython.com/python-debugging-pdb/) Real Python article.
 
 ## Extending your IDE
 
-If you'd like to extend your IDE with some tools that will help you with testing/improving your code, check [this]() page. We go into multiple IDEs and editors and some useful extensions.
+If you'd like to extend your IDE with some tools that will help you with testing/improving your code, check [this](./TOOLS.md) page. We go into multiple IDEs and editors and some useful extensions.
 
 ## Additional information
 
@@ -187,10 +191,3 @@ Then add a new line, as shown in the picture, replacing `{python_directory}` wit
 
 ![Add python to path](.\img\Windows-AddPythonPath.png)
 
-#### MacOS X
-
-TODO
-
-#### Linux
-
-TODO
