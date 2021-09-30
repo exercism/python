@@ -89,7 +89,7 @@ Packaged with *Anaconda*, `conda` environments are similar to [venv environments
 
 To create a new `conda` environment, go to the *Anaconda Navigator*. Click on `environments` and then press the `Create` button. Fill in a name for your `conda` environment, select Python `3.8 or above` and click `Create`:
 
-![Creating New Conda Environment](img/Anaconda-Conda-New.png)
+![Creating New Conda Environment](https://raw.githubusercontent.com/exercism/python/main/docs/img/Anaconda-Conda-New.png)
 
 #### Activating your conda environment
 
@@ -109,7 +109,7 @@ Visual studio code (VS Code) is a code editor created by Microsoft. It is not sp
 
 Extension: _Extension-id: ms-python.python_
 
-![Python Extension Header on VS Code](img/VSCode-EXT-Python-Header.png)
+![Python Extension Header on VS Code](https://raw.githubusercontent.com/exercism/python/main/docs/img/VSCode-EXT-Python-Header.png)
 
 The Python extension from Microsoft is extremely useful because of its range of features. Notably it supports testing and has a testing explorer! It has many other features that you can view on [its homepage](https://marketplace.visualstudio.com/items?itemName=ms-python.python).
 
@@ -119,7 +119,7 @@ The Python extensions supports the switching between multiple `interpreters`, th
 
 Click on the "Select interpreter" button in the lower left-hand of your window, another window should pop up where you can select the interpreter you want to use.
 
-![Interpreter selection PT2](img/VSCode-EXT-Python-SelectInterpreter-2.png)
+![Interpreter selection PT2](https://raw.githubusercontent.com/exercism/python/main/docs/img/VSCode-EXT-Python-SelectInterpreter-2.png)
 
 ##### Other features
 
@@ -145,11 +145,11 @@ PyCharm is an *Integrated Development Environment* built by JetBrains. It is spe
 
 Open your project, then navigate to `File` >> `Settings` >> `Project: ...` >> `Python Interpreter`. Click on the dropdown menu and select the environment you will be using. If the environment you would like to use is not in the list click on the `Show All...` button:
 
-![Interpreter Selection Dropdown](img/PyCharm-Config-InterpreterDropDown.png)
+![Interpreter Selection Dropdown](https://raw.githubusercontent.com/exercism/python/main/docs/img/PyCharm-Config-InterpreterDropDown.png)
 
 From there click on the `+` button to add a new interpreter. Select the type of interpreter on the left, we suggest you either run a [conda]() or [virtualenv]() environment, but running the *system interpreter* works fine too. Once you selected your interpreter, press the `Okay` button.
 
-![Add New Interpreter](img/PyCharm-Config-InterpreterNew.png)
+![Add New Interpreter](https://raw.githubusercontent.com/exercism/python/main/docs/img/PyCharm-Config-InterpreterNew.png)
 
 #### Other features
 
@@ -169,7 +169,7 @@ Spyder is a python IDE tailored for the scientific community. It packs some real
 
 To change the interpreter, go to `tools` >> `Preferences` >> `Python interpreter`. You can either select the global interpreter defined by Spyder or you can enter the path to your own Python environment.
 
-![Spyder Python Interpreter Selection](img/Spyder-Config-Interpreter.png)
+![Spyder Python Interpreter Selection](https://raw.githubusercontent.com/exercism/python/main/docs/img/Spyder-Config-Interpreter.png)
 
 Do not forget to click `Apply` once you selected your interpreter.
 
