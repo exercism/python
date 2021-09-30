@@ -19,6 +19,7 @@ Before you can start coding, make sure that you have the proper version of pytho
     - [Venv](#venv)
       - [Creating your virtual environment](#creating-your-virtual-environment)
       - [Activating your virtual environment](#activating-your-virtual-environment)
+      - [Virtual Environment wrapper](#virtual-environment-wrapper)
     - [Conda](#conda)
       - [Activating your conda environment](#activating-your-conda-environment)
   - [Editors and IDEs](#editors-and-ides)
@@ -75,6 +76,12 @@ $ source {name_of_virtual_env}/bin/activate
 ```
 
 From this terminal you can now run `pip` commands. All of the packages installed in the environment will go to `{name_of_virtual_env}/Lib`.
+
+#### Virtual Environment wrapper
+
+Reference: [Wiki](https://virtualenvwrapper.readthedocs.io/en/latest/)
+
+The `virtualenvwrapper` module manages all your virtual environments in one place. You can create, copy, delete and switch between environments using the tools the module provides. It also allows for extensions so you can add tools you'd like. You can create your own extension using the tutorial found [here](https://virtualenvwrapper.readthedocs.io/en/latest/plugins.html#plugins).
 
 ### Conda
 
