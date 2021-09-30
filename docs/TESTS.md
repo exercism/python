@@ -1,7 +1,5 @@
 # Tests
 
-TODO: Change links to constant URL, not relative.
-
 - [Tests](#tests)
   - [Pytest](#pytest)
     - [Installing Pytest](#installing-pytest)
@@ -181,13 +179,12 @@ The *returned* directory is where your Python version is installed, in this tuto
 
 Click the `Windows Start` button and lookup *Edit the system environment variables* and press enter. Next press, `Environment Variables...`:
 
-![Press the blue button, lol](.\img\Windows-SystemProperties.png)
+![Press the blue button, lol](./img/Windows-SystemProperties.png)
 
 Then find the `Path` variable in your *User variables*, select it, and click `Edit...`:
 
-![Selecting the path variable](.\img\Windows-EnvironmentVariables.png)
+![Selecting the path variable](./img/Windows-EnvironmentVariables.png)
 
 Then add a new line, as shown in the picture, replacing `{python_directory}` with your Python installation's directory:
 
-![Add python to path](.\img\Windows-AddPythonPath.png)
-
+![Add python to path](./img/Windows-AddPythonPath.png)
