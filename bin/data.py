@@ -217,8 +217,6 @@ class ExerciseInfo:
         return self.meta_dir / "template.j2"
 
     @property
-    def config_file(self):
-        return self.meta_dir / "config.json"
 
     def load_config(self) -> ExerciseConfig:
         return ExerciseConfig.load(self.config_file)
