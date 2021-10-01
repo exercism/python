@@ -38,7 +38,7 @@ python3 test/check-exercises.py
 ```
 
 
-### Code Style
+### Code Style.
 
 The Python code in this repo is meant to follow the [PEP8 style guide](https://www.python.org/dev/peps/pep-0008/) (a stylized version http://pep8.org).
 
