@@ -1,11 +1,26 @@
 import unittest
 import pytest
-from lasagna import (
-                    EXPECTED_BAKE_TIME,
-                    bake_time_remaining,
-                    preparation_time_in_minutes,
-                    elapsed_time_in_minutes
-                    )
+import sys
+
+try:
+    from lasagna import (
+                        EXPECTED_BAKE_TIME,
+                        bake_time_remaining,
+                        preparation_time_in_minutes,
+                        elapsed_time_in_minutes
+                         )
+
+
+except ImportError as import_fail:
+    message = import_fail.args[0].split('(')[0]
+    function_name = import_fail.args[0].split()[3][:-1] + "()'"
+
+    if 'EXPECTED_BAKE_TIME' in message:
+        raise ImportError(f"We can't the find the constant 'EXPECTED_BAKE_TIME' in your 'lasagna.py'"
+                          f" file. Did you mis-name or forget to define it?")
+    else:
+        raise ImportError(f"In your 'lasagna.py' file, we can't find the function named {function_name}."
+                          f" Did you mis-name or forget to define it?")
 
 
 class LasagnaTest(unittest.TestCase):
@@ -60,6 +75,3 @@ class LasagnaTest(unittest.TestCase):
                 failure_msg = msg = f'Expected a docstring for `{function.__name__}`, but received `None` instead.'
                 self.assertIsNotNone(function.__doc__, msg=failure_msg)
 
-
-if __name__ == "__main__":
-    unittest.main()
