@@ -73,7 +73,9 @@ To run the tests, go to the folder where the exercise is stored using `cd` in yo
 $ cd {exercise-folder-location}
 ```
 
-The file you'll want always ends with `_test.py`, this file contains the tests for your solution, and are the same tests run on the website. Now run the following command in your terminal, replacing `{exercise_test.py}` with the location/name of the the testing file:
+The file you'll want always ends with `_test.py`.
+This file contains the tests for your solution, and are the same tests which run on the website.
+Now run the following command in your terminal, replacing `{exercise_test.py}` with the location/name of the test file:
 
 ```bash
 $ python3 -m pytest {exercise_test.py}
