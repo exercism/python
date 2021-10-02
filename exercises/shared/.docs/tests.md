@@ -1,6 +1,6 @@
 # Tests
 
-To run the included *test files*, run the test file using the `pytest` module, replacing `{exercise_name}`:
+To run the included *tests*, run the test file using the `pytest` module, replacing `{exercise_name}`:
 
 ```bash
 $ python3 -m pytest {exercise_name}_test.py
