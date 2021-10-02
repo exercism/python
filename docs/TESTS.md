@@ -2,7 +2,7 @@
 
 - [Tests](#tests)
   - [Pytest](#pytest)
-    - [Installing Pytest](#installing-pytest)
+    - [Installing pytest](#installing-pytest)
       - [Windows](#windows)
       - [Linux / MacOS](#linux--macos)
       - [Virtual environments](#virtual-environments)
@@ -22,11 +22,11 @@
 
 ## Pytest
 
-_Official Pytest documentation can be found on the [Pytest Wiki](https://pytest.org/en/latest/) page._
+_Official pytest documentation can be found on the [pytest Wiki](https://pytest.org/en/latest/) page._
 
 Pytest lets you test your solutions using our provided tests, and is what we use to validate your solutions on the website.
 
-### Installing Pytest
+### Installing pytest
 
 Pytest can be installed and updated using the built-in Python utility `pip`.
 
@@ -58,7 +58,7 @@ If you do not want to precede every command with `python3 -m` please refer to [a
 
 *For more information about virtual environments please refer to the [TOOLS](.\TOOLS.md) file.*
 
-When installing Pytest or any other module(s), make sure that you have [activated your environment](.\TOOLS.md#activating-your-environment). After which you can run:
+When installing pytest or any other module(s), make sure that you have [activated your environment](.\TOOLS.md#activating-your-environment). After which you can run:
 
 ```bash
 $ pip install pytest pytest-cache pytest-subtests pytest-pylint
@@ -102,7 +102,7 @@ FAILED exercise_test.py::ExerciseTest::name_of_failed_test
 
 ### Extra arguments
 
-If you really want to be specific about what Pytest returns on your screen, here are some handy arguments that allows you to configure its behavior.
+If you really want to be specific about what pytest returns on your screen, here are some handy arguments that allows you to configure its behavior.
 
 #### Stop After First Failure [`-x`]
 

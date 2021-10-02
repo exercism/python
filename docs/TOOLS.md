@@ -1,10 +1,10 @@
 # Tools
 
-A list of tools, IDEs and editors that can help you write and debug your *Python* code.
+A list of tools, IDEs and editors that can help you write and debug your _Python_ code.
 
 *Disclaimer: This is a collection of tools that are popular in our community. We do not have any financial affiliation with any of the tools listed below. We think these tools do their job and there are most certainly other tools that can do those jobs as well.*
 
-Before you can start coding, make sure that you have the proper version of python installed. Exercism currently supports `Python 3.8` and above. For more information, please refer to [Installing Python locally](https://exercism.org/docs/tracks/python/installation).
+Before you can start coding, make sure that you have the proper version of Python installed. Exercism currently supports `Python 3.8` and above. For more information, please refer to [Installing Python locally](https://exercism.org/docs/tracks/Python/installation).
 
 ---
 
@@ -89,7 +89,7 @@ Packaged with *Anaconda*, `conda` environments are similar to [venv environments
 
 To create a new `conda` environment, go to the *Anaconda Navigator*. Click on `environments` and then press the `Create` button. Fill in a name for your `conda` environment, select Python `3.8 or above` and click `Create`:
 
-![Creating New Conda Environment](https://raw.githubusercontent.com/exercism/python/main/docs/img/Anaconda-Conda-New.png)
+![Creating New Conda Environment](https://raw.githubusercontent.com/exercism/Python/main/docs/img/Anaconda-Conda-New.png)
 
 #### Activating your conda environment
 
@@ -123,9 +123,9 @@ Click on the "Select interpreter" button in the lower left-hand of your window, 
 
 ##### Other features
 
-The Python plugin also comes with some other features that can help you debug and improve your python code, here are some of those tools.
+The Python plugin also comes with some other features that can help you debug and improve your Python code, here are some of those tools.
 
-[Test discovery tool](https://code.visualstudio.com/docs/python/testing#_configure-tests) - A tool that generates a tree containing all the *Pytest* and *Unittest* inside a directory. It will give you an easier and more readable interface for *Pytest*.
+[Test discovery tool](https://code.visualstudio.com/docs/python/testing#_configure-tests) - A tool that generates a tree containing all the *pytests* and *unittests* inside a directory. It will give you an easier and more readable interface for *pytest*.
 
 [Debugging tool](https://code.visualstudio.com/docs/python/testing#_configure-tests) - This tool will help you debug your code, it allows you to set a `breakpoint` on a line. The debugging tool then allows you to view all *private* and *global* variables at that point in your program.
 
@@ -163,7 +163,7 @@ Some other features that we won't cover in this guide, but are really useful for
 
 ### Spyder IDE
 
-Spyder is a python IDE tailored for the scientific community. It packs some really good debugging utilities and it has an integrated *IPython terminal*. Out-of-the-box it does not come with support for *Unittests* and *Pytests*, but there is an official plugin available.
+Spyder is a Python IDE tailored for the scientific community. It packs some really good debugging utilities and it has an integrated *IPython terminal*. Out-of-the-box it does not come with support for *unittests* and *pytests*, but there is an official plugin available.
 
 #### Selecting the interpreter
 
@@ -179,7 +179,7 @@ Do not forget to click `Apply` once you selected your interpreter.
 
 [Code analyzer](https://docs.spyder-ide.org/current/panes/pylint.html#using-the-code-analyzer) - An integrated tool for analyzing your code, detecting bad practices, and catching bugs before you run your program. You can also configure it to only catch [PEP 8](https://www.python.org/dev/peps/pep-0008/) violations.
 
-[Debugging](https://docs.spyder-ide.org/current/panes/debugging.html) - This tool will help you debug your code, it allows you to set a `breakpoint` on a line. The debugging tool will then let you go through your python code and quickly notice where it goes wrong.
+[Debugging](https://docs.spyder-ide.org/current/panes/debugging.html) - This tool will help you debug your code, it allows you to set a `breakpoint` on a line. The debugging tool will then let you go through your Python code and quickly notice where it goes wrong.
 
 [Variable Explorer](https://docs.spyder-ide.org/current/panes/variableexplorer.html) - This tool is really useful in combination with the debugger. It allows you to view all the active variables in your code and it even allows editing of the values inside those variables.
 
@@ -191,11 +191,11 @@ A text editor for coding, made by *Sublime HQ Pty Ltd*. It is similar to [VS Cod
 
 #### Notable extensions
 
-Sublime Text comes with a lot of tools already, but some of these tools could make your python development easier. Make sure you have *package control* installed, go to `Tools` >> `Install Package Control...`. To install packages open your command pallet and type in `Package Control: Install Package`, here you can enter the name of the packages you'd like to install.
+Sublime Text comes with a lot of tools already, but some of these tools could make your Python development easier. Make sure you have *package control* installed, go to `Tools` >> `Install Package Control...`. To install packages open your command pallet and type in `Package Control: Install Package`, here you can enter the name of the packages you'd like to install.
 
 [Terminus](https://packagecontrol.io/packages/Terminus) - A terminal for your sublime. It is fully featured and support for Windows operating systems. This package is almost a must-have for you to be able to run `pytest` scripts.
 
-[SublimeLinter](https://packagecontrol.io/packages/SublimeLinter) - A linter for sublime. This tool notifies you about python code that does not follow best practices. We recommend you set it up to use PEP-8.
+[SublimeLinter](https://packagecontrol.io/packages/SublimeLinter) - A linter for sublime. This tool notifies you about Python code that does not follow best practices. We recommend you set it up to use PEP-8.
 
 ### JupyterLab
 
