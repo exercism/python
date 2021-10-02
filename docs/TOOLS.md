@@ -103,7 +103,7 @@ From here you can run regular `pip` commands and other modules that you have ins
 
 ### Visual Studio Code
 
-Visual studio code (VS Code) is a code editor created by Microsoft. It is not specialized to work for a specific programming language, but to be an editor that can do everything. You can extend the editor using extensions, but it comes with some great extensions as well.
+Visual studio code (VS Code) is a code editor created by Microsoft. It is a general-purpose editor and not designed specifically for any one language. You can extend the editor using extensions; it comes with some great extensions already installed.
 
 #### Python for VS Code
 
