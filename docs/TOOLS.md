@@ -203,4 +203,4 @@ Jupyter lab is an in-browser code editor that runs on your machine. You can inst
 
 #### Notable extensions
 
-The built-in tools for Jupyter Lab are good-enough for almost all exercises on *Exercism*. Most extensions made for Jupyter are made with data-science in mind. Explore extensions at your own pleasure.
+The built-in tools for Jupyter Lab are sufficient for almost all exercises on Exercism. Most extensions to Jupyter focus more on data-science applications and not general-purpose programming. Explore extensions at your own pleasure.
