@@ -102,7 +102,7 @@ FAILED exercise_test.py::ExerciseTest::name_of_failed_test
 
 ### Extra arguments
 
-If you really want to be specific about what Pytest returns on your screen, here are some handy arguments that will make Pytest return a more specific dataset.
+If you really want to be specific about what Pytest returns on your screen, here are some handy arguments that allows you to configure its behavior.
 
 #### Stop After First Failure [`-x`]
 
