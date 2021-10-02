@@ -127,7 +127,7 @@ The Python plugin also comes with some other features that can help you debug an
 
 [Test discovery tool](https://code.visualstudio.com/docs/python/testing#_configure-tests) - A tool that generates a tree containing all the *pytests* and *unittests* inside a directory. It will give you an easier and more readable interface for *pytest*.
 
-[Debugging tool](https://code.visualstudio.com/docs/python/testing#_configure-tests) - This tool will help you debug your code, it allows you to set a `breakpoint` on a line. The debugging tool then allows you to view all *private* and *global* variables at that point in your program.
+[Debugging tool](https://code.visualstudio.com/docs/python/testing#_configure-tests) - This tool will help you debug your code. You can set a `breakpoint` on a line. The debugging tool then allows you to view all *private* and *global* variables at that point in your program.
 
 [Linting](https://code.visualstudio.com/docs/python/testing#_configure-tests) - Linting looks out for simple mistakes in your code and notifies you when you write bad-practice code according to PEP. Exercism currently focusses on the correct use of [PEP 8](https://www.python.org/dev/peps/pep-0008/).
 
