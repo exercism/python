@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "url": "https://www.w3schools.com/python/python_functions.asp",
+    "description": "W3Schools: Python Functions"
+  },
+  {
+    "url": "https://docs.python.org/3/tutorial/controlflow.html#defining-functions",
+    "description": "Python Tutorial: Functions"
+  },
+  {
+    "url": "https://realpython.com/lessons/functions-first-class-objects-python/",
+    "description": "Real Python: Functions as First-Class Objects"
+  }
+]

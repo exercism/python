@@ -1,5 +1,5 @@
 {
-  "blurb": "A function is a block of code which only runs when it is called. It can pass data, known as parameters, into a function. A function can return data as a result for the further use.",
+  "blurb": "A function is a reusable code block that achieves a specific purpose.",
   "authors": ["bethanyg", "cmccandless"],
   "contributors": []
 }
