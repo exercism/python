@@ -16,11 +16,11 @@ except ImportError as import_fail:
     item_name = import_fail.args[0].split()[3]
 
     if 'EXPECTED_BAKE_TIME' in message:
-        raise ImportError(f"We cannot find or import the constant {item_name} in your 'lasagna.py'"
+        raise ImportError(f"We can not find or import the constant {item_name} in your 'lasagna.py'"
                           " file. Did you mis-name or forget to define it?")
     else:
         item_name = item_name[:-1] + "()'"
-        raise ImportError(f"In your 'lasagna.py' file, we cannot find or import the function named {item_name}."
+        raise ImportError(f"In your 'lasagna.py' file, we can not find or import the function named {item_name}."
                           " Did you mis-name or forget to define it?")
 
 
