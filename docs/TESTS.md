@@ -67,7 +67,7 @@ Successfully installed pytest-6.2.5 ...
 
 ### Running the tests
 
-To run your test, go to the folder where the exercise is stored using `cd` in your terminal (_replace `{exercise-folder-location}` below with the path_).
+To run the tests, go to the folder where the exercise is stored using `cd` in your terminal (_replace `{exercise-folder-location}` below with the path_).
 
 ```bash
 $ cd {exercise-folder-location}
