@@ -24,7 +24,7 @@
 
 _Official Pytest documentation can be found on the [Pytest Wiki](https://pytest.org/en/latest/) page._
 
-Pytest let's you test your solutions using our provided tests, it is what we use to validate your solutions on the website.
+Pytest lets you test your solutions using our provided tests, and is what we use to validate your solutions on the website.
 
 ### Installing Pytest
 
