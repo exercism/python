@@ -156,7 +156,7 @@ $ python3 -m pytest --pdb bob_test.py
 =============== 4 passed in 0.15s ===============
 ```
 
-When a test fails it allows you to look at variables and how your code responds. If you want to learn how to really use `PDB` module, have a look at the [Python Docs](https://docs.python.org/3/library/pdb.html#module-pdb) or [this](https://realpython.com/python-debugging-pdb/) Real Python article.
+When a test fails, `PDB` allows you to look at variables and how your code responds. If you want to learn how to use the `PDB` module, have a look at the [Python Docs](https://docs.python.org/3/library/pdb.html#module-pdb) or [this](https://realpython.com/python-debugging-pdb/) Real Python article.
 
 ## Extending your IDE
 
