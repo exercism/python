@@ -1,6 +1,6 @@
 # Tools
 
-A list of tools, IDEs and editors that can help you write and debug your *python* code.
+A list of tools, IDEs and editors that can help you write and debug your *Python* code.
 
 *Disclaimer: This is a collection of tools that are popular in our community. We do not have any financial affiliation with any of the tools listed below. We think these tools do their job and there are most certainly other tools that can do those jobs as well.*
 
