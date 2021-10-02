@@ -195,7 +195,7 @@ Sublime Text comes with a lot of tools already, but some of these tools could ma
 
 [Terminus](https://packagecontrol.io/packages/Terminus) - A terminal for your sublime. It is fully featured and support for Windows operating systems. This package is almost a must-have for you to be able to run `pytest` scripts.
 
-[SublimeLinter](https://packagecontrol.io/packages/SublimeLinter) - A linter for sublime. This tool automatically notifies you of bad-practice python code. Useful for when you have it set up to use PEP8.
+[SublimeLinter](https://packagecontrol.io/packages/SublimeLinter) - A linter for sublime. This tool notifies you about python code that does not follow best practices. We recommend you set it up to use PEP-8.
 
 ### JupyterLab
 
