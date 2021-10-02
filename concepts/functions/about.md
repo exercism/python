@@ -1,8 +1,8 @@
 # About
 
-A [`function`][function] is a block of organized, reusable code that is used to perform a single, related action.
+A [`function`][function] is a block of organized, reusable code that is used to perform a specific task.
 `Functions` provide better modularity for your application and a high degree of code reuse.
-Like other programming languages, python provides _pre-defined functions_ ([`print`][print], [`map`][map] etc) that are readily available in the Python language. 
+Python, like other programming languages, has [_built-in functions_][build-in functions] ([`print`][print], [`map`][map], and so on) that are readily available.
 You can also define your own functions. Those are called [`user-defined functions`][user defined functions].
 Functions can run something as simple as _printing a message to the console_ or they can be quite complex.
 
@@ -48,7 +48,7 @@ Hello
 
 ## Parameters
 
-Parameters are values that are passed to the function when it is called. They are known as `arguments`.
+Parameters are values that are passed to the function when it is called. They can be of any data type.
 
 Let's define a function `add` which adds two numbers together:
 ```python
@@ -163,18 +163,19 @@ Now, we can call the functions in the order we want.
 If variable is defined inside a function, then it will be only accessible inside the function. If we want to access the variable outside the function, we need to use the [`global`][global] keyword. [`nonlocal`][nonlocal] keyword is used to access the variable inside a nested function.
 
 ```python
-def outer():
-    x = 10
-    print('Inside function:', x)
+>>> x = 30
+>>> def random_function():
+        x = 10
+        print('Inside function:', x)
 ```
 
-variable `x` is defined inside the outer function. It is limited to the scope of the outer function only. It will not alter the value of the variable outside the outer function.
+As `x` is defined inside the `random_function`, it is limited to the scope of the `random_function` only. Calling the function will not alter the value of the variable outside the function.
 
 ```python
 >>> x = 30
 
 # regardless of whether we call the function or not, the value of x will be 30
->>> outer()
+>>> random_function()
 Inside function: 10
 >>> x
 30
@@ -182,17 +183,17 @@ Inside function: 10
 
 We can access the variable inside the outer function using the `global` keyword.
 ```python
-def outer():
-    global x
-    x = 10
-    print('Inside function:', x)
+>>> x = 30
+>>> def random_function():
+        global x
+        x = 10
+        print('Inside function:', x)
 ```
 
 As we have used the `global` keyword, the value of `x` will be changed.
 
 ```python
->>> x = 30
->>> outer()
+>>> random_function()
 Inside function: 10
 >>> x
 10
@@ -208,8 +209,8 @@ In python, functions can be assigned to variables and passed as arguments to oth
 # print is a function
 
 # A function can be assigned to a variable.
->>> fake_print = print
->>> fake_print("Hello")
+>>> function_as_variable = print
+>>> function_as_variable("Hello")
 Hello
 >>> type(fake_print)
 <class 'builtin_function_or_method'>
@@ -289,14 +290,15 @@ The full list of function attributes can be found at [Python DataModel][attribut
 
 
 [attributes]: https://docs.python.org/3/reference/datamodel.html#index-33
-[first class objects]: https://en.wikipedia.org/wiki/First-class_object
-[list]: https://docs.python.org/3/tutorial/datastructures.html#list-objects
-[tuple]: https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences
+[build-in functions]: https://docs.python.org/3/library/functions.html
 [dict]: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
-[global]: https://docs.python.org/3/reference/compound_stmts.html#global
-[nonlocal]: https://docs.python.org/3/reference/compound_stmts.html#nonlocal
+[first class objects]: https://en.wikipedia.org/wiki/First-class_object
 [function]: https://en.wikipedia.org/wiki/Function_(computer_science)
-[print]: https://docs.python.org/3/library/functions.html#print
+[global]: https://docs.python.org/3/reference/compound_stmts.html#global
+[list]: https://docs.python.org/3/tutorial/datastructures.html#list-objects
 [map]: https://docs.python.org/3/library/functions.html#map
-[user defined functions]: https://en.wikipedia.org/wiki/User-defined_function
+[nonlocal]: https://docs.python.org/3/reference/compound_stmts.html#nonlocal
+[print]: https://docs.python.org/3/library/functions.html#print
+[tuple]: https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences
 [type-error]: https://docs.python.org/3/library/exceptions.html#TypeError
+[user defined functions]: https://en.wikipedia.org/wiki/User-defined_function
