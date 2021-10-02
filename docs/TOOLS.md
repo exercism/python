@@ -199,7 +199,7 @@ Sublime Text comes with a lot of tools already, but some of these tools could ma
 
 ### JupyterLab
 
-Jupyter lab is an in-browser code editor that runs on your machine. You install it using a `pip` command in your *environment* and then automatically uses that environment. Jupyter is most well-known for being able to create coding notebooks. It is commonly used among data-scientists.
+Jupyter lab is an in-browser code editor that runs on your machine. You can install it using a `pip` command in your *environment* and Jupyter will use that environment. Jupyter is most well-known for its code "notebooks". It is commonly used among data-scientists.
 
 #### Notable extensions
 
