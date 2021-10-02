@@ -168,7 +168,7 @@ If you'd like to extend your IDE with some tools that will help you with testing
 
 **Note:** If you are running a [virtual environment](.\TOOLS.md) you do not need to *add to path* as it should work fine.
 
-Preceding every module you want to run with `python3 -m` might get a little annoying. You can add the `Scripts` folder of your Python installation to your path. If you do not know where you have installed Python, run the following command in your terminal:
+Typing `python3 -m` every time you want to run a module can get a little annoying. You can add the `Scripts` folder of your Python installation to your path. If you do not know where you have installed Python, run the following command in your terminal:
 
 ```bash
 $ python3 -c "import os, sys; print(os.path.dirname(sys.executable))"
