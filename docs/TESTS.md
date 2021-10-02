@@ -106,7 +106,7 @@ If you really want to be specific about what Pytest returns on your screen, here
 
 #### Stop After First Failure [`-x`]
 
-Running the `pytest -x {exercise_test.py}` command, will run the tests like normal, but will stop the tests when it encounters a failed test. This will help when you want to debug a single failure at a time.
+Running the `pytest -x {exercise_test.py}` command, will run the tests like normal, but will stop the tests after the first failed test. This will help when you want to debug a single failure at a time.
 
 ```bash
 $ python -m pytest -x example_test.py
