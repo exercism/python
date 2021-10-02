@@ -1,21 +1,21 @@
 # About
 
 A [`function`][function] is a block of organized, reusable code that is used to perform a single, related action.
-`Functions` provide better modularity for your application and a high degree of code reusing.
+`Functions` provide better modularity for your application and a high degree of code reuse.
 Like other programming languages, python provides _pre-defined functions_ ([`print`][print], [`map`][map] etc) that are readily available in the Python language. 
-However, you can define your own functions as well which are called [`user-defined functions`][user defined functions].
-Functions can be as simple as _printing a message to the console_ or as complex as _performing a calculation_.
+You can also define your own functions. Those are called [`user-defined functions`][user defined functions].
+Functions can run something as simple as _printing a message to the console_ or they can be quite complex.
 
 To execute the code inside a function, you need to call the function, which is done by using the function name followed by parenthesis [`()`].
-Data known as `parameters` can be passed to the function inside the parenthesis. Broader terms for parameters are `arguments`. Functions can perform different tasks depending on the value of the parameters.
+Data. known as `parameters`, can be passed to the function by placing them inside the parenthesis. A broader term for parameters is `arguments`. Functions can perform different tasks depending on the value of the parameters.
 
-The function can also return a value using the `return` keyword. The value returned by the function is known as the `return value`. The return value is returned to the caller of the function.
+A function can also return a value using the `return` keyword. The value returned by the function is known as the `return value`. The return value is returned to the caller of the function.
 
 ## Creation
 
-In python, functions are created using the `def` keyword. The function definition is followed by the function name and parenthesis [`()`]. Inside the parenthesis, the parameters are specified, and are separated by commas. After the parameters, the colon (`:`) is used to separate the function header from the function body.
+In python, functions are created using the `def` keyword. The function definition is followed by the function name and parenthesis [`()`]. Inside the parenthesis, the parameters are specified, separated by commas. After the close parenthesis, the colon (`:`) is used to separate the function signature from the function body.
 
-The function body is a block of code that is executed when the function is called. The body of the function is indented. The indentation is important because the function body is a block of code. A value can be returned from the function by using the `return` keyword, which will be used by the caller of the function.
+The function body is a block of code that is executed when the function is called. The body of the function is indented. The indentation is important because Python relies on it to know where that block of code ends. A value can be returned from the function by using the `return` keyword, which can then be used by the caller of the function.
 
 ```python
 def function_name(parameter1, parameter2, ...):
@@ -32,7 +32,7 @@ def function_name():
 
 ## Calling a Function
 
-To call a function, use the function name followed by parenthesis [`()`]. The parameters passed to the function are separated by commas.
+To call a function, use the function name followed by parenthesis [`()`]. Parameters passed to the function are placed inside the parenthesis, separated by commas.
 
 Consider the following function:
 ```python
@@ -40,7 +40,7 @@ def wish():
     print("Hello")
 ```
 
-Above function can be called by using the following syntax:
+The above function can be called by using the following syntax:
 ```python
 >>> wish()
 Hello
@@ -50,13 +50,13 @@ Hello
 
 Parameters are values that are passed to the function when it is called. They are known as `arguments`.
 
-Let's define a function `add`:
+Let's define a function `add` which adds two numbers together:
 ```python
 def add(x, y):
     print(x + y)
 ```
 
-When the function is called, the parameters are passed to the function. We need to pass values for both the parameters, otherwise [`TypeError`][type-error] will be raised.
+When the function is called, the parameters are passed to the function. We need to pass values for both the parameters, otherwise a [`TypeError`][type-error] will be raised.
 ```python
 >>> add(2, 3)
 5
@@ -67,7 +67,7 @@ When the function is called, the parameters are passed to the function. We need 
 >>> add(5, 6)
 11
 
-# Passing incorrect number of parameters will raise `TypeError`
+# Passing an incorrect number of parameters will raise a `TypeError`
 >>> add(2)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -89,7 +89,7 @@ def add(x, y):
     return x + y
 ```
 
-We'll store the return value in a variable and print it:
+We can store the return value in a variable and then print it:
 ```python
 >>> result = add(2, 3)
 >>> print(result)
@@ -102,7 +102,7 @@ We'll store the return value in a variable and print it:
 >>> result * 2
 10
 
-# Function without return value returns `None`
+# A function without an explicit return value will return `None`
 >>> def log(message):
     print(message)
 
@@ -120,14 +120,14 @@ Use of `return` immediately exits the function and returns the value to the call
     return x
     print(y)
 
-# y never gets printed, because function exists after return statement
+# y never gets printed, because the function exits after the return statement
 >>> show(1, 2)
 1
 ```
 
 ## Modularity
 
-Complex programs can be broken down into smaller parts. Functions can be used to perform different tasks.
+Complex programs can be broken down into smaller parts. Different functions can be used to perform different specific tasks.
 
 Assume a program has to perform the following tasks:
   * Calculate the area of a circle
@@ -201,36 +201,36 @@ Inside function: 10
 
 ## Functions as first class objects
 
-In python, functions can be assigned to variables and passed as arguments to other functions. They can also be used as return values in other functions. Functions can also be used as items in a sequence([`list`][list], [`tuple`][tuple] etc) or as value in [`dict`][dict]. This is called _function as [`first class object`][first class objects]_.
+In python, functions can be assigned to variables and passed as arguments to other functions. They can be used as return values. Functions can also be placed into a sequence([`list`][list], [`tuple`][tuple] etc) or as value in a [`dict`][dict]. Functions can be used anywhere than any other object can be used. This is because _functions are [`first class objects`][first class objects]_.
 
 
 ```python
 # print is a function
 
-# function can be assigned to a variable
+# A function can be assigned to a variable.
 >>> fake_print = print
 >>> fake_print("Hello")
 Hello
 >>> type(fake_print)
 <class 'builtin_function_or_method'>
 
-# function can be passed as an argument to another function
+# Functions can be passed as an argument to another function.
 >>> def check_print(func):
     func("Hello")
 >>> check_print(print)
 Hello
 
-# function can be used as an item in a sequence
+# Function can be used as an item in a sequence.
 >>> my_list = [print, "Hello"]
 >>> my_list[0]("Hello")
 Hello
 
-# function can be used as a value in a dictionary
+# Functions can be used as a value in a dictionary.
 >>> my_dict = {"key": print}
 >>> my_dict["key"]("Hello")
 Hello
 
-# function can be used as a return value in another function
+# Functions can be returned from a function.
 >>> def return_func():
     return print
 >>> return_func()("Hello")
@@ -255,7 +255,7 @@ The inner function can access the variable `x` defined in the outer function.
 
 ## Special Attributes
 
-Functions in python have some special attributes. Some of them are:
+Functions in python have special attributes. Some of them are:
   * `__name__`: Name of the function
   * `__doc__`: Documentation string of the function
   * `__module__`: Module in which the function is defined
@@ -285,7 +285,7 @@ Functions in python have some special attributes. Some of them are:
 '__main__'
 ```
 
-Full list of attributes can be found at [Python DataModel][attributes].
+The full list of function attributes can be found at [Python DataModel][attributes].
 
 
 [attributes]: https://docs.python.org/3/reference/datamodel.html#index-33
