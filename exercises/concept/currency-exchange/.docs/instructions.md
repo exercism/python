@@ -60,13 +60,13 @@ This function should return the *number of bills* that you can get using the *bu
 
 Create the `exchangeable_value()` function, taking `budget`, `exchange_rate`, `spread`, and `denomination`.
 
-Parameter `spread` is the *percentage taken* as an exchange fee.
-If `1.00 EUR == 1.20 USD` and the *spread* is `10`, the actual exchange rate will be: `1.00 EUR == 1.32 USD` because 10% of 1.20 is 0.12.
+Parameter `spread` is the *percentage taken* as an exchange fee, written as an integer. It needs to be converted to decimal by dividing it by 100. 
+If `1.00 EUR == 1.20 USD` and the *spread* is `10`, the actual exchange rate will be: `1.00 EUR == 1.32 USD` because 10% of 1.20 is 0.12, and this additional fee is added to the exchange.
 
 This function should return the maximum value of the new currency after calculating the *exchange rate* plus the *spread*.
 Remember that the currency *denomination* is a whole number, and cannot be sub-divided.
 
-**Note:** Returned value should be `int` type.
+**Note:** Returned value should be converted to `int` type.
 
 ```python
 >>> exchangeable_value(127.25, 1.20, 10, 20)
@@ -79,7 +79,7 @@ Remember that the currency *denomination* is a whole number, and cannot be sub-d
 
 Create the `non_exchangeable_value()` function, taking `budget`, `exchange_rate`, `spread`, and `denomination`.
 
-This function should return the value that is *not* exchangeable due to the *denomination* of the bills.
+This function should return the value that is *not* exchangeable due to the *denomination* of the bills, by subtracting your value after exchange from the theoretical value. The theoretical value assumes bills can be subdivided, therefore ignoring denomination, but does take into account spread.
 
 **Note:** Returned value should be `int` type.
 
