@@ -66,7 +66,7 @@ If `1.00 EUR == 1.20 USD` and the *spread* is `10`, the actual exchange rate wil
 This function should return the maximum value of the new currency after calculating the *exchange rate* plus the *spread*.
 Remember that the currency *denomination* is a whole number, and cannot be sub-divided.
 
-**Note:** Returned value should be converted to `int` type.
+**Note:** Returned value should be `int` type.
 
 ```python
 >>> exchangeable_value(127.25, 1.20, 10, 20)
