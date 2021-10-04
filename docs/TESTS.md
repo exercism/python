@@ -160,7 +160,7 @@ When a test fails, `PDB` allows you to look at variables and how your code respo
 
 ## Extending your IDE
 
-If you'd like to extend your IDE with some tools that will help you with testing and improving your code, check [this](./TOOLS.md) page. We go into multiple IDEs, editors and some useful extensions.
+If you'd like to extend your IDE with some tools that will help you with testing and improving your code, check the [TOOLS](./TOOLS.md) page. We go into multiple IDEs, editors and some useful extensions.
 
 ## Additional information
 
