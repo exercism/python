@@ -157,7 +157,7 @@ Below are some other features that we won't cover in this guide, but are really 
 
 [Running Tests](https://www.jetbrains.com/help/pycharm/pytest.html#run-pytest-test) - Running tests directly from a GUI in your window is really easy, but don't forget to look at the [pytest parameters](TESTS.md#extra-arguments) to set it up to your liking.
 
-[Debug Tools](https://www.jetbrains.com/help/pycharm/debugging-code.html) - Debugging in PyCharm is a great way to take advantage of it's tools. Start here to learn how to properly debug using PyCharm.
+[Debug Tools](https://www.jetbrains.com/help/pycharm/debugging-code.html) - Debugging in PyCharm is a great way to take advantage of its tools.
 
 ---
 
