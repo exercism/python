@@ -56,7 +56,7 @@ If you do not want to precede every command with `python3 -m` please refer to [a
 
 #### Virtual environments
 
-*For more information about virtual environments please refer to the [TOOLS](.\TOOLS.md) file.*
+*For more information about virtual environments please refer to the [TOOLS](./TOOLS.md) file.*
 
 When installing pytest or any other module(s), make sure that you have [activated your environment](.\TOOLS.md#activating-your-virtual-environment). After which you can run:
 
