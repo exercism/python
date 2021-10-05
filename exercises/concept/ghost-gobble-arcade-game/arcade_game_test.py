@@ -100,3 +100,11 @@ class GhostGobbleGameTest(unittest.TestCase):
             True,
             msg="win if all dots eaten and touching a ghost with a power pellet active"
         )
+
+    @pytest.mark.task(taskno=4)
+    def test_dont_win_if_not_all_dots_eaten(self):
+        self.assertIs(
+            win(False, True, True),
+            False,
+            msg="don't win if not all dots eaten and touching a ghost with a power pellet active"
+        )
