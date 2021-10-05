@@ -1,6 +1,6 @@
 #  Contributing
 
-Hi. &nbsp;👋🏽 &nbsp;👋 &nbsp; 
+Hi. &nbsp;👋🏽 &nbsp;👋 &nbsp;
 
 Thank you so much for your interest in contributing to the Python track!  **We are happy you are here.** 🌟 &nbsp; 🎉
 
@@ -15,7 +15,7 @@ Exercises are grouped into **concept** exercises which teach the [Python syllabu
 
 It's not uncommon that people discover typos, confusing directions, or incorrect implementations of  certain tests or code examples.  Or you might have a great suggestion for a hint to aid students (💙 &nbsp;) ,  see optimizations for exemplar or test code, find missing test cases to add, or want to correct factual and/or logical errors.  Or maybe you have a great idea for an exercise or feature (&nbsp;❗&nbsp;).
 
-_Our track is always a work in progress!_ 🌟🌟   
+_Our track is always a work in progress!_ 🌟🌟  
 Please  📛 &nbsp;[Open an issue][open-an-issue]&nbsp;📛 , and let us know what you have found or suggest.
 
 <br>
@@ -68,11 +68,11 @@ Some defined roles in our community:  [Community Member][being-a-good-community-
 - Pull requests should be focused on a single exercise, issue, or change.
 - Pull Request titles and descriptions should make clear **what** has changed and **why**.
   - Please link &nbsp;🔗&nbsp; to any related issues the PR addresses.
-- 📛&nbsp;[Open an issue][open-an-issue]&nbsp;📛&nbsp;&nbsp; and discussed  _**before**_ creating a Pull Request making significant or breaking changes to an existing exercise.
+- 📛&nbsp;[Open an issue][open-an-issue]&nbsp;📛&nbsp;&nbsp; and discuss it  _**before**_ creating a Pull Request making significant or breaking changes to an existing exercise.
   - The same rule holds true for changes across multiple exercises.
-  - It is best to discuss changes with &nbsp;🧰 &nbsp;maintainers before doing a lot of work.
+  - It is best to quickly discuss most changes with &nbsp;🧰 &nbsp;maintainers before doing a lot of work.
 - Follow coding standards found in [PEP8][PEP8] (["For Humans" version here][pep8-for-humans]).
-  - We do have some more specific requirements.  More on that a little later.
+  - We do have some more specific requirements.  More on that [a little later](a-little-more-on-coding-standards).
 - All files should have a proper [EOL][EOL] at the end. This means one carriage return at the end of the final line of text in files.
 - Otherwise, watch out &nbsp;⚠️&nbsp; for trailing spaces, extra blank lines, extra spaces, and spaces in blank lines.
 - The CI is going to run **a lot** of checks on your PR. Pay attention to the failures, try to understand and fix them.
@@ -81,12 +81,12 @@ Some defined roles in our community:  [Community Member][being-a-good-community-
 
 &nbsp;⚠️&nbsp;&nbsp;**Before committing**&nbsp;⚠️&nbsp;
 
-- Run `configlet fmt` and `configlet lint` if the track [config.json](config-json) has been modified.
+- Run [`configlet-lint`][configlet-lint] if the track [config.json](config-json) has been modified.
 - Run [Prettier][prettier] on all markdown files.
-- Run [flake8][flake8] to ensure all Python code files conform to general code style standards.
-- Run [???] to help format your code
+- Run [flake8][flake8] & [pylint][pylint] to ensure all Python code files conform to general code style standards.
+- (Optionally) run [yapf][yapf] to help format your code, and give you a head start on making the linters happy.
 - Run `test/check-exercises.py [EXERCISE]` to check if your test changes function correctly.
-- Run the `example.py` or `exemplar.py` file against the test file to ensure that it passes without error.
+- Run the `example.py` or `exemplar.py` file against the exercise test file to ensure that it passes without error.
 - If you modified or created a `hints.md` file for a practice exercise, [regenerate](#generating-exercise-readmes) it.
 
 <br>
@@ -104,9 +104,64 @@ Our documents use [Markdown][markdown-language], with certain [alterations][exer
 
 <br>
 
-##  Little More on Coding Standards
+## A Little More on Coding Standards
 <br>
 
+1.  We follow [PEP8][PEP8] (["For Humans" version here][pep8-for-humans]).
+    In particular, we (mostly) follow the [Google flavor][google-coding-style] of PEP8.
+2.  We use [flake8][flake8] to help us format Python code nicely.
+    Our `flake8` config file is [.flake8][.flake8] in the top level of this repo.
+3.  We use [pylint][pylint] to catch what `flake8` doesn't.
+    Our `pylint` config file is [pylintrc][pylintrc] in the top level of this repo.
+4.  We use [yapf][yapf] to auto-format our python files.
+    Our `.style.yapf` config file is [.style.yapf][.style.yapf] in the top level of this repo.
+
+If you have any questions or issues, don't hesitate to ask the maintainers -- they're always happy to help&nbsp;💛&nbsp;💙&nbsp;
+
+Some of our code is old and does not (yet) conform to all these standards.  We know it, and trust us, we're fixing it. But if you see &nbsp;👀&nbsp; something, &nbsp;👄&nbsp; say something.  It'll motivate us to fix it! 🌈
+
+
+### General Code Style TL;DR:
+
+- _spaces_, never `Tabs`
+- 4 space indentation
+- 120 character per line limit (as opposed to the Google limit of 80)
+- Variables, functions and methods should be `lower_case_with_underscores` (aka "snake case")
+- Classes are `TitleCase` (aka "camel case")
+- No single letter variable names outside of a `lambda`.  This includes loop variables and comprehensions.
+- Refrain from putting `list`, `tuple`, `set`, or `dict` members on their own lines.
+  Fit as many members as can be easily read on one line, before wrapping to a second.
+- If a data structure spreads to more than one line and a break (for clarity) is needed, prefer breaking after the opening bracket.
+- Avoid putting closing brackets on their own lines. Prefer closing a bracket right after the last element.
+- Use `'` and not `"` as the quote character by default.
+- Use `"""` for docstrings.
+- Prefer [implicit line joining][implicit-line-joining] for long strings.
+- Prefer enclosing imports in (), and putting each on their own line when importing multiple methods from a library.
+- Two lines between `Classes`, one line between `functions`.  Other vertical whitespace as needed to help readability.
+- Always use an EOL to end a file.
+
+
+### Concept Exercise Test Files
+
+- We have historically used [Unittest.TestCase][unittest] syntax, with [PyTest][pytest] as a test runner.
+- We are transitioning to using (many) more PyTest features and syntax, but are leaving `Unittest` syntax in place where possible.
+- Always check with a maintainer before introducing a PyTest feature in your tests.  Not all PyTest features may be supported.
+- Test **Classes** should be titled `<ExerciseSlug>Test`. e.g. `class CardGamesTest(unittest.TestCase):`
+  This is to help our test runner re-write them for display on the website.
+- Test _methods_ or functions should begin with `test_`, and follow PEP8 naming.  Try to make test case names descriptive but not too long.
+- Favor [_parameterizing_][distinguishing-test-iterations] tests that vary only by input data. We use [unittest.TestCase.subTest][subtest] for this. An [example from Guido's Gorgeous Lasagna][guidos-gorgeous-lasagna-testfile].  A second [example from Card Games][card-games-testfile].
+- Avoid excessive line breaks or indentation - especially in parameterized tests.  Excessive breaks & indentation within the `for` loops cause issues when formatting the test code for display on the website.
+- Use [`enumerate()`][enumerate] where possible when looping in test cases. See [Card Games][card-games-testfile] for example usage.
+- Favor using variable names like `inputs`, `data`, `input_data`, `test_data`, or `test_case_data` for test inputs.
+- Favor using variable names like `results`, `expected`, `result_data`, `expected_data`, `expected_results` or `expected_outputs` for expected test outcomes.
+- Favor putting the (not optional) assert failure message on it's own line outside of the `self.assert` method, and naming it `failure_msg`.  See [Card Games][card-games-testfile] for example usage.
+- Use `f-strings` over other methods for test failure messages.  Make your messages as relevant and human-readable as possible.
+- We relate the test cases for a particular task in an exercise to the **task number** via a custom [PyTest Marker][pytestmark]. These are decorators that take the form of ``@pytest.mark.task(taskno=<task-number-here>)`.  See [Guido's Gorgeous Lasagna][guidos-gorgeous-lasagna-testfile] for an example usage.
+- For exercises that have large sets of data for inputs/outputs, we prefer to have **test data files**.  These should be named with `_data` or `_test_data` at the end of the filename, and saved alongside the test case file.  See the [Cater-Waiter][cater-waiter] exercise directory for an example of how we set this up.
+- Test data files need to be added to the `editor` key within an exercises [`config.json` `files` key][exercise-config-json].  Check with a maintainer if you have questions or issues.
+- For new test files going forward, omit `if __name__ == "__main__":
+    unittest.main()`.  `Unittest` will not be able to run these files stand-alone.
+- Test files should be linted with both `flake8` and `pylint`.  Both are known to toss false positives for imports and unused variables in test code.  Where necessary, deploy the [`#noqa`][flake8-noqa] or [`#pylint disable=<check-name>`][pylint-disable-check] comments to suppress false-positive warnings.  See **line 16** of [Guido's Gorgeous Lasagna][guidos-gorgeous-lasagna-testfile] test file for an example of a pylint "skip".
 
 <br>
 
@@ -141,8 +196,6 @@ Our documents use [Markdown][markdown-language], with certain [alterations][exer
 <br>
 
 
-<br>
-
 ## Python Versions
 
 <br>
@@ -152,9 +205,11 @@ This track officially supports Python >= `3.8`  The track `test runner`, `analyz
 Although the majority of test cases are written using `unittest.TestCase`,
 
 *  All exercises should be written for compatibility with Python >= `3.8`,.
-*  Version backward _incompatibility_ (*e.g* an exercise using a `3.8` or `3.9` **only** feature)  should be clearly noted in any exercise introduction or notes.
+*  Version backward _incompatibility_ (*e.g* an exercise using a `3.8` or `3.9` **only** feature)  should be clearly noted in any exercise hits, links, introductions or other notes.
 
-* _Most_ exercises will work with Python `3.6+`, and _many_ are compatible with Python 2.7+.   Please do not change existing exercises to add new `3.6`+ features without consulting with a maintainer first.
+*  Here is an example of how the Python documentation handles [version-tagged &nbsp;🏷&nbsp;][version-tagged-language-features] feature introduction.
+
+* _Most_ exercises will work with Python `3.6+`, and _many_ are compatible with Python 2.7+. Please do not change existing exercises to add new `3.6`+ features without consulting with a maintainer first. We &nbsp;💛&nbsp;💙&nbsp; modern Python, but we _also_ want to avoid student confusion when it comes to brand-new features.
 
 - All test suites and example solutions must work in all Python versions that we currently support. When in doubt about a feature, please check with maintainers.
 
@@ -162,169 +217,96 @@ Although the majority of test cases are written using `unittest.TestCase`,
 
 ## External Libraries and Dependencies
 
-<br>
-<br>
+Our tooling (_runners, analyzers and representers_) runs in isolated containers within the exercism website.  Because of this, exercises cannot rely on third-party or external libraries.  Any library needed for an exercise or exercise tests must be incorporated as part of the tooling build, and noted for students who are using the CLI to solve problems locally.
 
+If your exercise depends on a third-party library (_aka not part of standard Python_), please consult with maintainers about it.  We may or may not be able to accommodate the package.
 
+<br>
 
 ## Auto-Generated Test Files and Test Templates
 
 <br>
 
-Practice exericses  inherit their definitions from the [problem-specifications][problem-specifications] repository in the form of _description files_.  Exercise introductions, instructions and (_in the case of **many**, but not **all**_) test files are machine-generated .
+[**Practice exercises**][practice-exercise-files] inherit their definitions from the [problem-specifications][problem-specifications] repository in the form of _description files_.  Exercise introductions, instructions and (_in the case of **many**, but not **all**_) test files are then machine-generated for each language track.
 
-Changes to practice exercise _specifications_ should be raised/PR'd in  [problem-specifications][problem-specifications] and approved by **3 track maintainers**. After an exercise change has gone through that process , related documents and tests for the Python track will need to be re-generated via [configlet][configlet]. Configlet is also used as part of the track CI, essential track and exercise linting, and other verification tasks.
+Changes to practice exercise _specifications_ should be raised/PR'd in  [problem-specifications][problem-specifications] and approved by **3 track maintainers**. After an exercise change has gone through that process , related documents and tests for the Python track will need to be [re-generated](#generating-practice-exercise-documents) via [configlet][configlet]. Configlet is also used as part of the track CI, essential track and exercise linting, and other verification tasks.
 
-If a practice exercise has an auto-generated `<exercise>_test.py` file, there will be a  `.meta/template.j2` and a `.meta/tests.toml` file  in the exercise directory. If an exercise implements  Python track-specific tests, there may be a `.meta/additional_tests.json` to define them. These `additional_tests.json` files will automatically be included in test generation.
+If a practice exercise has an auto-generated `<exercise_slug>_test.py` file, there will be a  `.meta/template.j2` and a `.meta/tests.toml` file  in the exercise directory. If an exercise implements  Python track-specific tests, there may be a `.meta/additional_tests.json` to define them. These `additional_tests.json` files will automatically be included in test generation.
 
-Practice exercise  `<exercise>_test.py` files are  generated/regenerated via the [Python Track Test Generator][python-track-test-generator]. Please reach out to a maintainer if you need any help with the process.
+Practice exercise `<exercise_slug>_test.py` files are  generated/regenerated via the [Python Track Test Generator][python-track-test-generator]. Please reach out to a maintainer if you need any help with the process.
 
 <br>
 
-## Tools and Tooling
-
-
-##################################
-
-
-## Architecture
-
-Exercism tracks inherit exercise definitions from the [problem-specifications] repository in the form of description files
-(from which exercise READMEs are [generated](#generating-exercise-readmes))
-
-
-## Implementing an exercise
-
-### Exercise structure
+### Python Practice Exercise structure for auto-generated tests
 
 ```Bash
-exercises/[EXERCISE]/
-├── [EXERCISE].py
-├── [EXERCISE]_test.py
-├── example.py
+[<exercise-slug>/
+├── .docs
+│   └── instructions.md
 ├── .meta
+│   ├── config.json
+│   ├── example.py
 │   ├── template.j2
-│   ├── additional_tests.json
-│   └── hints.md
-└── README.md
+│   └── tests.toml
+├── <exercise_slug>.py #stub file
+└── <exercise_slug_test.py #test file
 ```
 
-Files:
+## Generating Practice Exercise Documents
 
-| File | Description | Source |
-|:--- |:--- |:--- |
-| [[EXERCISE].py](exercises/two-fer/two_fer.py) | Solution stub  | Manually created by the implementer |
-| [[EXERCISE]_test.py](exercises/two-fer/two_fer_test.py) | Exercise test suite | Automatically generated if `.meta/template.j2` is present, otherwise manually created by the implementer |
-| [example.py](exercises/two-fer/example.py) | Example solution used to automatically verify the `[EXERCISE]_test.py` suite | Manually created by the implementer |
-| [.meta/template.j2](exercises/two-fer/.meta/template.j2) | Test generation template; if present used to automatically generate `[EXERCISE]_test.py` (See [generator documentation](docs/GENERATOR.md)) | Manually created by implementer |
-| [.meta/additional_tests.json](exercises/word-count/.meta/additional_tests.json) | Defines additional track-specific test cases; if `.meta/template.j2` is also present these test will be incorporated into the automatically generated `[EXERCISE]_test.py` | Manually created by the implementer |
-| [.meta/hints.md](exercises/high-scores/.meta/hints.md) | Contains track-specific hints that are automatically included in the generated `README.md` file | Manually created by the implementer |
-| [README.md](exercises/two-fer/README.md) | Exercise README | [Generated by `configlet` tool](#generating-exercise-readmes) |
-
-### Generating Exercise READMEs
-
-#### Requirements
+**You will need:**
 - A local clone of the [problem-specifications] repository.
-- [configlet]: may be obtained either by
-  - (**Recommended**) Following installation instructions at the above link
-  - Running `bin/fetch-configlet` (`configlet` binary will be downloaded to the repository `bin/`)
+- [configlet]
 
-#### Generating all READMEs
+**Regenerating all Practice Exercise Documents:**
 
 ```
 configlet generate <path/to/track> --spec-path path/to/problem/specifications
 ```
 
-#### Generating a single README
+**Regenerating an Individual Exercises Documents:**
 
 ```
 configlet generate <path/to/track> --spec-path path/to/problem/specifications --only example-exercise
 ```
 
-### Implementing tests
+### Implementing Practice Exercise Tests
 
-If an unimplemented exercise has a `canonical-data.json` file in the [problem-specifications] repository, a generation template must be created. See the [test generator documentation](docs/GENERATOR.md) for more information.
+If an unimplemented exercise has a `canonical-data.json` file in the [problem-specifications] repository, a generation template must be created. See the Python track [test generator documentation][python-track-test-generator] for more information.
 
-If an unimplemented exercise does not have a `canonical-data.json` file, the test file must be written manually (use existing test files for examples).
+If an unimplemented exercise does not have a `canonical-data.json` file, the test file must be written manually.
 
-### Example solutions
+### Practice Exercise Example solutions
 
 Example solution files serve two purposes:
 
 1. Verification of the tests
 2. Example implementation for mentor/student reference
 
-### config.json
-
-[`config.json`](config.json) is used by the website to determine which exercises to load an in what order. It also contains some exercise metadata, such as difficulty, labels, and if the exercise is a core exercise. New entries should be places just before the first exercise that is marked `"deprecated": true`:
-
-```JSON
-    {
-      "slug": "current-exercise",
-      "uuid": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-          "strings"
-      ]
-    },
-    <<< HERE
-    {
-      "slug": "old-exercise",
-      "uuid": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 2,
-      "topics": null,
-      "status": "deprecated"
-    },
-```
-
-Fields
-<table>
-<tr>
-    <td>slug</td>
-    <td>Hyphenated lowercase exercise name</td>
-</tr>
-<tr>
-    <td>uuid</td>
-    <td>Generate using <code>configlet uuid</code></td>
-</tr>
-<tr>
-    <td>core</td>
-    <td>Set to <code>false</code>; core exercises are decided by track maintainers</td>
-</tr>
-<tr>
-    <td>unlocked_by</td>
-    <td>Slug for the core exercise that unlocks the new one</td>
-</tr>
-<tr>
-    <td>difficulty</td>
-    <td><code>1</code> through <code>10</code>. Discuss with reviewer if uncertain.</td>
-</tr>
-<tr>
-    <td>topics</td>
-    <td>Array of relevant topics from the <a href="https://github.com/exercism/problem-specifications/blob/master/TOPICS.txt">topics list</a> </td>
-</tr>
-</table>
+Unlike concept exercise, practice exercise `example.py` files are NOT intended as as a "best practice" or "standard".  They are provided as proof that there is an acceptable and testable answer to the practice exercise.
 
 
-## Implementing Track-specific Exercises
+## Implementing Track-specific Practice Exercises
 
-Similar to implementing a canonical exercise that has no `canonical-data.json`, but the exercise README will also need to be written manually. Carefully follow the structure of generated exercise READMEs.
+Similar to implementing a canonical exercise that has no `canonical-data.json`, but the exercise documents will also need to be written manually. Carefully follow the structure of generated exercise documents and the [exercism practice exercise specification][practice-exercises].
 
 
-
+[.flake8]: https://github.com/exercism/python/blob/main/.flake8
 [EOL]: https://en.wikipedia.org/wiki/Newline
 [PEP8]: https://www.python.org/dev/peps/pep-0008/
 [american-english]: https://github.com/exercism/docs/blob/main/building/markdown/style-guide.md
 [being-a-good-community-member]: https://github.com/exercism/docs/tree/main/community/good-member
+[cater-waiter]: https://github.com/exercism/python/tree/main/exercises/concept/cater-waiter
+[card-games-testfile]: https://github.com/exercism/python/blob/main/exercises/concept/card-games/lists_test.py
 [concept-exercise-anatomy]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md
 [concept-exercises]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md
 [config-json]: https://github.com/exercism/javascript/blob/main/config.json
 [configlet-general]: https://github.com/exercism/configlet
 [configlet]: https://github.com/exercism/docs/blob/main/building/configlet/generating-documents.md
+[configlet-lint]: https://github.com/exercism/configlet#configlet-lint
+[distinguishing-test-iterations]: https://docs.python.org/3/library/unittest.html#distinguishing-test-iterations-using-subtests
+[enumerate]: https://docs.python.org/3/library/functions.html#enumerate
+[exercise-config-json]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md#full-example
 [exercise-presentation]: https://github.com/exercism/docs/blob/main/building/tracks/presentation.md
 [exercism-admins]: https://github.com/exercism/docs/blob/main/community/administrators.md
 [exercism-code-of-conduct]: https://exercism.org/docs/using/legal/code-of-conduct
@@ -340,15 +322,30 @@ Similar to implementing a canonical exercise that has no `canonical-data.json`, 
 [exercism-website]: https://exercism.org/
 [exercism-writing-style]: https://github.com/exercism/docs/blob/main/building/markdown/style-guide.md
 [flake8]: http://flake8.pycqa.org/
+[flake8-noqa]: https://flake8.pycqa.org/en/3.1.1/user/ignoring-errors.html#in-line-ignoring-errors
+[google-coding-style]: https://google.github.io/styleguide/pyguide.html
+[guidos-gorgeous-lasagna-testfile]: https://github.com/exercism/python/blob/main/exercises/concept/guidos-gorgeous-lasagna/lasagna_test.py
 [help-wanted]: https://github.com/exercism/python/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22
+[implicit-line-joining]: https://google.github.io/styleguide/pyguide.html#32-line-length
 [markdown-language]: https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf
 [open-an-issue]: https://github.com/exercism/python/issues/new/choose
 [pep8-for-humans]: https://pep8.org/
 [practice-exercise-anatomy]: https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md
+[practice-exercise-files]: https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md#exercise-files
 [practice-exercises]: https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md
 [prettier]: https://prettier.io/
 [problem-specifications]: https://github.com/exercism/problem-specifications
+[pylint]: https://pylint.pycqa.org/en/v2.11.1/user_guide/index.html
+[pylintrc]: https://github.com/exercism/python/blob/main/pylintrc
+[pylint-disable-check]: https://pylint.pycqa.org/en/latest/user_guide/message-control.html#block-disables
+[pytest]: https://docs.pytest.org/en/6.2.x/contents.html
+[pytestmark]: https://docs.pytest.org/en/6.2.x/example/markers.html
 [python-syllabus]: https://exercism.org/tracks/python/concepts
 [python-track-test-generator]: https://github.com/exercism/python/blob/main/docs/GENERATOR.md
+[.style.yapf]: https://github.com/exercism/python/blob/main/.style.yapf
+[subtest]: https://docs.python.org/3/library/unittest.html#unittest.TestCase.subTest
 [the-words-that-we-use]: https://github.com/exercism/docs/blob/main/community/good-member/words.md
+[unittest]: https://docs.python.org/3/library/unittest.html#unittest.TestCase
+[version-tagged-language-features]: https://docs.python.org/3/library/stdtypes.html#dict.popitem
 [website-contributing-section]: https://exercism.org/docs/building
+[yapf]: https://github.com/google/yapf
