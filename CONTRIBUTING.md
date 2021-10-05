@@ -13,7 +13,7 @@ Exercises are grouped into  **concept** exercises which teach the [Python syllab
 
 ## 🐛 **Did you find a bug?**
 
-It's not uncommon that people discover typos, confusing directions, or incorrect implementations of  certain tests or code examples.  Or you might have a great suggestion for a hint to aid students (💙) ,  see optimizations for exemplar or test code, find some missing test cases to add, or want to correct factual and/or logical errors.  Or maybe you have a great idea for an exercise or feature.
+It's not uncommon that people discover typos, confusing directions, or incorrect implementations of  certain tests or code examples.  Or you might have a great suggestion for a hint to aid students (💙 &nbsp;) ,  see optimizations for exemplar or test code, find some missing test cases to add, or want to correct factual and/or logical errors.  Or maybe you have a great idea for an exercise or feature.
 
 _Our track is always a work in progress!_ 🌟🌟   
 Please  📛 &nbsp;[Open an issue](https://github.com/exercism/python/issues/new/choose)&nbsp;📛 , and let us know what you've found.
@@ -57,14 +57,13 @@ Some defined roles in our community:  [Community Member](https://github.com/exer
 
 <br>
 
-- Maintainers are happy to review your work and help you out. &nbsp;💛&nbsp;💙&nbsp; But they may be in a different timezone, or tied up &nbsp;🧶&nbsp; with other tasks.  **Please wait at least 72 hours before pinging them.**  They will review your request as soon as they are able to.
+- Maintainers are happy to review your work and help you out.&nbsp;💛&nbsp;💙&nbsp; But they may be in a different timezone, or tied up &nbsp;🧶&nbsp; with other tasks.  **Please wait at least 72 hours before pinging them.**  They will review your request as soon as they are able to.
 - If you'd like in-progress feedback or discussion, please mark your PR as a `[draft]`
 - Pull requests should be focused on a single exercise, issue, or change.
-
 - Pull Request titles and descriptions should make clear **what** has changed and **why**. Please link &nbsp;🔗&nbsp; to any related issues the PR addresses.
-- 📛&nbsp;[An issue should be opened](https://github.com/exercism/python/issues/new/choose)&nbsp;📛&nbsp; _**before**_ creating a Pull Request that makes significant or breaking changes to an existing exercise.
+- 📛&nbsp;[An issue should be opened](https://github.com/exercism/python/issues/new/choose)&nbsp;📛&nbsp; _**before**_ creating a Pull Request making significant or breaking changes to an existing exercise.
   - The same holds true for changes across multiple exercises.
-  - It is best to discuss changes with &nbsp;🧰&nbsp;maintainers before doing a lot of work.
+  - It is best to discuss changes with &nbsp;🧰 &nbsp;maintainers before doing a lot of work.
 - Follow coding standards found in [PEP8](https://www.python.org/dev/peps/pep-0008/) ( ["For Humans" version here](https://pep8.org/).)  We do have some more specific requirements.  More on that a little later.
 - All files should have a proper [EOL](https://en.wikipedia.org/wiki/Newline) at the end. This means one carriage return at the end of the final line of text in files.
 - Otherwise, watch out &nbsp;⚠️&nbsp; for trailing spaces, extra blank lines, extra spaces, and spaces in blank lines.
