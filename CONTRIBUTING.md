@@ -57,23 +57,28 @@ Some defined roles in our community:  [Community Member](https://github.com/exer
 
 <br>
 
+- Maintainers are happy to review your work and help you out. &nbsp;💛&nbsp;💙&nbsp; But they may be in a different timezone, or tied up &nbsp;🧶&nbsp; with other tasks.  **Please wait at least 72 hours before pinging them.**  They will review your request as soon as they are able to.
+- If you'd like in-progress feedback or discussion, please mark your PR as a `[draft]`
 - Pull requests should be focused on a single exercise, issue, or change.
-- PR titles and descriptions should make clear **what** has changed and **why**. Please link 🔗  to any related issues the PR addresses.
-- 📛  [An issue should be opened](https://github.com/exercism/python/issues/new/choose)  📛 _**before**_ creating a PR that makes significant or breaking change to an existing exercise.  The same holds true for  changes across multiple exercises. It is best to discuss these changes with 🧰  maintainers before doing the work.
-- Follow coding standards found in [PEP8](https://www.python.org/dev/peps/pep-0008/) ( ["For Humans" version here](https://pep8.org/).)  We do have some more specific requirements.  More on that later.
+
+- Pull Request titles and descriptions should make clear **what** has changed and **why**. Please link &nbsp;🔗&nbsp; to any related issues the PR addresses.
+- 📛&nbsp;[An issue should be opened](https://github.com/exercism/python/issues/new/choose)&nbsp;📛&nbsp; _**before**_ creating a Pull Request that makes significant or breaking changes to an existing exercise.
+  - The same holds true for changes across multiple exercises.
+  - It is best to discuss changes with &nbsp;🧰&nbsp;maintainers before doing a lot of work.
+- Follow coding standards found in [PEP8](https://www.python.org/dev/peps/pep-0008/) ( ["For Humans" version here](https://pep8.org/).)  We do have some more specific requirements.  More on that a little later.
 - All files should have a proper [EOL](https://en.wikipedia.org/wiki/Newline) at the end. This means one carriage return at the end of the final line of text in files.
-- Watch out otherwise for trailing spaces, extra blank lines, and spaces in blank lines. ⚠️
-- The CI is going to run **a lot** of check on your PR. Pay attention to the failures, try to understand and fix them.  If you need help, comment in the PR or issue. 🙋🏽‍♀️
+- Otherwise, watch out &nbsp;⚠️&nbsp; for trailing spaces, extra blank lines, extra spaces, and spaces in blank lines.
+- The CI is going to run **a lot** of checks on your PR. Pay attention to the failures, try to understand and fix them.  If you need help, comment in the PR or issue.&nbsp; 🙋🏽‍♀️ &nbsp;  The maintainers are happy to help troubleshoot.
 
 <br>
 
-## A Little More on Writing Style and Standards
+## A Little More on Prose Writing Style and Standards
 
 <br>
 
 Non-code content (_exercise introductions & instructions, hints, concept write-ups, documentation etc._) should be written in [American English](https://github.com/exercism/docs/blob/main/building/markdown/style-guide.md) .  We strive to watch [the words we use](https://github.com/exercism/docs/blob/main/community/good-member/words.md).
 
-When a usage is contested or ambiguous, we default to what is best understood by our international community of learners, even if it "sounds a little weird"  to a "native" American English speaker.
+When a word or phrase usage is contested or ambiguous, we default to what is best understood by our international community of learners, even if it "sounds a little weird"  to a "native" American English speaker.
 
 Our documents use [Markdown](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf) , with certain [alterations](https://github.com/exercism/docs/blob/main/building/markdown/widgets.md) & [additions](https://github.com/exercism/docs/blob/main/building/markdown/internal-linking.md).  Here is our full [Markdown Specification](https://github.com/exercism/docs/blob/main/building/markdown/markdown.md).  We format/lint our Markdown with [Prettier](https://prettier.io/).
 
@@ -84,15 +89,20 @@ Our documents use [Markdown](https://guides.github.com/pdfs/markdown-cheatsheet-
 
 <br>
 
-- Each exercise must stand on its own. Please do not use or reference files outside the exercise directory. "Outside" files will not be included if a  student fetches the exercise via the CLI.
+- Each exercise must be self-contained. Please do not use or reference files that reside outside the given exercise directory. "Outside" files will not be included if a student fetches the exercise via the CLI.
 
-- Each exercise/problem should have a complete  test suite, an example/exemplar solution, and a stub file ready for student implementation.
+- Each exercise/problem should include a complete  test suite, an example/exemplar solution, and a stub file ready for student implementation.
 
-  - See  [Concept Exercise Anatomy](https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md),  or  [Practice Exercise Anatomy](https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md) depending on to which type of exercise you are contributing.
+  - See  [Concept Exercise Anatomy](https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md),  or  [Practice Exercise Anatomy](https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md) depending on which type of exercise you are contributing to.
 
-- For **practice exercises**, descriptions and instructions come from a centralized cross-track  [problem specifications](https://github.com/exercism/problem-specifications) repository. Any updates or changes need to be proposed/approved in that repository first. If Python-specific changes become necessary, they  need to be appended to the canonical instructions by creating a `instructions.append.md` file in this repository.
+- For **practice exercise**, descriptions and instructions come from a centralized, cross-track  [problem specifications](https://github.com/exercism/problem-specifications) repository.
 
-- **Practice Exericse Test Suits** for many exercises are similarly [auto-generated]() from data in  [problem specifications](https://github.com/exercism/problem-specifications).  **Any changes to them need to be proposed/discussed in that repository, and approved by 3 track maintainers.** If Python-specific changes become necessary, they can be appended to this tracks `tests.toml` file.   📛  [**Please file an issue**](https://github.com/exercism/python/issues/new/choose)&nbsp; 📛  and check with maintainers before adding  any Python-specific tests.
+  - Any updates or changes need to be proposed/approved in `problem-specifications` first.
+  - If Python-specific changes become necessary, they  need to be appended to the canonical instructions by creating a `instructions.append.md` file in this (`exercism/Python`) repository.
+
+- **Practice Exericse Test Suits** for many practice exercises are similarly [auto-generated](##Auto-Generated Test Files and Test Templates) from data in [problem specifications](https://github.com/exercism/problem-specifications).
+  - Any changes to them need to be proposed/discussed in the `problem-specifications` repository and approved by **3 track maintainers**, since changes could potentially affect many (or all) exercism language tracks.
+  - If Python-specific test changes become necessary, they can be appended to the exercise `tests.toml` file.   📛&nbsp;[**Please file an issue**](https://github.com/exercism/python/issues/new/choose)&nbsp;📛 &nbsp; and check with maintainers before adding any Python-specific tests.
 
 
 <br>
