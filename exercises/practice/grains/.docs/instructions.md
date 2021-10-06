@@ -13,14 +13,15 @@ There are 64 squares on a chessboard (where square 1 has one grain, square 2 has
 
 Write code that shows:
 - how many grains were on a given square, and
-- the total number of grains on the chessboard
+- the total number of grains on the chessboard,
+- and throws a Value Error for numbers over 64.
 
 ## For bonus points
 
 Did you get the tests passing and the code clean? If you want to, these
 are some additional things you could try:
 
-- Optimize for speed.
+- Optimize for speed. Bitwise operators anyone?
 - Optimize for readability.
 
 Then please share your thoughts in a comment on the submission. Did this
