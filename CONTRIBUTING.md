@@ -7,7 +7,7 @@ Thank you so much for your interest in contributing to the Python track!  **We a
 
 `exercsim/Python` is  one of the many tracks on [exercism][exercism-website]. This repo holds all the instructions, tests, code, & support files for Python *exercises* currently under development or implemented & available for students.
 
-Exercises are grouped into  **concept** exercises which teach the [Python syllabus][python-syllabus], and  **practice** exercises, which are unlocked by progressing in the syllabus tree.  Practice exercises are open-ended, and can be used to practice  concepts learned, try out new techniques, and _play_.  These two exercise groupings can be found in the track [`config.json`][config-json], and under the `python/exercises` directory.
+Exercises are grouped into  **concept** exercises which teach the [Python syllabus][python-syllabus], and  **practice** exercises, which are unlocked by progressing in the syllabus tree.  Practice exercises are open-ended, and can be used to practice  concepts learned, try out new techniques, and _play_.  These two exercise groupings can be found in the track [config.json][config-json], and under the `python/exercises` directory.
 
 <br>
 
@@ -39,7 +39,7 @@ But let's talk before you take a whole lot of time implementing anything.
 
 ✨&nbsp;🦄&nbsp; Here is the good stuff:
 
-[Track Structure][exercism-track-structure] **|** [Tasks][exercism-tasks] **|** [Concepts][exercism-concepts] **|** [Concept Exercises][concept-exercises] **|** [Practice Exercises][practice-exercises] **|** [Presentation][exercise-presentation] **|** [ Style Guide for Writing][exercism-writing-style] **|** [Markdown Specification][exercism-markdown-specification]
+[Track Structure][exercism-track-structure]  **|**  [Tasks][exercism-tasks] **|** [Concepts][exercism-concepts] **|** [Concept Exercises][concept-exercises]  **|**  [Practice Exercises][practice-exercises]  **|** [Presentation][exercise-presentation]  **|**  [ Style Guide for Writing][exercism-writing-style]  **|**  [Markdown Specification][exercism-markdown-specification]
 
 Web-formatted &nbsp;🕸️ &nbsp; versions are available in the [contributing section][website-contributing-section] of exercsim.org.
 
@@ -49,10 +49,10 @@ Web-formatted &nbsp;🕸️ &nbsp; versions are available in the [contributing s
 
 <br>
 
-🌟🌟 If you have not already done so, please take a moment to read our  [Code of Conduct][exercism-code-of-conduct] & [Being a Good Community Member][being-a-good-community-member]. It might also be helpful to take a look at [The words that we use][the-words-that-we-use].
+🌟🌟&nbsp; If you have not already done so, please take a moment to read our [Code of Conduct][exercism-code-of-conduct] & [Being a Good Community Member][being-a-good-community-member]. It might also be helpful to take a look at [The words that we use][the-words-that-we-use].
 
 
-Some defined roles in our community:  [Community Member][being-a-good-community-member]  |  [Contributors][exercism-contributors] | [Mentors][exercism-mentors] | [Maintainers][exercism-track-maintainers]  | [Admins][exercism-admins]
+Some defined roles in our community:  [Community Member][being-a-good-community-member] **|**  [Contributors][exercism-contributors] **|** [Mentors][exercism-mentors] **|** [Maintainers][exercism-track-maintainers]  **|** [Admins][exercism-admins]
 
 <br>
 
@@ -71,6 +71,14 @@ Some defined roles in our community:  [Community Member][being-a-good-community-
 - All files should have a proper [EOL][EOL] at the end. This means one carriage return at the end of the final line of text in files.
 - Otherwise, watch out &nbsp;⚠️&nbsp; for trailing spaces, extra blank lines, extra spaces, and spaces in blank lines.
 - The CI is going to run **a lot** of checks on your PR. Pay attention to the failures, try to understand and fix them.  If you need help, comment in the PR or issue.&nbsp; 🙋🏽‍♀️ &nbsp;  The maintainers are happy to help troubleshoot.
+
+
+&nbsp;⚠️&nbsp;**Before committing**&nbsp;⚠️&nbsp;
+
+- Run `configlet fmt` and `configlet lint` before committing if [config.json](config-json) has been modified.
+- Run [flake8][flake8] to ensure all Python code conforms to general style standards.
+- Run `test/check-exercises.py [EXERCISE]` to check if your test changes function correctly.
+- If you modified or created a `hints.md` file, [regenerate the README](#generating-exercise-readmes)
 
 <br>
 
@@ -102,7 +110,7 @@ Our documents use [Markdown][markdown-language], with certain [alterations][exer
   - Any updates or changes need to be proposed/approved in `problem-specifications` first.
   - If Python-specific changes become necessary, they  need to be appended to the canonical instructions by creating a `instructions.append.md` file in this (`exercism/Python`) repository.
 
-- **Practice Exericse Test Suits** for many practice exercises are similarly [auto-generated](##Auto-Generated Test Files and Test Templates) from data in [problem specifications][problem-specifications].
+- **Practice Exericse Test Suits** for many practice exercises are similarly [auto-generated][##Auto-Generated Test Files and Test Templates] from data in [problem specifications][problem-specifications].
   - Any changes to them need to be proposed/discussed in the `problem-specifications` repository and approved by **3 track maintainers**, since changes could potentially affect many (_or all_) exercism language tracks.
   - If Python-specific test changes become necessary, they can be appended to the exercise `tests.toml` file.   📛&nbsp;[**Please file an issue**][open-an-issue]&nbsp;📛 &nbsp; and check with maintainers before adding any Python-specific tests.
 
@@ -287,19 +295,11 @@ Fields
 Similar to implementing a canonical exercise that has no `canonical-data.json`, but the exercise README will also need to be written manually. Carefully follow the structure of generated exercise READMEs.
 
 
-## Pull Request Tips
-
-Before committing:
-- Run `configlet fmt` and `configlet lint` before committing if [`config.json`](config.json) has been modified
-- Run [flake8] to ensure all Python code conforms to style standards
-- Run `test/check-exercises.py [EXERCISE]` to check if your test changes function correctly
-- If you modified or created a `hints.md` file, [regenerate the README](#generating-exercise-readmes)
-- If your changes affect multiple exercises, try to break them up into a separate PR for each exercise.
 
 
-[configlet]: https://github.com/exercism/configlet
+
+[configlet-general]: https://github.com/exercism/configlet
 [Exercism contributing guide]: https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/README.md
-[problem-specifications]: https://github.com/exercism/problem-specifications
 [topics list]: https://github.com/exercism/problem-specifications/blob/master/TOPICS.txt
 [flake8]: http://flake8.pycqa.org/
 
@@ -327,7 +327,6 @@ Before committing:
 [exercism-writing-style]: (https://github.com/exercism/docs/blob/main/building/markdown/style-guide.md)
 [help-wanted]: (https://github.com/exercism/python/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
 [markdown-language]: (https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
-[markdown-specification]: (https://github.com/exercism/docs/blob/main/building/markdown/markdown.md)
 [open-an-issue]: (https://github.com/exercism/python/issues/new/choose)
 [practice-exercise-anatomy]: (https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md)
 [practice-exercises]: (https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md)
@@ -337,4 +336,4 @@ Before committing:
 [python-track-test-generator]: (https://github.com/exercism/python/blob/main/docs/GENERATOR.md)
 [the-words-that-we-use]: (https://github.com/exercism/docs/blob/main/community/good-member/words.md)
 [website-contributing-section]:(https://exercism.org/docs/building)
- [pep8-for-humans]: (https://pep8.org/)
+[pep8-for-humans]: (https://pep8.org/)
