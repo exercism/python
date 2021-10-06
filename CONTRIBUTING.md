@@ -7,16 +7,16 @@ Thank you so much for your interest in contributing to the Python track!  **We a
 
 `exercsim/Python` is  one of the many tracks on [exercism][exercism-website]. This repo holds all the instructions, tests, code, & support files for Python *exercises* currently under development or implemented & available for students.
 
-Exercises are grouped into  **concept** exercises which teach the [Python syllabus][python-syllabus], and  **practice** exercises, which are unlocked by progressing in the syllabus tree.  Practice exercises are open-ended, and can be used to practice  concepts learned, try out new techniques, and _play_.  These two exercise groupings can be found in the track [config.json][config-json], and under the `python/exercises` directory.
+Exercises are grouped into **concept** exercises which teach the [Python syllabus][python-syllabus], and **practice** exercises, which are unlocked by progressing in the syllabus tree. Concept exercises are constrained to a small set of language or syntax features. Practice exercises are open-ended, and can be used to practice concepts learned, try out new techniques, and _play_.  These two exercise groupings can be found in the track [config.json][config-json], and under the `python/exercises` directory.
 
 <br>
 
 ## 🐛 **Did you find a bug?**
 
-It's not uncommon that people discover typos, confusing directions, or incorrect implementations of  certain tests or code examples.  Or you might have a great suggestion for a hint to aid students (💙 &nbsp;) ,  see optimizations for exemplar or test code, find some missing test cases to add, or want to correct factual and/or logical errors.  Or maybe you have a great idea for an exercise or feature.
+It's not uncommon that people discover typos, confusing directions, or incorrect implementations of  certain tests or code examples.  Or you might have a great suggestion for a hint to aid students (💙 &nbsp;) ,  see optimizations for exemplar or test code, find missing test cases to add, or want to correct factual and/or logical errors.  Or maybe you have a great idea for an exercise or feature (&nbsp;❗&nbsp;).
 
 _Our track is always a work in progress!_ 🌟🌟   
-Please  📛 &nbsp;[Open an issue][open-an-issue]&nbsp;📛 , and let us know what you've found.
+Please  📛 &nbsp;[Open an issue][open-an-issue]&nbsp;📛 , and let us know what you have found or suggest.
 
 <br>
 
@@ -29,9 +29,9 @@ Please  📛 &nbsp;[Open an issue][open-an-issue]&nbsp;📛 , and let us know wh
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3️⃣ &nbsp;&nbsp;&nbsp;&nbsp;Contributions from our [help wanted][help-wanted] issue list,  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4️⃣ &nbsp;&nbsp;&nbsp;&nbsp;Larger (_and previously agreed-upon_) contributions from recent & regular (_within the last 6 months_) contributors.
 
-When in doubt,   📛 &nbsp;[Open an issue][open-an-issue]&nbsp;📛. We will happily discuss your proposed change. 🐍
+When in doubt, 📛 &nbsp;[Open an issue][open-an-issue]&nbsp;📛. We will happily discuss your proposed change. 🐍
 
-But let's talk before you take a whole lot of time implementing anything.
+But let's talk before you take a whole lot of time or energy implementing anything.
 
 <br>
 
@@ -39,7 +39,7 @@ But let's talk before you take a whole lot of time implementing anything.
 
 ✨&nbsp;🦄&nbsp; Here is the good stuff:
 
-[Track Structure][exercism-track-structure]  **|**  [Tasks][exercism-tasks] **|** [Concepts][exercism-concepts] **|** [Concept Exercises][concept-exercises]  **|**  [Practice Exercises][practice-exercises]  **|** [Presentation][exercise-presentation]  **|**  [ Style Guide for Writing][exercism-writing-style]  **|**  [Markdown Specification][exercism-markdown-specification]
+[Track Structure][exercism-track-structure] **|** [Tasks][exercism-tasks] **|** [Concepts][exercism-concepts] **|** [Concept Exercises][concept-exercises] **|** [Practice Exercises][practice-exercises]  **|** [Presentation][exercise-presentation] **|** [Writing Style Guide][exercism-writing-style] **|** [Markdown Specification][exercism-markdown-specification]
 
 Web-formatted &nbsp;🕸️ &nbsp; versions are available in the [contributing section][website-contributing-section] of exercsim.org.
 
@@ -49,7 +49,8 @@ Web-formatted &nbsp;🕸️ &nbsp; versions are available in the [contributing s
 
 <br>
 
-🌟🌟&nbsp; If you have not already done so, please take a moment to read our [Code of Conduct][exercism-code-of-conduct] & [Being a Good Community Member][being-a-good-community-member]. It might also be helpful to take a look at [The words that we use][the-words-that-we-use].
+🌟🌟&nbsp; If you have not already done so, please take a moment to read our [Code of Conduct][exercism-code-of-conduct] & [Being a Good Community Member][being-a-good-community-member] documents.
+It might also be helpful to take a look at [The words that we use][the-words-that-we-use].
 
 
 Some defined roles in our community:  [Community Member][being-a-good-community-member] **|**  [Contributors][exercism-contributors] **|** [Mentors][exercism-mentors] **|** [Maintainers][exercism-track-maintainers]  **|** [Admins][exercism-admins]
@@ -60,64 +61,82 @@ Some defined roles in our community:  [Community Member][being-a-good-community-
 
 <br>
 
-- Maintainers are happy to review your work and help you out.&nbsp;💛&nbsp;💙&nbsp; But they may be in a different timezone, or tied up &nbsp;🧶&nbsp; with other tasks.  **Please wait at least 72 hours before pinging them.**  They will review your request as soon as they are able to.
+- Maintainers are happy to review your work and help you.&nbsp;💛&nbsp;💙&nbsp;
+  - They may be in a different timezone&nbsp;⌚&nbsp;, or tied up &nbsp;🧶&nbsp; with other tasks. They will review your request as soon as they are able to.
+  - **Please wait at least 72 hours before pinging.**
 - If you'd like in-progress feedback or discussion, please mark your Pull Request as a `[draft]`
 - Pull requests should be focused on a single exercise, issue, or change.
-- Pull Request titles and descriptions should make clear **what** has changed and **why**. Please link &nbsp;🔗&nbsp; to any related issues the PR addresses.
-- 📛&nbsp;[An issue should be opened][open-an-issue]&nbsp;📛&nbsp; _**before**_ creating a Pull Request making significant or breaking changes to an existing exercise.
-  - The same holds true for changes across multiple exercises.
+- Pull Request titles and descriptions should make clear **what** has changed and **why**.
+  - Please link &nbsp;🔗&nbsp; to any related issues the PR addresses.
+- 📛&nbsp;[Open an issue][open-an-issue]&nbsp;📛&nbsp;&nbsp; and discussed  _**before**_ creating a Pull Request making significant or breaking changes to an existing exercise.
+  - The same rule holds true for changes across multiple exercises.
   - It is best to discuss changes with &nbsp;🧰 &nbsp;maintainers before doing a lot of work.
-- Follow coding standards found in [PEP8][PEP8] ( ["For Humans" version here][pep8-for-humans]. We do have some more specific requirements.  More on that a little later.
+- Follow coding standards found in [PEP8][PEP8] (["For Humans" version here][pep8-for-humans]).
+  - We do have some more specific requirements.  More on that a little later.
 - All files should have a proper [EOL][EOL] at the end. This means one carriage return at the end of the final line of text in files.
 - Otherwise, watch out &nbsp;⚠️&nbsp; for trailing spaces, extra blank lines, extra spaces, and spaces in blank lines.
-- The CI is going to run **a lot** of checks on your PR. Pay attention to the failures, try to understand and fix them.  If you need help, comment in the PR or issue.&nbsp; 🙋🏽‍♀️ &nbsp;  The maintainers are happy to help troubleshoot.
+- The CI is going to run **a lot** of checks on your PR. Pay attention to the failures, try to understand and fix them.
+  - If you need help, comment in the PR or issue.&nbsp; 🙋🏽‍♀️ &nbsp;  The maintainers are happy to help troubleshoot.
 
 
-&nbsp;⚠️&nbsp;**Before committing**&nbsp;⚠️&nbsp;
+&nbsp;⚠️&nbsp;&nbsp;**Before committing**&nbsp;⚠️&nbsp;
 
-- Run `configlet fmt` and `configlet lint` before committing if [config.json](config-json) has been modified.
-- Run [flake8][flake8] to ensure all Python code conforms to general style standards.
+- Run `configlet fmt` and `configlet lint` if the track [config.json](config-json) has been modified.
+- Run [Prettier][prettier] on all markdown files.
+- Run [flake8][flake8] to ensure all Python code files conform to general code style standards.
+- Run [???] to help format your code
 - Run `test/check-exercises.py [EXERCISE]` to check if your test changes function correctly.
-- If you modified or created a `hints.md` file, [regenerate the README](#generating-exercise-readmes)
+- Run the `example.py` or `exemplar.py` file against the test file to ensure that it passes without error.
+- If you modified or created a `hints.md` file for a practice exercise, [regenerate](#generating-exercise-readmes) it.
 
 <br>
 
-## A Little More on Prose Writing Style and Standards
+## 📄 A Little More on Prose Writing Style and Standards
 
 <br>
 
-Non-code content (_exercise introductions & instructions, hints, concept write-ups, documentation etc._) should be written in [American English][american-english]. We strive to watch [the words we use][the-words-we-use].
+Non-code content (_exercise introductions & instructions, hints, concept write-ups, documentation etc._) should be written in [American English][american-english]. We strive to watch [the words we use][the-words-that-we-use].
 
 When a word or phrase usage is contested | ambiguous, we default to what is best understood by our international community of learners, even if it "sounds a little weird"  to a "native" American English speaker.
 
-Our documents use [Markdown][markdown-language], with certain [alterations][exercism-markdown-widgets] & [additions][exercism-internal-linking]. Here is our full [Markdown Specification][exercism-markdown-specification]. We format/lint our Markdown with [Prettier][prettier].
+Our documents use [Markdown][markdown-language], with certain [alterations][exercism-markdown-widgets] & [additions][exercism-internal-linking]. Here is our full [Markdown Specification][exercism-markdown-specification]. &nbsp;📐 We format/lint our Markdown with [Prettier][prettier].&nbsp;✨
 
 
 <br>
 
-##  A Little More on Exercises
+##  Little More on Coding Standards
+<br>
+
 
 <br>
+
+##   🏋️ A Little More on Exercises 🏋🏽‍♀️
 
 - Each exercise must be self-contained. Please do not use or reference files that reside outside the given exercise directory. "Outside" files will not be included if a student fetches the exercise via the CLI.
 
-- Each exercise/problem should include a complete  test suite, an example/exemplar solution, and a stub file ready for student implementation.
+- Each exercise/problem should include a complete test suite, an example/exemplar solution, and a stub file ready for student implementation.
 
   - See  [Concept Exercise Anatomy][concept-exercise-anatomy],  or  [Practice Exercise Anatomy][practice-exercise-anatomy] depending on which type of exercise you are contributing to.
 
-- For **practice exercise**, descriptions and instructions come from a centralized, cross-track  [problem specifications][problem-specifications] repository.
+  <details>
+    <summary>Concept Exercise Checklist</summary>>
+  </details>
+
+    <br>
+
+     <details>
+        <summary>Practice Exercise Checklist</summary>>
+      </details>
+
+- **Practice exercise**, descriptions and instructions come from a centralized, cross-track  [problem specifications][problem-specifications] repository.
 
   - Any updates or changes need to be proposed/approved in `problem-specifications` first.
   - If Python-specific changes become necessary, they  need to be appended to the canonical instructions by creating a `instructions.append.md` file in this (`exercism/Python`) repository.
 
-- **Practice Exericse Test Suits** for many practice exercises are similarly [auto-generated][##Auto-Generated Test Files and Test Templates] from data in [problem specifications][problem-specifications].
+- Practice Exercise **Test Suits** for many practice exercises are similarly [auto-generated][##Auto-Generated Test Files and Test Templates] from data in [problem specifications][problem-specifications].
   - Any changes to them need to be proposed/discussed in the `problem-specifications` repository and approved by **3 track maintainers**, since changes could potentially affect many (_or all_) exercism language tracks.
   - If Python-specific test changes become necessary, they can be appended to the exercise `tests.toml` file.   📛&nbsp;[**Please file an issue**][open-an-issue]&nbsp;📛 &nbsp; and check with maintainers before adding any Python-specific tests.
 
-
-<br>
-
-## Python Coding Standards
 
 <br>
 
@@ -128,12 +147,14 @@ Our documents use [Markdown][markdown-language], with certain [alterations][exer
 
 <br>
 
-Exercises on this track officially support Python >= `3.8`  Track tooling (`test runners`, `analyzers`, and r`epresenters`)  all run on Python `3.9`.
+This track officially supports Python >= `3.8`  The track `test runner`, `analyzer`, and `representer` run in docker on `python:3.9-slim`.
 
-*  All exercises going forward should be written for compatibility with Python >= `3.8`,.
-* Version backward _incompatibility_ (*e.g* an exercise using a `3.8` or `3.9` only feature)  should be clearly notied in any exercise introduction or notes.
+Although the majority of test cases are written using `unittest.TestCase`,
 
-* _Most_ exercises will work with Python 3.6+, and _many_ are compatible with Python 2.7+.   Please do not change existing exercises to add new `3.6`+ features without consulting with a maintainer first.
+*  All exercises should be written for compatibility with Python >= `3.8`,.
+*  Version backward _incompatibility_ (*e.g* an exercise using a `3.8` or `3.9` **only** feature)  should be clearly noted in any exercise introduction or notes.
+
+* _Most_ exercises will work with Python `3.6+`, and _many_ are compatible with Python 2.7+.   Please do not change existing exercises to add new `3.6`+ features without consulting with a maintainer first.
 
 - All test suites and example solutions must work in all Python versions that we currently support. When in doubt about a feature, please check with maintainers.
 
