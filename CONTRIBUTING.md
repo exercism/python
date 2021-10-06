@@ -5,9 +5,9 @@ Hi. &nbsp;👋🏽 &nbsp;👋 &nbsp;
 Thank you so much for your interest in contributing to the Python track!  **We are happy you are here.** 🌟 &nbsp; 🎉
 
 
-`exercsim/Python` is  one of the many tracks on [exercism](https://exercism.org/).   This repo holds all the instructions, tests, code, & support files for Python *exercises* currently under development or implemented & available for students.
+`exercsim/Python` is  one of the many tracks on [exercism][exercism-website]. This repo holds all the instructions, tests, code, & support files for Python *exercises* currently under development or implemented & available for students.
 
-Exercises are grouped into  **concept** exercises which teach the [Python syllabus](https://exercism.org/tracks/python/concepts), and  **practice** exercises, which are unlocked by progressing in the syllabus tree.  Practice exercises are open-ended, and can be used to practice  concepts learned, try out new techniques, and _play_.  These two exercise groupings can be found in the track [`config.json`](https://github.com/exercism/javascript/blob/main/config.json), and under the `python/exercises` directory.
+Exercises are grouped into  **concept** exercises which teach the [Python syllabus][python-syllabus], and  **practice** exercises, which are unlocked by progressing in the syllabus tree.  Practice exercises are open-ended, and can be used to practice  concepts learned, try out new techniques, and _play_.  These two exercise groupings can be found in the track [`config.json`][config-json], and under the `python/exercises` directory.
 
 <br>
 
@@ -16,20 +16,20 @@ Exercises are grouped into  **concept** exercises which teach the [Python syllab
 It's not uncommon that people discover typos, confusing directions, or incorrect implementations of  certain tests or code examples.  Or you might have a great suggestion for a hint to aid students (💙 &nbsp;) ,  see optimizations for exemplar or test code, find some missing test cases to add, or want to correct factual and/or logical errors.  Or maybe you have a great idea for an exercise or feature.
 
 _Our track is always a work in progress!_ 🌟🌟   
-Please  📛 &nbsp;[Open an issue](https://github.com/exercism/python/issues/new/choose)&nbsp;📛 , and let us know what you've found.
+Please  📛 &nbsp;[Open an issue][open-an-issue]&nbsp;📛 , and let us know what you've found.
 
 <br>
 
 ## 🚧  **Did you write a patch that fixes a bug?**
 
- 💛 💙 **We Warmly Welcome Pull Requests that are:**
+ 💛 💙&nbsp; **We Warmly Welcome Pull Requests that are:**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1️⃣  &nbsp;&nbsp; Small, contained fixes for typos/grammar/punctuation/code syntax on [one] exercise,  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1️⃣  &nbsp;&nbsp;&nbsp; Small, contained fixes for typos/grammar/punctuation/code syntax on [one] exercise,  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2️⃣&nbsp;&nbsp;&nbsp;&nbsp; Medium changes that have been agreed/discussed via a filed issue,  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3️⃣ &nbsp;&nbsp;&nbsp;&nbsp;Contributions from our [help wanted](https://github.com/exercism/python/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) issue list,  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3️⃣ &nbsp;&nbsp;&nbsp;&nbsp;Contributions from our [help wanted][help-wanted] issue list,  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4️⃣ &nbsp;&nbsp;&nbsp;&nbsp;Larger (_and previously agreed-upon_) contributions from recent & regular (_within the last 6 months_) contributors.
 
-When in doubt,   📛 &nbsp;[Open an issue](https://github.com/exercism/python/issues/new/choose)&nbsp;📛.  We'll happily discuss your proposed change. 🐍
+When in doubt,   📛 &nbsp;[Open an issue][open-an-issue]&nbsp;📛. We will happily discuss your proposed change. 🐍
 
 But let's talk before you take a whole lot of time implementing anything.
 
@@ -37,19 +37,22 @@ But let's talk before you take a whole lot of time implementing anything.
 
 ## :books:  **Want to jump directly into Exercism specifications & detail?**
 
-[Track Structure](https://github.com/exercism/docs/tree/main/building/tracks) **|** [Tasks](https://exercism.org/docs/building/product/tasks) **|** [Concepts](https://github.com/exercism/docs/blob/main/building/tracks/concepts.md) **|** [Concept Exercises](https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md) **|** [Practice Exercises](https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md) **|** [Presentation](https://github.com/exercism/docs/blob/main/building/tracks/presentation.md) **|** [ Style Guide for Writing](https://github.com/exercism/docs/blob/main/building/markdown/style-guide.md) **|** [Markdown Specification](https://github.com/exercism/docs/blob/main/building/markdown/markdown.md)
+✨&nbsp;🦄&nbsp; Here is the good stuff:
+
+[Track Structure][exercism-track-structure] **|** [Tasks][exercism-tasks] **|** [Concepts][exercism-concepts] **|** [Concept Exercises][concept-exercises] **|** [Practice Exercises][practice-exercises] **|** [Presentation][exercise-presentation] **|** [ Style Guide for Writing][exercism-writing-style] **|** [Markdown Specification][exercism-markdown-specification]
+
+Web-formatted &nbsp;🕸️ &nbsp; versions are available in the [contributing section][website-contributing-section] of exercsim.org.
 
 <br>
 
-## The Exercism Community
+## 🌍 &nbsp; The Exercism Community &nbsp; 🌏
+
+<br>
+
+🌟🌟 If you have not already done so, please take a moment to read our  [Code of Conduct][exercism-code-of-conduct] & [Being a Good Community Member][being-a-good-community-member]. It might also be helpful to take a look at [The words that we use][the-words-that-we-use].
 
 
-
-🌟🌟 If you have not already done so, please take a moment to read our  [Code of Conduct](https://exercism.org/docs/using/legal/code-of-conduct) & [Being a Good Community Member](https://github.com/exercism/docs/tree/main/community/good-member) .  It might also be helpful to take a look at [The words that we use](https://github.com/exercism/docs/blob/main/community/good-member/words.md).
-
-
-
-Some defined roles in our community:  [Community Member](https://github.com/exercism/docs/tree/main/community/good-member) |  [Contributors](https://github.com/exercism/docs/blob/main/community/contributors.md) |[Mentors](https://github.com/exercism/docs/tree/main/mentoring) |  [Maintainers](https://github.com/exercism/docs/blob/main/community/maintainers.md) | [Admins](https://github.com/exercism/docs/blob/main/community/administrators.md)
+Some defined roles in our community:  [Community Member][being-a-good-community-member]  |  [Contributors][exercism-contributors] | [Mentors][exercism-mentors] | [Maintainers][exercism-track-maintainers]  | [Admins][exercism-admins]
 
 <br>
 
@@ -58,14 +61,14 @@ Some defined roles in our community:  [Community Member](https://github.com/exer
 <br>
 
 - Maintainers are happy to review your work and help you out.&nbsp;💛&nbsp;💙&nbsp; But they may be in a different timezone, or tied up &nbsp;🧶&nbsp; with other tasks.  **Please wait at least 72 hours before pinging them.**  They will review your request as soon as they are able to.
-- If you'd like in-progress feedback or discussion, please mark your PR as a `[draft]`
+- If you'd like in-progress feedback or discussion, please mark your Pull Request as a `[draft]`
 - Pull requests should be focused on a single exercise, issue, or change.
 - Pull Request titles and descriptions should make clear **what** has changed and **why**. Please link &nbsp;🔗&nbsp; to any related issues the PR addresses.
-- 📛&nbsp;[An issue should be opened](https://github.com/exercism/python/issues/new/choose)&nbsp;📛&nbsp; _**before**_ creating a Pull Request making significant or breaking changes to an existing exercise.
+- 📛&nbsp;[An issue should be opened][open-an-issue]&nbsp;📛&nbsp; _**before**_ creating a Pull Request making significant or breaking changes to an existing exercise.
   - The same holds true for changes across multiple exercises.
   - It is best to discuss changes with &nbsp;🧰 &nbsp;maintainers before doing a lot of work.
-- Follow coding standards found in [PEP8](https://www.python.org/dev/peps/pep-0008/) ( ["For Humans" version here](https://pep8.org/).)  We do have some more specific requirements.  More on that a little later.
-- All files should have a proper [EOL](https://en.wikipedia.org/wiki/Newline) at the end. This means one carriage return at the end of the final line of text in files.
+- Follow coding standards found in [PEP8][PEP8] ( ["For Humans" version here][pep8-for-humans]. We do have some more specific requirements.  More on that a little later.
+- All files should have a proper [EOL][EOL] at the end. This means one carriage return at the end of the final line of text in files.
 - Otherwise, watch out &nbsp;⚠️&nbsp; for trailing spaces, extra blank lines, extra spaces, and spaces in blank lines.
 - The CI is going to run **a lot** of checks on your PR. Pay attention to the failures, try to understand and fix them.  If you need help, comment in the PR or issue.&nbsp; 🙋🏽‍♀️ &nbsp;  The maintainers are happy to help troubleshoot.
 
@@ -75,11 +78,11 @@ Some defined roles in our community:  [Community Member](https://github.com/exer
 
 <br>
 
-Non-code content (_exercise introductions & instructions, hints, concept write-ups, documentation etc._) should be written in [American English](https://github.com/exercism/docs/blob/main/building/markdown/style-guide.md) .  We strive to watch [the words we use](https://github.com/exercism/docs/blob/main/community/good-member/words.md).
+Non-code content (_exercise introductions & instructions, hints, concept write-ups, documentation etc._) should be written in [American English][american-english]. We strive to watch [the words we use][the-words-we-use].
 
-When a word or phrase usage is contested or ambiguous, we default to what is best understood by our international community of learners, even if it "sounds a little weird"  to a "native" American English speaker.
+When a word or phrase usage is contested | ambiguous, we default to what is best understood by our international community of learners, even if it "sounds a little weird"  to a "native" American English speaker.
 
-Our documents use [Markdown](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf) , with certain [alterations](https://github.com/exercism/docs/blob/main/building/markdown/widgets.md) & [additions](https://github.com/exercism/docs/blob/main/building/markdown/internal-linking.md).  Here is our full [Markdown Specification](https://github.com/exercism/docs/blob/main/building/markdown/markdown.md).  We format/lint our Markdown with [Prettier](https://prettier.io/).
+Our documents use [Markdown][markdown-language], with certain [alterations][exercism-markdown-widgets] & [additions][exercism-internal-linking]. Here is our full [Markdown Specification][exercism-markdown-specification]. We format/lint our Markdown with [Prettier][prettier].
 
 
 <br>
@@ -92,16 +95,16 @@ Our documents use [Markdown](https://guides.github.com/pdfs/markdown-cheatsheet-
 
 - Each exercise/problem should include a complete  test suite, an example/exemplar solution, and a stub file ready for student implementation.
 
-  - See  [Concept Exercise Anatomy](https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md),  or  [Practice Exercise Anatomy](https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md) depending on which type of exercise you are contributing to.
+  - See  [Concept Exercise Anatomy][concept-exercise-anatomy],  or  [Practice Exercise Anatomy][practice-exercise-anatomy] depending on which type of exercise you are contributing to.
 
-- For **practice exercise**, descriptions and instructions come from a centralized, cross-track  [problem specifications](https://github.com/exercism/problem-specifications) repository.
+- For **practice exercise**, descriptions and instructions come from a centralized, cross-track  [problem specifications][problem-specifications] repository.
 
   - Any updates or changes need to be proposed/approved in `problem-specifications` first.
   - If Python-specific changes become necessary, they  need to be appended to the canonical instructions by creating a `instructions.append.md` file in this (`exercism/Python`) repository.
 
-- **Practice Exericse Test Suits** for many practice exercises are similarly [auto-generated](##Auto-Generated Test Files and Test Templates) from data in [problem specifications](https://github.com/exercism/problem-specifications).
-  - Any changes to them need to be proposed/discussed in the `problem-specifications` repository and approved by **3 track maintainers**, since changes could potentially affect many (or all) exercism language tracks.
-  - If Python-specific test changes become necessary, they can be appended to the exercise `tests.toml` file.   📛&nbsp;[**Please file an issue**](https://github.com/exercism/python/issues/new/choose)&nbsp;📛 &nbsp; and check with maintainers before adding any Python-specific tests.
+- **Practice Exericse Test Suits** for many practice exercises are similarly [auto-generated](##Auto-Generated Test Files and Test Templates) from data in [problem specifications][problem-specifications].
+  - Any changes to them need to be proposed/discussed in the `problem-specifications` repository and approved by **3 track maintainers**, since changes could potentially affect many (_or all_) exercism language tracks.
+  - If Python-specific test changes become necessary, they can be appended to the exercise `tests.toml` file.   📛&nbsp;[**Please file an issue**][open-an-issue]&nbsp;📛 &nbsp; and check with maintainers before adding any Python-specific tests.
 
 
 <br>
@@ -139,13 +142,13 @@ Exercises on this track officially support Python >= `3.8`  Track tooling (`test
 
 <br>
 
-Practice exericses  inherit their definitions from the [problem-specifications](https://github.com/exercism/problem-specifications) repository in the form of _description files_.  Exercise introductions, instructions and (_in the case of **many**, but not **all**_) test files are machine-generated .
+Practice exericses  inherit their definitions from the [problem-specifications][problem-specifications] repository in the form of _description files_.  Exercise introductions, instructions and (_in the case of **many**, but not **all**_) test files are machine-generated .
 
-Changes to practice exercise _specifications_ should be raised/PR'd in  [problem-specifications](https://github.com/exercism/problem-specifications)  and approved by **3 track maintainers**.  After an exercise change has gone through that process , related documents and tests for the Python track will need to be re-generated  via  [configlet](https://github.com/exercism/docs/blob/main/building/configlet/generating-documents.md).  Configlet is also used as part of the track CI, essential track and exercise linting,  and other verification tasks.
+Changes to practice exercise _specifications_ should be raised/PR'd in  [problem-specifications][problem-specifications] and approved by **3 track maintainers**. After an exercise change has gone through that process , related documents and tests for the Python track will need to be re-generated via [configlet][configlet]. Configlet is also used as part of the track CI, essential track and exercise linting, and other verification tasks.
 
-If a practice exercise has an auto-generated `<exercise>_test.py` file, there will be a  `.meta/template.j2` and a `.meta/tests.toml` file  in the exercise directory.   If an exercise implements  Python track-specific tests, there may be a `.meta/additional_tests.json` to define them.  These `additional_tests.json` files will automatically be included in test generation.
+If a practice exercise has an auto-generated `<exercise>_test.py` file, there will be a  `.meta/template.j2` and a `.meta/tests.toml` file  in the exercise directory. If an exercise implements  Python track-specific tests, there may be a `.meta/additional_tests.json` to define them. These `additional_tests.json` files will automatically be included in test generation.
 
-Practice exercise  `<exercise>_test.py`  files are  generated/regenerated via the [Python Track Test Generator](https://github.com/exercism/python/blob/main/docs/GENERATOR.md).   Please reach out to a maintainer if you need any help with the process.
+Practice exercise  `<exercise>_test.py` files are  generated/regenerated via the [Python Track Test Generator][python-track-test-generator]. Please reach out to a maintainer if you need any help with the process.
 
 <br>
 
@@ -298,3 +301,39 @@ Before committing:
 [problem-specifications]: https://github.com/exercism/problem-specifications
 [topics list]: https://github.com/exercism/problem-specifications/blob/master/TOPICS.txt
 [flake8]: http://flake8.pycqa.org/
+
+[EOL]: (https://en.wikipedia.org/wiki/Newline)
+[PEP8]: (https://www.python.org/dev/peps/pep-0008/)
+[american-english]: (https://github.com/exercism/docs/blob/main/building/markdown/style-guide.md)
+[being-a-good-community-member]: (https://github.com/exercism/docs/tree/main/community/good-member)
+[concept-exercise-anatomy]: (https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md)
+[concept-exercises]: (https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md)
+[config-json]: (https://github.com/exercism/javascript/blob/main/config.json)
+[configlet]: (https://github.com/exercism/docs/blob/main/building/configlet/generating-documents.md)
+[exercise-presentation]: (https://github.com/exercism/docs/blob/main/building/tracks/presentation.md)
+[exercism-admins]: (https://github.com/exercism/docs/blob/main/community/administrators.md)
+[exercism-code-of-conduct]: (https://exercism.org/docs/using/legal/code-of-conduct)
+[exercism-concepts]: (https://github.com/exercism/docs/blob/main/building/tracks/concepts.md)
+[exercism-internal-linking]: (https://github.com/exercism/docs/blob/main/building/markdown/internal-linking.md)
+[exercism-markdown-specification]: (https://github.com/exercism/docs/blob/main/building/markdown/markdown.md)
+[exercism-markdown-widgets]: (https://github.com/exercism/docs/blob/main/building/markdown/widgets.md)
+[exercism-mentors]: (https://github.com/exercism/docs/tree/main/mentoring)
+[exercism-contributors]: (https://github.com/exercism/docs/blob/main/community/contributors.md)
+[exercism-tasks]: (https://exercism.org/docs/building/product/tasks)
+[exercism-track-maintainers]: (https://github.com/exercism/docs/blob/main/community/maintainers.md)
+[exercism-track-structure]: (https://github.com/exercism/docs/tree/main/building/tracks)
+[exercism-website]: (https://exercism.org/)
+[exercism-writing-style]: (https://github.com/exercism/docs/blob/main/building/markdown/style-guide.md)
+[help-wanted]: (https://github.com/exercism/python/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
+[markdown-language]: (https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
+[markdown-specification]: (https://github.com/exercism/docs/blob/main/building/markdown/markdown.md)
+[open-an-issue]: (https://github.com/exercism/python/issues/new/choose)
+[practice-exercise-anatomy]: (https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md)
+[practice-exercises]: (https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md)
+[prettier]: (https://prettier.io/)
+[problem-specifications]: (https://github.com/exercism/problem-specifications)
+[python-syllabus]: (https://exercism.org/tracks/python/concepts)
+[python-track-test-generator]: (https://github.com/exercism/python/blob/main/docs/GENERATOR.md)
+[the-words-that-we-use]: (https://github.com/exercism/docs/blob/main/community/good-member/words.md)
+[website-contributing-section]:(https://exercism.org/docs/building)
+ [pep8-for-humans]: (https://pep8.org/)
