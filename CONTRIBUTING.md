@@ -296,44 +296,39 @@ Similar to implementing a canonical exercise that has no `canonical-data.json`, 
 
 
 
-
-
+[EOL]: https://en.wikipedia.org/wiki/Newline
+[PEP8]: https://www.python.org/dev/peps/pep-0008/
+[american-english]: https://github.com/exercism/docs/blob/main/building/markdown/style-guide.md
+[being-a-good-community-member]: https://github.com/exercism/docs/tree/main/community/good-member
+[concept-exercise-anatomy]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md
+[concept-exercises]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md
+[config-json]: https://github.com/exercism/javascript/blob/main/config.json
 [configlet-general]: https://github.com/exercism/configlet
-[Exercism contributing guide]: https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/README.md
-[topics list]: https://github.com/exercism/problem-specifications/blob/master/TOPICS.txt
+[configlet]: https://github.com/exercism/docs/blob/main/building/configlet/generating-documents.md
+[exercise-presentation]: https://github.com/exercism/docs/blob/main/building/tracks/presentation.md
+[exercism-admins]: https://github.com/exercism/docs/blob/main/community/administrators.md
+[exercism-code-of-conduct]: https://exercism.org/docs/using/legal/code-of-conduct
+[exercism-concepts]: https://github.com/exercism/docs/blob/main/building/tracks/concepts.md
+[exercism-contributors]: https://github.com/exercism/docs/blob/main/community/contributors.md
+[exercism-internal-linking]: https://github.com/exercism/docs/blob/main/building/markdown/internal-linking.md
+[exercism-markdown-specification]: https://github.com/exercism/docs/blob/main/building/markdown/markdown.md
+[exercism-markdown-widgets]: https://github.com/exercism/docs/blob/main/building/markdown/widgets.md
+[exercism-mentors]: https://github.com/exercism/docs/tree/main/mentoring
+[exercism-tasks]: https://exercism.org/docs/building/product/tasks
+[exercism-track-maintainers]: https://github.com/exercism/docs/blob/main/community/maintainers.md
+[exercism-track-structure]: https://github.com/exercism/docs/tree/main/building/tracks
+[exercism-website]: https://exercism.org/
+[exercism-writing-style]: https://github.com/exercism/docs/blob/main/building/markdown/style-guide.md
 [flake8]: http://flake8.pycqa.org/
-
-[EOL]: (https://en.wikipedia.org/wiki/Newline)
-[PEP8]: (https://www.python.org/dev/peps/pep-0008/)
-[american-english]: (https://github.com/exercism/docs/blob/main/building/markdown/style-guide.md)
-[being-a-good-community-member]: (https://github.com/exercism/docs/tree/main/community/good-member)
-[concept-exercise-anatomy]: (https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md)
-[concept-exercises]: (https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md)
-[config-json]: (https://github.com/exercism/javascript/blob/main/config.json)
-[configlet]: (https://github.com/exercism/docs/blob/main/building/configlet/generating-documents.md)
-[exercise-presentation]: (https://github.com/exercism/docs/blob/main/building/tracks/presentation.md)
-[exercism-admins]: (https://github.com/exercism/docs/blob/main/community/administrators.md)
-[exercism-code-of-conduct]: (https://exercism.org/docs/using/legal/code-of-conduct)
-[exercism-concepts]: (https://github.com/exercism/docs/blob/main/building/tracks/concepts.md)
-[exercism-internal-linking]: (https://github.com/exercism/docs/blob/main/building/markdown/internal-linking.md)
-[exercism-markdown-specification]: (https://github.com/exercism/docs/blob/main/building/markdown/markdown.md)
-[exercism-markdown-widgets]: (https://github.com/exercism/docs/blob/main/building/markdown/widgets.md)
-[exercism-mentors]: (https://github.com/exercism/docs/tree/main/mentoring)
-[exercism-contributors]: (https://github.com/exercism/docs/blob/main/community/contributors.md)
-[exercism-tasks]: (https://exercism.org/docs/building/product/tasks)
-[exercism-track-maintainers]: (https://github.com/exercism/docs/blob/main/community/maintainers.md)
-[exercism-track-structure]: (https://github.com/exercism/docs/tree/main/building/tracks)
-[exercism-website]: (https://exercism.org/)
-[exercism-writing-style]: (https://github.com/exercism/docs/blob/main/building/markdown/style-guide.md)
-[help-wanted]: (https://github.com/exercism/python/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
-[markdown-language]: (https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
-[open-an-issue]: (https://github.com/exercism/python/issues/new/choose)
-[practice-exercise-anatomy]: (https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md)
-[practice-exercises]: (https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md)
-[prettier]: (https://prettier.io/)
-[problem-specifications]: (https://github.com/exercism/problem-specifications)
-[python-syllabus]: (https://exercism.org/tracks/python/concepts)
-[python-track-test-generator]: (https://github.com/exercism/python/blob/main/docs/GENERATOR.md)
-[the-words-that-we-use]: (https://github.com/exercism/docs/blob/main/community/good-member/words.md)
-[website-contributing-section]:(https://exercism.org/docs/building)
-[pep8-for-humans]: (https://pep8.org/)
+[help-wanted]: https://github.com/exercism/python/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22
+[markdown-language]: https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf
+[open-an-issue]: https://github.com/exercism/python/issues/new/choose
+[pep8-for-humans]: https://pep8.org/
+[practice-exercise-anatomy]: https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md
+[practice-exercises]: https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md
+[prettier]: https://prettier.io/
+[problem-specifications]: https://github.com/exercism/problem-specifications
+[python-syllabus]: https://exercism.org/tracks/python/concepts
+[python-track-test-generator]: https://github.com/exercism/python/blob/main/docs/GENERATOR.md
+[the-words-that-we-use]: https://github.com/exercism/docs/blob/main/community/good-member/words.md
+[website-contributing-section]: https://exercism.org/docs/building
