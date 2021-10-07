@@ -26,11 +26,8 @@ class CardGamesTest(unittest.TestCase):
 
         for variant, (number, rounds) in enumerate(data, start=1):
             with self.subTest(f'variation #{variant}', input=number, output=rounds):
-                self.assertEqual(
-                    rounds,
-                    get_rounds(number),
-                    msg=f'Expected rounds {rounds} given the current round {number}.'
-                )
+                error_message = f'Expected rounds {rounds} given the current round {number}.'
+                self.assertEqual(rounds, get_rounds(number), msg=error_message)
 
     @pytest.mark.task(taskno=2)
     def test_concatenate_rounds(self):
@@ -45,11 +42,8 @@ class CardGamesTest(unittest.TestCase):
 
         for variant, ((rounds_1, rounds_2), rounds) in enumerate(data, start=1):
             with self.subTest(f'variation #{variant}', input=(rounds_1, rounds_2), output=rounds):
-                self.assertEqual(
-                    rounds,
-                    concatenate_rounds(rounds_1, rounds_2),
-                    msg=f'Expected {rounds} as the concatenation of {rounds_1} and {rounds_2}.'
-                )
+                error_message = f'Expected {rounds} as the concatenation of {rounds_1} and {rounds_2}.'
+                self.assertEqual(rounds, concatenate_rounds(rounds_1, rounds_2), msg=error_message)
 
     @pytest.mark.task(taskno=3)
     def test_list_contains_round(self):
@@ -64,11 +58,8 @@ class CardGamesTest(unittest.TestCase):
 
         for variant, ((rounds, round_number), contains) in enumerate(data, start=1):
             with self.subTest(f'variation #{variant}', input=(rounds, round_number), output=contains):
-                self.assertEqual(
-                    contains,
-                    list_contains_round(rounds, round_number),
-                    msg=f'Round {round_number} {"is" if contains else "is not"} in {rounds}.'
-                )
+                error_message = f'Round {round_number} {"is" if contains else "is not"} in {rounds}.'
+                self.assertEqual(contains,list_contains_round(rounds, round_number),msg=error_message)
 
     @pytest.mark.task(taskno=4)
     def test_card_average(self):
@@ -81,11 +72,8 @@ class CardGamesTest(unittest.TestCase):
 
         for variant, (hand, average) in enumerate(data, start=1):
             with self.subTest(f'variation #{variant}', input=hand, output=average):
-                self.assertEqual(
-                    average,
-                    card_average(hand),
-                    msg=f'Expected {average} as the average of {hand}.'
-                )
+                msg=f'Expected {average} as the average of {hand}.'
+                self.assertEqual(average,card_average(hand),msg=msg)
 
     @pytest.mark.task(taskno=5)
     def test_approx_average_is_average(self):
@@ -102,11 +90,8 @@ class CardGamesTest(unittest.TestCase):
 
         for variant, (hand, same) in enumerate(data, start=1):
             with self.subTest(f'variation #{variant}', input=hand, output=same):
-                self.assertEqual(
-                    same,
-                    approx_average_is_average(hand),
-                    msg=f'Hand {hand} {"does" if same else "does not"} yield the same approximate average.'
-                )
+                error_message = f'Hand {hand} {"does" if same else "does not"} yield the same approximate average.'
+                self.assertEqual(same, approx_average_is_average(hand), msg=error_message)
 
     @pytest.mark.task(taskno=6)
     def test_average_even_is_average_odd(self):
@@ -119,11 +104,8 @@ class CardGamesTest(unittest.TestCase):
 
         for variant, (hand, same) in enumerate(data, start=1):
             with self.subTest(f'variation #{variant}', input=hand, output=same):
-                self.assertEqual(
-                    same,
-                    average_even_is_average_odd(hand),
-                    msg=f'Hand {hand} {"does" if same else "does not"} yield the same odd-even average.'
-                )
+                msg=f'Hand {hand} {"does" if same else "does not"} yield the same odd-even average.'
+                self.assertEqual(same, average_even_is_average_odd(hand),msg=msg)
 
     @pytest.mark.task(taskno=7)
     def test_maybe_double_last(self):
@@ -136,8 +118,5 @@ class CardGamesTest(unittest.TestCase):
 
         for variant, (hand, doubled_hand) in enumerate(data, start=1):
             with self.subTest(f'variation #{variant}', input=hand, output=doubled_hand):
-                self.assertEqual(
-                    doubled_hand,
-                    maybe_double_last(hand),
-                    msg=f'Expected {doubled_hand} as the maybe-doubled version of {hand}.'
-                )
+                msg=f'Expected {doubled_hand} as the maybe-doubled version of {hand}.'
+                self.assertEqual(doubled_hand,maybe_double_last(hand),msg=msg)
