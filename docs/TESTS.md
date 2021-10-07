@@ -40,7 +40,7 @@ Successfully installed pytest-6.2.5 ...
 #### Linux / MacOS
 
 ```bash
-$ sudo python3 -m pip install pytest pytest-cache pytest-subtests pytest-pylint
+$ python3 -m pip install pytest pytest-cache pytest-subtests pytest-pylint
 Successfully installed pytest-6.2.5 ...
 
 ```
