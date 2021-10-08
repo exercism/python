@@ -39,4 +39,4 @@ UGU, UGC              | Cysteine
 UGG                   | Tryptophan
 UAA, UAG, UGA         | STOP
 
-Learn more about [protein translation on Wikipedia](http://en.wikipedia.org/wiki/Translation_(biology))
+Learn more about [protein translation on Wikipedia](https://en.wikipedia.org/wiki/Translation_(biology))
