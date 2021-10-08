@@ -77,4 +77,4 @@ To convert a float to an integer, you can use `int()`. Also, to convert an integ
 [`int()` built in]: https://docs.python.org/3/library/functions.html#int
 [`float()` built in]: https://docs.python.org/3/library/functions.html#float
 [0.30000000000000004.com]: https://0.30000000000000004.com/
-[floating point math]: https://docs.python.org/3.9/tutorial/floatingpoint.html
+[floating point math]: https://docs.python.org/3/tutorial/floatingpoint.html

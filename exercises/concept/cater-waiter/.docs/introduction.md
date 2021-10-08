@@ -288,4 +288,4 @@ To obtain only items unique to each `set` in the series, intersections between a
 [type-set]: https://docs.python.org/3/library/stdtypes.html#set
 [type-frozenset]: https://docs.python.org/3/library/stdtypes.html#frozenset
 [mathematical-sets]: https://en.wikipedia.org/wiki/Set_theory#Basic_concepts_and_notation
-[hashable]: https://docs.python.org/3.7/glossary.html#term-hashable
+[hashable]: https://docs.python.org/3/glossary.html#term-hashable

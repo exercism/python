@@ -11,5 +11,5 @@ _Unlike_ sequence types (_`string`, `list` & `tuple`_), `sets` are **neither ord
 `sets` are most commonly used to quickly dedupe groups of items.
 
 [type-set]: https://docs.python.org/3/library/stdtypes.html#set
-[hashable]: https://docs.python.org/3.7/glossary.html#term-hashable
+[hashable]: https://docs.python.org/3/glossary.html#term-hashable
 [type-frozenset]: https://docs.python.org/3/library/stdtypes.html#frozenset

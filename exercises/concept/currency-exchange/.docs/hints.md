@@ -1,6 +1,6 @@
 # General
 
-- [The Python Numbers Tutorial](https://docs.python.org/3/tutorial/introduction.html#numbers) and [Python numeric types](https://docs.python.org/3.9/library/stdtypes.html#numeric-types-int-float-complex) can be a great introduction.
+- [The Python Numbers Tutorial](https://docs.python.org/3/tutorial/introduction.html#numbers) and [Python numeric types](https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex) can be a great introduction.
 
 ## 1. Estimating exchangeable value
 

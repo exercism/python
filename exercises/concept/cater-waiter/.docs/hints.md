@@ -58,6 +58,6 @@
 - Using [loops:python/loops](https://exercism.lol/tracks/python/concepts/loops) to iterate through the various dishes might be useful here.
 
 
-[hashable]: https://docs.python.org/3.7/glossary.html#term-hashable
+[hashable]: https://docs.python.org/3/glossary.html#term-hashable
 [iterable]: https://docs.python.org/3/glossary.html#term-iterable
 [sets]: https://docs.python.org/3/tutorial/datastructures.html#sets

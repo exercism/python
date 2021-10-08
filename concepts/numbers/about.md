@@ -138,7 +138,7 @@ For a more detailed discussions of the issues and limitations of floating point 
 [fractions]: https://docs.python.org/3/library/fractions.html
 [decimals]: https://docs.python.org/3/library/decimal.html#module-decimal
 [0.30000000000000004.com]: https://0.30000000000000004.com/
-[cmath]: https://docs.python.org/3.9/library/cmath.html
+[cmath]: https://docs.python.org/3/library/cmath.html
 [arethmetic-operations]: https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
 [operator precedence]: https://docs.python.org/3/reference/expressions.html#operator-precedence
-[floating point math]: https://docs.python.org/3.9/tutorial/floatingpoint.html
+[floating point math]: https://docs.python.org/3/tutorial/floatingpoint.html
