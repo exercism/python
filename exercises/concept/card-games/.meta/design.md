@@ -11,8 +11,7 @@ The goal of this exercise is to teach the basics of the `list` data type in Pyth
 - Check for an items membership/absence in a list using `in`
 - Access items in a list via index (`bracket notation`)
 - Access a range of items in a list via list slicing (`[start:stop:step]`)
-- Usage of `sum()` on a list with numbers
-- Usage of `len()` to get the length of a list
+- Using `sum()` on a list with numbers
 
 ## Out of scope
 

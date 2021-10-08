@@ -6,8 +6,6 @@ Like any [sequence][sequence type], items can be accessed via `0-based index` nu
 Lists can be copied in whole or in part via [slice notation][slice notation] or `<list>.copy()`
 
 Lists support both [common][common sequence operations] and [mutable][mutable sequence operations] sequence operations such as `min()`/`max()`, `<list>.index()`, `<list>.append()` and `<list>.reverse()`.
-List elements can be iterated over using the `for item in <list>` construct.
- `for index, item in enumerate(<list>)` can be used when both the element index and the element value are needed.
 
 Under the hood, `lists` are implemented as [dynamic arrays][dynamic array] -- similar to Java's [`Arraylist`][arraylist] type, and are most often used to store groups of similar data (_strings, numbers, sets etc._) of unknown length.
 Lists are an extremely flexible and useful data structure and many built-in methods and operations in Python produce lists as their output.
@@ -195,23 +193,7 @@ A `step` parameter can also be used `[start:stop:step]` to "skip over" or filter
 
 ## Working with lists
 
-The usage of the built-in `sum()` function on a list will return the sum of all the numbers in the list:
-
-```python
->>> number_list = [1, 2, 3, 4]
->>> sum(number_list)
-10
-```
-
-You can also get the _length_ of a list by using the `len()` function:
-
-```python
->>> long_list = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
->>> len(long_list)
-10
-```
-
-Lists can be also combined in various ways:
+Lists can be combined in various ways:
 
 ```python
 # Using the plus + operator unpacks each list and creates a new list, but it is not efficient.
@@ -226,21 +208,6 @@ Lists can be also combined in various ways:
 
 >>> multiplied_group
 ['cat', 'dog', 'elephant', 'cat', 'dog', 'elephant', 'cat', 'dog', 'elephant']
-```
-
-Lists supply an _iterator_, and can be looped through/over in the same manner as other _sequence types_.
-
-```python
-#  Looping through the list and printing out each element.
->>> colors = ["Orange", "Green", "Grey", "Blue"]
-
->>> for item in colors:
-...     print(item)
-...
-Orange
-Green
-Grey
-Blue
 ```
 
 _For a more in-depth explanation, of `loops` and `iterators`, complete the `loops` concept._
