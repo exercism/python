@@ -15,4 +15,4 @@ The Greek mathematician [Nicomachus](https://en.wikipedia.org/wiki/Nicomachus) d
   - 8 is a deficient number because (1 + 2 + 4) = 7
   - Prime numbers are deficient
 
-Implement a way to determine whether a given number is **perfect**. Depending on your language track, you may also need to implement a way to determine whether a given number is **abundant** or **deficient**.
+Implement a way to determine whether a given number is **perfect**, **abundant** or **deficient**.
