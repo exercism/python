@@ -39,13 +39,15 @@ class PalindromeProductsTest(unittest.TestCase):
         self.assertEqual(value, 906609)
         self.assertFactorsEqual(factors, [[913, 993]])
 
+    #testing only the first thousand numbers, to improve test performances
     def test_find_smallest_palindrome_from_four_digit_factors(self):
-        value, factors = smallest(min_factor=1000, max_factor=9999)
+        value, factors = smallest(min_factor=1000, max_factor=1999)
         self.assertEqual(value, 1002001)
         self.assertFactorsEqual(factors, [[1001, 1001]])
 
+    #testing only the last thousand numbers, to improve test performances
     def test_find_the_largest_palindrome_from_four_digit_factors(self):
-        value, factors = largest(min_factor=1000, max_factor=9999)
+        value, factors = largest(min_factor=9000, max_factor=9999)
         self.assertEqual(value, 99000099)
         self.assertFactorsEqual(factors, [[9901, 9999]])
 
