@@ -6,6 +6,6 @@ exclude =
     .pytest_cache,
     venv
 ignore = E501,  F401
-format = default
+format = pylint
 show-source = True
 max-complexity = 10
