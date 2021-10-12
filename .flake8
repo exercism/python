@@ -1,5 +1,16 @@
 [flake8]
-max-line-length = 110
-exclude = .git, *venv*
+max-line-length = 120
+exclude =
+    .git,
+    __pycache__,
+    .pytest_cache,
+    venv
 select = B950
-ignore = E501
+ignore = E501,  F401
+format = default
+show-source = True
+max-complexity = 10
+# Redirect all output to the specified file.
+output-file = .flake8.log
+# Also print output to stdout if output-file has been configured.
+tee = True
