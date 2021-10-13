@@ -198,7 +198,7 @@ It is possible that you will get `warnings` when running a test that uses _our_ 
 
 To solve this, we use a `pytest.ini` file, which can be downloaded from the top level of the Python track directory: [pytest.ini](https://github.com/exercism/python/blob/main/pytest.ini).
 
-You can also create a file containing the following:
+You can also create your own file with the following content:
 
 ```ini
 [pytest]
