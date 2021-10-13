@@ -17,6 +17,7 @@
   - [Additional information](#additional-information)
     - [Adding to PATH](#adding-to-path)
       - [Windows](#windows-1)
+    - [Fixing warnings](#fixing-warnings)
 
 ---
 
@@ -190,3 +191,21 @@ Then find the `Path` variable in your *User variables*, select it, and click `Ed
 Then add a new line, as shown in the picture, replacing `{python_directory}` with your Python installation's directory:
 
 ![Add python to path](https://raw.githubusercontent.com/exercism/python/main/docs/img/Windows-AddPythonPath.png)
+
+### Fixing warnings
+
+It is possible that you will get `warnings` when running a test that uses _our_ new syntax.
+
+To solve this, we use a `pytest.ini` file, which can be downloaded [here](https://github.com/exercism/python/blob/main/pytest.ini).
+
+You can also create a file containing the following:
+
+```ini
+[pytest]
+markers = 
+    task: A concept exercise task.
+```
+
+Whenever you run your tests, make sure that this file is in your _root_ or _working_ directory.
+
+_More information on customizing pytest can be found [here](https://docs.pytest.org/en/6.2.x/customize.html#pytest-ini)_
