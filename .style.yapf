@@ -136,7 +136,7 @@ force_multiline_dict=False
 # next to the string they translate.
 i18n_comment=#\..*
 
-# The i18n function call names. The presence of this function stops
+# The i18n function calls names. The presence of this function stops
 # reformattting on that line, because the string it has cannot be moved
 # away from the i18n comment.
 i18n_function_call=N_, _
@@ -145,8 +145,8 @@ i18n_function_call=N_, _
 indent_blank_lines=False
 
 # Put closing brackets on a separate line, indented, if the bracketed
-# expression can't fit in a single line. Applies to all kinds of brackets,
-# including function definitions and calls. For example:
+# expression can't fit in a single line. This applies to all kinds of
+# brackets, including function definitions and calls. For example:
 #
 #   config = {
 #       'key1': 'value1',
