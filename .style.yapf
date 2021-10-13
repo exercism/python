@@ -131,24 +131,23 @@ each_dict_entry_on_separate_line=False
 #   }
 force_multiline_dict=False
 
-# The regex for an i18n comment. The presence of this comment stops
+# The regex (_regular expression_) for an i18n (_internationalization_) comment. The presence of this comment stops
 # reformatting of that line, because the comments are required to be
 # next to the string they translate.
 i18n_comment=#\..*
 
-# The i18n function call names. The presence of this function stops
->>>>>>> Created yapf style based on google style.
-# reformattting on that line, because the string it has cannot be moved
-# away from the i18n comment.
+
+# The i18n (internationalization) function calls names. The presence of this function stops
+# re-formatting on that line, because the string it has cannot be moved
+# away from the internationalization comment.
 i18n_function_call=N_, _
 
 # Indent blank lines.
 indent_blank_lines=False
 
 # Put closing brackets on a separate line, indented, if the bracketed
-# expression can't fit in a single line. Applies to all kinds of brackets,
-# including function definitions and calls. For example:
->>>>>>> Created yapf style based on google style.
+# expression can't fit in a single line. This applies to all kinds of
+# brackets, including function definitions and calls. For example:
 #
 #   config = {
 #       'key1': 'value1',
@@ -162,6 +161,9 @@ indent_blank_lines=False
 #       start_ts=now()-timedelta(days=3),
 #       end_ts=now(),
 #       )        # <--- this bracket is indented and on a separate line
+#
+# Exercism strongly diverges from this Google-recommended pattern, and favors
+# closing brackets on the same line as the end of the expression.
 indent_closing_brackets=False
 
 # Indent the dictionary value if it cannot fit on the same line as the
