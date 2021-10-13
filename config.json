@@ -1623,7 +1623,12 @@
         "slug": "satellite",
         "name": "Satellite",
         "uuid": "18467e72-e3b0-403c-896a-ce337f96e6f7",
-        "practices": ["comparisons", "dicts", "other-comprehensions", "loops"],
+        "practices": [
+          "comparisons",
+          "dicts",
+          "other-comprehensions",
+          "loops"
+        ],
         "prerequisites": [
           "basics",
           "bools",
