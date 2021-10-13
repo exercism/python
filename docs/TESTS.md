@@ -208,4 +208,4 @@ markers =
 
 Whenever you run your tests, make sure that this file is in your _root_ or _working_ directory.
 
-_More information on customizing pytest can be found [here](https://docs.pytest.org/en/6.2.x/customize.html#pytest-ini)_
+_More information on customizing pytest can be found in the [PyTest docs](https://docs.pytest.org/en/6.2.x/customize.html#pytest-ini)_
