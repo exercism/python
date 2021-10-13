@@ -753,7 +753,7 @@
         "prerequisites": [
           "basics",
           "conditionals",
-          "list",
+          "lists",
           "list-methods",
           "loops",
           "numbers",
@@ -1623,13 +1623,7 @@
         "slug": "satellite",
         "name": "Satellite",
         "uuid": "18467e72-e3b0-403c-896a-ce337f96e6f7",
-        "practices": [
-          "comparisons",
-          "dicts",
-          "other-comprehensions",
-          "loops",
-          "recursion"
-        ],
+        "practices": ["comparisons", "dicts", "other-comprehensions", "loops"],
         "prerequisites": [
           "basics",
           "bools",
@@ -1855,7 +1849,7 @@
         "slug": "zebra-puzzle",
         "name": "Zebra Puzzle",
         "uuid": "7e1d90d5-dbc9-47e0-8e26-c3ff83b73c2b",
-        "practices": ["conditionals", "itertools", "recursion"],
+        "practices": ["conditionals", "itertools"],
         "prerequisites": [
           "basics",
           "bools",
@@ -2248,7 +2242,6 @@
         "practices": [
           "bools",
           "operator-overloading",
-          "recursion",
           "regular-expressions",
           "rich-comparisons"
         ],
