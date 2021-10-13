@@ -196,7 +196,7 @@ Then add a new line, as shown in the picture, replacing `{python_directory}` wit
 
 It is possible that you will get `warnings` when running a test that uses _our_ new syntax.
 
-To solve this, we use a `pytest.ini` file, which can be downloaded [here](https://github.com/exercism/python/blob/main/pytest.ini).
+To solve this, we use a `pytest.ini` file, which can be downloaded from the top level of the Python track directory: [pytest.ini](https://github.com/exercism/python/blob/main/pytest.ini).
 
 You can also create a file containing the following:
 
