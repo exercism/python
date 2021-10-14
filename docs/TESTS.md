@@ -2,20 +2,20 @@
 
 - [Tests](#tests)
   - [Pytest](#pytest)
-    - [Installing pytest](#installing-pytest)
+    - [Installing pytest Globally](#installing-pytest-globally)
       - [Windows](#windows)
       - [Linux / MacOS](#linux--macos)
-      - [Virtual environments](#virtual-environments)
+      - [Installing pytest within a virtual environment](#installing-pytest-within-a-virtual-environment)
     - [Running the tests](#running-the-tests)
       - [Failures](#failures)
     - [Extra arguments](#extra-arguments)
       - [Stop After First Failure [`-x`]](#stop-after-first-failure--x)
       - [Failed Tests First [`--ff`]](#failed-tests-first---ff)
       - [Recommended Workflow](#recommended-workflow)
-      - [Python Debugger](#python-debugger)
+      - [Using PDB, the Python Debugger, with pytest](#using-pdb-the-python-debugger-with-pytest)
   - [Extending your IDE](#extending-your-ide)
   - [Additional information](#additional-information)
-    - [Adding to PATH](#adding-to-path)
+    - [Adding pytest to your PATH](#adding-pytest-to-your-path)
       - [Windows](#windows-1)
     - [Fixing warnings](#fixing-warnings)
 
@@ -55,7 +55,7 @@ pytest 6.2.5
 
 If you do not want to precede every command with `python3 -m` please refer to [adding to PATH](#adding-to-path) at the end of this document.
 
-#### Installing pytest within a Virtual environment
+#### Installing pytest within a virtual environment
 
 *For more information about virtual environments please refer to the [TOOLS](./TOOLS.md) file.*
 
