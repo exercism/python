@@ -37,7 +37,6 @@ To create a virtual environment, `cd` to the directory you want to store your en
 ```bash
 $ python3 -m venv {name_of_virtualenv}
 created virtual environment ... in 8568ms
-```
 
 #### Activating your virtual environment
 
