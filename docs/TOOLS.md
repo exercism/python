@@ -50,12 +50,11 @@ Also known as `virtualenv`, *venv* is a light-weight solution to virtual environ
 
 #### Creating your virtual environment
 
-To create a virtual environment, `cd` to the directory you want to put the *venv* in. Then run the `virtualenv` command with the name of the folder where you want to store your *environment*. Common convention is to call that folder `venv`:
+To create a virtual environment, `cd` to the directory you want to store your environments in. Next, run the `venv` command with the name of a folder where you want to store this particular **environment**. Common convention is to call that folder `<project-name-here>_venv`:
 
 ```bash
-$ python3 -m virtualenv {name_of_virtualenv}
+$ python3 -m venv {name_of_virtualenv}
 created virtual environment ... in 8568ms
-```
 
 #### Activating your virtual environment
 
