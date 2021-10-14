@@ -22,7 +22,7 @@ Exercises are grouped into **concept** exercises which teach the [Python syllabu
 
 <img align="left" width="110" height="100" src="https://github.com/exercism/website-icons/blob/main/exercism/logo-big-bordered.png">
 
-🌟🌟&nbsp; If you have not already done so, please take a moment to read [Code of Conduct][exercism-code-of-conduct].&nbsp;🌟🌟&nbsp;  
+🌟🌟&nbsp; If you have not already done so, please take a moment to read our [Code of Conduct][exercism-code-of-conduct].&nbsp;🌟🌟&nbsp;  
 It might also be helpful to look at [Being a Good Community Member][being-a-good-community-member] & [The words that we use][the-words-that-we-use].
 
 Some defined roles in our community:  [Contributors][exercism-contributors] **|** [Mentors][exercism-mentors] **|** [Maintainers][exercism-track-maintainers]  **|** [Admins][exercism-admins]
@@ -59,73 +59,30 @@ When in doubt,&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;. We wil
 
 <br>
 
-## :books:  **Want to jump directly into Exercism specifications & detail?**
-
-✨&nbsp;🦄&nbsp; Here is the good stuff:
-
-[Structure][exercism-track-structure] **|** [Tasks][exercism-tasks] **|** [Concepts][exercism-concepts] **|** [Concept Exercises][concept-exercises] **|** [Practice Exercises][practice-exercises]  **|** [Presentation][exercise-presentation] **|** [Writing Style Guide][exercism-writing-style] **|** [Markdown Specification][exercism-markdown-specification]
-
-Web-formatted &nbsp;🕸️ &nbsp; versions are available in the [contributing section][website-contributing-section] of exercsim.org.
-
-<br>
-
-## 🌍 &nbsp; The Exercism Community &nbsp; 🌏
-
-<br>
-
-🌟🌟&nbsp; If you have not already done so, please take a moment to read our [Code of Conduct][exercism-code-of-conduct] & [Being a Good Community Member][being-a-good-community-member] documents.
-It might also be helpful to take a look at [The words that we use][the-words-that-we-use].
-
-
-Some defined roles in our community:  [Contributors][exercism-contributors] **|** [Mentors][exercism-mentors] **|** [Maintainers][exercism-track-maintainers]  **|** [Admins][exercism-admins]
-
-<br>
-
 ## In General
 
 <br>
 
 - Maintainers are happy to review your work and help you.&nbsp;💛&nbsp;💙&nbsp;
-  - They may be in a different timezone&nbsp;⌚&nbsp;, or tied up &nbsp;🧶&nbsp; with other tasks. They will review your request as soon as they are able to.
+  - They may be in a different timezone&nbsp;⌚&nbsp;, or tied up &nbsp;🧶&nbsp; with other tasks.
+  - Maintainers will review your request as soon as they are able to.
   - **Please wait at least 72 hours before pinging.**
-- If you'd like in-progress feedback or discussion, please mark your Pull Request as a `[draft]`
-- Pull requests should be focused on a single exercise, issue, or change.
+- If you'd like in-progress feedback or discussion, please mark your Pull Request as a **`[draft]`**
+- Pull requests should be focused around a single exercise, issue, or change.
 - Pull Request titles and descriptions should make clear **what** has changed and **why**.
   - Please link &nbsp;🔗&nbsp; to any related issues the PR addresses.
-- 📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp; and discuss it  _**before**_ creating a Pull Request making significant or breaking changes to an existing exercise.
-  - The same rule holds true for changes across multiple exercises.
-  - It is best to quickly discuss most changes with &nbsp;🧰 &nbsp;maintainers before doing a lot of work.
+- 📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp; and discuss it with &nbsp;🧰 &nbsp;maintainers _**before**_:
+  - creating a Pull Request making significant or breaking changes.
+  - for changes across multiple exercises, even if they are typos or small.
+  - anything that is going to require doing a lot of work (_on your part or the maintainers part_).
 - Follow coding standards found in [PEP8][PEP8] (["For Humans" version here][pep8-for-humans]).
-  - We do have some more specific requirements.  More on that [a little later](a-little-more-on-coding-standards).
 - All files should have a proper [EOL][EOL] at the end. This means one carriage return at the end of the final line of text in files.
 - Otherwise, watch out &nbsp;⚠️&nbsp; for trailing spaces, extra blank lines, extra spaces, and spaces in blank lines.
-- The CI is going to run **a lot** of checks on your PR. Pay attention to the failures, try to understand and fix them.
-  - If you need help, comment in the PR or issue.&nbsp; 🙋🏽‍♀️ &nbsp;  The maintainers are happy to help troubleshoot.
-
-
-⚠️&nbsp;&nbsp;<b><em>Before committing</em></b>&nbsp;⚠️
+- Continuous Integration is going to run **a lot** of checks on your PR. Pay attention to the failures, try to understand and fix them.
+- If you need help, comment in the PR or issue.&nbsp; 🙋🏽‍♀️ &nbsp;  The maintainers are happy to help troubleshoot.
 
   <details>
-    <summary list-style: none;>&nbsp;⚠️&nbsp;&nbsp;<b><em>Before committing</em></b>&nbsp;⚠️&nbsp;</summary>
-
-- [✔] Run [`configlet-lint`][configlet-lint] if the track [config.json](config-json) has been modified.
-- [✔] Run [Prettier][prettier] on all markdown files.
-- [✔] Run [flake8][flake8] & [pylint][pylint] to ensure all Python code files conform to general code style standards.
-- [ ] (_Optionally_) run [yapf][yapf] to help format your code, and give you a head start on making the linters happy.
-- [✔] Run `test/check-exercises.py [EXERCISE]` to check if your test changes function correctly.
-- [✔] Run the `example.py` or `exemplar.py` file against the exercise test file to ensure that it passes without error.
-- [✔] If you modified or created a `hints.md` file for a practice exercise, [regenerate](#generating-exercise-readmes) it.
-
-
-  </details>
-
-    <br>
-
-
-⚠️&nbsp;&nbsp;<b><em>Before committing</em></b>&nbsp;⚠️
-
-  <details>
-    <summary>Pre-Commit Checklist</summary>
+    <summary>⚠️&nbsp;&nbsp;<b><em>Pre-Commit Checklist</em></b>&nbsp;⚠️</summary>
 
 1. Run [`configlet-lint`][configlet-lint] if the track [config.json](config-json) has been modified.
 2. Run [Prettier][prettier] on all markdown files.
@@ -137,9 +94,6 @@ Some defined roles in our community:  [Contributors][exercism-contributors] **|*
   </details>
 <br>
 
-
-
-<br>
 
 ## 📄 A Little More on Prose Writing Style and Standards
 
