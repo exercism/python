@@ -7,6 +7,10 @@ Thank you so much for your interest in contributing to the Python track!  **We a
 
 `exercsim/Python` is  one of the many tracks on [exercism][exercism-website]. This repo holds all the instructions, tests, code, & support files for Python *exercises* currently under development or implemented & available for students.
 
+⚒&nbsp;This track's exercises support Python `3.8`.
+
+⚒&nbsp;Track tooling (_test runner_,_represter_, and _analyzer_, _CI_) runs on Python `3.9`.
+
 Exercises are grouped into **concept** exercises which teach the [Python syllabus][python-syllabus], and **practice** exercises, which are unlocked by progressing in the syllabus tree. Concept exercises are constrained to a small set of language or syntax features. Practice exercises are open-ended, and can be used to practice concepts learned, try out new techniques, and _play_.  These two exercise groupings can be found in the track [config.json][config-json], and under the `python/exercises` directory.
 
 <br>
@@ -16,7 +20,7 @@ Exercises are grouped into **concept** exercises which teach the [Python syllabu
 It's not uncommon that people discover typos, confusing directions, or incorrect implementations of  certain tests or code examples.  Or you might have a great suggestion for a hint to aid students (💙 &nbsp;) ,  see optimizations for exemplar or test code, find missing test cases to add, or want to correct factual and/or logical errors.  Or maybe you have a great idea for an exercise or feature (&nbsp;❗&nbsp;).
 
 _Our track is always a work in progress!_ 🌟🌟  
-Please  📛 &nbsp;[Open an issue][open-an-issue]&nbsp;📛 , and let us know what you have found or suggest.
+Please&nbsp;📛&nbsp;[Open an issue][open-an-issue]&nbsp;📛, and let us know what you have found or suggest.
 
 <br>
 
@@ -29,7 +33,7 @@ Please  📛 &nbsp;[Open an issue][open-an-issue]&nbsp;📛 , and let us know wh
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3️⃣ &nbsp;&nbsp;&nbsp;&nbsp;Contributions from our [help wanted][help-wanted] issue list,  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4️⃣ &nbsp;&nbsp;&nbsp;&nbsp;Larger (_and previously agreed-upon_) contributions from recent & regular (_within the last 6 months_) contributors.
 
-When in doubt, 📛 &nbsp;[Open an issue][open-an-issue]&nbsp;📛. We will happily discuss your proposed change. 🐍
+When in doubt, &nbsp;📛&nbsp;[Open an issue][open-an-issue]&nbsp;📛&nbsp;. We will happily discuss your proposed change. 🐍
 
 But let's talk before you take a whole lot of time or energy implementing anything.
 
@@ -81,13 +85,22 @@ Some defined roles in our community:  [Community Member][being-a-good-community-
 
 &nbsp;⚠️&nbsp;&nbsp;**Before committing**&nbsp;⚠️&nbsp;
 
-- Run [`configlet-lint`][configlet-lint] if the track [config.json](config-json) has been modified.
-- Run [Prettier][prettier] on all markdown files.
-- Run [flake8][flake8] & [pylint][pylint] to ensure all Python code files conform to general code style standards.
-- (Optionally) run [yapf][yapf] to help format your code, and give you a head start on making the linters happy.
-- Run `test/check-exercises.py [EXERCISE]` to check if your test changes function correctly.
-- Run the `example.py` or `exemplar.py` file against the exercise test file to ensure that it passes without error.
-- If you modified or created a `hints.md` file for a practice exercise, [regenerate](#generating-exercise-readmes) it.
+  <details>
+    <summary>&nbsp;⚠️&nbsp;&nbsp;<b><em>Before committing</em></b>&nbsp;⚠️&nbsp;</summary>
+
+- [ ] Run [`configlet-lint`][configlet-lint] if the track [config.json](config-json) has been modified.
+- [ ] Run [Prettier][prettier] on all markdown files.
+- [ ] Run [flake8][flake8] & [pylint][pylint] to ensure all Python code files conform to general code style standards.
+- [ ] (Optionally) run [yapf][yapf] to help format your code, and give you a head start on making the linters happy.
+- [ ] Run `test/check-exercises.py [EXERCISE]` to check if your test changes function correctly.
+- [ ] Run the `example.py` or `exemplar.py` file against the exercise test file to ensure that it passes without error.
+- [ ] If you modified or created a `hints.md` file for a practice exercise, [regenerate](#generating-exercise-readmes) it.
+
+  </details>
+
+    <br>
+
+
 
 <br>
 
@@ -200,16 +213,16 @@ Some of our code is old and does not (yet) conform to all these standards.  We k
 
 <br>
 
-This track officially supports Python >= `3.8`  The track `test runner`, `analyzer`, and `representer` run in docker on `python:3.9-slim`.
+This track officially supports Python = `3.8`  The track `test runner`, `analyzer`, and `representer` run in docker on `python:3.9-slim`.
 
 Although the majority of test cases are written using `unittest.TestCase`,
 
-*  All exercises should be written for compatibility with Python >= `3.8`,.
+*  All exercises should be written for compatibility with Python = `3.8` or `3.9`.
 *  Version backward _incompatibility_ (*e.g* an exercise using a `3.8` or `3.9` **only** feature)  should be clearly noted in any exercise hits, links, introductions or other notes.
 
 *  Here is an example of how the Python documentation handles [version-tagged &nbsp;🏷&nbsp;][version-tagged-language-features] feature introduction.
 
-* _Most_ exercises will work with Python `3.6+`, and _many_ are compatible with Python 2.7+. Please do not change existing exercises to add new `3.6`+ features without consulting with a maintainer first. We &nbsp;💛&nbsp;💙&nbsp; modern Python, but we _also_ want to avoid student confusion when it comes to brand-new features.
+* _Most_ exercises will work with Python `3.6+`, and _many_ are compatible with Python `2.7+`. Please do not change existing exercises to add new language features without consulting with a maintainer first. We &nbsp;💛&nbsp;💙&nbsp; modern Python, but we _also_ want to avoid student confusion when it comes to which Python versions support brand-new features.
 
 - All test suites and example solutions must work in all Python versions that we currently support. When in doubt about a feature, please check with maintainers.
 
