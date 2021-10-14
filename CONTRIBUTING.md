@@ -76,9 +76,9 @@ When in doubt,&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;. We wil
   - for changes across multiple exercises, even if they are typos or small.
   - anything that is going to require doing a lot of work (_on your part or the maintainers part_).
 - Follow coding standards found in [PEP8][PEP8] (["For Humans" version here][pep8-for-humans]).
-- All files should have a proper [EOL][EOL] at the end. This means one carriage return at the end of the final line of text in files.
+- All files should have a proper [EOL][EOL] at the end. This means one carriage return at the end of the final line.
 - Otherwise, watch out &nbsp;⚠️&nbsp; for trailing spaces, extra blank lines, extra spaces, and spaces in blank lines.
-- Continuous Integration is going to run **a lot** of checks on your PR. Pay attention to the failures, try to understand and fix them.
+- Continuous Integration is going to run **a lot** of checks. Pay attention to failures & try to understand and fix them.
 - If you need help, comment in the PR or issue.&nbsp; 🙋🏽‍♀️ &nbsp;  The maintainers are happy to help troubleshoot.
 
 
@@ -92,6 +92,7 @@ When in doubt,&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;. We wil
 4. Run `test/check-exercises.py [EXERCISE]` to check if your test changes function correctly.
 5. Run the `example.py` or `exemplar.py` file against the exercise test file to ensure that it passes without error.
 6. If you modified or created a `hints.md` file for a practice exercise, [regenerate](#generating-exercise-readmes) it.
+
   </details>
 <br>
 
