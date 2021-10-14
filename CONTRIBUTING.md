@@ -14,9 +14,9 @@ Thank you so much for your interest in contributing!
 This repo holds all the instructions, tests, code, & support files for Python *exercises* currently under development or implemented & available for students.
 
  🌟 &nbsp;&nbsp;Track exercises support Python `3.8`.  
- 🌟 &nbsp;&nbsp;Track tooling (_test runner_,_represter_, and _analyzer_, _CI_) runs on Python `3.9`.
+ 🌟 &nbsp;&nbsp;Track tooling (_test-runner, representer, analyzer, and Continuous Integration_) runs on Python `3.9`.
 
-Exercises are grouped into **concept** exercises which teach the [Python syllabus][python-syllabus], and **practice** exercises, which are unlocked by progressing in the syllabus tree. Concept exercises are constrained to a small set of language or syntax features. Practice exercises are open-ended, and can be used to practice concepts learned, try out new techniques, and _play_.  These two exercise groupings can be found in the track [config.json][config-json], and under the `python/exercises` directory.
+Exercises are grouped into **concept** exercises which teach the [Python syllabus][python-syllabus], and **practice** exercises, which are unlocked by progressing in the syllabus tree &nbsp;🌴 &nbsp;. Concept exercises are constrained to a small set of language or syntax features. Practice exercises are open-ended, and can be used to practice concepts learned, try out new techniques, and _play_.  These two exercise groupings can be found in the track [config.json][config-json], and under the `python/exercises` directory.
 
 <br>
 
