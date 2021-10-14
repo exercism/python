@@ -20,6 +20,22 @@ Exercises are grouped into **concept** exercises which teach the [Python syllabu
 
 <br>
 
+<img align="left" width="110" height="100" src="https://github.com/exercism/website-icons/blob/main/exercism/logo-big-bordered.png">
+
+🌟🌟&nbsp; If you have not already done so, please take a moment to read [Code of Conduct][exercism-code-of-conduct].&nbsp;🌟🌟&nbsp;  
+It might also be helpful to look at [Being a Good Community Member][being-a-good-community-member] & [The words that we use][the-words-that-we-use].
+
+Some defined roles in our community:  [Contributors][exercism-contributors] **|** [Mentors][exercism-mentors] **|** [Maintainers][exercism-track-maintainers]  **|** [Admins][exercism-admins]
+
+<br>
+<img align="left" width="100" height="100" src="https://github.com/exercism/website-icons/blob/main/exercises/word-search.svg">
+
+✨&nbsp;🦄&nbsp; _**Want to jump directly into Exercism specifications & detail?**_  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Structure][exercism-track-structure] **|** [Tasks][exercism-tasks] **|** [Concepts][exercism-concepts] **|** [Concept Exercises][concept-exercises] **|** [Practice Exercises][practice-exercises] **|** [Presentation][exercise-presentation]  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Writing Style Guide][exercism-writing-style] **|** [Markdown Specification][exercism-markdown-specification] (_&nbsp;✨ &nbsp; versions available in [contributing][website-contributing-section] on [exercism(dot)org][exercism-website]._)
+
+<br>
+
 ## 🐛 **Did you find a bug?**
 
 It is not uncommon to discover typos, confusing directions, or incorrect implementations of certain tests or code examples.  Or you might have a great suggestion for a hint to aid students (&nbsp;💙 &nbsp;), see optimizations for exemplar or test code, find missing test cases to add, or want to correct factual and/or logical errors.  Or maybe you have a great idea for an exercise or feature (❗&nbsp;).
@@ -76,7 +92,7 @@ Some defined roles in our community:  [Contributors][exercism-contributors] **|*
 - Pull requests should be focused on a single exercise, issue, or change.
 - Pull Request titles and descriptions should make clear **what** has changed and **why**.
   - Please link &nbsp;🔗&nbsp; to any related issues the PR addresses.
-- 📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;and discuss it  _**before**_ creating a Pull Request making significant or breaking changes to an existing exercise.
+- 📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp; and discuss it  _**before**_ creating a Pull Request making significant or breaking changes to an existing exercise.
   - The same rule holds true for changes across multiple exercises.
   - It is best to quickly discuss most changes with &nbsp;🧰 &nbsp;maintainers before doing a lot of work.
 - Follow coding standards found in [PEP8][PEP8] (["For Humans" version here][pep8-for-humans]).
