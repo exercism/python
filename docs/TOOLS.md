@@ -138,7 +138,7 @@ The Python plugin also comes with some other features that can help you debug an
 
 ### PyCharm
 
-PyCharm is an *Integrated Development Environment* built by JetBrains. It is specialized to work for Python and is commonly used among professionals. You can extend it plugins, but out-of-the-box it comes with a load of features already available.
+PyCharm is an *Integrated Development Environment* built by JetBrains. It is specialized to work for Python and is commonly used among professionals. You can extend it with various paid and unpaid plugins, but out-of-the-box it comes with a load of features already available.
 
 #### Selecting the interpreter
 
