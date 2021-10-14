@@ -81,6 +81,7 @@ When in doubt,&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;. We wil
 - Continuous Integration is going to run **a lot** of checks on your PR. Pay attention to the failures, try to understand and fix them.
 - If you need help, comment in the PR or issue.&nbsp; 🙋🏽‍♀️ &nbsp;  The maintainers are happy to help troubleshoot.
 
+
   <details>
     <summary>⚠️&nbsp;&nbsp;<b><em>Pre-Commit Checklist</em></b>&nbsp;⚠️</summary>
 
