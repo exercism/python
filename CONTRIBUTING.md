@@ -1,15 +1,20 @@
-#  Contributing
+<br>
 
-Hi. &nbsp;👋🏽 &nbsp;👋 &nbsp;
+<img align="left" width="90" height="90" src="https://github.com/exercism/website-icons/blob/main/tracks/python.svg">
+<p vertical-align="middle"><h1>Contributing</h1></p>
 
-Thank you so much for your interest in contributing to the Python track!  **We are happy you are here.** 🌟 &nbsp; 🎉
+<br>
+<br>
 
+Hi. &nbsp;👋🏽 &nbsp;👋 &nbsp; **We are happy you are here.**&nbsp; 🎉🌟
 
-`exercsim/Python` is  one of the many tracks on [exercism][exercism-website]. This repo holds all the instructions, tests, code, & support files for Python *exercises* currently under development or implemented & available for students.
+Thank you so much for your interest in contributing!
 
-⚒&nbsp;This track's exercises support Python `3.8`.
+**`exercsim/Python`** is one of many programming language tracks on [exercism(dot)org][exercism-website].
+This repo holds all the instructions, tests, code, & support files for Python *exercises* currently under development or implemented & available for students.
 
-⚒&nbsp;Track tooling (_test runner_,_represter_, and _analyzer_, _CI_) runs on Python `3.9`.
+ 🌟 &nbsp;&nbsp;Track exercises support Python `3.8`.  
+ 🌟 &nbsp;&nbsp;Track tooling (_test runner_,_represter_, and _analyzer_, _CI_) runs on Python `3.9`.
 
 Exercises are grouped into **concept** exercises which teach the [Python syllabus][python-syllabus], and **practice** exercises, which are unlocked by progressing in the syllabus tree. Concept exercises are constrained to a small set of language or syntax features. Practice exercises are open-ended, and can be used to practice concepts learned, try out new techniques, and _play_.  These two exercise groupings can be found in the track [config.json][config-json], and under the `python/exercises` directory.
 
@@ -17,10 +22,10 @@ Exercises are grouped into **concept** exercises which teach the [Python syllabu
 
 ## 🐛 **Did you find a bug?**
 
-It's not uncommon that people discover typos, confusing directions, or incorrect implementations of  certain tests or code examples.  Or you might have a great suggestion for a hint to aid students (💙 &nbsp;) ,  see optimizations for exemplar or test code, find missing test cases to add, or want to correct factual and/or logical errors.  Or maybe you have a great idea for an exercise or feature (&nbsp;❗&nbsp;).
+It is not uncommon to discover typos, confusing directions, or incorrect implementations of certain tests or code examples.  Or you might have a great suggestion for a hint to aid students (&nbsp;💙 &nbsp;), see optimizations for exemplar or test code, find missing test cases to add, or want to correct factual and/or logical errors.  Or maybe you have a great idea for an exercise or feature (❗&nbsp;).
 
 _Our track is always a work in progress!_ 🌟🌟  
-Please&nbsp;📛&nbsp;[Open an issue][open-an-issue]&nbsp;📛, and let us know what you have found or suggest.
+Please&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;, and let us know what you have found/suggest.
 
 <br>
 
@@ -33,9 +38,8 @@ Please&nbsp;📛&nbsp;[Open an issue][open-an-issue]&nbsp;📛, and let us know 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3️⃣ &nbsp;&nbsp;&nbsp;&nbsp;Contributions from our [help wanted][help-wanted] issue list,  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4️⃣ &nbsp;&nbsp;&nbsp;&nbsp;Larger (_and previously agreed-upon_) contributions from recent & regular (_within the last 6 months_) contributors.
 
-When in doubt, &nbsp;📛&nbsp;[Open an issue][open-an-issue]&nbsp;📛&nbsp;. We will happily discuss your proposed change. 🐍
-
-But let's talk before you take a whole lot of time or energy implementing anything.
+When in doubt,&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;. We will happily discuss your proposed change.  
+🐍 &nbsp;_But we should talk before you take a whole lot of time or energy implementing anything._
 
 <br>
 
@@ -43,7 +47,7 @@ But let's talk before you take a whole lot of time or energy implementing anythi
 
 ✨&nbsp;🦄&nbsp; Here is the good stuff:
 
-[Track Structure][exercism-track-structure] **|** [Tasks][exercism-tasks] **|** [Concepts][exercism-concepts] **|** [Concept Exercises][concept-exercises] **|** [Practice Exercises][practice-exercises]  **|** [Presentation][exercise-presentation] **|** [Writing Style Guide][exercism-writing-style] **|** [Markdown Specification][exercism-markdown-specification]
+[Structure][exercism-track-structure] **|** [Tasks][exercism-tasks] **|** [Concepts][exercism-concepts] **|** [Concept Exercises][concept-exercises] **|** [Practice Exercises][practice-exercises]  **|** [Presentation][exercise-presentation] **|** [Writing Style Guide][exercism-writing-style] **|** [Markdown Specification][exercism-markdown-specification]
 
 Web-formatted &nbsp;🕸️ &nbsp; versions are available in the [contributing section][website-contributing-section] of exercsim.org.
 
@@ -57,7 +61,7 @@ Web-formatted &nbsp;🕸️ &nbsp; versions are available in the [contributing s
 It might also be helpful to take a look at [The words that we use][the-words-that-we-use].
 
 
-Some defined roles in our community:  [Community Member][being-a-good-community-member] **|**  [Contributors][exercism-contributors] **|** [Mentors][exercism-mentors] **|** [Maintainers][exercism-track-maintainers]  **|** [Admins][exercism-admins]
+Some defined roles in our community:  [Contributors][exercism-contributors] **|** [Mentors][exercism-mentors] **|** [Maintainers][exercism-track-maintainers]  **|** [Admins][exercism-admins]
 
 <br>
 
@@ -72,7 +76,7 @@ Some defined roles in our community:  [Community Member][being-a-good-community-
 - Pull requests should be focused on a single exercise, issue, or change.
 - Pull Request titles and descriptions should make clear **what** has changed and **why**.
   - Please link &nbsp;🔗&nbsp; to any related issues the PR addresses.
-- 📛&nbsp;[Open an issue][open-an-issue]&nbsp;📛&nbsp;&nbsp; and discuss it  _**before**_ creating a Pull Request making significant or breaking changes to an existing exercise.
+- 📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;and discuss it  _**before**_ creating a Pull Request making significant or breaking changes to an existing exercise.
   - The same rule holds true for changes across multiple exercises.
   - It is best to quickly discuss most changes with &nbsp;🧰 &nbsp;maintainers before doing a lot of work.
 - Follow coding standards found in [PEP8][PEP8] (["For Humans" version here][pep8-for-humans]).
@@ -83,22 +87,39 @@ Some defined roles in our community:  [Community Member][being-a-good-community-
   - If you need help, comment in the PR or issue.&nbsp; 🙋🏽‍♀️ &nbsp;  The maintainers are happy to help troubleshoot.
 
 
-&nbsp;⚠️&nbsp;&nbsp;**Before committing**&nbsp;⚠️&nbsp;
+⚠️&nbsp;&nbsp;<b><em>Before committing</em></b>&nbsp;⚠️
 
   <details>
-    <summary>&nbsp;⚠️&nbsp;&nbsp;<b><em>Before committing</em></b>&nbsp;⚠️&nbsp;</summary>
+    <summary list-style: none;>&nbsp;⚠️&nbsp;&nbsp;<b><em>Before committing</em></b>&nbsp;⚠️&nbsp;</summary>
 
-- [ ] Run [`configlet-lint`][configlet-lint] if the track [config.json](config-json) has been modified.
-- [ ] Run [Prettier][prettier] on all markdown files.
-- [ ] Run [flake8][flake8] & [pylint][pylint] to ensure all Python code files conform to general code style standards.
-- [ ] (Optionally) run [yapf][yapf] to help format your code, and give you a head start on making the linters happy.
-- [ ] Run `test/check-exercises.py [EXERCISE]` to check if your test changes function correctly.
-- [ ] Run the `example.py` or `exemplar.py` file against the exercise test file to ensure that it passes without error.
-- [ ] If you modified or created a `hints.md` file for a practice exercise, [regenerate](#generating-exercise-readmes) it.
+- [✔] Run [`configlet-lint`][configlet-lint] if the track [config.json](config-json) has been modified.
+- [✔] Run [Prettier][prettier] on all markdown files.
+- [✔] Run [flake8][flake8] & [pylint][pylint] to ensure all Python code files conform to general code style standards.
+- [ ] (_Optionally_) run [yapf][yapf] to help format your code, and give you a head start on making the linters happy.
+- [✔] Run `test/check-exercises.py [EXERCISE]` to check if your test changes function correctly.
+- [✔] Run the `example.py` or `exemplar.py` file against the exercise test file to ensure that it passes without error.
+- [✔] If you modified or created a `hints.md` file for a practice exercise, [regenerate](#generating-exercise-readmes) it.
+
 
   </details>
 
     <br>
+
+
+⚠️&nbsp;&nbsp;<b><em>Before committing</em></b>&nbsp;⚠️
+
+  <details>
+    <summary>Pre-Commit Checklist</summary>
+
+1. Run [`configlet-lint`][configlet-lint] if the track [config.json](config-json) has been modified.
+2. Run [Prettier][prettier] on all markdown files.
+   - (_Optionally_) run [yapf][yapf] to help format your code, and give you a head start on making the linters happy.
+3. Run [flake8][flake8] & [pylint][pylint] to ensure all Python code files conform to general code style standards.
+4. Run `test/check-exercises.py [EXERCISE]` to check if your test changes function correctly.
+5. Run the `example.py` or `exemplar.py` file against the exercise test file to ensure that it passes without error.
+6. If you modified or created a `hints.md` file for a practice exercise, [regenerate](#generating-exercise-readmes) it.
+  </details>
+<br>
 
 
 
@@ -136,22 +157,22 @@ Some of our code is old and does not (yet) conform to all these standards.  We k
 
 ### General Code Style TL;DR:
 
-- _spaces_, never `Tabs`
-- 4 space indentation
-- 120 character per line limit (as opposed to the Google limit of 80)
-- Variables, functions and methods should be `lower_case_with_underscores` (aka "snake case")
-- Classes are `TitleCase` (aka "camel case")
-- No single letter variable names outside of a `lambda`.  This includes loop variables and comprehensions.
+- _**spaces**_, never `Tabs`
+- **4 space** indentation
+- **120 character per line limit** (_as opposed to the Google limit of 79_)
+- Variable, function, and method names should be `lower_case_with_underscores` (_aka "snake case"_)
+- Classes should be named in `TitleCase` (_aka "camel case"_)
+- **No single letter variable names** outside of a `lambda`.  This includes loop variables and comprehensions.
 - Refrain from putting `list`, `tuple`, `set`, or `dict` members on their own lines.
-  Fit as many members as can be easily read on one line, before wrapping to a second.
-- If a data structure spreads to more than one line and a break (for clarity) is needed, prefer breaking after the opening bracket.
+  Fit as many data members as can be easily read on one line, before wrapping to a second.
+- If a data structure spreads to more than one line and a break (_for clarity_) is needed, prefer breaking after the opening bracket.
 - Avoid putting closing brackets on their own lines. Prefer closing a bracket right after the last element.
-- Use `'` and not `"` as the quote character by default.
-- Use `"""` for docstrings.
+- Use **`'`** and not **`"`** as the quote character by default.
+- Use **`"""`** for docstrings.
 - Prefer [implicit line joining][implicit-line-joining] for long strings.
-- Prefer enclosing imports in (), and putting each on their own line when importing multiple methods from a library.
+- Prefer enclosing imports in **`()`**, and putting each on their own line when importing multiple methods.
 - Two lines between `Classes`, one line between `functions`.  Other vertical whitespace as needed to help readability.
-- Always use an EOL to end a file.
+- Always use an **`EOL`** to end a file.
 
 
 ### Concept Exercise Test Files
@@ -203,7 +224,8 @@ Some of our code is old and does not (yet) conform to all these standards.  We k
 
 - Practice Exercise **Test Suits** for many practice exercises are similarly [auto-generated][##Auto-Generated Test Files and Test Templates] from data in [problem specifications][problem-specifications].
   - Any changes to them need to be proposed/discussed in the `problem-specifications` repository and approved by **3 track maintainers**, since changes could potentially affect many (_or all_) exercism language tracks.
-  - If Python-specific test changes become necessary, they can be appended to the exercise `tests.toml` file.   📛&nbsp;[**Please file an issue**][open-an-issue]&nbsp;📛 &nbsp; and check with maintainers before adding any Python-specific tests.
+  - If Python-specific test changes become necessary, they can be appended to the exercise `tests.toml` file.
+  - 📛&nbsp;[ **Please file an issue**][open-an-issue]&nbsp;📛 &nbsp;and check with maintainers before adding any Python-specific tests.
 
 
 <br>
