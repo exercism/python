@@ -27,7 +27,7 @@ _Official pytest documentation can be found on the [pytest Wiki](https://pytest.
 
 Pytest lets you test your solutions using our provided tests, and is what we use to validate your solutions on the website.
 
-### Installing pytest
+### Installing pytest Globally
 
 Pytest can be installed and updated using the built-in Python utility `pip`.
 
@@ -55,7 +55,7 @@ pytest 6.2.5
 
 If you do not want to precede every command with `python3 -m` please refer to [adding to PATH](#adding-to-path) at the end of this document.
 
-#### Virtual environments
+#### Installing pytest within a Virtual environment
 
 *For more information about virtual environments please refer to the [TOOLS](./TOOLS.md) file.*
 
@@ -148,7 +148,7 @@ pytest -x -ff bob_test.py
 
 This will test your solution. When `pytest` encounters a failed test, the program will stop and tell you which test failed. When you run the test again, `pytest` will first test that failed test, then continue with the rest.
 
-#### Python Debugger
+#### Using PDB, the Python Debugger, with pytest
 
 If you want to truly debug like a pro, use the `--pdb` argument after the `pytest` command. 
 
@@ -165,7 +165,7 @@ If you'd like to extend your IDE with some tools that will help you with testing
 
 ## Additional information
 
-### Adding to PATH
+### Adding pytest to your PATH
 
 **Note:** If you are running a [virtual environment](.\TOOLS.md) you do not need to *add to path* as it should work fine.
 
@@ -194,9 +194,9 @@ Then add a new line, as shown in the picture, replacing `{python_directory}` wit
 
 ### Fixing warnings
 
-It is possible that you will get `warnings` when running a test that uses _our_ new syntax.
+It is possible that you will get `warnings` about "unknown markers" when running a test that uses our _new_ syntax.
 
-To solve this, we use a `pytest.ini` file, which can be downloaded from the top level of the Python track directory: [pytest.ini](https://github.com/exercism/python/blob/main/pytest.ini).
+To resolve this issue, we use a `pytest.ini` file, which can be downloaded from the top level of the Python track directory: [pytest.ini](https://github.com/exercism/python/blob/main/pytest.ini).
 
 You can also create your own file with the following content:
 
