@@ -94,7 +94,7 @@ To create a new `conda` environment, go to the *Anaconda Navigator*. Click on `e
 
 Activating your `conda` environment is easy, just click the `►` button next to your *environment*, then press `Open Terminal`. This should open a new terminal with an interface for your `conda` environment.
 
-From here you can run regular `pip` commands and other modules that you have installed inside your environment. All libraries will automatically be installed inside the `conda` environment.
+From here you can run `conda` commands to install python packages from the Anaconda repository, or run regular `pip` commands to install python packages from PyPi inside your environment. All libraries will automatically be installed inside the `conda` environment.
 
 ---
 
