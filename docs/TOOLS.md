@@ -114,7 +114,7 @@ The Python extension from Microsoft is extremely useful because of its range of 
 
 ##### Selecting the interpreter
 
-The Python extensions supports the switching between multiple `interpreters`. This allows you to use different Python environments for different projects. This is also useful for when you are using `venv` or `conda`, which you can find more about [here](#environments).
+The Python extensions supports the switching between multiple `interpreters`. This allows you to use different Python environments for different projects. This is also useful for when you are using `venv` or `conda`, which you can find more about in the [environments section](#environments).
 
 Click on the "Select interpreter" button in the lower left-hand of your window, another window should pop up where you can select the interpreter you want to use.
 
