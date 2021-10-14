@@ -76,11 +76,12 @@ When in doubt,&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;. We wil
   - for changes across multiple exercises, even if they are typos or small.
   - anything that is going to require doing a lot of work (_on your part or the maintainers part_).
 - Follow coding standards found in [PEP8][PEP8] (["For Humans" version here][pep8-for-humans]).
-- All files should have a proper [EOL][EOL] at the end. This means one carriage return at the end of the final line.
+- All files should have a proper [EOL][EOL]. This means one carriage return at the end of the final line of text files.
 - Otherwise, watch out &nbsp;⚠️&nbsp; for trailing spaces, extra blank lines, extra spaces, and spaces in blank lines.
 - Continuous Integration is going to run **a lot** of checks. Pay attention to failures & try to understand and fix them.
-- If you need help, comment in the PR or issue.&nbsp; 🙋🏽‍♀️ &nbsp;  The maintainers are happy to help troubleshoot.
+- If you need help, comment in the PR or issue.&nbsp; 🙋🏽‍♀️ &nbsp; The maintainers are happy to help troubleshoot.
 
+<br>
 
   <details>
     <summary>⚠️&nbsp;&nbsp;<b><em>Pre-Commit Checklist</em></b>&nbsp;⚠️</summary>
