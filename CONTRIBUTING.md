@@ -99,7 +99,7 @@ When in doubt,&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;. We wil
 <br>
 
 <img align="left" width="90" height="80" src="https://github.com/exercism/website-icons/blob/main/exercism/logo-big-bordered.png">
-<p vertical-align="middle"><h2>A Little More on Prose Writing Style and Standards</h2></p>
+<p vertical-align="middle"><h2 id="prose-writing-style-and-standards">Prose Writing Style and Standards</h2></p>
 
 <br>
 
@@ -113,7 +113,7 @@ Our documents use [Markdown][markdown-language], with certain [alterations][exer
 
 <br>
 <img align="left" width="70" height="65" src="https://github.com/exercism/website-icons/blob/main/tracks/python.svg">
-<p vertical-align="middle"><h2>A Little More on Coding Standards</h2></p>
+<p vertical-align="middle"><h2 id="coding-standards">Coding Standards</h2></p>
 
 <br>
 
@@ -266,7 +266,7 @@ Our tooling (_runners, representers, and analyzers_) runs in isolated containers
 If your exercise depends on a third-party library (_aka not part of standard Python_), please consult with maintainers about it.  We may or may not be able to accommodate the package.
 
 <br>
-<img id="auto-generated-files" align="left" width="95" height="90" src="https://github.com/exercism/website-icons/blob/main/exercises/forth.svg">
+<img id="auto-generated-files" align="left" width="85" height="80" src="https://github.com/exercism/website-icons/blob/main/exercises/forth.svg">
 <p vertical-align="middle"><h2>Auto-Generated Test Files and Test Templates</h2></p>
 
 <br>
