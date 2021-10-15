@@ -81,8 +81,6 @@ When in doubt,&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;. We wil
 - Continuous Integration is going to run **a lot** of checks. Try to understand & fix any failures.
 
 <br>
-<br>
-
   <details>
     <summary>⚠️&nbsp;&nbsp;<b><em>Pre-Commit Checklist</em></b>&nbsp;⚠️</summary>
     <br>
@@ -96,6 +94,7 @@ When in doubt,&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;. We wil
    6.  &nbsp;If you modified or created a `hints.md` file for a practice exercise, [regenerate](#generating-practice-exercise-documents) it.
 
   </details>
+<br>
 <br>
 
 <img align="left" width="90" height="80" src="https://github.com/exercism/website-icons/blob/main/exercism/logo-big-bordered.png">
@@ -323,9 +322,10 @@ They are provided as proof that there is an acceptable and testable answer to th
 <br>
 
 Implementing Track-specific Practice Exercises is similar to implementing a `canonical` exercise that has no `canonical-data.json`. But in addition to the tests, the exercise documents (_instructions, etc._) will also need to be written manually. Carefully follow the structure of generated exercise documents and the [exercism practice exercise specification][practice-exercises].
+
 <br>
 
-<p verticle-align="middle"><img id="generating-practice-exercise-documents" align="left" width="75" height="75" src="https://github.com/exercism/website-icons/blob/main/exercises/rest-api.svg"><h2>Generating Practice Exercise Documents</h2></p>
+<p verticle-align="middle"><img id="generating-practice-exercise-documents" align="left" width="70" height="70" src="https://github.com/exercism/website-icons/blob/main/exercises/rest-api.svg"><h2>Generating Practice Exercise Documents</h2></p>
 <br>
 <b>You will need</b>
 
