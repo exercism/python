@@ -380,17 +380,18 @@ configlet generate <path/to/track> --spec-path path/to/problem/specifications
 
 
 [.flake8]: https://github.com/exercism/python/blob/main/.flake8
+[.style.yapf]: https://github.com/exercism/python/blob/main/.style.yapf
 [EOL]: https://en.wikipedia.org/wiki/Newline
 [PEP8]: https://www.python.org/dev/peps/pep-0008/
 [american-english]: https://github.com/exercism/docs/blob/main/building/markdown/style-guide.md
 [being-a-good-community-member]: https://github.com/exercism/docs/tree/main/community/good-member
-[cater-waiter]: https://github.com/exercism/python/tree/main/exercises/concept/cater-waiter
 [card-games-testfile]: https://github.com/exercism/python/blob/main/exercises/concept/card-games/lists_test.py
+[cater-waiter]: https://github.com/exercism/python/tree/main/exercises/concept/cater-waiter
 [concept-exercise-anatomy]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md
 [concept-exercises]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md
 [config-json]: https://github.com/exercism/javascript/blob/main/config.json
-[configlet]: https://github.com/exercism/docs/blob/main/building/configlet/generating-documents.md
 [configlet-lint]: https://github.com/exercism/configlet#configlet-lint
+[configlet]: https://github.com/exercism/docs/blob/main/building/configlet/generating-documents.md
 [distinguishing-test-iterations]: https://docs.python.org/3/library/unittest.html#distinguishing-test-iterations-using-subtests
 [enumerate]: https://docs.python.org/3/library/functions.html#enumerate
 [exercise-config-json]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md#full-example
@@ -408,8 +409,8 @@ configlet generate <path/to/track> --spec-path path/to/problem/specifications
 [exercism-track-structure]: https://github.com/exercism/docs/tree/main/building/tracks
 [exercism-website]: https://exercism.org/
 [exercism-writing-style]: https://github.com/exercism/docs/blob/main/building/markdown/style-guide.md
-[flake8]: http://flake8.pycqa.org/
 [flake8-noqa]: https://flake8.pycqa.org/en/3.1.1/user/ignoring-errors.html#in-line-ignoring-errors
+[flake8]: http://flake8.pycqa.org/
 [google-coding-style]: https://google.github.io/styleguide/pyguide.html
 [guidos-gorgeous-lasagna-testfile]: https://github.com/exercism/python/blob/main/exercises/concept/guidos-gorgeous-lasagna/lasagna_test.py
 [help-wanted]: https://github.com/exercism/python/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22
@@ -422,14 +423,13 @@ configlet generate <path/to/track> --spec-path path/to/problem/specifications
 [practice-exercises]: https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md
 [prettier]: https://prettier.io/
 [problem-specifications]: https://github.com/exercism/problem-specifications
+[pylint-disable-check]: https://pylint.pycqa.org/en/latest/user_guide/message-control.html#block-disables
 [pylint]: https://pylint.pycqa.org/en/v2.11.1/user_guide/index.html
 [pylintrc]: https://github.com/exercism/python/blob/main/pylintrc
-[pylint-disable-check]: https://pylint.pycqa.org/en/latest/user_guide/message-control.html#block-disables
 [pytest]: https://docs.pytest.org/en/6.2.x/contents.html
 [pytestmark]: https://docs.pytest.org/en/6.2.x/example/markers.html
 [python-syllabus]: https://exercism.org/tracks/python/concepts
 [python-track-test-generator]: https://github.com/exercism/python/blob/main/docs/GENERATOR.md
-[.style.yapf]: https://github.com/exercism/python/blob/main/.style.yapf
 [subtest]: https://docs.python.org/3/library/unittest.html#unittest.TestCase.subTest
 [the-words-that-we-use]: https://github.com/exercism/docs/blob/main/community/good-member/words.md
 [unittest]: https://docs.python.org/3/library/unittest.html#unittest.TestCase
