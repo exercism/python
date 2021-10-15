@@ -49,13 +49,13 @@ We &nbsp;✨💙 &nbsp;💛 &nbsp;💙 ✨&nbsp; PRs that follow our **[Contribu
 
 
 If you are here to help out with [open issues][open-issues], you have our gratitude &nbsp;🙌 &nbsp;🙌🏽.  
-Anything with [`help wanted`] and without a [`Claimed`] tag is up for grabs
+Anything with [`help wanted`] and without a [`Claimed`] tag is up for grabs.  
 Comment on the issue and we will reserve it for you. &nbsp;🌈 &nbsp; ✨
 
 Here to suggest a new feature or new exercise?? **Hooray!** &nbsp;🎉 &nbsp;
 
 Please keep in mind [Chesterton's Fence][chestertons-fence].  
-_Following the principals there when making your suggestions will likely result in a faster and more enthusiastic response from maintainers._
+_Following the principals there when making your suggestions will likely result in a faster & more enthusiastic response from maintainers._
 
 ## License
 This repository uses the [MIT License](/LICENSE).
