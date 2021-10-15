@@ -10,6 +10,6 @@ jobs:
   test-runner:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v2.3.5
       - name: Run test-runner
         run: docker-compose run test-runner
