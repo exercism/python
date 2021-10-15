@@ -46,16 +46,18 @@ We &nbsp;✨💙 &nbsp;💛 &nbsp;💙 ✨&nbsp; PRs that follow our **[Contribu
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Writing Style Guide][exercism-writing-style] **|** [Markdown Specification][exercism-markdown-specification] (_&nbsp;✨ &nbsp; version in [contributing][website-contributing-section] on [exercism(dot)org][exercism-website]._)
 
 <br>
-
+<img align="left" width="85" height="80" src="https://github.com/exercism/website-icons/blob/main/exercises/bomb-defuser.svg">
 
 If you are here to help out with [open issues][open-issues], you have our gratitude &nbsp;🙌 &nbsp;🙌🏽.  
 Anything with [`help wanted`] and without a [`Claimed`] tag is up for grabs.  
 Comment on the issue and we will reserve it for you. &nbsp;🌈 &nbsp; ✨
 
-Here to suggest a new feature or new exercise?? **Hooray!** &nbsp;🎉 &nbsp;
+<br>
+<img align="left" width="90" height="80" src="https://github.com/exercism/website-icons/blob/main/exercises/boutique-suggestions.svg">
 
+Here to suggest a new feature or new exercise?? **Hooray!** &nbsp;🎉 &nbsp;  
 Please keep in mind [Chesterton's Fence][chestertons-fence].  
-_Following the principals there when making your suggestions will likely result in a faster & more enthusiastic response from maintainers._
+_Thoughtful suggestions will likely result faster & more enthusiastic responses from maintainers._
 
 ## License
 This repository uses the [MIT License](/LICENSE).
