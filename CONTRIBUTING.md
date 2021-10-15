@@ -58,9 +58,8 @@ When in doubt,&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;. We wil
 🐍 &nbsp;_But we should talk before you take a whole lot of time or energy implementing anything._
 
 <br>
-
-## In General
-
+<img align="left" width="90" height="80" src="https://github.com/exercism/website-icons/blob/main/exercises/hello-world.svg">
+<p vertical-align="middle"><h2>In General</h2></p>
 <br>
 
 - Maintainers are happy to review your work and help troubleshoot with you.&nbsp;💛&nbsp;💙&nbsp;
