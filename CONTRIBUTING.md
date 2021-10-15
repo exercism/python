@@ -95,7 +95,6 @@ When in doubt,&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;. We wil
 
   </details>
 <br>
-<br>
 
 <img align="left" width="90" height="80" src="https://github.com/exercism/website-icons/blob/main/exercism/logo-big-bordered.png">
 <p vertical-align="middle"><h2 id="prose-writing-style-and-standards">Prose Writing Style and Standards</h2></p>
@@ -243,11 +242,45 @@ The track `test runner`, `analyzer`, and `representer` run in docker on `python:
   <br>
   <br>
   <details>
-    <summary>✅&nbsp;&nbsp;&nbsp;Concept Exercise Checklist</summary>
+    <summary>
+     ✅&nbsp;&nbsp;&nbsp;Concept Exercise Checklist
+   </summary>
+   <br>
+
+   - [ ] `.docs/hints.md`
+   - [ ] `.docs/instructions.md`
+   - [ ] `.docs/introduction.md`
+   - [ ] `.meta/config.json`
+   - [ ] `.meta/design.md`
+   - [ ] `.meta/exemplar.py` (_exemplar solution_)
+   - [ ] `<exercise-slug>_test.py` (_test file_)
+   - [ ] `<exercise-slug>.py` (_stub file_)
+   - [ ] `concepts/../introduction.md`
+   - [ ] `concepts/../about.md`
+   - [ ] `concepts/../links.json`
+   - [ ] `concepts/../.meta/config.json`
+
   </details>
 
   <details>
-   <summary>✅&nbsp;&nbsp;&nbsp;Practice Exercise Checklist</summary>
+   <summary>
+    ✅&nbsp;&nbsp;&nbsp;Practice Exercise Checklist
+   </summary>
+   <br>
+
+   - [ ] `.docs/instructions.md`(**required**)
+   - [ ] `.docs/introduction.md`(_optional_)
+   - [ ] `.docs/introduction.append.md`(_optional_)
+   - [ ] `.docs/instructions.append.md` (_optional_)
+   - [ ] `.docs/hints.md`(_optional_)
+   - [ ] `.meta/config.json` (**required**)
+   - [ ] `.meta/example.py` (**required**)
+   - [ ] `.meta/design.md` (_optional_)
+   - [ ] `.meta/template.j2` (_template for generating tests from canonical data_)
+   - [ ] `.meta/tests.toml` (_tests configuration from canonical data_)
+   - [ ] `<exercise-slug>_test.py` (_**auto-generated from canonical data**_)
+   - [ ] `<exercise-slug>.py` (**required**)
+
   </details>
 
 
@@ -356,7 +389,6 @@ configlet generate <path/to/track> --spec-path path/to/problem/specifications
 [concept-exercise-anatomy]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md
 [concept-exercises]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md
 [config-json]: https://github.com/exercism/javascript/blob/main/config.json
-[configlet-general]: https://github.com/exercism/configlet
 [configlet]: https://github.com/exercism/docs/blob/main/building/configlet/generating-documents.md
 [configlet-lint]: https://github.com/exercism/configlet#configlet-lint
 [distinguishing-test-iterations]: https://docs.python.org/3/library/unittest.html#distinguishing-test-iterations-using-subtests
