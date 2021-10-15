@@ -82,6 +82,7 @@ When in doubt,&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;. We wil
 - Continuous Integration is going to run **a lot** of checks. Try to understand & fix any failures.
 
 <br>
+<br>
 
   <details>
     <summary>⚠️&nbsp;&nbsp;<b><em>Pre-Commit Checklist</em></b>&nbsp;⚠️</summary>
@@ -98,23 +99,23 @@ When in doubt,&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;. We wil
   </details>
 <br>
 
-
-## 📄 A Little More on Prose Writing Style and Standards
+<img align="left" width="90" height="80" src="https://github.com/exercism/website-icons/blob/main/exercism/logo-big-bordered.png">
+<p vertical-align="middle"><h2>A Little More on Prose Writing Style and Standards</h2></p>
 
 <br>
 
-Non-code content (_exercise introductions & instructions, hints, concept write-ups, documentation etc._) should be written in [American English][american-english]. We strive to watch [the words we use][the-words-that-we-use].
+Non-code content (_exercise introductions & instructions, hints, concept write-ups, documentation etc._) should be written in [American English][american-english].
+We strive to watch [the words we use][the-words-that-we-use].
 
-When a word or phrase usage is contested/ambiguous, we default to what is best understood by our international community of learners, even if it "sounds a little weird"  to a "native" American English speaker.
+When a word or phrase usage is contested/ambiguous, we default to what is best understood by our international community of learners, even if it "sounds a little weird" to a "native" American English speaker.
 
 Our documents use [Markdown][markdown-language], with certain [alterations][exercism-markdown-widgets] & [additions][exercism-internal-linking]. Here is our full [Markdown Specification][exercism-markdown-specification]. &nbsp;📐 We format/lint our Markdown with [Prettier][prettier].&nbsp;✨
 
 
 <br>
-
-<br>
-<img align="left" width="65" vertical-align="middle" height="65" src="https://github.com/exercism/website-icons/blob/main/tracks/python.svg">
+<img align="left" width="70" height="65" src="https://github.com/exercism/website-icons/blob/main/tracks/python.svg">
 <p vertical-align="middle"><h2>A Little More on Coding Standards</h2></p>
+
 <br>
 
 1.  We follow [PEP8][PEP8] (["For Humans" version here][pep8-for-humans]).
@@ -150,7 +151,7 @@ Our documents use [Markdown][markdown-language], with certain [alterations][exer
 - Always use an **`EOL`** to end a file.
 
  </details>
- 
+
 <details>
     <summary>Test File Style (<em>concept exercises</em>)</summary>
 <br>
@@ -172,7 +173,7 @@ Our documents use [Markdown][markdown-language], with certain [alterations][exer
 - Favor `f-strings` for dynamic failure messages.  Please make your error messages as relevant and human-readable as possible.
 - We relate test cases to **task number** via a custom [PyTest Marker][pytestmark].
   - These take the form of `@pytest.mark.task(taskno=<task-number-here>)`. See [Guido's Gorgeous Lasagna][guidos-gorgeous-lasagna-testfile] for an example.
-- We prefer **test data files** when test inputs/ouputs are verbose.
+- We prefer **test data files** when test inputs/outputs are verbose.
   - These should be named with `_data` or `_test_data` at the end of the filename, and saved alongside the test case file.
   - See the [Cater-Waiter][cater-waiter] exercise directory for an example of this setup.
   - **Test data files** need to be added under an `editor` key within [`config.json "files"`][exercise-config-json].
@@ -189,68 +190,85 @@ Our documents use [Markdown][markdown-language], with certain [alterations][exer
 If you have any questions or issues, don't hesitate to ask the maintainers -- they're always happy to help&nbsp;💛&nbsp;💙&nbsp;
 
 Some of our code is old and does not (yet) conform to all these standards.  
-_We know it, and trust us, we are working on fixing it._ But if you see &nbsp;👀&nbsp; something, &nbsp;👄&nbsp; say something. It'll motivate us to fix it! 🌈
+_**We know it, and trust us, we are working on fixing it.**_ But if you see &nbsp;👀&nbsp; something, &nbsp;👄&nbsp; say something. It will motivate us to fix it! 🌈
 
  <br>
 
-##   🏋️ A Little More on Exercises 🏋🏽‍♀️
-
-- Each exercise must be self-contained. Please do not use or reference files that reside outside the given exercise directory. "Outside" files will not be included if a student fetches the exercise via the CLI.
-
-- Each exercise/problem should include a complete test suite, an example/exemplar solution, and a stub file ready for student implementation.
-
-  - See  [Concept Exercise Anatomy][concept-exercise-anatomy],  or  [Practice Exercise Anatomy][practice-exercise-anatomy] depending on which type of exercise you are contributing to.
-
-  <details>
-    <summary>Concept Exercise Checklist</summary>>
-  </details>
-
-    <br>
-
-     <details>
-        <summary>Practice Exercise Checklist</summary>>
-      </details>
-
-- **Practice exercise**, descriptions and instructions come from a centralized, cross-track  [problem specifications][problem-specifications] repository.
-
-  - Any updates or changes need to be proposed/approved in `problem-specifications` first.
-  - If Python-specific changes become necessary, they  need to be appended to the canonical instructions by creating a `instructions.append.md` file in this (`exercism/Python`) repository.
-
-- Practice Exercise **Test Suits** for many practice exercises are similarly [auto-generated][##Auto-Generated Test Files and Test Templates] from data in [problem specifications][problem-specifications].
-  - Any changes to them need to be proposed/discussed in the `problem-specifications` repository and approved by **3 track maintainers**, since changes could potentially affect many (_or all_) exercism language tracks.
-  - If Python-specific test changes become necessary, they can be appended to the exercise `tests.toml` file.
-  - 📛&nbsp;[ **Please file an issue**][open-an-issue]&nbsp;📛 &nbsp;and check with maintainers before adding any Python-specific tests.
-
+<img align="left" width="70" height="65" src="https://github.com/exercism/website-icons/blob/main/tracks/python.svg">
+<p vertical-align="middle"><h2>Python Versions</h2></p>
 
 <br>
 
+This track officially supports Python = `3.8`  
+The track `test runner`, `analyzer`, and `representer` run in docker on `python:3.9-slim`.
 
-## Python Versions
+-  All exercises should be written for compatibility with Python = `3.8` or `3.9`.
+-  Version backward _incompatibility_ (*e.g* an exercise using a `3.8` or `3.9` **only** feature)  should be clearly noted in any exercise hits, links, introductions or other notes.
 
-<br>
+-  Here is an example of how the Python documentation handles [version-tagged &nbsp;🏷&nbsp;][version-tagged-language-features] feature introduction.
 
-This track officially supports Python = `3.8`  The track `test runner`, `analyzer`, and `representer` run in docker on `python:3.9-slim`.
-
-*  All exercises should be written for compatibility with Python = `3.8` or `3.9`.
-*  Version backward _incompatibility_ (*e.g* an exercise using a `3.8` or `3.9` **only** feature)  should be clearly noted in any exercise hits, links, introductions or other notes.
-
-*  Here is an example of how the Python documentation handles [version-tagged &nbsp;🏷&nbsp;][version-tagged-language-features] feature introduction.
-
-* _Most_ exercises will work with Python `3.6+`, and _many_ are compatible with Python `2.7+`. Please do not change existing exercises to add new language features without consulting with a maintainer first. We &nbsp;💛&nbsp;💙&nbsp; modern Python, but we _also_ want to avoid student confusion when it comes to which Python versions support brand-new features.
+- _Most_ exercises will work with Python `3.6+`, and _many_ are compatible with Python `2.7+`.
+  - Please do not change existing exercises to add new language features without consulting with a maintainer first.
+  - We &nbsp;💛&nbsp;💙&nbsp; modern Python, but we _also_ want to avoid student confusion when it comes to which Python versions support brand-new features.
 
 - All test suites and example solutions must work in all Python versions that we currently support. When in doubt about a feature, please check with maintainers.
 
 <br>
 
-## External Libraries and Dependencies
+<br>
 
-Our tooling (_runners, analyzers and representers_) runs in isolated containers within the exercism website.  Because of this, exercises cannot rely on third-party or external libraries.  Any library needed for an exercise or exercise tests must be incorporated as part of the tooling build, and noted for students who are using the CLI to solve problems locally.
+<img align="left" width="80" height="80" src="https://github.com/exercism/website-icons/blob/main/exercises/developer-privileges.svg">
+<p vertical-align="middle"><h2>A Little More on Exercises</h2></p>
+
+<br>
+
+- Each exercise must be self-contained. Please do not use or reference files that reside outside the given exercise directory. "Outside" files will not be included if a student fetches the exercise via the Command line Interface.
+
+- Each exercise/problem should include
+  - a complete test suite,
+  - an example/exemplar solution,
+  - a stub file ready for student implementation.
+
+- For specifications, refer to the links below, depending on which type of exercise you are contributing to.
+  - [Concept Exercise Anatomy][concept-exercise-anatomy]
+  - [Practice Exercise Anatomy][practice-exercise-anatomy]
+
+- **Practice exercise**, descriptions and instructions come from a centralized, cross-track  [problem specifications][problem-specifications] repository.
+  - Any updates or changes need to be proposed/approved in `problem-specifications` first.
+  - If Python-specific changes become necessary, they  need to be appended to the canonical instructions by creating a `instructions.append.md` file in this (`exercism/Python`) repository.
+
+- Practice Exercise **Test Suits** for many practice exercises are similarly [auto-generated](#auto-generated-files) from data in [problem specifications][problem-specifications].
+  - Any changes to them need to be proposed/discussed in the `problem-specifications` repository and approved by **3 track maintainers**, since changes could potentially affect many (_or all_) exercism language tracks.
+  - If Python-specific test changes become necessary, they can be appended to the exercise `tests.toml` file.
+  - 📛&nbsp;[ **Please file an issue**][open-an-issue]&nbsp;📛 &nbsp;and check with maintainers before adding any Python-specific tests.
+
+  <br>
+  <br>
+  <details>
+    <summary>✅&nbsp;&nbsp;&nbsp;Concept Exercise Checklist</summary>
+  </details>
+
+  <details>
+   <summary>✅&nbsp;&nbsp;&nbsp;Practice Exercise Checklist</summary>
+  </details>
+
+
+<br>
+
+
+<br>
+<img align="left" width="80" height="80" src="https://github.com/exercism/website-icons/blob/main/exercises/anagrams.svg">
+<p vertical-align="middle"><h2>External Libraries and Dependencies</h2></p>
+
+<br>
+
+Our tooling (_runners, representers, and analyzers_) runs in isolated containers within the exercism website.  Because of this isolation, exercises cannot rely on third-party or external libraries.  Any library needed for an exercise or exercise tests must be incorporated as part of a tooling build, and noted for students who are using the CLI to solve problems locally.
 
 If your exercise depends on a third-party library (_aka not part of standard Python_), please consult with maintainers about it.  We may or may not be able to accommodate the package.
 
 <br>
-
-## Auto-Generated Test Files and Test Templates
+<img id="auto-generated-files" align="left" width="95" height="90" src="https://github.com/exercism/website-icons/blob/main/exercises/forth.svg">
+<p vertical-align="middle"><h2>Auto-Generated Test Files and Test Templates</h2></p>
 
 <br>
 
@@ -260,11 +278,7 @@ Changes to practice exercise _specifications_ should be raised/PR'd in  [problem
 
 If a practice exercise has an auto-generated `<exercise_slug>_test.py` file, there will be a  `.meta/template.j2` and a `.meta/tests.toml` file  in the exercise directory. If an exercise implements  Python track-specific tests, there may be a `.meta/additional_tests.json` to define them. These `additional_tests.json` files will automatically be included in test generation.
 
-Practice exercise `<exercise_slug>_test.py` files are  generated/regenerated via the [Python Track Test Generator][python-track-test-generator]. Please reach out to a maintainer if you need any help with the process.
-
-<br>
-
-### Python Practice Exercise structure for auto-generated tests
+_Exercise Structure with Auto-Generated Test Files_
 
 ```Bash
 [<exercise-slug>/
@@ -278,44 +292,59 @@ Practice exercise `<exercise_slug>_test.py` files are  generated/regenerated via
 ├── <exercise_slug>.py #stub file
 └── <exercise_slug_test.py #test file
 ```
+<br>
 
-## Generating Practice Exercise Documents
+Practice exercise `<exercise_slug>_test.py` files are  generated/regenerated via the [Python Track Test Generator][python-track-test-generator].  
+Please reach out to a maintainer if you need any help with the process.
 
-**You will need:**
-- A local clone of the [problem-specifications] repository.
-- [configlet]
-
-**Regenerating all Practice Exercise Documents:**
-
-```
-configlet generate <path/to/track> --spec-path path/to/problem/specifications
-```
-
-**Regenerating an Individual Exercises Documents:**
-
-```
-configlet generate <path/to/track> --spec-path path/to/problem/specifications --only example-exercise
-```
-
-### Implementing Practice Exercise Tests
+<br>
+<img id="implementing-practice-exercise-tests" align="left" width="75" height="75" src="https://github.com/exercism/website-icons/blob/main/exercises/equilateral-triangle.svg">
+<p vertical-align="middle"><h2>Implementing Practice Exercise Tests</h2></p>
+<br>
 
 If an unimplemented exercise has a `canonical-data.json` file in the [problem-specifications] repository, a generation template must be created. See the Python track [test generator documentation][python-track-test-generator] for more information.
 
 If an unimplemented exercise does not have a `canonical-data.json` file, the test file must be written manually.
 
-### Practice Exercise Example solutions
+<br>
+<img id="practice-exercise-example-solutions" align="left" width="75" height="75" src="https://github.com/exercism/website-icons/blob/main/exercises/character-study.svg">
+<p vertical-align="middle"><h2>Implementing Practice Exercise Example Solutions</h2></p>
+<br>
 
-Example solution files serve two purposes:
-
+**Example solution files serve two purposes only:**
 1. Verification of the tests
 2. Example implementation for mentor/student reference
 
-Unlike concept exercise, practice exercise `example.py` files are NOT intended as as a "best practice" or "standard".  They are provided as proof that there is an acceptable and testable answer to the practice exercise.
+Unlike `concept` exercise, practice exercise `example.py` files are **NOT** intended as as a "best practice" or "standard".  
+They are provided as proof that there is an acceptable and testable answer to the practice exercise.
 
+<br>
+<img id="implementing-track-specific-practice-exercises" align="left" width="75" height="75" src="https://github.com/exercism/website-icons/blob/main/exercises/darts.svg">
+<p vertical-align="middle"><h2>Implementing Track-specific Practice Exercises</h2></p>
+<br>
 
-## Implementing Track-specific Practice Exercises
+Implementing Track-specific Practice Exercises is similar to implementing a `canonical` exercise that has no `canonical-data.json`. But in addition to the tests, the exercise documents (_instructions, etc._) will also need to be written manually. Carefully follow the structure of generated exercise documents and the [exercism practice exercise specification][practice-exercises].
+<br>
 
-Similar to implementing a canonical exercise that has no `canonical-data.json`, but the exercise documents will also need to be written manually. Carefully follow the structure of generated exercise documents and the [exercism practice exercise specification][practice-exercises].
+<p verticle-align="middle"><img id="generating-practice-exercise-documents" align="left" width="75" height="75" src="https://github.com/exercism/website-icons/blob/main/exercises/rest-api.svg"><h2>Generating Practice Exercise Documents</h2></p>
+<br>
+<b>You will need</b>
+
+1.&nbsp;&nbsp;A local clone of the [problem-specifications] repository.  
+2.&nbsp;&nbsp;[configlet]
+
+<p><b>For Individual Exercises</b><p><img id="regenerating-individual-exercise-documents" align="left" width="45" height="45" src="https://github.com/exercism/website-icons/blob/main/exercises/doubly-linked-list.svg"></p>
+
+```bash
+configlet generate <path/to/track> --spec-path path/to/problem/specifications --only example-exercise
+```
+<p><b>For all Practice Exercises</b><p><img id="regenerating-all-practice-exercise-documents" align="left" width="45" height="45" src="https://github.com/exercism/website-icons/blob/main/exercises/doubly-linked-list.svg"></p>
+
+```bash
+configlet generate <path/to/track> --spec-path path/to/problem/specifications
+```
+
+<br>
 
 
 [.flake8]: https://github.com/exercism/python/blob/main/.flake8
