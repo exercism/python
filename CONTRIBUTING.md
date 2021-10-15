@@ -64,8 +64,8 @@ When in doubt,&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;. We wil
 <br>
 
 - Maintainers are happy to review your work and help you.&nbsp;💛&nbsp;💙&nbsp;
-  - They may be in a different timezone&nbsp;⌚&nbsp;, or tied up &nbsp;🧶&nbsp; with other tasks.
   - Maintainers will review your request as soon as they are able to.
+  - **BUT** They may be in a different timezone&nbsp;⌚&nbsp;, or tied up &nbsp;🧶&nbsp; with other tasks.
   - **Please wait at least 72 hours before pinging.**
 - If you'd like in-progress feedback or discussion, please mark your Pull Request as a **`[draft]`**
 - Pull requests should be focused around a single exercise, issue, or change.
@@ -85,14 +85,15 @@ When in doubt,&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;. We wil
 
   <details>
     <summary>⚠️&nbsp;&nbsp;<b><em>Pre-Commit Checklist</em></b>&nbsp;⚠️</summary>
+    <br>
 
-1. Run [`configlet-lint`][configlet-lint] if the track [config.json](config-json) has been modified.
-2. Run [Prettier][prettier] on all markdown files.
-   - (_Optionally_) run [yapf][yapf] to help format your code, and give you a head start on making the linters happy.
-3. Run [flake8][flake8] & [pylint][pylint] to ensure all Python code files conform to general code style standards.
-4. Run `test/check-exercises.py [EXERCISE]` to check if your test changes function correctly.
-5. Run the `example.py` or `exemplar.py` file against the exercise test file to ensure that it passes without error.
-6. If you modified or created a `hints.md` file for a practice exercise, [regenerate](#generating-exercise-readmes) it.
+   1.  &nbsp;Run [`configlet-lint`][configlet-lint] if the track [config.json](config-json) has been modified.
+   2.  &nbsp;Run [Prettier][prettier] on all markdown files.
+       - (_Optionally_) run [yapf][yapf] to help format your code, and give you a head start on making the linters happy.
+   3.  &nbsp;Run [flake8][flake8] & [pylint][pylint] to ensure all Python code files conform to general code style standards.
+   4.  &nbsp;Run `test/check-exercises.py [EXERCISE]` to check if your test changes function correctly.
+   5.  &nbsp;Run the `example.py` or `exemplar.py` file against the exercise test file to ensure that it passes without error.
+   6.  &nbsp;If you modified or created a `hints.md` file for a practice exercise, [regenerate](#generating-practice-exercise-documents) it.
 
   </details>
 <br>
@@ -104,7 +105,7 @@ When in doubt,&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;. We wil
 
 Non-code content (_exercise introductions & instructions, hints, concept write-ups, documentation etc._) should be written in [American English][american-english]. We strive to watch [the words we use][the-words-that-we-use].
 
-When a word or phrase usage is contested | ambiguous, we default to what is best understood by our international community of learners, even if it "sounds a little weird"  to a "native" American English speaker.
+When a word or phrase usage is contested/ambiguous, we default to what is best understood by our international community of learners, even if it "sounds a little weird"  to a "native" American English speaker.
 
 Our documents use [Markdown][markdown-language], with certain [alterations][exercism-markdown-widgets] & [additions][exercism-internal-linking]. Here is our full [Markdown Specification][exercism-markdown-specification]. &nbsp;📐 We format/lint our Markdown with [Prettier][prettier].&nbsp;✨
 
@@ -209,8 +210,6 @@ Some of our code is old and does not (yet) conform to all these standards.  We k
 <br>
 
 This track officially supports Python = `3.8`  The track `test runner`, `analyzer`, and `representer` run in docker on `python:3.9-slim`.
-
-Although the majority of test cases are written using `unittest.TestCase`,
 
 *  All exercises should be written for compatibility with Python = `3.8` or `3.9`.
 *  Version backward _incompatibility_ (*e.g* an exercise using a `3.8` or `3.9` **only** feature)  should be clearly noted in any exercise hits, links, introductions or other notes.
