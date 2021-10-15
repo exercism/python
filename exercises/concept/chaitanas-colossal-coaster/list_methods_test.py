@@ -38,6 +38,7 @@ class ListMethodsTest(unittest.TestCase):
     def test_find_my_friend_start_of_queue(self):
         params = (["Natasha", "Steve", "Tchalla", "Wanda", "Rocket"], "Natasha")
         result = 0
+
         self.assertEqual(
             find_my_friend(*params), result,
             msg="The index of the friend to find is incorrect."
@@ -88,9 +89,10 @@ class ListMethodsTest(unittest.TestCase):
         params = (["Natasha", "Steve", "Tchalla", "Wanda", "Rocket"], 5, "Bucky")
         result = ["Natasha", "Steve", "Tchalla", "Wanda", "Rocket", "Bucky"]
 
-        self.assertListEqual(add_me_with_my_friends(*params), result,
-              msg="The person was added to the wrong location in the queue or was not added at all"
-                             )
+        self.assertListEqual(
+            add_me_with_my_friends(*params), result,
+            msg="The person was added to the wrong location in the queue or was not added at all"
+        )
 
     @pytest.mark.task(taskno=4)
     def test_remove_the_mean_person_middle_of_queue(self):
@@ -136,6 +138,7 @@ class ListMethodsTest(unittest.TestCase):
     def test_how_many_namefellows_only_one(self):
         params = (["Natasha", "Steve", "Ultron", "Rocket"], "Natasha")
         result = 1
+
         self.assertIs(
             how_many_namefellows(*params), result,
             msg="The namefellow count is incorrect"
@@ -166,6 +169,7 @@ class ListMethodsTest(unittest.TestCase):
         params = ["Steve", "Ultron", "Natasha", "Rocket"]
         result = ["Natasha", "Rocket", "Steve", "Ultron"]
 
-        self.assertListEqual(sorted_names(params), result,
-                             msg="The queue was not properly sorted"
-                             )
+        self.assertListEqual(
+            sorted_names(params), result,
+            msg="The queue was not properly sorted"
+        )
