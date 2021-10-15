@@ -63,12 +63,13 @@ When in doubt,&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;. We wil
 
 <br>
 
-- Maintainers are happy to review your work and help you.&nbsp;💛&nbsp;💙&nbsp;
-  - Maintainers will review your request as soon as they are able to.
-  - **BUT** They may be in a different timezone&nbsp;⌚&nbsp;, or tied up &nbsp;🧶&nbsp; with other tasks.
+- Maintainers are happy to review your work and help troubleshoot with you.&nbsp;💛&nbsp;💙&nbsp;
+  - Requests are reviewed as soon as is practical/possible.
+  - (❗&nbsp;) Reviewers may be in a different timezone&nbsp;⌚&nbsp;, or tied up &nbsp;🧶&nbsp; with other tasks.
   - **Please wait at least 72 hours before pinging.**
-- If you'd like in-progress feedback or discussion, please mark your Pull Request as a **`[draft]`**
-- Pull requests should be focused around a single exercise, issue, or change.
+- If you need help, comment in the Pull Request/issue.&nbsp; 🙋🏽‍♀️ &nbsp;
+- If you would like in-progress feedback/discussion, please mark your Pull Request as a **`[draft]`**
+- Pull Requests should be focused around a single exercise, issue, or change.
 - Pull Request titles and descriptions should make clear **what** has changed and **why**.
   - Please link &nbsp;🔗&nbsp; to any related issues the PR addresses.
 - 📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp; and discuss it with &nbsp;🧰 &nbsp;maintainers _**before**_:
@@ -78,8 +79,7 @@ When in doubt,&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;. We wil
 - Follow coding standards found in [PEP8][PEP8] (["For Humans" version here][pep8-for-humans]).
 - All files should have a proper [EOL][EOL]. This means one carriage return at the end of the final line of text files.
 - Otherwise, watch out &nbsp;⚠️&nbsp; for trailing spaces, extra blank lines, extra spaces, and spaces in blank lines.
-- Continuous Integration is going to run **a lot** of checks. Pay attention to failures & try to understand and fix them.
-- If you need help, comment in the PR or issue.&nbsp; 🙋🏽‍♀️ &nbsp; The maintainers are happy to help troubleshoot.
+- Continuous Integration is going to run **a lot** of checks. Try to understand & fix any failures.
 
 <br>
 
@@ -89,8 +89,8 @@ When in doubt,&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;. We wil
 
    1.  &nbsp;Run [`configlet-lint`][configlet-lint] if the track [config.json](config-json) has been modified.
    2.  &nbsp;Run [Prettier][prettier] on all markdown files.
-       - (_Optionally_) run [yapf][yapf] to help format your code, and give you a head start on making the linters happy.
-   3.  &nbsp;Run [flake8][flake8] & [pylint][pylint] to ensure all Python code files conform to general code style standards.
+       - (_Optionally_) run [yapf][yapf] ([_config file_][.style.yapf]) to help format your code, and give you a head start on making the linters happy.
+   3.  &nbsp;Run [flake8][flake8] ([_config file_][.flake8]) & [pylint][pylint] ([_config file_][pylintrc]) to ensure all Python code files conform to general code style standards.
    4.  &nbsp;Run `test/check-exercises.py [EXERCISE]` to check if your test changes function correctly.
    5.  &nbsp;Run the `example.py` or `exemplar.py` file against the exercise test file to ensure that it passes without error.
    6.  &nbsp;If you modified or created a `hints.md` file for a practice exercise, [regenerate](#generating-practice-exercise-documents) it.
@@ -112,7 +112,9 @@ Our documents use [Markdown][markdown-language], with certain [alterations][exer
 
 <br>
 
-## A Little More on Coding Standards
+<br>
+<img align="left" width="65" vertical-align="middle" height="65" src="https://github.com/exercism/website-icons/blob/main/tracks/python.svg">
+<p vertical-align="middle"><h2>A Little More on Coding Standards</h2></p>
 <br>
 
 1.  We follow [PEP8][PEP8] (["For Humans" version here][pep8-for-humans]).
@@ -124,16 +126,15 @@ Our documents use [Markdown][markdown-language], with certain [alterations][exer
 4.  We use [yapf][yapf] to auto-format our python files.
     Our `.style.yapf` config file is [.style.yapf][.style.yapf] in the top level of this repo.
 
-If you have any questions or issues, don't hesitate to ask the maintainers -- they're always happy to help&nbsp;💛&nbsp;💙&nbsp;
+<br>
 
-Some of our code is old and does not (yet) conform to all these standards.  We know it, and trust us, we're fixing it. But if you see &nbsp;👀&nbsp; something, &nbsp;👄&nbsp; say something.  It'll motivate us to fix it! 🌈
-
-
-### General Code Style TL;DR:
+<details>
+    <summary>General Code Style Summary</summary>
+<br>
 
 - _**spaces**_, never `Tabs`
 - **4 space** indentation
-- **120 character per line limit** (_as opposed to the Google limit of 79_)
+- **120 character per line limit** (_as opposed to the default limit of 79_)
 - Variable, function, and method names should be `lower_case_with_underscores` (_aka "snake case"_)
 - Classes should be named in `TitleCase` (_aka "camel case"_)
 - **No single letter variable names** outside of a `lambda`.  This includes loop variables and comprehensions.
@@ -148,30 +149,49 @@ Some of our code is old and does not (yet) conform to all these standards.  We k
 - Two lines between `Classes`, one line between `functions`.  Other vertical whitespace as needed to help readability.
 - Always use an **`EOL`** to end a file.
 
-
-### Concept Exercise Test Files
-
-- We have historically used [Unittest.TestCase][unittest] syntax, with [PyTest][pytest] as a test runner.
-- We are transitioning to using (many) more PyTest features and syntax, but are leaving `Unittest` syntax in place where possible.
-- Always check with a maintainer before introducing a PyTest feature in your tests.  Not all PyTest features may be supported.
-- Test **Classes** should be titled `<ExerciseSlug>Test`. e.g. `class CardGamesTest(unittest.TestCase):`
-  This is to help our test runner re-write them for display on the website.
-- Test _methods_ or functions should begin with `test_`, and follow PEP8 naming.  Try to make test case names descriptive but not too long.
-- Favor [_parameterizing_][distinguishing-test-iterations] tests that vary only by input data. We use [unittest.TestCase.subTest][subtest] for this. An [example from Guido's Gorgeous Lasagna][guidos-gorgeous-lasagna-testfile].  A second [example from Card Games][card-games-testfile].
-- Avoid excessive line breaks or indentation - especially in parameterized tests.  Excessive breaks & indentation within the `for` loops cause issues when formatting the test code for display on the website.
-- Use [`enumerate()`][enumerate] where possible when looping in test cases. See [Card Games][card-games-testfile] for example usage.
-- Favor using variable names like `inputs`, `data`, `input_data`, `test_data`, or `test_case_data` for test inputs.
-- Favor using variable names like `results`, `expected`, `result_data`, `expected_data`, `expected_results` or `expected_outputs` for expected test outcomes.
-- Favor putting the (not optional) assert failure message on it's own line outside of the `self.assert` method, and naming it `failure_msg`.  See [Card Games][card-games-testfile] for example usage.
-- Use `f-strings` over other methods for test failure messages.  Make your messages as relevant and human-readable as possible.
-- We relate the test cases for a particular task in an exercise to the **task number** via a custom [PyTest Marker][pytestmark]. These are decorators that take the form of ``@pytest.mark.task(taskno=<task-number-here>)`.  See [Guido's Gorgeous Lasagna][guidos-gorgeous-lasagna-testfile] for an example usage.
-- For exercises that have large sets of data for inputs/outputs, we prefer to have **test data files**.  These should be named with `_data` or `_test_data` at the end of the filename, and saved alongside the test case file.  See the [Cater-Waiter][cater-waiter] exercise directory for an example of how we set this up.
-- Test data files need to be added to the `editor` key within an exercises [`config.json` `files` key][exercise-config-json].  Check with a maintainer if you have questions or issues.
-- For new test files going forward, omit `if __name__ == "__main__":
-    unittest.main()`.  `Unittest` will not be able to run these files stand-alone.
-- Test files should be linted with both `flake8` and `pylint`.  Both are known to toss false positives for imports and unused variables in test code.  Where necessary, deploy the [`#noqa`][flake8-noqa] or [`#pylint disable=<check-name>`][pylint-disable-check] comments to suppress false-positive warnings.  See **line 16** of [Guido's Gorgeous Lasagna][guidos-gorgeous-lasagna-testfile] test file for an example of a pylint "skip".
-
+ </details>
+ 
+<details>
+    <summary>Test File Style (<em>concept exercises</em>)</summary>
 <br>
+
+- [Unittest.TestCase][unittest] syntax, with [PyTest][pytest] as a test runner.
+  - We are transitioning to using more PyTest features/syntax, but are leaving `Unittest` syntax in place where possible.
+  - Always check with a maintainer before introducing a PyTest feature into your tests.
+- Test **Classes** should be titled `<ExerciseSlug>Test`. **e.g.** `class CardGamesTest(unittest.TestCase):`
+- Test method names should begin with `test_`.  Try to make test case names descriptive but not too long.
+- Favor [_parameterizing_][distinguishing-test-iterations] tests that only vary input data. Use [unittest.TestCase.subTest][subtest] for parameterization.
+  - An [example from Guido's Gorgeous Lasagna][guidos-gorgeous-lasagna-testfile].
+  - A second [example from Card Games][card-games-testfile].
+- Avoid excessive line breaks or indentation - particularly in parameterized tests.
+  - Excessive breaks & indentation within the `for` loops cause issues when formatting the test code for display on the website.
+- Use [`enumerate()`][enumerate] where possible when indexes are needed. See [Card Games][card-games-testfile] for example usage.
+- Favor using names like `inputs`, `data`, `input_data`, `test_data`, or `test_case_data` for test inputs.
+- Favor using names like `results`, `expected`, `result_data`, `expected_data`, or `expected_results` for test outcomes.
+- Favor putting the assert failure message outside of `self.assert()`. Name it `failure_msg`.  See [Card Games][card-games-testfile] for example usage.
+- Favor `f-strings` for dynamic failure messages.  Please make your error messages as relevant and human-readable as possible.
+- We relate test cases to **task number** via a custom [PyTest Marker][pytestmark].
+  - These take the form of `@pytest.mark.task(taskno=<task-number-here>)`. See [Guido's Gorgeous Lasagna][guidos-gorgeous-lasagna-testfile] for an example.
+- We prefer **test data files** when test inputs/ouputs are verbose.
+  - These should be named with `_data` or `_test_data` at the end of the filename, and saved alongside the test case file.
+  - See the [Cater-Waiter][cater-waiter] exercise directory for an example of this setup.
+  - **Test data files** need to be added under an `editor` key within [`config.json "files"`][exercise-config-json].
+  - Check with a maintainer if you have questions or issues, or need help with an exercise `config.json`.
+- For new test files going forward, omit `if __name__ == "__main__":
+    unittest.main()`.
+- Lint with both `flake8` and `pylint`.
+  - Both linters are known to toss false-positives for some testing patterns.
+  - Where necessary, deploy the [`#noqa`][flake8-noqa] or [`#pylint disable=<check-name>`][pylint-disable-check] comments to suppress false-positive warnings.   - See **line 16** of [Guido's Gorgeous Lasagna][guidos-gorgeous-lasagna-testfile] test file for an example of an override.
+
+ </details>
+ <br>
+
+If you have any questions or issues, don't hesitate to ask the maintainers -- they're always happy to help&nbsp;💛&nbsp;💙&nbsp;
+
+Some of our code is old and does not (yet) conform to all these standards.  
+_We know it, and trust us, we are working on fixing it._ But if you see &nbsp;👀&nbsp; something, &nbsp;👄&nbsp; say something. It'll motivate us to fix it! 🌈
+
+ <br>
 
 ##   🏋️ A Little More on Exercises 🏋🏽‍♀️
 
