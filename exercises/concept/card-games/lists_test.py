@@ -85,7 +85,7 @@ class CardGamesTest(unittest.TestCase):
             ([1, 2, 3], True),
             ([2, 3, 4], True),
             ([2, 3, 4, 8, 8], True),
-            ([1, 2, 4, 5, 8], True),
+            ([1, 2, 4, 5, 8], False),
         ]
 
         for variant, (hand, same) in enumerate(data, start=1):
