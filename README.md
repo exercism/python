@@ -60,7 +60,7 @@ Please keep in mind [Chesterton's Fence][chestertons-fence].
 _Thoughtful suggestions will likely result faster & more enthusiastic responses from maintainers._
 
 
-## Python and Python Documentation
+## Python Software and Documentation
 
 **Copyright © 2001-2021 Python Software Foundation. All rights reserved.**
 
