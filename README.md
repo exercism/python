@@ -59,19 +59,23 @@ Here to suggest a new feature or new exercise?? **Hooray!** &nbsp;🎉 &nbsp;
 Please keep in mind [Chesterton's Fence][chestertons-fence].  
 _Thoughtful suggestions will likely result faster & more enthusiastic responses from maintainers._
 
-## License
-This repository uses the [MIT License](/LICENSE).
 
 ## Python License
 
-Python and Python documentation is:
-Copyright © 2001-2021 Python Software Foundation. All rights reserved.
+Python & Python documentation:
+**Copyright © 2001-2021 Python Software Foundation. All rights reserved.**
 
 Python software and documentation are licensed under the [PSF License Agreement][psf-license].
 
 Starting with `Python 3.8.6`, examples, recipes, and other code in the Python documentation are dual licensed under the [PSF License Agreement][psf-license] and the [Zero-Clause BSD license][zero-clause-bsd].
 
 Some software incorporated into Python is under different licenses. The licenses are listed with code falling under that license. See [Licenses and Acknowledgements for Incorporated Software](https://docs.python.org/3/license.html#otherlicenses) for an incomplete list of these licenses.
+
+
+## License
+This repository uses the [MIT License](/LICENSE).
+
+
 
 [being-a-good-community-member]: https://github.com/exercism/docs/tree/main/community/good-member
 [chestertons-fence]: https://github.com/exercism/docs/blob/main/community/good-member/chestertons-fence.md
