@@ -59,6 +59,7 @@ Here to suggest a new feature or new exercise?? **Hooray!** &nbsp;🎉 &nbsp;
 Please keep in mind [Chesterton's Fence][chestertons-fence].  
 _Thoughtful suggestions will likely result faster & more enthusiastic responses from maintainers._
 
+<br>
 
 ## Python Software and Documentation
 
