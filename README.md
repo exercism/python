@@ -62,26 +62,39 @@ _Thoughtful suggestions will likely result faster & more enthusiastic responses 
 ## License
 This repository uses the [MIT License](/LICENSE).
 
-[exercism-website]: https://exercism.org/
+## Python License
+
+Python and Python documentation is:
+Copyright © 2001-2021 Python Software Foundation. All rights reserved.
+
+Python software and documentation are licensed under the [PSF License Agreement][psf-license].
+
+Starting with `Python 3.8.6`, examples, recipes, and other code in the Python documentation are dual licensed under the [PSF License Agreement][psf-license] and the [Zero-Clause BSD license][zero-clause-bsd].
+
+Some software incorporated into Python is under different licenses. The licenses are listed with code falling under that license. See [Licenses and Acknowledgements for Incorporated Software](https://docs.python.org/3/license.html#otherlicenses) for an incomplete list of these licenses.
+
+[being-a-good-community-member]: https://github.com/exercism/docs/tree/main/community/good-member
+[chestertons-fence]: https://github.com/exercism/docs/blob/main/community/good-member/chestertons-fence.md
+[concept-exercises]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md
+[config-json]: https://github.com/exercism/javascript/blob/main/config.json
+[contributing-guidelines]: https://github.com/exercism/python/blob/main/CONTRIBUTING.md
 [exercise-presentation]: https://github.com/exercism/docs/blob/main/building/tracks/presentation.md
 [exercism-admins]: https://github.com/exercism/docs/blob/main/community/administrators.md
-[the-words-that-we-use]: https://github.com/exercism/docs/blob/main/community/good-member/words.md
-[exercism-writing-style]: https://github.com/exercism/docs/blob/main/building/markdown/style-guide.md
-[concept-exercises]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md
-[practice-exercises]: https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md
-[exercism-contributors]: https://github.com/exercism/docs/blob/main/community/contributors.md
-[being-a-good-community-member]: https://github.com/exercism/docs/tree/main/community/good-member
-[exercism-markdown-specification]: https://github.com/exercism/docs/blob/main/building/markdown/markdown.md
-[exercism-concepts]: https://github.com/exercism/docs/blob/main/building/tracks/concepts.md
 [exercism-code-of-conduct]: https://exercism.org/docs/using/legal/code-of-conduct
-[config-json]: https://github.com/exercism/javascript/blob/main/config.json
-[python-syllabus]: https://exercism.org/tracks/python/concepts
-[exercism-track-maintainers]: https://github.com/exercism/docs/blob/main/community/maintainers.md
-[exercism-tasks]: https://exercism.org/docs/building/product/tasks
-[website-contributing-section]: https://exercism.org/docs/building
-[exercism-track-structure]: https://github.com/exercism/docs/tree/main/building/tracks
+[exercism-concepts]: https://github.com/exercism/docs/blob/main/building/tracks/concepts.md
+[exercism-contributors]: https://github.com/exercism/docs/blob/main/community/contributors.md
+[exercism-markdown-specification]: https://github.com/exercism/docs/blob/main/building/markdown/markdown.md
 [exercism-mentors]: https://github.com/exercism/docs/tree/main/mentoring
-[open-issues]: https://github.com/exercism/python/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22
-[chestertons-fence]: https://github.com/exercism/docs/blob/main/community/good-member/chestertons-fence.md
-[contributing-guidelines]: https://github.com/exercism/python/blob/main/CONTRIBUTING.md
+[exercism-tasks]: https://exercism.org/docs/building/product/tasks
+[exercism-track-maintainers]: https://github.com/exercism/docs/blob/main/community/maintainers.md
+[exercism-track-structure]: https://github.com/exercism/docs/tree/main/building/tracks
+[exercism-website]: https://exercism.org/
+[exercism-writing-style]: https://github.com/exercism/docs/blob/main/building/markdown/style-guide.md
 [open-an-issue]: https://github.com/exercism/python/issues/new/choose
+[open-issues]: https://github.com/exercism/python/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22
+[practice-exercises]: https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md
+[psf-license]: https://docs.python.org/3/license.html#psf-license
+[python-syllabus]: https://exercism.org/tracks/python/concepts
+[the-words-that-we-use]: https://github.com/exercism/docs/blob/main/community/good-member/words.md
+[website-contributing-section]: https://exercism.org/docs/building
+[zero-clause-bsd]: https://docs.python.org/3/license.html#zero-clause-bsd-license-for-code-in-the-python-release-documentation
