@@ -60,9 +60,8 @@ Please keep in mind [Chesterton's Fence][chestertons-fence].
 _Thoughtful suggestions will likely result faster & more enthusiastic responses from maintainers._
 
 
-## Python License
+## Python and Python Documentation
 
-Python & Python documentation:
 **Copyright © 2001-2021 Python Software Foundation. All rights reserved.**
 
 Python software and documentation are licensed under the [PSF License Agreement][psf-license].
