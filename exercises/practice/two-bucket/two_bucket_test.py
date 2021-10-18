@@ -38,5 +38,6 @@ class TwoBucketTest(unittest.TestCase):
     ):
         self.assertEqual(measure(2, 3, 3, "one"), (2, "two", 2))
 
+
 if __name__ == "__main__":
     unittest.main()
