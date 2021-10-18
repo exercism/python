@@ -32,7 +32,7 @@ def parse_log_level(message):
 
 
 def convert_to_short_log(log_level, message):
-    return '{}:{}'.format(LogLevelInt[log_level.name].value, message)
+    return f'{LogLevelInt[log_level.name].value}:{message}'
 
 
 def get_warn_alias():
@@ -40,7 +40,7 @@ def get_warn_alias():
 
 
 def get_members():
-    out_list = list()
+    out_list = []
     for member in LogLevel:
         out_list.append((member.name, member.value))
     return out_list
