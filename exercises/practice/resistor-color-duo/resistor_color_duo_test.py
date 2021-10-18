@@ -17,6 +17,9 @@ class ResistorColorDuoTest(unittest.TestCase):
     def test_yellow_and_violet(self):
         self.assertEqual(value(["yellow", "violet"]), 47)
 
+    def test_white_and_red(self):
+        self.assertEqual(value(["white", "red"]), 92)
+
     def test_orange_and_orange(self):
         self.assertEqual(value(["orange", "orange"]), 33)
 

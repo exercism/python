@@ -27,6 +27,14 @@ class HammingTest(unittest.TestCase):
         with self.assertRaisesWithMessage(ValueError):
             distance("AATG", "AAA")
 
+    def test_disallow_first_strand_longer(self):
+        with self.assertRaisesWithMessage(ValueError):
+            distance("AATG", "AAA")
+
+    def test_disallow_second_strand_longer(self):
+        with self.assertRaisesWithMessage(ValueError):
+            distance("ATA", "AGTG")
+
     def test_disallow_second_strand_longer(self):
         with self.assertRaisesWithMessage(ValueError):
             distance("ATA", "AGTG")
@@ -35,7 +43,23 @@ class HammingTest(unittest.TestCase):
         with self.assertRaisesWithMessage(ValueError):
             distance("", "G")
 
+    def test_disallow_left_empty_strand(self):
+        with self.assertRaisesWithMessage(ValueError):
+            distance("", "G")
+
+    def test_disallow_empty_first_strand(self):
+        with self.assertRaisesWithMessage(ValueError):
+            distance("", "G")
+
     def test_disallow_right_empty_strand(self):
+        with self.assertRaisesWithMessage(ValueError):
+            distance("G", "")
+
+    def test_disallow_right_empty_strand(self):
+        with self.assertRaisesWithMessage(ValueError):
+            distance("G", "")
+
+    def test_disallow_empty_second_strand(self):
         with self.assertRaisesWithMessage(ValueError):
             distance("G", "")
 

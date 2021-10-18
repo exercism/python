@@ -47,6 +47,9 @@ class IsogramTest(unittest.TestCase):
     def test_same_first_and_last_characters(self):
         self.assertIs(is_isogram("angola"), False)
 
+    def test_word_with_duplicated_character_and_with_two_hyphens(self):
+        self.assertIs(is_isogram("up-to-date"), False)
+
 
 if __name__ == "__main__":
     unittest.main()

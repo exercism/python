@@ -139,6 +139,21 @@ class TournamentTest(unittest.TestCase):
         ]
         self.assertEqual(tally(results), table)
 
+    def test_ensure_points_sorted_numerically(self):
+        results = [
+            "Devastating Donkeys;Blithering Badgers;win",
+            "Devastating Donkeys;Blithering Badgers;win",
+            "Devastating Donkeys;Blithering Badgers;win",
+            "Devastating Donkeys;Blithering Badgers;win",
+            "Blithering Badgers;Devastating Donkeys;win",
+        ]
+        table = [
+            "Team                           | MP |  W |  D |  L |  P",
+            "Devastating Donkeys            |  5 |  4 |  0 |  1 | 12",
+            "Blithering Badgers             |  5 |  1 |  0 |  4 |  3",
+        ]
+        self.assertEqual(tally(results), table)
+
 
 if __name__ == "__main__":
     unittest.main()

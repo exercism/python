@@ -149,6 +149,10 @@ class ForthTest(unittest.TestCase):
         with self.assertRaisesWithMessage(ValueError):
             evaluate([": 1 2 ;"])
 
+    def test_user_defined_words_cannot_redefine_negative_numbers(self):
+        with self.assertRaisesWithMessage(ValueError):
+            evaluate([": -1 2 ;"])
+
     def test_user_defined_words_errors_if_executing_a_non_existent_word(self):
         with self.assertRaisesWithMessage(ValueError):
             evaluate(["foo"])

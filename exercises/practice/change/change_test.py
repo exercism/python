@@ -8,6 +8,9 @@ from change import (
 
 
 class ChangeTest(unittest.TestCase):
+    def test_change_for_1_cent(self):
+        self.assertEqual(find_fewest_coins([1, 5, 10, 25], 1), [1])
+
     def test_single_coin_change(self):
         self.assertEqual(find_fewest_coins([1, 5, 10, 25, 100], 25), [25])
 

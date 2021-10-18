@@ -70,6 +70,12 @@ class BookStoreTest(unittest.TestCase):
         basket = [1, 1, 2, 2, 3, 3, 4, 5, 1, 1, 2, 2, 3, 3, 4, 5]
         self.assertEqual(total(basket), 10240)
 
+    def test_check_that_groups_of_four_are_created_properly_even_when_there_are_more_groups_of_three_than_groups_of_five(
+        self,
+    ):
+        basket = [1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 5, 5]
+        self.assertEqual(total(basket), 14560)
+
     # Additional tests for this track
 
     def test_two_groups_of_four_and_a_group_of_five(self):
