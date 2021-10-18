@@ -1,3 +1,5 @@
+# pylint: disable-all
+# flake8: noqa,
 VEGAN = {
          'chives', 'nutritional yeast', 'tomato', 'orange zest', 'pareve puff pastry', 'cashews', 'tofu',
          'rice vinegar', 'black pepper', 'cardamom powder', 'mustard seeds', 'parev shortcrust pastry',
