@@ -55,7 +55,7 @@ class SetsTest(unittest.TestCase):
     def test_check_drinks(self):
         test_data = zip(all_drinks[::2], drink_names[::2])
 
-        for variant, (item, result)  in enumerate(test_data, start=1):
+        for variant, (item, result) in enumerate(test_data, start=1):
             with self.subTest(f"variation #{variant}", item=item, result=result):
                 error_msg = f"Expected {result} for {item}, but got something else instead."
                 self.assertEqual(check_drinks(item[0], item[1]), (result), msg=error_msg)
@@ -64,7 +64,7 @@ class SetsTest(unittest.TestCase):
     def test_categorize_dish(self):
         test_data = zip(sorted(recipes_without_duplicates, reverse=True)[::3], dishes_categorized[::3])
 
-        for variant, (item, result)  in enumerate(test_data, start=1):
+        for variant, (item, result) in enumerate(test_data, start=1):
             with self.subTest(f"variation #{variant}", item=item, result=result):
                 error_message = f"Exptected category {result} for {item[0]}, but got a different category instead."
                 self.assertEqual(categorize_dish(item[1], item[2]), (result), msg=error_message)
@@ -82,7 +82,7 @@ class SetsTest(unittest.TestCase):
     def test_compile_ingredients(self):
         test_data = zip(ingredients_only, [VEGAN, VEGETARIAN, PALEO, KETO, OMNIVORE])
 
-        for variant, (item, result)  in enumerate(test_data, start=1):
+        for variant, (item, result) in enumerate(test_data, start=1):
             with self.subTest(f"variation #{variant}", item=item, result=result):
                 error_message = "Expected a proper set of combined ingredients, but something went wrong."
                 self.assertEqual(compile_ingredients(item), (result), msg=error_message)

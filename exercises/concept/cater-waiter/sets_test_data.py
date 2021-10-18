@@ -1,3 +1,5 @@
+# pylint: disable-all
+# flake8: noqa,
 from sets_categories_data import (VEGAN_INTERSECTIONS,
                                   VEGETARIAN_INTERSECTIONS,
                                   PALEO_INTERSECTIONS,
