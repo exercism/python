@@ -5,12 +5,11 @@ def value_of_card(card):
     :return: int - value of a given card (J, Q, K = 10, numerical value otherwise).
     """
 
-    if card == 'J' or card == 'Q' or card == 'K':
+    if card in ('J', 'Q', 'K'):
         value = 10
     else:
         value = int(card)
     return value
-
 
 def value_of_ace(hand_value):
     """
@@ -24,7 +23,6 @@ def value_of_ace(hand_value):
     else:
         value = 11
     return value
-
 
 def is_blackjack(card_one, card_two):
     """
@@ -42,7 +40,6 @@ def is_blackjack(card_one, card_two):
         blackjack = False
     return blackjack
 
-
 def can_split_pairs(card_one, card_two):
     """
 
@@ -56,7 +53,6 @@ def can_split_pairs(card_one, card_two):
     else:
         split_pairs = value_of_card(card_one) == value_of_card(card_two)
     return split_pairs
-
 
 def can_double_down(card_one, card_two):
     """
