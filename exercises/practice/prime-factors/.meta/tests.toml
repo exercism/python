@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [924fc966-a8f5-4288-82f2-6b9224819ccd]
 description = "no factors"
@@ -8,11 +15,26 @@ description = "no factors"
 [17e30670-b105-4305-af53-ddde182cb6ad]
 description = "prime number"
 
+[238d57c8-4c12-42ef-af34-ae4929f94789]
+description = "another prime number"
+
 [f59b8350-a180-495a-8fb1-1712fbee1158]
 description = "square of a prime"
 
+[756949d3-3158-4e3d-91f2-c4f9f043ee70]
+description = "product of first prime"
+
 [bc8c113f-9580-4516-8669-c5fc29512ceb]
 description = "cube of a prime"
+
+[7d6a3300-a4cb-4065-bd33-0ced1de6cb44]
+description = "product of second prime"
+
+[073ac0b2-c915-4362-929d-fc45f7b9a9e4]
+description = "product of third prime"
+
+[6e0e4912-7fb6-47f3-a9ad-dbcd79340c75]
+description = "product of first and second prime"
 
 [00485cd3-a3fe-4fbe-a64a-a4308fc1f870]
 description = "product of primes and non-primes"
