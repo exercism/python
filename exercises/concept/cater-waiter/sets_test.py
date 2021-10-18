@@ -1,6 +1,7 @@
 import unittest
 import pytest
 
+# pylint: disable=deprecated-module
 from sets import (clean_ingredients,
                   check_drinks,
                   categorize_dish,
@@ -45,7 +46,9 @@ class SetsTest(unittest.TestCase):
 
         for variant, (item, result) in enumerate(test_data, start=1):
             with self.subTest(f"variation #{variant}", item=item[0], result=result[1]):
-                error_msg = f"Expected a cleaned ingredient list for {item[0]}, but the ingredients aren't cleaned as expected."
+                error_msg = (f"Expected a cleaned ingredient list for {item[0]}, "
+                            "but the ingredients aren't cleaned as expected.")
+
                 self.assertEqual(clean_ingredients(item[0], item[1]), (result[1], result[2]), msg=error_msg)
 
     @pytest.mark.task(taskno=2)
@@ -99,5 +102,6 @@ class SetsTest(unittest.TestCase):
 
         for variant, (item, result) in enumerate(test_data, start=1):
             with self.subTest(f"variation #{variant}", item=item, result=result):
-                error_message = "Expected only ingredients that belong to exactly one dish, but got multi-dish ingredients instead."
+                error_message = ("Expected only ingredients that belong to exactly "
+                                "one dish, but got multi-dish ingredients instead.")
                 self.assertEqual(singleton_ingredients(item[0], item[1]), (result), msg=error_message)
