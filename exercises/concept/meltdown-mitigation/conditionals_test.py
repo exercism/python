@@ -25,11 +25,14 @@ class MeltdownMitigationTest(unittest.TestCase):
                      (499.99, 1000, True))
 
         for variant, data in enumerate(test_data, start=1):
-            temperature, neutrons_emitted, expected = data
-            with self.subTest(f"variation #{variant}", temperature=temperature, neutrons_emitted=neutrons_emitted, expected=expected):
-                got = is_criticality_balanced(temperature, neutrons_emitted)
-                msg=f"Expected {expected} but returned {got} with T={temperature} and neutrinos={neutrons_emitted}"
-                self.assertEqual(got, expected, msg)
+            temp, neutrons_emitted, expected = data
+            with self.subTest(f'variation #{variant}', temp=temp, neutrons_emitted=neutrons_emitted, expected=expected):
+
+                # pylint: disable=assignment-from-no-return
+                actual_result = is_criticality_balanced(temp, neutrons_emitted)
+                failure_message = (f'Expected {expected} but returned {actual_result} '
+                                   f'with T={temp} and neutrinos={neutrons_emitted}')
+                self.assertEqual(actual_result, expected, failure_message)
 
     @pytest.mark.task(taskno=2)
     def test_reactor_efficiency(self):
@@ -44,30 +47,30 @@ class MeltdownMitigationTest(unittest.TestCase):
 
         for variant, data in enumerate(test_data, start=1):
             current, expected = data
-            with self.subTest(f"variation #{variant}", voltage=voltage, current=current,
+            with self.subTest(f'variation #{variant}', voltage=voltage, current=current,
                               theoretical_max_power=theoretical_max_power, expected=expected):
-                got = reactor_efficiency(voltage, current, theoretical_max_power)
-                msg=f"Expected {expected} but returned {got} with voltage={voltage}, current={current}, " \
-                    f"max_pow={theoretical_max_power}"
-                self.assertEqual(got, expected, msg)
+
+                # pylint: disable=assignment-from-no-return
+                actual_result = reactor_efficiency(voltage, current, theoretical_max_power)
+                failure_message = (f'Expected {expected} but returned {actual_result} '
+                                   f'with voltage={voltage}, current={current}, max_pow={theoretical_max_power}')
+                self.assertEqual(actual_result, expected, failure_message)
 
     @pytest.mark.task(taskno=3)
     def test_fail_safe(self):
-        temperature = 10
+        temp = 10
         threshold = 10000
         test_data = ((399, 'LOW'), (300, 'LOW'), (1, 'LOW'),
                      (0, 'LOW'), (901, 'NORMAL'), (1000, 'NORMAL'),
                      (1099, 'NORMAL'), (899, 'LOW'), (700, 'LOW'),
                      (400, 'LOW'), (1101, 'DANGER'), (1200, 'DANGER'))
 
-        for variant, data in enumerate(test_data, start=1):
-            neutrons_produced_per_second, expected = data
-
-            with self.subTest(f"variation #{variant}", temperature=temperature,
-                              neutrons_produced_per_second=neutrons_produced_per_second,
+        for variant, (neutrons_per_second, expected) in enumerate(test_data, start=1):
+            with self.subTest(f'variation #{variant}', temp=temp,neutrons_per_second=neutrons_per_second,
                               threshold=threshold, expected=expected):
 
-                got = fail_safe(temperature, neutrons_produced_per_second, threshold)
-                msg = f"Expected {expected} but returned {got} with T={temperature}, " \
-                      f"neutrons={neutrons_produced_per_second}, threshold={threshold}"
-                self.assertEqual(got, expected, msg)
+                # pylint: disable=assignment-from-no-return
+                actual_result = fail_safe(temp, neutrons_per_second, threshold)
+                failure_message = (f'Expected {expected} but returned {actual_result} with T={temp}, '
+                                   f'neutrons={neutrons_per_second}, threshold={threshold}')
+                self.assertEqual(actual_result, expected, failure_message)
