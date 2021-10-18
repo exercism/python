@@ -1,5 +1,5 @@
 # TODO: define the 'EXPECTED_BAKE_TIME' constant
-# TODO: consider defining the 'PREPARATION_TIME' constant 
+# TODO: consider defining the 'PREPARATION_TIME' constant
 #       equal to the time it takes to prepare a single layer
 
 
