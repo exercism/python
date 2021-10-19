@@ -9,15 +9,23 @@
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {%- for case in cases -%}
-    {%- if "cases" in case -%}
-    {%- for subcase in case["cases"] -%}
-    {{- testcase(subcase) -}}
-    {% endfor %}
-    {%- else %}
-    {%- if case["property"] != "scores" %}
-    {{- testcase(case) -}}
-    {% endif -%}
-    {% endif -%}
+        {%- if case["property"] == "latestAfterTopThree" %}
+            def test_{{ case["description"] | to_snake }}(self):
+                scores = {{ case["input"]["scores"] }}
+                expected = {{ case["expected"] }}
+                self.assertEqual({{ "Latest" | to_snake }}(scores), expected)
+        {%- if case["property"] == "scoresAfterTopThree" %}
+            def test_{{ case["description"] | to_snake }}(self):
+                scores = {{ case["input"]["scores"] }}
+                expected = {{ case["expected"] }}
+                self.assertEqual(current_scores(scores), expected)
+        {%- if "cases" in case -%}
+            {%- for subcase in case["cases"] -%}
+                {{- testcase(subcase) -}}
+            {% endfor %}
+        {% endif -%}
+        {% endif -%}
+        {% endif -%}
     {% endfor %}
 
 
