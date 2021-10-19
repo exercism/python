@@ -1,3 +1,4 @@
+
 {%- import "generator_macros.j2" as macros with context -%}
 {%- macro testcase(case) %}
     def test_{{ case["description"] | to_snake }}(self):
@@ -9,6 +10,12 @@
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {%- for case in cases -%}
+        {%- if "cases" in case -%}
+            {%- for subcase in case["cases"] -%}
+                {{- testcase(subcase) -}}
+            {% endfor %}
+        {% endif %}
+        {% else %}
         {%- if case["property"] == "latestAfterTopThree" %}
             def test_{{ case["description"] | to_snake }}(self):
                 scores = {{ case["input"]["scores"] }}
@@ -19,10 +26,6 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
                 scores = {{ case["input"]["scores"] }}
                 expected = {{ case["expected"] }}
                 self.assertEqual(current_scores(scores), expected)
-        {%- if "cases" in case -%}
-            {%- for subcase in case["cases"] -%}
-                {{- testcase(subcase) -}}
-            {% endfor %}
         {% endif -%}
         {% endif -%}
         {% endif -%}
