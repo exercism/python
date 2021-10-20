@@ -14,12 +14,12 @@ def to_digits(number, base_to):
 
 def rebase(from_base, digits, to_base):
     if from_base < 2:
-        raise ValueError("Invalid input base.")
+        raise ValueError("input base must be >= 2")
 
     if to_base < 2:
-        raise ValueError("Invalid output base.")
+        raise ValueError("output base must be >= 2")
 
     if any(True for d in digits if d < 0 or d >= from_base):
-        raise ValueError("Invalid input digit.")
+        raise ValueError("all digits must satisfy 0 <= d < input base")
 
     return to_digits(from_digits(digits, from_base), to_base)
