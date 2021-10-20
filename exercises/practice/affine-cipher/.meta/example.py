@@ -13,7 +13,7 @@ def modInverse(a, ALPHSZ):
 def translate(text, a, b, mode):
     inv = modInverse(a, ALPHSZ)
     if inv == 1:
-        raise ValueError("a and alphabet size must be coprime.")
+        raise ValueError("a and m must be coprime.")
 
     chars = []
     for c in text:
