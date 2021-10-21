@@ -31,4 +31,4 @@ Anything tagged with `[help wanted]` and without `[Claimed]` is up for grabs.
 Comment on the issue and we will reserve it for you.  🌈  ✨
 
 _Here to suggest a feature or new exercise??_ **Hooray!** 🎉 &nbsp; Please keep in mind [_Chesterton's Fence_](https://github.com/exercism/docs/blob/main/community/good-member/chestertons-fence.md).  
-_Thoughtful suggestions will likely result faster & more enthusiastic responses from maintainers.
+_Thoughtful suggestions will likely result faster & more enthusiastic responses from maintainers._
