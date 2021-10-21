@@ -35,25 +35,25 @@ class BinaryTest(unittest.TestCase):
         with self.assertRaises(ValueError) as err:
             parse_binary("carrot")
             self.assertEqual(type(err.exception), ValueError)
-            self.assertEqual(err.exception.args[0], f"Invalid binary literal: {digits}")
+            self.assertEqual(err.exception.args[0], "Invalid binary literal: " + digits)
 
     def test_invalid_binary_number_not_base2(self):
         with self.assertRaises(ValueError) as err:
             parse_binary("102011")
             self.assertEqual(type(err.exception), ValueError)
-            self.assertEqual(err.exception.args[0], f"Invalid binary literal: {digits}")
+            self.assertEqual(err.exception.args[0], "Invalid binary literal: " + digits)
 
     def test_invalid_binary_numbers_with_text(self):
         with self.assertRaises(ValueError) as err:
             parse_binary("10nope")
             self.assertEqual(type(err.exception), ValueError)
-            self.assertEqual(err.exception.args[0], f"Invalid binary literal: {digits}")
+            self.assertEqual(err.exception.args[0], "Invalid binary literal: " + digits)
 
     def test_invalid_binary_text_with_numbers(self):
         with self.assertRaises(ValueError):
             parse_binary("nope10")
             self.assertEqual(type(err.exception), ValueError)
-            self.assertEqual(err.exception.args[0], f"Invalid binary literal: {digits}")
+            self.assertEqual(err.exception.args[0], "Invalid binary literal: " + digits)
 
 if __name__ == '__main__':
     unittest.main()
