@@ -50,7 +50,7 @@ class BinaryTest(unittest.TestCase):
             self.assertEqual(err.exception.args[0], "Invalid binary literal: '10nope'")
 
     def test_invalid_binary_text_with_numbers(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as err:
             parse_binary("nope10")
             self.assertEqual(type(err.exception), ValueError)
             self.assertEqual(err.exception.args[0], "Invalid binary literal: '10nope'")
