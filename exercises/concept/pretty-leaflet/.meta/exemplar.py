@@ -1,43 +1,43 @@
 import calendar
-from typing import List
+from typing import List, Optional
 
 
-class Leaflet:
-    def __init__(self, event_name: str, artists: List, icons: List):
-        self.header = event_name.capitalize()
-        self.artists = artists
-        self.icons = icons
-        self.date = ''
+def capitalize_header(event_name: str) -> str:
+    return event_name.capitalize()
 
-    def set_date(self, day, month, year=None):
-        self.date = f'{calendar.month_name[month]} {day}'
-        self.date += f", {year}" if year else ""
+def format_date(event_date: List[int]) -> str:
+    date, month, year = event_date
+    month_name = calendar.month_name[month]
 
-    def get_icons(self):
-        return [u'{}'.format(number) for number in self.icons]
+    # pylint: disable=consider-using-f-string
+    return '{} {}, {}'.format(month_name, date, year)
 
-    def get_artists_and_icons(self):
-        rows = []
-        icons = self.get_icons()
-        for i in range(len(self.artists)):
-            icon = icons[i] if i < len(icons) else '    '
-            rows.append(f'{"":>1}{self.artists[i]:<11}{icon:>3}{"":>2}')
-        return rows
+def display_icons(icons: List[str]) -> List[str]:
+    displayed = []
+    for icon in icons:
+        # pylint: disable=consider-using-f-string
+        displayed.append('{}'.format(icon))
+    return displayed
 
-    def print_leaflet(self):
-        row_full = ''.join(['*'] * 20)
-        empty_row = f'*{"":^18}*'
+def print_leaflet(event_name: str, icons: List[str], authors: List[str], event_date: Optional[List[int]]=None):
+    row_full = ''.join(['*'] * 20)
+    empty_row = f'*{"":^18}*'
+    event_name = capitalize_header(event_name)
+    icons = display_icons(icons)
+    date_string = format_date(event_date) if event_date is not None else ''
 
-        poster = []
-        poster.append(row_full)
-        poster.append(empty_row)
-        poster.append(f'*{self.header!r:^18}*')
-        poster.append(empty_row)
-        poster.append(f'*{self.date!s:^18}*')
-        poster.append(empty_row)
-        for artist in self.get_artists_and_icons():
-            poster.append(f'*{artist}*')
-        poster.append(empty_row)
-        poster.append(row_full)
+    poster = []
+    poster.append(row_full)
+    poster.append(empty_row)
+    poster.append(f'*{event_name!r:^18}*')
+    poster.append(empty_row)
+    poster.append(f'*{date_string!s:^18}*')
+    poster.append(empty_row)
 
-        return '\n'.join(poster)
+    for position, _ in enumerate(authors):
+        icon = icons[position] if position < len(icons) else '    '
+        poster.append(f'*{"":>1}{authors[position]:<11}{icon:>3}{"":>2}*')
+    poster.append(empty_row)
+    poster.append(row_full)
+
+    return '\n'.join(poster)

@@ -195,34 +195,23 @@ A `step` parameter can also be used `[start:stop:step]` to "skip over" or filter
 
 ## Working with lists
 
-Lists supply an _iterator_, and can be looped through/over in the same manner as other _sequence types_:
-
+The usage of the built-in `sum()` function on a list will return the sum of all the numbers in the list:
 
 ```python
-#  Looping through the list and printing out each element.
->>> colors = ["Orange", "Green", "Grey", "Blue"]
-
->>> for item in colors:
-...     print(item)
-...
-Orange
-Green
-Grey
-Blue
-
-# Looping through the list and printing out the cube of each element.
->>> numbers_to_cube = [5, 13, 12, 16]
-
->>> for number in numbers_to_cube:
-...     print(number*3)
-...
-15
-39
-36
-48
+>>> number_list = [1, 2, 3, 4]
+>>> sum(number_list)
+10
 ```
 
-Lists can also be combined via various techniques:
+You can also get the _length_ of a list by using the `len()` function:
+
+```python
+>>> long_list = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+>>> len(long_list)
+10
+```
+
+Lists can be also combined in various ways:
 
 ```python
 # Using the plus + operator unpacks each list and creates a new list, but it is not efficient.
@@ -237,18 +226,24 @@ Lists can also be combined via various techniques:
 
 >>> multiplied_group
 ['cat', 'dog', 'elephant', 'cat', 'dog', 'elephant', 'cat', 'dog', 'elephant']
-
-# This loops through the first list and appends it's items to the end of the second list.
->>> first_one = ["cat", "Tabby"]
->>> second_one = ["George", 5]
-
->>> for item in first_one:
->>>      second_one.append(item)
-...
->>> second_one
-['George', 5, 'cat', 'Tabby']
 ```
 
+Lists supply an _iterator_, and can be looped through/over in the same manner as other _sequence types_.
+
+```python
+#  Looping through the list and printing out each element.
+>>> colors = ["Orange", "Green", "Grey", "Blue"]
+
+>>> for item in colors:
+...     print(item)
+...
+Orange
+Green
+Grey
+Blue
+```
+
+_For a more in-depth explanation, of `loops` and `iterators`, complete the `loops` concept._
 
 [arraylist]: https://beginnersbook.com/2013/12/java-arraylist/
 [common sequence operations]: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations

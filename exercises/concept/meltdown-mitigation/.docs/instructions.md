@@ -30,15 +30,17 @@ True
 Once the reactor has started producing power its efficiency needs to be determined.
 Efficiency can be grouped into 4 bands:
 
-1. green -> 80-100% efficiency
-2. orange -> 60-79% efficiency
-3. red -> 30-59% efficiency
-4. black -> <30% efficient
+1. `green` -> efficiency of 80% or more,
+2. `orange` -> efficiency of less than 80% but at least 60%,
+3. `red` -> efficiency below 60%, but still 30% or more,
+4. `black` ->  less than 30% efficient.
 
-These percentage ranges are calculated as `(generated_power/theoretical_max_power)*100`
-where `generated_power = voltage * current`
+The percentage value can be calculated as `(generated_power/theoretical_max_power)*100`
+where `generated_power` = `voltage` * `current`.
+Note that the percentage value is usually not an integer number, so make sure to consider the
+proper use of the `<` and `<=` comparisons.
 
-Implement the function `reactor_efficiency()`, with three parameters: `voltage`,
+Implement the function `reactor_efficiency(<voltage>, <current>, <theoretical_max_power>)`, with three parameters: `voltage`,
 `current`, and `theoretical_max_power`.
 This function should return the efficiency band of the reactor : 'green', 'orange', 'red', or 'black'.
 
@@ -56,12 +58,12 @@ Criticality can then be increased, decreased, or stopped by inserting (or removi
 Implement the function called `fail_safe()`, which takes 3 parameters: `temperature`,
 `neutrons_produced_per_second`, and `threshold`, and outputs a status code for the reactor.
 
-- If `temperature * neutrons_produced_per_second` < 40% of `threshold`, output a status code of 'LOW'
+- If `temperature * neutrons_produced_per_second` < 90% of `threshold`, output a status code of 'LOW'
   indicating that control rods must be removed to produce power.
 
 - If `temperature * neutrons_produced_per_second` are within plus or minus 10% of the `threshold`
   the reactor is in _criticality_ and the status code of 'NORMAL' should be output, indicating that the
-  reactor is in optimum condition and control rods are in an idea position.
+  reactor is in optimum condition and control rods are in an ideal position.
 
 - If `temperature * neutrons_produced_per_second` is not in the above-stated ranges, the reactor is
   going into meltdown and a status code of 'DANGER' must be passed to immediately shut down the reactor.

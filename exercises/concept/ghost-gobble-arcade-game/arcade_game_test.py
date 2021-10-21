@@ -3,7 +3,7 @@ import pytest
 from arcade_game import eat_ghost, score, lose, win
 
 
-class TestArcadeGame(unittest.TestCase):
+class GhostGobbleGameTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
     def test_ghost_gets_eaten(self):
@@ -99,4 +99,12 @@ class TestArcadeGame(unittest.TestCase):
             win(True, True, True),
             True,
             msg="win if all dots eaten and touching a ghost with a power pellet active"
+        )
+
+    @pytest.mark.task(taskno=4)
+    def test_dont_win_if_not_all_dots_eaten(self):
+        self.assertIs(
+            win(False, True, True),
+            False,
+            msg="don't win if not all dots eaten and touching a ghost with a power pellet active"
         )

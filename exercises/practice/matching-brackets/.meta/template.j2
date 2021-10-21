@@ -6,7 +6,7 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     def test_{{ case["description"] | to_snake }}(self):
         {%- set value = case["input"]["value"] %}
         {%- set expected = case["expected"] %}
-        self.assertEqual({{ case["property"] | to_snake }}("{{ value }}"), {{ expected }})
+        self.assertEqual({{ case["property"] | to_snake }}({{ "{!r}".format(value) }}), {{ expected }})
     {% endfor %}
 
 {{ macros.footer() }}

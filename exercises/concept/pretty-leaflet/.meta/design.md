@@ -26,6 +26,8 @@ This concept exercise should convey a basic understanding of the various `string
 
 - `basics`
 - `strings`
+- `loops`
+- `lists`
 
 ## Representer
 

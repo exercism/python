@@ -3,7 +3,7 @@ import pytest
 from tuples import get_coordinate, convert_coordinate, compare_records, create_record, clean_up
 
 
-class TuplesTest(unittest.TestCase):
+class TisburyTreasureTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
     def test_get_coordinate(self):
@@ -25,7 +25,7 @@ class TuplesTest(unittest.TestCase):
         number_of_variants = range(1, len(input_data) + 1)
 
         for variant, item, result in zip(number_of_variants, input_data, result_data):
-            with self.subTest(f"variation #{variant}", item=item, result=result):
+            with self.subTest(f'variation #{variant}', item=item, result=result):
                 self.assertEqual(get_coordinate(item), result)
 
     @pytest.mark.task(taskno=2)
@@ -48,7 +48,7 @@ class TuplesTest(unittest.TestCase):
         number_of_variants = range(1, len(input_data) + 1)
 
         for variant, item, result in zip(number_of_variants, input_data, result_data):
-            with self.subTest(f"variation #{variant}", item=item, result=result):
+            with self.subTest(f'variation #{variant}', item=item, result=result):
                 self.assertEqual(convert_coordinate(item), result)
 
     @pytest.mark.task(taskno=3)
@@ -69,7 +69,7 @@ class TuplesTest(unittest.TestCase):
         number_of_variants = range(1, len(input_data) + 1)
 
         for variant, item, result in zip(number_of_variants, input_data, result_data):
-            with self.subTest(f"variation #{variant}", item=item, result=result):
+            with self.subTest(f'variation #{variant}', item=item, result=result):
                 self.assertEqual(compare_records(item[0], item[1]), result)
 
     @pytest.mark.task(taskno=4)
@@ -102,7 +102,7 @@ class TuplesTest(unittest.TestCase):
         number_of_variants = range(1, len(input_data) + 1)
 
         for variant, item, result in zip(number_of_variants, input_data, result_data):
-            with self.subTest(f"variation #{variant}", item=item, result=result):
+            with self.subTest(f'variation #{variant}', item=item, result=result):
                 self.assertEqual(create_record(item[0], item[1]), result)
 
     @pytest.mark.task(taskno=5)

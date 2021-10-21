@@ -1,7 +1,7 @@
 {
   "blurb": "Learn about lists by tracking hands in card games.",
   "icon": "poker",
-  "contributors": ["valentin-p"],
+  "contributors": ["valentin-p", "pranasziaukas"],
   "authors": ["itamargal", "isaacg", "bethanyg"],
   "files": {
     "solution": ["lists.py"],

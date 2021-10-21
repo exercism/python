@@ -5,7 +5,7 @@ def create_inventory(items):
     :return:  dict - the inventory dictionary.
     """
 
-    inventory = dict()
+    inventory = {}
     add_items(inventory, items)
     return inventory
 
@@ -58,7 +58,7 @@ def list_inventory(inventory):
     :return: list of tuples - list of key, value pairs from the inventory dictionary.
     """
 
-    output = list()
+    output = []
     for item in sorted(inventory.items()):
         if item[1] > 0:
             output.append(item)

@@ -1,8 +1,11 @@
+""" Meltdown Mitigation exercise """
+
+
 def is_criticality_balanced(temperature, neutrons_emitted):
     """Verify criticality is balanced.
 
-    :param temperature: int
-    :param neutrons_emitted: int
+    :param temperature: temperature value (integer or float)
+    :param neutrons_emitted: number of neutrons emitted per second (integer or float)
     :return:  boolean True if conditions met, False if not
 
     A reactor is said to be critical if it satisfies the following conditions:
@@ -17,19 +20,19 @@ def is_criticality_balanced(temperature, neutrons_emitted):
 def reactor_efficiency(voltage, current, theoretical_max_power):
     """Assess reactor efficiency zone.
 
-    :param voltage: int
-    :param current: int
-    :param theoretical_max_power: int
+    :param voltage: voltage value (integer or float)
+    :param current: current value (integer or float)
+    :param theoretical_max_power: power that corresponds to a 100% efficiency (integer or float)
     :return: str one of 'green', 'orange', 'red', or 'black'
 
     Efficiency can be grouped into 4 bands:
 
-    1. green  ->   80-100% efficiency
-    2. orange ->   60-79% efficiency
-    3. red    ->   30-59% efficiency
-    4. black  ->   <30% efficient
+    1. green -> efficiency of 80% or more,
+    2. orange -> efficiency of less than 80% but at least 60%,
+    3. red -> efficiency below 60%, but still 30% or more,
+    4. black ->  less than 30% efficient.
 
-    These percentage ranges are calculated as
+    The percentage value is calculated as
     (generated power/ theoretical max power)*100
     where generated power = voltage * current
     """
@@ -38,16 +41,16 @@ def reactor_efficiency(voltage, current, theoretical_max_power):
 
 
 def fail_safe(temperature, neutrons_produced_per_second, threshold):
-    """Assess and return safety range.
+    """Assess and return status code for the reactor.
 
-    :param temperature:
-    :param neutrons_produced_per_second:
-    :param threshold:
+    :param temperature: value of the temperature (integer or float)
+    :param neutrons_produced_per_second: neutron flux (integer or float)
+    :param threshold: threshold (integer or float)
     :return: str one of: 'LOW', 'NORMAL', 'DANGER'
 
-    - `temperature * neutrons per second` < 40% of threshold == 'LOW'
+    - `temperature * neutrons per second` < 90% of `threshold` == 'LOW'
     - `temperature * neutrons per second` +/- 10% of `threshold` == 'NORMAL'
-    - `temperature * neutron per second` is not in the above-stated ranges ==  'DANGER'
+    - `temperature * neutrons per second` is not in the above-stated ranges ==  'DANGER'
     """
 
     pass

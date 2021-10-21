@@ -6,23 +6,24 @@ from strings import (add_prefix_un,
                      noun_to_verb)
 
 
-class TestStrings(unittest.TestCase):
+class LittleSistersVocabTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
     def test_add_prefix_un(self):
-        input_data = ["happy", "manageable", "fold", "eaten", "avoidable", "usual"]
+        input_data = ['happy', 'manageable', 'fold', 'eaten', 'avoidable', 'usual']
         result_data = [f'un{item}' for item in input_data]
         number_of_variants = range(1, len(input_data) + 1)
 
         for variant, word, result in zip(number_of_variants, input_data, result_data):
-            with self.subTest(f"variation #{variant}", word=word, result=result):
+            with self.subTest(f'variation #{variant}', word=word, result=result):
                 self.assertEqual(add_prefix_un(word), result,
                                  msg=f'Expected: {result} but got a different word instead.')
 
     @pytest.mark.task(taskno=2)
     def test_make_word_groups_en(self):
         input_data = ['en', 'circle', 'fold', 'close', 'joy', 'lighten', 'tangle', 'able', 'code', 'culture']
-        result_data = 'en :: encircle :: enfold :: enclose :: enjoy :: enlighten :: entangle :: enable :: encode :: enculture'
+        result_data = ('en :: encircle :: enfold :: enclose :: enjoy :: enlighten ::'
+                       ' entangle :: enable :: encode :: enculture')
 
         self.assertEqual(make_word_groups(input_data), result_data,
                          msg=f'Expected {result_data} but got something else instead.')
@@ -62,12 +63,12 @@ class TestStrings(unittest.TestCase):
 
     @pytest.mark.task(taskno=3)
     def test_remove_suffix_ness(self):
-        input_data = ["heaviness", "sadness", "softness", "crabbiness", "lightness", "artiness", "edginess"]
-        result_data = ["heavy", "sad", "soft", 'crabby', 'light', 'arty', 'edgy']
+        input_data = ['heaviness', 'sadness', 'softness', 'crabbiness', 'lightness', 'artiness', 'edginess']
+        result_data = ['heavy', 'sad', 'soft', 'crabby', 'light', 'arty', 'edgy']
         number_of_variants = range(1, len(input_data) + 1)
 
         for variant, word, result in zip(number_of_variants, input_data, result_data):
-            with self.subTest(f"variation #{variant}", word=word, result=result):
+            with self.subTest(f'variation #{variant}', word=word, result=result):
                 self.assertEqual(remove_suffix_ness(word), result,
                                  msg=f'Expected: {result} but got a different word instead.')
 
@@ -88,6 +89,6 @@ class TestStrings(unittest.TestCase):
         number_of_variants = range(1, len(input_data) + 1)
 
         for variant, sentence, index, result in zip(number_of_variants, input_data, index_data, result_data):
-            with self.subTest(f"variation #{variant}", sentence=sentence, index=index, result=result):
+            with self.subTest(f'variation #{variant}', sentence=sentence, index=index, result=result):
                 self.assertEqual(noun_to_verb(sentence, index), result,
                                  msg=f'Expected: {result} but got a different word instead.')

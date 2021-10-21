@@ -76,7 +76,10 @@ In Black Joe, speed is important.
   She is hoping one of these calculations might come close to the average, but be quicker to calculate during game play. She'd like you to create a function to test her theory out.
 
 
-Implement a function `approx_average_is_average(<hand>)` that returns a Boolean, indicating if either of Elyse's approximation formulas is the same as calculating the "full" average of a hand. For the sake of a simple median, we are going to assume the hand always has an odd number of card values.
+Implement a function `approx_average_is_average(<hand>)` that returns a Boolean.
+The function should return  `True` if _one (or both)_ of Elyse's approximations yields the same value as calculating the "full" average of a hand.
+The function should return `False` if _neither_ approximation formula yields the same value as the "full" average.
+For the sake of a simple median, we are going to assume the hand always has an odd number of card values.
 
 
 ```python
@@ -119,13 +122,9 @@ Implement a function `maybe_double_last(<hand>)` that takes a hand and checks if
 ```python
 >>> hand = [5, 9, 11]
 >>> maybe_double_last(hand)
-
->>> hand
 [5, 9, 22]
 
 >>> hand = [5, 9, 10]
 >>> maybe_double_last(hand)
-
->>> hand
 [5, 9, 10]
 ```
