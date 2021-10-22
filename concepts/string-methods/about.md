@@ -119,7 +119,7 @@ Just the place for a Snark! I have said it thrice:
 
 Python `3.9` introduces two new string methods that make removing prefixes and suffixes much easier.
 
-[`<str>.removeprefix(<substring>)`](https://docs.python.org/3.9/library/stdtypes.html#str.removeprefix) return the string without the prefix (`string[len(<substring>):]`), if the `<substring>` isn't present it will return a copy of the original string.
+[`<str>.removeprefix(<substring>)`][removeprefix] returns the string without the prefix (`string[len(<substring>):]`). If the `<substring>` isn't present, a copy of the original string will be returned.
 
 ```python
 # removing a prefix
@@ -129,7 +129,7 @@ Python `3.9` introduces two new string methods that make removing prefixes and s
 'bookkeeper'
 ```
 
-[`<str>.removesuffix(<substring>)`](https://docs.python.org/3.9/library/stdtypes.html#str.removesuffix) return the string without the suffix (`string[:-len(substring)]`), if the `<substring>` isn't present it will return a copy of the original string.
+[`<str>.removesuffix(<substring>)`][removesuffix] returns the string without the suffix (`string[:-len(substring)]`). If the `<substring>` isn't present, a copy of the original string will be returned.
 
 ```python
 # removing a suffix
@@ -159,3 +159,7 @@ Python also supports regular expressions via the `re` module, which will be cove
 [str-title]: https://docs.python.org/3/library/stdtypes.html#str.title
 [text sequence]: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
 [unicode code points]: https://stackoverflow.com/questions/27331819/whats-the-difference-between-a-character-a-code-point-a-glyph-and-a-grapheme
+
+[removeprefix]: https://docs.python.org/3.9/library/stdtypes.html#str.removeprefix
+[removesuffix]: https://docs.python.org/3.9/library/stdtypes.html#str.removesuffix
+
