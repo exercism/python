@@ -85,7 +85,7 @@ The code points specified in `<chars>` are not a prefix or suffix - **all combin
 
 >>> '  unaddressed  '.strip('dnue ')
 'address'
-```
+ ```
 
 
 [`<str>.replace(<substring>, <replacement substring>)`][str-replace] returns a copy of the string with all occurrences of `<substring>` replaced with `<replacement substring>`.
@@ -115,6 +115,29 @@ Just the place for a Snark! I have said it thrice:
 'book keeper'
 ```
 
+:star:**Newly added in Python `3.9`**
+
+Python `3.9` introduces two new string methods that make removing prefixes and suffixes much easier.
+
+[`<str>.removeprefix(<substring>)`](https://docs.python.org/3.9/library/stdtypes.html#str.removeprefix) return the string without the prefix (`string[len(<substring>):]`), if the `<substring>` isn't present it will return a copy of the original string.
+
+```python
+# removing a prefix
+>>> 'TestHook'.removeprefix('Test')
+'Hook'
+>>> 'bookkeeper'.removeprefix('book')
+'bookkeeper'
+```
+
+[`<str>.removesuffix(<substring>)`](https://docs.python.org/3.9/library/stdtypes.html#str.removesuffix) return the string without the suffix (`string[:-len(substring)]`), if the `<substring>` isn't present it will return a copy of the original string.
+
+```python
+# removing a suffix
+>>> 'TestHook'.removesuffix('Test')
+'Test'
+>>> 'bookkeeper'.removesuffix('keeper')
+'bookkeeper'
+```
 
 For more examples and methods the [informal tutorial][informal tutorial] is a nice jumping-off point.
 [How to Unicode][howto unicode] in the Python docs offers great detail on Unicode, encoding, bytes, and other technical considerations for working with strings in Python.
