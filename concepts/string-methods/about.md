@@ -126,17 +126,17 @@ Python `3.9` introduces two new string methods that make removing prefixes and s
 >>> 'TestHook'.removeprefix('Test')
 'Hook'
 >>> 'bookkeeper'.removeprefix('book')
-'bookkeeper'
+'keeper'
 ```
 
 [`<str>.removesuffix(<substring>)`][removesuffix] returns the string without the suffix (`string[:-len(substring)]`). If the `<substring>` isn't present, a copy of the original string will be returned.
 
 ```python
 # removing a suffix
->>> 'TestHook'.removesuffix('Test')
+>>> 'TestHook'.removesuffix('Hook')
 'Test'
 >>> 'bookkeeper'.removesuffix('keeper')
-'bookkeeper'
+'book'
 ```
 
 For more examples and methods the [informal tutorial][informal tutorial] is a nice jumping-off point.
@@ -152,6 +152,8 @@ Python also supports regular expressions via the `re` module, which will be cove
 [howto unicode]: https://docs.python.org/3/howto/unicode.html
 [informal tutorial]: https://docs.python.org/3/tutorial/introduction.html#strings
 [locale]: https://docs.python.org/3/library/locale.html#module-locale
+[removeprefix]: https://docs.python.org/3.9/library/stdtypes.html#str.removeprefix
+[removesuffix]: https://docs.python.org/3.9/library/stdtypes.html#str.removesuffix
 [str-endswith]: https://docs.python.org/3/library/stdtypes.html#str.endswith
 [str-methods]: https://docs.python.org/3/library/stdtypes.html#string-methods
 [str-replace]: https://docs.python.org/3/library/stdtypes.html#str.replace
@@ -159,7 +161,3 @@ Python also supports regular expressions via the `re` module, which will be cove
 [str-title]: https://docs.python.org/3/library/stdtypes.html#str.title
 [text sequence]: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
 [unicode code points]: https://stackoverflow.com/questions/27331819/whats-the-difference-between-a-character-a-code-point-a-glyph-and-a-grapheme
-
-[removeprefix]: https://docs.python.org/3.9/library/stdtypes.html#str.removeprefix
-[removesuffix]: https://docs.python.org/3.9/library/stdtypes.html#str.removesuffix
-
