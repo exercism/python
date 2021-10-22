@@ -56,7 +56,7 @@ class CurrencyExchangeTest(unittest.TestCase):
             (470000, 0.00000009, 30, 700),
             (425.33, 0.0009, 30, 700)]
 
-        output_data = [8568, 1400, 0, 4017094016600, 363300]
+        output_data = [8568, 35, 0, 4017094016600, 363300]
 
         for variant, (inputs, output_data) in enumerate(zip(inputs, output_data), start=1):
             with self.subTest(f"variation #{variant}", inputs=inputs, output_data=output_data):
