@@ -87,11 +87,11 @@ class MakingTheGradeTest(unittest.TestCase):
     def test_perfect_score(self):
         data = [
             ([['Joci', 100], ['Vlad', 100], ['Raiana', 100], ['Alessandro', 100]], ['Joci', 100]),
-            ([['Jill', 30], ['Paul', 73], ], 'No perfect score.'),
-            ([], 'No perfect score.'),
+            ([['Jill', 30], ['Paul', 73], ], []),
+            ([], []),
             (
                 [['Rui', 60], ['Joci', 58], ['Sara', 91], ['Kora', 93], ['Alex', 42],
-                 ['Jan', 81], ['Lilliana', 40], ['John', 60], ['Bern', 28], ['Vlad', 55]], 'No perfect score.'),
+                 ['Jan', 81], ['Lilliana', 40], ['John', 60], ['Bern', 28], ['Vlad', 55]], []),
             (
                 [['Yoshi', 52], ['Jan', 86], ['Raiana', 100], ['Betty', 60],
                  ['Joci', 100], ['Kora', 81], ['Bern', 41], ['Rose', 94]], ['Raiana', 100])]
