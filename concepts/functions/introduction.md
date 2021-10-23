@@ -1,6 +1,14 @@
 # Introduction
 
-A [`function`][function] is a block of code that takes an input and produces an output. It is used to perform a specific repititive task.  A function can accept `parameters`, do some processing, and then return a value. The parameters and return value can be of any data type and are optional. In python, functions are [_first class objects_][first-class objects], which means they can be assigned to variables, passed as arguments to other functions, and returned as the value of other functions. There are many [_built-in functions_][built-in functions] in python, but you can also create your own functions.
+A [`function`][function] is a named block of code that takes input and produces output when invoked. Functions are used to perform specific and repetitive tasks throughout a program. 
+
+More formally:  a function is any Python object to which the [`function call`][calls] operation can be applied. The body of the function contains one or more statements which will return some value to the calling code/caller. The function object can define/receive zero or more parameters/arguments (_including other functions_). 
+
+[Function definitions][function-definitions] (`def <function_name>:`) form an _executable statement_ which binds the `<function_name>` to the function object definition (_the wrapper around the executable statements in the function body_) in the current local namespace. 
+
+Functions are [_first class objects_][first-class objects], which means they can be assigned to variables, passed as arguments to other functions, used as a `return` value, and wrapped around/nested to form decorators and closures. 
+
+Python also provides many top-level [_built-in functions_][built-in functions] for common operations.
 
 [built-in functions]: https://docs.python.org/3/library/functions.html
 [first-class objects]: https://realpython.com/lessons/functions-first-class-objects-python/

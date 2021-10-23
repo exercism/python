@@ -1,5 +1,5 @@
 {
-  "blurb": "A function is a reusable code block that achieves a specific purpose.",
-  "authors": ["bethanyg", "cmccandless"],
+  "blurb": "A function is any object to which the *function call* operation can be applied. The body contains one or more statements which return some value to the caller. It can receive zero or more arguments (including other functions). Function definitions use the keyword def, which binds the function name to the object definition in the local namespace.",
+  "authors": ["bethanyg", "mukeshgurpud"],
   "contributors": []
 }
