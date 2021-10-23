@@ -48,6 +48,6 @@ def student_ranking(student_scores, student_names):
 def perfect_score(student_info):
     """
     :param student_info: list of [<student name>, <score>] lists
-    :return: First [<student name>, 100] found OR "No perfect score."
+    :return: first `[<student name>, 100]` or `[]` if no student score of 100 is found.
     """
     pass

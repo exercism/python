@@ -93,14 +93,14 @@ Create the function `perfect_score()` with parameter `student_info`.
 `student_info` is a `list` of lists containing the name and score of each student: `[["Charles", 90], ["Tony", 80]]`.
 The function should `return` _the first_ `[<name>, <score>]` pair of the student who scored 100 on the exam.
 
- If no 100 scores are found in `student_info`, the string "No perfect score." should be returned.
+ If no 100 scores are found in `student_info`, an empty list `[]` should be returned.
 
 ```python
 >>> perfect_score(student_info=[["Charles", 90], ["Tony", 80], ["Alex", 100]])
 ["Alex", 100]
 
 >>> perfect_score(student_info=[["Charles", 90], ["Tony", 80]])
-"No perfect score."
+[]
 ```
 
 [round]: https://docs.python.org/3/library/functions.html#round
