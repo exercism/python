@@ -1,9 +1,13 @@
 {%- import "generator_macros.j2" as macros with context -%}
 {% macro test_case(case) -%}
     def test_{{ case["description"] | to_snake }}(self):
+        {% set expected = case["expected"] -%}
+        {% set exp_error = expected["error"] -%}
         {%- if case is error_case %}
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             {{ case["property"] }}({{ case["input"]["number"] }})
+            self.assertEqual(type(err.exception), ValueError)
+            self.assertEqual(err.exception.args[0], "{{ exp_error }}")
         {% else %}
         self.assertEqual(
             {{ case["property"] }}({{ case["input"]["number"] }}),
