@@ -118,4 +118,4 @@ class DotDslTest(unittest.TestCase):
         with self.assertRaises(ValueError) as err:
             Graph([(99, 1, 2)])
             self.assertEqual(type(err.exception), ValueError)
-            self.assertEqual(err.exception.args[0], "Unknown item {}".format(item[0]))
+            self.assertEqual(err.exception.args[0], "Unknown item")
