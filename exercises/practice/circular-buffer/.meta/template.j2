@@ -6,12 +6,13 @@ buf.{{ op["operation"] }}(
     {%- endif -%}
 )
 {%- endmacro -%}
-{{ macros.header(["CircularBuffer"]) }}
+{{ macros.header(["CircularBuffer","BufferEmptyException", "BufferFullException"]) }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases %}
     {%- set input = case["input"] -%}
-    def test_{{ case["description"] | to_snake }}(self):
+    {%- set case_name = case["description"] | to_snake %}
+    def test_{{ case_name }}(self):
         buf = CircularBuffer({{ input["capacity"] }})
         {% for op in input["operations"] -%}
         {% if op.get("should_succeed", True) -%}
@@ -21,10 +22,10 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         {{ call_op(op) }}
         {% endif -%}
         {% else -%}
-        with self.assertRaisesWithMessage(BaseException):
+        with self.assertRaises(BufferError) as err:
             {{ call_op(op) }}
+            self.assertEqual(type(err.exception), (BufferEmptyException, BufferFullException))
+            self.assertEqual(err.exception.args[0], ("Circular buffer is empty", "Circular buffer is full"))
         {% endif -%}
         {% endfor %}
     {% endfor %}
-
-{{ macros.footer(True) }}
