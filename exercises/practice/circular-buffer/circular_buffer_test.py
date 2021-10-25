@@ -14,13 +14,9 @@ class CircularBufferTest(unittest.TestCase):
         buf = CircularBuffer(1)
         with self.assertRaises(BufferError) as err:
             buf.read()
-            self.assertEqual(
-                type(err.exception), (BufferEmptyException, BufferFullException)
-            )
-            self.assertEqual(
-                err.exception.args[0],
-                ("Circular buffer is empty", "Circular buffer is full"),
-            )
+
+        self.assertEqual(type(err.exception), BufferEmptyException)
+        self.assertEqual(err.exception.args[0], "Circular buffer is empty")
 
     def test_can_read_an_item_just_written(self):
         buf = CircularBuffer(1)
@@ -33,13 +29,9 @@ class CircularBufferTest(unittest.TestCase):
         self.assertEqual(buf.read(), "1")
         with self.assertRaises(BufferError) as err:
             buf.read()
-            self.assertEqual(
-                type(err.exception), (BufferEmptyException, BufferFullException)
-            )
-            self.assertEqual(
-                err.exception.args[0],
-                ("Circular buffer is empty", "Circular buffer is full"),
-            )
+
+        self.assertEqual(type(err.exception), BufferEmptyException)
+        self.assertEqual(err.exception.args[0], "Circular buffer is empty")
 
     def test_items_are_read_in_the_order_they_are_written(self):
         buf = CircularBuffer(2)
@@ -53,13 +45,9 @@ class CircularBufferTest(unittest.TestCase):
         buf.write("1")
         with self.assertRaises(BufferError) as err:
             buf.write("2")
-            self.assertEqual(
-                type(err.exception), (BufferEmptyException, BufferFullException)
-            )
-            self.assertEqual(
-                err.exception.args[0],
-                ("Circular buffer is empty", "Circular buffer is full"),
-            )
+
+        self.assertEqual(type(err.exception), BufferFullException)
+        self.assertEqual(err.exception.args[0], "Circular buffer is full")
 
     def test_a_read_frees_up_capacity_for_another_write(self):
         buf = CircularBuffer(1)
@@ -83,13 +71,9 @@ class CircularBufferTest(unittest.TestCase):
         buf.clear()
         with self.assertRaises(BufferError) as err:
             buf.read()
-            self.assertEqual(
-                type(err.exception), (BufferEmptyException, BufferFullException)
-            )
-            self.assertEqual(
-                err.exception.args[0],
-                ("Circular buffer is empty", "Circular buffer is full"),
-            )
+
+        self.assertEqual(type(err.exception), BufferEmptyException)
+        self.assertEqual(err.exception.args[0], "Circular buffer is empty")
 
     def test_clear_frees_up_capacity_for_another_write(self):
         buf = CircularBuffer(1)
@@ -144,10 +128,6 @@ class CircularBufferTest(unittest.TestCase):
         self.assertEqual(buf.read(), "4")
         with self.assertRaises(BufferError) as err:
             buf.read()
-            self.assertEqual(
-                type(err.exception), (BufferEmptyException, BufferFullException)
-            )
-            self.assertEqual(
-                err.exception.args[0],
-                ("Circular buffer is empty", "Circular buffer is full"),
-            )
+
+        self.assertEqual(type(err.exception), BufferEmptyException)
+        self.assertEqual(err.exception.args[0], "Circular buffer is empty")
