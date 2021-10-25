@@ -7,15 +7,23 @@
         {%- if case is error_case %}
         {%- if case["expected"]["error"] == "divide by zero" %}
         # {{ case["expected"]["error"] }}
-        with self.assertRaisesWithMessage(ZeroDivisionError):
+        with self.assertRaises(ZeroDivisionError) as err:
+            {{ case["property"] }}({{ case["input"]["instructions"] }})
+        self.assertEqual(type(err.exception), ZeroDivisionError)
+        self.assertEqual(str(err.exception.args[0]), "{{ case["expected"]["error"] }}")
         {%- else %}
         {%- if "stack" in case["expected"]["error"] %}
-        with self.assertRaisesWithMessage(StackUnderflowError):
-        {%- else %}
-        with self.assertRaisesWithMessage(ValueError):
-        {%- endif %}
-        {%- endif %}
+        with self.assertRaises(StackUnderflowError) as err:
             {{ case["property"] }}({{ case["input"]["instructions"] }})
+        self.assertEqual(type(err.exception), StackUnderflowError)
+        self.assertEqual(str(err.exception.args[0]), "Insufficient number of items in stack")
+        {%- else %}
+        with self.assertRaises(ValueError) as err:
+            {{ case["property"] }}({{ case["input"]["instructions"] }})
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(str(err.exception.args[0]), "{{ case["expected"]["error"] }}")
+        {%- endif %}
+        {%- endif %}
         {%- else %}
         self.assertEqual({{ case["property"] }}({{ case["input"]["instructions"] }}), {{ case["expected"] }})
         {%- endif %}
@@ -27,5 +35,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {{ test_case(case["description"], subcase) }}
     {% endfor %}
 {% endfor %}
-
-{{ macros.footer() }}

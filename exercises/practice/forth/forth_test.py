@@ -16,34 +16,58 @@ class ForthTest(unittest.TestCase):
         self.assertEqual(evaluate(["1 2 +"]), [3])
 
     def test_addition_errors_if_there_is_nothing_on_the_stack(self):
-        with self.assertRaisesWithMessage(StackUnderflowError):
+        with self.assertRaises(StackUnderflowError) as err:
             evaluate(["+"])
+        self.assertEqual(type(err.exception), StackUnderflowError)
+        self.assertEqual(
+            str(err.exception.args[0]), "Insufficient number of items in stack"
+        )
 
     def test_addition_errors_if_there_is_only_one_value_on_the_stack(self):
-        with self.assertRaisesWithMessage(StackUnderflowError):
+        with self.assertRaises(StackUnderflowError) as err:
             evaluate(["1 +"])
+        self.assertEqual(type(err.exception), StackUnderflowError)
+        self.assertEqual(
+            str(err.exception.args[0]), "Insufficient number of items in stack"
+        )
 
     def test_subtraction_can_subtract_two_numbers(self):
         self.assertEqual(evaluate(["3 4 -"]), [-1])
 
     def test_subtraction_errors_if_there_is_nothing_on_the_stack(self):
-        with self.assertRaisesWithMessage(StackUnderflowError):
+        with self.assertRaises(StackUnderflowError) as err:
             evaluate(["-"])
+        self.assertEqual(type(err.exception), StackUnderflowError)
+        self.assertEqual(
+            str(err.exception.args[0]), "Insufficient number of items in stack"
+        )
 
     def test_subtraction_errors_if_there_is_only_one_value_on_the_stack(self):
-        with self.assertRaisesWithMessage(StackUnderflowError):
+        with self.assertRaises(StackUnderflowError) as err:
             evaluate(["1 -"])
+        self.assertEqual(type(err.exception), StackUnderflowError)
+        self.assertEqual(
+            str(err.exception.args[0]), "Insufficient number of items in stack"
+        )
 
     def test_multiplication_can_multiply_two_numbers(self):
         self.assertEqual(evaluate(["2 4 *"]), [8])
 
     def test_multiplication_errors_if_there_is_nothing_on_the_stack(self):
-        with self.assertRaisesWithMessage(StackUnderflowError):
+        with self.assertRaises(StackUnderflowError) as err:
             evaluate(["*"])
+        self.assertEqual(type(err.exception), StackUnderflowError)
+        self.assertEqual(
+            str(err.exception.args[0]), "Insufficient number of items in stack"
+        )
 
     def test_multiplication_errors_if_there_is_only_one_value_on_the_stack(self):
-        with self.assertRaisesWithMessage(StackUnderflowError):
+        with self.assertRaises(StackUnderflowError) as err:
             evaluate(["1 *"])
+        self.assertEqual(type(err.exception), StackUnderflowError)
+        self.assertEqual(
+            str(err.exception.args[0]), "Insufficient number of items in stack"
+        )
 
     def test_division_can_divide_two_numbers(self):
         self.assertEqual(evaluate(["12 3 /"]), [4])
@@ -53,16 +77,26 @@ class ForthTest(unittest.TestCase):
 
     def test_division_errors_if_dividing_by_zero(self):
         # divide by zero
-        with self.assertRaisesWithMessage(ZeroDivisionError):
+        with self.assertRaises(ZeroDivisionError) as err:
             evaluate(["4 0 /"])
+        self.assertEqual(type(err.exception), ZeroDivisionError)
+        self.assertEqual(str(err.exception.args[0]), "divide by zero")
 
     def test_division_errors_if_there_is_nothing_on_the_stack(self):
-        with self.assertRaisesWithMessage(StackUnderflowError):
+        with self.assertRaises(StackUnderflowError) as err:
             evaluate(["/"])
+        self.assertEqual(type(err.exception), StackUnderflowError)
+        self.assertEqual(
+            str(err.exception.args[0]), "Insufficient number of items in stack"
+        )
 
     def test_division_errors_if_there_is_only_one_value_on_the_stack(self):
-        with self.assertRaisesWithMessage(StackUnderflowError):
+        with self.assertRaises(StackUnderflowError) as err:
             evaluate(["1 /"])
+        self.assertEqual(type(err.exception), StackUnderflowError)
+        self.assertEqual(
+            str(err.exception.args[0]), "Insufficient number of items in stack"
+        )
 
     def test_combined_arithmetic_addition_and_subtraction(self):
         self.assertEqual(evaluate(["1 2 + 4 -"]), [-1])
@@ -77,8 +111,12 @@ class ForthTest(unittest.TestCase):
         self.assertEqual(evaluate(["1 2 dup"]), [1, 2, 2])
 
     def test_dup_errors_if_there_is_nothing_on_the_stack(self):
-        with self.assertRaisesWithMessage(StackUnderflowError):
+        with self.assertRaises(StackUnderflowError) as err:
             evaluate(["dup"])
+        self.assertEqual(type(err.exception), StackUnderflowError)
+        self.assertEqual(
+            str(err.exception.args[0]), "Insufficient number of items in stack"
+        )
 
     def test_drop_removes_the_top_value_on_the_stack_if_it_is_the_only_one(self):
         self.assertEqual(evaluate(["1 drop"]), [])
@@ -87,8 +125,12 @@ class ForthTest(unittest.TestCase):
         self.assertEqual(evaluate(["1 2 drop"]), [1])
 
     def test_drop_errors_if_there_is_nothing_on_the_stack(self):
-        with self.assertRaisesWithMessage(StackUnderflowError):
+        with self.assertRaises(StackUnderflowError) as err:
             evaluate(["drop"])
+        self.assertEqual(type(err.exception), StackUnderflowError)
+        self.assertEqual(
+            str(err.exception.args[0]), "Insufficient number of items in stack"
+        )
 
     def test_swap_swaps_the_top_two_values_on_the_stack_if_they_are_the_only_ones(self):
         self.assertEqual(evaluate(["1 2 swap"]), [2, 1])
@@ -99,12 +141,20 @@ class ForthTest(unittest.TestCase):
         self.assertEqual(evaluate(["1 2 3 swap"]), [1, 3, 2])
 
     def test_swap_errors_if_there_is_nothing_on_the_stack(self):
-        with self.assertRaisesWithMessage(StackUnderflowError):
+        with self.assertRaises(StackUnderflowError) as err:
             evaluate(["swap"])
+        self.assertEqual(type(err.exception), StackUnderflowError)
+        self.assertEqual(
+            str(err.exception.args[0]), "Insufficient number of items in stack"
+        )
 
     def test_swap_errors_if_there_is_only_one_value_on_the_stack(self):
-        with self.assertRaisesWithMessage(StackUnderflowError):
+        with self.assertRaises(StackUnderflowError) as err:
             evaluate(["1 swap"])
+        self.assertEqual(type(err.exception), StackUnderflowError)
+        self.assertEqual(
+            str(err.exception.args[0]), "Insufficient number of items in stack"
+        )
 
     def test_over_copies_the_second_element_if_there_are_only_two(self):
         self.assertEqual(evaluate(["1 2 over"]), [1, 2, 1])
@@ -113,12 +163,20 @@ class ForthTest(unittest.TestCase):
         self.assertEqual(evaluate(["1 2 3 over"]), [1, 2, 3, 2])
 
     def test_over_errors_if_there_is_nothing_on_the_stack(self):
-        with self.assertRaisesWithMessage(StackUnderflowError):
+        with self.assertRaises(StackUnderflowError) as err:
             evaluate(["over"])
+        self.assertEqual(type(err.exception), StackUnderflowError)
+        self.assertEqual(
+            str(err.exception.args[0]), "Insufficient number of items in stack"
+        )
 
     def test_over_errors_if_there_is_only_one_value_on_the_stack(self):
-        with self.assertRaisesWithMessage(StackUnderflowError):
+        with self.assertRaises(StackUnderflowError) as err:
             evaluate(["1 over"])
+        self.assertEqual(type(err.exception), StackUnderflowError)
+        self.assertEqual(
+            str(err.exception.args[0]), "Insufficient number of items in stack"
+        )
 
     def test_user_defined_words_can_consist_of_built_in_words(self):
         self.assertEqual(evaluate([": dup-twice dup dup ;", "1 dup-twice"]), [1, 1, 1])
@@ -146,12 +204,16 @@ class ForthTest(unittest.TestCase):
         self.assertEqual(evaluate([": foo 10 ;", ": foo foo 1 + ;", "foo"]), [11])
 
     def test_user_defined_words_cannot_redefine_non_negative_numbers(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             evaluate([": 1 2 ;"])
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(str(err.exception.args[0]), "illegal operation")
 
     def test_user_defined_words_errors_if_executing_a_non_existent_word(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             evaluate(["foo"])
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(str(err.exception.args[0]), "undefined operation")
 
     def test_case_insensitivity_dup_is_case_insensitive(self):
         self.assertEqual(evaluate(["1 DUP Dup dup"]), [1, 1, 1, 1])
@@ -170,11 +232,3 @@ class ForthTest(unittest.TestCase):
 
     def test_case_insensitivity_definitions_are_case_insensitive(self):
         self.assertEqual(evaluate([": SWAP DUP Dup dup ;", "1 swap"]), [1, 1, 1, 1])
-
-    # Utility functions
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
-
-if __name__ == "__main__":
-    unittest.main()
