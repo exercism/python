@@ -83,3 +83,11 @@ class GoCountingTest(unittest.TestCase):
         self.assertSetEqual(territories[BLACK], {(0, 0), (2, 0)})
         self.assertSetEqual(territories[WHITE], set())
         self.assertSetEqual(territories[NONE], set())
+
+    # Utility functions
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
+
+
+if __name__ == "__main__":
+    unittest.main()
