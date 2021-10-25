@@ -37,23 +37,31 @@ class GoCountingTest(unittest.TestCase):
 
     def test_invalid_because_x_is_too_low_for_5x5_board(self):
         board = Board(["  B  ", " B B ", "B W B", " W W ", "  W  "])
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             board.territory(x=-1, y=1)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "Invalid coordinate")
 
     def test_invalid_because_x_is_too_high_for_5x5_board(self):
         board = Board(["  B  ", " B B ", "B W B", " W W ", "  W  "])
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             board.territory(x=5, y=1)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "Invalid coordinate")
 
     def test_invalid_because_y_is_too_low_for_5x5_board(self):
         board = Board(["  B  ", " B B ", "B W B", " W W ", "  W  "])
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             board.territory(x=1, y=-1)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "Invalid coordinate")
 
     def test_invalid_because_y_is_too_high_for_5x5_board(self):
         board = Board(["  B  ", " B B ", "B W B", " W W ", "  W  "])
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             board.territory(x=1, y=5)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "Invalid coordinate")
 
     def test_one_territory_is_the_whole_board(self):
         board = Board([" "])
@@ -75,11 +83,3 @@ class GoCountingTest(unittest.TestCase):
         self.assertSetEqual(territories[BLACK], {(0, 0), (2, 0)})
         self.assertSetEqual(territories[WHITE], set())
         self.assertSetEqual(territories[NONE], set())
-
-    # Utility functions
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
-
-if __name__ == "__main__":
-    unittest.main()
