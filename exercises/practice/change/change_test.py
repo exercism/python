@@ -38,21 +38,17 @@ class ChangeTest(unittest.TestCase):
     def test_error_testing_for_change_smaller_than_the_smallest_of_coins(self):
         with self.assertRaises(ValueError) as err:
             find_fewest_coins([5, 10], 3)
-            self.assertEqual(type(err.exception), ValueError)
-            self.assertEqual(
-                err.exception.args[0], "can't make target with given coins"
-            )
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "can't make target with given coins")
 
     def test_error_if_no_combination_can_add_up_to_target(self):
         with self.assertRaises(ValueError) as err:
             find_fewest_coins([5, 10], 94)
-            self.assertEqual(type(err.exception), ValueError)
-            self.assertEqual(
-                err.exception.args[0], "can't make target with given coins"
-            )
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "can't make target with given coins")
 
     def test_cannot_find_negative_change_values(self):
         with self.assertRaises(ValueError) as err:
             find_fewest_coins([1, 2, 5], -5)
-            self.assertEqual(type(err.exception), ValueError)
-            self.assertEqual(err.exception.args[0], "target can't be negative")
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "target can't be negative")

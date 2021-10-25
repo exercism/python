@@ -28,20 +28,12 @@ class CollatzConjectureTest(unittest.TestCase):
 
         with self.assertRaises(ValueError) as err:
             steps(0)
-            self.assertEqual(type(err.exception), ValueError)
-            self.assertEqual(err.exception.args[0], "Only positive numbers are allowed")
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "Only positive numbers are allowed")
 
     def test_negative_value_is_an_error(self):
 
         with self.assertRaises(ValueError) as err:
             steps(-15)
-            self.assertEqual(type(err.exception), ValueError)
-            self.assertEqual(err.exception.args[0], "Only positive numbers are allowed")
-
-    # Utility functions
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
-
-if __name__ == "__main__":
-    unittest.main()
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "Only positive numbers are allowed")
