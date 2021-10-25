@@ -11,7 +11,7 @@ Thank you for opening an issue! 🐍 &nbsp;🌈  ✨
 &nbsp;&nbsp;We'll take a look as soon as we can & identify what work is needed to fix it. *(generally within* **72 hours**).
 
 ​		&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;If you'd also like to make a PR to **fix** the issue after discussing it,  
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;_We &nbsp;💙 &nbsp;PRs that follow our [Exercsim](https://exercism.org/docs/building) & [Track](https://github.com/exercism/python/blob/main/CONTRIBUTING.md) contributing guidelines!_
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;_We &nbsp;💙 &nbsp;PRs that follow our [Exercism](https://exercism.org/docs/building) & [Track](https://github.com/exercism/python/blob/main/CONTRIBUTING.md) contributing guidelines!_
 
 -  &nbsp; Here because of an obvious (*and* **small** *set of*) spelling, grammar, or punctuation issues with **one** exercise,  
 &nbsp; concept, or Python document?? 🌟  `Please feel free to submit a PR, linking to this issue.` 🎉
@@ -27,7 +27,7 @@ Thank you for opening an issue! 🐍 &nbsp;🌈  ✨
 
 <br>
 
-💛 &nbsp;💙 &nbsp;_While you are here..._ If you decide to help out with other [open issues](https://github.com/exercism/python/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22), you have our **gratitude** 🙌 🙌🏽.  
+💙 &nbsp;_While you are here..._ If you decide to help out with other [open issues](https://github.com/exercism/python/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22), you have our **gratitude** 🙌 🙌🏽.  
 Anything tagged with `[help wanted]` and without `[Claimed]` is up for grabs.  
 Comment on the issue and we will reserve it for you.  🌈  ✨
 
