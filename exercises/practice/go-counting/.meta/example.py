@@ -37,7 +37,7 @@ class Board:
 
     def territory(self, x, y):
         if not self.valid(x, y):
-            raise ValueError('invalid coordinate')
+            raise ValueError('Invalid coordinate')
         if self.board[y][x] in STONES:
             return (NONE, set())
 
