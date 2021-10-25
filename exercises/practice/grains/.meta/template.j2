@@ -2,10 +2,14 @@
 
 {% macro test_case(case) %}
     {%- set input = case["input"] %}
+    {%- set expected = case["expected"] %}
+    {%- set exp_error = expected["error"]  %}
     def test_{{ case["description"] | to_snake }}(self):
     {%- if case is error_case %}
-          with self.assertRaisesWithMessage(ValueError):
-                {{ case["property"] | to_snake }}({{ input["square"] }})
+        with self.assertRaises(ValueError) as err:
+            {{ case["property"] | to_snake }}({{ input["square"] }})
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "{{ exp_error }}")
     {%- else%}
           self.assertEqual({{ case["property"] | to_snake }}(
             {{ input["square"] }}), {{ case["expected"] }})
@@ -24,5 +28,4 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         {{test_case(case)}}
         {%-endif%}
     {% endfor %}
-
-{{ macros.footer(has_error_case) }}
+    

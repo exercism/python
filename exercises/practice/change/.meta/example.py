@@ -1,6 +1,6 @@
 def find_fewest_coins(coins, target):
     if target < 0:
-        raise ValueError("cannot find negative change values")
+        raise ValueError("target can't be negative")
     min_coins_required = [1e9] * (target + 1)
     last_coin = [0]*(target + 1)
     min_coins_required[0] = 0
@@ -15,7 +15,7 @@ def find_fewest_coins(coins, target):
                     last_coin[change] = change - coin
         min_coins_required[change] = final_result
     if min_coins_required[target] == 1e9:
-        raise ValueError("no combination can add up to target")
+        raise ValueError("can't make target with given coins")
     else:
         last_coin_value = target
         array = []

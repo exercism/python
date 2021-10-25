@@ -44,8 +44,8 @@ Also being familiar with the following can help with completing the tasks:
 
 ## 6. A "Perfect" Score
 
-- There may be or may not be a student with a score of 100, and you can't return "No perfect score." without checking **all** scores.
-- The [`control flow`][control flow] statements `continue` and `break`break may be useful here to move past unwanted values.
+- There may be or may not be a student with a score of 100, and you can't return `[]` without checking **all** scores.
+- The [`control flow`][control flow] statements `continue` and `break` may be useful here to move past unwanted values.
 
 [list]: https://docs.python.org/3/library/stdtypes.html#list
 [str]: https://docs.python.org/3/library/stdtypes.html#str
