@@ -17,13 +17,13 @@ Thank you for opening an issue! 🐍 &nbsp;🌈  ✨
 &nbsp; concept, or Python document?? 🌟  `Please feel free to submit a PR, linking to this issue.` 🎉
 
 ​		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ❗ Please **do not**  run checks on the whole repo & submit a bunch of PRs.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; This creates longer review cycles & exhausts reviewers energy & time.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; It may also conflict with ongoing changes from other contributors.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; For anything complicated or ambiguous, **let's discuss things**  --  we will likely welcome a PR from you.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This creates longer review cycles & exhausts reviewers energy & time.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; It may also conflict with ongoing changes from other contributors.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For anything complicated or ambiguous, **let's discuss things**  --  we will likely welcome a PR from you.
 
-​		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ❗ Please keep in mind that inserting only blank lines, making a closing bracket drop to the next line, changing a word  
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to a synonym without obvious reason, adding trailing space that's not a[ EOL](https://en.wikipedia.org/wiki/Newline) for the very end of text files,  
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and other "changes just to change things"  are **not** considered helpful, and will likely be closed by reviewers.
+​		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ❗ Please keep in mind that inserting only blank lines, making a closing bracket drop to the next line, changing a  
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;word to a synonym without obvious reason, adding trailing space that's not a[ EOL](https://en.wikipedia.org/wiki/Newline) for the very end of text files,  
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and other "changes just to change things"  are **not** considered helpful, and will likely be closed by reviewers.
 
 <br>
 
