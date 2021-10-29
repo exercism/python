@@ -31,24 +31,22 @@ class GrainsTest(unittest.TestCase):
         self.assertEqual(square(64), 9223372036854775808)
 
     def test_square_0_raises_an_exception(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             square(0)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "square must be between 1 and 64")
 
     def test_negative_square_raises_an_exception(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             square(-1)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "square must be between 1 and 64")
 
     def test_square_greater_than_64_raises_an_exception(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             square(65)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "square must be between 1 and 64")
 
     def test_returns_the_total_number_of_grains_on_the_board(self):
         self.assertEqual(total(), 18446744073709551615)
-
-    # Utility functions
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
-
-if __name__ == "__main__":
-    unittest.main()

@@ -2,6 +2,7 @@
   "blurb": "Learn about loops by grading and organzing your students exam scores.",
   "icon": "grep",
   "authors": ["mohanrajanr", "BethanyG"],
+  "contributors": ["pranasziaukas"],
   "files": {
     "solution": ["loops.py"],
     "test": ["loops_test.py"],

@@ -9,4 +9,4 @@ def find(search_list, value):
             low = middle + 1
         else:
             return middle
-    raise ValueError("Value not found.")
+    raise ValueError("value not in array")

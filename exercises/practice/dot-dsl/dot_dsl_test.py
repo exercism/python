@@ -71,51 +71,51 @@ class DotDslTest(unittest.TestCase):
         })
 
     def test_malformed_graph(self):
-        with self.assertRaisesWithMessage(TypeError):
+        with self.assertRaises(TypeError) as err:
             Graph(1)
+        self.assertEqual(type(err.exception), TypeError)
+        self.assertEqual(err.exception.args[0], "Graph data malformed")
 
-        with self.assertRaisesWithMessage(TypeError):
+        with self.assertRaises(TypeError) as err:
             Graph("problematic")
+        self.assertEqual(type(err.exception), TypeError)
+        self.assertEqual(err.exception.args[0], "Graph data malformed")
 
     def test_malformed_graph_item(self):
-        with self.assertRaisesWithMessage(TypeError):
-            Graph([
-                ()
-            ])
+        with self.assertRaises(TypeError) as err:
+            Graph([()])
+        self.assertEqual(type(err.exception), TypeError)
+        self.assertEqual(err.exception.args[0], "Graph item incomplete")
 
-        with self.assertRaisesWithMessage(TypeError):
-            Graph([
-                (ATTR, )
-            ])
+
+        with self.assertRaises(TypeError) as err:
+                Graph([(ATTR, )])
+        self.assertEqual(type(err.exception), TypeError)
+        self.assertEqual(err.exception.args[0], "Graph item incomplete")
+
 
     def test_malformed_attr(self):
-        with self.assertRaisesWithMessage(ValueError):
-            Graph([
-                (ATTR, 1, 2, 3)
-            ])
+        with self.assertRaises(ValueError) as err:
+            Graph([(ATTR, 1, 2, 3)])
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "Attribute is malformed")
+
 
     def test_malformed_node(self):
-        with self.assertRaisesWithMessage(ValueError):
-            Graph([
-                (NODE, 1, 2, 3)
-            ])
+        with self.assertRaises(ValueError) as err:
+            Graph([(NODE, 1, 2, 3)])
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "Node is malformed")
+
 
     def test_malformed_EDGE(self):
-        with self.assertRaisesWithMessage(ValueError):
-            Graph([
-                (EDGE, 1, 2)
-            ])
+        with self.assertRaises(ValueError) as err:
+            Graph([(EDGE, 1, 2)])
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "Edge is malformed")
 
     def test_unknown_item(self):
-        with self.assertRaisesWithMessage(ValueError):
-            Graph([
-                (99, 1, 2)
-            ])
-
-    # Utility methods
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
-
-if __name__ == '__main__':
-    unittest.main()
+        with self.assertRaises(ValueError) as err:
+            Graph([(99, 1, 2)])
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "Unknown item")

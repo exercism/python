@@ -41,15 +41,15 @@ class Graph:
             type_ = item[0]
             if type_ == ATTR:
                 if len(item) != 3:
-                    raise ValueError("ATTR malformed")
+                    raise ValueError("Attribute is malformed")
                 self.attrs[item[1]] = item[2]
             elif type_ == NODE:
                 if len(item) != 3:
-                    raise ValueError("NODE malformed")
+                    raise ValueError("Node is malformed")
                 self.nodes.append(Node(item[1], item[2]))
             elif type_ == EDGE:
                 if len(item) != 4:
-                    raise ValueError("EDGE malformed")
+                    raise ValueError("Edge is malformed")
                 self.edges.append(Edge(item[1], item[2], item[3]))
             else:
-                raise ValueError("Unknown item {}".format(item[0]))
+                raise ValueError("Unknown item")

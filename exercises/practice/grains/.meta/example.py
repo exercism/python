@@ -1,10 +1,10 @@
 def square(number):
     if number == 0:
-        raise ValueError("Square input of zero is invalid.")
+        raise ValueError("square must be between 1 and 64")
     elif number < 0:
-        raise ValueError("Negative square input is invalid.")
+        raise ValueError("square must be between 1 and 64")
     elif number > 64:
-        raise ValueError("Square input greater than 64 is invalid.")
+        raise ValueError("square must be between 1 and 64")
 
     return 2 ** (number - 1)
 
