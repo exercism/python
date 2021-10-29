@@ -22,6 +22,10 @@ class EquilateralTriangleTest(unittest.TestCase):
     def test_all_zero_sides_is_not_a_triangle(self):
         self.assertIs(equilateral([0, 0, 0]), False)
 
+    def test_a_negative_side_is_not_a_triangle(self):
+        self.assertIs(equilateral([-2, 2, 2]), False)
+
+
     def test_sides_may_be_floats(self):
         self.assertIs(equilateral([0.5, 0.5, 0.5]), True)
 
@@ -54,6 +58,12 @@ class IsoscelesTriangleTest(unittest.TestCase):
     def test_sides_may_be_floats(self):
         self.assertIs(isosceles([0.5, 0.4, 0.5]), True)
 
+    def test_triangle_with_side_0_is_not_a_triangle(self):
+        self.assertIs(isosceles([0, 1, 1]), False)
+
+    def test_triangle_with_negative_side_is_not_a_triangle(self):
+        self.assertIs(isosceles([1, -1, 1]), False)
+
 
 class ScaleneTriangleTest(unittest.TestCase):
     def test_no_sides_are_equal(self):
@@ -70,6 +80,12 @@ class ScaleneTriangleTest(unittest.TestCase):
 
     def test_sides_may_be_floats(self):
         self.assertIs(scalene([0.5, 0.4, 0.6]), True)
+
+    def test_triangle_with_side_0_is_not_a_triangle(self):
+        self.assertIs(isosceles([1, 1, 0]), False)
+
+    def test_triangle_with_negative_side_is_not_a_triangle(self):
+        self.assertIs(isosceles([1, 1, -1]), False)
 
 
 if __name__ == "__main__":
