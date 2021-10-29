@@ -1,0 +1,361 @@
+comment:
+  on-update: edit
+  header: |
+    Hi & Welcome! 👋🏽&nbsp;👋
+
+    <br>
+
+    **Thank you** for contributing to `exercism/python` 💛&nbsp;💙 -- we really appreciate it! 🌟 🌈
+
+  footer: |
+
+    <h2>🛠️ &nbsp;&nbsp; Maintainers &nbsp;&nbsp;</h2>
+    <h3> Please take note 📒  of the following sections/review items 👀   ✨ </h3>
+    <br>
+    <br>
+    <details>
+    <summary> 🌈  &nbsp;Acknowledgements and Reputation</summary>
+    <br>
+    <table>
+    <td>
+
+    - ❓ Does this PR need to receive a label with a [`reputation modifier`](https://github.com/exercism/docs/blob/main/using/product/reputation.md#creating-a-pull-request)?
+         -  `medium` is awarded by default.
+    - ❓ Does this contributor need to be added to the **exercise** [`authors` or `contributors`](https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md#file-metaconfigjson)?
+    - ❓ Does this contributor need to be added to the **concept** [`authors` or `contributors`](https://github.com/exercism/docs/blob/main/building/tracks/concepts.md#file-metaconfigjson)?
+    - ❓ Is there an associated issue or issues that should be linked to this PR?
+
+    </td>
+    </table>
+    </details>
+    <details>
+    <summary>💫 &nbsp;General Code Quality</summary>
+    <ul>
+    <table>
+    <td>
+      <h4>Verify:</h4>
+
+      -  [ ]  &nbsp;The branch was updated & rebased with any (recent) upstream changes.
+      -  [ ]  &nbsp;All prose was checked for spelling and grammar.
+      -  [ ]  &nbsp;Files are formatted via [yapf](https://github.com/google/yapf) ([_yapf config_](https://github.com/exercism/python/blob/main/.style.yapf)) & conform to our [coding standards](https://github.com/exercism/python/blob/main/CONTRIBUTING.md#coding-standards)
+      -  [ ]  &nbsp;Files pass [flake8](http://flake8.pycqa.org/) with [_flake8 config_](https://github.com/exercism/python/blob/main/.flake8) & [pylint](https://pylint.pycqa.org/en/v2.11.1/user_guide/index.html) with [_pylint config_](https://github.com/exercism/python/blob/main/pylintrc).
+      -  [ ]  &nbsp;Changed `example.py`/`exemplar.py` files still pass their associated **test files**.
+      -  [ ]  &nbsp;Changed _**test files**_ still work with associated `example.py`/`exemplar.py` files.
+          - Check that tests **fail** properly, as well as succeed.
+                 (_**e.g.**, make some tests fail on purpose to "test the tests" & failure messages_).
+      -  [ ]  &nbsp;All files have proper EOL.
+      -  [ ]  &nbsp;If a `JinJa2` template was modified/created, was the test file [regenerated](https://github.com/exercism/python/blob/main/CONTRIBUTING.md#auto-generated-test-files-and-test-templates)?
+          - Does the regenerated test file successfully  test the exercises `example.py` file?
+      -  [ ]  &nbsp;The branch passes all CI checks & [`configlet-lint`](https://github.com/exercism/configlet#configlet-lint).
+
+    <br>
+    </td>
+    </table>
+    </ul>
+    <br>
+    </details>
+    <details>
+    <summary>🌿 &nbsp;Changes to Concept Exercises</summary>
+    <br>
+
+      -   ❓ Are all required files still up-to-date & configured correctly for this change?_
+      -   ❓ Does `<exercise>/.meta/design.md` need to be updated with new implementation/design decisions
+      -   ❓ Do these changes require follow-on/supporting changes to related **concept** documents?
+
+    <ul>
+    <details>
+    <summary><em><b> ✨ &nbsp;Where applicable, check the following&nbsp;✨  </b></em></summary>
+    <br>
+    <ul>
+    <table>
+    <td>
+
+    (_as a reminder: [Concept Exercise Anatomy](https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md)_)
+      - [ ] Exercise `introduction.md`
+        - [ ]  Do all code examples compile, run, and return the shown output?
+        - [ ]  Are all the code examples formatted per the Python docs?
+      - [ ]  Exercise `instructions.md`
+      - [ ]  Exercise  `hints.md`
+      - [ ]   Check that exercise `design.md` was fulfilled or edited appropriately
+      - [ ]   Exercise `exemplar.py`
+        - [ ]  Only uses syntax previously introduced or explained.
+        - [ ]  Is correct and appropriate for the exercise and story.
+      - [ ]   Exercise `<exercise_name>.py` (stub)
+        - [ ]  Includes appropriate docstrings and function names.
+        - [ ]  Includes `pass` for each function
+        - [ ]  Includes an EOL at the end
+      - [ ]   Exercise  `<exercise_name>_test.py`
+        - [ ]   Tests cover all (reasonable) inputs and scenarios
+        - [ ]   At least one test for each task in the exercise
+        - [ ]   If using subtests or fixtures they're [formatted correctly](https://github.com/exercism/python/blob/main/CONTRIBUTING.md#Test-File_style) for the runner
+        - [ ]   Classnames are `<ExerciseName>Test`
+        - [ ]   Test functions are `test_<test_name>`
+      - [ ]   Exercise `config.json` --> **valid UUID4**
+      - [ ]   Corresponding concept `introduction.md`
+      - [ ]   Corresponding concept `about.md`
+      - [ ]   Concept  `config.json`
+      - [ ]   All Markdown Files :  Prettier linting (_for all markdown docs_)
+      - [ ]   All Code files: PyLint linting (**_except for test files_**)
+      - [ ]   All files with text:  Spell check & grammar review.
+
+    </td>
+    </table>
+    </ul>
+    </details>
+    </ul>
+    </details>
+
+    <details>
+    <summary>🚀&nbsp;  Changes to Practice Exercises</summary>
+    <br>
+    <ul>
+    <table>
+    <td>
+
+    _Is the exercise is in line with [Practice Exercise Anatomy](https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md)?_
+    - [ ] `.docs/instructions.md`(**required**)
+       - Was this file updated and regenerated properly?
+    - [ ] `.docs/introduction.md`(_optional_)
+    - [ ] `.docs/introduction.append.md`(_optional_)
+    - [ ] `.docs/instructions.append.md` (_optional_)
+       - Are any additional instructions needed/provided?
+       &nbsp;(_e.g. error handling or information on classes_)
+    - [ ] `.docs/hints.md`(_optional_)
+       - Was this file regenerated properly?
+    - [ ] `.meta/config.json` (**required**)
+    - [ ] `.meta/example.py` (**required**)
+       - Does this pass all the current tests as written/generated?
+    - [ ] `.meta/design.md` (_optional_)
+    - [ ] `.meta/template.j2` (_template for generating tests from canonical data_)
+      - Was a test file properly regenerated from this template?
+    - [ ] `.meta/tests.toml`
+       -  Are there additional test cases to include or exclude?
+       -  Are there any Python-specific test cases needed for this exercise?
+    - [ ] `<exercise-slug>_test.py`
+       - Does this file need to be regenerated?
+       - Does this file correctly test the `example.py` file?
+       - Does this file correctly report test failures and messages?
+    - [ ] `<exercise-slug>.py` (**required**)
+       - Does this stub have enough information to get
+       &nbsp;the student started coding a valid solution?
+
+    </td>
+    </table>
+    </ul>
+    </details>
+      <details>
+        <summary>🐣 &nbsp;Brand-New Concept Exercises</summary>
+    <br>
+    <ul>
+    <table>
+    <td>
+
+    _Is the exercise is in line with [Concept Exercise Anatomy](https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md)?_
+      - [ ] Exercise `introduction.md`
+        - [ ]  Do all code examples compile, run, and return the shown output?
+        - [ ]  Are all the code examples formatted per the Python docs?
+      - [ ]  Exercise `instructions.md`
+      - [ ]  Exercise  `hints.md`
+      - [ ]   Check that exercise `design.md` was fulfilled or edited appropriately
+      - [ ]   Exercise `exemplar.py`
+        - [ ]  Only uses syntax previously introduced or explained.
+        - [ ]  Is correct and appropriate for the exercise and story.
+      - [ ]   Exercise `<exercise_name>.py` (stub)
+        - [ ]  Includes appropriate docstrings and function names.
+        - [ ]  Includes `pass` for each function
+        - [ ]  Includes an EOL at the end
+      - [ ]   Exercise  `<exercise_name>_test.py`
+        - [ ]   Tests cover all (reasonable) inputs and scenarios
+        - [ ]   At least one test for each task in the exercise
+        - [ ]   If using subtests or fixtures they're formatted correctly for the runner
+        - [ ]   Classnames are `<ExerciseName>Test`
+        - [ ]   Test functions are `test_<test_name>`
+      - [ ]   Exercise `config.json` --> valid UUID4
+      - [ ]   Corresponding concept `introduction.md`
+      - [ ]   Corresponding concept `about.md`
+      - [ ]   Concept  `config.json`
+      - [ ]   All Markdown Files :  Prettier linting (_for all markdown docs_)
+      - [ ]   All Code files: Flake8 & PyLint linting
+      - [ ]   All Code Examples:  proper formatting and fencing.  Verify they run in the REPL
+      - [ ]   All files with text:  Spell check & grammar review.
+
+    <br>
+    </td>
+    </table>
+    </ul>
+    </details>
+    <br>
+    <h3>Our &nbsp; 💖  &nbsp; for all your review efforts! 🌟 🦄</h3>
+
+  snippets:
+    - id: any-file-changed
+      files:
+        - any: ["**", "**/**"]
+      body: |
+        <br>
+
+        This is an automated [🤖&nbsp;🤖 &nbsp;] comment for the  **`maintainers`** of this repository, notifying them of your contribution.  🎉
+        &nbsp;  Someone will review/reply to your changes shortly. (_usually within **72 hours**._)
+        You can safely ignore the **`maintainers`**  section below.
+
+        <br>
+        <details open>
+          <summary>⚠️ &nbsp;<b>Please be aware</b>&nbsp;⚠️ </summary>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_This repo does not generally accept Pull Requests unless they follow our [contributing guidelines](https://github.com/exercism/python/blob/main/CONTRIBUTING.md) and are:_
+
+          &nbsp;&nbsp;&nbsp;&nbsp; 1️⃣ &nbsp;&nbsp;&nbsp; Small, contained fixes for typos/grammar/punctuation/code syntax on [one] exercise,
+          &nbsp;&nbsp;&nbsp;&nbsp; 2️⃣ &nbsp;&nbsp;&nbsp;&nbsp;Medium changes that have been agreed/discussed via a filed issue,
+          &nbsp;&nbsp;&nbsp;&nbsp; 3️⃣ &nbsp;&nbsp;&nbsp;&nbsp;Contributions from our [help wanted][help-wanted] issue list,
+          &nbsp;&nbsp;&nbsp;&nbsp; 4️⃣ &nbsp;&nbsp;&nbsp;&nbsp;Larger (_previously agreed-upon_) contributions from recent & regular (_within the last 6 months_) contributors.
+
+          &nbsp;&nbsp;&nbsp;&nbsp;Pull Requests not in these categories **will be closed**.  😞
+
+        </details>
+        <br>
+
+
+    - id: change-concept-exercise
+      files:
+        - "concepts/**/*"
+        - "concepts/**/**/*"
+        - "exercises/concept/**/*"
+        - "exercises/concept/**/**/*"
+      body: |
+        ---
+
+        #### **`💙  It looks like you are changing/adding files in a Concept Exercise! 💙 `**
+
+        <br>
+        <details>
+          <summary>‼️&nbsp;&nbsp;<b><em>Did You...</em></b></summary>
+        <br>
+        <table>
+        <td>
+        <br>
+
+         - [ ]  &nbsp;Update & rebase your branch with any (recent) upstream changes.
+         - [ ]  &nbsp;Spell and grammar check all prose changes.
+         - [ ]  &nbsp;Run [Prettier](https://prettier.io/) on all markdown and JSON files.
+             - (_Optionally_) run [yapf](https://github.com/google/yapf) ([_yapf config_](https://github.com/exercism/python/blob/main/.style.yapf)) to help format your code.
+         - [ ]  &nbsp;Run [flake8](http://flake8.pycqa.org/) with [_flake8 config_](https://github.com/exercism/python/blob/main/.flake8) to check general code style standards.
+         - [ ] &nbsp; Run [pylint](https://pylint.pycqa.org/en/v2.11.1/user_guide/index.html) with [_pylint config_](https://github.com/exercism/python/blob/main/pylintrc) to check extended code style standards.
+         - [ ]  &nbsp;Use pytest or the [python-track-test-runner](https://github.com/exercism/python-test-runner) to test any changed `example.py`/`exemplar.py`files
+         &nbsp;against their associated test files.
+         - [ ]  &nbsp;Similarly, use [pytest](https://docs.pytest.org/en/6.2.x/contents.html) or the [python-track-test-runner](https://github.com/exercism/python-test-runner) to test any changed _**test**_ files.
+             - Check that tests **fail** properly, as well as succeed.
+             &nbsp;(_**e.g.**, make some tests fail on purpose to "test the tests" & failure messages_).
+         - [ ]  &nbsp;Double-check all files for proper EOL.
+         - [ ]  &nbsp;[Regenerate](https://github.com/exercism/python/blob/main/CONTRIBUTING.md#generating-practice-exercise-documents) exercise documents when you modified or created a `hints.md` file for a practice exercise.
+         - [ ]  &nbsp;[Regenerate the test file](https://github.com/exercism/python/blob/main/CONTRIBUTING.md#auto-generated-test-files-and-test-templates) if you modified or created a `JinJa2` template file for a practice exercise.
+             -  Run the generated test file result against its `example.py`.
+         - [ ]  &nbsp;Run [`configlet-lint`](https://github.com/exercism/configlet#configlet-lint) if the track [config.json](https://github.com/exercism/docs/blob/main/building/tracks/config-json.md), or any other exercise `config.json` has been modified.
+
+        <br>
+        </td>
+        </table>
+        <br>
+        </details>
+
+        <details>
+        <summary>✅️&nbsp;&nbsp;<b><em>Have You Checked:</em></b></summary>
+        <br>
+        <table>
+        <td>
+
+        .
+        _**Are there any additional changes you need to make?**_
+        Please make sure all associated files are present and consistent with your changes!
+
+        [Concept Exercise Anatomy](https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md)
+
+        - [ ] `.docs/hints.md`
+        - [ ] `.docs/instructions.md`
+        - [ ] `.docs/introduction.md`
+        - [ ] `.meta/config.json`
+        - [ ] `.meta/design.md`
+        - [ ] `.meta/exemplar.py` (_exemplar solution_)
+        - [ ] `<exercise-slug>_test.py` (_test file_)
+        - [ ] `<exercise-slug>.py` (_stub file_)
+        - [ ] `concepts/../introduction.md`
+        - [ ] `concepts/../about.md`
+        - [ ] `concepts/../links.json`
+        - [ ] `concepts/../.meta/config.json`
+
+        </td>
+        </table>
+        <br>
+        </details>
+
+    - id: change-practice-exercise
+      files:
+        - "exercises/practice/**/*"
+        - "exercises/practice/**/**/*"
+      body: |
+        ---
+
+         #### **`💙  It looks like you are changing/adding files in a Practice Exercise! 💙 `**
+
+        **`Please note:`** generally, changes to existing [practice exercises](https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md) or the addition
+        of new ones are proposed & discussed in [problem-specifications](https://github.com/exercism/problem-specifications) first, so that all tracks can potentially benefit.
+        Once a change is approved there by three maintainers, it becomes available for various language tracks to then implement.
+
+        <br>
+        <details>
+          <summary>‼️&nbsp;&nbsp;<b><em>Did You...</em></b></summary>
+        <br>
+        <table>
+        <td><br>
+
+         - [ ]  &nbsp;Update & rebase your branch with any (recent) upstream changes.
+         - [ ]  &nbsp;Spell and grammar check all prose changes.
+         - [ ]  &nbsp;Run [Prettier](https://prettier.io/) on all markdown and JSON files.
+             - (_Optionally_) run [yapf](https://github.com/google/yapf) ([_yapf config_](https://github.com/exercism/python/blob/main/.style.yapf)) to help format your code.
+         - [ ]  &nbsp;Run [flake8](http://flake8.pycqa.org/) with [_flake8 config_](https://github.com/exercism/python/blob/main/.flake8) to check general code style standards.
+         - [ ] &nbsp; Run [pylint](https://pylint.pycqa.org/en/v2.11.1/user_guide/index.html) with [_pylint config_](https://github.com/exercism/python/blob/main/pylintrc) to check extended code style standards.
+         - [ ]  &nbsp;Use pytest or the [python-track-test-runner](https://github.com/exercism/python-test-runner) to test any changed `example.py`/`exemplar.py`files
+         &nbsp;against their associated test files.
+         - [ ]  &nbsp;Similarly, use [pytest](https://docs.pytest.org/en/6.2.x/contents.html) or the [python-track-test-runner](https://github.com/exercism/python-test-runner) to test any changed _**test**_ files.
+             - Check that tests **fail** properly, as well as succeed.
+             &nbsp;(_**e.g.**, make some tests fail on purpose to "test the tests" & failure messages_).
+         - [ ]  &nbsp;Double-check all files for proper EOL.
+         - [ ]  &nbsp;[Regenerate](https://github.com/exercism/python/blob/main/CONTRIBUTING.md#generating-practice-exercise-documents) exercise documents when you modified or created a `hints.md` file for a practice exercise.
+         - [ ]  &nbsp;[Regenerate the test file](https://github.com/exercism/python/blob/main/CONTRIBUTING.md#auto-generated-test-files-and-test-templates) if you modified or created a `JinJa2` template file for a practice exercise.
+             -  Run the generated test file result against its `example.py`.
+         - [ ]  &nbsp;Run [`configlet-lint`](https://github.com/exercism/configlet#configlet-lint) if the track [config.json](https://github.com/exercism/docs/blob/main/building/tracks/config-json.md), or any other exercise `config.json` has been modified.
+
+        <br>
+        </td>
+        </table>
+        <br>
+        </details>
+
+        <details>
+        <summary>✅️&nbsp;&nbsp;<b><em>Have You Checked...</em></b></summary>
+        <br>
+        <table>
+        <td>
+
+        .
+        _**Are there any additional changes you need to make?**_
+        Please make sure all associated files are present and consistent with your changes!
+
+        [Practice Exercise Anatomy](https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md)
+
+           - [ ] `.docs/instructions.md`(**required**)
+           - [ ] `.docs/introduction.md`(_optional_)
+           - [ ] `.docs/introduction.append.md`(_optional_)
+           - [ ] `.docs/instructions.append.md` (_optional_)
+           - [ ] `.docs/hints.md`(_optional_)
+           - [ ] `.meta/config.json` (**required**)
+           - [ ] `.meta/example.py` (**required**)
+           - [ ] `.meta/design.md` (_optional_)
+           - [ ] `.meta/template.j2` (_template for generating tests from canonical data_)
+           - [ ] `.meta/tests.toml` (_do you need to include or exclude any cases?_)
+           - [ ] `<exercise-slug>_test.py` (_**do you need to regenerate this?**_)
+           - [ ] `<exercise-slug>.py` (**required**)
+
+        </td>
+        </table>
+        </details>
+        <br>
