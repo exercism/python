@@ -1,0 +1,20 @@
+{
+  "blurb": "Create a generator that will return the elements of the Fibonacci series on each iteration.",
+  "authors": [
+    "szabgab"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "fibonacci_generator.py"
+    ],
+    "test": [
+      "fibonacci_generator_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
+  },
+  "source": "Code-Maven",
+  "source_url": "https://code-maven.com/"
+}
