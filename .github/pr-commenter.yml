@@ -45,7 +45,7 @@ comment:
                  (_**e.g.**, make some tests fail on purpose to "test the tests" & failure messages_).
       -  [ ]  &nbsp;All files have proper EOL.
       -  [ ]  &nbsp;If a `JinJa2` template was modified/created, was the test file [regenerated](https://github.com/exercism/python/blob/main/CONTRIBUTING.md#auto-generated-test-files-and-test-templates)?
-          - Does the regenerated test file successfully  test the exercises `example.py` file?
+          - Does the regenerated test file successfully test the exercises `example.py` file?
       -  [ ]  &nbsp;The branch passes all CI checks & [`configlet-lint`](https://github.com/exercism/configlet#configlet-lint).
 
     <br>
@@ -359,3 +359,4 @@ comment:
         </table>
         </details>
         <br>
+
