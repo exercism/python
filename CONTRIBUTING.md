@@ -150,7 +150,7 @@ Our documents use [Markdown][markdown-language], with certain [alterations][exer
  </details>
 
 <details>
-    <summary>Test File Style (<em>concept exercises</em>)</summary>
+    <summary>Test File Style (<em>concept exercises</em>)<a name="Test-File_style"></summary>
 <br>
 
 - [Unittest.TestCase][unittest] syntax, with [PyTest][pytest] as a test runner.
