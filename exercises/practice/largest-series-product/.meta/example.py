@@ -3,10 +3,16 @@ from operator import mul
 
 
 def slices(series, length):
+
+    if not length <= len(series):
+        raise ValueError("span must be smaller than string length")
+    elif not 0 < length:
+        raise ValueError("span must be greater than zero")
+    elif not all(item.isdigit() for item in series):
+        raise ValueError("digits input must only contain digits")
+
     numbers = [int(digit) for digit in series]
-    if not 1 <= length <= len(numbers):
-        raise ValueError("Invalid slice length for this series: " +
-                         str(length))
+
     return [numbers[i:i + length]
             for i in range(len(numbers) - length + 1)]
 
