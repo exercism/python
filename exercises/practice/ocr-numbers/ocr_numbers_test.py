@@ -20,14 +20,22 @@ class OcrNumbersTest(unittest.TestCase):
     def test_input_with_a_number_of_lines_that_is_not_a_multiple_of_four_raises_an_error(
         self,
     ):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             convert([" _ ", "| |", "   "])
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(
+            err.exception.args[0], "Number of input lines is not a multiple of four"
+        )
 
     def test_input_with_a_number_of_columns_that_is_not_a_multiple_of_three_raises_an_error(
         self,
     ):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             convert(["    ", "   |", "   |", "    "])
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(
+            err.exception.args[0], "Number of input columns is not a multiple of three"
+        )
 
     def test_recognizes_110101100(self):
         self.assertEqual(
@@ -114,11 +122,3 @@ class OcrNumbersTest(unittest.TestCase):
             ),
             "123,456,789",
         )
-
-    # Utility functions
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
-
-if __name__ == "__main__":
-    unittest.main()
