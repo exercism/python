@@ -38,7 +38,7 @@
           "  "
 	      ]
       },
-      "expected": {"error": "The minefield must have a consistent length"}
+      "expected": {"error": "The board is invalid with current input."}
     },
     {
       "description": "invalid char",
@@ -46,7 +46,7 @@
       "input": {
         "minefield": ["X  * "]
       },
-      "expected": {"error": "The minefield contains an invalid character"}
+      "expected": {"error": "The board is invalid with current input."}
 
     }
   ]
