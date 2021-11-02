@@ -3,8 +3,10 @@
     {%- set input = case["input"] -%}
     def test_{{ case["description"] | to_snake }}(self):
     {%- if case["expected"]["error"] is string %}
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             {{ case["property"] | to_snake }}({{input["number"]}})
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "{{ case["expected"]["error"] }}")
     {% else %}
         self.assertIs(
             {{ case["property"] | to_snake }}({{input["number"]}}),
@@ -20,5 +22,3 @@ class {{ case["description"] | camel_case }}Test(unittest.TestCase):
     {{ test_case(subcase) }}
     {% endfor %}
 {% endfor %}
-
-{{ macros.footer() }}
