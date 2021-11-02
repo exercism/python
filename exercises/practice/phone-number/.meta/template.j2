@@ -6,8 +6,10 @@ class {{ class }}Test(unittest.TestCase):
     {% for case in cases -%}
     def test_{{ case["description"] | to_snake }}(self):
         {% if "error" in case["expected"] -%}
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             {{ class }}("{{ case["input"]["phrase"] }}")
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "{{ case["expected"]["error"] }}")
         {% else -%}
         number = {{ class }}("{{ case["input"]["phrase"] }}").number
         self.assertEqual(number, "{{ case["expected"] }}")
@@ -26,5 +28,3 @@ class {{ class }}Test(unittest.TestCase):
         number = {{ class }}("{{ case["input"]["phrase"] }}")
         self.assertEqual(number.{{ case["property"] }}{{ method }}, "{{ case["expected"] }}")
     {% endfor %}
-
-{{ macros.footer() }}
