@@ -60,20 +60,16 @@ class PalindromeProductsTest(unittest.TestCase):
         self.assertFactorsEqual(factors, [])
 
     def test_error_result_for_smallest_if_min_is_more_than_max(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             value, factors = smallest(min_factor=10000, max_factor=1)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "min must be <= max")
 
     def test_error_result_for_largest_if_min_is_more_than_max(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             value, factors = largest(min_factor=2, max_factor=1)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "min must be <= max")
 
     def assertFactorsEqual(self, actual, expected):
         self.assertEqual(set(map(frozenset, actual)), set(map(frozenset, expected)))
-
-    # Utility functions
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
-
-if __name__ == "__main__":
-    unittest.main()
