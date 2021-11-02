@@ -1,4 +1,5 @@
 import re
+from string import punctuation
 
 
 class PhoneNumber:
@@ -9,20 +10,42 @@ class PhoneNumber:
         self.subscriber_number = self.number[-4:]
 
     def pretty(self):
-        return "({})-{}-{}".format(
-            self.area_code, self.exchange_code, self.subscriber_number
-        )
+        return f"({self.area_code})-{self.exchange_code}-{self.subscriber_number}"
 
     def _clean(self, number):
-        return self._normalize(re.sub(r"[^\d]", "", number))
+        preprocess = re.sub(r"[() +-.]", "", number)
+
+        if any(item for item in preprocess if item.isalpha()):
+            raise ValueError("letters not permitted")
+
+        if any(item for item in preprocess if item in punctuation):
+            raise ValueError("punctuations not permitted")
+
+        return self._normalize(preprocess)
 
     def _normalize(self, number):
+        if len(number) < 10:
+            raise ValueError("incorrect number of digits")
+
+        if len(number) > 11:
+            raise ValueError("more than 11 digits")
+
         if len(number) == 10 or len(number) == 11 and number.startswith("1"):
-            valid = number[-10] in "23456789" and number[-7] in "23456789"
+            if number[-10] == "0":
+                raise ValueError("area code cannot start with zero")
+            elif number[-10] == "1":
+                raise ValueError("area code cannot start with one")
+            elif number[-7] == "0":
+                raise ValueError("exchange code cannot start with zero")
+            elif number[-7] == "1":
+                raise ValueError("exchange code cannot start with one")
+            else:
+                valid = number[-10] in "23456789" and number[-7] in "23456789"
+
         else:
             valid = False
+            if number[0] in "023456789":
+                raise ValueError("11 digits must start with 1")
 
         if valid:
             return number[-10:]
-        else:
-            raise ValueError("{} is not a valid phone number".format(number))
