@@ -76,8 +76,10 @@ class PovTest(unittest.TestCase):
 
     def test_errors_if_target_does_not_exist_in_a_singleton_tree(self):
         tree = Tree("x")
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             tree.from_pov("nonexistent")
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "Tree could not be reoriented")
 
     def test_errors_if_target_does_not_exist_in_a_large_tree(self):
         tree = Tree(
@@ -88,8 +90,10 @@ class PovTest(unittest.TestCase):
                 Tree("sibling-1"),
             ],
         )
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             tree.from_pov("nonexistent")
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "Tree could not be reoriented")
 
     def test_can_find_path_to_parent(self):
         tree = Tree("parent", [Tree("x"), Tree("sibling")])
@@ -141,8 +145,11 @@ class PovTest(unittest.TestCase):
                 Tree("sibling-1"),
             ],
         )
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             tree.path_to("x", "nonexistent")
+        self.assertEqual(type(err.exception), ValueError)
+
+        self.assertEqual(err.exception.args[0], "No path found")
 
     def test_errors_if_source_does_not_exist(self):
         tree = Tree(
@@ -153,17 +160,12 @@ class PovTest(unittest.TestCase):
                 Tree("sibling-1"),
             ],
         )
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             tree.path_to("nonexistent", "x")
+        self.assertEqual(type(err.exception), ValueError)
+
+        self.assertEqual(err.exception.args[0], "Tree could not be reoriented")
 
     # Custom Utility Functions
     def assertTreeEquals(self, result, expected):
         self.assertEqual(result, expected, "{} != {}".format(result, expected))
-
-    # Utility functions
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
-
-if __name__ == "__main__":
-    unittest.main()
