@@ -84,9 +84,9 @@ An `iterable` can be _combined_ with an existing list (concatenating the two) vi
 ValueError: list.remove(x): x not in list
 ```
 
-Alternatively, using `<list>.pop(<item>)` method will both remove **and** `return` an element for use.
+Alternatively, using `<list>.pop(<index>)` method will both remove **and** `return` an element for use.
 
-`<list>.pop(<item>)` takes one optional parameter: the `index` of the element to remove and return.
+`<list>.pop(<index>)` takes one optional parameter: the `index` of the element to remove and return.
 If the optional `<index>` argument is not specified, the last element of the list will be removed and returned.
 If `<index>` is a higher number than the final index of the list, an `IndexError` will be thrown.
 
