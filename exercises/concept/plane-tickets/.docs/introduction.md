@@ -59,7 +59,23 @@ The [yield expression](https://docs.python.org/3.8/reference/expressions.html#yi
 
 When `yield` is called, it pauses the execution of the function it is in and returns a value. When `__next__()` is called, it resumes the execution of the function.
 
-`yield` expressions are _prohibited_ to be used outside of functions.
+Note: _`yield` expressions are prohibited to be used outside of functions._
+
+```python
+>>> def infinite_sequence():
+>>>     current_number = 0
+>>>     while True:
+>>>         yield current_number
+>>>         current_number += 1
+
+>>> lets_try = yield_expression()
+>>> lets_try.__next__()
+0
+>>> lets_try.__next__()
+0
+>>> lets_try.__next__()
+1
+```
 
 ## Why generators?
 
