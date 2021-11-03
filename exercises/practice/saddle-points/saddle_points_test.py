@@ -96,13 +96,7 @@ class SaddlePointsTest(unittest.TestCase):
 
     def test_irregular_matrix(self):
         matrix = [[3, 2, 1], [0, 1], [2, 1, 0]]
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             saddle_points(matrix)
-
-    # Utility functions
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
-
-if __name__ == "__main__":
-    unittest.main()
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "irregular matrix")
