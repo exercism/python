@@ -7,12 +7,12 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         preorder = {{ case["input"]["preorder"] }}
         inorder = {{ case["input"]["inorder"] }}
         {% if "Reject" in case["description"] %}
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             {{ case["property"] | to_snake }}(preorder, inorder)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "{{ case["expected"]["error"] }}")
         {% else %}
         expected = {{ case["expected"] }}
         self.assertEqual({{ case["property"] | to_snake }}(preorder, inorder), expected)
         {% endif %}
     {% endfor %}
-
-{{ macros.footer() }}
