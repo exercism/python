@@ -6,7 +6,7 @@ _Lazy iterators_ are similar to `lists`, and other `iterators`, but with one key
 
 ## Constructing a generator
 
-Constructing a `generator` is a bit different than a normal `function`. You will need the `yield` expression, which we will go into depth with [later](#the-yield-expression).
+Generators are constructed much like other functions, but require a [`yield` expression](#the-yield-expression), which we will explore in depth a bit later.
 
 Lets say you want to construct a `generator` that generates all the _squares_ from a list of numbers. You would construct that function like this:
 
