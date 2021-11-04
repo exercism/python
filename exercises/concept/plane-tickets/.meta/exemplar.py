@@ -16,7 +16,7 @@ def generate_seats(amount):
     
     SEATS_IN_ROW = ["A", "B", "C", "D"]
     
-    amount = amount+1 if amount >= 13 else amount
+    amount = amount+4 if amount >= 13 else amount
     
     for seat in range(amount):
         row_number = -(-(seat+1) // 4)          # ? Ceiling division; might be too advanced for students?
@@ -41,4 +41,5 @@ def assign_seats(passengers):
         output[passenger] = seat_number
 
 if __name__ == "__main__":
-    print([seat for seat in generate_seats(13*4+3+1)])
+    print([seat for seat in generate_seats(14*4)])
+    print(len([seat for seat in generate_seats(5)]))
