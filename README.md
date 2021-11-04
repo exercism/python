@@ -43,7 +43,7 @@ We &nbsp;✨💙 &nbsp;💛 &nbsp;💙 ✨&nbsp; PRs that follow our **[Contribu
 
 ✨&nbsp;🦄&nbsp; _**Want to jump directly into Exercism specifications & detail?**_  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Structure][exercism-track-structure] **|** [Tasks][exercism-tasks] **|** [Concepts][exercism-concepts] **|** [Concept Exercises][concept-exercises] **|** [Practice Exercises][practice-exercises] **|** [Presentation][exercise-presentation]  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Writing Style Guide][exercism-writing-style] **|** [Markdown Specification][exercism-markdown-specification] (_&nbsp;✨ &nbsp; version in [contributing][website-contributing-section] on [exercism(dot)org][exercism-website]._)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Writing Style Guide][exercism-writing-style] **|** [Markdown Specification][exercism-markdown-specification] (_✨ version in [contributing][website-contributing-section] on exercism.org_)
 
 <br>
 <img align="left" width="85" height="80" src="https://github.com/exercism/website-icons/blob/main/exercises/bomb-defuser.svg">

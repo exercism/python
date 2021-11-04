@@ -300,14 +300,32 @@ class MeetupTest(unittest.TestCase):
     def test_fifth_monday_of_march_2015(self):
         self.assertEqual(meetup(2015, 3, "5th", "Monday"), date(2015, 3, 30))
 
-    def test_nonexistent_fifth_monday_of_february_2015(self):
-        with self.assertRaisesWithMessage(MeetupDayException):
-            meetup(2015, 2, "5th", "Monday")
+    def test_fifth_thursday_of_february_2024(self):
+        self.assertEqual(meetup(2024, 2, "5th", "Thursday"), date(2024, 2, 29))
 
-    # Utility functions
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
+    def test_fifth_saturday_of_february_2020(self):
+        self.assertEqual(meetup(2020, 2, "5th", "Saturday"), date(2020, 2, 29))
 
+    def test_last_sunday_of_june_2024(self):
+        self.assertEqual(meetup(2024, 6, "last", "Sunday"), date(2024, 6, 30))
 
-if __name__ == "__main__":
-    unittest.main()
+    def test_teenth_friday_of_may_2022(self):
+        self.assertEqual(meetup(2022, 5, "teenth", "Friday"), date(2022, 5, 13))
+
+    def test_nonexistent_fifth_monday_of_february_2022(self):
+        with self.assertRaises(MeetupDayException) as err:
+            meetup(2022, 2, "5th", "Monday")
+        self.assertEqual(type(err.exception), MeetupDayException)
+        self.assertEqual(err.exception.args[0], "That day does not exist.")
+
+    def test_nonexistent_fifth_friday_of_august_2022(self):
+        with self.assertRaises(MeetupDayException) as err:
+            meetup(2022, 8, "5th", "Friday")
+        self.assertEqual(type(err.exception), MeetupDayException)
+        self.assertEqual(err.exception.args[0], "That day does not exist.")
+
+    def test_nonexistent_fifth_thursday_of_may_2023(self):
+        with self.assertRaises(MeetupDayException) as err:
+            meetup(2023, 5, "5th", "Thursday")
+        self.assertEqual(type(err.exception), MeetupDayException)
+        self.assertEqual(err.exception.args[0], "That day does not exist.")

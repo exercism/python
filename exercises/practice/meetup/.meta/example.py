@@ -19,9 +19,15 @@ def _choice(week):
     def _func(dates):
         if day < len(dates):
             return dates[day]
-        raise MeetupDayException('day does not exist')
+        raise MeetupDayException('That day does not exist.')
     return _func
 
 
-class MeetupDayException(Exception):
-    pass
+class MeetupDayException(ValueError):
+    """Exception raised when the Meetup weekday and count do not result in a valid date.
+
+    message: explanation of the error.
+
+    """
+    def __init__(self, message):
+        self.message = message

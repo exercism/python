@@ -1,16 +1,13 @@
-from __future__ import division
 from itertools import chain
 from math import log10, floor, ceil
 
 
 def largest(min_factor, max_factor):
-    return get_extreme_palindrome_with_factors(max_factor, min_factor,
-                                               "largest")
+    return get_extreme_palindrome_with_factors(max_factor, min_factor, "largest")
 
 
 def smallest(max_factor, min_factor):
-    return get_extreme_palindrome_with_factors(max_factor, min_factor,
-                                               "smallest")
+    return get_extreme_palindrome_with_factors(max_factor, min_factor, "smallest")
 
 
 def get_extreme_palindrome_with_factors(max_factor, min_factor, extreme):
@@ -53,10 +50,7 @@ def palindromes(max_factor, min_factor, reverse=False):
     most of the palindromes just to find the one it needs.
     """
     if max_factor < min_factor:
-        raise ValueError("invalid input: min is {min_factor} "
-                         "and max is {max_factor}"
-                         .format(min_factor=min_factor,
-                                 max_factor=max_factor))
+        raise ValueError("min must be <= max")
 
     minimum = min_factor ** 2
     maximum = max_factor ** 2

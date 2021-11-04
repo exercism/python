@@ -6,12 +6,14 @@
         {%- set input.month = case["input"]["month"] %}
         {%- set input.week = case["input"]["week"] %}
         {%- set input.dayofweek = case["input"]["dayofweek"] %}
-        {%- for (k, v) in {"first":"1st", "second":"2nd", "third":"3rd", "fourth":"4th", "fifth":"5th"}.items() %}
+        {%- for (k, v) in {"first":"1st", "second":"2nd", "third":"3rd", "fourth":"4th", "fifth":"5th", "sixth":"6th"}.items() %}
               {%- set input.week = input.week.replace(k, v) %}
         {%- endfor %}
         {%- if case is error_case %}
-        with self.assertRaisesWithMessage(MeetupDayException):
+        with self.assertRaises(MeetupDayException) as err:
             {{ case["property"] }}({{ input.year }}, {{ input.month }}, "{{ input.week }}", "{{ input.dayofweek }}")
+        self.assertEqual(type(err.exception), MeetupDayException)
+        self.assertEqual(err.exception.args[0], "{{ case["expected"]["error"] }}")
         {%- else %}
         {%- set (year, month, day) = case["expected"].replace("-0", "-").split("-") %}
         self.assertEqual({{ case["property"] }}(
@@ -34,6 +36,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {{ test_case(case) }}
     {% endfor %}
     {%- endif %}
-
-
-{{ macros.footer(True) }}
