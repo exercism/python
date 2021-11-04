@@ -1,4 +1,3 @@
-from types import GeneratorType
 import unittest
 import pytest
 
