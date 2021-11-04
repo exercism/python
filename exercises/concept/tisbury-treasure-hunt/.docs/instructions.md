@@ -1,6 +1,6 @@
 # Instructions
 
-Aazra and Rui are teammates competing in a pirate-themed treasure hunt.
+Azara and Rui are teammates competing in a pirate-themed treasure hunt.
 One has a list of treasures with map coordinates, the other a list of location names with map coordinates.
 They've also been given blank maps with a starting place marked YOU ARE HERE.
 
@@ -54,7 +54,7 @@ Being budding pythonistas, they have come to you for help in writing a small pro
 
 ## 1. Extract coordinates
 
-Implement the `get_cooordinate()` function that takes a `(treasure, coordinate)` pair from Azaras list and returns only the extracted map coordinate.
+Implement the `get_coordinate()` function that takes a `(treasure, coordinate)` pair from Azara's list and returns only the extracted map coordinate.
 
 
 ```python
@@ -90,7 +90,7 @@ True
 ## 4. Combine matched records
 
 Implement the `create_record()` function that takes a `(treasure, coordinate)` pair from Azara's list and a `(location, coordinate, quadrant)` record from Rui's list and returns `(treasure, coordinate, location, coordinate, quadrant)` **if the coordinates match**.
-If the coordinates _do not_ match, return the string **"not a match"**
+If the coordinates _do not_ match, return the string **"not a match"**.
 Re-format the coordinate as needed for accurate comparison.
 
 

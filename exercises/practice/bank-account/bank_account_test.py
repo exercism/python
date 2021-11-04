@@ -48,35 +48,46 @@ class BankAccountTest(unittest.TestCase):
         account.open()
         account.close()
 
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             account.get_balance()
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "account not open")
 
     def test_deposit_into_closed_account(self):
         account = BankAccount()
         account.open()
         account.close()
 
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             account.deposit(50)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "account not open")
+
 
     def test_withdraw_from_closed_account(self):
         account = BankAccount()
         account.open()
         account.close()
 
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             account.withdraw(50)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "account not open")
 
     def test_close_already_closed_account(self):
         account = BankAccount()
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             account.close()
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "account not open")
 
     def test_open_already_opened_account(self):
         account = BankAccount()
         account.open()
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             account.open()
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "account already open")
 
     def test_reopened_account_does_not_retain_balance(self):
         account = BankAccount()
@@ -91,23 +102,29 @@ class BankAccountTest(unittest.TestCase):
         account.open()
         account.deposit(25)
 
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as err:
             account.withdraw(50)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "amount must be less than balance")
 
     def test_cannot_withdraw_negative(self):
         account = BankAccount()
         account.open()
         account.deposit(100)
 
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             account.withdraw(-50)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "amount must be greater than 0")
 
     def test_cannot_deposit_negative(self):
         account = BankAccount()
         account.open()
 
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             account.deposit(-50)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "amount must be greater than 0")
 
     def test_can_handle_concurrent_transactions(self):
         account = BankAccount()
@@ -137,11 +154,6 @@ class BankAccountTest(unittest.TestCase):
             thread.start()
         for thread in threads:
             thread.join()
-
-    # Utility functions
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
 
 if __name__ == '__main__':
     unittest.main()

@@ -24,8 +24,10 @@ class HangmanTests(unittest.TestCase):
             game.guess('x')
 
         self.assertEqual(game.get_status(), hangman.STATUS_LOSE)
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             game.guess('x')
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "The game has already ended.")
 
     def test_feeding_a_correct_letter_removes_underscores(self):
         game = Hangman('foobar')
@@ -80,8 +82,10 @@ class HangmanTests(unittest.TestCase):
         self.assertEqual(game.get_status(), hangman.STATUS_WIN)
         self.assertEqual(game.get_masked_word(), 'hello')
 
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             game.guess('x')
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "The game has already ended.")
 
     def test_winning_on_last_guess_still_counts_as_a_win(self):
         game = Hangman('aaa')
@@ -91,11 +95,3 @@ class HangmanTests(unittest.TestCase):
         self.assertEqual(game.remaining_guesses, 0)
         self.assertEqual(game.get_status(), hangman.STATUS_WIN)
         self.assertEqual(game.get_masked_word(), 'aaa')
-
-    # Utility functions
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
-
-if __name__ == '__main__':
-    unittest.main()

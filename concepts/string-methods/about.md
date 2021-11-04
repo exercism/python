@@ -85,7 +85,7 @@ The code points specified in `<chars>` are not a prefix or suffix - **all combin
 
 >>> '  unaddressed  '.strip('dnue ')
 'address'
-```
+ ```
 
 
 [`<str>.replace(<substring>, <replacement substring>)`][str-replace] returns a copy of the string with all occurrences of `<substring>` replaced with `<replacement substring>`.
@@ -115,6 +115,29 @@ Just the place for a Snark! I have said it thrice:
 'book keeper'
 ```
 
+:star:**Newly added in Python `3.9`**
+
+Python `3.9` introduces two new string methods that make removing prefixes and suffixes much easier.
+
+[`<str>.removeprefix(<substring>)`][removeprefix] returns the string without the prefix (`string[len(<substring>):]`). If the `<substring>` isn't present, a copy of the original string will be returned.
+
+```python
+# removing a prefix
+>>> 'TestHook'.removeprefix('Test')
+'Hook'
+>>> 'bookkeeper'.removeprefix('book')
+'keeper'
+```
+
+[`<str>.removesuffix(<substring>)`][removesuffix] returns the string without the suffix (`string[:-len(substring)]`). If the `<substring>` isn't present, a copy of the original string will be returned.
+
+```python
+# removing a suffix
+>>> 'TestHook'.removesuffix('Hook')
+'Test'
+>>> 'bookkeeper'.removesuffix('keeper')
+'book'
+```
 
 For more examples and methods the [informal tutorial][informal tutorial] is a nice jumping-off point.
 [How to Unicode][howto unicode] in the Python docs offers great detail on Unicode, encoding, bytes, and other technical considerations for working with strings in Python.
@@ -129,6 +152,8 @@ Python also supports regular expressions via the `re` module, which will be cove
 [howto unicode]: https://docs.python.org/3/howto/unicode.html
 [informal tutorial]: https://docs.python.org/3/tutorial/introduction.html#strings
 [locale]: https://docs.python.org/3/library/locale.html#module-locale
+[removeprefix]: https://docs.python.org/3.9/library/stdtypes.html#str.removeprefix
+[removesuffix]: https://docs.python.org/3.9/library/stdtypes.html#str.removesuffix
 [str-endswith]: https://docs.python.org/3/library/stdtypes.html#str.endswith
 [str-methods]: https://docs.python.org/3/library/stdtypes.html#string-methods
 [str-replace]: https://docs.python.org/3/library/stdtypes.html#str.replace

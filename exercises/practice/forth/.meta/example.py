@@ -1,5 +1,9 @@
 class StackUnderflowError(Exception):
-    pass
+    """Exception raised when Stack is not full.
+       message: explanation of the error.
+    """
+    def __init__(self, message):
+        self.message = message
 
 
 def is_integer(string):
@@ -20,11 +24,11 @@ def evaluate(input_data):
         values.pop(0)
         key = values.pop(0).lower()
         if is_integer(key):
-            raise ValueError("Integers cannot be redefined")
+            raise ValueError("illegal operation")
         defines[key] = [
-            x
-            for v in values
-            for x in defines.get(v, [v])
+                x
+                for v in values
+                for x in defines.get(v, [v])
         ]
     stack = []
     input_data = input_data[-1].split()
@@ -44,7 +48,7 @@ def evaluate(input_data):
             elif word == '/':
                 divisor = stack.pop()
                 if divisor == 0:
-                    raise ZeroDivisionError("Attempted to divide by zero")
+                    raise ZeroDivisionError("divide by zero")
                 stack.append(int(stack.pop() / divisor))
             elif word == 'dup':
                 stack.append(stack[-1])
@@ -56,7 +60,7 @@ def evaluate(input_data):
             elif word == 'over':
                 stack.append(stack[-2])
             else:
-                raise ValueError("{} has not been defined".format(word))
+                raise ValueError("undefined operation")
         except IndexError:
             raise StackUnderflowError("Insufficient number of items in stack")
     return stack

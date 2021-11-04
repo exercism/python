@@ -39,8 +39,12 @@ class LargestSeriesProductTest(unittest.TestCase):
         self.assertEqual(largest_product("99099", 3), 0)
 
     def test_rejects_span_longer_than_string_length(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             largest_product("123", 4)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(
+            err.exception.args[0], "span must be smaller than string length"
+        )
 
     def test_reports_1_for_empty_string_and_empty_product_0_span(self):
         self.assertEqual(largest_product("", 0), 1)
@@ -49,16 +53,24 @@ class LargestSeriesProductTest(unittest.TestCase):
         self.assertEqual(largest_product("123", 0), 1)
 
     def test_rejects_empty_string_and_nonzero_span(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             largest_product("", 1)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(
+            err.exception.args[0], "span must be smaller than string length"
+        )
 
     def test_rejects_invalid_character_in_digits(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             largest_product("1234a5", 2)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "digits input must only contain digits")
 
     def test_rejects_negative_span(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             largest_product("12345", -1)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "span must be greater than zero")
 
     # Additional tests for this track
     def test_euler_big_number(self):
@@ -69,11 +81,3 @@ class LargestSeriesProductTest(unittest.TestCase):
             ),
             23514624000,
         )
-
-    # Utility functions
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
-
-if __name__ == "__main__":
-    unittest.main()

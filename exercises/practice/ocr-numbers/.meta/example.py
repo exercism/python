@@ -27,9 +27,12 @@ def convert(input_grid):
 
 
 def convert_one_line(input_grid):
-    if (len(input_grid) != NUM_ROWS or len(input_grid[0]) % NUM_COLS or
-            any(len(r) != len(input_grid[0]) for r in input_grid)):
-        raise ValueError('Wrong grid size.')
+    if len(input_grid) != NUM_ROWS:
+        raise ValueError("Number of input lines is not a multiple of four")
+
+    if len(input_grid[0]) % NUM_COLS:
+        raise ValueError("Number of input columns is not a multiple of three")
+
     numbers = split_ocr(input_grid)
     digits = ''
     for n in numbers:

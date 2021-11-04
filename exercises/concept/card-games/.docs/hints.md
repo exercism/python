@@ -19,7 +19,6 @@
 
 ## 4. Averaging Card Values
 
-- There are a few techniques for [iterating over a `list`][iterate over a list in python] in Python.
 - To get the average, this function should count how many items are in the `list` and sum up their values. Then, return sum/count.
 
 ## 5. Alternate Averages

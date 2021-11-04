@@ -1,4 +1,6 @@
-# General
+# Hints
+
+## General
 
 - [The Python Numbers Tutorial](https://docs.python.org/3/tutorial/introduction.html#numbers) and [Python numeric types](https://docs.python.org/3.9/library/stdtypes.html#numeric-types-int-float-complex) can be a great introduction.
 
@@ -8,7 +10,7 @@
 
 ## 2. Changes after exchanging
 
-- You can use the [substraction operator](https://docs.python.org/3/tutorial/introduction.html#numbers) to get the amount of changes.
+- You can use the [subtraction operator](https://docs.python.org/3/tutorial/introduction.html#numbers) to get the amount of changes.
 
 ## 3. Calculate value of bills
 

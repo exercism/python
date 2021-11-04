@@ -204,10 +204,8 @@
           "loops",
           "strings",
           "string-methods",
-          "string-formatting",
           "numbers",
           "conditionals",
-          "comparisons",
           "bools"
         ],
         "difficulty": 2
@@ -372,7 +370,6 @@
           "loops",
           "strings",
           "string-methods",
-          "string-formatting",
           "numbers"
         ],
         "difficulty": 4
@@ -386,13 +383,7 @@
           "rich-comparisons",
           "string-formatting"
         ],
-        "prerequisites": [
-          "basics",
-          "comparisons",
-          "numbers",
-          "strings",
-          "string-formatting"
-        ],
+        "prerequisites": ["basics", "numbers", "strings"],
         "difficulty": 4
       },
       {
@@ -547,7 +538,6 @@
         ],
         "prerequisites": [
           "basics",
-          "comparisons",
           "lists",
           "loops",
           "numbers",
@@ -763,7 +753,7 @@
         "prerequisites": [
           "basics",
           "conditionals",
-          "list",
+          "lists",
           "list-methods",
           "loops",
           "numbers",
@@ -842,7 +832,6 @@
           "list-methods",
           "loops",
           "numbers",
-          "sequences",
           "sets"
         ],
         "difficulty": 2
@@ -1075,7 +1064,6 @@
           "loops",
           "strings",
           "string-methods",
-          "string-methods-splitting",
           "numbers"
         ],
         "difficulty": 1
@@ -1329,7 +1317,6 @@
           "basics",
           "conditionals",
           "dicts",
-          "dict-methods",
           "lists",
           "loops",
           "numbers",
@@ -1640,8 +1627,7 @@
           "comparisons",
           "dicts",
           "other-comprehensions",
-          "loops",
-          "recursion"
+          "loops"
         ],
         "prerequisites": [
           "basics",
@@ -1868,7 +1854,7 @@
         "slug": "zebra-puzzle",
         "name": "Zebra Puzzle",
         "uuid": "7e1d90d5-dbc9-47e0-8e26-c3ff83b73c2b",
-        "practices": ["conditionals", "itertools", "recursion"],
+        "practices": ["conditionals", "itertools"],
         "prerequisites": [
           "basics",
           "bools",
@@ -2127,8 +2113,7 @@
           "bools",
           "lists",
           "list-methods",
-          "numbers",
-          "sequences"
+          "numbers"
         ],
         "difficulty": 1
       },
@@ -2262,7 +2247,6 @@
         "practices": [
           "bools",
           "operator-overloading",
-          "recursion",
           "regular-expressions",
           "rich-comparisons"
         ],

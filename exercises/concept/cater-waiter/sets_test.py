@@ -1,6 +1,7 @@
 import unittest
 import pytest
 
+# pylint: disable=deprecated-module
 from sets import (clean_ingredients,
                   check_drinks,
                   categorize_dish,
@@ -45,14 +46,16 @@ class SetsTest(unittest.TestCase):
 
         for variant, (item, result) in enumerate(test_data, start=1):
             with self.subTest(f"variation #{variant}", item=item[0], result=result[1]):
-                error_msg = f"Expected a cleaned ingredient list for {item[0]}, but the ingredients aren't cleaned as expected."
+                error_msg = (f"Expected a cleaned ingredient list for {item[0]}, "
+                            "but the ingredients aren't cleaned as expected.")
+
                 self.assertEqual(clean_ingredients(item[0], item[1]), (result[1], result[2]), msg=error_msg)
 
     @pytest.mark.task(taskno=2)
     def test_check_drinks(self):
         test_data = zip(all_drinks[::2], drink_names[::2])
 
-        for variant, (item, result)  in enumerate(test_data, start=1):
+        for variant, (item, result) in enumerate(test_data, start=1):
             with self.subTest(f"variation #{variant}", item=item, result=result):
                 error_msg = f"Expected {result} for {item}, but got something else instead."
                 self.assertEqual(check_drinks(item[0], item[1]), (result), msg=error_msg)
@@ -61,7 +64,7 @@ class SetsTest(unittest.TestCase):
     def test_categorize_dish(self):
         test_data = zip(sorted(recipes_without_duplicates, reverse=True)[::3], dishes_categorized[::3])
 
-        for variant, (item, result)  in enumerate(test_data, start=1):
+        for variant, (item, result) in enumerate(test_data, start=1):
             with self.subTest(f"variation #{variant}", item=item, result=result):
                 error_message = f"Exptected category {result} for {item[0]}, but got a different category instead."
                 self.assertEqual(categorize_dish(item[1], item[2]), (result), msg=error_message)
@@ -79,7 +82,7 @@ class SetsTest(unittest.TestCase):
     def test_compile_ingredients(self):
         test_data = zip(ingredients_only, [VEGAN, VEGETARIAN, PALEO, KETO, OMNIVORE])
 
-        for variant, (item, result)  in enumerate(test_data, start=1):
+        for variant, (item, result) in enumerate(test_data, start=1):
             with self.subTest(f"variation #{variant}", item=item, result=result):
                 error_message = "Expected a proper set of combined ingredients, but something went wrong."
                 self.assertEqual(compile_ingredients(item), (result), msg=error_message)
@@ -99,5 +102,6 @@ class SetsTest(unittest.TestCase):
 
         for variant, (item, result) in enumerate(test_data, start=1):
             with self.subTest(f"variation #{variant}", item=item, result=result):
-                error_message = "Expected only ingredients that belong to exactly one dish, but got multi-dish ingredients instead."
+                error_message = ("Expected only ingredients that belong to exactly "
+                                "one dish, but got multi-dish ingredients instead.")
                 self.assertEqual(singleton_ingredients(item[0], item[1]), (result), msg=error_message)

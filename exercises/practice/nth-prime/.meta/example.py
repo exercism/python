@@ -4,7 +4,7 @@ from math import sqrt
 
 def prime(number):
     if number < 1:
-        raise ValueError('The parameter `number` has to be a positive number.')
+        raise ValueError('there is no zeroth prime')
 
     known = []
     candidates = prime_candidates()

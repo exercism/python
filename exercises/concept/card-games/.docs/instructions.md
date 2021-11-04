@@ -122,13 +122,9 @@ Implement a function `maybe_double_last(<hand>)` that takes a hand and checks if
 ```python
 >>> hand = [5, 9, 11]
 >>> maybe_double_last(hand)
-
->>> hand
 [5, 9, 22]
 
 >>> hand = [5, 9, 10]
 >>> maybe_double_last(hand)
-
->>> hand
 [5, 9, 10]
 ```

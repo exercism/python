@@ -59,7 +59,7 @@ class MatchingBracketsTest(unittest.TestCase):
     def test_complex_latex_expression(self):
         self.assertEqual(
             is_paired(
-                "\left(\begin{array}{cc} \frac{1}{3} & x\\ \mathrm{e}^{x} &... x^2 \end{array}\right)"
+                "\\left(\\begin{array}{cc} \\frac{1}{3} & x\\\\ \\mathrm{e}^{x} &... x^2 \\end{array}\\right)"
             ),
             True,
         )
