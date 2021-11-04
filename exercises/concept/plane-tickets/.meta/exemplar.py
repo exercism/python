@@ -14,8 +14,16 @@ def generate_seats(amount):
     
     """
     
-    for seat_index in range(1, amount+1):
-        yield f"{-(-5 // 4)}{['A','B','C','D'][seat_index % 4]}"
+    # Could also be solved in two lines:
+    # for seat_index in range(amount):
+    #   yield f"{-(-(seat_index+1) // 4)}{['A','B','C','D'][seat_index % 4]}"
+    
+    SEATS_IN_ROW = ["A", "B", "C", "D"]
+    
+    for seat in range(amount):
+        seat_letter = SEATS_IN_ROW[seat % 4]
+        row_number = -(-(seat+1) // 4)          # ? Ceiling division; might be too advanced for students?
+        yield str(row_number)+str(seat_letter)
 
 def assign_seats(passengers):
     
