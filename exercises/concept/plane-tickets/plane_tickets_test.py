@@ -10,7 +10,7 @@ from plane_tickets import (
 class PlaneTicketsTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
-    def test_task1_type(self): # * Tests if [Task 1] actually returns a generator.
+    def test_task1_is_generator(self): # * Tests if [Task 1] actually returns a generator.
         input = [5]
         output = ["1A"]
         for variant, (input, output) in enumerate(zip(input, output), start=1):
@@ -19,7 +19,7 @@ class PlaneTicketsTest(unittest.TestCase):
                 self.assertEqual(generator.__next__(), output)
 
     @pytest.mark.task(taskno=1)
-    def test_task1_basic(self):
+    def test_task1_output(self):
         input = [1, 2, 3, 4, 5]
         output = [['1A'], ['1A', '1B'], ['1A', '1B', '1C'] ,['1A', '1B', '1C', '1D'], ['1A', '1B', '1C', '1D', '2A']]
         for variant, (input, output) in enumerate(zip(input, output), start=1):
@@ -33,4 +33,11 @@ class PlaneTicketsTest(unittest.TestCase):
         for variant, (input, output) in enumerate(zip(input, output), start=1):
             with self.subTest(f"variation #{variant}", input_data=input, output_data=output):
                 self.assertEqual([seat for seat in generate_seats(input)], output)
-            
+    
+    @pytest.mark.task(taskno=2)
+    def test_task2(self):
+        input = [['Passenger1', 'Passenger2', 'Passenger3', 'Passenger4', 'Passenger5'], ['TicketNo=5644', 'TicketNo=2273', 'TicketNo=493', 'TicketNo=5411', 'TicketNo=824']]
+        output = [{'Passenger1': '1A', 'Passenger2': '1B', 'Passenger3': '1C', 'Passenger4': '1D', 'Passenger5': '2A'}, {'TicketNo=5644': '1A', 'TicketNo=2273': '1B', 'TicketNo=493': '1C', 'TicketNo=5411': '1D', 'TicketNo=824': '2A'}]
+        for variant, (input, output) in enumerate(zip(input, output), start=1):
+            with self.subTest(f"variation #{variant}", input_data=input, output_data=output):
+                self.assertEqual(assign_seats(input), output)

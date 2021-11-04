@@ -7,6 +7,8 @@ def generate_seats(amount):
     :param amount: Amount of seats to be generated. (int)
     :return: Iterable that generates seat numbers. (generator)
     
+    There should be no row 13
+    
     Seat numbers are generated with each row having 4 seats.
     These should be sorted from low to high.
     
@@ -39,7 +41,4 @@ def assign_seats(passengers):
     output = {}
     for passenger, seat_number in zip(passengers, generate_seats(amount)):
         output[passenger] = seat_number
-
-if __name__ == "__main__":
-    print([seat for seat in generate_seats(14*4)])
-    print(len([seat for seat in generate_seats(5)]))
+    return output
