@@ -202,13 +202,8 @@
         "prerequisites": [
           "conditionals",
           "dicts", 
-          "functions", 
-          "higher-order-functions",
           "lists",
-          "loops",
-          "iteration",
-          "iterators",
-          "sequences"
+          "loops"
         ],
         "status": "wip"
       }
