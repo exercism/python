@@ -27,7 +27,7 @@ For example, if you want to use the `squares()` generator we just constructed, w
 
 >>> for square in squares(list_of_numbers):
 >>>     print(square)
- 1
+1
 4
 9
 16
