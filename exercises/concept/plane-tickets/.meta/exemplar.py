@@ -14,16 +14,15 @@ def generate_seats(amount):
     
     """
     
-    # Could also be solved in two lines:
-    # for seat_index in range(amount):
-    #   yield f"{-(-(seat_index+1) // 4)}{['A','B','C','D'][seat_index % 4]}"
-    
     SEATS_IN_ROW = ["A", "B", "C", "D"]
     
+    amount = amount+1 if amount >= 13 else amount
+    
     for seat in range(amount):
-        seat_letter = SEATS_IN_ROW[seat % 4]
         row_number = -(-(seat+1) // 4)          # ? Ceiling division; might be too advanced for students?
-        yield str(row_number)+str(seat_letter)
+        if row_number != 13:
+            seat_letter = SEATS_IN_ROW[seat % 4]
+            yield str(row_number)+str(seat_letter)
 
 def assign_seats(passengers):
     
@@ -36,8 +35,10 @@ def assign_seats(passengers):
     
     """
 
-    pass
+    amount = len(passengers)
+    output = {}
+    for passenger, seat_number in zip(passengers, generate_seats(amount)):
+        output[passenger] = seat_number
 
 if __name__ == "__main__":
-    for x in generate_seats(10):
-        print(x)
+    print([seat for seat in generate_seats(13*4+3+1)])
