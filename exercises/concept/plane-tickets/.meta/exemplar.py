@@ -18,7 +18,7 @@ def generate_seats(amount):
 
     """
 
-    amount = amount+4 if amount >= 13 else amount
+    amount = amount + 4 if amount >= 13 else amount
 
     for seat in range(amount):
         row_number = -(-(seat+1) // 4)          # ? Ceiling division; might be too advanced for students?
