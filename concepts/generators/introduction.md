@@ -1,4 +1,4 @@
-# Instructions
+# Introduction
 
 A generator in Python is a _callable function_ that returns a [lazy iterator](https://en.wikipedia.org/wiki/Lazy_evaluation).
 
@@ -20,7 +20,8 @@ Lets say you want to construct a `generator` that generates all the _squares_ fr
 
 It is possible to use any Python _function_ or _object_ that requires an `iterator` as an argument.
 
-For example, if you want to use the `squares()` generator we just constructed, we simply use:
+For example, if you want to use the `squares()` generator we just constructed, we simply write:
+
 
 ```python
 >>> list_of_numbers = [1, 2, 3, 4]

@@ -4,7 +4,7 @@ Conda airlines has over 10.000 flights a day, but they need to automate. They ar
 
 They have asked _you_ to create software to automate the assigning of seats to passengers. They require your software to be memory efficient and performant.
 
-Conda's airplanes have up to _4 seats_ in each row, and each airplane can have many more rows.
+Conda's airplanes have up to _4 seats_ in each row, and each airplane has many rows.
 
 While the rows are defined using numbers, seats in each row are defined using letters from the alphabet, with `seat A` being the first _seat_ in the row.
 
