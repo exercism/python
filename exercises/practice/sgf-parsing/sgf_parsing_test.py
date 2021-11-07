@@ -11,18 +11,24 @@ from sgf_parsing import (
 class SgfParsingTest(unittest.TestCase):
     def test_empty_input(self):
         input_string = ""
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             parse(input_string)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "tree missing")
 
     def test_tree_with_no_nodes(self):
         input_string = "()"
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             parse(input_string)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "tree with no nodes")
 
     def test_node_without_tree(self):
         input_string = ";"
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             parse(input_string)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "tree missing")
 
     def test_node_without_properties(self):
         input_string = "(;)"
@@ -41,18 +47,24 @@ class SgfParsingTest(unittest.TestCase):
 
     def test_properties_without_delimiter(self):
         input_string = "(;A)"
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             parse(input_string)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "properties without delimiter")
 
     def test_all_lowercase_property(self):
         input_string = "(;a[b])"
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             parse(input_string)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "property must be in uppercase")
 
     def test_upper_and_lowercase_property(self):
         input_string = "(;Aa[b])"
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             parse(input_string)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "property must be in uppercase")
 
     def test_two_nodes(self):
         input_string = "(;A[B];B[C])"
@@ -76,11 +88,3 @@ class SgfParsingTest(unittest.TestCase):
         input_string = "(;A[\\]b\nc\nd\t\te \n\\]])"
         expected = SgfTree(properties={"A": ["]b\nc\nd  e \n]"]})
         self.assertEqual(parse(input_string), expected)
-
-    # Utility functions
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
-
-if __name__ == "__main__":
-    unittest.main()
