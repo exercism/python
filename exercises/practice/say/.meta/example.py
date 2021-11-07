@@ -1,8 +1,8 @@
 def say(number, recursive=False):
     small = dict(enumerate((
-        'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight',
-        'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen',
-        'sixteen', 'seventeen', 'eighteen', 'nineteen')))
+            'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight',
+            'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen',
+            'sixteen', 'seventeen', 'eighteen', 'nineteen')))
 
     tens = {20: 'twenty', 30: 'thirty', 40: 'forty', 50: 'fifty',
             60: 'sixty', 70: 'seventy', 80: 'eighty', 90: 'ninety'}
@@ -10,9 +10,9 @@ def say(number, recursive=False):
     k, m, b, t = 1e3, 1e6, 1e9, 1e12
 
     if number < 0:
-        raise ValueError('number is negative')
+        raise ValueError("input out of range")
     if number >= t:
-        raise ValueError('number is too large: {}'.format(number))
+        raise ValueError("input out of range")
 
     if number < 20:
         return small[number] if not recursive else  + small[number]
