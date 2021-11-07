@@ -53,9 +53,9 @@ def convert_to_short_log(log_level, message):
 
 
 def get_warn_alias():
-    """Returns the enum for LogLevel Warning
+    """Returns the enum for LogLevel.Warning.
 
-    :return: <enum 'LogLevel'>
+    :return: enum - 'LogLevel'.<alias>'
     """
 
     return LogLevel('WRN')
