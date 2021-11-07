@@ -2,7 +2,7 @@ from enum import Enum
 
 
 class LogLevel(Enum):
-    """Represents different logging levels by their verbose codes"""
+    """Represent different log levels by their verbose codes."""
 
     pass
 
