@@ -28,15 +28,10 @@ class LogLevelInt(Enum):
 
 
 def parse_log_level(message):
-    """Takes a log message and returns the enum member of its level
-    Returns a LogLevel.Unknown incase an unknown severity is found
-
+    """Returns level enum for log message.
+   
     :param message: log message (string)
-    :return: <enum 'LogLevel'>
-
-    Ex:
-    - parse_log_level("[INF]: File deleted") #=> LogLevel.Info
-    - parse_log_level("[XYZ]: Out of context message") #=> LogLevel.Unknown
+    :return: enum - 'LogLevel.<level>'.  Return 'LogLevel.Unknown' if an unknown severity is passed.
     """
 
     str_split = message.split(':')
