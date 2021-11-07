@@ -28,7 +28,7 @@ class LogLevelInt(Enum):
 
 
 def parse_log_level(message):
-    """Returns level enum for log message.
+    """Return level enum for log message.
    
     :param message: log message (string)
     :return: enum - 'LogLevel.<level>'.  Return 'LogLevel.Unknown' if an unknown severity is passed.
@@ -42,7 +42,7 @@ def parse_log_level(message):
 
 
 def convert_to_short_log(log_level, message):
-    """Converts a log message to its shorter format.
+    """Convert a log message to its shorter format.
 
     :param log_level: enum - 'LogLevel.<level>'  e.g.  'LogLevel.Error'
     :param message: str - log message

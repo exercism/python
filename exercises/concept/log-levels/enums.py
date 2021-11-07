@@ -18,7 +18,7 @@ def parse_log_level(message):
 
 
 def convert_to_short_log(log_level, message):
-    """Converts a log message to its shorter format.
+    """Convert a log message to its shorter format.
 
     :param log_level: enum - 'LogLevel.<level>'  e.g.  'LogLevel.Error'
     :param message: str - log message
@@ -29,7 +29,7 @@ def convert_to_short_log(log_level, message):
 
 
 def get_warn_alias():
-    """Returns the enum for LogLevel.Warning.
+    """Return the enum for LogLevel.Warning.
 
     :return: enum - 'LogLevel'.<alias>'
     """
