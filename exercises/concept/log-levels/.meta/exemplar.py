@@ -15,7 +15,7 @@ class LogLevel(Enum):
 
 
 class LogLevelInt(Enum):
-    """Represents different logging levels by their short codes."""
+    """Represent different log levels by their short codes."""
 
     TRACE = 0
     DEBUG = 1
