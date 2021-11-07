@@ -8,48 +8,39 @@ class LogLevel(Enum):
 
 
 def parse_log_level(message):
-    """Takes a log message and returns the enum member of its level
-    Returns a LogLevel.Unknown incase an unknown severity is found
-
+    """Returns level enum for log message.
+   
     :param message: log message (string)
-    :return: <enum 'LogLevel'>
-
-    Ex:
-    - parse_log_level("[INF]: File deleted") #=> LogLevel.Info
-    - parse_log_level("[XYZ]: Out of context message") #=> LogLevel.Unknown
+    :return: enum - 'LogLevel.<level>'.  Return 'LogLevel.Unknown' if an unknown severity is passed.
     """
 
     pass
 
 
 def convert_to_short_log(log_level, message):
-    """Converts a log message to a shorter format optimized for storage.
+    """Converts a log message to its shorter format.
 
-    :param log_level: The Log level of the log sent. ex: LogLevel.Error.
-    :param message: log message (string)
-    :return: <enum 'LogLevelInt'>
-
-    Ex:
-    - convert_to_short_log(LogLevel.Error, "Stack overflow") #=> "6:Stack overflow"
+    :param log_level: enum - 'LogLevel.<level>'  e.g.  'LogLevel.Error'
+    :param message: str - log message
+    :return: enum -  'LogLevelInt.<value>` e.g. 'LogLevelInt.5'
     """
 
     pass
 
 
 def get_warn_alias():
-    """Returns the enum for LogLevel Warning
+    """Returns the enum for LogLevel.Warning.
 
-    :return: <enum 'LogLevel'>
+    :return: enum - 'LogLevel'.<alias>'
     """
 
     pass
 
 
 def get_members():
-    """Returns a list of tuples (name, value) containing all the members
-    of the enum LogLevel.
+    """Return all members of the enum.
 
-    :return: List of tuples [(name1, value1), (name2, value2)]
+    :return: list of tuples -  [(name1, value1), (name2, value2)]
     """
 
     pass
