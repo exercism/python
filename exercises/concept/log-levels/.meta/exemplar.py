@@ -62,10 +62,9 @@ def get_warn_alias():
 
 
 def get_members():
-    """Returns a list of tuples (name, value) containing all the members
-    of the enum LogLevel.
+    """Return all members of the enum.
 
-    :return: List of tuples [(name1, value1), (name2, value2)]
+    :return: list of tuples -  [(name1, value1), (name2, value2)]
     """
 
     out_list = []
