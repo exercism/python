@@ -20,8 +20,10 @@ class SimpleLinkedListTest(unittest.TestCase):
 
     def test_error_on_empty_list_head(self):
         sut = LinkedList()
-        with self.assertRaisesWithMessage(EmptyListException):
+        with self.assertRaises(EmptyListException) as err:
             sut.head()
+        self.assertEqual(type(err.exception), EmptyListException)
+        self.assertEqual(err.exception.args[0], "The list is empty.")
 
     def test_singleton_list_has_head(self):
         sut = LinkedList([1])
@@ -51,13 +53,17 @@ class SimpleLinkedListTest(unittest.TestCase):
     def test_pop_from_singleton_list_removes_head(self):
         sut = LinkedList([1])
         self.assertEqual(sut.pop(), 1)
-        with self.assertRaisesWithMessage(EmptyListException):
+        with self.assertRaises(EmptyListException) as err:
             sut.head()
+        self.assertEqual(type(err.exception), EmptyListException)
+        self.assertEqual(err.exception.args[0], "The list is empty.")
 
     def test_error_on_empty_list_pop(self):
         sut = LinkedList()
-        with self.assertRaisesWithMessage(EmptyListException):
+        with self.assertRaises(EmptyListException) as err:
             sut.pop()
+        self.assertEqual(type(err.exception), EmptyListException)
+        self.assertEqual(err.exception.args[0], "The list is empty.")
 
     def test_push_and_pop(self):
         sut = LinkedList([1, 2])
@@ -106,11 +112,3 @@ class SimpleLinkedListTest(unittest.TestCase):
     def test_reverse_non_empty_list(self):
         sut = LinkedList([1, 2, 3])
         self.assertEqual(list(sut.reversed()), [1, 2, 3])
-
-    # Utility functions
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
-
-if __name__ == '__main__':
-    unittest.main()
