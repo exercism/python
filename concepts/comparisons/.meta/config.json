@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for this concept",
+  "blurb": "A comparison operator compares the values of two operands and returns true or false based on whether the condition is met",
   "authors": ["bethanyg", "cmccandless"],
-  "contributors": []
+  "contributors": ["gurupratap-matharu"]
 }
