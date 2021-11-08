@@ -1,18 +1,54 @@
 [
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://docs.python.org/3/reference/expressions.html#comparisons",
+    "description": "Comparisons in Python (Python language reference)"
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://www.tutorialspoint.com/python/python_basic_operators.htm",
+    "description": "Python basic operators on tutorialspoint"
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://data-flair.training/blogs/python-comparison-operators/",
+    "description": "Python comparison operators on data-flair"
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://www.python.org/dev/peps/pep-0207/",
+    "description": "PEP 207 to allow Operator Overloading for Comparison"
+  },
+  {
+    "url": "https://docs.python.org/3/reference/expressions.html#is-not",
+    "description": "Identity comparisons in Python (Python language reference)"
+  },
+  {
+    "url": "https://docs.python.org/3/library/operator.html",
+    "description": "Python operators official doc"
+  },
+  {
+    "url": "https://docs.python.org/3/library/stdtypes.html#typesnumeric",
+    "description": "Numeric types (Python Docs)"
+  },
+  {
+    "url": "https://docs.python.org/3/library/decimal.html#decimal.Decimal",
+    "description": "Decimal types (Python Docs)"
+  },
+  {
+    "url": "https://docs.python.org/3/library/fractions.html#fractions.Fraction",
+    "description": "Fractions (Python Docs)"
+  },
+  {
+    "url": "https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range",
+    "description": "Sequence types (Python Docs)"
+  },
+  {
+    "url": "https://docs.python.org/3/reference/datamodel.html#objects",
+    "description": "Python Object Model (Python docs)"
+  },
+  {
+    "url": "https://docs.python.org/3/reference/datamodel.html#customization",
+    "description": "Basic Customization"
+  },
+  {
+    "url": "https://docs.python.org/3/reference/expressions.html#value-comparisons",
+    "description": "Value comparisons in Python (Python language reference)"
   }
 ]
