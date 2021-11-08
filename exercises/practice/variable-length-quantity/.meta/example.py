@@ -29,6 +29,6 @@ def decode(bytes_):
             values.append(n)
             n = 0
         elif i == len(bytes_) - 1:
-            raise ValueError('incomplete byte sequence')
+            raise ValueError("incomplete sequence")
 
     return values
