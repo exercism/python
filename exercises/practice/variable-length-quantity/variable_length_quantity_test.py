@@ -100,12 +100,16 @@ class VariableLengthQuantityTest(unittest.TestCase):
         self.assertEqual(decode([0x8F, 0xFF, 0xFF, 0xFF, 0x7F]), [0xFFFFFFFF])
 
     def test_incomplete_sequence_causes_error(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             decode([0xFF])
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "incomplete sequence")
 
     def test_incomplete_sequence_causes_error_even_if_value_is_zero(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             decode([0x80])
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "incomplete sequence")
 
     def test_multiple_values(self):
         self.assertEqual(
@@ -130,11 +134,3 @@ class VariableLengthQuantityTest(unittest.TestCase):
             ),
             [0x2000, 0x123456, 0xFFFFFFF, 0x0, 0x3FFF, 0x4000],
         )
-
-    # Utility functions
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
-
-if __name__ == "__main__":
-    unittest.main()
