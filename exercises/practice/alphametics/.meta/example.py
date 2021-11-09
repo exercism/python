@@ -5,7 +5,7 @@ grouping and counting letters buy digit ranks
 then trace recursively all possible permutations starting from
 the lowest rank and genrating additional permutations for new digits
 at higer ranks as necessary.
-This will allow to avoid unnesessarily large permutations to scan.
+This will allow to avoid unnecessarily large permutations to scan.
 Also leading letters in words will be treated as non-zero digits only
 to reduce the number of permutations
 """
