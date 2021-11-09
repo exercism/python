@@ -18,6 +18,11 @@ class AnagramTest(unittest.TestCase):
         expected = ["stream", "maters"]
         self.assertCountEqual(find_anagrams("master", candidates), expected)
 
+    def test_detects_two_anagrams(self):
+        candidates = ["lemons", "cherry", "melons"]
+        expected = ["lemons", "melons"]
+        self.assertCountEqual(find_anagrams("solemn", candidates), expected)
+
     def test_does_not_detect_anagram_subsets(self):
         candidates = ["dog", "goody"]
         expected = []
