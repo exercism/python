@@ -2,19 +2,19 @@
 
 ## General
 
-- [The Python Numbers Tutorial](https://docs.python.org/3/tutorial/introduction.html#numbers) and [Python numeric types](https://docs.python.org/3.9/library/stdtypes.html#numeric-types-int-float-complex) can be a great introduction.
+- [The Python Numbers Tutorial][python-numbers-tutorial] and [Python numeric types][python-numeric-types] can be a great introduction.
 
 ## 1. Estimating exchangeable value
 
-- You can use the [division operator](https://docs.python.org/3/tutorial/introduction.html#numbers) to get the value of exchanged currency.
+- You can use the [division operator][division-operator] to get the value of exchanged currency.
 
 ## 2. Changes after exchanging
 
-- You can use the [subtraction operator](https://docs.python.org/3/tutorial/introduction.html#numbers) to get the amount of changes.
+- You can use the [subtraction operator][subtraction-operator] to get the amount of changes.
 
 ## 3. Calculate value of bills
 
-- You can use the [multiplication operator](https://docs.python.org/3/tutorial/introduction.html#numbers) to get the value of bills.
+- You can use the [multiplication operator][multiplication-operator] to get the value of bills.
 
 ## 4. Calculate number of bills
 
@@ -29,3 +29,10 @@
 - You need to calculate `spread` percent of `exchange_rate` using multiplication operator and add it to `exchange_rate` to get the exchanged currency.
 - The actual rate needs to be computed. Remember to add exchange rate and exchange fee.
 - You can get exchanged money affected by commission by using divide operation and type casting _int_.
+
+
+[python-numbers-tutorial]: https://docs.python.org/3/tutorial/introduction.html#numbers
+[python-numeric-types]: https://docs.python.org/3.9/library/stdtypes.html#numeric-types-int-float-complex
+[division-operator]: https://docs.python.org/3/tutorial/introduction.html#numbers
+[subtraction-operator]: https://docs.python.org/3/tutorial/introduction.html#numbers
+[multiplication-operator]: https://docs.python.org/3/tutorial/introduction.html#numbers
