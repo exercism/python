@@ -57,6 +57,9 @@ class SublistTest(unittest.TestCase):
     def test_second_list_missing_element_from_first_list(self):
         self.assertEqual(sublist([1, 2, 3], [1, 3]), UNEQUAL)
 
+    def test_first_list_missing_additional_digits_from_second_list(self):
+        self.assertEqual(sublist([1, 2], [1, 22]), UNEQUAL)
+
     def test_order_matters_to_a_list(self):
         self.assertEqual(sublist([1, 2, 3], [3, 2, 1]), UNEQUAL)
 
@@ -83,7 +86,3 @@ class SublistTest(unittest.TestCase):
         self.assertEqual(
             sublist(list(range(3, 200, 3)), list(range(15, 200, 15))), UNEQUAL
         )
-
-
-if __name__ == "__main__":
-    unittest.main()
