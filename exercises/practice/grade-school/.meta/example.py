@@ -3,17 +3,38 @@ from collections import defaultdict
 
 class School:
     def __init__(self,):
-        self.db = defaultdict(set)
+        self.db = {}
+        self.add = []
+
+    def added(self):
+        result = self.add[:]
+        self.add = []
+        return result
 
     def add_student(self, name, grade):
-        self.db[grade].add(name)
 
-    def roster(self):
-        return [
-            name
-            for grade, names in sorted(self.db.items())
-            for name in sorted(names)
-        ]
+        if not self.db.get(name, 0):
+            self.db[name] = grade
+            self.add.append(True)
+
+        elif self.db[name] > grade:
+            self.db[name] = grade
+
+        else:
+            self.add.append(False)
+
+
+    def roster(self, grade=0):
+        grades_roster = defaultdict(list)
+
+        for key, value in self.db.items():
+            grades_roster[value].append(key)
+
+        if grade:
+            return sorted(grades_roster[grade])
+        else:
+            working_list = (sorted(grades_roster[key]) for key in sorted(grades_roster.keys()))
+            return [element for item in working_list for element in item]
 
     def grade(self, grade_number):
-        return sorted(self.db[grade_number])
+        return sorted(self.roster(grade_number))
