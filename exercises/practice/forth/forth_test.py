@@ -209,6 +209,12 @@ class ForthTest(unittest.TestCase):
         self.assertEqual(type(err.exception), ValueError)
         self.assertEqual(str(err.exception.args[0]), "illegal operation")
 
+    def test_user_defined_words_cannot_redefine_negative_numbers(self):
+        with self.assertRaises(ValueError) as err:
+            evaluate([": -1 2 ;"])
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(str(err.exception.args[0]), "illegal operation")
+
     def test_user_defined_words_errors_if_executing_a_non_existent_word(self):
         with self.assertRaises(ValueError) as err:
             evaluate(["foo"])
