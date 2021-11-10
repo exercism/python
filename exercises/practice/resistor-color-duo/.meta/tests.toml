@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [ce11995a-5b93-4950-a5e9-93423693b2fc]
 description = "Brown and black"
@@ -11,8 +18,14 @@ description = "Blue and grey"
 [f1886361-fdfd-4693-acf8-46726fe24e0c]
 description = "Yellow and violet"
 
+[b7a6cbd2-ae3c-470a-93eb-56670b305640]
+description = "White and red"
+
 [77a8293d-2a83-4016-b1af-991acc12b9fe]
 description = "Orange and orange"
 
 [0c4fb44f-db7c-4d03-afa8-054350f156a8]
 description = "Ignore additional colors"
+
+[4a8ceec5-0ab4-4904-88a4-daf953a5e818]
+description = "Black and brown, one-digit"
