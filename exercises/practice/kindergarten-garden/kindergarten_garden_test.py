@@ -44,6 +44,50 @@ class KindergartenGardenTest(unittest.TestCase):
         garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
         self.assertEqual(garden.plants("Bob"), ["Clover", "Grass", "Clover", "Clover"])
 
+    def test_full_garden_for_charlie(self):
+        garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
+        self.assertEqual(
+            garden.plants("Charlie"), ["Violets", "Violets", "Clover", "Grass"]
+        )
+
+    def test_full_garden_for_david(self):
+        garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
+        self.assertEqual(
+            garden.plants("David"), ["Radishes", "Violets", "Clover", "Radishes"]
+        )
+
+    def test_full_garden_for_eve(self):
+        garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
+        self.assertEqual(garden.plants("Eve"), ["Clover", "Grass", "Radishes", "Grass"])
+
+    def test_full_garden_for_fred(self):
+        garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
+        self.assertEqual(
+            garden.plants("Fred"), ["Grass", "Clover", "Violets", "Clover"]
+        )
+
+    def test_full_garden_for_ginny(self):
+        garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
+        self.assertEqual(garden.plants("Ginny"), ["Clover", "Grass", "Grass", "Clover"])
+
+    def test_full_garden_for_harriet(self):
+        garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
+        self.assertEqual(
+            garden.plants("Harriet"), ["Violets", "Radishes", "Radishes", "Violets"]
+        )
+
+    def test_full_garden_for_ileana(self):
+        garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
+        self.assertEqual(
+            garden.plants("Ileana"), ["Grass", "Clover", "Violets", "Clover"]
+        )
+
+    def test_full_garden_for_joseph(self):
+        garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
+        self.assertEqual(
+            garden.plants("Joseph"), ["Violets", "Clover", "Violets", "Grass"]
+        )
+
     def test_full_garden_for_kincaid_second_to_last_student_s_garden(self):
         garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
         self.assertEqual(
@@ -73,7 +117,3 @@ class KindergartenGardenTest(unittest.TestCase):
         self.assertEqual(
             garden.plants("Xander"), ["Radishes", "Grass", "Clover", "Violets"]
         )
-
-
-if __name__ == "__main__":
-    unittest.main()
