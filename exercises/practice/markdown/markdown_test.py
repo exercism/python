@@ -35,9 +35,28 @@ class MarkdownTest(unittest.TestCase):
     def test_with_h2_header_level(self):
         self.assertEqual(parse("## This will be an h2"), "<h2>This will be an h2</h2>")
 
+    def test_with_h3_header_level(self):
+        self.assertEqual(parse("### This will be an h3"), "<h3>This will be an h3</h3>")
+
+    def test_with_h4_header_level(self):
+        self.assertEqual(
+            parse("#### This will be an h4"), "<h4>This will be an h4</h4>"
+        )
+
+    def test_with_h5_header_level(self):
+        self.assertEqual(
+            parse("##### This will be an h5"), "<h5>This will be an h5</h5>"
+        )
+
     def test_with_h6_header_level(self):
         self.assertEqual(
             parse("###### This will be an h6"), "<h6>This will be an h6</h6>"
+        )
+
+    def test_h7_header_level_is_a_paragraph(self):
+        self.assertEqual(
+            parse("####### This will not be an h7"),
+            "<p>####### This will not be an h7</p>",
         )
 
     def test_unordered_lists(self):
@@ -80,7 +99,3 @@ class MarkdownTest(unittest.TestCase):
             parse("# Start a list\n* Item 1\n* Item 2\nEnd a list"),
             "<h1>Start a list</h1><ul><li>Item 1</li><li>Item 2</li></ul><p>End a list</p>",
         )
-
-
-if __name__ == "__main__":
-    unittest.main()
