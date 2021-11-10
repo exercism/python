@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [17146bd5-2e80-4557-ab4c-05632b6b0d01]
 description = "Only a single book"
@@ -46,3 +53,12 @@ description = "Three each of first 2 books and 2 each of remaining books"
 
 [bb376344-4fb2-49ab-ab85-e38d8354a58d]
 description = "Four groups of four are cheaper than two groups each of five and three"
+
+[5260ddde-2703-4915-b45a-e54dbbac4303]
+description = "Check that groups of four are created properly even when there are more groups of three than groups of five"
+
+[b0478278-c551-4747-b0fc-7e0be3158b1f]
+description = "One group of one and four is cheaper than one group of two and three"
+
+[cf868453-6484-4ae1-9dfc-f8ee85bbde01]
+description = "One group of one and two plus three groups of four is cheaper than one group of each size"
