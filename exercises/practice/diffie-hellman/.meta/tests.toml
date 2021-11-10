@@ -1,15 +1,25 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [1b97bf38-4307-418e-bfd2-446ffc77588d]
-description = "private key is in range 1 .. p"
+description = "private key is greater than 1 and less than p"
 
 [68b2a5f7-7755-44c3-97b2-d28d21f014a9]
 description = "private key is random"
 
 [b4161d8e-53a1-4241-ae8f-48cc86527f22]
 description = "can calculate public key using private key"
+
+[0d25f8d7-4897-4338-a033-2d3d7a9af688]
+description = "can calculate public key when given a different private key"
 
 [cd02ad45-3f52-4510-99cc-5161dad948a8]
 description = "can calculate secret using other party's public key"
