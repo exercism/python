@@ -9,14 +9,13 @@ Numbers.
 
 The task is to check if a given string is valid.
 
-Validating a Number
-------
+## Validating a Number
 
 Strings of length 1 or less are not valid. Spaces are allowed in the input,
 but they should be stripped before checking. All other non-digit characters
 are disallowed.
 
-## Example 1: valid credit card number
+### Example 1: valid credit card number
 
 ```text
 4539 3195 0343 6467
@@ -44,7 +43,7 @@ Then sum all of the digits:
 
 If the sum is evenly divisible by 10, then the number is valid. This number is valid!
 
-## Example 2: invalid credit card number
+### Example 2: invalid credit card number
 
 ```text
 8273 1232 7352 0569
