@@ -1,6 +1,7 @@
 {%- import "generator_macros.j2" as macros with context -%}
 {%- macro test_case( case) -%}
     {%- set input = case["input"] -%}
+    {%- set property = case["property"] -%}
     def test_{{ case["description"] | to_snake }}(self):
         school = School()
         {% for student, grade in input["students"] -%}
@@ -9,7 +10,9 @@
         expected = {{ case["expected"] }}
         {% if "desiredGrade" in input -%}
         self.assertEqual(school.{{ case["property"] | to_snake }}({{ input["desiredGrade"] }}), expected)
-        {%- else -%}
+        {%- elif "add" in property -%}
+        self.assertEqual(school.added(), expected)
+        {% else %}
         self.assertEqual(school.{{ case["property"] | to_snake }}(), expected)
         {%- endif %}
 {% endmacro -%}
@@ -19,5 +22,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases %}
     {{ test_case(case) }}
     {% endfor %}
-
-{{ macros.footer() }}
