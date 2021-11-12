@@ -1,5 +1,5 @@
 {
-  "blurb": "A comparison operator compares the values of two operands and returns true or false based on whether the condition is met",
+  "blurb": "Comparison operators evaluate two operand values, returning True or False based on whether the comparison condition is met.",
   "authors": ["bethanyg", "cmccandless"],
   "contributors": ["gurupratap-matharu"]
 }
