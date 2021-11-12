@@ -115,7 +115,7 @@ The operators `is` and `is not` test for an object’s identity. An Object’s i
 `x is y` is `True` if and only if `x` and `y` are the same object. `x` is not y` yields the inverse truth value.
 
 ```python
->>> x = [1,2,3]
+>>> x = [1, 2, 3]
 >>> y = x
 >>> x == y
 True
