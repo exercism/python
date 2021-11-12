@@ -23,7 +23,7 @@ True
 
 ## Comparison Chaining
 
-Comparisons can be chained arbitrarily, e.g., `x < y <= z` is equivalent to `x < y` `and` `y <= z`, except that `y` is evaluated only once (but in both cases `z` is _not_ evaluated at all when `x < y` is found to be `False`).
+Comparisons can be chained arbitrarily, e.g., `x < y <= z` is equivalent to `x < y` `and` `y <= z`, except that `y` is evaluated only once (but in both cases `z` is _not_ evaluated at all when `x < y` is found to be `False`). This is also called `short-circuit` evaluation which means the execution is stopped if the truth value of the expression has already been determined. Note that the evaluation of expression takes place from left to right. In python, short circuiting is supported by various boolean operators, functions and, in this case, comparison chaining.
 
 Also unlike `C`, expressions like `a < b < c` have the interpretation that is conventional in mathematics.
 
@@ -38,7 +38,6 @@ False
 ```
 
 ## Comparison between different data types
-
 
 Since everything in `python` represents an `object` things start getting interesting when we compare objects of different types. For example, the `string` value of a number is considered a completely different value from the `integer` or `floating-point` version, an `integer` can be equal to a `floating point`.
 
