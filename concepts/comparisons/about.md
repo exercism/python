@@ -129,9 +129,13 @@ False
 
 ## Membership test operations
 
-The operators `in` and `not in` test for membership. `a` in `s` evaluates to `True` if `a` is a member of s, and `False` otherwise. `a not in s` returns the negation of `a in s`.
+The operators `in` and `not in` test for membership.
 
-For the string and bytes types, `a` in `s` is `True` if and only if `a` is a substring of `b`.
+For example, let `topper` be a student who has aced an exam at the state level and `students` be list of students at a local university then `topper in students` evaluates to `True` if `topper` is a member of `students`, and `False` otherwise.
+
+On the other hand, `topper not in students` returns the negation of `topper in students`.
+
+For the string and bytes types, `name` in `fullname` is `True` if and only if `name` is a substring of `fullname`.
 
 ```python
 s = {11, 22, 33}
