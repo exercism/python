@@ -152,9 +152,9 @@ False
 >>> 'lastname' not in employee
 True
 >>>
->>> name = "Super Batman"
->>> "Bat" in name
+>>> name = 'Super Batman'
+>>> 'Bat' in name
 True
->>> "Batwoman" in name
+>>> 'Batwoman' in name
 False
 ```
