@@ -28,7 +28,9 @@ Comparisons can be chained arbitrarily, e.g., `x < y <= z` is equivalent to `x <
 Also unlike `C`, expressions like `a < b < c` have the interpretation that is conventional in mathematics.
 
 ```python
->>> x, y, z = 2, 5, 10
+>>> x = 2
+>>> y = 5
+>>> z = 10
 >>> x < y < z
 True
 >>> x < y > z
