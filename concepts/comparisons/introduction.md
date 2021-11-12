@@ -3,22 +3,6 @@
 A comparison operator in python, also called python relational operator, compares the values of two operands and returns `True` or `False` based on whether the condition is met. The most common comparison operators are `"<"`, `">"`, `"=="`, `">="`, `"<="`, `"!="`, `"is"`
 
 ```python
->>> 7 > 5
-True
->>> 99 < 100
-True
->>> 4 < 4
-False
->>> 4 <= 4
-True
->>> 1 >= 1
-True
->>> 5 == 5
-True
->>> 6 != 6 # not equal to
-False
->>> 5 != 6
-True
 ```
 
 ## Comparison Chaining
