@@ -37,7 +37,8 @@ False
 False
 ```
 
-## Comparison of different data types
+## Comparison between different data types
+
 
 Since everything in `python` represents an `object` things start getting interesting when we compare objects of different types. For example, the `string` value of a number is considered a completely different value from the `integer` or `floating-point` version, an `integer` can be equal to a `floating point`.
 
