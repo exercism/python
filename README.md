@@ -13,7 +13,7 @@
 
 Hi. &nbsp;👋🏽 &nbsp;👋 &nbsp;**We are happy you are here.**&nbsp; 🎉&nbsp;🌟
 
-**`exercsim/Python`** is one of many programming language tracks on [exercism(dot)org][exercism-website].
+**`exercism/Python`** is one of many programming language tracks on [exercism(dot)org][exercism-website].
 This repo holds all the instructions, tests, code, & support files for Python *exercises* currently under development or implemented & available for students.
 
  🌟 &nbsp;&nbsp;Track exercises support Python `3.8`.  
@@ -26,7 +26,7 @@ Exercises are grouped into **concept** exercises which teach the [Python syllabu
 <img align="left" width="100" height="90" src="https://github.com/exercism/website-icons/blob/main/exercism/logo-big-bordered.png">
 
 🌟🌟&nbsp; Please take a moment to read our [Code of Conduct][exercism-code-of-conduct].&nbsp;🌟🌟&nbsp;  
-It might also be helpful to look at [Being a Good Community Member][being-a-good-community-member] & [The words that we use][the-words-that-we-use].
+It might also be helpful to look at [Being a Good Community Member][being-a-good-community-member], [The words that we use][the-words-that-we-use], and [Pull Requests][prs].
 
 Some defined roles in our community:  [Contributors][exercism-contributors] **|** [Mentors][exercism-mentors] **|** [Maintainers][exercism-track-maintainers]  **|** [Admins][exercism-admins]
 
@@ -35,7 +35,7 @@ Some defined roles in our community:  [Contributors][exercism-contributors] **|*
 
 We&nbsp;💛&nbsp;💙 &nbsp; Pull Requests. **But our maintainers generally can't accept _unsolicited_ PRs.**  
 Check our [help wanted][open-issues] list or [open an issue ][open-an-issue] for discussion first.  
-We &nbsp;✨💙 &nbsp;💛 &nbsp;💙 ✨&nbsp; PRs that follow our **[Contributing Guidelines][contributing-guidelines]**.
+We &nbsp;✨💙 &nbsp;💛 &nbsp;💙 ✨&nbsp; [PRs][prs] that follow our **[Contributing Guidelines][contributing-guidelines]**.
 
 
 <br>
@@ -72,7 +72,7 @@ Starting with `Python 3.8.6`, examples, recipes, and other code in the Python do
 Some software incorporated into Python is under different licenses. The licenses are listed with code falling under that license. See [Licenses and Acknowledgements for Incorporated Software](https://docs.python.org/3/license.html#otherlicenses) for an incomplete list of these licenses.
 
 
-## License
+## Exercism Python Track License
 This repository uses the [MIT License](/LICENSE).
 
 
@@ -96,6 +96,7 @@ This repository uses the [MIT License](/LICENSE).
 [exercism-writing-style]: https://github.com/exercism/docs/blob/main/building/markdown/style-guide.md
 [open-an-issue]: https://github.com/exercism/python/issues/new/choose
 [open-issues]: https://github.com/exercism/python/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22
+[prs]: https://github.com/exercism/docs/blob/main/community/good-member/pull-requests.md
 [practice-exercises]: https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md
 [psf-license]: https://docs.python.org/3/license.html#psf-license
 [python-syllabus]: https://exercism.org/tracks/python/concepts
