@@ -23,7 +23,7 @@ Exercises are grouped into **concept** exercises which teach the [Python syllabu
 <img align="left" width="100" height="90" src="https://github.com/exercism/website-icons/blob/main/exercism/logo-big-bordered.png">
 
 🌟🌟&nbsp; If you have not already done so, please take a moment to read our [Code of Conduct][exercism-code-of-conduct].&nbsp;🌟🌟&nbsp;  
-It might also be helpful to look at [Being a Good Community Member][being-a-good-community-member] & [The words that we use][the-words-that-we-use].
+It might also be helpful to look at [Being a Good Community Member][being-a-good-community-member] & [The words that we use][the-words-that-we-use], and [Pull Requests][prs].
 
 Some defined roles in our community:  [Contributors][exercism-contributors] **|** [Mentors][exercism-mentors] **|** [Maintainers][exercism-track-maintainers]  **|** [Admins][exercism-admins]
 
@@ -46,6 +46,8 @@ Please&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;, and let us kno
 <br>
 
 ## 🚧  **Did you write a patch that fixes a bug?**
+_Before you get started, please review [Pull Requests][prs]._
+
 
  💛 💙&nbsp; **We Warmly Welcome Pull Requests that are:**
 
@@ -62,6 +64,7 @@ When in doubt,&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;. We wil
 <p vertical-align="middle"><h2>In General</h2></p>
 <br>
 
+- Please make sure to have a quick read-through of our Exercism [Pull Requests][prs] document before jumping in.&nbsp;😅
 - Maintainers are happy to review your work and help troubleshoot with you.&nbsp;💛&nbsp;💙&nbsp;
   - Requests are reviewed as soon as is practical/possible.
   - (❗&nbsp;) Reviewers may be in a different timezone&nbsp;⌚&nbsp;, or tied up &nbsp;🧶&nbsp; with other tasks.
@@ -326,7 +329,7 @@ If a practice exercise has an auto-generated `<exercise_slug>_test.py` file, the
 
 _Exercise Structure with Auto-Generated Test Files_
 
-```Bash
+```Graphql
 [<exercise-slug>/
 ├── .docs
 │   └── instructions.md
@@ -394,6 +397,7 @@ configlet generate <path/to/track> --spec-path path/to/problem/specifications
 <br>
 
 
+
 [.flake8]: https://github.com/exercism/python/blob/main/.flake8
 [.style.yapf]: https://github.com/exercism/python/blob/main/.style.yapf
 [EOL]: https://en.wikipedia.org/wiki/Newline
@@ -438,6 +442,7 @@ configlet generate <path/to/track> --spec-path path/to/problem/specifications
 [practice-exercises]: https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md
 [prettier]: https://prettier.io/
 [problem-specifications]: https://github.com/exercism/problem-specifications
+[prs]: https://github.com/exercism/docs/blob/main/community/good-member/pull-requests.md
 [pylint-disable-check]: https://pylint.pycqa.org/en/latest/user_guide/message-control.html#block-disables
 [pylint]: https://pylint.pycqa.org/en/v2.11.1/user_guide/index.html
 [pylintrc]: https://github.com/exercism/python/blob/main/pylintrc
