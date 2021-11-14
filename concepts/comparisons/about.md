@@ -1,6 +1,6 @@
 # About
 
-A [comparison operator][comparisons] in Python (_also called a Python relational operator_), looks at the values of two operands and returns `True` or `False` based on whether the `comparison` condition is met. The most common comparison operators are `"<"`, `">"`, `"=="`, `">="`, `"<="`, and `"!="`.
+A [comparison operator][comparisons] in Python (_also called a Python relational operator_), looks at the values of two operands and returns `True` or `False` based on whether the `comparison` condition is met. The most common comparison operators are `"<"`, `">"`, `"=="`, `">="`, `"<="`, and `"!="`. They all have the same priority (which is higher than that of the Boolean operations)
 
 ```python
 >>> 7 > 5
@@ -15,10 +15,12 @@ True
 True
 >>> 5 == 5
 True
->>> 6 != 6 # not equal to
+>>> 6 != 6  # not equal to
 False
 >>> 5 != 6
 True
+>>> not 3 == 3  # interpreted as not(3 == 3)
+False
 ```
 
 ## Comparison Chaining
