@@ -66,7 +66,8 @@ every object has a `value` in addition to `type` and `identity`.
 
 ### Following are comparison behaviour of most `built-ins` types.
 
-Numbers of built-in numeric types like `int`, `float` and of the standard library types `fractions.Fraction` and `decimal.Decimal` can be compared within and across their types.
+Numbers of built-in _numeric_ types such as `int`, `hex`, `ocal`, `binary`, `float`, `complex` and of the standard library types `fractions.Fraction` and `decimal.Decimal` can be compared within and across their types.
+
 
 Any ordered comparison of a number to a `NaN` (_not a number_) value is `False`. A counter-intuitive implication is that `NaN` never compares equal to `NaN`.
 
