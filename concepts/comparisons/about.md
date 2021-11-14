@@ -63,7 +63,8 @@ Python makes this distinction because strings are text, while `integers` and `fl
 
 The operators `<`, `>`, `==`, `>=`, `<=`, and `!=` compare the _values_ of two different objects. The objects do not need to have the same type. Remember that in Python
 
-every object has a `value` in addition to `type` and `identity`
+every object has a `value` in addition to `type` and `identity`.
+
 
 Following are comparison behaviour of most `built-ins` types
 
