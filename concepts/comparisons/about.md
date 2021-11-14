@@ -82,7 +82,8 @@ False
 False
 ```
 
-`Strings` compare lexicographically using the numerical Unicode code points (the result of the built-in function ord()) of their characters. `Strings` and `binary` sequences cannot be directly compared.
+Strings (`str`) are compared _lexicographically_ using their individual numerical Unicode code points (_the result of passing each code point in the `str` to the built-in function `ord()`_). `str` and `binary` sequences cannot be directly compared.
+
 
 ```python
 >>> 'santa' < 'claus'
