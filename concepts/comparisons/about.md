@@ -2,7 +2,6 @@
 
 A [comparison operator][comparisons] in Python (_also called a Python relational operator_), looks at the values of two operands and returns `True` or `False` based on whether the `comparison` condition is met. The most common comparison operators are `"<"`, `">"`, `"=="`, `">="`, `"<="`, and `"!="`.
 
-
 ```python
 >>> 7 > 5
 True
@@ -159,3 +158,5 @@ True
 >>> 'Batwoman' in name
 False
 ```
+
+[comparisons]: https://docs.python.org/3/library/stdtypes.html?highlight=comparisons#comparisons
