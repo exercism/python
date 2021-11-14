@@ -84,7 +84,6 @@ False
 
 Strings (`str`) are compared _lexicographically_ using their individual numerical Unicode code points (_the result of passing each code point in the `str` to the built-in function `ord()`_). `str` and `binary` sequences cannot be directly compared.
 
-
 ```python
 >>> 'santa' < 'claus'
 False
@@ -96,10 +95,24 @@ True
 83
 >>> ord('c')
 99
+>>> '龙波' < '王想'  # chinese words
+False
+>>> # check ord() of first letters
+>>> ord('龙')
+40857
+>>> ord('王')
+29579
+>>>
+>>>
+>>> # let's try korean words
+>>> '이서윤' < '김은정'
+False
+# compare their first letters
+>>> ord('이') < ord('김')
+False
 ```
 
 Collections like `list`, `set`, `tuple` and `dict` can also be compared -- provided they are of the same `type`, have the same length, and each _**pair**_ of corresponding elements within the collection are comparable.
-
 
 ```python
 >>> [1, 2] == [1, 2]
