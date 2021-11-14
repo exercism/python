@@ -68,9 +68,7 @@ every object has a `value` in addition to `type` and `identity`.
 
 Numbers of built-in _numeric_ types such as `int`, `hex`, `ocal`, `binary`, `float`, `complex` and of the standard library types `fractions.Fraction` and `decimal.Decimal` can be compared within and across their types.
 
-
 Any ordered comparison of a number to a `NaN` (_not a number_) value is `False`. A counter-intuitive implication is that `NaN` never compares equal to `NaN`.
-
 
 ```python
 >>> x = float('NaN')
@@ -183,4 +181,4 @@ False
 ```
 
 [comparisons]: https://docs.python.org/3/library/stdtypes.html?highlight=comparisons#comparisons
-[arithmetic conversion]: https://docs.python.org/3/reference/expressions.html?highlight=number%20conversion#arithmetic-conversions
+[arithmetic conversions]: https://docs.python.org/3/reference/expressions.html?highlight=number%20conversion#arithmetic-conversions
