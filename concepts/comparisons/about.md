@@ -1,6 +1,8 @@
 # About
 
-A [comparison operator][comparisons] in Python (_also called a Python relational operator_), looks at the values of two operands and returns `True` or `False` based on whether the `comparison` condition is met. The most common comparison operators are `"<"`, `">"`, `"=="`, `">="`, `"<="`, and `"!="`. They all have the same priority (which is higher than that of the Boolean operations)
+A [comparison operator][comparisons] in Python (_also called a Python relational operator_), looks at the values of two operands and returns `True` or `False` based on whether the `comparison` condition is met.
+The most common comparison operators are `"<"`, `">"`, `"=="`, `">="`, `"<="`, and `"!="`.
+They all have the same priority (which is higher than that of the Boolean operations).
 
 ```python
 >>> 7 > 5
@@ -25,7 +27,10 @@ False
 
 ## Comparison Chaining
 
-Comparisons can be chained arbitrarily, e.g., `x < y <= z` is equivalent to `x < y` `and` `y <= z`, except that `y` is evaluated only once (but in both cases `z` is _not_ evaluated at all when `x < y` is found to be `False`). This is also called `short-circuit` evaluation which means the execution is stopped if the truth value of the expression has already been determined. Note that the evaluation of expression takes place from left to right. In python, short circuiting is supported by various boolean operators, functions and, in this case, comparison chaining.
+Comparisons can be chained arbitrarily, e.g., `x < y <= z` is equivalent to `x < y` `and` `y <= z`, except that `y` is evaluated only once (but in both cases `z` is _not_ evaluated at all when `x < y` is found to be `False`).
+This is also called `short-circuit` evaluation which means the execution is stopped if the truth value of the expression has already been determined.
+Note that the evaluation of expression takes place from left to right.
+In python, short circuiting is supported by various boolean operators, functions and, in this case, comparison chaining.
 
 Also unlike `C`, expressions like `a < b < c` have the interpretation that is conventional in mathematics.
 
@@ -43,7 +48,11 @@ False
 
 ## Comparison between different data types
 
-Since everything in Python is an `object`, things can get interesting when objects of different types are compared. For example, the `str` value of a number is considered completely different from the `integer` or `floating-point` value. However, an `integer` **can** be considered equal to a `float`, as they are both numeric types that Python can implicitly convert to compare. For other numeric types, comparison operators are defined where they "make sense", but throw a `TypeError` if the underlying objects cannot be converted for comparison. For more information on the rules that python uses for numeric conversion, see [arithmetic conversions][arithmetic conversions] in the Python documentation.
+Since everything in Python is an `object`, things can get interesting when objects of different types are compared.
+For example, the `str` value of a number is considered completely different from the `integer` or `floating-point` value.
+However, an `integer` **can** be considered equal to a `float`, as they are both numeric types that Python can implicitly convert to compare.
+For other numeric types, comparison operators are defined where they "make sense", but throw a `TypeError` if the underlying objects cannot be converted for comparison.
+For more information on the rules that python uses for numeric conversion, see [arithmetic conversions][arithmetic conversions] in the Python documentation.
 
 ```python
 >>> 17 == '17'
@@ -60,15 +69,16 @@ Python makes this distinction because strings are text, while `integers` and `fl
 
 ## Value Comparison
 
-The operators `<`, `>`, `==`, `>=`, `<=`, and `!=` compare the _values_ of two different objects. The objects do not need to have the same type. Remember that in Python
-
-every object has a `value` in addition to `type` and `identity`.
+The operators `<`, `>`, `==`, `>=`, `<=`, and `!=` compare the _values_ of two different objects.
+The objects do not need to have the same type.
+Remember that in Python every object has a `value` in addition to `type` and `identity`.
 
 ### Following are comparison behaviour of most `built-ins` types.
 
 Numbers of built-in _numeric_ types such as `int`, `hex`, `ocal`, `binary`, `float`, `complex` and of the standard library types `fractions.Fraction` and `decimal.Decimal` can be compared within and across their types.
 
-Any ordered comparison of a number to a `NaN` (_not a number_) value is `False`. A counter-intuitive implication is that `NaN` never compares equal to `NaN`.
+Any ordered comparison of a number to a `NaN` (_not a number_) value is `False`. 
+A counter-intuitive implication is that `NaN` never compares equal to `NaN`.
 
 ```python
 >>> x = float('NaN')
@@ -82,7 +92,8 @@ False
 False
 ```
 
-Strings (`str`) are compared _lexicographically_ using their individual numerical Unicode code points (_the result of passing each code point in the `str` to the built-in function `ord()`_). `str` and `binary` sequences cannot be directly compared.
+Strings (`str`) are compared _lexicographically_ using their individual numerical Unicode code points (_the result of passing each code point in the `str` to the built-in function `ord()`_).
+`str` and `binary` sequences cannot be directly compared.
 
 ```python
 >>> 'santa' < 'claus'
@@ -130,9 +141,11 @@ True
 
 ## Identity comparisons
 
-The operators `is` and `is not` test for an object's _identity_. An object's identity is determined using the `id()` function.
+The operators `is` and `is not` test for an object's _identity_.
+An object's identity is determined using the `id()` function.
 
-`apple is orange` is `True` if and only if `apple` and `orange` are the same object. `apple is not orange` yields the inverse truth value.
+`apple is orange` is `True` if and only if `apple` and `orange` are the same object.
+`apple is not orange` yields the inverse truth value.
 
 ```python
 >>> my_fav_numbers = [1, 2, 3]
@@ -149,7 +162,10 @@ False
 
 ## Membership test operations
 
-The operators `in` and `not in` test for _membership_. `fish in soup` evaluates to `True` if `fish` is a member of `soup`, and evaluates `False` otherwise. `fish not in soup` returns the negation, or _opposite of_ `fish in soup`.
+The operators `in` and `not in` test for _membership_.
+`fish in soup` evaluates to `True` if `fish` is a member of `soup`, and evaluates `False` otherwise.
+`fish not in soup` returns the negation, or _opposite of_ `fish in soup`.
+
 
 For the string and bytes types, `name` in `fullname` is `True` if and only if `name` is a substring of `fullname`.
 
