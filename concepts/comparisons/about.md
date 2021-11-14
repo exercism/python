@@ -52,6 +52,8 @@ False
 True
 >>> 17.0 == 0017.000
 True
+>>> complex(1, 2) == complex(1.0, 2.00)
+True
 ```
 
 Python makes this distinction because strings are text, while `integers` and `floats` are both numbers.
