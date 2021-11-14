@@ -115,7 +115,8 @@ True
 
 ## Identity comparisons
 
-The operators `is` and `is not` test for an object’s identity. An Object’s identity is determined using the `id()` function.
+The operators `is` and `is not` test for an object’s _identity_. An Object’s identity is determined using the `id()` function.
+
 
 `apple is orange` is `True` if and only if `apple` and `orange` are the same object. `apple is not orange` yields the inverse truth value.
 
