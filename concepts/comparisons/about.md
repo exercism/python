@@ -58,15 +58,13 @@ True
 
 Python makes this distinction because strings are text, while `integers` and `floats` are numeric types.
 
-
 ## Value Comparison
 
 The operators `<`, `>`, `==`, `>=`, `<=`, and `!=` compare the _values_ of two different objects. The objects do not need to have the same type. Remember that in Python
 
 every object has a `value` in addition to `type` and `identity`.
 
-
-Following are comparison behaviour of most `built-ins` types
+### Following are comparison behaviour of most `built-ins` types.
 
 Numbers of built-in numeric types like `int`, `float` and of the standard library types `fractions.Fraction` and `decimal.Decimal` can be compared within and across their types.
 
