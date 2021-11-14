@@ -117,18 +117,18 @@ True
 
 The operators `is` and `is not` test for an object’s identity. An Object’s identity is determined using the `id()` function.
 
-`x is y` is `True` if and only if `x` and `y` are the same object. `x` is not y` yields the inverse truth value.
+`apple is orange` is `True` if and only if `apple` and `orange` are the same object. `apple is not orange` yields the inverse truth value.
 
 ```python
->>> x = [1, 2, 3]
->>> y = x
->>> x == y
+>>> my_fav_numbers = [1, 2, 3]
+>>> your_fav_numbers = my_fav_numbers
+>>> my_fav_numbers == your_fav_numbers
 True
->>> id(x)
+>>> id(my_fav_numbers)
 4462635008
->>> id(y)
+>>> id(your_fav_numbers)
 4462635008
->>> x is not y
+>>> my_fav_numbers is not your_fav_numbers
 False
 ```
 
