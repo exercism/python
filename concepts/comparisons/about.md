@@ -97,7 +97,8 @@ True
 99
 ```
 
-Collections like `list`, `set`, `tuple` and `dict` can be compared too if they are of the same type, have the same length, and each pair of corresponding elements must compare equal.
+Collections like `list`, `set`, `tuple` and `dict` can also be compared -- provided they are of the same `type`, have the same length, and each _**pair**_ of corresponding elements within the collection are comparable.
+
 
 ```python
 >>> [1, 2] == [1, 2]
