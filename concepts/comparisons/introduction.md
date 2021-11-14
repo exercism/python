@@ -1,6 +1,7 @@
 # Introduction
 
-A comparison operator in python, also called python relational operator, compares the values of two operands and returns `True` or `False` based on whether the condition is met. The most common comparison operators are `"<"`, `">"`, `"=="`, `">="`, `"<="`, `"!="`, `"is"`
+A [comparison operator][comparisons] in Python (_also called a Python relational operator_), looks at the values of two operands and returns `True` or `False` based on whether the `comparison` condition is met. The most common comparison operators are `"<"`, `">"`, `"=="`, `">="`, `"<="`, and `"!="`.
+
 
 ```python
 ```
