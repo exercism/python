@@ -134,22 +134,23 @@ False
 
 ## Membership test operations
 
-The operators `in` and `not in` test for membership.
-
-For example, let `topper` be a student who has aced an exam at the state level and `students` be list of students at a local university then `topper in students` evaluates to `True` if `topper` is a member of `students`, and `False` otherwise.
-
-On the other hand, `topper not in students` returns the negation of `topper in students`.
+The operators `in` and `not in` test for _membership_. `fish in soup` evaluates to `True` if `fish` is a member of `soup`, and evaluates `False` otherwise. `fish not in soup` returns the negation, or _opposite of_ `fish in soup`.
 
 For the string and bytes types, `name` in `fullname` is `True` if and only if `name` is a substring of `fullname`.
 
 ```python
-s = {11, 22, 33}
->>> 22 in s
+lucky_numbers = {11, 22, 33}
+>>> 22 in lucky_numbers
 True
->>> 44 in s
+>>> 44 in lucky_numbers
 False
 >>>
->>> employee = {'name': 'John Doe', 'id': 67826, 'age': 33, 'title': 'ceo'}
+>>> employee = {
+    'name': 'John Doe',
+    'id': 67826,
+    'age': 33,
+    'title': 'ceo'
+    }
 >>> 'age' in employee
 True
 >>> 33 in employee
