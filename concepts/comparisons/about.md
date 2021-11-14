@@ -100,7 +100,7 @@ True
 Collections like `list`, `set`, `tuple` and `dict` can be compared too if they are of the same type, have the same length, and each pair of corresponding elements must compare equal.
 
 ```python
->>> [1,2] == [1, 2]
+>>> [1, 2] == [1, 2]
 True
 >>> (1, 2) == [1, 2]
 False
