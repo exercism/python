@@ -50,7 +50,10 @@ False
 
 Since everything in Python is an `object`, things can get interesting when objects of different types are compared.
 For example, the `str` value of a number is considered completely different from the `integer` or `floating-point` value.
+Python makes this distinction because strings are text, while `integers` and `floats` are numeric types.
+
 However, an `integer` **can** be considered equal to a `float`, as they are both numeric types that Python can implicitly convert to compare.
+
 For other numeric types, comparison operators are defined where they "make sense", but throw a `TypeError` if the underlying objects cannot be converted for comparison.
 For more information on the rules that python uses for numeric conversion, see [arithmetic conversions][arithmetic conversions] in the Python documentation.
 
