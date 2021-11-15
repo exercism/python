@@ -106,6 +106,7 @@ True
 83
 >>> ord('c')
 99
+>>> # let's try Chinese words
 >>> '你好' < '再见'  # hello < goodbye
 True
 >>> # check ord() of first letters
@@ -113,7 +114,7 @@ True
 (20320, 20877)
 >>>
 >>>
->>> # let's try korean words
+>>> # let's try Korean words
 >>> '예쁜' < '아름다운'  # pretty < beautiful
 False
 >>> ord('예'), ord('아')
