@@ -77,7 +77,7 @@ Remember that in Python every object has a `value` in addition to `type` and `id
 
 Numbers of built-in _numeric_ types such as `int`, `hex`, `ocal`, `binary`, `float`, `complex` and of the standard library types `fractions.Fraction` and `decimal.Decimal` can be compared within and across their types.
 
-Any ordered comparison of a number to a `NaN` (_not a number_) value is `False`. 
+Any ordered comparison of a number to a `NaN` (_not a number_) value is `False`.
 A counter-intuitive implication is that `NaN` never compares equal to `NaN`.
 
 ```python
@@ -106,21 +106,18 @@ True
 83
 >>> ord('c')
 99
->>> '龙波' < '王想'  # chinese words
-False
+>>> '你好' < '再见'  # hello < goodbye
+True
 >>> # check ord() of first letters
->>> ord('龙')
-40857
->>> ord('王')
-29579
+>>> ord('你'), ord('再')
+(20320, 20877)
 >>>
 >>>
 >>> # let's try korean words
->>> '이서윤' < '김은정'
+>>> '예쁜' < '아름다운'  # pretty < beautiful
 False
-# compare their first letters
->>> ord('이') < ord('김')
-False
+>>> ord('예'), ord('아')
+(50696, 50500)
 ```
 
 Collections like `list`, `set`, `tuple` and `dict` can also be compared -- provided they are of the same `type`, have the same length, and each _**pair**_ of corresponding elements within the collection are comparable.
@@ -165,7 +162,6 @@ False
 The operators `in` and `not in` test for _membership_.
 `fish in soup` evaluates to `True` if `fish` is a member of `soup`, and evaluates `False` otherwise.
 `fish not in soup` returns the negation, or _opposite of_ `fish in soup`.
-
 
 For the string and bytes types, `name` in `fullname` is `True` if and only if `name` is a substring of `fullname`.
 
