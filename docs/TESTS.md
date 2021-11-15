@@ -11,7 +11,7 @@ We also recommend you install the following pytest plugins:
 The PyTest [Getting Started Guide](https://docs.pytest.org/en/latest/getting-started.html) has quick general instructions, although they do not cover installing the plugins.
 Continue reading below for more detailed instructions.
 
-We also recommend using [pylint](https://pylint.pycqa.org/en/latest/user_guide/), as it is part of our automated feedback on the website, and can be a very useful (if noisy!) code analysis tool.
+We also recommend using [pylint](https://pylint.pycqa.org/en/latest/user_guide/), as it is part of our automated feedback on the website, and can be a very useful (but also noisy) code analysis tool.
 
 Pylint can be a bit much, so this [tutorial from pycqa.orgl](https://pylint.pycqa.org/en/latest/tutorial.html) can be helpful for getting started, as can this overview of [Code Quality: Tools and Best Practices](https://realpython.com/python-code-quality/) from Real Python.
 
