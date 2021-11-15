@@ -57,9 +57,9 @@ If you do not want to precede every command with `python3 -m` please refer to [a
 
 #### Installing pytest within a virtual environment
 
-*For more information about virtual environments please refer to the [TOOLS](./TOOLS.md) file.*
+*For more information about virtual environments please refer to the [tools](./tools) file.*
 
-When installing pytest or any other module(s), make sure that you have [activated your environment](.\TOOLS.md#activating-your-virtual-environment). After which you can run:
+When installing pytest or any other module(s), make sure that you have [activated your environment](./tools#activating-your-virtual-environment). After which you can run:
 
 ```bash
 $ pip install pytest pytest-cache pytest-subtests pytest-pylint
@@ -161,13 +161,13 @@ When a test fails, `PDB` allows you to look at variables and how your code respo
 
 ## Extending your IDE
 
-If you'd like to extend your IDE with some tools that will help you with testing and improving your code, check the [TOOLS](./TOOLS.md) page. We go into multiple IDEs, editors and some useful extensions.
+If you'd like to extend your IDE with some tools that will help you with testing and improving your code, check the [tools](./tools) page. We go into multiple IDEs, editors and some useful extensions.
 
 ## Additional information
 
 ### Adding pytest to your PATH
 
-**Note:** If you are running a [virtual environment](.\TOOLS.md) you do not need to *add to path* as it should work fine.
+**Note:** If you are running a [virtual environment](./tools.md) you do not need to *add to path* as it should work fine.
 
 Typing `python3 -m` every time you want to run a module can get a little annoying. You can add the `Scripts` folder of your Python installation to your path. If you do not know where you have installed Python, run the following command in your terminal:
 
