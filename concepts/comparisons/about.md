@@ -68,7 +68,6 @@ True
 True
 ```
 
-Python makes this distinction because strings are text, while `integers` and `floats` are numeric types.
 
 ## Value Comparison
 
