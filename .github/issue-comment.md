@@ -5,11 +5,12 @@ Hi! 👋🏽 👋  Welcome to the Exercism Python Repo!
 Thank you for opening an issue! 🐍 &nbsp;🌈  ✨
 
 <br>
--   &nbsp;   If you are **requesting support**, we will be along shortly to help. (*generally within* **72 hours,** *often more quickly*).
--  &nbsp;   **Found a problem** with tests, exercises or something else?? &nbsp;🎉
+
+-  &nbsp;   If you are **requesting support**, we will be along shortly to help. (*generally within* **72 hours,** *often more quickly*).
+-  &nbsp;   **Found a problem** with tests, exercises or something else?? &nbsp;🎉  
 &nbsp;&nbsp;&#9702;&nbsp;We'll take a look as soon as we can & identify what work is needed to fix it. *(generally within* **72 hours**).
 
-​		&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9702;&nbsp;_If you'd also like to make a PR to **fix** the issue,  please have a quick look at the [Pull Requests][prs] doc._
+​		&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9702;&nbsp;_If you'd also like to make a PR to **fix** the issue,  please have a quick look at the [Pull Requests][prs] doc._  
 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;_We &nbsp;💙 &nbsp;PRs that follow our [Exercsim][exercism-guidelines] & [Track][track-guidelines] contributing guidelines!_
 
 -  &nbsp; Here because of an obvious (*and* **small** *set of*) spelling, grammar, or punctuation issues with **one** exercise,  
