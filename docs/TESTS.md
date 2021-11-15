@@ -1,23 +1,13 @@
 # Tests
 
-- [Tests](#tests)
-  - [Pytest](#pytest)
-    - [Installing pytest Globally](#installing-pytest-globally)
-      - [Windows](#windows)
-      - [Linux / MacOS](#linux--macos)
-      - [Installing pytest within a virtual environment](#installing-pytest-within-a-virtual-environment)
-    - [Running the tests](#running-the-tests)
-      - [Failures](#failures)
-    - [Extra arguments](#extra-arguments)
-      - [Stop After First Failure [`-x`]](#stop-after-first-failure--x)
-      - [Failed Tests First [`--ff`]](#failed-tests-first---ff)
-      - [Recommended Workflow](#recommended-workflow)
-      - [Using PDB, the Python Debugger, with pytest](#using-pdb-the-python-debugger-with-pytest)
-  - [Extending your IDE](#extending-your-ide)
-  - [Additional information](#additional-information)
-    - [Adding pytest to your PATH](#adding-pytest-to-your-path)
-      - [Windows](#windows-1)
-    - [Fixing warnings](#fixing-warnings)
+---
+
+- [Pytest](#pytest)
+  - [Installing pytest](#installing-pytest)
+  - [Running the tests](#running-the-tests)
+  - [Extra arguments](#extra-arguments)
+- [Extending your IDE](#extending-your-ide)
+- [Additional information](#additional-information)
 
 ---
 
@@ -27,7 +17,7 @@ _Official pytest documentation can be found on the [pytest Wiki](https://pytest.
 
 Pytest lets you test your solutions using our provided tests, and is what we use to validate your solutions on the website.
 
-### Installing pytest Globally
+### Installing pytest
 
 Pytest can be installed and updated using the built-in Python utility `pip`.
 
@@ -46,7 +36,7 @@ Successfully installed pytest-6.2.5 ...
 
 ```
 
-To check if the installation was succesful:
+To check if the installation was successful:
 
 ```bash
 $ python3 -m pytest --version
@@ -150,7 +140,7 @@ This will test your solution. When `pytest` encounters a failed test, the progra
 
 #### Using PDB, the Python Debugger, with pytest
 
-If you want to truly debug like a pro, use the `--pdb` argument after the `pytest` command. 
+If you want to truly debug like a pro, use the `--pdb` argument after the `pytest` command.
 
 ```bash
 $ python3 -m pytest --pdb bob_test.py

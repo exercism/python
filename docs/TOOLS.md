@@ -9,32 +9,14 @@ Before you can start coding, make sure that you have the proper version of Pytho
 ---
 
 - [Environments](#environments)
-  - [Virtualenv](#venv)
+  - [Venv](#venv)
   - [Conda](#conda)
-
-- [Tools](#tools)
-  - [Environments](#environments)
-    - [Venv](#venv)
-      - [Creating your virtual environment](#creating-your-virtual-environment)
-      - [Activating your virtual environment](#activating-your-virtual-environment)
-      - [Virtual Environment wrapper](#virtual-environment-wrapper)
-    - [Conda](#conda)
-      - [Activating your conda environment](#activating-your-conda-environment)
-  - [Editors and IDEs](#editors-and-ides)
-    - [Visual Studio Code](#visual-studio-code)
-      - [Python for VS Code](#python-for-vs-code)
-        - [Selecting the interpreter](#selecting-the-interpreter)
-        - [Other features](#other-features)
-    - [PyCharm](#pycharm)
-      - [Selecting the interpreter](#selecting-the-interpreter-1)
-      - [Other features](#other-features-1)
-    - [Spyder IDE](#spyder-ide)
-      - [Selecting the interpreter](#selecting-the-interpreter-2)
-      - [Other features](#other-features-2)
-    - [Sublime text](#sublime-text)
-      - [Notable extensions](#notable-extensions)
-    - [JupyterLab](#jupyterlab)
-      - [Notable extensions](#notable-extensions-1)
+- [Editors and IDEs](#editors-and-ides)
+  - [Visual Studio Code](#visual-studio-code)
+  - [PyCharm](#pycharm)
+  - [Spyder IDE](#spyder-ide)
+  - [Sublime text](#sublime-text)
+  - [JupyterLab](#jupyterlab)
 
 ---
 
@@ -55,6 +37,7 @@ To create a virtual environment, `cd` to the directory you want to store your en
 ```bash
 $ python3 -m venv {name_of_virtualenv}
 created virtual environment ... in 8568ms
+```
 
 #### Activating your virtual environment
 
@@ -146,7 +129,7 @@ Open your project, then navigate to `File` >> `Settings` >> `Project: ...` >> `P
 
 ![Interpreter Selection Dropdown](https://raw.githubusercontent.com/exercism/python/main/docs/img/PyCharm-Config-InterpreterDropDown.png)
 
-From there click on the `+` button to add a new interpreter. Select the type of interpreter on the left. We suggest you either run a [conda]() or [virtualenv]() environment, but running the *system interpreter* works fine, too. Once you selected your interpreter, press the `Okay` button.
+From there click on the `+` button to add a new interpreter. Select the type of interpreter on the left. We suggest you either run a [conda](#conda) or [virtualenv](#venv) environment, but running the *system interpreter* works fine, too. Once you selected your interpreter, press the `Okay` button.
 
 ![Add New Interpreter](https://raw.githubusercontent.com/exercism/python/main/docs/img/PyCharm-Config-InterpreterNew.png)
 
