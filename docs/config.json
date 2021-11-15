@@ -27,6 +27,13 @@
       "path": "docs/RESOURCES.md",
       "title": "Useful Python resources",
       "blurb": "A collection of useful resources to help you master Python"
+    },
+    {
+      "uuid": "0dbb029b-ec67-4bbe-9ff7-483bf3a96af1",
+      "slug": "tools",
+      "path": "docs/TOOLS.md",
+      "title": "Useful tools for local development",
+      "blurb": "Useful tools that can help you with developing Python Exercism code on your own machine."
     }
   ]
 }
