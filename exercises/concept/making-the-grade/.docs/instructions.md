@@ -55,11 +55,29 @@ This function should return a `list` of all scores that are `>=` to `threshold`.
 The teacher you're assisting likes to assign letter grades as well as numeric scores.
 Since students rarely score 100 on an exam, the "letter grade" lower thresholds are calculated based on the highest score achieved, and increment evenly between the high score and the failing threshold of **<= 40**.
 
-Create the function `letter_grades()` that takes the "highest" score on the exam as a parameter, and returns a `list` of lower score thresholds for each letter grade from "D" to "A".
+Create the function `letter_grades()` that takes the "highest" score on the exam as a parameter, and returns a `list` of lower score thresholds for each "American style" grade interval: `["D", "C", "B", "A"]`.
+
 
 ```python
+"""Where the highest score is 100, and failing is <= 40.
+       "F" <= 40 
+ 41 <= "D" <= 55
+ 56 <= "C" <= 70
+ 71 <= "B" <= 85
+ 86 <= "A" <= 100
+"""
+
 >>> letter_grades(highest=100)
 [41, 56, 71, 86]
+
+
+"""Where the highest score is 88, and failing is <= 40.
+       "F" <= 40 
+ 41 <= "D" <= 52
+ 53 <= "C" <= 64
+ 65 <= "B" <= 76
+ 77 <= "A" <= 88
+"""
 
 >>> letter_grades(highest=88)
 [41, 53, 65, 77]
