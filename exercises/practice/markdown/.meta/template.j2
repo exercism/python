@@ -3,8 +3,6 @@
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
-    {% if case["description"] == "with h7 header level" %}
-    {% else %}
     def test_{{ case["description"] | to_snake }}(self):
         self.assertEqual(
             {{ case["property"] | to_snake }}(
@@ -12,5 +10,4 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
             ),
             "{{ case["expected"] }}"
         )
-    {% endif %}
     {% endfor %}
