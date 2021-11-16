@@ -7,9 +7,9 @@ You decide to make things a little more interesting by putting together some fun
 ## 1. Rounding Scores
 
 While you can give "partial credit" on exam questions, overall exam scores have to be `int`s.
-So before you can do anything else with the class scores, you need to go through the grades and turn any `float` scores into `int`s.  Lucky for you, Python has the built-in [`round()`][round] function you can use.
+So before you can do anything else with the class scores, you need to go through the grades and turn any `float` scores into `int`s. Lucky for you, Python has the built-in [`round()`][round] function you can use.
 
-A score of 75.45 or 75.49 will round to 75.  A score of 43.50 or 43.59 will round to 44.
+A score of 75.45 or 75.49 will round to 75. A score of 43.50 or 43.59 will round to 44.
 There shouldn't be any scores that have more than two places after the decimal point.
 
 Create the function `round_scores()` that takes a `list` of `student_scores`.
@@ -57,10 +57,9 @@ Since students rarely score 100 on an exam, the "letter grade" lower thresholds 
 
 Create the function `letter_grades()` that takes the "highest" score on the exam as a parameter, and returns a `list` of lower score thresholds for each "American style" grade interval: `["D", "C", "B", "A"]`.
 
-
 ```python
 """Where the highest score is 100, and failing is <= 40.
-       "F" <= 40 
+       "F" <= 40
  41 <= "D" <= 55
  56 <= "C" <= 70
  71 <= "B" <= 85
@@ -72,7 +71,7 @@ Create the function `letter_grades()` that takes the "highest" score on the exam
 
 
 """Where the highest score is 88, and failing is <= 40.
-       "F" <= 40 
+       "F" <= 40
  41 <= "D" <= 52
  53 <= "C" <= 64
  65 <= "B" <= 76
@@ -83,7 +82,6 @@ Create the function `letter_grades()` that takes the "highest" score on the exam
 [41, 53, 65, 77]
 ```
 
-
 ## 5. Matching Names to Scores
 
 You have a list of exam scores in descending order, and another list of student names also sorted in descending order by their exam scores.
@@ -93,7 +91,6 @@ Create the function `student_ranking()` with parameters `student_scores` and `st
 Match each student name on the student_names `list` with their score from the student_scores `list`.
 You can assume each argument `list` will be sorted from highest score(er) to lowest score(er).
 The function should return a `list` of strings with the format `<rank>. <student name>: <student score>`.
-
 
 ```python
 >>> student_scores = [100, 99, 90, 84, 66, 53, 47]
@@ -111,7 +108,7 @@ Create the function `perfect_score()` with parameter `student_info`.
 `student_info` is a `list` of lists containing the name and score of each student: `[["Charles", 90], ["Tony", 80]]`.
 The function should `return` _the first_ `[<name>, <score>]` pair of the student who scored 100 on the exam.
 
- If no 100 scores are found in `student_info`, an empty list `[]` should be returned.
+If no 100 scores are found in `student_info`, an empty list `[]` should be returned.
 
 ```python
 >>> perfect_score(student_info=[["Charles", 90], ["Tony", 80], ["Alex", 100]])
