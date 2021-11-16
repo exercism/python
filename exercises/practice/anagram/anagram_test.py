@@ -14,11 +14,6 @@ class AnagramTest(unittest.TestCase):
         self.assertCountEqual(find_anagrams("diaper", candidates), expected)
 
     def test_detects_two_anagrams(self):
-        candidates = ["stream", "pigeon", "maters"]
-        expected = ["stream", "maters"]
-        self.assertCountEqual(find_anagrams("master", candidates), expected)
-
-    def test_detects_two_anagrams(self):
         candidates = ["lemons", "cherry", "melons"]
         expected = ["lemons", "melons"]
         self.assertCountEqual(find_anagrams("solemn", candidates), expected)
@@ -82,7 +77,3 @@ class AnagramTest(unittest.TestCase):
         candidates = ["Listen", "Silent", "LISTEN"]
         expected = ["Silent"]
         self.assertCountEqual(find_anagrams("LISTEN", candidates), expected)
-
-
-if __name__ == "__main__":
-    unittest.main()
