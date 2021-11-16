@@ -356,7 +356,10 @@ class TestsTOML:
     def load(cls, toml_path: Path):
         with toml_path.open() as f:
             data = toml.load(f)
-        return cls({uuid: TestCaseTOML(uuid, *opts) for uuid, opts in data.items()})
+        return cls({uuid: TestCaseTOML(uuid, *opts) for
+                    uuid, opts in
+                    data.items() if
+                    opts.get('include', None) is not False})
 
 
 if __name__ == "__main__":
