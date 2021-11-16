@@ -5,6 +5,9 @@ from twelve_days import (
 )
 
 # Tests adapted from `problem-specifications//canonical-data.json`
+# PLEASE TAKE NOTE: Expected result lists for these test cases use **implicit line joining.**
+# A new line in a result list below **does not** always equal a new list element.
+# Check comma placement carefully!
 
 
 class TwelveDaysTest(unittest.TestCase):
@@ -169,7 +172,3 @@ class TwelveDaysTest(unittest.TestCase):
     def test_recites_the_whole_song(self):
         expected = [recite(n, n)[0] for n in range(1, 13)]
         self.assertEqual(recite(1, 12), expected)
-
-
-if __name__ == "__main__":
-    unittest.main()
