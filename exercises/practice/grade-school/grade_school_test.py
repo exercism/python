@@ -53,21 +53,6 @@ class GradeSchoolTest(unittest.TestCase):
         expected = [True, True, False, True]
         self.assertEqual(school.added(), expected)
 
-    def test_a_student_can_t_be_in_two_different_grades(self):
-        school = School()
-        school.add_student(name="Aimee", grade=2)
-        school.add_student(name="Aimee", grade=1)
-        expected = []
-        self.assertEqual(school.roster(2), expected)
-
-    def test_a_student_can_only_be_added_to_the_same_grade_in_the_roster_once(self):
-        school = School()
-        school.add_student(name="Aimee", grade=2)
-        school.add_student(name="Aimee", grade=2)
-        expected = ["Aimee"]
-
-        self.assertEqual(school.roster(), expected)
-
     def test_student_not_added_to_same_grade_in_the_roster_more_than_once(self):
         school = School()
         school.add_student(name="Blair", grade=2)
@@ -101,16 +86,6 @@ class GradeSchoolTest(unittest.TestCase):
         school.add_student(name="Paul", grade=3)
         expected = [True, True, False, True]
         self.assertEqual(school.added(), expected)
-
-    def test_a_student_cannot_be_added_to_more_than_one_grade_in_the_sorted_roster(
-        self,
-    ):
-        school = School()
-        school.add_student(name="Aimee", grade=2)
-        school.add_student(name="Aimee", grade=1)
-        expected = ["Aimee"]
-
-        self.assertEqual(school.roster(), expected)
 
     def test_student_not_added_to_multiple_grades_in_the_roster(self):
         school = School()
