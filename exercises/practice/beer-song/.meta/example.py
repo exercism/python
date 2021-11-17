@@ -41,7 +41,7 @@ def _bottles(number):
     if number == 1:
         return "1 bottle"
     else:
-        return f"{number} bottles"
+        return f'{number} bottles'
 
 
 def _next_verse(current_verse):

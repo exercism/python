@@ -11,8 +11,8 @@ def base_trans(text):
 
 def encode(plain):
     cipher = base_trans(plain)
-    return " ".join([cipher[idx:idx + BLKSZ]
-                     for idx in range(0, len(cipher), BLKSZ)])
+    return " ".join(cipher[idx:idx + BLKSZ]
+                     for idx in range(0, len(cipher), BLKSZ))
 
 
 def decode(ciphered):
