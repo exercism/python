@@ -6,7 +6,7 @@ trtbl = str.maketrans(ascii_lowercase, ascii_lowercase[::-1])
 
 
 def base_trans(text):
-    return "".join([c for c in text if c.isalnum()]).lower().translate(trtbl)
+    return "".join(character for character in text if character.isalnum()]).lower().translate(trtbl)
 
 
 def encode(plain):
