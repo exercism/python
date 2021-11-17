@@ -136,7 +136,7 @@ def solve(an):
     uokzchars = []  # zero-allowed letters unique at level
     uchars = []  # all letters unique at level
     tchars = []  # all letter with multipliers per level
-    for _ in range(maxp):
+    for number in range(maxp):
         tchars.append({})
         unzchars.append(set())
         uokzchars.append(set())
