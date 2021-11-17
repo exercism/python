@@ -1,4 +1,3 @@
-from itertools import permutations, chain, product
 """
 This solution will first parse the alphametic expression
 grouping and counting letters buy digit ranks
@@ -10,8 +9,10 @@ Also leading letters in words will be treated as non-zero digits only
 to reduce the number of permutations
 """
 
+from itertools import permutations, chain, product
 
-def digPerms(digset, nzcharset, okzcharset):
+
+def dig_perms(digset, nzcharset, okzcharset):
     """This function creates permutations given the set of digits,
        letters not alllowed to be 0, and letters allowed to be 0
     """
@@ -48,7 +49,7 @@ def digPerms(digset, nzcharset, okzcharset):
                                  poslst)))
 
 
-def check_rec(eqparams, tracecombo=(dict(), 0, set(range(10))), p=0):
+def check_rec(eqparams, tracecombo=({}, 0, set(range(10))), p=0):
     """This function recursively traces a parsed expression from lowest
        digits to highest, generating additional digits when necessary
        checking the digit sum is divisible by 10, carrying the multiple of 10
@@ -75,7 +76,7 @@ def check_rec(eqparams, tracecombo=(dict(), 0, set(range(10))), p=0):
         else:
             # Otherwise the solution in this branch is not found
             # return empty
-            return dict()
+            return {}
     diglets = uchars[p]  # all new unique letters from the current level
     partsum = cover  # Carry over from lower level
     remexp = []  # TBD letters
@@ -88,7 +89,7 @@ def check_rec(eqparams, tracecombo=(dict(), 0, set(range(10))), p=0):
             remexp.append((c, v))
     # Generate permutations for the remaining digits and currecnt level
     # non-zero letters and zero-allowed letters
-    for newdigs in digPerms(remdigs, unzchars[p], uokzchars[p]):
+    for newdigs in dig_perms(remdigs, unzchars[p], uokzchars[p]):
         # build the dictionary for the new letters and this level
         newdict = dict(zip(diglets, newdigs))
         # complete the partial sum into test sum using the current permutation
@@ -129,14 +130,14 @@ def solve(an):
     maxp = max([len(w) for s in fullexp for w in s])
     # Extract the leading letters for each (reversed) word
     # those cannot be zeros as the number cannot start with 0
-    nzchars = set([w[-1] for s in fullexp for w in s])
+    nzchars = {w[-1] for s in fullexp for w in s}
     # initialize the lists for digit ranks
     unzchars = []  # non-zero letters unique at level
     uokzchars = []  # zero-allowed letters unique at level
     uchars = []  # all letters unique at level
     tchars = []  # all letter with multipliers per level
-    for i in range(maxp):
-        tchars.append(dict())
+    for _ in range(maxp):
+        tchars.append({})
         unzchars.append(set())
         uokzchars.append(set())
     # Now lets scan the expression and accumulate the letter counts

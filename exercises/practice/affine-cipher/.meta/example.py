@@ -1,17 +1,17 @@
 BLKSZ = 5
-ALPHSZ = 26
+ALPHABET = 26
 
 
-def modInverse(a, ALPHSZ):
-    a = a % ALPHSZ
-    for x in range(1, ALPHSZ):
-        if ((a * x) % ALPHSZ == 1):
-            return x
+def mod_inverse(a, alphabet):
+    a = a % alphabet
+    for idx in range(1, alphabet):
+        if (a * idx) % alphabet == 1:
+            return idx
     return 1
 
 
 def translate(text, a, b, mode):
-    inv = modInverse(a, ALPHSZ)
+    inv = mod_inverse(a, ALPHABET)
     if inv == 1:
         raise ValueError("a and m must be coprime.")
 
@@ -23,19 +23,21 @@ def translate(text, a, b, mode):
                 chars.append(c)
                 continue
             if mode == 0:
-                new = (a * orig + b) % ALPHSZ
+                new = (a * orig + b) % ALPHABET
             elif mode == 1:
-                new = (inv * (orig - b)) % ALPHSZ
+                new = (inv * (orig - b)) % ALPHABET
             chars.append(chr(new + 97))
 
-    return ''.join(chars)
+    return "".join(chars)
 
 
 def encode(plain, a, b):
     cipher = translate(plain, a, b, 0)
-    return " ".join([cipher[i:i + BLKSZ]
-                     for i in range(0, len(cipher), BLKSZ)])
+    return " ".join([cipher[idx:idx + BLKSZ]
+                     for idx in range(0, len(cipher), BLKSZ)])
 
 
 def decode(ciphered, a, b):
     return translate(ciphered, a, b, 1)
+
+print(mod_inverse(5, ALPHABET))
