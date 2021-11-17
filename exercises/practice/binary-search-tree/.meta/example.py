@@ -5,7 +5,7 @@ class TreeNode:
         self.right = right
 
     def __str__(self):
-        fmt = 'TreeNode(data={}, left={}, right={})'
+        fmt = "TreeNode(data={}, left={}, right={})"
         return fmt.format(self.data, self.left, self.right)
 
 
