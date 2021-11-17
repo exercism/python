@@ -9,14 +9,8 @@ def recite(start, take=1):
 
 def verse(number):
     return [
-        ''.join([
-            f'{_bottles(number).capitalize()} of beer on the wall, ',
-            f'{_bottles(number)} of beer.'
-        ]),
-        ''.join([
-            _action(number),
-            _next_bottle(number)
-        ])
+        f'{_bottles(number).capitalize()} of beer on the wall, {_bottles(number)} of beer.',
+        f'{_action(number)}{_next_bottle(number)}'
     ]
 
 
