@@ -1,19 +1,19 @@
 def recite(start, take=1):
     results = []
-    for i in range(start, start - take, -1):
-        results.extend(verse(i))
-        if i > start - take + 1:
-            results.append('')
+    for idx in range(start, start - take, -1):
+        results.extend(verse(idx))
+        if idx > start - take + 1:
+            results.append("")
     return results
 
 
 def verse(number):
     return [
-        ''.join([
+        "".join([
             "{} of beer on the wall, ".format(_bottles(number).capitalize()),
             "{} of beer.".format(_bottles(number))
         ]),
-        ''.join([
+        "".join([
             _action(number),
             _next_bottle(number)
         ])
@@ -37,11 +37,11 @@ def _next_bottle(current_verse):
 
 def _bottles(number):
     if number == 0:
-        return 'no more bottles'
+        return "no more bottles"
     if number == 1:
-        return '1 bottle'
+        return "1 bottle"
     else:
-        return '{} bottles'.format(number)
+        return f"{number} bottles"
 
 
 def _next_verse(current_verse):
