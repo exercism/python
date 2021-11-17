@@ -1,8 +1,8 @@
-# [op(x) for x in seq] would be nice but trivial
+# [collection(x) for x in collection] would be nice but trivial
 
 
-def accumulate(seq, op):
-    res = []
-    for el in seq:
-        res.append(op(el))
-    return res
+def accumulate(collection, operation):
+    response = []
+    for ellement in collection:
+        response.append(operation(ellement))
+    return response

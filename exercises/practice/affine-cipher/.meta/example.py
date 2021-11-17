@@ -1,4 +1,4 @@
-BLKSZ = 5
+BLOCK_SIZE = 5
 ALPHABET = 26
 
 
@@ -33,8 +33,8 @@ def translate(text, a, b, mode):
 
 def encode(plain, a, b):
     cipher = translate(plain, a, b, 0)
-    return " ".join([cipher[idx:idx + BLKSZ]
-                     for idx in range(0, len(cipher), BLKSZ)])
+    return " ".join([cipher[idx:idx + BLOCK_SIZE]
+                     for idx in range(0, len(cipher), BLOCK_SIZE)])
 
 
 def decode(ciphered, a, b):

@@ -44,12 +44,12 @@ def dig_perms(digset, nzcharset, okzcharset):
         # second iterator with all permulations without 1 letter
         # insert 0 in all possible positions of that permutation
         return chain(permutations(nzdigset, totcnt),
-                     map(lambda x: x[0][:x[1]] + (0,) + x[0][x[1]:],
+                     map(lambda iters: iters[0][:iters[1]] + (0,) + iters[0][iters[1]:],
                          product(permutations(nzdigset, totcnt - 1),
                                  poslst)))
 
 
-def check_rec(eqparams, tracecombo=({}, 0, set(range(10))), p=0):
+def check_rec(eqparams, tracecombo=({}, 0, set(range(10))), power=0):
     """This function recursively traces a parsed expression from lowest
        digits to highest, generating additional digits when necessary
        checking the digit sum is divisible by 10, carrying the multiple of 10
@@ -61,7 +61,7 @@ def check_rec(eqparams, tracecombo=({}, 0, set(range(10))), p=0):
     # unique non-zero characters by rank
     # unique zero-allowed characters by rank
     # all unique characters by rank
-    maxp, tchars, unzchars, uokzchars, uchars = eqparams
+    max_power, tchars, unzchars, uokzchars, uchars = eqparams
     # recursion cumulative parameters
     # established characters with digits
     # carry-over from the previous level
@@ -69,7 +69,7 @@ def check_rec(eqparams, tracecombo=({}, 0, set(range(10))), p=0):
     prevdict, cover, remdigs = tracecombo
     # the maximal 10-power (beyond the maximal rank)
     # is reached
-    if p == maxp:
+    if power == max_power:
         # Carry-over is zero, meaning solution is found
         if cover == 0:
             return prevdict
@@ -77,19 +77,19 @@ def check_rec(eqparams, tracecombo=({}, 0, set(range(10))), p=0):
             # Otherwise the solution in this branch is not found
             # return empty
             return {}
-    diglets = uchars[p]  # all new unique letters from the current level
+    diglets = uchars[power]  # all new unique letters from the current level
     partsum = cover  # Carry over from lower level
     remexp = []  # TBD letters
     # Break down the current level letter into what can be
     # calculated in the partial sum and remaining TBD letter-digits
-    for c, v in tchars[p]:
+    for c, v in tchars[power]:
         if c in prevdict:
             partsum += v * prevdict[c]
         else:
             remexp.append((c, v))
     # Generate permutations for the remaining digits and currecnt level
     # non-zero letters and zero-allowed letters
-    for newdigs in dig_perms(remdigs, unzchars[p], uokzchars[p]):
+    for newdigs in dig_perms(remdigs, unzchars[power], uokzchars[power]):
         # build the dictionary for the new letters and this level
         newdict = dict(zip(diglets, newdigs))
         # complete the partial sum into test sum using the current permutation
@@ -105,7 +105,7 @@ def check_rec(eqparams, tracecombo=({}, 0, set(range(10))), p=0):
             # new carry over and remaining digits to assign
             rectest = check_rec(eqparams,
                                 (newdict, d, remdigs - set(newdigs)),
-                                p + 1)
+                                power + 1)
             # if the recursive call returned a non-empty dictionary
             # this means the recursion has found a solution
             # otherwise, proceed to the new permutation
@@ -123,8 +123,8 @@ def solve(an):
     # split each part into words by +
     # strip spaces fro, each word, reverse each work to
     # enumerate the digit rank from lower to higer
-    fullexp = [list(map(lambda x: list(reversed(x.strip())), s.split("+")))
-               for s in an.strip().upper().split("==")]
+    fullexp = [list(map(lambda x: list(reversed(x.strip())), s.split('+')))
+               for s in an.strip().upper().split('==')]
     # Find the maximal lenght of the work, maximal possive digit rank or
     # the power of 10, should the < maxp
     maxp = max([len(w) for s in fullexp for w in s])
@@ -136,7 +136,7 @@ def solve(an):
     uokzchars = []  # zero-allowed letters unique at level
     uchars = []  # all letters unique at level
     tchars = []  # all letter with multipliers per level
-    for number in range(maxp):
+    for _ in range(maxp):
         tchars.append({})
         unzchars.append(set())
         uokzchars.append(set())
