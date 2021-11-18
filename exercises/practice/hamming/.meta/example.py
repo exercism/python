@@ -1,5 +1,5 @@
-def distance(s1, s2):
-    if len(s1) != len(s2):
-        raise ValueError("Strands must be of equal length.")
+def distance(strand_a, strand_b):
+    if len(strand_a) != len(strand_b):
+        raise ValueError('Strands must be of equal length.')
 
-    return sum(a != b for a, b in zip(s1, s2))
+    return sum(a_part != b_part for a_part, b_part in zip(strand_a, strand_b))
