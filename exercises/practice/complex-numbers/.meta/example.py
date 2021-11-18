@@ -6,13 +6,13 @@ class ComplexNumber:
         self.imaginary = imaginary
 
     def __eq__(self, other):
-        if not type(other) == ComplexNumber:
+        if not isinstance(other, ComplexNumber):
             other = ComplexNumber(other)
         return self.real == other.real and self.imaginary == other.imaginary
 
     def __add__(self, other):
 
-        if not type(other) is ComplexNumber:
+        if not isinstance(other, ComplexNumber):
             other = ComplexNumber(other)
 
         real_part = self.real + other.real
@@ -22,7 +22,7 @@ class ComplexNumber:
 
     def __radd__(self, other):
 
-        if not type(other) is ComplexNumber:
+        if not isinstance(other, ComplexNumber):
             other = ComplexNumber(other)
 
         real_part = self.real + other.real
@@ -31,7 +31,7 @@ class ComplexNumber:
         return ComplexNumber(real_part, imaginary_part)
 
     def __mul__(self, other):
-        if not type(other) == ComplexNumber:
+        if not isinstance(other, ComplexNumber):
             other = ComplexNumber(other)
 
         real_part = self.real * other.real - self.imaginary * other.imaginary
@@ -39,7 +39,7 @@ class ComplexNumber:
         return ComplexNumber(real_part, imaginary_part)
 
     def __rmul__(self, other):
-        if not type(other) == ComplexNumber:
+        if not isinstance(other, ComplexNumber):
             other = ComplexNumber(other)
 
         real_part = self.real * other.real - self.imaginary * other.imaginary
@@ -47,14 +47,14 @@ class ComplexNumber:
         return ComplexNumber(real_part, imaginary_part)
 
     def __sub__(self, other):
-        if not type(other) == ComplexNumber:
+        if not isinstance(other, ComplexNumber):
             other = ComplexNumber(other)
         real_part = self.real - other.real
         imaginary_part = self.imaginary - other.imaginary
         return ComplexNumber(real_part, imaginary_part)
 
     def __rsub__(self, other):
-        if not type(other) == ComplexNumber:
+        if not isinstance(other, ComplexNumber):
             other = ComplexNumber(other)
 
         real_part = other.real - self.real
@@ -62,7 +62,7 @@ class ComplexNumber:
         return ComplexNumber(real_part, imaginary_part)
 
     def __truediv__(self, other):
-        if not type(other) == ComplexNumber:
+        if not isinstance(other, ComplexNumber):
             other = ComplexNumber(other)
 
         conjugation = other.conjugate()
@@ -70,10 +70,10 @@ class ComplexNumber:
         denominator = denominator_all.real
         numerator = self * conjugation
 
-        return ComplexNumber((numerator.real/denominator), (numerator.imaginary/denominator))
+        return ComplexNumber((numerator.real / denominator), (numerator.imaginary / denominator))
 
     def __rtruediv__(self, other):
-        if not type(other) == ComplexNumber:
+        if not isinstance(other, ComplexNumber):
             other = ComplexNumber(other)
 
         conjugation = self.conjugate()
@@ -81,7 +81,7 @@ class ComplexNumber:
         denominator = float(denominator_all.real)
         numerator = other * conjugation
 
-        return ComplexNumber((numerator.real/denominator), (numerator.imaginary/denominator))
+        return ComplexNumber((numerator.real / denominator), (numerator.imaginary / denominator))
 
     def __abs__(self):
         square_sum = self.real * self.real + self.imaginary * self.imaginary
