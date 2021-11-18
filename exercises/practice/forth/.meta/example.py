@@ -24,11 +24,11 @@ def evaluate(input_data):
         values.pop(0)
         key = values.pop(0).lower()
         if is_integer(key):
-            raise ValueError("illegal operation")
+            raise ValueError('illegal operation')
         defines[key] = [
-                x
-                for v in values
-                for x in defines.get(v, [v])
+                idx
+                for vivaldi in values
+                for idx in defines.get(vivaldi, [vivaldi])
         ]
     stack = []
     input_data = input_data[-1].split()
@@ -48,7 +48,7 @@ def evaluate(input_data):
             elif word == '/':
                 divisor = stack.pop()
                 if divisor == 0:
-                    raise ZeroDivisionError("divide by zero")
+                    raise ZeroDivisionError('divide by zero')
                 stack.append(int(stack.pop() / divisor))
             elif word == 'dup':
                 stack.append(stack[-1])
@@ -60,7 +60,7 @@ def evaluate(input_data):
             elif word == 'over':
                 stack.append(stack[-2])
             else:
-                raise ValueError("undefined operation")
-        except IndexError:
-            raise StackUnderflowError("Insufficient number of items in stack")
+                raise ValueError('undefined operation')
+        except IndexError as error:
+            raise StackUnderflowError('Insufficient number of items in stack') from error
     return stack
