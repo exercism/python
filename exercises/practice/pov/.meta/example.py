@@ -2,9 +2,9 @@ from json import dumps
 
 
 class Tree:
-    def __init__(self, label, children=[]):
+    def __init__(self, label, children=None):
         self.label = label
-        self.children = children
+        self.children = children if children is not None else []
 
     def __dict__(self):
         return {self.label: [member.__dict__() for member in sorted(self.children)]}
@@ -57,7 +57,7 @@ class Tree:
             for child in tree.children:
                 stack.append(child.add(tree.remove(child.label)))
 
-        raise ValueError("Tree could not be reoriented")
+        raise ValueError('Tree could not be reoriented')
 
 
 
@@ -69,8 +69,8 @@ class Tree:
         while path[-1] != to_node:
             try:
                 tree = stack.pop()
-            except IndexError:
-                raise ValueError("No path found")
+            except IndexError as error:
+                raise ValueError('No path found') from error
             if to_node in tree:
                 path.append(tree.label)
                 stack = tree.children
