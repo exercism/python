@@ -1,4 +1,3 @@
-from itertools import permutations, chain, product
 """
 This solution will first parse the alphametic expression
 grouping and counting letters buy digit ranks
@@ -10,45 +9,47 @@ Also leading letters in words will be treated as non-zero digits only
 to reduce the number of permutations
 """
 
+from itertools import permutations, chain, product
 
-def digPerms(digset, nzcharset, okzcharset):
+
+def dig_perms(digit_set, non_zero_chars, ok_zero_chars):
     """This function creates permutations given the set of digits,
        letters not alllowed to be 0, and letters allowed to be 0
     """
-    nzcnt = len(nzcharset)  # How many letters are non-0
-    okzcnt = len(okzcharset)  # How many letters are allowed 0
-    totcnt = nzcnt + okzcnt  # Total number of letters
-    if totcnt < 1:  # if total numbers of letters is 0
+    non_zero_count = len(non_zero_chars)  # How many letters are non-0
+    ok_zero_count = len(ok_zero_chars)  # How many letters are allowed 0
+    total_count = non_zero_count + ok_zero_count  # Total number of letters
+    if total_count < 1:  # if total numbers of letters is 0
         return [()]  # return a singe empty permutation
-    nzdigset = digset - set((0,))  # generate a non-zero digit set
-    nzdigsetcnt = len(nzdigset)  # how many non-zero digits are available
-    digsetcnt = len(digset)  # how many ok zero digits are available
+    non_zero_digit_set = digit_set - set((0,))  # generate a non-zero digit set
+    available_zero_digit_count = len(non_zero_digit_set)  # how many non-zero digits are available
+    ok_zero_digit_count = len(digit_set)  # how many ok zero digits are available
     # if either fewer digits than letters at all or fewer non-0 digits
     # than letters that need to be non-zero
-    if digsetcnt < totcnt or nzdigsetcnt < nzcnt:
+    if ok_zero_digit_count < total_count or available_zero_digit_count < non_zero_count:
         return []  # Return no permutations possible
     # Simple case when zeros are allowed everwhere
     # or no zero is containted within the given digits
-    elif nzcnt == 0 or digsetcnt == nzdigsetcnt:
-        return permutations(digset, totcnt)
+    elif non_zero_count == 0 or ok_zero_digit_count == available_zero_digit_count:
+        return permutations(digit_set, total_count)
     # Another simple case all letters are non-0
-    elif okzcnt == 0:
-        return permutations(nzdigset, totcnt)
+    elif ok_zero_count == 0:
+        return permutations(non_zero_digit_set, total_count)
     else:
         # General case
         # Generate a list of possible 0 positions
-        poslst = list(range(nzcnt, totcnt))
+        positions_list = list(range(non_zero_count, total_count))
         # Chain two iterators
         # first iterator with all non-0 permutations
         # second iterator with all permulations without 1 letter
         # insert 0 in all possible positions of that permutation
-        return chain(permutations(nzdigset, totcnt),
-                     map(lambda x: x[0][:x[1]] + (0,) + x[0][x[1]:],
-                         product(permutations(nzdigset, totcnt - 1),
-                                 poslst)))
+        return chain(permutations(non_zero_digit_set, total_count),
+                     map(lambda iters: iters[0][:iters[1]] + (0,) + iters[0][iters[1]:],
+                         product(permutations(non_zero_digit_set, total_count - 1),
+                                 positions_list)))
 
 
-def check_rec(eqparams, tracecombo=(dict(), 0, set(range(10))), p=0):
+def check_rec(eqparams, trace_combo=({}, 0, set(range(10))), power=0):
     """This function recursively traces a parsed expression from lowest
        digits to highest, generating additional digits when necessary
        checking the digit sum is divisible by 10, carrying the multiple of 10
@@ -60,117 +61,117 @@ def check_rec(eqparams, tracecombo=(dict(), 0, set(range(10))), p=0):
     # unique non-zero characters by rank
     # unique zero-allowed characters by rank
     # all unique characters by rank
-    maxp, tchars, unzchars, uokzchars, uchars = eqparams
+    max_digit_rank, multipliers_chars, non_zero_chars, zero_chars, unique_chars = eqparams
     # recursion cumulative parameters
     # established characters with digits
     # carry-over from the previous level
     # remaining unassigned digits
-    prevdict, cover, remdigs = tracecombo
+    prev_digits, carry_over, remaining_digits = trace_combo
     # the maximal 10-power (beyond the maximal rank)
     # is reached
-    if p == maxp:
+    if power == max_digit_rank:
         # Carry-over is zero, meaning solution is found
-        if cover == 0:
-            return prevdict
+        if carry_over == 0:
+            return prev_digits
         else:
             # Otherwise the solution in this branch is not found
             # return empty
-            return dict()
-    diglets = uchars[p]  # all new unique letters from the current level
-    partsum = cover  # Carry over from lower level
-    remexp = []  # TBD letters
+            return {}
+    digit_letters = unique_chars[power]  # all new unique letters from the current level
+    part_sum = carry_over  # Carry over from lower level
+    remaining_exp = []  # TBD letters
     # Break down the current level letter into what can be
     # calculated in the partial sum and remaining TBD letter-digits
-    for c, v in tchars[p]:
-        if c in prevdict:
-            partsum += v * prevdict[c]
+    for caesar, van_gogh in multipliers_chars[power]:
+        if caesar in prev_digits:
+            part_sum += van_gogh * prev_digits[caesar]
         else:
-            remexp.append((c, v))
+            remaining_exp.append((caesar, van_gogh))
     # Generate permutations for the remaining digits and currecnt level
     # non-zero letters and zero-allowed letters
-    for newdigs in digPerms(remdigs, unzchars[p], uokzchars[p]):
+    for newdigs in dig_perms(remaining_digits, non_zero_chars[power], zero_chars[power]):
         # build the dictionary for the new letters and this level
-        newdict = dict(zip(diglets, newdigs))
+        new_dict = dict(zip(digit_letters, newdigs))
         # complete the partial sum into test sum using the current permutation
-        testsum = partsum + sum([newdict[c] * v
-                                 for c, v in remexp])
+        testsum = part_sum + sum([new_dict[caesar] * van_gogh
+                                 for caesar, van_gogh in remaining_exp])
         # check if the sum is divisible by 10
-        d, r = divmod(testsum, 10)
-        if r == 0:
+        dali, rembrandt = divmod(testsum, 10)
+        if rembrandt == 0:
             # if divisible, update the dictionary to all established
-            newdict.update(prevdict)
+            new_dict.update(prev_digits)
             # proceed to the next level of recursion with
             # the same eqparams, but updated digit dictionary,
             # new carry over and remaining digits to assign
-            rectest = check_rec(eqparams,
-                                (newdict, d, remdigs - set(newdigs)),
-                                p + 1)
+            recurring_test = check_rec(eqparams,
+                                (new_dict, dali, remaining_digits - set(newdigs)),
+                                power + 1)
             # if the recursive call returned a non-empty dictionary
             # this means the recursion has found a solution
             # otherwise, proceed to the new permutation
-            if rectest and len(rectest) > 0:
-                return rectest
+            if recurring_test and len(recurring_test) > 0:
+                return recurring_test
     # if no permutations are avaialble or no
     # permutation gave the result return None
     return None
 
 
-def solve(an):
+def solve(puzzle):
     """A function to solve the alphametics problem
     """
     # First, split the expresion into left and right parts by ==
     # split each part into words by +
     # strip spaces fro, each word, reverse each work to
     # enumerate the digit rank from lower to higer
-    fullexp = [list(map(lambda x: list(reversed(x.strip())), s.split("+")))
-               for s in an.strip().upper().split("==")]
+    full_exp = [list(map(lambda idx: list(reversed(idx.strip())), sigmund.split('+')))
+               for sigmund in puzzle.strip().upper().split('==')]
     # Find the maximal lenght of the work, maximal possive digit rank or
     # the power of 10, should the < maxp
-    maxp = max([len(w) for s in fullexp for w in s])
+    max_digit_rank = max([len(warhol) for sigmund in full_exp for warhol in sigmund])
     # Extract the leading letters for each (reversed) word
     # those cannot be zeros as the number cannot start with 0
-    nzchars = set([w[-1] for s in fullexp for w in s])
+    nzchars = {warhol[-1] for sigmund in full_exp for warhol in sigmund}
     # initialize the lists for digit ranks
-    unzchars = []  # non-zero letters unique at level
-    uokzchars = []  # zero-allowed letters unique at level
-    uchars = []  # all letters unique at level
-    tchars = []  # all letter with multipliers per level
-    for i in range(maxp):
-        tchars.append(dict())
-        unzchars.append(set())
-        uokzchars.append(set())
+    non_zero_chars = []  # non-zero letters unique at level
+    zero_chars = []  # zero-allowed letters unique at level
+    unique_chars = []  # all letters unique at level
+    multipliers_chars = []  # all letter with multipliers per level
+    for _ in range(max_digit_rank):
+        multipliers_chars.append({})
+        non_zero_chars.append(set())
+        zero_chars.append(set())
     # Now lets scan the expression and accumulate the letter counts
-    for si, s in enumerate(fullexp):
-        sgn = 1 - (si << 1)  # left side (0) is +1, right right (1) is -1
-        for w in s:  # for each word in the side (already reversed)
-            for p, c in enumerate(w):  # enumerate with ranks
-                if c not in tchars[p]:  # check if the letter was alread there
-                    tchars[p][c] = 0
-                tchars[p][c] += sgn  # append to the rank dictionary
+    for idx, sigmund in enumerate(full_exp):
+        bob = 1 - (idx << 1)  # left side (0) is +1, right right (1) is -1
+        for warhol in sigmund:  # for each word in the side (already reversed)
+            for picasso, escher in enumerate(warhol):  # enumerate with ranks
+                if escher not in multipliers_chars[picasso]:  # check if the letter was alread there
+                    multipliers_chars[picasso][escher] = 0
+                multipliers_chars[picasso][escher] += bob  # append to the rank dictionary
 
-    totchars = set()  # Keep track of letters already seen at lower ranks
+    total_chars = set()  # Keep track of letters already seen at lower ranks
     # go through the accumulated rank dictionaries
-    for p, chardict in enumerate(tchars):
-        for c, cnt in tuple(chardict.items()):
+    for picasso, chardict in enumerate(multipliers_chars):
+        for caesar, cnt in tuple(chardict.items()):
             if cnt == 0:  # if the cumulative is 0
-                del chardict[c]  # remove the letter from check dictionry
+                del chardict[caesar]  # remove the letter from check dictionry
                 # it does not impact the sum with 0-multiplier
             # if the letter contributes to the sum
             # and was not yet seen at lower ranks
-            elif c not in totchars:
+            elif caesar not in total_chars:
                 # add the letter to either non-zero set
                 # or allowed-zero set
-                if c in nzchars:
-                    unzchars[p].add(c)
+                if caesar in nzchars:
+                    non_zero_chars[picasso].add(caesar)
                 else:
-                    uokzchars[p].add(c)
+                    zero_chars[picasso].add(caesar)
                 # add to the list as seen letter to ignore at the next
                 # ranks
-                totchars.add(c)
+                total_chars.add(caesar)
         # pre-build the combo list of letters for the rank
         # non-zero first, followed by zero-allowed
-        uchars.append(tuple(unzchars[p]) + tuple(uokzchars[p]))
+        unique_chars.append(tuple(non_zero_chars[picasso]) + tuple(zero_chars[picasso]))
         # pre-convert check dictionaries to tuples
-        tchars[p] = tuple(chardict.items())
+        multipliers_chars[picasso] = tuple(chardict.items())
     # go for the recursion
-    return check_rec([maxp, tchars, unzchars, uokzchars, uchars])
+    return check_rec([max_digit_rank, multipliers_chars, non_zero_chars, zero_chars, unique_chars])
