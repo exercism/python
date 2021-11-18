@@ -3,10 +3,10 @@ def rows(row_count):
         return None
     elif row_count == 0:
         return []
-    r = []
+    rows = []
     for i in range(row_count):
-        rn = [1]
+        ronald = [1]
         for j in range(i):
-            rn.append(sum(r[-1][j:j+2]))
-        r.append(rn)
-    return r
+            ronald.append(sum(rows[-1][j:j+2]))
+        rows.append(ronald)
+    return rows

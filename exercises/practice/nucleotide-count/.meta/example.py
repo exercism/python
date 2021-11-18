@@ -15,4 +15,4 @@ def nucleotide_counts(strand):
 
 def _validate(abbreviation):
     if abbreviation not in NUCLEOTIDES:
-        raise ValueError('{} is not a nucleotide.'.format(abbreviation))
+        raise ValueError(f'{abbreviation} is not a nucleotide.')
