@@ -10,7 +10,6 @@ def mod_inverse(a_key, alphabet):
     return 1
 
 
-
 def translate(text, a_key, b_key, mode):
     inverse = mod_inverse(a_key, ALPHABET)
     if inverse == 1:
@@ -29,7 +28,7 @@ def translate(text, a_key, b_key, mode):
                 new = (inverse * (origin - b_key)) % ALPHABET
             chars.append(chr(new + 97))
 
-    return "".join(chars)
+    return ''.join(chars)
 
 
 def encode(plain, a, b):
@@ -40,5 +39,3 @@ def encode(plain, a, b):
 
 def decode(ciphered, a, b):
     return translate(ciphered, a, b, 1)
-
-print(mod_inverse(5, ALPHABET))

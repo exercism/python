@@ -27,9 +27,9 @@ def _next_bottle(current_verse):
 
 def _bottles(number):
     if number == 0:
-        return "no more bottles"
+        return 'no more bottles'
     if number == 1:
-        return "1 bottle"
+        return '1 bottle'
     else:
         return f'{number} bottles'
 

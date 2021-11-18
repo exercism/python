@@ -9,7 +9,6 @@ def base_trans(text):
     return ''.join([character for character in text if character.isalnum()]).lower().translate(trtbl)
 
 
-
 def encode(plain):
     cipher = base_trans(plain)
     return ' '.join(cipher[idx:idx + BLOCK_SIZE]
