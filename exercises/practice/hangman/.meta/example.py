@@ -1,6 +1,6 @@
-STATUS_WIN = "win"
-STATUS_LOSE = "lose"
-STATUS_ONGOING = "ongoing"
+STATUS_WIN = 'win'
+STATUS_LOSE = 'lose'
+STATUS_ONGOING = 'ongoing'
 
 
 class Hangman:
@@ -10,12 +10,12 @@ class Hangman:
         self.word = word
         self.masked_word = ''
         self.guesses = []
-        for i in self.word:
+        for _ in self.word:
             self.masked_word += '_'
 
     def guess(self, char):
         if self.status != STATUS_ONGOING:
-            raise ValueError("The game has already ended.")
+            raise ValueError('The game has already ended.')
 
         self.update_remaining_guesses(char)
         self.update_masked_word()
@@ -23,11 +23,11 @@ class Hangman:
 
     def update_masked_word(self):
         self.masked_word = ''
-        for i in self.word:
-            if i not in self.guesses:
+        for idx in self.word:
+            if idx not in self.guesses:
                 self.masked_word += '_'
             else:
-                self.masked_word += i
+                self.masked_word += idx
 
     def update_remaining_guesses(self, char):
         if char not in self.word or char in self.guesses:
