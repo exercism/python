@@ -1,23 +1,28 @@
 # Tests
 
-- [Tests](#tests)
-  - [Pytest](#pytest)
-    - [Installing pytest Globally](#installing-pytest-globally)
-      - [Windows](#windows)
-      - [Linux / MacOS](#linux--macos)
-      - [Installing pytest within a virtual environment](#installing-pytest-within-a-virtual-environment)
-    - [Running the tests](#running-the-tests)
-      - [Failures](#failures)
-    - [Extra arguments](#extra-arguments)
-      - [Stop After First Failure [`-x`]](#stop-after-first-failure--x)
-      - [Failed Tests First [`--ff`]](#failed-tests-first---ff)
-      - [Recommended Workflow](#recommended-workflow)
-      - [Using PDB, the Python Debugger, with pytest](#using-pdb-the-python-debugger-with-pytest)
-  - [Extending your IDE](#extending-your-ide)
-  - [Additional information](#additional-information)
-    - [Adding pytest to your PATH](#adding-pytest-to-your-path)
-      - [Windows](#windows-1)
-    - [Fixing warnings](#fixing-warnings)
+We use [pytest](http://pytest.org/en/latest/) as our website test runner.
+You will need to install pytest on your development machine if you want to download and run exercise tests for the Python track locally.
+We also recommend you install the following pytest plugins:
+
+- [pytest-cache](http://pythonhosted.org/pytest-cache/)
+- [pytest-subtests](https://github.com/pytest-dev/pytest-subtests)
+- [pytest-pylint](https://github.com/carsongee/pytest-pylint)
+
+The PyTest [Getting Started Guide](https://docs.pytest.org/en/latest/getting-started.html) has quick general instructions, although they do not cover installing the plugins.
+Continue reading below for more detailed instructions.
+
+We also recommend using [pylint](https://pylint.pycqa.org/en/latest/user_guide/), as it is part of our automated feedback on the website, and can be a very useful (but also noisy) code analysis tool.
+
+Pylint can be a bit much, so this [tutorial from pycqa.orgl](https://pylint.pycqa.org/en/latest/tutorial.html) can be helpful for getting started, as can this overview of [Code Quality: Tools and Best Practices](https://realpython.com/python-code-quality/) from Real Python.
+
+---
+
+- [Pytest](#pytest)
+  - [Installing pytest](#installing-pytest)
+  - [Running the tests](#running-the-tests)
+  - [Extra arguments](#extra-arguments)
+- [Extending your IDE](#extending-your-ide)
+- [Additional information](#additional-information)
 
 ---
 
@@ -27,7 +32,7 @@ _Official pytest documentation can be found on the [pytest Wiki](https://pytest.
 
 Pytest lets you test your solutions using our provided tests, and is what we use to validate your solutions on the website.
 
-### Installing pytest Globally
+### Installing pytest
 
 Pytest can be installed and updated using the built-in Python utility `pip`.
 
@@ -46,7 +51,7 @@ Successfully installed pytest-6.2.5 ...
 
 ```
 
-To check if the installation was succesful:
+To check if the installation was successful:
 
 ```bash
 $ python3 -m pytest --version
@@ -57,9 +62,9 @@ If you do not want to precede every command with `python3 -m` please refer to [a
 
 #### Installing pytest within a virtual environment
 
-*For more information about virtual environments please refer to the [TOOLS](./TOOLS.md) file.*
+_For more information about virtual environments please refer to the [tools](./tools) file._
 
-When installing pytest or any other module(s), make sure that you have [activated your environment](.\TOOLS.md#activating-your-virtual-environment). After which you can run:
+When installing pytest or any other module(s), make sure that you have [activated your environment](./tools#activating-your-virtual-environment). After which you can run:
 
 ```bash
 $ pip install pytest pytest-cache pytest-subtests pytest-pylint
@@ -150,7 +155,7 @@ This will test your solution. When `pytest` encounters a failed test, the progra
 
 #### Using PDB, the Python Debugger, with pytest
 
-If you want to truly debug like a pro, use the `--pdb` argument after the `pytest` command. 
+If you want to truly debug like a pro, use the `--pdb` argument after the `pytest` command.
 
 ```bash
 $ python3 -m pytest --pdb bob_test.py
@@ -161,13 +166,13 @@ When a test fails, `PDB` allows you to look at variables and how your code respo
 
 ## Extending your IDE
 
-If you'd like to extend your IDE with some tools that will help you with testing and improving your code, check the [TOOLS](./TOOLS.md) page. We go into multiple IDEs, editors and some useful extensions.
+If you'd like to extend your IDE with some tools that will help you with testing and improving your code, check the [tools](./tools) page. We go into multiple IDEs, editors and some useful extensions.
 
 ## Additional information
 
 ### Adding pytest to your PATH
 
-**Note:** If you are running a [virtual environment](.\TOOLS.md) you do not need to *add to path* as it should work fine.
+**Note:** If you are running a [virtual environment](./tools.md) you do not need to _add to path_ as it should work fine.
 
 Typing `python3 -m` every time you want to run a module can get a little annoying. You can add the `Scripts` folder of your Python installation to your path. If you do not know where you have installed Python, run the following command in your terminal:
 
@@ -176,15 +181,15 @@ $ python3 -c "import os, sys; print(os.path.dirname(sys.executable))"
 {python_directory}
 ```
 
-The *returned* directory is where your Python version is installed, in this tutorial it is referred to as `{python_directory}`.
+The _returned_ directory is where your Python version is installed, in this tutorial it is referred to as `{python_directory}`.
 
 #### Windows
 
-Click the `Windows Start` button and lookup *Edit the system environment variables* and press enter. Next press, `Environment Variables...`:
+Click the `Windows Start` button and lookup _Edit the system environment variables_ and press enter. Next press, `Environment Variables...`:
 
 ![Press the blue button, lol](https://raw.githubusercontent.com/exercism/python/main/docs/img/Windows-SystemProperties.png)
 
-Then find the `Path` variable in your *User variables*, select it, and click `Edit...`:
+Then find the `Path` variable in your _User variables_, select it, and click `Edit...`:
 
 ![Selecting the path variable](https://raw.githubusercontent.com/exercism/python/main/docs/img/Windows-EnvironmentVariables.png)
 
@@ -202,10 +207,10 @@ You can also create your own file with the following content:
 
 ```ini
 [pytest]
-markers = 
+markers =
     task: A concept exercise task.
 ```
 
-Whenever you run your tests, make sure that this file is in your _root_ or _working_ directory.
+Whenever you run your tests, make sure that this file is in your _root_ or _working_ directory for Exercism exercises.
 
 _More information on customizing pytest can be found in the [PyTest docs](https://docs.pytest.org/en/6.2.x/customize.html#pytest-ini)_

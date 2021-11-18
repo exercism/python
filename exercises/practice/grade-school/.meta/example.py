@@ -16,10 +16,6 @@ class School:
         if not self.db.get(name, 0):
             self.db[name] = grade
             self.add.append(True)
-
-        elif self.db[name] > grade:
-            self.db[name] = grade
-
         else:
             self.add.append(False)
 

@@ -1,10 +1,9 @@
 
 class ConnectGame:
 
-    directions = [(0, 1), (0, -1), (1, 0), (-1, 0), (1, -1), (-1, 1)]
-    white = "O"
-    black = "X"
-    none = ""
+    DIRECTIONS = [(0, 1), (0, -1), (1, 0), (-1, 0), (1, -1), (-1, 1)]
+    WHITE = 'O'
+    BLACK = 'X'
 
     def __init__(self, lines):
         self.board = ConnectGame.make_board(lines)
@@ -14,49 +13,54 @@ class ConnectGame:
         self.height = len(self.board)
         assert self.width > 0 and self.height > 0
 
-        for l in self.board:
-            assert len(l) == self.width
+        for line in self.board:
+            assert len(line) == self.width
 
-    def valid(self, x, y):
-        return 0 <= x < self.width and 0 <= y < self.height
+    def valid(self, width, height):
+        return 0 <= width < self.width and 0 <= height < self.height
 
     @staticmethod
     def make_board(lines):
-        return ["".join(l.split()) for l in lines.splitlines()]
+        return [''.join(cur_line.split()) for cur_line in lines.splitlines()]
 
-    def player_reach_dest(self, player, x, y):
-        if player == self.black:
-            return x == self.width - 1
-        if player == self.white:
-            return y == self.height - 1
+    def player_reach_dest(self, player, width, height):
+        if player == self.BLACK:
+            return width == self.width - 1
+        if player == self.WHITE:
+            return height == self.height - 1
+        return None
 
-    def walk_board(self, player, x, y, visited=[]):
-        if (x, y) in visited:
+    def walk_board(self, player, width, height, visited=None):
+        if not visited:
+            visited = []
+        if (width, height) in visited:
             return False
 
-        if (not self.valid(x, y)) or self.board[y][x] != player:
+        if (not self.valid(width, height)) or self.board[height][width] != player:
             return False
 
-        if self.player_reach_dest(player, x, y):
+        if self.player_reach_dest(player, width, height):
             return True
 
-        for d in self.directions:
-            if self.walk_board(player, x + d[0], y + d[1], visited + [(x, y)]):
+        for vector in self.DIRECTIONS:
+            if self.walk_board(player, width + vector[0], height + vector[1], visited + [(width, height)]):
                 return True
+        return None
 
     def check_player_is_winner(self, player):
-        if player == self.black:
-            for y in range(self.height):
-                if self.walk_board(player, 0, y):
+        if player == self.BLACK:
+            for height in range(self.height):
+                if self.walk_board(player, 0, height):
                     return True
-        if player == self.white:
-            for x in range(self.width):
-                if self.walk_board(player, x, 0):
+        if player == self.WHITE:
+            for width in range(self.width):
+                if self.walk_board(player, width, 0):
                     return True
+        return None
 
     def get_winner(self):
-        if self.check_player_is_winner(self.black):
-            return self.black
-        if self.check_player_is_winner(self.white):
-            return self.white
-        return self.none
+        if self.check_player_is_winner(self.BLACK):
+            return self.BLACK
+        if self.check_player_is_winner(self.WHITE):
+            return self.WHITE
+        return ''

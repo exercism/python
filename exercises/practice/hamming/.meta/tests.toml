@@ -26,6 +26,7 @@ description = "long different strands"
 
 [919f8ef0-b767-4d1b-8516-6379d07fcb28]
 description = "disallow first strand longer"
+include = false
 
 [b9228bb1-465f-4141-b40f-1f99812de5a8]
 description = "disallow first strand longer"
@@ -33,6 +34,7 @@ reimplements = "919f8ef0-b767-4d1b-8516-6379d07fcb28"
 
 [8a2d4ed0-ead5-4fdd-924d-27c4cf56e60e]
 description = "disallow second strand longer"
+include = false
 
 [dab38838-26bb-4fff-acbe-3b0a9bfeba2d]
 description = "disallow second strand longer"
@@ -40,10 +42,12 @@ reimplements = "8a2d4ed0-ead5-4fdd-924d-27c4cf56e60e"
 
 [5dce058b-28d4-4ca7-aa64-adfe4e17784c]
 description = "disallow left empty strand"
+include = false
 
 [db92e77e-7c72-499d-8fe6-9354d2bfd504]
 description = "disallow left empty strand"
 reimplements = "5dce058b-28d4-4ca7-aa64-adfe4e17784c"
+include = false
 
 [b764d47c-83ff-4de2-ab10-6cfe4b15c0f3]
 description = "disallow empty first strand"
@@ -51,6 +55,7 @@ reimplements = "db92e77e-7c72-499d-8fe6-9354d2bfd504"
 
 [38826d4b-16fb-4639-ac3e-ba027dec8b5f]
 description = "disallow right empty strand"
+include = false
 
 [920cd6e3-18f4-4143-b6b8-74270bb8f8a3]
 description = "disallow right empty strand"

@@ -2,7 +2,7 @@ def find_fewest_coins(coins, target):
     if target < 0:
         raise ValueError("target can't be negative")
     min_coins_required = [1e9] * (target + 1)
-    last_coin = [0]*(target + 1)
+    last_coin = [0] * (target + 1)
     min_coins_required[0] = 0
     last_coin[0] = -1
     for change in range(1, target + 1):
@@ -19,7 +19,7 @@ def find_fewest_coins(coins, target):
     else:
         last_coin_value = target
         array = []
-        while(last_coin[last_coin_value] != -1):
+        while last_coin[last_coin_value] != -1:
             array.append(last_coin_value-last_coin[last_coin_value])
             last_coin_value = last_coin[last_coin_value]
         return array
