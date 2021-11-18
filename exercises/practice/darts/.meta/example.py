@@ -1,6 +1,6 @@
 from math import sqrt
 
-
+# X, and Y variable names against [pylint]: C0104, but is the same as the stub, advise not to change this.
 def score(x, y):
     dart_location = sqrt(x * x + y * y)
 
