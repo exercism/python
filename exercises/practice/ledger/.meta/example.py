@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime
 
-ROW_FMT = u'{{:<{1}}} | {{:<{2}}} | {{:{0}{3}}}'
+ROW_FMT = '{{:<{1}}} | {{:<{2}}} | {{:{0}{3}}}'
 
 
 def truncate(s, length=25):
@@ -16,7 +16,7 @@ class LCInfo:
         if locale == 'en_US':
             headers = ['Date', 'Description', 'Change']
             self.datefmt = '{0.month:02}/{0.day:02}/{0.year:04}'
-            self.cur_fmt = u'{}{}{}{}'
+            self.cur_fmt = '{}{}{}{}'
             self.lead_neg = '('
             self.trail_neg = ')'
             self.thousands = ','
@@ -24,7 +24,7 @@ class LCInfo:
         elif locale == 'nl_NL':
             headers = ['Datum', 'Omschrijving', 'Verandering']
             self.datefmt = '{0.day:02}-{0.month:02}-{0.year:04}'
-            self.cur_fmt = u'{1} {0}{2}{3}'
+            self.cur_fmt = '{1} {0}{2}{3}'
             self.lead_neg = '-'
             self.trail_neg = ' '
             self.thousands = '.'
@@ -33,15 +33,15 @@ class LCInfo:
         self.headers = fmt.format(*headers)
         self.cur_symbol = {
             'USD': '$',
-            'EUR': u'€',
+            'EUR': '€',
         }.get(currency)
 
     def number(self, n):
         n_int, n_float = divmod(abs(n), 100)
         n_int_parts = []
         while n_int > 0:
-            n_int, x = divmod(n_int, 1000)
-            n_int_parts.insert(0, str(x))
+            n_int, idx = divmod(n_int, 1000)
+            n_int_parts.insert(0, str(idx))
         return '{}{}{:02}'.format(
             self.thousands.join(n_int_parts) or '0',
             self.decimal,
