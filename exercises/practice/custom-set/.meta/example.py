@@ -1,6 +1,6 @@
 class CustomSet:
-    def __init__(self, elements=[]):
-        self.elements = list(elements)
+    def __init__(self, elements=None):
+        self.elements = list(elements) if elements is not None else list([])
 
     def isempty(self):
         return not self.elements
@@ -12,10 +12,10 @@ class CustomSet:
         return element in self.elements
 
     def issubset(self, other):
-        return all(x in other for x in self)
+        return all(idx in other for idx in self)
 
     def isdisjoint(self, other):
-        return all(x not in other for x in self)
+        return all(idx not in other for idx in self)
 
     def __eq__(self, other):
         return self.issubset(other) and other.issubset(self)
@@ -26,20 +26,20 @@ class CustomSet:
 
     def intersection(self, other):
         result = CustomSet()
-        for x in self:
-            if x in other:
-                result.add(x)
+        for idx in self:
+            if idx in other:
+                result.add(idx)
         return result
 
     def __sub__(self, other):
         result = CustomSet()
-        for x in self:
-            if x not in other:
-                result.add(x)
+        for idx in self:
+            if idx not in other:
+                result.add(idx)
         return result
 
     def __add__(self, other):
         result = CustomSet(self.elements)
-        for x in other:
-            result.add(x)
+        for idx in other:
+            result.add(idx)
         return result
