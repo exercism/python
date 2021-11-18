@@ -200,7 +200,7 @@ comment:
         <details open>
           <summary>⚠️ &nbsp;<b>Please be aware</b>&nbsp;⚠️ </summary>
 
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_This repo does not generally accept []Pull Requests](https://github.com/exercism/docs/blob/main/community/good-member/pull-requests.md) unless they follow our [contributing guidelines](https://github.com/exercism/python/blob/main/CONTRIBUTING.md) and are:_
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_This repo does not generally accept [Pull Requests](https://github.com/exercism/docs/blob/main/community/good-member/pull-requests.md) unless they follow our [contributing guidelines](https://github.com/exercism/python/blob/main/CONTRIBUTING.md) and are:_
 
           &nbsp;&nbsp;&nbsp;&nbsp; 1️⃣ &nbsp;&nbsp;&nbsp; Small, contained fixes for typos/grammar/punctuation/code syntax on [one] exercise,
           &nbsp;&nbsp;&nbsp;&nbsp; 2️⃣ &nbsp;&nbsp;&nbsp;&nbsp;Medium changes that have been agreed/discussed via a filed issue,

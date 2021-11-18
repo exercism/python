@@ -5,8 +5,7 @@ class TreeNode:
         self.right = right
 
     def __str__(self):
-        fmt = "TreeNode(data={}, left={}, right={})"
-        return fmt.format(self.data, self.left, self.right)
+        return f'TreeNode(data={self.data}, left={self.left}, right={self.right})'
 
 
 class BinarySearchTree:
