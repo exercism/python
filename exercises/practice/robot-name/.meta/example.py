@@ -1,16 +1,14 @@
 import random
 
-
+ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 class Robot:
-    alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-
     def __init__(self):
         self._name = None
         self._past_names = set()
 
     def prefix(self):
         return ''.join([
-            random.choice(self.alphabet)
+            random.choice(ALPHABET)
             for _ in range(0, 2)
         ])
 

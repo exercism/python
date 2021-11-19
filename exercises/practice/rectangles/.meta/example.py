@@ -2,34 +2,36 @@ import itertools
 
 
 class Corners:
-    def __init__(self, i, j):
+    def __init__(self, idx, jdx):
         # i, j are position of corner
-        self.i = i
-        self.j = j
+        self.idx = idx
+        self.jdx = jdx
 
     def __str__(self):
-        return "[" + str(self.i) + ", " + str(self.j) + "]"
+        return '[' + str(self.idx) + ', ' + str(self.jdx) + ']'
 
 
 # return corner on the same line
-def same_line(index, list):
-    for corner in list:
-        if corner.i == index:
+def same_line(index, list_obj):
+    for corner in list_obj:
+        if corner.idx == index:
             return corner
+    return None
 
 
 # return corner on the same column
-def same_col(index, list):
-    for corner in list:
-        if corner.j == index:
+def same_col(index, list_obj):
+    for corner in list_obj:
+        if corner.jdx == index:
             return corner
+    return None
 
 
-def search_corners(input):
+def search_corners(list_obj):
 
-    return [Corners(item, element) for item in range(len(input))
-            for element in range(len(input[item]))
-            if (input[item][element] == "+")]
+    return [Corners(item, element) for item in range(len(list_obj))
+            for element in range(len(list_obj[item]))
+            if list_obj[item][element] == '+']
 
 
 # validate that 4 points form a rectangle by
@@ -39,54 +41,54 @@ def possible_rect(quartet):
     mid_y = 0
 
     for centroid in quartet:
-        mid_x = mid_x + centroid.i / 4.0
-        mid_y = mid_y + centroid.j / 4.0
+        mid_x = mid_x + centroid.idx / 4.0
+        mid_y = mid_y + centroid.jdx / 4.0
 
     # reference distance using first corner
-    dx = abs(quartet[0].i - mid_x)
-    dy = abs(quartet[0].j - mid_y)
+    dx = abs(quartet[0].idx - mid_x)
+    dy = abs(quartet[0].jdx - mid_y)
 
     # Check all the same distance from centroid are equals
-    for i in range(1, len(quartet)):
-        if abs(quartet[i].i - mid_x) != dx or abs(quartet[i].j - mid_y) != dy:
+    for idx in range(1, len(quartet)):
+        if abs(quartet[idx].idx - mid_x) != dx or abs(quartet[idx].jdx - mid_y) != dy:
             return False
     return True
 
 
 # validate path between two corners
-def path(corner1, corner2, input):
-    if corner1.i == corner2.i:
-        for j in range(min(corner1.j + 1, corner2.j + 1),
-                       max(corner1.j, corner2.j)):
-            if input[corner1.i][j] != "-" and input[corner1.i][j] != "+":
+def path(corner1, corner2, item):
+    if corner1.idx == corner2.idx:
+        for jdx in range(min(corner1.jdx + 1, corner2.jdx + 1),
+                       max(corner1.jdx, corner2.jdx)):
+            if item[corner1.idx][jdx] != '-' and item[corner1.idx][jdx] != '+':
                 return False
         return True
 
-    elif corner1.j == corner2.j:
-        for i in range(min(corner1.i + 1, corner2.i + 1),
-                       max(corner1.i, corner2.i)):
-            if input[i][corner1.j] != "|" and input[i][corner1.j] != "+":
+    elif corner1.jdx == corner2.jdx:
+        for idx in range(min(corner1.idx + 1, corner2.idx + 1),
+                       max(corner1.idx, corner2.idx)):
+            if item[idx][corner1.jdx] != '|' and item[idx][corner1.jdx] != '+':
                 return False
         return True
+    return None
 
 
 # validate path of rectangle
-def validate_rect(rectangle, input):
+def validate_rect(rectangle, item):
     # validate connection at every corner
     # with neighbours on the same line and col
-    for i in range(0, len(rectangle)):
-        line = same_line(rectangle[i].i, rectangle[0:i] + rectangle[i + 1:])
-        column = same_col(rectangle[i].j, rectangle[0:i] + rectangle[i + 1:])
+    for idx, _ in enumerate(rectangle):
+        line = same_line(rectangle[idx].idx, rectangle[0:idx] + rectangle[idx + 1:])
+        column = same_col(rectangle[idx].jdx, rectangle[0:idx] + rectangle[idx + 1:])
 
-        if ((not path(rectangle[i], line, input)) or
-                (not path(rectangle[i], column, input))):
+        if not path(rectangle[idx], line, item) or not path(rectangle[idx], column, item):
             return False
 
     return True
 
 
 # count number of rectangles inside ASCII in input lines
-def rectangles(strings=""):
+def rectangles(strings=''):
     rectangle_total = 0
     # test empty str
     if not strings:
@@ -95,7 +97,7 @@ def rectangles(strings=""):
     corners = search_corners(strings)
 
     # no corners in str
-    if not len(corners):
+    if not corners:
         return rectangle_total
 
     # all combinations of 4 corners
@@ -103,7 +105,7 @@ def rectangles(strings=""):
     paths = (quartet for quartet in quartets if possible_rect(quartet))
 
     # validate paths
-    for path in paths:
-        if validate_rect(path, strings):
+    for idx in paths:
+        if validate_rect(idx, strings):
             rectangle_total += 1
     return rectangle_total

@@ -15,20 +15,20 @@ class Compass:
 
 
 class Robot:
-    def __init__(self, direction=NORTH, x=0, y=0):
+    def __init__(self, direction=NORTH, x_pos=0, y_pos=0):
         self.compass = Compass(direction)
-        self.x = x
-        self.y = y
+        self.x_pos = x_pos
+        self.y_pos = y_pos
 
     def advance(self):
         if self.direction == NORTH:
-            self.y += 1
+            self.y_pos += 1
         elif self.direction == SOUTH:
-            self.y -= 1
+            self.y_pos -= 1
         elif self.direction == EAST:
-            self.x += 1
+            self.x_pos += 1
         elif self.direction == WEST:
-            self.x -= 1
+            self.x_pos -= 1
 
     def turn_left(self):
         self.compass.left()
@@ -50,4 +50,4 @@ class Robot:
 
     @property
     def coordinates(self):
-        return (self.x, self.y)
+        return (self.x_pos, self.y_pos)
