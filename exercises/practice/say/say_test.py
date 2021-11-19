@@ -53,21 +53,19 @@ class SayTest(unittest.TestCase):
         )
 
     def test_numbers_below_zero_are_out_of_range(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             say(-1)
 
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "input out of range")
+
     def test_numbers_above_999_999_999_999_are_out_of_range(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             say(1000000000000)
+
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "input out of range")
 
     # Additional tests for this track
     def test_one_hundred_seventy(self):
         self.assertEqual(say(170), "one hundred seventy")
-
-    # Utility functions
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
-
-if __name__ == "__main__":
-    unittest.main()

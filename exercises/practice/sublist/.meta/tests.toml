@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [97319c93-ebc5-47ab-a022-02a1980e1d29]
 description = "empty lists"
@@ -46,6 +53,9 @@ description = "first list missing element from second list"
 
 [83ffe6d8-a445-4a3c-8795-1e51a95e65c3]
 description = "second list missing element from first list"
+
+[7bc76cb8-5003-49ca-bc47-cdfbe6c2bb89]
+description = "first list missing additional digits from second list"
 
 [0d7ee7c1-0347-45c8-9ef5-b88db152b30b]
 description = "order matters to a list"

@@ -2,8 +2,8 @@ from itertools import permutations
 from functools import reduce
 
 
-def swap(a, b):
-    return (b, a)
+def swap(item_1, item_2):
+    return (item_2, item_1)
 
 
 def build_chain(chain, domino):

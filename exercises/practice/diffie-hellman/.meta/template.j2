@@ -33,5 +33,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         self.assertEqual({{ expected }}, {{ property }}({% for key in input.keys() %}{{ key | to_snake }},{% endfor %}))
     {%- endif -%}
     {% endfor %}
-
-{{ macros.footer() }}

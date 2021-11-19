@@ -41,5 +41,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         number = Luhn("055 444 285")
         self.assertIs(number.valid(), True)
         self.assertIs(number.valid(), True)
-
-{{ macros.footer() }}

@@ -10,9 +10,9 @@ PER_GROUP = {
 }
 
 
-def _total(books):
-    volumes = Counter(books)
-    price = len(books) * PER_BOOK
+def _total(basket):
+    volumes = Counter(basket)
+    price = len(basket) * PER_BOOK
     for size in range(len(volumes), 1, -1):
         group = volumes - Counter(k for k, _ in volumes.most_common(size))
         group_books = sorted(group.elements())
@@ -20,7 +20,7 @@ def _total(books):
     return price
 
 
-def total(books):
-    if not books:
+def total(basket):
+    if not basket:
         return 0
-    return _total(sorted(books))
+    return _total(sorted(basket))

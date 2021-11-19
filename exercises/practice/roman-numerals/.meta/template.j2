@@ -5,5 +5,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     def test_{{ case["description"] | to_snake }}(self):
         self.assertEqual({{ case["property"] }}({{ case["input"]["number"] }}), "{{ case["expected"] }}")
     {% endfor %}
-
-{{ macros.footer(True) }}

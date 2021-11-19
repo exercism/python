@@ -108,8 +108,10 @@ class TreeBuildingTest(unittest.TestCase):
             Record(1, 0)
         ]
         # Root parent_id should be equal to record_id(0)
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             BuildTree(records)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "Node record_id should be smaller than it's parent_id.")
 
     def test_no_root_node(self):
         records = [
@@ -117,8 +119,10 @@ class TreeBuildingTest(unittest.TestCase):
             Record(2, 0)
         ]
         # Record with record_id 0 (root) is missing
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             BuildTree(records)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "Record id is invalid or out of order.")
 
     def test_non_continuous(self):
         records = [
@@ -128,8 +132,10 @@ class TreeBuildingTest(unittest.TestCase):
             Record(0, 0)
         ]
         # Record with record_id 3 is missing
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             BuildTree(records)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "Record id is invalid or out of order.")
 
     def test_cycle_directly(self):
         records = [
@@ -142,8 +148,10 @@ class TreeBuildingTest(unittest.TestCase):
             Record(6, 3)
         ]
         # Cycle caused by Record 2 with parent_id pointing to itself
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             BuildTree(records)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "Only root should have equal record and parent id.")
 
     def test_cycle_indirectly(self):
         records = [
@@ -156,8 +164,10 @@ class TreeBuildingTest(unittest.TestCase):
             Record(6, 3)
         ]
         # Cycle caused by Record 2 with parent_id(6) greater than record_id(2)
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             BuildTree(records)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "Node record_id should be smaller than it's parent_id.")
 
     def test_higher_id_parent_of_lower_id(self):
         records = [
@@ -166,8 +176,10 @@ class TreeBuildingTest(unittest.TestCase):
             Record(1, 2)
         ]
         # Record 1 have parent_id(2) greater than record_id(1)
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             BuildTree(records)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "Node record_id should be smaller than it's parent_id.")
 
     def assert_node_is_branch(self, node, node_id, children_count):
         self.assertEqual(node.node_id, node_id)
@@ -177,11 +189,3 @@ class TreeBuildingTest(unittest.TestCase):
     def assert_node_is_leaf(self, node, node_id):
         self.assertEqual(node.node_id, node_id)
         self.assertEqual(len(node.children), 0)
-
-    # Utility functions
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
-
-if __name__ == '__main__':
-    unittest.main()

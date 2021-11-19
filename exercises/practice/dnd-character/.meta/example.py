@@ -13,9 +13,7 @@ class Character:
         self.hitpoints = 10 + modifier(self.constitution)
 
     def ability(self):
-        dice_rolls = sorted(
-            [random.randint(1, 6)
-                for _ in range(4)])
+        dice_rolls = sorted(random.randint(1, 6) for _ in range(4))
         return sum(dice_rolls[1:])
 
 

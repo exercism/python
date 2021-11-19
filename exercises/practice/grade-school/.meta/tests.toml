@@ -1,24 +1,86 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
-
-[6d0a30e4-1b4e-472e-8e20-c41702125667]
-description = "Adding a student adds them to the sorted roster"
-
-[233be705-dd58-4968-889d-fb3c7954c9cc]
-description = "Adding more student adds them to the sorted roster"
-
-[75a51579-d1d7-407c-a2f8-2166e984e8ab]
-description = "Adding students to different grades adds them to the same sorted roster"
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [a3f0fb58-f240-4723-8ddc-e644666b85cc]
-description = "Roster returns an empty list if there are no students enrolled"
+description = "Roster is empty when no student is added"
+
+[9337267f-7793-4b90-9b4a-8e3978408824]
+description = "Add a student"
+
+[6d0a30e4-1b4e-472e-8e20-c41702125667]
+description = "Student is added to the roster"
+
+[73c3ca75-0c16-40d7-82f5-ed8fe17a8e4a]
+description = "Adding multiple students in the same grade in the roster"
+
+[233be705-dd58-4968-889d-fb3c7954c9cc]
+description = "Multiple students in the same grade are added to the roster"
+
+[87c871c1-6bde-4413-9c44-73d59a259d83]
+description = "Cannot add student to same grade in the roster more than once"
+
+[c125dab7-2a53-492f-a99a-56ad511940d8]
+description = "A student can't be in two different grades"
+include = false
+
+[a0c7b9b8-0e89-47f8-8b4a-c50f885e79d1]
+description = "A student can only be added to the same grade in the roster once"
+include = false
+reimplements = "c125dab7-2a53-492f-a99a-56ad511940d8"
+
+[d7982c4f-1602-49f6-a651-620f2614243a]
+description = "Student not added to same grade in the roster more than once"
+reimplements = "a0c7b9b8-0e89-47f8-8b4a-c50f885e79d1"
+
+[e70d5d8f-43a9-41fd-94a4-1ea0fa338056]
+description = "Adding students in multiple grades"
+
+[75a51579-d1d7-407c-a2f8-2166e984e8ab]
+description = "Students in multiple grades are added to the roster"
+
+[7df542f1-57ce-433c-b249-ff77028ec479]
+description = "Cannot add same student to multiple grades in the roster"
+
+[6a03b61e-1211-4783-a3cc-fc7f773fba3f]
+description = "A student cannot be added to more than one grade in the sorted roster"
+include = false
+reimplements = "c125dab7-2a53-492f-a99a-56ad511940d8"
+
+[c7ec1c5e-9ab7-4d3b-be5c-29f2f7a237c5]
+description = "Student not added to multiple grades in the roster"
+reimplements = "6a03b61e-1211-4783-a3cc-fc7f773fba3f"
+
+[d9af4f19-1ba1-48e7-94d0-dabda4e5aba6]
+description = "Students are sorted by grades in the roster"
+
+[d9fb5bea-f5aa-4524-9d61-c158d8906807]
+description = "Students are sorted by name in the roster"
 
 [180a8ff9-5b94-43fc-9db1-d46b4a8c93b6]
-description = "Student names with grades are displayed in the same sorted roster"
-
-[1bfbcef1-e4a3-49e8-8d22-f6f9f386187e]
-description = "Grade returns the students in that grade in alphabetical order"
+description = "Students are sorted by grades and then by name in the roster"
 
 [5e67aa3c-a3c6-4407-a183-d8fe59cd1630]
-description = "Grade returns an empty list if there are no students in that grade"
+description = "Grade is empty if no students in the roster"
+
+[1e0cf06b-26e0-4526-af2d-a2e2df6a51d6]
+description = "Grade is empty if no students in that grade"
+
+[2bfc697c-adf2-4b65-8d0f-c46e085f796e]
+description = "Student not added to same grade more than once"
+
+[66c8e141-68ab-4a04-a15a-c28bc07fe6b9]
+description = "Student not added to multiple grades"
+
+[c9c1fc2f-42e0-4d2c-b361-99271f03eda7]
+description = "Student not added to other grade for multiple grades"
+
+[1bfbcef1-e4a3-49e8-8d22-f6f9f386187e]
+description = "Students are sorted by name in a grade"

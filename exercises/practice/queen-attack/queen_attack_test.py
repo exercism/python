@@ -13,20 +13,28 @@ class QueenAttackTest(unittest.TestCase):
         Queen(2, 2)
 
     def test_queen_must_have_positive_row(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             Queen(-2, 2)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "row not positive")
 
     def test_queen_must_have_row_on_board(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             Queen(8, 4)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "row not on board")
 
     def test_queen_must_have_positive_column(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             Queen(2, -2)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "column not positive")
 
     def test_queen_must_have_column_on_board(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             Queen(4, 8)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "column not on board")
 
     # Test the ability of one queen to attack another
     def test_cannot_attack(self):
@@ -52,13 +60,10 @@ class QueenAttackTest(unittest.TestCase):
 
     # Track-specific tests
     def test_queens_same_position_can_attack(self):
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             Queen(2, 2).can_attack(Queen(2, 2))
-
-    # Utility functions
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
-
-if __name__ == "__main__":
-    unittest.main()
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(
+            err.exception.args[0],
+            "Invalid queen position: both queens in the same square",
+        )

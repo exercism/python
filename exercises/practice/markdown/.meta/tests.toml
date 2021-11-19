@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [e75c8103-a6b8-45d9-84ad-e68520545f6e]
 description = "parses normal text as a paragraph"
@@ -20,8 +27,25 @@ description = "with h1 header level"
 [d0f7a31f-6935-44ac-8a9a-1e8ab16af77f]
 description = "with h2 header level"
 
+[9df3f500-0622-4696-81a7-d5babd9b5f49]
+description = "with h3 header level"
+
+[50862777-a5e8-42e9-a3b8-4ba6fcd0ed03]
+description = "with h4 header level"
+
+[ee1c23ac-4c86-4f2a-8b9c-403548d4ab82]
+description = "with h5 header level"
+
 [13b5f410-33f5-44f0-a6a7-cfd4ab74b5d5]
 description = "with h6 header level"
+
+[6dca5d10-5c22-4e2a-ac2b-bd6f21e61939]
+description = "with h7 header level"
+include = false
+
+[81c0c4db-435e-4d77-860d-45afacdad810]
+description = "h7 header level is a paragraph"
+reimplements = "6dca5d10-5c22-4e2a-ac2b-bd6f21e61939"
 
 [25288a2b-8edc-45db-84cf-0b6c6ee034d6]
 description = "unordered lists"

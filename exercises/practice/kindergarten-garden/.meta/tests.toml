@@ -1,30 +1,61 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [1fc316ed-17ab-4fba-88ef-3ae78296b692]
-description = "garden with single student"
+description = "partial garden -> garden with single student"
 
 [acd19dc1-2200-4317-bc2a-08f021276b40]
-description = "different garden with single student"
+description = "partial garden -> different garden with single student"
 
 [c376fcc8-349c-446c-94b0-903947315757]
-description = "garden with two students"
+description = "partial garden -> garden with two students"
 
 [2d620f45-9617-4924-9d27-751c80d17db9]
-description = "second student's garden"
+description = "partial garden -> multiple students for the same garden with three students -> second student's garden"
 
 [57712331-4896-4364-89f8-576421d69c44]
-description = "third student's garden"
+description = "partial garden -> multiple students for the same garden with three students -> third student's garden"
 
 [149b4290-58e1-40f2-8ae4-8b87c46e765b]
-description = "first student's garden"
+description = "full garden -> for Alice, first student's garden"
 
 [ba25dbbc-10bd-4a37-b18e-f89ecd098a5e]
-description = "second student's garden"
+description = "full garden -> for Bob, second student's garden"
+
+[566b621b-f18e-4c5f-873e-be30544b838c]
+description = "full garden -> for Charlie"
+
+[3ad3df57-dd98-46fc-9269-1877abf612aa]
+description = "full garden -> for David"
+
+[0f0a55d1-9710-46ed-a0eb-399ba8c72db2]
+description = "full garden -> for Eve"
+
+[a7e80c90-b140-4ea1-aee3-f4625365c9a4]
+description = "full garden -> for Fred"
+
+[9d94b273-2933-471b-86e8-dba68694c615]
+description = "full garden -> for Ginny"
+
+[f55bc6c2-ade8-4844-87c4-87196f1b7258]
+description = "full garden -> for Harriet"
+
+[759070a3-1bb1-4dd4-be2c-7cce1d7679ae]
+description = "full garden -> for Ileana"
+
+[78578123-2755-4d4a-9c7d-e985b8dda1c6]
+description = "full garden -> for Joseph"
 
 [6bb66df7-f433-41ab-aec2-3ead6e99f65b]
-description = "second to last student's garden"
+description = "full garden -> for Kincaid, second to last student's garden"
 
 [d7edec11-6488-418a-94e6-ed509e0fa7eb]
-description = "last student's garden"
+description = "full garden -> for Larry, last student's garden"

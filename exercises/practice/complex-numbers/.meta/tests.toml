@@ -1,96 +1,127 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [9f98e133-eb7f-45b0-9676-cce001cd6f7a]
-description = "Real part of a purely real number"
+description = "Real part -> Real part of a purely real number"
 
 [07988e20-f287-4bb7-90cf-b32c4bffe0f3]
-description = "Real part of a purely imaginary number"
+description = "Real part -> Real part of a purely imaginary number"
 
 [4a370e86-939e-43de-a895-a00ca32da60a]
-description = "Real part of a number with real and imaginary part"
+description = "Real part -> Real part of a number with real and imaginary part"
 
 [9b3fddef-4c12-4a99-b8f8-e3a42c7ccef6]
-description = "Imaginary part of a purely real number"
+description = "Imaginary part -> Imaginary part of a purely real number"
 
 [a8dafedd-535a-4ed3-8a39-fda103a2b01e]
-description = "Imaginary part of a purely imaginary number"
+description = "Imaginary part -> Imaginary part of a purely imaginary number"
 
 [0f998f19-69ee-4c64-80ef-01b086feab80]
-description = "Imaginary part of a number with real and imaginary part"
+description = "Imaginary part -> Imaginary part of a number with real and imaginary part"
 
 [a39b7fd6-6527-492f-8c34-609d2c913879]
 description = "Imaginary unit"
 
 [9a2c8de9-f068-4f6f-b41c-82232cc6c33e]
-description = "Add purely real numbers"
+description = "Arithmetic -> Addition -> Add purely real numbers"
 
 [657c55e1-b14b-4ba7-bd5c-19db22b7d659]
-description = "Add purely imaginary numbers"
+description = "Arithmetic -> Addition -> Add purely imaginary numbers"
 
 [4e1395f5-572b-4ce8-bfa9-9a63056888da]
-description = "Add numbers with real and imaginary part"
+description = "Arithmetic -> Addition -> Add numbers with real and imaginary part"
 
 [1155dc45-e4f7-44b8-af34-a91aa431475d]
-description = "Subtract purely real numbers"
+description = "Arithmetic -> Subtraction -> Subtract purely real numbers"
 
 [f95e9da8-acd5-4da4-ac7c-c861b02f774b]
-description = "Subtract purely imaginary numbers"
+description = "Arithmetic -> Subtraction -> Subtract purely imaginary numbers"
 
 [f876feb1-f9d1-4d34-b067-b599a8746400]
-description = "Subtract numbers with real and imaginary part"
+description = "Arithmetic -> Subtraction -> Subtract numbers with real and imaginary part"
 
 [8a0366c0-9e16-431f-9fd7-40ac46ff4ec4]
-description = "Multiply purely real numbers"
+description = "Arithmetic -> Multiplication -> Multiply purely real numbers"
 
 [e560ed2b-0b80-4b4f-90f2-63cefc911aaf]
-description = "Multiply purely imaginary numbers"
+description = "Arithmetic -> Multiplication -> Multiply purely imaginary numbers"
 
 [4d1d10f0-f8d4-48a0-b1d0-f284ada567e6]
-description = "Multiply numbers with real and imaginary part"
+description = "Arithmetic -> Multiplication -> Multiply numbers with real and imaginary part"
 
 [b0571ddb-9045-412b-9c15-cd1d816d36c1]
-description = "Divide purely real numbers"
+description = "Arithmetic -> Division -> Divide purely real numbers"
 
 [5bb4c7e4-9934-4237-93cc-5780764fdbdd]
-description = "Divide purely imaginary numbers"
+description = "Arithmetic -> Division -> Divide purely imaginary numbers"
 
 [c4e7fef5-64ac-4537-91c2-c6529707701f]
-description = "Divide numbers with real and imaginary part"
+description = "Arithmetic -> Division -> Divide numbers with real and imaginary part"
 
 [c56a7332-aad2-4437-83a0-b3580ecee843]
-description = "Absolute value of a positive purely real number"
+description = "Absolute value -> Absolute value of a positive purely real number"
 
 [cf88d7d3-ee74-4f4e-8a88-a1b0090ecb0c]
-description = "Absolute value of a negative purely real number"
+description = "Absolute value -> Absolute value of a negative purely real number"
 
 [bbe26568-86c1-4bb4-ba7a-da5697e2b994]
-description = "Absolute value of a purely imaginary number with positive imaginary part"
+description = "Absolute value -> Absolute value of a purely imaginary number with positive imaginary part"
 
 [3b48233d-468e-4276-9f59-70f4ca1f26f3]
-description = "Absolute value of a purely imaginary number with negative imaginary part"
+description = "Absolute value -> Absolute value of a purely imaginary number with negative imaginary part"
 
 [fe400a9f-aa22-4b49-af92-51e0f5a2a6d3]
-description = "Absolute value of a number with real and imaginary part"
+description = "Absolute value -> Absolute value of a number with real and imaginary part"
 
 [fb2d0792-e55a-4484-9443-df1eddfc84a2]
-description = "Conjugate a purely real number"
+description = "Complex conjugate -> Conjugate a purely real number"
 
 [e37fe7ac-a968-4694-a460-66cb605f8691]
-description = "Conjugate a purely imaginary number"
+description = "Complex conjugate -> Conjugate a purely imaginary number"
 
 [f7704498-d0be-4192-aaf5-a1f3a7f43e68]
-description = "Conjugate a number with real and imaginary part"
+description = "Complex conjugate -> Conjugate a number with real and imaginary part"
 
 [6d96d4c6-2edb-445b-94a2-7de6d4caaf60]
-description = "Euler's identity/formula"
+description = "Complex exponential function -> Euler's identity/formula"
 
 [2d2c05a0-4038-4427-a24d-72f6624aa45f]
-description = "Exponential of 0"
+description = "Complex exponential function -> Exponential of 0"
 
 [ed87f1bd-b187-45d6-8ece-7e331232c809]
-description = "Exponential of a purely real number"
+description = "Complex exponential function -> Exponential of a purely real number"
 
 [08eedacc-5a95-44fc-8789-1547b27a8702]
-description = "Exponential of a number with real and imaginary part"
+description = "Complex exponential function -> Exponential of a number with real and imaginary part"
+
+[06d793bf-73bd-4b02-b015-3030b2c952ec]
+description = "Operations between real numbers and complex numbers -> Add real number to complex number"
+
+[d77dbbdf-b8df-43f6-a58d-3acb96765328]
+description = "Operations between real numbers and complex numbers -> Add complex number to real number"
+
+[20432c8e-8960-4c40-ba83-c9d910ff0a0f]
+description = "Operations between real numbers and complex numbers -> Subtract real number from complex number"
+
+[b4b38c85-e1bf-437d-b04d-49bba6e55000]
+description = "Operations between real numbers and complex numbers -> Subtract complex number from real number"
+
+[dabe1c8c-b8f4-44dd-879d-37d77c4d06bd]
+description = "Operations between real numbers and complex numbers -> Multiply complex number by real number"
+
+[6c81b8c8-9851-46f0-9de5-d96d314c3a28]
+description = "Operations between real numbers and complex numbers -> Multiply real number by complex number"
+
+[8a400f75-710e-4d0c-bcb4-5e5a00c78aa0]
+description = "Operations between real numbers and complex numbers -> Divide complex number by real number"
+
+[9a867d1b-d736-4c41-a41e-90bd148e9d5e]
+description = "Operations between real numbers and complex numbers -> Divide real number by complex number"

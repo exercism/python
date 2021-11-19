@@ -17,8 +17,10 @@ irregular.
         matrix = []
         {% endif -%}
         {% if case is error_case -%}
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             {{- case["property"] | to_snake }}(matrix)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "{{ case["expected"]["error"] }}")
         {% else -%}
         self.assertEqual(
         sorted_points({{ case["property"] | to_snake }}(matrix)),
@@ -44,6 +46,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {{ test_case(case) }}
     {% endfor %}
     {%- endif %}
-
-
-{{ macros.footer(True) }}

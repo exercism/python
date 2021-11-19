@@ -1,5 +1,8 @@
 {%- import "generator_macros.j2" as macros with context -%}
 {{ macros.header() }}
+{{ "# PLEASE TAKE NOTE: Expected result lists for these test cases use **implicit line joining.**" }}
+{{ "# A new line in a result list below **does not** always equal a new list element." }}
+{{ "# Check comma placement carefully!" }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {# All test cases in this exercise are nested, so use two for loops -#}
@@ -19,5 +22,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
             {{- input["startVerse"] }}, 
             {{- input["endVerse"] }}), expected)
     {% endfor %}{% endfor %}
-
-{{ macros.footer() }}

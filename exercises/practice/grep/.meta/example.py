@@ -27,7 +27,7 @@ def format_lines(matched_lines, flags, files):
     result = []
 
     for file_name, line_number, line in matched_lines:
-        line_result = ""
+        line_result = ''
 
         if len(files) > 1:
             line_result += file_name + ':'
@@ -46,7 +46,7 @@ def grep(pattern, flags, files):
     matched_lines = []
 
     for file_name in files:
-        with open(file_name) as f:
+        with open(file_name, encoding='utf-8') as f:
             for line_number, line in enumerate(f.readlines(), start=1):
                 if matches(line, pattern, flags):
                     matched_lines.append((file_name, line_number, line))

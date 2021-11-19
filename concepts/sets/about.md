@@ -24,13 +24,13 @@ Duplicates are silently omitted:
 >>> one_element
 {'😀'}
 
->>> multiple_elements = {'😀', '😃', '😄', '😁'}
+>>> multiple_elements = {'Hello!', '¡Hola!', 'Привет!', 'こんにちは！'}
 >>> multiple_elements
-{'😀', '😃', '😄', '😁'}
+{'こんにちは！', '¡Hola!', 'Hello!', 'Привет!'}
 
->>> multiple_duplicates =  {'😀', '😃', '😄', '😁', '😃', '😄'}
+>>> multiple_duplicates =  {'Hello!', '¡Hola!', 'Привет!', 'こんにちは！', '¡Hola!', 'Привет!'}
 >>> multiple_duplicates
-{'😀', '😁', '😃', '😄'}
+{'こんにちは！', '¡Hola!', 'Hello!', 'Привет!'}
 ```
 
 Set literals use the same curly braces as `dict` literals, so the `set()` constructor must be used to declare an empty `set`.
