@@ -2,9 +2,9 @@ from json import dumps
 
 
 class Tree:
-    def __init__(self, label, children=[]):
+    def __init__(self, label, children=None):
         self.label = label
-        self.children = children
+        self.children = children if children is not None else []
 
     def __dict__(self):
         return {self.label: [c.__dict__() for c in sorted(self.children)]}

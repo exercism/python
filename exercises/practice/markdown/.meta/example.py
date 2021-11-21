@@ -54,7 +54,7 @@ def parse_line(line, in_list, in_list_append):
 
     list_match = re.match(r'\* (.*)', result)
 
-    if (list_match):
+    if list_match:
         if not in_list:
             result = '<ul>' + wrap(list_match.group(1), 'li')
             in_list = True

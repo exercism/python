@@ -1,3 +1,4 @@
+import math
 
 def divisor_generator(number):
     """Returns an unordered list of divisors for n (1 < number).
@@ -6,7 +7,7 @@ def divisor_generator(number):
     :return: list of int divisors
     """
 
-    for index in range(2, int(number ** 0.5) + 1):
+    for index in range(2, int(math.sqrt(number)) + 1):
         if number % index == 0:
             yield index
             if index * index != number:
@@ -21,13 +22,13 @@ def classify(number):
     """
 
     if number <= 0:
-        raise ValueError("Classification is only possible for positive integers.")
+        raise ValueError('Classification is only possible for positive integers.')
 
     aliquot_sum = sum(divisor_generator(number)) + (1 if number > 1 else 0)
 
     if aliquot_sum < number:
-        return "deficient"
+        return 'deficient'
     elif aliquot_sum == number:
-        return "perfect"
+        return 'perfect'
     else:
-        return "abundant"
+        return 'abundant'

@@ -21,13 +21,13 @@ class Cell:
 
 class InputCell(Cell):
     def __init__(self, initial_value):
-        super(InputCell, self).__init__()
+        super().__init__()
         self._value = initial_value
 
 
 class ComputeCell(Cell):
     def __init__(self, inputs, compute_function):
-        super(ComputeCell, self).__init__()
+        super().__init__()
         self.inputs = inputs
         self.func = compute_function
         self.callbacks = set()
@@ -40,7 +40,7 @@ class ComputeCell(Cell):
 
     def compute(self):
         # Only compute this cell when all inputs have same counters
-        if len(set([inp.counter for inp in self.inputs])) > 1:
+        if len({inp.counter for inp in self.inputs}) > 1:
             return
         new_val = self.func([inp.value for inp in self.inputs])
         if new_val != self._value:

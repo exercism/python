@@ -1,30 +1,33 @@
-from math import sqrt, ceil
-try:
-    # Python 3
-    from math import gcd
-except ImportError:
-    # Python 2
-    from fractions import gcd
+from math import sqrt, ceil, gcd
 
 
 def triplets_in_range(start, end):
-    for b in range(4, end + 1, 4):
-        for x, y, z in primitive_triplets(b):
-            a, b, c = (x, y, z)
-            while a < start:
-                a, b, c = (a + x, b + y, c + z)
-            while c <= end:
-                yield [a, b, c]
-                a, b, c = (a + x, b + y, c + z)
+    for limit in range(4, end + 1, 4):
+        for x_pos, y_pos, z_pos in primitive_triplets(limit):
+            alpha = x_pos
+            beta = y_pos
+            gamma = z_pos
+
+            while alpha < start:
+                alpha = alpha + x_pos
+                beta = beta + y_pos
+                gamma = gamma + z_pos
+
+            while gamma <= end:
+                yield [alpha, beta, gamma]
+
+                alpha = alpha + x_pos
+                beta = beta + y_pos
+                gamma = gamma + z_pos
 
 
 def euclidian_coprimes(limit):
-    mn = limit // 2
-    for n in range(1, int(ceil(sqrt(mn)))):
-        if mn % n == 0:
-            m = mn // n
-            if (m - n) % 2 == 1 and gcd(m, n) == 1:
-                yield m, n
+    mean = limit // 2
+    for idx in range(1, int(ceil(sqrt(mean)))):
+        if mean % idx == 0:
+            member = mean // idx
+            if (member - idx) % 2 == 1 and gcd(member, idx) == 1:
+                yield member, idx
 
 
 def primitive_triplets(limit):
@@ -32,12 +35,18 @@ def primitive_triplets(limit):
     (https://en.wikipedia.org/wiki/Pythagorean_triple#Generating_a_triple)
     for more information
     """
-    for m, n in euclidian_coprimes(limit):
-        m2, n2 = m * m, n * n
-        a, b, c = m2 - n2, 2 * m * n, m2 + n2
-        if a > b:
-            a, b = b, a
-        yield a, b, c
+    for member_1, member_2 in euclidian_coprimes(limit):
+        calc_1 = member_1 ** 2
+        calc_2 = member_2 ** 2
+
+        alpha = calc_1 - calc_2
+        beta = 2 * member_1 * member_2
+        gamma = calc_1 + calc_2
+
+        if alpha > beta:
+            alpha, beta = beta, alpha
+
+        yield alpha, beta, gamma
 
 
 def triplets_with_sum(number):
