@@ -1,9 +1,4 @@
-from __future__ import division
-
-try:
-    from math import gcd
-except ImportError:
-    from fractions import gcd
+from math import gcd
 
 
 class Rational:
@@ -22,7 +17,7 @@ class Rational:
         return self.numer == other.numer and self.denom == other.denom
 
     def __repr__(self):
-        return '{}/{}'.format(self.numer, self.denom)
+        return f'{self.numer}/{self.denom}'
 
     def __add__(self, other):
         numer = (self.numer * other.denom) + (other.numer * self.denom)
