@@ -288,6 +288,8 @@ comment:
     - id: change-practice-exercise
       files:
         - "exercises/practice/**/*"
+        - "exercises/practice/**/.meta/*"
+        - "exercises/practice/**/.docs/*"
         - "exercises/practice/**/**/*"
       body: |
         ---
