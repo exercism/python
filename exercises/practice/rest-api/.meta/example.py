@@ -33,10 +33,11 @@ class RestAPI:
             else:
                 return json.dumps({
                     'users': [
-                        u for u in self.database['users']
-                        if u['name'] in payload['users']
+                        user for user in self.database['users']
+                        if user['name'] in payload['users']
                     ]
                 })
+        return None
 
     def post(self, url, payload=None):
         result = None
@@ -47,9 +48,9 @@ class RestAPI:
                 name = payload['user']
                 users = self.database['users']
                 user = None
-                for u in users:
-                    if u['name'] == name:
-                        user = u
+                for idx in users:
+                    if idx['name'] == name:
+                        user = idx
                         break
                 if user is None:
                     new_user = {
@@ -67,11 +68,11 @@ class RestAPI:
                 borrower_name = payload['borrower']
                 amount = payload['amount']
                 lender = borrower = None
-                for u in self.database['users']:
-                    if u['name'] == lender_name:
-                        lender = u
-                    elif u['name'] == borrower_name:
-                        borrower = u
+                for user in self.database['users']:
+                    if user['name'] == lender_name:
+                        lender = user
+                    elif user['name'] == borrower_name:
+                        borrower = user
                 if lender is not None and borrower is not None:
                     lender['owed_by'].setdefault(borrower_name, 0)
                     lender['owed_by'][borrower_name] += amount
