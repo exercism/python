@@ -10,11 +10,7 @@ class Scale:
     def __init__(self, tonic, intervals=None):
         self.tonic = tonic.capitalize()
         self.intervals = intervals
-        self.chromatic_scale = (
-            self.FLAT_CHROMATIC_SCALE
-            if tonic in self.FLAT_KEYS
-            else self.CHROMATIC_SCALE
-        )
+        self.chromatic_scale = (self.FLAT_CHROMATIC_SCALE if tonic in self.FLAT_KEYS else self.CHROMATIC_SCALE)
 
     def chromatic(self):
         return self._reorder_chromatic_scale()
@@ -23,7 +19,7 @@ class Scale:
         last_index = 0
         pitches = []
         scale = self._reorder_chromatic_scale()
-        for i, interval in enumerate(intervals):
+        for _, interval in enumerate(intervals):
             pitches.append(scale[last_index])
             last_index += self.ASCENDING_INTERVALS.index(interval) + 1
         return pitches

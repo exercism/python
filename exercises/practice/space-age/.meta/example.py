@@ -1,9 +1,6 @@
 def period_converter(period):
     def inner(self):
-        return round(
-            self.seconds / period,
-            2
-        )
+        return round(self.seconds / period, 2)
 
     return inner
 

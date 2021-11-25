@@ -19,11 +19,11 @@ def contains(list_one, list_two):
         return True
     if len(list_two) > len(list_one):
         return False
-    for i in range(len(list_one) - len(list_two) + 1):
-        if list_one[i] != list_two[0]:
+    for idx in range(len(list_one) - len(list_two) + 1):
+        if list_one[idx] != list_two[0]:
             continue
-        for j in range(len(list_two)):
-            if list_one[i + j] != list_two[j]:
+        for edx, _ in enumerate(list_two):
+            if list_one[idx + edx] != list_two[edx]:
                 break
         else:
             return True

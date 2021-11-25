@@ -22,7 +22,7 @@ class SgfTree:
             return False
 
         for child, other_child in zip(self.children, other.children):
-            if not (child == other_child):
+            if not child == other_child:
                 return False
         return True
 
@@ -48,11 +48,11 @@ def parse(input_string):
     current = None
     stack = list(input_string)
 
-    if input_string == "()":
-        raise ValueError("tree with no nodes")
+    if input_string == '()':
+        raise ValueError('tree with no nodes')
 
     if not stack:
-        raise ValueError("tree missing")
+        raise ValueError('tree missing')
 
     def pop():
         if stack[0] == '\\':
@@ -66,8 +66,8 @@ def parse(input_string):
             while stack[0] != delimiter:
                 value += pop()
             return value
-        except IndexError:
-            raise ValueError("properties without delimiter")
+        except IndexError as error:
+            raise ValueError('properties without delimiter') from error
 
     while stack:
         if pop() == '(' and stack[0] == ';':
@@ -76,7 +76,7 @@ def parse(input_string):
                 while stack[0].isupper():
                     key = pop_until('[')
                     if not key.isupper():
-                        raise ValueError("property must be in uppercase")
+                        raise ValueError('property must be in uppercase')
                     values = []
                     while stack[0] == '[':
                         pop()
@@ -86,7 +86,7 @@ def parse(input_string):
 
                 if stack[0].isalpha():
                     if not stack[0].isupper():
-                        raise ValueError("property must be in uppercase")
+                        raise ValueError('property must be in uppercase')
 
                 if root is None:
                     current = root = SgfTree(properties)
@@ -100,6 +100,6 @@ def parse(input_string):
                     current.children.append(parse(child_input))
 
         elif root is None and current is None:
-            raise ValueError("tree missing")
+            raise ValueError('tree missing')
 
     return root
