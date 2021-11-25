@@ -29,10 +29,12 @@ class LinkedIterator:
 
 
 class LinkedList:
-    def __init__(self, values=[]):
+    def __init__(self, values=None):
+        values = values if values is not None else []
         self._head = None
         self._len = 0
-        [self.push(v) for v in values]
+        for value in values:
+            self.push(value)
 
     def __iter__(self):
         return LinkedIterator(self)
@@ -42,18 +44,18 @@ class LinkedList:
 
     def head(self):
         if self._head is None:
-            raise EmptyListException("The list is empty.")
+            raise EmptyListException('The list is empty.')
         return self._head
 
     def push(self, value):
-        newNode = Node(value)
-        newNode._next = self._head
-        self._head = newNode
+        new_node = Node(value)
+        new_node._next = self._head
+        self._head = new_node
         self._len += 1
 
     def pop(self):
         if self._head is None:
-            raise EmptyListException("The list is empty.")
+            raise EmptyListException('The list is empty.')
         self._len -= 1
         ret = self._head.value()
         self._head = self._head.next()
