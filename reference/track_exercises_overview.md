@@ -4,6 +4,12 @@
 
 ## Implemented and Planned Concept Exercises
 
+
+ <img src="./Beta.svg" width="40" height="20"> = Live on exercism.org
+ <img src="./WIP.svg" width="40" height="20"> = Drafted but not live on exercism.org
+ <img src="./TBD.svg" width="40" height="20"> = Planned or in progress
+ <img src="./TBD-F.svg.svg" width="40" height="20"> = Future
+
 <br>
 
 |                                                Status                                               	| Concept                                                                                                                      	|                                             About&Intro                                             	| Exercise                                                                                                                      	| Design Doc or Issue                                                                                              	|
