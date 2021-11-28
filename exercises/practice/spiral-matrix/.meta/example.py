@@ -1,5 +1,5 @@
 def spiral_matrix(size):
-    matrix = [[0]*size for _ in range(size)]
+    matrix = [[0]*size for row in range(size)]
     idx = 0
     jdx = -1
     element = 1
