@@ -8,7 +8,7 @@
  <img src="./Beta.svg" width="40" height="20"> = Live on exercism.org
  <img src="./WIP.svg" width="40" height="20"> = Drafted but not live on exercism.org
  <img src="./TBD.svg" width="40" height="20"> = Planned or in progress
- <img src="./TBD-F.svg.svg" width="40" height="20"> = Future
+ <img src="./TBD-F.svg" width="40" height="20"> = Future
 
 <br>
 
