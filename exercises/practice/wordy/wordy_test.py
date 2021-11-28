@@ -107,10 +107,10 @@ class WordyTest(unittest.TestCase):
         with self.assertRaises(ValueError) as err:
             answer("What is 2 2 minus 3?")
         self.assertEqual(type(err.exception), ValueError)
-        self.assertEqual(err.exception.args[0], "unknown operation")
+        self.assertEqual(err.exception.args[0], "syntax error")
 
     def test_missing_number(self):
         with self.assertRaises(ValueError) as err:
             answer("What is 7 plus multiplied by -2?")
         self.assertEqual(type(err.exception), ValueError)
-        self.assertEqual(err.exception.args[0], "unknown operation")
+        self.assertEqual(err.exception.args[0], "syntax error")
