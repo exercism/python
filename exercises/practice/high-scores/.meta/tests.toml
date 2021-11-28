@@ -35,6 +35,8 @@ description = "Top 3 scores -> Personal top when there is only one"
 
 [2df075f9-fec9-4756-8f40-98c52a11504f]
 description = "Top 3 scores -> Latest score after personal top scores"
+include = false
 
 [809c4058-7eb1-4206-b01e-79238b9b71bc]
 description = "Top 3 scores -> Scores after personal top scores"
+include = false
