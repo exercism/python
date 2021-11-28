@@ -1,17 +1,17 @@
-# Python Exercises 
+<br>
+
+<img align="left" width="90" height="90" src="https://github.com/exercism/website-icons/blob/main/tracks/python.svg">
+<p vertical-align="middle">Concept and Practice Exercises<h1>
 
 <br>
 
-## Implemented and Planned Concept Exercises
+## Implemented & Planned Concept Exercises
 
 
-<h3> <img src="./Beta.svg" width="40" height="20"> = Live on exercism.org </h3><br>
-
-<h3> <img src="./WIP.svg" width="40" height="20"> = Drafted but not live on exercism.org</h3><br>
-
-<h3> <img src="./TBD.svg" width="40" height="20"> = Planned or in progress</h3><br>
- 
-<h3> <img src="./TBD-F.svg" width="40" height="20"> = Future</h3><br>
+<p><em> <img src="./Beta.svg" width="35" height="20" > = live on exercism.org &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="./WIP.svg" width="35" height="20"> = drafted but not live</p>
+<p><img src="./TBD.svg" width="35" height="20"> = planned or in progress &nbsp;&nbsp;
+<img src="./TBD-F.svg" width="35" height="20"> = future</p></em>
 
 <br>
 
