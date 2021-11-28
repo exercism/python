@@ -45,6 +45,6 @@ def answer(question):
         try:
             main_value = VALID_OPERATIONS[operation](main_value, second_value)
         except KeyError:
-            raise ValueError("unknown operation")
+            raise ValueError("syntax error")
 
     return main_value
