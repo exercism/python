@@ -15,8 +15,8 @@ BIG_STRAIGHT = 10
 CHOICE = 11
 
 
-def sum_of_ns(number, dice):
-    return sum(n for n in dice if n == number)
+def sum_of_numbers(number, dice):
+    return sum(idx for idx in dice if idx == number)
 
 
 def full_house(dice):
@@ -44,12 +44,12 @@ def yacht(dice):
 
 functions = [
     yacht,
-    partial(sum_of_ns, 1),
-    partial(sum_of_ns, 2),
-    partial(sum_of_ns, 3),
-    partial(sum_of_ns, 4),
-    partial(sum_of_ns, 5),
-    partial(sum_of_ns, 6),
+    partial(sum_of_numbers, 1),
+    partial(sum_of_numbers, 2),
+    partial(sum_of_numbers, 3),
+    partial(sum_of_numbers, 4),
+    partial(sum_of_numbers, 5),
+    partial(sum_of_numbers, 6),
     full_house,
     four_of_a_kind,
     little_straight,
@@ -61,5 +61,5 @@ functions = [
 def score(dice, category):
     try:
         return functions[category](dice)
-    except IndexError:
-        raise ValueError("No such category.")
+    except IndexError as error:
+        raise ValueError('No such category.') from error
