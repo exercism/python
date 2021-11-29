@@ -7,47 +7,47 @@
 
 def measure(bucket_one, bucket_two, goal, start_bucket):
     sizes = [bucket_one, bucket_two]
-    goalIndex = 0 if start_bucket == 'one' else 1
+    goal_index = 0 if start_bucket == 'one' else 1
 
-    def empty(buckets, i):
-        return [0, buckets[1]] if i == 0 else [buckets[0], 0]
+    def empty(buckets, idx):
+        return [0, buckets[1]] if idx == 0 else [buckets[0], 0]
 
-    def fill(buckets, i):
-        return [sizes[0], buckets[1]] if i == 0 else [buckets[0], sizes[1]]
+    def fill(buckets, idx):
+        return [sizes[0], buckets[1]] if idx == 0 else [buckets[0], sizes[1]]
 
-    def consolidate(buckets, i):
-        amount = min(buckets[1 - i], sizes[i] - buckets[i])
-        target = buckets[i] + amount
-        src = buckets[1 - i] - amount
-        return [target, src] if i == 0 else [src, target]
+    def consolidate(buckets, idx):
+        amount = min(buckets[1 - idx], sizes[idx] - buckets[idx])
+        target = buckets[idx] + amount
+        source = buckets[1 - idx] - amount
+        return [target, source] if idx == 0 else [source, target]
 
     def bucket_str(buckets):
-        return '{},{}'.format(*buckets)
+        return f'{buckets[0]},{buckets[1]}'
 
     invalid = [0, 0]
-    invalid[1 - goalIndex] = sizes[1 - goalIndex]
-    invalidStr = bucket_str(invalid)
+    invalid[1 - goal_index] = sizes[1 - goal_index]
+    invalid_string = bucket_str(invalid)
     buckets = [0, 0]
-    buckets[goalIndex] = sizes[goalIndex]
-    toVisit = []
+    buckets[goal_index] = sizes[goal_index]
+    to_visit = []
     visited = set()
     count = 1
     while goal not in buckets:
         key = bucket_str(buckets)
-        if key != invalidStr and key not in visited:
+        if key != invalid_string and key not in visited:
             visited.add(key)
-            nc = count + 1
-            for i in range(2):
-                if buckets[i] != 0:
-                    toVisit.append((empty(buckets, i), nc))
-                if buckets[i] != sizes[i]:
-                    toVisit.append((fill(buckets, i), nc))
-                    toVisit.append((consolidate(buckets, i), nc))
-        if not any(toVisit):
+            number_count = count + 1
+            for idx in range(2):
+                if buckets[idx] != 0:
+                    to_visit.append((empty(buckets, idx), number_count))
+                if buckets[idx] != sizes[idx]:
+                    to_visit.append((fill(buckets, idx), number_count))
+                    to_visit.append((consolidate(buckets, idx), number_count))
+        if not any(to_visit):
             raise ValueError('No more moves!')
-        buckets, count = toVisit.pop(0)
+        buckets, count = to_visit.pop(0)
 
-    goalIndex = buckets.index(goal)
-    goalBucket = ['one', 'two'][goalIndex]
-    otherBucket = buckets[1 - goalIndex]
-    return (count, goalBucket, otherBucket)
+    goal_index = buckets.index(goal)
+    goal_bucket = ['one', 'two'][goal_index]
+    other_bucket = buckets[1 - goal_index]
+    return (count, goal_bucket, other_bucket)

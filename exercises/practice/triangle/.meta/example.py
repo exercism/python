@@ -1,16 +1,16 @@
 def valid(sides):
     return sum(sorted(sides)[:2]) >= sorted(sides)[2] and all(
-        s > 0 for s in sides
+        side > 0 for side in sides
     )
 
 
 def equilateral(sides):
-    return valid(sides) and all(sides[0] == s for s in sides)
+    return valid(sides) and all(sides[0] == side for side in sides)
 
 
 def isosceles(sides):
     return valid(sides) and any(
-        s1 == s2 for s1, s2 in zip(sorted(sides), sorted(sides)[1:])
+        side_1 == side_2 for side_1, side_2 in zip(sorted(sides), sorted(sides)[1:])
     )
 
 

@@ -27,7 +27,7 @@ def format_table(results):
     table = ['Team                           | MP |  W |  D |  L |  P']
 
     for team, games in sorted(
-            results.items(), key=lambda g: (-calculate_points(g[1]), g[0])):
+            results.items(), key=lambda group: (-calculate_points(group[1]), group[0])):
         team_fmt = '{0:30} | {1:2} | {3:2} | {4:2} | {5:2} | {2:2}'
         table.append(
             team_fmt.format(team, sum(games), calculate_points(games), *games))

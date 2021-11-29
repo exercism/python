@@ -17,12 +17,13 @@ ORDINAL = [None, 'first', 'second', 'third', 'fourth', 'fifth', 'sixth',
 
 def verse(day_number):
     gifts = GIFTS[-day_number:]
+
     if len(gifts) > 1:
         gifts[:-1] = [', '.join(gifts[:-1])]
+
     gifts = ', and '.join(gifts)
-    return 'On the {} day of Christmas my true love gave to me: {}.'.format(
-        ORDINAL[day_number], gifts)
+    return f'On the {ORDINAL[day_number]} day of Christmas my true love gave to me: {gifts}.'
 
 
 def recite(start, end):
-    return [verse(n) for n in range(start, end + 1)]
+    return [verse(number) for number in range(start, end + 1)]
