@@ -1,31 +1,31 @@
-BLKSZ = 5
-ALPHSZ = 26
+BLOCK_SIZE = 5
+ALPHABET = 26
 
 
-def modInverse(a, ALPHSZ):
-    a = a % ALPHSZ
-    for x in range(1, ALPHSZ):
-        if ((a * x) % ALPHSZ == 1):
-            return x
+def mod_inverse(a_key, alphabet):
+    a_key = a_key % alphabet
+    for idx in range(1, alphabet):
+        if (a_key * idx) % alphabet == 1:
+            return idx
     return 1
 
 
-def translate(text, a, b, mode):
-    inv = modInverse(a, ALPHSZ)
-    if inv == 1:
-        raise ValueError("a and m must be coprime.")
+def translate(text, a_key, b_key, mode):
+    inverse = mod_inverse(a_key, ALPHABET)
+    if inverse == 1:
+        raise ValueError('a and m must be coprime.')
 
     chars = []
-    for c in text:
-        if c.isalnum():
-            orig = ord(c.lower()) - 97
-            if orig < 0:
-                chars.append(c)
+    for character in text:
+        if character.isalnum():
+            origin = ord(character.lower()) - 97
+            if origin < 0:
+                chars.append(character)
                 continue
             if mode == 0:
-                new = (a * orig + b) % ALPHSZ
+                new = (a_key * origin + b_key) % ALPHABET
             elif mode == 1:
-                new = (inv * (orig - b)) % ALPHSZ
+                new = (inverse * (origin - b_key)) % ALPHABET
             chars.append(chr(new + 97))
 
     return ''.join(chars)
@@ -33,8 +33,8 @@ def translate(text, a, b, mode):
 
 def encode(plain, a, b):
     cipher = translate(plain, a, b, 0)
-    return " ".join([cipher[i:i + BLKSZ]
-                     for i in range(0, len(cipher), BLKSZ)])
+    return ' '.join([cipher[idx:idx + BLOCK_SIZE]
+                     for idx in range(0, len(cipher), BLOCK_SIZE)])
 
 
 def decode(ciphered, a, b):

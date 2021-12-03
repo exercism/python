@@ -1,7 +1,5 @@
 # Instructions
 
-## Instructions
-
 Elyse is really looking forward to playing some poker (and other card games) during her upcoming trip to Vegas.
  Being a big fan of "self-tracking" she wants to put together some small functions that will help her with tracking tasks and has asked for your help thinking them through.
 

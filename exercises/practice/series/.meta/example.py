@@ -1,5 +1,11 @@
 def slices(series, length):
-    if not 1 <= length <= len(series):
-        raise ValueError("Invalid slice length for this series: " + str(
-            length))
-    return [series[i:i + length] for i in range(len(series) - length + 1)]
+    if not series:
+        raise ValueError('series cannot be empty')
+    elif length == 0:
+        raise ValueError('slice length cannot be zero')
+    elif length < 0:
+        raise ValueError('slice length cannot be negative')
+    elif len(series) < length:
+        raise ValueError('slice length cannot be greater than series length')
+
+    return [series[idx:idx + length] for idx in range(len(series) - length + 1)]

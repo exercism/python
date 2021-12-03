@@ -6,7 +6,7 @@
       "input": {
         "question": "What is 2 2 minus 3?"
       },
-      "expected": {"error": "unknown operation"}
+      "expected": {"error": "syntax error"}
     },
     {
       "description": "Missing number",
@@ -14,7 +14,7 @@
       "input": {
         "question": "What is 7 plus multiplied by -2?"
       },
-      "expected": {"error": "unknown operation"}
+      "expected": {"error": "syntax error"}
     }
   ]
 }

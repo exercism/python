@@ -15,8 +15,10 @@
         expected = {{ write_tree(case["expected"]) }}
         self.assertTreeEquals(tree.{{ case["property"] | to_snake }}("{{ case["input"]["from"] }}"), expected)
         {% else -%}
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             tree.{{ case["property"] | to_snake }}("{{ case["input"]["from"] }}")
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "Tree could not be reoriented")
         {% endif -%}
 {% endmacro -%}
 
@@ -25,8 +27,14 @@
         expected = {{ case["expected"] }}
         self.assertEqual(tree.{{ case["property"] | to_snake }}("{{ case["input"]["from"] }}", "{{ case["input"]["to"]}}"), expected)
         {% else -%}
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             tree.{{ case["property"] | to_snake }}("{{ case["input"]["from"] }}", "{{ case["input"]["to"]}}")
+        self.assertEqual(type(err.exception), ValueError)
+        {% if  "Errors if source does not exist" == case["description"] %}
+        self.assertEqual(err.exception.args[0], "Tree could not be reoriented")
+        {% else %}
+        self.assertEqual(err.exception.args[0], "No path found")
+        {% endif %}
         {% endif -%}
 {% endmacro -%}
 
@@ -52,4 +60,4 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     def assertTreeEquals(self, result, expected):
           self.assertEqual(result, expected,
                            '{} != {}'.format(result, expected))
-{{ macros.footer(True) }}
+

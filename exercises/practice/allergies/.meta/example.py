@@ -14,8 +14,8 @@ class Allergies:
     def __init__(self, score):
         self.score = score
 
-    def allergic_to(self, allergy):
-        return bool(self.score & 1 << self._allergies.index(allergy))
+    def allergic_to(self, item):
+        return bool(self.score & 1 << self._allergies.index(item))
 
     @property
     def lst(self):

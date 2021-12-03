@@ -23,7 +23,7 @@ Exercises are grouped into **concept** exercises which teach the [Python syllabu
 <img align="left" width="100" height="90" src="https://github.com/exercism/website-icons/blob/main/exercism/logo-big-bordered.png">
 
 🌟🌟&nbsp; If you have not already done so, please take a moment to read our [Code of Conduct][exercism-code-of-conduct].&nbsp;🌟🌟&nbsp;  
-It might also be helpful to look at [Being a Good Community Member][being-a-good-community-member] & [The words that we use][the-words-that-we-use].
+It might also be helpful to look at [Being a Good Community Member][being-a-good-community-member] & [The words that we use][the-words-that-we-use], and [Pull Requests][prs].
 
 Some defined roles in our community:  [Contributors][exercism-contributors] **|** [Mentors][exercism-mentors] **|** [Maintainers][exercism-track-maintainers]  **|** [Admins][exercism-admins]
 
@@ -46,6 +46,8 @@ Please&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;, and let us kno
 <br>
 
 ## 🚧  **Did you write a patch that fixes a bug?**
+_Before you get started, please review [Pull Requests][prs]._
+
 
  💛 💙&nbsp; **We Warmly Welcome Pull Requests that are:**
 
@@ -62,6 +64,7 @@ When in doubt,&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;. We wil
 <p vertical-align="middle"><h2>In General</h2></p>
 <br>
 
+- Please make sure to have a quick read-through of our Exercism [Pull Requests][prs] document before jumping in.&nbsp;😅
 - Maintainers are happy to review your work and help troubleshoot with you.&nbsp;💛&nbsp;💙&nbsp;
   - Requests are reviewed as soon as is practical/possible.
   - (❗&nbsp;) Reviewers may be in a different timezone&nbsp;⌚&nbsp;, or tied up &nbsp;🧶&nbsp; with other tasks.
@@ -84,16 +87,31 @@ When in doubt,&nbsp;📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp;. We wil
   <details>
     <summary>⚠️&nbsp;&nbsp;<b><em>Pre-Commit Checklist</em></b>&nbsp;⚠️</summary>
     <br>
+    <table>
+    <td>
+    <br>
 
-   1.  &nbsp;Run [`configlet-lint`][configlet-lint] if the track [config.json](config-json) has been modified.
-   2.  &nbsp;Run [Prettier][prettier] on all markdown files.
-       - (_Optionally_) run [yapf][yapf] ([_config file_][.style.yapf]) to help format your code, and give you a head start on making the linters happy.
-   3.  &nbsp;Run [flake8][flake8] ([_config file_][.flake8]) & [pylint][pylint] ([_config file_][pylintrc]) to ensure all Python code files conform to general code style standards.
-   4.  &nbsp;Run `test/check-exercises.py [EXERCISE]` to check if your test changes function correctly.
-   5.  &nbsp;Run the `example.py` or `exemplar.py` file against the exercise test file to ensure that it passes without error.
-   6.  &nbsp;If you modified or created a `hints.md` file for a practice exercise, [regenerate](#generating-practice-exercise-documents) it.
+ - [ ]  &nbsp;Update & rebase your branch with any (recent) upstream changes.
+ - [ ]  &nbsp;Spell and grammar check all prose changes.
+ - [ ]  &nbsp;Run [Prettier](https://prettier.io/) on all markdown and JSON files.
+     - (_Optionally_) run [yapf](https://github.com/google/yapf) ([_yapf config_](https://github.com/exercism/python/blob/main/.style.yapf)) to help format your code.
+ - [ ]  &nbsp;Run [flake8](http://flake8.pycqa.org/) with [_flake8 config_](https://github.com/exercism/python/blob/main/.flake8) to check general code style standards.
+ - [ ] &nbsp; Run [pylint](https://pylint.pycqa.org/en/v2.11.1/user_guide/index.html) with [_pylint config_](https://github.com/exercism/python/blob/main/pylintrc) to check extended code style standards.
+ - [ ]  &nbsp;Use pytest or the [python-track-test-runner](https://github.com/exercism/python-test-runner) to test any changed `example.py`/`exemplar.py`files
+ &nbsp;against their associated test files.
+ - [ ]  &nbsp;Similarly, use [pytest](https://docs.pytest.org/en/6.2.x/contents.html) or
+         the [python-track-test-runner](https://github.com/exercism/python-test-runner) to test any changed _**test**_ files.
+     - Check that tests **fail** properly, as well as succeed.
+     &nbsp;(_**e.g.**, make some tests fail on purpose to "test the tests" & failure messages_).
+ - [ ]  &nbsp;Double-check all files for proper EOL.
+ - [ ]  &nbsp;[Regenerate](https://github.com/exercism/python/blob/main/CONTRIBUTING.md#generating-practice-exercise-documents) exercise documents when you modified or created a `hints.md` file for a practice exercise.
+ - [ ]  &nbsp;[Regenerate the test file](https://github.com/exercism/python/blob/main/CONTRIBUTING.md#auto-generated-test-files-and-test-templates) if you modified or created a `JinJa2` template file for a practice exercise.
+     -  Run the generated test file result against its `example.py`.
+ - [ ]  &nbsp;Run [`configlet-lint`](https://github.com/exercism/configlet#configlet-lint) if the track [config.json](https://github.com/exercism/docs/blob/main/building/tracks/config-json.md), or any other exercise `config.json` has been modified.
 
-  </details>
+</td>
+</table>
+</details>
 <br>
 
 <img align="left" width="90" height="80" src="https://github.com/exercism/website-icons/blob/main/exercism/logo-big-bordered.png">
@@ -311,7 +329,7 @@ If a practice exercise has an auto-generated `<exercise_slug>_test.py` file, the
 
 _Exercise Structure with Auto-Generated Test Files_
 
-```Bash
+```Graphql
 [<exercise-slug>/
 ├── .docs
 │   └── instructions.md
@@ -379,6 +397,7 @@ configlet generate <path/to/track> --spec-path path/to/problem/specifications
 <br>
 
 
+
 [.flake8]: https://github.com/exercism/python/blob/main/.flake8
 [.style.yapf]: https://github.com/exercism/python/blob/main/.style.yapf
 [EOL]: https://en.wikipedia.org/wiki/Newline
@@ -423,6 +442,7 @@ configlet generate <path/to/track> --spec-path path/to/problem/specifications
 [practice-exercises]: https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md
 [prettier]: https://prettier.io/
 [problem-specifications]: https://github.com/exercism/problem-specifications
+[prs]: https://github.com/exercism/docs/blob/main/community/good-member/pull-requests.md
 [pylint-disable-check]: https://pylint.pycqa.org/en/latest/user_guide/message-control.html#block-disables
 [pylint]: https://pylint.pycqa.org/en/v2.11.1/user_guide/index.html
 [pylintrc]: https://github.com/exercism/python/blob/main/pylintrc

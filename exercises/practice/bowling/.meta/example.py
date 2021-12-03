@@ -59,26 +59,26 @@ class BowlingGame:
     def roll_bonus(self, pins):
         tenth_frame = self.frames[-1]
         if tenth_frame.is_open():
-            raise IndexError("cannot throw bonus with an open tenth frame")
+            raise IndexError('cannot throw bonus with an open tenth frame')
 
         self.bonus_throws.append(pins)
 
         # Check against invalid fill balls, e.g. [3, 10]
         if (len(self.bonus_throws) == 2 and self.bonus_throws[0] != 10 and
                 sum(self.bonus_throws) > 10):
-            raise ValueError("invalid fill balls")
+            raise ValueError('invalid fill balls')
 
         # Check if there are more bonuses than it should be
         if tenth_frame.is_strike() and len(self.bonus_throws) > 2:
             raise IndexError(
-                "wrong number of fill balls when the tenth frame is a strike")
+                'wrong number of fill balls when the tenth frame is a strike')
         elif tenth_frame.is_spare() and len(self.bonus_throws) > 1:
             raise IndexError(
-                "wrong number of fill balls when the tenth frame is a spare")
+                'wrong number of fill balls when the tenth frame is a spare')
 
     def roll(self, pins):
         if not 0 <= pins <= 10:
-            raise ValueError("invalid pins")
+            raise ValueError('invalid pins')
         elif self.current_frame_idx == MAX_FRAME:
             self.roll_bonus(pins)
         else:
@@ -88,12 +88,12 @@ class BowlingGame:
 
     def score(self):
         if self.current_frame_idx < MAX_FRAME:
-            raise IndexError("frame less than 10")
+            raise IndexError('frame less than 10')
         if self.frames[-1].is_spare() and len(self.bonus_throws) != 1:
             raise IndexError(
-                "one bonus must be rolled when the tenth frame is spare")
+                'one bonus must be rolled when the tenth frame is spare')
         if self.frames[-1].is_strike() and len(self.bonus_throws) != 2:
             raise IndexError(
-                "two bonuses must be rolled when the tenth frame is strike")
+                'two bonuses must be rolled when the tenth frame is strike')
         return sum(frame.score(self.next_throws(frame.idx))
                    for frame in self.frames)

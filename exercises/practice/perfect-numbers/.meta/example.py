@@ -1,23 +1,34 @@
-def divisor_generator(n):
-    ''' Returns an unordered list of divisors for n (1 < n). '''
-    for i in range(2, int(n ** 0.5) + 1):
-        if n % i == 0:
-            yield i
-            if i * i != n:
-                yield n // i
+import math
+
+def divisor_generator(number):
+    """Returns an unordered list of divisors for n (1 < number).
+
+    :param number: int a positive integer
+    :return: list of int divisors
+    """
+
+    for index in range(2, int(math.sqrt(number)) + 1):
+        if number % index == 0:
+            yield index
+            if index * index != number:
+                yield number // index
 
 
-def classify(n):
-    ''' A perfect number equals the sum of its positive divisors. '''
-    if n <= 0:
-        raise ValueError("Classification is only possible" +
-                         " for positive whole numbers.")
+def classify(number):
+    """ A perfect number equals the sum of its positive divisors.
 
-    aliquot_sum = sum(divisor_generator(n)) + (1 if n > 1 else 0)
+    :param number: int a positive integer
+    :return: str the classification of the input integer
+    """
 
-    if aliquot_sum < n:
-        return "deficient"
-    elif aliquot_sum == n:
-        return "perfect"
+    if number <= 0:
+        raise ValueError('Classification is only possible for positive integers.')
+
+    aliquot_sum = sum(divisor_generator(number)) + (1 if number > 1 else 0)
+
+    if aliquot_sum < number:
+        return 'deficient'
+    elif aliquot_sum == number:
+        return 'perfect'
     else:
-        return "abundant"
+        return 'abundant'

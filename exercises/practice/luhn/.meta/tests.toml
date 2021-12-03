@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [792a7082-feb7-48c7-b88b-bbfec160865e]
 description = "single digit strings can not be valid"
@@ -50,8 +57,17 @@ description = "more than a single zero is valid"
 [ab56fa80-5de8-4735-8a4a-14dae588663e]
 description = "input digit 9 is correctly converted to output digit 9"
 
+[b9887ee8-8337-46c5-bc45-3bcab51bc36f]
+description = "very long input is valid"
+
+[8a7c0e24-85ea-4154-9cf1-c2db90eabc08]
+description = "valid luhn with an odd number of digits and non zero first digit"
+
 [39a06a5a-5bad-4e0f-b215-b042d46209b1]
 description = "using ascii value for non-doubled non-digit isn't allowed"
 
 [f94cf191-a62f-4868-bc72-7253114aa157]
 description = "using ascii value for doubled non-digit isn't allowed"
+
+[8b72ad26-c8be-49a2-b99c-bcc3bf631b33]
+description = "non-numeric, non-space char in the middle with a sum that's divisible by 10 isn't allowed"

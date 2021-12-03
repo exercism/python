@@ -4,8 +4,10 @@
     def test_{{ case["description"] | to_snake }}(self):
         input_string = '{{ case["input"]["encoded"] | escape_invalid_escapes }}'
         {% if case["expected"]["error"] -%}
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             {{ case["property"] | to_snake }}(input_string)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "{{ case["expected"]["error"] }}")
         {% else -%}
         expected = {{ sgftree(case["expected"]) }}
         self.assertEqual({{ case["property"] | to_snake }}(input_string), expected)
@@ -43,5 +45,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases %}
     {{ test_case(case) }}
     {%- endfor -%}
-
-{{ macros.footer() }}

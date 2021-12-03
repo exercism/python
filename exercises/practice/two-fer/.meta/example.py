@@ -1,2 +1,2 @@
-def two_fer(name=None):
-    return "One for {}, one for me.".format(name or 'you')
+def two_fer(name='you'):
+    return f'One for {name}, one for me.'

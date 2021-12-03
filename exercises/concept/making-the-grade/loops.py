@@ -29,7 +29,14 @@ def above_threshold(student_scores, threshold):
 def letter_grades(highest):
     """
     :param highest: integer of highest exam score.
-    :return: list of integer score thresholds for each F-A letter grades.
+    :return: list of integer lower threshold scores for each D-A letter grade interval.
+             For example, where the highest score is 100, and failing is <= 40,
+             The result would be [41, 56, 71, 86]:
+
+             41 <= "D" <= 55
+             56 <= "C" <= 70
+             71 <= "B" <= 85
+             86 <= "A" <= 100
     """
 
     pass

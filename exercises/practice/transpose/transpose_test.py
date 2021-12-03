@@ -115,6 +115,7 @@ class TransposeTest(unittest.TestCase):
         expected = ["TEASER", " EASER", "  ASER", "   SER", "    ER", "     R"]
         self.assertEqual(transpose("\n".join(lines)), "\n".join(expected))
 
-
-if __name__ == "__main__":
-    unittest.main()
+    def test_jagged_triangle(self):
+        lines = ["11", "2", "3333", "444", "555555", "66666"]
+        expected = ["123456", "1 3456", "  3456", "  3 56", "    56", "    5"]
+        self.assertEqual(transpose("\n".join(lines)), "\n".join(expected))

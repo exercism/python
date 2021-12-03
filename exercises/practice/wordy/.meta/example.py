@@ -1,27 +1,26 @@
-import sys
 from operator import add, mul, sub
-
-if sys.version_info[0] == 2:
-    from operator import div
-else:
-    from operator import floordiv as div
+from operator import floordiv as div
 
 
-VALID_OPERATIONS = {"plus": add, "minus": sub,
-                    "multiplied by": mul, "divided by": div}
+VALID_OPERATIONS = {'plus': add, 'minus': sub, 'multiplied by': mul, 'divided by': div}
 
 
 def answer(question):
-    if not (question.startswith("What is ") and question.endswith("?")):
-        raise ValueError("Ill-formed question")
-    words = question[8:-1].strip().lower().split()
-    if not words:
-        raise ValueError("Ill-formed question")
-    words.reverse()
+    if not bool(question[8:-1].strip().lower().split()):
+        raise ValueError('syntax error')
+
+    elif not question.startswith('What is '):
+        raise ValueError('unknown operation')
+
+    else:
+        words = question[8:-1].strip().lower().split()
+        words.reverse()
+
     try:
         main_value = int(words.pop())
-    except ValueError:
-        raise ValueError("Ill-formed question")
+    except ValueError as error:
+        raise ValueError('syntax error') from error
+
     while words:
         operation = [words.pop()]
         while words:
@@ -29,13 +28,22 @@ def answer(question):
                 next_to_evaluate = words.pop()
                 second_value = int(next_to_evaluate)
                 break
-            except ValueError:
-                operation.append(next_to_evaluate)
+            except ValueError as error:
+                if next_to_evaluate == operation[-1]:
+                    raise ValueError('syntax error') from error
+                else:
+                    operation.append(next_to_evaluate)
         else:
-            raise ValueError("Ill-formed question")
-        operation = " ".join(operation)
+            if operation[-1] not in VALID_OPERATIONS and not operation[-1].isdigit() :
+                raise ValueError('unknown operation')
+            else:
+                raise ValueError('syntax error')
+
+        operation = ' '.join(operation)
+
         try:
             main_value = VALID_OPERATIONS[operation](main_value, second_value)
-        except KeyError:
-            raise ValueError("Ill-formed question")
+        except KeyError as error:
+            raise ValueError('syntax error') from error
+
     return main_value

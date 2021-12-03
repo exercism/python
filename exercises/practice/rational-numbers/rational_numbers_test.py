@@ -131,6 +131,9 @@ class RationalNumbersTest(unittest.TestCase):
     def test_reduce_a_positive_rational_number_to_lowest_terms(self):
         self.assertEqual(Rational(2, 4), Rational(1, 2))
 
+    def test_reduce_places_the_minus_sign_on_the_numerator(self):
+        self.assertEqual(Rational(3, -4), Rational(-3, 4))
+
     def test_reduce_a_negative_rational_number_to_lowest_terms(self):
         self.assertEqual(Rational(-4, 6), Rational(-2, 3))
 
@@ -145,11 +148,3 @@ class RationalNumbersTest(unittest.TestCase):
 
     def test_reduce_one_to_lowest_terms(self):
         self.assertEqual(Rational(13, 13), Rational(1, 1))
-
-    # Utility functions
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
-
-if __name__ == "__main__":
-    unittest.main()

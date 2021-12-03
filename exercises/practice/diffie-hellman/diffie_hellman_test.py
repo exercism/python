@@ -37,6 +37,19 @@ class DiffieHellmanTest(unittest.TestCase):
             ),
         )
 
+    def test_can_calculate_public_key_when_given_a_different_private_key(self):
+        p = 23
+        g = 5
+        private_key = 15
+        self.assertEqual(
+            19,
+            public_key(
+                p,
+                g,
+                private_key,
+            ),
+        )
+
     def test_can_calculate_secret_using_other_party_s_public_key(self):
         p = 23
         their_public_key = 19
@@ -60,7 +73,3 @@ class DiffieHellmanTest(unittest.TestCase):
         secret_a = secret(p, bob_public_key, alice_private_key)
         secret_b = secret(p, alice_public_key, bob_private_key)
         self.assertTrue(secret_a == secret_b)
-
-
-if __name__ == "__main__":
-    unittest.main()

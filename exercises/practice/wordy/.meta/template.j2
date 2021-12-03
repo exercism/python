@@ -3,8 +3,10 @@
     def test_{{ case["description"] | to_snake }}(self):
         {%- set question = case["input"]["question"] %}
         {%- if case is error_case %}
-        with self.assertRaisesWithMessage(ValueError):
+        with self.assertRaises(ValueError) as err:
             {{ case["property"] }}("{{ question }}")
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "{{ case["expected"]["error"] }}")
         {%- else %}
         self.assertEqual({{ case["property"] }}("{{ question }}"), {{ case["expected"] }})
         {%- endif %}
@@ -23,6 +25,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {{ test_case(case) }}
     {% endfor %}
     {%- endif %}
-
-
-{{ macros.footer() }}

@@ -6,45 +6,52 @@ https://www.udacity.com/course/cs212
 from itertools import permutations
 
 
-def just_right_of(x, y):
-    return x - y == 1
+def just_right_of(width, height):
+    return width - height == 1
 
 
-def next_to(x, y):
-    return abs(x - y) == 1
+def next_to(width, height):
+    return abs(width - height) == 1
 
 
 def solution():
     houses = first, _, middle, _, _ = range(5)
     orderings = list(permutations(houses))
+
+    # The following you are about to witness is code from someone who loves 'comprehensions'.
+    # I just fixed the PEP-8 violations...
+    # Someone please write this in a way that it is actually read-able?
+    # Anyways, enjoy.
+    # - J08K <3 (1:05 AM, nov 29th, 2021)
+
     result = next(
         [{
-            Englishman: "Englishman",
-            Spaniard: "Spaniard",
-            Ukrainian: "Ukrainian",
-            Japanese: "Japanese",
-            Norwegian: "Norwegian"
-        }[x] for x in (water, zebra)]
+            english_man: 'Englishman',
+            spaniard: 'Spaniard',
+            ukrainian: 'Ukrainian',
+            japanese: 'Japanese',
+            norwegian: 'Norwegian'
+        }[idx] for idx in (water, zebra)]
         for (red, green, ivory, yellow, blue) in orderings
         if just_right_of(green, ivory)
-        for (Englishman, Spaniard, Ukrainian, Japanese, Norwegian) in orderings
-        if Englishman is red if Norwegian is first if next_to(Norwegian, blue)
-        for (coffee, tea, milk, oj, water) in orderings if coffee is green
-        if Ukrainian is tea if milk is middle
-        for (OldGold, Kools, Chesterfields, LuckyStrike, Parliaments
-             ) in orderings if Kools is yellow if LuckyStrike is oj
-        if Japanese is Parliaments
-        for (dog, snails, fox, horse, zebra) in orderings if Spaniard is dog
-        if OldGold is snails if next_to(Chesterfields, fox)
-        if next_to(Kools, horse))
+        for (english_man, spaniard, ukrainian, japanese, norwegian) in orderings
+        if english_man is red if norwegian is first if next_to(norwegian, blue)
+        for (coffee, tea, milk, orange_juice, water) in orderings if coffee is green
+        if ukrainian is tea if milk is middle
+        for (old_gold, kools, chesterfields, lucky_strike, parliaments
+             ) in orderings if kools is yellow if lucky_strike is orange_juice
+        if japanese is parliaments
+        for (dog, snails, fox, horse, zebra) in orderings if spaniard is dog
+        if old_gold is snails if next_to(chesterfields, fox)
+        if next_to(kools, horse))
     return result
 
 
 def drinks_water():
-    ans, _ = solution()
-    return ans
+    answer, _ = solution()
+    return answer
 
 
 def owns_zebra():
-    _, ans = solution()
-    return ans
+    _, answer = solution()
+    return answer

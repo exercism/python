@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [a0e97d2d-669e-47c7-8134-518a1e2c4555]
 description = "empty string"
@@ -40,3 +47,6 @@ description = "duplicated character in the middle"
 
 [310ac53d-8932-47bc-bbb4-b2b94f25a83e]
 description = "same first and last characters"
+
+[0d0b8644-0a1e-4a31-a432-2b3ee270d847]
+description = "word with duplicated character and with two hyphens"

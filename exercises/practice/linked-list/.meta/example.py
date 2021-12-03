@@ -1,8 +1,8 @@
 class Node:
-    def __init__(self, value, succeeding=None, prev=None):
+    def __init__(self, value, succeeding=None, previous=None):
         self.value = value
         self.succeeding = succeeding
-        self.prev = prev
+        self.prev = previous
 
 
 class LinkedList:
@@ -56,6 +56,6 @@ class LinkedList:
 
     def __iter__(self):
         current_node = self.head
-        while (current_node):
+        while current_node:
             yield current_node.value
             current_node = current_node.succeeding

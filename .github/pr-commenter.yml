@@ -193,14 +193,14 @@ comment:
         <br>
 
         This is an automated [🤖&nbsp;🤖 &nbsp;] comment for the  **`maintainers`** of this repository, notifying them of your contribution.  🎉
-        &nbsp;  Someone will review/reply to your changes shortly. (_usually within **72 hours**._)
+        Someone will review/reply to your changes shortly. (_usually within **72 hours**._)
         You can safely ignore the **`maintainers`**  section below.
 
         <br>
         <details open>
           <summary>⚠️ &nbsp;<b>Please be aware</b>&nbsp;⚠️ </summary>
 
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_This repo does not generally accept Pull Requests unless they follow our [contributing guidelines](https://github.com/exercism/python/blob/main/CONTRIBUTING.md) and are:_
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_This repo does not generally accept [Pull Requests](https://github.com/exercism/docs/blob/main/community/good-member/pull-requests.md) unless they follow our [contributing guidelines](https://github.com/exercism/python/blob/main/CONTRIBUTING.md) and are:_
 
           &nbsp;&nbsp;&nbsp;&nbsp; 1️⃣ &nbsp;&nbsp;&nbsp; Small, contained fixes for typos/grammar/punctuation/code syntax on [one] exercise,
           &nbsp;&nbsp;&nbsp;&nbsp; 2️⃣ &nbsp;&nbsp;&nbsp;&nbsp;Medium changes that have been agreed/discussed via a filed issue,
@@ -288,6 +288,8 @@ comment:
     - id: change-practice-exercise
       files:
         - "exercises/practice/**/*"
+        - "exercises/practice/**/.meta/*"
+        - "exercises/practice/**/.docs/*"
         - "exercises/practice/**/**/*"
       body: |
         ---
