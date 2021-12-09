@@ -1,6 +1,8 @@
 # Instructions
 
-Conda airlines has over 10.000 flights a day, but they need to automate. They are currently assigning all seats to passengers by hand.
+Conda airlines is the programming-world's biggest airline, with over 10.000 flights a day!
+
+They are currently assigning all seats to passengers by hand, this will need to automated.
 
 They have asked _you_ to create software to automate the assigning of seats to passengers. They require your software to be memory efficient and performant.
 
@@ -41,8 +43,30 @@ Implement the `assign_seats()` function that returns a _dictionary_ of `passenge
 `passengers`: A list containing passenger names.
 
 ```python
->>> passengers = ["Jerimiah", "Eric", "Bethaney"]
+>>> passengers = ['Jerimiah', 'Eric', 'Bethaney', 'Byte', 'SqueekyBoots', 'Bob']
 
 >>> assign_seats(passengers)
-{"Jerimiah" : "1A", "Eric" : "1B", "Bethaney" : "1C"}
+{'Jerimiah': '1A', 'Eric': '1B', 'Bethaney': '1C', 'Byte': '1D', 'SqueekyBoots': '2A', 'Bob': '2B'}
+```
+
+## 3. Ticket codes
+
+Each ticket has a _12_ character long string code for identification.
+
+This code begins with the `assigned_seat` followed by the `flight_id`. The rest of the code is appended by `0s`.
+
+Implement a `generator` that yields a `ticket_number` given the following arguments:
+
+`seat_numbers`: A _list_ of *seat_numbers*.
+`flight_id`: A string containing the flight identification.
+
+```python
+>>> seat_numbers = ['1A', '17D']
+>>> flight_id = 'CO1234'
+>>> ticket_ids = generate_codes(seat_numbers, flight_id)
+
+>>> next(ticket_ids)
+'1ACO12340000'
+>>> next(ticket_ids)
+'17DCO1234000'
 ```
