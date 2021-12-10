@@ -28,7 +28,7 @@ This would safe you memory, since you store just the value you are _currently_ w
 
 ## Using a generator
 
-Generators can usually be used in place of most `iterables` in Python. This includes  _functions_ or _objects_ that require an `iterable`/`iterator` as an argument.
+Generators may be used in place of most `iterables` in Python. This includes  _functions_ or _objects_ that require an `iterable`/`iterator` as an argument.
 
 For example, if you want to use the `squares()` generator we just constructed, we simply use:
 
@@ -104,7 +104,8 @@ Note: _Using `yield` expressions is prohibited outside of functions._
 
 Generators are useful in a lot of applications.
 
-When working with a large collection, you might not want to put all of its values into `memory`. A generator can be used to work on larger data piece-by-piece, saving memory and improving performance.
+When working with a large collection, you might not want to put all of its values into `memory`.
+A generator can be used to work on larger data piece-by-piece, saving memory and improving performance.
 
 Generators are also very helpful when a process or calculation is _complex_, _expensive_, or _infinite_:
 
