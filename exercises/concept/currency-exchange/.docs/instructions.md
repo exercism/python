@@ -53,7 +53,7 @@ Unfortunately, the booth gets to keep the remainder/change as an added bonus.
 Create the `get_number_of_bills()` function, taking `budget` and `denomination`.
 
 This function should return the _number of new currency bills_ that you can receive within the given _budget_. 
-In other words, how many _whole bills_ of the new currency fit into the amount of old currency you currently have?
+In other words:  How many _whole bills_ of new currency fit into the amount of old currency you have in your budget? 
 **Note: ** You can only receive _whole bills_, not fractions of bills,  so remember to divide accordingly. 
 Effectively, you are rounding _down_ to the nearest whole bill/denomination.
 ```python
