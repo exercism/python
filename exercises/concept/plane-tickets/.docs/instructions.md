@@ -24,7 +24,7 @@ Implement the `generate_seats()` function that returns an _iterable_ of seats gi
 
 `amount`: The amount of seats to be generated.
 
-Many airlines do not have _row_ number 13 on their flights, due to superstition amongst passengers. 
+Many airlines do not have _row_ number 13 on their flights, due to superstition amongst passengers.
 Conda Airlines also follows this convention, so make sure you _don't_ generate seats for _row_ number 13.
 
 _Note: The returned seats should be ordered, like: 1A 1B 1C._

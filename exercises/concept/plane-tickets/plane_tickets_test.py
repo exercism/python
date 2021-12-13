@@ -3,7 +3,8 @@ import pytest
 
 from plane_tickets import (
     generate_seats,
-    assign_seats
+    assign_seats,
+    generate_codes
 )
 
 class PlaneTicketsTest(unittest.TestCase):
@@ -48,3 +49,14 @@ class PlaneTicketsTest(unittest.TestCase):
         for variant, (input_var, output) in enumerate(zip(input_vars, output), start=1):
             with self.subTest(f"variation #{variant}", input_data=input_var, output_data=output):
                 self.assertEqual(assign_seats(input_var), output)
+
+    @pytest.mark.task(taskno=3)
+    def test_task3(self):
+        input_vars = [(["12A", "38B", "69C", "102B"],"KL1022"),
+                      (["22C", "88B", "33A", "44B"], "DL1002")]
+        output = [['12AKL1022000', '38BKL1022000', '69CKL1022000', '102BKL102200'],
+                  ['22CDL1002000', '88BDL1002000', '33ADL1002000', '44BDL1002000']]
+        for variant, (input_var, output) in enumerate(zip(input_vars, output), start=1):
+            with self.subTest(f"variation #{variant}", input_data=input_var, output_data=output):
+                seats, flight_nr = input_var
+                self.assertEqual(list(generate_codes(seats, flight_nr)), output)
