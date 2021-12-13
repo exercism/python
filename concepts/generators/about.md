@@ -2,9 +2,12 @@
 
 ## Constructing a generator
 
-Generators are constructed much like other functions, but require a [`yield` expression](#the-yield-expression), which we will explore in depth a bit later.
+Generators are constructed much like other looping or recursive functions, but require a [`yield` expression](#the-yield-expression), which we will explore in depth a bit later.
 
-An example is a function that returns the _squares_ from a given list of numbers.  As currently written, all input must be processed before any values can be returned:  
+
+An example is a function that returns the _squares_ from a given list of numbers.  
+As currently written, all input must be processed before any values can be returned:  
+
 
 ```python
 >>> def squares(list_of_numbers):
@@ -24,13 +27,14 @@ def squares(list_of_numbers):
 
 The rationale behind this is that you use a generator when you do not need all the values _at once_.
 
-This would safe you memory, since you store just the value you are _currently_ working on.
+This saves memory and processing power, since only the value you are _currently working on_ is calculated.
+
 
 ## Using a generator
 
 Generators may be used in place of most `iterables` in Python. This includes  _functions_ or _objects_ that require an `iterable`/`iterator` as an argument.
 
-For example, if you want to use the `squares()` generator we just constructed, we simply use:
+To use the `squares()` generator:
 
 ```python
 >>> squared_numbers = squares([1, 2, 3, 4])
@@ -43,7 +47,8 @@ For example, if you want to use the `squares()` generator we just constructed, w
 16
 ```
 
-Values within a generator can also be produced/accessed via the `next()` function. `next()` calls the `__next__()` attribute of a generator, which "advances" or evaluates the generator code to the `yield` expression, returning the "next" value.
+Values within a generator can also be produced/accessed via the `next()` function. 
+`next()` calls the `__next__()` method of a generator object, "advancing" or evaluating the generator code up to its `yield` expression, which then "yields" or returns the value.
 
 ```python
 square_generator = squares([1, 2])
@@ -65,13 +70,20 @@ StopIteration
 
 ### Difference between iterables and generators
 
-Generators and (`iterables`)[https://wiki.python.org/moin/Iterator] act very similar, but there are some important differences to note:
+Generators are a special sub-set of _iterators_.
+`Iterators` are the mechanism/protocol that enables looping over _iterables_.
+Generators and and the iterators returned by common Python (`iterables`)[https://wiki.python.org/moin/Iterator] act very similarly, but there are some important differences to note:
 
-- Generators are _one-way_; no backing up to a previous value.
+
+- Generators are _one-way_; there is no "backing up" to a previous value.
+
 - Iterating over generators consume the returned values; no resetting.
-- Generators are not sortable and can not be reversed.
-- Generators do _not_ have `indexes`, so you can't reference a previous or future value.
-- Generators do _not_ implement the `len()` function.
+- Generators (_being lazily evaluated_) are not sortable and can not be reversed.
+
+- Generators do _not_ have `indexes`, so you can't reference a previous or future value using addition or subtraction.
+
+- Generators cannot be used with the `len()` function.
+
 - Generators can be _finite_ or _infinite_, be careful when collecting all values from an _infinite_ generator.
 
 ## The yield expression

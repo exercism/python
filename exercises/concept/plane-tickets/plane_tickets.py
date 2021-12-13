@@ -5,7 +5,7 @@ def generate_seats(amount):
     """ Generate a series of seat numbers for airline boarding.
 
     :param amount: Amount of seats to be generated. (int)
-    :return: Iterable that generates seat numbers. (generator)
+    :return: Generator that yields seat numbers.
 
     There should be no row 13
 
@@ -20,7 +20,7 @@ def generate_seats(amount):
 
 def assign_seats(passengers):
 
-    """ Assign seats to passenger.
+    """ Assign seats to passengers.
 
     :param passengers: A list of strings containing names of passengers. (list[str])
     :return: A dictionary type object containing the names of the passengers as keys and seat numbers as values.
