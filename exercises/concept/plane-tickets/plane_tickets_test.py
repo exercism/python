@@ -1,3 +1,4 @@
+from typing import Generator
 import unittest
 import pytest
 
@@ -12,11 +13,9 @@ class PlaneTicketsTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
     def test_task1_is_generator(self):  # * Tests if [Task 1] actually returns a generator.
-        input_vars = [5]
-        output = ["1A"]
-        for variant, (input_var, output) in enumerate(zip(input_vars, output), start=1):
-            with self.subTest(f"variation #{variant}", input_data=input_var, output_data=output):
-                self.assertEqual(generate_seats(input_var).__next__(), output)
+        input_var = 5
+        # Output technically not needed here, since we are testing for type.
+        self.assertIsInstance(generate_seats(input_var), Generator)
 
     @pytest.mark.task(taskno=1)
     def test_task1_output(self):
