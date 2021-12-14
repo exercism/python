@@ -44,7 +44,7 @@ def approx_average_is_average(hand):
     """
 
     :param hand: list - cards in hand.
-    :return: bool - is approximate average the same as true average?
+    :return: bool - if approximate average equals to the `true average`.
     """
 
     pass
