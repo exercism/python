@@ -7,7 +7,7 @@ Your friend Chandler plans to visit exotic countries all around the world. Sadly
 Create the `exchange_money()` function, taking 2 parameters:
 
 1. `budget` : The amount of money you are planning to exchange.
-2. `exchange_rate` : The amount of domestic currency that equals one unit of foreign currency.
+2. `exchange_rate` : The amount of domestic currency equal to one unit of foreign currency.
 
 This function should return the value of the exchanged currency.
 
