@@ -57,7 +57,7 @@ Functions that do not have an explicit `return` expression will return [`None`][
 def add_two_numbers(number_one, number_two):
   result = number_one + number_two
 
->>> print(add_two_number s(5, 7))
+>>> print(add_two_numbers(5, 7))
 None
 ```
 
