@@ -23,7 +23,7 @@ To create a more helpful representation, you will need to define a `__repr__` me
 
 According to the [specification for a `__repr__` method](https://docs.python.org/3/reference/datamodel.html#object.__repr__), you should ideally have the method return a string that could be used to recreate the object, is you were to copy the result and paste it in a new environment. 
 
-For example, a `Clock` what represents 11:30 AM would look like this: `Clock(11, 30)`.
+For example, a `Clock` what represents 11:30 AM could look like this: `Clock(11, 30)`.
 
 
 Defining a `__repr__` method is a great thing to do for every class you create. When you do, you should consider:
