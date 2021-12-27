@@ -19,11 +19,11 @@ One aspect of a class' behavior is this string prepresentation. By default, a cl
 <Clock object st 0x... >
 ```
 
-To create a more helpful representation, you will need to define a `__repr__` method on your class.
+To create a more helpful representation, you will need to define a `__repr__` method on your class that returns a string.
 
-According to the [specification for a `__repr__` method](https://docs.python.org/3/reference/datamodel.html#object.__repr__), you should ideally have the method return a string that could be used to recreate the object, is you were to copy the result and paste it in a new environment. 
+According to the [specification for a `__repr__` method](https://docs.python.org/3/reference/datamodel.html#object.__repr__), you should ideally have the method return a string that could be used to recreate the object, if you were to copy and paste it into a new environment. 
 
-For example, a `Clock` what represents 11:30 AM could look like this: `Clock(11, 30)`.
+For example, a `Clock` that represents 11:30 AM could look like this: `Clock(11, 30)`.
 
 
 Defining a `__repr__` method is a great thing to do for every class you create. When you do, you should consider:
@@ -32,7 +32,7 @@ Defining a `__repr__` method is a great thing to do for every class you create. 
 
 - Ideally, you should return a string that a user could copy, paste into a python environment, and have a copy of the object.
 
-- If that's not possible, return a practical description between angle brackets, as in `< ...a practical description... >`.
+- If that's not practical, return a description between angle brackets, as in `< ...a practical description... >`.
 
 
 ### String conversion
