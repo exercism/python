@@ -19,12 +19,12 @@ By default, a class's string representation is not very helpful.
 
 ```python
 >>> Clock(12, 34)
-<Clock object st 0x... >
+<Clock object st 0x102807b20 >
 ```
 
 To create a more helpful representation, you need to define a `__repr__` method on your class that returns a string.
 
-According to the [specification for a `__repr__` method](https://docs.python.org/3/reference/datamodel.html#object.__repr__), you should ideally have the method return valid Python code that could be used to recreate the object.
+According to the [specification for a `__repr__` method][repr-docs], you should ideally have the method return valid Python code that could be used to recreate the object.
 That allows you to copy-paste the output directly into code or the REPL.
 
 For example, a `Clock` that represents 11:30 AM could look like this: `Clock(11, 30)`.
@@ -58,3 +58,5 @@ In this exercise, you will get to write a `__str__` method, too.
 ```
 
 To support this string conversion, you will need to create a `__str__` method on your class.
+
+[repr-docs]: https://docs.python.org/3/reference/datamodel.html#object.__repr__
