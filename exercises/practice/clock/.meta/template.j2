@@ -19,7 +19,6 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
                 {{- clock(input["clock1"]) }},
                 {{- clock(input["clock2"]) }}
             {% else -%}
-                
                 Equal({{ 'repr' if prop == 'repr' else 'str' }}({{ clock(input) }}
                 {%- if prop == "add" %} + {{ input["value"] }}
                 {%- elif prop == "subtract" %} - {{ input["value"] }}

@@ -41,7 +41,7 @@ Some things to consider:
 ### String conversion
 
 In addition to the `__repr__` method, there might also be a need for an alternative "human-readable" string representation of the `class`.
-This might be used to format the object for program output, or documentation.
+This might be used to format the object for program output or documentation.
 Looking at `datetime.datetime` again:
 
 ```python
