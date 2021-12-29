@@ -8,14 +8,14 @@ from clock import (
 
 
 class ClockTest(unittest.TestCase):
-    # Create a string representation
+    # Create A String Representation
+    def test_lunch_time(self):
+        self.assertEqual(repr(Clock(12, 0)), "Clock(12, 0)")
+
     def test_breakfast_time(self):
         self.assertEqual(repr(Clock(6, 45)), "Clock(6, 45)")
 
-    def test_lunchtime(self):
-        self.assertEqual(repr(Clock(12, 0)), "Clock(12, 0)")
-
-    def test_dinnertime(self):
+    def test_dinner_time(self):
         self.assertEqual(repr(Clock(18, 30)), "Clock(18, 30)")
 
     # Create A New Clock With An Initial Time
