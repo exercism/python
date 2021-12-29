@@ -1,0 +1,39 @@
+{
+  "cases": [
+    {
+      "description": "Create a string representation",
+      "cases": [
+        {
+          "uuid": "d2c8f173-018d-488c-8c4c-009f8c772313",
+          "description": "lunch time",
+          "property": "repr",
+          "input": {
+            "hour": 12,
+            "minute": 0
+          },
+          "expected": "Clock(12, 0)"
+        },
+        {
+          "uuid": "61a68f88-b980-46cd-a9f5-844832618092",
+          "description": "breakfast time",
+          "property": "repr",
+          "input": {
+            "hour": 6,
+            "minute": 45
+          },
+          "expected": "Clock(6, 45)"
+        },
+        {
+          "uuid": "ea93b367-fb03-44e4-a845-51756b8c9f3a",
+          "description": "dinner time",
+          "property": "repr",
+          "input": {
+            "hour": 18,
+            "minute": 30
+          },
+          "expected": "Clock(18, 30)"
+        }
+      ]
+    }
+  ]
+}
