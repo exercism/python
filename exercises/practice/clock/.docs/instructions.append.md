@@ -60,6 +60,8 @@ In this exercise, you will get a chance to write a `__str__` method, as well as 
 
 To support this string conversion, you will need to create a `__str__` method on your class that returns a more "human readable" string showing the Clock time.
 
+If you don't create a `__str__` method and you call `str()` on your class, python will try calling `__repr__` on your class as a fallback. So if you only implement one of the two, it would be better to create a `__repr__` method.
+
 [repr-docs]: https://docs.python.org/3/reference/datamodel.html#object.__repr__
 [classes in python]: https://docs.python.org/3/tutorial/classes.html
 [REPL]: https://pythonprogramminglanguage.com/repl/
