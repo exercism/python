@@ -58,7 +58,7 @@ In this exercise, you will get a chance to write a `__str__` method, as well as 
 '11:30'
 ```
 
-To support this string conversion, you will need to create a `__str__` method on your class.
+To support this string conversion, you will need to create a `__str__` method on your class that returns a more "human readable" string showing the Clock time.
 
 [repr-docs]: https://docs.python.org/3/reference/datamodel.html#object.__repr__
 [classes in python]: https://docs.python.org/3/tutorial/classes.html
