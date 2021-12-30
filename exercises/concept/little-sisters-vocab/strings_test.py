@@ -3,7 +3,7 @@ import pytest
 from strings import (add_prefix_un,
                      make_word_groups,
                      remove_suffix_ness,
-                     noun_to_verb)
+                     adjective_to_verb)
 
 
 class LittleSistersVocabTest(unittest.TestCase):
@@ -73,22 +73,22 @@ class LittleSistersVocabTest(unittest.TestCase):
                                  msg=f'Expected: {result} but got a different word instead.')
 
     @pytest.mark.task(taskno=4)
-    def test_noun_to_verb(self):
+    def test_adjective_to_verb(self):
         input_data = ['Look at the bright sky.',
                       'His expression went dark.',
                       'The bread got hard after sitting out.',
                       'The butter got soft in the sun.',
-                      'Her face was filled with light.',
+                      'Her eyes were light blue.',
                       'The morning fog made everything damp with mist.',
                       'He cut the fence pickets short by mistake.',
                       'Charles made weak crying noises.',
                       'The black oil got on the white dog.']
-        index_data = [-2, -1, 3, 3, -1, -3, 5, 2, 1]
+        index_data = [-2, -1, 3, 3, -2, -3, 5, 2, 1]
         result_data = ['brighten', 'darken', 'harden', 'soften',
                        'lighten', 'dampen', 'shorten', 'weaken', 'blacken']
         number_of_variants = range(1, len(input_data) + 1)
 
         for variant, sentence, index, result in zip(number_of_variants, input_data, index_data, result_data):
             with self.subTest(f'variation #{variant}', sentence=sentence, index=index, result=result):
-                self.assertEqual(noun_to_verb(sentence, index), result,
+                self.assertEqual(adjective_to_verb(sentence, index), result,
                                  msg=f'Expected: {result} but got a different word instead.')
