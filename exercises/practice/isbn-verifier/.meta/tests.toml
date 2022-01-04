@@ -1,21 +1,28 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [0caa3eac-d2e3-4c29-8df8-b188bc8c9292]
-description = "valid isbn number"
+description = "valid isbn"
 
 [19f76b53-7c24-45f8-87b8-4604d0ccd248]
 description = "invalid isbn check digit"
 
 [4164bfee-fb0a-4a1c-9f70-64c6a1903dcd]
-description = "valid isbn number with a check digit of 10"
+description = "valid isbn with a check digit of 10"
 
 [3ed50db1-8982-4423-a993-93174a20825c]
 description = "check digit is a character other than X"
 
 [c19ba0c4-014f-4dc3-a63f-ff9aefc9b5ec]
-description = "invalid character in isbn"
+description = "invalid character in isbn is not treated as zero"
 
 [28025280-2c39-4092-9719-f3234b89c627]
 description = "X is only valid as a check digit"
@@ -48,7 +55,10 @@ description = "empty isbn"
 description = "input is 9 characters"
 
 [ed6e8d1b-382c-4081-8326-8b772c581fec]
-description = "invalid characters are not ignored"
+description = "invalid characters are not ignored after checking length"
+
+[daad3e58-ce00-4395-8a8e-e3eded1cdc86]
+description = "invalid characters are not ignored before checking length"
 
 [fb5e48d8-7c03-4bfb-a088-b101df16fdc3]
 description = "input is too long but contains a valid isbn"
