@@ -48,3 +48,34 @@ def function3():
 
 function3 = decorator3()(function3)
 ```
+
+## How to write them
+
+As said before, decorators can modify or register a function.
+The simplest decorator however, does absolutely nothing.  
+
+Decorators are functions which return functions.
+They take one argument - the function which they have been added to.
+They also return one thing - the function which will be run by the program.
+This is usually either the function they were added to or a slightly modified version of that function, but it does not have to be - it can be any function whatsoever.
+
+The simplest decorator - one that does nothing - can be written as follows:
+```python
+def do_nothing(function):
+    return function
+```
+```python
+def function4a():
+    return 4
+
+@do_nothing
+def function4b():
+    return 4
+```
+```python
+>>>function4a()
+4
+>>>function4b()
+4
+```
+As you can see, both functions do the same thing, and when the decorator is added nothing changes.
