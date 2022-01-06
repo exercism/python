@@ -71,8 +71,8 @@
         "name": "Black Jack",
         "uuid": "e1a6075e-0c5e-48cd-8c50-69140961a06a",
         "concepts": ["comparisons"],
-        "prerequisites": ["basics"],
-        "status": "wip"
+        "prerequisites": ["basics", "bools", "conditionals"],
+        "status": "beta"
       },
       {
         "slug": "pretty-leaflet",
