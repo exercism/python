@@ -52,7 +52,7 @@ function3 = decorator3()(function3)
 ## How to write them
 
 As said before, decorators can modify or register a function.
-The simplest decorator however, does absolutely nothing.  
+The simplest decorator however, does absolutely nothing.
 
 Decorators are functions which return functions.
 They take one argument - the function which they have been added to.
@@ -79,3 +79,29 @@ def function4b():
 4
 ```
 As you can see, both functions do the same thing, and when the decorator is added nothing changes.
+
+A decorator that registers a function could be written as follows:
+```python
+functions = []
+
+def register_function(function):
+    functions.append(function)
+    return function
+```
+```python
+>>>functions
+[]
+```
+```python
+@register_function
+def function5():
+    return 5
+```
+```python
+>>>functions
+[<function function5 at 0x000001CA840AA700>]
+>>>function5()
+5
+```
+As you can see, adding the decorator to the function adds the function into the list.
+It is important to note that this happens when the function is declared, not when it is called.
