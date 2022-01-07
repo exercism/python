@@ -148,3 +148,61 @@ If we look inside our `wrapper()` function, we first see a call to the original 
 This call will do exactly the same as if we had called the original function without the decoration to the function.
 Then we get a line that modifies this result.
 Finally we return the modified result, which is what we get when calling the function.
+
+If we apply this decorator to a function which takes a single number and triples it, then we should get a function that sextuples our number.
+Lets see what happens:
+```python
+@double
+def triple(number):
+    return number * 3
+```
+```python
+>>>triple(5)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: wrapper() takes 0 positional arguments but 1 was given
+```
+Unfortunately, we get an error.
+This happens because, as said earlier, python does not call the original function when you appear to call it.
+Python actually calls the function in the decorator, `wrapper()`, which does not have any parameters.
+
+To rectify this, we can add a parameter to our `wrapper()` function.
+An updated `@double` decorator is shown below:
+```python
+def double(function):
+    def wrapper(value):
+        function_result = function(value)
+        doubled = function_result * 2
+        return doubled
+    return wrapper
+```
+```python
+>>>triple(5)
+30
+```
+However, if we now call our function which took no parameters earlier, it will fail:
+```python
+>>>function6b()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: wrapper() mising 1 required positional argument: 'value'
+```
+It would also fail for any other number of parameters too.
+
+Fortunately we can write decorators that don't care about the number of parameters a function may take by using the `*args` and `**kwargs` syntax.
+Here's an update `@double` decorator:
+```python
+def double(function):
+    def wrapper(*args, **kwargs):
+        function_result = function(*args, **kwargs)
+        doubled = function_result * 2
+        return doubled
+    return wrapper
+```
+Now we should be to use this decorator on functions which accept zero, one, two or even one million (though we wouldn't recommend that many!) parameters:
+```python
+>>>triple(5)
+30
+>>>function6b()
+12
+```
