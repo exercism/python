@@ -105,3 +105,32 @@ def function5():
 ```
 As you can see, adding the decorator to the function adds the function into the list.
 It is important to note that this happens when the function is declared, not when it is called.
+
+Many decorators you write will change what is run when the function is called.
+These will need to return a different function to the one passed.
+This different function is written inside the decorator's function.
+
+This decorator doubles the result of the function:
+```python
+def double(function):
+    def wrapper():
+        function_result = function()
+        doubled = function_result * 2
+        return doubled
+    return wrapper
+```
+```python
+def function6a():
+    return 6
+
+@double
+def function6b():
+    return 6
+```
+```python
+>>>function6a()
+6
+>>>function6b()
+12
+```
+As you can see the decorator modifies the result of the function.
