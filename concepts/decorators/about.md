@@ -134,3 +134,17 @@ def function6b():
 12
 ```
 As you can see the decorator modifies the result of the function.
+
+Now lets take a look at what is actually happening in this decorator.
+
+On the first line, we have the normal function definition.
+But, when we go inside this function and take a look at the next line, we get another function definition.
+This function is what we will return at the end of the decorator.
+This means we are not returning the original function.
+Because of this, Python will not actually call the original function when a call is made to what looks like that function.
+Instead, Python will call the function we created, `wrapper()`.
+
+If we look inside our `wrapper()` function, we first see a call to the original function.
+This call will do exactly the same as if we had called the original function without the decoration to the function.
+Then we get a line that modifies this result.
+Finally we return the modified result, which is what we get when calling the function.
