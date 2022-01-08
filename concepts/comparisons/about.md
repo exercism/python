@@ -32,7 +32,7 @@ For the other numeric types ([complex][complex numbers], [decimal][decimal numbe
 For more information on the rules that python uses for numeric conversion, see [arithmetic conversions][arithmetic conversions] in the Python documentation.
 
 ```python
-import fractions
+>>> import fractions
 
 # A string cannot be converted to an int.
 >>> 17 == '17'
@@ -118,7 +118,6 @@ False
 Container data types (_`lists`, `tuples`, `sets`, `dicts`, etc._) also compare [_lexicographically_][lexographic order] - they are equal if both containers have the same data **and** the same data types (_in the case of `lists` and `tuples`, they must also have the same **ordering**_), unequal otherwise.
 
 ```python
-# Comparing lists
 >>> [1, 2] == [1, 2]
 True
 
@@ -180,6 +179,8 @@ Due to their singleton status, `None` and `NotImplemented` should always be comp
 See the Python reference docs on [value comparisons][value comparisons none] and [PEP8][PEP8 programming recommendations] for more details on this convention.
 
 ```python
+>>> 
+# A list of favorite numbers.
 >>> my_fav_numbers = [1, 2, 3]
 
 >>> your_fav_numbers = my_fav_numbers
@@ -216,6 +217,7 @@ The operators `in` and `not in` test for _membership_.
 For string and bytes types, `<name> in <fullname>` is `True` _**if and only if**_ `<name>` is a substring of `<fullname>`.
 
 ```python
+>>> 
 # A set of lucky numbers.
 >>> lucky_numbers = {11, 22, 33}
 >>> 22 in lucky_numbers
@@ -224,13 +226,8 @@ True
 >>> 44 in lucky_numbers
 False
 
-# A dictionary of employees.
->>> employee = {
-    'name': 'John Doe',
-    'id': 67826,
-    'age': 33,
-    'title': 'ceo'
-    }
+# A dictionary of employee information.
+>>> employee = {'name': 'John Doe', 'id': 67826, 'age': 33, 'title': 'ceo'}
 
 # Checking for the membership of certain keys.
 >>> 'age' in employee
