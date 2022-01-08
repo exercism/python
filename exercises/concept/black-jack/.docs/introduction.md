@@ -195,7 +195,7 @@ True
 >>> 44 in lucky_numbers
 False
 
-# A dictionary of employees.
+# A dictionary of employee information.
 >>> employee = {'name': 'John Doe', 'id': 67826, 'age': 33, 'title': 'ceo'}
 
 # Checking for the membership of certain keys.
