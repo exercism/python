@@ -31,7 +31,7 @@ For the other numeric types in the Python standard library ([complex][complex nu
 For more information on the rules that python uses for _numeric conversion_, see [arithmetic conversions][arithmetic conversions] in the Python documentation.
 
 ```python
-import fractions
+>>> import fractions
 
 # A string cannot be converted to an int.
 >>> 17 == '17'
@@ -186,6 +186,7 @@ The operators `in` and `not in` test for _membership_.
 For string and bytes types, `<name> in <fullname>` is `True` _**if and only if**_ `<name>` is a substring of `<fullname>`.
 
 ```python
+>>> 
 # A set of lucky numbers.
 >>> lucky_numbers = {11, 22, 33}
 >>> 22 in lucky_numbers
@@ -195,12 +196,7 @@ True
 False
 
 # A dictionary of employees.
->>> employee = {
-    'name': 'John Doe',
-    'id': 67826,
-    'age': 33,
-    'title': 'ceo'
-    }
+>>> employee = {'name': 'John Doe', 'id': 67826, 'age': 33, 'title': 'ceo'}
 
 # Checking for the membership of certain keys.
 >>> 'age' in employee
