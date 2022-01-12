@@ -28,7 +28,7 @@
 - Remember that tuples support all [common sequence operations][common sequence operations].
 - Could you re-use your `compare_records()` function here?
 
-## 5. "Clean up" & format a report of all records
+## 5. "Clean up" & make a report of all records
 
 - Remember: tuples are _immutable_, but the contents can be accessed via _index_ using _bracket notation_.
 - Tuples don't have to use parentheses unless there is _ambiguity_.
