@@ -2,6 +2,7 @@
   "blurb": "Learn about sets by managing the menus and ingredients for your catering company's event.",
   "icon": "meetup",
   "authors": ["bethanyg"],
+  "contributors": ["zepam"],
   "files": {
     "solution": ["sets.py"],
     "test": ["sets_test.py"],
