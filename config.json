@@ -31,7 +31,7 @@
         "name": "Little Sister's Vocabulary",
         "uuid": "5a9b42fb-ddf4-424b-995d-f9952ea63c37",
         "concepts": ["strings"],
-        "prerequisites": ["basics"],
+        "prerequisites": ["basics", "conditionals"],
         "status": "beta"
       },
       {
@@ -145,7 +145,7 @@
         "concepts": ["loops"],
         "prerequisites": [
           "basics",
-          "conditionals",
+          "comparisons",
           "lists",
           "list-methods",
           "strings"
