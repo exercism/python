@@ -1,3 +1,3 @@
 # Hints
 
-See [Emulating numeric types](https://docs.python.org/2/reference/datamodel.html#emulating-numeric-types) for help on operator overloading.
+See [Emulating numeric types](https://docs.python.org/3/reference/datamodel.html#emulating-numeric-types) for help on operator overloading.
