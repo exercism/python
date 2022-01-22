@@ -9,7 +9,7 @@ def value_of_card(card):
     """Determine the scoring value of a card.
 
     :param card: str - given card.
-    :return: int - value of a given card. J, Q, K = 10; A = 1; numerical value otherwise.
+    :return: int - value of a given card. 'J', 'Q', 'K' = 10; 'A' = 1; numerical value otherwise.
     """
 
     pass
@@ -18,7 +18,7 @@ def value_of_card(card):
 def higher_card(card_one, card_two):
     """Determine which card has a higher value in the hand.
 
-    :param card_one, card_two: str - cards dealt. J, Q, K = 10; A = 1; numerical value otherwise.
+    :param card_one, card_two: str - cards dealt. 'J', 'Q', 'K' = 10; 'A' = 1; numerical value otherwise.
     :return: higher value card - str. Tuple of both cards if they are of equal value.
     """
 
@@ -28,7 +28,7 @@ def higher_card(card_one, card_two):
 def value_of_ace(card_one, card_two):
     """Calculate the most advantageous value for the ace card.
 
-    :param card_one, card_two: str - card dealt. J, Q, K = 10; A = 11 (if already in hand); numerical value otherwise.
+    :param card_one, card_two: str - card dealt. 'J', 'Q', 'K' = 10; 'A' = 11 (if already in hand); numerical value otherwise.
     :return: int - value of the upcoming ace card (either 1 or 11).
     """
 
@@ -38,7 +38,7 @@ def value_of_ace(card_one, card_two):
 def is_blackjack(card_one, card_two):
     """Determine if the hand is a 'natural' or 'blackjack'.
 
-    :param card_one, card_two: str - cards dealt. J, Q, K = 10; A = 11; numerical value otherwise.
+    :param card_one, card_two: str - cards dealt. 'J', 'Q', 'K' = 10; 'A' = 11; numerical value otherwise.
     :return: bool - if the hand is a blackjack (two cards worth 21).
     """
 
