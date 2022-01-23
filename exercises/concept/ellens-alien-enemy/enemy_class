@@ -1,0 +1,14 @@
+## Create the Enemy class here
+
+
+def new_enemy_list(positions):
+    """
+
+    :param positions: list - a list of tuples of (x, y) coordinates
+    :return: list - a list of enemy objects
+    
+    Function that takes a list of positions and creates one enemy
+    instance per position
+    """
+    
+    pass
