@@ -20,17 +20,11 @@ collection. They have seven pitches, and are called diatonic scales.
 The collection of notes in these scales is written with either sharps or
 flats, depending on the tonic. Here is a list of which are which:
 
-No Sharps or Flats:
-C major
-a minor
+No Sharps or Flats: C major, a minor
 
-Use Sharps:
-G, D, A, E, B, F# major
-e, b, f#, c#, g#, d# minor
+Use Sharps: G, D, A, E, B, F# major, e, b, f#, c#, g#, d# minor
 
-Use Flats:
-F, Bb, Eb, Ab, Db, Gb major
-d, g, c, f, bb, eb minor
+Use Flats: F, Bb, Eb, Ab, Db, Gb major, d, g, c, f, bb, eb minor
 
 The diatonic scales, and all other scales that derive from the
 chromatic scale, are built upon intervals. An interval is the space
