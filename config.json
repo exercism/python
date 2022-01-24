@@ -175,6 +175,14 @@
         "concepts": ["sets"],
         "prerequisites": ["basics", "dicts", "lists", "loops", "tuples"],
         "status": "beta"
+      },
+      {
+        "slug": "ellens-alien-game",
+        "name": "Ellen's Alien Game",
+        "uuid": "3550ec07-f6c6-48bd-b2b4-086e75faf9e7",
+        "concepts": ["classes"],
+        "prerequisites": ["basics", "bools", "comparisons", "loops", "dicts", "iteration", "lists", "numbers", "sequences", "sets", "strings", "tuples"],
+        "status": "wip"
       }
     ],
     "practice": [
