@@ -3,10 +3,17 @@ import re
 def parse(markdown):
 
     """ Markup
-    Input: would be a markdown phrase for an example
-    Output: expected to pass a HTML equivalent for the same
-    Sample: "#exercism.org is a useful practice ground"
-    you syntax should return <h1>exercism.org is a useful practice ground </h1>
+
+    You are expected to write a function that converts Markdown (Markdown is a plain
+    text format for writing structured documents, based on conventions for indicating
+    formatting in email and usenet posts.) to a HTML equivalent syntax
+
+    Function parse would take in a markdown phrase for an example say 
+    "#exercism.org is a useful code practice ground"; "#" denotes The largest heading
+    ## denotes The second largest heading you are expected to return a
+    HTML equivalent for the same say something like
+    <h1>exercism.org is a useful code practice ground</h1>
+
     """
     lines = markdown.split('\n')
     res = ''
