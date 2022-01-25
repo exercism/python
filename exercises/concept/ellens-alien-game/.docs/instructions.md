@@ -1,7 +1,7 @@
 # Instructions
 
 Ellen is making a game where the player has to fight aliens.
-She has just learned about Object Oriented Programming (OOP) and is eager to take advantage of what this paradigm has to offer.
+She has just learned about Object Oriented Programming (OOP) and is eager to take advantage of what using `classes` could offer her program.
 
 To Ellen's delight, you have offered to help and she has given you the task of programming the aliens that the player has to fight.
 
@@ -20,19 +20,20 @@ Every alien starts off with a health of 3, so initialize the `health` variable t
 3
 ```
 
-Now, each alien should be able to keep track of it's own position and health.
+Now, each alien should be able to internally keep track of it's own position and health.
 
 ## 2. The `hit` Method
 
 Ellen would like the Alien class to have a `hit` method that decrements the health of an alien object when it is called.
-This way, she can simply call the `hit` method instead of having to manually change an alien's health.
+This way, she can simply call `<alien>.hit()` instead of having to manually change an alien's health.
 
-For example:
 
 ```python
 >>> alien = Alien(0, 0)
 >>> alien.health
-3 # same as before
+# Initialized health value.
+3 
+# Decrements health by 1 point.
 >>> alien.hit()
 >>> alien.health
 2
@@ -73,7 +74,8 @@ You will need to write a `teleport` function that takes new x and y positions, a
 Obviously, if the aliens can be hit by something, then they need to be able to detect when such a collision has occurred.
 However, collision detection algorithms can be tricky, and you do not yet know how to implement one.
 Ellen has said that she will do it later, but she would still like the method to appear in the class.
-It will need to take a variable of some kind (probably another object), but that's really all you know:
+It will need to take a variable of some kind (probably another object), but that's really all you know.
+You will need to make sure that putting in the `method` definition into the `class` doesn't cause any errors when called:
 
 ```python
 >>> alien.collision_detection(other_object)
@@ -102,7 +104,7 @@ For example:
 ## 7. Object Creation
 
 Ellen loves what you've done so far, but she has a favor to ask.
-She would like a standalone function that will create a list of alien objects, given a list of positions (as tuples).
+She would like a standalone function that will create a `list` of alien objects, given a list of positions (as `tuples`).
 
 For example:
 
