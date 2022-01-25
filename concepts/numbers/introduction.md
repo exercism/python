@@ -76,7 +76,7 @@ To convert a float to an integer, you can use `int()`. Also, to convert an integ
 
 ## Underscores in Numeric Literals
 
-As of Python 3.6, python supports the use of underscores in numerical literals to improve readability:
+As of version 3.6, Python supports the use of underscores in numerical literals to improve readability:
 ```python
 # A float with underscores
 >>> dollars = 35_000_000.0
