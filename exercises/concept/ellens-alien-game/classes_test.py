@@ -27,18 +27,6 @@ class ClassesTest(unittest.TestCase):
 
         self.assertEqual(3, alien.health, msg=error)
 
-    # Test class variables are identical across instances
-    def test_alien_class_variable(self):
-        alien_one = Alien(0, 2)
-        alien_two = Alien(-6, -1)
-        Alien.total_aliens_created = -2
-
-        error_one = "Expected the total_aliens_created variable to be identical."
-        error_two = "Expected the health variable to be identical."
-
-        self.assertEqual(alien_two.total_aliens_created, alien_one.total_aliens_created, msg=error_one)
-        self.assertEqual(alien_two.health, alien_one.health, msg=error_two)
-
     # Test instance variables are unique to specific instances
     @pytest.mark.task(taskno=1)
     def test_alien_instance_variables(self):
@@ -98,6 +86,19 @@ class ClassesTest(unittest.TestCase):
         error = "Expected collision_detection method to not be implemented"
 
         self.assertIsNone(alien.collision_detection(Alien(7, 2)), msg=error)
+
+    # Test class variables are identical across instances
+    @pytest.mark.task(taskno=6)
+    def test_alien_class_variable(self):
+        alien_one = Alien(0, 2)
+        alien_two = Alien(-6, -1)
+        Alien.total_aliens_created = -2
+
+        error_one = "Expected the total_aliens_created variable to be identical."
+        error_two = "Expected the health variable to be identical."
+
+        self.assertEqual(alien_two.total_aliens_created, alien_one.total_aliens_created, msg=error_one)
+        self.assertEqual(alien_two.health, alien_one.health, msg=error_two)
 
     # Test total_aliens_created increments upon object instantiation
     @pytest.mark.task(taskno=6)
