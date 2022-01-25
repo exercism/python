@@ -4,8 +4,8 @@
   "authors": ["PaulT89", "BethanyG"],
   "contributors": [],
   "files": {
-    "solution": ["alien_class.py"],
-    "test": ["alien_class_test.py"],
+    "solution": ["classes.py"],
+    "test": ["classes_test.py"],
     "exemplar": [".meta/exemplar.py"]
   }
 }
