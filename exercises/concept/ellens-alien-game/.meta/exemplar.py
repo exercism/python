@@ -21,7 +21,4 @@ class Alien:
         pass
 
 def new_alien_list(positions):
-    new_aliens = []
-    for position in positions:
-        new_aliens.append(Alien(position[0], position[1]))
-    return new_aliens
+    return [Alien(position[0], position[1]) for position in positions]
