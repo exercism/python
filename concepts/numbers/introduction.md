@@ -26,7 +26,7 @@ You can see more details and discussions in the following resources:
 
 ### Precision
 
-Before diving into arithmetic, it is worth thinking about what precision means. Precision is the level of exactness that a number can be represented. An `int` is less precise than a `float` the same way that `1` is less precise that`1.125`.
+Before diving into arithmetic, it is worth thinking about what precision means. Precision is the level of exactness at which a number can be represented. An `int` is less precise than a `float` the same way that `1` is less precise that`1.125`.
 
 ## Arithmetic
 
