@@ -10,6 +10,7 @@ class ClassesTest(unittest.TestCase):
     def test_can_create_one_alien_instance(self):
         Alien(1, 5)
 
+    @pytest.marktask(taskno=1)
     def test_alien_has_correct_initial_coordinates(self):
         alien = Alien(2, -1)
         error = (
@@ -39,6 +40,7 @@ class ClassesTest(unittest.TestCase):
         self.assertEqual(alien_two.health, alien_one.health, msg=error_two)
 
     # Test instance variables are unique to specific instances
+    @pytest.mark.task(taskno=1)
     def test_alien_instance_variables(self):
         alien_one = Alien(-8, -1)
         alien_two = Alien(2, 5)
@@ -53,7 +55,52 @@ class ClassesTest(unittest.TestCase):
         self.assertFalse(alien_one.x == alien_two.x, msg=pos_x_error)
         self.assertFalse(alien_one.y == alien_two.y, msg=pos_y_error)
 
+    # Test class methods work as specified
+    @pytest.mark.task(taskno=2)
+    def test_alien_hit_method(self):
+        alien = Alien(2, 2)
+
+        for i in range(3, -1, -1):
+            error = (
+                "Expected hit method to decrement health by 1. "
+                f"Health is {alien.health} when it should be {i}")
+
+            self.assertEqual(i, alien.health, msg=error)
+            alien.hit()
+
+    @pytest.mark.task(taskno=3)
+    def test_alien_is_alive_method(self):
+        alien = Alien(0, 1)
+        alive_error = "Alien is dead while health is greater than 0"
+        dead_error = "Alien is alive while health is less than or equal to 0"
+
+        for _ in range(5):
+            if alien.health > 0:
+                self.assertTrue(alien.is_alive(), msg=alive_error)
+            else:
+                self.assertFalse(alien.is_alive(), msg=dead_error)
+            alien.hit()
+
+    @pytest.mark.task(taskno=4)
+    def test_alien_teleport_method(self):
+        alien = Alien(0, 0)
+        alien.teleport(-1, -4)
+
+        error = (
+            "Expected alien to be at position (-1, -4) but "
+            f"instead found it in position {(alien.x, alien.y)}.")
+
+        self.assertEqual((-1, -4), (alien.x, alien.y), msg=error)
+
+    @pytest.mark.task(taskno=5)
+    def test_alien_collision_detection_method(self):
+        alien = Alien(7, 3)
+        error = "Expected collision_detection method to not be implemented"
+
+        self.assertIsNone(alien.collision_detection(Alien(7, 2)), msg=error)
+
     # Test total_aliens_created increments upon object instantiation
+    @pytest.mark.task(taskno=6)
     def test_alien_total_aliens_created(self):
         Alien.total_aliens_created = 0
         aliens = [Alien(-2, 6)]
@@ -78,47 +125,8 @@ class ClassesTest(unittest.TestCase):
         self.assertEqual(3, tac_list[1], msg=error_text(2, tac_list[1]))
         self.assertEqual(3, tac_list[2], msg=error_text(3, tac_list[2]))
 
-    # Test class methods work as specified
-    def test_alien_hit_method(self):
-        alien = Alien(2, 2)
-
-        for i in range(3, -1, -1):
-            error = (
-                "Expected hit method to decrement health by 1. "
-                f"Health is {alien.health} when it should be {i}")
-
-            self.assertEqual(i, alien.health, msg=error)
-            alien.hit()
-
-    def test_alien_is_alive_method(self):
-        alien = Alien(0, 1)
-        alive_error = "Alien is dead while health is greater than 0"
-        dead_error = "Alien is alive while health is less than or equal to 0"
-
-        for _ in range(5):
-            if alien.health > 0:
-                self.assertTrue(alien.is_alive(), msg=alive_error)
-            else:
-                self.assertFalse(alien.is_alive(), msg=dead_error)
-            alien.hit()
-
-    def test_alien_teleport_method(self):
-        alien = Alien(0, 0)
-        alien.teleport(-1, -4)
-
-        error = (
-            "Expected alien to be at position (-1, -4) but "
-            f"instead found it in position {(alien.x, alien.y)}.")
-
-        self.assertEqual((-1, -4), (alien.x, alien.y), msg=error)
-
-    def test_alien_collision_detection_method(self):
-        alien = Alien(7, 3)
-        error = "Expected collision_detection method to not be implemented"
-
-        self.assertIsNone(alien.collision_detection(Alien(7, 2)), msg=error)
-
     # Test that the user knows how to create objects themselves
+    @pytest.mark.task(taskno=7)
     def test_new_alien_list_function(self):
         position_data = [(-2, 6), (1, 5), (-4, -3)]
         obj_list = new_alien_list(position_data)
