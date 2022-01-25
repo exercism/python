@@ -92,7 +92,7 @@ For example:
 >>> alien_one = Alien(5, 1)
 >>> alien_one.total_aliens_created
 1
->>> alien_two = ALien(3, 0)
+>>> alien_two = Alien(3, 0)
 >>> alien_two.total_aliens_created
 2
 >>> alien_one.total_aliens_created
