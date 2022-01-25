@@ -99,6 +99,9 @@ For example:
 2
 >>> alien_one.total_aliens_created
 2
+>>> Alien.total_aliens_created
+# Accessing the variable from the class directly
+2
 ```
 
 ## 7. Object Creation
