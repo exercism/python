@@ -13,9 +13,9 @@ class Alien:
     def is_alive(self):
         return self.health > 0
 
-    def teleport(self, new_x, new_y):
-        self.x = new_x
-        self.y = new_y
+    def teleport(self, new_coordinate_x, new_coordinate_y):
+        self.coordinate_x = new_coordinate_x
+        self.coordinate_y = new_coordinate_y
 
     def collision_detection(self, other):
         pass
