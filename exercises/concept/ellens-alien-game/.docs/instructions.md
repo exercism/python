@@ -116,7 +116,7 @@ For example:
 >>> alien_start_positions = [(4, 7), (-1, 0)]
 >>> alien_list = new_alien_list(alien_start_positions)
 >>> for alien in alien_list:
-    	print(alien.x, alien.y)
+    	print(alien.coordinate_x, alien.coordinate_y)
 4 7
 -1 0
 ```
