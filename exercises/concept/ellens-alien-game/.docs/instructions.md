@@ -74,7 +74,7 @@ You will need to write a `teleport method` that takes new `coordinate_x` and `co
 
 Obviously, if the aliens can be hit by something, then they need to be able to detect when such a collision has occurred.
 However, collision detection algorithms can be tricky, and you do not yet know how to implement one.
-Ellen has said that she will do it later, but she would still like the method to appear in the class.
+Ellen has said that she will do it later, but she would still like the `method` to appear in the `class` as a reminder to build out the functionality.
 It will need to take a variable of some kind (probably another object), but that's really all you know.
 You will need to make sure that putting in the `method` definition into the `class` doesn't cause any errors when called:
 
