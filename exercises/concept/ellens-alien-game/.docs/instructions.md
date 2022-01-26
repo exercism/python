@@ -60,7 +60,7 @@ False
 ## 4. The `teleport` Method
 
 In Ellen's game, the aliens have the ability to teleport!
-You will need to write a `teleport method` that takes new `coordinate_x` and `coordinate_y` values, and changes the alien's coordinates accordingly.
+You will need to write a `teleport method` that takes new `x_coordinate` and `y_coordinate` values, and changes the alien's coordinates accordingly.
 
 ```python
 >>> alien.teleport(5, -4)
@@ -116,7 +116,7 @@ For example:
 >>> alien_start_positions = [(4, 7), (-1, 0)]
 >>> alien_list = new_alien_list(alien_start_positions)
 >>> for alien in alien_list:
-    	print(alien.coordinate_x, alien.coordinate_y)
+    	print(alien.x_coordinate, alien.y_coordinate)
 4 7
 -1 0
 ```
