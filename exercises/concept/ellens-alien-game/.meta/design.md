@@ -13,15 +13,14 @@ The goal of this exercise is to introduce the student to the concept of classes.
 - Know how to create a class.
 - Know how to create objects.
 - Understand that instantiating a class creates an object.
-- Know that `__init__()` is what is known as a 'constructor'.
-- Know that `__init__()` is called upon object creation.
-- Know that `__init__()` is used to initialize the object upon instantiation.
+- Know that `__init__()` is a 'constructor' and is used to initialize the object upon instantiation.
+- Know that `__init__()` is called upon instantiation/object creation.
 - Know what a method is and how it differs from a function.
 - Know how to create a method.
 - Implement instance variables.
 - Implement class variables.
 - Understand the difference between instance and class variables.
-- Use `pass` as a placeholder for class methods
+- Use `pass` as a placeholder for class methods.
 
 ## Out of scope
 
