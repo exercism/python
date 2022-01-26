@@ -3,9 +3,9 @@
 ## 1. Create the Alien Class
 
 - Remember that class methods are always passed `self` as the first parameter.
-- Remember the double underscores on _both_ sides of `__init__`
-- Instance variables are unique to the object/class instance that posesses them
-- Class variables are the same across all instances of a class
+- Remember the double underscores on _both_ sides of `__init__`.
+- Instance variables are unique to the object/class instance that posesses them.
+- Class variables are the same across all instances of a class.
 
 ## 2. The `hit` Method
 
@@ -14,7 +14,7 @@
 ## 3. The `is_alive` Method
 
 - Remember that class methods are always passed `self` as the first parameter.
-- 0 is not the only 'dead' condition
+- 0 is not the only 'dead' condition.
 
 ## 4. The `teleport` Method
 
@@ -27,7 +27,7 @@
 
 ## 6. Alien Counter
 
-- Class variables are the same across all instances of a class
+- Class variables are the same across all instances of a class.
 
 ## 7. Object Creation
 
