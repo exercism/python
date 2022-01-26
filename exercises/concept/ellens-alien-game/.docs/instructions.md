@@ -32,7 +32,7 @@ This way, she can simply call `<alien>.hit()` instead of having to manually chan
 >>> alien = Alien(0, 0)
 >>> alien.health
 # Initialized health value.
-3 
+3
 # Decrements health by 1 point.
 >>> alien.hit()
 >>> alien.health
@@ -58,7 +58,7 @@ False
 
 ## 4. The `teleport` Method
 
-In Ellen's game, the aliens have the ability to teleport! 
+In Ellen's game, the aliens have the ability to teleport!
 You will need to write a `teleport` function that takes new x and y positions, and changes the alien's position accordingly.
 
 ```python
@@ -79,7 +79,7 @@ You will need to make sure that putting in the `method` definition into the `cla
 
 ```python
 >>> alien.collision_detection(other_object)
->>> 
+>>>
 ```
 
 ## 6. Alien Counter
