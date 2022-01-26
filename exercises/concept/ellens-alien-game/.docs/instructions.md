@@ -42,7 +42,8 @@ This way, she can simply call `<alien>.hit()` instead of having to manually chan
 ## 3. The `is_alive` Method
 
 You realize that if the health keeps decreasing, at some point it will probably hit 0 (or even less!).
-It would be a good idea to add an `is_alive` method that Ellen can quickly call to check if the alien is... well... alive.
+It would be a good idea to add an `is_alive method` that Ellen can quickly call to check if the alien is... well... alive.  😉
+`<alien>.is_alive()` should return a boolean.
 
 ```python
 >>> alien.health
