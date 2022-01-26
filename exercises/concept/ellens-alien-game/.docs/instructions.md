@@ -7,8 +7,8 @@ To Ellen's delight, you have offered to help and she has given you the task of p
 
 ## 1. Create the Alien Class
 
-Define the Alien class so that it accepts an x and a y position, and puts them into `x` and `y` variables.
-Every alien starts off with a health of 3, so initialize the `health` variable too.
+Define the Alien class with a constructor that accepts two parameters `<x_coordinate>` and `<y_coordinate>`, putting them into `x_coordinate` and `y_coordinate` instance variables.
+Every alien will also start off with a health level of 3, so the `health` variable should be initialized as well.
 
 ```python
 >>> alien = Alien(2, 0)
