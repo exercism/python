@@ -24,7 +24,7 @@ Now, each alien should be able to internally keep track of it's own position and
 
 ## 2. The `hit` Method
 
-Ellen would like the Alien class to have a `hit` method that decrements the health of an alien object when it is called.
+Ellen would like the Alien `class` to have a `hit method` that decrements the health of an alien object by 1 when called.
 This way, she can simply call `<alien>.hit()` instead of having to manually change an alien's health.
 
 
