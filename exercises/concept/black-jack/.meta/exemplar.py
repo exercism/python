@@ -53,11 +53,10 @@ def value_of_ace(card_one, card_two):
     :return: int - value of the upcoming ace card (either 1 or 11).
     """
 
-    if 11 + (value_of_card(card_one) + value_of_card(card_two)) > 21:
-        ace_value = 1
+    card_one_value = 11 if card_one == 'A' else value_of_card(card_one)
+    card_two_value = 11 if card_two == 'A' else value_of_card(card_two)
 
-    else:
-        ace_value = 11
+    ace_value = 1 if 11 + (card_one_value + card_two_value) > 21 else 11
 
     return ace_value
 
