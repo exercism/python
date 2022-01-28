@@ -75,7 +75,7 @@ class LittleSistersVocabTest(unittest.TestCase):
     @pytest.mark.task(taskno=4)
     def test_adjective_to_verb(self):
         input_data = ['Look at the bright sky.',
-                      'His expression went dark.',
+                      'His expression went dark when he saw it.',
                       'The bread got hard after sitting out.',
                       'The butter got soft in the sun.',
                       'Her eyes were light blue.',
