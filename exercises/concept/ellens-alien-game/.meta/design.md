@@ -39,7 +39,6 @@ The goal of this exercise is to introduce the student to the concept of classes.
 - `methods`
 - `objects`
 - `OOP`
-- `properties`
 
 ## Prerequisites
 
