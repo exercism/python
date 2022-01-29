@@ -48,7 +48,7 @@ MY_FIRST_CONSTANT = 16
 # Please don't do: MY_FIRST_CONSTANT = "Some other value"
 ```
 
-In Python, units of functionality are encapsulated in [_functions._][functions], which are themselves [objects][objects] (_Its [turtles all the way down][turtles all the way down]_).
+In Python, units of functionality are encapsulated in [_functions._][functions], which are themselves [objects][objects] (_it's [turtles all the way down][turtles all the way down]_).
 
 Functions can be executed by themselves, passed as arguments to other functions, nested, or bound to a class.
 When functions are bound to a [class][classes] name, they're referred to as [methods][method objects].
