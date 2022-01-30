@@ -87,7 +87,7 @@ Remember that the currency *denomination* is a whole number, and cannot be sub-d
 Create the `non_exchangeable_value()` function, taking `budget`, `exchange_rate`, `spread`, and `denomination`.
 
 This function should return the value that is *not* exchangeable due to the *denomination* of the bills.
-Remember - this booth gets to keep the change _in addition_ to charging an exchange fee.
+Remember - this both gets to keep the change _in addition_ to charging an exchange fee.
 Start by calculating the value you would receive if you were able to keep subdivided bills, then subtract the amount you would receive in whole bills.
 Both amounts should take the spread, or the exchange fee into account.
 
