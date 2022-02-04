@@ -19,11 +19,12 @@ class CardGamesTest(unittest.TestCase):
         input_vars = [0, 1, 10, 27, 99, 666]
 
         results = [[0, 1, 2], [1, 2, 3],
-                   [10, 11, 12], [27, 28, 29],
+                   [10, 11, 12], [27, 28, 29], 
                    [99, 100, 101], [666, 667, 668]]
 
         for variant, (number, rounds) in enumerate(zip(input_vars, results), start=1):
             error_message = f'Expected rounds {rounds} given the current round {number}.'
+
             with self.subTest(f'variation #{variant}', input=number, output=rounds):
                 self.assertEqual(rounds, get_rounds(number), msg=error_message)
 
@@ -40,6 +41,7 @@ class CardGamesTest(unittest.TestCase):
 
         for variant, ((rounds_1, rounds_2), rounds) in enumerate(zip(input_vars, results), start=1):
             error_message = f'Expected {rounds} as the concatenation of {rounds_1} and {rounds_2}.'
+
             with self.subTest(f'variation #{variant}', input=(rounds_1, rounds_2), output=rounds):
                 self.assertEqual(rounds, concatenate_rounds(rounds_1, rounds_2), msg=error_message)
 
@@ -53,6 +55,7 @@ class CardGamesTest(unittest.TestCase):
 
         for variant, ((rounds, round_number), contains) in enumerate(zip(input_vars, results), start=1):
             error_message = f'Round {round_number} {"is" if contains else "is not"} in {rounds}.'
+
             with self.subTest(f'variation #{variant}', input=(rounds, round_number), output=contains):
                 self.assertEqual(contains, list_contains_round(rounds, round_number), msg=error_message)
 
@@ -79,6 +82,7 @@ class CardGamesTest(unittest.TestCase):
 
         for variant, (hand, same) in enumerate(zip(input_vars, results), start=1):
             error_message = f'Hand {hand} {"does" if same else "does not"} yield the same approximate average.'
+
             with self.subTest(f'variation #{variant}', input=hand, output=same):
                 self.assertEqual(same, approx_average_is_average(hand), msg=error_message)
 
@@ -91,6 +95,7 @@ class CardGamesTest(unittest.TestCase):
 
         for variant, (hand, same) in enumerate(zip(input_vars, results), start=1):
             error_message = f'Hand {hand} {"does" if same else "does not"} yield the same odd-even average.'
+
             with self.subTest(f'variation #{variant}', input=hand, output=same):
                 self.assertEqual(same, average_even_is_average_odd(hand), msg=error_message)
 
@@ -103,5 +108,6 @@ class CardGamesTest(unittest.TestCase):
 
         for variant, (hand, doubled_hand) in enumerate(zip(input_vars, results), start=1):
             error_message = f'Expected {doubled_hand} as the maybe-doubled version of {hand}.'
+
             with self.subTest(f'variation #{variant}', input=hand, output=doubled_hand):
                 self.assertEqual(doubled_hand, maybe_double_last(hand), msg=error_message)
