@@ -30,6 +30,7 @@ def value_of_ace(card_one, card_two):
 
     :param card_one, card_two: str - card dealt. 'J', 'Q', 'K' = 10;
            'A' = 11 (if already in hand); numerical value otherwise.
+
     :return: int - value of the upcoming ace card (either 1 or 11).
     """
 
