@@ -1,5 +1,5 @@
 {
-  "blurb": "A  string (\"str\") is an immutable sequence of unicode code points. There is no separate \"character\" or \"rune\" type. Slicing, copying or concatenating will produce a new string. Like any sequence, code points within a \"str\" can be referenced by 0-based index number and can be iterated over in a loop by using the \"for item in <str>\" construct.",
+  "blurb": "A  string (\"str\") is an immutable sequence of unicode code points. There is no separate \"char\" or \"rune\" type. Slicing, copying, or concatenating will produce a new string. Like any sequence, code points within a \"str\" can be referenced by 0-based index number and can be iterated over in a loop by using the \"for item in <str>\" construct.",
   "authors": ["aldraco", "BethanyG"],
   "contributors": []
 }
