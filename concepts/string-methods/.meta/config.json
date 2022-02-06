@@ -1,5 +1,5 @@
 {
-  "blurb": "The 'str' class provides many useful 'string-methods'. They can be used for cleaning, splitting, translating, or otherwise working with any 'str' object. Because strings are immutable, any functions or methods that operate on a 'str' will return a new instance or copy of the 'str' rather than modifying the original 'str' object.",
+  "blurb": "The 'str' class provides many useful 'string-methods'. They can be used for cleaning, splitting, translating or otherwise working with any 'str' object. Because strings are immutable, any functions or methods that operate on a 'str' will return a new instance or copy of the 'str' rather than modifying the original 'str' object.",
   "authors": ["kimolivia"],
   "contributors": ["valentin-p", "bethanyg"]
 }
