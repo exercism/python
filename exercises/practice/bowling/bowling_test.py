@@ -78,6 +78,11 @@ class BowlingTest(unittest.TestCase):
         game = self.roll_new_game(rolls)
         self.assertEqual(game.score(), 30)
 
+    def test_last_two_strikes_followed_by_only_last_bonus_with_non_strike_points(self):
+        rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 0, 1]
+        game = self.roll_new_game(rolls)
+        self.assertEqual(game.score(), 31)
+
     def test_a_strike_with_the_one_roll_bonus_after_a_spare_in_the_last_frame_does_not_get_a_bonus(
         self,
     ):
