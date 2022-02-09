@@ -15,7 +15,7 @@ If the string contains characters that aren't A, C, G, or T then it is invalid a
 
 For example:
 
-```
+```text
 "GATTACA" -> 'A': 3, 'C': 1, 'G': 1, 'T': 2
 "INVALID" -> error
 ```
