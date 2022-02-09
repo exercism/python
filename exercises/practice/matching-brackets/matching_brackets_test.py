@@ -53,6 +53,12 @@ class MatchingBracketsTest(unittest.TestCase):
     def test_too_many_closing_brackets(self):
         self.assertEqual(is_paired("[]]"), False)
 
+    def test_early_unexpected_brackets(self):
+        self.assertEqual(is_paired(")()"), False)
+
+    def test_early_mismatched_brackets(self):
+        self.assertEqual(is_paired("{)()"), False)
+
     def test_math_expression(self):
         self.assertEqual(is_paired("(((185 + 223.85) * 15) - 543)/2"), True)
 
