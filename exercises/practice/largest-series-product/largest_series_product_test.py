@@ -70,7 +70,7 @@ class LargestSeriesProductTest(unittest.TestCase):
         with self.assertRaises(ValueError) as err:
             largest_product("12345", -1)
         self.assertEqual(type(err.exception), ValueError)
-        self.assertEqual(err.exception.args[0], "span must be greater than zero")
+        self.assertEqual(err.exception.args[0], "span must not be negative")
 
     # Additional tests for this track
     def test_euler_big_number(self):
