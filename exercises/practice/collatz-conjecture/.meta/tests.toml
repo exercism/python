@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [540a3d51-e7a6-47a5-92a3-4ad1838f0bfd]
 description = "zero steps for one"
@@ -16,6 +23,16 @@ description = "large number of even and odd steps"
 
 [7d4750e6-def9-4b86-aec7-9f7eb44f95a3]
 description = "zero is an error"
+include = false
+
+[2187673d-77d6-4543-975e-66df6c50e2da]
+description = "zero is an error"
+reimplements = "7d4750e6-def9-4b86-aec7-9f7eb44f95a3"
 
 [c6c795bf-a288-45e9-86a1-841359ad426d]
 description = "negative value is an error"
+include = false
+
+[ec11f479-56bc-47fd-a434-bcd7a31a7a2e]
+description = "negative value is an error"
+reimplements = "c6c795bf-a288-45e9-86a1-841359ad426d"
