@@ -9,6 +9,7 @@ Your task is to implement a simple [RESTful API](https://en.wikipedia.org/wiki/R
 ## API Specification
 
 ### User object
+
 ```json
 {
   "name": "Adam",
@@ -33,8 +34,9 @@ Your task is to implement a simple [RESTful API](https://en.wikipedia.org/wiki/R
 | Create user | POST | /add | `{"user":<name of new user (unique)>}` | N/A | `<User object for new user>` |
 | Create IOU | POST | /iou | `{"lender":<name of lender>,"borrower":<name of borrower>,"amount":5.25}` | N/A | `{"users":<updated User objects for <lender> and <borrower> (sorted by name)>}` |
 
-## Other Resources:
-- https://restfulapi.net/
+## Other Resources
+
+- [https://restfulapi.net/](https://restfulapi.net/)
 - Example RESTful APIs
   - [GitHub](https://developer.github.com/v3/)
   - [Reddit](https://www.reddit.com/dev/api/)

@@ -19,7 +19,7 @@ the same to pick a private key b.
 
 Alice calculates a public key A.
 
-    A = g**a mod p
+    A = gᵃ mod p
 
 Using the same p and g, Bob similarly calculates a public key B from his
 private key b.
@@ -28,11 +28,11 @@ private key b.
 
 Alice and Bob exchange public keys.  Alice calculates secret key s.
 
-    s = B**a mod p
+    s = Bᵃ mod p
 
 Bob calculates
 
-    s = A**b mod p
+    s = Aᵇ mod p
 
 The calculations produce the same result!  Alice and Bob now share
 secret s.

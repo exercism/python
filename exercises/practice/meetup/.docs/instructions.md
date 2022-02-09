@@ -1,27 +1,19 @@
 # Instructions
 
-Calculate the date of meetups.
-
-Typically meetups happen on the same day of the week.  In this exercise, you
-will take a description of a meetup date, and return the actual meetup date.
+In this exercise, you will be given a general description of a meetup date and then asked to find the actual meetup date.
 
 Examples of general descriptions are:
 
-- The first Monday of January 2017
-- The third Tuesday of January 2017
-- The wednesteenth of January 2017
-- The last Thursday of January 2017
+- First Monday of January 2022
+- Third Tuesday of August 2021
+- Teenth Wednesday of May 2022
+- Teenth Sunday of July 2021
+- Last Thursday of November 2021
 
-The descriptors you are expected to parse are:
-first, second, third, fourth, fifth, last, monteenth, tuesteenth, wednesteenth,
-thursteenth, friteenth, saturteenth, sunteenth
+The descriptors you are expected to process are: `first`, `second`, `third`, `fourth`, `fifth`, `last`, `teenth`.
 
-Note that "monteenth", "tuesteenth", etc are all made up words. There was a
-meetup whose members realized that there are exactly 7 numbered days in a month
-that end in '-teenth'. Therefore, one is guaranteed that each day of the week
-(Monday, Tuesday, ...) will have exactly one date that is named with '-teenth'
-in every month.
+Note that descriptor `teenth` is a made-up word.
+There are exactly seven numbered days in a month that end with "teenth" ("thirteenth" to "nineteenth").
+Therefore, it is guaranteed that each day of the week (Monday, Tuesday, ...) will have exactly one numbered day ending with "teenth" each month.
 
-Given examples of a meetup dates, each containing a month, day, year, and
-descriptor calculate the date of the actual meetup.  For example, if given
-"The first Monday of January 2017", the correct meetup date is 2017/1/2.
+For example, if given "First Monday of January 2022", the correct meetup date is January 3, 2022.
