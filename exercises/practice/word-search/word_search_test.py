@@ -290,6 +290,27 @@ class WordSearchTest(unittest.TestCase):
         self.assertEqual(puzzle.search("ruby"), (Point(7, 5), Point(4, 8)))
         self.assertIsNone(puzzle.search("haskell"))
 
+    def test_should_fail_to_locate_words_that_are_not_on_horizontal_vertical_or_diagonal_lines(
+        self,
+    ):
+        puzzle = WordSearch(["abc", "def"])
+        self.assertIsNone(puzzle.search("aef"))
+        self.assertIsNone(puzzle.search("ced"))
+        self.assertIsNone(puzzle.search("abf"))
+        self.assertIsNone(puzzle.search("cbd"))
+
+    def test_should_not_concatenate_different_lines_to_find_a_horizontal_word(self):
+        puzzle = WordSearch(["abceli", "xirdfg"])
+        self.assertIsNone(puzzle.search("elixir"))
+
+    def test_should_not_wrap_around_horizontally_to_find_a_word(self):
+        puzzle = WordSearch(["silabcdefp"])
+        self.assertIsNone(puzzle.search("lisp"))
+
+    def test_should_not_wrap_around_vertically_to_find_a_word(self):
+        puzzle = WordSearch(["s", "u", "r", "a", "b", "c", "t"])
+        self.assertIsNone(puzzle.search("rust"))
+
 
 if __name__ == "__main__":
     unittest.main()

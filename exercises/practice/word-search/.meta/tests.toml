@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [b4057815-0d01-41f0-9119-6a91f54b2a0a]
 description = "Should accept an initial game grid and a target search word"
@@ -61,3 +68,15 @@ description = "Should locate words written top right to bottom left"
 
 [695531db-69eb-463f-8bad-8de3bf5ef198]
 description = "Should fail to locate a word that is not in the puzzle"
+
+[fda5b937-6774-4a52-8f89-f64ed833b175]
+description = "Should fail to locate words that are not on horizontal, vertical, or diagonal lines"
+
+[5b6198eb-2847-4e2f-8efe-65045df16bd3]
+description = "Should not concatenate different lines to find a horizontal word"
+
+[eba44139-a34f-4a92-98e1-bd5f259e5769]
+description = "Should not wrap around horizontally to find a word"
+
+[cd1f0fa8-76af-4167-b105-935f78364dac]
+description = "Should not wrap around vertically to find a word"
