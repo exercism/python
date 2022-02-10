@@ -27,7 +27,7 @@ If you're not familiar with `__init__()` or _constructors_, [class and instance 
 
 In some tests, a `list` of students is passed as an argument to `__init__()`.
 This should override the twelve student roster provided in the problem statement.
-Both of these statements need to work with your `__init__() method:
+Both of these statements need to work with your `__init__()` method:
 
 ```Python
 # Make a garden based on the default 12-student roster.
