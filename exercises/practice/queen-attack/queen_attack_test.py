@@ -58,6 +58,11 @@ class QueenAttackTest(unittest.TestCase):
     def test_can_attack_on_fourth_diagonal(self):
         self.assertIs(Queen(1, 7).can_attack(Queen(0, 6)), True)
 
+    def test_cannot_attack_if_falling_diagonals_are_only_the_same_when_reflected_across_the_longest_falling_diagonal(
+        self,
+    ):
+        self.assertIs(Queen(4, 1).can_attack(Queen(2, 5)), False)
+
     # Track-specific tests
     def test_queens_same_position_can_attack(self):
         with self.assertRaises(ValueError) as err:
