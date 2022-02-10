@@ -95,6 +95,9 @@ class RationalNumbersTest(unittest.TestCase):
     def test_absolute_value_of_zero(self):
         self.assertEqual(abs(Rational(0, 1)), Rational(0, 1))
 
+    def test_absolute_value_of_a_rational_number_is_reduced_to_lowest_terms(self):
+        self.assertEqual(abs(Rational(2, 4)), Rational(1, 2))
+
     # Tests of type: Exponentiation of a rational number
 
     def test_raise_a_positive_rational_number_to_a_positive_integer_power(self):
@@ -102,6 +105,15 @@ class RationalNumbersTest(unittest.TestCase):
 
     def test_raise_a_negative_rational_number_to_a_positive_integer_power(self):
         self.assertEqual(Rational(-1, 2) ** 3, Rational(-1, 8))
+
+    def test_raise_a_positive_rational_number_to_a_negative_integer_power(self):
+        self.assertEqual(Rational(3, 5) ** -2, Rational(25, 9))
+
+    def test_raise_a_negative_rational_number_to_an_even_negative_integer_power(self):
+        self.assertEqual(Rational(-3, 5) ** -2, Rational(25, 9))
+
+    def test_raise_a_negative_rational_number_to_an_odd_negative_integer_power(self):
+        self.assertEqual(Rational(-3, 5) ** -3, Rational(-125, 27))
 
     def test_raise_zero_to_an_integer_power(self):
         self.assertEqual(Rational(0, 1) ** 5, Rational(0, 1))

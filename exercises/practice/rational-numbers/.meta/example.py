@@ -36,7 +36,11 @@ class Rational:
         return Rational(abs(self.numer), self.denom)
 
     def __pow__(self, power):
-        return Rational(pow(self.numer, power), pow(self.denom, power))
+        if power < 0:
+            return Rational(pow(self.denom, -power), pow(self.numer, -power))
+
+        else:
+            return Rational(pow(self.numer, power), pow(self.denom, power))
 
     def __rpow__(self, base):
         return base ** (self.numer / self.denom)
