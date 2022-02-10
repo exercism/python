@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [771c652e-0754-4ef0-945c-0675d12ef1f5]
 description = "data is retained"
@@ -19,6 +26,9 @@ description = "traversing up from top"
 
 [b8505f6a-aed4-4c2e-824f-a0ed8570d74b]
 description = "left, right, and up"
+
+[b9aa8d54-07b7-4bfd-ab6b-7ff7f35930b6]
+description = "test ability to descend multiple levels and return"
 
 [47df1a27-b709-496e-b381-63a03b82ea5f]
 description = "set_value"
