@@ -106,7 +106,7 @@ Using operators requires that both inputs be `sets` or `frozensets`, while metho
 True
 
 # A set is always a loose subset of itself
->>> animals <= animals
+>>> birds <= birds
 True
 
 >>> birds <= set(animals)
