@@ -119,7 +119,7 @@ False
 
 The `<set>.isdisjoint(<other_collection>)` method is used to test if a `set` has **no elements in common** with another set or iterable.
 It will accept any `iterable` or `set` as an argument, returning `True` if they are **disjoint**, `False` otherwise.
-Note that for `dcts`, the iteration default is over`<dict>.keys()`.
+Note that for `dicts`, the iteration default is over`<dict>.keys()`.
 
 ```python
 >>>  mammals = {'squirrel','dog','cat','cow', 'tiger', 'elephant'}
