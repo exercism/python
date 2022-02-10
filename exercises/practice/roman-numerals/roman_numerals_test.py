@@ -62,3 +62,18 @@ class RomanNumeralsTest(unittest.TestCase):
 
     def test_3000_is_mmm(self):
         self.assertEqual(roman(3000), "MMM")
+
+    def test_16_is_xvi(self):
+        self.assertEqual(roman(16), "XVI")
+
+    def test_66_is_lxvi(self):
+        self.assertEqual(roman(66), "LXVI")
+
+    def test_166_is_clxvi(self):
+        self.assertEqual(roman(166), "CLXVI")
+
+    def test_666_is_dclxvi(self):
+        self.assertEqual(roman(666), "DCLXVI")
+
+    def test_1666_is_mdclxvi(self):
+        self.assertEqual(roman(1666), "MDCLXVI")
