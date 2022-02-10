@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [84f609af-5a91-4d68-90a3-9e32d8a5cd34]
 description = "age on Earth"
@@ -25,3 +32,7 @@ description = "age on Uranus"
 
 [80096d30-a0d4-4449-903e-a381178355d8]
 description = "age on Neptune"
+
+[57b96e2a-1178-40b7-b34d-f3c9c34e4bf4]
+description = "invalid planet causes error"
+include = false
