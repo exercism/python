@@ -35,6 +35,9 @@ Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
 
 # Make a garden based on a 2-student roster.
 Garden("VRCC\nVCGG", students=["Valorie", "Raven"]) 
+```
+
+
 One approach is to make the student `list` a [default argument][default argument values]; the Python docs describe `default parameters` in depth while explaining [function definitions][function definitions].
 
 
