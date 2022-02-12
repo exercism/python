@@ -67,7 +67,7 @@ Define the `value_of_ace(<card_one>, <card_two>)` function with parameters `card
 Your function will have to decide if the upcoming ace will get a value of 1 or a value of 11, and return that value.
 Remember: the value of the hand with the ace needs to be as high as possible _without_ going over 21.
 
-**Hint**: if we already have an ace in hand then it's value would be 11.
+**Hint**: if we already have an ace in hand then its value would be 11.
 
 ```python
 >>> value_of_ace('6', `K`)
