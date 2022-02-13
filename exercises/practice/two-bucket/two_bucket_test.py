@@ -38,6 +38,21 @@ class TwoBucketTest(unittest.TestCase):
     ):
         self.assertEqual(measure(2, 3, 3, "one"), (2, "two", 2))
 
+    def test_not_possible_to_reach_the_goal(self):
+        with self.assertRaisesWithMessage(ValueError):
+            measure(6, 15, 5, "one")
+
+    def test_with_the_same_buckets_but_a_different_goal_then_it_is_possible(self):
+        self.assertEqual(measure(6, 15, 9, "one"), (10, "two", 0))
+
+    def test_goal_larger_than_both_buckets_is_impossible(self):
+        with self.assertRaisesWithMessage(ValueError):
+            measure(5, 7, 8, "one")
+
+    # Utility functions
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
+
 
 if __name__ == "__main__":
     unittest.main()

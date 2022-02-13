@@ -29,12 +29,9 @@ description = "Measure using bucket one of size 2 and bucket two of size 3 - sta
 
 [449be72d-b10a-4f4b-a959-ca741e333b72]
 description = "Not possible to reach the goal"
-include = false
 
 [aac38b7a-77f4-4d62-9b91-8846d533b054]
 description = "With the same buckets but a different goal, then it is possible"
-include = false
 
 [74633132-0ccf-49de-8450-af4ab2e3b299]
 description = "Goal larger than both buckets is impossible"
-include = false
