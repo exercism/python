@@ -1,12 +1,12 @@
 def is_criticality_balanced(temperature, neutrons_emitted):
     """Verify criticality is balanced.
 
-    :param temperature: temperature value (integer or float)
+    :param temperature: temperature value in kelvin (integer or float)
     :param neutrons_emitted: number of neutrons emitted per second (integer or float)
     :return:  boolean True if conditions met, False if not
 
     A reactor is said to be critical if it satisfies the following conditions:
-    - The temperature is less than 800.
+    - The temperature is less than 800 K.
     - The number of neutrons emitted per second is greater than 500.
     - The product of temperature and neutrons emitted per second is less than 500000.
     """
@@ -57,7 +57,7 @@ def reactor_efficiency(voltage, current, theoretical_max_power):
 def fail_safe(temperature, neutrons_produced_per_second, threshold):
     """Assess and return status code for the reactor.
 
-    :param temperature: value of the temperature (integer or float)
+    :param temperature: value of the temperature in kelvin (integer or float)
     :param neutrons_produced_per_second: neutron flux (integer or float)
     :param threshold: threshold (integer or float)
     :return: str one of: 'LOW', 'NORMAL', 'DANGER'
