@@ -8,6 +8,8 @@ A chessboard can be represented by an 8 by 8 array.
 
 So if you are told the white queen is at `c5` (zero-indexed at column 2, row 3) and the black queen at `f2` (zero-indexed at column 5, row 6), then you know that the set-up is like so:
 
+###### Note: the queens are labelled *B* and *W* to stand for which side they are on (Black vs White). It is not relevant info for solving this challenge.
+
 ```text
   a b c d e f g h
 8 _ _ _ _ _ _ _ _ 8
@@ -23,3 +25,30 @@ So if you are told the white queen is at `c5` (zero-indexed at column 2, row 3) 
 
 You are also be able to answer whether the queens can attack each other.
 In this case, that answer would be yes, they can, because both pieces share a diagonal.
+
+### Examples of queens attacking:
+
+```text
+_ _ _ _ _ _ _ _     _ _ _ _ _ _ _ _     _ _ _ _ _ _ _ _
+_ _ _ _ _ _ _ _     _ _ _ _ _ _ _ _     _ _ _ W _ _ _ _
+_ _ _ W _ _ _ _     _ B _ _ _ W _ _     _ _ _ _ _ _ _ _
+_ _ _ _ _ _ _ _     _ _ _ _ _ _ _ _     _ _ _ _ _ _ _ _
+_ _ _ _ _ _ _ _     _ _ _ _ _ _ _ _     _ _ _ _ _ _ _ _
+_ _ _ _ _ _ B _     _ _ _ _ _ _ _ _     _ _ _ _ _ _ _ _
+_ _ _ _ _ _ _ _     _ _ _ _ _ _ _ _     _ _ _ B _ _ _ _
+_ _ _ _ _ _ _ _     _ _ _ _ _ _ _ _     _ _ _ _ _ _ _ _
+```
+
+### Examples of queens not interacting:
+
+```text
+
+_ _ _ _ _ _ _ _     _ _ _ _ _ _ _ _     _ _ _ _ _ _ _ _
+_ _ _ _ _ _ _ _     _ _ _ _ _ _ _ _     _ _ _ W _ _ _ _
+_ _ _ _ _ _ _ _     _ _ _ _ _ W _ _     _ _ _ _ _ _ _ _
+_ _ _ _ _ _ _ _     _ _ _ _ _ _ _ _     _ _ _ _ _ _ _ _
+_ _ _ _ W _ _ _     _ _ _ _ _ _ _ _     _ _ _ _ _ _ _ _
+_ _ _ _ _ _ B _     _ _ _ _ _ _ _ _     _ _ _ _ _ _ _ _
+_ _ _ _ _ _ _ _     _ _ B _ _ _ _ _     _ _ _ _ _ _ B _
+_ _ _ _ _ _ _ _     _ _ _ _ _ _ _ _     _ _ _ _ _ _ _ _
+```
