@@ -1,6 +1,6 @@
 {
   "blurb": "Classes and Objects are integral to object oriented programming, in which programs are made up of objects that interact with one another. Classes are definitions combining data with behaviour and are used to create objects. Objects can represent real world entities or more abstract concepts.",
-  "authors": ["bethanyg", "cmccandless", "PaulT89"],
+  "authors": ["bethanyg", "DjangoFett", "PaulT89"],
   "contributors": []
 }
 

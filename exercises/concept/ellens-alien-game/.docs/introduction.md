@@ -122,7 +122,7 @@ class My_Class:
     def __init__(self, location):
 
         # This is an instance or object property, attribute, or variable.
-        # Note that we are unpacking the tuplue argument into two seperate instance variables.
+        # Note that we are unpacking the tuple argument into two separate instance variables.
         self.location_x = location[0]
         self.location_y = location[1]
 
@@ -150,7 +150,21 @@ Methods that operate on an object (instance) need to be defined with `self` as t
 You can then define the rest of the parameters as you would for a "normal" or non-bound function:
 
 ```python
-
+class My_Class:
+    number = 5
+    string = "Hello!"
+    
+    #Class constructor.
+    def __init__(self, location):
+        # Instance properties
+        self.location_x = location[0]
+        self.location_y = location[1]
+        
+    #Instance method. Note "self" as first parameter.
+    def change_location(self, amount):
+        self.location_x += amount
+        self.location_y += amount
+        return self.location_x, self.location_y
 ```
 
 Like attribute access, calling a method simply requires putting a `.` after the object name, and before the method name.
