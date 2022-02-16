@@ -51,7 +51,7 @@ class BlackJackTest(unittest.TestCase):
                 ('2', '3', 11), ('3', '6', 11), ('5', '2', 11),
                 ('8', '2', 11), ('5', '5', 11), ('Q', 'A', 1),
                 ('10', '2', 1), ('7', '8', 1), ('J', '9', 1),
-                ('K', "K", 1)]
+                ('K', 'K', 1), ('2', 'A', 1)]
 
         for variant, (card_one, card_two, ace_value) in enumerate(data, 1):
             with self.subTest(f'variation #{variant}', card_one=card_one, card_two=card_two, ace_value=ace_value):
@@ -65,7 +65,8 @@ class BlackJackTest(unittest.TestCase):
         data = [
                 (('A', 'K'), True), (('10', 'A'), True),
                 (('10', '9'), False), (('A', 'A'), False),
-                (('4', '7'), False), (('9', '2'), False)]
+                (('4', '7'), False), (('9', '2'), False),
+                (('Q', 'K'), False)]
 
         for variant, (hand, blackjack) in enumerate(data, 1):
             with self.subTest(f'variation #{variant}', input=hand, output=blackjack):

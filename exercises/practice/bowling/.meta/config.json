@@ -1,5 +1,5 @@
 {
-  "blurb": "Score a bowling game",
+  "blurb": "Score a bowling game.",
   "authors": [
     "aes421"
   ],
@@ -7,6 +7,7 @@
     "cmccandless",
     "Dog",
     "kytrinyx",
+    "RNeilsen",
     "tqa236",
     "yawpitch"
   ],
@@ -21,6 +22,6 @@
       ".meta/example.py"
     ]
   },
-  "source": "The Bowling Game Kata at but UncleBob",
+  "source": "The Bowling Game Kata from UncleBob",
   "source_url": "http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata"
 }

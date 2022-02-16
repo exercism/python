@@ -15,7 +15,7 @@ Face cards (`J`, `Q`, `K`) are scored at 10 points and any other card is worth i
 Define the `value_of_card(<card>)` function with parameter `card`.
 The function should return the _numerical value_ of the passed-in card string.
 Since an ace can take on multiple values (1 **or** 11), this function should fix the value of an ace card at 1 for the time being.
-Later on, you will implement a function to determine the value of an ace card, give an existing hand.
+Later on, you will implement a function to determine the value of an ace card, given an existing hand.
 
 ```python
 >>> value_of_card('K')
@@ -67,7 +67,7 @@ Define the `value_of_ace(<card_one>, <card_two>)` function with parameters `card
 Your function will have to decide if the upcoming ace will get a value of 1 or a value of 11, and return that value.
 Remember: the value of the hand with the ace needs to be as high as possible _without_ going over 21.
 
-**Hint**: if we already have an ace in hand then it's value would be 11.
+**Hint**: if we already have an ace in hand then its value would be 11.
 
 ```python
 >>> value_of_ace('6', `K`)

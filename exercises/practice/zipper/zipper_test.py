@@ -118,6 +118,21 @@ class ZipperTest(unittest.TestCase):
         result = zipper.left().up().right().up().left().right().value()
         self.assertEqual(result, 3)
 
+    def test_test_ability_to_descend_multiple_levels_and_return(self):
+        initial = {
+            "value": 1,
+            "left": {
+                "value": 2,
+                "left": None,
+                "right": {"value": 3, "left": None, "right": None},
+            },
+            "right": {"value": 4, "left": None, "right": None},
+        }
+
+        zipper = Zipper.from_tree(initial)
+        result = zipper.left().right().up().up().value()
+        self.assertEqual(result, 1)
+
     def test_set_value(self):
         initial = {
             "value": 1,
