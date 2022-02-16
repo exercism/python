@@ -1,11 +1,11 @@
 [
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://pybit.es/articles/when-classes/",
+    "description": "A handy guide as to when to use classes, and when not to."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://realpython.com/python3-object-oriented-programming/",
+    "description": "Another overview of what classes are and how to apply them in Python."
   },
   {
     "url": "http://example.com/",
