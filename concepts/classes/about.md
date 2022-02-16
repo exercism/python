@@ -289,7 +289,8 @@ class My_Class:
 
 ## Placeholding or Stubbing Implementation with Pass
 
-In previous concept exercises and practice exercise stubs, you will have seen the `pass` keyword used within the body of  functions in place of actual code.
+In previous concept exercises and practice exercise stubs, you will have seen the `pass` keyword used within the body of functions in place of actual code.
+
 The `pass` keyword is a syntactically valid placeholder - it prevents Python from throwing a syntax error or `NotImplemented` error for an empty function or class definition.
 Essentially, it is a way to say to the Python interpreter, 'Don't worry! I _will_ put code here eventually, I just haven't done it yet.'
 
