@@ -78,11 +78,23 @@ description = "Absolute value -> Absolute value of a negative rational number wi
 [f8e1ed4b-9dca-47fb-a01e-5311457b3118]
 description = "Absolute value -> Absolute value of zero"
 
+[4a8c939f-f958-473b-9f88-6ad0f83bb4c4]
+description = "Absolute value -> Absolute value of a rational number is reduced to lowest terms"
+
 [ea2ad2af-3dab-41e7-bb9f-bd6819668a84]
 description = "Exponentiation of a rational number -> Raise a positive rational number to a positive integer power"
 
 [8168edd2-0af3-45b1-b03f-72c01332e10a]
 description = "Exponentiation of a rational number -> Raise a negative rational number to a positive integer power"
+
+[c291cfae-cfd8-44f5-aa6c-b175c148a492]
+description = "Exponentiation of a rational number -> Raise a positive rational number to a negative integer power"
+
+[45cb3288-4ae4-4465-9ae5-c129de4fac8e]
+description = "Exponentiation of a rational number -> Raise a negative rational number to an even negative integer power"
+
+[2d47f945-ffe1-4916-a399-c2e8c27d7f72]
+description = "Exponentiation of a rational number -> Raise a negative rational number to an odd negative integer power"
 
 [e2f25b1d-e4de-4102-abc3-c2bb7c4591e4]
 description = "Exponentiation of a rational number -> Raise zero to an integer power"

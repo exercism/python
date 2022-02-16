@@ -27,7 +27,7 @@ They've also been given blank maps with a starting place marked YOU ARE HERE.
 
 </td><td></td><td>
 
-| Location Name                         | Coordinates | Quandrant |
+| Location Name                         | Coordinates | Quadrant  |
 | ------------------------------------- | ----------- | --------- |
 | Seaside Cottages                      | ("1", "C")  | Blue      |
 | Aqua Lagoon (Island of Mystery)       | ("1", "F")  | Yellow    |

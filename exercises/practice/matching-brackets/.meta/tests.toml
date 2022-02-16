@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [81ec11da-38dd-442a-bcf9-3de7754609a5]
 description = "paired square brackets"
@@ -46,6 +53,12 @@ description = "paired and incomplete brackets"
 
 [a4675a40-a8be-4fc2-bc47-2a282ce6edbe]
 description = "too many closing brackets"
+
+[a345a753-d889-4b7e-99ae-34ac85910d1a]
+description = "early unexpected brackets"
+
+[21f81d61-1608-465a-b850-baa44c5def83]
+description = "early mismatched brackets"
 
 [99255f93-261b-4435-a352-02bdecc9bdf2]
 description = "math expression"

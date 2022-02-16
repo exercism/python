@@ -14,11 +14,11 @@ The following three tasks are all related to writing code for maintaining ideal 
 The first thing a control system has to do is check if the reactor is balanced in criticality.
 A reactor is said to be critical if it satisfies the following conditions:
 
-- The temperature is less than 800.
+- The temperature is less than 800 K.
 - The number of neutrons emitted per second is greater than 500.
 - The product of temperature and neutrons emitted per second is less than 500000.
 
-Implement the function `is_criticality_balanced()` that takes `temperature` and `neutrons_emitted` as parameters, and returns `True` if the criticality conditions are met, `False` if not.
+Implement the function `is_criticality_balanced()` that takes `temperature` measured in kelvin and `neutrons_emitted` as parameters, and returns `True` if the criticality conditions are met, `False` if not.
 
 ```python
 >>> is_criticality_balanced(750, 600)
@@ -55,7 +55,7 @@ Your final task involves creating a fail-safe mechanism to avoid overload and me
 This mechanism will determine if the reactor is below, at, or above the ideal criticality threshold.
 Criticality can then be increased, decreased, or stopped by inserting (or removing) control rods into the reactor.
 
-Implement the function called `fail_safe()`, which takes 3 parameters: `temperature`,
+Implement the function called `fail_safe()`, which takes 3 parameters: `temperature` measured in kelvin,
 `neutrons_produced_per_second`, and `threshold`, and outputs a status code for the reactor.
 
 - If `temperature * neutrons_produced_per_second` < 90% of `threshold`, output a status code of 'LOW'

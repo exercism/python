@@ -12,6 +12,9 @@
 [9962203f-f00a-4a85-b404-8a8ecbcec09d]
 description = "parsing and numbers -> numbers just get pushed onto the stack"
 
+[fd7a8da2-6818-4203-a866-fed0714e7aa0]
+description = "parsing and numbers -> pushes negative numbers onto the stack"
+
 [9e69588e-a3d8-41a3-a371-ea02206c1e6e]
 description = "addition -> can add two numbers"
 
@@ -131,6 +134,10 @@ description = "user-defined words -> cannot redefine negative numbers"
 
 [5180f261-89dd-491e-b230-62737e09806f]
 description = "user-defined words -> errors if executing a non-existent word"
+
+[3c8bfef3-edbb-49c1-9993-21d4030043cb]
+description = "user-defined words -> only defines locally"
+include = false
 
 [7b83bb2e-b0e8-461f-ad3b-96ee2e111ed6]
 description = "case-insensitivity -> DUP is case-insensitive"

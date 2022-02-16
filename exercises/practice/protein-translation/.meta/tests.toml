@@ -1,6 +1,17 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
+
+[2c44f7bf-ba20-43f7-a3bf-f2219c0c3f98]
+description = "Empty RNA sequence results in no proteins"
+include = false
 
 [96d3d44f-34a2-4db4-84cd-fff523e069be]
 description = "Methionine RNA sequence"
@@ -53,6 +64,12 @@ description = "STOP codon RNA sequence 2"
 [9c2ad527-ebc9-4ace-808b-2b6447cb54cb]
 description = "STOP codon RNA sequence 3"
 
+[f4d9d8ee-00a8-47bf-a1e3-1641d4428e54]
+description = "Sequence of two protein codons translates into proteins"
+
+[dd22eef3-b4f1-4ad6-bb0b-27093c090a9d]
+description = "Sequence of two different protein codons translates into proteins"
+
 [d0f295df-fb70-425c-946c-ec2ec185388e]
 description = "Translate RNA strand into correct protein list"
 
@@ -70,3 +87,19 @@ description = "Translation stops if STOP codon in middle of three-codon sequence
 
 [2c2a2a60-401f-4a80-b977-e0715b23b93d]
 description = "Translation stops if STOP codon in middle of six-codon sequence"
+
+[1e75ea2a-f907-4994-ae5c-118632a1cb0f]
+description = "Non-existing codon can't translate"
+include = false
+
+[9eac93f3-627a-4c90-8653-6d0a0595bc6f]
+description = "Unknown amino acids, not part of a codon, can't translate"
+include = false
+
+[9d73899f-e68e-4291-b1e2-7bf87c00f024]
+description = "Incomplete RNA sequence can't translate"
+include = false
+
+[43945cf7-9968-402d-ab9f-b8a28750b050]
+description = "Incomplete RNA sequence can translate if valid until a STOP codon"
+include = false

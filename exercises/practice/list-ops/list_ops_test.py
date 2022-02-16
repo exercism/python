@@ -58,22 +58,16 @@ class ListOpsTest(unittest.TestCase):
         self.assertEqual(list_ops_map(lambda x: x + 1, [1, 3, 5, 7]), [2, 4, 6, 8])
 
     def test_foldl_empty_list(self):
-        self.assertEqual(foldl(lambda x, y: x * y, [], 2), 2)
+        self.assertEqual(foldl(lambda acc, el: el * acc, [], 2), 2)
 
     def test_foldl_direction_independent_function_applied_to_non_empty_list(self):
-        self.assertEqual(foldl(lambda x, y: x + y, [1, 2, 3, 4], 5), 15)
-
-    def test_foldl_direction_dependent_function_applied_to_non_empty_list(self):
-        self.assertEqual(foldl(lambda x, y: x // y, [2, 5], 5), 0)
+        self.assertEqual(foldl(lambda acc, el: el + acc, [1, 2, 3, 4], 5), 15)
 
     def test_foldr_empty_list(self):
-        self.assertEqual(foldr(lambda x, y: x * y, [], 2), 2)
+        self.assertEqual(foldr(lambda acc, el: el * acc, [], 2), 2)
 
     def test_foldr_direction_independent_function_applied_to_non_empty_list(self):
-        self.assertEqual(foldr(lambda x, y: x + y, [1, 2, 3, 4], 5), 15)
-
-    def test_foldr_direction_dependent_function_applied_to_non_empty_list(self):
-        self.assertEqual(foldr(lambda x, y: x // y, [2, 5], 5), 2)
+        self.assertEqual(foldr(lambda acc, el: el + acc, [1, 2, 3, 4], 5), 15)
 
     def test_reverse_empty_list(self):
         self.assertEqual(reverse([]), [])

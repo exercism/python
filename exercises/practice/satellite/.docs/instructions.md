@@ -16,7 +16,7 @@ finally the right subtree in-order. So in order from left to right.
 For example the pre-order traversal of this tree is [a, i, x, f, r].
 The in-order traversal of this tree is [i, a, f, x, r]
 
-```
+```text
   a
  / \
 i   x

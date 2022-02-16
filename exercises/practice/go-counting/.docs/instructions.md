@@ -14,7 +14,7 @@ already been taken off the board.
 Write a function that determines the territory which includes a specified coordinate.
 
 Multiple empty intersections may be encircled at once and for encircling
-only horizontal and vertical neighbours count. In the following diagram
+only horizontal and vertical neighbors count. In the following diagram
 the stones which matter are marked "O" and the stones that don't are
 marked "I" (ignored).  Empty spaces represent empty intersections.
 
@@ -28,7 +28,7 @@ marked "I" (ignored).  Empty spaces represent empty intersections.
 ```
 
 To be more precise an empty intersection is part of a player's territory
-if all of its neighbours are either stones of that player or empty
+if all of its neighbors are either stones of that player or empty
 intersections that are part of that player's territory.
 
 For more information see

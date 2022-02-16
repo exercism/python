@@ -1,5 +1,5 @@
 {
-  "blurb": "The list class has many useful methods for working with lists like \".append(), .insert(), .remove(), .reverse(), and .sort(). Additionally, lists support all common sequence operations as well as mutable sequence operations. They can be iterated over using \"for item in <list>\" syntax, and copied via slice notation or by calling .copy().",
+  "blurb": "The list class has many useful methods for working with lists like .append(), .insert(), .remove(), .reverse(), and .sort(). Additionally, lists support all common sequence operations as well as mutable sequence operations. They can be iterated over using \"for item in <list>\" syntax, and copied via slice notation or by calling .copy().",
   "authors": ["mohanrajanr", "BethanyG"],
   "contributors": ["valentin-p"]
 }

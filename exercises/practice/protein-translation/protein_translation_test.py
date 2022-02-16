@@ -93,6 +93,16 @@ class ProteinTranslationTest(unittest.TestCase):
         expected = []
         self.assertEqual(proteins(value), expected)
 
+    def test_sequence_of_two_protein_codons_translates_into_proteins(self):
+        value = "UUUUUU"
+        expected = ["Phenylalanine", "Phenylalanine"]
+        self.assertEqual(proteins(value), expected)
+
+    def test_sequence_of_two_different_protein_codons_translates_into_proteins(self):
+        value = "UUAUUG"
+        expected = ["Leucine", "Leucine"]
+        self.assertEqual(proteins(value), expected)
+
     def test_translate_rna_strand_into_correct_protein_list(self):
         value = "AUGUUUUGG"
         expected = ["Methionine", "Phenylalanine", "Tryptophan"]

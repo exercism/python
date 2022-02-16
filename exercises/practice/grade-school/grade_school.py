@@ -10,3 +10,6 @@ class School:
 
     def grade(self, grade_number):
         pass
+
+    def added(self):
+        pass
