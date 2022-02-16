@@ -12,9 +12,9 @@ Every alien will also start off with a health level of 3, so the `health` variab
 
 ```python
 >>> alien = Alien(2, 0)
->>> alien.x
+>>> alien.x_coordinate
 2
->>> alien.y
+>>> alien.y_coordinate
 0
 >>> alien.health
 3
@@ -31,8 +31,10 @@ This way, she can simply call `<alien>.hit()` instead of having to manually chan
 ```python
 >>> alien = Alien(0, 0)
 >>> alien.health
+
 # Initialized health value.
 3
+
 # Decrements health by 1 point.
 >>> alien.hit()
 >>> alien.health
@@ -64,9 +66,9 @@ You will need to write a `teleport method` that takes new `x_coordinate` and `y_
 
 ```python
 >>> alien.teleport(5, -4)
->>> alien.x
+>>> alien.x_coordinate
 5
->>> alien.y
+>>> alien.y_coordinate
 -4
 ```
 
@@ -114,9 +116,9 @@ For example:
 
 ```python
 >>> alien_start_positions = [(4, 7), (-1, 0)]
->>> alien_list = new_alien_list(alien_start_positions)
->>> for alien in alien_list:
+>>> aliens = new_aliens_collection(alien_start_positions)
+>>> for alien in aliens:
     	print(alien.x_coordinate, alien.y_coordinate)
-4 7
--1 0
+(4, 7)
+(-1, 0)
 ```
