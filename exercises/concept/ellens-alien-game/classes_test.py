@@ -1,23 +1,23 @@
 import unittest
 import pytest
 
-from alien_class import (Alien, new_alien_list)
+from classes import new_aliens_collection
+
+try:
+    from classes import Alien
+except ImportError as err:
+    raise ImportError("We tried to import the 'Alien' class, but could not find it.  Did you remember to create it?") from err
 
 
 class ClassesTest(unittest.TestCase):
     # Test Alien class exists and correctly initialised
-    @pytest.marktask(taskno=1)
-    def test_can_create_one_alien_instance(self):
-        Alien(1, 5)
-
-    @pytest.marktask(taskno=1)
+    @pytest.mark.task(taskno=1)
     def test_alien_has_correct_initial_coordinates(self):
         alien = Alien(2, -1)
-        error = (
-            "Expected object to be at position (2, -1) but instead "
-            f"found it initialized to position {(alien.x, alien.y)}.")
+        error = ("Expected object to be at position (2, -1) but instead "
+                 f"found it initialized to position {(alien.x_coordinate, alien.y_coordinate)}.")
 
-        self.assertEqual((2, -1), (alien.x, alien.y), msg=error)
+        self.assertEqual((2, -1), (alien.x_coordinate, alien.y_coordinate), msg=error)
 
     @pytest.mark.task(taskno=1)
     def test_alien_has_health(self):
@@ -33,28 +33,28 @@ class ClassesTest(unittest.TestCase):
         alien_one = Alien(-8, -1)
         alien_two = Alien(2, 5)
 
-        pos_x_error = (
-            "Expected alien_one and alien_two to have different x "
-            f"positions. Instead both x's were: {alien_two.x}")
-        pos_y_error = (
-            "Expected alien_one and alien_two to have different y "
-            f"positions. Instead both y's were: {alien_two.y}")
+        coord_x_error = ("Expected alien_one and alien_two to have different x "
+                         f"positions. Instead both x's were: {alien_two.x_coordinate}")
+        coord_y_error = ("Expected alien_one and alien_two to have different y "
+                         f"positions. Instead both y's were: {alien_two.y_coordinate}")
 
-        self.assertFalse(alien_one.x == alien_two.x, msg=pos_x_error)
-        self.assertFalse(alien_one.y == alien_two.y, msg=pos_y_error)
+        self.assertFalse(alien_one.x_coordinate == alien_two.x_coordinate, msg=coord_x_error)
+        self.assertFalse(alien_one.y_coordinate == alien_two.y_coordinate, msg=coord_y_error)
 
     # Test class methods work as specified
     @pytest.mark.task(taskno=2)
     def test_alien_hit_method(self):
-        alien = Alien(2, 2)
+        data = [(1, 2), (2, 1), (3, 0), (4, -1)]
 
-        for i in range(3, -1, -1):
-            error = (
-                "Expected hit method to decrement health by 1. "
-                f"Health is {alien.health} when it should be {i}")
+        for variant, (iterations, result) in enumerate(data, 1):
+            alien = Alien(2, 2)
+            with self.subTest(f'variation #{variant}', input=iterations, output=result):
+                error = ("Expected hit method to decrement health by 1. "
+                         f"Health is {alien.health} when it should be {result}")
+                for _ in range(iterations):
+                    alien.hit()
+                self.assertEqual(alien.health, result, msg=error)
 
-            self.assertEqual(i, alien.health, msg=error)
-            alien.hit()
 
     @pytest.mark.task(taskno=3)
     def test_alien_is_alive_method(self):
@@ -63,11 +63,11 @@ class ClassesTest(unittest.TestCase):
         dead_error = "Alien is alive while health is less than or equal to 0"
 
         for _ in range(5):
+            alien.hit()
             if alien.health > 0:
                 self.assertTrue(alien.is_alive(), msg=alive_error)
             else:
                 self.assertFalse(alien.is_alive(), msg=dead_error)
-            alien.hit()
 
     @pytest.mark.task(taskno=4)
     def test_alien_teleport_method(self):
@@ -76,9 +76,9 @@ class ClassesTest(unittest.TestCase):
 
         error = (
             "Expected alien to be at position (-1, -4) but "
-            f"instead found it in position {(alien.x, alien.y)}.")
+            f"instead found it in position {(alien.x_coordinate, alien.y_coordinate)}.")
 
-        self.assertEqual((-1, -4), (alien.x, alien.y), msg=error)
+        self.assertEqual((-1, -4), (alien.x_coordinate, alien.y_coordinate), msg=error)
 
     @pytest.mark.task(taskno=5)
     def test_alien_collision_detection_method(self):
@@ -128,9 +128,9 @@ class ClassesTest(unittest.TestCase):
 
     # Test that the user knows how to create objects themselves
     @pytest.mark.task(taskno=7)
-    def test_new_alien_list_function(self):
+    def test_new_aliens_collection(self):
         position_data = [(-2, 6), (1, 5), (-4, -3)]
-        obj_list = new_alien_list(position_data)
+        obj_list = new_aliens_collection(position_data)
         obj_error = "new_alien_list must return a list of Alien objects."
 
         for obj, position in zip(obj_list, position_data):
@@ -138,7 +138,6 @@ class ClassesTest(unittest.TestCase):
 
             pos_error = (
                 f"Expected object to be at position {position} but "
-                f"instead found it initialized to position {(obj.x, obj.y)}.")
+                f"instead found it initialized to position {(obj.x_coordinate, obj.y_coordinate)}.")
 
-            self.assertEqual(position, (obj.x, obj.y), msg=pos_error)
-
+            self.assertEqual(position, (obj.x_coordinate, obj.y_coordinate), msg=pos_error)
