@@ -8,11 +8,23 @@
     "description": "Another overview of what classes are and how to apply them in Python."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://www.pythonmorsels.com/topics/classes/",
+    "description": "Python Morsels Rundown on Classes."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://dbader.org/blog/6-things-youre-missing-out-on-by-never-using-classes-in-your-python-code",
+    "description": "6 Things Youre Missing out on by never using Classes."
+  },
+  {
+    "url": "http://python-history.blogspot.com/2010/06/inside-story-on-new-style-classes.html",
+    "description": "The History of Python: The Inside Story on New-Style Classes."
+  },
+  {
+    "url": "https://realpython.com/instance-class-and-static-methods-demystified/",
+    "description": "Pythons Instance, Class, and Static Methodes Demystified."
+  },
+  {
+    "url": "https://stackabuse.com/pythons-classmethod-and-staticmethod-explained/",
+    "description": "Pythons Classmethod and Staticmethod Explained."
   }
 ]
