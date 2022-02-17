@@ -27,7 +27,7 @@ The goal of this exercise is to introduce the student to the concept of classes.
 - `class-customiation`, including `@classmethod` & `@staticmethod`
 - `@property` decorator, getters, and setters
 - class members & non-public methods
-- `class-inheritance`, `multiple-inheritance`, `__super()__`, class mixins
+- `class-inheritance`, `multiple-inheritance`, `__super()__`, class mix-ins
 - `class-composition`
 - `dataclasses`
 - performance considerations
@@ -58,11 +58,7 @@ These are the concepts/concept exercises the student needs to complete/understan
 
 ## Resources
 
-- [classes (Python tutorial)]
-(https://docs.python.org/3/tutorial/classes.html)
-- [Python Data Model - Python Docs]
-(https://docs.python.org/3/reference/datamodel.html#the-standard-type-hierarchy)
-- [Real Python: Object-Oriented Programming in Python 3]
-(https://realpython.com/python3-object-oriented-programming/)
-- [DO: How To Construct Classes & Objects in Python 3]
-(https://www.digitalocean.com/community/tutorials/how-to-construct-classes-and-define-objects-in-python-3)
+- [Classes (Python tutorial)](https://docs.python.org/3/tutorial/classes.html)
+- [Python Data Model - Python Docs](https://docs.python.org/3/reference/datamodel.html#the-standard-type-hierarchy)
+- [Real Python: Object-Oriented Programming in Python 3](https://realpython.com/python3-object-oriented-programming/)
+- [DigitalOcean: How To Construct Classes & Objects in Python 3](https://www.digitalocean.com/community/tutorials/how-to-construct-classes-and-define-objects-in-python-3)

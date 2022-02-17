@@ -4,16 +4,16 @@ class Alien:
     Attributes
     ----------
     (class)total_aliens_created: int
-    x_coordinate int - position on the x-axis
+    x_coordinate: int - position on the x-axis
     y_coordinate: int - position on the y-axis
-    health : int - amount of helath points
+    health: int - amount of helath points
 
     Methods
     -------
     hit(): Decrements Alien health by one point.
     is_alive(): Returns a boolena for if Alien is alive.
     teleport(new_x_coordinate, new_y_coordinate): Moves Alien to new coordinates.
-    collision_detection: Implementation TBD.
+    collision_detection(other): Implementation TBD.
     """
 
     total_aliens_created = 0
