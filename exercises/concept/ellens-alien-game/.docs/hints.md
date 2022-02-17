@@ -23,7 +23,7 @@
 ## 5. The `collision_detection` Method
 
 - Remember that object methods are always passed `self` as the first parameter.
-- If you wish to 'pass' on completing a method, Python has a keyword for that.
+- This method seems like an excellent place to use some kind of placeholder.
 
 ## 6. Alien Counter
 
@@ -32,5 +32,5 @@
 ## 7. Object Creation
 
 - A tuple would be a _single_ parameter.
-- Alien takes 2 parameters.
+- The Alien constructor takes 2 parameters.
 - Unpacking what is _inside_ the tuple might be closer to what you need.
