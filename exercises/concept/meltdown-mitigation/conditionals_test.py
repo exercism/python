@@ -32,7 +32,7 @@ class MeltdownMitigationTest(unittest.TestCase):
                 actual_result = is_criticality_balanced(temp, neutrons_emitted)
                 failure_message = (f'Expected {expected} but returned {actual_result} '
                                    f'with T={temp} and neutrinos={neutrons_emitted}')
-                self.assertEqual(actual_result, expected, failure_message)
+                self.assertEqual(expected, actual_result, failure_message)
 
     @pytest.mark.task(taskno=2)
     def test_reactor_efficiency(self):
@@ -54,7 +54,7 @@ class MeltdownMitigationTest(unittest.TestCase):
                 actual_result = reactor_efficiency(voltage, current, theoretical_max_power)
                 failure_message = (f'Expected {expected} but returned {actual_result} '
                                    f'with voltage={voltage}, current={current}, max_pow={theoretical_max_power}')
-                self.assertEqual(actual_result, expected, failure_message)
+                self.assertEqual(expected, actual_result, failure_message)
 
     @pytest.mark.task(taskno=3)
     def test_fail_safe(self):
@@ -73,4 +73,4 @@ class MeltdownMitigationTest(unittest.TestCase):
                 actual_result = fail_safe(temp, neutrons_per_second, threshold)
                 failure_message = (f'Expected {expected} but returned {actual_result} with T={temp}, '
                                    f'neutrons={neutrons_per_second}, threshold={threshold}')
-                self.assertEqual(actual_result, expected, failure_message)
+                self.assertEqual(expected, actual_result, failure_message)
