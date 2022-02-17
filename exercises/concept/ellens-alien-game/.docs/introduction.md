@@ -37,8 +37,8 @@ An instance (_object_) of `My_Class` can be created and bound to a name by [_cal
 ```python
 >>> new_object = My_Class()
 
-# class is instantiated and resulting object is bound to the "new_object" name.
-# note: the object address 'at 0x15adc55b0' will vary by computer.
+# Class is instantiated and resulting object is bound to the "new_object" name.
+# Note: the object address 'at 0x15adc55b0' will vary by computer.
 >>> new_object
 <__main__.My_Class at 0x15adc55b0>
 ```
@@ -48,22 +48,22 @@ An instance (_object_) of `My_Class` can be created and bound to a name by [_cal
 ```python
 >>> new_object = My_Class()
 
-# Accessing the class attribute number via dot-notation.
+# Accessing the class attribute "number" via dot-notation.
 >>> new_object.number
 5
 
-# Accessing the class attribute string via dot-notation.
+# Accessing the class attribute "string" via dot-notation.
 >>> new_object.string
 'Hello!'
 
-# Intantiating an additional object and binding it to the "second_new_object" name.
+# Instantiating an additional object and binding it to the "second_new_object" name.
 >>> second_new_object = My_Class()
 
 >>> second_new_object
-# note: the object address 'at 0x15ad99970' will vary by computer.
+# Note: the object address "at 0x15ad99970" will vary by computer.
 <__main__.My_Class at 0x15ad99970>
 
-# second_new_object shares the same class attributes as new_object.
+# Second_new_object shares the same class attributes as new_object.
 >>> new_object.number == second_new_object.number
 True
 ```
@@ -88,7 +88,7 @@ Altering the value of class attributes alters the value _**for all objects insta
 # Modifying the value of the "number" class attribute.
 >>> My_Class.number = 27
 
-#  Modifying the "number" class attribute changes the "number" attribute for all intantiated objects.
+# Modifying the "number" class attribute changes the "number" attribute for all instantiated objects.
 >>> obj_one.number
 27
 
@@ -105,10 +105,9 @@ As their name suggests, instance attributes are unique to each object, and can b
 The special ["dunder method"][dunder] (_short for "double underscore method"_) `__init__()` is used to customize class instances, and can be used to initialize instance attributes or properties for objects.
 For its role in initializing instance attributes, `__init__()` is also referred to as a `class constructor` or  `initializer`.
 `__init__()` takes one required parameter called `self`, which refers to the newly initiated or created object.
-Instance attributes or properties can then be defined as parameters of `__init__()`, following the self parameter.
+Instance attributes or properties can then be defined as parameters of `__init__()`, following the `self` parameter.
 
-
-Below, `My_Class` now has an instance attributes called `location_x` and `location_y`.
+Below, `My_Class` now has instance attributes called `location_x` and `location_y`.
 As you can see, the two attributes have been assigned to the first and second indexes of the `location` (_a tuple_) argument that has been passed to `__init__()`.
 The `location_x` and `location_y` attributes for a class instance will now be initialized when you instantiate an object from the class:
 
@@ -126,11 +125,11 @@ class My_Class:
         self.location_x = location[0]
         self.location_y = location[1]
 
-# Create a new object "new_object_one", with object property (1,2).
->>> new_object_one = My_Class((1,2))
+# Create a new object "new_object_one", with object property (1, 2).
+>>> new_object_one = My_Class((1, 2))
 
-# Create a second new object "new_object_two" with object property (-8,-9).
->>> new_object_two = My_Class((-8,-9))
+# Create a second new object "new_object_two" with object property (-8, -9).
+>>> new_object_two = My_Class((-8, -9))
 
 # Note that new_object_one.location_x and new_object_two.location_x two different values.
 >>> new_object_one.location_x
@@ -142,7 +141,6 @@ class My_Class:
 
 Note that you only need to pass one argument when initializing `My_Class` above -- Python takes care of passing `self` when the class is called.
 
-
 ## Methods
 
 A `method` is a `function` that is bound to either the class itself (_known as a [class method][class method], which will be discussed in a later exercise_) or an _instance_ of the class (object).
@@ -153,14 +151,14 @@ You can then define the rest of the parameters as you would for a "normal" or no
 class My_Class:
     number = 5
     string = "Hello!"
-    
-    #Class constructor.
+
+    # Class constructor.
     def __init__(self, location):
         # Instance properties
         self.location_x = location[0]
         self.location_y = location[1]
-        
-    #Instance method. Note "self" as first parameter.
+
+    # Instance method. Note "self" as first parameter.
     def change_location(self, amount):
         self.location_x += amount
         self.location_y += amount
@@ -205,18 +203,18 @@ class My_Class:
         self.location_x = location[0]
         self.location_y = location[1]
 
-    #Alter instance variable location_x and location_y
+    # Alter instance variable location_x and location_y
     def change_location(self, amount):
         self.location_x += amount
         self.location_y += amount
         return  self.location_x, self.location_y
 
-    #Alter class variable number for all instances from within an instance.
+    # Alter class variable number for all instances from within an instance.
     def increment_number(self):
         # Increment the 'number' class variable by 1.
         My_Class.number += 1
 
-        
+
 >>> test_object_one = My_Class((0,0))
 >>> test_object_one.number
 5
@@ -233,7 +231,6 @@ In previous concept exercises and practice exercise stubs, you will have seen th
 The `pass` keyword is a syntactically valid placeholder - it prevents Python from throwing a syntax error or `NotImplemented` error for an empty function or class definition.
 Essentially, it is a way to say to the Python interpreter, 'Don't worry! I _will_ put code here eventually, I just haven't done it yet.'
 
-
 ```python
 class My_Class:
     number = 5
@@ -243,20 +240,20 @@ class My_Class:
         self.location_x = location[0]
         self.location_y = location[1]
 
-    #Alter instance variable location_x and location_y
+    # Alter instance variable location_x and location_y
     def change_location(self, amount):
         self.location_x += amount
         self.location_y += amount
         return  self.location_x, self.location_y
 
-    #Alter class variable number for all instances
+    # Alter class variable number for all instances
     def increment_number(self):
         # Increment the 'number' class variable by 1.
         My_Class.number += 1
-    
-    #This will compile and run without error, but has no current functionality.   
+
+    # This will compile and run without error, but has no current functionality.
     def pending_functionality(self):
-       #Stubbing or placholding the body of this mehtod.
+       # Stubbing or placholding the body of this method.
        pass
 ```
 

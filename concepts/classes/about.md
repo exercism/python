@@ -1,6 +1,6 @@
 # About
 
-`Classes` combine data with behaviour.
+`Classes` combine data with behavior.
 Class are used to create copies or `instances`, commonly known as `objects`.
 Objects can represent real world entities (_such as Cars or Cats_) - or more abstract concepts (_such as integers, vehicles, or mammals_).
 Classes are integral to an [object oriented programming][oop] (OOP) approach, which asks the programmer to think about modeling a problem as one or more objects that interact with one another, keep state, and act upon data.
@@ -35,8 +35,8 @@ An instance (_object_) of `My_Class` can be created and bound to a name:
 ```python
 >>> new_object = My_Class()
 
-# class is instantiated and resulting object is bound to the "new_object" name.
-# note: the object address 'at 0x15adc55b0' will vary by computer.
+# Class is instantiated and resulting object is bound to the "new_object" name.
+# Note: the object address 'at 0x15adc55b0' will vary by computer.
 >>> new_object
 <__main__.My_Class at 0x15adc55b0>
 ```
@@ -46,21 +46,21 @@ An instance (_object_) of `My_Class` can be created and bound to a name:
 ```python
 >>> new_object = My_Class()
 
-# Accessing the class attribute number via dot-notation.
+# Accessing the class attribute "number" via dot-notation.
 >>> new_object.number
 5
 
-# Accessing the class attribute string via dot-notation.
+# Accessing the class attribute "string" via dot-notation.
 >>> new_object.string
 'Hello!'
 
-# Intantiating an additional object and binding it to the "second_new_object" name.
+# Instantiating an additional object and binding it to the "second_new_object" name.
 >>> second_new_object = My_Class()
 
 >>> second_new_object
 <__main__.My_Class at 0x15ad99970>
 
-# second_new_object shares the same class attributes as new_object.
+# Second_new_object shares the same class attributes as new_object.
 >>> new_object.number == second_new_object.number
 True
 ```
@@ -85,7 +85,7 @@ Altering the value of class attributes alters the value _**for all objects insta
 # Modifying the value of the "number" class attribute.
 >>> My_Class.number = 27
 
-#  Modifying the "number" class attribute changes the "number" attribute for all intantiated objects.
+# Modifying the "number" class attribute changes the "number" attribute for all instantiated objects.
 >>> obj_one.number
 27
 
@@ -102,10 +102,9 @@ As their name suggests, instance attributes are unique to each object, and can b
 The special ["dunder method"][dunder] (_short for "double underscore method"_) `__init__()` is used to customize class instances, and can be used to initialize instance attributes or properties for objects.
 For its role in initializing instance attributes, `__init__()` is also referred to as a `class constructor` or  `initializer`.
 `__init__()` takes one required parameter called `self`, which refers to the newly initiated or created object.
-Instance attributes or properties can then be defined as parameters of `__init__()`, following the self parameter.
+Instance attributes or properties can then be defined as parameters of `__init__()`, following the `self` parameter.
 
-
-Below, `My_Class` now has an instance attributes called `location_x` and `location_y`.
+Below, `My_Class` now has instance attributes called `location_x` and `location_y`.
 As you can see, the two attributes have been assigned to the first and second indexes of the `location` (_a tuple_) argument that has been passed to `__init__()`.
 The `location_x` and `location_y` attributes for a class instance will now be initialized when you instantiate an object from the class:
 
@@ -119,15 +118,15 @@ class My_Class:
     def __init__(self, location):
 
         # This is an instance or object property, attribute, or variable.
-        # Note that we are unpacking the tuplue argument into two seperate instance variables.
+        # Note that we are unpacking the tuple argument into two seperate instance variables.
         self.location_x = location[0]
         self.location_y = location[1]
 
-# Create a new object "new_object_one", with object property (1,2).
->>> new_object_one = My_Class((1,2))
+# Create a new object "new_object_one", with object property (1, 2).
+>>> new_object_one = My_Class((1, 2))
 
-# Create a second new object "new_object_two" with object property (-8,-9).
->>> new_object_two = My_Class((-8,-9))
+# Create a second new object "new_object_two" with object property (-8, -9).
+>>> new_object_two = My_Class((-8, -9))
 
 # Note that new_object_one.location_x and new_object_two.location_x two different values.
 >>> new_object_one.location_x
@@ -163,7 +162,7 @@ Now, watch what happens when the class variable changes:
 >>> obj_two.string
 
 # obj_two.string has not changed
-'Hi!' 
+'Hi!'
 
 >>> obj_one.string
 
@@ -190,37 +189,35 @@ However, the instance variable then shadows* the class variable, making the clas
 ~~~~
 _*[_shadows_][shadowing]
 
-
 ## Methods
 
 A `method` is a `function` that is bound to either the class itself (_known as a [class method][class method], which will be discussed in depth in a later exercise_) or an _instance_ of the class (object).
 Methods that operate on an object or instance need to be defined with `self` as the first parameter.
 You can then define the rest of the parameters as you would for a "normal" or non-bound function.
 Methods that operate on a class need to be defined with both the `@classmethod` decorator and with `cls` as the first parameter.
-Class methods are called on a class directly without first instatiating an object from the class.
-
+Class methods are called on a class directly without first instantiating an object from the class.
 
 ```python
 class My_Class:
     number = 5
     string = "Hello!"
 
-    #Class constructor.
+    # Class constructor.
     def __init__(self, location):
 
         # Instance properties
         self.location_x = location[0]
         self.location_y = location[1]
-        
-    #Class Method.  Uses the @classmethod decorator, and cls as the first parameter.
-    #Can be called without first making an intance of the class.
+
+    # Class Method.  Uses the @classmethod decorator, and cls as the first parameter.
+    # Can be called without first making an instance of the class.
     @classmethod
     def change_string(cls, new_string):
         #Class attributes are referred to with cls.
         cls.string = new_string
         return cls.string
 
-    #Instance method.  Note "self" as first parameter.
+    # Instance method.  Note "self" as first parameter.
     def change_location(self, amount):
         self.location_x += amount
         self.location_y += amount
@@ -265,18 +262,18 @@ class My_Class:
         self.location_x = location[0]
         self.location_y = location[1]
 
-    #Alter instance variable location_x and location_y
+    # Alter instance variable location_x and location_y
     def change_location(self, amount):
         self.location_x += amount
         self.location_y += amount
         return  self.location_x, self.location_y
 
-    #Alter class variable number for all instances from within an instance.
+    # Alter class variable number for all instances from within an instance.
     def increment_number(self):
         # Increment the 'number' class variable by 1.
         My_Class.number += 1
 
-        
+
 >>> test_object_one = My_Class((0,0))
 >>> test_object_one.number
 5
@@ -303,20 +300,20 @@ class My_Class:
         self.location_x = location[0]
         self.location_y = location[1]
 
-    #Alter instance variable location_x and location_y
+    # Alter instance variable location_x and location_y
     def change_location(self, amount):
         self.location_x += amount
         self.location_y += amount
         return  self.location_x, self.location_y
 
-    #Alter class variable number for all instances
+    # Alter class variable number for all instances
     def increment_number(self):
         # Increment the 'number' class variable by 1.
         My_Class.number += 1
-    
-    #This will compile and run without error, but has no current functionality.   
+
+    # This will compile and run without error, but has no current functionality.
     def pending_functionality(self):
-       #Stubbing or placholding the body of this mehtod.
+       # Stubbing or placholding the body of this method.
        pass
 ```
 
