@@ -66,7 +66,7 @@ class MeltdownMitigationTest(unittest.TestCase):
                      (400, 'LOW'), (1101, 'DANGER'), (1200, 'DANGER'))
 
         for variant, (neutrons_per_second, expected) in enumerate(test_data, start=1):
-            with self.subTest(f'variation #{variant}', temp=temp,neutrons_per_second=neutrons_per_second,
+            with self.subTest(f'variation #{variant}', temp=temp, neutrons_per_second=neutrons_per_second,
                               threshold=threshold, expected=expected):
 
                 # pylint: disable=assignment-from-no-return
