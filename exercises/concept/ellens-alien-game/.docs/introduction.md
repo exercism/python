@@ -18,7 +18,7 @@ The process of building an object from a class is known as `instantiation` (_or 
 A class definition in Python is straightforward:
 
 ```python
-class My_Class:
+class MyClass:
     # Class body goes here
 ```
 
@@ -27,26 +27,26 @@ class My_Class:
 Class fields (_otherwise known as `properties`, `attributes`, `data members`, or `variables`_) can be added to the body of the class:
 
 ```python
-class My_Class:
+class MyClass:
     number = 5
     string = "Hello!"
 ```
 
-An instance (_object_) of `My_Class` can be created and bound to a name by [_calling_][calling] the class (_in the same way a function is called_):
+An instance (_object_) of `MyClass` can be created and bound to a name by [_calling_][calling] the class (_in the same way a function is called_):
 
 ```python
->>> new_object = My_Class()
+>>> new_object = MyClass()
 
 # Class is instantiated and resulting object is bound to the "new_object" name.
 # Note: the object address 'at 0x15adc55b0' will vary by computer.
 >>> new_object
-<__main__.My_Class at 0x15adc55b0>
+<__main__.MyClass at 0x15adc55b0>
 ```
 
 `Class attributes` are shared across all objects (_or instances_) created from a class, and can be accessed via [`dot notation`][dot notation]  -  a `.` placed after the object name and before the attribute name:
 
 ```python
->>> new_object = My_Class()
+>>> new_object = MyClass()
 
 # Accessing the class attribute "number" via dot-notation.
 >>> new_object.number
@@ -57,11 +57,11 @@ An instance (_object_) of `My_Class` can be created and bound to a name by [_cal
 'Hello!'
 
 # Instantiating an additional object and binding it to the "second_new_object" name.
->>> second_new_object = My_Class()
+>>> second_new_object = MyClass()
 
 >>> second_new_object
 # Note: the object address "at 0x15ad99970" will vary by computer.
-<__main__.My_Class at 0x15ad99970>
+<__main__.MyClass at 0x15ad99970>
 
 # Second_new_object shares the same class attributes as new_object.
 >>> new_object.number == second_new_object.number
@@ -74,19 +74,19 @@ Because these attributes are shared, their value can be accessed and manipulated
 Altering the value of class attributes alters the value _**for all objects instantiated from the class**_:
 
 ```python
->>> obj_one = My_Class()
->>> obj_two = My_Class()
+>>> obj_one = MyClass()
+>>> obj_two = MyClass()
 
 # Accessing a class attribute from an object.
 >>> obj_two.number
 5
 
 # Accessing the class attribute from the class itself.
->>> My_Class.number
+>>> MyClass.number
 5
 
 # Modifying the value of the "number" class attribute.
->>> My_Class.number = 27
+>>> MyClass.number = 27
 
 # Modifying the "number" class attribute changes the "number" attribute for all instantiated objects.
 >>> obj_one.number
@@ -100,19 +100,20 @@ Having a bunch of objects with synchronized data at all times is not particularl
 Fortunately, objects created from a class can be customized with their own `instance attributes` (_or instance properties, variables, or fields_).
 As their name suggests, instance attributes are unique to each object, and can be modified independently.
 
+
 ## Customizing Object Instantiation with `__init__()`
 
 The special ["dunder method"][dunder] (_short for "double underscore method"_) `__init__()` is used to customize class instances, and can be used to initialize instance attributes or properties for objects.
-For its role in initializing instance attributes, `__init__()` is also referred to as a `class constructor` or  `initializer`.
-`__init__()` takes one required parameter called `self`, which refers to the newly initiated or created object.
-Instance attributes or properties can then be defined as parameters of `__init__()`, following the `self` parameter.
+For its role in initializing instance attributes, `__init__()` is also referred to as a `class constructor` or `initializer`.
+`__init__()` takes one required parameter called `self`, which refers to the newly initialized or created object.
+Data for instance attributes or properties can then be passed as arguments of `__init__()`, following the `self` parameter.
 
-Below, `My_Class` now has instance attributes called `location_x` and `location_y`.
+Below, `MyClass` now has instance attributes called `location_x` and `location_y`.
 As you can see, the two attributes have been assigned to the first and second indexes of the `location` (_a tuple_) argument that has been passed to `__init__()`.
-The `location_x` and `location_y` attributes for a class instance will now be initialized when you instantiate an object from the class:
+The `location_x` and `location_y` attributes for a class instance will now be initialized when you instantiate the class, and an object is created:
 
 ```python
-class My_Class:
+class MyClass:
     # These are class attributes, variables, or fields.
     number = 5
     string = "Hello!"
@@ -126,10 +127,10 @@ class My_Class:
         self.location_y = location[1]
 
 # Create a new object "new_object_one", with object property (1, 2).
->>> new_object_one = My_Class((1, 2))
+>>> new_object_one = MyClass((1, 2))
 
 # Create a second new object "new_object_two" with object property (-8, -9).
->>> new_object_two = My_Class((-8, -9))
+>>> new_object_two = MyClass((-8, -9))
 
 # Note that new_object_one.location_x and new_object_two.location_x two different values.
 >>> new_object_one.location_x
@@ -139,7 +140,8 @@ class My_Class:
 -8
 ```
 
-Note that you only need to pass one argument when initializing `My_Class` above -- Python takes care of passing `self` when the class is called.
+Note that you only need to pass one argument when initializing `MyClass` above -- Python takes care of passing `self` when the class is called.
+
 
 ## Methods
 
@@ -148,7 +150,7 @@ Methods that operate on an object (instance) need to be defined with `self` as t
 You can then define the rest of the parameters as you would for a "normal" or non-bound function:
 
 ```python
-class My_Class:
+class MyClass:
     number = 5
     string = "Hello!"
 
@@ -169,7 +171,7 @@ Like attribute access, calling a method simply requires putting a `.` after the 
 The called method does not need a copy of the object as a first parameter -- Python fills in `self` automatically:
 
 ```python
-class My_Class:
+class MyClass:
     number = 5
     string = "Hello!"
 
@@ -183,7 +185,7 @@ class My_Class:
         return  self.location_x, self.location_y
 
 # Make a new test_object with location (3,7)
->>> test_object = My_Class((3,7))
+>>> test_object = MyClass((3,7))
 >>> (test_object.location_x, test_object.location_y)
 (3,7)
 
@@ -195,7 +197,7 @@ class My_Class:
 Class attributes can be accessed from within instance methods in the same way that they are accessed outside of the class:
 
 ```python
-class My_Class:
+class MyClass:
     number = 5
     string = "Hello!"
 
@@ -212,14 +214,14 @@ class My_Class:
     # Alter class variable number for all instances from within an instance.
     def increment_number(self):
         # Increment the 'number' class variable by 1.
-        My_Class.number += 1
+        MyClass.number += 1
 
 
->>> test_object_one = My_Class((0,0))
+>>> test_object_one = MyClass((0,0))
 >>> test_object_one.number
 5
 
->>> test_object_two = My_Class((13, -3))
+>>> test_object_two = MyClass((13, -3))
 >>> test_object_two.increment_number()
 >>> test_object_one.number
 6
@@ -232,7 +234,7 @@ The `pass` keyword is a syntactically valid placeholder - it prevents Python fro
 Essentially, it is a way to say to the Python interpreter, 'Don't worry! I _will_ put code here eventually, I just haven't done it yet.'
 
 ```python
-class My_Class:
+class MyClass:
     number = 5
     string = "Hello!"
 
@@ -249,7 +251,7 @@ class My_Class:
     # Alter class variable number for all instances
     def increment_number(self):
         # Increment the 'number' class variable by 1.
-        My_Class.number += 1
+        MyClass.number += 1
 
     # This will compile and run without error, but has no current functionality.
     def pending_functionality(self):
