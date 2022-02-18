@@ -109,7 +109,7 @@ For example:
 ## 7. Object Creation
 
 Ellen loves what you've done so far, but she has one more favor to ask.
-She would like a standalone function that will create a `list` of alien objects, given a list of positions (as `tuples`).
+She would like a standalone function to create a `list` of alien objects, given a list of positions (as `tuples`).
 
 For example:
 
