@@ -6,11 +6,12 @@ from classes import new_aliens_collection
 try:
     from classes import Alien
 except ImportError as err:
-    raise ImportError("We tried to import the 'Alien' class, but could not find it.  Did you remember to create it?") from err
+    raise ImportError("We tried to import the 'Alien' class, but could not find it. "
+                      "Did you remember to create it?") from err
 
 
 class ClassesTest(unittest.TestCase):
-    # Test Alien class exists and correctly initialised
+    # Test Alien class exists and correctly initialised.
     @pytest.mark.task(taskno=1)
     def test_alien_has_correct_initial_coordinates(self):
         alien = Alien(2, -1)
@@ -27,21 +28,21 @@ class ClassesTest(unittest.TestCase):
 
         self.assertEqual(3, alien.health, msg=error)
 
-    # Test instance variables are unique to specific instances
+    # Test instance variables are unique to specific instances.
     @pytest.mark.task(taskno=1)
     def test_alien_instance_variables(self):
         alien_one = Alien(-8, -1)
         alien_two = Alien(2, 5)
 
         coord_x_error = ("Expected alien_one and alien_two to have different x "
-                         f"positions. Instead both x's were: {alien_two.x_coordinate}")
+                         f"positions. Instead both x's were: {alien_two.x_coordinate}.")
         coord_y_error = ("Expected alien_one and alien_two to have different y "
-                         f"positions. Instead both y's were: {alien_two.y_coordinate}")
+                         f"positions. Instead both y's were: {alien_two.y_coordinate}.")
 
         self.assertFalse(alien_one.x_coordinate == alien_two.x_coordinate, msg=coord_x_error)
         self.assertFalse(alien_one.y_coordinate == alien_two.y_coordinate, msg=coord_y_error)
 
-    # Test class methods work as specified
+    # Test class methods work as specified.
     @pytest.mark.task(taskno=2)
     def test_alien_hit_method(self):
         data = [(1, 2), (2, 1), (3, 0), (4, -1)]
@@ -50,7 +51,7 @@ class ClassesTest(unittest.TestCase):
             alien = Alien(2, 2)
             with self.subTest(f'variation #{variant}', input=iterations, output=result):
                 error = ("Expected hit method to decrement health by 1. "
-                         f"Health is {alien.health} when it should be {result}")
+                         f"Health is {alien.health} when it should be {result}.")
                 for _ in range(iterations):
                     alien.hit()
                 self.assertEqual(alien.health, result, msg=error)
@@ -59,8 +60,8 @@ class ClassesTest(unittest.TestCase):
     @pytest.mark.task(taskno=3)
     def test_alien_is_alive_method(self):
         alien = Alien(0, 1)
-        alive_error = "Alien is dead while health is greater than 0"
-        dead_error = "Alien is alive while health is less than or equal to 0"
+        alive_error = "Alien is dead while health is greater than 0."
+        dead_error = "Alien is alive while health is less than or equal to 0."
 
         for _ in range(5):
             alien.hit()
@@ -83,7 +84,7 @@ class ClassesTest(unittest.TestCase):
     @pytest.mark.task(taskno=5)
     def test_alien_collision_detection_method(self):
         alien = Alien(7, 3)
-        error = "Expected collision_detection method to not be implemented"
+        error = "Expected collision_detection method to not be implemented."
 
         self.assertIsNone(alien.collision_detection(Alien(7, 2)), msg=error)
 
@@ -118,7 +119,7 @@ class ClassesTest(unittest.TestCase):
                 "Expected all total_aliens_created variables to be "
                 "equal to number of alien instances (i.e. 3).  Alien "
                 f"number {alien}'s total_aliens_created variable "
-                f"is equal to {variable}")
+                f"is equal to {variable}.")
 
         tac_list = [alien.total_aliens_created for alien in aliens]
 

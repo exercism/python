@@ -4,9 +4,9 @@ class Alien:
     Attributes
     ----------
     (class)total_aliens_created: int
-    x_coordinate: int - position on the x-axis
-    y_coordinate: int - position on the y-axis
-    health: int - amount of helath points
+    x_coordinate: int - Position on the x-axis.
+    y_coordinate: int - Position on the y-axis.
+    health: int - Amount of helath points.
 
     Methods
     -------

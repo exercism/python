@@ -19,12 +19,12 @@ The goal of this exercise is to introduce the student to the concept of classes.
 - Know how to create a method.
 - Implement instance variables.
 - Implement class variables.
-- Understand the difference between instance and class variables.
+- Understand the difference between instance variables and class variables.
 - Use `pass` as a placeholder for class methods.
 
 ## Out of scope
 
-- `class-customiation`, including `@classmethod` & `@staticmethod`
+- `class-customiation`, including `@classmethod` & `@staticmethod` - but ok to mention in `about.md`.
 - `@property` decorator, getters, and setters
 - class members & non-public methods
 - `class-inheritance`, `multiple-inheritance`, `__super()__`, class mix-ins
