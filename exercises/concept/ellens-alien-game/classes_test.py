@@ -132,7 +132,7 @@ class ClassesTest(unittest.TestCase):
     def test_new_aliens_collection(self):
         position_data = [(-2, 6), (1, 5), (-4, -3)]
         obj_list = new_aliens_collection(position_data)
-        obj_error = "new_alien_list must return a list of Alien objects."
+        obj_error = "new_aliens_collection must return a list of Alien objects."
 
         for obj, position in zip(obj_list, position_data):
             self.assertIsInstance(obj, Alien, msg=obj_error)
