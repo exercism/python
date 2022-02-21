@@ -1,5 +1,5 @@
 def round_scores(student_scores):
-    """Round all student scores in the provided list.
+    """"Round all provided student scores.
 
     :param student_scores: list of student exam scores as float or int.
     :return: list of student scores *rounded* to nearest integer value.
@@ -9,7 +9,7 @@ def round_scores(student_scores):
 
 
 def count_failed_students(student_scores):
-    """Count the number of failing students in the provided list.
+    """Count the number of failing students out of the group provided.
 
     :param student_scores: list of integer student scores.
     :return: integer count of student scores at or below 40.
@@ -19,7 +19,7 @@ def count_failed_students(student_scores):
 
 
 def above_threshold(student_scores, threshold):
-    """Count the number of student scores and determine how many performed the best based on the provided threshold.
+    """Determine how many of the provided student scores were 'the best' based on the provided threshold.
 
     :param student_scores: list of integer scores
     :param threshold :  integer
