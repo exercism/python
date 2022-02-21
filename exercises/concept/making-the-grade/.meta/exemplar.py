@@ -1,5 +1,5 @@
 def round_scores(student_scores):
-    """Round all student scores in the provided list.
+    """Round all provided student scores.
 
     :param student_scores: list of student exam scores as float or int.
     :return: list of student scores *rounded* to nearest integer value.
