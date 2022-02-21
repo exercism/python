@@ -26,7 +26,7 @@ def count_failed_students(student_scores):
 
 
 def above_threshold(student_scores, threshold):
-    """Count the number of student scores and determine how many performed the best based on the provided threshold.
+    """Determine how many of the provided student scores were 'the best' based on the provided threshold.
 
     :param student_scores: list of integer scores
     :param threshold :  integer
