@@ -47,7 +47,7 @@ def letter_grades(highest):
 
 
 def student_ranking(student_scores, student_names):
-    """Create a list of strings that contain the student's rank, name, and grade in ascending order.
+    """Organize the student's rank, name, and grade information in ascending order.
 
      :param student_scores: list of scores in descending order.
      :param student_names: list of names in descending order by exam score.
