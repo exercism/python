@@ -44,13 +44,6 @@ class HammingTest(unittest.TestCase):
         self.assertEqual(type(err.exception), ValueError)
         self.assertEqual(err.exception.args[0], "Strands must be of equal length.")
 
-    def test_disallow_right_empty_strand(self):
-        with self.assertRaises(ValueError) as err:
-            distance("G", "")
-
-        self.assertEqual(type(err.exception), ValueError)
-        self.assertEqual(err.exception.args[0], "Strands must be of equal length.")
-
     def test_disallow_empty_second_strand(self):
         with self.assertRaises(ValueError) as err:
             distance("G", "")
