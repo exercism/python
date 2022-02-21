@@ -12,7 +12,7 @@ def round_scores(student_scores):
 
 
 def count_failed_students(student_scores):
-    """Count the number of failing students in the provided list.
+    """Count the number of failing students out of the group provided.
 
     :param student_scores: list of integer student scores.
     :return: integer count of student scores at or below 40.
