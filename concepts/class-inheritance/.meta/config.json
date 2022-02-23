@@ -1,5 +1,5 @@
 {
-  "blurb": "Inheritance is the capability of one class to derive or inherit the properties from another class. The existing class is called base class and the new class is called the derived class.",
+  "blurb": "Inheritance refers to a class's capacity to derive or inherit properties from another class. The existing class is known as the base class, and the new class is known as the derived class.",
   "authors": ["bethanyg", "cmccandless"],
   "contributors": ["girijakar"]
 }
