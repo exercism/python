@@ -45,8 +45,11 @@ class ClassesTest(unittest.TestCase):
     # Test class methods work as specified.
     @pytest.mark.task(taskno=2)
     def test_alien_hit_method(self):
-        data = [(1, 2), (2, 1), (3, 0), (4, -1)]
+        #There are two valid interpretations for this method/task.
+        #`self.health -= 1` and `self.health = max(0, self.health - 1)`
+        #The tests for this task reflect this ambiguity.
 
+        data = [(1, (2,)), (2, (1,)), (3, (0,)), (4, (0, -1)), (5, (0, -2)), (6, (0, -3))]
         for variant, (iterations, result) in enumerate(data, 1):
             alien = Alien(2, 2)
             with self.subTest(f'variation #{variant}', input=iterations, output=result):
@@ -54,7 +57,7 @@ class ClassesTest(unittest.TestCase):
                          f"Health is {alien.health} when it should be {result}.")
                 for _ in range(iterations):
                     alien.hit()
-                self.assertEqual(alien.health, result, msg=error)
+                self.assertIn(alien.health, result, msg=error)
 
 
     @pytest.mark.task(taskno=3)

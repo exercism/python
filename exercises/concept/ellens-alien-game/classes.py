@@ -1,11 +1,22 @@
-# TODO: Create a class called "Alien" here
+"""Solution to Ellen's Alien Game exercise."""
 
 
-def new_aliens_collection(positions):
-    """Function taking a list of position tuples, creating one Alien instance per position.
+class Alien:
+    """Create an Alien object with location x_coordinate and y_coordinate.
 
-    :param positions: list - A list of tuples of (x, y) coordinates.
-    :return: list - A list of Alien objects.
+    Attributes
+    ----------
+    (class)total_aliens_created: int
+    x_coordinate: int - Position on the x-axis.
+    y_coordinate: int - Position on the y-axis.
+    health: int - Amount of health points.
+
+    Methods
+    -------
+    hit(): Decrement Alien health by one point.
+    is_alive(): Return a boolean for if Alien is alive (if health is > 0).
+    teleport(new_x_coordinate, new_y_coordinate): Move Alien object to new coordinates.
+    collision_detection(other): Implementation TBD.
     """
 
     pass
