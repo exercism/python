@@ -4,7 +4,7 @@
 
 If you have been programming in a [functional][functional], [declarative][declarative], or [imperative][imperative] style, shifting focus to [object oriented programming][oop] (OOP) may feel a bit foreign.
 An OOP approach asks the programmer to think about modeling a problem as one or more `objects` that interact with one another, keep state, and act upon data.
-Objects can represent real world entities (_such as Cars or Cats_) - or more abstract concepts (_such as integers, vehicles, or mammals_).
+Objects can represent real world entities (_such as cars or cats_) - or more abstract concepts (_such as integers, vehicles, or mammals_).
 Each object becomes a unique instance in computer memory and represents some part of the overall model.
 
 ## Classes
@@ -88,7 +88,7 @@ Altering the value of class attributes alters the value _**for all objects insta
 # Modifying the value of the "number" class attribute.
 >>> MyClass.number = 27
 
-# Modifying the "number" class attribute changes the "number" attribute for all instantiated objects.
+# Modifying the "number" class attribute changes the "number" attribute for all objects.
 >>> obj_one.number
 27
 
@@ -230,7 +230,7 @@ class MyClass:
 ## Placeholding or Stubbing Implementation with Pass
 
 In previous concept exercises and practice exercise stubs, you will have seen the `pass` keyword used within the body of  functions in place of actual code.
-The `pass` keyword is a syntactically valid placeholder - it prevents Python from throwing a syntax error or `NotImplemented` error for an empty function or class definition.
+The `pass` keyword is a syntactically valid placeholder - it prevents Python from throwing a syntax error for an empty function or class definition.
 Essentially, it is a way to say to the Python interpreter, 'Don't worry! I _will_ put code here eventually, I just haven't done it yet.'
 
 ```python
