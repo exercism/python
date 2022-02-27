@@ -193,7 +193,11 @@ object.func2()
 The derived class will print both the statements of `func1` and `func2`.
 
 ## Multiple Inheritance
-
+As we've seen, a class inherits from another class in this scenario. On the other side, multiple inheritance is a feature that allows a class to inherit characteristics and methods from many parent classes.
+```python
+class SubclassName(BaseClass1, BaseClass2, BaseClass3, ...):
+    pass
+```
 ### Diamond Inheritance
 
 ### Method resolution order(MRO)
