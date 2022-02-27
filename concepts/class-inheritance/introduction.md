@@ -4,4 +4,4 @@
 Either by using single or multiple inheritance, we can inherit the properties from the base class. Inheritance is used because it helps in code reusability.
 
 
-[inherit]: https://realpython.com/inheritance-composition-python/#whats-inheritance
+[inherit]:https://realpython.com/inheritance-composition-python/#whats-inheritance
