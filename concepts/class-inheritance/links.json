@@ -1,18 +1,42 @@
 [
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://docs.python.org/3/tutorial/classes.html",
+    "description": "Classes in python"
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://www.geeksforgeeks.org/access-modifiers-in-python-public-private-and-protected/",
+    "description": "Access Modifiers in python"
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://www.geeksforgeeks.org/accessor-and-mutator-methods-in-python/",
+    "description": "Functions in classes"
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://realpython.com/inheritance-composition-python/#whats-inheritance",
+    "description": "About inheritance"
+  },
+  {
+    "url": "https://python-course.eu/oop/multiple-inheritance.php",
+    "description": "Multiple inheritance and Diamond inheritance problem"
+  },
+  {
+    "url": "https://stackoverflow.com/questions/533631/what-is-a-mixin-and-why-are-they-useful",
+    "description": "Python mixins"
+  },
+  {
+    "url": "https://raganwald.com/2016/07/16/why-are-mixins-considered-harmful.html",
+    "description": "Mixins cons"
+  },
+  {
+    "url": "https://gaopinghuang0.github.io/2018/12/29/dig-into-python-super-and-mro",
+    "description": "Super and mixins functions"
+  },
+  {
+    "url": "https://www.python.org/download/releases/2.3/mro/",
+    "description": "MRO"
+  },
+  {
+    "url": "https://nedbatchelder.com/blog/201210/multiple_inheritance_is_hard.html",
+    "description": "Multiple inheritancs and mixins"
   }
 ]
