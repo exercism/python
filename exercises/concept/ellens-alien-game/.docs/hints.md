@@ -25,7 +25,7 @@
 ## 5. The `collision_detection` Method
 
 - Remember that `object methods` are always passed `self` as the first parameter.
-- This method seems like an excellent place to use some kind of placeholder...
+- This method seems like an excellent place to use some kind of placeholder…
 
 ## 6. Alien Counter
 
