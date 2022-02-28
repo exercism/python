@@ -14,7 +14,7 @@ class Alien:
     Methods
     -------
     hit(): Decrement Alien health by one point.
-    is_alive(): Return a boolean for if Alien is alive (if health is > 0).
+    is_alive(): Return a boolean to indicate if Alien is alive (if health is > 0).
     teleport(new_x_coordinate, new_y_coordinate): Move Alien object to new coordinates.
     collision_detection(other): Implementation TBD.
     """
