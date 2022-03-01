@@ -6,7 +6,6 @@
 <br>
 
 
-
 ## Implemented Practice Exercises
 
 <details>
@@ -137,13 +136,13 @@
   
 <br>
 </details>
-<br><br>
+<br>
 
 
 ## Concepts Without Planned Exercises
 
 <details>
-<Summary>No Exercises Planned</Summary>
+<Summary><b><em>No Exercises Planned</b></em></Summary>
 <br>
 
 
@@ -174,7 +173,7 @@
 
 <br>
 </details>
-<br><br>
+<br>
 
 
 ## Implemented & Planned Concept Exercises
