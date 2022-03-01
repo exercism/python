@@ -39,3 +39,4 @@
 - A `tuple` would be a _single_ parameter.
 - The Alien constructor takes _2 parameters_.
 - Unpacking what is _inside_ the tuple would yield two parameters.
+- The standalone function is outside of the `class`
