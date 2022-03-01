@@ -10,7 +10,7 @@
 ## Implemented Practice Exercises
 
 <details>
-<Summary><em>Practice Exercises with Difficulty, Solutions, and Mentor Notes</em></Summary>
+<Summary><b><em>Practice Exercises with Difficulty, Solutions, and Mentor Notes</em></b></Summary>
 <br>
 
 
