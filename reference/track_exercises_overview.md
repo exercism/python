@@ -312,15 +312,17 @@ with(("<b>TBD</b> <br> <i>with <br> (Context Managers)</i>")):::TBD
 Basics -->  strings & numbers & bools & loops
 Basics -->  functions
 bools -->   conditionals
-classes --> iterators & Class-inheritance & Class-customization
+classes ---> iterators & Class-inheritance & Class-customization
 conditionals -->  strings & comparisons & loops
-comparisons --> rich-comparisons & loops
+comparisons --> loops
 loops -->  tuples & with
 loops -->  itertools & functions
 list-comprehensions --> other-comprehensions
+Class-customization --> rich-comparisons
 Class-customization --> enums & decorators
 Class-inheritance --> user-defined-errors & descriptors & Class-interfaces 
-Class-inheritance ----> context-manager-customization 
+Class-inheritance ----> context-manager-customization
+other-comprehensions ---> generators
 dicts --> dict-methods
 functions --> function-arguments & higher-order-functions & functional-tools
 function-arguments --> none 
@@ -332,6 +334,7 @@ iterators --> generators
 lists --> string-formatting & dicts & list-methods & list-comprehensions & sequences   
 numbers -->  complex-numbers
 sequences --> iterators
+sets --> classes
 strings --> string-methods & string-formatting & lists 
 strings --> raising-and-handling-errors
 tuples --> sequences & sets & classes & unpacking-and-multiple-assignment 
@@ -339,7 +342,7 @@ with --> context-manager-customization
 
 click Basics "https://exercism.org/tracks/python/exercises/guidos-gorgeous-lasagna" "basics"
 click bools "https://exercism.org/tracks/python/exercises/ghost-gobble-arcade-game" "bools"
-click classes "https://github.com/exercism/python/tree/main/concepts/classes" "classes"
+click classes "https://exercism.org/tracks/python/exercises/ellens-alien-game" "classes"
 click Class-customization "https://github.com/exercism/python/tree/main/concepts/class-customization" "Class-customization"
 click Class-inheritance "https://github.com/exercism/python/tree/main/concepts/class-inheritance" "Class-inheritance"
 click Class-interfaces "https://github.com/exercism/python/tree/main/concepts/class-interfaces" "Class-interfaces"
