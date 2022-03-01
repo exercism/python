@@ -320,24 +320,24 @@ loops -->  itertools & functions
 list-comprehensions --> other-comprehensions
 Class-customization --> rich-comparisons
 Class-customization --> enums & decorators
-Class-inheritance --> user-defined-errors & descriptors & Class-interfaces 
+Class-inheritance --> user-defined-errors & descriptors & Class-interfaces
 Class-inheritance ----> context-manager-customization
 other-comprehensions ---> generators
 dicts --> dict-methods
 functions --> function-arguments & higher-order-functions & functional-tools
-function-arguments --> none 
+function-arguments --> none
 functional-tools --> functools
 generators --> generator-expressions
-higher-order-functions --->  decorators 
+higher-order-functions --->  decorators
 higher-order-functions -->  anonymous-functions
 iterators --> generators
-lists --> string-formatting & dicts & list-methods & list-comprehensions & sequences   
+lists --> string-formatting & dicts & list-methods & list-comprehensions & sequences
 numbers -->  complex-numbers
 sequences --> iterators
 sets --> classes
-strings --> string-methods & string-formatting & lists 
+strings --> string-methods & string-formatting & lists
 strings --> raising-and-handling-errors
-tuples --> sequences & sets & classes & unpacking-and-multiple-assignment 
+tuples --> sequences & sets & classes & unpacking-and-multiple-assignment
 with --> context-manager-customization
 
 click Basics "https://exercism.org/tracks/python/exercises/guidos-gorgeous-lasagna" "basics"
