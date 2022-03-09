@@ -31,7 +31,7 @@
         "name": "Little Sister's Vocabulary",
         "uuid": "5a9b42fb-ddf4-424b-995d-f9952ea63c37",
         "concepts": ["strings"],
-        "prerequisites": ["basics"],
+        "prerequisites": ["basics", "conditionals"],
         "status": "beta"
       },
       {
@@ -71,8 +71,8 @@
         "name": "Black Jack",
         "uuid": "e1a6075e-0c5e-48cd-8c50-69140961a06a",
         "concepts": ["comparisons"],
-        "prerequisites": ["basics"],
-        "status": "wip"
+        "prerequisites": ["basics", "bools", "conditionals"],
+        "status": "beta"
       },
       {
         "slug": "pretty-leaflet",
@@ -145,7 +145,7 @@
         "concepts": ["loops"],
         "prerequisites": [
           "basics",
-          "conditionals",
+          "comparisons",
           "lists",
           "list-methods",
           "strings"
@@ -180,14 +180,24 @@
         "slug": "plane-tickets",
         "name": "Plane Tickets",
         "uuid": "3ba3fc89-3e1b-48a5-aff0-5aeaba8c8810",
-        "concepts": ["generators"],
+        "concepts": [
+          "generators"
+        ],
         "prerequisites": [
           "conditionals",
-          "dicts", 
+          "dicts",
           "lists",
           "loops"
         ],
         "status": "wip"
+      },
+      {
+        "slug": "ellens-alien-game",
+        "name": "Ellen's Alien Game",
+        "uuid": "3550ec07-f6c6-48bd-b2b4-086e75faf9e7",
+        "concepts": ["classes"],
+        "prerequisites": ["basics", "bools", "comparisons", "loops", "dicts", "lists", "numbers", "sets", "strings", "tuples"],
+        "status": "beta"
       }
     ],
     "practice": [

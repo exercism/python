@@ -20,7 +20,7 @@ If a given space has no adjacent mines at all, leave that square blank.
 For example you may receive a 5 x 4 board like this (empty spaces are
 represented here with the '·' character for display on screen):
 
-```
+```text
 ·*·*·
 ··*··
 ··*··
@@ -29,7 +29,7 @@ represented here with the '·' character for display on screen):
 
 And your code will transform it into this:
 
-```
+```text
 1*3*1
 13*31
 ·2*2·

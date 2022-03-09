@@ -29,7 +29,7 @@ class LogLevelInt(Enum):
 
 def parse_log_level(message):
     """Return level enum for log message.
-   
+
     :param message: log message (string)
     :return: enum - 'LogLevel.<level>'.  Return 'LogLevel.Unknown' if an unknown severity is passed.
     """

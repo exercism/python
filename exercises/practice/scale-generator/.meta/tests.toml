@@ -1,54 +1,136 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [10ea7b14-8a49-40be-ac55-7c62b55f9b47]
-description = "Chromatic scale with sharps"
+description = "Chromatic scales -> Chromatic scale with sharps"
 
 [af8381de-9a72-4efd-823a-48374dbfe76f]
-description = "Chromatic scale with flats"
+description = "Chromatic scales -> Chromatic scale with flats"
+
+[7195998a-7be7-40c9-8877-a1d7949e061b]
+description = "Scales with specified intervals -> Simple major scale"
+reimplements = "6f5b1410-1dd7-4c6c-b410-6b7e986f6f1e"
+
+[fe853b97-1878-4090-b218-4029246abb91]
+description = "Scales with specified intervals -> Major scale with sharps"
+reimplements = "13a92f89-a83e-40b5-b9d4-01136931ba02"
+
+[d60cb414-cc02-4fcb-ad7a-fc7ef0a9eead]
+description = "Scales with specified intervals -> Major scale with flats"
+reimplements = "aa3320f6-a761-49a1-bcf6-978e0c81080a"
+
+[77dab9b3-1bbc-4f9a-afd8-06da693bcc67]
+description = "Scales with specified intervals -> Minor scale with sharps"
+reimplements = "63daeb2f-c3f9-4c45-92be-5bf97f61ff94"
+
+[5fa1728f-5b66-4b43-9b7c-84359b7069d4]
+description = "Scales with specified intervals -> Minor scale with flats"
+reimplements = "616594d0-9c48-4301-949e-af1d4fad16fd"
+
+[f3f1c353-8f7b-4a85-a5b5-ae06c2645823]
+description = "Scales with specified intervals -> Dorian mode"
+reimplements = "390bd12c-5ac7-4ec7-bdde-4e58d5c78b0a"
+
+[5fe14e5a-3ddc-4202-a158-2c1158beb5d0]
+description = "Scales with specified intervals -> Mixolydian mode"
+reimplements = "846d0862-0f3e-4f3b-8a2d-9cc74f017848"
+
+[e6307799-b7f6-43fc-a6d8-a4834d6e2bdb]
+description = "Scales with specified intervals -> Lydian mode"
+reimplements = "7d49a8bb-b5f7-46ad-a207-83bd5032291a"
+
+[7c4a95cd-ecf4-448d-99bc-dbbca51856e0]
+description = "Scales with specified intervals -> Phrygian mode"
+reimplements = "a4e4dac5-1891-4160-a19f-bb06d653d4d0"
+
+[f476f9c9-5a13-473d-bb6c-f884cf8fd9f2]
+description = "Scales with specified intervals -> Locrian mode"
+reimplements = "ef3650af-90f8-4ad9-9ef6-fdbeae07dcaa"
+
+[87fdbcca-d3dd-46d5-9c56-ec79e25b19f4]
+description = "Scales with specified intervals -> Harmonic minor"
+reimplements = "70517400-12b7-4530-b861-fa940ae69ee8"
+
+[b28ecc18-88db-4fd5-a973-cfe6361e2b24]
+description = "Scales with specified intervals -> Octatonic"
+reimplements = "37114c0b-c54d-45da-9f4b-3848201470b0"
+
+[a1c7d333-6fb3-4f3b-9178-8a0cbe043134]
+description = "Scales with specified intervals -> Hexatonic"
+reimplements = "496466e7-aa45-4bbd-a64d-f41030feed9c"
+
+[9acfd139-0781-4926-8273-66a478c3b287]
+description = "Scales with specified intervals -> Pentatonic"
+reimplements = "bee5d9ec-e226-47b6-b62b-847a9241f3cc"
+
+[31c933ca-2251-4a5b-92dd-9d5831bc84ad]
+description = "Scales with specified intervals -> Enigmatic"
+reimplements = "dbee06a6-7535-4ab7-98e8-d8a36c8402d1"
 
 [6f5b1410-1dd7-4c6c-b410-6b7e986f6f1e]
-description = "Simple major scale"
+description = "Scales with specified intervals -> Simple major scale"
+include = false
 
 [13a92f89-a83e-40b5-b9d4-01136931ba02]
-description = "Major scale with sharps"
+description = "Scales with specified intervals -> Major scale with sharps"
+include = false
 
 [aa3320f6-a761-49a1-bcf6-978e0c81080a]
-description = "Major scale with flats"
+description = "Scales with specified intervals -> Major scale with flats"
+include = false
 
 [63daeb2f-c3f9-4c45-92be-5bf97f61ff94]
-description = "Minor scale with sharps"
+description = "Scales with specified intervals -> Minor scale with sharps"
+include = false
 
 [616594d0-9c48-4301-949e-af1d4fad16fd]
-description = "Minor scale with flats"
+description = "Scales with specified intervals -> Minor scale with flats"
+include = false
 
 [390bd12c-5ac7-4ec7-bdde-4e58d5c78b0a]
-description = "Dorian mode"
+description = "Scales with specified intervals -> Dorian mode"
+include = false
 
 [846d0862-0f3e-4f3b-8a2d-9cc74f017848]
-description = "Mixolydian mode"
+description = "Scales with specified intervals -> Mixolydian mode"
+include = false
 
 [7d49a8bb-b5f7-46ad-a207-83bd5032291a]
-description = "Lydian mode"
+description = "Scales with specified intervals -> Lydian mode"
+include = false
 
 [a4e4dac5-1891-4160-a19f-bb06d653d4d0]
-description = "Phrygian mode"
+description = "Scales with specified intervals -> Phrygian mode"
+include = false
 
 [ef3650af-90f8-4ad9-9ef6-fdbeae07dcaa]
-description = "Locrian mode"
+description = "Scales with specified intervals -> Locrian mode"
+include = false
 
 [70517400-12b7-4530-b861-fa940ae69ee8]
-description = "Harmonic minor"
+description = "Scales with specified intervals -> Harmonic minor"
+include = false
 
 [37114c0b-c54d-45da-9f4b-3848201470b0]
-description = "Octatonic"
+description = "Scales with specified intervals -> Octatonic"
+include = false
 
 [496466e7-aa45-4bbd-a64d-f41030feed9c]
-description = "Hexatonic"
+description = "Scales with specified intervals -> Hexatonic"
+include = false
 
 [bee5d9ec-e226-47b6-b62b-847a9241f3cc]
-description = "Pentatonic"
+description = "Scales with specified intervals -> Pentatonic"
+include = false
 
 [dbee06a6-7535-4ab7-98e8-d8a36c8402d1]
-description = "Enigmatic"
+description = "Scales with specified intervals -> Enigmatic"
+include = false

@@ -40,8 +40,8 @@ class PangramTest(unittest.TestCase):
     def test_mixed_case_and_punctuation(self):
         self.assertIs(is_pangram('"Five quacking Zephyrs jolt my wax bed."'), True)
 
-    def test_case_insensitive(self):
-        self.assertIs(is_pangram("the quick brown fox jumps over with lazy FX"), False)
+    def test_a_m_and_a_m_are_26_different_characters_but_not_a_pangram(self):
+        self.assertIs(is_pangram("abcdefghijklm ABCDEFGHIJKLM"), False)
 
     # Additional tests for this track
 

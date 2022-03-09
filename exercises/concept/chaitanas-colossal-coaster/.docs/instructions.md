@@ -38,7 +38,7 @@ Define the `add_me_to_the_queue()` function that takes 4 parameters `<express_qu
 One person arrived late at the park but wants to join the queue where their friends are waiting.
  But they have no idea where their friends are standing and there isn't any phone reception to call them.
 
-Define the `find_my_friend()` function that takes 2 parameters `queue` and  `friend_name`.
+Define the `find_my_friend()` function that takes 2 parameters `queue` and  `friend_name` and returns the position in the queue of the person's name.
 
 
 1. `<queue>` is the `list` of people standing in the queue.
@@ -85,6 +85,7 @@ Define the `remove_the_mean_person()` function that takes 2 parameters `queue` a
 1. `<queue>` is the `list` of people standing in the queue.
 2. `<person_name>` is the name of the person that needs to be kicked out.
 
+Return the queue updated without the mean person's name.
 
 ```python
 >>> remove_the_mean_person(queue=["Natasha", "Steve", "Eltran", "Wanda", "Rocket"], person_name="Eltran")

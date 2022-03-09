@@ -48,7 +48,7 @@ MY_FIRST_CONSTANT = 16
 # Please don't do: MY_FIRST_CONSTANT = "Some other value"
 ```
 
-In Python, units of functionality are encapsulated in [_functions._][functions], which are themselves [objects][objects] (_Its [turtles all the way down][turtles all the way down]_).
+In Python, units of functionality are encapsulated in [_functions._][functions], which are themselves [objects][objects] (_it's [turtles all the way down][turtles all the way down]_).
 
 Functions can be executed by themselves, passed as arguments to other functions, nested, or bound to a class.
 When functions are bound to a [class][classes] name, they're referred to as [methods][method objects].
@@ -201,9 +201,13 @@ def number_to_the_power_of(number_one, number_two):
     return number_one ** number_two
 
 >>> print(number_to_the_power_of.__doc__)
-Returns float or int.
+Raise a number to an arbitrary power.
 
-       Takes number_one and raises it to the power of number_two, returning the result.
+    :param number_one: int the base number.
+    :param number_two: int the power to raise the base number to.
+    :return: int - number raised to power of second number
+
+    Takes number_one and raises it to the power of number_two, returning the result.
 
 # __doc__() for the built-in type: str.
 >>> print(str.__doc__)

@@ -1,0 +1,11 @@
+{
+  "blurb": "Learn about classes by creating an Alien for Ellen's game.",
+  "icon": "character-study",
+  "authors": ["PaulT89", "BethanyG"],
+  "contributors": ["DjangoFett", "kotp", "IsaacG"],
+  "files": {
+    "solution": ["classes.py"],
+    "test": ["classes_test.py"],
+    "exemplar": [".meta/exemplar.py"]
+  }
+}

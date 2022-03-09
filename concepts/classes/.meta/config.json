@@ -1,5 +1,7 @@
 {
-  "blurb": "TODO: add blurb for this concept",
-  "authors": ["bethanyg", "cmccandless"],
-  "contributors": []
+  "blurb": "Classes are used to create 'instances' (copies) of bundled data and behavior, commonly known as objects. Class instances are integral to Object Oriented Programming (OOP), in which programs are made up of objects that interact with one another, keep state, and act upon data.",
+  "authors": ["bethanyg", "DjangoFett", "PaulT89"],
+  "contributors": ["IsaacG"]
 }
+
+

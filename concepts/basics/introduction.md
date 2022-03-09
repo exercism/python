@@ -57,7 +57,7 @@ Functions that do not have an explicit `return` expression will return [`None`][
 def add_two_numbers(number_one, number_two):
   result = number_one + number_two
 
->>> print(add_two_number s(5, 7))
+>>> print(add_two_numbers(5, 7))
 None
 ```
 
@@ -179,9 +179,13 @@ def number_to_the_power_of(number_one, number_two):
     return number_one ** number_two
 
 >>> print(number_to_the_power_of.__doc__)
-Returns float or int.
+Raise a number to an arbitrary power.
 
-       Takes number_one and raises it to the power of number_two, returning the result.
+    :param number_one: int the base number.
+    :param number_two: int the power to raise the base number to.
+    :return: int - number raised to power of second number
+
+    Takes number_one and raises it to the power of number_two, returning the result.
 
 # __doc__() for the built-in type: str.
 >>> print(str.__doc__)

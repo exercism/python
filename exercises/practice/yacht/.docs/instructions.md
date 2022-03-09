@@ -1,7 +1,5 @@
 # Instructions
 
-# Score a single throw of dice in *Yacht*
-
 The dice game [Yacht](https://en.wikipedia.org/wiki/Yacht_(dice_game)) is from
 the same family as Poker Dice, Generala and particularly Yahtzee, of which it
 is a precursor. In the game, five dice are rolled and the result can be entered
@@ -12,7 +10,7 @@ category chosen.
 
 | Category | Score | Description | Example |
 | -------- | ----- | ----------- | ------- |
-| Ones | 1 × number of ones | Any combination	| 1 1 1 4 5 scores 3 |
+| Ones | 1 × number of ones | Any combination | 1 1 1 4 5 scores 3 |
 | Twos | 2 × number of twos | Any combination | 2 2 3 4 5 scores 4 |
 | Threes | 3 × number of threes | Any combination | 3 3 3 3 3 scores 15 |
 | Fours | 4 × number of fours | Any combination | 1 2 3 3 5 scores 0 |
@@ -30,6 +28,7 @@ If, for example, *Four Of A Kind* is entered in the *Yacht* category, zero
 points are scored. A *Yacht* scores zero if entered in the *Full House* category.
 
 ## Task
+
 Given a list of values for five dice and a category, your solution should return
 the score of the dice for that category. If the dice do not satisfy the requirements
 of the category your solution should return 0. You can assume that five values

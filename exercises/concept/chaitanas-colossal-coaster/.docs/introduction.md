@@ -97,10 +97,10 @@ ValueError: list.remove(x): x not in list
 ```
 
 
-Alternatively, using the `<list>.pop(<item>)` method will both remove **and** `return` an element for use.
+Alternatively, using the `<list>.pop(<index>)` method will both remove **and** `return` an element for use.
 
 
-`<list>.pop(<item>)` takes one optional parameter: the `index` of the item to be removed and returned.
+`<list>.pop(<index>)` takes one optional parameter: the `index` of the item to be removed and returned.
  If the (optional) `index` argument is not specified, the final element of the `list` will be removed and returned.
  If the `index` specified is higher than the final item `index`, an `IndexError` is raised.
 

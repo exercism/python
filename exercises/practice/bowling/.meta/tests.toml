@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [656ae006-25c2-438c-a549-f338e7ec7441]
 description = "should be able to score a game with all zeros"
@@ -37,6 +44,9 @@ description = "rolling a spare with the two roll bonus does not get a bonus roll
 
 [576faac1-7cff-4029-ad72-c16bcada79b5]
 description = "strikes with the two roll bonus do not get bonus rolls"
+
+[efb426ec-7e15-42e6-9b96-b4fca3ec2359]
+description = "last two strikes followed by only last bonus with non strike points"
 
 [72e24404-b6c6-46af-b188-875514c0377b]
 description = "a strike with the one roll bonus after a spare in the last frame does not get a bonus"

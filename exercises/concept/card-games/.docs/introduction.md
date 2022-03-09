@@ -9,7 +9,7 @@ Lists support both [common][common sequence operations] and [mutable][mutable se
 List elements can be iterated over using the `for item in <list>` construct.
  `for index, item in enumerate(<list>)` can be used when both the element index and the element value are needed.
 
-Under the hood, `lists` are implemented as [dynamic arrays][dynamic array] -- similar to Java's [`Arraylist`][arraylist] type, and are most often used to store groups of similar data (_strings, numbers, sets etc._) of unknown length.
+Under the hood, `lists` are implemented as [dynamic arrays][dynamic array] -- similar to Java's [`ArrayList`][arraylist] type, and are most often used to store groups of similar data (_strings, numbers, sets etc._) of unknown length.
 Lists are an extremely flexible and useful data structure and many built-in methods and operations in Python produce lists as their output.
 
 

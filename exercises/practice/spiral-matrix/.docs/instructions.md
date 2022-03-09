@@ -7,6 +7,7 @@ in the top-left corner, increasing in an inward, clockwise spiral order,
 like these examples:
 
 ## Examples
+
 ### Spiral matrix of size 3
 
 ```text

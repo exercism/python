@@ -4,6 +4,8 @@ Clock({{ obj["hour"] }}, {{ obj["minute"] }})
 {%- endmacro -%}
 {{ macros.header(["Clock"])}}
 
+{% set cases = additional_cases + cases %}
+
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for casegroup in cases -%}
     # {{ casegroup["description"].title() }}
@@ -17,7 +19,7 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
                 {{- clock(input["clock1"]) }},
                 {{- clock(input["clock2"]) }}
             {% else -%}
-                Equal(str({{ clock(input) }}
+                Equal({{ 'repr' if prop == 'repr' else 'str' }}({{ clock(input) }}
                 {%- if prop == "add" %} + {{ input["value"] }}
                 {%- elif prop == "subtract" %} - {{ input["value"] }}
                 {%- endif %}), "
@@ -27,5 +29,4 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
 
     {% endfor %}
     {%- endfor %}
-
 {{ macros.footer() }}

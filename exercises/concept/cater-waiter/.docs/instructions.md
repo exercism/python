@@ -24,10 +24,10 @@ The event is going to include both cocktails and "mocktails" - mixed drinks _wit
 
 Implement the `check_drinks(<drink_name>, <drink_ingredients>)` function that takes the name of a drink and a `list` of ingredients.
  The function should return the name of the drink followed by "Mocktail" if the drink has no alcoholic ingredients, and drink name followed by "Cocktail" if the drink includes alcohol.
-  For the purposes of this exercise, cocktails will only include alcohols from the ALCOHOLS constant in `categories.py`:
+  For the purposes of this exercise, cocktails will only include alcohols from the ALCOHOLS constant in `sets_categories_data.py`:
 
 ```python
->>> from categories import ALCOHOLS 
+>>> from sets_categories_data import ALCOHOLS 
 
 >>> check_drinks('Honeydew Cucumber', ['honeydew', 'coconut water', 'mint leaves', 'lime juice', 'salt', 'english cucumber'])
 ...
@@ -44,10 +44,10 @@ The guest list includes diners with different dietary needs, and your staff will
 
 Implement the `categorize_dish(<dish_name>, <dish_ingredients>)` function that takes a dish name and a `set` of that dish's' ingredients.
 The function should return a string with the `dish name: <CATEGORY>` (_which meal category the dish belongs to_).
-All dishes will "fit" into one of the categories imported from `categories.py` (VEGAN, VEGETARIAN, PALEO, KETO, or OMNIVORE).
+All dishes will "fit" into one of the categories imported from `sets_categories_data.py` (VEGAN, VEGETARIAN, PALEO, KETO, or OMNIVORE).
 
 ```python
->>> from categories import VEGAN, VEGETARIAN, PALEO, KETO, OMNIVORE
+>>> from sets_categories_data import VEGAN, VEGETARIAN, PALEO, KETO, OMNIVORE
 
 
 >>> categorize_dish('Sticky Lemon Tofu', ['tofu', 'soy sauce', 'salt', 'black pepper', 'cornstarch', 'vegetable oil', 'garlic', 'ginger', 'water', 'vegetable stock', 'lemon juice', 'lemon zest', 'sugar'])
@@ -67,10 +67,10 @@ These ingredients need to be tagged/annotated for each dish so that they don't c
 Implement the `tag_special_ingredients(<dish>)` function that takes a `tuple` with the dish name in the first position, and a `list` or `set` of ingredients for that dish in the second position.
 Return the dish name followed by the `set` of ingredients that require a special note on the dish description.
 Dish ingredients inside a `list` may or may not have duplicates.
- For the purposes of this exercise, all allergens or special ingredients that need to be labeled are in the SPECIAL_INGREDIENTS constant imported from `categories.py`.
+ For the purposes of this exercise, all allergens or special ingredients that need to be labeled are in the SPECIAL_INGREDIENTS constant imported from `sets_categories_data.py`.
 
 ```python
->>> from categories import SPECIAL_INGREDIENTS
+>>> from sets_categories_data import SPECIAL_INGREDIENTS
 
 >>> tag_special_ingredients(('Ginger Glazed Tofu Cutlets', ['tofu', 'soy sauce', 'ginger', 'corn starch', 'garlic', 'brown sugar', 'sesame seeds', 'lemon juice']))
 ...
@@ -134,7 +134,7 @@ Each `<CATEGORY>_INTERSECTIONS` is a `set` of ingredients that appear in more th
 Using set operations, your function should return a `set` of "singleton" ingredients (_ingredients appearing in only one dish in the category_).
 
 ```python
-from categories import example_dishes, EXAMPLE_INTERSECTIONS
+from sets_categories_data import example_dishes, EXAMPLE_INTERSECTION
 
 >>> singleton_ingredients(example_dishes, EXAMPLE_INTERSECTION)
 ...

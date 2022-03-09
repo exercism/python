@@ -7,7 +7,7 @@ def slices(series, size):
     if not size <= len(series):
         raise ValueError('span must be smaller than string length')
     elif not 0 < size:
-        raise ValueError('span must be greater than zero')
+        raise ValueError('span must not be negative')
     elif not all(item.isdigit() for item in series):
         raise ValueError('digits input must only contain digits')
 

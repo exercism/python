@@ -1,18 +1,42 @@
 [
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://docs.python.org/3/tutorial/classes.html",
+    "description": "The official Python classes tutorial."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://pybit.es/articles/when-classes/",
+    "description": "A handy guide as to when to use classes, and when not to."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://realpython.com/python3-object-oriented-programming/",
+    "description": "Another overview of what classes are and how to apply them in Python."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://www.pythonmorsels.com/topics/classes/",
+    "description": "Python Morsels Rundown on Classes."
+  },
+  {
+    "url": "https://dbader.org/blog/6-things-youre-missing-out-on-by-never-using-classes-in-your-python-code",
+    "description": "6 Things Youre Missing out on by never using classes in your Python code."
+  },
+  {
+    "url": "http://python-history.blogspot.com/2010/06/inside-story-on-new-style-classes.html",
+    "description": "The History of Python: The Inside Story on New-Style Classes."
+  },
+  {
+    "url": "https://realpython.com/instance-class-and-static-methods-demystified/",
+    "description": "Pythons Instance, Class, and Static Methods Demystified."
+  },
+  {
+    "url": "https://stackabuse.com/pythons-classmethod-and-staticmethod-explained/",
+    "description": "Python's @classmethod and @staticmethod Explained."
+  },
+  {
+    "url": "https://www.digitalocean.com/community/tutorials/how-to-construct-classes-and-define-objects-in-python-3",
+    "description": "An even gentler introduction to classes and objects from Digital Ocean."
+  },
+  {
+    "url": "https://www.digitalocean.com/community/tutorials/understanding-class-and-instance-variables-in-python-3",
+    "description": "An even gentler introduction to instance variables and class variables from Digital Ocean."
   }
 ]

@@ -46,7 +46,7 @@ def categorize_dish(dish_name, dish_ingredients):
     :return: str "dish name: CATEGORY"
 
     This function should return a string with the `dish name: <CATEGORY>` (which meal category the dish belongs to).
-    All dishes will "fit" into one of the categories imported from `categories.py`
+    All dishes will "fit" into one of the categories imported from `sets_categories_data`
     (VEGAN, VEGETARIAN, PALEO, KETO, or OMNIVORE).
     """
 
@@ -70,7 +70,7 @@ def tag_special_ingredients(dish):
 
     Return the dish name followed by the `set` of ingredients that require a special note on the dish description.
     For the purposes of this exercise, all allergens or special ingredients that need to be tracked are in the
-    SPECIAL_INGREDIENTS constant imported from `categories.py`.
+    SPECIAL_INGREDIENTS constant imported from `sets_categories_data`.
     """
 
     return dish[0], (SPECIAL_INGREDIENTS & set(dish[1]))

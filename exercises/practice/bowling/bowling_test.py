@@ -78,6 +78,11 @@ class BowlingTest(unittest.TestCase):
         game = self.roll_new_game(rolls)
         self.assertEqual(game.score(), 30)
 
+    def test_last_two_strikes_followed_by_only_last_bonus_with_non_strike_points(self):
+        rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 0, 1]
+        game = self.roll_new_game(rolls)
+        self.assertEqual(game.score(), 31)
+
     def test_a_strike_with_the_one_roll_bonus_after_a_spare_in_the_last_frame_does_not_get_a_bonus(
         self,
     ):
@@ -151,13 +156,13 @@ class BowlingTest(unittest.TestCase):
         rolls = []
         game = self.roll_new_game(rolls)
         with self.assertRaisesWithMessage(Exception):
-            game.roll()
+            game.score()
 
     def test_an_incomplete_game_cannot_be_scored(self):
         rolls = [0, 0]
         game = self.roll_new_game(rolls)
         with self.assertRaisesWithMessage(Exception):
-            game.roll()
+            game.score()
 
     def test_cannot_roll_if_game_already_has_ten_frames(self):
         rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -171,7 +176,7 @@ class BowlingTest(unittest.TestCase):
         rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10]
         game = self.roll_new_game(rolls)
         with self.assertRaisesWithMessage(Exception):
-            game.roll()
+            game.score()
 
     def test_both_bonus_rolls_for_a_strike_in_the_last_frame_must_be_rolled_before_score_can_be_calculated(
         self,
@@ -179,7 +184,7 @@ class BowlingTest(unittest.TestCase):
         rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10]
         game = self.roll_new_game(rolls)
         with self.assertRaisesWithMessage(Exception):
-            game.roll()
+            game.score()
 
     def test_bonus_roll_for_a_spare_in_the_last_frame_must_be_rolled_before_score_can_be_calculated(
         self,
@@ -187,7 +192,7 @@ class BowlingTest(unittest.TestCase):
         rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3]
         game = self.roll_new_game(rolls)
         with self.assertRaisesWithMessage(Exception):
-            game.roll()
+            game.score()
 
     def test_cannot_roll_after_bonus_roll_for_spare(self):
         rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3, 2]

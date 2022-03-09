@@ -10,15 +10,15 @@
 
 ## 2. Define if Pac-Man scores
 
-- You can use the [Boolean][boolean] [operator][Boolean-operators] to combine arguments for a result.
+- You can use the [Boolean][boolean] [operators][Boolean-operators] to combine arguments for a result.
 
 ## 3. Define if Pac-Man loses
 
-- You can use the [boolean][Boolean] [operator][Boolean-operators] to combine arguments for a result.
+- You can use the [boolean][Boolean] [operators][Boolean-operators] to combine arguments for a result.
 
 ## 4. Define if Pac-Man wins
 
-- You can use the [Boolean][boolean] [operator][Boolean-operators] to combine arguments for a result.
+- You can use the [Boolean][boolean] [operators][Boolean-operators] to combine arguments for a result.
 
 [boolean]: https://docs.python.org/3/library/stdtypes.html#truth
 [Boolean-operators]: https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not
