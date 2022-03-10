@@ -37,7 +37,6 @@ To create a virtual environment, `cd` to the directory you want to store your en
 ```bash
 $ python3 -m venv {name_of_virtualenv}
 created virtual environment ... in 8568ms
-```
 
 #### Activating your virtual environment
 
@@ -181,7 +180,7 @@ Sublime Text comes with a lot of tools already, but some of these tools could ma
 
 ### JupyterLab
 
-[Jupyter lab](https://jupyter.org/install) is an in-browser code editor that runs on your machine, combining the ability to write Markdown along side executable code and data. Jupyter supports multiple programming languages via `kernels` and can display graphs and tables as well as code and text.  
+[Jupyter lab](https://jupyter.org/install) is an in-browser code editor that runs on your machine, combining the ability to write Markdown along side executable code and data. Jupyter supports multiple programming languages via `kernels` and can display graphs and tables as well as code and text.
 
 Jupyter comes pre-packaged with Anaconda.  You can also install it in a **virtual environment** using `pip` or `conda`.  Jupyter will use that environment and its Python version. Jupyter is most well-known for its code "notebooks". It is commonly used among data-scientists.
 
