@@ -139,7 +139,7 @@
 <br>
 
 
-## Concepts Without Planned Exercises
+## Concepts Without (Currently) Planned Exercises
 
 <details>
 <Summary><b><em>No Exercises Planned</b></em></Summary>
