@@ -1,3 +1,8 @@
+"""Functions used in preparing Guido's gorgeous lasagna.
+
+Learn about Guido, the creator of the Python language: https://en.wikipedia.org/wiki/Guido_van_Rossum
+"""
+
 # time the lasagna should be in the oven according to the cookbook.
 EXPECTED_BAKE_TIME = 40
 PREPARATION_TIME = 2
