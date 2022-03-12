@@ -1,3 +1,8 @@
+"""Functions used in preparing Guido's gorgeous lasagna.
+
+Learn about Guido, the creator of the Python language: https://en.wikipedia.org/wiki/Guido_van_Rossum
+"""
+
 # TODO: define the 'EXPECTED_BAKE_TIME' constant
 # TODO: consider defining the 'PREPARATION_TIME' constant
 #       equal to the time it takes to prepare a single layer
