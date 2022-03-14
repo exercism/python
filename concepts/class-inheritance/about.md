@@ -288,3 +288,5 @@ But why we want to use `super()`?
 
 Using `super()` to call already created methods avoids having to rebuild those methods in our subclass and allows us to swap out superclasses with little code modifications.
 
+[four-pillars]: https://www.educative.io/edpresso/what-are-the-four-pillars-of-oops-in-python
+
