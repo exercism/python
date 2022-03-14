@@ -171,7 +171,7 @@ As per the above example, `getRollNo()` is an accessor function and `setDiv` is 
 
 ## Single Inheritance
 
-When a subclass inherits only from one base class, it is known as single inheritance.
+When a derived (or child) class inherits only from one base (or parent) class, it is known as single inheritance.
 
 ```python
 #Base class
