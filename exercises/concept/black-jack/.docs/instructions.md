@@ -70,7 +70,7 @@ Remember: the value of the hand with the ace needs to be as high as possible _wi
 **Hint**: if we already have an ace in hand then its value would be 11.
 
 ```python
->>> value_of_ace('6', `K`)
+>>> value_of_ace('6', 'K')
 1
 
 >>> value_of_ace('7', '3')
