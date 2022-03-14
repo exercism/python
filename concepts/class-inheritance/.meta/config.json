@@ -1,5 +1,5 @@
 {
-  "blurb": "Inheritance refers to a class's capacity to derive or inherit properties from another class. The existing class is known as the base class, and the new class is known as the derived class. The object oriented languages express this inheritance relationship by allowing one class to inherit from another.",
+  "blurb": "In Object Oriented Programming ('OOP'), inheritance refers to a class's capacity to copy or 'inherit' properties and methods from another class. Python allows inheritance from a single class or multiple classes. Existing classes are known as base (or parent) classes, and new classes are known as derived (or child) classes.",
   "authors": ["bethanyg", "cmccandless"],
   "contributors": ["girijakar"]
 }
