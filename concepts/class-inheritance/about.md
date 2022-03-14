@@ -1,7 +1,7 @@
 # About
 
-Inheritance is one of the Object Oriented Programming(OOP) concept. Understanding inheritance is important to 
-understanding the whole point behind object oriented programming.
+Inheritance is one of the ['four pillars'][four-pillars] of Object Oriented Programming (`OOP`).
+In situations where only a small amount of functionality needs to be customized for a new class, `inheritance` allows code re-use from one or more parent classes, and can help make programs cleaner and more maintainable.
 
 ## More on Classes
 
