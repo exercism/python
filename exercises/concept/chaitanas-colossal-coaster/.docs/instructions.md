@@ -16,7 +16,7 @@ You have been asked to write some code to better manage the guests at the park.
 
 ## 1. Add me to the queue
 
-Define the `add_me_to_the_queue()` function that takes 4 parameters `<express_queue>, <normal_queue>, <ticket_type>, <person_name>` and returns the appropriate queue updated with the person's name.
+Define the `add_me_to_the_queue()` function that takes 4 parameters `<express_queue>, <normal_queue>, <ticket_type>, <person_name>` and returns a copy of the appropriate queue updated with the person's name.
 
 
 1. `<ticket_type>` is an `int` with 1 == express_queue and 0 == normal_queue.
