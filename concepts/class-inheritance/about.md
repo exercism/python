@@ -5,28 +5,48 @@ In situations where only a small amount of functionality needs to be customized 
 
 ## Inheritance
 
+`Inheritance` describes `is a kind of` relationship between two or more classes, abstracting common details into super class and storing specific ones in the subclass.
+To create a child class, specify the parent class name inside the pair of parenthesis, followed by it's name.
+Example
+```python
+class Child(Parent):  
+   pass
+```
+Every child class inherits all the behaviours exhibited by their parent class.
+
 ## Single Inheritance
 
 When a derived (or child) class inherits only from one base (or parent) class, it is known as single inheritance.
 
 ```python
-#Base class
-class Odin:
-    def func1(self):
-        print("Odin: father of thor")
-
-#Derived/Subclass class
-class Thor(Odin):
-    def func2(self):
-        print("Thor: son of Odin")
-
-
-object = Thor()
-object.func1()
-object.func2()
+class Person:
+    def __init__(self, fname, lname):
+        self.fname = fname
+        self.lname = lname
+class Employee(Person):
+    all_employees = []
+    def __init__(self, fname, lname, empid):
+        Person.__init__(self, fname, lname)
+        self.empid = empid
+        Employee.all_employees.append(self)
 ```
-The derived class will print both the statements of `func1` and `func2`.
-
+`Employee` class is derived from `Person`.
+Now, we can create an `Employee` object.
+```python
+...
+p1 = Person('George', 'smith')
+print(p1.fname, '-', p1.lname)
+e1 = Employee('Jack', 'simmons', 456342)
+e2 = Employee('John', 'williams', 123656)
+print(e1.fname, '-', e1.empid)
+print(e2.fname, '-', e2.empid)
+```
+After running the program we will get the following output
+```cmd
+George - smith
+Jack - 456342
+John - 123656
+```
 ## Multiple Inheritance
 As we've seen, a class inherits from another class in this scenario. On the other side, multiple inheritance is a feature that allows a class to inherit characteristics and methods from many parent classes.
 ```python
