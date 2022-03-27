@@ -148,7 +148,7 @@ cd path/to/exercise
 Then, run the tests together with the previously explained arguments `-x` and`--ff`:
 
 ```bash
-pytest -x -ff bob_test.py
+pytest -x --ff bob_test.py
 ```
 
 This will test your solution. When `pytest` encounters a failed test, the program will stop and tell you which test failed. When you run the test again, `pytest` will first test that failed test, then continue with the rest.
