@@ -4,7 +4,7 @@ import dataclasses
 from itertools import chain
 import json
 from pathlib import Path
-import toml
+import tomli
 from typing import List, Any, Dict, Type
 
 
