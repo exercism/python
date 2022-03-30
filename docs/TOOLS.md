@@ -1,6 +1,30 @@
 # Tools
 
-A list of tools, IDEs and editors that can help with writing and debugging Python code.
+A list of tools, IDEs, and editors that can help with writing and debugging Python code.
+
+<br>
+
+---
+
+- [Environments](#virtual-environments)
+  - [Venv](#creating-a-virtual-environment-with-venv)
+  - [Conda](#creating-a-virtual-environment-using-conda)
+  - [Virtual Environment Wrapper](#virtual-environment-wrapper)
+- [Editors and IDEs](#editors-and-ides)
+  - [Visual Studio Code](#visual-studio-code)
+    - [Python for Visual Studio Code](#python-for-vs-code)
+  - [PyCharm](#pycharm)
+  - [Spyder IDE](#spyder-ide)
+  - [Emacs](#emacs)
+  - [Vim](#vim)
+  - [SpaceMacs](#spacemacs)
+  - [Sublime text](#sublime-text)
+
+---
+
+
+<br>
+
 
 **Disclaimer:** This is a collection of tools that are popular in our community.
 It is not intended to be prescriptive nor exhaustive.
