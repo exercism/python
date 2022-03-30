@@ -28,8 +28,8 @@ Please refer to the [Python 3.9.x documentation][3.9 docs] for what is currently
 [installing-python]: https://realpython.com/installing-python/#what-your-options-are_1
 [macos]: https://docs.python.org/3/using/mac.html
 [python-m-pip]: https://snarky.ca/why-you-should-use-python-m-pip/
+[python-on-windows]: https://docs.microsoft.com/en-us/windows/python/beginners
+[quick-and-dirty]: https://snarky.ca/a-quick-and-dirty-guide-on-how-to-install-packages-for-python/
 [unix-and-linux]: https://docs.python.org/3/using/unix.html
 [using python]: https://docs.python.org/3/using/index.html
 [windows]: https://docs.python.org/3/using/windows.html
-[python-on-windows]: https://docs.microsoft.com/en-us/windows/python/beginners
-[quick-and-dirty]: https://snarky.ca/a-quick-and-dirty-guide-on-how-to-install-packages-for-python/
