@@ -3,3 +3,4 @@ flake8==3.7.8
 Jinja2==2.10.1
 python-dateutil==2.8.1
 markupsafe==2.0.1
+tomli
