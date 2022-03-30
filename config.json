@@ -416,7 +416,7 @@
           "rich-comparisons",
           "string-formatting"
         ],
-        "prerequisites": ["basics", "numbers", "strings"],
+        "prerequisites": ["basics", "numbers", "strings", "classes"],
         "difficulty": 4
       },
       {
