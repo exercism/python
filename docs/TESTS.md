@@ -256,21 +256,21 @@ Replace `{python_directory}` with the output of `python3 -c "import os, sys; pri
 export PATH=”$PATH:{python_directory}}”
 ```
 
-[pip]: https://pip.pypa.io/en/stable/getting-started/
-[python command line]: https://docs.python.org/3/using/cmdline.html
-[pytest-cache]:http://pythonhosted.org/pytest-cache/
-[pytest-subtests]:https://github.com/pytest-dev/pytest-subtests
-[pytest-pylint]:https://github.com/carsongee/pytest-pylint
-[quick-and-dirty]: https://snarky.ca/a-quick-and-dirty-guide-on-how-to-install-packages-for-python/
-[Getting Started Guide]: https://docs.pytest.org/en/latest/getting-started.html
-[pytest.ini]: https://github.com/exercism/python/blob/main/pytest.ini
-[python-m-pip]: https://snarky.ca/why-you-should-use-python-m-pip/
-[tutorial from pycqa.org]: https://pylint.pycqa.org/en/latest/tutorial.html
 [Code Quality: Tools and Best Practices]: https://realpython.com/python-code-quality/
-[pylint]: https://pylint.pycqa.org/en/latest/user_guide/
-[pdb]: https://docs.python.org/3.9/library/pdb.html
-[pytest-pdb]: https://docs.pytest.org/en/6.2.x/usage.html#dropping-to-pdb-python-debugger-on-failures
-[psf-installer]: https://www.python.org/downloads/
-[marking test functions with attributes]: https://docs.pytest.org/en/6.2.x/mark.html#raising-errors-on-unknown-marks
-[working with custom markers]: https://docs.pytest.org/en/6.2.x/example/markers.html#working-with-custom-markers
+[Getting Started Guide]: https://docs.pytest.org/en/latest/getting-started.html
 [configuration file formats]: https://docs.pytest.org/en/6.2.x/customize.html#configuration-file-formats
+[marking test functions with attributes]: https://docs.pytest.org/en/6.2.x/mark.html#raising-errors-on-unknown-marks
+[pdb]: https://docs.python.org/3.9/library/pdb.html
+[pip]: https://pip.pypa.io/en/stable/getting-started/
+[psf-installer]: https://www.python.org/downloads/
+[pylint]: https://pylint.pycqa.org/en/latest/user_guide/
+[pytest-cache]:http://pythonhosted.org/pytest-cache/
+[pytest-pdb]: https://docs.pytest.org/en/6.2.x/usage.html#dropping-to-pdb-python-debugger-on-failures
+[pytest-pylint]:https://github.com/carsongee/pytest-pylint
+[pytest-subtests]:https://github.com/pytest-dev/pytest-subtests
+[pytest.ini]: https://github.com/exercism/python/blob/main/pytest.ini
+[python command line]: https://docs.python.org/3/using/cmdline.html
+[python-m-pip]: https://snarky.ca/why-you-should-use-python-m-pip/
+[quick-and-dirty]: https://snarky.ca/a-quick-and-dirty-guide-on-how-to-install-packages-for-python/
+[tutorial from pycqa.org]: https://pylint.pycqa.org/en/latest/tutorial.html
+[working with custom markers]: https://docs.pytest.org/en/6.2.x/example/markers.html#working-with-custom-markers
