@@ -354,8 +354,8 @@ class TestsTOML:
 
     @classmethod
     def load(cls, toml_path: Path):
-        with toml_path.open() as f:
-            data = tomli.loads(f)
+        with toml_path.open("rb") as f:
+            data = tomli.load(f)
         return cls({uuid: TestCaseTOML(uuid, *opts) for
                     uuid, opts in
                     data.items() if
