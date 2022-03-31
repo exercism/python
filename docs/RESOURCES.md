@@ -1,22 +1,28 @@
-# Recommended learning resources
+# Additional Resources for Python
 
-* [The Python Tutorial][The Python Tutorial]
-* [The Python Library Reference][The Python Library Reference]
-* [The Python Docs][python docs]
-* [Practical Python][practical python]
-* [Think Python][think python]
-* [PyMOTW-3][pymotw-3]
-* [automate the boring stuff][automate the boring stuff]
-* [Googles Python Class][Googles Python Class]
-* [pycharm edu][pycharm edu]
+- [Official Python 3 Documentation and Reference][python docs]
+- [The Python Library Reference][The Python Library Reference]
+- [The Docs on pip][pip]
+- [Tall, Snarky Canadian (_The Blog of Core Python Developer Brett Cannon_)][Tall, Snarky Canadian]
+- [Practical Python][practical python]
+- [Python 3 Module of the Week (PyMOTW-3)][pymotw-3]
+- [Beyond the Basic Stuff with Python][Beyond the Basic Stuff with Python]
+- [The Big Book of Small Python Projects][The Big Book of Small Python Projects]
+- [Data Structures and Information Retrieval in Python][Data Structures and Information Retrieval in Python]
+- [python practice projects][python practice projects]
+- [Python Courses eu][python-course.eu main]
+- [Fluent Python Notebooks][fluent-notebooks]
 
 
+[Beyond the Basic Stuff with Python]: https://inventwithpython.com/beyond/
+[Data Structures and Information Retrieval in Python]: https://allendowney.github.io/DSIRP/
 [Practical Python]: https://dabeaz-course.github.io/practical-python/
-[The Python Tutorial]: https://docs.python.org/3/tutorial/index.html
+[Tall, Snarky Canadian]: https://snarky.ca/
+[The Big Book of Small Python Projects]: http://inventwithpython.com/bigbookpython/
 [The Python Library Reference]: https://docs.python.org/3/library/index.html
-[Googles Python Class]: https://developers.google.com/edu/python
-[Think Python]: http://www.greenteapress.com/thinkpython/html/index.html
-[automate the boring stuff]: https://automatetheboringstuff.com/
-[pycharm edu]: https://www.jetbrains.com/pycharm-edu/
-[python docs]: https://docs.python.org/3/
+[fluent-notebooks]: https://github.com/AllenDowney/fluent-python-notebooks
+[pip]: https://pip.pypa.io/en/stable/user_guide/
 [pymotw-3]: https://pymotw.com/3/
+[python docs]: https://docs.python.org/3/
+[python practice projects]: http://pythonpracticeprojects.com/
+[python-course.eu main]: https://python-course.eu/

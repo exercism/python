@@ -4,7 +4,7 @@ import dataclasses
 from itertools import chain
 import json
 from pathlib import Path
-import toml
+import tomli
 from typing import List, Any, Dict, Type
 
 
@@ -354,8 +354,8 @@ class TestsTOML:
 
     @classmethod
     def load(cls, toml_path: Path):
-        with toml_path.open() as f:
-            data = toml.load(f)
+        with toml_path.open("rb") as f:
+            data = tomli.load(f)
         return cls({uuid: TestCaseTOML(uuid, *opts) for
                     uuid, opts in
                     data.items() if
