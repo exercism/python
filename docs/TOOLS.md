@@ -1,8 +1,15 @@
 # Tools
 
-A list of tools, IDEs, and editors that can help with writing and debugging Python code.
 
-<br>
+~~~~exercism/noe
+
+This is a collection of tools that are popular in our community.
+It is not intended to be prescriptive nor exhaustive.
+We think these tools do their job well, but there are most certainly other tools that are also good.
+If you have an editor, IDE, tool, or plugin recommendation, we encourage you to add it to this document on GitHub.
+Exercism does not have any financial affiliation with any of the tools listed below.
+
+~~~~
 
 ---
 
@@ -23,22 +30,13 @@ A list of tools, IDEs, and editors that can help with writing and debugging Pyth
 ---
 
 
-<br>
-
-
-**Disclaimer:** This is a collection of tools that are popular in our community.
-It is not intended to be prescriptive nor exhaustive.
-We think these tools do their job well, but there are most certainly other tools that are also good.
-If you have an editor, IDE, tool, or plugin recommendation, we encourage you to add it to this document [on GitHub][python track on github].
-Exercism does not have any financial affiliation with any of the tools listed below.
-
-Before you start, make sure that you have a recent version of Python installed.
+Before you start exploring, make sure that you have a recent version of Python installed.
 The Exercism platform currently supports `Python 3.8` (_exercises and tests_) and `Python 3.9` (_tooling_).
 For more information, please refer to [Installing Python locally][Installing Python locally].
 
 <br>
 
-## Virtual Environments
+## <a name="virtual-environments"></a>Virtual Environments
 
 Python virtual environments offer lightweight runtime and package isolation.
  They can help to organize your projects by keeping the Python packages you install bundled together inside a particular environment directory.
@@ -50,7 +48,9 @@ Both of are straightforward to use and/or install.
 
 Additionally, [`PyEnv`][pyenv] and [virtualenvwrapper][virtualenvwrapper] are tools that can help to manage multiple versions of Python and multiple Python environments on the same machine.
 
-### Creating a virtual environment with `venv`
+<br>
+
+### <a name="creating-a-virtual-environment-with-venv"></a>Creating a virtual environment with `venv`
 
 To create a virtual environment using `venv`, `cd` to the directory you want to store your environments in.
 This should be a directory **separate from** the code for your project, and one you will **not** be checking into source control.
@@ -92,16 +92,18 @@ _Deactivating_ a virtual environment can be done by calling the `deactivate` scr
 
 <br>
 
-### Creating a Virtual Environment using `conda`
+### <a name="creating-a-virtual-environment-using-conda"></a>Creating a Virtual Environment using `conda`
 
 *The latest `conda` version can be installed via [miniconda][miniconda].*
 This [`conda` cheatsheet][conda-cheatsheet] is very helpful, as are the [`conda` docs][conda-docs].
 
 Originally created as a Python package manager for the popular [`Anaconda distribution`][anaconda] of "scientific Python", `conda` was later generalized and extended.
-`conda` environments are similar to `venv`s, with the key difference being that `conda` can create virtual environments and install packages for many other programming languages in addition to Python.
-Currently supported languages include `R`, `JavaScript`, `Ruby`, `Fortran`, `C/C++`, `Scala`, `Java`, and more.
-For a comparison of `conda` commands vs `venv` commands, see the conda [command reference][conda command ref].
+Conda environments are similar to `venv`s, with the key difference being that conda can create virtual environments and install packages for many other programming languages in addition to Python.
 
+Conda supported languages include `R`, `JavaScript`, `Ruby`, `Fortran`, `C/C++`, `Scala`, `Java`, and more.
+For a comparison of conda vs venv commands, see the conda [command reference][conda command ref].
+
+<br>
 
 #### MacOS/Linux
 
@@ -129,19 +131,9 @@ The following packages will be downloaded:
     astroid-2.11.1             |  py310h2ec42d9_0         364 KB  conda-forge
     dill-0.3.4                 |     pyhd8ed1ab_0          62 KB  conda-forge
     lazy-object-proxy-1.7.1    |  py310he24745e_0          32 KB  conda-forge
-    libzlib-1.2.11             |    h6c3fc93_1014          60 KB  conda-forge
-    mccabe-0.7.0               |     pyhd8ed1ab_0          11 KB  conda-forge
-    openssl-3.0.2              |       h6c3fc93_1         2.5 MB  conda-forge
-    pip-22.0.4                 |     pyhd8ed1ab_0         1.5 MB  conda-forge
-    platformdirs-2.5.1         |     pyhd8ed1ab_0          15 KB  conda-forge
-    pylint-2.13.1              |     pyhd8ed1ab_0         284 KB  conda-forge
-    pytest-7.1.1               |  py310h2ec42d9_0         464 KB  conda-forge
-    python-3.10.4              |h1cc4136_0_cpython        13.2 MB  conda-forge
-    setuptools-61.1.1          |  py310h2ec42d9_0         1.3 MB  conda-forge
-    sqlite-3.37.1              |       hb516253_0         1.8 MB  conda-forge
-    tzdata-2022a               |       h191b570_0         121 KB  conda-forge
-    wrapt-1.14.0               |  py310h1961e1f_0          46 KB  conda-forge
-    zlib-1.2.11                |    h6c3fc93_1014          89 KB  conda-forge
+    ....
+    additional packages here
+    ....
     ------------------------------------------------------------
                                            Total:        21.8 MB
 
@@ -164,7 +156,7 @@ Executing transaction: done
 
 #### Windows
 
-Creating a `conda` environment on Windows uses the same general commands as above.
+Creating a `conda` environment on Windows uses the same general commands as Linux/MacOS.
 However, it is recommended that you use either the Anaconda `cmd` or `powershell` prompts over adding `conda` to your path:
 
 ```powershell
@@ -191,36 +183,9 @@ The following packages will be downloaded:
     astroid-2.11.1             |  py310h5588dad_0         364 KB  conda-forge
     attrs-21.4.0               |     pyhd8ed1ab_0          49 KB  conda-forge
     bzip2-1.0.8                |       h8ffe710_4         149 KB  conda-forge
-    ca-certificates-2021.10.8  |       h5b45459_0         176 KB  conda-forge
-    dill-0.3.4                 |     pyhd8ed1ab_0          62 KB  conda-forge
-    isort-5.10.1               |     pyhd8ed1ab_0          79 KB  conda-forge
-    lazy-object-proxy-1.7.1    |  py310he2412df_0          34 KB  conda-forge
-    libffi-3.4.2               |       h8ffe710_5          41 KB  conda-forge
-    libzlib-1.2.11             |    h8ffe710_1014          64 KB  conda-forge
-    mccabe-0.7.0               |     pyhd8ed1ab_0          11 KB  conda-forge
-    openssl-3.0.2              |       h8ffe710_1        10.1 MB  conda-forge
-    packaging-21.3             |     pyhd8ed1ab_0          36 KB  conda-forge
-    pip-22.0.4                 |     pyhd8ed1ab_0         1.5 MB  conda-forge
-    platformdirs-2.5.1         |     pyhd8ed1ab_0          15 KB  conda-forge
-    pluggy-1.0.0               |  py310h5588dad_2          26 KB  conda-forge
-    py-1.11.0                  |     pyh6c4a22f_0          74 KB  conda-forge
-    pylint-2.13.1              |     pyhd8ed1ab_0         284 KB  conda-forge
-    pyparsing-3.0.7            |     pyhd8ed1ab_0          79 KB  conda-forge
-    pytest-7.1.1               |  py310h5588dad_0         483 KB  conda-forge
-    python-3.10.4              |hcf16a7b_0_cpython        16.2 MB  conda-forge
-    python_abi-3.10            |          2_cp310           4 KB  conda-forge
-    setuptools-61.1.1          |  py310h5588dad_0         1.3 MB  conda-forge
-    sqlite-3.37.1              |       h8ffe710_0         1.2 MB  conda-forge
-    tk-8.6.12                  |       h8ffe710_0         3.5 MB  conda-forge
-    tomli-2.0.1                |     pyhd8ed1ab_0          16 KB  conda-forge
-    typing-extensions-4.1.1    |       hd8ed1ab_0           8 KB  conda-forge
-    typing_extensions-4.1.1    |     pyha770c72_0          29 KB  conda-forge
-    tzdata-2022a               |       h191b570_0         121 KB  conda-forge
-    vc-14.2                    |       hb210afc_6          13 KB  conda-forge
-    vs2015_runtime-14.29.30037 |       h902a5da_6         1.3 MB  conda-forge
-    wheel-0.37.1               |     pyhd8ed1ab_0          31 KB  conda-forge
-    wrapt-1.14.0               |  py310he2412df_0          49 KB  conda-forge
-    xz-5.2.5                   |       h62dcd97_1         211 KB  conda-forge
+    ...
+    additional packages here
+    ...
     ------------------------------------------------------------
                                            Total:        37.5 MB
 
@@ -241,7 +206,7 @@ Executing transaction: done
 
 <br>
 
-### Virtual Environment wrapper
+### <a name="virtual-environment-wrapper">Virtual Environment wrapper
 
 Documents and background: [virtualenvwrapper][virtualenvwrapper].
 
@@ -250,8 +215,9 @@ The `virtualenvwrapper` package works on top of `venv` to manage all your virtua
   It also allows you to add additional management tools using extensions.
   You can even create your own extensions to the tool using [this tutorial][venv wrapper tutorial].
 
+<br>
 
-### PyEnv
+### <a name="pyenv"></a>PyEnv
 
 `pyenv` is the Python fork of the popular `rbenv`/`ruby-build` tools modified for Python.
 It is essentially a set of scripts and shims that allow for setting Python versions on both a global and user-specific basis.
@@ -260,19 +226,22 @@ It tries to adhere to the Unix tradition of a single-purpose, unobtrusive tool t
 `pyenv` and the `pyenv` docs can be found on [GitHub][pyenv on github].
 
 
+<br><br>
+
+
+## <a name="editors-and-ides"></a>Editors and IDEs
+______
+
 <br>
 
-
-## Editors and IDEs
-
-### Visual Studio Code
+### <a name="visual-studio-code"></a>Visual Studio Code
 
 [Visual studio code (VS Code)][vscode] is a free code editor created by Microsoft.
 It includes great support for both [virtual/conda environments][virtual environments in vscode], as well as [`docker`][docker in vscode] (_via the [docker plug-in][vs code docker plugin]_) and can be extended with many different plugins for [testing][python testing in vscode], [linting][linting python in vscode], [formatting][formatting python in vscode], and [web development][python web dev in vscode].
 
-#### Python for VS Code
+#### <a name="python-for-vs-code"></a>Python for VS Code
 
-Extension: _Extension-id: ms-python.python_
+_Extension-id: ms-python.python_
 
 ![Python Extension Header on VS Code](https://raw.githubusercontent.com/exercism/python/main/docs/img/VSCode-EXT-Python-Header.png)
 
@@ -286,7 +255,7 @@ As of the [latest release][vs code python latest release], installing the MS Pyt
 
 <br>
 
-### PyCharm
+### <a name="pycharm"></a>PyCharm
 
 [PyCharm][pycharm download] is an `IDE` (_Integrated Development Environment_) built by [JetBrains][jetbrains].
  It is purpose-built for Python and is popular among professionals .
@@ -294,17 +263,24 @@ As of the [latest release][vs code python latest release], installing the MS Pyt
  The paid version also supports [Django development][pycharm django dev], [Docker development][pycharm docker], and [Database integration][pycharm database tools].
 
 - Information on setting up Python versions can be found in [configuring a Python Interpreter][pycharm interpreter config] and [configuring a virtual environment][pycharm config venv].
-- Steps for setting up pytest with pycharm can be found [here][pycharm pytest docs].
+
+<details>
+    <summary>Pycharm and Pytest</summary>
+
+  - Steps for setting up pytest with pycharm can be found [here][pycharm pytest docs].
   - Pycharm defaults to using `unittest`, so you must have `pytest` installed into the environment you are using with pycharm (_see the interpreter and environment documents above_), and then point pycharm to it.
   - [Running Tests][pycharm gui running tests] directly from the GUI is really easy, but don't forget to take a good look at the underlying [pytest parameters](TESTS.md#extra-arguments), so that it is set up to your liking.
-- General documentation for running tests and debugging in pycharm can be found [here][pycharm run tests].
+  - General documentation for running tests and debugging in pycharm can be found [here][pycharm run tests].
+
+</details>
+
 - Additional debugging tools and guidance can be found [here][pycharm debugging tools].
   -  **warning**:  The `coverage` plugin for `pytest` will break pycharm's debugger.
      See [run/debug configuration: pytest][pycharm debug configuration] for more information.
 
 <br>
 
-### Spyder IDE
+### <a name="spyder-ide">Spyder IDE
 
 [Spyder][spyder-ide] is a cross-platform free and open source Python IDE tailored for the scientific community.
 It is commonly included with the Anaconda distribution of Python, but can be [installed by itself][spyder standalone installers] and used with any version of Python.
@@ -316,23 +292,34 @@ Additional code completion and linting are provided via [kite][kite].
 Integrations with [Jupyter Notebooks][spyder notebook plugin] and [testing tools][spyder unittest plugin] are provided via community-developed plugins.
 You can also write [plugins of your own][writing spyder plugins], using the Spyder API.
 
-- Setting Python [versions/virtual environments][spyder environments] in Spyder
-- Setting up Spyder to run `unittest` and `pytest` tests via [spyder unittest plugin][spyder unittest plugin]
-- Spyder [installation guide][spyder installation guide]
+
+- <details>
+   <summary>Spyder <a href="https://docs.spyder-ide.org/current/installation.html">installation guide</a></summary>
+
   - [Standalone installers][spyder standalone installers]
   - [Alternative installation methods][spyder alternate installation]
   - [Notes on upgrading Spyder][spyder updating install]
-- Spyder [quickstart guide][spyder quickstart guide]
+  - Spyder [troubleshooting guide][spyder troubleshooting guide]
+
+  </details>
+
+- <details>
+   <summary>Spyder <a href="https://docs.spyder-ide.org/current/quickstart.html">quickstart guide</a></summary>
+
   - [First steps video][spyder first steps]
   - [Running via Anaconda][spyder with Anaconda]
   - [Creating a conda env just for Spyder][spyder conda env]
+
+  </details>
+
 - Spyder [FAQ][spyder faq]
-- Spyder [troubleshooting guide][spyder troubleshooting guide]
+- Setting Python [versions/virtual environments][spyder environments] in Spyder
+- Setting up Spyder to run `unittest` and `pytest` tests via [spyder unittest plugin][spyder unittest plugin]
 - Additional [spyder plugins][spyder plugins list]
 
 <br>
 
-### Emacs
+### <a name="emacs"></a>Emacs
 
 [Emacs][emacs] is a free, open source, and highly customizable text editor written in Lisp.
 A great [installation and setup guide][emacs setup at real python] is available at Real Python.
@@ -342,7 +329,7 @@ A great [installation and setup guide][emacs setup at real python] is available 
 
 <br>
 
-### Vim
+### <a name="vim"></a>Vim
 
 [Vim][vimdotorg] is a free and "improved" version of the Unix standard `vi` text editor.
 It is available on a wide variety of operating systems and Linux/Unix flavors.
@@ -355,7 +342,7 @@ Chances are good you will find yourself on a *nix system needing to edit a confi
 
 <br>
 
-### Spacemacs
+### <a name="spacemacs"></a>Spacemacs
 
 [Spacemacs][spacemacs] (_[github repo][spacemacs github repo]_) is a free community-driven distribution of Emacs that combines functionality from both Emacs and Vim.
 
@@ -365,7 +352,7 @@ Chances are good you will find yourself on a *nix system needing to edit a confi
 
 <br>
 
-### Sublime text
+### <a name="sublime-text"></a>Sublime text
 
 [Sublime text][sublime text 4] is a paid text editor for coding, made by *Sublime HQ Pty Ltd*.
 It is similar to [VS Code](#visual-studio-code) and [Atom][atom], with many [packages and plugins][sublime package control] for customization.
@@ -416,7 +403,6 @@ You can also [develop plugins][sublime plugin development] of your own for the e
 [pyenv]: https://github.com/pyenv/pyenv
 [python extension setup tutorial]: https://code.visualstudio.com/docs/python/python-tutorial
 [python testing in vscode]: https://code.visualstudio.com/docs/python/testing
-[python track on github]: https://github.com/exercism/python/blob/main/docs/TOOLS.md
 [python web dev in vscode]: https://code.visualstudio.com/docs/python/tutorial-django
 [rtorr vim cheat sheet]: https://vim.rtorr.com/
 [spacemacs github repo]: https://github.com/syl20bnr/spacemacs
@@ -428,10 +414,8 @@ You can also [develop plugins][sublime plugin development] of your own for the e
 [spyder environments]: https://docs.spyder-ide.org/5/faq.html#using-existing-environment
 [spyder faq]: https://docs.spyder-ide.org/5/faq.html
 [spyder first steps]: https://docs.spyder-ide.org/current/videos/first-steps-with-spyder.html
-[spyder installation guide]: https://docs.spyder-ide.org/current/installation.html
 [spyder notebook plugin]: https://github.com/spyder-ide/spyder-notebook
 [spyder plugins list]: https://docs.spyder-ide.org/5/faq.html#using-plugins
-[spyder quickstart guide]: https://docs.spyder-ide.org/current/quickstart.html
 [spyder standalone installers]: https://docs.spyder-ide.org/current/installation.html#standalone-installers
 [spyder troubleshooting guide]: https://github.com/spyder-ide/spyder/wiki/Troubleshooting-Guide-and-FAQ
 [spyder unittest plugin]: https://github.com/spyder-ide/spyder-unittest
