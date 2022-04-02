@@ -1,5 +1,8 @@
+"""Functions for checking little sister's vocabulary homework."""
+
+
 def add_prefix_un(word):
-    """
+    """Take the given word and add the 'un' prefix to the start of it.
 
     :param word: str of a root word
     :return:  str of root word with un prefix
@@ -12,7 +15,7 @@ def add_prefix_un(word):
 
 
 def make_word_groups(vocab_words):
-    """
+    """Take a list containing a prefix at the first index, words as the rest, and prepend each word with it.
 
     :param vocab_words: list of vocabulary words with a prefix.
     :return: str of prefix followed by vocabulary words with
@@ -30,7 +33,7 @@ def make_word_groups(vocab_words):
 
 
 def remove_suffix_ness(word):
-    """
+    """Remove the suffix 'ness' from the word while considering resulting words that end in 'y'.
 
     :param word: str of word to remove suffix from.
     :return: str of word with suffix removed & spelling adjusted.
@@ -46,7 +49,7 @@ def remove_suffix_ness(word):
 
 
 def adjective_to_verb(sentence, index):
-    """
+    """Change the adjective within the sentence to a verb.
 
     :param sentence: str that uses the word in sentence
     :param index:  index of the word to remove and transform
