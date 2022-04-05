@@ -15,7 +15,9 @@ Below are some community-sourced articles, videos, and books that can help you d
   She has written [The Programmers Brian][programmers-brain-free-online], with strategies for reading code better, thinking about code clearly, writing better code, and becoming a better code collaborator.
   - You can order a physical copy of her book [here][programmers-brain-manning].
   - She also has two interesting videos on the same topic: [How to Teach Programming (and other things??)][felienne-hermans-how-to-teach-programming] and [Writing is Programming is Writing][felienne-hermans-programming-is-writing-is-programming].
-- [Algorithmic Thinking (Daniel Zingaro)][daniel-zingaro-algorithmic-thinking] from No Starch Press and [How to think like a programmer (Paul Vickers)][paul-vickers-how-to-think-like-a-programmer] also cover similar problem-solving territory when coding.
+- 
+- [Algorithmic Thinking (Daniel Zingaro)][daniel-zingaro-algorithmic-thinking] from No Starch Press and [How to think like a programmer (Paul Vickers)][paul-vickers-how-to-think-like-a-programmer] also cover problem-solving when coding.
+- [Computational Thinking: A beginner's guide to problem-solving and programming (Karl Beecher)][beecher-computational-thinking],[Computational Thinking for the Modern Problem-Solver (Riley and Hunt)][riley-and-hunt-computational-thinking], and [From Computing to Computational Thinking (Paul S. Wang)][wang-computational-thinking]. Also offer strategies for thinking about problems and breaking them down for coding solutions.
 
 Many of the books above can also be read through the Association of Computing Machinery library.
 Membership (paid) information is available at [acm(dot)org][association-for-computing-machinery].
@@ -33,3 +35,6 @@ Membership (paid) information is available at [acm(dot)org][association-for-comp
 [programmers-brain-free-online]: https://www.manning.com/books/the-programmers-brain#toc
 [programmers-brain-manning]: https://www.manning.com/books/the-programmers-brain
 [v-anton-spraul-think-like-a-programmer]: https://archive.org/details/think-like-a-programmer/page/n19/mode/2up
+[beecher-computational-thinking]: https://www.karlbeecher.com/project/ct
+[riley-and-hunt-computational-thinking]: https://www.amazon.com/Computational-Thinking-Problem-Textbooks-Computing-ebook/dp/B00IZL9NQI
+[wang-computational-thinking]: https://www.amazon.com/Computing-Computational-Thinking-Paul-Wang-dp-1482217651/dp/1482217651/ref=mt_other?_encoding=UTF8&me=&qid=
