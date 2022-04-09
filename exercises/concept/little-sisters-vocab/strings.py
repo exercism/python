@@ -1,11 +1,11 @@
-"""Functions for checking little sister's vocabulary homework."""
+"""Functions for creating, transforming, and adding prefixes to strings."""
 
 
 def add_prefix_un(word):
     """Take the given word and add the 'un' prefix to the start of it.
 
-    :param word: str - of a root word
-    :return: str - of root word with un prefix
+    :param word: str - of a root word.
+    :return: str - of root word with 'un' prefix.
 
     This function takes `word` as a parameter and
     returns a new word with an 'un' prefix.
@@ -44,8 +44,8 @@ def remove_suffix_ness(word):
 def adjective_to_verb(sentence, index):
     """Change the adjective within the sentence to a verb.
 
-    :param sentence: str - that uses the word in sentence
-    :param index: int - index of the word to remove and transform
+    :param sentence: str - that uses the word in sentence.
+    :param index: int - index of the word to remove and transform.
     :return: str - word that changes the extracted adjective to a verb.
 
     A function takes a `sentence` using the
