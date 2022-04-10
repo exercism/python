@@ -30,7 +30,7 @@ def list_contains_round(rounds, number):
 
     :param rounds: list - rounds played.
     :param number: int - round number.
-    :return:  bool - was the round played?
+    :return: bool - was the round played?
     """
 
     return number in rounds
@@ -40,7 +40,7 @@ def card_average(hand):
     """Calculate and return the average card value from the list.
 
     :param hand: list - cards in hand.
-    :return:  float - average value of the cards in the hand.
+    :return: float - average value of the cards in the hand.
     """
 
     return sum(hand) / len(hand)
