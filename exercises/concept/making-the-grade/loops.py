@@ -49,10 +49,10 @@ def letter_grades(highest):
 def student_ranking(student_scores, student_names):
     """Organize the student's rank, name, and grade information in ascending order.
 
-     :param student_scores: list of scores in descending order.
-     :param student_names: list of names in descending order by exam score.
-     :return: list of strings in format ["<rank>. <student name>: <score>"].
-     """
+    :param student_scores: list of scores in descending order.
+    :param student_names: list of names in descending order by exam score.
+    :return: list of strings in format ["<rank>. <student name>: <score>"].
+    """
 
     pass
 
