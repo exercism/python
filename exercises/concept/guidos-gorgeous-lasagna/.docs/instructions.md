@@ -10,7 +10,7 @@ Define an `EXPECTED_BAKE_TIME` constant that returns how many minutes the lasagn
 According to your cookbook, the Lasagna should be in the oven for 40 minutes:
 
 ```python
->>> lasagna.EXPECTED_BAKE_TIME
+>>> EXPECTED_BAKE_TIME
 40
 ```
 
