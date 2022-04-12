@@ -1,4 +1,4 @@
-"""Functions to help you edit little sister's essays."""
+"""Functions to help edit essay homework using string manipulation."""
 
 
 def capitalize_title(title):
@@ -14,7 +14,7 @@ def capitalize_title(title):
 def check_sentence_ending(sentence):
     """Check the ending of the sentence to verify that a period is present.
 
-    :param sentence: - str a sentence to check.
+    :param sentence: str - a sentence to check.
     :return: bool - return True if punctuated correctly with period, False otherwise.
     """
 
