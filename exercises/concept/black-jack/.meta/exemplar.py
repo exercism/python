@@ -28,7 +28,7 @@ def higher_card(card_one, card_two):
     """Determine which card has a higher value in the hand.
 
     :param card_one, card_two: str - cards dealt. 'J', 'Q', 'K' = 10; 'A' = 1; numerical value otherwise.
-    :return: str or (str, str) - resulting Tuple contains both cards if they are of equal value.
+    :return: str or tuple - resulting Tuple contains both cards if they are of equal value.
     """
 
     card_one_value = value_of_card(card_one)
