@@ -13,3 +13,4 @@ bin/configlet.exe
 .pytest_cache
 __pycache__
 .venv
+env/
