@@ -4,8 +4,8 @@
 def is_criticality_balanced(temperature, neutrons_emitted):
     """Verify criticality is balanced.
 
-    :param temperature: Union[int, float] - temperature value in kelvin (integer or float).
-    :param neutrons_emitted: Union[int, float] - number of neutrons emitted per second (integer or float).
+    :param temperature: number - temperature value in kelvin (integer or float).
+    :param neutrons_emitted: number - number of neutrons emitted per second (integer or float).
     :return: bool - return True if conditions met, False if not.
 
     A reactor is said to be critical if it satisfies the following conditions:
@@ -26,9 +26,9 @@ def is_criticality_balanced(temperature, neutrons_emitted):
 def reactor_efficiency(voltage, current, theoretical_max_power):
     """Assess reactor efficiency zone.
 
-    :param voltage: Union[int, float] - voltage value (integer or float).
-    :param current: Union[int, float] - current value (integer or float).
-    :param theoretical_max_power: Union[int, float] - power that corresponds to a 100% efficiency (integer or float).
+    :param voltage: number - voltage value (integer or float).
+    :param current: number - current value (integer or float).
+    :param theoretical_max_power: number - power that corresponds to a 100% efficiency (integer or float).
     :return: str - one of 'green', 'orange', 'red', or 'black'.
 
     Efficiency can be grouped into 4 bands:
@@ -62,9 +62,9 @@ def reactor_efficiency(voltage, current, theoretical_max_power):
 def fail_safe(temperature, neutrons_produced_per_second, threshold):
     """Assess and return status code for the reactor.
 
-    :param temperature: Union[int, float] - value of the temperature in kelvin (integer or float).
-    :param neutrons_produced_per_second: Union[int, float] - neutron flux (integer or float).
-    :param threshold: Union[int, float] - threshold (integer or float).
+    :param temperature: number - value of the temperature in kelvin (integer or float).
+    :param neutrons_produced_per_second: number - neutron flux (integer or float).
+    :param threshold: number - threshold (integer or float).
     :return: str - one of: 'LOW', 'NORMAL', 'DANGER'.
 
     - `temperature * neutrons per second` < 90% of `threshold` == 'LOW'
