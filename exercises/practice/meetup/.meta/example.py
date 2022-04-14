@@ -14,7 +14,7 @@ def _choice(week):
         return lambda dates: next(date for date in dates if
                                   13 <= date.day <= 19)
 
-    ordinals = {'first', 'second', 'third', 'fourth', 'fifth', 'sixth'}
+    ordinals = ('first', 'second', 'third', 'fourth', 'fifth', 'sixth')
     day = -1 if (week == 'last') else (ordinals.index(week))
 
     def _func(dates):
