@@ -26,7 +26,7 @@ def compare_records(azara_record, rui_record):
 
     :param azara_record: tuple - a (treasure, coordinate) pair.
     :param rui_record: tuple - a (location, tuple(coordinate_1, coordinate_2), quadrant) trio.
-    :return: bool - returns True if coordinates match, False otherwise.
+    :return: bool - do the coordinates match?
     """
 
     return convert_coordinate(azara_record[1]) in rui_record
