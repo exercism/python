@@ -37,7 +37,7 @@ def list_contains_round(rounds, number):
 
 
 def card_average(hand):
-    """Calculate and return the average card value from the list.
+    """Calculate and returns the average card value from the list.
 
     :param hand: list - cards in hand.
     :return: float - average value of the cards in the hand.
@@ -50,16 +50,18 @@ def approx_average_is_average(hand):
     """Return if an average is using (first + last index values ) OR ('middle' card) == calculated average.
 
     :param hand: list - cards in hand.
-    :return: bool - if approximate average equals to the `true average`.
+    :return: bool - does one of the approximate averages equal the `true average`?
     """
 
     real_average = card_average(hand)
+
     if card_average([hand[0], hand[-1]]) == real_average:
         is_same = True
     elif hand[len(hand) // 2] == real_average:
         is_same = True
     else:
         is_same = False
+
     return is_same
 
 
@@ -82,4 +84,5 @@ def maybe_double_last(hand):
 
     if hand[-1] == 11:
         hand[-1] *= 2
+
     return hand
