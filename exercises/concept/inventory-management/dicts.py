@@ -41,7 +41,7 @@ def remove_item(inventory, item):
     :return: dict - updated inventory with item removed. Current inventory if item does not match.
     """
 
-   pass
+    pass
 
 
 def list_inventory(inventory):
