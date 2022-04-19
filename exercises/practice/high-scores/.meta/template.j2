@@ -3,16 +3,25 @@
     def test_{{ case["description"] | to_snake }}(self):
         scores = {{ case["input"]["scores"] }}
         expected = {{ case["expected"] }}
+        {%- if "latest_after_" not in ( case["property"] | to_snake ) %}
         self.assertEqual(HighScores(scores).{{ case["property"] | to_snake }}(), expected)
+        {%- else %}
+        highscores = HighScores(scores)
+        highscores.{{ case["property"] | to_snake | replace("latest_after_", "personal_") }}()
+        self.assertEqual(highscores.latest(), expected)
+        {% endif -%}
 {% endmacro -%}
 
 {{ macros.header(["HighScores"]) }}
+
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {%- for case in cases -%}
     {%- if "cases" in case -%}
     {%- for subcase in case["cases"] -%}
+    {%- if "scores_after_" not in ( subcase["property"] | to_snake ) %}
     {{- testcase(subcase) -}}
+    {% endif -%}
     {% endfor %}
     {%- else %}
     {%- if case["property"] != "scores" %}
