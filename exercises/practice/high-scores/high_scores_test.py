@@ -46,9 +46,6 @@ class HighScoresTest(unittest.TestCase):
     def test_latest_score_after_personal_top_scores(self):
         scores = [70, 50, 20, 30]
         expected = 30
-        self.assertEqual(HighScores(scores).latest_after_top_three(), expected)
-
-    def test_scores_after_personal_top_scores(self):
-        scores = [30, 50, 20, 70]
-        expected = [30, 50, 20, 70]
-        self.assertEqual(HighScores(scores).scores_after_top_three(), expected)
+        highscores = HighScores(scores)
+        highscores.personal_top_three()
+        self.assertEqual(highscores.latest(), expected)
