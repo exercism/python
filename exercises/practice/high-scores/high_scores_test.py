@@ -8,6 +8,11 @@ from high_scores import (
 
 
 class HighScoresTest(unittest.TestCase):
+    def test_list_of_scores(self):
+        scores = [30, 50, 20, 70]
+        expected = [30, 50, 20, 70]
+        self.assertEqual(HighScores(scores).scores, expected)
+
     def test_latest_score(self):
         scores = [100, 0, 90, 30]
         expected = 30
@@ -49,3 +54,10 @@ class HighScoresTest(unittest.TestCase):
         highscores = HighScores(scores)
         highscores.personal_top_three()
         self.assertEqual(highscores.latest(), expected)
+
+    def test_scores_after_personal_top_scores(self):
+        scores = [30, 50, 20, 70]
+        expected = [30, 50, 20, 70]
+        highscores = HighScores(scores)
+        highscores.personal_top_three()
+        self.assertEqual(highscores.scores, expected)
