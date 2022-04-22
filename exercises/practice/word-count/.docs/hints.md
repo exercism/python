@@ -2,11 +2,10 @@
 
 ## General
 
--  This exercise has many potential solutions and many paths you can take along the way.
-   No path is manifestly "better" than another, although a particular path may be more interesting or better suited to what you want to learn or explore right now.
--  Some paths may trade speed for clarity.
-   Others might take up more memory but be more scalable or maintainable.
--  We encourage you to try out more than one strategy to see what happens.
+This exercise has many potential solutions and many paths you can take along the way.
+No path is manifestly "better" than another, although a particular path may be more interesting or better suited to what you want to learn or explore right now.
+Some paths may trade speed for clarity, others might take up more memory but be more scalable or maintainable.
+We encourage you to try out more than one strategy to see what happens.
 
 _______
 -  Python has a robust set of tools to work with strings. [`str.split`][str.split] [`str.replace`][str.replace] [`str.lower`][str.lower] and [`str.strip`][str.strip] can be particularly helpful with this challenge.
@@ -14,6 +13,7 @@ _______
 -  While `str.split()` is very _specific_, `str.strip()` behaves differently, and allows multiple combinations.
 -  The [`string`][string] module (as opposed to `str`) has some constants that can be useful for filtering and comparison when processing strings.
 ________
+
 -  [Dictionaries][dict] can be helpful for tabulating when items (keys) appear more than once in a string.
 -  [`dict.setdefault()`][dict.setdefault] can help in processing when a key might be missing from a dictionary.
 -  The [Collections][collections] module implements some really useful subtypes to the core `dict` (dictionary), purpose-built to do things like [tally][collections.counter].
