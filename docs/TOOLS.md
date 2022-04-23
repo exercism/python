@@ -1,7 +1,7 @@
 # Tools
 
 
-~~~~exercism/noe
+~~~~exercism/note
 
 This is a collection of tools that are popular in our community.
 It is not intended to be prescriptive nor exhaustive.
