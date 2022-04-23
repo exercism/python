@@ -7,7 +7,7 @@
    - This _Stack Overflow_ Post: [Equation for Testing if a Point is Inside a Circle][point-circle-equation] outlines one method.
    - This _DoubleRoot_ post [Position of a point relative to a circle][point-to-circle] outlines a different one.
    - This _Math is Fun_ post covers a more general [Distance Between 2 Points][distance-between-two-points] calculation.
-- Because the dart board is a set of _nested_ circles, the order in which you calculate points could change the answer significantly.
+- Because the dart board is a set of _concentric_ circles, the order in which you calculate points could change the answer significantly.
   You should pay attention to which direction your calculations "move" in.
 -  Remember that this exercise has many potential solutions and many paths you can take along the way.
    No path is manifestly "better" than another, although a particular path may be more interesting or better suited to what you want to learn or explore right now.
