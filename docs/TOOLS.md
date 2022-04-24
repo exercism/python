@@ -7,7 +7,6 @@ This is a collection of tools that are popular in our community.
 It is not intended to be prescriptive nor exhaustive.
 We think these tools do their job well, but there are most certainly other tools that are also good.
 If you have an editor, IDE, tool, or plugin recommendation, we encourage you to add it to this document on GitHub.
-Exercism does not have any affiliations with any of the tools listed below.
 
 ~~~~
 
