@@ -1,12 +1,12 @@
 import unittest
 import pytest
 
-from classes import new_aliens_collection
+from classes_standalone_function import new_aliens_collection
 
 try:
     from classes import Alien
 except ImportError as err:
-    raise ImportError("We tried to import the 'Alien' class, but could not find it. "
+    raise ImportError("classes_test.py tried to import the 'Alien' class, but could not find it. "
                       "Did you remember to create it?") from err
 
 

@@ -37,11 +37,3 @@ class Alien:
 
     def collision_detection(self, other):
         pass
-
-def new_aliens_collection(positions):
-    """Creates a list of Alien instances from a list of coordinate tuples.
-
-     :param positions: list - a list of tuples of (x, y) coordinates.
-     :return: list - a list of Alien objects.
-     """
-    return [Alien(position[0], position[1]) for position in positions]
