@@ -15,7 +15,7 @@ For more details on linked lists, `LIFO` stacks, and other abstract data types (
 - [Towards Data Science: Singly Linked Lists][singly linked list]
 - [Geeks for Geeks: Stack with Linked List][Geeks for Geeks Stack with Linked List]
 - [Scaler Topics: Stacks in Python][Scaler Topics Stack in Python]
-- [Mosh on Abstract Data Structures][Mosh Data Structures in Python] (_covers many `ADT`s, not just linked lists__)
+- [Mosh on Abstract Data Structures][Mosh Data Structures in Python] (_covers many `ADT`s, not just linked lists_)
 
 
 The "canonical" implementation of a linked list in Python usually requires one or more `classes`.
