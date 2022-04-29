@@ -9,7 +9,7 @@
 - `len()` is a built-in function for most Python objects.
 In order for _custom objects_ to support `len()`, the special method [`__len__`][__len__] needs to be defined.
 - Iteration in Python is supported for most sequence, container, or collection type objects.
-in order for a _custom_ object to support looping or re-ordering, the special method `__iter__` needs to be defined.
+In order for a _custom_ object to support looping or re-ordering, the special method `__iter__` needs to be defined.
 [Implementing an iterator for a class.][implementing iterators] can help show you how.
 
 [Baeldung: The Stack Data Structure]: https://www.baeldung.com/cs/stack-data-structure
