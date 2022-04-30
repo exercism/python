@@ -177,12 +177,37 @@
         "status": "beta"
       },
       {
+        "slug": "plane-tickets",
+        "name": "Plane Tickets",
+        "uuid": "3ba3fc89-3e1b-48a5-aff0-5aeaba8c8810",
+        "concepts": [
+          "generators"
+        ],
+        "prerequisites": [
+          "conditionals",
+          "dicts",
+          "lists",
+          "loops"
+        ],
+        "status": "wip"
+      },
+      {
         "slug": "ellens-alien-game",
         "name": "Ellen's Alien Game",
         "uuid": "3550ec07-f6c6-48bd-b2b4-086e75faf9e7",
         "concepts": ["classes"],
-        "prerequisites": ["basics", "bools", "comparisons", "loops", "dicts", "lists", "numbers", "sets", "strings", "tuples"],
-        "status": "wip"
+        "prerequisites": ["basics",
+          "bools",
+          "comparisons",
+          "loops",
+          "dicts",
+          "lists",
+          "numbers",
+          "sets",
+          "strings",
+          "tuples"
+        ],
+        "status": "beta"
       }
     ],
     "practice": [
@@ -391,7 +416,7 @@
           "rich-comparisons",
           "string-formatting"
         ],
-        "prerequisites": ["basics", "numbers", "strings"],
+        "prerequisites": ["basics", "numbers", "strings", "classes"],
         "difficulty": 4
       },
       {

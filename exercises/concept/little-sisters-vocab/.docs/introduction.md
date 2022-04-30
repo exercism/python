@@ -164,7 +164,7 @@ Strings can also be broken into smaller strings via [`<str>.split(<separator>)`]
 
 
 >>> cat_words = "feline, four-footed, ferocious, furry"
->>> cat_words.split(',')
+>>> cat_words.split(', ')
 ...
 ['feline', 'four-footed', 'ferocious', 'furry']
 ```
