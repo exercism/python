@@ -1,12 +1,12 @@
 import unittest
 import pytest
 
-from classes import new_aliens_collection
+from classes_standalone_function import new_aliens_collection
 
 try:
     from classes import Alien
 except ImportError as err:
-    raise ImportError("We tried to import the 'Alien' class, but could not find it. "
+    raise ImportError("classes_test.py tried to import the 'Alien' class, but could not find it. "
                       "Did you remember to create it?") from err
 
 
@@ -45,11 +45,8 @@ class ClassesTest(unittest.TestCase):
     # Test class methods work as specified.
     @pytest.mark.task(taskno=2)
     def test_alien_hit_method(self):
-        #There are two valid interpretations for this method/task.
-        #`self.health -= 1` and `self.health = max(0, self.health - 1)`
-        #The tests for this task reflect this ambiguity.
+        data = [(1, 2), (2, 1), (3, 0), (4, -1)]
 
-        data = [(1, (2,)), (2, (1,)), (3, (0,)), (4, (0, -1)), (5, (0, -2)), (6, (0, -3))]
         for variant, (iterations, result) in enumerate(data, 1):
             alien = Alien(2, 2)
             with self.subTest(f'variation #{variant}', input=iterations, output=result):
@@ -57,7 +54,7 @@ class ClassesTest(unittest.TestCase):
                          f"Health is {alien.health} when it should be {result}.")
                 for _ in range(iterations):
                     alien.hit()
-                self.assertIn(alien.health, result, msg=error)
+                self.assertEqual(alien.health, result, msg=error)
 
 
     @pytest.mark.task(taskno=3)
@@ -135,7 +132,7 @@ class ClassesTest(unittest.TestCase):
     def test_new_aliens_collection(self):
         position_data = [(-2, 6), (1, 5), (-4, -3)]
         obj_list = new_aliens_collection(position_data)
-        obj_error = "new_aliens_collection must return a list of Alien objects."
+        obj_error = "new_alien_list must return a list of Alien objects."
 
         for obj, position in zip(obj_list, position_data):
             self.assertIsInstance(obj, Alien, msg=obj_error)
