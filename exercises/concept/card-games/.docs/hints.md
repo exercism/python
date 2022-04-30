@@ -41,8 +41,8 @@
 - Python provides a wide range of [ways to modify `lists`][ways to modify `lists`].
 
 
-[common sequence operations]: https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
-[constructed]: https://docs.python.org/3/library/stdtypes.html#list
-[iterate over a list in python]: https://www.geeksforgeeks.org/iterate-over-a-list-in-python/
-[return]: https://www.w3schools.com/python/ref_keyword_return.asp
-[ways to modify `lists`]: https://realpython.com/python-lists-tuples/#lists-are-mutable
+[common sequence operations](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range)
+[constructed](https://docs.python.org/3/library/stdtypes.html#list)
+[iterate over a list in python](https://www.geeksforgeeks.org/iterate-over-a-list-in-python/)
+[return](https://www.w3schools.com/python/ref_keyword_return.asp)
+[ways to modify `lists`](https://realpython.com/python-lists-tuples/#lists-are-mutable)

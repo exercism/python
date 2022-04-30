@@ -34,7 +34,7 @@ import shutil
 from itertools import repeat
 from string import punctuation, whitespace
 from subprocess import check_call
-import tomli
+import toml
 from tempfile import NamedTemporaryFile
 from textwrap import wrap
 from typing import Any, Dict, List, NoReturn, Union

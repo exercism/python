@@ -59,6 +59,7 @@ class BlackJackTest(unittest.TestCase):
 
                 self.assertEqual(value_of_ace(card_one, card_two), ace_value, msg=error_msg)
 
+
     @pytest.mark.task(taskno=4)
     def test_is_blackjack(self):
         data = [
@@ -69,9 +70,10 @@ class BlackJackTest(unittest.TestCase):
 
         for variant, (hand, blackjack) in enumerate(data, 1):
             with self.subTest(f'variation #{variant}', input=hand, output=blackjack):
-                error_msg = f'Hand {hand} {"is" if blackjack else "is not"} a blackjack.'
+                error_msg=f'Hand {hand} {"is" if blackjack else "is not"} a blackjack.'
 
-                self.assertEqual(is_blackjack(*hand), blackjack, msg=error_msg)
+                self.assertEqual( is_blackjack(*hand), blackjack, msg=error_msg)
+
 
     @pytest.mark.task(taskno=5)
     def test_can_split_pairs(self):
@@ -81,9 +83,10 @@ class BlackJackTest(unittest.TestCase):
 
         for variant, (hand, split_pairs) in enumerate(data, 1):
             with self.subTest(f'variation #{variant}', input=hand, output=split_pairs):
-                error_msg = f'Hand {hand} {"can" if split_pairs else "cannot"} be split into pairs.'
+                error_msg=f'Hand {hand} {"can" if split_pairs else "cannot"} be split into pairs.'
 
                 self.assertEqual(can_split_pairs(*hand), split_pairs, msg=error_msg)
+
 
     @pytest.mark.task(taskno=6)
     def test_can_double_down(self):

@@ -6,7 +6,7 @@
       "input": {
         "year": 2015,
         "month": 3,
-        "week": "fifth",
+        "week": "5th",
         "dayofweek": "Monday"
       },
       "expected": "2015-03-30"
@@ -17,7 +17,7 @@
       "input": {
         "year": 2024,
         "month": 2,
-        "week": "fifth",
+        "week": "5th",
         "dayofweek": "Thursday"
       },
       "expected": "2024-02-29"
@@ -28,7 +28,7 @@
       "input": {
         "year": 2020,
         "month": 2,
-        "week": "fifth",
+        "week": "5th",
         "dayofweek": "Saturday"
       },
       "expected": "2020-02-29"
@@ -61,7 +61,7 @@
       "input": {
         "year": 2022,
         "month": 2,
-        "week": "fifth",
+        "week": "5th",
         "dayofweek": "Monday"
       },
       "expected": {"error": "That day does not exist."}
@@ -72,7 +72,7 @@
       "input": {
         "year": 2022,
         "month": 8,
-        "week": "fifth",
+        "week": "5th",
         "dayofweek": "Friday"
       },
       "expected": {"error": "That day does not exist."}
@@ -83,7 +83,7 @@
       "input": {
         "year": 2023,
         "month": 5,
-        "week": "fifth",
+        "week": "5th",
         "dayofweek": "Thursday"
       },
       "expected": {"error": "That day does not exist."}

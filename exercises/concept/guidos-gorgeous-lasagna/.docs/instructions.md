@@ -10,7 +10,6 @@ Define an `EXPECTED_BAKE_TIME` constant that returns how many minutes the lasagn
 According to your cookbook, the Lasagna should be in the oven for 40 minutes:
 
 ```python
->>> import lasagna
 >>> lasagna.EXPECTED_BAKE_TIME
 40
 ```
@@ -20,7 +19,6 @@ According to your cookbook, the Lasagna should be in the oven for 40 minutes:
 Implement the `bake_time_remaining()` function that takes the actual minutes the lasagna has been in the oven as an argument and returns how many minutes the lasagna still needs to bake based on the `EXPECTED_BAKE_TIME`.
 
 ```python
->>> from lasagna import bake_time_remaining
 >>> bake_time_remaining(30)
 10
 ```
@@ -31,7 +29,6 @@ Implement the `preparation_time_in_minutes()` function that takes the number of 
 Assume each layer takes 2 minutes to prepare.
 
 ```python
->>> from lasagna import preparation_time_in_minutes
 >>> preparation_time_in_minutes(2)
 4
 ```
@@ -42,7 +39,6 @@ Implement the `elapsed_time_in_minutes()` function that has two parameters: `num
 This function should return the total number of minutes you've been cooking, or the sum of your preparation time and the time the lasagna has already spent baking in the oven.
 
 ```python
->>> from lasagna import elapsed_time_in_minutes
 >>> elapsed_time_in_minutes(3, 20)
 26
 ```

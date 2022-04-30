@@ -48,7 +48,7 @@ class BookStoreTest(unittest.TestCase):
         basket = [1, 1, 2, 2, 3, 4]
         self.assertEqual(total(basket), 4080)
 
-    def test_two_each_of_first_four_books_and_one_copy_each_of_rest(self):
+    def test_two_each_of_first_4_books_and_1_copy_each_of_rest(self):
         basket = [1, 1, 2, 2, 3, 3, 4, 4, 5]
         self.assertEqual(total(basket), 5560)
 
@@ -56,11 +56,11 @@ class BookStoreTest(unittest.TestCase):
         basket = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]
         self.assertEqual(total(basket), 6000)
 
-    def test_three_copies_of_first_book_and_two_each_of_remaining(self):
+    def test_three_copies_of_first_book_and_2_each_of_remaining(self):
         basket = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1]
         self.assertEqual(total(basket), 6800)
 
-    def test_three_each_of_first_two_books_and_two_each_of_remaining_books(self):
+    def test_three_each_of_first_2_books_and_2_each_of_remaining_books(self):
         basket = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 2]
         self.assertEqual(total(basket), 7520)
 

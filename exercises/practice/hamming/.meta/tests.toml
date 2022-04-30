@@ -60,7 +60,6 @@ include = false
 [920cd6e3-18f4-4143-b6b8-74270bb8f8a3]
 description = "disallow right empty strand"
 reimplements = "38826d4b-16fb-4639-ac3e-ba027dec8b5f"
-include = false
 
 [9ab9262f-3521-4191-81f5-0ed184a5aa89]
 description = "disallow empty second strand"

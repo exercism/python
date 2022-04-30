@@ -103,7 +103,7 @@ False
 Every 11th hand in Black Joe is a bonus hand with a bonus rule: if the last card you draw is a Jack, you double its value.
 
 Implement a function `maybe_double_last(<hand>)` that takes a hand and checks if the last card is a Jack (11).
- If the last card **is** a Jack (11), double its value before returning the hand.
+ If the the last card **is** a Jack (11), double its value before returning the hand.
 
 ```python
 >>> hand = [5, 9, 11]

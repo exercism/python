@@ -85,7 +85,7 @@ Altering the value of class attributes alters the value _**for all objects insta
 # Modifying the value of the "number" class attribute.
 >>> MyClass.number = 27
 
-# Modifying the "number" class attribute changes the "number" attribute for all objects.
+# Modifying the "number" class attribute changes the "number" attribute for all instantiated objects.
 >>> obj_one.number
 27
 

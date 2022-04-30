@@ -174,11 +174,3 @@
 - name: "❔question❔"
   description: "I have a proposal or question about things, but nothing is broken."
   color: "293028"
-
-- name: "prickle💢"
-  description: "This issue should be skipped by the auto-responder."
-  color: "FFFFFF"
-
-- name: "smolder🍲"
-  description: "Lower-priority and/or future idea"
-  color: "8B0000"

@@ -1,10 +1,18 @@
 [
   {
-    "url": "https://docs.python.org/3.8/reference/expressions.html#yield-expressions",
-    "description": "Official Python 3.8 docs for the yield expression."
+    "url": "http://example.com/",
+    "description": "TODO:  add new link (above) and write a short description here of the resource."
   },
   {
-    "url": "https://en.wikipedia.org/wiki/Lazy_evaluation",
-    "description": "Wikipedia page about lazy evaluation"
+    "url": "http://example.com/",
+    "description": "TODO:  add new link (above) and write a short description here of the resource."
+  },
+  {
+    "url": "http://example.com/",
+    "description": "TODO:  add new link (above) and write a short description here of the resource."
+  },
+  {
+    "url": "http://example.com/",
+    "description": "TODO:  add new link (above) and write a short description here of the resource."
   }
 ]
