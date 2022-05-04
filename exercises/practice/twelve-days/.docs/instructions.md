@@ -1,6 +1,12 @@
 # Instructions
 
-Output the lyrics to 'The Twelve Days of Christmas'.
+Your task in this exercise is to write code that returns the lyrics of the song: "The Twelve Days of Christmas."
+
+"The Twelve Days of Christmas" is a common English Christmas carol. Each subsequent verse of the song builds on the previous verse.
+
+The lyrics your code returns should _exactly_ match the full song text shown below.
+
+## Lyrics
 
 ```text
 On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree.
