@@ -4,6 +4,18 @@
 
 - This challenge is about creating a [_stack_][Baeldung: The Stack Data Structure] using a [singly linked list][singly linked list].
 - Unlike stacks underpinned with `lists`, `collections.deque`, or `queue.LifoQueue`, we ask you create custom `Node` and `LinkedList` [`classes`][classes tutorial] to store and link elements.
+
+   <br>
+
+    _push and pop happen here_
+
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|
+
+
+    (_head_) **`[Node_3]` -> `[Node_2]` -> `[Node_1]`** (_tail_) -> None
+
+   <br>
+
 - [Real Python: Linked Lists][Real Python Linked Lists], [Towards Data Science: Demystifying the Linked List][towards data science demystifying the linked list], and [ADS Stack in Python][Koder Dojo Coding an ADS Stack in Python] can be helpful to review for details on implementation.
 - Your `LinkedList` should accept a `list` argument to its _constructor_, but should not use a `list` to store nodes or elements.
 - `len()` is a built-in function for most Python objects.

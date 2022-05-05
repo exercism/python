@@ -3,8 +3,35 @@
 ## How this Exercise is Structured in Python
 
 While `stacks` and `queues` can be implemented using `lists`, `collections.deque`, `queue.LifoQueue`, and `multiprocessing.Queue`, this exercise expects a ["Last in, First Out" (`LIFO`) stack][Baeldung: The Stack Data Structure] (_interactive example [here][LIFO Stack]_) using a _custom-made_ [singly linked list][singly linked list].
+
+<br>
+
+_push and pop happen here_
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|
+
+
+(_head_) **`[Node_3]` -> `[Node_2]` -> `[Node_1]`** (_tail_) -> None
+
+<br>
+
+
 This should not be confused with a [`LIFO` stack using a dynamic array or list][LIFO Stack Array], which may use a `list` underneath.
 Dynamic array based `stacks` have a different `head` position and different time complexity (Big-O) and memory footprint.
+
+<br>
+
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  _push and pop happen here_
+
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; |
+
+
+(_tail_) **`[Node_1]` -> `[Node_2]` -> `[Node_3]`** (_head_)
+
+<br>
+
+
 See these two Stack Overflow questions for some considerations: [Array-Based vs List-Based Stacks and Queues][Stack Overflow: Array-Based vs List-Based Stacks and Queues] and [Differences between Array Stack, Linked Stack, and Stack][Stack Overflow: What is the difference between Array Stack, Linked Stack, and Stack].
 
 For more details on linked lists, `LIFO` stacks, and other abstract data types (`ADT`) in Python:
