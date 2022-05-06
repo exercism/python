@@ -20,6 +20,9 @@ class IsbnVerifierTest(unittest.TestCase):
     def test_check_digit_is_a_character_other_than_x(self):
         self.assertIs(is_valid("3-598-21507-A"), False)
 
+    def test_invalid_check_digit_in_isbn_is_not_treated_as_zero(self):
+        self.assertIs(is_valid("4-598-21507-B"), False)
+
     def test_invalid_character_in_isbn_is_not_treated_as_zero(self):
         self.assertIs(is_valid("3-598-P1581-X"), False)
 
