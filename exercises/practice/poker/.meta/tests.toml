@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [161f485e-39c2-4012-84cf-bec0c755b66c]
 description = "single hand always wins"
@@ -31,6 +38,12 @@ description = "both hands have two pairs, with the same highest ranked pair, tie
 
 [15a7a315-0577-47a3-9981-d6cf8e6f387b]
 description = "both hands have two identically ranked pairs, tie goes to remaining card (kicker)"
+
+[f761e21b-2560-4774-a02a-b3e9366a51ce]
+description = "both hands have two pairs that add to the same value, win goes to highest pair"
+
+[fc6277ac-94ac-4078-8d39-9d441bc7a79e]
+description = "two pairs first ranked by largest pair"
 
 [21e9f1e6-2d72-49a1-a930-228e5e0195dc]
 description = "three of a kind beats two pair"
