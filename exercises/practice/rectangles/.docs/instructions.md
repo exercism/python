@@ -10,7 +10,7 @@ Count the rectangles in an ASCII diagram like the one below.
 +--+--+
 ```
 
-The above diagram contains 6 rectangles:
+The above diagram contains these 6 rectangles:
 
 ```text
 
