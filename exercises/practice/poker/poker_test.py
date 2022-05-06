@@ -71,6 +71,18 @@ class PokerTest(unittest.TestCase):
             best_hands(["JD QH JS 8D QC", "JS QS JC 2D QD"]), ["JD QH JS 8D QC"]
         )
 
+    def test_both_hands_have_two_pairs_that_add_to_the_same_value_win_goes_to_highest_pair(
+        self,
+    ):
+        self.assertEqual(
+            best_hands(["6S 6H 3S 3H AS", "7H 7S 2H 2S AC"]), ["7H 7S 2H 2S AC"]
+        )
+
+    def test_two_pairs_first_ranked_by_largest_pair(self):
+        self.assertEqual(
+            best_hands(["5C 2S 5S 4H 4C", "6S 2S 6H 7C 2C"]), ["6S 2S 6H 7C 2C"]
+        )
+
     def test_three_of_a_kind_beats_two_pair(self):
         self.assertEqual(
             best_hands(["2S 8H 2H 8D JH", "4S 5H 4C 8S 4H"]), ["4S 5H 4C 8S 4H"]
