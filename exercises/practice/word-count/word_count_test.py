@@ -44,8 +44,17 @@ class WordCountTest(unittest.TestCase):
 
     def test_with_apostrophes(self):
         self.assertEqual(
-            count_words("First: don't laugh. Then: don't cry."),
-            {"first": 1, "don't": 2, "laugh": 1, "then": 1, "cry": 1},
+            count_words("'First: don't laugh. Then: don't cry. You're getting it.'"),
+            {
+                "first": 1,
+                "don't": 2,
+                "laugh": 1,
+                "then": 1,
+                "cry": 1,
+                "you're": 1,
+                "getting": 1,
+                "it": 1,
+            },
         )
 
     def test_with_quotations(self):
