@@ -68,12 +68,26 @@ class AnagramTest(unittest.TestCase):
         expected = []
         self.assertCountEqual(find_anagrams("tapper", candidates), expected)
 
-    def test_words_are_not_anagrams_of_themselves_case_insensitive(self):
-        candidates = ["BANANA", "Banana", "banana"]
+    def test_words_are_not_anagrams_of_themselves(self):
+        candidates = ["BANANA"]
+        expected = []
+        self.assertCountEqual(find_anagrams("BANANA", candidates), expected)
+
+    def test_words_are_not_anagrams_of_themselves_even_if_letter_case_is_partially_different(
+        self,
+    ):
+        candidates = ["Banana"]
+        expected = []
+        self.assertCountEqual(find_anagrams("BANANA", candidates), expected)
+
+    def test_words_are_not_anagrams_of_themselves_even_if_letter_case_is_completely_different(
+        self,
+    ):
+        candidates = ["banana"]
         expected = []
         self.assertCountEqual(find_anagrams("BANANA", candidates), expected)
 
     def test_words_other_than_themselves_can_be_anagrams(self):
-        candidates = ["Listen", "Silent", "LISTEN"]
+        candidates = ["LISTEN", "Silent"]
         expected = ["Silent"]
         self.assertCountEqual(find_anagrams("LISTEN", candidates), expected)

@@ -52,6 +52,24 @@ description = "anagrams must use all letters exactly once"
 
 [85757361-4535-45fd-ac0e-3810d40debc1]
 description = "words are not anagrams of themselves (case-insensitive)"
+include = false
+
+[68934ed0-010b-4ef9-857a-20c9012d1ebf]
+description = "words are not anagrams of themselves"
+reimplements = "85757361-4535-45fd-ac0e-3810d40debc1"
+
+[589384f3-4c8a-4e7d-9edc-51c3e5f0c90e]
+description = "words are not anagrams of themselves even if letter case is partially different"
+reimplements = "85757361-4535-45fd-ac0e-3810d40debc1"
+
+[ba53e423-7e02-41ee-9ae2-71f91e6d18e6]
+description = "words are not anagrams of themselves even if letter case is completely different"
+reimplements = "85757361-4535-45fd-ac0e-3810d40debc1"
 
 [a0705568-628c-4b55-9798-82e4acde51ca]
 description = "words other than themselves can be anagrams"
+include = false
+
+[33d3f67e-fbb9-49d3-a90e-0beb00861da7]
+description = "words other than themselves can be anagrams"
+reimplements = "a0705568-628c-4b55-9798-82e4acde51ca"
