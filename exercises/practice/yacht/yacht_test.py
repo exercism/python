@@ -33,6 +33,9 @@ class YachtTest(unittest.TestCase):
     def test_yacht_of_3s_counted_as_fives(self):
         self.assertEqual(yacht.score([3, 3, 3, 3, 3], yacht.FIVES), 0)
 
+    def test_fives(self):
+        self.assertEqual(yacht.score([1, 5, 3, 5, 3], yacht.FIVES), 10)
+
     def test_sixes(self):
         self.assertEqual(yacht.score([2, 3, 4, 5, 6], yacht.SIXES), 6)
 
