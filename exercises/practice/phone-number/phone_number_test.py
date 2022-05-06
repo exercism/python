@@ -48,13 +48,13 @@ class PhoneNumberTest(unittest.TestCase):
 
     def test_invalid_with_letters(self):
         with self.assertRaises(ValueError) as err:
-            PhoneNumber("123-abc-7890")
+            PhoneNumber("523-abc-7890")
         self.assertEqual(type(err.exception), ValueError)
         self.assertEqual(err.exception.args[0], "letters not permitted")
 
     def test_invalid_with_punctuations(self):
         with self.assertRaises(ValueError) as err:
-            PhoneNumber("123-@:!-7890")
+            PhoneNumber("523-@:!-7890")
         self.assertEqual(type(err.exception), ValueError)
         self.assertEqual(err.exception.args[0], "punctuations not permitted")
 

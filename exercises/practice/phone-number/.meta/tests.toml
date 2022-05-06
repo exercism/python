@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [79666dce-e0f1-46de-95a1-563802913c35]
 description = "cleans the number"
@@ -28,9 +35,19 @@ description = "invalid when more than 11 digits"
 
 [63f38f37-53f6-4a5f-bd86-e9b404f10a60]
 description = "invalid with letters"
+include = false
+
+[eb8a1fc0-64e5-46d3-b0c6-33184208e28a]
+description = "invalid with letters"
+reimplements = "63f38f37-53f6-4a5f-bd86-e9b404f10a60"
 
 [4bd97d90-52fd-45d3-b0db-06ab95b1244e]
 description = "invalid with punctuations"
+include = false
+
+[065f6363-8394-4759-b080-e6c8c351dd1f]
+description = "invalid with punctuations"
+reimplements = "4bd97d90-52fd-45d3-b0db-06ab95b1244e"
 
 [d77d07f8-873c-4b17-8978-5f66139bf7d7]
 description = "invalid if area code starts with 0"
