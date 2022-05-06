@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [3060e4a5-4063-4deb-a380-a630b43a84b6]
 description = "Yacht"
@@ -28,6 +35,9 @@ description = "Yacht counted as threes"
 
 [464fc809-96ed-46e4-acb8-d44e302e9726]
 description = "Yacht of 3s counted as fives"
+
+[d054227f-3a71-4565-a684-5c7e621ec1e9]
+description = "Fives"
 
 [e8a036e0-9d21-443a-8b5f-e15a9e19a761]
 description = "Sixes"
