@@ -1,0 +1,10 @@
+# Instructions append
+
+## Test-driven development
+
+ Be sure to check the comments at the top of the tests file.
+ They will be helpful in understanding the expected output of your function.
+
+This _could_ be solved with a minimum of code and a lot of hardcoded text which is duplicated between the verses.
+For more of a programming challenge, consider assembling each verse from its parts.
+For example, for each verse, the day changes and the gift changes, and the rest of the verse is pretty much the same between verses.
