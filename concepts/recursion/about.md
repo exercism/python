@@ -7,7 +7,20 @@ The values used in each function call may be placed in their own frame on the st
 If the amount of function calls takes up more space than the stack has, it will result in a stack overflow error.
 
 ```python
-# TODO: Python example code here
+def printIncrement(i, maxValue):
+    if i > maxValue:
+        return
+    print(f'The number is {i}')
+    printIncrement(i + 1, maxValue)
+
+
+def main():
+    printIncrement(1, 2)
+    print("After recursion")
+
+if __name__ == "__main__":
+    main()
+
 ```
 
 This will print
