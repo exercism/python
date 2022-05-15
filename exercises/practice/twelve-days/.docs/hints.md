@@ -3,6 +3,7 @@
 # General
 
 Have you tried to break your logic up into one or more helper functions?
+This type of song is known as a [cumulative song][cumulative song], so it could be particularly well suited to being "broken up".
 Doing so may make your code easier to reason about and will conform to the [Single Responsibility Principle][Single Responsibility Principle].
 
 # Approaches
