@@ -10,7 +10,7 @@ Doing so may make your code easier to reason about and will conform to the [Sing
 
 ## Looping
 
-To learn about the ways to loop in Python, please see the [docs](https://wiki.python.org/moin/ForLoop).
+To learn about the ways to loop in Python, please see [loops](https://exercism.org/tracks/python/concepts/loops).
 
 ## Recursion
 
