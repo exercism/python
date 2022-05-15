@@ -3,7 +3,7 @@
 # General
 
 Have you tried to break your logic up into one or more helper functions?
-Doing so may make your code easier to reason about and will conform to the [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single-responsibility_principle).
+Doing so may make your code easier to reason about and will conform to the [Single Responsibility Principle][Single Responsibility Principle].
 
 # Approaches
 
