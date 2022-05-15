@@ -85,3 +85,14 @@ if __name__ == "__main__":
 
 You may find that a tail call may be easier to reason through than a recursive call that is not a tail call.
 However, it is always important when using recursion to know that there will not be so many iterations that the stack will overflow.
+
+## Resources
+
+To learn more about using recursion in Python you can start with 
+- [python-programming: recursion][python-programming: recursion]
+- [Real Python: python-recursion][Real Python: python-recursion]
+- [Real Python: python-thinking-recursively][Real Python: python-thinking-recursively]
+
+[python-programming: recursion]: https://www.programiz.com/python-programming/recursion
+[Real Python: python-recursion]: https://realpython.com/python-recursion/
+[Real Python: python-thinking-recursively]: https://realpython.com/python-thinking-recursively/
