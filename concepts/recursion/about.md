@@ -4,7 +4,7 @@ Recursion is a way to repeatedly execute code inside a function through the func
 It can be viewed as another way to loop/iterate. 
 Like looping, a Boolean expression or `True/False` test is used to know when to stop the recursive execution.
 Unlike looping, recursion that never ends will not run infinitely.
-The values used in each function call will be placed in their own frame on the stack.
+Values used in each function call are placed in their own frames on the Python interpreter stack.
 If the amount of function calls takes up more space than the stack has, it will result in a stack overflow error.
 
 ```python
