@@ -15,11 +15,11 @@ The default is typically 999 frames, but varies by system.
 The recursion limit for a given version of Python can be found by calling [`sys.getrecursionlimit()`][getrecursionlimit]
 
 ```python
-def printIncrement(i, maxValue):
-    if i > maxValue:
+def print_increment(step, max_value):
+    if step > max_value:
         return
-    print(f'The number is {i}')
-    printIncrement(i + 1, maxValue)
+    print(f'The number is {step}')
+    print_increment(step + 1, max_value)
 
 
 def main():
