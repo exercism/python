@@ -1,7 +1,8 @@
 # About
 
 Recursion is a way to repeatedly execute code inside a function through the function calling itself.
-It is another way to loop/iterate. Like looping, the function should test a Boolean expression to know when to end.
+It can be viewed as another way to loop/iterate. 
+Like looping, a Boolean expression or `True/False` test is used to know when to stop the recursive execution.
 Unlike looping, recursion that never ends will not run infinitely.
 The values used in each function call will be placed in their own frame on the stack.
 If the amount of function calls takes up more space than the stack has, it will result in a stack overflow error.
