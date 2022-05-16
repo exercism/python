@@ -1,6 +1,6 @@
 # About
 
-Recursion is a way to repeat code in a function by the function calling itself.
+Recursion is a way to repeatedly execute code inside a function through the function calling itself.
 It is another way to loop/iterate. Like looping, the function should test a Boolean expression to know when to end.
 Unlike looping, recursion that never ends will not run infinitely.
 The values used in each function call will be placed in their own frame on the stack.
