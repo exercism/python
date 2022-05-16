@@ -18,12 +18,12 @@ The recursion limit for a given version of Python can be found by calling [`sys.
 def print_increment(step, max_value):
     if step > max_value:
         return
-    print(f'The number is {step}')
+    print(f'The step is {step}')
     print_increment(step + 1, max_value)
 
 
 def main():
-    printIncrement(1, 2)
+    print_increment(1, 2)
     print("After recursion")
 
 if __name__ == "__main__":
@@ -34,8 +34,8 @@ if __name__ == "__main__":
 This will print
 
 ```
-The number is 1
-The number is 2
+The step is 1
+The step is 2
 After recursion
 ```
 
@@ -48,16 +48,16 @@ A tail call is when the last statement of a function only calls itself and nothi
 This example is not a tail call, as the function adds 1 to the result of calling itself
 
 ```python
-def printIncrement(i, maxValue):
-    if i > maxValue:
+def print_increment(step, max_value):
+    if step > max_value:
         return 1
-    print(f'The number is {i}')
-    return 1 + printIncrement(i + 1, maxValue)
+    print(f'The step is {step}')
+    return 1 + print_increment(step + 1, max_value)
 
 
 def main():
-    j = printIncrement(1, 2)
-    print(f'j is {j} after recursion')
+    retval = print_increment(1, 2)
+    print(f'retval is {retval} after recursion')
 
 if __name__ == "__main__":
     main()
@@ -67,24 +67,24 @@ if __name__ == "__main__":
 This will print
 
 ```
-The number is 1
-The number is 2
-j is 3 after recursion
+The step is 1
+The step is 2
+retval is 3 after recursion
 ```
 
 To refactor it to a tail call, make `j` a parameter of `printIncrement`
 
 ```python
-def printIncrement(i, maxValue, j):
-    if i > maxValue:
-        return j
-    print(f'The number is {i}')
-    return printIncrement(i + 1, maxValue, j + 1)
+def print_increment(step, max_value, retval):
+    if step > max_value:
+        return retval
+    print(f'The step is {step}')
+    return print_increment(step + 1, max_value, retval + 1)
 
 
 def main():
-    j = printIncrement(1, 2, 1)
-    print(f'j is {j} after recursion')
+    retval = print_increment(1, 2, 1)
+    print(f'retval is {retval} after recursion')
 
 if __name__ == "__main__":
     main()
