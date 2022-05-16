@@ -5,7 +5,14 @@ It can be viewed as another way to loop/iterate.
 Like looping, a Boolean expression or `True/False` test is used to know when to stop the recursive execution.
 Unlike looping, recursion that never ends will not run infinitely.
 Values used in each function call are placed in their own frames on the Python interpreter stack.
-If the amount of function calls takes up more space than the stack has, it will result in a stack overflow error.
+If the total amount of function calls takes up more space than the stack has room for, it will result in an error.
+
+Python's interpreter stack is backed up by a C stack that is connected to the underlying operating system.
+Function calls that take up more memory space than the C stack has will cause a stack overflow.
+A stack overflow can crash Python or even the host operating system, if it is severe enough.
+To avoid this situation, the Python interpreter has a maximum stack depth that limits the number of frames that can be placed on its stack.
+The default is typically 999 frames, but varies by system.
+The recursion limit for a given version of Python can be found by calling [`sys.getrecursionlimit()`][getrecursionlimit]
 
 ```python
 def printIncrement(i, maxValue):
