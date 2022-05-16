@@ -41,7 +41,6 @@ After recursion
 
 There may be some situations that are more readable and/or easier to reason through when expressed through recursion than when expressed through looping.
 
-
 ## Tail Call
 
 A tail call is when the last statement of a function only calls itself and nothing more.
@@ -94,6 +93,15 @@ if __name__ == "__main__":
 You may find that a tail call may be easier to reason through than a recursive call that is not a tail call.
 However, it is always important when using recursion to know that there will not be so many iterations that the stack will overflow.
 
+## Recursion Limit
+
+Some languages are able to optimize tail calls so that each recursive call reuses the stack frame of the first call to the function, instead of adding another stack frame.
+Python is not one of those languages.
+To guard against stack overflow, Python has a recursion limit, which by default is set to one thousand.
+Python will raise a [RecursionError][RecursionError] exception when the interpretor detects that the recursion limit has been exceeded.
+It is possible to use the [sys.setrecursionlimit][setrecursionlimit] method to increase the recursion limit, but doing so runs the risk of having a runtime segmentation fault that will crash the program.
+
+
 ## Resources
 
 To learn more about using recursion in Python you can start with 
@@ -104,3 +112,5 @@ To learn more about using recursion in Python you can start with
 [python-programming: recursion]: https://www.programiz.com/python-programming/recursion
 [Real Python: python-recursion]: https://realpython.com/python-recursion/
 [Real Python: python-thinking-recursively]: https://realpython.com/python-thinking-recursively/
+[RecursionError]: https://docs.python.org/3.8/library/exceptions.html#RecursionError
+[setrecursionlimit]: https://docs.python.org/3.8/library/sys.html#sys.setrecursionlimit
