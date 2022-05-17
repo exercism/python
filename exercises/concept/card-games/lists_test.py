@@ -87,7 +87,7 @@ class CardGamesTest(unittest.TestCase):
 
         input_vars = [[5, 6, 8], [1, 2, 3, 4], [1, 2, 3], [5, 6, 7], [1, 3, 5, 7, 9]]
 
-        results = [False, False, True, True, True]
+        results = [False, False, True, True, False]
 
         for variant, (hand, same) in enumerate(zip(input_vars, results), start=1):
             error_message = f'Hand {hand} {"does" if same else "does not"} yield the same odd-even average.'
