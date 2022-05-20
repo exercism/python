@@ -149,7 +149,7 @@ Later, when she learns about tuples,  Adya may consider other approaches, such a
 She may also become concerned that the recursive approach uses more steps than the looping approach, and so is less performant.
 But, when faced with a solution that involves a lot of nested looping, extensive state mutation, and complex conditional logic, Adya may try to work it out recursively first.
 She may find it easier to initially reason through the problem when nesting, mutation, and complexity are minimized.
-After she's worked out the basic logic she can then work at optimiing the recursive solution into a more performant looping approach.
+After she's worked out the basic logic she can then work at optimizing the recursive solution into a more performant looping approach.
 
 
 ## Resources
