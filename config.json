@@ -271,8 +271,8 @@
         "slug": "pangram",
         "name": "Pangram",
         "uuid": "bebf7ae6-1c35-48bc-926b-e053a975eb10",
-        "practices": ["conditionals"],
-        "prerequisites": ["basics", "bools", "conditionals"],
+        "practices": ["strings"],
+        "prerequisites": ["basics", "bools", "conditionals", "strings"],
         "difficulty": 1
       },
       {
@@ -349,17 +349,19 @@
         "difficulty": 1
       },
       {
+        "slug": "darts",
+        "name": "Darts",
+        "uuid": "cb581e2c-66ab-4221-9884-44bacb7c4ebe",
+        "practices": ["comparisons"],
+        "prerequisites": ["basics", "numbers", "comparisons", "conditionals"],
+        "difficulty": 1
+      },
+      {
         "slug": "raindrops",
         "name": "Raindrops",
         "uuid": "82d82e32-cb30-4119-8862-d019563dd1e3",
-        "practices": ["strings"],
-        "prerequisites": [
-          "basics",
-          "strings",
-          "numbers",
-          "conditionals",
-          "bools"
-        ],
+        "practices": ["conditionals"],
+        "prerequisites": ["basics", "numbers", "conditionals", "bools"],
         "difficulty": 1
       },
       {
@@ -556,16 +558,8 @@
         "slug": "acronym",
         "name": "Acronym",
         "uuid": "038c7f7f-02f6-496f-9e16-9372621cc4cd",
-        "practices": ["string-methods"],
+        "practices": ["regular-expressions"],
         "prerequisites": ["basics", "loops", "strings", "string-methods"],
-        "difficulty": 2
-      },
-      {
-        "slug": "darts",
-        "name": "Darts",
-        "uuid": "cb581e2c-66ab-4221-9884-44bacb7c4ebe",
-        "practices": ["comparisons"],
-        "prerequisites": ["basics", "numbers", "comparisons", "conditionals"],
         "difficulty": 2
       },
       {
@@ -595,7 +589,7 @@
         "slug": "scrabble-score",
         "name": "Scrabble Score",
         "uuid": "d081446b-f26b-41a2-ab7f-dd7f6736ecfe",
-        "practices": ["dicts"],
+        "practices": ["regular-expressions"],
         "prerequisites": [
           "basics",
           "lists",
@@ -725,6 +719,21 @@
           "numbers",
           "strings",
           "string-methods"
+        ],
+        "difficulty": 2
+      },
+      {
+        "slug": "matching-brackets",
+        "name": "Matching Brackets",
+        "uuid": "45229a7c-6703-4240-8287-16645881a043",
+        "practices": ["conditionals"],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "lists",
+          "loops",
+          "strings"
         ],
         "difficulty": 2
       },
@@ -1316,21 +1325,6 @@
           "list-methods",
           "loops",
           "tuples"
-        ],
-        "difficulty": 4
-      },
-      {
-        "slug": "matching-brackets",
-        "name": "Matching Brackets",
-        "uuid": "45229a7c-6703-4240-8287-16645881a043",
-        "practices": ["conditionals"],
-        "prerequisites": [
-          "basics",
-          "bools",
-          "conditionals",
-          "lists",
-          "loops",
-          "strings"
         ],
         "difficulty": 4
       },
