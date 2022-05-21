@@ -5,28 +5,35 @@
       "slug": "installation",
       "path": "docs/INSTALLATION.md",
       "title": "Installing Python locally",
-      "blurb": "Learn how to install Python locally to solve Exercism's exercises on your own machine"
+      "blurb": "Learn how to install Python locally to solve Exercism's exercises on your own machine."
     },
     {
       "uuid": "8508154c-70e2-4f98-8262-20190db15c1f",
       "slug": "learning",
       "path": "docs/LEARNING.md",
       "title": "How to learn Python",
-      "blurb": "An overview of how to get started from scratch with Python"
+      "blurb": "An overview of how to get started from scratch with Python."
     },
     {
       "uuid": "8666f259-de7d-4928-ae6f-15ff6fe6bb74",
       "slug": "tests",
       "path": "docs/TESTS.md",
       "title": "Testing on the Python track",
-      "blurb": "Learn how to test your Python exercises on Exercism"
+      "blurb": "Learn how to test your Python exercises on Exercism."
+    },
+    {
+      "uuid": "f18d3af2-fb71-41c6-984a-32b3ba86bf02",
+      "slug": "problem-solving",
+      "path": "docs/PROBLEM-SOLVING.md",
+      "title": "Problem Solving Resources",
+      "blurb": "Learn some general problem-solving techniques to help you with programming."
     },
     {
       "uuid": "73ced51d-76d0-45af-952c-8a6d7b5f3f7a",
       "slug": "resources",
       "path": "docs/RESOURCES.md",
       "title": "Useful Python resources",
-      "blurb": "A collection of useful resources to help you master Python"
+      "blurb": "A collection of useful resources to help you master Python."
     },
     {
       "uuid": "0dbb029b-ec67-4bbe-9ff7-483bf3a96af1",
