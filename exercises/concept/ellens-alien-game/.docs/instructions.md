@@ -108,16 +108,17 @@ For example:
 2
 ```
 
-## 7. Object Creation
+## 7. Creating a List of Aliens
 
 Ellen loves what you've done so far, but she has one more favor to ask.
-She would like a standalone function to create a `list` of alien objects, given a list of positions (as `tuples`).
+She would like a standalone (_outside the `Alien()` class_) function that creates a `list` of `Alien()` objects, given a list of positions (as `tuples`).
 
 For example:
 
 ```python
 >>> alien_start_positions = [(4, 7), (-1, 0)]
 >>> aliens = new_aliens_collection(alien_start_positions)
+...
 >>> for alien in aliens:
     	print(alien.x_coordinate, alien.y_coordinate)
 (4, 7)
