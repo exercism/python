@@ -15,12 +15,12 @@ Below are some community-sourced articles, videos, and books that can help you d
 - [Felienne Hermans][felienne-hermans] is more focused on _how_ people learn the art of coding and how that maps to learning in general.
   She has written [The Programmers Brian][programmers-brain-free-online], with strategies for reading code better, thinking about code clearly, writing better code, and becoming a better code collaborator.
   - You can order a physical copy of her book [here][programmers-brain-manning].
-  - She also has two interesting videos on the same topic: [How to Teach Programming (and other things??)][felienne-hermans-how-to-teach-programming] and [Writing is Programming is Writing][felienne-hermans-programming-is-writing-is-programming].
+  - She also has two interesting videos on the same topic: [How to Teach Programming (and other things??)][felienne-hermans-how-to-teach-programming] and [Programming is Writing is Programming ][felienne-hermans-programming-is-writing-is-programming].
 - [Algorithmic Thinking (Daniel Zingaro)][daniel-zingaro-algorithmic-thinking] from No Starch Press and [How to think like a programmer (Paul Vickers)][paul-vickers-how-to-think-like-a-programmer] also cover problem-solving when coding.
 - [Computational Thinking: A beginner's guide to problem-solving and programming (Karl Beecher)][beecher-computational-thinking] and [Computational Thinking for the Modern Problem-Solver (Riley and Hunt)][riley-and-hunt-computational-thinking]. Also offer strategies for thinking about problems and breaking them down for coding solutions.
 - [From Computing to Computational Thinking (Paul S. Wang)][wang-computational-thinking] is a bit more generalized and academic, but offers problem-solving strategies and structures that can apply to more than coding, and does not require prior programming knowledge.
 
-Many of the books above can also be read through the Association of Computing Machinery library.
+Some of the books above may also be read through the Association of Computing Machinery library.
 Membership (paid) information is available at [acm(dot)org][association-for-computing-machinery].
 
 
