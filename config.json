@@ -1234,7 +1234,7 @@
         "slug": "grep",
         "name": "Grep",
         "uuid": "ecc97fc6-2e72-4325-9b67-b56c83b13a91",
-        "practices": ["with"],
+        "practices": [],
         "prerequisites": [
           "basics",
           "bools",
@@ -1384,7 +1384,6 @@
         "name": "Linked List",
         "uuid": "ca7a8b16-e5d5-4211-84f0-2f8e35b4a665",
         "practices": [
-          "classes",
           "function-arguments",
           "iterators",
           "none",
@@ -1395,6 +1394,7 @@
           "basics",
           "bools",
           "conditionals",
+          "classes",
           "lists",
           "loops",
           "numbers"
@@ -1790,9 +1790,7 @@
           "bools",
           "conditionals",
           "classes",
-          "loops",
-          "numbers",
-          "classes"
+          "loops"
         ],
         "difficulty": 6
       },
