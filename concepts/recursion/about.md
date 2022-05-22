@@ -145,7 +145,7 @@ def paydates_for_year_rec(year, weekday, ordinal, month, day_num, output):
 ```
 
 Adya is happy that there are no more nested loops, no mutated state, and 2 fewer lines of code than her looping solution.
-Later, when she learns about tuples,  Adya may consider other approaches, such as `Calendar.itermonthdates`.
+Later, when she learns about tuples,  Adya may consider other approaches, such as using a list comprehension with `Calendar.itermonthdates`.
 She may also become concerned that the recursive approach uses more steps than the looping approach, and so is less performant.
 But, when faced with a solution that involves a lot of nested looping, extensive state mutation, and complex conditional logic, Adya may try to work it out recursively first.
 She may find it easier to initially reason through the problem when nesting, mutation, and complexity are minimized.
