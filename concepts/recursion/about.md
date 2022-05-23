@@ -9,7 +9,7 @@ Values used in each function call are placed in their own frame on the Python in
 If the total amount of function calls takes up more space than the stack has room for, it will result in an error.
 There may be some situations that are more readable and/or easier to reason through when expressed through recursion than when expressed through looping.
 
-## Tail Call
+## Recursive Variation: The Tail Call
 
 A tail call is when the last statement of a function only calls itself and nothing more.
 This example is not a tail call, as the function adds 1 to the result of calling itself
