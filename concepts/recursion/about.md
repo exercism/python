@@ -2,7 +2,7 @@
 
 Recursion is a way to repeatedly execute code inside a function through the function calling itself.
 Functions that call themselves are know as _recursive_ functions.
-It can be viewed as another way to loop/iterate. 
+Recursion can be viewed as another way to loop/iterate. 
 Like looping, a Boolean expression or `True/False` test is used to know when to stop the recursive execution.
 _Unlike_ looping, recursion without termination in Python cannot not run infinitely.
 Values used in each function call are placed in their own frame on the Python interpreter stack.
