@@ -12,7 +12,95 @@ If the total amount of function calls takes up more space than the stack has roo
 
 If there is risk of causing a stack error or overflow, why would anyone use a recursive strategy to solve a problem?
 There may be situations where a solution is more readable and/or easier to reason through when expressed through recursion than when expressed through looping.
-There may also be program constraints with using/mutating data, managing complexity, delegating responsibility, or organizing workloads. 
+There may also be program constraints with using/mutating data, managing complexity, delegating responsibility, or organizing workloads.
+
+## Looping vs Recursive Strategy: Indira's Insecurity
+
+Indira has her monthly social security auto-deposited in her bank account on the **_second Wednesday_** of every month.
+Indira is concerned about balancing her check book.
+She is afraid she will write checks before her money is deposited.
+She asks her granddaughter Adya to give her a list of dates her money will appear in her account.
+
+Adya, who is just learning how to program in Python, writes a program based on her first thoughts.
+She wants to return a `list` of the deposit dates so they can be printed.
+She wants to write a function that will work for _any year_.
+In case the schedule changes (_or in case other relatives want Adya to calculate their deposit schedules_),  she decides the function needs to take an additional parameter for the _weekday_.
+Finally, Adya decides that the function needs a parameter for _which weekday_ of the month it is: the first, second, etc.
+For all these requirements, she decides to use the `date` class imported from `datetime`.
+Putting all of that together, Adya comes up with:
+
+```
+from datetime import date
+
+
+def paydates_for_year(year, weekday, ordinal):
+    """Returns a list of the matching weekday dates.
+    
+    Keyword arguments:
+    year    -- the year, e.g. 2022
+    weekday -- the weekday, e.g. 3 (for Wednesday)
+    ordinal -- which weekday of the month, e.g. 2 (for the second)
+    """
+    output = []
+
+    for month in range(1, 13):
+        for day_num in range(1, 8):
+            if date(year, month, day_num).isoweekday() == weekday:
+                output.append(date(year, month, day_num + (ordinal - 1) * 7))
+                break
+    return output
+
+# find the second Wednesday of the month for all the months in 2022
+print(paydates_for_year(2022, 3, 2))
+```
+
+This  first iteration works, but Adya wonders if she can refactor the code to use fewer lines with less nested looping.
+She's also read that it is good to minimize mutating state, so she'd like to see if she can avoid mutating some of her variables such as `output`, `month`, and `day_num` .  
+
+She's read about recursion, and thinks about how she might change her program to use a recursive approach.
+The variables that are created and mutated in her looping function could  be passed in as arguments instead.
+Rather than  mutating the variables _inside_ her function, she could pass _updated values as arguments_ to the next function call.
+With those intentions she arrives at this recursive approach:
+
+```
+from datetime import date
+
+
+
+def paydates_for_year_rec(year, weekday, ordinal, month, day_num, output):
+    """Returns a list of the matching weekday dates
+    
+    Keyword arguments:
+    year    -- the year, e.g. 2022
+    weekday -- the weekday, e.g. 3 (for Wednesday)
+    ordinal -- which weekday of the month, e.g. 2 (for the second)
+    month   -- the month currently being processed
+    day_num -- the day of the month currently being processed
+    output  -- the list to be returned
+    """
+    if month == 13:
+        return output
+    if date(year, month, day_num).isoweekday() == weekday:
+        return paydates_for_year_rec(year, weekday, ordinal, month + 1, 1, output
+                                     + [date(year, month, day_num + (ordinal - 1) * 7)])
+    return paydates_for_year_rec(year, weekday, ordinal, month, day_num + 1, output)
+
+    # find the second Wednesday of the month for all the months in 2022
+    print(paydates_for_year_rec(2022, 3, 2, 1, 1, []))
+    
+```
+
+Adya is happy that there are no more nested loops, no mutated state, and 2 fewer lines of code!  
+
+She is a little concerned that the recursive approach uses more steps than the looping approach, and so is less "performant".
+But re-writing the problem using recursion has definitely helped her deal with ugly nested looping (_a performance hazard_), extensive state mutation, and confusion around complex conditional logic.
+It also feels more "readable" - she is sure that when she comes back to this code after a break, she will be able to read through and remember what it does more easily. 
+
+In the future, Adya may try to work through problems recursively first.
+She may find it easier to initially walk through the problem in clear steps when nesting, mutation, and complexity are minimized.
+After working out the basic logic, she can then focus on optimizing her initial recursive steps into a more performant looping approach.
+
+Even later, when she learns about `tuples`, Adya could consider further "optimizing" approaches, such as using a `list comprehension` with `Calendar.itermonthdates`, or memoizing certain values.
 
 ## Recursive Variation: The Tail Call
 
@@ -63,7 +151,7 @@ if __name__ == "__main__":
 
 ```
 
-You may find that a tail call may be easier to reason through than a recursive call that is not a tail call.
+You may find a tail call even easier to reason through than a recursive call that is not a tail call.
 However, it is always important when using recursion to know that there will not be so many iterations that the stack will overflow.
 
 ## Recursion Limits in Python
@@ -71,92 +159,8 @@ However, it is always important when using recursion to know that there will not
 Some languages are able to optimize tail calls so that each recursive call reuses the stack frame of the first call to the function, instead of adding another stack frame.
 Python is not one of those languages.
 To guard against stack overflow, Python has a recursion limit that defaults to one thousand frames.
-A [RecursionError][RecursionError] exception is raised when the interpreter detects that the recursion limit has been exceeded.
-It is possible to use the [sys.setrecursionlimit][setrecursionlimit] method to increase the recursion limit, but doing so runs the risk of having a runtime segmentation fault that will crash the program, and possibly the operating system.
-
-
-## Why Recursion? (Indira's Insecurity)
-
-Indira has her monthly social security auto-deposited in her bank account on the second Wednesday of every month.
-Indira is concerned about balancing her check book.
-She is afraid she will write checks before her money is deposited.
-She asks her granddaughter Adya to give her a list of dates her money will appear in her account.
-Adya, who is just learning how to program in Python, writes a program based on her first thoughts.
-She wants to return a list of the dates so it can be printed.
-She decides to use the `date` class imported from `datetime`.
-She wants to write a function that will work for any year.
-In case the schedule changes, or in case other relatives want Adya to calculate the schedule for their deposits, she decides the function needs a parameter for the weekday. 
-Finally, Adya decides that the function needs a parameter for which weekday of the month it is: the first, second, etc.
-Putting all of that together, Adya comes up with this.
-
-```python
-from datetime import date
-
-
-def paydates_for_year(year, weekday, ordinal):
-    """Returns a list of the matching weekday dates.
-    
-    Keyword arguments:
-    year    -- the year, e.g. 2022
-    weekday -- the weekday, e.g. 3 (for Wednesday)
-    ordinal -- which weekday of the month, e.g. 2 (for the second)
-    """
-    output = []
-
-    for month in range(1, 13):
-        for day_num in range(1, 8):
-            if date(year, month, day_num).isoweekday() == weekday:
-                output.append(date(year, month, day_num + (ordinal - 1) * 7))
-                break
-    return output
-
-# find the second Wednesday of the month for all the months in 2022
-print(paydates_for_year(2022, 3, 2))
-
-```
-
-The program works, but Adya wonders if she can refactor the code to use fewer lines with less nested looping.
-She would also like to use less mutating of variables, such as `output`, `month`, and `day_num`, because she's read that it is good to minimize mutating state.
-She's heard about recursion and thinks about how to change her program to use a recursive approach.
-The variables that are created and mutated in her looping function will now be passed in as arguments.
-Instead of mutating the variables inside her function, she will pass updated values as arguments to the next call of her function.
-With those intentions she arrives at this recursive approach
-
-```python
-from datetime import date
-
-
-
-def paydates_for_year_rec(year, weekday, ordinal, month, day_num, output):
-    """Returns a list of the matching weekday dates
-    
-    Keyword arguments:
-    year    -- the year, e.g. 2022
-    weekday -- the weekday, e.g. 3 (for Wednesday)
-    ordinal -- which weekday of the month, e.g. 2 (for the second)
-    month   -- the month currently being processed
-    day_num -- the day of the month currently being processed
-    output  -- the list to be returned
-    """
-    if month == 13:
-        return output
-    if date(year, month, day_num).isoweekday() == weekday:
-        return paydates_for_year_rec(year, weekday, ordinal, month + 1, 1, output
-                                     + [date(year, month, day_num + (ordinal - 1) * 7)])
-    return paydates_for_year_rec(year, weekday, ordinal, month, day_num + 1, output)
-
-    # find the second Wednesday of the month for all the months in 2022
-    print(paydates_for_year_rec(2022, 3, 2, 1, 1, []))
-    
-```
-
-Adya is happy that there are no more nested loops, no mutated state, and 2 fewer lines of code than her looping solution.
-Later, when she learns about tuples,  Adya may consider other approaches, such as using a list comprehension with `Calendar.itermonthdates`.
-She may also become concerned that the recursive approach uses more steps than the looping approach, and so is less performant.
-But, when faced with a solution that involves a lot of nested looping, extensive state mutation, and complex conditional logic, Adya may try to work it out recursively first.
-She may find it easier to initially reason through the problem when nesting, mutation, and complexity are minimized.
-After she's worked out the basic logic she can then work at optimizing the recursive solution into a more performant looping approach.
-
+A [RecursionError](https://docs.python.org/3.8/library/exceptions.html#RecursionError) exception is raised when the interpreter detects that the recursion limit has been exceeded.
+It is possible to use the [sys.setrecursionlimit](https://docs.python.org/3.8/library/sys.html#sys.setrecursionlimit) method to increase the recursion limit, but doing so runs the risk of having a runtime segmentation fault that will crash the program, and possibly the operating system.
 
 ## Resources
 
