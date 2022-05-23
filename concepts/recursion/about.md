@@ -61,7 +61,7 @@ if __name__ == "__main__":
 You may find that a tail call may be easier to reason through than a recursive call that is not a tail call.
 However, it is always important when using recursion to know that there will not be so many iterations that the stack will overflow.
 
-## Recursion Limit
+## Recursion Limits in Python
 
 Some languages are able to optimize tail calls so that each recursive call reuses the stack frame of the first call to the function, instead of adding another stack frame.
 Python is not one of those languages.
