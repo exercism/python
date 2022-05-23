@@ -67,7 +67,7 @@ Some languages are able to optimize tail calls so that each recursive call reuse
 Python is not one of those languages.
 To guard against stack overflow, Python has a recursion limit that defaults to one thousand frames.
 A [RecursionError][RecursionError] exception is raised when the interpreter detects that the recursion limit has been exceeded.
-It is possible to use the [sys.setrecursionlimit][setrecursionlimit] method to increase the recursion limit, but doing so runs the risk of having a runtime segmentation fault that will crash the program.
+It is possible to use the [sys.setrecursionlimit][setrecursionlimit] method to increase the recursion limit, but doing so runs the risk of having a runtime segmentation fault that will crash the program, and possibly the operating system.
 
 
 ## Why Recursion? (Indira's Insecurity)
