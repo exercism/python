@@ -7,7 +7,12 @@ And like looping, a Boolean expression or `True/False` test is used to know when
 _Unlike_ looping, recursion without termination in Python cannot not run infinitely.
 Values used in each function call are placed in their own frame on the Python interpreter stack.
 If the total amount of function calls takes up more space than the stack has room for, it will result in an error.
-There may be some situations that are more readable and/or easier to reason through when expressed through recursion than when expressed through looping.
+
+## Why Recursion?
+
+If there is risk of causing a stack error or overflow, why would anyone use a recursive strategy to solve a problem?
+There may be situations where a solution is more readable and/or easier to reason through when expressed through recursion than when expressed through looping.
+There may also be program constraints with using/mutating data, managing complexity, delegating responsibility, or organizing workloads. 
 
 ## Recursive Variation: The Tail Call
 
