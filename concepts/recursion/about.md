@@ -8,11 +8,24 @@ _Unlike_ looping, recursion without termination in Python cannot not run infinit
 Values used in each function call are placed in their own frame on the Python interpreter stack.
 If the total amount of function calls takes up more space than the stack has room for, it will result in an error.
 
-## Why Recursion?
+## Looping vs Recursive Implementation
+
+Looping and recursion may _feel_ similar in that they are both iterative.
+However, they both _look_ differently, both at the code level and at the implementation level.
+Looping can take place within the same frame on the call stack.
+It usually manages this by updating one or more variables to maintain state as it iterates.
+This is an efficient implementation, but it can be somewhat cluttered at the code level.
+Recursion, instead of updating state variables, can pass updated values as arguments to the next call of the same function.
+This declutters the body of the function, but it is a less effficient implementation, as each call to the same function adds another frame to the stack.
+
+## Recursion: Why and Why Not?
 
 If there is risk of causing a stack error or overflow, why would anyone use a recursive strategy to solve a problem?
 There may be situations where a solution is more readable and/or easier to reason through when expressed through recursion than when expressed through looping.
 There may also be program constraints with using/mutating data, managing complexity, delegating responsibility, or organizing workloads.
+Problems that lend themselves to recursion include complex but repetitive problems that grow smaller over time, particularly [divide and conquer][divide and conquer] algorithms and [cumulative][cumulative] algorithms.
+However, due to Python's limit for how many frames are allowed on the stack, not all problems will benefit from a fully recursive strategy.
+Problems less naturally suited to recursion include ones that have a steady state, but need to repeat for a certain number of cycles, problems that need to execute asynchronously, and situations calling for a great number of iterations.
 
 ## Looping vs Recursive Strategy: Indira's Insecurity
 
@@ -174,3 +187,5 @@ To learn more about using recursion in Python you can start with
 [Real Python: python-thinking-recursively]: https://realpython.com/python-thinking-recursively/
 [RecursionError]: https://docs.python.org/3.8/library/exceptions.html#RecursionError
 [setrecursionlimit]: https://docs.python.org/3.8/library/sys.html#sys.setrecursionlimit
+[divide and conquer]: https://afteracademy.com/blog/divide-and-conquer-approach-in-programming
+[cumulative]: https://www.geeksforgeeks.org/sum-of-natural-numbers-using-recursion/
