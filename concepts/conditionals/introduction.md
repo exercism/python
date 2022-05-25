@@ -44,9 +44,11 @@ y = 10
 z = 20
 
 # The elif statement allows for the checking of more conditions.
-if x > y and x > z:
+if x > y > z:
+
     print("x is greater than y and z")
-elif y > z:
+elif y > x > z:
+
     print("y is greater than x and z")
 else:
     print("z is greater than x and y")
