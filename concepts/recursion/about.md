@@ -148,7 +148,7 @@ The step is 2
 retval is 3 after recursion
 ```
 
-To refactor it to a tail call, make `j` a parameter of `printIncrement`
+To refactor it to a tail call, make `retval` a parameter of `print_increment`
 
 ```python
 def print_increment(step, max_value, retval):
