@@ -15,7 +15,8 @@ However, they _look_ different, both at the code level and at the implementation
 Looping can take place within the same frame on the call stack.
 This is usually managed by updating one or more variable values to progressively maintain state for each iteration.
 This is an efficient implementation, but it can be somewhat cluttered at the code level.
-Recursion, instead of updating state variables, can pass updated values as arguments to the next call of the same function.
+
+Recursion, rather than updating _variable state_, can pass _updated values_ directly as arguments to the next call (iteration) of the same function.
 This declutters the body of the function, but it is a less effficient implementation, as each call to the same function adds another frame to the stack.
 
 ## Recursion: Why and Why Not?
