@@ -11,7 +11,7 @@ If the total amount of function calls takes up more space than the stack has roo
 ## Looping vs Recursive Implementation
 
 Looping and recursion may _feel_ similar in that they are both iterative.
-However, they both _look_ differently, both at the code level and at the implementation level.
+However, they _look_ different, both at the code level and at the implementation level.
 Looping can take place within the same frame on the call stack.
 It usually manages this by updating one or more variables to maintain state as it iterates.
 This is an efficient implementation, but it can be somewhat cluttered at the code level.
