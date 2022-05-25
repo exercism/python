@@ -44,14 +44,16 @@ y = 10
 z = 20
 
 # The elif statement allows for the checking of more conditions.
-if x > y:
+if x > y > z:
+
     print("x is greater than y and z")
-elif y > z:
+elif y > x > z:
+
     print("y is greater than x and z")
 else:
-    print("z is great than x and y")
+    print("z is greater than x and y")
 ...
->>> z is great than x and y
+>>> z is greater than x and y
 ```
 
 [Boolen operations][boolean operations] and [comparisons][comparisons] can be combined with conditionals for more complex testing:

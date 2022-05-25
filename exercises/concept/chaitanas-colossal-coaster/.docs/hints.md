@@ -19,7 +19,7 @@ Make sure you have a good understanding of how to create and update lists.
 
 - You know the mean persons name, so you can `remove()` them from the queue.
 
-# 5. Namefellows
+## 5. Namefellows
 
 -  `count()`-ing the occurrences of the `name` in the queue could be a good strategy here.
 
