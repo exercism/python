@@ -13,7 +13,7 @@ If the total amount of function calls takes up more space than the stack has roo
 Looping and recursion may _feel_ similar in that they are both iterative.
 However, they _look_ different, both at the code level and at the implementation level.
 Looping can take place within the same frame on the call stack.
-It usually manages this by updating one or more variables to maintain state as it iterates.
+This is usually managed by updating one or more variable values to progressively maintain state for each iteration.
 This is an efficient implementation, but it can be somewhat cluttered at the code level.
 Recursion, instead of updating state variables, can pass updated values as arguments to the next call of the same function.
 This declutters the body of the function, but it is a less effficient implementation, as each call to the same function adds another frame to the stack.
