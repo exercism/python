@@ -17,7 +17,8 @@ This is usually managed by updating one or more variable values to progressively
 This is an efficient implementation, but it can be somewhat cluttered at the code level.
 
 Recursion, rather than updating _variable state_, can pass _updated values_ directly as arguments to the next call (iteration) of the same function.
-This declutters the body of the function, but it is a less effficient implementation, as each call to the same function adds another frame to the stack.
+This declutters the body of the function and can clarify how each update happens.
+However,  it is also a less efficient implementation, as each call to the same function adds another frame to the stack.
 
 ## Recursion: Why and Why Not?
 
