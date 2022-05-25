@@ -23,6 +23,7 @@ However,  it is also a less efficient implementation, as each call to the same f
 ## Recursion: Why and Why Not?
 
 If there is risk of causing a stack error or overflow, why would anyone use a recursive strategy to solve a problem?
+_Readability, traceability, and intent._ 
 There may be situations where a solution is more readable and/or easier to reason through when expressed through recursion than when expressed through looping.
 There may also be program constraints with using/mutating data, managing complexity, delegating responsibility, or organizing workloads.
 Problems that lend themselves to recursion include complex but repetitive problems that grow smaller over time, particularly [divide and conquer][divide and conquer] algorithms and [cumulative][cumulative] algorithms.
