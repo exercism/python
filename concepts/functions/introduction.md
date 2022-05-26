@@ -21,7 +21,7 @@ hello()
 
 ```
 
-The [`def`][def] keyword is used to signal the beginning of the function definition.
+In the example above, the [`def`][def] keyword is used to signal the beginning of the function definition.
 `hello` is the name of the function.
 The empty parentheses represent that no values are being passed to the function.
 The body of the function is the single `print("Hello")` statement.
