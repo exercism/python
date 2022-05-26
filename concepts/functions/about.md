@@ -78,10 +78,10 @@ def add(x, y):
 
 ```
 
-The parameters `x` and `y` defiune what arguments the `add` function will accept.
+The parameters `x` and `y` define what arguments the `add` function will accept.
 (It should be noted that the words `parameter` and `argument` are often used interchangeably, albeit imprecisely.)
 When the function is called, the arguments are passed to the function.
-We need to pass values for both of the parameters, otherwise a [`TypeError`][type-error] will be raised.
+We need to pass arguments for both of the parameters, otherwise a [`TypeError`][type-error] will be raised.
 
 ```python
 >>> add(2, 3)
