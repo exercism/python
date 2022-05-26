@@ -1,6 +1,6 @@
 # Introduction
 
-A [`function`][function] is a way to compartmentalize code so it can be called from one or more places in the program.
+A [`function`][function] is a way to compartmentalize code so it can be called by name from one or more places in the program.
 Functions are used to perform specific and repetitive tasks throughout a program.
 
 More formally: a function is any Python object to which the [`function call`][calls] operation can be applied.
