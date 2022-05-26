@@ -10,8 +10,11 @@ If a function does not specify a return value it will still return `None`.
 Following is an example of a function with a side effect
 
 ```python
-def hello():
-    print("Hello")
+>>> def hello():
+...        print("Hello")
+...
+>>> hello()
+"Hello"
 
 
 hello()
