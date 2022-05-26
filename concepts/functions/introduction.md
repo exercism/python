@@ -7,7 +7,7 @@ More formally: a function is any Python object to which the [`function call`][ca
 A function may be used to [`return`][return] one or more values as a result of some operation(s), or it may be used for one or more [`side effects`][side effects].
 If a function does not specify a return value it will still return `None`. 
 
-Following is an example of a function with a side effect
+Following is an example of a function with a side effect:
 
 ```python
 >>> def hello():
@@ -34,7 +34,7 @@ The function body ends at either the end of the program or just before the next 
 Since the `hello` function does not specify a `return` value, it executes its side effect - which is calling the `print` function - and returns `None`.
 Finally, we call the function by using its name and the parentheses.
 
-Following is an example of a function with a return value
+Following is an example of a function with a return value:
 
 ```python
 def hello():
@@ -58,7 +58,7 @@ This is different from a language such as Ruby which does not require empty pare
 
 A function can define zero or more [`parameters`][parameters]. A parameter defines what argument(s) the function accepts.
 
-Following is an example of a function which accepts an argument
+Following is an example of a function which accepts an argument:
 
 ```python
 def hello(name):
@@ -75,17 +75,19 @@ The program outputs `Hello, Bob`.
 
 What if someone calls `hello` without passing an argument?
 The program would error with a report that an argument is missing.
-If we don't want the program  to error with no argument, we can define a [`default argument`][default arguments].
+If we don't want the program to error with no argument (but want to allow the calling code to not supply one), we can define a [default argument][default arguments].
 A default argument defines what value to use if the argument is missing when the function is called.
 
 Following is an example of a function with a default argument:
 
 ```python
 >>> def hello(name="you"):
-...        return f"Hello, {name}"
-...
+        return f"Hello, {name}"
+
 >>> print(hello())
 Hello, you
+
+```
 
 The `name` parameter is given the default argument of `"you"`, so the program outputs `Hello, you`, if not passed a `name` argument.
 
