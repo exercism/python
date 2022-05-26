@@ -81,13 +81,11 @@ A default argument defines what value to use if the argument is missing when the
 Following is an example of a function with a default argument
 
 ```python
-def hello(name="you"):
-    return f"Hello, {name}"
-
-
-print(hello())
-
-```
+>>> def hello(name="you"):
+...        return f"Hello, {name}"
+...
+>>> print(hello())
+Hello, you
 
 The `name` parameter is given the default argument of `"you"`, so the program outputs `Hello, you`.
 
