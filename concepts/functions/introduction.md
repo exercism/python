@@ -1,7 +1,7 @@
 # Introduction
 
 A [`function`][function] is a way to compartmentalize code so it can be called by name from one or more places in the program.
-Functions are used to perform specific and repetitive tasks throughout a program.
+Functions are used to perform specific and repetitive tasks.
 
 More formally: a function is any Python object to which the [`function call`][calls] operation can be applied.
 A function may be used to [`return`][return] one or more values as a result of some operation(s), or it may be used for one or more [`side effects`][side effects].
