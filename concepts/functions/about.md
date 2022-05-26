@@ -6,21 +6,32 @@ Python, like other programming languages, has [_built-in functions_][build-in fu
 You can also define your own functions. Those are called [`user-defined functions`][user defined functions].
 Functions can run something as simple as _printing a message to the console_ or they can be quite complex.
 
-To execute the code inside a function, you need to call the function, which is done by using the function name followed by parenthesis [`()`].
-Data. known as `parameters`, can be passed to the function by placing them inside the parenthesis. A broader term for parameters is `arguments`. Functions can perform different tasks depending on the value of the parameters.
+To execute the code inside a function, you need to call the function, which is done by using the function name followed by parenthesese [`()`].
+Data. known as [`arguments`][arguments], can be passed to the function by placing them inside the parenthesese.
+In the function definition any arguments are defined by [`parameters`][parameters].
+Functions can perform different tasks depending on the arguments passed to the parameters.
 
-A function can also return a value using the `return` keyword. The value returned by the function is known as the `return value`. The return value is returned to the caller of the function.
+A function can also return a value using the [`return`][return] keyword.
+The value returned by the function is known as the `return value`.
+The return value is returned to the caller of the function.
 
 ## Creation
 
-In python, functions are created using the `def` keyword. The function definition is followed by the function name and parenthesis [`()`]. Inside the parenthesis, the parameters are specified, separated by commas. After the close parenthesis, the colon (`:`) is used to separate the function signature from the function body.
+In python, functions are created using the [`def`][def] keyword.
+The function definition is followed by the function name and parentheses [`()`].
+Inside the parentheses, the parameters are specified, separated by commas.
+After the close parenthesis, the colon (`:`) is used to separate the function signature from the function body.
 
-The function body is a block of code that is executed when the function is called. The body of the function is indented. The indentation is important because Python relies on it to know where that block of code ends. A value can be returned from the function by using the `return` keyword, which can then be used by the caller of the function.
+The function body is a block of code that is executed when the function is called.
+The body of the function is indented.
+The indentation is important because Python relies on it to know where that block of code ends.
+A value can be returned from the function by using the `return` keyword, which can then be used by the caller of the function.
 
 ```python
 def function_name(parameter1, parameter2, ...):
     # function body
-    return value
+    return parameter1 + parameter2
+
 ```
 
 We can also define a function without any parameters or return value.
@@ -28,38 +39,49 @@ We can also define a function without any parameters or return value.
 ```python
 def function_name():
     # function body
+    pass
+
 ```
+
+Note that the function does need a body, even if the body does nothing, or trying to run the program will generate an indentation error.
 
 ## Calling a Function
 
-To call a function, use the function name followed by parenthesis [`()`]. Parameters passed to the function are placed inside the parenthesis, separated by commas.
+To call a function, use the function name followed by parenthesese [`()`].
+Parameters passed to the function are placed inside the parenthesese, separated by commas.
 
 Consider the following function:
 
 ```python
-def wish():
+def greet():
     print("Hello")
+
 ```
 
 The above function can be called by using the following syntax:
 
 ```python
->>> wish()
+>>> greet()
 Hello
 ```
 
-## Parameters
+## Parameters and their Arguments
 
-Parameters are values that are passed to the function when it is called. They can be of any data type.
+Arguments are values that are passed to the function when it is called.
+They can be of any data type.
 
 Let's define a function `add` which adds two numbers together:
 
 ```python
 def add(x, y):
     print(x + y)
+
 ```
 
-When the function is called, the parameters are passed to the function. We need to pass values for both the parameters, otherwise a [`TypeError`][type-error] will be raised.
+The parameters `x` and `y` defiune what arguments the `add` function will accept.
+(It should be noted that the words `parameter` and `argument` are often used interchangeably, albeit imprecisely.)
+When the function is called, the arguments are passed to the function.
+We need to pass values for both of the parameters, otherwise a [`TypeError`][type-error] will be raised.
 
 ```python
 >>> add(2, 3)
@@ -85,13 +107,17 @@ TypeError: add() takes 2 positional arguments but 3 were given
 
 ## Return Value
 
-The return value is a value that is returned to the caller of the function. Return value can be of any data type. It can be used by caller of the function to perform further operations. If the function does not explicitly return a value, the value `None` is returned.
+The return value is a value that is returned to the caller of the function.
+Return value can be of any data type.
+It can be used by caller of the function to perform further operations.
+If the function does not explicitly return a value, the value `None` is returned.
 
 Let's define a function `add`:
 
 ```python
 def add(x, y):
     return x + y
+
 ```
 
 We can store the return value in a variable and then print it:
@@ -134,7 +160,8 @@ Use of `return` immediately exits the function and returns the value to the call
 
 ## Modularity
 
-Complex programs can be broken down into smaller parts. Different functions can be used to perform different specific tasks.
+Complex programs can be broken down into smaller parts.
+Different functions can be used to perform different specific tasks.
 
 Assume a program has to perform the following tasks:
 
@@ -153,6 +180,7 @@ def rectangle_area(length, breadth):
 
 def triangle_area(base, height):
     return 0.5 * base * height
+
 ```
 
 Now, we can call the functions in the order we want.
@@ -170,7 +198,9 @@ Now, we can call the functions in the order we want.
 
 ## Scope of Variables
 
-If variable is defined inside a function, then it will be only accessible inside the function. If we want to access the variable outside the function, we need to use the [`global`][global] keyword. [`nonlocal`][nonlocal] keyword is used to access the variable inside a nested function.
+If variable is defined inside a function, then it will be only accessible inside the function.
+If we want to access the variable outside the function, we need to use the [`global`][global] keyword.
+[`nonlocal`][nonlocal] keyword is used to access the variable inside a nested function.
 
 ```python
 >>> x = 30
@@ -179,7 +209,8 @@ If variable is defined inside a function, then it will be only accessible inside
         print('Inside function:', x)
 ```
 
-As `x` is defined inside the `random_function`, it is limited to the scope of the `random_function` only. Calling the function will not alter the value of the variable outside the function.
+As `x` is defined inside the `random_function`, it is limited to the scope of the `random_function` only.
+Calling the function will not alter the value of the variable outside the function.
 
 ```python
 >>> x = 30
@@ -212,7 +243,11 @@ Inside function: 10
 
 ## Functions as first class objects
 
-In python, functions can be assigned to variables and passed as arguments to other functions. They can be used as return values. Functions can also be placed into a sequence([`list`][list], [`tuple`][tuple] etc) or as value in a [`dict`][dict]. Functions can be used anywhere than any other object can be used. This is because _functions are [`first class objects`][first class objects]_.
+In python, functions can be assigned to variables and passed as arguments to other functions.
+They can be used as return values.
+Functions can also be placed into a sequence([`list`][list], [`tuple`][tuple] etc) or as value in a [`dict`][dict].
+Functions can be used anywhere any other object can be used.
+This is because _functions are [`first class objects`][first class objects]_.
 
 ```python
 # print is a function
@@ -299,16 +334,20 @@ Functions in python have special attributes. Some of them are:
 
 The full list of function attributes can be found at [Python DataModel][attributes].
 
+[arguments]: https://www.w3schools.com/python/gloss_python_function_arguments.asp
 [attributes]: https://docs.python.org/3/reference/datamodel.html#index-33
 [build-in functions]: https://docs.python.org/3/library/functions.html
+[def]: https://www.geeksforgeeks.org/python-def-keyword/
 [dict]: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
 [first class objects]: https://en.wikipedia.org/wiki/First-class_object
 [function]: https://docs.python.org/3/glossary.html#term-function
-[global]: https://docs.python.org/3/reference/compound_stmts.html#global
+[global]: https://www.programiz.com/python-programming/global-keyword
 [list]: https://docs.python.org/3/tutorial/datastructures.html#list-objects
 [map]: https://docs.python.org/3/library/functions.html#map
-[nonlocal]: https://docs.python.org/3/reference/compound_stmts.html#nonlocal
+[nonlocal]: https://www.geeksforgeeks.org/python-nonlocal-keyword/
+[parameters]: https://www.codecademy.com/learn/flask-introduction-to-python/modules/learn-python3-functions/cheatsheet
 [print]: https://docs.python.org/3/library/functions.html#print
+[return]: https://www.geeksforgeeks.org/python-return-statement/
 [tuple]: https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences
 [type-error]: https://docs.python.org/3/library/exceptions.html#TypeError
 [user defined functions]: https://en.wikipedia.org/wiki/User-defined_function
