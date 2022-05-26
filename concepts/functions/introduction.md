@@ -78,7 +78,7 @@ The program would error with a report that an argument is missing.
 If we don't want the program  to error with no argument, we can define a [`default argument`][default arguments].
 A default argument defines what value to use if the argument is missing when the function is called.
 
-Following is an example of a function with a default argument
+Following is an example of a function with a default argument:
 
 ```python
 >>> def hello(name="you"):
