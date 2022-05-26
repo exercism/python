@@ -24,7 +24,10 @@ The empty parentheses represent that no values are being passed to the function.
 The body of the function is the single `print("Hello")` statement.
 `print` is also a function.
 The `"Hello"`  in the `print` function's parentheses is known as an [`argument`][arguments].
-The argument is used by the `print` function to know what to print. 
+The argument is used by the `print` function to know what to print.
+Note that the body of the function is indented.
+The indentation is important because Python relies on it to know where that block of code ends.
+The function body ends at either the end of the program or just before the next line of code that is _not_ indented.
 Since the `hello` function does not specify a `return` value, it executes its side effect - which is calling the `print` function - and returns `None`.
 Finally, we call the function by using its name and the parentheses.
 
