@@ -77,6 +77,8 @@ Following is an example of keyword arguments being called by their keyword and b
 Hello, Bob
 >>> print(concat("Hello, ", "Bob"))
 Hello, Bob
+>>> print(concat())
+Hello, you
 
 ```
 
@@ -91,6 +93,8 @@ Following is an example of keyword-only arguments:
 
 >>> print(concat(y="Bob", x="Hello, "))
 Hello, Bob
+>>> print(concat())
+Hello, you
 >>> print(concat("Hello, ", "Bob"))
 Traceback (most recent call last):
     print(concat("Hello, ", "Bob"))
