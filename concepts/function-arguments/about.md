@@ -29,6 +29,20 @@ Hello, Bob
 The first call to `concat` passes the arguments by position.
 The second call to `concat` passes the arguments by keyword, allowing their positions to be changed.
 
+Note that positional arguments cannot follow keyword arguments.
+
+This
+
+```python
+>>> print(concat(x="Hello, ", "Bob"))
+```
+
+results in this error:
+
+```
+SyntaxError: positional argument follows keyword argument
+```
+
 Arguments can be forced to be positional-only through the use of the `/` operator.
 
 Following is an example of positional-only arguments:
