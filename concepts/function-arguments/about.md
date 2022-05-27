@@ -129,8 +129,62 @@ TypeError: concat() got some positional-only arguments passed as keyword argumen
 
 ## `*args`
 
+Code examples will often use a function definition like the following:
+
+```python
+def my_function(*args, **vargs):
+    # code snipped
+
+```
+
+`*args` is a two-part name that represents an indefinite number of separate arguments, which is also known as a variadic argument.
+`args` is the name of the group of arguments and could be any other name, such as `my_args`, `arguments`, etc.
+The `*` is the operator which transforms the group of separate arguments into a [`tuple`][tuple].
+Since a tuple can be iterated, `args` can be passed to any other function which takes an iterable.
+Although `*args` is commonly juxtaposed with `**vargs`, it doesn't have to be
+
+Following is an example of an arbitrary amount of values being passed to a function between a positonal argument and a keyword argument:
+
+```python
+
+>>> def add(first, *args, last=0):
+        return first + sum(args) + last
+
+
+>>> print(add(1, 2, 3))
+6
+>>> print(add(1, 2, 3, last=4))
+10
+>>> print(add(*[1, 2, 3]))
+6
+
+```
+
+Note that when an argument is already in an iterable, such as a tuple or list, it needs to be unpacked before being passed to a function that takes an arbitrary amount of separate arguments.
+This is accomplished by `*`, which is the [unpacking operator][unpacking operator].
+This unpacks the list into its separate elements which are then transformed by `*args` into a tuple.
+Without unpacking the list passed into `add`, the program would error.
+
+```python
+>>>> def add(first, *args, last=0):
+        return first + sum(args) + last
+
+
+>>>> print(add([1, 2, 3]))
+Traceback (most recent call last):
+    print(add([1, 2, 3]))
+    return first + sum(args) + last
+TypeError: can only concatenate list (not "int") to list
+
+```
+
+What happened is that the `*` in `*args` only unpacked the list into its separate elements, and it was done.
+It did not reassemble the elements into a tuple.
+
 ## `**vargs`
 
 [default arguments]: https://www.geeksforgeeks.org/default-arguments-in-python/
 [function concept]: ../functions/about.md
+[tuple]: https://www.w3schools.com/python/python_tuples.asp
+[unpacking operator]: https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists
 
