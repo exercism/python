@@ -59,6 +59,8 @@ Following is an example of keyword arguments being called by their keyword and b
 Hello, Bob
 >>> print(concat("Hello, ", y="Bob"))
 Hello, Bob
+>>> print(concat())
+Hello, you
 
 ```
 
