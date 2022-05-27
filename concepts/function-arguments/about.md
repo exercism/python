@@ -103,7 +103,7 @@ TypeError: concat() takes 0 positional arguments but 2 were given
 Arguments can be positional or keyword if neither the `/` nor `*` operators are used in the parameter definitions.
 Alternately, the positional-or-keyword arguemtns can be placed between the positional-only parameters on the left and the keyword-only parameters on the right.
 
-Following is an example of positonal-only, positional-or-keyword, and keyword-only arguments:
+Following is an example of positional-only, positional-or-keyword, and keyword-only arguments:
 
 ```python
 >>> def concat(x, /,  y="you", *, z="."):
@@ -114,6 +114,8 @@ Following is an example of positonal-only, positional-or-keyword, and keyword-on
 Hello, Bob!
 >>> print(concat("Hello, ", y="Bob", z="!"))
 Hello, Bob!
+>>> print(concat("Hello, "))
+Hello, you.
 >>> print(concat(x="Hello, ", y="Bob", z="!"))
 Traceback (most recent call last):
     print(concat(x="Hello, ", y="Bob", z="!"))
