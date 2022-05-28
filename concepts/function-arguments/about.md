@@ -129,19 +129,19 @@ TypeError: concat() got some positional-only arguments passed as keyword argumen
 
 ## `*args`
 
-Code examples will often use a function definition like the following:
+Code examples will often use a function definition something like the following:
 
 ```python
-def my_function(*args, **vargs):
+def my_function(*args, **kwargs):
     # code snipped
 
 ```
 
-`*args` is a two-part name that represents an indefinite number of separate arguments, which is also known as a variadic argument.
+`*args` is a two-part name that represents an indefinite number of separate positional arguments, which is also known as a variadic argument.
 `args` is the name of the group of arguments and could be any other name, such as `my_args`, `arguments`, etc.
 The `*` is the operator which transforms the group of separate arguments into a [`tuple`][tuple].
 Since a tuple can be iterated, `args` can be passed to any other function which takes an iterable.
-Although `*args` is commonly juxtaposed with `**vargs`, it doesn't have to be
+Although `*args` is commonly juxtaposed with `**kwargs`, it doesn't have to be.
 
 Following is an example of an arbitrary amount of values being passed to a function between a positonal argument and a keyword argument:
 
@@ -181,10 +181,44 @@ TypeError: can only concatenate list (not "int") to list
 What happened is that the `*` in `*args` only unpacked the list into its separate elements, and it was done.
 It did not reassemble the elements into a tuple.
 
-## `**vargs`
+## `**kwargs`
+
+`**kwargs` is a two-part name that represents an indefinite number of separate [key-value pair][key-value] arguments.
+`kwargs` is the name of the group of arguments and could be any other name, such as `my_args`, `arguments`, etc.
+The `**` is the operator which transforms the group of separate arguments into a [`dictionary`][dictionary].
+Since a dictionary can be iterated, `kwargs` can be passed to any other function which takes an iterable.
+Although `**kwargs` is commonly juxtaposed with `*args`, it doesn't have to be.
+
+Following is an example of an arbitrary amount of key-value pairs being passed to a function:
+
+```python
+>>> def add(**kwargs):
+        return sum(kwargs.values())
+
+
+>>> print(add(one=1, two=2, three=3))
+6
+```
+
+Note that the `values()` method is called to iterate on the dictionary values.
+When iterating a dictionary the default is to iterate the keys.
+
+Following is an example of an arbitrary amount of key-value pairs being passed to a function that iterates the keys:
+
+```python
+>>> def concat(**kwargs):
+        return " ".join(kwargs)
+
+
+>>> print(concat(one=1, two=2, three=3))
+one two three
+
+```
 
 [default arguments]: https://www.geeksforgeeks.org/default-arguments-in-python/
+[dictionary]: https://www.w3schools.com/python/python_dictionaries.asp
 [function concept]: ../functions/about.md
+[key-value]: https://www.pythontutorial.net/python-basics/python-dictionary/
 [tuple]: https://www.w3schools.com/python/python_tuples.asp
 [unpacking operator]: https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists
 
