@@ -10,9 +10,9 @@ Parameter names should not contain spaces or punctuation.
 ## Positional Arguments
 
 Positional arguments are for parameters defined without a [default argument][default arguments].
-Positional arguments can optionally be called by their keyword.
+Positional arguments can optionally be called by their name.
 
-Following is an example of positional arguments being called by position and by their keyword:
+Following is an example of positional arguments being called by position and by their name:
 
 ```python
 >>> def concat(x, y):
@@ -41,7 +41,7 @@ SyntaxError: positional argument follows keyword argument
 ```
 
 The first call to `concat` passes the arguments by position.
-The second call to `concat` passes the arguments by keyword, allowing their positions to be changed.
+The second call to `concat` passes the arguments by name, allowing their positions to be changed.
 
 ## Keyword Arguments
 
