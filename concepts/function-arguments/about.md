@@ -16,9 +16,8 @@ Following is an example of positional arguments being called by position and by 
 
 ```python
 >>> def concat(x, y):
-        return f"{x}{y}"
-
-
+...         return f"{x}{y}"
+... 
 >>> print(concat("Hello, ", "Bob"))
 Hello, Bob
 >>> print(concat(y="Bob", x="Hello, "))
@@ -49,9 +48,8 @@ Following is an example of positional-only arguments:
 
 ```python
 >>> def concat(x, y, /):
-        return f"{x}{y}"
-
-
+...         return f"{x}{y}"
+... 
 >>> print(concat("Hello, ", "Bob"))
 Hello, Bob
 >>> print(concat(y="Bob", x="Hello, "))
@@ -70,9 +68,8 @@ Following is an example of keyword arguments being called by their keyword and b
 
 ```python
 >>> def concat(x="Hello, ", y="you"):
-        return f"{x}{y}"
-
-
+...         return f"{x}{y}"
+... 
 >>> print(concat(y="Bob", x="Hello, "))
 Hello, Bob
 >>> print(concat("Hello, ", "Bob"))
@@ -88,9 +85,8 @@ Following is an example of keyword-only arguments:
 
 ```python
 >>> def concat(*, x="Hello, ", y="you"):
-        return f"{x}{y}"
-
-
+...         return f"{x}{y}"
+... 
 >>> print(concat(y="Bob", x="Hello, "))
 Hello, Bob
 >>> print(concat())
@@ -111,9 +107,8 @@ Following is an example of positional-only, positional-or-keyword, and keyword-o
 
 ```python
 >>> def concat(x, /,  y="you", *, z="."):
-        return f"{x}{y}{z}"
-
-
+...         return f"{x}{y}{z}"
+... 
 >>> print(concat("Hello, ", "Bob", z="!"))
 Hello, Bob!
 >>> print(concat("Hello, ", y="Bob", z="!"))
@@ -148,9 +143,8 @@ Following is an example of an arbitrary amount of values being passed to a funct
 ```python
 
 >>> def add(first, *args, last=0):
-        return first + sum(args) + last
-
-
+...         return first + sum(args) + last
+... 
 >>> print(add(1, 2, 3))
 6
 >>> print(add(1, 2, 3, last=4))
@@ -167,9 +161,8 @@ Without unpacking the list passed into `add`, the program would error.
 
 ```python
 >>>> def add(first, *args, last=0):
-        return first + sum(args) + last
-
-
+...         return first + sum(args) + last
+... 
 >>>> print(add([1, 2, 3]))
 Traceback (most recent call last):
     print(add([1, 2, 3]))
@@ -193,9 +186,8 @@ Following is an example of an arbitrary amount of key-value pairs being passed t
 
 ```python
 >>> def add(**kwargs):
-        return sum(kwargs.values())
-
-
+...         return sum(kwargs.values())
+... 
 >>> print(add(one=1, two=2, three=3))
 6
 ```
@@ -207,9 +199,8 @@ Following is an example of an arbitrary amount of key-value pairs being passed t
 
 ```python
 >>> def concat(**kwargs):
-        return " ".join(kwargs)
-
-
+...         return " ".join(kwargs)
+... 
 >>> print(concat(one=1, two=2, three=3))
 one two three
 
@@ -221,4 +212,3 @@ one two three
 [key-value]: https://www.pythontutorial.net/python-basics/python-dictionary/
 [tuple]: https://www.w3schools.com/python/python_tuples.asp
 [unpacking operator]: https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists
-
