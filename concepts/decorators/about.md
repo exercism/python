@@ -1,10 +1,10 @@
 # About
 
 Decorators are functions that take another function as an argument for the purpose of extending or replacing the behavior of the function argument.
-If function `A` is a decorator, and function `B` is its argument, then function `A` extends or replaces function `B`'s behavior _without modifying_ it.
+If function `A` is a decorator, and function `B` is its argument, then function `A` extends or replaces function `B`'s behavior _without modifying_ function `B`.
 We say that the decorator function `A` _wraps_ function `B`.
 The wrapped function is not actually changed.
-Beahvior is either added around the wrapped function, or the wrapped function's behavior is substituted.
+Behavior is either added around the wrapped function, or the wrapped function's behavior is substituted.
 
 ## A Decorator is a Higher-Order Function
 
@@ -213,7 +213,7 @@ The first lines validate that `factor` is not `0`.
 Then the outer wrapper is defined.
 This has the same signature we expect for an unparameterized decorator.
 The outer wrapper has an inner function with the same signature as the original function.
-The inner wrapper does the work of multiplying the returned value from the orignal function by the argument passed to the decorator.
+The inner wrapper does the work of multiplying the returned value from the original function by the argument passed to the decorator.
 The outer wrapper returns the inner wrapper, and the decorator returns the outer wrapper.
 
 Following is an example of a parameterized decorator that controls whether it validates the argument passed to the original function:
