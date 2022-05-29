@@ -16,9 +16,8 @@ Following is an example of positional arguments being called by position and by 
 
 ```python
 >>> def concat(x, y):
-        return f"{x}{y}"
-
-
+...         return f"{x}{y}"
+... 
 >>> print(concat("Hello, ", "Bob"))
 Hello, Bob
 >>> print(concat(y="Bob", x="Hello, "))
@@ -52,9 +51,8 @@ Following is an example of keyword arguments being called by their keyword and b
 
 ```python
 >>> def concat(x="Hello, ", y="you"):
-        return f"{x}{y}"
-
-
+...         return f"{x}{y}"
+... 
 >>> print(concat(y="Bob", x="Hello, "))
 Hello, Bob
 >>> print(concat("Hello, ", y="Bob"))
@@ -66,4 +64,3 @@ Hello, you
 
 [default arguments]: https://www.geeksforgeeks.org/default-arguments-in-python/
 [function concept]: ../functions/about.md
-
