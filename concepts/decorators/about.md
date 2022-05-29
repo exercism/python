@@ -126,7 +126,7 @@ Following is an example of a decorator being used for validation:
 ...     def my_wrapper(planet):
 ...         print(f"Entering {func.__name__} with {planet} argument")
 ...         if "Pluto" == planet:
-...             print("Pluto is not a world!")
+...             print("Pluto is not a planet!")
 ...         else:
 ...             return func(planet)
 ...     return my_wrapper
@@ -140,7 +140,7 @@ Entering my_func with ('World',) argument
 Hello, World!
 >>> my_func(Pluto")
 Entering my_func with ('Pluto',) argument
-Pluto is not a world!
+Pluto is not a planet!
 
 ```
 
