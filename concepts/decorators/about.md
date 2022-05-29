@@ -1,10 +1,19 @@
 # About
 
 Decorators are functions that take another function as an argument for the purpose of extending or replacing the behavior of the function argument.
-If function `A` is a decorator, and function `B` is its argument, then function `A` _extends_ or _replaces_ function `B`'s behavior _without modifying_ it.
+If function `A` is a decorator, and function `B` is its argument, then function `A` extends or replaces function `B`'s behavior _without modifying_ it.
 We say that the decorator function `A` _wraps_ function `B`.
+The wrapped function is not actually changed.
+Beahvior is either added around the wrapped function, or the wrapped function's behavior is substituted.
 
-## How to use a Decorator
+## A Decorator is a Higher-Order Function
+
+A [higher-order function][higher-order functions] is a function that accepts a function as an argument and/or returns a function.
+A function, used as an argument or returned from another function, is a [first-class function][first-class functions].
+A Python function, as a [callable object][callable object], is a first-class function which can be stored in a variable or used as an argument, much like any other value.
+Higher-order functions and first-class functions work together to make decorators possible.
+
+## What a Decorator looks like
 
 Decorators are placed just above a function in the code like so:
 
@@ -17,21 +26,28 @@ def function():
 Some decorators take arguments:
 
 ```python
-@decorator2(name="Bob")
+@decorator_with_arg(name="Bob")
 def function2():
     pass
 ```
 
-If a decorator takes any arguments, but you don't wish to pass any, you must still call it with parentheses for the decorator to work:
+If a decorator takes a default argument, you must still call it with parentheses for the decorator to work:
 
 ```python
-@decorator3()
+@decorator_with_default_arg()
 def function3():
     pass
 ```
 
+If a decorator takes a positional argument, using empty parentheses will result in an error which will look something like
+
+```
+TypeError: decorator_with_default_arg() missing 1 required positional argument: 'name'
+```
+
 Decorators are just syntactic sugar.
-An alternative way of doing the same as the above three examples is using [higher-order functions][higher-order functions]:
+Following are examples of alternative ways of setting a decorator:
+
 ```python
 def function():
     pass
@@ -42,13 +58,13 @@ function = decorator(function)
 def function2():
     pass
 
-function2 = decorator2(name="Bob")(function2)
+function2 = decorator_with_arg(name="Bob")(function2)
 
 
 def function3():
     pass
 
-function3 = decorator3()(function3)
+function3 = decorator_with_default_arg()(function3)
 ```
 
 ## How to write a Decorator
@@ -203,4 +219,6 @@ Now we should be to use this decorator on functions which accept zero, one, two 
 12
 ```
 
+[callable object]: https://www.pythonmorsels.com/callables/
+[first-class functions]: https://www.geeksforgeeks.org/first-class-functions-python/
 [higher-order functions]: https://www.geeksforgeeks.org/higher-order-functions-in-python/
