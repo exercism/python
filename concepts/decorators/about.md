@@ -106,8 +106,8 @@ Hello
 ```
 
 A decorator does not return itself.
-It returns either its function argument, another function, or a value that replaces the return value from the function argument.
-If a decorator returns another function, it will usually return an inner function.
+It may return its function argument, another function, or a value that replaces the return value from the function argument.
+If a decorator returns another function, it will usually return an [inner function][inner functions].
 
 ## Inner Functions
 
@@ -125,7 +125,7 @@ Following is an example of a decorator being used for validation:
 >>> def my_validator(func):
 ...     def my_wrapper(planet):
 ...         print(f"Entering {func.__name__} with {planet} argument")
-...         if "Pluto" == planet:
+...         if ("Pluto" == planet):
 ...             print("Pluto is not a planet!")
 ...         else:
 ...             return func(planet)
@@ -136,10 +136,10 @@ Following is an example of a decorator being used for validation:
 ...     print(f"Hello, {planet}!")
 ... 
 >>> my_func("World")
-Entering my_func with ('World',) argument
+Entering my_func with World argument
 Hello, World!
 >>> my_func(Pluto")
-Entering my_func with ('Pluto',) argument
+Entering my_func with Pluto argument
 Pluto is not a planet!
 
 ```
@@ -150,14 +150,16 @@ Since the inner function wraps the decorator's `func` argument, it is passed the
 It doesn't have to have the same name of `planet`.
 If `planet` was replaced with `world` throughout the decorator, the decorater would still work.
 
-The inner function returns either `func` or, if `planet` equals `Pluto` it will print that Pluto is not a world.
-It could raise a `ValueError` instead.
+The inner function returns either `func` or, if `planet` equals `Pluto`, it will print that Pluto is not a planet.
+It could be coded to raise a `ValueError` instead.
 So, the inner function wraps `func`, and returns either `func` or does something that substitutes what `func` would do.
 The decorator returns the inner function.
-It does not directly return the original function.
-Depending on what happens in the wrapper function, `func` may or may not be called.
+It does not _directly_ return the original function.
+Depending on what happens in the wrapper function, `func` may or may not be returned.
 
-Decorators can be written for functions that use an arbitrary number of parameters by using the `*args` and `**kwargs` syntax.
+### How to write a Decorator for a function that takes an arbitrary number of arguments
+
+Decorators can be written for functions that take an arbitrary number of arguments by using the `*args` and `**kwargs` syntax.
 
 Following is an example of a decorator for a function that takes an arbitrary number of arguments:
 
@@ -178,7 +180,70 @@ Following is an example of a decorator for a function that takes an arbitrary nu
 
 ```
 
-TODO: decorators with their own arguments
+This works for doubling the return value from the function argument.
+If we want to triple, quadruple, etc. the return value, we can add a parameter to the decorator itself.
+
+### How to write a Decorator which has its own parameters
+
+Following is an example of a decorator that can be configured to multiply the decorated function's return value by an arbitrary amount:
+
+```python
+>>> def multi(factor=1):
+...     if (factor == 0):
+...         raise ValueError("factor must not be 0")
+... 
+...     def outer_wrapper(func):
+...         def inner_wrapper(*args, **kwargs):
+...             return func(*args, **kwargs) * factor
+...         return inner_wrapper
+...     return outer_wrapper
+... 
+... @multi(factor=3)
+... def add(*args):
+...     return sum(args)
+... 
+>>> print(add(2, 3, 4))
+27
+>>> print(add(2, 3, 4, 5, 6))
+60
+
+```
+
+The first lines validate that `factor` is not `0`.
+Then the outer wrapper is defined.
+This has the same signature we expect for an unparameterized decorator.
+The outer wrapper has an inner function with the same signature as the original function.
+The inner wrapper does the work of multiplying the returned value from the orignal function by the argument passed to the decorator.
+The outer wrapper returns the inner wrapper, and the decorator returns the outer wrapper.
+
+Following is an example of a parameterized decorator that controls whether it validates the argument passed to the original function:
+
+```python
+>>> def check_for_pluto(check=True):
+...     def my_validator(func):
+...         def my_wrapper(world):
+...             print(f"Entering {func.__name__} with {world} argument")
+...             if (check and "Pluto" == world):
+...                 print("Pluto is not a planet!")
+...             else:
+...                 return func(world)
+...         return my_wrapper
+...     return my_validator
+... 
+... @check_for_pluto(check=False)
+... def my_func(planet):
+...     print(f"Hello, {planet}!")
+... 
+>>> my_func("World")
+Entering my_func with World argument
+Hello, World!
+>>> my_func("Pluto")
+Entering my_func with Pluto argument
+Hello, Pluto!
+
+```
+
+This allows for easy toggling between checking for `Pluto` or not, and is done without having to modify `my_func`.
 
 [callable objects]: https://www.pythonmorsels.com/callables/
 [first-class functions]: https://www.geeksforgeeks.org/first-class-functions-python/
