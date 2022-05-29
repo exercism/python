@@ -42,7 +42,7 @@ def function3():
 If a decorator takes a positional argument, using empty parentheses will result in an error which will look something like
 
 ```
-TypeError: decorator_with_default_arg() missing 1 required positional argument: 'name'
+TypeError: decorator_with_no_default_arg() missing 1 required positional argument: 'name'
 ```
 
 Decorators are just syntactic sugar.
