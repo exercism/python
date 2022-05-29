@@ -1,8 +1,10 @@
 # About
 
-Decorators are a feature of the Python language that can modify or register a function.
+Decorators are functions that take another function as an argument for the purpose of extending or replacing the behavior of the function argument.
+If function `A` is a decorator, and function `B` is its argument, then function `A` _extends_ or _replaces_ function `B`'s behavior _without modifying_ it.
+We say that the decorator function `A` _wraps_ function `B`.
 
-## How to use them
+## How to use a Decorator
 
 Decorators are placed just above a function in the code like so:
 
@@ -29,7 +31,7 @@ def function3():
 ```
 
 Decorators are just syntactic sugar.
-An alternative way of doing the same as the above three examples is using higher-order functions:
+An alternative way of doing the same as the above three examples is using [higher-order functions][higher-order functions]:
 ```python
 def function():
     pass
@@ -49,62 +51,56 @@ def function3():
 function3 = decorator3()(function3)
 ```
 
-## How to write them
+## How to write a Decorator
 
-As said before, decorators can modify or register a function.
-The simplest decorator however, does absolutely nothing.
+Decorators are intended to extend or replace the behavior of another function, but a decorator may do nothing but return the function it is wrapping.
 
-Decorators are functions which return functions.
-They take one argument - the function which they have been added to.
-They also return one thing - the function which will be run by the program.
-This is usually either the function they were added to or a slightly modified version of that function, but it does not have to be - it can be any function whatsoever.
+Decorators are functions which take at least one argument - the function which they are wrapping.
+They usually either return the wrapped function or they may return the result of an expression that uses the wrapped function.
 
 The simplest decorator - one that does nothing - can be written as follows:
 ```python
 def do_nothing(function):
-    return function
-```
-```python
-def function4a():
-    return 4
-
+...     return function
+... 
 @do_nothing
-def function4b():
-    return 4
-```
-```python
->>>function4a()
+def function4():
+...     return 4
+... 
+>>>function4()
 4
->>>function4b()
-4
-```
-As you can see, both functions do the same thing, and when the decorator is added nothing changes.
 
-A decorator that registers a function could be written as follows:
-```python
-functions = []
+```
 
-def register_function(function):
-    functions.append(function)
-    return function
-```
+A decorator may add side effects (such as logging) and/or validation:
+
 ```python
->>>functions
-[]
+>>> def my_logger(func):
+...     def my_logger_wrapper(*args, **kwargs):
+...         print(f"Entering {func.__name__} with {args} argument")
+...         if any("Pluto" in text for text in args):
+...             print("Pluto is not a world!")
+...         else:
+...             func(*args, **kwargs)
+...         print(f"After {func.__name__}")
+...     return my_logger_wrapper
+... 
+... 
+>>> @my_logger
+... def my_func(planet):
+...     print(f"Hello, {planet}!")
+... 
+... 
+>>> my_func("World")
+Entering my_func with ('World',) argument
+Hello, World!
+After my_func
+>>> my_func(Pluto")
+Entering my_func with ('Pluto',) argument
+Pluto is not a world!
+After my_func
+
 ```
-```python
-@register_function
-def function5():
-    return 5
-```
-```python
->>>functions
-[<function function5 at 0x000001CA840AA700>]
->>>function5()
-5
-```
-As you can see, adding the decorator to the function adds the function into the list.
-It is important to note that this happens when the function is declared, not when it is called.
 
 Many decorators you write will change what is run when the function is called.
 These will need to return a different function to the one passed.
@@ -206,3 +202,5 @@ Now we should be to use this decorator on functions which accept zero, one, two 
 >>>function6b()
 12
 ```
+
+[higher-order functions]: https://www.geeksforgeeks.org/higher-order-functions-in-python/
