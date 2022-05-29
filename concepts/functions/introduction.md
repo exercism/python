@@ -14,10 +14,7 @@ Following is an example of a function with a side effect:
 ...        print("Hello")
 ...
 >>> hello()
-"Hello"
-
-
-hello()
+Hello
 
 ```
 
@@ -37,11 +34,11 @@ Finally, we call the function by using its name and the parentheses.
 Following is an example of a function with a return value:
 
 ```python
-def hello():
-    return "Hello"
-
-
+>>> def hello():
+...     return "Hello"
+... 
 print(hello())
+Hello
 
 ```
 
@@ -61,11 +58,11 @@ A function can define zero or more [`parameters`][parameters]. A parameter defin
 Following is an example of a function which accepts an argument:
 
 ```python
-def hello(name):
-    return f"Hello, {name}"
-
-
-print(hello("Bob"))
+>>> def hello(name):
+...     return f"Hello, {name}"
+... 
+>>>print(hello("Bob"))
+Hello, Bob
 
 ```
 
@@ -82,8 +79,8 @@ Following is an example of a function with a default argument:
 
 ```python
 >>> def hello(name="you"):
-        return f"Hello, {name}"
-
+...     return f"Hello, {name}"
+... 
 >>> print(hello())
 Hello, you
 
