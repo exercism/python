@@ -15,12 +15,12 @@ Positional arguments can optionally be called by their name.
 Following is an example of positional arguments being called by position and by their name:
 
 ```python
->>> def concat(x, y):
-...         return f"{x}{y}"
+>>> def concat(greeting, name):
+...         return f"{greeting}{name}"
 ... 
 >>> print(concat("Hello, ", "Bob"))
 Hello, Bob
->>> print(concat(y="Bob", x="Hello, "))
+>>> print(concat(name="Bob", greeting="Hello, "))
 Hello, Bob
 
 ```
@@ -33,7 +33,7 @@ Note that positional arguments cannot follow keyword arguments.
 This
 
 ```python
->>> print(concat(x="Hello, ", "Bob"))
+>>> print(concat(greeting="Hello, ", "Bob"))
 ```
 
 results in this error:
@@ -47,15 +47,15 @@ Arguments can be forced to be positional-only through the use of the `/` operato
 Following is an example of positional-only arguments:
 
 ```python
->>> def concat(x, y, /):
-...         return f"{x}{y}"
+>>> def concat(greeting, name, /):
+...         return f"{greeting}{name}"
 ... 
 >>> print(concat("Hello, ", "Bob"))
 Hello, Bob
->>> print(concat(y="Bob", x="Hello, "))
+>>> print(concat(name="Bob", greeting="Hello, "))
 Traceback (most recent call last):
-    print(concat(y="Bob", x="Hello, "))
-TypeError: concat() got some positional-only arguments passed as keyword arguments: 'x, y'
+    print(concat(name="Bob", greeting="Hello, "))
+TypeError: concat() got some positional-only arguments passed as keyword arguments: 'greeting, name'
 
 ```
 
@@ -67,10 +67,10 @@ Keyword arguments can optionally be called by their position.
 Following is an example of keyword arguments being called by their keyword and by position:
 
 ```python
->>> def concat(x="Hello, ", y="you"):
-...         return f"{x}{y}"
+>>> def concat(greeting="Hello, ", name="you"):
+...         return f"{greeting}{name}"
 ... 
->>> print(concat(y="Bob", x="Hello, "))
+>>> print(concat(name="Bob", greeting="Hello, "))
 Hello, Bob
 >>> print(concat("Hello, ", "Bob"))
 Hello, Bob
@@ -84,10 +84,10 @@ Arguments can be forced to be keyword--only through the use of the `*` operator.
 Following is an example of keyword-only arguments:
 
 ```python
->>> def concat(*, x="Hello, ", y="you"):
-...         return f"{x}{y}"
+>>> def concat(*, greeting="Hello, ", name="you"):
+...         return f"{greeting}{name}"
 ... 
->>> print(concat(y="Bob", x="Hello, "))
+>>> print(concat(name="Bob", greeting="Hello, "))
 Hello, Bob
 >>> print(concat())
 Hello, you
@@ -106,19 +106,19 @@ Alternately, the positional-or-keyword arguemtns can be placed between the posit
 Following is an example of positional-only, positional-or-keyword, and keyword-only arguments:
 
 ```python
->>> def concat(x, /,  y="you", *, z="."):
-...         return f"{x}{y}{z}"
+>>> def concat(greeting, /,  name="you", *, ending="."):
+...         return f"{greeting}{name}{ending}"
 ... 
->>> print(concat("Hello, ", "Bob", z="!"))
+>>> print(concat("Hello, ", "Bob", ending="!"))
 Hello, Bob!
->>> print(concat("Hello, ", y="Bob", z="!"))
+>>> print(concat("Hello, ", name="Bob", ending="!"))
 Hello, Bob!
 >>> print(concat("Hello, "))
 Hello, you.
->>> print(concat(x="Hello, ", y="Bob", z="!"))
+>>> print(concat(greeting="Hello, ", name="Bob", ending="!"))
 Traceback (most recent call last):
-    print(concat(x="Hello, ", y="Bob", z="!"))
-TypeError: concat() got some positional-only arguments passed as keyword arguments: 'x'
+    print(concat(greeting="Hello, ", name="Bob", ending="!"))
+TypeError: concat() got some positional-only arguments passed as keyword arguments: 'greeting'
 
 ```
 
