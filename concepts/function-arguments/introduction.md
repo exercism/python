@@ -15,12 +15,12 @@ Positional arguments can optionally be called by their name.
 Following is an example of positional arguments being called by position and by their name:
 
 ```python
->>> def concat(x, y):
-...         return f"{x}{y}"
+>>> def concat(greeting, name):
+...         return f"{greeting}{name}"
 ... 
 >>> print(concat("Hello, ", "Bob"))
 Hello, Bob
->>> print(concat(y="Bob", x="Hello, "))
+>>> print(concat(name="Bob", greeting="Hello, "))
 Hello, Bob
 
 ```
@@ -30,7 +30,7 @@ Note that positional arguments cannot follow keyword arguments.
 This
 
 ```python
->>> print(concat(x="Hello, ", "Bob"))
+>>> print(concat(greeting="Hello, ", "Bob"))
 ```
 
 results in this error:
@@ -50,12 +50,12 @@ Keyword arguments can optionally be called by their position.
 Following is an example of keyword arguments being called by their keyword and by position:
 
 ```python
->>> def concat(x="Hello, ", y="you"):
-...         return f"{x}{y}"
+>>> def concat(greeting="Hello, ", name="you"):
+...         return f"{greeting}{name}"
 ... 
->>> print(concat(y="Bob", x="Hello, "))
+>>> print(concat(name="Bob", greeting="Hello, "))
 Hello, Bob
->>> print(concat("Hello, ", y="Bob"))
+>>> print(concat("Hello, ", name="Bob"))
 Hello, Bob
 >>> print(concat())
 Hello, you
