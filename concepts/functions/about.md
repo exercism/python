@@ -73,12 +73,12 @@ They can be of any data type.
 Let's define a function `add` which adds two numbers together:
 
 ```python
-def add(x, y):
-    print(x + y)
+def add(first, second):
+    print(first + second)
 
 ```
 
-The parameters `x` and `y` define what arguments the `add` function will accept.
+The parameters `first` and `second` define what arguments the `add` function will accept.
 (It should be noted that the words `parameter` and `argument` are often used interchangeably, albeit imprecisely.)
 When the function is called, the arguments are passed to the function.
 We need to pass arguments for both of the parameters, otherwise a [`TypeError`][type-error] will be raised.
@@ -97,7 +97,7 @@ We need to pass arguments for both of the parameters, otherwise a [`TypeError`][
 >>> add(2)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-TypeError: add() missing 1 required positional argument: 'y'
+TypeError: add() missing 1 required positional argument: 'second'
 
 >>> add(2, 3, 4)
 Traceback (most recent call last):
@@ -115,8 +115,8 @@ If the function does not explicitly return a value, the value `None` is returned
 Let's define a function `add`:
 
 ```python
-def add(x, y):
-    return x + y
+def add(first, second):
+    return first + second
 
 ```
 
@@ -148,12 +148,12 @@ None
 Use of `return` immediately exits the function and returns the value to the caller.
 
 ```python
->>> def show(x, y):
-    print(x)
-    return x
-    print(y)
+>>> def show(first, second):
+    print(first)
+    return first
+    print(second)
 
-# y never gets printed, because the function exits after the return statement
+# second never gets printed, because the function exits after the return statement
 >>> show(1, 2)
 1
 ```
@@ -172,8 +172,8 @@ Assume a program has to perform the following tasks:
 We can break down the program into smaller parts.
 
 ```python
-def circle_area(r):
-    return 3.14 * r * r
+def circle_area(radius):
+    return 3.14 * radius * radius
 
 def rectangle_area(length, breadth):
     return length * breadth
@@ -203,41 +203,41 @@ If we want to access the variable outside the function, we need to use the [`glo
 [`nonlocal`][nonlocal] keyword is used to access the variable inside a nested function.
 
 ```python
->>> x = 30
+>>> num = 30
 >>> def random_function():
-        x = 10
-        print('Inside function:', x)
+        num = 10
+        print('Inside function:', num)
 ```
 
-As `x` is defined inside the `random_function`, it is limited to the scope of the `random_function` only.
+As `num` is defined inside the `random_function`, it is limited to the scope of the `random_function` only.
 Calling the function will not alter the value of the variable outside the function.
 
 ```python
->>> x = 30
+>>> num = 30
 
-# regardless of whether we call the function or not, the value of x will be 30
+# regardless of whether we call the function or not, the value of num will be 30
 >>> random_function()
 Inside function: 10
->>> x
+>>> num
 30
 ```
 
 We can access the variable inside the outer function using the `global` keyword.
 
 ```python
->>> x = 30
+>>> num = 30
 >>> def random_function():
-        global x
-        x = 10
-        print('Inside function:', x)
+        global num
+        num = 10
+        print('Inside function:', num)
 ```
 
-As we have used the `global` keyword, the value of `x` will be changed.
+As we have used the `global` keyword, the value of `num` will be changed.
 
 ```python
 >>> random_function()
 Inside function: 10
->>> x
+>>> num
 10
 ```
 
@@ -286,9 +286,9 @@ Functions can also be nested inside other functions.
 
 ```python
 def outer():
-    x = 10
+    num = 10
     def inner():
-        print(x)
+        print(num)
     inner()
 ```
 
@@ -310,8 +310,8 @@ Functions in python have special attributes. Some of them are:
 * `__code__`: Code object containing the instructions of the function
 
 ```python
->>> def add(x, y):
-      return x + y
+>>> def add(first, second):
+      return first + second
 
 # Function name
 >>> print.__name__
