@@ -20,4 +20,37 @@ The Traceback will show where the exception was raised and what functions were c
 
 ## How to Read a Traceback
 
-TODO: examples of some common errors, their tracebacks, and how to read them...
+`ValueError` is a common exception.
+
+Following is an example of `ValueError` resulting from trying to assign two variables on the left from only one value on the right:
+
+```python
+>>> first, second = [1]
+Traceback (most recent call last):
+File <stdin>, line 1, in <module>
+    first, second = [1]
+ValueError: not enough values to unpack (expected 2, got 1)
+
+```
+
+It says that the most recent call is last, so the place to start is with the exception at the bottom of the trace.
+From there it can be traced back to the start.
+If we place the offending line in a function and then call the function we see a longer trace:
+
+```python
+>>> def my_func():
+...     first, second = [1]
+... 
+>>> my_func()
+Traceback (most recent call last):
+  File <stdin>, line 5, in <module>
+    my_func()
+  File <stdin>, line 2, in my_func
+    first, second = [1]
+ValueError: not enough values to unpack (expected 2, got 1)
+```
+
+Working backwards from the bottom, we see that the call where the exception happened is on line 2 in `my_func`.
+We got there by calling `my_func` on line 5.
+
+TODO: print, assert, logging and debugging tools
