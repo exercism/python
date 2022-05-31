@@ -199,7 +199,7 @@ Now, we can call the functions in the order we want.
 ## Scope of Variables
 
 If variable is defined inside a function, then it will be only accessible inside the function.
-If we want to access the variable outside the function, we need to use the [`global`][global] keyword.
+If we want to access the variable name outside the function scope (_or namespace_), we need to use the [`global`][global] keyword.
 [`nonlocal`][nonlocal] keyword is used to access the variable inside a nested function.
 
 ```python
