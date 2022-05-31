@@ -9,8 +9,8 @@ Parameter names should not contain spaces or punctuation.
 
 ## Positional Arguments
 
-Positional arguments are for parameters defined without a [default argument][default arguments].
-Positional arguments can optionally be called by their name.
+Positional arguments are values passed to a function in the same order as the parameters which bind to them.
+Positional arguments can optionally be called by using their name.
 
 Following is an example of positional arguments being called by position and by their name:
 
@@ -64,3 +64,4 @@ Hello, you
 
 [default arguments]: https://www.geeksforgeeks.org/default-arguments-in-python/
 [function concept]: ../functions/about.md
+[parameters]: https://www.codecademy.com/learn/flask-introduction-to-python/modules/learn-python3-functions/cheatsheet
