@@ -18,7 +18,9 @@ Following is an example of positional arguments being called by position and by 
 >>> def concat(greeting, name):
 ...         return f"{greeting}{name}"
 ... 
+# Passing data to the function by position.
 >>> print(concat("Hello, ", "Bob"))
+
 Hello, Bob
 >>> print(concat(name="Bob", greeting="Hello, "))
 Hello, Bob
