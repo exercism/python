@@ -7,8 +7,11 @@ You can also define your own functions. Those are called [`user-defined function
 Functions can run something as simple as _printing a message to the console_ or they can be quite complex.
 
 To execute the code inside a function, you need to call the function, which is done by using the function name followed by parenthesese [`()`].
-Data. known as [`arguments`][arguments], can be passed to the function by placing them inside the parenthesese.
-In the function definition any arguments are defined by [`parameters`][parameters].
+Data, known as [`arguments`][arguments], can be passed to the function by placing them inside the parenthesese.
+A function definition may include zero or more [`parameters`][parameters].
+Parameters define what argument(s) the function accepts.
+A parameter defines what _type_ of argument is to be passed.
+The argument is the actual _value_ passed when the function is called.
 Functions can perform different tasks depending on the arguments passed to the parameters.
 
 A function can also return a value using the [`return`][return] keyword.
