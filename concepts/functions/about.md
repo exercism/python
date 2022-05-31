@@ -110,7 +110,7 @@ TypeError: add() takes 2 positional arguments but 3 were given
 The return value is a value that is returned to the caller of the function.
 A `return value` can be any data type.
 It can be used by caller of the function to perform further operations.
-If the function does not explicitly return a value, the value `None` is returned.
+If a function does not explicitly define a `return value`, the value `None` will be returned by the Python interpreter.
 
 Let's define a function `add`:
 
