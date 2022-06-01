@@ -52,8 +52,10 @@ Requiring positional-only arguments for function calls can be done through the u
 Following is an example of positional-only arguments:
 
 ```python
+# Parameters showing a position-only operator. 
 >>> def concat(greeting, name, /):
 ...         return f"{greeting}{name}"
+
 ... 
 >>> print(concat("Hello, ", "Bob"))
 Hello, Bob
