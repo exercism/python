@@ -1,5 +1,62 @@
 # Test-Driven Development
 
+Test-driven development ([TDD][TDD]) refers to a style of programming where tests are written as artifacts to drive the implementation of the program design in code.
+
+One or more tests (particularly [unit tests][unit tests]) are written before coding.
+The tests are intended to cover one aspect of the program's behavior, which may be focused on a single function or method.
+The writing of the tests is a way to transfrom the program requirements and general architecture into an implementation-specific design.
+The tests are run, and they should fail, because the code hasn't been implemented.
+The code is implemented and the tests are run again.
+If the tests pass, then either implementing the behavior is done or perhaps more necessary tests remain to be created.
+If the tests don't pass, then the code is debugged and the tests are run again.
+The cycle of testing and coding is repeated until all of the necessary tests pass, at which point the implementation for that aspect of the program's behavior is done... for now.
+
+## Refactoring
+
+[Refactoring][refactoring] is the rewriting of code to improve its design.
+It is not simply rewriting code to fix bugs.
+It is sometimes called "refactoring" to modify code to get it to pass the tests.
+Although modifying the code _may_ include improving the design as a way to pass the tests, simply debugging is not necessarily improving the _design_ of the code, and so is not necessarily _refactoring_.
+
+Following is an example of debugging without refactoring:
+
+```python
+
+# A function intended to return x added to y.
+# x and y are bad parameter names, but we ignore that for now.
+def add(x, y):
+    # used multiply operator by mistake. It fails the tests.
+    return x * y
+
+# Function corrected. It passes the tests. It has been debugged, but not refactored.
+def add(x, y):
+    return x + y
+    
+```
+
+
+Following is an example of refactoring, and then debugging:
+
+```python
+
+# Function name and parameter names are modified to something more meaningful. This is refactoring.
+def lot_inventory(old_cars, new_cars):
+    # Introduced multiply operator by mistake. It fails the tests. This is why we test.
+    return old_cars * new_cars
+
+# Function corrected. It passes the tests. This is debugging.
+def lot_inventory(old_cars, new_cars):
+    return old_cars + new_cars
+
+```
+
+## TDD and Python on Exercism
+
+Exercism's Python track utilizes TDD methodology in its exercises.
+Unit tests are already written.
+The tests may be viewed by the student to gather a more detailed understanding of what a passing solution should provide.
+A solution stub may be provided to the student.
+
 ## Troubleshooting a Failed Test on Exercism in the Web Editor
 
 When one or more tests fail for a Python solution, the corresponding task(s) will not have a green background.
@@ -74,3 +131,19 @@ Diff is 970 characters long. Set self.maxDiff to None to see it.
 
 There may still be enough data to see what the problem is.
 In the case above, there are two line feeds returned (e.g. `\n\n(\'Brass Spyglass`) when only one is expected (e.g. `\n(\'Brass Spyglass`).
+
+## After all the tests pass
+
+Congratulations!
+All the tests have passed.
+What next?
+The solution could be published right away.
+Or, now that the code works, if you would like to refactor it for any reason, you can modify the code and submit another iteration.
+If you think the code could be better, but you don't know how, you can request mentoring for the solution.
+If a mentor is available with ideas for other approaches to a solution, they may contact you to share those ideas.
+You could allow comments when publishing your solution, and other students may take the opportunity to make comments or ask questions.
+
+
+[refactoring]: https://www.agilealliance.org/glossary/refactoring
+[TDD]: https://www.agilealliance.org/glossary/tdd
+[unit tests]: https://www.agilealliance.org/glossary/unit-test
