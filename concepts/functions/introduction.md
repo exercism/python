@@ -102,4 +102,4 @@ For more about function arguments, please see the [function arguments][function 
 [function-definitions]: https://docs.python.org/3/reference/compound_stmts.html#function-definitions
 [parameters]: https://www.codecademy.com/learn/flask-introduction-to-python/modules/learn-python3-functions/cheatsheet
 [return]: https://www.geeksforgeeks.org/python-return-statement/
-[side effects]: https://runestone.academy/ns/books/published/fopp/Functions/SideEffects.html
+[side effects]: https://python.plainenglish.io/side-effects-in-python-a50caad1169
