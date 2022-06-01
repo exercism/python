@@ -111,7 +111,7 @@ TypeError: concat() takes 0 positional arguments but 2 were given
 ## Positional or Keyword Arguments
 
 Arguments can be positional or keyword if neither the `/` nor `*` operators are used in the parameter definitions.
-Alternately, the positional-or-keyword arguemtns can be placed between the positional-only parameters on the left and the keyword-only parameters on the right.
+Alternately, the positional-or-keyword arguments can be placed between the positional-only parameters on the left and the keyword-only parameters on the right.
 
 Following is an example of positional-only, positional-or-keyword, and keyword-only arguments:
 
