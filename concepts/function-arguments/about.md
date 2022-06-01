@@ -10,7 +10,7 @@ Parameter names should not contain spaces or punctuation.
 ## Positional Arguments
 
 Positional arguments are values passed to a function in the same order as the parameters which bind to them.
-Positional arguments can optionally be called by using their parameter name.
+Positional arguments can optionally be passed by using their parameter name.
 
 Following is an example of positional arguments being passed by position and by their parameter name:
 
@@ -64,9 +64,9 @@ TypeError: concat() got some positional-only arguments passed as keyword argumen
 ## Keyword Arguments
 
 Keyword arguments are for parameters defined with a [default argument][default arguments].
-Keyword arguments can optionally be called by their position.
+Keyword arguments can optionally be passed by their position.
 
-Following is an example of keyword arguments being called by their keyword and by position:
+Following is an example of keyword arguments being passed by their keyword and by position:
 
 ```python
 >>> def concat(greeting="Hello, ", name="you"):
