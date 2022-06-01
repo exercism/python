@@ -136,6 +136,7 @@ Traceback (most recent call last):
     print(concat(greeting="Hello, ", name="Bob", ending="!"))
 TypeError: concat() got some positional-only arguments passed as keyword arguments: 'greeting'
 
+```
 
 ## `*args`
 
