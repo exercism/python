@@ -22,7 +22,10 @@ Following is an example of positional arguments being passed by position and by 
 >>> print(concat("Hello, ", "Bob"))
 
 Hello, Bob
+...
+# Passing data to the function using the parameter name.
 >>> print(concat(name="Bob", greeting="Hello, "))
+
 Hello, Bob
 
 ```
