@@ -10,9 +10,9 @@ Parameter names should not contain spaces or punctuation.
 ## Positional Arguments
 
 Positional arguments are values passed to a function in the same order as the parameters which bind to them.
-Positional arguments can optionally be called by using their name.
+Positional arguments can optionally be passed by using their parameter name.
 
-Following is an example of positional arguments being called by position and by their name:
+Following is an example of positional arguments being passed by position and by their parameter name:
 
 ```python
 >>> def concat(greeting, name):
