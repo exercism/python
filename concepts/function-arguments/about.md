@@ -97,17 +97,20 @@ Requiring keyword-only arguments for function calls can be done through the use 
 Following is an example of keyword-only arguments:
 
 ```python
->>> def concat(*, greeting="Hello, ", name="you"):
+# Function definition requiring keyword-only arguments.
+>>> def concat(*, greeting, name):
 ...         return f"{greeting}{name}"
 ... 
+# Keyword arguments can be in an arbitrary order.
 >>> print(concat(name="Bob", greeting="Hello, "))
 Hello, Bob
->>> print(concat())
-Hello, you
+...
+# Calling the function with positional data raises an error.
 >>> print(concat("Hello, ", "Bob"))
 Traceback (most recent call last):
     print(concat("Hello, ", "Bob"))
 TypeError: concat() takes 0 positional arguments but 2 were given
+
 
 ```
 
