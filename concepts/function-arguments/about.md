@@ -147,7 +147,8 @@ def my_function(*args, **kwargs):
 
 ```
 
-`*args` is a two-part name that represents an indefinite number of separate positional arguments, which is also known as a variadic argument.
+`*args` is a two-part name that represents a `tuple` with an indefinite number of separate positional arguments, also known as a [`variadic argument`][variadic argument].
+
 `args` is the name of the group of arguments and could be any other name, such as `my_args`, `arguments`, etc.
 The `*` is the operator which transforms the group of separate arguments into a [`tuple`][tuple].
 Since a tuple can be iterated, `args` can be passed to any other function which takes an iterable.
