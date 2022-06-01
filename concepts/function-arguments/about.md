@@ -209,7 +209,8 @@ Following is an example of an arbitrary amount of key-value pairs being passed t
 6
 ```
 
-Note that the `values()` method is called to iterate on the dictionary values.
+Note that the `dict.values()` method is called to iterate through the `kwargs` dictionary values.
+
 When iterating a dictionary the default is to iterate the keys.
 
 Following is an example of an arbitrary amount of key-value pairs being passed to a function that iterates the keys:
