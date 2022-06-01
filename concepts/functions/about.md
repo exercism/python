@@ -296,7 +296,7 @@ def outer():
     inner()
 ```
 
-The inner function can access the variable `x` defined in the outer function.
+The inner function can access the variable `num` defined in the outer function.
 
 ```python
 >>> outer()
