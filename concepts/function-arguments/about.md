@@ -71,17 +71,20 @@ TypeError: concat() got some positional-only arguments passed as keyword argumen
 
 ## Keyword Arguments
 
-Keyword arguments are for parameters defined with a [default argument][default arguments].
-Keyword arguments can optionally be passed by their position.
+Keyword arguments use the parameter name when calling a function.
+Keyword arguments can optionally be referred to by position.
 
-Following is an example of keyword arguments being passed by their keyword and by position:
+Following is an example of keyword arguments being referred to by their parameter name and by position:
 
 ```python
->>> def concat(greeting="Hello, ", name="you"):
+>>> def concat(greeting, name):
 ...         return f"{greeting}{name}"
 ... 
+# Function call using parameter names as argument keywords.
 >>> print(concat(name="Bob", greeting="Hello, "))
 Hello, Bob
+...
+# Function call with positional data as arguments.
 >>> print(concat("Hello, ", "Bob"))
 Hello, Bob
 >>> print(concat())
