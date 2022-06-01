@@ -213,16 +213,16 @@ Note that the `dict.values()` method is called to iterate through the `kwargs` d
 
 When iterating a dictionary the default is to iterate the keys.
 
-Following is an example of an arbitrary amount of key-value pairs being passed to a function that iterates the keys:
+Following is an example of an arbitrary amount of key-value pairs being passed to a function that then iterates over `kwargs.keys()`:
 
 ```python
 >>> def concat(**kwargs):
+             # Join concatenates the key names from `kwargs.keys()`
 ...         return " ".join(kwargs)
 ... 
 >>> print(concat(one=1, two=2, three=3))
 one two three
 
-```
 
 [default arguments]: https://www.geeksforgeeks.org/default-arguments-in-python/
 [dictionary]: https://www.w3schools.com/python/python_dictionaries.asp
