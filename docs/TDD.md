@@ -102,7 +102,7 @@ How it looks will vary depending on the width set for the right-hand pane.
 Clicking the `>` will expand the test.
 Input data and expected result data will likely be shown in a code section.
 The data may be for all of the tests for this task.
-At the bottom, in the `Test Failure` section, is the specific reason why this rest failed.
+At the bottom, in the `Test Failure` section, is the specific reason why this test failed.
 It may look something like this:
 
 ```
@@ -121,7 +121,7 @@ If we remove the list brackets (e.g. `return record[1]`) and run the tests again
 
 If one or more tasks remain failing, then the above process is repeated with each one until all tests pass.
 
-Sometimes, the expected datat and returned data are too large to all be placed in the `Test Failure` section.
+Sometimes, the expected data and returned data are too large to all be placed in the `Test Failure` section.
 It may look something like this:
 
 ```
