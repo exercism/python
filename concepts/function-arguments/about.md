@@ -228,4 +228,5 @@ one two three
 [key-value]: https://www.pythontutorial.net/python-basics/python-dictionary/
 [tuple]: https://www.w3schools.com/python/python_tuples.asp
 [unpacking operator]: https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists
+[variadic argument]: https://en.wikipedia.org/wiki/Variadic_function
 [variadic argument]: https://medium.com/spatial-data-science/unlock-the-power-variadic-arguments-in-python-functions-a591bf572c2
