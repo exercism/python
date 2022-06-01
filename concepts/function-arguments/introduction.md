@@ -45,9 +45,9 @@ The second call to `concat` passes the arguments by name, allowing their positio
 ## Keyword Arguments
 
 Keyword arguments are for parameters defined with a [default argument][default arguments].
-Keyword arguments can optionally be called by their position.
+Keyword arguments can optionally be passed by their position.
 
-Following is an example of keyword arguments being called by their keyword and by position:
+Following is an example of keyword arguments being passed by their keyword and by position:
 
 ```python
 >>> def concat(greeting="Hello, ", name="you"):
