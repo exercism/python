@@ -47,7 +47,7 @@ results in this error:
 SyntaxError: positional argument follows keyword argument
 ```
 
-Arguments can be forced to be positional-only through the use of the `/` operator.
+Requiring positional-only arguments for function calls can be done through the use of the `/` operator in the parameter list:
 
 Following is an example of positional-only arguments:
 
