@@ -29,7 +29,7 @@ Note that the body of the function is indented.
 The indentation is important because Python relies on it to know where that block of code ends.
 The function body ends at either the end of the program or just before the next line of code that is _not_ indented.
 Since `hello()` does not specify a `return` value, it executes its side effect - which is calling `print()`  -- and then returns `None`.
-Finally, we call the function by using its name and the parentheses.
+Finally, we call the function by using its name and the parentheses - which signals to the Python interpreter that this is a _callable_ name.
 
 Following is an example of a function with a return value:
 
@@ -42,15 +42,15 @@ Hello
 
 ```
 
-The body of the function has been changed from calling `print` to returning `"Hello"`.
-The program still prints `"Hello"`, but the side effect takes place in the calling code instead of in the `hello` function.
+The body of this function has been changed from _calling_ `print` to _returning_  the `string` "Hello".
+In the end, the code still prints `"Hello"`, but the side effect takes place in the _calling code_ instead of in the `hello` function.
 If the parentheses were left off from  calling the `hello` function (e.g. `print(hello)`), then `print` would output something like
 
 ```
 <function hello at 0x0000026E18E93E20>
 ```
 
-It's important that, even if a function accepts no arguments, the empty parentheses must be used to call it correctly.
+It's important that, even if a function accepts no arguments (_i.e. has no parameters_), the empty parentheses must be used to _call_ it correctly.
 This is different from a language such as Ruby which does not require empty parentheses for calling a function without any arguments.
 
 A function can define zero or more [`parameters`][parameters]. A parameter defines what argument(s) the function accepts.
@@ -68,10 +68,19 @@ Hello, Bob
 
 The parameter is defined as `name`.
 `"Bob"` is the argument which the program passes to the `hello` function.
-The program outputs `Hello, Bob`.
+The function _returns_ the `string` "Hello, Bob".
 
 What if someone calls `hello` without passing an argument?
-The program would error with a report that an argument is missing.
+The program throws an error:
+
+```python
+print(hello())
+Traceback (most recent call last):
+
+  Input In in <line: 1>
+    print(hello())
+
+TypeError: hello() missing 1 required positional argument: 'name'
 If we don't want the program to error with no argument (_but want to allow the calling code to not supply one_), we can define a [default argument][default arguments].
 A default argument defines what value to use if the argument is missing when the function is called.
 
