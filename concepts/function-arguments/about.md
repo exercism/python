@@ -194,7 +194,8 @@ It did not reassemble the elements into a tuple.
 
 `**kwargs` is a two-part name that represents an indefinite number of separate [key-value pair][key-value] arguments.
 `kwargs` is the name of the group of arguments and could be any other name, such as `my_args`, `arguments`, etc.
-The `**` is the operator which transforms the group of separate arguments into a [`dictionary`][dictionary].
+The `**` transforms the group of named arguments into a [`dictionary`][dictionary] of `{argument name: argument value}` pairs.
+
 Since a dictionary can be iterated, `kwargs` can be passed to any other function which takes an iterable.
 Although `**kwargs` is commonly juxtaposed with `*args`, it doesn't have to be.
 
