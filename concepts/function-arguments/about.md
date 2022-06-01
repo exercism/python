@@ -223,6 +223,8 @@ Following is an example of an arbitrary amount of key-value pairs being passed t
 >>> print(concat(one=1, two=2, three=3))
 one two three
 
+```
+
 
 [default arguments]: https://www.geeksforgeeks.org/default-arguments-in-python/
 [dictionary]: https://www.w3schools.com/python/python_dictionaries.asp
