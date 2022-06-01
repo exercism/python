@@ -59,10 +59,13 @@ Following is an example of positional-only arguments:
 ... 
 >>> print(concat("Hello, ", "Bob"))
 Hello, Bob
+...
+# Call to the function using keyword arguments.
 >>> print(concat(name="Bob", greeting="Hello, "))
 Traceback (most recent call last):
     print(concat(name="Bob", greeting="Hello, "))
 TypeError: concat() got some positional-only arguments passed as keyword arguments: 'greeting, name'
+
 
 ```
 
