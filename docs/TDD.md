@@ -4,7 +4,7 @@ Test-driven development ([TDD][TDD]) refers to a style of programming where test
 
 One or more tests (particularly [unit tests][unit tests]) are written before coding.
 The tests are intended to cover one aspect of the program's behavior, which may be focused on a single function or method.
-The writing of the tests is a way to transfrom the program requirements and general architecture into an implementation-specific design.
+The writing of the tests is a way to transform the program requirements and general architecture into an implementation-specific design.
 The tests are run, and they should fail, because the code hasn't been implemented.
 The code is implemented and the tests are run again.
 If the tests pass, then either implementing the behavior is done or perhaps more necessary tests remain to be created.
