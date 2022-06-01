@@ -122,21 +122,20 @@ Alternately, the positional-or-keyword arguments can be placed between the posit
 Following is an example of positional-only, positional-or-keyword, and keyword-only arguments:
 
 ```python
->>> def concat(greeting, /,  name="you", *, ending="."):
+# Position-only argument followed by position-or-keyword, followed by keyword-only.
+>>> def concat(greeting, /,  name, *, ending):
 ...         return f"{greeting}{name}{ending}"
 ... 
 >>> print(concat("Hello, ", "Bob", ending="!"))
 Hello, Bob!
 >>> print(concat("Hello, ", name="Bob", ending="!"))
 Hello, Bob!
->>> print(concat("Hello, "))
-Hello, you.
+...
 >>> print(concat(greeting="Hello, ", name="Bob", ending="!"))
 Traceback (most recent call last):
     print(concat(greeting="Hello, ", name="Bob", ending="!"))
 TypeError: concat() got some positional-only arguments passed as keyword arguments: 'greeting'
 
-```
 
 ## `*args`
 
