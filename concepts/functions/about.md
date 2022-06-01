@@ -250,7 +250,7 @@ In python, functions can be assigned to variables and passed as arguments to oth
 They can be used as return values.
 Functions can also be placed into a sequence([`list`][list], [`tuple`][tuple] etc) or as value in a [`dict`][dict].
 Functions can be used anywhere any other object can be used.
-This is because _functions are [`first class objects`][first class objects]_.
+This is because _functions are [_first class objects_][first class objects]_.
 As such, they carry special attributes, and can even define getting and setting custom attributes of their own. 
 
 ```python
