@@ -12,56 +12,33 @@ from diffie_hellman import (
 class DiffieHellmanTest(unittest.TestCase):
     def test_private_key_is_greater_than_1_and_less_than_p(self):
         primes = [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
-        for p in primes:
-            self.assertTrue(1 < private_key(p) < p)
+        self.assertTrue(1 < private_key(p) < p for p in primes)
 
     def test_private_key_is_random(self):
         """
         Can fail due to randomness, but most likely will not,
         due to pseudo-randomness and the large number chosen
         """
-        p = 2147483647
-        private_keys = [private_key(p) for _ in range(5)]
+        private_keys = [private_key(2147483647) for _ in range(5)]
         self.assertEqual(len(set(private_keys)), len(private_keys))
 
     def test_can_calculate_public_key_using_private_key(self):
         p = 23
         g = 5
         private_key = 6
-        self.assertEqual(
-            8,
-            public_key(
-                p,
-                g,
-                private_key,
-            ),
-        )
+        self.assertEqual(8, public_key(p, g, private_key, ))  # fmt: skip
 
     def test_can_calculate_public_key_when_given_a_different_private_key(self):
         p = 23
         g = 5
         private_key = 15
-        self.assertEqual(
-            19,
-            public_key(
-                p,
-                g,
-                private_key,
-            ),
-        )
+        self.assertEqual(19, public_key(p, g, private_key, ))  # fmt: skip
 
     def test_can_calculate_secret_using_other_party_s_public_key(self):
         p = 23
         their_public_key = 19
         my_private_key = 6
-        self.assertEqual(
-            2,
-            secret(
-                p,
-                their_public_key,
-                my_private_key,
-            ),
-        )
+        self.assertEqual(2, secret(p, their_public_key, my_private_key, ))  # fmt: skip
 
     def test_key_exchange(self):
         p = 23
