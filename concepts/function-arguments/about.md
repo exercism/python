@@ -155,7 +155,7 @@ The `*` is the operator which transforms the group of separate arguments into a 
 ----
 If you have ever [unpacked a tuple][unpack a tuple] you may find the `*` in `*args` to be confusing.
 The `*` in a parameter definition, instead of unpacking a tuple, converts one or more positional arguments _into_ a tuple.
-We say that the `*` operator is [overloaded]. as it has different behavior in different contexts.
+We say that the `*` operator is [overloaded], as it has different behavior in different contexts.
 For instance, `*` is used for multiplication, it is used for unpacking, and it is used to define an arbitrary number of positional parameters.
 
 ----
