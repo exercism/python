@@ -21,7 +21,7 @@ They've also been given blank maps with a starting place marked YOU ARE HERE.
 | Model Ship in Large Bottle  | 8A          |
 | Pirate Flag                 | 7F          |
 | Robot Parrot                | 1C          |
-| Scrimshaw Whale's Tooth     | 2A          |
+| Scrimshawed Whale Tooth     | 2A          |
 | Silver Seahorse             | 4E          |
 | Vintage Pirate Hat          | 7E          |
 
@@ -58,7 +58,7 @@ Implement the `get_coordinate()` function that takes a `(treasure, coordinate)` 
 
 
 ```python
->>> get_coordinate(("Scrimshaw Whale's Tooth", "2A"))
+>>> get_coordinate(('Scrimshawed Whale Tooth', "2A"))
 "2A"
 ```
 

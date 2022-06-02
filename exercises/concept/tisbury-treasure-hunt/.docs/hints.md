@@ -2,11 +2,10 @@
 
 ## General
 
-- [Tuples][tuples] are immutable.
-  [Sequence Types][sequence types] that can contain any data type.
-- Tuples are [iterable][iterable].
-- Elements within tuples can be accessed via [bracket notation][bracket notation], using a zero-based index.
-- Other [Common Sequence Operations][common sequence operations] can also be used when working with tuples.
+
+[Tuples][tuples] are immutable [sequence Types][sequence types] that can contain any data type.
+Tuples are [iterable][iterable], and elements within tuples can be accessed via [bracket notation][bracket notation], using a zero-based index from the left, or -1 from the right.
+Other [Common Sequence Operations][common sequence operations] can also be used when working with tuples.
 
 ## 1. Extract coordinates
 
