@@ -123,7 +123,7 @@ class TisburyTreasureTest(unittest.TestCase):
             ('Silver Seahorse', '4E', 'Hidden Spring (Island of Mystery)', ('4', 'E'), 'Yellow')
         )
 
-        result_data = """(\"Scrimshaw Whale's Tooth\", 'Deserted Docks', ('2', 'A'), 'Blue')\n\
+        result_data = """('Scrimshaw Whale's Tooth', 'Deserted Docks', ('2', 'A'), 'Blue')\n\
 ('Brass Spyglass', 'Abandoned Lighthouse', ('4', 'B'), 'Blue')\n\
 ('Robot Parrot', 'Seaside Cottages', ('1', 'C'), 'Blue')\n\
 ('Glass Starfish', 'Tangled Seaweed Patch', ('6', 'D'), 'Orange')\n\
