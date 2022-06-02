@@ -149,9 +149,14 @@ def my_function(*args, **kwargs):
 ```
 
 `*args` is a two-part name that represents a `tuple` with an indefinite number of separate positional arguments, also known as a [`variadic argument`][variadic argument].
-
 `args` is the name given to the `tuple` of arguments,  but it could be any other valid Python name, such as `my_args`, `arguments`, etc.
 The `*` is the operator which transforms the group of separate arguments into a [`tuple`][tuple].
+
+If you have ever [unpacked a tuple][unpack a tuple] you may find the `*` to be confusing.
+The `*` in a parameter definition, instead of unpacking a tuple, converts one or more positional arguments _into_ a tuple.
+We say that the `*` operator is [overloaded]. as it has different behavior in different contexts.
+For instance, `*` is used for multiplication, and it is also used for unpacking.
+    
 Since a tuple can be iterated, `args` can be passed to any other function which takes an iterable.
 Although `*args` is commonly juxtaposed with `**kwargs`, it doesn't have to be.
 
@@ -166,6 +171,8 @@ Following is an example of an arbitrary amount of values being passed to a funct
 6
 >>> print(add(1, 2, 3, last=4))
 10
+# This uses the unpacking operator * to separate the list elements into positional arguments.
+# It is not the same operator as the * in *args.
 >>> print(add(*[1, 2, 3]))
 6
 
@@ -231,6 +238,8 @@ one two three
 [dictionary]: https://www.w3schools.com/python/python_dictionaries.asp
 [function concept]: ../functions/about.md
 [key-value]: https://www.pythontutorial.net/python-basics/python-dictionary/
+[overloaded]: https://www.geeksforgeeks.org/operator-overloading-in-python/
 [tuple]: https://www.w3schools.com/python/python_tuples.asp
+[unpack a tuple]: https://www.geeksforgeeks.org/unpacking-a-tuple-in-python/
 [unpacking operator]: https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists
 [variadic argument]: https://en.wikipedia.org/wiki/Variadic_function
