@@ -58,7 +58,7 @@ Implement the `get_coordinate()` function that takes a `(treasure, coordinate)` 
 
 
 ```python
->>> get_coordinate(('Scrimshawed Whale Tooth', "2A"))
+>>> get_coordinate(('Scrimshawed Whale Tooth', '2A'))
 "2A"
 ```
 
