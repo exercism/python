@@ -18,12 +18,18 @@ Following is an example of positional arguments being passed by position and by 
 >>> def concat(greeting, name):
 ...         return f"{greeting}{name}"
 ... 
+# Passing data to the function by position.
 >>> print(concat("Hello, ", "Bob"))
 Hello, Bob
+... 
+# Passing data to the function using the parameter name.
 >>> print(concat(name="Bob", greeting="Hello, "))
 Hello, Bob
 
 ```
+
+The first call to concat passes the arguments by position.
+The second call to concat passes the arguments by name, allowing their positions to be changed.
 
 Note that positional arguments cannot follow keyword arguments.
 
@@ -39,22 +45,22 @@ results in this error:
 SyntaxError: positional argument follows keyword argument
 ```
 
-The first call to `concat` passes the arguments by position.
-The second call to `concat` passes the arguments by name, allowing their positions to be changed.
-
 ## Keyword Arguments
 
-Keyword arguments are for parameters defined with a [default argument][default arguments].
-Keyword arguments can optionally be passed by their position.
+Keyword arguments use the parameter name when calling a function.
+Keyword arguments can optionally be referred to by position.
 
-Following is an example of keyword arguments being passed by their keyword and by position:
+Following is an example of keyword arguments being referred to by their parameter name and by position:
 
 ```python
 >>> def concat(greeting="Hello, ", name="you"):
 ...         return f"{greeting}{name}"
 ... 
+# Function call using parameter names as argument keywords.
 >>> print(concat(name="Bob", greeting="Hello, "))
 Hello, Bob
+...
+# Function call with positional data as arguments.
 >>> print(concat("Hello, ", name="Bob"))
 Hello, Bob
 >>> print(concat())
