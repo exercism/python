@@ -115,6 +115,23 @@ TypeError: concat() takes 0 positional arguments but 2 were given
 
 ```
 
+## Default Argument Values
+
+Default values for one or more arguments can be supplied in the parameter list.
+This allows the function to be called with _fewer_ arguments if needed.
+Default values can be overridden by calling the function with a new argument value, overriding the default:
+
+```python
+# Function with default argument values.
+>>> def concat(greeting, name="you", punctuation="!"):
+...         return f"{greeting}, {name}{punctuation}"
+... 
+>>> print(concat("Hello"))
+Hello, you!
+
+# Overriding the default values
+>>> print(concat("Hello", name="Bob", punctuation="."))
+Hello, Bob.
 ## Positional or Keyword Arguments
 
 Arguments can be positional or keyword if neither the `/` nor `*` operators are used in the parameter definitions.
