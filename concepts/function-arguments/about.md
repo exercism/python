@@ -198,9 +198,6 @@ TypeError: can only concatenate list (not "int") to list
 
 ```
 
-What happened is that the `*` in `*args` only unpacked the list into its separate elements, and it was done.
-It did not reassemble the elements into a tuple.
-
 ## `**kwargs`
 
 `**kwargs` is a two-part name that represents an indefinite number of separate [key-value pair][key-value] arguments.
