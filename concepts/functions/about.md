@@ -80,7 +80,7 @@ Hello
 ## Parameters and their Arguments
 
 Arguments are values that are passed to the function when it is called.
-They can be of any data type.
+They can be of any data type, including other functions or classes.
 
 Let's define a function `add` which adds two numbers together:
 
