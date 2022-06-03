@@ -181,7 +181,35 @@ For instance, `*` is used for multiplication, it is used for unpacking, and it i
 Since a tuple can be iterated, `args` can be passed to any other function which takes an iterable.
 Although `*args` is commonly juxtaposed with `**kwargs`, it doesn't have to be.
 
-Following is an example of an arbitrary amount of values being passed to a function between a positonal argument and a keyword argument:
+Following is an example of an arbitrary amount of values being passed to a function:
+
+```python
+
+>>> def add(*args):
+# args is passed to the sum function, which takes an iterable
+...         return sum(args)
+... 
+>>> print(add(1, 2, 3))
+6
+```
+
+If `*args` follows one or more positional arguments, then `*args` will be what is left over after the positional arguments.
+
+Following is an example of an arbitrary amount of values being passed to a function after a positional argument:
+
+```python
+
+>>> def add(first, *args):
+# first will be 1, leaving the values 2 and 3 in *args
+...         return first + sum(args)
+... 
+>>> print(add(1, 2, 3))
+6
+```
+
+If one or more default arguments are defined after `*args` they are separate from the `*args` values.
+
+To put it all together is an example of an arbitrary amount of values being passed to a function that also has a positional argument and a default argument:
 
 ```python
 
