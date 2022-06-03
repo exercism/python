@@ -215,7 +215,6 @@ If we want to make the variable name accessible outside the function scope (_or 
 Using the `nonlocal` keyword will signal to Python to make the variable available in the _enclosing namespace_, and is most often used when a function is nested inside another function.
 Using the `global` keyword signals Python to make the variable available in the _global namespace_.
 This should be used cautiously, as any function or process could then modify the variable without notice.
-[`nonlocal`][nonlocal] keyword is used to access the variable inside a nested function.
 
 ```python
 >>> num = 30
