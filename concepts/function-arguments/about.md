@@ -131,6 +131,8 @@ Hello, you!
 # Overriding the default values
 >>> print(concat("Hello", name="Bob", punctuation="."))
 Hello, Bob.
+```
+
 ## Positional or Keyword Arguments
 
 Arguments can be positional or keyword if neither the `/` nor `*` operators are used in the parameter definitions.
