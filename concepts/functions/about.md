@@ -46,7 +46,16 @@ def function_name():
 
 ```
 
-Note that the function does need a body, even if the body does nothing, or trying to run the program will generate an indentation error.
+Note that the function does need a body, even if the body does nothing, or trying to run the program will generate an indentation error:
+
+```python
+>>> def my_bodyless_func():
+...      
+
+File ~/temp.py:1
+    
+    ^
+IndentationError: expected an indented block
 
 ## Calling a Function
 
