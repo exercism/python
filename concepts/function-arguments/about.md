@@ -88,8 +88,6 @@ Hello, Bob
 # Function call with positional data as arguments.
 >>> print(concat("Hello, ", "Bob"))
 Hello, Bob
->>> print(concat())
-Hello, you
 
 ```
 
