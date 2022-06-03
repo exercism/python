@@ -183,7 +183,8 @@ Following is an example of an arbitrary amount of values being passed to a funct
 ```
 
 Note that when an argument is already in an iterable, such as a tuple or list, it needs to be unpacked before being passed to a function that takes an arbitrary amount of separate arguments.
-This is accomplished by `*`, which is the [unpacking operator][unpacking operator].
+This is accomplished by using `*`, which is the [unpacking operator][unpacking operator].
+
 `*` in this context _unpacks_ the container into its separate elements which are then transformed by `*args` into a tuple.
 Where there are only positional arguments, the unpacking action must result in the same number of arguments as there are formal parameters.
 
