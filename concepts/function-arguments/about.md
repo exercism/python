@@ -93,7 +93,8 @@ Hello, you
 
 ```
 
-Requiring keyword-only arguments for function calls can be done through the use of the `*` operator in the parameter list:
+Requiring keyword-only arguments for function calls can be done through the use of the `*` operator in the parameter list.
+
 
 Following is an example of keyword-only arguments:
 
