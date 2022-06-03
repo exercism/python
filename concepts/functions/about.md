@@ -56,6 +56,7 @@ File ~/temp.py:1
     
     ^
 IndentationError: expected an indented block
+```
 
 ## Calling a Function
 
