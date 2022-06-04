@@ -1,14 +1,30 @@
 [
   {
-    "url": "https://www.w3schools.com/python/python_functions.asp",
-    "description": "W3Schools: Python Functions"
-  },
-  {
     "url": "https://docs.python.org/3/tutorial/controlflow.html#defining-functions",
-    "description": "Python Tutorial: Functions"
+    "description": "Python Documentation Tutorial: Defining Functions"
   },
   {
-    "url": "https://realpython.com/lessons/functions-first-class-objects-python/",
-    "description": "Real Python: Functions as First-Class Objects"
+    "url": "https://docs.python.org/3/reference/compound_stmts.html#function-definitions",
+    "description": "Python Documentation: Function definitions"
+  },
+  {
+    "url": "https://dbader.org/blog/python-first-class-functions",
+    "description": "Dan Bader: Python's Functions are First-Class"
+  },
+  {
+    "url": "https://docs.python.org/3/tutorial/classes.html#python-scopes-and-namespaces",
+    "description": "Python Documentation Tutorial: Python Scopes and Namespaces"
+  },
+  {
+    "url": "https://docs.python.org/3/reference/executionmodel.html#naming-and-binding",
+    "description": "Python Reference Documentation: Naming and Binding"
+  },
+  {
+    "url": "https://medium.com/swlh/the-global-and-nonlocal-keywords-in-python-842b13433b24",
+    "description": "Maghfoor Ahmad Bilal: Global and Nonlocal Keywords"
+  },
+  {
+    "url": "https://betterprogramming.pub/know-python-functions-better-going-beyond-4-special-attributes-720183078c8e",
+    "description": "Yong Cui: 4 Special (Function) Attributes"
   }
 ]
