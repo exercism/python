@@ -1,18 +1,26 @@
 [
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://docs.python.org/3/tutorial/controlflow.html#more-on-defining-functions",
+    "description": "Python Documentation Tutorial: More on Defining Functions"
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://docs.python.org/3/reference/compound_stmts.html#function-definitions",
+    "description": "Python Reference Documentation: Function definitions"
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://www.pythonmorsels.com/positional-vs-keyword-arguments/",
+    "description": "Python Morsels: Positional vs Keyword Arguments"
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://www.pythonmorsels.com/accepting-any-number-arguments-function/",
+    "description": "Python Morsels: Accepting any Number of Arguments"
+  },
+  {
+    "url": "https://www.pythonmorsels.com/accepting-arbitrary-keyword-arguments/",
+    "description": "Python Morsels: Accepting any Number of Keyword Arguments"
+  },
+  {
+    "url": "https://realpython.com/defining-your-own-python-function/",
+    "description": "Real Python: Defining Your Own Python Function"
   }
 ]

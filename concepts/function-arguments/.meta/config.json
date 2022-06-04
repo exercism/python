@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for this concept",
-  "authors": ["bethanyg", "cmccandless"],
+  "blurb": "Python supports positional, keyword, variadic-positional, variadic-keyword, and default function arguments. Argument types can be any valid Python object, including other functions or classes. This allows for a wide range of options when defining and calling functions in a program.",
+  "authors": ["bobahop", "bethanyg"],
   "contributors": []
 }
