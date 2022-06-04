@@ -48,6 +48,7 @@ Traceback (most recent call last):
   File <stdin>, line 2, in my_func
     first, second = [1]
 ValueError: not enough values to unpack (expected 2, got 1)
+
 ```
 
 Working backwards from the bottom, we see that the call where the exception happened is on line 2 in `my_func`.
@@ -83,11 +84,55 @@ def halve_and_quadruple(num):
     # this makes sense, since 2.5 x 4 = 10.0
     print((num / 2) * 4)
     return (num / 2) * 4
+
 ```
 
 What the `print` calls revealed is that we used `/` when we should have used `//`, the [floor divison operator][floor divison operator].
 
-TODO: assert, logging and debugging tools
+## Logging
+
+[Logging][logging] can be used similarly to `print`, but it is more powerful.
+Logging can print to the console, but it can also be configured to print to a file.
+
+Following is a an example of logging printed to the console:
+
+```python
+
+>>> import logging
+... 
+... # configures minimum logging level as INFO
+... logging.basicConfig(level=logging.INFO)
+
+... def halve_and_quadruple(num):
+...     # prints INFO:root: num == 5
+...     logging.info(f" num == {num}")
+...     return (num // 2) * 4
+... 
+>>> print(halve_and_quadruple(5))
+
+```
+
+The level is configured as `INFO` because the default level is `WARNING`.
+For a persistent log, the logger can be configured to use a file, like so:
+
+```python
+
+>>> import logging
+... 
+... # configures the output file name to example.log, and the minimum logging level as INFO
+... logging.basicConfig(filename='example.log', level=logging.INFO)
+... 
+... def halve_and_quadruple(num):
+...     # prints INFO:root: num == 5 to the example.log file
+...     logging.info(f" num == {num}")
+...     return (num // 2) * 4
+... 
+>>> print(halve_and_quadruple(5))
+
+```
+
+TODO: assert and debugging tools
 
 [floor divison operator]: https://www.codingem.com/python-floor-division
+[logging]: https://docs.python.org/3/howto/logging.html
 [print]: https://www.w3schools.com/python/ref_func_print.asp
