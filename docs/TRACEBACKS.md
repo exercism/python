@@ -53,7 +53,7 @@ ValueError: not enough values to unpack (expected 2, got 1)
 Working backwards from the bottom, we see that the call where the exception happened is on line 2 in `my_func`.
 We got there by calling `my_func` on line 5.
 
-## Using the print function
+## Using the `print` function
 
 Sometimes an error is not being raised, but a value is not what is expected.
 This can be especially perplexing if the value is the result of a chain of calculations.
