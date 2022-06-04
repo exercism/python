@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "url": "https://hackernoon.com/recursion-vs-looping-in-python-9261442f70a5",
+    "description": "Hackernoon: Recursion vs Looping in Python"
+  },
+  {
+    "url": "https://towardsdatascience.com/a-friendly-guide-for-writing-recursive-functions-with-python-52441bd7ff5f",
+    "description": "Towards Data Science: A Friendly Guide to Writing Recursive Functions"
+  },
+  {
+    "url": "https://stackabuse.com/understanding-recursive-functions-with-python/",
+    "description": "Stack Abuse: Understanding Recursive Functions"
+  },
+  {
+    "url": "https://inventwithpython.com/blog/2022/03/20/how-many-recursive-cases-and-base-cases-does-a-recursive-function-need/",
+    "description": "Al Sweigart: How Many Recursive Cases and Base Cases Does a Recursive Function Need?"
+  },
+  {
+    "url": "https://realpython.com/python-thinking-recursively/",
+    "description": "Real Python: Thinking Recursively"
+  },
+  {
+    "url": "https://inventwithpython.com/blog/2018/08/24/pyohio-2018-recursion-tutorial/",
+    "description": "Al Sweigart:  PyOhio 2018 Tutorial on Recursion."
+  },
+  {
+    "url": "https://inventwithpython.com/recursion/",
+    "description": "Invent With Python: The Recursive Book of Recursion"
+  },
+  {
+    "url": "https://understanding-recursion.readthedocs.io/en/latest/index.html",
+    "description": "Understanding Recursion Using Python"
+  }
+]
