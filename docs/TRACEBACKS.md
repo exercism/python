@@ -53,4 +53,41 @@ ValueError: not enough values to unpack (expected 2, got 1)
 Working backwards from the bottom, we see that the call where the exception happened is on line 2 in `my_func`.
 We got there by calling `my_func` on line 5.
 
-TODO: print, assert, logging and debugging tools
+## Using the print function
+
+Sometimes an error is not being raised, but a value is not what is expected.
+This can be especially perplexing if the value is the result of a chain of calculations.
+In such a situation it can be helpful to look at the value at each step to see which step is the one that isn't behaving as expected.
+The [print][print] function can be used for printing the value to the console.
+Following is an example of a function that doesn't return the value expected
+
+```python
+# the intent is to only pass an int to this function and get an int back
+def halve_and_quadruple(num):
+    return (num / 2) * 4
+```
+
+When the function is passed `5`, the expected value is `8`, but it it returns `10.0`.
+To troubleshoot, the calculating is broken up so that the value can be inspected at every step.
+
+
+```python
+# the intent is to only pass an int to this function and get an int back
+def halve_and_quadruple(num):
+    # verify the number in is what is expected
+    # prints 5
+    print(num)
+    # we want the int divided by an int to be an int
+    # but this prints 2.5! We've found our mistake.
+    print(num / 2)
+    # this makes sense, since 2.5 x 4 = 10.0
+    print((num / 2) * 4)
+    return (num / 2) * 4
+```
+
+What the `print` calls revealed is that we used `/` when we should have used `//`, the [floor divison operator][floor divison operator].
+
+TODO: assert, logging and debugging tools
+
+[floor divison operator]: https://www.codingem.com/python-floor-division
+[print]: https://www.w3schools.com/python/ref_func_print.asp
