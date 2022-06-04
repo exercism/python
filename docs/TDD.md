@@ -143,7 +143,76 @@ If you think the code could be better, but you don't know how, you can request m
 If a mentor is available with ideas for other approaches to a solution, they may contact you to share those ideas.
 You could allow comments when publishing your solution, and other students may take the opportunity to make comments or ask questions.
 
+## Optimizing for Performance
 
+Although "Premature optimization is the root of all evil" (a saying attributed to both Tony Hoare and Donald Knuth), there does come a time when the solution works and it is desired to make it as performant as possible.
+One of those times may be when the solution passes some tests but times out for others.
+It can be helpful to know exactly how much time a piece of code is taking.
+The [timeit][timeit] module can be used to time the execution of code down to very small durations.
+The `timeit` function can take up to five arguments.
+The `stmt` parameter defines the actual code to be run and timed.
+The `stmt` code will be run for a specifed `number` of iterations.
+The `setup` parameter defines the code that is run only once to prepare for running the `stmt` code.
+The `timer` parameter allows for passing in a different `Timer` from the default.
+The default argument for the `timer` parameter is [perf_counter][perf_counter], which should suffice.
+The `number` parameter defines the number of times the `stmt` code will be run.
+The default argument for the `number` parameter is `1_000_000`.
+The `globals` parameter specifies a namespace in which to execute the code.
+The default argument for the `globals` parameter is `None`.
+
+Following is an example of using `timeit` to see how long it takes to determine if a sentence contains all English vowels:
+
+```python
+
+import timeit
+
+# run one million times
+loops = 1_000_000
+
+# first positional argument is for stmt
+# second positional argument is for setup
+# third (named) argument is for number
+print(timeit.timeit("""has_all_vowels('Another piggy digs up the truffles.')""",
+                    """
+
+VOWELS = "AEIOU"
+
+def has_all_vowels(sentence):
+    return all(letter in sentence.casefold() for letter in VOWELS)
+""", number=loops) / loops)
+
+```
+
+Running the code a million times took an average `4.965089999896008e-07` seconds per call (about `497` nanoseconds per call.)
+
+The following example is to see if taking the `casefold` call out of the list comprehension saves any time:
+
+```python
+
+import timeit
+
+loops = 1_000_000
+
+print(timeit.timeit("""has_all_vowels('Another piggy digs up the truffles.')""",
+                    """
+
+VOWELS = "AEIOU"
+
+def has_all_vowels(sentence):
+    sentence = sentence.casefold()
+    return all(letter in sentence for letter in VOWELS)
+""", number=loops) / loops)
+
+```
+
+Running the code a million times took an average `4.923898000270128e-07` seconds per call (about `492` nanoseconds per call.)
+So, taking the `casefold` out of the list comprehension saved about `5` nanoseconds per call, or about `5` milliseconds total for a million calls.
+
+[cProfile][cprofile] can also be used to profile code; however, it is not as granular, since it only goes down to millisecond durations.
+
+[cprofile]: https://www.machinelearningplus.com/python/cprofile-how-to-profile-your-python-code/
+[perf_counter]: https://docs.python.org/3/library/time.html#time.perf_counter
 [refactoring]: https://www.agilealliance.org/glossary/refactoring
 [TDD]: https://www.agilealliance.org/glossary/tdd
+[timeit]: https://docs.python.org/3/library/timeit.html
 [unit tests]: https://www.agilealliance.org/glossary/unit-test
