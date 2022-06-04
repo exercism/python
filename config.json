@@ -1240,6 +1240,23 @@
         "difficulty": 3
       },
       {
+        "slug": "pascals-triangle",
+        "name": "Pascals Triangle",
+        "uuid": "e1e1c7d7-c1d9-4027-b90d-fad573182419",
+        "practices": ["recursion"],
+        "prerequisites": [
+          "basics",
+          "conditionals",
+          "functions",
+          "function-arguments",
+          "lists",
+          "numbers",
+          "recursion"
+        ],
+        "difficulty": 3,
+        "status": "wip"
+      },
+      {
         "slug": "grep",
         "name": "Grep",
         "uuid": "ecc97fc6-2e72-4325-9b67-b56c83b13a91",
@@ -2096,15 +2113,6 @@
         "slug": "parallel-letter-frequency",
         "name": "Parallel Letter Frequency",
         "uuid": "da03fca4-4606-48d8-9137-6e40396f7759",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "status": "deprecated"
-      },
-      {
-        "slug": "pascals-triangle",
-        "name": "Pascals Triangle",
-        "uuid": "e1e1c7d7-c1d9-4027-b90d-fad573182419",
         "practices": [],
         "prerequisites": [],
         "difficulty": 3,
