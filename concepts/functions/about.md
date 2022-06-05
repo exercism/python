@@ -211,50 +211,127 @@ Now, we can call the functions in the order we want.
 
 ## Scope of Variables
 
-If variable is defined inside a function, then it will be only accessible inside the function.
-If we want to make the variable name accessible outside the function scope (_or namespace_), we need to use either the [`global`][global] or [`nonlocal`][nonlocal] keywords.
-Using the `nonlocal` keyword will signal to Python to make the variable available in the _enclosing namespace_, and is most often used when a function is nested inside another function.
-Using the `global` keyword signals Python to make the variable available in the _global namespace_.
-This should be used cautiously, as any function or process could then modify the variable without notice.
+If a variable (_or name_) is defined inside a function, it will be only accessible _inside_ the function scope (_or local namespace_), even if there is a non-local variable with the same name.
+Variables defined outside a function at the module level are considered in the _global namespace_.
+Variables defined outside a function but _inside_ an enclosing function or class are in the _nonlocal namespace_.
+
+Python uses the [LEGB Rule][LEGB Rule] (**L**ocal, **E**nclosing, **G**lobal, **B**uilt-in) to resolve variable names when a program is running:
+
+1. Lookup in the **local** (or _function_) namespace.
+2. Lookup in the **enclosing** (or _nonlocal_) namespace if a name is not found in local.
+3. Lookup in the **global** namespace (_module level_) if the name is not found in nonlocal/enclosing.
+4. Lookup in the **built-in** (_program or python-wide_) namespace if the name is not found in global.
+
+If the name remains unresolved, Python will raise a `NameError exception`.
 
 ```python
->>> num = 30
->>> def random_function():
-        num = 10
-        print('Inside function:', num)
+# Global namespace.
+general_favorite = "apples"
+
+
+def alices_favorite():
+   # Local namespace.  
+   favorite = "cherries"
+   
+   # This works because Python will eventually find general_favorite in the global namespace.
+   # Python will find 'print' in the built-in namespace.
+   print(f'Alice has always liked {favorite}, but most people like {general_favorite}.')
+
+   
+def our_favorite_fruits():
+    # Enclosing or nonlocal namespace.
+    yours = "peaches"
+    
+    def my_favorite():
+        # Local namespace.
+        mine = "pears"
+        
+        # This works because Python will eventually find 'yours' in the enclosing/nonlocal namespace.
+        print(f'My favorite is {mine}, but you like {yours} instead.')
+        
+        # This works because Python will eventually find 'general_favorite' in the global namespace.
+        print(f'Everyone seems to like {general_favorite}')
+    
+    # This function is in the local namespace of the 'our_favorite_fruits' function.  
+    my_favorite()
+
+    
+# This will raise NameError: name 'favorite' is not defined, because the variable favorite is local to alices_favorite.
+print(favorite)
+
 ```
 
-As `num` is defined inside the `random_function`, it is limited to the scope of the `random_function` only.
-Calling the function will not alter the value of the variable outside the function.
+If we want to make a variable name accessible _outside_ the local function scope (_or modify a variable defined outside the function scope_), we need to use either the [`global`][global] or [`nonlocal`][nonlocal] keywords.
+
+Using the `global` keyword signals Python to start the lookup in the _global namespace_.
+Assignments to the variable will then modify the _global_ variable, instead of creating a _local_ version.
+When `global` is used to declare a variable, the variable will be _added_ to the global namespace.
+As a result, `global` should be used cautiously, as adding or modifying a global variable could have effects on all other code that uses its value.
+
+The `nonlocal` keyword signals to Python to look for/make the variable available in the _nonlocal or enclosing namespace_.
+It is used when a function is nested inside another function or class, and needs access to the outer functions variables and scope.
+
 
 ```python
->>> num = 30
+#This is a variable in the global (module) namespace
+im_global = "I'm global"
 
-# regardless of whether we call the function or not, the value of num will be 30
->>> random_function()
-Inside function: 10
->>> num
-30
+def outer_function():
+
+    # Referencing & printing the global variable using the global keyword.
+    global im_global
+    print(f'From outer_function (unmodified) :: {im_global}')
+
+    # This becomes a nonlocal variable.
+    im_nonlocal = "I'm nonlocal"
+    print(f'From outer_function (unmodified) :: {im_nonlocal}.')
+
+    # Modifying the global varible via previous global keyword.
+    im_global += " and I've been modified from the outer_function."
+    print(f'Modified from outer_function :: {im_global}')
+
+
+    def inner_function():
+
+        # Referencing & printing the nonlocal variable.
+        nonlocal im_nonlocal
+        print(f'From inner_function (unmodified) :: {im_nonlocal}')
+
+        # This becomes a local variable.
+        im_local = "I'm local"
+        print(f'From inner_function (unmodified) :: {im_local}')
+
+        # Modifying the local variable.
+        im_local += " and I've been modified locally."
+        print(f'Modified from inner_function :: {im_local}')
+
+        # Modifying the nonlocal/enclosing variable. 
+        im_nonlocal += " and I've been modified by the inner_function."
+        print(f'Modified from inner_function :: {im_nonlocal}')
+
+        # Refrencing and modifying the global variable from inner_function.
+        global im_global
+        im_global = "I'm global and have been overwritten by inner_function."
+
+    inner_function()
 ```
 
-We can access the variable inside the outer function using the `global` keyword.
+When run, the code above will print:
 
 ```python
->>> num = 30
->>> def random_function():
-        global num
-        num = 10
-        print('Inside function:', num)
+>>> outer_function()
+>>> print(im_global)
+
+From outer_function (unmodified) :: I'm global
+From outer_function (unmodified) :: I'm nonlocal.
+Modified from outer_function :: I'm global and I've been modified from the outer_function.
+From inner_function (unmodified) :: I'm nonlocal
+From inner_function (unmodified) :: I'm local
+Modified from inner_function :: I'm local and I've been modified locally.
+Modified from inner_function :: I'm nonlocal and I've been modified by the inner_function.
+I'm global and have been overwritten by inner_function.
 ```
 
-As we have used the `global` keyword, the value of `num` will be changed.
-
-```python
->>> random_function()
-Inside function: 10
->>> num
-10
-```
 
 ## Functions as first class objects
 
@@ -350,6 +427,7 @@ Functions in python have special attributes. Some of them are:
 
 The full list of function attributes can be found at [Python DataModel][attributes].
 
+[LEGB Rule]: https://realpython.com/python-scope-legb-rule/
 [arguments]: https://www.w3schools.com/python/gloss_python_function_arguments.asp
 [attributes]: https://docs.python.org/3/reference/datamodel.html#index-33
 [build-in functions]: https://docs.python.org/3/library/functions.html
