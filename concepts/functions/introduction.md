@@ -101,14 +101,10 @@ For more about function arguments, please see the [function arguments][function 
 
 
 [arguments]: https://www.w3schools.com/python/gloss_python_function_arguments.asp
-[built-in functions]: https://docs.python.org/3/library/functions.html
 [calls]: https://docs.python.org/3/reference/expressions.html#calls
 [def]: https://www.geeksforgeeks.org/python-def-keyword/
-[default arguments]: https://www.geeksforgeeks.org/default-arguments-in-python/
-[first-class objects]: https://realpython.com/lessons/functions-first-class-objects-python/
-[function]: https://docs.python.org/3/glossary.html#term-function
 [function arguments]: ../function-arguments/about.md
-[function-definitions]: https://docs.python.org/3/reference/compound_stmts.html#function-definitions
+[function]: https://docs.python.org/3/glossary.html#term-function
 [parameters]: https://www.codecademy.com/learn/flask-introduction-to-python/modules/learn-python3-functions/cheatsheet
 [return]: https://www.geeksforgeeks.org/python-return-statement/
 [side effects]: https://python.plainenglish.io/side-effects-in-python-a50caad1169
