@@ -28,7 +28,7 @@ import filecmp
 import importlib.util
 import json
 import logging
-from pathlib import Path
+from pathlib import Path, PurePath, PureWindowsPath
 import re
 import shutil
 from itertools import repeat
@@ -314,13 +314,20 @@ def generate_exercise(env: Environment, spec_path: Path, exercise: Path, check: 
         except FileNotFoundError:
             logger.error(f"{slug}: tests.toml not found; skipping.")
             return True
+
         spec = load_canonical(slug, spec_path, test_opts)
         additional_tests = load_additional_tests(exercise)
         spec["additional_cases"] = additional_tests
         template_path = exercise.relative_to("exercises") / ".meta/template.j2"
+
+        # See https://github.com/pallets/jinja/issues/767 for why this is needed on Windows systems.
+        if "\\" in str(template_path):
+            template_path = PureWindowsPath(template_path).as_posix()
+
         template = env.get_template(str(template_path))
         tests_path = exercise / f"{to_snake(slug)}_test.py"
         spec["has_error_case"] = has_error_case(spec["cases"])
+
         if plugins_module is not None:
             spec[plugins_name] = plugins_module
         logger.debug(f"{slug}: attempting render")
