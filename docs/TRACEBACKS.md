@@ -131,8 +131,70 @@ For a persistent log, the logger can be configured to use a file, like so:
 
 ```
 
-TODO: assert and debugging tools
+## assert
 
+[`assert`][assert] is a statement which should always evaluate to `True` unless there is a bug in the program.
+When an `assert` evaluates to `False` it will raise an [`AssertionError`][AssertionError].
+The Traceback for the `AssertionError` can include an optional message that is part of the `assert` definition.
+Although a message is optional, it is good practice to always include one in the `assert` definition.
+
+Following is an example of using `assert`:
+
+```python
+>>> def int_division(dividend, divisor):
+...     assert divisor != 0, "divisor must not be 0"
+...     return dividend // divisor
+... 
+>>> print(int_division(2, 1))
+2
+>>> print(int_division(2, 0))
+Traceback (most recent call last):
+  File <stdin>, line 7, in <module>
+    print(int_division(2, 0))
+          ^^^^^^^^^^^^^^^^^^
+  File <stdin>, line 2, in int_division
+    assert divisor != 0, "divisor must not be 0"
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: divisor must not be 0
+
+```
+
+If we start reading the Traceback at the bottom (as we should) we quickly see the problem is that `0` should not be passsed as the `divisor`.
+
+`assert` can also be used to test that a value is of the expected type:
+
+```python
+>>> import numbers
+... 
+... 
+... def int_division(dividend, divisor):
+...     assert divisor != 0, "divisor must not be 0"
+...     assert isinstance(divisor, numbers.Number), "divisor must be a number"
+...     return dividend // divisor
+... 
+>>> print(int_division(2, 1))
+2
+>>> print(int_division(2, '0'))
+Traceback (most recent call last):
+  File <stdin>, line 11, in <module>
+    print(int_division(2, '0'))
+          ^^^^^^^^^^^^^^^^^^^^
+  File <stdin>, line 6, in int_division
+    assert isinstance(divisor, numbers.Number), "divisor must be a number"
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: divisor must be a number
+```
+
+Once a bug is identified, it should be considered to replace the `assert` with regular error handling.
+This is because all `assert` statements can disabled through running Python with the `-O` or `-OO` options, or from setting the `PYTHONOPTIMIZE` environment variable to `1` or `2`.
+Setting `PYTHONOPTIMIZE` to `1` is equivalent to running Python with the `-O` option, which disables assertions.
+Setting `PYTHONOPTIMIZE` to `2` is equivalent to running Python with the `-OO` option, which both disables assertions and removes docstrings from the bytcode.
+Reducing bytecode is one way to make the code run faster.
+
+TODO: debugging tools
+
+[assert]: https://realpython.com/python-assert-statement/
+[AssertionError]: https://www.geeksforgeeks.org/python-assertion-error/
 [floor divison operator]: https://www.codingem.com/python-floor-division
 [logging]: https://docs.python.org/3/howto/logging.html
 [print]: https://www.w3schools.com/python/ref_func_print.asp
