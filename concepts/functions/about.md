@@ -211,9 +211,11 @@ Now, we can call the functions in the order we want.
 
 ## Scope of Variables
 
-If a variable (_or name_) is defined inside a function, it will be only accessible _inside_ the function scope (_or local namespace_), even if there is a non-local variable with the same name.
-Variables defined outside a function at the module level are considered in the _global namespace_.
+If a variable (_or name_) is defined inside a function, it will be only accessible _inside_ the function scope (_or local namespace_), even if there is a variable with the same name outside the function scope.
+
+Variables defined outside a function at the _module level_ are considered in the _global namespace_.
 Variables defined outside a function but _inside_ an enclosing function or class are in the _nonlocal namespace_.
+
 
 Python uses the [LEGB Rule][LEGB Rule] (**L**ocal, **E**nclosing, **G**lobal, **B**uilt-in) to resolve variable names when a program is running:
 
@@ -261,76 +263,15 @@ print(favorite)
 
 ```
 
-If we want to make a variable name accessible _outside_ the local function scope (_or modify a variable defined outside the function scope_), we need to use either the [`global`][global] or [`nonlocal`][nonlocal] keywords.
+If we want to make a variable name accessible _outside_ the local function scope (_or modify a variable that has been defined outside the function scope_), we need to use either the [`global`][global] or [`nonlocal`][nonlocal] keywords.
 
 Using the `global` keyword signals Python to start the lookup in the _global namespace_.
 Assignments to the variable will then modify the _global_ variable, instead of creating a _local_ version.
 When `global` is used to declare a variable, the variable will be _added_ to the global namespace.
 As a result, `global` should be used cautiously, as adding or modifying a global variable could have effects on all other code that uses its value.
 
-The `nonlocal` keyword signals to Python to look for/make the variable available in the _nonlocal or enclosing namespace_.
+The `nonlocal` keyword signals to Python to look for/create the variable in the _nonlocal or enclosing namespace_.
 It is used when a function is nested inside another function or class, and needs access to the outer functions variables and scope.
-
-
-```python
-#This is a variable in the global (module) namespace
-im_global = "I'm global"
-
-def outer_function():
-
-    # Referencing & printing the global variable using the global keyword.
-    global im_global
-    print(f'From outer_function (unmodified) :: {im_global}')
-
-    # This becomes a nonlocal variable.
-    im_nonlocal = "I'm nonlocal"
-    print(f'From outer_function (unmodified) :: {im_nonlocal}.')
-
-    # Modifying the global varible via previous global keyword.
-    im_global += " and I've been modified from the outer_function."
-    print(f'Modified from outer_function :: {im_global}')
-
-
-    def inner_function():
-
-        # Referencing & printing the nonlocal variable.
-        nonlocal im_nonlocal
-        print(f'From inner_function (unmodified) :: {im_nonlocal}')
-
-        # This becomes a local variable.
-        im_local = "I'm local"
-        print(f'From inner_function (unmodified) :: {im_local}')
-
-        # Modifying the local variable.
-        im_local += " and I've been modified locally."
-        print(f'Modified from inner_function :: {im_local}')
-
-        # Modifying the nonlocal/enclosing variable. 
-        im_nonlocal += " and I've been modified by the inner_function."
-        print(f'Modified from inner_function :: {im_nonlocal}')
-
-        # Refrencing and modifying the global variable from inner_function.
-        global im_global
-        im_global = "I'm global and have been overwritten by inner_function."
-
-    inner_function()
-```
-
-When run, the code above will print:
-
-```python
->>> outer_function()
->>> print(im_global)
-
-From outer_function (unmodified) :: I'm global
-From outer_function (unmodified) :: I'm nonlocal.
-Modified from outer_function :: I'm global and I've been modified from the outer_function.
-From inner_function (unmodified) :: I'm nonlocal
-From inner_function (unmodified) :: I'm local
-Modified from inner_function :: I'm local and I've been modified locally.
-Modified from inner_function :: I'm nonlocal and I've been modified by the inner_function.
-I'm global and have been overwritten by inner_function.
-```
 
 
 ## Functions as first class objects
@@ -380,8 +321,12 @@ Functions can also be nested inside other functions.
 ```python
 def outer():
     num = 10
+    
+    # This is a nested, or "inner" function.
     def inner():
         print(num)
+    
+    # Outer function calling inner function
     inner()
 ```
 
@@ -391,6 +336,7 @@ The inner function can access the variable `num` defined in the outer function.
 >>> outer()
 10
 ```
+
 
 ## Special Attributes
 
