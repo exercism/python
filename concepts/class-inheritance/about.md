@@ -5,33 +5,47 @@ In situations where only a small amount of functionality needs to be customized 
 
 ## Inheritance
 
-`Inheritance` describes `is a kind of` relationship between two or more classes, abstracting common details into super class and storing specific ones in the subclass.
+`Inheritance` describes `is a kind of` relationship between two or more classes, abstracting common details into super (_base_ or _parent_) class and storing specific ones in the subclass (_derived class_ or _child class_).
+
 To create a child class, specify the parent class name inside the pair of parenthesis, followed by it's name.
 Example
 ```python
 class Child(Parent):  
    pass
 ```
-Every child class inherits all the behaviours exhibited by their parent class.
+Every child class inherits all the behaviors (_attributes, constructors, methods_) exhibited by their parent class.
+ 
 
 ## Single Inheritance
 
-When a derived (or child) class inherits only from one base (or parent) class, it is known as single inheritance.
+When a derived (or child) class inherits only from one base (or parent) class, it is known as _single inheritance_.
+
 
 ```python
+# The parent or base class.
 class Person:
+
     def __init__(self, fname, lname):
         self.fname = fname
         self.lname = lname
+
+# The child or derived class, inheriting from Person.                
 class Employee(Person):
+
     all_employees = []
     def __init__(self, fname, lname, empid):
+        # Using the Parent constructor to create the base object.
         Person.__init__(self, fname, lname)
+
+        # Adding an attribute specific to the Child class.
         self.empid = empid
+
         Employee.all_employees.append(self)
 ```
 `Employee` class is derived from `Person`.
 Now, we can create an `Employee` object.
+
+
 ```python
 ...
 p1 = Person('George', 'smith')
@@ -42,18 +56,22 @@ print(e1.fname, '-', e1.empid)
 print(e2.fname, '-', e2.empid)
 ```
 After running the program we will get the following output
-```cmd
+```bash
+
 George - smith
 Jack - 456342
 John - 123656
 ```
 ## Multiple Inheritance
-As we've seen, a class inherits from another class in this scenario. On the other side, multiple inheritance is a feature that allows a class to inherit characteristics and methods from many parent classes.
+As we've seen, `single inheritance` is where a class inherits directly from another class. 
+On the other side, `multiple inheritance` is a Python feature that allows a child class to inherit characteristics and methods from more than one parent class.
+
 ```python
 class SubclassName(BaseClass1, BaseClass2, ...):
     pass
 ```
-### Diamond Problem
+### Multiple Inheritance and the Diamond Problem
+
 The "diamond problem" (also known as the "deadly diamond of death") refers to an ambiguity that occurs when two classes B and C inherit from a superclass A, while another class D inherits from both B and C. If A has a method "m" that B or C (or even both of them) has overridden, and if it does not override this method, the question becomes which version of the method D inherits. It's possible that it's from A, B, or C.
 Let's have a look at the problem using an example:
 
