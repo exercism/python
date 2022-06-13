@@ -183,7 +183,7 @@ Following is an example of a decorator for a function that takes an arbitrary nu
 This works for doubling the return value from the function argument.
 If we want to triple, quadruple, etc. the return value, we can add a parameter to the decorator itself.
 
-### How to write a Decorator which has its own parameters
+### Decorators Which Have Their own Parameters
 
 Following is an example of a decorator that can be configured to multiply the decorated function's return value by an arbitrary amount:
 
