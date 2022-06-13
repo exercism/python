@@ -157,7 +157,7 @@ The decorator returns its _inner function_.
 It does not _directly_ return the original, passed-in function.
 Depending on what happens in the wrapper function, `func` may or may not be returned.
 
-### How to write a Decorator for a function that takes an arbitrary number of arguments
+### Decorating a Function that Takes an Arbitrary Number of Arguments
 
 Decorators can be written for functions that take an arbitrary number of arguments by using the `*args` and `**kwargs` syntax.
 
