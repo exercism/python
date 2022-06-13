@@ -146,7 +146,7 @@ Pluto is not a planet!
 ```
 
 On the first line, we have the definition for the decorator with its `func` argument.
-On the next line is the definition for the decorators inner function, which wraps the `func` argument.
+On the next line is the definition for the decorators _inner function_, which wraps the `func` argument.
 Since the inner function wraps the decorator's `func` argument, it is passed the same argument of `planet`.
 It doesn't have to have the same name of `planet`.
 If `planet` was replaced with `world` throughout the decorator, the decorater would still work.
