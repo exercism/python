@@ -123,12 +123,12 @@ Following is an example of a decorator being used for validation:
 
 ```python
 >>> def my_validator(func):
-...     def my_wrapper(planet):
-...         print(f"Entering {func.__name__} with {planet} argument")
-...         if ("Pluto" == planet):
+...     def my_wrapper(world):
+...         print(f"Entering {func.__name__} with {world} argument")
+...         if ("Pluto" == world):
 ...             print("Pluto is not a planet!")
 ...         else:
-...             return func(planet)
+...             return func(world)
 ...     return my_wrapper
 ... 
 ... @my_validator
@@ -139,7 +139,7 @@ Following is an example of a decorator being used for validation:
 Entering my_func with World argument
 Hello, World!
 ...
->>> my_func(Pluto")
+>>> my_func("Pluto")
 Entering my_func with Pluto argument
 Pluto is not a planet!
 
@@ -147,9 +147,9 @@ Pluto is not a planet!
 
 On the first line, we have the definition for the decorator with its `func` argument.
 On the next line is the definition for the decorators _inner function_, which wraps the `func` argument.
-Since the _inner function_ wraps the decorator's `func` argument, it is passed the same argument of `planet`.
-It doesn't have to have the same name of `planet`.
-If `planet` was replaced with `world` throughout the decorator, the decorater would still work.
+Since the _inner function_ wraps the decorator's `func` argument, it is passed the same argument that is passed to `func`.
+Note that the wrapper doesn't have to use the same name for the argument that was defined in `func`.
+The original function uses `planet` and the decorator uses `world`, and the decorater still works.
 
 The inner function returns either `func` or, if `planet` equals `Pluto`, it will print that Pluto is not a planet.
 It could be coded to raise a `ValueError` instead.
