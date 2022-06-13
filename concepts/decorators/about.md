@@ -153,7 +153,7 @@ If `planet` was replaced with `world` throughout the decorator, the decorater wo
 The inner function returns either `func` or, if `planet` equals `Pluto`, it will print that Pluto is not a planet.
 It could be coded to raise a `ValueError` instead.
 So, the inner function wraps `func`, and returns either `func` or does something that substitutes what `func` would do.
-The decorator returns the inner function.
+The decorator returns its _inner function_.
 It does not _directly_ return the original function.
 Depending on what happens in the wrapper function, `func` may or may not be returned.
 
