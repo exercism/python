@@ -106,7 +106,7 @@ Hello
 ```
 
 A decorator does not return itself.
-It may return its function argument, another function, or a value that replaces the return value from the function argument.
+It may return its function arguments, another function, or one or more values that replace the return from the passed-in or decorated function.
 If a decorator returns another function, it will usually return an [inner function][inner functions].
 
 ## Inner Functions
