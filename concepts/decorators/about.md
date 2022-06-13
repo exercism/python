@@ -31,7 +31,7 @@ def function2():
     pass
 ```
 
-If a decorator takes a default argument, you must still call it with parentheses for the decorator to work:
+If a decorator has defined default arguments, you must use parenthesis in the `@decorator()` call  for the decorator to work:
 
 ```python
 @decorator_with_default_arg()
