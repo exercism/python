@@ -8,7 +8,7 @@ Behavior is either added around the wrapped function, or the wrapped function's 
 
 ## A Decorator is a Higher-Order Function
 
-A [higher-order function][higher-order functions] is a function that accepts a function as an argument and/or returns a function.
+A [higher-order function][higher-order functions] is a function that accepts one or more functions as arguments and/or returns one or more functions.
 A function, used as an argument or returned from another function, is a [first-class function][first-class functions].
 A Python function, as a [callable object][callable objects], is a first-class function which can be stored in a variable or used as an argument, much like any other value.
 Higher-order functions and first-class functions work together to make decorators possible.
