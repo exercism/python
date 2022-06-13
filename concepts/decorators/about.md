@@ -35,7 +35,7 @@ If a decorator has defined default arguments, you must use parenthesis in the `@
 
 ```python
 @decorator_with_default_arg()
-def function3():
+def decorated_function3():
     pass
 ```
 
