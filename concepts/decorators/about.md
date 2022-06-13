@@ -138,6 +138,7 @@ Following is an example of a decorator being used for validation:
 >>> my_func("World")
 Entering my_func with World argument
 Hello, World!
+...
 >>> my_func(Pluto")
 Entering my_func with Pluto argument
 Pluto is not a planet!
