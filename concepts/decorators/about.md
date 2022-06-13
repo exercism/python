@@ -45,7 +45,7 @@ If a decorator takes a _positional_ arguments, not supplying the arguments will 
 TypeError: decorator_with_pos_arg() missing 1 required positional argument: 'name'
 ```
 
-The `@decorator` syntax is just syntactic sugar.
+The `@decorator` syntax is syntactic sugar or a shorthand for calling the _decorating function_ and passing the _decorated function_ to it as an argument.
 Following are examples of alternative ways for setting a decorator:
 
 ```python
