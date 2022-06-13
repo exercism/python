@@ -154,7 +154,7 @@ The inner function returns either `func` or, if `planet` equals `Pluto`, it will
 It could be coded to raise a `ValueError` instead.
 So, the inner function wraps `func`, and returns either `func` or does something that substitutes what `func` would do.
 The decorator returns its _inner function_.
-It does not _directly_ return the original function.
+It does not _directly_ return the original, passed-in function.
 Depending on what happens in the wrapper function, `func` may or may not be returned.
 
 ### How to write a Decorator for a function that takes an arbitrary number of arguments
