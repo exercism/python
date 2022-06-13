@@ -19,7 +19,7 @@ The `@` symbol is prepended to the name of the decorator function and placed jus
 
 ```python
 @decorator
-def function():
+def decorated_function():
     pass
 ```
 
