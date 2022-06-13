@@ -23,7 +23,7 @@ def decorated_function():
     pass
 ```
 
-Some decorators take arguments:
+Some decorators accept arguments:
 
 ```python
 @decorator_with_arg(name="Bob")
