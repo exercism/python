@@ -114,7 +114,7 @@ If a decorator returns another function, it will usually return an [inner functi
 A function can be defined within a function.
 Such a nested function is called an [inner function][inner functions].
 A decorator may use an inner function to wrap its function argument.
-The decorator returns its inner function.
+The decorator then returns its inner function.
 The inner function may return the original function argument.
 
 ### How to write a validating Decorator using an inner function
