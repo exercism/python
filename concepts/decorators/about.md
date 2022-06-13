@@ -46,7 +46,7 @@ TypeError: decorator_with_pos_arg() missing 1 required positional argument: 'nam
 ```
 
 The `@decorator` syntax is syntactic sugar or a shorthand for calling the _decorating function_ and passing the _decorated function_ to it as an argument.
-Following are examples of alternative ways for setting a decorator:
+Following are examples of alternative ways for calling a decorator:
 
 ```python
 def function():
