@@ -39,7 +39,7 @@ def decorated_function3():
     pass
 ```
 
-If a decorator takes a positional argument, using empty parentheses will result in an error which will look something like:
+If a decorator takes a _positional_ arguments, not supplying the arguments will result in an error which will look something like:
 
 ```
 TypeError: decorator_with_pos_arg() missing 1 required positional argument: 'name'
