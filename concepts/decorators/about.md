@@ -27,7 +27,7 @@ Some decorators accept arguments:
 
 ```python
 @decorator_with_arg(name="Bob")
-def function2():
+def decorated_function2():
     pass
 ```
 
