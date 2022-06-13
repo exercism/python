@@ -117,7 +117,7 @@ A decorator may use an inner function to wrap its function argument.
 The decorator then returns its inner function.
 The inner function may then return the original function argument.
 
-### How to write a validating Decorator using an inner function
+### A Validating Decorator Using an Inner Function
 
 Following is an example of a decorator being used for validation:
 
