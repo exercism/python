@@ -67,7 +67,7 @@ def function3():
 function3 = decorator_with_default_arg()(function3)
 ```
 
-## How to write a simple Decorator
+## Writing a Simple Decorator
 
 Decorators are intended to extend or replace the behavior of another function, but a decorator may do nothing but return the function it is wrapping.
 
