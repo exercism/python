@@ -69,7 +69,7 @@ function3 = decorator_with_default_arg()(function3)
 
 ## Writing a Simple Decorator
 
-Decorators are intended to extend or replace the behavior of another function, but a decorator may do nothing but return the function it is wrapping.
+Most decorators are intended to _extend_ or _replace_ the behavior of another function, but some decorators may do nothing but return the functions they are wrapping.
 
 Decorators are functions which take at least one argument - the function which they are wrapping.
 They usually return either the wrapped function or the result of an expression that uses the wrapped function.
