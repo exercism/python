@@ -88,7 +88,7 @@ A simple decorator - one that simply returns its wrapped function - can be writt
 
 ```
 
-A decorator may only add side effects, such as for logging:
+A decorator may only add side effects, such as additional information used for logging:
 
 ```python
 >>> def my_logger(func):
