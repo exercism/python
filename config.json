@@ -27,30 +27,6 @@
   "exercises": {
     "concept": [
       {
-        "slug": "little-sisters-vocab",
-        "name": "Little Sister's Vocabulary",
-        "uuid": "5a9b42fb-ddf4-424b-995d-f9952ea63c37",
-        "concepts": ["strings"],
-        "prerequisites": ["basics", "conditionals"],
-        "status": "beta"
-      },
-      {
-        "slug": "meltdown-mitigation",
-        "name": "Meltdown Mitigation",
-        "uuid": "50c88b36-e2e2-46e5-b6c4-bb7e714c375a",
-        "concepts": ["conditionals"],
-        "prerequisites": ["basics", "bools"],
-        "status": "beta"
-      },
-      {
-        "slug": "tisbury-treasure-hunt",
-        "name": "Tisbury Treasure Hunt",
-        "uuid": "7ecd42c1-2ed5-487a-bc89-71c9cbad9b05",
-        "concepts": ["tuples"],
-        "prerequisites": ["bools", "loops", "conditionals", "numbers"],
-        "status": "beta"
-      },
-      {
         "slug": "guidos-gorgeous-lasagna",
         "name": "Guido's Gorgeous Lasagna",
         "uuid": "dfd7dc01-3544-4f61-a063-af8530d6e601",
@@ -67,6 +43,22 @@
         "status": "beta"
       },
       {
+        "slug": "currency-exchange",
+        "name": "Currency Exchange",
+        "uuid": "1335ca33-3af0-4720-bcf2-bfa68ffc6862",
+        "concepts": ["numbers"],
+        "prerequisites": ["basics"],
+        "status": "beta"
+      },
+      {
+        "slug": "meltdown-mitigation",
+        "name": "Meltdown Mitigation",
+        "uuid": "50c88b36-e2e2-46e5-b6c4-bb7e714c375a",
+        "concepts": ["conditionals"],
+        "prerequisites": ["basics", "bools"],
+        "status": "beta"
+      },
+      {
         "slug": "black-jack",
         "name": "Black Jack",
         "uuid": "e1a6075e-0c5e-48cd-8c50-69140961a06a",
@@ -75,36 +67,27 @@
         "status": "beta"
       },
       {
+        "slug": "little-sisters-essay",
+        "name": "Little Sister's Essay",
+        "uuid": "09c322bc-5c04-480b-8441-fd9ef5c7a3b4",
+        "concepts": ["string-methods"],
+        "prerequisites": ["basics", "strings"],
+        "status": "beta"
+      },
+      {
+        "slug": "little-sisters-vocab",
+        "name": "Little Sister's Vocabulary",
+        "uuid": "5a9b42fb-ddf4-424b-995d-f9952ea63c37",
+        "concepts": ["strings"],
+        "prerequisites": ["basics", "conditionals"],
+        "status": "beta"
+      },
+      {
         "slug": "pretty-leaflet",
         "name": "Pretty Leaflet",
         "uuid": "5b813a3a-1983-470b-91a1-9f2c0b327ab7",
         "concepts": ["string-formatting"],
         "prerequisites": ["strings", "loops", "lists"],
-        "status": "wip"
-      },
-      {
-        "slug": "inventory-management",
-        "name": "Inventory Management",
-        "uuid": "0558b66c-f2c8-4ff3-846a-4ac87a8660d9",
-        "concepts": ["dicts"],
-        "prerequisites": ["loops", "lists", "tuples"],
-        "status": "beta"
-      },
-      {
-        "slug": "log-levels",
-        "name": "Log Levels",
-        "uuid": "083f29eb-734f-4d4a-9f27-3e8ceedc29b1",
-        "concepts": ["enums"],
-        "prerequisites": [
-          "classes",
-          "conditionals",
-          "comprehensions",
-          "loops",
-          "sequences",
-          "string-formatting",
-          "string-methods",
-          "tuples"
-        ],
         "status": "wip"
       },
       {
@@ -124,21 +107,6 @@
         "status": "beta"
       },
       {
-        "slug": "restaurant-rozalynn",
-        "name": "Restaurant Rozalynn",
-        "uuid": "72c9aa99-20be-4e96-8ade-56c26d598498",
-        "concepts": ["none"],
-        "prerequisites": [
-          "bools",
-          "conditionals",
-          "functions",
-          "dict-methods",
-          "list-methods",
-          "loops"
-        ],
-        "status": "wip"
-      },
-      {
         "slug": "making-the-grade",
         "name": "Making the Grade",
         "uuid": "f6a8d4bd-4ead-438f-b44f-d3578be1702f",
@@ -153,19 +121,19 @@
         "status": "beta"
       },
       {
-        "slug": "little-sisters-essay",
-        "name": "Little Sister's Essay",
-        "uuid": "09c322bc-5c04-480b-8441-fd9ef5c7a3b4",
-        "concepts": ["string-methods"],
-        "prerequisites": ["basics", "strings"],
+        "slug": "tisbury-treasure-hunt",
+        "name": "Tisbury Treasure Hunt",
+        "uuid": "7ecd42c1-2ed5-487a-bc89-71c9cbad9b05",
+        "concepts": ["tuples"],
+        "prerequisites": ["bools", "loops", "conditionals", "numbers"],
         "status": "beta"
       },
       {
-        "slug": "currency-exchange",
-        "name": "Currency Exchange",
-        "uuid": "1335ca33-3af0-4720-bcf2-bfa68ffc6862",
-        "concepts": ["numbers"],
-        "prerequisites": ["basics"],
+        "slug": "inventory-management",
+        "name": "Inventory Management",
+        "uuid": "0558b66c-f2c8-4ff3-846a-4ac87a8660d9",
+        "concepts": ["dicts"],
+        "prerequisites": ["loops", "lists", "tuples"],
         "status": "beta"
       },
       {
@@ -175,14 +143,6 @@
         "concepts": ["sets"],
         "prerequisites": ["basics", "dicts", "lists", "loops", "tuples"],
         "status": "beta"
-      },
-      {
-        "slug": "plane-tickets",
-        "name": "Plane Tickets",
-        "uuid": "3ba3fc89-3e1b-48a5-aff0-5aeaba8c8810",
-        "concepts": ["generators"],
-        "prerequisites": ["conditionals", "dicts", "lists", "loops"],
-        "status": "wip"
       },
       {
         "slug": "ellens-alien-game",
@@ -202,6 +162,46 @@
           "tuples"
         ],
         "status": "beta"
+      },
+      {
+        "slug": "plane-tickets",
+        "name": "Plane Tickets",
+        "uuid": "3ba3fc89-3e1b-48a5-aff0-5aeaba8c8810",
+        "concepts": ["generators"],
+        "prerequisites": ["conditionals", "dicts", "lists", "loops"],
+        "status": "wip"
+      },
+      {
+        "slug": "log-levels",
+        "name": "Log Levels",
+        "uuid": "083f29eb-734f-4d4a-9f27-3e8ceedc29b1",
+        "concepts": ["enums"],
+        "prerequisites": [
+          "classes",
+          "conditionals",
+          "comprehensions",
+          "loops",
+          "sequences",
+          "string-formatting",
+          "string-methods",
+          "tuples"
+        ],
+        "status": "wip"
+      },
+      {
+        "slug": "restaurant-rozalynn",
+        "name": "Restaurant Rozalynn",
+        "uuid": "72c9aa99-20be-4e96-8ade-56c26d598498",
+        "concepts": ["none"],
+        "prerequisites": [
+          "bools",
+          "conditionals",
+          "functions",
+          "dict-methods",
+          "list-methods",
+          "loops"
+        ],
+        "status": "wip"
       }
     ],
     "practice": [
@@ -2370,7 +2370,7 @@
       "uuid": "b77f434a-3127-4dab-b6f6-d04446fed496",
       "slug": "recursion",
       "name": "Recursion"
-    },    
+    },
     {
       "uuid": "d645bd16-81c2-4839-9d54-fdcbe999c342",
       "slug": "regular-expressions",
