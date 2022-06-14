@@ -18,8 +18,8 @@
       "uuid": "7a2e1a4f-1fa8-4327-b700-5af101fcdc89",
       "slug": "test-driven-development",
       "path": "docs/TDD.md",
-      "title": "How to use Exercism tests",
-      "blurb": "An overview of how to use Excercism tests."
+      "title": "Test Driven Development",
+      "blurb": "An overview of Test Driven Development."
     },
     {
       "uuid": "3829fdff-47ac-4283-ae47-a5db1dbce956",
