@@ -191,8 +191,6 @@ Setting `PYTHONOPTIMIZE` to `1` is equivalent to running Python with the `-O` op
 Setting `PYTHONOPTIMIZE` to `2` is equivalent to running Python with the `-OO` option, which both disables assertions and removes docstrings from the bytcode.
 Reducing bytecode is one way to make the code run faster.
 
-TODO: debugging tools
-
 [assert]: https://realpython.com/python-assert-statement/
 [AssertionError]: https://www.geeksforgeeks.org/python-assertion-error/
 [floor divison operator]: https://www.codingem.com/python-floor-division
