@@ -1,0 +1,11 @@
+{
+  "blurb": "Learn all about Python function arguments while helping out at Himari's Cake Shop.",
+  "icon": "boutique-inventory",
+  "authors": ["asheeeshh"],
+  "contributors": ["BethanyG"],
+  "files": {
+    "solution": ["function_arguments.py"],
+    "test": ["function_arguments_test.py"],
+    "exemplar": [".meta/exemplar.py"]
+  }
+}

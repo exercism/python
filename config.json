@@ -202,6 +202,21 @@
           "tuples"
         ],
         "status": "beta"
+      },
+      {
+        "slug": "himaris-cake-shop",
+        "name": "Himari's Cake Shop",
+        "uuid": "a13c953e-fb07-4953-addc-c7925f7a3dea",
+        "concepts": [
+          "function-arguments"
+        ],
+        "prerequisites": [
+          "functions",
+          "dicts",
+          "sets",
+          "tuples"
+        ],
+        "status": "wip"
       }
     ],
     "practice": [
