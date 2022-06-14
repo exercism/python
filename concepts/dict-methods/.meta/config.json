@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for this concept",
-  "authors": ["bethanyg", "cmccandless"],
+  "blurb": "The dict class in Python provides many useful methods for working with dictionaries. Some are introduced in the concept for dicts. This concept tackles a few more - along with some techniques for iterating through and manipulating dicts.",
+  "authors": ["bethanyg", "valentin-p"],
   "contributors": []
 }
