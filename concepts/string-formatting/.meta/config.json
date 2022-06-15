@@ -1,5 +1,5 @@
 {
-  "blurb": "Surprisingly, there are four \"main\" string formats.  A \"%\" formatting mini-language is supported \n directly and through \".format()\", but is considered \"old\". String interpolation is newer, and can be used for complex or conditional substitution. \"string.template()\" substitution is used for internationalization - where \"f-strings\" won't translate.",
+  "blurb": "There are four main string formatting methods. A '%' formatting mini-language is supported, but is considered outdated. String interpolation (f-strings) and 'str.format()'are newer, and can be used for complex or conditional substitution. 'string.template()' substitution is used for internationalization, where f-strings will not translate.",
   "authors": ["valentin-p"],
   "contributors": ["j08k", "BethanyG"]
 }
