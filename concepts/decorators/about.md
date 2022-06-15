@@ -3,7 +3,7 @@
 Decorators are functions that take another function as an argument for the purpose of extending or replacing the behavior of the passed-in function.
 If function `A` is a decorator, and function `B` is its argument, then function `A` modifies, extends or replaces function `B`'s **behavior** _without modifying_ function `B`'s code.
 We say that the decorator function `A` _wraps_ function `B`.
-While we talk about "modifying"  behavior, the wrapped function is _not actually changed_.
+While we talk about "modifying" behavior, the wrapped function is _not actually changed_.
 Behavior is either added _around_ the wrapped function (_and what it returns_), or the wrapped function's behavior is _substituted_ for some other behavior.
 
 ## A Decorator is a Higher-Order Function
@@ -31,7 +31,7 @@ def decorated_function2():
     pass
 ```
 
-If a decorator has defined default arguments, you must use parenthesis in the `@decorator()` call  for the decorator to work:
+If a decorator has defined default arguments, you must use parenthesis in the `@decorator()` call for the decorator to work:
 
 ```python
 @decorator_with_default_arg()
@@ -78,14 +78,13 @@ A simple decorator - one that simply returns its wrapped function - can be writt
 ```python
 >>> def do_nothing(func):
 ...     return func
-... 
+...
 ... @do_nothing
 ... def function4():
 ...     return 4
-... 
+...
 >>> print(function4())
 4
-
 ```
 
 A decorator may only add side effects, such as additional information used for logging:
@@ -94,15 +93,14 @@ A decorator may only add side effects, such as additional information used for l
 >>> def my_logger(func):
 ...     print(f"Entering {func.__name__}")
 ...     return func
-... 
+...
 ... @my_logger
 ... def my_func():
 ...     print("Hello")
-... 
+...
 >>> my_func()
 Entering my_func
 Hello
-
 ```
 
 A decorator does not return itself.
@@ -130,11 +128,11 @@ Following is an example of a decorator being used for validation:
 ...         else:
 ...             return func(world)
 ...     return my_wrapper
-... 
+...
 ... @my_validator
 ... def my_func(planet):
 ...     print(f"Hello, {planet}!")
-... 
+...
 >>> my_func("World")
 Entering my_func with World argument
 Hello, World!
@@ -142,7 +140,6 @@ Hello, World!
 >>> my_func("Pluto")
 Entering my_func with Pluto argument
 Pluto is not a planet!
-
 ```
 
 On the first line, we have the definition for the decorator with its `func` argument.
@@ -169,16 +166,15 @@ Following is an example of a decorator for a function that takes an arbitrary nu
 ...     def wrapper(*args, **kwargs):
 ...         return func(*args, **kwargs) * 2
 ...     return wrapper
-... 
+...
 ... @double
 ... def add(*args):
 ...     return sum(args)
-... 
+...
 >>> print(add(2, 3, 4))
 18
 >>> print(add(2, 3, 4, 5, 6))
 40
-
 ```
 
 This works for doubling the return value from the function argument.
@@ -192,22 +188,21 @@ Following is an example of a decorator that can be configured to multiply the de
 >>> def multi(factor=1):
 ...     if (factor == 0):
 ...         raise ValueError("factor must not be 0")
-... 
+...
 ...     def outer_wrapper(func):
 ...         def inner_wrapper(*args, **kwargs):
 ...             return func(*args, **kwargs) * factor
 ...         return inner_wrapper
 ...     return outer_wrapper
-... 
+...
 ... @multi(factor=3)
 ... def add(*args):
 ...     return sum(args)
-... 
+...
 >>> print(add(2, 3, 4))
 27
 >>> print(add(2, 3, 4, 5, 6))
 60
-
 ```
 
 The first lines validate that `factor` is not `0`.
@@ -230,18 +225,17 @@ Following is an example of a parameterized decorator that controls whether it va
 ...                 return func(world)
 ...         return my_wrapper
 ...     return my_validator
-... 
+...
 ... @check_for_pluto(check=False)
 ... def my_func(planet):
 ...     print(f"Hello, {planet}!")
-... 
+...
 >>> my_func("World")
 Entering my_func with World argument
 Hello, World!
 >>> my_func("Pluto")
 Entering my_func with Pluto argument
 Hello, Pluto!
-
 ```
 
 This allows for easy toggling between checking for `Pluto` or not, and is done without having to modify `my_func`.
