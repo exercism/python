@@ -1,11 +1,11 @@
 [
   {
-    "url": "https://docs.python.org/3/library/stdtypes.html#str.format",
-    "description": "Docs: str.format()"
-  },
-  {
     "url": "https://docs.python.org/3/reference/lexical_analysis.html#f-strings",
     "description": "Docs: f-strings"
+  },
+  {
+    "url": "https://docs.python.org/3/library/stdtypes.html#str.format",
+    "description": "Docs: str.format()"
   },
   {
     "url": "https://realpython.com/python-formatted-output/",
