@@ -69,7 +69,7 @@ A more complex example of an `f-string` that includes output control:
 ```
 
 There are a few limitations to be aware of.
-`f-string` expressions cannot be empty, they cannot contain comments, and for Python versions earlier than Python 3.7, they cannot not contain `await` or `async for` clauses:
+`f-string` expressions cannot be empty, they cannot contain comments, and for Python versions earlier than Python 3.7, they cannot contain `await` or `async for` clauses:
 
 ```python
 >>> print(f"An empty expression will error: {}")
