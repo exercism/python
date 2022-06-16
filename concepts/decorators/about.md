@@ -178,7 +178,7 @@ Following is an example of a decorator for a function that takes an arbitrary nu
 ```
 
 This works for doubling the return value from the function argument.
-If we want to triple, quadruple, etc. the return value, we can add a parameter to the decorator itself.
+If we want to triple, quadruple, etc. the return value, we can add a parameter to the decorator itself., as we show in the next section.
 
 ### Decorators Which Have Their own Parameters
 
