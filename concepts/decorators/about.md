@@ -1,7 +1,7 @@
 # About
 
 Decorators are functions that take another function as an argument for the purpose of extending or replacing the behavior of the passed-in function.
-If function `A` is a decorator, and function `B` is its argument, then function `A` modifies, extends or replaces function `B`'s **behavior** _without modifying_ function `B`'s code.
+If function `A` is a decorator, and function `B` is its argument, then function `A` modifies, extends, or replaces function `B`'s **behavior** _without modifying_ function `B`'s code.
 We say that the decorator function `A` _wraps_ function `B`.
 While we talk about "modifying" behavior, the wrapped function is _not actually changed_.
 Behavior is either added _around_ the wrapped function (_and what it returns_), or the wrapped function's behavior is _substituted_ for some other behavior.
