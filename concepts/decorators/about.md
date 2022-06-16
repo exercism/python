@@ -31,7 +31,7 @@ def decorated_function2():
     pass
 ```
 
-If a decorator has defined default arguments, you must use parenthesis in the `@decorator()` call for the decorator to work:
+If a decorator has defined default arguments, you must use parenthesis in the `@decorator()` call for the decorator to work, as you would in calling any function:
 
 ```python
 @decorator_with_default_arg()
@@ -152,8 +152,8 @@ The inner function returns either `func` or, if `planet` equals `Pluto`, it will
 It could be coded to raise a `ValueError` instead.
 So, the inner function wraps `func`, and returns either `func` or does something that substitutes what `func` would do.
 The decorator returns its _inner function_.
-It does not _directly_ return the original, passed-in function.
-Depending on what happens in the wrapper function, `func` may or may not be returned.
+The _inner_function_ may or may not return the original, passed-in function.
+Depending on what code conditionally executes in the wrapper function or _inner_function_, `func` may be returned, an error could be raised, or a value of `func`'s return type could be returned.
 
 ### Decorating a Function that Takes an Arbitrary Number of Arguments
 
@@ -178,7 +178,7 @@ Following is an example of a decorator for a function that takes an arbitrary nu
 ```
 
 This works for doubling the return value from the function argument.
-If we want to triple, quadruple, etc. the return value, we can add a parameter to the decorator itself., as we show in the next section.
+If we want to triple, quadruple, etc. the return value, we can add a parameter to the decorator itself, as we show in the next section.
 
 ### Decorators Which Have Their own Parameters
 
