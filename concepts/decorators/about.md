@@ -13,7 +13,7 @@ A function, used as an argument or returned from another function, is a [first-c
 A Python function, as a [callable object][callable objects], is a first-class function which can be stored in a variable or used as an argument, much like any other value or object.
 Higher-order functions and first-class functions work together to make decorators possible.
 
-## What Using Decorator Looks Like
+## What Using a Decorator Looks Like
 
 The `@` symbol is prepended to the name of the decorator function and placed just above the function to be decorated, like so:
 
