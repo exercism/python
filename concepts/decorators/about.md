@@ -146,7 +146,7 @@ On the first line, we have the definition for the decorator with its `func` argu
 On the next line is the definition for the decorators _inner function_, which wraps the `func` argument.
 Since the _inner function_ wraps the decorator's `func` argument, it is passed the same argument that is passed to `func`.
 Note that the wrapper doesn't have to use the same name for the argument that was defined in `func`.
-The original function uses `planet` and the decorator uses `world`, and the decorater still works.
+The original function uses `planet` and the decorator uses `world`, and the decorator still works.
 
 The inner function returns either `func` or, if `planet` equals `Pluto`, it will print that Pluto is not a planet.
 It could be coded to raise a `ValueError` instead.
