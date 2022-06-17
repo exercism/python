@@ -1,0 +1,11 @@
+{
+  "blurb": "Learn about functions through Della's experience at the DMV.",
+  "authors": ["bethanyG", "bobahop"],
+  "icon": "emoji-times",
+  "contributors": [],
+  "files": {
+    "solution": ["dellas_delays.py"],
+    "test": ["dellas_delays_test.py"],
+    "exemplar": [".meta/exemplar.py"]
+  }
+}
