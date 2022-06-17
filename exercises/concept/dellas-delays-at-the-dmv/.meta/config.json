@@ -4,8 +4,8 @@
   "icon": "emoji-times",
   "contributors": [],
   "files": {
-    "solution": ["dellas-delays-at-the-dmv.py"],
-    "test": ["dellas-delays-at-the-dmv-test.py"],
+    "solution": ["dellas_delays_at_the_dmv.py"],
+    "test": ["dellas_delays_at_the_dmv_test.py"],
     "exemplar": [".meta/exemplar.py"]
   }
 }
