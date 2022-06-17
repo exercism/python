@@ -25,7 +25,7 @@ for item in sequence:
 # `range()` is used as an explicit loop counter.  
 # This will loop 12 times, from index 0 to index 11.
 for item in range(12):
-    set of statements
+    set_of_statements
 ```
 
 
