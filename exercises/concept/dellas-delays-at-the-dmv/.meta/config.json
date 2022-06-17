@@ -5,7 +5,7 @@
   "contributors": [],
   "files": {
     "solution": ["dellas-delays-at-the-dmv.py"],
-    "test": ["dellas-delays-at-the-dmv_test.py"],
+    "test": ["dellas-delays-at-the-dmv-test.py"],
     "exemplar": [".meta/exemplar.py"]
   }
 }
