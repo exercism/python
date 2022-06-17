@@ -121,6 +121,24 @@
         "status": "beta"
       },
       {
+        "slug": "dellas-delays-at-the-dmv",
+        "name": "Della's Delays at the DMV",
+        "uuid": "9f38f70d-48f4-4934-ae6e-d8277ede8edc",
+        "concepts": ["functions"],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "comparisons",
+          "lists",
+          "list-methods",
+          "loops",
+          "numbers",
+          "strings",
+          "string-methods"
+        ],
+        "status": "beta"
+      },      
+      {
         "slug": "tisbury-treasure-hunt",
         "name": "Tisbury Treasure Hunt",
         "uuid": "7ecd42c1-2ed5-487a-bc89-71c9cbad9b05",
