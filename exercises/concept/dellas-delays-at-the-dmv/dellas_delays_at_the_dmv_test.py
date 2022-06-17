@@ -3,7 +3,7 @@
 import unittest
 import pytest
 
-from dellas-delays-at-the-dmv import (
+from dellas_delays_at_the_dmv import (
                                       line_length,
                                       wait_minutes
                                       )
