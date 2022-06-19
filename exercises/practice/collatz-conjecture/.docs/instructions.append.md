@@ -10,5 +10,5 @@ To raise a `ValueError` with a message, write the message as an argument to the 
 
 ```python
 # example when argument is zero or a negative integer
-raise ValueError("Only positive numbers are allowed")
+raise ValueError("Only positive integers are allowed")
 ```
