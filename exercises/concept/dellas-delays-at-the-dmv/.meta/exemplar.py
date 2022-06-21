@@ -11,3 +11,4 @@ def line_length(oclock):
 def wait_minutes(oclock):
     return line_length(oclock) * 5
   
+wait_time = wait_minutes
