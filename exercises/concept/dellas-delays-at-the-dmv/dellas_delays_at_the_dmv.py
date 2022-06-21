@@ -6,3 +6,5 @@ def line_length(oclock):
 
 def wait_minutes(oclock):
     pass
+
+wait_time = None
