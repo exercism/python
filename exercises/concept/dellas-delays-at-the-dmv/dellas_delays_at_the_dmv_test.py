@@ -34,3 +34,16 @@ class DellasDelaysTest(unittest.TestCase):
                 error_msg = f"Expected {minutes} for the minutes to wait at {hour} o'clock."
 
                 self.assertEqual(wait_minutes(hour), minutes, msg=error_msg)
+
+    @pytest.mark.task(taskno=3)
+    def test_wait_minutes(self):
+        data = [
+            (9, 50), (10, 25), (11, 25),
+            (12, 100), (1, 25), (2, 25),
+            (3, 25), (4, 50)]
+
+        for variant, (hour, minutes) in enumerate(data, 1):
+            with self.subTest(f'variation #{variant}', input=hour, output=minutes):
+                error_msg = f"Expected {minutes} for the minutes to wait at {hour} o'clock."
+
+                self.assertEqual(wait_time(hour), minutes, msg=error_msg)                
