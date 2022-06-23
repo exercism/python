@@ -47,4 +47,17 @@ class DellasDelaysTest(unittest.TestCase):
             with self.subTest(f'variation #{variant}', input=hour, output=minutes):
                 error_msg = f"Expected {minutes} for the minutes to wait at {hour} o'clock."
 
-                self.assertEqual(wait_time(hour), minutes, msg=error_msg)                
+                self.assertEqual(wait_time(hour), minutes, msg=error_msg)
+                
+    @pytest.mark.task(taskno=4)
+    def test_respond(self):
+        data = [
+            ("Good morning.", "Good morning. What's good about it?"), 
+            ("Good afternoon.", "Good afternoon. What's good about it?"),
+            ("Hello.", "Hello. I wish you would go away!")]
+
+        for variant, (greeting, response) in enumerate(data, 1):
+            with self.subTest(f'variation #{variant}', input=greeting, output=response):
+                error_msg = f"Expected {response} for the greeting: {greeting}"
+
+                self.assertEqual(respond(greeting), response, msg=error_msg)
