@@ -12,3 +12,16 @@ def wait_minutes(oclock):
     return line_length(oclock) * 5
   
 wait_time = wait_minutes
+
+def respond(greeting):
+    response = greeting
+    secret_thought = ""
+
+    def thinking():
+        nonlocal secret_thought
+        if greeting.startswith("Good"):
+            secret_thought = "What's good about it?"
+        else:
+            secret_thought = "I wish you would go away!"
+    thinking()
+    return f"{response} {secret_thought}"
