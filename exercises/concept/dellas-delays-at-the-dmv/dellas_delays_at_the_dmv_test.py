@@ -5,7 +5,8 @@ from dellas_delays_at_the_dmv import (
     line_length,
     wait_minutes,
     wait_time,
-    respond
+    respond,
+    wish_clock
 )
 
 
@@ -62,3 +63,9 @@ class DellasDelaysTest(unittest.TestCase):
                 error_msg = f"Expected {response} for the greeting: {greeting}"
 
                 self.assertEqual(respond(greeting), response, msg=error_msg)
+                
+    @pytest.mark.task(taskno=5)
+    def test_wish_clock(self):
+        response = "The hour is now 5. Time to leave!"
+        error_msg = f"Expected {response}"
+        self.assertEqual(wish_clock(), response, msg=error_msg)
