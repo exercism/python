@@ -25,3 +25,10 @@ def respond(greeting):
             secret_thought = "I wish you would go away!"
     thinking()
     return f"{response} {secret_thought}"
+
+clock = 4
+
+def wish_clock():
+    global clock
+    clock = 5
+    return f"The hour is now {clock}. Time to leave!"
