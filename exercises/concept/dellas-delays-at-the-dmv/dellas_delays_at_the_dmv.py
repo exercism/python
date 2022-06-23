@@ -20,3 +20,9 @@ def respond(greeting):
     thinking()
     return f"{response} {secret_thought}"
 
+clock = 4
+
+def wish_clock():
+    # implement logic here
+    return f"The hour is now {clock}. Time to leave!"
+
