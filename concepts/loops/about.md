@@ -248,3 +248,4 @@ The loop [`else` clause][loop else] is unique to Python and can be used for "wra
 [for statement]: https://docs.python.org/3/reference/compound_stmts.html#for
 [iterable]: https://docs.python.org/3/glossary.html#term-iterable
 [next built-in]: https://docs.python.org/3/library/functions.html#next
+[stopiteration]: https://docs.python.org/3/library/exceptions.html#StopIteration
