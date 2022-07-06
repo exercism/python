@@ -15,7 +15,7 @@ The goal of this exercise is to teach the student how [`bool`][bools] is impleme
 - obtain a `bool` object from [membership operators][membership operators] (`in`, `not in`)
 - obtain a `bool` object from [identity operators][identity operators] (`is`, `is not`)
 - 'truthyness' and 'falsyness'
-  - create a `bool` object from other objects (`collections`, `integers`, `strings`) with the the `bool()` constructor.
+  - create a `bool` object from other objects (`collections`, `integers`, `strings`) with the `bool()` constructor.
 - catching/raising Exceptions
 - covering that `bool` is a subtype of `int`
 - bitwise logical operators

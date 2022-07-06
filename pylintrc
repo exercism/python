@@ -2,7 +2,7 @@
 # This pylintrc file contains a best-effort configuration to uphold the
 # best-practices and style for the Python track of exercism.org.
 #
-# It is based on the the Google pylintrc & the Google Python style guide:
+# It is based on the Google pylintrc & the Google Python style guide:
 #   https://google.github.io/styleguide/pyguide.html,
 #   https://google.github.io/styleguide/pylintrc
 #
