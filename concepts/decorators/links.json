@@ -1,18 +1,26 @@
 [
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://peps.python.org/pep-0318/",
+    "description": "PEP 318 – Decorators for Functions and Methods"
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://peps.python.org/pep-3129/",
+    "description": "PEP 3129 – Class Decorators"
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://www.geeksforgeeks.org/first-class-functions-python/",
+    "description": "First Class Functions in Python"
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://www.geeksforgeeks.org/higher-order-functions-in-python/",
+    "description": "Higher Order Functions in Python"
+  },
+  {
+    "url": "https://realpython.com/primer-on-python-decorators/",
+    "description": "Primer on Python Decorators"
+  },
+  {
+    "url": "https://www.geeksforgeeks.org/chain-multiple-decorators-in-python/",
+    "description": "Chain Multiple Decorators in Python"
   }
 ]

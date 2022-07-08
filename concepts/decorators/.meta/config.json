@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for this concept",
-  "authors": ["bethanyg", "cmccandless"],
-  "contributors": []
+  "blurb": "Decorators are higher-order functions that take other functions as arguments to extend/modify their behavior and return the modified functions. They can be applied to classes as well, in which case they will take a class as an argument instead of a function.",
+  "authors": ["BethanyG", "bobahop", "kotp", "mathstrains21"],
+  "contributors": ["velaco"]
 }
