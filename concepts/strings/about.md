@@ -140,7 +140,7 @@ Using `<str>.split()` without any arguments will split the string on whitespace.
 >>> cat_words = "feline, four-footed, ferocious, furry"
 >>> cat_words.split(',')
 ...
-['feline, four-footed, ferocious, furry']
+['feline', ' four-footed', ' ferocious', ' furry']
 
 
 >>> colors = """red,
