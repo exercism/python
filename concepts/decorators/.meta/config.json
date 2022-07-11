@@ -1,5 +1,5 @@
 {
   "blurb": "Decorators are higher-order functions that take other functions as arguments to extend/modify their behavior and return the modified functions.",
-  "authors": ["BethanyG", "bobahop", "kotp", "mathstrains21"],
-  "contributors": ["velaco"]
+  "authors": ["BethanyG", "bobahop", "kotp", "mathstrains21", "velaco"],
+  "contributors": []
 }
