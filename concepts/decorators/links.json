@@ -4,10 +4,6 @@
     "description": "PEP 318 – Decorators for Functions and Methods"
   },
   {
-    "url": "https://peps.python.org/pep-3129/",
-    "description": "PEP 3129 – Class Decorators"
-  },
-  {
     "url": "https://www.geeksforgeeks.org/first-class-functions-python/",
     "description": "First Class Functions in Python"
   },
