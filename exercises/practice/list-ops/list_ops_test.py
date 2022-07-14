@@ -35,9 +35,7 @@ class ListOpsTest(unittest.TestCase):
 
     def test_concat_list_of_nested_lists(self):
         self.assertEqual(
-            concat([[[1], [2]], [[3]], [[]], [[4, 5, 6]]]),
-            [[1], [2], [3], [], [4, 5, 6]],
-        )
+            concat([[[1], [2]], [[3]], [[]], [[4, 5, 6]]]), [1, 2, 3, 4, 5, 6])
 
     def test_filter_empty_list(self):
         self.assertEqual(list_ops_filter(lambda x: x % 2 == 1, []), [])
