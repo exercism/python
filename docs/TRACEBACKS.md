@@ -139,7 +139,7 @@ When an `assert` evaluates to `False` it will raise an [`AssertionError`][Assert
 The Traceback for the `AssertionError` can include an optional message that is part of the `assert` statement.
 Although a message is optional, it is good practice to always include one in the `assert` definition.
 
-Following is an example of using `assert`:
+The following is an example of using `assert`:
 
 ```python
 >>> def int_division(dividend, divisor):
