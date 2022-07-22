@@ -21,7 +21,6 @@ Although modifying the code _may_ include improving the design as a way to pass 
 Following is an example of debugging without refactoring:
 
 ```python
-
 # A function intended to return x added to y.
 # x and y are bad parameter names, but we ignore that for now.
 def add(x, y):
