@@ -95,7 +95,7 @@ What is logged can be configured by the logging severity (e.g., 'DEBUG', 'INFO',
 A call to the `logging.error` function can pass `True` to the `exc_info` parameter, which will additionally log the stack trace.
 By configuring multiple handlers, logging can write to more than one place with the same logging function.
 
-Following is a an example of logging printed to the console:
+Following is an example of logging printed to the console:
 
 ```python
 
