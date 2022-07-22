@@ -22,7 +22,7 @@ The Traceback will show where the exception was raised and what functions were c
 
 `ValueError` is a common exception.
 
-Following is an example of `ValueError` resulting from trying to assign two variables on the left from only one value on the right:
+The following is an example of `ValueError` resulting from trying to assign two variables on the left from only one value on the right:
 
 ```python
 >>> first, second = [1]
