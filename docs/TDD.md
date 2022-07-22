@@ -129,7 +129,7 @@ Diff is 970 characters long. Set self.maxDiff to None to see it.
 There may still be enough data to see what the problem is.
 In the case above, there are two line feeds returned (e.g. `\n\n(\'Brass Spyglass`) when only one is expected (e.g. `\n(\'Brass Spyglass`).
 
-## After all the tests pass
+## After All the Tests Pass
 
 Congratulations!
 All the tests have passed.
