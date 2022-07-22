@@ -18,7 +18,7 @@ It is not simply rewriting code to fix bugs.
 It is sometimes called "refactoring" to modify code to get it to pass the tests.
 Although modifying the code _may_ include improving the design as a way to pass the tests, simply debugging is not necessarily improving the _design_ of the code, and so is not necessarily _refactoring_.
 
-Following is an example of debugging without refactoring:
+The following is an example of debugging without refactoring:
 
 ```python
 # A function intended to return x added to y.
@@ -33,7 +33,7 @@ def add(x, y):
 ```
 
 
-Following is an example of refactoring, and then debugging:
+The following is an example of refactoring, and then debugging:
 
 ```python
 
@@ -178,6 +178,7 @@ VOWELS = "AEIOU"
 def has_all_vowels(sentence):
     return all(letter in sentence.casefold() for letter in VOWELS)
 """, number=loops) / loops)
+```
 
 Running the code a million times took an average `4.965089999896008e-07` seconds per call (about `497` nanoseconds per call).
 
@@ -198,6 +199,7 @@ def has_all_vowels(sentence):
     sentence = sentence.casefold()
     return all(letter in sentence for letter in VOWELS)
 """, number=loops) / loops)
+```
 
 Running the code a million times took an average `4.923898000270128e-07` seconds per call (about `492` nanoseconds per call.)
 So, taking the `casefold` out of the list comprehension saved about `5` nanoseconds per call, or about `5` milliseconds total for a million calls.
