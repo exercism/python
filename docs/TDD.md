@@ -110,7 +110,8 @@ In this particular case, it indicates that the returned value of `['2A']` did no
 If we look at the code for `get_coordinate` we see it is implemented like so
 
 ```python
-return [record[1]]
+def get_coordinate(record):
+    return [record[1]]
 ```
 
 If we remove the list brackets (e.g. `return record[1]`) and run the tests again, the tests for Task 1 will pass.
