@@ -92,7 +92,9 @@ What the `print` calls revealed is that we used `/` when we should have used `//
 ## Logging
 
 [Logging][logging] can be used similarly to `print`, but it is more powerful.
-Logging can print to the console, but it can also be configured to print to a file.
+What is logged can be configured by the logging severity (e.g., 'DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'.)
+A call to the `logging.error` function can pass `True` to the `exc_info` parameter, which will additionally log the stack trace.
+By configuring multiple handlers, logging can print to more than one place with the same logging function.
 
 Following is a an example of logging printed to the console:
 
