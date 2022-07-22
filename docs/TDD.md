@@ -137,8 +137,8 @@ What next?
 The solution could be published right away.
 Or, now that the code works, if you would like to refactor it for any reason, you can modify the code and submit another iteration.
 If you think the code could be better, but you don't know how, you can request mentoring for the solution.
-If a mentor is available with ideas for other approaches to a solution, they may contact you to share those ideas.
-You could allow comments when publishing your solution, and other students may take the opportunity to make comments or ask questions.
+If a mentor is available, they may contact you with ideas for other approaches to a solution.
+When publishing your solution, you can allow comments and other students may take the opportunity to post comments or ask questions.
 
 ## Optimizing for Performance
 
