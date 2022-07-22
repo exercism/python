@@ -99,7 +99,7 @@ Following is a an example of logging printed to the console:
 ```python
 
 >>> import logging
-... 
+...
 ... # configures minimum logging level as INFO
 ... logging.basicConfig(level=logging.INFO)
 
@@ -107,7 +107,7 @@ Following is a an example of logging printed to the console:
 ...     # prints INFO:root: num == 5
 ...     logging.info(f" num == {num}")
 ...     return (num // 2) * 4
-... 
+...
 >>> print(halve_and_quadruple(5))
 
 ```
