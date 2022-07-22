@@ -2,8 +2,8 @@
 
 ## Frame Object
 
-A frame object holds the local variables and arguments passed to a function.
-A frame object is created when a function is called and is destroyed when that function returns.
+When a function is called, a frame object is created to hold the local variables and arguments passed to a function.
+When the function is returns, the frame object is destroyed.
 When function `B` is called within function `A`, function `B`'s values are put into a frame object, which is then placed on top of function `A`'s frame object on the call stack.
 
 ## Call Stack
