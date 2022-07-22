@@ -63,7 +63,7 @@ The [print][print] function can be used for printing the value to the console.
 The following is an example of a function that doesn't return the value expected:
 
 ```python
-# the intent is to only pass an int to this function and get an int back
+# the intent is to pass an integer to this function and get an integer back
 def halve_and_quadruple(num):
     return (num / 2) * 4
 ```
@@ -72,12 +72,12 @@ When the function is passed `5`, the expected value is `8`, but it it returns `1
 To troubleshoot, the calculating is broken up so that the value can be inspected at every step.
 
 ```python
-# the intent is to only pass an int to this function and get an int back
+# the intent is to pass an integer to this function and get an integer back
 def halve_and_quadruple(num):
     # verify the number in is what is expected
     # prints 5
     print(num)
-    # we want the int divided by an int to be an int
+    # we want the int divided by an integer to be an integer
     # but this prints 2.5! We've found our mistake.
     print(num / 2)
     # this makes sense, since 2.5 x 4 = 10.0
