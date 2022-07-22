@@ -84,8 +84,6 @@ def halve_and_quadruple(num):
     print((num / 2) * 4)
     return (num / 2) * 4
 
-```
-
 What the `print` calls revealed is that we used `/` when we should have used `//`, the [floor divison operator][floor divison operator].
 
 ## Logging
