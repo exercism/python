@@ -142,7 +142,7 @@ When publishing your solution, you can allow comments and other students may tak
 
 ## Optimizing for Performance
 
-Although "Premature optimization is the root of all evil" (a saying attributed to both Tony Hoare and Donald Knuth), there does come a time when the solution works and it is desired to make it as performant as possible.
+Although "Premature optimization is the root of all evil" (a saying attributed to both Tony Hoare and Donald Knuth), there does come a time when, even though the solution works, it is desired to improve the solution's performance.
 One of those times may be when the solution passes some tests but times out for others.
 It can be helpful to know exactly how much time a piece of code is taking.
 The [timeit][timeit] module can be used to time the execution of code down to very small durations.
