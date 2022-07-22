@@ -60,7 +60,7 @@ Sometimes an error is not being raised, but a value is not what is expected.
 This can be especially perplexing if the value is the result of a chain of calculations.
 In such a situation it can be helpful to look at the value at each step to see which step is the one that isn't behaving as expected.
 The [print][print] function can be used for printing the value to the console.
-Following is an example of a function that doesn't return the value expected
+The following is an example of a function that doesn't return the value expected:
 
 ```python
 # the intent is to only pass an int to this function and get an int back
