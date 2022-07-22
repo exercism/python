@@ -151,7 +151,7 @@ The `stmt` parameter defines the actual code to be run and timed.
 The `number` parameter determines how many times the `stmt` code will be run.
 The `setup` parameter defines the code that is run only once to prepare for running the `stmt` code.
 The time for the `setup` code to run is included in the overall time.
-The more iterations the `stmt` code is run, the less the `setup` time should count per iteration.
+The more iterations the `stmt` code is run, the less the `setup` time will count per iteration.
 The `timer` parameter allows for passing in a different `Timer` than the default.
 The default argument for the `timer` parameter is [perf_counter][perf_counter], which should suffice.
 The `number` parameter defines the number of times the `stmt` code will be run.
