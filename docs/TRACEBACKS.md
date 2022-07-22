@@ -115,11 +115,10 @@ The level is configured as `INFO` because the default level is `WARNING`.
 For a persistent log, the logger can be configured to write to a file, like so:
 
 ```python
-
 >>> import logging
 ...
-... # configures the output file name to example.log, and the minimum logging level as INFO
-... logging.basicConfig(filename='example.log', level=logging.INFO)
+>>> # configures the output file name to example.log, and the minimum logging level as INFO
+>>> logging.basicConfig(filename='example.log', level=logging.INFO)
 ...
 ... def halve_and_quadruple(num):
 ...     # prints INFO:root: num == 5 to the example.log file
@@ -127,7 +126,6 @@ For a persistent log, the logger can be configured to write to a file, like so:
 ...     return (num // 2) * 4
 ...
 >>> print(halve_and_quadruple(5))
-
 ```
 
 ## assert
