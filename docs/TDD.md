@@ -159,7 +159,7 @@ The default argument for the `number` parameter is `1_000_000`.
 The `globals` parameter specifies a namespace in which to execute the code.
 The default argument for the `globals` parameter is `None`.
 
-Following is an example of using `timeit` to see how long it takes to determine if a sentence contains all English vowels:
+The following is an example of using `timeit` to see how long it takes to determine if a sentence contains all English vowels:
 
 ```python
 
