@@ -52,7 +52,7 @@ def lot_inventory(old_cars, new_cars):
 
 Exercism's Python track utilizes TDD methodology in its exercises.
 Unit tests are already written.
-The tests may be viewed by the student to gather a more detailed understanding of what a passing solution should provide.
+The tests may be viewed by the student to gather a more detailed understanding of what is required for a solution to pass.
 A solution stub may be provided to the student.
 
 ## Troubleshooting a Failed Test on Exercism in the Web Editor
