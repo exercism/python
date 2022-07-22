@@ -86,9 +86,7 @@ One or more variations of this test failed. Details can be found under each [var
 
 Clicking the `⌄` will collapse the test.
 
-
 Beneath will be a collapsed test that looks something like:
-
 
 ```
        Test 2                                                    >
