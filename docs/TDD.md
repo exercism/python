@@ -31,7 +31,6 @@ def add(x, y):
 # Function corrected. It passes the tests. It has been debugged, but not refactored.
 def add(x, y):
     return x + y
-    
 ```
 
 
