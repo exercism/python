@@ -148,7 +148,7 @@ It can be helpful to know exactly how much time a piece of code is taking.
 The [timeit][timeit] module can be used to time the execution of code down to very small durations.
 The `timeit` function can take up to five arguments: `timeit.timeit(stmt='pass', setup='pass', timer=<default timer>, number=1000000, globals=None)`.
 The `stmt` parameter defines the actual code to be run and timed.
-The `stmt` code will be run for a specifed `number` of iterations.
+The `number` parameter determines how many times the `stmt` code will be run.
 The `setup` parameter defines the code that is run only once to prepare for running the `stmt` code.
 The time for the `setup` code to run is included in the overall time.
 The more iterations the `stmt` code is run, the less the `setup` time should count per iteration.
