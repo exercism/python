@@ -40,7 +40,7 @@ If we place the offending line in a function and then call the function we see a
 ```python
 >>> def my_func():
 ...     first, second = [1]
-... 
+...
 >>> my_func()
 Traceback (most recent call last):
   File <stdin>, line 5, in <module>
