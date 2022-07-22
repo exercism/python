@@ -33,8 +33,8 @@ ValueError: not enough values to unpack (expected 2, got 1)
 
 ```
 
-It says that the most recent call is last, so the place to start is with the exception at the bottom of the trace.
-From there it can be traced back to the start.
+Tracebacks are organized with the most recent call is last, so the place to start reading the Traceback is with the exception at the bottom.
+By reading upwards from there, we can see how that statement was reached.
 If we place the offending line in a function and then call the function we see a longer trace:
 
 ```python
@@ -114,7 +114,7 @@ Following is an example of logging printed to the console:
 ```
 
 The level is configured as `INFO` because the default level is `WARNING`.
-For a persistent log, the logger can be configured to use a file, like so:
+For a persistent log, the logger can be configured to write to a file, like so:
 
 ```python
 
