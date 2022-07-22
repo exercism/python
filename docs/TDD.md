@@ -77,8 +77,8 @@ FAILED TisburyTreasure > get coordinate
 where `Tisbury Treasure` indicates the exercise, and `get_coordinate` indicates the failing function or method.
 
 `Test 1` is usually going to be a kind of template with a code section for setting up the tests.
-It does not have information on the specific test(s) that failed. 
-It will say toward the bottom that 
+It does not have information on the specific test(s) that failed.
+It will say toward the bottom that
 
 ```
 One or more variations of this test failed. Details can be found under each [variant#].
