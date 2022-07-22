@@ -98,11 +98,11 @@ Following is an example of logging printed to the console:
 ```python
 
 >>> import logging
-...
-... # configures minimum logging level as INFO
-... logging.basicConfig(level=logging.INFO)
-
-... def halve_and_quadruple(num):
+>>>
+>>> # configures minimum logging level as INFO
+>>> logging.basicConfig(level=logging.INFO)
+>>>
+>>> def halve_and_quadruple(num):
 ...     # prints INFO:root: num == 5
 ...     logging.info(f" num == {num}")
 ...     return (num // 2) * 4
