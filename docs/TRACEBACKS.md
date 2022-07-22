@@ -172,7 +172,7 @@ If we start reading the Traceback at the bottom (as we should) we quickly see th
 ...     assert divisor != 0, "divisor must not be 0"
 ...     assert isinstance(divisor, numbers.Number), "divisor must be a number"
 ...     return dividend // divisor
-... 
+...
 >>> print(int_division(2, 1))
 2
 >>> print(int_division(2, '0'))
