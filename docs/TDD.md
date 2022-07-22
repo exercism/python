@@ -202,8 +202,6 @@ def has_all_vowels(sentence):
     return all(letter in sentence for letter in VOWELS)
 """, number=loops) / loops)
 
-```
-
 Running the code a million times took an average `4.923898000270128e-07` seconds per call (about `492` nanoseconds per call.)
 So, taking the `casefold` out of the list comprehension saved about `5` nanoseconds per call, or about `5` milliseconds total for a million calls.
 
