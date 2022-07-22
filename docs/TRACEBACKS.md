@@ -186,7 +186,7 @@ Traceback (most recent call last):
 AssertionError: divisor must be a number
 ```
 
-Once a bug is identified, it should be considered to replace the `assert` with regular error handling.
+Once a bug is identified, consider replacing the `assert` with regular error handling.
 This is because all `assert` statements can disabled through running Python with the `-O` or `-OO` options, or from setting the `PYTHONOPTIMIZE` environment variable to `1` or `2`.
 Setting `PYTHONOPTIMIZE` to `1` is equivalent to running Python with the `-O` option, which disables assertions.
 Setting `PYTHONOPTIMIZE` to `2` is equivalent to running Python with the `-OO` option, which both disables assertions and removes docstrings from the bytcode.
