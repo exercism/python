@@ -14,7 +14,7 @@ Once function `C` returns, then its frame object will be popped off the stack an
 
 ## Traceback
 
-A Traceback is a report of all the frame objects on the stack for a specific time.
+A Traceback is a report of all the frame objects on the stack at a specific time.
 When a Python program encounters an unhandled exception, it will print the exception message and a Traceback.
 The Traceback will show where the exception was raised and what functions were called leading up to it.
 
