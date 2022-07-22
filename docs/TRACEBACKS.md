@@ -136,7 +136,7 @@ For a persistent log, the logger can be configured to use a file, like so:
 
 [`assert`][assert] is a statement which should always evaluate to `True` unless there is a bug in the program.
 When an `assert` evaluates to `False` it will raise an [`AssertionError`][AssertionError].
-The Traceback for the `AssertionError` can include an optional message that is part of the `assert` definition.
+The Traceback for the `AssertionError` can include an optional message that is part of the `assert` statement.
 Although a message is optional, it is good practice to always include one in the `assert` definition.
 
 Following is an example of using `assert`:
