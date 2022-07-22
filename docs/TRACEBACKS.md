@@ -71,7 +71,6 @@ def halve_and_quadruple(num):
 When the function is passed `5`, the expected value is `8`, but it it returns `10.0`.
 To troubleshoot, the calculating is broken up so that the value can be inspected at every step.
 
-
 ```python
 # the intent is to only pass an int to this function and get an int back
 def halve_and_quadruple(num):
