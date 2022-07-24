@@ -29,7 +29,7 @@ False
 True
 ```
 
-All `boolean operators` are considered lower precedence than Pythons [`comparison operators`][comparisons], such as `==`, `>`, `<`, `is` and `is not`.
+All `boolean operators` are considered lower precedence than Python's [`comparison operators`][comparisons], such as `==`, `>`, `<`, `is` and `is not`.
 
 
 ## Type Coercion and Truthiness
