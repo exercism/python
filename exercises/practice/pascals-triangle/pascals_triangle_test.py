@@ -1,9 +1,10 @@
 import unittest
 
-from pascals_triangle import rows
+from pascals_triangle import (
+    rows,
+)
 
-
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+# Tests adapted from `problem-specifications//canonical-data.json`
 
 TRIANGLE = [
     [1],
@@ -15,13 +16,13 @@ TRIANGLE = [
     [1, 6, 15, 20, 15, 6, 1],
     [1, 7, 21, 35, 35, 21, 7, 1],
     [1, 8, 28, 56, 70, 56, 28, 8, 1],
-    [1, 9, 36, 84, 126, 126, 84, 36, 9, 1]
+    [1, 9, 36, 84, 126, 126, 84, 36, 9, 1],
 ]
 
 
 class PascalsTriangleTest(unittest.TestCase):
     def test_zero_rows(self):
-        self.assertEqual(rows(0), [])
+        self.assertEqual(rows(0), TRIANGLE[:0])
 
     def test_single_row(self):
         self.assertEqual(rows(1), TRIANGLE[:1])
@@ -44,9 +45,13 @@ class PascalsTriangleTest(unittest.TestCase):
     def test_ten_rows(self):
         self.assertEqual(rows(10), TRIANGLE[:10])
 
-    def test_negative_rows(self):
-        self.assertEqual(rows(-1), None)
+    # Additional tests for this track
+    def test_negative_rows_are_invalid(self):
+        with self.assertRaises(ValueError) as err:
+            rows(-1)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "number of rows is negative")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
