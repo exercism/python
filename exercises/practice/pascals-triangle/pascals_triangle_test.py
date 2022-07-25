@@ -1,3 +1,4 @@
+import sys
 import unittest
 
 from pascals_triangle import (
@@ -52,6 +53,11 @@ class PascalsTriangleTest(unittest.TestCase):
         self.assertEqual(type(err.exception), ValueError)
         self.assertEqual(err.exception.args[0], "number of rows is negative")
 
+    def test_solution_is_recursive(self):
+        with self.assertRaises(RecursionError) as err:
+            rows(sys.getrecursionlimit() + 10)
+        self.assertEqual(type(err.exception), RecursionError)
+        self.assertEqual(err.exception.args[0], "maximum recursion depth exceeded in comparison")
 
 if __name__ == "__main__":
     unittest.main()
