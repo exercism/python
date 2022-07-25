@@ -1,4 +1,5 @@
 {%- import "generator_macros.j2" as macros with context -%}
+import sys
 {{ macros.header() }}
 
 TRIANGLE = [
@@ -33,7 +34,7 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         {%- if case is error_case %}
         with self.assertRaises({{ case["type"] }}) as err:
             {%- if case["input"]["count"] == "OVERFLOW" %}
-            {{ case["property"] }}(1010)
+            {{ case["property"] }}(sys.getrecursionlimit() + 10)
             {%- else %}
             {{ case["property"] }}({{case["input"]["count"]}})
             {%- endif %}
