@@ -1,6 +1,9 @@
 # Instructions append
 
-Try to complete this exercise using recursion, rather than loops.
+## Recursion
+
+This exercise is designed to be completed using recursion, rather than loops.
+MORE DESCRIPTION ABOUT RECURSIVE PROGRAMMING GOES HERE.
 
 ## Exception messages
 

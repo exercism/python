@@ -1250,8 +1250,7 @@
           "functions",
           "function-arguments",
           "lists",
-          "numbers",
-          "recursion"
+          "numbers"
         ],
         "difficulty": 3
       },
