@@ -38,11 +38,11 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
             {%- else %}
             {{ case["property"] }}({{case["input"]["count"]}})
             {%- endif %}
-          self.assertEqual(type(err.exception), {{ case["type"] }})
-          self.assertEqual(err.exception.args[0], "{{ case["expected"]["error"] }}")
-          {%- else %}
-          self.assertEqual({{ case["property"] }}({{case["input"]["count"]}}), {{ case["expected"] }})
-          {%- endif %}
+        self.assertEqual(type(err.exception), {{ case["type"] }})
+        self.assertEqual(err.exception.args[0], "{{ case["expected"]["error"] }}")
+        {%- else %}
+        self.assertEqual({{ case["property"] }}({{case["input"]["count"]}}), {{ case["expected"] }})
+        {%- endif %}
     {% endfor %}
 
 {{ macros.footer() }}

@@ -6,7 +6,9 @@
       "input": {
         "count": -1
       },
-      "error": "number of rows is negative",
+      "expected": {
+        "error": "number of rows is negative"
+      },
       "type": "ValueError"
     },
     {
@@ -15,7 +17,9 @@
       "input": {
         "count": "OVERFLOW"
       },
-      "error": "maximum recursion depth exceeded in comparison",
+      "expected": {
+        "error": "maximum recursion depth exceeded in comparison"
+      },
       "type": "RecursionError"
     }
   ]

@@ -48,13 +48,17 @@ class PascalsTriangleTest(unittest.TestCase):
 
     # Additional tests for this track
     def test_negative_rows_are_invalid(self):
-        self.assertEqual(
-            rows(-1),
-        )
+        with self.assertRaises(ValueError) as err:
+            rows(-1)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "number of rows is negative")
 
     def test_solution_is_recursive(self):
+        with self.assertRaises(RecursionError) as err:
+            rows(sys.getrecursionlimit() + 10)
+        self.assertEqual(type(err.exception), RecursionError)
         self.assertEqual(
-            rows(OVERFLOW),
+            err.exception.args[0], "maximum recursion depth exceeded in comparison"
         )
 
 
