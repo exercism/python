@@ -20,7 +20,7 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     def test_{{ case["description"] | to_snake }}(self):
         {%- if case is error_case %}
         with self.assertRaises(ValueError) as err:
-            {{ case["property"] }}({{case["input"]["count"]}})
+            {{ case["property"] }}({{ case["input"]["count"] }})
         self.assertEqual(type(err.exception), ValueError)
         self.assertEqual(err.exception.args[0], "{{ case["expected"]["error"] }}")
         {%- else %}
@@ -32,16 +32,16 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in additional_cases -%}
     def test_{{ case["description"] | to_snake }}(self):
         {%- if case is error_case %}
-        with self.assertRaises({{ case["type"] }}) as err:
+        with self.assertRaises({{ case["expected"]["type"] }}) as err:
             {%- if case["input"]["count"] == "OVERFLOW" %}
             {{ case["property"] }}(sys.getrecursionlimit() + 10)
             {%- else %}
-            {{ case["property"] }}({{case["input"]["count"]}})
+            {{ case["property"] }}({{ case["input"]["count"] }})
             {%- endif %}
-        self.assertEqual(type(err.exception), {{ case["type"] }})
+        self.assertEqual(type(err.exception), {{ case["expected"]["type"] }})
         self.assertEqual(err.exception.args[0], "{{ case["expected"]["error"] }}")
         {%- else %}
-        self.assertEqual({{ case["property"] }}({{case["input"]["count"]}}), {{ case["expected"] }})
+        self.assertEqual({{ case["property"] }}({{ case["input"]["count"] }}), {{ case["expected"] }})
         {%- endif %}
     {% endfor %}
 

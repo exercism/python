@@ -7,9 +7,9 @@
         "count": -1
       },
       "expected": {
-        "error": "number of rows is negative"
-      },
-      "type": "ValueError"
+        "error": "number of rows is negative",
+        "type": "ValueError"
+      }
     },
     {
       "description": "solution is recursive",
@@ -18,9 +18,9 @@
         "count": "OVERFLOW"
       },
       "expected": {
-        "error": "maximum recursion depth exceeded in comparison"
-      },
-      "type": "RecursionError"
+        "error": "maximum recursion depth exceeded in comparison",
+        "type": "RecursionError"
+      }
     }
   ]
 }
