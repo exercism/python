@@ -39,7 +39,11 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
             {{ case["property"] }}({{ case["input"]["count"] }})
             {%- endif %}
         self.assertEqual(type(err.exception), {{ case["expected"]["type"] }})
+        {%- if case["input"]["count"] == "OVERFLOW" %}
+        self.assertEqual(err.exception.args[0][:32], "{{ case["expected"]["error"] }}")
+        {%- else %}
         self.assertEqual(err.exception.args[0], "{{ case["expected"]["error"] }}")
+        {%- endif %}
         {%- else %}
         self.assertEqual({{ case["property"] }}({{ case["input"]["count"] }}), {{ case["expected"] }})
         {%- endif %}
