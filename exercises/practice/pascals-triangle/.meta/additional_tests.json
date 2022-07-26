@@ -18,7 +18,7 @@
         "count": "OVERFLOW"
       },
       "expected": {
-        "error": "maximum recursion depth exceeded in comparison",
+        "error": "maximum recursion depth exceeded",
         "type": "RecursionError"
       }
     }

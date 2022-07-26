@@ -57,9 +57,7 @@ class PascalsTriangleTest(unittest.TestCase):
         with self.assertRaises(RecursionError) as err:
             rows(sys.getrecursionlimit() + 10)
         self.assertEqual(type(err.exception), RecursionError)
-        self.assertEqual(
-            err.exception.args[0], "maximum recursion depth exceeded in comparison"
-        )
+        self.assertEqual(err.exception.args[0][:32], "maximum recursion depth exceeded")
 
 
 if __name__ == "__main__":
