@@ -12,6 +12,7 @@ For example, if you were to create a new `datetime.datetime` object in the Pytho
 >>> new_date = datetime(2022, 5, 4)
 >>> new_date
 datetime.datetime(2022, 5, 4, 0, 0)
+```
 
 Your Clock `class` will create a custom `object` that handles times without dates.
 One important aspect of this `class` will be how it is represented as a _string_.
