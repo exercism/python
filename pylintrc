@@ -231,7 +231,7 @@ single-line-if-stmt=yes
 # separator` is used to allow tabulation in dicts, etc.: {1  : 1,\n222: 2}.
 # `trailing-comma` allows a space between comma and closing bracket: (a, ).
 # `empty-line` allows space-only lines.
-no-space-check=
+# no-space-check=
 
 # Maximum number of lines in a module
 max-module-lines=99999
