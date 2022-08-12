@@ -1,6 +1,6 @@
 black==22.3.0
 flake8==3.7.8
-Jinja2
+Jinja2~=3.1.2
 python-dateutil==2.8.1
 markupsafe==2.0.1
 tomli~=2.0.1
