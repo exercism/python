@@ -1,4 +1,4 @@
-astroid~=2.12.0
+astroid<=2.12.0
 flake8~=5.0.4
 pylint~=2.14.5
 yapf~=0.32.0
