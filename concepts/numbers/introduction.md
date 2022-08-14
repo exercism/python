@@ -84,10 +84,9 @@ As of version 3.6, Python supports the use of underscores in numerical literals 
 35000000.0
 ```
 
-Rules for using underscores as outlined in [pep 515][pep 515] are as follows:
-* Only one consecutive underscore allowed, and only between digits.
-* Multiple consecutive underscores allowed, but only between digits.
-* Multiple consecutive underscores allowed, in most positions except for the start of the literal, or special positions like after a decimal point.
+The rules for underscores are outline in [pep 515][pep 515] under 'Literal Grammar' are quite dense, but essentially boil down to:
+* Underscores can only be between two digits (not at beginning or ends of numbers, or next to signs (+/-) or decimals points)
+* No consecutive underscores
 
 [arbitrary-precision]: https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic#:~:text=In%20computer%20science%2C%20arbitrary%2Dprecision,memory%20of%20the%20host%20system.
 [numeric-type-docs]: https://docs.python.org/3/library/stdtypes.html#typesnumeric
