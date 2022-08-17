@@ -70,7 +70,7 @@ class SetsTest(unittest.TestCase):
         for variant, (item, result) in enumerate(test_data, start=1):
             with self.subTest(f"variation #{variant}", inputs="all recipes list", results="categorized dishes"):
 
-                error_message = f"Exptected category {result} for {item[0]}, but got a different category instead."
+                error_message = f"Expected category {result} for {item[0]}, but got a different category instead."
                 self.assertEqual(categorize_dish(item[1], item[2]), (result), msg=error_message)
 
     @pytest.mark.task(taskno=4)
