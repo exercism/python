@@ -62,7 +62,19 @@ Effectively, you are rounding _down_ to the nearest whole bill/denomination.
 25
 ```
 
-## 5. Calculate value after exchange
+## 5. Calculate leftover after exchanging into bills
+
+Create the `get_leftover_of_bills()` function, taking `budget` and `denomination`.
+
+This function should return the _leftover amount_ that cannot be exchanged from your _budget_ given the denomination of bills.
+It is very important to know how much exactly the booth gets to keep.
+
+```python
+>>> get_leftover_of_bills(127.5, 20)
+7.5
+```
+
+## 6. Calculate value after exchange
 
 Create the `exchangeable_value()` function, taking `budget`, `exchange_rate`, `spread`, and `denomination`.
 
@@ -80,22 +92,4 @@ Remember that the currency *denomination* is a whole number, and cannot be sub-d
 80
 >>> exchangeable_value(127.25, 1.20, 10, 5)
 95
-```
-
-## 6. Calculate non-exchangeable value
-
-Create the `non_exchangeable_value()` function, taking `budget`, `exchange_rate`, `spread`, and `denomination`.
-
-This function should return the value that is *not* exchangeable due to the *denomination* of the bills.
-Remember - this booth gets to keep the change _in addition_ to charging an exchange fee.
-Start by calculating the value you would receive if you were able to keep subdivided bills, then subtract the amount you would receive in whole bills.
-Both amounts should take the spread, or the exchange fee into account.
-
-**Note:** Returned value should be `int` type.
-
-```python
->>> non_exchangeable_value(127.25, 1.20, 10, 20)
-16
->>> non_exchangeable_value(127.25, 1.20, 10, 5)
-1
 ```

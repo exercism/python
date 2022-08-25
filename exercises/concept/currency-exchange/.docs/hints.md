@@ -24,7 +24,12 @@
 
   **Note:** The `//` operator also does floor division. But, if the operand has `float`, the result is still `float`.
 
-## 5. Calculate value after exchange
+## 5. Calculate leftover after exchanging into bills
+
+- You need to find the remainder of `budget` that does not equal a whole `denomination`.
+- Modulo operator `%` finds the remainder.
+
+## 6. Calculate value after exchange
 
 - You need to calculate `spread` percent of `exchange_rate` using multiplication operator and add it to `exchange_rate` to get the exchanged currency.
 - The actual rate needs to be computed. Remember to add exchange rate and exchange fee.
