@@ -57,50 +57,42 @@ confidence=
 # --enable=similarities". If you want to run only the classes checker, but have
 # no Warning level messages displayed, use"--disable=all --enable=classes
 # --disable=W"
-#  inconsistent-return-statements,
+# As of Pylint 2.6+, the following options are not supported, so they're commented out:
+#
+# misplaced-comparison-constant
+# relative-import
+# input-builtin
+# inconsistent-return-statements
+# no-absolute-import
+# raising-string
+# round-builtin
+
 disable=arguments-differ,
         attribute-defined-outside-init,
-        duplicate-code,
-        filter-builtin-not-iterating,
         fixme,
         global-statement,
         implicit-str-concat-in-sequence,
         import-error,
         import-self,
-        input-builtin,
         locally-disabled,
-        misplaced-comparison-constant,
-        missing-class-docstring,
-        missing-function-docstring,
-        missing-module-docstring,
-        no-absolute-import,
         no-else-break,
         no-else-continue,
         no-else-raise,
         no-else-return,
         no-member,
         no-name-in-module,
-        no-self-use,
-        raising-string,
-        relative-import,
-        round-builtin,
         signature-differs,
         suppressed-message,
-        too-few-public-methods,
-        too-many-ancestors,
-        too-many-arguments,
         too-many-boolean-expressions,
         too-many-branches,
-        too-many-instance-attributes,
         too-many-locals,
-        too-many-nested-blocks,
         too-many-public-methods,
         too-many-return-statements,
         too-many-statements,
         unnecessary-pass,
         unused-argument,
-        unused-import,
         useless-suppression
+
 
 [REPORTS]
 
