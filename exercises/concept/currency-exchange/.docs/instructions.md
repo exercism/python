@@ -67,7 +67,7 @@ Effectively, you are rounding _down_ to the nearest whole bill/denomination.
 Create the `get_leftover_of_bills()` function, taking `budget` and `denomination`.
 
 This function should return the _leftover amount_ that cannot be exchanged from your _budget_ given the denomination of bills.
-It is very important to know how much exactly the booth gets to keep.
+It is very important to know exactly how much the booth gets to keep.
 
 ```python
 >>> get_leftover_of_bills(127.5, 20)
