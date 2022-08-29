@@ -27,7 +27,7 @@
 ## 5. Calculate leftover after exchanging into bills
 
 - You need to find the remainder of `budget` that does not equal a whole `denomination`.
-- Modulo operator `%` finds the remainder.
+- The Modulo operator `%` can help find the remainder.
 
 ## 6. Calculate value after exchange
 
