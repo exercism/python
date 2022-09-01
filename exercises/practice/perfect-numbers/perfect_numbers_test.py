@@ -9,41 +9,41 @@ from perfect_numbers import (
 
 class PerfectNumbersTest(unittest.TestCase):
     def test_smallest_perfect_number_is_classified_correctly(self):
-        self.assertIs(classify(6), "perfect")
+        self.assertEqual(classify(6), "perfect")
 
     def test_medium_perfect_number_is_classified_correctly(self):
-        self.assertIs(classify(28), "perfect")
+        self.assertEqual(classify(28), "perfect")
 
     def test_large_perfect_number_is_classified_correctly(self):
-        self.assertIs(classify(33550336), "perfect")
+        self.assertEqual(classify(33550336), "perfect")
 
 
 class AbundantNumbersTest(unittest.TestCase):
     def test_smallest_abundant_number_is_classified_correctly(self):
-        self.assertIs(classify(12), "abundant")
+        self.assertEqual(classify(12), "abundant")
 
     def test_medium_abundant_number_is_classified_correctly(self):
-        self.assertIs(classify(30), "abundant")
+        self.assertEqual(classify(30), "abundant")
 
     def test_large_abundant_number_is_classified_correctly(self):
-        self.assertIs(classify(33550335), "abundant")
+        self.assertEqual(classify(33550335), "abundant")
 
 
 class DeficientNumbersTest(unittest.TestCase):
     def test_smallest_prime_deficient_number_is_classified_correctly(self):
-        self.assertIs(classify(2), "deficient")
+        self.assertEqual(classify(2), "deficient")
 
     def test_smallest_non_prime_deficient_number_is_classified_correctly(self):
-        self.assertIs(classify(4), "deficient")
+        self.assertEqual(classify(4), "deficient")
 
     def test_medium_deficient_number_is_classified_correctly(self):
-        self.assertIs(classify(32), "deficient")
+        self.assertEqual(classify(32), "deficient")
 
     def test_large_deficient_number_is_classified_correctly(self):
-        self.assertIs(classify(33550337), "deficient")
+        self.assertEqual(classify(33550337), "deficient")
 
     def test_edge_case_no_factors_other_than_itself_is_classified_correctly(self):
-        self.assertIs(classify(1), "deficient")
+        self.assertEqual(classify(1), "deficient")
 
 
 class InvalidInputsTest(unittest.TestCase):
