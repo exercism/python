@@ -14,7 +14,7 @@ Implement the `create_inventory()` function that creates an "inventory" from a l
 
 ```python
 >>> create_inventory(["coal", "wood", "wood", "diamond", "diamond", "diamond"])
-{"coal":1, "wood":2 "diamond":3}
+{"coal":1, "wood":2, "diamond":3}
 ```
 
 ## 2. Add items from a list to an existing dictionary
