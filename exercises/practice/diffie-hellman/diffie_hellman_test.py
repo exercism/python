@@ -14,10 +14,7 @@ class DiffieHellmanTest(unittest.TestCase):
         for prime in [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]:
             with self.subTest(f"prime={prime}"):
                 key = private_key(prime)
-                self.assertTrue(
-                    1 < key < prime,
-                    msg=f"{key} out of range, expected to be >1 and <{prime}",
-                )
+                self.assertTrue(1 < key < prime, msg=f"{key} out of range, expected to be >1 and <{prime}")  # fmt: skip
 
     def test_private_key_is_random(self):
         """
