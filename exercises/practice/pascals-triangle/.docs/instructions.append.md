@@ -3,7 +3,22 @@
 ## Recursion
 
 This exercise is designed to be completed using recursion, rather than loops.
-MORE DESCRIPTION ABOUT RECURSIVE PROGRAMMING GOES HERE.
+A recursive function is a function that calls itself, which is useful when solving problems that are defined in terms of themselves.
+To avoid infinite recursion (or more specifically, to avoid overflowing the stack), something called a "base case" is used.
+When the base case is reached, a non-recursive value is returned, which allows the previous function call to resolve and return its value, and so on, rippling back down the stack until the first function call returns the answer.
+We could write a recursive function to find the answer to 5! (i.e. 5 * 4 * 3 * 2 * 1) like so:
+
+````python
+def factorial(number):
+  if number <= 1:  # base case
+    return 1
+
+  return number * factorial(number - 1) # recursive case
+
+print(factorial(5)) # returns 120
+````
+
+Finally, it should be noted that Python limits the number of times recursive calls can be made (1000 by default) and does not optimize for [tail recursion](https://www.geeksforgeeks.org/tail-recursion/).
 
 ## Exception messages
 

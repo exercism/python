@@ -1252,7 +1252,8 @@
           "lists",
           "numbers"
         ],
-        "difficulty": 3
+        "difficulty": 3,
+        "status": "wip"
       },
       {
         "slug": "grep",
