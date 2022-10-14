@@ -1,5 +1,5 @@
-astroid>=2.6.5
-flake8==4.0.1
-pylint>=2.9.2
-yapf>=0.31.0
-tomli
+astroid<=2.12.0
+flake8~=5.0.4
+pylint~=2.14.5
+yapf~=0.32.0
+tomli~=2.0.1
