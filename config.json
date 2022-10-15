@@ -319,7 +319,7 @@
       },
       {
         "slug": "rna-transcription",
-        "name": "Rna Transcription",
+        "name": "RNA Transcription",
         "uuid": "ca7c5ef1-5135-4fb4-8e68-669ef0f2a51a",
         "practices": ["string-methods"],
         "prerequisites": [
@@ -342,7 +342,7 @@
       },
       {
         "slug": "etl",
-        "name": "Etl",
+        "name": "ETL",
         "uuid": "a3b24ef2-303a-494e-8804-e52a67ef406b",
         "practices": ["dicts"],
         "prerequisites": ["dicts"],
@@ -366,7 +366,7 @@
       },
       {
         "slug": "sum-of-multiples",
-        "name": "Sum Of Multiples",
+        "name": "Sum of Multiples",
         "uuid": "6e0caa0a-6a1a-4f03-bf0f-e07711f4b069",
         "practices": ["sets"],
         "prerequisites": [
@@ -398,7 +398,7 @@
       },
       {
         "slug": "difference-of-squares",
-        "name": "Difference Of Squares",
+        "name": "Difference of Squares",
         "uuid": "913b6099-d75a-4c27-8243-476081752c31",
         "practices": ["numbers"],
         "prerequisites": ["basics", "numbers"],
@@ -436,7 +436,7 @@
       },
       {
         "slug": "isbn-verifier",
-        "name": "Isbn Verifier",
+        "name": "ISBN Verifier",
         "uuid": "7961c852-c87a-44b0-b152-efea3ac8555c",
         "practices": ["strings"],
         "prerequisites": ["basics", "bools", "conditionals", "strings"],
@@ -770,7 +770,7 @@
       },
       {
         "slug": "run-length-encoding",
-        "name": "Run Length Encoding",
+        "name": "Run-Length Encoding",
         "uuid": "505e7bdb-e18d-45fd-9849-0bf33492efd9",
         "practices": ["iteration", "regular-expressions"],
         "prerequisites": [
@@ -1178,7 +1178,7 @@
       },
       {
         "slug": "ocr-numbers",
-        "name": "Ocr Numbers",
+        "name": "OCR Numbers",
         "uuid": "98ca48ed-5818-442c-bce1-308c8b3b3b77",
         "practices": ["loops"],
         "prerequisites": [
@@ -1196,7 +1196,7 @@
       },
       {
         "slug": "diffie-hellman",
-        "name": "Diffie Hellman",
+        "name": "Diffie-Hellman",
         "uuid": "92e2d5f8-7d8a-4e81-a55c-52fa6be80c74",
         "practices": ["numbers"],
         "prerequisites": ["basics", "bools", "numbers"],
@@ -1252,8 +1252,7 @@
           "lists",
           "numbers"
         ],
-        "difficulty": 3,
-        "status": "wip"
+        "difficulty": 3
       },
       {
         "slug": "grep",
@@ -1688,7 +1687,7 @@
       },
       {
         "slug": "dot-dsl",
-        "name": "Dot Dsl",
+        "name": "DOT DSL",
         "uuid": "a9c2fbda-a1e4-42dd-842f-4de5bb361b91",
         "practices": [
           "class-composition",
@@ -1950,7 +1949,7 @@
       },
       {
         "slug": "sgf-parsing",
-        "name": "Sgf Parsing",
+        "name": "SGF Parsing",
         "uuid": "0d6325d1-c0a3-456e-9a92-cea0559e82ed",
         "practices": [
           "operator-overloading",
@@ -1974,7 +1973,7 @@
       },
       {
         "slug": "paasio",
-        "name": "Paasio",
+        "name": "PaaS I/O",
         "uuid": "ec36f9ed-f376-43d9-90ee-be0bea0cfc98",
         "practices": [
           "class-customization",
@@ -2003,7 +2002,7 @@
       },
       {
         "slug": "rest-api",
-        "name": "Rest Api",
+        "name": "REST API",
         "uuid": "2abe6eed-c7e4-4ad7-91e3-778bc5176726",
         "practices": [
           "class-composition",
@@ -2027,7 +2026,7 @@
       },
       {
         "slug": "pov",
-        "name": "Pov",
+        "name": "POV",
         "uuid": "d98b1080-36d4-4357-b12a-685d204856bf",
         "practices": ["rich-comparisons"],
         "prerequisites": [
