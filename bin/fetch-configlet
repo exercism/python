@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# This file is a copy of the
+# https://github.com/exercism/configlet/blob/main/scripts/fetch-configlet file.
+# Please submit bugfixes/improvements to the above file to ensure that all tracks benefit from the changes.
+
 set -eo pipefail
 
 readonly LATEST='https://api.github.com/repos/exercism/configlet/releases/latest'
@@ -45,14 +49,26 @@ get_download_url() {
     cut -d'"' -f4
 }
 
-download_url="$(get_download_url)"
-output_dir="bin"
-output_path="${output_dir}/latest-configlet.${ext}"
-curl "${curlopts[@]}" --output "${output_path}" "${download_url}"
+main() {
+  if [[ -d ./bin ]]; then
+    output_dir="./bin"
+  elif [[ $PWD == */bin ]]; then
+    output_dir="$PWD"
+  else
+    echo "Error: no ./bin directory found. This script should be ran from a repo root." >&2
+    return 1
+  fi
 
-case "${ext}" in
-  *zip) unzip "${output_path}" -d "${output_dir}"   ;;
-  *)    tar xzf "${output_path}" -C "${output_dir}" ;;
-esac
+  download_url="$(get_download_url)"
+  output_path="${output_dir}/latest-configlet.${ext}"
+  curl "${curlopts[@]}" --output "${output_path}" "${download_url}"
 
-rm -f "${output_path}"
+  case "${ext}" in
+    *zip) unzip "${output_path}" -d "${output_dir}"   ;;
+    *)    tar xzf "${output_path}" -C "${output_dir}" ;;
+  esac
+
+  rm -f "${output_path}"
+}
+
+main
