@@ -70,3 +70,6 @@ class LasagnaTest(unittest.TestCase):
             with self.subTest(f'variation #{variant}', function=function):
                 failure_msg = f'Expected a docstring for `{function.__name__}`, but received `None` instead.'
                 self.assertIsNotNone(function.__doc__, msg=failure_msg)
+
+if __name__ == "__main__":
+    unittest.main()
