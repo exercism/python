@@ -277,13 +277,11 @@ Here is an example of how to use the debugger based on the code earlier:
 In python 3.7 and newer there is an easier way to create breakpoints You can simply write `breakpoint()` where you want to create a breakpoint.
 
 ```python
-import pdb
-
 def add(num1, num2):
     breakpoint()
     return num1 + num2
 
-pdb.set_trace()
+breakpoint()
 sum = add(1,5)
 print(sum)
 ```
