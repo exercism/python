@@ -207,13 +207,13 @@ print(sum)
 
 Running this code will give you a prompt where you can type in commands.
 Write `help` to get a list of commands.
-The most common onces are `step` which steps into a function called at that line.
-`next` which steps over a function call and move to the next line. `where` which tells you which line you are on.
-Some other usefull commands are `whatis <variable>` which tells you the type of a variable and `print(<variable>)` which prints the value of a variable.
+The most common ones are `step` which steps into a function called at that line.
+`next` steps over a function call and move to the next line. `where` tells you which line you are on.
+Some other useful commands are `whatis <variable>` which tells you the type of a variable and `print(<variable>)` which prints the value of a variable.
 You can also just use `<variable>` to print the value of a variable.
 Another command is `jump <line number>` which jumps to a specific line number.
 
-Here are an example on how to use the debugger based on the code earlier:
+Here is an example of how to use the debugger based on the code earlier:
 
 ```python
 >>> python pdb.py
@@ -238,14 +238,14 @@ Here are an example on how to use the debugger based on the code earlier:
 ... (Pdb)
 ```
 
-Breakpoints is setup by `break <filename>:<line number> <condition>` where condition is an optional condition that has to be true for the breakpoint to be hit.
+Breakpoints are set up by `break <filename>:<line number> <condition>` where the condition is an optional condition that has to be true for the breakpoint to be hit.
 You can simply write `break` to get a list of the breakpoints you have set.
 To disable a breakpoint you can write `disable <breakpoint number>`.
 To enable a breakpoint you can write `enable <breakpoint number>`.
 To delete a breakpoint you can write `clear <breakpoint number>`.
 To continue execution you can write `continue` or `c`. To exit the debugger you can write `quit` or `q`.
 
-Here are an example on how to use the debugger based on the code earlier:
+Here is an example of how to use the debugger based on the code earlier:
 
 ```python
 >>> python pdb.py
