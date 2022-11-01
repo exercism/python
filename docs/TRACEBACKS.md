@@ -190,7 +190,8 @@ Reducing bytecode is one way to make the code run faster.
 
 ## Python Debugger
 
-Python has a built in debugger, [pdb][pdb]. It can be used to step through code and inspect variables. You can also set breakpoints with it.
+Python has a built in debugger, [pdb][pdb].
+It can be used to step through code and inspect variables. You can also set breakpoints with it.
 To get started you have to first import pdb and then call pdb.set_trace() where you want to start debugging.
 
 ```python
@@ -204,8 +205,13 @@ sum = add(1,5)
 print(sum)
 ```
 
-Running this code will give you a prompt where you can type in commands. Write `help` to get a list of commands.
-The most common onces are `step` which steps into a function called at that line. `next` which steps over a function call and move to the next line. `where` which tells you which line you are on. Some other usefull commands are `whatis <variable>` which tells you the type of a variable and `print(<variable>)` which prints the value of a variable. You can also just use `<variable>` to print the value of a variable. Another command is `jump <line number>` which jumps to a specific line number.
+Running this code will give you a prompt where you can type in commands.
+Write `help` to get a list of commands.
+The most common onces are `step` which steps into a function called at that line.
+`next` which steps over a function call and move to the next line. `where` which tells you which line you are on.
+Some other usefull commands are `whatis <variable>` which tells you the type of a variable and `print(<variable>)` which prints the value of a variable.
+You can also just use `<variable>` to print the value of a variable.
+Another command is `jump <line number>` which jumps to a specific line number.
 
 Here are an example on how to use the debugger based on the code earlier:
 
@@ -232,7 +238,12 @@ Here are an example on how to use the debugger based on the code earlier:
 ... (Pdb)
 ```
 
-Breakpoints is setup by `break <filename>:<line number> <condition>` where condition is an optional condition that has to be true for the breakpoint to be hit. You can simply write `break` to get a list of the breakpoints you have set. To disable a breakpoint you can write `disable <breakpoint number>`. To enable a breakpoint you can write `enable <breakpoint number>`. To delete a breakpoint you can write `clear <breakpoint number>`. To continue execution you can write `continue` or `c`. To exit the debugger you can write `quit` or `q`.
+Breakpoints is setup by `break <filename>:<line number> <condition>` where condition is an optional condition that has to be true for the breakpoint to be hit.
+You can simply write `break` to get a list of the breakpoints you have set.
+To disable a breakpoint you can write `disable <breakpoint number>`.
+To enable a breakpoint you can write `enable <breakpoint number>`.
+To delete a breakpoint you can write `clear <breakpoint number>`.
+To continue execution you can write `continue` or `c`. To exit the debugger you can write `quit` or `q`.
 
 Here are an example on how to use the debugger based on the code earlier:
 
@@ -288,7 +299,7 @@ print(sum)
 ```
 
 [assert]: https://realpython.com/python-assert-statement/
-[AssertionError]: https://www.geeksforgeeks.org/python-assertion-error/
+[assertionerror]: https://www.geeksforgeeks.org/python-assertion-error/
 [floor divison operator]: https://www.codingem.com/python-floor-division
 [logging]: https://docs.python.org/3/howto/logging.html
 [print]: https://www.w3schools.com/python/ref_func_print.asp
