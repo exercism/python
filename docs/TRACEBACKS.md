@@ -188,8 +188,108 @@ Setting `PYTHONOPTIMIZE` to `1` is equivalent to running Python with the `-O` op
 Setting `PYTHONOPTIMIZE` to `2` is equivalent to running Python with the `-OO` option, which both disables assertions and removes docstrings from the bytcode.
 Reducing bytecode is one way to make the code run faster.
 
+## Python Debugger
+
+Python has a built in debugger, [pdb][pdb]. It can be used to step through code and inspect variables. You can also set breakpoints with it.
+To get started you have to first import pdb and then call pdb.set_trace() where you want to start debugging.
+
+```python
+import pdb
+
+def add(num1, num2):
+    return num1 + num2
+
+pdb.set_trace()
+sum = add(1,5)
+print(sum)
+```
+
+Running this code will give you a prompt where you can type in commands. Write `help` to get a list of commands.
+The most common onces are `step` which steps into a function called at that line. `next` which steps over a function call and move to the next line. `where` which tells you which line you are on. Some other usefull commands are `whatis <variable>` which tells you the type of a variable and `print(<variable>)` which prints the value of a variable. You can also just use `<variable>` to print the value of a variable. Another command is `jump <line number>` which jumps to a specific line number.
+
+Here are an example on how to use the debugger based on the code earlier:
+
+```python
+>>> python pdb.py
+... > c:\pdb.py(7)<module>()
+... -> sum = add(1,5)
+... (Pdb)
+>>> step
+... > c:\pdb.py(3)add()
+... -> def add(num1, num2):
+... (Pdb)
+>>> whatis num1
+... <class 'int'>
+>>> print(num2)
+... 5
+>>> next
+... > c:\pdb.py(4)add()
+... -> return num1 + num2
+... (Pdb)
+>>> jump 3
+... > c:\pdb.py(3)add()
+... -> def add(num1, num2):
+... (Pdb)
+```
+
+Breakpoints is setup by `break <filename>:<line number> <condition>` where condition is an optional condition that has to be true for the breakpoint to be hit. You can simply write `break` to get a list of the breakpoints you have set. To disable a breakpoint you can write `disable <breakpoint number>`. To enable a breakpoint you can write `enable <breakpoint number>`. To delete a breakpoint you can write `clear <breakpoint number>`. To continue execution you can write `continue` or `c`. To exit the debugger you can write `quit` or `q`.
+
+Here are an example on how to use the debugger based on the code earlier:
+
+```python
+>>> python pdb.py
+... > c:\pdb.py(7)<module>()
+... -> sum = add(1,5)
+... (Pdb)
+>>> break
+...
+>>> break pdb:4
+... Breakpoint 1 at c:\pdb.py:4
+>>> break
+... Num Type         Disp Enb   Where
+... 2   breakpoint   keep yes   at c:\pdb.py:4
+>>> c # continue
+... > c:\pdn.py(4)add()
+... -> return num1 + num2
+>>> disable break 1
+... Disabled breakpoint 1 at c:\pdb.py:4
+>>> break
+... Num Type         Disp Enb   Where
+... 1   breakpoint   keep no    at c:\pdb.py:4
+...         breakpoint already hit 1 time
+>>> clear break 1
+... Deleted breakpoint 1 at c:\pdb.py:4
+>>> break
+...
+```
+
+In python 3.7 and newer there is an easier way to create breakpoints You can simply write `breakpoint()` where you want to create a breakpoint.
+
+```python
+import pdb
+
+def add(num1, num2):
+    breakpoint()
+    return num1 + num2
+
+pdb.set_trace()
+sum = add(1,5)
+print(sum)
+```
+
+```python
+>>> python pdb.py
+... > c:\pdb.py(7)<module>()
+... -> sum = add(1,5)
+... (Pdb)
+>>> c # continue
+... > c:\pdb.py(5)add()
+... -> return num1 + num2
+```
+
 [assert]: https://realpython.com/python-assert-statement/
 [AssertionError]: https://www.geeksforgeeks.org/python-assertion-error/
 [floor divison operator]: https://www.codingem.com/python-floor-division
 [logging]: https://docs.python.org/3/howto/logging.html
 [print]: https://www.w3schools.com/python/ref_func_print.asp
+[pdb]: https://www.geeksforgeeks.org/python-debugger-python-pdb/
