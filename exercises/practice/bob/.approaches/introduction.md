@@ -9,9 +9,9 @@ An array can contain answers from which the right response is selected by an ind
 
 Regardless of the approach used, some things you could look out for include
 
-- If the input is stripped, [rstrip][rstrip] only once.
+- If the input is stripped, [`rstrip`][rstrip] only once.
 
-- Use the [endsWith][endswith] `str` method instead of checking the last character by index for `?`.
+- Use the [`endswith`][endswith] method instead of checking the last character by index for `?`.
 
 - Don't copy/paste the logic for determining a shout and for determing a question into determing a shouted question.
   Combine the two determinations instead of copying them.
@@ -73,7 +73,7 @@ Besides the aforementioned, idiomatic approaches, you could also approach the ex
 
 An array can be defined that contains Bob’s answers, and each condition is given a score.
 The correct answer is selected from the array by using the score as the array index.
-For more information, check the [Answer array approach][approach-answer-array].
+For more information, check the [answer array approach][approach-answer-array].
 
 put code here for now
 
