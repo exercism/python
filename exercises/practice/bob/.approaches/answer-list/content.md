@@ -18,6 +18,13 @@ def response(hey_bob):
 In this approach you define a [list][list] that contains Bob’s answers, and each condition is given a score.
 The correct answer is selected from the list by using the score as the list index.
 
+Python doesn't _enforce_ having real constant values,
+but the `_ANSWERS` list is defined with all uppercase letters, which is the naming convention for a Python [constant][const].
+It indicates that the value is not intended to be changed.
+Python also does not have real private values,
+but a [leading underscore][private] is the naming convention for indicating that a value is not meant to be part of the public API.
+It should be considered an implementation detail and subject to change without notice.
+
 The [`rstrip`][rstrip] method is applied to the input to eliminate any whitespace at the end of the input.
 If the input has no characters left, it uses the [falsiness][falsiness] of an empty string with the [`not`][not] operator to return the response for saying nothing.
 Since it doesn't matter if there is leading whitespace, the `rstrip` function is used instead of [`strip`][strip].
@@ -49,6 +56,8 @@ The response is selected from the list by the index like so
 
 
 [list]: https://docs.python.org/3/library/stdtypes.html?highlight=list#list
+[const]: https://realpython.com/python-constants/
+[private]: https://docs.python.org/3/tutorial/classes.html#private-variables
 [rstrip]: https://docs.python.org/3/library/stdtypes.html?highlight=rstrip#str.rstrip
 [falsiness]: https://www.pythontutorial.net/python-basics/python-boolean/
 [not]: https://docs.python.org/3/reference/expressions.html#not
