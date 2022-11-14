@@ -30,7 +30,13 @@ The [`rstrip`][rstrip] method is applied to the input to eliminate any whitespac
 If the input has no characters left, it uses the [falsiness][falsiness] of an empty string with the [`not`][not] operator to return the response for saying nothing.
 Since it doesn't matter if there is leading whitespace, the `rstrip` function is used instead of [`strip`][strip].
 
-The [`isupper`][isupper] method is used to test that there is at least one uppercased character and that all characters are uppercased.
+The [`isupper`][isupper] method is used to test that there is at least one cased character and that all cased characters are uppercase.
+
+```exercism/note
+A cased character is one which differs between lowercase and uppercase.
+For example, `?` and `3` are not cased characters, as they do not change between lowercase and uppercase.
+`a` and `z` are cased characters, since their lowercase form changes to `A` and ` Z` when uppercase.
+```
 
 The [`endswith`][endswith] method is used to determine if the input ends with a question mark.
 
