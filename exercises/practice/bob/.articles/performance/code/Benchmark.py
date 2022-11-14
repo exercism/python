@@ -59,4 +59,4 @@ def response(hey_bob):
 
 """, number=loops) / loops
 
-print(f"answer array: {val}")
+print(f"answer list: {val}")
