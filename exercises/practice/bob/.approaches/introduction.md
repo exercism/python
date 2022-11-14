@@ -9,7 +9,7 @@ An array can contain answers from which the right response is selected by an ind
 
 Regardless of the approach used, some things you could look out for include
 
-- If the input is stripped, [strip][strip] only once.
+- If the input is stripped, [rstrip][rstrip] only once.
 
 - Use the [endsWith][endswith] `str` method instead of checking the last character by index for `?`.
 
@@ -26,7 +26,7 @@ Regardless of the approach used, some things you could look out for include
 
 ```python
 def response(hey_bob):
-    hey_bob = hey_bob.strip()
+    hey_bob = hey_bob.rstrip()
     if not hey_bob:
         return 'Fine. Be that way!'
     isShout = hey_bob.isupper()
@@ -47,7 +47,7 @@ For more information, check the [`if` statements approach][approach-if].
 
 ```python
 def response(hey_bob):
-    hey_bob = hey_bob.strip()
+    hey_bob = hey_bob.rstrip()
     if not hey_bob:
         return 'Fine. Be that way!'
     isShout = hey_bob.isupper()
@@ -83,7 +83,7 @@ _ANSWERS = ['Whatever.', 'Sure.', 'Whoa, chill out!',
 
 
 def response(hey_bob):
-    hey_bob = hey_bob.strip()
+    hey_bob = hey_bob.rstrip()
     if not hey_bob:
         return 'Fine. Be that way!'
     isShout = (2 if hey_bob.isupper() else 0)
@@ -99,7 +99,7 @@ The answer array approach is slowest, but some may prefer doing away with the ch
 
 - To compare the performance of the approaches, check out the [Performance article][article-performance].
 
-[strip]: https://docs.python.org/3/library/stdtypes.html?highlight=strip#str.strip
+[rstrip]: https://docs.python.org/3/library/stdtypes.html?highlight=rstrip#str.rstrip
 [endswith]: https://docs.python.org/3/library/stdtypes.html?highlight=strip#str.endswith
 [dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 [approach-if]: https://exercism.org/tracks/python/exercises/bob/approaches/if-statements
