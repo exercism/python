@@ -20,9 +20,9 @@
     },
     {
       "uuid": "d74a1d7d-af85-417c-8deb-164536e4ab1b",
-      "slug": "answer-array",
-      "title": "Answer array",
-      "blurb": "Index into an array to return the answer.",
+      "slug": "answer-list",
+      "title": "Answer list",
+      "blurb": "Index into a list to return the answer.",
       "authors": ["bobahop"]
     }
   ]
