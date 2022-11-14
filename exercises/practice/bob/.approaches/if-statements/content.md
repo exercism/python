@@ -34,9 +34,12 @@ The [isupper][isupper] method is used to test that there is at least one upperca
 
 The [endswith][endswith] method is used to determine if the input ends with a question mark.
 
+The [logical AND operator][and] (`and`) is used to test a shout and a question together.
+
 [rstrip]: https://docs.python.org/3/library/stdtypes.html?highlight=rstrip#str.rstrip
 [falsiness]: https://www.pythontutorial.net/python-basics/python-boolean/
 [not]: https://docs.python.org/3/reference/expressions.html#not
 [rstrip]: https://docs.python.org/3/library/stdtypes.html?highlight=rstrip#str.rstrip
 [isupper]: https://docs.python.org/3/library/stdtypes.html?highlight=isupper#str.isupper
 [endswith]: https://docs.python.org/3/library/stdtypes.html?highlight=endswith#str.endswith
+[and]: https://realpython.com/python-and-operator/
