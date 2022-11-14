@@ -96,6 +96,7 @@ def response(hey_bob):
 
 The nested `if` approach is fastest, but some may consider it a bit less readable than the unnested `if` statements.
 The answer list approach is slowest, but some may prefer doing away with the chain of `if` statements.
+Since the difference between them is a few nanoseconds, which one is used may be a matter of stylistic preference.
 
 - To compare the performance of the approaches, check out the [Performance article][article-performance].
 
