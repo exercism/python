@@ -18,7 +18,7 @@ def response(hey_bob):
 ```
 
 In this approach you have a series of `if` statements using the calculated variables to evaluate the conditions.
-As soon as the right condition is found, the correct response is returned.
+As soon as a `True` condition is found, the correct response is returned.
 
 ```exercism/note
 Note that there are no `elif` or `else` statements.
