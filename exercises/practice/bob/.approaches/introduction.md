@@ -3,7 +3,7 @@
 There are various idiomatic approaches to solve Bob.
 A basic approach can use a series of `if` statements to test the conditions.
 The `if` statements could also be nested.
-An array can contain answers from which the right response is selected by an index calculated from scores given to the conditions.
+A list can contain answers from which the right response is selected by an index calculated from scores given to the conditions.
 
 ## General guidance
 
@@ -69,11 +69,11 @@ For more information, check the [`if` statements nested approach][approach-if-ne
 
 Besides the aforementioned, idiomatic approaches, you could also approach the exercise as follows:
 
-### Other approach: answer array
+### Other approach: answer list
 
-An array can be defined that contains Bob’s answers, and each condition is given a score.
-The correct answer is selected from the array by using the score as the array index.
-For more information, check the [answer array approach][approach-answer-array].
+A list can be defined that contains Bob’s answers, and each condition is given a score.
+The correct answer is selected from the list by using the score as the list index.
+For more information, check the [answer list approach][approach-answer-list].
 
 put code here for now
 
@@ -95,7 +95,7 @@ def response(hey_bob):
 ## Which approach to use?
 
 The nested `if` approach is fastest, but some may consider it a bit less readable than the unnested `if` statements.
-The answer array approach is slowest, but some may prefer doing away with the chain of `if` statements.
+The answer list approach is slowest, but some may prefer doing away with the chain of `if` statements.
 
 - To compare the performance of the approaches, check out the [Performance article][article-performance].
 
@@ -104,5 +104,5 @@ The answer array approach is slowest, but some may prefer doing away with the ch
 [dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 [approach-if]: https://exercism.org/tracks/python/exercises/bob/approaches/if-statements
 [approach-if-nested]: https://exercism.org/tracks/python/exercises/bob/approaches/if-statements-nested
-[approach-answer-array]: https://exercism.org/tracks/python/exercises/bob/approaches/answer-array
+[approach-answer-list]: https://exercism.org/tracks/python/exercises/bob/approaches/answer-list
 [article-performance]: https://exercism.org/tracks/python/exercises/bob/articles/performance
