@@ -21,8 +21,8 @@ The correct answer is selected from the list by using the score as the list inde
 Python doesn't _enforce_ having real constant values,
 but the `_ANSWERS` list is defined with all uppercase letters, which is the naming convention for a Python [constant][const].
 It indicates that the value is not intended to be changed.
-Python also does not have real private values,
-but a [leading underscore][private] is the naming convention for indicating that a value is not meant to be part of the public API.
+Python also does not have real [private][private] variables,
+but a leading underscore is the naming convention for indicating that a variable is not meant to be part of the public API.
 It should be considered an implementation detail and subject to change without notice.
 
 The [`rstrip`][rstrip] method is applied to the input to eliminate any whitespace at the end of the input.
