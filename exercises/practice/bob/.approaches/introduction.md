@@ -17,7 +17,7 @@ Regardless of the approach used, some things you could look out for include
   Combine the two determinations instead of copying them.
   Not duplicating the code will keep the code [DRY][dry].
 
-- Perhaps consider making `IsQuestion` and `IsShout` values set once instead of functions that are possibly called twice.
+- Perhaps consider making `is_question` and `is_shout` values set once instead of functions that are possibly called twice.
 
 - If an `if` statement can return, then an `elif` or `else` is not needed.
   Execution will either return or will continue to the next statement anyway.
@@ -29,13 +29,13 @@ def response(hey_bob):
     hey_bob = hey_bob.rstrip()
     if not hey_bob:
         return 'Fine. Be that way!'
-    isShout = hey_bob.isupper()
-    isQuestion = hey_bob.endswith('?')
-    if isShout and isQuestion:
+    is_shout = hey_bob.isupper()
+    is_question = hey_bob.endswith('?')
+    if is_shout and is_question:
         return "Calm down, I know what I'm doing!"
-    if isShout:
+    if is_shout:
         return 'Whoa, chill out!'
-    if isQuestion:
+    if is_question:
         return 'Sure.'
     return 'Whatever.'
     
@@ -50,14 +50,14 @@ def response(hey_bob):
     hey_bob = hey_bob.rstrip()
     if not hey_bob:
         return 'Fine. Be that way!'
-    isShout = hey_bob.isupper()
-    isQuestion = hey_bob.endswith('?')
-    if isShout:
-        if isQuestion:
+    is_shout = hey_bob.isupper()
+    is_question = hey_bob.endswith('?')
+    if is_shout:
+        if is_question:
             return "Calm down, I know what I'm doing!"
         else:
             return 'Whoa, chill out!'
-    if isQuestion:
+    if is_question:
         return 'Sure.'
     return 'Whatever.'    
 
