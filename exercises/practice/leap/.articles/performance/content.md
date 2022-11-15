@@ -25,9 +25,11 @@ ternary 2020:       1.0290379999787546e-07
 datetime add 2019:  6.689728000201284e-07
 ```
 
-The boolean chain is the fastest approach when testing a year that is not evenly divisible by `100` and is not a leap year.
-The ternary operator is faster in benchmarking when the year is a leap year or is evenly divisible by `100`.
-Adding the `datetime` may not only be a "cheat", but it is slower than the ternary operator.
+- The boolean chain is the fastest approach when testing a year that is not evenly divisible by `100` and is not a leap year.
+Since most years fit those conditions, it is overall the most efficient approach.
+- The ternary operator is faster in benchmarking when the year is a leap year or is evenly divisible by `100`,
+but those are the least likely conditions.
+- Adding to the `datetime` may not only be a "cheat", but it is slower than the other approaches.
 
 [approaches]: https://exercism.org/tracks/python/exercises/leap/approaches
 [approach-boolean-chain]: https://exercism.org/tracks/python/exercises/leap/approaches/boolean-chain
