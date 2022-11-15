@@ -51,10 +51,11 @@ def leap_year(year):
 
 ## Which approach to use?
 
-- The chain of boolean expressions shhould be the most efficient, as it proceeds from the most likely to least likely conditions.
+- The chain of boolean expressions should be the most efficient, as it proceeds from the most likely to least likely conditions.
 It has a maximum of three checks.
+It is the fastest approach when testing a year that is not evenly divisible by `100` and is not a leap year.
 - The ternary operator has a maximum of only two checks, but it starts from a less likely condition.
-Yet the ternary operator was faster in benchmarking.
+The ternary operator was faster in benchmarking when the year was a leap year or was evenly divisible by `100`.
 - Using `datetime` addition may be considered a "cheat" for the exercise, and it was slower than the ternary operator in benchmarking.
 
 For more information, check the [Performance article][article-performance].
