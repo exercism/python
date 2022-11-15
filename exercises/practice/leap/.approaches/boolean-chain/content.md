@@ -7,7 +7,7 @@ def leap_year(year):
 ```
 
 The first boolean expression uses the [modulo operator][modulo-operator] to check if the year is evenly divided by `4`.
-- If the year is not evenly divisible by `4`, then the chain will "short circuit" due to the next operator being a [logical AND][logical-and] and`), and will return `False`.
+- If the year is not evenly divisible by `4`, then the chain will "short circuit" due to the next operator being a [logical AND][logical-and] {`and`), and will return `False`.
 - If the year _is_ evenly divisible by `4`, then the year is checked to _not_ be evenly divisible by `100`.
 - If the year is not evenly divisible by `100`, then the expression is `True` and the chain will "short-circuit" to return `True`,
 since the next operator is a [logical OR][logical-or] (`or`).
