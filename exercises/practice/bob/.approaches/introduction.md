@@ -75,23 +75,6 @@ A list can be defined that contains Bob’s answers, and each condition is given
 The correct answer is selected from the list by using the score as the list index.
 For more information, check the [answer list approach][approach-answer-list].
 
-put code here for now
-
-```python
-_ANSWERS = ['Whatever.', 'Sure.', 'Whoa, chill out!',
-            "Calm down, I know what I'm doing!"]
-
-
-def response(hey_bob):
-    hey_bob = hey_bob.rstrip()
-    if not hey_bob:
-        return 'Fine. Be that way!'
-    isShout = (2 if hey_bob.isupper() else 0)
-    isQuestion = (1 if hey_bob.endswith('?') else 0)
-    return _ANSWERS[isShout + isQuestion]
-
-```
-
 ## Which approach to use?
 
 The nested `if` approach is fastest, but some may consider it a bit less readable than the unnested `if` statements.
