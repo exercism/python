@@ -37,26 +37,16 @@ Besides the aforementioned, idiomatic approaches, you could also approach the ex
 
 Add a day to February 28th for the year and see if the new day is the 29th. For more information, see the [`datetime` addition approach][approach-datetime-addition].
 
-stiick code here for now
-
-```python
-import datetime
-
-
-def leap_year(year):
-    return (datetime.datetime(year, 2, 28)
-            + datetime.timedelta(days=1)).day == 29
-
-```
-
 ## Which approach to use?
 
 - The chain of boolean expressions should be the most efficient, as it proceeds from the most likely to least likely conditions.
 It has a maximum of three checks.
 It is the fastest approach when testing a year that is not evenly divisible by `100` and is not a leap year.
+Since most years fit those conditions, it is overall the most efficient approach.
 - The ternary operator has a maximum of only two checks, but it starts from a less likely condition.
-The ternary operator was faster in benchmarking when the year was a leap year or was evenly divisible by `100`.
-- Using `datetime` addition may be considered a "cheat" for the exercise, and it was slower than the ternary operator in benchmarking.
+The ternary operator was faster in benchmarking when the year was a leap year or was evenly divisible by `100`,
+but those are the least likely conditions.
+- Using `datetime` addition may be considered a "cheat" for the exercise, and it was slower than the other approaches in benchmarking.
 
 For more information, check the [Performance article][article-performance].
 
