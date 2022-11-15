@@ -1,0 +1,8 @@
+if isShout:
+    if isQuestion:
+        return "Calm down, I know what I'm doing!"
+    else:
+        return 'Whoa, chill out!'
+if isQuestion:
+    return 'Sure.'
+return 'Whatever.'
