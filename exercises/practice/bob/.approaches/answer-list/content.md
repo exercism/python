@@ -1,7 +1,7 @@
 # Answer list
 
 ```python
-_ANSWERS = ['Whatever.', 'Sure.', 'Whoa, chill out!',
+ANSWERS = ['Whatever.', 'Sure.', 'Whoa, chill out!',
             "Calm down, I know what I'm doing!"]
 
 
@@ -9,9 +9,9 @@ def response(hey_bob):
     hey_bob = hey_bob.rstrip()
     if not hey_bob:
         return 'Fine. Be that way!'
-    isShout = (2 if hey_bob.isupper() else 0)
-    isQuestion = (1 if hey_bob.endswith('?') else 0)
-    return _ANSWERS[isShout + isQuestion]
+    is_shout = 2 if hey_bob.isupper() else 0
+    is_question = 1 if hey_bob.endswith('?') else 0
+    return _ANSWERS[is_shout + is_question]
 
 ```
 
@@ -19,11 +19,15 @@ In this approach you define a [list][list] that contains Bob’s answers, and ea
 The correct answer is selected from the list by using the score as the list index.
 
 Python doesn't _enforce_ having real constant values,
-but the `_ANSWERS` list is defined with all uppercase letters, which is the naming convention for a Python [constant][const].
+but the `ANSWERS` list is defined with all uppercase letters, which is the naming convention for a Python [constant][const].
 It indicates that the value is not intended to be changed.
-Python also does not have real [private][private] variables,
-but a leading underscore is the naming convention for indicating that a variable is not meant to be part of the public API.
-It should be considered an implementation detail and subject to change without notice.
+
+```exercism/note
+`ANSWERS` could prevent item reassignment by being defined as a [tuple](https://realpython.com/python-lists-tuples/#python-tuples) instead of a list.
+The items in a tuple cannot be changed, and the performance between a tuple and a list here is equivalent.
+The entire `ANSWERS` tuple could still be reassigned to another tuple,
+so uppercase letters would still be used to indicate that the `ANSWERS` tuple should not be changed.
+```
 
 The [`rstrip`][rstrip] method is applied to the input to eliminate any whitespace at the end of the input.
 If the input has no characters left, it uses the [falsiness][falsiness] of an empty string with the [`not`][not] operator to return the response for saying nothing.
@@ -57,7 +61,6 @@ The response is selected from the list by the index like so
 
 [list]: https://docs.python.org/3/library/stdtypes.html?highlight=list#list
 [const]: https://realpython.com/python-constants/
-[private]: https://docs.python.org/3/tutorial/classes.html#private-variables
 [rstrip]: https://docs.python.org/3/library/stdtypes.html?highlight=rstrip#str.rstrip
 [falsiness]: https://www.pythontutorial.net/python-basics/python-boolean/
 [not]: https://docs.python.org/3/reference/expressions.html#not
