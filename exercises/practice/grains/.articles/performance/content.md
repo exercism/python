@@ -24,7 +24,7 @@ pow total 64:             3.1965399999171494e-07
 - Bit shifting was the fastest for `square`.
 - Bit shifting and exponentiation were about the same for `total`.
 - Exponentiation and `pow` were about the same for `square`.
-- `pow` was much significantly the slowest for `total`.
+- `pow` was significantly the slowest for `total`.
 
 Benchmarks were also done to substitute `if number not in range(1, 65):` for `if number < 1 or number > 64:`.
 
