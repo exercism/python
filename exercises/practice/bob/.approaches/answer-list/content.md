@@ -11,7 +11,7 @@ def response(hey_bob):
         return 'Fine. Be that way!'
     is_shout = 2 if hey_bob.isupper() else 0
     is_question = 1 if hey_bob.endswith('?') else 0
-    return _ANSWERS[is_shout + is_question]
+    return ANSWERS[is_shout + is_question]
 
 ```
 
