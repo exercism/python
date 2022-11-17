@@ -6,29 +6,6 @@
 
 set -eo pipefail
 
-readonly LATEST='https://api.github.com/repos/exercism/configlet/releases/latest'
-
-case "$(uname)" in
-  Darwin*)   os='mac'     ;;
-  Linux*)    os='linux'   ;;
-  Windows*)  os='windows' ;;
-  MINGW*)    os='windows' ;;
-  MSYS_NT-*) os='windows' ;;
-  *)         os='linux'   ;;
-esac
-
-case "${os}" in
-  windows*) ext='zip' ;;
-  *)        ext='tgz' ;;
-esac
-
-case "$(uname -m)" in
-  *64*)  arch='64bit' ;;
-  *686*) arch='32bit' ;;
-  *386*) arch='32bit' ;;
-  *)     arch='64bit' ;;
-esac
-
 curlopts=(
   --silent
   --show-error
@@ -41,15 +18,25 @@ if [[ -n "${GITHUB_TOKEN}" ]]; then
   curlopts+=(--header "authorization: Bearer ${GITHUB_TOKEN}")
 fi
 
-suffix="${os}-${arch}.${ext}"
-
 get_download_url() {
-  curl "${curlopts[@]}" --header 'Accept: application/vnd.github.v3+json' "${LATEST}" |
+  local os="$1"
+  local ext="$2"
+  local latest='https://api.github.com/repos/exercism/configlet/releases/latest'
+  local arch
+  case "$(uname -m)" in
+    x86_64) arch='x86-64' ;;
+    *686*)  arch='i386'   ;;
+    *386*)  arch='i386'   ;;
+    *)      arch='x86-64' ;;
+  esac
+  local suffix="${os}_${arch}.${ext}"
+  curl "${curlopts[@]}" --header 'Accept: application/vnd.github.v3+json' "${latest}" |
     grep "\"browser_download_url\": \".*/download/.*/configlet.*${suffix}\"$" |
     cut -d'"' -f4
 }
 
 main() {
+  local output_dir
   if [[ -d ./bin ]]; then
     output_dir="./bin"
   elif [[ $PWD == */bin ]]; then
@@ -59,8 +46,26 @@ main() {
     return 1
   fi
 
-  download_url="$(get_download_url)"
-  output_path="${output_dir}/latest-configlet.${ext}"
+  local os
+  case "$(uname)" in
+    Darwin*)   os='macos'   ;;
+    Linux*)    os='linux'   ;;
+    Windows*)  os='windows' ;;
+    MINGW*)    os='windows' ;;
+    MSYS_NT-*) os='windows' ;;
+    *)         os='linux'   ;;
+  esac
+
+  local ext
+  case "${os}" in
+    windows*) ext='zip'    ;;
+    *)        ext='tar.gz' ;;
+  esac
+
+  echo "Fetching configlet..." >&2
+  local download_url
+  download_url="$(get_download_url "${os}" "${ext}")"
+  local output_path="${output_dir}/latest-configlet.${ext}"
   curl "${curlopts[@]}" --output "${output_path}" "${download_url}"
 
   case "${ext}" in
@@ -69,6 +74,17 @@ main() {
   esac
 
   rm -f "${output_path}"
+
+  local executable_ext
+  case "${os}" in
+    windows*) executable_ext='.exe' ;;
+    *)        executable_ext=''     ;;
+  esac
+
+  local configlet_path="${output_dir}/configlet${executable_ext}"
+  local configlet_version
+  configlet_version="$(${configlet_path} --version)"
+  echo "Downloaded configlet ${configlet_version} to ${configlet_path}"
 }
 
 main
