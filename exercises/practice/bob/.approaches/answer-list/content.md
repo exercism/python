@@ -43,20 +43,20 @@ For example, `?` and `3` are not cased characters, as they do not change between
 `a` and `z` are cased characters, since their lowercase form changes to `A` and ` Z` when uppercase.
 ```
 
-If `isupper` is `True`, then `isShout` is given the value of `2`; otherwise, it is given the value of `0`.
+If `isupper` is `True`, then `is_shout` is given the value of `2`; otherwise, it is given the value of `0`.
 
 The [`endswith`][endswith] method is used to determine if the input ends with a question mark.
-If the test for `endswith('?')` is `True`, then `isQuestion` is given the value of `1`; otherwise it is given the value of `0`.
+If the test for `endswith('?')` is `True`, then `is_question` is given the value of `1`; otherwise it is given the value of `0`.
 
 
 The response is selected from the list by the index like so
 
-| isShout | isQuestion | Index     | Answer                                |
-| ------- | ---------- | --------- | ------------------------------------- |
-| `false` | `false`    | 0 + 0 = 0 | `"Whatever."`                         |
-| `false` | `true`     | 0 + 1 = 1 | `"Sure."`                             |
-| `true`  | `false`    | 2 + 0 = 2 | `"Whoa, chill out!"`                  |
-| `true`  | `true`     | 2 + 1 = 3 | `"Calm down, I know what I'm doing!"` |
+| is_shout | is_question | Index     | Answer                                |
+| -------- | ----------- | --------- | ------------------------------------- |
+| `false`  | `false`     | 0 + 0 = 0 | `"Whatever."`                         |
+| `false`  | `true`      | 0 + 1 = 1 | `"Sure."`                             |
+| `true`   | `false`     | 2 + 0 = 2 | `"Whoa, chill out!"`                  |
+| `true`   | `true`      | 2 + 1 = 3 | `"Calm down, I know what I'm doing!"` |
 
 
 [list]: https://docs.python.org/3/library/stdtypes.html?highlight=list#list
