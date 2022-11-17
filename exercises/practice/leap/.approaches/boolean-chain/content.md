@@ -24,7 +24,7 @@ since the next operator is a [logical OR][logical-or] (`or`).
 The chain of boolean expressions is efficient, as it proceeds from testing the most likely to least likely conditions.
 It is the fastest approach when testing a year that is not evenly divisible by `100` and is not a leap year.
 
-## Shortening
+## Refactoring
 
 By using the [falsiness][falsiness] of `0`, the [`not` operator][not-operator] can be used instead of comparing equality to `0`.
 For example
