@@ -12,7 +12,7 @@ def is_pangram(sentence):
 ```
 
 In this approach a [set][set] is made from the [ascii_lowercase][ascii-lowercase] letters,
-and another `set` is made from the [lower][lower]cased letters in the `sentence`.
+and another `set` is made from the [`lower`][lower]cased letters in the `sentence`.
 
 The function returns if the alphabet `set` [issubset][issubset] of the `sentence` `set`.
 If all of the letters in the alphabet are a subset of the letters in the `sentence`,
