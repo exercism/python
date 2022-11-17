@@ -10,7 +10,7 @@ Or you can see if the `set` `len` of the lowercased `sentence` filtered to just 
 The key to solving Pangram is determining if all of the letters in the alphabet are in the `sentence` being tested.
 The occurrence of either the letter `a` or the letter `A` would count as the same letter.
 
-## Approach: `all` on lowercased letters
+## Approach: `all()` on lowercased letters
 
 ```python
 from string import ascii_lowercase
@@ -21,9 +21,9 @@ def is_pangram(sentence):
 
 ```
 
-For more information, check the [`all` approach][approach-all].
+For more information, check the [`all()` approach][approach-all].
 
-## Approach: `set` with `issubset` on lowercased characters
+## Approach: `set` with `issubset()` on lowercased characters
 
 ```python
 from string import ascii_lowercase
@@ -36,9 +36,9 @@ def is_pangram(sentence):
 
 ```
 
-For more information, check the [`set` with `issubset` approach][approach-set-issubset].
+For more information, check the [`set` with `issubset()` approach][approach-set-issubset].
 
-## Approach: `set` with `len` on lowercased characters
+## Approach: `set` with `len()` on lowercased characters
 
 ```python
 def is_pangram(sentence):
@@ -47,7 +47,7 @@ def is_pangram(sentence):
 
 ```
 
-For more information, check the [`set` with `len` approach][approach-set-len].
+For more information, check the [`set` with `len()` approach][approach-set-len].
 
 ## Other approaches
 
@@ -56,11 +56,11 @@ Besides the aforementioned, idiomatic approaches, you could also approach the ex
 ### Other approach: Bit field
 
 Another approach can use a bit field to keep track of used letters.
-For more information, check the [Bit field approach][approach-bitfield].
+For more information, check the [bit field approach][approach-bitfield].
 
 ## Which approach to use?
 
-The fastest is the `set` `issubset` approach.
+The fastest is the `set` `issubset()` approach.
 
 To compare performance of the approaches, check the [Performance article][article-performance].
 
