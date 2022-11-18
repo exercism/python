@@ -192,7 +192,7 @@ Reducing bytecode is one way to make the code run faster.
 
 Python has a built in debugger, [pdb][pdb].
 It can be used to step through code and inspect variables. You can also set breakpoints with it.
-To get started you have to first import pdb and then call pdb.set_trace() where you want to start debugging.
+To get started you have to first `import pdb` and then call `pdb.set_trace()` where you want to start debugging:
 
 ```python
 import pdb
@@ -205,7 +205,7 @@ sum = add(1,5)
 print(sum)
 ```
 
-Running this code will give you a prompt where you can type in commands.
+Running this code will give you a pdb prompt where you can type in commands.
 Write `help` to get a list of commands.
 The most common ones are `step` which steps into a function called at that line.
 `next` steps over a function call and move to the next line. `where` tells you which line you are on.
@@ -213,7 +213,8 @@ Some other useful commands are `whatis <variable>` which tells you the type of a
 You can also just use `<variable>` to print the value of a variable.
 Another command is `jump <line number>` which jumps to a specific line number.
 
-Here is an example of how to use the debugger based on the code earlier:
+Here is a small example of how to use the debugger based on the code earlier.
+Note that for this and following examples, MacOS or Linux platforms would have file paths using forward slashes:
 
 ```python
 >>> python pdb.py
@@ -245,7 +246,7 @@ To enable a breakpoint you can write `enable <breakpoint number>`.
 To delete a breakpoint you can write `clear <breakpoint number>`.
 To continue execution you can write `continue` or `c`. To exit the debugger you can write `quit` or `q`.
 
-Here is an example of how to use the debugger based on the code earlier:
+Here is an example of how to use the above debugger  commands based on the code earlier:
 
 ```python
 >>> python pdb.py
@@ -274,7 +275,8 @@ Here is an example of how to use the debugger based on the code earlier:
 ...
 ```
 
-In python 3.7 and newer there is an easier way to create breakpoints You can simply write `breakpoint()` where you want to create a breakpoint.
+In Python 3.7+  there is an easier way to create breakpoints 
+Simply writing `breakpoint()` where needed will create one.
 
 ```python
 def add(num1, num2):
