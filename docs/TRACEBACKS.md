@@ -191,7 +191,8 @@ Reducing bytecode is one way to make the code run faster.
 ## Python Debugger
 
 Python has a built in debugger, [pdb][pdb].
-It can be used to step through code and inspect variables. You can also set breakpoints with it.
+It can be used to step through code and inspect variables.
+You can also set breakpoints with it.
 To get started you have to first `import pdb` and then call `pdb.set_trace()` where you want to start debugging:
 
 ```python
