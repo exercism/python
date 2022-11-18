@@ -246,7 +246,7 @@ To enable a breakpoint you can write `enable <breakpoint number>`.
 To delete a breakpoint you can write `clear <breakpoint number>`.
 To continue execution you can write `continue` or `c`. To exit the debugger you can write `quit` or `q`.
 
-Here is an example of how to use the above debugger  commands based on the code earlier:
+Here is an example of how to use the above debugger commands based on the code earlier:
 
 ```python
 >>> python pdb.py
@@ -275,7 +275,7 @@ Here is an example of how to use the above debugger  commands based on the code 
 ...
 ```
 
-In Python 3.7+  there is an easier way to create breakpoints 
+In Python 3.7+ there is an easier way to create breakpoints 
 Simply writing `breakpoint()` where needed will create one.
 
 ```python
