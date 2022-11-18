@@ -1,0 +1,42 @@
+{
+  "introduction": {
+    "authors": ["bobahop"]
+  },
+  "approaches": [
+    {
+      "uuid": "5f06953f-6002-437d-a9a4-6aa5c7ebf247",
+      "slug": "scrub-comprehension",
+      "title": "Scrub with a list comprehension",
+      "blurb": "Use a list comprehension and set to return the answer.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "cc399b36-e9d5-4a97-857d-6ef9dea50115",
+      "slug": "scrub-replace",
+      "title": "Scrub with a series of replace calls",
+      "blurb": "Use a series of replace calls and set to return the answer.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "0f0c738e-885a-4431-a592-ee12d25ae9f4",
+      "slug": "scrub-regex",
+      "title": "Scrub with a regex",
+      "blurb": "Use a re.sub and set to return the answer.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "9d733e59-dbc4-45f7-9c60-1b9c99020687",
+      "slug": "findall-regex",
+      "title": "Use re.findall to get valid letters",
+      "blurb": "Use a re.findall and set to return the answer.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "b87e1bcf-0c40-416e-b6cc-684a57c9455c",
+      "slug": "bitfield",
+      "title": "Bit field using a for loop",
+      "blurb": "Use a bit field with a for loop to keep track of used letters.",
+      "authors": ["bobahop"]
+    }
+  ]
+}
