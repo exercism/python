@@ -10,7 +10,7 @@
 
 * The class which inherited the parent class is designated as `child class`, `subclass`, `derived class` or `extended class`.
 
-## Syntax
+## Syntax and key concepts
 To inherit from a class in Python we simply need to put the name of the parent class inside de parentesis when defining a new class, and all it's functionality and atributes will be parse to our new child class.
 
 ```python
@@ -51,6 +51,18 @@ One of the most use cases for the `super()` function is on the [constructor][cal
 ```
 In the [Pythonic][pythonic] way, if you want to call the parents costructor, you should do it at the beginning of the childs constructor.
 
+In case you do not define any constructor the parent constructor will be use as fallback.
+
+> ### Side note
+> One comon use of inheritance where you use the parent constructor is on [exceptions][python exceptions].
+> Exceptios in Python inherit all from the same base class called [Exception][exception class] and you will often see a declaration of a new exception class like the following.
+> ```python
+> >>> class My_own_exception(Exception):
+> ...     pass
+> ```
+> Where we are just creating a new type of exception to handle a particular case. Python exceptions present a well defined [hierarchical structure we can apreciate here][exceptions hierarchy].
+
+## Tools
 Python also put to our reach two handy [build-in][build in] fucntions that can help us to identify inheritance relationships between clasees.
 
 ### [isinstance()][isinstance]
@@ -126,6 +138,68 @@ True
 ```
 Multiple inheritance let a `child class` to inherit from two `parent classes` at the same time.
 
+Multipe inheritance makes tricky the use of `super()`, because now we have two `parent classes`. **So which one do you think will be called first?**
+
+```python
+>>> class Father():
+...     def __init__(self, s):
+...             super().__init__("was called by father.")
+...             print("Father " + s)
+...             self.s = "Father."
+... 
+>>> class Mother():
+...     def __init__(self, s):
+...             print("Mother " + s)
+...             self.s = "Mother."
+... 
+>>> class Child(Father, Mother):
+...     def __init__(self):
+...             super().__init__("was called by child.")
+...             print("Child constructor.")
+...             print('-' * 20)
+...             print(self.s)
+... 
+>>> Child()
+Mother was called by father.
+Father was called by child.
+Child constructor.
+--------------------
+Father.
+```
+
+We can see the preference when using the `super()` method is from `Left to Right` of the `parent classes`, but because we are calling `super()` at the begining of our constructor, the first constructor to get completly executed is the last one on our list `(Mother)`. When the execution goes back trought the hearchy levels `(Mother)` attribute get overriden.
+
+To simplify this flows and be able to avoid the `override` of contents of a class. Pythong give as another way to acces the internals of a `parent class`, by referencing directly the name of the class.
+
+```python
+>>> class Father():
+...     def __init__(self, s):
+...             print("Father " + s)
+...             self.s = "Father."
+... 
+>>> class Mother():
+...     def __init__(self, s):
+...             print("Mother " + s)
+...             self.s = "Mother."
+... 
+>>> class Child(Father, Mother):
+...     def __init__(self):
+...             Mother.__init__(self, "was called by child.")
+...             Father.__init__(self, "was called by child.")
+...             print("Child constructor.")
+...             print('-' * 20)
+...             print(self.s)
+... 
+>>> Child()
+Mother was called by child.
+Father was called by child.
+Child constructor.
+--------------------
+Father.
+```
+Because we are referencing the class, now we will need to pass the instance as a argument on the `__init__()` call. 
+
+
 ### Multilevel Inheritance
 
 In multilevel inheritance you have many layers where each one of it adds or increments the functionality of it's parent.
@@ -152,6 +226,8 @@ True
 ```
 
 ### Hierarchical Inheritance
+
+Herarchical inheritance is the chain of inheritance or linage of our class. In this case to reference one level up on the chain, we could made use of `super()`, and in order to get farther (more than one level jump), we will need to use the class notation.
 
 ```python
 >>> class Parent():
@@ -187,7 +263,7 @@ True
 True
 ```
 
-## Semantics
+## Inheritance derived concepts
 
 ### Overload
 `Overload` a method is to create the same declaration, modifiying the number of arguments or in other typed languages the types of them. This let us call the same method with different type or number of arguments.
@@ -240,6 +316,9 @@ Cause Python defines all it's data types, it can not distinguis between a refere
 [magic]: [https://www.geeksforgeeks.org/dunder-magic-methods-python/]
 [class constructor]: [https://realpython.com/python-class-constructor/]
 [super]: [https://docs.python.org/3/library/functions.html#super]
+[python exceptions]: [https://www.dataquest.io/blog/python-exceptions/]
+[exception class]: [https://docs.python.org/3/library/exceptions.html#Exception]
+[exceptions hierarchy]: [https://docs.python.org/3/library/exceptions.html#exception-hierarchy]
 [pythonic]: [https://www.codementor.io/blog/pythonic-code-6yxqdoktzt]
 [build in]: [https://docs.python.org/3/library/functions.html]
 [isinstance]: [https://docs.python.org/3/library/functions.html#isinstance]

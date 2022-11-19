@@ -15,6 +15,14 @@ The goal of this exercise is to teach the student how inheritance works in Pytho
 - Decorators.
 - Dunder/magic method overriding.
 - Data structures.
+- Class-composition as an explicit topic.
+- Dataclasses.
+- Decorators.
+- Generators.
+- Coroutines.
+- Descriptors.
+- Using a class as a decorator.
+- Performance considerations.
 
 ## Concepts
 
@@ -22,7 +30,11 @@ The Concepts this exercise unlocks are:
 
 - `intermediate`: Class inheritance.
 - `intermediate`: MRO (Method Resolution Order)
-- `intermediate`: Private attributes. 
+- `intermediate`: Private attributes.
+- `intermediate`: single inheritance
+- `intermediate`: multiple inheritance
+- `intermediate`: minxins
+- `intermediate`: super() 
 
 ## Prerequisites
 
