@@ -12,7 +12,7 @@ When counting words you can assume the following rules:
 
 1. The count is _case insensitive_ (ie "You", "you", and "YOU" are 3 uses of the same word)
 2. The count is _unordered_; the tests will ignore how words and counts are ordered
-3. Other than the apostrophe in a _contraction_ all forms of _punctuation_ are ignored
+3. Other than the apostrophe in a _contraction_ all forms of _punctuation_ are regarded as spaces
 4. The words can be separated by _any_ form of whitespace (ie "\t", "\n", " ")
 
 For example, for the phrase `"That's the password: 'PASSWORD 123'!", cried the Special Agent.\nSo I fled.` the count would be:

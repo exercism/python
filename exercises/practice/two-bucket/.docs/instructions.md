@@ -29,9 +29,18 @@ Your program should determine:
 Note: any time a change is made to either or both buckets counts as one (1) action.
 
 Example:
-Bucket one can hold up to 7 liters, and bucket two can hold up to 11 liters. Let's say at a given step, bucket one is holding 7 liters and bucket two is holding 8 liters (7,8). If you empty bucket one and make no change to bucket two, leaving you with 0 liters and 8 liters respectively (0,8), that counts as one action. Instead, if you had poured from bucket one into bucket two until bucket two was full, resulting in 4 liters in bucket one and 11 liters in bucket two (4,11), that would also only count as one action.
+Bucket one can hold up to 7 liters, and bucket two can hold up to 11 liters.
+Let's say at a given step, bucket one is holding 7 liters and bucket two is holding 8 liters (7,8).
+If you empty bucket one and make no change to bucket two, leaving you with 0 liters and 8 liters respectively (0,8), that counts as one action.
+Instead, if you had poured from bucket one into bucket two until bucket two was full, resulting in 4 liters in bucket one and 11 liters in bucket two (4,11), that would also only count as one action.
 
 Another Example:
-Bucket one can hold 3 liters, and bucket two can hold up to 5 liters.  You are told you must start with bucket one.  So your first action is to fill bucket one.  You choose to empty bucket one for your second action.  For your third action, you may not fill bucket two, because this violates the third rule -- you may not end up in a state after any action where the starting bucket is empty and the other bucket is full.
+Bucket one can hold 3 liters, and bucket two can hold up to 5 liters.
+You are told you must start with bucket one.
+So your first action is to fill bucket one.
+You choose to empty bucket one for your second action.
+For your third action, you may not fill bucket two, because this violates the third rule -- you may not end up in a state after any action where the starting bucket is empty and the other bucket is full.
 
-Written with <3 at [Fullstack Academy](http://www.fullstackacademy.com/) by Lindsay Levine.
+Written with <3 at [Fullstack Academy][fullstack] by Lindsay Levine.
+
+[fullstack]: https://www.fullstackacademy.com/

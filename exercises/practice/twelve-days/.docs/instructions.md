@@ -2,7 +2,8 @@
 
 Your task in this exercise is to write code that returns the lyrics of the song: "The Twelve Days of Christmas."
 
-"The Twelve Days of Christmas" is a common English Christmas carol. Each subsequent verse of the song builds on the previous verse.
+"The Twelve Days of Christmas" is a common English Christmas carol.
+Each subsequent verse of the song builds on the previous verse.
 
 The lyrics your code returns should _exactly_ match the full song text shown below.
 
