@@ -1,0 +1,247 @@
+# Introduction
+
+## Class Inheritance in Python
+
+`Class inheritance` is one powerfull feature of [OOP (Object Oriented Programming)][oop], that will allow us to inherit atrubutes and functionality ([methods][methods]) from other clases. Thanks to it we can recicle and reuse the code and build real world relationships between objects.
+
+## Nomenclature
+
+* The class which got inherited is called a `parent class`, `superclass` or `base class`.
+
+* The class which inherited the parent class is designated as `child class`, `subclass`, `derived class` or `extended class`.
+
+## Syntax
+To inherit from a class in Python we simply need to put the name of the parent class inside de parentesis when defining a new class, and all it's functionality and atributes will be parse to our new child class.
+
+```python
+>>> class Parent():
+...     def hello_parent(self):
+...         return "Hello from parent class."
+... 
+>>> class Child(Parent):
+...     pass
+... 
+>>> child_object = Child()
+>>> child_object.hello_parent()
+'Hello from parent class.'
+```
+### [Pythons MRO][mro]
+Python will try always to find our method or attribute in the `child class` first and in case there is no much for it there, it will move on and check on the `parent class`. In case it is not able to find it on the parent class then it will move on to the `parent parent class`. This path of resolution is what is demonimated as `Pythons MRO (method resolution order)`.
+
+### [super()][super]
+In case we want Python to search for the resolution directly on the `parent class`, we can made use of the [build-in][build in] funcion `super()`. This function will reference the `parent class` and search under his scope with out event trying to resolve it first on our `child class`.
+
+One of the most use cases for the `super()` function is on the [constructor][calss constructor] in which we will make use of `super()` to call our [dunder method][magic] `__init__()` and initialize the `parent class`.
+
+```python
+>>> class Parent():
+...     def __init__(self, x):
+...             self.x = x
+... 
+>>> class Child(Parent):
+...     def __init__(self, x, y):
+...             super().__init__(x)
+...             self.y = y
+... 
+>>> object_child = Child(4, 8)
+>>> object_child.x
+4
+>>> object_child.y
+8
+```
+In the [Pythonic][pythonic] way, if you want to call the parents costructor, you should do it at the beginning of the childs constructor.
+
+Python also put to our reach two handy [build-in][build in] fucntions that can help us to identify inheritance relationships between clasees.
+
+### [isinstance()][isinstance]
+
+This function will tell us if an object is and instance of a particular class.
+
+```python
+>>> parent_object = Parent()
+>>> child_object = Child()
+
+# Parent object.
+>>> isinstance(parent_object, Parent)
+True
+>>> isinstance(parent_object, Child)
+False
+
+# Child object
+>>> isinstance(child_object, Parent)
+True
+>>> isinstance(child_object, Child)
+True
+```
+As we can see a child object is an instance of the parent class becouse as one of its denominations estate relly well, a `extended class` is no more than a superset of the `base class` or `parent class`.
+
+### [issubclass()][issubclass]
+
+Is subclass function simply tell us if a certain class in below or abovo in the inheritance herarchy.
+
+```python
+>>> issubclass(Parent, Child)
+False
+>>> issubclass(Child, Parent)
+True
+```
+
+As we can see the inheritance is unidirectional, the child inherits from the parent but not vice versa.
+
+## Types of inheritance
+
+Python offers multiple [types of inheritance][inheritance types], which we can utilaze to grow the snow ball of code reusability and recicliability.
+
+
+### Single Inheritance
+
+```python
+>>> class Parent():
+...     pass
+... 
+>>> class Child(Parent):
+...     pass
+... 
+```
+As we saw before this is the base example where a `child class` inherits from the `parent class`.
+
+
+### Multiple Inheritance
+Unlike other [OOP][oop] languages Python can handle multiple inheritance.
+
+```python
+>>> class Father():
+...     pass
+... 
+>>> class Mother():
+...     pass
+... 
+>>> class Child(Father, Mother):
+...     pass
+... 
+>>> isinstance(Child(), Father)
+True
+>>> isinstance(Child(), Mother)
+True
+```
+Multiple inheritance let a `child class` to inherit from two `parent classes` at the same time.
+
+### Multilevel Inheritance
+
+In multilevel inheritance you have many layers where each one of it adds or increments the functionality of it's parent.
+
+```python
+>>> class Parent():
+...     pass
+... 
+>>> class Child(Parent):
+...     pass
+... 
+>>> class Grandchild(Child):
+...     pass
+... 
+>>> isinstance(Grandchild(), Parent)
+True
+>>> issubclass(Grandchild, Parent)
+True
+```
+In Python all classes inherit from the base class `object`.
+```python
+issubclass(Parent, object)
+True
+```
+
+### Hierarchical Inheritance
+
+```python
+>>> class Parent():
+...     pass
+... 
+>>> class Child(Parent):
+...     pass
+... 
+>>> class Grandchild(Child):
+...     pass
+... 
+>>> isinstance(Grandchild(), Parent)
+True
+>>> issubclass(Grandchild, Parent)
+True
+```
+
+### Hybrid Inheritance
+
+```python
+>>> class Parent():
+...     pass
+... 
+>>> class Child(Parent):
+...     pass
+... 
+>>> class Grandchild(Child):
+...     pass
+... 
+>>> isinstance(Grandchild(), Parent)
+True
+>>> issubclass(Grandchild, Parent)
+True
+```
+
+## Semantics
+
+### Overload
+`Overload` a method is to create the same declaration, modifiying the number of arguments or in other typed languages the types of them. This let us call the same method with different type or number of arguments.
+
+```python
+>>> class Parent():
+...     def hello(self):
+...             return "Hello World!"
+... 
+>>> class Child(Parent):
+...     def hello(self, w):
+...             return "Hello " + w + "!"
+... 
+>>> object_child = Child()
+>>> object_child.hello()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: Child.hello() missing 1 required positional argument: 'w'
+>>> object_child.hello("World")
+'Hello World!'
+```
+Python will overwrite the method with the last definicion we have suplied to it.
+
+### Overwrriding
+As we just saw in Python a `child class` can `overrride` a method from the `parent class` by defining a method with the same declaration.
+
+```python
+>>> class Parent():
+...     def hello(self):
+...             return "Hello World!"
+... 
+>>> class Child(Parent):
+...     def __init__(self):
+...             self.hello = "Hi!"
+... 
+>>> object_child = Child()
+>>> object_child.hello
+'Hi!'
+>>> object_child.hello()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object is not callable
+```
+
+Cause Python defines all it's data types, it can not distinguis between a reference to a function or method and a variable or attribute. Because of this reasson an attribute will also overwrite a method.
+
+[oop]: [https://www.educative.io/blog/object-oriented-programming]
+[methods]: [https://realpython.com/python3-object-oriented-programming/#instance-methods]
+[mro]: [https://docs.python.org/3/glossary.html#term-method-resolution-order]
+[magic]: [https://www.geeksforgeeks.org/dunder-magic-methods-python/]
+[class constructor]: [https://realpython.com/python-class-constructor/]
+[super]: [https://docs.python.org/3/library/functions.html#super]
+[pythonic]: [https://www.codementor.io/blog/pythonic-code-6yxqdoktzt]
+[build in]: [https://docs.python.org/3/library/functions.html]
+[isinstance]: [https://docs.python.org/3/library/functions.html#isinstance]
+[issubclass]: [https://docs.python.org/3/library/functions.html#issubclass]
+[inheritance types]: [https://pythongeeks.org/inheritance-in-python/]

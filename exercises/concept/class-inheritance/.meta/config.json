@@ -1,0 +1,10 @@
+{
+    "authors": ["Guillermo-N"],
+    "contributors": [""],
+    "files": {
+      "solution": ["ex_solution.py"],
+      "test": ["ex_test.py"],
+      "exemplar": [".meta/exemplar.py"]
+    },
+    "blurb": "Grow your knowledge on OOP with class inheritance."
+  }
