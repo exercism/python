@@ -42,6 +42,8 @@ The function should `return` the `list` with the modfications.
 [1, 3, 17, 6, 15, 7, 4,  12, 6, 3, 13, 2, 5]
 ```
 
+## 3. Add missing stops
+
 ## 4. Extend routing information
 
 Now that all the wagon data is correct, your friend would like you to update the systems routing information.
@@ -62,3 +64,5 @@ The second dict can contain different properties.
 >>> extend_route_information({"from": "Berlin", "to": "Hamburg"}, {"length": "100", "speed": "50"})
 {"from": "Berlin", "to": "Hamburg", "length": "100", "speed": "50"}
 ```
+
+## 5. Something tbd

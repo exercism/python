@@ -3,8 +3,8 @@
   "icon": "tracks-on-tracks-on-tracks",
   "authors": ["meatball","BethanyG"],
   "files": {
-    "solution": ["locomotive-engineer.py"],
-    "test": ["locomotive-engineer_test.py"],
+    "solution": ["locomotive_engineer.py"],
+    "test": ["locomotive_engineer_test.py"],
     "exemplar": [".meta/exemplar.py"]
   },
   "forked_from": ["javascript/train-driver"]
