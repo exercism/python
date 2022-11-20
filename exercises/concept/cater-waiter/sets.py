@@ -14,7 +14,7 @@ def clean_ingredients(dish_name, dish_ingredients):
     """Remove duplicates from `dish_ingredients`.
 
     :param dish_name: str - containing the dish name.
-    :param dish_ingredients: set - dish ingredients.
+    :param dish_ingredients: list - dish ingredients.
     :return: tuple - containing (dish_name, ingredient set).
 
     This function should return a `tuple` with the name of the dish as the first item,
