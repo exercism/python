@@ -1,0 +1,11 @@
+{
+  "blurb": "Practice using unpacking and multiple assignment",
+  "icon": "tracks-on-tracks-on-tracks",
+  "authors": ["meatball","BethanyG"],
+  "files": {
+    "solution": ["locomotive-engineer.py"],
+    "test": ["locomotive-engineer_test.py"],
+    "exemplar": [".meta/exemplar.py"]
+  },
+  "forked_from": ["javascript/train-driver"]
+}
