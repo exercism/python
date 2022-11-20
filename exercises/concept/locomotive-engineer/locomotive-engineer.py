@@ -1,27 +1,33 @@
-"""Functions used in preparing Guido's gorgeous lasagna.
-
-Learn about Guido, the creator of the Python language: https://en.wikipedia.org/wiki/Guido_van_Rossum
-"""
+"""Functions which helps the locomotive engineer to keep track of the train."""
 
 # TODO: define the 'get_list_of_wagons' function
 
+
 # TODO: define the 'fixListOfWagons()' function
 def fix_list_of_wagons():
-    """Calculate the bake time remaining.
-
-    :param elapsed_bake_time: int - baking time already elapsed.
-    :return: int - remaining bake time (in minutes) derived from 'EXPECTED_BAKE_TIME'.
-
-    Function that takes the actual minutes the lasagna has been in the oven as
-    an argument and returns how many minutes the lasagna still needs to bake
-    based on the `EXPECTED_BAKE_TIME`.
+    """
     """
 
     pass
 
 
-# TODO: define the 'preparation_time_in_minutes()' function
-#       and consider using 'PREPARATION_TIME' here
+# TODO: define the 'add_missing_stops()' function
 
 
-# TODO: define the 'elapsed_time_in_minutes()' function
+# TODO: define the 'extend_route_information()' function
+def extend_route_information(route, more_route_information):
+    """Extend the route information with the more_route_information.
+
+    :param route: dict - the route information.
+    :param more_route_information: dict -  extra route information.
+    :return: dict - extended route information.
+    """
+    pass
+
+
+# TODO: define the 'something()' function
+def something():
+    """
+    """
+     
+    pass
