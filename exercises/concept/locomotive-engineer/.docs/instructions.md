@@ -35,7 +35,7 @@ All they can remember is that the missing values should be placed directly after
 Implement a function `fix_list_of_wagons` that takes two `lists` containing wagon IDs as the arguments.
 In first `list` should the 2 wagons be repositioned the end of the `list`.
 Then the second `list` should be added to the front of the first `list` .
-The function should `return` the `list` with the locomtive in the front.
+The function should `return` the `list` with the modfications.
 
 ```python
 >>> fix_list_of_wagons([2, 5, 1, 7, 4, 12, 6, 3, 13], [3, 17, 6, 15])
