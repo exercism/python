@@ -1,8 +1,6 @@
 """Functions which helps the locomotive engineer to keep track of the train."""
 
 # TODO: define the 'get_list_of_wagons' function
-def get_list_of_wagons(*args):
-    return [*args]
 
 # TODO: define the 'fixListOfWagons()' function
 def fix_list_of_wagons(each_wagons_id, missing_wagons):
