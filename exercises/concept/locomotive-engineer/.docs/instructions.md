@@ -28,30 +28,18 @@ But then your friend had to connect two new wagons to the train and forgot to up
 Now the first two wagons in the `list` have to be moved to the back of the train, or everything will be out of order.
 Your friend would be really grateful to you for fixing their mistake.
 
-Implement a function `fixListOfWagons` that accepts a wagon ID `list` .
-The function should `return` the `list` with the first 2 elements repositioned to the end of the `list`.
-
-```python
-eachWagonsWieght = [2, 5, 1, 7, 4, 12, 6, 3, 13]
-fixListOfWagons(eachWagonsWieght)
-// => [1, 7, 4,  12, 6, 3, 13, 2, 5]
-```
-
-## 3. Add missing values
-
-Uh-oh. some wagons seem to have gone missing.
-
+Your friend also noticed some wagons seem to have gone missing.
 Fortunately, your friend just found another `list` which appears to contain the missing wagon IDs, and would like you to add them into the main wagon ID `list`.
-All they can remember is that the missing values should be placed _directly after_ the designated locomotive.
+All they can remember is that the missing values should be placed directly after the designated locomotive.
 
-Given this new information, write a function called `CorrectListOfWagons` that takes two `lists` containing wagon IDs as the arguments.
-The wagon IDs of the second `list` should be added into the first `list` directly after the locomotive (ID `1`).
+Implement a function `fix_list_of_wagons` that takes two `lists` containing wagon IDs as the arguments.
+In first `list` should the 2 wagons be repositioned the end of the `list`.
+Then the second `list` should be added to the front of the first `list` .
+The function should `return` the `list` with the locomtive in the front.
 
 ```python
-eachWagonsWieght = [1, 5, 20, 7, 4, 8]
-missingWagons = [3, 17, 6, 15]
-CorrectListOfWagons(eachWagonsWieght, missingWagons)
-// => [1, 3, 17, 6, 15, 5, 20, 7, 4, 8]
+>>> fix_list_of_wagons([2, 5, 1, 7, 4, 12, 6, 3, 13], [3, 17, 6, 15])
+[1, 3, 17, 6, 15, 7, 4,  12, 6, 3, 13, 2, 5]
 ```
 
 ## 4. Extend routing information
