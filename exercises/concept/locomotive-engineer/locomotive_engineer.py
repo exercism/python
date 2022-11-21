@@ -1,7 +1,8 @@
 """Functions which helps the locomotive engineer to keep track of the train."""
 
 # TODO: define the 'get_list_of_wagons' function
-
+def get_list_of_wagons(*args):
+    return list(args)
 
 # TODO: define the 'fixListOfWagons()' function
 def fix_list_of_wagons(each_wagons_id, missing_wagons):
@@ -11,11 +12,13 @@ def fix_list_of_wagons(each_wagons_id, missing_wagons):
     :parm missing_wagons: list - the list of missing wagons.
     :return: list - list of wagons.
     """
-    pass
+    first, second, loctomotive, *rest = each_wagons_id
+    return [loctomotive, *missing_wagons, *rest, first, second]
 
 
 # TODO: define the 'add_missing_stops()' function
-
+def add_missing_stops(**kvargs):
+    return kvargs
 
 # TODO: define the 'extend_route_information()' function
 def extend_route_information(route, more_route_information):
@@ -25,7 +28,7 @@ def extend_route_information(route, more_route_information):
     :param more_route_information: dict -  extra route information.
     :return: dict - extended route information.
     """
-    pass
+    return {**route, **more_route_information}
 
 
 # TODO: define the 'something()' function

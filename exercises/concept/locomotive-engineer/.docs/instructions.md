@@ -12,7 +12,7 @@ To practice, use the Unpacking and Multiple Assignment to solve each of the task
 Your friend has been keeping track of each wagon identifier, but they're never sure how many wagons they are going to have to process at any given time. It would be much easier for the rest of the logistics program to have the data to be returned as a list.
 
 Implement a function `get_list_of_wagons` that accepts an unknown amount of positive integers which are the IDs of each wagon.
-It should then return the given IDs as a `list` .
+It should then return the given IDs as a `list`.
 
 ```python
 >>> get_list_of_wagons(1, 7, 12, 3, 14, 8, 5)
@@ -34,7 +34,7 @@ All they can remember is that the missing values should be placed directly after
 
 Implement a function `fix_list_of_wagons` that takes two `lists` containing wagon IDs as the arguments.
 In first `list` should the 2 wagons be repositioned the end of the `list`.
-Then the second `list` should be added to the front of the first `list` .
+Then the second `list` should be added to the front of the first `list`.
 The function should `return` the `list` with the modfications.
 
 ```python
@@ -44,9 +44,21 @@ The function should `return` the `list` with the modfications.
 
 ## 3. Add missing stops
 
+Now that all the wagon data is correct, your friend would like you to update the systems routing information.
+Under the train journey the train will stop at a few stations to pick up and drop off cargo.
+Each journey will have different amount of stops. To simplyfy setting up the routing program your friend would like you to add the missing stops to a `dict`.
+
+Implement a function `add_missing_stops` that accepts an unknown amount of `dicts` which are the stops in order.
+It should then return the given stops as one `dict`.
+
+```python
+>>> add_missing_stops({"stop_1": "Hamburg"}, {"stop_2": "Hannover"}, {"stop_3": "Frankfurt"})
+{"stop_1": "Hamburg", "stop_2": "Hannover", "stop_3": "Frankfurt"}
+```
+
 ## 4. Extend routing information
 
-Now that all the wagon data is correct, your friend would like you to update the systems routing information.
+Your friend has been working on the routing program and has noticed that the routing information is missing some important details.
 Initial routing information has been constructed as a `dict` , and you friend would like you to update it with the additions provided.
 Every route requires slightly different information, so your friend would really prefer a generic solution.
 
