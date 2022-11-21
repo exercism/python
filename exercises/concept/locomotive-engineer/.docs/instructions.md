@@ -19,7 +19,7 @@ It should then return the given IDs as a `list`.
 [1, 7, 12, 3, 14, 8, 3]
 ```
 
-## 2. Move the first two elements to the end of the array
+## 2. Fix list of wagons
 
 At this point, you are starting to get a feel for your friend's data and how it's used in the logistics program.
 The train ID system works by assigning the locomotive an ID of `1` and then assigning the remainder of the wagons a randomly chosen ID greater than `1`.
