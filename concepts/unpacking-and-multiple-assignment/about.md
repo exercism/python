@@ -334,7 +334,15 @@ numbers = [1, 2, 3]
 2
 ```
 
-!!! Find a method you have to unpack
+Using unpacking with `zip()` is a common use case.
+Since `zip()` takes multiple iterables and returns a list of tuples with the values from each iterable.
+
+```python
+>>> values = (['x', 'y', 'z'], [1, 2, 3], [True, False, True])
+>>> a, *rest = zip(*values)
+>>> rest
+[('y', 2, False), ('z', 3, True)]
+```
 
 [multiple assignment]: https://www.geeksforgeeks.org/assigning-multiple-variables-in-one-line-in-python/
 [sorting algorithms]: https://realpython.com/sorting-algorithms-python/

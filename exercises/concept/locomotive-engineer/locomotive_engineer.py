@@ -2,9 +2,11 @@
 
 # TODO: define the 'get_list_of_wagons' function
 
+
 # TODO: define the 'fixListOfWagons()' function
 def fix_list_of_wagons(each_wagons_id, missing_wagons):
     """Fix the list of wagons.
+
     :parm each_wagons_id: list - the list of wagons.
     :parm missing_wagons: list - the list of missing wagons.
     :return: list - list of wagons.
