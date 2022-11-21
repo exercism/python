@@ -29,12 +29,12 @@ The goal of this exercise is to teach the student how inheritance works in Pytho
 The Concepts this exercise unlocks are:
 
 - `intermediate`: Class inheritance.
-- `intermediate`: MRO (Method Resolution Order)
+- `intermediate`: MRO (Method Resolution Order).
 - `intermediate`: Private attributes.
-- `intermediate`: single inheritance
-- `intermediate`: multiple inheritance
-- `intermediate`: minxins
-- `intermediate`: super() 
+- `intermediate`: single inheritance.
+- `intermediate`: multiple inheritance.
+- `intermediate`: Mix-ins.
+- `intermediate`: Built-in ***super()*** funcion.
 
 ## Prerequisites
 

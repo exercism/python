@@ -106,6 +106,16 @@ Python offers multiple [types of inheritance][inheritance types], which we can u
 
 
 ### Single Inheritance
+```
+    ┌──────┐
+    │Parent│
+    └──────┘
+        ▲
+        │
+    ┌───┴───┐
+    │ Child │
+    └───────┘
+```
 
 ```python
 >>> class Parent():
@@ -119,6 +129,18 @@ As we saw before this is the base example where a `child class` inherits from th
 
 
 ### Multiple Inheritance
+```
+    ┌──────┐   ┌──────┐
+    │Father│   │Mother│
+    └──────┘   └──────┘
+        ▲         ▲
+        └───┐ ┌───┘
+            │ │
+         ┌──┴─┴──┐
+         │ Child │
+         └───────┘  
+```
+
 Unlike other [OOP][oop] languages Python can handle multiple inheritance.
 
 ```python
@@ -201,6 +223,21 @@ Because we are referencing the class, now we will need to pass the instance as a
 
 
 ### Multilevel Inheritance
+```
+      ┌──────┐
+      │Parent│
+      └──────┘
+          ▲
+          │
+      ┌───┴───┐
+      │ Child │
+      └───────┘
+          ▲
+          │
+      ┌───┴──────┐
+      │Grandchild│
+      └──────────┘
+```
 
 In multilevel inheritance you have many layers where each one of it adds or increments the functionality of it's parent.
 
@@ -226,6 +263,18 @@ True
 ```
 
 ### Hierarchical Inheritance
+```
+                ┌──────┐
+                │Parent│
+                └──────┘
+                ▲  ▲  ▲
+       ┌────────┘  │  └─────────┐
+       │           │            │
+       │           │            │
+    ┌──┴───┐    ┌──┴───┐    ┌───┴──┐
+    │Child1│    │Child2│    │Child3│
+    └──────┘    └──────┘    └──────┘
+```
 
 Herarchical inheritance is the chain of inheritance or linage of our class. In this case to reference one level up on the chain, we could made use of `super()`, and in order to get farther (more than one level jump), we will need to use the class notation.
 
@@ -246,22 +295,25 @@ True
 ```
 
 ### Hybrid Inheritance
-
-```python
->>> class Parent():
-...     pass
-... 
->>> class Child(Parent):
-...     pass
-... 
->>> class Grandchild(Child):
-...     pass
-... 
->>> isinstance(Grandchild(), Parent)
-True
->>> issubclass(Grandchild, Parent)
-True
 ```
+             ┌──────┐
+             │ClassA│
+             └──────┘
+               ▲  ▲
+       ┌───────┘  └───────┐
+       │                  │
+    ┌──┴───┐          ┌───┴──┐
+    │ClassB│          │ClassC│
+    └──────┘          └──────┘
+       ▲                  ▲
+       └───────┐  ┌───────┘
+               │  │
+             ┌─┴──┴─┐
+             │ClassD│
+             └──────┘
+```
+
+`Hybrid Inheritance` is a combination of any of the other types of `inheritance`.
 
 ## Inheritance derived concepts
 
@@ -309,6 +361,44 @@ TypeError: 'str' object is not callable
 ```
 
 Cause Python defines all it's data types, it can not distinguis between a reference to a function or method and a variable or attribute. Because of this reasson an attribute will also overwrite a method.
+
+### Mix-ins
+`Mix-in` is a mechanism to avoid code duplication when working with classes and inheritance. Python doesn't present build-in `mix-in` functionality, but thanks to the multiple inheritance we can make use of `mix-ins`.
+
+`Mix-in` classes are ment to don't be instanciated. Instead, they are ment to be extended by other classes. As convention, they are denoted in Python by adding the word ***`Mixin`*** (`<class-name>Mixin`) at the end of the the class name to be able to quickly identify them, because python doesn't provide any reserved keyword for it.
+
+Lets say we have the following case, two classes `ClassB` and `ClassC` that inherit from a parent class `ClassA`. We want to implement a method named `some_funcion()` on `ClassB` and `ClassC`, but we don't want this method to be implemented on `ClassA`.
+
+```python
+>>> class ClassA:
+...     pass
+... 
+>>> class ClassB(ClassA):
+...     def some_function(self):
+...         pass
+... 
+>>> class ClassC(ClassA):
+...     def some_function(self):
+...         pass
+```
+To avoid this code duplication is when we are gonna make use of a `mix-in` class.
+
+```python
+>>> class ClassA:
+...     pass
+... 
+>>> class ClassDMixin():
+...     def some_funcion(self):
+...         pass
+...
+>>> class ClassB(ClassA, ClassDMixin):
+...     pass
+... 
+>>> class ClassC(ClassA, ClassDMixin):
+...     pass
+```
+This way we have added the method `some_funcion()` to both of our subclasses with out altering the `parent class`, and at the same time fix the problem of code duplication.
+
 
 [oop]: [https://www.educative.io/blog/object-oriented-programming]
 [methods]: [https://realpython.com/python3-object-oriented-programming/#instance-methods]
