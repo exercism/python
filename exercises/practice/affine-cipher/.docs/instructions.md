@@ -6,7 +6,7 @@ The affine cipher is a type of monoalphabetic substitution cipher.
 Each character is mapped to its numeric equivalent, encrypted with a mathematical function and then converted to the letter relating to its new numeric value.
 Although all monoalphabetic ciphers are weak, the affine cipher is much stronger than the atbash cipher, because it has many more keys.
 
-[comment]: # ( monoalphabetic as spelled by Merriam-Webster, compare to polyalphabetic )
+[//]: # ( monoalphabetic as spelled by Merriam-Webster, compare to polyalphabetic )
 
 ## Encryption
 
@@ -52,7 +52,7 @@ The MMI of `a` is `x` such that the remainder after dividing `ax` by `m` is `1`:
 ax mod m = 1
 ```
 
-More information regarding how to find a Modular Multiplicative Inverse and what it means can be found in the [related Wikipedia article][MMI].
+More information regarding how to find a Modular Multiplicative Inverse and what it means can be found in the [related Wikipedia article][mmi].
 
 ## General Examples
 
@@ -70,5 +70,5 @@ Finding MMI for `a = 15`:
 - `(15 * 7) mod 26 = 1`, ie. `105 mod 26 = 1`
 - `7` is the MMI of `15 mod 26`
 
-[MMI]: https://en.wikipedia.org/wiki/Modular_multiplicative_inverse
+[mmi]: https://en.wikipedia.org/wiki/Modular_multiplicative_inverse
 [coprime-integers]: https://en.wikipedia.org/wiki/Coprime_integers

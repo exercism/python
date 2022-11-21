@@ -1,6 +1,6 @@
 # Instructions
 
-An [Armstrong number](https://en.wikipedia.org/wiki/Narcissistic_number) is a number that is the sum of its own digits each raised to the power of the number of digits.
+An [Armstrong number][armstrong-number] is a number that is the sum of its own digits each raised to the power of the number of digits.
 
 For example:
 
@@ -10,3 +10,5 @@ For example:
 - 154 is *not* an Armstrong number, because: `154 != 1^3 + 5^3 + 4^3 = 1 + 125 + 64 = 190`
 
 Write some code to determine whether a number is an Armstrong number.
+
+[armstrong-number]: https://en.wikipedia.org/wiki/Narcissistic_number
