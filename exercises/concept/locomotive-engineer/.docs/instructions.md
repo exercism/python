@@ -88,7 +88,7 @@ Your friend would like you to help them sort out the wagon depot lists, so that 
 
 Implement a function `fix_wagon_depot` that accepts a nested `list`.
 The first `list` contains the first row of wagons, the second `list` contains the second row of wagons and the third `list` contains the third row of wagons. All rows are of equal length.
-Every wagon within a row is represented by a `tuple` with (`<wogon ID>`, `<wagon color>`).
+Every wagon within a row is represented by a `tuple` with (`<wagon ID>`, `<wagon color>`).
 
 Your function should return a `list` with the 3 row `lists` reordered with the wagons swapped into their correct positions.
 
