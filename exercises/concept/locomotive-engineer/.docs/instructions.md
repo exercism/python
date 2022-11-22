@@ -94,10 +94,12 @@ Your function should return a `list` with the 3 row `lists` reordered with the w
 
 ```python
 >>> fix_wagon_depot([
-                    [(2, "red"),(5, "blue"),(3, "orange")],
-                    [(4, "red"),(9, "blue"),(7, "orange")], 
-                    [(8, "red"),(13,"blue"),(11, "orange")]
+                    [(2, "red"),(4, "red"),(8, "red")],
+                    [(5, "blue"), (9, "blue"),(13,"blue")], 
+                    [(3, "orange"), (7, "orange"), (11, "orange")],
                     ])
-[(3,5,2), (7,9,4), (11,13,8)]
-```
 
+[[(2, "red"),(5, "blue"),(3, "orange")],
+[(4, "red"),(9, "blue"),(7, "orange")], 
+[(8, "red"),(13,"blue"),(11, "orange")]]
+```
