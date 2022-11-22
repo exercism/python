@@ -270,7 +270,7 @@ Usage of `**kwargs`:
 ```
 
 `*args` and `**kwargs` can also be used in combination with each other.
-This allows splitting the keyworded and non-keyworded arguments.
+This allows splitting the key-worded and non-key-worded arguments.
 
 ```python
 >>> def my_function(*args, **kwargs):
@@ -286,11 +286,11 @@ c = 3
 ```
 
 You can also write arguments before `*args` to allow for positional arguments.
-For keworded arguments so do you have to write arguments before `**kwargs`.
+For key-worded arguments so do you have to write arguments before `**kwargs`.
 
 ```exercism/caution
 [Arguments has to be structured][Positional and keyword arguments] like this:
-`def my_function(positional_arg, *args, keyworded_arg, **kwargs)`
+`def my_function(positional_arg, *args, key-worded_arg, **kwargs)`
 If you don't follow this order then you will get an error.
 ```
 
