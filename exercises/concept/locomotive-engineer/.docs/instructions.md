@@ -80,7 +80,7 @@ The second dict can contain different properties than the ones shown in the exam
 ## 5. Fix the wagon depot
 
 When your friend was surveying the wagon depot they noticed that the wagons were not getting stored in the correct order.
-In addition to an ID, each wangon has a color that corresponds to the type of coargo it carries.
+In addition to an ID, each wagon has a color that corresponds to the type of cargo it carries.
 Wagons are stored in the depot in grids, with each column in the grid grouped by wagon color.
 
 In the control system, it appears that the lists of wagons to be stored in the depo have their row positioning swapped so that the columns won't align by color. For the storage grid to work correctly, the first and last wagons in each "row" need to switch positions.
@@ -88,18 +88,20 @@ Your friend would like you to help them sort out the wagon depot lists, so that 
 
 Implement a function `fix_wagon_depot` that accepts a nested `list`.
 The first `list` contains the first row of wagons, the second `list` contains the second row of wagons and the third `list` contains the third row of wagons. All rows are of equal length.
-Every wagon within a row is represented by a `tuple` with (`<wogon ID>`,  `<wagon color>`).
+Every wagon within a row is represented by a `tuple` with (`<wogon ID>`, `<wagon color>`).
 
 Your function should return a `list` with the 3 row `lists` reordered with the wagons swapped into their correct positions.
 
 ```python
 >>> fix_wagon_depot([
-                    [(2, "red"),(4, "red"),(8, "red")],
-                    [(5, "blue"), (9, "blue"),(13,"blue")], 
-                    [(3, "orange"), (7, "orange"), (11, "orange")],
+                    [(2, "red"), (4, "red"),(8, "red")],
+                    [(5, "blue"),(9, "blue"),(13,"blue")], 
+                    [(3, "orange"),(7, "orange"), (11, "orange")],
                     ])
 
-[[(2, "red"),(5, "blue"),(3, "orange")],
-[(4, "red"),(9, "blue"),(7, "orange")], 
-[(8, "red"),(13,"blue"),(11, "orange")]]
+[
+[(2, "red"),(5, "blue"),(3, "orange")],
+[(4, "red"),(9, "blue"),(7, "orange")],
+[(8, "red"),(13,"blue"),(11, "orange")]
+]
 ```
