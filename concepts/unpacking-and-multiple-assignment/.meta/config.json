@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for this concept",
+  "blurb": "Unpacking is when extracting elements of a collection, such as a `list`, `tuple`, or `dictionary`, into variables. Multiple assignment is the ability to assign multiple variables in one line.",
   "authors": ["meatball","bethanyg"],
   "contributors": []
 }
