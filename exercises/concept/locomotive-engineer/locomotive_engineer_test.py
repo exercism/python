@@ -33,17 +33,17 @@ class InventoryTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=3)
     def test_add_missing_stops(self): 
-        input_data = [{"stop_1": "Hamburg", "stop_2": "Hannover", "stop_3": "Frankfurt"}, 
-                        {"stop_1": "Paris"}, 
-                        {"stop_1": "London", "stop_2": "Manchester", "stop_3": "Liverpool", "stop_4": "Birmingham", "stop_5": "Bristol", "stop_6": "Cardiff", "stop_7": "Swansea"}
-                    ]
-        output_data = [{"stop_1": "Hamburg", "stop_2": "Hannover", "stop_3": "Frankfurt"}, 
-                        {"stop_1": "Paris"}, 
-                        {"stop_1": "London", "stop_2": "Manchester", "stop_3": "Liverpool", "stop_4": "Birmingham", "stop_5": "Bristol", "stop_6": "Cardiff", "stop_7": "Swansea"}
+        input_data = (({"from": "Berlin", "to": "Hamburg"}, {"stop_1": "Lepzig", "stop_2": "Hannover", "stop_3": "Frankfurt"}), 
+                        ({"from": "Paris", "to": "London"}, {"stop_1": "Lille"}), 
+                        ({"from": "Gothenburg", "to": "Copenhagen"}, {"stop_1": "Kungsbacka", "stop_2": "Varberg", "stop_3": "Halmstad", "stop_4": "Angelholm", "stop_5": "Lund", "stop_6": "Malmo"})
+                    )
+        output_data = [{"from": "Berlin", "to": "Hamburg", "stops": ["Lepzig", "Hannover", "Frankfurt"]}, 
+                        {"from": "Paris", "to": "London", "stops": ["Lille"]}, 
+                        {"from": "Gothenburg", "to": "Copenhagen", "stops": ["Kungsbacka", "Varberg", "Halmstad", "Angelholm", "Lund", "Malmo"]}
                     ]
         for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
             with self.subTest(f"variation #{variant}", input_data=input_data, output_data=output_data):
-                self.assertEqual(add_missing_stops(**input_data), output_data)
+                self.assertEqual(add_missing_stops(input_data[0], **input_data[1]), output_data)
 
     @pytest.mark.task(taskno=4)
     def test_extend_route_information(self): 
