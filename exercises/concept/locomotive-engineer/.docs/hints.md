@@ -5,7 +5,6 @@
 ## 1. Create a list of all wagons
 
 - Multiple arguments in a function can be packed with the `*` operator.
-- !!! add more
 
 ## 2. Fix list of wagons
 
@@ -17,3 +16,6 @@
 ## 4. Extend routing information
 
 ## 5. Fix the wagon depot
+
+- Using `zip(*iterators)` can use used to transpose a nested list.
+- To extract data from the ziped iterators, you can use a for loop.
