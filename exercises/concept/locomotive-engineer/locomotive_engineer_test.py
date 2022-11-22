@@ -64,15 +64,27 @@ class InventoryTest(unittest.TestCase):
                     [(3, "orange"),(7, "orange"), (11, "orange")]],
                     [[(6, "blue"), (10, "blue"), (14, "blue")], 
                     [(7, "red"), (4, "red"), (2, "red")],
-                    [(3, "orange"), (11, "orange"), (15, "orange")]
-                    ])
+                    [(3, "orange"), (11, "orange"), (15, "orange")]],
+                    [[(7, "pink"), (4, "pink"), (2, "pink")],
+                    [(10, "green"), (6, "green"), (14, "green")],
+                    [(9, "yellow"), (5, "yellow"), (13, "yellow")]],
+                    [[(3, "purple"), (11, "purple"), (15, "purple")],
+                    [(20, "black"), (16, "black"), (12, "black")],
+                    [(19, "white"), (17, "white"), (18, "white")]]
+                    )
         output_data = ([[(2, "red"),(5, "blue"),(3, "orange")],
                     [(4, "red"),(9, "blue"),(7, "orange")],
                     [(8, "red"),(13,"blue"),(11, "orange")]],
                     [[(6, "blue"),(7, "red"),(3, "orange")],
                     [(10, "blue"),(4, "red"),(11, "orange")],
-                    [(14, "blue"),(2, "red"),(15, "orange")]
-                    ])
+                    [(14, "blue"),(2, "red"),(15, "orange")]],                     
+                    [[(7, "pink"), (10, "green"), (9, "yellow")],
+                    [(4, "pink"), (6, "green"), (5, "yellow")],
+                    [(2, "pink"), (14, "green"), (13, "yellow")]],
+                    [[(3, "purple"), (20, "black"), (19, "white")],
+                    [(11, "purple"), (16, "black"), (17, "white")],
+                    [(15, "purple"), (12, "black"), (18, "white")]]
+                    )
 
 
 

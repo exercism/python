@@ -271,8 +271,6 @@ Usage of `**kwargs`:
 `*args` and `**kwargs` can also be used in combination with each other.
 This allows splitting the keyworded and non-keyworded arguments.
 
-!! Show diffrence
-
 ```python
 >>> def my_function(*args, **kwargs):
 ...   print(sum(args))
