@@ -4,7 +4,7 @@
 
 ## 1. Create a list of all wagons
 
-- Multiple arguments in a function can be packed with the `*` operator.
+- Multiple arguments in the function parameters can be packed with the `*args` operator.
 
 ## 2. Fix list of wagons
 
@@ -13,7 +13,15 @@
 
 ## 3. Add missing stops
 
+- Using `**kwargs` as a function argument will mutiple keyword arguments into a `dict`.
+- Using `**(dict)` will unpack a dictonary into keyword arguments.
+- You can put keyword arguments in a `{}` or `dict()`.
+- To get the values out of a dictionary, you can use the `<dict>.values()` method.
+
 ## 4. Extend routing information
+
+- Using `**(dict)` will unpack a dictonary into keyword arguments.
+- You can put keyword arguments in a `{}` or `dict()`.
 
 ## 5. Fix the wagon depot
 
