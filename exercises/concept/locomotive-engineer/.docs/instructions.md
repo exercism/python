@@ -77,4 +77,21 @@ The second dict can contain different properties.
 {"from": "Berlin", "to": "Hamburg", "length": "100", "speed": "50"}
 ```
 
-## 5. Something tbd
+## 5. Fix the the wagon depot
+
+When your friend was storing the wagons at the wagon depot they noticed that the wagons were not stored in the correct order.
+The wagons are storred in 3 rows and in every row there are an atribute of wagons.
+Storing the wagons require a specefic order and your friend noticed that the first and last wagon need to switch position for all 3 rows.
+Your friend would like you to help them sort out the wagon depot.
+
+Implement a function `fix_wagon_depot` that accepts one `list` with 3 `tuples` in.
+The first `tuple` contains the first row of wagons, the second `tuple` contains the second row of wagons and the third `tuple` contains the third row of wagons. All the rows are equal in length. 
+Every wagon does also have a unique ID.
+
+The function should return a `list` with 3 `tuples` in which has the corrected order of the wagons.
+
+```python
+>>> fix_wagon_depot([(2,5,3), (4,9,7), (8,13,11)])
+[(3,5,2), (7,9,4), (11,13,8)]
+```
+

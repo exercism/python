@@ -1,6 +1,6 @@
 import unittest
 import pytest
-from locomotive_engineer import get_list_of_wagons, fix_list_of_wagons, add_missing_stops, extend_route_information #, something
+from locomotive_engineer import get_list_of_wagons, fix_list_of_wagons, add_missing_stops, extend_route_information, fix_wagon_depot
 
 class InventoryTest(unittest.TestCase):
 
@@ -53,3 +53,18 @@ class InventoryTest(unittest.TestCase):
         for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
             with self.subTest(f"variation #{variant}", input_data=input_data, output_data=output_data):
                 self.assertEqual(extend_route_information(input_data[0], input_data[1]), output_data)
+    @pytest.mark.task(taskno=5)
+    def test_fix_wagon_depot(self):
+        input_data = [[(2,5,3), (4,9,7), (8,13,11)], 
+                        [(13, 4, 3, 8, 9), (5, 6, 7, 10, 11), (19, 2, 12, 14, 15)],
+                        [(14, 9, 3, 7, 10, 11, 5), (2, 4, 6, 8, 12, 13, 15), (19, 1, 16, 17, 18, 20, 21)]
+                    ]
+        output_data = [[(3,5,2), (7,9,4), (11,13,8)], 
+                        [(9, 4, 3, 8, 13), (11, 6, 7, 10, 5), (15, 2, 12, 14, 19)],
+                        [(5, 9, 3, 7, 10, 11, 14), (15, 4, 6, 8, 12, 13, 2), (21, 1, 16, 17, 18, 20, 19)]
+                    ]
+
+
+        for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
+            with self.subTest(f"variation #{variant}", input_data=input_data, output_data=output_data):
+                self.assertEqual(fix_wagon_depot(input_data), output_data)

@@ -29,3 +29,13 @@ def extend_route_information(route, more_route_information):
     """
     return {**route, **more_route_information}
 
+
+def fix_wagon_depot(wagons_rows):
+    """Fix the list of rows of wagons.
+
+    :param wagons_rows: list[tuple] - the list of rows of wagons.
+    :return: list[tuple] - list of rows of wagons.
+    """
+     
+    ((first_1,*middle_1, last_1), (first_2,*middle_2, last_2), (first_3,*middle_3, last_3)) = wagons_rows
+    return [(last_1, *middle_1, first_1), (last_2, *middle_2, first_2), (last_3, *middle_3, first_3)]
