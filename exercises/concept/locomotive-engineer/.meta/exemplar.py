@@ -16,8 +16,8 @@ def fix_list_of_wagons(each_wagons_id, missing_wagons):
     return [loctomotive, *missing_wagons, *rest, first, second]
 
 
-def add_missing_stops(**kvargs):
-    return kvargs
+def add_missing_stops(route, **kwargs):
+    return {**route, "stops": list(kwargs.values())}
 
 
 def extend_route_information(route, more_route_information):
