@@ -2,10 +2,13 @@
 
 Creating a zipper for a binary tree.
 
-[Zippers][zipper] are a purely functional way of navigating within a data structure and manipulating it.
-They essentially contain a data structure and a pointer into that data structure (called the focus).
+[Zippers](https://en.wikipedia.org/wiki/Zipper_%28data_structure%29) are
+a purely functional way of navigating within a data structure and
+manipulating it.  They essentially contain a data structure and a
+pointer into that data structure (called the focus).
 
-For example given a rose tree (where each node contains a value and a list of child nodes) a zipper might support these operations:
+For example given a rose tree (where each node contains a value and a
+list of child nodes) a zipper might support these operations:
 
 - `from_tree` (get a zipper out of a rose tree, the focus is on the root node)
 - `to_tree` (get the rose tree out of the zipper)
@@ -23,5 +26,3 @@ For example given a rose tree (where each node contains a value and a list of ch
 - `delete` (removes the focus node and all subtrees, focus moves to the
   `next` node if possible otherwise to the `prev` node if possible,
   otherwise to the parent node, returns a new zipper)
-
-[zipper]: https://en.wikipedia.org/wiki/Zipper_%28data_structure%29

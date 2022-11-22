@@ -98,7 +98,7 @@ Re-format the coordinate as needed for accurate comparison.
 >>> create_record(('Brass Spyglass', '4B'), ('Abandoned Lighthouse', ('4', 'B'), 'Blue'))
 ('Brass Spyglass', '4B', 'Abandoned Lighthouse', ('4', 'B'), 'Blue')
 
->>> create_record(('Brass Spyglass', '4B'), ('Seaside Cottages', ('1', 'C'), 'blue'))
+>>> create_record(('Brass Spyglass', '4B'), (('1', 'C'), 'Seaside Cottages', 'blue'))
 "not a match"
 ```
 
