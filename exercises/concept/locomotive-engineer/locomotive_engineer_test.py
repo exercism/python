@@ -1,6 +1,10 @@
 import unittest
 import pytest
-from locomotive_engineer import get_list_of_wagons, fix_list_of_wagons, add_missing_stops, extend_route_information, fix_wagon_depot
+from locomotive_engineer import (get_list_of_wagons,
+                                 fix_list_of_wagons,
+                                 add_missing_stops,
+                                 extend_route_information,
+                                 fix_wagon_depot)
 
 class InventoryTest(unittest.TestCase):
 

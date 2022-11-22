@@ -45,15 +45,18 @@ The function should then `return` the `list` with the modfications.
 ## 3. Add missing stops
 
 Now that all the wagon data is correct, your friend would like you to update the systems routing information.
-Under the train journey the train will stop at a few stations to pick up and drop off cargo.
-Each journey will have different amount of stops. To simplyfy setting up the routing program your friend would like you to add the missing stops to a `dict`.
+During the journey, the train will stop at a few stations to pick up and/or drop off cargo.
+Each journey will have different amount of stops. To simplyfy setting up the routing program your friend would like you to add in the missing stops to the routing `dict`.
 
-Implement a function `add_missing_stops` that accepts an unknown amount of `dicts` which are the stops in order.
-It should then return the given stops as one `dict`.
+Implement a function `add_missing_stops` that accepts a routing `dict` followed by an unknown amount of additional keyword arguments. These arguments could be in the form of a `dict` which holds one or more stops in order, or a number of `stop_number=city` pairs.
+The function should then return the routing `dict`, updated with a key that holds a list of all the stops in order.
 
 ```python
->>> add_missing_stops({"stop_1": "Hamburg"}, {"stop_2": "Hannover"}, {"stop_3": "Frankfurt"})
-{"stop_1": "Hamburg", "stop_2": "Hannover", "stop_3": "Frankfurt"}
+>>> add_missing_stops({"from": "Berlin", "to": "Hamburg"}, {"stop_1": "Hamburg", "stop_2": "Hannover", "stop_3": "Frankfurt"})
+{"from": "Berlin", "to": "Hamburg", "stops": ["Hamburg", "Hannover", "Frankfurt"]}
+
+>>> add_missing_stops({"from": "New York", "to": "Miami"}, stop_1="Washington, DC", stop_2="Charlott", stop_3="Atlanta", stop_4="Jacksonville", stop_5="Orlando")
+{"from": "New York", "to": "Miami", "stops": ["Washington, DC", "Charlott", "Atlanta", "Jacksonville", "Orlando"]}
 ```
 
 ## 4. Extend routing information
