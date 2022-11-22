@@ -349,4 +349,3 @@ Since `zip()` takes multiple iterables and returns a list of tuples with the val
 [packing and unpacking]: https://www.geeksforgeeks.org/packing-and-unpacking-arguments-in-python/
 [items]: https://www.geeksforgeeks.org/python-dictionary-items-method/
 [args and kwargs]: https://www.geeksforgeeks.org/args-kwargs-python/
-[positional and keyword arguments]: https://www.python-engineer.com/courses/advancedpython/18-function-arguments/

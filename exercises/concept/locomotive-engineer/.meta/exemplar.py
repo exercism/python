@@ -8,8 +8,8 @@ def get_list_of_wagons(*args):
 def fix_list_of_wagons(each_wagons_id, missing_wagons):
     """Fix the list of wagons.
 
-    :parm each_wagons_id: list - the list of wagons.
-    :parm missing_wagons: list - the list of missing wagons.
+    :param each_wagons_id: list - the list of wagons.
+    :param missing_wagons: list - the list of missing wagons.
     :return: list - list of wagons.
     """
     first, second, loctomotive, *rest = each_wagons_id
@@ -17,6 +17,12 @@ def fix_list_of_wagons(each_wagons_id, missing_wagons):
 
 
 def add_missing_stops(route, **kwargs):
+    """Add missing stops to route dict.
+
+    :param route: dict - the dict of routing information.
+    :param **kwards:  arbitrary number of stops.
+    :return: dict - updated route dictionary.
+    """
     return {**route, "stops": list(kwargs.values())}
 
 
@@ -36,6 +42,5 @@ def fix_wagon_depot(wagons_rows):
     :param wagons_rows: list[tuple] - the list of rows of wagons.
     :return: list[tuple] - list of rows of wagons.
     """
-    ziped = zip(*wagons_rows)
-    return [list(row) for row in ziped]
-    
+    combined = zip(*wagons_rows)
+    return [*combined]

@@ -1,18 +1,26 @@
 [
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://treyhunner.com/2018/10/asterisks-in-python-what-they-are-and-how-to-use-them/",
+    "description": "Trey Hunner: Astrisks in Python - What they are and How to Use Them."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://treyhunner.com/2018/03/tuple-unpacking-improves-python-code-readability/",
+    "description": "Trey Hunner: Tuple Unpacking Imporves Python Code Readability."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://stackabuse.com/unpacking-in-python-beyond-parallel-assignment/",
+    "description": "Stack Abuse: Unpacking in Python Beyond Parallel Assignment."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://dbader.org/blog/python-nested-unpacking",
+    "description": "Dan Bader: Python Nested Unpacking."
+  },
+  {
+    "url": "https://peps.python.org/pep-3132/",
+    "description": "Pep 3132: Extended Iterable Unpacking."
+  },
+  {
+    "url": "https://peps.python.org/pep-0448/",
+    "description": "PEP 0448: Additional Unpacking Generalizations."
   }
 ]
