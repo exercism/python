@@ -2,6 +2,9 @@
 
 ## General
 
+- To extract multiple arguments in the function parameters so can you pack them with the `*args` operator for list or tuples or `kwargs` for keyword based arguments.
+- To pack or unpack use the `*` or `**` operator.
+
 ## 1. Create a list of all wagons
 
 - Multiple arguments in the function parameters can be packed with the `*args` operator.
