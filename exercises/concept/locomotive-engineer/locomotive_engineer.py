@@ -28,9 +28,11 @@ def extend_route_information(route, more_route_information):
     pass
 
 
-# TODO: define the 'something()' function
-def something():
+# TODO: define the 'fix_wagon_depot()' function
+def fix_wagon_depot(wagons_rows):
+    """Fix the list of rows of wagons.
+
+    :param wagons_rows: list[tuple] - the list of rows of wagons.
+    :return: list[tuple] - list of rows of wagons.
     """
-    """
-     
     pass
