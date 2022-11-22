@@ -1,10 +1,11 @@
 # Instructions
 
-Your friend is a Locomotive Engineer who drives cargo trains between cities.
+Your friend Linus is a Locomotive Engineer who drives cargo trains between cities.
 Although your friend is great handling the trains, they aren't amazing handling the logistics computers and would like your programming help organizing the train and correcting mistakes in the data.
 
 ```exercism/note
-To practice, use the Unpacking and Multiple Assignment to solve each of the tasks below.
+This exercise could easily be solved using `list` slicing, indexing, and `dict` methods.
+ However, we'd like you to practice using Unpacking and Multiple Assignment to solve each of the tasks below.
 ```
 
 ## 1. Create a list of all wagons
@@ -19,23 +20,22 @@ It should then return the given IDs as a `list`.
 [1, 7, 12, 3, 14, 8, 3]
 ```
 
-## 2. Fix list of wagons
+## 2. Fix the list of wagons
 
 At this point, you are starting to get a feel for your friend's data and how it's used in the logistics program.
 The train ID system works by assigning the locomotive an ID of `1` and then assigning the remainder of the wagons a randomly chosen ID greater than `1`.
 
 But then your friend had to connect two new wagons to the train and forgot to update the system!
 Now the first two wagons in the `list` have to be moved to the back of the train, or everything will be out of order.
-Your friend would be really grateful to you for fixing their mistake.
 
-Your friend also noticed some wagons seem to have gone missing.
-Fortunately, your friend just found another `list` which appears to contain the missing wagon IDs, and would like you to add them into the main wagon ID `list`.
-All they can remember is that the missing values should be placed directly after the designated locomotive.
+Additionally, your friend just found a second `list` that appears to contain missing wagon IDs, and would like you to merge it together with the main wagon ID `list`.
+All they can remember is that once the new wagons are moved to the end, the values from the second list should be placed directly after the designated locomotive.
+
+Your friend would be really grateful to you for fixings their mistakes and consolodating the data.
 
 Implement a function `fix_list_of_wagons` that takes two `lists` containing wagon IDs as the arguments.
-In first `list` should the 2 wagons be repositioned the end of the `list`.
-Then the second `list` should be added to the front of the first `list`.
-The function should `return` the `list` with the modfications.
+It should reposition the first two items of the first list to the end, and then insert the values from the second list behind the locomotive ID (`1`).
+The function should then `return` the `list` with the modfications.
 
 ```python
 >>> fix_list_of_wagons([2, 5, 1, 7, 4, 12, 6, 3, 13], [3, 17, 6, 15])
@@ -69,7 +69,7 @@ The second `dict` contains other routing details such as train speed or length.
 The function should return a consolidated `dict` with all routing information.
 
 ```exercism/note
-The second dict can contain different properties.
+The second dict can contain different properties than the ones shown in the example.
 ```
 
 ```python
@@ -79,19 +79,25 @@ The second dict can contain different properties.
 
 ## 5. Fix the wagon depot
 
-When your friend was storing the wagons at the wagon depot they noticed that the wagons were not stored in the correct order.
-The wagons are storred in 3 rows and in every row there are an atribute of wagons.
-Storing the wagons require a specefic order and your friend noticed that the first and last wagon need to switch position for all 3 rows.
-Your friend would like you to help them sort out the wagon depot.
+When your friend was surveying the wagon depot they noticed that the wagons were not getting stored in the correct order.
+In addition to an ID, each wangon has a color that corresponds to the type of coargo it carries.
+Wagons are stored in the depot in grids, with each column in the grid grouped by wagon color.
 
-Implement a function `fix_wagon_depot` that accepts one `list` with 3 `tuples` in.
-The first `tuple` contains the first row of wagons, the second `tuple` contains the second row of wagons and the third `tuple` contains the third row of wagons. All the rows are equal in length. 
-Every wagon does also have a unique ID.
+In the control system, it appears that the lists of wagons to be stored in the depo have their row positioning swapped so that the columns won't align by color. For the storage grid to work correctly, the first and last wagons in each "row" need to switch positions.
+Your friend would like you to help them sort out the wagon depot lists, so that the wagons get stored correctly.
 
-The function should return a `list` with 3 `tuples` in which has the corrected order of the wagons.
+Implement a function `fix_wagon_depot` that accepts a nested `list`.
+The first `list` contains the first row of wagons, the second `list` contains the second row of wagons and the third `list` contains the third row of wagons. All rows are of equal length.
+Every wagon within a row is represented by a `tuple` with (`<wogon ID>`,  `<wagon color>`).
+
+Your function should return a `list` with the 3 row `lists` reordered with the wagons swapped into their correct positions.
 
 ```python
->>> fix_wagon_depot([(2,5,3), (4,9,7), (8,13,11)])
+>>> fix_wagon_depot([
+                    [(2, "red"),(5, "blue"),(3, "orange")],
+                    [(4, "red"),(9, "blue"),(7, "orange")], 
+                    [(8, "red"),(13,"blue"),(11, "orange")]
+                    ])
 [(3,5,2), (7,9,4), (11,13,8)]
 ```
 
