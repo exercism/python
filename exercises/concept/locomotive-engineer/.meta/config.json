@@ -1,5 +1,5 @@
 {
-  "blurb": "Practice using unpacking and multiple assignment",
+  "blurb": "Learn about unpacking and multiple assignment in Python while helping Linus with his train control system.",
   "icon": "tracks-on-tracks-on-tracks",
   "authors": ["meatball","BethanyG"],
   "files": {
