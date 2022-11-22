@@ -31,7 +31,7 @@ Now the first two wagons in the `list` have to be moved to the back of the train
 Additionally, your friend just found a second `list` that appears to contain missing wagon IDs, and would like you to merge it together with the main wagon ID `list`.
 All they can remember is that once the new wagons are moved to the end, the values from the second list should be placed directly after the designated locomotive.
 
-Your friend would be really grateful to you for fixings their mistakes and consolodating the data.
+Your friend would be really grateful to you for fixings their mistakes and consolidating the data.
 
 Implement a function `fix_list_of_wagons` that takes two `lists` containing wagon IDs as the arguments.
 It should reposition the first two items of the first list to the end, and then insert the values from the second list behind the locomotive ID (`1`).
@@ -83,7 +83,7 @@ When your friend was surveying the wagon depot they noticed that the wagons were
 In addition to an ID, each wagon has a color that corresponds to the type of cargo it carries.
 Wagons are stored in the depot in grids, with each column in the grid grouped by wagon color.
 
-In the control system, it appears that the lists of wagons to be stored in the depo have their row positioning swapped so that the columns won't align by color. For the storage grid to work correctly, the first and last wagons in each "row" need to switch positions.
+In the control system, it appears that the lists of wagons to be stored in the depo have their _rows_ grouped by color. But for the the storage grid to work correctly, each row has to have three different colors, so that the columns align properly.
 Your friend would like you to help them sort out the wagon depot lists, so that the wagons get stored correctly.
 
 Implement a function `fix_wagon_depot` that accepts a nested `list`.
