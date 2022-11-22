@@ -1,0 +1,29 @@
+{
+  "introduction": {
+    "authors": ["bobahop"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "972b7546-67ca-4364-9367-02d68a8c0314",
+      "slug": "if-statements",
+      "title": "If statements",
+      "blurb": "Use if statements to return the answer.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "138fcf61-262c-47f6-aac3-96528b24ee6b",
+      "slug": "if-statements-nested",
+      "title": "if statements nested",
+      "blurb": "Use nested if statements to return the answer.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "d74a1d7d-af85-417c-8deb-164536e4ab1b",
+      "slug": "answer-list",
+      "title": "Answer list",
+      "blurb": "Index into a list to return the answer.",
+      "authors": ["bobahop"]
+    }
+  ]
+}
