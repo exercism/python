@@ -2,7 +2,7 @@
 
 ## General
 
-- To extract multiple arguments in the function parameters so can you pack them with the `*args` operator for list or tuples or `kwargs` for keyword based arguments.
+- To extract multiple arguments in the function parameters so can you pack them with the `*args` operator for list or tuples or `kwargs` for keyword-based arguments.
 - To pack or unpack use the `*` or `**` operator.
 
 ## 1. Create a list of all wagons
@@ -17,17 +17,17 @@
 ## 3. Add missing stops
 
 - Using `**kwargs` as a function parameter will allow an arbitrary amount of keyword arguments to be passed.
-- Using `**(dict)` as an argument will unpack a dictonary into keyword arguments.
+- Using `**(dict)` as an argument will unpack a dictionary into keyword arguments.
 - You can put keyword arguments in a `{}` or `dict()`.
 - To get the values out of a dictionary, you can use the `<dict>.values()` method.
 
 ## 4. Extend routing information
 
-- Using `**(dict)` as an argument will unpack a dictonary into keyword arguments.
+- Using `**(dict)` as an argument will unpack a dictionary into keyword arguments.
 - You can put keyword arguments in a `{}` or `dict()`.
 
 ## 5. Fix the wagon depot
 
 - `zip(*iterators)` can use used to transpose a nested list.
-- To extract data from ziped iterators, you can use a for loop.
+- To extract data from zipped iterators, you can use a for loop.
 - you can also unpack zipped iterators using `*`.

@@ -7,7 +7,7 @@ When unpacking a list or tuple, the `*` operator can be used to assign all the r
 When unpacking a dictionary, the `**` operator can be used to assign all the remaining key-value pairs to a variable.
 
 When these operators are used without a collection it will pack the number of variables into a list, tuple, or dictionary.
-It is common to use this kind of behavior when wanting functions that take a aributre number of arguments.
+It is common to use this kind of behavior when wanting functions that take an arbitrary number of arguments.
 
 Multiple assignment is the ability to assign multiple variables in one line.
 This is done by separating the variables with a comma.
@@ -30,7 +30,7 @@ Like following:
 1
 ```
 
-Multiple assignment is not limited to 1 type of data type but can be used with any type of data type.
+Multiple assignment is not limited to one data type but can instead be used with any data type.
 For example:
 
 ```python
@@ -45,7 +45,7 @@ For example:
 True
 ```
 
-Multiple assignment also allows swapping of variables in lists.
+Multiple assignment also allows swapping of variables in `lists`.
 This practice is pretty common in [linear sorting algorithms][sorting algorithms].
 For example:
 
@@ -96,8 +96,8 @@ You can also do [deep unpacking][deep unpacking] of lists, there you can unpack 
 Also known as a nested list.
 
 ```python
->>> fruits_vegatables = [["apple", "banana"], ["carrot", "potato"]]
->>> [[a, b], [c, d]] = fruits_vegatables
+>>> fruits_vegetables = [["apple", "banana"], ["carrot", "potato"]]
+>>> [[a, b], [c, d]] = fruits_vegetables
 >>> a
 "apple"
 
@@ -108,8 +108,8 @@ Also known as a nested list.
 We can also mix using deep unpacking and normal unpacking.
 
 ```python
->>> fruits_vegatables = [["apple", "banana"], ["carrot", "potato"]]
->>> [a, [c, d]] = fruits_vegatables
+>>> fruits_vegetables = [["apple", "banana"], ["carrot", "potato"]]
+>>> [a, [c, d]] = fruits_vegetables
 >>> a
 ["apple", "banana"]
 
@@ -120,8 +120,8 @@ We can also mix using deep unpacking and normal unpacking.
 If the unpacking has variables with incorrect placement and/or incorrect number of values then you will get a `ValueError`.
 
 ```python
->>> fruits_vegatables = [["apple", "banana"], ["carrot", "potato"]]
->>> [[a, b], [d]] = fruits_vegatables
+>>> fruits_vegetables = [["apple", "banana"], ["carrot", "potato"]]
+>>> [[a, b], [d]] = fruits_vegetables
 
 ValueError: too many values to unpack (expected 1)
 ```
@@ -158,8 +158,8 @@ We can also get variables at the end of the array and in the front of a list.
 We can also use `*` for deep unpacking.
 
 ```python
->>> fruits_vegatables = [["apple", "banana", "melon"], ["carrot", "potato", "tomato"]]
->>> [[a, *rest], b] = fruits_vegatables
+>>> fruits_vegetables = [["apple", "banana", "melon"], ["carrot", "potato", "tomato"]]
+>>> [[a, *rest], b] = fruits_vegetables
 >>> a
 "apple"
 
@@ -239,9 +239,9 @@ This will pack all the variables into a dictionary.
 
 ### Packing with a function
 
-When you have a function with an Aributre value of arguments or a large number of arguments then you can use [`*args` or `**kwargs`][args and kwargs] to pack the arguments.
-`*args` is used for packing a non-keyworded aributre length argument list.
-`**kwargs` is used for packing keyworded aributre length of arguments to a function.
+When you have a function with an arbitrary value of arguments or a large number of arguments then you can use [`*args` or `**kwargs`][args and kwargs] to pack the arguments.
+`*args` is used for packing a non-keyworded arbitrary length argument list.
+`**kwargs` is used for packing keyworded arbitrary length of arguments to a function.
 
 Usage of `*args`:
 
@@ -285,7 +285,8 @@ b = 2
 c = 3
 ```
 
-You can also write arguments infront of `*args` and `**kwargs` to allow for possitional arguments.
+You can also write arguments before `*args` to allow for positional arguments.
+For keworded arguments so do you have to write arguments before `**kwargs`.
 
 ```exercism/caution
 [Arguments has to be structured][Positional and keyword arguments] like this:

@@ -8,7 +8,7 @@ When unpacking a dictionary, the `**` operator can be used to assign all the rem
 
 When these operators are used without a collection, they _pack_ a number of values into a `list`, `tuple`, or `dictionary`.
 
-It is common in Pyton to also exploit this unpacking/packing behavior when defining functions that take an arbirary number of positional or keyword arguments.
+It is common in Python to also exploit this unpacking/packing behavior when defining functions that take an arbitrary number of positional or keyword arguments.
 You will often see these "special" parameters defined as `def some_function(*args, **kwargs)`
 
 [Multiple assignment][multiple assignment] is the ability to assign multiple variables in one line.

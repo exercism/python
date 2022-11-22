@@ -1,11 +1,11 @@
 # Instructions
 
 Your friend Linus is a Locomotive Engineer who drives cargo trains between cities.
-Although your friend is great handling the trains, they aren't amazing handling the logistics computers and would like your programming help organizing the train and correcting mistakes in the data.
+Although your friend is great at handling the trains, they aren't amazing at handling the logistics computers and would like your programming help organizing the train and correcting mistakes in the data.
 
 ```exercism/note
 This exercise could easily be solved using `list` slicing, indexing, and `dict` methods.
- However, we'd like you to practice using Unpacking and Multiple Assignment to solve each of the tasks below.
+However, we'd like you to practice using Unpacking and Multiple Assignment to solve each of the tasks below.
 ```
 
 ## 1. Create a list of all wagons
@@ -31,11 +31,11 @@ Now the first two wagons in the `list` have to be moved to the back of the train
 Additionally, your friend just found a second `list` that appears to contain missing wagon IDs, and would like you to merge it together with the main wagon ID `list`.
 All they can remember is that once the new wagons are moved to the end, the values from the second list should be placed directly after the designated locomotive.
 
-Your friend would be really grateful to you for fixings their mistakes and consolidating the data.
+Your friend would be really grateful to you for fixing their mistakes and consolidating the data.
 
 Implement a function `fix_list_of_wagons` that takes two `lists` containing wagon IDs as the arguments.
 It should reposition the first two items of the first list to the end, and then insert the values from the second list behind the locomotive ID (`1`).
-The function should then `return` the `list` with the modfications.
+The function should then `return` the `list` with the modifications.
 
 ```python
 >>> fix_list_of_wagons([2, 5, 1, 7, 4, 12, 6, 3, 13], [3, 17, 6, 15])
@@ -44,9 +44,9 @@ The function should then `return` the `list` with the modfications.
 
 ## 3. Add missing stops
 
-Now that all the wagon data is correct, your friend would like you to update the systems routing information.
+Now that all the wagon data is correct, your friend would like you to update the system's routing information.
 During the journey, the train will stop at a few stations to pick up and/or drop off cargo.
-Each journey will have different amount of stops. To simplyfy setting up the routing program your friend would like you to add in the missing stops to the routing `dict`.
+Each journey will have a different amount of stops. To simplify setting up the routing program your friend would like you to add the missing stops to the routing `dict`.
 
 Implement a function `add_missing_stops` that accepts a routing `dict` followed by an unknown amount of additional keyword arguments. These arguments could be in the form of a `dict` which holds one or more stops in order, or a number of `stop_number=city` pairs.
 The function should then return the routing `dict`, updated with a key that holds a list of all the stops in order.
@@ -55,14 +55,14 @@ The function should then return the routing `dict`, updated with a key that hold
 >>> add_missing_stops({"from": "Berlin", "to": "Hamburg"}, {"stop_1": "Hamburg", "stop_2": "Hannover", "stop_3": "Frankfurt"})
 {"from": "Berlin", "to": "Hamburg", "stops": ["Hamburg", "Hannover", "Frankfurt"]}
 
->>> add_missing_stops({"from": "New York", "to": "Miami"}, stop_1="Washington, DC", stop_2="Charlott", stop_3="Atlanta", stop_4="Jacksonville", stop_5="Orlando")
-{"from": "New York", "to": "Miami", "stops": ["Washington, DC", "Charlott", "Atlanta", "Jacksonville", "Orlando"]}
+>>> add_missing_stops({"from": "New York", "to": "Miami"}, stop_1="Washington, DC", stop_2="Charlotte", stop_3="Atlanta", stop_4="Jacksonville", stop_5="Orlando")
+{"from": "New York", "to": "Miami", "stops": ["Washington, DC", "Charlotte", "Atlanta", "Jacksonville", "Orlando"]}
 ```
 
 ## 4. Extend routing information
 
 Your friend has been working on the routing program and has noticed that the routing information is missing some important details.
-Initial routing information has been constructed as a `dict` , and you friend would like you to update it with the additions provided.
+Initial routing information has been constructed as a `dict`, and your friend would like you to update it with the additions provided.
 Every route requires slightly different information, so your friend would really prefer a generic solution.
 
 Implement a function `extend_route_information` that accepts two `dicts`.
@@ -86,19 +86,19 @@ When your friend was surveying the wagon depot they noticed that the wagons were
 In addition to an ID, each wagon has a color that corresponds to the type of cargo it carries.
 Wagons are stored in the depot in grids, with each column in the grid grouped by wagon color.
 
-In the control system, it appears that the lists of wagons to be stored in the depo have their _rows_ grouped by color. But for the the storage grid to work correctly, each row has to have three different colors, so that the columns align properly.
+In the control system, it appears that the lists of wagons to be stored in the depot have their _rows_ grouped by color. But for the storage grid to work correctly, each row has to have three different colors, so that the columns align properly.
 Your friend would like you to help them sort out the wagon depot lists, so that the wagons get stored correctly.
 
 Implement a function `fix_wagon_depot` that accepts a nested `list`.
 The first `list` contains the first row of wagons, the second `list` contains the second row of wagons and the third `list` contains the third row of wagons. All rows are of equal length.
 Every wagon within a row is represented by a `tuple` with (`<wagon ID>`, `<wagon color>`).
 
-Your function should return a `list` with the 3 row `lists` reordered with the wagons swapped into their correct positions.
+Your function should return a `list` with the three row `lists` reordered with the wagons swapped into their correct positions.
 
 ```python
 >>> fix_wagon_depot([
                     [(2, "red"), (4, "red"),(8, "red")],
-                    [(5, "blue"),(9, "blue"),(13,"blue")], 
+                    [(5, "blue"),(9, "blue"),(13,"blue")],
                     [(3, "orange"),(7, "orange"), (11, "orange")],
                     ])
 
