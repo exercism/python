@@ -77,7 +77,7 @@ The second dict can contain different properties.
 {"from": "Berlin", "to": "Hamburg", "length": "100", "speed": "50"}
 ```
 
-## 5. Fix the the wagon depot
+## 5. Fix the wagon depot
 
 When your friend was storing the wagons at the wagon depot they noticed that the wagons were not stored in the correct order.
 The wagons are storred in 3 rows and in every row there are an atribute of wagons.
