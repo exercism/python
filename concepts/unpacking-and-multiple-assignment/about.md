@@ -7,7 +7,7 @@ When unpacking a list or tuple, the `*` operator can be used to assign all the r
 When unpacking a dictionary, the `**` operator can be used to assign all the remaining key-value pairs to a variable.
 
 When these operators are used without a collection it will pack the number of variables into a list, tuple, or dictionary.
-It is common to use this kind of behavior when wanting functions that take an arbitrary number of arguments.
+It is common to use this kind of behavior when creating functions that take an arbitrary number of arguments.
 
 Multiple assignment is the ability to assign multiple variables in one line.
 This is done by separating the variables with a comma.
