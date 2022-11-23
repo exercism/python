@@ -97,7 +97,7 @@ We can for example get the first element and then get the rest into a new list w
 ["banana", "cherry", "orange", "kiwi", "melon", "mango"]
 ```
 
-We can also get variables at the end of the array and in the front of a list.
+We can also get variables at the end of the list and in the beginning of a list.
 
 ```python
 >>> fruits = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
