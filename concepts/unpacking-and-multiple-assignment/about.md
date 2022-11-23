@@ -239,9 +239,9 @@ This will pack all the variables into a dictionary.
 
 ### Packing with function parameters
 
-When you have a function that accepts an arbitrary or large number of arguments, you can use [`*args` or `**kwargs`][args and kwargs] to pack or group those arguments together.
-`*args` is used for packing an arbitrary number of positional (non-keyworded) arguments.
-`**kwargs` is used for packing an arbitrary number of keyword arguments to a function.
+When you have a function that accepts an arbitrary or large number of arguments, you can use [`*args` or `**kwargs`][args and kwargs] to pack or group those parameters together.
+`*args` is used for packing/signifying an arbitrary number of positional (non-keyworded) arguments.
+`**kwargs` is used for packing/signifying an arbitrary number of keyword arguments to a function.
 
 Usage of `*args`:
 
