@@ -1,7 +1,7 @@
 # Instructions
 
 Your friend Linus is a Locomotive Engineer who drives cargo trains between cities.
-Although your friend is great at handling the trains, they aren't amazing at handling the logistics computers and would like your programming help organizing the train and correcting mistakes in the data.
+Your friend is great at handling the trains, although they aren't amazing at handling the logistics computers and would like your programming help organizing the train and correcting mistakes in the data.
 
 ```exercism/note
 This exercise could easily be solved using `list` slicing, indexing, and `dict` methods.
