@@ -10,9 +10,9 @@ However, we'd like you to practice using Unpacking and Multiple Assignment to so
 
 ## 1. Create a list of all wagons
 
-Your friend has been keeping track of each wagon identifier, but they're never sure how many wagons they are going to have to process at any given time. It would be much easier for the rest of the logistics program to have the data to be returned as a list.
+Your friend has been keeping track of each wagon identifier, but they're never sure how many wagons they are going to have to process at any given time. It would be much easier for the rest of the logistics program to have the data to be returned as a `list`.
 
-Implement a function `get_list_of_wagons` that accepts an unknown amount of positive integers which are the IDs of each wagon.
+Implement a function `get_list_of_wagons` that accepts an arbitrary amount of positive integers which are the IDs of each wagon.
 It should then return the given IDs as a `list`.
 
 ```python
@@ -48,7 +48,7 @@ Now that all the wagon data is correct, your friend would like you to update the
 During the journey, the train will stop at a few stations to pick up and/or drop off cargo.
 Each journey will have a different amount of stops. To simplify setting up the routing program your friend would like you to add the missing stops to the routing `dict`.
 
-Implement a function `add_missing_stops` that accepts a routing `dict` followed by an unknown amount of additional keyword arguments. These arguments could be in the form of a `dict` which holds one or more stops in order, or a number of `stop_number=city` pairs.
+Implement a function `add_missing_stops` that accepts a routing `dict` followed by an arbitrary amount of additional keyword arguments. These arguments could be in the form of a `dict` which holds one or more stops in order, or a number of `stop_number=city` pairs.
 The function should then return the routing `dict`, updated with a key that holds a list of all the stops in order.
 
 ```python
