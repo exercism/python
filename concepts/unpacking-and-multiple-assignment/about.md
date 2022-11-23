@@ -125,7 +125,6 @@ If the unpacking has variables with incorrect placement and/or an incorrect numb
 ValueError: too many values to unpack (expected 1)
 ```
 
-
 ### Unpacking a list/tuple with `*`
 
 When [unpacking a `list`/`tuple`][packing and unpacking] you can use the `*` operator to capture the remainder values.
@@ -199,7 +198,6 @@ This is because [`dict.items()` generates a `tuple`][items] and within it there 
 ("apple", 6)
 ```
 
-
 ## Packing
 
 As with unpacking, _packing_ uses the same `*` and `**` operators.
@@ -240,8 +238,8 @@ This will pack all the variables into a dictionary.
 ### Packing with function parameters
 
 When you have a function that accepts an arbitrary or large number of arguments, you can use [`*args` or `**kwargs`][args and kwargs] to pack or group those parameters together.
-`*args` is used for packing/signifying an arbitrary number of positional (non-keyworded) arguments.
-`**kwargs` is used for packing/signifying an arbitrary number of keyword arguments to a function.
+`*args` is used for packing/signaling an arbitrary number of positional (non-keyworded) arguments.
+`**kwargs` is used for packing/signaling an arbitrary number of keyword arguments to a function.
 
 Usage of `*args`:
 
