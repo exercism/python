@@ -142,7 +142,7 @@ For example, we can extract the first element below and then pack the remaining 
 ["banana", "cherry", "orange", "kiwi", "melon", "mango"]
 ```
 
-We can also extract the values at the beginning and end of the `list`, while grouping all the values in the middle:
+We can also extract the values at the beginning and end of the `list` while grouping all the values in the middle:
 
 ```python
 >>> fruits = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
@@ -269,8 +269,7 @@ Usage of `**kwargs`:
 {"a": 1, "b": 2, "c": 3}
 ```
 
-`*args` and `**kwargs` can also be used in combination with one another.
-This allows splitting the key-worded and positional arguments apart:
+`*args` and `**kwargs` can also be used in combination with one another:
 
 ```python
 >>> def my_function(*args, **kwargs):
