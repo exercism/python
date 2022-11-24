@@ -30,4 +30,6 @@
 
 - `zip(*iterators)` can use used to transpose a nested list.
 - To extract data from zipped iterators, you can use a for loop.
-- you can also unpack zipped iterators using `*`.
+- you can also unpack zipped iterators using `*`.  
+  `[*content] = zip(iterator_1, iterator_2)` will unzip the `tuple` produced by `zip()` into a `list`.
+

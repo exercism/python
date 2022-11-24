@@ -1,12 +1,12 @@
 # Unpacking and Multiple Assignment
 
-Unpacking refers to the act of extracting the elements of a collection, such as a `list`, `tuple`, or `dictionary`, using iteration.
+Unpacking refers to the act of extracting the elements of a collection, such as a `list`, `tuple`, or `dict`, using iteration.
 Unpacked values can be assigned to variables within the same step.
 With unpacking, there are some special operators used: `*` and `**`.
 When unpacking a list or tuple, the `*` operator can be used to assign all the remaining elements to a variable.
 When unpacking a dictionary, the `**` operator can be used to assign all the remaining key-value pairs to a variable.
 
-When these operators are used without a collection it will pack the number of variables into a list, tuple, or dictionary.
+When these operators are used without a collection they will _pack_ a number of values into a `list`, `tuple`, or dictionary.
 It is common to use this kind of behavior when creating functions that take an arbitrary number of arguments.
 
 Multiple assignment is the ability to assign multiple variables in one line.
@@ -21,8 +21,7 @@ This is done by separating the variables with a comma.
 [Multiple assignment][multiple assignment] is the ability to assign multiple variables in one line.
 This allows for code to be more concise and readable.
 There has to be x number of variables on the left side of the `=` sign and x number of values on the right side of the `=` sign.
-To separate the values, use a comma `,`.
-Like following:
+To separate the values, use a comma `,`:
 
 ```python
 >>> a, b = 1, 2
@@ -48,11 +47,12 @@ True
 ## Unpacking
 
 ```exercism/note
-For the examples below so will we be using lists but the same concepts apply to tuples.
+The examples below use lists but the same concepts apply to tuples.
 ```
 
-In Python, it is possible to [unpack a list/tuple/dictionary][unpacking] into distinct variables.
-Since variables are mapped in lists with a specific order, it is therefore possible to unpack a list into variables in the same order.
+In Python, it is possible to [unpack a `list`/`tuple`/`dictionary`][unpacking] into distinct variables.
+Since values appear within lists in a specific order, it is therefore possible to _unpack_ a `list` into variables in the same order.
+
 Unpacking a list into variables:
 
 ```python
@@ -62,7 +62,7 @@ Unpacking a list into variables:
 "apple"
 ```
 
-If there are values that are not needed then you can use `_` to ignore those values.
+If there are values that are not needed then you can use `_` to ignore those values:
 
 ```python
 >>> fruits = ["apple", "banana", "cherry"]
@@ -71,7 +71,31 @@ If there are values that are not needed then you can use `_` to ignore those val
 "cherry"
 ```
 
-If the unpacking has variables with incorrect placement and/or incorrect number of values then you will get a `ValueError`.
+You can also do [deep unpacking][deep unpacking] on a `list`, which assigns values from a `list` within a `list` (_this is also known as nested list unpacking_):
+
+```python
+>>> fruits_vegetables = [["apple", "banana"], ["carrot", "potato"]]
+>>> [[a, b], [c, d]] = fruits_vegetables
+>>> a
+"apple"
+
+>>> d
+"potato"
+```
+
+Deep unpacking and normal unpacking can be mixed together:
+
+```python
+>>> fruits_vegetables = [["apple", "banana"], ["carrot", "potato"]]
+>>> [a, [c, d]] = fruits_vegetables
+>>> a
+["apple", "banana"]
+
+>>> c
+"carrot"
+```
+
+If the unpacking has variables with incorrect placement and/or an incorrect number of values, you will get a `ValueError`:
 
 ```python
 >>> fruits_vegetables = [["apple", "banana"], ["carrot", "potato"]]
@@ -82,10 +106,9 @@ ValueError: too many values to unpack (expected 1)
 
 ### Unpacking a list/tuple with `*`
 
-When [unpacking a list/tuple][packing and unpacking] you can use the `*` operator to get the rest of a list/tuple.
-This can be used instead of slicing the list/tuple.
-Which in some situations could be more readable.
-We can for example get the first element and then get the rest into a new list without the first element.
+When [unpacking a `list`/`tuple`][packing and unpacking] you can use the `*` operator to capture the remainder values.
+This can be used instead of slicing the `list`/`tuple`, which in some situations could be more readable.
+For example, we can extract the first element below and then pack the remaining values into a new `list` without the first element:
 
 ```python
 >>> fruits = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
@@ -97,7 +120,7 @@ We can for example get the first element and then get the rest into a new list w
 ["banana", "cherry", "orange", "kiwi", "melon", "mango"]
 ```
 
-We can also get variables at the end of the list and in the beginning of a list.
+We can also extract the values at the beginning and end of the `list` while grouping all the values in the middle:
 
 ```python
 >>> fruits = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
@@ -111,9 +134,9 @@ We can also get variables at the end of the list and in the beginning of a list.
 
 ### Unpacking a dictionary
 
-[Unpacking a dictionary][packing and unpacking] is a bit different than unpacking a list/tuple.
-When unpacking a dictionary you can only unpack the keys and not the values.
-
+[Unpacking a dictionary][packing and unpacking] is a bit different than unpacking a `list`/`tuple`.
+Iteration over dictionaries defaults to the `keys`.
+So when unpacking a `dict`, you can only unpack the `keys` and not the `values`:
 ```python
 >>> fruits_inventory = {"apple": 6, "banana": 2, "cherry": 3}
 >>> x, y, z = fruits_inventory
@@ -121,7 +144,7 @@ When unpacking a dictionary you can only unpack the keys and not the values.
 "apple"
 ```
 
-If you want to unpack the values then you can use the `values()` method.
+If you want to unpack the values then you can use the `values()` method:
 
 ```python
 >>> fruits_inventory = {"apple": 6, "banana": 2, "cherry": 3}
@@ -132,15 +155,14 @@ If you want to unpack the values then you can use the `values()` method.
 
 ## Packing
 
-As with unpacking, packing uses the same `*` and `**` operators.
-[Packing][packing and unpacking]] is the ability to pack multiple variables into one variable.
-This is done by using the `*` or `**` operator.
-This is useful when you want to unpack and do changes and then pack it back into a variable.
-It also makes it possible to merge 2 or more lists/tuples/dictionaries.
+As with unpacking, _packing_ uses the same `*` and `**` operators.
+[Packing][packing and unpacking]] is the ability to group multiple values into one variable.
+This is useful for when you want to _unpack_ values, make changes, and then _pack_ the results back into a variable.
+It also makes it possible to perform merges on 2 or more `lists`/`tuples`/`dicts`.
 
 ### Packing a list/tuple with `*`
 
-Packing a list/tuple is done by using the `*` operator.
+Packing a `list`/`tuple` is done by using the `*` operator
 This will pack all the variables into a list/tuple.
 
 ```python
@@ -168,11 +190,11 @@ This will pack all the variables into a dictionary.
 
 ## Usage of `*` and `**` with a function
 
-### Packing with a function
+### Packing with function parameters
 
-When you have a function with an arbitrary value of arguments or a large number of arguments then you can use [`*args` or `**kwargs`][args and kwargs] to pack the arguments.
-`*args` is used for packing a non-keyworded arbitrary length argument list.
-`**kwargs` is used for packing keyworded arbitrary length of arguments to a function.
+When you have a function that accepts an arbitrary or large number of arguments, you can use [`*args` or `**kwargs`][args and kwargs] to pack or group those parameters together.
+`*args` is used for packing/signaling an arbitrary number of positional (non-keyworded) arguments.
+`**kwargs` is used for packing/signaling an arbitrary number of keyword arguments to a function.
 
 Usage of `*args`:
 
@@ -201,8 +223,10 @@ Usage of `**kwargs`:
 ```
 
 ```exercism/caution
-[Arguments has to be structured][Positional and keyword arguments] like this:
-`def my_function(positional_arg, *args, keyworded_arg, **kwargs)`
+[Arguments have to be structured][Positional and keyword arguments] like this:
+
+`def my_function(<positional_args>, *args, <key-word_args>, **kwargs)`
+
 If you don't follow this order then you will get an error.
 ```
 
@@ -218,7 +242,7 @@ If you don't follow this order then you will get an error.
 (3, 4, 5)
 ```
 
-Writing arguments in an incorrect order will result in an error.
+Writing arguments in an incorrect order will result in an error:
 
 ```python
 >>>def my_function(*args, a, b):
@@ -231,23 +255,25 @@ Traceback (most recent call last):
 TypeError: my_function() missing 2 required keyword-only arguments: 'a' and 'b'
 ```
 
-### Unpacking with functions
+### Unpacking into function calls
 
-When having a list or a tuple of arguments you can use `*` to unpack the list/tuple into arguments for a function.
-
+You can use `*` to unpack a `list`/`tuple` of arguments into a function call.
+This is very useful for functions that don't accept an `iterable` or `iterator`:
 ```python
 >>> def my_function(a, b, c):
-...   print(a)
+...   print(c)
 ...   print(b)
+...   print(a)
 
 numbers = [1, 2, 3]
 >>> my_function(*numbers)
-1
+3
 2
+1
 ```
 
-Using unpacking with `zip()` is a common use case.
-Since `zip()` takes multiple iterables and returns a list of tuples with the values from each iterable.
+Using `*` unpacking with the `zip()` function is another common use case.
+Since `zip()` takes multiple iterables and returns a list of tuples with the values from each iterable grouped:
 
 ```python
 >>> values = (['x', 'y', 'z'], [1, 2, 3], [True, False, True])
@@ -258,5 +284,6 @@ Since `zip()` takes multiple iterables and returns a list of tuples with the val
 
 [multiple assignment]: https://www.geeksforgeeks.org/assigning-multiple-variables-in-one-line-in-python/
 [unpacking]: https://www.geeksforgeeks.org/unpacking-arguments-in-python/?ref=rp
+[deep unpacking]: https://mathspp.com/blog/pydonts/deep-unpacking#deep-unpacking
 [packing and unpacking]: https://www.geeksforgeeks.org/packing-and-unpacking-arguments-in-python/
 [args and kwargs]: https://www.geeksforgeeks.org/args-kwargs-python/

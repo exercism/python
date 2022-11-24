@@ -1,12 +1,12 @@
 # Unpacking and Multiple Assignment
 
-Unpacking refers to the act of extracting the elements of a collection, such as a `list`, `tuple`, or `dictionary`, using iteration.
+Unpacking refers to the act of extracting the elements of a collection, such as a `list`, `tuple`, or `dict`, using iteration.
 Unpacked values can be assigned to variables within the same step.
 With unpacking, there are some special operators used: `*` and `**`.
 When unpacking a list or tuple, the `*` operator can be used to assign all the remaining elements to a variable.
 When unpacking a dictionary, the `**` operator can be used to assign all the remaining key-value pairs to a variable.
 
-When these operators are used without a collection it will pack the number of variables into a list, tuple, or dictionary.
+When these operators are used without a collection they will _pack_ a number of values into a `list`, `tuple`, or dictionary.
 It is common to use this kind of behavior when creating functions that take an arbitrary number of arguments.
 
 Multiple assignment is the ability to assign multiple variables in one line.
@@ -33,14 +33,14 @@ Multiple assignment is not limited to one data type but can instead be used with
 For example:
 
 ```python
->>> a, b, c = 1, "Hello", True
->>> a
+>>> x, y, z = 1, "Hello", True
+>>> x
 1
 
->>> b
+>>> y
 'Hello'
 
->>> c
+>>> z
 True
 ```
 
@@ -283,7 +283,7 @@ c = 3
 ```
 
 You can also write parameters before `*args` to allow for specific positional arguments.
-Individual keyword arguments then have to be before `**kwargs`.
+Individual keyword arguments then have to appear before `**kwargs`.
 
 ```exercism/caution
 [Arguments have to be structured][Positional and keyword arguments] like this:
