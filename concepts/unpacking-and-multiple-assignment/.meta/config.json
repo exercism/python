@@ -1,5 +1,5 @@
 {
-  "blurb": "Unpacking is the process of extracting individual elements of a collection, such as a `list`, `tuple`, or `dict` by iterating over them. Unpacked values can be assigned to variables within the same step. Multiple assignment is the ability to assign values to multiple variables in one line.",
+  "blurb": "Unpacking is the process of extracting individual elements of a collection, such as a list, tuple, or dictionary by iterating over them. Unpacked values can be assigned to variables within the same step. Multiple assignment is the ability to assign values to multiple variables in one line.",
   "authors": ["meatball","bethanyg"],
   "contributors": []
 }
