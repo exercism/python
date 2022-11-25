@@ -1,7 +1,6 @@
 # Instructions
 
-Given a string representing a matrix of numbers, return the rows and columns of
-that matrix.
+Given a string representing a matrix of numbers, return the rows and columns of that matrix.
 
 So given a string with embedded newlines like:
 
@@ -23,10 +22,8 @@ representing this matrix:
 
 your code should be able to spit out:
 
-- A list of the rows, reading each row left-to-right while moving
-  top-to-bottom across the rows,
-- A list of the columns, reading each column top-to-bottom while moving
-  from left-to-right.
+- A list of the rows, reading each row left-to-right while moving top-to-bottom across the rows,
+- A list of the columns, reading each column top-to-bottom while moving from left-to-right.
 
 The rows for our example matrix:
 
