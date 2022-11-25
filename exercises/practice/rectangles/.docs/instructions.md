@@ -60,5 +60,4 @@ The above diagram contains these 6 rectangles:
 
 ```
 
-You may assume that the input is always a proper rectangle (i.e. the length of
-every line equals the length of the first line).
+You may assume that the input is always a proper rectangle (i.e. the length of every line equals the length of the first line).
