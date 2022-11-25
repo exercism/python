@@ -1,0 +1,11 @@
+# Filter with `re.findall()`
+
+```python
+import re
+
+
+def is_isogram(phrase):
+    scrubbed = "".join(re.findall("[a-zA-Z]", phrase)).lower()
+    return len(set(scrubbed)) == len(scrubbed)
+
+```
