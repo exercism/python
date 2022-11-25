@@ -1,0 +1,11 @@
+# Scrub with `re.sub()`
+
+```python
+import re
+
+
+def is_isogram(phrase):
+    scrubbed = re.compile('[^a-zA-Z]').sub('', phrase).lower()
+    return len(set(scrubbed)) == len(scrubbed)
+
+```
