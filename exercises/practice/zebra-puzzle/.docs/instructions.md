@@ -18,9 +18,7 @@ Solve the zebra puzzle.
 14. The Japanese smokes Parliaments.
 15. The Norwegian lives next to the blue house.
 
-Each of the five houses is painted a different color, and their
-inhabitants are of different national extractions, own different pets,
-drink different beverages and smoke different brands of cigarettes.
+Each of the five houses is painted a different color, and their inhabitants are of different national extractions, own different pets, drink different beverages and smoke different brands of cigarettes.
 
 Which of the residents drinks water?
 Who owns the zebra?

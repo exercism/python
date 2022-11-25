@@ -2,15 +2,13 @@
 
 Implement encoding and decoding for the rail fence cipher.
 
-The Rail Fence cipher is a form of transposition cipher that gets its name from
-the way in which it's encoded. It was already used by the ancient Greeks.
+The Rail Fence cipher is a form of transposition cipher that gets its name from the way in which it's encoded.
+It was already used by the ancient Greeks.
 
-In the Rail Fence cipher, the message is written downwards on successive "rails"
-of an imaginary fence, then moving up when we get to the bottom (like a zig-zag).
+In the Rail Fence cipher, the message is written downwards on successive "rails" of an imaginary fence, then moving up when we get to the bottom (like a zig-zag).
 Finally the message is then read off in rows.
 
-For example, using three "rails" and the message "WE ARE DISCOVERED FLEE AT ONCE",
-the cipherer writes out:
+For example, using three "rails" and the message "WE ARE DISCOVERED FLEE AT ONCE", the cipherer writes out:
 
 ```text
 W . . . E . . . C . . . R . . . L . . . T . . . E
