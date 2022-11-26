@@ -346,10 +346,11 @@ Since `zip()` takes multiple iterables and returns a list of tuples with the val
 [('y', 2, False), ('z', 3, True)]
 ```
 
+[args and kwargs]: https://www.geeksforgeeks.org/args-kwargs-python/
+[deep unpacking]: https://mathspp.com/blog/pydonts/deep-unpacking#deep-unpacking
+[items]: https://www.geeksforgeeks.org/python-dictionary-items-method/
 [multiple assignment]: https://www.geeksforgeeks.org/assigning-multiple-variables-in-one-line-in-python/
+[packing and unpacking]: https://www.geeksforgeeks.org/packing-and-unpacking-arguments-in-python/
+[positional and keyword arguments]: https://www.python-engineer.com/courses/advancedpython/18-function-arguments/
 [sorting algorithms]: https://realpython.com/sorting-algorithms-python/
 [unpacking]: https://www.geeksforgeeks.org/unpacking-arguments-in-python/?ref=rp
-[deep unpacking]: https://mathspp.com/blog/pydonts/deep-unpacking#deep-unpacking
-[packing and unpacking]: https://www.geeksforgeeks.org/packing-and-unpacking-arguments-in-python/
-[items]: https://www.geeksforgeeks.org/python-dictionary-items-method/
-[args and kwargs]: https://www.geeksforgeeks.org/args-kwargs-python/
