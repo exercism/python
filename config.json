@@ -145,6 +145,14 @@
         "status": "wip"
       },
       {
+        "slug": "thallias-tram-troubles",
+        "name": "Thallias Tram Troubles",
+        "uuid": "d1cf6301-d8fe-47a8-95a8-5ec0765aef7b",
+        "concepts": ["sequence"],
+        "prerequisites": ["loops", "lists", "tuples", "dicts", "unpacking-and-multiple-assignment"],
+        "status": "wip"
+      },
+      {
         "slug": "cater-waiter",
         "name": "Cater Waiter",
         "uuid": "922f8d2d-87ec-4681-9654-4e0a36a558d4",
