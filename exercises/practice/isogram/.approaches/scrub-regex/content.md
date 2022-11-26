@@ -19,7 +19,7 @@ This essentially matches any characters which are not in the English alphabet.
  The pattern is passed to the [`compile()`][compile] method to construct a [regular expression object][regex-object].
 - The [`sub()`][sub] method is then called on the regex object.
 The `sub()` method replaces all non-alphabetic characters in the input phrase with an empty string.
-- The result of `sub()` is then [chained][method-chaining] as the input for [`lower()`][lower].
+- The output of `sub()` is then [chained][method-chaining] as the input for [`lower()`][lower].
 All of the letters are lowercased so that letters of different cases will become the same letter for comparison purposes,
 since `A` and `a` are considered to be the same letter.
 When the replacing and lowercasing is done, the `scrubbed` variable will be a string having all alphabetic letters lowercased.
