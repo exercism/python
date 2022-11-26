@@ -9,7 +9,7 @@ def is_isogram(phrase):
 
 For this approach, [`replace()`][replace] is called a couple times to scrub the input phrase [str][str]ing.
 Thw two `replace()` calls are [chained][method-chaining], so the result of the first `replace()` is the input for the next `replace()`.
-The result of the last `replace()` is the input for `lower()`.
+The result of the last `replace()` is the input for [`lower()`][lower].
 All of the letters are lowercased so that letters of different cases will become the same letter for comparison purposes,
 since `A` and `a` are considered to be the same letter.
 When the replacing and lowercasing is done, the `scrubbed` variable will be a string having no hyphens or spaces,
