@@ -11,7 +11,7 @@ However, we would like you to practice packing, unpacking, and multiple assignme
 
 ## 1. Create a list of all wagons
 
-Your friend has been keeping track of each wagon identifier (ID), but they are never sure how many wagons the system is going to have to process at any given time. It would be much easier for the rest of the logistics program to have this  data be packaged into a unified `list`.
+Your friend has been keeping track of each wagon identifier (ID), but they are never sure how many wagons the system is going to have to process at any given time. It would be much easier for the rest of the logistics program to have this data be packaged into a unified `list`.
 
 Implement a function `get_list_of_wagons` that accepts an arbitrary number of wagon IDs.
 Each ID will be a positive integer.
@@ -86,7 +86,7 @@ The second dict can contain different/more properties than the ones shown in the
 
 ## 5. Fix the wagon depot
 
-When your Linus was surveying the wagon depot they noticed that the wagons were not getting stored in the correct order.
+When Linus was surveying the wagon depot they noticed that the wagons were not getting stored in the correct order.
 In addition to an ID, each wagon has a color that corresponds to the type of cargo it carries.
 Wagons are stored in the depot in grids, where each column in the grid has wagons of the same color.
 
@@ -95,7 +95,7 @@ But for the storage grid to work correctly, each _row_ should have three differe
 Your friend would like you to sort out the wagon depot `lists`, so that the wagons get stored correctly.
 
 Implement a function called `fix_wagon_depot` that accepts a nested `list`.
-The first `list`  contains the first row of wagons, the second `list` contains the second row of wagons and the third `list` contains the third row of wagons.
+The first `list` contains the first row of wagons, the second `list` contains the second row of wagons and the third `list` contains the third row of wagons.
 All rows are of equal length.
 Every wagon within a row is represented by a `tuple` with `(<wagon ID>, <wagon color>)`.
 
