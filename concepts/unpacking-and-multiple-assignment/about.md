@@ -189,7 +189,7 @@ If you want to unpack the values then you can use the `values()` method:
 
 If both `keys` and `values` are needed, use the `items()` method.
 Using `items()` will generate tuples with `key-value` pairs.
-This is because [`dict.items()` generates an iterable with key-value `tuples`][items] and within it there is a `tuple` for each `key-value` pair:.
+This is because [`dict.items()` generates an iterable with key-value `tuples`][items].
 
 ```python
 >>> fruits_inventory = {"apple": 6, "banana": 2, "cherry": 3}
