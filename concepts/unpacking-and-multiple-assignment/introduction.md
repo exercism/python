@@ -4,7 +4,6 @@ Unpacking refers to the act of extracting the elements of a collection, such as 
 Unpacked values can be assigned to variables within the same step.
 With unpacking, there are some special operators used: `*` and `**`.
 
-
 When unpacking a list or tuple, the `*` operator can be used to assign all the remaining elements to a variable.
 When unpacking a dictionary, the `**` operator can be used to assign all the remaining key-value pairs to a variable.
 When these operators are used without a collection, they _pack_ a number of values into a `list`, `tuple`, or `dict`.
