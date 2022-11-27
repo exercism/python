@@ -44,8 +44,8 @@ For example:
 True
 ```
 
-Multiple assignment also allows for the swapping of variables in `lists`.
-This practice is pretty common in [linear sorting algorithms][sorting algorithms].
+Multiple assignment also allows for the swapping of elements in `lists`.
+This practice is pretty common in [sorting algorithms][sorting algorithms].
 For example:
 
 ```python
