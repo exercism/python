@@ -31,7 +31,7 @@ class MeltdownMitigationTest(unittest.TestCase):
                 # pylint: disable=assignment-from-no-return
                 actual_result = is_criticality_balanced(temp, neutrons_emitted)
                 failure_message = (f'Expected {expected} but returned {actual_result} '
-                                   f'with T={temp} and neutrinos={neutrons_emitted}')
+                                   f'with T={temp} and neutrons={neutrons_emitted}')
                 self.assertEqual(actual_result, expected, failure_message)
 
     @pytest.mark.task(taskno=2)

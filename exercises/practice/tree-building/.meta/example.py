@@ -18,7 +18,7 @@ def validate_record(record):
         raise ValueError('Only root should have equal record and parent id.')
 
     if not record.equal_id() and record.parent_id >= record.record_id:
-        raise ValueError("Node record_id should be smaller than it's parent_id.")
+        raise ValueError("Node parent_id should be smaller than it's record_id.")
 
 
 def BuildTree(records):
