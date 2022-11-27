@@ -7,20 +7,23 @@ class ClassA:
         self.name = 'A'
         self.sequence += self.name
 
-class ClassB(ClassA):
+class ClassMixin:
+    def sequence_as_tuple(self):
+        return tuple(self.sequence)
+
+class ClassB(ClassA, ClassMixin):
     def __init__(self):
         super().__init__()
         self.name = 'B'
         self.sequence += self.name
 
-class ClassC(ClassA):
+class ClassC(ClassA, ClassMixin):
     def __init__(self):
         super().__init__()
-        print('Init C')
         self.name = 'C'
         self.sequence += self.name
 
-class ClassD(ClassA):
+class ClassD(ClassA, ClassMixin):
     def __init__(self):
         super().__init__()
         self.name = 'D'
@@ -28,17 +31,7 @@ class ClassD(ClassA):
 
 class ClassE(ClassC, ClassB, ClassD):
     def __init__(self):
-        #ClassC.__init__(self)
-        ClassB.__init__(self)
-        #ClassC.__init__(self)
-        #ClassD.__init__(self)
+        super().__init__()
         self.name = 'E'
         self.sequence += self.name
 
-
-
-e = ClassE()
-
-
-
-print(e.sequence)

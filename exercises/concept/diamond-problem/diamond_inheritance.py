@@ -1,3 +1,5 @@
+"""Diamond inheritance problem."""
+
 class ClassA:
     pass
 
