@@ -47,7 +47,7 @@ True
 ## Reverse a sequence
 
 Using slicing with steps allows reversing a sequence.
-That is because we can use a negative step to start at the end of the sequence and move backwards.
+That is because we can use a negative step to start at the end of the sequence and walk backwards.
 This is a very common operation.
 
 ```python
