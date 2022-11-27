@@ -6,7 +6,7 @@ from locomotive_engineer import (get_list_of_wagons,
                                  extend_route_information,
                                  fix_wagon_depot)
 
-class InventoryTest(unittest.TestCase):
+class LocomotiveEngineerTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
     def test_get_list_of_wagons(self):
@@ -19,12 +19,14 @@ class InventoryTest(unittest.TestCase):
                 self.assertEqual(get_list_of_wagons(*input_data), output_data, msg=error_msg)
 
     @pytest.mark.task(taskno=2)
-    def test_fix_list_of_wagons(self): # One extra case needed at first
-        input_data = [([3, 27, 1, 14, 10, 4, 12, 6, 23, 17, 13, 22, 28, 19], [8, 10, 5, 9, 36, 7, 20]),
+    def test_fix_list_of_wagons(self):
+        input_data = [([2, 5, 1, 7, 4, 12, 6, 3, 13], [3, 17, 6, 15]),
+                     ([3, 27, 1, 14, 10, 4, 12, 6, 23, 17, 13, 22, 28, 19], [8, 10, 5, 9, 36, 7, 20]),
                      ([4, 2, 1], [8, 6, 15]), 
                      ([3, 14, 1, 25, 7, 19, 10], [8, 6, 4, 5, 9, 21, 2, 13])
                      ]
-        output_data = [[1, 8, 10, 5, 9, 36, 7, 20, 14, 10, 4, 12, 6, 23, 17, 13, 22, 28, 19, 3, 27], 
+        output_data = [[1, 3, 17, 6, 15, 7, 4,  12, 6, 3, 13, 2, 5],
+                        [1, 8, 10, 5, 9, 36, 7, 20, 14, 10, 4, 12, 6, 23, 17, 13, 22, 28, 19, 3, 27], 
                         [1, 8, 6, 15, 4, 2], 
                         [1, 8, 6, 4, 5, 9, 21, 2, 13, 25, 7, 19, 10, 3, 14]
                     ]
