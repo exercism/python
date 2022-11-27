@@ -148,7 +148,7 @@
         "slug": "thallias-tram-troubles",
         "name": "Thallias Tram Troubles",
         "uuid": "d1cf6301-d8fe-47a8-95a8-5ec0765aef7b",
-        "concepts": ["sequence"],
+        "concepts": ["sequences"],
         "prerequisites": ["loops", "lists", "tuples", "dicts"],
         "status": "wip"
       },

@@ -1,8 +1,26 @@
+# Sequences
+
+A sequence is an ordered, indexable collection of items.
+All sequence types support a common set of operations that include `in`/`not in`, `min`/`max`, `.index`, `.count` and `.len`. `lists` support additional mutable operations such as [slice assignment][<url ref here>], .append, `.extend`, `.reverse`, and `.copy`.  
+All sequences can be iterated over using the `for item in <sequence>` construct.
+`for index, item in enumerate(<sequence>)` can be used when both the element index and the element value are needed.
+Pythons `list`, `tuple`, `str`, `byte`, and `range` types all belong to this wider sequence type.
+In the case of `str`, the “collection” is made up of unicode code points.
+In the case of `byte`, bytes.
+Ranges are “collections” of numbers conforming to a `start:stop:step` rule.
+
+Sequences can be copied in whole or in part via slice notation.
+copy an object via the "full" slice `[:]`
+
+e = "I am a happy person"
+
+end = e[-6:]
+
 ## Sequence operations
 
 ### In operator
 
-`In` checks if a sequence contains a value.
+`in` checks if a sequence contains a value.
 It returns `True` if the value is found, and `False` otherwise.
 
 ```python
