@@ -15,7 +15,8 @@ class InventoryTest(unittest.TestCase):
 
         for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
             with self.subTest(f"variation #{variant}", input_data=input_data, output_data=output_data):
-                self.assertEqual(get_list_of_wagons(*input_data), output_data)
+                error_msg=f'Expected: {output_data} but got a different wagon list instead.'
+                self.assertEqual(get_list_of_wagons(*input_data), output_data, msg=error_msg)
 
     @pytest.mark.task(taskno=2)
     def test_fix_list_of_wagons(self): # One extra case needed at first
@@ -29,7 +30,8 @@ class InventoryTest(unittest.TestCase):
                     ]
         for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
             with self.subTest(f"variation #{variant}", input_data=input_data, output_data=output_data):
-                self.assertEqual(fix_list_of_wagons(input_data[0], input_data[1]), output_data)
+                error_msg=f'Expected: {output_data} but got a different wagon list instead.'
+                self.assertEqual(fix_list_of_wagons(input_data[0], input_data[1]), output_data, msg=error_msg)
 
     @pytest.mark.task(taskno=3)
     def test_add_missing_stops(self): 
@@ -45,7 +47,8 @@ class InventoryTest(unittest.TestCase):
                     ]
         for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
             with self.subTest(f"variation #{variant}", input_data=input_data, output_data=output_data):
-                self.assertEqual(add_missing_stops(input_data[0], **input_data[1]), output_data)
+                error_msg=f'Expected: {output_data} but got a different set of stops instead.'
+                self.assertEqual(add_missing_stops(input_data[0], **input_data[1]), output_data, msg=error_msg)
 
     @pytest.mark.task(taskno=4)
     def test_extend_route_information(self): 
@@ -59,7 +62,8 @@ class InventoryTest(unittest.TestCase):
 
         for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
             with self.subTest(f"variation #{variant}", input_data=input_data, output_data=output_data):
-                self.assertEqual(extend_route_information(input_data[0], input_data[1]), output_data)
+                error_msg=f'Expected: {output_data} but got a different route dictionary instead.'
+                self.assertEqual(extend_route_information(input_data[0], input_data[1]), output_data, msg=error_msg)
 
     @pytest.mark.task(taskno=5)
     def test_fix_wagon_depot(self):
@@ -79,4 +83,5 @@ class InventoryTest(unittest.TestCase):
 
         for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
             with self.subTest(f"variation #{variant}", input_data=input_data, output_data=output_data):
-                self.assertEqual(fix_wagon_depot(input_data), output_data)
+                error_msg=f'Expected: {output_data} but got a different wagon depot list instead.'
+                self.assertEqual(fix_wagon_depot(input_data), output_data, msg=error_msg)
