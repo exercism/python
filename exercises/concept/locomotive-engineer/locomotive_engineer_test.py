@@ -6,6 +6,7 @@ from locomotive_engineer import (get_list_of_wagons,
                                  extend_route_information,
                                  fix_wagon_depot)
 
+
 class LocomotiveEngineerTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
