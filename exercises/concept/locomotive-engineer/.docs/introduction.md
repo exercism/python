@@ -137,6 +137,7 @@ We can also extract the values at the beginning and end of the `list` while grou
 [Unpacking a dictionary][packing and unpacking] is a bit different than unpacking a `list`/`tuple`.
 Iteration over dictionaries defaults to the `keys`.
 So when unpacking a `dict`, you can only unpack the `keys` and not the `values`:
+
 ```python
 >>> fruits_inventory = {"apple": 6, "banana": 2, "cherry": 3}
 >>> x, y, z = fruits_inventory
@@ -259,6 +260,7 @@ TypeError: my_function() missing 2 required keyword-only arguments: 'a' and 'b'
 
 You can use `*` to unpack a `list`/`tuple` of arguments into a function call.
 This is very useful for functions that don't accept an `iterable` or `iterator`:
+
 ```python
 >>> def my_function(a, b, c):
 ...   print(c)
@@ -282,6 +284,7 @@ Since `zip()` takes multiple iterables and returns a list of tuples with the val
 [('y', 2, False), ('z', 3, True)]
 ```
 
+[positional and keyword arguments]: https://www.python-engineer.com/courses/advancedpython/18-function-arguments/
 [multiple assignment]: https://www.geeksforgeeks.org/assigning-multiple-variables-in-one-line-in-python/
 [unpacking]: https://www.geeksforgeeks.org/unpacking-arguments-in-python/?ref=rp
 [deep unpacking]: https://mathspp.com/blog/pydonts/deep-unpacking#deep-unpacking
