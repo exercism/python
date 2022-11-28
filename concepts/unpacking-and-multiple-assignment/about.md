@@ -346,6 +346,7 @@ Since `zip()` takes multiple iterables and returns a list of tuples with the val
 [('y', 2, False), ('z', 3, True)]
 ```
 
+[positional and keyword arguments]: https://www.python-engineer.com/courses/advancedpython/18-function-arguments/
 [multiple assignment]: https://www.geeksforgeeks.org/assigning-multiple-variables-in-one-line-in-python/
 [sorting algorithms]: https://realpython.com/sorting-algorithms-python/
 [unpacking]: https://www.geeksforgeeks.org/unpacking-arguments-in-python/?ref=rp
