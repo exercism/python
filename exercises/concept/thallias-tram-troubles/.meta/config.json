@@ -3,8 +3,8 @@
   "icon": "tracks-on-tracks-on-tracks",
   "authors": ["meatball133","BethanyG"],
   "files": {
-    "solution": ["thallias_tram_troubles.py"],
-    "test": ["thallias_tram_troubles_test.py"],
+    "solution": ["sequences.py"],
+    "test": ["sequences_test.py"],
     "exemplar": [".meta/exemplar.py"]
   }
 }
