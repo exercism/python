@@ -55,7 +55,6 @@ For example:
 
 Since `tuples` are immutable, you can't swap elements in a `tuple`.
 
-
 ## Unpacking
 
 ```exercism/note
@@ -220,7 +219,7 @@ This will pack all the values into a `list`/`tuple`.
 ### Packing a dictionary with `**`
 
 Packing a dictionary is done by using the `**` operator.
-This will pack all **key**-**value** pairs from one dictionary into another dictionary, or combine two dictionarys together.
+This will pack all **key**-**value** pairs from one dictionary into another dictionary, or combine two dictionaries together.
 
 ```python
 >>> fruits_inventory = {"apple": 6, "banana": 2, "cherry": 3}
