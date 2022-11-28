@@ -56,5 +56,5 @@ For more information, check the [dunder method with `__getattribute__` approach]
 [eval-danger]: https://diveintopython3.net/advanced-iterators.html#eval
 [dunder]: https://www.tutorialsteacher.com/python/magic-methods-in-python
 [getattribute]: https://docs.python.org/3/reference/datamodel.html?#object.__getattribute__
-[int]: https://docs.python.org/3/library/functions.html?#int
+[int]: https://docs.python.org/3/library/stdtypes.html#typesnumeric
 [approach-dunder-getattribute]: https://exercism.org/tracks/python/exercises/wordy/approaches/dunder-getattribute
