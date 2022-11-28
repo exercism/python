@@ -1,9 +1,9 @@
 {
     "authors": ["Guillermo-N"],
-    "contributors": [""],
+    "contributors": [],
     "files": {
-      "solution": ["ex_solution.py"],
-      "test": ["ex_test.py"],
+      "solution": ["diamond_inheritance.py"],
+      "test": ["diamond_inheritance_test.py"],
       "exemplar": [".meta/exemplar.py"]
     },
     "blurb": "Grow your knowledge on OOP with class inheritance."

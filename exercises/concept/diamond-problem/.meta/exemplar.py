@@ -34,4 +34,3 @@ class ClassE(ClassC, ClassB, ClassD):
         super().__init__()
         self.name = 'E'
         self.sequence += self.name
-

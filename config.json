@@ -27,6 +27,26 @@
   "exercises": {
     "concept": [
       {
+        "slug": "diamond-problem",
+        "name": "Diamond inheritance problem",
+        "uuid": "e19dddc3-ab17-4074-b412-fb3cdab46ef0",
+        "concepts": ["inheritance"],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "classes",
+          "lists",
+          "list-methods",
+          "loops",
+          "strings",
+          "string-methods",
+          "numbers",
+          "classes"
+        ],
+        "status": "wip"
+      },
+      {
         "slug": "guidos-gorgeous-lasagna",
         "name": "Guido's Gorgeous Lasagna",
         "uuid": "dfd7dc01-3544-4f61-a063-af8530d6e601",
