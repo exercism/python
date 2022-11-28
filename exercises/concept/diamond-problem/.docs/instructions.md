@@ -53,9 +53,9 @@ By standing for initialize the full execution of the `__init__` method, When ins
 
 **==> `A` then `D` then `B` then `C` then `E`**
 
-## 4. Return sequence
+## 4. Return sequence method
 
 Classes `B`, `C`, `D` and `E` should implement a method named `sequence_as_tuple` that will return the sequence stored on the `sequence` atribute as a tuple of characters. This method should not be implemented on class `A`.
 
 > ### Recomendation:
-> Try to avoid code duplication as much as possible.
+> Try to avoid code duplicacion and don't mix both methods when calling constructors.
