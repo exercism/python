@@ -306,7 +306,7 @@ You can also write parameters before `*args` to allow for specific positional ar
 Individual keyword arguments then have to appear before `**kwargs`.
 
 ```exercism/caution
-[Arguments have to be structured][positional and keyword arguments] like this:
+[Arguments have to be structured](https://www.python-engineer.com/courses/advancedpython/18-function-arguments/) like this:
 
 `def my_function(<positional_args>, *args, <key-word_args>, **kwargs)`
 
@@ -366,7 +366,6 @@ Since `zip()` takes multiple iterables and returns a `list` of `tuples` with the
 [('y', 2, False), ('z', 3, True)]
 ```
 
-[positional and keyword arguments]: https://www.python-engineer.com/courses/advancedpython/18-function-arguments/
 [args and kwargs]: https://www.geeksforgeeks.org/args-kwargs-python/
 [items]: https://www.geeksforgeeks.org/python-dictionary-items-method/
 [multiple assignment]: https://www.geeksforgeeks.org/assigning-multiple-variables-in-one-line-in-python/
