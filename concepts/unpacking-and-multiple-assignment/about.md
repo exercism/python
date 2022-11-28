@@ -306,7 +306,7 @@ You can also write parameters before `*args` to allow for specific positional ar
 Individual keyword arguments then have to appear before `**kwargs`.
 
 ```exercism/caution
-[Arguments have to be structured][Positional and keyword arguments] like this:
+[Arguments have to be structured][positional and keyword arguments] like this:
 
 `def my_function(<positional_args>, *args, <key-word_args>, **kwargs)`
 
