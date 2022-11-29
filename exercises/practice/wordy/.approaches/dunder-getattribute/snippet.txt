@@ -1,4 +1,3 @@
-```python
 while len(ret) > 1:
     try:
         x, op, y, *tail = ret
@@ -7,4 +6,3 @@ while len(ret) > 1:
     except:
         raise ValueError("syntax error")
 return ret[0]
-```
