@@ -10,6 +10,8 @@ Another approach is to use [set][set]s for look-up and then [slice][slicing] the
 
 At the time of writing only four rules need to be handled, but if they have similar output, they don't need to be handled completely separately.
 
+## Approach: Sets and slices
+
 ```python
 VOWELS = {"a", "e", "i", "o", "u"}
 VOWELS_Y = {"a", "e", "i", "o", "u", "y"}
