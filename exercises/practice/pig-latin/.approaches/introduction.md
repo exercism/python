@@ -29,6 +29,7 @@ def translate(text):
                 pos += 1 if word[pos] == 'u' and word[pos - 1] == "q" else 0
                 piggyfied.append(word[pos:] + word[:pos] + "ay")
                 break
+
     return " ".join(piggyfied)
 
 ```
