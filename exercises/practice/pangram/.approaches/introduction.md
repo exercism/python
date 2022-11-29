@@ -1,9 +1,9 @@
 # Introduction
 
 There are various idomatic approaches to Pangram.
-You can use the `all` method on the `ascii_lowercase` letters with the lowercased letters of the `sentence`.
-You can see if the `set` of the alphabet `issubset` of a `set` of the lowercased `sentence`.
-Or you can see if the `set` `len` of the lowercased `sentence` filtered to just ASCII letters is `26`.
+You can use the `all()` method on the `ascii_lowercase` letters with the lowercased letters of the `sentence`.
+You can see if the `set` of the alphabet `issubset()` of a `set` of the lowercased `sentence`.
+Or you can see if the `set` `len()` of the lowercased `sentence` filtered to just ASCII letters is `26`.
 
 ## General guidance
 
