@@ -1,0 +1,15 @@
+{
+  "introduction": {
+    "authors": ["bobahop"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "505e545c-d56c-45e3-8cc6-df3fdb54cc0c",
+      "slug": "sets-and-slices",
+      "title": "Sets and slices",
+      "blurb": "Use sets with slices for parsing.",
+      "authors": ["bobahop"]
+    }
+  ]
+}
