@@ -19,7 +19,7 @@ The function should then `return` the given IDs as a single `list`.
 
 ```python
 >>> get_list_of_wagons(1, 7, 12, 3, 14, 8, 5)
-[1, 7, 12, 3, 14, 8, 3]
+[1, 7, 12, 3, 14, 8, 5]
 ```
 
 ## 2. Fix the list of wagons
@@ -41,7 +41,7 @@ The function should then `return` a `list` with the modifications.
 
 ```python
 >>> fix_list_of_wagons([2, 5, 1, 7, 4, 12, 6, 3, 13], [3, 17, 6, 15])
-[1, 3, 17, 6, 15, 7, 4,  12, 6, 3, 13, 2, 5]
+[1, 3, 17, 6, 15, 7, 4, 12, 6, 3, 13, 2, 5]
 ```
 
 ## 3. Add missing stops
