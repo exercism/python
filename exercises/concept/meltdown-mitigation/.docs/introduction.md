@@ -48,7 +48,7 @@ if x > y:
 elif y > z:
     print("y is greater than x and z")
 else:
-    print("z is great than x and y")
+    print("z is greater than x and y")
 ...
 >>> z is great than x and y
 ```
