@@ -1,0 +1,28 @@
+{
+  "introduction": {
+    "authors": ["bobahop"]
+  },
+  "approaches": [
+    {
+      "uuid": "b54a712d-e3f1-4d63-9425-7bbe2cb0bc43",
+      "slug": "exponentiation",
+      "title": "exponentiation",
+      "blurb": "Use exponentiation to raise 2 by a specified power.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "002a7924-faa4-42d8-b535-23da4dae034a",
+      "slug": "pow",
+      "title": "pow",
+      "blurb": "Use pow to raise 2 by a specified power.",
+      "authors": ["bobahop"]
+    },    
+    {
+      "uuid": "2f700645-aa46-46b3-8c43-2251420c3a9b",
+      "slug": "bit-shifting",
+      "title": "Bit-shifting",
+      "blurb": "Use bit-shifting to set the correct value.",
+      "authors": ["bobahop"]
+    }
+  ]
+}
