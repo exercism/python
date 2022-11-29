@@ -19,6 +19,7 @@ def translate(text):
                 pos += 1 if word[pos] == 'u' and word[pos - 1] == "q" else 0
                 piggyfied.append(word[pos:] + word[:pos] + "ay")
                 break
+
     return " ".join(piggyfied)
 
 ```
@@ -53,7 +54,7 @@ If the vowel is `u`, the previous consonant is checked to be `q`.
 If so, the position is advanced to be one position after the found `u`.
 
 A slice is then taken from the position until the end of the word,
-plus a slice taken from the beginning of the word and stopped before the position, plus `ay`.
+plus a slice taken from the beginning of the word and stopped just before the position, plus `ay`.
 That concatenated string is appended to the list, [break][break] is called to exit the inner loop,
 and execution returns to the outer loop.
 
