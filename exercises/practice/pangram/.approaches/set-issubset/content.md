@@ -1,4 +1,4 @@
-# `HashSet` with `is_subset`
+# `set` with `is_subset`
 
 ```python
 from string import ascii_lowercase
