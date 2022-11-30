@@ -30,7 +30,7 @@ jobs:
               org: context.repo.owner,
               username: context.actor,
             }).then(response => response.status == 204)
-              .catch(err => true);
+              .catch(err => false);
       - name: Comment
         if: steps.is-organization-member.outputs.result == 'false'
         uses: actions/github-script@d556feaca394842dc55e4734bf3bb9f685482fa0
