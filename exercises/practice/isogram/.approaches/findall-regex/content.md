@@ -19,8 +19,8 @@ This makes a string out of the list of matched characters.
 - The output of `join()` is then [chained][method-chaining] as the input for [`lower()`][lower].
 All of the letters are lowercased so that letters of different cases will become the same letter for comparison purposes,
 since `A` and `a` are considered to be the same letter.
-When the filtering and lowercasing is done, the `scrubbed` variable will be a string having all alphabetic letters lowercased.
-- A [`set`][set] is constructed from the `scrubbed` string and its [`len`][len] is compared with the `len` of the the `scrubbed` string.
+When the filtering and lowercasing is done, the scrubbed variable will be a string having all alphabetic letters lowercased.
+- A [`set`][set] is constructed from the scrubbed string and its [`len`][len] is compared with the `len` of the the scrubbed string.
 Since a `set` holds only unique values, the phrase will be an isogram if its number of unique letters is the same as its total number of letters.
 The function returns whether the number of unique letters equals the total number of letters.
 - For `Alpha` it would return `False`, because `a` is considered to repeat `A`, so the number of unique letters in `Alpha` is `4`,
