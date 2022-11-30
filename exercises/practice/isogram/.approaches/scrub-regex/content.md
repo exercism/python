@@ -11,9 +11,9 @@ def is_isogram(phrase):
 ```
 
 For this approach, [regular expression][regex], also known as a [regex][regex-how-to], is used to scrub the input phrase [str][str]ing.
-- In the pattern of `[^a-zA-Z]` the brackets are used to define a character set that looks for characters which are not `a` through `z` and `A` through `Z`.
+- In the pattern of `[^a-zA-Z]` the brackets are used to define a character set that looks for characters which are _not_ `a` through `z` and `A` through `Z`.
 ```exercism/note
-If the first character of a character set is `^`, all the characters that are _not_ in the rest of the set will be matched.
+If the first character of a character set is `^`, all the characters that are _not_ in the rest of the character set will be matched.
 ```
 This essentially matches any characters which are not in the English alphabet.
  The pattern is passed to the [`compile()`][compile] method to construct a [regular expression object][regex-object].
