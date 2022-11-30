@@ -17,8 +17,8 @@ since `A` and `a` are considered to be the same letter.
 - The letters are filtered by the use of the [optional conditional logic][conditional-logic]: `if ltr.isalpha()`.
 [`isalpha()`][isalpha] returns `True` if the letter being iterated is alphabetic.
 
-When the list comprehension is done, the `scrubbed` variable will be a list holding only lowercased alphabetic characters.
-- A [`set`][set] is constructed from the `scrubbed` list and its [`len`][len] is compared with the `len` of the the `scrubbed` list.
+When the list comprehension is done, the scrubbed variable will be a list holding only lowercased alphabetic characters.
+- A [`set`][set] is constructed from the scrubbed list and its [`len`][len] is compared with the `len` of the the scrubbed list.
 Since a `set` holds only unique values, the phrase will be an isogram if its number of unique letters is the same as its total number of letters.
 The function returns whether the number of unique letters equals the total number of letters.
 - For `Alpha` it would return `False`, because `a` is considered to repeat `A`, so the number of unique letters in `Alpha` is `4`,
