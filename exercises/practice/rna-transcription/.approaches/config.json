@@ -1,0 +1,22 @@
+{
+  "introduction": {
+    "authors": ["bobahop"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "9c3d3762-8473-49f2-8004-6d611c958c38",
+      "slug": "translate-maketrans",
+      "title": "translate maketrans",
+      "blurb": "Use translate with maketrans to return the value.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "fbc6be87-dec4-4c4b-84cf-fcc1ed2d6d41",
+      "slug": "dictionary-join",
+      "title": "dictionary join",
+      "blurb": "Use a dictionary look-up with join to return the value.",
+      "authors": ["bobahop"]
+    }
+  ]
+}
