@@ -161,7 +161,7 @@
         "uuid": "e1b8b9c9-21c3-47b1-b645-5938b3110c78",
         "concepts": ["unpacking-and-multiple-assignment"],
         "prerequisites": ["loops", "lists", "tuples", "dicts"],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "cater-waiter",
