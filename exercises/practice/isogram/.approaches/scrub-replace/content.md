@@ -12,9 +12,9 @@ Thw two `replace()` calls are [chained][method-chaining], so the output of the f
 The output of the last `replace()` is the input for [`lower()`][lower].
 All of the letters are lowercased so that letters of different cases will become the same letter for comparison purposes,
 since `A` and `a` are considered to be the same letter.
-When the replacing and lowercasing is done, the `scrubbed` variable will be a string having no hyphens or spaces,
+When the replacing and lowercasing is done, the scrubbed variable will be a string having no hyphens or spaces,
 and with all alphabetic letters lowercased.
-- A [`set`][set] is constructed from the `scrubbed` string and its [`len`][len] is compared with the `len` of the the `scrubbed` string.
+- A [`set`][set] is constructed from the scrubbed string and its [`len`][len] is compared with the `len` of the the scrubbed string.
 Since a `set` holds only unique values, the phrase will be an isogram if its number of unique letters is the same as its total number of letters.
 The function returns whether the number of unique letters equals the total number of letters.
 - For `Alpha` it would return `False`, because `a` is considered to repeat `A`, so the number of unique letters in `Alpha` is `4`,
