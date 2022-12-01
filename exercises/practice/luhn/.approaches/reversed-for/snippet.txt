@@ -1,0 +1,8 @@
+if ltr.isdigit():
+    if not pos % 2:
+        total+= int(ltr)
+    else:
+        total += Luhn.luhny_tune(int(ltr))
+    pos += 1
+elif ltr != " ":
+    return False
