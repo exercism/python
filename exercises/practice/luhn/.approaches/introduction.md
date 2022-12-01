@@ -31,15 +31,14 @@ class Luhn:
         total = 0
         pos = 0
         for ltr in reversed(num):
-            if ltr == " ":
-                continue
-            if not ltr.isdigit():
+            if ltr.isdigit():
+                if not pos % 2:
+                    total+= int(ltr)
+                else:
+                    total += Luhn.luhny_tune(int(ltr))
+                pos += 1
+            elif ltr != " ":
                 return False
-            if not pos % 2:
-                total+= int(ltr)
-            else:
-                total += Luhn.luhny_tune(int(ltr))
-            pos += 1
         return pos > 1 and not total % 10
 
 ```
