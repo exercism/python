@@ -1,0 +1,29 @@
+{
+  "introduction": {
+    "authors": ["bobahop"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "568ca4f5-1046-4750-b3c2-6a50b84ed8ed",
+      "slug": "reversed-for",
+      "title": "reversed for loop",
+      "blurb": "Use reversed with a for loop to validate the number.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "24d6c283-3a7d-4315-91db-b3160f3df567",
+      "slug": "replace-reverse-enumerate",
+      "title": "replace, reverse, enumerate",
+      "blurb": "Use replace, reverse, and enumerate to validate the number.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "fca6a89a-baa9-4aeb-b419-130d6ad14564",
+      "slug": "recursion",
+      "title": "recursion",
+      "blurb": "Use recursion to validate the number.",
+      "authors": ["bobahop"]
+    }
+  ]
+}
