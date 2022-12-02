@@ -37,7 +37,7 @@ That variable is returned from the `valid()` method.
 The methods that do the work have the [`@staticmethod`][static-method] decorator.
 This indicates that the method belongs to the class and is not recreated for every object instance.
 
-In the code example the `luhny_bin` method uses the [`replace()`][replace] method to replace all occurrences of a space in the input with an empty string.
+In the code example the `luhny_bin()` method uses the [`replace()`][replace] method to replace all occurrences of a space in the input with an empty string.
 The [`isdigit()`][isdigit] method is then used to see if all of the remaining characters are digits.
 If not, the function returns `False`.
 
