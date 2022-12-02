@@ -102,6 +102,9 @@ description = "Complex exponential function -> Exponential of a purely real numb
 [08eedacc-5a95-44fc-8789-1547b27a8702]
 description = "Complex exponential function -> Exponential of a number with real and imaginary part"
 
+[d2de4375-7537-479a-aa0e-d474f4f09859]
+description = "Complex exponential function -> Exponential resulting in a number with real and imaginary part"
+
 [06d793bf-73bd-4b02-b015-3030b2c952ec]
 description = "Operations between real numbers and complex numbers -> Add real number to complex number"
 
