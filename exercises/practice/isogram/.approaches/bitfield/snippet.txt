@@ -1,0 +1,7 @@
+for ltr in phrase:
+    letter = ord(ltr)
+    if letter >= A_LCASE and letter <= Z_LCASE:
+        if letter_flags & (1 << (letter - A_LCASE)) != 0:
+            return False
+        else:
+            letter_flags |= 1 << (letter - A_LCASE)
