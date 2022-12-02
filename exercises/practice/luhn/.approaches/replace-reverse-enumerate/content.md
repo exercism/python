@@ -39,7 +39,7 @@ This indicates that the method belongs to the class and is not recreated for eve
 
 In the code example the `luhny_bin()` method uses the [`replace()`][replace] method to replace all occurrences of a space in the input with an empty string.
 The [`isdigit()`][isdigit] method is then used to see if all of the remaining characters are digits.
-If not, the function returns `False`.
+If not, the method returns `False`.
 
 [Slicing][slicing] syntax (`[::-1`) is used to reverse the characters in the input, which is then passed into the [`enumerate()`][enumerate] method.
 The [`for`][for] loop uses `enumerate()` to iterate the reversed characters in the input, returning the character and its position in the string.
@@ -57,7 +57,7 @@ Inside the ternary operator an [assignment expression][assignment-expression] as
 The ternary operator returns `dbl - 9` if `dbl` is greater than `9`, otherwise it returns `dbl`.
 The resulting value is added to the total variable.
 
-After the iteration of the characters is done, the function return if the position is greater than `1` and if the total is evenly divisible by `10`.
+After the iteration of the characters is done, the method returns if the position is greater than `1` and if the total is evenly divisible by `10`.
 
 [static-method]: https://docs.python.org/3/library/functions.html?#staticmethod
 [replace]: https://docs.python.org/3/library/stdtypes.html?#str.replace
