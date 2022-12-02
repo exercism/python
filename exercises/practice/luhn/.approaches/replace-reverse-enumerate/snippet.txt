@@ -1,0 +1,7 @@
+for pos, ltr in enumerate(num[::-1]):
+    if not pos % 2:
+        total+= int(ltr)
+    else:
+        total += Luhn.luhny_tune(int(ltr))
+    pos += 1
+return pos > 1 and not total % 10
