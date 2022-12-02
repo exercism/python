@@ -83,6 +83,22 @@ class RectanglesTest(unittest.TestCase):
             60,
         )
 
+    def test_rectangles_must_have_four_sides(self):
+        self.assertEqual(
+            rectangles(
+                [
+                    "+-+ +-+",
+                    "| | | |",
+                    "+-+-+-+",
+                    "  | |  ",
+                    "+-+-+-+",
+                    "| | | |",
+                    "+-+ +-+",
+                ]
+            ),
+            5,
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
