@@ -52,3 +52,6 @@ description = "multiple spaces not detected as a word"
 
 [50176e8a-fe8e-4f4c-b6b6-aa9cf8f20360]
 description = "alternating word separators not detected as a word"
+
+[6d00f1db-901c-4bec-9829-d20eb3044557]
+description = "quotation for word with apostrophe"
