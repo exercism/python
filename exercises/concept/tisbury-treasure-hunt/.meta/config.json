@@ -1,6 +1,6 @@
 {
   "blurb": "Learn about tuples by helping out competitors in the Tisbury Treasure Hunt.",
-  "icon": "proverb",
+  "icon": "tisbury-treasure-hunt",
   "authors": ["bethanyg"],
   "files": {
     "solution": ["tuples.py"],
