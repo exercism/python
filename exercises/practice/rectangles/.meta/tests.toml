@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [485b7bab-4150-40aa-a8db-73013427d08c]
 description = "no rows"
@@ -40,3 +47,6 @@ description = "corner is required for a rectangle to be complete"
 
 [d78fe379-8c1b-4d3c-bdf7-29bfb6f6dc66]
 description = "large input with many rectangles"
+
+[6ef24e0f-d191-46da-b929-4faca24b4cd2]
+description = "rectangles must have four sides"

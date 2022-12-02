@@ -88,6 +88,9 @@ class WordCountTest(unittest.TestCase):
             count_words(",\n,one,\n ,two \n 'three'"), {"one": 1, "two": 1, "three": 1}
         )
 
+    def test_quotation_for_word_with_apostrophe(self):
+        self.assertEqual(count_words("can, can't, 'can't'"), {"can": 1, "can't": 2})
+
     # Additional tests for this track
 
     def test_tabs(self):

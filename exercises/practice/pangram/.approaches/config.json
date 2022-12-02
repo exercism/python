@@ -1,0 +1,35 @@
+{
+  "introduction": {
+    "authors": ["bobahop"]
+  },
+  "approaches": [
+    {
+      "uuid": "999c333a-2516-4d91-9a8f-7cbc39e56914",
+      "slug": "all",
+      "title": "all on lower case",
+      "blurb": "Use all on lowercased letters.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "57720fea-8fe6-44c6-80b6-b8f356aa3008",
+      "slug": "set-issubset",
+      "title": "set with issubset",
+      "blurb": "Use set with issubset.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "2743b5c4-fbd1-4a73-ae39-d4d275313494",
+      "slug": "set-len",
+      "title": "set with len",
+      "blurb": "Use set with len.",
+      "authors": ["bobahop"]
+    },    
+    {
+      "uuid": "0a6d1bbf-6d60-4489-b8d9-b8375894628b",
+      "slug": "bitfield",
+      "title": "Bit field",
+      "blurb": "Use a bit field to keep track of used letters.",
+      "authors": ["bobahop"]
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+def is_pangram(sentence):
+    return len([ltr for ltr in set(sentence.lower()) if ltr.isalpha()]) \
+        == 26

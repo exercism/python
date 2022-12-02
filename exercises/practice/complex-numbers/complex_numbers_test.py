@@ -148,6 +148,11 @@ class ComplexNumbersTest(unittest.TestCase):
             ComplexNumber(math.log(2), math.pi).exp(), ComplexNumber(-2, 0)
         )
 
+    def test_exponential_resulting_in_a_number_with_real_and_imaginary_part(self):
+        self.assertAlmostEqual(
+            ComplexNumber(math.log(2) / 2, math.pi / 4).exp(), ComplexNumber(1, 1)
+        )
+
     # Operations between real numbers and complex numbers
 
     def test_add_real_number_to_complex_number(self):

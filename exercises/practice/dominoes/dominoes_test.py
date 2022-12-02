@@ -78,6 +78,11 @@ class DominoesTest(unittest.TestCase):
         output_chain = can_chain(input_dominoes)
         self.assert_correct_chain(input_dominoes, output_chain)
 
+    def test_separate_three_domino_loops(self):
+        input_dominoes = [(1, 2), (2, 3), (3, 1), (4, 5), (5, 6), (6, 4)]
+        output_chain = can_chain(input_dominoes)
+        self.refute_correct_chain(input_dominoes, output_chain)
+
     # Utility methods
 
     def normalize_dominoes(self, dominoes):
