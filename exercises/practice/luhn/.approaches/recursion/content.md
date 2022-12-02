@@ -52,9 +52,9 @@ If there is no terminating condition, then the recursive function will keep call
 and a stack overflow error will occur.
 ```
 
-The `luhny_bin()` mtehod should terminate when there are no more characters to process.
+The `luhny_bin()` method should terminate when there are no more characters to process.
 By using the [falsiness][falsiness] of an empty list, the [`not` operator][not-operator] can be used instead of comparing the `len()` of the list to `0`.
-When all of the characters have been iterated, the function returns if the position is greater than `1` and if the sum is evenly divisible by `10`.
+When all of the characters have been iterated, the method returns if the position is greater than `1` and if the sum is evenly divisible by `10`.
 
 While there are still characters in the list to iterate, the list is [destructured][destructure] into `head, *tail`.
 The [`isdigit()`][isdigit] method is used to see if the head character is a digit.
@@ -75,11 +75,11 @@ Whether the digit is even or odd, the position is added to `1` when it and the s
 Also passed in is the tail of the list, which is the list of all the remaining characters after the head character.
 Note that the sum and position variables are not being directly changed.
 (In other words, they are not being mutated.)
-The new sum and position values are calculated as the new arguments to the recursive function.
+The new sum and position values are calculated as the new arguments to the recursive method.
 
-If the head character is a space, the recursive function calls itself with the same position and sum values, and the tail.
+If the head character is a space, the recursive method calls itself with the same position and sum values, and the tail.
 
-If the head character is neither a digit or a space, the function returns `False`.
+If the head character is neither a digit or a space, the method returns `False`.
 
 [static-method]: https://docs.python.org/3/library/functions.html?#staticmethod
 [slicing]: https://www.learnbyexample.org/python-string-slicing/
