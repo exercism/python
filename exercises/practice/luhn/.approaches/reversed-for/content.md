@@ -42,7 +42,7 @@ In the code example the `luhny_bin` method initializes the `total` and `pos` var
 It then calls [`reversed()`][reversed] on the input and iterates the characters from right to left with a [`for`][for] loop.
 
 The [`isdigit()`][isdigit] method is used to see if the character is a digit.
-The [modulo operator][modulo-operator] is used to check if the character's position is evenly divided by `2`.
+If so, the [modulo operator][modulo-operator] is used to check if the character's position is evenly divided by `2`.
 By using the [falsiness][falsiness] of `0`, the [`not` operator][not-operator] can be used instead of comparing equality to `0`.
 It can be thought of as the expression _not_ having a remainder.
 
