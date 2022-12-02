@@ -1,0 +1,11 @@
+{
+  "articles": [
+    {
+      "uuid": "c933d353-8857-48f9-bac3-1ac752676390",
+      "slug": "performance",
+      "title": "Performance deep dive",
+      "blurb": "Deep dive to find out the most performant approach to determining an isogram.",
+      "authors": ["bobahop"]
+    }
+  ]
+}
