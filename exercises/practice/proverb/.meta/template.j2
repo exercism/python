@@ -1,0 +1,24 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.header() }}
+{{ "# PLEASE TAKE NOTE: Expected result lists for these test cases use **implicit line joining.**" }}
+{{ "# A new line in a result list below **does not** always equal a new list element." }}
+{{ "# Check comma placement carefully!" }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {# All test cases in this exercise are nested, so use two for loops -#}
+    {% for supercase in cases -%}{% for case in supercase["cases"] -%}
+    {% set input = case["input"] -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        {% if supercase["description"] == "verse" -%}
+        expected = [
+            {{ macros.linebreak(case["expected"][0]) }}
+        ]
+        {% else -%}
+        expected = [recite(n, n)[0] for n in range(
+            {{- input["startVerse"] }}, 
+            {{- input["endVerse"] + 1 }})]
+        {% endif -%}
+        self.assertEqual({{ case["property"]}}(
+            {{- input["startVerse"] }}, 
+            {{- input["endVerse"] }}), expected)
+    {% endfor %}{% endfor %}
