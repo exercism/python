@@ -51,7 +51,7 @@ If the position is evenly divided by `2`, then it is even, and the character is 
 If the position is odd, then the number is converted to an `int` and is passed to the static method which always doubles it,
 and will subtract `9` from the doubled value if the doubled value is greater than `9`.
 It does this using a [ternary operator][ternary-operator].
-Inside the ternary operator an [assignment expression][assignment-expression] assigns the doubled value to the `dbl` variable with `(dbl := 2 * num)`
+Inside the ternary operator an [assignment expression][assignment-expression] assigns the doubled value to the `dbl` variable with `(dbl := 2 * num)`.
 The ternary operator returns `dbl - 9` if `dbl` is greater than `9`, otherwise it returns `dbl`.
 The resulting value is added to the total variable.
 
