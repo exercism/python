@@ -87,6 +87,13 @@ Besides the aforementioned, idiomatic approaches, you could also approach the ex
 Another approach can use recursion to validate the number.
 For more information, check the [recursion approach][approach-recursion].
 
+## Which approach to use?
+
+The `replace()`, reverse, `enumerate()` approach benchmarked the fastest.
+
+To compare performance of the approaches, check the [Performance article][article-performance].
+
 [approach-reversed-for]:  https://exercism.org/tracks/python/exercises/luhn/approaches/reversed-for
 [approach-replace-reverse-enumerate]: https://exercism.org/tracks/python/exercises/luhn/approaches/replace-reverse-enumerate
 [approach-recursion]: https://exercism.org/tracks/python/exercises/luhn/approaches/recursion
+[article-performance]: https://exercism.org/tracks/python/exercises/luhn/articles/performance
