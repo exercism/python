@@ -56,10 +56,10 @@ The ternary operator returns `dbl - 9` if `dbl` is greater than `9`, otherwise i
 The resulting value is added to the total variable.
 
 Whether the digit is even or odd, the position is incremented by `1`.
-If the character is not a digit, the the function returns `False` if the character is not a space.
+If the character is not a digit, the method returns `False` if the character is not a space.
 If the character is a space, the loop will go to the next iteration without incrementing the position variable.
 
-After the iteration of the characters is done, the function return if the position is greater than `1` and if the total is evenly divisible by `10`.
+After the iteration of the characters is done, the method returns if the position is greater than `1` and if the total is evenly divisible by `10`.
 
 [static-method]: https://docs.python.org/3/library/functions.html?#staticmethod
 [reversed]: https://docs.python.org/3/library/functions.html?#reversed
