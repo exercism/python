@@ -83,9 +83,7 @@ class Luhn:
     @staticmethod
     def luhny_bin(pos, sum, chars):
         if not chars:
-            if pos < 2:
-                return False
-            return sum % 10 == 0
+            return pos  > 1 and sum % 10 == 0
         else:
             head, *tail = chars
             if head.isdigit():
