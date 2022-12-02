@@ -654,6 +654,16 @@
         "difficulty": 2
       },
       {
+        "slug": "proverb",
+        "name": "Proverb",
+        "uuid": "9fd94229-f974-45bb-97ea-8bfe484f6eb3",
+        "practices": ["unpacking-and-multiple-assignment"],
+        "prerequisites": ["dicts",
+                      "unpacking-and-multiple-assignment"],
+        "difficulty": 2,
+        "status": "wip"
+      },
+      {
         "slug": "yacht",
         "name": "Yacht",
         "uuid": "22f937e5-52a7-4956-9dde-61c985251a6b",
@@ -2056,15 +2066,6 @@
         "slug": "accumulate",
         "name": "Accumulate",
         "uuid": "e7351e8e-d3ff-4621-b818-cd55cf05bffd",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "status": "deprecated"
-      },
-      {
-        "slug": "proverb",
-        "name": "Proverb",
-        "uuid": "9fd94229-f974-45bb-97ea-8bfe484f6eb3",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2,
