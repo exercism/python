@@ -38,7 +38,7 @@ That variable is returned from the `valid()` method.
 The methods that do the work have the [`@staticmethod`][static-method] decorator.
 This indicates that the method belongs to the class and is not recreated for every object instance.
 
-In the code example the `luhny_bin` method initializes the `total` and `pos` variables to `0`.
+In the code example the `luhny_bin()` method initializes the `total` and `pos` variables to `0`.
 It then calls [`reversed()`][reversed] on the input and iterates the characters from right to left with a [`for`][for] loop.
 
 The [`isdigit()`][isdigit] method is used to see if the character is a digit.
