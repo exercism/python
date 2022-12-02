@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [7ae7a46a-d992-4c2a-9c15-a112d125ebad]
 description = "slices of one from one"
@@ -22,6 +29,9 @@ description = "slices of a long series"
 
 [6d235d85-46cf-4fae-9955-14b6efef27cd]
 description = "slice length is too large"
+
+[d7957455-346d-4e47-8e4b-87ed1564c6d7]
+description = "slice length is way too large"
 
 [d34004ad-8765-4c09-8ba1-ada8ce776806]
 description = "slice length cannot be zero"
