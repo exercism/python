@@ -625,6 +625,21 @@
         "difficulty": 2
       },
       {
+        "slug": "resistor-color-trio",
+        "name": "Resistor Color Trio",
+        "uuid": "089f06a6-0759-479c-8c00-d699525a1e22",
+        "practices": ["list-methods"],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "lists",
+          "numbers",
+          "strings",
+          "comparisons"
+        ],
+        "difficulty": 2
+      },
+      {
         "slug": "word-count",
         "name": "Word Count",
         "uuid": "04316811-0bc3-4377-8ff5-5a300ba41d61",
@@ -679,20 +694,6 @@
           "loops",
           "numbers",
           "strings"
-        ],
-        "difficulty": 2
-      },
-      {
-        "slug": "resistor-color-trio",
-        "name": "Resistor Color Trio",
-        "uuid": "089f06a6-0759-479c-8c00-d699525a1e22",
-        "practices": ["list-methods"],
-        "prerequisites": [
-          "basics",
-          "bools",
-          "lists",
-          "list-methods",
-          "numbers"
         ],
         "difficulty": 2
       },
