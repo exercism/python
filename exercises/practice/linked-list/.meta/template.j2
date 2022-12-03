@@ -1,11 +1,10 @@
 {%- import "generator_macros.j2" as macros with context -%}
 {% macro test_case(case) -%}
     {%- set input = case["input"]["operations"] -%}
-    {%- set last = "" -%}
     def test_{{ case["description"] | to_snake }}(self):
         lst = LinkedList()
         {% for x in input -%}
-            {%- set last = x["operation"] -%}
+            {% set last = x["operation"] %}
             {%- if "push" == x["operation"] -%}
                 lst.push({{ x["value"] }})
             {%- elif "pop" == x["operation"] and x["expected"] -%}
@@ -25,8 +24,8 @@
             {%- endif %}
         {% endfor %}
         
-        {% if case["expected"] and last == "pop" %}
-        hi
+        {% if case["expected"] and input[-1]["operation"] == "pop" %}
+        
         {% endif %}
 
 {%- endmacro %}
