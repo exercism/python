@@ -259,7 +259,7 @@ Usage of `*args`:
 # This function is defined to take any number of positional arguments
 
 >>> def my_function(*args):
-...     print(args)
+...   print(args)
 
 # Arguments given to the function are packed into a tuple
 
@@ -328,8 +328,8 @@ If you don't follow this order then you will get an error.
 Writing arguments in an incorrect order will result in an error:
 
 ```python
->>>def my_function(*args, a, b):
-... print(args)
+>>> def my_function(*args, a, b):
+...   print(args)
 
 >>>my_function(1, 2, 3, 4, 5)
 Traceback (most recent call last):
