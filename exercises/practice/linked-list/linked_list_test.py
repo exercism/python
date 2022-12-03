@@ -172,3 +172,5 @@ class LinkedListTest(unittest.TestCase):
     def test_hi(self):
         lst = LinkedList()
         lst.pop()
+
+        hi
