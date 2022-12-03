@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [92fbe71c-ea52-4fac-bd77-be38023cacf7]
 description = "date only specification of time"
@@ -16,3 +23,7 @@ description = "full time specified"
 
 [09d4e30e-728a-4b52-9005-be44a58d9eba]
 description = "full time with day roll-over"
+
+[fcec307c-7529-49ab-b0fe-20309197618a]
+description = "does not mutate the input"
+include = false

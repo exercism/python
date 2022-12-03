@@ -23,11 +23,23 @@ class SayTest(unittest.TestCase):
     def test_twenty_two(self):
         self.assertEqual(say(22), "twenty-two")
 
+    def test_thirty(self):
+        self.assertEqual(say(30), "thirty")
+
+    def test_ninety_nine(self):
+        self.assertEqual(say(99), "ninety-nine")
+
     def test_one_hundred(self):
         self.assertEqual(say(100), "one hundred")
 
     def test_one_hundred_twenty_three(self):
         self.assertEqual(say(123), "one hundred twenty-three")
+
+    def test_two_hundred(self):
+        self.assertEqual(say(200), "two hundred")
+
+    def test_nine_hundred_ninety_nine(self):
+        self.assertEqual(say(999), "nine hundred ninety-nine")
 
     def test_one_thousand(self):
         self.assertEqual(say(1000), "one thousand")

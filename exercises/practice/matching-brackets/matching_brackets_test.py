@@ -47,6 +47,9 @@ class MatchingBracketsTest(unittest.TestCase):
     def test_paired_and_wrong_nested_brackets(self):
         self.assertEqual(is_paired("[({]})"), False)
 
+    def test_paired_and_wrong_nested_brackets_but_innermost_are_correct(self):
+        self.assertEqual(is_paired("[({}])"), False)
+
     def test_paired_and_incomplete_brackets(self):
         self.assertEqual(is_paired("{}["), False)
 
