@@ -29,7 +29,7 @@ Python doesn't _enforce_ having real constant values,
 but the sets are defined with all uppercase letters, which is the naming convention for a Python [constant][const].
 It indicates that the value is not intended to be changed.
 
-The `translate` function begins by defining the list which will hold the parsed value(s).
+The `translate()` function begins by defining the list which will hold the parsed value(s).
 
 The input is [`split()`][split] into a list of its words, which is then iterated.
 
@@ -40,7 +40,7 @@ If the letters match, the word plus "ay" will be appended to the list.
 If the beginning of the word matches either condition, the loop [continue][continue]s to the next word.
 
 If the beginning of the word did not match either condition,
-then that leaves [ranging][ranging] its characters from position 1 until the [`len()`][len] of the word.
+that leaves [ranging][ranging] its characters from position 1 until the [`len()`][len] of the word.
 
 ```exercism/note
 When a [range](https://docs.python.org/3/library/stdtypes.html?#range) is provided two arguments,
