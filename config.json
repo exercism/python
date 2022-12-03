@@ -683,6 +683,20 @@
         "difficulty": 2
       },
       {
+        "slug": "resistor-color-trio",
+        "name": "Resistor Color Trio",
+        "uuid": "089f06a6-0759-479c-8c00-d699525a1e22",
+        "practices": ["list-methods"],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "lists",
+          "list-methods",
+          "numbers"
+        ],
+        "difficulty": 2
+      },
+      {
         "slug": "twelve-days",
         "name": "Twelve Days",
         "uuid": "d41238ce-359c-4a9a-81ea-ca5d2c4bb50d",

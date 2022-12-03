@@ -1,0 +1,25 @@
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
+
+[d6863355-15b7-40bb-abe0-bfb1a25512ed]
+description = "Orange and orange and black"
+
+[1224a3a9-8c8e-4032-843a-5224e04647d6]
+description = "Blue and grey and brown"
+
+[b8bda7dc-6b95-4539-abb2-2ad51d66a207]
+description = "Red and black and red"
+
+[5b1e74bc-d838-4eda-bbb3-eaba988e733b]
+description = "Green and brown and orange"
+
+[f5d37ef9-1919-4719-a90d-a33c5a6934c9]
+description = "Yellow and violet and yellow"
