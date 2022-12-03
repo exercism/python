@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [2668d5dc-109f-4f71-b9d5-8d06b1d6f1cd]
 description = "empty input"
@@ -38,5 +45,46 @@ description = "two child trees"
 [724eeda6-00db-41b1-8aa9-4d5238ca0130]
 description = "multiple property values"
 
+[28092c06-275f-4b9f-a6be-95663e69d4db]
+description = "within property values, whitespace characters such as tab are converted to spaces"
+include = false
+
+[deaecb9d-b6df-4658-aa92-dcd70f4d472a]
+description = "within property values, newli es remain as newlines"
+include = false
+
+[8e4c970e-42d7-440e-bfef-5d7a296868ef]
+description = "escaped closing bracket within property value becomes just a closing bracket"
+include = false
+
+[cf371fa8-ba4a-45ec-82fb-38668edcb15f]
+description = "escaped backslash in property value becomes just a backslash"
+include = false
+
+[dc13ca67-fac0-4b65-b3fe-c584d6a2c523]
+description = "opening bracket within property value doesn't need to be escaped"
+include = false
+
+[a780b97e-8dbb-474e-8f7e-4031902190e8]
+description = "semicolon in property value doesn't need to be escaped"
+
+[0b57a79e-8d89-49e5-82b6-2eaaa6b88ed7]
+description = "parentheses in property value don't need to be escaped"
+
+[c72a33af-9e04-4cc5-9890-1b92262813ac]
+description = "escaped tab in property value is converted to space"
+
+[3a1023d2-7484-4498-8d73-3666bb386e81]
+description = "escaped newline in property value is converted to nothing at all"
+
+[25abf1a4-5205-46f1-8c72-53273b94d009]
+description = "escaped t and n in property value are just letters, not whitespace"
+
+[08e4b8ba-bb07-4431-a3d9-b1f4cdea6dab]
+description = "mixing various kinds of whitespace and escaped characters in property value"
+reimplements = "11c36323-93fc-495d-bb23-c88ee5844b8c"
+include = false
+
 [11c36323-93fc-495d-bb23-c88ee5844b8c]
 description = "escaped property"
+include = false
