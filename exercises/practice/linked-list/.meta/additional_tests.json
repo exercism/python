@@ -5,9 +5,14 @@
     "property": "list",
     "input": {
         "operations": [
-          {
-            "operation": "pop"
-          }
+            {
+                "operation": "push",
+                "value": 1
+            },
+            {
+                "operation": "pop"
+            }
+
         ]
       }, "expected": {"error": "List is empty"}
   }

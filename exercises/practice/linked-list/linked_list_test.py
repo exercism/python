@@ -171,6 +171,8 @@ class LinkedListTest(unittest.TestCase):
 
     def test_hi(self):
         lst = LinkedList()
-        lst.pop()
-
-        hi
+        lst.push(1)
+        with self.assertRaises(ValueError) as err:
+            lst.pop()
+        self.assertEqual(type(err.exception), IndexError)
+        self.assertEqual(err.exception.args[0], "List is empty")

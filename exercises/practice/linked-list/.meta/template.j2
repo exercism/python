@@ -1,31 +1,39 @@
 {%- import "generator_macros.j2" as macros with context -%}
 {% macro test_case(case) -%}
-    {%- set input = case["input"]["operations"] -%}
     def test_{{ case["description"] | to_snake }}(self):
         lst = LinkedList()
-        {% for x in input -%}
-            {% set last = x["operation"] %}
-            {%- if "push" == x["operation"] -%}
-                lst.push({{ x["value"] }})
-            {%- elif "pop" == x["operation"] and x["expected"] -%}
-                self.assertEqual(lst.pop(), {{ x["expected"] }})
-            {%- elif "pop" == x["operation"] -%}
+        {%- set inputs = case["input"]["operations"] -%}
+        {%- if case["expected"] and inputs|length > 1 -%}
+            {%- set last = inputs[-1]["operation"] -%}
+            {% set inputs = inputs[:-1] %}
+        {%- elif case["expected"] -%}
+            {% set last = inputs[-1]["operation"] %}
+            {% set inputs = [{"operation": "None"}] %}
+        {%- endif %}
+        {% for input in inputs -%}
+            {%- if "push" == input["operation"] -%}
+                lst.push({{ input["value"] }})
+            {%- elif "pop" == input["operation"] and input["expected"] -%}
+                self.assertEqual(lst.pop(), {{ input["expected"] }})
+            {%- elif "pop" == input["operation"] -%}
                 lst.pop()
-            {%- elif "shift" == x["operation"] and x["expected"] -%}
-                self.assertEqual(lst.shift(), {{ x["expected"] }})
-            {%- elif "shift" == x["operation"] -%}
+            {%- elif "shift" == input["operation"] and input["expected"] -%}
+                self.assertEqual(lst.shift(), {{ input["expected"] }})
+            {%- elif "shift" == input["operation"] -%}
                 lst.shift()
-            {%- elif "unshift" == x["operation"] -%}
-                lst.unshift({{ x["value"] }})
-            {%- elif "delete" == x["operation"] -%}
-                lst.delete({{ x["value"] }})
-            {%- elif "count" == x["operation"] -%}
-                self.assertEqual(len(lst), {{ x["expected"] }})
+            {%- elif "unshift" == input["operation"] -%}
+                lst.unshift({{ input["value"] }})
+            {%- elif "delete" == input["operation"] -%}
+                lst.delete({{ input["value"] }})
+            {%- elif "count" == input["operation"] -%}
+                self.assertEqual(len(lst), {{ input["expected"] }})
             {%- endif %}
-        {% endfor %}
-        
-        {% if case["expected"] and input[-1]["operation"] == "pop" %}
-        
+        {% endfor -%}
+        {%- if case["expected"] and last -%}
+        with self.assertRaises(ValueError) as err:
+            lst.pop()
+        self.assertEqual(type(err.exception), IndexError)
+        self.assertEqual(err.exception.args[0], "{{case["expected"]["error"]}}")
         {% endif %}
 
 {%- endmacro %}
