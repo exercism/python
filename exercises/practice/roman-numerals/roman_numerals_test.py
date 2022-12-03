@@ -77,3 +77,9 @@ class RomanNumeralsTest(unittest.TestCase):
 
     def test_1666_is_mdclxvi(self):
         self.assertEqual(roman(1666), "MDCLXVI")
+
+    def test_3001_is_mmmi(self):
+        self.assertEqual(roman(3001), "MMMI")
+
+    def test_3999_is_mmmcmxcix(self):
+        self.assertEqual(roman(3999), "MMMCMXCIX")
