@@ -54,8 +54,18 @@ class LinkedList:
     def __len__(self):
         return self.length
 
-    def __iter__(self):
-        current_node = self.head
-        while current_node:
-            yield current_node.value
-            current_node = current_node.succeeding
+    def delete(self, delete):
+        node = self.head
+        while node:
+            if node.value == delete:
+                if node.prev:
+                    node.prev.succeeding = node.succeeding
+                else:
+                    self.head = node.succeeding
+                if node.succeeding:
+                    node.succeeding.prev = node.prev
+                else:
+                    self.tail = node.prev
+                self.length -= 1
+                break
+            node = node.succeeding

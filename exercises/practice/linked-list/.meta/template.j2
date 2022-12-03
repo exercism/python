@@ -1,0 +1,31 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{% macro test_case(case) -%}
+    {%- set input = case["input"]["operations"] -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        lst = LinkedList()
+        {% for x in input -%}
+            {%- if "push" == x["operation"] -%}
+                lst.push({{ x["value"] }})
+            {%- elif "pop" == x["operation"] and x["expected"] -%}
+                self.assertEqual(lst.pop(), {{ x["expected"] }})
+            {%- elif "pop" == x["operation"] -%}
+                lst.pop()
+            {%- elif "shift" == x["operation"] and x["expected"] -%}
+                self.assertEqual(lst.shift(), {{ x["expected"] }})
+            {%- elif "shift" == x["operation"] -%}
+                lst.shift()
+            {%- elif "unshift" == x["operation"] -%}
+                lst.unshift({{ x["value"] }})
+            {%- elif "delete" == x["operation"] -%}
+                lst.delete({{ x["value"] }})
+            {%- elif "count" == x["operation"] -%}
+                self.assertEqual(len(lst), {{ x["expected"] }})
+            {%- endif %}
+        {% endfor %}
+{%- endmacro %}
+{{ macros.header(["LinkedList"]) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases -%}
+        {{ test_case(case) }}
+    {% endfor %}
