@@ -14,12 +14,12 @@ def answer(question):
     if not question: raise ValueError("syntax error")
     if question.isdigit(): return int(question)
 
-    foundOp = False
+    found_op = False
     for name, op in OPS.items():
         if name in question:
             question = question.replace(name, op)
-            foundOp = True
-    if not foundOp: raise ValueError("unknown operation")
+            found_op = True
+    if not found_op: raise ValueError("unknown operation")
 
     ret = question.split()
     while len(ret) > 1:
