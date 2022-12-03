@@ -1,9 +1,11 @@
 {%- import "generator_macros.j2" as macros with context -%}
 {% macro test_case(case) -%}
     {%- set input = case["input"]["operations"] -%}
+    {%- set last = "" -%}
     def test_{{ case["description"] | to_snake }}(self):
         lst = LinkedList()
         {% for x in input -%}
+            {%- set last = x["operation"] -%}
             {%- if "push" == x["operation"] -%}
                 lst.push({{ x["value"] }})
             {%- elif "pop" == x["operation"] and x["expected"] -%}
@@ -22,6 +24,11 @@
                 self.assertEqual(len(lst), {{ x["expected"] }})
             {%- endif %}
         {% endfor %}
+        
+        {% if case["expected"] and last == "pop" %}
+        hi
+        {% endif %}
+
 {%- endmacro %}
 {{ macros.header(["LinkedList"]) }}
 
@@ -29,3 +36,11 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
         {{ test_case(case) }}
     {% endfor %}
+    {% if additional_cases | length -%}
+
+    # Additional tests for this track
+
+    {% for case in additional_cases -%}
+    {{ test_case(case) }}
+    {% endfor %}
+    {%- endif %}

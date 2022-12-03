@@ -1,0 +1,14 @@
+{
+    "cases": [
+    {
+    "description": "Hi",
+    "property": "list",
+    "input": {
+        "operations": [
+          {
+            "operation": "pop"
+          }
+        ]
+      }, "expected": {"error": "List is empty"}
+  }
+]}

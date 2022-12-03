@@ -166,3 +166,9 @@ class LinkedListTest(unittest.TestCase):
         self.assertEqual(lst.pop(), 107)
         self.assertEqual(lst.pop(), 9)
         self.assertEqual(lst.pop(), 73)
+
+    # Additional tests for this track
+
+    def test_hi(self):
+        lst = LinkedList()
+        lst.pop()
