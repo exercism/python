@@ -627,7 +627,7 @@
       {
         "slug": "resistor-color-trio",
         "name": "Resistor Color Trio",
-        "uuid": "089f06a6-0759-479c-8c00-d699525a1e22",
+        "uuid": "f987a5b7-96f2-49c2-99e8-aef30d23dd58",
         "practices": ["list-methods"],
         "prerequisites": [
           "basics",
