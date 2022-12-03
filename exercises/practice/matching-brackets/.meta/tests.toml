@@ -48,6 +48,9 @@ description = "unpaired and nested brackets"
 [a0205e34-c2ac-49e6-a88a-899508d7d68e]
 description = "paired and wrong nested brackets"
 
+[1d5c093f-fc84-41fb-8c2a-e052f9581602]
+description = "paired and wrong nested brackets but innermost are correct"
+
 [ef47c21b-bcfd-4998-844c-7ad5daad90a8]
 description = "paired and incomplete brackets"
 
