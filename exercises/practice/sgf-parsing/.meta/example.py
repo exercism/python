@@ -47,7 +47,7 @@ def parse(input_string):
     root = None
     current = None
     stack = list(input_string)
-
+    
     if input_string == '()':
         raise ValueError('tree with no nodes')
 
@@ -64,6 +64,10 @@ def parse(input_string):
         try:
             value = ''
             while stack[0] != delimiter:
+                if stack[0] == "\n":
+                    stack[0] = "n"
+                if stack[0] == "\t":
+                    stack[0] = "t"
                 value += pop()
             return value
         except IndexError as error:
