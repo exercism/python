@@ -2155,19 +2155,8 @@
         "slug": "beer-song",
         "name": "Beer Song",
         "uuid": "b7984882-65df-4993-a878-7872c776592a",
-        "practices": ["generators"],
-        "prerequisites": [
-          "basics",
-          "conditionals",
-          "dicts",
-          "lists",
-          "list-methods",
-          "loops",
-          "numbers",
-          "strings",
-          "string-methods",
-          "tuples"
-        ],
+        "practices": [],
+        "prerequisites": [],
         "difficulty": 3,
         "status": "deprecated"
       },
