@@ -1,5 +1,4 @@
 {
-  "blurb": "Search a file for lines matching a regular expression pattern. Return the line number and contents of each matching line.",
   "authors": [
     "behrtam"
   ],
@@ -26,6 +25,7 @@
       ".meta/example.py"
     ]
   },
+  "blurb": "Search a file for lines matching a regular expression pattern. Return the line number and contents of each matching line.",
   "source": "Conversation with Nate Foster.",
   "source_url": "https://www.cs.cornell.edu/Courses/cs3110/2014sp/hw/0/ps0.pdf"
 }

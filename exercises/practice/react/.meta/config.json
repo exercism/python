@@ -1,5 +1,4 @@
 {
-  "blurb": "Implement a basic reactive system.",
   "authors": [
     "cmccandless"
   ],
@@ -19,5 +18,6 @@
     "example": [
       ".meta/example.py"
     ]
-  }
+  },
+  "blurb": "Implement a basic reactive system."
 }

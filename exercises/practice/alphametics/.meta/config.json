@@ -1,5 +1,4 @@
 {
-  "blurb": "Write a function to solve alphametics puzzles.",
   "authors": [
     "behrtam"
   ],
@@ -27,5 +26,6 @@
       ".meta/example.py"
     ]
   },
-  "test_runner": false
+  "test_runner": false,
+  "blurb": "Write a function to solve alphametics puzzles."
 }

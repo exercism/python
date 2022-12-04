@@ -1,5 +1,4 @@
 {
-  "blurb": "Take input text and output it transposed.",
   "authors": [
     "nithin-vijayan"
   ],
@@ -26,6 +25,7 @@
       ".meta/example.py"
     ]
   },
+  "blurb": "Take input text and output it transposed.",
   "source": "Reddit r/dailyprogrammer challenge #270 [Easy].",
   "source_url": "https://www.reddit.com/r/dailyprogrammer/comments/4msu2x/challenge_270_easy_transpose_the_input_text"
 }

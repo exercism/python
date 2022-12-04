@@ -1,12 +1,25 @@
 {
-  "blurb": "Learn about sets by managing the menus and ingredients for your catering company's event.",
-  "icon": "meetup",
-  "authors": ["bethanyg"],
-  "contributors": ["zepam"],
+  "authors": [
+    "bethanyg"
+  ],
+  "contributors": [
+    "zepam"
+  ],
   "files": {
-    "solution": ["sets.py"],
-    "test": ["sets_test.py"],
-    "exemplar": [".meta/exemplar.py"],
-    "editor": ["sets_test_data.py", "sets_categories_data.py"]
-  }
+    "solution": [
+      "sets.py"
+    ],
+    "test": [
+      "sets_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ],
+    "editor": [
+      "sets_test_data.py",
+      "sets_categories_data.py"
+    ]
+  },
+  "icon": "meetup",
+  "blurb": "Learn about sets by managing the menus and ingredients for your catering company's event."
 }

@@ -1,5 +1,4 @@
 {
-  "blurb": "Write a function that returns the earned points in a single toss of a Darts game.",
   "authors": [
     "GascaK"
   ],
@@ -25,5 +24,6 @@
       ".meta/example.py"
     ]
   },
+  "blurb": "Write a function that returns the earned points in a single toss of a Darts game.",
   "source": "Inspired by an exercise created by a professor Della Paolera in Argentina"
 }

@@ -1,5 +1,4 @@
 {
-  "blurb": "Count the rectangles in an ASCII diagram.",
   "authors": [],
   "contributors": [
     "aboutroots",
@@ -23,5 +22,6 @@
     "example": [
       ".meta/example.py"
     ]
-  }
+  },
+  "blurb": "Count the rectangles in an ASCII diagram."
 }
