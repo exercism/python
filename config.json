@@ -2152,6 +2152,26 @@
         "status": "deprecated"
       },
       {
+        "slug": "bottle-song",
+        "name": "Bottle Song",
+        "uuid": "70bec74a-0677-40c9-b9c9-cbcc49a2eae4",
+        "practices": ["generators"],
+        "prerequisites": [
+          "basics",
+          "conditionals",
+          "dicts",
+          "lists",
+          "list-methods",
+          "loops",
+          "numbers",
+          "strings",
+          "string-methods",
+          "tuples"
+        ],
+        "difficulty": 3,
+        "status": "deprecated"
+      },
+      {
         "slug": "trinary",
         "name": "Trinary",
         "uuid": "061a6543-d51d-4619-891b-16f92c6435ca",
