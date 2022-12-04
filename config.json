@@ -997,9 +997,9 @@
         "difficulty": 3
       },
       {
-        "slug": "beer-song",
-        "name": "Beer Song",
-        "uuid": "b7984882-65df-4993-a878-7872c776592a",
+        "slug": "bottle-song",
+        "name": "Bottle Song",
+        "uuid": "70bec74a-0677-40c9-b9c9-cbcc49a2eae4",
         "practices": ["generators"],
         "prerequisites": [
           "basics",
@@ -2152,9 +2152,9 @@
         "status": "deprecated"
       },
       {
-        "slug": "bottle-song",
-        "name": "Bottle Song",
-        "uuid": "70bec74a-0677-40c9-b9c9-cbcc49a2eae4",
+        "slug": "beer-song",
+        "name": "Beer Song",
+        "uuid": "b7984882-65df-4993-a878-7872c776592a",
         "practices": ["generators"],
         "prerequisites": [
           "basics",
