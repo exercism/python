@@ -15,7 +15,7 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
                         "{{ item }}", 
                     {% endfor %}
                 {% else %}
-                    ""
+                
                 {% endif %}
                 {% if input["extra"] %}
                     qualifier="{{ input["extra"]["qualifier"] }}"
