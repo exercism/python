@@ -1,7 +1,7 @@
 {
   "cases": [
     {
-      "description": "sentence without lower bound",
+      "description": "an optional qualifier can be added",
       "property": "proverb",
       "input": {
         "strings": ["nail"],
@@ -10,7 +10,7 @@
       "expected": ["And all for the want of a horseshoe nail."]
     },
     {
-      "description": "sentence without upper bound",
+      "description": "an optional qualifier in the final consequences",
       "property": "proverb",
       "input": {
         "strings": [
