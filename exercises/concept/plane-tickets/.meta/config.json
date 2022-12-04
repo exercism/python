@@ -1,11 +1,21 @@
 {
-  "blurb": "Learn about generators by assigning seats to passengers.",
-  "authors": ["J08K"],
-  "icon": "poker",
-  "contributors": ["BethanyG"],
+  "authors": [
+    "J08K"
+  ],
+  "contributors": [
+    "BethanyG"
+  ],
   "files": {
-    "solution": ["plane_tickets.py"],
-    "test": ["plane_tickets_test.py"],
-    "exemplar": [".meta/exemplar.py"]
-  }
+    "solution": [
+      "plane_tickets.py"
+    ],
+    "test": [
+      "plane_tickets_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
+  },
+  "icon": "poker",
+  "blurb": "Learn about generators by assigning seats to passengers."
 }

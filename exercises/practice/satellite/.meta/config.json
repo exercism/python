@@ -1,5 +1,4 @@
 {
-  "blurb": "Rebuild binary trees from pre-order and in-order traversals.",
   "authors": [
     "AnAccountForReportingBugs"
   ],
@@ -21,5 +20,6 @@
     "example": [
       ".meta/example.py"
     ]
-  }
+  },
+  "blurb": "Rebuild binary trees from pre-order and in-order traversals."
 }

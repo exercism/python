@@ -1,11 +1,22 @@
 {
-  "blurb": "Learn about string methods while improving your little sister's school essay.",
-  "icon": "anagrams",
-  "contributors": ["valentin-p", "bethanyg"],
-  "authors": ["kimolivia"],
+  "authors": [
+    "kimolivia"
+  ],
+  "contributors": [
+    "valentin-p",
+    "bethanyg"
+  ],
   "files": {
-    "solution": ["string_methods.py"],
-    "test": ["string_methods_test.py"],
-    "exemplar": [".meta/exemplar.py"]
-  }
+    "solution": [
+      "string_methods.py"
+    ],
+    "test": [
+      "string_methods_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
+  },
+  "icon": "anagrams",
+  "blurb": "Learn about string methods while improving your little sister's school essay."
 }

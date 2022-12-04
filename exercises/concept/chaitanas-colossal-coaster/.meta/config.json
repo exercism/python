@@ -1,11 +1,23 @@
 {
-  "blurb": "Learn useful list methods helping Chaitana manage the lines for her colossal roller coaster.",
-  "icon": "spiral-matrix",
-  "contributors": ["valentin-p", "pranasziaukas"],
-  "authors": ["mohanrajanr", "BethanyG"],
+  "authors": [
+    "mohanrajanr",
+    "BethanyG"
+  ],
+  "contributors": [
+    "valentin-p",
+    "pranasziaukas"
+  ],
   "files": {
-    "solution": ["list_methods.py"],
-    "test": ["list_methods_test.py"],
-    "exemplar": [".meta/exemplar.py"]
-  }
+    "solution": [
+      "list_methods.py"
+    ],
+    "test": [
+      "list_methods_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
+  },
+  "icon": "spiral-matrix",
+  "blurb": "Learn useful list methods helping Chaitana manage the lines for her colossal roller coaster."
 }

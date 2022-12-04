@@ -1,10 +1,19 @@
 {
-  "blurb": "Learn about strings by helping your little sister with her vocabulary homework.",
-  "icon": "two-fer",
-  "authors": ["aldraco", "bethanyg"],
+  "authors": [
+    "aldraco",
+    "bethanyg"
+  ],
   "files": {
-    "solution": ["strings.py"],
-    "test": ["strings_test.py"],
-    "exemplar": [".meta/exemplar.py"]
-  }
+    "solution": [
+      "strings.py"
+    ],
+    "test": [
+      "strings_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
+  },
+  "icon": "two-fer",
+  "blurb": "Learn about strings by helping your little sister with her vocabulary homework."
 }

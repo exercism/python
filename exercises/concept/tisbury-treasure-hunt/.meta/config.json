@@ -1,10 +1,18 @@
 {
-  "blurb": "Learn about tuples by helping out competitors in the Tisbury Treasure Hunt.",
-  "icon": "tisbury-treasure-hunt",
-  "authors": ["bethanyg"],
+  "authors": [
+    "bethanyg"
+  ],
   "files": {
-    "solution": ["tuples.py"],
-    "test": ["tuples_test.py"],
-    "exemplar": [".meta/exemplar.py"]
-  }
+    "solution": [
+      "tuples.py"
+    ],
+    "test": [
+      "tuples_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
+  },
+  "icon": "tisbury-treasure-hunt",
+  "blurb": "Learn about tuples by helping out competitors in the Tisbury Treasure Hunt."
 }
