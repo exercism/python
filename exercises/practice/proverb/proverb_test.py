@@ -71,14 +71,14 @@ class ProverbTest(unittest.TestCase):
 
     # Track-specific tests
 
-    def test_sentence_without_lower_bound(self):
+    def test_an_optional_qualifier_can_be_added(self):
         input_data = ["nail"]
         self.assertEqual(
             proverb(*input_data, qualifier="horseshoe"),
             ["And all for the want of a horseshoe nail."],
         )
 
-    def test_sentence_without_upper_bound(self):
+    def test_an_optional_qualifier_in_the_final_consequences(self):
         input_data = ["nail", "shoe", "horse", "rider", "message", "battle", "kingdom"]
         self.assertEqual(
             proverb(*input_data, qualifier="horseshoe"),
