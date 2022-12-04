@@ -1,4 +1,4 @@
-def proverb(*rhyme_items, qualifier=None):
+def proverb(*rhyme_items, qualifier):
     print(rhyme_items)
     if not rhyme_items:
         return []

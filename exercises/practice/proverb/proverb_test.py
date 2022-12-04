@@ -12,22 +12,19 @@ from proverb import (
 
 class ProverbTest(unittest.TestCase):
     def test_zero_pieces(self):
-        self.assertEqual(proverb(), [])
+        input_data = []
+        self.assertEqual(proverb(*input_data, qualifier=None), [])
 
     def test_one_piece(self):
+        input_data = ["nail"]
         self.assertEqual(
-            proverb(
-                "nail",
-            ),
-            ["And all for the want of a nail."],
+            proverb(*input_data, qualifier=None), ["And all for the want of a nail."]
         )
 
     def test_two_pieces(self):
+        input_data = ["nail", "shoe"]
         self.assertEqual(
-            proverb(
-                "nail",
-                "shoe",
-            ),
+            proverb(*input_data, qualifier=None),
             [
                 "For want of a nail the shoe was lost.",
                 "And all for the want of a nail.",
@@ -35,12 +32,9 @@ class ProverbTest(unittest.TestCase):
         )
 
     def test_three_pieces(self):
+        input_data = ["nail", "shoe", "horse"]
         self.assertEqual(
-            proverb(
-                "nail",
-                "shoe",
-                "horse",
-            ),
+            proverb(*input_data, qualifier=None),
             [
                 "For want of a nail the shoe was lost.",
                 "For want of a shoe the horse was lost.",
@@ -49,16 +43,9 @@ class ProverbTest(unittest.TestCase):
         )
 
     def test_full_proverb(self):
+        input_data = ["nail", "shoe", "horse", "rider", "message", "battle", "kingdom"]
         self.assertEqual(
-            proverb(
-                "nail",
-                "shoe",
-                "horse",
-                "rider",
-                "message",
-                "battle",
-                "kingdom",
-            ),
+            proverb(*input_data, qualifier=None),
             [
                 "For want of a nail the shoe was lost.",
                 "For want of a shoe the horse was lost.",
@@ -71,13 +58,9 @@ class ProverbTest(unittest.TestCase):
         )
 
     def test_four_pieces_modernized(self):
+        input_data = ["pin", "gun", "soldier", "battle"]
         self.assertEqual(
-            proverb(
-                "pin",
-                "gun",
-                "soldier",
-                "battle",
-            ),
+            proverb(*input_data, qualifier=None),
             [
                 "For want of a pin the gun was lost.",
                 "For want of a gun the soldier was lost.",
@@ -87,24 +70,18 @@ class ProverbTest(unittest.TestCase):
         )
 
     # Track-specific tests
+
     def test_sentence_without_lower_bound(self):
+        input_data = ["nail"]
         self.assertEqual(
-            proverb("nail", qualifier="horseshoe"),
+            proverb(*input_data, qualifier="horseshoe"),
             ["And all for the want of a horseshoe nail."],
         )
 
     def test_sentence_without_upper_bound(self):
+        input_data = ["nail", "shoe", "horse", "rider", "message", "battle", "kingdom"]
         self.assertEqual(
-            proverb(
-                "nail",
-                "shoe",
-                "horse",
-                "rider",
-                "message",
-                "battle",
-                "kingdom",
-                qualifier="horseshoe",
-            ),
+            proverb(*input_data, qualifier="horseshoe"),
             [
                 "For want of a nail the shoe was lost.",
                 "For want of a shoe the horse was lost.",
