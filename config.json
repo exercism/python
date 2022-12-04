@@ -660,8 +660,7 @@
         "practices": ["unpacking-and-multiple-assignment"],
         "prerequisites": ["dicts",
                       "unpacking-and-multiple-assignment"],
-        "difficulty": 2,
-        "status": "wip"
+        "difficulty": 2
       },
       {
         "slug": "yacht",
