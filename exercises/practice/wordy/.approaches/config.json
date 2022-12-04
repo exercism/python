@@ -1,0 +1,15 @@
+{
+  "introduction": {
+    "authors": ["bobahop"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "d643e2b4-daee-422d-b8d3-2cad2f439db5",
+      "slug": "dunder-getattribute",
+      "title": "dunder with __getattribute__",
+      "blurb": "Use dunder methods with __getattribute__.",
+      "authors": ["bobahop"]
+    }
+  ]
+}
