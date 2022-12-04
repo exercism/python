@@ -12,7 +12,7 @@ from proverb import (
 
 class ProverbTest(unittest.TestCase):
     def test_zero_pieces(self):
-        self.assertEqual(proverb(""), [])
+        self.assertEqual(proverb(), [])
 
     def test_one_piece(self):
         self.assertEqual(
