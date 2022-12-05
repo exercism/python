@@ -1006,6 +1006,22 @@
         "difficulty": 3
       },
       {
+        "slug": "killer-sudoku-helper",
+        "name": "Killer Sudoku Helper",
+        "uuid": "7b16fc93-791b-42a9-8aae-1f78fef2f2f3",
+        "practices": ["list-comprehensions"],
+        "prerequisites": [
+          "conditionals",
+          "lists",
+          "list-methods",
+          "loops",
+          "numbers",
+          "strings",
+          "string-methods"
+        ],
+        "difficulty": 3
+      },
+      {
         "slug": "bottle-song",
         "name": "Bottle Song",
         "uuid": "70bec74a-0677-40c9-b9c9-cbcc49a2eae4",
