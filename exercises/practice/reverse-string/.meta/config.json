@@ -1,5 +1,4 @@
 {
-  "blurb": "Reverse a string.",
   "authors": [
     "sjwarner-bp"
   ],
@@ -23,6 +22,7 @@
       ".meta/example.py"
     ]
   },
+  "blurb": "Reverse a string.",
   "source": "Introductory challenge to reverse an input string",
   "source_url": "https://medium.freecodecamp.org/how-to-reverse-a-string-in-javascript-in-3-different-ways-75e4763c68cb"
 }

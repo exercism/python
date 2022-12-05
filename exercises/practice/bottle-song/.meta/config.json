@@ -1,0 +1,19 @@
+{
+  "blurb": "Produce the lyrics to the popular children's repetitive song: Ten Green Bottles.",
+  "authors": ["meatball133", "BethanyG"],
+  "contributors": [
+  ],
+  "files": {
+    "solution": [
+      "bottle_song.py"
+    ],
+    "test": [
+      "bottle_song_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Ten_Green_Bottles"
+}

@@ -1,11 +1,27 @@
 {
-  "blurb": "Learn about comparisons by implementing some Black Jack judging rules.",
-  "authors": ["Ticktakto", "Yabby1997", "limm-jk", "OMEGA-Y", "wnstj2007", "pranasziaukas", "bethanyG"],
-  "icon": "poker",
-  "contributors": ["PaulT89"],
+  "authors": [
+    "Ticktakto",
+    "Yabby1997",
+    "limm-jk",
+    "OMEGA-Y",
+    "wnstj2007",
+    "pranasziaukas",
+    "bethanyG"
+  ],
+  "contributors": [
+    "PaulT89"
+  ],
   "files": {
-    "solution": ["black_jack.py"],
-    "test": ["black_jack_test.py"],
-    "exemplar": [".meta/exemplar.py"]
-  }
+    "solution": [
+      "black_jack.py"
+    ],
+    "test": [
+      "black_jack_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
+  },
+  "icon": "poker",
+  "blurb": "Learn about comparisons by implementing some Black Jack judging rules."
 }

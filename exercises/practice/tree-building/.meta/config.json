@@ -1,5 +1,4 @@
 {
-  "blurb": "Refactor a tree building algorithm.",
   "authors": [
     "clapmyhands"
   ],
@@ -19,5 +18,6 @@
     "example": [
       ".meta/example.py"
     ]
-  }
+  },
+  "blurb": "Refactor a tree building algorithm."
 }

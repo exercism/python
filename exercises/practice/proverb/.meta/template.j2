@@ -1,0 +1,31 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.header(imports=["proverb"]) }}
+{{ "# PLEASE TAKE NOTE: Expected result lists for these test cases use **implicit line joining.**" }}
+{{ "# A new line in a result list below **does not** always equal a new list element." }}
+{{ "# Check comma placement carefully!" }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {# All test cases in this exercise are nested, so use two for loops -#}
+    {%- macro test_case(case) -%}
+        {% set input = case["input"] -%}
+        def test_{{ case["description"] | to_snake }}(self):
+            input_data = {{ input["strings"] }}
+            self.assertEqual(proverb(*input_data,
+                {%- if input["extra"] -%}
+                    qualifier="{{ input["extra"]["qualifier"] }}"
+                {%- else -%}
+                    qualifier=None
+                {%- endif -%}
+                ),{{ case["expected"] }}) 
+    {%- endmacro -%}
+    
+    {% for case in cases -%}
+        {{ test_case(case) }}
+    {% endfor %}
+
+    # Track-specific tests
+
+    {% for cases in additional_cases -%}
+    {{ test_case(cases) }}
+    {% endfor %}
+

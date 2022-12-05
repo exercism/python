@@ -625,6 +625,21 @@
         "difficulty": 2
       },
       {
+        "slug": "resistor-color-trio",
+        "name": "Resistor Color Trio",
+        "uuid": "f987a5b7-96f2-49c2-99e8-aef30d23dd58",
+        "practices": ["list-methods"],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "lists",
+          "numbers",
+          "strings",
+          "comparisons"
+        ],
+        "difficulty": 2
+      },
+      {
         "slug": "word-count",
         "name": "Word Count",
         "uuid": "04316811-0bc3-4377-8ff5-5a300ba41d61",
@@ -636,6 +651,15 @@
           "string-methods",
           "dicts"
         ],
+        "difficulty": 2
+      },
+      {
+        "slug": "proverb",
+        "name": "Proverb",
+        "uuid": "9fd94229-f974-45bb-97ea-8bfe484f6eb3",
+        "practices": ["unpacking-and-multiple-assignment"],
+        "prerequisites": ["dicts",
+                      "unpacking-and-multiple-assignment"],
         "difficulty": 2
       },
       {
@@ -982,9 +1006,9 @@
         "difficulty": 3
       },
       {
-        "slug": "beer-song",
-        "name": "Beer Song",
-        "uuid": "b7984882-65df-4993-a878-7872c776592a",
+        "slug": "bottle-song",
+        "name": "Bottle Song",
+        "uuid": "70bec74a-0677-40c9-b9c9-cbcc49a2eae4",
         "practices": ["generators"],
         "prerequisites": [
           "basics",
@@ -2047,15 +2071,6 @@
         "status": "deprecated"
       },
       {
-        "slug": "proverb",
-        "name": "Proverb",
-        "uuid": "9fd94229-f974-45bb-97ea-8bfe484f6eb3",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "status": "deprecated"
-      },
-      {
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
         "uuid": "105f25ec-7ce2-4797-893e-05e3792ebd91",
@@ -2131,6 +2146,15 @@
         "slug": "strain",
         "name": "Strain",
         "uuid": "b50b29a1-782d-4277-a4d4-23f635fbdaa6",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "status": "deprecated"
+      },
+      {
+        "slug": "beer-song",
+        "name": "Beer Song",
+        "uuid": "b7984882-65df-4993-a878-7872c776592a",
         "practices": [],
         "prerequisites": [],
         "difficulty": 3,

@@ -1,5 +1,4 @@
 {
-  "blurb": "Parsing a Smart Game Format string.",
   "authors": [
     "cmccandless"
   ],
@@ -22,5 +21,6 @@
     "example": [
       ".meta/example.py"
     ]
-  }
+  },
+  "blurb": "Parsing a Smart Game Format string."
 }

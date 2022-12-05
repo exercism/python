@@ -1,5 +1,4 @@
 {
-  "blurb": "Implement run-length encoding and decoding.",
   "authors": [
     "behrtam"
   ],
@@ -25,6 +24,7 @@
       ".meta/example.py"
     ]
   },
+  "blurb": "Implement run-length encoding and decoding.",
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Run-length_encoding"
 }

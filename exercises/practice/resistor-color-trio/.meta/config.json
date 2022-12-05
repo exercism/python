@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "meatball133",
+    "bethanyg"
+  ],
+  "files": {
+    "solution": [
+      "resistor_color_trio.py"
+    ],
+    "test": [
+      "resistor_color_trio_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
+  },
+  "blurb": "Convert color codes, as used on resistors, to a human-readable label.",
+  "source": "Maud de Vries, Erik Schierboom",
+  "source_url": "https://github.com/exercism/problem-specifications/issues/1549"
+}

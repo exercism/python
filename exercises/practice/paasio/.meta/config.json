@@ -1,5 +1,4 @@
 {
-  "blurb": "Report network IO statistics.",
   "authors": [
     "AnAccountForReportingBugs"
   ],
@@ -18,6 +17,7 @@
       ".meta/example.py"
     ]
   },
+  "blurb": "Report network IO statistics.",
   "source": "Brian Matsuo",
   "source_url": "https://github.com/bmatsuo"
 }

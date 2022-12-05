@@ -1,5 +1,4 @@
 {
-  "blurb": "Implement a RESTful API for tracking IOUs.",
   "authors": [
     "cmccandless"
   ],
@@ -23,5 +22,6 @@
     "example": [
       ".meta/example.py"
     ]
-  }
+  },
+  "blurb": "Implement a RESTful API for tracking IOUs."
 }

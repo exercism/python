@@ -1,5 +1,4 @@
 {
-  "blurb": "We are going to do the `Transform` step of an Extract-Transform-Load.",
   "authors": [],
   "contributors": [
     "alirezaghey",
@@ -28,6 +27,7 @@
       ".meta/example.py"
     ]
   },
+  "blurb": "We are going to do the `Transform` step of an Extract-Transform-Load.",
   "source": "Exercise by the JumpstartLab team for students at The Turing School of Software and Design.",
   "source_url": "https://turing.edu"
 }
