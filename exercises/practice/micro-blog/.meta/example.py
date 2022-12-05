@@ -1,2 +1,2 @@
-def truncate(string):
-    return string[:5]
+def truncate(letters):
+    return letters[:5]

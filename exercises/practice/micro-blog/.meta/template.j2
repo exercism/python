@@ -1,6 +1,10 @@
 {%- import "generator_macros.j2" as macros with context -%}
 {% macro test_case(case) -%}
-    def test_some(self):
+    {% if "→" in case["description"] %}
+    def test_german_language_long(self):
+    {% else %}
+    def test_{{case["description"] | to_snake}}(self):
+    {% endif %}
         self.assertEqual({{ case["property"] | to_snake }}("{{case["input"]["phrase"]}}"), 
         "{{case["expected"]}}"
         )

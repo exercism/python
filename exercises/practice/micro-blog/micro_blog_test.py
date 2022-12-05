@@ -8,38 +8,50 @@ from micro_blog import (
 
 
 class MicroBlogTest(unittest.TestCase):
-    def test_some1(self):
+    def test_english_language_short(self):
+
         self.assertEqual(truncate("Hi"), "Hi")
 
-    def test_some2(self):
+    def test_english_language_long(self):
+
         self.assertEqual(truncate("Hello there"), "Hello")
 
-    def test_some3(self):
+    def test_german_language_short_broth(self):
+
         self.assertEqual(truncate("brühe"), "brühe")
 
-    def test_some4(self):
+    def test_german_language_long(self):
+
         self.assertEqual(truncate("Bärteppich"), "Bärte")
 
-    def test_some5(self):
+    def test_bulgarian_language_short_good(self):
+
         self.assertEqual(truncate("Добър"), "Добър")
 
-    def test_some6(self):
+    def test_greek_language_short_health(self):
+
         self.assertEqual(truncate("υγειά"), "υγειά")
 
-    def test_some7(self):
+    def test_maths_short(self):
+
         self.assertEqual(truncate("a=πr²"), "a=πr²")
 
-    def test_some8(self):
+    def test_maths_long(self):
+
         self.assertEqual(truncate("∅⊊ℕ⊊ℤ⊊ℚ⊊ℝ⊊ℂ"), "∅⊊ℕ⊊ℤ")
 
-    def test_some9(self):
+    def test_english_and_emoji_short(self):
+
         self.assertEqual(truncate("Fly 🛫"), "Fly 🛫")
 
-    def test_some10(self):
+    def test_emoji_short(self):
+
         self.assertEqual(truncate("💇"), "💇")
 
-    def test_some11(self):
+    def test_emoji_long(self):
+
         self.assertEqual(truncate("❄🌡🤧🤒🏥🕰😀"), "❄🌡🤧🤒🏥")
 
-    def test_some12(self):
+    def test_royal_flush(self):
+
         self.assertEqual(truncate("🃎🂸🃅🃋🃍🃁🃊"), "🃎🂸🃅🃋🃍")
