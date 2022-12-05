@@ -451,6 +451,21 @@
         "difficulty": 1
       },
       {
+        "slug": "micro-blog",
+        "name": "Micro Blog",
+        "uuid": "09494d98-5a80-482f-bd97-924e4817eab5",
+        "practices": ["sequences"],
+        "prerequisites": [
+          "basics",
+          "conditionals",
+          "lists",
+          "loops",
+          "numbers",
+          "strings"
+        ],
+        "difficulty": 1
+      },
+      {
         "slug": "space-age",
         "name": "Space Age",
         "uuid": "f8303c4d-bbbb-495b-b61b-0f617f7c9a13",
@@ -729,6 +744,7 @@
         ],
         "difficulty": 2
       },
+
       {
         "slug": "phone-number",
         "name": "Phone Number",

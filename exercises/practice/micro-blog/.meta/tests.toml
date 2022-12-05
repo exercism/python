@@ -1,0 +1,46 @@
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
+
+[b927b57f-7c98-42fd-8f33-fae091dc1efc]
+description = "English language short"
+
+[a3fcdc5b-0ed4-4f49-80f5-b1a293eac2a0]
+description = "English language long"
+
+[01910864-8e15-4007-9c7c-ac956c686e60]
+description = "German language short (broth)"
+
+[f263e488-aefb-478f-a671-b6ba99722543]
+description = "German language long (bear carpet → beards)"
+
+[0916e8f1-41d7-4402-a110-b08aa000342c]
+description = "Bulgarian language short (good)"
+
+[bed6b89c-03df-4154-98e6-a61a74f61b7d]
+description = "Greek language short (health)"
+
+[485a6a70-2edb-424d-b999-5529dbc8e002]
+description = "Maths short"
+
+[8b4b7b51-8f48-4fbe-964e-6e4e6438be28]
+description = "Maths long"
+
+[71f4a192-0566-4402-a512-fe12878be523]
+description = "English and emoji short"
+
+[6f0f71f3-9806-4759-a844-fa182f7bc203]
+description = "Emoji short"
+
+[ce71fb92-5214-46d0-a7f8-d5ba56b4cc6e]
+description = "Emoji long"
+
+[5dee98d2-d56e-468a-a1f2-121c3f7c5a0b]
+description = "Royal Flush?"

@@ -1,0 +1,19 @@
+{
+  "blurb": "Given an input string, truncate it to 5 characters.",
+  "authors": [
+    "meatball133",
+    "Bethanyg"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "micro_blog.py"
+    ],
+    "test": [
+      "micro_blog_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
+  }
+}
