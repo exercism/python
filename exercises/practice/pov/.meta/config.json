@@ -1,5 +1,4 @@
 {
-  "blurb": "Reparent a graph on a selected node.",
   "authors": [
     "cmccandless"
   ],
@@ -21,6 +20,7 @@
       ".meta/example.py"
     ]
   },
+  "blurb": "Reparent a graph on a selected node.",
   "source": "Adaptation of exercise from 4clojure",
   "source_url": "https://www.4clojure.com/"
 }

@@ -1,5 +1,4 @@
 {
-  "blurb": "Implement the logic of the hangman game using functional reactive programming.",
   "authors": [
     "junming403"
   ],
@@ -19,5 +18,6 @@
     "example": [
       ".meta/example.py"
     ]
-  }
+  },
+  "blurb": "Implement the logic of the hangman game using functional reactive programming."
 }

@@ -1,5 +1,4 @@
 {
-  "blurb": "Make a chain of dominoes.",
   "authors": [
     "cmccandless"
   ],
@@ -21,5 +20,6 @@
     "example": [
       ".meta/example.py"
     ]
-  }
+  },
+  "blurb": "Make a chain of dominoes."
 }

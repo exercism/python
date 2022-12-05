@@ -1,0 +1,8 @@
+while len(ret) > 1:
+    try:
+        x, op, y, *tail = ret
+        if op not in OPS.values(): raise ValueError("syntax error")
+        ret = [int(x).__getattribute__(op)(int(y)), *tail]
+    except:
+        raise ValueError("syntax error")
+return ret[0]

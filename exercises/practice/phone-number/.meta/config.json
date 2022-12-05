@@ -1,5 +1,4 @@
 {
-  "blurb": "Clean up user-entered phone numbers so that they can be sent SMS messages.",
   "authors": [],
   "contributors": [
     "AnAccountForReportingBugs",
@@ -29,6 +28,7 @@
       ".meta/example.py"
     ]
   },
+  "blurb": "Clean up user-entered phone numbers so that they can be sent SMS messages.",
   "source": "Exercise by the JumpstartLab team for students at The Turing School of Software and Design.",
   "source_url": "https://turing.edu"
 }

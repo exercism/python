@@ -1,5 +1,4 @@
 {
-  "blurb": "Given a decimal number, convert it to the appropriate sequence of events for a secret handshake.",
   "authors": [
     "betegelse"
   ],
@@ -30,6 +29,7 @@
       ".meta/example.py"
     ]
   },
+  "blurb": "Given a decimal number, convert it to the appropriate sequence of events for a secret handshake.",
   "source": "Bert, in Mary Poppins",
   "source_url": "https://www.imdb.com/title/tt0058331/quotes/qt0437047"
 }

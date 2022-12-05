@@ -1,12 +1,24 @@
 {
-  "blurb": "Learn about enums by automating your tedious logging-level tasks.",
-  "icon": "log-levels",
-  "contributors": ["valentin-p"],
-  "authors": ["mohanrajanr"],
+  "authors": [
+    "mohanrajanr"
+  ],
+  "contributors": [
+    "valentin-p"
+  ],
   "files": {
-    "solution": ["enums.py"],
-    "test": ["enums_test.py"],
-    "exemplar": [".meta/exemplar.py"]
+    "solution": [
+      "enums.py"
+    ],
+    "test": [
+      "enums_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
   },
-  "forked_from": ["csharp/logs-logs-logs"]
+  "forked_from": [
+    "csharp/logs-logs-logs"
+  ],
+  "icon": "log-levels",
+  "blurb": "Learn about enums by automating your tedious logging-level tasks."
 }

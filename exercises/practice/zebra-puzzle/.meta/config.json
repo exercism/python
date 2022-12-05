@@ -1,5 +1,4 @@
 {
-  "blurb": "Solve the zebra puzzle.",
   "authors": [
     "sjakobi"
   ],
@@ -24,6 +23,7 @@
       ".meta/example.py"
     ]
   },
+  "blurb": "Solve the zebra puzzle.",
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Zebra_Puzzle"
 }

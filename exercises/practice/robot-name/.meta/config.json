@@ -1,5 +1,4 @@
 {
-  "blurb": "Manage robot factory settings.",
   "authors": [],
   "contributors": [
     "ariso353",
@@ -26,5 +25,6 @@
       ".meta/example.py"
     ]
   },
+  "blurb": "Manage robot factory settings.",
   "source": "A debugging session with Paul Blackwell at gSchool."
 }

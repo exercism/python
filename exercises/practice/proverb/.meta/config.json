@@ -1,7 +1,9 @@
 {
   "blurb": "For want of a horseshoe nail, a kingdom was lost, or so the saying goes. Output the full text of this proverbial rhyme.",
   "authors": [
-    "betegelse"
+    "betegelse",
+    "meatball133",
+    "BethanyG"
   ],
   "contributors": [
     "behrtam",
@@ -26,5 +28,5 @@
     ]
   },
   "source": "Wikipedia",
-  "source_url": "http://en.wikipedia.org/wiki/For_Want_of_a_Nail"
+  "source_url": "https://en.wikipedia.org/wiki/For_Want_of_a_Nail"
 }

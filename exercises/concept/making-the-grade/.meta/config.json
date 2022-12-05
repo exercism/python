@@ -1,11 +1,22 @@
 {
-  "blurb": "Learn about loops by grading and organizing your students exam scores.",
-  "icon": "grep",
-  "authors": ["mohanrajanr", "BethanyG"],
-  "contributors": ["pranasziaukas"],
+  "authors": [
+    "mohanrajanr",
+    "BethanyG"
+  ],
+  "contributors": [
+    "pranasziaukas"
+  ],
   "files": {
-    "solution": ["loops.py"],
-    "test": ["loops_test.py"],
-    "exemplar": [".meta/exemplar.py"]
-  }
+    "solution": [
+      "loops.py"
+    ],
+    "test": [
+      "loops_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
+  },
+  "icon": "grep",
+  "blurb": "Learn about loops by grading and organizing your students exam scores."
 }

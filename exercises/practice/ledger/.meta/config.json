@@ -1,5 +1,4 @@
 {
-  "blurb": "Refactor a ledger printer.",
   "authors": [
     "cmccandless"
   ],
@@ -17,5 +16,6 @@
     "example": [
       ".meta/example.py"
     ]
-  }
+  },
+  "blurb": "Refactor a ledger printer."
 }

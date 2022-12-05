@@ -1,13 +1,26 @@
 {
-  "blurb": "Learn about bools by setting up the rules for the Ghost Gobble arcade game.",
-  "icon": "matching-brackets",
-  "authors": ["neenjaw"],
-  "contributors": ["cmccandless", "bethanyg"],
+  "authors": [
+    "neenjaw"
+  ],
+  "contributors": [
+    "cmccandless",
+    "bethanyg"
+  ],
   "files": {
-    "solution": ["arcade_game.py"],
-    "test": ["arcade_game_test.py"],
-    "exemplar": [".meta/exemplar.py"]
+    "solution": [
+      "arcade_game.py"
+    ],
+    "test": [
+      "arcade_game_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
   },
-  "forked_from": ["elixir/pacman-rules"],
-  "language_versions": ">=3.5"
+  "language_versions": ">=3.5",
+  "forked_from": [
+    "elixir/pacman-rules"
+  ],
+  "icon": "matching-brackets",
+  "blurb": "Learn about bools by setting up the rules for the Ghost Gobble arcade game."
 }
