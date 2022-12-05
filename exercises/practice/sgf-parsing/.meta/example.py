@@ -47,7 +47,6 @@ def parse(input_string):
     root = None
     current = None
     stack = list(input_string)
-    
     if input_string == '()':
         raise ValueError('tree with no nodes')
 
