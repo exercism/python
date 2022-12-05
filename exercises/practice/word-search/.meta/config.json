@@ -1,5 +1,4 @@
 {
-  "blurb": "Create a program to solve a word search puzzle.",
   "authors": [
     "behrtam"
   ],
@@ -23,5 +22,6 @@
     "example": [
       ".meta/example.py"
     ]
-  }
+  },
+  "blurb": "Create a program to solve a word search puzzle."
 }

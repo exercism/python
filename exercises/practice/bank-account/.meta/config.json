@@ -1,5 +1,4 @@
 {
-  "blurb": "Simulate a bank account supporting opening/closing, withdraws, and deposits of money. Watch out for concurrent transactions!",
   "authors": [],
   "contributors": [
     "cmccandless",
@@ -16,5 +15,6 @@
     "example": [
       ".meta/example.py"
     ]
-  }
+  },
+  "blurb": "Simulate a bank account supporting opening/closing, withdraws, and deposits of money. Watch out for concurrent transactions!"
 }

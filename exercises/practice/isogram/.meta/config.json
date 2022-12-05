@@ -1,5 +1,4 @@
 {
-  "blurb": "Determine if a word or phrase is an isogram.",
   "authors": [
     "behrtam"
   ],
@@ -28,6 +27,7 @@
       ".meta/example.py"
     ]
   },
+  "blurb": "Determine if a word or phrase is an isogram.",
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Isogram"
 }

@@ -1,5 +1,4 @@
 {
-  "blurb": "Insert and search for numbers in a binary tree.",
   "authors": [
     "rodrigocam"
   ],
@@ -22,6 +21,7 @@
       ".meta/example.py"
     ]
   },
+  "blurb": "Insert and search for numbers in a binary tree.",
   "source": "Josh Cheek",
   "source_url": "https://twitter.com/josh_cheek"
 }

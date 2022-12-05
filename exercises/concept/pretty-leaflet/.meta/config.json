@@ -1,11 +1,22 @@
 {
-  "blurb": "Learn about string formatting by \"prettifying\" promotional leaflets.",
-  "icon": "scale-generator",
-  "contributors": ["j08k", "BethanyG"],
-  "authors": ["valentin-p"],
+  "authors": [
+    "valentin-p"
+  ],
+  "contributors": [
+    "j08k",
+    "BethanyG"
+  ],
   "files": {
-    "solution": ["string_formatting.py"],
-    "test": ["string_formatting_test.py"],
-    "exemplar": [".meta/exemplar.py"]
-  }
+    "solution": [
+      "string_formatting.py"
+    ],
+    "test": [
+      "string_formatting_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
+  },
+  "icon": "scale-generator",
+  "blurb": "Learn about string formatting by \"prettifying\" promotional leaflets."
 }

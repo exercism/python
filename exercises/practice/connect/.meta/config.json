@@ -1,5 +1,4 @@
 {
-  "blurb": "Compute the result for a game of Hex / Polygon.",
   "authors": [
     "yunchih"
   ],
@@ -21,5 +20,6 @@
     "example": [
       ".meta/example.py"
     ]
-  }
+  },
+  "blurb": "Compute the result for a game of Hex / Polygon."
 }

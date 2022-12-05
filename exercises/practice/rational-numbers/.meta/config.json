@@ -1,5 +1,4 @@
 {
-  "blurb": "Implement rational numbers.",
   "authors": [],
   "contributors": [
     "AnAccountForReportingBugs",
@@ -21,6 +20,7 @@
       ".meta/example.py"
     ]
   },
+  "blurb": "Implement rational numbers.",
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Rational_number"
 }

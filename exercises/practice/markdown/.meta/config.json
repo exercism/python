@@ -1,5 +1,4 @@
 {
-  "blurb": "Refactor a Markdown parser.",
   "authors": [
     "Paul-Ilyin"
   ],
@@ -22,5 +21,6 @@
     "example": [
       ".meta/example.py"
     ]
-  }
+  },
+  "blurb": "Refactor a Markdown parser."
 }

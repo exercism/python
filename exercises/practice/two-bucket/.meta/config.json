@@ -1,5 +1,4 @@
 {
-  "blurb": "Given two buckets of different size, demonstrate how to measure an exact number of liters.",
   "authors": [
     "parthsharma2"
   ],
@@ -25,6 +24,7 @@
       ".meta/example.py"
     ]
   },
+  "blurb": "Given two buckets of different size, demonstrate how to measure an exact number of liters.",
   "source": "Water Pouring Problem",
   "source_url": "https://demonstrations.wolfram.com/WaterPouringProblem/"
 }
