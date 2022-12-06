@@ -2,14 +2,14 @@
 
 A sequence is an ordered, indexable collection of items.
 All sequence types support a common set of operations that include `in`/`not in`, `min()`/`max()`, `<sequence>.index`, `<sequence>.count()` and `<sequence>.len()`.
-`lists` support additional mutable operations such as [slice assignment][<url ref here>], `.append()`, `.extend()`, `.reverse()`, and `.copy()`.
+`lists` and `bytearray` support additional mutable operations such as [slice assignment][<url ref here>], `.append()`, `.extend()`, `.reverse()`, and `.copy()`.
 
 All sequences can be indexed into using `<sequence>[<index number>]`, copied in whole or in part using `<sequence>[<start_index>:<stop_index>:<step>]`(\_a full copy can be made with `<sequence>[:]`), and iterated over using the `for item in <sequence>` construct.
 `for index, item in enumerate(<sequence>)` can be used when both the element index and the element value are needed.
 
-Pythons `list`, `tuple`, `str`, `byte`, and `range` types all belong to this wider sequence type.
+Pythons `list`, `tuple`, `str`, `bytes`, `bytearray` and `range` types all belong to this wider sequence type.
 In the case of `str`, the “collection” is made up of unicode code points.
-In the case of `byte`, bytes.
+In the case of `bytes`, bytes.
 Ranges are “collections” of numbers conforming to a `start:stop:step` rule.
 
 ## Common Sequence operations
@@ -71,7 +71,14 @@ True
 3
 ```
 
+!!! Add that a nested sequence will not return the count of elements within sequences
+
 ### min() and max()
+
+```exercism/caution
+Using `max()/max()` on an `string` is tricky since it compares via unicode code point value.
+Therefore when dealing with characters outside of the English alphabet, the result may not be what you expect.
+```
 
 `min()` gives the minimum value in a sequence.
 
@@ -117,11 +124,6 @@ Traceback (most recent call last):
 TypeError: '>' not supported between instances of 'str' and 'int'
 ```
 
-```exercism/caution
-Using `max()/max()` on an `string` is tricky since it compares via acsii values.
-Therefore when dealing with characters outside of the english alphabet, the result may not be what you expect.
-```
-
 ### Reverse a sequence
 
 Using slicing with steps allows reversing a sequence.
@@ -137,3 +139,29 @@ This is a very common operation.
 >>> name[::-1]
 'dlazileD'
 ```
+
+NOTES:
+
+Time table, tickets, ads.
+Models of trams
+
+```python
+
+def time_table(table_of_time, week_day, start, stop):
+    return table_of_time[week_day][start:stop]
+
+print(time_table(("8:00", "9:00"),["8:00", "9:00"] ))
+```
+
+Fastest route (last exercise)
+
+Fewest stops or transfers
+
+Ad function
+
+`min()`/`max()`, yes
+`<sequence>.index`, yes
+`<sequence>.count()`, maybe
+`<sequence>.len()`, maybe
+`slicing`, yes
+`slice assignment`
