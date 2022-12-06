@@ -5,34 +5,34 @@
         {%- set inputs = case["input"]["operations"] -%}
         {%- if case["expected"] and inputs|length > 1 -%}
             {%- set last = inputs[-1]["operation"] -%}
-            {% set inputs = inputs[:-1] %}
+            {%- set inputs = inputs[:-1] -%}
         {%- elif case["expected"] -%}
-            {% set last = inputs[-1]["operation"] %}
-            {% set inputs = [{"operation": "None"}] %}
-        {%- endif %}
+            {%- set last = inputs[-1]["operation"] -%}
+            {%- set inputs = [{"operation": "None"}] -%}
+        {%- endif -%}
         {% for input in inputs -%}
             {%- set operation = input["operation"] -%}
             {%- set value = input["value"] -%}
-            {%- set expected = input["expected"] -%}
-            {%- if operation and value -%}
-                lst.{{ operation }}({{ value }})
-            {%- elif operation and expected -%}
-                {%- if operation == "count" -%}
-                    self.assertEqual(len(lst), {{ expected }})
-                {%- else -%}
-                    self.assertEqual(lst.{{ operation }}(), {{ expected }})
-                {%- endif -%}
-            {%- elif operation == "count" -%}
-                self.assertEqual(len(lst), {{ expected }})
-            {%- else  -%}
-                lst.{{ operation }}()
+            {%- set expected = input["expected"] %}
+            {%- if operation and value %}
+        lst.{{ operation }}({{ value }})
+            {%- elif operation and expected %}
+                {%- if operation == "count" %}
+        self.assertEqual(len(lst), {{ expected }})
+                {%- else %}
+        self.assertEqual(lst.{{ operation }}(), {{ expected }})
+                {%- endif %}
+            {%- elif operation == "count" %}
+        self.assertEqual(len(lst), {{ expected }})
+            {%- else %}
+        lst.{{ operation }}()
             {%- endif %}
-        {% endfor -%}
-        {%- if case["expected"] and last -%}
+        {%- endfor %}
+        {% if case["expected"] and last %}
         with self.assertRaises(ValueError) as err:
             lst.pop()
-        self.assertEqual(type(err.exception), IndexError)
-        self.assertEqual(err.exception.args[0], "{{case["expected"]["error"]}}")
+            self.assertEqual(type(err.exception), IndexError)
+            self.assertEqual(err.exception.args[0], "{{case["expected"]["error"]}}")
         {% endif %}
 
 {%- endmacro %}
