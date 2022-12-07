@@ -29,11 +29,11 @@
         },
         {
           "operation": "pop",
-          "expected": 5
+          "expected": 1
         },
         {
           "operation": "pop",
-          "expected": 1
+          "expected": 5
         },
         {
           "operation": "pop"
@@ -72,11 +72,11 @@
             },
             {
                 "operation": "pop",
-                "expected": 5
+                "expected": 1
             },
             {
                 "operation": "shift",
-                "expected": 1
+                "expected": 5
             },
             {
                 "operation": "shift"

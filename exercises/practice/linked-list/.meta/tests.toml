@@ -62,6 +62,7 @@ description = "deletes the second of two elements"
 
 [7b420958-f285-4922-b8f9-10d9dcab5179]
 description = "delete does not modify the list if the element is not found"
+include = false
 
 [7e04828f-6082-44e3-a059-201c63252a76]
 description = "deletes only the first occurrence"
