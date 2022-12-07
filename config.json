@@ -1344,6 +1344,22 @@
         "difficulty": 4
       },
       {
+        "slug": "killer-sudoku-helper",
+        "name": "Killer Sudoku Helper",
+        "uuid": "7b16fc93-791b-42a9-8aae-1f78fef2f2f3",
+        "practices": ["list-comprehensions"],
+        "prerequisites": [
+          "conditionals",
+          "lists",
+          "list-methods",
+          "loops",
+          "numbers",
+          "strings",
+          "string-methods"
+        ],
+        "difficulty": 4
+      },
+      {
         "slug": "tournament",
         "name": "Tournament",
         "uuid": "49377a3f-38ba-4d61-b94c-a54cfc9034d0",
