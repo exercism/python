@@ -34,8 +34,7 @@ def response(hey_bob):
     if is_shout:
         if is_question:
             return "Calm down, I know what I'm doing!"
-        else:
-            return 'Whoa, chill out!'
+        return 'Whoa, chill out!'
     if is_question:
         return 'Sure.'
     return 'Whatever.'
