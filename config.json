@@ -1248,14 +1248,6 @@
         "difficulty": 3
       },
       {
-        "slug": "diffie-hellman",
-        "name": "Diffie-Hellman",
-        "uuid": "92e2d5f8-7d8a-4e81-a55c-52fa6be80c74",
-        "practices": ["numbers"],
-        "prerequisites": ["basics", "bools", "numbers"],
-        "difficulty": 3
-      },
-      {
         "slug": "connect",
         "name": "Connect",
         "uuid": "5a038ad4-65c7-4c99-9916-faebb4f39b79",
@@ -2196,6 +2188,15 @@
         "slug": "beer-song",
         "name": "Beer Song",
         "uuid": "b7984882-65df-4993-a878-7872c776592a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "status": "deprecated"
+      },
+      {
+        "slug": "diffie-hellman",
+        "name": "Diffie-Hellman",
+        "uuid": "92e2d5f8-7d8a-4e81-a55c-52fa6be80c74",
         "practices": [],
         "prerequisites": [],
         "difficulty": 3,
