@@ -23,6 +23,8 @@ class LinkedList:
 
     def pop(self):
         node = self.tail
+        if self.length == 0:
+            raise IndexError("List is empty")
         if node is None or node.prev is None:
             self.head = self.tail = None
         else:
@@ -32,6 +34,8 @@ class LinkedList:
         return node.value
 
     def shift(self):
+        if self.length == 0:
+            raise IndexError("List is empty")
         node = self.head
         if node is None or node.succeeding is None:
             self.head = self.tail = None
@@ -55,6 +59,7 @@ class LinkedList:
         return self.length
 
     def delete(self, delete):
+        found = False
         node = self.head
         while node:
             if node.value == delete:
@@ -66,6 +71,9 @@ class LinkedList:
                     node.succeeding.prev = node.prev
                 else:
                     self.tail = node.prev
+                found = True
                 self.length -= 1
                 break
             node = node.succeeding
+        if not found:
+            raise ValueError("Value not found")
