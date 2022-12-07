@@ -68,17 +68,13 @@ class LinkedListTest(unittest.TestCase):
         self.assertEqual(len(lst), 1)
         lst.unshift(43)
         self.assertEqual(len(lst), 2)
-        lst.shift()
         self.assertEqual(len(lst), 1)
-        lst.pop()
         self.assertEqual(len(lst), 0)
 
     def test_popping_to_empty_doesn_t_break_the_list(self):
         lst = LinkedList()
         lst.push(41)
         lst.push(59)
-        lst.pop()
-        lst.pop()
         lst.push(47)
         self.assertEqual(len(lst), 1)
         self.assertEqual(lst.pop(), 47)
@@ -87,8 +83,6 @@ class LinkedListTest(unittest.TestCase):
         lst = LinkedList()
         lst.push(41)
         lst.push(59)
-        lst.shift()
-        lst.shift()
         lst.push(47)
         self.assertEqual(len(lst), 1)
         self.assertEqual(lst.shift(), 47)
@@ -166,3 +160,57 @@ class LinkedListTest(unittest.TestCase):
         self.assertEqual(lst.pop(), 107)
         self.assertEqual(lst.pop(), 9)
         self.assertEqual(lst.pop(), 73)
+
+    # Additional tests for this track
+    def test_using_pop_raises_an_error_if_the_list_is_empty(self):
+        lst = LinkedList()
+        with self.assertRaises(IndexError) as err:
+            lst.pop()
+            self.assertEqual(type(err.exception), IndexError)
+            self.assertEqual(err.exception.args[0], "List is empty")
+
+    def test_can_return_with_pop_and_then_raise_an_error_if_empty(self):
+        lst = LinkedList()
+        lst.push(1)
+        lst.unshift(5)
+        self.assertEqual(lst.pop(), 5)
+        self.assertEqual(lst.pop(), 1)
+        with self.assertRaises(IndexError) as err:
+            lst.pop()
+            self.assertEqual(type(err.exception), IndexError)
+            self.assertEqual(err.exception.args[0], "List is empty")
+
+    def test_using_shift_raises_an_error_if_the_list_is_empty(self):
+        lst = LinkedList()
+        with self.assertRaises(IndexError) as err:
+            lst.shift()
+            self.assertEqual(type(err.exception), IndexError)
+            self.assertEqual(err.exception.args[0], "List is empty")
+
+    def test_can_return_with_shift_and_then_raise_an_error_if_empty(self):
+        lst = LinkedList()
+        lst.push(1)
+        lst.unshift(5)
+        self.assertEqual(lst.pop(), 5)
+        self.assertEqual(lst.shift(), 1)
+        with self.assertRaises(IndexError) as err:
+            lst.shift()
+            self.assertEqual(type(err.exception), IndexError)
+            self.assertEqual(err.exception.args[0], "List is empty")
+
+    def test_using_delete_raises_an_error_if_the_list_is_empty(self):
+        lst = LinkedList()
+        with self.assertRaises(IndexError) as err:
+            lst.delete()
+            self.assertEqual(type(err.exception), IndexError)
+            self.assertEqual(err.exception.args[0], "Value not found")
+
+    def test_using_delete_raises_an_error_if_the_it_is_not_found(self):
+        lst = LinkedList()
+        lst.push(5)
+        lst.push(7)
+        self.assertEqual(lst.pop(), 7)
+        with self.assertRaises(ValueError) as err:
+            lst.pop()
+            self.assertEqual(type(err.exception), ValueError)
+            self.assertEqual(err.exception.args[0], "Value not found")
