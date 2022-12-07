@@ -200,9 +200,9 @@ class LinkedListTest(unittest.TestCase):
 
     def test_using_delete_raises_an_error_if_the_list_is_empty(self):
         lst = LinkedList()
-        with self.assertRaises(IndexError) as err:
+        with self.assertRaises(ValueError) as err:
             lst.delete()
-            self.assertEqual(type(err.exception), IndexError)
+            self.assertEqual(type(err.exception), ValueError)
             self.assertEqual(err.exception.args[0], "Value not found")
 
     def test_using_delete_raises_an_error_if_the_it_is_not_found(self):

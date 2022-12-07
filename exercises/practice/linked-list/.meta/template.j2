@@ -30,11 +30,18 @@
             {%- elif operation == "count" %}
         self.assertEqual(len(lst), {{ expected }})
             {%- elif case["expected"]["error"] %}
+                {%- if final == "pop" or final == "shift" %}
         with self.assertRaises(IndexError) as err:
             lst.{{ case["input"]["operations"][-1]["operation"] }}()
             self.assertEqual(type(err.exception), IndexError)
             self.assertEqual(err.exception.args[0], "{{ case["expected"]["error"] }}")
+                {% elif final == "delete" %}
+        with self.assertRaises(ValueError) as err:
+            lst.{{ case["input"]["operations"][-1]["operation"] }}()
+            self.assertEqual(type(err.exception), ValueError)
+            self.assertEqual(err.exception.args[0], "{{ case["expected"]["error"] }}")
             {%- endif %}
+            {%- endif  %}
         {%- endfor %}
     {%- if error_case %}
         {%- if final == "pop" or final == "shift" %}
