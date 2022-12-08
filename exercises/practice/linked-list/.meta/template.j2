@@ -3,15 +3,15 @@
     def test_{{ case["description"] | to_snake }}(self):
         lst = LinkedList()
         {%- set inputs = case["input"]["operations"] -%}
+        {%- if case["expected"] -%}
+            {%- set error_case = true -%}
+            {%- set error_msg =  case["expected"]["error"] -%}
+            {%- set error_operation = inputs[-1]["operation"] -%}
+        {% endif %}
         {%- if case["expected"] and inputs|length > 1 -%}
             {%- set final = inputs[-1]["operation"] -%}
             {%- set inputs = inputs[:-1] -%}
-            {%- if case["expected"]["error"] -%}
-                {%- set error_case = true -%}
-                {%- set error_msg =  case["expected"]["error"] -%}
-                {%- set error_operation = inputs[-1]["operation"] -%}
-            {% endif %}
-        {%- elif case["expected"] and not error_case -%}
+        {%- elif case["expected"] -%}
             {%- set final = inputs[-1]["operation"] -%}
             {%- set inputs = [{"operation": "None"}] -%}
         {%- endif -%}
@@ -33,18 +33,6 @@
         lst.{{ operation }}({{ value }})
             {%- elif operation == "count" %}
         self.assertEqual(len(lst), {{ expected }})
-            {%- elif case["expected"]["error"] %}
-                {%- if final == "pop" or final == "shift" %}
-        with self.assertRaises(IndexError) as err:
-            lst.{{ case["input"]["operations"][-1]["operation"] }}()
-            self.assertEqual(type(err.exception), IndexError)
-            self.assertEqual(err.exception.args[0], "{{ error_msg }}")
-                {%- elif final == "delete" %}
-        with self.assertRaises(ValueError) as err:
-            lst.{{ case["input"]["operations"][-1]["operation"] }}({{ value if value else 0 }})
-            self.assertEqual(type(err.exception), ValueError)
-            self.assertEqual(err.exception.args[0], "{{ error_msg }}")
-            {%- endif %}
         {%- endif  %}
     {%- endfor %}
     {%- if error_case %}
