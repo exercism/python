@@ -68,13 +68,17 @@ class LinkedListTest(unittest.TestCase):
         self.assertEqual(len(lst), 1)
         lst.unshift(43)
         self.assertEqual(len(lst), 2)
+        lst.shift()
         self.assertEqual(len(lst), 1)
+        lst.pop()
         self.assertEqual(len(lst), 0)
 
     def test_popping_to_empty_doesn_t_break_the_list(self):
         lst = LinkedList()
         lst.push(41)
         lst.push(59)
+        lst.pop()
+        lst.pop()
         lst.push(47)
         self.assertEqual(len(lst), 1)
         self.assertEqual(lst.pop(), 47)
@@ -83,6 +87,8 @@ class LinkedListTest(unittest.TestCase):
         lst = LinkedList()
         lst.push(41)
         lst.push(59)
+        lst.shift()
+        lst.shift()
         lst.push(47)
         self.assertEqual(len(lst), 1)
         self.assertEqual(lst.shift(), 47)
@@ -143,12 +149,6 @@ class LinkedListTest(unittest.TestCase):
         self.assertEqual(len(lst), 1)
         self.assertEqual(lst.pop(), 97)
 
-    def test_delete_does_not_modify_the_list_if_the_element_is_not_found(self):
-        lst = LinkedList()
-        lst.push(89)
-        lst.delete(103)
-        self.assertEqual(len(lst), 1)
-
     def test_deletes_only_the_first_occurrence(self):
         lst = LinkedList()
         lst.push(73)
@@ -173,8 +173,8 @@ class LinkedListTest(unittest.TestCase):
         lst = LinkedList()
         lst.push(1)
         lst.unshift(5)
-        self.assertEqual(lst.pop(), 5)
         self.assertEqual(lst.pop(), 1)
+        self.assertEqual(lst.pop(), 5)
         with self.assertRaises(IndexError) as err:
             lst.pop()
             self.assertEqual(type(err.exception), IndexError)
@@ -191,8 +191,8 @@ class LinkedListTest(unittest.TestCase):
         lst = LinkedList()
         lst.push(1)
         lst.unshift(5)
-        self.assertEqual(lst.pop(), 5)
-        self.assertEqual(lst.shift(), 1)
+        self.assertEqual(lst.pop(), 1)
+        self.assertEqual(lst.shift(), 5)
         with self.assertRaises(IndexError) as err:
             lst.shift()
             self.assertEqual(type(err.exception), IndexError)
@@ -201,7 +201,7 @@ class LinkedListTest(unittest.TestCase):
     def test_using_delete_raises_an_error_if_the_list_is_empty(self):
         lst = LinkedList()
         with self.assertRaises(ValueError) as err:
-            lst.delete()
+            lst.delete(0)
             self.assertEqual(type(err.exception), ValueError)
             self.assertEqual(err.exception.args[0], "Value not found")
 
@@ -211,6 +211,6 @@ class LinkedListTest(unittest.TestCase):
         lst.push(7)
         self.assertEqual(lst.pop(), 7)
         with self.assertRaises(ValueError) as err:
-            lst.pop()
+            lst.delete(0)
             self.assertEqual(type(err.exception), ValueError)
             self.assertEqual(err.exception.args[0], "Value not found")
