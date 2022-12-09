@@ -103,7 +103,7 @@
   },
   {
     "uuid": "f7f9d2dc-be1b-4f42-be2e-c29980ce0823",
-    "description": "Using delete raises an error if the it is not found",
+    "description": "Using delete raises an error if the value is not found",
     "property": "list",
     "input": {
         "operations": [

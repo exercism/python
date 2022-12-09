@@ -12,8 +12,8 @@ You might also find it useful to implement a special `iter` method for iteration
 Unlike the core exercise, we will be testing error conditions by calling `pop` and `shift` on empty `LinkedLists`, so you will need to `raise` errors appropriately.
 
 Finally, we would like you to implement `delete` in addition to the methods outlined above.
-`delete` will take one argument, which is the vaule to be removed from the linked list.
-If the value appears more than once, only the **first** occurance should be removed.
+`delete` will take one argument, which is the value to be removed from the linked list.
+If the value appears more than once, only the **first** occurrence should be removed.
 
 <br>
 
@@ -21,7 +21,7 @@ If the value appears more than once, only the **first** occurance should be remo
 
 Sometimes it is necessary to [raise an exception][raising]. When you do this, you should always include a **meaningful error message** to indicate what the source of the error is. This makes your code more readable and helps significantly with debugging. For situations where you know that the error source will be a certain type, you can choose to raise one of the [built in error types][error types], but should still include a meaningful message.
 
-This particular exercise requires that you use the [raise statement][raise] to "throw" a `ValueError` when a node value being `delet()`-ed is not found in the linked list.  Additionally, an `IndexError` should be thrown if there are no nodes left to `pop()`. The tests will only pass if you both `raise` these `exceptions` and include messages with them.
+This particular exercise requires that you use the [raise statement][raise] to "throw" a `ValueError` when a node value being `delete()`-ed is not found in the linked list.  Additionally, an `IndexError` should be thrown if there are no nodes left to `pop()`. The tests will only pass if you both `raise` these `exceptions` and include messages with them.
 
 To raise a `ValueError` with a message, write the message as an argument to the `exception` type:
 
