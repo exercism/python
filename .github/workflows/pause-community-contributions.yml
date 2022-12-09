@@ -10,7 +10,6 @@ on:
     paths-ignore:
       - 'exercises/*/*/.approaches/**'
       - 'exercises/*/*/.articles/**'
-  workflow_dispatch:
 
 permissions:
   issues: write
@@ -22,3 +21,5 @@ jobs:
     uses: exercism/github-actions/.github/workflows/community-contributions.yml@main
     with:
       forum_category: python
+    secrets:
+      github_membership_token: ${{ secrets.COMMUNITY_CONTRIBUTIONS_WORKFLOW_TOKEN }}
