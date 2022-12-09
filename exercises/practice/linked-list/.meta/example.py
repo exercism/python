@@ -40,9 +40,7 @@ class LinkedList:
                 found = True
                 self.length -= 1
                 break
-
             node = node.succeeding
-
         if not found:
             raise ValueError("Value not found")
 
@@ -67,9 +65,7 @@ class LinkedList:
         else:
             self.tail = self.tail.prev
             self.tail.succeeding = None
-
         self.length -= 1
-        print(self.length)
 
         return node.value
 
