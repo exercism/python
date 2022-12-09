@@ -19,8 +19,6 @@
             {%- set operation = input["operation"] -%}
             {%- set value = input["value"] -%}
             {%- set expected = input["expected"] %}
-            {%- set error_msg =  case["expected"]["error"] -%}
-            {%- set error_operation = inputs[-1]["operation"] -%}
             {%- if operation and value %}
         lst.{{ operation }}({{ value }})
             {%- elif operation and expected %}
