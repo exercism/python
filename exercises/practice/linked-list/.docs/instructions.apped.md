@@ -9,10 +9,11 @@ Your `Node` class should keep track of its value, as well as which other nodes p
 Your `push`, `pop`, `shift`, `unshift`, and the special method for `len` should be implemented in the `LinkedList` class.
 You might also find it useful to implement a special `iter` method for iteration.
 
+Unlike the core exercise, we will be testing error conditions by calling `pop` and `shift` on empty `LinkedLists`, so you will need to `raise` errors appropriately.
 
-In addition to the methods outlined above, we also ask that you implement `delete`.
+Finally, we would like you to implement `delete` in addition to the methods outlined above.
 `delete` will take one argument, which is the vaule to be removed from the linked list.
-If the value appears more than once, the **first** occurance should be removed.
+If the value appears more than once, only the **first** occurance should be removed.
 
 <br>
 
