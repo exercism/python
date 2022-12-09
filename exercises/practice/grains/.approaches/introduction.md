@@ -1,7 +1,7 @@
 # Introduction
 
 There are various idiomatic approaches to solve Grains.
-You can use [bit shifting][bit-shifting] to calculate the number on grains on a square.
+You can use [bit shifting][bit-shifting] to calculate the number of grains on a square.
 Or you can use [exponentiation][exponentiation].
 Another approach is to use [`pow`][pow].
 
