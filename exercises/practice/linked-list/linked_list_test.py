@@ -205,7 +205,7 @@ class LinkedListTest(unittest.TestCase):
             self.assertEqual(type(err.exception), ValueError)
             self.assertEqual(err.exception.args[0], "Value not found")
 
-    def test_using_delete_raises_an_error_if_the_it_is_not_found(self):
+    def test_using_delete_raises_an_error_if_the_value_is_not_found(self):
         lst = LinkedList()
         lst.push(5)
         lst.push(7)
