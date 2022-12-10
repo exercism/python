@@ -1255,8 +1255,6 @@
         "prerequisites": [
           "basics",
           "conditionals",
-          "functions",
-          "function-arguments",
           "lists",
           "numbers"
         ],
