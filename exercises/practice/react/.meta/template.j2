@@ -1,0 +1,62 @@
+{%- import "generator_macros.j2" as macros with context -%}
+from functools import partial
+{% macro test_case(case) -%}
+    {%- set input = case["input"] -%}
+    {%- set callback = [] -%}
+    {%- for operation in input["operations"] -%}
+        {%- if operation["type"] == "add_callback" -%}
+            {% set callback = callback.append(operation["name"]) %}
+        {%- endif -%}
+    {%- endfor -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        {%- for cell in input["cells"] -%}
+            {%- if cell["type"] == "input" %}
+        {{ cell["name"] }} = InputCell({{ cell["initial_value"] }})
+            {%- elif cell["type"] == "compute" -%}
+                {%- if "if" in cell["compute_function"] %}
+        output = ComputeCell([input], lambda inputs: 111 if inputs[0] < 3 else 222)
+                {%- else %}
+        {{ cell["name"] }} = ComputeCell([{%- for input in cell["inputs"] -%}{{ input }},{%- endfor -%}], lambda inputs: {{ cell["compute_function"] }})
+                {%- endif -%}
+            {%- endif -%}
+        {%- endfor -%}
+        {%- if callback -%}
+        {%- for _ in callback %}
+        cb{{ loop.index0 +1 }}_observer = []
+        {%- endfor -%}
+        {%- endif %}
+        {% for sub_callback in callback -%}
+        {{ sub_callback }} = self.callback_factory(cb{{ loop.index0 + 1 }}_observer)
+        {% endfor -%}
+        {%- for operation in input["operations"] -%}
+            {%- if operation["type"] == "add_callback" or  operation["type"] == "remove_callback" -%}
+                {{ operation["cell"] }}.{{ operation["type"] }}({{ operation["name"] }})
+            {%- elif operation["type"] == "expect_cell_value" -%}
+                self.assertEqual({{ operation["cell"] }}.value, {{ operation["value"] }})
+            {%- elif operation["type"] == "set_value" -%}
+                {{ operation["cell"] }}.value = {{ operation["value"] }}
+                {%- if operation["expect_callbacks_not_to_be_called"] %}
+                    {%- if callback | length == 3 %}
+        self.assertEqual(len(cb{{ operation["expect_callbacks_not_to_be_called"][0][-1] }}_observer), 1)
+                    {%- else %}
+        self.assertEqual(cb{{ operation["expect_callbacks_not_to_be_called"][0][-1] }}_observer, [])
+                    {%- endif %}
+                {%- endif -%}
+                {%- for exp_callback in operation["expect_callbacks"] %}
+        self.assertEqual(cb{{ exp_callback[-1] }}_observer[-1], {{ operation["expect_callbacks"][exp_callback] }})
+                {%- endfor -%}
+            {%- endif %}
+        {% endfor -%}
+{%- endmacro %}
+{{ macros.header(["InputCell", "ComputeCell"])}}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases -%}
+        {{ test_case(case) }}
+    {% endfor %}
+
+     # Utility functions.
+    def callback_factory(self, observer):
+        def callback(observer, value):
+            observer.append(value)
+        return partial(callback, observer)
