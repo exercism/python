@@ -594,6 +594,19 @@
         "difficulty": 2
       },
       {
+        "slug": "square-root",
+        "name": "Square Root",
+        "uuid": "c32f994a-1080-4f05-bf88-051975a75d64",
+        "practices": ["number"],
+        "prerequisites": [
+          "basics",
+          "number",
+          "conditionals",
+          "loops"
+        ],
+        "difficulty": 2
+      },
+      {
         "slug": "scrabble-score",
         "name": "Scrabble Score",
         "uuid": "d081446b-f26b-41a2-ab7f-dd7f6736ecfe",
