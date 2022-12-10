@@ -1,0 +1,39 @@
+{%- import "generator_macros.j2" as macros with context -%}
+import sys
+{{ macros.header() }}
+
+TRIANGLE = [
+[1],
+[1, 1],
+[1, 2, 1],
+[1, 3, 3, 1],
+[1, 4, 6, 4, 1],
+[1, 5, 10, 10, 5, 1],
+[1, 6, 15, 20, 15, 6, 1],
+[1, 7, 21, 35, 35, 21, 7, 1],
+[1, 8, 28, 56, 70, 56, 28, 8, 1],
+[1, 9, 36, 84, 126, 126, 84, 36, 9, 1]
+]
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+{%- for case in cases %}
+    def test_{{ case["description"] | to_snake }}(self):
+        self.assertEqual({{ case["property"] }}({{ case["input"]["count"] }}), TRIANGLE[:{{ case["input"]["count"] }}])
+{% endfor %}
+
+# Additional tests for this track
+{%- for case in additional_cases %}
+    def test_{{ case["description"] | to_snake }}(self):
+    {%- if case is error_case %}
+        with self.assertRaises({{ case["expected"]["type"] }}) as err:
+        {%- if case["input"]["count"] == "OVERFLOW" %}
+            rows(sys.getrecursionlimit() + 10)
+            self.assertEqual(type(err.exception), RecursionError)
+            self.assertEqual(err.exception.args[0][:32], "maximum recursion depth exceeded")
+        {%- else %}
+            rows(-1)
+            self.assertEqual(type(err.exception), ValueError)
+            self.assertEqual(err.exception.args[0], "number of rows is negative")
+        {%- endif %}
+    {%- endif %}
+{% endfor %}

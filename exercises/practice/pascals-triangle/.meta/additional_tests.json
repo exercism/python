@@ -1,0 +1,26 @@
+{
+  "cases": [
+    {
+      "description": "negative rows are invalid",
+      "property": "rows",
+      "input": {
+        "count": -1
+      },
+      "expected": {
+        "error": "number of rows is negative",
+        "type": "ValueError"
+      }
+    },
+    {
+      "description": "solution is recursive",
+      "property": "rows",
+      "input": {
+        "count": "OVERFLOW"
+      },
+      "expected": {
+        "error": "maximum recursion depth exceeded",
+        "type": "RecursionError"
+      }
+    }
+  ]
+}

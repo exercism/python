@@ -1,12 +1,8 @@
-def rows(row_count):
+def rows(row_count, previous_row=[1]):
     if row_count < 0:
-        return None
+        raise ValueError("number of rows is negative")
     elif row_count == 0:
         return []
-    row_list = []
-    for idx in range(row_count):
-        ronald = [1]
-        for edx in range(idx):
-            ronald.append(sum(row_list[-1][edx:edx+2]))
-        row_list.append(ronald)
-    return row_list
+    temp_row = previous_row + [0]
+    new_row = list(map(sum, zip(temp_row, temp_row[::-1])))
+    return [previous_row] + rows(row_count - 1, new_row)

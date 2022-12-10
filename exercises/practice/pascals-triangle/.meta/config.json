@@ -1,7 +1,8 @@
 {
   "blurb": "Compute Pascal's triangle up to a given number of rows.",
   "authors": [
-    "betegelse"
+    "betegelse",
+    "PaulT89"
   ],
   "contributors": [
     "behrtam",
