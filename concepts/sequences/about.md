@@ -164,4 +164,4 @@ Ad function
 `<sequence>.count()`, maybe
 `<sequence>.len()`, maybe
 `slicing`, yes
-`slice assignment`
+`slice assignment`, yes
