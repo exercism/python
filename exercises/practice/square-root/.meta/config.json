@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "meatball133",
+    "Bethanyg"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "square_root.py"
+    ],
+    "test": [
+      "square_root_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
+  },
+  "blurb": "Given a natural radicand, return its square root.",
+  "source": "wolf99",
+  "source_url": "https://github.com/exercism/problem-specifications/pull/1582"
+}

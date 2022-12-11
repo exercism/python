@@ -1,0 +1,28 @@
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
+
+[9b748478-7b0a-490c-b87a-609dacf631fd]
+description = "root of 1"
+
+[7d3aa9ba-9ac6-4e93-a18b-2e8b477139bb]
+description = "root of 4"
+
+[6624aabf-3659-4ae0-a1c8-25ae7f33c6ef]
+description = "root of 25"
+
+[93beac69-265e-4429-abb1-94506b431f81]
+description = "root of 81"
+
+[fbddfeda-8c4f-4bc4-87ca-6991af35360e]
+description = "root of 196"
+
+[c03d0532-8368-4734-a8e0-f96a9eb7fc1d]
+description = "root of 65025"
