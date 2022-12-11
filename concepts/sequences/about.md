@@ -153,6 +153,13 @@ def time_table(table_of_time, week_day, start, stop):
 print(time_table(("8:00", "9:00"),["8:00", "9:00"] ))
 ```
 
+```python
+def time_table(table_of_time, week_day, start, stop):
+    return table_of_time[week_day][start:stop]
+
+print(time_table(("8:00", "9:00"),["8:00", "9:00"] ))
+```
+
 Fastest route (last exercise)
 
 Fewest stops or transfers
