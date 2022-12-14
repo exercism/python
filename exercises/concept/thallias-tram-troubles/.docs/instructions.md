@@ -10,7 +10,7 @@ Since writing all these apps is a big task, she's asked that the tram company re
 First on the agenda is an app that can help commuters navigate the various schedules so they can more easily get to and from work.
 Thallia's got the lines and locations mostly figured out, but would like you to write a function that will filter the timetable sequence for a given weekday, so riders can clearly see all the departure times.
 The aim will be to return tram departure times from the timetable based on a weekday number (_0 being Monday, 6 being Sunday_).
-Write the `time_table_for_a_weekday` function that takes a sequence of daily timetables and weekday number.
+Write the `time_table_for_a_weekday` function that takes a nested sequence of timetables and weekday number.
 It should return the schedule sequence corresponding to the weekday number.
 
 ```python
@@ -47,7 +47,7 @@ Having built up commuter features, Thallia now wants to focus a bit on weekend "
 She'd like to update the station display software to better promote different activities (concerts, museums, amusement parks, zoos, sports matches, theater) that can be reached via different tram lines.
 She's asked you to write a function that will insert a short blurb about an activity into the arrival and departure displays.
 
-6.  Update Weekend Schedule Information
+6. Update Weekend Schedule Information
 
 Thallia would also like to update the app so that weekend riders can know when an event is scheduled and what train departures will get them to the activities on time.
 She'd like you to write a function that will insert an activity description and start time into a given schedule display, so that riders are reminded that they can take the tram to the activity.
