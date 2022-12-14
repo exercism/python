@@ -14,7 +14,8 @@ Write the `time_table_for_a_weekday` function that takes a sequence of daily tim
 It should return the schedule sequence corresponding to the weekday number.
 
 ```python
-examples here
+>>> time_table_for_a_weekday([["8:00", "17:00"], ("9:00", "16:00"), ("8:30", "15:00"), ["10:00", "19:00", "21:00"], ["12:00", "20:00"], ("9:00", "19:00"), ("9:30", "15:00", "20:00")], 3)
+["10:00", "19:00", "21:00"]
 ```
 
 2. Departures by Commute Window
@@ -25,7 +26,8 @@ With the `time_table_for_a_specific_range` function that takes a sequence of dai
 It should return a sequence of departure times for the commuter that fits their travel day and "commute window".
 
 ```python
-example here
+>>> time_table_for_a_specific_range([["8:00", "17:00"], ("9:00", "16:00"), ("8:30", "15:00"), ["10:00", "19:00", "21:00"], ["12:00", "20:00"], ("9:00", "19:00"), ("9:30", "15:00", "20:00", "21:00")], 6, 1, 3)
+("15:00", "20:00")
 ```
 
 3. Calculate Route with Fewest Transfers
