@@ -1,0 +1,63 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{% macro test_case(case) -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        lst = LinkedList()
+        {%- set inputs = case["input"]["operations"] -%}
+        {%- if case["expected"] -%}
+            {%- set error_case = true -%}
+            {%- set error_msg =  case["expected"]["error"] -%}
+            {%- set error_operation = inputs[-1]["operation"] -%}
+        {% endif %}
+        {%- if case["expected"] and inputs|length > 1 -%}
+            {%- set final = inputs[-1]["operation"] -%}
+            {%- set inputs = inputs[:-1] -%}
+        {%- elif case["expected"] -%}
+            {%- set final = inputs[-1]["operation"] -%}
+            {%- set inputs = [{"operation": "None"}] -%}
+        {%- endif -%}
+        {%- for input in inputs -%}
+            {%- set operation = input["operation"] -%}
+            {%- set value = input["value"] -%}
+            {%- set expected = input["expected"] %}
+            {%- if operation and value %}
+        lst.{{ operation }}({{ value }})
+            {%- elif operation and expected %}
+                {%- if operation == "count" %}
+        self.assertEqual(len(lst), {{ expected }})
+                {%- else %}
+        self.assertEqual(lst.{{ operation }}(), {{ expected }})
+                {%- endif %}
+            {%- elif operation == "pop" or operation == "shift" %}
+        lst.{{ operation }}({{ value }})
+            {%- elif operation == "count" %}
+        self.assertEqual(len(lst), {{ expected }})
+        {%- endif  %}
+    {%- endfor %}
+    {%- if error_case %}
+        {%- if final == "pop" or final == "shift" %}
+        with self.assertRaises(IndexError) as err:
+            lst.{{ error_operation }}()
+            self.assertEqual(type(err.exception), IndexError)
+            self.assertEqual(err.exception.args[0], "{{ error_msg }}")
+        {% elif final == "delete" %}
+        with self.assertRaises(ValueError) as err:
+            lst.{{ final }}({{ value if value else 0 }})
+            self.assertEqual(type(err.exception), ValueError)
+            self.assertEqual(err.exception.args[0], "{{ error_msg }}")
+        {%- endif  %}
+    {%- endif  %}
+{%- endmacro %}
+
+{{ macros.header(["LinkedList"]) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases -%}
+        {{ test_case(case) }}
+    {% endfor %}
+    {% if additional_cases | length -%}
+
+    # Additional tests for this track
+    {% for case in additional_cases -%}
+    {{ test_case(case) }}
+    {% endfor %}
+    {%- endif %}

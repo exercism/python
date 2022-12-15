@@ -13,6 +13,11 @@ class CryptoSquareTest(unittest.TestCase):
         expected = ""
         self.assertEqual(cipher_text(value), expected)
 
+    def test_normalization_results_in_empty_plaintext(self):
+        value = "... --- ..."
+        expected = ""
+        self.assertEqual(cipher_text(value), expected)
+
     def test_lowercase(self):
         value = "A"
         expected = "a"

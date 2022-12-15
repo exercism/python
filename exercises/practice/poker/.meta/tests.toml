@@ -63,6 +63,9 @@ description = "aces can end a straight (10 J Q K A)"
 [76856b0d-35cd-49ce-a492-fe5db53abc02]
 description = "aces can start a straight (A 2 3 4 5)"
 
+[e214b7df-dcba-45d3-a2e5-342d8c46c286]
+description = "aces cannot be in the middle of a straight (Q K A 2 3)"
+
 [6980c612-bbff-4914-b17a-b044e4e69ea1]
 description = "both hands with a straight, tie goes to highest ranked card"
 
@@ -96,5 +99,17 @@ description = "with multiple decks, both hands with identical four of a kind, ti
 [923bd910-dc7b-4f7d-a330-8b42ec10a3ac]
 description = "straight flush beats four of a kind"
 
+[d9629e22-c943-460b-a951-2134d1b43346]
+description = "aces can end a straight flush (10 J Q K A)"
+
+[05d5ede9-64a5-4678-b8ae-cf4c595dc824]
+description = "aces can start a straight flush (A 2 3 4 5)"
+
+[ad655466-6d04-49e8-a50c-0043c3ac18ff]
+description = "aces cannot be in the middle of a straight flush (Q K A 2 3)"
+
 [d0927f70-5aec-43db-aed8-1cbd1b6ee9ad]
-description = "both hands have straight flush, tie goes to highest-ranked card"
+description = "both hands have a straight flush, tie goes to highest-ranked card"
+
+[be620e09-0397-497b-ac37-d1d7a4464cfc]
+description = "even though an ace is usually high, a 5-high straight flush is the lowest-scoring straight flush"

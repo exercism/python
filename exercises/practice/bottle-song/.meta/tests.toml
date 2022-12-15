@@ -1,0 +1,31 @@
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
+
+[d4ccf8fc-01dc-48c0-a201-4fbeb30f2d03]
+description = "verse -> single verse -> first generic verse"
+
+[0f0aded3-472a-4c64-b842-18d4f1f5f030]
+description = "verse -> single verse -> last generic verse"
+
+[f61f3c97-131f-459e-b40a-7428f3ed99d9]
+description = "verse -> single verse -> verse with 2 bottles"
+
+[05eadba9-5dbd-401e-a7e8-d17cc9baa8e0]
+description = "verse -> single verse -> verse with 1 bottle"
+
+[a4a28170-83d6-4dc1-bd8b-319b6abb6a80]
+description = "lyrics -> multiple verses -> first two verses"
+
+[3185d438-c5ac-4ce6-bcd3-02c9ff1ed8db]
+description = "lyrics -> multiple verses -> last three verses"
+
+[28c1584a-0e51-4b65-9ae2-fbc0bf4bbb28]
+description = "lyrics -> multiple verses -> all verses"

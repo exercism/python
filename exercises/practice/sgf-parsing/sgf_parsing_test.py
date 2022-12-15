@@ -84,7 +84,34 @@ class SgfParsingTest(unittest.TestCase):
         expected = SgfTree(properties={"A": ["b", "c", "d"]})
         self.assertEqual(parse(input_string), expected)
 
-    def test_escaped_property(self):
-        input_string = "(;A[\\]b\nc\nd\t\te \n\\]])"
-        expected = SgfTree(properties={"A": ["]b\nc\nd  e \n]"]})
+    def test_semicolon_in_property_value_doesn_t_need_to_be_escaped(self):
+        input_string = "(;A[a;b][foo]B[bar];C[baz])"
+        expected = SgfTree(
+            properties={"A": ["a;b", "foo"], "B": ["bar"]},
+            children=[SgfTree({"C": ["baz"]})],
+        )
+        self.assertEqual(parse(input_string), expected)
+
+    def test_parentheses_in_property_value_don_t_need_to_be_escaped(self):
+        input_string = "(;A[x(y)z][foo]B[bar];C[baz])"
+        expected = SgfTree(
+            properties={"A": ["x(y)z", "foo"], "B": ["bar"]},
+            children=[SgfTree({"C": ["baz"]})],
+        )
+        self.assertEqual(parse(input_string), expected)
+
+    def test_escaped_tab_in_property_value_is_converted_to_space(self):
+        input_string = "(;A[hello\\	world])"
+        expected = SgfTree(properties={"A": ["hello world"]})
+        self.assertEqual(parse(input_string), expected)
+
+    def test_escaped_newline_in_property_value_is_converted_to_nothing_at_all(self):
+        input_string = "(;A[hello\
+world])"
+        expected = SgfTree(properties={"A": ["helloworld"]})
+        self.assertEqual(parse(input_string), expected)
+
+    def test_escaped_t_and_n_in_property_value_are_just_letters_not_whitespace(self):
+        input_string = "(;A[\t = t and \n = n])"
+        expected = SgfTree(properties={"A": ["t = t and n = n"]})
         self.assertEqual(parse(input_string), expected)

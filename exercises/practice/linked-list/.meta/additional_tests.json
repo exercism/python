@@ -1,0 +1,130 @@
+{
+    "cases": [
+    {
+    "uuid": "c472bec8-45b5-477f-96c1-3bed58ca0b1a",
+    "description": "Using pop raises an error if the list is empty",
+    "property": "list",
+    "input": {
+        "operations": [
+            {
+                "operation": "pop"
+            }
+
+        ]
+      }, "expected": {"error": "List is empty"}
+  },
+  {
+    "uuid": "394a61d3-7a69-4153-9eb7-f8d8e23cf6f0",
+    "description" : "Can return with pop and then raise an error if empty",
+    "property": "list",
+    "input": {
+      "operations": [
+        {
+          "operation": "push",
+          "value": 1
+        },
+        {
+          "operation": "unshift",
+          "value": 5
+        },
+        {
+          "operation": "pop",
+          "expected": 1
+        },
+        {
+          "operation": "pop",
+          "expected": 5
+        },
+        {
+          "operation": "pop"
+        }
+      ]
+    },
+      "expected": {"error": "List is empty"}
+  },
+  {
+    "uuid": "6d1a1817-0d4c-4953-abfd-c5cd5639871f",
+    "description": "Using shift raises an error if the list is empty",
+    "property": "list",
+    "input": {
+        "operations": [
+            {
+                "operation": "shift"
+            }
+
+        ]
+      },
+    "expected": {"error": "List is empty"}
+  },
+  {
+    "uuid": "cae5d135-f948-44ce-8940-c9b898b95756",
+    "description": "Can return with shift and then raise an error if empty",
+    "property": "list",
+    "input": {
+        "operations": [
+            {
+                "operation": "push",
+                "value": 1
+            },
+            {
+                "operation": "unshift",
+                "value": 5
+            },
+            {
+                "operation": "pop",
+                "expected": 1
+            },
+            {
+                "operation": "shift",
+                "expected": 5
+            },
+            {
+                "operation": "shift"
+            }
+
+        ]
+      },
+    "expected": {"error": "List is empty"}
+  },
+  {
+    "uuid": "1fa81a88-9af7-49a1-a4b1-b1aa641bfcbb",
+    "description": "Using delete raises an error if the list is empty",
+    "property": "list",
+    "input": {
+        "operations": [
+            {
+                "operation": "delete",
+                "value": 0
+            }
+
+        ]
+      },
+    "expected": {"error": "Value not found"}
+  },
+  {
+    "uuid": "f7f9d2dc-be1b-4f42-be2e-c29980ce0823",
+    "description": "Using delete raises an error if the value is not found",
+    "property": "list",
+    "input": {
+        "operations": [
+            {
+                "operation": "push",
+                "value": 5
+            },
+            {
+                "operation": "push",
+                "value": 7
+            },
+            {
+                "operation": "pop",
+                "expected": 7
+            },
+            {
+                "operation": "delete",
+                "value": 7
+            }
+
+        ]
+      }, "expected": {"error": "Value not found"}
+  }
+]}

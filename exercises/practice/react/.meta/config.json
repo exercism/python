@@ -1,5 +1,4 @@
 {
-  "blurb": "Implement a basic reactive system.",
   "authors": [
     "cmccandless"
   ],
@@ -7,7 +6,9 @@
     "Dog",
     "N-Parsons",
     "Nishant23",
-    "tqa236"
+    "tqa236",
+    "meatball133",
+    "Bethanyg"
   ],
   "files": {
     "solution": [
@@ -19,5 +20,6 @@
     "example": [
       ".meta/example.py"
     ]
-  }
+  },
+  "blurb": "Implement a basic reactive system."
 }

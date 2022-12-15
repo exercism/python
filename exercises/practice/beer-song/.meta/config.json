@@ -1,5 +1,4 @@
 {
-  "blurb": "Produce the lyrics to that beloved classic, that field-trip favorite: 99 Bottles of Beer on the Wall.",
   "authors": [],
   "contributors": [
     "behrtam",
@@ -25,6 +24,7 @@
       ".meta/example.py"
     ]
   },
+  "blurb": "Produce the lyrics to that beloved classic, that field-trip favorite: 99 Bottles of Beer on the Wall.",
   "source": "Learn to Program by Chris Pine",
   "source_url": "https://pine.fm/LearnToProgram/?Chapter=06"
 }

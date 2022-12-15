@@ -1,5 +1,4 @@
 {
-  "blurb": "Tally the results of a small football competition.",
   "authors": [
     "behrtam"
   ],
@@ -24,5 +23,6 @@
     "example": [
       ".meta/example.py"
     ]
-  }
+  },
+  "blurb": "Tally the results of a small football competition."
 }

@@ -1,5 +1,4 @@
 {
-  "blurb": "Write a robot simulator.",
   "authors": [
     "behrtam"
   ],
@@ -27,5 +26,6 @@
       ".meta/example.py"
     ]
   },
+  "blurb": "Write a robot simulator.",
   "source": "Inspired by an interview question at a famous company."
 }

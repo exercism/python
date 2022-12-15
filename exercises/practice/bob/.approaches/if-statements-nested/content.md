@@ -10,8 +10,7 @@ def response(hey_bob):
     if is_shout:
         if is_question:
             return "Calm down, I know what I'm doing!"
-        else:
-            return 'Whoa, chill out!'
+        return 'Whoa, chill out!'
     if is_question:
         return 'Sure.'
     return 'Whatever.'    
@@ -20,6 +19,12 @@ def response(hey_bob):
 
 In this approach you have a series of `if` statements using the calculated variables to evaluate the conditions, some of which are nested.
 As soon as a `True` condition is found, the correct response is returned.
+
+```exercism/note
+Note that there are no `elif` or `else` statements.
+If an `if` statement can return, then an `elif` or `else` is not needed.
+Execution will either return or will continue to the next statement anyway.
+```
 
 The [`rstrip`][rstrip] method is applied to the input to eliminate any whitespace at the end of the input.
 If the input has no characters left, it uses the [falsiness][falsiness] of an empty string with the [`not`][not] operator to return the response for saying nothing.

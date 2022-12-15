@@ -33,6 +33,9 @@ description = "invalid credit card"
 [20e67fad-2121-43ed-99a8-14b5b856adb9]
 description = "invalid long number with an even remainder"
 
+[7e7c9fc1-d994-457c-811e-d390d52fba5e]
+description = "invalid long number with a remainder divisible by 5"
+
 [ad2a0c5f-84ed-4e5b-95da-6011d6f4f0aa]
 description = "valid number with an even number of digits"
 

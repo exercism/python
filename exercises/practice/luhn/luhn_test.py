@@ -32,6 +32,9 @@ class LuhnTest(unittest.TestCase):
     def test_invalid_long_number_with_an_even_remainder(self):
         self.assertIs(Luhn("1 2345 6789 1234 5678 9012").valid(), False)
 
+    def test_invalid_long_number_with_a_remainder_divisible_by_5(self):
+        self.assertIs(Luhn("1 2345 6789 1234 5678 9013").valid(), False)
+
     def test_valid_number_with_an_even_number_of_digits(self):
         self.assertIs(Luhn("095 245 88").valid(), True)
 

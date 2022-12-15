@@ -1,5 +1,4 @@
 {
-  "blurb": "Count the scored points on a Go board.",
   "authors": [
     "yunchih"
   ],
@@ -21,5 +20,6 @@
     "example": [
       ".meta/example.py"
     ]
-  }
+  },
+  "blurb": "Count the scored points on a Go board."
 }

@@ -1,5 +1,4 @@
 {
-  "blurb": "Create a custom set type.",
   "authors": [
     "cmccandless"
   ],
@@ -18,5 +17,6 @@
     "example": [
       ".meta/example.py"
     ]
-  }
+  },
+  "blurb": "Create a custom set type."
 }

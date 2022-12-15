@@ -1,0 +1,8 @@
+head, *tail = chars
+if head.isdigit():
+    if not pos % 2:
+        return Luhn.luhny_bin(pos + 1, sum + int(head), tail)
+    else:
+        return Luhn.luhny_bin(pos + 1, sum + Luhn.luhny_tune(int(head)), tail)
+if head == " ":
+    return Luhn.luhny_bin(pos, sum, tail)

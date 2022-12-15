@@ -1,5 +1,4 @@
 {
-  "blurb": "Implement a doubly linked list.",
   "authors": [
     "behrtam"
   ],
@@ -10,7 +9,8 @@
     "Mofeywalker",
     "N-Parsons",
     "pheanex",
-    "tqa236"
+    "tqa236",
+    "meatball133"
   ],
   "files": {
     "solution": [
@@ -23,5 +23,6 @@
       ".meta/example.py"
     ]
   },
+  "blurb": "Implement a doubly linked list.",
   "source": "Classic computer science topic"
 }
