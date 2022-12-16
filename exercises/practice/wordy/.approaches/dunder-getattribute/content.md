@@ -76,7 +76,7 @@ It sets the list to the result of the dunder method plus the remaining elements 
 
 ```exercism/note
 The `*` prefix in `*tail` [unpacks](https://treyhunner.com/2018/10/asterisks-in-python-what-they-are-and-how-to-use-them/) the `tail` list back into its elements.
-This concept is also aparat of [unpacking-and-multiple-assignment](https://exercism.org/tracks/python/concepts/unpacking-and-multiple-assignment) concept in the syllabus..
+This concept is also a part of [unpacking-and-multiple-assignment](https://exercism.org/tracks/python/concepts/unpacking-and-multiple-assignment) concept in the syllabus.
 ```
 
 When the loop exhausts, the first element of the list is selected as the function return value.
