@@ -1,108 +1,115 @@
+"""Parse an SGF tree."""
+from __future__ import annotations
+
+import collections
+import dataclasses
+import string
+
+
+@dataclasses.dataclass
 class SgfTree:
-    def __init__(self, properties=None, children=None):
-        self.properties = properties or {}
-        self.children = children or []
+    """SGF Node."""
 
-    def __eq__(self, other):
-        if not isinstance(other, SgfTree):
-            return False
-
-        for key, value in self.properties.items():
-            if key not in other.properties:
-                return False
-
-            if other.properties[key] != value:
-                return False
-
-        for key in other.properties.keys():
-            if key not in self.properties:
-                return False
-
-        if len(self.children) != len(other.children):
-            return False
-
-        for child, other_child in zip(self.children, other.children):
-            if not child == other_child:
-                return False
-        return True
-
-    def __repr__(self):
-        """Ironically, encoding to SGF is much easier."""
-        rep = '(;'
-        for key, property_value in self.properties.items():
-            rep += key
-            for value in property_value:
-                rep += '[{}]'.format(value)
-        if self.children:
-            if len(self.children) > 1:
-                rep += '('
-            for child in self.children:
-                rep += repr(child)[1:-1]
-            if len(self.children) > 1:
-                rep += ')'
-        return rep + ')'
+    properties: dict[str, str] = dataclasses.field(default_factory=dict)
+    children: list[SgfTree] = dataclasses.field(default_factory=list)
 
 
-def parse(input_string):
-    root = None
-    current = None
-    stack = list(input_string)
-    if input_string == '()':
-        raise ValueError('tree with no nodes')
+def parse_property_vals(sgf: str, idx: int) -> tuple[int, list[str]]:
+    """Parse property values, returning the next index and values."""
+    values = []
+    while idx < len(sgf):
+        if sgf[idx] != "[":
+            break
 
-    if not stack:
-        raise ValueError('tree missing')
-
-    def pop():
-        if stack[0] == '\\':
-            stack.pop(0)
-        characters = stack.pop(0)
-        return ' ' if characters in ['\t'] else characters
-
-    def pop_until(delimiter):
-        try:
-            value = ''
-            while stack[0] != delimiter:
-                if stack[0] == "\n":
-                    stack[0] = "n"
-                if stack[0] == "\t":
-                    stack[0] = "t"
-                value += pop()
-            return value
-        except IndexError as error:
-            raise ValueError('properties without delimiter') from error
-
-    while stack:
-        if pop() == '(' and stack[0] == ';':
-            while pop() == ';':
-                properties = {}
-                while stack[0].isupper():
-                    key = pop_until('[')
-                    if not key.isupper():
-                        raise ValueError('property must be in uppercase')
-                    values = []
-                    while stack[0] == '[':
-                        pop()
-                        values.append(pop_until(']'))
-                        pop()
-                    properties[key] = values
-
-                if stack[0].isalpha():
-                    if not stack[0].isupper():
-                        raise ValueError('property must be in uppercase')
-
-                if root is None:
-                    current = root = SgfTree(properties)
-
+        # Start of the value.
+        idx += 1
+        prop_val = ""
+        while sgf[idx] != "]":
+            # \ has special SGF handling.
+            if sgf[idx] == "\\":
+                if sgf[idx:idx + 2] == "\\\n":
+                    # Newlines are removed if they come immediately after a \,
+                    # otherwise they remain as newlines.
+                    pass
                 else:
-                    current = SgfTree(properties)
-                    root.children.append(current)
+                    # \ is the escape character. Any non-whitespace character
+                    # after \ is inserted as-is
+                    prop_val += sgf[idx + 1]
+                idx += 2
+            else:
+                prop_val += sgf[idx]
+                idx += 1
 
-                while stack[0] == '(':
-                    child_input = pop() + pop_until(')') + pop()
-                    current.children.append(parse(child_input))
+        # All whitespace characters other than newline are converted to spaces.
+        for char in string.whitespace:
+            if char == "\n":
+                continue
+            prop_val = prop_val.replace(char, " ")
 
-        elif root is None and current is None:
-            raise ValueError('tree missing')
+        values.append(prop_val)
+        idx += 1
 
-    return root
+    return idx, values
+
+
+def parse_node(sgf: str) -> SgfTree:
+    """Parse and return a Node."""
+    if not sgf.startswith(";"):
+        raise ValueError("node must start with ';'")
+
+    idx = 1
+    prop_key_start = idx
+
+    properties = collections.defaultdict(list)
+    children = []
+
+    while idx < len(sgf):
+        match sgf[idx]:
+            case "[":
+                # Parse property values.
+                if idx == prop_key_start:
+                    raise ValueError("propery key is empty")
+                prop_key = sgf[prop_key_start:idx]
+                if not prop_key.isupper():
+                    raise ValueError('property must be in uppercase')
+
+                idx, prop_vals = parse_property_vals(sgf, idx)
+                properties[prop_key].extend(prop_vals)
+
+                # New property.
+                prop_key_start = idx
+            case ";":
+                # Single child.
+                child = parse_node(sgf[idx:])
+                children.append(child)
+                break
+            case "(":
+                # Multiple children.
+                children = []
+                while idx < len(sgf):
+                    if sgf[idx] != "(":
+                        break
+                    # Child start.
+                    idx += 1
+                    child_start = idx
+                    while sgf[idx] != ")":
+                        idx += 1
+                    # Child end.
+                    child = parse_node(sgf[child_start:idx])
+                    children.append(child)
+                    idx += 1
+            case _:
+                idx += 1
+
+    if idx > prop_key_start and not properties:
+        raise ValueError('properties without delimiter')
+    return SgfTree(children=children, properties=dict(properties))
+
+
+def parse(sgf: str) -> SgfTree:
+    """Parse an SGF tree."""
+    if not sgf.startswith("(") and not sgf.endswith(")"):
+        raise ValueError('tree missing')
+    if not sgf.startswith("(;"):
+        raise ValueError('tree with no nodes')
+    return parse_node(sgf.removeprefix("(").removesuffix(")"))
