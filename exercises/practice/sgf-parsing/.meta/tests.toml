@@ -47,23 +47,18 @@ description = "multiple property values"
 
 [28092c06-275f-4b9f-a6be-95663e69d4db]
 description = "within property values, whitespace characters such as tab are converted to spaces"
-include = false
 
 [deaecb9d-b6df-4658-aa92-dcd70f4d472a]
-description = "within property values, newli es remain as newlines"
-include = false
+description = "within property values, newlines remain as newlines"
 
 [8e4c970e-42d7-440e-bfef-5d7a296868ef]
 description = "escaped closing bracket within property value becomes just a closing bracket"
-include = false
 
 [cf371fa8-ba4a-45ec-82fb-38668edcb15f]
 description = "escaped backslash in property value becomes just a backslash"
-include = false
 
 [dc13ca67-fac0-4b65-b3fe-c584d6a2c523]
 description = "opening bracket within property value doesn't need to be escaped"
-include = false
 
 [a780b97e-8dbb-474e-8f7e-4031902190e8]
 description = "semicolon in property value doesn't need to be escaped"
@@ -83,7 +78,6 @@ description = "escaped t and n in property value are just letters, not whitespac
 [08e4b8ba-bb07-4431-a3d9-b1f4cdea6dab]
 description = "mixing various kinds of whitespace and escaped characters in property value"
 reimplements = "11c36323-93fc-495d-bb23-c88ee5844b8c"
-include = false
 
 [11c36323-93fc-495d-bb23-c88ee5844b8c]
 description = "escaped property"
