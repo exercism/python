@@ -11,6 +11,8 @@
         {% endif %}
         {%- if case["expected"] and inputs|length > 1 -%}
             {%- set inputs = inputs[:-1] -%}
+        {%- elif case["expected"]  -%}
+            {%- set inputs = [] -%}
         {%- endif -%}
         {%- for input in inputs -%}
             {%- set operation = input["operation"] -%}
