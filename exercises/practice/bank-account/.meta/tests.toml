@@ -1,0 +1,43 @@
+# This is an auto-generated file. Regular comments will be removed when this
+# file is regenerated. Regenerating will not touch any manually added keys,
+# so comments can be added in a "comment" key.
+
+[983a1528-4ceb-45e5-8257-8ce01aceb5ed]
+description = "encode yes"
+
+[e88d4ec3-c6bf-4752-8e59-5046c44e3ba7]
+description = "encode no"
+
+[08f1af07-27ae-4b38-aa19-770bde558064]
+description = "encode OMG"
+
+[6f6d242f-8c31-4ac6-8995-a90d42cad59f]
+description = "encode spaces"
+
+[f9facfaa-d824-486e-8381-48832c4bbffd]
+description = "encode mindblowingly"
+
+[7a65ba52-e35c-4fd2-8159-bda2bde6e59c]
+description = "encode numbers"
+
+[570dfaa5-0532-4c1f-a7d3-0f65c3265608]
+description = "encode deep thought"
+
+[c396d233-1c49-4272-98dc-7f502dbb9470]
+description = "encode all the letters"
+
+[c06f534f-bdc2-4a02-a388-1063400684de]
+description = "decode exercism"
+
+[0722d404-6116-4f92-ba3b-da7f88f1669c]
+description = "decode a sentence"
+
+[ec42245f-9361-4341-8231-a22e8d19c52f]
+description = "decode numbers"
+
+[4f381ef8-10ef-4507-8e1d-0631ecc8ee72]
+description = "decode all the letters"
+
+[d45df9ea-1db0-47f3-b18c-d365db49d938]
+description = "decode with too many spaces"
+
