@@ -1,13 +1,13 @@
 """Functions which helps company to calculate their power usage"""
 
 
-def get_the_amount_of_hours(hours, missing_hours):
+def get_the_amount_of_hours(hours):
     """Return the amount of hours.
 
     :param: hours: int - amount of hours.
     :return: int - amount of hours.
     """
-    return (hours + missing_hours) % 24
+    return (hours + 3) % 24
 
 
 def get_kW_value(watts):
