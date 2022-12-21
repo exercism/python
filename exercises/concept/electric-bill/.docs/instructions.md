@@ -54,12 +54,11 @@ The function should then `return` the watts as an integer.
 4. Get efficiency
 
 Electronics are not 100% efficient.
-Therefore your employer wants to know the efficiency of the electronics.
-To get efficiency you have to divide the power factor by 100.
-The power factor is a float between 0 and 100.
+Therefore, your employer wants you to calculate the efficiency of the electronics.
+To get efficiency you have to divide the power factor (a float between 0 and 100) by 100.
 
 Implement a function `get_efficiency()` that accepts a float that holds the power factor.
-The function should then `return` the power factor as a float.
+The function should then `return` the calculated efficiency as a float.
 
 ```python
 >>> get_efficiency(80)
@@ -69,11 +68,11 @@ The function should then `return` the power factor as a float.
 5. Get cost
 
 Your employer wants to know the cost of running the electronics.
-The power used is the power given divided by the efficiency.
 The cost of running the electronics is the power used multiplied by the cost per kWh.
+The power used is the power given divided by the calculated efficiency.
 
-Implement a function `get_cost()` that accepts an integer that holds the number of watts and a float that has the power factor and a float that holds the cost per kwh.
-The function should then `return` the cost of running the electronics as a float rounded to 2 decimals.
+Implement a function `get_cost()` that accepts an integer that holds the number of watts, a float that has the power factor, and a float that holds the cost per kwh.
+The function should then `return` the cost of running the electronics as a float.
 
 ```python
 >>> get_cost(5000000, 80, 0.25)
