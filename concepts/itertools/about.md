@@ -1,77 +1,4 @@
-## Infinite iterators
-
-```exercism/note
-To avoid infinite loops, you can use `break` to end a loop.
-```
-
-### Count()
-
-`count(start, <step>)` allows to print all values from the start value to infinity.
-Count also has an optional step parameter, which allows to print values with a step size other than 1.
-
-```python
->>> import itertools
->>> for number in itertools.count(5, 2):
-...     if number > 20:
-...         break
-...     else:
-...         print(number, end=' ')
-...
-5 7 9 11 13 15 17 19
-```
-
-Giving `count()` a negative step size will print values in a descending order.
-
-```python
->>> import itertools
->>> for number in itertools.count(5, -2):
-...     if number < -20:
-...         break
-...     else:
-...         print(number, end=' ')
-...
-5 3 1 -1 -3 -5 -7 -9 -11 -13 -15 -17 -19
-```
-
-### Cycle()
-
-`cycle(iterable)` allows to print all values from the iterable in an infinte loop.
-For example a `list`, `tuple`, `string` or `dict` can be used as an iterable.
-
-```python
->>> import itertools
->>> number = 0
->>> for letter in itertools.cycle("ABC"):
-...     if number == 10:
-...         break
-...     else:
-...         print(letter, end=' ')
-...         number += 1
-...
-A B C A B C A B C A
-```
-
-### Repeat()
-
-`repeat(object, <times>)` allows to print the same value in an infinte loop.
-Although if the optional times parameter is given, the value will be printed that many times.
-Meaning that it is not an infinite loop if that parameter is given.
-
-```python
->>> import itertools
->>> for number in itertools.repeat(5, 3):
-...     print(number, end=' ')
-...
-5 5 5
-```
-
 ## Iterators terminating on the shortest input sequence
-
-### Accumulate()
-
-`accumulate(iterable, <function>)` allows to print the accumulated values.
-
-perhaps skip
 
 ### Chain()
 
@@ -95,11 +22,16 @@ Chain can also be used to concate a different amount of iterables to a list or t
 
 ### chain.from_iterable()
 
-Works like chain but takes a single iterable argument and unpack that iterable into individual iterables.
+Works like chain but takes a single nested iterable, unpacking that iterable into individual iterables.
 
 ```python
 >>> import itertools
->>> for number in itertools.chain.from_iterable([[1, 2, 3], [4, 5, 6], [7, 8, 9]]):
+>>> for number in itertools.chain.from_iterable(
+    [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9]
+    ]):
 ...     print(number, end=' ')
 ...
 1 2 3 4 5 6 7 8 9
@@ -107,32 +39,30 @@ Works like chain but takes a single iterable argument and unpack that iterable i
 
 ### Compress()
 
-`compress(iterable, selectors)` creates an irretator from the iterable where the corresponding selector is `True`.
-The selector can hold bools but can also hold integers, where 0 is `False` and any other integer is `True`.
+`compress(iterable, selectors)` creates an iterator from the input iterable where the corresponding selector is `True`.
+The selector can be `True`/`False` or integers, where 0 is `False` and 1 is `True`.
 
 ```python
 >>> import itertools
->>> for letter in itertools.compress("Exercism", [1, 0, 1, 0, 1, 0, 1, 0, 1, 0]):
+>>> for letter in itertools.compress("Exercism", [1, 0, 0, 1, 1, 0, 1, 1]):
 ...     print(letter, end=' ')
 ...
 E r c s m
 ```
 
-### Dropwhile()
+With `True`/`False`:
 
-skip
-
-### Filterfalse()
-
-skip
-
-### Groupby()
-
-probably skip
+```python
+>>> import itertools
+>>> for letter in itertools.compress("Exercism", [True, False, False, True, True, False, True, True]):
+...     print(letter, end=' ')
+...
+E r c s m
+```
 
 ### Islice()
 
-`islice(iterable, <start>, <stop>, <step>)` creates an irretator of the values from the iterable, from the start index to the stop index with a step size of step.
+`islice(iterable, start, <stop>, <step>)` creates a new iterator from the slice (from the start index to the stop index with a step size of step).
 
 ```python
 >>> import itertools
@@ -159,14 +89,6 @@ If you are using the online editor then you don't need to worry about this.
 ('E', 'x') ('x', 'e') ('e', 'r') ('r', 'c') ('c', 'i') ('i', 's') ('s', 'm')
 ```
 
-### Starmap()
-
-Pehaps skip
-
-### Takewhile()
-
-skip
-
 ### Tee()
 
 Talk with Bethany about
@@ -176,15 +98,13 @@ Talk with Bethany about
 #### Explaning zip
 
 ```exercism/caution
-Zip in computer science(programming) is not the same as zip in computer terms.
-Zip in computer terms reffers to a file format that supports compression.
-While zip in computer science(programming) reffers to the `zip()` function.
+Pythons `zip()` function should not be confused with the zip compression format.
 ```
 
 `zip()` is a built in function and is not apart of the `itertools` module.
 It takes any number of iterables and returns an iterator of tuples.
 Where the i-th tuple contains the i-th element from each of the argument iterables.
-Meaning the first tuple will contain the first element from each iterable, the second tuple will contain the second element from each iterable and so on.
+For example, the first tuple will contain the first element from each iterable, the second tuple will contain the second element from each iterable, and so on until the shortest iterable is exhausted.
 
 ```python
 >>> zipped = zip(['x', 'y', 'z'], [1, 2, 3], [True, False, True])
@@ -203,8 +123,8 @@ If the iterables are not the same length, then the iterator will stop when the s
 #### Explaning zip_longest
 
 `zip_longest(iterator, <fillvalue=None>)` is a function from the `itertools` module.
-The difference between `zip_longest()` and `zip()` is that `zip_longest()` will continue until the longest iterable is exhausted.
-If the iterables are not the same length the `fillvalue` will be used to fill in the missing values.
+Unlink `zip()`, it will not stop when the shortest iterable is exhausted.
+If the iterables are not the same length, `fillvalue` will be used to pad missing values.
 By the default the `fillvalue` is `None`.
 
 ```python
@@ -238,6 +158,8 @@ By default the repeat keyword argument is 1.
 ...
 ('A',) ('B',) ('C',) ('D',)
 ```
+
+Giving a repeat value of 2:
 
 ```python
 >>> import itertools
@@ -334,4 +256,71 @@ The difference between this and `combinations()` is that it can repeat values.
 ...     print(combination, end=' ')
 ...
 ('A', 'A') ('A', 'B') ('A', 'C') ('A', 'D') ('B', 'B') ('B', 'C') ('B', 'D') ('C', 'C') ('C', 'D') ('D', 'D')
+```
+
+## Infinite iterators
+
+```exercism/note
+To avoid infinite loops, you can use `break` to end a loop.
+```
+
+### Count()
+
+`count(start, <step>)` produces all values from the start value to infinity.
+Count also has an optional step parameter, which will produce values with a step size other than 1.
+
+```python
+>>> import itertools
+>>> for number in itertools.count(5, 2):
+...     if number > 20:
+...         break
+...     else:
+...         print(number, end=' ')
+...
+5 7 9 11 13 15 17 19
+```
+
+Giving `count()` a negative step size will produces values in a descending order.
+
+```python
+>>> import itertools
+>>> for number in itertools.count(5, -2):
+...     if number < -20:
+...         break
+...     else:
+...         print(number, end=' ')
+...
+5 3 1 -1 -3 -5 -7 -9 -11 -13 -15 -17 -19
+```
+
+### Cycle()
+
+`cycle(iterable)` produces all values from the iterable in an infinte loop.
+A `list`, `tuple`, `string`, `dict` or any other iterable can be used.
+
+```python
+>>> import itertools
+>>> number = 0
+>>> for letter in itertools.cycle("ABC"):
+...     if number == 10:
+...         break
+...     else:
+...         print(letter, end=' ')
+...         number += 1
+...
+A B C A B C A B C A
+```
+
+### Repeat()
+
+`repeat(object, <times>)` produces the same value in an infinte loop.
+Although if the optional times parameter is given, the value will produces that many times.
+Meaning that it is not an infinite loop if that parameter is given.
+
+```python
+>>> import itertools
+>>> for number in itertools.repeat(5, 3):
+...     print(number, end=' ')
+...
+5 5 5
 ```
