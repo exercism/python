@@ -1,8 +1,12 @@
 {%- import "generator_macros.j2" as macros with context -%}
 
+{% macro escape_sequences(string) -%}
+    {{ string | replace("\\", "\\\\") | replace("\n", "\\n") | replace("\t", "\\t") }}
+{%- endmacro -%}
+
 {% macro test_case(case) -%}
     def test_{{ case["description"] | to_snake }}(self):
-        input_string = '{{ case["input"]["encoded"] | escape_invalid_escapes }}'
+        input_string = '{{ escape_sequences(case["input"]["encoded"]) }}'
         {% if case["expected"]["error"] -%}
         with self.assertRaises(ValueError) as err:
             {{ case["property"] | to_snake }}(input_string)
@@ -33,7 +37,7 @@
     {%- for key, values in properties.items() -%}
     '{{ key }}':[
     {%- for value in values -%}
-    '{{ value }}'{% if not loop.last %}, {% endif -%}
+    '{{ escape_sequences(value) }}'{% if not loop.last %}, {% endif -%}
     {% endfor -%}]
     {%- if not loop.last %}, {% endif -%}
     {% endfor -%} }
