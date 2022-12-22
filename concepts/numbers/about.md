@@ -15,58 +15,6 @@ Whole numbers (_including hex, octals and binary numbers_) **without** decimal p
 -12
 ```
 
-Hex numbers are prefixed with `0x`:
-
-```python
-# Hex numbers start with 0x.
->>> 0x17
-23
->>> type(0x17)
-<class 'int'>
-```
-
-Octals are prefixed with a `0o`:
-
-```python
-# Octal numbers start with a 0o.
->>> 0o446
-294
->>> type(0o446)
-<class 'int'>
-```
-
-Binary numbers are prefixed with `0b`, and written with only zeros and ones:
-
-```python
-# Binary numbers are made up of 0s and 1s.
->>> 0b1100110
-102
->>> type(0b1100110)
-<class 'int'>
-```
-
-Each of these `int` displays can be converted into the other via constructor:
-
-```python
-
->>> starting_number = 1234
-
->>> hex(starting_number)
-'0x4d2'
-
->>> oct(starting_number)
-'0o2322'
-
->>> bin(starting_number)
-'0b10011010010'
-
->>> hex(0b10011010010)
-'0x4d2'
-
->>> int(0x4d2)
-1234
-```
-
 Numbers containing a decimal point (with or without fractional parts) are identified as `floats`:
 
 ```python
@@ -76,53 +24,105 @@ Numbers containing a decimal point (with or without fractional parts) are identi
 <class 'float'>
 ```
 
-Appending `j` or `J` to a number creates an _imaginary number_ -- a `complex` number with a zero real part. `ints` or `floats` can then be added to an imaginary number to create a `complex` number with both real and imaginary parts:
-
-```python
->>> 3j
-3j
->>> type(3j)
-<class 'complex'>
-
->>> 3.5+4j
-(3.5+4j)
-```
-
 ## Arithmetic
 
 Python fully supports arithmetic between these different number types, and will convert narrower numbers to match their less narrow counterparts when used with the binary arithmetic operators (`+`, `-`, `*`, `/`, `//`, and `%`).
 
-Python considers `ints` narrower than `floats`, which are considered narrower than `complex` numbers. Comparisons between different number types behave as if the _exact_ values of those numbers were being compared:
+### Addition and subtraction
+
+Addition and subtraction act like in normal math.
+If one of the operands is a `float`, the other will be converted to a `float` as well.
+Otherwise both operands will be converted to `ints`:
 
 ```python
+>>> 5 - 3
+2
 # The int is widened to a float here, and a float is returned.
 >>> 3 + 4.0
 7.0
+```
 
-# The int is widened to a complex number, and a complex number is returned.
->>> 6/(3+2j)
-(2+2j)
+### Multiplication
 
-# Division always returns a float, even if integers are used.
+As with addition and subtraction, multiplication will convert narrower numbers to match their less narrow counterparts:
+
+```python
+>>> 3 * 2
+6
+
+>>> 3 * 2.0
+6.0
+```
+
+### Division
+
+Division always returns a `float`, even if the result is a whole number:
+
+```python
+>>> 6/5
+1.2
+
 >>> 6/2
 3.0
+```
 
-# If an int result is needed, you can use floor division to truncate the result.
+### Floor division
+
+If an `int` result is needed, you can use floor division to truncate the result.
+Floor division is performed using the `//` operator:
+
+```python
+>>> 6//5
+1
+
 >>> 6//2
 3
+```
 
-# When comparing, exact values are used.
->>> 23 == 0x17
-True
+### Modulo
 
->>> 0b10111 == 0x17
-True
+The modulo operator (`%`) returns the remainder of the division of the two operands:
 
->>> 6 == (6+0j)
-True
+```python
+>>> 5 % 3
+2
+```
+
+### Exponentiation
+
+Exponentiation is performed using the `**` operator:
+
+```python
+>>> 2 ** 3
+8
 ```
 
 All numbers (except complex) support all [arithmetic operations][arethmetic-operations], evaluated according to [operator precedence][operator precedence]. Support for mathematical functions (beyond `+`, `-`, `/`) for complex numbers can be found in the [cmath][cmath] module.
+
+## Conversions
+
+Numbers can be converted from one type to another using the built-in functions `int()` and `float()`:
+
+```python
+>>> int(3.45)
+3
+
+>>> float(3)
+3.0
+```
+
+## Round
+
+Python provides a built-in function `round()` to round off a floating point number to a given number of decimal places.
+If no number of decimal places is specified, the number is rounded off to the nearest integer and will return an `int`:
+
+```python
+>>> round(3.1415926535, 2)
+3.14
+
+>>> round(3.1415926535)
+3
+```
 
 ## Precision & Representation
 
