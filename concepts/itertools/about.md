@@ -14,10 +14,20 @@
 
 Chain can also be used to concate a different amount of iterables to a list or tuple by using the `list()` or `tuple()` function.
 
+Using `list()`:
+
 ```python
 >>> import itertools
 >>> list(itertools.chain([1, 2, 3], [4, 5, 6], [7, 8, 9]))
 [1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+Using `tuple()`:
+
+```python
+>>> import itertools
+>>> tuple(itertools.chain([1, 2, 3], [4, 5, 6], [7, 8, 9]))
+(1, 2, 3, 4, 5, 6, 7, 8, 9)
 ```
 
 ### chain.from_iterable()
