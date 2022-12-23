@@ -113,7 +113,7 @@ Numbers can be converted from one type to another using the built-in functions `
 
 ## Round
 
-Python provides a built-in function `round()` to round off a floating point number to a given number of decimal places.
+Python provides a built-in function `round(number, <decimal_places>)` to round off a floating point number to a given number of decimal places.
 If no number of decimal places is specified, the number is rounded off to the nearest integer and will return an `int`:
 
 ```python
@@ -124,13 +124,42 @@ If no number of decimal places is specified, the number is rounded off to the ne
 3
 ```
 
+## Priority and parentheses
+
+Python allows you to use parentheses to group expressions.
+This is useful when you want to override the default order of operations.
+
+```python
+>>> 2 + 3 * 4
+14
+
+>>> (2 + 3) * 4
+20
+```
+
+Python follows the [PEMDAS][operator precedence] rule for operator precedence.
+This means `()` have the highest priority, followed by `**`, then `*`, `/`, `//`, `%`, `+`, and `-`:
+
+```python
+>>> 2 + 3 - 4 * 4
+-11
+
+>>> (2 + 3 - 4) * 4
+20
+
+# In the following example, the `**` operator has the highest priority, then `*`, then `+`
+# Meaning we first do 4 ** 4, then 3 * 64, then 2 + 192
+>>> 2 + 3 * 4 ** 4
+770
+```
+
 ## Precision & Representation
 
 Integers in Python have [arbitrary precision](https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic) -- the amount of digits is limited only by the available memory of the host system.
 
 Floating point numbers are usually implemented using a `double` in C (_15 decimal places of precision_), but will vary in representation based on the host system. Complex numbers have a `real` and an `imaginary` part, both of which are represented by floating point numbers.
 
-For a more detailed discussions of the issues and limitations of floating point arithmetic across programming langages, take a look at [0.30000000000000004.com][0.30000000000000004.com] and [The Python Tutorial][floating point math].
+For a more detailed discussions of the issues and limitations of floating point arithmetic across programming languages, take a look at [0.30000000000000004.com][0.30000000000000004.com] and [The Python Tutorial][floating point math].
 
 [int]: https://docs.python.org/3/library/functions.html#int
 [float]: https://docs.python.org/3/library/functions.html#float
