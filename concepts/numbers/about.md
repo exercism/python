@@ -31,7 +31,7 @@ Python fully supports arithmetic between these different number types, and will 
 ### Addition and subtraction
 
 Addition and subtraction act like in normal math.
-If one of the operands is a `float`, the other will be converted to a `float` as well.
+If atleast one of the operands is a `float`, the other will be converted to a `float` as well.
 Otherwise both operands will be converted to `ints`:
 
 ```python
@@ -86,6 +86,9 @@ The modulo operator (`%`) returns the remainder of the division of the two opera
 ```python
 >>> 5 % 3
 2
+
+>>> 8 % 2
+0
 ```
 
 ### Exponentiation
@@ -95,13 +98,16 @@ Exponentiation is performed using the `**` operator:
 ```python
 >>> 2 ** 3
 8
+
+>>> 4 ** 0.5
+2
 ```
 
 All numbers (except complex) support all [arithmetic operations][arethmetic-operations], evaluated according to [operator precedence][operator precedence]. Support for mathematical functions (beyond `+`, `-`, `/`) for complex numbers can be found in the [cmath][cmath] module.
 
 ## Conversions
 
-Numbers can be converted from one type to another using the built-in functions `int()` and `float()`:
+Numbers can be converted from `int` to `floats` and `floats` to `int` using the built-in functions `int()` and `float()`:
 
 ```python
 >>> int(3.45)
@@ -138,7 +144,7 @@ This is useful when you want to override the default order of operations.
 ```
 
 Python follows the [PEMDAS][operator precedence] rule for operator precedence.
-This means `()` have the highest priority, followed by `**`, then `*`, `/`, `//`, `%`, `+`, and `-`:
+This means calculations within `()` have the highest priority, followed by `**`, then `*`, `/`, `//`, `%`, `+`, and `-`:
 
 ```python
 >>> 2 + 3 - 4 * 4
