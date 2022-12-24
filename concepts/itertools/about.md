@@ -270,6 +270,10 @@ The difference between this and `combinations()` is that it can repeat values.
 
 ## Infinite iterators
 
+Most of iterator from the `itertools` module get exhausted after a time.
+But there are some that are infinite, these are known as infinte iterators.
+These iterators will will keep producing values until you tell them to stop.
+
 ```exercism/note
 To avoid infinite loops, you can use `break` to end a loop.
 ```
