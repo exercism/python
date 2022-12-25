@@ -29,7 +29,6 @@ Numbers containing a decimal point (with or without fractional parts) are identi
 
 Python fully supports arithmetic between these different number types, and will convert narrower numbers to match their less narrow counterparts when used with the binary arithmetic operators (`+`, `-`, `*`, `/`, `//`, and `%`).
 
-
 ### Addition and subtraction
 
 Addition and subtraction operators behave as they do in normal math.
@@ -96,7 +95,6 @@ The modulo operator (`%`) returns the remainder of the division of the two opera
 
 Another way to look at 5 % 3:
 
-
 ```python
 >>> whole_part = int(5/3)
 1
@@ -149,7 +147,6 @@ This means calculations within `()` have the highest priority, followed by `**`,
 >>> 2 + 3 * 4 ** 4
 770
 ```
-[arbitrary-precision]: https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic
 
 ## Precision & Representation
 
@@ -161,6 +158,7 @@ Complex numbers have a `real` and an `imaginary` part, both of which are represe
 For a more detailed discussions of the issues and limitations of floating point arithmetic across programming languages, take a look at [0.30000000000000004.com][0.30000000000000004.com] and [The Python Tutorial][floating point math].
 
 [0.30000000000000004.com]: https://0.30000000000000004.com/
+[arbitrary-precision]: https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic
 [bin]: https://docs.python.org/3/library/functions.html#bin
 [complex]: https://docs.python.org/3/library/functions.html#complex
 [decimals]: https://docs.python.org/3/library/decimal.html#module-decimal
