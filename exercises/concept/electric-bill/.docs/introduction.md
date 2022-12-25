@@ -149,10 +149,11 @@ This means calculations within `()` have the highest priority, followed by `**`,
 >>> 2 + 3 * 4 ** 4
 770
 ```
+[arbitrary-precision]: https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic
 
 ## Precision & Representation
 
-Integers in Python have [arbitrary precision](https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic) -- the amount of digits is limited only by the available memory of the host system.
+Integers in Python have [arbitrary precision][arbitrary-precision] -- the amount of digits is limited only by the available memory of the host system.
 
 Floating point numbers are usually implemented using a `double` in C (_15 decimal places of precision_), but will vary in representation based on the host system.
 Complex numbers have a `real` and an `imaginary` part, both of which are represented by floating point numbers.
@@ -160,10 +161,7 @@ Complex numbers have a `real` and an `imaginary` part, both of which are represe
 For a more detailed discussions of the issues and limitations of floating point arithmetic across programming languages, take a look at [0.30000000000000004.com][0.30000000000000004.com] and [The Python Tutorial][floating point math].
 
 [0.30000000000000004.com]: https://0.30000000000000004.com/
-[pemdas]: https://mathworld.wolfram.com/PEMDAS.html
-[arithmetic-operations]: https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
 [bin]: https://docs.python.org/3/library/functions.html#bin
-[cmath]: https://docs.python.org/3.9/library/cmath.html
 [complex]: https://docs.python.org/3/library/functions.html#complex
 [decimals]: https://docs.python.org/3/library/decimal.html#module-decimal
 [float]: https://docs.python.org/3/library/functions.html#float
@@ -172,5 +170,5 @@ For a more detailed discussions of the issues and limitations of floating point 
 [hex]: https://docs.python.org/3/library/functions.html#hex
 [int]: https://docs.python.org/3/library/functions.html#int
 [oct]: https://docs.python.org/3/library/functions.html#oct
-[operator precedence]: https://docs.python.org/3/reference/expressions.html#operator-precedence
+[pemdas]: https://mathworld.wolfram.com/PEMDAS.html
 [round]: https://docs.python.org/3/library/functions.html#round
