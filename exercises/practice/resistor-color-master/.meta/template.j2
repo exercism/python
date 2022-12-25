@@ -4,7 +4,11 @@
     def test_{{ case["description"] | to_snake }}(self):
         self.assertEqual(
             {{ case["property"] | to_snake }}({{ case["input"]["colors"] }}),
-            "{{ case['expected']['value']}} {{ case['expected']['unit']}} {{case['expected']['tolerance']}}{{"%" if case['expected']['tolerance'] else ""}}"
+            {%- if case['expected']['tolerance'] %}
+            "{{ case['expected']['value']}} {{ case['expected']['unit']}} {{case['expected']['tolerance']}}%"
+            {%- else -%}
+            "{{ case['expected']['value']}} {{ case['expected']['unit']}}"
+            {% endif %}
         )
 {%- endmacro %}
 {{ macros.header()}}
