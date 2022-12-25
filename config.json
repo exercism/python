@@ -971,6 +971,21 @@
         "difficulty": 3
       },
       {
+        "slug": "resistor-color-master",
+        "name": "Resistor Color Master",
+        "uuid": "f987a5b7-96f2-49c2-99e8-aef30d23dd58",
+        "practices": ["list-methods"],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "lists",
+          "numbers",
+          "strings",
+          "comparisons"
+        ],
+        "difficulty": 3
+      },
+      {
         "slug": "matrix",
         "name": "Matrix",
         "uuid": "b564927a-f08f-4287-9e8d-9bd5daa7081f",
