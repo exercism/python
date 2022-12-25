@@ -89,12 +89,12 @@ The modulo operator (`%`) returns the remainder of the division of the two opera
 >>> 8 % 2
 0
 
-
+# The result of % is 2 here, because 3 only goes into 5 once, with 2 left over
 >>> 5 % 3
 2
 ```
 
-Which is equivalent to:
+Another way to look at 5 % 3:
 
 
 ```python
@@ -108,7 +108,6 @@ Which is equivalent to:
 2.0
 ```
 
-```
 
 ### Exponentiation
 
