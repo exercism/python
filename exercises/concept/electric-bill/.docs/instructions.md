@@ -34,7 +34,7 @@ The function should then `return` the watts as kilowatts rounded to 1 decimal pl
 1.2
 ```
 
-3. Get kwh value
+3. Get kWh value
 
 To be able to calculate the cost of running the electronics, your employer needs to know the power usage in kWh.
 kWh stands for kilowatt-hour, where hour is a unit of time.
@@ -44,7 +44,7 @@ One hour is equal to 3600 seconds.
 To calculate the kWh value, you must convert watts to kW, and then floor-divide the result by 3600.
 
 Implement a function `get_kWh_value()` that accepts an integer which holds the number of watts.
-The function should then `return` the watts as an integer.
+The function should then `return` the kilowatt-hours as an integer.
 
 ```python
 >>> get_kWh_value(5000000)
@@ -71,7 +71,7 @@ Your employer wants to know the cost of running the electronics.
 The cost of running the electronics is the power used multiplied by the cost per kWh.
 The power used is the power given divided by the calculated efficiency.
 
-Implement a function `get_cost(<watts>,<power_factor>,<price>)` that accepts an integer that holds the number of watts, a float that has the power factor, and a float that holds the cost per kwh.
+Implement a function `get_cost(<watts>,<power_factor>,<price>)` that accepts an integer that holds the number of watts, a float that has the power factor, and a float that holds the cost per kWh.
 The function should then `return` the cost of running the electronics as a float.
 
 ```python
