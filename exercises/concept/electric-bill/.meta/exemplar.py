@@ -1,12 +1,13 @@
-"""Functions which helps company to calculate their power usage"""
+"""Functions to help the company calculate their power usage."""
 
 
-def get_the_amount_of_hours(hours):
+def get_extra_hours(hours):
     """Return the amount of hours.
 
     :param: hours: int - amount of hours.
-    :return: int - amount of hours.
+    :return: int - amount of "extra" hours.
     """
+
     return (hours + 3) % 24
 
 
@@ -16,7 +17,9 @@ def get_kW_value(watts):
     :param: watts: int - watt value.
     :return: float - kW value.
     """
-    return round(watts / 1000, 1) # rounds here
+
+    # rounds to one decimal place here
+    return round(watts / 1000, 1)
 
 
 def get_kwh_value(watts):
@@ -28,21 +31,21 @@ def get_kwh_value(watts):
     return get_kW_value(watts) // 3600
 
 
-def get_efficiency(efficiency):
-    """Return the efficiency as a power factor.
+def get_efficiency(power_factor):
+    """Return the efficiency calculated from the power factor.
 
-    :param: efficiency: float - efficiency.
+    :param: power_factor: float.
     :return: float - efficiency.
     """
-    return efficiency / 100
+    return power_factor / 100
 
 
-def get_price_of_kwh(watts, efficiency, price):
-    """Return the price of a given kWh value, efficiency and price.
+def get_cost(watts, power_factor, price):
+    """Calculate the cost of a given kWh value, efficiency and price.
 
     :param: watts: int - watt value.
-    :param: efficiency: float - efficiency.
+    :param: power_factor: float - efficiency.
     :param: price: float - price of kWh.
-    :return: float - price of kWh.
+    :return: float - cost of kWh.
     """
-    return price * (get_kwh_value(watts) / get_efficiency(efficiency))
+    return price * (get_kwh_value(watts) / get_efficiency(power_factor))
