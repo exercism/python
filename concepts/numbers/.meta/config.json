@@ -1,5 +1,5 @@
 {
-  "blurb": "There are three different types of built-in numbers: integers (\"int\"), floating-point (\"float\"), and complex (\"complex\"). Ints have arbitrary precision and floats typically have 15 decimal places of precision -- but both Int and float precision vary by host system. Complex numbers have a real and an imaginary part - each represented by floats.",
+  "blurb": "There are three different types of built-in numbers: integers (\"int\"), floating-point (\"float\"), and complex (\"complex\"). Ints have arbitrary precision and floats typically have 15 decimal places of precision -- but both int and float precision vary by host system. Complex numbers have a real and an imaginary part - each represented by floats.",
   "authors": ["Ticktakto", "Yabby1997", "limm-jk", "OMEGA-Y", "wnstj2007"],
-  "contributors": ["BethanyG", "KaiAragaki"]
+  "contributors": ["BethanyG", "KaiAragaki", "meatball133"]
 }

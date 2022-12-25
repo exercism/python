@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "meatball133",
+    "BethanyG"
+  ],
+  "files": {
+    "solution": [
+      "electric_bill.py"
+    ],
+    "test": [
+      "electric_bill_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
+  },
+  "icon": "city-office",
+  "blurb": "Learn about numbers in Python while saving your employers money on their electric bill."
+}
