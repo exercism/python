@@ -1,4 +1,4 @@
-"""Functions which helps company to calculate their power usage"""
+"""Functions to help the company calculate their power usage."""
 
 
 def get_extra_hours(hours):

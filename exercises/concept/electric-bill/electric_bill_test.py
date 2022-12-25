@@ -23,6 +23,7 @@ class LocomotiveEngineerTest(unittest.TestCase):
     def test_get_kW_value(self):
         input_data = [1000, 2200, 2900, 900, 1160]
         output_data = [1, 2.2, 2.9, 0.9, 1.2]
+
         for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
             with self.subTest(f'variation #{variant}', input_data=input_data, output_data=output_data):
                 error_msg=f'Expected: {output_data} but got a different value.'
@@ -32,6 +33,7 @@ class LocomotiveEngineerTest(unittest.TestCase):
     def test_get_kwh_value(self): 
         input_data = (5000000, 2141241, 43252135, 5324623462, 4321512)
         output_data = [1, 0, 12, 1479, 1]
+
         for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
             with self.subTest(f'variation #{variant}', input_data=input_data, output_data=output_data):
                 error_msg=f'Expected: {output_data} but got a different value.'
@@ -51,7 +53,7 @@ class LocomotiveEngineerTest(unittest.TestCase):
     def test_get_cost(self):
         input_data = ((5000000, 80.0, 0.25), (2141241, 99.99, 2), (43252135, 0.8, 4), (4321512, 40.0, 2))
         output_data = (0.3125, 0, 6000, 5)
-
+        
         for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
             with self.subTest(f'variation #{variant}', input_data=input_data, output_data=output_data):
                 error_msg=f'Expected: {output_data} but got a different value.'
