@@ -2,7 +2,7 @@
 
 The company you work for wants to reduce their carbon footprint, so they want you to write a program to calculate the power usage and cost of running their electronics.
 
-1. Get extra hours
+## 1. Get extra hours
 
 Your employer has a program that calculates the time it takes to run different electronics.
 Currently, the time is stored in hours.
@@ -19,7 +19,7 @@ The function should make the appropriate "extra hours" adjustment, and then `ret
 4
 ```
 
-2. Get kW value
+## 2. Get kW value
 
 Your employer wants to know the power usage of the different electronics in kW.
 kW stands for kilowatt, where watts are a unit of power.
@@ -34,7 +34,7 @@ The function should then `return` the watts as kilowatts rounded to 1 decimal pl
 1.2
 ```
 
-3. Get kWh value
+## 3. Get kWh value
 
 To be able to calculate the cost of running the electronics, your employer needs to know the power usage in kWh.
 kWh stands for kilowatt-hour, where hour is a unit of time.
@@ -51,7 +51,7 @@ The function should then `return` the kilowatt-hours as an integer.
 1
 ```
 
-4. Get efficiency
+## 4. Get efficiency
 
 Electronics are not 100% efficient.
 Therefore, your employer wants you to calculate the _efficiency_ of the electronics.
@@ -65,7 +65,7 @@ The function should then `return` the calculated efficiency as a float.
 0.8
 ```
 
-5. Get cost
+## 5. Get cost
 
 Your employer wants to know the cost of running the electronics.
 The cost of running the electronics is the power used multiplied by the cost per kWh.
