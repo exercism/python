@@ -30,17 +30,19 @@ def label(colors):
         value = 10 * COLORS.index(colors[0]) + COLORS.index(colors[1])
         value *= 10 ** COLORS.index(colors[2])
         value, unit = color_code(value)
-        return f'{value} {unit}, {COLORS_TOLERANCE[colors[3]]}%'
+        value = int(value) if value.is_integer() else value
+        return f'{value} {unit} {COLORS_TOLERANCE[colors[3]]}%'
     else:
-        value = 10 * COLORS.index(colors[0]) + 10 * COLORS.index(colors[1]) + COLORS.index(colors[2])
+        value = 100 * COLORS.index(colors[0]) + 10 * COLORS.index(colors[1]) + COLORS.index(colors[2])
         value *= 10 ** COLORS.index(colors[3])
         value, unit = color_code(value)
-        return f'{value} {unit}, {COLORS_TOLERANCE[colors[4]]}%'
+        value = int(value) if value.is_integer() else value
+        return f'{value} {unit} {COLORS_TOLERANCE[colors[4]]}%'
 
 
 def color_code(color):
     if color < 1000:
-        return color, 'ohms'
+        return color / 1, 'ohms'
     elif color < 1000000:
         return color / 1000, 'kiloohms'
     else:
