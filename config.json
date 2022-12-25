@@ -43,9 +43,9 @@
         "status": "beta"
       },
       {
-        "slug": "currency-exchange",
-        "name": "Currency Exchange",
-        "uuid": "1335ca33-3af0-4720-bcf2-bfa68ffc6862",
+        "slug": "electric-bill",
+        "name": "Electric Bill",
+        "uuid": "b2fd556b-07a8-47d6-9811-4d847cf0c6da",
         "concepts": ["numbers"],
         "prerequisites": ["basics"],
         "status": "beta"
@@ -2102,6 +2102,14 @@
           "string-methods"
         ],
         "difficulty": 9
+      },
+      {
+        "slug": "currency-exchange",
+        "name": "Currency Exchange",
+        "uuid": "1335ca33-3af0-4720-bcf2-bfa68ffc6862",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       },
       {
         "slug": "accumulate",
