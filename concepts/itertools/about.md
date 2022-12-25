@@ -1,3 +1,42 @@
+# About
+
+Itertools is a module in the Python standard library that provides a number of functions that create iterators for efficient looping.
+Iterators are objects that can be used in for example a for loop.
+
+There are a number of functions in the itertools module that are useful for looping over data.
+These functions often are also able to enchant the readability and maintainabillity of the code.
+
+This concept will cover these functions and how to use them:
+
+- `chain()`
+- `chain.from_iterable()`
+- `compress()`
+- `islice()`
+- `pairwise()`
+- Maybe `tee()`
+- `zip_longest()`
+- `product()`
+- `permutations()`
+- `combinations()`
+- `combinations_with_replacement()`
+- `count()`
+- `cycle()`
+- `repeat()`
+
+There are more functions in the itertools module, like:
+
+- `accumulate()`
+- `groupby()`
+- `starmap()`
+- `takewhile()`
+- `dropwhile()`
+- `filterfalse()`
+
+These functions will be coverd in a later concept.
+
+`count()`, `cycle()`, and`repeat()` is cataogorized as infinite iterators.
+These iterators will never terminate and will keep looping forever.
+
 ## Iterators terminating on the shortest input sequence
 
 ### Chain()
@@ -338,3 +377,5 @@ Meaning that it is not an infinite loop if that parameter is given.
 ...
 5 5 5
 ```
+
+[itertools]: https://docs.python.org/3/library/itertools.html

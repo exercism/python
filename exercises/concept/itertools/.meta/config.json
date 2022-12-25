@@ -1,0 +1,25 @@
+{
+  "authors": [
+    "meatball133",
+    "BethanyG"
+  ],
+  "contributors": [
+    "IsaacG"
+  ],
+  "files": {
+    "solution": [
+      "locomotive_engineer.py"
+    ],
+    "test": [
+      "locomotive_engineer_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
+  },
+  "forked_from": [
+    "javascript/train-driver"
+  ],
+  "icon": "tracks-on-tracks-on-tracks",
+  "blurb": "Learn about unpacking and multiple assignment in Python while helping Linus with his train control system."
+}
