@@ -1,0 +1,40 @@
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
+
+[8c4f9fb6-d477-4250-bc57-b325d2be226f]
+description = "Orange, orange, black, and red"
+
+[d1d4a769-9210-43cc-9a14-6af6ce4c0b00]
+description = "Blue, grey, brown, and violet"
+
+[6af91bc3-8275-4c38-920a-185d30feb5f3]
+description = "Red, black, red, and green"
+
+[9c4630bf-0dda-4212-baca-2f5111530b4d]
+description = "Green, brown, orange, and grey"
+
+[5880ddf1-0dc6-4bd0-b9de-5626117cd2c7]
+description = "One black band"
+
+[a5cfda34-3c02-4bda-b183-726791fb43b2]
+description = "Orange, orange, yellow, black, and brown"
+
+[4f0ad96c-cdab-4c84-95dd-7074e889e001]
+description = "Red, green, yellow, yellow, and brown"
+
+[48c66841-208c-46a7-8992-1e84a2eda9e2]
+description = "Blue, grey, white, brown, and brown"
+
+[4f3aeb0c-fd9d-4cbd-b204-554e61978f73]
+description = "Violet, orange, red, and grey"
+
+[1ae3a17f-8bc0-449c-9831-fddfd2d91c5d]
+description = "Brown, red, orange, green, and blue"
