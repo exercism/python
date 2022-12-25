@@ -973,7 +973,7 @@
       {
         "slug": "resistor-color-master",
         "name": "Resistor Color Master",
-        "uuid": "f987a5b7-96f2-49c2-99e8-aef30d23dd58",
+        "uuid": "8a738365-0efa-444f-9466-a757ddaddcdb",
         "practices": ["list-methods"],
         "prerequisites": [
           "basics",
