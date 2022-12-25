@@ -51,6 +51,14 @@
         "status": "beta"
       },
       {
+        "slug": "currency-exchange",
+        "name": "Currency Exchange",
+        "uuid": "1335ca33-3af0-4720-bcf2-bfa68ffc6862",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "wip"
+      },
+      {
         "slug": "meltdown-mitigation",
         "name": "Meltdown Mitigation",
         "uuid": "50c88b36-e2e2-46e5-b6c4-bb7e714c375a",
@@ -2102,14 +2110,6 @@
           "string-methods"
         ],
         "difficulty": 9
-      },
-      {
-        "slug": "currency-exchange",
-        "name": "Currency Exchange",
-        "uuid": "1335ca33-3af0-4720-bcf2-bfa68ffc6862",
-        "concepts": [],
-        "prerequisites": [],
-        "status": "deprecated"
       },
       {
         "slug": "accumulate",
