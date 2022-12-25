@@ -29,6 +29,8 @@ Numbers containing a decimal point (with or without fractional parts) are identi
 
 Python fully supports arithmetic between these different number types, and will convert narrower numbers to match their less narrow counterparts when used with the binary arithmetic operators (`+`, `-`, `*`, `/`, `//`, and `%`).
 
+All numbers (except complex) support all [arithmetic operations][arithmetic-operations], evaluated according to [operator precedence][operator precedence].
+Support for mathematical functions (beyond `+` and `-`) for complex numbers can be found in the [cmath][cmath] module.
 
 ### Addition and subtraction
 
@@ -96,7 +98,6 @@ The modulo operator (`%`) returns the remainder of the division of the two opera
 
 Another way to look at 5 % 3:
 
-
 ```python
 >>> whole_part = int(5/3)
 1
@@ -108,8 +109,7 @@ Another way to look at 5 % 3:
 2.0
 ```
 
-
-### Exponentiation
+## Exponentiation
 
 Exponentiation is performed using the `**` operator:
 
@@ -121,14 +121,9 @@ Exponentiation is performed using the `**` operator:
 2
 ```
 
-All numbers (except complex) support all [arithmetic operations][arithmetic-operations], evaluated according to [operator precedence][operator precedence].
-Support for mathematical functions (beyond `+` and `-`) for complex numbers can be found in the [cmath][cmath] module.
-
-
 ## Conversions
 
 Numbers can be converted from `int` to `floats` and `floats` to `int` using the built-in functions `int()` and `float()`:
-
 
 ```python
 >>> int(3.45)
@@ -137,7 +132,6 @@ Numbers can be converted from `int` to `floats` and `floats` to `int` using the 
 >>> float(3)
 3.0
 ```
-
 
 ## Round
 
