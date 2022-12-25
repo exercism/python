@@ -165,7 +165,7 @@ This is useful when you want to override the default order of operations.
 20
 ```
 
-Python follows the [PEMDAS][operator precedence] rule for operator precedence.
+Python follows the [PEMDAS][pemdas] rule for operator precedence.
 This means calculations within `()` have the highest priority, followed by `**`, then `*`, `/`, `//`, `%`, `+`, and `-`:
 
 ```python
@@ -191,7 +191,8 @@ Complex numbers have a `real` and an `imaginary` part, both of which are represe
 For a more detailed discussions of the issues and limitations of floating point arithmetic across programming languages, take a look at [0.30000000000000004.com][0.30000000000000004.com] and [The Python Tutorial][floating point math].
 
 [0.30000000000000004.com]: https://0.30000000000000004.com/
-[arethmetic-operations]: https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
+[pemdas]: https://mathworld.wolfram.com/PEMDAS.html
+[arithmetic-operations]: https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
 [bin]: https://docs.python.org/3/library/functions.html#bin
 [cmath]: https://docs.python.org/3.9/library/cmath.html
 [complex]: https://docs.python.org/3/library/functions.html#complex
