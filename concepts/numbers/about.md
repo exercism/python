@@ -170,7 +170,7 @@ This means calculations within `()` have the highest priority, followed by `**`,
 20
 
 # In the following example, the `**` operator has the highest priority, then `*`, then `+`
-# Meaning we first do 4 ** 4, then 3 * 64, then 2 + 192
+# Meaning we first do 4 ** 4, then 3 * 256, then 2 + 768
 >>> 2 + 3 * 4 ** 4
 770
 ```
