@@ -28,7 +28,7 @@ def get_kwh_amount(watts):
     :param: watts: int - watt amount.
     :return: int - kilowatt hour amount.
     """
-    return get_kW_value(watts) // 3600
+    return get_kW_amount(watts) // 3600
 
 
 def get_efficiency(power_factor):
@@ -48,4 +48,4 @@ def get_cost(watts, power_factor, price):
     :param: price: float - price of kWh.
     :return: float - cost of kWh.
     """
-    return price * (get_kwh_value(watts) / get_efficiency(power_factor))
+    return price * (get_kwh_amount(watts) / get_efficiency(power_factor))
