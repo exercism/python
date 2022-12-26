@@ -140,7 +140,7 @@ This means calculations within `()` have the highest priority, followed by `**`,
 -11
 
 >>> (2 + 3 - 4) * 4
-20
+4
 
 # In the following example, the `**` operator has the highest priority, then `*`, then `+`
 # Meaning we first do 4 ** 4, then 3 * 64, then 2 + 192
