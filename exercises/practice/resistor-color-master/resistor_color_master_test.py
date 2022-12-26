@@ -37,7 +37,7 @@ class ResistorColorMasterTest(unittest.TestCase):
 
     def test_blue_grey_white_red_and_brown(self):
         self.assertEqual(
-            label(["blue", "grey", "white", "red", "brown"]), "6.89 kiloohms ±1%"
+            label(["blue", "grey", "white", "brown", "brown"]), "6.89 kiloohms ±1%"
         )
 
     def test_violet_orange_red_and_grey(self):
