@@ -1,2 +1,2 @@
 def label(colors):
-pass
+    pass
