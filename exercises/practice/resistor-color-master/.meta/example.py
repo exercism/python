@@ -31,13 +31,13 @@ def label(colors):
         value *= 10 ** COLORS.index(colors[2])
         value, unit = color_code(value)
         value = int(value) if value.is_integer() else value
-        return f'{value} {unit} {COLORS_TOLERANCE[colors[3]]}%'
+        return f'{value} {unit} ±{COLORS_TOLERANCE[colors[3]]}%'
     else:
         value = 100 * COLORS.index(colors[0]) + 10 * COLORS.index(colors[1]) + COLORS.index(colors[2])
         value *= 10 ** COLORS.index(colors[3])
         value, unit = color_code(value)
         value = int(value) if value.is_integer() else value
-        return f'{value} {unit} {COLORS_TOLERANCE[colors[4]]}%'
+        return f'{value} {unit} ±{COLORS_TOLERANCE[colors[4]]}%'
 
 
 def color_code(color):
