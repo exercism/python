@@ -1,8 +1,8 @@
 import unittest
 import pytest
 from electric_bill import (get_extra_hours,
-                                 get_kW_value,
-                                 get_kwh_value,
+                                 get_kW_amount,
+                                 get_kwh_amount,
                                  get_efficiency,
                                  get_cost)
 
@@ -20,24 +20,24 @@ class ElecticBillTest(unittest.TestCase):
                 self.assertEqual(get_extra_hours(input_data), output_data, msg=error_msg)
 
     @pytest.mark.task(taskno=2)
-    def test_get_kW_value(self):
+    def test_get_kW_amount(self):
         input_data = [1000, 2200, 2900, 900, 1160]
         output_data = [1, 2.2, 2.9, 0.9, 1.2]
 
         for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
             with self.subTest(f'variation #{variant}', input_data=input_data, output_data=output_data):
                 error_msg=f'Expected: {output_data} but got a different value.'
-                self.assertEqual(get_kW_value(input_data), output_data, msg=error_msg)
+                self.assertEqual(get_kW_amount(input_data), output_data, msg=error_msg)
 
     @pytest.mark.task(taskno=3)
-    def test_get_kwh_value(self): 
+    def test_get_kwh_amount(self): 
         input_data = (5000000, 2141241, 43252135, 5324623462, 4321512)
         output_data = [1, 0, 12, 1479, 1]
 
         for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
             with self.subTest(f'variation #{variant}', input_data=input_data, output_data=output_data):
                 error_msg=f'Expected: {output_data} but got a different value.'
-                self.assertEqual(get_kwh_value(input_data), output_data, msg=error_msg)
+                self.assertEqual(get_kwh_amount(input_data), output_data, msg=error_msg)
 
     @pytest.mark.task(taskno=4)
     def test_get_efficiency(self): 

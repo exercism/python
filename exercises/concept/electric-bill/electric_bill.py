@@ -10,20 +10,20 @@ def get_extra_hours(hours):
     pass
 
 
-def get_kW_value(watts):
-    """Return the kW value of a given watt value.
+def get_kW_amount(watts):
+    """Return the kW amount of a given watt amount.
 
-    :param: watts: int - watt value.
-    :return: float - kW value.
+    :param: watts: int - watt amount.
+    :return: float - kW amount.
     """
     pass
 
 
-def get_kwh_value(watts):
-    """Return the kWh value of a given watt value and hours.
+def get_kwh_amount(watts):
+    """Return the kWh amount of a given watt amount and hours.
 
-    :param: watts: int - watt value.
-    :return: int - kilowatt hour value.
+    :param: watts: int - watt amount.
+    :return: int - kilowatt hour amount.
     """
     pass
 

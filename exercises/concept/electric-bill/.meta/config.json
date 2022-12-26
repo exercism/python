@@ -3,6 +3,7 @@
     "meatball133",
     "BethanyG"
   ],
+  "contributors": ["MatthijsBlom"],
   "files": {
     "solution": [
       "electric_bill.py"
