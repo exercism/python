@@ -7,7 +7,7 @@ from electric_bill import (get_extra_hours,
                                  get_cost)
 
 
-class LocomotiveEngineerTest(unittest.TestCase):
+class ElecticBillTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
     def test_get_extra_hours(self):
