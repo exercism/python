@@ -9,13 +9,13 @@ This exercise could easily be solved using slicing, indexing, and various `dict`
 However, we would like you to practice packing, unpacking, and multiple assignment in solving each of the tasks below.
 ```
 
-## 1. Create a list of all wagons
+## 1. All flawors combinations
 
-Your friend has been keeping track of each wagon identifier (ID), but they are never sure how many wagons the system is going to have to process at any given time. It would be much easier for the rest of the logistics program to have this data packaged into a unified `list`.
+The ice cream stand wants to know all of the combinations there are of thier flawors.
+Each ice cream has a different amount of scoopes of flawors and you can't use the same flawor more than once.
 
-Implement a function `get_list_of_wagons()` that accepts an arbitrary number of wagon IDs.
-Each ID will be a positive integer.
-The function should then `return` the given IDs as a single `list`.
+Implement a function `flawor_combinations()` that takes a `tuple` with an arbitrary number of flawors and an `int` which says how many scoopes.
+The function should then `return` all combinations in the form of a `tuple`.
 
 ```python
 >>> get_list_of_wagons(1, 7, 12, 3, 14, 8, 5)
