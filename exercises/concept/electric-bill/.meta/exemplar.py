@@ -26,7 +26,7 @@ def get_kwh_value(watts):
     """Return the kWh value of a given watt value and hours.
 
     :param: watts: int - watt value.
-    :param: hours: int - kilowatt hour value.
+    :return: int - kilowatt hour value.
     """
     return get_kW_value(watts) // 3600
 
