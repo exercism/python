@@ -129,7 +129,7 @@ This is useful when you want to override the default order of operations.
 14
 
 >>> (2 + 3) * 4
-20
+4
 ```
 
 Python follows the [PEMDAS][pemdas] rule for operator precedence.
