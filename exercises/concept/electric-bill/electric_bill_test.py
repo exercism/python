@@ -16,7 +16,7 @@ class ElecticBillTest(unittest.TestCase):
 
         for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
             with self.subTest(f'variation #{variant}', input_data=input_data, output_data=output_data):
-                error_msg=f'Expected: {output_data} but got a different value.'
+                error_msg=f'Expected: {output_data} but got a different amount.'
                 self.assertEqual(get_extra_hours(input_data), output_data, msg=error_msg)
 
     @pytest.mark.task(taskno=2)
@@ -26,7 +26,7 @@ class ElecticBillTest(unittest.TestCase):
 
         for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
             with self.subTest(f'variation #{variant}', input_data=input_data, output_data=output_data):
-                error_msg=f'Expected: {output_data} but got a different value.'
+                error_msg=f'Expected: {output_data} but got a different amount.'
                 self.assertEqual(get_kW_amount(input_data), output_data, msg=error_msg)
 
     @pytest.mark.task(taskno=3)
@@ -36,7 +36,7 @@ class ElecticBillTest(unittest.TestCase):
 
         for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
             with self.subTest(f'variation #{variant}', input_data=input_data, output_data=output_data):
-                error_msg=f'Expected: {output_data} but got a different value.'
+                error_msg=f'Expected: {output_data} but got a different amount.'
                 self.assertEqual(get_kwh_amount(input_data), output_data, msg=error_msg)
 
     @pytest.mark.task(taskno=4)
