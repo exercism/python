@@ -2,9 +2,10 @@
 
 Conda airlines is the programming-world's biggest airline, with over 10.000 flights a day!
 
-They are currently assigning all seats to passengers by hand, this will need to automated.
+They are currently assigning all seats to passengers by hand, this will need to be automated.
 
-They have asked _you_ to create software to automate the assigning of seats to passengers. They require your software to be memory efficient and performant.
+They have asked _you_ to create software to automate the assigning of seats to passengers.
+They require your software to be memory efficient and performant.
 
 Conda's airplanes have up to _4 seats_ in each row, and each airplane has many rows.
 
@@ -12,13 +13,29 @@ While the rows are defined using numbers, seats in each row are defined using le
 
 You can use this table as a guide:
 
-| x             | 1         | 2     |
-| :----:        | :----:    | :----:|
-| Row           | 5         | 21    |
-| Seat letter   | A         | D     |
-| Result        | 5A        | 21D   |
+|      x      |  1  |  2  |
+| :---------: | :-: | :-: |
+|     Row     |  5  | 21  |
+| Seat letter |  A  |  D  |
+|   Result    | 5A  | 21D |
 
-## 1. Generate an amount of seats
+## 1. Generate seat letters
+
+Implement the `generate_seat_letters()` function that returns an _iterable_ of seat letters given the following variable:
+
+`amount`: The amount of seat letters to be generated.
+
+The letters should be generated in alphabetical order, starting with `A` and ending with `D`.
+
+```python
+>>> letters = generate_seat_letters(4)
+>>> next(letters)
+"A"
+>>> next(letters)
+"B"
+```
+
+## 2. Generate an amount of seats
 
 Implement the `generate_seats()` function that returns an _iterable_ of seats given the following variable:
 
@@ -37,9 +54,10 @@ _Note: The returned seats should be ordered, like: 1A 1B 1C._
 "1B"
 ```
 
-## 2. Assign seats to passengers
+## 3. Assign seats to passengers
 
-Implement the `assign_seats()` function that returns a _dictionary_ of `passenger` as _key_, and `seat_number` as _value_. Given is the following _list_:
+Implement the `assign_seats()` function that returns a _dictionary_ of `passenger` as _key_, and `seat_number` as _value_.
+Given is the following _list_:
 
 `passengers`: A list containing passenger names.
 
@@ -50,15 +68,16 @@ Implement the `assign_seats()` function that returns a _dictionary_ of `passenge
 {'Jerimiah': '1A', 'Eric': '1B', 'Bethaney': '1C', 'Byte': '1D', 'SqueekyBoots': '2A', 'Bob': '2B'}
 ```
 
-## 3. Ticket codes
+## 4. Ticket codes
 
 Each ticket has a _12_ character long string code for identification.
 
-This code begins with the `assigned_seat` followed by the `flight_id`. The rest of the code is appended by `0s`.
+This code begins with the `assigned_seat` followed by the `flight_id`.
+The rest of the code is appended by `0s`.
 
 Implement a `generator` that yields a `ticket_number` given the following arguments:
 
-`seat_numbers`: A _list_ of *seat_numbers*.
+`seat_numbers`: A _list_ of _seat_numbers_.
 `flight_id`: A string containing the flight identification.
 
 ```python

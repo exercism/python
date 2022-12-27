@@ -1,4 +1,20 @@
-"""Plane Tickets Exercise"""
+"""Functions to automate Conda airlines ticketing system."""
+
+def generate_seat_letters(amount):
+    """ Generate a series of seat letters for airline boarding.
+
+    :param amount: Amount of seat letters to be generated. (int)
+    :return: Generator that yields seat letters.
+
+    Seat letters are generated with each row having 4 seats.
+    These should be sorted from low to high.
+
+    Example: A, B, C, D
+
+    """
+
+    pass
+
 
 def generate_seats(amount):
 
