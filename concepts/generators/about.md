@@ -4,65 +4,63 @@
 
 Generators are constructed much like other looping or recursive functions, but require a [`yield` expression](#the-yield-expression), which we will explore in depth a bit later.
 
-
 An example is a function that returns the _squares_ from a given list of numbers.  
-As currently written, all input must be processed before any values can be returned:  
-
+As currently written, all input must be processed before any values can be returned:
 
 ```python
 >>> def squares(list_of_numbers):
->>>     squares = []
->>>     for number in list_of_numbers:
->>>         squares.append(number ** 2)
->>>     return squares
+...     squares = []
+...     for number in list_of_numbers:
+...         squares.append(number ** 2)
+...     return squares
 ```
 
 You can convert that function into a generator like this:
 
 ```python
-def squares(list_of_numbers):
-    for number in list_of_number:
-        yield number ** 2
+>>> def squares_generator(list_of_numbers):
+...     for number in list_of_numbers:
+...         yield number ** 2
 ```
 
 The rationale behind this is that you use a generator when you do not need all the values _at once_.
 
 This saves memory and processing power, since only the value you are _currently working on_ is calculated.
 
-
 ## Using a generator
 
-Generators may be used in place of most `iterables` in Python. This includes  _functions_ or _objects_ that require an `iterable`/`iterator` as an argument.
+Generators may be used in place of most `iterables` in Python. This includes _functions_ or _objects_ that require an `iterable`/`iterator` as an argument.
 
-To use the `squares()` generator:
+To use the `squares_generator()` generator:
 
 ```python
->>> squared_numbers = squares([1, 2, 3, 4])
+>>> squared_numbers = squares_generator([1, 2, 3, 4])
 
 >>> for square in squared_numbers:
->>>     print(square)
+...     print(square)
+...
 1
 4
 9
 16
 ```
 
-Values within a generator can also be produced/accessed via the `next()` function. 
+Values within a generator can also be produced/accessed via the `next()` function.
 `next()` calls the `__next__()` method of a generator object, "advancing" or evaluating the generator code up to its `yield` expression, which then "yields" or returns the value.
 
 ```python
-square_generator = squares([1, 2])
+>>> squared_numbers = squares_generator([1, 2])
 
->>> next(square_generator)
+>>> next(squared_numbers)
 1
->>> next(square_generator)
+>>> next(squared_numbers)
 4
 ```
 
 When a `generator` is fully consumed and has no more values to return, it throws a `StopIteration` error.
 
 ```python
->>> next(square_generator)
+>>> next(squared_numbers)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 StopIteration
@@ -72,12 +70,12 @@ StopIteration
 
 Generators are a special sub-set of _iterators_.
 `Iterators` are the mechanism/protocol that enables looping over _iterables_.
-Generators and and the iterators returned by common Python (`iterables`)[https://wiki.python.org/moin/Iterator] act very similarly, but there are some important differences to note:
-
+Generators and the iterators returned by common Python [`iterables`][iterables] act very similarly, but there are some important differences to note:
 
 - Generators are _one-way_; there is no "backing up" to a previous value.
 
 - Iterating over generators consume the returned values; no resetting.
+
 - Generators (_being lazily evaluated_) are not sortable and can not be reversed.
 
 - Generators do _not_ have `indexes`, so you can't reference a previous or future value using addition or subtraction.
@@ -88,7 +86,7 @@ Generators and and the iterators returned by common Python (`iterables`)[https:/
 
 ## The yield expression
 
-The [yield expression](https://docs.python.org/3.8/reference/expressions.html#yield-expressions) is very similar to the `return` expression.
+The [yield expression][yield expression] is very similar to the `return` expression.
 
 _Unlike_ the `return` expression, `yield` gives up values to the caller at a _specific point_, suspending evaluation/return of any additional values until they are requested.
 
@@ -100,10 +98,10 @@ Note: _Using `yield` expressions is prohibited outside of functions._
 
 ```python
 >>> def infinite_sequence():
->>>     current_number = 0
->>>     while True:
->>>         yield current_number
->>>         current_number += 1
+...     current_number = 0
+...     while True:
+...         yield current_number
+...         current_number += 1
 
 >>> lets_try = infinite_sequence()
 >>> lets_try.__next__()
@@ -123,10 +121,13 @@ Generators are also very helpful when a process or calculation is _complex_, _ex
 
 ```python
 >>> def infinite_sequence():
->>>     current_number = 0
->>>     while True:
->>>         yield current_number
->>>         current_number += 1
+...     current_number = 0
+...     while True:
+...         yield current_number
+...         current_number += 1
 ```
 
 Now whenever `__next__()` is called on the `infinite_sequence` object, it will return the _previous number_ + 1.
+
+[iterables]: https://wiki.python.org/moin/Iterator
+[yield expression]: https://docs.python.org/3.11/reference/expressions.html#yield-expressions
