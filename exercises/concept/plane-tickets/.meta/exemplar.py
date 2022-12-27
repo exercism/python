@@ -1,11 +1,28 @@
-"""Plane Tickets Exercise"""
+"""Functions to automate Conda airlines ticketing system."""
 
 import math
 
 SEATS_IN_ROW = ['A', 'B', 'C', 'D']
 
-def generate_seats(amount):
 
+def generate_seat_letters(amount):
+    """ Generate a series of seat letters for airline boarding.
+
+    :param amount: Amount of seat letters to be generated. (int)
+    :return: Generator that yields seat letters.
+
+    Seat letters are generated with each row having 4 seats.
+    These should be sorted from low to high.
+
+    Example: A, B, C, D
+
+    """
+
+    for seat in range(amount):
+        yield SEATS_IN_ROW[seat % 4]
+
+
+def generate_seats(amount):
     """Generate a series of seat numbers for airline boarding.
 
     :param amount: Amount of seats to be generated. (int)
@@ -21,16 +38,14 @@ def generate_seats(amount):
     """
 
     amount = amount + 4 if amount >= 13 else amount
-
+    letters = generate_seat_letters(amount)
     for seat in range(amount):
         row_number = math.ceil((seat+1) / 4)
         if row_number != 13:
-            seat_letter = SEATS_IN_ROW[seat % 4]
-            yield f'{str(row_number)}{seat_letter}'
+            yield f'{str(row_number)}{next(letters)}'
 
 def assign_seats(passengers):
-
-    """Assign seats to passenger.
+    """Assign seats to passengers.
 
     :param passengers: A list of strings containing names of passengers. (list[str])
     :return: A dictionary type object containing the names of the passengers as keys and seat numbers as values.
