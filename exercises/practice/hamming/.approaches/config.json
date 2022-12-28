@@ -1,0 +1,29 @@
+{
+  "introduction": {
+    "authors": ["meatball133", "bethanyg"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "9e0baea1-8b3b-46be-8d26-e247b6a59eee",
+      "slug": "range",
+      "title": "Range",
+      "blurb": "Use range to compare 2 strings",
+      "authors": ["meatball133", "bethanyg"]
+    },
+    {
+      "uuid": "75883c53-cc84-483a-8375-eb9375a5f739",
+      "slug": "zip",
+      "title": "Zip",
+      "blurb": "Use zip to compare 2 strings",
+      "authors": ["meatball133", "bethanyg"]
+    },
+    {
+      "uuid": "9db3f200-2816-40a8-b660-a6bf87abe470",
+      "slug": "sum",
+      "title": "Sum",
+      "blurb": "Use sum to compare 2 strings",
+      "authors": ["meatball133", "bethanyg"]
+    }
+  ]
+}
