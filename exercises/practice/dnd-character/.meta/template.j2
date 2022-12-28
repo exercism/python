@@ -15,7 +15,7 @@
     {% elif property == "ability" -%}
     def test_{{ description }}(self):
         score = Character().{{ property }}()
-        self.assertTrue({{ supercase["expected"] | replace("&&","and") }})
+        self.assertIs({{ supercase["expected"] | replace("&&","and") }}, True)
 
     {% elif property == "character" -%}
     def test_{{ description}}(self):
@@ -25,13 +25,13 @@
         {% if ability == "hitpoints" -%}
         {% set statement = statement | replace("constitution","Char.constitution") -%}
         {%- endif -%}
-        self.assertTrue({{ statement }})
+        self.assertIs({{ statement }}, True)
         {% endfor %}
 
     {% elif property == "strength" -%}
     def test_{{ description }}(self):
         Char = Character()
-        self.assertTrue({{ supercase["expected"] | replace(property , ["Char.", property]|join(""))}})
+        self.assertIs({{ supercase["expected"] | replace(property , ["Char.", property]|join(""))}}, True)
     {%- endif -%}
 {%- endmacro %}
 
