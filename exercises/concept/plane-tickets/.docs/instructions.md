@@ -7,25 +7,14 @@ They are currently assigning all seats to passengers by hand, this will need to 
 They have asked _you_ to create software to automate the assigning of seats to passengers.
 They require your software to be memory efficient and performant.
 
-Conda's airplanes have up to _4 seats_ in each row, and each airplane has many rows.
-
-While the rows are defined using numbers, seats in each row are defined using letters from the alphabet, with `seat A` being the first _seat_ in the row.
-
-You can use this table as a guide:
-
-|      x      |  1  |  2  |
-| :---------: | :-: | :-: |
-|     Row     |  5  | 21  |
-| Seat letter |  A  |  D  |
-|   Result    | 5A  | 21D |
-
 ## 1. Generate seat letters
 
-Implement the `generate_seat_letters()` function that returns an _iterable_ of seat letters given the following variable:
+Conda wants to generate seat letters for their airplanes.
+Every row has _4 seats_.
+They all have the same pattern: `A`, `B`, `C`, `D`.
 
-`amount`: The amount of seat letters to be generated.
-
-The letters should be generated in alphabetical order, starting with `A` and ending with `D`.
+Implement a function `generate_seat_letters()` that accepts an `int` that holds how many seat letters to be generated.
+The function should then return an _iterable_ of seat letters.
 
 ```python
 >>> letters = generate_seat_letters(4)
@@ -37,14 +26,24 @@ The letters should be generated in alphabetical order, starting with `A` and end
 
 ## 2. Generate an amount of seats
 
-Implement the `generate_seats()` function that returns an _iterable_ of seats given the following variable:
+Conda wants a system that can generate an amount of seats for their airplanes.
+Each airplane has _4 seats_ in each row.
+The rows are defined using numbers, starting from `1` and going up.
+The seats should be ordered, like: `1A`, `1B`, `1C`, `1D`, `2A`, `2B`, `2C`, `2D`, `3A`, `3B`, `3C`, `3D`, ...
 
-`amount`: The amount of seats to be generated.
+Here is an example:
+
+|      x      |  1  |  2  |
+| :---------: | :-: | :-: |
+|     Row     |  5  | 21  |
+| Seat letter |  A  |  D  |
+|   Result    | 5A  | 21D |
 
 Many airlines do not have _row_ number 13 on their flights, due to superstition amongst passengers.
 Conda Airlines also follows this convention, so make sure you _don't_ generate seats for _row_ number 13.
 
-_Note: The returned seats should be ordered, like: 1A 1B 1C._
+Implement a function `generate_seats()` hat accepts an `int` that accepts an `int` that holds how many seats to be generated.
+The function should then return an _iterable_ of seats given.
 
 ```python
 >>> seats = generate_seats(10)
@@ -56,10 +55,10 @@ _Note: The returned seats should be ordered, like: 1A 1B 1C._
 
 ## 3. Assign seats to passengers
 
-Implement the `assign_seats()` function that returns a _dictionary_ of `passenger` as _key_, and `seat_number` as _value_.
-Given is the following _list_:
+Now that you have a function that generates seats, you can use it to assign seats to passengers.
 
-`passengers`: A list containing passenger names.
+Implement a function `assign_seats()` that accepts a `list` of passenger names.
+The function should then return a _dictionary_ of `passenger` as _key_, and `seat_number` as _value_.
 
 ```python
 >>> passengers = ['Jerimiah', 'Eric', 'Bethaney', 'Byte', 'SqueekyBoots', 'Bob']
@@ -70,15 +69,16 @@ Given is the following _list_:
 
 ## 4. Ticket codes
 
-Each ticket has a _12_ character long string code for identification.
+Conda Airlines would like to have a unique code for each ticket.
+Since they are a big airline, they have a lot of flights.
+Meaning that there are multiple flights with the same seat number.
+They want you to create a system that creats a unique ticket that has _12_ characters long string code for identification.
 
 This code begins with the `assigned_seat` followed by the `flight_id`.
 The rest of the code is appended by `0s`.
 
-Implement a `generator` that yields a `ticket_number` given the following arguments:
-
-`seat_numbers`: A _list_ of _seat_numbers_.
-`flight_id`: A string containing the flight identification.
+Implement a function `generate_codes()` that accepts a `list` of `seat_numbers` and a `string` with the flight number.
+The function should then return a `generator` that yields a `ticket_number`.
 
 ```python
 >>> seat_numbers = ['1A', '17D']
