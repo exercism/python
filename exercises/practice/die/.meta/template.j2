@@ -1,0 +1,18 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{% macro test_case(case) -%}
+    {%- set input = case["input"] -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        random.seed(case{{["input"]["seed"]}})
+        output_data = {{case["expected"]["value"]}}
+        for variant, output_data in enumerate(output_data, start=1):
+            with self.subTest(f'variation #{variant}', output_data=output_data):
+                self.assertEqual({{ case["property"] | to_snake }}({{case["input"]["size"]}}), output_data)
+{%- endmacro %}
+{{ macros.header()}}
+
+import random
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases -%}
+        {{ test_case(case) }}
+    {% endfor %}
