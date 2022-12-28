@@ -1,0 +1,56 @@
+{
+    "exercise": "die",
+    "cases": [
+      {
+        "uuid": "1895877b-a50b-4702-a532-9402d204e75b",
+        "description": "Generate random numbers a few times",
+        "property": "number_die",
+        "input": {
+          "seed": 10,
+          "times": 5
+        },
+        "expected": [5, 1, 4, 4, 5]
+      },
+      {
+        "uuid": "a79bebd9-c28c-4c55-84e4-d5037df900ac",
+        "description": "Generate random numbers a lot of times",
+        "property": "number_die",
+        "input": {
+          "seed": 145,
+          "times": 25
+        },
+        "expected": [4, 5, 1, 4, 1, 6, 3, 6, 6, 6, 6, 4, 5, 5, 3, 1, 3, 2, 1, 5, 3, 6, 4, 1, 5]
+      },
+      {
+        "uuid": "c0e87f0a-a673-4bd5-946a-672bf9878c44",
+        "description": "Generate random numbers with a custom size",
+        "property": "number_die",
+        "input": {
+          "seed": 4,
+          "times": 12,
+          "size": 24
+        },
+        "expected": [8, 10, 4, 24, 13, 16, 5, 3, 3, 1, 13, 18]
+      },
+      {
+        "uuid": "7f003d6e-1fb9-49fd-86b5-2896ce42b357",
+        "description": "Generate random letters a few times",
+        "property": "letter_die",
+        "input": {
+          "seed": 10,
+          "times": 5
+        },
+        "expected": ["s", "b", "n", "p", "s"]
+      },
+      {
+        "uuid": "b9cecf78-d919-4074-8c98-d49bbc3360a8",
+        "description": "Generate random letters a lot of times",
+        "property": "letter_die",
+        "input": {
+          "seed": 145,
+          "times": 25
+        },
+        "expected": ["y", "z", "n", "q", "a", "o", "a", "v", "k", "x", "z", "u", "v", "x", "p", "s", "q", "i", "d", "i", "f", "b", "t", "k", "w"]
+      }
+    ]
+  }

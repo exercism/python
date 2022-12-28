@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "meatball133",
+    "bethanyg"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "die.py"
+    ],
+    "test": [
+      "die_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
+  },
+  "blurb": "Make dies"
+}
