@@ -61,7 +61,6 @@ def assign_seats(passengers):
     return output
 
 def generate_codes(seat_numbers, flight_id):
-
     """Generate codes for a ticket.
 
     :param seat_numbers: A list of seat numbers. (list[str])
