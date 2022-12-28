@@ -42,7 +42,7 @@ Here is an example:
 Many airlines do not have _row_ number 13 on their flights, due to superstition amongst passengers.
 Conda Airlines also follows this convention, so make sure you _don't_ generate seats for _row_ number 13.
 
-Implement a function `generate_seats()` hat accepts an `int` that accepts an `int` that holds how many seats to be generated.
+Implement a function `generate_seats()` that accepts an `int` that accepts an `int` that holds how many seats to be generated.
 The function should then return an _iterable_ of seats given.
 
 ```python
@@ -72,7 +72,7 @@ The function should then return a _dictionary_ of `passenger` as _key_, and `sea
 Conda Airlines would like to have a unique code for each ticket.
 Since they are a big airline, they have a lot of flights.
 Meaning that there are multiple flights with the same seat number.
-They want you to create a system that creats a unique ticket that has _12_ characters long string code for identification.
+They want you to create a system that creates a unique ticket that has _12_ characters long string code for identification.
 
 This code begins with the `assigned_seat` followed by the `flight_id`.
 The rest of the code is appended by `0s`.
