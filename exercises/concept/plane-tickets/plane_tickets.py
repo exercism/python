@@ -17,7 +17,6 @@ def generate_seat_letters(amount):
 
 
 def generate_seats(amount):
-
     """ Generate a series of seat numbers for airline boarding.
 
     :param amount: Amount of seats to be generated. (int)
@@ -35,7 +34,6 @@ def generate_seats(amount):
     pass
 
 def assign_seats(passengers):
-
     """ Assign seats to passengers.
 
     :param passengers: A list of strings containing names of passengers. (list[str])
@@ -48,7 +46,6 @@ def assign_seats(passengers):
     pass
 
 def generate_codes(seat_numbers, flight_id):
-
     """Generate codes for a ticket.
 
     :param seat_numbers: A list of seat numbers. (list[str])
