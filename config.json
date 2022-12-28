@@ -546,6 +546,14 @@
         "difficulty": 1
       },
       {
+        "slug": "die",
+        "name": "Die",
+        "uuid": "118e5c56-872c-46fa-8f71-a44f441a2c63",
+        "practices": ["randomness"],
+        "prerequisites": ["basics", "conditionals", "numbers", "strings"],
+        "difficulty": 1
+      },
+      {
         "slug": "binary-search",
         "name": "Binary Search",
         "uuid": "a8288e93-93c5-4e0f-896c-2a376f6f6e5e",
