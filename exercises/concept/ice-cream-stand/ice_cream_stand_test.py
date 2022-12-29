@@ -37,7 +37,7 @@ class IceCreamStandTest(unittest.TestCase):
 
         for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
             with self.subTest(f'variation #{variant}', input_data=input_data, output_data=output_data):
-                error_msg=f'Expected: {output_data} but got a different wagon list instead.'
+                error_msg=f'Expected: {output_data} but got different result'
                 self.assertEqual(ice_cream_combinations(input_data[0], input_data[1]), output_data, msg=error_msg)
 
 
@@ -58,26 +58,25 @@ class IceCreamStandTest(unittest.TestCase):
 
         for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
             with self.subTest(f'variation #{variant}', input_data=input_data, output_data=output_data):
-                error_msg=f'Expected: {output_data} but got a different wagon list instead.'
+                error_msg=f'Expected: {output_data} but got different result'
                 self.assertEqual(sprinkles(input_data[0], input_data[1]), output_data, msg=error_msg)
 
 
     @pytest.mark.task(taskno=3)
     def test_fill_out_ice_cream_menu(self):
-        input_data = [(['ice_cream_1', 'ice_cream_2', 'ice_cream_3'], [0, 1, 0]),
-        (['ice_cream_1', 'ice_cream_2', 'ice_cream_3'], [1, 0, 1]),
-        (['ice_cream_1', 'ice_cream_2', 'ice_cream_3', 'ice_cream_4', 'ice_cream_5'], [1, 1, 0, 0, 1]),
-        (['ice_cream_1', 'ice_cream_2', 'ice_cream_3', 'ice_cream_4', 'ice_cream_5'], [0, 0, 0, 0, 0]),
-        (['ice_cream_1', 'ice_cream_2', 'ice_cream_3', 'ice_cream_4', 'ice_cream_5', 'ice_cream_6', 'ice_cream_7'], [1, 1, 1, 1, 1, 0, 0]),
-         ]
-        output_data = [['ice_cream_2'],
-            ['ice_cream_1', 'ice_cream_3'],
-            ['ice_cream_1', 'ice_cream_2', 'ice_cream_5'], 
-            [],
-            ['ice_cream_1', 'ice_cream_2', 'ice_cream_3', 'ice_cream_4', 'ice_cream_5']
+        input_data = ((('vanilla', 'chocolate', 'strawberry'), ('cherry', 'raspberry'), ('licorice',)),
+                        (('strawberry', 'chocolate', 'vanilla'), ('cherry',), ('licorice', 'caramel')),
+                        (('chocolate', 'vanilla', 'strawberry'), ('cherry', 'raspberry', 'blueberry'), ('licorice', 'caramel', 'chocolate')),
+                        (('chocolate', 'vanilla', 'strawberry'), (), ()),
+                        (('strawberry', 'choclate', 'mint', 'vanilla'),('cherry', 'raspberry', 'blueberry'), ('licorice', 'caramel')))
+        output_data = [[('vanilla', 'cherry', 'licorice'), ('chocolate', 'raspberry', 'None'), ('strawberry', 'None', 'None')],
+            [('strawberry', 'cherry', 'licorice'), ('chocolate', 'None', 'caramel'), ('vanilla', 'None', 'None')],
+            [('chocolate', 'cherry', 'licorice'), ('vanilla', 'raspberry', 'caramel'), ('strawberry', 'blueberry', 'chocolate')], 
+            [('chocolate', 'None', 'None'), ('vanilla', 'None', 'None'), ('strawberry', 'None', 'None')],
+            [('strawberry', 'cherry', 'licorice'), ('choclate', 'raspberry', 'caramel'), ('mint', 'blueberry', 'None'), ('vanilla', 'None', 'None')]
         ]
 
         for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
             with self.subTest(f'variation #{variant}', input_data=input_data, output_data=output_data):
-                error_msg=f'Expected: {output_data} but got a different wagon list instead.'
+                error_msg=f'Expected: {output_data} but got different result'
                 self.assertEqual(fill_out_ice_cream_menu(input_data[0], input_data[1], input_data[2]), output_data, msg=error_msg)

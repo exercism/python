@@ -1,115 +1,76 @@
 # Instructions
 
-Your friend Linus is a Locomotive Engineer who drives cargo trains between cities.
-Although they are amazing at handling trains, they are not amazing at handling logistics or computers.
-They would like to enlist your programming help organizing train details and correcting mistakes in route data.
+An ice cream stand in the neighborhood does a lot of manual work.
+You have offered to help them with a program that can automate some of the work.
 
 ```exercism/note
-This exercise could easily be solved using slicing, indexing, and various `dict` methods.
-However, we would like you to practice packing, unpacking, and multiple assignment in solving each of the tasks below.
+This exercise could be solved with a lot of different approaches.
+However, we would like you to practice using methods from the `itertools` module.
 ```
 
 ## 1. All flawors combinations
 
-The ice cream stand wants to know all of the combinations there are of thier flawors.
-Each ice cream has a different amount of scoopes of flawors and you can't use the same flawor more than once.
+The ice cream stand wants to make an advertisement for how many different ice creams they can make.
+They therefore want a program that can generate all the combinations of flawors they can make.
+Each ice cream has a different amount of scoopes of flawors but you can't use the same flawor more than once.
 
 Implement a function `flawor_combinations()` that takes a `tuple` with an arbitrary number of flawors and an `int` which says how many scoopes.
 The function should then `return` all combinations in the form of a `tuple`.
 
 ```python
->>> get_list_of_wagons(1, 7, 12, 3, 14, 8, 5)
-[1, 7, 12, 3, 14, 8, 5]
+>>> flawors = ['vanilla', 'chocolate', 'strawberry']
+>>> scoops = 2
+>>> ice_cream_combinations(flawors, scoops)
+(('vanilla', 'chocolate'), ('vanilla', 'strawberry'), ('chocolate', 'strawberry'))
 ```
 
-## 2. Fix the list of wagons
+## 2. Sprinkels
 
-At this point, you are starting to get a feel for the data and how it's used in the logistics program.
-The ID system always assigns the locomotive an ID of **1**, with the remainder of the wagons in the train assigned a randomly chosen ID greater than **1**.
+They also want a program to optimize the process of adding sprinkels to the ice cream.
+Currently they have a `list` of all ice cream order numbers and another `list` with `booleans` that say if the ice cream should have sprinkels or not.
+The order numbers and the `booleans` are in the same order.
 
-Your friend had to connect two new wagons to the train and forgot to update the system!
-Now, the first two wagons in the train `list` have to be moved to the end, or everything will be out of order.
+The ice cream stand has a machine that takes a `list` of orders that should have sprinkels and adds sprinkels to them.
+Therefore they want a program that takes away all the orders that should not have sprinkels.
 
-To make matters more complicated, your friend just uncovered a second `list` that appears to contain missing wagon IDs.
-All they can remember is that once the new wagons are moved, the IDs from this second `list` should be placed directly after the designated locomotive.
-
-Linus would be really grateful to you for fixing their mistakes and consolidating the data.
-
-Implement a function `fix_list_of_wagons()` that takes two `lists` containing wagon IDs.
-It should reposition the first two items of the first `list` to the end, and insert the values from the second `list` behind (_on the right hand side of_) the locomotive ID (**1**).
-The function should then `return` a `list` with the modifications.
+Implement a function `sprinkels()` that takes a `list` of order numbers and a `list` of `booleans` and returns a `list` of order numbers that should have sprinkels.
 
 ```python
->>> fix_list_of_wagons([2, 5, 1, 7, 4, 12, 6, 3, 13], [3, 17, 6, 15])
-[1, 3, 17, 6, 15, 7, 4, 12, 6, 3, 13, 2, 5]
+>>> ice_creams = ['ice_cream_1', 'ice_cream_2', 'ice_cream_3']
+>>> selector = [0, 1, 0]
+>>> sprinkles(ice_creams, selector)
+['ice_cream_2']
 ```
 
-## 3. Add missing stops
+## 3. Fill out ice cream menu
 
-Now that all the wagon data is correct, Linus would like you to update the system's routing information.
-Along a transport route, a train might make stops at a few different stations to pick up and/or drop off cargo.
-Each journey could have a different amount of these intermediary delivery points.
-Your friend would like you to update the systems routing `dict` with any missing/additional delivery information.
+Currently the ice cream has to manualy write down the ice cream menu.
+Since they often make new ice creams they want a program that can generate the menu for them.
 
-Implement a function `add_missing_stops()` that accepts a routing `dict` followed by a variable number of keyword arguments.
-These arguments could be in the form of a `dict` holding one or more stops, or any number of `stop_number=city` keyword pairs.
-Your function should then return the routing `dict` updated with an additional `key` that holds a `list` of all the added stops in order.
+The menu is built up like this:
+
+| Flavors    | Toping    | Sprinkels |
+| ---------- | --------- | --------- |
+| Strawberry | Cherry    | Licorice  |
+| Choclate   | Raspberry | Caramel   |
+| Mint       | Blueberry | None      |
+| Vanilla    | None      | None      |
+
+The ice cream stand has a `tuple` with all the ice cream flavors, a `tuple` with all the topings and a `tuple` with all the sprinkels.
+They have set it up so the `tuple` of ice cream flavors, topings and sprinkels are in the same order.
+
+They want a program that takes **i**th index of the `tuple` of ice cream flavors, topings and sprinkels and returns a `tuple` with the ice cream menu.
+
+All ice creams flavors doesn't have to have a toping or sprinkels.
+If an ice cream doesn't have a toping or sprinkels the value should be `"None"`.
+
+Implement a function `fill_out_ice_cream_menu()` that accepts a `tuple` with ice cream flavors, a `tuple` with topings, and a `tuple` sprinkels.
+The function should `return` a `list` of `tuples` with the ice cream menu.
 
 ```python
->>> add_missing_stops({"from": "New York", "to": "Miami"},
-                      stop_1="Washington, DC", stop_2="Charlotte", stop_3="Atlanta",
-                      stop_4="Jacksonville", stop_5="Orlando")
-
-{"from": "New York", "to": "Miami", "stops": ["Washington, DC", "Charlotte", "Atlanta", "Jacksonville", "Orlando"]}
-```
-
-## 4. Extend routing information
-
-Linus has been working on the routing program and has noticed that certain routes are missing some important details.
-Initial route information has been constructed as a `dict` and your friend would like you to update that `dict` with whatever might be missing.
-Every route in the system requires slightly different details, so Linus would really prefer a generic solution.
-
-Implement a function called `extend_route_information()` that accepts two `dicts`.
-The first `dict` contains the origin and destination cities the train route runs between.
-
-The second `dict` contains other routing details such as train speed, length, or temperature.
-The function should return a consolidated `dict` with all routing information.
-
-```exercism/note
-The second `dict` can contain different/more properties than the ones shown in the example.
-```
-
-```python
->>> extend_route_information({"from": "Berlin", "to": "Hamburg"}, {"length": "100", "speed": "50"})
-{"from": "Berlin", "to": "Hamburg", "length": "100", "speed": "50"}
-```
-
-## 5. Fix the wagon depot
-
-When Linus was surveying the wagon depot they noticed that the wagons were not getting stored in the correct order.
-In addition to an ID, each wagon has a color that corresponds to the type of cargo it carries.
-Wagons are stored in the depot in grids, where each column in the grid has wagons of the same color.
-
-However, the logistics system shows `lists` of wagons to be stored in the depot have their _rows_ grouped by color.
-But for the storage grid to work correctly, each _row_ should have three different colors so that the _columns_ align by color.
-Your friend would like you to sort out the wagon depot `lists`, so that the wagons get stored correctly.
-
-Implement a function called `fix_wagon_depot()` that accepts a `list` of three items.
-Each `list` item is a sublist (or "row") that contains three `tuples`.
-Each `tuple` is a `(<wagon ID>, <wagon color>)` pair.
-
-Your function should return a `list` with the three "row" `lists` reordered to have the wagons swapped into their correct positions.
-
-```python
->>> fix_wagon_depot([
-                    [(2, "red"), (4, "red"), (8, "red")],
-                    [(5, "blue"), (9, "blue"), (13,"blue")],
-                    [(3, "orange"), (7, "orange"), (11, "orange")],
-                    ])
-
-[
-[(2, "red"), (5, "blue"), (3, "orange")],
-[(4, "red"), (9, "blue"), (7, "orange")],
-[(8, "red"), (13,"blue"), (11, "orange")]
-]
+>>> flavors = ('vanilla', 'chocolate', 'strawberry')
+>>> topings = ('cherry', 'raspberry')
+>>> sprinkels = ('licorice')
+>>> fill_out_ice_cream_menu(flavors, topings, sprinkels)
+[('vanilla', 'cherry', 'licorice'), ('chocolate', 'raspberry', 'None'), ('strawberry', 'None', 'None')]
 ```

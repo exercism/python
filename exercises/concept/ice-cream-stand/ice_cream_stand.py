@@ -26,6 +26,6 @@ def fill_out_ice_cream_menu(flavors, toping, sprinkles):
     :param flavors: tuple - ice cream flavors.
     :param toping: tuple - ice cream topings.
     :param sprinkles: tuple - ice cream sprinkles.
-    :return: list - ice cream menu filled out.
+    :return: list[tuple] - ice cream menu filled out.
     """
     pass
