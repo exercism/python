@@ -33,14 +33,4 @@ def fill_out_ice_cream_menu(flavors, toping, sprinkles):
     """
     return list(itertools.zip_longest(flavors, toping, sprinkles, fillvalue="None"))
     
-
-#def product(route, more_route_information):
-    """Extend route information with more_route_information.
-
-    :param route: dict - the route information.
-    :param more_route_information: dict - extra route information.
-    :return: dict - extended route information.
-    """
-
-    itertools.product(route, more_route_information)
      
