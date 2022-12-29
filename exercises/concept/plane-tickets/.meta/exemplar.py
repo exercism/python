@@ -6,13 +6,13 @@ SEATS_IN_ROW = ['A', 'B', 'C', 'D']
 
 
 def generate_seat_letters(amount):
-    """ Generate a series of seat letters for airline boarding.
+    """Generate a series of seat letters for airline boarding.
 
     :param amount: int - amount of seat letters to be generated.
     :return: generator - generator that yields seat letters.
 
-    Seat letters are generated with each row having 4 seats.
-    These should be sorted from low to high.
+    Seat letters are generated with from A to D.
+    After D it should start again with A.
 
     Example: A, B, C, D
 
