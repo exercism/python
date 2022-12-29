@@ -10,8 +10,10 @@ They require your software to be memory efficient and performant.
 ## 1. Generate seat letters
 
 Conda wants to generate seat letters for their airplanes.
-Every row has _4 seats_.
-They all have the same pattern: `A`, `B`, `C`, `D`.
+An airplane is made of rows of seats.
+Each row has _4 seats_.
+The rows seats has the same naming: `A`, `B`, `C`, `D`.
+Meaning the first seat in the row is `A`, the second seat in the row is `B`, and so on.
 
 Implement a function `generate_seat_letters()` that accepts an `int` that holds how many seat letters to be generated.
 The function should then return an _iterable_ of seat letters.
@@ -72,7 +74,7 @@ The function should then return a _dictionary_ of `passenger` as _key_, and `sea
 Conda Airlines would like to have a unique code for each ticket.
 Since they are a big airline, they have a lot of flights.
 Meaning that there are multiple flights with the same seat number.
-They want you to create a system that creates a unique ticket that has _12_ characters long string code for identification.
+They want you to create a system that creates a unique ticket that is _12_ characters long string code for identification.
 
 This code begins with the `assigned_seat` followed by the `flight_id`.
 The rest of the code is appended by `0s`.
