@@ -3,6 +3,7 @@
 There are various ways to solve Hamming.
 One approach is to iterate over either a range of indexs or to use [zip][zip].
 Another appraoch is to use the range of indexs.
+Some other approaches could be to use enumerate, or filter with lambda.
 
 ## General guidance
 
@@ -11,13 +12,19 @@ The most common way is to use some kind of loop to iterate over the two strands 
 
 ## Approach: Iterating over a range of indexes
 
+Using range is an approach to iterate over a sequence.
+Although it is not the most pythonic way, it is a good way to start.
+The reasson to use range is that it is a built-in function and it is very fast.
+The downside is that it only works with iterators that can be indexed, like lists and strings.
+While a built in function like `enumerate()` can take any iterator.
+
 ```python
 def distance(strand_a, strand_b):
     if len(strand_a) != len(strand_b):
         raise ValueError("Strands must be of equal length.")
     count = 0
-    for x in range(len(strand_a)):
-        if strand_a[x] != strand_b[x]:
+    for index in range(len(strand_a)):
+        if strand_a[index] != strand_b[index]:
             count += 1
     return count
 ```
@@ -25,6 +32,11 @@ def distance(strand_a, strand_b):
 For more information, check the [range approach][approach-range].
 
 ## Approach: Iterating with zip
+
+The `zip()` function returns an iterator of tuples where the first item in each passed iterator is paired together, and then the second item in each passed iterator are paired together etc.
+The approach to use `zip()` to iterate removes the need to index the iterators.
+The downside is that if you need to index the iterators, zip wont work.
+Although it is possible to use `enumerate()` with zip to get the index.
 
 ```python
 def distance(strand_a, strand_b):
@@ -40,6 +52,11 @@ def distance(strand_a, strand_b):
 For more information, check the [zip approach][approach-zip].
 
 ## Approach: Using sum
+
+Using `sum()` makes it possible to remove the need for a counter variable.
+Since there is no need for a counter variable, the code is more concise.
+To make use of sum, so are the examples using a [list comprehension][list-comprehension], although it is not required.
+Using sum although requires a bit more knowledge of python compared to the other approaches.
 
 With zip:
 
@@ -61,7 +78,8 @@ def distance(strand_a, strand_b):
 
 For more information, check the [sum approach][approach-sum].
 
-[zip]: https://docs.python.org/3/library/functions.html#zip
 [approach-range]: https://exercism.org/tracks/python/exercises/hamming/approaches/range
 [approach-sum]: https://exercism.org/tracks/python/exercises/hamming/approaches/sum
 [approach-zip]: https://exercism.org/tracks/python/exercises/hamming/approaches/zip
+[list-comprehension]: https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions
+[zip]: https://docs.python.org/3/library/functions.html#zip

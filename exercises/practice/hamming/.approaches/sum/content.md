@@ -47,9 +47,9 @@ def distance(strand_a, strand_b):
     return sum(strand_a[index] != strand_b[index] for index in range(len(strand_a)))
 ```
 
+[approach-zip]: https://exercism.org/tracks/python/exercises/hamming/approaches/zip
 [booleans]: https://realpython.com/python-boolean/#python-booleans-as-numbers
 [len]: https://docs.python.org/3/library/functions.html?#len
 [sum]: https://docs.python.org/3/library/functions.html?#sum
 [value-error]: https://docs.python.org/3/library/exceptions.html#ValueError
 [zip]: https://docs.python.org/3.3/library/functions.html#zip
-[approach-zip]: https://exercism.org/tracks/python/exercises/hamming/approaches/zip
