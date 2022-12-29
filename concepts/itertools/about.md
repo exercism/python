@@ -1,10 +1,11 @@
 # About
 
 Itertools is a module in the Python standard library that provides a number of functions that create iterators for efficient looping.
-Iterators are objects that can be used in for example a for loop.
+Iterators are objects that can be irretated over.
+For example a `for <variable> in <iterator>:` loop.
 
 There are a number of functions in the itertools module that are useful for looping over data.
-These functions often are also able to enchant the readability and maintainabillity of the code.
+These functions often are also able to enchant the readability and/or maintainabillity of the code.
 
 This concept will cover these functions and how to use them:
 
@@ -71,7 +72,8 @@ Using `tuple()`:
 
 ### chain.from_iterable()
 
-Works like chain but takes a single nested iterable, unpacking that iterable into individual iterables.
+Works like chain but takes a single nested iterable
+Then the method unpack that iterable into individual iterables.
 
 ```python
 >>> import itertools
@@ -90,6 +92,7 @@ Works like chain but takes a single nested iterable, unpacking that iterable int
 
 `compress(iterable, selectors)` creates an iterator from the input iterable where the corresponding selector is `True`.
 The selector can be `True`/`False` or integers, where 0 is `False` and 1 is `True`.
+You can read more about the behavior when [numbers act like booleans][numbers-as-boolean-values].
 
 ```python
 >>> import itertools
@@ -379,3 +382,4 @@ Meaning that it is not an infinite loop if that parameter is given.
 ```
 
 [itertools]: https://docs.python.org/3/library/itertools.html
+[numbers-as-boolean-values]: https://realpython.com/python-boolean/#numbers-as-boolean-values
