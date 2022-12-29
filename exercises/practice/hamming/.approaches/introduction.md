@@ -1,20 +1,20 @@
 # Introduction
 
 There are various ways to solve Hamming.
-One approach is to iterate over either a range of indexs or to use [zip][zip].
-Another appraoch is to use the range of indexs.
+One approach is to iterate over either a range of indexes or to use [zip][zip].
+Another approach is to use the range of indexes.
 Some other approaches could be to use enumerate, or filter with lambda.
 
 ## General guidance
 
 The goal of this exercise is to compare two DNA strands and count how many of the nucleotides are different from their equivalent in the other string.
-The most common way is to use some kind of loop to iterate over the two strands and compare the nucleotides which has the same index.
+The most common way is to use some kind of loop to iterate over the two strands and compare the nucleotides with the same index.
 
 ## Approach: Iterating over a range of indexes
 
 Using range is an approach to iterate over a sequence.
 Although it is not the most pythonic way, it is a good way to start.
-The reasson to use range is that it is a built-in function and it is very fast.
+The reason to use range is that it is a built-in function and it is very fast.
 The downside is that it only works with iterators that can be indexed, like lists and strings.
 While a built in function like `enumerate()` can take any iterator.
 
@@ -35,7 +35,7 @@ For more information, check the [range approach][approach-range].
 
 The `zip()` function returns an iterator of tuples where the first item in each passed iterator is paired together, and then the second item in each passed iterator are paired together etc.
 The approach to use `zip()` to iterate removes the need to index the iterators.
-The downside is that if you need to index the iterators, zip wont work.
+The downside is that if you need to index the iterators, zip won't work.
 Although it is possible to use `enumerate()` with zip to get the index.
 
 ```python
