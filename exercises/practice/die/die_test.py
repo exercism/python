@@ -6,7 +6,7 @@ from die import (
 )
 
 
-class ResistorColorTrioTest(unittest.TestCase):
+class DieTest(unittest.TestCase):
 
     def test_generate_random_numbers_a_few_times(self):
         random.seed(10)
@@ -47,4 +47,3 @@ class ResistorColorTrioTest(unittest.TestCase):
             with self.subTest(f'variation #{variant}', output_data=output_data):
                 error_msg=f'Expected: {output_data} but got a different number'
                 self.assertEqual(letter_die(), output_data, msg=error_msg)
-                
