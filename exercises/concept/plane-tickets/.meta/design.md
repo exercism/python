@@ -39,6 +39,7 @@ The goal of this exercise is to teach the syntax and use of `generators` in Pyth
 - `iteration`
 - `iterators`
 - `sequences`
+- `classes`
 
 ## Resources to refer to
 
