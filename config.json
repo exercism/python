@@ -184,7 +184,7 @@
         "name": "Plane Tickets",
         "uuid": "3ba3fc89-3e1b-48a5-aff0-5aeaba8c8810",
         "concepts": ["generators"],
-        "prerequisites": ["conditionals", "dicts", "lists", "loops"],
+        "prerequisites": ["conditionals", "dicts", "lists", "loops", "classes"],
         "status": "wip"
       },
       {
