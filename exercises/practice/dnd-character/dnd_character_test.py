@@ -74,7 +74,3 @@ class DndCharacterTest(unittest.TestCase):
     def test_each_ability_is_only_calculated_once(self):
         Char = Character()
         self.assertIs(Char.strength == Char.strength, True)
-
-
-if __name__ == "__main__":
-    unittest.main()

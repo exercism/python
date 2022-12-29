@@ -1,4 +1,4 @@
-# About
+# Introduction
 
 Python has three different types of built-in numbers: integers ([`int`][int]), floating-point ([`float`][float]), and complex ([`complex`][complex]).
 Fractions ([`fractions.Fraction`][fractions]) and Decimals ([`decimal.Decimal`][decimals]) are also available via import from the standard library.
@@ -28,9 +28,6 @@ Numbers containing a decimal point (with or without fractional parts) are identi
 ## Arithmetic
 
 Python fully supports arithmetic between these different number types, and will convert narrower numbers to match their less narrow counterparts when used with the binary arithmetic operators (`+`, `-`, `*`, `/`, `//`, and `%`).
-
-All numbers (except complex) support all [arithmetic operations][arithmetic-operations], evaluated according to [operator precedence][operator precedence].
-Support for mathematical functions (beyond `+` and `-`) for complex numbers can be found in the [cmath][cmath] module.
 
 ### Addition and subtraction
 
@@ -91,7 +88,7 @@ The modulo operator (`%`) returns the remainder of the division of the two opera
 >>> 8 % 2
 0
 
-# The result of % is 2 here, because 3 only goes into 5 once, with 2 left over
+# The result of % is 2 here, because 3 only goes into 5 once, with 2 leftover
 >>> 5 % 3
 2
 ```
@@ -107,30 +104,6 @@ Another way to look at 5 % 3:
 
 >>> whole_remainder = decimal_part * 3
 2.0
-```
-
-## Exponentiation
-
-Exponentiation is performed using the `**` operator:
-
-```python
->>> 2 ** 3
-8
-
->>> 4 ** 0.5
-2
-```
-
-## Conversions
-
-Numbers can be converted from `int` to `floats` and `floats` to `int` using the built-in functions `int()` and `float()`:
-
-```python
->>> int(3.45)
-3
-
->>> float(3)
-3.0
 ```
 
 ## Round
@@ -167,10 +140,10 @@ This means calculations within `()` have the highest priority, followed by `**`,
 -11
 
 >>> (2 + 3 - 4) * 4
-20
+4
 
 # In the following example, the `**` operator has the highest priority, then `*`, then `+`
-# Meaning we first do 4 ** 4, then 3 * 256, then 2 + 768
+# Meaning we first do 4 ** 4, then 3 * 64, then 2 + 192
 >>> 2 + 3 * 4 ** 4
 770
 ```
@@ -186,9 +159,7 @@ For a more detailed discussions of the issues and limitations of floating point 
 
 [0.30000000000000004.com]: https://0.30000000000000004.com/
 [arbitrary-precision]: https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic
-[arithmetic-operations]: https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
 [bin]: https://docs.python.org/3/library/functions.html#bin
-[cmath]: https://docs.python.org/3.9/library/cmath.html
 [complex]: https://docs.python.org/3/library/functions.html#complex
 [decimals]: https://docs.python.org/3/library/decimal.html#module-decimal
 [float]: https://docs.python.org/3/library/functions.html#float
@@ -197,6 +168,5 @@ For a more detailed discussions of the issues and limitations of floating point 
 [hex]: https://docs.python.org/3/library/functions.html#hex
 [int]: https://docs.python.org/3/library/functions.html#int
 [oct]: https://docs.python.org/3/library/functions.html#oct
-[operator precedence]: https://docs.python.org/3/reference/expressions.html#operator-precedence
 [pemdas]: https://mathworld.wolfram.com/PEMDAS.html
 [round]: https://docs.python.org/3/library/functions.html#round

@@ -1,9 +1,7 @@
 {%- import "generator_macros.j2" as macros with context -%}
-{% set class = exercise | camel_case -%}
 {{ macros.header(["Character", "modifier"]) }}
 
-class {{ exercise | camel_case }}Test(unittest.TestCase):
-    {% for supercase in cases -%}
+{% macro test_case(supercase) -%}
     {% set property = supercase["property"] -%}
     {% set description = supercase["description"] | to_snake -%}
     {% if "cases" in supercase -%}
@@ -34,8 +32,10 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     def test_{{ description }}(self):
         Char = Character()
         self.assertIs({{ supercase["expected"] | replace(property , ["Char.", property]|join(""))}}, True)
-
     {%- endif -%}
-    {% endfor %}
+{%- endmacro %}
 
-{{ macros.footer() }}
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for supercase in cases -%}
+        {{ test_case(supercase) }}
+    {% endfor %}
