@@ -7,7 +7,7 @@ Then that sum is returned.
 
 This can make the code a bit more concise.
 
-Here is an example with using `sum()` and `zip()`:
+Here is an example using `sum()` and `zip()`:
 
 ```python
 def distance(strand_a, strand_b):
