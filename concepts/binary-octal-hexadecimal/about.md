@@ -95,7 +95,7 @@ If we want to represent a binary number.
 '0b10011'
 ```
 
-To convert a binary number to an integer, we can use the `int()` function, and pass the string and the base as arguments.
+To convert a binary number to an integer, we can use the `int()` function, and pass a string with a binary and the base as arguments.
 
 ```python
 >>> int("0b10011", 2)
@@ -175,7 +175,7 @@ To represent an octal number, we can use the `oct()` function.
 '0o123'
 ```
 
-To convert an octal number to an integer, we can use the `int()` function, and pass the string and the base as arguments.
+To convert an octal number to an integer, we can use the `int()` function, pass a string with a octal and the base as arguments.
 
 ```python
 >>> int("0o123", 8)
@@ -219,7 +219,7 @@ To represent an hexadecimal number, we can use the `hex()` function.
 '0x123'
 ```
 
-To convert an hexadecimal number to an integer, we can use the `int()` function, and pass the string and the base as arguments.
+To convert an hexadecimal number to an integer, we can use the `int()` function, pass a string with a hexadecimal and the base as arguments.
 
 ```python
 >>> int("0x123", 16)
@@ -238,7 +238,7 @@ We can also convert an integer to binary using the `hex()` function.
 ```
 
 [binary]: https://en.wikipedia.org/wiki/Binary_number
-[octal]: https://en.wikipedia.org/wiki/Octal
 [hexadecimal]: https://en.wikipedia.org/wiki/Hexadecimal
-[numeral-systems]: https://en.wikipedia.org/wiki/Numeral_system
 [methods-int]: https://docs.python.org/3/library/stdtypes.html#additional-methods-on-integer-types
+[numeral-systems]: https://en.wikipedia.org/wiki/Numeral_system
+[octal]: https://en.wikipedia.org/wiki/Octal
