@@ -26,7 +26,7 @@ The slowest approach is the one using recursion, that is because Python isn't op
 
 [approaches]: https://exercism.org/tracks/python/exercises/collatz-conjecture/approaches
 [approach-if-else]: https://exercism.org/tracks/python/exercises/collatz-conjecture/approaches/if-else
-[approach-ternary-operator]: https://exercism.org/tracks/python/exercises/collatz-conjecture/approaches/ternary-operator
 [approach-recursion]: https://exercism.org/tracks/python/exercises/collatz-conjecture/approaches/recursion
+[approach-ternary-operator]: https://exercism.org/tracks/python/exercises/collatz-conjecture/approaches/ternary-operator
 [benchmark-application]: https://github.com/exercism/python/blob/main/exercises/practice/collatz-conjecture/.articles/performance/code/Benchmark.py
 [timeit]: https://docs.python.org/3/library/timeit.html
