@@ -1,0 +1,29 @@
+{
+  "introduction": {
+    "authors": ["bethanyg", "meatball133"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "7b3aeaef-11ef-427c-9086-d2c6d4c022f1",
+      "slug": "if-else",
+      "title": "If/Else",
+      "blurb": "Use if and else",
+      "authors": ["bethanyg", "meatball133"]
+    },
+    {
+      "uuid": "a2d8742b-9516-44c8-832d-111874430de0",
+      "slug": "ternary-operator",
+      "title": "Ternary operator",
+      "blurb": "Use a ternary operator",
+      "authors": ["bethanyg", "meatball133"]
+    },
+    {
+      "uuid": "01da60d9-c133-41de-90fd-afbba7df2980",
+      "slug": "recursion",
+      "title": "Recursion",
+      "blurb": "Use recursion",
+      "authors": ["bethanyg", "meatball133"]
+    }
+  ]
+}
