@@ -11,7 +11,7 @@ def generate_seat_letters(amount):
     :param amount: int - amount of seat letters to be generated.
     :return: generator - generator that yields seat letters.
 
-    Seat letters are generated with from A to D.
+    Seat letters are generated from A to D.
     After D it should start again with A.
 
     Example: A, B, C, D

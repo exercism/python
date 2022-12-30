@@ -14,6 +14,7 @@ An airplane is made of rows of seats.
 Each row has _4 seats_.
 The rows seats has the same naming: `A`, `B`, `C`, `D`.
 Meaning the first seat in the row is `A`, the second seat in the row is `B`, and so on.
+After reaching `D` it should start again with `A`.
 
 Implement a function `generate_seat_letters()` that accepts an `int` that holds how many seat letters to be generated.
 The function should then return an _iterable_ of seat letters.
@@ -63,10 +64,10 @@ Implement a function `assign_seats()` that accepts a `list` of passenger names.
 The function should then return a _dictionary_ of `passenger` as _key_, and `seat_number` as _value_.
 
 ```python
->>> passengers = ['Jerimiah', 'Eric', 'Bethaney', 'Byte', 'SqueekyBoots', 'Bob']
+>>> passengers = ['Jerimiah', 'Eric', 'Bethany', 'Byte', 'SqueekyBoots', 'Bob']
 
 >>> assign_seats(passengers)
-{'Jerimiah': '1A', 'Eric': '1B', 'Bethaney': '1C', 'Byte': '1D', 'SqueekyBoots': '2A', 'Bob': '2B'}
+{'Jerimiah': '1A', 'Eric': '1B', 'Bethany': '1C', 'Byte': '1D', 'SqueekyBoots': '2A', 'Bob': '2B'}
 ```
 
 ## 4. Ticket codes

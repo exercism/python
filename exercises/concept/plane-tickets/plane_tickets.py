@@ -6,8 +6,8 @@ def generate_seat_letters(amount):
     :param amount: int - amount of seat letters to be generated.
     :return: generator - generator that yields seat letters.
 
-    Seat letters are generated with each row having 4 seats.
-    These should be sorted from low to high.
+    Seat letters are generated from A to D.
+    After D it should start again with A.
 
     Example: A, B, C, D
 
