@@ -6,5 +6,9 @@
   {
     "url": "https://en.wikipedia.org/wiki/Lazy_evaluation",
     "description": "Wikipedia page about lazy evaluation"
+  },
+  {
+    "url": "https://realpython.com/introduction-to-python-generators/",
+    "description": "Real python, introduction to generators and yield"
   }
 ]
