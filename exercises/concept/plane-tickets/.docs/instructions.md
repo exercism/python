@@ -45,7 +45,7 @@ Here is an example:
 Many airlines do not have _row_ number 13 on their flights, due to superstition amongst passengers.
 Conda Airlines also follows this convention, so make sure you _don't_ generate seats for _row_ number 13.
 
-Implement a function `generate_seats()` that accepts an `int` that accepts an `int` that holds how many seats to be generated.
+Implement a function `generate_seats()` that accepts an `int` that holds how many seats to be generated.
 The function should then return an _iterable_ of seats given.
 
 ```python
