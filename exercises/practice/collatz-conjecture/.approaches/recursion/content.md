@@ -12,13 +12,13 @@ def steps(number):
 
 This approach uses [concept:python/recursion]() to solve the problem.
 Recursion is a programming technique where a function calls itself.
-Recursion is a powerful technique, but can be more tricky.
+It is a powerful technique, but can be more tricky to implement than a while loop.
 Recursion isn't that common in Python, it is more common in functional programming languages, like: [Elixir][elixir], [Haskell][haskell], and [Clojure][clojure].
 
 This approach starts with checking if the number is less than or equal to zero.
 If it is, then it raises a [`ValueError`][value-error].
 
-After that we check if the number is equal to one.
+After that, we check if the number is equal to one.
 If it is, then we return zero.
 
 Then we use the same ternary operator as in the [ternary operator][ternary-operator] approach.
@@ -27,16 +27,17 @@ The ternary operator checks if the number is even.
 If it is, then we divide it by two.
 If it isn't, then we multiply it by three and add one.
 
-After that we return one plus the result of calling the `steps` function with the new number.
+After that, we return one plus the result of calling the `steps` function with the new number.
 This is the recursion part.
 
 Doing this exercise with recursion removes the need for a "counter" variable.
 Since what we do is that if the number is not one we do `1 + steps(number)`.
-Then that function can do the same thing.
+Then that function can do the same thing again.
 Meaning we can get a long chain of `1 + steps(number)` until we reach one and add 0.
 That will translate to something like this: `1 + 1 + 1 + 1 + 0`.
 
-In python we can't have a function call itself more than 1000 times.
+In Python, we can't have a function call itself more than 1000 times.
+Which mean problems that require a lot of recursion will fail.
 
 [clojure]: https://exercism.org/tracks/clojure
 [elixir]: https://exercism.org/tracks/elixir

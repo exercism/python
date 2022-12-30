@@ -11,20 +11,22 @@ def steps(number):
     return counter
 ```
 
+This approach starts with checking if the number is less than or equal to zero.
 If it is, then it raises a [`ValueError`][value-error].
-After that we declare a counter variable and set it to zero.
 
+After that, we declare a counter variable and set it to zero.
 Then we start a `while` loop that will run until the number is equal to one.
-Meaning the loop wont run if the number is already one.
+Meaning the loop won't run if the number is already one.
 
-Inside of the loop we have a [ternary operator][ternary-operator].
-The ternary operator is a one-line `if` and `else` statement.
+Inside the loop we have a [ternary operator][ternary-operator].
+A ternary operator is a one-line `if` and `else` statement.
 That means that we can make the code more concise by using it.
+
 We declare that number is equal to the result of the ternary operator.
 The ternary operator checks if the number is even.
 If it is, then we divide it by two.
 If it isn't, then we multiply it by three and add one.
-After that we increment the counter by one.
+After that, we increment the counter by one.
 After the loop is done, we return the counter variable.
 
 [ternary-operator]: https://www.pythontutorial.net/python-basics/python-ternary-operator/
