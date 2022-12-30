@@ -2,7 +2,7 @@
 
 Itertools is a module in the Python standard library that provides a number of functions that create iterators for efficient looping.
 Iterators are objects that can be iterated over.
-For example a `for <variable> in <iterator>:` loop.
+An example when you iterate over an iterator is a `for <variable> in <iterator>:` loop.
 
 There are a number of functions in the itertools module that are useful for looping over data.
 These functions often are also able to enchant the readability and/or maintainability of the code.
@@ -35,7 +35,7 @@ There are more functions in the itertools module, like:
 
 These functions will be covered in a later concept.
 
-`count()`, `cycle()`, and`repeat()` is categorized as infinite iterators.
+`count()`, `cycle()`, and `repeat()` is categorized as infinite iterators.
 These iterators will never terminate and will keep looping forever.
 
 ## Iterators terminating on the shortest input sequence
@@ -50,6 +50,17 @@ These iterators will never terminate and will keep looping forever.
 ...     print(number, end=' ')
 ...
 1 2 3 4 5 6 7 8 9
+```
+
+Since `chain()` takes iterables as arguments, so can it take it for example take: `set`, `tuple`, `list`, `str`, and more.
+You can give iterables of different types at the same time.
+
+```python
+>>> import itertools
+>>> for number in itertools.chain([1, 2, 3], (4, 5, 6), {7, 8, 9}, "abc"):
+...     print(number, end=' ')
+...
+1 2 3 4 5 6 7 8 9 a b c
 ```
 
 Chain can also be used to concate a different amount of iterables to a list or tuple by using the `list()` or `tuple()` function.
