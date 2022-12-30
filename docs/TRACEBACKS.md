@@ -54,6 +54,32 @@ ValueError: not enough values to unpack (expected 2, got 1)
 Working backwards from the bottom, we see that the call where the exception happened is on line 2 in `my_func`.
 We got there by calling `my_func` on line 5.
 
+## Common Exceptions
+
+Python 3.11 defines 67 [built-in exception classes][exception-hierarchy].
+Here is a brief overview of some of the more common exceptions and what they indicate.
+
+* **SyntaxError**: Python is unable to understand the code as the code has invalid syntax.
+  For example, there may be an open parenthesis without a matching closing parenthesis.
+* **AssertionError**: An `assert` statement (see below) failed.
+* **AttributeError**: The code (or unit test!) tried to access the attribute of an object but that object has no attribute.
+  For example, a unit test excepts a `Robot` object to have a `direction` attribute but when it tried to access `robot.direction`, it does not exist.
+  This could also indicate a typo, such as using `"Hello".lowercase()` when the correct syntax is `"Hello".lower()`.
+  `"Hello".lowercase()` raises `AttributeError: 'str' object has no attribute 'lowercase'`.
+* **ImportError**: The code tried to import something, but it wasn't there.
+  For example, a unit test does `from exercise import Thing` but the `exercise.py` file does not define a `Thing`.
+* **IndexError**: An invalid index was used to look up a value in a list.
+  This often indicates the index is not computed properly and is often an off-by-one error.
+  For example, given `numbers = [1, 2, 3]`, the code `print(numbers[len(numbers)])` will raise an IndexError since `len(numbers)` is 3 but the last valid index is 2.
+  `[1, 2, 3][3]` raises `IndexError: list index out of range`.
+* **KeyError**: Similar to IndexError, this exception is raised when using a key to look up a dictionary value but the key is not set in the dictionary.
+  For example, `{"Alice": 1}["Bob"]` raises `KeyError: 'Bob'`.
+* **TypeError**: Typically, this is raised when the wrong type of data is passed to a function or used in an operation.
+  For example, `"Hello" + 1` will raise `TypeError: can only concatenate str (not "int") to str.
+* **ValueError**: This is usually raised when an invalid value is passed to function.
+  For example, real square roots only exist for position numbers. 
+  Calling `math.sqrt(-1)` will raise `ValueError: math domain error`.
+
 ## Using the `print` function
 
 Sometimes an error is not being raised, but a value is not what is expected.
@@ -305,3 +331,4 @@ print(sum)
 [logging]: https://docs.python.org/3/howto/logging.html
 [print]: https://www.w3schools.com/python/ref_func_print.asp
 [pdb]: https://www.geeksforgeeks.org/python-debugger-python-pdb/
+[exception-hierarchy]: https://docs.python.org/3/library/exceptions.html#exception-hierarchy
