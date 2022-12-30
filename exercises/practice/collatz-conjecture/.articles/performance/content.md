@@ -11,7 +11,7 @@ The [approaches page][approaches] lists three approaches to this exercise:
 ## Benchmarks
 
 To benchmark the approaches, we wrote a [small benchmark application][benchmark-application] using the [`timeit`][timeit] library.
-These test where run in windows 11, using Python 3.11.1.
+These test were run in windows 11, using Python 3.11.1.
 
 ```
 Steps with recursion : 0.00015059998258948326
