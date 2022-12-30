@@ -2,53 +2,70 @@
 
 ## Goal
 
-This concept exercise is meant to teach an understanding/use of `unpacking` and the `*` (splat) and `**` (double splat) operators in Python.
-
-<br>
+The goal of the concept exercise described in this issue is to teach understanding/use of the itertools module in Python.
 
 ## Learning objectives
 
-- Understand/use `unpacking` through the use of `*` and `**` _prefix_ operators in various scenarios
-  - `*` and `**` as _prefixes_ ..... not to be confused with `*` (_multiply_) and `**` (_exponentiation_) as _infix_, or mathematical operators (**consider a link in the links doc or a mention in dig deeper.**)
-  - use in arguments to `functions`
-  - use in argument _capture_ for `functions` (_aka passing an arbitrary number of arguments -- *args * & \*\*kwargs_)
-  - use in iterable (_mainly `tuple` and `list`_) unpacking & packing
-  - use in `dict` unpacking & packing
-- Understand/use `unpacking` via `multiple assignment`
-  - using `multiple assignment ` in place of `indexing`
-  - using `multiple assignment` + `*` in place of `slicing`
-  - unpacking plus "leftovers" via `*`
-- Differences between straight `multiple assignment` and `*` & `**`
-- Deep unpacking
+Learn more about iteration tools the Python Standard Library provides through the itertools module.
+
+Build and understanding of and use the following functions from the module, as well as practicing some of the recipes included:
+
+At least one of the infinite itertators: `count()`, `cycle()`, or `repeat()`
+
+- `accumulate()`
+- `product()`
+- `chain() & chain.from_iterable()`
+- `groupby()`
+- `islice()`
+- `zip_longest() and the zip() built-in`
+- `permutations()`
+- `combinations()`
 
 ## Concepts
 
-- `unpacking`
-- `unpacking generalizations`
-- `multiple assignment`
+- iteration
+- iterators
+- itertools
 
 ## Topics that are Out of scope
 
-- `classes`
-- `comprehensions`
+- `classes` & `class customization` beyond the use of the `itertools` methods.
+- `class-inheritance` beyond what is needed to customize iteration using `itertools`
+- `comprehensions` beyond what is needed to work with itertools
 - `comprehensions` in `lambdas`
-- `map()`, `filter()` or `functools.reduce()` in a `comprehension`
-- `function-arguments` beyond explaining briefly how `*`, `**` work in function arguments.
-- `functools` beyond `functools.reduce()`(_this will get its own exercise_)
-- `generators`
-- using an `assignment expression` or "walrus" operator (`:=`) alone or in a `lambda`
+- coroutines
+- `decorators` beyond what is needed to work with `itertools`
+- functions and higher-order functions beyond what might be needed to work with itertools
+- `functools` and related `map`, `filter()` and `functools.reduce()`(they have their own exercise which is a prerequisite to this one)
+- `generators` beyond what might be needed to work with itertools (they have their own exercise which is a prerequisite to this one)
+- `lambdas` beyond what might be needed to work with `itertools`
+- using an assignment expression or "walrus" operator (:=)
+- class decorators
+- enums
 
 ## Prerequisites
 
 - `basics`
-- `bools`
+- `booleans`
 - `comparisons`
-- `dicts`
+- `rich-comparisons`
+- **dicts**
+- **dict-methods**
+- **functions**
+- **functional tools**
+- _generators_
+- **higher-order functions**
+- **Identity methods is and is not**
+- `iteration`
 - `lists`
-- `numbers`
-- `strings`
-- `tuples`
+- `list-methods`
 - `loops`
+- `numbers`
+- `sequences`
+- **sets**
+- `strings`
+- `string-methods`
+- `tuples`
 
 ## Representer
 

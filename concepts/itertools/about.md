@@ -1,11 +1,11 @@
 # About
 
 Itertools is a module in the Python standard library that provides a number of functions that create iterators for efficient looping.
-Iterators are objects that can be irretated over.
+Iterators are objects that can be iterated over.
 For example a `for <variable> in <iterator>:` loop.
 
 There are a number of functions in the itertools module that are useful for looping over data.
-These functions often are also able to enchant the readability and/or maintainabillity of the code.
+These functions often are also able to enchant the readability and/or maintainability of the code.
 
 This concept will cover these functions and how to use them:
 
@@ -33,16 +33,16 @@ There are more functions in the itertools module, like:
 - `dropwhile()`
 - `filterfalse()`
 
-These functions will be coverd in a later concept.
+These functions will be covered in a later concept.
 
-`count()`, `cycle()`, and`repeat()` is cataogorized as infinite iterators.
+`count()`, `cycle()`, and`repeat()` is categorized as infinite iterators.
 These iterators will never terminate and will keep looping forever.
 
 ## Iterators terminating on the shortest input sequence
 
 ### Chain()
 
-`chain(iterable1, iterable2...)` creates an irretator of values from the iterables in the order they are given.
+`chain(iterable1, iterable2...)` creates an iterator of values from the iterables in the order they are given.
 
 ```python
 >>> import itertools
@@ -72,7 +72,7 @@ Using `tuple()`:
 
 ### chain.from_iterable()
 
-Works like chain but takes a single nested iterable
+`chain.from_iterable()` works like `chain` but takes a single nested iterable.
 Then the method unpack that iterable into individual iterables.
 
 ```python
@@ -131,7 +131,7 @@ e c
 If you are using the online editor then you don't need to worry about this.
 ```
 
-`Pairwise(iterable)` was intruduced in Python 3.10 and returns an iterator of overlapping pairs of values from the input iterable.
+`Pairwise(iterable)` was introduced in Python 3.10 and returns an iterator of overlapping pairs of values from the input iterable.
 
 ```python
 >>> import itertools
@@ -147,7 +147,7 @@ Talk with Bethany about
 
 ### Zip_longest()
 
-#### Explaning zip
+#### Explaining zip
 
 ```exercism/caution
 Pythons `zip()` function should not be confused with the zip compression format.
@@ -172,10 +172,10 @@ If the iterables are not the same length, then the iterator will stop when the s
 [('x', 1, True),('y', 2, False)]
 ```
 
-#### Explaning zip_longest
+#### Explaining zip_longest
 
 `zip_longest(iterator, <fillvalue=None>)` is a function from the `itertools` module.
-Unlink `zip()`, it will not stop when the shortest iterable is exhausted.
+Unlike `zip()`, it will not stop when the shortest iterable is exhausted.
 If the iterables are not the same length, `fillvalue` will be used to pad missing values.
 By the default the `fillvalue` is `None`.
 
@@ -244,10 +244,10 @@ You can also give it multiple iterables.
 ('A', 'x') ('A', 'y') ('B', 'x') ('B', 'y') ('C', 'x') ('C', 'y') ('D', 'x') ('D', 'y')
 ```
 
-Here is an example of doing it wihout `product()`.
-It looks similliar to the last example but since we have two iterables we need to nest the for loops.
-Even though the proudct is given repeat=1.
-The reasson to why it is only 2 for loops earlier was because we only had one iterable.
+Here is an example of doing it without `product()`.
+It looks similar to the last example but since we have two iterables we need to nest the for loops.
+Even though the product is given repeat=1.
+The reason to why it is only 2 for loops earlier was because we only had one iterable.
 If we had two iterables and gave it repeat=2 we would need 4 for loops.
 Since 2 \* 2 = 4.
 
@@ -262,7 +262,7 @@ Since 2 \* 2 = 4.
 ### Permutations()
 
 `permutations(iterable, <r=None>)` creates an iterator of tuples.
-It works like `product()` but it doesnt repeat values from a specific positoon from the iterable and can only take one iterable.
+It works like `product()` but it doesn't repeat values from a specific position from the iterable and can only take one iterable.
 The "r" keyword argument can be used to specify the number of times the input iterables are repeated.
 By default the "r" keyword argument is None.
 If "r" is None then the length of the iterable is used.
@@ -313,7 +313,7 @@ The difference between this and `combinations()` is that it can repeat values.
 ## Infinite iterators
 
 Most of iterator from the `itertools` module get exhausted after a time.
-But there are some that are infinite, these are known as infinte iterators.
+But there are some that are infinite, these are known as infinite iterators.
 These iterators will will keep producing values until you tell them to stop.
 
 ```exercism/note
@@ -351,7 +351,7 @@ Giving `count()` a negative step size will produces values in a descending order
 
 ### Cycle()
 
-`cycle(iterable)` produces all values from the iterable in an infinte loop.
+`cycle(iterable)` produces all values from the iterable in an infinite loop.
 A `list`, `tuple`, `string`, `dict` or any other iterable can be used.
 
 ```python
@@ -369,7 +369,7 @@ A B C A B C A B C A
 
 ### Repeat()
 
-`repeat(object, <times>)` produces the same value in an infinte loop.
+`repeat(object, <times>)` produces the same value in an infinite loop.
 Although if the optional times parameter is given, the value will produces that many times.
 Meaning that it is not an infinite loop if that parameter is given.
 

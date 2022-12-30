@@ -1,11 +1,11 @@
 [
   {
     "url": "https://docs.python.org/3/library/itertools.html",
-    "description": "Offical Python documentation for the itertools module."
+    "description": "Official Python documentation for the itertools module."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://realpython.com/python-itertools/",
+    "description": "Real python, itertools in python"
   },
   {
     "url": "http://example.com/",
