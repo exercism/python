@@ -14,15 +14,15 @@ To benchmark the approaches, we wrote a [small benchmark application][benchmark-
 These test were run in windows 11, using Python 3.11.1.
 
 ```
-Steps with recursion : 0.00015059998258948326
-Steps with ternary : 1.8699909560382366e-05
-Steps with if/else : 1.8799910321831703e-05
+Steps with recursion : 4.1499966755509377e-05
+Steps with ternary : 2.1900050342082977e-05
+Steps with if/else : 2.0900042727589607e-05
 ```
 
 ## Conclusion
 
 The fastest approach is the one using the ternary operator or the if/else statement.
-The slowest approach is the one using recursion, that is because Python isn't optimized for recursion.
+The slowest approach is the one using recursion, that is because Python isn't as optimized for recursion.
 
 [approaches]: https://exercism.org/tracks/python/exercises/collatz-conjecture/approaches
 [approach-if-else]: https://exercism.org/tracks/python/exercises/collatz-conjecture/approaches/if-else
