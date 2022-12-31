@@ -1,0 +1,22 @@
+{
+  "introduction": {
+    "authors": ["meatball133", "bethanyg"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "7d26e763-daa0-4396-bc7b-7624fbc2ac5c",
+      "slug": "nested-for-loop",
+      "title": "Nested for loop",
+      "blurb": "Use a nested for loop",
+      "authors": ["meatball133", "bethanyg"]
+    },
+    {
+      "uuid": "e6495842-a557-43db-b051-b99ffba03f00",
+      "slug": "nested-for-loop-optimized",
+      "title": "Nested for loop optimized",
+      "blurb": "Nested for loop optimized edition",
+      "authors": ["meatball133", "bethanyg"]
+    }
+  ]
+}
