@@ -197,7 +197,7 @@ By the default the `fillvalue` is `None`.
 [('x', 1, True),('y', 2, False), ('z', 3, None), (None, 4, None)]
 ```
 
-An example where a fillvalue is given:
+An example where a `fillvalue` is given:
 
 ```python
 >>> import itertools
@@ -274,9 +274,9 @@ Since 2 \* 2 = 4.
 
 `permutations(iterable, <r=None>)` creates an iterator of tuples.
 It works like `product()` but it doesn't repeat values from a specific position from the iterable and can only take one iterable.
-The "r" keyword argument can be used to specify the number of times the input iterables are repeated.
-By default the "r" keyword argument is None.
-If "r" is None then the length of the iterable is used.
+The **r** keyword argument can be used to specify the number of times the input iterables are repeated.
+By default the **r** keyword argument is None.
+If **r** is None then the length of the iterable is used.
 
 ```python
 >>> import itertools
@@ -297,7 +297,7 @@ If "r" is None then the length of the iterable is used.
 ### Combinations()
 
 `combinations(iterable, r)` finds all the possible combinations of the given iterable.
-The r keyword argument is used to specify the length of the tuples generated.
+The **r** keyword argument is used to specify the length of the tuples generated.
 
 ```python
 >>> import itertools
@@ -310,8 +310,10 @@ The r keyword argument is used to specify the length of the tuples generated.
 ### Combinations_with_replacement()
 
 `combinations_with_replacement(iterable, r)` finds all the possible combinations of the given iterable.
-The r keyword argument is used to specify the length of the tuples generated.
+The **r** keyword argument is used to specify the length of the tuples generated.
 The difference between this and `combinations()` is that it can repeat values.
+That means that if you have "AB" and you want to find all the combinations of length 2 you will get `("A", "A"), ("A", "B"), ("B", "B")`.
+While with `combinations()` you would only get `("A", "B")`.
 
 ```python
 >>> import itertools
