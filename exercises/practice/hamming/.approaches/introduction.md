@@ -54,7 +54,7 @@ For more information, check the [zip approach][approach-zip].
 ## Approach: Using sum
 
 Using the built-in [`sum`][sum] removes the need for a counter variable.
-Removing the counter variable makes the code is more concise.
+Removing the counter variable makes the code more concise.
 The examples making use of `sum` also use a [generator expression][generator-expression], although that it is not required.
 Using `sum` in this fashion requires a bit more Python knowledge compared to the other approaches.
 
