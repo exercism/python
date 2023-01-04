@@ -9,7 +9,7 @@ class GitHub(object):
         self.__dict__.update(**config_options)
         self.session = requests.Session()
         if hasattr(self, 'api_token'):
-            self.session.headers['Authorization'] = 'token %s' % self.api_token
+            self.session.headers['Authorization'] = f'token {self.api_token}'
         elif hasattr(self, 'username') and hasattr(self, 'password'):
             self.session.auth = (self.username, self.password)
 
@@ -30,9 +30,9 @@ class GitHub(object):
         if labels is not None:
             payload['labels'] = labels
         response = self.session.post(
-            'https://api.github.com/repos/{}/{}/issues'.format(owner, repo),
+            f'https://api.github.com/repos/{owner}/{repo}/issues',
             data=json.dumps(payload),
         )
         if response.status_code != 201:
-            raise ValueError('Failed to create issue: ' + response.content)
+            raise ValueError(f'Failed to create issue: {response.content}')
         return json.loads(response.content)

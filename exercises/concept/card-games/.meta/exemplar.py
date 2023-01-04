@@ -56,13 +56,11 @@ def approx_average_is_average(hand):
     real_average = card_average(hand)
 
     if card_average([hand[0], hand[-1]]) == real_average:
-        is_same = True
+        return True
     elif hand[len(hand) // 2] == real_average:
-        is_same = True
+        return True
     else:
-        is_same = False
-
-    return is_same
+        return False
 
 
 def average_even_is_average_odd(hand):

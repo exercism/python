@@ -3,15 +3,15 @@ from enum import Enum
 from pathlib import Path
 import shutil
 import subprocess
+from contextlib import suppress
 from typing import Iterator, Union
 
 
-GITHUB_EXERCISM = f"https://github.com/exercism"
+GITHUB_EXERCISM = "https://github.com/exercism"
 
 
 class Repo(Enum):
     ProblemSpecifications = f"{GITHUB_EXERCISM}/problem-specifications.git"
-
 
 
 def clone(repo: Union[str, Repo], directory: Union[str, Path, None] = None) -> bool:
@@ -21,11 +21,9 @@ def clone(repo: Union[str, Repo], directory: Union[str, Path, None] = None) -> b
         directory = repo.split("/")[-1].split(".")[0]
     directory = Path(directory)
     if not directory.is_dir():
-        try:
+        with suppress(subprocess.CalledProcessError):
             subprocess.run(["git", "clone", repo, str(directory)], check=True)
             return True
-        except subprocess.CalledProcessError:
-            pass
     return False
 
 

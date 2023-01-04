@@ -35,10 +35,11 @@ def check_drinks(drink_name, drink_ingredients):
     name followed by "Cocktail" (includes alcohol).
     """
 
-    if not ALCOHOLS.isdisjoint(drink_ingredients):
-        return drink_name + ' Cocktail'
-
-    return drink_name + ' Mocktail'
+    return (
+        f'{drink_name} Mocktail'
+        if ALCOHOLS.isdisjoint(drink_ingredients)
+        else f'{drink_name} Cocktail'
+    )
 
 
 def categorize_dish(dish_name, dish_ingredients):

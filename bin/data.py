@@ -17,8 +17,8 @@ def _custom_dataclass_init(self, *args, **kwargs):
     for value in args:
         try:
             name = names.pop(0)
-        except IndexError:
-            raise TypeError(f"__init__() given too many positional arguments")
+        except IndexError as e:
+            raise TypeError("__init__() given too many positional arguments") from e
         # print(f'setting {k}={v}')
         setattr(self, name, value)
         used_names.add(name)
@@ -106,7 +106,6 @@ class ExerciseFiles:
     editor: List[str] = None
     exemplar: List[str] = None
 
-
     # practice exercises are different
     example: List[str] = None
 
@@ -116,9 +115,8 @@ class ExerciseFiles:
                 raise ValueError(
                     "exercise config must have either files.exemplar or files.example"
                 )
-            else:
-                self.exemplar = self.example
-                delattr(self, "example")
+            self.exemplar = self.example
+            delattr(self, "example")
         elif self.example is not None:
             raise ValueError(
                 "exercise config must have either files.exemplar or files.example, but not both"
@@ -250,7 +248,9 @@ class Exercises:
                 ],
             )
 
-    def all(self, status_filter={ExerciseStatus.Active, ExerciseStatus.Beta}):
+    def all(self, status_filter=None):
+        if status_filter is None:
+            status_filter = {ExerciseStatus.Active, ExerciseStatus.Beta}
         return [
             e for e in chain(self.concept, self.practice) if e.status in status_filter
         ]
@@ -283,7 +283,6 @@ class FilePatterns:
     example: List[str]
     exemplar: List[str]
     editor: List[str] = None
-
 
 
 @dataclass
@@ -328,12 +327,12 @@ class Config:
         try:
             with Path(path).open() as f:
                 return cls(**json.load(f))
-        except IOError:
+        except IOError as e:
             print(f"FAIL: {path} file not found")
-            raise SystemExit(1)
+            raise SystemExit(1) from e
         except TypeError as ex:
             print(f"FAIL: {ex}")
-            raise SystemExit(1)
+            raise SystemExit(1) from ex
 
 
 @dataclass

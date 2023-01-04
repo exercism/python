@@ -52,17 +52,15 @@ def run_tests(exercise: ExerciseInfo) -> bool:
 
 
 def get_status(exercise: ExerciseInfo, spec_path: Path) -> TemplateStatus:
-    if exercise.template_path.is_file():
-        if generate_template(exercise, spec_path):
-            if run_tests(exercise):
-                logging.info(f"{exercise.slug}: OK")
-                return TemplateStatus.OK
-            else:
-                return TemplateStatus.TEST_FAILURE
-        else:
-            return TemplateStatus.INVALID
-    else:
+    if not exercise.template_path.is_file():
         return TemplateStatus.MISSING
+    if not generate_template(exercise, spec_path):
+        return TemplateStatus.INVALID
+    if run_tests(exercise):
+        logging.info(f"{exercise.slug}: OK")
+        return TemplateStatus.OK
+    else:
+        return TemplateStatus.TEST_FAILURE
 
 
 def set_loglevel(opts: Namespace):
