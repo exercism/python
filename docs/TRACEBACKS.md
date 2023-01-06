@@ -56,29 +56,333 @@ We got there by calling `my_func` on line 5.
 
 ## Common Exceptions
 
-Python 3.11 defines 67 [built-in exception classes][exception-hierarchy].
+Python defines over 60 [built-in exception classes][exception-hierarchy].
 Here is a brief overview of some of the more common exceptions and what they indicate.
 
-* **SyntaxError**: Python is unable to understand the code as the code has invalid syntax.
-  For example, there may be an open parenthesis without a matching closing parenthesis.
-* **AssertionError**: An `assert` statement (see below) failed.
-* **AttributeError**: The code (or unit test!) tried to access the attribute of an object but that object has no attribute.
-  For example, a unit test excepts a `Robot` object to have a `direction` attribute but when it tried to access `robot.direction`, it does not exist.
-  This could also indicate a typo, such as using `"Hello".lowercase()` when the correct syntax is `"Hello".lower()`.
-  `"Hello".lowercase()` raises `AttributeError: 'str' object has no attribute 'lowercase'`.
-* **ImportError**: The code tried to import something, but it wasn't there.
-  For example, a unit test does `from exercise import Thing` but the `exercise.py` file does not define a `Thing`.
-* **IndexError**: An invalid index was used to look up a value in a list.
-  This often indicates the index is not computed properly and is often an off-by-one error.
-  For example, given `numbers = [1, 2, 3]`, the code `print(numbers[len(numbers)])` will raise an IndexError since `len(numbers)` is 3 but the last valid index is 2.
-  `[1, 2, 3][3]` raises `IndexError: list index out of range`.
-* **KeyError**: Similar to IndexError, this exception is raised when using a key to look up a dictionary value but the key is not set in the dictionary.
-  For example, `{"Alice": 1}["Bob"]` raises `KeyError: 'Bob'`.
-* **TypeError**: Typically, this is raised when the wrong type of data is passed to a function or used in an operation.
-  For example, `"Hello" + 1` will raise `TypeError: can only concatenate str (not "int") to str.
-* **ValueError**: This is usually raised when an invalid value is passed to function.
-  For example, real square roots only exist for position numbers. 
-  Calling `math.sqrt(-1)` will raise `ValueError: math domain error`.
+### **SyntaxError**
+
+Python raises a `SyntaxError` when it is unable to understand the code due to invalid syntax.
+For example, there may be an open parenthesis without a matching closing parenthesis.
+
+
+<details>
+<summary>Click here for a code example.</summary>
+
+
+Running this code:
+
+```python
+def distance(strand_a, strand_b):
+    if len(strand_a) != len(strand_b):
+        raise ValueError("Strands must be of equal length."  # This is missing the closing parenthesis
+```
+
+will result in a stack trace similar to this (_note the message on the final line_):
+
+```
+.usr.local.lib.python3.10.site-packages._pytest.python.py:608: in _importtestmodule
+    mod = import_path(self.path, mode=importmode, root=self.config.rootpath)
+.usr.local.lib.python3.10.site-packages._pytest.pathlib.py:533: in import_path
+    importlib.import_module(module_name)
+.usr.local.lib.python3.10.importlib.__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1050: in _gcd_import ???
+<frozen importlib._bootstrap>:1027: in _find_and_load ???
+<frozen importlib._bootstrap>:1006: in _find_and_load_unlocked ???
+<frozen importlib._bootstrap>:688: in _load_unlocked ???
+.usr.local.lib.python3.10.site-packages._pytest.assertion.rewrite.py:168: in exec_module
+    exec(co, module.__dict__)
+.mnt.exercism-iteration.hamming_test.py:3: in <module>
+    from hamming import (  
+E     File ".mnt.exercism-iteration.hamming.py", line 10
+E       raise ValueError("Strands must be of equal length."
+E                       ^
+E   SyntaxError: '(' was never closed
+```
+
+
+</details>
+
+
+### **AssertionError**
+Python raises an `AssertionError` when an `assert` statement (see below) fails.
+
+
+<details>
+<summary>Click here for a code example.</summary>
+
+
+Running this code:
+
+```python
+def distance(strand_a, strand_b):
+    assert len(strand_a) == len(strand_b)
+
+
+distance("ab", "abc")
+```
+
+will result in a stack trace similar to this (_note the message on the final line_):
+
+```
+hamming_test.py:3: in <module>
+    from hamming import (
+hamming.py:5: in <module>
+    distance("ab", "abc")
+hamming.py:2: in distance
+    assert len(strand_a) == len(strand_b)
+E   AssertionError
+```
+
+
+</details>
+
+
+### **AttributeError**
+An `AttributeError` is raised when code (or a unit test!) tries to access the attribute of an object but that object has no such attribute.
+For example, a unit test excepts a `Robot` object to have a `direction` attribute but when it tried to access `robot.direction`, it does not exist.
+
+This could also indicate a typo, such as using `"Hello".lowercase()` when the correct syntax is `"Hello".lower()`.
+`"Hello".lowercase()` raises `AttributeError: 'str' object has no attribute 'lowercase'`.
+
+
+<details>
+<summary>Click here for a Robot class example.</summary>
+
+
+Running this code:
+
+```python
+class Robot:
+    def __init__():
+        #note that there is no self.direction listed here
+        self.position = (0, 0)
+        self.orientation = 'SW'
+
+    def forward():
+        pass
+        
+
+robby = Robot
+robby.direction
+```
+
+will result in a stack trace similar to this (_note the message on the final line_):
+
+```
+robot_simulator_test.py:3: in <module>
+    from robot_simulator import (
+robot_simulator.py:12: in <module>
+    robby.direction
+E   AttributeError: type object 'Robot' has no attribute 'direction'
+```
+
+
+</details>
+
+
+<details>
+<summary>Click here for a string example.</summary>
+
+
+Running this code:
+
+```python
+def distance(strand_a, strand_b):
+    if strand_a.lowercase() == strand_b:
+        return 0
+
+
+distance("ab", "abc")
+```
+
+will result in a stack trace similar to this (_note the message on the final line_):
+
+```
+    def distance(strand_a, strand_b):
+>       if strand_a.lowercase() == strand_b:
+E       AttributeError: 'str' object has no attribute 'lowercase'
+```
+
+
+</details>
+
+
+
+### **ImportError**
+An `ImportError` is raised when code tries to import something, but Python is unable to do so.
+For example, a unit test for `Guidos Gorgeous Lasagna` does `from lasagna import bake_time_remaining`, but the `lasgana.py` solution file might not define `bake_time_remaining`.
+
+
+<details>
+<summary>Click here for code example</summary>
+
+
+Running the `lasgana.py` file without the defined function would result in the following error:
+
+```python
+We received the following error when we ran your code:
+
+  ImportError while importing test module '.mnt.exercism-iteration.lasagna_test.py'.
+Hint: make sure your test modules.packages have valid Python names.
+
+Traceback:
+.mnt.exercism-iteration.lasagna_test.py:6: in <module>
+    from lasagna import (EXPECTED_BAKE_TIME,
+E   ImportError: cannot import name 'bake_time_remaining' from 'lasagna' (.mnt.exercism-iteration.lasagna.py)
+
+During handling of the above exception, another exception occurred:
+.usr.local.lib.python3.10.importlib.__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+.mnt.exercism-iteration.lasagna_test.py:23: in <module>
+    raise ImportError("In your 'lasagna.py' file, we can not find or import the"
+
+E   ImportError: In your 'lasagna.py' file, we can not find or import the function named 'bake_time_remaining()'. Did you mis-name or forget to define it?
+```
+
+### **IndexError**
+
+Python raises an `IndexError` when an invalid index is used to look up a value in a list.
+This often indicates the index is not computed properly and is often an off-by-one error.
+
+
+<details>
+<summary>Click here for code example</summary>
+
+
+Consider the following code.
+
+```python
+def distance(strand_a, strand_b):
+    same = 0
+    for i in range(len(strand_a)):
+        if strand_a[i] == strand_b[i]:
+            same += 1
+    return same
+
+
+distance("abc", "ab")  # Note the first strand is longer than the second strand.
+```
+
+Running that code will result in an error similar to this one.
+(_Note the last line._)
+
+```
+hamming_test.py:3: in <module>
+    from hamming import (
+hamming.py:9: in <module>
+    distance("abc", "ab")  # Note the first strand is longer than the second strand.
+hamming.py:4: in distance
+    if strand_a[i] == strand_b[i]:
+E   IndexError: string index out of range
+```
+
+
+</details>
+
+
+### **KeyError**
+Similar to `IndexError`, this exception is raised when using a key to look up a dictionary value but the key is not set in the dictionary.
+
+
+<details>
+<summary>Click here for code example</summary>
+
+
+Consider the following code.
+
+```python
+def to_rna(dna_letter):
+    translation = {"G": "C", "C": "G", "A": "U", "T": "A"}
+    return translation[dna_letter]
+
+
+print(to_rna("Q"))  # Note, "Q" is not in the translation.
+```
+
+Running that code will result in an error similar to this one.
+(_Note the last line._)
+
+```
+rna_transcription_test.py:3: in <module>
+    from rna_transcription import to_rna
+rna_transcription.py:6: in <module>
+    print(to_rna("Q"))
+rna_transcription.py:3: in to_rna
+    return translation[dna_letter]
+E   KeyError: 'Q'
+```
+
+</details>
+
+
+### **TypeError**
+Typically, a `TypeError` is raised when the wrong type of data is passed to a function or used in an operation.
+
+
+
+<details>
+<summary>Click here for code example</summary>
+
+
+Consider the following code.
+
+```python
+def hello(name):  # This function expects a string.
+    return 'Hello, ' + name + '!'
+
+
+print(hello(100))  # 100 is not a string.
+```
+
+Running that code will result in an error similar to this one.
+(_Note the last line._)
+
+```
+hello_world_test.py:3: in <module>
+    import hello_world
+hello_world.py:5: in <module>
+    print(hello(100))
+hello_world.py:2: in hello
+    return 'Hello, ' + name + '!'
+E   TypeError: can only concatenate str (not "int") to str
+```
+
+
+</details>
+
+
+### **ValueError**
+A `ValueError` is usually raised when an invalid value is passed to function.
+<details>
+<summary>Click here for code example</summary>
+
+
+Note, real square roots only exist for position numbers.
+Calling `math.sqrt(-1)` will raise `ValueError: math domain error` since `-1` is not a valid value for a square root.
+In (mathematical) technical terms, -1 is not in the domain of square roots.
+
+
+```python
+import math
+
+math.sqrt(-1)
+```
+
+Running that code will result in an error similar to this one.
+(_Note the last line._)
+
+```
+square_root_test.py:3: in <module>
+    from square_root import (
+square_root.py:3: in <module>
+    math.sqrt(-1)
+E   ValueError: math domain error
+```
+
+
+</details>
+
 
 ## Using the `print` function
 
@@ -302,7 +606,7 @@ Here is an example of how to use the above debugger commands based on the code e
 ...
 ```
 
-In Python 3.7+ there is an easier way to create breakpoints 
+In Python 3.7+ there is an easier way to create breakpoints.
 Simply writing `breakpoint()` where needed will create one.
 
 ```python
