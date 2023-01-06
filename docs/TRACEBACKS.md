@@ -140,7 +140,7 @@ E   AssertionError
 
 ### **AttributeError**
 An `AttributeError` is raised when code (or a unit test!) tries to access the attribute of an object but that object has no such attribute.
-For example, a unit test excepts a `Robot` object to have a `direction` attribute but when it tried to access `robot.direction`, it does not exist.
+For example, a unit test expects a `Robot` object to have a `direction` attribute, but when it tried to access `robot.direction`, it does not exist.
 
 This could also indicate a typo, such as using `"Hello".lowercase()` when the correct syntax is `"Hello".lower()`.
 `"Hello".lowercase()` raises `AttributeError: 'str' object has no attribute 'lowercase'`.
@@ -242,7 +242,7 @@ E   ImportError: In your 'lasagna.py' file, we can not find or import the functi
 
 ### **IndexError**
 
-Python raises an `IndexError` when an invalid index is used to look up a value in a list.
+Python raises an `IndexError` when an invalid index is used to look up a value in a sequence.
 This often indicates the index is not computed properly and is often an off-by-one error.
 
 
@@ -354,11 +354,13 @@ E   TypeError: can only concatenate str (not "int") to str
 
 ### **ValueError**
 A `ValueError` is usually raised when an invalid value is passed to function.
+
+
 <details>
 <summary>Click here for code example</summary>
 
 
-Note, real square roots only exist for position numbers.
+Note, real square roots only exist for positive numbers.
 Calling `math.sqrt(-1)` will raise `ValueError: math domain error` since `-1` is not a valid value for a square root.
 In (mathematical) technical terms, -1 is not in the domain of square roots.
 
