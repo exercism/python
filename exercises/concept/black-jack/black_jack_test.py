@@ -88,7 +88,7 @@ class BlackJackTest(unittest.TestCase):
     @pytest.mark.task(taskno=6)
     def test_can_double_down(self):
         data = [
-                (('A', '9'), True), (('K', 'A'), True), (('4', '5'), True),
+                (('A', '9'), True), (('K', 'A'), True), (('4', '5'), False),
                 (('A', 'A'), False), (('10', '2'), False), (('10', '9'), False)]
 
         for variant, (hand, double_down) in enumerate(data, 1):
