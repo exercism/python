@@ -1,6 +1,6 @@
 # Performance
 
-In this approach, we'll find out the performance difference between approaches for palindrome product in Python.
+In this article, we'll examine the performance difference between approaches for `palindrome-products` in Python.
 
 The [approaches page][approaches] lists two approaches to this exercise:
 
@@ -10,7 +10,8 @@ The [approaches page][approaches] lists two approaches to this exercise:
 ## Benchmarks
 
 To benchmark the approaches, we wrote a [small benchmark application][benchmark-application] using the [`timeit`][timeit] library.
-These test were run in windows 11, using Python 3.11.1.
+These tests were run in windows 11, using Python 3.11.1.
+Your system results may vary.
 
 ```
 largest, min=1, max=1000 : 0.05235219991300255

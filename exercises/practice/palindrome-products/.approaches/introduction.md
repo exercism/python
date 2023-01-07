@@ -1,9 +1,8 @@
 # Introduction
 
-There are various approaches to solving this problem.
-These approaches show 2 common ways to solve this problem.
-With one being a lot more efficient than the other.
-Although with that being said there are other ways to solve this problem.
+There are various ways to solve `palindrome-products`.
+This approaches document shows 2 _common_ strategies, with one being a lot more efficient than the other.
+That being said, neither approach here is considered canonical, and other "pythonic" approaches could be added/expanded on in the future.
 
 ## General guidance
 
@@ -57,9 +56,9 @@ For more information, check the [Nested for loop approach][approach-nested-for-l
 
 ## Approach: Using a nested for loop, optimized edition
 
-This approach is similar to the previous one, but what if I say that with adding a few lines of code, we can make it faster?
-Then you might say, how much faster?
-Well, for some inputs it reduces the time from 9 minutes to 0.01 seconds.
+This approach is similar to the previous one, but with the addition of a few lines of code we can make it much faster.
+The question then becomes _how much faster_?
+Well, for some input sizes it reduces the time from **9 minutes to 0.01 seconds**.
 You can read more about it in the [Performance article][article-performance].
 
 ```python
