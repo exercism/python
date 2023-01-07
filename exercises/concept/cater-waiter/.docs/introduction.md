@@ -95,7 +95,7 @@ Using operators requires that both inputs be `sets` or `frozensets`, while metho
 ```python
 >>> animals = {'chicken': 'white','sparrow': 'grey','eagle': 'brown and white',
                 'albatross': 'grey and white','crow': 'black','elephant': 'grey',
-                'dog': 'rust','cow': 'black and white','tiger': 'organge and black',
+                'dog': 'rust','cow': 'black and white','tiger': 'orange and black',
                 'cat': 'grey','squirrel': 'black'}
 
 >>>  mammals = {'squirrel','dog','cat','cow', 'tiger', 'elephant'}
