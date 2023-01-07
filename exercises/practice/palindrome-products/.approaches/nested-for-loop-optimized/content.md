@@ -1,6 +1,6 @@
 # Nested For Loop Optimized
 
-The point of this approach is to show with just a few changes, the runtime can be improved by a lot.
+This approach shows that just a few changes can improve the running time of the solution significantly.
 
 ```python
 def largest(min_factor, max_factor):
@@ -49,43 +49,42 @@ def smallest(min_factor, max_factor):
     return (result, answer)
 ```
 
-This approach is very similar to the [nested for loop approach][approach-nested-for-loop], but it has a few optimizations that make it faster.
-To optimize the largest function, we have to start the inner loop from the maximum factor and go down to the minimum factor.
-This way, we can stop the inner loop earlier than before.
-We also in the inner loop set the minimum value to the current value of the outer loop.
+This approach is very similar to the [nested for loop approach][approach-nested-for-loop], but it has a few optimizations.
+To optimize the `largest` function, we have to start the inner loop from the maximum factor and proceed down to the minimum factor.
+This allows us to stop the inner loop earlier than before.
+We also set the minimum value in the _inner_ loop to the current value of the _outer_ loop.
 
-Here is an example of how the algorithm work and why we have to modify the loops.
-Say we take max to be 99 and min 10.
-It would go first round:
-
-```
-x => [99 , 98, 97 ...]
-y => [99]
-```
-
-And already here we have our result which is `9009[91,99]`
-Although the loops has to continue to make us sure there are no higher value.
+Here is an example of how the algorithm works and why the loops need to be modified.
+Say we take maximum to be 99 and the minimum 10.
+In the first round:
 
 ```
-x => [98, 97, 96 ...]
-y => [99, 98]
+x = [99 , 98, 97 ...]
+y = [99]
+```
+
+And already we have our result: `9009[91,99]`
+Although the loops have to continue to make us sure there are no higher values.
+
+```
+x = [98, 97, 96 ...]
+y = [99, 98]
 ...
-x => [90, 89, 88 ...]
-y => [99, 98,97,96,95,94,93,92,91,90]
-```
+x = [90, 89, 88 ...]
+y = [99, 98,97,96,95,94,93,92,91,90]
 
 Here we can see that the highest value for this "run" is 90 \* 99 = 8910.
-Meaning running beyond this point wont give us any higher value than 9009.
+Meaning that running beyond this point won't give us any values higher than 9009.
 
 That is why we introduce the `was_bigger` variable.
-With that variable we can check the inner loop if it has been bigger than the current result.
+With `was_bigger`, we can check if the inner loop has a bigger value than the current result.
 If there has not been a bigger value, we can stop the inner loop and stop the outer loop.
 We do that by using the [`break`][break] statement.
 
-If we hadn't modified the inner loop, it would have started from the minimum factor and gone up to the maximum factor.
+If we hadn't modified the direction of the inner loop, it would have started from the minimum factor and gone up to the maximum factor.
 This would mean that for every new run in the outer loop, the values would be bigger than the previous run.
 
-The smallest function is optimized in a similar way as largest function compared to the original approach.
+The `smallest` function is optimized in a similar way as `largest` function compared to the original approach.
 The only difference is that we have to start the inner loop and outer loop from the minimum factor and go up to the maximum factor.
 Since what we want is the smallest value, we have to start from the smallest value and go up to the biggest value.
 
