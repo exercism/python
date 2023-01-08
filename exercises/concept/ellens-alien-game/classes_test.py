@@ -142,7 +142,7 @@ class ClassesTest(unittest.TestCase):
         obj_list = new_aliens_collection(position_data)
         obj_error = "new_aliens_collection must return a list of Alien objects."
 
-        for obj, position in zip(obj_list, position_data):
+        for obj, position in zip(obj_list, position_data, strict=True):
             self.assertIsInstance(obj, Alien, msg=obj_error)
 
             pos_error = (
