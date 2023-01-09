@@ -1,0 +1,2 @@
+def score(word):
+    return sum(LETTER_SCORES[letter.upper()] for letter in word)

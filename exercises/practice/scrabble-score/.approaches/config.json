@@ -1,0 +1,36 @@
+{
+  "introduction": {
+    "authors": ["meatball133", "bethanyg"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "62f556c0-27a6-43e5-80ea-d7abd921f0e7",
+      "slug": "enum",
+      "title": "Enum",
+      "blurb": "Define a enum to solve the problem",
+      "authors": ["meatball133", "bethanyg"]
+    },
+    {
+      "uuid": "21c0fe14-585f-4e14-9f31-1d294a8a622c",
+      "slug": "dictionary",
+      "title": "Dictionary",
+      "blurb": "Dictionary approach",
+      "authors": ["meatball133", "bethanyg"]
+    },
+    {
+      "uuid": "34911050-b424-4289-9d3f-aa5f0e8f1630",
+      "slug": "nested-tuple",
+      "title": "Nested Tuple",
+      "blurb": "Nested Tuple approach",
+      "authors": ["meatball133", "bethanyg"]
+    },
+    {
+      "uuid": "e9b8e10b-23c7-4c2a-afbe-3c3499468919",
+      "slug": "two-sequences",
+      "title": "Two Sequences",
+      "blurb": "Two Sequences approach",
+      "authors": ["meatball133", "bethanyg"]
+    }
+  ]
+}
