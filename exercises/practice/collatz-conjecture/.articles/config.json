@@ -1,7 +1,7 @@
 {
   "articles": [
     {
-      "uuid": "c37be489b-791a-463a-94c0-564ca0277da2",
+      "uuid": "f5071a22-f13a-4650-afea-b7aaee8f2b12",
       "slug": "performance",
       "title": "Performance deep dive",
       "blurb": "Deep dive to find out the most performant approach for collatz conjecture.",
