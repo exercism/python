@@ -1,7 +1,7 @@
 [
   {
-    "url": "https://docs.python.org/3.11/reference/expressions.html#yield-expressions",
-    "description": "Official Python 3.11 docs for the yield expression."
+    "url": "https://docs.python.org/3.10/reference/expressions.html#yield-expressions",
+    "description": "Official Python 3.10 docs for the yield expression."
   },
   {
     "url": "https://en.wikipedia.org/wiki/Lazy_evaluation",
