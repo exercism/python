@@ -34,8 +34,8 @@ def score(word):
     return sum(LETTER_SCORES[letter.upper()] for letter in word)
 ```
 
-The code starts with initializing a constant that is a [dictionary][dictionary] that holds all the letters as different key and their respective score as a value.
-Then it defines a function that takes a word as an argument.
+The code starts with initializing a constant that is a [dictionary][dictionary] there each letter is a key and their respective score as a value.
+Then a function is defined that takes a word as an argument.
 
 The function returns the built in function [`sum`][sum] that takes a [generator expression][generator-expersion] that iterates over the letters in the word.
 What a generator expression does is that it generates the values on the fly.
