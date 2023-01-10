@@ -75,6 +75,7 @@ For more information, check the [Performance article][performance-article].
 
 [approach-if-else]: https://exercism.org/tracks/python/exercises/collatz-conjecture/approaches/if-else
 [approach-recursion]: https://exercism.org/tracks/python/exercises/collatz-conjecture/approaches/recursion
+[recursion-limit]: https://docs.python.org/3/library/sys.html#sys.setrecursionlimit
 [approach-ternary-operator]: https://exercism.org/tracks/python/exercises/collatz-conjecture/approaches/ternary-operator
 [conditional-expression]: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 [performance-article]: https://exercism.org/tracks/python/exercises/collatz-conjecture/articles/performance
