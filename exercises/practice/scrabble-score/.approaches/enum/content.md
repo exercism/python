@@ -13,12 +13,12 @@ class Scrabble(IntEnum):
     Q = Z = 10
 
 def score(word):
-    return sum(Scrabble[char.upper()] for char in word)
+    return sum(Scrabble[character.upper()] for character in word)
 ```
 
 This approach uses an [`enum`][enum] to define the score of each letter.
-An `enum` or known as a enumerations is sets of named constant and is immutable.
-`enum` was added to python standard library also known as stdlib in python 3.4.
+An `enum` or known as an **enumeration** is sets of named constant and is immutable.
+`enum` was added to python standard library (_also known as stdlib_) in python 3.4.
 
 This approach uses an [`intEnum`][int-enum] it works very similar to a normal `enum` but it has the added benefit that the values are integers.
 Thereby acts like integers.
@@ -29,13 +29,13 @@ Then you can define the `enum` class.
 The `enum` class is defined by using the [`class`][classes] keyword.
 Then you need to specify the name of the class.
 
-After that is constant declared by giving the constant capital letters and the value is assigned by using the `=` operator.
+After that is the constant in the enum declared by giving the constant capital letters and the value is assigned by using the `=` operator.
 This approach works by giving all the letters as constants and then value of the constant is the score of the letter.
 After the `enum` is defined, the `score` function is defined.
 
 The `score` function takes a word as a parameter.
-And uses the same [generator expression][generator-expersion] as the [dictionary approach][dictionary-approach].
-But instead of looking up the value in a dictionary it looks it up in the `enum` class.
+And uses the same [generator expression][generator-expersion] as the [dictionary approach][dictionary-approach] but with a slight modification.
+Which is that instead of looking up the value in a dictionary it looks it up in the `enum` class.
 
 [classes]: https://docs.python.org/3/tutorial/classes.html
 [enum]: https://docs.python.org/3/library/enum.html

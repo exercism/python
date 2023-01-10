@@ -1,12 +1,12 @@
 # Introduction
 
 There are various ways to solve `scrabble-score`.
-This approaches document shows different strategies to solve this exercise
+This approache document shows different strategies to solve this exercise.
 
 ## General guidance
 
 The goal of this exercise is to write a function that calculates the scrabble score for a given word.
-The problem is that
+The problem is that the scrabble score is calculated by the sum of the scores of each letter in the word.
 
 ## Approach: Using a single dictionary
 
@@ -51,7 +51,7 @@ For more information, check the [Dictionary Approach][dictionary-approach].
 
 ## Approach: Using two sequences
 
-Using two sequences is an approach, it is fast.
+Using two sequences is an approach, it removes the need of using a nested data structure or a dictonary.
 Although the reason you might not want to do this is that it is hard to read.
 
 ```python
@@ -67,7 +67,7 @@ For more information, check the [Two Sequences Approach][two-sequences-approach]
 ## Approach: Enum
 
 Using an `enum` is an approach, it is short and easy to read.
-Although it is more complicated since it uses a class.
+Although it is more complicated since it uses a oop (object oriented programmering) elements.
 
 ```python
 from enum import IntEnum
@@ -82,10 +82,10 @@ class Scrabble(IntEnum):
     Q = Z = 10
 
 def score(word):
-    return sum(Scrabble[char.upper()] for char in word)
+    return sum(Scrabble[letter.upper()] for letter in word)
 ```
 
-You can read more about how to achieve this optimization in: [Enum Approach][enum-approach].
+For more information, check the [Enum Approach][enum-approach].
 
 ## Approach: Using a nested tuple
 

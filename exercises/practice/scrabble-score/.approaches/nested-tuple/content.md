@@ -15,13 +15,15 @@ def score(word):
     return sum(score for character in word for letters, score in LETTERS_OF_SCORE if character.upper() in letters)
 ```
 
-The code starts with initializing a constant with a [tuple][tuple] of tuples.
-Inside of the inner tuples there is 2 values, the first value is a string of letters and the second value is the score of the letters.
+The code starts with initializing a constant with a [tuple][tuple] of tuples (_also known as a nested tuple_).
+Inside of the inner tuples there is 2 values, the first value is a string of letters and the second value is the score for the letters.
 
-Then it defines a function that takes a word as an argument.
-The function returns a [generator expression][generator-expersion] similar to the [dictionary approach][dictionary-approach].
-The difference is that it uses a nested [for loop][for-loop] to iterate over the letters and the tuples.
-There we iterate over the characters in the word and then iterate over the tuples.
+Then a function is defined that takes a word as an argument.
+The function returns a [generator expression][generator-expersion] similar to the [dictionary approach][dictionary-approach] but has some slight modifcations.
+
+The difference is that this one uses a nested [for loop][for-loop] to iterate over the letters and the tuples.
+We first iterate over the characters in the word and then iterate over the tuples.
+Which means that for each letter are we iterating over all of the tuples.
 There the tuple is unpacked into the letters and the score.
 You can read more about unpacking in the [concept:python/unpacking-and-multiple-assignment]().
 
