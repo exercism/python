@@ -5,21 +5,21 @@
   },
   "approaches": [
     {
-      "uuid": "7b3aeaef-11ef-427c-9086-d2c6d4c022f1",
+      "uuid": "d92adc98-36fd-49bb-baf5-e4588387841c",
       "slug": "if-else",
       "title": "If/Else",
       "blurb": "Use if and else",
       "authors": ["bethanyg", "meatball133"]
     },
     {
-      "uuid": "a2d8742b-9516-44c8-832d-111874430de0",
+      "uuid": "d7703aef-1510-4ec8-b6ce-ca608b5b8f70",
       "slug": "ternary-operator",
       "title": "Ternary operator",
       "blurb": "Use a ternary operator",
       "authors": ["bethanyg", "meatball133"]
     },
     {
-      "uuid": "01da60d9-c133-41de-90fd-afbba7df2980",
+      "uuid": "b1220645-124a-4994-96c4-3b2b710fd562",
       "slug": "recursion",
       "title": "Recursion",
       "blurb": "Use recursion",
