@@ -32,9 +32,8 @@ For more information, check the [if/else approach][approach-if-else].
 
 ## Approach: Ternary operator
 
-In this approach we use the ternary operator.
-It allows us to write a one-line if and else statement.
-This makes the code more concise.
+In this approach we replace the `if/else` multi-line construction with a [conditional expression][conditional-expression], sometimes called a _ternary operator_.
+This syntax allows us to write a one-line `if/ else` check, making the code more concise.
 
 ```python
 def steps(number):
@@ -53,11 +52,9 @@ For more information, check the [Ternary operator approach][approach-ternary-ope
 
 In this approach we use a recursive function.
 A recursive function is a function that calls itself.
-The reason why you want to use this approach is because it is more concise than the other approaches.
-Since it doesn't need a counter variable.
+This approach can be more concise than other approaches, and may also be more readable for some audiences.
 
-The reason why you might not want to use this approach is that python has a limit on how many times a function can call itself.
-This limit is 1000 times.
+The reason why you might not want to use this approach is that Python has a [recursion limit][recursion-limit] with a default of 1000.
 
 ```python
 def steps(number):
@@ -79,4 +76,5 @@ For more information, check the [Performance article][performance-article].
 [approach-if-else]: https://exercism.org/tracks/python/exercises/collatz-conjecture/approaches/if-else
 [approach-recursion]: https://exercism.org/tracks/python/exercises/collatz-conjecture/approaches/recursion
 [approach-ternary-operator]: https://exercism.org/tracks/python/exercises/collatz-conjecture/approaches/ternary-operator
+[conditional-expression]: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 [performance-article]: https://exercism.org/tracks/python/exercises/collatz-conjecture/articles/performance

@@ -24,9 +24,9 @@ Inside the loop we check if the number is even.
 If it is, then we divide it by two.
 If it isn't, then we multiply it by three and add one.
 After that, we increment the counter by one.
-After the loop is done, we return the counter variable.
+After the loop completes, we return the counter variable.
 
-We have to use a `while` loop here because we don't know how many times the loop will run.
+We use a `while` loop here because we don't know exactly how many times the loop will run.
 
 [value-error]: https://docs.python.org/3/library/exceptions.html#ValueError
 [while-loop]: https://realpython.com/python-while-loop/

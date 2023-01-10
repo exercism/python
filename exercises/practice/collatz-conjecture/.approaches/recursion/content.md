@@ -21,27 +21,31 @@ If it is, then it raises a [`ValueError`][value-error].
 After that, we check if the number is equal to one.
 If it is, then we return zero.
 
-Then we use the same ternary operator as in the [ternary operator][ternary-operator] approach.
-We declare that number is equal to the result of the ternary operator.
-The ternary operator checks if the number is even.
-If it is, then we divide it by two.
-If it isn't, then we multiply it by three and add one.
+We then use the same conditional expression/ternary operator as the [ternary operator][ternary-operator] approach does.
+We assign **number** to the result of the conditional expression.
+The expression checks if the number is even.
+If the number is even, we divide it by two.
+If it isn't, we multiply it by three and add one.
 
-After that, we return one plus the result of calling the `steps` function with the new number.
+After that, we `return` one plus the result of calling the `steps` function with the new number value.
 This is the recursion part.
 
-Doing this exercise with recursion removes the need for a "counter" variable.
-Since what we do is that if the number is not one we do `1 + steps(number)`.
-Then that function can do the same thing again.
-Meaning we can get a long chain of `1 + steps(number)` until we reach one and add 0.
-That will translate to something like this: `1 + 1 + 1 + 1 + 0`.
+Solving this exercise with recursion removes the need for a "counter" variable and the instantiation of a `loop`.
+If the number is not equal to one,  we call `1 + steps(number)`.
+Then the `steps` function can execute the same code again with new values.
+Meaning we can get a long chain or stack of `1 + steps(number)` until the number reaches one and the code adds 0.
+That translates to something like this: `1 + 1 + 1 + 1 + 0`.
 
-In Python, we can't have a function call itself more than 1000 times.
-Which mean problems that require a lot of recursion will fail.
+In Python, we can't have a function call itself more than 1000 times by default.
+Code that exceeds this recursion limit will throw a  [RecursionError][recursion-error].
+While it is possible to adjust the [recursion limit][recursion-limit], doing so risks crashing Python and may also crash your system.
+Casually raising the recursion limit is not recommended.
 
 [clojure]: https://exercism.org/tracks/clojure
 [elixir]: https://exercism.org/tracks/elixir
 [haskell]: https://exercism.org/tracks/haskell
 [recursion]: https://realpython.com/python-thinking-recursively/
+[recursion-error]: https://docs.python.org/3/library/exceptions.html#RecursionError
+[recursion-limit]: https://docs.python.org/3/library/sys.html#sys.setrecursionlimit
 [ternary-operator]: https://exercism.org/tracks/python/exercises/collatz-conjecture/approaches/ternary-operator
 [value-error]: https://docs.python.org/3/library/exceptions.html#ValueError
