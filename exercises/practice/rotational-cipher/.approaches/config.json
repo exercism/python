@@ -1,0 +1,22 @@
+{
+  "introduction": {
+    "authors": ["meatball133", "bethanyg"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "ec09a4e1-6bc3-465b-a366-8ccdd2dbe093",
+      "slug": "ascii-values",
+      "title": "ASCII values",
+      "blurb": "Use letters ascii value to rotate the alphabet",
+      "authors": ["meatball133", "bethanyg"]
+    },
+    {
+      "uuid": "6eb99523-b12b-4e72-8ed8-3444b635b9e5",
+      "slug": "nested-for-loop-optimized",
+      "title": "Nested for loop optimized",
+      "blurb": "Nested for loop optimized edition",
+      "authors": ["meatball133", "bethanyg"]
+    }
+  ]
+}
