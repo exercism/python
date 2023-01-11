@@ -12,23 +12,23 @@ LETTERS_OF_SCORE = (
 )
 
 def score(word):
-    return sum(score for character in word for letters, score in LETTERS_OF_SCORE if character.upper() in letters)
-```
+    return sum(score for character in word.upper() for 
+    letters, score in LETTERS_OF_SCORE if character in letters)
 
-The code starts with initializing a constant with a [tuple][tuple] of tuples (_also known as a nested tuple_).
-Inside of the inner tuples there is 2 values, the first value is a string of letters and the second value is the score for the letters.
+The code starts with defining a constant, LETTERS_OF_SCORE as a [`tuple`][tuple] of tuples (_also known as a nested tuple_).
+Inside of the inner tuples are 2 values, the first value is a string of letters and the second value is the score for those letters.
 
-Then a function is defined that takes a word as an argument.
-The function returns a [generator expression][generator-expersion] similar to the [dictionary approach][dictionary-approach] but has some slight modifcations.
+Next, the `score` function is defined, taking a word as an argument.
+The `score` function uses a [generator expression][generator-expression] similar to the [dictionary approach][dictionary-approach] with some slight modifications.
 
-The difference is that this one uses a nested [for loop][for-loop] to iterate over the letters and the tuples.
-We first iterate over the characters in the word and then iterate over the tuples.
-Which means that for each letter are we iterating over all of the tuples.
-There the tuple is unpacked into the letters and the score.
+This particular approach uses a _nested_ [for loop][for-loop] to iterate over the letters and the tuples.
+We first iterate over the characters in the word and then the tuples.
+Which means that for **_each letter_** we iterate over **all** of the tuples.
+Each iteration, the tuple is unpacked into the letters and their corresponding score.
 You can read more about unpacking in the [concept:python/unpacking-and-multiple-assignment]().
 
-Then we check if the character is in the letters and if it is we return the score.
+Then the code checks if the character is in the unpacked letters and if it is we return its score.
 
 [tuple]: https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences
-[generator-expersion]: https://peps.python.org/pep-0289/
+[generator-expression]: https://peps.python.org/pep-0289/
 [for-loop]: https://realpython.com/python-for-loop/
