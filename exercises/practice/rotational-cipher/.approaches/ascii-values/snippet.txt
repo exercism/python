@@ -1,0 +1,5 @@
+    for number_a in range(min_factor, max_factor+1):
+        for number_b in range(min_factor, max_factor+1):
+            if number_a * number_b >= result:
+                test_value = str(number_a * number_b)
+                if test_value == test_value[::-1]:
