@@ -14,6 +14,7 @@ class Scrabble(IntEnum):
 
 def score(word):
     return sum(Scrabble[character] for character in word.upper())
+```
 
 This approach uses an [`Enum`][enum] to define the score of each letter.
 An [`Enum`][enum] (_also known as an **enumeration**_) is an object with named attributes assigned unique values.
@@ -24,7 +25,7 @@ Values can be accessed via index syntax using the member name (_similar to how a
 The `enum` module was added to python standard library (_also known as stdlib_) in Python 3.4.
 
 This approach uses an [`IntEnum`][int-enum].
-An `IntEnum` is very similar to  an `Enum`, but restricts assigned values to `int`s.
+An `IntEnum` is very similar to an `Enum`, but restricts assigned values to `int`s.
 This allows the `IntEnum` to act as a collection of integers.
 In fact, `IntEnum`s are considered subclasses of `int`s.
 
@@ -35,15 +36,16 @@ The `IntEnum` subclass is defined by using the [`class`][classes] keyword, follo
 
 ```python
 class ClassName(IntEnum):
+```
 
 Member names are declared as constants (ALL CAPS) and assigned values using the `=` operator.
 
-This approach works by creating all the uppercase letters as members with their values being the score. 
+This approach works by creating all the uppercase letters as members with their values being the score.
 After the `IntEnum` is defined, the `score` function is defined.
 
 The `score` function takes a word as an argument.
 The `score` function uses the same [generator expression][generator-expression] as the [dictionary approach][dictionary-approach], but with a slight modification.
-Instead of looking up the value in a _dictionary_,  it looks up the `InEnum` class member value.
+Instead of looking up the value in a _dictionary_, it looks up the `InEnum` class member value.
 
 [classes]: https://docs.python.org/3/tutorial/classes.html
 [enum]: https://docs.python.org/3/library/enum.html

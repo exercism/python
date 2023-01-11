@@ -6,6 +6,7 @@ SCORES = [1] * 10 + [2] * 2 + [3] * 4 + [4] * 5 + [5] * 1 + [8] * 2 + [10] * 2
 
 def score(word):
     return sum(SCORES[KEYS.index(letter)] for letter in word.upper())
+```
 
 This approach uses a string and a [list][list], both of which are [sequence][sequence] types.
 The code begins by defining a string constant with letters.

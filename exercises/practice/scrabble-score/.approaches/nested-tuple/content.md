@@ -12,10 +12,11 @@ LETTERS_OF_SCORE = (
 )
 
 def score(word):
-    return sum(score for character in word.upper() for 
+    return sum(score for character in word.upper() for
     letters, score in LETTERS_OF_SCORE if character in letters)
+```
 
-The code starts with defining a constant, LETTERS_OF_SCORE as a [`tuple`][tuple] of tuples (_also known as a nested tuple_).
+The code starts with defining a constant, `LETTERS_OF_SCORE` as a [`tuple`][tuple] of tuples (_also known as a nested tuple_).
 Inside of the inner tuples are 2 values, the first value is a string of letters and the second value is the score for those letters.
 
 Next, the `score` function is defined, taking a word as an argument.
@@ -29,6 +30,6 @@ You can read more about unpacking in the [concept:python/unpacking-and-multiple-
 
 Then the code checks if the character is in the unpacked letters and if it is we return its score.
 
-[tuple]: https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences
 [generator-expression]: https://peps.python.org/pep-0289/
 [for-loop]: https://realpython.com/python-for-loop/
+[tuple]: https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences
