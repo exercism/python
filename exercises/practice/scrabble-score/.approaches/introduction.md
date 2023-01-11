@@ -25,6 +25,7 @@ LETTER_SCORES = {
 
 def score(word):
     return sum(LETTER_SCORES[letter] for letter in word.upper())
+```
 
 For more information, check the [Dictionary Approach][dictionary-approach].
 
@@ -38,7 +39,7 @@ KEYS = "AEIOULNRSTDGBCMPFHVWYKJXQZ"
 SCORES = [1] * 10 + [2] * 2 + [3] * 4 + [4] * 5 + [5] * 1 + [8] * 2 +[10] * 2
 
 def score(word):
-    return sum(SCORES[KEYS.index(letter] for letter in word.upper())
+    return sum(SCORES[KEYS.index(letter)] for letter in word.upper())
 ```
 
 For more information, check the [Two Sequences Approach][two-sequences-approach].
@@ -46,7 +47,7 @@ For more information, check the [Two Sequences Approach][two-sequences-approach]
 ## Approach: Enum
 
 Using an `Enum` is is short and easy to read.
-Although  creating an `Enum` can be more complicated since it uses OOP (object oriented programming).
+Although creating an `Enum` can be more complicated since it uses OOP (object oriented programming).
 
 ```python
 from enum import IntEnum
@@ -84,8 +85,9 @@ LETTERS_OF_SCORE = (
 )
 
 def score(word):
-        return sum(score for character in word.upper() for 
-        letters, score in LETTERS_OF_SCORE if character in letters)
+    return sum(score for character in word.upper() for
+    letters, score in LETTERS_OF_SCORE if character in letters)
+```
 
 For more information, check the [Nested Tuple Approach][nested-tuple-approach].
 

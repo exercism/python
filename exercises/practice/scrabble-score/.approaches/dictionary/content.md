@@ -16,10 +16,10 @@ This code starts with defining a constant LETTER_SCORES as a dictionary ([concep
 Then the `score` function is defined, which takes a `<word>` as an argument.
 
 The function returns the total score for the word using the built-in function [`sum`][sum].
- Sum is passed a [generator expression][generator-expression] that iterates over the letters in the word, looking up each score in LETTER_SCORES.
+Sum is passed a [generator expression][generator-expression] that iterates over the letters in the word, looking up each score in LETTER_SCORES.
 The generator expression produces the score values on the fly.
 This means that it doesn't use memory to store all the values from LETTER_SCORES.
-Instead, each value is looked up as needed by `sum`. 
+Instead, each value is looked up as needed by `sum`.
 
 Within the generator expression, the word is converted from lower to uppercase.
 Each letter of the word is looked up in LETTER_SCORES, and the score value is yielded to `sum` as `sum` iterates over the expression.
@@ -42,11 +42,10 @@ LETTER_SCORES = {
 
 def score(word):
     return sum(next(score for score, letters in LETTER_SCORES.items() if character in letters) for character in word.upper())
-
+```
 
 However, transposing the dictionary so that the keys are the score and the values are the letters requires more computational calculation (_a loop within a loop_) and is harder to read.
- Therefore, arranging the dictionary by letter is both more efficient and easier to understand.
-
+Therefore, arranging the dictionary by letter is both more efficient and easier to understand.
 
 [dictionary]: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 [generator-expression]: https://peps.python.org/pep-0289/
