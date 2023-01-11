@@ -5,19 +5,17 @@ KEYS = "AEIOULNRSTDGBCMPFHVWYKJXQZ"
 SCORES = [1] * 10 + [2] * 2 + [3] * 4 + [4] * 5 + [5] * 1 + [8] * 2 + [10] * 2
 
 def score(word):
-    return sum(SCORES[KEYS.index(letter.upper())] for letter in word)
-```
+    return sum(SCORES[KEYS.index(letter)] for letter in word.upper())
 
-This approach uses a string and a [list][list], both of these data types belongs to the parent data type [sequences][sequence].
-The code starts with defining a string constant with letters.
-Then another constant is definded which is a list with corresponding score for the same index as the string.
+This approach uses a string and a [list][list], both of which are [sequence][sequence] types.
+The code begins by defining a string constant with letters.
+Then another constant is defined as a list with the corresponding letter score at the same index as the letter in the string.
 
-The `score` function takes a word as a parameter.
-And uses the same [generator expression][generator-expersion] as the [dictionary approach][dictionary-approach] with some slight modifications.
+The `score` function takes a word as an argument.
+And uses the same [generator expression][generator-expression] as the [dictionary approach][dictionary-approach] with some slight modifications.
 
-The difference is that instead of using a [dictionary][dictionary] and looking up the score inside of a dictonary.
-This approach gets the index of the letter in the KEYS constant and then then looks up the value for that index in SCORES list.
-Then takes that value and return that to the generator expression.
+Instead of using a [dictionary][dictionary] and looking up the score, this approach looks up the index of the letter in the KEYS constant and then then looks up the value for that index in SCORES list within the generator expression.
+These values are then added up by `sum`.
 
 [dictionary]: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 [dictionary-approach]: https://exercism.org/tracks/python/exercises/scrabble-score/approaches/dictionary

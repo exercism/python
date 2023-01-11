@@ -13,32 +13,40 @@ class Scrabble(IntEnum):
     Q = Z = 10
 
 def score(word):
-    return sum(Scrabble[character.upper()] for character in word)
-```
+    return sum(Scrabble[character] for character in word.upper())
 
-This approach uses an [`enum`][enum] to define the score of each letter.
-An `enum` or known as an **enumeration** is sets of named constant and is immutable.
-`enum` was added to python standard library (_also known as stdlib_) in python 3.4.
+This approach uses an [`Enum`][enum] to define the score of each letter.
+An [`Enum`][enum] (_also known as an **enumeration**_) is an object with named attributes assigned unique values.
+These attributes are referred to as the enumeration _members_.
+`Enum`s can be iterated over to return their members in definition order.
+Values can be accessed via index syntax using the member name (_similar to how a dictionary lookup works_) .
+`Enum`s are immutable, and their members function as constants.
+The `enum` module was added to python standard library (_also known as stdlib_) in Python 3.4.
 
-This approach uses an [`intEnum`][int-enum] it works very similar to a normal `enum` but it has the added benefit that the values are integers.
-Thereby acts like integers.
+This approach uses an [`IntEnum`][int-enum].
+An `IntEnum` is very similar to  an `Enum`, but restricts assigned values to `int`s.
+This allows the `IntEnum` to act as a collection of integers.
+In fact, `IntEnum`s are considered subclasses of `int`s.
 
-To use an `intEnum` you need to [import][import] it using: `from enum import IntEnum`.
-Then you can define the `enum` class.
+To use an `IntEnum` you need to first [import][import] it using: `from enum import IntEnum`.
+Then you can define your `IntEnum` subclass.
 
-The `enum` class is defined by using the [`class`][classes] keyword.
-Then you need to specify the name of the class.
+The `IntEnum` subclass is defined by using the [`class`][classes] keyword, followed by the name you are using for the class, and then the `IntEnum` class you are subclassing in parenthesis:
 
-After that is the constant in the enum declared by giving the constant capital letters and the value is assigned by using the `=` operator.
-This approach works by giving all the letters as constants and then value of the constant is the score of the letter.
-After the `enum` is defined, the `score` function is defined.
+```python
+class ClassName(IntEnum):
 
-The `score` function takes a word as a parameter.
-And uses the same [generator expression][generator-expersion] as the [dictionary approach][dictionary-approach] but with a slight modification.
-Which is that instead of looking up the value in a dictionary it looks it up in the `enum` class.
+Member names are declared as constants (ALL CAPS) and assigned values using the `=` operator.
+
+This approach works by creating all the uppercase letters as members with their values being the score. 
+After the `IntEnum` is defined, the `score` function is defined.
+
+The `score` function takes a word as an argument.
+The `score` function uses the same [generator expression][generator-expression] as the [dictionary approach][dictionary-approach], but with a slight modification.
+Instead of looking up the value in a _dictionary_,  it looks up the `InEnum` class member value.
 
 [classes]: https://docs.python.org/3/tutorial/classes.html
 [enum]: https://docs.python.org/3/library/enum.html
-[generator-expersion]: https://peps.python.org/pep-0289/
+[generator-expression]: https://peps.python.org/pep-0289/
 [int-enum]: https://docs.python.org/3/library/enum.html#enum.IntEnum
 [import]: https://docs.python.org/3/reference/import.html
