@@ -13,9 +13,23 @@
     },
     {
       "uuid": "6eb99523-b12b-4e72-8ed8-3444b635b9e5",
-      "slug": "nested-for-loop-optimized",
-      "title": "Nested for loop optimized",
-      "blurb": "Nested for loop optimized edition",
+      "slug": "alphabet",
+      "title": "Alphabet",
+      "blurb": "Using the alphabet to rotate the alphabet",
+      "authors": ["meatball133", "bethanyg"]
+    },
+    {
+      "uuid": "e539d1a5-f497-402b-a232-7e889f4323c1",
+      "slug": "str-translate",
+      "title": "Str Translate",
+      "blurb": "Using str.translate to rotate the alphabet",
+      "authors": ["meatball133", "bethanyg"]
+    },
+    {
+      "uuid": "0c74890e-d96e-47a2-a8bf-93c45dd67f94",
+      "slug": "recursion",
+      "title": "Recursion",
+      "blurb": "Using Recursion to rotate the alphabet",
       "authors": ["meatball133", "bethanyg"]
     }
   ]
