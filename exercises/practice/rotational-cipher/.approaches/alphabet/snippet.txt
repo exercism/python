@@ -1,0 +1,8 @@
+for letter in text:
+    if letter.isalpha():
+        if letter.isupper():
+            result += AlPHABET[(AlPHABET.index(letter.lower()) + key) % 26].upper()
+        else:
+            result += AlPHABET[(AlPHABET.index(letter) + key) % 26]
+    else:
+        result += letter

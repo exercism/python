@@ -1,12 +1,11 @@
 # Introduction
 
-There are various ways to solve `palindrome-products`.
-This approaches document shows 2 _common_ strategies, with one being a lot more efficient than the other.
-That being said, neither approach here is considered canonical, and other "pythonic" approaches could be added/expanded on in the future.
+There are various ways to solve `rotational-cipher`.
+You can for example use a [ascii values][ascii], alphabet, recursion, and `str.translate`.
 
 ## General guidance
 
-The goal of this exercise is to generate the largest and smallest palindromes from a given range of numbers.
+The goal of this exercise is to rotate the letters in a string by a given key.
 
 ## Approach: Using ascii values
 
@@ -16,11 +15,11 @@ There the numbers 65-91 in the ascii range represent downcased letters.
 While 97-123 represent upcased letters.
 
 The reason why you might not want to do this approach is that it only supports the english alphabet.
-Say we want to use the scandivanian letter: **ä**, then this approach will not work.
-Since **ä** has the ascii value of 132.
+Say we want to use the scandinavian letter: **å**, then this approach will not work.
+Since **å** has the ascii value of 132.
 
 ```python
-def rotate(text, key)
+def rotate(text, key):
     result = ""
     for letter in text:
         if letter.isalpha():
@@ -33,14 +32,16 @@ def rotate(text, key)
     return result
 ```
 
+For more information, check the [ascii values approach][approach-ascii-values].
+
 ## Approach: Alphabet
 
 This approach is similar to the previous one, but instead of using the ascii values, it uses the index of the letter in the alphabet.
 It requires the storing of a string and unless you are using two strings you have to convert the letters from upper to lower case.
 
-What this approach although give is the posiblity to use any alphabet.
-Say we want to use the scandivanian letter: **ä**, then we just add it where we want it:
-`abcdefghijklmnopqrstuvwxyzä` and it will rotate correctley around that.
+What this approach although give is the possibility to use any alphabet.
+Say we want to use the scandinavian letter: **å**, then we just add it where we want it:
+`abcdefghijklmnopqrstuvwxyzå` and it will rotate correctly around that.
 
 ```python
 AlPHABET = "abcdefghijklmnopqrstuvwxyz"
@@ -58,13 +59,13 @@ def rotate(text, key):
     return result
 ```
 
-For more information, check the [Nested for loop approach][approach-nested-for-loop].
+For more information, check the [Alphabet approach][approach-alphabet].
 
 ## Approach: Str translate
 
 This approach is similar to the previous one, but instead of using the index of the letter in the alphabet, it uses the `str.translate` method.
-The benefit of this approach is that it has no visable loop, thereby the code becomes more concise.
-What to note is that the `str.translate` still loops over the `string` thereby even if it is no visable loop, it doesn't mean that a method is not looping.
+The benefit of this approach is that it has no visible loop, thereby the code becomes more concise.
+What to note is that the `str.translate` still loops over the `string` thereby even if it is no visible loop, it doesn't mean that a method is not looping.
 
 ```python
 AlPHABET = "abcdefghijklmnopqrstuvwxyz"
@@ -74,7 +75,7 @@ def rotate(text, key):
     return text.translate(str.maketrans(AlPHABET + AlPHABET.upper(), translator + translator.upper()))
 ```
 
-You can read more about how to achieve this optimization in: [Nested for loop optimized][approach-nested-for-loop-optimized].
+For more information, check the [Str translate approach][approach-str-translate].
 
 ## Approach: Recursion
 
@@ -100,10 +101,16 @@ def rotate(text, key):
         return first_letter + rotate(rest, key)
 ```
 
+For more information, check the [Recursion approach][approach-recursion].
+
 ## Benchmark
 
 For more information, check the [Performance article][article-performance].
 
-[approach-nested-for-loop]: https://exercism.org/tracks/python/exercises/palindrome-products/approaches/nested-for-loop
-[approach-nested-for-loop-optimized]: https://exercism.org/tracks/python/exercises/palindrome-products/approaches/nested-for-loop-optimized
-[article-performance]: https://exercism.org/tracks/python/exercises/palindrome-products/articles/performance
+[ascii]: https://en.wikipedia.org/wiki/ASCII
+[approach-recursion]: https://exercism.org/tracks/python/exercises/rotational-cipher/approaches/recursion
+[approach-str-translate]: https://exercism.org/tracks/python/exercises/rotational-cipher/approaches/str-translate
+[approach-ascii-values]: https://exercism.org/tracks/python/exercises/rotational-cipher/approaches/ascii-values
+[approach-alphabet]: https://exercism.org/tracks/python/exercises/rotational-cipher/approaches/alphabet
+[article-performance]: https://exercism.org/tracks/python/exercises/rotational-cipher/articles/performance
+[recursion-limit]: https://docs.python.org/3/library/sys.html#sys.setrecursionlimit

@@ -1,5 +1,0 @@
-for number_a in range(max_factor, min_factor - 1,-1):
-        was_bigger = False
-        for number_b in range(max_factor, number_a - 1, -1):
-            if number_a * number_b >= result:
-                was_bigger = True

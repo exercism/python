@@ -1,5 +1,8 @@
-    for number_a in range(min_factor, max_factor+1):
-        for number_b in range(min_factor, max_factor+1):
-            if number_a * number_b >= result:
-                test_value = str(number_a * number_b)
-                if test_value == test_value[::-1]:
+for letter in text:
+    if letter.isalpha():
+        if letter.isupper():
+            result += chr((ord(letter) - 65 + key) % 26 + 65)
+        else:
+            result += chr((ord(letter) - 97 + key) % 26 + 97)
+    else:
+        result += letter
