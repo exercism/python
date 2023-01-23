@@ -17,10 +17,10 @@ class Robot:
             str(random.choice(range(0, 10)))
             for _ in range(0, 3)
         ])
-
-    def get_name(self):
+    @property
+    def name(self):
+        """Name Assigment""" 
         if not self._name:
-
             # Collision detection
             while True:
                 self._name = self.prefix() + self.suffix()
@@ -30,10 +30,9 @@ class Robot:
 
         return self._name
 
-    def del_name(self):
+    @name.deleter    
+    def name(self):
         self._name = None
-
-    name = property(get_name, None, del_name)
 
     def reset(self):
         del self.name
