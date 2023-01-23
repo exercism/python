@@ -163,11 +163,14 @@ Python follows the [PEMDAS][pemdas] rule for operator precedence.
 This means calculations within `()` have the highest priority, followed by `**`, then `*`, `/`, `//`, `%`, `+`, and `-`:
 
 ```python
+
+# we first do 4 * 4, then 2 + 3 and then 5 - 16 
 >>> 2 + 3 - 4 * 4
 -11
 
->>> (2 + 3 - 4) * 4
-20
+# we first to (2 + 3 - 4) then 1 * 4
+>>> (2 + 3 - 4) * 4 
+4
 
 # In the following example, the `**` operator has the highest priority, then `*`, then `+`
 # Meaning we first do 4 ** 4, then 3 * 256, then 2 + 768
