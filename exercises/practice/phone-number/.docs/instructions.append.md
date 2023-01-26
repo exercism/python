@@ -10,10 +10,10 @@ To raise a `ValueError` with a message, write the message as an argument to the 
 
 ```python
 # if a phone number has less than 10 digits.
-raise ValueError("incorrect number of digits")
+raise ValueError("must not be fewer than 10 digits")
 
 # if a phone number has more than 11 digits.
-raise ValueError("more than 11 digits")
+raise ValueError("must not be greater than 11 digits")
 
 # if a phone number has 11 digits, but starts with a number other than 1.
 raise ValueError("11 digits must start with 1")
