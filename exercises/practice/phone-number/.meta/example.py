@@ -25,10 +25,10 @@ class PhoneNumber:
 
     def _normalize(self, number):
         if len(number) < 10:
-            raise ValueError('incorrect number of digits')
+            raise ValueError('must not be fewer than 10 digits')
 
         if len(number) > 11:
-            raise ValueError('more than 11 digits')
+            raise ValueError('must not be greater than 11 digits')
 
         if len(number) == 10 or len(number) == 11 and number.startswith('1'):
             if number[-10] == '0':

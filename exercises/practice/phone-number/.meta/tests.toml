@@ -20,6 +20,11 @@ description = "cleans numbers with multiple spaces"
 
 [598d8432-0659-4019-a78b-1c6a73691d21]
 description = "invalid when 9 digits"
+include = false
+
+[2de74156-f646-42b5-8638-0ef1d8b58bc2]
+description = "invalid when 9 digits"
+reimplements = "598d8432-0659-4019-a78b-1c6a73691d21"
 
 [57061c72-07b5-431f-9766-d97da7c4399d]
 description = "invalid when 11 digits does not start with a 1"
@@ -32,6 +37,11 @@ description = "valid when 11 digits and starting with 1 even with punctuation"
 
 [c6a5f007-895a-4fc5-90bc-a7e70f9b5cad]
 description = "invalid when more than 11 digits"
+include = false
+
+[4a1509b7-8953-4eec-981b-c483358ff531]
+description = "invalid when more than 11 digits"
+reimplements = "c6a5f007-895a-4fc5-90bc-a7e70f9b5cad"
 
 [63f38f37-53f6-4a5f-bd86-e9b404f10a60]
 description = "invalid with letters"

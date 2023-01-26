@@ -23,3 +23,18 @@ description = "Green and brown and orange"
 
 [f5d37ef9-1919-4719-a90d-a33c5a6934c9]
 description = "Yellow and violet and yellow"
+
+[5f6404a7-5bb3-4283-877d-3d39bcc33854]
+description = "Blue and violet and blue"
+
+[7d3a6ab8-e40e-46c3-98b1-91639fff2344]
+description = "Minimum possible value"
+
+[ca0aa0ac-3825-42de-9f07-dac68cc580fd]
+description = "Maximum possible value"
+
+[0061a76c-903a-4714-8ce2-f26ce23b0e09]
+description = "First two colors make an invalid octal number"
+
+[30872c92-f567-4b69-a105-8455611c10c4]
+description = "Ignore extra colors"

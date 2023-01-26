@@ -71,5 +71,10 @@ class PalindromeProductsTest(unittest.TestCase):
         self.assertEqual(type(err.exception), ValueError)
         self.assertEqual(err.exception.args[0], "min must be <= max")
 
+    def test_smallest_product_does_not_use_the_smallest_factor(self):
+        value, factors = smallest(min_factor=3215, max_factor=4000)
+        self.assertEqual(value, 10988901)
+        self.assertFactorsEqual(factors, [[3297, 3333]])
+
     def assertFactorsEqual(self, actual, expected):
         self.assertEqual(set(map(frozenset, actual)), set(map(frozenset, expected)))
