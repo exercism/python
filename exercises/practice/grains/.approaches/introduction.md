@@ -19,7 +19,7 @@ You can see that the exponent, or power, that `2` is raised by is always one les
 | 1      | 0     | 2 to the power of 0 = 1 |
 | 2      | 1     | 2 to the power of 1 = 2 |
 | 3      | 2     | 2 to the power of 2 = 4 |
-| 4      | 3     | 2 to the power of 4 = 8 |
+| 4      | 3     | 2 to the power of 3 = 8 |
 
 
 ## Approach: Bit-shifting
