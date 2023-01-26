@@ -1,12 +1,19 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [5cff78fe-cf02-459d-85c2-ce584679f887]
-description = "finds the smallest palindrome from single digit factors"
+description = "find the smallest palindrome from single digit factors"
 
 [0853f82c-5fc4-44ae-be38-fadb2cced92d]
-description = "finds the largest palindrome from single digit factors"
+description = "find the largest palindrome from single digit factors"
 
 [66c3b496-bdec-4103-9129-3fcb5a9063e1]
 description = "find the smallest palindrome from double digit factors"
@@ -15,13 +22,13 @@ description = "find the smallest palindrome from double digit factors"
 description = "find the largest palindrome from double digit factors"
 
 [cecb5a35-46d1-4666-9719-fa2c3af7499d]
-description = "find smallest palindrome from triple digit factors"
+description = "find the smallest palindrome from triple digit factors"
 
 [edab43e1-c35f-4ea3-8c55-2f31dddd92e5]
 description = "find the largest palindrome from triple digit factors"
 
 [4f802b5a-9d74-4026-a70f-b53ff9234e4e]
-description = "find smallest palindrome from four digit factors"
+description = "find the smallest palindrome from four digit factors"
 
 [787525e0-a5f9-40f3-8cb2-23b52cf5d0be]
 description = "find the largest palindrome from four digit factors"
@@ -37,3 +44,6 @@ description = "error result for smallest if min is more than max"
 
 [eeeb5bff-3f47-4b1e-892f-05829277bd74]
 description = "error result for largest if min is more than max"
+
+[16481711-26c4-42e0-9180-e2e4e8b29c23]
+description = "smallest product does not use the smallest factor"

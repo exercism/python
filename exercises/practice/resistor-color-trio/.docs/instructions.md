@@ -46,9 +46,11 @@ So an input of `"orange", "orange", "black"` should return:
 
 > "33 ohms"
 
-When we get more than a thousand ohms, we say "kiloohms".
-That's similar to saying "kilometer" for 1000 meters, and "kilograms" for 1000 grams.
+When we get to larger resistors, a [metric prefix][metric-prefix] is used to indicate a larger magnitude of ohms, such as "kiloohms".
+That is similar to saying "2 kilometers" instead of "2000 meters", or "2 kilograms" for "2000 grams".
 
-So an input of `"orange", "orange", "orange"` should return:
+For example, an input of `"orange", "orange", "orange"` should return:
 
 > "33 kiloohms"
+
+[metric-prefix]: https://en.wikipedia.org/wiki/Metric_prefix
