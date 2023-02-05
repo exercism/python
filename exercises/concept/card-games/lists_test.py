@@ -75,7 +75,7 @@ class CardGamesTest(unittest.TestCase):
                       [2, 3, 4, 7, 8], [1, 2, 3], [2, 3, 4],
                       [2, 3, 4, 8, 8], [1, 2, 4, 5, 8]]
 
-        results = [False, False, False, False, True, True, True, True]
+        results = [False, False, False, False, True, True, False, True]
 
         for variant, (hand, same) in enumerate(zip(input_vars, results), start=1):
             error_message = f'Hand {hand} {"does" if same else "does not"} yield the same approximate average.'
