@@ -29,7 +29,7 @@ rotate recursion short : 5.4000120144337416e-06
 
 ## Conclusion
 
-For a long string as input, the `str.translate` approach the fastest, followed by ascii, alphabet, and finally recursion.
+For a long string as input, the `str.translate` approach is the fastest, followed by ascii, alphabet, and finally recursion.
 For a short string as input, is the alphabet approach the fastest, followed by ascii, recursion and finally `str.translate`.
 
 This means that if you know the input is a short string, the fastest approach is to use the alphabet, and forgo the overhead of making and saving a translation dictionary.
