@@ -30,13 +30,12 @@ The second argument is the `translator` variable + uppercase `translator` variab
 
 `makestrans` does is that it takes the [Unicode][unicode] values of the first argument and maps them to the corresponding Unicode values in the second argument, creating a `dict`.
 
-
 ```python
 >>> str.maketrans("abc", "def")
 {97: 100, 98: 101, 99: 102}
 ```
 
-`str.translate` takes the `dict` created by `str.makestrans`  and uses it to translate the characters in the `text` argument.
+`str.translate` takes the `dict` created by `str.makestrans` and uses it to translate the characters in the `text` argument.
 
 ```python
 >>> "abc".translate({97: 100, 98: 101, 99: 102})

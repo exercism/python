@@ -33,7 +33,6 @@ The result string is returned once the loop finishes.
 
 If only English letters are needed, the constant [`string.ascii_lowercase`][ascii_lowercase] can be imported from the [`string`][string] module.
 
-
 ```python
 from string import ascii_lowercase
 

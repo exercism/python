@@ -3,7 +3,6 @@
 There are various ways to solve `rotational-cipher`.
 You can for example use [ascii values][ascii], an alphabet `str` or `list`, recursion, or `str.translate`.
 
-
 ## General guidance
 
 The goal of this exercise is to shift the letters in a string by a given integer key between 0 and 26.
@@ -15,16 +14,14 @@ This approach is straightforward to understand.
 It uses the ascii value of the letters to rotate them within the message.
 The numbers 65-91 in the ascii range represent lowercase Latin letters, while 97-123 represent uppercase Latin letters.
 
-
-~~~~exercism/caution
+```exercism/caution
 
 This approach only supports the English alphabet.
 Non-English alphabets are not contiguous in their ascii number ranges, and are not consistently defined across platforms.
 For example, the Scandinavian letter: **å** has the extended ascii value of 132, but is used in combination with Latin characters that appear in the 65-91 and 97-123 ranges.
 This means that a shift for an extended ascii word containing **å** won't result in an accurate alphabet position for a Scandinavian language.
 
-~~~~
-
+```
 
 ```python
 def rotate(text, key):
@@ -42,7 +39,6 @@ def rotate(text, key):
 
 For more information, check the [ascii values approach][approach-ascii-values].
 
-
 ## Approach: Alphabet
 
 This approach is similar to the ascii one, but it uses the index number of each letter in an alphabet string.
@@ -52,7 +48,6 @@ And unless two strings are used, you will have to convert individual letters fro
 The big advantage of this approach is the ability to use any alphabet (_although there are some issues with combining characters in Unicode._).
 Here, if we want to use the scandinavian letter: **å**, we can simply insert it into our string where we want it:
 `abcdefghijklmnopqrstuvwxyzå` and the rotation will work correctly.
-
 
 ```python
 # This only uses English characters
@@ -73,16 +68,14 @@ def rotate(text, key):
 
 For more information, check the [Alphabet approach][approach-alphabet].
 
-
 ## Approach: Str translate
 
 This approach uses the [`str.translate`][str-translate] method to create a mapping from input to shifted string instead of using the index of an alphabet string to calculate the shift.
 The benefit of this approach is that it has no visible loop, making the code more concise.
 
-~~~~exercism/note
+```exercism/note
 `str.translate` **still loops over the `string`**  even if it is not visibly doing so.
-~~~~
-
+```
 
 ```python
 AlPHABET = "abcdefghijklmnopqrstuvwxyz
@@ -94,19 +87,16 @@ def rotate(text, key):
 
 For more information, check the [Str translate approach][approach-str-translate].
 
-
 ## Approach: Recursion
 
 This approach uses a recursive function.
 A recursive function is a function that calls itself.
 This approach can be more concise than other approaches, and may also be more readable for some audiences.
 
-
-~~~~exercism/caution
+```exercism/caution
 Python does not have any tail-call optimization and has a default [recursion limit][recursion-limit] of 1000 calls on the stack.
 Calculate your base case carefully to avoid errors.
-~~~~
-
+```
 
 ```python
 AlPHABET = "abcdefghijklmnopqrstuvwxyz"
@@ -125,7 +115,6 @@ def rotate(text, key):
 ```
 
 For more information, check the [Recursion approach][approach-recursion].
-
 
 ## Benchmark
 
