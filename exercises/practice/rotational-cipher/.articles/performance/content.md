@@ -2,7 +2,7 @@
 
 In this article, we'll examine the performance difference between approaches for `rotational cipher` in Python.
 
-The [approaches page][approaches] lists two approaches to this exercise:
+The [approaches page][approaches] lists four approaches to this exercise:
 
 1. [Using recursion][approach-recursion]
 2. [Using `str.translate`][approach-str-translate]
@@ -12,7 +12,7 @@ The [approaches page][approaches] lists two approaches to this exercise:
 ## Benchmarks
 
 To benchmark the approaches, we wrote a [small benchmark application][benchmark-application] using the [`timeit`][timeit] library.
-These tests were run in windows 11, using Python 3.11.1.
+These tests were run in `Windows 11`, using Python `3.11.1`.
 Your system results may vary.
 
 ```
@@ -29,11 +29,11 @@ rotate recursion short : 5.4000120144337416e-06
 
 ## Conclusion
 
-For a long string as input, is the translate approach the fastest, followed by ascii, alphabet and last recursion.
-For a short string as input, is the alphabet approach the fastest, followed by ascii, recursion and last translate.
+For a long string as input, the `str.translate` approach the fastest, followed by ascii, alphabet, and finally recursion.
+For a short string as input, is the alphabet approach the is the fastest, followed by ascii, recursion and finally  `str.translate`.
 
-This means that if you know the input is a short string, the fastest approach is to use the alphabet approach.
-On the other hand, if you know the input is a long string, the fastest approach is to use the translate approach.
+This means that if you know the input is a short string, the fastest approach is to use the alphabet, and forgo the overhead of making and saving a translation dictionary.
+On the other hand, if the input is a long string, the overhead of making a dictionary is amortized over the length of the text to be translated, and the fastest approach becomes `str.translate`.
 
 [approach-recursion]: https://exercism.org/tracks/python/exercises/rotational-cipher/approaches/recursion
 [approach-str-translate]: https://exercism.org/tracks/python/exercises/rotational-cipher/approaches/str-translate
