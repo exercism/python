@@ -47,7 +47,7 @@ And if the new number is over 26 we want to make sure that it "wraps around" to 
 To properly use modulo for a range we have to make sure that it starts at zero, so we subtract 65.
 To get back to a letter in the ascii range we add 65 and use the [`chr`][chr] method to convert the value to a letter.
 
-The process is the same for a lowercase letter, but with 97 subtracted to put the letter in the lowercase ascii range of 97 - 123.
+The process is the same for a lowercase letter, but with 97 subtracted/added to put the letter in the lowercase ascii range of 97 - 123.
 
 Any element that is not a letter (_whitespace or punctuation_) is added directly to the result string.
 When all the elements have been looped over, the full result is returned.

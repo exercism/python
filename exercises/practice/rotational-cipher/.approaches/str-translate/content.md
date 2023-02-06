@@ -28,7 +28,7 @@ To create a translation table, `str.makestrans` is used.
 For our solution, the first argument is the `AlPHABET` constant + the `AlPHABET` constant in uppercase.
 The second argument is the `translator` variable + uppercase `translator` variable.
 
-`makestrans` does is that it takes the [Unicode][unicode] values of the first argument and maps them to the corresponding Unicode values in the second argument, creating a `dict`.
+`str.makestrans` takes the [Unicode][unicode] values of the first argument and maps them to the corresponding Unicode values in the second argument, creating a `dict`.
 
 ```python
 >>> str.maketrans("abc", "def")
