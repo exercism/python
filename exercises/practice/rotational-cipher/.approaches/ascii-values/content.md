@@ -22,15 +22,14 @@ It uses numbers to represent 128 different entities including carriage returns, 
 In ascii, all the lowercase English letters appear between 97 and 123.
 While the uppercase letters are in the range between 65 and 91.
 
-~~~~exercism/caution
+```exercism/caution
 
 This approach only supports the English alphabet.
 Non-English alphabets are not contiguous in their ascii number ranges, and are not consistently defined across platforms.
 For example, the Scandinavian letter: **å** has the extended ascii value of 132, but is used in combination with Latin characters that appear in the 65-91 and 97-123 ranges.
 This means that a shift for an extended ascii word containing **å** won't result in an accurate alphabet position for a Scandinavian language.
 
-~~~~
-
+```
 
 The approach starts with defining the function `rotate()`, with a variable `result` is assigned to an empty string.
 The elements of the text argument are then iterated over using a [`for loop`][for-loop].
@@ -41,7 +40,7 @@ Unicode's first 128 code points have the same numbers as their ascii counterpart
 
 If the element is an uppercase letter, [`ord`][ord] is used to convert the letter to an integer.
 The integer is added to the numeric key and then 65 is subtracted from the total.
-Finally, the result is [modulo (`%`)][modulo] 26 (_to put the value within the 2) and 65 is added back.
+Finally, the result is [modulo (`%`)][modulo] 26 (_to put the value within the 2_) and 65 is added back.
 
 This is because we want to know which letter of the alphabet the number will become.
 And if the new number is over 26 we want to make sure that it "wraps around" to remain in the range of 0-26.
