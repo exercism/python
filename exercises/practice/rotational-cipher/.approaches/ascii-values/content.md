@@ -14,37 +14,44 @@ def rotate(text, key):
     return result
 ```
 
-This approach uses [ascii values][ascii], ascii stands for American Standard Code for Information Interchange.
-It is a character encoding standard for electronic communication.
-It is a 7-bit code, which means that it can represent 128 different characters.
-The system uses numbers to represent various characters, symbols, and other entities.
+This approach uses [ascii values][ascii].
+ASCII stands for **A**merican **S**tandard **C**ode for **I**nformation **I**nterchange.
+It is a 7-bit character encoding standard for electronic communication first described in 1969, becoming a formal standard in 2015.
+It uses numbers to represent 128 different entities including carriage returns, whitespace characters, box characters, alphabetic characters, punctuation, and the numbers 0-9.
 
-In ascii can you find all the downcased letter in the range between 97 and 123.
-While the upcased letters are in the range between 65 and 91.
+In ascii, all the lowercase English letters appear between 97 and 123.
+While the uppercase letters are in the range between 65 and 91.
 
-The reason why you might not want to do this approach is that it only supports the english alphabet.
+~~~~exercism/caution
 
-The approach starts with defining the function `rotate`, then a variable `result` is defined with the value of an empty string.
-Then is all the letters from the text argument iterated over through a [`for loop`][for-loop].
-Then is checked if the letter is a letter, if it is a letter then is checked if it is a uppercased letter.
+This approach only supports the English alphabet.
+Non-English alphabets are not contiguous in their ascii number ranges, and are not consistently defined across platforms.
+For example, the Scandinavian letter: **å** has the extended ascii value of 132, but is used in combination with Latin characters that appear in the 65-91 and 97-123 ranges.
+This means that a shift for an extended ascii word containing **å** won't result in an accurate alphabet position for a Scandinavian language.
 
-Python has a built in function called `ord` that converts a [unicode][unicode] symbol to an integer.
-The unicode's first 128 characters are the same as ascii.
+~~~~
 
-If it is a uppercased letter then is [`ord`][ord] used to convert the letters to an integer and is then added with the key and then subtracted with 65.
-Then is the result of that [modulo (`%`)][modulo] 26 added with 65.
 
-That is because we want to know which index in the alphabet the letter is.
-And if the number is over 26 we want to make sure that it is in the range of 0-26.
-So we use modulo to make sure it is in that range.
-To use modulo for a range we have to make sure that it starts at zero, thereby are we subtracting the integer value of the letter with 65.
-After that to get the back to a letter we add 65 and use the [`chr`][chr] method which converts an an unicode value to a letter.
-After that is the new letter added to the result.
+The approach starts with defining the function `rotate()`, with a variable `result` is assigned to an empty string.
+The elements of the text argument are then iterated over using a [`for loop`][for-loop].
+Each element is checked to see if it is a letter, and then is checked if it is an uppercase letter.
 
-If the letter is a lowercased letter then is the same done but with the ascii value of 97 subtracted with the letter.
+Python has a builtin function called `ord` that converts a [unicode][unicode] symbol to an integer representation.
+Unicode's first 128 code points have the same numbers as their ascii counterparts.
 
-If the letter is not a letter then is the letter added to the result.
-When the loop is finished we return the result.
+If the element is an uppercase letter, [`ord`][ord] is used to convert the letter to an integer.
+The integer is added to the numeric key and then 65 is subtracted from the total.
+Finally, the result is [modulo (`%`)][modulo] 26 (_to put the value within the 2) and 65 is added back.
+
+This is because we want to know which letter of the alphabet the number will become.
+And if the new number is over 26 we want to make sure that it "wraps around" to remain in the range of 0-26.
+To properly use modulo for a range we have to make sure that it starts at zero, so we subtract 65.
+To get back to a letter in the asciii range we add 65 and use the [`chr`][chr] method to convert the value to a letter.
+
+The process is the same for a lowercase letter, but with 97 subtracted to put the letter in the lowercase ascii range of 97 - 123.
+
+Any element that is not a letter (_whitespace or punctuation_) is added directly to the result string.
+When all the elements have been looped over, the full result is returned.
 
 [ascii]: https://en.wikipedia.org/wiki/ASCII
 [chr]: https://docs.python.org/3/library/functions.html#chr

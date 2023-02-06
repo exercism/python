@@ -16,28 +16,28 @@ def rotate(text, key):
     return result
 ```
 
-The approach starts with defining the a constant which holds the whole alphabets lowercase letters.
-After that the function `rotate` is declared, then a variable `result` is defined with the value of an empty string.
+The approach starts with defining the constant `ALPHABET` which is a string of all lowercase letters.
+The function `rotate()` is then declared, and a variable `result` is defined as an empty string.
 
-Then is all the letters from the text argument iterated over through a [`for loop`][for-loop].
-Then is checked if the letter is a letter, if it is a letter then is checked if it is a uppercased letter.
+The text argument is then iterated over via a [`for loop`][for-loop].
+Each element is checked to make sure it is a letter, and subsequently checked if it is uppercase or lowercase.
+Uppercase letters are converted to lowercase.
+Then index of each letter is found in the `AlPHABET` constant.
+The numeric key value is added to the letter index and [modulo (`%`)][modulo] 26 is used on the result.
+Finally, the new number is used as an index into the `AlPHABET` constant, and the resulting letter is converted back to uppercase.
 
-If it is a uppercased letter then it is converted to lowe case and finds its index in the `AlPHABET` constant.
-Then is the key added to the index and [modulo (`%`)][modulo] 26 is used on the result.
-Then is the letter at the index found in the `AlPHABET` constant and the letter is converted to upcase.
+Lowercase letters follow the same process without the conversion steps.
 
-If the letter is a lowercased letter then it does the same process but don't convert the letter to downcase and then to uppercase.
+If the element is not a letter (for example, space or punctuation) then it is added directly to the result string.
+The result string is returned once the loop finishes.
 
-If the letter is not a letter then is the letter added to the result.
-When the loop is finished we return the result.
+If only English letters are needed, the constant [`string.ascii_lowercase`][ascii_lowercase] can be imported from the [`string`][string] module.
 
-If you only want to use english letters so could you import the alphabet instead of defining it yourself.
-Since in the [`string`][string] module there is a constant called [`ascii_lowercase`][ascii_lowercase] which holds the lowercased alphabet.
 
 ```python
-import string
+from string import ascii_lowercase
 
-AlPHABET = string.ascii_lowercase
+AlPHABET = ascii_lowercase
 ```
 
 [ascii_lowercase]: https://docs.python.org/3/library/string.html#string.ascii_letters
