@@ -28,12 +28,12 @@ Then the `rotate` function can execute the same code again with new values.
 We can build a long chain or "stack" of `<letter> + rotate(rest)` calls until the `rest` variable is exhausted and the code adds `""`.
 That translates to something like this: `<letter> + <letter> + <letter> + <letter> + ""`.
 
-```exercism/note
+~~~~exercism/note
 By default, we can't have a function call itself more than 1000 times.
 Code that exceeds this recursion limit will throw a RecursionError.
 While it is possible to adjust the recursion limit, doing so risks crashing Python and may also crash your system.
 Casually raising the recursion limit is not recommended.
-```
+~~~~
 
 [clojure]: https://exercism.org/tracks/clojure
 [elixir]: https://exercism.org/tracks/elixir
