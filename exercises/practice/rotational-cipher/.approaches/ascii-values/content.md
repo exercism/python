@@ -45,7 +45,7 @@ Finally, the result is [modulo (%)][modulo] 26 (_to put the value within the 0-2
 This is because we want to know which letter of the alphabet the number will become.
 And if the new number is over 26 we want to make sure that it "wraps around" to remain in the range of 0-26.
 To properly use modulo for a range we have to make sure that it starts at zero, so we subtract 65.
-To get back to a letter in the asciii range we add 65 and use the [`chr`][chr] method to convert the value to a letter.
+To get back to a letter in the ascii range we add 65 and use the [`chr`][chr] method to convert the value to a letter.
 
 The process is the same for a lowercase letter, but with 97 subtracted to put the letter in the lowercase ascii range of 97 - 123.
 
