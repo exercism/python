@@ -1,29 +1,32 @@
 import unittest
 import pytest
 
-
+# For this first exercise, it is really important to be clear about how we are importing names for tests.
+# To that end, we are putting a try/catch around imports and throwing specific messages to help students
+# decode that they need to create and title their constants and functions in a specific way.
 try:
     from lasagna import (EXPECTED_BAKE_TIME,
                          bake_time_remaining,
                          preparation_time_in_minutes,
                          elapsed_time_in_minutes)
 
-
+# Here, we are separating the constant import errors from the function name import errors
 except ImportError as import_fail:
     message = import_fail.args[0].split('(', maxsplit=1)
     item_name = import_fail.args[0].split()[3]
 
-    if 'EXPECTED_BAKE_TIME' in message:
+    if 'EXPECTED_BAKE_TIME' in item_name:
         # pylint: disable=raise-missing-from
-        raise ImportError(f'We can not find or import the constant {item_name} in your'
-                          " 'lasagna.py' file. Did you mis-name or forget to define it?")
+        raise ImportError(f'\n\nMISSING CONSTANT --> \nWe can not find or import the constant {item_name} in your'
+                          " 'lasagna.py' file.\nDid you mis-name or forget to define it?") from None
     else:
         item_name = item_name[:-1] + "()'"
         # pylint: disable=raise-missing-from
-        raise ImportError("In your 'lasagna.py' file, we can not find or import the"
-                          f' function named {item_name}. Did you mis-name or forget to define it?')
+        raise ImportError("\n\nMISSING FUNCTION --> In your 'lasagna.py' file, we can not find or import the"
+                          f' function named {item_name}. \nDid you mis-name or forget to define it?') from None
 
 
+# Here begins the formal test cases for the exercise.
 class LasagnaTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
@@ -64,9 +67,16 @@ class LasagnaTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=5)
     def test_docstrings_were_written(self):
+        """Validate function.__doc__ exists for each function.
+        Check the attribute dictionary of each listed function
+        for the presence of a __doc__ key.
+
+        :return: unexpectedly None error when __doc__ key is missing.
+        """
         functions = [bake_time_remaining, preparation_time_in_minutes, elapsed_time_in_minutes]
 
         for variant, function in enumerate(functions, start=1):
             with self.subTest(f'variation #{variant}', function=function):
                 failure_msg = f'Expected a docstring for `{function.__name__}`, but received `None` instead.'
+                # Check that the __doc__ key is populated for the function.
                 self.assertIsNotNone(function.__doc__, msg=failure_msg)
