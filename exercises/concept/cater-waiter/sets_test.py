@@ -102,6 +102,8 @@ class SetsTest(unittest.TestCase):
             with self.subTest(f"variation #{variant}", inputs="dishes with appetizers", results="appetizers only"):
 
                 error_message = "Expected only appetizers returned, but some dishes remain in the group."
+                result_type_error = f"You returned {type(separate_appetizers(item[0], item[1]))}, but a list was expected."
+                self.assertIsInstance(separate_appetizers(item[0], item[1]), list, msg=result_type_error)
                 self.assertEqual(sorted(separate_appetizers(item[0], item[1])), (sorted(result)), msg=error_message)
 
     @pytest.mark.task(taskno=7)
