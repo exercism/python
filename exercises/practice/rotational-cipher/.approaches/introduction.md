@@ -78,7 +78,7 @@ The benefit of this approach is that it has no visible loop, making the code mor
 ~~~~
 
 ```python
-AlPHABET = "abcdefghijklmnopqrstuvwxyz
+AlPHABET = "abcdefghijklmnopqrstuvwxyz"
 
 def rotate(text, key):
     translator = AlPHABET[key:] + AlPHABET[:key]
