@@ -31,12 +31,10 @@ That translates to something like this: `<letter> + <letter> + <letter> + <lette
 
 ~~~~exercism/note
 By default, we can't have a function call itself more than 1000 times.
-Code that exceeds this recursion limit will throw a [`RecursionError`][recursion-error].
-While it is possible to [adjust the recursion limit][recursion-limit], doing so risks crashing Python and may also crash your system.
+Code that exceeds this recursion limit will throw a [`RecursionError`](https://docs.python.org/3/library/exceptions.html#RecursionError).
+While it is possible to [adjust the recursion limit](https://docs.python.org/3/library/sys.html#sys.setrecursionlimit), doing so risks crashing Python and may also crash your system.
 Casually raising the recursion limit is not recommended.
 
-[recursion-error]: https://docs.python.org/3/library/exceptions.html#RecursionError
-[recursion-limit]: https://docs.python.org/3/library/sys.html#sys.setrecursionlimit
 ~~~~
 
 [clojure]: https://exercism.org/tracks/clojure
