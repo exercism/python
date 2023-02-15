@@ -99,10 +99,9 @@ A recursive function is a function that calls itself.
 This approach can be more concise than other approaches, and may also be more readable for some audiences.
 
 ~~~~exercism/caution
-Python does not have any tail-call optimization and has a default [recursion limit][recursion-limit] of 1000 calls on the stack.
+Python does not have any tail-call optimization and has a default [recursion limit](https://docs.python.org/3/library/sys.html#sys.setrecursionlimit) of 1000 calls on the stack.
 Calculate your base case carefully to avoid errors.
 
-[recursion-limit]: https://docs.python.org/3/library/sys.html#sys.setrecursionlimit
 ~~~~
 
 
