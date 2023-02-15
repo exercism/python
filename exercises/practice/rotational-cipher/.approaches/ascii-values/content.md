@@ -26,24 +26,24 @@ While the uppercase letters are in the range between 65 and 91.
 
 This approach only supports the English alphabet.
 Non-English alphabets are not contiguous in their ascii number ranges, and are not consistently defined across platforms.
-For example, the Scandinavian letter: **å** has the extended ascii value of 132, but is used in combination with Latin characters that appear in the 65-91 and 97-123 ranges.
+For example, the Scandinavian letter **å** has the extended ascii value of **134**, but is used in combination with Latin-1  characters that appear in the 65-91 and 97-123 ranges.
 This means that a shift for an extended ascii word containing **å** won't result in an accurate alphabet position for a Scandinavian language.
 
 ~~~~
 
 The approach starts with defining the function `rotate()`, with a variable `result` is assigned to an empty string.
 The elements of the text argument are then iterated over using a [`for loop`][for-loop].
-Each element is checked to see if it is a letter, and then is checked if it is an uppercase letter.
+Each element is checked to see if it is a letter, and if it is a lower or uppercase letter.
 
 Python has a builtin function called `ord` that converts a [unicode][unicode] symbol to an integer representation.
 Unicode's first 128 code points have the same numbers as their ascii counterparts.
 
 If the element is an uppercase letter, [`ord`][ord] is used to convert the letter to an integer.
 The integer is added to the numeric key and then 65 is subtracted from the total.
-Finally, the result is [modulo (%)][modulo] 26 (_to put the value within the 0-26 range_) and 65 is added back.
+Finally, the result is [modulo (%)][modulo] 26 to put the value within the 0-26 range, and 65 is added back.
 
 This is because we want to know which letter of the alphabet the number will become.
-And if the new number is over 26 we want to make sure that it "wraps around" to remain in the range of 0-26.
+If the new number is over 26 we want to make sure that it "wraps around" to remain in the range of 0-26.
 To properly use modulo for a range we have to make sure that it starts at zero, so we subtract 65.
 To get back to a letter in the ascii range we add 65 and use the [`chr`][chr] method to convert the value to a letter.
 

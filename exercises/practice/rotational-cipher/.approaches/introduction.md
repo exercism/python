@@ -1,12 +1,13 @@
 # Introduction
 
-There are various ways to solve `rotational-cipher`.
-You can for example use [ascii values][ascii], an alphabet `str` or `list`, recursion, or `str.translate`.
+There are various ways to solve `Rotational Cipher`.
+For example, you can use [ascii values][ascii], an alphabet `str`/`list`, recursion, or `str.translate`.
 
 ## General guidance
 
 The goal of this exercise is to shift the letters in a string by a given integer key between 0 and 26.
 The letter in the encrypted string is shifted for as many values (or "positions") as the value of the key.
+
 
 ## Approach: Using ascii values
 
@@ -18,10 +19,11 @@ The numbers 65-91 in the ascii range represent lowercase Latin letters, while 97
 
 This approach only supports the English alphabet.
 Non-English alphabets are not contiguous in their ascii number ranges, and are not consistently defined across platforms.
-For example, the Scandinavian letter: **å** has the extended ascii value of 132, but is used in combination with Latin characters that appear in the 65-91 and 97-123 ranges.
+For example, the Scandinavian letter **å** has the extended ascii value of **134**, but is used in combination with Latin-1  characters that appear in the 65-91 and 97-123 ranges.
 This means that a shift for an extended ascii word containing **å** won't result in an accurate alphabet position for a Scandinavian language.
 
 ~~~~
+
 
 ```python
 def rotate(text, key):
@@ -37,17 +39,18 @@ def rotate(text, key):
     return result
 ```
 
-For more information, check the [ascii values approach][approach-ascii-values].
+For more information, check out the [ascii values approach][approach-ascii-values].
 
 ## Approach: Alphabet
 
-This approach is similar to the ascii one, but it uses the index number of each letter in an alphabet string.
+This approach is similar to the ascii one, but it uses the index number of each letter in a defined alphabet string.
 It requires making a string for all the letters in an alphabet.
 And unless two strings are used, you will have to convert individual letters from lower to upper case (or vice-versa).
 
-The big advantage of this approach is the ability to use any alphabet (_although there are some issues with combining characters in Unicode._).
-Here, if we want to use the scandinavian letter: **å**, we can simply insert it into our string where we want it:
-`abcdefghijklmnopqrstuvwxyzå` and the rotation will work correctly.
+The big advantage of this approach is the ability to use _any_ alphabet (_although there are some issues with combining characters in Unicode._).
+Here, if we want to use the Scandinavian letter: **å**, we can simply insert it into our string where we want it:
+`abcdefghijklmnopqrstuvwxyzå` and the key rotation will work correctly.
+
 
 ```python
 # This only uses English characters
@@ -66,7 +69,7 @@ def rotate(text, key):
     return result
 ```
 
-For more information, check the [Alphabet approach][approach-alphabet].
+For more information, see the [Alphabet approach][approach-alphabet].
 
 ## Approach: Str translate
 
@@ -77,6 +80,7 @@ The benefit of this approach is that it has no visible loop, making the code mor
 `str.translate` **still loops over the `string`**  even if it is not visibly doing so.
 ~~~~
 
+
 ```python
 AlPHABET = "abcdefghijklmnopqrstuvwxyz"
 
@@ -85,7 +89,8 @@ def rotate(text, key):
     return text.translate(str.maketrans(AlPHABET + AlPHABET.upper(), translator + translator.upper()))
 ```
 
-For more information, check the [Str translate approach][approach-str-translate].
+For more information, check out the [Str translate approach][approach-str-translate].
+
 
 ## Approach: Recursion
 
@@ -96,7 +101,10 @@ This approach can be more concise than other approaches, and may also be more re
 ~~~~exercism/caution
 Python does not have any tail-call optimization and has a default [recursion limit][recursion-limit] of 1000 calls on the stack.
 Calculate your base case carefully to avoid errors.
+
+[recursion-limit]: https://docs.python.org/3/library/sys.html#sys.setrecursionlimit
 ~~~~
+
 
 ```python
 AlPHABET = "abcdefghijklmnopqrstuvwxyz"
@@ -114,11 +122,12 @@ def rotate(text, key):
         return first_letter + rotate(rest, key)
 ```
 
-For more information, check the [Recursion approach][approach-recursion].
+For more information, read the [Recursion approach][approach-recursion].
 
 ## Benchmark
 
-For more information, check the [Performance article][article-performance].
+For more information on the speed of these various approaches, check out the Rotational Cipher [Performance article][article-performance].
+
 
 [ascii]: https://en.wikipedia.org/wiki/ASCII
 [approach-recursion]: https://exercism.org/tracks/python/exercises/rotational-cipher/approaches/recursion
@@ -126,5 +135,4 @@ For more information, check the [Performance article][article-performance].
 [approach-ascii-values]: https://exercism.org/tracks/python/exercises/rotational-cipher/approaches/ascii-values
 [approach-alphabet]: https://exercism.org/tracks/python/exercises/rotational-cipher/approaches/alphabet
 [article-performance]: https://exercism.org/tracks/python/exercises/rotational-cipher/articles/performance
-[recursion-limit]: https://docs.python.org/3/library/sys.html#sys.setrecursionlimit
 [str-translate]: https://docs.python.org/3/library/stdtypes.html?highlight=str%20translate#str.translate
