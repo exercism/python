@@ -10,7 +10,7 @@ def rotate(text, key):
 
 This approach uses the [`<str>.translate`][translate] method.
 `translate` takes a translation table as an argument.
-To create a translation table we use [str.`makestrans`][maketrans].
+To create a translation table we use [`str.makestrans`][maketrans].
 
 This approach starts with defining a constant of all the lowercase letters in the alphabet.
 Then the function `rotate()` is declared.

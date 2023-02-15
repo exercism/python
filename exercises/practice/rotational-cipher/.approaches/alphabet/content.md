@@ -22,7 +22,7 @@ The function `rotate()` is then declared, and a variable `result` is defined as 
 The text argument is then iterated over via a [`for loop`][for-loop].
 Each element is checked to make sure it is a letter, and subsequently checked if it is uppercase or lowercase.
 Uppercase letters are converted to lowercase.
-Then index of each letter is found in the `AlPHABET` constant.
+Then the index of each letter is found in the `AlPHABET` constant.
 The numeric key value is added to the letter index and [modulo (`%`)][modulo] 26 is used on the result.
 Finally, the new number is used as an index into the `AlPHABET` constant, and the resulting letter is converted back to uppercase.
 
