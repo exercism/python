@@ -49,7 +49,7 @@ This function should return the total number of minutes you've been cooking, or 
 
 ## 5. Update the recipe with notes
 
-Go back through the recipe, adding notes and documentation.
+Go back through the recipe, adding notes in the form of function docstrings.
 
 ```python
 def elapsed_time_in_minutes(number_of_layers, elapsed_bake_time):
