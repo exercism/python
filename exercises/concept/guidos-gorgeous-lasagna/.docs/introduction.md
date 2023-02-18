@@ -2,10 +2,9 @@
 
 Python is a [dynamic and strongly][dynamic typing in python] typed [object-oriented][object oriented programming] programming language.
 It employs both [duck typing][duck typing] and [gradual typing][gradual typing], via [type hints][type hints].
-Python supports Imperative, declarative (e.g. functional), and object oriented programming _styles_, but internally [everything in Python is an object][everythings an object].
+Python supports Imperative, declarative (e.g., functional), and object-oriented programming _styles_, but internally [everything in Python is an object][everythings an object].
 
-This exercise introduces 4 major Python language features:  Names (_variables and constants_), Functions (_and the return keyword_), Comments, and Docstrings.
-
+This exercise introduces 4 major Python language features: Names (_variables and constants_), Functions (_and the return keyword_), Comments, and Docstrings.
 
 ~~~~exercism/note
 
@@ -13,9 +12,7 @@ In general, content, tests, and analyzer tooling for the Python track follow the
 
 ~~~~
 
-
 ## Name Assignment and Re-assignment
-
 
 There are no keywords in Python to define variables or constants and there is no difference in the way Python treats them.
 Both are considered [_names_][facts-and-myths-about-python-names] that help programmers reference values (_objects_) in a program and are written differently only by convention.
@@ -47,13 +44,11 @@ For example, `my_first_variable` can be assigned and re-assigned many times usin
 "Now, I'm a string."
 ```
 
-
 ### Constants
 
 Constants are typically defined at a [module][module] level, being values that are accessible outside function or class scope.
 Constant names **_can be reassigned to new values_**, but they are _intended_ to be named only once.
 Using `SCREAMING_SNAKE_CASE` warns other programmers that these names should not be mutated or reassigned.
-
 
 ```python
 # All caps signal that this is intended as a constant.
@@ -64,24 +59,23 @@ MY_FIRST_CONSTANT = 16
 # Please don't: MY_FIRST_CONSTANT = "Some other value"
 ```
 
-
 ## Functions
 
 The keyword `def` begins a [function definition][function definition].
 It must be followed by the function name and a parenthesized list of zero or more formal [parameters][parameters].
- Parameters can be of several different varieties, and can even [vary][more on functions] in length.
+Parameters can be of several different varieties, and can even [vary][more on functions] in length.
 The `def` line is terminated with a colon.
 
 ```python
 # function definition
 def my_function_name(parameter, second_parameter):
     <function body>
-    
+
 ```
+
 
 Statements for the _body_ of the function begin on the line following `def` and must be _indented in a block_.
 There is no strict indentation amount (_either space **OR** [tab] characters are acceptable_), but [indentation][indentation] must be _consistent for all indented statements_.
-
 
 ```python
 # Function definition on first line.
@@ -91,6 +85,7 @@ def add_two_numbers(number_one, number_two):
 >>> add_two_numbers(3, 4)
 7
 ```
+
 
 Functions explicitly return a value or object via the [`return`][return] keyword.
 
@@ -103,6 +98,7 @@ def add_two_numbers(number_one, number_two):
 7
 ```
 
+
 Functions that do not have an explicit `return` expression will return [`None`][none].
 
 ```python
@@ -114,6 +110,7 @@ def add_two_numbers(number_one, number_two):
 None
 ```
 
+
 While you may choose any indentation depth, _inconsistent_ indentation in your code blocks will raise an error:
 
 ```python
@@ -122,12 +119,13 @@ While you may choose any indentation depth, _inconsistent_ indentation in your c
 ...     result = number_one + number_two + number_three   # Indented by 4 spaces.
 ...    return result     #this was only indented by 3 spaces
 ...
-...  
+...
   File "<stdin>", line 3
     return result
                 ^
 IndentationError: unindent does not match any outer indentation level
 ```
+
 
 ### Calling Functions
 
@@ -135,13 +133,14 @@ Functions are [_called_][calls] or invoked using their name followed by `()`.
 The number of arguments passed in the parentheses must match the number of parameters in the original function definition..
 
 ```python
->>> def number_to_the_power_of(number_one, number_two): 
+>>> def number_to_the_power_of(number_one, number_two):
         return number_one ** number_two
 ...
 
 >>> number_to_the_power_of(3,3)
 27
 ```
+
 
 A mis-match between the number of parameters and the number of arguments will raise an error:
 
@@ -153,6 +152,7 @@ Traceback (most recent call last):
 TypeError: number_to_the_power_of() missing 1 required positional argument: 'number_two'
 
 ```
+
 
 Calling functions defined inside a class (_class methods_) use `<class name>.<method name>(<parameters>)`, otherwise known as dot (.) notation:
 
@@ -179,7 +179,6 @@ Calling functions defined inside a class (_class methods_) use `<class name>.<me
 
 ## Comments
 
-
 [Comments][comments] in Python start with a `#` that is not part of a string, and end at line termination.
 Unlike many other programming languages, Python **does not support** multi-line comment marks.
 Each line of a comment block must start with the `#` character.
@@ -196,11 +195,11 @@ x = "foo"  # This is an in-line comment.
 # these should be used sparingly.
 ```
 
+
 ## Docstrings
 
 The first statement of a function body can optionally be a [_docstring_][docstring], which concisely summarizes the function or object's purpose.
 Docstrings are declared using triple double quotes (""") indented at the same level as the code block:
-
 
 ```python
 
@@ -212,27 +211,27 @@ def complex(real=0.0, imag=0.0):
     real -- the real part (default 0.0)
     imag -- the imaginary part (default 0.0)
     """
-    
+
     if imag == 0.0 and real == 0.0:
         return complex_zero
     ...
 
 ```
 
+
 Docstrings are read by automated documentation tools and are returned by calling the special attribute `.__doc__` on the function, method, or class name.
 Docstrings can also function as [lightweight unit tests][doctests], which will be covered in a later exercise.
-They are recommended for programs of any size where documentation is needed, and their conventions are laid out in [PEP257][PEP257].
-
+They are recommended for programs of any size where documentation is needed, and their conventions are laid out in [PEP257][pep257].
 
 ```python
 # An example on a user-defined function.
 >>> def number_to_the_power_of(number_one, number_two):
         """Raise a number to an arbitrary power.
-        
+
         :param number_one: int the base number.
         :param number_two: int the power to raise the base number to.
         :return: int - number raised to power of second number
-        
+
         Takes number_one and raises it to the power of number_two, returning the result.
         """
 
@@ -263,7 +262,7 @@ encoding defaults to sys.getdefaultencoding().
 errors defaults to 'strict'.
 ```
 
-[PEP257]: https://www.python.org/dev/peps/pep-0257/
+[pep257]: https://www.python.org/dev/peps/pep-0257/
 [assignment statements]: https://docs.python.org/3/reference/simple_stmts.html#assignment-statements
 [calls]: https://docs.python.org/3/reference/expressions.html#calls
 [comments]: https://realpython.com/python-comments-guide/#python-commenting-basics
