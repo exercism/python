@@ -133,7 +133,7 @@ IndentationError: unindent does not match any outer indentation level
 ### Calling Functions
 
 Functions are [_called_][calls] or invoked using their name followed by `()`.
-The number of arguments passed in the parentheses must match the number of parameters in the original function definition..
+The number of arguments passed in the parentheses must match the number of parameters in the original function definition.
 
 ```python
 >>> def number_to_the_power_of(number_one, number_two):
@@ -157,7 +157,7 @@ TypeError: number_to_the_power_of() missing 1 required positional argument: 'num
 ```
 
 
-Calling functions defined inside a class (_class methods_) use `<class name>.<method name>(<parameters>)`, otherwise known as dot (.) notation:
+Calling functions defined inside a class (_methods_) use `<class name>.<method name>(<parameters>)`, otherwise known as dot (.) notation:
 
 ```python
 # This is an example of a method call of the built in str class.
@@ -219,14 +219,15 @@ def complex(real=0.0, imag=0.0):
 
     if imag == 0.0 and real == 0.0:
         return complex_zero
-    ...
 
 ```
 
 
 Docstrings are read by automated documentation tools and are returned by calling the special attribute `.__doc__` on the function, method, or class name.
-Docstrings can also function as [lightweight unit tests][doctests], which will be covered in a later exercise.
 They are recommended for programs of any size where documentation is needed, and their conventions are laid out in [PEP257][pep257].
+
+Docstrings can also function as [lightweight unit tests][doctests], which will be covered in a later exercise.
+
 
 ```python
 # An example on a user-defined function.
@@ -252,6 +253,8 @@ Raise a number to an arbitrary power.
     :return: int - number raised to power of second number
 
     Takes number_one and raises it to the power of number_two, returning the result.
+
+
 
 # Printing the __doc__ attribute for the built-in type: str.
 >>> print(str.__doc__)
