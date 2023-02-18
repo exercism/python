@@ -2,9 +2,10 @@
 
 Python is a [dynamic and strongly][dynamic typing in python] typed [object-oriented][object oriented programming] programming language.
 It employs both [duck typing][duck typing] and [gradual typing][gradual typing], via [type hints][type hints].
-Python supports Imperative, declarative (e.g., functional), and object-oriented programming _styles_, but internally [everything in Python is an object][everythings an object].
+Imperative, declarative (e.g., functional), and object-oriented programming _styles_ are all supported, but internally [everything in Python is an object][everythings an object].
 
-This exercise introduces 4 major Python language features: Names (_variables and constants_), Functions (_and the return keyword_), Comments, and Docstrings.
+This exercise introduces 4 major Python language features: Name Assignment (_variables and constants_), Functions (_and the return keyword_), Comments, and Docstrings.
+
 
 ~~~~exercism/note
 
@@ -12,37 +13,36 @@ In general, content, tests, and analyzer tooling for the Python track follow the
 
 ~~~~
 
+
 ## Name Assignment and Re-assignment
 
-There are no keywords in Python to define variables or constants and there is no difference in the way Python treats them.
-Both are considered [_names_][facts-and-myths-about-python-names] that help programmers reference values (_objects_) in a program and are written differently only by convention.
+In Python, there are no keywords to define variables or constants.
+Both are [_names_][facts-and-myths-about-python-names] that help programmers reference values (_objects_) in a program and are written differently only by convention.
 On Exercism, [variables][variables] are always written in [`snake_case`][snake case], and _constants_ in `SCREAMING_SNAKE_CASE`.
 
-Names are assigned to values via `=`, or the [_assignment operator_][assignment statements]: `<name> = <value>`.
-A name (_variable or constant_) can be assigned or re-assigned over its lifetime to different values/different object types.
-For example, `my_first_variable` can be assigned and re-assigned many times using `=`, and can refer to different object types with each re-assignment:
+Names are assigned to values using `=`, or the [_assignment operator_][assignment statements] (`<name> = <value>`).
+A name (_variable or constant_) can be re-assigned over its lifetime to different values/object types.
+
+For example, `my_first_variable` can be re-assigned many times using `=`, and can refer to different object types with each re-assignment:
 
 ```python
 # Assigning my_first_variable to a numeric value.
 >>> my_first_variable = 1
 >>> print(type(my_first_variable))
-...
 <class 'int'>
 
 >>> print(my_first_variable)
-...
 1
 
 # Reassigning my_first_variable to a new string value.
 >>> my_first_variable = "Now, I'm a string."
 >>> print(type(my_first_variable))
-...
 <class 'str'>
 
 >>> print(my_first_variable)
-...
 "Now, I'm a string."
 ```
+
 
 ### Constants
 
@@ -59,15 +59,17 @@ MY_FIRST_CONSTANT = 16
 # Please don't: MY_FIRST_CONSTANT = "Some other value"
 ```
 
+
 ## Functions
 
 The keyword `def` begins a [function definition][function definition].
 It must be followed by the function name and a parenthesized list of zero or more formal [parameters][parameters].
 Parameters can be of several different varieties, and can even [vary][more on functions] in length.
-The `def` line is terminated with a colon.
+
+The `def` line is terminated with a colon:
 
 ```python
-# function definition
+# Function definition.
 def my_function_name(parameter, second_parameter):
     <function body>
 
@@ -75,7 +77,8 @@ def my_function_name(parameter, second_parameter):
 
 
 Statements for the _body_ of the function begin on the line following `def` and must be _indented in a block_.
-There is no strict indentation amount (_either space **OR** [tab] characters are acceptable_), but [indentation][indentation] must be _consistent for all indented statements_.
+There is no strict indentation amount (_either space **OR** [tab] characters are acceptable_), but [indentation][indentation] must be _consistent_ for all indented statements.
+
 
 ```python
 # Function definition on first line.
@@ -92,7 +95,7 @@ Functions explicitly return a value or object via the [`return`][return] keyword
 ```python
 # Function definition on first line.
 def add_two_numbers(number_one, number_two):
-  return number_one + number_two # Returns the sum of the numbers.
+  return number_one + number_two  # Returns the sum of the numbers.
 
 >>> add_two_numbers(3, 4)
 7
@@ -185,6 +188,7 @@ Each line of a comment block must start with the `#` character.
 
 Comments are ignored by the interpreter:
 
+
 ```python
 # This is a single line comment.
 
@@ -200,6 +204,7 @@ x = "foo"  # This is an in-line comment.
 
 The first statement of a function body can optionally be a [_docstring_][docstring], which concisely summarizes the function or object's purpose.
 Docstrings are declared using triple double quotes (""") indented at the same level as the code block:
+
 
 ```python
 
