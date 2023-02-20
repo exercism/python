@@ -1,14 +1,16 @@
 # basics
 
-[Python][python docs] is a [dynamic and strongly][dynamic typing in python] typed [object-oriented][object oriented programming] programming language.
+Python is a [dynamic and strongly][dynamic typing in python] typed [object-oriented][object oriented programming] programming language.
 It employs both [duck typing][duck typing] and [gradual typing][gradual typing], via [type hints][type hints].
-It supports multiple programming paradigms including both imperative (_object-oriented, procedural_) and declarative (_functional, concurrent_) flavors.
-But do not be fooled: while programming across paradigms is fully _supported_, [everything in Python is an object][everythings an object].
+Imperative, declarative (e.g., functional), and object-oriented programming _styles_ are all supported, but internally [everything in Python is an object][everythings an object].
+
+Python puts a strong emphasis on code readability and (_similar to Haskell_) uses [significant indentation][significant indentation] to denote function, method, and class definitions.
+
+
+The [zen of Python (PEP 20)][the zen of python] and [What is Pythonic?][what is pythonic] lay out additional philosophies
 
 Python was created by Guido van Rossum and first released in 1991. The [Python Software Foundation][psf] manages and directs resources for Python and CPython development and receives proposals for changes to the language from [members][psf membership] of the community via [Python Enhancement Proposals or PEPs][peps].
 
-Python puts a strong emphasis on code readability and (_similar to Haskell_) uses [significant indentation][significant indentation] to denote function, method, and class definitions.
-The [zen of Python (PEP 20)][the zen of python] and [What is Pythonic?][what is pythonic] lay out additional philosophies.
 
 Complete documentation for the current release can be found at [docs.python.org][python docs].
 
@@ -19,34 +21,63 @@ Complete documentation for the current release can be found at [docs.python.org]
 - [Python FAQs][python faqs]
 - [Python Glossary of Terms][python glossary of terms]
 
+This concept introduces 4 major Python language features: Name Assignment (_variables and constants_), Functions (_and the return keyword_), Comments, and Docstrings.
 
-## Getting Started
 
-Objects are [assigned][assignment statements] to [names][naming and binding] in Python via the `=` or _assignment operator_. [Variables][variables] are written in [`snake_case`][snake case], and constants usually in `SCREAMING_SNAKE_CASE`.
+~~~~exercism/note
 
-A `name` (_variable or constant_) is not itself typed, and can be attached or re-attached to different objects or values over its lifetime.
-For extended naming conventions and formatting advice, see [PEP 8][pep8].
+In general, content, tests, and analyzer tooling for the Python track follow the style conventions outlined in [PEP 8](https://www.python.org/dev/peps/pep-0008/) and [PEP 257](https://www.python.org/dev/peps/pep-0257/) for Python code style, with the additional (strong) suggestion that there be no single letter variable names.
+
+~~~~
+
+
+## Name Assignment and Re-assignment
+
+In Python, there are no keywords to define variables or constants.
+Both are [_names_][facts-and-myths-about-python-names] that help programmers reference values (_objects_) in a program and are written differently only by convention.
+On Exercism, [variables][variables] are always written in [`snake_case`][snake case], and _constants_ in `SCREAMING_SNAKE_CASE`.
+
+Names are assigned to values using `=`, or the [_assignment operator_][assignment statements] (`<name> = <value>`).
+A name (_variable or constant_) can be re-assigned over its lifetime to different values/object types.
+
+For example, `my_first_variable` can be re-assigned many times using `=`, and can refer to different object types with each re-assignment:
 
 ```python
+# Assigning my_first_variable to a numeric value.
 >>> my_first_variable = 1
->>> my_first_variable = "Last one, I promise"
->>> print(my_first_variable)
+>>> print(type(my_first_variable))
+<class 'int'>
 
-"Last one, I promise"
+>>> print(my_first_variable)
+1
+
+# Reassigning my_first_variable to a new string value.
+>>> my_first_variable = "Now, I'm a string."
+>>> print(type(my_first_variable))
+<class 'str'>
+
+>>> print(my_first_variable)
+"Now, I'm a string."
 ```
 
-Constants are usually defined on a [module][module] or `global` level, and although they _can_ be changed, they are _intended_ to be assigned only once.
 
-Their `SCREAMING_SNAKE_CASE` is a message to other developers that the assignment should not be altered.
+### Constants
+
+Constants are typically defined at a [module][module] level, being values that are accessible outside function or class scope.
+Constant names **_can be reassigned to new values_**, but they are _intended_ to be named only once.
+Using `SCREAMING_SNAKE_CASE` warns other programmers that these names should not be mutated or reassigned.
 
 ```python
-# All caps signal that this is intended as a constant
+# All caps signal that this is intended as a constant.
 MY_FIRST_CONSTANT = 16
 
 # Re-assignment will be allowed by the compiler & interpreter,
-# but is VERY strongly discouraged.
-# Please don't do: MY_FIRST_CONSTANT = "Some other value"
+# but this is VERY strongly discouraged.
+# Please don't: MY_FIRST_CONSTANT = "Some other value"
 ```
+
+
+## Functions
 
 In Python, units of functionality are encapsulated in [_functions._][functions], which are themselves [objects][objects] (_it's [turtles all the way down][turtles all the way down]_).
 
@@ -55,22 +86,44 @@ When functions are bound to a [class][classes] name, they're referred to as [met
 Related functions and classes (_with their methods_) can be grouped together in the same file or module, and imported in part or in whole for use in other programs.
 
 The keyword `def` begins a [function definition][function definition].
-`def` must be followed by the function name and a parenthesized list of zero or more formal [parameters][parameters].
- Parameters can be of several different varieties, and can even [vary][more on functions] in length.
-The `def` line is terminated with a colon (`:`).
+It must be followed by the function name and a parenthesized list of zero or more formal [parameters][parameters].
+Parameters can be of several different varieties, and can even [vary][more on functions] in length.
 
-Statements for the `function body` begin on the line following `def`, and must be _indented in a block_.
-There is no strict indentation amount (_either space **OR** [tab] characters are acceptable_), but [indentation][indentation] must be _consistent for all indented statements_.
-Functions explicitly return a value or object via the [`return`][return] keyword.
+The `def` line is terminated with a colon (`:`):
+
+```python
+# Function definition.
+def my_function_name(parameter, second_parameter):
+    <function body>
+
+```
+
+Statements for the `function body` begin on the line following `def` and must be _indented in a block_.
+There is no strict indentation amount (_either space **OR** [tab] characters are acceptable_), but [indentation][indentation] must be _consistent_ for all indented statements.
+
 
 ```python
 # Function definition on first line.
->>> def add_two_numbers(number_one, number_two):
-...   return number_one + number_two  # Returns the sum of the numbers, and is indented by 2 spaces.
+def add_two_numbers(number_one, number_two):
+  print(number_one + number_two)  # Prints the sum of the numbers, and is indented by 2 spaces.
 
 >>> add_two_numbers(3, 4)
 7
 ```
+
+
+Functions explicitly return a value or object via the [`return`][return] keyword.
+
+```python
+# Function definition on first line.
+def add_two_numbers(number_one, number_two):
+  return number_one + number_two  # Returns the sum of the numbers.
+
+>>> add_two_numbers(3, 4)
+7
+```
+
+
 
 Functions that do not have an explicit `return` expression will return [`None`][none].
 
@@ -83,53 +136,53 @@ def add_two_numbers(number_one, number_two):
 None
 ```
 
-Inconsistent indentation will raise an error:
+While you may choose any indentation depth, _inconsistent_ indentation in your code blocks will raise an error:
 
 ```python
 # The return statement line does not match the first line indent.
 >>> def add_three_numbers_misformatted(number_one, number_two, number_three):
 ...     result = number_one + number_two + number_three   # Indented by 4 spaces.
 ...    return result     #this was only indented by 3 spaces
+...
+...
   File "<stdin>", line 3
     return result
                 ^
 IndentationError: unindent does not match any outer indentation level
 ```
 
+
+### Calling Functions
+
 Functions are [_called_][calls] using their name followed by `()`.
 The number of arguments passed in the parentheses must match the number of parameters in the original function definition unless [default arguments][default arguments] have been used.
 
 ```python
 >>> def number_to_the_power_of(number_one, number_two):
-        """Raise a number to an arbitrary power.
-        
-        :param number_one: int the base number.
-        :param number_two: int the power to raise the base number to.
-        :return: int - number raised to power of second number
-        
-        Takes number_one and raises it to the power of number_two, returning the result.
-        """
-
-...     return number_one ** number_two
-
+        return number_one ** number_two
+...
 
 >>> number_to_the_power_of(3,3)
 27
 ```
 
-A mis-match between parameters and arguments will raise an error:
+
+A mis-match between the number of parameters and the number of arguments will raise an error:
 
 ```python
 >>> number_to_the_power_of(4,)
+...
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: number_to_the_power_of() missing 1 required positional argument: 'number_two'
 
 ```
 
+
 Adding a [default value][default arguments] for a parameter can defend against such errors:
 
 ```python
+# Note the default value of 2 assigned below.
 def number_to_the_power_of_default(number_one, number_two=2):
     """Raise a number to an arbitrary power.
     
@@ -142,34 +195,50 @@ def number_to_the_power_of_default(number_one, number_two=2):
 
     return number_one ** number_two
 
+# Because there was a default value, this call with only one argument does not throw an error.
 >>> number_to_the_power_of_default(4)
 16
 ```
 
-Methods bound to class names are invoked via dot notation (`<class_name>.<method_name>()`), as are functions, constants, or global names imported as part of a module.:
+
+Methods bound to class names are invoked via dot notation (`<class name>.<method name>(<parameters>))`, as are functions (`<module name>.<function name>(<parameters>)`), constants (`<module name>.<constant name>`), or any other global names imported as part of a module.:
 
 ```python
+# This is an example of a method call of the built in str class.
+# Define a variable and assign it to a string.
+>>> start_text = "my silly sentence for examples."
+
+# Uppercase the string by calling the upper method from the str class.
+>>> str.upper(start_text)
+"MY SILLY SENTENCE FOR EXAMPLES."
+
+
+# Below is an example of a method call of the built in list class.
+# Define an empty list
+>>> my_list = []
+
+# Add an element to the list by calling the append method from the list class.
+>>> my_list.append(start_text)
+>>> print(my_list)
+["my silly sentence for examples."]
 
 import string
 
 # This is a constant provided by the *string* module.
->>> print(string.ascii_lowercase)
+>>> alphabet = string.ascii_lowercase
+>>> print(alphabet)
 "abcdefghijklmnopqrstuvwxyz"
-
-# This is a method call of the str *class*.
->>> start_text = "my silly sentence for examples."
->>> str.upper(start_text)
-"MY SILLY SENTENCE FOR EXAMPLES."
-
-# This is a method call of an *instance* of the str *class*.
->>> start_text.upper()
-"MY SILLY SENTENCE FOR EXAMPLES."
 ```
 
+
+## Comments
+
 [Comments][comments] in Python start with a `#` that is not part of a string, and end at line termination.
-Unlike many other programming languages, Python does not support multi-line comment marks.
+Unlike many other programming languages, Python **does not support** multi-line comment marks.
 Each line of a comment block must start with the `#` character.
+
 Comments are ignored by the interpreter:
+
 
 ```python
 # This is a single line comment.
@@ -181,25 +250,53 @@ x = "foo"  # This is an in-line comment.
 # these should be used sparingly.
 ```
 
+
+## Docstrings
+
 The first statement of a function body can optionally be a [_docstring_][docstring], which concisely summarizes the function or object's purpose.
-Docstrings are read by automated documentation tools and are returned by calling `.__doc__` on the function, method, or class name.
-They are recommended for programs of any size where documentation is needed, and their conventions are laid out in [PEP257][PEP257]:
+Docstrings are declared using triple double quotes (""") indented at the same level as the code block:
+
+
+```python
+
+# An example from PEP257 of a multi-line docstring.
+def complex(real=0.0, imag=0.0):
+    """Form a complex number.
+
+    Keyword arguments:
+    real -- the real part (default 0.0)
+    imag -- the imaginary part (default 0.0)
+    """
+
+    if imag == 0.0 and real == 0.0:
+        return complex_zero
+
+```
+
+
+Docstrings are read by automated documentation tools and are returned by calling the special attribute `.__doc__` on the function, method, or class name.
+They are recommended for programs of any size where documentation is needed, and their conventions are laid out in [PEP257][pep257].
+
+Docstrings can also function as [lightweight unit tests][doctests], which can be read and run by PyTest, or by importing the `doctest` module.
+Testing and `doctest` will be covered in a later concept.
 
 
 ```python
 # An example on a user-defined function.
-def number_to_the_power_of(number_one, number_two):
-    """Raise a number to an arbitrary power.
-    
-    :param number_one: int the base number.
-    :param number_two: int the power to raise the base number to.
-    :return: int - number raised to power of second number
-    
-    Takes number_one and raises it to the power of number_two, returning the result.
-    """
+>>> def number_to_the_power_of(number_one, number_two):
+        """Raise a number to an arbitrary power.
 
-    return number_one ** number_two
+        :param number_one: int the base number.
+        :param number_two: int the power to raise the base number to.
+        :return: int - number raised to power of second number
 
+        Takes number_one and raises it to the power of number_two, returning the result.
+        """
+
+        return number_one ** number_two
+...
+
+# Calling the .__doc__ attribute of the function and printing the result.
 >>> print(number_to_the_power_of.__doc__)
 Raise a number to an arbitrary power.
 
@@ -209,7 +306,9 @@ Raise a number to an arbitrary power.
 
     Takes number_one and raises it to the power of number_two, returning the result.
 
-# __doc__() for the built-in type: str.
+
+
+# Printing the __doc__ attribute for the built-in type: str.
 >>> print(str.__doc__)
 str(object='') -> str
 str(bytes_or_buffer[, encoding[, errors]]) -> str
@@ -223,9 +322,6 @@ encoding defaults to sys.getdefaultencoding().
 errors defaults to 'strict'.
 ```
 
-Docstrings can also include [doctests][doctests], which are interactive examples of how a method or function should work.
-Doctests can be read and run by PyTest, or by importing the `doctest` module.
-
 [PEP257]: https://www.python.org/dev/peps/pep-0257/
 [assignment statements]: https://docs.python.org/3/reference/simple_stmts.html#assignment-statements
 [calls]: https://docs.python.org/3/reference/expressions.html#calls
@@ -237,6 +333,7 @@ Doctests can be read and run by PyTest, or by importing the `doctest` module.
 [duck typing]: https://en.wikipedia.org/wiki/Duck_typing
 [dynamic typing in python]: https://stackoverflow.com/questions/11328920/is-python-strongly-typed
 [everythings an object]: https://docs.python.org/3/reference/datamodel.html
+[facts-and-myths-about-python-names]: https://nedbatchelder.com/text/names.html
 [function definition]: https://docs.python.org/3/tutorial/controlflow.html#defining-functions
 [functions]: https://docs.python.org/3/reference/compound_stmts.html#function
 [gradual typing]: https://en.wikipedia.org/wiki/Gradual_typing

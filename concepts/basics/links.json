@@ -40,20 +40,12 @@
     "description": "variables in Python"
   },
   {
-    "url": "https://docs.python.org/3/reference/simple_stmts.html#assignment-statements",
-    "description": "assignment statements in Python"
-  },
-  {
     "url": "https://docs.python.org/3/reference/executionmodel.html#naming-and-binding",
     "description": "naming and binding in Python"
   },
   {
     "url": "https://docs.python.org/3/tutorial/controlflow.html#defining-functions",
     "description": "function definition"
-  },
-  {
-    "url": "https://docs.python.org/3/tutorial/controlflow.html#more-on-defining-functions",
-    "description": "more on defining functions"
   },
   {
     "url": "https://docs.python.org/3/reference/compound_stmts.html#function",
@@ -70,10 +62,6 @@
   {
     "url": "https://docs.python.org/3/reference/datamodel.html#the-standard-type-hierarchy",
     "description": "Pythons standard type hierarchy"
-  },
-  {
-    "url": "https://docs.python.org/3/reference/expressions.html#calls",
-    "description": "calls"
   },
   {
     "url": "https://docs.python.org/3/tutorial/controlflow.html#default-argument-values",
