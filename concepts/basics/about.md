@@ -341,12 +341,10 @@ errors defaults to 'strict'.
 [method objects]: https://docs.python.org/3/c-api/method.html#method-objects
 [module]: https://docs.python.org/3/tutorial/modules.html
 [more on functions]: https://docs.python.org/3/tutorial/controlflow.html#more-on-defining-functions
-[naming and binding]: https://docs.python.org/3/reference/executionmodel.html#naming-and-binding
 [none]: https://docs.python.org/3/library/constants.html
 [object oriented programming]: https://en.wikipedia.org/wiki/Object-oriented_programming
 [objects]: https://docs.python.org/3/reference/datamodel.html#the-standard-type-hierarchy
 [parameters]: https://docs.python.org/3/glossary.html#term-parameter
-[pep8]: https://www.python.org/dev/peps/pep-0008/
 [peps]: https://www.python.org/dev/peps/
 [psf membership]: https://www.python.org/psf/membership/
 [psf]: https://www.python.org/psf/
