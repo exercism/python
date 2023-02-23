@@ -23,7 +23,7 @@ except ImportError as import_fail:
         item_name = item_name[:-1] + "()'"
         # pylint: disable=raise-missing-from
         raise ImportError("\n\nMISSING FUNCTION --> In your 'lasagna.py' file, we can not find or import the"
-                          f' function named {item_name}. \nDid you mis-name or forget to define it?') from None
+                          f' function named {item_name}. \nDid you misname or forget to define it?') from None
 
 
 # Here begins the formal test cases for the exercise.
