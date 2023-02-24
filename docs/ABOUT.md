@@ -6,13 +6,13 @@ It supports multiple programming paradigms including imperative (_object-oriente
 But do not be fooled: while programming across paradigms is fully supported, [everything in Python is an object][everythings an object].
 
 
-Python was created by Guido van Rossum and first released in 1991.
+Python was created by Guido van Rossum and was first released in 1991.
 The [Python Software Foundation][psf] manages and directs resources for Python and CPython development and receives proposals for changes to the language from [members][psf membership] of the community via [Python Enhancement Proposals or PEPs][peps].
 It is considered a strong language for programmers [starting their journey][python for beginners], with a welcoming community and many resources available to learners of all levels and persuasions.
 
 
 Python puts a strong emphasis on code readability and (_similar to Haskell_) uses [significant indentation][significant indentation] to denote function, method, and class definitions.
-Code can be written and executed from the command line, in an interactive interpreter session, in [JupyterLab][jupyter] (Jupyter notebook), or a wide variety of [code editors and IDEs][editors for python].
+Code can be written and executed from the command line, in an interactive interpreter session, in [JupyterLab][jupyter] (Jupyter notebook), or in a wide variety of [code editors and IDEs][editors for python].
 
 [Python is used extensively][python is used extensively] in scientific computing, finance, games, networking, internet development, and in assembling pipelines of other programs.
 
@@ -42,7 +42,7 @@ Complete documentation for the current release of Python (3.9.7) can be found at
 [everythings an object]: https://docs.python.org/3/reference/datamodel.html
 [gradual typing]: https://en.wikipedia.org/wiki/Gradual_typing
 [jupyter]: http://jupyter.org
-[object oriented programming]: https://en.wikipedia.org/wiki/Object-oriented_programming
+[object-oriented programming]: https://en.wikipedia.org/wiki/Object-oriented_programming
 [peps]: https://www.python.org/dev/peps/
 [psf membership]: https://www.python.org/psf/membership/
 [psf]: https://www.python.org/psf/
