@@ -1,2 +1,2 @@
-print('Hello, World!')
-    #'Goodbye, Mars!'
+def hello():
+    return 'Goodbye, Mars!'
