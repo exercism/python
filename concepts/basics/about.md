@@ -65,7 +65,7 @@ For example, `my_first_variable` can be re-assigned many times using `=`, and ca
 "Now, I'm a string."  # Strings can be declared using single or double quote marks.
 
 import collections
->>> my_first_variable = collections.Counter([1,1,2,3,3,3,4,5,6,7])
+>>> my_first_variable = collections.Counter([1,1,2,3,3,3,4,5,6,7]) # Now the name has been re-bound to a Counter object.
 >>> print(type(my_first_variable))
 <class 'collections.Counter'>
 
