@@ -1,0 +1,33 @@
+{
+    "summary": "There are a few changes we suggest that can bring your solution closer to ideal.",
+    "comments": [
+        {
+            "comment": "python.pylint.convention",
+            "params": {
+                "lineno": "53",
+                "code": "C0305 trailing-newlines",
+                "message": [
+                    [
+                        "Trailing newlines"
+                    ],
+                    ""
+                ]
+            },
+            "type": "actionable"
+        },
+        {
+            "comment": "python.pylint.convention",
+            "params": {
+                "lineno": "1",
+                "code": "C0112 empty-docstring",
+                "message": [
+                    [
+                        "Empty module docstring"
+                    ],
+                    ""
+                ]
+            },
+            "type": "actionable"
+        }
+    ]
+}
