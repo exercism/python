@@ -1,24 +1,28 @@
 # Instructions
 
-Implement a binary search algorithm.
+Your task is to implement a binary search algorithm.
 
-Searching a sorted collection is a common task.
-A dictionary is a sorted list of word definitions.
-Given a word, one can find its definition.
-A telephone book is a sorted list of people's names, addresses, and telephone numbers.
-Knowing someone's name allows one to quickly find their telephone number and address.
+A binary search algorithm finds an item in a list by repeatedly splitting it in half, only keeping the half which contains the item we're looking for.
+It allows us to quickly narrow down the possible locations of our item until we find it, or until we've eliminated all possible locations.
 
-If the list to be searched contains more than a few items (a dozen, say) a binary search will require far fewer comparisons than a linear search, but it imposes the requirement that the list be sorted.
+```exercism/caution
+Binary search only works when a list has been sorted.
+```
 
-In computer science, a binary search or half-interval search algorithm finds the position of a specified input value (the search "key") within an array sorted by key value.
+The algorithm looks like this:
 
-In each step, the algorithm compares the search key value with the key value of the middle element of the array.
+- Divide the sorted list in half and compare the middle element with the item we're looking for.
+- If the middle element is our item, then we're done.
+- If the middle element is greater than our item, we can eliminate that number and all the numbers **after** it.
+- If the middle element is less than our item, we can eliminate that number and all the numbers **before** it.
+- Repeat the process on the part of the list that we kept.
 
-If the keys match, then a matching element has been found and its index, or position, is returned.
+Here's an example:
 
-Otherwise, if the search key is less than the middle element's key, then the algorithm repeats its action on the sub-array to the left of the middle element or, if the search key is greater, on the sub-array to the right.
+Let's say we're looking for the number 23 in the following sorted list: `[4, 8, 12, 16, 23, 28, 32]`.
 
-If the remaining array to be searched is empty, then the key cannot be found in the array and a special "not found" indication is returned.
-
-A binary search halves the number of items to check with each iteration, so locating an item (or determining its absence) takes logarithmic time.
-A binary search is a dichotomic divide and conquer search algorithm.
+- We start by comparing 23 with the middle element, 16.
+- Since 23 is greater than 16, we can eliminate the left half of the list, leaving us with `[23, 28, 32]`.
+- We then compare 23 with the new middle element, 28.
+- Since 23 is less than 28, we can eliminate the right half of the list: `[23]`.
+- We've found our item.
