@@ -1,28 +1,28 @@
 # Instructions
 
-Use the Sieve of Eratosthenes to find all the primes from 2 up to a given
-number.
+Your task is to create a program that implements the Sieve of Eratosthenes algorithm to find prime numbers.
 
-The Sieve of Eratosthenes is a simple, ancient algorithm for finding all prime numbers up to any given limit.
-It does so by iteratively marking as composite (i.e. not prime) the multiples of each prime, starting with the multiples of 2.
-It does not use any division or remainder operation.
+A prime number is a number that is only divisible by 1 and itself.
+For example, 2, 3, 5, 7, 11, and 13 are prime numbers.
 
-Create your range, starting at two and continuing up to and including the given limit.
-(i.e. [2, limit])
+The Sieve of Eratosthenes is an ancient algorithm that works by taking a list of numbers and crossing out all the numbers that aren't prime.
 
-The algorithm consists of repeating the following over and over:
+A number that is **not** prime is called a "composite number".
 
-- take the next available unmarked number in your list (it is prime)
-- mark all the multiples of that number (they are not prime)
+To use the Sieve of Eratosthenes, you first create a list of all the numbers between 2 and your given number.
+Then you repeat the following steps:
 
-Repeat until you have processed each number in your range.
+1. Find the next unmarked number in your list. This is a prime number.
+2. Mark all the multiples of that prime number as composite (not prime).
 
-When the algorithm terminates, all the numbers in the list that have not
-been marked are prime.
+You keep repeating these steps until you've gone through every number in your list.
+At the end, all the unmarked numbers are prime.
 
-[This wikipedia article][eratosthenes] has a useful graphic that explains the algorithm.
+```exercism/note
+[Wikipedia's Sieve of Eratosthenes article][eratosthenes] has a useful graphic that explains the algorithm.
 
-Notice that this is a very specific algorithm, and the tests don't check that you've implemented the algorithm, only that you've come up with the correct list of primes.
-A good first test is to check that you do not use division or remainder operations (div, /, mod or % depending on the language).
+The tests don't check that you've implemented the algorithm, only that you've come up with the correct list of primes.
+A good first test is to check that you do not use division or remainder operations.
 
 [eratosthenes]: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+```
