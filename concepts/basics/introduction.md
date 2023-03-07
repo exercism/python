@@ -1,21 +1,24 @@
 # Introduction
 
-Python is a [dynamic and strongly][dynamic typing in python] typed programming language.
-It employs both [duck typing][duck typing] and [gradual typing][gradual typing] via [type hints][type hints].
+Python is a [dynamic and strongly typed][dynamic typing in python] programming language.
+It employs both [duck typing][duck typing] and [gradual typing][gradual typing], via [type hints][type hints].
 
-While Python supports many different programming _styles_, internally **everything in Python is an [object][everythings an object]**.
-This includes numbers, strings, lists, and even functions.
+Imperative, declarative (e.g., functional), and object-oriented programming _styles_ are all supported, but internally **[everything in Python is an object][everythings an object]**.
+
+Python puts a strong emphasis on code readability and (_similar to Haskell_) uses [significant indentation][significant indentation] to denote function, method, and class definitions.
+
+Python was created by Guido van Rossum and first released in 1991.
 
 
 ## Name Assignment (Variables & Constants)
 
-Programmer defined [_names_][facts-and-myths-about-python-names] (also called _variables__) can be bound to any type of object using the assignment `=` operator: `<name> = <value>`.
+Programmers can bind [_names_][facts-and-myths-about-python-names] (also called _variables__) to any type of object using the assignment `=` operator: `<name> = <value>`.
 A name can be reassigned (or re-bound) to different values (different object types) over its lifetime.
 
 
 ```python
->>> my_first_variable = 1  # Name bound to an integer object of value one.
->>> my_first_variable = 2  # Name re-assigned to integer value 2.
+>>> my_first_variable = 1  # my_first_variable bound to an integer object of value one.
+>>> my_first_variable = 2  # my_first_variable re-assigned to integer value 2.
 
 >>> print(type(my_first_variable))
 <class 'int'>
@@ -47,7 +50,7 @@ Statements for the _body_ of the function begin on the line following `def` and 
 
 
 ```python
-# The body of this function is indented by 2 spaces, & prints the sum of the numbers
+# The body of a function is indented by 2 spaces, & prints the sum of the numbers.
 def add_two_numbers(number_one, number_two):
   total = number_one + number_two
   print(total)  
@@ -133,3 +136,4 @@ def complex(real=0.0, imag=0.0):
 [parameters]: https://docs.python.org/3/glossary.html#term-parameter
 [return]: https://docs.python.org/3/reference/simple_stmts.html#return
 [type hints]: https://docs.python.org/3/library/typing.html
+[significant indentation]: https://docs.python.org/3/reference/lexical_analysis.html#indentation
