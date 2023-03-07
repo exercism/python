@@ -1,0 +1,3 @@
+acronym = re.sub("\B[a-z',]+|-| |[A-Z]{2}\b|[^A-Z'](?<=_)", "", to_abbreviate)
+
+return  acronym.upper()
