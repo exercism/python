@@ -1,51 +1,18 @@
 [
-  {
-    "url": "https://docs.python.org/3/",
-    "description": "Python documentation"
+  {"url": "https://lerner.co.il/2019/06/18/understanding-python-assignment/",
+    "description": "Reuven Lerner: Understanding Python Assignment"
   },
   {
-    "url": "https://www.python.org/dev/peps/pep-0008/",
-    "description": "PEP 8"
+    "url": "https://www.youtube.com/watch?v=owglNL1KQf0",
+    "description": "Sentdex (YouTube): Python 3 Programming Tutorial - Functions"
   },
   {
-    "url": "https://www.python.org/dev/peps/pep-0020/",
-    "description": "The Zen of Python (PEP 20)"
+    "url": "https://realpython.com/documenting-python-code/#commenting-vs-documenting-code",
+    "description": "Real Python: Commenting vs Documenting Code."
   },
   {
-    "url": "https://nedbatchelder.com/text/names.html",
-    "description": "Ned Batchelder: Facts and Myths about Python Names."
-  },
-  {
-    "url": "https://realpython.com/python-variables/",
-    "description": "variables in Python"
-  },
-  {
-    "url": "https://docs.python.org/3/tutorial/controlflow.html#defining-functions",
-    "description": "function definition"
-  },
-  {
-    "url": "https://docs.python.org/3/tutorial/controlflow.html#default-argument-values",
-    "description": "default arguments"
-  },
-  {
-    "url": "https://realpython.com/python-comments-guide/#python-commenting-basics",
-    "description": "Comments"
-  },
-  {
-    "url": "https://docs.python.org/3/tutorial/controlflow.html#tut-docstrings",
-    "description": "docstring"
-  },
-  {
-    "url": "https://www.python.org/psf-landing/",
-    "description": "Python Software Foundation"
-  },
-  {
-    "url": "https://www.python.org/dev/peps/",
-    "description": "Python Enhancement Proposals or PEPs"
-  },
-  {
-    "url": "https://docs.python.org/3/reference/datamodel.html",
-    "description": "everything in Python is an object"
+    "url": "https://www.pythonmorsels.com/everything-is-an-object/",
+    "description": "Python Morsels: Everything is an Object"
   },
   {
     "url": "https://stackoverflow.com/questions/11328920/is-python-strongly-typed",
@@ -60,7 +27,11 @@
     "description": "significant indentation"
   },
   {
-    "url": "https://docs.python.org/3/library/doctest.html",
-    "description": "doctests"
+    "url": "https://www.digitalocean.com/community/tutorials/how-to-write-doctests-in-python",
+    "description": "DigitalOcean: How to Write Doctests in Python."
+  },
+  {
+    "url": "https://nedbatchelder.com/blog/201803/is_python_interpreted_or_compiled_yes.html",
+    "description": "Ned Batchelder: Is Python Interpreted or Compiled? Yes."
   }
 ]

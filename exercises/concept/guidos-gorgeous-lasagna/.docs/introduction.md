@@ -24,13 +24,13 @@ On the Python track, [variables][variables] are always written in [`snake_case`]
 
 ## Name Assignment (Variables & Constants)
 
-Programmer defined [_names_][facts-and-myths-about-python-names] (also called _variables__) can be bound to any type of object using the assignment `=` operator: `<name> = <value>`.
+Programmers can bind [_names_][facts-and-myths-about-python-names] (also called _variables__) to any type of object using the assignment `=` operator: `<name> = <value>`.
 A name can be reassigned (or re-bound) to different values (different object types) over its lifetime.
 
 
 ```python
->>> my_first_variable = 1  # Name bound to an integer object of value one.
->>> my_first_variable = 2  # Name re-assigned to integer value 2.
+>>> my_first_variable = 1  # my_first_variable bound to an integer object of value one.
+>>> my_first_variable = 2  # my_first_variable re-assigned to integer value 2.
 
 >>> print(type(my_first_variable))
 <class 'int'>
@@ -62,7 +62,7 @@ Statements for the _body_ of the function begin on the line following `def` and 
 
 
 ```python
-# The body of this function is indented by 2 spaces, & prints the sum of the numbers
+# The body of a function is indented by 2 spaces, & prints the sum of the numbers.
 def add_two_numbers(number_one, number_two):
   total = number_one + number_two
   print(total)  

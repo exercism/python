@@ -1,6 +1,6 @@
 # basics
 
-Python is a [dynamic and strongly][dynamic typing in python] typed [object-oriented][object oriented programming] programming language.
+Python is a [dynamic and strongly typed][dynamic typing in python] programming language.
 It employs both [duck typing][duck typing] and [gradual typing][gradual typing], via [type hints][type hints].
 Imperative, declarative (e.g., functional), and object-oriented programming _styles_ are all supported, but internally **[everything in Python is an object][everythings an object]**.
 
@@ -41,15 +41,15 @@ On the Python track, [variables][variables] are always written in [`snake_case`]
 ## Name Assignment (Variables & Constants)
 
 In Python, there are no keywords used in creating variables or constants.
-Instead, programmer defined [_names_][facts-and-myths-about-python-names] (also called _variables__) can be bound to any type of object using the assignment `=` operator: `<name> = <value>`.
+Instead, programmers can bind [_names_][facts-and-myths-about-python-names] (also called _variables__) to any type of object using the assignment `=` operator: `<name> = <value>`.
 A name can be reassigned (or re-bound) to different values (different object types) over its lifetime.
 
 For example, `my_first_variable` can be re-assigned many times using `=`, and can refer to different object types with each re-assignment:
 
 
 ```python
->>> my_first_variable = 1  # Name bound to an integer object of value one.
->>> my_first_variable = 2  # Name re-assigned to integer value 2.
+>>> my_first_variable = 1  # my_first_variable bound to an integer object of value one.
+>>> my_first_variable = 2  # my_first_variable re-assigned to integer value 2.
 
 >>> print(type(my_first_variable))
 <class 'int'>
@@ -65,7 +65,7 @@ For example, `my_first_variable` can be re-assigned many times using `=`, and ca
 "Now, I'm a string."  # Strings can be declared using single or double quote marks.
 
 import collections
->>> my_first_variable = collections.Counter([1,1,2,3,3,3,4,5,6,7]) # Now the name has been re-bound to a Counter object.
+>>> my_first_variable = collections.Counter([1,1,2,3,3,3,4,5,6,7]) # Now my_first_variable has been re-bound to a Counter object.
 >>> print(type(my_first_variable))
 <class 'collections.Counter'>
 
@@ -106,7 +106,7 @@ Statements for the _body_ of the function begin on the line following `def` and 
 
 
 ```python
-# The body of this function is indented by 2 spaces, & prints the sum of the numbers
+# The body of a function is indented by 2 spaces, & prints the sum of the numbers.
 def add_two_numbers(number_one, number_two):
   total = number_one + number_two
   print(total)  
@@ -290,7 +290,6 @@ errors defaults to 'strict'.
 [method objects]: https://docs.python.org/3/c-api/method.html#method-objects
 [module]: https://docs.python.org/3/tutorial/modules.html
 [none]: https://docs.python.org/3/library/constants.html
-[object oriented programming]: https://en.wikipedia.org/wiki/Object-oriented_programming
 [objects]: https://docs.python.org/3/reference/datamodel.html#the-standard-type-hierarchy
 [parameters]: https://docs.python.org/3/glossary.html#term-parameter
 [peps]: https://www.python.org/dev/peps/
