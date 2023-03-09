@@ -605,10 +605,10 @@
         "slug": "square-root",
         "name": "Square Root",
         "uuid": "c32f994a-1080-4f05-bf88-051975a75d64",
-        "practices": ["number"],
+        "practices": ["numbers"],
         "prerequisites": [
           "basics",
-          "number",
+          "numbers",
           "conditionals",
           "loops"
         ],
