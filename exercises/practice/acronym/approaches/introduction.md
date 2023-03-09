@@ -4,23 +4,30 @@ There are multiple Pythonic ways to solve the Acronym exercise.
 Among them are:
 
 - Using `str.replace()` to scrub, and a `for loop` with string concatenation via the `+` operator.
-- Using `str.replace()` to scrub, and joining via `str.join()`passing a `list-comprehension` or `generator-expression`.
-- Using `str.replace()` to scrub, and joining via `map()` or `functools.reduce()`.
-- Using `re.findall`/`re.finditer` to scrub, and `str.join` with a `generator-expression` or `list-comprehension`.
-- Using only `re.sub` (aka "only" regex)`
+- Using `str.replace()` to scrub, and joining via `str.join()`passing a `list-comprehension`
+- Using `str.replace()` to scrub, and joining via `str.join()`passing a `generator-expression`.
+- Using `str.replace()` to scrub, and joining via `functools.reduce()`.
+- Using `str.replace()` to scrub, and joining via `str.join()` passing `map()`.
+- Using `re.findall()`/`re.finditer()` to scrub, and `str.join()` with a `generator-expression`.
+- Using `re.sub()` (_using "only" regex_)`
 
 
 ## General Guidance
 
-The goal of the Acronym exercise is to collect the first letters of each word in the input phrase and return them as a single capitalized string (_the acronym_) .
-
-Strings are _immutable_, so any method to produce an acronym will be creating a new `str`.
-
-
-Forming an acronym is most easily done with a direct or indirect loops, although some regex methods can avoid looping constructs altogether.
-
+The goal of the Acronym exercise is to collect the first letters of each word in the input phrase and return them as a single capitalized string (_the acronym_).
 The challenge is to efficiently identify and capitalize the first letters while removing or ignoring non-letter characters such as `'`,`-`,`_`, and white space.
 
+
+There are two idiomatic strategies for non-letter character removal:
+- Python's built-in [`str.replace()`][str-replace].
+- [`re`][re] module, (_regular expressions_).
+
+For all but the most complex scenarios, using `str.replace()` is generally more efficient than using a regex.
+
+Forming the final acronym is most easily done with a direct or indirect loop, after splitting the input into a word list via [`str.split()`][str-split].
+Some `regex` methods can avoid looping altogether, although they can become very non-performant due to backtracking.
+
+Strings are _immutable_, so any method to produce an acronym will be creating and returning a new `str`.
 
 
 ## Approach: scrub with `replace()` and join via `for` loop
@@ -164,11 +171,11 @@ However, these listed approaches cover the majority of 'mainstream' strategies.
 
 ## Which approach to use?
 
-All seven approaches are idiomatic, and show multiple paradigms and possiblities.
+All seven approaches are idiomatic, and show multiple paradigms and possibilities.
 
-The `list-comprehension` approach is the fastest, although `loop`, `map`,  and`reduce`near identical in performance.
+The `list-comprehension` approach is the fastest, although `loop`, `map`,  and `reduce` have near-identical performance for the test data.
 
-The least performant for the input data was using a `generator-expression` , `re.findall` and  `re.sub` (least performant).
+The least performant for the test data was using a `generator-expression`, `re.findall` and  `re.sub` (least performant).
 
 To compare performance of the approaches, take a look at the [Performance article][article-performance].
 
