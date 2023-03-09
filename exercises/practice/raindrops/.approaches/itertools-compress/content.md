@@ -1,0 +1,10 @@
+# itertools.compress
+
+```python
+from itertools import compress
+
+def convert(number):
+    sounds =('Pling','Plang','Plong')
+    mask =  ((number % factor) == 0 for factor in (3,5,7))
+    return ''.join(compress(sounds, mask)) or str(number)
+```

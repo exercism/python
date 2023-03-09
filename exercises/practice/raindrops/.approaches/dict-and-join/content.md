@@ -1,4 +1,4 @@
-# `dict` and `str.join()`
+# Dict and str.join()
 
 ```python
 def convert(number):

@@ -1,0 +1,13 @@
+# Loop and f-string
+
+```python
+def convert(number):
+    sounds = ''
+    drops = ("i", 3), ("a", 5), ("o", 7)
+
+    for vowel, factor in drops:
+        if number % factor == 0:
+            sounds += f'Pl{vowel}ng'
+    
+    return sounds or str(number)
+```
