@@ -9,7 +9,7 @@ If anyone wishes to decipher these, and get at their meaning, he must substitute
 —Suetonius, Life of Julius Caesar
 
 Ciphers are very straight-forward algorithms that allow us to render text less readable while still allowing easy deciphering.
-They are vulnerable to many forms of cryptanalysis, but we are lucky that generally our little sisters are not cryptanalysts.
+They are vulnerable to many forms of cryptanalysis, but Caesar was lucky that his enemies were not cryptanalysts.
 
 The Caesar Cipher was used for some messages from Julius Caesar that were sent afield.
 Now Caesar knew that the cipher wasn't very good, but he had one ally in that respect: almost nobody could read well.
@@ -29,9 +29,9 @@ When "ldpdsdqgdehdu" is put into the decode function it would return the origina
 
 ## Step 2
 
-Shift ciphers are no fun though when your kid sister figures it out.
+Shift ciphers quickly cease to be useful when the opposition commander figures them out.
+So instead, let's try using a substitution cipher.
 Try amending the code to allow us to specify a key and use that for the shift distance.
-This is called a substitution cipher.
 
 Here's an example:
 

@@ -9,9 +9,6 @@ You decide to make things a little more interesting by putting together some fun
 While you can give "partial credit" on exam questions, overall exam scores have to be `int`s.
 So before you can do anything else with the class scores, you need to go through the grades and turn any `float` scores into `int`s. Lucky for you, Python has the built-in [`round()`][round] function you can use.
 
-A score of 75.45 or 75.49 will round to 75. A score of 40.50 will round to 40. A score of 43.50 (_or above_) will round to 44.
-There shouldn't be any scores that have more than two places after the decimal point.
-
 Create the function `round_scores()` that takes a `list` of `student_scores`.
 This function should _consume_ the input `list` and `return` a new list with all the scores converted to `int`s.
 The order of the scores in the resulting `list` is not important.
