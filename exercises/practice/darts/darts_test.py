@@ -20,10 +20,10 @@ class DartsTest(unittest.TestCase):
     def test_on_the_inner_circle(self):
         self.assertEqual(score(0, -1), 10)
 
-    def test_exactly_on_centre(self):
+    def test_exactly_on_center(self):
         self.assertEqual(score(0, 0), 10)
 
-    def test_near_the_centre(self):
+    def test_near_the_center(self):
         self.assertEqual(score(-0.1, -0.1), 10)
 
     def test_just_within_the_inner_circle(self):
