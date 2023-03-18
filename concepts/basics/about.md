@@ -41,7 +41,7 @@ On the Python track, [variables][variables] are always written in [`snake_case`]
 ## Name Assignment (Variables & Constants)
 
 In Python, there are no keywords used in creating variables or constants.
-Instead, programmers can bind [_names_][facts-and-myths-about-python-names] (also called _variables__) to any type of object using the assignment `=` operator: `<name> = <value>`.
+Instead, programmers can bind [_names_][facts-and-myths-about-python-names] (also called _variables_) to any type of object using the assignment `=` operator: `<name> = <value>`.
 A name can be reassigned (or re-bound) to different values (different object types) over its lifetime.
 
 For example, `my_first_variable` can be re-assigned many times using `=`, and can refer to different object types with each re-assignment:

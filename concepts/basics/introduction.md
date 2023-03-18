@@ -12,7 +12,7 @@ Python was created by Guido van Rossum and first released in 1991.
 
 ## Name Assignment (Variables & Constants)
 
-Programmers can bind [_names_][facts-and-myths-about-python-names] (also called _variables__) to any type of object using the assignment `=` operator: `<name> = <value>`.
+Programmers can bind [_names_][facts-and-myths-about-python-names] (also called _variables_) to any type of object using the assignment `=` operator: `<name> = <value>`.
 A name can be reassigned (or re-bound) to different values (different object types) over its lifetime.
 
 
