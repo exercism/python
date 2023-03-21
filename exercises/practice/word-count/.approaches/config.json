@@ -5,7 +5,7 @@
   "approaches": [
     {
       "uuid": "a3dd190d-ff92-4190-b8aa-2b4b46171b46",
-      "slug": "string-iteration-with-dict",
+      "slug": "str-iteration-with-dict",
       "title": "String Iteration with Dictionary",
       "blurb": "Iterate over the sentence to filter out punctuation and sum word counts with a dict.",
       "authors": ["bethanyg"]
