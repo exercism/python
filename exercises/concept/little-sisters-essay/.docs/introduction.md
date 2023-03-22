@@ -24,7 +24,7 @@ There may also be [locale][locale] rules in place for a language or character se
 man_in_hat_th = 'ู้ชายในหมวก'
 man_in_hat_ru = 'mужчина в шляпе'
 man_in_hat_ko = '모자를 쓴 남자'
-main_in_hat_en = 'the man in the hat.'
+man_in_hat_en = 'the man in the hat.'
 
 >>> man_in_hat_th.title()
 'ผู้ชายในหมวก'
@@ -35,7 +35,7 @@ main_in_hat_en = 'the man in the hat.'
 >>> man_in_hat_ko.title()
 '모자를 쓴 남자'
 
->> main_in_hat_en.title()
+>> man_in_hat_en.title()
 'The Man In The Hat.'
 ```
 
