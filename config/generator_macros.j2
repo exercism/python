@@ -1,6 +1,8 @@
 {# Usage: {%- import "generator_macros.j2" as macros -%} #}
 {# {{ macros.linebreak(text) }} #}
 
+import datetime
+
 {%- macro linebreak(s) %}
 {%- set parts = s.split(": ") -%}
 "{{ parts[0] }}: "
@@ -12,6 +14,7 @@
 {% macro canonical_ref() -%}
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/{{ exercise }}/canonical-data.json
+# File last updated on {{ current_date }}
 {%- endmacro %}
 
 {% macro header(imports=[], ignore=[]) -%}

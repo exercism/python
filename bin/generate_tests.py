@@ -393,6 +393,7 @@ def generate(
     env.filters["zip"] = zip
     env.filters["parse_datetime"] = parse_datetime
     env.filters["escape_invalid_escapes"] = escape_invalid_escapes
+    env.globals["current_date"] = datetime.utcnow()
     env.tests["error_case"] = error_case
     result = True
     for exercise in sorted(Path("exercises/practice").glob(exercise_glob)):
