@@ -165,11 +165,11 @@ The [`break`][break statement] (_like in many C-related languages_) keyword can 
 ...       print(f"{word.title()} doesn't start with a B.")
 ... print("loop broken.")
 ...
-'Bird (at index 0) starts with a B.'
-'Chicken doesn\'t start with a B.'
-'Barrel (at index 2) starts with a B.'
-'Bongo (at index 3) starts with a B.'
-'loop broken.'
+"Bird (at index 0) starts with a B."
+"Chicken doesn't start with a B."
+"Barrel (at index 2) starts with a B."
+"Bongo (at index 3) starts with a B."
+"loop broken."
 ```
 
 [for statement]: https://docs.python.org/3/reference/compound_stmts.html#for
