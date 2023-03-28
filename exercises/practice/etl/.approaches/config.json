@@ -20,7 +20,7 @@
     },
     {
       "uuid": "c8de8d53-154c-4f05-ba44-44d8fcd739aa",
-      "slug": "dict-items ",
+      "slug": "dict-items",
       "title": "Iterate over Dictionary Items",
       "blurb": "Use dict.items() for iteration.",
       "authors": ["BethanyG"]
