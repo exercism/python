@@ -19,9 +19,16 @@ def sum_of_multiples(limit, factors):
     return sum(filter(is_multiple, range(limit)))
 ```
 
-Egregious performance when multiples are few.
+Probably the most straightforward way of solving this problem is to
 
-...
+1. look at every individual integer between `0` and `limit`,
+2. check that it is a multiple of any of the given `factors`, and
+3. add it to the sum when it is.
+
+An important advantage of this approach is that it is very easy to understand.
+However, it suffers from potentially performing a lot of unnecessary work, for example when all `factors` are large, or when there are no `factors` at all.
+
+[Read more about this approach][filter-for-multiples].
 
 
 <!-- TODO improve section title -->
@@ -107,3 +114,7 @@ This approach saves on a lot of iteration, but is still vulnerable to excessive 
 Fortunately it can be combined with the generator merging approach.
 
 ...
+
+
+
+[filter-for-multiples]: https://exercism.org/tracks/python/exercises/sum-of-multiples/approaches/filter-for-multiples "Approach: filter for multiples"
