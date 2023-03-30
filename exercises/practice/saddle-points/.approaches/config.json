@@ -1,0 +1,43 @@
+{
+  "introduction": {
+    "authors": ["BethanyG"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "cc52d300-d1b3-48c9-9add-641bf9d1ec27",
+      "slug": "loop-and-append",
+      "title": "Loop and Append to List",
+      "blurb": "Use a series of loops to find maxima, minima and matrix coordinates.",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "452c2a9a-b4cc-4ed4-a6f8-d4b193f887c2",
+      "slug": "list-comprehension-and-nested-loop",
+      "title": "List Comprehensions with Nested Loop",
+      "blurb": "Use List Comprehensions to find maxima and minima and a nested loop for matrix coordinates.",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "d108db8d-d693-4f18-b551-e2a7e519783b",
+      "slug": "list-comprehension-and-nested-list-comprehension",
+      "title": "List Comprehensions with a Nested List Comprehension",
+      "blurb": "Use List Comprehensions to find maxima and minima and a nested comprehension for matrix coordinates",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "be78322f-0620-45ee-8e50-c4daae48addb",
+      "slug": "nested-list-comprehensions-with-coordinates",
+      "title": "Nested List Comprehensions with Coordinates.",
+      "blurb": "Use Nested List Comprehensions to find maxima, minima, and coordinates.",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "6649953d-5895-43cc-9471-a03eb7e78b84",
+      "slug": "nested-set-comprehensions-with-coordinates",
+      "title": "Nested Set Comprehensions with Coordinates.",
+      "blurb": "Use Nested Set Comprehensions to find maxima, minima, and coordinates.",
+      "authors": ["BethanyG"]
+    }
+  ]
+}
