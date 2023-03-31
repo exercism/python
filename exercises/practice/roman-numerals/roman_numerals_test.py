@@ -4,7 +4,6 @@ from roman_numerals import (
     roman,
 )
 
-
 # Tests adapted from `problem-specifications//canonical-data.json`
 class RomanNumeralsTest(unittest.TestCase):
     def test_1_is_i(self):

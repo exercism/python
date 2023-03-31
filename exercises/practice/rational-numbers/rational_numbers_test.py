@@ -9,6 +9,7 @@ from rational_numbers import (
 
 
 class RationalNumbersTest(unittest.TestCase):
+
     # Tests of type: Arithmetic
 
     # Addition

@@ -12,6 +12,7 @@ from robot_simulator import (
 
 
 class RobotSimulatorTest(unittest.TestCase):
+
     # Test create robot
     def test_at_origin_facing_north(self):
         robot = Robot(NORTH, 0, 0)
