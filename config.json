@@ -1441,7 +1441,7 @@
         "slug": "palindrome-products",
         "name": "Palindrome Products",
         "uuid": "fa795dcc-d390-4e98-880c-6e8e638485e3",
-        "practices": ["functions", "function-arguments", "numbers"],
+        "practices": ["functions", "function-arguments"],
         "prerequisites": [
           "basics",
           "bools",
