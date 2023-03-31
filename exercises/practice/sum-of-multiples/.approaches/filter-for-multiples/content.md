@@ -24,21 +24,20 @@ Therefore, Python provides the built-in function [`sum`][builtin-sum].
 A value is iterable whenever it makes sense to use it in a `for` loop like this:
 
 ```python
-for _ in iterable_value:  # 👈
+for element in iterable_value:  # 👈
     ...
 ```
 
 The `list` is the most commonly used iterable data structure.
 Many other containers are also iterable, such as `set`s, `tuple`s, `range`s, and even `dict`s and `str`ings.
-Still other examples include iterators and generators, which are discuss below.
+Still other examples include iterators and generators, which are discussed below.
 
-When given such a collection of numbers, `sum` will look at the elements one by one and add them together.
+When given a collection of numbers, `sum` will look at the elements one by one and add them up.
 The result is a single number.
 
 ```python
 numbers = range(1, 100 + 1)  # 1, 2, …, 100
-sum(numbers)
-# ⟹ 5050
+sum(numbers)  # ⟹ 5050
 ```
 
 Had the highlighted solution not used `sum`, it might have looked like this:
@@ -48,7 +47,7 @@ def sum_of_multiples(limit, factors):
     is_multiple = lambda n: any(n % f == 0 for f in factors if f != 0)
     total = 0
     for multiple in filter(is_multiple, range(limit)):
-        total += total
+        total += multiple
     return total
 ```
 
@@ -74,7 +73,7 @@ str.isupper("⬆️💼")       # ⟹ False
 
 Thus, the function `str.isupper` represents the property of _being an uppercase string_.
 
-Contrary to what you might expect, `filter` does not return a data structure like the one given as an argument:
+Contrary to what you might expect, `filter` does not return a data structure like the one given as the iterable argument:
 
 ```python
 filter(str.isupper, ["THUNDERBOLTS", "and", "LIGHTNING"])
@@ -84,12 +83,21 @@ filter(str.isupper, ["THUNDERBOLTS", "and", "LIGHTNING"])
 Instead, it returns an **iterator**.
 
 An iterator is an object whose sole purpose is to guide iteration through some data structure.
-In particular, `filter` makes sure that elements that do not satisfy the predicate are skipped.
-It is a bit like a cursor that can move only to the right.
+In particular, `filter` makes sure that elements that do not satisfy the predicate are skipped:
+
+```python
+for word in filter(str.isupper, ["THUNDERBOLTS", "and", "LIGHTNING"]):
+    print(word)
+# prints:
+# THUNDERBOLTS
+# LIGHTNING
+```
+
+An iterator is a bit like a cursor that can move only to the right.
 
 The main differences between containers (such as `list`s) and iterators are
 
-- Containers can, depending on their contents, take up a lot of space in memory, but iterators are generally very small (regardless of how many elements they 'contain').
+- Containers can, depending on their contents, take up a lot of space in memory, but iterators are typically very small regardless of how many elements they 'contain'.
 - Containers can be iterated over multiple times, but iterators can be used only once.
 
 To illustrate the latter difference:
@@ -109,10 +117,10 @@ Here, `sum` iterates over both `numbers` and `even_numbers` twice.
 In the case of `numbers` everything is fine.
 Even after looping through the whole of `numbers`, all its elements are still there, and so `sum` can ask to see them again without problem.
 
-The situation with `even_numbers` is move involved.
+The situation with `even_numbers` is less simple.
 To use the _cursor_ analogy: after going through all of `even_number`'s 'elements' &ndash; actually elements of `numbers` &ndash; the cursor has moved all the way to the right.
-It cannot move backwards, so if you wish to iterate over all even numbers then you need a new cursor.
-We say the the `even_numbers` iterator is _exhausted_. When `sum` asks for its elements again, `even_numbers` comes up empty and so `sum` returns `0`.
+It cannot move backwards, so if you wish to iterate over all even numbers again then you need a new cursor.
+We say that the `even_numbers` iterator is _exhausted_. When `sum` asks for its elements again, `even_numbers` comes up empty and so `sum` returns `0`.
 
 Had the highlighted solution not used `filter`, it might have looked like this:
 
@@ -124,14 +132,83 @@ def sum_of_multiples(limit, factors):
 ```
 
 This variant stores all the multiples in a `list` before summing them.
-Such a list can potentially be very big.
-For example, if `limit = 1_000_000_000` and `factors = [1]` then `multiples` will be a list 8 gigabytes large!
+Such a list can become very big.
+For example, if `limit = 1_000_000_000` and `factors = [1]` then `multiples` will take up 8 gigabytes of memory!
 It is to avoid unnecessarily creating such large intermediate data structures that iterators are often used.
 
 
 ### A function expression: `lambda`
 
-...
+Typically, when using higher-order functions like `filter` and `map`, the function to pass as an argument does not yet exist and needs to be defined first.
+
+The standard way of defining functions is through the `def` statement:
+
+```python
+def name(parameters):
+    statements
+```
+
+Downsides of this construct include
+
+- the syntax can be a bit bulky
+- it requires coming up with a fresh name
+
+These qualities can be quite bothersome when you just need a simple function of no particular significance for single use only.
+In situations like this you might like to use a **lambda expression** instead.
+
+A lambda expression is a specific kind of expression that evaluates to a function.
+It looks like this:
+
+```python
+lambda parameters: expression  # general form
+lambda a, b, x: a * x + b      # specific example
+```
+
+This latter lambda expression evaluates to a function that takes three arguments (`a`, `b`, `x`) and returns the value `a * x + b`.
+Except for not having a name, it is equivalent to the function defined by
+
+```python
+def some_name(a, b, x):
+    return a * x + b
+```
+
+A lambda expression need not necessarily be passed as an argument.
+It can also be applied to arguments immediately, or assigned to a variable:
+
+```python
+lambda a, b, x: a * x + b
+# ⟹ <function <lambda> at 0x000001F36A274CC0>
+
+(lambda a, b, x: a * x + b)(2, 3, 5)
+# ⟹ 13
+
+some_function = lambda a, b, x: a * x + b
+some_function(2, 3, 5)
+# ⟹ 13
+
+list(filter(
+    lambda s: len(s) <= 3, 
+    ["aaaa", "b", "ccccc", "dd", "eee"]
+))
+# ⟹ ['b', 'dd', 'eee']
+```
+
+Only functions that can be defined using a single (`return`) statement can be written as a lambda expression.
+If you need multiple statements, you have no choice but to use `def`.
+
+The solution highlighted above assigns a lambda expression to a variable: `is_multiple`.
+Some people consider this to be unidiomatic and feel one should always use `def` when a function is to have a name.
+A lambda expression is used here anyway to demonstrate the feature, and also because the author prefers its compactness.
+
+Had the highlighted solution not used `lambda`, it might have looked like this:
+
+```python
+def sum_of_multiples(limit, factors):
+    def is_multiple(n): 
+        return any(n % f == 0 for f in factors if f != 0)
+
+    return sum(filter(is_multiple, range(limit)))
+```
 
 
 ### Built-in function: `any`
