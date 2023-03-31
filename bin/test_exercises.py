@@ -11,6 +11,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import tomli
 from typing import List
 from data import Config, ExerciseConfig, ExerciseInfo, ExerciseStatus
 
