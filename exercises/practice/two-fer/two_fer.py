@@ -1,2 +1,2 @@
-def two_fer(name):
+def two_fer(*name):
     pass
