@@ -5,6 +5,7 @@ from itertools import chain
 import json
 from pathlib import Path
 from typing import List, Any, Dict, Type
+import tomllib
 
 
 def _custom_dataclass_init(self, *args, **kwargs):
