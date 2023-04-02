@@ -5,7 +5,14 @@ from itertools import chain
 import json
 from pathlib import Path
 from typing import List, Any, Dict, Type
-import tomllib
+
+# Tomli was subsumed into Python 3.11.x, but was renamed to to tomllib.
+# This avoids ci failures for Python < 3.11.2.
+try:
+    import tomllib
+except ModuleNotFoundError:
+    import tomli as tomllib
+
 
 
 def _custom_dataclass_init(self, *args, **kwargs):
