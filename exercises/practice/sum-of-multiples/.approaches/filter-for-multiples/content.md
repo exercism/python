@@ -2,8 +2,10 @@
 
 ```python
 def sum_of_multiples(limit, factors):
-    is_multiple = lambda n: any(n % f == 0 for f in factors if f != 0)
-    return sum(filter(is_multiple, range(limit)))
+    return sum(filter(
+        lambda n: any(n % f == 0 for f in factors if f != 0),
+        range(limit)
+    ))
 ```
 
 Probably the most straightforward way of solving this problem is to
@@ -44,9 +46,11 @@ Had the highlighted solution not used `sum`, it might have looked like this:
 
 ```python
 def sum_of_multiples(limit, factors):
-    is_multiple = lambda n: any(n % f == 0 for f in factors if f != 0)
+    multiples = filter(
+        lambda n: any(n % f == 0 for f in factors if f != 0),
+        range(limit))
     total = 0
-    for multiple in filter(is_multiple, range(limit)):
+    for multiple in multiples:
         total += multiple
     return total
 ```
@@ -103,7 +107,9 @@ The main differences between containers (such as `list`s) and iterators are
 To illustrate the latter difference:
 
 ```python
-is_even = lambda n: n % 2 == 0
+def is_even(n):
+    return n % 2 == 0
+
 numbers = range(20)                      # 0, 1, …, 19
 even_numbers = filter(is_even, numbers)  # 0, 2, …, 18
 sum(numbers)       # ⟹ 190
@@ -126,7 +132,9 @@ Had the highlighted solution not used `filter`, it might have looked like this:
 
 ```python
 def sum_of_multiples(limit, factors):
-    is_multiple = lambda n: any(n % f == 0 for f in factors if f != 0)
+    def is_multiple(n):
+        return any(n % f == 0 for f in factors if f != 0)
+
     multiples = [candidate for candidate in range(limit) if is_multiple(candidate)]
     return sum(multiples)
 ```
@@ -193,12 +201,24 @@ list(filter(
 # ⟹ ['b', 'dd', 'eee']
 ```
 
+~~~~exercism/note
+Immediately applying a lambda expression is possible, but generally pointless:
+
+```python
+# Instead of
+(lambda a, b, x: a * x + b)(2, 3, y)
+# you might as well write
+2 * y + 3
+```
+~~~~
+
+~~~~exercism/caution
+Assigning a lambda expressions to variables is unidiomatic.
+When you want to give a lambda expression a name, use `def` instead.
+~~~~
+
 Only functions that can be defined using a single (`return`) statement can be written as a lambda expression.
 If you need multiple statements, you have no choice but to use `def`.
-
-The solution highlighted above assigns a lambda expression to a variable: `is_multiple`.
-Some people consider this to be unidiomatic and feel one should always use `def` when a function is to have a name.
-A lambda expression is used here anyway to demonstrate the feature, and also because the author prefers its compactness.
 
 Had the highlighted solution not used `lambda`, it might have looked like this:
 

@@ -15,8 +15,10 @@ Several possible approaches to this exercise:
 
 ```python
 def sum_of_multiples(limit, factors):
-    is_multiple = lambda n: any(n % f == 0 for f in factors if f != 0)
-    return sum(filter(is_multiple, range(limit)))
+    return sum(filter(
+        lambda n: any(n % f == 0 for f in factors if f != 0),
+        range(limit)
+    ))
 ```
 
 Probably the most straightforward way of solving this problem is to
