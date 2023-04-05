@@ -21,12 +21,13 @@ Below you will find some additional jumping-off places to start your learning jo
 - [Think Python][Think Python]
 - [Python for Non-Programmers][python-for-non-programmers]
 - [Python 4 Everyone][python4everyone]
-- [Introduction to Computer Science and Programming in Python (MIT)][mitocw600]
 - [Googles Python Class][googles python class]
 - [Microsoft's Python Learning Path][MS Python]
-- [PyCharm EDU **IDE** and **Courses**][pycharm edu] (_paid_)
+- [Introduction to Computer Science and Programming in Python (MIT)][mitocw600]
+- [Harvard CS50P][CS50P]
 
 
+[CS50P]: https://pll.harvard.edu/course/cs50s-introduction-programming-python?delta=0
 [Learn X in Y minutes]: https://learnxinyminutes.com/docs/python3/
 [MS Python]: https://docs.microsoft.com/en-us/learn/paths/python-language/
 [Python Documentation Tutorial]: https://docs.python.org/3/tutorial/index.html

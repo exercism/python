@@ -4,7 +4,7 @@
 <p vertical-align="middle"><h1>Exercism Python Track</h1></p>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Discourse topics](https://img.shields.io/discourse/topics?color=8A08E6&label=Connect%20&labelColor=FFDF58&logo=Discourse&logoColor=8A08E6&server=https%3A%2F%2Fforum.exercism.org&style=social)](https://forum.exercism.org)
-&nbsp;&nbsp;[![Exercism_II](https://img.shields.io/badge/Exercism--Built-9101FF?logo=python&logoColor=FFDF58&labelColor=3D7AAB&label=Python%203.10%20Powered)](https://exercism.org)
+&nbsp;&nbsp;[![Exercism_II](https://img.shields.io/badge/Exercism--Built-9101FF?logo=python&logoColor=FFDF58&labelColor=3D7AAB&label=Python%203.11%20Powered)](https://exercism.org)
 &nbsp;&nbsp;[![Exercism_III](https://img.shields.io/badge/PAUSED-C73D4E?labelColor=3D454D&label=Contributions)](https://exercism.org/blog/freeing-our-maintainers)
 &nbsp; [![Build Status](https://github.com/exercism/python/workflows/Exercises%20check/badge.svg)](https://github.com/exercism/python/actions?query=workflow%3A%22Exercises+check%22)
 
@@ -17,11 +17,13 @@ Hi. &nbsp;👋🏽 &nbsp;👋 &nbsp;**We are happy you are here.**&nbsp; 🎉&nb
 **`exercism/Python`** is one of many programming language tracks on [exercism(dot)org][exercism-website].
 This repo holds all the instructions, tests, code, & support files for Python _exercises_ currently under development or implemented & available for students.
 
-🌟 &nbsp;&nbsp;Track exercises support Python `3.7` - `3.10.6`.
+🌟 &nbsp;&nbsp;Track exercises support Python `3.7` - `3.11.2`.
 Exceptions to this support are noted where they occur.  
- 🌟 &nbsp;&nbsp;Track tooling (_test-runner, representer, analyzer, and Continuous Integration_) runs on Python `3.10.6`.
+🌟 &nbsp;&nbsp;Track tooling (_test-runner, representer, analyzer, and Continuous Integration_) runs on Python `3.11.2`.
 
-Exercises are grouped into **concept** exercises which teach the [Python syllabus][python-syllabus], and **practice** exercises, which are unlocked by progressing in the syllabus tree &nbsp;🌴 &nbsp;. Concept exercises are constrained to a small set of language or syntax features. Practice exercises are open-ended, and can be used to practice concepts learned, try out new techniques, and _play_. These two exercise groupings can be found in the track [config.json][config-json], and under the `python/exercises` directory.
+Exercises are grouped into **concept** exercises which teach the [Python syllabus][python-syllabus], and **practice** exercises, which are unlocked by progressing in the syllabus tree &nbsp;🌴&nbsp;.
+Concept exercises are constrained to a small set of language or syntax features.
+Practice exercises are open-ended, and can be used to practice concepts learned, try out new techniques, and _play_. These two exercise groupings can be found in the track [config.json][config-json], and under the `python/exercises` directory.
 
 <br><br>
 
@@ -43,24 +45,25 @@ It might also be helpful to look at [Being a Good Community Member][being-a-good
 
 We&nbsp;💛&nbsp;💙 &nbsp; our community.  
 **`But our maintainers are not accepting community contributions at this time.`**  
-Please read this [community blog post](https://exercism.org/blog/freeing-our-maintainers) for details.
+Please read this [community blog post][freeing-maintainers] for details.
 
 <br>
-<img align="left" width="95" height="85" src="https://github.com/exercism/website-icons/blob/main/exercises/boutique-suggestions.svg">
+<img align="left" width="95" height="90" src="https://github.com/exercism/website-icons/blob/main/exercises/boutique-suggestions.svg">
 
 Here to suggest a new feature or new exercise?? **Hooray!** &nbsp;🎉 &nbsp;  
-We'd love if you did that via our [Exercism Community Forum](https://forum.exercism.org/). Please keep in mind [Chesterton's Fence][chestertons-fence].  
+We'd love if you did that via our [Exercism Community Forum](https://forum.exercism.org/).  
+Please read [Suggesting Exercise Improvements][suggesting-improvements] & [Chesterton's Fence][chestertons-fence].  
 _Thoughtful suggestions will likely result faster & more enthusiastic responses from volunteers._
 
 <br>
-
 <img align="left" width="85" height="80" src="https://github.com/exercism/website-icons/blob/main/exercises/word-search.svg">
 
 ✨&nbsp;🦄&nbsp; _**Want to jump directly into Exercism specifications & detail?**_  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Structure][exercism-track-structure] **|** [Tasks][exercism-tasks] **|** [Concepts][exercism-concepts] **|** [Concept Exercises][concept-exercises] **|** [Practice Exercises][practice-exercises] **|** [Presentation][exercise-presentation]  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Writing Style Guide][exercism-writing-style] **|** [Markdown Specification][exercism-markdown-specification] (_✨ version in [contributing][website-contributing-section] on exercism.org_)
 
-<br><br>
+<br>
+<br>
 
 ## Python Software and Documentation
 
@@ -94,10 +97,12 @@ This repository uses the [MIT License](/LICENSE).
 [exercism-track-structure]: https://github.com/exercism/docs/tree/main/building/tracks
 [exercism-website]: https://exercism.org/
 [exercism-writing-style]: https://github.com/exercism/docs/blob/main/building/markdown/style-guide.md
+[freeing-maintainers]: https://exercism.org/blog/freeing-our-maintainers
 [practice-exercises]: https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md
 [prs]: https://github.com/exercism/docs/blob/main/community/good-member/pull-requests.md
 [psf-license]: https://docs.python.org/3/license.html#psf-license
 [python-syllabus]: https://exercism.org/tracks/python/concepts
+[suggesting-improvements]: https://github.com/exercism/docs/blob/main/community/good-member/suggesting-exercise-improvements.md
 [the-words-that-we-use]: https://github.com/exercism/docs/blob/main/community/good-member/words.md
 [website-contributing-section]: https://exercism.org/docs/building
 [zero-clause-bsd]: https://docs.python.org/3/license.html#zero-clause-bsd-license-for-code-in-the-python-release-documentation

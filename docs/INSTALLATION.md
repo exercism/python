@@ -7,7 +7,7 @@ Finally, these posts by Brett Cannon [A quick-and-dirty guide][quick-and-dirty] 
 
 **Note for MacOS users:**  prior to MacOS Monterey (12.3), `Python 2.7` came pre-installed with the operating system.
 Using `Python 2.7` with Exercism or most other programs is not recommended.
-You should instead install Python 3 via one of the methods detailed below.
+You should instead install [Python 3][Python-three downloads] via one of the methods detailed below.
 As of MacOS Monterey (12.3), no version of Python will be pre-installed via MacOS.
 
 Some quick links into the documentation by operating system:
@@ -18,12 +18,18 @@ Some quick links into the documentation by operating system:
    We recommend reviewing some of the methods outlined in the Real Python article [Installing Python][installing-python] or the articles by Brett Cannon linked above.
 
 
-Exercism tests and tooling currently support `Python 3.8` (_tests_) and `Python 3.9` (_tooling_).
-This means that the [newest features of Python `3.10`][310-new-features] are **not** currently supported.
-Please refer to the [Python 3.9.x documentation][3.9 docs] for what is currently supported.
+Exercism tests and tooling currently support `3.7` - `3.10.6` (_tests_) and [`Python 3.11`][311-new-features] (_tooling_).
+Exceptions to this support are noted where they occur.
+Most of the exercises will work with `Python 3.6+`, and many are compatible with `Python 2.7+`.
+But we don't guarantee support for versions not listed under [Active Python Releases][active-python-releases].
 
-[3.9 docs]: https://docs.python.org/3.9/
-[310-new-features]: https://docs.python.org/3/whatsnew/3.10.html
+
+Please refer to the [Python 3.11.x documentation][3.11 docs] for what is currently supported.
+
+[3.11 docs]: https://docs.python.org/3.11/
+[311-new-features]: https://docs.python.org/3/whatsnew/3.11.html
+[Python-three downloads]: https://www.python.org/downloads/
+[active-python-releases]: https://www.python.org/downloads/
 [helpful guide]: https://realpython.com/installing-python/
 [installing-python]: https://realpython.com/installing-python/#what-your-options-are_1
 [macos]: https://docs.python.org/3/using/mac.html

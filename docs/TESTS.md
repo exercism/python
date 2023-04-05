@@ -272,5 +272,5 @@ export PATH=”$PATH:{python_directory}}”
 [python command line]: https://docs.python.org/3/using/cmdline.html
 [python-m-pip]: https://snarky.ca/why-you-should-use-python-m-pip/
 [quick-and-dirty]: https://snarky.ca/a-quick-and-dirty-guide-on-how-to-install-packages-for-python/
-[tutorial from pycqa.org]: https://pylint.pycqa.org/en/latest/tutorial.html
+[tutorial from pycqa.org]: https://pylint.pycqa.org/en/v2.17.2/tutorial.html
 [working with custom markers]: https://docs.pytest.org/en/6.2.x/example/markers.html#working-with-custom-markers

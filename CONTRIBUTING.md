@@ -28,14 +28,13 @@ Please read this [community blog post](https://exercism.org/blog/freeing-our-mai
 **`exercism/Python`** is one of many programming language tracks on [exercism(dot)org][exercism-website].  
 This repo holds all the instructions, tests, code, & support files for Python _exercises_ currently under development or implemented & available for students.
 
-🌟 &nbsp;&nbsp;Track exercises support Python `3.7` - `3.10.6`.
+🌟 &nbsp;&nbsp;Track exercises support Python `3.7` - `3.11.2`.
 Exceptions to this support are noted where they occur.  
- 🌟 &nbsp;&nbsp;Track tooling (_test-runner, representer, analyzer, and Continuous Integration_) runs on Python `3.10.6`.
+🌟 &nbsp;&nbsp;Track tooling (_test-runner, representer, analyzer, and Continuous Integration_) runs on Python `3.11.2`.
 
-Exercises are grouped into **concept** exercises which teach the [Python syllabus][python-syllabus], and **practice** exercises, which are unlocked by progressing in the syllabus tree &nbsp;🌴 &nbsp;.  
-Concept exercises are constrained to a small set of language or syntax features.  
-Practice exercises are open-ended, and can be used to practice concepts learned, try out new techniques, and _play_.  
-These two exercise groupings can be found in the track [config.json][config-json], and under the `python/exercises` directory.
+Exercises are grouped into **concept** exercises which teach the [Python syllabus][python-syllabus], and **practice** exercises, which are unlocked by progressing in the syllabus tree &nbsp;🌴&nbsp;.
+Concept exercises are constrained to a small set of language or syntax features.
+Practice exercises are open-ended, and can be used to practice concepts learned, try out new techniques, and _play_. These two exercise groupings can be found in the track [config.json][config-json], and under the `python/exercises` directory.
 
 <br>
 
@@ -430,3 +429,5 @@ configlet generate <path/to/track> --spec-path path/to/problem/specifications
 [version-tagged-language-features]: https://docs.python.org/3/library/stdtypes.html#dict.popitem
 [website-contributing-section]: https://exercism.org/docs/building
 [yapf]: https://github.com/google/yapf
+
+[config-json]: https://github.com/exercism/python/blob/main/config.json
