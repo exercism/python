@@ -1,0 +1,12 @@
+# Use a Dictionary and a Generator Expression
+
+```python
+def score(x_coord, y_coord):
+    length = x_coord**2 + y_coord**2
+    rules = {1.0: 10, 25.0: 5, 100.0: 1, 200: 0}
+    score = max(point for 
+                distance, point in 
+                rules.items() if length <= distance)
+
+    return score
+```
