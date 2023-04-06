@@ -4,15 +4,20 @@ There are many Pythonic ways to solve the Word Count exercise.
 Among them are:
 
 - String iteration with `dict.get()`
-- `str.replace()` for cleaning with:
-  -  `collections.Counter` or  `collections.defaultdict()`
-  -  `dict.get()`or  `dict.setdefault()`
-  - `list-comprehension` with `dictionary-comprehension`
-- Regex (`re`) for cleaning  (using`finditer`, `findall`, or `split`):
-- `str.translate()` with `collections.Counter` and `walrus operator`
-- `filter()` and `collections.Counter`
+- Using `str.replace()` for cleaning with:
+  -  `collections.Counter` or  `collections.defaultdict()` for counting
+  -  `dict.get()` or `dict.setdefault()` for counting
+  - A `list-comprehension` with a `dictionary-comprehension`
+-  Employing regex (_the `re` module_) for cleaning:
+   -  `re.finditer()` with `collections.counter()`,
+   -  `re.findall()` with  `collections.counter()`,
+   -  Or `re.split()` with `collections.counter()`.
+- Using `str.translate()` with `collections.Counter` and a `walrus operator`
+- Combining the built-in `filter()` with `collections.Counter`
 
 Various parts of these strategies can also be combined or re-combined.
+For example, `collections.defaultdict()`, `dict.get()`/`dict.setdefault()`, or a `dictionary-comprehension` can be swapped for `collections.Counter()`, or vice-versa in most, if not all of the solutions.
+Likewise, `str.replace()` can be swapped with regex.
 
 
 ## General guidance
@@ -20,7 +25,7 @@ Various parts of these strategies can also be combined or re-combined.
 
 The goal of the Word Count exercise is to count the number of words used in a given phrase.
 
-Before an accurate count can be done, the phrase needs to be cleaned of non-word characters (punctuation, whitespace, tabs, etc.) and lowercased.
+Before an accurate count can be done, the phrase needs to be cleaned of non-word characters (_punctuation, whitespace, tabs, etc._) and lower-cased.
 
 This can be thought of in three parts:
 
@@ -35,15 +40,16 @@ Most idiomatic solutions use either a chain of  `str.replace()`, or a regex via 
 `str.srtip()` is also very useful for dropping unwanted characters.
 
 For efficiency, it is best to either lowercase the phrase prior to cleaning, or just before splitting.
-Otherwise you risk adding overhead as you call `str.lower()` on individual words.
+Otherwise, you risk adding overhead as you call `str.lower()` on individual words.
 
-To split, `str.split()` or `findall()`| `finditer()`| `split()` from the `re` module are usually the best strategies.
+To split, `str.split()` or `findall()`/`finditer()`/`split()` from the `re` module are usually the best strategies.
 However, it is entirely possible to complete this exercise without splitting the phrase into a word list.
 
 Counting words most often employs the `Counter()` from `collections`, although `collections.defaultdict()`, `dict.get()` , `dict.setdefault()`, or a `dictionary comprehension` work just as well.
 
 
 The temptation here is to go straight to regex, but `str.replace()` and `str.strip()` are surprisingly performant, and also easier to read for those unfamiliar with regex.
+A complex regular expression that involves backtracking can also be much slower than `str.replace()` or `str.translate()`, so regexs should be composed and tested carefully.
 
 
 
@@ -72,13 +78,12 @@ def count_words(sentence):
 
 
 This approach avoids splitting the phrase into a word list by iterating over each _character_ in the sentence to determine if  it belongs in a valid word (_only letters and numbers are allowed_).
-
 As each valid word is built up, it is added to the dictionary.
 
 Using `word_list.get()` allows for setting newly added words to value 1 while incrementing values for words already added to the dictionary.
-
 Once added to the dictionary, the variable `new_word` is reset to empty, ready for the next word.
 
+For more details, see the [String iteration with Dictionary Methods][approach-string-iteration-with-dict] approach.
 
 
 ## Approach: `str.replace()` and `dict.get()` or  `dict.setdefault()`
@@ -107,16 +112,11 @@ def count_words(phrase):
 
 ```
 
-
-
-This approach replaces unwanted characters and lowercases the phrase before splitting it into a word list.
-
+This approach replaces unwanted characters and lower-cases the phrase before splitting it into a word list.
 It then loops through the word list and uses `str.strip()` to remove characters from the IGNORE string.
-
 If there is a word left after the `str.strip()`operation, it is added to the _counts_ dictionary.
 
-
-
+For more information, read the [`str.replace()` with Dictionary Methods][approach-str-replace-with-dict] approach.
 
 
 ## Approach: `str.replace()` and `comprehensions`
@@ -150,15 +150,18 @@ def count_words(phrase):
 ```
 
 
-
 This approach replaces the `for` loop in the previous approach with a `list comprehension`.
-
 The `dictionary comprehension` then processes the words list, calling word.count(word) for each word (key) in the words list.
 
-Note that a `generator expression` cannot be used in this scenario due to the use of `count()` in the dictionary comprehension.
+
+~~~exercism/note
+
+A `generator expression` cannot be used in this scenario due to the use of `count()` in the dictionary comprehension.
+Generator expressions are not indexable, and can only be iterated through once.
+~~~~
 
 
-
+For more information, read the [`str.replace()` with Comprehensions][approach-str-replace-with-comprehensions] approach.
 
 
 ## Approach: `str.replace()` and `collections`
@@ -182,16 +185,13 @@ def count_words(phrase):
 ```
 
 
-
-This approach uses a `generator expression` to lowercase, clean, strip, and split the input phrase into words.
-
-Words is then consumed by the `Counter()` from the collections module, which counts up the words.
-
+This approach uses a `generator expression` to lower-case, clean, strip, and split the input phrase into words.
+The words generator is then consumed by `collections.Counter()`, which counts up the words.
 For convenience, `string.punctuation`  `string.whitespace` are imported to replace '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\r\x0b\x0c'.
 
 
+Alternatively, `collections.defaultdict()` can be used in place of `Counter()`, but requires that the generator be iterated through in an explicit loop:
 
-Alternatively, `collections.defaultdict()` can be used, but requires that the words generator  be iterated through in an explicit  loop:
 
 ```python
 from string import punctuation, whitespace
@@ -214,10 +214,7 @@ def count_words(phrase):
     return counts
 ```
 
-
-
-This a
-
+For details on these two approaches, see the [`str.replace()` with collections][approach-str-replace-with-collections] approach.
 
 
 ## Approach:  Using the `re` module
@@ -237,9 +234,6 @@ def count_words(phrase):
 ```
 
 
-
-
-
 ```python
 import re
 from collections import Counter
@@ -249,8 +243,6 @@ def count_words(phrase):
   conditions = re.compile(r"[a-z0-9]+(?:'[a-z]+)?")
   return Counter(conditions.findall(phrase.lower()))
 ```
-
-
 
 
 
@@ -268,20 +260,17 @@ def count_words(sentence):
 ```
 
 
+Regular Expressions have an almost endless variety.
+This approach shows several different regular expression in combination with several different `re` module methods.
 
-There are many variations that can be used in a regular expressions.
+1.  `re.finditer()` to return a lazy iterator that is then fed to `collections.Counter()`.
+2.  `re.findall()`to return a list that is fed to `collections.Counter()`
+3.  `re.sub()` and `re.split()`to return a generator that is fed to `collections.Counter()`.
 
-This approach shows several different regexs, in combination with several different `re` methods.
-
-The first variation uses `re.findite()` to return a lazy iterator that is then fed to `collections.Counter`.
-
-The second variation uses `re.findall()`to return a list that is fed to `collections.Counter`
-
-The final variation uses `re.sub()` and `re.split()`to return a generator that is fed to `collections.Counter`.
+For all the details on these variations, take a look at the [Using the `re` Module][approach-using-the-re-module] approach.
 
 
-
-## Approach:  `str.translate()`with `collections.Counter()`
+## Approach:  `str.translate()` with `collections.Counter()`
 
 
 
@@ -298,12 +287,13 @@ def count_words(phrase):
 ```
 
 
-
-This approach (somewhat unusually) uses `str.translate()` to filter out unwanted characters.
-
+This approach uses  (the somewhat unusual) `str.translate()` to filter out unwanted characters.
 `collections.Counter` is then used to count the words.
 
+
 The generator expression uses an assignment operator (_othewise know as the "walrus" operator `:=`_) to ensure that empty strings are excluded from the count.
+
+For more details, see the [Using `str.translate()` with `collections.counter()`][approach-str-translate-with-counter] approach.
 
 
 
@@ -311,7 +301,7 @@ The generator expression uses an assignment operator (_othewise know as the "wal
 
 
 
-```pyth
+```python
 from collections import Counter
 import string
 
@@ -326,43 +316,27 @@ def count_words(sentence):
     return Counter(words)
 ```
 
-
-
-
-
-This approach uses the built-in `filter()` to clean the phrase and `collections.Counter` to count the words.
-
+This approach uses the built-in `filter()` to clean the phrase and `collections.Counter()` to count the words.
 Filter is fed the same general generator expression that uses `str.replace()`, `str.lower()`, and `str.split()` seen in other approaches.
 
 
-
-For more information, see the [Filter with ]
-
-
-
+For more information, read the [Filter with `collections.Counter()`][approach-filter-with-counter] approach.
 
 
 ## Which approach to use?
 
 
-
 The most performant of these approaches is __ for longer text, and __ for smaller text.  Memory-wise, ___ has the lease overhead.
 
-Overall, using `str.replace()` with a `Counter` or `dict` might be the most readable to those unfamiliar with regex, and iterating through the string might be more readable to those not familiar with Python.
-
-
+Overall, using `str.replace()` with a `collections.Counter()` or `dict` might be the most readable to those unfamiliar with regex, and iterating through the string might be more readable to those not familiar with Python.
 
 To compare the performance and other tradeoffs of the approaches, take a look at the [Performance article][article-performance].
 
-
-
-
-
-[approach-string-iteration-with-dict]:  https://exercism.org/tracks/python/exercises/word-count/approaches/string-iteration-with-dict
-[approach-str-replace-with-dict]:  https://exercism.org/tracks/python/exercises/word-count/approaches/str-replace-with-dict
-[approach-str-replace-with-comprehensions]:  https://exercism.org/tracks/python/exercises/word-count/approaches/str-replace-with-comprehensions
-[approach-str-replace-with-collections]:  https://exercism.org/tracks/python/exercises/word-count/approaches/str-replace-with-collections
-[approach-using-the-re-module]:  https://exercism.org/tracks/python/exercises/word-count/approaches/using-the-re-module
-[approach-str-translate-with-counter]:  https://exercism.org/tracks/python/exercises/word-count/approaches/str-translate-with-counter
 [approach-filter-with-counter]:  https://exercism.org/tracks/python/exercises/word-count/approaches/filter-with-counter
+[approach-str-replace-with-collections]:  https://exercism.org/tracks/python/exercises/word-count/approaches/str-replace-with-collections
+[approach-str-replace-with-comprehensions]:  https://exercism.org/tracks/python/exercises/word-count/approaches/str-replace-with-comprehensions
+[approach-str-replace-with-dict]:  https://exercism.org/tracks/python/exercises/word-count/approaches/str-replace-with-dict
+[approach-str-translate-with-counter]:  https://exercism.org/tracks/python/exercises/word-count/approaches/str-translate-with-counter
+[approach-string-iteration-with-dict]:  https://exercism.org/tracks/python/exercises/word-count/approaches/string-iteration-with-dict
+[approach-using-the-re-module]:  https://exercism.org/tracks/python/exercises/word-count/approaches/using-the-re-module
 [article-performance]:https://exercism.org/tracks/python/exercises/word-count/articles/performance
