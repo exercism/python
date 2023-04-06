@@ -9,9 +9,9 @@ ALL_26_BITS_SET = 67108863
 def is_pangram(sentence):
     letter_flags = 0
     for letter in sentence:
-        if letter >= 'a' and letter <= 'z':
+        if 'a' <= letter <= 'z':
             letter_flags |= 1 << ord(letter) - A_LCASE
-        elif letter >= 'A' and letter <= 'Z':
+        elif 'A' <= letter <= 'Z':
             letter_flags |= 1 << ord(letter) - A_UCASE
     return letter_flags == ALL_26_BITS_SET
 
