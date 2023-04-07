@@ -6,7 +6,7 @@
       "input": {
         "list": ["e", "x", "e", "r", "c", "i", "s", "m"],
         "initial": "!",
-        "function": "(x, y) -> x + y"
+        "function": "(acc, el) -> el + acc"
       },
       "expected": "exercism!"
     },
