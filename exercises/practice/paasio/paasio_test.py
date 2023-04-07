@@ -199,13 +199,13 @@ class PaasioTest(unittest.TestCase):
             self.assertEqual(282, socket.send_bytes)
             self.assertEqual(258, socket.recv_ops)
             self.assertEqual(259, socket.recv_bytes)
-            with self.assertRaisesRegex(AttributeError, "can't set"):
+            with self.assertRaises(AttributeError, msg="property 'send_ops' of 'MeteredSocket' object has no setter"):
                 socket.send_ops = 0
-            with self.assertRaisesRegex(AttributeError, "can't set"):
+            with self.assertRaises(AttributeError, msg="property 'send_bytes' of 'MeteredSocket' object has no setter"):
                 socket.send_bytes = 0
-            with self.assertRaisesRegex(AttributeError, "can't set"):
+            with self.assertRaises(AttributeError, msg="property 'recv_ops' of 'MeteredSocket' object has no setter"):
                 socket.recv_ops = 0
-            with self.assertRaisesRegex(AttributeError, "can't set"):
+            with self.assertRaises(AttributeError, msg="property 'recv_bytes' of 'MeteredSocket' object has no setter"):
                 socket.recv_bytes = 0
             self.assertEqual(278, socket.send_ops)
             self.assertEqual(282, socket.send_bytes)
@@ -426,19 +426,15 @@ class PaasioTest(unittest.TestCase):
             file.write(b"bytes")
             self.assertEqual(78, file.write_ops)
             self.assertEqual(82, file.write_bytes)
-            with self.assertRaisesRegex(AttributeError, "can't set"):
+            with self.assertRaises(AttributeError, msg="property 'write_ops' of 'MeteredFile' object has no setter"):
                 file.write_ops = 0
-            with self.assertRaisesRegex(AttributeError, "can't set"):
+            with self.assertRaises(AttributeError, msg="property 'write_bytes' of 'MeteredFile' object has no setter"):
                 file.write_bytes = 0
-            with self.assertRaisesRegex(AttributeError, "can't set"):
+            with self.assertRaises(AttributeError, msg="property 'read_ops' of 'MeteredFile' object has no setter"):
                 file.read_ops = 0
-            with self.assertRaisesRegex(AttributeError, "can't set"):
+            with self.assertRaises(AttributeError, msg="property 'read_bytes' of 'MeteredFile' object has no setter"):
                 file.read_bytes = 0
             self.assertEqual(78, file.write_ops)
             self.assertEqual(82, file.write_bytes)
             self.assertEqual(58, file.read_ops)
             self.assertEqual(59, file.read_bytes)
-
-
-if __name__ == "__main__":
-    unittest.main()

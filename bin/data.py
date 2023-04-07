@@ -4,8 +4,15 @@ import dataclasses
 from itertools import chain
 import json
 from pathlib import Path
-import tomli
 from typing import List, Any, Dict, Type
+
+# Tomli was subsumed into Python 3.11.x, but was renamed to to tomllib.
+# This avoids ci failures for Python < 3.11.2.
+try:
+    import tomllib
+except ModuleNotFoundError:
+    import tomli as tomllib
+
 
 
 def _custom_dataclass_init(self, *args, **kwargs):
@@ -355,7 +362,7 @@ class TestsTOML:
     @classmethod
     def load(cls, toml_path: Path):
         with toml_path.open("rb") as f:
-            data = tomli.load(f)
+            data = tomllib.load(f)
         return cls({uuid: TestCaseTOML(uuid, *opts) for
                     uuid, opts in
                     data.items() if

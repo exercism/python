@@ -34,10 +34,16 @@ import shutil
 from itertools import repeat
 from string import punctuation, whitespace
 from subprocess import check_call
-import tomli
 from tempfile import NamedTemporaryFile
 from textwrap import wrap
 from typing import Any, Dict, List, NoReturn, Union
+
+# Tomli was subsumed into Python 3.11.x, but was renamed to to tomllib.
+# This avoids ci failures for Python < 3.11.2.
+try:
+    import tomllib
+except ModuleNotFoundError:
+    import tomli as tomllib
 
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound, UndefinedError
 from dateutil.parser import parse
