@@ -1,7 +1,8 @@
 # Exercism Python Track Test Generator
 
-The Python track uses a generator script and [Jinja2] templates for
-creating test files from the canonical data.
+The Python track uses a generator script and [Jinja2][Jinja2] templates for
+creating test files from Exercism's  [canonical data][canonical data].
+
 
 ## Table of Contents
 
@@ -15,13 +16,15 @@ creating test files from the canonical data.
   * [Learning Jinja](#learning-jinja)
   * [Creating a templates](#creating-a-templates)
 
+
 ## Script Usage
 
-Test generation requires a local copy of the [problem-specifications] repository.
+Test generation requires a local copy of the [problem-specifications][problem-specifications] repository.
 The script should be run from the root `python` directory, in order to correctly
 access the exercises.
 
 Run `bin/generate_tests.py --help` for usage information.
+
 
 ## Test Templates
 
@@ -41,6 +44,7 @@ Additionally, the following template filters are added for convenience:
 - `camel_case`: Converts a string to CamelCase (ex: `{{ "snake_case_string" | camel_case }}` -> `SnakeCaseString` )
 - `error_case`: Checks if a test case expects an error to be thrown (ex: `{% for case in cases%}{% if case is error_case}`)
 - `regex_replace`: Regex string replacement (ex: `{{ "abc123" | regex_replace("\\d", "D") }}` -> `abcDDD`)
+
 
 ### Conventions
 
@@ -63,6 +67,7 @@ files.
 # Additional tests for this track
 ```
 
+
 ### Layout
 
 Most templates will look something like this:
@@ -83,6 +88,7 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
 {{ macros.footer() }}
 ```
 
+
 ### Overriding Imports
 
 The names imported in `macros.header()` may be overridden by adding
@@ -91,6 +97,7 @@ a list of alternate names to import (ex:`clock`):
 ```Jinja2
 {{ macros.header(["Clock"])}}
 ```
+
 
 ### Ignoring Properties
 
@@ -101,6 +108,7 @@ are not tested in this track. The `header` macro also accepts an
 ```Jinja2
 {{ macros.header(ignore=["scores"]) }}
 ```
+
 
 ## Learning Jinja
 
@@ -127,8 +135,9 @@ Additional Resources:
 
 
 
+[Jinja Documentation]: https://jinja.palletsprojects.com/en/3.1.x/
 [Jinja2]: https://palletsprojects.com/p/jinja/
-[Jinja Documentation]: https://jinja.palletsprojects.com/en/2.10.x/
 [Primer on Jinja Templating]: https://realpython.com/primer-on-jinja-templating/
 [Python Jinja tutorial]: http://zetcode.com/python/jinja/
+[canonical data]: https://github.com/exercism/problem-specifications/tree/main/exercises
 [problem-specifications]: https://github.com/exercism/problem-specifications
