@@ -1,19 +1,8 @@
 # Instructions
 
-We are going to do the `Transform` step of an Extract-Transform-Load.
+Your task is to change the data format of letters and their point values in the game.
 
-## ETL
-
-Extract-Transform-Load (ETL) is a fancy way of saying, "We have some crufty, legacy data over in this system, and now we need it in this shiny new system over here, so we're going to migrate this."
-
-(Typically, this is followed by, "We're only going to need to run this once."
-That's then typically followed by much forehead slapping and moaning about how stupid we could possibly be.)
-
-## The goal
-
-We're going to extract some Scrabble scores from a legacy system.
-
-The old system stored a list of letters per score:
+Currently, letters are stored in groups based on their score, in a one-to-many mapping.
 
 - 1 point: "A", "E", "I", "O", "U", "L", "N", "R", "S", "T",
 - 2 points: "D", "G",
@@ -23,18 +12,16 @@ The old system stored a list of letters per score:
 - 8 points: "J", "X",
 - 10 points: "Q", "Z",
 
-The shiny new Scrabble system instead stores the score per letter, which makes it much faster and easier to calculate the score for a word.
-It also stores the letters in lower-case regardless of the case of the input letters:
+This needs to be changed to store each individual letter with its score in a one-to-one mapping.
 
 - "a" is worth 1 point.
 - "b" is worth 3 points.
 - "c" is worth 3 points.
 - "d" is worth 2 points.
-- Etc.
+- etc.
 
-Your mission, should you choose to accept it, is to transform the legacy data format to the shiny new format.
+As part of this change, the team has also decided to change the letters to be lower-case rather than upper-case.
 
-## Notes
-
-A final note about scoring, Scrabble is played around the world in a variety of languages, each with its own unique scoring table.
-For example, an "E" is scored at 2 in the Māori-language version of the game while being scored at 4 in the Hawaiian-language version.
+~~~~exercism/note
+If you want to look at how the data was previously structured and how it needs to change, take a look at the examples in the test suite.
+~~~~
