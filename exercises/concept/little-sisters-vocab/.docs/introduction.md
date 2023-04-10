@@ -36,13 +36,13 @@ Strings can be concatenated using the `+` operator.
 ```python
 language = "Ukrainian"
 number = "nine"
-word = "девять"
+word = "дев'ять"
 
 sentence = word + " " + "means" + " " + number + " in " + language + "."
 
 >>> print(sentence)
 ...
-"девять means nine in Ukrainian."
+"дев'ять means nine in Ukrainian."
 ```
 
 If a `list`, `tuple`, `set` or other collection of individual strings needs to be combined into a single `str`, [`<str>.join(<iterable>)`][str-join], is a better option:
