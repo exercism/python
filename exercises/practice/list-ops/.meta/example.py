@@ -29,7 +29,7 @@ def foldr(function, list, initial):
     if len(list) == 0:
         return initial
     else:
-        return function(foldr(function, list[1:], initial), list[0])
+        return function(list[0], foldr(function, list[1:], initial))
 
 
 def reverse(list):
