@@ -14,7 +14,6 @@ The energy points are awarded according to the following rules:
 3. Remove any duplicates.
 4. Calculate the sum of all the numbers that are left.  
 
-
 Let's look at an example:
 
 **The player completed level 20 and found two magical items with base values of 3 and 5.**
