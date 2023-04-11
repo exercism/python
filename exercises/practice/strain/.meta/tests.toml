@@ -1,0 +1,66 @@
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
+
+[26af8c32-ba6a-4eb3-aa0a-ebd8f136e003]
+description = "keep on empty list returns empty list"
+include = false
+
+[f535cb4d-e99b-472a-bd52-9fa0ffccf454]
+description = "keeps everything"
+include = false
+
+[950b8e8e-f628-42a8-85e2-9b30f09cde38]
+description = "keeps nothing"
+include = false
+
+[92694259-6e76-470c-af87-156bdf75018a]
+description = "keeps first and last"
+include = false
+
+[938f7867-bfc7-449e-a21b-7b00cbb56994]
+description = "keeps neither first nor last"
+include = false
+
+[8908e351-4437-4d2b-a0f7-770811e48816]
+description = "keeps strings"
+include = false
+
+[2728036b-102a-4f1e-a3ef-eac6160d876a]
+description = "keeps lists"
+include = false
+
+[ef16beb9-8d84-451a-996a-14e80607fce6]
+description = "discard on empty list returns empty list"
+include = false
+
+[2f42f9bc-8e06-4afe-a222-051b5d8cd12a]
+description = "discards everything"
+include = false
+
+[ca990fdd-08c2-4f95-aa50-e0f5e1d6802b]
+description = "discards nothing"
+include = false
+
+[71595dae-d283-48ca-a52b-45fa96819d2f]
+description = "discards first and last"
+include = false
+
+[ae141f79-f86d-4567-b407-919eaca0f3dd]
+description = "discards neither first nor last"
+include = false
+
+[daf25b36-a59f-4f29-bcfe-302eb4e43609]
+description = "discards strings"
+include = false
+
+[a38d03f9-95ad-4459-80d1-48e937e4acaf]
+description = "discards lists"
+include = false
