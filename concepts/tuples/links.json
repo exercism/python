@@ -16,8 +16,8 @@
     "description": "Lists vs Tuples"
   },
   {
-    "url": "http://e-scribe.com/post/understanding-tuples-vs-lists-in-python/",
-    "description": "Understanding tuples vs lists in Python"
+    "url": "https://stackoverflow.com/a/626871",
+    "description": "What's the difference between lists and tuples?"
   },
   {
     "url": "https://jtauber.com/blog/2006/04/15/python_tuples_are_not_just_constant_lists/",
