@@ -35,9 +35,7 @@
             {{ lambdify(input["function"]) }}, {{ input["list"] }}
     {%- elif case["property"] == "length" or case["property"] == "reverse" -%}
             {{ input["list"] }}
-    {%- elif case["property"] == "foldl" -%}
-            {{ lambdify(input["function"]) }}, {{ input["list"] }}, {{ stringify(input["initial"]) }}
-    {%- elif case["property"] == "foldr" -%}
+    {%- elif case["property"] == "foldl" or case["property"] == "foldr" -%}
             {{ lambdify(swap_args(input["function"])) }}, {{ input["list"] }}, {{ stringify(input["initial"]) }}
     {%- endif -%}
             ),

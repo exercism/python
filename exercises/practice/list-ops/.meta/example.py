@@ -22,7 +22,7 @@ def foldl(function, list, initial):
     if len(list) == 0:
         return initial
     else:
-        return foldl(function, list[1:], function(initial, list[0]))
+        return foldl(function, list[1:], function(list[0], initial))
 
 
 def foldr(function, list, initial):
