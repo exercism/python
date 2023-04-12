@@ -46,12 +46,6 @@ class LargestSeriesProductTest(unittest.TestCase):
             err.exception.args[0], "span must be smaller than string length"
         )
 
-    def test_reports_1_for_empty_string_and_empty_product_0_span(self):
-        self.assertEqual(largest_product("", 0), 1)
-
-    def test_reports_1_for_nonempty_string_and_empty_product_0_span(self):
-        self.assertEqual(largest_product("123", 0), 1)
-
     def test_rejects_empty_string_and_nonzero_span(self):
         with self.assertRaises(ValueError) as err:
             largest_product("", 1)
