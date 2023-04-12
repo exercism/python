@@ -1,6 +1,6 @@
 # Instructions
 
-Given a DNA strand, return its RNA complement (per RNA transcription).
+Your task is determine the RNA complement of a given DNA sequence.
 
 Both DNA and RNA strands are a sequence of nucleotides.
 
@@ -14,3 +14,7 @@ Given a DNA strand, its transcribed RNA strand is formed by replacing each nucle
 - `C` -> `G`
 - `T` -> `A`
 - `A` -> `U`
+
+~~~~exercism/note
+If you want to look at how the inputs and outputs are structured, take a look at the examples in the test suite.
+~~~~
