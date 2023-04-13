@@ -1,5 +1,6 @@
 {%- import "generator_macros.j2" as macros with context -%}
 {% macro swap_args(function) -%}
+    {# Args are swapped to use Rust's fold tradition where it calls func(el, acc) and not func(acc, el) #}
     {% set function = function.replace("(acc, el)", "(el, acc)") %}
     {% set function = function.replace("(x, y)", "(y, x)") %}
     {{function}}
