@@ -1,11 +1,4 @@
 {%- import "generator_macros.j2" as macros with context -%}
-{% macro swap_args(function) -%}
-    {# Args are swapped to use Rust's fold tradition where it calls func(el, acc) and not func(acc, el) #}
-    {% set function = function.replace("(acc, el)", "(el, acc)") %}
-    {% set function = function.replace("(x, y)", "(y, x)") %}
-    {{function}}
-{%- endmacro %}
-
 {% macro lambdify(function) -%}
     {% set function = function.replace("(", "", 1).replace(")", "", 1).replace(" ->", ":") %}
     {% set function = function.replace("modulo", "%") %}
@@ -37,7 +30,7 @@
     {%- elif case["property"] == "length" or case["property"] == "reverse" -%}
             {{ input["list"] }}
     {%- elif case["property"] == "foldl" or case["property"] == "foldr" -%}
-            {{ lambdify(swap_args(input["function"])) }}, {{ input["list"] }}, {{ stringify(input["initial"]) }}
+            {{ lambdify(input["function"]) }}, {{ input["list"] }}, {{ stringify(input["initial"]) }}
     {%- endif -%}
             ),
             {{ stringify(case["expected"]) }}
