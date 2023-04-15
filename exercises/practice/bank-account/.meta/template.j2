@@ -3,47 +3,49 @@
     def test_{{ case["description"] | to_snake }}(self):
         account = BankAccount()
         {%- set inputs = case["input"]["operations"] -%}
-        {%- if case["expected"] -%}
+        {%- if case["expected"]["error"] -%}
             {%- set error_case = true -%}
             {%- set error_msg =  case["expected"]["error"] -%}
             {%- set error_operation = inputs[-1]["operation"] -%}
-            {%- set final_value = inputs[-1]["value"] -%}
-        {% endif %}
-        {%- if case["expected"] and inputs|length > 1 -%}
+            {%- set final_value = inputs[-1]["amount"] -%}
             {%- set inputs = inputs[:-1] -%}
-        {%- elif case["expected"]  -%}
-            {%- set inputs = [] -%}
-        {%- endif -%}
+        {% endif %}
         {%- for input in inputs -%}
             {%- set operation = input["operation"] -%}
-            {%- set value = input["value"] -%}
-            {%- set expected = input["expected"] %}
+            {%- set value = input["amount"] -%}
+            {%- set expected = case["expected"] %}
             {%- if operation and value %}
         account.{{ operation }}({{ value }})
-            {%- elif operation == "amount" %}
+            {%- elif not value and operation %}
+                {%- if not error_case and operation == "balance" %}
         self.assertEqual(account.get_balance(), {{ expected }})
-            {%- elif operation and not value %}
+                {%- else  %}
         account.{{ operation }}()
-        {%- endif  %}
-    {%- endfor %}
-    {%- if error_case %}
+                {%- endif  %}
+            {%- endif  %}
+        {%- endfor %}
+        {%- if error_case %}
         with self.assertRaises(ValueError) as err:
+            {%- if error_operation == "balance" %}
+            account.get_balance({{ final_value if final_value else "" }})
+            {%- else  %}
             account.{{ error_operation }}({{ final_value if final_value else "" }})
+            {%- endif  %}
         self.assertEqual(type(err.exception), ValueError)
         self.assertEqual(err.exception.args[0], "{{ error_msg }}")
-    {%- endif  %}
+            {%- endif  %}
 {% endmacro %}
 
 {{ macros.header(["BankAccount"]) }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
-    {{ test_case(case) }}
+        {{ test_case(case) }}
     {% endfor %}
     {% if additional_cases | length -%}
 
-    # Additional tests for this track
-    {% for case in additional_cases -%}
-    {{ test_case(case) }}
-    {% endfor %}
+        # Additional tests for this track
+        {% for case in additional_cases -%}
+            {{ test_case(case) }}
+        {% endfor %}
     {%- endif %}

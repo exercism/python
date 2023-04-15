@@ -1,43 +1,62 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [983a1528-4ceb-45e5-8257-8ce01aceb5ed]
-description = "encode yes"
+description = "Newly opened account has zero balance"
 
 [e88d4ec3-c6bf-4752-8e59-5046c44e3ba7]
-description = "encode no"
+description = "Single deposit"
+
+[3d9147d4-63f4-4844-8d2b-1fee2e9a2a0d]
+description = "Multiple deposits"
 
 [08f1af07-27ae-4b38-aa19-770bde558064]
-description = "encode OMG"
+description = "Withdraw once"
 
 [6f6d242f-8c31-4ac6-8995-a90d42cad59f]
-description = "encode spaces"
+description = "Withdraw twice"
+
+[45161c94-a094-4c77-9cec-998b70429bda]
+description = "Can do multiple operations sequentially"
 
 [f9facfaa-d824-486e-8381-48832c4bbffd]
-description = "encode mindblowingly"
+description = "Cannot check balance of closed account"
 
 [7a65ba52-e35c-4fd2-8159-bda2bde6e59c]
-description = "encode numbers"
+description = "Cannot deposit into closed account"
+
+[a0a1835d-faae-4ad4-a6f3-1fcc2121380b]
+description = "Cannot deposit into unopened account"
 
 [570dfaa5-0532-4c1f-a7d3-0f65c3265608]
-description = "encode deep thought"
+description = "Cannot withdraw from closed account"
 
 [c396d233-1c49-4272-98dc-7f502dbb9470]
-description = "encode all the letters"
+description = "Cannot close an account that was not opened"
 
 [c06f534f-bdc2-4a02-a388-1063400684de]
-description = "decode exercism"
+description = "Cannot open an already opened account"
 
 [0722d404-6116-4f92-ba3b-da7f88f1669c]
-description = "decode a sentence"
+description = "Reopened account does not retain balance"
 
 [ec42245f-9361-4341-8231-a22e8d19c52f]
-description = "decode numbers"
+description = "Cannot withdraw more than deposited"
 
 [4f381ef8-10ef-4507-8e1d-0631ecc8ee72]
-description = "decode all the letters"
+description = "Cannot withdraw negative"
 
 [d45df9ea-1db0-47f3-b18c-d365db49d938]
-description = "decode with too many spaces"
+description = "Cannot deposit negative"
 
+[ba0c1e0b-0f00-416f-8097-a7dfc97871ff]
+description = "Can handle concurrent transactions"
+include = false
