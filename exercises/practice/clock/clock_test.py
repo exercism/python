@@ -177,7 +177,3 @@ class ClockTest(unittest.TestCase):
 
     def test_full_clock_and_zeroed_clock(self):
         self.assertEqual(Clock(24, 0), Clock(0, 0))
-
-
-if __name__ == "__main__":
-    unittest.main()
