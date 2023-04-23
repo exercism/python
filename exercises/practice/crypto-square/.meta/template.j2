@@ -9,5 +9,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         self.assertEqual(cipher_text(value), expected)
 
     {% endfor %}
-
-{{ macros.footer() }}

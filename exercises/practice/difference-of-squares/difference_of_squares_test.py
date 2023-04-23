@@ -36,7 +36,3 @@ class DifferenceOfSquaresTest(unittest.TestCase):
 
     def test_difference_of_squares_100(self):
         self.assertEqual(difference_of_squares(100), 25164150)
-
-
-if __name__ == "__main__":
-    unittest.main()
