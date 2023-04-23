@@ -105,7 +105,15 @@ Just the place for a Snark! I have said it thrice:
 >>> quote.replace('Snark', '🐲')
 ...
 '''
-"Just the place for a 🐲!" the Bellman cried,\n   As he landed his crew with care;\nSupporting each man on the top of the tide\n   By a finger entwined in his hair.\n\n"Just the place for a 🐲! I have said it twice:\n   That alone should encourage the crew.\nJust the place for a 🐲! I have said it thrice:\n   What I tell you three times is true."
+"Just the place for a 🐲!" the Bellman cried,   
+   As he landed his crew with care;
+Supporting each man on the top of the tide
+   By a finger entwined in his hair.
+
+"Just the place for a 🐲! I have said it twice:
+   That alone should encourage the crew.
+Just the place for a 🐲! I have said it thrice:
+   What I tell you three times is true."
 '''
 
 >>> 'bookkeeper'.replace('kk', 'k k')
