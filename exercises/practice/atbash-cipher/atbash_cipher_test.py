@@ -61,7 +61,3 @@ class AtbashCipherTest(unittest.TestCase):
         self.assertEqual(
             decode("zmlyhgzxovrhlugvmzhgvkkrmthglmv"), "anobstacleisoftenasteppingstone"
         )
-
-
-if __name__ == "__main__":
-    unittest.main()
