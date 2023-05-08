@@ -1,0 +1,8 @@
+YACHT = 'YACHT'
+CHOICE = 'CHOICE'
+def score(dice, category):
+    if category == 'ONES':
+        ...
+    elif category == 'FULL_HOUSE':
+        ...
+    return 0
