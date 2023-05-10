@@ -29,22 +29,23 @@ def score(dice, category):
     elif category == 'SIXES':
         return dice.count(6) * 6
     elif category == 'FULL_HOUSE':
-        for i in dice:
-            for j in dice:
-                if dice.count(i) == 3 and dice.count(j) == 2:
-                    return i * 3 + j * 2
+        for n1 in dice:
+            for n2 in dice:
+                if dice.count(n1) == 3 and dice.count(n2) == 2:
+                    return n1 * 3 + n2 * 2
     elif category == 'FOUR_OF_A_KIND':
-        for j in dice:
-            if dice.count(j) >= 4:
-                return j * 4
+        for num in dice:
+            if dice.count(num) >= 4:
+                return num * 4
     elif category == 'LITTLE_STRAIGHT':
+        # A long but alternative way
         if dice.count(1) == 1 and dice.count(2) == 1 and dice.count(3) == 1 and dice.count(4) == 1 and dice.count(5) == 1:
             return 30
     elif category == 'BIG_STRAIGHT':
         if dice.count(6) == 1 and dice.count(2) == 1 and dice.count(3) == 1 and dice.count(4) == 1 and dice.count(5) == 1:
             return 30
     elif category == 'YACHT':
-        if all(i == dice[0] for i in dice):
+        if all(num == dice[0] for num in dice):
             return 50
     elif category == 'CHOICE':
         return sum(dice)
