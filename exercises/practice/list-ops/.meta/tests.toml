@@ -71,7 +71,6 @@ reimplements = "e56df3eb-9405-416a-b13a-aabb4c3b5194"
 [d7fcad99-e88e-40e1-a539-4c519681f390]
 description = "folds (reduces) the given list from the left with a function -> direction dependent function applied to non-empty list"
 reimplements = "d2cf5644-aee1-4dfc-9b88-06896676fe27"
-include = false
 
 [aeb576b9-118e-4a57-a451-db49fac20fdc]
 description = "folds (reduces) the given list from the right with a function -> empty list"
@@ -96,7 +95,6 @@ reimplements = "c4b64e58-313e-4c47-9c68-7764964efb8e"
 [8066003b-f2ff-437e-9103-66e6df474844]
 description = "folds (reduces) the given list from the right with a function -> direction dependent function applied to non-empty list"
 reimplements = "be396a53-c074-4db3-8dd6-f7ed003cce7c"
-include = false
 
 [94231515-050e-4841-943d-d4488ab4ee30]
 description = "reverse the elements of the list -> empty list"

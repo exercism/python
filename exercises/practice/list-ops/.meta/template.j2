@@ -2,7 +2,6 @@
 {% macro lambdify(function) -%}
     {% set function = function.replace("(", "", 1).replace(")", "", 1).replace(" ->", ":") %}
     {% set function = function.replace("modulo", "%") %}
-    {% set function = function.replace("/", "//") %}
     lambda {{function}}
 {%- endmacro %}
 
