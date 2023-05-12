@@ -34,7 +34,3 @@ class ArmstrongNumbersTest(unittest.TestCase):
 
     def test_seven_digit_number_that_is_not_an_armstrong_number(self):
         self.assertIs(is_armstrong_number(9926314), False)
-
-
-if __name__ == "__main__":
-    unittest.main()

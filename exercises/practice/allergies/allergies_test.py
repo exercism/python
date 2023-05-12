@@ -183,7 +183,3 @@ class AllergiesTest(unittest.TestCase):
 
     def test_no_allergen_score_parts_without_highest_valid_score(self):
         self.assertEqual(Allergies(257).lst, ["eggs"])
-
-
-if __name__ == "__main__":
-    unittest.main()
