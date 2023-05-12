@@ -369,7 +369,3 @@ class BeerSongTest(unittest.TestCase):
             "Go to the store and buy some more, 99 bottles of beer on the wall.",
         ]
         self.assertEqual(recite(start=99, take=100), expected)
-
-
-if __name__ == "__main__":
-    unittest.main()

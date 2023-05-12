@@ -95,7 +95,3 @@ class BookStoreTest(unittest.TestCase):
     def test_shuffled_book_order(self):
         basket = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3]
         self.assertEqual(total(basket), 8120)
-
-
-if __name__ == "__main__":
-    unittest.main()
