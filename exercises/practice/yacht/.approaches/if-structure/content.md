@@ -1,49 +1,37 @@
 # If structure
-The constants can be set to random, null, or numeric values, and an `if` structure inside `score` determines the code to be executed. 
-As one-liners aren't necessary here, we can spread out the code to make it look neater.
+
+The constants here can be set to random, null, or numeric values, and an `if` structure inside the `score` function can determine the code to be executed. 
+ 
+As one-liners aren't necessary here, we can spread out the code to make it look neater:
 ```python
-YACHT = 'YACHT'
-ONES = 'ONES'
-TWOS = 'TWOS'
-THREES = 'THREES'
-FOURS = 'FOURS'
-FIVES = 'FIVES'
-SIXES = 'SIXES'
+ONES = 1
+TWOS = 2
+THREES = 3
+FOURS = 4
+FIVES = 5
+SIXES = 6
 FULL_HOUSE = 'FULL_HOUSE'
 FOUR_OF_A_KIND = 'FOUR_OF_A_KIND'
 LITTLE_STRAIGHT = 'LITTLE_STRAIGHT'
 BIG_STRAIGHT = 'BIG_STRAIGHT'
 CHOICE = 'CHOICE'
+YACHT = 'YACHT'
 
 def score(dice, category):
-    if category == 'ONES':
-        return dice.count(1)
-    elif category == 'TWOS':
-        return dice.count(2) * 2
-    elif category == 'THREES':
-        return dice.count(3) * 3
-    elif category == 'FOURS':
-        return dice.count(4) * 4
-    elif category == 'FIVES':
-        return dice.count(5) * 5
-    elif category == 'SIXES':
-        return dice.count(6) * 6
+    if category in (1,2,3,4,5,6):
+         return dice.count(category) * category
     elif category == 'FULL_HOUSE':
-        for n1 in dice:
-            for n2 in dice:
-                if dice.count(n1) == 3 and dice.count(n2) == 2:
-                    return n1 * 3 + n2 * 2
+        if len(set(dice)) == 2 and dice.count(dice[0]) in [2, 3]:
+            return sum(dice) or 0
     elif category == 'FOUR_OF_A_KIND':
-        for num in dice:
-            if dice.count(num) >= 4:
-                return num * 4
+        if dice[0] == dice[3] or dice[1] == dice[4]:
+            return dice[1] * 4 or 0
     elif category == 'LITTLE_STRAIGHT':
-        # A long but alternative way
-        if dice.count(1) == 1 and dice.count(2) == 1 and dice.count(3) == 1 and dice.count(4) == 1 and dice.count(5) == 1:
-            return 30
+        if sorted(dice) == [1, 2, 3, 4, 5]: 
+            return 30 or 0
     elif category == 'BIG_STRAIGHT':
-        if dice.count(6) == 1 and dice.count(2) == 1 and dice.count(3) == 1 and dice.count(4) == 1 and dice.count(5) == 1:
-            return 30
+        if sorted(dice) == [2, 3, 4, 5, 6]:
+            return 30 or 0
     elif category == 'YACHT':
         if all(num == dice[0] for num in dice):
             return 50
@@ -54,4 +42,9 @@ def score(dice, category):
 Note that the code inside the `if` statements themselves can differ, but the key idea here is to use `if` and `elif` to branch out the code, and return `0` at the end if nothing else has been returned. 
 The `if` condition itself can be different, with people commonly checking if `category == ONES` as opposed to `category == 'ONES'` (or whatever the dummy value is).
 
-This is not an ideal way to solve the exercise, as the provided constants are used as dummies, and the code is rather long and winded. It remains, however, valid, and does have its advantages, such as the lack of repetition in returning 0 that we had in the `lambda` approach.
+This may not be an ideal way to solve the exercise, as the code is rather long and convoluted.
+However, it is a valid (_and fast_) solution.
+Using [structural pattern matching][structural pattern matching], introduced in Python 3.10, could shorten and clarify the code in this situation.
+Pulling some logic out of the `score` function and into additional "helper" functions could also help.
+
+[structural pattern matching]: https://peps.python.org/pep-0636/
