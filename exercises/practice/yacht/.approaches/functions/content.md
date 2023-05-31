@@ -28,8 +28,8 @@ def score(dice, category):
 Instead of setting each constant in `ONES` through `SIXES` to a separate function, we create a function `digits` that returns a function, using [closures][closures] transparently.
 
 For `LITTLE_STRAIGHT` and `BIG_STRAIGHT`, we first sort the dice and then check it against the hard-coded value. 
-Another way to solve this would be to check if `sum(d) == 20 and len(set(d)) == 5` (15 in `LITTLE_STRAIGHT`).
-In `CHOICE`, `lambda x: sum(x)` is shortened to just `sum`.
+Another way to solve this would be to check if `sum(dice) == 20 and len(set(dice)) == 5` (15 in `LITTLE_STRAIGHT`).
+In `CHOICE`, `lambda number : sum(number)` is shortened to just `sum`.
 
 In `FULL_HOUSE`, we create a `set` to remove the duplicates and check the set's length along with the individual counts. 
 For `FOUR_OF_A_KIND`, we check if the first and the fourth element are the same or the second and the last element are the same - if so, there are (at least) four of the same number in the array. 
