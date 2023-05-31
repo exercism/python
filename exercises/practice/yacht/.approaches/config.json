@@ -16,6 +16,13 @@
       "title": "If structure",
       "blurb": "Use an if structure",
       "authors": ["safwansamsudeen"]
+    },
+    {
+      "uuid": "72079791-e51f-4825-ad94-3b7516c631cc",
+      "slug": "structural-pattern-matching",
+      "title": "Structural Pattern Matching",
+      "blurb": "Use structural pattern matching",
+      "authors": ["safwansamsudeen"]
     }
   ]
 }
