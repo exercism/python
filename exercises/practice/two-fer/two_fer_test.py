@@ -16,7 +16,3 @@ class TwoFerTest(unittest.TestCase):
 
     def test_another_name_given(self):
         self.assertEqual(two_fer("Bob"), "One for Bob, one for me.")
-
-
-if __name__ == "__main__":
-    unittest.main()
