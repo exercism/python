@@ -315,7 +315,3 @@ class ZipperTest(unittest.TestCase):
         expected = Zipper.from_tree(final).right().to_tree()
 
         self.assertEqual(result, expected)
-
-
-if __name__ == "__main__":
-    unittest.main()
