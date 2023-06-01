@@ -100,7 +100,3 @@ class KnapsackTest(unittest.TestCase):
             ),
             1458,
         )
-
-
-if __name__ == "__main__":
-    unittest.main()
