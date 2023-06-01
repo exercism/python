@@ -31,7 +31,3 @@ class SpaceAgeTest(unittest.TestCase):
 
     def test_age_on_neptune(self):
         self.assertEqual(SpaceAge(1821023456).on_neptune(), 0.35)
-
-
-if __name__ == "__main__":
-    unittest.main()

@@ -7,5 +7,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         self.assertEqual({{ case["property"].replace("sum", "sum_of_multiples") }}({{ case["input"]["limit"] }}, {{ case["input"]["factors"] }}), {{ case["expected"] }})
 
     {% endfor %}
-
-{{ macros.footer() }}

@@ -37,7 +37,3 @@ class SpiralMatrixTest(unittest.TestCase):
                 [13, 12, 11, 10, 9],
             ],
         )
-
-
-if __name__ == "__main__":
-    unittest.main()
