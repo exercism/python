@@ -62,7 +62,3 @@ class EtlTest(unittest.TestCase):
             "z": 10,
         }
         self.assertEqual(transform(legacy_data), data)
-
-
-if __name__ == "__main__":
-    unittest.main()

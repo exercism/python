@@ -66,7 +66,3 @@ class FlattenArrayTest(unittest.TestCase):
         inputs = [None, [[[None]]], None, None, [[None, None], None], None]
         expected = []
         self.assertEqual(flatten(inputs), expected)
-
-
-if __name__ == "__main__":
-    unittest.main()

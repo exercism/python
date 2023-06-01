@@ -180,7 +180,3 @@ class FoodChainTest(unittest.TestCase):
                 "She's dead, of course!",
             ],
         )
-
-
-if __name__ == "__main__":
-    unittest.main()
