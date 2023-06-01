@@ -9,5 +9,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         self.assertEqual({{ case["property"] }}(value), expected)
 
     {% endfor %}
-
-{{ macros.footer() }}
