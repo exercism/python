@@ -8,7 +8,6 @@ from scale_generator import (
 
 
 class ScaleGeneratorTest(unittest.TestCase):
-
     # Test chromatic scales
     def test_chromatic_scale_with_sharps(self):
         expected = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
@@ -78,7 +77,3 @@ class ScaleGeneratorTest(unittest.TestCase):
     def test_enigmatic(self):
         expected = ["G", "G#", "B", "C#", "D#", "F", "F#", "G"]
         self.assertEqual(Scale("G").interval("mAMMMmm"), expected)
-
-
-if __name__ == "__main__":
-    unittest.main()

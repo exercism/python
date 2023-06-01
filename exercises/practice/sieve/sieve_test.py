@@ -194,7 +194,3 @@ class SieveTest(unittest.TestCase):
                 997,
             ],
         )
-
-
-if __name__ == "__main__":
-    unittest.main()
