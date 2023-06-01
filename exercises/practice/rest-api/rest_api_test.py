@@ -159,7 +159,3 @@ class RestApiTest(unittest.TestCase):
             ]
         }
         self.assertDictEqual(json.loads(response), expected)
-
-
-if __name__ == "__main__":
-    unittest.main()
