@@ -1,5 +1,6 @@
 # Introduction
-Yacht in Python can be solved in many ways. The most intuitive approach is to use an `if` structure. More idiomatically, you can create functions and set their names to the constant names.
+Yacht in Python can be solved in many ways. The most intuitive approach is to use an `if` structure. 
+Alternatively, you can create functions and set their names to the constant names.
 
 ## General guidance
 The main thing in this exercise is to map a category (_here defined as constants in the stub file_) to a function or a standalone piece of code. 
