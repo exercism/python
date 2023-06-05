@@ -1,0 +1,8 @@
+ONES = 1
+YACHT = 'YACHT'
+def score(dice, category):
+    match category:
+        case 1 | 2 | 3 | 4 | 5 | 6:
+            return dice.count(category) * category
+        case _:
+            return 0

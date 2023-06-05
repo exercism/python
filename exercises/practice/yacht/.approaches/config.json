@@ -1,0 +1,28 @@
+{
+  "introduction": {
+    "authors": ["safwansamsudeen"]
+  },
+  "approaches": [
+    {
+      "uuid": "3593cfe3-5cab-4141-b0a2-329148a66bb6",
+      "slug": "functions",
+      "title": "Lambdas with Functions",
+      "blurb": "Use lambdas with functions",
+      "authors": ["safwansamsudeen"]
+    },
+    {
+      "uuid": "eccd1e1e-6c88-4823-9b25-944eccaa92e7",
+      "slug": "if-structure",
+      "title": "If structure",
+      "blurb": "Use an if structure",
+      "authors": ["safwansamsudeen"]
+    },
+    {
+      "uuid": "72079791-e51f-4825-ad94-3b7516c631cc",
+      "slug": "structural-pattern-matching",
+      "title": "Structural Pattern Matching",
+      "blurb": "Use structural pattern matching",
+      "authors": ["safwansamsudeen"]
+    }
+  ]
+}

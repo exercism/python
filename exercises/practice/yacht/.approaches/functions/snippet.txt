@@ -1,0 +1,8 @@
+def digits(num):
+    return lambda dice: dice.count(num) * num
+YACHT = lambda x: 50 if x.count(x[0]) == len(x) else 0
+ONES = digits(1)
+FULL_HOUSE = lambda x: sum(x) if len(set(x)) == 2 and x.count(x[0]) in [2, 3] else 0
+LITTLE_STRAIGHT = lambda x: 30 if sorted(x) == [1, 2, 3, 4, 5] else 0
+def score(dice, category):
+    return category(dice)
