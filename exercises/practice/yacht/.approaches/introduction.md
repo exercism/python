@@ -12,7 +12,6 @@ Adhering to the principles of DRY is important - don't repeat yourself if you ca
 Each bit of functionality for each category can be encoded in a function, and the constant name set to that function. 
 This can be done by assigning the constant name to a `lambda` or creating a one-line function using the constant as a function name. 
 ```python
-```python
 def digits(num):
     return lambda dice: dice.count(num) * num
 YACHT = lambda dice: 50 if dice.count(dice[0]) == len(dice) else 0
