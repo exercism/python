@@ -130,7 +130,3 @@ class BottleSongTest(unittest.TestCase):
             "There'll be no green bottles hanging on the wall.",
         ]
         self.assertEqual(recite(start=10, take=10), expected)
-
-
-if __name__ == "__main__":
-    unittest.main()

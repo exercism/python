@@ -51,7 +51,3 @@ class CryptoSquareTest(unittest.TestCase):
         value = "If man was meant to stay on the ground, god would have given us roots."
         expected = "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau "
         self.assertEqual(cipher_text(value), expected)
-
-
-if __name__ == "__main__":
-    unittest.main()
