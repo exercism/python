@@ -34,7 +34,3 @@ class LeapTest(unittest.TestCase):
 
     def test_year_divisible_by_200_not_divisible_by_400_in_common_year(self):
         self.assertIs(leap_year(1800), False)
-
-
-if __name__ == "__main__":
-    unittest.main()

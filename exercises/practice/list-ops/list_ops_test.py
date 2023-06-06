@@ -98,7 +98,3 @@ class ListOpsTest(unittest.TestCase):
 
     def test_reverse_reverse_mixed_types(self):
         self.assertEqual(reverse(["xyz", 4.0, "cat", 1]), [1, "cat", 4.0, "xyz"])
-
-
-if __name__ == "__main__":
-    unittest.main()
