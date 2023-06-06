@@ -32,7 +32,3 @@ class ResistorColorTest(unittest.TestCase):
             "white",
         ]
         self.assertEqual(colors(), expected)
-
-
-if __name__ == "__main__":
-    unittest.main()
