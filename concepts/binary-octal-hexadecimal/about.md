@@ -133,7 +133,6 @@ For example, `bit_count()` on '0b11011' will return 4:
 ```python
 >>> 0b11011.bit_count()
 4
-
 ~~~~exercism/note
 If you are working locally, `bit_count()` requires at least Python 3.10.
 The Exercism online editor currently supports all features through Python 3.11.
