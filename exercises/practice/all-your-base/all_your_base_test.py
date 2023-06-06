@@ -101,11 +101,3 @@ class AllYourBaseTest(unittest.TestCase):
             rebase(-2, [1], -7)
         self.assertEqual(type(err.exception), ValueError)
         self.assertEqual(err.exception.args[0], "input base must be >= 2")
-
-    # Utility functions
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
-
-if __name__ == "__main__":
-    unittest.main()
