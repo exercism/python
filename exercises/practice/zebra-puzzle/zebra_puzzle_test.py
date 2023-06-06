@@ -14,7 +14,3 @@ class ZebraPuzzleTest(unittest.TestCase):
 
     def test_resident_who_owns_zebra(self):
         self.assertEqual(owns_zebra(), "Japanese")
-
-
-if __name__ == "__main__":
-    unittest.main()

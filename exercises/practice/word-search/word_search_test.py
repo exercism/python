@@ -310,7 +310,3 @@ class WordSearchTest(unittest.TestCase):
     def test_should_not_wrap_around_vertically_to_find_a_word(self):
         puzzle = WordSearch(["s", "u", "r", "a", "b", "c", "t"])
         self.assertIsNone(puzzle.search("rust"))
-
-
-if __name__ == "__main__":
-    unittest.main()
