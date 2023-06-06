@@ -98,7 +98,3 @@ class BobTest(unittest.TestCase):
         self.assertEqual(
             response("This is a statement ending with whitespace      "), "Whatever."
         )
-
-
-if __name__ == "__main__":
-    unittest.main()
