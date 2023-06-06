@@ -1,19 +1,16 @@
-# binary, octal, hexadecimal
+# Binary, Octal, and Hexadecimal
 
 Binary, octal, and hexadecimal (_also known as hex_) are different [numeral systems][numeral-systems] with different bases.
 Binary is base 2, octal is base 8, and hexadecimal is base 16.
 Normal integers are base 10 in python.
-Binary, octal, and hexadecimal are all a subset of integers.
-Which means that they can only represent whole numbers and support all the operations that we can do with integers.
+Binary, octal, and hexadecimal are all representations of integers.
+Which means that they represent positive and negative numbers (_including zero_) without fractions or decimals, and support all the operations that we can do with integers.
 
 ## Binary
 
-[Binary][binary] is a base 2 numeral system.
-The most common numeral system is base 10.
-In the base 10 numeral system so are the digits: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.
-Binary is base 2, so the digits are 0 and 1.
-It is used to represent the on and off states of a computer.
-Binary can create all the numbers that we use in base 10.
+[Binary][binary] is a base 2 numeral system, using only the digits 0 and 1.
+It commonly represents the 0 ("off") and 1 ("on") states of electrical flow through transistors and switches in computers, as well as the positive and negative charges in magnetic storage media.
+Binary can represent all the integers that are used in base 10.
 
 A snippet from the base 2 system looks like this, although it continues infinitely and doesn't stop at 128:
 
@@ -40,7 +37,7 @@ And the operation would be: `16 + 0 + 0 + 2 + 1 = 19`
 
 ## Binary in Python
 
-In Python, we can represent binary numbers using the `0b` prefix.
+In Python, we can represent binary literals using the `0b` prefix.
 If we write `0b10011`, Python will interpret it as a binary number and convert it to base 10.
 
 ```python
@@ -52,9 +49,9 @@ If we write `0b10011`, Python will interpret it as a binary number and convert i
 <class 'int'>
 ```
 
-Binary in python is a subset of integers, therefore it will act like an integer.
+Binary in Python is just a different way of writing an integer and so the binary representation **is an integer** for all mathematical operations.
 
-If you have a number which is not in the binary system, it will raise a `SyntaxError`.
+If you write a number with a `0b` prefix that is not in the binary system, it will raise a `SyntaxError`.
 
 ```python
 Traceback (most recent call last):
@@ -63,9 +60,9 @@ Traceback (most recent call last):
 SyntaxError: invalid digit '2' in binary literal
 ```
 
-### Operations with binary numbers
+### Operations with Binary Numbers
 
-Since binary is a subset of integers, we can do all the operations that we can do with integers.
+Since binary numbers are integers, we can perform all operations on them that we can with integers.
 
 ```python
 # addition
@@ -77,32 +74,38 @@ Since binary is a subset of integers, we can do all the operations that we can d
 361
 ```
 
-We can do also have operations with both integers and binary numbers.
+We can also perform operations between both binary and integer representations.
+However, the usual mathematical operator rules apply:  dividing two binary numbers or integer numbers will return a `float`, even if the division does not result in a decimal portion.
 
 ```python
 >>> 0b10011 + 19
 38
-```
 
-### Representing binary numbers
+>>> 0b10011/0b10011
+1.0
 
-Since python will automatically convert binary to `int`, do we have to use the `bin()` function.
-If we want to represent a binary number.
-`bin()` will return a `string` with the prefix `0b`.
+>>> 0b10011/3
+6.333333333333333
+
+### Converting to and from Binary Representation
+
+Python will automatically convert a binary literal into `int`.
+ To convert an `int` into a binary representation, use the built-in [`bin()`][bin] function.
+`bin()` will return a `str` of the binary equivalent with the prefix `0b` .
 
 ```python
->>> bin(0b10011)
+>>> bin(19)
 '0b10011'
 ```
 
-To convert a binary number to an integer, we can use the `int()` function, and pass a string with a binary and the base as arguments.
+To convert a binary literal to an integer, we can use the built-in `int()` function, and pass a string of the binary representation and a base argument:
 
 ```python
 >>> int("0b10011", 2)
 19
 ```
 
-Giving the wrong base will raise a `ValueError`:
+Giving the wrong base (_or an invalid binary representation_) will raise a `ValueError`:
 
 ```python
 Traceback (most recent call last):
@@ -111,52 +114,39 @@ Traceback (most recent call last):
 ValueError: invalid literal for int() with base 3: '0b10011'
 ```
 
-### Converting int to binary
+### Binary Methods
 
-We can also convert an integer to binary using the `bin()` function.
+There are also some special [methods][numeral-systems] that we can use on binary numbers.
 
-```python
-# 0b10011
->>> bin(19)
-'0b10011'
-```
 
-### Binary methods
-
-There are also [methods][numeral-systems] that we can use on binary numbers.
-
-#### `<int>.bit_length()`
-
-`<int>.bit_length()` will return the number of bits that are needed to represent the number.
-So for example `0b10011` will return 5.
+[`<int>.bit_length()`][bit_length] will return the number of bits that are needed to represent the number:
 
 ```python
 >>> 0b11011.bit_length()
 5
 ```
 
-#### `<int>.count()`
 
-```exercism/note
-`<bin>.count()` requires Python 3.10+.
-If you are using the online editor then you don't need to worry about this.
-```
-
-`<int>.bit_count()` will return the number of **ones** in the binary number.
-So for example `bit_count` will return 3.
+[`<int>.bit_count()`][bit_count] will return the number of **ones** in the binary number.
+For example, `bit_count()` on '0b11011' will return 4:
 
 ```python
 >>> 0b11011.bit_count()
 4
-```
+
+~~~~exercism/note
+If you are working locally, `bit_count()` requires at least Python 3.10.
+The Exercism online editor currently supports all features through Python 3.11.
+~~~~ 
+
 
 ## Octal
 
 [Octal][octal] is a base 8 numeral system.
-Meaning that the digits are: 0, 1, 2, 3, 4, 5, 6, 7.
+It uses the digits 0, 1, 2, 3, 4, 5, 6, and 7.
 
-In python, we can represent octal numbers using the `0o` prefix.
-As with binary, python will automatically convert octal to int.
+In Python, we can represent octal numbers using the `0o` prefix.
+As with binary, Python automatically converts an octal representation to an `int`.
 
 ```python
 # 0o123
@@ -164,18 +154,20 @@ As with binary, python will automatically convert octal to int.
 83
 ```
 
-As with binary you can do all the operations that you can do with integers and giving a number which is not in the octal system will raise a `SyntaxError`.
+As with binary, octal numbers **are ints** and support all integer operations.
+Prefixing a number with `0o` that is not in the octal system will raise a `SyntaxError`.
 
-### Representing octal numbers
+ ### Converting to and from Octal Representation
+ 
 
-To represent an octal number, we can use the `oct()` function.
+To convert an `int` into an octal representation, you can use the built-in [`oct()`][oct] function.
+This acts similarly to the `bin()` function, returning a string:
 
 ```python
->>> oct(0o123)
+>>> oct(83)
 '0o123'
-```
 
-To convert an octal number to an integer, we can use the `int()` function, pass a string with a octal and the base as arguments.
+To convert an octal number to an integer, we can use the `int()` function, passing an octal string representation and the base (8) as arguments:
 
 ```python
 >>> int("0o123", 8)
@@ -184,42 +176,36 @@ To convert an octal number to an integer, we can use the `int()` function, pass 
 
 As with binary, giving the wrong base will raise a `ValueError`.
 
-### Converting int to octal
-
-We can also convert an integer to binary using the `oct()` function.
-
-```python
->>> oct(83)
-'0o123'
-```
-
-### hexadecimal
+### Hexadecimal
 
 [Hexadecimal][hexadecimal] is a base 16 numeral system.
-Meaning that the digits are 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F.
-A is 10, B is 11, C is 12, D is 13, E is 14, F is 15.
+It uses the digits 0 - 9 and the letters A, B, C, D, E, and F.
+A is 10, B is 11, C is 12, D is 13, E is 14, and F is 15.
 
-In python, we can represent hexadecimal numbers using the `0x` prefix.
-As with binary and octal, python will automatically convert hexadecimal to int.
+We can represent hexadecimal numbers in Python using the `0x` prefix.
+As with binary and octal, Python will automatically convert hexadecimal literals to `int`.
 
 ```python
-# 0o123
+# 0x123
 >>> 0x123
 291
 ```
 
-As with binary and octal you can do all the operations that you can do with integers and giving a number which is not in the hex system will raise a `SyntaxError`.
+As with binary and octal - hexidecimal literals **are ints**, and you can perform all integer operations.  
+Prefixing a non-hexidecimal number with `0x` will raise a `SyntaxError`.
 
 ### Representing hexadecimal numbers
 
-To represent an hexadecimal number, we can use the `hex()` function.
+###  Converting to and from Hexadecimal Representation
+
+To convert an `int` into a hexadecimal representation, you can use the built-in [`hex()`][hex] function.
+This acts similarly to the `bin()` function, returning a string:
 
 ```python
->>> hex(0x123)
+>>> hex(291)
 '0x123'
-```
 
-To convert an hexadecimal number to an integer, we can use the `int()` function, pass a string with a hexadecimal and the base as arguments.
+To convert a hexadecimal representation to an integer, we can use the `int()` function, passing a hexadecimal string with the base (16) as arguments:
 
 ```python
 >>> int("0x123", 16)
@@ -228,16 +214,10 @@ To convert an hexadecimal number to an integer, we can use the `int()` function,
 
 As with binary and octal, giving the wrong base will raise a `ValueError`.
 
-### Converting int to hexadecimal
-
-We can also convert an integer to binary using the `hex()` function.
-
-```python
->>> hex(291)
-'0x123'
-```
 
 [binary]: https://en.wikipedia.org/wiki/Binary_number
+[bit_count]:  https://docs.python.org/3/library/stdtypes.html#int.bit_count
+[bit_length]: https://docs.python.org/3/library/stdtypes.html#int.bit_length
 [hexadecimal]: https://en.wikipedia.org/wiki/Hexadecimal
 [methods-int]: https://docs.python.org/3/library/stdtypes.html#additional-methods-on-integer-types
 [numeral-systems]: https://en.wikipedia.org/wiki/Numeral_system
