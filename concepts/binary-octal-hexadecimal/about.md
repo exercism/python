@@ -194,7 +194,6 @@ As with binary and octal, Python will automatically convert hexadecimal literals
 As with binary and octal - hexidecimal literals **are ints**, and you can perform all integer operations.  
 Prefixing a non-hexidecimal number with `0x` will raise a `SyntaxError`.
 
-### Representing hexadecimal numbers
 
 ###  Converting to and from Hexadecimal Representation
 
