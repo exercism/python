@@ -132,7 +132,3 @@ class ProteinTranslationTest(unittest.TestCase):
         value = "UGGUGUUAUUAAUGGUUU"
         expected = ["Tryptophan", "Cysteine", "Tyrosine"]
         self.assertEqual(proteins(value), expected)
-
-
-if __name__ == "__main__":
-    unittest.main()
