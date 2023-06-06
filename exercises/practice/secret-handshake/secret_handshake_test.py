@@ -44,7 +44,3 @@ class SecretHandshakeTest(unittest.TestCase):
 
     def test_do_nothing_for_zero(self):
         self.assertEqual(commands("00000"), [])
-
-
-if __name__ == "__main__":
-    unittest.main()
