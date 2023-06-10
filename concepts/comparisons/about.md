@@ -82,7 +82,7 @@ False
 Strings (`str`) are compared [_lexicographically_][lexographic order], using their individual Unicode code points (_the result of passing each code point in the `str` to the built-in function [`ord()`][ord], which returns an `int`_).
 If all code points in both strings match and are _**in the same order**_, the two strings are considered equal.
 This comparison is done in a 'pair-wise' fashion - first-to-first, second-to-second, etc.
-Unlike in Python 2.x, in Python 3.x, `str` and `bytes` cannot be directly coerced/compared.
+In Python 3.x, `str` and `bytes` cannot be directly coerced/compared.
 
 ```python
 >>> 'Python' > 'Rust'

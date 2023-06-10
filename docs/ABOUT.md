@@ -22,7 +22,7 @@ The [zen of Python (PEP 20)][the zen of python] and [What is Pythonic?][what is 
 
 Tests and tooling for this track currently support `3.7` - `3.10.6` (_tests_) and [`Python 3.11`][311-new-features] (_tooling_).
 It is highly recommended that students upgrade to at least `Python 3.8`, as some features used by this track may not be supported in earlier versions.
-That being said, most of the exercises will work with `Python 3.6+`, and many are compatible with `Python 2.7+`.
+That being said, most of the exercises will work with `Python 3.6+`.
 But we don't guarantee support for versions not listed under [Active Python Releases][active-python-releases].
 We will try to note when a feature is only available in a certain version.
 

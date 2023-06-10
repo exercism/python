@@ -10,7 +10,6 @@ from complex_numbers import (
 
 
 class ComplexNumbersTest(unittest.TestCase):
-
     # Real part
 
     def test_real_part_of_a_purely_real_number(self):

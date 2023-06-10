@@ -2,9 +2,6 @@
 
 {{ macros.header() }}
 
-# Python 2/3 compatibility
-if not hasattr(unittest.TestCase, 'assertCountEqual'):
-    unittest.TestCase.assertCountEqual = unittest.TestCase.assertItemsEqual
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}

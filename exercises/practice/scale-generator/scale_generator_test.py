@@ -8,7 +8,6 @@ from scale_generator import (
 
 
 class ScaleGeneratorTest(unittest.TestCase):
-
     # Test chromatic scales
     def test_chromatic_scale_with_sharps(self):
         expected = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
