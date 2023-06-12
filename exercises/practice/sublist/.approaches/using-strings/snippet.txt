@@ -1,0 +1,8 @@
+def sublist(list_one, list_two):
+    list_one_check = (str(list_one).strip("[]") + ",")
+    list_two_check = (str(list_two).strip("[]") + ",")
+    ...
+    elif list_one_check in list_two_check:
+        return SUBLIST
+    ...
+    return UNEQUAL
