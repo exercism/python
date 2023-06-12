@@ -1,0 +1,8 @@
+def sublist(list_one, list_two):
+    if list_one == list_two:
+        return EQUAL
+    if check_sub_sequences(list_one, list_two):
+        return SUBLIST
+    if check_sub_sequences(list_two, list_one):
+        return SUPERLIST
+    return UNEQUAL
