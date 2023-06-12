@@ -55,4 +55,4 @@ def sublist(list_one, list_two):
 To understand more about this approach, [read here][approach-using-strings]
 
 [approach-list-manipulation]: https://exercism.org/tracks/python/exercises/sublist/approaches/list-manipulation
-[approach-list-manipulation]: https://exercism.org/tracks/python/exercises/sublist/approaches/using-strings
+[approach-using-strings]: https://exercism.org/tracks/python/exercises/sublist/approaches/using-strings

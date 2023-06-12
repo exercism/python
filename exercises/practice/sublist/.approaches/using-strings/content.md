@@ -20,8 +20,11 @@ def sublist(list_one, list_two):
         return SUPERLIST
     return UNEQUAL
 ```
-Note that we can't use `.join` as it only accepts strings inside the iterable, while there the test cases have integers.
+Note that we can't use directly `.join` as it only accepts strings inside the iterable, while there the test cases have integers.
+However, if one wanted to use it, we could use `map` or a [generator expression][gen-exp] inside `.join`.
 
 In this approach, we convert the lists to strings, so `[1, 2, 3]` becomes `"[1, 2, 3]"`, remove the brackets `"1, 2, 3"`, and add a comma `"1, 2, 3,"` so that there's a consistent pattern of number + comma while using the `in` operator.
 
 We check equality and then use the `in` operator to check for `SUBLIST` or `SUPERLIST`, and finally return `UNEQUAL`.
+
+[gen-exp]: https://www.programiz.com/python-programming/generator
