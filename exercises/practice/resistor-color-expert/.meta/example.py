@@ -23,7 +23,7 @@ COLORS_TOLERANCE = {
 }
 
 
-def label(colors):
+def resistor_label(colors):
     if len(colors) == 1:
         return f'0 ohms'
     elif len(colors) == 4:

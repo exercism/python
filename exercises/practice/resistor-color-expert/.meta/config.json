@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "meatball133",
+    "bethanyg"
+  ],
+  "files": {
+    "solution": [
+      "resistor_color_expert.py"
+    ],
+    "test": [
+      "resistor_color_expert_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
+  },
+  "blurb": "Convert color codes, as used on resistors with different amounts of bands, to a human-readable label."
+}
