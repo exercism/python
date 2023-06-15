@@ -32,8 +32,9 @@ def sublist(list_one, list_two):
 Read more on the [detail of this approach][approach-list-manipulation].
 
 ## Approach: using strings
-Another clever approach is to convert the lists to strings and then use the `in` operator to check for sub-sequences.
-Note that this approach is not as performant as the previous one.
+Another seemingly clever approach is to convert the lists to strings and then 
+use the `in` operator to check for sub-sequences.
+**However, this does not work.**
 ```python
 SUBLIST = 1
 SUPERLIST = 2
@@ -52,7 +53,8 @@ def sublist(list_one, list_two):
         return SUPERLIST
     return UNEQUAL
 ```
-To understand more about this approach, [read here][approach-using-strings]
+To understand more about this approach and **why it fails**, [read here]
+[approach-using-strings].
 
 [approach-list-manipulation]: https://exercism.org/tracks/python/exercises/sublist/approaches/list-manipulation
 [approach-using-strings]: https://exercism.org/tracks/python/exercises/sublist/approaches/using-strings
