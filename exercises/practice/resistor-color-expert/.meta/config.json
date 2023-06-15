@@ -14,5 +14,6 @@
       ".meta/example.py"
     ]
   },
-  "blurb": "Convert color codes, as used on resistors with different amounts of bands, to a human-readable label."
+  "blurb": "Convert color codes as used on resistors with different bands to a human-readable label.",
+  "source": "Based on earlier resistor color exercises made by Erik Schierboom and Maud de Vries"
 }
