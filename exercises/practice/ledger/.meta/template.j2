@@ -21,4 +21,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         self.assertEqual(format_entries(currency, locale, entries), expected)
     {%- endfor %}
 
-{{ macros.footer() }}
