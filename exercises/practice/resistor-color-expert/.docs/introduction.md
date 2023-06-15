@@ -1,7 +1,7 @@
 # Introduction
 
 If you want to build something using a Raspberry Pi, you'll probably use _resistors_.
-For this exercise, you need to be able to use 1, 4, and 5 band resistors:
+Like the previous `Resistor Color Duo` and `Resistor Color Trio` exercises, you will be translating resistor color bands to human-readable labels.
 
 - Each resistor has a resistance value.
 - Resistors are small - so small in fact that if you printed the resistance value on them, it would be hard to read.
