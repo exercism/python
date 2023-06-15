@@ -971,8 +971,8 @@
         "difficulty": 3
       },
       {
-        "slug": "resistor-color-master",
-        "name": "Resistor Color Master",
+        "slug": "resistor-color-expert",
+        "name": "Resistor Color Expert",
         "uuid": "8a738365-0efa-444f-9466-a757ddaddcdb",
         "practices": ["list-methods"],
         "prerequisites": [
