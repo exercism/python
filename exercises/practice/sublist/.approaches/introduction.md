@@ -53,8 +53,7 @@ def sublist(list_one, list_two):
         return SUPERLIST
     return UNEQUAL
 ```
-To understand more about this approach and **why it fails**, [read here]
-[approach-using-strings].
+To understand more about this approach and **why it fails**, [read here][approach-using-strings].
 
 [approach-list-manipulation]: https://exercism.org/tracks/python/exercises/sublist/approaches/list-manipulation
 [approach-using-strings]: https://exercism.org/tracks/python/exercises/sublist/approaches/using-strings
