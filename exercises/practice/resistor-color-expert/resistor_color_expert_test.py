@@ -7,7 +7,7 @@ from resistor_color_expert import (
 # Tests adapted from `problem-specifications//canonical-data.json`
 
 
-class ResistorColorMasterTest(unittest.TestCase):
+class ResistorColorExpertTest(unittest.TestCase):
     def test_orange_orange_black_and_red(self):
         self.assertEqual(resistor_label(["orange", "orange", "black", "red"]), "33 ohms ±2%")
 
