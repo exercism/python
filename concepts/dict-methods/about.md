@@ -23,39 +23,7 @@ To quickly populate a dictionary with various `keys` and default values, the _cl
  'Misty Mountain Pink': 'fill in hex color here'}
 ```
 
-`dict.clear()` will removed all `key:value` pairs from the dictionary, leaving it empty and ready for new entries.
-
-```python
->>> pallette_II = {'Factory Stone Purple': '#7c677f', 'Green Treeline': '#478559', 'Purple baseline': '#161748'}
->>> pallette_II.clear()
->>> pallette_II
-{}
-```
-
-`dict.get(key, <default return value>)` works similarly to `dict[key]` -- but it will return the `default` if the `key` is not in the dictionary.
-If no `default` is given, the method will return `None`.
-
-```python
->>> palette_I = {'Grassy Green': '#9bc400', 'Purple Mountains Majesty': '#8076a3', 'Misty Mountain Pink': '#f9c5bd'}
->>> palette_I['Factory Stone Purple']
-Traceback (most recent call last):
-
-  line 1, in <module>
-    palette_I['Factory Stone Purple']
-
-KeyError: 'Factory Stone Purple'
-
->>> palette_I.get('Factory Stone Purple', 'That color was not found.')
-'That color was not found.'
-
->>> palette_I.get('Factory Stone Purple', False)
-False
-
->>> palette_I.get('Factory Stone Purple')
-None
-```
-
-`dict.popitem()`  removes & returns a single `key:value` pair from the `dict`.
+`dict.popitem()` removes & returns a single `key:value` pair from the `dict`.
 Pairs are returned in Last-in-First-out (LIFO) order.
 If the dictionary is empty, calling `.dict.popitem` will raise a `KeyError`.
 
@@ -77,7 +45,8 @@ Traceback (most recent call last):
 KeyError: 'popitem(): dictionary is empty'
 ```
 
-While `dict.clear()` and `dict.popitem()` are  _destructive_ actions, the  `.keys()`, `.values()`, and `.items()` methods return [_iterable views_][dict-views].
+While `dict.popitem()` (_and the related `dict.pop()`_) are  _destructive_ actions, the  `.keys()`, `.values()`, and `.items()` methods return [_iterable views_][dict-views].
+
 These views can be used for looping over `dict` content without altering it and are  _dynamic_ -- when underlying dictionary data changes, the associated view object will reflect the change.
 
 ```python
@@ -303,24 +272,14 @@ For a detailed explanation of dictionaries and methods for working with them, th
 For more on sorting, see the [Sorting HOW TO][sorting-howto] in the python docs.
  [Real Python][how-to-dicts] and [Finxter][fi-dict-guide] also have very thorough articles on Python dictionaries.
 
-## Extending Dictionaries: The collections module
 
-The [`collections`][collections-docs] module adds more functionality to Python's standard collection-based datatypes (`dictionary`, `set`, `list`, `tuple`).
-A popular `dict`-oriented member of this module is the [`Counter`][counter-dicts], which automatically counts items and returns them a `dict` with the items as keys and their counts as values.
-There is also the [`OrderedDict`][ordered-dicts-docs], which has methods specialized for re-arranging the order of a dictionary.
-Finally, there is the [`defaultdict`][default-dicts], a subclass of the built-in `dict` module that, based on a factory method, sets a default value if a key is not found when trying to retrieve or assign the value.
-
-[term-hashable]: https://docs.python.org/3/glossary.html#term-hashable
-[hashtable-wikipedia]: https://en.wikipedia.org/wiki/Hash_table
-[mapping-types-dict]: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
-[dicts-docs]: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
-[how-to-dicts]: https://www.w3schools.com/python/python_dictionaries.asp
-[fromkeys]: https://docs.python.org/3/library/stdtypes.html#dict.fromkeys
-[collections-docs]: https://docs.python.org/3/library/collections.html
-[counter-dicts]: https://docs.python.org/3/library/collections.html#collections.Counter
-[ordered-dicts-docs]: https://docs.python.org/3/library/collections.html#collections.OrderedDict
-[default-dicts]: https://docs.python.org/2/library/collections.html#collections.defaultdict
-[dict-views]: https://docs.python.org/3/library/stdtypes.html#dict-views
 [dict-methods]: https://docs.python.org/3/library/stdtypes.html#dict
+[dict-views]: https://docs.python.org/3/library/stdtypes.html#dict-views
+[dicts-docs]: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
 [fi-dict-guide]: https://blog.finxter.com/python-dictionary
+[fromkeys]: https://docs.python.org/3/library/stdtypes.html#dict.fromkeys
+[hashtable-wikipedia]: https://en.wikipedia.org/wiki/Hash_table
+[how-to-dicts]: https://www.w3schools.com/python/python_dictionaries.asp
+[mapping-types-dict]: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 [sorting-howto]: https://docs.python.org/3/howto/sorting.html
+[term-hashable]: https://docs.python.org/3/glossary.html#term-hashable
