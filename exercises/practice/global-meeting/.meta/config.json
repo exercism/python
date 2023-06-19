@@ -1,0 +1,17 @@
+
+{
+  "authors": ["safwansamsudeen"],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "global_meetup.py"
+    ],
+    "test": [
+      "global_meetup_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
+  },
+  "blurb": "Find a time when a global team can have a meeting",
+}
