@@ -4,10 +4,10 @@
   "contributors": [],
   "files": {
     "solution": [
-      "global_meetup.py"
+      "global_meeting.py"
     ],
     "test": [
-      "global_meetup_test.py"
+      "global_meeting_test.py"
     ],
     "example": [
       ".meta/example.py"
