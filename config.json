@@ -971,6 +971,21 @@
         "difficulty": 3
       },
       {
+        "slug": "resistor-color-expert",
+        "name": "Resistor Color Expert",
+        "uuid": "8a738365-0efa-444f-9466-a757ddaddcdb",
+        "practices": ["list-methods"],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "lists",
+          "numbers",
+          "strings",
+          "comparisons"
+        ],
+        "difficulty": 3
+      },
+      {
         "slug": "matrix",
         "name": "Matrix",
         "uuid": "b564927a-f08f-4287-9e8d-9bd5daa7081f",

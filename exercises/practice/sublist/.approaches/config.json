@@ -1,0 +1,21 @@
+{
+  "introduction": {
+    "authors": ["safwansamsudeen"]
+  },
+  "approaches": [
+    {
+      "uuid": "db47397a-4551-49e8-8775-7e7aad79a38b",
+      "slug": "list-manipulation",
+      "title": "List manipulation",
+      "blurb": "Manipulate and check lists to solve the exercise",
+      "authors": ["safwansamsudeen"]
+    },
+    {
+      "uuid": "61366160-c859-4d16-9085-171428209b8d",
+      "slug": "using-strings",
+      "title": "Using strings",
+      "blurb": "Convert the lists to string and use string manipulation to solve the exercise",
+      "authors": ["safwansamsudeen"]
+    }
+  ]
+}
