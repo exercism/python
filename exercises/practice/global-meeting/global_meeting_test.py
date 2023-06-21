@@ -2,37 +2,35 @@ import unittest
 
 from global_meeting import meeting_time
 
+
 class GlobalMeetingTest(unittest.TestCase):
-    def test_same_working_times(self):
-        self.assertEqual(meeting_time({
-            111: [2, (8, 17)],
-            112: [8, (8, 17)],
-            113: [10, (8, 17)],
-        }), [6])
-
     def test_different_working_times(self):
-        self.assertEqual(meeting_time({
-            201: [5.5, (8, 17)],
-            202: [-4, (15, 0)],
-            203: [-10, (12, 21)],
-            204: [3, (4, 13)],
-        }), [3])
+        self.assertEqual(
+            meeting_time(
+                "06/21/2023",
+                {
+                    110: (5.5, "08:00 AM", "05:00 PM"),
+                    111: (-10, "12:00 PM", "09:00 PM"),
+                    112: (3, "04:00 AM", "01:00 PM"),
+                    113: (-4, "04:00 PM", "01:00 AM"),
+                },
+            ),
+            {
+                "03:00 AM": {
+                    110: "06/21/2023 08:30 AM",
+                    111: "06/20/2023 05:00 PM",
+                    112: "06/21/2023 06:00 AM",
+                    113: "06/20/2023 11:00 PM",
+                },
+                "04:00 AM": {
+                    110: "06/21/2023 09:30 AM",
+                    111: "06/20/2023 06:00 PM",
+                    112: "06/21/2023 07:00 AM",
+                    113: "06/21/2023 12:00 AM",
+                },
+            },
+        )
 
-    def test_wrong_values(self):
-        with self.assertRaises(ValueError) as err:
-            meeting_time({
-                201: [2, (5, 15)],
-                202: [5, (13, 22)],
-            })
-        self.assertEqual("some employees are working for more or less than 9 hours", str(err.exception))
-
-    def test_impossible(self):
-        with self.assertRaises(ValueError) as err:
-            meeting_time({
-                201: [2, (13, 22)],
-                202: [5, (5, 14)],
-            })
-        self.assertEqual("there's no possible meeting time for the provided employees", str(err.exception))
 
 if __name__ == "__main__":
     unittest.main()

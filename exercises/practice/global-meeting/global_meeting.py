@@ -1,2 +1,2 @@
-def meeting_time(employee_info):
+def meeting_time(date_str, employee_info):
     pass

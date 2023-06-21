@@ -1063,6 +1063,22 @@
         "difficulty": 3
       },
       {
+        "slug": "global-meeting",
+        "name": "Global Meeting",
+        "uuid": "795edb33-ec92-43c5-8cd9-147af4d56f5d",
+        "practices": ["datetime", "date-formatting"],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "classes",
+          "datetime",
+          "dictionaries",
+          "loops"
+        ],
+        "difficulty": 3
+      },
+      {
         "slug": "kindergarten-garden",
         "name": "Kindergarten Garden",
         "uuid": "42a2916c-ef03-44ac-b6d8-7eda375352c2",

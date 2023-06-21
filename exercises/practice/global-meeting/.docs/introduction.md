@@ -9,6 +9,7 @@ You're thrilled!
 There's only one hitch. 
 To ensure that everyone is working towards the same product and brainstorm your next bestseller, you need to have a weekly meeting. 
 Unfortunately, it's tough to arrange a meeting with people from different timezones, and your first attempt was a ghastly failure where many crucial people spent time rubbing their eyes.
+Worse, employees often miscalculated the start time in their local timezone, so many missed the meeting. 
 
-Your advisor tells you to calculate a timing suitable for everybody - but you barely passed high school math. 
-You panic as the date of release looms: but you've realized that you can write a program to do it for you! 
+Your advisor tells you to calculate a timing suitable for everybody _and_ email employees with their local timings - but you barely passed high school math. 
+You panic as the date of release looms: but you've realized that you can write a program to do it for you!
