@@ -54,7 +54,7 @@ def send_to_store(cart, isle_mapping):
     pass
 
 
-def update_store_inventory(fulfillment cart, store_inventory):
+def update_store_inventory(fulfillment_cart, store_inventory):
     """Update store inventory levels with user order.
 
     :param fulfillment cart: dict - fulfillment cart to send to store.
