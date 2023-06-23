@@ -23,12 +23,12 @@ Looks like the product team is engaging in [feature creep][feature creep].
 They want to add extra functionality to the MVP.
 The application now has to create a shopping cart by reading items off a users notes app.
 Create the function `read_notes(<notes>)` that can take any iterable as an argument.
-The function should parse the items and add them to the users shopping cart.
+The function should parse the items and add one of each to a shopping cart.
 The cart should then be returned in the form of a dictionary.
 
 ```python
->>> read_notes((Banana, 3), (Apple, 2), (Orange, 1))
-{'Banana': 3, 'Apple': 2, 'Orange': 1}
+>>> read_notes(('Banana','Apple', 'Orange'),)
+{'Banana': 1, 'Apple': 1, 'Orange': 1}
 ```
 
 ## 3.Sort the Items in the User Cart

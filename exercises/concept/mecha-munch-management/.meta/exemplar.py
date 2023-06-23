@@ -9,7 +9,9 @@ def add_item(current_cart, items_to_add):
     :return: dict - the updated user cart dictionary.
     """
 
-    pass
+    current_cart.setdefault(items_to_add[0], 0)
+    current_cart[items_to_add[0]] += items_to_add[1]
+    return current_cart
 
 
 def read_notes(notes):
@@ -19,7 +21,7 @@ def read_notes(notes):
     :return: dict - a user shopping cart dictionary.
     """
 
-    pass
+    return {}.fromkeys(notes, 1)
 
 
 def sort_entries(cart):
@@ -29,10 +31,10 @@ def sort_entries(cart):
     :return: dict - users shopping cart sorted in alphabetical order.
     """
 
-    pass
+    return dict(sorted(cart.keys()))
 
 
-def add_recipe(cart, recipe):
+def add_recipe(recipe_list, new_recipe):
     """Add the ingredients from a recipe to the users shopping cart.
 
     :param cart: dict - users shopping cart dictionary.
@@ -62,4 +64,4 @@ def update_store_inventory(fulfillment_cart, store_inventory):
     :return: dict - store inventory updated.
     """
 
-pass
+    pass
