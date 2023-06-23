@@ -18,7 +18,7 @@ Here we cover a few more - along with some techniques for iterating through and 
 ### `setdefault()` for Error-Free Insertion
 
 The dictionary concept previously covered that `.get(key, <default value>)` returns an existing `value` or the `default value` if a `key` is not found in a dictionary, thereby avoiding a `KeyError`.
- This works well in situations where you would rather not have extra error handling but cannot trust that a looked-for `key` will be present.
+This works well in situations where you would rather not have extra error handling but cannot trust that a looked-for `key` will be present.
 
 For a similarly "safe" (_without KeyError_) insertion operation, there is the `.setdefault(key, <default return value>)` method.
 `setdefault(key, <default value>)` will return the `value` if the `key` is found in the dictionary.
@@ -223,7 +223,7 @@ When both dictionaries share keys, `dict_two` values take precedence.
 ### Sorting a Dictionary
 
 Dictionaries do not have a built-in sorting method.
- However, it is possible to sort a `dict` _view_ using the built-in function `sorted()` with `.items()`.
+However, it is possible to sort a `dict` _view_ using the built-in function `sorted()` with `.items()`.
 The sorted view can then be used to create a new dictionary.
 Unless a _sort key_ is specified, the default sort is over dictionary `keys`.
 
@@ -261,7 +261,7 @@ Unless a _sort key_ is specified, the default sort is over dictionary `keys`.
 
 For a detailed explanation of dictionaries and methods for working with them, the [official tutorial][dicts-docs] and the [official library reference][mapping-types-dict] are excellent starting places.
 For more on sorting, see the [Sorting HOW TO][sorting-howto] in the python docs.
- [Real Python][how-to-dicts] and [Finxter][fi-dict-guide] also have very thorough articles on Python dictionaries.
+[Real Python][how-to-dicts] and [Finxter][fi-dict-guide] also have very thorough articles on Python dictionaries.
 
 
 [associative-array]: https://en.wikipedia.org/wiki/Associative_array#:~:text=In%20computer%20science%2C%20an%20associative,a%20function%20with%20finite%20domain.
