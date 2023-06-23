@@ -21,7 +21,7 @@ def read_notes(notes):
     :return: dict - a user shopping cart dictionary.
     """
 
-    return {}.fromkeys(notes, 1)
+    return dict.fromkeys(notes, 1)
 
 
 def sort_entries(cart):
