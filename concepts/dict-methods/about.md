@@ -20,9 +20,9 @@ Here we cover a few more - along with some techniques for iterating through and 
 The dictionary concept previously covered that `.get(key, <default value>)` returns an existing `value` or the `default value` if a `key` is not found in a dictionary, thereby avoiding a `KeyError`.
 This works well in situations where you would rather not have extra error handling but cannot trust that a looked-for `key` will be present.
 
-For a similarly "safe" (_without KeyError_) insertion operation, there is the `.setdefault(key, <default return value>)` method.
+For a similarly "safe" (_without KeyError_) insertion operation, there is the `.setdefault(key, <default value>)` method.
 `setdefault(key, <default value>)` will return the `value` if the `key` is found in the dictionary.
-If the key is **not** found, it will _insert_ the (key, `default value`) pair and return the `default value` for use.
+If the key is **not** found, it will _insert_ the (`key`, `default value`) pair and return the `default value` for use.
 
 ```python
 >>> palette_I = {'Grassy Green': '#9bc400', 'Purple Mountains Majesty': '#8076a3', 'Misty Mountain Pink': '#f9c5bd'}
@@ -116,7 +116,7 @@ dict_items([('Grassy Green', '#9bc400'), ('Purple Mountains Majesty', (128, 118,
 
 ### More on `.keys()`, `.values()`, and `.items()`
 
-In Python 3.7+, `dicts` preserve the order in which entries are inserted allowing First-in, First-out (_`FIFO`_),  iteration using `.keys()`, `.values()`, or `.items().`
+In Python 3.7+, `dicts` preserve the order in which entries are inserted allowing First-in, First-out (_`FIFO`_),  iteration using `.keys()`, `.values()`, or `.items()`.
 In Python 3.8+, views are also _reversible_.
 This allows keys, values, or (key, value) pairs to be iterated over in Last-in, First-out (`LIFO`) order by using `reversed(<dict>.keys())`, `reversed(<dict>.values())`, or `reversed(<dict>.items())`:
 
