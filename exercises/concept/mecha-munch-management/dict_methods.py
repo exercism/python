@@ -4,8 +4,8 @@
 def add_item(current_cart, items_to_add):
     """Add items to shopping cart.
 
-    :param current_cart:
-    :param items_to_add:
+    :param current_cart: dict - the current shopping cart.
+    :param items_to_add: iterable - items to add to the cart.
     :return: dict - the updated user cart dictionary.
     """
 
@@ -22,22 +22,22 @@ def read_notes(notes):
     pass
 
 
-def sort_entries(cart):
-    """Sort a users shopping cart in alphabetically order.
+def update_recipes(ideas, recipe_updates):
+    """Update the recipe ideas dictionary.
 
-    :param cart: dict - a users shopping cart dictionary.
-    :return: dict - users shopping cart sorted in alphabetical order.
+    :param ideas: dict - The "recipe ideas" dict.
+    :param recipe_updates: dict - dictionary with updates for the ideas section.
+    :return: dict - updated "recipe ideas" dict.
     """
 
     pass
 
 
-def add_recipe(cart, recipe):
-    """Add the ingredients from a recipe to the users shopping cart.
+def sort_entries(cart):
+    """Sort a users shopping cart in alphabetically order.
 
-    :param cart: dict - users shopping cart dictionary.
-    :param recipe: dict - recipe dictionary with ingredients.
-    :return: dict - user cart dictionary updated with recipe ingredients.
+    :param cart: dict - a users shopping cart dictionary.
+    :return: dict - users shopping cart sorted in alphabetical order.
     """
 
     pass
@@ -58,8 +58,8 @@ def update_store_inventory(fulfillment_cart, store_inventory):
     """Update store inventory levels with user order.
 
     :param fulfillment cart: dict - fulfillment cart to send to store.
-    :param store inventory: dict - store available inventory
-    :return: dict - store inventory updated.
+    :param store_inventory: dict - store available inventory
+    :return: dict - store_inventory updated.
     """
 
     pass

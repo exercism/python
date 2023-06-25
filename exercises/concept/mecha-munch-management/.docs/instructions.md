@@ -4,7 +4,6 @@ Mecha Munch™, a local grocery shopping automation company has just hired you t
 Your team is tasked with building an MVP (_[minimum viable product][mvp]_) that manages all the basic shopping cart activities, allowing users to add, remove, and sort their grocery orders.
 Thankfully, a different team is handling all the money and check-out functions!
 
-
 ## 1. Add Item(s) to the Users Shopping Cart
 
 The MVP should allow the user to add items to their shopping cart.
@@ -58,7 +57,7 @@ The function should return the new/updated "ideas" dictionary.
 ```python
 >>> update_recipes({'Banana Bread' : {'Banana': 1, 'Apple': 1, 'Walnuts': 1, 'Flour': 1, 'Eggs': 2, 'Butter': 1},
                    'Raspberry Pie' : {'Raspberry': 1, 'Orange': 1, 'Pie Crust': 1, 'Cream Custard': 1}},
-('Banana Bread', {'Banana': 4,  'Walnuts': 2, 'Flour': 1, 'Eggs': 2, 'Butter': 1, 'Milk': 2, 'Eggs': 3}))
+(('Banana Bread', {'Banana': 4,  'Walnuts': 2, 'Flour': 1, 'Eggs': 2, 'Butter': 1, 'Milk': 2, 'Eggs': 3}),))
 ...
 
 {'Banana Bread' : {'Banana': 4,  'Walnuts': 2, 'Flour': 1, 'Eggs': 2, 'Butter': 1, 'Milk': 2, 'Eggs': 3},
@@ -78,7 +77,7 @@ The function should return the new/updated "ideas" dictionary.
   'Blueberry Crumble': {'Blueberries': 2, 'Whipped Creme': 2, 'Granola Topping': 2, 'Yogurt': 3}}
 ```
 
-## 4.Sort the Items in the User Cart
+## 4. Sort the Items in the User Cart
 
 Once a user has started a cart, the app allows them to sort their items alphabetically.
 This makes things easier to find, and helps when there are data-entry errors like having 'potatoes' and 'Potato' in the database.
@@ -96,11 +95,9 @@ The app needs to send a given users cart to the store for fulfillment.
 However, the shoppers in the store need to know which store isle the item can be found in and if the item needs refrigeration.
 So (_rather arbitrarily_) the "fulfillment cart" needs to be sorted in reverse alphabetical order with item quantities combined with location and refrigeration information.
 
-
-Create the function `send_to_store(<cart>, <isle mapping>)` that takes a user shopping cart and a dictionary that has store isle number and a True/False for refrigeration needed for each item.
+Create the function `send_to_store(<cart>, <isle_mapping>)` that takes a user shopping cart and a dictionary that has store isle number and a `True`/`False` for refrigeration needed for each item.
 The function should `return` a combined "fulfillment cart" that has (quantity, isle, and refrigeration) for each item the customer is ordering.
 Items should appear in _reverse_ alphabetical order.
-
 
 ```python
 >>> send_to_store({'Banana': 3, 'Apple': 2, 'Orange': 1, 'Milk': 2}, 
@@ -115,10 +112,9 @@ Eventually, the store is going to run out of various products.
 So your app MVP needs to update the store inventory every time a user sends their order to the store.
 Otherwise, customers will order products that aren't actually available.
 
-Create the function `update_store_inventory(<fulfillment cart>, <store_inventory>)` that takes a "fulfillment cart" and a store inventory.
+Create the function `update_store_inventory(<fulfillment_cart>, <store_inventory>)` that takes a "fulfillment cart" and a store inventory.
 The function should reduce the store inventory amounts by the number "ordered" in the "fulfillment cart" and then return the updated store inventory.
 Where a store item count falls to 0, the count should be replaced by the message 'Out of Stock'.
-
 
 ```python
 >>> update_store_inventory({'Orange': [1, 'Isle 4', False], 'Milk': [2, 'Isle 2', True], 'Banana': [3, 'Isle 5', False], 'Apple': [2, 'Isle 4', False]}, 
