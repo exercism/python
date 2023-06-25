@@ -55,8 +55,8 @@ def send_to_store(cart, isle_mapping):
     """
     fulfillment_cart = {}
 
-    for key in dict_one.keys():
-        fulfillment_cart[key] = [dict_one[key]] + dict_two[key]
+    for key in cart.keys():
+        fulfillment_cart[key] = [cart[key]] + isle_mapping[key]
     return dict(sorted(fulfillment_cart.items(), reverse=True))
 
 
