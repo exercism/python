@@ -24,6 +24,18 @@ def read_notes(notes):
     return dict.fromkeys(notes, 1)
 
 
+def update_recipes(ideas, recipe_updates):
+    """Add the ingredients from a recipe to the users shopping cart.
+
+    :param ideas: dict - The "recipe ideas" dict.
+    :param recipe_updates: dict - dictionary with updates for the ideas section.
+    :return: dict - updated "recipe ideas" dict.
+    """
+
+    ideas.update(recipe_updates)
+    return ideas
+
+
 def sort_entries(cart):
     """Sort a users shopping cart in alphabetically order.
 
@@ -34,17 +46,6 @@ def sort_entries(cart):
     return dict(sorted(cart.keys()))
 
 
-def add_recipe(recipe_list, new_recipe):
-    """Add the ingredients from a recipe to the users shopping cart.
-
-    :param cart: dict - users shopping cart dictionary.
-    :param recipe: dict - recipe dictionary with ingredients.
-    :return: dict - user cart dictionary updated with recipe ingredients.
-    """
-
-    pass
-
-
 def send_to_store(cart, isle_mapping):
     """Combine users order to isle and refrigeration information.
 
@@ -52,16 +53,23 @@ def send_to_store(cart, isle_mapping):
     :param isle_mapping: dict - isle and refrigeration information dictionary.
     :return: dict - fulfillment dictionary ready to send to store.
     """
+    fulfillment_cart = {}
 
-    pass
+    for key in dict_one.keys():
+        fulfillment_cart[key] = [dict_one[key]] + dict_two[key]
+    return dict(sorted(fulfillment_cart.items(), reverse=True))
 
 
 def update_store_inventory(fulfillment_cart, store_inventory):
     """Update store inventory levels with user order.
 
     :param fulfillment cart: dict - fulfillment cart to send to store.
-    :param store inventory: dict - store available inventory
-    :return: dict - store inventory updated.
+    :param store_inventory: dict - store available inventory
+    :return: dict - store_inventory updated.
     """
 
-    pass
+    for key, values in fulfillment_cart.items():
+        store_inventory[key].insert(0, store_inventory[key][0] - values[0])
+        if store_inventory[key][0] == 0:
+            store_inventory[key][0] = 'Out of Stock'
+    return store_inventory
