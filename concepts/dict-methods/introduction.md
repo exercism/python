@@ -14,12 +14,12 @@ This concept tackles a few more:
 
 - `dict.setdefault()` for automatically adding keys when needed.
 - `dict.fromkeys(iterable, <default value>)` for creating a new `dict` from any number of iterables.
-- `dict.keys()`, `dict.values()`, and `.dictitems()` for convenient iterators.
-- `sorted()` with `dict.items()`. for re-ordering entries in a `dict`.
+- `.keys()`, `.values()`, and `.items()` for convenient iterators.
+- `sorted()` with `.items()`. for re-ordering entries in a `dict`.
 - `dict_one.update(<dict_two>)` for updating one `dict` with overlapping values from another `dict`.
 - `dict | other_dict` and `dict |= other_dict` for merging or updating two `dict`s via operators.
 - `reversed(dict.keys())`, `reversed(dict.values())`, or `reversed(dict.items())` for reversed views.
-- `dict.popitem()` for removing and returning a key, value pair.
+- `.popitem()` for removing and returning a key, value pair.
 
 [associative-array]: https://en.wikipedia.org/wiki/Associative_array#:~:text=In%20computer%20science%2C%20an%20associative,a%20function%20with%20finite%20domain.
 [mapping-types-dict]: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict

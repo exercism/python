@@ -50,33 +50,6 @@ All `values` will be set to the `default value` provided:
  'Misty Mountain Pink': 'fill in hex color here'}
 ```
 
-### Remove and Return a (key, value) Pair With `.popitem()`
-
-`.popitem()` removes & returns a single (`key`, `value`) pair from a dictionary.
-Pairs are returned in Last-in, First-out (`LIFO`) order.
-If the dictionary is empty, calling `popitem()` will raise a `KeyError`:
-
-```python
->>> palette_I = {'Grassy Green': '#9bc400', 'Purple Mountains Majesty': '#8076a3', 'Misty Mountain Pink': '#f9c5bd'}
->>> palette_I.popitem()
-('Misty Mountain Pink', '#f9c5bd')
-
->>> palette_I.popitem()
-('Purple Mountains Majesty', '#8076a3')
-
->>> palette_I.popitem()
-('Grassy Green', '#9bc400')
-
-#All (key, value) pairs have been removed.
->>> palette_I.popitem()
-Traceback (most recent call last):
-
-  line 1, in <module>
-    palette_I.popitem()
-
-KeyError: 'popitem(): dictionary is empty'
-```
-
 ### Iterating Over Entries in a Dictionary
 
 The `.keys()`, `.values()`, and `.items()` methods return [_iterable views_][dict-views] of a dictionary.
@@ -217,46 +190,6 @@ When both dictionaries share keys, `dict_two` values take precedence.
  'Factory Stone Purple': '#7c677f',
  'Green Treeline': '#478559',
  'Purple baseline': '#161748'}
-```
-
-
-### Sorting a Dictionary
-
-Dictionaries do not have a built-in sorting method.
-However, it is possible to sort a `dict` _view_ using the built-in function `sorted()` with `.items()`.
-The sorted view can then be used to create a new dictionary.
-Unless a _sort key_ is specified, the default sort is over dictionary `keys`.
-
-```python
-# Default ordering for a dictionary is last in, first out (LIFO).
->>> color_palette = {'Grassy Green': '#9bc400', 
-                    'Purple Mountains Majesty': '#8076a3', 
-                    'Misty Mountain Pink': '#f9c5bd', 
-                    'Factory Stone Purple': '#7c677f', 
-                    'Green Treeline': '#478559', 
-                    'Purple baseline': '#161748'}
- 
- 
-# The default sort order for a dictionary uses the keys.
->>> sorted_palette = dict(sorted(color_palette.items()))
->>> sorted_palette
-{'Factory Stone Purple': '#7c677f',
- 'Grassy Green': '#9bc400',
- 'Green Treeline': '#478559',
- 'Misty Mountain Pink': '#f9c5bd',
- 'Purple Mountains Majesty': '#8076a3',
- 'Purple baseline': '#161748'}
-
-
-# A sort key can be provided in the for of an anonymous function (lambda). 
->>> value_sorted_palette = dict(sorted(color_palette.items(), key=lambda color: color[1]))
->>> value_sorted_palette
-{'Purple baseline': '#161748',
- 'Green Treeline': '#478559',
- 'Factory Stone Purple': '#7c677f',
- 'Purple Mountains Majesty': '#8076a3',
- 'Grassy Green': '#9bc400',
- 'Misty Mountain Pink': '#f9c5bd'} 
 ```
 
 For a detailed explanation of dictionaries and methods for working with them, the [official tutorial][dicts-docs] and the [official library reference][mapping-types-dict] are excellent starting places.
