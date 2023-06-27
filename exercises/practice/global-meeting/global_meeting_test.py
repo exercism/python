@@ -32,4 +32,4 @@ class GlobalMeetingTest(unittest.TestCase):
         )
 
 
-    unittest.main()
+unittest.main()
