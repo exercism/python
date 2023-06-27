@@ -23,9 +23,19 @@ Here's an example of what's expected:
 }
 ```
 
-## Errors
+## Exception messages
+
+Sometimes it is necessary to [raise an exception](https://docs.python.org/3/tutorial/errors.html#raising-exceptions). 
+When you do this, you should always include a **meaningful error message** to indicate what the source of the error is. 
+This makes your code more readable and helps significantly with debugging. For situations where you know that the error source will be a certain type, you can choose to raise one of the [built in error types](https://docs.python.org/3/library/exceptions.html#base-classes), but should still include a meaningful message.
+
+
+
+
 Admittedly, you're a little eccentric. 
 You might provide working hours that are more or less than 9 - in which case you want the program to call out your error:
+
+To raise a `ValueError` with a message, write the message as an argument to the `exception` type:
 ```
 >>> meeting_time({
         201: [2, (5, 15)],
