@@ -10,7 +10,7 @@ Given a collection of employee IDs with their time zones and working hours, retu
 Note that meetings should start "on the hour" in UTC - in other words, a meeting can't start at, 3:30, 12:10, or 17:45 UTC.
 Local times, of course may vary.
 
-Local time zones are represented as _[UTC offsets][UTC offset]_.
+Local time zones are represented as [UTC offsets][UTC offset].
 
 All possible meeting start times should be reported.
 

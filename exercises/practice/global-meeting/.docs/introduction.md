@@ -1,8 +1,8 @@
 # Introduction
 
 You've decided to make your video game manufacturing company The Catness® fully remote: all employees work from home!
-This has multiple advantages: after all, transit is annoying and exhausting, and everyone has their commute time back for more important activities (_like plying on their gaming consoles_).
-Furthermore, people all over the world have heard about your wonderful company, and you've got lots of new and diverse talent working away at the latest edition of your flagship game _**Mad Cat**_. 
+This has multiple advantages: after all, transit is annoying and exhausting, and everyone has their commute time back for more important activities (_like playing on their gaming consoles_).
+Furthermore, people all over the world have heard about your wonderful company, and you've got lots of new and diverse talent working away at the latest edition of your flagship game _Mad Cat_. 
 
 You're thrilled! 
 There's only one hitch. 

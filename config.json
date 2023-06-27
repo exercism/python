@@ -1081,13 +1081,10 @@
         "slug": "global-meeting",
         "name": "Global Meeting",
         "uuid": "795edb33-ec92-43c5-8cd9-147af4d56f5d",
-        "practices": ["datetime", "date-formatting"],
         "prerequisites": [
           "basics",
           "bools",
           "conditionals",
-          "classes",
-          "datetime",
           "dictionaries",
           "loops"
         ],
