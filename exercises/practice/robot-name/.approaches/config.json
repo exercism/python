@@ -13,7 +13,7 @@
     {
       "uuid": "20ca6d56-ab48-46be-a04e-98736109be0a",
       "slug": "name-on-the-fly",
-      "title": "Name on the fly",
+      "title": "Find name on the fly",
       "blurb": "Generate name and check that it hasn't been used",
       "authors": ["safwansamsudeen"]
     }

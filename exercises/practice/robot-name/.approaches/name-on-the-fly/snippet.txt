@@ -1,0 +1,8 @@
+cache = set()
+class Robot:
+    def reset(self):
+        while (name := ''.join(choices(ascii_uppercase, k=2) + choices(digits, k=3))) in cache:
+            pass
+        cache.add(name)
+        self.name = name
+    def __init__(self): self.reset()
