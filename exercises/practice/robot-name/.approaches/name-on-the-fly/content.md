@@ -41,6 +41,12 @@ def reset(self):
 
 We call `reset` from `__init__` - it's syntactically valid to do it the other way round, but it's not considered good practice to call [dunder methods][dunder-methods] directly.
 
+This has almost no startup time and memory, apart from declaring an empty `set`.
+Note that the _generation_ time is the same as the mass generation approach, as a similar method is used.
+However, as the name is generated at the time of setting/resetting, the method time itself is higher.
+
+In the long run, if many names are generated, this is inefficient, since collisions will start being generated more often than unique names. 
+
 [walrus-operator]: https://realpython.com/python-walrus-operator/
 [private-helper-methods]: https://www.geeksforgeeks.org/private-methods-in-python/
 [dunder-methods]: https://dbader.org/blog/python-dunder-methods
