@@ -13,7 +13,7 @@ If a user wants to add 2 Oranges, 'Oranges' will appear twice in the input itera
 If the user already has the item in their cart, the cart quantity should be increased by 1.
 If the item is _new_ to the cart, it should be added with a quantity of 1.
 
-Create the function `add_items(<current_cart>, <items_to_add>)` that takes a user cart dictionary and any list-like iterable of items to add as arguments.
+Create the function `add_items(<current_cart>, <items_to_add>)` that takes a cart dictionary and any list-like iterable of items to add as arguments.
 It should return a new/updated shopping cart dictionary for the user.
 
 ```python
