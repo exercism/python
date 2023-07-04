@@ -43,7 +43,6 @@ class MechaMunchManagementTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=3)
     def test_update_recipes(self):
-<<<<<<< HEAD
         input_data = [
                         ({'Banana Bread' : {'Banana': 1, 'Apple': 1, 'Walnuts': 1, 'Flour': 1, 'Eggs': 2, 'Butter': 1},
                           'Raspberry Pie' : {'Raspberry': 1, 'Orange': 1, 'Pie Crust': 1, 'Cream Custard': 1}},
@@ -81,17 +80,17 @@ class MechaMunchManagementTest(unittest.TestCase):
     @pytest.mark.task(taskno=4)
     def test_sort_entries(self):
         input_data = [
-                      {'Banana': 4, 'Apple': 2, 'Orange': 1},
-                      {'Apple': 3, 'Orange': 2, 'Banana': 1},
+                      {'Banana': 4, 'Apple': 2, 'Orange': 1, 'Pear': 12},
+                      {'Apple': 3, 'Orange': 5, 'Banana': 1, 'Avocado': 2},
                       {'Orange': 3, 'Banana': 2, 'Apple': 1},
                       {'Apple': 2, 'Raspberry': 2, 'Blueberries': 5, 'Broccoli' : 2, 'Kiwi': 1, 'Melon': 4}
                      ]
 
         output_data = [
-                        ['Apple', 'Banana', 'Orange'],
-                        ['Apple', 'Banana', 'Orange'],
-                        ['Apple', 'Banana', 'Orange'],
-                        ['Apple', 'Blueberries', 'Broccoli', 'Kiwi', 'Melon', 'Raspberry']
+                        {'Apple': 2, 'Banana': 4, 'Orange': 1, 'Pear': 12},
+                        {'Avocado': 2, 'Apple': 3, 'Banana': 1, 'Orange': 5},
+                        {'Apple': 1, 'Orange': 3, 'Banana': 2},
+                        {'Apple' : 2, 'Blueberries': 5, 'Broccoli': 2, 'Kiwi': 1, 'Melon': 4, 'Raspberry': 2}
                       ]
 
         for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
@@ -147,8 +146,10 @@ class MechaMunchManagementTest(unittest.TestCase):
         output_data = [
                         {'Banana': [12, 'Isle 5', False], 'Apple': [10, 'Isle 4', False],
                          'Orange': ['Out of Stock', 'Isle 4', False], 'Milk': [2, 'Isle 2', True]},
+
                         {'Juice': [5, 'Isle 5', False], 'Yoghurt': [2, 'Isle 2', True],
                          'Milk': [5, 'Isle 2', True], 'Kiwi': ["Out of Stock", 'Isle 6', False]},
+
                         {'Kiwi': ['Out of Stock', 'Isle 6', False], 'Melon': [4, 'Isle 6', False],
                          'Apple': ['Out of Stock', 'Isle 1', False], 'Raspberry': [3, 'Isle 6', False],
                          'Blueberries': [5, 'Isle 6', False], 'Broccoli': [3, 'Isle 3', False]}

@@ -27,7 +27,7 @@ The dictionary section of the [official tutorial][dicts-docs] and the mapping ty
 
 ## 4. Sort the Items in the User Cart
 
-- What method would you call to get an [iterable view of just the keys][keys] of the dictionary?
+- What method would you call to get an [iterable view of items][items] in the dictionary?
 - If you had a `list` or a `tuple`, what [`built-in`][builtins] function might you use to sort them?
 - The built-in function you want is the one that returns a _copy_, and doesn't mutate the original.
 
@@ -49,7 +49,7 @@ The dictionary section of the [official tutorial][dicts-docs] and the mapping ty
 [builtins]: https://docs.python.org/3/library/functions.html
 [dicts-docs]: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
 [fromkeys]: https://docs.python.org/3/library/stdtypes.html#dict.fromkeys
-[keys]: https://docs.python.org/3/library/stdtypes.html#dict.keys
+[items]: https://docs.python.org/3/library/stdtypes.html#dict.items
 [mapping-types-dict]: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 [mvp]: https://en.wikipedia.org/wiki/Minimum_viable_product
 [set-default]: https://docs.python.org/3/library/stdtypes.html#dict.setdefault

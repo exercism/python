@@ -12,6 +12,7 @@ def add_item(current_cart, items_to_add):
     for item in items_to_add:
         current_cart.setdefault(item, 0)
         current_cart[item] += 1
+
     return current_cart
 
 
@@ -44,7 +45,7 @@ def sort_entries(cart):
     :return: dict - users shopping cart sorted in alphabetical order.
     """
 
-    return sorted(cart.keys())
+    return dict(sorted(cart.items()))
 
 
 def send_to_store(cart, isle_mapping):
@@ -58,6 +59,7 @@ def send_to_store(cart, isle_mapping):
 
     for key in cart.keys():
         fulfillment_cart[key] = [cart[key]] + isle_mapping[key]
+
     return dict(sorted(fulfillment_cart.items(), reverse=True))
 
 
@@ -73,4 +75,5 @@ def update_store_inventory(fulfillment_cart, store_inventory):
         store_inventory[key][0] = store_inventory[key][0] - values[0]
         if store_inventory[key][0] == 0:
             store_inventory[key][0] = 'Out of Stock'
+
     return store_inventory
