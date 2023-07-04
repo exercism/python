@@ -1,6 +1,6 @@
 # Instructions
 
-Mecha Munch™, a local shopping automation company has just hired you to work on their ordering app.
+Mecha Munch™, a grocery shopping automation company has just hired you to work on their ordering app.
 Your team is tasked with building an MVP (_[minimum viable product][mvp]_) that manages all the basic shopping cart activities, allowing users to add, remove, and sort their grocery orders.
 Thankfully, a different team is handling all the money and check-out functions!
 
