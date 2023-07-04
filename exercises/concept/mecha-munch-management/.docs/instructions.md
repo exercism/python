@@ -1,6 +1,6 @@
 # Instructions
 
-Mecha Munch™, a local grocery shopping automation company has just hired you to work on their ordering app.
+Mecha Munch™, a local shopping automation company has just hired you to work on their ordering app.
 Your team is tasked with building an MVP (_[minimum viable product][mvp]_) that manages all the basic shopping cart activities, allowing users to add, remove, and sort their grocery orders.
 Thankfully, a different team is handling all the money and check-out functions!
 
@@ -17,10 +17,12 @@ Create the function `add_items(<current_cart>, <items_to_add>)` that takes a car
 It should return a new/updated shopping cart dictionary for the user.
 
 ```python
->>> add_items({'Banana': 3, 'Apple': 2, 'Orange': 1}, ('Apple', 'Apple', 'Orange', 'Apple', 'Banana'))
+>>> add_items({'Banana': 3, 'Apple': 2, 'Orange': 1}, 
+              ('Apple', 'Apple', 'Orange', 'Apple', 'Banana'))
 {'Banana': 4, 'Apple': 5, 'Orange': 2}
 
->>> add_items({'Banana': 3, 'Apple': 2, 'Orange': 1}, ['Banana', 'Orange', 'Blueberries', 'Banana'])
+>>> add_items({'Banana': 3, 'Apple': 2, 'Orange': 1}, 
+              ['Banana', 'Orange', 'Blueberries', 'Banana'])
 {'Banana': 5, 'Apple': 2, 'Orange': 2, 'Blueberries': 1}
 ```
 

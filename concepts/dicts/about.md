@@ -2,22 +2,31 @@
 
 A dictionary (`dict`) in Python is a data structure that associates [hashable][term-hashable] _keys_ to _values_ and is known in other programming languages as a resizable [hash table][hashtable-wikipedia], hashmap, or [associative array][associative-array].
 Dictionaries are Python's only built-in [mapping type][mapping-types-dict].
+
+
+`Keys` must be hashable and unique across the dictionary.
+Key types can include `numbers`, `str`, or `tuples` (of _immutable_ values).
+They cannot contain _mutable_ data structures such as `lists`, `dict`s, or `set`s.
 As of Python 3.7, `dict` key order is guaranteed to be the order in which entries are inserted.
 
-`Keys` can include `numbers`, `str`, `tuples` (of _immutable_ values), or `frozensets`, but must be hashable and unique across the dictionary.
-  `values` can be of any or multiple data type(s) or structures, including other dictionaries, built-in types, custom types, or even objects like functions.
+`values` can be of any data type or structure.
+ Values can also nest _arbitrarily_, so they can include lists-of-lists, sub-dictionaries, and other custom or compound data structures.
 
-`dict`s enable the retrieval of a `value` in (on average) constant O(1) time, given the `key`.
-Compared to searching for a value within a `list` or `array` (_without knowing the `index` position_), a dictionary uses significantly more memory, but has very rapid retrieval.
+Given a `key`, dictionaries can retrieve a `value` in (on average) constant time (_independent of the number of entries_).
+Compared to searching for a value within a `list` or `array` (_without knowing the `index` position_), a `dict` uses significantly more memory, but has very rapid retrieval.
 Dictionaries are especially useful in scenarios where the collection of items is large and must be accessed and updated frequently.
 
 
 ## Dictionary Construction
 
-Dictionaries can be created in many ways.
-Among them are the [`fromkeys()`][fromkeys] method, [dictionary comprehensions][dict-comprehensions], merging two dictionaries via unpacking (`**`), merging via the `|` operator, or using a loop to iteratively add entries to a previously created empty `dict`.
+Dictionaries can be created in many different ways:
+ - Using the [`fromkeys()`][fromkeys] classmethod
+ - Creating [dictionary comprehensions][dict-comprehensions]
+ - Merging two dictionaries via unpacking (`**`)
+ - Merging dictionaries via the `|` (_update_) operator
+ - Using a loop to iteratively add entries to a previously created empty `dict`.
 
-The two most straightforward methods of `dict` creation are using the `dict()` constructor or declaring a `dict` _literal_.
+Below are the two most straightforward methods of dictionary creation.
 
 ### The `dict()` Class Constructor
 
@@ -25,7 +34,8 @@ The two most straightforward methods of `dict` creation are using the `dict()` c
 
 ```python
 #Passing a list of key,value tuples.
->>> wombat = dict([('name', 'Wombat'),('speed', 23),('land_animal', True)])
+>>> wombat = dict([('name', 'Wombat'),('speed', 23),
+                   ('land_animal', True)])
 {'name': 'Wombat', 'speed': 23, 'land_animal': True}
 
 
@@ -43,7 +53,9 @@ A dictionary can also be directly entered as a _dictionary literal_, using curly
 Entries that are enclosed in the `{}` can also appear on separate lines:
 
 ```python
->>> whale = {"name": "Blue Whale", "speed": 35, "land_animal": False}
+>>> whale = {"name": "Blue Whale", 
+             "speed": 35, 
+             "land_animal": False}
 {'name': 'Blue Whale', 'speed': 35, 'land_animal': False}
 
 >>> wombat = {'name': 'Wombat',
@@ -58,35 +70,36 @@ Entries that are enclosed in the `{}` can also appear on separate lines:
 Dictionaries can be arbitrarily nested:
 
 ```python
-animal_collection = {
-                        "Real" : {
-                                "Winged" : {
-                                            "Sparrow" : {'name': 'sparrow','speed': 12, 'land_animal': True},
-                                            "Kestrel" : {'name': 'kestrel', 'speed': 15, 'land_animal': True}
-                                           },
-                                "Legged" : {
-                                            "Wombat" : {'name': 'Wombat', 'speed': 23, 'land_animal': True},
-                                            "Black Bear": {'name': 'Black Bear', 'speed': 40, 'land_animal': True},
-                                            "Polecat" : {'name': 'Polecat', 'speed': 15, 'land_animal': True}
-                                           },
-                                "Other" :  {
-                                            "Whale" : {'name': 'Blue Whale', 'speed': 35, 'land_animal': False},
-                                            "Orca" : {'name': 'Orca', 'speed': 45, 'land_animal': False},
-                                            "Snake" : {'name': 'Python', 'speed': 25, 'land_animal': True}
-                                            }
-                                },
-                        "Imaginary": {
-                                "Winged" : {
-                                            "Dragon" : {'name': 'Fire Dragon','speed': 100, 'land_animal': True},
-                                            "Phoenix" : {'name': 'Phoenix', 'speed': 1500, 'land_animal': True}
-                                            },
-                                "Legged" : {
-                                            "Sphinx" : {'name': 'Sphinx','speed': 10, 'land_animal': True},
-                                            "Minotaur" : {'name': 'Minotaur', 'speed': 5, 'land_animal': True}
-                                            },
-                                "Other" :  {}
-                                }
-                   }
+animals = {
+            "Real" : {
+                "Winged" : {
+                            "Sparrow" : {'name': 'sparrow','speed': 12, 'land_animal': True},
+                            "Kestrel" : {'name': 'kestrel', 'speed': 15, 'land_animal': True}
+                           },
+                "Legged" : {
+                            "Wombat" : {'name': 'Wombat', 'speed': 23, 'land_animal': True},
+                            "Black Bear": {'name': 'Black Bear', 'speed': 40, 'land_animal': True},
+                            "Polecat" : {'name': 'Polecat', 'speed': 15, 'land_animal': True}
+                           },
+                "Other" :  {
+                            "Whale" : {'name': 'Blue Whale', 'speed': 35, 'land_animal': False},
+                            "Orca" : {'name': 'Orca', 'speed': 45, 'land_animal': False},
+                            "Snake" : {'name': 'Python', 'speed': 25, 'land_animal': True}
+                            }
+                },
+        
+        "Imaginary": {
+                "Winged" : {
+                            "Dragon" : {'name': 'Fire Dragon','speed': 100, 'land_animal': True},
+                            "Phoenix" : {'name': 'Phoenix', 'speed': 1500, 'land_animal': True}
+                            },
+                "Legged" : {
+                            "Sphinx" : {'name': 'Sphinx','speed': 10, 'land_animal': True},
+                            "Minotaur" : {'name': 'Minotaur', 'speed': 5, 'land_animal': True}
+                            },
+                "Other" :  {}
+                }
+       }
 ```
 
 ## Accessing Values in a `dict`
@@ -117,11 +130,11 @@ To access entries in nested dictionaries, use successive brackets.
 If a given key is missing, the usual KeyError will be thrown:
 
 ```python
-#Using the animal_collection nested dictionary.
->>> animal_collection["Real"]["winged"]["Kestrel"]["speed"]
+#Using the animals nested dictionary.
+>>> animals["Real"]["winged"]["Kestrel"]["speed"]
 15
 
->>> animal_collection["Imaginary"]["winged"]["Kestrel"]["speed"]
+>>> animals["Imaginary"]["winged"]["Kestrel"]["speed"]
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 KeyError: 'Kestrel'
@@ -130,12 +143,13 @@ KeyError: 'Kestrel'
 To avoid the `KeyError`, `.get()` can be used, but the calls to `.get()` must be _chained_:
 
 ```python
-#Using the animal_collection nested dictionary.
-#Note the use of parenthesis to enable placing the .get() calls on separate lines.
->>> (animal_collection.get("Imaginary", {})
-                      .get("Legged", {})
-                      .get("Sphinx", {})
-                      .get("Color", "I have no idea!"))
+#Using the animals nested dictionary.
+#Note the use of parenthesis to enable placing the 
+# .get() calls on separate lines.
+>>> (animals.get("Imaginary", {})
+            .get("Legged", {})
+            .get("Sphinx", {})
+            .get("Color", "I have no idea!"))
 'I have no idea!'
 ```
 
@@ -185,7 +199,8 @@ Traceback (most recent call last):
 KeyError: 'name'
 
 
-#Using a default argument with .pop() will prevent a KeyError from a missing key.
+#Using a default argument with .pop() will 
+# prevent a KeyError from a missing key.
 >>> bear.pop("name", "Unknown")
 'Unknown'
 ```
@@ -227,7 +242,7 @@ You can access the _values_ within the same loop by using _square brackets_:
 
 ```python
 >>> for key in bear:
->>>     (key, bear[key]) #this forms a tuple of (key, value)
+>>>     print((key, bear[key])) #this prints a tuple of (key, value)
 ('name', 'Black Bear')
 ('speed', 40)
 ('land_animal', True)
@@ -236,7 +251,8 @@ You can access the _values_ within the same loop by using _square brackets_:
 You can also use the `.items()` method, which returns (`key`, `value`) tuples:
 
 ```python
-#dict.items() forms (key, value tuples) that can be unpacked and iterated over.
+#dict.items() forms (key, value tuples) that can be 
+# unpacked and iterated over.
 >>> for key, value in whale.items():
 >>>     print(key, ":", value)
 name : Blue Whale

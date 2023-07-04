@@ -1,16 +1,20 @@
 # Introduction
 
-A dictionary (`dict`) is a data structure that associates [hashable][term-hashable] _keys_ to _values_.
-It is known in other programming languages as a resizable [hash table][hashtable-wikipedia], hashmap, or [associative array][associative-array].
+A dictionary (`dict`) in Python is a data structure that associates [hashable][term-hashable] _keys_ to _values_ and is known in other programming languages as a resizable [hash table][hashtable-wikipedia], hashmap, or [associative array][associative-array].
 Dictionaries are Python's only built-in [mapping type][mapping-types-dict].
 
-`Keys` can include `numbers`, `str`, `tuples` (of _immutable_ values), or `frozensets`, but must be hashable and unique across the dictionary.
-`values` can be of any or multiple data type(s) or structures, including other dictionaries, built-in types, custom types, or even objects like functions.
-As of Python 3.7, `key` order is guaranteed to be the order in which entries are inserted.
 
-Dictionaries enable the retrieval of a `value` in (on average) constant O(1) time, given the `key`.
+`Keys` must be hashable and unique across the dictionary.
+Key types can include `numbers`, `str`, or `tuples` (of _immutable_ values).
+They cannot contain _mutable_ data structures such as `lists`, `dict`s, or `set`s.
+As of Python 3.7, `dict` key order is guaranteed to be the order in which entries are inserted.
+
+`values` can be of any data type or structure.
+ Values can also nest _arbitrarily_, so they can include lists-of-lists, sub-dictionaries, and other custom or compound data structures.
+
+Given a `key`, dictionaries can retrieve a `value` in (on average) constant time (_independent of the number of entries_).
 Compared to searching for a value within a `list` or `array` (_without knowing the `index` position_), a `dict` uses significantly more memory, but has very rapid retrieval.
-Dictionaries are especially useful in scenarios where the collection of items is large and must be updated and accessed frequently.
+Dictionaries are especially useful in scenarios where the collection of items is large and must be accessed and updated frequently.
 
 
 ## Dictionary Construction
@@ -20,7 +24,7 @@ The two most straightforward are using the `dict()`constructor or declaring a `d
 
 ### The `dict()` Class Constructor
 
-`dict()` can be used with any iterable of `key`, `value` pairs or with a series of `<name>=<value>` _arguments_:
+`dict()` (_the constructor for the dictionary class_) can be used with any iterable of `key`, `value` pairs or with a series of `<name>=<value>` _arguments_:
 
 ```python
 #Passing a list of key,value tuples.
@@ -57,7 +61,7 @@ Traceback (most recent call last):
 KeyError: 'color'
 ```
 
-Accessing an entry via the `get(<key>, <default value>)` method can avoid the `KeyError`:
+Accessing an entry via the `.get(<key>, <default value>)` method can avoid the `KeyError`:
 
 ```python
 >>> bear.get("color", 'not found')
@@ -121,13 +125,13 @@ You can access the _values_ within the same loop by using _square brackets_:
 
 ```python
 >>> for key in bear:
->>>     (key, bear[key]) #this forms a tuple of (key, value)
+>>>     print((key, bear[key])) #this forms a tuple of (key, value) and prints it.
 ('name', 'Black Bear')
 ('speed', 40)
 ('land_animal', True)
 ```
 
-You can also use the `.items()` method, which returns (`key`, `value`) tuples:
+You can also use the `.items()` method, which returns (`key`, `value`) tuples automatically:
 
 ```python
 #dict.items() forms (key, value tuples) that can be unpacked and iterated over.
@@ -139,7 +143,7 @@ land_animal : False
 blowholes : 1
 ```
 
-Likewise, `.keys()` will return the `keys` and `.values()` will return the `values`.
+Likewise, the `.keys()` method will return `keys` and the `.values()` method will return the `values`.
 
 [associative-array]: https://en.wikipedia.org/wiki/Associative_array#:~:text=In%20computer%20science%2C%20an%20associative,a%20function%20with%20finite%20domain.
 [hashtable-wikipedia]: https://en.wikipedia.org/wiki/Hash_table

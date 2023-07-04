@@ -4,9 +4,8 @@ A dictionary (`dict`) in Python is a data structure that associates [hashable][t
 Dictionaries are Python's only built-in [mapping type][mapping-types-dict].
 As of Python 3.7, `dict` key order is guaranteed to be the order in which entries are inserted.
 
-
-`dict`s enable the retrieval of a `value` in (on average) constant O(1) time, given the `key`.
-Compared to searching for a value within a `list` or `array` (_without knowing the `index` position_), a dictionary uses significantly more memory, but has very rapid retrieval.
+Given a `key`, dictionaries can retrieve a `value` in (on average) constant time (_independent of the number of entries_).
+Compared to searching for a value within a `list` or `array` (_without knowing the `index` position_), a `dict` uses significantly more memory, but has very rapid retrieval.
 Dictionaries are especially useful in scenarios where the collection of items is large and must be accessed and updated frequently.
 
 ## Dictionary Methods
@@ -14,6 +13,15 @@ Dictionaries are especially useful in scenarios where the collection of items is
 The `dict` class in Python provides many useful [methods][dict-methods] for working with dictionaries.
 Some were introduced in the concept for `dicts`.
 Here we cover a few more - along with some techniques for iterating through and manipulating dictionaries.
+
+- `dict.setdefault()` for automatically adding keys without error.
+- `dict.fromkeys(iterable, <default value>)` for creating a new `dict` from any number of iterables.
+- `.keys()`, `.values()`, and `.items()` for convenient iterators.
+- `sorted(<dict>.items())`. for re-ordering entries in a `dict`.
+- `dict_one.update(<dict_two>)` for updating one `dict` with overlapping values from another `dict`.
+- `dict | other_dict` and `dict |= other_dict` for merging or updating two `dict`s via operators.
+- `reversed(dict.keys())`, `reversed(dict.values())`, or `reversed(dict.items())` for reversed views.
+- `<dict>.popitem()` for removing and returning a `key`, `value` pair.
 
 ### `setdefault()` for Error-Free Insertion
 
@@ -28,7 +36,8 @@ If the key is **not** found, it will _insert_ the (`key`, `default value`) pair 
 >>> palette_I = {'Grassy Green': '#9bc400', 'Purple Mountains Majesty': '#8076a3', 'Misty Mountain Pink': '#f9c5bd'}
 
 #Looking for the value associated with key "Rock Brown".
-#The key does not exist, so it is added with the default value, and the value is returned.
+#The key does not exist, so it is added with the default 
+# value, and the value is returned.
 >>> palette.setdefault('Rock Brown', '#694605')
 '#694605'
 
@@ -57,7 +66,9 @@ Pairs are returned in Last-in-First-out (`LIFO`) order.
 If the dictionary is empty, calling `popitem()` will raise a `KeyError`:
 
 ```python
->>> palette_I = {'Grassy Green': '#9bc400', 'Purple Mountains Majesty': '#8076a3', 'Misty Mountain Pink': '#f9c5bd'}
+>>> palette_I = {'Grassy Green': '#9bc400', 
+                 'Purple Mountains Majesty': '#8076a3', 
+                 'Misty Mountain Pink': '#f9c5bd'}
 >>> palette_I.popitem()
 ('Misty Mountain Pink', '#f9c5bd')
 
@@ -84,7 +95,9 @@ These views can be used for looping over entries without altering them.
 They are also _dynamic_ -- when underlying dictionary data changes, the associated view object will reflect the change:
 
 ```python
->>> palette_I = {'Grassy Green': '#9bc400', 'Purple Mountains Majesty': '#8076a3', 'Misty Mountain Pink': '#f9c5bd'}
+>>> palette_I = {'Grassy Green': '#9bc400', 
+                 'Purple Mountains Majesty': '#8076a3', 
+                 'Misty Mountain Pink': '#f9c5bd'}
 
 #Using .keys() returns a list of keys.
 >>> palette_I.keys()
@@ -98,10 +111,10 @@ dict_values(['#9bc400', '#8076a3', '#f9c5bd'])
 >>> palette_I.items()
 dict_items([('Grassy Green', '#9bc400'), ('Purple Mountains Majesty', '#8076a3'), ('Misty Mountain Pink', '#f9c5bd')])
 
-#Views are dynamic.  Changing values in the dict changes all of the associated views.
+#Views are dynamic.  Changing values in the dict 
+# changes all of the associated views.
 >>> palette_I['Purple Mountains Majesty'] = (128, 118, 163)
 >>> palette_I['Deep Red'] = '#932432'
-
 
 >>> palette_I.values()
 dict_values(['#9bc400', (128, 118, 163), '#f9c5bd', '#932432'])
@@ -120,7 +133,9 @@ In Python 3.8+, views are also _reversible_.
 This allows keys, values, or (key, value) pairs to be iterated over in Last-in, First-out (`LIFO`) order by using `reversed(<dict>.keys())`, `reversed(<dict>.values())`, or `reversed(<dict>.items())`:
 
 ```python
->>> palette_II = {'Factory Stone Purple': '#7c677f', 'Green Treeline': '#478559', 'Purple baseline': '#161748'}
+>>> palette_II = {'Factory Stone Purple': '#7c677f', 
+                  'Green Treeline': '#478559', 
+                  'Purple baseline': '#161748'}
 >>> for item in palette_II.items():
 ...     print(item)
 ...
@@ -159,13 +174,20 @@ This method will take the (`key`,`value`) pairs of `<dict_two>` and write them i
 Where keys in the two dictionaries _overlap_, the `value` in `dict_one` will be _overwritten_ by the corresponding `value` from `dict_two`:
 
 ```python
->>> palette_I =   {'Grassy Green': '#9bc400', 'Purple Mountains Majesty': '#8076a3', 'Misty Mountain Pink': '#f9c5bd', 
-                   'Factory Stone Purple': '#7c677f', 'Green Treeline': '#478559', 'Purple baseline': '#161748'}
->>> palette_III = {'Grassy Green': (155, 196, 0), 'Purple Mountains Majesty': (128, 118, 163),
+>>> palette_I =   {'Grassy Green': '#9bc400', 
+                   'Purple Mountains Majesty': '#8076a3', 
+                   'Misty Mountain Pink': '#f9c5bd', 
+                   'Factory Stone Purple': '#7c677f', 
+                   'Green Treeline': '#478559', 
+                   'Purple baseline': '#161748'}
+                   
+>>> palette_III = {'Grassy Green': (155, 196, 0), 
+                   'Purple Mountains Majesty': (128, 118, 163),
                    'Misty Mountain Pink': (249, 197, 189)}
 >>> palette_I.update(palette_III)
 
-#Overlapping values in palette_I are replaced with values from palette_III
+#Overlapping values in palette_I are replaced with 
+# values from palette_III
 >>> palette_I
 {'Grassy Green': (155, 196, 0),
   'Purple Mountains Majesty': (128, 118, 163), 
@@ -181,8 +203,14 @@ Python 3.9 introduces a different means of merging `dicts`: the `union` operator
 When both dictionaries share keys, `dict_two` values take precedence.
 
 ```python
->>> palette_I = {'Grassy Green': '#9bc400', 'Purple Mountains Majesty': '#8076a3', 'Misty Mountain Pink': '#f9c5bd'}
->>> palette_II = {'Factory Stone Purple': '#7c677f', 'Green Treeline': '#478559', 'Purple baseline': '#161748'}
+>>> palette_I = {'Grassy Green': '#9bc400', 
+                 'Purple Mountains Majesty': '#8076a3', 
+                 'Misty Mountain Pink': '#f9c5bd'}
+
+>>> palette_II = {'Factory Stone Purple': '#7c677f', 
+                  'Green Treeline': '#478559', 
+                  'Purple baseline': '#161748'}
+
 >>> new_dict = palette_I | palette_II
 >>> new_dict
 ...
@@ -239,7 +267,8 @@ Unless a _sort key_ is specified, the default sort is over dictionary `keys`.
  'Purple baseline': '#161748'}
 
 
-# A sort key can be provided in the for of an anonymous function (lambda). 
+# A sort key can be provided in the form
+# of an anonymous function (lambda). 
 >>> value_sorted_palette = dict(sorted(color_palette.items(), key=lambda color: color[1]))
 >>> value_sorted_palette
 {'Purple baseline': '#161748',
@@ -278,7 +307,8 @@ color_reference = {'Purple Mountains Majesty': '#8076a3',
 
  
 # A dictionary comprehension can also be used to swap entries.
->>> swapped = {value: key for key, value in color_reference.items()}
+>>> swapped = {value: key for key, value in
+               color_reference.items()}
 >>> swapped
 {'#8076a3': 'Purple Mountains Majesty',
  '#f9c5bd': 'Misty Mountain Pink',
@@ -290,32 +320,31 @@ color_reference = {'Purple Mountains Majesty': '#8076a3',
 If the values stored in the `dict` are not unique, extra checks become necessary before key and value swapping can happen:
 
 ```python
-# Things become more complicated if there are duplicates in potential key values.
-# This dict is arranged by hex, RGB, and HSL keys, but values repeat.
->>> extended_color_reference = {
-                                '#8076a3': 'Purple Mountains Majesty',
-                                (128, 118, 163): 'Purple Mountains Majesty',
-                                (21, 28, 0, 36): 'Purple Mountains Majesty',
-                                '#f9c5bd': 'Misty Mountain Pink',
-                                (249, 197, 189): 'Misty Mountain Pink',
-                                (0, 21, 24, 2): 'Misty Mountain Pink',
-                                '#7c677f': 'Factory Stone Purple',
-                                (124, 103, 127): 'Factory Stone Purple',
-                                (2, 19, 0, 50): 'Factory Stone Purple',
-                                '#478559': 'Green Treeline',
-                                (71, 133, 89): 'Green Treeline',
-                                (47, 0, 33, 48): 'Green Treeline'
-                                }
+# Things become more complicated if there are duplicates in 
+# potential key values.This dict is arranged by hex, RGB, and HSL
+# keys, but values repeat.
+>>> extended_colors = {'#8076a3': 'Purple Mountains Majesty',
+                       (128, 118, 163): 'Purple Mountains Majesty',
+                       (21, 28, 0, 36): 'Purple Mountains Majesty',
+                       '#f9c5bd': 'Misty Mountain Pink',
+                       (249, 197, 189): 'Misty Mountain Pink',
+                       (0, 21, 24, 2): 'Misty Mountain Pink',
+                       '#7c677f': 'Factory Stone Purple',
+                       (124, 103, 127): 'Factory Stone Purple',
+                       (2, 19, 0, 50): 'Factory Stone Purple',
+                       '#478559': 'Green Treeline',
+                       (71, 133, 89): 'Green Treeline',
+                       (47, 0, 33, 48): 'Green Treeline'}
                                 
 # New empty dictionary for holding swapped entries.
 >>> consolidated_colors = {}
 
 # Iterating over (key, value) pairs using .items()
 >>> for key, value in extended_color_reference.items():
-...    if value in consolidated_colors:                 #Checking if key has already been created.
+...    if value in consolidated_colors: #Check if key has already been created.
 ...        consolidated_colors[value].append(key)
 ...    else:
-...        consolidated_colors[value] = [key]           #Creating a value list with the former key in it.
+...        consolidated_colors[value] = [key]  #Create a value list with the former key in it.
 
 >>> consolidated_colors
 {'Purple Mountains Majesty': ['#8076a3', (128, 118, 163), (21, 28, 0, 36)],
