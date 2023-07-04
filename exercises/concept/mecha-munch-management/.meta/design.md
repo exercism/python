@@ -4,8 +4,8 @@ Cover useful `dict` methods and a few techniques for operating on/manipulating `
 
 - `dict.setdefault()` for automatically adding keys when needed.
 - `dict.fromkeys(iterable, <default value>)` for creating a new `dict` from any number of iterables.
--  `dict.keys()`, `dict.values()`, and `.dictitems()` for convenient iterators.
--  `reversed(dict.keys())`, `reversed(dict.values())`, or `reversed(dict.items())` for reversed views.
+- `dict.keys()`, `dict.values()`, and `dict.items()` for convenient iterators.
+- `reversed(dict.keys())`, `reversed(dict.values())`, or `reversed(dict.items())` for reversed views.
 - `sorted()` with `dict.items()`. for re-ordering entries in a `dict`.
 - `dict_one.update(<dict_two>)` for updating one `dict` with overlapping values from another `dict`.
 - `dict | other_dict` and `dict |= other_dict` for merging or updating two `dict`s via operators.
@@ -14,7 +14,6 @@ Cover useful `dict` methods and a few techniques for operating on/manipulating `
 - Working more with  the `dict` views `items()` , `keys()` or `values()`.  (e.g, by sorting information using `sorted()` or by swapping `keys` and `values`, etc.)
 - Knowing that Dictionaries can be _nested_, _-- e.g._ ' a dictionary of dictionaries'.
 - Considerations when `updating()` or using `union` with dictionaries.
-
 
 ## Out of scope
 

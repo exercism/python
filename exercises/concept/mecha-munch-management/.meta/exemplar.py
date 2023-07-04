@@ -4,13 +4,14 @@
 def add_item(current_cart, items_to_add):
     """Add items to shopping cart.
 
-    :param current_cart:
-    :param items_to_add:
+    :param current_cart: dict - the current shopping cart.
+    :param items_to_add: iterable - items to add to the cart.
     :return: dict - the updated user cart dictionary.
     """
 
-    current_cart.setdefault(items_to_add[0], 0)
-    current_cart[items_to_add[0]] += items_to_add[1]
+    for item in items_to_add:
+        current_cart.setdefault(item, 0)
+        current_cart[item] += 1
     return current_cart
 
 
@@ -25,7 +26,7 @@ def read_notes(notes):
 
 
 def update_recipes(ideas, recipe_updates):
-    """Add the ingredients from a recipe to the users shopping cart.
+    """Update the recipe ideas dictionary.
 
     :param ideas: dict - The "recipe ideas" dict.
     :param recipe_updates: dict - dictionary with updates for the ideas section.
@@ -43,7 +44,7 @@ def sort_entries(cart):
     :return: dict - users shopping cart sorted in alphabetical order.
     """
 
-    return dict(sorted(cart.keys()))
+    return sorted(cart.keys())
 
 
 def send_to_store(cart, isle_mapping):
@@ -69,7 +70,7 @@ def update_store_inventory(fulfillment_cart, store_inventory):
     """
 
     for key, values in fulfillment_cart.items():
-        store_inventory[key].insert(0, store_inventory[key][0] - values[0])
+        store_inventory[key][0] = store_inventory[key][0] - values[0]
         if store_inventory[key][0] == 0:
             store_inventory[key][0] = 'Out of Stock'
     return store_inventory

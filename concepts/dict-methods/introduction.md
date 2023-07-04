@@ -1,12 +1,13 @@
 # Dictionary Methods in Python
 
-A dictionary (`dict`) in Python is a data structure that associates [hashable][term-hashable] _keys_ to _values_ and is known in other programming languages as a [hash table][hashtable-wikipedia], hashmap, or [associative array][associative-array].
-Dictionaries are the only built-in [mapping type][mapping-types-dict].
-As of Python 3.7, key order is guaranteed to be the order in which entries are inserted.
+A dictionary (`dict`) in Python is a data structure that associates [hashable][term-hashable] _keys_ to _values_ and is known in other programming languages as a resizable [hash table][hashtable-wikipedia], hashmap, or [associative array][associative-array].
+Dictionaries are Python's only built-in [mapping type][mapping-types-dict].
+As of Python 3.7, `dict` key order is guaranteed to be the order in which entries are inserted.
+
 
 `dict`s enable the retrieval of a `value` in (on average) constant O(1) time, given the `key`.
 Compared to searching for a value within a `list` or `array` (_without knowing the `index` position_), a dictionary uses significantly more memory, but has very rapid retrieval.
-Dictionaries are especially useful in scenarios where the collection of items is large and must be accessed/updated frequently.
+Dictionaries are especially useful in scenarios where the collection of items is large and must be accessed and updated frequently.
 
 The `dict` class in Python provides many useful [methods][dict-methods], some of which are introduced in the concept exercise for dictionaries.
 
@@ -26,4 +27,3 @@ This concept tackles a few more:
 [hashtable-wikipedia]: https://en.wikipedia.org/wiki/Hash_table
 [term-hashable]: https://docs.python.org/3/glossary.html#term-hashable
 [dict-methods]: https://docs.python.org/3/library/stdtypes.html#dict
-

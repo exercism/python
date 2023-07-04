@@ -1,12 +1,13 @@
 # Dictionary Methods in Python
 
-A dictionary (`dict`) is a Python data structure that associates [hashable][term-hashable] _keys_ to _values_.
-It is known in other programming languages as a resizable [hash table][hashtable-wikipedia], hashmap, or [associative array][associative-array].
+A dictionary (`dict`) in Python is a data structure that associates [hashable][term-hashable] _keys_ to _values_ and is known in other programming languages as a resizable [hash table][hashtable-wikipedia], hashmap, or [associative array][associative-array].
 Dictionaries are Python's only built-in [mapping type][mapping-types-dict].
+As of Python 3.7, `dict` key order is guaranteed to be the order in which entries are inserted.
 
-Dictionaries enable the retrieval of a `value` in (on average) constant O(1) time, given the `key`.
-Compared to searching for a value within a `list` or `array` (_without knowing the `index` position_), a `dict` uses significantly more memory, but has very rapid retrieval.
-Dictionaries are especially useful in scenarios where the collection of items is large and must be updated and accessed frequently.
+
+`dict`s enable the retrieval of a `value` in (on average) constant O(1) time, given the `key`.
+Compared to searching for a value within a `list` or `array` (_without knowing the `index` position_), a dictionary uses significantly more memory, but has very rapid retrieval.
+Dictionaries are especially useful in scenarios where the collection of items is large and must be accessed and updated frequently.
 
 
 ## Dictionary Methods
@@ -92,7 +93,7 @@ dict_items([('Grassy Green', '#9bc400'), ('Purple Mountains Majesty', (128, 118,
 
 In Python 3.7+, `dicts` preserve the order in which entries are inserted allowing First-in, First-out (_`FIFO`_),  iteration using `.keys()`, `.values()`, or `.items()`.
 In Python 3.8+, views are also _reversible_.
-This allows keys, values, or (key, value) pairs to be iterated over in Last-in, First-out (`LIFO`) order by using `reversed(<dict>.keys())`, `reversed(<dict>.values())`, or `reversed(<dict>.items())`:
+This allows keys, values, or (`key`, `value`) pairs to be iterated over in Last-in, First-out (`LIFO`) order by using `reversed(<dict>.keys())`, `reversed(<dict>.values())`, or `reversed(<dict>.items())`:
 
 ```python
 >>> palette_II = {'Factory Stone Purple': '#7c677f', 'Green Treeline': '#478559', 'Purple baseline': '#161748'}
@@ -113,7 +114,6 @@ This allows keys, values, or (key, value) pairs to be iterated over in Last-in, 
 ('Purple baseline', '#161748')
 ('Green Treeline', '#478559')
 ('Factory Stone Purple', '#7c677f')
-
 ```
 
 ### Combining Dictionaries with `.update()`
@@ -154,12 +154,11 @@ Where keys in the two dictionaries _overlap_, the `value` in `dict_one` will be 
   'Green Treeline': '#478559', 'Purple baseline': '#161748'}
 ```
 
-### Merging and Updating Dictionaries Via the Union (`|`) Operator
+### Merging and Updating Dictionaries Via the Union (`|`) Operators
 
-Python 3.9 introduces a different means of merging `dicts`:  the `union` operators.
+Python 3.9 introduces a different means of merging `dicts`: the `union` operators.
 `dict_one | dict_two` will create a **new dictionary**, made up of the (`key`, `value`) pairs of `dict_one` and `dict_two`.
 When both dictionaries share keys, `dict_two` values take precedence.
-
 
 ```python
 >>> palette_I = {'Grassy Green': '#9bc400', 'Purple Mountains Majesty': '#8076a3', 'Misty Mountain Pink': '#f9c5bd'}
@@ -178,24 +177,23 @@ When both dictionaries share keys, `dict_two` values take precedence.
 `dict_one |= other` behaves similar to `<dict_one>.update(<dict_two>)`, but in this case, `other` can be either a `dict` or an iterable of (`key`, `value`) pairs:
 
 ```python
- >>> palette_III = {'Grassy Green': (155, 196, 0),
-                    'Purple Mountains Majesty': (128, 118, 163),
-                    'Misty Mountain Pink': (249, 197, 189)}
- >>> new_dict |= palette_III
- >>> new_dict
- ...
- {'Grassy Green': (155, 196, 0),
- 'Purple Mountains Majesty': (128, 118, 163),
- 'Misty Mountain Pink': (249, 197, 189),
- 'Factory Stone Purple': '#7c677f',
- 'Green Treeline': '#478559',
- 'Purple baseline': '#161748'}
+>>> palette_III = {'Grassy Green': (155, 196, 0),
+                   'Purple Mountains Majesty': (128, 118, 163),
+                   'Misty Mountain Pink': (249, 197, 189)}
+>>> new_dict |= palette_III
+>>> new_dict
+...
+{'Grassy Green': (155, 196, 0),
+'Purple Mountains Majesty': (128, 118, 163),
+'Misty Mountain Pink': (249, 197, 189),
+'Factory Stone Purple': '#7c677f',
+'Green Treeline': '#478559',
+'Purple baseline': '#161748'}
 ```
 
 For a detailed explanation of dictionaries and methods for working with them, the [official tutorial][dicts-docs] and the [official library reference][mapping-types-dict] are excellent starting places.
-For more on sorting, see the [Sorting HOW TO][sorting-howto] in the python docs.
-[Real Python][how-to-dicts] and [Finxter][fi-dict-guide] also have very thorough articles on Python dictionaries.
 
+[Real Python][how-to-dicts] and [Finxter][fi-dict-guide] also have very thorough articles on Python dictionaries.
 
 [associative-array]: https://en.wikipedia.org/wiki/Associative_array#:~:text=In%20computer%20science%2C%20an%20associative,a%20function%20with%20finite%20domain.
 [dict-methods]: https://docs.python.org/3/library/stdtypes.html#dict
@@ -206,5 +204,4 @@ For more on sorting, see the [Sorting HOW TO][sorting-howto] in the python docs.
 [hashtable-wikipedia]: https://en.wikipedia.org/wiki/Hash_table
 [how-to-dicts]: https://www.w3schools.com/python/python_dictionaries.asp
 [mapping-types-dict]: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
-[sorting-howto]: https://docs.python.org/3/howto/sorting.html
 [term-hashable]: https://docs.python.org/3/glossary.html#term-hashable
