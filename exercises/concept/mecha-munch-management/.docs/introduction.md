@@ -9,7 +9,6 @@ As of Python 3.7, `dict` key order is guaranteed to be the order in which entrie
 Compared to searching for a value within a `list` or `array` (_without knowing the `index` position_), a dictionary uses significantly more memory, but has very rapid retrieval.
 Dictionaries are especially useful in scenarios where the collection of items is large and must be accessed and updated frequently.
 
-
 ## Dictionary Methods
 
 The `dict` class in Python provides many useful [methods][dict-methods] for working with dictionaries.
@@ -114,6 +113,34 @@ This allows keys, values, or (`key`, `value`) pairs to be iterated over in Last-
 ('Purple baseline', '#161748')
 ('Green Treeline', '#478559')
 ('Factory Stone Purple', '#7c677f')
+```
+
+### Sorting a Dictionary
+
+Dictionaries do not have a built-in sorting method.
+However, it is possible to sort a `dict` _view_ using the built-in function `sorted()` with `.items()`.
+The sorted view can then be used to create a new dictionary.
+Like iteration, the default sort is over dictionary `keys`.
+
+```python
+# Default ordering for a dictionary is last in, first out (LIFO).
+>>> color_palette = {'Grassy Green': '#9bc400', 
+                    'Purple Mountains Majesty': '#8076a3', 
+                    'Misty Mountain Pink': '#f9c5bd', 
+                    'Factory Stone Purple': '#7c677f', 
+                    'Green Treeline': '#478559', 
+                    'Purple baseline': '#161748'}
+ 
+ 
+# The default sort order for a dictionary uses the keys.
+>>> sorted_palette = dict(sorted(color_palette.items()))
+>>> sorted_palette
+{'Factory Stone Purple': '#7c677f',
+ 'Grassy Green': '#9bc400',
+ 'Green Treeline': '#478559',
+ 'Misty Mountain Pink': '#f9c5bd',
+ 'Purple Mountains Majesty': '#8076a3',
+ 'Purple baseline': '#161748'}
 ```
 
 ### Combining Dictionaries with `.update()`

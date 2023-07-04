@@ -9,7 +9,6 @@ As of Python 3.7, `dict` key order is guaranteed to be the order in which entrie
 Compared to searching for a value within a `list` or `array` (_without knowing the `index` position_), a dictionary uses significantly more memory, but has very rapid retrieval.
 Dictionaries are especially useful in scenarios where the collection of items is large and must be accessed and updated frequently.
 
-
 ## Dictionary Methods
 
 The `dict` class in Python provides many useful [methods][dict-methods] for working with dictionaries.
@@ -327,9 +326,9 @@ If the values stored in the `dict` are not unique, extra checks become necessary
 
 For a detailed explanation of dictionaries and methods for working with them, the [official tutorial][dicts-docs] and the [official library reference][mapping-types-dict] are excellent starting places.
 
-For more on sorting, see the [Sorting HOW TO][sorting-howto] in the Python docs.
-
 [Real Python][how-to-dicts] and [Finxter][fi-dict-guide] also have very thorough articles on Python dictionaries.
+
+For more on sorting, see the [Sorting HOW TO][sorting-howto] in the Python docs.
 
 [associative-array]: https://en.wikipedia.org/wiki/Associative_array#:~:text=In%20computer%20science%2C%20an%20associative,a%20function%20with%20finite%20domain.
 [dict-methods]: https://docs.python.org/3/library/stdtypes.html#dict
