@@ -14,7 +14,9 @@ As of Python 3.7, `dict` key order is guaranteed to be the order in which entrie
 
 Given a `key`, dictionaries can retrieve a `value` in (on average) constant time (_independent of the number of entries_).
 Compared to searching for a value within a `list` or `array` (_without knowing the `index` position_), a `dict` uses significantly more memory, but has very rapid retrieval.
+
 Dictionaries are especially useful in scenarios where the collection of items is large and must be accessed and updated frequently.
+
 
 [associative-array]: https://en.wikipedia.org/wiki/Associative_array#:~:text=In%20computer%20science%2C%20an%20associative,a%20function%20with%20finite%20domain.
 [hashtable-wikipedia]: https://en.wikipedia.org/wiki/Hash_table
