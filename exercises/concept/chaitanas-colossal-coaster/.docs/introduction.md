@@ -15,6 +15,22 @@ Python also provides many useful [list-methods][list-methods] for working with l
 
 Note that when you manipulate a `list` with a `list-method`, **you alter the list** object that has been passed.
  If you do not wish to mutate the original `list`, you will need to at least make a `shallow copy` of it via slice or `<list>.copy()`.
+ Assigning it to a new variable, or passing it to a function, does not make a new list.
+
+```python
+>>> def double(internal):
+...     internal.extend(internal)
+...     return None
+...
+
+>>> external = [1, 2, 3]
+
+>>> double(external)
+
+>>> print(external)
+[1, 2, 3, 1, 2, 3]
+>>> # External was modified
+```
 
 
 ## Adding Items
@@ -233,94 +249,6 @@ ValueError: 10 is not in list
 3
 ```
 
-## Copying lists
-
-When coding, you may need to make multiple instances of a variable. Your first instinct may be to make a new variable and assign it to the value of the old one. This will work fine with integers:
-
-```python
->>> x = 3
-
->>> y = x
-
->>> y += 1
-
->>> print(x, y)
-3 4
-```
-
-However, trying to do the same with lists may surprise you:
-
-```python
->>> l = [1, 2, 3]
-
->>> l2 = l
-
->>> l2.append(4)
-
->>> print(l, l2)
-[1, 2, 3, 4] [1, 2, 3, 4]
-```
-
-When you reassign lists, you are *not* making a new list. This also holds true for function calls:
-
-```python
->>> def double(internal):
-...     internal.extend(internal)
-...     return None
-...
-
->>> external = [1, 2, 3]
-
->>> double(external)
-
->>> print(external)
-[1, 2, 3, 1, 2, 3]
-```
-
-You can see that calling `double()` modifies `external`. This isn't hard to deal with when doing beginner programming, but becomes a more tricky trap over time.
-
-This is happening because Python is sharing the object, rather than copying it. We can see this with the comparison operator `is`:
-
-```python
->>> x = 1
-
->>> y = x
-
->>> x is y
-True
-
->>> y += 1
-
->>> x is y
-False
-
->>> l = [1, 2, 3]
-
->>> l2 = l
-
->>> l2.append(4)
-
->>> l is l2
-True
-```
-
-To make a copy of a list, use the `.copy()` Method found on list objects.
-
-```python
->>> def double(internal):
-...     result = internal.extend(internal)
-...     return result
-...
-
->>> external = [1, 2, 3]
-
->>> returned = double(external)
-
->>> print(returned)
-[1, 2, 3, 1, 2, 3]
->>> print(returned)
-[1, 2, 3]
-```
 
 [common sequence operations]: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations
 [dict]: https://docs.python.org/3/library/stdtypes.html#dict

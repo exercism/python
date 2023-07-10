@@ -70,16 +70,8 @@ def remove_the_last_person(queue):
 
 
 def sorted_names(queue):
-    """Sort the names in the queue in alphabetical order and return the result.
-
-    :param queue: list - names in the queue.
-    :return: list - copy of the queue in alphabetical order.
-    """
-
-    pass
-
-def functional_sort(queue):
-    """Sort the queue without mutating the original.
+    """Make a copy of the queue, sort the names in the queue in alphabetical
+    order and return the result.
 
     :param queue: list - names in the queue.
     :return: list - copy of the queue in alphabetical order.

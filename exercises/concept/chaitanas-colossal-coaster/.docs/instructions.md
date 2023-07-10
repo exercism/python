@@ -138,20 +138,10 @@ Define the `sorted_names()` function that takes 1 argument,  `queue`, (the `list
 
 
 ```python
->>> sorted_names(queue=["Natasha", "Steve", "Eltran", "Natasha", "Rocket"])
-...
+>>> queue = ["Natasha", "Steve", "Eltran", "Natasha", "Rocket"]
+>>> sorted = sorted_names(queue)
+>>> print(sorted)
 ['Eltran', 'Natasha', 'Natasha', 'Rocket', 'Steve']
-```
-
-## 8. Show how to not mutate the state
-
-Define the `functional_sort()` function that does what `sorted_names()` does, but doesn't modify the variable it's passed.
-
-```python
->>> l = ["Natasha", "Steve", "Eltran", "Natasha", "Rocket"]
->>> functional_sort(queue=l)
-...
-['Eltran', 'Natasha', 'Natasha', 'Rocket', 'Steve']
->>> print(l)
+>>> print(queue)
 ["Natasha", "Steve", "Eltran", "Natasha", "Rocket"]
 ```
