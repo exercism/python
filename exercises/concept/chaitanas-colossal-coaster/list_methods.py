@@ -77,3 +77,12 @@ def sorted_names(queue):
     """
 
     pass
+
+def functional_sort(queue):
+    """Sort the queue without mutating the original.
+
+    :param queue: list - names in the queue.
+    :return: list - copy of the queue in alphabetical order.
+    """
+
+    pass

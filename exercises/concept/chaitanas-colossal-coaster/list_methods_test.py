@@ -9,6 +9,7 @@ from list_methods import (
     how_many_namefellows,
     remove_the_last_person,
     sorted_names,
+    functional_sort
 )
 
 
@@ -119,3 +120,17 @@ class ListMethodsTest(unittest.TestCase):
         for variant, (params, result) in enumerate(data, start=1):
             with self.subTest(f'variation #{variant}', input=params, output=result):
                 self.assertListEqual(sorted_names(params), result, msg=error_message)
+
+    @pytest.mark.task(taskno=8)
+    def test_functional_sort(self):
+        in_data = ['Steve', 'Ultron', 'Natasha', 'Rocket']
+        backup_data = in_data
+        out_data = ['Natasha', 'Rocket', 'Steve', 'Ultron']
+
+        returned = functional_sort(in_data)
+        error_message = 'The queue was not properly sorted.'
+        with self.subTest(f'sorting', input=in_data, output=returned):
+            self.assertListEqual(returned, out_data, msg=error_message)
+        error_message = 'The original data was mutated.'
+        with self.subTest(f'not mutating', input=in_data, output=returned):
+            self.assertListEqual(in_data, backup_data, msg=error_message)
