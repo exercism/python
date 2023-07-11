@@ -422,6 +422,59 @@ The operator version of this method is  `<set> ^ <other set>`.
 { '🥑', '🌴','🌲', '🌵', '🍈', '🥭'}
 ```
 
+~~~~exercism/note
+
+A symmetric difference of more than two sets will result in a `set` that includes both the elements unique to each `set` AND elements shared between more than two sets in the series (_details in the Wikipedia article on [symmetric difference][symmetric_difference]_).  
+
+To obtain only items unique to each `set` in the series, intersections between all 2-set combinations need to be aggregated in a separate step, and removed:  
+
+
+```python
+>>> one = {'black pepper','breadcrumbs','celeriac','chickpea flour',
+           'flour','lemon','parsley','salt','soy sauce',
+           'sunflower oil','water'}
+
+>>> two = {'black pepper','cornstarch','garlic','ginger',
+           'lemon juice','lemon zest','salt','soy sauce','sugar',
+           'tofu','vegetable oil','vegetable stock','water'}
+
+>>> three = {'black pepper','garlic','lemon juice','mixed herbs',
+             'nutritional yeast', 'olive oil','salt','silken tofu',
+             'smoked tofu','soy sauce','spaghetti','turmeric'}
+
+>>> four = {'barley malt','bell pepper','cashews','flour',
+            'fresh basil','garlic','garlic powder', 'honey',
+            'mushrooms','nutritional yeast','olive oil','oregano',
+            'red onion', 'red pepper flakes','rosemary','salt',
+            'sugar','tomatoes','water','yeast'}
+
+>>> intersections = (one & two | one & three | one & four | 
+                     two & three | two & four | three & four)
+...
+{'black pepper','flour','garlic','lemon juice','nutritional yeast', 
+'olive oil','salt','soy sauce', 'sugar','water'}
+
+# The ^ operation will include some of the items in intersections, 
+# which means it is not a "clean" symmetric difference - there
+# are overlapping members.
+>>> (one ^ two ^ three ^ four) & intersections
+{'black pepper', 'garlic', 'soy sauce', 'water'}
+
+# Overlapping members need to be removed in a separate step
+# when there are more than two sets that need symmetric difference.
+>>> (one ^ two ^ three ^ four) - intersections
+...
+{'barley malt','bell pepper','breadcrumbs', 'cashews','celeriac',
+  'chickpea flour','cornstarch','fresh basil', 'garlic powder',
+  'ginger','honey','lemon','lemon zest','mixed herbs','mushrooms',
+  'oregano','parsley','red onion','red pepper flakes','rosemary',
+  'silken tofu','smoked tofu','spaghetti','sunflower oil', 'tofu', 
+  'tomatoes','turmeric','vegetable oil','vegetable stock','yeast'}
+```
+
+[symmetric_difference]: https://en.wikipedia.org/wiki/Symmetric_difference
+~~~~
+
 [hashable]: https://docs.python.org/3.7/glossary.html#term-hashable
 [mathematical-sets]: https://en.wikipedia.org/wiki/Set_theory#Basic_concepts_and_notation
 [operator]: https://www.computerhope.com/jargon/o/operator.htm
