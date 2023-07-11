@@ -114,8 +114,8 @@ class ListMethodsTest(unittest.TestCase):
 
         returned = sorted_names(in_data)
         error_message = 'The queue was not properly sorted.'
-        with self.subTest(f'sorting', input=in_data, output=returned):
+        with self.subTest('sorting', input=in_data, output=returned):
             self.assertListEqual(returned, out_data, msg=error_message)
         error_message = 'The original data was changed.'
-        with self.subTest(f'not mutating', input=in_data, output=returned):
+        with self.subTest('not mutating', input=in_data, output=returned):
             self.assertListEqual(in_data, backup_data, msg=error_message)
