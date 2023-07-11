@@ -3,14 +3,14 @@
 ## General
 
 - [Sets][sets] are mutable, unordered collections with no duplicate elements.
-- Sets can contain any data type, but all elements within a set must be [hashable][hashable].
+- Sets can contain any data type, as long as all elements are [hashable][hashable].
 - Sets are [iterable][iterable].
 - Sets are most often used to quickly dedupe other collections or for membership testing.
 - Sets also support mathematical operations like `union`, `intersection`, `difference`, and `symmetric difference`
 
 ## 1. Clean up Dish Ingredients
 
-- The `set()` constructor can take any [iterable][iterable] as an argument.  [lists:python/lists](https://exercism.lol/tracks/python/concepts/lists) are iterable.
+- The `set()` constructor can take any [iterable][iterable] as an argument. [lists:python/lists](https://exercism.lol/tracks/python/concepts/lists) are iterable.
 - Remember: [tuples:python/tuples](https://exercism.lol/tracks/python/concepts/tuples) can be formed using `(<element_1>, <element_2>)` or via the `tuple()` constructor.
 
 ## 2. Cocktails and Mocktails
