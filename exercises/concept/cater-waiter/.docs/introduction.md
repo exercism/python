@@ -95,21 +95,17 @@ Sets can hold different datatypes and _nested_ datatypes, but all `set` elements
                         ['😜', '🤪', '😝']}
 
 Traceback (most recent call last):
-
-  File "<ipython-input-24-1bb7c3d22c52>", line 1, in <module>
-    lists_as_elements = {['😅','🤣'], ['😂','🙂','🙃'], ['😜', '🤪', '😝']}
-
+  File "<stdin>", line 1, in <module>
 TypeError: unhashable type: 'list'
+
 
 # Standard sets are mutable, so they cannot be hashed.
 >>> sets_as_elements = {{'😅','🤣'}, 
                         {'😂','🙂','🙃'}, 
                         {'😜', '🤪', '😝'}}
+
 Traceback (most recent call last):
-
-  File "<ipython-input-25-92f22c7541b1>", line 1, in <module>
-    sets_as_elements = {{'😅','🤣'}, {'😂','🙂','🙃'}, {'😜', '🤪', '😝'}}
-
+  File "<stdin>", line 1, in <module>
 TypeError: unhashable type: 'set'
 ```
 
@@ -195,7 +191,7 @@ False
 True
 ```
 
- `<set>.issuperset(<other_collection>)` is the inverse of `.issubset()`.
+`<set>.issuperset(<other_collection>)` is the inverse of `.issubset()`.
 It is used to check if every element in `<other_collection>` is also in `<set>`.
 The operator form is `<set> >= <other_set>`:
 
@@ -224,7 +220,7 @@ True
 ### Set Intersections
 
 `<set>.intersection(*<other iterables>)` returns a new `set` with elements common to the original `set` and all `<others>` (_in other words, the `set` where everything [intersects][intersection]_).
-The operator version of this method is  `<set> & <other set> & <other set 2> & ... <other set n>`:
+The operator version of this method is `<set> & <other set> & <other set 2> & ... <other set n>`:
 
 
 ```python
