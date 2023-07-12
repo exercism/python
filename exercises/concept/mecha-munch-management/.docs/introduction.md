@@ -1,21 +1,10 @@
 # Dictionary Methods in Python
 
-A dictionary (`dict`) in Python is a data structure that associates [hashable][term-hashable] _keys_ to _values_ and is known in other programming languages as a resizable [hash table][hashtable-wikipedia], hashmap, or [associative array][associative-array].
-Dictionaries are Python's only built-in [mapping type][mapping-types-dict].
-As of Python 3.7, `dict` key order is guaranteed to be the order in which entries are inserted.
-
-
-Given the `key`, dictionaries enable the retrieval of a `value` in (on average) constant time (_independent of the number of entries_).
-Compared to searching for a value within a `list` or `array` (_without knowing the `index` position_), a `dict` uses significantly more memory, but has very rapid retrieval.
-Dictionaries are especially useful in scenarios where the collection of items is large and must be accessed and updated frequently.
-
-## Dictionary Methods
-
 The `dict` class in Python provides many useful [methods][dict-methods] for working with dictionaries.
 Some were introduced in the concept for `dicts`.
 Here we cover a few more - along with some techniques for iterating through and manipulating dictionaries.
 
-### `setdefault()` for Error-Free Insertion
+### Use `setdefault()` for Error-Free Insertion
 
 The dictionary concept previously covered that `.get(key, <default value>)` returns an existing `value` or the `default value` if a `key` is not found in a dictionary, thereby avoiding a `KeyError`.
 This works well in situations where you would rather not have extra error handling but cannot trust that a looked-for `key` will be present.
@@ -27,17 +16,17 @@ If the key is **not** found, it will _insert_ the (`key`, `default value`) pair 
 ```python
 >>> palette_I = {'Grassy Green': '#9bc400', 'Purple Mountains Majesty': '#8076a3', 'Misty Mountain Pink': '#f9c5bd'}
 
-#Looking for the value associated with key "Rock Brown".
-#The key does not exist, so it is added with the default value, and the value is returned.
+# Looking for the value associated with key "Rock Brown".
+# The key does not exist, so it is added with the default value, and the value is returned.
 >>> palette.setdefault('Rock Brown', '#694605')
 '#694605'
 
-#The (key, default value) pair has now been added to the dictionary.
+# The (key, default value) pair has now been added to the dictionary.
 >>> palette_I
 {'Grassy Green': '#9bc400', 'Purple Mountains Majesty': '#8076a3', 'Misty Mountain Pink': '#f9c5bd', 'Rock Brown': '#694605'}
 ```
 
-### Use `fromkeys()` to Populate a Dictionary
+## Use `fromkeys()` to Populate a Dictionary from an Iterable
 
 To quickly populate a dictionary with various `keys` and default values, the _class method_ [`fromkeys(iterable, <default value>)`][fromkeys] will iterate through an iterable of `keys` and create a new `dict`.
 All `values` will be set to the `default value` provided:
@@ -50,31 +39,31 @@ All `values` will be set to the `default value` provided:
  'Misty Mountain Pink': 'fill in hex color here'}
 ```
 
-### Iterating Over Entries in a Dictionary
+## Iterating Over Entries in a Dictionary Via Views
 
 The `.keys()`, `.values()`, and `.items()` methods return [_iterable views_][dict-views] of a dictionary.
 
-These views can be used for looping over entries without altering them.
-They are also _dynamic_ -- when underlying dictionary data changes, the associated view object will reflect the change:
+These views can be used to easily loop over entries without altering them.
+Views are also _dynamic_ -- when underlying dictionary data changes, the associated `view object` will reflect the change:
 
 ```python
 >>> palette_I = {'Grassy Green': '#9bc400',
                  'Purple Mountains Majesty': '#8076a3',
                   'Misty Mountain Pink': '#f9c5bd'}
 
-#Using .keys() returns a list of keys.
+# Using .keys() returns a list of keys.
 >>> palette_I.keys()
 dict_keys(['Grassy Green', 'Purple Mountains Majesty', 'Misty Mountain Pink'])
 
-#Using .values() returns a list of values.
+# Using .values() returns a list of values.
 >>> palette_I.values()
 dict_values(['#9bc400', '#8076a3', '#f9c5bd'])
 
-#Using .items() returns a list of (key, value) tuples.
+# Using .items() returns a list of (key, value) tuples.
 >>> palette_I.items()
 dict_items([('Grassy Green', '#9bc400'), ('Purple Mountains Majesty', '#8076a3'), ('Misty Mountain Pink', '#f9c5bd')])
 
-#Views are dynamic.  Changing values in the dict changes all of the associated views.
+# Views are dynamic.  Changing values in the dict changes all of the associated views.
 >>> palette_I['Purple Mountains Majesty'] = (128, 118, 163)
 >>> palette_I['Deep Red'] = '#932432'
 
@@ -88,16 +77,17 @@ dict_keys(['Grassy Green', 'Purple Mountains Majesty', 'Misty Mountain Pink', 'D
 dict_items([('Grassy Green', '#9bc400'), ('Purple Mountains Majesty', (128, 118, 163)), ('Misty Mountain Pink', '#f9c5bd'), ('Deep Red', '#932432')])
 ```
 
-### More on `.keys()`, `.values()`, and `.items()`
+## More on `.keys()`, `.values()`, and `.items()`
 
-In Python 3.7+, `dicts` preserve the order in which entries are inserted allowing First-in, First-out (_`FIFO`_),  iteration using `.keys()`, `.values()`, or `.items()`.
+In Python 3.7+, `dicts` preserve the order in which entries are inserted allowing First-in, First-out (_`FIFO`_),  iteration when using `.keys()`, `.values()`, or `.items()`.
+
 In Python 3.8+, views are also _reversible_.
 This allows keys, values, or (`key`, `value`) pairs to be iterated over in Last-in, First-out (`LIFO`) order by using `reversed(<dict>.keys())`, `reversed(<dict>.values())`, or `reversed(<dict>.items())`:
 
 ```python
 >>> palette_II = {'Factory Stone Purple': '#7c677f', 'Green Treeline': '#478559', 'Purple baseline': '#161748'}
 
-#Iterating in insertion order 
+# Iterating in insertion order 
 >>> for item in palette_II.items():
 ...     print(item)
 ...
@@ -106,7 +96,7 @@ This allows keys, values, or (`key`, `value`) pairs to be iterated over in Last-
 ('Purple baseline', '#161748')
 
 
-#Iterating in the reverse direction.
+# Iterating in the reverse direction.
 >>> for item in reversed(palette_II.items()):
 ...    print (item)
 ...
@@ -115,7 +105,7 @@ This allows keys, values, or (`key`, `value`) pairs to be iterated over in Last-
 ('Factory Stone Purple', '#7c677f')
 ```
 
-### Sorting a Dictionary
+## Sorting a Dictionary
 
 Dictionaries do not have a built-in sorting method.
 However, it is possible to sort a `dict` _view_ using the built-in function `sorted()` with `.items()`.
@@ -143,7 +133,7 @@ Like iteration, the default sort is over dictionary `keys`.
  'Purple baseline': '#161748'}
 ```
 
-### Combining Dictionaries with `.update()`
+## Combining Dictionaries with `.update()`
 
 `<dict_one>.update(<dict_two>)` can be used to _combine_ two dictionaries.
 This method will take the (`key`,`value`) pairs of `<dict_two>` and write them into `<dict_one>`:
@@ -158,7 +148,7 @@ This method will take the (`key`,`value`) pairs of `<dict_two>` and write them i
 
 >>> palette_I.update(palette_II)
 
-#Note that new items from palette_II are added.
+# Note that new items from palette_II are added.
 >>> palette_I
 {'Grassy Green': '#9bc400', 'Purple Mountains Majesty': '#8076a3', 'Misty Mountain Pink': '#f9c5bd', 'Factory Stone Purple': '#7c677f', 'Green Treeline': '#478559', 'Purple Baseline': '#161748'}
 ```
@@ -172,7 +162,7 @@ Where keys in the two dictionaries _overlap_, the `value` in `dict_one` will be 
                    'Misty Mountain Pink': (249, 197, 189)}
 >>> palette_I.update(palette_III)
 
-#Overlapping values in palette_I are replaced with values from palette_III
+# Overlapping values in palette_I are replaced with values from palette_III
 >>> palette_I
 {'Grassy Green': (155, 196, 0),
   'Purple Mountains Majesty': (128, 118, 163), 
@@ -181,7 +171,7 @@ Where keys in the two dictionaries _overlap_, the `value` in `dict_one` will be 
   'Green Treeline': '#478559', 'Purple baseline': '#161748'}
 ```
 
-### Merging and Updating Dictionaries Via the Union (`|`) Operators
+## Merge or Update Dictionaries Via the Union (`|`) Operators
 
 Python 3.9 introduces a different means of merging `dicts`: the `union` operators.
 `dict_one | dict_two` will create a **new dictionary**, made up of the (`key`, `value`) pairs of `dict_one` and `dict_two`.
@@ -222,13 +212,10 @@ For a detailed explanation of dictionaries and methods for working with them, th
 
 [Real Python][how-to-dicts] and [Finxter][fi-dict-guide] also have very thorough articles on Python dictionaries.
 
-[associative-array]: https://en.wikipedia.org/wiki/Associative_array#:~:text=In%20computer%20science%2C%20an%20associative,a%20function%20with%20finite%20domain.
 [dict-methods]: https://docs.python.org/3/library/stdtypes.html#dict
 [dict-views]: https://docs.python.org/3/library/stdtypes.html#dict-views
 [dicts-docs]: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
 [fi-dict-guide]: https://blog.finxter.com/python-dictionary
 [fromkeys]: https://docs.python.org/3/library/stdtypes.html#dict.fromkeys
-[hashtable-wikipedia]: https://en.wikipedia.org/wiki/Hash_table
 [how-to-dicts]: https://www.w3schools.com/python/python_dictionaries.asp
 [mapping-types-dict]: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
-[term-hashable]: https://docs.python.org/3/glossary.html#term-hashable
