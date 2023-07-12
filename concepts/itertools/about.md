@@ -1,41 +1,49 @@
 # About
 
-Itertools is a module in the Python standard library that provides a number of functions that create iterators for efficient looping.
-Iterators are objects that can be iterated over.
-An example when you iterate over an iterator is a `for <variable> in <iterator>:` loop.
+[`itertools`][itertools] is a module in the Python standard library that provides a number of functions that create iterators for more efficient looping.
 
-There are a number of functions in the itertools module that are useful for looping over data.
-These functions often are also able to enchant the readability and/or maintainability of the code.
+[Iterators][iterators] are objects that represent a stream of data.
 
-This concept will cover these functions and how to use them:
+An example is the "stream" of data when you iterate over a `list` in a `for <item> in <list>:` loop.
+
+
+Many functions in `itertools` are very useful for looping/iterating over data streams in various ways.
+
+These functions often enhance the readability and/or maintainability of the code.
+
+
+This concept will cover a selection of these functions and how to use them:
+
 
 - `chain()`
 - `chain.from_iterable()`
 - `compress()`
 - `islice()`
 - `pairwise()`
-- Maybe `tee()`
 - `zip_longest()`
 - `product()`
 - `permutations()`
 - `combinations()`
-- `combinations_with_replacement()`
 - `count()`
 - `cycle()`
-- `repeat()`
 
 There are more functions in the itertools module, like:
 
 - `accumulate()`
+-`combinations_with_replacement()`
 - `groupby()`
+
+- `repeat()`
 - `starmap()`
+
 - `takewhile()`
 - `dropwhile()`
 - `filterfalse()`
 
 These functions will be covered in a later concept.
 
-`count()`, `cycle()`, and `repeat()` is categorized as infinite iterators.
+`count()`, `cycle()`, and `repeat()` are categorized as infinite iterators.
+
 These iterators will never terminate and will keep looping forever.
 
 ## Iterators terminating on the shortest input sequence
