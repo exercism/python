@@ -142,7 +142,7 @@
         "uuid": "121388ab-d86c-498d-928c-1fe536583e97",
         "concepts": ["itertools"],
         "prerequisites": ["tuples"],
-        "status": "beta"
+        "status": "wip"
       },
       {
         "slug": "inventory-management",
