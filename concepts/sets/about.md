@@ -2,9 +2,11 @@
 
 A [`set`][type-set] is a _mutable_ and _unordered_ collection of [_hashable_][hashable] objects.
 Set members must be distinct -- duplicate items are not allowed.
-Like most collections, sets can hold multiple different data types and even nested structures like a `tuple` of `tuples` -- as long as all elements can be _hashed_.
+They can hold multiple different data types and even nested structures like a `tuple` of `tuples` -- as long as all elements can be _hashed_.
 Sets also come in an immutable [`frozensets`][type-frozenset] flavor.
 
+Sets are most commonly used to quickly remove duplicates from other data structures or item groupings.
+They are also used for efficient comparisons when sequencing and duplicate tracking are not needed.
 
 Like other collection types (_dictionaries, lists, tuples_), `sets` support:
 - Iteration via `for item in <set>`
@@ -17,6 +19,7 @@ Like other collection types (_dictionaries, lists, tuples_), `sets` support:
 - Ordering via sorting or insertion
 - Slicing
 - Concatenation via `+`
+
 
 Checking membership in a `set` has constant time complexity (on average) versus checking membership in a `list` or `string`, where the time complexity grows as the length of the data increases.
 Methods such as `<set>.union()`, `<set>.intersection()`, or `<set>.difference()` also have constant time complexity (on average).
@@ -49,10 +52,12 @@ Set literals use the same curly braces as `dict` literals, which means you need 
 ### The Set Constructor
 
 `set()` (_the constructor for the `set` class_) can be used with any `iterable` passed as an argument.
-Elements of the `iterable` are cycled through added to the `set` individually.
+Elements of the `iterable` are cycled through and added to the `set` individually.
 Element order is not preserved and duplicates are silently omitted:
 
+
 ```python
+# To create an empty set, the constructor must be used.
 >>> no_elements = set()
 set()
 
@@ -63,6 +68,7 @@ set()
 {334782, 'Bird', 'Parrot'}
 
 # The list is unpacked & each element is added.
+# Duplicates are removed.
 >>> elements_from_list = set([2, 3, 2, 3, 3, 3, 5, 
                               7, 11, 7, 11, 13, 13])
 {2, 3, 5, 7, 11, 13}
