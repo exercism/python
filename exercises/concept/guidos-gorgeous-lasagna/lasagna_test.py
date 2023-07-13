@@ -1,9 +1,10 @@
 import unittest
 import pytest
 
-# For this first exercise, it is really important to be clear about how we are importing names for tests.
-# To that end, we are putting a try/catch around imports and throwing specific messages to help students
-# decode that they need to create and title their constants and functions in a specific way.
+# For this first exercise, it is really important to be clear about how we are
+# importing names for tests. To that end, we are putting a try/catch around
+# imports and throwing specific messages to help students decode that they need
+# to create and title their constants and functions in a specific way.
 try:
     from lasagna import (EXPECTED_BAKE_TIME,
                          bake_time_remaining,
@@ -26,8 +27,9 @@ except ImportError as import_fail:
                           f' function named {item_name}. \nDid you misname or forget to define it?') from None
 
 
-# Here begins the formal test cases for the exercise.
 class LasagnaTest(unittest.TestCase):
+    """Formal test cases for exercise.
+    """
 
     @pytest.mark.task(taskno=1)
     def test_EXPECTED_BAKE_TIME(self):
