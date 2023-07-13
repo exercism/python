@@ -9,6 +9,10 @@ from dict_methods import (add_item,
 
 
 class MechaMunchManagementTest(unittest.TestCase):
+    """Tests for the dict-methods concept exercise.
+
+    More may be added at a later time, as feedback comes in from students.
+    """
 
     @pytest.mark.task(taskno=1)
     def test_add_item(self):
