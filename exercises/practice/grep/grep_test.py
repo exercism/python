@@ -290,7 +290,3 @@ class GrepTest(unittest.TestCase):
             "paradise-lost.txt:Of Oreb, or of Sinai, didst inspire\n"
             "paradise-lost.txt:That Shepherd, who first taught the chosen Seed\n",
         )
-
-
-if __name__ == "__main__":
-    unittest.main()
