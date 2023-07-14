@@ -296,3 +296,4 @@ def format_entries(currency, locale, entries):
                     change_str = ' ' + change_str
                 table += change_str
         return table
+
