@@ -212,7 +212,3 @@ class CustomSetTest(unittest.TestCase):
         set2 = CustomSet([2, 3])
         expected = CustomSet([3, 2, 1])
         self.assertEqual(set1 + set2, expected)
-
-
-if __name__ == "__main__":
-    unittest.main()

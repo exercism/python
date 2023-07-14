@@ -46,7 +46,3 @@ class DartsTest(unittest.TestCase):
 
     def test_asymmetric_position_between_the_inner_and_middle_circles(self):
         self.assertEqual(score(0.5, -4), 5)
-
-
-if __name__ == "__main__":
-    unittest.main()
