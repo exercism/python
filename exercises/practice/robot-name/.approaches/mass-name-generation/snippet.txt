@@ -1,0 +1,8 @@
+...
+names = [l + n for l, n in product(letter_pairs, numbers)]
+shuffle(names)
+NAMES = iter(names)
+
+class Robot(object):
+    def reset(self):
+        self.name = next(NAMES)
