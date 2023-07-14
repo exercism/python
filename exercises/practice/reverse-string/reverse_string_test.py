@@ -25,7 +25,3 @@ class ReverseStringTest(unittest.TestCase):
 
     def test_an_even_sized_word(self):
         self.assertEqual(reverse("drawer"), "reward")
-
-
-if __name__ == "__main__":
-    unittest.main()
