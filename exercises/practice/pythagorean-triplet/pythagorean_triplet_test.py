@@ -49,7 +49,3 @@ class PythagoreanTripletTest(unittest.TestCase):
                 [7500, 10000, 12500],
             ],
         )
-
-
-if __name__ == "__main__":
-    unittest.main()

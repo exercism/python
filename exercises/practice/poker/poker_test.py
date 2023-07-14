@@ -209,7 +209,3 @@ class PokerTest(unittest.TestCase):
         self.assertEqual(
             best_hands(["2H 3H 4H 5H 6H", "4D AD 3D 2D 5D"]), ["2H 3H 4H 5H 6H"]
         )
-
-
-if __name__ == "__main__":
-    unittest.main()
