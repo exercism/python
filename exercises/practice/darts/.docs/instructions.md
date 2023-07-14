@@ -12,7 +12,7 @@ In our particular instance of the game, the target rewards 4 different amounts o
 - If the dart lands in the inner circle of the target, player earns 10 points.
 
 The outer circle has a radius of 10 units (this is equivalent to the total radius for the entire target), the middle circle a radius of 5 units, and the inner circle a radius of 1.
-Of course, they are all centered at the same point (that is, the circles are [concentric][] defined by the coordinates (0, 0).
+Of course, they are all centered at the same point — that is, the circles are [concentric][] defined by the coordinates (0, 0).
 
 Write a function that given a point in the target (defined by its [Cartesian coordinates][cartesian-coordinates] `x` and `y`, where `x` and `y` are [real][real-numbers]), returns the correct amount earned by a dart landing at that point.
 

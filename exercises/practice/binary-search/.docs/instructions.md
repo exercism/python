@@ -11,7 +11,7 @@ Binary search only works when a list has been sorted.
 
 The algorithm looks like this:
 
-- Find the middle element of a sorted list and compare it with the item we're looking for.
+- Find the middle element of a *sorted* list and compare it with the item we're looking for.
 - If the middle element is our item, then we're done!
 - If the middle element is greater than our item, we can eliminate that element and all the elements **after** it.
 - If the middle element is less than our item, we can eliminate that element and all the elements **before** it.

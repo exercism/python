@@ -36,7 +36,7 @@ Frame 3 is (9 + 0) = 9
 This means the current running total is 48.
 
 The tenth frame in the game is a special case.
-If someone throws a strike or a spare then they get a fill ball.
+If someone throws a spare or a strike then they get one or two fill balls respectively.
 Fill balls exist to calculate the total of the 10th frame.
 Scoring a strike or spare on the fill ball does not give the player more fill balls.
 The total value of the 10th frame is the total number of pins knocked down.
