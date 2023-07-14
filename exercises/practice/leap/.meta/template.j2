@@ -11,5 +11,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
             {{- case ["expected"] }}
         )
     {% endfor %}
-
-{{ macros.footer() }}

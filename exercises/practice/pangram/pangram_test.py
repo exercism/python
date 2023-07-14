@@ -50,7 +50,3 @@ class PangramTest(unittest.TestCase):
 
     def test_sentence_without_upper_bound(self):
         self.assertIs(is_pangram("abcdefghijklmnopqrstuvwxy"), False)
-
-
-if __name__ == "__main__":
-    unittest.main()
