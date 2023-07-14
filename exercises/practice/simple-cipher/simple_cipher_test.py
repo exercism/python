@@ -64,7 +64,3 @@ class SubstitutionCipherTest(unittest.TestCase):
     def test_can_decode_messages_longer_than_the_key(self):
         cipher = Cipher("abc")
         self.assertEqual(cipher.decode("iboaqcnecbfcr"), "iamapandabear")
-
-
-if __name__ == "__main__":
-    unittest.main()
