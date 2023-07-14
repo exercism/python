@@ -87,7 +87,3 @@ class DiamondTest(unittest.TestCase):
             "                         A                         ",
         ]
         self.assertEqual(rows("Z"), result)
-
-
-if __name__ == "__main__":
-    unittest.main()
