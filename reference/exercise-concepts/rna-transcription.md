@@ -2,7 +2,7 @@
 
 ## Example implementation
 
-Modified from the existing [example.py](https://github.com/exercism/python/blob/master/exercises/rna-transcription/example.py) to remove Python 2 compatiblity noise:
+Taken from the existing [example.py](https://github.com/exercism/python/blob/main/exercises/practice/rna-transcription/.meta/example.py):
 
 ```python
 DNA_TO_RNA = str.maketrans("AGCT", "UCGA")

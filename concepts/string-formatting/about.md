@@ -149,7 +149,7 @@ Use of the `%` operator for formatting is the oldest method of string formatting
 It comes from the C language and allows the use of positional arguments to build a `str`.
 
 This method has been superseded by both `f-strings` and `str.format()`, which is why the nickname for `%` formatting is _'Old Style'_.
-It can be still found in python 2 and/or legacy code.
+It can be still found in Python 2 and/or legacy code.
 While using this method will work in Python 3.x, `%` formatting is usually avoided because it can be error-prone, is less efficient, has fewer options available, and any placeholder-argument mismatch can raise an exception.
 Using the `%` operator is similar to [`printf()`][printf-style-docs], so it is also sometimes called _printf formatting_.
 
