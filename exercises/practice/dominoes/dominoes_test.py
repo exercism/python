@@ -4,7 +4,9 @@ from dominoes import (
     can_chain,
 )
 
-# Tests adapted from `problem-specifications//canonical-data.json`
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/dominoes/canonical-data.json
+# File last updated on 2023-07-14
 
 
 class DominoesTest(unittest.TestCase):

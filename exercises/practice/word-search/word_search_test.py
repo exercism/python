@@ -5,7 +5,9 @@ from word_search import (
     Point,
 )
 
-# Tests adapted from `problem-specifications//canonical-data.json`
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/word-search/canonical-data.json
+# File last updated on 2023-07-14
 
 
 class WordSearchTest(unittest.TestCase):

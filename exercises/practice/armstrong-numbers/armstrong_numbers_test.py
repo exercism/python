@@ -4,7 +4,9 @@ from armstrong_numbers import (
     is_armstrong_number,
 )
 
-# Tests adapted from `problem-specifications//canonical-data.json`
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/armstrong-numbers/canonical-data.json
+# File last updated on 2023-07-14
 
 
 class ArmstrongNumbersTest(unittest.TestCase):
