@@ -106,7 +106,3 @@ class AlphameticsTest(unittest.TestCase):
                 "T": 9,
             },
         )
-
-
-if __name__ == "__main__":
-    unittest.main()

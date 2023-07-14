@@ -39,7 +39,3 @@ class AcronymTest(unittest.TestCase):
 
     def test_underscore_emphasis(self):
         self.assertEqual(abbreviate("The Road _Not_ Taken"), "TRNT")
-
-
-if __name__ == "__main__":
-    unittest.main()
