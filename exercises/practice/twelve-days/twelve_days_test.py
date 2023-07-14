@@ -6,7 +6,7 @@ from twelve_days import (
 
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/twelve-days/canonical-data.json
-# File last updated on 2023-07-14 21:54:35.742096+00:00
+# File last updated on 2023-07-14
 # PLEASE TAKE NOTE: Expected result lists for these test cases use **implicit line joining.**
 # A new line in a result list below **does not** always equal a new list element.
 # Check comma placement carefully!

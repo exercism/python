@@ -6,7 +6,7 @@ from sum_of_multiples import (
 
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/sum-of-multiples/canonical-data.json
-# File last updated on 2023-07-14 21:54:35.742096+00:00
+# File last updated on 2023-07-14
 
 
 class SumOfMultiplesTest(unittest.TestCase):
