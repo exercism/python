@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/list-ops/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from list_ops import (
@@ -10,10 +14,6 @@ from list_ops import (
     filter as list_ops_filter,
     map as list_ops_map,
 )
-
-# These tests are auto-generated with test data from:
-# https://github.com/exercism/problem-specifications/tree/main/exercises/list-ops/canonical-data.json
-# File last updated on 2023-07-14
 
 
 class ListOpsTest(unittest.TestCase):

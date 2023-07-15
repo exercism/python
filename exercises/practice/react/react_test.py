@@ -1,15 +1,15 @@
 from functools import partial
 
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/react/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from react import (
     InputCell,
     ComputeCell,
 )
-
-# These tests are auto-generated with test data from:
-# https://github.com/exercism/problem-specifications/tree/main/exercises/react/canonical-data.json
-# File last updated on 2023-07-14
 
 
 class ReactTest(unittest.TestCase):

@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/robot-simulator/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from robot_simulator import (
@@ -7,10 +11,6 @@ from robot_simulator import (
     SOUTH,
     WEST,
 )
-
-# These tests are auto-generated with test data from:
-# https://github.com/exercism/problem-specifications/tree/main/exercises/robot-simulator/canonical-data.json
-# File last updated on 2023-07-14
 
 
 class RobotSimulatorTest(unittest.TestCase):
