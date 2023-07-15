@@ -1,12 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/anagram/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from anagram import (
     find_anagrams,
 )
-
-# These tests are auto-generated with test data from:
-# https://github.com/exercism/problem-specifications/tree/main/exercises/anagram/canonical-data.json
-# File last updated on 2023-07-14
 
 
 class AnagramTest(unittest.TestCase):

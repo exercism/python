@@ -1,14 +1,15 @@
 from datetime import date
+
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/meetup/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from meetup import (
     meetup,
     MeetupDayException,
 )
-
-# These tests are auto-generated with test data from:
-# https://github.com/exercism/problem-specifications/tree/main/exercises/meetup/canonical-data.json
-# File last updated on 2023-07-14
 
 
 class MeetupTest(unittest.TestCase):

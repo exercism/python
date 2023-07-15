@@ -1,12 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/dominoes/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from dominoes import (
     can_chain,
 )
-
-# These tests are auto-generated with test data from:
-# https://github.com/exercism/problem-specifications/tree/main/exercises/dominoes/canonical-data.json
-# File last updated on 2023-07-14
 
 
 class DominoesTest(unittest.TestCase):

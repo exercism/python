@@ -271,8 +271,12 @@ def check_template(slug: str, tests_path: Path, tmpfile: Path):
             check_ok = False
         if check_ok and not filecmp.cmp(tmpfile, tests_path):
             with tests_path.open() as f:
+                for line in range(5):
+                    next(f)
                 current_lines = f.readlines()
             with tmpfile.open() as f:
+                for line in range(4):
+                    next(f)
                 rendered_lines = f.readlines()
             diff = difflib.unified_diff(
                 current_lines,

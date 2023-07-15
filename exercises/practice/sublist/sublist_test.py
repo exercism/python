@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/sublist/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from sublist import (
@@ -7,10 +11,6 @@ from sublist import (
     EQUAL,
     UNEQUAL,
 )
-
-# These tests are auto-generated with test data from:
-# https://github.com/exercism/problem-specifications/tree/main/exercises/sublist/canonical-data.json
-# File last updated on 2023-07-14
 
 
 class SublistTest(unittest.TestCase):

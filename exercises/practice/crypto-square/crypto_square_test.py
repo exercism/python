@@ -1,12 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/crypto-square/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from crypto_square import (
     cipher_text,
 )
-
-# These tests are auto-generated with test data from:
-# https://github.com/exercism/problem-specifications/tree/main/exercises/crypto-square/canonical-data.json
-# File last updated on 2023-07-14
 
 
 class CryptoSquareTest(unittest.TestCase):

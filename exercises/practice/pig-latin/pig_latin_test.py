@@ -1,12 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/pig-latin/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from pig_latin import (
     translate,
 )
-
-# These tests are auto-generated with test data from:
-# https://github.com/exercism/problem-specifications/tree/main/exercises/pig-latin/canonical-data.json
-# File last updated on 2023-07-14
 
 
 class PigLatinTest(unittest.TestCase):

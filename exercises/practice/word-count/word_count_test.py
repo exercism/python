@@ -1,12 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/word-count/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from word_count import (
     count_words,
 )
-
-# These tests are auto-generated with test data from:
-# https://github.com/exercism/problem-specifications/tree/main/exercises/word-count/canonical-data.json
-# File last updated on 2023-07-14
 
 
 class WordCountTest(unittest.TestCase):

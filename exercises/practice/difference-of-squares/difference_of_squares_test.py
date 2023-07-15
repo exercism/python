@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/difference-of-squares/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from difference_of_squares import (
@@ -5,10 +9,6 @@ from difference_of_squares import (
     square_of_sum,
     sum_of_squares,
 )
-
-# These tests are auto-generated with test data from:
-# https://github.com/exercism/problem-specifications/tree/main/exercises/difference-of-squares/canonical-data.json
-# File last updated on 2023-07-14
 
 
 class DifferenceOfSquaresTest(unittest.TestCase):

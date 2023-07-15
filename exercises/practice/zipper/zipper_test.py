@@ -1,12 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/zipper/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from zipper import (
     Zipper,
 )
-
-# These tests are auto-generated with test data from:
-# https://github.com/exercism/problem-specifications/tree/main/exercises/zipper/canonical-data.json
-# File last updated on 2023-07-14
 
 
 class ZipperTest(unittest.TestCase):
