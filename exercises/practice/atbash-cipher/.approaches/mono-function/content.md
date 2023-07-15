@@ -13,7 +13,7 @@ def encode(text: str, decode: bool = False):
 def decode(text: str):
     return encode(text, True)
 ```
-To explain the translation: we use a dict comprehension in which we reverse the ASCII lowercase digits, and enumerate through them - that is, `z` is 0, `y` is 1, and so on. 
+To explain the translation: we use a `dict` comprehension in which we reverse the ASCII lowercase digits, and enumerate through them - that is, `z` is 0, `y` is 1, and so on. 
 We access the character at that index and set it to the value of `c` - so `z` translates to `a`.
 
 In the calculation of the result, we try to obtain the value of the character using `dict.get`, which accepts a default parameter. 
