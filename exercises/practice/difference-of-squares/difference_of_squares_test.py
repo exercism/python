@@ -6,7 +6,9 @@ from difference_of_squares import (
     sum_of_squares,
 )
 
-# Tests adapted from `problem-specifications//canonical-data.json`
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/difference-of-squares/canonical-data.json
+# File last updated on 2023-07-14
 
 
 class DifferenceOfSquaresTest(unittest.TestCase):
@@ -36,7 +38,3 @@ class DifferenceOfSquaresTest(unittest.TestCase):
 
     def test_difference_of_squares_100(self):
         self.assertEqual(difference_of_squares(100), 25164150)
-
-
-if __name__ == "__main__":
-    unittest.main()

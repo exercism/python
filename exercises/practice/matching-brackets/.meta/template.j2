@@ -8,7 +8,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         {%- set expected = case["expected"] %}
         self.assertEqual({{ case["property"] | to_snake }}({{ "{!r}".format(value) }}), {{ expected }})
     {% endfor %}
-
-{{ macros.footer() }}
-
-

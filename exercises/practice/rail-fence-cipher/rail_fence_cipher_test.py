@@ -5,7 +5,9 @@ from rail_fence_cipher import (
     encode,
 )
 
-# Tests adapted from `problem-specifications//canonical-data.json`
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/rail-fence-cipher/canonical-data.json
+# File last updated on 2023-07-14
 
 
 class RailFenceCipherTest(unittest.TestCase):
@@ -33,7 +35,3 @@ class RailFenceCipherTest(unittest.TestCase):
             decode("133714114238148966225439541018335470986172518171757571896261", 6),
             "112358132134558914423337761098715972584418167651094617711286",
         )
-
-
-if __name__ == "__main__":
-    unittest.main()

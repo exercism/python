@@ -4,7 +4,9 @@ from pangram import (
     is_pangram,
 )
 
-# Tests adapted from `problem-specifications//canonical-data.json`
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/pangram/canonical-data.json
+# File last updated on 2023-07-14
 
 
 class PangramTest(unittest.TestCase):
@@ -50,7 +52,3 @@ class PangramTest(unittest.TestCase):
 
     def test_sentence_without_upper_bound(self):
         self.assertIs(is_pangram("abcdefghijklmnopqrstuvwxy"), False)
-
-
-if __name__ == "__main__":
-    unittest.main()

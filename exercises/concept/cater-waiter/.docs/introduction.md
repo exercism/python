@@ -50,7 +50,7 @@ set()
 # The list is unpacked and each distinct element is added.
 >>> multiple_elements_from_list = set([2, 3, 2, 3, 3, 3, 5, 7, 11, 7, 11, 13, 13])
 >>> multiple_elements_from_set
-{2, 3, 5, 7, 11}
+{2, 3, 5, 7, 11, 13}
 ```
 
 Sets can hold heterogeneous datatypes, but all `set` elements must be _hashable_:

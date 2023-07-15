@@ -4,7 +4,9 @@ from reverse_string import (
     reverse,
 )
 
-# Tests adapted from `problem-specifications//canonical-data.json`
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/reverse-string/canonical-data.json
+# File last updated on 2023-07-14
 
 
 class ReverseStringTest(unittest.TestCase):
@@ -25,7 +27,3 @@ class ReverseStringTest(unittest.TestCase):
 
     def test_an_even_sized_word(self):
         self.assertEqual(reverse("drawer"), "reward")
-
-
-if __name__ == "__main__":
-    unittest.main()

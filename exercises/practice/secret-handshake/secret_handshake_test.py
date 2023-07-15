@@ -4,7 +4,9 @@ from secret_handshake import (
     commands,
 )
 
-# Tests adapted from `problem-specifications//canonical-data.json`
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/secret-handshake/canonical-data.json
+# File last updated on 2023-07-14
 
 
 class SecretHandshakeTest(unittest.TestCase):
@@ -44,7 +46,3 @@ class SecretHandshakeTest(unittest.TestCase):
 
     def test_do_nothing_for_zero(self):
         self.assertEqual(commands("00000"), [])
-
-
-if __name__ == "__main__":
-    unittest.main()

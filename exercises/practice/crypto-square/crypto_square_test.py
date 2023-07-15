@@ -4,7 +4,9 @@ from crypto_square import (
     cipher_text,
 )
 
-# Tests adapted from `problem-specifications//canonical-data.json`
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/crypto-square/canonical-data.json
+# File last updated on 2023-07-14
 
 
 class CryptoSquareTest(unittest.TestCase):
@@ -51,7 +53,3 @@ class CryptoSquareTest(unittest.TestCase):
         value = "If man was meant to stay on the ground, god would have given us roots."
         expected = "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau "
         self.assertEqual(cipher_text(value), expected)
-
-
-if __name__ == "__main__":
-    unittest.main()

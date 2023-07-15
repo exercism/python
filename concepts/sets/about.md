@@ -12,7 +12,7 @@ _Unlike_ sequence types (_`string`, `list` & `tuple`_), `sets` are **neither ord
 They're also used for fast membership testing, finding supersets & subsets of items, and performing "set math" (_calculating union, intersection, difference & symmetric difference between groups of items._).
 
 Checking membership in a `set` has only O(1) time complexity versus checking for membership in a `list` or `string`, which has worst-case O(n) time complexity.
-Operations such as `<set>.union()`, `<set>.intersection()`, or `<set>.diference()` have an average O(n) time complexity.
+Operations such as `<set>.union()`, `<set>.intersection()`, or `<set>.difference()` have an average O(n) time complexity.
 
 ## Construction
 
@@ -52,7 +52,7 @@ set()
 # The list is unpacked and each distinct element is added.
 >>> multiple_elements_from_list = set([2, 3, 2, 3, 3, 3, 5, 7, 11, 7, 11, 13, 13])
 >>> multiple_elements_from_set
-{2, 3, 5, 7, 11}
+{2, 3, 5, 7, 11, 13}
 ```
 
 Results when using a set constructor with a string or dictionary may be surprising:

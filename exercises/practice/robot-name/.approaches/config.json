@@ -1,0 +1,21 @@
+{
+  "introduction": {
+    "authors": ["safwansamsudeen"]
+  },
+  "approaches": [
+    {
+      "uuid": "94d82d63-0a20-44df-ad9b-14aba7c076ae",
+      "slug": "mass-name-generation",
+      "title": "Mass Name Generation",
+      "blurb": "Select from all possible names",
+      "authors": ["safwansamsudeen"]
+    },
+    {
+      "uuid": "20ca6d56-ab48-46be-a04e-98736109be0a",
+      "slug": "name-on-the-fly",
+      "title": "Find name on the fly",
+      "blurb": "Generate name and check that it hasn't been used",
+      "authors": ["safwansamsudeen"]
+    }
+  ]
+}

@@ -4,11 +4,9 @@ from pythagorean_triplet import (
     triplets_with_sum,
 )
 
-# Tests adapted from `problem-specifications//canonical-data.json`
-
-# Python 2/3 compatibility
-if not hasattr(unittest.TestCase, "assertCountEqual"):
-    unittest.TestCase.assertCountEqual = unittest.TestCase.assertItemsEqual
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/pythagorean-triplet/canonical-data.json
+# File last updated on 2023-07-14
 
 
 class PythagoreanTripletTest(unittest.TestCase):
@@ -53,7 +51,3 @@ class PythagoreanTripletTest(unittest.TestCase):
                 [7500, 10000, 12500],
             ],
         )
-
-
-if __name__ == "__main__":
-    unittest.main()

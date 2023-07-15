@@ -4,7 +4,9 @@ from beer_song import (
     recite,
 )
 
-# Tests adapted from `problem-specifications//canonical-data.json`
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/beer-song/canonical-data.json
+# File last updated on 2023-07-14
 
 
 class BeerSongTest(unittest.TestCase):
@@ -369,7 +371,3 @@ class BeerSongTest(unittest.TestCase):
             "Go to the store and buy some more, 99 bottles of beer on the wall.",
         ]
         self.assertEqual(recite(start=99, take=100), expected)
-
-
-if __name__ == "__main__":
-    unittest.main()

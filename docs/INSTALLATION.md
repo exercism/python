@@ -6,7 +6,7 @@ Real Python also offers a [nice guide][helpful guide] to installation on various
 Finally, these posts by Brett Cannon [A quick-and-dirty guide][quick-and-dirty] and [Why you should use `python -m pip`][python-m-pip], give very helpful advice on how to manage Python installations and packages.
 
 **Note for MacOS users:**  prior to MacOS Monterey (12.3), `Python 2.7` came pre-installed with the operating system.
-Using `Python 2.7` with Exercism or most other programs is not recommended.
+Using `Python 2.7` with Exercism or most other programs is not supported.
 You should instead install [Python 3][Python-three downloads] via one of the methods detailed below.
 As of MacOS Monterey (12.3), no version of Python will be pre-installed via MacOS.
 
@@ -20,7 +20,7 @@ Some quick links into the documentation by operating system:
 
 Exercism tests and tooling currently support `3.7` - `3.10.6` (_tests_) and [`Python 3.11`][311-new-features] (_tooling_).
 Exceptions to this support are noted where they occur.
-Most of the exercises will work with `Python 3.6+`, and many are compatible with `Python 2.7+`.
+Most of the exercises will work with `Python 3.6+`.
 But we don't guarantee support for versions not listed under [Active Python Releases][active-python-releases].
 
 

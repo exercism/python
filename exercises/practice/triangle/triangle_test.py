@@ -6,7 +6,9 @@ from triangle import (
     scalene,
 )
 
-# Tests adapted from `problem-specifications//canonical-data.json`
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/triangle/canonical-data.json
+# File last updated on 2023-07-14
 
 
 class EquilateralTriangleTest(unittest.TestCase):
@@ -76,7 +78,3 @@ class ScaleneTriangleTest(unittest.TestCase):
 
     def test_sides_may_be_floats(self):
         self.assertIs(scalene([0.5, 0.4, 0.6]), True)
-
-
-if __name__ == "__main__":
-    unittest.main()

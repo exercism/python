@@ -5,7 +5,9 @@ from zebra_puzzle import (
     owns_zebra,
 )
 
-# Tests adapted from `problem-specifications//canonical-data.json`
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/zebra-puzzle/canonical-data.json
+# File last updated on 2023-07-14
 
 
 class ZebraPuzzleTest(unittest.TestCase):
@@ -14,7 +16,3 @@ class ZebraPuzzleTest(unittest.TestCase):
 
     def test_resident_who_owns_zebra(self):
         self.assertEqual(owns_zebra(), "Japanese")
-
-
-if __name__ == "__main__":
-    unittest.main()

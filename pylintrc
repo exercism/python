@@ -341,11 +341,6 @@ known-standard-library=
 # Force import order to recognize a module as part of a third party library.
 known-third-party=enchant, absl
 
-# Analyse import fallback blocks. This can be used to support both Python 2 and
-# 3 compatible code, which means that the block might have code that exists
-# only in one or another interpreter, leading to false positives when analysed.
-analyse-fallback-blocks=no
-
 
 [CLASSES]
 

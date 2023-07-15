@@ -4,7 +4,9 @@ from grade_school import (
     School,
 )
 
-# Tests adapted from `problem-specifications//canonical-data.json`
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/grade-school/canonical-data.json
+# File last updated on 2023-07-14
 
 
 class GradeSchoolTest(unittest.TestCase):

@@ -4,7 +4,9 @@ from bob import (
     response,
 )
 
-# Tests adapted from `problem-specifications//canonical-data.json`
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/bob/canonical-data.json
+# File last updated on 2023-07-14
 
 
 class BobTest(unittest.TestCase):
@@ -98,7 +100,3 @@ class BobTest(unittest.TestCase):
         self.assertEqual(
             response("This is a statement ending with whitespace      "), "Whatever."
         )
-
-
-if __name__ == "__main__":
-    unittest.main()

@@ -21,5 +21,5 @@ So if you are told the white queen is at `c5` (zero-indexed at column 2, row 3) 
   a b c d e f g h
 ```
 
-You are also be able to answer whether the queens can attack each other.
+You are also able to answer whether the queens can attack each other.
 In this case, that answer would be yes, they can, because both pieces share a diagonal.
