@@ -1,11 +1,13 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/atbash-cipher/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from atbash_cipher import (
     decode,
     encode,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class AtbashCipherTest(unittest.TestCase):
@@ -61,7 +63,3 @@ class AtbashCipherTest(unittest.TestCase):
         self.assertEqual(
             decode("zmlyhgzxovrhlugvmzhgvkkrmthglmv"), "anobstacleisoftenasteppingstone"
         )
-
-
-if __name__ == "__main__":
-    unittest.main()

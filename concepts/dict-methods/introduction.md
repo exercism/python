@@ -1,17 +1,16 @@
 # Dictionary Methods in Python
 
-A dictionary (`dict`) in Python is a data structure that associates [hashable][term-hashable] _keys_ to _values_ and is known in other programming languages as a [hash table or hashmap][hashtable-wikipedia].
-In Python, it's considered a [mapping type][mapping-types-dict].
-`dicts` enable the retrieval of a value in constant time (on average), given the key.
+The `dict` class in Python provides many useful [methods][dict-methods], some of which are introduced in the concept exercise for dictionaries.
 
-Compared to searching for a value within a list or array (_without knowing the index position_), a dictionary uses significantly more memory, but has very rapid retrieval.
-It's especially useful in scenarios where the collection of items is large and must be accessed/updated frequently.
+This concept tackles a few more:
 
-The `dict` class in Python provides many useful [methods][dict-methods] for working with dictionaries.
-Some are introduced in the concept exercise for `dicts`.
-This concept tackles a few more - along with some techniques for iterating through and manipulating `dicts`.
+- `dict.setdefault()` automatically adds keys without throwing a `KeyError`.
+- `dict.fromkeys(iterable, <default value>)` creates a new `dict` from any number of iterables.
+- `.keys()`, `.values()`, and `.items()` provide convenient iterators.
+- `sorted(<dict>.items())`. can easily re-order entries in a `dict`.
+- `dict_one.update(<dict_two>)` updates one `dict` with overlapping values from another `dict`.
+- `dict | other_dict` and `dict |= other_dict` merges or updates two `dict`s via operators.
+- `reversed(dict.keys())`, `reversed(dict.values())`, or `reversed(dict.items())` produce _reversed_ views.
+- `<dict>.popitem()` removes and returns a `key`, `value` pair.
 
-[mapping-types-dict]: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
-[hashtable-wikipedia]: https://en.wikipedia.org/wiki/Hash_table
-[term-hashable]: https://docs.python.org/3/glossary.html#term-hashable
 [dict-methods]: https://docs.python.org/3/library/stdtypes.html#dict

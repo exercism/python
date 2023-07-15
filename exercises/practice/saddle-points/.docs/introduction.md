@@ -1,9 +1,11 @@
 # Introduction
 
-You are planning on building a tree house in the woods near your house so that you can watch the sun rise and set.
+You plan to build a tree house in the woods near your house so that you can watch the sun rise and set.
 
-You've obtained data from a local survey company that shows the heights of all the trees in each rectangular section of the map.
-You need to analyze each grid on the map to find the perfect tree for your tree house.
+You've obtained data from a local survey company that show the height of every tree in each rectangular section of the map.
+You need to analyze each grid on the map to find good trees for your tree house.
 
-The best tree will be the tallest tree compared to all the other trees to the east and west, so that you have the best possible view of the sunrises and sunsets.
-You don't like climbing too much, so the perfect tree will also be the shortest among all the trees to the north and to the south.
+A good tree is both:
+
+- taller than every tree to the east and west, so that you have the best possible view of the sunrises and sunsets.
+- shorter than every tree to the north and south, to minimize the amount of tree climbing.

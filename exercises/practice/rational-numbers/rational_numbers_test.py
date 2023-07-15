@@ -1,11 +1,14 @@
 from __future__ import division
+
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/rational-numbers/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from rational_numbers import (
     Rational,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class RationalNumbersTest(unittest.TestCase):

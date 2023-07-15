@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/raindrops/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from raindrops import (
     convert,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class RaindropsTest(unittest.TestCase):
@@ -63,7 +65,3 @@ class RaindropsTest(unittest.TestCase):
 
     def test_the_sound_for_3125_is_plang_as_it_has_a_factor_5(self):
         self.assertEqual(convert(3125), "Plang")
-
-
-if __name__ == "__main__":
-    unittest.main()

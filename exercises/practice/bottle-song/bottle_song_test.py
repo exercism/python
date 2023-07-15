@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/bottle-song/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from bottle_song import (
     recite,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class BottleSongTest(unittest.TestCase):
@@ -130,7 +132,3 @@ class BottleSongTest(unittest.TestCase):
             "There'll be no green bottles hanging on the wall.",
         ]
         self.assertEqual(recite(start=10, take=10), expected)
-
-
-if __name__ == "__main__":
-    unittest.main()

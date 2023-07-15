@@ -1,11 +1,14 @@
 import re
+
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/simple-cipher/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from simple_cipher import (
     Cipher,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class RandomKeyCipherTest(unittest.TestCase):
@@ -64,7 +67,3 @@ class SubstitutionCipherTest(unittest.TestCase):
     def test_can_decode_messages_longer_than_the_key(self):
         cipher = Cipher("abc")
         self.assertEqual(cipher.decode("iboaqcnecbfcr"), "iamapandabear")
-
-
-if __name__ == "__main__":
-    unittest.main()

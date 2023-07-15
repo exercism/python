@@ -2,7 +2,9 @@ import unittest
 
 import yacht
 
-# Tests adapted from `problem-specifications//canonical-data.json`
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/yacht/canonical-data.json
+# File last updated on 2023-07-15
 
 
 class YachtTest(unittest.TestCase):
@@ -92,7 +94,3 @@ class YachtTest(unittest.TestCase):
 
     def test_yacht_as_choice(self):
         self.assertEqual(yacht.score([2, 2, 2, 2, 2], yacht.CHOICE), 10)
-
-
-if __name__ == "__main__":
-    unittest.main()

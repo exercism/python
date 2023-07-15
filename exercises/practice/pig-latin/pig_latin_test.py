@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/pig-latin/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from pig_latin import (
     translate,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class PigLatinTest(unittest.TestCase):
@@ -73,7 +75,3 @@ class PigLatinTest(unittest.TestCase):
 
     def test_a_whole_phrase(self):
         self.assertEqual(translate("quick fast run"), "ickquay astfay unray")
-
-
-if __name__ == "__main__":
-    unittest.main()

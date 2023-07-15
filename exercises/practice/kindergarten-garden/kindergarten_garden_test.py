@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/kindergarten-garden/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from kindergarten_garden import (
     Garden,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class KindergartenGardenTest(unittest.TestCase):

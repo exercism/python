@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/isbn-verifier/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from isbn_verifier import (
     is_valid,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class IsbnVerifierTest(unittest.TestCase):
@@ -64,7 +66,3 @@ class IsbnVerifierTest(unittest.TestCase):
 
     def test_input_is_too_long_but_contains_a_valid_isbn(self):
         self.assertIs(is_valid("98245726788"), False)
-
-
-if __name__ == "__main__":
-    unittest.main()

@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/darts/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from darts import (
     score,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class DartsTest(unittest.TestCase):
@@ -46,7 +48,3 @@ class DartsTest(unittest.TestCase):
 
     def test_asymmetric_position_between_the_inner_and_middle_circles(self):
         self.assertEqual(score(0.5, -4), 5)
-
-
-if __name__ == "__main__":
-    unittest.main()

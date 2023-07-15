@@ -1,8 +1,7 @@
 """
 This exercise stub and the test suite contain several enumerated constants.
 
-Since Python 2 does not have the enum module, the idiomatic way to write
-enumerated constants has traditionally been a NAME assigned to an arbitrary,
+Enumerated constants can be done with a NAME assigned to an arbitrary,
 but unique value. An integer is traditionally used because it’s memory
 efficient.
 It is a common practice to export both constants and functions that work with

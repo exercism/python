@@ -9,5 +9,4 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         self.assertEqual(SpaceAge({{ seconds }}).on_{{ planet | lower }}(), {{ case["expected"] }})
 
     {% endfor %}
-
-{{ macros.footer() }}
+    

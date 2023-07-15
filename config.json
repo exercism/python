@@ -145,6 +145,14 @@
         "status": "beta"
       },
       {
+        "slug": "mecha-munch-management",
+        "name": "Mecha Munch Management",
+        "uuid": "5ac0c40c-4038-47b8-945b-8480e4a3f44c",
+        "concepts": ["dict-methods"],
+        "prerequisites": ["dicts"],
+        "status": "wip"
+      },
+      {
         "slug": "locomotive-engineer",
         "name": "Locomotive Engineer",
         "uuid": "e1b8b9c9-21c3-47b1-b645-5938b3110c78",

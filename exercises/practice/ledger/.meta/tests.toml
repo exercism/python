@@ -1,0 +1,43 @@
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
+
+[d131ecae-a30e-436c-b8f3-858039a27234]
+description = "empty ledger"
+
+[ce4618d2-9379-4eca-b207-9df1c4ec8aaa]
+description = "one entry"
+
+[8d02e9cb-e6ee-4b77-9ce4-e5aec8eb5ccb]
+description = "credit and debit"
+
+[502c4106-0371-4e7c-a7d8-9ce33f16ccb1]
+description = "multiple entries on same date ordered by description"
+
+[29dd3659-6c2d-4380-94a8-6d96086e28e1]
+description = "final order tie breaker is change"
+
+[9b9712a6-f779-4f5c-a759-af65615fcbb9]
+description = "overlong description is truncated"
+
+[67318aad-af53-4f3d-aa19-1293b4d4c924]
+description = "euros"
+
+[bdc499b6-51f5-4117-95f2-43cb6737208e]
+description = "Dutch locale"
+
+[86591cd4-1379-4208-ae54-0ee2652b4670]
+description = "Dutch locale and euros"
+
+[876bcec8-d7d7-4ba4-82bd-b836ac87c5d2]
+description = "Dutch negative number with 3 digits before decimal point"
+
+[29670d1c-56be-492a-9c5e-427e4b766309]
+description = "American negative number with 3 digits before decimal point"

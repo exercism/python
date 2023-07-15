@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/clock/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from clock import (
     Clock,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class ClockTest(unittest.TestCase):
@@ -177,7 +179,3 @@ class ClockTest(unittest.TestCase):
 
     def test_full_clock_and_zeroed_clock(self):
         self.assertEqual(Clock(24, 0), Clock(0, 0))
-
-
-if __name__ == "__main__":
-    unittest.main()

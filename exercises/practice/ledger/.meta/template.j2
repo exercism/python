@@ -1,0 +1,22 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.header(imports=["format_entries", "create_entry"]) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    maxDiff = 5000
+    {%- for case in cases %}
+
+    def test_{{ case["description"] | to_snake }}(self):
+        currency = '{{- case["input"]["currency"] }}'
+        locale = '{{- case["input"]["locale"] }}'
+        entries = [
+            {%- for entry in case["input"]["entries"] %}
+            create_entry('{{ entry["date"] }}', '{{ entry["description"] }}', {{ entry["amountInCents"] }}),
+            {%- endfor %}
+        ]
+        expected = '\n'.join([
+            {%- for line in case["expected"] %}
+            '{{- line -}}',
+            {%- endfor %}
+        ])
+        self.assertEqual(format_entries(currency, locale, entries), expected)
+    {%- endfor %}

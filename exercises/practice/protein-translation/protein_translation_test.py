@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/protein-translation/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from protein_translation import (
     proteins,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class ProteinTranslationTest(unittest.TestCase):
@@ -132,7 +134,3 @@ class ProteinTranslationTest(unittest.TestCase):
         value = "UGGUGUUAUUAAUGGUUU"
         expected = ["Tryptophan", "Cysteine", "Tyrosine"]
         self.assertEqual(proteins(value), expected)
-
-
-if __name__ == "__main__":
-    unittest.main()

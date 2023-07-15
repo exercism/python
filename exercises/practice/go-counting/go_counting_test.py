@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/go-counting/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from go_counting import (
@@ -6,8 +10,6 @@ from go_counting import (
     BLACK,
     NONE,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class GoCountingTest(unittest.TestCase):

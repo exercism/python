@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/alphametics/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from alphametics import (
     solve,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class AlphameticsTest(unittest.TestCase):
@@ -106,7 +108,3 @@ class AlphameticsTest(unittest.TestCase):
                 "T": 9,
             },
         )
-
-
-if __name__ == "__main__":
-    unittest.main()

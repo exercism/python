@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/circular-buffer/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from circular_buffer import (
@@ -5,8 +9,6 @@ from circular_buffer import (
     BufferEmptyException,
     BufferFullException,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class CircularBufferTest(unittest.TestCase):

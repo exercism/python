@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/hamming/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from hamming import (
     distance,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class HammingTest(unittest.TestCase):

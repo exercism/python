@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/scrabble-score/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from scrabble_score import (
     score,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class ScrabbleScoreTest(unittest.TestCase):
@@ -40,7 +42,3 @@ class ScrabbleScoreTest(unittest.TestCase):
 
     def test_entire_alphabet_available(self):
         self.assertEqual(score("abcdefghijklmnopqrstuvwxyz"), 87)
-
-
-if __name__ == "__main__":
-    unittest.main()

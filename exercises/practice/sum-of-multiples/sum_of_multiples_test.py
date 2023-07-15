@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/sum-of-multiples/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from sum_of_multiples import (
     sum_of_multiples,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class SumOfMultiplesTest(unittest.TestCase):
@@ -57,7 +59,3 @@ class SumOfMultiplesTest(unittest.TestCase):
         self,
     ):
         self.assertEqual(sum_of_multiples(10000, [2, 3, 5, 7, 11]), 39614537)
-
-
-if __name__ == "__main__":
-    unittest.main()
