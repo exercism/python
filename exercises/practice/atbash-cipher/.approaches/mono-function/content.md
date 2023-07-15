@@ -4,10 +4,10 @@ A fun way to solve this would be to keep it all inside the `encode` function, an
 For variation, this approach shows a different way to translate the text.
 ```python
 from string import ascii_lowercase as asc_low
-ENCODING = {c: asc_low[i] for i, c in enumerate(asc_low[::-1])}
+ENCODING = {chr: asc_low[id] for id, chr in enumerate(asc_low[::-1])}
 
 def encode(text: str, decode: bool = False):
-    res = "".join(ENCODING.get(c, c) for c in text.lower() if c.isalnum())
+    res = "".join(ENCODING.get(chr, chr) for chr in text.lower() if chr.isalnum())
     return res if decode else " ".join(res[i:i+5] for i in range(0, len(res), 5))
 
 def decode(text: str):
@@ -24,13 +24,13 @@ If not, we chunk the result by joining every five characters with a space.
 
 Another possible way to solve this would be to use a function that returns a function that encodes or decodes based on the parameters:
 ```python
-from string import punctuation, ascii_lowercase as alc
+from string import ascii_lowercase as alc
 
-lowercase = {c: alc[i] for i, c in enumerate(alc[::-1])}
+lowercase = {chr: alc[id] for id, chr in enumerate(alc[::-1])}
 
 def code(decode=False):
     def func(text):
-        line = "".join(lowercase.get(l, l) for l in text.lower() if l not in punctuation + ' ')
+        line = "".join(lowercase.get(chr, chr) for chr in text.lower() if chr.isalnum())
         return line if decode else " ".join(line[i:i+5] for i in range(0, len(line), 5))
     return func
 
@@ -40,7 +40,7 @@ decode = code(True)
 ```
 The logic is the same - we've instead used one function that generates two _other_ functions based on the boolean value of its parameter.
 `encode` is set to the function that's returned, and performs encoding.
-`decode` is set a function that _decodes_
+`decode` is set a function that _decodes_.
 
 [ternary-operator]: https://www.tutorialspoint.com/ternary-operator-in-python
 [decorator]: https://realpython.com/primer-on-python-decorators/

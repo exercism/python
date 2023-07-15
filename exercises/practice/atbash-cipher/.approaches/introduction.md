@@ -16,10 +16,11 @@ from string import ascii_lowercase
 ENCODING = str.maketrans(ascii_lowercase, ascii_lowercase[::-1])
 
 def encode(text: str):
-    res = "".join(c for c in text.lower() if c.isalnum()).translate(ENCODING)
+    res = "".join(chr for chr in text.lower() if chr.isalnum()).translate(ENCODING)
     return " ".join(res[i:i+5] for i in range(0, len(res), 5))
+
 def decode(text: str):
-    return "".join(c.lower() for c in text if c.isalnum()).translate(ENCODING)
+    return "".join(chr.lower() for chr in text if chr.isalnum()).translate(ENCODING)
 ```
 Read more on this [approach here][approach-seperate-functions].
 
@@ -29,10 +30,10 @@ A fun way to solve this would be to keep it all inside the `encode` function, an
 For variation, this approach shows a different way to translate the text.
 ```python
 from string import ascii_lowercase as asc_low
-ENCODING = {c: asc_low[i] for i, c in enumerate(asc_low[::-1])}
+ENCODING = {chr: asc_low[id] for id, chr in enumerate(asc_low[::-1])}
 
 def encode(text: str, decode: bool = False):
-    res = "".join(ENCODING.get(c, c) for c in text.lower() if c.isalnum())
+    res = "".join(ENCODING.get(chr, chr) for chr in text.lower() if chr.isalnum())
     return res if decode else " ".join(res[i:i+5] for i in range(0, len(res), 5))
 
 def decode(text: str):
