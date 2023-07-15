@@ -1,13 +1,13 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/binary-search-tree/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from binary_search_tree import (
     BinarySearchTree,
     TreeNode,
 )
-
-# These tests are auto-generated with test data from:
-# https://github.com/exercism/problem-specifications/tree/main/exercises/binary-search-tree/canonical-data.json
-# File last updated on 2023-07-14
 
 
 class BinarySearchTreeTest(unittest.TestCase):

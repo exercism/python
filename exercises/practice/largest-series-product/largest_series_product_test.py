@@ -1,12 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/largest-series-product/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from largest_series_product import (
     largest_product,
 )
-
-# These tests are auto-generated with test data from:
-# https://github.com/exercism/problem-specifications/tree/main/exercises/largest-series-product/canonical-data.json
-# File last updated on 2023-07-14
 
 
 class LargestSeriesProductTest(unittest.TestCase):

@@ -1,12 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/pythagorean-triplet/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from pythagorean_triplet import (
     triplets_with_sum,
 )
-
-# These tests are auto-generated with test data from:
-# https://github.com/exercism/problem-specifications/tree/main/exercises/pythagorean-triplet/canonical-data.json
-# File last updated on 2023-07-14
 
 
 class PythagoreanTripletTest(unittest.TestCase):

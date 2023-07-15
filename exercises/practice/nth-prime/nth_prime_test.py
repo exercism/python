@@ -1,12 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/nth-prime/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from nth_prime import (
     prime,
 )
-
-# These tests are auto-generated with test data from:
-# https://github.com/exercism/problem-specifications/tree/main/exercises/nth-prime/canonical-data.json
-# File last updated on 2023-07-14
 
 
 def prime_range(n):

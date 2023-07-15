@@ -1,12 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/grep/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from grep import (
     grep,
 )
-
-# These tests are auto-generated with test data from:
-# https://github.com/exercism/problem-specifications/tree/main/exercises/grep/canonical-data.json
-# File last updated on 2023-07-14
 import io
 from unittest import mock
 

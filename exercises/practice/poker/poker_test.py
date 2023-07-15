@@ -1,12 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/poker/canonical-data.json
+# File last updated on 2023-07-15
+
 import unittest
 
 from poker import (
     best_hands,
 )
-
-# These tests are auto-generated with test data from:
-# https://github.com/exercism/problem-specifications/tree/main/exercises/poker/canonical-data.json
-# File last updated on 2023-07-14
 
 
 class PokerTest(unittest.TestCase):
