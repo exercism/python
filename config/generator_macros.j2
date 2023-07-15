@@ -16,6 +16,8 @@
 {%- endmacro %}
 
 {% macro header(imports=[], ignore=[]) -%}
+{{ canonical_ref() }}
+
 import unittest
 
 from {{ exercise | to_snake }} import ({% if imports -%}
@@ -29,8 +31,6 @@ from {{ exercise | to_snake }} import ({% if imports -%}
     {%- endif -%}
 {% endfor %}
 {%- endif %})
-
-{{ canonical_ref() }}
 {%- endmacro %}
 
 {% macro utility() -%}# Utility functions
