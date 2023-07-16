@@ -17,9 +17,9 @@ This is often used in multiple assignment to group all "leftover" elements that 
 It is common in Python to also exploit this unpacking/packing behavior when using or defining functions that take an arbitrary number of positional or keyword arguments.
 You will often see these "special" parameters defined as `def some_function(*args, **kwargs)` and the "special" arguments used as `some_function(*some_tuple, **some_dict)`.
 
-```exercism/caution
+~~~~exercism/caution
 `*<variable_name>` and `**<variable_name>` should not be confused with `*` and `**`. While `*` and `**` are used for multiplication and exponentiation respectively, `*<variable_name>` and `**<variable_name>` are used as packing and unpacking operators.
-```
+~~~~
 
 ## Multiple assignment
 
@@ -69,9 +69,9 @@ Since `tuples` are immutable, you can't swap elements in a `tuple`.
 
 ## Unpacking
 
-```exercism/note
+~~~~exercism/note
 The examples below use `lists` but the same concepts apply to `tuples`.
-```
+~~~~
 
 In Python, it is possible to [unpack the elements of `list`/`tuple`/`dictionary`][unpacking] into distinct variables.
 Since values appear within `lists`/`tuples` in a specific order, they are unpacked into variables in the same order:
@@ -305,13 +305,13 @@ c = 3
 You can also write parameters before `*args` to allow for specific positional arguments.
 Individual keyword arguments then have to appear before `**kwargs`.
 
-```exercism/caution
+~~~~exercism/caution
 [Arguments have to be structured](https://www.python-engineer.com/courses/advancedpython/18-function-arguments/) like this:
 
 `def my_function(<positional_args>, *args, <key-word_args>, **kwargs)`
 
 If you don't follow this order then you will get an error.
-```
+~~~~
 
 ```python
 >>> def my_function(a, b, *args):
