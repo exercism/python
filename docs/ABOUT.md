@@ -20,14 +20,14 @@ Code can be written and executed from the command line, in an interactive interp
 The [zen of Python (PEP 20)][the zen of python] and [What is Pythonic?][what is pythonic] lay out additional philosophies and perspectives on the language.
 
 
-Tests and tooling for this track currently support `3.7` - `3.10.6` (_tests_) and [`Python 3.11`][311-new-features] (_tooling_).
+Tests and tooling for this track currently support `3.7` - `3.11.2` (_tests_) and [`Python 3.11.2`][311-new-features] (_tooling_).
 It is highly recommended that students upgrade to at least `Python 3.8`, as some features used by this track may not be supported in earlier versions.
-That being said, most of the exercises will work with `Python 3.6+`.
+That being said, most of the exercises will work with `Python 3.6+`, or even earlier versions.
 But we don't guarantee support for versions not listed under [Active Python Releases][active-python-releases].
 We will try to note when a feature is only available in a certain version.
 
 
-Complete documentation for the current release of Python (3.11.2) can be found at [docs.python.org][python docs].
+Complete documentation for the current release of Python (3.11.x) can be found at [docs.python.org][python docs].
 
 - [Python Tutorial][python tutorial]
 - [Python Library Reference][python library reference]
@@ -35,7 +35,6 @@ Complete documentation for the current release of Python (3.11.2) can be found a
 - [Python HOW TOs][python how tos]
 - [Python FAQs][python faqs]
 - [Python Glossary of Terms][python glossary of terms]
-
 
 
 [311-new-features]: https://docs.python.org/3/whatsnew/3.11.html
