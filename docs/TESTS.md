@@ -30,14 +30,14 @@ Otherwise, the `pytest` installation will be global.
 
 ```powershell
 PS C:\Users\foobar> py -m pip install pytest pytest-cache pytest-subtests pytest-pylint
-Successfully installed pytest-6.2.5 ...
+Successfully installed pytest-7.2.2 ...
 ```
 
 #### Linux / MacOS
 
 ```bash
 $ python3 -m pip install pytest pytest-cache pytest-subtests pytest-pylint
-Successfully installed pytest-6.2.5 ...
+Successfully installed pytest-7.2.2 ...
 
 ```
 
@@ -46,7 +46,7 @@ To check if installation was successful:
 
 ```bash
 $ python3 -m pytest --version
-pytest 6.2.5
+pytest 7.2.2
 ```
 
 ## Running the tests

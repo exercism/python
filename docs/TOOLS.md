@@ -30,7 +30,7 @@ If you have an editor, IDE, tool, or plugin recommendation, we encourage you to 
 
 
 Before you start exploring, make sure that you have a recent version of Python installed.
-The Exercism platform currently supports `Python 3.8` (_exercises and tests_) and `Python 3.9` (_tooling_).
+The Exercism platform currently supports `Python 3.7 - 3.11.2` (_exercises and tests_) and `Python 3.11.2` (_tooling_).
 For more information, please refer to [Installing Python locally][Installing Python locally].
 
 <br>

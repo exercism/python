@@ -37,7 +37,6 @@ Below you will find some additional jumping-off places to start your learning jo
 [automate the videos]: https://www.youtube.com/watch?v=1F_OgqRuSdI&list=PL0-84-yl1fUnRuXGFe_F7qSH1LEnn9LkW
 [googles python class]: https://developers.google.com/edu/python/introduction
 [mitocw600]: https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/
-[pycharm edu]: https://www.jetbrains.com/pycharm-edu/
 [python-course.eu]: https://python-course.eu/python-tutorial/
 [python-for-non-programmers]: https://store.lerner.co.il/python-for-non-programmers-live
 [python4everyone]: https://www.py4e.com/

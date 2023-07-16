@@ -3,8 +3,6 @@ import unittest
 
 import {{ exercise }}
 
-{{ macros.canonical_ref() }}
-
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
     def test_{{ case["description"] | to_snake }}(self):

@@ -632,8 +632,6 @@ print(sum)
 
 [assert]: https://realpython.com/python-assert-statement/
 [assertionerror]: https://www.geeksforgeeks.org/python-assertion-error/
-[floor divison operator]: https://www.codingem.com/python-floor-division
-[logging]: https://docs.python.org/3/howto/logging.html
 [print]: https://www.w3schools.com/python/ref_func_print.asp
 [pdb]: https://www.geeksforgeeks.org/python-debugger-python-pdb/
 [exception-hierarchy]: https://docs.python.org/3/library/exceptions.html#exception-hierarchy
