@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/zipper/canonical-data.json
+# File last updated on 2023-07-16
+
 import unittest
 
 from zipper import (
     Zipper,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class ZipperTest(unittest.TestCase):
@@ -315,7 +317,3 @@ class ZipperTest(unittest.TestCase):
         expected = Zipper.from_tree(final).right().to_tree()
 
         self.assertEqual(result, expected)
-
-
-if __name__ == "__main__":
-    unittest.main()

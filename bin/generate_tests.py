@@ -17,12 +17,13 @@ import sys
 from githelp import Repo
 
 _py = sys.version_info
-if _py.major < 3 or (_py.major == 3 and _py.minor < 6):
-    print("Python version must be at least 3.6")
+if _py.major < 3 or (_py.major == 3 and _py.minor < 7):
+    print("Python version must be at least 3.7")
     sys.exit(1)
 
 import argparse
 from datetime import datetime
+from datetime import timezone
 import difflib
 import filecmp
 import importlib.util
@@ -270,8 +271,12 @@ def check_template(slug: str, tests_path: Path, tmpfile: Path):
             check_ok = False
         if check_ok and not filecmp.cmp(tmpfile, tests_path):
             with tests_path.open() as f:
+                for line in range(4):
+                    next(f)
                 current_lines = f.readlines()
             with tmpfile.open() as f:
+                for line in range(4):
+                    next(f)
                 rendered_lines = f.readlines()
             diff = difflib.unified_diff(
                 current_lines,
@@ -393,6 +398,7 @@ def generate(
     env.filters["zip"] = zip
     env.filters["parse_datetime"] = parse_datetime
     env.filters["escape_invalid_escapes"] = escape_invalid_escapes
+    env.globals["current_date"] = datetime.now(tz=timezone.utc).date()
     env.tests["error_case"] = error_case
     result = True
     for exercise in sorted(Path("exercises/practice").glob(exercise_glob)):

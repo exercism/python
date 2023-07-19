@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/rotational-cipher/canonical-data.json
+# File last updated on 2023-07-16
+
 import unittest
 
 from rotational_cipher import (
     rotate,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class RotationalCipherTest(unittest.TestCase):
@@ -40,7 +42,3 @@ class RotationalCipherTest(unittest.TestCase):
             rotate("The quick brown fox jumps over the lazy dog.", 13),
             "Gur dhvpx oebja sbk whzcf bire gur ynml qbt.",
         )
-
-
-if __name__ == "__main__":
-    unittest.main()

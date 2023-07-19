@@ -20,5 +20,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         expected = {{ case["expected"] }}
         self.assertDictEqual(json.loads(response), expected)
     {% endfor %}{% endfor %}
-
-{{ macros.footer() }}

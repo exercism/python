@@ -195,12 +195,12 @@ _We know it, and trust us, we are working on fixing it._ But if you see &nbsp;ü
 
 <br>
 
-This track officially supports Python `3.7 - 3.10.6` for students completing exercises.  
-The track `test runner`, `analyzer`, and `representer` run in docker on `python:3.10.6-slim`.
+This track officially supports Python `3.7 - 3.11.2` for students completing exercises.  
+The track `test runner`, `analyzer`, and `representer` run in docker on `python:3.11.2-slim`.
 
 Although the majority of test cases are written using `unittest.TestCase`,
 
-- All exercises should be written for compatibility with Python `3.7` - `3.10.6`.
+- All exercises should be written for compatibility with Python `3.7` - `3.11.2`.
 - Version backward _incompatibility_ (_e.g_ an exercise using features introduced in `3.8`, `3.9`, or `3.10`) should be clearly noted in any exercise hints, links, introductions or other notes.
 
 - Here is an example of how the Python documentation handles [version-tagged &nbsp;üè∑&nbsp;][version-tagged-language-features] feature introduction.
@@ -227,7 +227,7 @@ Although the majority of test cases are written using `unittest.TestCase`,
   - Any updates or changes need to be proposed/approved in `problem-specifications` first.
   - If Python-specific changes become necessary, they need to be appended to the canonical instructions by creating a `instructions.append.md` file in this (`exercism/Python`) repository.
 
-- Practice Exercise **Test Suits** for many practice exercises are similarly [auto-generated](#auto-generated-files) from data in [problem specifications][problem-specifications].
+- Practice Exercise **Test Suits** for most practice exercises are similarly [auto-generated](#auto-generated-files) from data in [problem specifications][problem-specifications].
 
   - Any changes to them need to be proposed/discussed in the `problem-specifications` repository and approved by **3 track maintainers**, since changes could potentially affect many (_or all_) exercism language tracks.
   - If Python-specific test changes become necessary, they can be appended to the exercise `tests.toml` file.
@@ -371,6 +371,7 @@ configlet generate <path/to/track> --spec-path path/to/problem/specifications
 
 <br>
 
+
 [.flake8]: https://github.com/exercism/python/blob/main/.flake8
 [.style.yapf]: https://github.com/exercism/python/blob/main/.style.yapf
 [american-english]: https://github.com/exercism/docs/blob/main/building/markdown/style-guide.md
@@ -380,6 +381,7 @@ configlet generate <path/to/track> --spec-path path/to/problem/specifications
 [concept-exercise-anatomy]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md
 [concept-exercises]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md
 [config-json]: https://github.com/exercism/javascript/blob/main/config.json
+[config-json]: https://github.com/exercism/python/blob/main/config.json
 [configlet-general]: https://github.com/exercism/configlet
 [configlet-lint]: https://github.com/exercism/configlet#configlet-lint
 [configlet]: https://github.com/exercism/docs/blob/main/building/configlet/generating-documents.md
@@ -429,5 +431,3 @@ configlet generate <path/to/track> --spec-path path/to/problem/specifications
 [version-tagged-language-features]: https://docs.python.org/3/library/stdtypes.html#dict.popitem
 [website-contributing-section]: https://exercism.org/docs/building
 [yapf]: https://github.com/google/yapf
-
-[config-json]: https://github.com/exercism/python/blob/main/config.json

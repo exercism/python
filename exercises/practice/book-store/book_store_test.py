@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/book-store/canonical-data.json
+# File last updated on 2023-07-16
+
 import unittest
 
 from book_store import (
     total,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class BookStoreTest(unittest.TestCase):
@@ -95,7 +97,3 @@ class BookStoreTest(unittest.TestCase):
     def test_shuffled_book_order(self):
         basket = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3]
         self.assertEqual(total(basket), 8120)
-
-
-if __name__ == "__main__":
-    unittest.main()

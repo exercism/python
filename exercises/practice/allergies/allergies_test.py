@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/allergies/canonical-data.json
+# File last updated on 2023-07-16
+
 import unittest
 
 from allergies import (
     Allergies,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class AllergiesTest(unittest.TestCase):
@@ -183,7 +185,3 @@ class AllergiesTest(unittest.TestCase):
 
     def test_no_allergen_score_parts_without_highest_valid_score(self):
         self.assertEqual(Allergies(257).lst, ["eggs"])
-
-
-if __name__ == "__main__":
-    unittest.main()

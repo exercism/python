@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/all-your-base/canonical-data.json
+# File last updated on 2023-07-16
+
 import unittest
 
 from all_your_base import (
     rebase,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class AllYourBaseTest(unittest.TestCase):
@@ -101,11 +103,3 @@ class AllYourBaseTest(unittest.TestCase):
             rebase(-2, [1], -7)
         self.assertEqual(type(err.exception), ValueError)
         self.assertEqual(err.exception.args[0], "input base must be >= 2")
-
-    # Utility functions
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
-
-if __name__ == "__main__":
-    unittest.main()

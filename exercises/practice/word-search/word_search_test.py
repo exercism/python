@@ -1,11 +1,13 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/word-search/canonical-data.json
+# File last updated on 2023-07-16
+
 import unittest
 
 from word_search import (
     WordSearch,
     Point,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class WordSearchTest(unittest.TestCase):
@@ -310,7 +312,3 @@ class WordSearchTest(unittest.TestCase):
     def test_should_not_wrap_around_vertically_to_find_a_word(self):
         puzzle = WordSearch(["s", "u", "r", "a", "b", "c", "t"])
         self.assertIsNone(puzzle.search("rust"))
-
-
-if __name__ == "__main__":
-    unittest.main()

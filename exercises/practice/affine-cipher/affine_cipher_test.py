@@ -1,11 +1,13 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/affine-cipher/canonical-data.json
+# File last updated on 2023-07-16
+
 import unittest
 
 from affine_cipher import (
     decode,
     encode,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class AffineCipherTest(unittest.TestCase):

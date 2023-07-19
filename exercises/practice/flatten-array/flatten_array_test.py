@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/flatten-array/canonical-data.json
+# File last updated on 2023-07-16
+
 import unittest
 
 from flatten_array import (
     flatten,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class FlattenArrayTest(unittest.TestCase):
@@ -66,7 +68,3 @@ class FlattenArrayTest(unittest.TestCase):
         inputs = [None, [[[None]]], None, None, [[None, None], None], None]
         expected = []
         self.assertEqual(flatten(inputs), expected)
-
-
-if __name__ == "__main__":
-    unittest.main()

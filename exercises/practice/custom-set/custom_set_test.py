@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/custom-set/canonical-data.json
+# File last updated on 2023-07-16
+
 import unittest
 
 from custom_set import (
     CustomSet,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class CustomSetTest(unittest.TestCase):
@@ -212,7 +214,3 @@ class CustomSetTest(unittest.TestCase):
         set2 = CustomSet([2, 3])
         expected = CustomSet([3, 2, 1])
         self.assertEqual(set1 + set2, expected)
-
-
-if __name__ == "__main__":
-    unittest.main()

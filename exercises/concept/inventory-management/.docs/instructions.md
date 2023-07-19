@@ -4,13 +4,17 @@ In this exercise, you will be managing an inventory system.
 
 The inventory should be organized by the item name and it should keep track of the number of items available.
 
-You will have to handle adding items to an inventory. Each time an item appears in a given list, increase the item's quantity by `1` in the inventory. Then, you will have to handle deleting items from an inventory.
+You will have to handle adding items to an inventory.
+Each time an item appears in a given list, the item's quantity should be increased by `1` in the inventory.
+You will also have to handle deleting items from an inventory by decreasing quantities by `1` when requested.
 
-To finish, you will have to implement a function which returns all the key-value pairs in an inventory as a list of `tuples`.
+Finally, you will need to implement a function that will return all the key-value pairs in a given inventory as a `list` of `tuples`.
+
 
 ## 1. Create an inventory based on a list
 
-Implement the `create_inventory()` function that creates an "inventory" from a list of items. It should return a `dict` containing each item name paired with their respective quantity.
+Implement the `create_inventory(<input list>)` function that creates an "inventory" from an input list of items.
+It should return a `dict` containing each item name paired with their respective quantity.
 
 ```python
 >>> create_inventory(["coal", "wood", "wood", "diamond", "diamond", "diamond"])
@@ -19,7 +23,7 @@ Implement the `create_inventory()` function that creates an "inventory" from a l
 
 ## 2. Add items from a list to an existing dictionary
 
-Implement the `add_items()` function that adds a list of items to an inventory:
+Implement the `add_items(<inventory dict>, <item list>)` function that adds a list of items to the passed-in inventory:
 
 ```python
 >>> add_items({"coal":1}, ["wood", "iron", "coal", "wood"])
@@ -28,23 +32,26 @@ Implement the `add_items()` function that adds a list of items to an inventory:
 
 ## 3. Decrement items from the inventory
 
-Implement the `decrement_items(<items>)` function that takes a `list` of items. The function should remove one from the available count in the inventory for each time an item appears on the `list`:
+Implement the `decrement_items(<inventory dict>, <items list>)` function that takes a `list` of items.
+Your function should remove `1` from an item count for each time that item appears on the `list`:
 
 ```python
 >>> decrement_items({"coal":3, "diamond":1, "iron":5}, ["diamond", "coal", "iron", "iron"])
 {"coal":2, "diamond":0, "iron":3}
 ```
 
-Item counts in the inventory should not fall below 0. If the number of times an item appears on the list exceeds the count available, the quantity listed for that item should remain at 0 and additional requests for removing counts should be ignored.
+Item counts in the inventory should not be allowed to fall below 0.
+ If the number of times an item appears on the input `list` exceeds the count available, the quantity listed for that item should remain at 0.
+ Additional requests for removing counts should be ignored once the count falls to zero.
 
 ```python
 >>> decrement_items({"coal":2, "wood":1, "diamond":2}, ["coal", "coal", "wood", "wood", "diamond"])
 {"coal":0, "wood":0, "diamond":1}
 ```
 
-## 4. Remove an item entirely from the inventory
+## 4. Remove an entry entirely from the inventory
 
-Implement the `remove_item(<inventory>, <item>)` function that removes an item and its count entirely from an inventory:
+Implement the `remove_item(<inventory dict>, <item>)` function that removes an item and its count entirely from an inventory:
 
 ```python
 >>> remove_item({"coal":2, "wood":1, "diamond":2}, "coal")
@@ -58,9 +65,10 @@ If the item is not found in the inventory, the function should return the origin
 {"coal":2, "wood":1, "diamond":2}
 ```
 
-## 5. Return the inventory content
+## 5. Return the entire content of the inventory
 
-Implement the `list_inventory()` function that takes an inventory and returns a list of `(item, quantity)` tuples. The list should only include the available items (with a quantity greater than zero):
+Implement the `list_inventory(<inventory dict>)` function that takes an inventory and returns a list of `(item, quantity)` tuples.
+The list should only include the _available_ items (_with a quantity greater than zero_):
 
 ```python
 >>> list_inventory({"coal":7, "wood":11, "diamond":2, "iron":7, "silver":0})

@@ -1,11 +1,13 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/binary-search-tree/canonical-data.json
+# File last updated on 2023-07-16
+
 import unittest
 
 from binary_search_tree import (
     BinarySearchTree,
     TreeNode,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class BinarySearchTreeTest(unittest.TestCase):
@@ -82,7 +84,3 @@ class BinarySearchTreeTest(unittest.TestCase):
             pass
         else:
             raise AssertionError
-
-
-if __name__ == "__main__":
-    unittest.main()

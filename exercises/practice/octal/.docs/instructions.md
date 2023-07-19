@@ -1,11 +1,9 @@
 # Instructions
 
-Convert an octal number, represented as a string (e.g. '1735263'), to its
-decimal equivalent using first principles (i.e. no, you may not use built-in or
-external libraries to accomplish the conversion).
+Convert an octal number, represented as a string (e.g. '1735263'), to its decimal equivalent using first principles (i.e. no, you may not use built-in or external libraries to accomplish the conversion).
 
-Implement octal to decimal conversion.  Given an octal input
-string, your program should produce a decimal output.
+Implement octal to decimal conversion.
+Given an octal input string, your program should produce a decimal output.
 
 ## Note
 

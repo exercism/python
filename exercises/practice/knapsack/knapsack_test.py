@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/knapsack/canonical-data.json
+# File last updated on 2023-07-16
+
 import unittest
 
 from knapsack import (
     maximum_value,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class KnapsackTest(unittest.TestCase):
@@ -100,7 +102,3 @@ class KnapsackTest(unittest.TestCase):
             ),
             1458,
         )
-
-
-if __name__ == "__main__":
-    unittest.main()

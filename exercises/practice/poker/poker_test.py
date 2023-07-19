@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/poker/canonical-data.json
+# File last updated on 2023-07-16
+
 import unittest
 
 from poker import (
     best_hands,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class PokerTest(unittest.TestCase):
@@ -209,7 +211,3 @@ class PokerTest(unittest.TestCase):
         self.assertEqual(
             best_hands(["2H 3H 4H 5H 6H", "4D AD 3D 2D 5D"]), ["2H 3H 4H 5H 6H"]
         )
-
-
-if __name__ == "__main__":
-    unittest.main()

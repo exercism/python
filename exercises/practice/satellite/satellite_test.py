@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/satellite/canonical-data.json
+# File last updated on 2023-07-16
+
 import unittest
 
 from satellite import (
     tree_from_traversals,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class SatelliteTest(unittest.TestCase):

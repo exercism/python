@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/square-root/canonical-data.json
+# File last updated on 2023-07-16
+
 import unittest
 
 from square_root import (
     square_root,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class SquareRootTest(unittest.TestCase):

@@ -2,8 +2,6 @@ import unittest
 
 import yacht
 
-# Tests adapted from `problem-specifications//canonical-data.json`
-
 
 class YachtTest(unittest.TestCase):
     def test_yacht(self):
@@ -92,7 +90,3 @@ class YachtTest(unittest.TestCase):
 
     def test_yacht_as_choice(self):
         self.assertEqual(yacht.score([2, 2, 2, 2, 2], yacht.CHOICE), 10)
-
-
-if __name__ == "__main__":
-    unittest.main()

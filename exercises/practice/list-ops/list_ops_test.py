@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/list-ops/canonical-data.json
+# File last updated on 2023-07-16
+
 import unittest
 
 from list_ops import (
@@ -10,8 +14,6 @@ from list_ops import (
     filter as list_ops_filter,
     map as list_ops_map,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class ListOpsTest(unittest.TestCase):
@@ -98,7 +100,3 @@ class ListOpsTest(unittest.TestCase):
 
     def test_reverse_reverse_mixed_types(self):
         self.assertEqual(reverse(["xyz", 4.0, "cat", 1]), [1, "cat", 4.0, "xyz"])
-
-
-if __name__ == "__main__":
-    unittest.main()

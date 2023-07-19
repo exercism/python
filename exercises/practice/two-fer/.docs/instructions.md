@@ -17,9 +17,9 @@ One for you, one for me.
 
 Here are some examples:
 
-|Name    |Dialogue
-|:-------|:------------------
-|Alice   |One for Alice, one for me.
-|Bohdan  |One for Bohdan, one for me.
-|        |One for you, one for me.
-|Zaphod  |One for Zaphod, one for me.
+| Name   | Dialogue                    |
+| :----- | :-------------------------- |
+| Alice  | One for Alice, one for me.  |
+| Bohdan | One for Bohdan, one for me. |
+|        | One for you, one for me.    |
+| Zaphod | One for Zaphod, one for me. |

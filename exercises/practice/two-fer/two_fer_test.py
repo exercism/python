@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/two-fer/canonical-data.json
+# File last updated on 2023-07-16
+
 import unittest
 
 from two_fer import (
     two_fer,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class TwoFerTest(unittest.TestCase):
@@ -16,7 +18,3 @@ class TwoFerTest(unittest.TestCase):
 
     def test_another_name_given(self):
         self.assertEqual(two_fer("Bob"), "One for Bob, one for me.")
-
-
-if __name__ == "__main__":
-    unittest.main()

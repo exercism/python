@@ -2,9 +2,9 @@
 
 Convert a binary number, represented as a string (e.g. '101010'), to its decimal equivalent using first principles.
 
-Implement binary to decimal conversion. Given a binary input
-string, your program should produce a decimal output. The
-program should handle invalid inputs.
+Implement binary to decimal conversion.
+Given a binary input string, your program should produce a decimal output.
+The program should handle invalid inputs.
 
 ## Note
 
@@ -15,8 +15,7 @@ program should handle invalid inputs.
 
 Decimal is a base-10 system.
 
-A number 23 in base 10 notation can be understood
-as a linear combination of powers of 10:
+A number 23 in base 10 notation can be understood as a linear combination of powers of 10:
 
 - The rightmost digit gets multiplied by 10^0 = 1
 - The next number gets multiplied by 10^1 = 10

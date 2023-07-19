@@ -7,10 +7,10 @@ To give a comprehensive sense of the font, the random sentences should use **all
 They're running a competition to get suggestions for sentences that they can use.
 You're in charge of checking the submissions to see if they are valid.
 
-```exercism/note
+~~~~exercism/note
 Pangram comes from Greek, παν γράμμα, pan gramma, which means "every letter".
 
 The best known English pangram is:
 
 > The quick brown fox jumps over the lazy dog.
-```
+~~~~

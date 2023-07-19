@@ -1,11 +1,13 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/sgf-parsing/canonical-data.json
+# File last updated on 2023-07-16
+
 import unittest
 
 from sgf_parsing import (
     parse,
     SgfTree,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class SgfParsingTest(unittest.TestCase):

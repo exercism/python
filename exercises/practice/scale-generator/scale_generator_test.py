@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/scale-generator/canonical-data.json
+# File last updated on 2023-07-16
+
 import unittest
 
 from scale_generator import (
     Scale,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class ScaleGeneratorTest(unittest.TestCase):
@@ -78,7 +80,3 @@ class ScaleGeneratorTest(unittest.TestCase):
     def test_enigmatic(self):
         expected = ["G", "G#", "B", "C#", "D#", "F", "F#", "G"]
         self.assertEqual(Scale("G").interval("mAMMMmm"), expected)
-
-
-if __name__ == "__main__":
-    unittest.main()

@@ -25,7 +25,7 @@ class CircularBuffer:
         self.read_point = 0
         self.write_point = 0
 
-    # (protected) helper method to support python 2/3
+    # (protected) helper method
     def _update_buffer(self, data):
         try:
             self.buffer[self.write_point] = data
