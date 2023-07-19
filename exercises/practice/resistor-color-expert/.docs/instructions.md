@@ -41,7 +41,8 @@ The four-band resistor is built up like this:
 Meaning
 
 - orange-orange-brown-green would be 330 ohms with a ±0.5% tolerance.
-- orange-orange-red would-grey would be 3300 ohms with ±0.005% tolerance.
+- orange-orange-red-grey would be 3300 ohms with ±0.05% tolerance.
+
 The difference between a four and five-band resistor is that the five-band resistor has an extra band to indicate a more precise value.
 
 | Band_1  | Band_2  | Band_3  | Band_4     | band_5    |
@@ -50,9 +51,11 @@ The difference between a four and five-band resistor is that the five-band resis
 
 Meaning
 
-- orange-orange-orange-black-green would be 330 ohms with a ±0.5% tolerance.
+- orange-orange-orange-black-green would be 333 ohms with a ±0.5% tolerance.
+- orange-red-orange-blue-violet would be 323M ohms with a ±0.10 tolerance.
+
 There are also one band resistors.
-This type of resistor only has the color black and has a value of 0.
+One band resistors only have the color black with a value of 0.
 
 This exercise is about translating the resistor band colors into a label:
 
