@@ -8,7 +8,7 @@ ENCODING = {chr: asc_low[id] for id, chr in enumerate(asc_low[::-1])}
 
 def encode(text: str, decode: bool = False):
     res = "".join(ENCODING.get(chr, chr) for chr in text.lower() if chr.isalnum())
-    return res if decode else " ".join(res[i:i+5] for i in range(0, len(res), 5))
+    return res if decode else " ".join(res[index:index+5] for index in range(0, len(res), 5))
 
 def decode(text: str):
     return encode(text, True)
@@ -31,7 +31,7 @@ lowercase = {chr: alc[id] for id, chr in enumerate(alc[::-1])}
 def code(decode=False):
     def func(text):
         line = "".join(lowercase.get(chr, chr) for chr in text.lower() if chr.isalnum())
-        return line if decode else " ".join(line[i:i+5] for i in range(0, len(line), 5))
+        return line if decode else " ".join(line[index:index+5] for index in range(0, len(line), 5))
     return func
 
     
