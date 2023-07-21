@@ -1,4 +1,8 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header(["BowlingGame"]) }}
+
 {% macro test_case(case) -%}
     {%- set input = case["input"] -%}
     def test_{{ case["description"] | to_snake }}(self):
@@ -16,7 +20,6 @@
         self.assertEqual(game.score(), {{ case["expected"] }})
         {% endif %}
 {%- endmacro %}
-{{ macros.header(["BowlingGame"]) }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     def roll_new_game(self, rolls):
@@ -29,5 +32,4 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     {{ test_case(case) }}
     {% endfor %}
 
-
-{{ macros.footer() }}
+{{ macros.utility() }}

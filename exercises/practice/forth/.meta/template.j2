@@ -1,6 +1,7 @@
 {%- import "generator_macros.j2" as macros with context -%}
-{% set imports = ["evaluate", "StackUnderflowError"] %}
-{{ macros.header(imports=imports, ignore=ignore) }}
+{{ macros.canonical_ref() }}
+
+{{ macros.header(imports = ["evaluate", "StackUnderflowError"])}}
 
 {% macro test_case(group, case) -%}
     def test_{{ group | to_snake }}_{{ case["description"] | to_snake }}(self):

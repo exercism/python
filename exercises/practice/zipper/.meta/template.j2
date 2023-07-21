@@ -1,4 +1,7 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header (imports=["Zipper"]) }}
 
 {%- macro test_case(case) %}
     {%- set input = case["input"] -%}
@@ -9,7 +12,7 @@
         {%- else %}
         {{ expected_value(input, expected) }}
         {%- endif %}
-{%- endmacro -%}
+{% endmacro %}
 
 {%- macro expected_value(input, expected) -%}
         initial = {{ input["initialTree"] }}
@@ -44,9 +47,8 @@
     {%- for op in operations -%}
         .{{ op["operation"] }}({{ op["item"] }})
     {%- endfor %}
-{%- endmacro -%}
+{%- endmacro %}
 
-{{ macros.header (imports=["Zipper"]) }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
 {%- for case in cases %}

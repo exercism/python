@@ -1,4 +1,7 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header(["parse","SgfTree"])}}
 
 {% macro escape_sequences(string) -%}
     {{ string | replace("\\", "\\\\") | replace("\n", "\\n") | replace("\t", "\\t") }}
@@ -43,7 +46,6 @@
     {% endfor -%} }
 {%- endmacro -%}
 
-{{ macros.header(["parse","SgfTree"])}}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases %}

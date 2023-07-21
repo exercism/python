@@ -1,6 +1,9 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
 import re
 {{ macros.header(imports=['Cipher']) }}
+
 {%- macro convert_js(s) -%}
 {{ s |
     regex_replace("\\.substring\\((\\d+), ([^)]+)\\)", "[\\1:\\2]") |

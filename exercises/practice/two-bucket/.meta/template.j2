@@ -1,11 +1,14 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header()}}
+
 {%- macro test_call(case) -%}
 {{ case["property"] }}({{ case["input"]["bucketOne"] }},
                       {{ case["input"]["bucketTwo"] }},
                       {{ case["input"]["goal"] }},
                       "{{ case["input"]["startBucket"] }}")
-{%- endmacro -%}
-{{ macros.header() }}
+{%- endmacro %}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
@@ -24,4 +27,4 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
 
     {% endfor %}
 
-{{ macros.footer() }}
+{{ macros.utility() }}

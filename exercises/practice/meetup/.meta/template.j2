@@ -1,4 +1,9 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+from datetime import date
+{{ macros.header(imports=["meetup", "MeetupDayException"]) }}
+
 {% macro test_case(case) -%}
     def test_{{ case["description"] | to_snake }}(self):
         {%- set input = namespace() %}
@@ -17,9 +22,6 @@
             {{ input.year }}, {{ input.month }}, "{{ input.week }}", "{{ input.dayofweek }}"), date({{ year }}, {{ month }}, {{ day }}))
         {% endif %}
 {%- endmacro %}
-
-from datetime import date
-{{ macros.header(imports=["meetup", "MeetupDayException"]) }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}

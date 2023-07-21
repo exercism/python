@@ -1,7 +1,6 @@
-import math
+{% extends "complexnumbers_template.j2" %}
 
-{% extends "master_template.j2" -%}
-{%- set imports = ["ComplexNumber"] -%}
+{% set imports = ["ComplexNumber"] %}
 
 {%- macro translate_math(item) -%}
 {{ item | replace("pi", "math.pi") | replace("e", "math.e") | replace("ln", "math.log") }}

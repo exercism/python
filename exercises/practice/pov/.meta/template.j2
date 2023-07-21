@@ -1,6 +1,9 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
 
-{%- macro test_case(case) %}
+{{ macros.header(["Tree"]) }}
+
+{% macro test_case(case) %}
     def test_{{ case["description"] | to_snake }}(self):
         tree = {{ write_tree(case["input"]["tree"]) }}
         {% if case["property"] == "fromPov" -%}
@@ -8,7 +11,7 @@
         {%- elif case["property"] == "pathTo" -%}
         {{ test_path_to(case) }}
         {%- endif -%}
-{% endmacro -%}
+{% endmacro %}
 
 {%- macro test_from_pov(case) -%}
         {% if case["expected"] -%}
@@ -20,7 +23,7 @@
         self.assertEqual(type(err.exception), ValueError)
         self.assertEqual(err.exception.args[0], "Tree could not be reoriented")
         {% endif -%}
-{% endmacro -%}
+{% endmacro %}
 
 {%- macro test_path_to(case) -%}
         {% if case["expected"] -%}
@@ -46,8 +49,6 @@
         {%- endfor %}
         ]{% endif %})
 {%- endmacro -%}
-
-{{ macros.header(["Tree"]) }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for supercase in cases -%}

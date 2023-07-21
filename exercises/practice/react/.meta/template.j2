@@ -1,5 +1,9 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
 from functools import partial
+{{ macros.header(["InputCell", "ComputeCell"])}}
+
 {% macro test_case(case) -%}
     {%- set input = case["input"] -%}
     {%- set callback = [] -%}
@@ -48,7 +52,6 @@ from functools import partial
             {%- endif %}
         {% endfor -%}
 {%- endmacro %}
-{{ macros.header(["InputCell", "ComputeCell"])}}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}

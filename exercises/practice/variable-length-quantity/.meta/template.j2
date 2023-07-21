@@ -1,4 +1,7 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header()}}
 
 {%- macro list_int_to_hex(integers) %}
             [
@@ -6,9 +9,8 @@
                 {{ "0x{:x}".format(integer) }}{{- "," if not loop.last }}
                 {% endfor %}
             ]
-{% endmacro -%}
+{% endmacro %}
 
-{{ macros.header() }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
