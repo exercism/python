@@ -1,9 +1,8 @@
-import math
-
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/complex-numbers/canonical-data.json
-# File last updated on 2023-07-16
+# File last updated on 2023-07-19
 
+import math
 import unittest
 
 from complex_numbers import (
@@ -191,7 +190,3 @@ class ComplexNumbersTest(unittest.TestCase):
 
     def test_inequality_of_imaginary_part(self):
         self.assertNotEqual(ComplexNumber(1, 2), ComplexNumber(1, 1))
-
-
-if __name__ == "__main__":
-    unittest.main()

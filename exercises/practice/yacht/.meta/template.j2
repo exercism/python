@@ -1,6 +1,7 @@
 {%- import "generator_macros.j2" as macros with context -%}
-import unittest
+{{ macros.canonical_ref() }}
 
+import unittest
 import {{ exercise }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):

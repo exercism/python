@@ -1,4 +1,8 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header(["LinkedList"]) }}
+
 {% macro test_case(case) -%}
     def test_{{ case["description"] | to_snake }}(self):
         lst = LinkedList()
@@ -45,7 +49,6 @@
     {%- endif  %}
 {%- endmacro %}
 
-{{ macros.header(["LinkedList"]) }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}

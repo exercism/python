@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/collatz-conjecture/canonical-data.json
-# File last updated on 2023-07-16
+# File last updated on 2023-07-20
 
 import unittest
 

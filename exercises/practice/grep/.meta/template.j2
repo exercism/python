@@ -1,6 +1,8 @@
 {%- import "generator_macros.j2" as macros with context -%}
-{{ macros.header() }}
+{{ macros.canonical_ref() }}
+
 import io
+{{ macros.header()}}
 from unittest import mock
 
 {% set filenames = comments | join("\n") | regex_find("[a-z-]*\.txt") -%}

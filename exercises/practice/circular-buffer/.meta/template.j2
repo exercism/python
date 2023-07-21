@@ -1,4 +1,8 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header(["CircularBuffer","BufferEmptyException", "BufferFullException"]) }}
+
 {% macro call_op(op) -%}
 buf.{{ op["operation"] }}(
     {% if "item" in op -%}
@@ -6,7 +10,7 @@ buf.{{ op["operation"] }}(
     {%- endif -%}
 )
 {%- endmacro -%}
-{{ macros.header(["CircularBuffer","BufferEmptyException", "BufferFullException"]) }}
+
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases %}

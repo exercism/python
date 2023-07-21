@@ -1,4 +1,7 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header(imports=["Robot", "NORTH", "EAST", "SOUTH", "WEST"]) }}
 
 {% macro test_case(case) -%}
     {%- set input = case["input"] -%}
@@ -15,7 +18,6 @@
         self.assertEqual(robot.direction, {{case["expected"]["direction"] | upper }})
 {%- endmacro %}
 
-{{ macros.header(imports=["Robot", "NORTH", "EAST", "SOUTH", "WEST"]) }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for supercase in cases %}

@@ -1,6 +1,9 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
 
-{%- macro build_tree(tree_obj) -%}
+{{ macros.header (imports=["BinarySearchTree", "TreeNode"]) }}
+
+{% macro build_tree(tree_obj) %}
 {%- if tree_obj is none -%}
 None
 {%- else -%}
@@ -24,8 +27,6 @@ TreeNode("{{ tree_obj["data"] }}",
     {%- endif %}
         self.{{ assertion }}(BinarySearchTree({{ tree_data }}).{{ prop | to_snake }}(),expected)
 {%- endmacro -%}
-
-{{ macros.header (imports=["BinarySearchTree", "TreeNode"]) }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
 {%- for case in cases %}

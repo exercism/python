@@ -1,6 +1,9 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
 {% set class = exercise | camel_case -%}
 {{ macros.header([class]) }}
+
 
 class {{ class }}Test(unittest.TestCase):
     {% for case in cases -%}
