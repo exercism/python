@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/two-bucket/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2023-07-21
 
 import unittest
 
@@ -50,3 +50,7 @@ class TwoBucketTest(unittest.TestCase):
     def test_goal_larger_than_both_buckets_is_impossible(self):
         with self.assertRaisesWithMessage(ValueError):
             measure(5, 7, 8, "one")
+
+    # Utility functions
+    def assertRaisesWithMessage(self, exception):
+        return self.assertRaisesRegex(exception, r".+")
