@@ -1,13 +1,6 @@
-"""Tests for the saddle-points exercise
-
-Implementation note:
-The saddle_points function must validate the input matrix and raise a
-ValueError with a meaningful error message if the matrix turns out to be
-irregular.
-"""
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/saddle-points/canonical-data.json
-# File last updated on 2023-07-16
+# File last updated on 2023-07-19
 
 import unittest
 

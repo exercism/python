@@ -1,11 +1,7 @@
-"""Tests for the saddle-points exercise
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
 
-Implementation note:
-The saddle_points function must validate the input matrix and raise a
-ValueError with a meaningful error message if the matrix turns out to be
-irregular.
-"""
-{% import "generator_macros.j2" as macros with context -%}
+{{ macros.header()}}
 
 {% macro test_case(case) -%}
     {%- set input = case["input"] -%}
@@ -29,7 +25,6 @@ irregular.
         {% endif -%}
 {% endmacro -%}
 
-{{ macros.header()}}
 
 def sorted_points(point_list):
     return sorted(point_list, key=lambda p: (p["row"], p["column"]))

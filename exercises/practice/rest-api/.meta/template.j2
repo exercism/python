@@ -1,6 +1,8 @@
 {%- import "generator_macros.j2" as macros with context -%}
-{{ macros.header(imports=["RestAPI"]) }}
+{{ macros.canonical_ref() }}
+
 import json
+{{ macros.header(imports=["RestAPI"]) }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for casegroup in cases -%}{%- for case in casegroup["cases"] -%}

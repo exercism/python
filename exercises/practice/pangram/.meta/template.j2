@@ -1,4 +1,8 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header()}}
+
 {% macro test_case(case) -%}
     {%- set input = case["input"] -%}
     def test_{{ case["description"] | to_snake }}(self):
@@ -7,7 +11,6 @@
             {{ case["expected"] }}
         )
 {%- endmacro %}
-{{ macros.header()}}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {# All test cases in this exercise are nested, so use two for loops -#}

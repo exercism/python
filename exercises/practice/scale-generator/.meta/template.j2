@@ -1,4 +1,7 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header(["Scale"])}}
 
 {% macro test_case(case) -%}
     {%- set tonic = case["input"]["tonic"] -%}
@@ -19,7 +22,6 @@
     {% endfor %}
 {%- endmacro %}
 
-{{ macros.header(["Scale"])}}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for supercase in cases %}

@@ -1,4 +1,7 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header(["BankAccount"]) }}
 {% macro test_case(case) -%}
     def test_{{ case["description"] | to_snake }}(self):
         account = BankAccount()
@@ -36,7 +39,6 @@
             {%- endif  %}
 {% endmacro %}
 
-{{ macros.header(["BankAccount"]) }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}

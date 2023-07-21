@@ -16,7 +16,6 @@
 {%- endmacro %}
 
 {% macro header(imports=[], ignore=[]) -%}
-{{ canonical_ref() }}
 
 import unittest
 
@@ -36,14 +35,6 @@ from {{ exercise | to_snake }} import ({% if imports -%}
 {% macro utility() -%}# Utility functions
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
-{%- endmacro %}
-
-{% macro footer(_has_error_case) -%}
-{% if has_error_case or _has_error_case %}
-{{ utility() }}
-{% endif %}
-if __name__ == '__main__':
-    unittest.main()
 {%- endmacro %}
 
 {% macro empty_set(set, list, class_name) -%}

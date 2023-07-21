@@ -1,4 +1,7 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header(imports=["Rational"]) }}
 
 {%- set operators = {
     "add": "+",
@@ -81,9 +84,6 @@
     {% endfor %}
 
 {%- endmacro %}
-
-from __future__ import division
-{{ macros.header(imports=["Rational"]) }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for mathtypescases in cases %}

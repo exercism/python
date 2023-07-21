@@ -1,4 +1,7 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header(['encode','decode'])}}
 
 {% macro test_case(case, tmod) -%}
     {%- set input = case["input"] -%}
@@ -13,7 +16,6 @@
         )
 {%- endmacro %}
 
-{{ macros.header(['encode','decode'])}}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for supercase in cases -%}

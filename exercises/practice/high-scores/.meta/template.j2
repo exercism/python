@@ -1,4 +1,8 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header(["HighScores"]) }}
+
 {%- macro get_property(property) %}
     {%- if property == "scores" %}
     scores
@@ -19,10 +23,7 @@
         highscores.personal_{{ function }}()
         self.assertEqual(highscores.{{ get_property(property) }}, expected)
         {% endif -%}
-{% endmacro -%}
-
-{{ macros.header(["HighScores"]) }}
-
+{% endmacro %}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {%- for case in cases -%}

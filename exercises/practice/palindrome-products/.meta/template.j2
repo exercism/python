@@ -1,4 +1,7 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header()}}
 
 {%- macro value_factor_unpacking(case) -%}
     {%- set input = case["input"] -%}
@@ -23,8 +26,6 @@
         self.assertFactorsEqual(factors, {{ expected["factors"] }})
     {%- endif %}
 {% endmacro %}
-
-{{ macros.header() }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}

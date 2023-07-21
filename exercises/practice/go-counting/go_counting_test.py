@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/go-counting/canonical-data.json
-# File last updated on 2023-07-16
+# File last updated on 2023-07-19
 
 import unittest
 
@@ -85,11 +85,3 @@ class GoCountingTest(unittest.TestCase):
         self.assertSetEqual(territories[BLACK], {(0, 0), (2, 0)})
         self.assertSetEqual(territories[WHITE], set())
         self.assertSetEqual(territories[NONE], set())
-
-    # Utility functions
-    def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, r".+")
-
-
-if __name__ == "__main__":
-    unittest.main()

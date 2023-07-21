@@ -1,4 +1,8 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header(["Garden"]) }}
+
 {%- macro test_case(group_name, case) -%}
     {%- set input = case["input"] -%}
     def test_{{ group_name | to_snake }}_
@@ -16,8 +20,7 @@
             "{{ val | camel_case }}"{{- "," if not loop.last }}
             {% endfor %}]
         )
-{% endmacro -%}
-{{ macros.header(["Garden"]) }}
+{% endmacro %}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for casegroup in cases %}

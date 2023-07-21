@@ -1,12 +1,15 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header()}}
+
 {%- macro test_call(case) %}
             {{ case["property"] | to_snake }}(
                 {% for arg in case["input"].values() -%}
                 {{ arg }}{{- "," if not loop.last }}
                 {% endfor %}
             )
-{% endmacro -%}
-{{ macros.header() }}
+{% endmacro %}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
