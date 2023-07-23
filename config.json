@@ -692,14 +692,6 @@
         "difficulty": 2
       },
       {
-        "slug": "yacht",
-        "name": "Yacht",
-        "uuid": "22f937e5-52a7-4956-9dde-61c985251a6b",
-        "practices": ["bools"],
-        "prerequisites": ["basics", "bools", "numbers"],
-        "difficulty": 2
-      },
-      {
         "slug": "robot-name",
         "name": "Robot Name",
         "uuid": "bf30b17f-6b71-4bb5-815a-88f8181b89ae",
@@ -864,6 +856,14 @@
           "string-methods",
           "numbers"
         ],
+        "difficulty": 2
+      },
+      {
+        "slug": "yacht",
+        "name": "Yacht",
+        "uuid": "22f937e5-52a7-4956-9dde-61c985251a6b",
+        "practices": ["enums"],
+        "prerequisites": ["basics", "bools", "numbers", "classes"],
         "difficulty": 2
       },
       {
