@@ -351,7 +351,7 @@ secrets((<b>TBD-F</b><br><i>secrets</i>)):::TBD-F
 sequences((<b>Thalias <br> Tram Troubles</b><br><i>sequences</i>)):::WIP
 sets((<b>Cater-Waiter</b><br><i>sets</i>)):::Beta
 strings((<b>Little Sister's <br> Vocab</b> <br><i>strings</i>)):::Beta
-string-formatting((<b>TBD (rewrite)</b> <br><i>String Formatting</i>)):::WIP
+string-formatting(("<b>TBD (rewrite)</b> <br><i>String Formatting</i>")):::WIP
 string-methods((<b>Little Sister's <br> Essay</b><br><i>String Methods</i>)):::Beta
 structural-pattern-matching((<b>TBD</b><br><i>Structural <br> Pattern Matching</i>)):::TBD
 tuples((<b>Tisbury Treasure Hunt</b><br><i>tuples</i>)):::Beta
@@ -417,8 +417,8 @@ with --> context-manager-customization
 click Basics "https://exercism.org/tracks/python/exercises/guidos-gorgeous-lasagna" "basics"
 click bools "https://exercism.org/tracks/python/exercises/ghost-gobble-arcade-game" "bools"
 click classes "https://exercism.org/tracks/python/exercises/ellens-alien-game" "classes"
-click Class-customization "https://github.com/exercism/python/tree/main/concepts/class-customization" "Class-customization"
-click Class-inheritance "https://github.com/exercism/python/tree/main/concepts/class-inheritance" "Class-inheritance"
+click Class-customization "https://github.com/exercism/python/issues/3094" "Class-customization"
+click Class-inheritance "https://github.com/exercism/python/issues/3096" "Class-inheritance"
 click Class-interfaces "https://github.com/exercism/python/tree/main/concepts/class-interfaces" "Class-interfaces"
 click conditionals "https://exercism.org/tracks/python/exercises/meltdown-mitigation" "conditionals"
 click comparisons "https://exercism.org/tracks/python/exercises/black-jack" "comparisons"
@@ -429,13 +429,13 @@ click list-comprehensions "https://github.com/exercism/python/issues/2295" "list
 click other-comprehensions "https://github.com/exercism/python/issues/2294" "other-comprehensions"
 click conditionals "https://exercism.org/tracks/python/exercises/meltdown-mitigation" "conditionals"
 click dicts "https://exercism.org/tracks/python/exercises/inventory-management" "dicts"
-click dict-methods "https://github.com/exercism/python/issues/2348" "dict-methods"
+click dict-methods "https://github.com/exercism/python/tree/main/exercises/concept/mecha-munch-management" "dict-methods"
 click enums "https://github.com/exercism/python/tree/main/exercises/concept/restaurant-rozalynn" "enums"
 click functions "https://github.com/exercism/python/issues/2353" "functions"
 click function-arguments "https://github.com/exercism/python/issues/2354" "function-arguments"
 click functional-tools "https://github.com/exercism/python/issues/2359" "functional-tools"
 click functools "https://github.com/exercism/python/issues/2366" "functools"
-click generators "https://github.com/exercism/python/issues/2293" "generators"
+click generators "https://github.com/exercism/python/tree/main/exercises/concept/plane-tickets" "generators"
 click generator-expressions "https://github.com/exercism/python/issues/2292" "generator-expressions"
 click higher-order-functions "https://github.com/exercism/python/issues/2355" "higher-order-functions"
 click anonymous-functions "https://github.com/exercism/python/issues/2357" "anonymous-functions"
@@ -455,8 +455,7 @@ click strings "https://exercism.org/tracks/python/exercises/little-sisters-vocab
 click string-formatting "https://github.com/exercism/python/tree/main/exercises/concept/pretty-leaflet" "string-formatting"
 click string-methods "https://exercism.org/tracks/python/exercises/little-sisters-essay" "string-methods"
 click tuples "https://exercism.org/tracks/python/exercises/tisbury-treasure-hunt" "tuples"
-click unpacking-and-multiple-assignment "https://github.com/exercism/python/issues/2360" "unpacking-and-multiple-assignment"
+click unpacking-and-multiple-assignment "https://github.com/exercism/python/tree/main/exercises/concept/locomotive-engineer" "unpacking-and-multiple-assignment"
 click user-defined-errors "https://github.com/exercism/python/tree/main/concepts/user-defined-errors" "user-defined-errors"
 click with "https://github.com/exercism/python/issues/2369" "with"
 ```
-
