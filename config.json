@@ -2335,8 +2335,8 @@
     },
     {
       "uuid": "ba20a459-99ac-4643-b386-8b90e9c94328",
-      "slug": "dataclasses-and-namedtuples",
-      "name": "Dataclasses And Namedtuples"
+      "slug": "dataclasses",
+      "name": "Dataclasses"
     },
     {
       "uuid": "48ef77af-50f5-466e-a537-bcd016550058",
