@@ -1,21 +1,5 @@
 {
   "introduction": {
     "authors": ["AndrewLawendy"]
-  },
-  "approaches": [
-    {
-      "uuid": "2dd409b3-1fc6-4231-bc37-c8dd8c014efc",
-      "slug": "underscores",
-      "title": "underscores",
-      "blurb": "Use underscores as a thousands operator.",
-      "authors": ["AndrewLawendy"]
-    },
-    {
-      "uuid": "ffb16c0d-24fb-4a1d-a2e8-1fab2ecd1f9f",
-      "slug": "scientific",
-      "title": "scientific",
-      "blurb": "Use exponential notation or scientific notation to represent the power of 10.",
-      "authors": ["AndrewLawendy"]
-    }
-  ]
+  }
 }
