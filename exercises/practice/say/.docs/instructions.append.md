@@ -12,6 +12,6 @@ To raise a `ValueError` with a message, write the message as an argument to the 
 # if the number is negative
 raise ValueError("input out of range")
 
-# if the number is larger than 999,999,999,99
+# if the number is larger than 999,999,999,999
 raise ValueError("input out of range")
 ```
