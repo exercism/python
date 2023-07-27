@@ -24,6 +24,9 @@ class ResistorColorExpertTest(unittest.TestCase):
 
     def test_one_black_band(self):
         self.assertEqual(resistor_label(["black"]), "0 ohms")
+        
+    def test_one_blue_band(self):
+        self.assertEqual(resistor_label(["yellow"]), "4 ohms")
 
     def test_orange_orange_yellow_black_and_brown(self):
         self.assertEqual(
