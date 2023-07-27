@@ -16,7 +16,7 @@ Here are two approaches to making big numbers more readable:
 
 `_` can accept as a thousands operator
 
-**ie:** 1\*000_000 is far more readable than 1000000
+**ie:** `1_000_000` is far more readable than `1000000`
 
 For more information check [reference][underscores_notation].
 
