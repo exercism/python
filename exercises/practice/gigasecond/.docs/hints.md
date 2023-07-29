@@ -2,31 +2,15 @@
 
 ## General
 
-- Your code should parse a datetime object, add a gigasecond's worth of time to it, and then return the result as a datetime object.
+- Your function should parse the passed-in [datetime object][dtatetime], add a gigasecond's worth of time to it, and then return the result.
 
 - If you're having trouble, remember to take a look at the provided test cases under the Tests tab. These will help you figure out what the expected inputs and outputs of your function(s) should be.
 
-## Reading long numbers
+- Most of the time, code is read rather than written, and a big number can be a challenge to read. Here are a couple of approaches to making big numbers in your code more readable:
 
-Most of the time, code is read rather than written, and writing a big number can be a challenge to read.
+  - Using underscores (`_`) in numeric literals can help offset thousands, hundred-thousands, millions, etc. (_**ie:** `1_000_000` or `10_100_201_330` is far more readable than `1000000` or `10100201330`._) See [PEP-0515][underscores_notation] for more information.
 
-Here are two approaches to making big numbers more readable:
+   - Scientific notation can be more compact and easier to scan when there are very large numbers (_**ie:** `1e6`, 1 is multiplied by 10 raised to the power of 6, which equals `1000000`_). For more information, see this reference on [scientific notation][scientific_notation].
 
-### Approach: Underscores in Numeric Literals
-
-`_` can accept as a thousands operator
-
-**ie:** `1_000_000` is far more readable than `1000000`
-
-For more information check [reference][underscores_notation].
-
-### Approach: Exponential notation or scientific notation
-
-The e (or E) character followed by an integer represents the power of 10 by which the number preceding the e should be multiplied.
-
-**ie:** `1e6`, 1 is multiplied by 10 raised to the power of 6, which equals `1000000`
-
-For more information check [reference][scientific_notation].
-
-[underscores_notation]: https://peps.python.org/pep-0515/#:~:text=The%20syntax%20would%20be%20the,width%20of%2010%20with%20*%20separator.
 [scientific_notation]: https://python-reference.readthedocs.io/en/latest/docs/float/scientific.html
+[underscores_notation]: https://peps.python.org/pep-0515/#:~:text=The%20syntax%20would%20be%20the,width%20of%2010%20with%20*%20separator.
