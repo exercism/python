@@ -1,0 +1,21 @@
+{
+  "introduction": {
+    "authors": ["safwansamsudeen"]
+  },
+  "approaches": [
+    {
+      "uuid": "920e6d08-e8fa-4bef-b2f4-837006c476ae",
+      "slug": "mono-function",
+      "title": "Mono-function",
+      "blurb": "Use one function for both tasks",
+      "authors": ["safwansamsudeen"]
+    },
+    {
+      "uuid": "9a7a17e0-4ad6-4d97-a8b9-c74d47f3e000",
+      "slug": "separate-functions",
+      "title": "Separate Functions",
+      "blurb": "Use separate functions, and perhaps helper ones",
+      "authors": ["safwansamsudeen"]
+    }
+  ]
+}

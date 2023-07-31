@@ -1,0 +1,8 @@
+from string import ascii_lowercase
+ENCODING = str.maketrans(ascii_lowercase, ascii_lowercase[::-1])
+
+def encode(text: str):
+    res = "".join(chr for chr in text.lower() if chr.isalnum()).translate(ENCODING)
+    return " ".join(res[index:index+5] for index in range(0, len(res), 5))
+def decode(text: str):
+    return "".join(chr.lower() for chr in text if not chr.isspace()).translate(ENCODING)
