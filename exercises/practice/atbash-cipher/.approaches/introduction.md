@@ -17,7 +17,7 @@ ENCODING = str.maketrans(ascii_lowercase, ascii_lowercase[::-1])
 
 def encode(text: str):
     res = "".join(chr for chr in text.lower() if chr.isalnum()).translate(ENCODING)
-    return " ".join(res[i:i+5] for i in range(0, len(res), 5))
+    return " ".join(res[index:index+5] for index in range(0, len(res), 5))
 
 def decode(text: str):
     return "".join(chr.lower() for chr in text if chr.isalnum()).translate(ENCODING)
@@ -34,7 +34,7 @@ ENCODING = {chr: asc_low[id] for id, chr in enumerate(asc_low[::-1])}
 
 def encode(text: str, decode: bool = False):
     res = "".join(ENCODING.get(chr, chr) for chr in text.lower() if chr.isalnum())
-    return res if decode else " ".join(res[i:i+5] for i in range(0, len(res), 5))
+    return res if decode else " ".join(res[index:index+5] for index in range(0, len(res), 5))
 
 def decode(text: str):
     return encode(text, True)
