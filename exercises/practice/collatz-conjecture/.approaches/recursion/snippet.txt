@@ -1,12 +1,8 @@
-def count_steps(conjecture_steps, number):
-    if number <= 1:
-        return conjecture_steps
-    return count_steps(
-        conjecture_steps + 1, number * 3 + 1 if number % 2 else number / 2
-    )
-
-def steps(number):
+def steps(number, conjecture_steps = 0):
     if number < 1:
         raise ValueError("Only positive integers are allowed")
 
-    return count_steps(0, number)
+    if number == 1:
+        return conjecture_steps
+
+    return steps(number * 3 + 1 if number % 2 else number / 2, conjecture_steps + 1)
