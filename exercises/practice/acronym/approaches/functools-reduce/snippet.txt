@@ -1,4 +1,6 @@
-phrase = to_abbreviate.replace("_", " ").replace("-", " ").upper().split()
-acronym = reduce(lambda start, word: start + word[0], phrase, "")
+from functools import reduce
 
-return acronym
+def abbreviate(to_abbreviate):
+phrase = to_abbreviate.replace("_", " ").replace("-", " ").upper().split()
+
+return reduce(lambda start, word: start + word[0], phrase, "")

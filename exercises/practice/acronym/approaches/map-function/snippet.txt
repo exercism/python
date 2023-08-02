@@ -1,4 +1,4 @@
-phrase = to_abbreviate.replace("_", " ").replace("-", " ").upper().split()
-acronym = ''.join(map(lambda word: word[0], phrase))
-
-return acronym
+def abbreviate(to_abbreviate):
+    phrase = to_abbreviate.replace("_", " ").replace("-", " ").upper().split()
+    
+    return ''.join(map(lambda word: word[0], phrase))

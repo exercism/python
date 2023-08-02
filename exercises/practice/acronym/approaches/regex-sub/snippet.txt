@@ -1,3 +1,6 @@
-acronym = re.sub("\B[a-z',]+|-| |[A-Z]{2}\b|[^A-Z'](?<=_)", "", to_abbreviate)
+import re
 
-return  acronym.upper()
+def abbreviate_regex_sub(to_abbreviate):
+    pattern = re.compile(r"\B[a-z',]+|-| |[A-Z]{2}\b|[^A-Z'](?<=_)")
+
+    return  re.sub(pattern, "", to_abbreviate).upper()

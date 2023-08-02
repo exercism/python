@@ -1,4 +1,6 @@
-removed = re.findall(r"[a-zA-Z']+", words)
-acronym = ''.join(word[0] for word in removed))
+import re
 
-return acronym.upper()
+def abbreviate(phrase):
+    removed = re.findall(r"[a-zA-Z']+", phrase)
+
+    return ''.join(word[0] for word in removed).upper()

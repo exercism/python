@@ -3,13 +3,16 @@
 There are multiple Pythonic ways to solve the Acronym exercise.
 Among them are:
 
-- Using `str.replace()` to scrub, and a `for loop` with string concatenation via the `+` operator.
-- Using `str.replace()` to scrub, and joining via `str.join()`passing a `list-comprehension`
-- Using `str.replace()` to scrub, and joining via `str.join()`passing a `generator-expression`.
-- Using `str.replace()` to scrub, and joining via `functools.reduce()`.
-- Using `str.replace()` to scrub, and joining via `str.join()` passing `map()`.
-- Using `re.findall()`/`re.finditer()` to scrub, and `str.join()` with a `generator-expression`.
-- Using `re.sub()` (_using "only" regex_)`
+- Using `str.replace()` to scrub the input, and:
+  - joining with a `for loop` with string concatenation via the `+` operator.
+  - joining via `str.join()`, passing a `list-comprehension` or `generator-expression`.
+  - joining via `str.join()`,  passing `map()`.
+  - joining via `functools.reduce()`.
+
+- Using `re.findall()`/`re.finditer()` to scrub the input, and:
+  - joining via `str.join()`, passing a `generator-expression`.
+
+ - Using `re.sub()` for both cleaning and joining (_using "only" regex for almost everything_)`
 
 
 ## General Guidance
@@ -20,12 +23,14 @@ The challenge is to efficiently identify and capitalize the first letters while 
 
 There are two idiomatic strategies for non-letter character removal:
 - Python's built-in [`str.replace()`][str-replace].
-- [`re`][re] module, (_regular expressions_).
+- The [`re`][re] module, (_regular expressions_).
 
-For all but the most complex scenarios, using `str.replace()` is generally more efficient than using a regex.
+For all but the most complex scenarios, using `str.replace()` is generally more efficient than using a regular expression.
 
-Forming the final acronym is most easily done with a direct or indirect loop, after splitting the input into a word list via [`str.split()`][str-split].
-Some `regex` methods can avoid looping altogether, although they can become very non-performant due to backtracking.
+
+Forming the final acronym is most easily done with a direct or indirect `loop`, after splitting the input into a word list via [`str.split()`][str-split].
+The majority of these approaches demonstrate alternatives to the "classic" looping structure using various other iteration techniques.
+Some `regex` methods can avoid looping altogether, although they can become very non-performant due to excessive backtracking.
 
 Strings are _immutable_, so any method to produce an acronym will be creating and returning a new `str`.
 
@@ -34,38 +39,36 @@ Strings are _immutable_, so any method to produce an acronym will be creating an
 
 ```python
 def abbreviate(to_abbreviate):
-    phrase = to_abbreviate.replace('-' , ' ').replace("_", " ").upper().split()
-    acronym = ""
+    phrase = to_abbreviate.replace('-', ' ').replace('_', ' ').upper().split()
+    acronym = ''
     
     for word in phrase:
         acronym += word[0]
 
     return acronym
-
 ```
 
-This approach uses the `str.replace()` method to remove non-letter characters, capitalizes all the words via `.upper()`, and creates a word list via `.split()`.
-The resulting `list` is looped over to select the first letter of each word, which is then concatenated via `+` to the acronym string.
-
-For more information, check the [loop approach][approach-loop].
+For more information, take a look at the [loop approach][approach-loop].
 
 
-## Approach: scrub with `replace()` and join via `list comprehension`
+## Approach: scrub with `replace()` and join via `list comprehension` or `Generator expression`
 
 ```python
 def abbreviate(to_abbreviate):
-    phrase = to_abbreviate.replace("_", " ").replace("-", " ").upper().split()
-    words = [word[0] for word in phrase]
-    acronym = ''.join(words)
+    phrase = to_abbreviate.replace('-', ' ').replace('_', ' ').upper().split()
     
-    return acronym
+    return ''.join([word[0] for word in phrase])
+    
+###OR### 
+    
+def abbreviate(to_abbreviate):
+    phrase = to_abbreviate.replace('-', ' ').replace('_', ' ').upper().split()
+    
+    # note the parenthesis instead of square brackets.    
+    return ''.join((word[0] for word in phrase))
 ```
 
-This approach uses the `str.replace()` method to remove non-letter characters, capitalizes all the words via `.upper()`, and creates a word list via `.split()`.
-A list comprehension is used to select the first letters of each word.
-The list of first letters is then concatenated via `str.join()` to form the acronym.
-
-For more information, check the [list-comprehension][approach-list-comprehension]  approach.
+For more information, check out the [list-comprehension][approach-list-comprehension]  approach or the [generator-expression][approach-generator-expression] approach.
 
 
 ## Approach: scrub with `replace()` and join via `map()`
@@ -73,15 +76,11 @@ For more information, check the [list-comprehension][approach-list-comprehension
 ```python
 def abbreviate(to_abbreviate):
     phrase = to_abbreviate.replace("_", " ").replace("-", " ").upper().split()
-    acronym = ''.join(map(lambda word: word[0], phrase))
     
-    return acronym
+    return ''.join(map(lambda word: word[0], phrase))
 ```
 
-This approach uses the `str.replace()` method to remove non-letter characters, capitalizes all the words via `.upper()`, and creates a word list via `.split()`.
-The first letters of each word are extracted via the built-in `map()` function, which is passed to `str.join()` to form the acronym.
-
-For more information, check the [map][approach-map-function] approach.
+For more information, read the [map][approach-map-function] approach.
 
 
 ## Approach: scrub with `replace()` and join via `functools.reduce()`
@@ -89,36 +88,14 @@ For more information, check the [map][approach-map-function] approach.
 ```python
 from functools import reduce
 
+
 def abbreviate(to_abbreviate):
     phrase = to_abbreviate.replace("_", " ").replace("-", " ").upper().split()
-    acronym = reduce(lambda start, word: start + word[0], phrase, "")
     
-    return acronym
+    return reduce(lambda start, word: start + word[0], phrase, "")
 ```
-
-This approach uses the `str.replace()` method to remove non-letter characters, capitalizes all the words via `.upper()`, and creates a word list via `.split()`.
- The acronym is created via `functools.reduce()`, isolating the first letters of each word, and joining them together in a new string.
 
 For more information, take a look at the [functools.reduce()][approach-functools-reduce] approach.
-
-
-## Approach: scrub with `replace()` & join via `generator expression`
-
-```python
-def abbreviate(to_abbreviate):
-    phrase = to_abbreviate.replace("_", " ").replace("-", " ").upper().split()
-    words = (word[0] for word in phrase) # note the parenthesis instead of square brackets.
-    acronym = ''.join(words)
-    
-    return acronym
-
-```
-
-This approach uses the `str.replace()` method to remove non-letter characters, capitalizes all the words via `.upper()`, and creates a word list via `.split()`.
-A `generator-expression` is used to select the first letters of each word.
-The generator-expression is then consumed by `str.join()` to create the acronym.
-
-For more information, check the [generator-expression][approach-generator-expression] approach.
 
 
 ## Approach: filter with `re.findall()` and join via `str.join()`
@@ -129,36 +106,26 @@ import re
 
 def abbreviate(phrase):
     removed = re.findall(r"[a-zA-Z']+", phrase)
-    acronym = ''.join(word[0] for word in removed)
     
-    return acronym.upper()
-
+    return ''.join(word[0] for word in removed).upper()
 ```
 
-This approach uses a `regex` to remove non-letter characters, then uses a `generator-expression` passed to  `str.join()` to isolate the first letters of each word.
-
-The resulting string is capitalized using `.upper()`.
-
-For more information, check the [regex-join][approach-regex-join] approach.
+For more information, take a look at the [regex-join][approach-regex-join] approach.
 
 
-## Approach: use `re.sub`
+## Approach: use `re.sub()`
 
 ```python
 import re
 
+
 def abbreviate_regex_sub(to_abbreviate):
-    acronym = re.sub("\B[a-z',]+|-| |[A-Z]{2}\b|[^A-Z'](?<=_)", "", to_abbreviate)
+    pattern = re.compile(r"\B[a-z',]+|-| |[A-Z]{2}\b|[^A-Z'](?<=_)")
     
-    return  acronym.upper()
+    return  re.sub(pattern, "", to_abbreviate).upper()
 ```
 
-This approach uses the regular expression module `re` to clean the string and identify the first letters of each word without the use of loops.
-
-`.upper()` is then called on the result to capitalize all the characters.
-
 For more information, read the [regex-sub][approach-regex-sub] approach.
-
 
 
 ## Other approaches
@@ -168,17 +135,17 @@ Besides these seven idiomatic approaches, there are a multitude of possible vari
 However, these listed approaches cover the majority of 'mainstream' strategies.
 
 
-
 ## Which approach to use?
 
 All seven approaches are idiomatic, and show multiple paradigms and possibilities.
 
 The `list-comprehension` approach is the fastest, although `loop`, `map`,  and `reduce` have near-identical performance for the test data.
+All are fairly succinct and readable, although the 'classic' loop is probably the easiest understood by those coming to Python from other programming languages.
 
-The least performant for the test data was using a `generator-expression`, `re.findall` and  `re.sub` (least performant).
+
+The least performant for the test data was using a `generator-expression`, `re.findall` and  `re.sub` (_least performant_).
 
 To compare performance of the approaches, take a look at the [Performance article][article-performance].
-
 
 [approach-functools-reduce]: https://exercism.org/tracks/python/exercises/acronym/approaches/functools-reduce
 [approach-generator-expression]: https://exercism.org/tracks/python/exercises/acronym/approaches/generator-expression
