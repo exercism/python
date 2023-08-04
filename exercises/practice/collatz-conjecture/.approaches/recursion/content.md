@@ -36,16 +36,20 @@ Then the `steps` function can execute the same code again with new values.
 Meaning we can get a long chain or stack of `1 + steps(number)` until the number reaches one and the code adds 0.
 That translates to something like this: `1 + 1 + 1 + 1 + 0`.
 
+Python doesn't have [tail call optimization][tail-call].
+Which means that the stack of `1 + steps(number)` will grow until it reaches the recursion limit.
+
+~~~~exercism/caution
 In Python, we can't have a function call itself more than 1000 times by default.
-Code that exceeds this recursion limit will throw a  [RecursionError][recursion-error].
-While it is possible to adjust the [recursion limit][recursion-limit], doing so risks crashing Python and may also crash your system.
+Code that exceeds this recursion limit will throw a  [RecursionError](https://docs.python.org/3/library/exceptions.html#RecursionError).
+While it is possible to adjust the [recursion limit][recursion-limit](https://docs.python.org/3/library/sys.html#sys.setrecursionlimit), doing so risks crashing Python and may also crash your system.
 Casually raising the recursion limit is not recommended.
+~~~~
 
 [clojure]: https://exercism.org/tracks/clojure
 [elixir]: https://exercism.org/tracks/elixir
 [haskell]: https://exercism.org/tracks/haskell
 [recursion]: https://realpython.com/python-thinking-recursively/
-[recursion-error]: https://docs.python.org/3/library/exceptions.html#RecursionError
-[recursion-limit]: https://docs.python.org/3/library/sys.html#sys.setrecursionlimit
+[tail-call]: https://en.wikipedia.org/wiki/Tail_call
 [ternary-operator]: https://exercism.org/tracks/python/exercises/collatz-conjecture/approaches/ternary-operator
 [value-error]: https://docs.python.org/3/library/exceptions.html#ValueError
