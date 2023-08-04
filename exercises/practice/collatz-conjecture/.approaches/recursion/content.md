@@ -42,7 +42,7 @@ Which means that the stack of `1 + steps(number)` will grow until it reaches the
 ~~~~exercism/caution
 In Python, we can't have a function call itself more than 1000 times by default.
 Code that exceeds this recursion limit will throw a  [RecursionError](https://docs.python.org/3/library/exceptions.html#RecursionError).
-While it is possible to adjust the [recursion limit][recursion-limit](https://docs.python.org/3/library/sys.html#sys.setrecursionlimit), doing so risks crashing Python and may also crash your system.
+While it is possible to adjust the [recursion limit](https://docs.python.org/3/library/sys.html#sys.setrecursionlimit), doing so risks crashing Python and may also crash your system.
 Casually raising the recursion limit is not recommended.
 ~~~~
 
