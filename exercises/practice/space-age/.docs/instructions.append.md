@@ -7,7 +7,6 @@ Each method should `return` the age (_"on" that planet_) in years, rounded to tw
 
 ```python
 #creating an instance with one billion seconds, and calling .on_earth().
-
 >>> SpaceAge(1000000000).on_earth()
 
 #This is one billion seconds on Earth in years
