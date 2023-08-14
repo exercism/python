@@ -505,7 +505,6 @@
         ],
         "prerequisites": [
           "basics",
-          "loops",
           "lists",
           "loops",
           "conditionals",
