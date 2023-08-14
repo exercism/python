@@ -314,12 +314,7 @@
         "name": "Reverse String",
         "uuid": "d39f86fe-db56-461c-8a93-d87058af8366",
         "practices": ["sequences"],
-        "prerequisites": [
-          "basics",
-          "bools",
-          "conditionals",
-          "strings"
-        ],
+        "prerequisites": ["basics", "bools", "conditionals", "strings"],
         "difficulty": 1
       },
       {
@@ -397,13 +392,7 @@
         "name": "Resistor Color Duo",
         "uuid": "089f06a6-0759-479c-8c00-d699525a1e22",
         "practices": ["lists"],
-        "prerequisites": [
-          "basics",
-          "bools",
-          "lists",
-          "numbers",
-          "strings"
-        ],
+        "prerequisites": ["basics", "bools", "lists", "numbers", "strings"],
         "difficulty": 1
       },
       {
@@ -615,12 +604,7 @@
         "name": "Square Root",
         "uuid": "c32f994a-1080-4f05-bf88-051975a75d64",
         "practices": ["numbers"],
-        "prerequisites": [
-          "basics",
-          "numbers",
-          "conditionals",
-          "loops"
-        ],
+        "prerequisites": ["basics", "numbers", "conditionals", "loops"],
         "difficulty": 2
       },
       {
@@ -652,7 +636,13 @@
         "name": "Sublist",
         "uuid": "cc5eb848-09bc-458c-8fb6-3a17687cb4eb",
         "practices": ["comparisons"],
-        "prerequisites": ["basics", "bools", "conditionals", "comparisons", "lists"],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "conditionals",
+          "comparisons",
+          "lists"
+        ],
         "difficulty": 2
       },
       {
@@ -862,8 +852,7 @@
         "name": "Proverb",
         "uuid": "9fd94229-f974-45bb-97ea-8bfe484f6eb3",
         "practices": ["unpacking-and-multiple-assignment"],
-        "prerequisites": ["dicts",
-                      "unpacking-and-multiple-assignment"],
+        "prerequisites": ["dicts", "unpacking-and-multiple-assignment"],
         "difficulty": 2
       },
       {
@@ -1523,7 +1512,7 @@
         "name": "Markdown",
         "uuid": "88610b9a-6d3e-4924-a092-6d2f907ed4e2",
         "practices": ["regular-expressions", "functions"],
-        "prerequisites": ["lists", "loops", "sets","string-methods"],
+        "prerequisites": ["lists", "loops", "sets", "string-methods"],
         "difficulty": 4
       },
       {
@@ -2030,9 +2019,9 @@
           "list-methods",
           "lists",
           "loops",
-          "numbers"
+          "numbers",
           "sets",
-          "tuples",
+          "tuples"
         ],
         "difficulty": 7
       },
