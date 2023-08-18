@@ -48,7 +48,7 @@ def adjective_to_verb(sentence, index):
     :param index: int - index of the word to remove and transform.
     :return: str - word that changes the extracted adjective to a verb.
 
-    For example, ("It got dark as the sun set", 2) becomes "darken".
+    For example, ("It got dark as the sun set.", 2) becomes "darken".
     """
 
     pass
