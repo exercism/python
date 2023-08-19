@@ -57,3 +57,6 @@ class Robot:
 ```
 
 For more detail and different ways to implement this, [read here][approach-name-on-the-fly].
+
+[approach-name-on-the-fly]: https://exercism.org/tracks/python/exercises/robot-name/approaches/name-on-the-fly
+[approach-mass-name-generation]: https://exercism.org/tracks/python/exercises/robot-name/approaches/mass-name-generation
