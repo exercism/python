@@ -31,7 +31,7 @@ For more details on linked lists, `LIFO` stacks, and other abstract data types (
 ## Classes in Python
 
 The "canonical" implementation of a linked list in Python usually requires one or more `classes`.
-For a good introduction to `classes`, see the [concept:python/classes]() and companion exercise, or [Class section of the Official Python Tutorial][classes tutorial].
+For a good introduction to `classes`, see the [concept:python/classes]() and companion exercise [exercise:python/ellens-alien-game](), or [Class section of the Official Python Tutorial][classes tutorial].
 
 <br>
 
@@ -46,7 +46,7 @@ For details on implementing special or "dunder" methods in Python, see [Python D
 ## Building an Iterator
 
 To support looping through or reversing your `LinkedList`, you will need to implement the `__iter__` special method.
-See [implementing an iterator for a class.](https://docs.python.org/3/tutorial/classes.html#iterators) for implementation details.
+See [implementing an iterator for a class.][custom iterators] for implementation details.
 
 <br>
 
@@ -82,19 +82,20 @@ class EmptyListException(Exception):
 raise EmptyListException("The list is empty.")
 ```
 
+[__len__]: https://docs.python.org/3/reference/datamodel.html#object.__len__
 [baeldung linked lists]: https://www.baeldung.com/cs/linked-list-data-structure
 [baeldung: the stack data structure]: https://www.baeldung.com/cs/stack-data-structure
-[geeks for geeks stack with linked list]: https://www.geeksforgeeks.org/implement-a-stack-using-singly-linked-list/
-[lifo stack array]: https://www.scaler.com/topics/stack-in-python/
-[mosh data structures in python]: https://programmingwithmosh.com/data-structures/data-structures-in-python-stacks-queues-linked-lists-trees/
-[stack overflow: array-based vs list-based stacks and queues]: https://stackoverflow.com/questions/7477181/array-based-vs-list-based-stacks-and-queues?rq=1
-[stack overflow: what is the difference between array stack, linked stack, and stack]: https://stackoverflow.com/questions/22995753/what-is-the-difference-between-array-stack-linked-stack-and-stack
-[__len__]: https://docs.python.org/3/reference/datamodel.html#object.__len__
 [basic customization]: https://docs.python.org/3/reference/datamodel.html#basic-customization
 [built-in errors]: https://docs.python.org/3/library/exceptions.html#base-classes
 [classes tutorial]: https://docs.python.org/3/tutorial/classes.html#tut-classes
+[custom iterators]: https://docs.python.org/3/tutorial/classes.html#iterators
 [customize errors]: https://docs.python.org/3/tutorial/errors.html#user-defined-exceptions
 [exception base class]: https://docs.python.org/3/library/exceptions.html#Exception
+[geeks for geeks stack with linked list]: https://www.geeksforgeeks.org/implement-a-stack-using-singly-linked-list/
+[lifo stack array]: https://www.scaler.com/topics/stack-in-python/
+[mosh data structures in python]: https://programmingwithmosh.com/data-structures/data-structures-in-python-stacks-queues-linked-lists-trees/
 [raise statement]: https://docs.python.org/3/reference/simple_stmts.html#the-raise-statement
 [raising exceptions]: https://docs.python.org/3/tutorial/errors.html#raising-exceptions
 [singly linked list]: https://blog.boot.dev/computer-science/building-a-linked-list-in-python-with-examples/
+[stack overflow: array-based vs list-based stacks and queues]: https://stackoverflow.com/questions/7477181/array-based-vs-list-based-stacks-and-queues?rq=1
+[stack overflow: what is the difference between array stack, linked stack, and stack]: https://stackoverflow.com/questions/22995753/what-is-the-difference-between-array-stack-linked-stack-and-stack
