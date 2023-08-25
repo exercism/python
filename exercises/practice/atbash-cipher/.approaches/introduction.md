@@ -22,7 +22,7 @@ def encode(text: str):
 def decode(text: str):
     return "".join(chr.lower() for chr in text if chr.isalnum()).translate(ENCODING)
 ```
-Read more on this [approach here][approach-seperate-functions].
+Read more on this [approach here][approach-separate-functions].
 
 ## Approach: mono-function
 Notice that there the majority of the code is repetitive? 
