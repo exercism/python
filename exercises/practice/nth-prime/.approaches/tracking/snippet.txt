@@ -1,0 +1,8 @@
+def prime(number):
+    counter = 2
+    primes = [2]
+    while len(primes) < number: 
+        counter += 1
+        if all(counter % test != 0 for test in range(2, counter)):
+            primes.append(counter)
+    return primes[-1]

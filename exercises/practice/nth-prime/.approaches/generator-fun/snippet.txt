@@ -1,0 +1,6 @@
+from itertools import islice, count
+
+def prime(number):
+    gen = islice(filter(lambda n: all(counter % test != 0 for test in range(2, int(counter ** 0.5) + 1)), count(2)), number)
+    for _ in range(number - 1): next(gen)
+    return next(gen)
