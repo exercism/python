@@ -23,7 +23,7 @@ For this exercise, you need to know only three things about them:
 - Grey: 8
 - White: 9
 
-In `resistor-color duo` you decoded the first two colors.
+In Resistor Color Duo you decoded the first two colors.
 For instance: orange-orange got the main value `33`.
 The third color stands for how many zeros need to be added to the main value.
 The main value plus the zeros gives us a value in ohms.
