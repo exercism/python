@@ -61,19 +61,19 @@ This exercise is about translating the resistor band colors into a label:
 
 "... ohms ...%"
 
-So an input of "orange", "orange", "black, green" should return:
+So an input of "orange", "orange", "black", "green" should return:
 
 "33 ohms ±0.5%"
 
 When there are more than a thousand ohms, we say "kiloohms".
  That's similar to saying "kilometer" for 1000 meters, and "kilograms" for 1000 grams.
 
-So an input of "orange", "orange", "orange", grey should return:
+So an input of "orange", "orange", "orange", "grey" should return:
 
 "33 kiloohms ±0.05%"
 
 When there are more than a million ohms, we say "megaohms".
 
-So an input of "orange", "orange", "orange", "red" should return:
+So an input of "orange", "orange", "blue", "red" should return:
 
 "33 megaohms ±2%"
