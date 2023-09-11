@@ -61,9 +61,7 @@ Implement the function called `fail_safe()`, which takes 3 parameters: `temperat
 - If `temperature * neutrons_produced_per_second` < 90% of `threshold`, output a status code of 'LOW'
   indicating that control rods must be removed to produce power.
 
-- If `temperature * neutrons_produced_per_second` are within plus or minus 10% of the `threshold`
-  the reactor is in _criticality_ and the status code of 'NORMAL' should be output, indicating that the
-  reactor is in optimum condition and control rods are in an ideal position.
+- If the value `temperature * neutrons_produced_per_second` is within 10% of the `threshold` (so either 0-10% less than the threshold, at the threshold, or 0-10% greater than the threshold), the reactor is in _criticality_ and the status code of 'NORMAL' should be output, indicating that the reactor is in optimum condition and control rods are in an ideal position.
 
 - If `temperature * neutrons_produced_per_second` is not in the above-stated ranges, the reactor is
   going into meltdown and a status code of 'DANGER' must be passed to immediately shut down the reactor.
