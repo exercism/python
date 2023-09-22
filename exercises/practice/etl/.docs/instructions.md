@@ -22,6 +22,6 @@ This needs to be changed to store each individual letter with its score in a one
 
 As part of this change, the team has also decided to change the letters to be lower-case rather than upper-case.
 
-~~~~exercism/note
+```exercism/note
 If you want to look at how the data was previously structured and how it needs to change, take a look at the examples in the test suite.
-~~~~
+```
