@@ -23,9 +23,9 @@ There are three cases for the tabulation of a frame.
 
 Here is a three frame example:
 
-| Frame 1         | Frame 2       | Frame 3                |
-| :-------------: |:-------------:| :---------------------:|
-| X (strike)      | 5/ (spare)    | 9 0 (open frame)       |
+|  Frame 1   |  Frame 2   |     Frame 3      |
+| :--------: | :--------: | :--------------: |
+| X (strike) | 5/ (spare) | 9 0 (open frame) |
 
 Frame 1 is (10 + 5 + 5) = 20
 

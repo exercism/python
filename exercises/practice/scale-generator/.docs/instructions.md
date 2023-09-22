@@ -56,13 +56,13 @@ Then, for each interval in the pattern, the next note is determined by starting 
 
 For example, starting with G and using the seven intervals MMmMMMm, there would be the following eight notes:
 
-Note | Reason
---|--
-G | Tonic
-A | M indicates a whole step from G, skipping G♯
-B | M indicates a whole step from A, skipping A♯
-C | m indicates a half step from B, skipping nothing
-D | M indicates a whole step from C, skipping C♯
-E | M indicates a whole step from D, skipping D♯
-F♯ | M indicates a whole step from E, skipping F
-G | m indicates a half step from F♯, skipping nothing
+| Note | Reason                                            |
+| ---- | ------------------------------------------------- |
+| G    | Tonic                                             |
+| A    | M indicates a whole step from G, skipping G♯      |
+| B    | M indicates a whole step from A, skipping A♯      |
+| C    | m indicates a half step from B, skipping nothing  |
+| D    | M indicates a whole step from C, skipping C♯      |
+| E    | M indicates a whole step from D, skipping D♯      |
+| F♯   | M indicates a whole step from E, skipping F       |
+| G    | m indicates a half step from F♯, skipping nothing |

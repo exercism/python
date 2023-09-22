@@ -48,7 +48,7 @@ Since these are verbal word problems, evaluate the expression from left-to-right
 
 > What is 3 plus 2 multiplied by 3?
 
-15  (i.e. not 9)
+15 (i.e. not 9)
 
 ## Iteration 4 — Errors
 

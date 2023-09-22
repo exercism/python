@@ -13,10 +13,12 @@ Given a knapsack with a specific carrying capacity (W), help Bob determine the m
 Note that Bob can take only one of each item.
 
 All values given will be strictly positive.
-Items will be represented as a list of pairs, `wi` and `vi`, where the first element `wi` is the weight of the *i*th item and `vi` is the value for that item.
+Items will be represented as a list of items.
+Each item will have a weight and value.
 
 For example:
 
+```none
 Items: [
   { "weight": 5, "value": 10 },
   { "weight": 4, "value": 40 },
@@ -25,6 +27,7 @@ Items: [
 ]
 
 Knapsack Limit: 10
+```
 
 For the above, the first item has weight 5 and value 10, the second item has weight 4 and value 40, and so on.
 

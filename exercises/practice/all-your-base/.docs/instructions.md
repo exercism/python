@@ -14,20 +14,20 @@ Given a number in base **a**, represented as a sequence of digits, convert it to
 
 In positional notation, a number in base **b** can be understood as a linear combination of powers of **b**.
 
-The number 42, *in base 10*, means:
+The number 42, _in base 10_, means:
 
 `(4 * 10^1) + (2 * 10^0)`
 
-The number 101010, *in base 2*, means:
+The number 101010, _in base 2_, means:
 
 `(1 * 2^5) + (0 * 2^4) + (1 * 2^3) + (0 * 2^2) + (1 * 2^1) + (0 * 2^0)`
 
-The number 1120, *in base 3*, means:
+The number 1120, _in base 3_, means:
 
 `(1 * 3^3) + (1 * 3^2) + (2 * 3^1) + (0 * 3^0)`
 
 I think you got the idea!
 
-*Yes. Those three numbers above are exactly the same. Congratulations!*
+_Yes. Those three numbers above are exactly the same. Congratulations!_
 
 [positional-notation]: https://en.wikipedia.org/wiki/Positional_notation
