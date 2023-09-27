@@ -10,9 +10,9 @@ def leap_year(year):
 
 ```
 
-```exercism/caution
+~~~~exercism/caution
 This approach may be considered a "cheat" for this exercise.
-```
+~~~~
 
 By adding a day to February 28th for the year, you can see if the new day is the 29th or the 1st.
 If it is the 29th, then the function returns `True` for the year being a leap year.

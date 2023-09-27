@@ -20,11 +20,11 @@ def is_pangram(sentence):
 This solution uses the [ASCII][ascii] value of the letter to set the corresponding bit position.
 First, some [constant][const] values are set.
 
-```exercism/note
+~~~~exercism/note
 Python doesn't _enforce_ having real constant values,
 but using all uppercase letters is the naming convention for a Python constant.
 It indicates that the value is not intended to be changed.
-```
+~~~~
 
 These values will be used for readability in the body of the `is_pangram` function.
 The ASCII value for `a` is `97`.

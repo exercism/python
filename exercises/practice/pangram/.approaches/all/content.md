@@ -15,13 +15,13 @@ def is_pangram(sentence):
 using the [`all()`][all] function.
 - If all of the letters in the alphabet are contained in the `sentence`, then the function will return `True`.
 
-```exercism/note
+~~~~exercism/note
 Instead of `lower()`, the [`casefold`](https://docs.python.org/3/library/stdtypes.html#str.casefold)
 method could be used to lowercase the letters.
 `casefold()` differs from `lower()` in lowercasing certain Unicode characters.
 At the time of writing, those differences are not of concern to this exercise.
 Also, `casefold()` benched slower than `lower()`.
-```
+~~~~
 
 [ascii-lowercase]: https://docs.python.org/3/library/string.html#string.ascii_lowercase
 [lower]: https://docs.python.org/3/library/stdtypes.html?#str.lower

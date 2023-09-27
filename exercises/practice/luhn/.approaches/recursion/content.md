@@ -44,13 +44,13 @@ The `luhny_bin()` method takes that list, along with two `0` values that represe
 The `luhny_bin()` can call itself, which is a behavior called [recursion][recursion].
 Since `luhny_bin()` can call itself, the first thing it does is to check that it is done calling itself.
 
-```exercism/note
+~~~~exercism/note
 This check is called the terminating condition.
 It's critical to have a terminating condition, since every call of a recursive function to itself places another
 [frame on the stack](https://realpython.com/lessons/stack-frames-and-stack-traces/#:~:text=A%20stack%20frame%20represents%20a,is%20removed%20from%20the%20stack.).
 If there is no terminating condition, then the recursive function will keep calling itself until the stack runs out of space
 and a stack overflow error will occur.
-```
+~~~~
 
 The `luhny_bin()` method should terminate when there are no more characters to process.
 By using the [falsiness][falsiness] of an empty list, the [`not` operator][not-operator] can be used instead of comparing the `len()` of the list to `0`.

@@ -4,10 +4,10 @@ There are various ways to solve Wordy.
 Using [`eval`][eval] is a [convenient but potentially dangerous][eval-danger] approach.
 Another approach could replace the operation words with [dunder][dunder] methods.
 
-```exercism/note
+~~~~exercism/note
 They are called "dunder" methods because they have **d**ouble **under**scores at the beginning and end of the method name.
 They are also called magic methods.
-```
+~~~~
 
 The dunder methods can be called by using the [`__getattribute__`][getattribute] method for [`int`][int].
 
