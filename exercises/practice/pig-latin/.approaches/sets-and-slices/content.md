@@ -42,11 +42,11 @@ If the beginning of the word matches either condition, the loop [continue][conti
 If the beginning of the word did not match either condition,
 that leaves [ranging][ranging] its characters from position 1 until the [`len()`][len] of the word.
 
-```exercism/note
+~~~~exercism/note
 When a [range](https://docs.python.org/3/library/stdtypes.html?#range) is provided two arguments,
 it generates values from the `start` argument up to _but not including_ the `stop` argument.
 This behavior can be referred to as start inclusive, stop exclusive.
-```
+~~~~
 
 The inner loop iterating characters is nested within the outer loop that iterates the words.
 Each character is iterated until finding a vowel (at this point, the letter `y` is now considered a vowel.)

@@ -94,9 +94,9 @@ When `yield` is evaluated, it pauses the execution of the enclosing function and
 
 The function then _stays in scope_, and when `__next__()` is called, execution resumes until `yield` is encountered again.
 
-```exercism/note
+~~~~exercism/note
 Using `yield` expressions is prohibited outside of functions.
-```
+~~~~
 
 ```python
 >>> def infinite_sequence():

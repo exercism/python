@@ -23,9 +23,9 @@ and is passed the translation table.
 The output of `translate()` is a string where all of the input DNA characters have been replaced by their RNA complement in the translation table.
 
 
-```exercism/note
+~~~~exercism/note
 As of this writing, no invalid DNA characters are in the argument to `to_rna()`, so there is no error handling required for invalid input.
-```
+~~~~
 
 [dictionaries]: https://docs.python.org/3/tutorial/datastructures.html?#dictionaries
 [maketrans]: https://docs.python.org/3/library/stdtypes.html?#str.maketrans

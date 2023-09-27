@@ -2,11 +2,11 @@
 
 A rational number is defined as the quotient of two integers `a` and `b`, called the numerator and denominator, respectively, where `b != 0`.
 
-```exercism/note
+~~~~exercism/note
 Note that mathematically, the denominator can't be zero.
 However in many implementations of rational numbers, you will find that the denominator is allowed to be zero with behaviour similar to positive or negative infinity in floating point numbers.
 In those cases, the denominator and numerator generally still can't both be zero at once.
-```
+~~~~
 
 The absolute value `|r|` of the rational number `r = a/b` is equal to `|a|/|b|`.
 

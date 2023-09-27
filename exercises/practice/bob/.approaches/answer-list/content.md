@@ -22,12 +22,12 @@ Python doesn't _enforce_ having real constant values,
 but the `ANSWERS` list is defined with all uppercase letters, which is the naming convention for a Python [constant][const].
 It indicates that the value is not intended to be changed.
 
-```exercism/note
+~~~~exercism/note
 `ANSWERS` could prevent item reassignment by being defined as a [tuple](https://realpython.com/python-lists-tuples/#python-tuples) instead of a list.
 The items in a tuple cannot be changed, and the performance between a tuple and a list here is equivalent.
 The entire `ANSWERS` tuple could still be reassigned to another tuple,
 so uppercase letters would still be used to indicate that the `ANSWERS` tuple should not be changed.
-```
+~~~~
 
 The [`rstrip`][rstrip] method is applied to the input to eliminate any whitespace at the end of the input.
 If the input has no characters left, it uses the [falsiness][falsiness] of an empty string with the [`not`][not] operator to return the response for saying nothing.
@@ -37,11 +37,11 @@ A [ternary operator][ternary] is used for determining the score for a shout and 
 
 The [`isupper`][isupper] method is used to test that there is at least one cased character and that all cased characters are uppercase.
 
-```exercism/note
+~~~~exercism/note
 A cased character is one which differs between lowercase and uppercase.
 For example, `?` and `3` are not cased characters, as they do not change between lowercase and uppercase.
 `a` and `z` are cased characters, since their lowercase form changes to `A` and ` Z` when uppercase.
-```
+~~~~
 
 If `isupper` is `True`, then `is_shout` is given the value of `2`; otherwise, it is given the value of `0`.
 

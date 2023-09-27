@@ -35,17 +35,17 @@ def answer(question):
 
 This approach begins by defining a [dictionary][dictionaries] of the word keys with their related [dunder][dunder] methods.
 
-```exercism/note
+~~~~exercism/note
 They are called "dunder" methods because they have **d**ouble **under**scores at the beginning and end of the method name.
 They are also called magic methods.
-```
+~~~~
 
 Since only whole numbers are involved, the dunder methods are those for [`int`][int].
 The supported methods for `int` can be found by using `print(dir(int))`.
 
-```exercism/note
+~~~~exercism/note
 The built-in [`dir`](https://docs.python.org/3/library/functions.html?#dir) function returns a list of valid attributes for an object.
-```
+~~~~
 
 Python doesn't _enforce_ having real constant values,
 but the `OPS` dictionary is defined with all uppercase letters, which is the naming convention for a Python [constant][const].
@@ -74,10 +74,10 @@ passing it `y` converted to an `int`.
 
 It sets the list to the result of the dunder method plus the remaining elements in `*tail`.
 
-```exercism/note
+~~~~exercism/note
 The `*` prefix in `*tail` [unpacks](https://treyhunner.com/2018/10/asterisks-in-python-what-they-are-and-how-to-use-them/) the `tail` list back into its elements.
 This concept is also a part of [unpacking-and-multiple-assignment](https://exercism.org/tracks/python/concepts/unpacking-and-multiple-assignment) concept in the syllabus.
-```
+~~~~
 
 When the loop exhausts, the first element of the list is selected as the function return value.
 
