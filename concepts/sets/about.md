@@ -398,7 +398,7 @@ The operator version of this method is  `<set> & <other set> & <other set 2> & .
  {'Basil', 'Chervil', 'Marjoram', 'Cilantro'}
 ```
 
-# Set Symmetric Difference
+### Set Symmetric Differences
 
 `<set>.symmetric_difference(<other iterable>)` returns a new `set` that contains elements that are in `<set>` OR `<other>`, but **not in both**.
 The operator version of this method is  `<set> ^ <other set>`.
