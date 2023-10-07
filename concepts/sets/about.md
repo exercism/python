@@ -1,119 +1,151 @@
 # Sets
 
-A [`set`][type-set] is a mutable and _unordered_ collection of _hashable_ objects.
-Items within a `set` are distinct and duplicate members are not allowed.
-Like most collections, `sets` can hold any (or multiple) data type(s) -- as long as those types can be [hashed][hashable].
-Sets also come in an _immutable_ [`frozenset`][type-frozenset] flavor.
+A [`set`][type-set] is a _mutable_ and _unordered_ collection of [_hashable_][hashable] objects.
+Set members must be distinct -- duplicate items are not allowed.
+They can hold multiple different data types and even nested structures like a `tuple` of `tuples` -- as long as all elements can be _hashed_.
+Sets also come in an immutable [`frozensets`][type-frozenset] flavor.
 
-Like other collection types, `sets` support membership testing through `in`, length calculation through `len()`, shallow copies through `copy()`, and iteration via `for item in <set>`.
-_Unlike_ sequence types (_`string`, `list` & `tuple`_), `sets` are **neither ordered nor indexed**, and _do not support_ slicing, sorting, or other sequence-type behaviors.
+Sets are most commonly used to quickly remove duplicates from other data structures or item groupings.
+They are also used for efficient comparisons when sequencing and duplicate tracking are not needed.
 
-`sets` are most commonly used to quickly dedupe groups of items.
-They're also used for fast membership testing, finding supersets & subsets of items, and performing "set math" (_calculating union, intersection, difference & symmetric difference between groups of items._).
+Like other collection types (_dictionaries, lists, tuples_), `sets` support:
+- Iteration via `for item in <set>`
+- Membership checking via `in` and `not in`,
+- Length calculation through `len()`, and
+- Shallow copies through `copy()`
 
-Checking membership in a `set` has only O(1) time complexity versus checking for membership in a `list` or `string`, which has worst-case O(n) time complexity.
-Operations such as `<set>.union()`, `<set>.intersection()`, or `<set>.difference()` have an average O(n) time complexity.
+`sets` do not support:
+- Indexing of any kind
+- Ordering via sorting or insertion
+- Slicing
+- Concatenation via `+`
 
-## Construction
 
-A `set` can be declared as a _set literal_ with curly `{}` brackets and commas between elements.
+Checking membership in a `set` has constant time complexity (on average) versus checking membership in a `list` or `string`, where the time complexity grows as the length of the data increases.
+Methods such as `<set>.union()`, `<set>.intersection()`, or `<set>.difference()` also have constant time complexity (on average).
+
+
+## Set Construction
+
+While sets can be created in many different ways, the most straightforward construction methods are declaring a _set literal_, using the `set` class constructor (`set()`), and using a _set comprehension_.
+
+### Set Literals
+
+A `set` can be directly entered as a _set literal_ with curly `{}` brackets and commas between elements.
 Duplicates are silently omitted:
 
 ```python
 >>> one_element = {'😀'}
->>> one_element
 {'😀'}
 
->>> multiple_elements = {'Hello!', '¡Hola!', 'Привет!', 'こんにちは！'}
->>> multiple_elements
-{'こんにちは！', '¡Hola!', 'Hello!', 'Привет!'}
+>>> multiple_elements = {'😀', '😃', '😄', '😁'}
+{'😀', '😃', '😄', '😁'}
 
->>> multiple_duplicates =  {'Hello!', '¡Hola!', 'Привет!', 'こんにちは！', '¡Hola!', 'Привет!'}
->>> multiple_duplicates
-{'こんにちは！', '¡Hola!', 'Hello!', 'Привет!'}
+>>> multiple_duplicates =  {'Hello!', 'Hello!', 'Hello!', 
+                            '¡Hola!','Привіт!', 'こんにちは！', 
+                            '¡Hola!','Привіт!', 'こんにちは！'}
+{'こんにちは！', '¡Hola!', 'Hello!', 'Привіт!'}
 ```
 
-Set literals use the same curly braces as `dict` literals, so the `set()` constructor must be used to declare an empty `set`.
+Set literals use the same curly braces as `dict` literals, which means you need to use `set()` to create an empty `set`.
 
-The `set()` constructor can also be used with any _iterable_ passed as an argument.
-Elements are cycled through by the constructor and added to the `set` individually.
-Order is not preserved and duplicates are silently omitted:
+### The Set Constructor
+
+`set()` (_the constructor for the `set` class_) can be used with any `iterable` passed as an argument.
+Elements of the `iterable` are cycled through and added to the `set` individually.
+Element order is not preserved and duplicates are silently omitted:
+
 
 ```python
+# To create an empty set, the constructor must be used.
 >>> no_elements = set()
->>> no_elements
 set()
 
-# The tuple is unpacked and each distinct element is added.  Duplicates are removed.
->>> multiple_elements_from_tuple = set(("Parrot", "Bird", 334782, "Bird", "Parrot"))
->>> multiple_elements_from_tuple
+# The tuple is unpacked & each element is added.  
+# Duplicates are removed.
+>>> elements_from_tuple = set(("Parrot", "Bird", 
+                               334782, "Bird", "Parrot"))
 {334782, 'Bird', 'Parrot'}
 
-# The list is unpacked and each distinct element is added.
->>> multiple_elements_from_list = set([2, 3, 2, 3, 3, 3, 5, 7, 11, 7, 11, 13, 13])
->>> multiple_elements_from_set
+# The list is unpacked & each element is added.
+# Duplicates are removed.
+>>> elements_from_list = set([2, 3, 2, 3, 3, 3, 5, 
+                              7, 11, 7, 11, 13, 13])
 {2, 3, 5, 7, 11, 13}
 ```
 
-Results when using a set constructor with a string or dictionary may be surprising:
+### Set Comprehensions
+
+Like `lists` and `dicts`, sets can be created via _comprehension_:
 
 ```python
-# String elements (Unicode code points) are iterated through and added *individually*.
->>> multiple_elements_string = set("Timbuktu")
->>> multiple_elements_string
-{'T', 'b', 'i', 'k', 'm', 't', 'u'}
+# First, a list with duplicates
+>>> numbers = [1,2,3,4,5,6,6,5,4,8,9,9,9,2,3,12,18]
 
-# Unicode separators and positioning code points are also added *individually*.
->>> multiple_code_points_string = set('अभ्यास')
->>> multiple_code_points_string
-{'अ', 'भ', 'य', 'स', 'ा', '्'}
-
-# The iteration default for dictionaries is over the keys.
->>> source_data = {"fish": "gold", "monkey": "brown", "duck" : "white", "crow": "black"}
->>> set(source_data)
-{'crow', 'duck', 'fish', 'monkey'}
+# This set comprehension squares the numbers divisible by 3
+# Duplicates are removed.
+>>> calculated = {item**2 for item in numbers if item % 3 == 0}
+{9, 36, 81, 144, 324}
 ```
 
-Sets can hold heterogeneous datatypes, but all `set` elements must be _hashable_:
+### Gotchas when Creating Sets
+
+Due to its "unpacking" behavior, using the `set` constructor with a string might be surprising:
 
 ```python
+# String elements (Unicode code points) are 
+# iterated through and added *individually*.
+>>> elements_string = set("Timbuktu")
+{'T', 'b', 'i', 'k', 'm', 't', 'u'}
 
->>> lists_as_elements = {['😅','🤣'], ['😂','🙂','🙃'], ['😜', '🤪', '😝']}
+# Unicode separators and positioning code points 
+# are also added *individually*.
+>>> multiple_code_points_string = set('अभ्यास')
+{'अ', 'भ', 'य', 'स', 'ा', '्'}
+```
+
+Remember: sets can hold different datatypes and _nested_ datatypes, but all `set` elements must be _hashable_:
+
+```python
+# Attempting to use a list for a set member throws a TypeError
+>>> lists_as_elements = {['😅','🤣'], 
+                        ['😂','🙂','🙃'], 
+                        ['😜', '🤪', '😝']}
 
 Traceback (most recent call last):
-
-  File "<ipython-input-24-1bb7c3d22c52>", line 1, in <module>
-    lists_as_elements = {['😅','🤣'], ['😂','🙂','🙃'], ['😜', '🤪', '😝']}
-
+  File "<stdin>", line 1, in <module>
 TypeError: unhashable type: 'list'
 
-# standard sets are mutable, so they cannot be hashed.
->>> sets_as_elements = {{'😅','🤣'}, {'😂','🙂','🙃'}, {'😜', '🤪', '😝'}}
+
+# Standard sets are mutable, so they cannot be hashed.
+>>> sets_as_elements = {{'😅','🤣'}, 
+                        {'😂','🙂','🙃'}, 
+                        {'😜', '🤪', '😝'}}
+
 Traceback (most recent call last):
-
-  File "<ipython-input-25-92f22c7541b1>", line 1, in <module>
-    sets_as_elements = {{'😅','🤣'}, {'😂','🙂','🙃'}, {'😜', '🤪', '😝'}}
-
+  File "<stdin>", line 1, in <module>
 TypeError: unhashable type: 'set'
 ```
 
-Therefore, to create a `set` of `sets`, the contained sets must be of type `frozenset()`
+However, a  `set` of `sets` can be created via type `frozenset()`:
 
 ```python
-# frozensets don't have a literal form
+# Frozensets don't have a literal form.
 >>> set_1 = frozenset({'😜', '😝', '🤪'})
 >>> set_2 = frozenset({'😅', '🤣'})
 >>> set_3 = frozenset({'😂', '🙂', '🙃'})
 
 >>> frozen_sets_as_elements = {set_1, set_2, set_3}
 >>> frozen_sets_as_elements
-{frozenset({'😜', '😝', '🤪'}), frozenset({'😅', '🤣'}), frozenset({'😂', '🙂', '🙃'})}
+{frozenset({'😜', '😝', '🤪'}), frozenset({'😅', '🤣'}), 
+frozenset({'😂', '🙂', '🙃'})}
 ```
 
-## Working with Sets
 
-Elements can be added/removed using `<set>.add(<item>)` / `<set>.remove(<item>)`.
-`remove(<item>)` will raise a `KeyError` if the item is not present in the `set`.
+## Adding and Removing Set Members
+
+Elements can be added or removed from a `set` using the methods `<set>.add(<item>)` and `<set>.remove(<item>)`.
+The `.remove(<item>)` method will raise a `KeyError` if the item is not present in the `set`:
 
 ```python
 >>> creatures = {'crow', 'duck', 'fish', 'monkey', 'elephant'}
@@ -122,100 +154,139 @@ Elements can be added/removed using `<set>.add(<item>)` / `<set>.remove(<item>)`
 >>> creatures
 {'beaver', 'crow', 'elephant', 'fish', 'monkey'}
 
-# Trying to remove an item that is not present will raise a KeyError
+# Trying to remove an item that is not present raises a KeyError
 >>> creatures.remove('bear')
 Traceback (most recent call last):
-
-  File "<ipython-input-51-00c49fd3fe67>", line 1, in <module>
-    creatures.remove('bear')
-
-KeyError: 'bear'
+  File "<stdin>", line 1, in <module>
+  KeyError: 'bear'
 ```
 
-`<set>.discard(<item>)` will also remove an item from the `set`, but will **not** raise a `KeyError` if the item is not present.
-`<set>.clear()` will remove all items.
-`<set>.pop()` will remove and _return_ an **arbitrary** item and raises a `KeyError` if the `set` is empty.
+### Additional Strategies for Removing Set Members
 
-## Set Methods
+- `<set>.discard(<item>)` will remove an item from the `set`, but will **not** raise a `KeyError` if the item is not present.
+- `<set>.clear()` will remove all items from the set.
+- `<set>.pop()` will remove and _return_ an **arbitrary** item, and raises a `KeyError` if the `set` is empty.
 
-Sets implement methods that generally mimic [mathematical set operations][mathematical-sets].
-Most (_though not all_) of these methods can be performed using either operator(s) or method call(s).
-Using operators requires that both inputs be `sets` or `frozensets`, while methods will generally take any iterable as an argument.
 
-### Fast Membership Testing Between Groups
+## Set Operations
 
-The `<set>.isdisjoint(<other_collection>)` method is used to test if a `set` has **no elements in common** with another set or iterable.
-It will accept any `iterable` or `set` as an arugment, returning `True` if they are **disjoint**, `False` otherwise.
-Note that for `dcts`, the iteration default is over`<dict>.keys()`.
+Sets have methods that generally mimic [mathematical set operations][mathematical-sets].
+Most (_not all_) of these methods have an [operator][operator] equivalent.
+Methods generally take any `iterable` as an argument, while operators require that both things being compared are `sets` or `frozensets`.
+
+
+### Membership Testing Between Sets
+
+The `<set>.isdisjoint(<other_collection>)` method is used to test if a `sets` elements have any overlap with the elements of another.
+The method will accept any `iterable` or `set` as an argument.
+It will return `True` if the two sets have **no elements in common**, `False` if elements are **shared**.
 
 ```python
->>>  mammals = {'squirrel','dog','cat','cow', 'tiger', 'elephant'}
->>>  birds   = {'crow','sparrow','eagle','chicken', 'albatross'}
+# Both mammals and additional_animals are lists.
+>>> mammals = ['squirrel','dog','cat','cow', 'tiger', 'elephant']
+>>> additional_animals = ['pangolin', 'panda', 'parrot', 
+                          'lemur', 'tiger', 'pangolin']
 
-# Dictionary of animal names with colors
->>> animals = {'chicken': 'white','sparrow': 'grey','eagle': 'brown and white',
-                'albatross': 'grey and white','crow': 'black','elephant': 'grey',
-                'dog': 'rust','cow': 'black and white','tiger': 'orange and black',
-                'cat': 'grey','squirrel': 'black'}
+# Animals is a dict.
+>>> animals = {'chicken': 'white',
+               'sparrow': 'grey',
+               'eagle': 'brown and white',
+               'albatross': 'grey and white',
+               'crow': 'black',
+               'elephant': 'grey', 
+               'dog': 'rust',
+               'cow': 'black and white',
+               'tiger': 'orange and black',
+               'cat': 'grey',
+               'squirrel': 'black'}
+               
+# Birds is a set.
+>>> birds = {'crow','sparrow','eagle','chicken', 'albatross'}
 
-# List of additonal animals
->>> additional_animals = ['pangolin', 'panda', 'parrot', 'lemur', 'tiger', 'pangolin']
-...
-
->>> mammals.isdisjoint(birds)
+# Mammals and birds don't share any elements.
+>>> birds.isdisjoint(mammals)
 True
 
->>> mammals.isdisjoint(animals)
-False
-
+# There are also no shared elements between 
+# additional_animals and birds.
 >>> birds.isdisjoint(additional_animals)
 True
 
->>> set(additional_animals).isdisjoint(animals)
+# Animals and mammals have shared elements.
+# **Note** The first object needs to be a set or converted to a set
+# since .isdisjoint() is a set method.
+>>> set(animals).isdisjoint(mammals)
 False
 ```
 
-`<set>.issubset(<other_collection>)` | `<set> <= <other_set>` are used to check if every element in `<set>` is also in `<other>`.
-`<set>.issuperset(<other_collection>)` | `<set> >= <other_set>` are used to check the inverse -- if every element in `<other>` is also in `<set>`.
+### Checking for Subsets and Supersets
+
+`<set>.issubset(<other_collection>)` is used to check if every element in `<set>` is also in `<other_collection>`.
+The operator form is `<set> <= <other_set>`:
 
 ```python
->>> animals = {'chicken': 'white','sparrow': 'grey','eagle': 'brown and white',
-                'albatross': 'grey and white','crow': 'black','elephant': 'grey',
-                'dog': 'rust','cow': 'black and white','tiger': 'organge and black',
-                'cat': 'grey','squirrel': 'black'}
-
->>>  mammals = {'squirrel','dog','cat','cow', 'tiger', 'elephant'}
->>>  birds   = {'crow','sparrow','eagle','chicken', 'albatross'}
-
-# Methods will take any iterable as an argument
->>> mammals.issubset(animal_colors)
+# Set methods will take any iterable as an argument.
+# All members of birds are also members of animals.
+>>> birds.issubset(animals)
 True
 
-
-# A set is always a loose subset of itself
->>> animals <= animals
+# All members of mammals also appear in animals.
+# **Note** The first object needs to be a set or converted to a set
+# since .issubset() is a set method.
+>>> set(mammals).issubset(animals)
 True
 
->>> birds <= animals
-True
-
->>> birds <= mammals
+# Both objects need to be sets to use a set operator
+>>> birds <= set(mammals)
 False
+
+# A set is always a loose subset of itself.
+>>> set(additional_animals) <= set(additional_animals)
+True
 ```
 
-`<set> < <other_set>` and `<set> > <other_set>` are used to test for _proper subsets_:
-(`<set>` <= `<other_set>`) AND (`<set>` != `<other_set>`) for the `<` operator; (`<set>` >= `<other_set>`) AND (`<set>` != `<other_set>`) for the `>` operator.
-They have no method equivelent.
+`<set>.issuperset(<other_collection>)` is the inverse of `.issubset()`.
+It is used to check if every element in `<other_collection>` is also in `<set>`.
+The operator form is `<set> >= <other_set>`:
+
 
 ```python
->>> animal_names =      {'albatross','cat','chicken','cow','crow','dog',
-                         'eagle','elephant','sparrow','squirrel','tiger'}
+# All members of mammals also appear in animals.
+# **Note** The first object needs to be a set or converted to a set
+# since .issuperset() is a set method.
+>>> set(animals).issuperset(mammals)
+True
 
->>> animal_names_also = {'albatross','cat','chicken','cow','crow','dog',
-                         'eagle','elephant','sparrow','squirrel','tiger'}
+# All members of animals do not show up as members of birds.
+>>> birds.issuperset(animals)
+False
 
->>>  mammals = {'squirrel','dog','cat','cow', 'tiger', 'elephant'}
->>>  birds   = {'crow','sparrow','eagle','chicken', 'albatross'}
+# Both objects need to be sets to use a set operator
+>>> birds >= set(mammals)
+False
+
+# A set is always a loose superset of itself.
+>>> set(animals) <= set(animals)
+True
+```
+
+### 'Proper' Subsets and Supersets
+
+`<set> < <other_set>` and `<set> > <other_set>` are used to test for _proper subsets_.
+A `set` is a proper subset if (`<set>` <= `<other_set>`) **AND** (`<set>` != `<other_set>`) for the `<` operator.
+
+A `set is a proper superset if `(`<set>` >= `<other_set>`) **AND** (`<set>` != `<other_set>`) for the `>` operator.
+These operators have no method equivalent:
+
+```python
+>>> animal_names = {'albatross','cat','chicken','cow','crow','dog',
+                   'eagle','elephant','sparrow','squirrel','tiger'}
+
+>>> animals_also = {'albatross','cat','chicken','cow','crow','dog',
+                   'eagle','elephant','sparrow','squirrel','tiger'}
+
+>>> mammals = {'squirrel','dog','cat','cow', 'tiger', 'elephant'}
+>>> birds   = {'crow','sparrow','eagle','chicken', 'albatross'}
 
 >>> mammals < animal_names
 True
@@ -223,81 +294,114 @@ True
 >>> animal_names > birds
 True
 
-# A set is never a *proper subset* of itself
->>> animal_names_also < animal_names
+# A set is not a *proper subset* if set == other set.
+>>> animals_also < animal_names
 False
 
-
->>> animals < animals
-
+# A set is never a *proper subset* of itself
+>>> animals_also < animals_also
+False
 ```
 
-### Set Operations
+### Set Unions
 
-`<set>.union(*<other iterables>)` and `<set> | <other set 1> | <other set 2> | ... | <other set n>` return a new `set` with elements from `<set>` and all `<others>`.
+`<set>.union(*<other iterables>)` returns a new `set` with elements from `<set>` and all `<other iterables>`.
+The operator form of this method is `<set> | <other set 1> | <other set 2> | ... | <other set n>`.
 
 ```python
->>> perennial_vegetables = {'Asparagus', 'Broccoli', 'Sweet Potatoe', 'Kale'}
->>> annual_vegetables = {'Corn', 'Zucchini', 'Sweet Peas', 'Summer Squash'}
-
->>> more_perennials = ['Radicchio', 'Rhubarb', 'Spinach', 'Watercress']
+>>> perennials = {'Asparagus', 'Broccoli', 'Sweet Potato', 'Kale'}
+>>> annuals = {'Corn', 'Zucchini', 'Sweet Peas', 'Summer Squash'}
+>>> more_perennials = ['Radicchio', 'Rhubarb', 
+                      'Spinach', 'Watercress']
 
 # Methods will take any iterable as an argument.
->>> perennial_vegetables.union(more_perennials)
-{'Asparagus','Broccoli','Kale','Radicchio','Rhubarb','Spinach','Sweet Potatoe','Watercress'}
+>>> perennials.union(more_perennials)
+{'Asparagus','Broccoli','Kale','Radicchio','Rhubarb',
+'Spinach','Sweet Potato','Watercress'}
 
 # Operators require sets.
->>> perennial_vegetables | annual_vegetables
-{'Asparagus','Broccoli','Corn','Kale','Summer Squash','Sweet Peas','Sweet Potatoe','Zucchini'}
-
+>>> set(more_perennials) | perennials
+{'Asparagus',
+ 'Broccoli',
+ 'Kale',
+ 'Radicchio',
+ 'Rhubarb',
+ 'Spinach',
+ 'Sweet Potato',
+ 'Watercress'}
 ```
 
-`<set>.difference(*<other iterables>)` and `<set> - <other set 1> - <other set 2> - ...<other set n>` return a new `set` with elements from the original `<set>` that are not in `<others>`.
+### Set Differences
+
+`<set>.difference(*<other iterables>)` returns a new `set` with elements from the original `<set>` that are not in `<others>`.
+The operator version of this method is `<set> - <other set 1> - <other set 2> - ...<other set n>`.
 
 ```python
->>> berries_and_veggies = {'Asparagus', 'Broccoli', 'Watercress', 'Goji Berries', 'Goose Berries', 'Ramps',
-                           'Walking Onions', 'Raspberries','Blueberries', 'Blackberries', 'Strawberries',
-                           'Rhubarb', 'Kale', 'Artichokes', 'Currants', 'Honeyberries'}
+>>> berries_and_veggies = {'Asparagus', 
+                          'Broccoli', 
+                          'Watercress', 
+                          'Goji Berries', 
+                          'Goose Berries', 
+                          'Ramps', 
+                          'Walking Onions', 
+                          'Blackberries', 
+                          'Strawberries', 
+                          'Rhubarb', 
+                          'Kale', 
+                          'Artichokes', 
+                          'Currants'}
 
-# Methods will take any iterable as an argument.
 >>> veggies = ('Asparagus', 'Broccoli', 'Watercress', 'Ramps',
                'Walking Onions', 'Rhubarb', 'Kale', 'Artichokes')
 
->>> just_berries = berries_and_veggies.difference(veggies)
->>> just_berries
-{'Blackberries','Blueberries','Currants','Goji Berries',
- 'Goose Berries','Honeyberries','Raspberries','Strawberries'}
+# Methods will take any iterable as an argument.
+>>> berries = berries_and_veggies.difference(veggies)
+{'Blackberries','Currants','Goji Berries',
+ 'Goose Berries', 'Strawberries'}
 
+# Operators require sets.
 >>> berries_and_veggies - just_berries
-{'Artichokes','Asparagus','Broccoli','Kale','Ramps','Rhubarb','Walking Onions','Watercress'}
+{'Artichokes','Asparagus','Broccoli','Kale',
+'Ramps','Rhubarb','Walking Onions','Watercress'}
 ```
 
-`<set>.intersection(*<other iterables>)` and `<set> & <other set> & <other set 2> & ... <other set n>` return a new `set` with elements common to the original `set` and all `<others>`.
+### Set Intersections
+
+`<set>.intersection(*<other iterables>)` returns a new `set` with elements common to the original `set` and all `<others>` (in other words, the `set` where everything [intersects][intersection]).
+The operator version of this method is  `<set> & <other set> & <other set 2> & ... <other set n>`
 
 ```python
->>> perennials = {'Annatto','Asafetida','Asparagus','Azalea','Winter Savory', 'Blackberries','Broccoli','Curry Leaf',
-                  'Fennel','French Sorrel','Fuchsia','Kaffir Lime','Kale','Lavender','Mint','Oranges',
-                  'Oregano','Ramps','Roses','Tarragon','Watercress','Wild Bergamot'}
+>>> perennials = {'Annatto','Asafetida','Asparagus','Azalea',
+                 'Winter Savory', 'Broccoli','Curry Leaf','Fennel', 
+                 'Kaffir Lime','Kale','Lavender','Mint','Oranges',
+                 'Oregano', 'Tarragon', 'Wild Bergamot'}
 
->>> annuals = {'Corn', 'Zucchini', 'Sweet Peas', 'Marjoram', 'Summer Squash', 'Okra',
-               'Shallots', 'Basil', 'Cilantro', 'Cumin', 'Sunflower', 'Chervil', 'Summer Savory'}
+>>> annuals = {'Corn', 'Zucchini', 'Sweet Peas', 'Marjoram', 
+              'Summer Squash', 'Okra','Shallots', 'Basil', 
+              'Cilantro', 'Cumin', 'Sunflower', 'Chervil', 
+              'Summer Savory'}
 
->>> herbs = ['Annatto','Asafetida','Basil','Chervil','Cilantro','Curry Leaf','Fennel','Kaffir Lime',
-             'Lavender','Marjoram','Mint','Oregano','Summer Savory' 'Tarragon','Wild Bergamot',
-             'Wild Celery','Winter Savory']
+>>> herbs = ['Annatto','Asafetida','Basil','Chervil','Cilantro',
+            'Curry Leaf','Fennel','Kaffir Lime','Lavender',
+            'Marjoram','Mint','Oregano','Summer Savory' 
+            'Tarragon','Wild Bergamot','Wild Celery',
+            'Winter Savory']
 
 
 # Methods will take any iterable as an argument.
 >>> perennial_herbs = perennials.intersection(herbs)
->>> perennial_herbs
-{'Mint', 'Annatto', 'Winter Savory', 'Curry Leaf', 'Lavender', 'Fennel',
- 'Oregano', 'Kaffir Lime','Asafetida', 'Wild Bergamot', 'Tarragon'}
+{'Annatto', 'Asafetida', 'Curry Leaf', 'Fennel', 'Kaffir Lime',
+ 'Lavender', 'Mint', 'Oregano', 'Wild Bergamot','Winter Savory'}
 
+# Operators require both groups be sets.
 >>> annuals & set(herbs)
  {'Basil', 'Chervil', 'Marjoram', 'Cilantro'}
 ```
 
-`<set>.symmetric_difference(<other iterable>)` and `<set> ^ <other set>` return a new `set` that contains elements that are in `<set>` OR `<other>`, but **not in both**.
+### Set Symmetric Differences
+
+`<set>.symmetric_difference(<other iterable>)` returns a new `set` that contains elements that are in `<set>` OR `<other>`, but **not in both**.
+The operator version of this method is  `<set> ^ <other set>`.
 
 ```python
 >>> plants_1 = {'🌲','🍈','🌵', '🥑','🌴', '🥭'}
@@ -309,6 +413,8 @@ False
 >>> fruit_and_flowers
 {'🌸', '🌺', '🍈', '🥑', '🥭','🌻' }
 
+
+# Operators require both groups be sets.
 >>> fruit_and_flowers ^ plants_1
 {'🌲',  '🌸', '🌴', '🌵','🌺', '🌻'}
 
@@ -316,7 +422,62 @@ False
 { '🥑', '🌴','🌲', '🌵', '🍈', '🥭'}
 ```
 
-[type-set]: https://docs.python.org/3/library/stdtypes.html#set
-[type-frozenset]: https://docs.python.org/3/library/stdtypes.html#frozenset
-[mathematical-sets]: https://en.wikipedia.org/wiki/Set_theory#Basic_concepts_and_notation
+~~~~exercism/note
+
+A symmetric difference of more than two sets will result in a `set` that includes both the elements unique to each `set` AND elements shared between more than two sets in the series (_details in the Wikipedia article on [symmetric difference][symmetric_difference]_).  
+
+To obtain only items unique to each `set` in the series, intersections between all 2-set combinations need to be aggregated in a separate step, and removed:  
+
+
+```python
+>>> one = {'black pepper','breadcrumbs','celeriac','chickpea flour',
+           'flour','lemon','parsley','salt','soy sauce',
+           'sunflower oil','water'}
+
+>>> two = {'black pepper','cornstarch','garlic','ginger',
+           'lemon juice','lemon zest','salt','soy sauce','sugar',
+           'tofu','vegetable oil','vegetable stock','water'}
+
+>>> three = {'black pepper','garlic','lemon juice','mixed herbs',
+             'nutritional yeast', 'olive oil','salt','silken tofu',
+             'smoked tofu','soy sauce','spaghetti','turmeric'}
+
+>>> four = {'barley malt','bell pepper','cashews','flour',
+            'fresh basil','garlic','garlic powder', 'honey',
+            'mushrooms','nutritional yeast','olive oil','oregano',
+            'red onion', 'red pepper flakes','rosemary','salt',
+            'sugar','tomatoes','water','yeast'}
+
+>>> intersections = (one & two | one & three | one & four | 
+                     two & three | two & four | three & four)
+...
+{'black pepper','flour','garlic','lemon juice','nutritional yeast', 
+'olive oil','salt','soy sauce', 'sugar','water'}
+
+# The ^ operation will include some of the items in intersections, 
+# which means it is not a "clean" symmetric difference - there
+# are overlapping members.
+>>> (one ^ two ^ three ^ four) & intersections
+{'black pepper', 'garlic', 'soy sauce', 'water'}
+
+# Overlapping members need to be removed in a separate step
+# when there are more than two sets that need symmetric difference.
+>>> (one ^ two ^ three ^ four) - intersections
+...
+{'barley malt','bell pepper','breadcrumbs', 'cashews','celeriac',
+  'chickpea flour','cornstarch','fresh basil', 'garlic powder',
+  'ginger','honey','lemon','lemon zest','mixed herbs','mushrooms',
+  'oregano','parsley','red onion','red pepper flakes','rosemary',
+  'silken tofu','smoked tofu','spaghetti','sunflower oil', 'tofu', 
+  'tomatoes','turmeric','vegetable oil','vegetable stock','yeast'}
+```
+
+[symmetric_difference]: https://en.wikipedia.org/wiki/Symmetric_difference
+~~~~
+
 [hashable]: https://docs.python.org/3.7/glossary.html#term-hashable
+[mathematical-sets]: https://en.wikipedia.org/wiki/Set_theory#Basic_concepts_and_notation
+[operator]: https://www.computerhope.com/jargon/o/operator.htm
+[type-frozenset]: https://docs.python.org/3/library/stdtypes.html#frozenset
+[type-set]: https://docs.python.org/3/library/stdtypes.html#set
+[intersection]: https://www.mathgoodies.com/lessons/sets/intersection

@@ -48,8 +48,8 @@ class SetsTest(unittest.TestCase):
             with self.subTest(f"variation #{variant}", inputs="recipes with duplicated ingredients",
                               result="recipe ingredients de-duped"):
 
-                error_msg = (f"Expected a cleaned ingredient list for {item[0]}, "
-                            "but the ingredients aren't cleaned as expected.")
+                error_msg = (f"Expected the ingredient list for {item[0]} to be de-duplicated, "
+                            "but the ingredients were not cleaned as expected.")
 
                 self.assertEqual(clean_ingredients(item[0], item[1]), (result[1], result[2]), msg=error_msg)
 
