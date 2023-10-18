@@ -1,0 +1,22 @@
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
+
+[559e789d-07d1-4422-9004-3b699f83bca3]
+description = "0 eggs"
+
+[97223282-f71e-490c-92f0-b3ec9e275aba]
+description = "1 egg"
+
+[1f8fd18f-26e9-4144-9a0e-57cdfc4f4ff5]
+description = "4 eggs"
+
+[0c18be92-a498-4ef2-bcbb-28ac4b06cb81]
+description = "13 eggs"

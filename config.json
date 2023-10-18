@@ -1163,6 +1163,21 @@
         "difficulty": 3
       },
       {
+        "slug": "pop-count",
+        "name": "Pop Count",
+        "uuid": "356e2d29-7efc-4fa3-bec7-8b61c3e967da",
+        "practices": ["loops"],
+        "prerequisites": [
+            "basics",
+            "lists",
+            "list-methods",
+            "loops",
+            "strings",
+            "string-methods"
+        ],
+        "difficulty": 3
+      },
+      {
         "slug": "simple-cipher",
         "name": "Simple Cipher",
         "uuid": "09b2f396-00d7-4d89-ac47-5c444e00dd99",
