@@ -466,7 +466,7 @@
         "slug": "house",
         "name": "House",
         "uuid": "7c2e93ae-d265-4481-b583-a496608c6031",
-        "practices": ["loops"],
+        "practices": [],
         "prerequisites": [
           "basics",
           "lists",
@@ -680,7 +680,7 @@
         "slug": "protein-translation",
         "name": "Protein Translation",
         "uuid": "c89243f3-703e-4fe0-8e43-f200eedf2825",
-        "practices": ["loops"],
+        "practices": [],
         "prerequisites": [
           "basics",
           "conditionals",
@@ -967,6 +967,21 @@
         "practices": ["enums"],
         "prerequisites": ["basics", "bools", "numbers", "classes"],
         "difficulty": 2
+      },
+      {
+        "slug": "pop-count",
+        "name": "Pop Count",
+        "uuid": "356e2d29-7efc-4fa3-bec7-8b61c3e967da",
+        "practices": ["loops"],
+        "prerequisites": [
+            "basics",
+            "lists",
+            "list-methods",
+            "loops",
+            "strings",
+            "string-methods"
+        ],
+        "difficulty": 3
       },
       {
         "slug": "saddle-points",
