@@ -969,6 +969,21 @@
         "difficulty": 2
       },
       {
+        "slug": "pop-count",
+        "name": "Pop Count",
+        "uuid": "356e2d29-7efc-4fa3-bec7-8b61c3e967da",
+        "practices": ["loops"],
+        "prerequisites": [
+            "basics",
+            "lists",
+            "list-methods",
+            "loops",
+            "strings",
+            "string-methods"
+        ],
+        "difficulty": 3
+      },
+      {
         "slug": "saddle-points",
         "name": "Saddle Points",
         "uuid": "71c96c5f-f3b6-4358-a9c6-fc625e2edda2",
@@ -1159,21 +1174,6 @@
           "dicts",
           "loops",
           "numbers"
-        ],
-        "difficulty": 3
-      },
-      {
-        "slug": "pop-count",
-        "name": "Pop Count",
-        "uuid": "356e2d29-7efc-4fa3-bec7-8b61c3e967da",
-        "practices": ["loops"],
-        "prerequisites": [
-            "basics",
-            "lists",
-            "list-methods",
-            "loops",
-            "strings",
-            "string-methods"
         ],
         "difficulty": 3
       },
