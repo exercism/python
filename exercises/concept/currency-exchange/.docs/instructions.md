@@ -36,7 +36,7 @@ This function should return the amount of money that *is left* from the budget.
 Create the `get_value_of_bills()` function, taking 2 parameters:
 
 1. `denomination` : The value of a single bill.
-2. `number_of_bills` : Amount of bills you received.
+2. `number_of_bills` : Number of bills you received.
 
 This exchanging booth only deals in cash of certain increments.
 The total you receive must be divisible by the value of one "bill" or unit, which can leave behind a fraction or remainder.
