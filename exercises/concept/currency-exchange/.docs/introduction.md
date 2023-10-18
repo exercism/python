@@ -8,7 +8,7 @@ There are three different kinds of built-in numbers in Python : `ints`, `floats`
 
 `ints` are whole numbers. e.g. `1234`, `-10`, `20201278`.
 
-Integers in Python have [arbitrary precision][arbitrary-precision] -- the amount of digits is limited only by the available memory of the host system.
+Integers in Python have [arbitrary precision][arbitrary-precision] -- the number of digits is limited only by the available memory of the host system.
 
 ### floats
 

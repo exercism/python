@@ -24,7 +24,7 @@ def get_value_of_bills(denomination, number_of_bills):
     """
 
     :param denomination: int - the value of a bill.
-    :param number_of_bills: int - amount of bills you received.
+    :param number_of_bills: int - number of bills you received.
     :return: int - total value of bills you now have.
     """
 
