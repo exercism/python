@@ -18,7 +18,7 @@ class Matrix:
         return self.columns[index - 1]
 ```
 
-An alternate implementation [processing columns in a method rather than an instance property](https://exercism.io/tracks/python/exercises/matrix/solutions/e5004e990ddc4582a50ecc1f660c31df):
+An alternate implementation [processing columns in a method rather than an instance property](https://exercism.org/tracks/python/exercises/matrix/solutions/e5004e990ddc4582a50ecc1f660c31df):
 
 ```python
 class Matrix(object):
@@ -33,7 +33,7 @@ class Matrix(object):
         return [row[index - 1] for row in self.matrix]
 ```
 
-An extended implementation [using `.copy()` to protect against accidental data mutation](https://exercism.io/tracks/python/exercises/matrix/solutions/b6a3486a35c14372b64fdc35e7c6f98f):
+An extended implementation [using `.copy()` to protect against accidental data mutation](https://exercism.org/tracks/python/exercises/matrix/solutions/b6a3486a35c14372b64fdc35e7c6f98f):
 
 ```python
 class Matrix(object):

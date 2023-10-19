@@ -89,7 +89,7 @@ def parse_line(line, in_list, in_list_append):
     }
 ```
 
-An alternate example using [regular expressions](https://exercism.io/tracks/python/exercises/markdown/solutions/daf30e5227414a61a00bac391ee2bd79):
+An alternate example using [regular expressions](https://exercism.org/tracks/python/exercises/markdown/solutions/daf30e5227414a61a00bac391ee2bd79):
 
 ```python
 import re
@@ -108,7 +108,7 @@ def parse(markdown):
     return s
 ```
 
-Another alternate example using [Python with Regex](https://exercism.io/tracks/python/exercises/markdown/solutions/a1f1d7b60bfc42818b2c2225fe0f8d7a)
+Another alternate example using [Python with Regex](https://exercism.org/tracks/python/exercises/markdown/solutions/a1f1d7b60bfc42818b2c2225fe0f8d7a)
 
 ```python
 import re
