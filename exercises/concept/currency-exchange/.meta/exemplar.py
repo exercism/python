@@ -39,7 +39,7 @@ def get_number_of_bills(amount, denomination):
     :return: int - number of bills that can be obtained from the amount.
     """
 
-    return int(budget) // denomination
+    return int(amount) // denomination
 
 
 def get_leftover_of_bills(amount, denomination):
@@ -50,7 +50,7 @@ def get_leftover_of_bills(amount, denomination):
     :return: float - the amount that is "leftover", given the current denomination.
     """
 
-    return budget % denomination
+    return amount % denomination
 
 
 def exchangeable_value(budget, exchange_rate, spread, denomination):

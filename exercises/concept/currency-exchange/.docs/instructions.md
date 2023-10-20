@@ -12,6 +12,7 @@ Create the `exchange_money()` function, taking 2 parameters:
 This function should return the value of the exchanged currency.
 
 **Note:** If your currency is USD and you want to exchange USD for EUR with an exchange rate of `1.20`, then `1.20 USD == 1 EUR`.
+
 ```python
 >>> exchange_money(127.5, 1.2)
 106.25
