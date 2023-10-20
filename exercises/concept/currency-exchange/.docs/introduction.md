@@ -70,9 +70,9 @@ To convert a float to an integer, you can use `int()`. Also, to convert an integ
 3.0
 ```
 
-[arbitrary-precision]: https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic#:~:text=In%20computer%20science%2C%20arbitrary%2Dprecision,memory%20of%20the%20host%20system.
-[numeric-type-docs]: https://docs.python.org/3/library/stdtypes.html#typesnumeric
-[`int()` built in]: https://docs.python.org/3/library/functions.html#int
-[`float()` built in]: https://docs.python.org/3/library/functions.html#float
 [0.30000000000000004.com]: https://0.30000000000000004.com/
+[`float()` built in]: https://docs.python.org/3/library/functions.html#float
+[`int()` built in]: https://docs.python.org/3/library/functions.html#int
+[arbitrary-precision]: https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic#:~:text=In%20computer%20science%2C%20arbitrary%2Dprecision,memory%20of%20the%20host%20system.
 [floating point math]: https://docs.python.org/3.9/tutorial/floatingpoint.html
+[numeric-type-docs]: https://docs.python.org/3/library/stdtypes.html#typesnumeric
