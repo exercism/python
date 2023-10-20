@@ -79,4 +79,3 @@ def can_double_down(card_one, card_two):
     """
 
     pass
-
