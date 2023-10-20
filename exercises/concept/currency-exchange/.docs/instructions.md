@@ -36,7 +36,7 @@ This function should return the amount of money that *is left* from the budget.
 Create the `get_value_of_bills()` function, taking 2 parameters:
 
 1. `denomination` : The value of a single bill.
-2. `number_of_bills` : Number of bills you received.
+2. `number_of_bills` : The total number of bills.
 
 This exchanging booth only deals in cash of certain increments.
 The total you receive must be divisible by the value of one "bill" or unit, which can leave behind a fraction or remainder.
@@ -50,10 +50,10 @@ Unfortunately, the booth gets to keep the remainder/change as an added bonus.
 
 ## 4. Calculate number of bills
 
-Create the `get_number_of_bills()` function, taking `budget` and `denomination`.
+Create the `get_number_of_bills()` function, taking `amount` and `denomination`.
 
-This function should return the _number of currency bills_ that you can receive within the given _budget_.
-In other words:  How many _whole bills_ of currency fit into the amount of currency you have in your budget?
+This function should return the _number of currency bills_ that you can receive within the given _amount_.
+In other words:  How many _whole bills_ of currency fit into the starting amount?
 Remember -- you can only receive _whole bills_, not fractions of bills, so remember to divide accordingly.
 Effectively, you are rounding _down_ to the nearest whole bill/denomination.
 
@@ -64,9 +64,9 @@ Effectively, you are rounding _down_ to the nearest whole bill/denomination.
 
 ## 5. Calculate leftover after exchanging into bills
 
-Create the `get_leftover_of_bills()` function, taking `budget` and `denomination`.
+Create the `get_leftover_of_bills()` function, taking `amount` and `denomination`.
 
-This function should return the _leftover amount_ that cannot be exchanged from your _budget_ given the denomination of bills.
+This function should return the _leftover amount_ that cannot be returned from your starting _amount_ given the denomination of bills.
 It is very important to know exactly how much the booth gets to keep.
 
 ```python

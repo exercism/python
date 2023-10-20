@@ -18,7 +18,7 @@
 
 ## 4. Calculate number of bills
 
-- You need to divide `budget` into `denomination`.
+- You need to divide `amount` into `denomination`.
 - You need to use type casting to _int_ to get the exact number of bills.
 - To remove decimal places from a `float`, you can convert it to `int`.
 
@@ -26,7 +26,7 @@
 
 ## 5. Calculate leftover after exchanging into bills
 
-- You need to find the remainder of `budget` that does not equal a whole `denomination`.
+- You need to find the remainder of `amount` that does not equal a whole `denomination`.
 - The Modulo operator `%` can help find the remainder.
 
 ## 6. Calculate value after exchange
