@@ -1,27 +1,19 @@
 [
   {
-    "url": "https://docs.python.org/3/reference/expressions.html#comparisons",
-    "description": "Comparisons in Python (Python language reference)"
-  },
-  {
     "url": "https://www.tutorialspoint.com/python/python_basic_operators.htm",
     "description": "Python basic operators on Tutorials Point"
   },
   {
-    "url": "https://data-flair.training/blogs/python-comparison-operators/",
-    "description": "Python comparison operators on Data Flair"
-  },
-  {
-    "url": "https://www.python.org/dev/peps/pep-0207/",
-    "description": "PEP 207 to allow Operator Overloading for Comparison"
+    "url": "https://docs.python.org/3/reference/expressions.html#comparisons",
+    "description": "Comparisons in Python (Python language reference)"
   },
   {
     "url": "https://docs.python.org/3/reference/expressions.html#is-not",
     "description": "Identity comparisons in Python (Python language reference)"
   },
   {
-    "url": "https://docs.python.org/3/library/operator.html",
-    "description": "Operators (Python Docs)"
+    "url": "https://docs.python.org/3/reference/expressions.html#value-comparisons",
+    "description": "Value comparisons in Python (Python language reference)"
   },
   {
     "url": "https://docs.python.org/3/library/stdtypes.html#typesnumeric",
@@ -44,11 +36,11 @@
     "description": "Python Object Model (Python docs)"
   },
   {
-    "url": "https://docs.python.org/3/reference/datamodel.html#customization",
-    "description": "Basic Customization (Python language reference)"
+    "url": "https://www.python.org/dev/peps/pep-0207/",
+    "description": "PEP 207 to allow Operator Overloading for Comparison"
   },
   {
-    "url": "https://docs.python.org/3/reference/expressions.html#value-comparisons",
-    "description": "Value comparisons in Python (Python language reference)"
+    "url": "https://docs.python.org/3/reference/datamodel.html#customization",
+    "description": "Basic Customization (Python language reference)"
   }
 ]
