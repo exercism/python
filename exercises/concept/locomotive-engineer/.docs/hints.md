@@ -16,7 +16,7 @@
 
 ## 3. Add missing stops
 
-- Using `**kwargs` as a function parameter will allow an arbitrary amount of keyword arguments to be passed.
+- Using `**kwargs` as a function parameter will allow an arbitrary number of keyword arguments to be passed.
 - Using `**<dict>` as an argument will unpack a dictionary into keyword arguments.
 - You can put keyword arguments in a `{}` or `dict()`.
 - To get the values out of a dictionary, you can use the `<dict>.values()` method.

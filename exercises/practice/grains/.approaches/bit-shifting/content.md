@@ -36,7 +36,7 @@ For `total` we want all of the 64 bits set to `1` to get the sum of grains on al
 The easy way to do this is to set the 65th bit to `1` and then subtract `1`.
 To go back to our two-square example, if we can grow to three squares, then we can shift `1` two positions to the left for binary `100`,
 which is decimal `4`.
-By subtracting `1` we get `3`, which is the total amount of grains on the two squares.
+By subtracting `1` we get `3`, which is the total number of grains on the two squares.
 
 | Square  | Binary Value | Decimal Value |
 | ------- | ------------ | ------------- |

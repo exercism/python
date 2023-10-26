@@ -9,7 +9,7 @@ class Alien:
     (class)total_aliens_created: int
     x_coordinate: int - Position on the x-axis.
     y_coordinate: int - Position on the y-axis.
-    health: int - Amount of health points.
+    health: int - Number of health points.
 
     Methods
     -------

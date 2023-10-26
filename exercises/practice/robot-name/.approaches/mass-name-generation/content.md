@@ -42,7 +42,7 @@ However, this has a huge startup memory and time cost, as 676,000 strings have t
 For an approximate calculation, 676,000 strings * 5 characters / string * 1 byte / character gives 3380000 bytes or 3.38 MB of RAM - and that's just the memory aspect of it.
 Sounds small, but it's relatively very expensive at the beginning.
 
-Thus, this approach is inefficient in cases where only a small amount of names are needed _and_ the time to set/reset the robot isn't crucial.
+Thus, this approach is inefficient in cases where only a small number of names are needed _and_ the time to set/reset the robot isn't crucial.
 
 [random-seed]: https://docs.python.org/3/library/random.html#random.seed
 [iter-and-next]: https://www.programiz.com/python-programming/methods/built-in/iter

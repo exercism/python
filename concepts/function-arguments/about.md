@@ -182,7 +182,7 @@ For instance, `*` is used for multiplication, it is used for unpacking, and it i
 Since a tuple can be iterated, `args` can be passed to any other function which takes an iterable.
 Although `*args` is commonly juxtaposed with `**kwargs`, it doesn't have to be.
 
-Following is an example of an arbitrary amount of values being passed to a function:
+Following is an example of an arbitrary number of values being passed to a function:
 
 ```python
 
@@ -196,7 +196,7 @@ Following is an example of an arbitrary amount of values being passed to a funct
 
 If `*args` follows one or more positional arguments, then `*args` will be what is left over after the positional arguments.
 
-Following is an example of an arbitrary amount of values being passed to a function after a positional argument:
+Following is an example of an arbitrary number of values being passed to a function after a positional argument:
 
 ```python
 
@@ -210,7 +210,7 @@ Following is an example of an arbitrary amount of values being passed to a funct
 
 If one or more default arguments are defined after `*args` they are separate from the `*args` values.
 
-To put it all together is an example of an arbitrary amount of values being passed to a function that also has a positional argument and a default argument:
+To put it all together is an example of an arbitrary number of values being passed to a function that also has a positional argument and a default argument:
 
 ```python
 
@@ -228,7 +228,7 @@ To put it all together is an example of an arbitrary amount of values being pass
 
 ```
 
-Note that when an argument is already in an iterable, such as a tuple or list, it needs to be unpacked before being passed to a function that takes an arbitrary amount of separate arguments.
+Note that when an argument is already in an iterable, such as a tuple or list, it needs to be unpacked before being passed to a function that takes an arbitrary number of separate arguments.
 This is accomplished by using `*`, which is the [unpacking operator][unpacking operator].
 
 `*` in this context _unpacks_ the container into its separate elements which are then transformed by `*args` into a tuple.
@@ -257,7 +257,7 @@ The `**` transforms the group of named arguments into a [`dictionary`][dictionar
 Since a dictionary can be iterated, `kwargs` can be passed to any other function which takes an iterable.
 Although `**kwargs` is commonly juxtaposed with `*args`, it doesn't have to be.
 
-Following is an example of an arbitrary amount of key-value pairs being passed to a function:
+Following is an example of an arbitrary number of key-value pairs being passed to a function:
 
 ```python
 >>> def add(**kwargs):
@@ -271,7 +271,7 @@ Note that the `dict.values()` method is called to iterate through the `kwargs` d
 
 When iterating a dictionary the default is to iterate the keys.
 
-Following is an example of an arbitrary amount of key-value pairs being passed to a function that then iterates over `kwargs.keys()`:
+Following is an example of an arbitrary number of key-value pairs being passed to a function that then iterates over `kwargs.keys()`:
 
 ```python
 >>> def concat(**kwargs):

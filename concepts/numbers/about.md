@@ -177,7 +177,7 @@ This means calculations within `()` have the highest priority, followed by `**`,
 
 ## Precision & Representation
 
-Integers in Python have [arbitrary precision][arbitrary-precision] -- the amount of digits is limited only by the available memory of the host system.
+Integers in Python have [arbitrary precision][arbitrary-precision] -- the number of digits is limited only by the available memory of the host system.
 
 Floating point numbers are usually implemented using a `double` in C (_15 decimal places of precision_), but will vary in representation based on the host system.
 Complex numbers have a `real` and an `imaginary` part, both of which are represented by floating point numbers.

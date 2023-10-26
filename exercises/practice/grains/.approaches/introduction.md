@@ -7,8 +7,8 @@ Another approach is to use [`pow`][pow].
 
 ## General guidance
 
-The key to solving Grains is to focus on each square having double the amount of grains as the square before it.
-This means that the amount of grains grows exponentially.
+The key to solving Grains is to focus on each square having double the number of grains as the square before it.
+This means that the number of grains grows exponentially.
 The first square has one grain, which is `2` to the power of `0`.
 The second square has two grains, which is `2` to the power of `1`.
 The third square has four grains, which is `2` to the power of `2`.
