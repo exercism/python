@@ -6,7 +6,8 @@ Imperative, declarative (e.g., functional), and object-oriented programming _sty
 
 Python puts a strong emphasis on code readability and (_similar to Haskell_) uses [significant indentation][significant indentation] to denote function, method, and class definitions.
 
-Python was created by Guido van Rossum and first released in 1991. The [Python Software Foundation][psf] manages and directs resources for Python and CPython development and receives proposals for changes to the language from [members][psf membership] of the community via [Python Enhancement Proposals or PEPs][peps].
+Python was created by Guido van Rossum and first released in 1991.
+The [Python Software Foundation][psf] manages and directs resources for Python and CPython development and receives proposals for changes to the language from [members][psf membership] of the community via [Python Enhancement Proposals or PEPs][peps].
 
 
 Complete documentation for the current release can be found at [docs.python.org][python docs].
@@ -18,8 +19,14 @@ Complete documentation for the current release can be found at [docs.python.org]
 - [Python FAQs][python faqs]
 - [Python Glossary of Terms][python glossary of terms]
 
+<br>
 
-This concept introduces 4 major Python language features: Name Assignment (_variables and constants_), Functions (_and the return keyword_), Comments, and Docstrings.
+This first concept introduces 4 major Python language features:
+1.  Name Assignment (_variables and constants_),
+2.  Functions (_the `def` keyword and the `return` keyword_),
+3.  Comments, and
+4.  Docstrings.
+
 
 
 ~~~~exercism/note
@@ -32,9 +39,9 @@ On the Python track, [variables][variables] are always written in [`snake_case`]
 
 
 [snake case]: https://en.wikipedia.org/wiki/Snake_case
+[the zen of python]: https://www.python.org/dev/peps/pep-0020/
 [variables]: https://realpython.com/python-variables/
 [what is pythonic]: https://blog.startifact.com/posts/older/what-is-pythonic.html
-[the zen of python]: https://www.python.org/dev/peps/pep-0020/
 ~~~~
 
 
@@ -127,8 +134,8 @@ def add_two_numbers(number_one, number_two):
 IndentationError: unindent does not match any outer indentation level
 ```
 
-Functions explicitly return a value or object via the [`return`][return] keyword.
-Functions that do not have an explicit `return` expression will _implicitly_ return [`None`][none].
+Functions _explicitly_ return a value or object via the [`return`][return] keyword.
+Functions that do not have an _explicit_ `return` expression will _implicitly_ return [`None`][none].
 
 ```python
 # Function definition on first line.

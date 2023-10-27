@@ -3,12 +3,14 @@
 ## General
 
 - [The Python Tutorial][the python tutorial] can be a great introduction.
-- [Numbers][numbers] in Python can be integers, floats, or complex.
 - [PEP 8][pep8] is the Python code style guide.
+- [PEP 257][PEP257] details Python docstring conventions.
+- [Numbers][numbers] in Python can be integers, floats, or complex.
+
 
 ## 1. Define expected bake time in minutes
 
-- You need to [name][naming] a constant, and [assign][assignment] it an integer value.
+- You need to [name][naming] a constant, and [assign][assignment] it an [integer][numbers] value.
 
 ## 2. Calculate remaining bake time in minutes
 
@@ -25,7 +27,7 @@
 
 ## 4. Calculate total elapsed cooking time (prep + bake) in minutes
 
-- You need to define a [function][defining-functions] with two parameters.
+- You need to define a [function][defining functions] with two parameters.
 - Remember: you can always _call_ a function you've defined previously.
 - You can use the [mathematical operator for addition][python as a calculator] to sum values.
 - This function should [return a value][return].

@@ -1,5 +1,6 @@
 [
-  {"url": "https://lerner.co.il/2019/06/18/understanding-python-assignment/",
+  {
+    "url": "https://lerner.co.il/2019/06/18/understanding-python-assignment/",
     "description": "Reuven Lerner: Understanding Python Assignment"
   },
   {
@@ -13,6 +14,10 @@
   {
     "url": "https://www.pythonmorsels.com/everything-is-an-object/",
     "description": "Python Morsels: Everything is an Object"
+  },
+  {
+    "url": "https://eli.thegreenplace.net/2012/03/23/python-internals-how-callables-work/",
+    "description": "Eli Bendersky: Python internals: how callables work"
   },
   {
     "url": "https://stackoverflow.com/questions/11328920/is-python-strongly-typed",

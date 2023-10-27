@@ -37,33 +37,45 @@ class LasagnaTest(unittest.TestCase):
     @pytest.mark.task(taskno=2)
     def test_bake_time_remaining(self):
         input_data = [1, 2, 5, 10, 15, 23, 33, 39]
-        result_data = [40 - item for item in input_data]
+        result_data = [39, 38, 35, 30, 25, 17, 7, 1]
 
-        for variant, (time, result) in enumerate(zip(input_data, result_data), start=1):
-            with self.subTest(f'variation #{variant}', time=time, result=result):
-                failure_msg = f'Expected: {result} but the bake time remaining was calculated incorrectly.'
-                self.assertEqual(bake_time_remaining(time), result, msg=failure_msg)
+        for variant, (time, expected) in enumerate(zip(input_data, result_data), start=1):
+            with self.subTest(f'variation #{variant}', time=time, expected=expected):
+                actual_result = bake_time_remaining(time)
+                failure_msg = (f'Called bake_time_remaining({time}). ' 
+                               f'The function returned {actual_result}, but the tests '
+                               f'expected {expected} as the remaining bake time.')
+
+                self.assertEqual(actual_result, expected, msg=failure_msg)
 
     @pytest.mark.task(taskno=3)
     def test_preparation_time_in_minutes(self):
         input_data = [1, 2, 5, 8, 11, 15]
-        result_data = [item * 2 for item in input_data]
+        result_data = [2, 4, 10, 16, 22, 30]
 
-        for variant, (layers, time) in enumerate(zip(input_data, result_data), start=1):
-            with self.subTest(f'variation #{variant}', layers=layers, time=time):
-                failure_msg = f'Expected: {time} minutes, but preparation time was calculated incorrectly.'
-                self.assertEqual(preparation_time_in_minutes(layers), time, msg=failure_msg)
+        for variant, (layers, expected) in enumerate(zip(input_data, result_data), start=1):
+            with self.subTest(f'variation #{variant}', layers=layers, expected=expected):
+                actual_result = preparation_time_in_minutes(layers)
+                failure_msg = (f'Called preparation_time_in_minutes({layers}). '
+                               f'The function returned {actual_result}, but the tests '
+                               f'expected {expected} as the preparation time.')
+
+                self.assertEqual(actual_result, expected, msg=failure_msg)
 
     @pytest.mark.task(taskno=4)
     def test_elapsed_time_in_minutes(self):
         layer_data = (1, 2, 5, 8, 11, 15)
         time_data = (3, 7, 8, 4, 15, 20)
-        result_data = [prep * 2 + elapsed for prep, elapsed in zip(layer_data, time_data)]
+        result_data = [5, 11, 18, 20, 37, 50]
 
-        for variant, (layers, time, total_time) in enumerate(zip(layer_data, time_data, result_data), start=1):
-            with self.subTest(f'variation #{variant}', layers=layers, time=time, total_time=total_time):
-                failure_msg = f'Expected {time} minutes elapsed, but the timing was calculated incorrectly.'
-                self.assertEqual(elapsed_time_in_minutes(layers, time), total_time, msg=failure_msg)
+        for variant, (layers, time, expected) in enumerate(zip(layer_data, time_data, result_data), start=1):
+            with self.subTest(f'variation #{variant}', layers=layers, time=time, expected=expected):
+                actual_result = elapsed_time_in_minutes(layers, time)
+                failure_msg = (f'Called elapsed_time_in_minutes({layers}, {time}). '
+                               f'The function returned {actual_result}, but the tests '
+                               f'expected {expected} as the elapsed time.')
+
+                self.assertEqual(actual_result, expected, msg=failure_msg)
 
     @pytest.mark.task(taskno=5)
     def test_docstrings_were_written(self):
@@ -77,6 +89,9 @@ class LasagnaTest(unittest.TestCase):
 
         for variant, function in enumerate(functions, start=1):
             with self.subTest(f'variation #{variant}', function=function):
-                failure_msg = f'Expected a docstring for `{function.__name__}`, but received `None` instead.'
+                actual_result = function.__doc__
+                failure_msg = (f'Called {function.__name__}.__doc__. {actual_result} was returned, '
+                               f'but the tests expected a docstring for the {function.__name__} function.')
+
                 # Check that the __doc__ key is populated for the function.
-                self.assertIsNotNone(function.__doc__, msg=failure_msg)
+                self.assertIsNotNone(actual_result, msg=failure_msg)
