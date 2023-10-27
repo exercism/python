@@ -48,7 +48,7 @@ The function should then `return` a `list` with the modifications.
 
 Now that all the wagon data is correct, Linus would like you to update the system's routing information.
 Along a transport route, a train might make stops at a few different stations to pick up and/or drop off cargo.
-Each journey could have a different amount of these intermediary delivery points.
+Each journey could have a different number of these intermediary delivery points.
 Your friend would like you to update the systems routing `dict` with any missing/additional delivery information.
 
 Implement a function `add_missing_stops()` that accepts a routing `dict` followed by a variable number of keyword arguments.

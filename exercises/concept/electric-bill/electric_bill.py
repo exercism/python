@@ -2,10 +2,10 @@
 
 
 def get_extra_hours(hours):
-    """Return the amount of hours.
+    """Return the number of hours.
 
-    :param: hours: int - amount of hours.
-    :return: int - amount of "extra" hours.
+    :param: hours: int - number of hours.
+    :return: int - number of "extra" hours.
     """
     pass
 
