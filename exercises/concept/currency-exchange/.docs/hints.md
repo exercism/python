@@ -10,7 +10,7 @@
 
 ## 2. Calculate currency left after an exchange
 
-- You can use the [subtraction operator][subtraction-operator] to get the amount of changes.
+- You can use the [subtraction operator][subtraction-operator] to get the amount of change.
 
 ## 3. Calculate value of bills
 
