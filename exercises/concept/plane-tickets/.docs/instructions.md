@@ -1,10 +1,10 @@
 # Instructions
 
-Conda airlines is the programming-world's biggest airline, with over 10.000 flights a day!
+Conda airlines is the programming-world's biggest airline, with over 10,000 flights a day!
 
-They are currently assigning all seats to passengers by hand, this will need to be automated.
+They are currently assigning all seats to passengers by hand; this will need to be automated.
 
-They have asked _you_ to create software to automate the assigning of seats to passengers.
+They have asked _you_ to create software to automate passenger seat assignments.
 They require your software to be memory efficient and performant.
 
 ## 1. Generate seat letters
@@ -12,9 +12,9 @@ They require your software to be memory efficient and performant.
 Conda wants to generate seat letters for their airplanes.
 An airplane is made of rows of seats.
 Each row has _4 seats_.
-The rows seats has the same naming: `A`, `B`, `C`, `D`.
-Meaning the first seat in the row is `A`, the second seat in the row is `B`, and so on.
-After reaching `D` it should start again with `A`.
+The seats in each row are always named `A`, `B`, `C`, and `D`.
+The first seat in the row is `A`, the second seat in the row is `B`, and so on.
+After reaching `D`, it should start again with `A`.
 
 Implement a function `generate_seat_letters()` that accepts an `int` that holds how many seat letters to be generated.
 The function should then return an _iterable_ of seat letters.
@@ -27,9 +27,9 @@ The function should then return an _iterable_ of seat letters.
 "B"
 ```
 
-## 2. Generate an amount of seats
+## 2. Generate seats
 
-Conda wants a system that can generate an amount of seats for their airplanes.
+Conda wants a system that can generate a given number of seats for their airplanes.
 Each airplane has _4 seats_ in each row.
 The rows are defined using numbers, starting from `1` and going up.
 The seats should be ordered, like: `1A`, `1B`, `1C`, `1D`, `2A`, `2B`, `2C`, `2D`, `3A`, `3B`, `3C`, `3D`, ...
@@ -74,7 +74,7 @@ The function should then return a _dictionary_ of `passenger` as _key_, and `sea
 
 Conda Airlines would like to have a unique code for each ticket.
 Since they are a big airline, they have a lot of flights.
-Meaning that there are multiple flights with the same seat number.
+This means that there are multiple flights with the same seat number.
 They want you to create a system that creates a unique ticket that is _12_ characters long string code for identification.
 
 This code begins with the `assigned_seat` followed by the `flight_id`.

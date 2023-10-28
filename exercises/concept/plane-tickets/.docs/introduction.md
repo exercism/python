@@ -4,7 +4,7 @@
 
 Generators are constructed much like other looping or recursive functions, but require a [`yield` expression](#the-yield-expression), which we will explore in depth a bit later.
 
-An example is a function that returns the _squares_ from a given list of numbers.  
+An example is a function that returns the _squares_ from a given list of numbers.
 As currently written, all input must be processed before any values can be returned:
 
 ```python

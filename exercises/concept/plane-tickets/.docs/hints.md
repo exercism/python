@@ -6,7 +6,7 @@
 - You can have a sequence of letters from `A` to `D` and cycle through them.
 - And use `yield` to return the next letter.
 
-## 2. Generate an amount of seats
+## 2. Generate seats
 
 - The returned value should be of _type_ `generator`.
 - Row `13` should be skipped, so go from `12` to `14`.

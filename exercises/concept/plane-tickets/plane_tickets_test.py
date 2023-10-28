@@ -60,9 +60,9 @@ class PlaneTicketsTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=3)
     def test_task3(self):
-        input_vars = [["Passenger1", "Passenger2", "Passenger3", "Passenger4", "Passenger5"], 
+        input_vars = [["Passenger1", "Passenger2", "Passenger3", "Passenger4", "Passenger5"],
                       ["TicketNo=5644", "TicketNo=2273", "TicketNo=493", "TicketNo=5411", "TicketNo=824"]]
-        output = [{"Passenger1": "1A", "Passenger2": "1B", "Passenger3": "1C", "Passenger4": "1D", "Passenger5": "2A"}, 
+        output = [{"Passenger1": "1A", "Passenger2": "1B", "Passenger3": "1C", "Passenger4": "1D", "Passenger5": "2A"},
                   {"TicketNo=5644": "1A", "TicketNo=2273": "1B", "TicketNo=493": "1C", "TicketNo=5411": "1D", "TicketNo=824": "2A"}]
         for variant, (input_var, output) in enumerate(zip(input_vars, output), start=1):
             error_message = f"Expected: {output}, but something went wrong while assigning seats to passengers {input_var}."
