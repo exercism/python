@@ -18,7 +18,7 @@ Accessing elements, checking for membership via `in`, or appending items to the 
  For a similar data structure that supports memory efficient `appends`/`pops` from both sides, see [`collections.deque`][deque], which has approximately the same O(1) performance in either direction.
 
 
-Because lists are mutable and can contain references to arbitrary objects, they also take up more space in memory than a fixed-size [`array.array`][array.array] type of the same apparent length.
+Because lists are mutable and can contain references to arbitrary Python objects, they also take up more space in memory than an [`array.array`][array.array] or a [`tuple`][tuple] (_which is immutable_) of the same apparent length.
  Despite this, lists are an extremely flexible and useful data structure and many built-in methods and operations in Python produce lists as their output.
 
 
@@ -135,7 +135,8 @@ TypeError: 'int' object is not iterable
 
 ## Accessing elements
 
-Items inside lists (_as well as elements in other sequence types such as [`str`][string] & [`tuple`][tuple]_), can be accessed using  _bracket notation_. Indexes can be from **`left`** --> **`right`** (_starting at zero_) or **`right`** --> **`left`** (_starting at -1_).
+Items inside lists (_as well as elements in other sequence types such as [`str`][string] & [`tuple`][tuple]_), can be accessed using  _bracket notation_.
+Indexes can be from **`left`** --> **`right`** (_starting at zero_) or **`right`** --> **`left`** (_starting at -1_).
 
 
 <table>
@@ -173,9 +174,11 @@ Items inside lists (_as well as elements in other sequence types such as [`str`]
 'Toast'
 ```
 
-A section of a list can be accessed via _slice notation_ (`<list>[start:stop]`). A _slice_ is defined as an element sequence at position `index`, such that `start <= index < stop`. [_Slicing_][slice notation] returns a copy of the "sliced" items and does not modify the original `list`.
+A section of a list can be accessed via _slice notation_ (`<list>[start:stop]`).
+A _slice_ is defined as an element sequence at position `index`, such that `start <= index < stop`.
+[_Slicing_][slice notation] returns a copy of the "sliced" items and does not modify the original `list`.
 
-A `step` parameter can also be used in the slice (`[start:stop:step]`) to "skip over" or filter the returned elements (_for example, a `step` of 2 will select every other element in the section_):
+A `step` parameter can also be used in the slice (`<list>[<start>:<stop>:<step>]`) to "skip over" or filter the returned elements (_for example, a `step` of 2 will select every other element in the section_):
 
 ```python
 >>> colors = ["Red", "Purple", "Green", "Yellow", "Orange", "Pink", "Blue", "Grey"]
@@ -269,7 +272,7 @@ Lists can also be combined via various techniques:
 >>> first_one
 ['George', 5, 'cat', 'Tabby']
 
-# This loops through the first list and appends it's items to the end of the second list.
+# This loops through the first list and appends its items to the end of the second list.
 >>> first_one = ["cat", "Tabby"]
 >>> second_one = ["George", 5]
 
@@ -284,7 +287,7 @@ Lists can also be combined via various techniques:
 ## Some cautions
 
 Recall that variables in Python are _labels_ that point to _underlying objects_.
-`lists` add one more layer as  _container objects_ -- they hold object references for their collected items.
+`lists` add one more layer as  _container objects_ -- they hold object _references_ for their collected items.
 This can lead to multiple potential issues when working with lists, if not handled properly.
 
 
@@ -305,21 +308,22 @@ A `shallow_copy` will create a new `list` object, but **will not** create new ob
 
 #  Altering the list via the new name is the same as altering the list via the old name.
 >>> same_list.append("Clarke")
->>> same_list
 ["Tony", "Natasha", "Thor", "Bruce", "Clarke"]
+
 >>> actual_names
 ["Tony", "Natasha", "Thor", "Bruce", "Clarke"]
 
 #  Likewise, altering the data in the list via the original name will also alter the data under the new name.
 >>> actual_names[0] = "Wanda"
->>> same_list
 ['Wanda', 'Natasha', 'Thor', 'Bruce', 'Clarke']
 
 # If you copy the list, there will be two separate list objects which can be changed independently.
 >>> copied_list = actual_names.copy()
 >>> copied_list[0] = "Tony"
+
 >>> actual_names
 ['Wanda', 'Natasha', 'Thor', 'Bruce', 'Clarke']
+
 >>> copied_list
 ["Tony", "Natasha", "Thor", "Bruce", "Clarke"]
 ```
