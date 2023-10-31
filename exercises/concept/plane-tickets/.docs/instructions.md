@@ -1,6 +1,6 @@
 # Instructions
 
-Conda airlines is the programming-world's biggest airline, with over 10,000 flights a day!
+Conda Airlines is the programming-world's biggest airline, with over 10,000 flights a day!
 
 They are currently assigning all seats to passengers by hand; this will need to be automated.
 
@@ -16,7 +16,7 @@ The seats in each row are always named `A`, `B`, `C`, and `D`.
 The first seat in the row is `A`, the second seat in the row is `B`, and so on.
 After reaching `D`, it should start again with `A`.
 
-Implement a function `generate_seat_letters()` that accepts an `int` that holds how many seat letters to be generated.
+Implement a function `generate_seat_letters(<number>)` that accepts an `int` that holds how many seat letters to be generated.
 The function should then return an _iterable_ of seat letters.
 
 ```python
@@ -45,7 +45,7 @@ Here is an example:
 Many airlines do not have _row_ number 13 on their flights, due to superstition amongst passengers.
 Conda Airlines also follows this convention, so make sure you _don't_ generate seats for _row_ number 13.
 
-Implement a function `generate_seats()` that accepts an `int` that holds how many seats to be generated.
+Implement a function `generate_seats(<number>)` that accepts an `int` that holds how many seats to be generated.
 The function should then return an _iterable_ of seats given.
 
 ```python
@@ -60,7 +60,7 @@ The function should then return an _iterable_ of seats given.
 
 Now that you have a function that generates seats, you can use it to assign seats to passengers.
 
-Implement a function `assign_seats()` that accepts a `list` of passenger names.
+Implement a function `assign_seats(<passengers>)` that accepts a `list` of passenger names.
 The function should then return a _dictionary_ of `passenger` as _key_, and `seat_number` as _value_.
 
 ```python
@@ -80,7 +80,7 @@ They want you to create a system that creates a unique ticket that is _12_ chara
 This code begins with the `assigned_seat` followed by the `flight_id`.
 The rest of the code is appended by `0s`.
 
-Implement a function `generate_codes()` that accepts a `list` of `seat_numbers` and a `string` with the flight number.
+Implement a function `generate_codes(<seat_numbers>, <flight_id>)` that accepts a `list` of `seat_numbers` and a `string` with the flight number.
 The function should then return a `generator` that yields a `ticket_number`.
 
 ```python

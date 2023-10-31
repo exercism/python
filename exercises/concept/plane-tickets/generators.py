@@ -1,7 +1,8 @@
 """Functions to automate Conda airlines ticketing system."""
 
+
 def generate_seat_letters(number):
-    """ Generate a series of letters for airline seats.
+    """Generate a series of letters for airline seats.
 
     :param number: int - total number of seat letters to be generated.
     :return: generator - generator that yields seat letters.
@@ -17,7 +18,7 @@ def generate_seat_letters(number):
 
 
 def generate_seats(number):
-    """ Generate a series of identifiers for airline seats.
+    """Generate a series of identifiers for airline seats.
 
     :param number: int - total number of seats to be generated.
     :return: generator - generator that yields seat numbers.
@@ -36,7 +37,7 @@ def generate_seats(number):
     pass
 
 def assign_seats(passengers):
-    """ Assign seats to passengers.
+    """Assign seats to passengers.
 
     :param passengers: list[str] - a list of strings containing names of passengers.
     :return: dict - with the names of the passengers as keys and seat numbers as values.
@@ -55,3 +56,5 @@ def generate_codes(seat_numbers, flight_id):
     :return: generator - generator that yields 12 character long ticket codes.
 
     """
+
+    pass
