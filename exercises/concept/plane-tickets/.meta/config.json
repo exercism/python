@@ -3,19 +3,21 @@
     "J08K"
   ],
   "contributors": [
-    "BethanyG"
+    "BethanyG",
+    "kytrinyx",
+    "meatball133"
   ],
   "files": {
     "solution": [
-      "plane_tickets.py"
+      "generators.py"
     ],
     "test": [
-      "plane_tickets_test.py"
+      "generators_test.py"
     ],
     "exemplar": [
       ".meta/exemplar.py"
     ]
   },
   "icon": "new-passport",
-  "blurb": "Learn about generators by assigning seats to passengers."
+  "blurb": "Learn about generators by assigning seats to passengers on Anaconda Airlines."
 }

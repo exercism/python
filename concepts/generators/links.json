@@ -1,11 +1,15 @@
 [
   {
-    "url": "https://docs.python.org/3.10/reference/expressions.html#yield-expressions",
+    "url": "https://docs.python.org/3.11/reference/expressions.html#yield-expressions",
     "description": "Official Python 3.10 docs for the yield expression."
   },
   {
     "url": "https://en.wikipedia.org/wiki/Lazy_evaluation",
     "description": "Wikipedia page about lazy evaluation"
+  },
+  {
+    "url": "https://www.pythonmorsels.com/iterators/",
+    "description": "Python Morsels: Iterators & Generators"
   },
   {
     "url": "https://realpython.com/introduction-to-python-generators/",
