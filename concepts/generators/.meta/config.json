@@ -1,5 +1,9 @@
 {
-  "blurb": "Generator are functions that returns a lazy iterator, lazy iterator is an iterator like: list, tuple, etc. But doesn't need store its content in memory",
+  "blurb": "Generators are functions or expressions that return a special type of iterator called a 'generator-iterator'. Generator-iterators are lazy: they do not store their values in memory but generate them when needed.",
   "authors": ["J08K"],
-  "contributors": []
+  "contributors": [
+    "BethanyG",
+    "kytrinyx",
+    "meatball133"
+  ]
 }
