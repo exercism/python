@@ -44,7 +44,7 @@ class PlaneTicketsTest(unittest.TestCase):
         """Test if generate_seats() returns a generator type."""
 
         number = 7
-        error_message = (f'Called generate_seat_letters({number}). '
+        error_message = (f'Called generate_seats({number}). '
                          f'The function returned a {type(generate_seats(number))} type, '
                          f"but the tests expected the function to return a <class 'generator'> type.")
 
