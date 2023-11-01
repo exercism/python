@@ -1,5 +1,7 @@
 {
-  "authors": ["vaeng"],
+  "authors": [
+    "vaeng"
+  ],
   "files": {
     "solution": [
       "pop_count.py"
@@ -11,7 +13,7 @@
       ".meta/example.py"
     ]
   },
-  "blurb": "Count the 1 bits in a number",
+  "blurb": "Help Eluid count the number of eggs in her chicken coop by counting the number of 1 bits in a binary representation.",
   "source": "Christian Willner, Eric Willigers",
   "source_url": "https://forum.exercism.org/t/new-exercise-suggestion-pop-count/7632/5"
 }
