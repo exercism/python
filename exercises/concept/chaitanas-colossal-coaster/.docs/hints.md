@@ -1,11 +1,13 @@
 # General
 
-Make sure you have a good understanding of how to create and update lists.
+- Make sure you have a good understanding of how to create and update lists.
+- The Python [documentation on `lists`][python lists] can be really helpful.
+- The Python [tutorial section on `lists`][more on lists] is also a good resource.
 
 ## 1. Add Me to the queue
 
-- You need to find the ticket type with an `if-else` statement.
-- You can `append()` the person to the queue based on the ticket type.
+- An `if-else` statement can help you find which ticket type you are dealing with.
+- You can then `append()` the person to the queue based on the ticket type.
 
 ## 2. Where are my friends
 
@@ -29,7 +31,9 @@ Make sure you have a good understanding of how to create and update lists.
 
 ## 7. Sort the Queue List
 
-- Don't forget that You need to make a `copy()` of the queue to avoid mutating it and losing the original order.
+- Don't forget that You need to avoid mutating the queue and losing its original order.
 - Once you have a `copy()`, `sort()`-ing should be straightforward.
-- Order is alphabetical or _ascending_ sort.
+- We're looking for an _ascending_ sort, or _alphabetical from a-z_.
 
+[python lists]: https://docs.python.org/3.11/library/stdtypes.html#list
+[more on lists]: https://docs.python.org/3.11/tutorial/datastructures.html#more-on-lists
