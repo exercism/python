@@ -1,18 +1,18 @@
 [
   {
     "url": "https://docs.python.org/3/library/stdtypes.html#string-methods",
-    "description": "string methods"
+    "description": "Python Documentation: string methods"
   },
   {
     "url": "https://docs.python.org/3/library/stdtypes.html#common-sequence-operations",
-    "description": "common sequence operations"
+    "description": "Python Documentation: common sequence operations"
   },
   {
     "url": "https://realpython.com/python-strings/",
-    "description": "strings and character data in Python"
+    "description": "Real Python: strings and character data in Python"
   },
   {
     "url": "https://www.programiz.com/python-programming/string",
-    "description": "more string operations and functions"
+    "description": "Programiz: more string operations and functions"
   }
 ]

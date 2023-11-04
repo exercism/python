@@ -18,6 +18,7 @@ Some of the more commonly used `str` methods include:
 
 Being _immutable_, a `str` object's value in memory cannot change; methods that appear to modify a string return a new copy or instance of that `str` object.
 
+
 [`<str>.endswith(<suffix>)`][str-endswith] returns `True` if the string ends with `<suffix>`, `False` otherwise.
 
 ```python
