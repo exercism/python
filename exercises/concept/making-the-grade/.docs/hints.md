@@ -2,11 +2,11 @@
 
 ## General
 
-- `while` loops are used for _indefinite_ (uncounted) iteration
-- `for` loops are used for _definite_, (counted) iteration.
-- The keywords `break` and `continue` help customize loop behavior.
-- `range(<start>, stop, <step>)` can be used to generate a sequence for a loop counter.
-- The built-in `enumerate()` will return (`<value>`, `<index>`) pairs to iterate over.
+- [`while`][while-loops] loops are used for _indefinite_ (uncounted) iteration
+- [`for`][for-loops] loops are used for _definite_, (counted) iteration.
+- The keywords [`break` and `continue`][control flow] help customize loop behavior.
+- [`range(<start>, stop, <step>)`][range] can be used to generate a sequence for a loop counter.
+- The built-in [`enumerate()`][enumerate] will return (`<value>`, `<index>`) pairs to iterate over.
 
 Also being familiar with the following can help with completing the tasks:
 
@@ -47,11 +47,13 @@ Also being familiar with the following can help with completing the tasks:
 - There may be or may not be a student with a score of 100, and you can't return `[]` without checking **all** scores.
 - The [`control flow`][control flow] statements `continue` and `break` may be useful here to move past unwanted values.
 
-[list]: https://docs.python.org/3/library/stdtypes.html#list
-[str]: https://docs.python.org/3/library/stdtypes.html#str
-[f-strings]: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
 [append and pop]: https://docs.python.org/3/tutorial/datastructures.html#more-on-lists
-[enumerate]: https://docs.python.org/3/library/functions.html#enumerate
 [control flow]: https://docs.python.org/3/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops
+[enumerate]: https://docs.python.org/3/library/functions.html#enumerate
+[f-strings]: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
+[for-loops]: https://docs.python.org/3/tutorial/controlflow.html#for-statements
+[list]: https://docs.python.org/3/library/stdtypes.html#list
 [range]: https://docs.python.org/3/tutorial/controlflow.html#the-range-function
 [round]: https://docs.python.org/3/library/functions.html#round
+[str]: https://docs.python.org/3/library/stdtypes.html#str
+[while-loops]: https://docs.python.org/3/reference/compound_stmts.html#the-while-statement
