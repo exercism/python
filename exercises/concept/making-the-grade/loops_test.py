@@ -1,6 +1,5 @@
 import unittest
 import pytest
-from copy import deepcopy
 
 from loops import (
     round_scores,
