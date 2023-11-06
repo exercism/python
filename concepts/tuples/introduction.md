@@ -7,6 +7,6 @@ The elements of a tuple can be iterated over using the `for item in <tuple>` con
 If both element index and value are needed, `for index, item in enumerate(<tuple>)` can be used.
 Like any sequence, elements within `tuples` can be accessed via _bracket notation_ using a `0-based index` number from the left or a `-1-based index` number from the right.
 
-[tuple]: https://docs.python.org/3/library/stdtypes.html#tuple
 [common sequence operations]: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations
 [mutable sequence operations]: https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types
+[tuple]: https://docs.python.org/3/library/stdtypes.html#tuple

@@ -3,9 +3,9 @@
 ## General
 
 
-[Tuples][tuples] are immutable [sequence Types][sequence types] that can contain any data type.
-Tuples are [iterable][iterable], and elements within tuples can be accessed via [bracket notation][bracket notation], using a zero-based index from the left, or -1 from the right.
-Other [Common Sequence Operations][common sequence operations] can also be used when working with tuples.
+- [Tuples][tuples] are immutable [sequence Types][sequence types] that can contain any data type.
+- Tuples are [iterable][iterable].  If you need indexes as well as values, use [`enumerate()`][enumerate]
+- Elements within tuples can be accessed via [bracket notation][bracket notation], using a zero-based index from the left, or -1 from the right. Other [Common Sequence Operations][common sequence operations] can also be used when working with tuples.
 
 ## 1. Extract coordinates
 
@@ -35,14 +35,15 @@ Other [Common Sequence Operations][common sequence operations] can also be used 
 - There are multiple textual formatting options available via Pythons [`format specification mini-language`][format specification mini-language].
 
 
-[tuples]: https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences
-[sequence types]: https://docs.python.org/3/library/stdtypes.html#typesseq
-[iterable]: https://docs.python.org/3/glossary.html#term-iterable
 [bracket notation]: https://stackoverflow.com/questions/30250282/whats-the-difference-between-the-square-bracket-and-dot-notations-in-python
-[common sequence operations]: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations
-[class tuple]: https://docs.python.org/3/library/stdtypes.html#tuple
 [class str]: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
-[str.format]: https://docs.python.org/3/library/stdtypes.html#str.format
+[class tuple]: https://docs.python.org/3/library/stdtypes.html#tuple
+[common sequence operations]: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations
+[enumerate]: https://docs.python.org/3/library/functions.html#enumerate
 [f-strings]: https://docs.python.org/3/tutorial/inputoutput.html#formatted-string-literals
 [format specification mini-language]: https://docs.python.org/3/library/string.html#format-specification-mini-language
+[iterable]: https://docs.python.org/3/glossary.html#term-iterable
+[sequence types]: https://docs.python.org/3/library/stdtypes.html#typesseq
+[str.format]: https://docs.python.org/3/library/stdtypes.html#str.format
 [testing membership]: https://docs.python.org/3/reference/expressions.html#membership-test-operations
+[tuples]: https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences
