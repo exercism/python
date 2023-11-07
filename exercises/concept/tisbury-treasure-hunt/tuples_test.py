@@ -1,6 +1,10 @@
 import unittest
 import pytest
-from tuples import get_coordinate, convert_coordinate, compare_records, create_record, clean_up
+from tuples import (get_coordinate,
+                    convert_coordinate,
+                    compare_records,
+                    create_record,
+                    clean_up)
 
 
 class TisburyTreasureTest(unittest.TestCase):
@@ -22,15 +26,20 @@ class TisburyTreasureTest(unittest.TestCase):
                       ('Silver Seahorse', '4E')]
 
         result_data = ['2A', '4B', '1C', '6D', '7E', '7F', '6A', '8A', '5B', '8C', '1F', '3D', '4E']
-        number_of_variants = range(1, len(input_data) + 1)
 
-        for variant, item, result in zip(number_of_variants, input_data, result_data):
-            with self.subTest(f'variation #{variant}', item=item, result=result):
-                self.assertEqual(get_coordinate(item), result)
+        for variant, (item, expected) in enumerate(zip(input_data, result_data), start=1):
+            with self.subTest(f'variation #{variant}', item=item, expected=expected):
+                actual_result = get_coordinate(item)
+                error_message = (f'Called get_coordinate({item}). '
+                                f'The function returned "{actual_result}", but '
+                                f'the tests expected "{expected}" as the coordinates.')
+
+                self.assertEqual(actual_result, expected, msg=error_message)
 
     @pytest.mark.task(taskno=2)
     def test_convert_coordinate(self):
-        input_data = ['2A', '4B', '1C', '6D', '7E', '7F', '6A', '8A', '5B', '8C', '1F', '3D', '4E']
+        input_data = ['2A', '4B', '1C', '6D', '7E', '7F',
+                      '6A', '8A', '5B', '8C', '1F', '3D', '4E']
         result_data = [('2', 'A'),
                        ('4', 'B'),
                        ('1', 'C'),
@@ -45,11 +54,14 @@ class TisburyTreasureTest(unittest.TestCase):
                        ('3', 'D'),
                        ('4', 'E')]
 
-        number_of_variants = range(1, len(input_data) + 1)
+        for variant, (item, expected) in enumerate(zip(input_data, result_data), start=1):
+            with self.subTest(f'variation #{variant}', item=item, expected=expected):
+                actual_result = convert_coordinate(item)
+                error_message = (f'Called convert_coordinate({item}). '
+                                 f'The function returned {actual_result}, but the '
+                                 f'tests expected {expected} as the converted coordinate.')
 
-        for variant, item, result in zip(number_of_variants, input_data, result_data):
-            with self.subTest(f'variation #{variant}', item=item, result=result):
-                self.assertEqual(convert_coordinate(item), result)
+                self.assertEqual(actual_result, expected, msg=error_message)
 
     @pytest.mark.task(taskno=3)
     def test_compare_records(self):
@@ -66,11 +78,15 @@ class TisburyTreasureTest(unittest.TestCase):
                 (('Carved Wooden Elephant', '8C'), ('Abandoned Lighthouse', ('4', 'B'), 'Blue'))
         ]
         result_data = [True, True, True, True, True, False, False, False, False, False]
-        number_of_variants = range(1, len(input_data) + 1)
 
-        for variant, item, result in zip(number_of_variants, input_data, result_data):
-            with self.subTest(f'variation #{variant}', item=item, result=result):
-                self.assertEqual(compare_records(item[0], item[1]), result)
+        for variant, (item, expected) in enumerate(zip(input_data, result_data), start=1):
+            with self.subTest(f'variation #{variant}', item=item, expected=expected):
+                actual_result = compare_records(item[0], item[1])
+                error_message = (f'Called compare_records({item[0]}, {item[1]}). '
+                                 f'The function returned {actual_result}, but the '
+                                 f'tests expected {expected}.')
+
+                self.assertEqual(actual_result, expected, msg=error_message)
 
     @pytest.mark.task(taskno=4)
     def test_create_record(self):
@@ -99,11 +115,15 @@ class TisburyTreasureTest(unittest.TestCase):
                 'not a match'
         ]
 
-        number_of_variants = range(1, len(input_data) + 1)
+        for variant, (item, expected) in enumerate(zip(input_data, result_data), start=1):
+            with self.subTest(f'variation #{variant}', item=item, expected=expected):
+                actual_result = create_record(item[0], item[1])
+                error_message = (f'Called create_record({item[0]},{item[1]}). '
+                                 f'The function returned '
+                                 f'{actual_result}, but the tests expected '
+                                 f'{expected} for the record.')
 
-        for variant, item, result in zip(number_of_variants, input_data, result_data):
-            with self.subTest(f'variation #{variant}', item=item, result=result):
-                self.assertEqual(create_record(item[0], item[1]), result)
+                self.assertEqual(actual_result, expected, msg=error_message)
 
     @pytest.mark.task(taskno=5)
     def test_clean_up(self):
