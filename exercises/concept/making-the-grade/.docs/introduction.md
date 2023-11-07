@@ -172,13 +172,13 @@ The [`break`][break statement] (_like in many C-related languages_) keyword can 
 'loop broken.'
 ```
 
-[for statement]: https://docs.python.org/3/reference/compound_stmts.html#for
-[range]: https://docs.python.org/3/library/stdtypes.html#range
 [break statement]: https://docs.python.org/3/reference/simple_stmts.html#the-break-statement
-[continue statement]: https://docs.python.org/3/reference/simple_stmts.html#the-continue-statement
-[while statement]: https://docs.python.org/3/reference/compound_stmts.html#the-while-statement
-[iterable]: https://docs.python.org/3/glossary.html#term-iterable
-[truth value testing]: https://docs.python.org/3/library/stdtypes.html#truth-value-testing
-[enumerate]: https://docs.python.org/3/library/functions.html#enumerate
 [common sequence operations]: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations
+[continue statement]: https://docs.python.org/3/reference/simple_stmts.html#the-continue-statement
+[enumerate]: https://docs.python.org/3/library/functions.html#enumerate
+[for statement]: https://docs.python.org/3/reference/compound_stmts.html#for
+[iterable]: https://docs.python.org/3/glossary.html#term-iterable
 [next built-in]: https://docs.python.org/3/library/functions.html#next
+[range]: https://docs.python.org/3/library/stdtypes.html#range
+[truth value testing]: https://docs.python.org/3/library/stdtypes.html#truth-value-testing
+[while statement]: https://docs.python.org/3/reference/compound_stmts.html#the-while-statement
