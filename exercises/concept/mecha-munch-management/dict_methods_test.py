@@ -1,5 +1,6 @@
 import unittest
 import pytest
+from collections import OrderedDict
 from dict_methods import (add_item,
                           read_notes,
                           update_recipes,
@@ -22,10 +23,14 @@ class MechaMunchManagementTest(unittest.TestCase):
                        {'Orange': 1, 'Raspberry': 3, 'Blueberries': 11},
                        {'Broccoli': 2, 'Banana': 3, 'Kiwi': 3, 'Melon': 1, 'Apple': 1}]
 
-        for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
-            with self.subTest(f'variation #{variant}', input_data=input_data, output_data=output_data):
-                error_msg=f'Expected: {output_data} but got a different shopping cart.'
-                self.assertEqual(add_item(input_data[0], input_data[1]), output_data, msg=error_msg)
+        for variant, (input_data, expected) in enumerate(zip(input_data, output_data), start=1):
+            with self.subTest(f'variation #{variant}', input_data=input_data, expected=expected):
+                actual_result = add_item(input_data[0], input_data[1])
+                error_msg= (f'Called add_item({input_data[0]}, {input_data[1]}). '
+                            f'The function returned {actual_result}, but the tests '
+                            f'expected: {expected} once the item was added.')
+
+                self.assertEqual(actual_result, expected, msg=error_msg)
         
 
     @pytest.mark.task(taskno=2)
@@ -36,10 +41,14 @@ class MechaMunchManagementTest(unittest.TestCase):
         output_data = [{'Apple': 1, 'Banana': 1}, {'Orange': 1, 'Raspberry': 1, 'Blueberries': 1},
                        {'Broccoli': 1, 'Kiwi': 1, 'Melon': 1, 'Apple': 1, 'Banana': 1}]
 
-        for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
-            with self.subTest(f'variation #{variant}', input_data=input_data, output_data=output_data):
-                error_msg=f'Expected: {output_data} but got a different shopping cart.'
-                self.assertEqual(read_notes(input_data), output_data, msg=error_msg)
+        for variant, (input_data, expected) in enumerate(zip(input_data, output_data), start=1):
+            with self.subTest(f'variation #{variant}', input_data=input_data, expected=expected):
+                actual_result = read_notes(input_data)
+                error_msg = (f'Called read_notes({input_data}). '
+                             f'The function returned {actual_result}, but the tests '
+                             f'expected: {expected} once the notes were read.')
+
+                self.assertEqual(actual_result, expected, msg=error_msg)
 
     @pytest.mark.task(taskno=3)
     def test_update_recipes(self):
@@ -72,10 +81,14 @@ class MechaMunchManagementTest(unittest.TestCase):
                         'Blueberry Crumble': {'Blueberries': 2, 'Whipped Creme': 2, 'Granola Topping': 2, 'Yogurt': 3}}
                      ]
 
-        for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
-            with self.subTest(f'variation #{variant}', input_data=input_data, output_data=output_data):
-                error_msg=f'Expected: {output_data} but got a different ideas instead.'
-                self.assertEqual(update_recipes(input_data[0], input_data[1]), output_data, msg=error_msg)
+        for variant, (input_data, expected) in enumerate(zip(input_data, output_data), start=1):
+            with self.subTest(f'variation #{variant}', input_data=input_data, expected=expected):
+                actual_result = update_recipes(input_data[0], input_data[1])
+                error_msg = (f'Called update_recipes({input_data[0]}, {input_data[1]}). '
+                             f'The function returned {actual_result}, but the tests '
+                             f'expected: {expected} once the recipes were updated.')
+
+                self.assertEqual(actual_result, expected, msg=error_msg)
 
     @pytest.mark.task(taskno=4)
     def test_sort_entries(self):
@@ -88,41 +101,65 @@ class MechaMunchManagementTest(unittest.TestCase):
 
         output_data = [
                         {'Apple': 2, 'Banana': 4, 'Orange': 1, 'Pear': 12},
-                        {'Avocado': 2, 'Apple': 3, 'Banana': 1, 'Orange': 5},
-                        {'Apple': 1, 'Orange': 3, 'Banana': 2},
+                        {'Apple': 3, 'Avocado': 2, 'Banana': 1, 'Orange': 5},
+                        {'Apple': 1, 'Banana': 2, 'Orange': 3},
                         {'Apple' : 2, 'Blueberries': 5, 'Broccoli': 2, 'Kiwi': 1, 'Melon': 4, 'Raspberry': 2}
                       ]
 
-        for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
-            with self.subTest(f'variation #{variant}', input_data=input_data, output_data=output_data):
-                error_msg=f'Expected: {output_data} but got a different sorted list instead.'
-                self.assertEqual(sort_entries(input_data), output_data, msg=error_msg)
+        for variant, (input_data, expected) in enumerate(zip(input_data, output_data), start=1):
+            with self.subTest(f'variation #{variant}', input_data=input_data, expecred=expected):
+                actual_result = sort_entries(input_data)
+                error_msg = (f'Called sort_entries({input_data}). '
+                             f'The function returned {actual_result}, but the tests '
+                             f'expected: {expected} for the sorted entries.')
+
+                # Because we are asserting equal, we need to convert to an OrderedDict.
+                # Regular dictionaries will compare equal even when they are ordered
+                # differently from one another. See https://stackoverflow.com/a/58961124
+                self.assertEqual(OrderedDict(actual_result), OrderedDict(expected), msg=error_msg)
 
     @pytest.mark.task(taskno=5)
     def test_send_to_store(self):
         input_data = [
                         ({'Banana': 3, 'Apple': 2, 'Orange': 1, 'Milk': 2},
-                         {'Banana': ['Isle 5', False], 'Apple': ['Isle 4', False], 'Orange': ['Isle 4', False], 'Milk': ['Isle 2', True]}),
+                         {'Banana': ['Isle 5', False], 'Apple': ['Isle 4', False],
+                          'Orange': ['Isle 4', False], 'Milk': ['Isle 2', True]}),
 
                         ({'Kiwi': 3, 'Juice': 5, 'Yoghurt': 2, 'Milk': 5},
-                         {'Kiwi': ['Isle 6', False], 'Juice': ['Isle 5', False], 'Yoghurt': ['Isle 2', True], 'Milk': ['Isle 2', True]}),
+                         {'Kiwi': ['Isle 6', False], 'Juice': ['Isle 5', False],
+                          'Yoghurt': ['Isle 2', True], 'Milk': ['Isle 2', True]}),
 
-                        ({'Apple': 2, 'Raspberry': 2, 'Blueberries': 5, 'Broccoli' : 2, 'Kiwi': 1, 'Melon': 4},
-                         {'Apple': ['Isle 1', False], 'Raspberry': ['Isle 6', False], 'Blueberries': ['Isle 6', False],
-                          'Broccoli': ['Isle 3', False], 'Kiwi': ['Isle 6', False], 'Melon': ['Isle 6', False]})
+                        ({'Apple': 2, 'Raspberry': 2, 'Blueberries': 5,
+                          'Broccoli' : 2, 'Kiwi': 1, 'Melon': 4},
+
+                         {'Apple': ['Isle 1', False], 'Raspberry': ['Isle 6', False],
+                          'Blueberries': ['Isle 6', False], 'Broccoli': ['Isle 3', False],
+                          'Kiwi': ['Isle 6', False], 'Melon': ['Isle 6', False]})
                       ]
 
         output_data = [
-                        {'Orange': [1, 'Isle 4', False], 'Milk': [2, 'Isle 2', True], 'Banana': [3, 'Isle 5', False], 'Apple': [2, 'Isle 4', False]},
-                        {'Juice': [5, 'Isle 5', False], 'Yoghurt': [2, 'Isle 2', True], 'Milk': [5, 'Isle 2', True], 'Kiwi': [3, 'Isle 6', False]},
-                        {'Kiwi': [1, 'Isle 6', False], 'Melon': [4, 'Isle 6', False], 'Apple': [2, 'Isle 1', False],
-                         'Raspberry': [2, 'Isle 6', False], 'Blueberries': [5, 'Isle 6', False], 'Broccoli': [2, 'Isle 3', False]}
+                        {'Orange': [1, 'Isle 4', False], 'Milk': [2, 'Isle 2', True],
+                         'Banana': [3, 'Isle 5', False], 'Apple': [2, 'Isle 4', False]},
+
+                        {'Yoghurt': [2, 'Isle 2', True], 'Milk': [5, 'Isle 2', True],
+                         'Kiwi': [3, 'Isle 6', False], 'Juice': [5, 'Isle 5', False]},
+
+                        {'Raspberry': [2, 'Isle 6', False], 'Melon': [4, 'Isle 6', False],
+                         'Kiwi': [1, 'Isle 6', False], 'Broccoli': [2, 'Isle 3', False],
+                         'Blueberries': [5, 'Isle 6', False], 'Apple': [2, 'Isle 1', False]}
                       ]
 
-        for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
-            with self.subTest(f'variation #{variant}', input_data=input_data, output_data=output_data):
-                error_msg=f'Expected: {output_data} but got a different fulfillment_cart instead.'
-                self.assertEqual(send_to_store(input_data[0], input_data[1]), output_data, msg=error_msg)
+        for variant, (input_data, expected) in enumerate(zip(input_data, output_data), start=1):
+            with self.subTest(f'variation #{variant}', input_data=input_data, expected=expected):
+                actual_result = send_to_store(input_data[0], input_data[1])
+                error_msg = (f'Called send_to_store({input_data[0]}, {input_data[1]}). '
+                             f'The function returned {actual_result}, but the tests '
+                             f'expected: {expected} as the fulfillment cart.')
+
+                # Because we are asserting equal, we need to convert to an OrderedDict.
+                # Regular dictionaries will compare equal even when they are ordered
+                # differently from one another. See https://stackoverflow.com/a/58961124
+                self.assertEqual(OrderedDict(actual_result), OrderedDict(expected), msg=error_msg)
 
     @pytest.mark.task(taskno=6)
     def test_update_store_inventory(self):
@@ -155,7 +192,11 @@ class MechaMunchManagementTest(unittest.TestCase):
                          'Blueberries': [5, 'Isle 6', False], 'Broccoli': [3, 'Isle 3', False]}
                       ]
 
-        for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
-            with self.subTest(f'variation #{variant}', input_data=input_data, output_data=output_data):
-                error_msg=f'Expected: {output_data} but got a different store inventory instead.'
-                self.assertEqual(update_store_inventory(input_data[0], input_data[1]), output_data, msg=error_msg)
+        for variant, (input_data, expected) in enumerate(zip(input_data, output_data), start=1):
+            with self.subTest(f'variation #{variant}', input_data=input_data, expected=expected):
+                actual_result = update_store_inventory(input_data[0], input_data[1])
+                error_msg = (f'Called update_store_inventory({input_data[0]}, {input_data[1]}). '
+                             f'The function returned {actual_result}, but the tests '
+                             f'expected: {expected} as the store inventory.')
+
+                self.assertEqual(actual_result, expected, msg=error_msg)
