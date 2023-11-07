@@ -8,7 +8,7 @@
 
 ## 1. Check for criticality
 
-- Comparison operators and boolean operations can be combined and used with conditionals.
+- Comparison operators ([comparisons][comparisons review]) and boolean operations ([concept:python/bools]()) can be combined and used with conditionals.
 - Conditional expressions must evaluate to `True` or `False`.
 - `else` can be used for a code block that will execute when all conditional tests return `False`.
 
@@ -16,9 +16,9 @@
      >>> item = 'blue'
      >>> item_2 = 'green'
      
-     >>>  if len(item) >=3 and len(item_2) < 5:
+     >>>  if len(item) >= 3 and len(item_2) < 5:
             print('Both pass the test!')
-          elif len(item) >=3 or len(item_2) < 5:
+          elif len(item) >= 3 or len(item_2) < 5:
             print('One passes the test!')
           else:
             print('None pass the test!')
@@ -29,20 +29,20 @@
 ## 2. Determine the Power output range
 
 - Comparison operators can be combined and used with conditionals.
-- Any number of `elif` statements can be used as "branches".
+- Any number of `elif` statements can be used as decision "branches".
 - Each "branch" can have a separate `return`
 
 ## 3. Fail Safe Mechanism
 
 - Comparison operators can be combined and used with conditionals.
-- Any number of `elif` statements can be used as "branches".
+- Any number of `elif` statements can be used as decision "branches".
 - Each "branch" can have a separate `return`
 
 
-[python comparisons examples]: https://www.tutorialspoint.com/python/comparison_operators_example.htm
 [boolean operations]: https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not
+[comparisons review]: https://www.learnpython.dev/02-introduction-to-python/090-boolean-logic/20-comparisons/
 [comparisons]: https://docs.python.org/3/library/stdtypes.html#comparisons
-[python booleans]: https://realpython.com/python-boolean/
-[real python conditionals]: https://realpython.com/python-conditional-statements/
 [control flow tools]: https://docs.python.org/3/tutorial/controlflow.html
-
+[python booleans]: https://realpython.com/python-boolean/
+[python comparisons examples]: https://www.tutorialspoint.com/python/comparison_operators_example.htm
+[real python conditionals]: https://realpython.com/python-conditional-statements/

@@ -3,11 +3,11 @@
 
 ## Goal
 
-The goal of this exercise is to teach the student what is a `conditional` and how they are used in Python.
+The goal of this exercise is to teach the student about `conditionals` and how they are used in Python.
 
 ## Learning objectives
 
-- learn some general things about `control flow` in python
+- learn some general things about `control flow` in Python
 - create a `conditional` structure to choose something, take a decision
 - use an `if...else` structure
 - use an `if..elif...else` structure

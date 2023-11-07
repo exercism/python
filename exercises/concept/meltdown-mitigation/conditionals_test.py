@@ -30,8 +30,10 @@ class MeltdownMitigationTest(unittest.TestCase):
 
                 # pylint: disable=assignment-from-no-return
                 actual_result = is_criticality_balanced(temp, neutrons_emitted)
-                failure_message = (f'Expected {expected} but returned {actual_result} '
-                                   f'with T={temp} and neutrons={neutrons_emitted}')
+                failure_message = (f'Called is_criticality_balanced({temp}, {neutrons_emitted}). '
+                                   f' The function returned {actual_result}, '
+                                   f'but the test expected {expected} as the return value.')
+
                 self.assertEqual(actual_result, expected, failure_message)
 
     @pytest.mark.task(taskno=2)
@@ -52,8 +54,10 @@ class MeltdownMitigationTest(unittest.TestCase):
 
                 # pylint: disable=assignment-from-no-return
                 actual_result = reactor_efficiency(voltage, current, theoretical_max_power)
-                failure_message = (f'Expected {expected} but returned {actual_result} '
-                                   f'with voltage={voltage}, current={current}, max_pow={theoretical_max_power}')
+                failure_message =(f'Called reactor_efficiency({voltage}, {current}, {theoretical_max_power}). '
+                                  f'The function returned {actual_result}, '
+                                  f'but the test expected {expected} as the return value.')
+
                 self.assertEqual(actual_result, expected, failure_message)
 
     @pytest.mark.task(taskno=3)
@@ -71,6 +75,8 @@ class MeltdownMitigationTest(unittest.TestCase):
 
                 # pylint: disable=assignment-from-no-return
                 actual_result = fail_safe(temp, neutrons_per_second, threshold)
-                failure_message = (f'Expected {expected} but returned {actual_result} with T={temp}, '
-                                   f'neutrons={neutrons_per_second}, threshold={threshold}')
+                failure_message = (f'Called fail_safe({temp}, {neutrons_per_second}, {threshold}). '
+                                   f'The function returned {actual_result}, '
+                                   f'but the test expected {expected} as the return value.')
+
                 self.assertEqual(actual_result, expected, failure_message)
