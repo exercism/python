@@ -228,4 +228,3 @@ Strings support all [common sequence operations][common sequence operations].
 [str-split]: https://docs.python.org/3/library/stdtypes.html#str.split
 [text sequence]: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
 [unicode code points]: https://stackoverflow.com/questions/27331819/whats-the-difference-between-a-character-a-code-point-a-glyph-and-a-grapheme
-

@@ -1,6 +1,6 @@
 # Instructions
 
-You are helping your younger sister with her English vocabulary homework, which she's finding very tedious.
+You are helping your younger sister with her English vocabulary homework, which she is finding very tedious.
  Her class is learning to create new words by adding _prefixes_ and _suffixes_.
  Given a set of words, the teacher is looking for correctly transformed words with correct spelling by adding the prefix to the beginning or the suffix to the ending.
 
@@ -12,7 +12,7 @@ There's four activities in the assignment, each with a set of text or words to w
 One of the most common prefixes in English is `un`, meaning "not".
  In this activity, your sister needs to make negative, or "not" words by adding `un` to them.
 
-Implement the `add_prefix_un()` function that takes `word` as a parameter and returns a new `un` prefixed word:
+Implement the `add_prefix_un(<word>)` function that takes `word` as a parameter and returns a new `un` prefixed word:
 
 
 ```python
@@ -63,7 +63,7 @@ Implement the `make_word_groups(<vocab_words>)` function that takes a `vocab_wor
   But of course there are pesky spelling rules: If the root word originally ended in a consonant followed by a 'y', then the 'y' was changed to 'i'.
  Removing 'ness' needs to restore the 'y' in those root words. e.g. `happiness` --> `happi` --> `happy`.
 
-Implement the `remove_suffix_ness(<word>)` function that takes in a word `str`, and returns the root word without the `ness` suffix.
+Implement the `remove_suffix_ness(<word>)` function that takes in a `word`, and returns the root word without the `ness` suffix.
 
 
 ```python
@@ -76,7 +76,7 @@ Implement the `remove_suffix_ness(<word>)` function that takes in a word `str`, 
 
 ## 4. Extract and transform a word
 
-Suffixes are often used to change the part of speech a word has.
+Suffixes are often used to change the part of speech a word is assigned to.
  A common practice in English is "verbing" or "verbifying" -- where an adjective _becomes_ a verb by adding an `en` suffix.
 
 In this task, your sister is going to practice "verbing" words by extracting an adjective from a sentence and turning it into a verb.
