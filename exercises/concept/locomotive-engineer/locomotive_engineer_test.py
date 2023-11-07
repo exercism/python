@@ -14,10 +14,15 @@ class LocomotiveEngineerTest(unittest.TestCase):
         input_data = [(1,5,2,7,4), (1,5), (1,), (1,9,3), (1,10,6,3,9,8,4,14,24,7)]
         output_data = [[1,5,2,7,4], [1,5], [1], [1,9,3], [1,10,6,3,9,8,4,14,24,7]]
 
-        for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
-            with self.subTest(f'variation #{variant}', input_data=input_data, output_data=output_data):
-                error_msg=f'Expected: {output_data} but got a different wagon list instead.'
-                self.assertEqual(get_list_of_wagons(*input_data), output_data, msg=error_msg)
+        for variant, (input_data, expected) in enumerate(zip(input_data, output_data), start=1):
+            with self.subTest(f'variation #{variant}', input_data=input_data, expected=expected):
+
+                actual_result = get_list_of_wagons(*input_data)
+                error_msg= (f'Called get_list_of_wagons{input_data}. '
+                            f'The function returned {actual_result}, but the '
+                            f'tests expected: {expected} as the wagon list instead.')
+
+                self.assertEqual(actual_result, expected, msg=error_msg)
 
     @pytest.mark.task(taskno=2)
     def test_fix_list_of_wagons(self):
@@ -31,10 +36,15 @@ class LocomotiveEngineerTest(unittest.TestCase):
                         [1, 8, 6, 15, 4, 2], 
                         [1, 8, 6, 4, 5, 9, 21, 2, 13, 25, 7, 19, 10, 3, 14]
                     ]
-        for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
-            with self.subTest(f'variation #{variant}', input_data=input_data, output_data=output_data):
-                error_msg=f'Expected: {output_data} but got a different wagon list instead.'
-                self.assertEqual(fix_list_of_wagons(input_data[0], input_data[1]), output_data, msg=error_msg)
+        for variant, (input_data, expected) in enumerate(zip(input_data, output_data), start=1):
+            with self.subTest(f'variation #{variant}', input_data=input_data, expected=expected):
+
+                actual_result = fix_list_of_wagons(input_data[0], input_data[1])
+                error_msg= (f'Called fix_list_of_wagons({input_data[0]}, {input_data[1]}). '
+                            f'The function returned {actual_result}, but the '
+                            f'tests expected: {expected} as the wagon list instead.')
+
+                self.assertEqual(actual_result, expected, msg=error_msg)
 
     @pytest.mark.task(taskno=3)
     def test_add_missing_stops(self): 
@@ -48,10 +58,15 @@ class LocomotiveEngineerTest(unittest.TestCase):
                         {'from': 'New York', 'to': 'Philadelphia', 'stops': []},
                         {'from': 'Gothenburg', 'to': 'Copenhagen', 'stops': ['Kungsbacka', 'Varberg', 'Halmstad', 'Angelholm', 'Lund', 'Malmo']}
                     ]
-        for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
-            with self.subTest(f'variation #{variant}', input_data=input_data, output_data=output_data):
-                error_msg=f'Expected: {output_data} but got a different set of stops instead.'
-                self.assertEqual(add_missing_stops(input_data[0], **input_data[1]), output_data, msg=error_msg)
+        for variant, (input_data, expected) in enumerate(zip(input_data, output_data), start=1):
+            with self.subTest(f'variation #{variant}', input_data=input_data, expected=expected):
+
+                actual_result = add_missing_stops(input_data[0], **input_data[1])
+                error_msg= (f'Called add_missing_stops({input_data[0]}, {input_data[1]}). '
+                            f'The function returned {actual_result}, but the '
+                            f'tests expected: {expected} as the set of stops.')
+
+                self.assertEqual(actual_result, expected, msg=error_msg)
 
     @pytest.mark.task(taskno=4)
     def test_extend_route_information(self): 
@@ -63,10 +78,15 @@ class LocomotiveEngineerTest(unittest.TestCase):
                         {'from': 'Gothenburg', 'to': 'Copenhagen', 'precipitation': '1', 'timeOfArrival': '21:20', 'temperature': '-6'}
                     ]
 
-        for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
-            with self.subTest(f'variation #{variant}', input_data=input_data, output_data=output_data):
-                error_msg=f'Expected: {output_data} but got a different route dictionary instead.'
-                self.assertEqual(extend_route_information(input_data[0], input_data[1]), output_data, msg=error_msg)
+        for variant, (input_data, expected) in enumerate(zip(input_data, output_data), start=1):
+            with self.subTest(f'variation #{variant}', input_data=input_data, expected=expected):
+
+                actual_result = extend_route_information(input_data[0], input_data[1])
+                error_msg= (f'Called extend_route_information({input_data[0]}, {input_data[1]}). '
+                            f'The function returned {actual_result}, but the '
+                            f'tests expected: {expected} as the route dictionary.')
+
+                self.assertEqual(actual_result, expected, msg=error_msg)
 
     @pytest.mark.task(taskno=5)
     def test_fix_wagon_depot(self):
@@ -84,7 +104,12 @@ class LocomotiveEngineerTest(unittest.TestCase):
             [[(3, 'purple'), (20, 'black'), (19, 'white')], [(11, 'purple'), (16, 'black'), (17, 'white')], [(15, 'purple'), (12, 'black'), (18, 'white')]]
         )
 
-        for variant, (input_data, output_data) in enumerate(zip(input_data, output_data), start=1):
-            with self.subTest(f'variation #{variant}', input_data=input_data, output_data=output_data):
-                error_msg=f'Expected: {output_data} but got a different wagon depot list instead.'
-                self.assertEqual(fix_wagon_depot(input_data), output_data, msg=error_msg)
+        for variant, (input_data, expected) in enumerate(zip(input_data, output_data), start=1):
+            with self.subTest(f'variation #{variant}', input_data=input_data, expected=expected):
+
+                actual_result = fix_wagon_depot(input_data)
+                error_msg= (f'Called fix_wagon_depot({input_data}). '
+                            f'The function returned {actual_result}, but the '
+                            f'tests expected: {expected} as the wagon depot list.')
+
+                self.assertEqual(actual_result, expected, msg=error_msg)
