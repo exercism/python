@@ -2,7 +2,7 @@
 
 A [`list`][list] is a mutable collection of items in _sequence_.
 Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold reference to any (or multiple) data type(s) - including other lists.
-Like any [sequence][sequence type], items can be accessed via `0-based index` number from the left and `-1-base index` from the right.
+Like any [sequence][sequence type], items can be accessed via `0-based index` number from the left and `-1-based index` from the right.
 Lists can be copied in whole or in part via [slice notation][slice notation] or `<list>.copy()`.
 
 Lists support both [common][common sequence operations] and [mutable][mutable sequence operations] sequence operations such as `min()`/`max()`, `<list>.index()`, `<list>.append()` and `<list>.reverse()`.
