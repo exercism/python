@@ -8,14 +8,18 @@ This includes numbers, strings, lists, and even functions.
 
 We'll dig more into what all of that means as we continue through the track.
 
-This first exercise introduces 4 major Python language features: Name Assignment (_variables and constants_), Functions (_and the return keyword_), Comments, and Docstrings.
+This first exercise introduces 4 major Python language features:
+1.  Name Assignment (_variables and constants_),
+2.  Functions (_the `def` keyword and the `return` keyword_),
+3.  Comments, and
+4.  Docstrings.
 
 
 ~~~~exercism/note
 
 In general, content, tests, and analyzer tooling for the Python track follow the style conventions outlined in [PEP 8](https://www.python.org/dev/peps/pep-0008/) and [PEP 257](https://www.python.org/dev/peps/pep-0257/) for Python code style, with the additional (strong) suggestion that there be no single letter variable names.
 
-On the Python track, [variables][variables] are always written in [`snake_case`][snake case], and constants in `SCREAMING_SNAKE_CASE`
+On the Python track, [variables][variables] are always written in [`snake_case`][snake case], and constants in `SCREAMING_SNAKE_CASE`.
 
 [variables]: https://realpython.com/python-variables/
 [snake case]: https://en.wikipedia.org/wiki/Snake_case
@@ -84,7 +88,7 @@ IndentationError: unindent does not match any outer indentation level
 ```
 
 Functions explicitly return a value or object via the [`return`][return] keyword.
-Functions that do not have an explicit `return` expression will _implicitly_ return [`None`][none].
+Functions that do not have an _explicit_ `return` expression will _implicitly_ return [`None`][none].
 
 ```python
 # Function definition on first line.
@@ -201,7 +205,6 @@ Raise a number to an arbitrary power.
     Takes number_one and raises it to the power of number_two, returning the result.
 ```
 
-[pep257]: https://www.python.org/dev/peps/pep-0257/
 [calls]: https://docs.python.org/3/reference/expressions.html#calls
 [comments]: https://realpython.com/python-comments-guide/#python-commenting-basics
 [docstring]: https://docs.python.org/3/tutorial/controlflow.html#tut-docstrings
@@ -215,5 +218,6 @@ Raise a number to an arbitrary power.
 [module]: https://docs.python.org/3/tutorial/modules.html
 [none]: https://docs.python.org/3/library/constants.html
 [parameters]: https://docs.python.org/3/glossary.html#term-parameter
+[pep257]: https://www.python.org/dev/peps/pep-0257/
 [return]: https://docs.python.org/3/reference/simple_stmts.html#return
 [type hints]: https://docs.python.org/3/library/typing.html
