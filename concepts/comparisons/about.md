@@ -29,7 +29,7 @@ Numeric types are (mostly) an exception to this type matching rule.
 An `integer` **can** be considered equal to a `float` (_or an [`octal`][octal] equal to a [`hexadecimal`][hex]_), as long as the types can be implicitly converted for comparison.
 
 For the other numeric types ([complex][complex numbers], [decimal][decimal numbers], [fractions][rational numbers]), comparison operators are defined where they "make sense" (_where implicit conversion does not change the outcome_), but throw a `TypeError` if the underlying objects cannot be accurately converted for comparison.
-For more information on the rules that python uses for numeric conversion, see [arithmetic conversions][arithmetic conversions] in the Python documentation.
+For more information on the rules that Python uses for numeric conversion, see [arithmetic conversions][arithmetic conversions] in the Python documentation.
 
 ```python
 >>> import fractions
@@ -47,7 +47,8 @@ True
 >>> 6/3 == 0b10
 True
 
-# An int can be converted to a complex number with a 0 imaginary part.
+# An int can be converted to a complex 
+# number with a 0 imaginary part.
 >>> 17 == complex(17)
 True
 
@@ -60,8 +61,8 @@ True
 ```
 
 Any ordered comparison of a number to a `NaN` (_not a number_) type is `False`.
-A confusing side-effect of Python's `NaN` definition is that `NaN` never compares equal to `NaN`.
-If you are curious as to why `Nan` was defined this way in Python, this [Stack Overflow Post on NaN][so nan post] around the setting of the international standard is an interesting read.
+A confusing side effect of Python's `NaN` definition is that `NaN` never compares equal to `NaN`.
+If you are curious as to why `NaN` was defined this way in Python, this [Stack Overflow Post on NaN][so nan post] around the setting of the international standard is an interesting read.
 
 ```python
 >>> x = float('NaN')
@@ -188,7 +189,7 @@ See the Python reference docs on [value comparisons][value comparisons none] and
 >>> my_fav_numbers is your_fav_numbers
 True
 
-# The returned id will differ by system and python version.
+# The returned id will differ by system and Python version.
 >>> id(my_fav_numbers)
 4517478208
 
