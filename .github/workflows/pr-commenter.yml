@@ -4,7 +4,7 @@ on:
 
 jobs:
   pr-comment:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: exercism/pr-commenter-action@v1.5.1
         with:
