@@ -9,16 +9,16 @@ jobs:
     name: Comments for every NEW issue.
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
 
       - name: Read issue-comment.md
         id: issue-comment
-        uses: juliangruber/read-file-action@v1
+        uses: juliangruber/read-file-action@02bbba9876a8f870efd4ad64e3b9088d3fb94d4b
         with:
           path: .github/issue-comment.md
 
       - name: Base comment
-        uses: jd-0001/gh-action-comment-on-new-issue@v2.0.3
+        uses: jd-0001/gh-action-comment-on-new-issue@c443e1151cc69b146fd6918cc983ec1bd27ab254
         with:
           message: "${{ steps.issue-comment.outputs.content }}"
           ignore-label: ":anger: prickle"

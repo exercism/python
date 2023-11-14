@@ -6,7 +6,7 @@ jobs:
   pr-comment:
     runs-on: ubuntu-22.04
     steps:
-      - uses: exercism/pr-commenter-action@v1.5.1
+      - uses: exercism/pr-commenter-action@085ef62d2a541a112c3ade1d24deea83665ea186
         with:
           github-token: "${{ github.token }}"
           config-file: ".github/pr-commenter.yml"
