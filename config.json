@@ -1487,18 +1487,8 @@
         "slug": "scale-generator",
         "name": "Scale Generator",
         "uuid": "8cd58325-61fc-46fd-85f9-425b4c41f3de",
-        "practices": ["generators"],
-        "prerequisites": [
-          "basics",
-          "bools",
-          "conditionals",
-          "dicts",
-          "list-methods",
-          "lists",
-          "loops",
-          "string-methods",
-          "strings"
-        ],
+        "practices": [],
+        "prerequisites": [],
         "difficulty": 4,
         "status": "deprecated"
       },
