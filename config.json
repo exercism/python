@@ -1499,7 +1499,8 @@
           "string-methods",
           "strings"
         ],
-        "difficulty": 4
+        "difficulty": 4,
+        "status": "deprecated"
       },
       {
         "slug": "largest-series-product",
