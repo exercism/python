@@ -18,7 +18,7 @@ A reactor is said to be critical if it satisfies the following conditions:
 - The number of neutrons emitted per second is greater than 500.
 - The product of temperature and neutrons emitted per second is less than 500000.
 
-Implement the function `is_criticality_balanced()` that takes `temperature` measured in kelvin and `neutrons_emitted` as parameters, and returns `True` if the criticality conditions are met, `False` if not.
+Implement the function `is_criticality_balanced()` that takes `temperature` measured in kelvin and `neutrons_emitted` as parameters, and returns `True` if all of the criticality conditions are met, `False` if not.
 
 ```python
 >>> is_criticality_balanced(750, 600)
