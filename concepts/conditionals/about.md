@@ -55,7 +55,7 @@ else:
 >>> z is greater than x and y
 ```
 
-[Boolen operations][boolean operations] and [comparisons][comparisons] can be combined with conditionals for more complex testing:
+[Boolean operations][boolean operations] and [comparisons][comparisons] can be combined with conditionals for more complex testing:
 
 ```python
 
