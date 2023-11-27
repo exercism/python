@@ -177,7 +177,8 @@ Complex numbers may not make the world go round, but they are great for explaini
 Less obviously, sound is wave-like, light is wave-like, radio signals are wave-like, and even the economy of your home country is at least partly wave-like.
 
 
-A lot of this can be done with trig functions (`sin()` and `cos()`) but that gets messy quickly.
+A lot of this wave processing can be done with trig functions (`sin()` and `cos()`) but that gets messy quite quickly.
+
 Complex exponentials are ___much___ easier to work with.
 
 ### But I never use complex numbers!
