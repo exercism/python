@@ -127,7 +127,8 @@ The Python standard library has a [`math`][math-module] module full of useful fu
 It also has an equivalent [`cmath`][cmath] module for working with complex numbers.
 
 
-Details are available in the [`cmath`][cmath] module documents, but the main categories are:
+We encourage you to read through the module and experiment, but the main categories are:
+
 - conversion between Cartesian and polar coordinates
 - exponential and log functions
 - trig functions
