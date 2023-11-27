@@ -124,7 +124,8 @@ Because of the way complex multiplication works, this is more useful than you mi
 
 The Python standard library has a [`math`][math-module] module full of useful functionality for working with real numbers.
 
-It also has an equivalent `cmath` module for complex numbers.
+It also has an equivalent [`cmath`][cmath] module for working with complex numbers.
+
 
 Details are available in the [`cmath`][cmath] module documents, but the main categories are:
 - conversion between Cartesian and polar coordinates
