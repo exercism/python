@@ -186,7 +186,8 @@ Complex exponentials are ___much___ easier to work with.
 
 Only true if you are living in a cave and foraging for your food.
 
-If you read this on any sort of screen, you are utterly dependent on some useful 20th-centry advances.
+If you are reading this on any sort of screen, you are utterly dependent on some useful 20th-Century advances made through the use of complex numbers.
+
 
 1. __Semiconductor chips__. 
     - These make no sense in classical physics and can only be explained (and designed) by quantum mechanics (QM).
