@@ -179,7 +179,9 @@ If you read this on any sort of screen, you are utterly dependent on some useful
 2. __The Fast Fourier Transform algorithm__. 
     - FFT is an application of complex numbers, and it is in _everything_ connected to sound transmission, audio processing, photos, and video.
 
-    - Audio files? MP3 and other formats use FFT for compression. So does MP4 video, JPEG photos, among many others.
+    -MP3 and other audio formats use FFT for compression, ensuring more audio can fit within a smaller storage space. 
+    - JPEG compression and MP4 video, among many other image and video formats also use FTT for compression.
+
     - Also, it is in the digital filters that let a cellphone mast separate your signal from everyone else's.
 
 So, you are probably using complex numbers thousands of times per second.
