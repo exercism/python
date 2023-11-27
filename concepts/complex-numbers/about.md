@@ -65,8 +65,9 @@ Most of the [`operators`][operators] used with floats and ints also work with co
 
 
 ```python
->>> z1, z2
-((1.5+2j), (2+1.5j))
+>>> z1 = (1.5+2j)
+>>> z2 = (2+1.5j)
+
 
 >>> z1 + z2  # addition
 (3.5+3.5j)
