@@ -98,7 +98,8 @@ Any [mathematical][math-complex] or [electrical engineering][engineering-complex
 Alternatively, Exercism has a `Complex Numbers` practice exercise where you can implement a complex number class with these operations from first principles.
 
 
-Integer division is ___not___ possible on complex numbers, so the `//` and `%` operators and `divmod()` function will fail.
+Integer division is ___not___ possible on complex numbers, so the `//` and `%` operators and `divmod()` functions will fail for the complex number type.
+
 
 There are two functions that are useful with complex numbers:
 - `conjugate()` simply flips the sign of the complex part.
