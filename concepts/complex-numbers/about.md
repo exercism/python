@@ -14,7 +14,7 @@ Again, it is best to focus on the underlying simplicity and not the strange name
 
 There are two common ways to create complex numbers.
 
-The `complex(real, imag)` constructor takes two `float` parameters:
+The [`complex(real, imag)`][complex] constructor takes two `float` parameters:
 
 ```python
 >>> z1 = complex(1.5, 2.0)
@@ -208,3 +208,9 @@ So, you are probably using technology that relies on complex number calculations
 [complex]: https://docs.python.org/3/library/functions.html#complex
 [cmath]: https://docs.python.org/3/library/cmath.html
 [operators]: https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
+[math-module]: https://docs.python.org/3/library/math.html
+[math-complex]: https://www.nagwa.com/en/videos/143121736364/
+[engineering-complex]: https://www.khanacademy.org/science/electrical-engineering/ee-circuit-analysis-topic/ee-ac-analysis/v/ee-complex-numbers
+[ints]: https://docs.python.org/3/library/functions.html#int
+[floats]: https://docs.python.org/3/library/functions.html#float
+
