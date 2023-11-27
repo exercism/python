@@ -12,7 +12,8 @@ A `complex` value in Python is essentially a pair of floating-point numbers.
 These are called the "real" and "imaginary" parts, for unfortunate historical reasons.
 Again, it is best to focus on the underlying simplicity and not the strange names.
 
-There are two common ways to create them.
+There are two common ways to create complex numbers.
+
 The `complex(real, imag)` constructor takes two `float` parameters:
 
 ```python
