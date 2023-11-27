@@ -174,7 +174,8 @@ You can see things rotate.
 Complex numbers may not make the world go round, but they are great for explaining _what happens_ as a result of the world going round: look at any satellite image of a major storm.
 
 
-Less obviously, sound is wave-like, light is wave-like, radio signals are wave-like, The economy of your home country is at least partly wave-like.
+Less obviously, sound is wave-like, light is wave-like, radio signals are wave-like, and even the economy of your home country is at least partly wave-like.
+
 
 A lot of this can be done with trig functions (`sin()` and `cos()`) but that gets messy quickly.
 Complex exponentials are ___much___ easier to work with.
