@@ -181,7 +181,8 @@ A lot of this wave processing can be done with trig functions (`sin()` and `cos(
 
 Complex exponentials are ___much___ easier to work with.
 
-### But I never use complex numbers!
+### But I don't need complex numbers!
+
 
 Only true if you are living in a cave and foraging for your food.
 
