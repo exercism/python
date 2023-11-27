@@ -61,7 +61,8 @@ To access the parts individually:
 
 ## Arithmetic
 
-Most of the [`operators`][operators] used with floats also work with complex
+Most of the [`operators`][operators] used with floats and ints also work with complex numbers:
+
 
 ```python
 >>> z1, z2
