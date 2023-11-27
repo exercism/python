@@ -23,7 +23,8 @@ The `complex(real, imag)` constructor takes two `float` parameters:
 ```
 
 Most engineers are happy with `j`.
-Most scientists and mathematicians prefer `i`, but in designing Python the engineers won.
+Most scientists and mathematicians prefer the mathematical notation `i`, but in designing Python the engineers won.
+
 
 So there are two rules for an imaginary part:
 - It is designated with `j` not `i`.
