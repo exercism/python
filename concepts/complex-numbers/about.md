@@ -171,7 +171,8 @@ It turns out that complex numbers are the simplest way to describe anything that
 So they are used widely in electrical engineering, audio processing, physics, computer gaming, and navigation - to name only a few applications.
 
 You can see things rotate.
-Complex numbers may not make the world go round, but they are great for explaining what happens as a result of the world going round: look at any satellite image of a major storm.
+Complex numbers may not make the world go round, but they are great for explaining _what happens_ as a result of the world going round: look at any satellite image of a major storm.
+
 
 Less obviously, sound is wave-like, light is wave-like, radio signals are wave-like, The economy of your home country is at least partly wave-like.
 
