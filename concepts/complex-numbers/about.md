@@ -168,6 +168,7 @@ It was strange and new in the 16th century.
 ### Why would anyone use these?
 
 It turns out that complex numbers are the simplest way to describe anything that rotates or anything with a wave-like property.
+So they are used widely in electrical engineering, audio processing, physics, computer gaming, and navigation - to name only a few applications.
 
 You can see things rotate.
 Complex numbers may not make the world go round, but they are great for explaining what happens as a result of the world going round: look at any satellite image of a major storm.
