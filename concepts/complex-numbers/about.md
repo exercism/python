@@ -182,7 +182,8 @@ If you read this on any sort of screen, you are utterly dependent on some useful
     -MP3 and other audio formats use FFT for compression, ensuring more audio can fit within a smaller storage space. 
     - JPEG compression and MP4 video, among many other image and video formats also use FTT for compression.
 
-    - Also, it is in the digital filters that let a cellphone mast separate your signal from everyone else's.
+    - FFT is also deployed in the digital filters that allow cellphone towers to separate your personal cell signal from everyone else's.
+
 
 So, you are probably using complex numbers thousands of times per second.
 Be grateful to the tech people who understand this stuff so that you maybe don't need to.
