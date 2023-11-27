@@ -187,7 +187,6 @@ If you read this on any sort of screen, you are utterly dependent on some useful
 
 So, you are probably using technology that relies on complex number calculations thousands of times per second.
 
-Be grateful to the tech people who understand this stuff so that you maybe don't need to.
 
 [complex]: https://docs.python.org/3/library/functions.html#complex
 [cmath]: https://docs.python.org/3/library/cmath.html
