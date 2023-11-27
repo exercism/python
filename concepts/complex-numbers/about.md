@@ -106,7 +106,8 @@ There are two functions implemented for numeric types that are very useful when 
 - `<imaginary number>.conjugate()` simply flips the sign of the imaginary part of a complex number (_from + to - or vice-versa_).
 
 Because of the way complex multiplication works, this is more useful than you might think.
-- `abs()` is guaranteed to return a real number with no imaginary part.
+- `abs(<complex number>)` is guaranteed to return a real number with no imaginary part.
+
 
 ```python
 >>> z1
