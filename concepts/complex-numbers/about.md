@@ -95,7 +95,8 @@ Explaining the rules for complex number multiplication and division is out of sc
 
 Any [mathematical][math-complex] or [electrical engineering][engineering-complex] introduction to complex numbers will cover this, should you want to dig into the topic.
 
-Alternatively, Exercism has a `Complex Numbers` practice exercise where you can implement this from first principles.
+Alternatively, Exercism has a `Complex Numbers` practice exercise where you can implement a complex number class with these operations from first principles.
+
 
 Integer division is ___not___ possible on complex numbers, so the `//` and `%` operators and `divmod()` function will fail.
 
