@@ -3,7 +3,8 @@
 `Complex numbers` are not complicated.
 They just need a less alarming name.
 
-They are so useful, especially in engineering and science, that Python includes [`complex`][complex] as a standard type alongside integers and floating-point numbers.
+They are so useful, especially in engineering and science, that Python includes [`complex`][complex] as a standard numeric type alongside integers ([`int`s][ints]) and floating-point numbers ([`float`s][floats]).
+
 
 ## Basics
 
