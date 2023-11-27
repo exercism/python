@@ -91,7 +91,8 @@ Most of the [`operators`][operators] used with floats and ints also work with co
 (-1+0j)
 ```
 
-Explaining the rules for complex multiplication and division is out of scope here.
+Explaining the rules for complex number multiplication and division is out of scope for this concept (_and you are unlikely to have to perform those operations "by hand" very often_).
+
 Any introduction to complex numbers will cover this.
 Alternatively, Exercism has a `Complex Numbers` practice exercise where you can implement this from first principles.
 
