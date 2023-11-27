@@ -103,7 +103,8 @@ Integer division is ___not___ possible on complex numbers, so the `//` and `%` o
 
 There are two functions implemented for numeric types that are very useful when working with complex numbers:
 
-- `conjugate()` simply flips the sign of the complex part.
+- `<imaginary number>.conjugate()` simply flips the sign of the imaginary part of a complex number (_from + to - or vice-versa_).
+
 Because of the way complex multiplication works, this is more useful than you might think.
 - `abs()` is guaranteed to return a real number with no imaginary part.
 
