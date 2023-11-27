@@ -129,12 +129,14 @@ It also has an equivalent [`cmath`][cmath] module for working with complex numbe
 
 We encourage you to read through the module and experiment, but the main categories are:
 
-- conversion between Cartesian and polar coordinates
-- exponential and log functions
-- trig functions
-- hyperbolic functions
-- classification functions
-- useful constants
+- Conversion between Cartesian and polar coordinates,
+- Exponential and log functions,
+- Trigonometric functions,
+- Hyperbolic functions,
+- Classification functions, and
+- Useful constants.
+
+Here is an example using some constants:
 
 ```python
 >>> import cmath
