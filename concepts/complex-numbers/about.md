@@ -93,7 +93,8 @@ Most of the [`operators`][operators] used with floats and ints also work with co
 
 Explaining the rules for complex number multiplication and division is out of scope for this concept (_and you are unlikely to have to perform those operations "by hand" very often_).
 
-Any introduction to complex numbers will cover this.
+Any [mathematical][math-complex] or [electrical engineering][engineering-complex] introduction to complex numbers will cover this, should you want to dig into the topic.
+
 Alternatively, Exercism has a `Complex Numbers` practice exercise where you can implement this from first principles.
 
 Integer division is ___not___ possible on complex numbers, so the `//` and `%` operators and `divmod()` function will fail.
