@@ -177,7 +177,8 @@ If you read this on any sort of screen, you are utterly dependent on some useful
     - These make no sense in classical physics and can only be explained (and designed) by quantum mechanics (QM).
     - In QM, everything is complex-valued by definition.
 2. __The Fast Fourier Transform algorithm__. 
-    - FFT is an application of complex numbers, and it is in everything.
+    - FFT is an application of complex numbers, and it is in _everything_ connected to sound transmission, audio processing, photos, and video.
+
     - Audio files? MP3 and other formats use FFT for compression. So does MP4 video, JPEG photos, among many others.
     - Also, it is in the digital filters that let a cellphone mast separate your signal from everyone else's.
 
