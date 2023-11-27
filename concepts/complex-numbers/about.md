@@ -122,7 +122,8 @@ Because of the way complex multiplication works, this is more useful than you mi
 
 ## The `cmath` module
 
-The Python standard library has a `math` module full of useful functionality for working with real numbers.
+The Python standard library has a [`math`][math-module] module full of useful functionality for working with real numbers.
+
 It also has an equivalent `cmath` module for complex numbers.
 
 Details are available in the [`cmath`][cmath] module documents, but the main categories are:
