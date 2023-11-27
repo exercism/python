@@ -1,6 +1,6 @@
 # About
 
-The [`Fractions`][fractions] module allows us to handle `rational numbers`: fractions with an integer numerator divided by an integer denominator.
+The [`Fractions`][fractions] module allows us to handle [`rational numbers`][rational]: fractions with an integer numerator divided by an integer denominator.
 For example, we can store `2/3` as an exact fraction instead of the approximate `float` value `0.6666...`
 
 ## Creating
@@ -33,8 +33,9 @@ Fraction(2, 3)
 ```
 
 It can work with `float` parameters, but this may run into problems with the approximate nature of representing the decimal value interally as binary. 
-For a more reliable result, there is the `limit_denominator()` method.
-This can take an integer parameter if you have specific requirements, but even the default can work well.
+For a more reliable result, there is the `<fraction>.limit_denominator()` method.
+
+[`.limit_denominator()`][limit_denominator] can take an integer parameter if you have specific requirements, but even the default (`max_denominator=1000000`) can work well and give an acceptable, simple approximation.
 
 ```python
 >>> Fraction(1.2)
@@ -46,9 +47,10 @@ Fraction(6, 5)
 
 ## Arithmetic
 
-The usual arithmetic operators `+ - * / **` work with fractions.
+The usual [`arithmetic operators`][operators] `+ - * / **` work with fractions, as with other numeric types.
+
 Integers and other `Fraction`s can be included and give a `Fraction` result.
-Including a `float` results in `float` output.
+Including a `float` in the expression results in `float` output.
 
 ```python
 >>> Fraction(2, 3) + Fraction(1, 4) # addition
@@ -71,7 +73,7 @@ Fraction(4, 9)
 
 Fractions are great for preserving precision during intermediate calculations, but may not be what you want for the final output.
 
-It is possible to get the numerator and denominator individually or as a tuple:
+It is possible to get the numerator and denominator individually or as a tuple ([`tuples`][tuple] will be discussed in a later Concept):
 
 ```python
 >>> Fraction(2, 3).numerator
@@ -82,7 +84,7 @@ It is possible to get the numerator and denominator individually or as a tuple:
 (2, 3)
 ```
 
-Various standard Python functions also give the expected result:
+Various standard Python numeric functions also give the result you might expect from working with `int` and `float` types:
 
 ```python
 >>> round(Fraction(11, 3))
@@ -99,3 +101,7 @@ Various standard Python functions also give the expected result:
 ```
 
 [fractions]: https://docs.python.org/3/library/fractions.html
+[tuple]: https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences
+[operators]: https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
+[rational]: https://en.wikipedia.org/wiki/Rational_number
+[limit_denominator]: https://docs.python.org/3/library/fractions.html
