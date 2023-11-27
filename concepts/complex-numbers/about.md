@@ -191,7 +191,8 @@ If you are reading this on any sort of screen, you are utterly dependent on some
 
 1. __Semiconductor chips__. 
     - These make no sense in classical physics and can only be explained (and designed) by quantum mechanics (QM).
-    - In QM, everything is complex-valued by definition.
+    - In QM, everything is complex-valued by definition. (_its waveforms all the way down_)
+
 2. __The Fast Fourier Transform algorithm__. 
     - FFT is an application of complex numbers, and it is in _everything_ connected to sound transmission, audio processing, photos, and video.
 
