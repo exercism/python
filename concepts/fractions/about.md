@@ -38,7 +38,9 @@ The fractions constructor can also parse a string representation:
 Fraction(2, 3)
 ```
 
-It can work with `float` parameters, but this may run into problems with the approximate nature of representing the decimal value interally as binary. 
+It can also work with `float` parameters, but this may run into problems with the approximate nature of representing the decimal value internally as binary.
+For more on this representation issue, see the [0.30000000000000004][0.30000000000000004] website, and [Floating Point Arithmetic: Issues and Limitations ][fp-issues] in the Python documentation. 
+
 For a more reliable result, there is the `<fraction>.limit_denominator()` method.
 
 [`.limit_denominator()`][limit_denominator] can take an integer parameter if you have specific requirements, but even the default (`max_denominator=1000000`) can work well and give an acceptable, simple approximation.
