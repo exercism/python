@@ -113,7 +113,10 @@ Various standard Python numeric functions also give the result you might expect 
 ```
 
 [fractions]: https://docs.python.org/3/library/fractions.html
+[0.30000000000000004]: https://0.30000000000000004.com/
+[fp-issues]: https://docs.python.org/3/tutorial/floatingpoint.html#tut-fp-issues
 [tuple]: https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences
+
 [operators]: https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
 [rational]: https://en.wikipedia.org/wiki/Rational_number
 [limit_denominator]: https://docs.python.org/3/library/fractions.html
