@@ -11,7 +11,8 @@ Unlike `int`, `float`, and `complex` numbers, fractions do not have a literal fo
 However, the fractions constructor is quite flexible.
 
 Most obviously, it can take take two integers.
-Common factors are removed, to convert the fraction to its "lowest form": the smallest integers that accurately represent the fraction.
+Common factors are automatically removed, converting the fraction to its "lowest form": the smallest integers that accurately represent the fraction.
+
 
 ```python
 >>> from fractions import Fraction
