@@ -1,6 +1,7 @@
 # About
 
-The [`Fractions`][fractions] module allows us to handle [`rational numbers`][rational]: fractions with an integer numerator divided by an integer denominator.
+The [`Fractions`][fractions] module allows us to create and work with [`rational numbers`][rational]: fractions with an integer numerator divided by an integer denominator.
+
 For example, we can store `2/3` as an exact fraction instead of the approximate `float` value `0.6666...`
 
 ## Creating Fractions
