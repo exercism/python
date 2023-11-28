@@ -54,7 +54,8 @@ Fraction(5404319552844595, 4503599627370496)
 Fraction(6, 5)
 ```
 
-## Arithmetic
+## Arithmetic with Fractions
+
 
 The usual [`arithmetic operators`][operators] `+ - * / **` work with fractions, as with other numeric types.
 
