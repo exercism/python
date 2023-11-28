@@ -22,6 +22,20 @@ There are two common ways to create complex numbers.
 (1.5+2j)
 ```
 
+The constructor can also parse string input.
+This has the odd limitation that it fails if the string contains spaces.
+
+```python
+>>> complex('4+2j')
+(4+2j)
+
+>>> complex('4 + 2j')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: complex() arg is a malformed string
+```
+
+
 2) The complex number can be specified as `<real part> + <complex part>j`, or just `<complex part>j` if the real part is zero:
 
 ```python
