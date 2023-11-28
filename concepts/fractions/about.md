@@ -29,7 +29,8 @@ Fraction(2, 3)  # automatically simplified
 True
 ```
 
-It can also parse a string representation of the fraction:
+The fractions constructor can also parse a string representation:
+
 
 ```python
 >>> f3 = Fraction('2/3')
