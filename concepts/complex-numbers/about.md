@@ -26,7 +26,8 @@ Most engineers are happy with `j`.
 Most scientists and mathematicians prefer the mathematical notation `i`, but in designing Python the engineers won.
 
 
-So there are two rules for an imaginary part:
+So there are two rules for an imaginary part in Python:
+
 - It is designated with `j` not `i`.
 - The `j` must immediately follow a number, to prevent Python seeing it as a variable name. If necessary, use `1j`.
 
@@ -59,6 +60,19 @@ To access the parts individually:
 1.5
 ```
 
+Either part can be zero and mathematicians may then talk of the number being "wholly real" or "wholly imaginary".
+However, it is still a complex number in Python.
+
+```python
+>>> complex(0, 1)
+1j
+>>> type(complex(0, 1))
+<class 'complex'>
+
+>>> complex(1, 0)
+(1+0j)
+```
+
 ## Arithmetic
 
 Most of the [`operators`][operators] used with floats and ints also work with complex numbers:
@@ -87,7 +101,7 @@ Most of the [`operators`][operators] used with floats and ints also work with co
 >>> 2 ** z1  # another exponentiation
 (0.5188946835878313+2.7804223253571183j)
 
->>> 1j ** 2 # j is the square root of -1
+>>> 1j ** 2  # j * j == -1
 (-1+0j)
 ```
 
@@ -103,9 +117,8 @@ Integer division is ___not___ possible on complex numbers, so the `//` and `%` o
 
 There are two functions implemented for numeric types that are very useful when working with complex numbers:
 
-- `<imaginary number>.conjugate()` simply flips the sign of the imaginary part of a complex number (_from + to - or vice-versa_).
-
-Because of the way complex multiplication works, this is more useful than you might think.
+- `<complex number>.conjugate()` simply flips the sign of the imaginary part of a complex number (_from + to - or vice-versa_).
+    - Because of the way complex multiplication works, this is more useful than you might think.
 - `abs(<complex number>)` is guaranteed to return a real number with no imaginary part.
 
 
