@@ -14,7 +14,7 @@ Again, it is best to focus on the underlying simplicity and not the strange name
 
 There are two common ways to create complex numbers.
 
-The [`complex(real, imag)`][complex] constructor takes two `float` parameters:
+1) The [`complex(real, imag)`][complex] constructor takes two `float` parameters:
 
 ```python
 >>> z1 = complex(1.5, 2.0)
@@ -22,13 +22,18 @@ The [`complex(real, imag)`][complex] constructor takes two `float` parameters:
 (1.5+2j)
 ```
 
-Most engineers are happy with `j`.
-Most scientists and mathematicians prefer the mathematical notation `i`, but in designing Python the engineers won.
+2) The complex number can be specified as `<real part> + <complex part>j`, or just `<complex part>j` if the real part is zero:
 
+```python
+>>> z2 = 2.0 + 1.5j
+>>> z2
+(2+1.5j)
+```
+The end result is identical to using a constructor.
 
-So there are two rules for an imaginary part in Python:
+There are two rules for an imaginary part in Python:
 
-- It is designated with `j` not `i`.
+- It is designated with `j` (not `i` as you may see in textbooks).
 - The `j` must immediately follow a number, to prevent Python seeing it as a variable name. If necessary, use `1j`.
 
 ```python
@@ -44,13 +49,8 @@ NameError: name 'j' is not defined
 <class 'complex'>
 ```
 
-With this, we have a second and perhaps clearer way to create a complex number:
-```python
->>> z2 = 2.0 + 1.5j
->>> z2
-(2+1.5j)
-```
-The end result is identical to using a constructor.
+Most engineers are happy with `j`.
+Most scientists and mathematicians prefer the mathematical notation `i`, but in designing Python the engineers won.
 
 To access the parts individually:
 ```python
@@ -72,6 +72,15 @@ However, it is still a complex number in Python.
 >>> complex(1, 0)
 (1+0j)
 ```
+
+You may have heard that "`i` (or `j`) is the square root of -1".
+
+For now, all this means is that the imaginary part _by definition_ satisfies the equality
+```python
+1j * 1j == -1  # => True
+```
+
+This is a simple idea, but it leads to interesting consequences.
 
 ## Arithmetic
 
