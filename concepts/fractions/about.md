@@ -60,7 +60,8 @@ Fraction(6, 5)
 The usual [`arithmetic operators`][operators] `+ - * / **` work with fractions, as with other numeric types.
 
 Integers and other `Fraction`s can be included and give a `Fraction` result.
-Including a `float` in the expression results in `float` output.
+Including a `float` in the expression results in `float` output, with a consequent (possible) loss in precision.
+
 
 ```python
 >>> Fraction(2, 3) + Fraction(1, 4) # addition
