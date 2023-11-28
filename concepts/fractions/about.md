@@ -80,7 +80,8 @@ Fraction(4, 5)
 Fraction(4, 9)
 ```
 
-## Conversions
+## Conversions to and from Fractions
+
 
 Fractions are great for preserving precision during intermediate calculations, but may not be what you want for the final output.
 
