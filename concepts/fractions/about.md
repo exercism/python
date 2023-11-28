@@ -6,7 +6,9 @@ For example, we can store `2/3` as an exact fraction instead of the approximate 
 ## Creating Fractions
 
 
-The constructor is quite flexible.
+Unlike `int`, `float`, and `complex` numbers, fractions do not have a literal form.
+However, the fractions constructor is quite flexible.
+
 Most obviously, it can take take two integers.
 Common factors are removed, to convert the fraction to its "lowest form": the smallest integers that accurately represent the fraction.
 
