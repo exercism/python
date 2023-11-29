@@ -2567,6 +2567,11 @@
       "uuid": "565f7618-4552-4eb0-b829-d6bacd03deaf",
       "slug": "with-statement",
       "name": "With Statement"
+    },
+    {
+      "uuid": "af6cad74-50c2-48f4-a6ce-cfeb72548d00",
+      "slug": "random",
+      "name": "Random"
     }
   ],
   "key_features": [
