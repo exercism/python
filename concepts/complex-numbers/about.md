@@ -72,7 +72,8 @@ Most scientists and mathematicians prefer the mathematical notation `i` for _ima
 So in designing Python, the Electrical Engineers won.
 
 
-To access the parts individually:
+To access the parts of a complex number individually:
+
 ```python
 >>> z2.real
 2.0
