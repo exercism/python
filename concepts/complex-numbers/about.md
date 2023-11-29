@@ -68,7 +68,9 @@ NameError: name 'j' is not defined
 ```
 
 Most engineers are happy with `j`.
-Most scientists and mathematicians prefer the mathematical notation `i`, but in designing Python the engineers won.
+Most scientists and mathematicians prefer the mathematical notation `i` for _imaginary_, but that notation conflicts with the use of `i` to mean _current_ in Electrical Engineering.
+So in designing Python, the Electrical Engineers won.
+
 
 To access the parts individually:
 ```python
