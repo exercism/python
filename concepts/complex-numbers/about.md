@@ -82,7 +82,8 @@ To access the parts of a complex number individually:
 ```
 
 Either part can be zero and mathematicians may then talk of the number being "wholly real" or "wholly imaginary".
-However, it is still a complex number in Python.
+However, it is still a complex number in Python:
+
 
 ```python
 >>> complex(0, 1)
