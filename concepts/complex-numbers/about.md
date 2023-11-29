@@ -36,7 +36,8 @@ ValueError: complex() arg is a malformed string
 ```
 
 
-2) The complex number can be specified as `<real part> + <complex part>j`, or just `<complex part>j` if the real part is zero:
+2) The complex number can be specified as `<real part> + <complex part>j` literal, or just `<complex part>j` if the real part is zero:
+
 
 ```python
 >>> z2 = 2.0 + 1.5j
