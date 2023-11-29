@@ -44,7 +44,8 @@ ValueError: complex() arg is a malformed string
 >>> z2
 (2+1.5j)
 ```
-The end result is identical to using a constructor.
+The end result is identical to using the `complex()` constructor.
+
 
 There are two rules for that imaginary part of the complex number:
 
