@@ -49,7 +49,8 @@ The end result is identical to using a constructor.
 There are two rules for that imaginary part of the complex number:
 
 
-- It is designated with `j` (not `i` as you may see in textbooks).
+- It is designated with `j` (not `i` as you may see in math textbooks).
+
 - The `j` must immediately follow a number, to prevent Python seeing it as a variable name. If necessary, use `1j`.
 
 ```python
