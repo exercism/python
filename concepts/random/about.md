@@ -38,7 +38,7 @@ Possible results from `randint()` _include_ the upper bound, so `randint(a, b)` 
 
 >>> random.randrange(500)
 219
->>> [random.randrange(0, 10, 2) for n in range(10)]
+>>> [random.randrange(0, 10, 2) for _ in range(10)]
 [2, 8, 4, 0, 4, 2, 6, 6, 8, 8]
 
 >>> random.randint(1, 6)  # roll a die
@@ -58,7 +58,7 @@ The `choice()` function will return one random entry from a sequence.
 At its simplest, the coin-flip example:
 
 ```python
->>> [random.choice(['H', 'T']) for n in range(5)]
+>>> [random.choice(['H', 'T']) for _ in range(5)]
 ['T', 'H', 'H', 'T', 'H']
 ```
 
@@ -132,10 +132,10 @@ __`random()`__ gives a `float` value `x` such that `0.0 <= x < 1.0`.
 __`uniform(a, b)`__ gives `x` such that `a <= x <= b`.
 
 ```python
->>> [round(random.random(), 3) for n in range(5)]
+>>> [round(random.random(), 3) for _ in range(5)]
 [0.876, 0.084, 0.483, 0.22, 0.863]
 
->>> [round(random.uniform(2, 5), 3) for n in range(5)]
+>>> [round(random.uniform(2, 5), 3) for _ in range(5)]
 [2.798, 2.539, 3.779, 3.363, 4.33]
 ```
 
@@ -161,7 +161,7 @@ Thus, if you read that "95% of values are within 2-sigma of the mean" or "the Hi
 ```python
 >>> mu = 4.731
 >>> sigma = 0.316
->>> [round(random.gauss(mu, sigma), 3) for n in range(5)]
+>>> [round(random.gauss(mu, sigma), 3) for _ in range(5)]
 [4.72, 4.957, 4.64, 4.556, 4.968]
 ```
 
