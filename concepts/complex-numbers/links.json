@@ -10,5 +10,9 @@
   {
     "url": "https://docs.python.org/3/library/cmath.html/",
     "description": "Module documentation for cmath."
+  },
+  {
+    "url": "https://docs.python.org/3/library/math.html/",
+    "description": "Module documentation for math."
   }
 ]
