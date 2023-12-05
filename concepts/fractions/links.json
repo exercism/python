@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://docs.python.org/3/library/fractions.html/",
+    "description": "Documentation for the Fractions module."
+  },
+  {
+    "url": "https://docs.python.org/3/tutorial/floatingpoint.html#tut-fp-issues",
+    "description": "Limitations of Floating Point Arithmetic."
+  },
+  {
+    "url": "https://leancrew.com/all-this/2023/08/decimal-to-fraction/",
+    "description": "And now it's all this: Decimal to fraction."
+  },
+  {
+    "url": "https://nrich.maths.org/2515",
+    "description": "History of Fractions."
+  }
+]
