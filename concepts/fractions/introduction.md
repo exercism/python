@@ -1,13 +1,13 @@
 # Introduction
 
-The [`Fractions`][fractions] module allows us to handle `rational numbers`: fractions with an integer numerator divided by an integer denominator.
-For example, we can store `2/3` as an exact fraction instead of the approximate `float` value `0.6666...`
+The [`Fractions`][fractions] module allows us to create and work with [`rational numbers`][rational]: fractions with an integer numerator divided by an integer denominator.
+For example, we can store `2/3` as an exact fraction instead of the approximate `float` value `0.6666...`.
 
-## Creating
+Unlike `int`, `float`, and `complex` numbers, fractions do not have a literal form.
+However, the fractions constructor is quite flexible.
 
-The constructor is quite flexible.
-Most obviously, it can take take two integers.
-Common factors are removed, to convert the fraction to its "lowest form": the smallest integers that accurately represent the fraction.
+Most obviously, it can take take two integers as arguments.
+Common factors are automatically removed, converting the fraction to its "lowest form": the smallest integers that accurately represent the fraction:
 
 ```python
 >>> from fractions import Fraction
@@ -24,7 +24,7 @@ Fraction(2, 3)  # automatically simplified
 True
 ```
 
-It can also parse a string representation of the fraction:
+The fractions constructor can also parse a string representation:
 
 ```python
 >>> f3 = Fraction('2/3')
@@ -32,23 +32,18 @@ It can also parse a string representation of the fraction:
 Fraction(2, 3)
 ```
 
-It can work with `float` parameters, but this may run into problems with the approximate nature of representing the decimal value interally as binary. 
-For a more reliable result, there is the `limit_denominator()` method.
-This can take an integer parameter if you have specific requirements, but even the default can work well.
+Fractions can also work with `float` parameters, but this may run into problems with the approximate nature of representing the decimal value internally as binary.
+For more on this representation issue, see the [0.30000000000000004][0.30000000000000004] website, and [Floating Point Arithmetic: Issues and Limitations ][fp-issues] in the Python documentation.
 
-```python
->>> Fraction(1.2)
-Fraction(5404319552844595, 4503599627370496)
+For a more reliable result when using floats with fractions, there is the `<fraction>.limit_denominator()` method.
 
->>> Fraction(1.2).limit_denominator()
-Fraction(6, 5)
-```
 
-## Arithmetic
+## Arithmetic with Fractions
 
-The usual arithmetic operators `+ - * / **` work with fractions.
-Integers and other `Fraction`s can be included and give a `Fraction` result.
-Including a `float` results in `float` output.
+The usual [`arithmetic operators`][operators] `+ - * / **` will work with fractions, as with other numeric types.
+
+Integers and other `Fraction`s can be included in the equation and give a `Fraction` result.
+Including a `float` in the expression results in `float` output, with a consequent (possible) loss in precision:
 
 ```python
 >>> Fraction(2, 3) + Fraction(1, 4) # addition
@@ -67,22 +62,7 @@ Fraction(4, 5)
 Fraction(4, 9)
 ```
 
-## Conversions
-
-Fractions are great for preserving precision during intermediate calculations, but may not be what you want for the final output.
-
-It is possible to get the numerator and denominator individually or as a tuple:
-
-```python
->>> Fraction(2, 3).numerator
-2
->>> Fraction(2, 3).denominator
-3
->>> Fraction(2, 3).as_integer_ratio()
-(2, 3)
-```
-
-Various standard Python functions also give the expected result:
+Various standard Python numeric functions also give the result you might expect from working with `int` and `float` types:
 
 ```python
 >>> round(Fraction(11, 3))
@@ -98,4 +78,8 @@ Various standard Python functions also give the expected result:
 3.6666666666666665
 ```
 
+[0.30000000000000004]: https://0.30000000000000004.com/
+[fp-issues]: https://docs.python.org/3/tutorial/floatingpoint.html#tut-fp-issues
 [fractions]: https://docs.python.org/3/library/fractions.html
+[operators]: https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
+[rational]: https://en.wikipedia.org/wiki/Rational_number

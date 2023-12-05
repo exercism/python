@@ -1,5 +1,5 @@
 {
   "blurb": "The fractions module enables working with rational numbers, which preserve exact values and avoid the rounding errors common with floats.",
-  "authors": ["bethanyg", "cmccandless", "colinleach"],
+  "authors": ["BethanyG", "colinleach"],
   "contributors": []
 }
