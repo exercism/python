@@ -168,7 +168,8 @@ By convention, this is done with the [`standard deviation`][standard-deviation]:
 
 Mathematicians love Greek letters, so we use `μ` ('mu') to represent the mean and `σ` ('sigma') to represent the standard deviation.
 
-Thus, if you read that "95% of values are within 2-sigma of the mean" or "the Higgs boson has been detected with 5-sigma confidence", such comments relate to the standard deviation.
+Thus, if you read that "95% of values are within 2σ of μ" or "the Higgs boson has been detected with 5-sigma confidence", such comments relate to the standard deviation.
+
 
 ```python
 >>> mu = 4.731
