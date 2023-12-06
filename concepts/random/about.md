@@ -60,7 +60,8 @@ This will typically be a `list`, or with some limitations a `tuple` or a `set` (
 
 ### `choice()` and `choices()`
 
-The `choice()` function will return one random entry from a sequence.
+The `choice()` function will return one entry chosen at random from a given sequence.
+
 
 At its simplest, the coin-flip example:
 
