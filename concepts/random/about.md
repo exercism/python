@@ -96,7 +96,8 @@ The `choices()` example above assumes what statisticians call ["sampling with re
 Each pick or choice has **no effect** on the probability of future choices, and the distribution of potential choices remains the same from pick to pick.
 
 
-For example, in the example with red and green balls: after each choice, we return the ball to the bag and shake well before the next choice.
+In the example with red and green balls: after each choice, we _return_ the ball to the bag and shake well before the next pick.
+
 
 In a situation where we pull out a red ball and _it stays out_, there are now fewer red balls in the bag and the next choice is less likely to be red.
 
