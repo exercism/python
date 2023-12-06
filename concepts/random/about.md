@@ -92,7 +92,9 @@ For example, if a bag contains 10 red balls and 15 green balls, and we would lik
 
 ### `sample()`
 
-The `choices()` example above assumes what statisticians call "sampling with replacement". Each choice has no effect on the probability of future choices.
+The `choices()` example above assumes what statisticians call ["sampling with replacement"][sampling-with-replacement]. 
+Each pick or choice has **no effect** on the probability of future choices, and the distribution of potential choices remains the same from pick to pick.
+
 
 For example, in the example with red and green balls: after each choice, we return the ball to the bag and shake well before the next choice.
 
