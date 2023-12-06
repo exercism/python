@@ -15,12 +15,17 @@ The rest of this page will list a few of the most common functions in `random`.
 
 We encourage you to explore the full [`random`][random] documentation, as there are many more options.
 
-## Important Warning!
+~~~~exercism/caution
 
 The `random` module should __NOT__ be used for security and cryptographic applications.
 
 Instead, Python provides the [`secrets`][secrets] module.
 This is specially optimized for cryptographic security.
+Some of the prior issues and reasons for creating the secrets module can be found in [PEP 506][PEP 506].
+
+[secrets]: https://docs.python.org/3.11/library/secrets.html#module-secrets
+[PEP 506]: https://peps.python.org/pep-0506/
+~~~~  
 
 ## Create random integers
 
