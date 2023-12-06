@@ -113,7 +113,8 @@ The syntax of `sample()` is similar to `choices()`, except it adds a `counts` ke
 ['green', 'green', 'green', 'green', 'green', 'red', 'red', 'red', 'red', 'green']
 ```
 
-Samples are listed in the order they were chosen.
+The samples are returned in the order they were chosen.
+
 
 ### `shuffle()`
 
