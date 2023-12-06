@@ -130,7 +130,6 @@ In contrast, `shuffle()` randomizes the order of a list _**in place**_, and the 
 [4, 1, 5, 2, 3]
 ```
 
-The original ordering is lost.
 
 ## Working with distributiions
 
