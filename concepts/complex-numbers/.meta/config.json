@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for this concept",
-  "authors": ["bethanyg", "cmccandless"],
+  "blurb": "Complex numbers are a fundamental data type in Python, along with int and float. Further support is added with the cmath module, which is part of the Python standard library.",
+  "authors": ["BethanyG", "colinleach"],
   "contributors": []
 }

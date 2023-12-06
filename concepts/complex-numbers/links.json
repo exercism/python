@@ -1,18 +1,18 @@
 [
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex/",
+    "description": "Operations on numeric types."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://docs.python.org/3/library/functions.html#complex/",
+    "description": "The complex class."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://docs.python.org/3/library/cmath.html/",
+    "description": "Module documentation for cmath."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://docs.python.org/3/library/math.html/",
+    "description": "Module documentation for math."
   }
 ]

@@ -7,7 +7,7 @@ A [`list`][list] is a mutable collection of items in _sequence_.
 
 
 Lists support both [common][common sequence operations] and [mutable][mutable sequence operations] sequence operations such as `min()`/`max()`, `<list>.index()`, `.append()` and `.reverse()`.
- List elements can be iterated over using the `for item in <list>` construct. `for index, item in enumerate(<list)` can be used when both the element index and the element value are needed.
+ List elements can be iterated over using the `for item in <list>` construct. `for index, item in enumerate(<list>)` can be used when both the element index and the element value are needed.
 
 
 Lists are implemented as [dynamic arrays][dynamic array] -- similar to Java's [`Arraylist`][arraylist] type, and are most often used to store groups of similar data (_strings, numbers, sets etc._) of unknown length (_the number of entries may arbitrarily expand or shrink_).
