@@ -151,7 +151,8 @@ __`uniform(a, b)`__ gives `x` such that `a <= x <= b`.
 
 ### Gaussian distribution
 
-Also called the "normal" or "bell-shaped" curve, this is a very common way to describe imprecision in measured values.
+Also called the "normal" distribution or the "bell-shaped" curve, this is a very common way to describe imprecision in measured values.
+
 
 For example, suppose the factory where you work has just bought 10,000 bolts which should be identical.
 You want to set up the factory robot to handle them, so you weigh a sample of 100 and find that they have an average (or `mean`) weight of 4.731g.
