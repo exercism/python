@@ -105,7 +105,8 @@ Not returning the ball means there are now fewer red balls in the bag, and the n
 To simulate this "sampling without replacement", the random module provides the `sample()` function.
 
 
-The syntax of `sample()` is similar to choices, except with `counts` as a keyword parameter:
+The syntax of `sample()` is similar to `choices()`, except it adds a `counts` keyword parameter:
+
 
 ```python
 >>> random.sample(['red', 'green'], counts=[10, 15], k=10)
