@@ -82,7 +82,8 @@ We could accomplish essentially the same thing using the `choices()` function, s
 In the examples above, we assumed a fair coin with equal probability of heads or tails, but weights can also be specified.
 
 
-For example, if a bag contains 10 red balls and 15 green balls, and we pull one out at random:
+For example, if a bag contains 10 red balls and 15 green balls, and we would like to pull one out at random:
+
 
 ```python
 >>> random.choices(['red', 'green'], [10, 15])
