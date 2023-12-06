@@ -52,7 +52,8 @@ Possible results from `randint()` _include_ the upper bound, so `randint(a, b)` 
 
 ## Working with sequences
 
-The functions in this section assume that you are starting from some sequence.
+The functions in this section assume that you are starting from some [sequence][sequence-types], or other container.
+
 
 This will typically be a `list`, or with some limitations a `tuple` or `set` (`tuple` is immutable, and `set` is unordered).
 
