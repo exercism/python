@@ -67,9 +67,9 @@ At its simplest, this might be a coin-flip example:
 
 
 ```python
+# This will pick one of the two values in the list at random 5 separate times 
 >>> [random.choice(['H', 'T']) for _ in range(5)]
 ['T', 'H', 'H', 'T', 'H']
-```
 
 We could do essentially the same with the `choices()` function, supplying a keyword argument with the list length:
 
