@@ -166,7 +166,8 @@ To simulate this in software, we need some way to specify the width of the curve
 
 By convention, this is done with the [`standard deviation`][standard-deviation]: small values for a sharp, narrow curve, large for a low, broad curve.
 
-Mathematicians love Greek letters, so we use `mu` for the mean and `sigma` for the standard deviation.
+Mathematicians love Greek letters, so we use `μ` ('mu') to represent the mean and `σ` ('sigma') to represent the standard deviation.
+
 Thus, if you read that "95% of values are within 2-sigma of the mean" or "the Higgs boson has been detected with 5-sigma confidence", such comments relate to the standard deviation.
 
 ```python
