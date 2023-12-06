@@ -132,7 +132,8 @@ Many real-world situations are less simple than this. Statisticians have created
 
 ### Uniform distributions
 
-For integers, `randrange()` and `randint()` are used when all probabilities are equal. This is called a `uniform` distributuion.
+For integers, `randrange()` and `randint()` are used when all probabilities are equal. This is called a [`uniform`][uniform-distribution] distribution.
+
 
 There are floating-point equivalents to `randrange()` and `randint()`.
 
