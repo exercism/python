@@ -99,7 +99,8 @@ Each pick or choice has **no effect** on the probability of future choices, and 
 In the example with red and green balls: after each choice, we _return_ the ball to the bag and shake well before the next pick.
 
 
-In a situation where we pull out a red ball and _it stays out_, there are now fewer red balls in the bag and the next choice is less likely to be red.
+This is in contrast to a situation where we pull out a red ball and _it stays out_.
+Not returning the ball means there are now fewer red balls in the bag, and the next choice is now _less likely_ to be red.
 
 To simulate this "sampling without replacement", we have the `sample()` function.
 
