@@ -180,5 +180,9 @@ Thus, if you read that "95% of values are within 2σ of μ" or "the Higgs boson 
 
 [random]: https://docs.python.org/3/library/random.html
 [secrets]: https://docs.python.org/3/library/secrets.html
-[gaussian-distribution]: https://ned.ipac.caltech.edu/level5/Leo/Stats2_3.html
-[standard-deviation]: https://www.nlm.nih.gov/oet/ed/stats/02-900.html
+[sequence-types]: https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
+[gaussian-distribution]: https://simple.wikipedia.org/wiki/Normal_distribution
+[probability-distribution]: https://simple.wikipedia.org/wiki/Probability_distribution
+[sampling-with-replacement]: https://www.youtube.com/watch?v=LnGFL_A6A6A
+[standard-deviation]: https://simple.wikipedia.org/wiki/Standard_deviation
+[uniform-distribution]: https://www.investopedia.com/terms/u/uniform-distribution.asp#:~:text=In%20statistics%2C%20uniform%20distribution%20refers,a%20spade%20is%20equally%20likely.
