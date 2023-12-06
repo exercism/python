@@ -137,7 +137,9 @@ Until now, we have concentrated on cases where all outcomes are equally likely.
 
 For example, `random.randrange(100)` is equally likely to give any integer from 0 to 99.
 
-Many real-world situations are less simple than this. Statisticians have created a wide variety of `distributions` to describe the results mathematically.
+Many real-world situations are far less simple than this. 
+As a result, statisticians have created a wide variety of [`distributions`][probability-distribution] to describe "real world" results mathematically.
+
 
 ### Uniform distributions
 
