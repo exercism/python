@@ -63,7 +63,8 @@ This will typically be a `list`, or with some limitations a `tuple` or a `set` (
 The `choice()` function will return one entry chosen at random from a given sequence.
 
 
-At its simplest, the coin-flip example:
+At its simplest, this might be a coin-flip example:
+
 
 ```python
 >>> [random.choice(['H', 'T']) for _ in range(5)]
