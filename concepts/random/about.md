@@ -79,7 +79,8 @@ We could accomplish essentially the same thing using the `choices()` function, s
 ['T', 'H', 'T', 'H', 'H']
 ```
 
-We assumed a fair coin with equal probability of heads or tails.
+In the examples above, we assumed a fair coin with equal probability of heads or tails, but weights can also be specified.
+
 Weights can also be specified.
 
 For example, if a bag contains 10 red balls and 15 green balls, and we pull one out at random:
