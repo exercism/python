@@ -120,7 +120,8 @@ The samples are returned in the order they were chosen.
 
 Both `choices()` and `sample()` return new lists when `k > 1`.
 
-In contrast, `shuffle()` randomizes the order of a list _in place_.
+In contrast, `shuffle()` randomizes the order of a list _**in place**_, and the original ordering is lost.
+
 
 ```python
 >>> my_list = [1, 2, 3, 4, 5]
