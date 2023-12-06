@@ -102,7 +102,8 @@ In the example with red and green balls: after each choice, we _return_ the ball
 This is in contrast to a situation where we pull out a red ball and _it stays out_.
 Not returning the ball means there are now fewer red balls in the bag, and the next choice is now _less likely_ to be red.
 
-To simulate this "sampling without replacement", we have the `sample()` function.
+To simulate this "sampling without replacement", the random module provides the `sample()` function.
+
 
 The syntax of `sample()` is similar to choices, except with `counts` as a keyword parameter:
 
