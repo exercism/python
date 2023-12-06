@@ -13,7 +13,7 @@ In practice, a well-designed library like the [`random`][random] module in the P
 
 The rest of this page will list a few of the most common functions in `random`.
 
-We encourage you to explore the full [`random`][random] documentation, as there are many more options.
+We encourage you to explore the full [`random`][random] documentation, as there are many more options than what we cover here.
 
 ~~~~exercism/caution
 
@@ -25,30 +25,83 @@ Some of the prior issues and reasons for creating the secrets module can be foun
 
 [secrets]: https://docs.python.org/3.11/library/secrets.html#module-secrets
 [PEP 506]: https://peps.python.org/pep-0506/
-~~~~  
+~~~~
 
-## Create random integers
 
-The `randrange()` function has three forms, to select a random value from `range(start, stop, step)`:
-- `randrange(stop)` gives an integer `n` such that `0 <= n < stop`
-- `randrange(start, stop)` gives an integer `n` such that `start <= n < stop`
-- `randrange(start, stop, step)` gives an integer `n` such that `start <= n < stop` and `n` is in the sequence `start, start + step, start + 2*step...`
+## Importing
 
-For the common case where `step == 1`, the `randint(a, b)` function may be more convenient and readable.
-
-Possible results from `randint()` _include_ the upper bound, so `randint(a, b)` is the same as `randrange(a, b+1)`.
+Before you can utilize the tools in the `random` module, you must first import it:
 
 ```python
 >>> import random
 
+# Choose random integer from a range
+>>> random.randrange(1000)
+360
+
+>>> random.randrange(-1, 500)
+228
+
+>>> random.randrange(-10, 11, 2)
+-8
+
+# Choose random integer between two values (inclusive)
+>>> random.randint(5, 25)
+22
+
+```
+
+To avoid typing the name of the module, you can import specific functions by name:
+
+```python
+>>> from random import choice, choices
+
+# Using choice() to pick Heads or Tails 10 times
+>>> tosses = []
+>>> for side in range(10):
+>>>    tosses.append(choice(['H', 'T']))    
+
+>>> print(tosses)
+['H', 'H', 'H', 'H', 'H', 'H', 'H', 'T', 'T', 'H']
+
+
+# Using choices() to pick Heads or Tails 8 times
+>>> picks = []
+>>> picks.extend(choices(['H', 'T'], k=8))
+>>> print(picks)
+['T', 'H', 'H', 'T', 'H', 'H', 'T', 'T']
+```
+
+
+## Creating random integers
+
+The `randrange()` function has three forms, to select a random value from `range(start, stop, step)`:
+  1.  `randrange(stop)` gives an integer `n` such that `0 <= n < stop`
+  2.   `randrange(start, stop)` gives an integer `n` such that `start <= n < stop`
+  3.  `randrange(start, stop, step)` gives an integer `n` such that `start <= n < stop` and `n` is in the sequence `start, start + step, start + 2*step...`
+
+For the common case where `step == 1`, the `randint(a, b)` function may be more convenient and readable.
+Possible results from `randint()` _include_ the upper bound, so `randint(a, b)` is the same as using `randrange(a, b+1)`:
+
+```python
+>>> import random
+
+# Slect one number at random from the range 0, 499
 >>> random.randrange(500)
 219
->>> [random.randrange(0, 10, 2) for _ in range(10)]
+
+# Select 10 numbers at random between 0 and 9 two steps apart.
+>>> numbers = []
+>>> for integer in range(10):
+>>>    numbers.append(random.randrange(0, 10, 2))
+>>> print(numbers)
 [2, 8, 4, 0, 4, 2, 6, 6, 8, 8]
 
->>> random.randint(1, 6)  # roll a die
+# roll a die
+>>> random.randint(1, 6)  
 4
 ```
+
 
 ## Working with sequences
 
@@ -62,9 +115,7 @@ This will typically be a `list`, or with some limitations a `tuple` or a `set` (
 
 The `choice()` function will return one entry chosen at random from a given sequence.
 
-
-At its simplest, this might be a coin-flip example:
-
+At its simplest, this might be a coin-flip:
 
 ```python
 # This will pick one of the two values in the list at random 5 separate times 
@@ -83,7 +134,6 @@ In the examples above, we assumed a fair coin with equal probability of heads or
 
 
 For example, if a bag contains 10 red balls and 15 green balls, and we would like to pull one out at random:
-
 
 ```python
 >>> random.choices(['red', 'green'], [10, 15])
@@ -189,11 +239,10 @@ Thus, if you read that "95% of values are within 2σ of μ" or "the Higgs boson 
 [4.72, 4.957, 4.64, 4.556, 4.968]
 ```
 
-[random]: https://docs.python.org/3/library/random.html
-[secrets]: https://docs.python.org/3/library/secrets.html
-[sequence-types]: https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
 [gaussian-distribution]: https://simple.wikipedia.org/wiki/Normal_distribution
 [probability-distribution]: https://simple.wikipedia.org/wiki/Probability_distribution
+[random]: https://docs.python.org/3/library/random.html
 [sampling-with-replacement]: https://www.youtube.com/watch?v=LnGFL_A6A6A
+[sequence-types]: https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
 [standard-deviation]: https://simple.wikipedia.org/wiki/Standard_deviation
 [uniform-distribution]: https://www.investopedia.com/terms/u/uniform-distribution.asp#:~:text=In%20statistics%2C%20uniform%20distribution%20refers,a%20spade%20is%20equally%20likely.
