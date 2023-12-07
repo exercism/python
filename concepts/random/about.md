@@ -15,6 +15,7 @@ The rest of this page will list a few of the most common functions in `random`.
 We encourage you to explore the full `random` documentation, as there are many more options than what we cover here.
 
 
+
 ~~~~exercism/caution
 
 The `random` module should __NOT__ be used for security and cryptographic applications.
@@ -26,6 +27,7 @@ Some of the prior issues and reasons for creating the secrets module can be foun
 [secrets]: https://docs.python.org/3.11/library/secrets.html#module-secrets
 [PEP 506]: https://peps.python.org/pep-0506/
 ~~~~
+
 
 
 ## Importing
@@ -86,7 +88,7 @@ Possible results from `randint()` _include_ the upper bound, so `randint(a, b)` 
 ```python
 >>> import random
 
-# Slect one number at random from the range 0, 499
+# Select one number at random from the range 0, 499
 >>> random.randrange(500)
 219
 
@@ -103,12 +105,14 @@ Possible results from `randint()` _include_ the upper bound, so `randint(a, b)` 
 ```
 
 
+
 ## Working with sequences
 
 The functions in this section assume that you are starting from some [sequence][sequence-types], or other container.
 
 
 This will typically be a `list`, or with some limitations a `tuple` or a `set` (_a `tuple` is immutable, and `set` is unordered_).
+
 
 
 ### `choice()` and `choices()`
@@ -129,6 +133,7 @@ We could accomplish essentially the same thing using the `choices()` function, s
 ['T', 'H', 'T', 'H', 'H']
 ```
 
+
 In the examples above, we assumed a fair coin with equal probability of heads or tails, but weights can also be specified.
 For example, if a bag contains 10 red balls and 15 green balls, and we would like to pull one out at random:
 
@@ -138,9 +143,10 @@ For example, if a bag contains 10 red balls and 15 green balls, and we would lik
 ```
 
 
+
 ### `sample()`
 
-The `choices()` example above assumes what statisticians call ["sampling with replacement"][sampling-with-replacement]. 
+The `choices()` example above assumes what statisticians call ["sampling with replacement"][sampling-with-replacement].
 Each pick or choice has **no effect** on the probability of future choices, and the distribution of potential choices remains the same from pick to pick.
 
 
@@ -157,13 +163,13 @@ The syntax of `sample()` is similar to `choices()`, except it adds a `counts` ke
 ['green', 'green', 'green', 'green', 'green', 'red', 'red', 'red', 'red', 'green']
 ```
 
-The samples are returned in the order they were chosen.
+Samples are returned in the order they were chosen.
+
 
 
 ### `shuffle()`
 
 Both `choices()` and `sample()` return new lists when `k > 1`.
-
 In contrast, `shuffle()` randomizes the order of a list _**in place**_, and the original ordering is lost:
 
 ```python
@@ -179,13 +185,15 @@ In contrast, `shuffle()` randomizes the order of a list _**in place**_, and the 
 Until now, we have concentrated on cases where all outcomes are equally likely.
 For example, `random.randrange(100)` is equally likely to give any integer from 0 to 99.
 
-Many real-world situations are far less simple than this. 
+Many real-world situations are far less simple than this.
 As a result, statisticians have created a wide variety of [`distributions`][probability-distribution] to describe "real world" results mathematically.
+
 
 
 ### Uniform distributions
 
-For integers, `randrange()` and `randint()` are used when all probabilities are equal. This is called a [`uniform`][uniform-distribution] distribution.
+For integers, `randrange()` and `randint()` are used when all probabilities are equal.
+This is called a [`uniform`][uniform-distribution] distribution.
 
 
 There are floating-point equivalents to `randrange()` and `randint()`.
@@ -202,27 +210,23 @@ __`uniform(a, b)`__ gives `x` such that `a <= x <= b`.
 [2.798, 2.539, 3.779, 3.363, 4.33]
 ```
 
+
+
 ### Gaussian distribution
 
 Also called the "normal" distribution or the "bell-shaped" curve, this is a very common way to describe imprecision in measured values.
 
-
 For example, suppose the factory where you work has just bought 10,000 bolts which should be identical.
 You want to set up the factory robot to handle them, so you weigh a sample of 100 and find that they have an average (or `mean`) weight of 4.731g.
-
 This is extremely unlikely to mean that they all weigh exactly 4.731g.
 Perhaps you find that values range from 4.627 to 4.794g but cluster around 4.731g.
 
 This is the [`Gaussian distribution`][gaussian-distribution], for which probabilities peak at the mean and tails off symmetrically on both sides (hence "bell-shaped").
-
-To simulate this in software, we need some way to specify the width of the curve (typically, expensive bolts will cluster more tightly around the mean than cheap bolts!)
+To simulate this in software, we need some way to specify the width of the curve (_typically, expensive bolts will cluster more tightly around the mean than cheap bolts!_).
 
 By convention, this is done with the [`standard deviation`][standard-deviation]: small values for a sharp, narrow curve, large for a low, broad curve.
-
 Mathematicians love Greek letters, so we use `μ` ('mu') to represent the mean and `σ` ('sigma') to represent the standard deviation.
-
 Thus, if you read that "95% of values are within 2σ of μ" or "the Higgs boson has been detected with 5-sigma confidence", such comments relate to the standard deviation.
-
 
 ```python
 >>> mu = 4.731

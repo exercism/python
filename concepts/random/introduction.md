@@ -72,6 +72,7 @@ To avoid typing the name of the module, you can import specific functions by nam
 ```
 
 
+
 ## `randrange()` and `randint()`
 
 Shown in the first example above, the `randrange()` function has three forms:
@@ -85,12 +86,13 @@ For the most common case where `step == 1`, `randint(a, b)` may be more convenie
 Possible results from `randint()` _include_ the upper bound, so `randint(a, b)` is the same as using `randrange(a, b+1)`.
 
 
+
 ## `choice()` and `choices()`
 
 These two functions assume that you are starting from some [sequence][sequence-types], or other container.
 This will typically be a `list`, or with some limitations a `tuple` or a `set` (_a `tuple` is immutable, and `set` is unordered_).
 
-The `choice()` function will return one entry chosen at random from a given sequence, and `choices()` will return `k` number of entries chose at random from a given sequence.
+The `choice()` function will return one entry chosen at random from a given sequence, and `choices()` will return `k` number of entries chosen at random from a given sequence.
 In the examples shown above, we assumed a fair coin with equal probability of heads or tails, but weights can also be specified.
 
 For example, if a bag contains 10 red balls and 15 green balls, and we would like to pull one out at random:
