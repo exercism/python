@@ -1,0 +1,5 @@
+{
+  "blurb": "The random module contains functionality to generate random values for modelling, simulations and games. It should not be used for security or cryptographic applications.",
+  "authors": ["BethanyG", "colinleach"],
+  "contributors": []
+}

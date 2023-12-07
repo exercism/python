@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://docs.python.org/3/library/random.html/",
+    "description": "Official documentation for the random module."
+  },
+  {
+    "url": "https://engineering.mit.edu/engage/ask-an-engineer/can-a-computer-generate-a-truly-random-number/",
+    "description": "MIT Engineering: Can a computer generate a truly random number?"
+  },
+    {
+    "url": "https://www.malwarebytes.com/blog/news/2013/09/in-computers-are-random-numbers-really-random",
+    "description": "Are Random Numbers Really Random?"
+  }
+]
