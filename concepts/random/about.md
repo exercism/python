@@ -7,13 +7,13 @@ Common, familiar examples include:
 - The roll of a die: a random integer from 1 to 6.
 - Shuffling a deck of cards: a random ordering of a card list.
 
-Generating truly random values with a computer is a surprisingly difficult technical challenge, so you may see these results referred to as "pseudorandom".
+Generating truly random values with a computer is a [surprisingly difficult technical challenge][truly-random], so you may see these results referred to as "pseudorandom".
 
 In practice, a well-designed library like the [`random`][random] module in the Python standard library is fast, flexible, and gives results that are amply good enough for most applications in modelling, simulation and games.
 
 The rest of this page will list a few of the most common functions in `random`.
+We encourage you to explore the full `random` documentation, as there are many more options than what we cover here.
 
-We encourage you to explore the full [`random`][random] documentation, as there are many more options than what we cover here.
 
 ~~~~exercism/caution
 
@@ -114,7 +114,6 @@ This will typically be a `list`, or with some limitations a `tuple` or a `set` (
 ### `choice()` and `choices()`
 
 The `choice()` function will return one entry chosen at random from a given sequence.
-
 At its simplest, this might be a coin-flip:
 
 ```python
@@ -131,14 +130,13 @@ We could accomplish essentially the same thing using the `choices()` function, s
 ```
 
 In the examples above, we assumed a fair coin with equal probability of heads or tails, but weights can also be specified.
-
-
 For example, if a bag contains 10 red balls and 15 green balls, and we would like to pull one out at random:
 
 ```python
 >>> random.choices(['red', 'green'], [10, 15])
 ['red']
 ```
+
 
 ### `sample()`
 
@@ -147,14 +145,10 @@ Each pick or choice has **no effect** on the probability of future choices, and 
 
 
 In the example with red and green balls: after each choice, we _return_ the ball to the bag and shake well before the next pick.
-
-
 This is in contrast to a situation where we pull out a red ball and _it stays out_.
 Not returning the ball means there are now fewer red balls in the bag, and the next choice is now _less likely_ to be red.
 
 To simulate this "sampling without replacement", the random module provides the `sample()` function.
-
-
 The syntax of `sample()` is similar to `choices()`, except it adds a `counts` keyword parameter:
 
 
@@ -170,8 +164,7 @@ The samples are returned in the order they were chosen.
 
 Both `choices()` and `sample()` return new lists when `k > 1`.
 
-In contrast, `shuffle()` randomizes the order of a list _**in place**_, and the original ordering is lost.
-
+In contrast, `shuffle()` randomizes the order of a list _**in place**_, and the original ordering is lost:
 
 ```python
 >>> my_list = [1, 2, 3, 4, 5]
@@ -181,10 +174,9 @@ In contrast, `shuffle()` randomizes the order of a list _**in place**_, and the 
 ```
 
 
-## Working with distributiions
+## Working with Distributions
 
 Until now, we have concentrated on cases where all outcomes are equally likely.
-
 For example, `random.randrange(100)` is equally likely to give any integer from 0 to 99.
 
 Many real-world situations are far less simple than this. 
@@ -245,4 +237,5 @@ Thus, if you read that "95% of values are within 2σ of μ" or "the Higgs boson 
 [sampling-with-replacement]: https://www.youtube.com/watch?v=LnGFL_A6A6A
 [sequence-types]: https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
 [standard-deviation]: https://simple.wikipedia.org/wiki/Standard_deviation
+[truly-random]: https://www.malwarebytes.com/blog/news/2013/09/in-computers-are-random-numbers-really-random
 [uniform-distribution]: https://www.investopedia.com/terms/u/uniform-distribution.asp#:~:text=In%20statistics%2C%20uniform%20distribution%20refers,a%20spade%20is%20equally%20likely.

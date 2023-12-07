@@ -103,3 +103,4 @@ For example, if a bag contains 10 red balls and 15 green balls, and we would lik
 
 [random]: https://docs.python.org/3/library/random.html
 [sequence-types]: https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
+[truly-random]: https://www.malwarebytes.com/blog/news/2013/09/in-computers-are-random-numbers-really-random
