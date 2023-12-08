@@ -2582,6 +2582,11 @@
       "uuid": "000e7768-38b9-4904-9ae2-9a4e448f366c",
       "slug": "fractions",
       "name": "Fractions"
+    },
+    {
+      "uuid": "e1496136-8d58-4409-9a41-4b6ee4721c6b",
+      "slug": "secrets",
+      "name": "Secrets"
     }
   ],
   "key_features": [
