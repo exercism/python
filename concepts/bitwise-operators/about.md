@@ -133,8 +133,11 @@ This makes it hard to give a useful example of bitwise not:
 
 This is _not_ the `0b10011001` we would see in languages with fixed-size integers.
 
+The `~` operator works as expected with `unsigned` byte or integer types.
+These are supported in third-party packages such as `NumPy`, but not in core Python.
+
 In practice, Python programmers quite often use shift operators and `& | ^` with positive numbers.
-Bitlise operations with negative numbers are much less common.
+Bitwise operations with negative numbers are much less common.
 
 
 
