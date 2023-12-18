@@ -1,0 +1,21 @@
+{
+  "introduction": {
+    "authors": ["safwansamsudeen"]
+  },
+  "approaches": [
+    {
+      "uuid": "c97a3f8e-a97d-4e45-b44f-128bcffb2d3a",
+      "slug": "generator-fun",
+      "title": "Generator Fun",
+      "blurb": "Utilize Python library and generators",
+      "authors": ["safwansamsudeen"]
+    },
+    {
+      "uuid": "e989fdd2-3f39-4195-9d7c-120a6d6376b6",
+      "slug": "tracking",
+      "title": "Tracking",
+      "blurb": "Track previous prime values and return the nth one",
+      "authors": ["safwansamsudeen"]
+    }
+  ]
+}
