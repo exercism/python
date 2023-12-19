@@ -108,7 +108,7 @@ class CardGamesTest(unittest.TestCase):
     @pytest.mark.task(taskno=6)
     def test_average_even_is_average_odd(self):
 
-        input_data = [[5, 6, 8], [1, 2, 3, 4], [1, 2, 3], [5, 6, 7], [1, 3, 5, 7, 9]]
+        input_data = [[5, 6, 8], [1, 2, 3, 4], [1, 2, 3], [5, 6, 7], [1, 3, 4, 5, 6, 7, 9]]
         result_data = [False, False, True, True, True]
 
         for variant, (input_hand, expected) in enumerate(zip(input_data, result_data), start=1):
