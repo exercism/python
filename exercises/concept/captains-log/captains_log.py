@@ -8,4 +8,4 @@ def random_ship_registry_number():
 
 
 def random_stardate():
-    rpass
+    pass
