@@ -190,8 +190,8 @@ As with binary and octal, Python will automatically convert hexadecimal literals
 291
 ```
 
-As with binary and octal - hexidecimal literals **are ints**, and you can perform all integer operations.  
-Prefixing a non-hexidecimal number with `0x` will raise a `SyntaxError`.
+As with binary and octal - hexadecimal literals **are ints**, and you can perform all integer operations.  
+Prefixing a non-hexadecimal number with `0x` will raise a `SyntaxError`.
 
 
 ###  Converting to and from Hexadecimal Representation
@@ -216,9 +216,6 @@ As with binary and octal, giving the wrong base will raise a `ValueError`.
 [binary]: https://en.wikipedia.org/wiki/Binary_number
 [bit_count]:  https://docs.python.org/3/library/stdtypes.html#int.bit_count
 [bit_length]: https://docs.python.org/3/library/stdtypes.html#int.bit_length
-[bit_count]:  https://docs.python.org/3/library/stdtypes.html#int.bit_count
-[bit_length]: https://docs.python.org/3/library/stdtypes.html#int.bit_length
 [hexadecimal]: https://en.wikipedia.org/wiki/Hexadecimal
-[methods-int]: https://docs.python.org/3/library/stdtypes.html#additional-methods-on-integer-types
 [numeral-systems]: https://en.wikipedia.org/wiki/Numeral_system
 [octal]: https://en.wikipedia.org/wiki/Octal

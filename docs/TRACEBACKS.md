@@ -415,7 +415,7 @@ def halve_and_quadruple(num):
     print((num / 2) * 4)
     return (num / 2) * 4
 
-What the `print` calls revealed is that we used `/` when we should have used `//`, the [floor divison operator][floor divison operator].
+What the `print` calls revealed is that we used `/` when we should have used `//`, the [floor division operator][floor division operator].
 
 ## Logging
 
@@ -487,7 +487,7 @@ AssertionError: divisor must not be 0
 
 ```
 
-If we start reading the Traceback at the bottom (as we should) we quickly see the problem is that `0` should not be passsed as the `divisor`.
+If we start reading the Traceback at the bottom (as we should) we quickly see the problem is that `0` should not be passed as the `divisor`.
 
 `assert` can also be used to test that a value is of the expected type:
 

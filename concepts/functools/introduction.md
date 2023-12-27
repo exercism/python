@@ -12,7 +12,7 @@ The functools module is for higher-order functions: functions that act on or ret
 
 Since a dictionary is used to cache results, the positional and keyword arguments to the function must be hashable.
 
-Here ```maxsize = 128``` means that it is going to memoize lastest 128 function calls at max.
+Here ```maxsize = 128``` means that it is going to memoize latest 128 function calls at max.
 
 ### ```@functools.cache(user_function)```
 

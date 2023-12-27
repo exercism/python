@@ -2,11 +2,11 @@
 
 A [`function`][function] is a block of organized, reusable code that is used to perform a specific task.
 `Functions` provide better modularity for your application and a high degree of code reuse.
-Python, like other programming languages, has [_built-in functions_][build-in functions] ([`print`][print], [`map`][map], and so on) that are readily available.
+Python, like other programming languages, has [_built-in functions_][built-in functions] ([`print`][print], [`map`][map], and so on) that are readily available.
 You can also define your own functions. Those are called [`user-defined functions`][user defined functions].
 Functions can run something as simple as _printing a message to the console_ or they can be quite complex.
 
-To execute the code inside a function, you need to call the function, which is done by using the function name followed by parenthesese [`()`].
+To execute the code inside a function, you need to call the function, which is done by using the function name followed by parentheses [`()`].
 Data, known as [`arguments`][arguments], can be passed to the function by placing them inside the parenthesese.
 A function definition may include zero or more [`parameters`][parameters].
 Parameters define what argument(s) the function accepts.
@@ -376,7 +376,7 @@ The full list of function attributes can be found at [Python DataModel][attribut
 [LEGB Rule]: https://realpython.com/python-scope-legb-rule/
 [arguments]: https://www.w3schools.com/python/gloss_python_function_arguments.asp
 [attributes]: https://docs.python.org/3/reference/datamodel.html#index-33
-[build-in functions]: https://docs.python.org/3/library/functions.html
+[built-in functions]: https://docs.python.org/3/library/functions.html
 [def]: https://www.geeksforgeeks.org/python-def-keyword/
 [dict]: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
 [first class objects]: https://en.wikipedia.org/wiki/First-class_object

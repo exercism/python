@@ -4,7 +4,7 @@ For the basics on function arguments, please see the [function concept][function
 
 ## Parameter Names
 
-Paramater names, like variable names, must start with a letter or underscore and may contain letters, underscores, or numbers.
+Parameter names, like variable names, must start with a letter or underscore and may contain letters, underscores, or numbers.
 Parameter names should not contain spaces or punctuation.
 
 ## Positional Arguments
