@@ -1,117 +1,127 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [20c5f855-f83a-44a7-abdd-fe75c6cf022b]
-description = "sets with no elements are empty"
+description = "Returns true if the set contains no elements -> sets with no elements are empty"
 
 [d506485d-5706-40db-b7d8-5ceb5acf88d2]
-description = "sets with elements are not empty"
+description = "Returns true if the set contains no elements -> sets with elements are not empty"
 
 [759b9740-3417-44c3-8ca3-262b3c281043]
-description = "nothing is contained in an empty set"
+description = "Sets can report if they contain an element -> nothing is contained in an empty set"
 
 [f83cd2d1-2a85-41bc-b6be-80adbff4be49]
-description = "when the element is in the set"
+description = "Sets can report if they contain an element -> when the element is in the set"
 
 [93423fc0-44d0-4bc0-a2ac-376de8d7af34]
-description = "when the element is not in the set"
+description = "Sets can report if they contain an element -> when the element is not in the set"
 
 [c392923a-637b-4495-b28e-34742cd6157a]
-description = "empty set is a subset of another empty set"
+description = "A set is a subset if all of its elements are contained in the other set -> empty set is a subset of another empty set"
 
 [5635b113-be8c-4c6f-b9a9-23c485193917]
-description = "empty set is a subset of non-empty set"
+description = "A set is a subset if all of its elements are contained in the other set -> empty set is a subset of non-empty set"
 
 [832eda58-6d6e-44e2-92c2-be8cf0173cee]
-description = "non-empty set is not a subset of empty set"
+description = "A set is a subset if all of its elements are contained in the other set -> non-empty set is not a subset of empty set"
 
 [c830c578-8f97-4036-b082-89feda876131]
-description = "set is a subset of set with exact same elements"
+description = "A set is a subset if all of its elements are contained in the other set -> set is a subset of set with exact same elements"
 
 [476a4a1c-0fd1-430f-aa65-5b70cbc810c5]
-description = "set is a subset of larger set with same elements"
+description = "A set is a subset if all of its elements are contained in the other set -> set is a subset of larger set with same elements"
 
 [d2498999-3e46-48e4-9660-1e20c3329d3d]
-description = "set is not a subset of set that does not contain its elements"
+description = "A set is a subset if all of its elements are contained in the other set -> set is not a subset of set that does not contain its elements"
 
 [7d38155e-f472-4a7e-9ad8-5c1f8f95e4cc]
-description = "the empty set is disjoint with itself"
+description = "Sets are disjoint if they share no elements -> the empty set is disjoint with itself"
 
 [7a2b3938-64b6-4b32-901a-fe16891998a6]
-description = "empty set is disjoint with non-empty set"
+description = "Sets are disjoint if they share no elements -> empty set is disjoint with non-empty set"
 
 [589574a0-8b48-48ea-88b0-b652c5fe476f]
-description = "non-empty set is disjoint with empty set"
+description = "Sets are disjoint if they share no elements -> non-empty set is disjoint with empty set"
 
 [febeaf4f-f180-4499-91fa-59165955a523]
-description = "sets are not disjoint if they share an element"
+description = "Sets are disjoint if they share no elements -> sets are not disjoint if they share an element"
 
 [0de20d2f-c952-468a-88c8-5e056740f020]
-description = "sets are disjoint if they share no elements"
+description = "Sets are disjoint if they share no elements -> sets are disjoint if they share no elements"
 
 [4bd24adb-45da-4320-9ff6-38c044e9dff8]
-description = "empty sets are equal"
+description = "Sets with the same elements are equal -> empty sets are equal"
 
 [f65c0a0e-6632-4b2d-b82c-b7c6da2ec224]
-description = "empty set is not equal to non-empty set"
+description = "Sets with the same elements are equal -> empty set is not equal to non-empty set"
 
 [81e53307-7683-4b1e-a30c-7e49155fe3ca]
-description = "non-empty set is not equal to empty set"
+description = "Sets with the same elements are equal -> non-empty set is not equal to empty set"
 
 [d57c5d7c-a7f3-48cc-a162-6b488c0fbbd0]
-description = "sets with the same elements are equal"
+description = "Sets with the same elements are equal -> sets with the same elements are equal"
 
 [dd61bafc-6653-42cc-961a-ab071ee0ee85]
-description = "sets with different elements are not equal"
+description = "Sets with the same elements are equal -> sets with different elements are not equal"
 
 [06059caf-9bf4-425e-aaff-88966cb3ea14]
-description = "set is not equal to larger set with same elements"
+description = "Sets with the same elements are equal -> set is not equal to larger set with same elements"
+
+[d4a1142f-09aa-4df9-8b83-4437dcf7ec24]
+description = "Sets with the same elements are equal -> set is equal to a set constructed from an array with duplicates"
 
 [8a677c3c-a658-4d39-bb88-5b5b1a9659f4]
-description = "add to empty set"
+description = "Unique elements can be added to a set -> add to empty set"
 
 [0903dd45-904d-4cf2-bddd-0905e1a8d125]
-description = "add to non-empty set"
+description = "Unique elements can be added to a set -> add to non-empty set"
 
 [b0eb7bb7-5e5d-4733-b582-af771476cb99]
-description = "adding an existing element does not change the set"
+description = "Unique elements can be added to a set -> adding an existing element does not change the set"
 
 [893d5333-33b8-4151-a3d4-8f273358208a]
-description = "intersection of two empty sets is an empty set"
+description = "Intersection returns a set of all shared elements -> intersection of two empty sets is an empty set"
 
 [d739940e-def2-41ab-a7bb-aaf60f7d782c]
-description = "intersection of an empty set and non-empty set is an empty set"
+description = "Intersection returns a set of all shared elements -> intersection of an empty set and non-empty set is an empty set"
 
 [3607d9d8-c895-4d6f-ac16-a14956e0a4b7]
-description = "intersection of a non-empty set and an empty set is an empty set"
+description = "Intersection returns a set of all shared elements -> intersection of a non-empty set and an empty set is an empty set"
 
 [b5120abf-5b5e-41ab-aede-4de2ad85c34e]
-description = "intersection of two sets with no shared elements is an empty set"
+description = "Intersection returns a set of all shared elements -> intersection of two sets with no shared elements is an empty set"
 
 [af21ca1b-fac9-499c-81c0-92a591653d49]
-description = "intersection of two sets with shared elements is a set of the shared elements"
+description = "Intersection returns a set of all shared elements -> intersection of two sets with shared elements is a set of the shared elements"
 
 [c5e6e2e4-50e9-4bc2-b89f-c518f015b57e]
-description = "difference of two empty sets is an empty set"
+description = "Difference (or Complement) of a set is a set of all elements that are only in the first set -> difference of two empty sets is an empty set"
 
 [2024cc92-5c26-44ed-aafd-e6ca27d6fcd2]
-description = "difference of empty set and non-empty set is an empty set"
+description = "Difference (or Complement) of a set is a set of all elements that are only in the first set -> difference of empty set and non-empty set is an empty set"
 
 [e79edee7-08aa-4c19-9382-f6820974b43e]
-description = "difference of a non-empty set and an empty set is the non-empty set"
+description = "Difference (or Complement) of a set is a set of all elements that are only in the first set -> difference of a non-empty set and an empty set is the non-empty set"
 
 [c5ac673e-d707-4db5-8d69-7082c3a5437e]
-description = "difference of two non-empty sets is a set of elements that are only in the first set"
+description = "Difference (or Complement) of a set is a set of all elements that are only in the first set -> difference of two non-empty sets is a set of elements that are only in the first set"
 
 [c45aed16-5494-455a-9033-5d4c93589dc6]
-description = "union of empty sets is an empty set"
+description = "Union returns a set of all elements in either set -> union of empty sets is an empty set"
 
 [9d258545-33c2-4fcb-a340-9f8aa69e7a41]
-description = "union of an empty set and non-empty set is the non-empty set"
+description = "Union returns a set of all elements in either set -> union of an empty set and non-empty set is the non-empty set"
 
 [3aade50c-80c7-4db8-853d-75bac5818b83]
-description = "union of a non-empty set and empty set is the non-empty set"
+description = "Union returns a set of all elements in either set -> union of a non-empty set and empty set is the non-empty set"
 
 [a00bb91f-c4b4-4844-8f77-c73e2e9df77c]
-description = "union of non-empty sets contains all unique elements"
+description = "Union returns a set of all elements in either set -> union of non-empty sets contains all unique elements"
