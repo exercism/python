@@ -12,7 +12,7 @@ The functools module is for higher-order functions: functions that act on or ret
 
 Since a dictionary is used to cache results, the positional and keyword arguments to the function must be hashable.
 
-Here ```maxsize = 128``` means that it is going to memoize lastest 128 function calls at max.
+Here ```maxsize = 128``` means that it is going to memoize latest 128 function calls at max.
 
 The lru_cache works the same way but it can cache at max maxsize calls and if type = True, then the function arguments of different types will be cached separately i.e. 5 and 5.0 will be cached differently.
 
@@ -23,8 +23,8 @@ The lru_cache works the same way but it can cache at max maxsize calls and if ty
 ```python
 
 >>> @cache
-    def factorial(n):
-        return n * factorial(n-1) if n else 1
+>>> def factorial(n):
+>>>    return n * factorial(n-1) if n else 1
 
 >>> factorial(10)      # no previously cached result, makes 11 recursive calls
 3628800
@@ -37,9 +37,10 @@ The lru_cache works the same way but it can cache at max maxsize calls and if ty
 
 # Some types such as str and int may be cached separately even when typed is false.
 
-@lru_cache(maxsize = 128)
-    def factorial(n):
-        return n * factorial(n-1) if n else 1
+>>> @lru_cache(maxsize = 128)
+>>> def factorial(n):
+>>>     return n * factorial(n-1) if n else 1
+
 >>> factorial(10)
 3628800
 
@@ -50,7 +51,7 @@ CacheInfo(hits=0, misses=11, maxsize=128, currsize=11)
 
 ## Generic functions
 
-***[Generic functions](https://pymotw.com/3/functools/#generic-functions)*** are those which preform the operation based on the argument given to them. In statically typed languages it can be done by function overloading.
+***[Generic functions](https://pymotw.com/3/functools/#generic-functions)*** are those which perform the operation based on the argument given to them. In statically typed languages it can be done by function overloading.
 
 In python functools provides the `singledispatch()` decorator to register a set of generic functions for automatic switching based on the type of the first argument to a function.
 
@@ -193,11 +194,11 @@ True
 
 The ```pow_2.func``` is same as the ```pow``` function.
 
-Here ```pow_2.args``` return an empty tuple becuse we does not pass any positional argument to out partial object call.
+Here ```pow_2.args``` returns an empty tuple because we do not pass any positional argument to our partial object call.
 
-```pow_2.keywords``` return a dictionary of keywords argument which will be supplied when the partial object is called.
+```pow_2.keywords``` returns a dictionary of keywords argument which will be supplied when the partial object is called.
 
-Here ```two_pow.args``` return an ```(2,)``` tuple because we passed 2 as an argument while creating the pratial object, which fixed the value of ```base``` argument as ```2```.
+Here ```two_pow.args``` returns a ```(2,)``` tuple because we passed 2 as an argument while creating the partial object, which fixed the value of ```base``` argument as ```2```.
 
 ### ```partialmethod```
 

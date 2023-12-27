@@ -17,9 +17,9 @@ Hi. &nbsp;👋🏽 &nbsp;👋 &nbsp;**We are happy you are here.**&nbsp; 🎉&nb
 **`exercism/Python`** is one of many programming language tracks on [exercism(dot)org][exercism-website].
 This repo holds all the instructions, tests, code, & support files for Python _exercises_ currently under development or implemented & available for students.
 
-🌟 &nbsp;&nbsp;Track exercises support Python `3.7` - `3.11.2`.
+🌟 &nbsp;&nbsp;Track exercises support Python `3.7` - `3.11.5`.
 Exceptions to this support are noted where they occur.  
-🌟 &nbsp;&nbsp;Track tooling (_test-runner, representer, analyzer, and Continuous Integration_) runs on Python `3.11.2`.
+🌟 &nbsp;&nbsp;Track tooling (_test-runner, representer, analyzer, and Continuous Integration_) runs on Python `3.11.5`.
 
 Exercises are grouped into **concept** exercises which teach the [Python syllabus][python-syllabus], and **practice** exercises, which are unlocked by progressing in the syllabus tree &nbsp;🌴&nbsp;.
 Concept exercises are constrained to a small set of language or syntax features.
@@ -67,7 +67,7 @@ _Thoughtful suggestions will likely result faster & more enthusiastic responses 
 
 ## Python Software and Documentation
 
-**Copyright © 2001-2022 Python Software Foundation. All rights reserved.**
+**Copyright © 2001-2023 Python Software Foundation. All rights reserved.**
 
 Python software and documentation are licensed under the [PSF License Agreement][psf-license].
 

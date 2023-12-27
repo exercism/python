@@ -170,7 +170,7 @@ Our documents use [Markdown][markdown-language], with certain [alterations][exer
 - Favor `f-strings` for dynamic failure messages. Please make your error messages as relevant and human-readable as possible.
 - We relate test cases to **task number** via a custom [PyTest Marker][pytestmark].
   - These take the form of `@pytest.mark.task(taskno=<task-number-here>)`. See [Guido's Gorgeous Lasagna][guidos-gorgeous-lasagna-testfile] for an example.
-- We prefer **test data files** when test inputs/ouputs are verbose.
+- We prefer **test data files** when test inputs/outputs are verbose.
   - These should be named with `_data` or `_test_data` at the end of the filename, and saved alongside the test case file.
   - See the [Cater-Waiter][cater-waiter] exercise directory for an example of this setup.
   - **Test data files** need to be added under an `editor` key within [`config.json "files"`][exercise-config-json].
@@ -270,9 +270,9 @@ Although the majority of test cases are written using `unittest.TestCase`,
   - [ ] `.meta/config.json` (**required**)
   - [ ] `.meta/example.py` (**required**)
   - [ ] `.meta/design.md` (_optional_)
-  - [ ] `.meta/template.j2` (_template for generating tests from cannonical data_)
-  - [ ] `.meta/tests.toml` (_tests configuration from cannonical data_)
-  - [ ] `<exercise-slug>_test.py` (_**auto-generated from cannonical data**_)
+  - [ ] `.meta/template.j2` (_template for generating tests from canonical data_)
+  - [ ] `.meta/tests.toml` (_tests configuration from canonical data_)
+  - [ ] `<exercise-slug>_test.py` (_**auto-generated from canonical data**_)
   - [ ] `<exericse-slug>.py` (**required**)
 
   </details>

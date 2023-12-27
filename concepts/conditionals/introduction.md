@@ -56,7 +56,7 @@ else:
 >>> z is greater than x and y
 ```
 
-[Boolen operations][boolean operations] and [comparisons][comparisons] can be combined with conditionals for more complex testing:
+[Boolean operations][boolean operations] and [comparisons][comparisons] can be combined with conditionals for more complex testing:
 
 ```python
 
@@ -77,8 +77,8 @@ else:
 '13'
 ```
 
-[if statement]: https://docs.python.org/3/reference/compound_stmts.html#the-if-statement
-[control flow tools]: https://docs.python.org/3/tutorial/controlflow.html#more-control-flow-tools
-[truth value testing]: https://docs.python.org/3/library/stdtypes.html#truth-value-testing
 [boolean operations]: https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not
 [comparisons]: https://docs.python.org/3/library/stdtypes.html#comparisons
+[control flow tools]: https://docs.python.org/3/tutorial/controlflow.html#more-control-flow-tools
+[if statement]: https://docs.python.org/3/reference/compound_stmts.html#the-if-statement
+[truth value testing]: https://docs.python.org/3/library/stdtypes.html#truth-value-testing

@@ -398,14 +398,14 @@ _Concepts needed for a deeper understanding/fluency_
 
 ## Specialized
 
-_(These are probably outside scope of an Exercism Concept exercise, but might make good longer/practice exercises that recieve mentoring)_
+_(These are probably outside scope of an Exercism Concept exercise, but might make good longer/practice exercises that receive mentoring)_
 
 <details>
     <summary> Advanced/Specialized Concepts
       <br>
     </summary>
 
-- [ ] Asynchronous operatons
+- [ ] Asynchronous operations
   - [ ] [`async`][keyword-async]
   - [ ] [`await`][keyword-await]
 

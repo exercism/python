@@ -138,7 +138,7 @@ INVALID_ESCAPE_RE = re.compile(
     ]|                              # OR
         o(?:[0-8]{1,3})             # an octal value
     |                               # OR
-        x(?:[0-9A-Fa-f]{2})         # a hexidecimal value
+        x(?:[0-9A-Fa-f]{2})         # a hexadecimal value
     |                               # OR
         N                           # a unicode char name composed of
         \{                          # an opening brace

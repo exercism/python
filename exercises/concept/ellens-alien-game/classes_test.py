@@ -23,7 +23,7 @@ class ClassesTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
     def test_alien_has_correct_initial_coordinates(self):
-        """Test thst the Alien class gets correctly initialised."""
+        """Test that the Alien class gets correctly initialised."""
 
         alien = Alien(2, -1)
         error_message = (f'Created a new Alien by calling Alien(2, -1). '
