@@ -20,6 +20,7 @@ description = "credit and debit"
 
 [502c4106-0371-4e7c-a7d8-9ce33f16ccb1]
 description = "multiple entries on same date ordered by description"
+include = false
 
 [29dd3659-6c2d-4380-94a8-6d96086e28e1]
 description = "final order tie breaker is change"
@@ -41,3 +42,7 @@ description = "Dutch negative number with 3 digits before decimal point"
 
 [29670d1c-56be-492a-9c5e-427e4b766309]
 description = "American negative number with 3 digits before decimal point"
+
+[9c70709f-cbbd-4b3b-b367-81d7c6101de4]
+description = "multiple entries on same date ordered by description"
+reimplements = "502c4106-0371-4e7c-a7d8-9ce33f16ccb1"

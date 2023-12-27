@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/ledger/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2023-12-27
 
 import unittest
 
@@ -39,22 +39,6 @@ class LedgerTest(unittest.TestCase):
         self.assertEqual(format_entries(currency, locale, entries), expected)
 
     def test_credit_and_debit(self):
-        currency = "USD"
-        locale = "en_US"
-        entries = [
-            create_entry("2015-01-02", "Get present", 1000),
-            create_entry("2015-01-01", "Buy present", -1000),
-        ]
-        expected = "\n".join(
-            [
-                "Date       | Description               | Change       ",
-                "01/01/2015 | Buy present               |      ($10.00)",
-                "01/02/2015 | Get present               |       $10.00 ",
-            ]
-        )
-        self.assertEqual(format_entries(currency, locale, entries), expected)
-
-    def test_multiple_entries_on_same_date_ordered_by_description(self):
         currency = "USD"
         locale = "en_US"
         entries = [
@@ -168,6 +152,22 @@ class LedgerTest(unittest.TestCase):
             [
                 "Date       | Description               | Change       ",
                 "03/12/2015 | Buy present               |     ($123.45)",
+            ]
+        )
+        self.assertEqual(format_entries(currency, locale, entries), expected)
+
+    def test_multiple_entries_on_same_date_ordered_by_description(self):
+        currency = "USD"
+        locale = "en_US"
+        entries = [
+            create_entry("2015-01-01", "Get present", 1000),
+            create_entry("2015-01-01", "Buy present", -1000),
+        ]
+        expected = "\n".join(
+            [
+                "Date       | Description               | Change       ",
+                "01/01/2015 | Buy present               |      ($10.00)",
+                "01/01/2015 | Get present               |       $10.00 ",
             ]
         )
         self.assertEqual(format_entries(currency, locale, entries), expected)
