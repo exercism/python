@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/knapsack/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2023-12-27
 
 import unittest
 
