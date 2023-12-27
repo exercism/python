@@ -11,12 +11,14 @@ The first three digits of the local number represent the _exchange code_, follow
 The format is usually represented as
 
 ```text
-(NXX)-NXX-XXXX
+NXX NXX-XXXX
 ```
 
 where `N` is any digit from 2 through 9 and `X` is any digit from 0 through 9.
 
-Your task is to clean up differently formatted telephone numbers by removing punctuation and the country code (1) if present.
+Sometimes they also have the country code (represented as `1` or `+1`) prefixed.
+
+Your task is to clean up differently formatted telephone numbers by removing punctuation and the country code if present.
 
 For example, the inputs
 
