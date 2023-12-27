@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/anagram/canonical-data.json
-# File last updated on 2023-07-20
+# File last updated on 2023-12-27
 
 import unittest
 
@@ -61,7 +61,7 @@ class AnagramTest(unittest.TestCase):
         self.assertCountEqual(find_anagrams("orchestra", candidates), expected)
 
     def test_does_not_detect_an_anagram_if_the_original_word_is_repeated(self):
-        candidates = ["go Go GO"]
+        candidates = ["goGoGO"]
         expected = []
         self.assertCountEqual(find_anagrams("go", candidates), expected)
 
