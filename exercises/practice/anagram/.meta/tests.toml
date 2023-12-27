@@ -46,6 +46,11 @@ description = "detects anagrams using case-insensitive possible matches"
 
 [7cc195ad-e3c7-44ee-9fd2-d3c344806a2c]
 description = "does not detect an anagram if the original word is repeated"
+include = false
+
+[630abb71-a94e-4715-8395-179ec1df9f91]
+description = "does not detect an anagram if the original word is repeated"
+reimplements = "7cc195ad-e3c7-44ee-9fd2-d3c344806a2c"
 
 [9878a1c9-d6ea-4235-ae51-3ea2befd6842]
 description = "anagrams must use all letters exactly once"
