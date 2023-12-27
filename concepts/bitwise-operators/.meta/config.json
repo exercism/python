@@ -1,5 +1,5 @@
 {
-  "blurb": "Python supports bitwise operations such as left/right shift, and, or, xor.",
+  "blurb": "Python supports bitwise operations such as left/right shift, and, or, xor, and not.",
   "authors": ["BethanyG", "colinleach"],
   "contributors": []
 }

@@ -2,5 +2,21 @@
   {
     "url": "https://wiki.python.org/moin/BitwiseOperators/",
     "description": "BitwiseOperators on the Python wiki."
+  },
+  {
+    "url": "https://realpython.com/python-bitwise-operators",
+    "description": "Real Python: Bitwise Operators in Python."
+  },
+  {
+    "url":  "https://stackoverflow.com/a/20768199",
+    "description": "Stack Overflow: Convert a Python int to an unsigned int."
+  },
+  {
+    "url":  "https://www.khanacademy.org/computing/computer-science/cryptography/ciphers/a/xor-bitwise-operation",
+    "description": "Khan Academy: The Ultimate Shift Cipher."
+  },
+  {
+    "url":  "https://en.wikipedia.org/wiki/XOR_cipher",
+    "description": "The XOR Cipher"
   }
 ]
