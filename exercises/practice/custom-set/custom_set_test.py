@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/custom-set/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2023-12-27
 
 import unittest
 
@@ -114,6 +114,11 @@ class CustomSetTest(unittest.TestCase):
         set1 = CustomSet([1, 2, 3])
         set2 = CustomSet([1, 2, 3, 4])
         self.assertNotEqual(set1, set2)
+
+    def test_set_is_equal_to_a_set_constructed_from_an_array_with_duplicates(self):
+        set1 = CustomSet([1])
+        set2 = CustomSet([1, 1])
+        self.assertEqual(set1, set2)
 
     def test_add_to_empty_set(self):
         sut = CustomSet()
