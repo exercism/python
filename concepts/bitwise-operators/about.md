@@ -23,27 +23,27 @@ There are multiple ways to convert integers to binary strings, varying in whethe
 
 
 ```python
-#Binary entry.
+# Binary entry.
 >>> 0b10111
 23
 
-#Converting an int display to binary string, with prefix.
+# Converting an int display to binary string, with prefix.
 >>> bin(23)  
 '0b10111'
 
 >>> number = 23
 
-#Binary without prefix, padded to 8 digits.
+# Binary without prefix, padded to 8 digits.
 >>> format(number, '08b')  
 '00010111'
 
-#Same format, but using an f-string.
+# Same format, but using an f-string.
 >>> f"{number} in decimal is {number:08b} in binary and {number:x} in hex" 
 '23 in decimal is 00010111 in binary and 17 in hex'
 ```
 
 
-## [`Bitwise Logic`][bitwise-operators]
+## [`Bitwise Logic`][python-bitwise-operations]
 
 In the [concept:python/bools]() concept, we discussed the _logical operators_ `and`, `or` and `not` used with Boolean (_`True` and `False`_) values.
 The same logic rules apply when working with bits.
@@ -60,7 +60,7 @@ An example with the bitwise `&` might make this clearer:
 '00100010'
 ```
 
-Only positions with a `1` in _**both**_ the input strings are set to `1` in the output.
+Only positions with a `1` in _**both**_ the input numbers are set to `1` in the output.
 
 Bitwise `&` is commonly used as a way to isolate single bits in a compacted set of `True`/`False` values, such as user-configurable settings in an app.
 This enables the value of individual bits to control program logic:
@@ -89,7 +89,7 @@ For a bitwise `|` (or), a `1` is set in the output if there is a `1` in _**eithe
 
 
 With the `^` operator for bitwise e**x**clusive **or** (xor), a `1` is set if it appears in _**either**_ of the inputs _**but not both**_ inputs.
-This symbol might seem familiar from the [concept:python/sets] concept, where it is used for `set` _symmetric difference_, which is the same as [xor applied to sets][symmetric-difference].
+This symbol might seem familiar from the [concept:python/sets]() concept, where it is used for `set` _symmetric difference_, which is the same as [xor applied to sets][symmetric-difference].
 If xor `^` seems strange, be aware that this is by far the [most common operation in cryptography][xor-cipher].
 
 
@@ -104,7 +104,7 @@ If xor `^` seems strange, be aware that this is by far the [most common operatio
 
 Finally, there is the `~` operator (_the [tilde][tilde] character_), which is a bitwise `not` that takes a single input and _**inverts all the bits**_, which might not be the result you were expecting!
 Each `1` in the representation changes to `0`, and vice versa.
-See the section below for details:
+See the section below for details.
 
 
 ## Negative Numbers and Binary Representation
@@ -113,11 +113,11 @@ In decimal representation, we distinguish positive and negative numbers by using
 Using these symbols at a binary level proved inefficient for digital computing and raised the problem that `+0` is not the same as `-0`.
 
 Rather than using `-` and `+`, all modern computers use a [`twos-complement`][twos-complement] representation for negative numbers, right down to the silicon chip level.
-This means that all bits are inverted and a number is _**interpreted as negative**_ if the left-most bit (also termed the "significant bit") is a `1`.
-Positive numbers have a significant bit of `0`.
+This means that all bits are inverted and a number is _**interpreted as negative**_ if the left-most bit (also termed the "most significant bit", or MSB) is a `1`.
+Positive numbers have an MSB of `0`.
 This representation has the advantage of only having one version of zero, so that the programmer doesn't have to manage `-0` and `+0`.
 
-This way of representing negative and positive numbers adds a complication for recent versions of Python: there are no longer finite-integer concepts like `int32` or `int64` internally in the core langauge.
+This way of representing negative and positive numbers adds a complication for Python: there are no finite-integer concepts like `int32` or `int64` internally in the core langauge.
 In 'modern' Python, `int`s are of unlimited size (_limited only by hardware capacity_), and a negative or bit-inverted number has a (_theoretically_) infinite number of `1`'s to the left, just as a positive number has unlimited `0`'s.
 
 This makes it difficult to give a useful example of `bitwise not`:
@@ -127,15 +127,15 @@ This makes it difficult to give a useful example of `bitwise not`:
 >>> format(x, '08b')
 '01100110'
 
-#This is a negative binary (not twos-complement display).
+# This is a negative binary (not twos-complement display).
 >>> format(~x, '08b')
 '-1100111'  
 
- #Decimal representation.
+ # Decimal representation.
 >>> x
 102
 
-#Using the Bitwise not, with an unintuitive result.
+# Using the Bitwise not, with an unintuitive result.
 >>> ~x
 -103
 ```
@@ -167,14 +167,14 @@ Keep in mind the previous section on negative numbers and their pitfalls when sh
 >>> format(x, '08b')
 '00001000'
 
-#A left bit shift. 
+# A left bit shift. 
 >>> x << 2  
 32
 
 >>> format(x << 2, '08b')
 '00100000'
 
-#A right bit shift. 
+# A right bit shift. 
 >>> format(x >> 2, '08b')
 '00000010'
 ```
