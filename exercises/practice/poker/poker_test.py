@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/poker/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2023-12-27
 
 import unittest
 
@@ -39,6 +39,11 @@ class PokerTest(unittest.TestCase):
             best_hands(["3S 5H 6S 8D 7H", "2S 5D 6D 8C 7S"]), ["3S 5H 6S 8D 7H"]
         )
 
+    def test_winning_high_card_hand_also_has_the_lowest_card(self):
+        self.assertEqual(
+            best_hands(["2S 5H 6S 8D 7H", "3S 4D 6D 8C 7S"]), ["2S 5H 6S 8D 7H"]
+        )
+
     def test_one_pair_beats_high_card(self):
         self.assertEqual(
             best_hands(["4S 5H 6C 8D KH", "2S 4H 6S 4D JH"]), ["2S 4H 6S 4D JH"]
@@ -47,6 +52,11 @@ class PokerTest(unittest.TestCase):
     def test_highest_pair_wins(self):
         self.assertEqual(
             best_hands(["4S 2H 6S 2D JH", "2S 4H 6C 4D JD"]), ["2S 4H 6C 4D JD"]
+        )
+
+    def test_both_hands_have_the_same_pair_high_card_wins(self):
+        self.assertEqual(
+            best_hands(["4H 4S AH JC 3D", "4C 4D AS 5D 6C"]), ["4H 4S AH JC 3D"]
         )
 
     def test_two_pairs_beats_one_pair(self):
@@ -99,7 +109,7 @@ class PokerTest(unittest.TestCase):
         self,
     ):
         self.assertEqual(
-            best_hands(["4S AH AS 7C AD", "4S AH AS 8C AD"]), ["4S AH AS 8C AD"]
+            best_hands(["5S AH AS 7C AD", "4S AH AS 8C AD"]), ["4S AH AS 8C AD"]
         )
 
     def test_a_straight_beats_three_of_a_kind(self):
@@ -143,7 +153,7 @@ class PokerTest(unittest.TestCase):
         self,
     ):
         self.assertEqual(
-            best_hands(["4H 7H 8H 9H 6H", "2S 4S 5S 6S 7S"]), ["4H 7H 8H 9H 6H"]
+            best_hands(["2H 7H 8H 9H 6H", "3S 5S 6S 7S 8S"]), ["2H 7H 8H 9H 6H"]
         )
 
     def test_full_house_beats_a_flush(self):

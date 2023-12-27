@@ -21,11 +21,17 @@ description = "a tie has multiple winners"
 [61ed83a9-cfaa-40a5-942a-51f52f0a8725]
 description = "multiple hands with the same high cards, tie compares next highest ranked, down to last card"
 
+[da01becd-f5b0-4342-b7f3-1318191d0580]
+description = "winning high card hand also has the lowest card"
+
 [f7175a89-34ff-44de-b3d7-f6fd97d1fca4]
 description = "one pair beats high card"
 
 [e114fd41-a301-4111-a9e7-5a7f72a76561]
 description = "highest pair wins"
+
+[b3acd3a7-f9fa-4647-85ab-e0a9e07d1365]
+description = "both hands have the same pair, high card wins"
 
 [935bb4dc-a622-4400-97fa-86e7d06b1f76]
 description = "two pairs beats one pair"
@@ -53,6 +59,11 @@ description = "both hands have three of a kind, tie goes to highest ranked tripl
 
 [eb856cc2-481c-4b0d-9835-4d75d07a5d9d]
 description = "with multiple decks, two players can have same three of a kind, ties go to highest remaining cards"
+include = false
+
+[26a4a7d4-34a2-4f18-90b4-4a8dd35d2bb1]
+description = "with multiple decks, two players can have same three of a kind, ties go to highest remaining cards"
+reimplements = "eb856cc2-481c-4b0d-9835-4d75d07a5d9d"
 
 [a858c5d9-2f28-48e7-9980-b7fa04060a60]
 description = "a straight beats three of a kind"
@@ -77,6 +88,11 @@ description = "flush beats a straight"
 
 [4d90261d-251c-49bd-a468-896bf10133de]
 description = "both hands have a flush, tie goes to high card, down to the last one if necessary"
+include = false
+
+[e04137c5-c19a-4dfc-97a1-9dfe9baaa2ff]
+description = "both hands have a flush, tie goes to high card, down to the last one if necessary"
+reimplements = "4d90261d-251c-49bd-a468-896bf10133de"
 
 [3a19361d-8974-455c-82e5-f7152f5dba7c]
 description = "full house beats a flush"
