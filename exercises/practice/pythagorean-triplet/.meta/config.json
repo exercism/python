@@ -31,7 +31,7 @@
       ".meta/example.py"
     ]
   },
-  "blurb": "There exists exactly one Pythagorean triplet for which a + b + c = 1000. Find the product a * b * c.",
+  "blurb": "There exists exactly one Pythagorean triplet for which a + b + c = 1000. Find the triplet.",
   "source": "Problem 9 at Project Euler",
   "source_url": "https://projecteuler.net/problem=9"
 }
