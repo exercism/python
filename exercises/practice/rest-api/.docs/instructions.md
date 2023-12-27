@@ -44,5 +44,5 @@ Your task is to implement a simple [RESTful API][restful-wikipedia] that receive
 [restful-wikipedia]: https://en.wikipedia.org/wiki/Representational_state_transfer
 [iou]: https://en.wikipedia.org/wiki/IOU
 [github-rest]: https://developer.github.com/v3/
-[reddit-rest]: https://www.reddit.com/dev/api/
+[reddit-rest]: https://web.archive.org/web/20231202231149/https://www.reddit.com/dev/api/
 [restfulapi]: https://restfulapi.net/
