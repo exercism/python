@@ -1,18 +1,22 @@
 [
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://wiki.python.org/moin/BitwiseOperators/",
+    "description": "BitwiseOperators on the Python wiki."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://realpython.com/python-bitwise-operators",
+    "description": "Real Python: Bitwise Operators in Python."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url":  "https://stackoverflow.com/a/20768199",
+    "description": "Stack Overflow: Convert a Python int to an unsigned int."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url":  "https://www.khanacademy.org/computing/computer-science/cryptography/ciphers/a/xor-bitwise-operation",
+    "description": "Khan Academy: The Ultimate Shift Cipher."
+  },
+  {
+    "url":  "https://en.wikipedia.org/wiki/XOR_cipher",
+    "description": "The XOR Cipher"
   }
 ]
