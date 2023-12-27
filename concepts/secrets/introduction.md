@@ -12,6 +12,6 @@ Further details on why the addition of the `secrets` module proved necessary are
 
 If you are writing security-sensitive applications, you will certainly want to read the [full documentation][secrets], which gives further advice and examples.
 
-[PEP506]: https://peps.python.org/pep-0506/[secrets]: https://docs.python.org/3/library/secrets.html
+[PEP506]: https://peps.python.org/pep-0506/
 [pseudo-random-numbers]: https://www.khanacademy.org/computing/computer-science/cryptography/crypt/v/random-vs-pseudorandom-number-generators
 [secrets]: https://docs.python.org/3/library/secrets.html
