@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/dnd-character/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2023-12-27
 
 import unittest
 
@@ -76,3 +76,8 @@ class DndCharacterTest(unittest.TestCase):
     def test_each_ability_is_only_calculated_once(self):
         Char = Character()
         self.assertIs(Char.strength == Char.strength, True)
+        self.assertIs(Char.dexterity == Char.dexterity, True)
+        self.assertIs(Char.constitution == Char.constitution, True)
+        self.assertIs(Char.intelligence == Char.intelligence, True)
+        self.assertIs(Char.wisdom == Char.wisdom, True)
+        self.assertIs(Char.charisma == Char.charisma, True)
