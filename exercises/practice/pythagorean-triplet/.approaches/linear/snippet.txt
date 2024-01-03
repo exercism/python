@@ -1,0 +1,8 @@
+def triplets_with_sum(n):
+    def calculate_medium(small):
+        return (n ** 2 - 2 * n * small) / (2 * (n - small))
+    two_sides = ((int(medium), small) for small in range(3, n // 3)
+                 if small < (medium := calculate_medium(small))
+                 and medium.is_integer())
+    return [[small, medium, (medium ** 2 + small ** 2) ** 0.5]
+            for medium, small in two_sides]
