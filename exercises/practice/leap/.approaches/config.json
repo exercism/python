@@ -1,7 +1,7 @@
 {
   "introduction": {
     "authors": ["bobahop"],
-    "contributors": []
+    "contributors": ["colinleach"]
   },
   "approaches": [
     {
@@ -24,6 +24,14 @@
       "title": "datetime addition",
       "blurb": "Use datetime addition.",
       "authors": ["bobahop"]
+    },
+    {
+      "uuid": "d85be356-211a-4d2f-8af0-fa92e390b0b3",
+      "slug": "calendar-isleap",
+      "title": "calendar.isleap() function",
+      "blurb": "Use the calendar module.",
+      "authors": ["colinleach",
+                  "BethanyG"]
     }
   ]
 }

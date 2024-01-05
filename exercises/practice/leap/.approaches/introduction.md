@@ -37,6 +37,13 @@ Besides the aforementioned, idiomatic approaches, you could also approach the ex
 
 Add a day to February 28th for the year and see if the new day is the 29th. For more information, see the [`datetime` addition approach][approach-datetime-addition].
 
+### Approach: The `calendar` module
+
+It is possible to use `calendar.isleap(year)` from the standard library, which solves this exact problem.
+
+This is self-defeating in an Exercism practice exercise, intended to explore ways to use booleans.
+In a wider context, anyone testing for leap years may already be using `calendar` or related modules, and it it good to know what library functions are available.
+
 ## Which approach to use?
 
 - The chain of boolean expressions should be the most efficient, as it proceeds from the most likely to least likely conditions.
