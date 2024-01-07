@@ -72,6 +72,7 @@ y = [99, 98]
 ...
 x = [90, 89, 88 ...]
 y = [99, 98,97,96,95,94,93,92,91,90]
+```
 
 Here we can see that the highest value for this "run" is 90 \* 99 = 8910.
 Meaning that running beyond this point won't give us any values higher than 9009.
