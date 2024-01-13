@@ -5,7 +5,8 @@
       "slug": "performance",
       "title": "Performance deep dive",
       "blurb": "Deep dive to find out the most performant approach for determining a leap year.",
-      "authors": ["bobahop"]
+      "authors": ["bobahop",
+                  "colinleach"]
     }
   ]
 }

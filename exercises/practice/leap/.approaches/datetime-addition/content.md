@@ -11,11 +11,14 @@ def leap_year(year):
 ```
 
 ~~~~exercism/caution
-This approach may be considered a "cheat" for this exercise.
+This approach may be considered a "cheat" for this exercise, which is intended to practice Boolean operators and logic.
+It also adds a tremendous amount of overhead in both performance and memory, as it imports all of the `datetime` module and requires the instantiation of both a `datetime` object and a `datetime.timedelta` object.  
+
+For more information, see this exercises performance article.
 ~~~~
 
-By adding a day to February 28th for the year, you can see if the new day is the 29th or the 1st.
-If it is the 29th, then the function returns `True` for the year being a leap year.
+By adding a day to February 28th for a given year, you can see if the new day falls on the 29th of February, or the 1st of March.
+If it is February 29th, then the function returns `True` for the year being a leap year.
 
 - A new [datetime][datetime] object is created for February 28th of the year.
 - Then the [timedelta][timedelta] of one day is added to that `datetime`,
