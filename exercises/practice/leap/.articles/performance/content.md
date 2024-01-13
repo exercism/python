@@ -16,8 +16,9 @@ For our performance investigation, we will also include a two further approaches
 
 To benchmark the approaches, we wrote a [small benchmark application][benchmark-application] using the [`timeit`][timeit] module.
 All methods are "fast", but the difference may be easier to see graphically.
-Note that the y-axis values in the chart have a `1e-7` multiplier: all run times are sub-microsecond:
-
+**Note**: The y-axis values in the chart have a `1e-7` multiplier.
+ All run times are sub-microsecond.
+ 
 
 <p>
   <img
