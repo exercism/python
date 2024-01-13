@@ -24,7 +24,7 @@ All methods are "fast", but the difference may be easier to see graphically.
   <img
     src="https://github.com/exercism/images/blob/main/images/tracks/python/leap/leap_timeit_bar_plot-light.svg"
     alt="Grouped Bar Chart showing execution timings for 4 leap approaches using the years 1900, 200, 2019, and 202 as input data.">
-    <figcaption><a href="#Timings for approaches by input year">Execution timings text description of the bar chart</a>
+    <figcaption align="center"><a href="#Timings for approaches by input year">Execution timings text description of the bar chart</a>
     </figcaption>
 </figure>
 
