@@ -18,14 +18,12 @@ To benchmark the approaches, we wrote a [small benchmark application][benchmark-
 All methods are "fast", but the difference may be easier to see graphically.
 **Note**: The y-axis values in the chart have a `1e-7` multiplier.
  All run times are sub-microsecond.
- 
+
 
 <p>
   <img
     src="https://github.com/exercism/images/blob/main/images/tracks/python/leap/leap_timeit_bar_plot-light.svg"
-    alt="Grouped Bar Chart showing execution timings for 4 leap approaches using the years 1900, 200, 2019, and 202 as input data.">
-    <br>
-  <a href="#Timings for approaches by input year">Execution timings for approaches by input year text description of the bar chart</a>
+    alt="Grouped Bar Chart showing execution timings for 4 leap approaches using the years 1900, 200, 2019, and 202 as input data."><a href="#Timings for approaches by input year">Execution timings text description of the bar chart</a>
 </p>
 
 
