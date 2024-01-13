@@ -3,8 +3,10 @@ import pandas as pd
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+import seaborn as sns
+from matplotlib.colors import ListedColormap
 
-
+# Setting up the Data
 loops = 1_000_000
 
 row_headers = ["if-statements", "ternary", "datetime-add", "calendar-isleap"]
@@ -39,6 +41,8 @@ def leap_year(year):
     return isleap(year)
 """
 
+
+# Conducting ghe timings
 for descriptor in row_headers:
     val = timeit.timeit("""leap_year(1900)""", setups[descriptor], number=loops) / loops
     year = '1900'
@@ -60,14 +64,24 @@ for descriptor in row_headers:
     print(f"{descriptor} {year}: {val}")
     df.loc[descriptor, year] = val
 
+
+# Settng up chart details and colors
 mpl.rcParams['axes.labelsize'] = 18
+bar_colors = ["#AFAD6A", "#B1C9FD", "#CDC6FD",
+              "#FABD19", "#3B76F2", "#7467D1",
+              "#FA9A19", "#85832F", "#1A54CE","#4536B0"]
+
+my_cmap = ListedColormap(sns.color_palette(bar_colors, as_cmap=True))
 
 # bar plot of actual run times
 ax = df.plot.bar(figsize=(10, 7),
                  ylabel="time (s)",
                  fontsize=14,
                  width=0.8,
-                 rot=0)
+                 rot=0,
+                 colormap=my_cmap)
+
+# Saving the graph for later use
 plt.savefig('../timeit_bar_plot.svg')
 
 
