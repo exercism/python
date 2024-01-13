@@ -19,16 +19,11 @@ All methods are "fast", but the difference may be easier to see graphically.
 **Note**: The y-axis values in the chart have a `1e-7` multiplier.
  All run times are sub-microsecond.
 
-
-<p>
-  <img
-    src="https://github.com/exercism/images/blob/main/images/tracks/python/leap/leap_timeit_bar_plot-light.svg"
-    alt="Grouped Bar Chart showing execution timings for 4 leap approaches using the years 1900, 200, 2019, and 202 as input data. Described under the heading Timings for approaches by input year.">
-</p>
-
+  <img src="https://github.com/exercism/images/blob/main/images/tracks/python/leap/leap_timeit_bar_plot-light.svg" alt="Grouped Bar Chart showing execution timings for 4 leap approaches using the years 1900, 200, 2019, and 202 as input data. Described under the heading Timings for approaches by input year.">
 
 ### Timings for approaches by input year
 
+<br>
 
 |                 |    1900 |    2000 |    2019 |    2020 |
 |:----------------|--------:|--------:|--------:|--------:|
@@ -37,6 +32,7 @@ All methods are "fast", but the difference may be easier to see graphically.
 | datetime add    | 2.8e-07 | 2.8e-07 | 2.7e-07 | 2.8e-07 |
 | calendar isleap | 6.5e-08 | 5.8e-08 | 3.8e-08 | 5.5e-08 |
 
+<br>
 
 - The `if-statements` (_boolean chain_) is the fastest approach when testing a year that is not evenly divisible by `100` and is not a leap year.
 Since most years fit those conditions, it is overall the most efficient approach.
