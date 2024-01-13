@@ -27,10 +27,20 @@ The chain of boolean expressions is efficient, as it proceeds from testing the m
 It is the fastest approach when testing a year that is not evenly divisible by `100` and is not a leap year.
 
 
+## Operator precedence
+
+The implementation contains one set of parentheses, around the `or` clause:
+- One set is enough, because the `%` operator is highest priority, then the `==` and `!=` relational operators.
+- Those parentheses are required, because `and` is higher priority than `or`.
+In Python, `a and b or c` is interpreted as `(a and b) or c`, which would give the wrong answer for this exercise.
+
+If in doubt, it is always permissible to add extra parentheses for clarity.
+
+
 ## Refactoring
 
 By using the [falsiness][falsiness] of `0`, the [`not` operator][not-operator] can be used instead of comparing equality to `0`.
-For example
+For example:
 
 ```python
 def leap_year(year):
