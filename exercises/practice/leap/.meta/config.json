@@ -32,7 +32,7 @@
       ".meta/example.py"
     ]
   },
-  "blurb": "Given a year, report if it is a leap year.",
+  "blurb": "Determine whether a given year is a leap year.",
   "source": "CodeRanch Cattle Drive, Assignment 3",
   "source_url": "https://coderanch.com/t/718816/Leap"
 }
