@@ -115,8 +115,8 @@ def just_the_buzz(number):
 >>> just_the_buzz(15)
 'Buzz!'
 
->>> just_the_buzz(10)
-'10'
+>>> just_the_buzz(13)
+'13'
 ```
 
 ## Truthy and Falsy
