@@ -28,10 +28,10 @@ All methods are "fast", but the difference may be easier to see graphically.
 
 |                 |    1900 |    2000 |    2019 |    2020 |
 |:----------------|--------:|--------:|--------:|--------:|
-| if statements   | 5.1e-08 | 4.5e-08 | 2.5e-08 | 3.9e-08 |
-| ternary         | 3.3e-08 | 3.0e-08 | 3.0e-08 | 3.3e-08 |
-| datetime add    | 2.8e-07 | 2.8e-07 | 2.7e-07 | 2.8e-07 |
-| calendar isleap | 6.5e-08 | 5.8e-08 | 3.8e-08 | 5.5e-08 |
+| if-statements   | 1.7e-07 | 1.6e-07 | 9.0e-08 | 1.3e-07 |
+| ternary         | 1.2e-07 | 1.0e-07 | 1.1e-07 | 1.1e-07 |
+| datetime-add    | 6.9e-07 | 6.7e-07 | 7.0e-07 | 6.7e-07 |
+| calendar-isleap | 2.2e-07 | 2.2e-07 | 1.4e-07 | 1.7e-07 |
 
 <br>
 
