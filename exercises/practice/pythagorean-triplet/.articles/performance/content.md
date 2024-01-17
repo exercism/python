@@ -3,14 +3,16 @@
 The [Approaches page][approaches-page] discusses three ways to approach this exercise, with very different performance.
 Adding in some ways to vary the coding details, we will discuss 5 implementations.
 
+
 ## Cubic-time code
 
 We need to find sets of three variables meeting some criteria, so the most naive approach is to scan over the variables in nested loops, with a test for the criteria in the innermost loop.
 
-This is simple but _very_ slow, and the run-time increases proportional to `n ** 3`.
+This is simple and clear but _very_ slow, and the run-time increases proportional to `n ** 3`.
 When tested, `n = 1_000` took about 8 seconds to complete, and we can extrapolate that `n = 100_000` would take nearly 3 months.
 
 This is impractical!
+
 
 ## Quadratic-time code
 
@@ -35,14 +37,16 @@ As a general principle: if run time varies as `a * n ** x`, this sort of coding 
 
 The exponent `x` is ***very much*** more important, and only a better algorithm can change it.
 
+
 ## Linear-time code
 
 The approaches discussed above have a strictly programming focus.
 To take the next step, we need to look at the problem as mathematicians &mdash; or as programmers who read what real mathematicians have already published.
 
 The [Approaches page][approaches-page] discusses two implementations with code that looks very different but uses a similar underlying algorithm.
-These are shown in the analyses as `linear_loop` and `linear_comp` (the latter using list comprehensions).
+These are shown in the analyses as `linear_loop` and `linear_comp` (the latter using generator expressions and list comprehensions).
 Performance is similarly impressive in both cases.
+
 
 ## Measured timings
 
@@ -58,27 +62,21 @@ Numerical results are tabulated below.
 | linear_loop | 4.4e-07 | 5.7e-07 | 1.1e-06 | 3.4e-06 | 1.1e-05 | 3.1e-05 | 1.0e-04 | 3.1e-04 | 1.2e-03 |
 | linear_comp | 5.3e-07 | 1.1e-06 | 2.8e-06 | 9.0e-06 | 2.8e-05 | 8.3e-05 | 2.8e-04 | 8.1e-04 | 3.1e-03 |
 
-Note the missing values, which also affect the graphical representation:
-
-![](timeit_bar_plot.svg)
-
-Also, note the logarithmic y-axis.
+Note the missing values, which also affect the graphical representation.
+Also, note the logarithmic y-axis in the graph output when running the Benchmark.py script.
 These run times vary over more than 7 orders of magnitude!
+
 
 ## Testing algorithmic complexity
 
-We have discussed these solutions as `cubic`, `quadratic` or `linear.
+We have discussed these solutions as `cubic`, `quadratic` or `linear`.
 Do the experimental data support this?
 
 For a [power law][power-law] relationship, we have a run time `t` given by `t = a * n**x`, where `a` is a proportionality constant an `x` is the power.
 
 Taking logs of both sides, `log(t) = x * log(n) + constant.`
 
-Plots of `log(t)` against `log(n)` will be a straight line with slope equal to the power `x`.
-
-This is how the graphs look:
-
-![](slopes.svg)
+Plots of `log(t)` against `log(n)` will be a straight line with slope equal to the power `x`, which you can produce by running the Benchmark.py code.
 
 Encouragingly, these are all straight lines for larger values of `n`, as we expected.
 

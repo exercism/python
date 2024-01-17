@@ -15,14 +15,16 @@ Because `a + b + c == n`, we only loop over `a` and `b`.
 The third variable `c` is then predictable.
 
 The above code loops over the full range of both variables.
-We know enough about the problems to tighten this up.
+This means the 'work' this code has to do for each additional value in `range(1, n+1)` is `n**2`.
+We know enough about the problems to tighten this up a bit.
 
 For example:
 - The smallest pythagorean is (famously) `[3, 4, 5]`, so `a >= 3`
 - `a + b == n - c` and `a <= b`, so `a <= (n - c) // 2`
 
 We can also avoid, to some extent, repeating the same multiplication many times.
-This gets us to the code below.
+This gets us to the code below:
+
 
 ```python
 def triplets_with_sum(n):
@@ -39,7 +41,7 @@ def triplets_with_sum(n):
 We could have done a bit better.
 Though not stated in the problem description, `a + b > c`, otherwise they could not form a triangle.
 
-This means that `c <= n // 2`, reducing the outer loop.
+This means that `c <= n // 2`, reducing the iterations in the outer loop.
 
 However, these optimizations only reduce the run time by a small factor.
 They do almost nothing to make the algorithm scale to large `n`.
