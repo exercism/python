@@ -1,7 +1,9 @@
 # Instructions
 
-Reverse a string
+Your task is to reverse a given string.
 
-For example:
-input: "cool"
-output: "looc"
+Some examples:
+
+- Turn `"stressed"` into `"desserts"`.
+- Turn `"strops"` into `"sports"`.
+- Turn `"racecar"` into `"racecar"`.
