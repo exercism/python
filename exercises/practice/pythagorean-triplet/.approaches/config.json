@@ -1,0 +1,33 @@
+{
+  "introduction": {
+    "authors": ["colinleach",
+                "BethanyG"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "4d4b4e6c-a026-4ed3-8e07-6b9edfabe713",
+      "slug": "cubic",
+      "title": "Cubic",
+      "blurb": "Cubic-time approach with loops nested 3 deep.",
+      "authors": ["colinleach",
+                  "BethanyG"]
+    },
+    {
+      "uuid": "385c0ace-117f-4480-8dfc-0632d8893e60",
+      "slug": "quadratic",
+      "title": "Quadratic",
+      "blurb": "Quadratic-time approaches with doubly-nested loops.",
+      "authors": ["colinleach",
+                  "BethanyG"]
+    },
+    {
+      "uuid": "1addb672-6064-4a07-acad-4a08f92d9e43",
+      "slug": "linear",
+      "title": "Linear Loop",
+      "blurb": "Linear-time approaches with no nesting of loops.",
+      "authors": ["colinleach",
+                  "BethanyG"]
+    }
+  ]
+}
