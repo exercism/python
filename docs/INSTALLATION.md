@@ -18,7 +18,7 @@ Some quick links into the documentation by operating system:
    We recommend reviewing some of the methods outlined in the Real Python article [Installing Python][installing-python] or the articles by Brett Cannon linked above.
 
 
-Exercism tests and tooling currently support `3.7` - `3.11.2` (_tests_) and [`Python 3.11.2`][311-new-features] (_tooling_).
+Exercism tests and tooling currently support `3.7` - `3.11.5` (_tests_) and [`Python 3.11.5`][311-new-features] (_tooling_).
 Exceptions to this support are noted where they occur.
 Most of the exercises will work with `Python 3.6+`, or even earlier versions.
 But we don't guarantee support for versions not listed under [Active Python Releases][active-python-releases].
