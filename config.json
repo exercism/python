@@ -2191,15 +2191,6 @@
         "status": "deprecated"
       },
       {
-        "slug": "parallel-letter-frequency",
-        "name": "Parallel Letter Frequency",
-        "uuid": "da03fca4-4606-48d8-9137-6e40396f7759",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "status": "deprecated"
-      },
-      {
         "slug": "point-mutations",
         "name": "Point Mutations",
         "uuid": "d85ec4f2-c201-4eff-9f3a-831a0cc38e8d",
@@ -2245,7 +2236,7 @@
         "status": "deprecated"
       }
     ],
-    "foregone": ["lens-person"]
+    "foregone": ["lens-person", "parallel-letter-frequency"]
   },
   "concepts": [
     {
