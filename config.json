@@ -150,7 +150,7 @@
         "uuid": "5ac0c40c-4038-47b8-945b-8480e4a3f44c",
         "concepts": ["dict-methods"],
         "prerequisites": ["dicts"],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "locomotive-engineer",
@@ -206,7 +206,6 @@
           "comprehensions",
           "loops",
           "sequences",
-          "string-formatting",
           "string-methods",
           "tuples"
         ],
@@ -921,7 +920,6 @@
           "loops",
           "numbers",
           "strings",
-          "string-formatting",
           "string-methods"
         ],
         "difficulty": 2
@@ -2191,15 +2189,6 @@
         "status": "deprecated"
       },
       {
-        "slug": "parallel-letter-frequency",
-        "name": "Parallel Letter Frequency",
-        "uuid": "da03fca4-4606-48d8-9137-6e40396f7759",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "status": "deprecated"
-      },
-      {
         "slug": "point-mutations",
         "name": "Point Mutations",
         "uuid": "d85ec4f2-c201-4eff-9f3a-831a0cc38e8d",
@@ -2245,7 +2234,7 @@
         "status": "deprecated"
       }
     ],
-    "foregone": ["lens-person"]
+    "foregone": ["lens-person", "parallel-letter-frequency"]
   },
   "concepts": [
     {
