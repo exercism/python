@@ -150,7 +150,7 @@
         "uuid": "5ac0c40c-4038-47b8-945b-8480e4a3f44c",
         "concepts": ["dict-methods"],
         "prerequisites": ["dicts"],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "locomotive-engineer",
@@ -206,7 +206,6 @@
           "comprehensions",
           "loops",
           "sequences",
-          "string-formatting",
           "string-methods",
           "tuples"
         ],
@@ -921,7 +920,6 @@
           "loops",
           "numbers",
           "strings",
-          "string-formatting",
           "string-methods"
         ],
         "difficulty": 2
