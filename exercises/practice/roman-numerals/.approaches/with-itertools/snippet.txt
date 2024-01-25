@@ -1,0 +1,7 @@
+from itertools import starmap
+
+def roman(number: int) -> str:
+    orders = [(1000, "M  "), (100, "CDM"), (10, "XLC"), (1, "IVX")] 
+    options = lambda I, V, X: ["", I, I * 2, I * 3, I + V, V, V + I, V + I * 2, V + I * 3, I + X]
+    compute = lambda n, chars: options(*chars)[number % (n * 10) // n]
+    return "".join(starmap(compute, orders))
