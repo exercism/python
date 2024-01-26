@@ -39,7 +39,7 @@ A student needs a score greater than **40** to achieve a passing grade on the ex
 The teacher you're assisting wants to find the group of students who've performed "the best" on this exam.
 What qualifies as "the best" fluctuates, so you need to find the student scores that are **greater than or equal to** the current threshold.
 
-Create the function `above_threshold(student_scores)` taking `student_scores` (a `list` of grades), and `threshold` (the "top score" threshold) as parameters.
+Create the function `above_threshold(student_scores, threshold)` taking `student_scores` (a `list` of grades), and `threshold` (the "top score" threshold) as parameters.
 This function should return a `list` of all scores that are `>=` to `threshold`.
 
 ```python
@@ -85,7 +85,7 @@ Create the function `letter_grades(highest)` that takes the "highest" score on t
 You have a list of exam scores in descending order, and another list of student names also sorted in descending order by their exam scores.
 You would like to match each student name with their exam score and print out an overall class ranking.
 
-Create the function `student_ranking(student_scores)` with parameters `student_scores` and `student_names`.
+Create the function `student_ranking(student_scores, student_names)` with parameters `student_scores` and `student_names`.
 Match each student name on the student_names `list` with their score from the student_scores `list`.
 You can assume each argument `list` will be sorted from highest score(er) to lowest score(er).
 The function should return a `list` of strings with the format `<rank>. <student name>: <student score>`.
