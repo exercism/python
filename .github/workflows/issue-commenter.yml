@@ -13,7 +13,7 @@ jobs:
 
       - name: Read issue-comment.md
         id: issue-comment
-        uses: juliangruber/read-file-action@02bbba9876a8f870efd4ad64e3b9088d3fb94d4b
+        uses: juliangruber/read-file-action@b549046febe0fe86f8cb4f93c24e284433f9ab58
         with:
           path: .github/issue-comment.md
 
