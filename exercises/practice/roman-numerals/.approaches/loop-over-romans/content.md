@@ -63,30 +63,9 @@ def roman(number: int) -> str:
 
 However, for a read-only lookup it may be better to use (immutable) tuples for `numbers` and `names`.
 
-These three solutions share some common features:
-- Some sort of translation lookup.
-- Nested loops, a `while`and a `for`, in either order.
-- At each step, find the largest number that can be subtracted from the decimal input and appended to the Roman representation.
-
-When building a string gradually, it is often better to build an intermediate list, then do a `join()` at the end, as in the third example.
-This is because strings are immutable, so need to be copied at each step, and the old stings need to be garbage-collected.
-
-However, Roman numerals are always so short that the difference is minimal in this case.
-
-Incidentally, notice the use of type hints: `def roman(number: int) -> str`.
-This is optional in Python and (currently) ignored by the interpreter, but is useful for documentation purposes.
-
-Increasingly, IDE's such as VSCode and PyCharm understand the type hints, using them to flag problems and provide advice.
-
-____________________________________________________________
-
-## Other stuff
-
+As Roman numerals are built up from letters for 1, 5, 10 times powers of 10, it is possible to shorten the lookup and build up most of the digits programmatically:
 
 ```python
-"""Convert an int to a Roman numeral."""
-
-
 # The 10's, 5's and 1's position chars for 1, 10, 100, 1000.
 DIGIT_CHARS = ["XVI", "CLX", "MDC", "??M"]
 
@@ -114,41 +93,10 @@ def roman(number: int) -> str:
             number -= num
     return out
 ```
-```python
-# @bobahop
-LOOKUP = [(1000, "M"), (900, "CM"), (500, "D"), (400, "CD"), (100, "C"), (90, "XC"), (50, "L"),
-    (40, "XL"), (10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")]
 
-def convert (number, idx, output):
-    if idx > 12:
-        return output
-    val, ltr = LOOKUP[idx]
-    if number >= val:
-        return convert(number - val, idx, output + ltr)
-    return convert(number, idx + 1, output)
-
-def roman(number):
-    return convert(number, 0, "")
-```
+The code below is doing something similar to the dictionary approach at the top of this page, but more concisely:
 
 ```python
-# @meatball
-def roman(number):
-    roman_hash = { 1000: 'M', 900: 'CM', 500 : 'D', 400: 'CD',
-                     100 : 'C', 90  : 'XC', 50  : 'L', 40  : 'XL',
-                     10   : 'X', 9   : 'IX', 5  : 'V', 4   : 'IV',
-                     1    : 'I' }
-    result = ""
-    for x, y in roman_hash.items():
-        while x <= number:
-            number -= x
-            result += y
-    return result
-```
-
-
-```python
-# @pranasas
 def roman(number: int) -> str:
     result = ''
     divisor_map = {1000: 'M', 900: 'CM', 500: 'D', 400: 'CD', 100: 'C', 90: 'XC',
@@ -158,4 +106,20 @@ def roman(number: int) -> str:
         result += symbol * major
     return result
 ```
+
+
+These five solutions all share some common features:
+- Some sort of translation lookup.
+- Nested loops, a `while`and a `for`, in either order.
+- At each step, find the largest number that can be subtracted from the decimal input and appended to the Roman representation.
+
+When building a string gradually, it is often better to build an intermediate list, then do a `join()` at the end, as in the third example.
+This is because strings are immutable, so need to be copied at each step, and the old stings need to be garbage-collected.
+
+However, Roman numerals are always so short that the difference is minimal in this case.
+
+Incidentally, notice the use of type hints: `def roman(number: int) -> str`.
+This is optional in Python and (currently) ignored by the interpreter, but is useful for documentation purposes.
+
+Increasingly, IDE's such as VSCode and PyCharm understand the type hints, using them to flag problems and provide advice.
 

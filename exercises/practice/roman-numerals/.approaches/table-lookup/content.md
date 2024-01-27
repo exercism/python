@@ -65,4 +65,4 @@ The `[::-1]` indexing is idiomatic Python, but less experienced programmers may 
 
 ## Credit
 
-This approach was adapted from one created by cmcaine on the Julia track.
+This approach was adapted from one created by @cmcaine on the Julia track.

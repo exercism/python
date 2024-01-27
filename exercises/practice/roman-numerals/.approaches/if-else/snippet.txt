@@ -5,5 +5,4 @@
         if digit < 9: return five + (digit - 5) * units
         return nine
         
-    if c > 0:
-        res += translate_digit(c, ('C', 'CD', 'D', 'CM'))
+    if c > 0: res += translate_digit(c, ('C', 'CD', 'D', 'CM'))

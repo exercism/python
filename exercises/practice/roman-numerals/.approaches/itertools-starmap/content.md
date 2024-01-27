@@ -47,5 +47,10 @@ def roman(number: int) -> str:
 TODO - well, it would be, right?
 
 
+
+## Credit
+
+We owe this approach to @MAPKarrenbelt, who must have had fun with it.
+
 [starmap]: https://docs.python.org/3/library/itertools.html#itertools.starmap
 [pep8]: https://peps.python.org/pep-0008/#programming-recommendations

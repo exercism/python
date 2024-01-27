@@ -71,14 +71,8 @@ Given that, the code simplifies to:
 
 ```python
 def roman(number: int) -> str:
-    assert isinstance(number, int)
-
-    m, c, x, i = ([0, 0, 0, 0] + [int(d) for d in str(number)])[-4:]
-
-    res = ''
-
     def translate_digit(digit: int, translations: iter) -> str:
-        assert isinstance(number, int) and 0 <= digit <= 9
+        assert isinstance(digit, int) and 0 <= digit <= 9
 
         units, four, five, nine = translations
         if digit < 4:
@@ -89,15 +83,16 @@ def roman(number: int) -> str:
             return five + (digit - 5) * units
         return nine
 
+    assert isinstance(number, int)
+    m, c, x, i = ([0, 0, 0, 0] + [int(d) for d in str(number)])[-4:]
+    res = ''
+
     if m > 0:
         res += m * 'M'
-
     if c > 0:
         res += translate_digit(c, ('C', 'CD', 'D', 'CM'))
-
     if x > 0:
         res += translate_digit(x, ('X', 'XL', 'L', 'XC'))
-
     if i > 0:
         res += translate_digit(i, ('I', 'IV', 'V', 'IX'))
 
