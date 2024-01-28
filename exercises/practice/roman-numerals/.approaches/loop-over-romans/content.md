@@ -114,7 +114,7 @@ These five solutions all share some common features:
 - At each step, find the largest number that can be subtracted from the decimal input and appended to the Roman representation.
 
 When building a string gradually, it is often better to build an intermediate list, then do a `join()` at the end, as in the third example.
-This is because strings are immutable, so need to be copied at each step, and the old stings need to be garbage-collected.
+This is because strings are immutable, so need to be copied at each step, and the old strings need to be garbage-collected.
 
 However, Roman numerals are always so short that the difference is minimal in this case.
 

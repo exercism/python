@@ -166,7 +166,7 @@ def roman_recur(num: int, idx: int, digits: list[str]):
             return roman_recur(num, idx + 1, digits)
 ```
 
-See  [`loop-over-romans`][loop-over-romans] for details.
+See  [`recurse-match`][recurse-match] for details.
 
 
 ### Over-use a functional approach
@@ -190,7 +190,7 @@ It is debugged and supports Roman-to-Arabic conversions in addtion to the Arabic
 Most submissions, like the `roman` package implementation, use some variant of [`loop-over-romans`][loop-over-romans].
 
 Using a [2-D lookup table][table-lookup] takes a bit more initialization, but then everthing can be done in a list comprehension instead of nested loops.
-Python is relatively unusual in supporting both tuples-of-tuples and relatively fast list comprehensions, but the approach seems a good fit for this language.
+Python is relatively unusual in supporting both tuples-of-tuples and relatively fast list comprehensions, so the approach seems a good fit for this language.
 
 No performance article is currently included for this exercise.
 The problem is inherently limited in scope by the design of Roman numerals, so any of the approaches is likely to be fast enough.
@@ -200,4 +200,5 @@ The problem is inherently limited in scope by the design of Roman numerals, so a
 [if-else]: https://exercism.org/tracks/python/exercises/roman-numerals/approaches/if-else
 [table-lookup]: https://exercism.org/tracks/python/exercises/roman-numerals/approaches/table-lookup
 [loop-over-romans]: https://exercism.org/tracks/python/exercises/roman-numerals/approaches/loop-over-roman
+[recurse-match]: https://exercism.org/tracks/python/exercises/roman-numerals/approaches/recurse-match
 [roman-module]: https://github.com/zopefoundation/roman

@@ -30,7 +30,7 @@ There is also an [official tutorial][structural-pattern-matching] for this new f
 
 The code above is adapted from a Scala approach, where it may be more appropriate.
 
-Once we get past the unfamiliar-in Python syntax, this code is doing essentially the same as other [`loop-over-romans`][loop-over-romans] approaches.
+Once we get past the unfamiliar-in-Python syntax, this code is doing essentially the same as other [`loop-over-romans`][loop-over-romans] approaches.
 
 Without the pattern matching, a recursive approach might look something like this:
 
