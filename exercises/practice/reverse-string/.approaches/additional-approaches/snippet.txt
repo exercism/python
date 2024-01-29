@@ -1,4 +1,3 @@
-def reverse(text):
     given, output = bytearray(text.encode("utf-8")), bytearray(len(given))
     index, LENGTH_MASK  = 0, 0xE0  # 0b11110000 or 224
     while index < len(given):
