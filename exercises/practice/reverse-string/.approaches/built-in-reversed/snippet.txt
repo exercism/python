@@ -1,2 +1,2 @@
-def reverse(input=''):
-  return (''.join(reversed(input)))
+def reverse(text):
+  return (''.join(reversed(text)))

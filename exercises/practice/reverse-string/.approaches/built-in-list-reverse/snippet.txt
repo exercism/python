@@ -1,4 +1,5 @@
-def reverse(word):
-	temp = list(word)
-	temp.reverse()
-	return ''.join(temp)
+def reverse(text):
+	output = list(text)
+	output.reverse()
+
+	return ''.join(output)
