@@ -1,0 +1,4 @@
+def reverse(text):
+    codepoints = list(text)
+    length = len(text)
+    return "".join(codepoints[length-1-index] for index in range(length))

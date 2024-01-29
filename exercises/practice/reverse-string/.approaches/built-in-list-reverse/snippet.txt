@@ -1,0 +1,4 @@
+def reverse(word):
+	temp = list(word)
+	temp.reverse()
+	return ''.join(temp)
