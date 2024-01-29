@@ -34,7 +34,7 @@ def reverse(text):
     return "".join(output)
 ```
 
-This code iterates backward over the string using `range()`, and can therefor use `list.append()` to append to the output list in (amortized) constant time.
+This code iterates backward over the string using `range()`, and can therefore use `list.append()` to append to the output list in (amortized) constant time.
 However, the use of `join()` to unpack the list and create a string still makes this `O(n)`.
 This also takes `O(n)` space for the output `list`.
 
@@ -145,3 +145,4 @@ The [`timeit`][timeit] module docs have more details, and [note.nkmk.me][note_nk
 
 [note_nkmk_me]: https://note.nkmk.me/en/python-timeit-measure/
 [timeit]: https://docs.python.org/3/library/timeit.html#python-interface
+[approach-additional-approaches]: https://exercism.org/tracks/python/exercises/reverse-string/.approaches/additional-approaches
