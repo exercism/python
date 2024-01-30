@@ -65,7 +65,7 @@ For example the first digit of 723:
 ```python
 number = 723
 [x for x in compute(100, "CDM")]
-=> ['D', 'C', 'C']
+# => ['D', 'C', 'C']
 ```
 
 The `starmap()` function ties `orders`, `options()` and `compute` together, splitting up strings and tuples as necessary to give each function the parameters it needs.
