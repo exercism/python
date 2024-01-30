@@ -11,7 +11,7 @@ Minor variants of the system have been used which represent 4 as IIII rather tha
 The system is inherently decimal: the number of human fingers has not changed since ancient Rome, nor the habit of using them for counting.
 However, there is no zero value available, so Roman numerals represent powers of 10 with different letters (I, X, C, M), not by position (1, 10, 100, 1000).
 
-The approaches basically break down into two groups, with many variants in each:
+The approaches to this exercise break down into two groups, with many variants in each:
 1. Split the input number into digits, and translate each separately.
 2. Iterate through the Roman numbers, from large to small, and convert the largest valid number at each step.
 
