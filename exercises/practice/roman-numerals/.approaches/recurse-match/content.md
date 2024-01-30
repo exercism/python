@@ -23,7 +23,7 @@ A limitation is the lack of tail-recursion optimization, which can easily trigge
 The maximum recursion depth for Python defaults to 1000 to avoid this overflow.
 
 However, Roman numerals are so limited in scale that they could be an ideal use case for playing with recursion.
-In practice, there is no obvious advantage over using a loop.
+In practice, there is no obvious advantage to recursion over using a loop (_everything you can do with recursion you can do with a loop and vice-versa_) .
 
 Note the use of [structural pattern matching][pep-636], available in Python since version 3.10.
 There is also an [official tutorial][structural-pattern-matching] for this new feature.
