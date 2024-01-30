@@ -54,7 +54,7 @@ For example, the 10 to 90 range:
 
 ```python
 options('X', 'L', 'C')
-# => ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX']
+# => ['', 'X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC']
 ```
 
 There is no zero, so that is replaced by an empty string.
