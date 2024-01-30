@@ -3,7 +3,8 @@
 ## How this Exercise is Structured in Python
 
 This exercise is best solved with Python's `%` ([modulo][modulo]) operator, which returns the remainder of positive integer division.
-It has a method equivalent `operator.mod()` in the [operator module][operator-mod].
+It has a method equivalent, `operator.mod()` in the [operator module][operator-mod].
+
 
 Python also offers additional 'remainder' methods in the [math module][math-module].
 [`math.fmod()`][fmod] behaves like `%`, but operates on floats.
