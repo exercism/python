@@ -18,9 +18,9 @@ The approaches to this exercise break down into two groups, with many variants i
 ## Digit-by-digit approaches
 
 The concept behind this class of approaches:
-- Split the input number into decimal digits.
-- For each digit, get the Roman equivalent and append to a list.
-- Join the list into a string and return it.
+1.  Split the input number into decimal digits.
+2.  For each digit, get the Roman equivalent and append to a list.
+3.  Join the list into a string and return it.
 Depending on the implementation, there may need to be a list-reverse step.
 
 ### With `if` conditions
