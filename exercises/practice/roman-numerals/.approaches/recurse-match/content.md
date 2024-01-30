@@ -20,10 +20,10 @@ def roman_recur(num: int, idx: int, digits: list[str]):
 [Recursion][recursion] is possible in Python, but it is much less commonly used than in some other languages.
 
 A limitation is the lack of tail-recursion optimization, which can easily trigger stack overflow if the recursion goes too deep.
-The maximum recursion depth defaults to 1000.
+The maximum recursion depth for Python defaults to 1000 to avoid this overflow.
 
-Roman numerals are so limited in scale that they could be an ideal use case for recursion.
-In practice, there is no obvious advantage over using a loop.
+However, Roman numerals are so limited in scale that they could be an ideal use case for playing with recursion.
+In practice, there is no obvious advantage to recursion over using a loop (_everything you can do with recursion you can do with a loop and vice-versa_) .
 
 Note the use of [structural pattern matching][pep-636], available in Python since version 3.10.
 There is also an [official tutorial][structural-pattern-matching] for this new feature.

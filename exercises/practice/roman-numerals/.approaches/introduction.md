@@ -8,18 +8,19 @@ Roman numerals are limited to positive integers from 1 to 3999 (MMMCMXCIX).
 In the version used for this exercise, the longest string needed to represent a Roman numeral is 14 characters (MMDCCCLXXXVIII).
 Minor variants of the system have been used which represent 4 as IIII rather than IV, allowing for longer strings, but those are not relevant here.
 
-The system is inherently decimal: the number of human fingers has not changed since ancient Rome, nor the habit of using them for counting. However, there is no zero value available, so Roman numerals represent powers of 10 with different letters (I, X, C, M), not by position (1, 10, 100, 1000).
+The system is inherently decimal: the number of human fingers has not changed since ancient Rome, nor the habit of using them for counting.
+However, there is no zero value available, so Roman numerals represent powers of 10 with different letters (I, X, C, M), not by position (1, 10, 100, 1000).
 
-The approaches basically break down into two groups, with many variants in each:
+The approaches to this exercise break down into two groups, with many variants in each:
 1. Split the input number into digits, and translate each separately.
 2. Iterate through the Roman numbers, from large to small, and convert the largest valid number at each step.
 
 ## Digit-by-digit approaches
 
-The concept behind this class of approaches is to:
-- Split the input number into decimal digits.
-- For each digit, get the Roman equivalent and append to a list.
-- Join the list into a string and return it.
+The concept behind this class of approaches:
+1.  Split the input number into decimal digits.
+2.  For each digit, get the Roman equivalent and append to a list.
+3.  Join the list into a string and return it.
 Depending on the implementation, there may need to be a list-reverse step.
 
 ### With `if` conditions
@@ -87,10 +88,10 @@ See [`table-lookup`][table-lookup] for details.
 ## Loop over Romans approaches
 
 In this class of approaches we:
-- Create a mapping from Roman to Arabic numbers, in some suitable format.
-- Iterate nested loops, a `for` and a `while`, in either order.
-- At each step, append the largest possible Roman number to a list and substract the correspond value from the number being converted.
-- Join the list into a string and return it.
+1.  Create a mapping from Roman to Arabic numbers, in some suitable format. (_`dicts` or `tuples` work well_)
+2.  Iterate nested loops, a `for` and a `while`, in either order.
+3.  At each step, append the largest possible Roman number to a list and subtract the corresponding value from the number being converted.
+4.  When the number being converted drops to zero, join the list into a string and return it.
 Depending on the implementation, there may need to be a list-reverse step.
 
 This is one example using a dictionary:
@@ -143,7 +144,7 @@ def toRoman(n):
     return result
 ```
 
-The library function is a wrapper around a `loop-over-romans` approach.
+The library function is a wrapper around a `loop-over-romans` approach!
 
 ### Recursion
 
@@ -193,7 +194,7 @@ Using a [2-D lookup table][table-lookup] takes a bit more initialization, but th
 Python is relatively unusual in supporting both tuples-of-tuples and relatively fast list comprehensions, so the approach seems a good fit for this language.
 
 No performance article is currently included for this exercise.
-The problem is inherently limited in scope by the design of Roman numerals, so any of the approaches is likely to be fast enough.
+The problem is inherently limited in scope by the design of Roman numerals, so any of the approaches is likely to be "fast enough".
 
 
 
