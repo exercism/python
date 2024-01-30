@@ -194,7 +194,7 @@ Using a [2-D lookup table][table-lookup] takes a bit more initialization, but th
 Python is relatively unusual in supporting both tuples-of-tuples and relatively fast list comprehensions, so the approach seems a good fit for this language.
 
 No performance article is currently included for this exercise.
-The problem is inherently limited in scope by the design of Roman numerals, so any of the approaches is likely to be fast enough.
+The problem is inherently limited in scope by the design of Roman numerals, so any of the approaches is likely to be "fast enough".
 
 
 
