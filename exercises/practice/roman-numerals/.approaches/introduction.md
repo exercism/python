@@ -88,10 +88,10 @@ See [`table-lookup`][table-lookup] for details.
 ## Loop over Romans approaches
 
 In this class of approaches we:
-- Create a mapping from Roman to Arabic numbers, in some suitable format.
-- Iterate nested loops, a `for` and a `while`, in either order.
-- At each step, append the largest possible Roman number to a list and substract the correspond value from the number being converted.
-- Join the list into a string and return it.
+1.  Create a mapping from Roman to Arabic numbers, in some suitable format. (_`dicts` or `tuples` work well_)
+2.  Iterate nested loops, a `for` and a `while`, in either order.
+3.  At each step, append the largest possible Roman number to a list and subtract the corresponding value from the number being converted.
+4.  When the number being converted drops to zero, join the list into a string and return it.
 Depending on the implementation, there may need to be a list-reverse step.
 
 This is one example using a dictionary:
