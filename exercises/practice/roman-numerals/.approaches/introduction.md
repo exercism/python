@@ -17,7 +17,7 @@ The approaches to this exercise break down into two groups, with many variants i
 
 ## Digit-by-digit approaches
 
-The concept behind this class of approaches is to:
+The concept behind this class of approaches:
 - Split the input number into decimal digits.
 - For each digit, get the Roman equivalent and append to a list.
 - Join the list into a string and return it.
