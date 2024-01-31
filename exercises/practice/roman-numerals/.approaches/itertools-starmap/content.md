@@ -79,7 +79,6 @@ number = 723
 
 Finally, `''.join()` converts this iterator to a single string that can be returned as the desired answer.
 
-All clear?
 Once we get past the deliberate obfuscation, it is quite an elegant approach. Though perhaps not the most idiomatic Python!
 
 ## Credit
