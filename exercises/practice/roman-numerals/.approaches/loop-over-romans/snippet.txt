@@ -1,0 +1,8 @@
+def roman(number):
+    assert(number > 0)
+    roman_num = ""
+    for (k, v) in ROMANS:
+        while k <= number:
+            roman_num += v
+            number -= k
+    return roman_num

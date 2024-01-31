@@ -1,0 +1,60 @@
+{
+  "introduction": {
+    "authors": [
+      "colinleach",
+      "BethanyG"
+    ]
+  },
+  "approaches": [
+    {
+      "uuid": "69c84b6b-5e58-4b92-a2c4-17dd7d353087",
+      "slug": "if-else",
+      "title": "If Else",
+      "blurb": "Use booleans to find the correct translation for each digit.",
+      "authors": [
+        "BethanyG",
+        "colinleach"
+      ]
+    },
+    {
+      "uuid": "4ed8396c-f2c4-4072-abc9-cc8fe2780a5a",
+      "slug": "loop-over-romans",
+      "title": "Loop Over Romans",
+      "blurb": "Test Roman Numerals from the largest down and eat the maximum possible at each step.",
+      "authors": [
+        "BethanyG",
+        "colinleach"
+      ]
+    },
+    {
+      "uuid": "ba022b7e-5ea8-4432-ab94-6e9be200a70b",
+      "slug": "table-lookup",
+      "title": "Table Lookup",
+      "blurb": "Use a 2-D lookup table to eliminate loop nesting.",
+      "authors": [
+        "BethanyG",
+        "colinleach"
+      ]
+    },
+    {
+      "uuid": "3d6df007-455f-4210-922b-63d5a24bfaf8",
+      "slug": "itertools-starmap",
+      "title": "Itertools Starmap",
+      "blurb": "Use itertools.starmap() for an ingenious functional approach.",
+      "authors": [
+        "BethanyG",
+        "colinleach"
+      ]
+    },
+    {
+      "uuid": "a492c6b4-3780-473d-a2e6-a1c3e3da4f81",
+      "slug": "recurse-match",
+      "title": "Recurse Match",
+      "blurb": "Combine recursive programming with the recently-introduced structural pattern matching.",
+      "authors": [
+        "BethanyG",
+        "colinleach"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+    def translate_digit(digit: int, translations: iter) -> str:
+        units, four, five, nine = translations
+        if digit < 4: return digit * units
+        if digit == 4: return four
+        if digit < 9: return five + (digit - 5) * units
+        return nine
+        
+    if c > 0: res += translate_digit(c, ('C', 'CD', 'D', 'CM'))

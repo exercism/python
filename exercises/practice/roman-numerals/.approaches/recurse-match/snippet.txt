@@ -1,0 +1,8 @@
+def roman_recur(num: int, idx: int, digits: list[str]):
+    match (num, idx, digits):
+        case [_, 13, digits]:
+            return ''.join(digits[::-1])
+        case [num, idx, digits] if num >= ARABIC_NUM[idx]:
+            return roman_recur(num - ARABIC_NUM[idx], idx, [ROMAN_NUM[idx],] + digits)
+        case [num, idx, digits]:
+            return roman_recur(num, idx + 1, digits)
