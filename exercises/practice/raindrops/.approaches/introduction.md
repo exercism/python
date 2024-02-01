@@ -176,7 +176,7 @@ If the result of `itertools.compress` is empty, a string version of the input nu
 For more details, see the [itertools.compress][approach-itertools-compress] approach.
 
 
-## Approach: Using `functools.reduce())` and `zip()`
+## Approach: Using `functools.reduce()` and `zip()`
 
 
 ```python
@@ -283,3 +283,4 @@ To compare the performance of this and the other approaches, take a look at the 
 [remainder]: https://docs.python.org/3/library/math.html#math.remainder
 [ternary expression]: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 [truth-value-testing]: https://docs.python.org/3/library/stdtypes.html#truth-value-testing
+[structural-pattern-matching]: https://peps.python.org/pep-0622/
