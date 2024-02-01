@@ -1,0 +1,11 @@
+{
+  "articles": [
+    {
+      "uuid": "79248d29-772d-4618-bd7d-49a9bba693fd",
+      "slug": "performance",
+      "title": "Performance deep dive",
+      "blurb": "Deep dive to find out the most performant approach to the Raindrops exercise.",
+      "authors": ["BethanyG", "colinleach"]
+    }
+  ]
+}

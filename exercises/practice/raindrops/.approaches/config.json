@@ -1,0 +1,56 @@
+{
+  "introduction": {
+    "authors": ["BethanyG"]
+  },
+  "approaches": [
+    {
+      "uuid": "afc3b20c-c84b-45b0-97e5-5c927397274c",
+      "slug": "if-statements",
+      "title": "if statements",
+      "blurb": "Use a series of if statements and string concatenation.",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "55b0a949-e84e-4772-8a2c-368b491d72e2",
+      "slug": "loop-and-fstring",
+      "title": "Loop and f-string",
+      "blurb": "Loop through a tuple and assemble output via an f-string.",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "9785ad3a-fc52-409d-bfa4-d97926a87d22",
+      "slug": "sequence-with-join",
+      "title": "Sequence(s) with str.join()",
+      "blurb": "Use one or more sequences and str.join() with a generator-expression.",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "b4c3608e-d4f4-4a50-8da7-66c655241950",
+      "slug": "truthy-and-falsey-with-fstring",
+      "title": "Truthy and Falsey Values with f-strings",
+      "blurb": "Use ternaries to build words and an f-string to assemble the result.",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "78392dda-921b-4308-bdc7-8993898987ba",
+      "slug": "dict-and-join",
+      "title": "Dict and str.join()",
+      "blurb": "Use a dict to hold factors:values and str.join() with a generator-expression.",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "7e485b55-6f47-4288-ac18-d9f57fbdc0c2",
+      "slug": "itertools-compress",
+      "title": "itertools.compress",
+      "blurb": "Use itertools.compress() with a list mask.",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "298fbc79-7946-4cb1-b820-e2e282b1f155",
+      "slug": "functools-reduce",
+      "title": "functools.reduce",
+      "blurb": "Use functools.reduce() and zip().",
+      "authors": ["BethanyG"]
+    }
+  ]
+}

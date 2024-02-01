@@ -1,0 +1,6 @@
+def convert(number):
+    threes = '' if number % 3 else 'Pling'
+    fives =  '' if number % 5 else 'Plang'
+    sevens = '' if number % 7 else 'Plong'
+
+    return f'{threes}{fives}{sevens}' or str(number)
