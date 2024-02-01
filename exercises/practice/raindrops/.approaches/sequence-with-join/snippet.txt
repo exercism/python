@@ -1,0 +1,8 @@
+def convert(number):
+    drops = ["Pling","Plang","Plong"]
+    factors = [3,5,7]
+    sounds = ''.join(drops[index] for
+                     index, factor in
+                     enumerate(factors) if (number % factor == 0))
+
+    return sounds or str(number)

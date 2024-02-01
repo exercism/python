@@ -1,4 +1,7 @@
-sounds = ('Pling','Plang','Plong')
+from functools import reduce
+
+def convert(number):
+    sounds = ('Pling','Plang','Plong')
     factors = ((number % factor) == 0 for factor in (3,5,7))
     result = reduce(lambda sound, item : sound + (item[0] * item[1]), zip(sounds, factors), '')
 

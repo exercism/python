@@ -1,27 +1,44 @@
 # Introduction
 
-There are multiple Pythonic ways to solve the Raindrops exercise.
-Among them are:
 
-- Using `if` statements and `+`to assemble a return string.
-- Using a `loop` , an `f-string`, and  `+` to assemble the return string.
-- Using a `tuple` of (factor, sound) pairs and a generator expression with `join()` to assemble the return string.
-- Exploiting "Truthy" and "Falsy" values in ternary checks and an `f-string`
-- Using a `dict` of `{factors : sounds}` for lookup and a generator expression with `join()` to assemble the return string.
-- Using itertools compress and  a `generator expression` with `join()` to assemble the return string..
-- Using `functools.reduce()`
+The goal of the Raindrops exercise is to convert a number to a string of "raindrop sounds", based on whether the number
+is divisible by any combination of 3, 5, or 7.
+Numbers not divisible by any of these factors are returned as a string.
 
+There are many different ways to solve this exercise in Python, with many many variations.
+Some strategies optimize for simplicity, others for efficiency or extendability.
+Others explore interesting features of Python.
 
-## General guidance
+Here, we go over 7 approaches:
 
 
-The goal of the Raindrops exercise is to return a string that represents which which factors (`3`, `5` or `7`) evenly divide the input number.
+1.  Using `if` statements and `+` to assemble a return string.
+2.  Exploiting "Truthy" and "Falsy" values in ternary checks and an `f-string`
+3.  Using one or more sequences, a `loop`, and an `f-string`.
+4.  Using one or more sequences and a `generator-expression` within `join()`.
+5.  Using a `dict` of `{factors : sounds}` for lookup and a `generator-expression` within `join()`.
+6.  Using `itertools.compress()` and a `generator expression` within `join()`.
+7.  Using `functools.reduce()` and `join()`.
 
-Each factor has a _sound_  assigned ('Pling' (3), 'Plang' (5), or 'Plong'(7)).
+
+## General Guidance
 
 
-Determining which factors evenly divide the input number can most easily be accomplished via the [modulo][modulo] `%` operator.
-The challenge is to efficiently determine the factors while assembling a results string (_sounds_).
+The goal of the Raindrops exercise is to return a string that represents which factors (`3`, `5` or `7`) evenly divide the input number.
+Each factor has a _sound_ assigned ('Pling' (3), 'Plang' (5), or 'Plong'(7)).
+
+
+Determining which factors divide into the input number without a remainder can most easily be accomplished via the [modulo][modulo] `%` operator.
+However, it is also possible to import the [`math`][math-module] module and use the [`math.fmod()`][fmod] function for similar results, or the general built-in [`divmod()`][divmod] .
+Keep in mind that `math.fmod()` returns a _float_ and `divmod()` returns a `tuple` of (quotient, remainder) that must be unpacked before use.
+Using [`math.remainder()`][remainder] is **not** recommended for this exercise.
+
+
+The challenge is to efficiently assemble a results string while also keeping in mind how the code might be maintained or extended.
+How might you add additional factors without a complete rewrite of code?
+How can you keep the code concise?
+Do you use string concatenation, or are there other options you can choose?
+What tradeoffs will you make between readability, space, and speed of processing?
 
 
 ## Approach: Using `if` statements
@@ -30,25 +47,49 @@ The challenge is to efficiently determine the factors while assembling a results
 def convert(num):
     sounds = ''
     
-    if num % 3 == 0:
-        sounds += 'Pling'
-    if num % 5 == 0:
-        sounds += 'Plang'
-    if num % 7 == 0:
-        sounds += 'Plong'
+    if num % 3 == 0: sounds += 'Pling'
+    if num % 5 == 0: sounds += 'Plang'
+    if num % 7 == 0: sounds += 'Plong'
         
     return sounds if sounds else str(num)
-
 ```
 
-This approach uses `if` statements to check the modulus for each factor.
-If the number is evenly divisible by the factor (modulo == 0), the corresponding string is concatenated to  _sounds_ via the `+` operator.
-If _sounds_ is returned if it is not empty (_see [Truth Value Testing][truth-value-testing] for more info_).  Otherwise, a `str` version of the input number is returned.
+This approach is the most straightforward or 'naive' - it replicates in code what the instructions say, using `if` statements to check the modulus for each factor.
+Each is then concatenated to the 'sounds' string.
+If the 'sounds' string is empty, a string version of the number is returned instead.
 
 For more details, see the [if statement][approach-if-statements] approach.
 
 
-## Approach: Using a `loop` and an  `f-string`
+## Approach: Using "Truthy" and "Falsy" Values with `f-string`s
+
+```python
+def convert(number):
+    threes = '' if number % 3 else 'Pling' # Empty string if there is a remainder
+    fives =  '' if number % 5 else 'Plang'
+    sevens = '' if number % 7 else 'Plong'
+    
+    return f'{threes}{fives}{sevens}' or str(number)
+  
+  ###OR###
+  
+def convert(number):
+    threes = 'Pling' if not number % 3 else '' # Sound if there is NOT a remainder
+    fives =  'Plang' if not number % 5 else ''
+    sevens = 'Plong' if not number % 7 else ''
+    
+    return f'{threes}{fives}{sevens}' or str(number)
+```
+
+This approach uses [ternary expressions][ternary expression] (_also known as 'conditional expressions'_) to build strings for each factor.
+The result strings are combined via an `f-string`, avoiding the use of `join()`, or a `loop`.
+If the `f-string` is empty _(evaluating to False in a [boolean context][truth-value-testing]_), a `str` of the input number is returned instead.
+
+For more information, see the [Truthy and Falsy with f-string][approach-truthy-and-falsey-with-fstring]  approach.
+
+
+## Approach: Using a `loop`, and an `f-string`
+
 
 ```python
 def convert(number):
@@ -62,64 +103,35 @@ def convert(number):
     return sounds or str(number)
 ```
 
-
-This approach loops through the _drops_ `tuple`, unpacking each `vowel` and `factor`.
-If the input number is evenly divisible by the factor (modulus == 0), the corresponding vowel is inserted into the `f-string`.
-The `f-string` is then concatenated to _sounds_ via `+`.
+This approach loops through the _drops_ `tuple` (_although any iterable sequence can be used_), unpacking each `vowel` and `factor`.
+If the input number is evenly divisible by the factor (_modulus == 0_), the corresponding vowel is inserted into the `f-string` for that factor.
+The `f-string` is then concatenated to _sounds_ string via `+`.
  _Sounds_ is returned if it is not empty.
- Otherwise, a `str` version of the input number is returned.
+ Otherwise, a string version of the input number is returned.
 
 For more details, see the [loop and f-string][approach-loop-and-fstring] approach.
 
 
-## Approach: Using a `tuple` with `join()`
+## Approach: Using Sequence(s) with `join()`
 
 ```python
-def convert(num):
-    drops = ('i', 3), ('a', 5), ('o', 7)
-    sounds = ''.join(f'Pl{vowel}ng'
-                      for vowel, factor in drops
-                      if num % factor == 0)
-    
-    return  sounds or str(num)
+def convert(number):
+    drops = ["Pling","Plang","Plong"]
+    factors = [3,5,7]
+    sounds = ''.join(drops[index] for 
+                     index, factor in 
+                     enumerate(factors) if (number % factor == 0))
+
+    return sounds or str(number)
 ```
 
 
-This approach is very similar to the  [loop and f-string][approach-loop-and-fstring] approach, but puts the `loop` inside `str.join()` as a [`generator expression`][generator-expression].
+This approach is very similar to the  [loop and f-string][approach-loop-and-fstring] approach, but uses two `lists` to hold factors and sounds.
+ It also converts the loop that calculates the remainders and sounds into a [`generator expression`][generator-expression] within `join()`, which assembles the 'sounds' string.
 _Sounds_ is returned if it is not empty.
  Otherwise, a `str` version of the input number is returned.
 
-For more information, see the [tuple with join][approach-tuple-with-join]  approach.
-
-
-
-## Approach: Using "Truthy" and "Falsy" Values with an `f-string`
-
-```python
-def convert(number):
-    threes = '' if number % 3 else 'Pling' # Empty string if there is a remainder
-    fives =  '' if number % 5 else 'Plang'
-    sevens = '' if number % 7 else 'Plong'
-    
-    return f'{threes}{fives}{sevens}' or str(number)
-  
-  #OR#
-  
-def convert(number):
-    threes = 'Pling' if not number % 3 else '' # Sound if there is NOT a remainder
-    fives =  'Plang' if not number % 5 else ''
-    sevens = 'Plong' if not number % 7 else ''
-    
-    return f'{threes}{fives}{sevens}' or str(number)
-```
-
-This approach uses [ternary expressions][ternary-expression] to build strings for each factor.
-The result strings are combined via an `f-string`, avoiding the use of `join()` or `loops`.
-If the `f-string` is empty _(evaluating to False in a boolean context_), a `str` of the input number is returned instead.
-
-For more information, see the [Truthy and Falsy with f-string][approach-truthy-and-falsey-with-fstring]  approach.
-
-
+For more information, see the [tuple with join][approach-sequence-with-join]  approach.
 
 
 ## Approach: Using a `dict` and `join()`
@@ -127,7 +139,9 @@ For more information, see the [Truthy and Falsy with f-string][approach-truthy-a
 ```python
 def convert(number):
 
-    sounds = {3: 'Pling', 5: 'Plang', 7: 'Plong'}
+    sounds = {3: 'Pling',
+              5: 'Plang', 
+              7: 'Plong'}
 
     results = ''.join(sounds[divisor] for 
                       divisor, sound in sounds.items()
@@ -136,9 +150,8 @@ def convert(number):
     return results or str(number)
 ```
 
-
-This approach uses a dictionary to hold the factor -> sound mappings and a generator expression inside of `join()` to assemble _results_.
-If _results_ is empty, a string version of the input number is returned.
+This approach uses a dictionary to hold the factor -> sound mappings and a `generator-expression` within `join()` to assemble results.
+If 'results' is empty, a string version of the input number is returned.
 
 For more details, read the [`dict` and `join()`][approach-dict-and-join]  approach.
 
@@ -156,14 +169,15 @@ def convert(number):
 ```
 
 
-This approach uses [`itertools.compress`][itertools-compress] to filter a list of sounds using a mask of True and False values.
+This approach uses [`itertools.compress`][itertools-compress] to filter a list of sounds using a mask of `True` and `False` values.
 The mask is formed by calculating `bool((input % factor) == 0)` for each factor (_which will return True or False_).
 If the result of `itertools.compress` is empty, a string version of the input number is returned instead.
 
 For more details, see the [itertools.compress][approach-itertools-compress] approach.
 
 
-## Approach: Using `functools.reduce` and `zip()`
+## Approach: Using `functools.reduce())` and `zip()`
+
 
 ```python
 from functools import reduce
@@ -176,73 +190,96 @@ def convert(number):
     return result or str(number)
 ```
 
-This approach uses `functools.reduce` to join _sounds_ together using  the `int` value of True (1) and False (0).
-Sounds are combined with their corresponding factor values in pairs via `zip()`, and subsequently unpacked for use in the `itertools.reduce` [lambda expression][lambda].
-It is very similar to the `itertools.compress` method, but uses multiplication to add or omit a given string value.
+This approach uses `functools.reduce` to join _sounds_ together using  the `int` value of `True` (1) and `False` (0).
+Sounds are combined with their corresponding factor values in pairs via `zip()`, and subsequently unpacked for use in the [`functools.reduce`][functools-reduce] [`lambda` expression][lambda].
+It is very similar to the `itertools.compress` method, but uses multiplication rather than mask to add or omit a given string value.
 
 For more information, read the [functools.reduce][approach-functools-reduce] approach.
 
 
-
 ## Other approaches
 
-Besides these seven idiomatic approaches, there are a multitude of possible variations using different data structures and joining methods.
+Besides these seven approaches, there are a multitude of possible variations using different data structures and joining methods.
 
-One can also use the new [structural pattern matching][structural-pattern-matching], although it is both more verbose and harder to read, so is not recommended.
+One can also use the new [structural pattern matching][structural-pattern-matching], although it is both more verbose and harder to read.
+It (unnecessarily) lists out all of the mask variations from the [itertools compress][itertools-compress] approach and would be hard to extend without the potential of making a mistake with the factors, the sounds, or the masks:
 
 
 ```python
 def convert(number):
-    phrase ='PlingPlangPlong'
-    factor_array =  [(number % factor) == 0 for factor in (3,5,7)] # Creates a list of True and False
-    
-    match factor_array:
+
+    match [(number % factor) == 0 for factor in (3,5,7)]:
         case [True, True, True]:
-            return phrase
+            return 'PlingPlangPlong'
         case [True, True, False]:
-            return phrase[:10]
-        case [True, False, True]:
-            return phrase[:5] + phrase[10:]
+            return 'PlingPlang'
         case [False, True, True]:
-            return phrase[5:]
+            return 'PlangPlong'
+        case [True, False, True]:
+            return 'PlingPlong'
         case [True, False, False]:
-            return phrase[:5]
-        case [False, True, False]:
-            return phrase[5:10]
+            return 'Pling'
         case [False, False, True]:
-            return phrase[10:]
+            return 'Plong'
+        case [False, True, False]:
+            return 'Plang'
         case _:
             return str(number)
 ```
 
 
+## Which Approach to Use?
 
-## Which approach to use?
-
-All seven approaches are idiomatic, and show multiple paradigms and possibilities.
-
-The fastest is
-
-While the slowest is
+All approaches are idiomatic, and show multiple paradigms and possibilities.
 
 Some additional considerations include readability and maintainability.
 Approaches using separate data structures to hold sounds/factors are very helpful when additional data needs to be added, even if there is memory or performance overhead associated with them.
-Approaches using `join()` or `loops` are fairly succinct, and might be more easily understood by others reading your code,  so that they can adjust or add to the logic.
-Additionally, `f-strings` can cut down on visual "noise" as you assemble the return string.
+No one wants to add to an ever-growing block of `if-statements`, or reap the consequences of troubleshooting a typo in some strange embedded set of parenthesis.
+Approaches using `join()` or `loops` are fairly succinct, and might be more easily understood by others reading your code, so that they can adjust or add to the logic.
+Additionally, using an `f-string` can cut down on visual "noise" as you assemble the return string.
+
+So an approach that balances maintenance needs with succinctness is likely the best option:
+
+```python
+def convert(number):
+    #This is clear and easily added to.  Unless the factors get
+    # really long, this won't take up too much memory.
+    sounds = {3: 'Pling',
+              5: 'Plang', 
+              7: 'Plong'}
+
+    results = (sounds[divisor] for 
+               divisor in sounds.keys()
+               if number % divisor == 0)
+
+    return ''.join(results) or str(number)
+```
 
 
-To compare the performance and other tradeoffs of the approaches, take a look at the [Performance article][article-performance].
+This separates the code that calculates the results string from the factors themselves.
+If a factor needs to be added, only the dictionary needs to be touched.
+This code need only iterate over the keys of the dictionary to do its calculation, making this `O(1)` in time complexity.
+This does take `O(m)` space, where `m` is equal to the number of factor entries.
+Since the number of factors is fixed here, this is unlikely to create issues unless a great many more are added to the 'sounds' `dict`.
 
-[ approach-dict-and-join ]:  https://exercism.org/tracks/python/exercises/raindrops/approaches/dict-and-join
-[ approach-tuple-with-join ]:   https://exercism.org/tracks/python/exercises/raindrops/approaches/tuple-with-join
+To compare the performance of this and the other approaches, take a look at the [Performance article][article-performance].
+
+[approach-dict-and-join ]: https://exercism.org/tracks/python/exercises/raindrops/approaches/dict-and-join
 [approach-functools-reduce]:  https://exercism.org/tracks/python/exercises/raindrops/approaches/functools-reduce
 [approach-if-statements]:  https://exercism.org/tracks/python/exercises/raindrops/approaches/if-statements
 [approach-itertools-compress]:  https://exercism.org/tracks/python/exercises/raindrops/approaches/itertools-compress
 [approach-loop-and-fstring]: https://exercism.org/tracks/python/exercises/raindrops/approaches/loop-and-fstring
+[approach-sequence-with-join]: https://exercism.org/tracks/python/exercises/raindrops/approaches/sequence-with-join
 [approach-truthy-and-falsey-with-fstring]:   https://exercism.org/tracks/python/exercises/raindrops/approaches/truthy-and-falsey-with-fstring
-[article-performance]: ttps://exercism.org/tracks/python/exercises/raindrops/articles/performance
+[article-performance]: https://exercism.org/tracks/python/exercises/raindrops/articles/performance
+[divmod]: https://docs.python.org/3/library/functions.html#divmod
+[fmod]: https://docs.python.org/3/library/math.html#math.fmod
+[functools-reduce]: https://docs.python.org/3/library/functools.html#functools.reduce
 [generator-expression]: https://peps.python.org/pep-0289/
 [itertools-compress]: https://docs.python.org/3/library/itertools.html#itertools.compress
 [lambda]: https://dbader.org/blog/python-lambda-functions
+[math-module]: https://docs.python.org/3/library/math.html
 [modulo]: https://www.freecodecamp.org/news/the-python-modulo-operator-what-does-the-symbol-mean-in-python-solved/
+[remainder]: https://docs.python.org/3/library/math.html#math.remainder
+[ternary expression]: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 [truth-value-testing]: https://docs.python.org/3/library/stdtypes.html#truth-value-testing
