@@ -7,21 +7,21 @@
       "uuid": "afc3b20c-c84b-45b0-97e5-5c927397274c",
       "slug": "if-statements",
       "title": "if statements",
-      "blurb": "Use as series of if statements.",
+      "blurb": "Use a series of if statements and string concatenation.",
       "authors": ["BethanyG"]
     },
     {
       "uuid": "55b0a949-e84e-4772-8a2c-368b491d72e2",
       "slug": "loop-and-fstring",
       "title": "Loop and f-string",
-      "blurb": "Loop through a tuple and assemble with an f-string.",
+      "blurb": "Loop through a tuple and assemble output via an f-string.",
       "authors": ["BethanyG"]
     },
     {
       "uuid": "9785ad3a-fc52-409d-bfa4-d97926a87d22",
-      "slug": "tuple-with-join",
-      "title": "Tuple with str.join()",
-      "blurb": "Use a tuple and str.join() with a generator expression for filtering.",
+      "slug": "sequence-with-join",
+      "title": "Sequence(s) with str.join()",
+      "blurb": "Use one or more sequences and str.join() with a generator-expression.",
       "authors": ["BethanyG"]
     },
     {
@@ -35,7 +35,7 @@
       "uuid": "78392dda-921b-4308-bdc7-8993898987ba",
       "slug": "dict-and-join",
       "title": "Dict and str.join()",
-      "blurb": "Use a dict to hold factors:values and str.join() with a generator expression for filtering.",
+      "blurb": "Use a dict to hold factors:values and str.join() with a generator-expression.",
       "authors": ["BethanyG"]
     },
     {
