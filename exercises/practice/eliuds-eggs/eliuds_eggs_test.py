@@ -1,15 +1,15 @@
 # These tests are auto-generated with test data from:
-# https://github.com/exercism/problem-specifications/tree/main/exercises/pop-count/canonical-data.json
-# File last updated on 2023-10-18
+# https://github.com/exercism/problem-specifications/tree/main/exercises/eliuds-eggs/canonical-data.json
+# File last updated on 2024-02-02
 
 import unittest
 
-from pop_count import (
+from eliuds_eggs import (
     egg_count,
 )
 
 
-class PopCountTest(unittest.TestCase):
+class EliudsEggsTest(unittest.TestCase):
     def test_0_eggs(self):
         expected = 0
         self.assertEqual(egg_count(0), expected)
