@@ -94,11 +94,11 @@ Create the function `sort_entries(<cart>)` that takes a shopping cart/dictionary
 ## 5. Send User Shopping Cart to Store for Fulfillment
 
 The app needs to send a given users cart to the store for fulfillment.
-However, the shoppers in the store need to know which store isle the item can be found in and if the item needs refrigeration.
+However, the shoppers in the store need to know which store aisle the item can be found in and if the item needs refrigeration.
 So (_rather arbitrarily_) the "fulfillment cart" needs to be sorted in reverse alphabetical order with item quantities combined with location and refrigeration information.
 
-Create the function `send_to_store(<cart>, <isle_mapping>)` that takes a user shopping cart and a dictionary that has store isle number and a `True`/`False` for refrigeration needed for each item.
-The function should `return` a combined "fulfillment cart" that has (quantity, isle, and refrigeration) for each item the customer is ordering.
+Create the function `send_to_store(<cart>, <aisle_mapping>)` that takes a user shopping cart and a dictionary that has store aisle number and a `True`/`False` for refrigeration needed for each item.
+The function should `return` a combined "fulfillment cart" that has (quantity, aisle, and refrigeration) for each item the customer is ordering.
 Items should appear in _reverse_ alphabetical order.
 
 ```python
