@@ -2144,15 +2144,6 @@
         "status": "deprecated"
       },
       {
-        "slug": "nucleotide-count",
-        "name": "Nucleotide Count",
-        "uuid": "105f25ec-7ce2-4797-893e-05e3792ebd91",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "status": "deprecated"
-      },
-      {
         "slug": "binary",
         "name": "Binary",
         "uuid": "49127efa-1124-4f27-bee4-99992e3433de",
@@ -2234,7 +2225,7 @@
         "status": "deprecated"
       }
     ],
-    "foregone": ["lens-person", "parallel-letter-frequency"]
+    "foregone": ["lens-person", "nucleotide-count", "parallel-letter-frequency"]
   },
   "concepts": [
     {
