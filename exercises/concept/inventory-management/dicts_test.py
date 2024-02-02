@@ -77,6 +77,19 @@ class InventoryTest(unittest.TestCase):
 
         self.assertEqual(actual_result, expected, msg=error_message)
 
+    @pytest.mark.task(taskno=3)
+    def test_decrement_items_not_in_inventory(self):
+        actual_result = decrement_items({"iron": 3, "gold": 2},
+                                        ["iron", "wood", "iron", "diamond"])
+
+        expected = {"iron": 1, "gold": 2}
+        error_message = ('Called decrement_items({"iron": 3, "gold": 2}, '
+                         '["iron", "wood", "iron", "diamond"]). The function '
+                         f'returned {actual_result}, but the tests '
+                         f'expected {expected}.')
+
+        self.assertEqual(actual_result, expected, msg=error_message)
+
     @pytest.mark.task(taskno=4)
     def test_remove_item(self):
         actual_result = remove_item({"iron": 1, "diamond": 2, "gold": 1}, "diamond")
