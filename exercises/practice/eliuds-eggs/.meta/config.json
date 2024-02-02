@@ -7,7 +7,7 @@
       "eliuds_eggs.py"
     ],
     "test": [
-      "eliuds_eggs.py"
+      "eliuds_eggs_test.py"
     ],
     "example": [
       ".meta/example.py"
