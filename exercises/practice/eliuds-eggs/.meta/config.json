@@ -4,10 +4,10 @@
   ],
   "files": {
     "solution": [
-      "pop_count.py"
+      "eliuds_eggs.py"
     ],
     "test": [
-      "pop_count_test.py"
+      "eliuds_eggs_test.py"
     ],
     "example": [
       ".meta/example.py"

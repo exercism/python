@@ -967,7 +967,7 @@
         "difficulty": 2
       },
       {
-        "slug": "pop-count",
+        "slug": "eliuds-eggs",
         "name": "Eliud's Eggs",
         "uuid": "356e2d29-7efc-4fa3-bec7-8b61c3e967da",
         "practices": ["loops"],
