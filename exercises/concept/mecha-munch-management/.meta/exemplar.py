@@ -48,17 +48,17 @@ def sort_entries(cart):
     return dict(sorted(cart.items()))
 
 
-def send_to_store(cart, isle_mapping):
-    """Combine users order to isle and refrigeration information.
+def send_to_store(cart, aisle_mapping):
+    """Combine users order to aisle and refrigeration information.
 
     :param cart: dict - users shopping cart dictionary.
-    :param isle_mapping: dict - isle and refrigeration information dictionary.
+    :param aisle_mapping: dict - aisle and refrigeration information dictionary.
     :return: dict - fulfillment dictionary ready to send to store.
     """
     fulfillment_cart = {}
 
     for key in cart.keys():
-        fulfillment_cart[key] = [cart[key]] + isle_mapping[key]
+        fulfillment_cart[key] = [cart[key]] + aisle_mapping[key]
 
     return dict(sorted(fulfillment_cart.items(), reverse=True))
 

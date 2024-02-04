@@ -122,31 +122,31 @@ class MechaMunchManagementTest(unittest.TestCase):
     def test_send_to_store(self):
         input_data = [
                         ({'Banana': 3, 'Apple': 2, 'Orange': 1, 'Milk': 2},
-                         {'Banana': ['Isle 5', False], 'Apple': ['Isle 4', False],
-                          'Orange': ['Isle 4', False], 'Milk': ['Isle 2', True]}),
+                         {'Banana': ['Aisle 5', False], 'Apple': ['Aisle 4', False],
+                          'Orange': ['Aisle 4', False], 'Milk': ['Aisle 2', True]}),
 
                         ({'Kiwi': 3, 'Juice': 5, 'Yoghurt': 2, 'Milk': 5},
-                         {'Kiwi': ['Isle 6', False], 'Juice': ['Isle 5', False],
-                          'Yoghurt': ['Isle 2', True], 'Milk': ['Isle 2', True]}),
+                         {'Kiwi': ['Aisle 6', False], 'Juice': ['Aisle 5', False],
+                          'Yoghurt': ['Aisle 2', True], 'Milk': ['Aisle 2', True]}),
 
                         ({'Apple': 2, 'Raspberry': 2, 'Blueberries': 5,
                           'Broccoli' : 2, 'Kiwi': 1, 'Melon': 4},
 
-                         {'Apple': ['Isle 1', False], 'Raspberry': ['Isle 6', False],
-                          'Blueberries': ['Isle 6', False], 'Broccoli': ['Isle 3', False],
-                          'Kiwi': ['Isle 6', False], 'Melon': ['Isle 6', False]})
+                         {'Apple': ['Aisle 1', False], 'Raspberry': ['Aisle 6', False],
+                          'Blueberries': ['Aisle 6', False], 'Broccoli': ['Aisle 3', False],
+                          'Kiwi': ['Aisle 6', False], 'Melon': ['Aisle 6', False]})
                       ]
 
         output_data = [
-                        {'Orange': [1, 'Isle 4', False], 'Milk': [2, 'Isle 2', True],
-                         'Banana': [3, 'Isle 5', False], 'Apple': [2, 'Isle 4', False]},
+                        {'Orange': [1, 'Aisle 4', False], 'Milk': [2, 'Aisle 2', True],
+                         'Banana': [3, 'Aisle 5', False], 'Apple': [2, 'Aisle 4', False]},
 
-                        {'Yoghurt': [2, 'Isle 2', True], 'Milk': [5, 'Isle 2', True],
-                         'Kiwi': [3, 'Isle 6', False], 'Juice': [5, 'Isle 5', False]},
+                        {'Yoghurt': [2, 'Aisle 2', True], 'Milk': [5, 'Aisle 2', True],
+                         'Kiwi': [3, 'Aisle 6', False], 'Juice': [5, 'Aisle 5', False]},
 
-                        {'Raspberry': [2, 'Isle 6', False], 'Melon': [4, 'Isle 6', False],
-                         'Kiwi': [1, 'Isle 6', False], 'Broccoli': [2, 'Isle 3', False],
-                         'Blueberries': [5, 'Isle 6', False], 'Apple': [2, 'Isle 1', False]}
+                        {'Raspberry': [2, 'Aisle 6', False], 'Melon': [4, 'Aisle 6', False],
+                         'Kiwi': [1, 'Aisle 6', False], 'Broccoli': [2, 'Aisle 3', False],
+                         'Blueberries': [5, 'Aisle 6', False], 'Apple': [2, 'Aisle 1', False]}
                       ]
 
         for variant, (input_data, expected) in enumerate(zip(input_data, output_data), start=1):
@@ -164,32 +164,32 @@ class MechaMunchManagementTest(unittest.TestCase):
     @pytest.mark.task(taskno=6)
     def test_update_store_inventory(self):
         input_data = [
-                        ({'Orange': [1, 'Isle 4', False], 'Milk': [2, 'Isle 2', True],
-                          'Banana': [3, 'Isle 5', False], 'Apple': [2, 'Isle 4', False]},
-                         {'Banana': [15, 'Isle 5', False], 'Apple': [12, 'Isle 4', False],
-                          'Orange': [1, 'Isle 4', False], 'Milk': [4, 'Isle 2', True]}),
+                        ({'Orange': [1, 'Aisle 4', False], 'Milk': [2, 'Aisle 2', True],
+                          'Banana': [3, 'Aisle 5', False], 'Apple': [2, 'Aisle 4', False]},
+                         {'Banana': [15, 'Aisle 5', False], 'Apple': [12, 'Aisle 4', False],
+                          'Orange': [1, 'Aisle 4', False], 'Milk': [4, 'Aisle 2', True]}),
 
-                        ({'Kiwi': [3, 'Isle 6', False]},{'Kiwi': [3, 'Isle 6', False], 'Juice': [5, 'Isle 5', False],
-                          'Yoghurt': [2, 'Isle 2', True], 'Milk': [5, 'Isle 2', True]}),
+                        ({'Kiwi': [3, 'Aisle 6', False]},{'Kiwi': [3, 'Aisle 6', False], 'Juice': [5, 'Aisle 5', False],
+                          'Yoghurt': [2, 'Aisle 2', True], 'Milk': [5, 'Aisle 2', True]}),
 
-                        ({'Kiwi': [1, 'Isle 6', False], 'Melon': [4, 'Isle 6', False], 'Apple': [2, 'Isle 1', False],
-                          'Raspberry': [2, 'Isle 6', False], 'Blueberries': [5, 'Isle 6', False],
-                          'Broccoli': [1, 'Isle 3', False]},
-                         {'Apple': [2, 'Isle 1', False], 'Raspberry': [5, 'Isle 6', False],
-                          'Blueberries': [10, 'Isle 6', False], 'Broccoli': [4, 'Isle 3', False],
-                          'Kiwi': [1, 'Isle 6', False], 'Melon': [8, 'Isle 6', False]})
+                        ({'Kiwi': [1, 'Aisle 6', False], 'Melon': [4, 'Aisle 6', False], 'Apple': [2, 'Aisle 1', False],
+                          'Raspberry': [2, 'Aisle 6', False], 'Blueberries': [5, 'Aisle 6', False],
+                          'Broccoli': [1, 'Aisle 3', False]},
+                         {'Apple': [2, 'Aisle 1', False], 'Raspberry': [5, 'Aisle 6', False],
+                          'Blueberries': [10, 'Aisle 6', False], 'Broccoli': [4, 'Aisle 3', False],
+                          'Kiwi': [1, 'Aisle 6', False], 'Melon': [8, 'Aisle 6', False]})
                       ]
 
         output_data = [
-                        {'Banana': [12, 'Isle 5', False], 'Apple': [10, 'Isle 4', False],
-                         'Orange': ['Out of Stock', 'Isle 4', False], 'Milk': [2, 'Isle 2', True]},
+                        {'Banana': [12, 'Aisle 5', False], 'Apple': [10, 'Aisle 4', False],
+                         'Orange': ['Out of Stock', 'Aisle 4', False], 'Milk': [2, 'Aisle 2', True]},
 
-                        {'Juice': [5, 'Isle 5', False], 'Yoghurt': [2, 'Isle 2', True],
-                         'Milk': [5, 'Isle 2', True], 'Kiwi': ["Out of Stock", 'Isle 6', False]},
+                        {'Juice': [5, 'Aisle 5', False], 'Yoghurt': [2, 'Aisle 2', True],
+                         'Milk': [5, 'Aisle 2', True], 'Kiwi': ["Out of Stock", 'Aisle 6', False]},
 
-                        {'Kiwi': ['Out of Stock', 'Isle 6', False], 'Melon': [4, 'Isle 6', False],
-                         'Apple': ['Out of Stock', 'Isle 1', False], 'Raspberry': [3, 'Isle 6', False],
-                         'Blueberries': [5, 'Isle 6', False], 'Broccoli': [3, 'Isle 3', False]}
+                        {'Kiwi': ['Out of Stock', 'Aisle 6', False], 'Melon': [4, 'Aisle 6', False],
+                         'Apple': ['Out of Stock', 'Aisle 1', False], 'Raspberry': [3, 'Aisle 6', False],
+                         'Blueberries': [5, 'Aisle 6', False], 'Broccoli': [3, 'Aisle 3', False]}
                       ]
 
         for variant, (input_data, expected) in enumerate(zip(input_data, output_data), start=1):
