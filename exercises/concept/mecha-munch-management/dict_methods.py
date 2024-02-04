@@ -43,11 +43,11 @@ def sort_entries(cart):
     pass
 
 
-def send_to_store(cart, isle_mapping):
-    """Combine users order to isle and refrigeration information.
+def send_to_store(cart, aisle_mapping):
+    """Combine users order to aisle and refrigeration information.
 
     :param cart: dict - users shopping cart dictionary.
-    :param isle_mapping: dict - isle and refrigeration information dictionary.
+    :param aisle_mapping: dict - aisle and refrigeration information dictionary.
     :return: dict - fulfillment dictionary ready to send to store.
     """
 
