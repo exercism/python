@@ -5,7 +5,7 @@
 def convert(number):
     sounds = {3: 'Pling', 5: 'Plang', 7: 'Plong'}
 
-    results = ''.join(sounds[divisor] for 
+    results = ''.join(sound for 
                       divisor, sound in sounds.items()
                       if number % divisor == 0)
 
