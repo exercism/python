@@ -26,7 +26,7 @@
       ".meta/example.py"
     ]
   },
-  "blurb": "Write a function to convert from normal numbers to Roman Numerals.",
+  "blurb": "Convert modern Arabic numbers into Roman numerals.",
   "source": "The Roman Numeral Kata",
   "source_url": "https://codingdojo.org/kata/RomanNumerals/"
 }
