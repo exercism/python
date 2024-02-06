@@ -63,6 +63,19 @@ def convert_dict(number):
               7: 'Plong'}
 
     results = ''.join(sounds[divisor] for
+                      divisor in sounds.keys()
+                      if number % divisor == 0)
+
+    return results or str(number)
+
+
+def convert_dict_recommended(number):
+
+    sounds = {3: 'Pling',
+              5: 'Plang',
+              7: 'Plong'}
+
+    results = ''.join(sound for
                       divisor, sound in sounds.items()
                       if number % divisor == 0)
 
@@ -127,6 +140,7 @@ row_headers = ["if statements",
               "loop with tuple",
               "sequence with join",
               "dictionary with join",
+              "dictionary recommended"
               "itertools with join",
               "functools reduce",
               "structural pattern matching"]
@@ -140,6 +154,7 @@ functions = [convert_if_statements,
              convert_loop,
              convert_sequence_join,
              convert_dict,
+             convert_dict_recommended,
              convert_itertools,
              convert_functools,
              convert_pattern_matching]

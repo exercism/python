@@ -6,15 +6,15 @@ def convert(number):
     sounds = {3: 'Pling', 5: 'Plang', 7: 'Plong'}
 
     results = ''.join(sounds[divisor] for 
-                      divisor, sound in sounds.items()
+                      divisor in sounds.keys()
                       if number % divisor == 0)
 
     return results or str(number)
 ```
 
 This approach uses a [dictionary][dict] called 'sounds' with factors as `keys` and sound strings as `values`.
-A [generator-expression][generator-expressions] inside of [`str.join()`][str.join] loops through the [dictionary view object][dict-view-object] [`sounds.items()`][dict.items()], which is a series of (key, value) `tuples`.
- Each `value` is looked up for every factor where number % divisor == 0.
+A [generator-expression][generator-expressions] inside of [`str.join()`][str.join] loops through the [dictionary view object][dict-view-object] [`sounds.keys()`][dict.keys()], which is a sequence of all the dictionary keys.
+ Each `value` is looked up for every factor (key) where `number % divisor == 0`.
  `str.join()` then compiles the results.
 
 This is the equivalent of:
@@ -46,7 +46,7 @@ def convert(number):
 ```
 
 [dict-view-object]: https://docs.python.org/3/library/stdtypes.html#dictionary-view-objects
-[dict.items()]: https://docs.python.org/3/library/stdtypes.html#dict.items
+[dict.keys()]: https://docs.python.org/3/library/stdtypes.html#dict.keys
 [dict]: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
 [generator-expressions]: https://www.pythonmorsels.com/how-write-generator-expression/
 [str.join]: https://docs.python.org/3/library/stdtypes.html#str.join
