@@ -219,9 +219,9 @@ Additionally, users can adapt a [`dataclass`][dataclass] to provide similar name
 [common sequence operations]: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations
 [dataclass pros and cons]: https://stackoverflow.com/questions/51671699/data-classes-vs-typing-namedtuple-primary-use-cases
 [dataclass]: https://docs.python.org/3/library/dataclasses.html
-[dict]: https://github.com/exercism/v3/blob/master/languages/python/reference/concepts/builtin_types/dict.md
+[dict]: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 [hashability]: https://docs.python.org/3/glossary.html#hashable
-[list]: https://github.com/exercism/v3/blob/master/languages/python/reference/concepts/builtin_types/list.md
+[list]: https://docs.python.org/3/library/stdtypes.html#list
 [mutable sequence operations]: https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types
 [namedtuple]: https://docs.python.org/3/library/collections.html#collections.namedtuple
 [sequence]: https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
