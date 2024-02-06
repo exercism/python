@@ -98,7 +98,7 @@ Other data structures can be included as `tuple` elements, including other `tupl
 >>> nested_data_structures = ({"fish": "gold", "monkey": "brown", "parrot" : "grey"}, ("fish", "mammal", "bird"))
 ({"fish": "gold", "monkey": "brown", "parrot" : "grey"}, ("fish", "mammal", "bird"))
 
->>> nested_data_structures_1 : (["fish", "gold", "monkey", "brown", "parrot", "grey"], ("fish", "mammal", "bird"))
+>>> nested_data_structures_1 = (["fish", "gold", "monkey", "brown", "parrot", "grey"], ("fish", "mammal", "bird"))
 (["fish", "gold", "monkey", "brown", "parrot", "grey"], ("fish", "mammal", "bird"))
 ```
 
@@ -225,5 +225,5 @@ Additionally, users can adapt a [`dataclass`][dataclass] to provide similar name
 [mutable sequence operations]: https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types
 [namedtuple]: https://docs.python.org/3/library/collections.html#collections.namedtuple
 [sequence]: https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
-[set]: https://github.com/exercism/v3/blob/master/languages/python/reference/concepts/builtin_types/set.md
-[tuple]: https://github.com/exercism/v3/blob/master/languages/python/reference/concepts/builtin_types/tuple.md
+[set]: https://docs.python.org/3/library/stdtypes.html#set
+[tuple]: https://docs.python.org/3/library/stdtypes.html#tuple
