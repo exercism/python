@@ -98,7 +98,7 @@ Other data structures can be included as `tuple` elements, including other `tupl
 >>> nested_data_structures = ({"fish": "gold", "monkey": "brown", "parrot" : "grey"}, ("fish", "mammal", "bird"))
 ({"fish": "gold", "monkey": "brown", "parrot" : "grey"}, ("fish", "mammal", "bird"))
 
->>> nested_data_structures_1 : (["fish", "gold", "monkey", "brown", "parrot", "grey"], ("fish", "mammal", "bird"))
+>>> nested_data_structures_1 = (["fish", "gold", "monkey", "brown", "parrot", "grey"], ("fish", "mammal", "bird"))
 (["fish", "gold", "monkey", "brown", "parrot", "grey"], ("fish", "mammal", "bird"))
 ```
 
