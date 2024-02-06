@@ -226,4 +226,4 @@ Additionally, users can adapt a [`dataclass`][dataclass] to provide similar name
 [namedtuple]: https://docs.python.org/3/library/collections.html#collections.namedtuple
 [sequence]: https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
 [set]: https://docs.python.org/3/library/stdtypes.html#set
-[tuple]: https://github.com/exercism/v3/blob/master/languages/python/reference/concepts/builtin_types/tuple.md
+[tuple]: https://docs.python.org/3/library/stdtypes.html#tuple
