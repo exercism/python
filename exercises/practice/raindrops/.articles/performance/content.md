@@ -54,7 +54,7 @@ The [`timeit`][timeit] module docs have more details, and [note.nkmk.me][note_nk
 [approach-sequence-with-join]: https://exercism.org/tracks/python/exercises/raindrops/approaches/sequence-with-join
 [approach-truthy-and-falsey-with-fstring]: https://exercism.org/tracks/python/exercises/raindrops/approaches/truthy-and-falsey-with-fstring
 [approaches-intro]: https://exercism.org/tracks/python/exercises/raindrops/approaches/introduction.md
-[benchmark-application]: https://exercism.org/tracks/python/exercises/raindrops/.articles/code/Benchmark.py
+[benchmark-application]: https://github.com/exercism/python/blob/main/exercises/practice/raindrops/.articles/performance/code/Benchmark.py
 [note_nkmk_me]: https://note.nkmk.me/en/python-timeit-measure/
 [numpy]: https://numpy.org/
 [pandas]: https://pandas.pydata.org/
