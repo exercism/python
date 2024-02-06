@@ -144,7 +144,7 @@ def convert(number):
               7: 'Plong'}
 
     results = ''.join(sounds[divisor] for 
-                      divisor, sound in sounds.items()
+                      divisor in sounds.keys()
                       if number % divisor == 0)
 
     return results or str(number)
@@ -248,8 +248,8 @@ def convert(number):
               5: 'Plang', 
               7: 'Plong'}
 
-    results = (sounds[divisor] for 
-               divisor in sounds.keys()
+    results = (sound for 
+               divisor, sound in sounds.items()
                if number % divisor == 0)
 
     return ''.join(results) or str(number)
@@ -258,7 +258,7 @@ def convert(number):
 
 This separates the code that calculates the results string from the factors themselves.
 If a factor needs to be added, only the dictionary needs to be touched.
-This code need only iterate over the keys of the dictionary to do its calculation, making this `O(1)` in time complexity.
+This code need only iterate over the items of the dictionary to do its calculation, making this `O(1)` in time complexity.
 This does take `O(m)` space, where `m` is equal to the number of factor entries.
 Since the number of factors is fixed here, this is unlikely to create issues unless a great many more are added to the 'sounds' `dict`.
 

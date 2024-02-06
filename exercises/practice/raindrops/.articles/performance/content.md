@@ -23,20 +23,21 @@ To benchmark these functions, we wrote a small [benchmarking script][benchmark-a
 
 |                             	|    10    	|    14    	|    15    	|    70    	|    105   	|    182   	|    189   	|    203   	|    204   	|    399   	|    409   	|    525   	|    735   	|   1575   	|   3250   	|
 |-----------------------------	|:--------:	|:--------:	|:--------:	|:--------:	|:--------:	|:--------:	|:--------:	|:--------:	|:--------:	|:--------:	|:--------:	|:--------:	|:--------:	|:--------:	|:--------:	|
-| if&nbsp;statements               	| 2.12e-07 	| 2.16e-07 	| 2.60e-07 	| 2.76e-07 	| 2.98e-07 	| 2.10e-07 	| 2.59e-07 	| 2.15e-07 	| 2.10e-07 	| 2.75e-07 	| 2.61e-07 	| 3.41e-07 	| 2.99e-07 	| 2.98e-07 	| 2.13e-07 	|
-| ternary&nbsp;with&nbsp;truthy/falsy   	| 2.65e-07 	| 2.65e-07 	| 2.80e-07 	| 2.70e-07 	| 2.91e-07 	| 2.67e-07 	| 2.73e-07 	| 2.75e-07 	| 2.69e-07 	| 3.56e-07 	| 2.02e-07 	| 3.06e-07 	| 3.06e-07 	| 3.04e-07 	| 2.89e-07 	|
-| loop&nbsp;with&nbsp;tuple             	| 4.01e-07 	| 4.09e-07 	| 5.05e-07 	| 4.94e-07 	| 6.48e-07 	| 3.97e-07 	| 5.25e-07 	| 4.10e-07 	| 2.04e-07 	| 5.51e-07 	| 4.06e-07 	| 9.04e-07 	| 6.16e-07 	| 6.89e-07 	| 4.33e-07 	|
-| structural&nbsp;pattern&nbsp;matching 	| 7.55e-07 	| 7.31e-07 	| 6.09e-07 	| 5.87e-07 	| 5.21e-07 	| 7.11e-07 	| 6.42e-07 	| 7.19e-07 	| 6.90e-07 	| 6.49e-07 	| 8.43e-07 	| 5.00e-07 	| 5.12e-07 	| 5.21e-07 	| 7.48e-07 	|
-| dictionary&nbsp;with&nbsp;join        	| 8.31e-07 	| 8.18e-07 	| 9.34e-07 	| 1.02e-06 	| 9.75e-07 	| 8.55e-07 	| 9.13e-07 	| 8.25e-07 	| 8.32e-07 	| 2.28e-06 	| 9.22e-07 	| 1.05e-06 	| 2.42e-06 	| 9.94e-07 	| 8.46e-07 	|
-| sequence&nbsp;with&nbsp;join          	| 8.29e-07 	| 8.17e-07 	| 9.27e-07 	| 9.10e-07 	| 9.62e-07 	| 8.73e-07 	| 9.70e-07 	| 8.87e-07 	| 9.40e-07 	| 2.52e-06 	| 9.74e-07 	| 2.44e-06 	| 2.57e-06 	| 9.79e-07 	| 8.67e-07 	|
-| itertools&nbsp;with&nbsp;join         	| 9.46e-07 	| 9.33e-07 	| 4.04e-07 	| 9.88e-07 	| 1.01e-06 	| 9.41e-07 	| 9.91e-07 	| 9.65e-07 	| 9.80e-07 	| 2.51e-06 	| 1.10e-06 	| 2.50e-06 	| 1.02e-06 	| 1.00e-06 	| 9.60e-07 	|
-| functools&nbsp;reduce            	| 1.35e-06 	| 1.38e-06 	| 1.41e-06 	| 1.39e-06 	| 1.48e-06 	| 1.33e-06 	| 1.42e-06 	| 1.37e-06 	| 1.34e-06 	| 1.39e-06 	| 1.43e-06 	| 1.45e-06 	| 1.46e-06 	| 1.45e-06 	| 1.37e-06 	|
+| if&nbsp;statements               	| 2.15e-07 	| 2.13e-07 	| 2.63e-07 	| 2.62e-07 	| 3.03e-07 	| 2.13e-07 	| 2.69e-07 	| 2.12e-07 	| 2.12e-07 	| 2.75e-07 	| 2.64e-07 	| 3.04e-07 	| 3.04e-07 	| 3.06e-07 	| 2.20e-07 	|
+| ternary&nbsp;with&nbsp;truthy/falsy   	| 2.79e-07 	| 2.80e-07 	| 2.89e-07 	| 2.85e-07 	| 3.02e-07 	| 2.80e-07 	| 3.13e-07 	| 2.81e-07 	| 2.79e-07 	| 2.82e-07 	| 3.30e-07 	| 3.02e-07 	| 3.02e-07 	| 3.02e-07 	| 2.80e-07 	|
+| loop&nbsp;with&nbsp;tuple             	| 7.91e-07 	| 4.08e-07 	| 5.07e-07 	| 5.14e-07 	| 6.13e-07 	| 7.95e-07 	| 5.10e-07 	| 2.01e-07 	| 8.18e-07 	| 5.06e-07 	| 3.85e-07 	| 6.25e-07 	| 6.10e-07 	| 6.10e-07 	| 2.00e-07 	|
+| structural&nbsp;pattern&nbsp;matching 	| 7.91e-07 	| 7.39e-07 	| 5.98e-07 	| 6.24e-07 	| 5.40e-07 	| 7.47e-07 	| 6.73e-07 	| 7.72e-07 	| 7.15e-07 	| 6.69e-07 	| 8.80e-07 	| 5.43e-07 	| 5.38e-07 	| 5.69e-07 	| 8.04e-07 	|
+| dictionary&nbsp;with&nbsp;join        	| 8.04e-07 	| 7.98e-07 	| 8.95e-07 	| 9.81e-07 	| 4.07e-07 	| 8.15e-07 	| 9.05e-07 	| 8.14e-07 	| 8.18e-07 	| 9.05e-07 	| 8.94e-07 	| 9.51e-07 	| 4.05e-07 	| 9.80e-07 	| 8.17e-07 	|
+| dictionary&nbsp;recommended      	| 8.55e-07 	| 8.13e-07 	| 8.99e-07 	| 8.96e-07 	| 9.36e-07 	| 8.12e-07 	| 9.27e-07 	| 8.18e-07 	| 8.24e-07 	| 9.07e-07 	| 9.13e-07 	| 9.40e-07 	| 9.36e-07 	| 9.30e-07 	| 8.15e-07 	|
+| sequence&nbsp;with &nbsp;join          	| 8.59e-07 	| 8.67e-07 	| 9.56e-07 	| 9.64e-07 	| 4.04e-07 	| 8.78e-07 	| 9.65e-07 	| 8.71e-07 	| 8.74e-07 	| 9.68e-07 	| 9.27e-07 	| 1.00e-06 	| 1.02e-06 	| 4.07e-07 	| 8.59e-07 	|
+| itertools&nbsp;with&nbsp;join         	| 9.90e-07 	| 9.82e-07 	| 1.05e-06 	| 1.03e-06 	| 1.07e-06 	| 9.85e-07 	| 1.06e-06 	| 9.83e-07 	| 9.82e-07 	| 1.04e-06 	| 1.11e-06 	| 1.07e-06 	| 1.07e-06 	| 1.04e-06 	| 4.07e-07 	|
+| functools&nbsp;reduce            	| 1.42e-06 	| 1.56e-06 	| 1.45e-06 	| 1.43e-06 	| 1.50e-06 	| 1.41e-06 	| 1.46e-06 	| 1.44e-06 	| 1.41e-06 	| 1.47e-06 	| 1.49e-06 	| 1.52e-06 	| 1.49e-06 	| 1.51e-06 	| 1.43e-06 	|
 
 
 Keep in mind that all these approaches are _very fast_, and that benchmarking at this granularity can be unstable.
 That caveat in mind, the two `if-statement` based approaches benchmark fastest, and the approach using `functools.reduce()` was the slowest.
 
-The 'recommended' approach came in 4th, though it can be argued that the slowdown is justified by the increased readability and maintainability.
+The 'dictionary with join' approach came in 5th, with the 'recommended dictionary' approach in 6th, though it can be argued that the slowdown for either dictionary approach is justified by the increased readability and maintainability.
 
 Measurements were taken on a  3.1 GHz Quad-Core Intel Core i7 Mac running MacOS Ventura.
 Tests used `timeit.Timer.autorange()`, repeated 3 times.
