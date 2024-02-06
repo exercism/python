@@ -225,5 +225,5 @@ Additionally, users can adapt a [`dataclass`][dataclass] to provide similar name
 [mutable sequence operations]: https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types
 [namedtuple]: https://docs.python.org/3/library/collections.html#collections.namedtuple
 [sequence]: https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
-[set]: https://github.com/exercism/v3/blob/master/languages/python/reference/concepts/builtin_types/set.md
+[set]: https://docs.python.org/3/library/stdtypes.html#set
 [tuple]: https://github.com/exercism/v3/blob/master/languages/python/reference/concepts/builtin_types/tuple.md
