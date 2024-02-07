@@ -10,7 +10,7 @@ def primes(number):
 
 Many of the solutions to Sieve use comprehensions at some point, but this page is about examples that put almost *everything* into a single, elaborate comprehension.
 
-The above example puts uses a generator expression to do all the calculation.
+The above example uses a generator expression to do all the calculation.
 
 There are at least two problems with this:
 - Readability is poor.

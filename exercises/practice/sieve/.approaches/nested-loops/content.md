@@ -22,7 +22,7 @@ The clear disadvantage is that run time is quadratic in the input size: `O(n**2)
 
 Part of the problem is the line `if item not in not_prime`, where `not-prime` is a list that may be long and unsorted.
 
-This operation requires searching the entire list, so run time is linear in list length.
+This operation requires searching the entire list, so run time is linear in list length: not ideal within a loop repeated many times.
 
 ```python
 def primes(number):

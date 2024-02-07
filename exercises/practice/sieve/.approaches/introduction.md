@@ -8,7 +8,7 @@ The key to this exercise is to keep track of:
 
 To solve this exercise, it is necessary to choose one or more appropriate data structures to sture numbers and status, then decide the best way to scan through them.
 
-There are many ways to implement the code, so the three broad approaches listed below are not sharply separated.
+There are many ways to implement the code, and the three broad approaches listed below are not sharply separated.
 
 ## Approach: Using nested loops
 
@@ -57,7 +57,7 @@ def primes(limit):
             if all(x % y != 0 for y in range(2, x))]
 ```
 
-Here, the emphasis is on implementing a solution in the minimum nuber of lines, even at the expense of readability or performance.
+Here, the emphasis is on implementing a solution in the minimum number of lines, even at the expense of readability or performance.
 
 For details and another example see [`comprehensions`][approaches-comps].
 
@@ -80,11 +80,12 @@ The point is to find a solution which is correct, readable, and remains reasonab
 
 The "set operations" example above is clean, readable, and in benchmarking was the fastest code tested.
 
-Further details of perfomance testing are given in the [Perfomance article][article-performance].
+Further details of perfomance testing are given in the [Performance article][article-performance].
 
 [approaches-nested]: https://exercism.org/tracks/python/exercises/sieve/approaches/nested-loops
 [approaches-sets]: https://exercism.org/tracks/python/exercises/sieve/approaches/set-operations
 [approaches-comps]: https://exercism.org/tracks/python/exercises/sieve/approaches/comprehensions
 [article-performance]:https://exercism.org/tracks/python/exercises/sieve/articles/performance
+[sets]: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
 [bitarray]: https://pypi.org/project/bitarray/
 [bitstring]: https://bitstring.readthedocs.io/en/latest/

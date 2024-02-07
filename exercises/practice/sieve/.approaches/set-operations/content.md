@@ -40,7 +40,7 @@ After a set comprehension in place of an explicit loop, the second example uses 
 
 The resulting set needs to be converted to a list then sorted, which adds some overhead, [scaling as O(n *log* n)][sort-performance].
 
-In performance testing, this code is about 4x slower than the the first example, but still scales as O(n) or perhaps marginally worse.
+In performance testing, this code is about 4x slower than the the first example, but still scales as O(n).
 
 ```python
 def primes(number: int) -> list[int]:
