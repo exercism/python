@@ -1,0 +1,8 @@
+    number += 1
+    l = [True for i in range(number)]
+    for i in range(2, number):
+        if not l[i]:
+            continue
+        for j in range(2 * i, number, i):
+            l[j] = False
+    return [i for i, v in enumerate(l) if i > 1 and v]

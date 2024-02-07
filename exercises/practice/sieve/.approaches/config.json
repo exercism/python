@@ -1,0 +1,40 @@
+{
+  "introduction": {
+    "authors": [
+      "colinleach",
+      "BethanyG"
+    ]
+  },
+  "approaches": [
+    {
+      "uuid": "85752386-a3e0-4ba5-aca7-22f5909c8cb1",
+      "slug": "nested-loops",
+      "title": "Nested Loops",
+      "blurb": "Relativevly clear solutions with explicit loops.",
+      "authors": [
+        "colinleach",
+        "BethanyG"
+      ]
+    },
+    {
+      "uuid": "04701848-31bf-4799-8093-5d3542372a2d",
+      "slug": "set-operations",
+      "title": "Set Operations",
+      "blurb": "Performance enhancements with Python sets.",
+      "authors": [
+        "colinleach",
+        "BethanyG"
+      ]
+    },
+    {
+      "uuid": "183c47e3-79b4-4afb-8dc4-0deaf094ce5b",
+      "slug": "comprehensions",
+      "title": "Comprehensions",
+      "blurb": "Ultra-concise code and its downsides.",
+      "authors": [
+        "colinleach",
+        "BethanyG"
+      ]
+    }
+  ]
+}
