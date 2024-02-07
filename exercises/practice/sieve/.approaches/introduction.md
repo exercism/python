@@ -6,7 +6,7 @@ The key to this exercise is to keep track of:
 
 ## General Guidance
 
-To solve this exercise, it is necessary to choose one or more appropriate data structures to sture numbers and status, then decide the best way to scan through them.
+To solve this exercise, it is necessary to choose one or more appropriate data structures to store numbers and status, then decide the best way to scan through them.
 
 There are many ways to implement the code, and the three broad approaches listed below are not sharply separated.
 
@@ -26,7 +26,7 @@ def primes(number):
     return prime
 ```
 
-The these here is nested, explicit `for` loops to move through ranges, testing validity as we go.
+The theme here is nested, explicit `for` loops to move through ranges, testing validity as we go.
 
 For details and another example see [`nested-loops`][approaches-nested].
 
