@@ -225,6 +225,18 @@
           "loops"
         ],
         "status": "wip"
+      },
+      {
+        "slug": "captains-log",
+        "name": "Captains Log",
+        "uuid": "c781da14-40c0-4aeb-8452-769043592775",
+        "concepts": ["random"],
+        "prerequisites": [
+          "numbers",
+          "lists",
+          "string-formatting"
+        ],
+        "status": "wip"
       }
     ],
     "practice": [
