@@ -22,9 +22,8 @@ This makes the code similar to [nested loops][nested-loops], and run time scales
 
 ```python
 def primes(limit):
-    return [x for x in range(2, limit + 1)
-            if all(x % y != 0 for y in range(2, x))]
-```
+    return [number for number in range(2, limit + 1)
+            if all(number % divisor != 0 for divisor in range(2, number))]
 
 This second example using a `list-comprehension` with `all()` is certainly concise and _relatively_ readable, but the performance is again quite poor.
 
