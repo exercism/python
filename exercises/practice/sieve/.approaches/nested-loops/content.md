@@ -27,14 +27,13 @@ This operation requires searching the entire list, so run time is linear in list
 ```python
 def primes(number):
     number += 1
-    l = [True for i in range(number)]
-    for i in range(2, number):
-        if not l[i]:
+    prime = [True for item in range(number)]
+    for index in range(2, number):
+        if not prime[index]:
             continue
-        for j in range(2 * i, number, i):
-            l[j] = False
-    return [i for i, v in enumerate(l) if i > 1 and v]
-```
+        for candidate in range(2 * index, number, index):
+            prime[candidate] = False
+    return [index for index, value in enumerate(prime) if index > 1 and value]
 
 At first sight, the second example looks quite similar to the first.
 
