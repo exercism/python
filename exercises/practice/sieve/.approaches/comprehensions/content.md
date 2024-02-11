@@ -18,7 +18,8 @@ There are at least two problems with this:
 
 Notice the many `for` clauses in the generator.
 
-This makes the code similar to [nested loops][nested-loops], and run time scales quadratically with the size of `number`.
+This makes the code similar to [nested loops][nested-loops] , and run time scales quadratically with the size of `number`.
+In fact, when this code is compiled, it _compiles to nested loops_ that have the additional overhead of generator setup and tracking.
 
 ```python
 def primes(limit):
