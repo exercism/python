@@ -28,6 +28,7 @@ def primes(limit):
 
 This second example using a `list-comprehension` with `all()` is certainly concise and _relatively_ readable, but the performance is again quite poor.
 
+This is not quite a fully nested loop (_there is a short-circuit when `all()` evaluates to `False`_), but it is by no means "performant".
 In this case, scaling with input size is intermediate between linear and quadratic, so not quite as bad as the first example.
 
 
