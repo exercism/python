@@ -35,10 +35,6 @@ Taking logs of both sides, `log(t) = x * log(n) + constant.`
 
 Plots of `log(t)` against `log(n)` will be a straight line with slope equal to the power `x`.
 
-# ***Remove graph before merge!***
-
-![](slopes.svg)
-
 Graphs of the data (not included here) show that these are all straight lines for larger values of `n`, as we expected.
 
 Linear least-squares fits to each line gave these slope values:
