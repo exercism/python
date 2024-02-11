@@ -8,7 +8,7 @@ def primes(number):
     return list(prime)
 ```
 
-Many of the solutions to Sieve use comprehensions at some point, but this page is about examples that put almost *everything* into a single, elaborate comprehension.
+Many of the solutions to Sieve use `comprehensions` or `generator-expressions` at some point, but this page is about examples that put almost *everything* into a single, elaborate `generator-expression` or `comprehension`.
 
 The above example uses a generator expression to do all the calculation.
 
