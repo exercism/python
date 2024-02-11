@@ -53,9 +53,8 @@ For details and other examples see [`set-operations`][approaches-sets].
 
 ```python
 def primes(limit):
-    return [x for x in range(2, limit + 1)
-            if all(x % y != 0 for y in range(2, x))]
-```
+    return [number for number in range(2, limit + 1) if 
+                 all(number % divisor != 0 for divisor in range(2, number))]
 
 Here, the emphasis is on implementing a solution in the minimum number of lines, even at the expense of readability or performance.
 
