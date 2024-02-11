@@ -26,7 +26,7 @@ def primes(limit):
             if all(x % y != 0 for y in range(2, x))]
 ```
 
-The second example is certainly concise and relatively readable, but the performance is again quite poor.
+This second example using a `list-comprehension` with `all()` is certainly concise and _relatively_ readable, but the performance is again quite poor.
 
 In this case, scaling with input size is intermediate between linear and quadratic, so not quite as bad as the first example.
 
