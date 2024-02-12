@@ -2,7 +2,8 @@
 
 ## How this Exercise is Structured in Python
 
-There is another week descriptor, `fifth`, for the fifth weekday of the month, if there is one.  If there is not, you should raise an exception.
+We have added an additional week descriptor (`fifth`) for the fifth weekday of the month, if there is one.  
+If there is not a fifth weekday in a month, you should raise an exception.
 
 ## Customizing and Raising Exceptions
 
