@@ -1,5 +1,6 @@
 # Set Operations
 
+
 ```python
 def primes(number):
     not_prime = set()
@@ -13,9 +14,10 @@ def primes(number):
     return primes
 ```
 
+
 This is the fastest method so far tested, at all input sizes.
 
-With only a single loop, performance scales linearly: O(n).
+With only a single loop, performance scales linearly: `O(n)`.
 
 A key step is the set `update()`.
 
@@ -40,7 +42,8 @@ After a set comprehension in place of an explicit loop, the second example uses 
 
 The resulting set needs to be converted to a list then sorted, which adds some overhead, [scaling as O(n *log* n)][sort-performance].
 
-In performance testing, this code is about 4x slower than the the first example, but still scales as O(n).
+In performance testing, this code is about 4x slower than the first example, but still scales as `O(n)`.
+
 
 ```python
 def primes(number: int) -> list[int]:
@@ -51,6 +54,7 @@ def primes(number: int) -> list[int]:
 The third example is quite similar to the second, just moving the comprehension into the return statement.
 
 Performance is very similar between examples 2 and 3 at all input values.
+
 
 ## Sets: strengths and weaknesses
 

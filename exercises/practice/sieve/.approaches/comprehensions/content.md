@@ -25,6 +25,7 @@ In fact, when this code is compiled, it _compiles to nested loops_ that have the
 def primes(limit):
     return [number for number in range(2, limit + 1)
             if all(number % divisor != 0 for divisor in range(2, number))]
+```
 
 This second example using a `list-comprehension` with `all()` is certainly concise and _relatively_ readable, but the performance is again quite poor.
 
