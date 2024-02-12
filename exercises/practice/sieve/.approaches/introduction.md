@@ -55,9 +55,6 @@ For details and other examples see [`set-operations`][approaches-sets].
 def primes(limit):
     return [number for number in range(2, limit + 1) if 
                  all(number % divisor != 0 for divisor in range(2, number))]
-- For bit arrays, there is the [`bitarray`][bitarray] package and [`bitstring.BitArray()`][bitstring].
-- For arrays of booleans, we could use the NumPy package: `np.ones((number,), dtype=np.bool_)` will create a pre-dimensioned array of `True`.
-
 It should be stressed that these will not work in the Exercism test runner, and are mentioned here only for completeness.
 
 
