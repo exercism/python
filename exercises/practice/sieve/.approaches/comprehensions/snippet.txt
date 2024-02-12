@@ -1,0 +1,3 @@
+def primes(limit):
+    return [number for number in range(2, limit + 1) if 
+                 all(number % divisor != 0 for divisor in range(2, number))]

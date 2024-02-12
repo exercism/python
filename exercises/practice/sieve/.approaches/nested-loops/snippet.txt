@@ -1,0 +1,8 @@
+def primes(number):
+    number += 1
+    prime = [True for item in range(number)]
+    for index in range(2, number):
+        if not prime[index]: continue
+        for candidate in range(2 * index, number, index):
+            prime[candidate] = False
+    return [index for index, value in enumerate(prime) if index > 1 and value]
