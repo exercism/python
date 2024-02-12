@@ -34,13 +34,6 @@ def primes(number):
         for candidate in range(2 * index, number, index):
             prime[candidate] = False
     return [index for index, value in enumerate(prime) if index > 1 and value]
-
-At first sight, the second example looks quite similar to the first.
-
-However, on testing it performs much better, scaling linearly with `number` rather than quadratically.
-
-A key difference is that list entries are tested by index: `if not prime[index]`. 
-
 This is a constant-time operation independent of the list length.
 
 Relatively few programmers would have predicted such a major difference just by looking at the code, so if performance matters we should always test, not guess.
