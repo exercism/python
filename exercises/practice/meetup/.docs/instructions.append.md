@@ -1,5 +1,9 @@
 # Instructions append
 
+## How this Exercise is Structured in Python
+
+There is another week descriptor, `fifth`, for the fifth weekday of the month, if there is one.  If there is not, you should raise an exception.
+
 ## Customizing and Raising Exceptions
 
 Sometimes it is necessary to both [customize](https://docs.python.org/3/tutorial/errors.html#user-defined-exceptions) and [`raise`](https://docs.python.org/3/tutorial/errors.html#raising-exceptions) exceptions in your code. When you do this, you should always include a **meaningful error message** to indicate what the source of the error is. This makes your code more readable and helps significantly with debugging.
