@@ -53,7 +53,7 @@ Please read this [community blog post][freeing-maintainers] for details.
 Here to suggest a new feature or new exercise?? **Hooray!** &nbsp;🎉 &nbsp;  
 We'd love if you did that via our [Exercism Community Forum](https://forum.exercism.org/).  
 Please read [Suggesting Exercise Improvements][suggesting-improvements] & [Chesterton's Fence][chestertons-fence].  
-_Thoughtful suggestions will likely result faster & more enthusiastic responses from volunteers._
+_Thoughtful suggestions will likely result in faster & more enthusiastic responses from volunteers._
 
 <br>
 <img align="left" width="85" height="80" src="https://github.com/exercism/website-icons/blob/main/exercises/word-search.svg">
