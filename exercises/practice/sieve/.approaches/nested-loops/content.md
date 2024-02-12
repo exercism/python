@@ -34,6 +34,4 @@ def primes(number):
         for candidate in range(2 * index, number, index):
             prime[candidate] = False
     return [index for index, value in enumerate(prime) if index > 1 and value]
-This is a constant-time operation independent of the list length.
-
 Relatively few programmers would have predicted such a major difference just by looking at the code, so if performance matters we should always test, not guess.
