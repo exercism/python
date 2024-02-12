@@ -55,10 +55,6 @@ For details and other examples see [`set-operations`][approaches-sets].
 def primes(limit):
     return [number for number in range(2, limit + 1) if 
                  all(number % divisor != 0 for divisor in range(2, number))]
-
-In statically typed languages, common approaches include bit arrays and arrays of booleans.
-
-Neither of these is a natural fit for base Python, but there are external packages that could perhaps provide a better implementation:
 - For bit arrays, there is the [`bitarray`][bitarray] package and [`bitstring.BitArray()`][bitstring].
 - For arrays of booleans, we could use the NumPy package: `np.ones((number,), dtype=np.bool_)` will create a pre-dimensioned array of `True`.
 
