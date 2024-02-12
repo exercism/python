@@ -56,12 +56,6 @@ def primes(limit):
     return [number for number in range(2, limit + 1) if 
                  all(number % divisor != 0 for divisor in range(2, number))]
 
-Here, the emphasis is on implementing a solution in the minimum number of lines, even at the expense of readability or performance.
-
-For details and another example see [`comprehensions`][approaches-comps].
-
-## Using packages outside base Python
-
 In statically typed languages, common approaches include bit arrays and arrays of booleans.
 
 Neither of these is a natural fit for base Python, but there are external packages that could perhaps provide a better implementation:
