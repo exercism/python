@@ -18,7 +18,7 @@ If the key is **not** found, it will _insert_ the (`key`, `default value`) pair 
 
 # Looking for the value associated with key "Rock Brown".
 # The key does not exist, so it is added with the default value, and the value is returned.
->>> palette.setdefault('Rock Brown', '#694605')
+>>> palette_I.setdefault('Rock Brown', '#694605')
 '#694605'
 
 # The (key, default value) pair has now been added to the dictionary.
@@ -217,5 +217,5 @@ For a detailed explanation of dictionaries and methods for working with them, th
 [dicts-docs]: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
 [fi-dict-guide]: https://blog.finxter.com/python-dictionary
 [fromkeys]: https://docs.python.org/3/library/stdtypes.html#dict.fromkeys
-[how-to-dicts]: https://www.w3schools.com/python/python_dictionaries.asp
+[how-to-dicts]: https://realpython.com/python-dicts/
 [mapping-types-dict]: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
