@@ -52,28 +52,31 @@ Views are also _dynamic_ -- when underlying dictionary data changes, the associa
                   'Misty Mountain Pink': '#f9c5bd'}
 
 # Using .keys() returns a list of keys.
->>> palette_I.keys()
+>>> palette_I_view_keys = palette_I.keys()
+>>> palette_I_view_keys
 dict_keys(['Grassy Green', 'Purple Mountains Majesty', 'Misty Mountain Pink'])
 
 # Using .values() returns a list of values.
->>> palette_I.values()
+>>> palette_I_view_values = palette_I.values()
+>>> palette_I_view_values
 dict_values(['#9bc400', '#8076a3', '#f9c5bd'])
 
 # Using .items() returns a list of (key, value) tuples.
->>> palette_I.items()
+>>> palette_I_view_items = palette_I.items()
+>>> palette_I_view_items
 dict_items([('Grassy Green', '#9bc400'), ('Purple Mountains Majesty', '#8076a3'), ('Misty Mountain Pink', '#f9c5bd')])
 
 # Views are dynamic.  Changing values in the dict changes all of the associated views.
 >>> palette_I['Purple Mountains Majesty'] = (128, 118, 163)
 >>> palette_I['Deep Red'] = '#932432'
 
->>> palette_I.values()
+>>> palette_I_view_values
 dict_values(['#9bc400', (128, 118, 163), '#f9c5bd', '#932432'])
 
->>> palette_I.keys()
+>>> palette_I_view_keys
 dict_keys(['Grassy Green', 'Purple Mountains Majesty', 'Misty Mountain Pink', 'Deep Red'])
 
->>> palette_I.items()
+>>> palette_I_view_items
 dict_items([('Grassy Green', '#9bc400'), ('Purple Mountains Majesty', (128, 118, 163)), ('Misty Mountain Pink', '#f9c5bd'), ('Deep Red', '#932432')])
 ```
 
