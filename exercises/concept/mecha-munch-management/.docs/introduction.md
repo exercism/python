@@ -210,7 +210,7 @@ When both dictionaries share keys, `dict_two` values take precedence.
 
 For a detailed explanation of dictionaries and methods for working with them, the [official tutorial][dicts-docs] and the [official library reference][mapping-types-dict] are excellent starting places.
 
-[Real Python][how-to-dicts] and [Finxter][fi-dict-guide] also have very thorough articles on Python dictionaries.
+[W3 Schools][how-to-dicts] and [Finxter][fi-dict-guide] also have very thorough articles on Python dictionaries.
 
 [dict-methods]: https://docs.python.org/3/library/stdtypes.html#dict
 [dict-views]: https://docs.python.org/3/library/stdtypes.html#dict-views
