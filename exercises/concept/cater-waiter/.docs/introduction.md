@@ -212,7 +212,7 @@ False
 False
 
 # A set is always a loose superset of itself.
->>> set(animals) <= set(animals)
+>>> set(animals) >= set(animals)
 True
 ```
 
