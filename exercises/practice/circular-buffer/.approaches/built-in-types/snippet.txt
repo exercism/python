@@ -1,0 +1,5 @@
+from queue import Queue
+
+class CircularBuffer:
+    def __init__(self, capacity):
+        self.buffer = Queue(capacity)
