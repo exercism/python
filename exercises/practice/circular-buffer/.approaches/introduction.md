@@ -7,7 +7,9 @@ The key to this exercise is to:
 
 ## General Guidance
 
+Approaches to this exercise vary from easy but rather boring, to complex but educational.
 
+It would be useful to think about what you want from completing the exercise, then choose an appropriate collection class that fits your aims.
 
 ## Exception classes
 
