@@ -53,6 +53,7 @@ For more information, take a look at the [loop approach][approach-loop].
 
 ## Approach: scrub with `replace()` and join via `list comprehension` or `Generator expression`
 
+
 ```python
 def abbreviate(to_abbreviate):
     phrase = to_abbreviate.replace('-', ' ').replace('_', ' ').upper().split()
@@ -120,9 +121,9 @@ import re
 
 
 def abbreviate_regex_sub(to_abbreviate):
-    pattern = re.compile(r"\B[a-z',]+|-| |[A-Z]{2}\b|[^A-Z'](?<=_)")
-    
-    return  re.sub(pattern, "", to_abbreviate).upper()
+    pattern = re.compile(r"(?<!_)\B[\w']+|[ ,\-_]")
+ 
+    return  re.sub(pattern, "", to_abbreviate.upper())
 ```
 
 For more information, read the [regex-sub][approach-regex-sub] approach.
@@ -138,9 +139,11 @@ However, these listed approaches cover the majority of 'mainstream' strategies.
 ## Which approach to use?
 
 All seven approaches are idiomatic, and show multiple paradigms and possibilities.
+All approaches are also `O(n)`, with `n` being the length of the input string.
+No matter the removal method, the entire input string must be iterated through to be cleaned and the first letters extracted.
 
-The `list-comprehension` approach is the fastest, although `loop`, `map`,  and `reduce` have near-identical performance for the test data.
-All are fairly succinct and readable, although the 'classic' loop is probably the easiest understood by those coming to Python from other programming languages.
+Of these strategies, the `loop` approach is the fastest, although `list-comprehension`, `map`,  and `reduce` have near-identical performance for the test data.
+All approaches are fairly succinct and readable, although the 'classic' loop is probably the easiest understood by those coming to Python from other programming languages.
 
 
 The least performant for the test data was using a `generator-expression`, `re.findall` and  `re.sub` (_least performant_).
