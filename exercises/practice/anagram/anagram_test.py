@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/anagram/canonical-data.json
-# File last updated on 2023-12-27
+# File last updated on 2024-02-28
 
 import unittest
 
@@ -93,3 +93,13 @@ class AnagramTest(unittest.TestCase):
         candidates = ["LISTEN", "Silent"]
         expected = ["Silent"]
         self.assertCountEqual(find_anagrams("LISTEN", candidates), expected)
+
+    def test_handles_case_of_greek_letters(self):
+        candidates = ["ΒΓΑ", "ΒΓΔ", "γβα", "αβγ"]
+        expected = ["ΒΓΑ", "γβα"]
+        self.assertCountEqual(find_anagrams("ΑΒΓ", candidates), expected)
+
+    def test_different_characters_may_have_the_same_bytes(self):
+        candidates = ["€a"]
+        expected = []
+        self.assertCountEqual(find_anagrams("a⬂", candidates), expected)
