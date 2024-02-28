@@ -78,3 +78,9 @@ include = false
 [33d3f67e-fbb9-49d3-a90e-0beb00861da7]
 description = "words other than themselves can be anagrams"
 reimplements = "a0705568-628c-4b55-9798-82e4acde51ca"
+
+[a6854f66-eec1-4afd-a137-62ef2870c051]
+description = "handles case of greek letters"
+
+[fd3509e5-e3ba-409d-ac3d-a9ac84d13296]
+description = "different characters may have the same bytes"
