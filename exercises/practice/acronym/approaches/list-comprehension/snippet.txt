@@ -1,0 +1,4 @@
+def abbreviate(to_abbreviate):
+    phrase = to_abbreviate.replace('-', ' ').replace('_', ' ').upper().split()
+
+    return ''.join([word[0] for word in phrase])

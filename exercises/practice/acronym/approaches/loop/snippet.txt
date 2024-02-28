@@ -1,0 +1,8 @@
+def abbreviate(to_abbreviate):
+    phrase = to_abbreviate.replace('-', ' ').replace('_', ' ').upper().split()
+    acronym = ''
+
+    for word in phrase:
+        acronym += word[0]
+
+    return acronym

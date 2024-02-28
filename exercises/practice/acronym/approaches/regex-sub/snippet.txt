@@ -1,0 +1,6 @@
+import re
+
+def abbreviate_regex_sub(to_abbreviate):
+    pattern = re.compile(r"(?<!_)\B[\w']+|[ ,\-_]")
+
+    return  re.sub(pattern, "", to_abbreviate.upper())

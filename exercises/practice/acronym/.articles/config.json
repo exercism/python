@@ -1,0 +1,11 @@
+{
+  "articles": [
+    {
+      "uuid": "4c0e0a02-0bc0-4921-8016-20b0ae57804a",
+      "slug": "performance",
+      "title": "Performance deep dive",
+      "blurb": "Deep dive to find out the most performant approach to forming an acronym.",
+      "authors": ["bethanyg, colinleach"]
+    }
+  ]
+}

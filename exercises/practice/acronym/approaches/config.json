@@ -1,0 +1,56 @@
+{
+  "introduction": {
+    "authors": ["BethanyG"]
+  },
+  "approaches": [
+    {
+      "uuid": "8ee6ac18-270b-4a62-80e6-5efb09139274",
+      "slug": "functools-reduce",
+      "title": "Functools Reduce",
+      "blurb": "Use functools.reduce() to form an acronym from text cleaned using str.replace().",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "d568ea30-b839-46ad-9c9b-73321a274325",
+      "slug": "generator-expression",
+      "title": "Generator Expression",
+      "blurb": "Use a generator expression with str.join() to form an acronym from text cleaned using str.replace().",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "da53b1bc-35c7-47a7-88d5-56ebb9d3658d",
+      "slug": "list-comprehension",
+      "title": "List Comprehension",
+      "blurb": "Use a list comprehension with str.join() to form an acronym from text cleaned using str.replace().",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "abd51d7d-3743-448d-b8f1-49f484ae6b30",
+      "slug": "loop",
+      "title": "Loop",
+      "blurb": "Use str.replace() to clean the input string and a loop with string concatenation to form the acronym.",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "9eee8db9-80f8-4ee4-aaaf-e55b78221283",
+      "slug": "map-function",
+      "title": "Map Built-in",
+      "blurb": "Use the built-in map() function to form an acronym after cleaning the input string with str.replace().",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "8f4dc8ba-fd1c-4c85-bcc3-8ef9dca34c7f",
+      "slug": "regex-join",
+      "title": "Regex join",
+      "blurb": "Use regex to clean the input string and form the acronym with str.join().",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "8830be43-44c3-45ab-8311-f588f60dfc5f",
+      "slug": "regex-sub",
+      "title": "Regex Sub",
+      "blurb": "Use re.sub() to clean the input string and create the acronym in one step.",
+      "authors": ["BethanyG"]
+    }
+  ]
+}
