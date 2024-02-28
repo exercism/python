@@ -30,8 +30,6 @@ Implement breaking a number up into chunks of thousands.
 
 So `1234567890` should yield a list like 1, 234, 567, and 890, while the far simpler `1000` should yield just 1 and 0.
 
-The program must also report any values that are out of range.
-
 ## Step 3
 
 Now handle inserting the appropriate scale word between those chunks.
