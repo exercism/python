@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/reverse-string/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2024-02-28
 
 import unittest
 
@@ -27,3 +27,6 @@ class ReverseStringTest(unittest.TestCase):
 
     def test_an_even_sized_word(self):
         self.assertEqual(reverse("drawer"), "reward")
+
+    def test_wide_characters(self):
+        self.assertEqual(reverse("子猫"), "猫子")
