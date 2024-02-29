@@ -172,7 +172,7 @@ Traceback (most recent call last):
 
 Sets have methods that generally mimic [mathematical set operations][mathematical-sets].
 Most (_not all_) of these methods have an [operator][operator] equivalent.
-Methods generally take any `iterable` as an argument, while operators require that both things being compared are `sets` or `frozensets`.
+Methods generally take any `iterable` as an argument, while operators require that both sides of the operation are `sets` or `frozensets`.
 
 
 ### Membership Testing Between Sets
@@ -266,7 +266,7 @@ False
 False
 
 # A set is always a loose superset of itself.
->>> set(animals) <= set(animals)
+>>> set(animals) >= set(animals)
 True
 ```
 
