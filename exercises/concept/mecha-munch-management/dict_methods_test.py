@@ -31,7 +31,6 @@ class MechaMunchManagementTest(unittest.TestCase):
                             f'expected: {expected} once the item was added.')
 
                 self.assertEqual(actual_result, expected, msg=error_msg)
-        
 
     @pytest.mark.task(taskno=2)
     def test_read_notes(self):
@@ -130,12 +129,20 @@ class MechaMunchManagementTest(unittest.TestCase):
                           'Yoghurt': ['Aisle 2', True], 'Milk': ['Aisle 2', True]}),
 
                         ({'Apple': 2, 'Raspberry': 2, 'Blueberries': 5,
-                          'Broccoli' : 2, 'Kiwi': 1, 'Melon': 4},
+                          'Broccoli': 2, 'Kiwi': 1, 'Melon': 4},
 
                          {'Apple': ['Aisle 1', False], 'Raspberry': ['Aisle 6', False],
                           'Blueberries': ['Aisle 6', False], 'Broccoli': ['Aisle 3', False],
-                          'Kiwi': ['Aisle 6', False], 'Melon': ['Aisle 6', False]})
-                      ]
+                          'Kiwi': ['Aisle 6', False], 'Melon': ['Aisle 6', False]}),
+
+                        ({'Orange': 1},
+                         {'Banana': ['Aisle 5', False], 'Apple': ['Aisle 4', False],
+                          'Orange': ['Aisle 4', False], 'Milk': ['Aisle 2', True]}),
+
+                        ({'Banana': 3, 'Apple': 2, 'Orange': 1},
+                         {'Banana': ['Aisle 5', False], 'Apple': ['Aisle 4', False],
+                          'Orange': ['Aisle 4', False], 'Milk': ['Aisle 2', True]}),
+        ]
 
         output_data = [
                         {'Orange': [1, 'Aisle 4', False], 'Milk': [2, 'Aisle 2', True],
@@ -146,8 +153,13 @@ class MechaMunchManagementTest(unittest.TestCase):
 
                         {'Raspberry': [2, 'Aisle 6', False], 'Melon': [4, 'Aisle 6', False],
                          'Kiwi': [1, 'Aisle 6', False], 'Broccoli': [2, 'Aisle 3', False],
-                         'Blueberries': [5, 'Aisle 6', False], 'Apple': [2, 'Aisle 1', False]}
-                      ]
+                         'Blueberries': [5, 'Aisle 6', False], 'Apple': [2, 'Aisle 1', False]},
+
+                        {'Orange': [1, 'Aisle 4', False]},
+
+                        {'Orange': [1, 'Aisle 4', False], 'Banana': [3, 'Aisle 5', False],
+                         'Apple': [2, 'Aisle 4', False]},
+        ]
 
         for variant, (input_data, expected) in enumerate(zip(input_data, output_data), start=1):
             with self.subTest(f'variation #{variant}', input_data=input_data, expected=expected):
