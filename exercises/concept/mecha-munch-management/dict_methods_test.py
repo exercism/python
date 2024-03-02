@@ -142,7 +142,7 @@ class MechaMunchManagementTest(unittest.TestCase):
                         ({'Banana': 3, 'Apple': 2, 'Orange': 1},
                          {'Banana': ['Aisle 5', False], 'Apple': ['Aisle 4', False],
                           'Orange': ['Aisle 4', False], 'Milk': ['Aisle 2', True]}),
-        ]
+                      ]
 
         output_data = [
                         {'Orange': [1, 'Aisle 4', False], 'Milk': [2, 'Aisle 2', True],
@@ -159,7 +159,7 @@ class MechaMunchManagementTest(unittest.TestCase):
 
                         {'Orange': [1, 'Aisle 4', False], 'Banana': [3, 'Aisle 5', False],
                          'Apple': [2, 'Aisle 4', False]},
-        ]
+                      ]
 
         for variant, (input_data, expected) in enumerate(zip(input_data, output_data), start=1):
             with self.subTest(f'variation #{variant}', input_data=input_data, expected=expected):
