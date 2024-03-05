@@ -33,6 +33,9 @@ description = "possible change without unit coins available"
 [9a166411-d35d-4f7f-a007-6724ac266178]
 description = "another possible change without unit coins available"
 
+[ce0f80d5-51c3-469d-818c-3e69dbd25f75]
+description = "a greedy approach is not optimal"
+
 [bbbcc154-e9e9-4209-a4db-dd6d81ec26bb]
 description = "no coins make 0 change"
 
