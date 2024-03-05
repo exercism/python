@@ -1,0 +1,4 @@
+class CircularBuffer:
+    def __init__(self, capacity: int) -> None:
+        self.capacity = capacity
+        self.content = []

@@ -1,0 +1,30 @@
+{
+  "introduction": {
+    "authors": [
+      "colinleach",
+      "BethanyG"
+    ]
+  },
+  "approaches": [
+    {
+      "uuid": "a560804f-1486-451d-98ab-31251926881e",
+      "slug": "built-in-types",
+      "title": "Built In Types",
+      "blurb": "Use a Python list or bytearray.",
+      "authors": [
+        "colinleach",
+        "BethanyG"
+      ]
+    },
+    {
+      "uuid": "f01b8a10-a3d9-4779-9a8b-497310fcbc73",
+      "slug": "standard-library",
+      "title": "Standard Library",
+      "blurb": "Use a Queue or deque object for an easier implementation.",
+      "authors": [
+        "colinleach",
+        "BethanyG"
+      ]
+    }
+  ]
+}
