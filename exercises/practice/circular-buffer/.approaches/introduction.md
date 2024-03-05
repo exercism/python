@@ -38,7 +38,7 @@ Code for these error handling scenarios is always quite similar, so for brevity 
 Python has an exceptionally flexible and widely-used `list` type.
 Most submitted solutions to `Circular Buffer` are based on this data type.
 
-A less versatile variants include [`bytearray`][bytearray] and [`array.array`][array.array].
+Less versatile variants include [`bytearray`][bytearray] and [`array.array`][array.array].
 
 `bytearray`s are similar to `list`s in many ways, but they are limited to holding only bytes (_represented as integers in the range `0 <= n < 256`_).
 
