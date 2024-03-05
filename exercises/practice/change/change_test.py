@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/change/canonical-data.json
-# File last updated on 2023-07-20
+# File last updated on 2024-03-05
 
 import unittest
 
@@ -36,6 +36,9 @@ class ChangeTest(unittest.TestCase):
 
     def test_another_possible_change_without_unit_coins_available(self):
         self.assertEqual(find_fewest_coins([4, 5], 27), [4, 4, 4, 5, 5, 5])
+
+    def test_a_greedy_approach_is_not_optimal(self):
+        self.assertEqual(find_fewest_coins([1, 10, 11], 20), [10, 10])
 
     def test_no_coins_make_0_change(self):
         self.assertEqual(find_fewest_coins([1, 5, 10, 21, 25], 0), [])
