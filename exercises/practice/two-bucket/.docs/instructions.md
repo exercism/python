@@ -11,7 +11,7 @@ There are some rules that your solution must follow:
      b) the second bucket is full
   2. Emptying a bucket and doing nothing to the other.
   3. Filling a bucket and doing nothing to the other.
-- After an action, you may not arrive at a state where the starting bucket is empty and the other bucket is full.
+- After an action, you may not arrive at a state where the initial starting bucket is empty and the other bucket is full.
 
 Your program will take as input:
 
