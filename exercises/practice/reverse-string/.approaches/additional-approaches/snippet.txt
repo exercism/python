@@ -1,0 +1,8 @@
+    given, output = bytearray(text.encode("utf-8")), bytearray(len(given))
+    index, LENGTH_MASK  = 0, 0xE0  # 0b11110000 or 224
+    while index < len(given):
+        seq_len = not(given[index] >> 7) or (given[index] & LENGTH_MASK).bit_count()
+        location = index + seq_len +1
+        output[-location:-index or None] = given[index:index + seq_len]
+        index += seq_len
+    return output.decode("utf-8")
