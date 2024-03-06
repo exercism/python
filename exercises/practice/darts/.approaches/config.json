@@ -1,0 +1,50 @@
+{
+  "introduction": {
+    "authors": ["bethanyg"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "7d78f598-8b4c-4f7f-89e1-e8644e934a4c",
+      "slug": "if-statements",
+      "title": "Use If Statements",
+      "blurb": "Use if-statements to check scoring boundaries for a dart toss.",
+      "authors": ["bethanyg"]
+    },
+    {
+      "uuid": "f8f5533a-09d2-4b7b-9dec-90f268bfc03b",
+      "slug": "tuple-and-loop",
+      "title": "Use a Tuple & Loop through Scores",
+      "blurb": "Score the Dart toss by looping through a tuple of scores.",
+      "authors": ["bethanyg"]
+    },
+    {
+      "uuid": "a324f99e-15bb-43e0-9181-c1652094bc4f",
+      "slug": "match-case",
+      "title": "Use Structural Pattern Matching ('Match-Case')",
+      "blurb": "Use a Match-Case (Structural Pattern Matching) to score the dart toss.)",
+      "authors": ["bethanyg"]
+    },
+    {
+      "uuid": "966bd2dd-c4fd-430b-ad77-3a304dedd82e",
+      "slug": "dict-and-generator",
+      "title": "Use a Dictionary with a Generator Expression",
+      "blurb": "Use a generator expression looping over a scoring dictionary, getting the max score for the dart toss.",
+      "authors": ["bethanyg"]
+    },
+    {
+      "uuid": "5b087f50-31c5-4b84-9116-baafd3a30ed6",
+      "slug": "booleans-as-ints",
+      "title": "Use Boolean Values as Integers",
+      "blurb": "Use True and False as integer values to calculate the score of the dart toss.",
+      "authors": ["bethanyg"]
+    },
+    {
+      "uuid": "0b2dbcd3-f0ac-45f7-af75-3451751fd21f",
+      "slug": "dict-and-dict-get",
+      "title": "Use a Dictionary with dict.get",
+      "blurb": "Loop over a dictionary and retrieve score via dct.get.",
+      "authors": ["bethanyg"]
+    }
+  ]
+}
