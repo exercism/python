@@ -261,7 +261,7 @@ class MyClass:
 
 [calling]: https://www.pythonmorsels.com/topics/calling-a-function
 [class method]: https://stackoverflow.com/questions/17134653/difference-between-class-and-instance-methods
-[dunder]: https://www.dataindependent.com/python/python-glossary/python-dunder/
+[dunder]: https://mathspp.com/blog/pydonts/dunder-methods
 [imperative]: https://en.wikipedia.org/wiki/Imperative_programming
 [declarative]: https://en.wikipedia.org/wiki/Declarative_programming
 [oop]: https://www.digitalocean.com/community/tutorials/how-to-construct-classes-and-define-objects-in-python-3
