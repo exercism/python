@@ -1,3 +1,4 @@
+
 # Introduction
 
 This exercise tests iteration, logic and error handling.
@@ -10,20 +11,17 @@ It is possible to break the exercise down into a series of sub-tasks, with plent
 - Is the current square a mine?
 - what are the valid neighboring cells, and how many of them are mines?
 
-Core Python does not support N-dimensional arrays, though these are at the heart of many third-party packes such as NumPy.
+Core Python does not support matrices, or N-dimensional arrays more generally, though these are at the heart of many third-party packes such as NumPy.
 
-Thus, the input board and the final result are implemented as lists of strings, though intermediate processing is likely to use lists of lists plus a final `''.join()` in the `return` statement.
+Thus, the input board and the final result are implemented as lists of strings, though intermediate processing is likely to use lists of lists plus a final `''.join()` for each row in the `return` statement.
 
 Helpfully, Python can iterate over strings exactly like lists.
 
-There is some ambiguity about rows *vs.* columns in this representation, so the sample code may not be entirely consistent in naming. 
-It makes no difference to the results.
-
 ## Valid boards
 
-The board must be rectangular: essentially, all columns must be the same length as the first column.
+The board must be rectangular: essentially, all rows must be the same length as the first row.
 
-Perhaps surprisingly, the row and column lengths can be zero, so an apparently non-existent board is valid.
+Perhaps surprisingly, the row and column lengths can be zero, so an apparently non-existent board is valid and needs special handling.
 
 ```python
     rows = len(minefield)
@@ -37,9 +35,14 @@ Perhaps surprisingly, the row and column lengths can be zero, so an apparently n
 
 Additionally, the only valid entries are a space `' '` or an asterisk `'*'`. All other characters should raise an error.
 
-Some solutions use regular expressions for this test, but something like `minefield[row][col] not in [' ', '*']` is probably simpler.
+Some solutions use regular expressions for this test, but there are simpler options:
 
-Depending how the code is structured, it may be possible to combine these tests.
+```python
+    if minefield[row][col] not in (' ', '*'):
+        # raise error
+```
+
+Depending how the code is structured, it may be possible to combine the tests.
 
 More commonly, the board dimensions are checked at the beginning, then invalid characters are detected while iterating through the board.
 
@@ -51,11 +54,11 @@ For empty squares, the challenge is to count how many mines are in the adjacent 
 
 *How many squares are adjacent?* In the middle of a reasonably large board there will be 8, but this is reduced for squares at the edges or corners.
 
-### Nested `if..elif` statements
+### 1. Nested `if..elif` statements
 
 This can be made to work, but quickly becomes very verbose.
 
-### Explicit coordinates
+### 2. Explicit coordinates
 
 ```python
     def count_adjacent(r, c):
@@ -76,7 +79,7 @@ Slightly better, this lists all the possibilities then filters out any that fall
 
 Note that we only want a count of nearby mines, their precise location is irrelevant.
 
-### Use a comprehension or generator
+### 3. Use a comprehension or generator
 
 A key insight is that we can work on a 3x3 block of cells, because we already ensured that the central cell does *not* contain a mine that would affect our count.
 
@@ -88,7 +91,7 @@ A key insight is that we can work on a 3x3 block of cells, because we already en
 
 We can then filter and count as in the previous code.
 
-### Use complex numbers
+### 4. Use complex numbers
 
 A particularly elegant solution is to treat the board as a portion of the complex plane.
 
@@ -129,7 +132,7 @@ This relatively recent addition to Python simplifies variable assignment within 
 
 ## Putting it all together
 
-This example is an object-oriented approach using complex numbers, included because it is a particularly clear illustration of the various topics discussed above:
+The example below is an object-oriented approach using complex numbers, included because it is a particularly clear illustration of the various topics discussed above:
 
 ```python
 """Minesweeper."""
@@ -189,3 +192,4 @@ The import is only needed for type annotation, so can be considered optional.
 All validation is done in the object constructor.
 
 [complex-numbers]: https://exercism.org/tracks/python/concepts/complex-numbers
+[walrus-operator]: 
