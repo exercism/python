@@ -5,7 +5,7 @@ There is no single, obvious solution to this exercise, but a diverse array of wo
 ## General guidance
 
 Roman numerals are limited to positive integers from 1 to 3999 (MMMCMXCIX).
-In the version used for this exercise, the longest string needed to represent a Roman numeral is 14 characters (MMDCCCLXXXVIII).
+In the version used for this exercise, the longest string needed to represent a Roman numeral is 15 characters (MMMDCCCLXXXVIII).
 Minor variants of the system have been used which represent 4 as IIII rather than IV, allowing for longer strings, but those are not relevant here.
 
 The system is inherently decimal: the number of human fingers has not changed since ancient Rome, nor the habit of using them for counting.
