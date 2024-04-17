@@ -1,19 +1,13 @@
 # Instructions
 
-Add the mine counts to a completed Minesweeper board.
+Your task is to add the mine counts to empty squares in a completed Minesweeper board.
+The board itself is a rectangle composed of squares that are either empty (`' '`) or a mine (`'*'`).
 
-Minesweeper is a popular game where the user has to find the mines using numeric hints that indicate how many mines are directly adjacent (horizontally, vertically, diagonally) to a square.
+For each empty square, count the number of mines adjacent to it (horizontally, vertically, diagonally).
+If the empty square has no adjacent mines, leave it empty.
+Otherwise replace it with the adjacent mines count.
 
-In this exercise you have to create some code that counts the number of mines adjacent to a given empty square and replaces that square with the count.
-
-The board is a rectangle composed of blank space (' ') characters.
-A mine is represented by an asterisk (`*`) character.
-
-If a given space has no adjacent mines at all, leave that square blank.
-
-## Examples
-
-For example you may receive a 5 x 4 board like this (empty spaces are represented here with the '·' character for display on screen):
+For example, you may receive a 5 x 4 board like this (empty spaces are represented here with the '·' character for display on screen):
 
 ```text
 ·*·*·
@@ -22,7 +16,7 @@ For example you may receive a 5 x 4 board like this (empty spaces are represente
 ·····
 ```
 
-And your code will transform it into this:
+Which your code should transform into this:
 
 ```text
 1*3*1
