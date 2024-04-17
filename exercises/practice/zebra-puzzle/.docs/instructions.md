@@ -1,6 +1,13 @@
 # Instructions
 
-Solve the zebra puzzle.
+Your task is to solve the Zebra Puzzle to find the answer to these two questions:
+
+- Which of the residents drinks water?
+- Who owns the zebra?
+
+## Puzzle
+
+The following 15 statements are all known to be true:
 
 1. There are five houses.
 2. The Englishman lives in the red house.
@@ -18,7 +25,8 @@ Solve the zebra puzzle.
 14. The Japanese smokes Parliaments.
 15. The Norwegian lives next to the blue house.
 
-Each of the five houses is painted a different color, and their inhabitants are of different national extractions, own different pets, drink different beverages and smoke different brands of cigarettes.
+Additionally, each of the five houses is painted a different color, and their inhabitants are of different national extractions, own different pets, drink different beverages and smoke different brands of cigarettes.
 
-Which of the residents drinks water?
-Who owns the zebra?
+~~~~exercism/note
+There are 24 billion (5!⁵ = 24,883,200,000) possible solutions, so try ruling out as many solutions as possible.
+~~~~
