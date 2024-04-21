@@ -55,7 +55,7 @@ def remove_item(inventory, item):
 
 
 def list_inventory(inventory):
-    """Create a list containing all (item_name, item_count) pairs in inventory.
+    """Create a list containing only available (item_name, item_count > 0) pairs in inventory.
 
     :param inventory: dict - an inventory dictionary.
     :return: list of tuples - list of key, value pairs from the inventory dictionary.
