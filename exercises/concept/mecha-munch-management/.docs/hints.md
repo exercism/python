@@ -38,7 +38,7 @@ The dictionary section of the [official tutorial][dicts-docs] and the mapping ty
 - What method would you call to get an [iterable view of just the keys][keys] of the dictionary?
 - Remember that you can get the `value` of a given key by using `<dict name>[<key_name>]` syntax.
 - If you had a `list` or a `tuple`, what [`built-in`][builtins] function might you use to sort them?
-- Remember that the `built-in` function can take an optional `reversed=true` argument.
+- Remember that the `built-in` function can take an optional `reverse=True` argument.
 
 ## 6. Update the Store Inventory to Reflect what a User Has Ordered.
 
