@@ -50,7 +50,7 @@ Statements for the _body_ of the function begin on the line following `def` and 
 
 
 ```python
-# The body of a function is indented by 2 spaces, & prints the sum of the numbers.
+# The body of this function is indented by 2 spaces,& prints the sum of the numbers.
 def add_two_numbers(number_one, number_two):
   total = number_one + number_two
   print(total)  
@@ -71,22 +71,28 @@ def add_two_numbers(number_one, number_two):
 IndentationError: unindent does not match any outer indentation level
 ```
 
-Functions explicitly return a value or object via the [`return`][return] keyword.
+Functions _explicitly_ return a value or object via the [`return`][return] keyword.
 Functions that do not have an explicit `return` expression will _implicitly_ return [`None`][none].
 
 ```python
-# Function definition on first line.
+#Function definition on first line, explicit return used on final line.
 def add_two_numbers(number_one, number_two):
-  result = number_one + number_two
-  return result  # Returns the sum of the numbers.
+  return number_one + number_two   
 
+#Calling the function returns the sum of the numbers.
 >>> add_two_numbers(3, 4)
 7
 
-# This function will return None.
+#This function does not have an explicit return.
 def add_two_numbers(number_one, number_two):
   result = number_one + number_two
 
+#Calling the function appears to not return anything at all.
+>>> add_two_numbers(5, 7)
+>>>
+
+#Using print() with the function call shows that 
+# the function above is actually returning **None**.
 >>> print(add_two_numbers(5, 7))
 None
 ```
