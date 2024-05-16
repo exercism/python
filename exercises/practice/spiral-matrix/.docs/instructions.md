@@ -1,6 +1,6 @@
 # Instructions
 
-Given the size, return a square matrix of numbers in spiral order.
+Your task is to return a square matrix of a given size.
 
 The matrix should be filled with natural numbers, starting from 1 in the top-left corner, increasing in an inward, clockwise spiral order, like these examples:
 
