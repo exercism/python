@@ -1,16 +1,21 @@
 # Instructions
 
-Given a diagram, determine which plants each child in the kindergarten class is
-responsible for.
+Your task is to, given a diagram, determine which plants each child in the kindergarten class is responsible for.
 
-The kindergarten class is learning about growing plants.
-The teacher thought it would be a good idea to give them actual seeds, plant them in actual dirt, and grow actual plants.
+There are 12 children in the class:
 
-They've chosen to grow grass, clover, radishes, and violets.
+- Alice, Bob, Charlie, David, Eve, Fred, Ginny, Harriet, Ileana, Joseph, Kincaid, and Larry.
 
-To this end, the children have put little cups along the window sills, and
-planted one type of plant in each cup, choosing randomly from the available
-types of seeds.
+Four different types of seeds are planted:
+
+| Plant  | Diagram encoding |
+| ------ | ---------------- |
+| Grass  | G                |
+| Clover | C                |
+| Radish | R                |
+| Violet | V                |
+
+Each child gets four cups, two on each row:
 
 ```text
 [window][window][window]
@@ -18,16 +23,9 @@ types of seeds.
 ........................
 ```
 
-There are 12 children in the class:
+Their teacher assigns cups to the children alphabetically by their names, which means that Alice comes first and Larry comes last.
 
-- Alice, Bob, Charlie, David,
-- Eve, Fred, Ginny, Harriet,
-- Ileana, Joseph, Kincaid, and Larry.
-
-Each child gets 4 cups, two on each row.
-Their teacher assigns cups to the children alphabetically by their names.
-
-The following diagram represents Alice's plants:
+Here is an example diagram representing Alice's plants:
 
 ```text
 [window][window][window]
