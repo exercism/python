@@ -1,9 +1,9 @@
 # Instructions
 
-An anagram is a rearrangement of letters to form a new word: for example `"owns"` is an anagram of `"snow"`.
-A word is not its own anagram: for example, `"stop"` is not an anagram of `"stop"`.
+Your task is to, given a target word and a set of candidate words, to find the subset of the candidates that are anagrams of the target.
 
-Given a target word and a set of candidate words, this exercise requests the anagram set: the subset of the candidates that are anagrams of the target.
+An anagram is a rearrangement of letters to form a new word: for example `"owns"` is an anagram of `"snow"`.
+A word is _not_ its own anagram: for example, `"stop"` is not an anagram of `"stop"`.
 
 The target and candidates are words of one or more ASCII alphabetic characters (`A`-`Z` and `a`-`z`).
 Lowercase and uppercase characters are equivalent: for example, `"PoTS"` is an anagram of `"sTOp"`, but `StoP` is not an anagram of `sTOp`.
