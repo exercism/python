@@ -8,7 +8,7 @@ You have four rules to implement, all related to the game states.
 
 ## 1. Define if Pac-Man eats a ghost
 
-Define the `eat_ghost()` function that takes two parameters (_if Pac-Man has a power pellet active_ and _if Pac-Man is touching a ghost_) and returns a Boolean value if Pac-Man is able to eat the ghost.
+Define the `eat_ghost()` function that takes two parameters (_if Pac-Man has a power pellet active_ and _if Pac-Man is touching a ghost_) and returns a Boolean value if Pac-Man is able to eat a ghost.
  The function should return `True` only if Pac-Man has a power pellet active and is touching a ghost.
 
 ```python
