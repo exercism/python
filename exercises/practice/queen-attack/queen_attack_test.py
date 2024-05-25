@@ -18,7 +18,7 @@ class QueenAttackTest(unittest.TestCase):
         with self.assertRaises(ValueError) as err:
             Queen(-2, 2)
         self.assertEqual(type(err.exception), ValueError)
-        self.assertEqual(err.exception.args[0], "row not positive")
+        self.assertEqual(err.exception.args[0], "row is negative")
 
     def test_queen_must_have_row_on_board(self):
         with self.assertRaises(ValueError) as err:
@@ -30,7 +30,7 @@ class QueenAttackTest(unittest.TestCase):
         with self.assertRaises(ValueError) as err:
             Queen(2, -2)
         self.assertEqual(type(err.exception), ValueError)
-        self.assertEqual(err.exception.args[0], "column not positive")
+        self.assertEqual(err.exception.args[0], "column is negative")
 
     def test_queen_must_have_column_on_board(self):
         with self.assertRaises(ValueError) as err:

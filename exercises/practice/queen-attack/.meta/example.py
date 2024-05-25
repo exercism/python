@@ -1,11 +1,11 @@
 class Queen:
     def __init__(self, row, column):
         if row < 0:
-            raise ValueError('row not positive')
+            raise ValueError('row is negative')
         if not 0 <= row <= 7:
             raise ValueError('row not on board')
         if column < 0:
-            raise ValueError('column not positive')
+            raise ValueError('column is negative')
         if not 0 <= column <= 7:
             raise ValueError('column not on board')
         self.row = row
