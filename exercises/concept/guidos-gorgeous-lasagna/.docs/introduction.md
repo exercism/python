@@ -91,7 +91,7 @@ IndentationError: unindent does not match any outer indentation level
 Functions _explicitly_ return a value or object via the [`return`][return] keyword:
 
 ```python
-# Function definition on first line, explicit return used on final line.
+# Function definition on the first line, explicit return used on the final line.
 def add_two_numbers(number_one, number_two):
   return number_one + number_two   
 
@@ -101,7 +101,7 @@ def add_two_numbers(number_one, number_two):
 7
 
 # Assigning the function call to a variable and printing 
-# the variable will also return the value.
+# The variable will also return the value.
 >>> sum_with_return = add_two_numbers(5, 6)
 >>> print(sum_with_return)
 7
@@ -132,7 +132,7 @@ None
 
 
 # Assigning the function call to a variable and printing 
-# the variable will also show None.
+# The variable will also show None.
 >>> sum_without_return = add_two_numbers(5, 6)
 >>> print(sum_without_return)
 None
@@ -153,7 +153,7 @@ Dot (`.`) notation is used for calling functions defined inside a class or modul
 27
 
 
-# A mis-match between the number of parameters and the number of arguments will raise an error.
+# A mismatch between the number of parameters and the number of arguments will raise an error.
 >>> number_to_the_power_of(4,)
 ...
 Traceback (most recent call last):
@@ -211,13 +211,13 @@ Docstrings can also function as [lightweight unit tests][doctests], which will b
 
 
 ```python
-# An example on a user-defined function.
+# An example of a user-defined function.
 >>> def number_to_the_power_of(number_one, number_two):
         """Raise a number to an arbitrary power.
 
         :param number_one: int the base number.
         :param number_two: int the power to raise the base number to.
-        :return: int - number raised to power of second number
+        :return: int - number raised to the power of the second number
 
         Takes number_one and raises it to the power of number_two, returning the result.
         """
@@ -231,7 +231,7 @@ Raise a number to an arbitrary power.
 
     :param number_one: int the base number.
     :param number_two: int the power to raise the base number to.
-    :return: int - number raised to power of second number
+    :return: int - number raised to the power of the second number
 
     Takes number_one and raises it to the power of number_two, returning the result.
 ```
