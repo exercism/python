@@ -1,6 +1,6 @@
 # Instructions
 
-You're going to write some code to help you cook a gorgeous lasagna from your favorite cookbook.
+You're going to write some code to help you cook a gorgeous lasagna from your favourite cookbook.
 
 You have five tasks, all related to cooking your recipe.
 
@@ -15,7 +15,7 @@ According to your cookbook, the Lasagna should be in the oven for 40 minutes:
 40
 ```
 
-## 2. Calculate remaining bake time in minutes
+## 2. Calculate the remaining bake time in minutes
 
 Implement the `bake_time_remaining()` function that takes the actual minutes the lasagna has been in the oven as an argument and returns how many minutes the lasagna still needs to bake based on the `EXPECTED_BAKE_TIME`.
 
@@ -39,7 +39,7 @@ Assume each layer takes 2 minutes to prepare.
 ## 4. Calculate total elapsed cooking time (prep + bake) in minutes
 
 Implement the `elapsed_time_in_minutes(number_of_layers, elapsed_bake_time)` function that has two parameters: `number_of_layers` (_the number of layers added to the lasagna_) and `elapsed_bake_time` (_the number of minutes the lasagna has been baking in the oven_).
-This function should return the total number of minutes you've been cooking, or the sum of your preparation time and the time the lasagna has already spent baking in the oven.
+This function should return the total number of minutes you've been cooking or the sum of your preparation time and the time the lasagna has already spent baking in the oven.
 
 ```python
 >>> from lasagna import elapsed_time_in_minutes
