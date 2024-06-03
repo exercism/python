@@ -12,7 +12,7 @@
 
 - You need to [name][naming] a constant, and [assign][assignment] it an [integer][numbers] value.
 
-## 2. Calculate remaining bake time in minutes
+## 2. Calculate the remaining bake time in minutes
 
 - You need to define a [function][defining functions] with a single parameter representing the time elapsed so far.
 - Use the [mathematical operator for subtraction][numbers] to subtract values.
