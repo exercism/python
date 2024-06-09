@@ -33,7 +33,7 @@ If a word starts with zero or more consonants followed by `"qu"`, first move tho
 
 For example:
 
-- `"quick"` -> `"ickqu"` -> `"ay"` (starts with `"qu"`, no preceding consonants)
+- `"quick"` -> `"ickqu"` -> `"ickquay"` (starts with `"qu"`, no preceding consonants)
 - `"square"` -> `"aresqu"` -> `"aresquay"` (starts with one consonant followed by `"qu`")
 
 ## Rule 4
