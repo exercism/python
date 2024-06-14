@@ -98,7 +98,7 @@ Conditionals can also be nested.
 'Student driver, needs supervision.'
 
 >>> driving_status(23, 80)
-'Fully licsensed driver.'
+'Fully licensed driver.'
 ```
 
 ## Conditional expressions or "ternary operators"
