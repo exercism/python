@@ -1,0 +1,8 @@
+IGNORE = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\r\x0b\x0c'
+
+def count_words(phrase):
+    cleaned = (phrase.replace(',', ' ')
+                     .replace('_', ' ')
+                     .lower().split())
+    words = [word.strip(IGNORE) for word in cleaned]
+    return {word : words.count(word) for word in words}
