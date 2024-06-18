@@ -110,10 +110,17 @@ class LittleSistersVocabTest(unittest.TestCase):
                       'The morning fog made everything damp with mist.',
                       'He cut the fence pickets short by mistake.',
                       'Charles made weak crying noises.',
-                      'The black oil got on the white dog.']
-        index_data = [-2, -1, 3, 3, -2, -3, 5, 2, 1]
+                      'The black oil got on the white dog.',
+                      'Her hair was straight, flowing down like a waterfall.',
+                      'The metal was really hard; it could withstand any blow.',
+                      'The night was quiet: a peaceful silence that enveloped everything.',
+                      'Soon she found herself unable to see anything clearly (it was dark).',
+                      'How radiant and bright!',
+                      'Could you shed some light?']
+        index_data = [-2, -1, 3, 3, -2, -3, 5, 2, 1, 3, 4, 3, -1, -1, -1]
         result_data = ['brighten', 'darken', 'harden', 'soften',
-                       'lighten', 'dampen', 'shorten', 'weaken', 'blacken']
+                       'lighten', 'dampen', 'shorten', 'weaken', 'blacken',
+                       'straighten', 'harden', 'quieten', 'darken', 'brighten', "lighten"]
 
         for variant, (sentence, index, expected) in enumerate(zip(input_data, index_data, result_data), start=1):
             with self.subTest(f'variation #{variant}', sentence=sentence, index=index, expected=expected):
