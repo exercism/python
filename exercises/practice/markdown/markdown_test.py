@@ -96,6 +96,14 @@ class MarkdownTest(unittest.TestCase):
             "<p>This is a paragraph with # and * in the text</p>",
         )
 
+    def test_with_markdown_symbols_in_more_paragraph_text_that_should_not_be_interpreted(
+        self,
+    ):
+        self.assertEqual(
+            parse("This is a paragraph with _ and * in the text\nThis is another paragraph with __ and # in the text"),
+            "<p>This is a paragraph with _ and * in the text</p><p>This is another paragraph with __ and # in the text</p>",
+        )
+
     def test_unordered_lists_close_properly_with_preceding_and_following_lines(self):
         self.assertEqual(
             parse("# Start a list\n* Item 1\n* Item 2\nEnd a list"),
