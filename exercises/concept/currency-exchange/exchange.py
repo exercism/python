@@ -1,4 +1,4 @@
-"""Functions for calculating steps in exchaning currency.
+"""Functions for calculating steps in exchanging currency.
 
 Python numbers documentation: https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
 
