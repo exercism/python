@@ -1,7 +1,7 @@
 # Introduction
 
 The Zebra Puzzle is a famous logic puzzle in which there are five houses, each painted a different color.
-The houses have different inhabitants, who have different nationalities, own different pets, drink different beverages and smoke different brands of cigarettes.
+The houses have different inhabitants, who have different nationalities, own different pets, drink different beverages and enjoy different hobbies.
 
 To help you solve the puzzle, you're given 15 statements describing the solution.
 However, only by combining the information in _all_ statements will you be able to find the solution to the puzzle.
