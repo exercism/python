@@ -29,5 +29,5 @@ The band colors are encoded as follows:
 - White: 9
 
 From the example above:
-brown-green should return 15
+brown-green should return 15, and
 brown-green-violet should return 15 too, ignoring the third color.
