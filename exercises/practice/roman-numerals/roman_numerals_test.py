@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/roman-numerals/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2024-07-08
 
 import unittest
 
@@ -84,6 +84,9 @@ class RomanNumeralsTest(unittest.TestCase):
 
     def test_3001_is_mmmi(self):
         self.assertEqual(roman(3001), "MMMI")
+
+    def test_3888_is_mmmdccclxxxviii(self):
+        self.assertEqual(roman(3888), "MMMDCCCLXXXVIII")
 
     def test_3999_is_mmmcmxcix(self):
         self.assertEqual(roman(3999), "MMMCMXCIX")

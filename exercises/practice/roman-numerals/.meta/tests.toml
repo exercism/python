@@ -30,6 +30,9 @@ description = "6 is VI"
 [ff3fb08c-4917-4aab-9f4e-d663491d083d]
 description = "9 is IX"
 
+[6d1d82d5-bf3e-48af-9139-87d7165ed509]
+description = "16 is XVI"
+
 [2bda64ca-7d28-4c56-b08d-16ce65716cf6]
 description = "27 is XXVII"
 
@@ -42,6 +45,9 @@ description = "49 is XLIX"
 [d5b283d4-455d-4e68-aacf-add6c4b51915]
 description = "59 is LIX"
 
+[4465ffd5-34dc-44f3-ada5-56f5007b6dad]
+description = "66 is LXVI"
+
 [46b46e5b-24da-4180-bfe2-2ef30b39d0d0]
 description = "93 is XCIII"
 
@@ -51,11 +57,17 @@ description = "141 is CXLI"
 [267f0207-3c55-459a-b81d-67cec7a46ed9]
 description = "163 is CLXIII"
 
+[902ad132-0b4d-40e3-8597-ba5ed611dd8d]
+description = "166 is CLXVI"
+
 [cdb06885-4485-4d71-8bfb-c9d0f496b404]
 description = "402 is CDII"
 
 [6b71841d-13b2-46b4-ba97-dec28133ea80]
 description = "575 is DLXXV"
+
+[dacb84b9-ea1c-4a61-acbb-ce6b36674906]
+description = "666 is DCLXVI"
 
 [432de891-7fd6-4748-a7f6-156082eeca2f]
 description = "911 is CMXI"
@@ -63,26 +75,17 @@ description = "911 is CMXI"
 [e6de6d24-f668-41c0-88d7-889c0254d173]
 description = "1024 is MXXIV"
 
-[bb550038-d4eb-4be2-a9ce-f21961ac3bc6]
-description = "3000 is MMM"
-
-[6d1d82d5-bf3e-48af-9139-87d7165ed509]
-description = "16 is XVI"
-
-[4465ffd5-34dc-44f3-ada5-56f5007b6dad]
-description = "66 is LXVI"
-
-[902ad132-0b4d-40e3-8597-ba5ed611dd8d]
-description = "166 is CLXVI"
-
-[dacb84b9-ea1c-4a61-acbb-ce6b36674906]
-description = "666 is DCLXVI"
-
 [efbe1d6a-9f98-4eb5-82bc-72753e3ac328]
 description = "1666 is MDCLXVI"
 
+[bb550038-d4eb-4be2-a9ce-f21961ac3bc6]
+description = "3000 is MMM"
+
 [3bc4b41c-c2e6-49d9-9142-420691504336]
 description = "3001 is MMMI"
+
+[2f89cad7-73f6-4d1b-857b-0ef531f68b7e]
+description = "3888 is MMMDCCCLXXXVIII"
 
 [4e18e96b-5fbb-43df-a91b-9cb511fe0856]
 description = "3999 is MMMCMXCIX"
