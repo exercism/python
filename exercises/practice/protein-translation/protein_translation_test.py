@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/protein-translation/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2024-07-08
 
 import unittest
 
@@ -133,4 +133,9 @@ class ProteinTranslationTest(unittest.TestCase):
     def test_translation_stops_if_stop_codon_in_middle_of_six_codon_sequence(self):
         value = "UGGUGUUAUUAAUGGUUU"
         expected = ["Tryptophan", "Cysteine", "Tyrosine"]
+        self.assertEqual(proteins(value), expected)
+
+    def test_sequence_of_two_non_stop_codons_does_not_translate_to_a_stop_codon(self):
+        value = "AUGAUG"
+        expected = ["Methionine", "Methionine"]
         self.assertEqual(proteins(value), expected)

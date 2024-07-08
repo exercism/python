@@ -88,6 +88,9 @@ description = "Translation stops if STOP codon in middle of three-codon sequence
 [2c2a2a60-401f-4a80-b977-e0715b23b93d]
 description = "Translation stops if STOP codon in middle of six-codon sequence"
 
+[f6f92714-769f-4187-9524-e353e8a41a80]
+description = "Sequence of two non-STOP codons does not translate to a STOP codon"
+
 [1e75ea2a-f907-4994-ae5c-118632a1cb0f]
 description = "Non-existing codon can't translate"
 include = false
@@ -95,6 +98,7 @@ include = false
 [9eac93f3-627a-4c90-8653-6d0a0595bc6f]
 description = "Unknown amino acids, not part of a codon, can't translate"
 include = false
+reimplements = "1e75ea2a-f907-4994-ae5c-118632a1cb0f"
 
 [9d73899f-e68e-4291-b1e2-7bf87c00f024]
 description = "Incomplete RNA sequence can't translate"
