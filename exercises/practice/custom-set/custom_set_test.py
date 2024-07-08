@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/custom-set/canonical-data.json
-# File last updated on 2023-12-27
+# File last updated on 2024-07-08
 
 import unittest
 
@@ -194,6 +194,12 @@ class CustomSetTest(unittest.TestCase):
         set1 = CustomSet([3, 2, 1])
         set2 = CustomSet([2, 4])
         expected = CustomSet([1, 3])
+        self.assertEqual(set1 - set2, expected)
+
+    def test_difference_removes_all_duplicates_in_the_first_set(self):
+        set1 = CustomSet([1, 1])
+        set2 = CustomSet([1])
+        expected = CustomSet()
         self.assertEqual(set1 - set2, expected)
 
     def test_union_of_empty_sets_is_an_empty_set(self):

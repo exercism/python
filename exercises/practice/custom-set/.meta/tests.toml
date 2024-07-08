@@ -114,6 +114,9 @@ description = "Difference (or Complement) of a set is a set of all elements that
 [c5ac673e-d707-4db5-8d69-7082c3a5437e]
 description = "Difference (or Complement) of a set is a set of all elements that are only in the first set -> difference of two non-empty sets is a set of elements that are only in the first set"
 
+[20d0a38f-7bb7-4c4a-ac15-90c7392ecf2b]
+description = "Difference (or Complement) of a set is a set of all elements that are only in the first set -> difference removes all duplicates in the first set"
+
 [c45aed16-5494-455a-9033-5d4c93589dc6]
 description = "Union returns a set of all elements in either set -> union of empty sets is an empty set"
 
