@@ -296,7 +296,7 @@ Assigning a `list` object to a new variable _name_ **does not copy the `list` ob
 Any change made to the elements in the `list` under the _new_ name _impact the original_.
 
 
-Making a `shallow_copy` via `list.copy()` or slice will avoid this first-leve referencing complication.
+Making a `shallow_copy` via `list.copy()` or slice will avoid this first-level referencing complication.
 A `shallow_copy` will create a new `list` object, but **will not** create new objects for the contained list _elements_. This type of copy will usually be enough for you to add or remove items from the two `list` objects independently, and effectively have two "separate" lists.
 
 
