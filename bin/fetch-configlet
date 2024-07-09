@@ -24,10 +24,11 @@ get_download_url() {
   local latest='https://api.github.com/repos/exercism/configlet/releases/latest'
   local arch
   case "$(uname -m)" in
-    x86_64) arch='x86-64' ;;
-    *686*)  arch='i386'   ;;
-    *386*)  arch='i386'   ;;
-    *)      arch='x86-64' ;;
+    aarch64|arm64) arch='arm64'  ;;
+    x86_64)        arch='x86-64' ;;
+    *686*)         arch='i386'   ;;
+    *386*)         arch='i386'   ;;
+    *)             arch='x86-64' ;;
   esac
   local suffix="${os}_${arch}.${ext}"
   curl "${curlopts[@]}" --header 'Accept: application/vnd.github.v3+json' "${latest}" |
@@ -47,7 +48,7 @@ main() {
   fi
 
   local os
-  case "$(uname)" in
+  case "$(uname -s)" in
     Darwin*)   os='macos'   ;;
     Linux*)    os='linux'   ;;
     Windows*)  os='windows' ;;
@@ -58,8 +59,8 @@ main() {
 
   local ext
   case "${os}" in
-    windows*) ext='zip'    ;;
-    *)        ext='tar.gz' ;;
+    windows) ext='zip'    ;;
+    *)       ext='tar.gz' ;;
   esac
 
   echo "Fetching configlet..." >&2
@@ -69,16 +70,16 @@ main() {
   curl "${curlopts[@]}" --output "${output_path}" "${download_url}"
 
   case "${ext}" in
-    *zip) unzip "${output_path}" -d "${output_dir}"   ;;
-    *)    tar xzf "${output_path}" -C "${output_dir}" ;;
+    zip) unzip "${output_path}" -d "${output_dir}"   ;;
+    *)   tar xzf "${output_path}" -C "${output_dir}" ;;
   esac
 
   rm -f "${output_path}"
 
   local executable_ext
   case "${os}" in
-    windows*) executable_ext='.exe' ;;
-    *)        executable_ext=''     ;;
+    windows) executable_ext='.exe' ;;
+    *)       executable_ext=''     ;;
   esac
 
   local configlet_path="${output_dir}/configlet${executable_ext}"
