@@ -6,7 +6,7 @@ The problem space can easily become very large, and 'naive' or more 'brute force
 There are three reasonably common variations to this problem
 1.  A [cubic time][approaches-cubic] solution, which uses highly nested loops and is non-performant.
 2.  A [quadratic time][approaches-quadratic] solution, which uses one nested loop, and is reasonably easy to figure out.
-3.  A [linear time][approaches-linear] solution, requiring some deeper understanding of the mathematics of finding trplets.
+3.  A [linear time][approaches-linear] solution, requiring some deeper understanding of the mathematics of finding triplets.
 
 
 If those terms are unclear to you, you might like to read about [time complexity][time-complexity], and how it is  described by [asymptotic notation][asymptotic-notation].
@@ -68,7 +68,7 @@ This gives a substantial speed advantage, allowing the tests to run to completio
 
 However, the Exercism online test runner will still time out with this solution.
 
-Examining the code, it is clear that the upper bounds on the `loop` variables are far too generous, and too much work is bing done.
+Examining the code, it is clear that the upper bounds on the `loop` variables are far too generous, and too much work is being done.
 
 
 The solution below tightens the bounds and pre-calculates `c * c` in the outer `loop`.
@@ -171,7 +171,7 @@ def triplets_with_sum(number):
 If we could be sure that the code only had to handle small values of `n`, a quadratic method would have the advantage of clarity.
 
 However, the test suite goes up to 30_000, and the online test runner quickly times out.
-We therefor need to accept some less readable code and use a linear-time implementation.
+We therefore need to accept some less readable code and use a linear-time implementation.
 
 Full details of run-time benchmarking are given in the [Performance article][article-performance].
 
