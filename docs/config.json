@@ -15,20 +15,6 @@
       "blurb": "An overview of how to get started from scratch with Python."
     },
     {
-      "uuid": "7a2e1a4f-1fa8-4327-b700-5af101fcdc89",
-      "slug": "test-driven-development",
-      "path": "docs/TDD.md",
-      "title": "Test Driven Development",
-      "blurb": "An overview of Test Driven Development."
-    },
-    {
-      "uuid": "3829fdff-47ac-4283-ae47-a5db1dbce956",
-      "slug": "traceback-reading",
-      "path": "docs/TRACEBACKS.md",
-      "title": "How to read tracebacks",
-      "blurb": "An overview of how to read Python tracebacks for debugging."
-    },
-    {
       "uuid": "8666f259-de7d-4928-ae6f-15ff6fe6bb74",
       "slug": "tests",
       "path": "docs/TESTS.md",
@@ -36,11 +22,25 @@
       "blurb": "Learn how to test your Python exercises on Exercism."
     },
     {
+      "uuid": "7a2e1a4f-1fa8-4327-b700-5af101fcdc89",
+      "slug": "test-driven-development",
+      "path": "docs/TDD.md",
+      "title": "Test Driven Development",
+      "blurb": "An overview of Test Driven Development."
+    },
+    {
       "uuid": "f18d3af2-fb71-41c6-984a-32b3ba86bf02",
       "slug": "problem-solving",
       "path": "docs/PROBLEM-SOLVING.md",
       "title": "Problem Solving Resources",
       "blurb": "Learn some general problem-solving techniques to help you with programming."
+    },
+    {
+      "uuid": "3829fdff-47ac-4283-ae47-a5db1dbce956",
+      "slug": "traceback-reading",
+      "path": "docs/TRACEBACKS.md",
+      "title": "How to read tracebacks",
+      "blurb": "An overview of how to read Python tracebacks for debugging."
     },
     {
       "uuid": "73ced51d-76d0-45af-952c-8a6d7b5f3f7a",
