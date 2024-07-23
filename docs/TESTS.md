@@ -10,7 +10,7 @@ You should also install the following `pytest` plugins:
 We also recommend using the code linting program [pylint][pylint], as it is part of our automated feedback on the website and can be a very useful static code analysis tool.
 For ease-of-use, the [pytest-pylint][pytest-pylint] plugin for `pytest` will allow you to run `pylint` via `pytest` on the command line.
 
-Pylint configuration can be a bit much, so this [tutorial from pycqa.org][tutorial from pycqa.org] can be helpful for getting started, as can this overview of [Code Quality: Tools and Best Practices][Code Quality: Tools and Best Practices] from Real Python.
+Pylint configuration can be a bit much, so this [tutorial from the pylint documentation][tutorial from the pylint documentation] can be helpful for getting started, as can this overview of [Code Quality: Tools and Best Practices][Code Quality: Tools and Best Practices] from Real Python.
 
 
 ## Installing pytest
@@ -272,5 +272,5 @@ export PATH=”$PATH:{python_directory}}”
 [python command line]: https://docs.python.org/3/using/cmdline.html
 [python-m-pip]: https://snarky.ca/why-you-should-use-python-m-pip/
 [quick-and-dirty]: https://snarky.ca/a-quick-and-dirty-guide-on-how-to-install-packages-for-python/
-[tutorial from pycqa.org]: https://pylint.pycqa.org/en/v2.17.2/tutorial.html
+[tutorial from the pylint documentation]: https://pylint.readthedocs.io/en/stable/tutorial.html
 [working with custom markers]: https://docs.pytest.org/en/6.2.x/example/markers.html#working-with-custom-markers
