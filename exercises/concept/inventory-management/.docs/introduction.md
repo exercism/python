@@ -120,7 +120,7 @@ KeyError: 'name'
 
 ## Looping through/Iterating over a Dictionary
 
-Looping through a dictionary using `for item in dict` or `while item` will iterate over only the _keys _ by default.
+Looping through a dictionary using `for item in dict` or `while item` will iterate over only the _keys_ by default.
 You can access the _values_ within the same loop by using _square brackets_:
 
 ```python
