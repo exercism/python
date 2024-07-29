@@ -65,6 +65,12 @@ _Thoughtful suggestions will likely result in faster & more enthusiastic respons
 <br>
 <br>
 
+<div>
+<span>
+<img align="left" height="60" width="85" src="https://avatars.githubusercontent.com/u/142049145?v=4">
+</span>
+<span align="left">
+
 ## Python Software and Documentation
 
 **Copyright © 2001-2023 Python Software Foundation. All rights reserved.**
