@@ -42,7 +42,7 @@ Implement the `check_drinks(<drink_name>, <drink_ingredients>)` function that ta
 
 The guest list includes diners with different dietary needs, and your staff will need to separate the dishes into Vegan, Vegetarian, Paleo, Keto, and Omnivore.
 
-Implement the `categorize_dish(<dish_name>, <dish_ingredients>)` function that takes a dish name and a `set` of that dish's' ingredients.
+Implement the `categorize_dish(<dish_name>, <dish_ingredients>)` function that takes a dish name and a `set` of that dish's ingredients.
 The function should return a string with the `dish name: <CATEGORY>` (_which meal category the dish belongs to_).
 All dishes will "fit" into one of the categories imported from `sets_categories_data.py` (VEGAN, VEGETARIAN, PALEO, KETO, or OMNIVORE).
 
@@ -125,7 +125,7 @@ appetizers = ['Kingfish Lettuce Cups','Avocado Deviled Eggs','Satay Steak Skewer
 
 ## 7. Find Ingredients Used in Only One Recipe
 
-Within in each category (_Vegan, Vegetarian, Paleo, Keto, Omnivore_), you're going to pull out ingredients that appear in only one dish.
+Within each category (_Vegan, Vegetarian, Paleo, Keto, Omnivore_), you're going to pull out ingredients that appear in only one dish.
 These "singleton" ingredients will be assigned a special shopper to ensure they're not forgotten in the rush to get everything else done.
 
 Implement the `singleton_ingredients(<dishes>, <INTERSECTIONS>)` function that takes a `list` of dishes and a `<CATEGORY>_INTERSECTIONS` constant for the same category.
