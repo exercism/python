@@ -92,7 +92,7 @@ def stack_match5(text: str) -> bool:
 
 
 def repeated_substitution1(text):
-    text = "".join([x for x in text if x in "()[]{}"])
+    text = "".join(x for x in text if x in "()[]{}")
     while "()" in text or "[]" in text or "{}" in text:
         text = text.replace("()","").replace("[]", "").replace("{}","")
     return not text

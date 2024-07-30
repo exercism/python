@@ -1,6 +1,6 @@
 # Performance
 
-All functions were tested on three inputs, a short string from the stadard tests plus two scientific papers in $\LaTeX$ format.
+All functions were tested on three inputs, a short string from the exercise tests plus two scientific papers in $\LaTeX$ format.
 
 Python reported these string lengths:
 
@@ -11,10 +11,8 @@ Python reported these string lengths:
 ```
 
 A total of 9 community solutions were tested: 5 variants of stack-match and 4 of repeated-substitution.
-
 Full details are in the [benchmark code][benchmark-code], including URLs for the downloaded papers.
-
-Results are summarized in the table below, with all times in seconds.
+Results are summarized in the table below, with all times in seconds:
 
 
 |                        |    short |   mars_moons |   galaxy_cnn |
@@ -28,6 +26,8 @@ Results are summarized in the table below, with all times in seconds.
 | repeated_substitution2 | 1.86e-06 |     3.58e-04 |     3.15e-04 |
 | repeated_substitution3 | 4.27e-06 |     14.0e-04 |     12.5e-04 |
 | repeated_substitution4 | 4.96e-06 |     14.9e-04 |     13.5e-04 |
+
+
 
 Overall, most of these solutions had fairly similar performance, and runtime scaled similarly with input length.
 
