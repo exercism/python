@@ -11,7 +11,7 @@ def is_paired(text):
 
 In this approach, the steps are:
 
-1.  Remove all non-bracket characters from the input string.
+1.  Remove all non-bracket characters from the input string (_as done through the filter clause in the list-comprehension above_).
 2.  Iteratively remove all remaining bracket pairs: this reduces nesting in the string from the inside outwards.
 3.  Test for a now empty string, meaning all brackets have been paired.
 
@@ -30,27 +30,28 @@ def is_paired(input_string):
     return not symbols
 ```
 
-The second solution above does essentially the same thing as the initial approach, but uses a generator expression assigned with a [walrus operator][walrus] `:=` (_introduced in Python 3.8_).
+The second solution above does essentially the same thing as the initial approach, but uses a generator expression assigned with a [walrus operator][walrus] `:=` (_introduced in Python 3.8_) in the `while-loop` test.
 
 
-## Variation 2:  Regex
+## Variation 2:  Regex Substitution in a While Loop
 
-Regex enthusiasts can modify the previous approach, using `re.sub()` instead of `string.replace()`:
+Regex enthusiasts can modify the previous approach, using `re.sub()` instead of `string.replace()` in the `while-loop` test:
 
 ```python
 import re
 
-def is_paired(str_: str) -> bool:
-    str_ = re.sub(r'[^{}\[\]()]', '', str_)
-    while str_ != (str_ := re.sub(r'{\}|\[]|\(\)', '', str_)):
-        pass
-    return not bool(str_)
+def is_paired(text: str) -> bool:
+    text = re.sub(r'[^{}\[\]()]', '', text)
+    while text != (text := re.sub(r'{\}|\[]|\(\)', '', text)):
+        continue
+    return not bool(text)
 ```
 
-## Variation 3: Regex and Recursion
+
+## Variation 3: Regex Substitution and Recursion
 
 
-It is possible to combine regexes & recursion in the same solution, though not everyone would view this as idiomatic Python:
+It is possible to combine `re.sub()` and recursion in the same solution, though not everyone would view this as idiomatic Python:
 
 
 ```python

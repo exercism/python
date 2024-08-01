@@ -15,18 +15,18 @@ def is_paired(input_string):
     return not stack
 ```
 
-The point of this approach is to maintain a context of which bracket sets are currently open:
+The point of this approach is to maintain a context of which bracket sets are currently "open":
 
-- If a left bracket is found, push it onto the stack.
-- If a right bracket is found, and it pairs with the top item on the stack, pop the bracket off the stack and continue.
-- If there is a mismatch, for example `'['` with `'}'` or no left bracket on the stack, the code can immediately terminate and return `False`.
+- If a left bracket is found, push it onto the stack (_append it to the `list`_).
+- If a right bracket is found, **and** it pairs with the last item placed on the stack, pop the bracket off the stack and continue.
+- If there is a mismatch, for example `'['` with `'}'` or there is no left bracket on the stack, the code can immediately terminate and return `False`.
 - When all the input text is processed, determine if the stack is empty, meaning all left brackets were matched.
 
-In Python, a `list` is a good implementation of a stack: it has `list.append()` (equivalent to a "push") and `lsit.pop()` methods built in.
+In Python, a [`list`][concept:python/lists]() is a good implementation of a stack: it has [`list.append()`][list-append] (_equivalent to a "push"_) and [`lsit.pop()`][list-pop] methods built in.
 
-Some solutions use `collections.deque()` as an alternative implementation, though this has no clear advantage (_since the code only uses appends to the right-hand side_) and near-identical runtime performance.
+Some solutions use [`collections.deque()`][collections-deque] as an alternative implementation, though this has no clear advantage (_since the code only uses appends to the right-hand side_) and near-identical runtime performance.
 
-The code above searches `bracket_map` for left brackets, meaning the _keys_ of the dictionary, and the line `bracket_map.values()` is used to search for the right brackets.
+The default iteration for a dictionary is over the _keys_, so the code above uses a plain `bracket_map` to search for left brackets, while `bracket_map.values()` is used to search for right brackets.
 
 Other solutions created two sets of left and right brackets explicitly, or searched a string representation:
 
@@ -43,3 +43,7 @@ To be more explicit, we could alternatively use an equality:
 ```python
     return stack == []
 ```
+
+[list-append]: https://docs.python.org/3/tutorial/datastructures.html#more-on-lists
+[list-pop]: https://docs.python.org/3/tutorial/datastructures.html#more-on-lists
+[collections-deque]: https://docs.python.org/3/library/collections.html#collections.deque

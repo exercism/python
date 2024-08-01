@@ -60,13 +60,13 @@ Recursion is not highly optimised in Python and there is no tail call optimizati
 ## Which approach to use
 
 For short, well-defined input strings such as those currently in the test file, repeated-substitution allows a passing solution in very few lines of code.
-But as input grows, this method becomes could become less and less performant, due to the multiple passes and changes needed to determine matches.
+But as input grows, this method could become less and less performant, due to the multiple passes and changes needed to determine matches.
 
 The single-pass strategy of the stack-match approach allows for stream processing, scales linearly (_`O(n)` time complexity_) with text length, and will remain performant for very large inputs.
 
-Examining the community solutions published for this exercise, it is clear that many programmers prefer the stack-match method, avoiding the repeated string copying of the substitution approach.
+Examining the community solutions published for this exercise, it is clear that many programmers prefer the stack-match method which avoids the repeated string copying of the substitution approach.
 
-Thus it is interesting, and perhaps humbling, to note that repeated-substitution is *at least* as fast in benchmarking, even with large (>30 kB) input strings!
+Thus it is interesting and perhaps humbling to note that repeated-substitution is **_at least_** as fast in benchmarking, even with large (>30 kB) input strings!
 
 See the [performance article][article-performance] for more details.
 
