@@ -36,7 +36,7 @@ Other solutions created two sets of left and right brackets explicitly, or searc
 
 Such changes made little difference to code length or readability, but ran about 5-fold faster than the dictionary-based solution.
 
-At the end, success is an empty stack, tested above by using the False-y quality of `[]` (_as Python programmers often do_).
+At the end, success is an empty stack, tested above by using the [False-y quality][falsey] of `[]` (_as Python programmers often do_).
 
 To be more explicit, we could alternatively use an equality:
 
@@ -47,3 +47,4 @@ To be more explicit, we could alternatively use an equality:
 [list-append]: https://docs.python.org/3/tutorial/datastructures.html#more-on-lists
 [list-pop]: https://docs.python.org/3/tutorial/datastructures.html#more-on-lists
 [collections-deque]: https://docs.python.org/3/library/collections.html#collections.deque
+[falsey]: https://docs.python.org/3/library/stdtypes.html#truth-value-testing
