@@ -26,7 +26,7 @@ In Python, a [`list`][concept:python/lists]() is a good implementation of a stac
 
 Some solutions use [`collections.deque()`][collections-deque] as an alternative implementation, though this has no clear advantage (_since the code only uses appends to the right-hand side_) and near-identical runtime performance.
 
-The default iteration for a dictionary is over the _keys_, so the code above uses a plain `bracket_map` to search for left brackets, while `bracket_map.values()` is used to search for right brackets.
+The default iteration for a dictionary is over the _keys_, so the code above uses a plain `bracket_map` to search for right brackets, while `bracket_map.values()` is used to search for left brackets.
 
 Other solutions created two sets of left and right brackets explicitly, or searched a string representation:
 
