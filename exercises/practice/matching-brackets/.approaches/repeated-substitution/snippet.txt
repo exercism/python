@@ -1,0 +1,5 @@
+def is_paired(text):
+    text = "".join(element for element in text if element in "()[]{}")
+    while "()" in text or "[]" in text or "{}" in text:
+        text = text.replace("()","").replace("[]", "").replace("{}","")
+    return not text

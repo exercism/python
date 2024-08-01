@@ -1,0 +1,30 @@
+{
+  "introduction": {
+    "authors": [
+      "colinleach",
+      "BethanyG"
+    ]
+  },
+  "approaches": [
+    {
+      "uuid": "449c828e-ce19-4930-83ab-071eb2821388",
+      "slug": "stack-match",
+      "title": "Stack Match",
+      "blurb": "Maintain context during stream processing by use of a stack.",
+      "authors": [
+        "colinleach",
+        "BethanyG"
+      ]
+    },
+    {
+      "uuid": "b4c42162-751b-42c8-9368-eed9c3f4e4c8",
+      "slug": "repeated-substitution",
+      "title": "Repeated Substitution",
+      "blurb": "Use substring replacement to iteratively simplify the string.",
+      "authors": [
+        "colinleach",
+        "BethanyG"
+      ]
+    }
+  ]
+}

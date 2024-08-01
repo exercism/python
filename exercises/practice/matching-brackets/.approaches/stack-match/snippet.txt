@@ -1,0 +1,8 @@
+    bracket_map = {"]" : "[", "}": "{", ")":"("}
+    stack = []
+    for element in input_string:
+        if element in bracket_map.values(): tracking.append(element)
+        if element in bracket_map:
+            if not stack or (stack.pop() != bracket_map[element]):
+                return False
+    return not stack
