@@ -1,0 +1,14 @@
+# Using a Dictionary and `dict.get()`
+
+```python
+def score(x_coord, y_coord):
+    point = (x_coord**2 + y_coord**2)
+    scores = {
+        point <= 100: 1,
+        point <= 25: 5,
+        point <= 1: 10
+    }
+    
+    return scores.get(True, 0)
+```
+
