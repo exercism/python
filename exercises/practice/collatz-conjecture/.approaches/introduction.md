@@ -6,7 +6,7 @@ You can also solve it by using if and else statements or the ternary operator.
 
 ## General guidance
 
-The key to this exercise is to check if the number and then do the correct operation.
+The key to this exercise is to check if the number is even or odd and then perform the correct operation.
 Under this process you are supposed to count how many steps it takes to get to one.
 
 ## Approach: If/Else
