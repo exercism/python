@@ -12,4 +12,4 @@ jobs:
     steps:
       - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
       - name: Run test-runner
-        run: docker-compose run test-runner
+        run: docker compose run test-runner
