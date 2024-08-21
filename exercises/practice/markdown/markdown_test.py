@@ -101,3 +101,9 @@ class MarkdownTest(unittest.TestCase):
             parse("# Start a list\n* Item 1\n* Item 2\nEnd a list"),
             "<h1>Start a list</h1><ul><li>Item 1</li><li>Item 2</li></ul><p>End a list</p>",
         )
+    
+    def test_two_unordered_lists_separated_properly(self):
+        self.assertEqual(
+            parse("# Start list 1\n* Item 1\nEnd list 1\n# Start list 2\n* Item 1\n* Item 2\nEnd list 2"),
+            "<h1>Start list 1</h1><ul><li>Item 1</li></ul><p>End list 1</p><h1>Start list 2</h1><ul><li>Item 1</li><li>Item 2</li></ul><p>End list 2</p>",
+        )
