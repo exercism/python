@@ -100,8 +100,8 @@ def add_two_numbers(number_one, number_two):
 >>> add_two_numbers(3, 4)
 7
 
-# Assigning the function call to a variable and printing 
-# the variable will also return the value.
+# Assigning the function call to a variable and printing it 
+# will also return the value.
 >>> sum_with_return = add_two_numbers(5, 6)
 >>> print(sum_with_return)
 11
@@ -153,7 +153,7 @@ Dot (`.`) notation is used for calling functions defined inside a class or modul
 27
 
 
-# A mis-match between the number of parameters and the number of arguments will raise an error.
+# A mismatch between the number of parameters and the number of arguments will raise an error.
 >>> number_to_the_power_of(4,)
 ...
 Traceback (most recent call last):

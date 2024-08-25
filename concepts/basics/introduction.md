@@ -89,7 +89,7 @@ def add_two_numbers(number_one, number_two):
 # the variable will also return the value.
 >>> sum_with_return = add_two_numbers(5, 6)
 >>> print(sum_with_return)
-7
+11
 ```
 
 Functions that do not have an _explicit_ `return` expression will _implicitly_ return the [`None`][none] object.
