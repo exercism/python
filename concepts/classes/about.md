@@ -314,12 +314,12 @@ class MyClass:
 
     # This will compile and run without error, but has no current functionality.
     def pending_functionality(self):
-       # Stubbing or placholding the body of this method.
+       # Stubbing or place-holding the body of this method.
        pass
 ```
 
 [class method]: https://stackoverflow.com/questions/17134653/difference-between-class-and-instance-methods
-[dunder]: https://www.dataindependent.com/python/python-glossary/python-dunder/
+[dunder]: https://mathspp.com/blog/pydonts/dunder-methods
 [oop]: https://www.educative.io/blog/object-oriented-programming
 [dot notation]: https://stackoverflow.com/questions/45179186/understanding-the-dot-notation-in-python
 [shadowing]: https://oznetnerd.com/2017/07/17/python-shadowing/
