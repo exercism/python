@@ -50,7 +50,7 @@ elif y > z:
 else:
     print("z is greater than x and y")
 ...
->>> z is great than x and y
+>>> z is greater than x and y
 ```
 
 [Boolean operations][boolean operations] and [comparisons][comparisons] can be combined with conditionals for more complex testing:
