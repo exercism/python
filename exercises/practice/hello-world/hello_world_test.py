@@ -28,3 +28,12 @@ class HelloWorldTest(unittest.TestCase):
     def test_say_hi(self):
         msg = "\n\nThis test expects a return of the string 'Hello, World!' \nDid you use print('Hello, World!') by mistake?"
         self.assertEqual(hello(), "Hello, World!", msg=msg)
+
+if __name__ == '__main__':
+    # Why is this if implanted?
+    # This prevents the contents within the if statement of this script from being run indirectly, when it is imported as a module in another script/module, or from recurring loops.
+    # So it runs only when you execute the test, i.e. this module/script.
+    # What does the naming mean?
+    # The name is __main__ because this is the default module that is run when the script is executed directly.
+    # If the script is run from another script, its name would be the name of the module it is imported as, i.e. hello_world_test.
+    unittest.main()
