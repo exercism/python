@@ -5,9 +5,16 @@
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
-    def test_{{ case["description"] | to_snake }}(self):
-        lines = {{ case["input"]["lines"] }}
-        expected = {{ case["expected"] }}
-        self.assertEqual({{ case["property"] }}("\n".join(lines)), "\n".join(expected))
+  def test_{{ case["description"] | to_snake }}(self):
+        {%- if case["input"]["lines"] | length > 0 %}
+        text = "{{+ case["input"]["lines"] | join_test_inputs | replace('\n','\\n') }}"
+        expected = "{{+ case["expected"] | join_test_inputs | replace('\n','\\n') }}"
 
+
+        {%- else %}
+        text = ""
+        expected = ""
+        {%- endif %}
+
+        self.assertEqual({{ case["property"] }}(text), expected)
     {% endfor %}

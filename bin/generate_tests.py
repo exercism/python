@@ -204,6 +204,8 @@ def regex_find(s: str, find: str) -> List[Any]:
 def regex_split(s: str, find: str) -> List[str]:
     return re.split(find, s)
 
+def join_test_inputs(test_inputs: list) -> str:
+    return "\n".join(test_inputs)
 
 def filter_test_cases(cases: List[TypeJSON], opts: TestsTOML) -> List[TypeJSON]:
     """
@@ -409,6 +411,7 @@ def generate(
     env.filters["regex_replace"] = regex_replace
     env.filters["regex_find"] = regex_find
     env.filters["regex_split"] = regex_split
+    env.filters["join_test_inputs"] = join_test_inputs
     env.filters["zip"] = zip
     env.filters["parse_datetime"] = parse_datetime
     env.filters["escape_invalid_escapes"] = escape_invalid_escapes
