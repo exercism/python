@@ -108,7 +108,7 @@ Conditionals can also be nested.
             if 18 > driver_age >= 16:
                 status = "Student driver, needs supervision."
             elif driver_age == 18:
-                satus = "Permitted driver, on probation."
+                status = "Permitted driver, on probation."
             elif driver_age > 18:
                 status = "Fully licensed driver."
         else:
