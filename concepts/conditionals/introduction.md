@@ -45,10 +45,8 @@ z = 20
 
 # The elif statement allows for the checking of more conditions.
 if x > y > z:
-
     print("x is greater than y and z")
 elif y > x > z:
-
     print("y is greater than x and z")
 else:
     print("z is greater than x and y")
@@ -59,16 +57,17 @@ else:
 [Boolean operations][boolean operations] and [comparisons][comparisons] can be combined with conditionals for more complex testing:
 
 ```python
-
 >>> def classic_fizzbuzz(number):
         if number % 3 == 0 and number % 5 == 0:
-            return 'FizzBuzz!'
+            say = 'FizzBuzz!'
         elif number % 5 == 0:
-            return 'Buzz!'
+            say = 'Buzz!'
         elif number % 3 == 0:
-            return 'Fizz!'
+            say = 'Fizz!'
         else:
-            return str(number)
+            say = str(number)
+        
+        return say
 
 >>> classic_fizzbuzz(15)
 'FizzBuzz!'

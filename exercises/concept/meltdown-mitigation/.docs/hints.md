@@ -30,13 +30,15 @@
 
 - Comparison operators can be combined and used with conditionals.
 - Any number of `elif` statements can be used as decision "branches".
-- Each "branch" can have a separate `return`
+- Each "branch" can have a separate `return`, although it might be considered "bad form" by linting tools.
+- If the linter complains, consider assigning the output of a branch to a common variable, and then `return`ing that variable.
 
 ## 3. Fail Safe Mechanism
 
 - Comparison operators can be combined and used with conditionals.
 - Any number of `elif` statements can be used as decision "branches".
-- Each "branch" can have a separate `return`
+- Each "branch" can have a separate `return`, although it might be considered "bad form" by linting tools.
+- If the linter complains, consider assigning the output of a branch to a common variable, and then `return`ing that variable.
 
 
 [boolean operations]: https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not

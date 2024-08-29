@@ -56,16 +56,17 @@ else:
 [Boolean operations][boolean operations] and [comparisons][comparisons] can be combined with conditionals for more complex testing:
 
 ```python
-
 >>> def classic_fizzbuzz(number):
         if number % 3 == 0 and number % 5 == 0:
-            return 'FizzBuzz!'
+            say = 'FizzBuzz!'
         elif number % 5 == 0:
-            return 'Buzz!'
+            say = 'Buzz!'
         elif number % 3 == 0:
-            return 'Fizz!'
+            say = 'Fizz!'
         else:
-            return str(number)
+            say = str(number)
+        
+        return say
 
 >>> classic_fizzbuzz(15)
 'FizzBuzz!'
