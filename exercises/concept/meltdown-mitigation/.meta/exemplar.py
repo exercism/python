@@ -45,7 +45,6 @@ def reactor_efficiency(voltage, current, theoretical_max_power):
 
     generated_power = voltage * current
     percentage_range = (generated_power / theoretical_max_power) * 100
-    efficiency_level = 'unknown'
 
     if 80 <= percentage_range <= 100:
         efficiency_level = 'green'

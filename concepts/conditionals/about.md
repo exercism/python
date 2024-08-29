@@ -8,7 +8,6 @@ Python 3.10 introduces a variant case-switch statement called `pattern matching`
 Conditional statements use expressions that must resolve to `True` or `False` -- either by returning a `bool` directly, or by evaluating ["truthy" or "falsy"][truth value testing].
 
 
-
 ```python
 x = 10
 y = 5
@@ -61,13 +60,15 @@ else:
 
 >>> def classic_fizzbuzz(number):
         if number % 3 == 0 and number % 5 == 0:
-            return 'FizzBuzz!'
+            say = 'FizzBuzz!'
         elif number % 5 == 0:
-            return 'Buzz!'
+            say = 'Buzz!'
         elif number % 3 == 0:
-            return 'Fizz!'
+            say = 'Fizz!'
         else:
-            return str(number)
+            say = str(number)
+        
+        return say
 
 >>> classic_fizzbuzz(15)
 'FizzBuzz!'
@@ -76,19 +77,44 @@ else:
 '13'
 ```
 
+As an alternative, the example above can be re-written to only use `if` statements with `returns`.
+However, re-writing in this way might obscure that the conditions are intended to be [_mutually exclusive_][mutually-exclusive] and could lead to future bugs or maintenance issues.
+
+
+```python
+>>> def classic_fizzbuzz(number):
+        if number % 3 == 0 and number % 5 == 0:
+            return 'FizzBuzz!'
+        if number % 5 == 0:
+            return 'Buzz!'
+        if number % 3 == 0:
+            return 'Fizz!'
+        
+        return str(number)
+
+>>> classic_fizzbuzz(15)
+'FizzBuzz!'
+
+>>> classic_fizzbuzz(13)
+'13'
+```
+
+
 Conditionals can also be nested.
 
 ```python
 >>> def driving_status(driver_age, test_score):
         if test_score >= 80: 
             if 18 > driver_age >= 16:
-                return "Student driver, needs supervision."
+                status = "Student driver, needs supervision."
             elif driver_age == 18:
-                return "Permitted driver, on probation."
+                satus = "Permitted driver, on probation."
             elif driver_age > 18:
-                return "Fully licensed driver."
+                status = "Fully licensed driver."
         else:
-            return "Unlicensed!"
+             status = "Unlicensed!"
+        
+        return status
 
 
 >>> driving_status(63, 78)
@@ -151,8 +177,9 @@ This is Truthy.
 Nope. It's Falsey.
 ```
 
-[if statement]: https://docs.python.org/3/reference/compound_stmts.html#the-if-statement
-[control flow tools]: https://docs.python.org/3/tutorial/controlflow.html#more-control-flow-tools
-[truth value testing]: https://docs.python.org/3/library/stdtypes.html#truth-value-testing
 [boolean operations]: https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not
 [comparisons]: https://docs.python.org/3/library/stdtypes.html#comparisons
+[control flow tools]: https://docs.python.org/3/tutorial/controlflow.html#more-control-flow-tools
+[if statement]: https://docs.python.org/3/reference/compound_stmts.html#the-if-statement
+[mutually-exclusive]: https://stackoverflow.com/a/22783232
+[truth value testing]: https://docs.python.org/3/library/stdtypes.html#truth-value-testing
