@@ -18,6 +18,16 @@ class InventoryTest(unittest.TestCase):
                          f'The function returned {actual_result}, but the tests expected {expected}.')
 
         self.assertEqual(actual_result, expected, msg=error_message)
+      
+    @pytest.mark.task(taskno=1)
+    def test_create_inventory(self):
+
+        actual_result = create_inventory(["wood", "iron", "iron", "wood", "diamond", "iron", "diamond"])
+        expected = {"wood": 2, "iron": 3, "diamond": 2}
+        error_message = ('Called create_inventory(["wood", "iron", "iron", "wood", "diamond", "iron", "diamond"]). '
+                         f'The function returned {actual_result}, but the tests expected {expected}.')
+
+        self.assertEqual(actual_result, expected, msg=error_message)
 
     @pytest.mark.task(taskno=2)
     def test_add_one_item(self):
