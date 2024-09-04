@@ -1,0 +1,16 @@
+name: Ping cross-track maintainers team
+
+on:
+  pull_request_target:
+    types:
+      - opened
+
+permissions:
+  pull-requests: write
+
+jobs:
+  ping:
+    if: github.repository_owner == 'exercism' # Stops this job from running on forks
+    uses: exercism/github-actions/.github/workflows/ping-cross-track-maintainers-team.yml@main
+    secrets:
+      github_membership_token: ${{ secrets.COMMUNITY_CONTRIBUTIONS_WORKFLOW_TOKEN }}
