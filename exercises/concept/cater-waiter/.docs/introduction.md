@@ -126,6 +126,27 @@ There is no operator equivalent:
 
 
 ```python
+# Both mammals and additional_animals are lists.
+>>> mammals = ['squirrel','dog','cat','cow', 'tiger', 'elephant']
+>>> additional_animals = ['pangolin', 'panda', 'parrot', 
+                          'lemur', 'tiger', 'pangolin']
+
+# Animals is a dict.
+>>> animals = {'chicken': 'white',
+               'sparrow': 'grey',
+               'eagle': 'brown and white',
+               'albatross': 'grey and white',
+               'crow': 'black',
+               'elephant': 'grey', 
+               'dog': 'rust',
+               'cow': 'black and white',
+               'tiger': 'orange and black',
+               'cat': 'grey',
+               'squirrel': 'black'}
+               
+# Birds is a set.
+>>> birds = {'crow','sparrow','eagle','chicken', 'albatross'}
+
 # Mammals and birds don't share any elements.
 >>> birds.isdisjoint(mammals)
 True
