@@ -239,7 +239,6 @@ ValueError: 10 is not in list
 3
 ```
 
-
 [common sequence operations]: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations
 [dict]: https://docs.python.org/3/library/stdtypes.html#dict
 [list-methods]: https://docs.python.org/3/tutorial/datastructures.html#more-on-lists
@@ -248,8 +247,7 @@ ValueError: 10 is not in list
 [sequence type]: https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
 [set]: https://docs.python.org/3/library/stdtypes.html#set
 [slice notation]: https://docs.python.org/3/reference/expressions.html#slicings
+[sort]: https://docs.python.org/3/library/stdtypes.html#list.sort
 [sorted]: https://docs.python.org/3/library/functions.html#sorted
 [sorting how to]: https://docs.python.org/3/howto/sorting.html
 [tuple]: https://docs.python.org/3/library/stdtypes.html#tuple
-
-[sort]: https://docs.python.org/3/library/stdtypes.html#list.sort

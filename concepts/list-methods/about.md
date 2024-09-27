@@ -266,9 +266,7 @@ For a detailed explanation of names, values, list, and nested list behavior, tak
 [set]: https://docs.python.org/3/library/stdtypes.html#set
 [shallow vs deep]: https://realpython.com/copying-python-objects/
 [slice notation]: https://docs.python.org/3/reference/expressions.html#slicings
-[sorted]: https://docs.python.org/3/library/functions.html#sorted
 [sort]: https://docs.python.org/3/library/stdtypes.html#list.sort
+[sorted]: https://docs.python.org/3/library/functions.html#sorted
 [sorting how to]: https://docs.python.org/3/howto/sorting.html
 [tuple]: https://docs.python.org/3/library/stdtypes.html#tuple
-
-
