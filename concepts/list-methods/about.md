@@ -136,10 +136,22 @@ The order of list elements can be reversed  _**in place**_ with `<list>.reverse(
 [3, 2, 1]
 ```
 
-List elements can be sorted _**in place**_ using `<list>.sort()`.
- Internally, Python uses [`Timsort`][timsort] to arrange the elements.
- The default order is _ascending_.
- The Python docs have [additional tips and techniques for sorting][sorting how to] `lists` effectively.
+A list can be re-ordered _**in place**_ with the help of `<list>.sort()`.
+Default sort order is _ascending_ from the left.
+The Python docs offer [additional tips and techniques for sorting][sorting how to] lists effectively.
+
+
+~~~~exercism/note
+ From 2002 to 2022, Python used an algorithm called [`Timsort`][timsort] internally to arrange lists, but switched to [`Powersort`][powersort] from `Python 3.11` onward.
+You can read more details and discussion on the change from the core Python team in the GitHub [issue 78742][78742].  
+
+For technical details on the algorithm, see the J. Ian Munro and Sebastian Wild paper [Nearly-Optimal Mergesorts: Fast, Practical Sorting Methods That Optimally Adapt to Existing Runs][nearly-optimal-mergesorts]
+
+[78742]: https://github.com/python/cpython/issues/78742
+[nearly-optimal-mergesorts]: https://arxiv.org/abs/1805.04154
+[powersort]: https://www.wild-inter.net/publications/munro-wild-2018
+[timsort]: https://en.wikipedia.org/wiki/Timsort
+~~~~
 
 
 ```python
@@ -256,5 +268,6 @@ For a detailed explanation of names, values, list, and nested list behavior, tak
 [slice notation]: https://docs.python.org/3/reference/expressions.html#slicings
 [sorted]: https://docs.python.org/3/library/functions.html#sorted
 [sorting how to]: https://docs.python.org/3/howto/sorting.html
-[timsort]: https://en.wikipedia.org/wiki/Timsort
 [tuple]: https://docs.python.org/3/library/stdtypes.html#tuple
+
+
