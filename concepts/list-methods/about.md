@@ -136,9 +136,9 @@ The order of list elements can be reversed  _**in place**_ with `<list>.reverse(
 [3, 2, 1]
 ```
 
-A list can be re-ordered _**in place**_ with the help of `<list>.sort()`.
+A list can be re-ordered _**in place**_ with the help of [`<list>.sort()`][sort].
 Default sort order is _ascending_ from the left.
-The Python docs offer [additional tips and techniques for sorting][sorting how to] lists effectively.
+The Python docs offer [additional tips and techniques for sorting][sorting how to].
 
 
 ~~~~exercism/note
@@ -266,8 +266,7 @@ For a detailed explanation of names, values, list, and nested list behavior, tak
 [set]: https://docs.python.org/3/library/stdtypes.html#set
 [shallow vs deep]: https://realpython.com/copying-python-objects/
 [slice notation]: https://docs.python.org/3/reference/expressions.html#slicings
+[sort]: https://docs.python.org/3/library/stdtypes.html#list.sort
 [sorted]: https://docs.python.org/3/library/functions.html#sorted
 [sorting how to]: https://docs.python.org/3/howto/sorting.html
 [tuple]: https://docs.python.org/3/library/stdtypes.html#tuple
-
-
