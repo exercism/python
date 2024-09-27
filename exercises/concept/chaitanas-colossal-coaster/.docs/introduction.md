@@ -151,9 +151,15 @@ The `<list>.reverse()` method will reverse the order of elements **in-place**.
 
 
 A list can be re-ordered _**in place**_ with the help of `<list>.sort()`.
- Internally, Python uses [`Timsort`][timsort] to arrange the list.
- Default order is _ascending_ from the left.
- The Python docs offer [additional tips and techniques for sorting][sorting how to] lists effectively.
+Default sort order is _ascending_ from the left.
+The Python docs offer [additional tips and techniques for sorting][sorting how to] lists effectively.
+
+~~~~exercism/note
+ From 2002 to 2022, Python used an algorithm called [`Timsort`][timsort] internally to arrange lists, but switched to [`Powersort`][powersort] from `Python 3.11` onward.
+
+[powersort]: https://www.wild-inter.net/publications/munro-wild-2018
+[timsort]: https://en.wikipedia.org/wiki/Timsort
+~~~~
 
 
 ```python
@@ -244,5 +250,4 @@ ValueError: 10 is not in list
 [slice notation]: https://docs.python.org/3/reference/expressions.html#slicings
 [sorted]: https://docs.python.org/3/library/functions.html#sorted
 [sorting how to]: https://docs.python.org/3/howto/sorting.html
-[timsort]: https://en.wikipedia.org/wiki/Timsort
 [tuple]: https://docs.python.org/3/library/stdtypes.html#tuple
