@@ -3,6 +3,6 @@
 
 def accumulate(collection, operation):
     response = []
-    for ellement in collection:
-        response.append(operation(ellement))
+    for element in collection:
+        response.append(operation(element))
     return response
