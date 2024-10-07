@@ -4,7 +4,7 @@ You and your business partners operate a small catering company. You've just agr
 
 ## 1. Clean up Dish Ingredients
 
-The event recipes were added from various sources and their ingredients appear to have duplicate (_or more_) entries -- you don't want to end up purchasing excess items!
+The event recipes were added from various sources and their ingredients appear to have duplicate (_or more_) entries — you don't want to end up purchasing excess items!
  Before the shopping and cooking can commence, each dish's ingredient list needs to be "cleaned".
 
 Implement the `clean_ingredients(<dish_name>, <dish_ingredients>)` function that takes the name of a dish and a `list` of ingredients.
@@ -138,5 +138,5 @@ from sets_categories_data import example_dishes, EXAMPLE_INTERSECTION
 
 >>> singleton_ingredients(example_dishes, EXAMPLE_INTERSECTION)
 ...
-{'vegetable oil', 'vegetable stock', 'barley malt', 'tofu', 'fresh basil', 'lemon', 'ginger', 'honey', 'spaghetti', 'cornstarch', 'yeast', 'red onion', 'breadcrumbs', 'mixed herbs', 'garlic powder', 'celeriac', 'lemon zest', 'sunflower oil', 'mushrooms', 'silken tofu', 'smoked tofu', 'bell pepper', 'cashews', 'oregano', 'tomatoes', 'parsley', 'red pepper flakes', 'rosemary'}
+{'garlic powder', 'sunflower oil', 'mixed herbs', 'cornstarch', 'celeriac', 'honey', 'mushrooms', 'bell pepper', 'rosemary', 'parsley', 'lemon', 'yeast', 'vegetable oil', 'vegetable stock', 'silken tofu', 'tofu', 'cashews', 'lemon zest', 'smoked tofu', 'spaghetti', 'ginger', 'breadcrumbs', 'tomatoes', 'barley malt', 'red pepper flakes', 'oregano', 'red onion', 'fresh basil'}
 ```
