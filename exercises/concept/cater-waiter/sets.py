@@ -43,7 +43,7 @@ def categorize_dish(dish_name, dish_ingredients):
     """Categorize `dish_name` based on `dish_ingredients`.
 
     :param dish_name: str - dish to be categorized.
-    :param dish_ingredients: list - ingredients for the dish.
+    :param dish_ingredients: set - ingredients for the dish.
     :return: str - the dish name appended with ": <CATEGORY>".
 
     This function should return a string with the `dish name: <CATEGORY>` (which meal category the dish belongs to).
