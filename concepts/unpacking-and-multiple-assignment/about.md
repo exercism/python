@@ -129,9 +129,9 @@ ValueError: too many values to unpack (expected 1)
 
 ### Unpacking a list/tuple with `*`
 
-When [unpacking a `list`/`tuple`][packing and unpacking] you can use the `*` operator to capture the "leftover" values.
+When [unpacking a `list`/`tuple`][packing and unpacking] you can use the `*` operator to capture "leftover" values.
 This is clearer than slicing the `list`/`tuple` (_which in some situations is less readable_).
-For example, we can extract the first element and then assign the remaining values into a new `list` without the first element:
+For example, we can extract the first element and pack the remaining values into a new `list` without the first element:
 
 ```python
 >>> fruits = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
@@ -169,7 +169,7 @@ We can also use `*` in deep unpacking:
 
 ### Unpacking a dictionary
 
-[Unpacking a dictionary][packing and unpacking] is a bit different than unpacking a `list`/`tuple`.
+[Unpacking a dictionary][packing and unpacking] is a bit different from unpacking a `list`/`tuple`.
 Iteration over dictionaries defaults to the **keys**.
 So when unpacking a `dict`, you can only unpack the **keys** and not the **values**:
 
@@ -180,7 +180,7 @@ So when unpacking a `dict`, you can only unpack the **keys** and not the **value
 "apple"
 ```
 
-If you want to unpack the values then you can use the `values()` method:
+If you want to unpack the values then you can use the `<dict>.values()` method:
 
 ```python
 >>> fruits_inventory = {"apple": 6, "banana": 2, "cherry": 3}
@@ -189,9 +189,9 @@ If you want to unpack the values then you can use the `values()` method:
 6
 ```
 
-If both **keys** and **values** are needed, use the `items()` method.
-Using `items()` will generate tuples with **key-value** pairs.
-This is because of [`dict.items()` generates an iterable with key-value `tuples`][items].
+If both **keys** and **values** are needed, use the [`<dict>.items()`][items] method.
+`<dict>.items()` generates an [iterable view][view-objects] containing **key-value** pairs.
+These can be unpacked into a `tuple`:
 
 ```python
 >>> fruits_inventory = {"apple": 6, "banana": 2, "cherry": 3}
@@ -367,8 +367,9 @@ Since `zip()` takes multiple iterables and returns a `list` of `tuples` with the
 ```
 
 [args and kwargs]: https://www.geeksforgeeks.org/args-kwargs-python/
-[items]: https://www.geeksforgeeks.org/python-dictionary-items-method/
+[items]: https://docs.python.org/3/library/stdtypes.html#dict.items
 [multiple assignment]: https://www.geeksforgeeks.org/assigning-multiple-variables-in-one-line-in-python/
 [packing and unpacking]: https://www.geeksforgeeks.org/packing-and-unpacking-arguments-in-python/
 [sorting algorithms]: https://realpython.com/sorting-algorithms-python/
 [unpacking]: https://www.geeksforgeeks.org/unpacking-arguments-in-python/?ref=rp
+[view-objects]: https://docs.python.org/3/library/stdtypes.html#dict-views
