@@ -9,6 +9,7 @@ The special operators `*` and `**` are often used in unpacking contexts and with
 `*<variable_name>` and `**<variable_name>` should not be confused with `*` and `**`. While `*` and `**` are used for multiplication and exponentiation respectively, `*<variable_name>` and `**<variable_name>` are used as packing and unpacking operators.
 ~~~~
 
+
 ## Multiple assignment
 
 In multiple assignment, the number of variables on the left side of the assignment operator (`=`) must match the number of values on the right side.
@@ -55,6 +56,7 @@ For example:
 
 Since `tuples` are immutable, you can't swap elements in a `tuple`.
 
+
 ## Unpacking
 
 ~~~~exercism/note
@@ -80,9 +82,10 @@ If there are values that are not needed then you can use `_` to flag them:
 "cherry"
 ```
 
+
 ### Deep unpacking
 
-Unpacking and assigning values from a `list`/`tuple` inside of a `list` or `tuple` (_also known as nested lists/tuples_), works in the same way a shallow unpacking does, but often needs qualifiers to clarify the values context or position:
+Unpacking and assigning values from a `list`/`tuple` enclosed inside a `list` or `tuple` (_also known as nested lists/tuples_) works in the same way a shallow unpacking does — but often needs qualifiers to clarify the context or position:
 
 ```python
 >>> fruits_vegetables = [["apple", "banana"], ["carrot", "potato"]]
@@ -119,7 +122,7 @@ ValueError: too many values to unpack (expected 1)
 
 When [unpacking a `list`/`tuple`][packing and unpacking] you can use the `*` operator to capture the "leftover" values.
 This is clearer than slicing the `list`/`tuple` (_which in some situations is less readable_).
-For example, we can extract the first element and then assign the remaining values into a new `list` without the first element:
+For example, the first element can be extracted and then the remaining values can be placed into a new `list` without the first element:
 
 ```python
 >>> fruits = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
@@ -157,7 +160,7 @@ We can also use `*` in deep unpacking:
 
 ### Unpacking a dictionary
 
-[Unpacking a dictionary][packing and unpacking] is a bit different than unpacking a `list`/`tuple`.
+[Unpacking a dictionary][packing and unpacking] is a bit different from unpacking a `list`/`tuple`.
 Iteration over dictionaries defaults to the **keys**.
 So when unpacking a `dict`, you can only unpack the **keys** and not the **values**:
 
@@ -168,7 +171,7 @@ So when unpacking a `dict`, you can only unpack the **keys** and not the **value
 "apple"
 ```
 
-If you want to unpack the values then you can use the `values()` method:
+If you want to unpack the values then you can use the `<dict>.values()` method:
 
 ```python
 >>> fruits_inventory = {"apple": 6, "banana": 2, "cherry": 3}
@@ -177,9 +180,9 @@ If you want to unpack the values then you can use the `values()` method:
 6
 ```
 
-If both **keys** and **values** are needed, use the `items()` method.
-Using `items()` will generate tuples with **key-value** pairs.
-This is because of [`dict.items()` generates an iterable with key-value `tuples`][items].
+If both **keys** and **values** are needed, use the [`<dict>.items()`][items] method.
+`<dict>.items()` generates an [iterable view][view-objects] containing **key-value** pairs.
+These can be unpacked into a `tuple`:
 
 ```python
 >>> fruits_inventory = {"apple": 6, "banana": 2, "cherry": 3}
@@ -238,8 +241,8 @@ This will pack all **key**-**value** pairs from one dictionary into another dict
 ### Packing with function parameters
 
 When you create a function that accepts an arbitrary number of arguments, you can use [`*args` or `**kwargs`][args and kwargs] in the function definition.
-`*args` is used to pack an arbitrary number of positional (non-keyworded) arguments and
-`**kwargs` is used to pack an arbitrary number of keyword arguments.
+`*args` is used to pack an arbitrary number of positional (_non-keyword_) arguments as a `tuple` and
+`**kwargs` is used to pack an arbitrary number of keyword arguments as a dictionary.
 
 Usage of `*args`:
 
@@ -355,8 +358,9 @@ Since `zip()` takes multiple iterables and returns a `list` of `tuples` with the
 ```
 
 [args and kwargs]: https://www.geeksforgeeks.org/args-kwargs-python/
-[items]: https://www.geeksforgeeks.org/python-dictionary-items-method/
+[items]: https://docs.python.org/3/library/stdtypes.html#dict.items
 [multiple assignment]: https://www.geeksforgeeks.org/assigning-multiple-variables-in-one-line-in-python/
 [packing and unpacking]: https://www.geeksforgeeks.org/packing-and-unpacking-arguments-in-python/
 [sorting algorithms]: https://realpython.com/sorting-algorithms-python/
 [unpacking]: https://www.geeksforgeeks.org/unpacking-arguments-in-python/?ref=rp
+[view-objects]: https://docs.python.org/3/library/stdtypes.html#dict-views
