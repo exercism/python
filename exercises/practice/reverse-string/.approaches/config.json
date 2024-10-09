@@ -1,0 +1,57 @@
+{
+  "introduction": {
+    "authors": ["BethanyG", "colinleach"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "e124fe69-dbef-4aaf-8910-706b5e3ce6bd",
+      "slug": "sequence-slicing",
+      "title": "Sequence Slicing",
+      "blurb": "Use a slice with a negative step to reverse the string.",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "cbe2766f-e02f-4160-8227-eead7b4ca9fb",
+      "slug": "iteration-and-concatenation",
+      "title": "Iteration and Concatenation",
+      "blurb": "Iterate through the codepoints and concatenate them to a new string.",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "894b1c9b-e256-471e-96f6-02453476ccc4",
+      "slug": "backward-iteration-with-range",
+      "title": "Backward iteration with Range",
+      "blurb": "Use a negative step with range() to iterate backward and append to a new string.",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "722e8d0e-a8d1-49a7-9b6f-38da0f7380e6",
+      "slug": "list-and-join",
+      "title": "Make a list and use join()",
+      "blurb": "Create a list from the string and use join to make a new string.",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "b2c8e7fa-8265-4221-b0be-c1cd13166925",
+      "slug": "built-in-list-reverse",
+      "title": "Use the built-in list.reverse() function.",
+      "blurb": "Create a list of codepoints, use list.reverse() to reverse in place, and join() to make a new string.",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "cbb4411a-4652-45d7-b73c-ca116ccd4f02",
+      "slug": "built-in-reversed",
+      "title": "Use the built-in reversed() function.",
+      "blurb": "Use reversed() and unpack it with join() to make a new string.",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "1267e48f-edda-44a7-a441-a36155a8fba2",
+      "slug": "additional-approaches",
+      "title": "Additional approaches that are further afield",
+      "blurb": "Additional interesting approaches.",
+      "authors": ["BethanyG"]
+    }
+  ]
+}
