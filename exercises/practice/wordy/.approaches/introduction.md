@@ -409,10 +409,10 @@ For more detail on this solution, take a look at the [dunder method with `__geta
 [approach-dunder-getattribute]: https://exercism.org/tracks/python/exercises/wordy/approaches/dunder-getattribute
 [approach-functools-reduce]: https://exercism.org/tracks/python/exercises/wordy/approaches/functools-reduce
 [approach-import-callables-from-operator]: https://exercism.org/tracks/python/exercises/wordy/approaches/import-callables-from-operator
-[approach-lambdas-in-a-dictionary]: https://exercise.org/tracks/python/exercises/wordy/approaches/lambdas-in-a-dictionary
-[approach-recursion]: https://exercise.org/tracks/python/exercises/wordy/approaches/recursion
-[approach-regex-with-operator-module]: https://exercise.org/tracks/python/exercises/wordy/approaches/regex-with-operator-module
-[approach-string-list-and-dict-methods]: https://exercise.org/tracks/python/exercises/wordy/approaches/string-list-and-dict-methods
+[approach-lambdas-in-a-dictionary]: https://exercsim.org/tracks/python/exercises/wordy/approaches/lambdas-in-a-dictionary
+[approach-recursion]: https://exercism.org/tracks/python/exercises/wordy/approaches/recursion
+[approach-regex-with-operator-module]: https://exercism.org/tracks/python/exercises/wordy/approaches/regex-with-operator-module
+[approach-string-list-and-dict-methods]: https://exercism.org/tracks/python/exercises/wordy/approaches/string-list-and-dict-methods
 [callable]: https://treyhunner.com/2019/04/is-it-a-class-or-a-function-its-a-callable/
 [dict-get]: https://docs.python.org/3/library/stdtypes.html#dict.get
 [dict]: https://docs.python.org/3/library/stdtypes.html#dict
@@ -421,6 +421,7 @@ For more detail on this solution, take a look at the [dunder method with `__geta
 [eval-danger]: https://softwareengineering.stackexchange.com/questions/311507/why-are-eval-like-features-considered-evil-in-contrast-to-other-possibly-harmfu
 [eval-destructive]: https://nedbatchelder.com/blog/201206/eval_really_is_dangerous.html
 [eval]: https://docs.python.org/3/library/functions.html?#eval
+[filter]: https://docs.python.org/3/library/functions.html#filter
 [find]: https://docs.python.org/3.9/library/stdtypes.html#str.find
 [functools-reduce]: https://docs.python.org/3/library/functools.html#functools.reduce
 [getattribute]: https://docs.python.org/3/reference/datamodel.html#object.__getattribute__

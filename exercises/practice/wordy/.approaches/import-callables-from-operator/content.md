@@ -76,7 +76,7 @@ equation = question.replace("by", "").split()
 ```
 
 [aliasing]: https://mimo.org/glossary/python
-[approach-string-list-and-dict-methods]: https://exercise.org/tracks/python/exercises/wordy/approaches/string-list-and-dict-methods
+[approach-string-list-and-dict-methods]: https://exercism.org/tracks/python/exercises/wordy/approaches/string-list-and-dict-methods
 [callable]: https://treyhunner.com/2019/04/is-it-a-class-or-a-function-its-a-callable/
 [chaining-method-calls]: https://nikhilakki.in/understanding-method-chaining-in-python
 [handling-exceptions]: https://docs.python.org/3.11/tutorial/errors.html#handling-exceptions

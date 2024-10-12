@@ -91,7 +91,7 @@ In addition, the functions need to carry a trailing underscore to avoid potentia
 It is better and cleaner in this circumstance to use `lambda expressions` for the functions - although it could be argued that importing and using the methods from `operator` is even better and clearer.
 
 [approach-import-callables-from-operator]: https://exercism.org/tracks/python/exercises/wordy/approaches/import-callables-from-operator
-[approach-string-list-and-dict-methods]: https://exercise.org/tracks/python/exercises/wordy/approaches/string-list-and-dict-methods
+[approach-string-list-and-dict-methods]: https://exercism.org/tracks/python/exercises/wordy/approaches/string-list-and-dict-methods
 [filter]: https://docs.python.org/3/library/functions.html#filter
 [functools-reduce]: https://docs.python.org/3/library/functools.html#functools.reduce
 [key-functions]: https://docs.python.org/3/howto/sorting.html#key-functions
