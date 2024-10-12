@@ -20,9 +20,9 @@
    },
    {
      "uuid": "61f44943-8a12-471b-ab15-d0d10fa4f72f",
-      "slug": "regex-and-operator-module",
-      "title": "Regex and the Operator Module",
-      "blurb": "Use Regex and the Callables from Operator to solve word problems.",
+      "slug": "regex-with-operator-module",
+      "title": "Regex with the Operator Module",
+      "blurb": "Use Regex with the Callables from Operator to solve word problems.",
       "authors": ["BethanyG"]
    },
   {
