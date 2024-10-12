@@ -1,17 +1,17 @@
-# Recursion
+# Recursion for Iteration
 
 
 [Any function that can be written iteratively (_with loops_) can be written using recursion][recursion-and-iteration], and [vice-versa][recursion-is-not-a-superpower].
 A recursive strategy [may not always be obvious][looping-vs-recursion] or easy — but it is always possible.
 So the `while-loop`s used in other approaches to Wordy can be re-written to use recursive calls.
 
-That being said, Pyton famously does not perform [tail-call optimization][tail-call-optimization], and limits recursive calls on the stack to a depth of 1000 frames, so it is important to only use recursion where you are confident that it can complete within the limit (_or something close to it_).
+That being said, Python famously does not perform [tail-call optimization][tail-call-optimization], and limits recursive calls on the stack to a depth of 1000 frames, so it is important to only use recursion where you are confident that it can complete within the limit (_or something close to it_).
 [Memoization][memoization] and other strategies in [dynamic programming][dynamic-programming] can help to make recursion more efficient and "shorter" in Python, but it's always good to give it careful consideration.
 
 Recursion works best with problem spaces that resemble trees, include [backtracking][backtracking], or become progressively smaller.
- Some examples include financial processes like calculating [amortization][amortization] and [depreciation][depreciation], tracking [radiation reduction through nuclei decay][nuclei-decay], and algorithms like [biscetion search][bisection-search], [depth-firs search][dfs], and [merge sort][merge-sort]_).
+ Some examples include financial processes like calculating [amortization][amortization] and [depreciation][depreciation], tracking [radiation reduction through nuclei decay][nuclei-decay], and algorithms like [biscetion search][bisection-search], [depth-firs search][dfs], and [merge sort][merge-sort].
 
-Other algorithms such as [breadth-first search][bfs], [Dijkstra's algorithm][dijkstra], and [Bellman-Ford Algorithm][bellman-ford] lend themselves better to iteration.
+Other algorithms such as [breadth-first search][bfs], [Dijkstra's algorithm][dijkstra], and the [Bellman-Ford Algorithm][bellman-ford] lend themselves better to iteration.
 
 
 ```python
@@ -170,7 +170,7 @@ def calculate(question):
 ```
 
 
-This variation shows how the dictionary of operators from `operator` can be augmented with [regex][re] to perform  string matching for a question.
+This variation shows how the dictionary of operators from `operator` can be augmented with [regex][re] to perform string matching for a question.
 Regex are also used here to check that a question is a valid and to ensure that the base case (_nothing but digits are left in the question_) is met for the recursive call in `calculate()`.
 The regex patterns use [named groups][named-groups] for easy reference, but it's not necessary to do so.
 
