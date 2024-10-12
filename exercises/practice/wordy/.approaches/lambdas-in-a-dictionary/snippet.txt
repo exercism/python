@@ -1,0 +1,6 @@
+OPERATIONS = {
+        'minus': lambda a, b: a - b,
+        'plus': lambda a, b: a + b,
+        'multiplied': lambda a, b: a * b,
+        'divided': lambda a, b: a / b
+    }

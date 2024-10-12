@@ -1,0 +1,8 @@
+while len(question) > 0:
+    if REGEX['number'].match(question):
+        raise ValueError("syntax error")
+
+    question, operation = get_operation(question)
+    question, num = get_number(question)
+
+    result = operation(result, num)

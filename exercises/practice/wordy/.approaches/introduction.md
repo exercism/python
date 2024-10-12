@@ -1,21 +1,366 @@
 # Introduction
 
-There are various ways to solve Wordy.
-Using [`eval`][eval] is a [convenient but potentially dangerous][eval-danger] approach.
-Another approach could replace the operation words with [dunder][dunder] methods.
+The objective of the Wordy exercise is to parse and evaluate small/simple mathematical word problems, returning the result as an integer.
+These problems do not require complex or [PEMDAS][PEMDAS]-based evaluation and are instead processed from left-to-right _in sequence_.
+This means that for some of the test cases, the solution will not be the same as if the word problem was evaluated like a traditional math problem.
 
-~~~~exercism/note
-They are called "dunder" methods because they have **d**ouble **under**scores at the beginning and end of the method name.
-They are also called magic methods.
-~~~~
 
-The dunder methods can be called by using the [`__getattribute__`][getattribute] method for [`int`][int].
+## General Guidance
 
-## General guidance
+The key to a Wordy solution is to remove the "question" portion of the sentence (_"What is", "?"_) and process the remaining words between numbers as [operators][mathematical operators].
+If a single number remains after removing the "question", it should be converted to an [`int`][int] and returned as the answer.
+Any words or word-number combinations that do not fall into the simple mathematical evaluation pattern (_number-operator-number_) should [`raise`][raise-statement] a [`ValueError`][value-error] with a message.
+This includes any "extra" spaces between numbers.
 
-Parsing should verify that the expression in words can be translated to a valid mathematical expression.
+One way to reduce the number of `raise` statements/ `ValueError`s needed in the code is to determine if a problem is a "valid" question _before_ proceeding to parsing and calculation.
+As shown in various approaches, there are multiple strategies for validating questions, with no one "canonical" solution.
+One very effective approach is to check if a question starts with "What is", ends with "?", and includes only valid operations.
+That could lead to future maintenance issues if the definition of a question ever changes or operations are added, but for the purposes of passing the current Wordy tests, it works well.
+
+There are various Pythonic ways to go about the cleaning, parsing, and calculation steps of Wordy.
+For cleaning the "question" portion of the problem, [`str.removeprefix`][removeprefix] and
+[`str.removesuffix`][removesuffix] introduced in `Python 3.9` can be very useful:
+
+
+```python
+>>> 'Supercalifragilisticexpialidocious'.removeprefix('Super')
+'califragilisticexpialidocious'
+
+>>> 'Supercalifragilisticexpialidocious'.removesuffix('expialidocious')
+'Supercalifragilistic'
+
+
+#The two methods can be chained to remove both a suffix and prefix in one line.
+>>> 'Supercalifragilisticexpialidocious'.removesuffix('expialidocious').removeprefix('Super')
+'califragilistic'
+```
+
+
+You can also use [`str.startswith`][startswith] and [`str.endswith`][endswith] in conjunction with [string slicing][sequence-operations] for cleaning:
+
+
+```python
+>>> if 'Supercalifragilisticexpialidocious'.startswith('Super'):
+        new_string = 'Supercalifragilisticexpialidocious'[5:]
+>>> new_string
+'califragilisticexpialidocious'
+
+
+>>> if new_string.endswith('expialidocious'):
+        new_string = new_string[:15]
+>>> new_string
+'califragilistic'
+```
+
+
+Different combinations of [`str.find`][find], [`str.rfind`][rfind], or [`str.index`][index] with string slicing could be used to clean up the initial word problem.
+A [regex][regex] could also be used to process the question, but might be considered overkill given the fixed nature of the prefix/suffix and operations.
+Finally, [`str.strip`][strip] and its variants are very useful for cleaning up any leftover leading or trailing whitespace.
+
+Many solutions then use [`str.split`][split] to process the remaining "cleaned" question into a `list` for convenient iteration, although other strategies are also used.
+
+For math operations, many solutions involve importing and using methods from the [operator][operator] module in combination with different looping, parsing, and substitution strategies.
+Some solutions use either [lambda][lambdas] expressions or [dunder/"special" methods][dunder-methods] to replace words with arithmetic operations.
+However, the exercise can be solved without using `operator`, `lambdas`, or `dunder-methods`.
+
+Using [`eval`][eval] for the operations might seem convenient, but it is a [dangerous][eval-danger] and possibly [destructive][eval-destructive] approach.
+It is also entirely unnecessary, as the other methods described here are safer and equally performant.
+
+
+## Approach: String, List, and Dictionary Methods
+
+
+```python
+OPERATIONS = {"plus": '+', "minus": '-', "multiplied": '*', "divided": '/'}
+
+
+def answer(question):
+    if not question.startswith("What is") or "cubed" in question:
+        raise ValueError("unknown operation")
+    
+    question = question.removeprefix("What is").removesuffix("?").strip()
+
+    if not question:
+        raise ValueError("syntax error")
+        
+    if question.isdigit():
+       return int(question)
+
+    formula = []
+    for operation in question.split():
+        if operation == 'by':
+            continue
+        else:
+            formula.append(OPERATIONS.get(operation, operation))
+
+    while len(formula) > 1:
+        try:
+            x_value = int(formula[0])
+            symbol  = formula[1]
+            y_value = int(formula[2])
+            remainder = formula[3:]
+
+            if symbol == "+":
+                formula = [x_value + y_value] + remainder
+            elif symbol == "-":
+                formula = [x_value - y_value] + remainder
+            elif symbol == "*":
+                formula = [x_value * y_value] + remainder
+            elif symbol == "/":
+                formula = [x_value / y_value] + remainder
+            else:
+                raise ValueError("syntax error")
+        except:
+            raise ValueError("syntax error")
+
+    return formula[0]
+```
+
+This approach uses only data structures and methods (_[dict][dict], [dict.get()][dict-get] and [list()][list]_) from core Python, and does not import any extra modules.
+It may have more lines of code than average, but it is clear to follow and fairly straightforward to reason about.
+It does use a [try-except][handling-exceptions] block for handling unknown operators.
+As an alternative to the `formula` loop-append, a [list-comprehension][list-comprehension] can be used to create the initial parsed formula.
+
+For more details and variations, read the [String, List and Dictionary Methods][approach-string-list-and-dict-methods] approach.
+
+
+## Approach: Import Callables from the Operator Module
+
+
+```python
+from operator import add, mul, sub
+from operator import floordiv as div
+
+OPERATIONS = {"plus": add, "minus": sub, "multiplied": mul, "divided": div}
+
+def answer(question):
+    if not question.startswith("What is") or "cubed" in question:
+        raise ValueError("unknown operation")
+    
+    question = question.removeprefix("What is").removesuffix("?").strip()
+
+    if question.isdigit(): 
+        return int(question)
+    
+    if not question: 
+        raise ValueError("syntax error")
+    
+    equation = [word for word in question.split() if word != 'by']
+    
+    while len(equation) > 1:
+        try:
+            x_value, operation, y_value, *rest = equation
+            equation = [OPERATIONS[operation](int(x_value), int(y_value)),
+                        *rest]
+        except:
+            raise ValueError("syntax error")
+    
+    return equation[0]
+```
+
+This solution imports methods from the `operator` module, and uses them in a dictionary/lookup map.
+Like the first approach, it uses a [try-except][handling-exceptions] block for handling unknown operators.
+ It also uses a [list-comprehension][list-comprehension] to create the parsed "formula" and employs [concept: unpacking and multiple assignment](/tracks/python/concepts/unpacking-and-multiple-assignment).
+
+For more details and options, take a look at the [Import Callables from the Operator Module][approach-import-callables-from-operator] approach.
+
+
+## Approach: Regex and the Operator Module
+
+
+```python
+import re
+from operator import add, mul, sub
+from operator import floordiv as div
+
+OPERATIONS = {"plus": add, "minus": sub, "multiplied by": mul, "divided by": div}
+REGEX = {
+    'number': re.compile(r'-?\d+'),
+    'operator': re.compile(f'(?:{"|".join(OPERATIONS)})\\b')
+}
+
+
+def get_number(question):
+    pattern = REGEX['number'].match(question)
+    if not pattern:
+        raise ValueError("syntax error")
+    return [question.removeprefix(pattern.group(0)).lstrip(), 
+            int(pattern.group(0))]
+
+def get_operation(question):
+    pattern = REGEX['operator'].match(question)
+    if not pattern:
+        raise ValueError("unknown operation")
+    return [question.removeprefix(pattern.group(0)).lstrip(),
+            OPERATIONS[pattern.group(0)]]
+
+def answer(question):
+    prefix = "What is"
+    if not question.startswith(prefix):
+        raise ValueError("unknown operation")
+    
+    question = question.removesuffix("?").removeprefix(prefix).lstrip()
+    question, result = get_number(question)
+
+    while len(question) > 0:
+        if REGEX['number'].match(question):
+            raise ValueError("syntax error")
+
+        question, operation = get_operation(question)
+        question, num = get_number(question)
+
+        result = operation(result, num)
+
+    return result
+```
+
+
+This approach uses a dictionary of regex patterns for matching numbers and operators, paired with a dictionary of operations imported from the `operator` module.
+It pulls number and operator processing out into separate functions and uses a while loop in `answer()` to evaluate the word problem.
+It also uses multiple assignment for various variables.
+It is longer than some solutions, but clearer and potentially easier to maintain due to the separate `get_operation()` and `get_number()` functions.
+
+For more details, take a look at the [regex-with-operator-module][approach-regex-with-operator-module] approach.
+
+
+## Approach: Lambdas in a Dictionary to return Functions
+
+
+```python
+OPERATIONS = {
+        'minus': lambda a, b: a - b,
+        'plus': lambda a, b: a + b,
+        'multiplied': lambda a, b: a * b,
+        'divided': lambda a, b: a / b
+    }
+
+
+def answer(question):
+    if not question.startswith("What is") or "cubed" in question:
+        raise ValueError("unknown operation")
+    
+    question = question.removeprefix("What is").removesuffix("?").strip()
+
+    if question.isdigit(): 
+        return int(question)
+    
+    if not question: 
+        raise ValueError("syntax error")
+    
+    equation = [word for word in question.split() if word != 'by']
+    
+    while len(equation) > 1:
+        try:
+            x_value, operation, y_value, *rest = equation
+            equation = [OPERATIONS[operation](int(x_value), int(y_value)),
+                        *rest]
+        except:
+            raise ValueError("syntax error")
+    
+    return equation[0]
+```
+
+
+Rather than import methods from the `operator` module, this approach defines a series of [`lambda expressions`][lambdas] in the OPERATIONS dictionary.
+These `lambdas` then return a function that takes two numbers as arguments, returning the result.
+
+One drawback of this strategy over using named functions or methods from `operator` is the lack of debugging information should something go wrong with evaluation.
+Lambda expressions are all named `"lambda"` in stack traces, so it becomes less clear where an error is coming from if you have a number of lambda expressions within a large program.
+Since this is not a large program, debugging these `lambdas` is fairly straightforward.
+These "hand-crafted" `lambdas` could also introduce a mathematical error, although for the simple problems in Wordy, this is a fairly small consideration.
+
+For more details, take a look at the [Lambdas in a Dictionary][approach-lambdas-in-a-dictionary] approach.
+
+
+## Approach: Recursion
+
+
+```python
+from operator import add, mul, sub
+from operator import floordiv as div
+
+OPERATIONS = {"plus": add, "minus": sub, "multiplied": mul, "divided": div}
+
+def answer(question):
+    return calculate(clean(question))
+
+def clean(question):
+    if not question.startswith("What is") or "cubed" in question:
+        raise ValueError("unknown operation")
+
+    return (question.removeprefix("What is")
+            .removesuffix("?")
+            .replace("by", "")
+            .strip()).split()
+    
+def calculate(equation):
+    if len(equation) == 1:
+        return int(equation[0])
+    else:
+        try:
+            x_value, operation, y_value, *rest = equation
+            equation = [OPERATIONS[operation](int(x_value), 
+                        int(y_value)), *rest]
+        except:
+            raise ValueError("syntax error")
+            
+        return calculate(equation)
+```
+
+
+Like previous approaches that substitute methods from `operator` for `lambdas` or `list-comprehensions` for `loops` that append to a `list` -- `recursion` can be substituted for the `while-loop` that many solutions use to process a parsed word problem.
+Depending on who is reading the code, `recursion` may or may not be easier to reason about.
+It may also be more (_or less!_) performant than using a `while-loop` or `functools.reduce` (_see below_), depending on how the various cleaning and error-checking actions are performed.
+
+The dictionary in this example could use functions from `operator`, `lambdas`, `dunder-methods`, or other strategies -- as long as they can be applied in the `calculate()` function.
+
+For more details, take a look at the [recursion][approach-recursion] approach.
+
+
+## Approach:  functools.reduce()
+
+
+```python
+from operator import add, mul, sub
+from operator import floordiv as div
+from functools import reduce
+
+
+OPERATORS = {"plus": add, "minus": sub, "multiplied": mul, "divided": div}
+
+def answer(question):
+    if not question.startswith( "What is") or "cubed" in question:
+        raise ValueError("unknown operation")
+        
+    question = list(filter(lambda x: 
+                x not in ("What", "is", "by"), 
+                question.strip("?").split()))          
+
+    operations = question[1::2]
+    digits = [int(element) if (element.isdigit() or 
+              element[1:].isdigit()) else None for 
+              element in question[::2]]
+
+    if len(digits)-1 != len(operations) or None in digits:
+        raise ValueError("syntax error")
+
+    result = reduce(lambda x, y: OPERATORS[operations.pop(0)](x, y), digits)
+    
+    return result
+```
+
+
+This approach replaces the `while-loop` used in many solutions (_or the `recursion` strategy outlined in the  approach above_) with a call to [`functools.reduce`][functools-reduce].
+It also employs a lookup dictionary for methods imported from the `operator` module, as well as a `list-comprehension`, the built-in [`filter`][filter] function, and multiple string [slices][sequence-operations].
+If desired, the `operator` imports can be replaced with a dictionary of `lambda` expressions or `dunder-methods`.
+
+This solution may be a little less clear to follow or reason about due to the slicing syntax and the particular syntax of both `filter` and `fuctools.reduce`.
+
+For more details and variations, take a look at the [functools.reduce for Calculation][approach-functools-reduce] approach.
+
 
 ## Approach: Dunder methods with `__getattribute__`
+
 
 ```python
 OPS = {
@@ -50,11 +395,52 @@ def answer(question):
 
 ```
 
-For more information, check the [dunder method with `__getattribute__` approach][approach-dunder-getattribute].
+This approach uses the [`dunder methods`][dunder-methods] / ["special methods"][special-methods] / "magic methods" associated with the `int()` class, using the `dunder-method` called [`<object>.__getattribute__`][getattribute] to find the [callable][callable] operation in the `int()` class [namespace][namespace] / dictionary.
+This works because the operators for basic math (_"+, -, *, /, //, %, **"_) have been implemented as callable methods for all integers (_as well as floats and other number types_) and are automatically loaded when the Python interpreter is loaded.
 
-[eval]: https://docs.python.org/3/library/functions.html?#eval
-[eval-danger]: https://diveintopython3.net/advanced-iterators.html#eval
-[dunder]: https://www.tutorialsteacher.com/python/magic-methods-in-python
-[getattribute]: https://docs.python.org/3/reference/datamodel.html?#object.__getattribute__
-[int]: https://docs.python.org/3/library/stdtypes.html#typesnumeric
+As described in the first link, it is considered bad form to directly call a `dunder method` (_there are some exceptions_), as they are intended mostly for internal Python use, user-defined class customization, and operator overloading (_a specific form of class-customization_).
+
+This is why the `operator` module exists - as a vehicle for providing callable methods for basic math when **not** overloading or customizing class functionality.
+
+For more detail on this solution, take a look at the [dunder method with `__getattribute__` approach][approach-dunder-getattribute].
+
+
+[PEMDAS]: https://www.mathnasium.com/math-centers/eagan/news/what-pemdas-e
 [approach-dunder-getattribute]: https://exercism.org/tracks/python/exercises/wordy/approaches/dunder-getattribute
+[approach-functools-reduce]: https://exercism.org/tracks/python/exercises/wordy/approaches/functools-reduce
+[approach-import-callables-from-operator]: https://exercism.org/tracks/python/exercises/wordy/approaches/import-callables-from-operator
+[approach-lambdas-in-a-dictionary]: https://exercise.org/tracks/python/exercises/wordy/approaches/lambdas-in-a-dictionary
+[approach-recursion]: https://exercise.org/tracks/python/exercises/wordy/approaches/recursion
+[approach-regex-with-operator-module]: https://exercise.org/tracks/python/exercises/wordy/approaches/regex-with-operator-module
+[approach-string-list-and-dict-methods]: https://exercise.org/tracks/python/exercises/wordy/approaches/string-list-and-dict-methods
+[callable]: https://treyhunner.com/2019/04/is-it-a-class-or-a-function-its-a-callable/
+[dict-get]: https://docs.python.org/3/library/stdtypes.html#dict.get
+[dict]: https://docs.python.org/3/library/stdtypes.html#dict
+[dunder-methods]: https://www.pythonmorsels.com/what-are-dunder-methods/?watch
+[endswith]: https://docs.python.org/3.9/library/stdtypes.html#str.endswith
+[eval-danger]: https://softwareengineering.stackexchange.com/questions/311507/why-are-eval-like-features-considered-evil-in-contrast-to-other-possibly-harmfu
+[eval-destructive]: https://nedbatchelder.com/blog/201206/eval_really_is_dangerous.html
+[eval]: https://docs.python.org/3/library/functions.html?#eval
+[find]: https://docs.python.org/3.9/library/stdtypes.html#str.find
+[functools-reduce]: https://docs.python.org/3/library/functools.html#functools.reduce
+[getattribute]: https://docs.python.org/3/reference/datamodel.html#object.__getattribute__
+[handling-exceptions]: https://docs.python.org/3.11/tutorial/errors.html#handling-exceptions
+[index]: https://docs.python.org/3.9/library/stdtypes.html#str.index
+[int]: https://docs.python.org/3/library/stdtypes.html#typesnumeric
+[lambdas]: https://docs.python.org/3/howto/functional.html#small-functions-and-the-lambda-expression
+[list-comprehension]: https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions
+[list]: https://docs.python.org/3/library/stdtypes.html#list
+[mathematical operators]: https://www.w3schools.com/python/gloss_python_arithmetic_operators.asp
+[namespace]: https://docs.python.org/3/tutorial/classes.html#python-scopes-and-namespaces
+[operator]: https://docs.python.org/3/library/operator.html#module-operator
+[raise-statement]: https://docs.python.org/3/reference/simple_stmts.html#the-raise-statement
+[regex]: https://docs.python.org/3/library/re.html#module-re
+[removeprefix]: https://docs.python.org/3.9/library/stdtypes.html#str.removeprefix
+[removesuffix]: https://docs.python.org/3.9/library/stdtypes.html#str.removesuffix
+[rfind]: https://docs.python.org/3.9/library/stdtypes.html#str.rfind
+[sequence-operations]: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations
+[special-methods]: https://docs.python.org/3/reference/datamodel.html#specialnames
+[split]: https://docs.python.org/3.9/library/stdtypes.html#str.split
+[startswith]: https://docs.python.org/3.9/library/stdtypes.html#str.startswith
+[strip]: https://docs.python.org/3.9/library/stdtypes.html#str.strip
+[value-error]: https://docs.python.org/3.11/library/exceptions.html#ValueError

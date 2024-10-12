@@ -1,0 +1,8 @@
+try:
+    x_value, y_value, symbol, remainder = int(formula[0]), int(formula[2]), formula[1], formula[3:]
+    if symbol == "+":  formula = [x_value + y_value] + remainder
+    elif symbol == "-":  formula = [x_value - y_value] + remainder
+    elif symbol == "*":  formula = [x_value * y_value] + remainder
+    elif symbol == "/":  formula = [x_value / y_value] + remainder
+    else: raise ValueError("syntax error")
+except: raise ValueError("syntax error")
