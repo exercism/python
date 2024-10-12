@@ -409,7 +409,7 @@ For more detail on this solution, take a look at the [dunder method with `__geta
 [approach-dunder-getattribute]: https://exercism.org/tracks/python/exercises/wordy/approaches/dunder-getattribute
 [approach-functools-reduce]: https://exercism.org/tracks/python/exercises/wordy/approaches/functools-reduce
 [approach-import-callables-from-operator]: https://exercism.org/tracks/python/exercises/wordy/approaches/import-callables-from-operator
-[approach-lambdas-in-a-dictionary]: https://exercsims.org/tracks/python/exercises/wordy/approaches/lambdas-in-a-dictionary
+[approach-lambdas-in-a-dictionary]: https://exercsim.org/tracks/python/exercises/wordy/approaches/lambdas-in-a-dictionary
 [approach-recursion]: https://exercism.org/tracks/python/exercises/wordy/approaches/recursion
 [approach-regex-with-operator-module]: https://exercism.org/tracks/python/exercises/wordy/approaches/regex-with-operator-module
 [approach-string-list-and-dict-methods]: https://exercism.org/tracks/python/exercises/wordy/approaches/string-list-and-dict-methods
