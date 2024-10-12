@@ -364,21 +364,6 @@
         "difficulty": 1
       },
       {
-        "slug": "wordy",
-        "name": "Wordy",
-        "uuid": "af50bb9a-e400-49ce-966f-016c31720be1",
-        "practices": ["string-methods"],
-        "prerequisites": [
-          "basics",
-          "lists",
-          "loops",
-          "strings",
-          "string-methods",
-          "numbers"
-        ],
-        "difficulty": 1
-      },
-      {
         "slug": "resistor-color",
         "name": "Resistor Color",
         "uuid": "d17bee9c-e803-4745-85ea-864f255fb04e",
@@ -1206,6 +1191,21 @@
           "lists",
           "list-methods",
           "loops",
+          "numbers"
+        ],
+        "difficulty": 3
+      },
+      {
+        "slug": "wordy",
+        "name": "Wordy",
+        "uuid": "af50bb9a-e400-49ce-966f-016c31720be1",
+        "practices": ["string-methods"],
+        "prerequisites": [
+          "basics",
+          "lists",
+          "loops",
+          "strings",
+          "string-methods",
           "numbers"
         ],
         "difficulty": 3
