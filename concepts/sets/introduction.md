@@ -1,8 +1,8 @@
 # Sets
 
 A [`set`][type-set] is a _mutable_ and _unordered_ collection of [_hashable_][hashable] objects.
-Set members must be distinct -- duplicate items are not allowed.
-They can hold multiple different data types and even nested structures like a `tuple` of `tuples` -- as long as all elements can be _hashed_.
+Set members must be distinct — duplicate items are not allowed.
+They can hold multiple different data types and even nested structures like a `tuple` of `tuples` — as long as all elements can be _hashed_.
 Sets also come in an immutable [`frozensets`][type-frozenset] flavor.
 
 Sets are most commonly used to quickly remove duplicates from other data structures or item groupings.

@@ -119,6 +119,7 @@ def answer(question):
     return result
 ```
 
+
 [approach-lambdas-in-a-dictionary]: https://exercism.org/tracks/python/exercises/wordy/approaches/lambdas-in-a-dictionary
 [callable]: https://treyhunner.com/2019/04/is-it-a-class-or-a-function-its-a-callable/
 [functools-reduce]: https://docs.python.org/3/library/functools.html#functools.reduce

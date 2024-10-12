@@ -1,8 +1,9 @@
 # Sets
 
-A [`set`][type-set] is a _mutable_ and _unordered_ collection of [_hashable_][hashable] objects.
-Set members must be distinct -- duplicate items are not allowed.
-They can hold multiple different data types and even nested structures like a `tuple` of `tuples` -- as long as all elements can be _hashed_.
+
+A [set][type-set] is a _mutable_ and _unordered_ collection of [_hasable_][hashable] objects.
+Set members must be distinct — duplicate items are not allowed.
+They can hold multiple different data types and even nested structures like a `tuple` of `tuples` — as long as all elements can be _hashed_.
 Sets also come in an immutable [`frozensets`][type-frozenset] flavor.
 
 Sets are most commonly used to quickly remove duplicates from other data structures or item groupings.
@@ -126,6 +127,27 @@ There is no operator equivalent:
 
 
 ```python
+# Both mammals and additional_animals are lists.
+>>> mammals = ['squirrel','dog','cat','cow', 'tiger', 'elephant']
+>>> additional_animals = ['pangolin', 'panda', 'parrot', 
+                          'lemur', 'tiger', 'pangolin']
+
+# Animals is a dict.
+>>> animals = {'chicken': 'white',
+               'sparrow': 'grey',
+               'eagle': 'brown and white',
+               'albatross': 'grey and white',
+               'crow': 'black',
+               'elephant': 'grey', 
+               'dog': 'rust',
+               'cow': 'black and white',
+               'tiger': 'orange and black',
+               'cat': 'grey',
+               'squirrel': 'black'}
+               
+# Birds is a set.
+>>> birds = {'crow','sparrow','eagle','chicken', 'albatross'}
+
 # Mammals and birds don't share any elements.
 >>> birds.isdisjoint(mammals)
 True
@@ -311,7 +333,7 @@ The operator version of this method is `<set> - <other set 1> - <other set 2> - 
  'Goose Berries', 'Strawberries'}
 
 # Operators require sets.
->>> berries_and_veggies - just_berries
+>>> berries_and_veggies - berries
 {'Artichokes','Asparagus','Broccoli','Kale',
 'Ramps','Rhubarb','Walking Onions','Watercress'}
 ```
