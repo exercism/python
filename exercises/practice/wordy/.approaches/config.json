@@ -1,10 +1,52 @@
 {
   "introduction": {
-    "authors": ["bobahop"],
-    "contributors": []
+    "authors": ["BethanyG"],
+    "contributors": ["bobahop"]
   },
   "approaches": [
     {
+      "uuid": "4eeb0638-671a-4289-a83c-583b616dc698",
+      "slug": "string-list-and-dict-methods",
+      "title": "String, List, and Dictionary Methods",
+      "blurb": "Use Core Python Features to Solve Word Problems.",
+      "authors": ["BethanyG"]
+    },
+   {
+     "uuid": "d3ff485a-defe-42d9-b9c6-c38019221ffa",
+      "slug": "import-callables-from-operator",
+      "title": "Import Callables from the Operator Module",
+      "blurb": "Use Operator Module Methods to Solve Word Problems.",
+      "authors": ["BethanyG"]
+   },
+   {
+     "uuid": "61f44943-8a12-471b-ab15-d0d10fa4f72f",
+      "slug": "regex-with-operator-module",
+      "title": "Regex with the Operator Module",
+      "blurb": "Use Regex with the Callables from Operator to solve word problems.",
+      "authors": ["BethanyG"]
+   },
+  {
+    "uuid": "46bd15dd-cae4-4eb3-ac63-a8b631a508d1",
+      "slug": "lambdas-in-a-dictionary",
+      "title": "Lambdas in a Dictionary to Return Functions",
+      "blurb": "Use lambdas in a dictionary to return functions for solving word problems.",
+      "authors": ["BethanyG"]
+  },
+  {
+    "uuid": "2e643b88-9b76-45a1-98f4-b211919af061",
+      "slug": "recursion",
+      "title": "Recursion for iteration.",
+      "blurb": "Use recursion with other strategies to solve word problems.",
+      "authors": ["BethanyG"]
+  },
+  {
+    "uuid": "1e136304-959c-4ad1-bc4a-450d13e5f668",
+      "slug": "functools-reduce",
+      "title": "Functools.reduce for Calculation",
+      "blurb": "Use functools.reduce with other strategies to calculate solutions.",
+      "authors": ["BethanyG"]
+  },
+  {
       "uuid": "d643e2b4-daee-422d-b8d3-2cad2f439db5",
       "slug": "dunder-getattribute",
       "title": "dunder with __getattribute__",

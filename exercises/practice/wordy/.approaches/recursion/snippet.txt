@@ -1,0 +1,8 @@
+def calculate(equation):
+    if len(equation) == 1: return int(equation[0])
+    else:
+        try:
+            x_value, operation, y_value, *rest = equation
+            equation = [OPERATIONS[operation](int(x_value), int(y_value)), *rest]
+        except: raise ValueError("syntax error")
+        return calculate(equation)

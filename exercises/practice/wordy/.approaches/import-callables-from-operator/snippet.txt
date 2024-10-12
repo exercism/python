@@ -1,0 +1,8 @@
+OPERATIONS = {"plus": add, "minus": sub, "multiplied": mul, "divided": div}
+while len(equation) > 1:
+    try:
+        x_value, operation, y_value, *rest = equation
+        equation = [OPERATIONS[operation](int(x_value), int(y_value)),*rest]
+    except:
+        raise ValueError("syntax error")
+return equation[0]

@@ -1,0 +1,7 @@
+OPERATORS = {"plus": add, "minus": sub, "multiplied": mul, "divided": div}
+
+operations = question[1::2]
+digits = [int(element) if (element.isdigit() or element[1:].isdigit())
+          else None for element in question[::2]]
+...
+return reduce(lambda x, y: OPERATORS[operations.pop(0)](x, y), digits)

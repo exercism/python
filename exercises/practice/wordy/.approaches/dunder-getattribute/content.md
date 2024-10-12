@@ -1,5 +1,6 @@
 # Dunder methods with `__getattribute__`
 
+
 ```python
 OPS = {
     "plus": "__add__",
@@ -33,70 +34,61 @@ def answer(question):
 
 ```
 
-This approach begins by defining a [dictionary][dictionaries] of the word keys with their related [dunder][dunder] methods.
+This approach begins by defining a [dictionary][dictionaries] of the word keys with their related [`dunder-methods`][dunder] methods.
+Since only whole numbers are involved, the available `dunder-methods` are those for the [`int`][int] class/namespace.
+The supported methods for the `int()` namespace can be found by using `print(dir(int))` or `print(int.__dict__)` in a Python terminal.
+See [SO: Difference between dir() and __dict__][dir-vs-__dict__] for differences between the two.
 
 ~~~~exercism/note
-They are called "dunder" methods because they have **d**ouble **under**scores at the beginning and end of the method name.
-They are also called magic methods.
+The built-in [`dir`](https://docs.python.org/3/library/functions.html?#dir) function returns a list of all valid attributes for an object.
+The `dunder-method` [`<object>.__dict__`](https://docs.python.org/3/reference/datamodel.html#object.__dict__) is a mapping of an objects writable attributes.
 ~~~~
 
-Since only whole numbers are involved, the dunder methods are those for [`int`][int].
-The supported methods for `int` can be found by using `print(dir(int))`.
+The `OPS` dictionary is defined with all uppercase letters, which is the naming convention for a Python [constant][const].
+It indicates that the value should not be changed.
 
-~~~~exercism/note
-The built-in [`dir`](https://docs.python.org/3/library/functions.html?#dir) function returns a list of valid attributes for an object.
-~~~~
-
-Python doesn't _enforce_ having real constant values,
-but the `OPS` dictionary is defined with all uppercase letters, which is the naming convention for a Python [constant][const].
-It indicates that the value is not intended to be changed.
-
-The input question to the `answer` function is cleaned using the [`removeprefix`][removeprefix], [`removesuffix`][removesuffix], and [`strip`][strip] methods.
+The input question to the `answer()` function is cleaned using the [`removeprefix`][removeprefix], [`removesuffix`][removesuffix], and [`strip`][strip] string methods.
 The method calls are [chained][method-chaining], so that the output from one call is the input for the next call.
 If the input has no characters left,
-it uses the [falsiness][falsiness] of an empty string with the [`not`][not] operator to return the [`ValueError`][value-error] for having a syntax error.
+it uses the [falsiness][falsiness] of an empty string with the [`not`][not] operator to return a `ValueError("syntax error")`.
 
-Next, the [`isdigit`][isdigit] method is used to see if all of the remaining characters in the input are digits.
+Next, the [`isdigit`][isdigit] method is used to see if the remaining characters in the input are digits.
 If so, it uses the [`int()`][int-constructor] constructor to return the string as an integer.
 
-Next, the elements in the `OPS` dictionary are iterated.
-If the key name is in the input, then the [`replace()`][replace] method is used to replace the name in the input with the dunder method value.
-If none of the key names are found in the input, then a `ValueError` is returned for having an unknown operation.
+Next, the elements in the `OPS` dictionary are iterated over.
+If the key name is in the input, then the [`str.replace`][replace] method is used to replace the name in the input with the `dunder-method` value.
+If none of the key names are found in the input, a `ValueError("unknown operation")` is returned.
 
-At this point the input question is [`split()`][split] into a list of its words, which is then iterated while its [`len()`][len] is greater than 1.
+At this point the input question is [`split()`][split] into a `list` of its words, which is then iterated over while its [`len()`][len] is greater than 1.
 
-Within a [try][exception-handling], the list is [destructured][destructure] into `x, op, y, *tail`.
-If `op` is not in the supported dunder methods, it raises `ValueError("syntax error")`.
-If there are any other exceptions raised in the try, `except` raises `ValueError("syntax error")`
+Within a [try-except][exception-handling] block, the list is [unpacked][unpacking] (_see also [Concept: unpacking][unpacking-and-multiple-assignment]_) into the variables `x, op, y, and *tail`.
+If `op` is not in the supported `dunder-methods` dictionary, a `ValueError("syntax error")` is raised.
+If there are any other exceptions raised within the `try` block, they are "caught"/ handled in the `except` clause by raising a `ValueError("syntax error")`.
 
-Next, it converts `x` to an `int` and calls the [`__getattribute__`][getattribute] for its dunder method and calls it,
-passing it `y` converted to an `int`.
+Next, `x` is converted to an `int` and  [`__getattribute__`][getattribute] is called for the `dunder-method` (`op`) to apply to `x`.
+`y` is then converted to an `int` and passed as the second arguemnt to `op`.
 
-It sets the list to the result of the dunder method plus the remaining elements in `*tail`.
-
-~~~~exercism/note
-The `*` prefix in `*tail` [unpacks](https://treyhunner.com/2018/10/asterisks-in-python-what-they-are-and-how-to-use-them/) the `tail` list back into its elements.
-This concept is also a part of [unpacking-and-multiple-assignment](https://exercism.org/tracks/python/concepts/unpacking-and-multiple-assignment) concept in the syllabus.
-~~~~
+Then `ret` is redefined to a `list` containing the result of the dunder method plus the remaining elements in `*tail`.
 
 When the loop exhausts, the first element of the list is selected as the function return value.
 
-[dictionaries]: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
-[dunder]: https://www.tutorialsteacher.com/python/magic-methods-in-python
-[int]: https://docs.python.org/3/library/stdtypes.html#typesnumeric
 [const]: https://realpython.com/python-constants/
-[removeprefix]: https://docs.python.org/3/library/stdtypes.html#str.removeprefix
-[removesuffix]: https://docs.python.org/3/library/stdtypes.html#str.removesuffix
-[strip]: https://docs.python.org/3/library/stdtypes.html#str.strip
+[dictionaries]: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
+[dir-vs-__dict__]: https://stackoverflow.com/a/14361362
+[dunder]: https://www.tutorialsteacher.com/python/magic-methods-in-python
+[exception-handling]: https://docs.python.org/3/tutorial/errors.html#handling-exceptions
+[falsiness]: https://www.pythontutorial.net/python-basics/python-boolean/
+[getattribute]: https://docs.python.org/3/reference/datamodel.html?#object.__getattribute__
+[int-constructor]: https://docs.python.org/3/library/functions.html?#int
+[int]: https://docs.python.org/3/library/stdtypes.html#typesnumeric
+[isdigit]: https://docs.python.org/3/library/stdtypes.html?#str.isdigit
+[len]: https://docs.python.org/3/library/functions.html?#len
 [method-chaining]: https://www.tutorialspoint.com/Explain-Python-class-method-chaining
 [not]: https://docs.python.org/3/library/operator.html?#operator.__not__
-[falsiness]: https://www.pythontutorial.net/python-basics/python-boolean/
-[value-error]: https://docs.python.org/3/library/exceptions.html?#ValueError
-[isdigit]: https://docs.python.org/3/library/stdtypes.html?#str.isdigit
-[int-constructor]: https://docs.python.org/3/library/functions.html?#int
+[removeprefix]: https://docs.python.org/3/library/stdtypes.html#str.removeprefix
+[removesuffix]: https://docs.python.org/3/library/stdtypes.html#str.removesuffix
 [replace]: https://docs.python.org/3/library/stdtypes.html?#str.replace
 [split]: https://docs.python.org/3/library/stdtypes.html?#str.split
-[len]: https://docs.python.org/3/library/functions.html?#len
-[exception-handling]: https://docs.python.org/3/tutorial/errors.html#handling-exceptions
-[destructure]: https://riptutorial.com/python/example/14981/destructuring-assignment
-[getattribute]: https://docs.python.org/3/reference/datamodel.html?#object.__getattribute__
+[strip]: https://docs.python.org/3/library/stdtypes.html#str.strip
+[unpacking]: https://treyhunner.com/2018/10/asterisks-in-python-what-they-are-and-how-to-use-them/
+[unpacking-and-multiple-assignment]: https://exercism.org/tracks/python/concepts/unpacking-and-multiple-assignment
