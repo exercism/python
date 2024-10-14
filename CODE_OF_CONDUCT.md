@@ -20,7 +20,7 @@ We generally reach out to the person who has been reported to discuss any concer
 Sometimes we decide that no violation has occurred and that no action is required and sometimes we will also ban people on a first offense.
 We strive to be fair, but will err on the side of protecting the culture of our community.
 
-Exercism's leadership reserve the right to take whatever action they feel appropriate with regards to CoC violations.
+Exercism's leadership reserves the right to take whatever action they feel appropriate with regards to CoC violations.
 
 ## The simple version
 
