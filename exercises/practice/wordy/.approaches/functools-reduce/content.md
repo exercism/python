@@ -33,7 +33,7 @@ def answer(question):
         raise ValueError("syntax error")
 
     # Evaluate the expression from left to right using functools.reduce().
-    # Look up each operation in the operation dictionary.
+    # Look up each operation in the OPERATORS dictionary.
     return reduce(lambda x, y: OPERATORS[operations.pop(0)](x, y), digits)
 ```
 

@@ -8,17 +8,39 @@ This means that for some of the test cases, the solution will not be the same as
 ## General Guidance
 
 The key to a Wordy solution is to remove the "question" portion of the sentence (_"What is", "?"_) and process the remaining words between numbers as [operators][mathematical operators].
-If a single number remains after removing the "question", it should be converted to an [`int`][int] and returned as the answer.
+
+
+If a single number remains after removing the "question" pieces, it should be converted to an [`int`][int] and returned as the answer.
+
+
 Any words or word-number combinations that do not fall into the simple mathematical evaluation pattern (_number-operator-number_) should [`raise`][raise-statement] a [`ValueError`][value-error] with a message.
 This includes any "extra" spaces between numbers.
 
+
 One way to reduce the number of `raise` statements/ `ValueError`s needed in the code is to determine if a problem is a "valid" question _before_ proceeding to parsing and calculation.
 As shown in various approaches, there are multiple strategies for validating questions, with no one "canonical" solution.
-One very effective approach is to check if a question starts with "What is", ends with "?", and includes only valid operations.
-That could lead to future maintenance issues if the definition of a question ever changes or operations are added, but for the purposes of passing the current Wordy tests, it works well.
 
-There are various Pythonic ways to go about the cleaning, parsing, and calculation steps of Wordy.
-For cleaning the "question" portion of the problem, [`str.removeprefix`][removeprefix] and
+
+One very effective validation approach is to check if a question starts with "What is", ends with "?", and does not include the word "cubed".
+Any other question formulation becomes a `ValueError("unknown operation")`.
+This very restrictive approach could lead to future maintenance issues if the definition of a question ever changes or operations are added, but for the purposes of passing the current Wordy tests, it works well.
+
+
+Proceeding from validation, there are many Pythonic ways to go about the cleaning, parsing, and calculation steps of Wordy.
+However, they all follow these general steps:
+
+1.  Remove the parts of the question string that do not apply to calculating the answer.
+2.  Iterate over the question, determining which words are numbers, and which are meant to be mathematical operations.
+    - _Converting the question string into a `list` of words is hugely helpful here, but not absolutely necessary._
+3.  **_Starting from the left_**,  take the first three elements and convert number strings to `int` and operations words to +, -, *, /.
+4. Apply the operation to the numbers, which should result in a single number.
+   - _Employing a `try-except` block around the conversion and operator application steps can trap any errors thrown and make the code both "safer" and less complex._
+5. Use the calculated number from step 4 as the start for the next "trio" (_number, operation, number_) in the question. The calculated number + the remainder of the question becomes the question being worked on in the next iteration.
+   - _Using a `while-loop` with a test on the length of the question to do calculation is a very common strategy._
+6.  Once the question is calculated down to a single number, that is the answer.  Anything else that happens in the loop/iteration or within the accumulated result is a `ValueError("syntax error")`.
+
+
+For cleaning the question, [`str.removeprefix`][removeprefix] and
 [`str.removesuffix`][removesuffix] introduced in `Python 3.9` can be very useful:
 
 
@@ -53,73 +75,70 @@ You can also use [`str.startswith`][startswith] and [`str.endswith`][endswith] i
 ```
 
 
-Different combinations of [`str.find`][find], [`str.rfind`][rfind], or [`str.index`][index] with string slicing could be used to clean up the initial word problem.
-A [regex][regex] could also be used to process the question, but might be considered overkill given the fixed nature of the prefix/suffix and operations.
+Different combinations of [`str.find`][find], [`str.rfind`][rfind], or [`str.index`][index] with string slicing could also be used to clean up the initial question.
+A [regex][regex] could be used to process the question as well, but might be considered overkill given the fixed nature of the prefix/suffix and operations.
 Finally, [`str.strip`][strip] and its variants are very useful for cleaning up any leftover leading or trailing whitespace.
 
-Many solutions then use [`str.split`][split] to process the remaining "cleaned" question into a `list` for convenient iteration, although other strategies are also used.
+Many solutions then use [`str.split`][split] to process the remaining "cleaned" question into a `list` for convenient looping/iteration, although other strategies can also be used.
+
 
 For math operations, many solutions involve importing and using methods from the [operator][operator] module in combination with different looping, parsing, and substitution strategies.
-Some solutions use either [lambda][lambdas] expressions or [dunder/"special" methods][dunder-methods] to replace words with arithmetic operations.
-However, the exercise can be solved without using `operator`, `lambdas`, or `dunder-methods`.
+Some solutions use either [lambda][lambdas] expressions, [dunder/"special" methods][dunder-methods], or even `eval()` to replace words with arithmetic operations.
+However, the exercise can be solved **without** using `operator`, `lambdas`, `dunder-methods` or `eval`.
+ It is recommended that you first start by solving it _without_ "advanced" strategies, and then refine your solution into something more compact or complex as you learn and practice.
 
+
+~~~~exercism/caution
 Using [`eval`][eval] for the operations might seem convenient, but it is a [dangerous][eval-danger] and possibly [destructive][eval-destructive] approach.
 It is also entirely unnecessary, as the other methods described here are safer and equally performant.
+~~~~
 
 
 ## Approach: String, List, and Dictionary Methods
 
 
 ```python
-OPERATIONS = {"plus": '+', "minus": '-', "multiplied": '*', "divided": '/'}
-
-
 def answer(question):
     if not question.startswith("What is") or "cubed" in question:
         raise ValueError("unknown operation")
     
-    question = question.removeprefix("What is").removesuffix("?").strip()
+    question = question.removeprefix("What is")
+    question = question.removesuffix("?")
+    question = question.replace("by", "")
+    question = question.strip()
 
     if not question:
         raise ValueError("syntax error")
-        
-    if question.isdigit():
-       return int(question)
 
-    formula = []
-    for operation in question.split():
-        if operation == 'by':
-            continue
-        else:
-            formula.append(OPERATIONS.get(operation, operation))
-
+    formula = question.split()
     while len(formula) > 1:
         try:
             x_value = int(formula[0])
-            symbol  = formula[1]
             y_value = int(formula[2])
+            symbol = formula[1]
             remainder = formula[3:]
 
-            if symbol == "+":
+            if symbol == "plus":
                 formula = [x_value + y_value] + remainder
-            elif symbol == "-":
+            elif symbol == "minus":
                 formula = [x_value - y_value] + remainder
-            elif symbol == "*":
+            elif symbol == "multiplied":
                 formula = [x_value * y_value] + remainder
-            elif symbol == "/":
+            elif symbol == "divided":
                 formula = [x_value / y_value] + remainder
             else:
                 raise ValueError("syntax error")
         except:
             raise ValueError("syntax error")
 
-    return formula[0]
+    return int(formula[0])
 ```
 
-This approach uses only data structures and methods (_[dict][dict], [dict.get()][dict-get] and [list()][list]_) from core Python, and does not import any extra modules.
+This approach uses only data structures and methods (_[str methods][str-methods], [list()][list], loops, etc._) from core Python, and does not import any extra modules.
 It may have more lines of code than average, but it is clear to follow and fairly straightforward to reason about.
 It does use a [try-except][handling-exceptions] block for handling unknown operators.
-As an alternative to the `formula` loop-append, a [list-comprehension][list-comprehension] can be used to create the initial parsed formula.
+
+Alternatives could use a [dictionary][dict] to store word --> operator mappings that could be looked up in the `while-loop` using [`<dict>.get()`][dict-get], among other strategies.
 
 For more details and variations, read the [String, List and Dictionary Methods][approach-string-list-and-dict-methods] approach.
 
@@ -350,7 +369,7 @@ def answer(question):
 ```
 
 
-This approach replaces the `while-loop` used in many solutions (_or the `recursion` strategy outlined in the  approach above_) with a call to [`functools.reduce`][functools-reduce].
+This approach replaces the `while-loop` used in many solutions (_or the `recursion` strategy outlined in the approach above_) with a call to [`functools.reduce`][functools-reduce].
 It also employs a lookup dictionary for methods imported from the `operator` module, as well as a `list-comprehension`, the built-in [`filter`][filter] function, and multiple string [slices][sequence-operations].
 If desired, the `operator` imports can be replaced with a dictionary of `lambda` expressions or `dunder-methods`.
 
@@ -418,9 +437,6 @@ For more detail on this solution, take a look at the [dunder method with `__geta
 [dict]: https://docs.python.org/3/library/stdtypes.html#dict
 [dunder-methods]: https://www.pythonmorsels.com/what-are-dunder-methods/?watch
 [endswith]: https://docs.python.org/3.9/library/stdtypes.html#str.endswith
-[eval-danger]: https://softwareengineering.stackexchange.com/questions/311507/why-are-eval-like-features-considered-evil-in-contrast-to-other-possibly-harmfu
-[eval-destructive]: https://nedbatchelder.com/blog/201206/eval_really_is_dangerous.html
-[eval]: https://docs.python.org/3/library/functions.html?#eval
 [filter]: https://docs.python.org/3/library/functions.html#filter
 [find]: https://docs.python.org/3.9/library/stdtypes.html#str.find
 [functools-reduce]: https://docs.python.org/3/library/functools.html#functools.reduce
@@ -444,4 +460,5 @@ For more detail on this solution, take a look at the [dunder method with `__geta
 [split]: https://docs.python.org/3.9/library/stdtypes.html#str.split
 [startswith]: https://docs.python.org/3.9/library/stdtypes.html#str.startswith
 [strip]: https://docs.python.org/3.9/library/stdtypes.html#str.strip
+[str-methods]: https://docs.python.org/3/library/stdtypes.html#string-methods
 [value-error]: https://docs.python.org/3.11/library/exceptions.html#ValueError
