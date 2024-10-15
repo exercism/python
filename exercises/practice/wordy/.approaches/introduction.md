@@ -29,12 +29,12 @@ However, the solutions all follow these general steps:
 
 1.  Remove the parts of the question string that do not apply to calculating the answer.
 2.  Iterate over the question, determining which words are numbers, and which are meant to be mathematical operations.
-    - _Converting the question string into a `list` of words is hugely helpful here._
+    -- _Converting the question string into a `list` of words is hugely helpful here._
 3.  **_Starting from the left_**,  take the first three elements and convert number strings to `int` and operations words to the mathematical operations +, -, *, and /.
 4. Apply the operation to the numbers, which should result in a single number.
-   - _Employing a `try-except` block can trap any errors thrown and make the code both "safer" and less complex._
+   -- _Employing a `try-except` block can trap any errors thrown and make the code both "safer" and less complex._
 5. Use the calculated number from step 4 as the start for the next "trio" (_number, operation, number_) in the question. The calculated number + the remainder of the question becomes the question being worked on in the next iteration.
-   - _Using a `while-loop` with a test on the length of the question to do calculation is a very common strategy._
+   -- _Using a `while-loop` with a test on the length of the question to do calculation is a very common strategy._
 6.  Once the question is calculated down to a single number, that is the answer.  Anything else that happens in the loop/iteration or within the accumulated result is a `ValueError("syntax error")`.
 ~~~~
 
