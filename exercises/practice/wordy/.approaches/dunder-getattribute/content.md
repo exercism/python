@@ -37,12 +37,16 @@ def answer(question):
 This approach begins by defining a [dictionary][dictionaries] of the word keys with their related [`dunder-methods`][dunder] methods.
 Since only whole numbers are involved, the available `dunder-methods` are those for the [`int`][int] class/namespace.
 The supported methods for the `int()` namespace can be found by using `print(dir(int))` or `print(int.__dict__)` in a Python terminal.
-See [SO: Difference between dir() and __dict__][dir-vs-__dict__] for differences between the two.
+See [`SO: Difference between dir() and __dict__`][dir-vs-__dict__] for more details.
+
+<br>
 
 ~~~~exercism/note
 The built-in [`dir`](https://docs.python.org/3/library/functions.html?#dir) function returns a list of all valid attributes for an object.
 The `dunder-method` [`<object>.__dict__`](https://docs.python.org/3/reference/datamodel.html#object.__dict__) is a mapping of an objects writable attributes.
 ~~~~
+
+<br>
 
 The `OPS` dictionary is defined with all uppercase letters, which is the naming convention for a Python [constant][const].
 It indicates that the value should not be changed.
