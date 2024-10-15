@@ -1,46 +1,45 @@
 # Introduction
 
 The objective of the Wordy exercise is to parse and evaluate small/simple mathematical word problems, returning the result as an integer.
-These problems do not require complex or [PEMDAS][PEMDAS]-based evaluation and are instead processed from left-to-right _in sequence_.
+These questions do not require complex or [PEMDAS][PEMDAS]-based evaluation and are instead processed from left-to-right _in sequence_.
 This means that for some of the test cases, the solution will not be the same as if the word problem was evaluated like a traditional math problem.
+
+<br>
 
 
 ## General Guidance
 
 The key to a Wordy solution is to remove the "question" portion of the sentence (_"What is", "?"_) and process the remaining words between numbers as [operators][mathematical operators].
-
-
 If a single number remains after removing the "question" pieces, it should be converted to an [`int`][int] and returned as the answer.
 
 
-Any words or word-number combinations that do not fall into the simple mathematical evaluation pattern (_number-operator-number_) should [`raise`][raise-statement] a [`ValueError`][value-error] with a message.
+Any words or word-number combinations that do not fall into the simple mathematical evaluation pattern (_number-operator-number_) should [`raise`][raise-statement] a ["ValueError('syntax error")`][value-error] with a message.
 This includes any "extra" spaces between numbers.
-
-
-One way to reduce the number of `raise` statements/ `ValueError`s needed in the code is to determine if a problem is a "valid" question _before_ proceeding to parsing and calculation.
 As shown in various approaches, there are multiple strategies for validating questions, with no one "canonical" solution.
 
 
-One very effective validation approach is to check if a question starts with "What is", ends with "?", and does not include the word "cubed".
+A whole class of error can be eliminated up front by checking if a question starts with "What is", ends with "?", and does not include the word "cubed".
 Any other question formulation becomes a `ValueError("unknown operation")`.
-This very restrictive approach could lead to future maintenance issues if the definition of a question ever changes or operations are added, but for the purposes of passing the current Wordy tests, it works well.
+This could lead to future maintenance issues if the definition of a question ever changes or operations are added, but for the purposes of passing the current Wordy tests, it works well.
 
 
-Proceeding from validation, there are many Pythonic ways to go about the cleaning, parsing, and calculation steps of Wordy.
-However, they all follow these general steps:
+~~~~exercism/note
+There are many Pythonic ways to go about the cleaning, parsing, and calculation steps of Wordy.
+However, the solutions all follow these general steps:
 
 1.  Remove the parts of the question string that do not apply to calculating the answer.
 2.  Iterate over the question, determining which words are numbers, and which are meant to be mathematical operations.
-    - _Converting the question string into a `list` of words is hugely helpful here, but not absolutely necessary._
-3.  **_Starting from the left_**,  take the first three elements and convert number strings to `int` and operations words to +, -, *, /.
+    - _Converting the question string into a `list` of words is hugely helpful here._
+3.  **_Starting from the left_**,  take the first three elements and convert number strings to `int` and operations words to the mathematical operations +, -, *, and /.
 4. Apply the operation to the numbers, which should result in a single number.
-   - _Employing a `try-except` block around the conversion and operator application steps can trap any errors thrown and make the code both "safer" and less complex._
+   - _Employing a `try-except` block can trap any errors thrown and make the code both "safer" and less complex._
 5. Use the calculated number from step 4 as the start for the next "trio" (_number, operation, number_) in the question. The calculated number + the remainder of the question becomes the question being worked on in the next iteration.
    - _Using a `while-loop` with a test on the length of the question to do calculation is a very common strategy._
 6.  Once the question is calculated down to a single number, that is the answer.  Anything else that happens in the loop/iteration or within the accumulated result is a `ValueError("syntax error")`.
+~~~~
 
 
-For cleaning the question, [`str.removeprefix`][removeprefix] and
+For question cleaning, [`str.removeprefix`][removeprefix] and
 [`str.removesuffix`][removesuffix] introduced in `Python 3.9` can be very useful:
 
 
@@ -79,19 +78,36 @@ Different combinations of [`str.find`][find], [`str.rfind`][rfind], or [`str.ind
 A [regex][regex] could be used to process the question as well, but might be considered overkill given the fixed nature of the prefix/suffix and operations.
 Finally, [`str.strip`][strip] and its variants are very useful for cleaning up any leftover leading or trailing whitespace.
 
-Many solutions then use [`str.split`][split] to process the remaining "cleaned" question into a `list` for convenient looping/iteration, although other strategies can also be used.
+Many solutions then use [`str.split`][split] to process the remaining "cleaned" question into a `list` for convenient looping/iteration, although other strategies can also be used:
 
 
-For math operations, many solutions involve importing and using methods from the [operator][operator] module in combination with different looping, parsing, and substitution strategies.
+```python
+>>> sentence = "The quick brown fox jumped over the lazy dog 10 times"
+>>> sentence.split()
+['The', 'quick', 'brown', 'fox', 'jumped', 'over', 'the', 'lazy', 'dog', '10', 'times']
+```
+
+
+For math operations, many solutions involve importing and using methods from the [operator][operator] module.
 Some solutions use either [lambda][lambdas] expressions, [dunder/"special" methods][dunder-methods], or even `eval()` to replace words with arithmetic operations.
-However, the exercise can be solved **without** using `operator`, `lambdas`, `dunder-methods` or `eval`.
+
+
+However, the exercise can be solved without using `operator`, `lambdas`, `dunder-methods` or `eval`.
  It is recommended that you first start by solving it _without_ "advanced" strategies, and then refine your solution into something more compact or complex as you learn and practice.
 
 
 ~~~~exercism/caution
 Using [`eval`][eval] for the operations might seem convenient, but it is a [dangerous][eval-danger] and possibly [destructive][eval-destructive] approach.
 It is also entirely unnecessary, as the other methods described here are safer and equally performant.
+
+[eval-danger]: https://softwareengineering.stackexchange.com/questions/311507/why-are-eval-like-features-considered-evil-in-contrast-to-other-possibly-harmfu
+[eval-destructive]: https://nedbatchelder.com/blog/201206/eval_really_is_dangerous.html
+[eval]: https://docs.python.org/3/library/functions.html?#eval
 ~~~~
+
+<br>
+
+_____________
 
 
 ## Approach: String, List, and Dictionary Methods
