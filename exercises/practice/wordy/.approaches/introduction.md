@@ -22,10 +22,12 @@ A whole class of error can be eliminated up front by checking if a question star
 Any other question formulation becomes a `ValueError("unknown operation")`.
 This could lead to future maintenance issues if the definition of a question ever changes or operations are added, but for the purposes of passing the current Wordy tests, it works well.
 
+<br>
 
 ~~~~exercism/note
 There are many Pythonic ways to go about the cleaning, parsing, and calculation steps of Wordy.
-However, the solutions all follow these general steps:
+However, solutions all follow the same general steps:  
+
 
 1.  Remove the parts of the question string that do not apply to calculating the answer.
 2.  Iterate over the question, determining which words are numbers, and which are meant to be mathematical operations.
@@ -38,6 +40,7 @@ However, the solutions all follow these general steps:
 6.  Once the question is calculated down to a single number, that is the answer.  Anything else that happens in the loop/iteration or within the accumulated result is a `ValueError("syntax error")`.
 ~~~~
 
+<br>
 
 For question cleaning, [`str.removeprefix`][removeprefix] and
 [`str.removesuffix`][removesuffix] introduced in `Python 3.9` can be very useful:
@@ -95,6 +98,7 @@ Some solutions use either [lambda][lambdas] expressions, [dunder/"special" metho
 However, the exercise can be solved without using `operator`, `lambdas`, `dunder-methods` or `eval`.
  It is recommended that you first start by solving it _without_ "advanced" strategies, and then refine your solution into something more compact or complex as you learn and practice.
 
+<br>
 
 ~~~~exercism/caution
 Using [`eval`][eval] for the operations might seem convenient, but it is a [dangerous][eval-danger] and possibly [destructive][eval-destructive] approach.
@@ -158,6 +162,7 @@ Alternatives could use a [dictionary][dict] to store word --> operator mappings 
 
 For more details and variations, read the [String, List and Dictionary Methods][approach-string-list-and-dict-methods] approach.
 
+<br>
 
 ## Approach: Import Callables from the Operator Module
 
@@ -199,6 +204,7 @@ Like the first approach, it uses a [try-except][handling-exceptions] block for h
 
 For more details and options, take a look at the [Import Callables from the Operator Module][approach-import-callables-from-operator] approach.
 
+<br>
 
 ## Approach: Regex and the Operator Module
 
@@ -257,6 +263,7 @@ It is longer than some solutions, but clearer and potentially easier to maintain
 
 For more details, take a look at the [regex-with-operator-module][approach-regex-with-operator-module] approach.
 
+<br>
 
 ## Approach: Lambdas in a Dictionary to return Functions
 
@@ -306,6 +313,7 @@ These "hand-crafted" `lambdas` could also introduce a mathematical error, althou
 
 For more details, take a look at the [Lambdas in a Dictionary][approach-lambdas-in-a-dictionary] approach.
 
+<br>
 
 ## Approach: Recursion
 
@@ -351,6 +359,7 @@ The dictionary in this example could use functions from `operator`, `lambdas`, `
 
 For more details, take a look at the [recursion][approach-recursion] approach.
 
+<br>
 
 ## Approach:  functools.reduce()
 
@@ -393,6 +402,7 @@ This solution may be a little less clear to follow or reason about due to the sl
 
 For more details and variations, take a look at the [functools.reduce for Calculation][approach-functools-reduce] approach.
 
+<br>
 
 ## Approach: Dunder methods with `__getattribute__`
 
@@ -444,7 +454,7 @@ For more detail on this solution, take a look at the [dunder method with `__geta
 [approach-dunder-getattribute]: https://exercism.org/tracks/python/exercises/wordy/approaches/dunder-getattribute
 [approach-functools-reduce]: https://exercism.org/tracks/python/exercises/wordy/approaches/functools-reduce
 [approach-import-callables-from-operator]: https://exercism.org/tracks/python/exercises/wordy/approaches/import-callables-from-operator
-[approach-lambdas-in-a-dictionary]: https://exercsim.org/tracks/python/exercises/wordy/approaches/lambdas-in-a-dictionary
+[approach-lambdas-in-a-dictionary]: https://exercism.org/tracks/python/exercises/wordy/approaches/lambdas-in-a-dictionary
 [approach-recursion]: https://exercism.org/tracks/python/exercises/wordy/approaches/recursion
 [approach-regex-with-operator-module]: https://exercism.org/tracks/python/exercises/wordy/approaches/regex-with-operator-module
 [approach-string-list-and-dict-methods]: https://exercism.org/tracks/python/exercises/wordy/approaches/string-list-and-dict-methods

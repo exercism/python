@@ -72,8 +72,9 @@ A `try-except` is not needed here because the error scenarios are already filter
 But it is also hard to understand what is happening if you have not worked with a reduce or foldl function in the past.
 It could be argued that writing the code as a `while-loop` or recursive function is easier to reason about for non-functional programmers.
 
+<br>
 
-## Variation: 1: Use a Dictionary of `lambdas` instead of importing from operator
+## Variation 1:  Use a Dictionary of `lambdas` instead of importing from operator
 
 
 The imports from operator can be swapped out for a dictionary of `lambda-expressions` (or calls to `dunder-methods`), if so desired.
@@ -118,7 +119,6 @@ def answer(question):
     
     return result
 ```
-
 
 [approach-lambdas-in-a-dictionary]: https://exercism.org/tracks/python/exercises/wordy/approaches/lambdas-in-a-dictionary
 [callable]: https://treyhunner.com/2019/04/is-it-a-class-or-a-function-its-a-callable/

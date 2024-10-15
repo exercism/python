@@ -5,14 +5,21 @@
 A recursive strategy [may not always be obvious][looping-vs-recursion] or easy — but it is always possible.
 So the `while-loop`s used in other approaches to Wordy can be re-written to use recursive calls.
 
+<br>
+
 That being said, Python famously does not perform [tail-call optimization][tail-call-optimization], and limits recursive calls on the stack to a depth of 1000 frames, so it is important to only use recursion where you are confident that it can complete within the limit (_or something close to it_).
 [Memoization][memoization] and other strategies in [dynamic programming][dynamic-programming] can help to make recursion more efficient and "shorter" in Python, but it's always good to give it careful consideration.
 
+<br>
+
 Recursion works best with problem spaces that resemble trees, include [backtracking][backtracking], or become progressively smaller.
- Some examples include financial processes like calculating [amortization][amortization] and [depreciation][depreciation], tracking [radiation reduction through nuclei decay][nuclei-decay], and algorithms like [biscetion search][bisection-search], [depth-firs search][dfs], and [merge sort][merge-sort].
+ Some examples include financial processes like calculating [amortization][amortization] and [depreciation][depreciation], tracking [radiation reduction through nuclei decay][nuclei-decay], and algorithms like [biscetion search][bisection-search], [depth-first search][dfs], and [merge sort][merge-sort].
 
-Other algorithms such as [breadth-first search][bfs], [Dijkstra's algorithm][dijkstra], and the [Bellman-Ford Algorithm][bellman-ford] lend themselves better to iteration.
+ <br>
 
+Other algorithms such as [breadth-first search][bfs], [Dijkstra's algorithm][dijkstra], and the [Bellman-Ford Algorithm][bellman-ford] lend themselves better to loops.
+
+<br>
 
 ```python
 from operator import add, mul, sub
@@ -68,13 +75,16 @@ This approach separates the solution into three functions:
 2.  `clean()`, which takes a question string and returns a `list` of parsed words and numbers to calculate from.
 3.  `calculate()`, which performs the calculations on the `list` recursively, until a single number (_the base case check_) is returned as the answer — or an error is thrown.
 
-The cleaning logic is separate from the processing logic so that the cleaning steps aren't repeated over and over with each recursive `calculate()` call.
-This separation also makes it easier to make changes in processing or calculating without creating conflict or confusion.
+<br>
 
-Note that `calculate()` performs the same steps as the `while-loop` from [Import Callables from the Operator Module][approach-import-callables-from-operator] and others.
+The cleaning logic is separate from the processing logic so that the cleaning steps aren't repeated over and over with each recursive `calculate()` call.
+This separation also makes it easier to make changes without creating conflict or confusion.
+
+`calculate()` performs the same steps as the `while-loop` from [Import Callables from the Operator Module][approach-import-callables-from-operator] and others.
 The difference being that the `while-loop` test for `len()` 1 now occurs as an `if` condition in the function (_the base case_), and the "looping" is now a call to `calculate()` in the `else` condition.
 `calculate()` can also use many of the strategies detailed in other approaches, as long as they work with the recursion.
 
+<br>
 
 `clean()` can also use any of the strategies detailed in other approaches, two of which are below:
 
@@ -91,6 +101,7 @@ The difference being that the `while-loop` test for `len()` 1 now occurs as an `
                 question.strip("?").split())) #<-- The () in list() also invokes implicit concatenation.
 ```
 
+<br>
 
 ## Variation 1:  Use Regex for matching, cleaning, and calculating
 
@@ -184,6 +195,7 @@ Because each new iteration of the question needs to be validated, there is an `i
 
 Note that the `for-loop` and VALIDATE use [`re.match`][re-match], but DIGITS validation uses [`re.fullmatch`][re-fullmatch].
 
+<br>
 
 ## Variation 2: Use Regex, Recurse within the For-loop
 
@@ -229,13 +241,14 @@ This saves some space, but requires that the nested `tuples` be unpacked as the 
 Recursion is used a bit differently here from the previous variations — the calls are placed [within the `for-loop`][recursion-within-loops].
 Because the regex are more generic, they will match a `digit-operation-digit` trio in a longer question, so the line `return operation(calculate(match['x']), calculate(match['y']))` is effectively splitting a question into parts that can then be worked on in their own stack frames.
 
+
 For example:
 
 1. "1 plus -10 multiplied by 13 divided by 2" would match on "1 plus -10" (_group x_) **multiplied by** "13 divided by 2" (_group y_).
-2. This would then be re-arranged to `mul(calculate("1 plus -10"), calculate("13 divided by 2"))`
+2. This is re-arranged to `mul(calculate("1 plus -10"), calculate("13 divided by 2"))`
 3. At this point the loop would pause as the two recursive calls to `calculate()` spawn
-4. The loops would run again — and so would the calls to `calculate()`, until there wasn't any match that caused a split of the question or an error.
-5. One at a time, the numbers would then be returned, until the main `mul(calculate("1 plus -10"), calculate("13 divided by 2"))` could be solved, at which point the answer would be returned.
+4. The loops then run again — and so would the calls to `calculate()`, until there wasn't any match that caused a split of the question or an error.
+5. One at a time, the numbers would then be returned, until the main `mul(calculate("1 plus -10"), calculate("13 divided by 2"))` could be solved, at which point the answer is returned.
 
 For a more visual picture, you can step through the code on [pythontutor.com][recursion-in-loop-pythontutor].
 
