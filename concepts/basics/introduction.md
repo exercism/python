@@ -2,18 +2,26 @@
 
 Python is a [dynamic and strongly typed][dynamic typing in python] programming language.
 It employs both [duck typing][duck typing] and [gradual typing][gradual typing], via [type hints][type hints].
-
-Imperative, declarative (e.g., functional), and object-oriented programming _styles_ are all supported, but internally **[everything in Python is an object][everythings an object]**.
-
 Python puts a strong emphasis on code readability and (_similar to Haskell_) uses [significant indentation][significant indentation] to denote function, method, and class definitions.
 
 Python was created by Guido van Rossum and first released in 1991.
 
+Imperative, declarative (e.g., functional), and object-oriented programming _styles_ are all supported, but internally **[everything in Python is an object][everythings an object]**.
+
+We'll dig more into what all of that means as we continue through the Python track concepts.
+
+This first concept (`basics`)  introduces 4 major Python language features:
+1.  Name Assignment (_variables and constants_),
+2.  Functions (_the `def` keyword and the `return` keyword_),
+3.  Comments, and
+4.  Docstrings.
+
+<br>
 
 ## Name Assignment (Variables & Constants)
 
 Programmers can bind [_names_][facts-and-myths-about-python-names] (also called _variables_) to any type of object using the assignment `=` operator: `<name> = <value>`.
-A name can be reassigned (or re-bound) to different values (different object types) over its lifetime.
+A name can be reassigned (or re-bound) to different values (different object types) over its lifetime:
 
 
 ```python
@@ -37,9 +45,10 @@ A name can be reassigned (or re-bound) to different values (different object typ
 
 ### Constants
 
-Constants are names meant to be assigned only once in a program.
-They should be defined at a [module][module] (file) level, and are typically visible to all functions and classes in the program.
-Using `SCREAMING_SNAKE_CASE` signals that the name should not be re-assigned, or its value mutated.
+Constants are names meant to be assigned only once in a program — although Python will not prevent re-assignment.
+Using `SCREAMING_SNAKE_CASE` signals to anyone reading the code that the name should **not** be re-assigned, or its value mutated.
+Constants should be defined at a [module][module] (file) level, and are typically visible to all functions and classes in a program.
+
 
 
 ## Functions
@@ -92,7 +101,9 @@ def add_two_numbers(number_one, number_two):
 11
 ```
 
+
 Functions that do not have an _explicit_ `return` expression will _implicitly_ return the [`None`][none] object.
+This means that if you do not use `return` in a function, Python will return the `None` object for you.
 The details of `None` will be covered in a later exercise.
 For the purposes of this exercise and explanation, `None` is a placeholder that represents nothing, or null:
 

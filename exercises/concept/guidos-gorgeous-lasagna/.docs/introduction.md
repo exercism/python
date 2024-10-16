@@ -14,6 +14,7 @@ This first exercise introduces 4 major Python language features:
 3.  Comments, and
 4.  Docstrings.
 
+<br>
 
 ~~~~exercism/note
 
@@ -25,6 +26,7 @@ On the Python track, [variables][variables] are always written in [`snake_case`]
 [snake case]: https://en.wikipedia.org/wiki/Snake_case
 ~~~~
 
+<br>
 
 ## Name Assignment (Variables & Constants)
 
@@ -33,8 +35,8 @@ A name can be reassigned (or re-bound) to different values (different object typ
 
 
 ```python
->>> my_first_variable = 1  # my_first_variable bound to an integer object of value one.
->>> my_first_variable = 2  # my_first_variable re-assigned to integer value 2.
+>>> my_first_variable = 1  #<-- my_first_variable bound to an integer object of value one.
+>>> my_first_variable = 2  #<-- my_first_variable re-assigned to integer value 2.
 
 >>> print(type(my_first_variable))
 <class 'int'>
@@ -42,12 +44,12 @@ A name can be reassigned (or re-bound) to different values (different object typ
 >>> print(my_first_variable)
 2
 
->>> my_first_variable = "Now, I'm a string." # You may re-bind a name to a different object type and value.
+>>> my_first_variable = "Now, I'm a string." #<-- You may re-bind a name to a different object type and value.
 >>> print(type(my_first_variable))
 <class 'str'>
 
 >>> print(my_first_variable)
-"Now, I'm a string."  # Strings can be declared using single or double quote marks.
+"Now, I'm a string."  #<-- Strings can be declared using single or double quote marks.
 ```
 
 
@@ -90,10 +92,11 @@ IndentationError: unindent does not match any outer indentation level
 
 Functions _explicitly_ return a value or object via the [`return`][return] keyword:
 
+
 ```python
 # Function definition on first line, explicit return used on final line.
-def add_two_numbers(number_one, number_two):
-  return number_one + number_two   
+>>> def add_two_numbers(number_one, number_two):
+        return number_one + number_two   
 
 
 # Calling the function in the Python terminal returns the sum of the numbers.
@@ -109,6 +112,7 @@ def add_two_numbers(number_one, number_two):
 
 
 Functions that do not have an _explicit_ `return` expression will _implicitly_ return the [`None`][none] object.
+This means that if you do not use `return` in a function, Python will return the `None` object for you.
 The details of `None` will be covered in a later exercise.
 For the purposes of this exercise and explanation, `None` is a placeholder that represents nothing, or null:
 
