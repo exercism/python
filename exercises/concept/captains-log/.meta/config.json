@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "colinleach",
+    "BethanyG"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "captains_log.py"
+    ],
+    "test": [
+      "captains_log_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
+  },
+  "forked_from": ["elixir/captains-log"],
+  "blurb": "Help Mary with her role playing game by generating suitable random data."
+}
