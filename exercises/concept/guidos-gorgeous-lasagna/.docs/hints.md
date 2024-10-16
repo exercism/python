@@ -10,7 +10,9 @@
 
 ## 1. Define expected bake time in minutes
 
-- You need to [name][naming] a constant, and [assign][assignment] it an [integer][numbers] value.
+- You need to [name][naming] a [constant][constants], and [assign][assignment] it an [integer][numbers] value.
+  This constant should be the first thing after the docstring that is at the top of the file.
+  Remember to remove the #TODO comment after defining the constant.
 
 ## 2. Calculate remaining bake time in minutes
 
@@ -38,6 +40,7 @@
 
 [assignment]: https://docs.python.org/3/reference/simple_stmts.html#grammar-token-assignment-stmt
 [comments]: https://realpython.com/python-comments-guide/
+[constants]: https://stackoverflow.com/a/2682752
 [defining functions]: https://docs.python.org/3/tutorial/controlflow.html#defining-functions
 [docstrings]: https://docs.python.org/3/tutorial/controlflow.html#tut-docstrings
 [naming]: https://realpython.com/python-variables/

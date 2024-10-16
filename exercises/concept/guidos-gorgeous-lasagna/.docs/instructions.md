@@ -4,52 +4,70 @@ You're going to write some code to help you cook a gorgeous lasagna from your fa
 
 You have five tasks, all related to cooking your recipe.
 
-## 1. Define expected bake time in minutes
+<br>
 
-Define an `EXPECTED_BAKE_TIME` constant that returns how many minutes the lasagna should bake in the oven.
+~~~~exercism/note
+We have started the first function definition for you in the stub file, but you will need to write the remaining function definitions yourself.
+You will also need to define any constants yourself.
+Read the #TODO comment lines in the stub file carefully.
+Once you are done with a task, remove the TODO comment.
+~~~~
+
+<br>
+
+## 1. Define expected bake time in minutes as a constant
+
+Define the `EXPECTED_BAKE_TIME` [constant][constants] that represents how many minutes the lasagna should bake in the oven.
 According to your cookbook, the Lasagna should be in the oven for 40 minutes:
 
 ```python
->>> import lasagna
->>> lasagna.EXPECTED_BAKE_TIME
+>>> print(EXPECTED_BAKE_TIME)
 40
 ```
 
 ## 2. Calculate remaining bake time in minutes
 
-Implement the `bake_time_remaining()` function that takes the actual minutes the lasagna has been in the oven as an argument and returns how many minutes the lasagna still needs to bake based on the `EXPECTED_BAKE_TIME`.
+Complete the `bake_time_remaining()` function that takes the actual minutes the lasagna has been in the oven as an argument and returns how many minutes the lasagna still needs to bake based on the `EXPECTED_BAKE_TIME` constant.
 
 ```python
->>> from lasagna import bake_time_remaining
 >>> bake_time_remaining(30)
 10
 ```
 
+
 ## 3. Calculate preparation time in minutes
 
-Implement the `preparation_time_in_minutes(number_of_layers)` function that takes the number of layers you want to add to the lasagna as an argument and returns how many minutes you would spend making them.
+Define the `preparation_time_in_minutes()` [function][functions] that takes the `number_of_layers` you want to add to the lasagna as an argument and returns how many minutes you would spend making them.
 Assume each layer takes 2 minutes to prepare.
 
 ```python
->>> from lasagna import preparation_time_in_minutes
+>>> def preparation_time_in_minutes(number_of_layers):
+        ...
+        ...
+        
 >>> preparation_time_in_minutes(2)
 4
 ```
 
+
 ## 4. Calculate total elapsed cooking time (prep + bake) in minutes
 
-Implement the `elapsed_time_in_minutes(number_of_layers, elapsed_bake_time)` function that has two parameters: `number_of_layers` (_the number of layers added to the lasagna_) and `elapsed_bake_time` (_the number of minutes the lasagna has been baking in the oven_).
-This function should return the total number of minutes you've been cooking, or the sum of your preparation time and the time the lasagna has already spent baking in the oven.
+Define the `elapsed_time_in_minutes()` function that takes two parameters as arguments: `number_of_layers` (_the number of layers added to the lasagna_) and `elapsed_bake_time` (_the number of minutes the lasagna has been baking in the oven_).
+This function should return the total number of minutes you have been cooking, or the sum of your preparation time and the time the lasagna has already spent baking in the oven.
 
 ```python
->>> from lasagna import elapsed_time_in_minutes
+>>> def elapsed_time_in_minutes(number_of_layers, elapsed_bake_time):
+        ...
+        ...
+        
 >>> elapsed_time_in_minutes(3, 20)
 26
 ```
 
+
 ## 5. Update the recipe with notes
 
-Go back through the recipe, adding "notes" in the form of function docstrings.
+Go back through the recipe, adding "notes" in the form of [function docstrings][function-docstrings].
 
 ```python
 def elapsed_time_in_minutes(number_of_layers, elapsed_bake_time):
@@ -64,3 +82,7 @@ def elapsed_time_in_minutes(number_of_layers, elapsed_bake_time):
     lasagna.
     """
 ```
+
+[constants]: https://stackoverflow.com/a/2682752
+[functions]: https://docs.python.org/3/tutorial/controlflow.html#defining-functions
+[function-docstrings]: https://docs.python.org/3/tutorial/controlflow.html#documentation-strings
