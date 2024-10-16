@@ -134,4 +134,7 @@ class PlaneTicketsTest(unittest.TestCase):
                                  f'The function returned {actual_result}, but the tests '
                                  f'expected {expected} when generating ticket numbers.')
 
-                self.assertEqual(list(generate_codes(seat_numbers, flight_id)), expected, msg=error_message)
+                # Note: DO NOT call the function here again, in case the student is using list.pop()
+                # to process the input.  If another call is done with that condition,
+                # the test will fail with a terrible error message.
+                self.assertEqual(actual_result, expected, msg=error_message)
