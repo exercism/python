@@ -191,7 +191,7 @@ When both dictionaries share keys, `dict_two` values take precedence.
  'Purple baseline': '#161748'}
 ```
 
-`dict_one |= other` behaves similar to `<dict_one>.update(<dict_two>)`, but in this case, `other` can be either a `dict` or an iterable of (`key`, `value`) pairs:
+`dict_one |= other` behaves similar to `<dict_one>.update(<other>)`, but in this case, `other` can be either a `dict` or an iterable of (`key`, `value`) pairs:
 
 ```python
 >>> palette_III = {'Grassy Green': (155, 196, 0),
