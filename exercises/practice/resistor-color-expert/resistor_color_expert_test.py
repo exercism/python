@@ -49,3 +49,13 @@ class ResistorColorExpertTest(unittest.TestCase):
         self.assertEqual(
             resistor_label(["brown", "red", "orange", "green", "blue"]), "12.3 megaohms ±0.25%"
         )
+
+    def test_brown_black_brown_yellow_and_violet(self):
+        self.assertEqual(
+            resistor_label(["brown", "black", "brown", "yellow", "violet"]), "1.01 megaohms ±0.1%"
+        )
+
+    def test_brown_black_red_and_red(self):
+        self.assertEqual(
+            resistor_label(["brown", "black", "red", "red"]), "1 kiloohms ±2%"
+        )
