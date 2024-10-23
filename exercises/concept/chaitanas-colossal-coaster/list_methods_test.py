@@ -140,14 +140,39 @@ class ListMethodsTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=6)
     def test_remove_the_last_person(self):
-        test_data = ['Natasha', 'Steve', 'Ultron', 'Natasha', 'Rocket']
-        actual_result = remove_the_last_person(test_data)
-        expected = 'Rocket'
-        error_message = (f'Called remove_the_last_person({test_data}).'
-                         f'The function returned {actual_result}, but the tests '
-                         f'expected {expected} as the person who was removed.')
+        test_data = [
+            (['Natasha', 'Steve', 'Ultron', 'Natasha', 'Rocket'], 'Rocket'),
+            (['Wanda', 'Natasha', 'Steve', 'Rocket', 'Ultron'], 'Ultron'),
+            (['Steve', 'Wanda', 'Rocket', 'Ultron', 'Natasha'], 'Natasha')
+        ]
+        for variant, (input, expected) in enumerate(test_data, start=1):
+            with self.subTest(f'variation #{variant}', input=input, expected=expected):
+                actual_result = remove_the_last_person(input)
+                expected_result = expected
 
-        self.assertIs(actual_result, expected, msg=error_message)
+                error_message = (f'Called remove_the_last_person({input}).'
+                                 f'The function returned {actual_result}, but the tests expected {expected_result}.')
+
+                self.assertEqual(actual_result, expected_result, msg=error_message)
+
+    @pytest.mark.task(taskno=6)
+    def test_remove_the_last_person_validate_queue(self):
+        test_data = [
+            (['Natasha', 'Steve', 'Ultron', 'Natasha', 'Rocket'], ['Natasha', 'Steve', 'Ultron', 'Natasha']),
+            (['Wanda', 'Natasha', 'Steve', 'Rocket', 'Ultron'], ['Wanda', 'Natasha', 'Steve', 'Rocket']),
+            (['Steve', 'Wanda', 'Rocket', 'Ultron', 'Natasha'], ['Steve', 'Wanda', 'Rocket', 'Ultron'])
+        ]
+        for variant, (input, modified) in enumerate(test_data, start=1):
+            with self.subTest(f'variation #{variant}', input=input, modified=modified):
+                unmodified = deepcopy(input)
+                actual_result = remove_the_last_person(input)
+                expected_queue = modified
+
+                error_message = (f'\nCalled remove_the_last_person({unmodified}).\n'
+                                 f'The function was expected to change the queue to {expected_queue},\n'
+                                 f'but the queue looks like {input} instead.')
+
+                self.assertEqual(input, expected_queue, msg=error_message)
 
     @pytest.mark.task(taskno=7)
     def test_sorted_names(self):
