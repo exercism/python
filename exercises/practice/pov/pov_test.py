@@ -166,7 +166,7 @@ class PovTest(unittest.TestCase):
             tree.path_to("nonexistent", "x")
         self.assertEqual(type(err.exception), ValueError)
 
-        self.assertEqual(err.exception.args[0], "Tree could not be reoriented")
+        self.assertEqual(err.exception.args[0], "No path found")
 
     # Custom Utility Functions
     def assertTreeEquals(self, result, expected):
