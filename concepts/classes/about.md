@@ -118,7 +118,7 @@ class MyClass:
     def __init__(self, location):
 
         # This is an instance or object property, attribute, or variable.
-        # Note that we are unpacking the tuple argument into two seperate instance variables.
+        # Note that we are unpacking the tuple argument into two separate instance variables.
         self.location_x = location[0]
         self.location_y = location[1]
 
