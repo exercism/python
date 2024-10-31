@@ -157,4 +157,4 @@ To compare performance of the approaches, take a look at the [Performance articl
 [approach-map-function]: https://exercism.org/tracks/python/exercises/acronym/approaches/map-function
 [approach-regex-join]: https://exercism.org/tracks/python/exercises/acronym/approaches/regex-join
 [approach-regex-sub]: https://exercism.org/tracks/python/exercises/acronym/approaches/regex-sub
-[article-performance]: https://exercism.org/tracks/python/exercises/isogram/articles/performance
+[article-performance]: https://exercism.org/tracks/python/exercises/acronym/articles/performance
