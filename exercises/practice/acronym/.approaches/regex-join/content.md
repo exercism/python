@@ -74,7 +74,7 @@ Note that when using `finditer()`, the `Match object` has to be unpacked via `ma
 
 Generator expressions are short-form [generators][generators] - lazy iterators that produce their values _on demand_, instead of saving them to memory.
 This generator expression is consumed by [`str.join()`][str-join], which joins the generated letters together using an empty string.
-Other "seperator" strings can be used with `str.join()` - see [concept:python/string-methods]() for some additional examples.
+Other "separator" strings can be used with `str.join()` - see [concept:python/string-methods]() for some additional examples.
 
 
 Finally, the result of `.join()` is capitalized using the [chained][chaining] [`.upper()`][str-upper].
