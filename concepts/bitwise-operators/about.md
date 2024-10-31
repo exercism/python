@@ -28,17 +28,17 @@ There are multiple ways to convert integers to binary strings, varying in whethe
 23
 
 # Converting an int display to binary string, with prefix.
->>> bin(23)  
+>>> bin(23)
 '0b10111'
 
 >>> number = 23
 
 # Binary without prefix, padded to 8 digits.
->>> format(number, '08b')  
+>>> format(number, '08b')
 '00010111'
 
 # Same format, but using an f-string.
->>> f"{number} in decimal is {number:08b} in binary and {number:x} in hex" 
+>>> f"{number} in decimal is {number:08b} in binary and {number:x} in hex"
 '23 in decimal is 00010111 in binary and 17 in hex'
 ```
 
@@ -117,7 +117,7 @@ This means that all bits are inverted and a number is _**interpreted as negative
 Positive numbers have an MSB of `0`.
 This representation has the advantage of only having one version of zero, so that the programmer doesn't have to manage `-0` and `+0`.
 
-This way of representing negative and positive numbers adds a complication for Python: there are no finite-integer concepts like `int32` or `int64` internally in the core langauge.
+This way of representing negative and positive numbers adds a complication for Python: there are no finite-integer concepts like `int32` or `int64` internally in the core language.
 In 'modern' Python, `int`s are of unlimited size (_limited only by hardware capacity_), and a negative or bit-inverted number has a (_theoretically_) infinite number of `1`'s to the left, just as a positive number has unlimited `0`'s.
 
 This makes it difficult to give a useful example of `bitwise not`:
@@ -129,7 +129,7 @@ This makes it difficult to give a useful example of `bitwise not`:
 
 # This is a negative binary (not twos-complement display).
 >>> format(~x, '08b')
-'-1100111'  
+'-1100111'
 
  # Decimal representation.
 >>> x
@@ -167,14 +167,14 @@ Keep in mind the previous section on negative numbers and their pitfalls when sh
 >>> format(x, '08b')
 '00001000'
 
-# A left bit shift. 
->>> x << 2  
+# A left bit shift.
+>>> x << 2
 32
 
 >>> format(x << 2, '08b')
 '00100000'
 
-# A right bit shift. 
+# A right bit shift.
 >>> format(x >> 2, '08b')
 '00000010'
 ```

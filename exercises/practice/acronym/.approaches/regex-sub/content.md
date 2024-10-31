@@ -7,9 +7,9 @@ import re
 
 def abbreviate_regex_sub(to_abbreviate):
     pattern = re.compile(r"(?<!_)\B[\w']+|[ ,\-_]")
- 
+
     return  re.sub(pattern, "", to_abbreviate).upper()
-    
+
 ###OR###
 
 def abbreviate_regex_sub(to_abbreviate):
@@ -25,15 +25,15 @@ Regular expression matching starts at the left-hand side of the input and travel
 
 ~~~~exercism/caution
 While it is a fun experiment to see if the entire problem can be more or less solved with a single regex, the excessive [backtracking][backtracking] used in this solution slows down performance considerably.
-This solution tested the slowest of all solutions during benchmarking, taking 652 steps in the regex engine to find and replace 82 matches.  
+This solution tested the slowest of all solutions during benchmarking, taking 652 steps in the regex engine to find and replace 82 matches.
 
 
 A more performant method of cleaning would be to use [`re.findall()`][re-findall] or [`re.finditer()`][re-finditer] to scrub the phrase of unwanted characters, and then process the results with a `list-comprehension` or `loop` to extract the first letters of words.
-`to_abbreviate.replace("_", " ").replace("-", " ").upper().split()` can also be used, and is even more performant here for cleaning test inputs. 
+`to_abbreviate.replace("_", " ").replace("-", " ").upper().split()` can also be used, and is even more performant here for cleaning test inputs.
 
 
 However, if nothing but a regular expression will do, the third-party [regex][regex] module provides more tools for lookarounds, recursion, partial matches, and nested sets.
-Experimenting with that third-party library on your local environment (_the exercism Python track does not support third-party libraries_) could aid in optimizing this complicated regular expression and help with extracting first letters to form acronyms.  
+Experimenting with that third-party library on your local environment (_the exercism Python track does not support third-party libraries_) could aid in optimizing this complicated regular expression and help with extracting first letters to form acronyms.
 
 [backtracking]: https://stackoverflow.com/questions/9011592/in-regular-expressions-what-is-a-backtracking-back-referencing
 [re-findall]: https://docs.python.org/3/library/re.html#re.findall
@@ -43,7 +43,7 @@ Experimenting with that third-party library on your local environment (_the exer
 
 The regular expression `(?<!_)\B[\w']+|[ ,\-_]` in the code example above has two alternatives for matching.
 For convenience and reuse, the regex is compiled using [`re.compile()`][re-compile].
-Alternatives are seperated with the pipe (`|`) symbol:
+Alternatives are separated with the pipe (`|`) symbol:
 
 
 1.  `(?<!_)` is a [negative lookbehind][negative lookbehind], which ensures that `_` followed by letter characters (_see the pattern explanation below_) is **not** matched (_for example, `_none` is **not** matched, but ` _` with a preceding space **is** matched_).

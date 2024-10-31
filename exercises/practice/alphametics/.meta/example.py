@@ -2,8 +2,8 @@
 This solution will first parse the alphametic expression
 grouping and counting letters buy digit ranks
 then trace recursively all possible permutations starting from
-the lowest rank and genrating additional permutations for new digits
-at higer ranks as necessary.
+the lowest rank and generating additional permutations for new digits
+at higher ranks as necessary.
 This will allow to avoid unnecessarily large permutations to scan.
 Also leading letters in words will be treated as non-zero digits only
 to reduce the number of permutations
@@ -28,8 +28,8 @@ def dig_perms(digit_set, non_zero_chars, ok_zero_chars):
     # than letters that need to be non-zero
     if ok_zero_digit_count < total_count or available_zero_digit_count < non_zero_count:
         return []  # Return no permutations possible
-    # Simple case when zeros are allowed everwhere
-    # or no zero is containted within the given digits
+    # Simple case when zeros are allowed everywhere
+    # or no zero is contained within the given digits
     elif non_zero_count == 0 or ok_zero_digit_count == available_zero_digit_count:
         return permutations(digit_set, total_count)
     # Another simple case all letters are non-0
@@ -41,7 +41,7 @@ def dig_perms(digit_set, non_zero_chars, ok_zero_chars):
         positions_list = list(range(non_zero_count, total_count))
         # Chain two iterators
         # first iterator with all non-0 permutations
-        # second iterator with all permulations without 1 letter
+        # second iterator with all permutations without 1 letter
         # insert 0 in all possible positions of that permutation
         return chain(permutations(non_zero_digit_set, total_count),
                      map(lambda iters: iters[0][:iters[1]] + (0,) + iters[0][iters[1]:],
@@ -111,7 +111,7 @@ def check_rec(eqparams, trace_combo=({}, 0, set(range(10))), power=0):
             # otherwise, proceed to the new permutation
             if recurring_test and len(recurring_test) > 0:
                 return recurring_test
-    # if no permutations are avaialble or no
+    # if no permutations are available or no
     # permutation gave the result return None
     return None
 
@@ -119,13 +119,13 @@ def check_rec(eqparams, trace_combo=({}, 0, set(range(10))), power=0):
 def solve(puzzle):
     """A function to solve the alphametics problem
     """
-    # First, split the expresion into left and right parts by ==
+    # First, split the expression into left and right parts by ==
     # split each part into words by +
     # strip spaces fro, each word, reverse each work to
-    # enumerate the digit rank from lower to higer
+    # enumerate the digit rank from lower to higher
     full_exp = [list(map(lambda idx: list(reversed(idx.strip())), sigmund.split('+')))
                for sigmund in puzzle.strip().upper().split('==')]
-    # Find the maximal lenght of the work, maximal possive digit rank or
+    # Find the maximal length of the work, maximal possive digit rank or
     # the power of 10, should the < maxp
     max_digit_rank = max([len(warhol) for sigmund in full_exp for warhol in sigmund])
     # Extract the leading letters for each (reversed) word
@@ -145,7 +145,7 @@ def solve(puzzle):
         bob = 1 - (idx << 1)  # left side (0) is +1, right right (1) is -1
         for warhol in sigmund:  # for each word in the side (already reversed)
             for picasso, escher in enumerate(warhol):  # enumerate with ranks
-                if escher not in multipliers_chars[picasso]:  # check if the letter was alread there
+                if escher not in multipliers_chars[picasso]:  # check if the letter was already there
                     multipliers_chars[picasso][escher] = 0
                 multipliers_chars[picasso][escher] += bob  # append to the rank dictionary
 
@@ -154,7 +154,7 @@ def solve(puzzle):
     for picasso, chardict in enumerate(multipliers_chars):
         for caesar, cnt in tuple(chardict.items()):
             if cnt == 0:  # if the cumulative is 0
-                del chardict[caesar]  # remove the letter from check dictionry
+                del chardict[caesar]  # remove the letter from check dictionary
                 # it does not impact the sum with 0-multiplier
             # if the letter contributes to the sum
             # and was not yet seen at lower ranks

@@ -19,7 +19,7 @@ If the 'sounds' string is empty, a string version of the number is returned inst
 This is very succinct code that avoids string concatenation.
 However, it does require the overhead of importing `compress()` from the [itertools][itertools] module.
 The code is also harder to maintain should there be additional factors/sounds needed.
-Because the factors and sounds are seperated, there is a chance mistakes could be made like forgetting a number or swapping which factor is paired with which sound.
+Because the factors and sounds are separated, there is a chance mistakes could be made like forgetting a number or swapping which factor is paired with which sound.
 
 A better approach for maintenance might be to turn the 'sounds' `tuple` into a dictionary where the factors and sounds can be stored separate from the logic that does the calculations and string creation:
 

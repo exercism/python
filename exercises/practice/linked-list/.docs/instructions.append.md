@@ -5,7 +5,7 @@
 While linked lists can be implemented in a variety of ways with a variety of underlying data structures, we ask here that you implement your linked list in an OOP fashion.
 
 In the stub file, you will see the start of a `Node` class, as well as a `LinkedList` class.
-Your `Node` class should keep track of its value, as well as which other nodes preceed or follow.
+Your `Node` class should keep track of its value, as well as which other nodes precede or follow.
 Your `push`, `pop`, `shift`, `unshift`, and the special method for `len` should be implemented in the `LinkedList` class.
 You might also find it useful to implement a special `iter` method for iteration.
 

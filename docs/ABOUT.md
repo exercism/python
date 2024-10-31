@@ -3,7 +3,7 @@
 [Python][python docs] is a [dynamic and strongly][dynamic typing in python] typed [object-oriented][object oriented programming] programming language.
 It employs both [duck typing][duck typing] and [gradual typing][gradual typing] (via [type hints][type hints]).
 It supports multiple programming paradigms including imperative (_object-oriented, procedural_) and declarative (_functional, concurrent_) flavors.
-But do not be fooled: while programming across paradigms is fully supported, [everything in Python is an object][everythings an object].
+But do not be fooled: while programming across paradigms is fully supported, [everything in Python is an object][everything is an object].
 
 
 Python was created by Guido van Rossum and first released in 1991.
@@ -42,7 +42,7 @@ Complete documentation for the current release of Python (3.11.x) can be found a
 [duck typing]: https://en.wikipedia.org/wiki/Duck_typing
 [dynamic typing in python]: https://stackoverflow.com/questions/11328920/is-python-strongly-typed
 [editors for python]: https://djangostars.com/blog/python-ide/
-[everythings an object]: https://docs.python.org/3/reference/datamodel.html
+[everything is an object]: https://docs.python.org/3/reference/datamodel.html
 [gradual typing]: https://en.wikipedia.org/wiki/Gradual_typing
 [jupyter]: http://jupyter.org
 [object oriented programming]: https://en.wikipedia.org/wiki/Object-oriented_programming

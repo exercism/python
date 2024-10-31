@@ -17,19 +17,19 @@ Hi. &nbsp;👋🏽 &nbsp;👋 &nbsp;**We are happy you are here.**&nbsp; 🎉&nb
 <br>
 <img align="left" width="90" height="85" src="https://github.com/exercism/website-icons/blob/main/exercises/health-statistics.svg">
 
-We&nbsp;💛&nbsp;💙 &nbsp; our community.  
-**`But our maintainers are not accepting community contributions at this time.`**  
+We&nbsp;💛&nbsp;💙 &nbsp; our community.
+**`But our maintainers are not accepting community contributions at this time.`**
 Please read this [community blog post](https://exercism.org/blog/freeing-our-maintainers) for details.
 
 </tr>
 </table>
 <br>
 
-**`exercism/Python`** is one of many programming language tracks on [exercism(dot)org][exercism-website].  
+**`exercism/Python`** is one of many programming language tracks on [exercism(dot)org][exercism-website].
 This repo holds all the instructions, tests, code, & support files for Python _exercises_ currently under development or implemented & available for students.
 
 🌟 &nbsp;&nbsp;Track exercises support Python `3.7` - `3.11.2`.
-Exceptions to this support are noted where they occur.  
+Exceptions to this support are noted where they occur.
 🌟 &nbsp;&nbsp;Track tooling (_test-runner, representer, analyzer, and Continuous Integration_) runs on Python `3.11.2`.
 
 Exercises are grouped into **concept** exercises which teach the [Python syllabus][python-syllabus], and **practice** exercises, which are unlocked by progressing in the syllabus tree &nbsp;🌴&nbsp;.
@@ -42,17 +42,17 @@ Practice exercises are open-ended, and can be used to practice concepts learned,
 
 It is not uncommon to discover typos, confusing directions, or incorrect implementations of certain tests or code examples. Or you might have a great suggestion for a hint to aid students (&nbsp;💙 &nbsp;), see optimizations for exemplar or test code, find missing test cases to add, or want to correct factual and/or logical errors. Or maybe you have a great idea 💡 for an exercise or feature (&nbsp;💙&nbsp;).
 
-_Our track is always a work in progress!_ 🌟🌟  
+_Our track is always a work in progress!_ 🌟🌟
 While contributions are paused, we ask that you [`open a thread in our community forum`](https://forum.exercism.org) to let us know what you have found/suggest.
 
 <br>
 
 ## 🚧 **Did you write a patch that fixes a bug?**
 
-**`Our maintainers are not accepting community contributions at this time.`**  
+**`Our maintainers are not accepting community contributions at this time.`**
 Please read this [community blog post](https://exercism.org/blog/freeing-our-maintainers) for details.
 
-Once the pause ends, we will **happily** consider your PR.  
+Once the pause ends, we will **happily** consider your PR.
 Until that time, all PRs from the larger community will be **automatically closed** with a note.
 
 We're leaving the general contributing docs below for our long-term collaborators and maintainers.
@@ -111,7 +111,7 @@ Our documents use [Markdown][markdown-language], with certain [alterations][exer
 
 <br>
 <img align="left" width="70" height="65" src="https://github.com/exercism/website-icons/blob/main/tracks/python.svg">
-<p vertical-align="middle"><h2 id="coding-standars">Coding Standards</h2></p>
+<p vertical-align="middle"><h2 id="coding-standards">Coding Standards</h2></p>
 
 <br>
 
@@ -185,7 +185,7 @@ Our documents use [Markdown][markdown-language], with certain [alterations][exer
 
 If you have any questions or issues, don't hesitate to ask the maintainers -- they're always happy to help&nbsp;💛&nbsp;💙&nbsp;
 
-Some of our code is old and does not (yet) conform to all these standards.  
+Some of our code is old and does not (yet) conform to all these standards.
 _We know it, and trust us, we are working on fixing it._ But if you see &nbsp;👀&nbsp; something, &nbsp;👄&nbsp; say something. It'll motivate us to fix it! 🌈
 
  <br>
@@ -195,7 +195,7 @@ _We know it, and trust us, we are working on fixing it._ But if you see &nbsp;�
 
 <br>
 
-This track officially supports Python `3.7 - 3.11.2` for students completing exercises.  
+This track officially supports Python `3.7 - 3.11.2` for students completing exercises.
 The track `test runner`, `analyzer`, and `representer` run in docker on `python:3.11.2-slim`.
 
 Although the majority of test cases are written using `unittest.TestCase`,
@@ -316,7 +316,7 @@ _Exercise Structure with Auto-Generated Test Files_
 
 <br>
 
-Practice exercise `<exercise_slug>_test.py` files are generated/regenerated via the [Python Track Test Generator][python-track-test-generator].  
+Practice exercise `<exercise_slug>_test.py` files are generated/regenerated via the [Python Track Test Generator][python-track-test-generator].
 Please reach out to a maintainer if you need any help with the process.
 
 <br>
@@ -338,7 +338,7 @@ If an unimplemented exercise does not have a `canonical-data.json` file, the tes
 1. Verification of the tests
 2. Example implementation for mentor/student reference
 
-Unlike `concept` exercise, practice exercise `example.py` files are **NOT** intended as as a "best practice" or "standard".  
+Unlike `concept` exercise, practice exercise `example.py` files are **NOT** intended as as a "best practice" or "standard".
 They are provided as proof that there is an acceptable and testable answer to the practice exercise.
 
 <br>
@@ -354,7 +354,7 @@ Implementing Track-specific Practice Exercises is similar to implementing a `can
 <br>
 <b>You will need</b>
 
-1.&nbsp;&nbsp;A local clone of the [problem-specifications] repository.  
+1.&nbsp;&nbsp;A local clone of the [problem-specifications] repository.
 2.&nbsp;&nbsp;[configlet]
 
 <p><b>For Individual Exercises</b><p><img id="regenerating-individual-exercise-documents" align="left" width="45" height="45" src="https://github.com/exercism/website-icons/blob/main/exercises/doubly-linked-list.svg"></p>

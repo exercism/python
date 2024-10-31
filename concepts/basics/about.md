@@ -2,7 +2,7 @@
 
 Python is a [dynamic and strongly typed][dynamic typing in python] programming language.
 It employs both [duck typing][duck typing] and [gradual typing][gradual typing], via [type hints][type hints].
-Imperative, declarative (e.g., functional), and object-oriented programming _styles_ are all supported, but internally **[everything in Python is an object][everythings an object]**.
+Imperative, declarative (e.g., functional), and object-oriented programming _styles_ are all supported, but internally **[everything in Python is an object][everything is an object]**.
 
 Python puts a strong emphasis on code readability and (_similar to Haskell_) uses [significant indentation][significant indentation] to denote function, method, and class definitions.
 
@@ -116,7 +116,7 @@ Statements for the _body_ of the function begin on the line following `def` and 
 # The body of a function is indented by 2 spaces, & prints the sum of the numbers.
 def add_two_numbers(number_one, number_two):
   total = number_one + number_two
-  print(total)  
+  print(total)
 
 >>> add_two_numbers(3, 4)
 7
@@ -141,14 +141,14 @@ Functions _explicitly_ return a value or object via the [`return`][return] keywo
 ```python
 # Function definition on first line, explicit return used on final line.
 def add_two_numbers(number_one, number_two):
-  return number_one + number_two   
+  return number_one + number_two
 
 
 # Calling the function in the Python terminal returns the sum of the numbers.
 >>> add_two_numbers(3, 4)
 7
 
-# Assigning the function call to a variable and printing 
+# Assigning the function call to a variable and printing
 # the variable will also return the value.
 >>> sum_with_return = add_two_numbers(5, 6)
 >>> print(sum_with_return)
@@ -166,19 +166,19 @@ def add_two_numbers(number_one, number_two):
   result = number_one + number_two
 
 
-# Calling the function in the Python terminal appears 
+# Calling the function in the Python terminal appears
 # to not return anything at all.
 >>> add_two_numbers(5, 7)
 >>>
 
 
-# Using print() with the function call shows that 
+# Using print() with the function call shows that
 # the function is actually returning the **None** object.
 >>> print(add_two_numbers(5, 7))
 None
 
 
-# Assigning the function call to a variable and printing 
+# Assigning the function call to a variable and printing
 # the variable will also show None.
 >>> sum_without_return = add_two_numbers(5, 6)
 >>> print(sum_without_return)
@@ -320,7 +320,7 @@ errors defaults to 'strict'.
 [doctests]: https://docs.python.org/3/library/doctest.html
 [duck typing]: https://en.wikipedia.org/wiki/Duck_typing
 [dynamic typing in python]: https://stackoverflow.com/questions/11328920/is-python-strongly-typed
-[everythings an object]: https://docs.python.org/3/reference/datamodel.html
+[everything is an object]: https://docs.python.org/3/reference/datamodel.html
 [facts-and-myths-about-python-names]: https://nedbatchelder.com/text/names.html
 [function definition]: https://docs.python.org/3/tutorial/controlflow.html#defining-functions
 [functions]: https://docs.python.org/3/reference/compound_stmts.html#function

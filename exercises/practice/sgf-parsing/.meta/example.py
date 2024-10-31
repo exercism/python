@@ -67,7 +67,7 @@ def parse_node(sgf: str) -> SgfTree:
         if sgf[idx] == "[":
             # Parse property values.
             if idx == prop_key_start:
-                raise ValueError("propery key is empty")
+                raise ValueError("property key is empty")
             prop_key = sgf[prop_key_start:idx]
             if not prop_key.isupper():
                 raise ValueError('property must be in uppercase')

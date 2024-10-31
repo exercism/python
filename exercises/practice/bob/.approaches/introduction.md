@@ -13,7 +13,7 @@ Regardless of the approach used, some things you could look out for include
 
 - Use the [`endswith`][endswith] method instead of checking the last character by index for `?`.
 
-- Don't copy/paste the logic for determining a shout and for determing a question into determing a shouted question.
+- Don't copy/paste the logic for determining a shout and for determining a question into determining a shouted question.
   Combine the two determinations instead of copying them.
   Not duplicating the code will keep the code [DRY][dry].
 
@@ -38,7 +38,7 @@ def response(hey_bob):
     if is_question:
         return 'Sure.'
     return 'Whatever.'
-    
+
 ```
 
 For more information, check the [`if` statements approach][approach-if].
@@ -58,7 +58,7 @@ def response(hey_bob):
         return 'Whoa, chill out!'
     if is_question:
         return 'Sure.'
-    return 'Whatever.'    
+    return 'Whatever.'
 
 ```
 

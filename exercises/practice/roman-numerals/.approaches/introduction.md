@@ -71,9 +71,9 @@ def roman(number):
 
     # convert the input integer to a list of single digits
     digits = [int(d) for d in str(number)]
-    
+
     # we need the row in the lookup table for our most-significant decimal digit
-    inverter = len(digits) - 1 
+    inverter = len(digits) - 1
 
     # translate decimal digits list to Roman numerals list
     roman_digits = [table[inverter - i][d - 1] for (i, d) in enumerate(digits) if d != 0]
@@ -105,7 +105,7 @@ def roman(number: int) -> str:
     result = ''
     while number:
         for arabic in ROMAN.keys():
-            if number >= arabic: 
+            if number >= arabic:
                 result += ROMAN[arabic]
                 number -= arabic
                 break
@@ -186,11 +186,11 @@ As the textbooks say, further analysis of this approach is left as an exercise f
 ## Which approach to use?
 
 In production, it would make sense to use the `roman` package.
-It is debugged and supports Roman-to-Arabic conversions in addtion to the Arabic-to-Roman approaches discussed here.
+It is debugged and supports Roman-to-Arabic conversions in addition to the Arabic-to-Roman approaches discussed here.
 
 Most submissions, like the `roman` package implementation, use some variant of [`loop-over-romans`][loop-over-romans].
 
-Using a [2-D lookup table][table-lookup] takes a bit more initialization, but then everthing can be done in a list comprehension instead of nested loops.
+Using a [2-D lookup table][table-lookup] takes a bit more initialization, but then everything can be done in a list comprehension instead of nested loops.
 Python is relatively unusual in supporting both tuples-of-tuples and relatively fast list comprehensions, so the approach seems a good fit for this language.
 
 No performance article is currently included for this exercise.

@@ -91,9 +91,9 @@ This concept exercise is meant to teach an understanding/use of`<concept-SLUG>`.
 
 
 
-* 
-* 
-* 
+*
+*
+*
 
 
 
@@ -108,7 +108,7 @@ This concept exercise is meant to teach an understanding/use of`<concept-SLUG>`.
 * ### `links.json`
 
   *  The same resources can be used for the [ `concepts/links.json`](https://github.com/exercism/docs/blob/main/anatomy/tracks/concepts.md#file-linksjson)  file, if it doesn't already exist.
-  *  If there are particularly good/interesting informations sources for this concept that extend or supplement the concept exercise material, please add them to the `links.json` document.
+  *  If there are particularly good/interesting information sources for this concept that extend or supplement the concept exercise material, please add them to the `links.json` document.
 
 
 

@@ -4,7 +4,7 @@
 ```python
 def abbreviate(to_abbreviate):
     phrase = to_abbreviate.replace('-', ' ').replace('_', ' ').upper().split()
-    
+
     # note the lack of square brackets around the comprehension.
     return ''.join(word[0] for word in phrase)
 ```
@@ -30,7 +30,7 @@ A [`generator-expression`][generator-expression] is then used to iterate through
 
 Generator expressions are short-form [generators][generators] - lazy iterators that produce their values _on demand_, instead of saving them to memory.
 This generator expression is consumed by [`str.join()`][str-join], which joins the generated letters together using an empty string.
-Other "seperator" strings can be used with `str.join()` - see [concept:python/string-methods]() for some additional examples.
+Other "separator" strings can be used with `str.join()` - see [concept:python/string-methods]() for some additional examples.
 Since the generator expression and `join()` are fairly succinct, they are put directly on the `return` line rather than assigning and returning an intermediate variable for the acronym.
 
 
