@@ -16,16 +16,17 @@ def answer(question):
         raise ValueError("unknown operation")
         
     # Using the built-in filter() to clean & split the question..
-    list(filter(lambda x: 
-                x not in ("What", "is", "by"), 
-                question.strip("?").split()))
+    question = list(filter(lambda x: 
+                    x not in ("What", "is", "by"), 
+                    question.strip("?").split()))
 
     # Separate candidate operators and numbers into two lists.
     operations = question[1::2]
     
     # Convert candidate elements to int(), checking for "-".
     # All other values are replaced with None.
-    digits = [int(element) if (element.isdigit() or element[1:].isdigit()) 
+    digits = [int(element) if 
+             (element.isdigit() or element[1:].isdigit()) 
               else None for element in question[::2]]
     
     # If there is a mis-match between operators and numbers, toss error.
@@ -106,7 +107,8 @@ def answer(question):
     
     # Convert candidate elements to int(), checking for "-".
     # All other values are replaced with None.
-    digits = [int(element) if (element.isdigit() or element[1:].isdigit()) 
+    digits = [int(element) if 
+              (element.isdigit() or element[1:].isdigit()) 
               else None for element in question[::2]]
     
     # If there is a mis-match between operators and numbers, toss error.

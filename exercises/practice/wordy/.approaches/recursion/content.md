@@ -246,9 +246,9 @@ For example:
 
 1. "1 plus -10 multiplied by 13 divided by 2" would match on "1 plus -10" (_group x_) **multiplied by** "13 divided by 2" (_group y_).
 2. This is re-arranged to `mul(calculate("1 plus -10"), calculate("13 divided by 2"))`
-3. At this point the loop would pause as the two recursive calls to `calculate()` spawn
-4. The loops then run again — and so would the calls to `calculate()`, until there wasn't any match that caused a split of the question or an error.
-5. One at a time, the numbers would then be returned, until the main `mul(calculate("1 plus -10"), calculate("13 divided by 2"))` could be solved, at which point the answer is returned.
+3. At this point, the loop pauses as the two recursive calls to `calculate()` spawn
+4. The loop runs again — and so do the calls to `calculate()` — until there isn't any match that splits the question or any errors.
+5. One at a time, the numbers are returned from the `calculate()` calls on the stack, until the main `mul(calculate("1 plus -10"), calculate("13 divided by 2"))` is solved, at which point the answer is returned.
 
 For a more visual picture, you can step through the code on [pythontutor.com][recursion-in-loop-pythontutor].
 
