@@ -29,7 +29,7 @@ class Luhn:
 
 ```
 
-The `Luhn` object is initialzed with the `card_num` value, which is the number to be validated with the Luhn algorithm.
+The `Luhn` object is initialized with the `card_num` value, which is the number to be validated with the Luhn algorithm.
 The result of the validation is returned from `Luhn`'s `valid()` method.
 In this approach, a member variable is set to the result of running the Luhn algorithm.
 That variable is returned from the `valid()` method.
