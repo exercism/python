@@ -22,5 +22,5 @@
   },
   "blurb": "Reparent a graph on a selected node.",
   "source": "Adaptation of exercise from 4clojure",
-  "source_url": "https://www.4clojure.com/"
+  "source_url": "https://github.com/oxalorg/4ever-clojure"
 }

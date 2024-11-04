@@ -8,8 +8,8 @@ Given any two lists `A` and `B`, determine if:
 - None of the above is true, thus lists `A` and `B` are unequal
 
 Specifically, list `A` is equal to list `B` if both lists have the same values in the same order.
-List `A` is a superlist of `B` if `A` contains a sub-sequence of values equal to `B`.
-List `A` is a sublist of `B` if `B` contains a sub-sequence of values equal to `A`.
+List `A` is a superlist of `B` if `A` contains a contiguous sub-sequence of values equal to `B`.
+List `A` is a sublist of `B` if `B` contains a contiguous sub-sequence of values equal to `A`.
 
 Examples:
 
