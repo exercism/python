@@ -24,6 +24,9 @@ description = "addition -> errors if there is nothing on the stack"
 [06efb9a4-817a-435e-b509-06166993c1b8]
 description = "addition -> errors if there is only one value on the stack"
 
+[1e07a098-c5fa-4c66-97b2-3c81205dbc2f]
+description = "addition -> more than two values on the stack"
+
 [09687c99-7bbc-44af-8526-e402f997ccbf]
 description = "subtraction -> can subtract two numbers"
 
@@ -33,6 +36,9 @@ description = "subtraction -> errors if there is nothing on the stack"
 [b3cee1b2-9159-418a-b00d-a1bb3765c23b]
 description = "subtraction -> errors if there is only one value on the stack"
 
+[2c8cc5ed-da97-4cb1-8b98-fa7b526644f4]
+description = "subtraction -> more than two values on the stack"
+
 [5df0ceb5-922e-401f-974d-8287427dbf21]
 description = "multiplication -> can multiply two numbers"
 
@@ -41,6 +47,9 @@ description = "multiplication -> errors if there is nothing on the stack"
 
 [8ba4b432-9f94-41e0-8fae-3b3712bd51b3]
 description = "multiplication -> errors if there is only one value on the stack"
+
+[5cd085b5-deb1-43cc-9c17-6b1c38bc9970]
+description = "multiplication -> more than two values on the stack"
 
 [e74c2204-b057-4cff-9aa9-31c7c97a93f5]
 description = "division -> can divide two numbers"
@@ -57,11 +66,20 @@ description = "division -> errors if there is nothing on the stack"
 [d5547f43-c2ff-4d5c-9cb0-2a4f6684c20d]
 description = "division -> errors if there is only one value on the stack"
 
+[f224f3e0-b6b6-4864-81de-9769ecefa03f]
+description = "division -> more than two values on the stack"
+
 [ee28d729-6692-4a30-b9be-0d830c52a68c]
 description = "combined arithmetic -> addition and subtraction"
 
 [40b197da-fa4b-4aca-a50b-f000d19422c1]
 description = "combined arithmetic -> multiplication and division"
+
+[f749b540-53aa-458e-87ec-a70797eddbcb]
+description = "combined arithmetic -> multiplication and addition"
+
+[c8e5a4c2-f9bf-4805-9a35-3c3314e4989a]
+description = "combined arithmetic -> addition and multiplication"
 
 [c5758235-6eef-4bf6-ab62-c878e50b9957]
 description = "dup -> copies a value on the stack"

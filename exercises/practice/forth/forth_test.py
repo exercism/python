@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/forth/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2024-11-04
 
 import unittest
 
@@ -36,6 +36,9 @@ class ForthTest(unittest.TestCase):
             str(err.exception.args[0]), "Insufficient number of items in stack"
         )
 
+    def test_addition_more_than_two_values_on_the_stack(self):
+        self.assertEqual(evaluate(["1 2 3 +"]), [1, 5])
+
     def test_subtraction_can_subtract_two_numbers(self):
         self.assertEqual(evaluate(["3 4 -"]), [-1])
 
@@ -55,6 +58,9 @@ class ForthTest(unittest.TestCase):
             str(err.exception.args[0]), "Insufficient number of items in stack"
         )
 
+    def test_subtraction_more_than_two_values_on_the_stack(self):
+        self.assertEqual(evaluate(["1 12 3 -"]), [1, 9])
+
     def test_multiplication_can_multiply_two_numbers(self):
         self.assertEqual(evaluate(["2 4 *"]), [8])
 
@@ -73,6 +79,9 @@ class ForthTest(unittest.TestCase):
         self.assertEqual(
             str(err.exception.args[0]), "Insufficient number of items in stack"
         )
+
+    def test_multiplication_more_than_two_values_on_the_stack(self):
+        self.assertEqual(evaluate(["1 2 3 *"]), [1, 6])
 
     def test_division_can_divide_two_numbers(self):
         self.assertEqual(evaluate(["12 3 /"]), [4])
@@ -103,11 +112,20 @@ class ForthTest(unittest.TestCase):
             str(err.exception.args[0]), "Insufficient number of items in stack"
         )
 
+    def test_division_more_than_two_values_on_the_stack(self):
+        self.assertEqual(evaluate(["1 12 3 /"]), [1, 4])
+
     def test_combined_arithmetic_addition_and_subtraction(self):
         self.assertEqual(evaluate(["1 2 + 4 -"]), [-1])
 
     def test_combined_arithmetic_multiplication_and_division(self):
         self.assertEqual(evaluate(["2 4 * 3 /"]), [2])
+
+    def test_combined_arithmetic_multiplication_and_addition(self):
+        self.assertEqual(evaluate(["1 3 4 * +"]), [13])
+
+    def test_combined_arithmetic_addition_and_multiplication(self):
+        self.assertEqual(evaluate(["1 3 4 + *"]), [7])
 
     def test_dup_copies_a_value_on_the_stack(self):
         self.assertEqual(evaluate(["1 dup"]), [1, 1])
