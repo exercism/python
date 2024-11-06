@@ -186,11 +186,11 @@ As the textbooks say, further analysis of this approach is left as an exercise f
 ## Which approach to use?
 
 In production, it would make sense to use the `roman` package.
-It is debugged and supports Roman-to-Arabic conversions in addtion to the Arabic-to-Roman approaches discussed here.
+It is debugged and supports Roman-to-Arabic conversions in addition to the Arabic-to-Roman approaches discussed here.
 
 Most submissions, like the `roman` package implementation, use some variant of [`loop-over-romans`][loop-over-romans].
 
-Using a [2-D lookup table][table-lookup] takes a bit more initialization, but then everthing can be done in a list comprehension instead of nested loops.
+Using a [2-D lookup table][table-lookup] takes a bit more initialization, but then everything can be done in a list comprehension instead of nested loops.
 Python is relatively unusual in supporting both tuples-of-tuples and relatively fast list comprehensions, so the approach seems a good fit for this language.
 
 No performance article is currently included for this exercise.

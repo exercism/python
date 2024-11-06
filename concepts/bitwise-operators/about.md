@@ -117,7 +117,7 @@ This means that all bits are inverted and a number is _**interpreted as negative
 Positive numbers have an MSB of `0`.
 This representation has the advantage of only having one version of zero, so that the programmer doesn't have to manage `-0` and `+0`.
 
-This way of representing negative and positive numbers adds a complication for Python: there are no finite-integer concepts like `int32` or `int64` internally in the core langauge.
+This way of representing negative and positive numbers adds a complication for Python: there are no finite-integer concepts like `int32` or `int64` internally in the core language.
 In 'modern' Python, `int`s are of unlimited size (_limited only by hardware capacity_), and a negative or bit-inverted number has a (_theoretically_) infinite number of `1`'s to the left, just as a positive number has unlimited `0`'s.
 
 This makes it difficult to give a useful example of `bitwise not`:
