@@ -18,7 +18,7 @@ def leap(year):
 - [Modular Division][modular-division]: the exercise relies on the `%` operator to check if one number is evenly divisible by another
 - [Boolean Operators][boolean-operators]: the exercise relies on `and`, `or`, and (optionally) `not` to form Boolean predicates
 - [Boolean Logic][boolean-logic]: the exercise relies on `and` and `or` to combine Boolean predicates into a single logical answer
-- [Comparision][comparision]: the exercise relies on the `==` and `!=` operators to make binary comparisons between values
+- [Comparison][comparison]: the exercise relies on the `==` and `!=` operators to make binary comparisons between values
 - [Equivalence][equivalence]: the exercise relies on the `==` and `!=` operators to check that two values are equivalent (or not)
 - [Order of Evaluation][order-of-evaluation]: the exercise relies on parentheses to explicitly modify the normal order of evaluation of an expression
 - [Operator Precedence][operator-precedence]: the exercise is most simply stated when the student understands the operator precedence binding rules of Python
