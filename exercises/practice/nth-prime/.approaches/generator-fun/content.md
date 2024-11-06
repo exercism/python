@@ -19,11 +19,13 @@ Using a lambda expression, we `filter` out any numbers above two that are prime.
 Doesn't this result in an infinite loop? 
 No - `filter` _also_ returns a generator object (which are [evaluated lazily][generator]), so while it's too will produce values infinitely if evaluated, it doesn't hang to program at the time of instantiation.
 
-`itertools.islice` takes in a generator object and an end count, returning a generator object which _only evalutes until that end count_. 
+`itertools.islice` takes in a generator object and an end count, returning a generator object which _only evaluates until that end count_.
 
 The next line exhausts all the values in the generator except the end, and we finally return the last element.
 
-We can utilize the `functools.cache` decorator for greater speeds at higher values of `number`, so we take it out. The added bonus is that a very long line of code is cleant up.
+We can utilize the `functools.cache` decorator for greater speeds at higher values of `number`, so we take it out.
+The added bonus is that a very long line of code is cleaned up.
+
 
 ```python
 from itertools import islice, count
