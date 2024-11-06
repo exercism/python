@@ -60,7 +60,7 @@ class BinarySearchTree:
 
 ## Concepts
 
-- [class][class]: a general comprehension of class concept and and how it works is required, `class` statement
+- [class][class]: a general comprehension of class concept and how it works is required, `class` statement
 - [Implied Argument][implied-argument]: student needs to know how to use statement `self` in a class
 - [class members][class-members]: student must know how members of a class work
 - [class methods][class-methods]: student must know how methods of a class work inside and outside the class, the use and meaning of `def` statement
@@ -78,5 +78,5 @@ class BinarySearchTree:
 - [Integer comparison][integer-comparison]: concept required to solve the exercise
 - [Recursion][recursion]: recursion is a core concept in this exercise
 - [Lists][lists]: knowledge of lists and iteration on lists is required for this exercise
-- [Conditional structures][conditional-structures]: knowledge of conditional conceptis and `if...else` statements are required
+- [Conditional structures][conditional-structures]: knowledge of conditional concepts and `if...else` statements are required
 - [Methods of list][methods-of-list]: the use of methods of list could be useful in this exercise. Methods like `append`, `pop`...

@@ -1,6 +1,6 @@
 # `dict`
 
-Python's primary [mapping type][docs-mapping-type] that associatess keys with values in a [hash map][hash-map].
+Python's primary [mapping type][docs-mapping-type] that associates keys with values in a [hash map][hash-map].
 
 See examples of usage in [markdown][markdown], [rna-transcription][rna-transcription], and [robot-simulator][robot-simulator].
 

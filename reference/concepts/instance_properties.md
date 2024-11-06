@@ -2,4 +2,4 @@
 
 TODO: ADD MORE
 
-- this exercise rquires one or more instance properties to persist passed in data. [matrix](../exercise-concepts/matrix.md)
+- this exercise requires one or more instance properties to persist passed in data. [matrix](../exercise-concepts/matrix.md)
