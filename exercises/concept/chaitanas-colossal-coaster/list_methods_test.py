@@ -165,7 +165,7 @@ class ListMethodsTest(unittest.TestCase):
         for variant, (input, modified) in enumerate(test_data, start=1):
             with self.subTest(f'variation #{variant}', input=input, modified=modified):
                 unmodified = deepcopy(input)
-                actual_result = remove_the_last_person(input)
+                remove_the_last_person(input)
                 expected_queue = modified
 
                 error_message = (f'\nCalled remove_the_last_person({unmodified}).\n'
