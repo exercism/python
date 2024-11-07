@@ -134,7 +134,7 @@ You should update the `list` and also `return` the name of the person who was re
 For administrative purposes, you need to get all the names in a given queue in alphabetical order.
 
 
-Define the `sorted_names()` function that takes 1 argument,  `queue`, (the `list` of people standing in the queue), and returns a `sorted` copy of the `list`.
+Define the `sorted_names()` function that takes 1 argument,  `queue`, (the `list` of people standing in the queue), and returns the `sorted` `list`.
 
 
 ```python
