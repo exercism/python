@@ -76,7 +76,7 @@ Note: _The length of all hands are odd, to make finding a median easier._
 >>> approx_average_is_average([1, 2, 3])
 True
 
->>> approx_average_is_average([2, 3, 4, 8, 8])
+>>> approx_average_is_average([2, 3, 5, 8, 8])
 True
 
 >>> approx_average_is_average([1, 2, 3, 5, 9])
