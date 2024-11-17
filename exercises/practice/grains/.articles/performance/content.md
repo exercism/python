@@ -37,7 +37,7 @@ pow square 64:            5.738279999932274e-07
 Using `if number not in range(1, 65):` was over `125` nanoseconds longer than using `if number < 1 or number > 64:` for all approaches.
 
 [approaches]: https://exercism.org/tracks/python/exercises/grains/approaches
-[approach-bit-shifting]: https://exercism.org/python/csharp/exercises/grains/approaches/bit-shifting
+[approach-bit-shifting]: https://exercism.org/tracks/python/exercises/grains/approaches/bit-shifting
 [approach-pow]: https://exercism.org/tracks/python/exercises/grains/approaches/pow
 [approach-exponentiation]: https://exercism.org/tracks/python/exercises/grains/approaches/exponentiation
 [benchmark-application]: https://github.com/exercism/python/blob/main/exercises/practice/grains/.articles/performance/code/Benchmark.py
