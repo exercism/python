@@ -12,6 +12,8 @@ There are two queues for this ride, each represented as a `list`:
 
 You have been asked to write some code to better manage the guests at the park.
  You need to implement the following functions as soon as possible before the guests (and your boss, Chaitana!) get cranky.
+ Make sure you read carefully.
+ Some tasks ask that you change or update the existing queue, while others ask you to make a copy of it.
 
 
 ## 1. Add me to the queue
