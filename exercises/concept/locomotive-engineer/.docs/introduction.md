@@ -213,11 +213,15 @@ This will pack all the values into a `list`/`tuple`.
 >>> combined_fruits
 ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
 
-# If the * operator is used on the left side of "=" the result is a list
+# If the * operator is used on the left side of "=" the result is a list.
+# Note the trailing comma.
 >>> *combined_fruits_too, = *fruits, *more_fruits
 >>> combined_fruits_too
 ['apple', 'banana', 'cherry', 'orange', 'kiwi', 'melon', 'mango']
 ```
+
+For more background on using `*` on the left-hand side, see [PEP 3132][pep-3132].
+
 
 ### Packing a dictionary with `**`
 
@@ -361,6 +365,7 @@ Since `zip()` takes multiple iterables and returns a `list` of `tuples` with the
 [items]: https://docs.python.org/3/library/stdtypes.html#dict.items
 [multiple assignment]: https://www.geeksforgeeks.org/assigning-multiple-variables-in-one-line-in-python/
 [packing and unpacking]: https://www.geeksforgeeks.org/packing-and-unpacking-arguments-in-python/
+[pep-3132]: https://peps.python.org/pep-3132/
 [sorting algorithms]: https://realpython.com/sorting-algorithms-python/
 [unpacking]: https://www.geeksforgeeks.org/unpacking-arguments-in-python/?ref=rp
 [view-objects]: https://docs.python.org/3/library/stdtypes.html#dict-views
