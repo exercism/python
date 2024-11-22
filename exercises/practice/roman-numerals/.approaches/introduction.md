@@ -200,6 +200,6 @@ The problem is inherently limited in scope by the design of Roman numerals, so a
 
 [if-else]: https://exercism.org/tracks/python/exercises/roman-numerals/approaches/if-else
 [table-lookup]: https://exercism.org/tracks/python/exercises/roman-numerals/approaches/table-lookup
-[loop-over-romans]: https://exercism.org/tracks/python/exercises/roman-numerals/approaches/loop-over-roman
+[loop-over-romans]: https://exercism.org/tracks/python/exercises/roman-numerals/approaches/loop-over-romans
 [recurse-match]: https://exercism.org/tracks/python/exercises/roman-numerals/approaches/recurse-match
 [roman-module]: https://github.com/zopefoundation/roman
