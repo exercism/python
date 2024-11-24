@@ -48,6 +48,7 @@ The `score` function uses the same [generator expression][generator-expression] 
 Instead of looking up the value in a _dictionary_, it looks up the `InEnum` class member value.
 
 [classes]: https://docs.python.org/3/tutorial/classes.html
+[dictionary-approach]: https://exercism.org/tracks/python/exercises/scrabble-score/approaches/dictionary
 [enum]: https://docs.python.org/3/library/enum.html
 [generator-expression]: https://peps.python.org/pep-0289/
 [int-enum]: https://docs.python.org/3/library/enum.html#enum.IntEnum
