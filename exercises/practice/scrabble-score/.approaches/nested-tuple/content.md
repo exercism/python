@@ -30,6 +30,7 @@ You can read more about unpacking in the [concept:python/unpacking-and-multiple-
 
 Then the code checks if the character is in the unpacked letters and if it is we return its score.
 
+[dictionary-approach]: https://exercism.org/tracks/python/exercises/scrabble-score/approaches/dictionary
 [generator-expression]: https://peps.python.org/pep-0289/
 [for-loop]: https://realpython.com/python-for-loop/
 [tuple]: https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences
