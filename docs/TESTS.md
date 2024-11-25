@@ -28,14 +28,14 @@ Otherwise, the `pytest` installation will be global.
 
 ```powershell
 PS C:\Users\foobar> py -m pip install pytest pytest-cache pytest-subtests pytest-pylint
-Successfully installed pytest-7.2.2 ...
+Successfully installed pytest-8.3.3 ...
 ```
 
 #### Linux / MacOS
 
 ```bash
 $ python3 -m pip install pytest pytest-cache pytest-subtests pytest-pylint
-Successfully installed pytest-7.2.2 ...
+Successfully installed pytest-8.3.3 ...
 
 ```
 
@@ -43,23 +43,36 @@ To check if installation was successful:
 
 ```bash
 $ python3 -m pytest --version
-pytest 7.2.2
+pytest 8.3.3
 ```
 
 ## Running the tests
 
-To run the tests, go to the folder where the exercise is stored using `cd` in your terminal (_replace `{exercise-folder-location}` below with your path_).
+To run the tests, go to the folder where the exercise is stored using `cd` in your terminal (_replace `<exercise-folder-location>` below with your path_).
 
 ```bash
-$ cd {exercise-folder-location}
+$ cd <exercise-folder-location>
 ```
+
+<br>
+
+~~~~exercism/note
+ `<exercise-folder-location>` or most things inside angle brackets denote a **_placeholder value_**.
+A normal path or file name should be written _without_ any brackets.  
+
+
+For example: `/Users/janedoe/exercism/python/exercises/concept/chaitanas-colossal-coaster` (on *nix systems), `C:\Users\janedoe\exercism\python\exercises\practice\hello-world\` (on Windows), `myFolder` or `my_file.py`.
+~~~~  
+
+<br>
+
 
 The file you will want to run usually ends in `_test.py`.
 This file contains the tests for the exercise solution, and are the same tests that run on the website when a solution is uploaded.
-Next, run the following command in your terminal, replacing `{exercise_test.py}` with the location/name of the test file:
+Next, run the following command in your terminal, replacing `<exercise_test.py>` with the location/name of the test file:
 
 ```bash
-$ python3 -m pytest -o markers=task {exercise_test.py}
+$ python3 -m pytest -o markers=task <exercise_test.py>
 ==================== 7 passed in 0.08s ====================
 ```
 
@@ -88,15 +101,15 @@ When tests fail, `pytest` prints the text of each failed test, along with the ex
 Below is an generic example of a failed test:
 
 ```bash
-$(my_venv) python3 -m pytest -o markers=task {exercise_test.py}
+$(my_venv) python3 -m pytest -o markers=task <exercise_test.py>
 
 =================== FAILURES ====================
 ______________ name_of_failed_test ______________
-# Test code inside of {exercise_test.py} that failed.
+# Test code inside of <exercise_test.py> that failed.
 ...
 E   TypeOfError: ReturnedValue != ExpectedValue
 
-exercise_test.py:{line_of_failed_test}: TypeOfError
+exercise_test.py:<line_of_failed_test>: TypeOfError
 ============ short test summary info ============
 FAILED exercise_test.py::ExerciseTest::name_of_failed_test
 ========== 1 failed, 2 passed in 0.13s ==========
@@ -216,10 +229,10 @@ If you do not know where you have installed Python, run the following command in
 
 ```bash
 $ python3 -c "import os, sys; print(os.path.dirname(sys.executable))"
-{python_directory}
+<python_directory>
 ```
 
-The _returned_ directory is where your current active Python version is installed, in this section it is referred to as `{python_directory}`.
+The _returned_ directory is where your current active Python version is installed, in this section it is referred to as `<python_directory>`.
 
 #### Windows
 
@@ -232,7 +245,7 @@ Then find the `Path` variable in your _User variables_, select it, and click `Ed
 
 ![Selecting the path variable](https://raw.githubusercontent.com/exercism/python/main/docs/img/Windows-EnvironmentVariables.png)
 
-Then add a new line, as shown in the picture, replacing `{python_directory}` with your Python installation's directory:
+Then add a new line, as shown in the picture, replacing `<python_directory>` with your Python installation's directory:
 
 ![Add python to path](https://raw.githubusercontent.com/exercism/python/main/docs/img/Windows-AddPythonPath.png)
 
@@ -240,17 +253,17 @@ Then add a new line, as shown in the picture, replacing `{python_directory}` wit
 
 The below should work for most Linux and MacOS flavors with a `bash` shell.
 Commands may vary by Linux distro, and whether a `fish` or `zsh` shell is used.
-Replace `{python_directory}` with the output of `python3 -c "import os, sys; print(os.path.dirname(sys.executable))"`
+Replace `<python_directory>` with the output of `python3 -c "import os, sys; print(os.path.dirname(sys.executable))"`
 
 ```bash
-export PATH=”$PATH:{python_directory}}”
+export PATH=”$PATH:<python_directory>”
 ```
 
 [Code Quality: Tools and Best Practices]: https://realpython.com/python-code-quality/
 [Getting Started Guide]: https://docs.pytest.org/en/latest/getting-started.html
 [configuration file formats]: https://docs.pytest.org/en/6.2.x/customize.html#configuration-file-formats
 [marking test functions with attributes]: https://docs.pytest.org/en/6.2.x/mark.html#raising-errors-on-unknown-marks
-[pdb]: https://docs.python.org/3.9/library/pdb.html
+[pdb]: https://docs.python.org/3.11/library/pdb.html
 [pip]: https://pip.pypa.io/en/stable/getting-started/
 [psf-installer]: https://www.python.org/downloads/
 [pylint]: https://pylint.pycqa.org/en/latest/user_guide/

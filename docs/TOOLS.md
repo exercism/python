@@ -30,7 +30,10 @@ If you have an editor, IDE, tool, or plugin recommendation, we encourage you to 
 
 
 Before you start exploring, make sure that you have a recent version of Python installed.
-The Exercism platform currently supports `Python 3.7 - 3.11.2` (_exercises and tests_) and `Python 3.11.2` (_tooling_).
+The Exercism web platform currently supports `Python 3.7 - 3.11.5` (_exercises and tests_) and `Python 3.11.5` (_tooling_).
+Our online test runner currently uses `pytest 7.2.2` and `pytest-subtests 0.11.0`.
+Our online analyzer uses `pylint 2.17.7`.
+Using different versions of `Python`, `pytest`, or `pylint`  locally might give you different results than the website.
 For more information, please refer to [Installing Python locally][Installing Python locally].
 
 <br>
