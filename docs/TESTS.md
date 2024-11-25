@@ -53,8 +53,19 @@ To run the tests, go to the folder where the exercise is stored using `cd` in yo
 ```bash
 $ cd <exercise-folder-location>
 ```
-**Note:** `<exercise-folder-location>` or most things inside angle brackets denote a placeholder value.
-A normal path should simply has its name without any brackets like: `myFolder` or `myFile.py`
+
+<br>
+
+~~~~exercism/note
+ `<exercise-folder-location>` or most things inside angle brackets denote a **_placeholder value_**.
+A normal path or file name should be written _without_ any brackets.  
+
+
+For example: `/Users/janedoe/exercism/python/exercises/concept/chaitanas-colossal-coaster` (on *nix systems), `C:\Users\janedoe\exercism\python\exercises\practice\hello-world\` (on Windows), `myFolder` or `my_file.py`.
+~~~~  
+
+<br>
+
 
 The file you will want to run usually ends in `_test.py`.
 This file contains the tests for the exercise solution, and are the same tests that run on the website when a solution is uploaded.
