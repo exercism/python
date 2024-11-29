@@ -146,23 +146,20 @@ Although it is important to note that this solution could have chosen a better n
 ```python
 def triplets_with_sum(number):
     def calculate_medium(small):
-         
         # We have two numbers, but need the third.
         return (number ** 2 - 2 * number * small) / (2 * (number - small))
 
     two_sides = (
-                  (int(medium), small) for 
-                  small in range(3, number // 3) if
-                  
-                  #Calls calculate_medium and assigns return value to variable medium 
-                  small < (medium := calculate_medium(small)) and 
-                  medium.is_integer()
-                  )
+        (int(medium), small) for small in range(3, number // 3) if
+
+        #Calls calculate_medium and assigns return value to variable medium 
+        small < (medium := calculate_medium(small)) and medium.is_integer()
+    )
 
     return [
-            [small, medium, (medium ** 2 + small ** 2) ** 0.5]
-            for medium, small in two_sides
-            ]
+        [small, medium, (medium ** 2 + small ** 2) ** 0.5]
+        for medium, small in two_sides
+    ]
 ```
 
 
