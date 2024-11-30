@@ -13,7 +13,7 @@
 In order for _custom objects_ to support `len()`, the special method [`__len__`][__len__] needs to be defined.
 - Iteration in Python is supported for most sequence, container, or collection type objects.
 In order for a _custom_ object to support looping or re-ordering, the special method `__iter__` needs to be defined.
-[Implementing an iterator for a class.][implementing iterators] can help show you how.
+[Implementing an iterator for a class][implementing iterators] can help show you how.
 
 [Baeldung: The Stack Data Structure]: https://www.baeldung.com/cs/stack-data-structure
 [Koder Dojo Coding an ADS Stack in Python]: https://www.koderdojo.com/blog/coding-a-stack-abstract-data-structure-using-linked-list-in-python

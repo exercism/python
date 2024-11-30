@@ -46,7 +46,7 @@ For details on implementing special or "dunder" methods in Python, see [Python D
 ## Building an Iterator
 
 To support looping through or reversing your `LinkedList`, you will need to implement the `__iter__` special method.
-See [implementing an iterator for a class.][custom iterators] for implementation details.
+See [implementing an iterator for a class][custom iterators] for implementation details.
 
 <br>
 
@@ -56,7 +56,7 @@ Sometimes it is necessary to both [customize][customize errors] and [`raise`][ra
 When you do this, you should always include a **meaningful error message** to indicate what the source of the error is.
 This makes your code more readable and helps significantly with debugging.
 
-Custom exceptions can be created through new exception classes (see [`classes`][classes tutorial] for more detail.) that are typically subclasses of [`Exception`][exception base class].
+Custom exceptions can be created through new exception classes (see [`classes`][classes tutorial] for more detail) that are typically subclasses of [`Exception`][exception base class].
 
 For situations where you know the error source will be a derivative of a certain exception _type_, you can choose to inherit from one of the [`built in error types`][built-in errors] under the _Exception_ class.
 When raising the error, you should still include a meaningful message.
