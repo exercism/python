@@ -22,7 +22,7 @@ However, this approach is **not** interpreting Booleans as integers and is inste
 3.  Duplicate keys _overwrite_ existing keys.
     If the first key is `True` and the third key is `True`, the _value_ from the third key will overwrite the value from the first key.
 
-Finally, the `return` line uses [`dict.get()`][dict-get] to `return` a default value of 0 when a toss is outside the existing circle radii.
+Finally, the `return` line uses [`dict.get()`][dict-get] to `return` a default value of 0 when a throw is outside the existing circle radii.
 To see this in action, you can view this code on [Python Tutor][dict-get-python-tutor].
 
 

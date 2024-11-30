@@ -6,9 +6,9 @@ from math import hypot, ceil
 
 
 def score(x, y):
-    toss = ceil(hypot(x, y))
+    throw = ceil(hypot(x, y))
     
-    match toss:
+    match throw:
         case 0 | 1: return 10
         case 2 | 3 | 4 | 5: return 5
         case 6 | 7 | 8 | 9 | 10: return 1
@@ -27,7 +27,7 @@ def score(x, y):
 This approach uses `Python 3.10`'s [`structural pattern matching`][structural-pattern-matching] with `return` values on the same line as `case`.
 Because the match is numeric, each case explicitly lists allowed values using the `|` (OR) operator.
 A fallthrough case (`_`) is used if the dart throw is greater than 10  (_the outer circle radius of the target_).
-This is equivalent to using `if-statements` to check toss values although some might argue it is clearer to read.
+This is equivalent to using `if-statements` to check throw values although some might argue it is clearer to read.
 An `if-statement` equivalent would be:
 
 ```python
@@ -35,11 +35,11 @@ from math import hypot, ceil
 
 
 def score(x, y):
-    toss =  ceil(hypot(x, y))
+    throw =  ceil(hypot(x, y))
     
-    if toss in (0, 1): return 10
-    if toss in (2, 3, 4, 5): return 5
-    if toss in (6, 7, 8, 9, 10): return 1
+    if throw in (0, 1): return 10
+    if throw in (2, 3, 4, 5): return 5
+    if throw in (6, 7, 8, 9, 10): return 1
     
     return 0
 ```
@@ -52,17 +52,17 @@ from math import hypot, ceil
 
 
 def score(x, y):
-    toss = ceil(hypot(x, y))
+    throw = ceil(hypot(x, y))
     
-    match toss:
-        case toss if toss <= 1: return 10
-        case toss if toss <= 5: return 5
-        case toss if toss <= 10: return 1
+    match throw:
+        case throw if throw <= 1: return 10
+        case throw if throw <= 5: return 5
+        case throw if throw <= 10: return 1
         case _: return 0
 ```
 
 
-Finally, one can use an [assignment expression][assignment-expression] or [walrus operator][walrus] to calculate the toss value rather than calculating and assigning a variable on a separate line.
+Finally, one can use an [assignment expression][assignment-expression] or [walrus operator][walrus] to calculate the throw value rather than calculating and assigning a variable on a separate line.
 This isn't necessary (_the first variations shows this clearly_) and might be harder to reason about/understand for some programmers:
 
 
@@ -70,10 +70,10 @@ This isn't necessary (_the first variations shows this clearly_) and might be ha
 from math import hypot, ceil
 
 def score(x, y):
-    match toss := ceil(hypot(x, y)):
-        case toss if toss <= 1: return 10
-        case toss if toss <=5: return 5
-        case toss if toss <=10: return 1
+    match throw := ceil(hypot(x, y)):
+        case throw if throw <= 1: return 10
+        case throw if throw <=5: return 5
+        case throw if throw <=10: return 1
         case _: return 0
 ```
 

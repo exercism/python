@@ -2,25 +2,25 @@
 
 ```python
 def score(x_coord, y_coord):
-    toss = x_coord**2 + y_coord**2
+    throw = x_coord**2 + y_coord**2
     rules = (1, 10), (25, 5), (100, 1), (200, 0)
     
     for distance, points in rules:
-        if toss <= distance:
+        if throw <= distance:
             return points
 ```
 
 This approach uses a loop to iterate through the _rules_ `tuple`, unpacking each (`distance`, `points`) pair (_For a little more on unpacking, see [Tuple Unpacking Improves Python Code Readability][tuple-unpacking]_).
-If the calculated distance of the toss is less than or equal to a given distance, the score for that region is returned.
+If the calculated distance of the throw is less than or equal to a given distance, the score for that region is returned.
 A `list` of `lists`, a `list` of `tuples`, or a dictionary could be used here to the same effect:
 
 ```python
 def score(x_coord, y_coord):
-    toss = x_coord**2 + y_coord**2
+    throw = x_coord**2 + y_coord**2
     rules = [[1, 10], [25, 5], [100, 1]]
     
     for distance, points in rules:
-        if toss <= distance:
+        if throw <= distance:
             return points
     
     return 0
@@ -28,21 +28,21 @@ def score(x_coord, y_coord):
 #OR#
 
 def score(x_coord, y_coord):
-    toss = x_coord**2 + y_coord**2
+    throw = x_coord**2 + y_coord**2
     rules = [(1, 10), (25, 5), (100, 1), (200, 0)]
     
     for distance, points in rules:
-        if toss <= distance:
+        if throw <= distance:
             return points
 
 #OR#
 
 def score(x_coord, y_coord):
-    toss = x_coord**2 + y_coord**2
+    throw = x_coord**2 + y_coord**2
     rules = {1: 10, 25: 5, 100: 1}
     
     for distance, points in rules.items():
-        if toss <= distance:
+        if throw <= distance:
             return points
     
     return 0

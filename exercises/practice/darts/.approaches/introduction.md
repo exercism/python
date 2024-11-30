@@ -15,8 +15,8 @@ Among them are:
 
 ## General guidance
 
-The goal of the Darts exercise is to score a single toss in a Darts game.
-The scoring areas are _concentric circles_, so boundary values need to be checked in order to properly score a toss.
+The goal of the Darts exercise is to score a single throw in a Darts game.
+The scoring areas are _concentric circles_, so boundary values need to be checked in order to properly score a throw.
 The key is to determine how far from the center the dart lands (_by calculating sqrt(x**2 + y**2), or a variation_) and then determine what scoring ring it falls into.
 
 
@@ -53,11 +53,11 @@ For more details, see the [if statements][approach-if-statements] approach.
 
 ```python
 def score(x_coord, y_coord):
-    toss = x_coord**2 + y_coord**2
+    throw = x_coord**2 + y_coord**2
     rules = (1, 10), (25, 5), (100, 1), (200, 0)
     
     for distance, points in rules:
-        if toss <= distance:
+        if throw <= distance:
             return points
 ```
 
@@ -70,11 +70,11 @@ For more details, see the [tuple and loop][approach-tuple-and-loop] approach.
 
 ```python
 def score(x_coord, y_coord):
-    toss = x_coord**2 + y_coord**2
+    throw = x_coord**2 + y_coord**2
     rules = {1: 10, 25: 5, 100: 1, 200: 0}
     
     return max(point for distance, point in 
-               rules.items() if toss <= distance)
+               rules.items() if throw <= distance)
 ```
 
 This approach is very similar to the  [tuple and loop][approach-tuple-and-loop] approach, but iterates over [`dict.items()`][dict-items].
