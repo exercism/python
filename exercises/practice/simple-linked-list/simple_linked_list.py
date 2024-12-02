@@ -1,3 +1,7 @@
+class EmptyListException(Exception):
+    pass
+
+
 class Node:
     def __init__(self, value):
         pass
@@ -10,7 +14,10 @@ class Node:
 
 
 class LinkedList:
-    def __init__(self, values=[]):
+    def __init__(self, values=None):
+        pass
+
+    def __iter__(self):
         pass
 
     def __len__(self):
@@ -27,7 +34,3 @@ class LinkedList:
 
     def reversed(self):
         pass
-
-
-class EmptyListException(Exception):
-    pass
