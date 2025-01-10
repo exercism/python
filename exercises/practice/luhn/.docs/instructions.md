@@ -1,12 +1,10 @@
 # Instructions
 
-Given a number determine whether or not it is valid per the Luhn formula.
+Determine whether a credit card number is valid according to the [Luhn formula][luhn].
 
-The [Luhn algorithm][luhn] is a simple checksum formula used to validate a variety of identification numbers, such as credit card numbers and Canadian Social Insurance Numbers.
+The number will be provided as a string.
 
-The task is to check if a given string is valid.
-
-## Validating a Number
+## Validating a number
 
 Strings of length 1 or less are not valid.
 Spaces are allowed in the input, but they should be stripped before checking.

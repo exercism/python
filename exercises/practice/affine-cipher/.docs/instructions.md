@@ -4,7 +4,7 @@ Create an implementation of the affine cipher, an ancient encryption system crea
 
 The affine cipher is a type of monoalphabetic substitution cipher.
 Each character is mapped to its numeric equivalent, encrypted with a mathematical function and then converted to the letter relating to its new numeric value.
-Although all monoalphabetic ciphers are weak, the affine cipher is much stronger than the atbash cipher, because it has many more keys.
+Although all monoalphabetic ciphers are weak, the affine cipher is much stronger than the Atbash cipher, because it has many more keys.
 
 [//]: # " monoalphabetic as spelled by Merriam-Webster, compare to polyalphabetic "
 
