@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/bob/canonical-data.json
-# File last updated on 2023-07-20
+# File last updated on 2025-01-10
 
 import unittest
 
@@ -79,12 +79,6 @@ class BobTest(unittest.TestCase):
     def test_alternate_silence(self):
         self.assertEqual(response("\t\t\t\t\t\t\t\t\t\t"), "Fine. Be that way!")
 
-    def test_multiple_line_question(self):
-        self.assertEqual(
-            response("\nDoes this cryogenic chamber make me look fat?\nNo."),
-            "Whatever.",
-        )
-
     def test_starting_with_whitespace(self):
         self.assertEqual(response("         hmmmmmmm..."), "Whatever.")
 
@@ -99,4 +93,9 @@ class BobTest(unittest.TestCase):
     def test_non_question_ending_with_whitespace(self):
         self.assertEqual(
             response("This is a statement ending with whitespace      "), "Whatever."
+        )
+
+    def test_multiple_line_question(self):
+        self.assertEqual(
+            response("\nDoes this cryogenic chamber make\n me look fat?"), "Sure."
         )
