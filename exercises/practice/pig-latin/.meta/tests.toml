@@ -1,69 +1,79 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [11567f84-e8c6-4918-aedb-435f0b73db57]
-description = "word beginning with a"
+description = "ay is added to words that start with vowels -> word beginning with a"
 
 [f623f581-bc59-4f45-9032-90c3ca9d2d90]
-description = "word beginning with e"
+description = "ay is added to words that start with vowels -> word beginning with e"
 
 [7dcb08b3-23a6-4e8a-b9aa-d4e859450d58]
-description = "word beginning with i"
+description = "ay is added to words that start with vowels -> word beginning with i"
 
 [0e5c3bff-266d-41c8-909f-364e4d16e09c]
-description = "word beginning with o"
+description = "ay is added to words that start with vowels -> word beginning with o"
 
 [614ba363-ca3c-4e96-ab09-c7320799723c]
-description = "word beginning with u"
+description = "ay is added to words that start with vowels -> word beginning with u"
 
 [bf2538c6-69eb-4fa7-a494-5a3fec911326]
-description = "word beginning with a vowel and followed by a qu"
+description = "ay is added to words that start with vowels -> word beginning with a vowel and followed by a qu"
 
 [e5be8a01-2d8a-45eb-abb4-3fcc9582a303]
-description = "word beginning with p"
+description = "first letter and ay are moved to the end of words that start with consonants -> word beginning with p"
 
 [d36d1e13-a7ed-464d-a282-8820cb2261ce]
-description = "word beginning with k"
+description = "first letter and ay are moved to the end of words that start with consonants -> word beginning with k"
 
 [d838b56f-0a89-4c90-b326-f16ff4e1dddc]
-description = "word beginning with x"
+description = "first letter and ay are moved to the end of words that start with consonants -> word beginning with x"
 
 [bce94a7a-a94e-4e2b-80f4-b2bb02e40f71]
-description = "word beginning with q without a following u"
+description = "first letter and ay are moved to the end of words that start with consonants -> word beginning with q without a following u"
+
+[e59dbbe8-ccee-4619-a8e9-ce017489bfc0]
+description = "first letter and ay are moved to the end of words that start with consonants -> word beginning with consonant and vowel containing qu"
 
 [c01e049a-e3e2-451c-bf8e-e2abb7e438b8]
-description = "word beginning with ch"
+description = "some letter clusters are treated like a single consonant -> word beginning with ch"
 
 [9ba1669e-c43f-4b93-837a-cfc731fd1425]
-description = "word beginning with qu"
+description = "some letter clusters are treated like a single consonant -> word beginning with qu"
 
 [92e82277-d5e4-43d7-8dd3-3a3b316c41f7]
-description = "word beginning with qu and a preceding consonant"
+description = "some letter clusters are treated like a single consonant -> word beginning with qu and a preceding consonant"
 
 [79ae4248-3499-4d5b-af46-5cb05fa073ac]
-description = "word beginning with th"
+description = "some letter clusters are treated like a single consonant -> word beginning with th"
 
 [e0b3ae65-f508-4de3-8999-19c2f8e243e1]
-description = "word beginning with thr"
+description = "some letter clusters are treated like a single consonant -> word beginning with thr"
 
 [20bc19f9-5a35-4341-9d69-1627d6ee6b43]
-description = "word beginning with sch"
+description = "some letter clusters are treated like a single consonant -> word beginning with sch"
 
 [54b796cb-613d-4509-8c82-8fbf8fc0af9e]
-description = "word beginning with yt"
+description = "some letter clusters are treated like a single vowel -> word beginning with yt"
 
 [8c37c5e1-872e-4630-ba6e-d20a959b67f6]
-description = "word beginning with xr"
+description = "some letter clusters are treated like a single vowel -> word beginning with xr"
 
 [a4a36d33-96f3-422c-a233-d4021460ff00]
-description = "y is treated like a consonant at the beginning of a word"
+description = "position of y in a word determines if it is a consonant or a vowel -> y is treated like a consonant at the beginning of a word"
 
 [adc90017-1a12-4100-b595-e346105042c7]
-description = "y is treated like a vowel at the end of a consonant cluster"
+description = "position of y in a word determines if it is a consonant or a vowel -> y is treated like a vowel at the end of a consonant cluster"
 
 [29b4ca3d-efe5-4a95-9a54-8467f2e5e59a]
-description = "y as second letter in two letter word"
+description = "position of y in a word determines if it is a consonant or a vowel -> y as second letter in two letter word"
 
 [44616581-5ce3-4a81-82d0-40c7ab13d2cf]
-description = "a whole phrase"
+description = "phrases are translated -> a whole phrase"
