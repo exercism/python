@@ -2,12 +2,12 @@
 
 Translate RNA sequences into proteins.
 
-RNA can be broken into three nucleotide sequences called codons, and then translated to a polypeptide like so:
+RNA can be broken into three-nucleotide sequences called codons, and then translated to a protein like so:
 
 RNA: `"AUGUUUUCU"` => translates to
 
 Codons: `"AUG", "UUU", "UCU"`
-=> which become a polypeptide with the following sequence =>
+=> which become a protein with the following sequence =>
 
 Protein: `"Methionine", "Phenylalanine", "Serine"`
 
@@ -27,9 +27,9 @@ Protein: `"Methionine", "Phenylalanine", "Serine"`
 
 Note the stop codon `"UAA"` terminates the translation and the final methionine is not translated into the protein sequence.
 
-Below are the codons and resulting Amino Acids needed for the exercise.
+Below are the codons and resulting amino acids needed for the exercise.
 
-| Codon              | Protein       |
+| Codon              | Amino Acid    |
 | :----------------- | :------------ |
 | AUG                | Methionine    |
 | UUU, UUC           | Phenylalanine |
