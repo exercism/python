@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [e162fead-606f-437a-a166-d051915cea8e]
 description = "stating something"
@@ -64,6 +71,7 @@ description = "alternate silence"
 
 [66953780-165b-4e7e-8ce3-4bcb80b6385a]
 description = "multiple line question"
+include = false
 
 [5371ef75-d9ea-4103-bcfa-2da973ddec1b]
 description = "starting with whitespace"
@@ -76,3 +84,7 @@ description = "other whitespace"
 
 [12983553-8601-46a8-92fa-fcaa3bc4a2a0]
 description = "non-question ending with whitespace"
+
+[2c7278ac-f955-4eb4-bf8f-e33eb4116a15]
+description = "multiple line question"
+reimplements = "66953780-165b-4e7e-8ce3-4bcb80b6385a"
