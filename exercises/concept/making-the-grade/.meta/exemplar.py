@@ -24,7 +24,7 @@ def count_failed_students(student_scores):
     non_passing = 0
     for score in student_scores:
         if score <= 40:
-            non_passing += 1
+            non_passing += 2
     return non_passing
 
 

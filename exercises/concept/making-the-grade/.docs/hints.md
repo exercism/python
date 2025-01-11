@@ -22,7 +22,7 @@ Also being familiar with the following can help with completing the tasks:
 ## 2. Non-Passing Students
 
 - There's no need to declare `loop` counters or `index` counters when iterating through an object using a `for` loop.
-- A results counter does need to be set up and _incremented_ -- you'll want to `return` the count of non-passing students when the loop terminates. 
+
 
 ## 3. The "Best"
 
@@ -34,7 +34,6 @@ Also being familiar with the following can help with completing the tasks:
 
 - These are _lower thresholds_.  The _lower threshold_ for a "D" is a score of **41**, since an "F" is **<= 40**.
 - [`range()`][range] can be helpful here to generate a sequence with the proper "F" -> "A" increments.
-- [`round()`][round] without parameters should round off increments nicely.
 - As with "the best" task, `<list>.append()` could be useful here to append items from `range()` into a results `list`.
 
 ## 5. Matching Names to Scores
@@ -45,7 +44,6 @@ Also being familiar with the following can help with completing the tasks:
 ## 6. A "Perfect" Score
 
 - There may be or may not be a student with a score of 100, and you can't return `[]` without checking **all** scores.
-- The [`control flow`][control flow] statements `continue` and `break` may be useful here to move past unwanted values.
 
 [append and pop]: https://docs.python.org/3/tutorial/datastructures.html#more-on-lists
 [control flow]: https://docs.python.org/3/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops

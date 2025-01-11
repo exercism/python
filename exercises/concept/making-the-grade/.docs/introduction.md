@@ -10,23 +10,6 @@ The keywords `break`, `continue`, and `else` help customize loop behavior.
 
 [`while`][while statement] loops will continue to execute as long as the `loop expression` or "test" evaluates to `True` in a [`boolean context`][truth value testing], terminating when it evaluates to `False`:
 
-```python
-
-# Lists are considered "truthy" in a boolean context if they
-# contain one or more values, and "falsy" if they are empty.
-
->>> placeholders = ["spam", "ham", "eggs", "green_spam", "green_ham", "green_eggs"]
-
->>> while placeholders:
-...     print(placeholders.pop(0))
-...
-'spam'
-'ham'
-'eggs'
-'green_spam'
-'green_ham'
-'green_eggs'
-```
 
 
 ## For
@@ -134,21 +117,6 @@ If both values and their indexes are needed, the built-in [`enumerate(<iterable>
 ## Altering Loop Behavior
 
 The [`continue`][continue statement] keyword can be used to skip forward to the next iteration cycle:
-
-```python
-word_list = ["bird", "chicken", "barrel", "bongo", "sliver", "apple", "bear"]
-
-# This will skip *bird*, at index 0
-for index, word in enumerate(word_list):
-    if index == 0:
-        continue
-    if word.startswith("b"):
-        print(f"{word.title()} (at index {index}) starts with a b.")
-
-'Barrel (at index 2) starts with a b.'
-'Bongo (at index 3) starts with a b.'
-'Bear (at index 6) starts with a b.'
-```
 
 
 The [`break`][break statement] (_like in many C-related languages_) keyword can be used to stop the iteration and "break out" of the innermost enclosing `loop`:
