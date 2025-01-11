@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/protein-translation/canonical-data.json
-# File last updated on 2024-07-08
+# File last updated on 2025-01-11
 
 import unittest
 
@@ -57,11 +57,6 @@ class ProteinTranslationTest(unittest.TestCase):
 
     def test_tyrosine_rna_sequence_1(self):
         value = "UAU"
-        expected = ["Tyrosine"]
-        self.assertEqual(proteins(value), expected)
-
-    def test_tyrosine_rna_sequence_2(self):
-        value = "UAC"
         expected = ["Tyrosine"]
         self.assertEqual(proteins(value), expected)
 

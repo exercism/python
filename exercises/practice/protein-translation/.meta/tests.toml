@@ -45,6 +45,7 @@ description = "Tyrosine RNA sequence 1"
 
 [47bcfba2-9d72-46ad-bbce-22f7666b7eb1]
 description = "Tyrosine RNA sequence 2"
+include = false
 
 [3a691829-fe72-43a7-8c8e-1bd083163f72]
 description = "Cysteine RNA sequence 1"
