@@ -23,6 +23,9 @@
     ],
     "example": [
       ".meta/example.py"
+    ],
+    "invalidator": [
+      "tests.toml"
     ]
   },
   "source": "All of Computer Science",

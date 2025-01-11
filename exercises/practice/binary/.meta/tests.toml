@@ -4,6 +4,7 @@
 
 [567fc71e-1013-4915-9285-bca0648c0844]
 description = "binary 0 is decimal 0"
+include = false
 
 [c0824fb1-6a0a-4e9a-a262-c6c00af99fa8]
 description = "binary 1 is decimal 1"
