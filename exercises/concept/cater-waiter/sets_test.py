@@ -112,7 +112,7 @@ class SetsTest(unittest.TestCase):
 
         for variant, (item, result) in enumerate(test_data, start=1):
             with self.subTest(f"variation #{variant}", inputs="overlapping ingredients",
-                              results="ingredients in only one dish"):
+                              results="ingredients in only the dish"):
 
                 error_message = ("Expected only ingredients that belong to exactly "
                                 "one dish, but got multi-dish ingredients instead.")

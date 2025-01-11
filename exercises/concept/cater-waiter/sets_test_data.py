@@ -209,7 +209,7 @@ drink_names = ['Amaretto Sour Cocktail','Aperol Spritz Cocktail','Bannana Punch 
 # Data for test_categorize_dish #
 #################################
 
-all_dishes = recipes_without_duplicates
+all_dishes = recipes_without_duplicate
 
 dishes_categorized  =  ['Zucchini Fritters with Lemon-Thyme Coconut Yogurt: PALEO',
                         'Winter Cobb Salad: VEGETARIAN',

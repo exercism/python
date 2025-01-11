@@ -1,30 +1,6 @@
 # pylint: disable-all
 # flake8: noqa,
-VEGAN = {
-         'chives', 'nutritional yeast', 'tomato', 'orange zest', 'pareve puff pastry', 'cashews', 'tofu',
-         'rice vinegar', 'black pepper', 'cardamom powder', 'mustard seeds', 'parev shortcrust pastry',
-         'scallions', 'water', 'chinese eggplants', 'lemon juice', 'smoked paprika', 'cloves', 'basmati rice',
-         'cayenne pepper', 'green onions', 'sunflower oil', 'mixed herbs', 'garlic paste', 'parsley',
-         'fresh red chili', 'flour', 'garlic', 'oregano', 'green beans', 'harissa', 'brandy', 'fresh basil',
-         'coriander',  'vinegar', 'thyme', 'coriander seeds', 'clove powder', 'pomegranate seeds',
-         'sugar', 'yukon gold potato', 'sesame oil', 'cinnamon powder', 'butternut squash', 'allspice powder',
-         'red pepper flakes', 'soy sauce', 'sesame seeds', 'cornstarch', 'mango powder', 'vegetable stock',
-         'raisins', 'barley malt', 'olive oil', 'ground almonds', 'white rice', 'garlic powder', 'walnuts',
-         'saffron powder', 'red chili powder', 'turmeric powder', 'spring onions', 'yeast', 'khmeli suneli',
-         'peanuts', 'bulgur', 'cilantro', 'onion', 'calabash nutmeg', 'black-eyed peas', 'grains of selim',
-         'zucchini', 'currants', 'spaghetti', 'figs', 'red bell pepper', 'lemon zest', 'ground turmeric',
-         'chili flakes', 'chickpea flour', 'hing', 'slivered almonds', 'vegetable oil', 'serrano chili',
-         'salt', 'yellow onions', 'salt', 'coriander powder', 'orange zest', 'garam masala', 'yellow onion',
-         'smoked tofu', 'bell pepper', 'apples', 'brown sugar', 'coconut oil', 'orange juice',
-         'sorghum stems', 'dried blueberries', 'tomato paste', 'curry leaves', 'vegetarian worcestershire sauce',
-         'hot water', 'fresh ginger', 'firm tofu', 'eggplants', 'bell pepper', 'siracha', 'carrot', 'nigella seeds',
-         'vegan butter', "za'atar", 'baking soda', 'brown sugar', 'dried cranberries', 'kosher salt', 'mangoes',
-         'vegan unsweetened yoghurt', 'black peppercorn', 'vinegar', 'dill', 'barberries', 'honey', 'tomatoes',
-         'yellow split peas', 'persian cucumber', 'turmeric', 'lemon', 'cumin', 'oil', 'mushrooms', 'spring onion',
-         'pomegranate concentrate', 'cumin seeds', 'balsamic vinegar', 'ripe plantains', 'celeriac', 'breadcrumbs',
-         'ginger', 'dried cherries', 'red onion', 'rosemary', 'chopped parsley', 'corn', 'cumin powder', 'pecans',
-         'silken tofu', 'pomegranate molasses', 'carrot', 'corn flour', 'mashed potatoes'
-        }
+
 
 
 VEGETARIAN = {
