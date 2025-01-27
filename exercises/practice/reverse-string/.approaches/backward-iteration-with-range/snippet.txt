@@ -1,0 +1,5 @@
+def reverse(text):
+    new_word = ""
+    for index in range(len(text) - 1, -1, -1):
+        new_word += text[index]
+    return new_word
