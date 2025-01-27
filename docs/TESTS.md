@@ -256,7 +256,7 @@ Commands may vary by Linux distro, and whether a `fish` or `zsh` shell is used.
 Replace `<python_directory>` with the output of `python3 -c "import os, sys; print(os.path.dirname(sys.executable))"`
 
 ```bash
-export PATH=”$PATH:<python_directory>”
+export PATH="$PATH:<python_directory>"
 ```
 
 [Code Quality: Tools and Best Practices]: https://realpython.com/python-code-quality/
