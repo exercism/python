@@ -64,13 +64,13 @@ In Black Joe, speed is important. Elyse is going to try and find a faster way of
 She has thought of two ways of getting an _average-like_ number:
 
 - Take the average of the _first_ and _last_ number in the hand.
-- Using the median (middle card) of the hand.
+- Using the middle card in the hand.
   
 Implement the function `approx_average_is_average(<hand>)`, given `hand`, a list containing the values of the cards in your hand.
 
 Return `True` if either _one_ `or` _both_ of the, above named, strategies result in a number _equal_ to the _actual average_.
 
-Note: _The length of all hands are odd, to make finding a median easier._
+Note: _The length of all hands are odd, to make finding the middle easier._
 
 ```python
 >>> approx_average_is_average([1, 2, 3])
