@@ -50,6 +50,7 @@ The dictionary section of the [official tutorial][dicts-docs] and the mapping ty
 [dicts-docs]: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
 [fromkeys]: https://docs.python.org/3/library/stdtypes.html#dict.fromkeys
 [items]: https://docs.python.org/3/library/stdtypes.html#dict.items
+[keys]: https://docs.python.org/3/library/stdtypes.html#dict.keys
 [mapping-types-dict]: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 [mvp]: https://en.wikipedia.org/wiki/Minimum_viable_product
 [set-default]: https://docs.python.org/3/library/stdtypes.html#dict.setdefault
