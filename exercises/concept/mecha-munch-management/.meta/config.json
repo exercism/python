@@ -14,6 +14,9 @@
     ],
     "exemplar": [
       ".meta/exemplar.py"
+    ],
+    "editor": [
+      "dict_methods_test_data.py"
     ]
   },
   "icon": "gross-store",
