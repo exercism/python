@@ -8,22 +8,29 @@
 &nbsp;&nbsp;[![Exercism_III](https://img.shields.io/badge/PAUSED-C73D4E?labelColor=3D454D&label=Contributions)](https://exercism.org/blog/freeing-our-maintainers)
 &nbsp; [![Build Status](https://github.com/exercism/python/workflows/Exercises%20check/badge.svg)](https://github.com/exercism/python/actions?query=workflow%3A%22Exercises+check%22)
 
-<br>
+---
+---
 
-Hi. &nbsp;👋🏽 &nbsp;👋 &nbsp;**We are happy you are here.**&nbsp; 🎉&nbsp;🌟
+### We are not accepting community contributions at this time.
 
 <table>
  <tr>
-<br>
 <img align="left" width="90" height="85" src="https://github.com/exercism/website-icons/blob/main/exercises/health-statistics.svg">
 
-We&nbsp;💛&nbsp;💙 &nbsp; our community.  
-**`But our maintainers are not accepting community contributions at this time.`**  
-Please read this [community blog post](https://exercism.org/blog/freeing-our-maintainers) for details.
+We're grateful for your interested in helping improve the Python track. but our maintainers are **not accepting community contributions at this time.** 
+If you would like to discuss possible future changes, please open a [thread on the forum](https://forum.exercism.org/).
+
+This [community blog post](https://exercism.org/blog/freeing-our-maintainers) contains more details.
 
 </tr>
 </table>
+
+---
+---
+
 <br>
+
+Hi. &nbsp;👋🏽 &nbsp;👋 &nbsp;**We are happy you are here.**&nbsp; 🎉&nbsp;🌟
 
 **`exercism/Python`** is one of many programming language tracks on [exercism(dot)org][exercism-website].  
 This repo holds all the instructions, tests, code, & support files for Python _exercises_ currently under development or implemented & available for students.
