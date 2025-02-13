@@ -2,52 +2,78 @@ import timeit
 
 loops = 1_000_000
 
-val = timeit.timeit("""is_isogram("Emily Jung-Schwartzkopf")""",
-                    """
+val = (
+    timeit.timeit(
+        """is_isogram("Emily Jung-Schwartzkopf")""",
+        """
 def is_isogram(phrase):
     scrubbed = [ltr.lower() for ltr in phrase if ltr.isalpha()]
     return len(set(scrubbed)) == len(scrubbed)
 
-""", number=loops) / loops
+""",
+        number=loops,
+    )
+    / loops
+)
 
 print(f"scrubbed comprehension: {val}")
 
-val = timeit.timeit("""is_isogram("Emily Jung-Schwartzkopf")""",
-                    """
+val = (
+    timeit.timeit(
+        """is_isogram("Emily Jung-Schwartzkopf")""",
+        """
 def is_isogram(phrase):
     scrubbed = phrase.replace('-', '').replace(' ', '').lower()
     return len(scrubbed) == len(set(scrubbed))
 
-""", number=loops) / loops
+""",
+        number=loops,
+    )
+    / loops
+)
 
 print(f"scrubbed replace:       {val}")
 
-val = timeit.timeit("""is_isogram("Emily Jung-Schwartzkopf")""",
-                    """
+val = (
+    timeit.timeit(
+        """is_isogram("Emily Jung-Schwartzkopf")""",
+        """
 import re
 
 def is_isogram(phrase):
     scrubbed = re.compile('[^a-zA-Z]').sub('', phrase).lower()
     return len(set(scrubbed)) == len(scrubbed)
 
-""", number=loops) / loops
+""",
+        number=loops,
+    )
+    / loops
+)
 
 print(f"scrubbed regex:         {val}")
 
-val = timeit.timeit("""is_isogram("Emily Jung-Schwartzkopf")""",
-                    """
+val = (
+    timeit.timeit(
+        """is_isogram("Emily Jung-Schwartzkopf")""",
+        """
 import re
 
 def is_isogram(phrase):
     scrubbed = "".join(re.findall("[a-zA-Z]", phrase)).lower()
     return len(set(scrubbed)) == len(scrubbed)
 
-""", number=loops) / loops
+""",
+        number=loops,
+    )
+    / loops
+)
 
 print(f"findall regex:          {val}")
 
-val = timeit.timeit("""is_isogram("Emily Jung-Schwartzkopf")""",
-                    """
+val = (
+    timeit.timeit(
+        """is_isogram("Emily Jung-Schwartzkopf")""",
+        """
 A_LCASE = 97
 Z_LCASE = 122
 A_UCASE = 65
@@ -71,6 +97,10 @@ def is_isogram(phrase):
                 letter_flags |= 1 << (letter - A_UCASE)
     return True
 
-""", number=loops) / loops
+""",
+        number=loops,
+    )
+    / loops
+)
 
 print(f"bitfield:               {val}")

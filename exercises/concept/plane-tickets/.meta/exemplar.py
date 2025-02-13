@@ -2,7 +2,7 @@
 
 import math
 
-SEATS_IN_ROW = ['A', 'B', 'C', 'D']
+SEATS_IN_ROW = ["A", "B", "C", "D"]
 
 
 def generate_seat_letters(number):
@@ -42,9 +42,9 @@ def generate_seats(number):
     number = number + 4 if number >= 13 else number
     letters = generate_seat_letters(number)
     for seat in range(number):
-        row_number = math.ceil((seat+1) / 4)
+        row_number = math.ceil((seat + 1) / 4)
         if row_number != 13:
-            yield f'{str(row_number)}{next(letters)}'
+            yield f"{str(row_number)}{next(letters)}"
 
     # return (f'{str(row_number)}{next(letters)}' for seat in range(number)
     #         if (row_number := math.ceil((seat+1) / 4)) and row_number != 13)
@@ -66,6 +66,7 @@ def assign_seats(passengers):
         output[passenger] = seat_number
     return output
 
+
 def generate_codes(seat_numbers, flight_id):
     """Generate codes for a ticket.
 
@@ -76,5 +77,5 @@ def generate_codes(seat_numbers, flight_id):
     """
 
     for seat in seat_numbers:
-        base_string = f'{seat}{flight_id}'
-        yield base_string + '0' * (12 - len(base_string))
+        base_string = f"{seat}{flight_id}"
+        yield base_string + "0" * (12 - len(base_string))

@@ -1,5 +1,5 @@
 def is_paired(input_string):
-    counterparts = {')': '(', '}': '{', ']': '['}
+    counterparts = {")": "(", "}": "{", "]": "["}
 
     stack = []
     for char in input_string:

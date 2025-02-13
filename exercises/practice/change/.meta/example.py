@@ -20,6 +20,6 @@ def find_fewest_coins(coins, target):
         last_coin_value = target
         array = []
         while last_coin[last_coin_value] != -1:
-            array.append(last_coin_value-last_coin[last_coin_value])
+            array.append(last_coin_value - last_coin[last_coin_value])
             last_coin_value = last_coin[last_coin_value]
         return array

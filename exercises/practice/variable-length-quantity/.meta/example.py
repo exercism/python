@@ -1,5 +1,5 @@
 EIGHT_BIT_MASK = 0x80
-SEVEN_BIT_MASK = 0x7f
+SEVEN_BIT_MASK = 0x7F
 
 
 def encode_single(number):
@@ -23,12 +23,12 @@ def decode(byte_string):
 
     for idx, byte in enumerate(byte_string):
         number <<= 7
-        number += (byte & SEVEN_BIT_MASK)
+        number += byte & SEVEN_BIT_MASK
 
         if byte & EIGHT_BIT_MASK == 0:
             values.append(number)
             number = 0
         elif idx == len(byte_string) - 1:
-            raise ValueError('incomplete sequence')
+            raise ValueError("incomplete sequence")
 
     return values

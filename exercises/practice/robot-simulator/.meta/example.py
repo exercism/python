@@ -37,9 +37,7 @@ class Robot:
         self.compass.right()
 
     def move(self, commands):
-        instructions = {'A': self.advance,
-                        'R': self.turn_right,
-                        'L': self.turn_left}
+        instructions = {"A": self.advance, "R": self.turn_right, "L": self.turn_left}
         for cmd in commands:
             if cmd in instructions:
                 instructions[cmd]()

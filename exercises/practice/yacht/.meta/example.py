@@ -62,4 +62,4 @@ def score(dice, category):
     try:
         return functions[category](dice)
     except IndexError as error:
-        raise ValueError('No such category.') from error
+        raise ValueError("No such category.") from error

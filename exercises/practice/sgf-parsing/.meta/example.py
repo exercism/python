@@ -1,4 +1,5 @@
 """Parse an SGF tree."""
+
 from __future__ import annotations
 
 import collections
@@ -27,7 +28,7 @@ def parse_property_vals(sgf: str, idx: int) -> tuple[int, list[str]]:
         while sgf[idx] != "]":
             # \ has special SGF handling.
             if sgf[idx] == "\\":
-                if sgf[idx:idx + 2] == "\\\n":
+                if sgf[idx : idx + 2] == "\\\n":
                     # Newlines are removed if they come immediately after a \,
                     # otherwise they remain as newlines.
                     pass
@@ -70,7 +71,7 @@ def parse_node(sgf: str) -> SgfTree:
                 raise ValueError("propery key is empty")
             prop_key = sgf[prop_key_start:idx]
             if not prop_key.isupper():
-                raise ValueError('property must be in uppercase')
+                raise ValueError("property must be in uppercase")
 
             idx, prop_vals = parse_property_vals(sgf, idx)
             properties[prop_key].extend(prop_vals)
@@ -101,15 +102,15 @@ def parse_node(sgf: str) -> SgfTree:
             idx += 1
 
     if idx > prop_key_start and not properties:
-        raise ValueError('properties without delimiter')
+        raise ValueError("properties without delimiter")
     return SgfTree(children=children, properties=dict(properties))
 
 
 def parse(sgf: str) -> SgfTree:
     """Parse an SGF tree."""
     if not sgf.startswith("(") and not sgf.endswith(")"):
-        raise ValueError('tree missing')
+        raise ValueError("tree missing")
     if not sgf.startswith("(;"):
-        raise ValueError('tree with no nodes')
+        raise ValueError("tree with no nodes")
     inside = sgf[1:-1]
     return parse_node(inside)

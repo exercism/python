@@ -8,7 +8,7 @@ class Corners:
         self.jdx = jdx
 
     def __str__(self):
-        return '[' + str(self.idx) + ', ' + str(self.jdx) + ']'
+        return "[" + str(self.idx) + ", " + str(self.jdx) + "]"
 
 
 # return corner on the same line
@@ -29,9 +29,12 @@ def same_col(index, list_obj):
 
 def search_corners(list_obj):
 
-    return [Corners(item, element) for item in range(len(list_obj))
-            for element in range(len(list_obj[item]))
-            if list_obj[item][element] == '+']
+    return [
+        Corners(item, element)
+        for item in range(len(list_obj))
+        for element in range(len(list_obj[item]))
+        if list_obj[item][element] == "+"
+    ]
 
 
 # validate that 4 points form a rectangle by
@@ -58,16 +61,18 @@ def possible_rect(quartet):
 # validate path between two corners
 def path(corner1, corner2, item):
     if corner1.idx == corner2.idx:
-        for jdx in range(min(corner1.jdx + 1, corner2.jdx + 1),
-                       max(corner1.jdx, corner2.jdx)):
-            if item[corner1.idx][jdx] != '-' and item[corner1.idx][jdx] != '+':
+        for jdx in range(
+            min(corner1.jdx + 1, corner2.jdx + 1), max(corner1.jdx, corner2.jdx)
+        ):
+            if item[corner1.idx][jdx] != "-" and item[corner1.idx][jdx] != "+":
                 return False
         return True
 
     elif corner1.jdx == corner2.jdx:
-        for idx in range(min(corner1.idx + 1, corner2.idx + 1),
-                       max(corner1.idx, corner2.idx)):
-            if item[idx][corner1.jdx] != '|' and item[idx][corner1.jdx] != '+':
+        for idx in range(
+            min(corner1.idx + 1, corner2.idx + 1), max(corner1.idx, corner2.idx)
+        ):
+            if item[idx][corner1.jdx] != "|" and item[idx][corner1.jdx] != "+":
                 return False
         return True
     return None
@@ -78,17 +83,19 @@ def validate_rect(rectangle, item):
     # validate connection at every corner
     # with neighbours on the same line and col
     for idx, _ in enumerate(rectangle):
-        line = same_line(rectangle[idx].idx, rectangle[0:idx] + rectangle[idx + 1:])
-        column = same_col(rectangle[idx].jdx, rectangle[0:idx] + rectangle[idx + 1:])
+        line = same_line(rectangle[idx].idx, rectangle[0:idx] + rectangle[idx + 1 :])
+        column = same_col(rectangle[idx].jdx, rectangle[0:idx] + rectangle[idx + 1 :])
 
-        if not path(rectangle[idx], line, item) or not path(rectangle[idx], column, item):
+        if not path(rectangle[idx], line, item) or not path(
+            rectangle[idx], column, item
+        ):
             return False
 
     return True
 
 
 # count number of rectangles inside ASCII in input lines
-def rectangles(strings=''):
+def rectangles(strings=""):
     rectangle_total = 0
     # test empty str
     if not strings:

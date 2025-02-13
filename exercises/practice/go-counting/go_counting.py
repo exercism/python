@@ -1,4 +1,3 @@
-
 class Board:
     """Count territories of each player in a Go game
 

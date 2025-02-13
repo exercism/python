@@ -12,7 +12,7 @@ def invert_result(result):
 
 
 def parse_game(game_line):
-    game = game_line.split(';')
+    game = game_line.split(";")
     if len(game) == 3 and game[2] in RESULTS:
         result = RESULTS[game[2]]
         return (game[0], result), (game[1], invert_result(result))
@@ -24,13 +24,13 @@ def calculate_points(stats):
 
 
 def format_table(results):
-    table = ['Team                           | MP |  W |  D |  L |  P']
+    table = ["Team                           | MP |  W |  D |  L |  P"]
 
     for team, games in sorted(
-            results.items(), key=lambda group: (-calculate_points(group[1]), group[0])):
-        team_fmt = '{0:30} | {1:2} | {3:2} | {4:2} | {5:2} | {2:2}'
-        table.append(
-            team_fmt.format(team, sum(games), calculate_points(games), *games))
+        results.items(), key=lambda group: (-calculate_points(group[1]), group[0])
+    ):
+        team_fmt = "{0:30} | {1:2} | {3:2} | {4:2} | {5:2} | {2:2}"
+        table.append(team_fmt.format(team, sum(games), calculate_points(games), *games))
     return table
 
 

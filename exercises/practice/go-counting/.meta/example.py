@@ -1,7 +1,6 @@
-
-BLACK = 'B'
-WHITE = 'W'
-NONE = ''
+BLACK = "B"
+WHITE = "W"
+NONE = ""
 STONES = [BLACK, WHITE]
 DIRECTIONS = [(0, 1), (0, -1), (1, 0), (-1, 0)]
 
@@ -15,7 +14,14 @@ class Board:
     def valid(self, width, height):
         return self.width > width >= 0 and self.height > height >= 0
 
-    def walk(self, width, height, visited_territory=None, visited_coords=None, visited_stones=None):
+    def walk(
+        self,
+        width,
+        height,
+        visited_territory=None,
+        visited_coords=None,
+        visited_stones=None,
+    ):
         # Pylint gives W0102 warning if list used as default argument, because list is mutable.
         visited_territory = [] if visited_territory is None else visited_territory
         visited_coords = [] if visited_coords is None else visited_coords
@@ -28,10 +34,13 @@ class Board:
                     return (visited_territory, visited_stones + [stone])
             else:  # s is empty
                 for direction in DIRECTIONS:
-                    visited = self.walk(width + direction[0], height + direction[1],
-                                        visited_territory + [(width, height)],
-                                        visited_coords + [(width, height)],
-                                        visited_stones)
+                    visited = self.walk(
+                        width + direction[0],
+                        height + direction[1],
+                        visited_territory + [(width, height)],
+                        visited_coords + [(width, height)],
+                        visited_stones,
+                    )
                     visited_territory = visited[0]
                     visited_stones = visited[1]
 
@@ -39,7 +48,7 @@ class Board:
 
     def territory(self, x, y):
         if not self.valid(x, y):
-            raise ValueError('Invalid coordinate')
+            raise ValueError("Invalid coordinate")
         if self.board[y][x] in STONES:
             return (NONE, set())
 
@@ -52,7 +61,7 @@ class Board:
 
     def territories(self):
         owners = STONES + [NONE]
-        result = {owner:set() for owner in owners}
+        result = {owner: set() for owner in owners}
         visited = set()
         for row in range(self.height):
             for column in range(self.width):

@@ -36,8 +36,8 @@ def primitive_triplets(limit):
     for more information
     """
     for member_1, member_2 in euclidian_coprimes(limit):
-        calc_1 = member_1 ** 2
-        calc_2 = member_2 ** 2
+        calc_1 = member_1**2
+        calc_2 = member_2**2
 
         alpha = calc_1 - calc_2
         beta = 2 * member_1 * member_2
@@ -51,7 +51,7 @@ def primitive_triplets(limit):
 
 def triplets_with_sum(number):
     return [
-        triplet for triplet
-        in triplets_in_range(1, number // 2)
+        triplet
+        for triplet in triplets_in_range(1, number // 2)
         if sum(triplet) == number
-        ]
+    ]

@@ -46,9 +46,9 @@ class Alien:
         :return: None
         """
 
-        #There are two valid interpretations for this method/task.
-        #The one below, and `self.health = max(0, self.health - 1)`
-        #The tests for this task reflect this ambiguity.
+        # There are two valid interpretations for this method/task.
+        # The one below, and `self.health = max(0, self.health - 1)`
+        # The tests for this task reflect this ambiguity.
         self.health -= 1
 
     def is_alive(self):
@@ -80,11 +80,12 @@ class Alien:
 
         pass
 
+
 def new_aliens_collection(positions):
     """Create a list of Alien instances from a list of coordinate tuples.
 
-     :param positions: list - List of tuples of (x, y) coordinates.
+    :param positions: list - List of tuples of (x, y) coordinates.
 
-     :return: list - List of Alien objects.
-     """
+    :return: list - List of Alien objects.
+    """
     return [Alien(position[0], position[1]) for position in positions]

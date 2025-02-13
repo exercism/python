@@ -1,13 +1,14 @@
 """Functions for compiling dishes and ingredients for a catering company."""
 
-
-from sets_categories_data import (VEGAN,
-                                  VEGETARIAN,
-                                  KETO,
-                                  PALEO,
-                                  OMNIVORE,
-                                  ALCOHOLS,
-                                  SPECIAL_INGREDIENTS)
+from sets_categories_data import (
+    VEGAN,
+    VEGETARIAN,
+    KETO,
+    PALEO,
+    OMNIVORE,
+    ALCOHOLS,
+    SPECIAL_INGREDIENTS,
+)
 
 
 def clean_ingredients(dish_name, dish_ingredients):
@@ -36,9 +37,9 @@ def check_drinks(drink_name, drink_ingredients):
     """
 
     if not ALCOHOLS.isdisjoint(drink_ingredients):
-        return drink_name + ' Cocktail'
+        return drink_name + " Cocktail"
 
-    return drink_name + ' Mocktail'
+    return drink_name + " Mocktail"
 
 
 def categorize_dish(dish_name, dish_ingredients):
@@ -54,15 +55,17 @@ def categorize_dish(dish_name, dish_ingredients):
 
     """
 
-    categories = ((VEGAN, 'VEGAN'),
-                  (VEGETARIAN, 'VEGETARIAN'),
-                  (KETO, 'KETO'),
-                  (PALEO, 'PALEO'),
-                  (OMNIVORE, 'OMNIVORE'))
+    categories = (
+        (VEGAN, "VEGAN"),
+        (VEGETARIAN, "VEGETARIAN"),
+        (KETO, "KETO"),
+        (PALEO, "PALEO"),
+        (OMNIVORE, "OMNIVORE"),
+    )
 
     for category in categories:
         if set(dish_ingredients) <= category[0]:
-            return dish_name + ': ' + category[1]
+            return dish_name + ": " + category[1]
     return None
 
 

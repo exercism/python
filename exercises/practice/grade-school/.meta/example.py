@@ -19,7 +19,6 @@ class School:
         else:
             self.add.append(False)
 
-
     def roster(self, grade=0):
         grades_roster = defaultdict(list)
 
@@ -29,7 +28,9 @@ class School:
         if grade:
             return sorted(grades_roster[grade])
         else:
-            working_list = (sorted(grades_roster[key]) for key in sorted(grades_roster.keys()))
+            working_list = (
+                sorted(grades_roster[key]) for key in sorted(grades_roster.keys())
+            )
             return [element for item in working_list for element in item]
 
     def grade(self, grade_number):

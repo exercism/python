@@ -6,7 +6,7 @@ from numpy.linalg import lstsq
 # These dataframes are slow to create, so they should be saved in Feather format
 
 try:
-    transposed = pd.read_feather('./transposed_logs.feather')
+    transposed = pd.read_feather("./transposed_logs.feather")
 except FileNotFoundError:
     print("File './transposed_logs.feather' not found!")
     print("Please run './Benchmark.py' to create it.")
@@ -20,6 +20,7 @@ row_headers = ["cubic", "quad_loose", "quad_tight", "linear_loop", "linear_comp"
 # Do a least-squares fit to get the slopes, working around missing values
 # Apparently, it does need to be this complicated
 
+
 def find_slope(name):
     log_times = transposed[name]
     missing = np.isnan(log_times)
@@ -32,7 +33,6 @@ def find_slope(name):
 
 # Print the slope results
 slopes = [(name, find_slope(name)) for name in row_headers]
-print('\nSlopes of log-log plots:')
+print("\nSlopes of log-log plots:")
 for name, slope in slopes:
-    print(f'{name:>14} : {slope:.2f}')
-
+    print(f"{name:>14} : {slope:.2f}")

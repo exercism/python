@@ -57,9 +57,7 @@ class Tree:
             for child in tree.children:
                 stack.append(child.add(tree.remove(child.label)))
 
-        raise ValueError('Tree could not be reoriented')
-
-
+        raise ValueError("Tree could not be reoriented")
 
     def path_to(self, from_node, to_node):
         reordered = self.from_pov(from_node)
@@ -70,7 +68,7 @@ class Tree:
             try:
                 tree = stack.pop()
             except IndexError as error:
-                raise ValueError('No path found') from error
+                raise ValueError("No path found") from error
             if to_node in tree:
                 path.append(tree.label)
                 stack = tree.children

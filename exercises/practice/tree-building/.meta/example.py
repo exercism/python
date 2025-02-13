@@ -15,7 +15,7 @@ class Node:
 
 def validate_record(record):
     if record.equal_id() and record.record_id != 0:
-        raise ValueError('Only root should have equal record and parent id.')
+        raise ValueError("Only root should have equal record and parent id.")
 
     if not record.equal_id() and record.parent_id >= record.record_id:
         raise ValueError("Node parent_id should be smaller than it's record_id.")
@@ -36,7 +36,7 @@ def BuildTree(records):
 
     for index, record_id in enumerate(ordered_id):
         if index != record_id:
-            raise ValueError('Record id is invalid or out of order.')
+            raise ValueError("Record id is invalid or out of order.")
 
         if record_id == root_id:
             root = node_dict[record_id]

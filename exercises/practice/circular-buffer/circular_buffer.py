@@ -4,6 +4,7 @@ class BufferFullException(BufferError):
     message: explanation of the error.
 
     """
+
     def __init__(self, message):
         pass
 
@@ -14,6 +15,7 @@ class BufferEmptyException(BufferError):
     message: explanation of the error.
 
     """
+
     def __init__(self, message):
         pass
 

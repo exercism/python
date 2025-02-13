@@ -36,6 +36,7 @@ def generate_seats(number):
 
     pass
 
+
 def assign_seats(passengers):
     """Assign seats to passengers.
 
@@ -47,6 +48,7 @@ def assign_seats(passengers):
     """
 
     pass
+
 
 def generate_codes(seat_numbers, flight_id):
     """Generate codes for a ticket.

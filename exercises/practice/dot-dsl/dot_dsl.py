@@ -17,9 +17,11 @@ class Edge:
         self.attrs = attrs
 
     def __eq__(self, other):
-        return (self.src == other.src and
-                self.dst == other.dst and
-                self.attrs == other.attrs)
+        return (
+            self.src == other.src
+            and self.dst == other.dst
+            and self.attrs == other.attrs
+        )
 
 
 class Graph:

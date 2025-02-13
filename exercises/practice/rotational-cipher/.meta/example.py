@@ -5,7 +5,7 @@ ALPHA_LEN = len(ascii_lowercase)
 
 
 def rotate(message, key):
-    coded_message = ''
+    coded_message = ""
     for char in message:
         if char in ascii_lowercase:
             char = ascii_lowercase[(ascii_lowercase.index(char) + key) % ALPHA_LEN]

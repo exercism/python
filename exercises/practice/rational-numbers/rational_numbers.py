@@ -7,7 +7,7 @@ class Rational:
         return self.numer == other.numer and self.denom == other.denom
 
     def __repr__(self):
-        return f'{self.numer}/{self.denom}'
+        return f"{self.numer}/{self.denom}"
 
     def __add__(self, other):
         pass

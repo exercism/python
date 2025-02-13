@@ -1,13 +1,13 @@
-'''
-    This solution implements a breadth-first search of the graph
-    of possible valid states for the two buckets until it reaches a state
-    in which one of the two buckets contains the goal amount
-'''
+"""
+This solution implements a breadth-first search of the graph
+of possible valid states for the two buckets until it reaches a state
+in which one of the two buckets contains the goal amount
+"""
 
 
 def measure(bucket_one, bucket_two, goal, start_bucket):
     sizes = [bucket_one, bucket_two]
-    goal_index = 0 if start_bucket == 'one' else 1
+    goal_index = 0 if start_bucket == "one" else 1
 
     def empty(buckets, idx):
         return [0, buckets[1]] if idx == 0 else [buckets[0], 0]
@@ -22,7 +22,7 @@ def measure(bucket_one, bucket_two, goal, start_bucket):
         return [target, source] if idx == 0 else [source, target]
 
     def bucket_str(buckets):
-        return f'{buckets[0]},{buckets[1]}'
+        return f"{buckets[0]},{buckets[1]}"
 
     invalid = [0, 0]
     invalid[1 - goal_index] = sizes[1 - goal_index]
@@ -44,10 +44,10 @@ def measure(bucket_one, bucket_two, goal, start_bucket):
                     to_visit.append((fill(buckets, idx), number_count))
                     to_visit.append((consolidate(buckets, idx), number_count))
         if not any(to_visit):
-            raise ValueError('No more moves!')
+            raise ValueError("No more moves!")
         buckets, count = to_visit.pop(0)
 
     goal_index = buckets.index(goal)
-    goal_bucket = ['one', 'two'][goal_index]
+    goal_bucket = ["one", "two"][goal_index]
     other_bucket = buckets[1 - goal_index]
     return (count, goal_bucket, other_bucket)

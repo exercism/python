@@ -16,10 +16,10 @@ def value_of_card(card):
     3.  '2' - '10' = numerical value.
     """
 
-    if card in ('JQK'):
+    if card in ("JQK"):
         value = 10
 
-    elif card == 'A':
+    elif card == "A":
         value = 1
 
     else:
@@ -65,8 +65,8 @@ def value_of_ace(card_one, card_two):
     3.  '2' - '10' = numerical value.
     """
 
-    card_one_value = 11 if card_one == 'A' else value_of_card(card_one)
-    card_two_value = 11 if card_two == 'A' else value_of_card(card_two)
+    card_one_value = 11 if card_one == "A" else value_of_card(card_one)
+    card_two_value = 11 if card_two == "A" else value_of_card(card_two)
 
     ace_value = 1 if 11 + (card_one_value + card_two_value) > 21 else 11
 
@@ -84,7 +84,9 @@ def is_blackjack(card_one, card_two):
     3.  '2' - '10' = numerical value.
     """
 
-    return (card_one == 'A' or card_two == 'A') and (value_of_card(card_one) == 10 or value_of_card(card_two) == 10)
+    return (card_one == "A" or card_two == "A") and (
+        value_of_card(card_one) == 10 or value_of_card(card_two) == 10
+    )
 
 
 def can_split_pairs(card_one, card_two):

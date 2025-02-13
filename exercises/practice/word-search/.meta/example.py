@@ -7,7 +7,7 @@ class Point:
         self.y = y
 
     def __repr__(self):
-        return f'Point({self.x}:{self.y})'
+        return f"Point({self.x}:{self.y})"
 
     def __add__(self, other):
         return Point(self.x + other.x, self.y + other.y)
@@ -22,8 +22,16 @@ class Point:
         return not self == other
 
 
-DIRECTIONS = (Point(1, 0), Point(1, -1), Point(1, 1), Point(-1, -1),
-              Point(0, -1), Point(0, 1), Point(-1, 1), Point(-1, 0))
+DIRECTIONS = (
+    Point(1, 0),
+    Point(1, -1),
+    Point(1, 1),
+    Point(-1, -1),
+    Point(0, -1),
+    Point(0, 1),
+    Point(-1, 1),
+    Point(-1, 0),
+)
 
 
 class WordSearch:
@@ -48,8 +56,9 @@ class WordSearch:
         return position, current - direction
 
     def search(self, word):
-        positions = (Point(idx, edx)
-                     for idx in range(self.width) for edx in range(self.height))
+        positions = (
+            Point(idx, edx) for idx in range(self.width) for edx in range(self.height)
+        )
         for position in positions:
             for direction in DIRECTIONS:
                 result = self.find(word, position, direction)

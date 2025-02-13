@@ -4,14 +4,14 @@ from enum import Enum
 class LogLevel(Enum):
     """Represent different log levels by their verbose codes."""
 
-    TRACE = 'TRC'
-    DEBUG = 'DBG'
-    INFO = 'INF'
-    WARNING = 'WRN'
-    WARN = 'WRN'
-    ERROR = 'ERR'
-    FATAL = 'FTL'
-    UNKNOWN = 'UKN'
+    TRACE = "TRC"
+    DEBUG = "DBG"
+    INFO = "INF"
+    WARNING = "WRN"
+    WARN = "WRN"
+    ERROR = "ERR"
+    FATAL = "FTL"
+    UNKNOWN = "UKN"
 
 
 class LogLevelInt(Enum):
@@ -34,11 +34,11 @@ def parse_log_level(message):
     :return: enum - 'LogLevel.<level>'.  Return 'LogLevel.Unknown' if an unknown severity is passed.
     """
 
-    str_split = message.split(':')
+    str_split = message.split(":")
     lvl = str_split[0][1:-1]
     if lvl in [level.value for level in LogLevel]:
         return LogLevel(lvl)
-    return LogLevel('UKN')
+    return LogLevel("UKN")
 
 
 def convert_to_short_log(log_level, message):
@@ -49,7 +49,7 @@ def convert_to_short_log(log_level, message):
     :return: enum -  'LogLevelInt.<value>` e.g. 'LogLevelInt.5'
     """
 
-    return f'{LogLevelInt[log_level.name].value}:{message}'
+    return f"{LogLevelInt[log_level.name].value}:{message}"
 
 
 def get_warn_alias():
@@ -58,7 +58,7 @@ def get_warn_alias():
     :return: enum - 'LogLevel'.<alias>'
     """
 
-    return LogLevel('WRN')
+    return LogLevel("WRN")
 
 
 def get_members():

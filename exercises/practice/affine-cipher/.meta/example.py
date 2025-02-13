@@ -13,7 +13,7 @@ def mod_inverse(a_key, alphabet):
 def translate(text, a_key, b_key, mode):
     inverse = mod_inverse(a_key, ALPHABET)
     if inverse == 1:
-        raise ValueError('a and m must be coprime.')
+        raise ValueError("a and m must be coprime.")
 
     chars = []
     for character in text:
@@ -28,13 +28,14 @@ def translate(text, a_key, b_key, mode):
                 new = (inverse * (origin - b_key)) % ALPHABET
             chars.append(chr(new + 97))
 
-    return ''.join(chars)
+    return "".join(chars)
 
 
 def encode(plain, a, b):
     cipher = translate(plain, a, b, 0)
-    return ' '.join([cipher[idx:idx + BLOCK_SIZE]
-                     for idx in range(0, len(cipher), BLOCK_SIZE)])
+    return " ".join(
+        [cipher[idx : idx + BLOCK_SIZE] for idx in range(0, len(cipher), BLOCK_SIZE)]
+    )
 
 
 def decode(ciphered, a, b):

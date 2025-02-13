@@ -7,8 +7,11 @@ print(sys.version)
 
 
 AlPHABET = "abcdefghijklmnopqrstuvwxyz"
-COMBINATIONS = itertools.combinations_with_replacement(f"{AlPHABET[:13]}{AlPHABET[:13].upper()} 12,", 2)
+COMBINATIONS = itertools.combinations_with_replacement(
+    f"{AlPHABET[:13]}{AlPHABET[:13].upper()} 12,", 2
+)
 TEST_TEST = "".join([element for sublist in COMBINATIONS for element in sublist])
+
 
 def rotate_ascii(text, key):
     result = ""
@@ -38,7 +41,9 @@ def rotate_alphabet(text, key):
 
 def rotate_translate(text, key):
     translator = AlPHABET[key:] + AlPHABET[:key]
-    return text.translate(str.maketrans(AlPHABET + AlPHABET.upper(), translator + translator.upper()))
+    return text.translate(
+        str.maketrans(AlPHABET + AlPHABET.upper(), translator + translator.upper())
+    )
 
 
 def rotate_recursion(text, key):
@@ -47,12 +52,15 @@ def rotate_recursion(text, key):
     first_letter, rest = text[0], text[1:]
     if first_letter.isalpha():
         if first_letter.isupper():
-            return AlPHABET[(AlPHABET.index(first_letter.lower()) + key) % 26].upper() + rotate_recursion(rest, key)
+            return AlPHABET[
+                (AlPHABET.index(first_letter.lower()) + key) % 26
+            ].upper() + rotate_recursion(rest, key)
         else:
-            return AlPHABET[(AlPHABET.index(first_letter) + key) % 26] + rotate_recursion(rest, key)
+            return AlPHABET[
+                (AlPHABET.index(first_letter) + key) % 26
+            ] + rotate_recursion(rest, key)
     else:
         return first_letter + rotate_recursion(rest, key)
-
 
 
 start_time = timeit.default_timer()
@@ -70,7 +78,6 @@ print("rotate translate long :", timeit.default_timer() - start_time)
 start_time = timeit.default_timer()
 rotate_recursion(TEST_TEST, 25)
 print("rotate recursion long :", timeit.default_timer() - start_time)
-
 
 
 start_time = timeit.default_timer()

@@ -1,5 +1,6 @@
 import math
 
+
 class ComplexNumber:
     def __init__(self, real=0, imaginary=0):
         self.real = real
@@ -70,7 +71,9 @@ class ComplexNumber:
         denominator = denominator_all.real
         numerator = self * conjugation
 
-        return ComplexNumber((numerator.real / denominator), (numerator.imaginary / denominator))
+        return ComplexNumber(
+            (numerator.real / denominator), (numerator.imaginary / denominator)
+        )
 
     def __rtruediv__(self, other):
         if not isinstance(other, ComplexNumber):
@@ -81,7 +84,9 @@ class ComplexNumber:
         denominator = float(denominator_all.real)
         numerator = other * conjugation
 
-        return ComplexNumber((numerator.real / denominator), (numerator.imaginary / denominator))
+        return ComplexNumber(
+            (numerator.real / denominator), (numerator.imaginary / denominator)
+        )
 
     def __abs__(self):
         square_sum = self.real * self.real + self.imaginary * self.imaginary

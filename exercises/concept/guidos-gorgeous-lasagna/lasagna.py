@@ -7,11 +7,10 @@ This is a module docstring, used to describe the functionality
 of a module and its functions and/or classes.
 """
 
+# TODO: define the 'EXPECTED_BAKE_TIME' constant below.
 
-#TODO: define the 'EXPECTED_BAKE_TIME' constant below.
 
-
-#TODO: Remove 'pass' and complete the 'bake_time_remaining()' function below.
+# TODO: Remove 'pass' and complete the 'bake_time_remaining()' function below.
 def bake_time_remaining():
     """Calculate the bake time remaining.
 
@@ -26,15 +25,13 @@ def bake_time_remaining():
     pass
 
 
-#TODO: Define the 'preparation_time_in_minutes()' function below.
+# TODO: Define the 'preparation_time_in_minutes()' function below.
 # You might also consider defining a 'PREPARATION_TIME' constant.
 # You can do that on the line below the 'EXPECTED_BAKE_TIME' constant.
 # This will make it easier to do calculations.
 
 
-
-#TODO: define the 'elapsed_time_in_minutes()' function below.
-
+# TODO: define the 'elapsed_time_in_minutes()' function below.
 
 
 # TODO: Remember to go back and add docstrings to all your functions

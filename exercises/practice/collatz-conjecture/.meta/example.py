@@ -1,6 +1,6 @@
 def steps(number):
     if number <= 0:
-        raise ValueError('Only positive integers are allowed')
+        raise ValueError("Only positive integers are allowed")
 
     step_count = 0
     while number > 1:

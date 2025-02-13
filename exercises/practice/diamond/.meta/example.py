@@ -8,8 +8,8 @@ def rows(letter):
 def make_half(lines, columns):
     diamond_half = []
     for number in range(lines):
-        row = [' '] * columns
+        row = [" "] * columns
         row[lines - 1 - number] = chr(number + 65)
         row[lines - 1 + number] = chr(number + 65)
-        diamond_half.append(''.join(row))
+        diamond_half.append("".join(row))
     return diamond_half

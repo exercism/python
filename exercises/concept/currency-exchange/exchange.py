@@ -6,7 +6,6 @@ Overview of exchanging currency when travelling: https://www.compareremit.com/mo
 """
 
 
-
 def exchange_money(budget, exchange_rate):
     """
 

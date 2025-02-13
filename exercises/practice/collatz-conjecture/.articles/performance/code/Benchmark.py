@@ -1,5 +1,6 @@
 import timeit
 
+
 def steps_if(number):
     if number <= 0:
         raise ValueError("Only positive integers are allowed")
@@ -12,6 +13,7 @@ def steps_if(number):
         counter += 1
     return counter
 
+
 def steps_recursion(number):
     if number <= 0:
         raise ValueError("Only positive integers are allowed")
@@ -19,6 +21,7 @@ def steps_recursion(number):
         return 0
     number = number / 2 if number % 2 == 0 else number * 3 + 1
     return 1 + steps_recursion(number)
+
 
 def steps_ternary(number):
     if number <= 0:

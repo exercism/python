@@ -4,6 +4,7 @@ class BufferFullException(BufferError):
     message: explanation of the error.
 
     """
+
     def __init__(self, message):
         self.message = message
 
@@ -14,6 +15,7 @@ class BufferEmptyException(BufferError):
     message: explanation of the error.
 
     """
+
     def __init__(self, message):
         self.message = message
 
@@ -37,7 +39,7 @@ class CircularBuffer:
 
     def write(self, data):
         if all(self.buffer):
-            raise BufferFullException('Circular buffer is full')
+            raise BufferFullException("Circular buffer is full")
         self._update_buffer(data)
         self.write_point = (self.write_point + 1) % len(self.buffer)
 
@@ -49,7 +51,7 @@ class CircularBuffer:
 
     def read(self):
         if not any(self.buffer):
-            raise BufferEmptyException('Circular buffer is empty')
+            raise BufferEmptyException("Circular buffer is empty")
         data = chr(self.buffer[self.read_point])
         self.buffer[self.read_point] = 0
         self.read_point = (self.read_point + 1) % len(self.buffer)

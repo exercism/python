@@ -5,6 +5,7 @@ class MeetupDayException(ValueError):
     message: explanation of the error.
 
     """
+
     def __init__(self):
         pass
 

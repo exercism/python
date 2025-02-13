@@ -7,10 +7,10 @@ class Clock:
         self.cleanup()
 
     def __repr__(self):
-        return f'Clock({self.hour}, {self.minute})'
+        return f"Clock({self.hour}, {self.minute})"
 
     def __str__(self):
-        return '{:02d}:{:02d}'.format(self.hour, self.minute)
+        return "{:02d}:{:02d}".format(self.hour, self.minute)
 
     def __eq__(self, other):
         return repr(self) == repr(other)

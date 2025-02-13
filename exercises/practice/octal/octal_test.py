@@ -4,6 +4,7 @@ Implementation note:
 If the string supplied to parse_octal cannot be parsed as an octal number
 your program should raise a ValueError with a meaningful error message.
 """
+
 import unittest
 
 from octal import parse_octal
@@ -48,5 +49,5 @@ class OctalTest(unittest.TestCase):
         return self.assertRaisesRegex(exception, r".+")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

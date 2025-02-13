@@ -2,7 +2,7 @@ import random
 
 
 def private_key(p):
-    return random.randint(2, p-1)
+    return random.randint(2, p - 1)
 
 
 def public_key(p, g, private):

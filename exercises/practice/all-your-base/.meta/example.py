@@ -1,5 +1,5 @@
 def from_digits(digits, base):
-    return sum(number * base ** idx for idx, number in enumerate(reversed(digits)))
+    return sum(number * base**idx for idx, number in enumerate(reversed(digits)))
 
 
 def to_digits(number, base_to):

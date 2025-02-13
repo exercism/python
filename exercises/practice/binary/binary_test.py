@@ -4,6 +4,7 @@ Implementation note:
 If the argument to parse_binary isn't a valid binary number the
 function should raise a ValueError with a meaningful error message.
 """
+
 import unittest
 
 from binary import parse_binary
@@ -55,5 +56,6 @@ class BinaryTest(unittest.TestCase):
         self.assertEqual(type(err.exception), ValueError)
         self.assertEqual(err.exception.args[0], "Invalid binary literal: nope10")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()

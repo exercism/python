@@ -74,6 +74,6 @@ def update_store_inventory(fulfillment_cart, store_inventory):
     for key, values in fulfillment_cart.items():
         store_inventory[key][0] = store_inventory[key][0] - values[0]
         if store_inventory[key][0] == 0:
-            store_inventory[key][0] = 'Out of Stock'
+            store_inventory[key][0] = "Out of Stock"
 
     return store_inventory

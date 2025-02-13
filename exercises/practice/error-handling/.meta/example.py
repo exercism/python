@@ -1,5 +1,5 @@
 def handle_error_by_throwing_exception():
-    raise Exception('Meaningful message describing the source of the error')
+    raise Exception("Meaningful message describing the source of the error")
 
 
 def handle_error_by_returning_none(input_data):

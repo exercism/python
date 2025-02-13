@@ -5,7 +5,7 @@ class TreeNode:
         self.right = None
 
     def __str__(self):
-        return f'TreeNode(data={self.data}, left={self.left}, right={self.right})'
+        return f"TreeNode(data={self.data}, left={self.left}, right={self.right})"
 
 
 class BinarySearchTree:
