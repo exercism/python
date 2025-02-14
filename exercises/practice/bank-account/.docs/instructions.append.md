@@ -3,7 +3,7 @@
 ````exercim/note
 Python doesn't support "true" concurrency due to the [Global Interpreter Lock][GIL].
 While work is ongoing to create support for [free-threading in Python][free-threading], it is still experimental.
-Current standard library solutions such as [multiprocessing][multiprocessing-module] and [threading][threading-module]  are difficult to implement with the current track tooling.  
+Current standard library solutions such as [multiprocessing][multiprocessing-module] and [threading][threading-module] are difficult to implement with the current track tooling.  
 
 
 As a result, the concurrency requirement has been set aside for this exercise. 
