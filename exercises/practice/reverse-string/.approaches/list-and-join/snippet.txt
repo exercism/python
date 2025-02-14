@@ -1,0 +1,8 @@
+def reverse(text):
+    output = list(text)
+    start, end = 0, len(text) - 1
+    while start < end:
+        output[start], output[end] = output[end], output[start]
+        start += 1
+        end -= 1
+    return "".join(output)
