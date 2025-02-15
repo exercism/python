@@ -24,7 +24,6 @@ We encourage you to experiment and get creative with the techniques you use, and
 
 
 And while Unicode text is outside the core tests for this exercise (_there are optional tests in the test file you can enable for Unicode_), we encourage you to give reversing strings that have non ASCII text a try.
-We talk more about the considerations and strategies for Unicode text reversal (_and third-party libraries that can help_) in the [Working with Unicode Strings][article-working-with-unicode-strings] article.
 
 
 ## Approach: Sequence Slice with a Negative Step
@@ -169,5 +168,4 @@ To compare performance of these approach groups, see the [Performance article][a
 [approach-list-and-join]: https://exercism.org/tracks/python/exercises/reverse-string/.approaches/list-and-join
 [approach-sequence-slicing]: https://exercism.org/tracks/python/exercises/reverse-string/.approaches/sequence-slicing
 [article-performance]: https://exercism.org/tracks/python/exercises/reverse-string/articles/performance
-[article-working-with-unicode-strings]: https://exercism.org/tracks/python/exercises/reverse-string/.articles/working-with-unicode-strings
 [range]: https://docs.python.org/3/library/stdtypes.html#range

@@ -31,7 +31,7 @@ This 2012 presentation by Ned Batchelder [Pragmatic Unicode -or- How Do I Stop t
 The default build of CPython 3.x now represents all strings internally as `UTF-8`, and defines different types for `str` vs `byte`.
 Strings are 'seen' as sequences of Unicode [codepoints][what-is-a-codepoint], and default iteration, indexing, slicing, and regex are all designed to move over these codepoints (_the default iteration for bytes is over single bytes_).
 For additional information about codepoints, Python offers access to versions of the Unicode properties database via the [`unicodedata`][unicodedata] module.
-Python 3.11.5 supports [Unicode 14.0][unicode 14.0], and Python 3.12 will support [Unicode 15.1][unicode 15.1].
+Python 3.11.5 supports [Unicode 14.0][unicode 14.0], and Python 3.12 will support [Unicode 15.0][unicode 15.0].
 
 
 Python also ships with [100 additional encodings][standard-encodings] beyond UTF-8, and more can be added via the [codecs module][codecs-module].
@@ -61,7 +61,7 @@ https://icu.unicode.org/
 [what-every-developer-needs-to-know-about-unicode]: https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/
 [wiki-unicode]: https://en.wikipedia.org/wiki/Unicode
 [unicode-consortium]: https://home.unicode.org/
-[unicode 15.1]: http://blog.unicode.org/2023/09/announcing-unicode-standard-version-151.html
+[unicode 15.0]: https://www.unicode.org/versions/Unicode15.0.0/
 [unicode 14.0]: https://www.unicode.org/versions/Unicode14.0.0/
 [why-python3-exists]: https://snarky.ca/why-python-3-exists/
 [UTF8]: https://en.wikipedia.org/wiki/UTF-8
