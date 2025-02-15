@@ -52,6 +52,7 @@ description = "unknown operation"
 
 [8a7e85a8-9e7b-4d46-868f-6d759f4648f8]
 description = "Non math question"
+include = false
 
 [42d78b5f-dbd7-4cdb-8b30-00f794bb24cf]
 description = "reject problem missing an operand"
