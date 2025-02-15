@@ -10,9 +10,26 @@
 
 <br>
 
-Hi. &nbsp;👋🏽 &nbsp;👋 &nbsp;**We are happy you are here.**&nbsp; 🎉&nbsp;🌟
+> [!IMPORTANT]
+> <h3><mark><b>We are not accepting community contributions at this time.</b></mark></h3>
+>  <table>
+>     <tr>
+>    <img align="left" width="95" height="95" src="https://github.com/exercism/website-icons/blob/main/exercises/health-statistics.svg">
+>
+>    We love our community. We're grateful you are interested in improving the Python track.  
+>    But our maintainers are **not accepting community contributions at this time.**  
+>    If you would like to suggest a change or discuss an issue, <mark><b>please open a [thread on the forum](https://forum.exercism.org/).</b></mark>
+>
+>    This [community blog post](https://exercism.org/blog/freeing-our-maintainers) contains more details.
+>
+>    </tr>
+>   </table>
 
 <br>
+
+Hi. &nbsp;👋🏽 &nbsp;👋 &nbsp;**We are happy you are here.**&nbsp; 🎉&nbsp;🌟
+
+<br><br>
 
 **`exercism/Python`** is one of many programming language tracks on [exercism(dot)org][exercism-website].
 This repo holds all the instructions, tests, code, & support files for Python _exercises_ currently under development or implemented & available for students.
@@ -43,15 +60,15 @@ It might also be helpful to look at [Being a Good Community Member][being-a-good
 <br>
 <img align="left" width="90" height="85" src="https://github.com/exercism/website-icons/blob/main/exercises/health-statistics.svg">
 
-We&nbsp;💛&nbsp;💙 &nbsp; our community.  
-**`But our maintainers are not accepting community contributions at this time.`**  
+We&nbsp;💛&nbsp;💙 our community.  
+<mark>**But our maintainers are not accepting community contributions at this time.**</mark>  
 Please read this [community blog post][freeing-maintainers] for details.
 
 <br>
 <img align="left" width="95" height="90" src="https://github.com/exercism/website-icons/blob/main/exercises/boutique-suggestions.svg">
 
 Here to suggest a new feature or new exercise?? **Hooray!** &nbsp;🎉 &nbsp;  
-We'd love if you did that via our [Exercism Community Forum](https://forum.exercism.org/).  
+We'd love if you did that via our [Community Forum](https://forum.exercism.org/).  
 Please read [Suggesting Exercise Improvements][suggesting-improvements] & [Chesterton's Fence][chestertons-fence].  
 _Thoughtful suggestions will likely result in faster & more enthusiastic responses from volunteers._
 
@@ -67,7 +84,7 @@ _Thoughtful suggestions will likely result in faster & more enthusiastic respons
 
 ## Python Software and Documentation
 
-**Copyright © 2001-2023 Python Software Foundation. All rights reserved.**
+**Copyright © 2001-2025 Python Software Foundation. All rights reserved.**
 
 Python software and documentation are licensed under the [PSF License Agreement][psf-license].
 
@@ -99,7 +116,6 @@ This repository uses the [MIT License](/LICENSE).
 [exercism-writing-style]: https://github.com/exercism/docs/blob/main/building/markdown/style-guide.md
 [freeing-maintainers]: https://exercism.org/blog/freeing-our-maintainers
 [practice-exercises]: https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md
-[prs]: https://github.com/exercism/docs/blob/main/community/good-member/pull-requests.md
 [psf-license]: https://docs.python.org/3/license.html#psf-license
 [python-syllabus]: https://exercism.org/tracks/python/concepts
 [suggesting-improvements]: https://github.com/exercism/docs/blob/main/community/good-member/suggesting-exercise-improvements.md

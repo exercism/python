@@ -4,29 +4,26 @@
 <p vertical-align="middle"><h1>Contributing</h1></p>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Discourse topics](https://img.shields.io/discourse/topics?color=8A08E6&label=Connect%20&labelColor=FFDF58&logo=Discourse&logoColor=8A08E6&server=https%3A%2F%2Fforum.exercism.org&style=social)](https://forum.exercism.org)
-&nbsp;&nbsp;[![Exercism_II](https://img.shields.io/badge/Exercism--Built-9101FF?logo=python&logoColor=FFDF58&labelColor=3D7AAB&label=Python%203.10%20Powered)](https://exercism.org)
+&nbsp;&nbsp;[![Exercism_II](https://img.shields.io/badge/Exercism--Built-9101FF?logo=python&logoColor=FFDF58&labelColor=3D7AAB&label=Python%203.11%20Powered)](https://exercism.org)
 &nbsp;&nbsp;[![Exercism_III](https://img.shields.io/badge/PAUSED-C73D4E?labelColor=3D454D&label=Contributions)](https://exercism.org/blog/freeing-our-maintainers)
 &nbsp; [![Build Status](https://github.com/exercism/python/workflows/Exercises%20check/badge.svg)](https://github.com/exercism/python/actions?query=workflow%3A%22Exercises+check%22)
 
----
----
 
-### We are not accepting community contributions at this time.
+> [!IMPORTANT]
+> <h3><mark><b>We are not accepting community contributions at this time.</b></mark></h3>
+>  <table>
+>     <tr>
+>    <img align="left" width="95" height="95" src="https://github.com/exercism/website-icons/blob/main/exercises/health-statistics.svg">
+>
+>    We love our community. We're grateful you are interested in improving the Python track.  
+>    But our maintainers are **not accepting community contributions at this time.**  
+>    If you would like to discuss possible future changes, <mark><b>please open a [thread on the forum](https://forum.exercism.org/).</b></mark>
+>
+>    This [community blog post](https://exercism.org/blog/freeing-our-maintainers) contains more details.
+>
+>    </tr>
+>   </table>
 
-<table>
- <tr>
-<img align="left" width="90" height="85" src="https://github.com/exercism/website-icons/blob/main/exercises/health-statistics.svg">
-
-We're grateful for your interested in helping improve the Python track. but our maintainers are **not accepting community contributions at this time.** 
-If you would like to discuss possible future changes, please open a [thread on the forum](https://forum.exercism.org/).
-
-This [community blog post](https://exercism.org/blog/freeing-our-maintainers) contains more details.
-
-</tr>
-</table>
-
----
----
 
 <br>
 
@@ -35,7 +32,7 @@ Hi. &nbsp;👋🏽 &nbsp;👋 &nbsp;**We are happy you are here.**&nbsp; 🎉&nb
 **`exercism/Python`** is one of many programming language tracks on [exercism(dot)org][exercism-website].  
 This repo holds all the instructions, tests, code, & support files for Python _exercises_ currently under development or implemented & available for students.
 
-🌟 &nbsp;&nbsp;Track exercises support Python `3.7` - `3.11.2`.
+🌟 &nbsp;&nbsp;Track exercises support Python `3.7` - `3.11.5`.
 Exceptions to this support are noted where they occur.  
 🌟 &nbsp;&nbsp;Track tooling (_test-runner, representer, analyzer, and Continuous Integration_) runs on Python `3.11.2`.
 
@@ -50,20 +47,25 @@ Practice exercises are open-ended, and can be used to practice concepts learned,
 It is not uncommon to discover typos, confusing directions, or incorrect implementations of certain tests or code examples. Or you might have a great suggestion for a hint to aid students (&nbsp;💙 &nbsp;), see optimizations for exemplar or test code, find missing test cases to add, or want to correct factual and/or logical errors. Or maybe you have a great idea 💡 for an exercise or feature (&nbsp;💙&nbsp;).
 
 _Our track is always a work in progress!_ 🌟🌟  
-While contributions are paused, we ask that you [`open a thread in our community forum`](https://forum.exercism.org) to let us know what you have found/suggest.
+While contributions are paused, we ask that you <mark>[**open a thread in our community forum**](https://forum.exercism.org)</mark> to let us know what you have found/suggest.
 
 <br>
 
 ## 🚧 **Did you write a patch that fixes a bug?**
 
-**`Our maintainers are not accepting community contributions at this time.`**  
-Please read this [community blog post](https://exercism.org/blog/freeing-our-maintainers) for details.
+<mark><b>Our maintainers are not accepting community contributions at this time.</b></mark>  
+<br>
+Until the pause on contributions ends, all PRs from the larger community will be **automatically closed** with a note.  
+We ask that you <mark>[**open a thread in our community forum**](https://forum.exercism.org)</mark> to discuss any potential changes. Changes may or may not be approved, depending on the forum discussion.
 
-Once the pause ends, we will **happily** consider your PR.  
-Until that time, all PRs from the larger community will be **automatically closed** with a note.
+Please read this [community blog post](https://exercism.org/blog/freeing-our-maintainers) for additional details.
+<br>
 
-We're leaving the general contributing docs below for our long-term collaborators and maintainers.
+We're leaving the track contributing docs below for our long-term collaborators and maintainers.
 
+<br>
+<details>
+ <summary><b>Python Track Contributing Docs</b></summary>
 <br>
 <img align="left" width="80" height="75" src="https://github.com/exercism/website-icons/blob/main/exercises/hello-world.svg">
 <p vertical-align="middle"><h2 id="in-general">In General</h2></p>
@@ -376,45 +378,32 @@ configlet generate <path/to/track> --spec-path path/to/problem/specifications --
 configlet generate <path/to/track> --spec-path path/to/problem/specifications
 ```
 
+
 <br>
+</details>
 
 
 [.flake8]: https://github.com/exercism/python/blob/main/.flake8
 [.style.yapf]: https://github.com/exercism/python/blob/main/.style.yapf
 [american-english]: https://github.com/exercism/docs/blob/main/building/markdown/style-guide.md
-[being-a-good-community-member]: https://github.com/exercism/docs/tree/main/community/good-member
 [card-games-testfile]: https://github.com/exercism/python/blob/main/exercises/concept/card-games/lists_test.py
 [cater-waiter]: https://github.com/exercism/python/tree/main/exercises/concept/cater-waiter
 [concept-exercise-anatomy]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md
-[concept-exercises]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md
 [config-json]: https://github.com/exercism/javascript/blob/main/config.json
-[config-json]: https://github.com/exercism/python/blob/main/config.json
-[configlet-general]: https://github.com/exercism/configlet
 [configlet-lint]: https://github.com/exercism/configlet#configlet-lint
 [configlet]: https://github.com/exercism/docs/blob/main/building/configlet/generating-documents.md
 [distinguishing-test-iterations]: https://docs.python.org/3/library/unittest.html#distinguishing-test-iterations-using-subtests
 [enumerate]: https://docs.python.org/3/library/functions.html#enumerate
 [eol]: https://en.wikipedia.org/wiki/Newline
 [exercise-config-json]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md#full-example
-[exercise-presentation]: https://github.com/exercism/docs/blob/main/building/tracks/presentation.md
-[exercism-admins]: https://github.com/exercism/docs/blob/main/community/administrators.md
-[exercism-code-of-conduct]: https://exercism.org/docs/using/legal/code-of-conduct
-[exercism-concepts]: https://github.com/exercism/docs/blob/main/building/tracks/concepts.md
-[exercism-contributors]: https://github.com/exercism/docs/blob/main/community/contributors.md
 [exercism-internal-linking]: https://github.com/exercism/docs/blob/main/building/markdown/internal-linking.md
 [exercism-markdown-specification]: https://github.com/exercism/docs/blob/main/building/markdown/markdown.md
 [exercism-markdown-widgets]: https://github.com/exercism/docs/blob/main/building/markdown/widgets.md
-[exercism-mentors]: https://github.com/exercism/docs/tree/main/mentoring
-[exercism-tasks]: https://exercism.org/docs/building/product/tasks
-[exercism-track-maintainers]: https://github.com/exercism/docs/blob/main/community/maintainers.md
-[exercism-track-structure]: https://github.com/exercism/docs/tree/main/building/tracks
 [exercism-website]: https://exercism.org/
-[exercism-writing-style]: https://github.com/exercism/docs/blob/main/building/markdown/style-guide.md
 [flake8-noqa]: https://flake8.pycqa.org/en/3.1.1/user/ignoring-errors.html#in-line-ignoring-errors
 [flake8]: http://flake8.pycqa.org/
 [google-coding-style]: https://google.github.io/styleguide/pyguide.html
 [guidos-gorgeous-lasagna-testfile]: https://github.com/exercism/python/blob/main/exercises/concept/guidos-gorgeous-lasagna/lasagna_test.py
-[help-wanted]: https://github.com/exercism/python/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22
 [implicit-line-joining]: https://google.github.io/styleguide/pyguide.html#32-line-length
 [markdown-language]: https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf
 [open-an-issue]: https://github.com/exercism/python/issues/new/choose
@@ -436,5 +425,4 @@ configlet generate <path/to/track> --spec-path path/to/problem/specifications
 [the-words-that-we-use]: https://github.com/exercism/docs/blob/main/community/good-member/words.md
 [unittest]: https://docs.python.org/3/library/unittest.html#unittest.TestCase
 [version-tagged-language-features]: https://docs.python.org/3/library/stdtypes.html#dict.popitem
-[website-contributing-section]: https://exercism.org/docs/building
 [yapf]: https://github.com/google/yapf
