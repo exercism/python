@@ -4,7 +4,8 @@
 """Script for timing Reverse String Solutions.
 
 Creates timing table and timing graphs for
-multiple approaches to reversing a stirng in Python.
+multiple approaches to reversing a string in Python.
+Adapted from code written by colinleach.
 
 Created Jan 2024
 @author: bethanygarcia
