@@ -18,7 +18,7 @@
 >
 >    We love our community. We're grateful you are interested in improving the Python track.  
 >    But our maintainers are **not accepting community contributions at this time.**  
->    If you would like to suggest a change or discuss an issue, <mark><b>please open a [thread on the forum](https://forum.exercism.org/).</b></mark>
+>    If you would like to suggest a change / discuss an issue, <mark><b>please open a [thread on the forum](https://forum.exercism.org/).</b></mark>
 >
 >    This [community blog post](https://exercism.org/blog/freeing-our-maintainers) contains more details.
 >
