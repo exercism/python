@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/wordy/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2025-02-15
 
 import unittest
 
@@ -58,12 +58,6 @@ class WordyTest(unittest.TestCase):
     def test_unknown_operation(self):
         with self.assertRaises(ValueError) as err:
             answer("What is 52 cubed?")
-        self.assertEqual(type(err.exception), ValueError)
-        self.assertEqual(err.exception.args[0], "unknown operation")
-
-    def test_non_math_question(self):
-        with self.assertRaises(ValueError) as err:
-            answer("Who is the President of the United States?")
         self.assertEqual(type(err.exception), ValueError)
         self.assertEqual(err.exception.args[0], "unknown operation")
 

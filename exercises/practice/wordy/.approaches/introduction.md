@@ -54,8 +54,11 @@ For question cleaning, [`str.removeprefix`][removeprefix] and
 'Supercalifragilistic'
 
 
-#The two methods can be chained to remove both a suffix and prefix in one line.
->>> 'Supercalifragilisticexpialidocious'.removesuffix('expialidocious').removeprefix('Super')
+#The two methods can be chained to remove both a suffix and prefix in "one line".
+#The line has been broken up here for better display.
+>>> ('Supercalifragilisticexpialidocious'
+     .removesuffix('expialidocious')
+     .removeprefix('Super'))
 'califragilistic'
 ```
 
