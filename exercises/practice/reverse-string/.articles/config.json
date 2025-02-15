@@ -1,0 +1,11 @@
+{
+  "articles": [
+    {
+      "uuid": "1d5866e9-6c74-411b-ab67-e986d154876e",
+      "slug": "performance",
+      "title": "Performance deep dive",
+      "blurb": "Deep dive to find out the most performant approach for reversing a string.",
+      "authors": ["BethanyG"]
+    }
+  ]
+}
