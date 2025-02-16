@@ -160,12 +160,12 @@ For other scenarios, converting the intput text to a `list`, swapping or iterati
 
 To compare performance of these approach groups, see the [Performance article][article-performance].
 
-[approach-additional-approaches]: https://exercism.org/tracks/python/exercises/reverse-string/.approaches/additional-approaches
-[approach-backward-iteration-with-range]: https://exercism.org/tracks/python/exercises/reverse-string/.approaches/backward-iteration-with-range
-[approach-built-in-list-reverse]: https://exercism.org/tracks/python/exercises/reverse-string/.approaches/built-in-list-reverse
-[approach-built-in-reversed]: https://exercism.org/tracks/python/exercises/reverse-string/.approaches/built-in-reversed
-[approach-iteration-and-concatenation]: https://exercism.org/tracks/python/exercises/reverse-string/.approaches/iteration-and-concatenation
-[approach-list-and-join]: https://exercism.org/tracks/python/exercises/reverse-string/.approaches/list-and-join
-[approach-sequence-slicing]: https://exercism.org/tracks/python/exercises/reverse-string/.approaches/sequence-slicing
+[approach-additional-approaches]: https://exercism.org/tracks/python/exercises/reverse-string/approaches/additional-approaches
+[approach-backward-iteration-with-range]: https://exercism.org/tracks/python/exercises/reverse-string/approaches/backward-iteration-with-range
+[approach-built-in-list-reverse]: https://exercism.org/tracks/python/exercises/reverse-string/approaches/built-in-list-reverse
+[approach-built-in-reversed]: https://exercism.org/tracks/python/exercises/reverse-string/approaches/built-in-reversed
+[approach-iteration-and-concatenation]: https://exercism.org/tracks/python/exercises/reverse-string/approaches/iteration-and-concatenation
+[approach-list-and-join]: https://exercism.org/tracks/python/exercises/reverse-string/approaches/list-and-join
+[approach-sequence-slicing]: https://exercism.org/tracks/python/exercises/reverse-string/approaches/sequence-slicing
 [article-performance]: https://exercism.org/tracks/python/exercises/reverse-string/articles/performance
 [range]: https://docs.python.org/3/library/stdtypes.html#range
