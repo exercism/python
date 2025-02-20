@@ -1,0 +1,56 @@
+{
+  "introduction": {
+    "authors": ["bethanyg"]
+  },
+  "approaches": [
+    {
+      "uuid": "a3dd190d-ff92-4190-b8aa-2b4b46171b46",
+      "slug": "str-iteration-with-dict",
+      "title": "String Iteration with Dictionary",
+      "blurb": "Iterate over the sentence to filter out punctuation and sum word counts with a dict.",
+      "authors": ["bethanyg"]
+    },
+    {
+      "uuid": "5a5f4f89-b016-48ed-9316-a49cadf9735f",
+      "slug": "str-replace-with-dict",
+      "title": "String Replace with Dictionary",
+      "blurb": "Use str.replace and str.strip to filter out punctuation and sum word counts with a dict.",
+      "authors": ["bethanyg"]
+    },
+    {
+      "uuid": "3d5d629f-58b6-43c5-9470-30b30b193892",
+      "slug": "str-replace-with-comprehensions",
+      "title": "String Replace with Comprehensions",
+      "blurb": "Use str.replace and str.strip to filter out punctuation and sum word counts with comprehensions.",
+      "authors": ["bethanyg"]
+    },
+    {
+      "uuid": "373182b1-8d21-4ee6-aa49-94ff6a9c57a1",
+      "slug": "str-replace-with-collections",
+      "title": "String Replace with Collections",
+      "blurb": "Use str.replace and str.strip to filter out punctuation and let collections.Counter do the rest.",
+      "authors": ["bethanyg"]
+    },
+    {
+      "uuid": "2afed504-500d-4415-a507-b78311bde777",
+      "slug": "using-the-re-module",
+      "title": "Using the Re Module",
+      "blurb": "Python's Re module is both versatile and powerful.",
+      "authors": ["bethanyg"]
+    },
+    {
+      "uuid": "0aa44eec-1c71-4937-8e3f-c45cbba22cc1",
+      "slug": "str-translate-with-counter",
+      "title": "String Translate with Counter",
+      "blurb": "Use str.translate to filter out punctuation and then tally words with collections.Counter.",
+      "authors": ["bethanyg"]
+    },
+    {
+      "uuid": "182463b2-fcfa-4445-967c-8b185b7853c9",
+      "slug": "filter-with-counter",
+      "title": "Filter with Counter",
+      "blurb": "Use the built-in filter function to clean the sentence and collections.Counter to count the words.",
+      "authors": ["bethanyg"]
+    }
+  ]
+}
