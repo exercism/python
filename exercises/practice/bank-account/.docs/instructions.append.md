@@ -1,6 +1,6 @@
 # Instructions append
 
-````exercim/note
+~~~~exercism/note
 Python doesn't support "true" concurrency due to the [Global Interpreter Lock][GIL].
 While work is ongoing to create support for [free-threading in Python][free-threading], it is still experimental.
 Current standard library solutions such as [multiprocessing][multiprocessing-module] and [threading][threading-module] are difficult to implement with the current track tooling.  
@@ -13,7 +13,7 @@ Account operations are sequential on a single thread, and no concurrency or "rac
 [free-threading]: https://docs.python.org/3/howto/free-threading-python.html
 [threading-module]: https://docs.python.org/3/library/threading.html#module-threading
 [multiprocessing-module]: https://docs.python.org/3/library/multiprocessing.html#sharing-state-between-processes
-````
+~~~~
 
 <br>
 
