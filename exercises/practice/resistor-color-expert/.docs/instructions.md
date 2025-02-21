@@ -1,7 +1,7 @@
 # Instructions
 
 In this exercise, you are going to create a helpful program so that you don't have to remember the values of the bands.
-The program will take a 1, 4, or 5 colors as input, and outputs the correct value, in ohms.
+The program will take 1, 4, or 5 colors as input and output the correct value in ohms.
 The color bands are encoded as follows:
 
 - black: 0
@@ -57,7 +57,8 @@ Examples:
 There are also one band resistors.
 One band resistors only have the color black with a value of 0.
 
-This exercise is about translating an input `list` of resistor band colors into a label:
+
+Your program should translate an input `list` of resistor band colors into a label:
 
 "... ohms ...%"
 
