@@ -15,7 +15,7 @@ The color bands are encoded as follows:
 - grey: 8
 - white: 9
 
-In [`Resistor Color Trio`][resistor-color-trio-exercie] you decoded the first three color bands.
+In [`Resistor Color Trio`][resistor-color-trio-exercise] you decoded the first three color bands.
 For instance: orange-orange-brown translated to the main value `330`.
 In this exercise you will need to add _tolerance_ to the mix.
 Tolerance is the maximum amount that a value can be above or below the main value.
@@ -79,4 +79,4 @@ So an input `list` of `["orange", "orange", "blue", "red"]` should return:
 
 "33 megaohms ±2%"
 
-[resistor-color-trio-exercie]: https://exercism.org/tracks/python/exercises/resistor-color-trio
+[resistor-color-trio-exercise]: https://exercism.org/tracks/python/exercises/resistor-color-trio
