@@ -982,6 +982,24 @@
         "difficulty": 3
       },
       {
+        "slug": "swift-scheduling",
+        "name": "Swift Scheduling",
+        "uuid": "ebddfc37-a3fc-4524-bd62-9c70f979713c",
+        "practices": [],
+        "prerequisites": ["basics",
+          "bools",
+          "conditionals",
+          "lists",
+          "list-methods",
+          "loops",
+          "numbers",
+          "strings",
+          "string-methods"
+        ],
+        "difficulty": 3,
+        "status": "wip"
+      },
+      {
         "slug": "ocr-numbers",
         "name": "OCR Numbers",
         "uuid": "98ca48ed-5818-442c-bce1-308c8b3b3b77",
