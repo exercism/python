@@ -12,7 +12,7 @@ def delivery_date(start, description):
                 due_date = start_date.replace(hour=17, minute=0)
             else:
                 due_date = (
-                        start_date.replace(hour=12, minute=0) +
+                        start_date.replace(hour=13, minute=0) +
                         timedelta(days=1)
                 )
         case 'EOW':

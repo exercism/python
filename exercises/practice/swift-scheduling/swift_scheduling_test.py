@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/swift-scheduling/canonical-data.json
-# File last updated on 2025-03-02
+# File last updated on 2025-03-03
 
 import unittest
 
@@ -15,14 +15,25 @@ class SwiftSchedulingTest(unittest.TestCase):
             delivery_date("2012-02-13T09:00:00", "NOW"), "2012-02-13T11:00:00"
         )
 
-    def test_asap_before_noon_translates_to_today_at_five_in_the_afternoon(self):
+    def test_asap_before_one_in_the_afternoon_translates_to_today_at_five_in_the_afternoon(
+        self,
+    ):
         self.assertEqual(
             delivery_date("1999-06-03T09:45:00", "ASAP"), "1999-06-03T17:00:00"
         )
 
-    def test_asap_after_noon_translates_to_tomorrow_at_noon(self):
+    def test_asap_at_one_in_the_afternoon_translates_to_tomorrow_at_one_in_the_afternoon(
+        self,
+    ):
         self.assertEqual(
-            delivery_date("2008-12-21T13:30:00", "ASAP"), "2008-12-22T12:00:00"
+            delivery_date("2008-12-21T13:00:00", "ASAP"), "2008-12-22T13:00:00"
+        )
+
+    def test_asap_after_one_in_the_afternoon_translates_to_tomorrow_at_one_in_the_afternoon(
+        self,
+    ):
+        self.assertEqual(
+            delivery_date("2008-12-21T14:50:00", "ASAP"), "2008-12-22T13:00:00"
         )
 
     def test_eow_on_monday_translates_to_friday_at_five_in_the_afternoon(self):
@@ -47,7 +58,12 @@ class SwiftSchedulingTest(unittest.TestCase):
 
     def test_eow_on_friday_translates_to_sunday_at_eight_in_the_evening(self):
         self.assertEqual(
-            delivery_date("2022-08-05T12:00:00", "EOW"), "2022-08-07T20:00:00"
+            delivery_date("2022-08-05T14:00:00", "EOW"), "2022-08-07T20:00:00"
+        )
+
+    def test_eow_translates_to_leap_day(self):
+        self.assertEqual(
+            delivery_date("2008-02-25T10:30:00", "EOW"), "2008-02-29T17:00:00"
         )
 
     def test_2_m_before_the_second_month_of_this_year_translates_to_the_first_workday_of_the_second_month_of_this_year(

@@ -29,6 +29,9 @@ description = "EOW on Thursday translates to Sunday at eight in the evening"
 [bbffccf7-97f7-4244-888d-bdd64348fa2e]
 description = "EOW on Friday translates to Sunday at eight in the evening"
 
+[d651fcf4-290e-407c-8107-36b9076f39b2]
+description = "EOW translates to leap day"
+
 [439bf09f-3a0e-44e7-bad5-b7b6d0c4505a]
 description = "2M before the second month of this year translates to the first workday of the second month of this year"
 
