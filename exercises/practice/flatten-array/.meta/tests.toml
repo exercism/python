@@ -32,12 +32,32 @@ description = "null values are omitted from the final result"
 
 [c6cf26de-8ccd-4410-84bd-b9efd88fd2bc]
 description = "consecutive null values at the front of the list are omitted from the final result"
+include = false
+
+[bc72da10-5f55-4ada-baf3-50e4da02ec8e]
+description = "consecutive null values at the front of the array are omitted from the final result"
+reimplements = "c6cf26de-8ccd-4410-84bd-b9efd88fd2bc"
 
 [382c5242-587e-4577-b8ce-a5fb51e385a1]
 description = "consecutive null values in the middle of the list are omitted from the final result"
+include = false
+
+[6991836d-0d9b-4703-80a0-3f1f23eb5981]
+description = "consecutive null values in the middle of the array are omitted from the final result"
+reimplements = "382c5242-587e-4577-b8ce-a5fb51e385a1"
 
 [ef1d4790-1b1e-4939-a179-51ace0829dbd]
 description = "6 level nest list with null values"
+include = false
+
+[dc90a09c-5376-449c-a7b3-c2d20d540069]
+description = "6 level nested array with null values"
+reimplements = "ef1d4790-1b1e-4939-a179-51ace0829dbd"
 
 [85721643-705a-4150-93ab-7ae398e2942d]
 description = "all values in nested list are null"
+include = false
+
+[51f5d9af-8f7f-4fb5-a156-69e8282cb275]
+description = "all values in nested array are null"
+reimplements = "85721643-705a-4150-93ab-7ae398e2942d"

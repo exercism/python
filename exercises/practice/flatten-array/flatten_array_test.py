@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/flatten-array/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2025-03-22
 
 import unittest
 
@@ -45,26 +45,26 @@ class FlattenArrayTest(unittest.TestCase):
         expected = [1, 2]
         self.assertEqual(flatten(inputs), expected)
 
-    def test_consecutive_null_values_at_the_front_of_the_list_are_omitted_from_the_final_result(
+    def test_consecutive_null_values_at_the_front_of_the_array_are_omitted_from_the_final_result(
         self,
     ):
         inputs = [None, None, 3]
         expected = [3]
         self.assertEqual(flatten(inputs), expected)
 
-    def test_consecutive_null_values_in_the_middle_of_the_list_are_omitted_from_the_final_result(
+    def test_consecutive_null_values_in_the_middle_of_the_array_are_omitted_from_the_final_result(
         self,
     ):
         inputs = [1, None, None, 4]
         expected = [1, 4]
         self.assertEqual(flatten(inputs), expected)
 
-    def test_6_level_nest_list_with_null_values(self):
+    def test_6_level_nested_array_with_null_values(self):
         inputs = [0, 2, [[2, 3], 8, [[100]], None, [[None]]], -2]
         expected = [0, 2, 2, 3, 8, 100, -2]
         self.assertEqual(flatten(inputs), expected)
 
-    def test_all_values_in_nested_list_are_null(self):
+    def test_all_values_in_nested_array_are_null(self):
         inputs = [None, [[[None]]], None, None, [[None, None], None], None]
         expected = []
         self.assertEqual(flatten(inputs), expected)
