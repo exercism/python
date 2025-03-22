@@ -1,11 +1,16 @@
 # Instructions
 
-Take a nested list and return a single flattened list with all values except nil/null.
+Take a nested array of any depth and return a fully flattened array.
 
-The challenge is to take an arbitrarily-deep nested list-like structure and produce a flattened structure without any nil/null values.
+Note that some language tracks may include null-like values in the input array, and the way these values are represented varies by track.
+Such values should be excluded from the flattened array.
 
-For example:
+Additionally, the input may be of a different data type and contain different types, depending on the track.
 
-input: [1,[2,3,null,4],[null],5]
+Check the test suite for details.
 
-output: [1,2,3,4,5]
+## Example
+
+input: `[1, [2, 6, null], [[null, [4]], 5]]`
+
+output: `[1, 2, 6, 4, 5]`
