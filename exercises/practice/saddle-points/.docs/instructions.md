@@ -13,11 +13,12 @@ Or it might have one, or even several.
 Here is a grid that has exactly one candidate tree.
 
 ```text
-    1  2  3  4
-  |-----------
-1 | 9  8  7  8
-2 | 5  3  2  4  <--- potential tree house at row 2, column 1, for tree with height 5
-3 | 6  6  7  1
+      ↓
+      1  2  3  4
+    |-----------
+  1 | 9  8  7  8
+→ 2 |[5] 3  2  4
+  3 | 6  6  7  1
 ```
 
 - Row 2 has values 5, 3, 2, and 4. The largest value is 5.
