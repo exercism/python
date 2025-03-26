@@ -1,0 +1,11 @@
+{
+  "articles": [
+    {
+      "uuid": "c8434a98-716f-48d8-ba34-bb1d159fb420",
+      "slug": "performance",
+      "title": "Performance deep dive",
+      "blurb": "Deep dive to find out the most performant approach for counting words.",
+      "authors": ["bethanyg"]
+    }
+  ]
+}
