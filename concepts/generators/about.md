@@ -145,3 +145,120 @@ Now whenever `__next__()` is called on the `infinite_sequence` object, it will r
 [iterator]: https://docs.python.org/3.11/glossary.html#term-iterator
 [lazy iterator]: https://en.wikipedia.org/wiki/Lazy_evaluation
 [yield expression]: https://docs.python.org/3.11/reference/expressions.html#yield-expressions
+
+
+
+## ZIP function
+
+The zip() function in python is built in function. it pairs the two or more  iteratbles and combines them one by one in into a single data structure, only  done when needed (lazy evaluation)
+
+Example:
+l1= ["AA","BB","CC"]
+l2=[1,2,3]
+l3= zip(l1, l2)
+print(list(l3))
+
+output
+[('AA', 1), ('BB', 2), ('CC', 3)]
+
+
+## map function 
+
+the map() function in the Python takes 2 arguments that is : 1. A function, 2. list or any iterable 
+then the map() function applies the function to each of the item in iterable 
+Example:
+l1=[1,2,3]
+result = map(lambda x:x**2, l1)
+print(list (result) )
+
+output:
+[1, 4, 9]
+
+In short map() map() helps you apply a rule to each and every item in the list (or iterable) does by without using any extra memory 
+
+## filter
+
+filter() function in python helps you to filter the items based on the specified condition.
+it filters only those items or iterables which are True
+Example: l2=[1,2,3]
+result = filter (lambda x:x%2==0 , l2)
+print(list (result) )
+
+output:
+[2]
+In short filter() helps you pick only the items that match a rule
+
+
+
+
+
+
+zip() Function
+The zip() function in Python is a built-in that pairs elements from two or more iterables together. It combines them element-by-element into a single iterable — and does this lazily (only when needed).
+
+Example:
+
+python
+Copy
+Edit
+l1 = ["AA", "BB", "CC"]
+l2 = [1, 2, 3]
+l3 = zip(l1, l2)
+print(list(l3))
+Output:
+
+css
+Copy
+Edit
+[('AA', 1), ('BB', 2), ('CC', 3)]
+🔹 In short: zip() lets you group related items together from different iterables.
+
+map() Function
+The map() function takes:
+
+A function
+
+An iterable (like a list)
+
+It applies the function to each item in the iterable — and returns a map object (like a generator) without creating a new list in memory.
+
+Example:
+
+python
+Copy
+Edit
+l1 = [1, 2, 3]
+result = map(lambda x: x**2, l1)
+print(list(result))
+Output:
+
+csharp
+Copy
+Edit
+[1, 4, 9]
+🔹 In short: map() helps you apply a rule or transformation to every item in a list.
+
+filter() Function
+The filter() function also takes:
+
+A function that returns True or False
+
+An iterable
+
+It filters out only the items where the function returns True.
+
+Example:
+
+python
+Copy
+Edit
+l2 = [1, 2, 3]
+result = filter(lambda x: x % 2 == 0, l2)
+print(list(result))
+Output:
+
+csharp
+Copy
+Edit
+[2]
+In short: filter() helps you pick only the items that match a rule
