@@ -1,0 +1,8 @@
+for pos, value in enumerate(sentence):
+    if value.isalpha() or value.isdigit():
+        new_word += value
+    elif new_word and value == "'" and sentence[pos + 1].isalpha():
+        new_word += value
+    else:
+        if new_word:
+            word_list[new_word] = word_list.get(new_word, 0) + 1; new_word = ''
