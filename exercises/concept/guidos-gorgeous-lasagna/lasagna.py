@@ -27,9 +27,6 @@ def bake_time_remaining():
 
 
 #TODO: Define the 'preparation_time_in_minutes()' function below.
-# You might also consider defining a 'PREPARATION_TIME' constant.
-# You can do that on the line below the 'EXPECTED_BAKE_TIME' constant.
-# This will make it easier to do calculations.
 
 
 
