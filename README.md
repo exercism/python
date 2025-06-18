@@ -122,3 +122,5 @@ This repository uses the [MIT License](/LICENSE).
 [the-words-that-we-use]: https://github.com/exercism/docs/blob/main/community/good-member/words.md
 [website-contributing-section]: https://exercism.org/docs/building
 [zero-clause-bsd]: https://docs.python.org/3/license.html#zero-clause-bsd-license-for-code-in-the-python-release-documentation
+#   C a m b i o   v i s i b l e   p a r a   P R   -   2 0 2 5 - 0 6 - 1 8  
+ 
