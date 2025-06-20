@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/largest-series-product/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2025-06-20
 
 import unittest
 
@@ -44,17 +44,13 @@ class LargestSeriesProductTest(unittest.TestCase):
         with self.assertRaises(ValueError) as err:
             largest_product("123", 4)
         self.assertEqual(type(err.exception), ValueError)
-        self.assertEqual(
-            err.exception.args[0], "span must be smaller than string length"
-        )
+        self.assertEqual(err.exception.args[0], "span must not exceed string length")
 
     def test_rejects_empty_string_and_nonzero_span(self):
         with self.assertRaises(ValueError) as err:
             largest_product("", 1)
         self.assertEqual(type(err.exception), ValueError)
-        self.assertEqual(
-            err.exception.args[0], "span must be smaller than string length"
-        )
+        self.assertEqual(err.exception.args[0], "span must not exceed string length")
 
     def test_rejects_invalid_character_in_digits(self):
         with self.assertRaises(ValueError) as err:
