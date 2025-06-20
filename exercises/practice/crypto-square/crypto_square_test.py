@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/crypto-square/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2025-06-20
 
 import unittest
 
@@ -47,7 +47,7 @@ class CryptoSquareTest(unittest.TestCase):
         expected = "clu hlt io "
         self.assertEqual(cipher_text(value), expected)
 
-    def test_54_character_plaintext_results_in_7_chunks_the_last_two_with_trailing_spaces(
+    def test_54_character_plaintext_results_in_8_chunks_the_last_two_with_trailing_spaces(
         self,
     ):
         value = "If man was meant to stay on the ground, god would have given us roots."
