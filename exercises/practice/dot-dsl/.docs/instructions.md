@@ -22,7 +22,7 @@ Write a Domain Specific Language similar to the Graphviz dot language.
 Our DSL is similar to the Graphviz dot language in that our DSL will be used to create graph data structures.
 However, unlike the DOT Language, our DSL will be an internal DSL for use only in our language.
 
-More information about the difference between internal and external DSLs can be found [here][fowler-dsl].
+[Learn more about the difference between internal and external DSLs][fowler-dsl].
 
 [dsl]: https://en.wikipedia.org/wiki/Domain-specific_language
 [dot-language]: https://en.wikipedia.org/wiki/DOT_(graph_description_language)

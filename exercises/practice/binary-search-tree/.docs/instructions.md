@@ -19,29 +19,52 @@ All data in the left subtree is less than or equal to the current node's data, a
 
 For example, if we had a node containing the data 4, and we added the data 2, our tree would look like this:
 
+![A graph with root node 4 and a single child node 2.](https://assets.exercism.org/images/exercises/binary-search-tree/tree-4-2.svg)
+
+```text
       4
      /
     2
+```
 
 If we then added 6, it would look like this:
 
+![A graph with root node 4 and two child nodes 2 and 6.](https://assets.exercism.org/images/exercises/binary-search-tree/tree-4-2-6.svg)
+
+```text
       4
      / \
     2   6
+```
 
 If we then added 3, it would look like this
 
+![A graph with root node 4, two child nodes 2 and 6, and a grandchild node 3.](https://assets.exercism.org/images/exercises/binary-search-tree/tree-4-2-6-3.svg)
+
+```text
        4
      /   \
     2     6
      \
       3
+```
 
 And if we then added 1, 5, and 7, it would look like this
 
+![A graph with root node 4, two child nodes 2 and 6, and four grandchild nodes 1, 3, 5 and 7.](https://assets.exercism.org/images/exercises/binary-search-tree/tree-4-2-6-1-3-5-7.svg)
+
+```text
           4
         /   \
        /     \
       2       6
      / \     / \
     1   3   5   7
+```
+
+## Credit
+
+The images were created by [habere-et-dispertire][habere-et-dispertire] using [PGF/TikZ][pgf-tikz] by Till Tantau.
+
+[habere-et-dispertire]: https://exercism.org/profiles/habere-et-dispertire
+[pgf-tikz]: https://en.wikipedia.org/wiki/PGF/TikZ
