@@ -1,66 +1,40 @@
 # Instructions
 
-Implement a simple shift cipher like Caesar and a more secure substitution cipher.
+Create an implementation of the [Vigenère cipher][wiki].
+The Vigenère cipher is a simple substitution cipher.
 
-## Step 1
+## Cipher terminology
 
-"If he had anything confidential to say, he wrote it in cipher, that is, by so changing the order of the letters of the alphabet, that not a word could be made out.
-If anyone wishes to decipher these, and get at their meaning, he must substitute the fourth letter of the alphabet, namely D, for A, and so with the others."
-—Suetonius, Life of Julius Caesar
+A cipher is an algorithm used to encrypt, or encode, a string.
+The unencrypted string is called the _plaintext_ and the encrypted string is called the _ciphertext_.
+Converting plaintext to ciphertext is called _encoding_ while the reverse is called _decoding_.
 
-Ciphers are very straight-forward algorithms that allow us to render text less readable while still allowing easy deciphering.
-They are vulnerable to many forms of cryptanalysis, but Caesar was lucky that his enemies were not cryptanalysts.
+In a _substitution cipher_, each plaintext letter is replaced with a ciphertext letter which is computed with the help of a _key_.
+(Note, it is possible for replacement letter to be the same as the original letter.)
 
-The Caesar cipher was used for some messages from Julius Caesar that were sent afield.
-Now Caesar knew that the cipher wasn't very good, but he had one ally in that respect: almost nobody could read well.
-So even being a couple letters off was sufficient so that people couldn't recognize the few words that they did know.
+## Encoding details
 
-Your task is to create a simple shift cipher like the Caesar cipher.
-This image is a great example of the Caesar cipher:
+In this cipher, the key is a series of lowercase letters, such as `"abcd"`.
+Each letter of the plaintext is _shifted_ or _rotated_ by a distance based on a corresponding letter in the key.
+An `"a"` in the key means a shift of 0 (that is, no shift).
+A `"b"` in the key means a shift of 1.
+A `"c"` in the key means a shift of 2, and so on.
 
-![Caesar cipher][img-caesar-cipher]
+The first letter of the plaintext uses the first letter of the key, the second letter of the plaintext uses the second letter of the key and so on.
+If you run out of letters in the key before you run out of letters in the plaintext, start over from the start of the key again.
 
-For example:
+If the key only contains one letter, such as `"dddddd"`, then all letters of the plaintext are shifted by the same amount (three in this example), which would make this the same as a rotational cipher or shift cipher (sometimes called a Caesar cipher).
+For example, the plaintext `"iamapandabear"` would become `"ldpdsdqgdehdu"`.
 
-Giving "iamapandabear" as input to the encode function returns the cipher "ldpdsdqgdehdu".
-Obscure enough to keep our message secret in transit.
+If the key only contains the letter `"a"` (one or more times), the shift distance is zero and the ciphertext is the same as the plaintext.
 
-When "ldpdsdqgdehdu" is put into the decode function it would return the original "iamapandabear" letting your friend read your original message.
+Usually the key is more complicated than that, though!
+If the key is `"abcd"` then letters of the plaintext would be shifted by a distance of 0, 1, 2, and 3.
+If the plaintext is `"hello"`, we need 5 shifts so the key would wrap around, giving shift distances of 0, 1, 2, 3, and 0.
+Applying those shifts to the letters of `"hello"` we get `"hfnoo"`.
 
-## Step 2
+## Random keys
 
-Shift ciphers quickly cease to be useful when the opposition commander figures them out.
-So instead, let's try using a substitution cipher.
-Try amending the code to allow us to specify a key and use that for the shift distance.
+If no key is provided, generate a key which consists of at least 100 random lowercase letters from the Latin alphabet.
 
-Here's an example:
-
-Given the key "aaaaaaaaaaaaaaaaaa", encoding the string "iamapandabear"
-would return the original "iamapandabear".
-
-Given the key "ddddddddddddddddd", encoding our string "iamapandabear"
-would return the obscured "ldpdsdqgdehdu"
-
-In the example above, we've set a = 0 for the key value.
-So when the plaintext is added to the key, we end up with the same message coming out.
-So "aaaa" is not an ideal key.
-But if we set the key to "dddd", we would get the same thing as the Caesar cipher.
-
-## Step 3
-
-The weakest link in any cipher is the human being.
-Let's make your substitution cipher a little more fault tolerant by providing a source of randomness and ensuring that the key contains only lowercase letters.
-
-If someone doesn't submit a key at all, generate a truly random key of at least 100 lowercase characters in length.
-
-## Extensions
-
-Shift ciphers work by making the text slightly odd, but are vulnerable to frequency analysis.
-Substitution ciphers help that, but are still very vulnerable when the key is short or if spaces are preserved.
-Later on you'll see one solution to this problem in the exercise "crypto-square".
-
-If you want to go farther in this field, the questions begin to be about how we can exchange keys in a secure way.
-Take a look at [Diffie-Hellman on Wikipedia][dh] for one of the first implementations of this scheme.
-
-[img-caesar-cipher]: https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Caesar_cipher_left_shift_of_3.svg/320px-Caesar_cipher_left_shift_of_3.svg.png
-[dh]: https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange
+[wiki]: https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher

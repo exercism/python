@@ -32,3 +32,8 @@ description = "8 character plaintext results in 3 chunks, the last one with a tr
 
 [fbcb0c6d-4c39-4a31-83f6-c473baa6af80]
 description = "54 character plaintext results in 7 chunks, the last two with trailing spaces"
+include = false
+
+[33fd914e-fa44-445b-8f38-ff8fbc9fe6e6]
+description = "54 character plaintext results in 8 chunks, the last two with trailing spaces"
+reimplements = "fbcb0c6d-4c39-4a31-83f6-c473baa6af80"
