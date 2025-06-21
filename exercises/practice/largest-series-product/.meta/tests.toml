@@ -38,6 +38,11 @@ description = "reports zero if all spans include zero"
 
 [5d81aaf7-4f67-4125-bf33-11493cc7eab7]
 description = "rejects span longer than string length"
+include = false
+
+[0ae1ce53-d9ba-41bb-827f-2fceb64f058b]
+description = "rejects span longer than string length"
+reimplements = "5d81aaf7-4f67-4125-bf33-11493cc7eab7"
 
 [06bc8b90-0c51-4c54-ac22-3ec3893a079e]
 description = "reports 1 for empty string and empty product (0 span)"
@@ -49,6 +54,11 @@ include = false
 
 [6d96c691-4374-4404-80ee-2ea8f3613dd4]
 description = "rejects empty string and nonzero span"
+include = false
+
+[6cf66098-a6af-4223-aab1-26aeeefc7402]
+description = "rejects empty string and nonzero span"
+reimplements = "6d96c691-4374-4404-80ee-2ea8f3613dd4"
 
 [7a38f2d6-3c35-45f6-8d6f-12e6e32d4d74]
 description = "rejects invalid character in digits"
