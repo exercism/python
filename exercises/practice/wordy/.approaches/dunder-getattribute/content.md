@@ -13,7 +13,11 @@ OPS = {
 def answer(question):
     question = question.removeprefix("What is").removesuffix("?").strip()
     if not question: raise ValueError("syntax error")
-    if question.isdigit(): return int(question)
+
+    if question.startswith("-") and question[1:].isdigit():
+        return -int(question[1:])
+    elif question.isdigit():
+        return int(question)
 
     found_op = False
     for name, op in OPS.items():
@@ -56,8 +60,9 @@ The method calls are [chained][method-chaining], so that the output from one cal
 If the input has no characters left,
 it uses the [falsiness][falsiness] of an empty string with the [`not`][not] operator to return a `ValueError("syntax error")`.
 
-Next, the [`isdigit`][isdigit] method is used to see if the remaining characters in the input are digits.
-If so, it uses the [`int()`][int-constructor] constructor to return the string as an integer.
+Next, the [`str.startswith()`][startswith] and [`isdigit`][isdigit] methods are used to see if the remaining characters in the input are either negative or positive digits.
+Because "-" is used to denote negative numbers, `str.startswith("-")` is used in the first condition and `question[1:].isdigit()` is then used for the remaining string.
+If the `str.isdigit()` checks pass, the [`int()`][int-constructor] constructor is used to return the string as an integer with the proper sign.
 
 Next, the elements in the `OPS` dictionary are iterated over.
 If the key name is in the input, then the [`str.replace`][replace] method is used to replace the name in the input with the `dunder-method` value.
@@ -94,5 +99,6 @@ When the loop exhausts, the first element of the list is selected as the functio
 [replace]: https://docs.python.org/3/library/stdtypes.html?#str.replace
 [split]: https://docs.python.org/3/library/stdtypes.html?#str.split
 [strip]: https://docs.python.org/3/library/stdtypes.html#str.strip
+[startswith]: https://docs.python.org/3/library/stdtypes.html#str.startswith
 [unpacking]: https://treyhunner.com/2018/10/asterisks-in-python-what-they-are-and-how-to-use-them/
 [unpacking-and-multiple-assignment]: https://exercism.org/tracks/python/concepts/unpacking-and-multiple-assignment

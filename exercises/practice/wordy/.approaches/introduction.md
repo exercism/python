@@ -182,7 +182,7 @@ def answer(question):
     
     question = question.removeprefix("What is").removesuffix("?").strip()
 
-    if question.isdigit(): 
+    if (question.startswith("-") and question[1:].isdigit()) or question.isdigit():
         return int(question)
     
     if not question: 
@@ -286,7 +286,7 @@ def answer(question):
     
     question = question.removeprefix("What is").removesuffix("?").strip()
 
-    if question.isdigit(): 
+    if (question.startswith("-") and question[1:].isdigit()) or question.isdigit():
         return int(question)
     
     if not question: 
@@ -422,7 +422,11 @@ OPS = {
 def answer(question):
     question = question.removeprefix("What is").removesuffix("?").strip()
     if not question: raise ValueError("syntax error")
-    if question.isdigit(): return int(question)
+    
+    if question.startswith("-") and question[1:].isdigit():
+        return -int(question[1:])
+    elif question.isdigit():
+        return int(question)
 
     found_op = False
     for name, op in OPS.items():
