@@ -1,6 +1,6 @@
 # Instructions
 
-Determine whether a credit card number is valid according to the [Luhn formula][luhn].
+Determine whether a number is valid according to the [Luhn formula][luhn].
 
 The number will be provided as a string.
 
@@ -10,54 +10,59 @@ Strings of length 1 or less are not valid.
 Spaces are allowed in the input, but they should be stripped before checking.
 All other non-digit characters are disallowed.
 
-### Example 1: valid credit card number
+## Examples
 
-```text
-4539 3195 0343 6467
-```
+### Valid credit card number
 
-The first step of the Luhn algorithm is to double every second digit, starting from the right.
-We will be doubling
+The number to be checked is `4539 3195 0343 6467`.
+
+The first step of the Luhn algorithm is to start at the end of the number and double every second digit, beginning with the second digit from the right and moving left.
 
 ```text
 4539 3195 0343 6467
 ↑ ↑  ↑ ↑  ↑ ↑  ↑ ↑  (double these)
 ```
 
-If doubling the number results in a number greater than 9 then subtract 9 from the product.
-The results of our doubling:
+If the result of doubling a digit is greater than 9, we subtract 9 from that result.
+We end up with:
 
 ```text
 8569 6195 0383 3437
 ```
 
-Then sum all of the digits:
+Finally, we sum all digits.
+If the sum is evenly divisible by 10, the original number is valid.
 
 ```text
-8+5+6+9+6+1+9+5+0+3+8+3+3+4+3+7 = 80
+8 + 5 + 6 + 9 + 6 + 1 + 9 + 5 + 0 + 3 + 8 + 3 + 3 + 4 + 3 + 7 = 80
 ```
 
-If the sum is evenly divisible by 10, then the number is valid.
-This number is valid!
+80 is evenly divisible by 10, so number `4539 3195 0343 6467` is valid!
 
-### Example 2: invalid credit card number
+### Invalid Canadian SIN
+
+The number to be checked is `066 123 468`.
+
+We start at the end of the number and double every second digit, beginning with the second digit from the right and moving left.
 
 ```text
-8273 1232 7352 0569
+066 123 478
+ ↑  ↑ ↑  ↑  (double these)
 ```
 
-Double the second digits, starting from the right
+If the result of doubling a digit is greater than 9, we subtract 9 from that result.
+We end up with:
 
 ```text
-7253 2262 5312 0539
+036 226 458
 ```
 
-Sum the digits
+We sum the digits:
 
 ```text
-7+2+5+3+2+2+6+2+5+3+1+2+0+5+3+9 = 57
+0 + 3 + 6 + 2 + 2 + 6 + 4 + 5 + 8 = 36
 ```
 
-57 is not evenly divisible by 10, so this number is not valid.
+36 is not evenly divisible by 10, so number `066 123 478` is not valid!
 
 [luhn]: https://en.wikipedia.org/wiki/Luhn_algorithm
