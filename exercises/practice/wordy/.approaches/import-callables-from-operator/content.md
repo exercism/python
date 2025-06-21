@@ -5,22 +5,24 @@
 from operator import add, mul, sub
 from operator import floordiv as div
 
+
 OPERATIONS = {"plus": add, "minus": sub, "multiplied": mul, "divided": div}
+
 
 def answer(question):
     if not question.startswith("What is") or "cubed" in question:
         raise ValueError("unknown operation")
-    
+
     question = question.removeprefix("What is").removesuffix("?").strip()
 
-    if question.isdigit(): 
-        return int(question)
-    
-    if not question: 
+    if not question:
         raise ValueError("syntax error")
-    
+
+    if (question.startswith("-") and question[1:].isdigit()) or question.isdigit():
+        return int(question)
+
     equation = [word for word in question.split() if word != 'by']
-    
+
     while len(equation) > 1:
         try:
             x_value, operation, y_value, *rest = equation
@@ -28,7 +30,7 @@ def answer(question):
                         *rest]
         except:
             raise ValueError("syntax error")
-    
+
     return equation[0]
 ```
 

@@ -16,7 +16,7 @@ def answer(question):
     
     question = question.removeprefix("What is").removesuffix("?").strip()
 
-    if question.isdigit(): 
+    if (question.startswith("-") and question[1:].isdigit()) or question.isdigit():
         return int(question)
     
     if not question: 
@@ -67,7 +67,7 @@ def answer(question):
     
     question = question.removeprefix("What is").removesuffix("?").strip()
 
-    if question.isdigit(): 
+    if (question.startswith("-") and question[1:].isdigit()) or question.isdigit():
         return int(question)
     
     if not question: 
