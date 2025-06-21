@@ -58,7 +58,7 @@ The position information encoding is calculated as follows:
 
 ### Decimal number on the display
 
-16
+8
 
 ### Actual eggs in the coop
 
