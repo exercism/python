@@ -50,10 +50,16 @@ Assume each layer takes 2 minutes to prepare.
 ```
 
 
-## 4. Calculate total elapsed cooking time (prep + bake) in minutes
+## 4. Calculate total elapsed time (prepping + baking) in minutes
 
-Define the `elapsed_time_in_minutes()` function that takes two parameters as arguments: `number_of_layers` (_the number of layers added to the lasagna_) and `elapsed_bake_time` (_the number of minutes the lasagna has been baking in the oven_).
-This function should return the total number of minutes you have been cooking, or the sum of your preparation time and the time the lasagna has already spent baking in the oven.
+Define the `elapsed_time_in_minutes()` function that takes two parameters as arguments:
+
+- `number_of_layers` (_the number of layers added to the lasagna_)
+- `elapsed_bake_time` (_the number of minutes the lasagna has spent baking in the oven already_).
+
+This function should return the total minutes you have been in the kitchen cooking — your preparation time layering +
+the time the lasagna has spent baking in the oven.
+
 
 ```python
 >>> def elapsed_time_in_minutes(number_of_layers, elapsed_bake_time):

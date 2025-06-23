@@ -24,7 +24,8 @@
 
 - You need to define a [function][defining functions] with a single parameter representing the number of layers.
 - Use the [mathematical operator for multiplication][numbers] to multiply values.
-- You could define an extra _constant_ for the time in minutes per layer rather than using a "magic number" in your code.
+- You can define a PREPARATION_TIME _constant_ for the time in minutes per layer rather than using a ["magic
+  number"][magic-numbers] in your code.
 - This function should [return a value][return].
 
 ## 4. Calculate total elapsed cooking time (prep + bake) in minutes
@@ -43,6 +44,7 @@
 [constants]: https://stackoverflow.com/a/2682752
 [defining functions]: https://docs.python.org/3/tutorial/controlflow.html#defining-functions
 [docstrings]: https://docs.python.org/3/tutorial/controlflow.html#tut-docstrings
+[magic-numbers]: https://en.wikipedia.org/wiki/Magic_number_(programming)
 [naming]: https://realpython.com/python-variables/
 [numbers]: https://docs.python.org/3/tutorial/introduction.html#numbers
 [pep257]: https://www.python.org/dev/peps/pep-0257/
