@@ -752,7 +752,7 @@
         "slug": "nth-prime",
         "name": "Nth Prime",
         "uuid": "a20924d2-fe6d-4714-879f-3239feb9d2f2",
-        "practices": [],
+        "practices": ["generators"],
         "prerequisites": [
           "basics",
           "bools",
@@ -1485,7 +1485,7 @@
         "slug": "scale-generator",
         "name": "Scale Generator",
         "uuid": "8cd58325-61fc-46fd-85f9-425b4c41f3de",
-        "practices": ["generators"],
+        "practices": [],
         "prerequisites": [
           "basics",
           "bools",
@@ -1503,12 +1503,7 @@
         "slug": "largest-series-product",
         "name": "Largest Series Product",
         "uuid": "21624a3e-6e43-4c0e-94b0-dee5cdaaf2aa",
-        "practices": [
-          "functions",
-          "higher-order-functions",
-          "functional-tools",
-          "anonymous-functions"
-        ],
+        "practices": ["generators"],
         "prerequisites": [
           "basics",
           "conditionals",
