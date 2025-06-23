@@ -78,7 +78,7 @@ def score(x_coord, y_coord):
 ```
 
 This approach is very similar to the  [tuple and loop][approach-tuple-and-loop] approach, but iterates over [`dict.items()`][dict-items].
-For more information, see the [dict with generator-expression][approach-dict-with-generator-expression]  approach.
+For more information, see the [dict and generator][approach-dict-and-generator]  approach.
 
 
 ## Approach: Using Boolean Values as Integers
@@ -139,7 +139,7 @@ Although a strong argument could be made for simplicity and clarity — many lis
 
 [approach-boolean-values-as-integers]:  https://exercism.org/tracks/python/exercises/darts/approaches/boolean-values-as-integers
 [approach-dict-and-dict-get]:  https://exercism.org/tracks/python/exercises/darts/approaches/dict-and-dict-get
-[approach-dict-with-generator-expression]:  https://exercism.org/tracks/python/exercises/darts/approaches/dict-with-gnerator-expresson
+[approach-dict-and-generator]: https://exercism.org/tracks/python/exercises/darts/approaches/dict-and-generator
 [approach-if-statements ]:  https://exercism.org/tracks/python/exercises/darts/approaches/if-statements
 [approach-struct-pattern-matching]:  https://exercism.org/tracks/python/exercises/darts/approaches/struct-pattern-matching
 [approach-tuple-and-loop]:  https://exercism.org/tracks/python/exercises/darts/approaches/tuple-and-loop
