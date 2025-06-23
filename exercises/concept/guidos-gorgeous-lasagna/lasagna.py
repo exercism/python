@@ -8,7 +8,7 @@ of a module and its functions and/or classes.
 """
 
 
-#TODO: define the 'EXPECTED_BAKE_TIME' constant below.
+#TODO: define your EXPECTED_BAKE_TIME (required) and PREPARATION_TIME (optional) constants below.
 
 
 #TODO: Remove 'pass' and complete the 'bake_time_remaining()' function below.
@@ -27,9 +27,9 @@ def bake_time_remaining():
 
 
 #TODO: Define the 'preparation_time_in_minutes()' function below.
-# You might also consider defining a 'PREPARATION_TIME' constant.
+# To avoid the use of magic numbers (see: https://en.wikipedia.org/wiki/Magic_number_(programming)), you should define a PREPARATION_TIME constant.
 # You can do that on the line below the 'EXPECTED_BAKE_TIME' constant.
-# This will make it easier to do calculations.
+# This will make it easier to do calculations, and make changes to your code.
 
 
 
