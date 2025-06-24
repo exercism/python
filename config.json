@@ -1328,6 +1328,23 @@
         "difficulty": 4
       },
       {
+        "slug": "swift-scheduling",
+        "name": "Swift Scheduling",
+        "uuid": "ebddfc37-a3fc-4524-bd62-9c70f979713c",
+        "practices": [],
+        "prerequisites": ["basics",
+          "bools",
+          "conditionals",
+          "lists",
+          "list-methods",
+          "loops",
+          "numbers",
+          "strings",
+          "string-methods"
+        ],
+        "difficulty": 4
+      },
+      {
         "slug": "minesweeper",
         "name": "Minesweeper",
         "uuid": "7e768b54-4591-4a30-9ddb-66ca13400ca3",

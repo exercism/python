@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "erikschierboom",
+    "bethanyg"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "swift_scheduling.py"
+    ],
+    "test": [
+      "swift_scheduling_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
+  },
+  "blurb": "Convert delivery date descriptions to actual delivery dates.",
+  "source": "Original exercise idea from Eric Schierboom."
+}
