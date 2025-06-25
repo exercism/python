@@ -20,8 +20,8 @@ The following table shows how to translate them:
 | Description | Meeting start                 | Delivery date                       |
 | ----------- | ----------------------------- | ----------------------------------- |
 | `"NOW"`     | -                             | Two hours after the meeting started |
-| `"ASAP"`    | Before 12:00                  | Today at 17:00                      |
-| `"ASAP"`    | After 12:00                   | Tomorrow at 12:00                   |
+| `"ASAP"`    | Before 13:00                  | Today at 17:00                      |
+| `"ASAP"`    | After or at 13:00             | Tomorrow at 13:00                   |
 | `"EOW"`     | Monday, Tuesday, or Wednesday | Friday at 17:00                     |
 | `"EOW"`     | Thursday or Friday            | Sunday at 20:00                     |
 
@@ -32,12 +32,19 @@ There are two variable delivery date description patterns:
 - `"<N>M"` (N-th month)
 - `"Q<N>"` (N-th quarter)
 
-| Description | Meeting start              | Delivery date                                               |
-| ----------- | -------------------------- | ----------------------------------------------------------- |
-| `"<N>M"`    | Before N-th month          | At 8:00 on the _first_ workday¹ of this year's N-th month   |
-| `"<N>M"`    | After or in N-th month     | At 8:00 on the _first_ workday¹ of next year's N-th month   |
-| `"Q<N>"`    | Before or in N-th quarter² | At 8:00 on the _last_ workday¹ of this year's N-th quarter² |
-| `"Q<N>"`    | After N-th quarter²        | At 8:00 on the _last_ workday¹ of next year's N-th quarter² |
+| Description | Meeting start             | Delivery date                                             |
+| ----------- | ------------------------- | --------------------------------------------------------- |
+| `"<N>M"`    | Before N-th month         | At 8:00 on the _first_ workday of this year's N-th month  |
+| `"<N>M"`    | After or in N-th month    | At 8:00 on the _first_ workday of next year's N-th month  |
+| `"Q<N>"`    | Before or in N-th quarter | At 8:00 on the _last_ workday of this year's N-th quarter |
+| `"Q<N>"`    | After N-th quarter        | At 8:00 on the _last_ workday of next year's N-th quarter |
 
-¹ A workday is a Monday, Tuesday, Wednesday, Thursday, or Friday.
-² A year has four quarters, each with three months: January/February/March, April/May/June, July/August/September, and October/November/December.
+~~~~exercism/note
+A workday is a Monday, Tuesday, Wednesday, Thursday, or Friday.
+
+A year has four quarters, each with three months:
+1. January/February/March
+2. April/May/June
+3. July/August/September
+4. October/November/December.
+~~~~

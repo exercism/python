@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/swift-scheduling/canonical-data.json
-# File last updated on 2025-03-03
+# File last updated on 2025-06-25
 
 import unittest
 
