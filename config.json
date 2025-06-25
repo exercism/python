@@ -1345,21 +1345,6 @@
         "difficulty": 4
       },
       {
-        "slug": "minesweeper",
-        "name": "Minesweeper",
-        "uuid": "7e768b54-4591-4a30-9ddb-66ca13400ca3",
-        "practices": ["lists"],
-        "prerequisites": [
-          "basics",
-          "bools",
-          "conditionals",
-          "lists",
-          "loops",
-          "numbers"
-        ],
-        "difficulty": 4
-      },
-      {
         "slug": "spiral-matrix",
         "name": "Spiral Matrix",
         "uuid": "b0c7cf95-6470-4c1a-8eaa-6775310926a2",
@@ -2231,6 +2216,15 @@
         "slug": "trinary",
         "name": "Trinary",
         "uuid": "061a6543-d51d-4619-891b-16f92c6435ca",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "status": "deprecated"
+      },
+      {
+        "slug": "minesweeper",
+        "name": "Minesweeper",
+        "uuid": "7e768b54-4591-4a30-9ddb-66ca13400ca3",
         "practices": [],
         "prerequisites": [],
         "difficulty": 4,
