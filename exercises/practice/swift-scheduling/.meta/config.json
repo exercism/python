@@ -16,5 +16,6 @@
     ]
   },
   "blurb": "Convert delivery date descriptions to actual delivery dates.",
-  "source": "Original exercise idea from Eric Schierboom."
+  "source": "Erik Schierboom",
+  "source_url": "https://github.com/exercism/problem-specifications/pull/2536"
 }
