@@ -13,7 +13,8 @@ It is possible to break the exercise down into a series of sub-tasks, with plent
 
 Core Python does not support matrices, nor N-dimensional arrays more generally, though these are at the heart of many third-party packages such as NumPy.
 
-Thus, the input board and the final result are implemented as lists of strings, though intermediate processing is likely to use lists of lists plus a final `''.join()` for each row in the `return` statement.
+Thus, the input board and the final result are implemented as lists of strings.
+Intermediate processing is likely to use lists of lists, plus a final `''.join()` for each row in the `return` statement.
 
 Helpfully, Python can iterate over strings exactly like lists.
 
@@ -76,7 +77,7 @@ This can be made to work, but quickly becomes very verbose.
         return len([adj for adj in neighbors if adj == '*'])
 ```
 
-Slightly better, this lists all the possibilities then filters out any that fall outside the board.
+This lists all the possibilities, then filters out any squares that fall outside the board.
 
 Note that we only want a _count_ of nearby flowers.
 Their precise _location_ is irrelevant.
@@ -137,7 +138,7 @@ The example below is an object-oriented approach using complex numbers, included
 All validation checks are done in the object constructor.
 
 ```python
-"""Flower Garden."""
+"""Flower Field."""
 
 # The import is only needed for type annotation, so can be considered optional.
 from typing import Generator
