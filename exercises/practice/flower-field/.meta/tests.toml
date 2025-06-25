@@ -1,0 +1,46 @@
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
+
+[237ff487-467a-47e1-9b01-8a891844f86c]
+description = "no rows"
+
+[4b4134ec-e20f-439c-a295-664c38950ba1]
+description = "no columns"
+
+[d774d054-bbad-4867-88ae-069cbd1c4f92]
+description = "no flowers"
+
+[225176a0-725e-43cd-aa13-9dced501f16e]
+description = "garden full of flowers"
+
+[3f345495-f1a5-4132-8411-74bd7ca08c49]
+description = "flower surrounded by spaces"
+
+[6cb04070-4199-4ef7-a6fa-92f68c660fca]
+description = "space surrounded by flowers"
+
+[272d2306-9f62-44fe-8ab5-6b0f43a26338]
+description = "horizontal line"
+
+[c6f0a4b2-58d0-4bf6-ad8d-ccf4144f1f8e]
+description = "horizontal line, flowers at edges"
+
+[a54e84b7-3b25-44a8-b8cf-1753c8bb4cf5]
+description = "vertical line"
+
+[b40f42f5-dec5-4abc-b167-3f08195189c1]
+description = "vertical line, flowers at edges"
+
+[58674965-7b42-4818-b930-0215062d543c]
+description = "cross"
+
+[dd9d4ca8-9e68-4f78-a677-a2a70fd7a7b8]
+description = "large garden"

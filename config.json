@@ -1413,6 +1413,22 @@
         "difficulty": 4
       },
       {
+        "slug": "flower-field",
+        "name": "Flower Field",
+        "uuid": "0c2751c1-5d2f-499a-81b8-226e5092ea88",
+        "practices": ["lists"],
+        "prerequisites": [
+          "conditionals",
+          "lists",
+          "list-methods",
+          "loops",
+          "numbers",
+          "strings",
+          "string-methods"
+        ],
+        "difficulty": 4
+      },
+      {
         "slug": "rail-fence-cipher",
         "name": "Rail Fence Cipher",
         "uuid": "6434cc19-1ea3-43dd-9580-72267ec76b80",
