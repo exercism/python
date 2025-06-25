@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "habere-et-dispertire",
+    "bethanyg"
+  ],
+  "contributors": [
+    "isaacg",
+    "kotp"
+  ],
+  "files": {
+    "solution": [
+      "flower_field.py"
+    ],
+    "test": [
+      "flower_field_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
+  },
+  "blurb": "Mark all the flowers in a garden."
+}

@@ -1,0 +1,53 @@
+{
+  "exercise": "flower-field",
+  "version": "2.0",
+  "comments": [
+    " The expected outputs are represented as arrays of strings to   ",
+    " improve readability in this JSON file.                         ",
+    " Your track may choose whether to present the input as a single ",
+    " string (concatenating all the lines) or as the list.           "
+  ],
+  "cases": [
+    {
+      "description": "annotate 9",
+      "property": "annotate",
+      "input": {
+        "garden": [
+	        "     ",
+          "   * ",
+          "     ",
+          "     ",
+          " *   "
+	      ]
+      },
+      "expected": [
+        "  111",
+        "  1*1",
+        "  111",
+        "111  ",
+        "1*1  "
+      ]
+    },
+    {
+      "description": "different len",
+      "property": "annotate",
+      "input": {
+        "garden": [
+	        " ",
+          "*  ",
+          "  "
+	      ]
+      },
+      "expected": {"error": "The board is invalid with current input."}
+    },
+    {
+      "description": "invalid char",
+      "property": "annotate",
+      "input": {
+        "garden": ["X  * "]
+      },
+      "expected": {"error": "The board is invalid with current input."}
+
+    }
+  ]
+}
