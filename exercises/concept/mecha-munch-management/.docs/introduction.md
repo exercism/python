@@ -87,7 +87,7 @@ This allows keys, values, or (`key`, `value`) pairs to be iterated over in Last-
 ```python
 >>> palette_II = {'Factory Stone Purple': '#7c677f', 'Green Treeline': '#478559', 'Purple baseline': '#161748'}
 
-# Iterating in insertion order 
+# Iterating in insertion order (First in, first out)
 >>> for item in palette_II.items():
 ...     print(item)
 ...
@@ -96,7 +96,7 @@ This allows keys, values, or (`key`, `value`) pairs to be iterated over in Last-
 ('Purple baseline', '#161748')
 
 
-# Iterating in the reverse direction.
+# Iterating in the reverse direction. (Last in, first out)
 >>> for item in reversed(palette_II.items()):
 ...    print (item)
 ...
@@ -108,12 +108,12 @@ This allows keys, values, or (`key`, `value`) pairs to be iterated over in Last-
 ## Sorting a Dictionary
 
 Dictionaries do not have a built-in sorting method.
-However, it is possible to sort a `dict` _view_ using the built-in function `sorted()` with `.items()`.
+However, it is possible to sort a `dict` _view_ using the built-in function `sorted()` with `dict.items()`.
 The sorted view can then be used to create a new dictionary.
-Like iteration, the default sort is over dictionary `keys`.
+Like iteration, the default sort is over the dictionary `keys`.
 
 ```python
-# Default ordering for a dictionary is last in, first out (LIFO).
+# Default ordering for a dictionary is insertion order (First in, first out).
 >>> color_palette = {'Grassy Green': '#9bc400', 
                     'Purple Mountains Majesty': '#8076a3', 
                     'Misty Mountain Pink': '#f9c5bd', 
