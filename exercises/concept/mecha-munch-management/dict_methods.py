@@ -26,7 +26,7 @@ def update_recipes(ideas, recipe_updates):
     """Update the recipe ideas dictionary.
 
     :param ideas: dict - The "recipe ideas" dict.
-    :param recipe_updates: tuple -  with updates for the ideas section.
+    :param recipe_updates: iterable -  with updates for the ideas section.
     :return: dict - updated "recipe ideas" dict.
     """
 
