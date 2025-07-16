@@ -5,7 +5,7 @@ on:
 
 jobs:
   comment-on-new-issue:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     name: Comments for every NEW issue.
     steps:
       - name: Checkout
