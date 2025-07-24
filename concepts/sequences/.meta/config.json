@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for this concept",
-  "authors": ["bethanyg", "cmccandless"],
+  "blurb": "A sequence is an ordered, indexable collection of items. All sequence types support a common set of operations, with lists supporting additional mutable operations. All sequences can be indexed into with bracket notation, copied in whole or in part using slice notation, and iterated over using the \"for item in <sequence>\".",
+  "authors": ["bethanyg", "meatball133"],
   "contributors": []
 }
