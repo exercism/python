@@ -10,7 +10,7 @@ To raise a `ValueError` with a message, write the message as an argument to the 
 
 ```python
 # span of numbers is longer than number series
-raise ValueError("span must be smaller than string length")
+raise ValueError("span must not exceed string length")
 
 # span of number is negative
 raise ValueError("span must not be negative")
