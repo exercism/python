@@ -42,9 +42,7 @@ For more information, check the [`set` with `issubset()` approach][approach-set-
 
 ```python
 def is_pangram(sentence):
-    return len([ltr for ltr in set(sentence.lower()) if ltr.isalpha()]) \
-        == 26
-
+    return len(set(ltr for ltr in sentence.lower() if ltr.isalpha())) == 26
 ```
 
 For more information, check the [`set` with `len()` approach][approach-set-len].
