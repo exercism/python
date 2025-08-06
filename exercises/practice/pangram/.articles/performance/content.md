@@ -15,18 +15,18 @@ For our performance investigation, we'll also include a fourth approach that [us
 To benchmark the approaches, we wrote a [small benchmark application][benchmark-application] using the [`timeit`][timeit] library.
 
 ```
-all:   1.505466179997893e-05
-all:   1.6063886400021147e-05  // with sentence.casefold()
-set:   1.950172399985604e-06
-len:   3.7158977999933994e-06
-bit:   8.75982620002469e-06
+all:   1.8692991019000146e-05
+all:   1.686682232399926e-05  // with sentence.casefold()
+set:   2.5181135439997888e-06
+len:   5.848111433000668e-06
+bit:   1.2118699087000096e-05
 ```
 
 - The `set` `len()` approach is not as fast as the `set` `issubset()` approach.
-- The `all()` approach is slower than either `set` approach.
-Using `casefold` was slower than using `lower`.
+- The `all()` approach is significantly slower than either `set` approach (approximately 6-8x slower).
+  Using `casefold()` versus `lower()` showed variable performance, with each being faster in different runs.
 - Although the bit field approach may be faster in other languages, it is significantly slower in Python.
-It is faster than the `all()` approach, but much slower than either `set` approach.
+  It is faster than the `all()` approach, but much slower than either `set` approach.
 
 [benchmark-application]: https://github.com/exercism/python/blob/main/exercises/practice/pangram/.articles/performance/code/Benchmark.py
 [timeit]: https://docs.python.org/3/library/timeit.html
