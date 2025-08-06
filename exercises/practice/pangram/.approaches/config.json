@@ -1,6 +1,7 @@
 {
   "introduction": {
-    "authors": ["bobahop"]
+    "authors": ["bobahop"],
+    "contributors": ["princemuel"]
   },
   "approaches": [
     {
@@ -22,7 +23,8 @@
       "slug": "set-len",
       "title": "set with len",
       "blurb": "Use set with len.",
-      "authors": ["bobahop"]
+      "authors": ["bobahop"],
+      "contributors": ["princemuel"]
     },    
     {
       "uuid": "0a6d1bbf-6d60-4489-b8d9-b8375894628b",
