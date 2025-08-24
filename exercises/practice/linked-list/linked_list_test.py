@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/linked-list/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2025-08-24
 
 import unittest
 
@@ -168,8 +168,12 @@ class LinkedListTest(unittest.TestCase):
         lst = LinkedList()
         with self.assertRaises(IndexError) as err:
             lst.pop()
-            self.assertEqual(type(err.exception), IndexError)
-            self.assertEqual(err.exception.args[0], "List is empty")
+
+        to_validate = err.exception
+        to_validate_msg = err.exception.args[0]
+
+        self.assertEqual(type(to_validate), IndexError)
+        self.assertEqual(to_validate_msg, "List is empty")
 
     def test_can_return_with_pop_and_then_raise_an_error_if_empty(self):
         lst = LinkedList()
@@ -179,15 +183,23 @@ class LinkedListTest(unittest.TestCase):
         self.assertEqual(lst.pop(), 5)
         with self.assertRaises(IndexError) as err:
             lst.pop()
-            self.assertEqual(type(err.exception), IndexError)
-            self.assertEqual(err.exception.args[0], "List is empty")
+
+        to_validate = err.exception
+        to_validate_msg = err.exception.args[0]
+
+        self.assertEqual(type(to_validate), IndexError)
+        self.assertEqual(to_validate_msg, "List is empty")
 
     def test_using_shift_raises_an_error_if_the_list_is_empty(self):
         lst = LinkedList()
         with self.assertRaises(IndexError) as err:
             lst.shift()
-            self.assertEqual(type(err.exception), IndexError)
-            self.assertEqual(err.exception.args[0], "List is empty")
+
+        to_validate = err.exception
+        to_validate_msg = err.exception.args[0]
+
+        self.assertEqual(type(to_validate), IndexError)
+        self.assertEqual(to_validate_msg, "List is empty")
 
     def test_can_return_with_shift_and_then_raise_an_error_if_empty(self):
         lst = LinkedList()
@@ -197,15 +209,23 @@ class LinkedListTest(unittest.TestCase):
         self.assertEqual(lst.shift(), 5)
         with self.assertRaises(IndexError) as err:
             lst.shift()
-            self.assertEqual(type(err.exception), IndexError)
-            self.assertEqual(err.exception.args[0], "List is empty")
+
+        to_validate = err.exception
+        to_validate_msg = err.exception.args[0]
+
+        self.assertEqual(type(to_validate), IndexError)
+        self.assertEqual(to_validate_msg, "List is empty")
 
     def test_using_delete_raises_an_error_if_the_list_is_empty(self):
         lst = LinkedList()
         with self.assertRaises(ValueError) as err:
             lst.delete(0)
-            self.assertEqual(type(err.exception), ValueError)
-            self.assertEqual(err.exception.args[0], "Value not found")
+
+        to_validate = err.exception
+        to_validate_msg = err.exception.args[0]
+
+        self.assertEqual(type(to_validate), ValueError)
+        self.assertEqual(to_validate_msg, "Value not found")
 
     def test_using_delete_raises_an_error_if_the_value_is_not_found(self):
         lst = LinkedList()
@@ -214,5 +234,9 @@ class LinkedListTest(unittest.TestCase):
         self.assertEqual(lst.pop(), 7)
         with self.assertRaises(ValueError) as err:
             lst.delete(0)
-            self.assertEqual(type(err.exception), ValueError)
-            self.assertEqual(err.exception.args[0], "Value not found")
+
+        to_validate = err.exception
+        to_validate_msg = err.exception.args[0]
+
+        self.assertEqual(type(to_validate), ValueError)
+        self.assertEqual(to_validate_msg, "Value not found")
