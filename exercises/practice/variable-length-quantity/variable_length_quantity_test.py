@@ -11,7 +11,6 @@ from variable_length_quantity import (
 
 
 class VariableLengthQuantityTest(unittest.TestCase):
-
     def test_zero(self):
         self.assertEqual(encode([0x0]), [0x0])
 
