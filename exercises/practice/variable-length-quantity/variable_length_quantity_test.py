@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/variable-length-quantity/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2025-08-28
 
 import unittest
 
@@ -17,6 +17,9 @@ class VariableLengthQuantityTest(unittest.TestCase):
     def test_arbitrary_single_byte(self):
         self.assertEqual(encode([0x40]), [0x40])
 
+    def test_asymmetric_single_byte(self):
+        self.assertEqual(encode([0x53]), [0x53])
+
     def test_largest_single_byte(self):
         self.assertEqual(encode([0x7F]), [0x7F])
 
@@ -25,6 +28,9 @@ class VariableLengthQuantityTest(unittest.TestCase):
 
     def test_arbitrary_double_byte(self):
         self.assertEqual(encode([0x2000]), [0xC0, 0x0])
+
+    def test_asymmetric_double_byte(self):
+        self.assertEqual(encode([0xAD]), [0x81, 0x2D])
 
     def test_largest_double_byte(self):
         self.assertEqual(encode([0x3FFF]), [0xFF, 0x7F])
@@ -35,6 +41,9 @@ class VariableLengthQuantityTest(unittest.TestCase):
     def test_arbitrary_triple_byte(self):
         self.assertEqual(encode([0x100000]), [0xC0, 0x80, 0x0])
 
+    def test_asymmetric_triple_byte(self):
+        self.assertEqual(encode([0x1D59C]), [0x87, 0xAB, 0x1C])
+
     def test_largest_triple_byte(self):
         self.assertEqual(encode([0x1FFFFF]), [0xFF, 0xFF, 0x7F])
 
@@ -44,6 +53,9 @@ class VariableLengthQuantityTest(unittest.TestCase):
     def test_arbitrary_quadruple_byte(self):
         self.assertEqual(encode([0x8000000]), [0xC0, 0x80, 0x80, 0x0])
 
+    def test_asymmetric_quadruple_byte(self):
+        self.assertEqual(encode([0x357704]), [0x81, 0xD5, 0xEE, 0x4])
+
     def test_largest_quadruple_byte(self):
         self.assertEqual(encode([0xFFFFFFF]), [0xFF, 0xFF, 0xFF, 0x7F])
 
@@ -52,6 +64,9 @@ class VariableLengthQuantityTest(unittest.TestCase):
 
     def test_arbitrary_quintuple_byte(self):
         self.assertEqual(encode([0xFF000000]), [0x8F, 0xF8, 0x80, 0x80, 0x0])
+
+    def test_asymmetric_quintuple_byte(self):
+        self.assertEqual(encode([0x86656105]), [0x88, 0xB3, 0x95, 0xC2, 0x5])
 
     def test_maximum_32_bit_integer_input(self):
         self.assertEqual(encode([0xFFFFFFFF]), [0x8F, 0xFF, 0xFF, 0xFF, 0x7F])
