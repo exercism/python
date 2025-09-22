@@ -351,8 +351,8 @@ numbers = [1, 2, 3]
 1
 ```
 
-Using `*` unpacking with the `zip()` function is another common use case.
-Since `zip()` takes multiple iterables and returns a `list` of `tuples` with the values from each `iterable` grouped:
+Using `*` unpacking with the [`zip()` built-in][zip] is another common use case.
+The `zip()` function takes multiple iterables and returns a `list` of `tuples` with the values from each `iterable` grouped:
 
 ```python
 >>> values = (['x', 'y', 'z'], [1, 2, 3], [True, False, True])
@@ -369,3 +369,4 @@ Since `zip()` takes multiple iterables and returns a `list` of `tuples` with the
 [sorting algorithms]: https://realpython.com/sorting-algorithms-python/
 [unpacking]: https://www.geeksforgeeks.org/unpacking-arguments-in-python/?ref=rp
 [view-objects]: https://docs.python.org/3/library/stdtypes.html#dict-views
+[zip]: https://docs.python.org/3/library/functions.html#zip
