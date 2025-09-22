@@ -108,9 +108,9 @@ Remember: sets can hold different datatypes and _nested_ datatypes, but all `set
 
 ```python
 # Attempting to use a list for a set member throws a TypeError
->>> lists_as_elements = {['😅','🤣'], 
-                        ['😂','🙂','🙃'], 
-                        ['😜', '🤪', '😝']}
+>>> lists_as_elements = {['🌈','💦'], 
+                        ['☁️','⭐️','🌍'], 
+                        ['⛵️', '🚲', '🚀']}
 
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -118,9 +118,9 @@ TypeError: unhashable type: 'list'
 
 
 # Standard sets are mutable, so they cannot be hashed.
->>> sets_as_elements = {{'😅','🤣'}, 
-                        {'😂','🙂','🙃'}, 
-                        {'😜', '🤪', '😝'}}
+>>> sets_as_elements = {{'🌈','💦'}, 
+                        {'☁️','⭐️','🌍'}, 
+                        {'⛵️', '🚲', '🚀'}}
 
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -131,14 +131,15 @@ However, a  `set` of `sets` can be created via type `frozenset()`:
 
 ```python
 # Frozensets don't have a literal form.
->>> set_1 = frozenset({'😜', '😝', '🤪'})
->>> set_2 = frozenset({'😅', '🤣'})
->>> set_3 = frozenset({'😂', '🙂', '🙃'})
+>>> set_1 = frozenset({'🌈','💦'})
+>>> set_2 = frozenset({'☁️','⭐️','🌍'})
+>>> set_3 = frozenset({'⛵️', '🚲', '🚀'})
 
 >>> frozen_sets_as_elements = {set_1, set_2, set_3}
 >>> frozen_sets_as_elements
-{frozenset({'😜', '😝', '🤪'}), frozenset({'😅', '🤣'}), 
-frozenset({'😂', '🙂', '🙃'})}
+{frozenset({'⛵️', '🚀', '🚲'}),
+ frozenset({'🌈', '💦'}),
+ frozenset({'☁️', '⭐️', '🌍'})}
 ```
 
 
