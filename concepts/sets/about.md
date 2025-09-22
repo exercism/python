@@ -34,12 +34,13 @@ While sets can be created in many different ways, the most straightforward const
 A `set` can be directly entered as a _set literal_ with curly `{}` brackets and commas between elements.
 Duplicates are silently omitted:
 
-```python
->>> one_element = {'😀'}
-{'😀'}
 
->>> multiple_elements = {'😀', '😃', '😄', '😁'}
-{'😀', '😃', '😄', '😁'}
+```python
+>>> one_element = {'➕'}
+{'➕'}
+
+>>> multiple_elements = {'➕', '🔻', '🔹', '🔆'}
+{'➕', '🔻', '🔹', '🔆'}
 
 >>> multiple_duplicates =  {'Hello!', 'Hello!', 'Hello!', 
                             '¡Hola!','Привіт!', 'こんにちは！', 
