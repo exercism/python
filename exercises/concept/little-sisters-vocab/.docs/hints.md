@@ -16,6 +16,7 @@ There's four activities in the assignment, each with a set of text or words to w
 
 - Believe it or not, [`str.join()`][str-join] is all you need here.
 - Like [`str.split()`][str-split]`, `str.join()` can take an arbitrary-length string, made up of any unicode code points.
+- The tests will be feeding your function a `list`.  There will be no need to alter this list, provided you use `.join()` correctly.
 
 ## 3. Remove a suffix from a word
 

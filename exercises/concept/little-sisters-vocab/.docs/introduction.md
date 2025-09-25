@@ -50,7 +50,7 @@ If a `list`, `tuple`, `set` or other collection of individual strings needs to b
 
 ```python
 # str.join() makes a new string from the iterables elements.
->>> chickens = ["hen", "egg", "rooster"]
+>>> chickens = ["hen", "egg", "rooster"] #lists are iterable
 >>> ' '.join(chickens)
 'hen egg rooster'
 
@@ -60,7 +60,36 @@ If a `list`, `tuple`, `set` or other collection of individual strings needs to b
 
 >>> ' 🌿 '.join(chickens)
 'hen 🌿 egg 🌿 rooster'
+
+
+# Any iterable can be used as input.
+>>> flowers = ("rose", "daisy", "carnation")  #tuples are iterable
+>>> '*-*'.join(flowers)
+'rose*-*daisy*-*carnation'
+
+>>> flowers = {"rose", "daisy", "carnation"}  #sets are iterable, but output order is not guaranteed.
+>>> '*-*'.join(flowers)
+'rose*-*carnation*-*daisy'
+
+>>> phrase = "This is my string"  #strings are iterable, but be careful!
+>>> '..'.join(phrase)
+'T..h..i..s.. ..i..s.. ..m..y.. ..s..t..r..i..n..g'
+
+
+# Separators are inserted **between** elements, but can be any string (including spaces).
+# This can be exploited for interesting effects.
+>>> under_words = ['under', 'current', 'sea', 'pin', 'dog', 'lay']
+>>> separator = ' ⤴️ under'
+>>> separator.join(under_words)
+'under ⤴️ undercurrent ⤴️ undersea ⤴️ underpin ⤴️ underdog ⤴️ underlay'
+
+# The seperator can be composed different ways, as long as the result is a string.
+>>> upper_words = ['upper', 'crust', 'case', 'classmen', 'most', 'cut']
+>>> separator = ' 🌟 ' + upper_words[0]
+>>> separator.join(upper_words)
+ 'upper 🌟 uppercrust 🌟 uppercase 🌟 upperclassmen 🌟 uppermost 🌟 uppercut'
 ```
+
 
 Code points within a `str` can be referenced by `0-based index` number from the left:
 
