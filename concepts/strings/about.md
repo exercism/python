@@ -206,7 +206,7 @@ If a `list`, `tuple`, `set` or other collection of individual strings needs to b
 >>> separator.join(under_words)
 'under ⤴️ undercurrent ⤴️ undersea ⤴️ underpin ⤴️ underdog ⤴️ underlay'
 
-# The seperator can be composed different ways, as long as the result is a string.
+# The separator can be composed different ways, as long as the result is a string.
 >>> upper_words = ['upper', 'crust', 'case', 'classmen', 'most', 'cut']
 >>> separator = ' 🌟 ' + upper_words[0] #this becomes one string, similar to ' ⤴️ under'.
 >>> separator.join(upper_words)
