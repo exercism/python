@@ -168,7 +168,7 @@ sentence = word + " " + "means" + " " + number + " in " + language + "."
 "дев'ять means nine in Ukrainian."
 ```
 
-If a `list`, `tuple`, `set` or other collection of individual strings needs to be combined into a single `str`, [`<str>.join(<iterable>)`][str-join], is a better option:
+If a `list`, `tuple`, `set` or other collection of individual strings needs to be combined into a single `str`, [`<str>.join(<iterable>)`][str-join] is a better option:
 
 
 ```python
