@@ -9,7 +9,7 @@ The Python docs also provide a very detailed [unicode HOWTO][unicode how-to] tha
 Strings implement all [common sequence operations][common sequence operations] and can be iterated through using `for item in <str>` or `for index, item in enumerate(<str>)` syntax.
  Individual code points (_strings of length 1_) can be referenced by `0-based index` number from the left, or `-1-based index` number from the right.
 
-Strings can be concatenated with `+`, or via `<str>.join(<iterable>)`, split via `<str>.split(<separator>)`, and offer multiple formatting and assembly options.
+Strings can be concatenated with `+`, or via `<str>.join(<iterable>)`, split via `<str>.split(<separator>)`, and offer multiple formatting, assembly, and templating options.
 
 
 A `str` literal can be declared via single `'` or double `"` quotes. The escape `\` character is available as needed.
@@ -173,7 +173,7 @@ If a `list`, `tuple`, `set` or other collection of individual strings needs to b
 
 ```python
 # str.join() makes a new string from the iterables elements.
->>> chickens = ["hen", "egg", "rooster"]
+>>> chickens = ["hen", "egg", "rooster"] #lists are iterable
 >>> ' '.join(chickens)
 'hen egg rooster'
 
@@ -183,6 +183,34 @@ If a `list`, `tuple`, `set` or other collection of individual strings needs to b
 
 >>> ' 🌿 '.join(chickens)
 'hen 🌿 egg 🌿 rooster'
+
+
+# Any iterable can be used as input.
+>>> flowers = ("rose", "daisy", "carnation")  #tuples are iterable
+>>> '*-*'.join(flowers)
+'rose*-*daisy*-*carnation'
+
+>>> flowers = {"rose", "daisy", "carnation"}  #sets are iterable, but output order is not guaranteed.
+>>> '*-*'.join(flowers)
+'rose*-*carnation*-*daisy'
+
+>>> phrase = "This is my string"  #strings are iterable, but be careful!
+>>> '..'.join(phrase)
+'T..h..i..s.. ..i..s.. ..m..y.. ..s..t..r..i..n..g'
+
+
+# Separators are inserted **between** elements, but can be any string (including spaces).
+# This can be exploited for interesting effects.
+>>> under_words = ['under', 'current', 'sea', 'pin', 'dog', 'lay']
+>>> separator = ' ⤴️ under' #note the leading space, but no trailing space.
+>>> separator.join(under_words)
+'under ⤴️ undercurrent ⤴️ undersea ⤴️ underpin ⤴️ underdog ⤴️ underlay'
+
+# The seperator can be composed different ways, as long as the result is a string.
+>>> upper_words = ['upper', 'crust', 'case', 'classmen', 'most', 'cut']
+>>> separator = ' 🌟 ' + upper_words[0] #this becomes one string, similar to ' ⤴️ under'.
+>>> separator.join(upper_words)
+ 'upper 🌟 uppercrust 🌟 uppercase 🌟 upperclassmen 🌟 uppermost 🌟 uppercut'
 ```
 
 Strings support all [common sequence operations][common sequence operations].
@@ -194,7 +222,9 @@ Indexes _with_ items can be iterated through in a loop via `for index, item in e
 
 >>> exercise = 'လေ့ကျင့်'
 
-# Note that there are more code points than perceived glyphs or characters
+# Note that there are more code points than perceived glyphs or characters.
+# Care should be used when iterating over languages that use
+# combining characters, or when dealing with emoji.
 >>> for code_point in exercise:
 ...    print(code_point)
 ...

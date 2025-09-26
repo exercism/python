@@ -90,7 +90,6 @@ If a `list`, `tuple`, `set` or other collection of individual strings needs to b
  'upper 🌟 uppercrust 🌟 uppercase 🌟 upperclassmen 🌟 uppermost 🌟 uppercut'
 ```
 
-
 Code points within a `str` can be referenced by `0-based index` number from the left:
 
 
@@ -123,7 +122,6 @@ creative = '창의적인'
 '인'
 
 ```
-
 
 There is no separate “character” or "rune" type in Python, so indexing a string produces a new `str` of length 1:
 
@@ -197,7 +195,6 @@ Strings can also be broken into smaller strings via [`<str>.split(<separator>)`]
 ...
 ['feline', 'four-footed', 'ferocious', 'furry']
 ```
-
 
 Separators for `<str>.split()` can be more than one character.
 The **whole string** is used for split matching.
