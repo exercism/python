@@ -14,8 +14,11 @@ There's four activities in the assignment, each with a set of text or words to w
 
 ## 2. Add prefixes to word groups
 
-- Believe it or not, [`str.join()`][str-join] is all you need here.
-- Like [`str.split()`][str-split]`, `str.join()` can take an arbitrary-length string, made up of any unicode code points.
+- Believe it or not, [`str.join()`][str-join] is all you need here.  **A loop is not required**.
+- The tests will be feeding your function a `list`.  There will be no need to alter this `list` if you can figure out a good delimiter string.
+- Remember that delimiter strings go between elements and "glue" them together into a single string. Delimiters are inserted _without_ space, although you can include space characters within them.
+- Like [`str.split()`][str-split], `str.join()` can process an arbitrary-length string, made up of any unicode code points. _Unlike_ `str.split()`, it can also process arbitrary-length iterables like `list`, `tuple`, and `set`.
+
 
 ## 3. Remove a suffix from a word
 
