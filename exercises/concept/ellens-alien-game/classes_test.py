@@ -199,6 +199,9 @@ class ClassesTest(unittest.TestCase):
         test_data = [(-2, 6), (1, 5), (-4, -3)]
         actual_result = new_aliens_collection(test_data)
 
+        length_error_message = f"Expected {len(test_data)} Aliens, got {len(actual_result)}"
+        self.assertEqual(len(actual_result), len(test_data), msg=length_error_message)
+
         error_message = "new_aliens_collection() must return a list of Alien objects."
 
         for obj in actual_result:
