@@ -8,7 +8,7 @@ A multi-dimensional list-with-a-list is used as a simple (but not very efficient
 
 TODO: ADD MORE DETAIL
 
-See the Python documentation entries for the [mutable][mutation] [`list` type][docs-list-type] and it's [constructor][list-as-function]. This is Python's most commonly used [sequential collection][docs-sequence-types], and as it allows _heterogeneous data_ it's quite different from the [fixed array][general-concept-array] and [singly-linked list][general-concept-list] types you may have encountered in other, less flexible, languages.
+See the Python documentation entries for the [mutable][mutation] [`list` type][docs-list-type] and its [constructor][list-as-function]. This is Python's most commonly used [sequential collection][docs-sequence-types], and as it allows _heterogeneous data_ it's quite different from the [fixed array][general-concept-array] and [singly-linked list][general-concept-list] types you may have encountered in other, less flexible, languages.
 
 [variable-length-quantity]: ../../exercise-concepts/variable-length-quantity.md
 [markdown]: ../../exercise-concepts/markdown.md
