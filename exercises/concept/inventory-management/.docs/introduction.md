@@ -84,7 +84,7 @@ You can change an entry `value` by assigning to its _key_:
 New `key`:`value` pairs can be _added_ in the same fashion:
 
 ```python
-# Adding an new "color" key with a new "tawney" value.
+# Adding a new "color" key with a new "tawney" value.
 >>> bear["color"] = 'tawney'
 {'name': 'Grizzly Bear', 'speed': 40, 'land_animal': True, 'color': 'tawney'}
 
