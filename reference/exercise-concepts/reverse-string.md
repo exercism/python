@@ -31,4 +31,4 @@ def reverse(text: str = "") -> str:
     [Extra material for string slicing.](https://www.digitalocean.com/community/tutorials/how-to-index-and-slice-strings-in-python-3)
 
 - [Docstrings][docstrings]: used to document the function, normally situated right below `def func():`
-- [Type hinting][type-hinting]: In modern Python it's possible to type hint annotations to parameters and variables, see [typing](https://docs.python.org/3/library/typing.html#module-typing). While not necessary in Python such annotations can help your code be easier to read, understand, and check automatically using tools like `mypy`.
+- [Type hinting][type-hinting]: In modern Python it's possibly to type hint annotations to parameters and variables, see [typing](https://docs.python.org/3/library/typing.html#module-typing). While not necessary in Python such annotations can help your code be easier to read, understand, and check automatically using tools like `mypy`.
