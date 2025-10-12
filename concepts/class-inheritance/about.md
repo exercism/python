@@ -7,7 +7,7 @@ In situations where only a small amount of functionality needs to be customized 
 
 `Inheritance` describes `is a kind of` relationship between two or more classes, abstracting common details into super (_base_ or _parent_) class and storing specific ones in the subclass (_derived class_ or _child class_).
 
-To create a child class, specify the parent class name inside the pair of parenthesis, followed by it's name.
+To create a child class, specify the parent class name inside the pair of parenthesis, followed by its name.
 Example
 ```python
 class Child(Parent):  
