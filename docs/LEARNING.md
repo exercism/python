@@ -6,7 +6,7 @@ Python is (_as [Wikipedia says][wikipython]_), a *general-purpose and high-level
  It is especially good at 'gluing' different systems and programs together.
 
 
-And we think the best way to lean is to _play_ and to _practice_ with coding projects big and small - or with small problems like the ones here on exercism!
+And we think the best way to learn is to _play_ and to _practice_ with coding projects big and small - or with small problems like the ones here on exercism!
 
 
 Below you will find some additional jumping-off places to start your learning journey, recommended by our community.
