@@ -1,3 +1,4 @@
+from functools import zip_longest
 import unittest
 import pytest
 
@@ -204,7 +205,7 @@ class ClassesTest(unittest.TestCase):
         for obj in actual_result:
             self.assertIsInstance(obj, Alien, msg=error_message)
 
-        for position, obj in zip(test_data, actual_result):
+        for position, obj in zip_longest(test_data, actual_result):
             position_error = (f'After calling new_aliens_collection({test_data}), '
                               f'found {obj} initialized to position {(obj.x_coordinate, obj.y_coordinate)}, '
                               f'but the tests expected {obj} to be at position {position} instead.')
