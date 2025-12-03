@@ -22,6 +22,9 @@ class CollatzConjectureTest(unittest.TestCase):
     def test_large_number_of_even_and_odd_steps(self):
         self.assertEqual(steps(1000000), 152)
 
+    def test_odd_number_start(self):
+        self.assertEqual(steps(25), 23)    
+
     def test_zero_is_an_error(self):
         with self.assertRaises(ValueError) as err:
             steps(0)
