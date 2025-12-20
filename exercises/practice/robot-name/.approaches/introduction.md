@@ -1,8 +1,8 @@
 # Introduction
-Robot Name in Python is an interesting exercise for practising randomness.
+Robot Name in Python is an interesting exercise for practicing randomness.
 
 ## General Guidance
-Two ways immedietely come to mind: generate all the possible names and then return them sequentially, or generate a random name and ensure that it's not been previously used.
+Two ways immediately come to mind: generate all the possible names and then return them sequentially, or generate a random name and ensure that it's not been previously used.
 
 Randomness can be a little, well, random, so **it's very easy to have an incorrect solution and still pass the tests**. It's strongly recommended to submit your solution for Code Review.
 
@@ -30,7 +30,7 @@ Note that selecting randomly from the list of all names would be incorrect, as t
 For more detail and explanation of the code, [read here][approach-mass-name-generation].
 
 ## Approach: name on the fly
-Another approach is to generate the name on the fly and add it to a cache or a store, and checking if the generated name hasn't been used previously.
+Another approach is to generate the name on the fly and add it to a cache or a store, checking if the generated name hasn't been used previously.
 
 
 A possible way to implement this:

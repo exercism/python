@@ -1,5 +1,5 @@
 # Find name on the fly
-We generate the name on the fly and add it to a cache or a store, and checking if the generated name hasn't been used previously.
+We generate the name on the fly and add it to a cache or a store, checking if the generated name hasn't been used previously.
 
 A possible way to implement this:
 ```python
@@ -22,14 +22,22 @@ class Robot:
     def __init__(self): 
         self.reset()
 ```
-We use a `set` for the cache as it has a low access time, and we don't need the preservation of order or the ability to be indexed.
+We use a `set` for the cache as it has a low access time, and because we do not need the preservation of order or the ability to access by index.
 
-This way is merely one of the many to generate the name. 
+Using `choices` is merely one of the many ways to generate the name.
 Another way might be to use `randrange` along with `zfill` for the number part, and a double `random.choice` / `random.choice` on `itertools.product` to generate the letter part.
-This is the shortest way, and best utilizes the Python standard library.
+The first is shorter, and best utilizes the Python standard library.
 
-As we're using a `while` loop to check for the name generation, it's convenient to store the local `name` using the [walrus operator][walrus-operator].
-It's also possible to find the name before the loop and find it again inside the loop, but that would unnecessary repetition.
+As we are using a `while` loop to check for the name generation, it is convenient to store the local `name` using the [walrus operator][walrus-operator].
+It's also possible to find the name once before the loop, and then find it again inside the loop, but that would be an unnecessary repetition:
+```python
+def reset(self):
+    name = self.__get_name()
+    while name in cache:
+        name = self.__get_name()
+    cache.add(name)
+    self.name = name
+```
 A helper method ([private][private-helper-methods] in this case) makes your code cleaner, but it's equally valid to have the code in the loop itself:
 ```python
 def reset(self):
@@ -39,10 +47,10 @@ def reset(self):
     self.name = name
 ```
 
-We call `reset` from `__init__` - it's syntactically valid to do it the other way round, but it's not considered good practice to call [dunder methods][dunder-methods] directly.
+We call `reset` from `__init__` - it is syntactically valid to do it the other way around, but it is not considered good practice to call [dunder methods][dunder-methods] directly.
 
 This has almost no startup time and memory, apart from declaring an empty `set`.
-Note that the _generation_ time is the same as the mass generation approach, as a similar method is used.
+Note that the _generation_ time is the same as the [mass generation approach][approach-mass-name-generation], as a similar method is used.
 However, as the name is generated at the time of setting/resetting, the method time itself is higher.
 
 In the long run, if many names are generated, this is inefficient, since collisions will start being generated more often than unique names. 
@@ -50,3 +58,4 @@ In the long run, if many names are generated, this is inefficient, since collisi
 [walrus-operator]: https://realpython.com/python-walrus-operator/
 [private-helper-methods]: https://www.geeksforgeeks.org/private-methods-in-python/
 [dunder-methods]: https://dbader.org/blog/python-dunder-methods
+[approach-mass-name-generation]: https://exercism.org/tracks/python/exercises/robot-name/approaches/mass-name-generation
