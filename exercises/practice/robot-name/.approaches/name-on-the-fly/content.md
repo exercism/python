@@ -1,5 +1,5 @@
 # Find name on the fly
-We generate the name on the fly and add it to a cache or a store, checking if the generated name hasn't been used previously.
+We generate the name on the fly and add it to a cache or a store, checking to make sure that the generated name has not been used previously.
 
 A possible way to implement this:
 ```python
