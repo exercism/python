@@ -30,7 +30,7 @@ LOOKUP = {"G": "C", "C": "G", "T": "A", "A": "U"}
 
 
 def to_rna(dna_strand):
-    return ''.join(LOOKUP[chr] for chr in dna_strand)
+    return ''.join(LOOKUP[char] for char in dna_strand)
 
 ```
 
@@ -38,7 +38,7 @@ For more information, check the [dictionary look-up with `join()` approach][appr
 
 ## Which approach to use?
 
-The `translate()` with `maketrans()` approach benchmarked over four times faster than the dictionary look-up with `join()` approach.
+The `translate()` with `maketrans()` approach benchmarked many times faster than the dictionary look-up with `join()` approach.
 
 [ASCII]: https://www.asciitable.com/
 [approach-translate-maketrans]: https://exercism.org/tracks/python/exercises/rna-transcription/approaches/translate-maketrans
