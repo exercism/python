@@ -26,6 +26,7 @@ class Robot(object):
 
 The first few lines of the mass name generation uses [`itertools.product`][itertools-product].
 The resultant code is a simplification of:
+
 ```python
 letter_pairs = (''.join((l1, l2)) for l1 in ascii_uppercase for l2 in ascii_uppercase)
 numbers = (str(i).zfill(3) for i in range(1000))

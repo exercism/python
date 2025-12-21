@@ -3,6 +3,7 @@
 We generate the name on the fly and add it to a cache or a store, checking to make sure that the generated name has not been used previously.
 
 A possible way to implement this:
+
 ```python
 from string import ascii_uppercase, digits
 from random import choices
@@ -23,6 +24,7 @@ class Robot:
     def __init__(self):
         self.reset()
 ```
+
 We use a `set` for the cache as it has a low access time, and because we do not need the preservation of order or the ability to access by index.
 
 Using `choices` is one of the many ways to generate the name.
@@ -31,6 +33,7 @@ The first is shorter, and best utilizes the Python standard library.
 
 As we are using a `while` loop to check for the name generation, it is convenient to store the local `name` using the [walrus operator][walrus-operator].
 It's also possible to find the name once before the loop, and then find it again inside the loop, but that would be an unnecessary repetition:
+
 ```python
 def reset(self):
     name = self.__get_name()
@@ -39,7 +42,9 @@ def reset(self):
     cache.add(name)
     self.name = name
 ```
+
 A helper method ([private][private-helper-methods] in this case) makes your code cleaner, but it's equally valid to have the code in the loop itself:
+
 ```python
 def reset(self):
     while (name := ''.join(choices(ascii_uppercase, k=2) + choices(digits, k=3))) in cache:
