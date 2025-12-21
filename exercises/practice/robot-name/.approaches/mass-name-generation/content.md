@@ -1,4 +1,5 @@
 # Mass Name Generation
+
 We first generate all the possible names, shuffle them, and then either use `next` (the simplest way) or maintain a `current_index` to get the name.
 Note that selecting randomly from the list of all names would be incorrect, as there is a possibility of the name being repeated.
 
@@ -31,14 +32,14 @@ numbers = (str(i).zfill(3) for i in range(1000))
 names = [l + n for l in letter_pairs for n in numbers]
 ```
 
-After the name generation, the names are shuffled - using the [default `seed`][random-seed] in the `random` module (the current timestamp). 
+After the name generation, the names are shuffled - using the [default `seed`][random-seed] in the `random` module (the current timestamp).
 When the tests reseed `random`, this has no effect as the names were shuffled before that.
 
-We then set `NAMES` to the iterable of names, and in `reset`, set the robot's name to the  `next(name)`. 
+We then set `NAMES` to the iterable of names, and in `reset`, set the robot's name to the  `next(name)`.
 If you are interested, you can read more on [`iter` and `next`][iter-and-next].
 
 Unlike the [on the fly approach][approach-name-on-the-fly], this has a relatively short "generation" time, because we are merely giving the `next` name instead of generating it.
-However, this has a huge startup memory and time cost, as 676,000 strings have to be calculated and stored. 
+However, this has a huge startup memory and time cost, as 676,000 strings have to be calculated and stored.
 For an approximate calculation, 676,000 strings * 5 characters / string * 1 byte / character gives 3380000 bytes or 3.38 MB of RAM - and that's just the memory aspect of it.
 Sounds small, but this might be a relatively significant startup cost.
 
