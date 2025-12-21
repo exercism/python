@@ -24,7 +24,7 @@ class Robot:
 ```
 We use a `set` for the cache as it has a low access time, and because we do not need the preservation of order or the ability to access by index.
 
-Using `choices` is merely one of the many ways to generate the name.
+Using `choices` is one of the many ways to generate the name.
 Another way might be to use `randrange` along with `zfill` for the number part, and a double `random.choice` / `random.choice` on `itertools.product` to generate the letter part.
 The first is shorter, and best utilizes the Python standard library.
 
