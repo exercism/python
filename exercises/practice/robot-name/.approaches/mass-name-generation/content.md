@@ -1,6 +1,6 @@
 # Mass Name Generation
 We would first have to generate all the possible names, shuffle them, and then either use `next` (the simplest way) or maintain a `current_index` and get the name.
-Note that selecting randomly from the list of all names would be incorrect, as there's a possibility of the name being repeated.
+Note that selecting randomly from the list of all names would be incorrect, as there is a possibility of the name being repeated.
 
 Here's a possible way to do it:
 
