@@ -35,7 +35,7 @@ After the name generation, the names are shuffled - using the [default `seed`][r
 When the tests reseed `random`, this has no effect as the names were shuffled before that.
 
 We then set `NAMES` to the iterable of names, and in `reset`, set the robot's name to the  `next(name)`. 
-If you'd like, read more on [`iter` and `next`][iter-and-next].
+If you are interested, you can read more on [`iter` and `next`][iter-and-next].
 
 Unlike the [on the fly approach][approach-name-on-the-fly], this has a relatively short "generation" time, because we're merely giving the `next` name instead of generating it.
 However, this has a huge startup memory and time cost, as 676,000 strings have to be calculated and stored. 
