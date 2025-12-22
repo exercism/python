@@ -5,7 +5,7 @@ LOOKUP = {'G': 'C', 'C': 'G', 'T': 'A', 'A': 'U'}
 
 
 def to_rna(dna_strand):
-    return ''.join(LOOKUP[char] for char in dna_strand)
+    return ''.join(LOOKUP[nucleotide] for nucleotide in dna_strand)
 
 ```
 
@@ -33,10 +33,18 @@ LOOKUP = {'G': 'C', 'C': 'G', 'T': 'A', 'A': 'U'}
 
 
 def to_rna(dna_strand):
-    return ''.join([LOOKUP[char] for char in dna_strand])
+    return ''.join([LOOKUP[nucleotide] for nucleotide in dna_strand])
 ```
 
-For a relatively small number of elements, using lists is fine and is usually even faster, but as the size of the data increases, the memory consumption increases and performance decreases. See also [this discussion][list-comprehension-choose-generator-expression] regarding when to choose one over the other.
+
+For a relatively small number of elements, using lists is fine and may be faster, but as the number of elements increases, the memory consumption increases and performance decreases.
+You can read more about [when to choose generators over list comprehensions][list-comprehension-choose-generator-expression] to dig deeper into the topic.
+
+
+~~~~exercism/note
+As of this writing, no invalid DNA characters are in the argument to `to_rna()`, so there is no error handling required for invalid input.
+~~~~
+
 
 [dictionaries]: https://docs.python.org/3/tutorial/datastructures.html?#dictionaries
 [const]: https://realpython.com/python-constants/

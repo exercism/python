@@ -15,8 +15,12 @@ Python doesn't _enforce_ having real constant values,
 but the `LOOKUP` translation table is defined with all uppercase letters, which is the naming convention for a Python [constant][const].
 It indicates that the value is not intended to be changed.
 
-The translation table that is created uses the [ASCII][ASCII] values (also called the ordinal values) for each letter in the two strings.
-The ASCII value for "G" in the first string is the key for the ASCII value of "C" in the second string, and so on.
+The translation table that is created uses the [Unicode][Unicode] _code points_ (sometimes called the ordinal values) for each letter in the two strings.
+As Unicode was designed to be backwards compatible with [ASCII][ASCII] and because the exercise uses Latin letters, the code points in the translation table can be interpreted as ASCII.
+However, the functions can deal with any Unicode character.
+You can learn more by reading about [strings and their representation in the Exercism Python syllabus][concept-string].
+
+The Unicode value for "G" in the first string is the key for the Unicode value of "C" in the second string, and so on.
 
 In the `to_rna()` function, the [`translate()`][translate] method is called on the input,
 and is passed the translation table.
@@ -32,3 +36,5 @@ As of this writing, no invalid DNA characters are in the argument to `to_rna()`,
 [const]: https://realpython.com/python-constants/
 [translate]: https://docs.python.org/3/library/stdtypes.html?#str.translate
 [ASCII]: https://www.asciitable.com/
+[Unicode]: https://en.wikipedia.org/wiki/Unicode
+[concept-strings]: https://exercism.org/tracks/python/concepts/strings
