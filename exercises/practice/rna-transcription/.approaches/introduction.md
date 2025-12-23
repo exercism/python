@@ -41,6 +41,11 @@ For more information, check the [dictionary look-up with `join()` approach][appr
 If performance matters, consider using the [`translate()` with `maketrans()` approach][approach-translate-maketrans].
 How an implementation behaves in terms of performance may depend on the actual data being processed, on hardware, and other factors.
 
+
+~~~~exercism/note
+As of this writing, no invalid DNA characters are in the argument to `to_rna()`, so there is no error handling required for invalid input.
+~~~~
+
 [Unicode]: https://en.wikipedia.org/wiki/Unicode
 [approach-translate-maketrans]: https://exercism.org/tracks/python/exercises/rna-transcription/approaches/translate-maketrans
 [approach-dictionary-join]: https://exercism.org/tracks/python/exercises/rna-transcription/approaches/dictionary-join

@@ -31,7 +31,6 @@ A variant that uses a list comprehension is almost identical, but note the addit
 ```python
 LOOKUP = {'G': 'C', 'C': 'G', 'T': 'A', 'A': 'U'}
 
-
 def to_rna(dna_strand):
     return ''.join([LOOKUP[nucleotide] for nucleotide in dna_strand])
 ```
@@ -44,7 +43,6 @@ You can read more about [when to choose generators over list comprehensions][lis
 ~~~~exercism/note
 As of this writing, no invalid DNA characters are in the argument to `to_rna()`, so there is no error handling required for invalid input.
 ~~~~
-
 
 [dictionaries]: https://docs.python.org/3/tutorial/datastructures.html?#dictionaries
 [const]: https://realpython.com/python-constants/
