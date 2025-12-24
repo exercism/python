@@ -1,7 +1,7 @@
 # dictionary look-up with `join`
 
 ```python
-LOOKUP = {"G": "C", "C": "G", "T": "A", "A": "U"}
+LOOKUP = {'G': 'C', 'C': 'G', 'T': 'A', 'A': 'U'}
 
 
 def to_rna(dna_strand):
@@ -29,7 +29,7 @@ A generator expression is similar to a [list comprehension][list-comprehension],
 A variant that uses a list comprehension is almost identical, but note the additional square brackets inside the `join()`:
 
 ```python
-LOOKUP = {"G": "C", "C": "G", "T": "A", "A": "U"}
+LOOKUP = {'G': 'C', 'C': 'G', 'T': 'A', 'A': 'U'}
 
 
 def to_rna(dna_strand):

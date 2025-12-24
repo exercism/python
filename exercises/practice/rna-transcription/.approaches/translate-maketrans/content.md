@@ -1,7 +1,7 @@
 # `translate()` with `maketrans()`
 
 ```python
-LOOKUP = str.maketrans("GCTA", "CGAU")
+LOOKUP = str.maketrans('GCTA', 'CGAU')
 
 
 def to_rna(dna_strand):

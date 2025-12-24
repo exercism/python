@@ -13,7 +13,7 @@ Using a dictionary look-up with `join()` transcribes using the string values of 
 ## Approach: `translate()` with `maketrans()`
 
 ```python
-LOOKUP = str.maketrans("GCTA", "CGAU")
+LOOKUP = str.maketrans('GCTA', 'CGAU')
 
 
 def to_rna(dna_strand):
@@ -26,7 +26,7 @@ For more information, check the [`translate()` with `maketrans()` approach][appr
 ## Approach: dictionary look-up with `join()`
 
 ```python
-LOOKUP = {"G": "C", "C": "G", "T": "A", "A": "U"}
+LOOKUP = {'G': 'C', 'C': 'G', 'T': 'A', 'A': 'U'}
 
 
 def to_rna(dna_strand):
