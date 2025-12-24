@@ -7,13 +7,13 @@ Another approach is to do a dictionary lookup on each character and join the res
 ## General guidance
 
 Whichever approach is used needs to return the RNA complement for each DNA value.
-The `translate()` method with `maketrans()` transcribes using the [ASCII][ASCII] values of the characters.
+The `translate()` method with `maketrans()` transcribes using the [Unicode][Unicode] code points of the characters.
 Using a dictionary look-up with `join()` transcribes using the string values of the characters.
 
 ## Approach: `translate()` with `maketrans()`
 
 ```python
-LOOKUP = str.maketrans("GCTA", "CGAU")
+LOOKUP = str.maketrans('GCTA', 'CGAU')
 
 
 def to_rna(dna_strand):
@@ -26,11 +26,11 @@ For more information, check the [`translate()` with `maketrans()` approach][appr
 ## Approach: dictionary look-up with `join()`
 
 ```python
-LOOKUP = {"G": "C", "C": "G", "T": "A", "A": "U"}
+LOOKUP = {'G': 'C', 'C': 'G', 'T': 'A', 'A': 'U'}
 
 
 def to_rna(dna_strand):
-    return ''.join(LOOKUP[chr] for chr in dna_strand)
+    return ''.join(LOOKUP[nucleotide] for nucleotide in dna_strand)
 
 ```
 
@@ -38,8 +38,14 @@ For more information, check the [dictionary look-up with `join()` approach][appr
 
 ## Which approach to use?
 
-The `translate()` with `maketrans()` approach benchmarked over four times faster than the dictionary look-up with `join()` approach.
+If performance matters, consider using the [`translate()` with `maketrans()` approach][approach-translate-maketrans].
+How an implementation behaves in terms of performance may depend on the actual data being processed, on hardware, and other factors.
 
-[ASCII]: https://www.asciitable.com/
+
+~~~~exercism/note
+As of this writing, no invalid DNA characters are in the argument to `to_rna()`, so there is no error handling required for invalid input.
+~~~~
+
+[Unicode]: https://en.wikipedia.org/wiki/Unicode
 [approach-translate-maketrans]: https://exercism.org/tracks/python/exercises/rna-transcription/approaches/translate-maketrans
 [approach-dictionary-join]: https://exercism.org/tracks/python/exercises/rna-transcription/approaches/dictionary-join
