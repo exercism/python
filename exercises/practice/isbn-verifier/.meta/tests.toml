@@ -30,6 +30,12 @@ description = "invalid character in isbn is not treated as zero"
 [28025280-2c39-4092-9719-f3234b89c627]
 description = "X is only valid as a check digit"
 
+[8005b57f-f194-44ee-88d2-a77ac4142591]
+description = "only one check digit is allowed"
+
+[fdb14c99-4cf8-43c5-b06d-eb1638eff343]
+description = "X is not substituted by the value 10"
+
 [f6294e61-7e79-46b3-977b-f48789a4945b]
 description = "valid isbn without separating dashes"
 
