@@ -14,7 +14,8 @@ A _scalene_ triangle has all sides of different lengths.
 For a shape to be a triangle at all, all sides have to be of length > 0, and the sum of the lengths of any two sides must be greater than or equal to the length of the third side.
 
 ~~~~exercism/note
-We opted to not include tests for degenerate triangles (triangles that violate these rules) to keep things simpler.
+_Degenerate triangles_ are triangles where the sum of the length of two sides is **equal** to the length of the third side, e.g. `1, 1, 2`.
+We opted to not include tests for degenerate triangles in this exercise.
 You may handle those situations if you wish to do so, or safely ignore them.
 ~~~~
 
