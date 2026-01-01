@@ -14,7 +14,7 @@ jobs:
   housekeeping:
     runs-on: ubuntu-24.04
     steps:
-    - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
+    - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
 
     - name: Set up Python
       uses: actions/setup-python@83679a892e2d95755f2dac6acb0bfd1e9ac5d548
@@ -55,7 +55,7 @@ jobs:
       matrix:
         python-version: [3.7, 3.8, 3.9, 3.10.6, 3.11.2]
     steps:
-    - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
+    - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
 
     - uses: actions/setup-python@83679a892e2d95755f2dac6acb0bfd1e9ac5d548
       with:
