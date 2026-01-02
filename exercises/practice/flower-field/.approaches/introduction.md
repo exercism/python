@@ -249,6 +249,21 @@ def annotate(garden):
     return ["".join(" " if square == 0 else str(square) for square in row) for row in grid]
 ```
 
+## Which approach to use?
+
+Processing a 2-dimensional board inevitably means using some form of nested loops, which is likely to dominate performance.
+
+Using comprehensions and/or generators instead of explicit loops may offer a slight speed-up, as well as more concise code.
+However, performance differences are probably small, and the concise syntax _may_ be less easy to read.
+
+In this case, readability is probably more important than aggressive optimization.
+So, we need to understand the target audience, and how they perceive "readability".
+
+Python experts find comprehensions very idiomatic (and generators, which have similar syntax), but programmers with a different language background can get confused.
+
+Complex numbers are a more extreme case: wonderfully clear and elegant for people with a suitable mathematical background, potentially mystifying for the wider population.
+Tastes differ!
+
 [common-sequence-operations]: https://docs.python.org/3.13/library/stdtypes.html#common-sequence-operations
 [complex-numbers]: https://exercism.org/tracks/python/concepts/complex-numbers
 [flower-field-tests]: https://github.com/exercism/python/blob/main/exercises/practice/flower-field/flower_field_test.py
