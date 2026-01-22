@@ -48,8 +48,9 @@ A name can be reassigned (or re-bound) to different values (different object typ
 >>> print(type(my_first_variable))
 <class 'str'>
 
+>>> my_first_variable = 'You can call me "str".' #<-- Strings can be declared using single or double quote marks.
 >>> print(my_first_variable)
-"Now, I'm a string."  #<-- Strings can be declared using single or double quote marks.
+You can call me "str".
 ```
 
 
@@ -63,7 +64,7 @@ Using `SCREAMING_SNAKE_CASE` signals that the name should not be re-assigned, or
 ## Functions
 
 The `def` keyword begins a [function definition][function definition].
-Each function can have zero or more formal [parameters][parameters] in `()` parenthesis, followed by a `:` colon.
+Each function can have zero or more formal [parameters][parameters] in `()` parentheses, followed by a `:` colon.
 Statements for the _body_ of the function begin on the line following `def` and must be _indented in a block_.
 
 
@@ -99,7 +100,7 @@ Functions _explicitly_ return a value or object via the [`return`][return] keywo
         return number_one + number_two   
 
 
-# Calling the function in the Python terminal returns the sum of the numbers.
+# Calling the function in the Python shell returns the sum of the numbers.
 >>> add_two_numbers(3, 4)
 7
 
@@ -111,7 +112,7 @@ Functions _explicitly_ return a value or object via the [`return`][return] keywo
 ```
 
 
-Functions that do not have an _explicit_ `return` expression will _implicitly_ return the [`None`][none] object.
+Functions that do not have an _explicit_ `return` statement will _implicitly_ return the [`None`][none] object.
 This means that if you do not use `return` in a function, Python will return the `None` object for you.
 The details of `None` will be covered in a later exercise.
 For the purposes of this exercise and explanation, `None` is a placeholder that represents nothing, or null:
@@ -123,7 +124,7 @@ def add_two_numbers(number_one, number_two):
   result = number_one + number_two
 
 
-# Calling the function in the Python terminal appears 
+# Calling the function in the Python shell appears 
 # to not return anything at all.
 >>> add_two_numbers(5, 7)
 >>>
@@ -167,8 +168,8 @@ TypeError: number_to_the_power_of() missing 1 required positional argument: 'num
 
 # Calling methods or functions in classes and modules.
 >>> start_text = "my silly sentence for examples."
->>> str.upper(start_text)  # Calling the upper() method for the built-in str class.
-"MY SILLY SENTENCE FOR EXAMPLES."
+>>> str.upper(start_text)  # Calling the upper() method from the built-in str class.
+'MY SILLY SENTENCE FOR EXAMPLES.'
 
 # Importing the math module
 import math
