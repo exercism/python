@@ -512,6 +512,14 @@
         "difficulty": 1
       },
       {
+        "slug": "line-up",
+        "name": "Line Up",
+        "uuid": "e09d877e-489b-4dbd-89c5-f6b15e867b67",
+        "practices": ["string-formatting"],
+        "prerequisites": ["basics", "strings"],
+        "difficulty": 1
+      },
+      {
         "slug": "difference-of-squares",
         "name": "Difference of Squares",
         "uuid": "913b6099-d75a-4c27-8243-476081752c31",
