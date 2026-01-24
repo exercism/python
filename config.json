@@ -1743,7 +1743,7 @@
         "name": "Camicia",
         "uuid": "ec314b34-2ee3-4eec-9a97-aece9e5fd6c2",
         "practices": [],
-        "prerequisites": [],
+        "prerequisites": ["lists", "sets", "strings"],
         "difficulty": 5
       },
       {
