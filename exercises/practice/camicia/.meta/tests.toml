@@ -1,0 +1,94 @@
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
+
+[0b7f737c-3ecd-4a55-b34d-e65c62a85c28]
+description = "two cards, one trick"
+
+[27c19d75-53a5-48e5-b33b-232c3884d4f3]
+description = "three cards, one trick"
+
+[9b02dd49-efaf-4b71-adca-a05c18a7c5b0]
+description = "four cards, one trick"
+
+[fa3f4479-466a-4734-a001-ab79bfe27260]
+description = "the ace reigns supreme"
+
+[07629689-f589-4f54-a6d1-8ce22776ce72]
+description = "the king beats ace"
+
+[54d4a1c5-76fb-4d1e-8358-0e0296ac0601]
+description = "the queen seduces the king"
+
+[c875500c-ff3d-47a4-bd1e-b60b90da80aa]
+description = "the jack betrays the queen"
+
+[436875da-96ca-4149-be22-0b78173b8125]
+description = "the 10 just wants to put on a show"
+
+[5be39bb6-1b34-4ce6-a1cd-0fcc142bb272]
+description = "simple loop with decks of 3 cards"
+
+[2795dc21-0a2a-4c38-87c2-5a42e1ff15eb]
+description = "the story is starting to get a bit complicated"
+
+[6999dfac-3fdc-41e2-b64b-38f4be228712]
+description = "two tricks"
+
+[83dcd4f3-e089-4d54-855a-73f5346543a3]
+description = "more tricks"
+
+[3107985a-f43e-486a-9ce8-db51547a9941]
+description = "simple loop with decks of 4 cards"
+
+[dca32c31-11ed-49f6-b078-79ab912c1f7b]
+description = "easy card combination"
+
+[1f8488d0-48d3-45ae-b819-59cedad0a5f4]
+description = "easy card combination, inverted decks"
+
+[98878d35-623a-4d05-b81a-7bdc569eb88d]
+description = "mirrored decks"
+
+[3e0ba597-ca10-484b-87a3-31a7df7d6da3]
+description = "opposite decks"
+
+[92334ddb-aaa7-47fa-ab36-e928a8a6a67c]
+description = "random decks #1"
+
+[30477523-9651-4860-84a3-e1ac461bb7fa]
+description = "random decks #2"
+
+[20967de8-9e94-4e0e-9010-14bc1c157432]
+description = "Kleber 1999"
+
+[9f2fdfe8-27f3-4323-816d-6bce98a9c6f7]
+description = "Collins 2006"
+
+[c90b6f8d-7013-49f3-b5cb-14ea006cca1d]
+description = "Mann and Wu 2007"
+
+[a3f1fbc5-1d0b-499a-92a5-22932dfc6bc8]
+description = "Nessler 2012"
+
+[9cefb1ba-e6d1-4ab7-9d8f-76d8e0976d5f]
+description = "Anderson 2013"
+
+[d37c0318-5be6-48d0-ab72-a7aaaff86179]
+description = "Rucklidge 2014"
+
+[4305e479-ba87-432f-8a29-cd2bd75d2f05]
+description = "Nessler 2021"
+
+[252f5cc3-b86d-4251-87ce-f920b7a6a559]
+description = "Nessler 2022"
+
+[b9efcfa4-842f-4542-8112-8389c714d958]
+description = "Casella 2024, first infinite game found"
