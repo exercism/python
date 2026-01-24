@@ -6,7 +6,14 @@
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
     def test_{{ case["description"] | to_snake }}(self):
+        {%- if case["input"]["playerA"]|length > 10 or case["input"]["playerB"]|length > 10 %}
+        # fmt: off
         player_a = {{ case["input"]["playerA"] }}
         player_b = {{ case["input"]["playerB"] }}
+        # fmt: on
+        {%- else %}
+        player_a = {{ case["input"]["playerA"] }}
+        player_b = {{ case["input"]["playerB"] }}
+        {%- endif %}
         self.assertEqual(simulate_game(player_a, player_b), {{ case["expected"] }})
     {% endfor -%}
