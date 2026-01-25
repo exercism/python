@@ -1739,6 +1739,14 @@
         "difficulty": 5
       },
       {
+        "slug": "camicia",
+        "name": "Camicia",
+        "uuid": "ec314b34-2ee3-4eec-9a97-aece9e5fd6c2",
+        "practices": [],
+        "prerequisites": ["lists", "sets", "strings"],
+        "difficulty": 5
+      },
+      {
         "slug": "rational-numbers",
         "name": "Rational Numbers",
         "uuid": "1d21cd68-10ac-427d-be6d-77152bceacc4",
