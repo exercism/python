@@ -112,29 +112,42 @@ Functions _explicitly_ return a value or object via the [`return`][return] keywo
 ```
 
 
-Functions that do not have an _explicit_ `return` statement will _implicitly_ return the [`None`][none] object.
-This means that if you do not use `return` in a function, Python will return the `None` object for you.
+Functions that do not have an _explicit_ expression following a `return` will _implicitly_ return the [`None`][none] object.
 The details of `None` will be covered in a later exercise.
 For the purposes of this exercise and explanation, `None` is a placeholder that represents nothing, or null:
 
 
 ```python
-# This function does not have an explicit return.
-def add_two_numbers(number_one, number_two):
-  result = number_one + number_two
 
+# This function will return `None`
+def square_a_number(number):
+    square = number * number
+    return # <-- note that this return is not followed by an expression
 
 # Calling the function in the Python shell appears 
 # to not return anything at all.
->>> add_two_numbers(5, 7)
+>>> square_a_number(2)
 >>>
 
 
 # Using print() with the function call shows that 
 # the function is actually returning the **None** object.
+>>> print(square_a_number(2))
+None
+```
+
+Functions that omit `return` will also  _implicitly_ return the [`None`][none] object.
+This means that if you do not use `return` in a function, Python will return the `None` object for you.
+
+```python
+
+# This function omits a return keyword altogether
+def add_two_numbers(number_one, number_two):
+  result = number_one + number_two
+
+>>> add_two_numbers(5, 7)
 >>> print(add_two_numbers(5, 7))
 None
-
 
 # Assigning the function call to a variable and printing 
 # the variable will also show None.
@@ -150,32 +163,32 @@ Functions are [_called_][calls] or invoked using their name followed by `()`.
 Dot (`.`) notation is used for calling functions defined inside a class or module.
 
 ```python
->>> def number_to_the_power_of(number_one, number_two):
-        return number_one ** number_two
+>>> def raise_to_power(number, power):
+        return number ** power
 ...
 
->>> number_to_the_power_of(3,3) # Invoking the function with the arguments 3 and 3.
+>>> raise_to_power(3,3) # Invoking the function with the arguments 3 and 3.
 27
 
 
 # A mismatch between the number of parameters and the number of arguments will raise an error.
->>> number_to_the_power_of(4,)
+>>> raise_to_power(4,)
 ...
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-TypeError: number_to_the_power_of() missing 1 required positional argument: 'number_two'
+TypeError: raise_to_power() missing 1 required positional argument: 'power'
 
 
 # Calling methods or functions in classes and modules.
 >>> start_text = "my silly sentence for examples."
->>> str.upper(start_text)  # Calling the upper() method from the built-in str class.
+>>> str.upper(start_text)  # Calling the upper() method for the built-in str class.
 'MY SILLY SENTENCE FOR EXAMPLES.'
 
 # Importing the math module
 import math
 
 >>> math.pow(2,4)  # Calling the pow() function from the math module
->>> 16.0
+16.0
 ```
 
 
@@ -217,28 +230,28 @@ Docstrings can also function as [lightweight unit tests][doctests], which will b
 
 ```python
 # An example on a user-defined function.
->>> def number_to_the_power_of(number_one, number_two):
+>>> def raise_to_power(number, power):
         """Raise a number to an arbitrary power.
 
-        :param number_one: int the base number.
-        :param number_two: int the power to raise the base number to.
-        :return: int - number raised to power of second number
+        :param number: int the base number.
+        :param power: int the power to raise the base number to.
+        :return: int - number raised to the specified power.
 
-        Takes number_one and raises it to the power of number_two, returning the result.
+        Takes a number and raises it to the specified power, returning the result.
         """
 
-        return number_one ** number_two
+        return number ** power
 ...
 
 # Calling the .__doc__ attribute of the function and printing the result.
->>> print(number_to_the_power_of.__doc__)
+>>> print(raise_to_power.__doc__)
 Raise a number to an arbitrary power.
 
-    :param number_one: int the base number.
-    :param number_two: int the power to raise the base number to.
-    :return: int - number raised to power of second number
+    :param number: int the base number.
+    :param power: int the power to raise the base number to.
+    :return: int - number raised to the specified power.
 
-    Takes number_one and raises it to the power of number_two, returning the result.
+    Takes a number and raises it to the specified power, returning the result.
 ```
 
 [calls]: https://docs.python.org/3/reference/expressions.html#calls
