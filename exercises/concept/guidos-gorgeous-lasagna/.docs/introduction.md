@@ -181,7 +181,7 @@ TypeError: raise_to_power() missing 1 required positional argument: 'power'
 
 # Calling methods or functions in classes and modules.
 >>> start_text = "my silly sentence for examples."
->>> str.upper(start_text)  # Calling the upper() method for the built-in str class.
+>>> str.upper(start_text)  # Calling the upper() method from the built-in str class on start_text.
 'MY SILLY SENTENCE FOR EXAMPLES.'
 
 # Importing the math module
