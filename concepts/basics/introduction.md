@@ -38,8 +38,9 @@ A name can be reassigned (or re-bound) to different values (different object typ
 >>> print(type(my_first_variable))
 <class 'str'>
 
+>>> my_first_variable = 'You can call me "str".' #<-- Strings can be declared using single or double quote marks.
 >>> print(my_first_variable)
-"Now, I'm a string."  # Strings can be declared using single or double quote marks.
+You can call me "str".
 ```
 
 
@@ -54,7 +55,7 @@ Constants should be defined at a [module][module] (file) level, and are typicall
 ## Functions
 
 The `def` keyword begins a [function definition][function definition].
-Each function can have zero or more formal [parameters][parameters] in `()` parenthesis, followed by a `:` colon.
+Each function can have zero or more formal [parameters][parameters] in `()` parentheses, followed by a `:` colon.
 Statements for the _body_ of the function begin on the line following `def` and must be _indented in a block_.
 
 
@@ -90,7 +91,7 @@ def add_two_numbers(number_one, number_two):
   return number_one + number_two   
 
 
-# Calling the function in the Python terminal returns the sum of the numbers.
+# Calling the function in the Python shell returns the sum of the numbers.
 >>> add_two_numbers(3, 4)
 7
 
@@ -102,29 +103,42 @@ def add_two_numbers(number_one, number_two):
 ```
 
 
-Functions that do not have an _explicit_ `return` expression will _implicitly_ return the [`None`][none] object.
-This means that if you do not use `return` in a function, Python will return the `None` object for you.
+Functions that do not have an _explicit_ expression following a `return` will _implicitly_ return the [`None`][none] object.
 The details of `None` will be covered in a later exercise.
 For the purposes of this exercise and explanation, `None` is a placeholder that represents nothing, or null:
 
 
 ```python
-# This function does not have an explicit return.
-def add_two_numbers(number_one, number_two):
-  result = number_one + number_two
 
+# This function will return `None`
+def square_a_number(number):
+    square = number * number
+    return # <-- note that this return is not followed by an expression
 
-# Calling the function in the Python terminal appears 
+# Calling the function in the Python shell appears 
 # to not return anything at all.
->>> add_two_numbers(5, 7)
+>>> square_a_number(2)
 >>>
 
 
 # Using print() with the function call shows that 
 # the function is actually returning the **None** object.
+>>> print(square_a_number(2))
+None
+```
+
+Functions that omit `return` will also  _implicitly_ return the [`None`][none] object.
+This means that if you do not use `return` in a function, Python will return the `None` object for you.
+
+```python
+
+# This function omits a return keyword altogether
+def add_two_numbers(number_one, number_two):
+  result = number_one + number_two
+
+>>> add_two_numbers(5, 7)
 >>> print(add_two_numbers(5, 7))
 None
-
 
 # Assigning the function call to a variable and printing 
 # the variable will also show None.
