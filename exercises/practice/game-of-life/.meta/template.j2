@@ -6,18 +6,17 @@
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases %}
     def test_{{ case.description | to_snake }}(self):
+        matrix =  [
+            {% for row in case.input.matrix %}
+            {{ row }},
+            {% endfor %}
+        ]
+        expected = [
+            {% for row in case.expected %}
+            {{ row }},
+            {% endfor %}
+        ]
         self.assertEqual(
-            tick(
-                [
-                    {% for row in case.input.matrix %}
-                    {{ row }},
-                    {% endfor %}
-                ]
-            ),
-            [
-                {% for row in case.expected %}
-                {{ row }},
-                {% endfor %}
-            ]
+            tick(matrix), expected
         )
     {% endfor %}
