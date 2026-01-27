@@ -960,6 +960,16 @@
         "difficulty": 2
       },
       {
+        "slug": "game-of-life",
+        "name": "Conway's Game of Life",
+        "uuid": "1675a497-d3b2-4772-bbee-4edae5a44e91",
+        "practices": [],
+        "prerequisites": [
+          "lists"
+        ],
+        "difficulty": 3
+      },
+      {
         "slug": "eliuds-eggs",
         "name": "Eliud's Eggs",
         "uuid": "356e2d29-7efc-4fa3-bec7-8b61c3e967da",
