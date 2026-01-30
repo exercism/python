@@ -669,6 +669,21 @@
         "difficulty": 2
       },
       {
+        "slug": "eliuds-eggs",
+        "name": "Eliud's Eggs",
+        "uuid": "356e2d29-7efc-4fa3-bec7-8b61c3e967da",
+        "practices": ["loops"],
+        "prerequisites": [
+            "basics",
+            "lists",
+            "list-methods",
+            "loops",
+            "strings",
+            "string-methods"
+        ],
+        "difficulty": 2
+      },
+      {
         "slug": "protein-translation",
         "name": "Protein Translation",
         "uuid": "c89243f3-703e-4fe0-8e43-f200eedf2825",
@@ -970,17 +985,14 @@
         "difficulty": 3
       },
       {
-        "slug": "eliuds-eggs",
-        "name": "Eliud's Eggs",
-        "uuid": "356e2d29-7efc-4fa3-bec7-8b61c3e967da",
+        "slug": "state-of-tic-tac-toe",
+        "name": "State of Tic-Tac-Toe",
+        "uuid": "cb40b36f-f7dc-4018-aad5-38976defb352",
         "practices": ["loops"],
         "prerequisites": [
-            "basics",
-            "lists",
-            "list-methods",
-            "loops",
-            "strings",
-            "string-methods"
+          "conditionals",
+          "lists",
+          "loops"
         ],
         "difficulty": 3
       },
@@ -996,18 +1008,6 @@
           "list-methods",
           "loops",
           "sets"
-        ],
-        "difficulty": 3
-      },
-      {
-        "slug": "state-of-tic-tac-toe",
-        "name": "State of Tic-Tac-Toe",
-        "uuid": "cb40b36f-f7dc-4018-aad5-38976defb352",
-        "practices": ["loops"],
-        "prerequisites": [
-          "conditionals",
-          "lists",
-          "loops"
         ],
         "difficulty": 3
       },
