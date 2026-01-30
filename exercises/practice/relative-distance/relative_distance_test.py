@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/relative-distance/canonical-data.json
-# File last updated on 2026-01-26
+# File last updated on 2026-01-30
 
 import unittest
 
@@ -214,7 +214,7 @@ class RelativeDistanceTest(unittest.TestCase):
             RelativeDistance(family_tree).degree_of_separation("Wyatt", "Xia"), 12
         )
 
-    # Additional track-specfic tests
+    # Additional track-specific tests
     def test_person_a_not_in_tree(self):
         family_tree = {
             "Priya": ["Rami"],

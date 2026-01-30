@@ -22,7 +22,7 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         {%- endif %}
     {% endfor -%}
 
-    # Additional track-specfic tests
+    # Additional track-specific tests
     {% for case in additional_cases -%}
     def test_{{ case["description"] | to_snake }}(self):
         family_tree = {

@@ -1797,7 +1797,8 @@
         "uuid": "d590865c-ef30-424a-8cfb-7f31f04dee1b",
         "practices": [],
         "prerequisites": [
-          "lists"
+          "lists",
+          "dicts"
         ],
         "difficulty": 5
       },
