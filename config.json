@@ -1000,6 +1000,18 @@
         "difficulty": 3
       },
       {
+        "slug": "state-of-tic-tac-toe",
+        "name": "State of Tic-Tac-Toe",
+        "uuid": "cb40b36f-f7dc-4018-aad5-38976defb352",
+        "practices": ["loops"],
+        "prerequisites": [
+          "conditionals",
+          "lists",
+          "loops"
+        ],
+        "difficulty": 3
+      },
+      {
         "slug": "ocr-numbers",
         "name": "OCR Numbers",
         "uuid": "98ca48ed-5818-442c-bce1-308c8b3b3b77",

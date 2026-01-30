@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "state_of_tic_tac_toe.py"
+    ],
+    "test": [
+      "state_of_tic_tac_toe_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
+  },
+  "blurb": "Determine the game state of a match of Tic-Tac-Toe.",
+  "source": "Created by Sascha Mann for the Julia track of the Exercism Research Experiment.",
+  "source_url": "https://github.com/exercism/research_experiment_1/tree/julia-dev/exercises/julia-1-a"
+}
