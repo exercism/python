@@ -1,0 +1,101 @@
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
+
+[fe8e9fa9-37af-4d7e-aa24-2f4b8517161a]
+description = "Won games -> Finished game where X won via left column victory"
+
+[96c30df5-ae23-4cf6-bf09-5ef056dddea1]
+description = "Won games -> Finished game where X won via middle column victory"
+
+[0d7a4b0a-2afd-4a75-8389-5fb88ab05eda]
+description = "Won games -> Finished game where X won via right column victory"
+
+[bd1007c0-ec5d-4c60-bb9f-1a4f22177d51]
+description = "Won games -> Finished game where O won via left column victory"
+
+[c032f800-5735-4354-b1b9-46f14d4ee955]
+description = "Won games -> Finished game where O won via middle column victory"
+
+[662c8902-c94a-4c4c-9d9c-e8ca513db2b4]
+description = "Won games -> Finished game where O won via right column victory"
+
+[2d62121f-7e3a-44a0-9032-0d73e3494941]
+description = "Won games -> Finished game where X won via top row victory"
+
+[108a5e82-cc61-409f-aece-d7a18c1beceb]
+description = "Won games -> Finished game where X won via middle row victory"
+include = false
+
+[346527db-4db9-4a96-b262-d7023dc022b0]
+description = "Won games -> Finished game where X won via middle row victory"
+reimplements = "108a5e82-cc61-409f-aece-d7a18c1beceb"
+
+[a013c583-75f8-4ab2-8d68-57688ff04574]
+description = "Won games -> Finished game where X won via bottom row victory"
+
+[2c08e7d7-7d00-487f-9442-e7398c8f1727]
+description = "Won games -> Finished game where O won via top row victory"
+
+[bb1d6c62-3e3f-4d1a-9766-f8803c8ed70f]
+description = "Won games -> Finished game where O won via middle row victory"
+
+[6ef641e9-12ec-44f5-a21c-660ea93907af]
+description = "Won games -> Finished game where O won via bottom row victory"
+
+[ab145b7b-26a7-426c-ab71-bf418cd07f81]
+description = "Won games -> Finished game where X won via falling diagonal victory"
+
+[7450caab-08f5-4f03-a74b-99b98c4b7a4b]
+description = "Won games -> Finished game where X won via rising diagonal victory"
+
+[c2a652ee-2f93-48aa-a710-a70cd2edce61]
+description = "Won games -> Finished game where O won via falling diagonal victory"
+
+[5b20ceea-494d-4f0c-a986-b99efc163bcf]
+description = "Won games -> Finished game where O won via rising diagonal victory"
+
+[035a49b9-dc35-47d3-9d7c-de197161b9d4]
+description = "Won games -> Finished game where X won via a row and a column victory"
+
+[e5dfdeb0-d2bf-4b5a-b307-e673f69d4a53]
+description = "Won games -> Finished game where X won via two diagonal victories"
+
+[b42ed767-194c-4364-b36e-efbfb3de8788]
+description = "Drawn games -> Draw"
+
+[227a76b2-0fef-4e16-a4bd-8f9d7e4c3b13]
+description = "Drawn games -> Another draw"
+
+[4d93f15c-0c40-43d6-b966-418b040012a9]
+description = "Ongoing games -> Ongoing game: one move in"
+
+[c407ae32-4c44-4989-b124-2890cf531f19]
+description = "Ongoing games -> Ongoing game: two moves in"
+
+[199b7a8d-e2b6-4526-a85e-78b416e7a8a9]
+description = "Ongoing games -> Ongoing game: five moves in"
+
+[1670145b-1e3d-4269-a7eb-53cd327b302e]
+description = "Invalid boards -> Invalid board: X went twice"
+
+[47c048e8-b404-4bcf-9e51-8acbb3253f3b]
+description = "Invalid boards -> Invalid board: O started"
+
+[b1dc8b13-46c4-47db-a96d-aa90eedc4e8d]
+description = "Invalid boards -> Invalid board"
+include = false
+
+[6c1920f2-ab5c-4648-a0c9-997414dda5eb]
+description = "Invalid boards -> Invalid board: X won and O kept playing"
+reimplements = "b1dc8b13-46c4-47db-a96d-aa90eedc4e8d"
+
+[4801cda2-f5b7-4c36-8317-3cdd167ac22c]
+description = "Invalid boards -> Invalid board: players kept playing after a win"
