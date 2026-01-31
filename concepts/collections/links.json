@@ -1,18 +1,14 @@
 [
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://docs.python.org/3/library/collections.html/",
+    "description": "The collections module official documentation."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://docs.python.org/3/library/collections.html#counter-objects/",
+    "description": "The Counter class official documentation."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
-  },
-  {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://realpython.com/python-collections-module/m/",
+    "description": "The collections mosule, in Real Python."
   }
 ]
