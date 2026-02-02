@@ -40,7 +40,7 @@ def value_of_ace(card_one, card_two):
     :return: int - either 1 or 11 value of the upcoming ace card.
 
     1.  'J', 'Q', or 'K' (otherwise known as "face cards") = 10
-    2.  'A' (ace card) = 11 (if already in hand)
+    2.  'A' (ace card) = 1 (if already in hand)
     3.  '2' - '10' = numerical value.
     """
 
