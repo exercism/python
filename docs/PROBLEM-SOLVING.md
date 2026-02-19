@@ -8,9 +8,9 @@ Below are some community-sourced articles, videos, and books that can help you d
 
 
 - Free Code Camp offers a good overview article on [How to Think Like a Programmer - Lessons in Problem-Solving][free-code-camp-think-like-a-programmer].
-- Kurtis Pykes writing for Towards Data Science has a nice [hands-on tutorial for problem-solving][Kurtis Pykes: Hands-on Tutorial - How to Improve Your Problem-Solving Skills as A Programmer].
-- UC Berkeley has a nice PDF summary of [G. Polya's Problem Solving Techniques][g-polya-how-to-solve-it-summary].
+- Jeremy Howard, founder of fast.ai has a nice summary of [G. Polya's Problem Solving Techniques][g-polya-how-to-solve-it-summary].
 - Originally written in 1945 as guidance for tackling complicated math problems,[G. Polya's How To Solve It][g-polya-how-to-solve-it] (full book) is still _excellent_ advice for problem-solving in general.
+- Kurtis Pykes writing for Towards Data Science has a nice [hands-on tutorial for problem-solving][Kurtis Pykes: Hands-on Tutorial - How to Improve Your Problem-Solving Skills as A Programmer].
 - Mentioned in the Free Code Camp Article, V. Anton Spraul's [Think Like a Programmer: An Introduction to Creative Problem Solving][v-anton-spraul-think-like-a-programmer] is a more modern and programming-focused take on the same general methods Polya outlines for mathematics.
 - [Felienne Hermans][felienne-hermans] is more focused on _how_ people learn the art of coding and how that maps to learning in general.
   She has written [The Programmers Brian][programmers-brain-free-online], with strategies for reading code better, thinking about code clearly, writing better code, and becoming a better code collaborator.
@@ -32,8 +32,8 @@ Membership (paid) information is available at [acm(dot)org][association-for-comp
 [felienne-hermans-programming-is-writing-is-programming]: https://www.youtube.com/watch?v=uO3a4HIBDU4
 [felienne-hermans]: https://www.felienne.com/
 [free-code-camp-think-like-a-programmer]: https://www.freecodecamp.org/news/how-to-think-like-a-programmer-lessons-in-problem-solving-d1d8bf1de7d2/
-[g-polya-how-to-solve-it-summary]: https://math.berkeley.edu/~gmelvin/polya.pdf
-[g-polya-how-to-solve-it]: https://press.princeton.edu/books/paperback/9780691164076/how-to-solve-it
+[g-polya-how-to-solve-it-summary]: https://gist.github.com/jph00/d60301884c56fe063101a7cc6193b3af
+[g-polya-how-to-solve-it]: https://archive.org/details/howtosolveit0000gpol_c0p2/page/n9/mode/2up
 [paul-vickers-how-to-think-like-a-programmer]: https://www.researchgate.net/publication/236270907_How_to_Think_like_a_Programmer_Problem_Solving_for_the_Bewildered
 [programmers-brain-free-online]: https://www.manning.com/books/the-programmers-brain#toc
 [programmers-brain-manning]: https://www.manning.com/books/the-programmers-brain

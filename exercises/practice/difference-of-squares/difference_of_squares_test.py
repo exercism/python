@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/difference-of-squares/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2026-02-19
 
 import unittest
 
@@ -12,6 +12,7 @@ from difference_of_squares import (
 
 
 class DifferenceOfSquaresTest(unittest.TestCase):
+
     def test_square_of_sum_1(self):
         self.assertEqual(square_of_sum(1), 1)
 

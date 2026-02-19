@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/variable-length-quantity/canonical-data.json
-# File last updated on 2025-08-28
+# File last updated on 2026-02-19
 
 import unittest
 
@@ -11,6 +11,7 @@ from variable_length_quantity import (
 
 
 class VariableLengthQuantityTest(unittest.TestCase):
+
     def test_zero(self):
         self.assertEqual(encode([0x0]), [0x0])
 
