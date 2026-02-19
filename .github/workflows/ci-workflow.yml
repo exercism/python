@@ -6,7 +6,6 @@ name: Exercises check
 on:
   push:
     branches:
-      - master
       - main
   pull_request:
 
@@ -19,7 +18,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@83679a892e2d95755f2dac6acb0bfd1e9ac5d548
       with:
-        python-version: 3.11.2
+        python-version: 3.13.5
 
     - name: Download & Install dependencies
       run: |
@@ -53,7 +52,7 @@ jobs:
     needs: housekeeping
     strategy:
       matrix:
-        python-version: [3.7, 3.8, 3.9, 3.10.6, 3.11.2]
+        python-version: [3.10.6, 3.11.2, 3.12, 3.13.5]
     steps:
     - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
 
@@ -61,12 +60,8 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
-    - name: Install dataclasses package
-      if: ${{ matrix.python-version == '3.6' }}
-      run: pip install dataclasses
-
     - name: Install pytest
-      run: pip install pytest~=7.2.2
+      run: pip install pytest~=8.4.0
 
     - name: Check exercises
       run: |
