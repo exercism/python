@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/game-of-life/canonical-data.json
-# File last updated on 2026-01-26
+# File last updated on 2026-02-19
 
 import unittest
 

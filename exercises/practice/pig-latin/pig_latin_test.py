@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/pig-latin/canonical-data.json
-# File last updated on 2025-01-10
+# File last updated on 2026-02-19
 
 import unittest
 
