@@ -2,176 +2,294 @@
 # This pylintrc file contains a best-effort configuration to uphold the
 # best-practices and style for the Python track of exercism.org.
 #
-# It is based on the Google pylintrc & the Google Python style guide:
-#   https://google.github.io/styleguide/pyguide.html,
-#   https://google.github.io/styleguide/pylintrc
+# It is based on the default pylint rc with enabled extensions, and is the same
+# pylintrc file used in our generic Analyzer.
 #
-# Additions & alterations to the Google Style guide are noted in
+# Additions & alterations to the base configuration are noted in
 # the Exercism Python Track contributing guide:
 #   https://github.com/exercism/python/blob/main/CONTRIBUTING.md
 ###########################################################################
 
 
-[MASTER]
+[MAIN]
 
-# Files or directories to be skipped. They should be base names, not paths.
+analyse-fallback-blocks=no
+clear-cache-post-run=yes
+extension-pkg-allow-list=
+extension-pkg-whitelist=
 ignore=third_party
-
-# Files or directories matching the regex patterns are skipped. The regex
-# matches against base names, not paths.
-ignore-patterns=
-
-# Pickle collected data for later comparisons.
-persistent=no
-
-# List of plugins (as comma separated values of python modules names) to load,
-# usually to register additional checkers.
-load-plugins=
-
-# Use multiple processes to speed up Pylint.
 jobs=4
-
-# Allow loading of arbitrary C extensions. Extensions are imported into the
-# active Python interpreter and may run arbitrary code.
+limit-inference-results=100
 unsafe-load-any-extension=no
+persistent=no
+prefer-stubs=no
+recursive=no
+
+# Specify a score threshold under which the program will exit with error.
+fail-under=10
+
+# List of plugins (as comma separated values of python module names) to load,
+# usually to register additional checkers.
+load-plugins = pylint.extensions.bad_builtin,
+               # pylint.extensions.code_style,
+               pylint.extensions.comparison_placement,
+               pylint.extensions.consider_refactoring_into_while_condition,
+               # pylint.extensions.docparams,
+               pylint.extensions.dunder,
+               pylint.extensions.eq_without_hash,
+               pylint.extensions.for_any_all,
+               # pylint.extensions.mccabe,
+               pylint.extensions.no_self_use,
+               pylint.extensions.overlapping_exceptions,
+               pylint.extensions.private_import,
+               pylint.extensions.redefined_loop_name,
+               pylint.extensions.set_membership,
+
+
+[BASIC]
+
+module-naming-style=snake_case
+const-naming-style=UPPER_CASE
+variable-naming-style=snake_case
+function-naming-style=snake_case
+argument-naming-style=snake_case
+attr-naming-style=snake_case
+class-naming-style=PascalCase
+class-attribute-naming-style=any
+class-const-naming-style=UPPER_CASE
+method-naming-style=snake_case
+inlinevar-naming-style=snake_case
+
+# Include a hint for the correct naming format with invalid-name.
+include-naming-hint=yes
+
+# Bad variable names which should always be refused, separated by a comma.
+bad-names=x,
+          y,
+          i,
+          l,
+          a,
+          b,
+          j,
+          o,
+          z
+
+# Good variable names which should always be accepted, separated by a comma.
+good-names=main,
+
+# List of decorators that produce properties, such as abc.abstractproperty. Add
+# to this list to register other decorators that produce valid properties.
+# These decorators are taken in consideration only for invalid-name.
+property-classes=abc.abstractproperty,
+                 cached_property.cached_property,
+                 cached_property.threaded_cached_property,
+                 cached_property.cached_property_with_ttl,
+                 cached_property.threaded_cached_property_with_ttl
+
+# Minimum line length for functions/classes that require docstrings, shorter
+# ones are exempt.
+docstring-min-length=5
+
+# Bad variable names regexes, separated by a comma. If names match any regex,
+# they will always be refused
+bad-names-rgxs=^.{1,2}$
+
+# Good variable names regexes, separated by a comma. If names match any regex,
+# they will always be accepted
+good-names-rgxs=
+
+
+[CLASSES]
+
+check-protected-access-in-special-methods=no
+defining-attr-methods=__init__,
+                      __new__,
+                      setUp
+
+exclude-protected=_asdict,
+                  _fields,
+                  _replace,
+                  _source,
+                  _make
+
+valid-classmethod-first-arg=cls,
+                            class_
+
+valid-metaclass-classmethod-first-arg=mcs
+
+
+[DESIGN]
+
+max-args=5
+max-attributes=7
+max-bool-expr=5
+max-branches=12
+max-locals=15
+max-parents=7
+max-positional-arguments=5
+max-public-methods=20
+max-returns=6
+max-statements=50
+min-public-methods=2
+
+
+[EXCEPTIONS]
+
+# Exceptions that will emit a warning when caught.
+overgeneral-exceptions=StandardError,
+                       Exception,
+                       BaseException
+
+
+[FORMAT]
+
+# Number of spaces of indent required inside a hanging or continued line.
+indent-after-paren=4
+
+# Maximum number of characters on a single line.
+max-line-length=120
+
+# Regexp for a line that is allowed to be longer than the limit.
+ignore-long-lines=(?x)(^\s*(\#\ )?<?https?://\S+>?$|^\s*(from\s+\S+\s+)?import\s+.+$)
+
+# Maximum number of lines in a module.
+max-module-lines=99999
+
+single-line-class-stmt=no
+single-line-if-stmt=yes
+
+
+[IMPORTS]
+
+# Allow explicit reexports by alias from a package __init__.
+allow-reexport-from-package=no
+
+# Allow wildcard imports from modules that define __all__.
+allow-wildcard-with-all=no
+
+# Deprecated modules which should not be used, separated by a comma.
+deprecated-modules=regsub,
+                   TERMIOS,
+                   Bastion,
+                   rexec,
+                   sets
+
+# Force import order to recognize a module as part of a third party library.
+known-third-party=enchant,
+                  absl
+
+[LOGGING]
+
+# The type of string formatting that logging methods do. `old` means using %
+# formatting, `new` is for `{}` formatting.
+logging-format-style=old
+
+# Logging modules to check that the string format arguments are in logging
+# function parameter format.
+logging-modules=logging,absl.logging
 
 
 [MESSAGES CONTROL]
 
 # Only show warnings with the listed confidence levels. Leave empty to show
-# all. Valid levels: HIGH, INFERENCE, INFERENCE_FAILURE, UNDEFINED
-confidence=
+# all. Valid levels: HIGH, CONTROL_FLOW, INFERENCE, INFERENCE_FAILURE,
+# UNDEFINED.
+confidence=HIGH,
+           CONTROL_FLOW,
+           INFERENCE,
+           INFERENCE_FAILURE,
+           UNDEFINED
 
-# Enable the message, report, category or checker with the given id(s). You can
-# either give multiple identifier separated by comma (,) or put this option
-# multiple time (only on the command line, not in the configuration file where
-# it should appear only once). See also the "--disable" option for examples.
-#enable=
-
-# Disable the message, report, category or checker with the given id(s). You
-# can either give multiple identifiers separated by comma (,) or put this
-# option multiple times (only on the command line, not in the configuration
-# file where it should appear only once).You can also use "--disable=all" to
-# disable everything first and then re-enable specific checks. For example, if
-# you want to run only the similarities checker, you can use "--disable=all
-# --enable=similarities". If you want to run only the classes checker, but have
-# no Warning level messages displayed, use"--disable=all --enable=classes
-# --disable=W"
-# As of Pylint 2.6+, the following options are not supported, so they're commented out:
-#
-# misplaced-comparison-constant
-# relative-import
-# input-builtin
-# inconsistent-return-statements
-# no-absolute-import
-# raising-string
-# round-builtin
-
-disable=arguments-differ,
-        attribute-defined-outside-init,
-        fixme,
-        global-statement,
-        implicit-str-concat-in-sequence,
-        import-error,
-        import-self,
+# Disable the message, report, category or checker with the given id(s).
+disable=raw-checker-failed,
         locally-disabled,
-        no-else-break,
-        no-else-continue,
-        no-else-raise,
-        no-else-return,
-        no-member,
-        no-name-in-module,
-        signature-differs,
         suppressed-message,
-        too-many-boolean-expressions,
-        too-many-branches,
+        arguments-differ,
+        fixme,
+        line-too-long,
+        global-statement,
+        import-error,
+        no-member,
+        signature-differs,
         too-many-locals,
         too-many-public-methods,
         too-many-return-statements,
         too-many-statements,
-        unnecessary-pass,
-        unused-argument,
-        useless-suppression
+        unnecessary-pass
+
+# Include some helpful details on errors messages for naming rules:
+include-naming-hint = yes
+
+
+[METHOD_ARGS]
+
+# List of qualified names (i.e., library.method) which require a timeout
+# parameter e.g. 'requests.api.get,requests.api.post'
+timeout-methods=requests.api.delete,
+                requests.api.get,
+                requests.api.head,
+                requests.api.options,
+                requests.api.patch,
+                requests.api.post,
+                requests.api.put,
+                requests.api.request
+
+
+[MISCELLANEOUS]
+
+check-fixme-in-docstring=no
+notes=TODO
+
+
+[REFACTORING]
+
+# Maximum number of nested blocks for function / method body
+max-nested-blocks=5
+
+# Complete name of functions that never returns. When checking for
+# inconsistent-return-statements if a never returning function is called then
+# it will be considered as an explicit return statement and no message will be
+# printed.
+never-returning-functions=sys.exit,argparse.parse_error
+
+# Let 'consider-using-join' be raised when the separator to join on would be
+# non-empty (resulting in expected fixes of the type: ``"- " + " -
+# ".join(items)``)
+suggest-join-with-non-empty-separator=yes
 
 
 [REPORTS]
 
-# Set the output format. Available formats are text, parseable, colorized, msvs
-# (visual studio) and html. You can also give a reporter class, eg
-# mypackage.mymodule.MyReporterClass.
-output-format=colorized
-
-# Tells whether to display a full report or only the messages
 reports=no
 
-# Python expression which should return a note less than 10 (10 is the highest
-# note). You have access to the variables errors warning, statement which
-# respectively contain the number of errors / warnings messages and the total
-# number of statements analyzed. This is used by the global evaluation report
-# (RP0004).
-evaluation=10.0 - ((float(5 * error + warning + refactor + convention) / statement) * 10)
 
-# Template used to display messages. This is a python new-style format string
-# used to format the message information. See doc for all details
-#msg-template=
+[SPELLING]
+
+# Limits count of emitted suggestions for spelling mistakes.
+max-spelling-suggestions=4
+
+# List of comma separated words that should be considered directives if they
+# appear at the beginning of a comment and should not be checked.
+spelling-ignore-comment-directives=fmt: on,fmt: off,noqa:,noqa,nosec,isort:skip,mypy:
+
+spelling-store-unknown-words=no
 
 
-[BASIC]
+[STRING]
 
-# Good variable names which should always be accepted, separated by a comma
-good-names=main,_
+check-quote-consistency=yes
+check-str-concat-over-line-jumps=yes
 
-# Bad variable names which should always be refused, separated by a comma
-bad-names=x,y,i,l
 
-# Colon-delimited sets of names that determine each other's naming style when
-# the name regexes allow several styles.
-name-group=
+[VARIABLES]
 
-# Include a hint for the correct naming format with invalid-name
-include-naming-hint=no
+allow-global-unused-variables=yes
+dummy-variables-rgx=^\*{0,2}(_$|unused_|dummy_)
+ignored-argument-names=_.*|^ignored_|^unused_
+redefining-builtins-modules=six,six.moves,past.builtins,future.builtins,functools
 
-# List of decorators that produce properties, such as abc.abstractproperty. Add
-# to this list to register other decorators that produce valid properties.
-property-classes=abc.abstractproperty,cached_property.cached_property,cached_property.threaded_cached_property,cached_property.cached_property_with_ttl,cached_property.threaded_cached_property_with_ttl
-
-# Regular expression matching correct function names
-function-rgx=^(?:(?P<exempt>setUp|tearDown|setUpModule|tearDownModule)|(?P<camel_case>_?[A-Z][a-zA-Z0-9]*)|(?P<snake_case>_?[a-z][a-z0-9_]*))$
-
-# Regular expression matching correct variable names
-variable-rgx=^[a-z][a-z0-9_]*$
-
-# Regular expression matching correct constant names
-const-rgx=^(_?[A-Z][A-Z0-9_]*|__[a-z0-9_]+__|_?[a-z][a-z0-9_]*)$
-
-# Regular expression matching correct attribute names
-attr-rgx=^_{0,2}[a-z][a-z0-9_]*$
-
-# Regular expression matching correct argument names
-argument-rgx=^[a-z][a-z0-9_]*$
-
-# Regular expression matching correct class attribute names
-class-attribute-rgx=^(_?[A-Z][A-Z0-9_]*|__[a-z0-9_]+__|_?[a-z][a-z0-9_]*)$
-
-# Regular expression matching correct inline iteration names
-inlinevar-rgx=^[a-z][a-z0-9_]*$
-
-# Regular expression matching correct class names
-class-rgx=^_?[A-Z][a-zA-Z0-9]*$
-
-# Regular expression matching correct module names
-module-rgx=^(_?[a-z][a-z0-9_]*|__init__)$
-
-# Regular expression matching correct method names
-method-rgx=(?x)^(?:(?P<exempt>_[a-z0-9_]+__|runTest|setUp|tearDown|setUpTestCase|tearDownTestCase|setupSelf|tearDownClass|setUpClass|(test|assert)_*[A-Z0-9][a-zA-Z0-9_]*|next)|(?P<camel_case>_{0,2}[A-Z][a-zA-Z0-9_]*)|(?P<snake_case>_{0,2}[a-z][a-z0-9_]*))$
-
-# Regular expression which should only match function or class names that do
-# not require a docstring.
-no-docstring-rgx=(__.*__|main|test.*|.*test|.*Test)$
-
-# Minimum line length for functions/classes that require docstrings, shorter
-# ones are exempt.
-docstring-min-length=10
+# Tells whether we should check for unused import in __init__ files.
+init-import=no
 
 
 [TYPECHECK]
@@ -181,194 +299,48 @@ docstring-min-length=10
 # produce valid context managers.
 contextmanager-decorators=contextlib.contextmanager,contextlib2.contextmanager
 
-# Tells whether missing members accessed in mixin class should be ignored. A
-# mixin class is detected if its name ends with "mixin" (case insensitive).
-ignore-mixin-members=yes
+# List of members which are set dynamically and missed by pylint inference
+# system, and so shouldn't trigger E1101 when accessed. Python regular
+# expressions are accepted.
+generated-members=
 
-# List of module names for which member attributes should not be checked
-# (useful for modules/projects where namespaces are manipulated during runtime
-# and thus existing member attributes cannot be deduced by static analysis. It
-# supports qualified module names, as well as Unix pattern matching.
-ignored-modules=
+# Tells whether to warn about missing members when the owner of the attribute
+# is inferred to be None.
+ignore-none=yes
+
+# This flag controls whether pylint should warn about no-member and similar
+# checks whenever an opaque object is returned when inferring. The inference
+# can return multiple potential results while evaluating a Python object, but
+# some branches might not be evaluated, which results in partial inference. In
+# that case, it might be useful to still emit no-member and other checks for
+# the rest of the inferred objects.
+ignore-on-opaque-inference=yes
+
+# List of symbolic message names to ignore for Mixin members.
+ignored-checks-for-mixins=no-member,
+                          not-async-context-manager,
+                          not-context-manager,
+                          attribute-defined-outside-init
 
 # List of class names for which member attributes should not be checked (useful
 # for classes with dynamically set attributes). This supports the use of
 # qualified names.
 ignored-classes=optparse.Values,thread._local,_thread._local
 
-# List of members which are set dynamically and missed by pylint inference
-# system, and so shouldn't trigger E1101 when accessed. Python regular
-# expressions are accepted.
-generated-members=
+# Show a hint with possible names when a member name was not found. The aspect
+# of finding the hint is based on edit distance.
+missing-member-hint=yes
 
+# The maximum edit distance a name should have in order to be considered a
+# similar match for a missing member name.
+missing-member-hint-distance=1
 
-[FORMAT]
+# The total number of similar names that should be taken in consideration when
+# showing a hint for a missing member.
+missing-member-max-choices=1
 
-# Maximum number of characters on a single line.
-max-line-length=120
+# Regex pattern to define which classes are considered mixins.
+mixin-class-rgx=.*[Mm]ixin
 
-# TODO(https://github.com/PyCQA/pylint/issues/3352): Direct pylint to exempt
-# lines made too long by directives to pytype.
-
-# Regexp for a line that is allowed to be longer than the limit.
-ignore-long-lines=(?x)(
-  ^\s*(\#\ )?<?https?://\S+>?$|
-  ^\s*(from\s+\S+\s+)?import\s+.+$)
-
-# Allow the body of an if to be on the same line as the test if there is no
-# else.
-single-line-if-stmt=yes
-
-# List of optional constructs for which whitespace checking is disabled. `dict-
-# separator` is used to allow tabulation in dicts, etc.: {1  : 1,\n222: 2}.
-# `trailing-comma` allows a space between comma and closing bracket: (a, ).
-# `empty-line` allows space-only lines.
-# no-space-check=
-
-# Maximum number of lines in a module
-max-module-lines=99999
-
-# String used as indentation unit. Currently 4, consistent with
-# PEP 8.
-indent-string='    '
-
-# Number of spaces of indent required inside a hanging  or continued line.
-indent-after-paren=4
-
-# Expected format of line ending, e.g. empty (any line ending), LF or CRLF.
-expected-line-ending-format=
-
-
-[MISCELLANEOUS]
-
-# List of note tags to take in consideration, separated by a comma.
-notes=TODO
-
-
-[STRING]
-
-# This flag controls whether inconsistent-quotes generates a warning when the
-# character used as a quote delimiter is used inconsistently within a module.
-check-quote-consistency=yes
-
-
-[VARIABLES]
-
-# Tells whether we should check for unused import in __init__ files.
-init-import=no
-
-# A regular expression matching the name of dummy variables (i.e. expectedly
-# not used).
-dummy-variables-rgx=^\*{0,2}(_$|unused_|dummy_)
-
-# List of additional names supposed to be defined in builtins. Remember that
-# you should avoid to define new builtins when possible.
-additional-builtins=
-
-# List of strings which can identify a callback function by name. A callback
-# name must start or end with one of those strings.
-callbacks=
-
-# List of qualified module names which can have objects that can redefine
-# builtins.
-redefining-builtins-modules=six,six.moves,past.builtins,future.builtins,functools
-
-
-[LOGGING]
-
-# Logging modules to check that the string format arguments are in logging
-# function parameter format
-logging-modules=logging,absl.logging
-
-
-[SIMILARITIES]
-
-# Minimum lines number of a similarity.
-min-similarity-lines=4
-
-# Ignore comments when computing similarities.
-ignore-comments=yes
-
-# Ignore docstrings when computing similarities.
-ignore-docstrings=yes
-
-# Ignore imports when computing similarities.
-ignore-imports=no
-
-
-[SPELLING]
-
-# Spelling dictionary name. Available dictionaries: none. To make it working
-# install python-enchant package.
-spelling-dict=
-
-# List of comma separated words that should not be checked.
-spelling-ignore-words=
-
-# A path to a file that contains private dictionary; one word per line.
-spelling-private-dict-file=
-
-# Tells whether to store unknown words to indicated private dictionary in
-# --spelling-private-dict-file option instead of raising a message.
-spelling-store-unknown-words=no
-
-
-[IMPORTS]
-
-# Deprecated modules which should not be used, separated by a comma
-deprecated-modules=regsub,
-                   TERMIOS,
-                   Bastion,
-                   rexec,
-                   sets
-
-# Create a graph of every (i.e. internal and external) dependencies in the
-# given file (report RP0402 must not be disabled)
-import-graph=
-
-# Create a graph of external dependencies in the given file (report RP0402 must
-# not be disabled)
-ext-import-graph=
-
-# Create a graph of internal dependencies in the given file (report RP0402 must
-# not be disabled)
-int-import-graph=
-
-# Force import order to recognize a module as part of the standard
-# compatibility libraries.
-known-standard-library=
-
-# Force import order to recognize a module as part of a third party library.
-known-third-party=enchant, absl
-
-
-[CLASSES]
-
-# List of method names used to declare (i.e. assign) instance attributes.
-defining-attr-methods=__init__,
-                      __new__,
-                      setUp
-
-# List of member names, which should be excluded from the protected access
-# warning.
-exclude-protected=_asdict,
-                  _fields,
-                  _replace,
-                  _source,
-                  _make
-
-# List of valid names for the first argument in a class method.
-valid-classmethod-first-arg=cls,
-                            class_
-
-# List of valid names for the first argument in a metaclass class method.
-valid-metaclass-classmethod-first-arg=mcs
-
-
-[EXCEPTIONS]
-
-# Exceptions that will emit a warning when being caught. Defaults to
-# "Exception"
-overgeneral-exceptions=StandardError,
-                       Exception,
-                       BaseException
+# List of decorators that change the signature of a decorated function.
+signature-mutators=
