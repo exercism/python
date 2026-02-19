@@ -32,9 +32,9 @@ Hi. &nbsp;👋🏽 &nbsp;👋 &nbsp;**We are happy you are here.**&nbsp; 🎉&nb
 **`exercism/Python`** is one of many programming language tracks on [exercism(dot)org][exercism-website].  
 This repo holds all the instructions, tests, code, & support files for Python _exercises_ currently under development or implemented & available for students.
 
-🌟 &nbsp;&nbsp;Track exercises support Python `3.7` - `3.11.5`.
+🌟 &nbsp;&nbsp;Track exercises support Python `3.10` - `3.13.5`.
 Exceptions to this support are noted where they occur.  
-🌟 &nbsp;&nbsp;Track tooling (_test-runner, representer, analyzer, and Continuous Integration_) runs on Python `3.11.2`.
+🌟 &nbsp;&nbsp;Track tooling (_test-runner, representer, analyzer, and Continuous Integration_) runs on Python `3.13.5`.
 
 Exercises are grouped into **concept** exercises which teach the [Python syllabus][python-syllabus], and **practice** exercises, which are unlocked by progressing in the syllabus tree &nbsp;🌴&nbsp;.
 Concept exercises are constrained to a small set of language or syntax features.
@@ -71,15 +71,14 @@ We're leaving the track contributing docs below for our long-term collaborators 
 <p vertical-align="middle"><h2 id="in-general">In General</h2></p>
 <br>
 
-- Maintainers are happy to review your work and help troubleshoot with you.&nbsp;💛&nbsp;💙&nbsp;
+- Maintainers are happy to review your work and help troubleshoot with you.&nbsp;💛&nbsp;💙&nbsp; If you need help, comment in the Pull Request/issue.&nbsp; 🙋🏽‍♀️ &nbsp;
+  - **Please wait at least 72 hours before pinging or `@`ing reviewers directly.**
   - Requests are reviewed as soon as is practical/possible.
-  - (❗&nbsp;) Reviewers may be in a different timezone&nbsp;⌚&nbsp;, or tied up &nbsp;🧶&nbsp; with other tasks.
-  - **Please wait at least 72 hours before pinging.**
-- If you need help, comment in the Pull Request/issue.&nbsp; 🙋🏽‍♀️ &nbsp;
+  - (❗&nbsp;) Keep in mind that reviewers may be in a different timezone&nbsp;⌚&nbsp;, or tied up &nbsp;🧶&nbsp; with other tasks.
 - If you would like in-progress feedback/discussion, please mark your Pull Request as a **`[draft]`**
 - Pull Requests should be focused around a single exercise, issue, or change.
 - Pull Request titles and descriptions should make clear **what** has changed and **why**.
-  - Please link &nbsp;🔗&nbsp; to any related issues the PR addresses.
+  - Please link &nbsp;🔗&nbsp; to any related forum discussions or issues the PR addresses.
 - 📛&nbsp;[ Open an issue ][open-an-issue]📛&nbsp; and discuss it with &nbsp;🧰 &nbsp;maintainers _**before**_:
   - creating a Pull Request making significant or breaking changes.
   - for changes across multiple exercises, even if they are typos or small.
@@ -204,13 +203,13 @@ _We know it, and trust us, we are working on fixing it._ But if you see &nbsp;�
 
 <br>
 
-This track officially supports Python `3.7 - 3.11.2` for students completing exercises.  
-The track `test runner`, `analyzer`, and `representer` run in docker on `python:3.11.2-slim`.
+This track officially supports Python `3.10 - 3.13.5` for students completing exercises.  
+The track `test runner`, `analyzer`, and `representer` run in docker on `python:3.13.5-alpine3.22`.
 
 Although the majority of test cases are written using `unittest.TestCase`,
 
-- All exercises should be written for compatibility with Python `3.7` - `3.11.2`.
-- Version backward _incompatibility_ (_e.g_ an exercise using features introduced in `3.8`, `3.9`, or `3.10`) should be clearly noted in any exercise hints, links, introductions or other notes.
+- All exercises should be written for compatibility with Python `3.10` - `3.13.5`.
+- Version backward _incompatibility_ (_e.g_ an exercise using features introduced in Python `3.10`+ that would not work in Python `3.10`) should be clearly noted in any exercise hints, links, introductions or other notes.
 
 - Here is an example of how the Python documentation handles [version-tagged &nbsp;🏷&nbsp;][version-tagged-language-features] feature introduction.
 
@@ -231,7 +230,7 @@ Although the majority of test cases are written using `unittest.TestCase`,
 
 - For specifications, refer to [Concept Exercise Anatomy][concept-exercise-anatomy], or [Practice Exercise Anatomy][practice-exercise-anatomy] depending on which type of exercise you are contributing to.
 
-- **Practice exercise**, descriptions and instructions come from a centralized, cross-track [problem specifications][problem-specifications] repository.
+- **Practice exercise** descriptions and instructions come from a centralized, cross-track [problem specifications][problem-specifications] repository.
 
   - Any updates or changes need to be proposed/approved in `problem-specifications` first.
   - If Python-specific changes become necessary, they need to be appended to the canonical instructions by creating a `instructions.append.md` file in this (`exercism/Python`) repository.
