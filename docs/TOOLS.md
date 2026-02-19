@@ -15,6 +15,7 @@ If you have an editor, IDE, tool, or plugin recommendation, we encourage you to 
 - [Environments](#virtual-environments)
   - [Venv](#creating-a-virtual-environment-with-venv)
   - [Conda](#creating-a-virtual-environment-using-conda)
+  - [uv](#uv)
   - [Virtual Environment Wrapper](#virtual-environment-wrapper)
 - [Editors and IDEs](#editors-and-ides)
   - [Visual Studio Code](#visual-studio-code)
@@ -30,9 +31,9 @@ If you have an editor, IDE, tool, or plugin recommendation, we encourage you to 
 
 
 Before you start exploring, make sure that you have a recent version of Python installed.
-The Exercism web platform currently supports `Python 3.7 - 3.11.5` (_exercises and tests_) and `Python 3.11.5` (_tooling_).
-Our online test runner currently uses `pytest 7.2.2` and `pytest-subtests 0.11.0`.
-Our online analyzer uses `pylint 2.17.7`.
+The Exercism web platform currently supports `Python 3.10 - 3.13.5` (_exercises and tests_) and `Python 3.13.5` (_tooling_).
+Our online test runner currently uses `pytest 8.4.0` and `pytest-subtests 0.14.2`.
+Our online analyzer uses `pylint 4.0.4`.
 Using different versions of `Python`, `pytest`, or `pylint`  locally might give you different results than the website.
 For more information, please refer to [Installing Python locally][Installing Python locally].
 
@@ -45,10 +46,16 @@ Python virtual environments offer lightweight runtime and package isolation.
 Different environments can hold different versions of the Python runtime together with any project or library dependencies.
 This helps avoid bugs and incompatibilities caused by upgrading a library for one project that "breaks" a dependency in a different one.
 
-There are two major *virtual environment* tools in use today, the Python standard library [`venv`][venv] and the third-party [`conda env`][condaenv], using the [`conda`][conda] package manager and (_usually_) the Anaconda Python distribution.
-Both of are straightforward to use and/or install.
+There are many *virtual environment* and *virtual environment-like* tools in use today, and a growing movement to use [inline script metadata][PEP723], [dev containers][dev containers], or [docker][docker] instead of virtual environments.
+It is important to try out different strategies and find one that suits your development style and project needs.
+Don't assume that the strategies here are one-size-fits all, or are your only options.
+For a more general rundown of tools not covered here, check out [this blog post by Bas Nijholt][bas nihholt] and stay curious.
 
-Additionally, [`PyEnv`][pyenv] and [virtualenvwrapper][virtualenvwrapper] are tools that can help to manage multiple versions of Python and multiple Python environments on the same machine.
+
+There are three major *virtual environment* tools we'll cover here, the Python standard library [`venv`][venv], the third-party [`conda env`][condaenv], using the [`conda`][conda] package manager and (_usually_) the Anaconda Python distribution, and the third-party `pip` + `venv` replacement [`uv`][uv].
+All three are fairly straightforward to use and/or install.
+
+Additionally, [`PyEnv`][pyenv], [`Poetry`][poetry], and [virtualenvwrapper][virtualenvwrapper] are tools that can help to manage multiple versions of Python and multiple Python environments on the same machine.
 
 <br>
 
@@ -207,6 +214,19 @@ Executing transaction: done
 ```
 
 <br>
+
+### <a name="uv">UV
+
+Working on Projects with uv: [uv][uv-docs]
+
+`uv` is a Python package + project management tool from [Astral][astral] written in [Rust][rust programming language].
+It was designed to replace `pip`, `venv`, `poetry`, and other Python packaging/dependency management tools.
+Unlike `Conda` or `Mamba`, uv is specialized/tailored to only Python.
+ However, uv does support building Python extension modules written in other languages such as Fortran.
+Astral is also the developer of the popular [Ruff][ruff] linter and [TY][ty], a static type checker for Python type hints, both written in Rust.
+
+
+Rather than go into detail here, the [UV documentation][uv documentation] is your best source for installation and setup.
 
 ### <a name="virtual-environment-wrapper">Virtual Environment wrapper
 
@@ -369,14 +389,19 @@ You can also [develop plugins][sublime plugin development] of your own for the e
 
 [Installing Python locally]: https://exercism.org/docs/tracks/Python/installation
 [MS Python extension]: https://marketplace.visualstudio.com/items?itemName=ms-python.python
+[PEP723]: https://packaging.python.org/en/latest/specifications/inline-script-metadata/#inline-script-metadata
 [anaconda]: https://www.anaconda.com/products/individual
+[astral]: https://astral.sh/about
 [atom]: https://atom.io/
+[bas nihholt]: https://www.nijho.lt/post/python-environments/
 [conda command ref]: https://docs.conda.io/projects/conda/en/latest/commands.html#conda-vs-pip-vs-virtualenv-commands
 [conda-cheatsheet]: https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf
 [conda-docs]: https://docs.conda.io/projects/conda/en/latest/user-guide/index.html
 [conda]: https://docs.conda.io/projects/conda/en/latest/index.html
 [condaenv]: https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
+[dev containers]: https://andypickup.com/developing-in-python-with-dev-containers-part-1-setup-f1aeb89cbfed
 [docker in vscode]: https://code.visualstudio.com/docs/containers/overview
+[docker]: https://www.docker.com/blog/containerized-python-development-part-1/
 [emacs at fullstack python]: https://www.fullstackpython.com/emacs.html
 [emacs setup at real python]: https://realpython.com/emacs-the-best-python-editor
 [emacs wiki python programming]: https://www.emacswiki.org/emacs/PythonProgrammingInEmacs#h5o-4
@@ -390,6 +415,7 @@ You can also [develop plugins][sublime plugin development] of your own for the e
 [linting python in vscode]: https://code.visualstudio.com/docs/python/linting
 [miniconda]: https://docs.conda.io/en/latest/miniconda.html
 [opensource spacemacs guide]: https://opensource.com/article/19/12/spacemacs
+[poetry]: https://github.com/python-poetry/poetry
 [pycharm config venv]: https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html
 [pycharm database tools]: https://www.jetbrains.com/help/pycharm/relational-databases.html
 [pycharm debug configuration]: https://www.jetbrains.com/help/pycharm/run-debug-configuration-py-test.html
@@ -407,6 +433,8 @@ You can also [develop plugins][sublime plugin development] of your own for the e
 [python testing in vscode]: https://code.visualstudio.com/docs/python/testing
 [python web dev in vscode]: https://code.visualstudio.com/docs/python/tutorial-django
 [rtorr vim cheat sheet]: https://vim.rtorr.com/
+[ruff]: https://docs.astral.sh/ruff/
+[rust programming language]: https://rust-lang.org/
 [spacemacs github repo]: https://github.com/syl20bnr/spacemacs
 [spacemacs official docs]: https://github.com/syl20bnr/spacemacs#documentation
 [spacemacs python layer]: https://www.spacemacs.org/layers/+lang/python/README.html
@@ -434,6 +462,10 @@ You can also [develop plugins][sublime plugin development] of your own for the e
 [sublime support docs]: https://www.sublimetext.com/support
 [sublime text 4]: https://www.sublimetext.com/
 [sublime text at real python]: https://realpython.com/setting-up-sublime-text-3-for-full-stack-python-development/
+[ty]: https://docs.astral.sh/ty/
+[uv documentation]: https://docs.astral.sh/uv/getting-started/
+[uv-docs]: https://docs.astral.sh/uv/guides/projects/#working-on-projects
+[uv]: https://github.com/astral-sh/uv
 [venv wrapper tutorial]: https://virtualenvwrapper.readthedocs.io/en/latest/plugins.html#plugins
 [venv]: https://docs.python.org/3.9/tutorial/venv.html
 [vim cheat sheet]: https://vimsheet.com/

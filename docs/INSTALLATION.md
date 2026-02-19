@@ -14,24 +14,25 @@ Some quick links into the documentation by operating system:
 
 -  [Windows][windows] Additionally, this Microsoft article on [installing Python on windows][python-on-windows] is helpful.
 -  [Unix & Linux Systems][unix-and-linux] (_these largely work for MacOS as well_)
--  [MacOS][macos] : **This is outdated.**
-   We recommend reviewing some of the methods outlined in the Real Python article [Installing Python][installing-python] or the articles by Brett Cannon linked above.
+-  [MacOS][macos]
+
+   We also recommend reviewing some of the methods outlined in the Real Python article [Installing Python][installing-python] or the articles by Brett Cannon linked above.
 
 
-Exercism tests and tooling currently support `3.7` - `3.11.5` (_tests_) and [`Python 3.11.5`][311-new-features] (_tooling_).
+Exercism tests and tooling currently support `3.10` - `3.13.5` (_tests_) and [`Python 3.13.5`][313-new-features] (_tooling_).
 Exceptions to this support are noted where they occur.
 Most of the exercises will work with `Python 3.6+`, or even earlier versions.
 But we don't guarantee support for versions not listed under [Active Python Releases][active-python-releases].
 
 
-Please refer to the [Python 3.11.x documentation][3.11 docs] for what is currently supported.
+Please refer to the [Python 3.13.x documentation][3.13 docs] for what is currently supported.
 
-[3.11 docs]: https://docs.python.org/3.11/
-[311-new-features]: https://docs.python.org/3/whatsnew/3.11.html
+[3.13 docs]: https://docs.python.org/3.13/
+[313-new-features]: https://docs.python.org/3/whatsnew/3.13.html
 [Python-three downloads]: https://www.python.org/downloads/
 [active-python-releases]: https://www.python.org/downloads/
 [helpful guide]: https://realpython.com/installing-python/
-[installing-python]: https://realpython.com/installing-python/#what-your-options-are_1
+[installing-python]: https://realpython.com/installing-python/
 [macos]: https://docs.python.org/3/using/mac.html
 [python-m-pip]: https://snarky.ca/why-you-should-use-python-m-pip/
 [python-on-windows]: https://docs.microsoft.com/en-us/windows/python/beginners
