@@ -10,6 +10,7 @@ from bob import (
 
 
 class BobTest(unittest.TestCase):
+
     def test_stating_something(self):
         self.assertEqual(response("Tom-ay-to, tom-aaaah-to."), "Whatever.")
 

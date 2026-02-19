@@ -10,6 +10,7 @@ from alphametics import (
 
 
 class AlphameticsTest(unittest.TestCase):
+
     def test_puzzle_with_three_letters(self):
         self.assertEqual(solve("I + BB == ILL"), {"I": 1, "B": 9, "L": 0})
 

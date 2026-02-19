@@ -10,6 +10,7 @@ from pov import (
 
 
 class PovTest(unittest.TestCase):
+
     def test_results_in_the_same_tree_if_the_input_tree_is_a_singleton(self):
         tree = Tree("x")
         expected = Tree("x")

@@ -10,6 +10,7 @@ from connect import (
 
 
 class ConnectTest(unittest.TestCase):
+
     def test_an_empty_board_has_no_winner(self):
         game = ConnectGame(
             """. . . . .

@@ -10,6 +10,7 @@ from acronym import (
 
 
 class AcronymTest(unittest.TestCase):
+
     def test_basic(self):
         self.assertEqual(abbreviate("Portable Network Graphics"), "PNG")
 

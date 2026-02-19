@@ -11,6 +11,7 @@ from rail_fence_cipher import (
 
 
 class RailFenceCipherTest(unittest.TestCase):
+
     def test_encode_with_two_rails(self):
         self.assertMultiLineEqual(encode("XOXOXOXOXOXOXOXOXO", 2), "XXXXXXXXXOOOOOOOOO")
 

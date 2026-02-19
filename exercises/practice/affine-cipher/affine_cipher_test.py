@@ -11,6 +11,7 @@ from affine_cipher import (
 
 
 class AffineCipherTest(unittest.TestCase):
+
     def test_encode_yes(self):
         self.assertEqual(encode("yes", 5, 7), "xbt")
 

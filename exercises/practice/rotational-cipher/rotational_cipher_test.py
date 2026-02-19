@@ -10,6 +10,7 @@ from rotational_cipher import (
 
 
 class RotationalCipherTest(unittest.TestCase):
+
     def test_rotate_a_by_0_same_output_as_input(self):
         self.assertEqual(rotate("a", 0), "a")
 

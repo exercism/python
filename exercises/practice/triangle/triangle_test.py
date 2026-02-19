@@ -12,6 +12,7 @@ from triangle import (
 
 
 class EquilateralTriangleTest(unittest.TestCase):
+
     def test_all_sides_are_equal(self):
         self.assertIs(equilateral([2, 2, 2]), True)
 
@@ -29,6 +30,7 @@ class EquilateralTriangleTest(unittest.TestCase):
 
 
 class IsoscelesTriangleTest(unittest.TestCase):
+
     def test_last_two_sides_are_equal(self):
         self.assertIs(isosceles([3, 4, 4]), True)
 
@@ -58,6 +60,7 @@ class IsoscelesTriangleTest(unittest.TestCase):
 
 
 class ScaleneTriangleTest(unittest.TestCase):
+
     def test_no_sides_are_equal(self):
         self.assertIs(scalene([5, 4, 6]), True)
 

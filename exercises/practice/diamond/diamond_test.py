@@ -10,6 +10,7 @@ from diamond import (
 
 
 class DiamondTest(unittest.TestCase):
+
     def test_degenerate_case_with_a_single_a_row(self):
         result = ["A"]
         self.assertEqual(rows("A"), result)

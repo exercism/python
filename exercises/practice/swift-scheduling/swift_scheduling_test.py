@@ -10,6 +10,7 @@ from swift_scheduling import (
 
 
 class SwiftSchedulingTest(unittest.TestCase):
+
     def test_now_translates_to_two_hours_later(self):
         self.assertEqual(
             delivery_date("2012-02-13T09:00:00", "NOW"), "2012-02-13T11:00:00"

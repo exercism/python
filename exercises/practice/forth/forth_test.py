@@ -11,6 +11,7 @@ from forth import (
 
 
 class ForthTest(unittest.TestCase):
+
     def test_parsing_and_numbers_numbers_just_get_pushed_onto_the_stack(self):
         self.assertEqual(evaluate(["1 2 3 4 5"]), [1, 2, 3, 4, 5])
 

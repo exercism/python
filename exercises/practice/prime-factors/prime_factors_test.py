@@ -10,6 +10,7 @@ from prime_factors import (
 
 
 class PrimeFactorsTest(unittest.TestCase):
+
     def test_no_factors(self):
         self.assertEqual(factors(1), [])
 

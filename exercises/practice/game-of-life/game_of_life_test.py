@@ -10,6 +10,7 @@ from game_of_life import (
 
 
 class GameOfLifeTest(unittest.TestCase):
+
     def test_empty_matrix(self):
         matrix = []
         expected = []

@@ -12,6 +12,7 @@ from circular_buffer import (
 
 
 class CircularBufferTest(unittest.TestCase):
+
     def test_reading_empty_buffer_should_fail(self):
         buf = CircularBuffer(1)
         with self.assertRaises(BufferError) as err:

@@ -10,6 +10,7 @@ from food_chain import (
 
 
 class FoodChainTest(unittest.TestCase):
+
     def test_fly(self):
         self.assertEqual(
             recite(1, 1),

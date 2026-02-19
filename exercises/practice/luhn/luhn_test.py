@@ -10,6 +10,7 @@ from luhn import (
 
 
 class LuhnTest(unittest.TestCase):
+
     def test_single_digit_strings_can_not_be_valid(self):
         self.assertIs(Luhn("1").valid(), False)
 

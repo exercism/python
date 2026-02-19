@@ -11,6 +11,7 @@ from sgf_parsing import (
 
 
 class SgfParsingTest(unittest.TestCase):
+
     def test_empty_input(self):
         input_string = ""
         with self.assertRaises(ValueError) as err:

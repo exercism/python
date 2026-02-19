@@ -10,6 +10,7 @@ from etl import (
 
 
 class EtlTest(unittest.TestCase):
+
     def test_single_letter(self):
         legacy_data = {1: ["A"]}
         data = {"a": 1}

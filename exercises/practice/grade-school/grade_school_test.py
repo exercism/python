@@ -10,6 +10,7 @@ from grade_school import (
 
 
 class GradeSchoolTest(unittest.TestCase):
+
     def test_roster_is_empty_when_no_student_is_added(self):
         school = School()
         expected = []

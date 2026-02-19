@@ -12,6 +12,7 @@ from difference_of_squares import (
 
 
 class DifferenceOfSquaresTest(unittest.TestCase):
+
     def test_square_of_sum_1(self):
         self.assertEqual(square_of_sum(1), 1)
 

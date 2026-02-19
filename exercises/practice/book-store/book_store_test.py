@@ -10,6 +10,7 @@ from book_store import (
 
 
 class BookStoreTest(unittest.TestCase):
+
     def test_only_a_single_book(self):
         basket = [1]
         self.assertEqual(total(basket), 800)
