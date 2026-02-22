@@ -46,7 +46,7 @@ Some examples:
 ```
 
 Replacement fields (_the `{}` in the f-string_) support output control mechanisms such as width, alignment, precision.
-This specification is started in the [format specification mini-language][format-mini-language].
+This is defined by the [format specification mini-language][format-mini-language].
 
 A more complex example of an `f-string` that includes output control:
 
@@ -59,24 +59,25 @@ A more complex example of an `f-string` that includes output control:
 # Reassigning verb to 'meet'.
 >>> verb = 'meet'
 
-# This example includes a function, str, a nested f-string, an arithmetic expression, 
+# This example includes a function, an arithmetic expression, 
 # precision formatting, bracket escaping and object formatting.
->>> f'"Have a {"NICE".lower()} day, I will {verb} you after {f"{30e8 * 111_000:6.{precision}e}"} light-years."{{{the_end}}}'
+>>> f'"Have a {"NICE".lower()} day, I will {verb} you after {30e8 * 111_000:6.{precision}e} light-years."{{{the_end}}}'
 '"Have a nice day, I will meet you after 3.330e+14 light-years."{[\'end\', \'of\', \'transmission\']}'
 ```
 
-There are a few limitations to be aware of.
-`f-string` expressions cannot be empty, they cannot contain comments.
+There are two main limitations to be aware of.
+`f-string` expressions cannot be empty.
+[Additionally, before Python 3.12, they cannot contain comments.][pep-0701]
 
 ```python
 >>> f"An empty expression will error: {}"
 SyntaxError: f-string: empty expression not allowed
 
 >>> word = 'word'
->>> f"""A comment in a triple quoted f-string will error: {
+>>> f"""A comment in a triple quoted f-string: {
     word # I chose a nice variable
 }"""
-SyntaxError: f-string expression part cannot include '#'
+'A comment in a triple quoted f-string: word'
 ```
 
 ~~~~exercism/caution
@@ -105,7 +106,7 @@ The complete formatting specifier pattern is `{[<name>][!<conversion>][:<format_
 - `<name>` can be a named placeholder or a number or empty.
 - `!<conversion>` is optional and should be one of this three conversions: `!s` for [`str()`][str-conversion], `!r` for [`repr()`][repr-conversion] or `!a` for [`ascii()`][ascii-conversion].
 By default, `str()` is used.
-- `:<format_specifier>` is optional and has a lot of options, which we are [listed here][format-specifiers].
+- `:<format_specifier>` is optional and has a lot of options, which are [listed here][format-specifiers].
 
 Example of conversions for a diacritical letter:
 
@@ -178,7 +179,9 @@ If you want to add multiple variables to a string, you need to supply a [tuple][
 ## Template Strings
 
 [`string.Template()`][string.Template()] is a class from the `string` module (_as opposed to the built-in `str` type_), which is part of the Python standard library, but has to be imported for use.
-Template strings support `$`-based substitution and are much simpler and less capable than the other options mentioned here, but can be very useful for when complicated internationalization is needed, or outside inputs need to be sanitized.
+Template strings support `$`-based substitution and are much simpler and less capable than the other options mentioned here.
+However, they can be very useful for when complicated internationalization is needed, or outside inputs need to be sanitized.
+`string.Template` is considered safer for untrusted user input because it prevents evaluating arbitrary expressions or accessing object attributes, which mitigates format-string injection attacks.
 
 ```python
 >>> from string import Template
@@ -204,8 +207,8 @@ A few quick guidelines:
 If you don't need to internationalize, they should be the Python 3.6+ preferred method.
 2. `str.format()` is versatile, very powerful and compatible with both `gnu gettext` and most versions of Python.
 3. If simplicity, safety, and/or heavy internationalization is what you need, `string.Template()` can be used to mitigate risks when inputs from users need to be handled, and for wrapping translation strings.
-4. The `%` operator is not supported in some newer distributions of Python and should mostly be used for compatibility with old code.
-`%` formatting` can lead to issues displaying non-ascii and unicode characters and has more errors and less functionality than other methods.
+4. The `%` operator is generally considered deprecated for new code, though it still works in modern Python. It should mostly be used for compatibility with older codebases.
+`%` formatting can lead to issues displaying non-ASCII and Unicode characters and has more errors and less functionality than other methods. Check your specific Python distribution for support details if you intend to use it.
 
 If you want to go further: [all about formatting][all-about-formatting] and [Python String Formatting Best Practices][formatting best practices] are good places to start.
 
@@ -216,6 +219,7 @@ If you want to go further: [all about formatting][all-about-formatting] and [Pyt
 [format-specifiers]: https://www.python.org/dev/peps/pep-3101/#standard-format-specifiers
 [formatting best practices]: https://realpython.com/python-string-formatting/
 [pep-0498]: https://peps.python.org/pep-0498
+[pep-0701]: https://peps.python.org/pep-0701/
 [printf-style-docs]: https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting
 [repr-conversion]: https://www.w3resource.com/python/built-in-function/repr.php
 [str-conversion]: https://www.w3resource.com/python/built-in-function/str.php

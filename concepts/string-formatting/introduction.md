@@ -3,18 +3,20 @@
 ## String Formatting in Python
 
 The [Zen of Python][zen-of-python] asserts there should be "one _obvious_ way to do something in Python".
-But when it comes to string formatting, things are a little .... _less zen_.
-It can be surprising to find out that there are **four** main ways to perform string formatting in Python - each for a different scenario.
-Some of this is due to Python's long history and some of it is due to considerations like internationalization or input sanitation.
+For Python 3.6+, **literal string interpolation** (**`f-strings`**) is often the obvious and preferred way to format strings:
 
-With 4 different paths to take, how do you decide what to use?
+```python
+>>> adjective = "easy"
+>>> f"This is an {adjective} way to format strings!"
+'This is an easy way to format strings!'
+```
 
-1. `f-strings` are the newest and easiest to read.
-If you don't need to internationalize, they should be the Python 3.6+ preferred method.
-2. `str.format()` is versatile, very powerful and compatible with both `gnu gettext` and most versions of Python.
-3. If simplicity, safety, and/or heavy internationalization is what you need, `string.Template()` can be used to mitigate risks when inputs need to be handled and for wrapping translation strings.
-4. The `%` operator should mostly be used for compatibility with old code.
-`%` formatting` can lead to issues displaying non-ascii and unicode characters and has more errors and less functionality than other methods.
+However, given Python's long history and different considerations, it might not be surprising that there are **three** other common ways to perform string formatting in Python:
+
+1. `str.format()` is versatile, very powerful and compatible with both `gnu gettext` and most versions of Python.
+2. If simplicity, safety, and/or heavy internationalization is what you need, `string.Template()` can be used to mitigate risks when inputs need to be handled and for wrapping translation strings.
+3. The `%` operator is generally considered deprecated for new code, though it still works in modern Python.
+It should mostly be used for compatibility with older codebases. `%` formatting can lead to issues displaying non-ASCII and Unicode characters and has more errors and less functionality than other methods.Check your specific Python distribution for support details if you intend to use it.
 
 If you want to go further: [all about formatting][all-about-formatting] and [Python String Formatting Best Practices][formatting best practices] are good places to start.
 
