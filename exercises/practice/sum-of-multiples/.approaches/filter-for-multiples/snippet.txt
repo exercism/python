@@ -1,0 +1,5 @@
+def sum_of_multiples(limit, factors):
+    return sum(filter(
+        lambda n: any(n % f == 0 for f in factors if f != 0),
+        range(limit)
+    ))

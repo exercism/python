@@ -1,0 +1,18 @@
+{
+    "introduction": {
+        "authors": [
+            "MatthijsBlom"
+        ]
+    },
+    "approaches": [
+        {
+            "uuid": "7dd85d5b-12bd-48a6-97fe-8eb7dd87af72",
+            "slug": "filter-for-multiples",
+            "title": "Filter for multiples",
+            "blurb": "Use the built-in filter function to select the numbers that are multiples, then sum these.",
+            "authors": [
+                "MatthijsBlom"
+            ]
+        }
+    ]
+}
