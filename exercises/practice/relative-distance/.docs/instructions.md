@@ -36,4 +36,4 @@ Isla and Tariq are siblings and have a separation of 1.
 Similarly, this implementation would report a separation of 2 from you to your father's brother.
 ~~~~
 
-[six-bacons]: https://en.m.wikipedia.org/wiki/Six_Degrees_of_Kevin_Bacon
+[six-bacons]: https://en.wikipedia.org/wiki/Six_Degrees_of_Kevin_Bacon

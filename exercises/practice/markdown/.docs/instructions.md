@@ -10,4 +10,4 @@ Your challenge is to re-write this code to make it easier to read and maintain w
 It would be helpful if you made notes of what you did in your refactoring in comments so reviewers can see that, but it isn't strictly necessary.
 The most important thing is to make the code better!
 
-[markdown]: https://guides.github.com/features/mastering-markdown/
+[markdown]: https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
