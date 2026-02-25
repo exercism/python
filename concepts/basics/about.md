@@ -228,6 +228,16 @@ TypeError: raise_to_power() missing 1 required positional argument: 'power'
 >>> str.upper(start_text)  # Calling the upper() method from the built-in str class on start_text.
 'MY SILLY SENTENCE FOR EXAMPLES.'
 
+# Because a string is an instance of the str class, methods can also be called on them "directly".
+>>> start_text = "my silly sentence for examples."
+>>> start_text.upper()  # Calling the upper() method on start_text directly.
+'MY SILLY SENTENCE FOR EXAMPLES.'
+
+# Alternatively, we can skip the variable assignment (although this gets messy quick).
+>>> "my silly sentence for examples.".upper()
+'MY SILLY SENTENCE FOR EXAMPLES.'
+
+
 # Importing the math module
 import math
 

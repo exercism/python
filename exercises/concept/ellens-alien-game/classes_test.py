@@ -198,15 +198,19 @@ class ClassesTest(unittest.TestCase):
 
         test_data = [(-2, 6), (1, 5), (-4, -3)]
         actual_result = new_aliens_collection(test_data)
+        length_message = (f'We called your function with a list of coordinates that was'
+                       f' {len(test_data)} items long, but the list of Alien '
+                       f'objects returned was {len(actual_result)} items long.')
 
-        error_message = "new_aliens_collection() must return a list of Alien objects."
+        self.assertEqual(len(test_data), len(actual_result), msg=length_message)
 
         for obj in actual_result:
-            self.assertIsInstance(obj, Alien, msg=error_message)
+            object_message = "new_aliens_collection() must return a list of Alien objects."
+            self.assertIsInstance(obj, Alien, msg=object_message)
 
         for position, obj in zip(test_data, actual_result):
-            position_error = (f'After calling new_aliens_collection({test_data}), '
-                              f'found {obj} initialized to position {(obj.x_coordinate, obj.y_coordinate)}, '
-                              f'but the tests expected {obj} to be at position {position} instead.')
+            position_message = (f'After calling new_aliens_collection({test_data}), '
+                                f'found {obj} initialized to position {(obj.x_coordinate, obj.y_coordinate)}, '
+                                f'but the tests expected {obj} to be at position {position} instead.')
 
-            self.assertEqual(position, (obj.x_coordinate, obj.y_coordinate), msg=position_error)
+            self.assertEqual(position, (obj.x_coordinate, obj.y_coordinate), msg=position_message)

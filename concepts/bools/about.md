@@ -1,6 +1,6 @@
 # About
 
-Python represents true and false values with the [`bool`][bools] type, which is a subtype of `int`.
+Python represents true and false values with the [`bool`][bools] type, which is a subclass of `int`.
  There are only two Boolean values in this type: `True` and `False`.
   These values can be assigned to a variable and combined with the [Boolean operators][boolean-operators] (`and`, `or`, `not`):
 
@@ -134,10 +134,8 @@ It is considered a [Python anti-pattern][comparing to true in the wrong way] to 
 ```
 
 
-[bool-function]: https://docs.python.org/3/library/functions.html#bool
-[bool]: https://docs.python.org/3/library/stdtypes.html#truth
 [Boolean-operators]: https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not
+[bool-function]: https://docs.python.org/3/library/functions.html#bool
+[bools]: https://docs.python.org/3/library/stdtypes.html#typebool
 [comparing to true in the wrong way]: https://docs.quantifiedcode.com/python-anti-patterns/readability/comparison_to_true.html
 [comparisons]: https://docs.python.org/3/library/stdtypes.html#comparisons
-
-[bools]: https://docs.python.org/3/library/stdtypes.html#typebool

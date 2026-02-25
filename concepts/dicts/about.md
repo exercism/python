@@ -108,7 +108,7 @@ animals = {
 ## Accessing Values in a `dict`
 
 You can access a `value` in a dictionary using a _key_ in square brackets.
-If a key does not exist, a `KeyError` is thrown:
+If a key does not exist in the dictionary, a `KeyError` is thrown:
 
 ```python
 >>> bear["speed"]
