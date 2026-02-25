@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://docs.python.org/3/library/datetime.html/",
+    "description": "The datetime module, containing date, time, datetime, timeddelta and tzinfo classes."
+  },
+  {
+    "url": "https://docs.python.org/3/library/time.html/",
+    "description": "The time module, optimized for working with POSIX timestamps."
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Tz_database/",
+    "description": "A summary of information of timezone datebases."
+  },
+  {
+    "url": "https://docs.python.org/3/library/calendar.html/",
+    "description": "The calendar module, for more complex date-only applications."
+  }
+]
