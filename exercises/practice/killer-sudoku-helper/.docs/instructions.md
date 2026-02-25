@@ -81,5 +81,5 @@ The screenshots above have been generated using F-Puzzles.com, a Puzzle Setting 
 [one-solution-img]: https://assets.exercism.org/images/exercises/killer-sudoku-helper/example1.png
 [four-solutions-img]: https://assets.exercism.org/images/exercises/killer-sudoku-helper/example2.png
 [not-possible-img]: https://assets.exercism.org/images/exercises/killer-sudoku-helper/example3.png
-[clover-puzzle]: https://app.crackingthecryptic.com/sudoku/HqTBn3Pr6R
+[clover-puzzle]: https://sudokupad.app/HqTBn3Pr6R
 [goodliffe-video]: https://youtu.be/c_NjEbFEeW0?t=1180
