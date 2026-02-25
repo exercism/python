@@ -12,7 +12,7 @@ A `str` literal can be declared via single `'` or double `"` quotes. The escape 
 
 >>> single_quoted = 'These allow "double quoting" without "escape" characters.'
 
->>> double_quoted = "These allow embedded 'single quoting', so you don't have to use an 'escape' character".
+>>> double_quoted = "These allow embedded 'single quoting', so you don't have to use an 'escape' character."
 
 >>> escapes = 'If needed, a \'slash\' can be used as an escape character within a string when switching quote styles won\'t work.'
 ```

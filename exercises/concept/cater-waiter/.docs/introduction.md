@@ -258,7 +258,7 @@ The operator version of this method is `<set> & <other set> & <other set 2> & ..
 
 >>> herbs = ['Annatto','Asafetida','Basil','Chervil','Cilantro',
             'Curry Leaf','Fennel','Kaffir Lime','Lavender',
-            'Marjoram','Mint','Oregano','Summer Savory' 
+            'Marjoram','Mint','Oregano','Summer Savory', 
             'Tarragon','Wild Bergamot','Wild Celery',
             'Winter Savory']
 
@@ -360,8 +360,8 @@ The operator version of this method is  `<set> ^ <other set>`:
 >>> fruit_and_flowers ^ plants_1
 {'🌲',  '🌸', '🌴', '🌵','🌺', '🌻'}
 
->>> fruit_and_flowers ^ plants_2
-{ '🥑', '🌴','🌲', '🌵', '🍈', '🥭'}
+>>> fruit_and_flowers ^ set(plants_2)
+{'🥭', '🌴', '🌵', '🍈', '🌲', '🥑'}
 ```
 
 ~~~~exercism/note

@@ -34,7 +34,7 @@ def higher_card(card_one, card_two):
 
 
 def value_of_ace(card_one, card_two):
-    """Calculate the most advantageous value for the ace card.
+    """Calculate the most advantageous value for an upcoming ace card.
 
     :param card_one, card_two: str - card dealt. See below for values.
     :return: int - either 1 or 11 value of the upcoming ace card.

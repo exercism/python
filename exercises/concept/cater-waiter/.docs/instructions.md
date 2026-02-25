@@ -41,10 +41,11 @@ Implement the `check_drinks(<drink_name>, <drink_ingredients>)` function that ta
 ## 3. Categorize Dishes
 
 The guest list includes diners with different dietary needs, and your staff will need to separate the dishes into Vegan, Vegetarian, Paleo, Keto, and Omnivore.
+A dish belongs to a category only if all of its ingredients appear in the category's ingredient set.
 
 Implement the `categorize_dish(<dish_name>, <dish_ingredients>)` function that takes a dish name and a `set` of that dish's ingredients.
 The function should return a string with the `dish name: <CATEGORY>` (_which meal category the dish belongs to_).
-All dishes will "fit" into one of the categories imported from `sets_categories_data.py` (VEGAN, VEGETARIAN, PALEO, KETO, or OMNIVORE).
+All dishes given will "fit" into one of the categories imported from `sets_categories_data.py` (VEGAN, VEGETARIAN, PALEO, KETO, or OMNIVORE).
 
 ```python
 >>> from sets_categories_data import VEGAN, VEGETARIAN, PALEO, KETO, OMNIVORE

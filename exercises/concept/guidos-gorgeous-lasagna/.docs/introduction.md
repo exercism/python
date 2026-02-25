@@ -18,12 +18,13 @@ This first exercise introduces 4 major Python language features:
 
 ~~~~exercism/note
 
-In general, content, tests, and analyzer tooling for the Python track follow the style conventions outlined in [PEP 8](https://www.python.org/dev/peps/pep-0008/) and [PEP 257](https://www.python.org/dev/peps/pep-0257/) for Python code style, with the additional (strong) suggestion that there be no single letter variable names.
+In general, content, tests, and analyzer tooling for the Python track follow the style conventions outlined in [PEP 8](https://www.python.org/dev/peps/pep-0008/) and [PEP 257](https://www.python.org/dev/peps/pep-0257/) for Python code style, with the additional (strong) suggestion that there be no single letter variable names or variables named ["_"][uses of _ in Python].
 
 On the Python track, [variables][variables] are always written in [`snake_case`][snake case], and constants in `SCREAMING_SNAKE_CASE`.
 
 [variables]: https://realpython.com/python-variables/
 [snake case]: https://en.wikipedia.org/wiki/Snake_case
+[uses of _ in Python]: https://medium.com/better-programming/how-to-use-underscore-properly-in-python-37df5e05ba4c
 ~~~~
 
 <br>
@@ -183,6 +184,7 @@ TypeError: raise_to_power() missing 1 required positional argument: 'power'
 >>> start_text = "my silly sentence for examples."
 >>> str.upper(start_text)  # Calling the upper() method from the built-in str class on start_text.
 'MY SILLY SENTENCE FOR EXAMPLES.'
+
 
 # Importing the math module
 import math
