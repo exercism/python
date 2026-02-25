@@ -1,18 +1,18 @@
 [
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://docs.python.org/3/whatsnew/3.8.html#assignment-expressions/",
+    "description": "A What's New description for Python 3.8."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://peps.python.org/pep-0572/",
+    "description": "PEP 572 describes the walrus operator and its rationale."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://martinheinz.dev/blog/79/",
+    "description": "A thoughtful blog article from Martin Heinz."
   },
   {
-    "url": "http://example.com/",
-    "description": "TODO:  add new link (above) and write a short description here of the resource."
+    "url": "https://dev.to/renegadecoder94/the-controversy-behind-the-walrus-operator-in-python-4k4e/",
+    "description": "A discussion of the controversy surrounding the walrus operator when it was introduced."
   }
 ]
