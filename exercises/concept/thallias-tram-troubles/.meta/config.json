@@ -1,0 +1,10 @@
+{
+  "blurb": "todo",
+  "icon": "tracks-on-tracks-on-tracks",
+  "authors": ["meatball133","BethanyG"],
+  "files": {
+    "solution": ["sequences.py"],
+    "test": ["sequences_test.py"],
+    "exemplar": [".meta/exemplar.py"]
+  }
+}
