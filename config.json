@@ -137,6 +137,14 @@
         "status": "beta"
       },
       {
+        "slug": "ice-cream-stand",
+        "name": "Ice Cream Stand",
+        "uuid": "121388ab-d86c-498d-928c-1fe536583e97",
+        "concepts": ["itertools"],
+        "prerequisites": ["tuples"],
+        "status": "wip"
+      },
+      {
         "slug": "inventory-management",
         "name": "Inventory Management",
         "uuid": "0558b66c-f2c8-4ff3-846a-4ac87a8660d9",
