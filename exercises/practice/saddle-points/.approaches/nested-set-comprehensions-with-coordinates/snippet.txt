@@ -1,0 +1,7 @@
+row_maxima = {(index, eindex, element) for index, row in enumerate(matrix, start=1) for
+               eindex, element in enumerate(row, start=1) if max(row) == element}
+
+column_minima = {(eindex, index, element) for index, col in enumerate(zip(*matrix), start=1) for
+                  eindex, element in enumerate(col, start=1) if min(col) == element}
+
+return [{'row': item[0], 'column': item[1]} for item in row_maxima & column_minima]
