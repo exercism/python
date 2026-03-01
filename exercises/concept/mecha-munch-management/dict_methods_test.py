@@ -57,7 +57,7 @@ class MechaMunchManagementTest(unittest.TestCase):
     @pytest.mark.task(taskno=4)
     def test_sort_entries(self):
         for variant, (input_data, expected) in enumerate(sort_entries_data, start=1):
-            with self.subTest(f'variation #{variant}', input_data=input_data, expecred=expected):
+            with self.subTest(f'variation #{variant}', input_data=input_data, expected=expected):
                 actual_result = sort_entries(input_data)
                 error_msg = (f'Called sort_entries({input_data}). '
                              f'The function returned {actual_result}, but the tests '
