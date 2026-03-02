@@ -178,7 +178,7 @@ If you want to add multiple variables to a string, you need to supply a [tuple][
 
 ## Template Strings
 
-[`string.Template()`][string.Template()] is a class from the `string` module (_as opposed to the built-in `str` type_), which is part of the Python standard library, but has to be imported for use.
+[`string.Template()`][string.Template()] (_not to be confused with Python 3.14 [t-strings]_) is a class from the `string` module (_as opposed to the built-in `str` type_), which is part of the Python standard library, but has to be imported for use.
 Template strings support `$`-based substitution and are much simpler and less capable than the other options mentioned here.
 However, they can be very useful for when complicated internationalization is needed, or outside inputs need to be sanitized.
 `string.Template` is considered safer for untrusted user input because it prevents evaluating arbitrary expressions or accessing object attributes, which mitigates format-string injection attacks.
@@ -228,5 +228,6 @@ If you want to go further: [all about formatting][all-about-formatting] and [Pyt
 [string.Template()]: https://docs.python.org/3/library/string.html#template-strings
 [summary-string-format]: https://www.w3schools.com/python/ref_string_format.asp
 [template-string]: https://docs.python.org/3/library/string.html#template-strings
+[t-strings]: https://realpython.com/python-t-strings/
 [tuples]: https://www.w3schools.com/python/python_tuples.asp
 [zen-of-python]: https://www.python.org/dev/peps/pep-0020/
