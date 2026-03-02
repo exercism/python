@@ -1,0 +1,9 @@
+def is_armstrong_number(number):
+    if number == 0:
+        return True
+    power = math.floor(math.log10(number)) + 1
+    total, n = 0, number
+    while n > 0:
+        total += (n % 10) ** power
+        n //= 10
+    return total == number
