@@ -66,8 +66,8 @@ A more complex example of an `f-string` that includes output control:
 ```
 
 There are two main limitations to be aware of.
-`f-string` expressions cannot be empty.
-[Additionally, before Python 3.12, they cannot contain comments.][pep-0701]
+`f-string` expressions can not be empty.
+[Additionally, before Python 3.12, they can not contain comments.][pep-0701]
 
 ```python
 >>> f"An empty expression will error: {}"
@@ -81,7 +81,7 @@ SyntaxError: f-string: empty expression not allowed
 ```
 
 ~~~~exercism/caution
-String interpolation cannot be used together with the [GNU gettext API][gnu-gettext-api] for internationalization (I18N) and localization (L10N), so it is recommended that the `string.Template(template)` class or the `str.format()` method outlined below be used instead of an `f-string` in any "string wrapping" translation scenarios.
+String interpolation can not be used together with the [GNU gettext API][gnu-gettext-api] for internationalization (I18N) and localization (L10N), so it is recommended that the `string.Template(template)` class or the `str.format()` method outlined below be used instead of an `f-string` in any "string wrapping" translation scenarios.
 
 Also keep in mind that using expressions inside the `f-string` brackets `{}` is similar to using `eval()` or `exec()`, so it isn't very safe and should be used sparingly.
 ~~~~
