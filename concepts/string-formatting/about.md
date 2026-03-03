@@ -30,39 +30,75 @@ In this example, we insert two variable values in the sentence: one `str` and on
 The expressions evaluated can be almost anything.
 Some of the (wide range) of possibilities that can be evaluated: `str`, `numbers`, variables, arithmetic expressions, conditional expressions, built-in types, slices, functions, lambdas, comprehensions or **any** objects with either `__str__` or `__repr__` methods defined.
 
-Some examples:
+Going from simple to complex:
+
+**Inserting a variable** — the simplest use of a f-string is to place a variable directly into the string.
 
 ```python
-# A dictionary of key:value pairs.
->>> waves = {'water': 1, 'light': 3, 'sound': 5}
+# Assigning a variable
+>>> name = "World"
 
-# Using the name waves in an f-string.
->>> f'"A dict can be represented with f-string: {waves}."'
-'"A dict can be represented with f-string: {\'water\': 1, \'light\': 3, \'sound\': 5}."'
-
-# Here, we pull a value from the dictionary by using the key
->>> f'Tenfold the value of "light" is {waves["light"] * 10}.'
-'Tenfold the value of "light" is 30.'
+# Inserting that variable
+>>> f'Hello, {name}!'
+'Hello, World!'
 ```
 
-Replacement fields (_the `{}` in the f-string_) support output control mechanisms such as width, alignment, precision.
-This is defined by the [format specification mini-language][format-mini-language].
-
-A more complex example of an `f-string` that includes output control:
+**Expressions inside `{}`** — any valid Python expression can be evaluated inside the braces.
+Note that using double quotes inside a single-quoted f-string (or vice versa) avoids the need for escape sequences:
 
 ```python
-# Assigning variables
+# A dictionary of key:value pairs
+>>> waves = {'water': 1, 'light': 3, 'sound': 5}
+
+# Inserting the whole dict
+>>> f'Wave ranks: {waves}'
+"Wave ranks: {'water': 1, 'light': 3, 'sound': 5}"
+
+# An expression can be evaluated inline
+>>> f"Tenfold the value of 'light' is {waves['light'] * 10}."
+"Tenfold the value of 'light' is 30."
+
+# A method call can also be evaluated inline
+>>> f'{"hello world!".title()} is a classic greeting.'
+'Hello World! is a classic greeting.'
+
+# A f-string can be nested inside another f-string
+>>> f"{f'hello world!'.title()} is a classic greeting."
+'Hello World! is a classic greeting.'
+```
+
+**Output formatting** — the [format specification mini-language][format-mini-language] can be used to control alignment, numeric precision, and much more.
+The format specification goes after the value, separated by a `:`.
+
+```python
+# Right-align a value to ten characters, rounding it to 3 decimal places.
+>>> value = 1 / 7
+>>> f'One seventh is {value:10.3f}.'
+'One seventh is      0.143.'
+
+# A format specification can be set using variables as well.
+>>> padding = 10
 >>> precision = 3
->>> verb = "see"
->>> the_end = ['end', 'of', 'transmission']
+>>> f'One seventh is {value:{padding}.{precision}f}.'
+'One seventh is      0.143.'
+```
 
-# Reassigning verb to 'meet'.
+**Putting it all together** — variables, expressions, function calls, and output formatting:
+
+```python
+>>> precision = 3
+>>> f"{30e8 * 111_000:6.{precision}e}"
+'3.330e+14'
+
 >>> verb = 'meet'
+>>> the_end = ['end', 'of', 'transmission']
+>>> f'"Have a {"NICE".lower()} day, I will {verb} you after {30e8 * 111_000:6.{precision}e} light-years."{the_end}'
+'"Have a nice day, I will meet you after 3.330e+14 light-years."[\'end\', \'of\', \'transmission\']'
 
-# This example includes a function, an arithmetic expression, 
-# precision formatting, bracket escaping and object formatting.
->>> f'"Have a {"NICE".lower()} day, I will {verb} you after {30e8 * 111_000:6.{precision}e} light-years."{{{the_end}}}'
-'"Have a nice day, I will meet you after 3.330e+14 light-years."{[\'end\', \'of\', \'transmission\']}'
+# Did you notice the escaped single-quotes in the previous example?
+# Using double quotes instead of single quotes for the f-string means the list's single-quoted strings print cleanly.
+>>> f"Have a nice day. {the_end}"
+"Have a nice day. ['end', 'of', 'transmission']"
 ```
 
 There are two main limitations to be aware of.
@@ -106,7 +142,7 @@ The complete formatting specifier pattern is `{[<name>][!<conversion>][:<format_
 - `<name>` can be a named placeholder or a number or empty.
 - `!<conversion>` is optional and should be one of this three conversions: `!s` for [`str()`][str-conversion], `!r` for [`repr()`][repr-conversion] or `!a` for [`ascii()`][ascii-conversion].
 By default, `str()` is used.
-- `:<format_specifier>` is optional and has a lot of options, which are [listed here][format-specifiers].
+- `:<format_specifier>` is optional and controls how the value is displayed. More information about possible options can be [found here][format-specifiers].
 
 Example of conversions for a diacritical letter:
 
@@ -133,13 +169,39 @@ Example of conversions for a diacritical letter:
 "She said her name is not Chloe but 'Zoë'."
 ```
 
-Example of using format specifiers:
+Examples of common format specifiers:
 
 ```python
-# Formats the object at index 0 as a decimal with zero places, 
-# then as a right-aligned binary number in an 8 character wide field.
->>> "The number {0:d} has a representation in binary: '{0: >8b}'.".format(42)
-"The number 42 has a representation in binary: '  101010'."
+# Integer and binary/hex representations of the same number
+>>> my_num = 42
+>>> f"{my_num} in binary is {my_num:b}. In hex, it is {my_num:x}"
+"42 in binary is 101010. In hex, it is 2a"
+
+# Alignment: left (<), right (>), and center (^) using up to ten characters total
+>>> f"[{"left":<10}] [{"right":>10}] [{"center":^10}]"
+"[left      ] [     right] [  center  ]"
+
+# Float precision and scientific notation up to three decimal places
+>>> pi = 3.141592653589793
+>>> f"fixed: {pi:.3}  scientific: {pi:.3e}"
+"fixed: 3.142  scientific: 3.142e+00"
+
+# Thousands separator and percentage
+>>> balance = 1000
+>>> rate = 0.0225
+>>> f"Balance: ${balance:,.0f} Interest rate: {rate:.1%}"
+"Balance: $1,000 Interest rate: 2.2%"
+
+# Putting it all together
+>>> items = [("Widget", 1250, 9.991), ("Gadget", 37, 24.503), ("Doohickey", 4, 149.002)]
+>>> header = f"{"Item":<12} {"Qty":>6} {"Price":>9}"
+>>> print(header)
+Item            Qty     Price
+>>> for name, qty, price in items:
+...     print(f"{name:<12} {qty:>6} {price:>9.2f}")
+Widget          1250      9.99
+Gadget            37     24.50
+Doohickey          4    149.00
 ```
 
 More examples are shown at the end of [this documentation][summary-string-format].
