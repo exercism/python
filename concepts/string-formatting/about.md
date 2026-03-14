@@ -62,7 +62,7 @@ Note that using double quotes inside a single-quoted f-string (or vice versa) av
 >>> f'{"hello world!".title()} is a classic greeting.'
 'Hello World! is a classic greeting.'
 
-# A f-string can be nested inside another f-string
+# An f-string can be nested inside another f-string
 >>> f"{f'hello world!'.title()} is a classic greeting."
 'Hello World! is a classic greeting.'
 ```
