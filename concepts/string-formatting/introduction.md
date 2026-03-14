@@ -11,7 +11,7 @@ For Python 3.6+, **literal string interpolation** (**`f-strings`**) is often the
 'This is an easy way to format strings!'
 ```
 
-However, given Python's long history and different considerations, it might not be surprising that there are **three** other common ways to perform string formatting in Python:
+However, given Python's long history and different use-cases, it might not be surprising that there are **three** other common ways to perform string formatting in Python:
 
 1. `str.format()` is versatile, very powerful and compatible with both `gnu gettext` and most versions of Python.
 2. If simplicity, safety, and/or heavy internationalization is what you need, `string.Template()` can be used to mitigate risks when inputs need to be handled and for wrapping translation strings.
