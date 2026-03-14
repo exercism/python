@@ -103,7 +103,7 @@ The format specification goes after the value, separated by a `:`.
 
 There are two main limitations to be aware of.
 `f-string` expressions can not be empty.
-[Additionally, before Python 3.12, they can not contain comments.][pep-0701]
+[Additionally, before Python 3.12, they could not contain comments.][pep-0701]
 
 ```python
 >>> f"An empty expression will error: {}"
