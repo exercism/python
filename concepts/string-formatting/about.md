@@ -30,57 +30,94 @@ In this example, we insert two variable values in the sentence: one `str` and on
 The expressions evaluated can be almost anything.
 Some of the (wide range) of possibilities that can be evaluated: `str`, `numbers`, variables, arithmetic expressions, conditional expressions, built-in types, slices, functions, lambdas, comprehensions or **any** objects with either `__str__` or `__repr__` methods defined.
 
-Some examples:
+Going from simple to complex:
+
+**Inserting a variable** — the simplest use of a f-string is to place a variable directly into the string.
 
 ```python
-# A dictionary of key:value pairs.
+# Assigning a variable
+>>> name = "World"
+
+# Inserting that variable
+>>> f'Hello, {name}!'
+'Hello, World!'
+```
+
+**Expressions inside `{}`** — any valid Python expression can be evaluated inside the braces.
+Note that using double quotes inside a single-quoted f-string (or vice versa) avoids the need for escape sequences:
+
+```python
+# A dictionary of key:value pairs
 >>> waves = {'water': 1, 'light': 3, 'sound': 5}
 
-# Using the name waves in an f-string.
->>> f'"A dict can be represented with f-string: {waves}."'
-'"A dict can be represented with f-string: {\'water\': 1, \'light\': 3, \'sound\': 5}."'
+# Inserting the whole dict
+>>> f'Wave ranks: {waves}'
+"Wave ranks: {'water': 1, 'light': 3, 'sound': 5}"
 
-# Here, we pull a value from the dictionary by using the key
->>> f'Tenfold the value of "light" is {waves["light"] * 10}.'
-'Tenfold the value of "light" is 30.'
+# An expression can be evaluated inline
+>>> f"Tenfold the value of 'light' is {waves['light'] * 10}."
+"Tenfold the value of 'light' is 30."
+
+# A method call can also be evaluated inline
+>>> f'{"hello world!".title()} is a classic greeting.'
+'Hello World! is a classic greeting.'
+
+# An f-string can be nested inside another f-string
+>>> f"{f'hello world!'.title()} is a classic greeting."
+'Hello World! is a classic greeting.'
 ```
 
-Replacement fields (_the `{}` in the f-string_) support output control mechanisms such as width, alignment, precision.
-This specification is started in the [format specification mini-language][format-mini-language].
-
-A more complex example of an `f-string` that includes output control:
+**Output formatting** — the [format specification mini-language][format-mini-language] can be used to control alignment, numeric precision, and much more.
+The format specification goes after the value, separated by a `:`.
 
 ```python
-# Assigning variables
+# Right-align a value to ten characters, rounding it to 3 decimal places.
+>>> value = 1 / 7
+>>> f'One seventh is {value:10.3f}.'
+'One seventh is      0.143.'
+
+# A format specification can be set using variables as well.
+>>> padding = 10
 >>> precision = 3
->>> verb = "see"
->>> the_end = ['end', 'of', 'transmission']
-
-# Reassigning verb to 'meet'.
->>> verb = 'meet'
-
-# This example includes a function, str, a nested f-string, an arithmetic expression, 
-# precision formatting, bracket escaping and object formatting.
->>> f'"Have a {"NICE".lower()} day, I will {verb} you after {f"{30e8 * 111_000:6.{precision}e}"} light-years."{{{the_end}}}'
-'"Have a nice day, I will meet you after 3.330e+14 light-years."{[\'end\', \'of\', \'transmission\']}'
+>>> f'One seventh is {value:{padding}.{precision}f}.'
+'One seventh is      0.143.'
 ```
 
-There are a few limitations to be aware of.
-`f-string` expressions cannot be empty, they cannot contain comments.
+**Putting it all together** — variables, expressions, function calls, and output formatting:
+
+```python
+>>> precision = 3
+>>> f"{30e8 * 111_000:6.{precision}e}"
+'3.330e+14'
+
+>>> verb = 'meet'
+>>> the_end = ['end', 'of', 'transmission']
+>>> f'"Have a {"NICE".lower()} day, I will {verb} you after {30e8 * 111_000:6.{precision}e} light-years."{the_end}'
+'"Have a nice day, I will meet you after 3.330e+14 light-years."[\'end\', \'of\', \'transmission\']'
+
+# Did you notice the escaped single-quotes in the previous example?
+# Using double quotes instead of single quotes for the f-string means the list's single-quoted strings print cleanly.
+>>> f"Have a nice day. {the_end}"
+"Have a nice day. ['end', 'of', 'transmission']"
+```
+
+There are two main limitations to be aware of.
+`f-string` expressions can not be empty.
+[Additionally, before Python 3.12, they could not contain comments.][pep-0701]
 
 ```python
 >>> f"An empty expression will error: {}"
 SyntaxError: f-string: empty expression not allowed
 
 >>> word = 'word'
->>> f"""A comment in a triple quoted f-string will error: {
+>>> f"""A comment in a triple quoted f-string: {
     word # I chose a nice variable
 }"""
-SyntaxError: f-string expression part cannot include '#'
+'A comment in a triple quoted f-string: word'
 ```
 
 ~~~~exercism/caution
-String interpolation cannot be used together with the [GNU gettext API][gnu-gettext-api] for internationalization (I18N) and localization (L10N), so it is recommended that the `string.Template(template)` class or the `str.format()` method outlined below be used instead of an `f-string` in any "string wrapping" translation scenarios.
+String interpolation can not be used together with the [GNU gettext API][gnu-gettext-api] for internationalization (I18N) and localization (L10N), so it is recommended that the `string.Template(template)` class or the `str.format()` method outlined below be used instead of an `f-string` in any "string wrapping" translation scenarios.
 
 Also keep in mind that using expressions inside the `f-string` brackets `{}` is similar to using `eval()` or `exec()`, so it isn't very safe and should be used sparingly.
 ~~~~
@@ -105,7 +142,7 @@ The complete formatting specifier pattern is `{[<name>][!<conversion>][:<format_
 - `<name>` can be a named placeholder or a number or empty.
 - `!<conversion>` is optional and should be one of this three conversions: `!s` for [`str()`][str-conversion], `!r` for [`repr()`][repr-conversion] or `!a` for [`ascii()`][ascii-conversion].
 By default, `str()` is used.
-- `:<format_specifier>` is optional and has a lot of options, which we are [listed here][format-specifiers].
+- `:<format_specifier>` is optional and controls how the value is displayed. More information about possible options can be [found here][format-specifiers].
 
 Example of conversions for a diacritical letter:
 
@@ -132,13 +169,39 @@ Example of conversions for a diacritical letter:
 "She said her name is not Chloe but 'Zoë'."
 ```
 
-Example of using format specifiers:
+Examples of common format specifiers:
 
 ```python
-# Formats the object at index 0 as a decimal with zero places, 
-# then as a right-aligned binary number in an 8 character wide field.
->>> "The number {0:d} has a representation in binary: '{0: >8b}'.".format(42)
-"The number 42 has a representation in binary: '  101010'."
+# Integer and binary/hex representations of the same number
+>>> my_num = 42
+>>> f"{my_num} in binary is {my_num:b}. In hex, it is {my_num:x}"
+"42 in binary is 101010. In hex, it is 2a"
+
+# Alignment: left (<), right (>), and center (^) using up to ten characters total
+>>> f"[{"left":<10}] [{"right":>10}] [{"center":^10}]"
+"[left      ] [     right] [  center  ]"
+
+# Float precision and scientific notation up to three decimal places
+>>> pi = 3.141592653589793
+>>> f"fixed: {pi:.3}  scientific: {pi:.3e}"
+"fixed: 3.142  scientific: 3.142e+00"
+
+# Thousands separator and percentage
+>>> balance = 1000
+>>> rate = 0.0225
+>>> f"Balance: ${balance:,.0f} Interest rate: {rate:.1%}"
+"Balance: $1,000 Interest rate: 2.2%"
+
+# Putting it all together
+>>> items = [("Widget", 1250, 9.991), ("Gadget", 37, 24.503), ("Doohickey", 4, 149.002)]
+>>> header = f"{"Item":<12} {"Qty":>6} {"Price":>9}"
+>>> print(header)
+Item            Qty     Price
+>>> for name, qty, price in items:
+...     print(f"{name:<12} {qty:>6} {price:>9.2f}")
+Widget          1250      9.99
+Gadget            37     24.50
+Doohickey          4    149.00
 ```
 
 More examples are shown at the end of [this documentation][summary-string-format].
@@ -177,8 +240,10 @@ If you want to add multiple variables to a string, you need to supply a [tuple][
 
 ## Template Strings
 
-[`string.Template()`][string.Template()] is a class from the `string` module (_as opposed to the built-in `str` type_), which is part of the Python standard library, but has to be imported for use.
-Template strings support `$`-based substitution and are much simpler and less capable than the other options mentioned here, but can be very useful for when complicated internationalization is needed, or outside inputs need to be sanitized.
+[`string.Template()`][string.Template()] (_not to be confused with Python 3.14 [t-strings]_) is a class from the `string` module (_as opposed to the built-in `str` type_), which is part of the Python standard library, but has to be imported for use.
+Template strings support `$`-based substitution and are much simpler and less capable than the other options mentioned here.
+However, they can be very useful for when complicated internationalization is needed, or outside inputs need to be sanitized.
+`string.Template` is considered safer for untrusted user input because it prevents evaluating arbitrary expressions or accessing object attributes, which mitigates format-string injection attacks.
 
 ```python
 >>> from string import Template
@@ -204,8 +269,8 @@ A few quick guidelines:
 If you don't need to internationalize, they should be the Python 3.6+ preferred method.
 2. `str.format()` is versatile, very powerful and compatible with both `gnu gettext` and most versions of Python.
 3. If simplicity, safety, and/or heavy internationalization is what you need, `string.Template()` can be used to mitigate risks when inputs from users need to be handled, and for wrapping translation strings.
-4. The `%` operator is not supported in some newer distributions of Python and should mostly be used for compatibility with old code.
-`%` formatting` can lead to issues displaying non-ascii and unicode characters and has more errors and less functionality than other methods.
+4. The `%` operator is generally considered deprecated for new code, though it still works in modern Python. It should mostly be used for compatibility with older codebases.
+`%` formatting can lead to issues displaying non-ASCII and Unicode characters and has more errors and less functionality than other methods. Check your specific Python distribution for support details if you intend to use it.
 
 If you want to go further: [all about formatting][all-about-formatting] and [Python String Formatting Best Practices][formatting best practices] are good places to start.
 
@@ -216,6 +281,7 @@ If you want to go further: [all about formatting][all-about-formatting] and [Pyt
 [format-specifiers]: https://www.python.org/dev/peps/pep-3101/#standard-format-specifiers
 [formatting best practices]: https://realpython.com/python-string-formatting/
 [pep-0498]: https://peps.python.org/pep-0498
+[pep-0701]: https://peps.python.org/pep-0701/
 [printf-style-docs]: https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting
 [repr-conversion]: https://www.w3resource.com/python/built-in-function/repr.php
 [str-conversion]: https://www.w3resource.com/python/built-in-function/str.php
@@ -224,5 +290,6 @@ If you want to go further: [all about formatting][all-about-formatting] and [Pyt
 [string.Template()]: https://docs.python.org/3/library/string.html#template-strings
 [summary-string-format]: https://www.w3schools.com/python/ref_string_format.asp
 [template-string]: https://docs.python.org/3/library/string.html#template-strings
+[t-strings]: https://realpython.com/python-t-strings/
 [tuples]: https://www.w3schools.com/python/python_tuples.asp
 [zen-of-python]: https://www.python.org/dev/peps/pep-0020/
