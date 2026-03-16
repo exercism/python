@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "bake_bake_bake.py"
+    ],
+    "test": [
+      "bake_bake_bake_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
+  },
+  "blurb": "Learn about string formatting by formatting a bakery receipt."
+}
