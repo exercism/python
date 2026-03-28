@@ -1900,6 +1900,14 @@
         "difficulty": 5
       },
       {
+        "slug": "baffling-birthdays",
+        "name": "Baffling Birthdays",
+        "uuid": "aa30fdf1-3904-4b5b-b801-62c239c1ba47",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "affine-cipher",
         "name": "Affine Cipher",
         "uuid": "02bf6783-fc74-47e9-854f-44d22eb1b6f8",

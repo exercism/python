@@ -1,0 +1,51 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+
+from calendar import isleap
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+{% for case in cases -%}
+
+# {{ case["description"] }}
+
+  {% if case["description"].startswith("shared") -%}
+    {% for subcase in case["cases"] %}
+    def test_{{ subcase["description"] | to_snake }}(self):
+        self.assertIs(
+            {{ subcase["property"] | to_snake }}({{ subcase["input"]["birthdates"] }}),
+            {{ subcase["expected"] }}
+        )
+
+    {% endfor %}
+
+  {% elif case["description"].startswith("random") %}
+  {# non-deterministic results unsuitable for templating #}
+
+    def test_random_birthdates_generate_requested_number_of_birthdates(self):
+        self.assertTrue(all(len(random_birthdates(groupsize)) == groupsize for groupsize in range(1, 20)))
+
+    def test_random_birthdates_are_not_in_leap_years(self):
+        self.assertFalse(any([isleap(randyear.year) for randyear in random_birthdates(100)]))
+
+    def test_random_birthdates_appear_random(self):
+        birthdates = random_birthdates(500)
+        months = set([bdate.month for bdate in birthdates])
+        days = set([bdate.day for bdate in birthdates])
+        self.assertTrue(len(months) >= 10)
+        self.assertTrue(len(days) >= 28)
+
+  {% elif case["description"].startswith("estimated") %}
+    {% for subcase in case["cases"] -%}
+    def test_{{ subcase["description"] | to_snake }}(self):
+        {% set expected = subcase["expected"] / 100 -%}
+        {% set delta = 0.5 if 0.1 <= expected <= 0.9 else 0.1 %}
+        self.assertAlmostEqual(
+            estimated_probability_of_shared_birthday({{ subcase["input"]["groupSize"] }}),
+            {{ expected }},
+            delta={{ delta }}
+        )
+    {% endfor %}
+  {% endif %}
+{% endfor %}

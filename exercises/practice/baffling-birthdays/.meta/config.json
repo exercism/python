@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "files": {
+    "solution": [
+      "baffling_birthdays.py"
+    ],
+    "test": [
+      "baffling_birthdays_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
+  },
+  "blurb": "Estimate the birthday paradox's probabilities.",
+  "source": "Erik Schierboom",
+  "source_url": "https://github.com/exercism/problem-specifications/pull/2539"
+}

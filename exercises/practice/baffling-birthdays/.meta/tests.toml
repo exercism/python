@@ -1,0 +1,61 @@
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
+
+[716dcc2b-8fe4-4fc9-8c48-cbe70d8e6b67]
+description = "shared birthday -> one birthdate"
+
+[f7b3eb26-bcfc-4c1e-a2de-af07afc33f45]
+description = "shared birthday -> two birthdates with same year, month, and day"
+
+[7193409a-6e16-4bcb-b4cc-9ffe55f79b25]
+description = "shared birthday -> two birthdates with same year and month, but different day"
+
+[d04db648-121b-4b72-93e8-d7d2dced4495]
+description = "shared birthday -> two birthdates with same month and day, but different year"
+
+[3c8bd0f0-14c6-4d4c-975a-4c636bfdc233]
+description = "shared birthday -> two birthdates with same year, but different month and day"
+
+[df5daba6-0879-4480-883c-e855c99cdaa3]
+description = "shared birthday -> two birthdates with different year, month, and day"
+
+[0c17b220-cbb9-4bd7-872f-373044c7b406]
+description = "shared birthday -> multiple birthdates without shared birthday"
+
+[966d6b0b-5c0a-4b8c-bc2d-64939ada49f8]
+description = "shared birthday -> multiple birthdates with one shared birthday"
+
+[b7937d28-403b-4500-acce-4d9fe3a9620d]
+description = "shared birthday -> multiple birthdates with more than one shared birthday"
+
+[70b38cea-d234-4697-b146-7d130cd4ee12]
+description = "random birthdates -> generate requested number of birthdates"
+
+[d9d5b7d3-5fea-4752-b9c1-3fcd176d1b03]
+description = "random birthdates -> years are not leap years"
+
+[d1074327-f68c-4c8a-b0ff-e3730d0f0521]
+description = "random birthdates -> months are random"
+
+[7df706b3-c3f5-471d-9563-23a4d0577940]
+description = "random birthdates -> days are random"
+
+[89a462a4-4265-4912-9506-fb027913f221]
+description = "estimated probability of at least one shared birthday -> for one person"
+
+[ec31c787-0ebb-4548-970c-5dcb4eadfb5f]
+description = "estimated probability of at least one shared birthday -> among ten people"
+
+[b548afac-a451-46a3-9bb0-cb1f60c48e2f]
+description = "estimated probability of at least one shared birthday -> among twenty-three people"
+
+[e43e6b9d-d77b-4f6c-a960-0fc0129a0bc5]
+description = "estimated probability of at least one shared birthday -> among seventy people"
