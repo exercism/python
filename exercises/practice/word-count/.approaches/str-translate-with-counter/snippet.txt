@@ -1,0 +1,7 @@
+def count_words(phrase):
+    cleaner = phrase.maketrans({key: ' ' for key in ".,:-_!@$%^&"})
+    cleaned = phrase.translate(cleaner).lower().split()
+    results = Counter((stripped for word in cleaned if
+              (stripped := word.strip("\"'"))))
+
+    return results
