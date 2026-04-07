@@ -1,0 +1,8 @@
+     ...
+     def ability(self):
+         return choice([*vars(self).values()])
+
+     @staticmethod
+     def dice_roll():
+         values = sample(range(1, 7), 4)
+         return sum(sorted(values, reverse=True)[:-1])
