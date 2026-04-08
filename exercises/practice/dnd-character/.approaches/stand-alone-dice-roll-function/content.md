@@ -41,7 +41,7 @@ It also makes it cleaner to maintain, should the method or number of the dice ro
 Note that `modifier()` uses the [`operator.floordiv`][operator-floordiv] method to trunkate the value.
 
 This approach is valid and passes all the tests.
-However, it will trigger an analyzer comment about there being "too few public methods", since there are no methods for this class beyond `attribute()`.
+However, it will trigger an analyzer comment about there being "too few public methods", since there are no methods for this class beyond `ability()`.
 
 The "too few" rule encourages you to think about the design of the class: is it worth the effort to create the class if it only holds attribute values for a character?
 What other functionality should this class hold?
