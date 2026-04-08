@@ -1,0 +1,8 @@
+class Character:
+    ABILITIES = ('strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma')
+
+    def __init__(self):
+        for ability_type in self.ABILITIES:
+            setattr(self, ability_type, self.ability())
+        self.hitpoints = 10 + modifier(self.constitution)
+        ...

@@ -1,0 +1,37 @@
+{
+  "introduction": {
+    "authors": ["colinleach",
+                "BethanyG"],
+    "contributors": []
+  },
+    "approaches": [
+    {
+      "uuid": "952835d1-e9d1-4dc3-b2c2-aad703e8db2e",
+      "slug": "ability-method",
+      "title": "Ability Method",
+      "blurb": "Use one method to generate dice rolls and return ability values.",
+      "authors": ["bethanyg"]
+    },
+    {
+      "uuid": "5022c80c-8ca1-45e4-aa5f-d91bb3f53441",
+      "slug": "dice-roll-static-method",
+      "title": "Dice Roll Static Method",
+      "blurb": "Use a separate static method to conduct dice rolls.",
+      "authors": ["bethanyg"]
+    },
+    {
+      "uuid": "98af6c1d-5ab4-476d-9041-30b8f55e13eb",
+      "slug": "stand-alone-dice-roll-function",
+      "title": "Stand-alone Dice Roll Function",
+      "blurb": "Create a dice roll function outside the Character class.",
+      "authors": ["bethanyg"]
+    },
+    {
+      "uuid": "5dd9d9b0-bfa5-43b2-8e95-787425349fc4",
+      "slug": "loop-and-setattr-in-init",
+      "title": "Loop and setattr in init",
+      "blurb": "Use a tuple of attributes, a loop, and setattr in init to assign ability values.",
+      "authors": ["bethanyg"]
+    }
+  ]
+}
