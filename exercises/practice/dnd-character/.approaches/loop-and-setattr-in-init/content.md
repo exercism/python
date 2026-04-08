@@ -28,7 +28,7 @@ def modifier(constitution):
 
 
 This approach uses a `tuple` to hold character attributes in a [`class variable`][class-variable] or `class attribute`.
-Since this variable is common to all instances of the class, it can be looped through during object initialization to create instance variables and assign them values using [`setattr][setattr].
+Since this variable is common to all instances of the class, it can be looped through during object initialization to create instance variables and assign them values using [`setattr`][setattr].
 
 This strategy has several benefits:
 1.  The `__init__`  is less verbose and the abilities are easier to maintain.
@@ -75,7 +75,7 @@ Making the character attributes a constant has the advantage of being visible to
 This also avoids having to reference the Character class when using or modifying the abilities and could help with clarity and maintenance in the larger program.
 However, modifying the abilities in this context would also be visible at the module level, and could have wide or unintended consequences, so should be commented/documented carefully.
 
-The remainder of the class body is the same as in the [dice roll static method][approach-dice-roll-static-method] approach (_as is the variant below_).
+The remainder of the class body is the same as in the [dice roll static method][approach-dice-roll-static-method] approach.
 
 
 [approach-dice-roll-static-method]: https://exercism.org/tracks/python/exercises/dnd-character/approaches/dice-roll-static-method

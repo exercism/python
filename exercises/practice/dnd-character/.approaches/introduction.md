@@ -229,7 +229,7 @@ class Character:
         self.hitpoints = modifier(self.constitution) + 10
 ```
 
-Listing out each ability vs looping through and using `setatter()` has identical results for the object.
+Listing out each ability vs looping through and using `setattr()` has identical results for the object.
 Both calculate a score for an ability and write that ability + score into the object attribute dictionary when an object is instantiated from the class.
 
 
@@ -241,7 +241,7 @@ More variations are possible, but these cover most of the main decision differen
 - [One `ability` method][approach-ability-method]
 - [Dice roll static method][approach-dice-roll-static-method]
 - [Dice roll stand-alone method][approach-stand-alone-dice-roll-function]
-- [Loop and `setatter()` in `__init__`][approach-loop-and-setattr-in-init]
+- [Loop and `setattr()` in `__init__`][approach-loop-and-setattr-in-init]
 
 
 [approach-ability-method]: https://exercism.org/tracks/python/exercises/dnd-character/approaches/ability-method
