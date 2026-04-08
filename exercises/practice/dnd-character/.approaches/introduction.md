@@ -30,7 +30,7 @@ This stand-alone function modifies the characters constitution score by subtract
 
 In Python 3.x, the division operators are `/` for floating point and `//` for integer or 'floor' division.
 `modifier()` needs to use integer division, and return a result that does not have a decimal.
-Function equivalents to `/` and `//` are [`operator.truediv(a, b)`][operator-trudiv] and [`operator.floordiv(a, b)`][operator-floordiv] (or_[`math.floor(x)`][math-floor]_).
+Function equivalents to `/` and `//` are [`operator.truediv(a, b)`][operator-trudiv] and [`operator.floordiv(a, b)`][operator-floordiv] (or [`math.floor(x)`][math-floor]).
 
 Integer division will always round "down": not to the nearest integer and not towards zero:
 
