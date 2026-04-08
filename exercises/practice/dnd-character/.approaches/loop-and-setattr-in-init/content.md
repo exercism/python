@@ -28,7 +28,7 @@ def modifier(constitution):
 
 
 This approach uses a `tuple` to hold character attributes in a [`class variable`][class-variable] or `class attribute`.
-Since this variable is common to all instances of the class, it can be looped through during object initialization to create instance variables and assign them values using [`setattr] [setattr].
+Since this variable is common to all instances of the class, it can be looped through during object initialization to create instance variables and assign them values using [`setattr][setattr].
 
 This strategy has several benefits:
 1.  The `__init__`  is less verbose and the abilities are easier to maintain.
