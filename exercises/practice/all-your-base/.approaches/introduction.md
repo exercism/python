@@ -164,3 +164,6 @@ def dec_to_base(number, output_base):
         return []
     return [number % output_base] + dec_to_base(number // output_base, output_base)
 ```
+
+[deque]: https://docs.python.org/3/library/collections.html#collections.deque
+
