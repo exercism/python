@@ -26,7 +26,7 @@ You can see more details and discussions in the following resources:
 
 ## Arithmetic
 
-Python fully supports arithmetic between `ints` and `floats`. It will convert narrower numbers to match their less narrow counterparts when used with the binary arithmetic operators (`+`, `-`, `*`, `/`, `//`, and `%`). When division with `/`, `//` returns the quotient and `%` returns the remainder.
+Python fully supports arithmetic between `ints` and `floats`. It will convert narrower numbers to match their less narrow counterparts when used with the binary arithmetic operators (`+`, `-`, `*`, `/`, `//`, and `%`).
 
 Python considers `ints` narrower than `floats`. So, using a float in an expression ensures the result will be a float too. However, when doing division, the result will always be a float, even if only integers are used.
 
@@ -61,7 +61,7 @@ If an int result is needed, you can use `//` to truncate the result.
 1
 ```
 
-To convert a float to an integer, you can use `int()`. Also, to convert an integer to a float, you can use `float()`.
+To convert a float to an integer, you can use `int()`. To convert an integer to a float, you can use `float()`.
 
 ```python
 >>> int(6 / 2)
