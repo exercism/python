@@ -76,8 +76,8 @@ You can also find Killer Sudokus in varying difficulty in numerous newspapers, a
 
 The screenshots above have been generated using F-Puzzles.com, a Puzzle Setting Tool by Eric Fox.
 
-[sudoku-rules]: https://masteringsudoku.com/sudoku-rules-beginners/
-[killer-guide]: https://masteringsudoku.com/killer-sudoku/
+[sudoku-rules]: https://en.wikipedia.org/wiki/Sudoku
+[killer-guide]: https://en.wikipedia.org/wiki/Killer_sudoku
 [one-solution-img]: https://assets.exercism.org/images/exercises/killer-sudoku-helper/example1.png
 [four-solutions-img]: https://assets.exercism.org/images/exercises/killer-sudoku-helper/example2.png
 [not-possible-img]: https://assets.exercism.org/images/exercises/killer-sudoku-helper/example3.png
