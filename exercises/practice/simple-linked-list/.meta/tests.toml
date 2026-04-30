@@ -1,0 +1,101 @@
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
+
+[962d998c-c203-41e2-8fbd-85a7b98b79b9]
+description = "count -> Empty list has length of zero"
+
+[9760262e-d7e4-4639-9840-87e2e2fbb115]
+description = "count -> Singleton list has length of one"
+
+[d9955c90-637c-441b-b41d-8cfb48e924a8]
+description = "count -> Non-empty list has correct length"
+
+[0c3966db-58f9-4632-b94c-8ea13e54c2c8]
+description = "pop -> Pop from empty list is an error"
+
+[a4f9d2e1-7425-49ef-9ee8-6c0cb3407cf0]
+description = "pop -> Can pop from singleton list"
+
+[6dcbb2c9-d98a-47bc-a010-9c19703d3ea2]
+description = "pop -> Can pop from non-empty list"
+
+[e83aade9-f030-4096-aaf0-f9dc6491e6cf]
+description = "pop -> Can pop multiple items"
+
+[5c46bcf2-c0a9-4654-ae17-f3192436fcf1]
+description = "pop -> Pop updates the count"
+
+[70d747a1-2e84-4ebc-bc3f-dcbee6a05f6b]
+description = "push -> Can push to an empty list"
+include = false
+
+[f3197f0a-1fea-45a5-939f-4a5ea60387ec]
+description = "push -> Can push to an empty list"
+reimplements = "70d747a1-2e84-4ebc-bc3f-dcbee6a05f6b"
+
+[391e332e-1f91-4033-b1e0-0e0c17812fa7]
+description = "push -> Can push to a non-empty list"
+
+[ed4b0e01-3bbd-4895-af25-152b5914b3da]
+description = "push -> Push updates count"
+
+[41666790-b932-4e5a-b323-e848a83d12d5]
+description = "push -> Push and pop"
+
+[930a4a5c-76f6-47ec-9be3-4e70993173a1]
+description = "peek -> Peek on empty list is an error"
+
+[43255a50-d919-4e81-afce-e4a271eaedbd]
+description = "peek -> Can peek on singleton list"
+
+[48353020-e25d-4621-a854-e35fb1e15fa7]
+description = "peek -> Can peek on non-empty list"
+
+[96fcead9-a713-46c2-8005-3f246c873851]
+description = "peek -> Peek does not change the count"
+
+[7576ed05-7ff7-4b84-8efb-d34d62c110f5]
+description = "peek -> Can peek after a pop and push"
+
+[b97d00b6-2fab-435d-ae74-3233dcc13698]
+description = "toList LIFO -> Empty linked list to list is empty"
+
+[eedeb95f-b5cf-431d-8ad6-5854ba6b251c]
+description = "toList LIFO -> To list with multiple values"
+
+[838678de-eaf3-4c14-b34e-7e35b6d851e8]
+description = "toList LIFO -> To list after a pop"
+
+[03fc83a5-48a8-470b-a2d2-a286c5e8365f]
+description = "toList FIFO -> Empty linked list to list is empty"
+
+[1282484e-a58c-426a-972e-90746bda61fc]
+description = "toList FIFO -> To list with multiple values"
+
+[05ca3109-1249-4c0c-a567-a3b2f8352a7c]
+description = "toList FIFO -> To list after a pop"
+
+[5e6c1a3d-e34b-46d3-be59-3f132a820ed5]
+description = "reverse -> Reversed empty list has same values"
+
+[93c87ed3-862a-474f-820b-ba3fd6b6daf6]
+description = "reverse -> Reversed singleton list is same list"
+
+[92851ebe-9f52-4406-b92e-0718c441a2ab]
+description = "reverse -> Reversed non-empty list is reversed"
+include = false
+
+[1210eeda-b23f-4790-930c-7ac6d0c8e723]
+description = "reverse -> Reversed non-empty list is reversed"
+reimplements = "92851ebe-9f52-4406-b92e-0718c441a2ab"
+
+[9b53af96-7494-4cfa-9b77-b7366fed5c4c]
+description = "reverse -> Double reverse"
