@@ -9,10 +9,10 @@ The Python docs also provide a very detailed [unicode HOWTO][unicode how-to] tha
 Strings implement all [common sequence operations][common sequence operations] and can be iterated through using `for item in <str>` or `for index, item in enumerate(<str>)` syntax.
  Individual code points (_strings of length 1_) can be referenced by `0-based index` number from the left, or `-1-based index` number from the right.
 
-Strings can be concatenated with `+`, or via `<str>.join(<iterable>)`, split via `<str>.split(<separator>)`, and offer multiple formatting, assembly, and templating options.
+Strings can be concatenated with `<str> + <other str>`, or `<str>.join(<iterable>)`, split via `<str>.split(<separator>)`, and offer multiple formatting, assembly, and templating options.
 
 
-A `str` literal can be declared via single `'` or double `"` quotes. The escape `\` character is available as needed.
+A `str` literal can be declared using single `'` or double `"` quotes. The escape `\` character is available as needed.
 
 ```python
 
