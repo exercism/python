@@ -99,7 +99,7 @@ False
 
 ## 5. Splitting pairs
 
-If the players first two cards are of the same value, such as two sixes, or a `Q` and `K` a player may choose to treat them as two separate hands.
+If the first two cards in a hand are of the same value (_for example, two sixes or a `Q` and `K`_), a player may choose to treat them as two separate hands.
 This is known as "splitting pairs".
 
 Define the `can_split_pairs(<card_one>, <card_two>)` function with parameters `card_one` and `card_two`, which are a pair of cards.
