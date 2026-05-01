@@ -1,0 +1,58 @@
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
+
+[761790a3-4c27-461a-b4e9-8bce8ccee5a1]
+description = "empty list"
+
+[dcc89dc3-eb39-4f26-a3cd-964e607c95ff]
+description = "single record"
+
+[dcdb80f0-e5da-43e1-8b8d-6f307be89c0e]
+description = "three records in order"
+
+[2ff5b8f8-d95e-401e-9359-233919488d22]
+description = "three records in reverse order"
+
+[de798d3b-8905-4446-a114-a0dd2476d945]
+description = "more than two children"
+
+[13dd9b3c-6137-415f-b6fe-5044c1dfbc50]
+description = "binary tree"
+
+[5cfd29dc-166b-47da-84ca-1c60b5ae5941]
+description = "unbalanced tree"
+
+[a05ddb5d-2d11-4948-88d3-b5f18a44ddce]
+description = "one root node and has parent"
+
+[9ed09df2-8fd6-4e37-aa37-e7753c057a1a]
+description = "root node has parent"
+
+[8755a2c4-2c6b-4396-b155-b5bf4b6bc280]
+description = "no root node"
+
+[c6ef8f9a-4045-4949-a1e1-e0ae804e4af4]
+description = "duplicate node"
+
+[7a7b77a6-3447-4905-b79c-d22bfe43f408]
+description = "duplicate root"
+
+[c6f51bd7-3608-4390-b446-dfd1bcbf3ddc]
+description = "non-continuous"
+
+[1f3d1b50-4494-4b22-b88a-68f32f7d321d]
+description = "cycle directly"
+
+[ac568b50-3f9b-4cb4-b602-e0eb13de4269]
+description = "cycle indirectly"
+
+[cf954b21-3cef-420c-8e72-d19547505e1f]
+description = "higher id parent of lower id"

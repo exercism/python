@@ -1,0 +1,67 @@
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
+
+[3a50c618-2571-466b-9ee9-346d9943912e]
+description = "empty graph"
+
+[5067feea-e49b-4a9d-865e-4502d6b0540c]
+description = "graph with one node"
+
+[b66cf871-88c6-489a-b0b9-7c79b6819c45]
+description = "graph with one node with attribute"
+
+[f7841da3-c0f8-4541-b594-21b626a764d2]
+description = "graph with one edge"
+
+[bbee70e1-6b0d-4f3a-bd4e-41cd2cfc0e39]
+description = "graph with one attribute"
+
+[ac736158-6684-418d-93d5-7b284e43294e]
+description = "graph with comments"
+
+[69068da9-7690-4d4d-a728-f5c2bf132a33]
+description = "graph with nodes, edges, and attributes"
+
+[f6c53993-3937-4959-bcde-dc16411113ae]
+description = "multiple edges on one line"
+
+[b853dfc1-1f05-45aa-bc98-b0fc6b57529b]
+description = "only 1 edge between nodes"
+
+[bdc0fdac-aa46-457f-8385-65736ccdc1c7]
+description = "malformed input"
+
+[f5c4f77d-359c-434a-9c33-b9eb795bafdd]
+description = "malformed edge"
+
+[2238f6b8-20bb-489f-8ca0-084d1771d758]
+description = "malformed edge 2"
+
+[4e3a4386-9e80-4315-b70f-253a06a2234e]
+description = "invalid edge type"
+
+[793adce3-bd19-4458-ac41-c989f7f8d9db]
+description = "multiple edges missing a node"
+
+[e2930b2c-3a03-4d8f-abe9-78a125a915a7]
+description = "multiple edges missing a connector"
+
+[55d3f722-f9f1-46e1-b308-da61607952ab]
+description = "empty attribute"
+
+[4ee2a9c3-54b1-4825-bd58-2b78c2c53953]
+description = "malformed attribute"
+
+[382a13c8-6419-4286-8dd2-eac708f3e2a8]
+description = "empty attribute name"
+
+[a6f9e6ab-8c3e-4475-a9fe-5dd061cadec6]
+description = "non-alphanumeric node name"
