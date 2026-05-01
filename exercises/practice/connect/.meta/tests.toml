@@ -30,6 +30,12 @@ description = "nobody wins crossing adjacent angles"
 [cd61c143-92f6-4a8d-84d9-cb2b359e226b]
 description = "X wins crossing from left to right"
 
+[495e33ed-30a9-4012-b46e-d7c4d5fe13c3]
+description = "X wins with left-hand dead end fork"
+
+[ab167ab0-4a98-4d0f-a1c0-e1cddddc3d58]
+description = "X wins with right-hand dead end fork"
+
 [73d1eda6-16ab-4460-9904-b5f5dd401d0b]
 description = "O wins crossing from top to bottom"
 
