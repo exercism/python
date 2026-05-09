@@ -209,13 +209,18 @@ Docstrings are declared using triple double quotes (""") indented at the same le
 
 ```python
 
-# An example from PEP257 of a multi-line docstring.
+# An example from PEP257 of a multi-line docstring
+# reformatted to use Google style non-type hinted docstrings.
+# Some additional details can be found in the Sphinx documentation:
+# https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html#getting-started
+
 def complex(real=0.0, imag=0.0):
     """Form a complex number.
 
-    Keyword arguments:
-    real -- the real part (default 0.0)
-    imag -- the imaginary part (default 0.0)
+    Keyword Arguments:
+        real (float): The real part of the number (default 0.0)
+        imag (float): The imaginary part of the number (default 0.0)
+        
     """
 
     if imag == 0.0 and real == 0.0:
@@ -224,36 +229,45 @@ def complex(real=0.0, imag=0.0):
 ```
 
 
-Docstrings are read by automated documentation tools and are returned by calling the special attribute `.__doc__` on the function, method, or class name.
-Docstring conventions are laid out in [PEP257][pep257].
+Docstrings are read by automated documentation tools such as [Sphinx][sphinx] and are returned by calling the special attribute `.__doc__` on the function, method, or class name.
+General docstring conventions are laid out in [PEP257][pep257], but exact formats will vary by project and team.
+Exercism concept exercises try to follow the Google style for un-type hinted code.
 
 Docstrings can also function as [lightweight unit tests][doctests], which will be covered in a later exercise.
 
 
 ```python
 # An example on a user-defined function.
+# This uses Google style docstrings.
 >>> def raise_to_power(number, power):
-        """Raise a number to an arbitrary power.
+    """Raise a number to an arbitrary power.
 
-        :param number: int the base number.
-        :param power: int the power to raise the base number to.
-        :return: int - number raised to the specified power.
+    Parameters:
+        number (int): The base number.
+        power (int): The power to raise the base number to.
+    
+    Returns:
+        int: The number raised to the specified power.
+    
+    Takes a number and raises it to the specified power, returning the result.
 
-        Takes a number and raises it to the specified power, returning the result.
-        """
+    """
 
-        return number ** power
+    return number ** power
 ...
 
 # Calling the .__doc__ attribute of the function and printing the result.
 >>> print(raise_to_power.__doc__)
 Raise a number to an arbitrary power.
 
-    :param number: int the base number.
-    :param power: int the power to raise the base number to.
-    :return: int - number raised to the specified power.
+Parameters:
+    number (int): The base number.
+    power (int): The power to raise the base number to.
 
-    Takes a number and raises it to the specified power, returning the result.
+Returns:
+    int: The number raised to the specified power.
+
+Takes a number and raises it to the specified power, returning the result.
 ```
 
 [calls]: https://docs.python.org/3/reference/expressions.html#calls
@@ -271,4 +285,5 @@ Raise a number to an arbitrary power.
 [parameters]: https://docs.python.org/3/glossary.html#term-parameter
 [pep257]: https://www.python.org/dev/peps/pep-0257/
 [return]: https://docs.python.org/3/reference/simple_stmts.html#return
+[sphinx]: https://www.sphinx-doc.org/en/master/usage/index.html
 [type hints]: https://docs.python.org/3/library/typing.html

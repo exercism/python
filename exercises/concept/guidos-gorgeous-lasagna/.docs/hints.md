@@ -38,6 +38,7 @@
 ## 5. Update the recipe with notes
 
 - Clearly [commenting][comments] and [documenting][docstrings] your code according to [PEP257][pep257] is always recommended.
+- Some examples of Google-style docstrings can be found in the Sphinx documentation for the [napoleon module][napoleon].
 
 [assignment]: https://docs.python.org/3/reference/simple_stmts.html#grammar-token-assignment-stmt
 [comments]: https://realpython.com/python-comments-guide/
@@ -46,6 +47,7 @@
 [docstrings]: https://docs.python.org/3/tutorial/controlflow.html#tut-docstrings
 [magic-numbers]: https://en.wikipedia.org/wiki/Magic_number_(programming)
 [naming]: https://realpython.com/python-variables/
+[napoleon]: https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html#module-sphinx.ext.napoleon
 [numbers]: https://docs.python.org/3/tutorial/introduction.html#numbers
 [pep257]: https://www.python.org/dev/peps/pep-0257/
 [python as a calculator]: https://docs.python.org/3/tutorial/introduction.html#using-python-as-a-calculator

@@ -78,14 +78,18 @@ Go back through the recipe, adding "notes" in the form of [function docstrings][
 ```python
 def elapsed_time_in_minutes(number_of_layers, elapsed_bake_time):
     """Calculate the elapsed cooking time.
-
-    :param number_of_layers: int - the number of layers in the lasagna.
-    :param elapsed_bake_time: int - time the lasagna has been baking in the oven.
-    :return: int - total time elapsed (in minutes) preparing and baking.
+    
+    Parameters:
+        number_of_layers (int): The number of layers in the lasagna.
+        elapsed_bake_time (int): Time the lasagna has been baking in the oven.
+    
+    Returns:
+        int: The total time elapsed (in minutes) preparing and baking.
 
     This function takes two integers representing the number of lasagna 
     layers and the time already spent baking the lasagna. It calculates 
     the total elapsed minutes spent cooking (preparing + baking).
+    
     """
 ```
 

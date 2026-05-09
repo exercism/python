@@ -15,7 +15,7 @@ of a module and its functions and/or classes.
 def bake_time_remaining():
     """Calculate the bake time remaining.
 
-    Parameters:\
+    Parameters:
         elapsed_bake_time (int): The baking time already elapsed.
 
     Returns:
