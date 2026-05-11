@@ -2,10 +2,13 @@
 
 
 def get_list_of_wagons():
-    """Return a list of wagons.
+    """Return a list of wagons, given an arbitrary amount of wagon numbers.
 
-    :param: arbitrary number of wagons.
-    :return: list - list of wagons.
+    Parameters:
+       An arbitrary number of wagon numbers, unpacked.
+
+    Returns:
+        list: A list of wagon numbers.
     """
     pass
 
@@ -13,19 +16,25 @@ def get_list_of_wagons():
 def fix_list_of_wagons(each_wagons_id, missing_wagons):
     """Fix the list of wagons.
 
-    :param each_wagons_id: list - the list of wagons.
-    :param missing_wagons: list - the list of missing wagons.
-    :return: list - list of wagons.
+    Parameters:
+        each_wagons_id (list[int]): The list of wagons.
+        missing_wagons (list[int]) The list of missing wagons.
+
+    Returns:
+        list[int]: The corrected list of wagons.
     """
     pass
 
 
-def add_missing_stops():
+def add_missing_stops(route):
     """Add missing stops to route dict.
 
-    :param route: dict - the dict of routing information.
-    :param: arbitrary number of stops.
-    :return: dict - updated route dictionary.
+    Parameters:
+        route (dict): The dict of routing information.
+        (dict): arbitrary number of stops.
+
+    Returns:
+        dict: The updated route dictionary.
     """
     pass
 
@@ -33,9 +42,12 @@ def add_missing_stops():
 def extend_route_information(route, more_route_information):
     """Extend route information with more_route_information.
 
-    :param route: dict - the route information.
-    :param more_route_information: dict -  extra route information.
-    :return: dict - extended route information.
+    Parameters:
+        route (dict): The route information.
+        more_route_information (dict): The extra route information.
+
+    Returns:
+        dict: The extended route information.
     """
     pass
 
@@ -43,7 +55,10 @@ def extend_route_information(route, more_route_information):
 def fix_wagon_depot(wagons_rows):
     """Fix the list of rows of wagons.
 
-    :param wagons_rows: list[list[tuple]] - the list of rows of wagons.
-    :return: list[list[tuple]] - list of rows of wagons.
+    Parameters:
+        wagons_rows (list[tuple]) The list of rows of wagons.
+
+    Returns:
+        list[tuple]: the list of rows of wagons.
     """
     pass
