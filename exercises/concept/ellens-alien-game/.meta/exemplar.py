@@ -4,19 +4,18 @@
 class Alien:
     """Create an Alien object with location x_coordinate and y_coordinate.
 
-    Attributes
-    ----------
-    (class)total_aliens_created: int
-    x_coordinate: int - Position on the x-axis.
-    y_coordinate: int - Position on the y-axis.
-    health: int - Number of health points.
+    Attributes:
+        (class) total_aliens_created (int): Total number of Alien instances.
+        x_coordinate (int):  Position on the x-axis.
+        y_coordinate (int): Position on the y-axis.
+        health (int):  Number of health points.
 
-    Methods
-    -------
-    hit(): Decrement Alien health by one point.
-    is_alive(): Return a boolean to indicate if Alien is alive (if health is > 0).
-    teleport(new_x_coordinate, new_y_coordinate): Move Alien object to new coordinates.
-    collision_detection(other): Implementation TBD.
+    Methods:
+        hit(): Decrement Alien health by one point.
+        is_alive(): Return a boolean for if Alien is alive (if health is > 0).
+        teleport(new_x_coordinate, new_y_coordinate): Move Alien object to new coordinates.
+        collision_detection(other): Implementation TBD.
+
     """
 
     total_aliens_created = 0
@@ -24,14 +23,18 @@ class Alien:
     def __init__(self, x_coordinate, y_coordinate):
         """Initialize a new Alien object and increment total_aliens_created by 1.
 
-        :param x_coordinate: int - Alien position on the x-axis
-        :param y_coordinate: int - Alien position on the y-axis
+        Parameters:
+            x_coordinate (int):  Position on the x-axis.
+            y_coordinate (int): Position on the y-axis.
+            health (int):  Number of health points.
 
-        :attribute x_coordinate: int - Alien position on the x-axis
-        :attribute y_coordinate: int - Alien position on the y-axis
-        :attribute health: int (3) - Initial Alien health points.
+        Attributes:
+            x_coordinate (int):  Position on the x-axis.
+            y_coordinate (int): Position on the y-axis.
+            health (int):  Number of health points. Defaults to 3.
 
-        :return: object - New Alien.
+        Returns:
+            Alien (Alien Object): New Alien.
         """
 
         Alien.total_aliens_created += 1
@@ -43,7 +46,8 @@ class Alien:
     def hit(self):
         """Decrement Alien health by 1.
 
-        :return: None
+        Returns:
+            None
         """
 
         #There are two valid interpretations for this method/task.
@@ -54,7 +58,8 @@ class Alien:
     def is_alive(self):
         """Return if the Alien is alive.
 
-        :return: boolean
+        Returns:
+            bool:  Is the Alien Alive?
         """
 
         return self.health > 0
@@ -62,29 +67,38 @@ class Alien:
     def teleport(self, new_x_coordinate, new_y_coordinate):
         """Change Alien location.
 
-        :param new_x_coordinate: int - New location on x-axis.
-        :param new_y_coordinate: int - New location on y-axis.
+        Parameters:
+            new_x_coordinate (int): New location on x-axis.
+            new_y_coordinate (int): New location on y-axis.
 
-        :return: None
+        Returns:
+            None
         """
+
         self.x_coordinate = new_x_coordinate
         self.y_coordinate = new_y_coordinate
 
     def collision_detection(self, other):
         """Detect collisions with another Alien.
 
-        :param other: object - Other Alien object.
+        Parameters:
+            other (object): Other Alien object.
 
-        :return: None
+        Returns:
+            None
         """
 
         pass
 
+
 def new_aliens_collection(positions):
     """Create a list of Alien instances from a list of coordinate tuples.
 
-     :param positions: list - List of tuples of (x, y) coordinates.
+     Parameters:
+        positions (list[tuple]): List of (x, y) coordinates in tuples..
 
-     :return: list - List of Alien objects.
+     Returns:
+         list[object]: List of Alien objects.
      """
+
     return [Alien(position[0], position[1]) for position in positions]

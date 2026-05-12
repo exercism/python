@@ -48,7 +48,7 @@ def get_change(budget, exchanging_value):
         >>> get_change(300.75, 150.25)
         150.50
 
-    Tthis function calcultes and returns the amount of money left over from the budget
+    This function calcultes and returns the amount of money left over from the budget
     after an exchange.
 
     """
