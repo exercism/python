@@ -14,11 +14,11 @@ def clean_ingredients(dish_name, dish_ingredients):
     """Remove duplicates from `dish_ingredients`.
 
     Parameters:
-        dish_name (str):  The name of the dish.
+        dish_name (str): The name of the dish.
         dish_ingredients (list): The ingredients for the dish.
 
     Returns:
-        tuple: Containing (dish_name, ingredient set).
+        tuple: Containing (dish name, ingredient set).
 
     This function should return a `tuple` with the name of the dish as the first item,
     followed by the de-duped `set` of ingredients as the second item.
@@ -36,7 +36,7 @@ def check_drinks(drink_name, drink_ingredients):
         drink_ingredients (list): Ingredients in the drink.
 
     Returns:
-        str: drink_name appended with "Mocktail" or "Cocktail".
+        str: `drink_name` appended with "Mocktail" or "Cocktail".
 
     The function should return the name of the drink followed by "Mocktail" (non-alcoholic) and drink
     name followed by "Cocktail" (includes alcohol).
@@ -57,7 +57,7 @@ def categorize_dish(dish_name, dish_ingredients):
         dish_ingredients (set): The ingredients for the dish.
 
     Returns:
-        str: TThe dish name appended with ": <CATEGORY>".
+        str: The dish name appended with ": <CATEGORY>".
 
     This function should return a string with the `dish name: <CATEGORY>` (which meal category the dish belongs to).
     `<CATEGORY>` can be any one of  (VEGAN, VEGETARIAN, PALEO, KETO, or OMNIVORE).
@@ -134,11 +134,11 @@ def separate_appetizers(dishes, appetizers):
 
 
 def singleton_ingredients(dishes, intersection):
-    """Determine which `dishes` have a singleton ingredient (an ingredient that only appears once across dishes).
+    """Find singleton ingredients within the group of dishes (ingredients that only appear once across dishes).
 
     Parameters:
         dishes (list): Group of ingredient sets.
-        intersection (constant): Can be one of `<CATEGORY>_INTERSECTIONS` constants imported from `sets_categories_data.py`.
+        intersection (set): Can be one of `<CATEGORY>_INTERSECTIONS` constants imported from `sets_categories_data.py`.
 
     Returns:
         set: Containing singleton ingredients.
