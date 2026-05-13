@@ -171,7 +171,7 @@ Where keys in the two dictionaries _overlap_, the `value` in `dict_one` will be 
   'Green Treeline': '#478559', 'Purple baseline': '#161748'}
 ```
 
-## Merge or Update Dictionaries Via the Union (`|`) Operators
+## Merge or Update Dictionaries Using Union (`|` and `|=`) Operators
 
 Python 3.9 introduces a different means of merging `dicts`: the `union` operators.
 `dict_one | dict_two` will create a **new dictionary**, made up of the (`key`, `value`) pairs of `dict_one` and `dict_two`.

@@ -43,23 +43,23 @@ def update_recipes(ideas, recipe_updates):
 
 
 def sort_entries(cart):
-    """Sort a users shopping cart in alphabetically order.
+    """Sort a user's shopping cart in alphabetical order.
 
     Parameters:
-        cart (dict): A users shopping cart dictionary.
+        cart (dict): A user's shopping cart dictionary.
 
     Returns:
-        dict: A sers shopping cart sorted in alphabetical order.
+        dict: A user's shopping cart sorted in alphabetical order.
     """
 
     pass
 
 
 def send_to_store(cart, aisle_mapping):
-    """Combine users order to aisle and refrigeration information.
+    """Combine user's order to aisle and refrigeration information.
 
     Parameters:
-        cart (dict): The users shopping cart dictionary.
+        cart (dict): The user's shopping cart dictionary.
         aisle_mapping (dict): The aisle and refrigeration information dictionary.
 
     Returns:

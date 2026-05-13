@@ -188,7 +188,7 @@ Where keys in the two dictionaries _overlap_, the `value` in `dict_one` will be 
   'Green Treeline': '#478559', 'Purple baseline': '#161748'}
 ```
 
-## Merge or Update Dictionaries Via the Union (`|`) Operators
+## Merge or Update Dictionaries Using Union (`|` and `|=`) Operators
 
 Python 3.9 introduces a different means of merging `dicts`: the `union` operators.
 `dict_one | dict_two` will create a **new dictionary**, made up of the (`key`, `value`) pairs of `dict_one` and `dict_two`.
@@ -271,7 +271,7 @@ Unless a _sort key_ is specified, the default sort is over dictionary `keys`.
  'Misty Mountain Pink': '#f9c5bd'} 
 ```
 
-## Transposing a Dictionaries Keys and Values
+## Transposing Dictionary Keys and Values
 
 Swapping keys and values reliably in a dictionary takes a little work, but can be accomplished via a `loop` using `dict.items()` or in a dictionary comprehension.
 Safe swapping assumes that `dict` keys and values are both _hashable_.
