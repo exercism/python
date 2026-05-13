@@ -9,13 +9,13 @@ It's OK to be simple and direct with the functions you are writing.
 The dictionary section of the [official tutorial][dicts-docs] and the mapping type [official library reference][mapping-types-dict] are excellent places to look for more help with all these methods.
 
 
-## 1. Add Item(s) to the Users Shopping Cart
+## 1. Add Item(s) to the User's Shopping Cart
 
 - You will need to iterate through each item in `items_to_add`.
 - You can avoid a `KeyError` when a key is missing by using a `dict` [method][set-default] that takes a _default value_ as one of its arguments.
 - It is also possible to accomplish the same thing manually in the `loop` by using some checking and error handling, but the `dict` method is easier.
 
-## 2. Read in Items Listed in the Users Notes App
+## 2. Read in Items Listed in the User's Notes App
 
 - Remember, Python's got a method for _everything_. This one is a _classmethod_ that's an easy way to [populate a `dict`][fromkeys] with keys.
 - This `dict` method returns a _new dictionary_, populated with default values. If no value is given, the default value will become `None`
@@ -25,13 +25,13 @@ The dictionary section of the [official tutorial][dicts-docs] and the mapping ty
 - Don't overthink this one!  This can be solved in **one** `dict` method call.
 - The key word here is .... [_update_][update].
 
-## 4. Sort the Items in the User Cart
+## 4. Sort the Items in the User's Cart
 
 - What method would you call to get an [iterable view of items][items] in the dictionary?
 - If you had a `list` or a `tuple`, what [`built-in`][builtins] function might you use to sort them?
 - The built-in function you want is the one that returns a _copy_, and doesn't mutate the original.
 
-## 5. Send User Shopping Cart to Store for Fulfillment
+## 5. Send the User's Shopping Cart to the Store for Fulfillment
 
 - Having a fresh, empty dictionary here as the `fulfillment_cart` might be handy for adding in items.
 - `Looping` through the members of the cart might be the most direct way of accessing things here.
