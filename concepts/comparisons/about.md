@@ -13,7 +13,7 @@ The table below shows the most common Python comparison operators:
 | `<=`     | "less than or equal to"    | `a <= b` is `True` if `a < b` or `a == b` in value                        |
 | `!=`     | "not equal to"             | `a != b` is `True` if `a == b` is `False`                                 |
 | `is`     | "identity"                 | `a is b` is `True` if **_and only if_** `a` and `b` are the same _object_ |
-| `is not` | "negated identity"         | `a is not b` is `True` if `a` and `b` are **not** the same _object_       |
+| `is not` | "negated identity"         | `a is not b` is `True` if  **_and only if_** `a` and `b` are **not** the same _object_       |
 | `in`     | "containment test"         | `a in b` is `True` if `a` is member, subset, or element of `b`            |
 | `not in` | "negated containment test" | `a not in b` is `True` if `a` is not a member, subset, or element of `b`  |
 
@@ -146,7 +146,7 @@ True
 
 Comparison operators can be chained _arbitrarily_.
 Note that the evaluation of an expression takes place from `left` to `right`.
-For example, `x < y <= z` is equivalent to `x < y` `and` `y <= z`, except that `y` is evaluated **only once**.
+For example, `x < y <= z` is equivalent to `x < y and y <= z`, except that `y` is evaluated **only once**.
 In both cases, `z` is _not_ evaluated **at all** when `x < y` is found to be `False`.
 This is often called `short-circuit evaluation` - the evaluation stops if the truth value of the expression has already been determined.
 
@@ -180,7 +180,7 @@ Due to their singleton status, `None` and `NotImplemented` should always be comp
 See the Python reference docs on [value comparisons][value comparisons none] and [PEP8][PEP8 programming recommendations] for more details on this convention.
 
 ```python
->>> 
+
 # A list of favorite numbers.
 >>> my_fav_numbers = [1, 2, 3]
 
@@ -218,7 +218,7 @@ The operators `in` and `not in` test for _membership_.
 For string and bytes types, `<name> in <fullname>` is `True` _**if and only if**_ `<name>` is a substring of `<fullname>`.
 
 ```python
->>> 
+
 # A set of lucky numbers.
 >>> lucky_numbers = {11, 22, 33}
 >>> 22 in lucky_numbers

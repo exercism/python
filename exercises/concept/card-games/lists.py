@@ -8,7 +8,7 @@ def get_rounds(number):
     """Create a list containing the current and next two round numbers.
 
     Parameters:
-        number (int):  The current round number.
+        number (int): The current round number.
 
     Returns:
         list: The current round number and the two that follow.
@@ -21,7 +21,7 @@ def concatenate_rounds(rounds_1, rounds_2):
     """Concatenate two lists of round numbers.
 
     Parameters:
-        rounds_1 (list):  The first rounds played.
+        rounds_1 (list): The first rounds played.
         rounds_2 (list): The second group of rounds played.
 
     Returns:
@@ -35,7 +35,7 @@ def list_contains_round(rounds, number):
     """Check if the list of rounds contains the specified number.
 
     Parameters:
-        rounds  (list): The rounds played.
+        rounds (list): The rounds played.
         number (int): The round number.
 
     Returns:
