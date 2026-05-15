@@ -182,7 +182,7 @@ class MyClass:
     def change_location(self, amount):
         self.location_x += amount
         self.location_y += amount
-        return  self.location_x, self.location_y
+        return self.location_x, self.location_y
 
 # Make a new test_object with location (3,7)
 >>> test_object = MyClass((3,7))
@@ -209,7 +209,7 @@ class MyClass:
     def change_location(self, amount):
         self.location_x += amount
         self.location_y += amount
-        return  self.location_x, self.location_y
+        return self.location_x, self.location_y
 
     # Alter class variable number for all instances from within an instance.
     def increment_number(self):

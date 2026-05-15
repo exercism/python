@@ -6,9 +6,9 @@ class Alien:
 
     Attributes:
         (class) total_aliens_created (int): Total number of Alien instances.
-        x_coordinate (int):  Position on the x-axis.
+        x_coordinate (int): Position on the x-axis.
         y_coordinate (int): Position on the y-axis.
-        health (int):  Number of health points.
+        health (int): Number of health points.
 
     Methods:
         hit(): Decrement Alien health by one point.
@@ -29,9 +29,9 @@ class Alien:
             health (int):  Number of health points.
 
         Attributes:
-            x_coordinate (int):  Position on the x-axis.
+            x_coordinate (int): Position on the x-axis.
             y_coordinate (int): Position on the y-axis.
-            health (int):  Number of health points. Defaults to 3.
+            health (int): Number of health points. Defaults to 3.
 
         Returns:
             Alien (Alien Object): New Alien.
@@ -59,7 +59,7 @@ class Alien:
         """Return if the Alien is alive.
 
         Returns:
-            bool:  Is the Alien Alive?
+            bool: Is the Alien Alive?
         """
 
         return self.health > 0
@@ -94,11 +94,11 @@ class Alien:
 def new_aliens_collection(positions):
     """Create a list of Alien instances from a list of coordinate tuples.
 
-     Parameters:
-        positions (list[tuple]): List of (x, y) coordinates in tuples..
+    Parameters:
+        positions (list[tuple]): List of (x, y) coordinates in tuples.
 
-     Returns:
-         list[object]: List of Alien objects.
+    Returns:
+        list[object]: List of Alien objects.
      """
 
     return [Alien(position[0], position[1]) for position in positions]
