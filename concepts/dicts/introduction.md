@@ -5,7 +5,7 @@ Dictionaries are Python's only built-in [mapping type][mapping-types-dict].
 
 
 `keys` must be hashable and unique across the dictionary.
-Key types can include `numbers`, `str`s, or `tuple`s (of _immutable_ values).
+Key types can include `number`s, `str`s, or `tuple`s (of _immutable_ values).
 They cannot contain _mutable_ data structures such as `list`s, `dict`s, or `set`s.
 As of Python 3.7, `dict` key order is guaranteed to be the order in which entries are inserted.
 
