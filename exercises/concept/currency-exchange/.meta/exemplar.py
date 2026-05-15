@@ -40,7 +40,7 @@ def get_change(budget, exchanging_value):
         float: The amount left of your starting currency after the exchange
 
     Examples:
-        .>>> get_change(127.5, 120.0)
+        >>> get_change(127.5, 120.0)
         7.5
 
         >>> get_change(300.75, 150.25)
