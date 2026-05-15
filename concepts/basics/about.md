@@ -55,8 +55,8 @@ For example, `my_first_variable` can be re-assigned many times using `=`, and ca
 
 
 ```python
->>> my_first_variable = 1  # my_first_variable bound to an integer object of value one.
->>> my_first_variable = 2  # my_first_variable re-assigned to integer value 2.
+>>> my_first_variable = 1  # <--my_first_variable bound to an integer object of value one.
+>>> my_first_variable = 2  # <--my_first_variable re-assigned to integer value 2.
 
 >>> print(type(my_first_variable))
 <class 'int'>
@@ -64,16 +64,16 @@ For example, `my_first_variable` can be re-assigned many times using `=`, and ca
 >>> print(my_first_variable)
 2
 
->>> my_first_variable = "Now, I'm a string." # You may re-bind a name to a different object type and value.
+>>> my_first_variable = "Now, I'm a string." # <--You may re-bind a name to a different object type and value.
 >>> print(type(my_first_variable))
 <class 'str'>
 
->>> my_first_variable = 'You can call me "str".' # Strings can be declared using single or double quote marks.
+>>> my_first_variable = 'You can call me "str".' # <--Strings can be declared using single or double quote marks.
 >>> print(my_first_variable)
 You can call me "str".
 
-import collections
->>> my_first_variable = collections.Counter([1,1,2,3,3,3,4,5,6,7]) # Now my_first_variable has been re-bound to a Counter object.
+>>> import collections
+>>> my_first_variable = collections.Counter([1,1,2,3,3,3,4,5,6,7]) # <--Now my_first_variable has been re-bound to a Counter object.
 >>> print(type(my_first_variable))
 <class 'collections.Counter'>
 

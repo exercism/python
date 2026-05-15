@@ -57,17 +57,7 @@ else:
 [Boolean operations][boolean operations] and [comparisons][comparisons] can be combined with conditionals for more complex testing:
 
 ```python
->>> def classic_fizzbuzz(number):
-...      if number % 3 == 0 and number % 5 == 0:
-...          say = 'FizzBuzz!'
-...      elif number % 5 == 0:
-...          say = 'Buzz!'
-...      elif number % 3 == 0:
-...          say = 'Fizz!'
-...      else:
-...          say = str(number)
-...
-...      return say
+>>> 
 
 >>> classic_fizzbuzz(15)
 'FizzBuzz!'
@@ -83,13 +73,14 @@ However, re-writing in this way might obscure that the conditions are intended t
 ```python
 >>> def classic_fizzbuzz(number):
 ...     if number % 3 == 0 and number % 5 == 0:
-...         return 'FizzBuzz!'
-...     if number % 5 == 0:
-...         return 'Buzz!'
-...     if number % 3 == 0:
-...         return 'Fizz!'
-...
-...     return str(number)
+...         say = 'FizzBuzz!'
+...     elif number % 5 == 0:
+...         say = 'Buzz!'
+...     elif number % 3 == 0:
+...         say = 'Fizz!'
+...     else:
+...         say = str(number)
+...     return say
 
 >>> classic_fizzbuzz(15)
 'FizzBuzz!'
@@ -111,8 +102,8 @@ Conditionals can also be nested.
 ...             status = "Permitted driver, on probation."
 ...         elif driver_age > 18:
 ...             status = "Fully licensed driver."
-...         else:
-...             status = "Unlicensed!"
+...     else:
+...         status = "Unlicensed!"
 ...
 ...     return status
 
@@ -155,7 +146,7 @@ Objects that are evaluated in this fashion are considered "truthy" or "falsy", a
 ...     if thing:
 ...         print('This is Truthy.')
 ...     else:
-...         print('Nope. It's Falsy.')
+...         print("Nope. It's Falsy.")
 
 
 # Empty container objects are considered Falsy.
@@ -167,14 +158,14 @@ Objects that are evaluated in this fashion are considered "truthy" or "falsy", a
 
 # Empty strings are considered Falsy.
 >>> truthy_test('')
-'Nope. It's Falsy.'
+"Nope. It's Falsy."
 
 >>> truthy_test('yes')
 'This is Truthy.'
 
 # 0 is also considered Falsy.
 >>> truthy_test(0)
-'Nope. It's Falsy.'
+"Nope. It's Falsy."
 ```
 
 [boolean operations]: https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not
