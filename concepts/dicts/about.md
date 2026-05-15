@@ -3,9 +3,9 @@
 A dictionary (`dict`) in Python is a data structure that associates [hashable][term-hashable] _keys_ to _values_ and is known in other programming languages as a resizable [hash table][hashtable-wikipedia], hashmap, or [associative array][associative-array].
 Dictionaries are Python's only built-in [mapping type][mapping-types-dict].
 
-`Keys` must be hashable and unique across the dictionary.
-Key types can include `numbers`, `str`, or `tuples` (of _immutable_ values).
-They cannot contain _mutable_ data structures such as `lists`, `dict`s, or `set`s.
+`keys` must be hashable and unique across the dictionary.
+Key types can include `numbers`, `str`s, or `tuple`s (of _immutable_ values).
+They cannot contain _mutable_ data structures such as `list`s, `dict`s, or `set`s.
 As of Python 3.7, `dict` key order is guaranteed to be the order in which entries are inserted.
 
 `values` can be of any data type or structure.
@@ -20,10 +20,10 @@ Dictionaries are especially useful in scenarios where the collection of items is
 ## Dictionary Construction
 
 Dictionaries can be created in many different ways, including:
- - Using the [`fromkeys()`][fromkeys] classmethod
- - Creating [dictionary comprehensions][dict-comprehensions]
- - Merging two dictionaries via unpacking (`**`)
- - Merging dictionaries via the `|` (_update_) operator
+ - Using the [`fromkeys()`][fromkeys] class method.
+ - Using [dictionary comprehensions][dict-comprehensions].
+ - Merging two dictionaries via unpacking (`**`).
+ - Merging dictionaries via the `|` (_update_) operator.
  - Using a loop to iteratively add entries to a previously created empty `dict`.
 
 The two most straightforward methods are the dictionary _constructor_ and the dictionary _literal_.
@@ -35,17 +35,20 @@ The two most straightforward methods are the dictionary _constructor_ and the di
 
 ```python
 # Passing a list of key,value tuples.
->>> wombat = dict([('name', 'Wombat'),('speed', 23),
-                   ('land_animal', True)])
+>>> wombat = dict([('name', 'Wombat'),
+...              ('speed', 23),
+...              ('land_animal', True)])
 {'name': 'Wombat', 'speed': 23, 'land_animal': True}
 
 
 # Using key=value arguments.
->>> bear = dict(name="Black Bear", speed=40, land_animal=True)
+>>> bear = dict(name="Black Bear",
+...             speed=40,
+...             land_animal=True)
 {'name': 'Black Bear', 'speed': 40, 'land_animal': True}
 ```
 
-The [documentation on `dicts`][dicts-docs] outlines additional variations and options in constructor use.
+The [documentation on `dict`s][dicts-docs] outlines additional variations and options in constructor use.
 
 
 ### Dictionary Literals
@@ -74,35 +77,35 @@ Dictionaries can be arbitrarily nested:
 
 ```python
 animals = {
-            "Real" : {
-                "Winged" : {
-                            "Sparrow" : {'name': 'sparrow','speed': 12, 'land_animal': True},
-                            "Kestrel" : {'name': 'kestrel', 'speed': 15, 'land_animal': True}
-                           },
-                "Legged" : {
-                            "Wombat" : {'name': 'Wombat', 'speed': 23, 'land_animal': True},
-                            "Black Bear": {'name': 'Black Bear', 'speed': 40, 'land_animal': True},
-                            "Polecat" : {'name': 'Polecat', 'speed': 15, 'land_animal': True}
-                           },
-                "Other" :  {
-                            "Whale" : {'name': 'Blue Whale', 'speed': 35, 'land_animal': False},
-                            "Orca" : {'name': 'Orca', 'speed': 45, 'land_animal': False},
-                            "Snake" : {'name': 'Python', 'speed': 25, 'land_animal': True}
-                            }
-                },
+    "Real" : {
+        "Winged" : {
+            "Sparrow" : {'name': 'sparrow','speed': 12, 'land_animal': True},
+            "Kestrel" : {'name': 'kestrel', 'speed': 15, 'land_animal': True}
+           },
+        "Legged" : {
+            "Wombat" : {'name': 'Wombat', 'speed': 23, 'land_animal': True},
+            "Black Bear": {'name': 'Black Bear', 'speed': 40, 'land_animal': True},
+            "Polecat" : {'name': 'Polecat', 'speed': 15, 'land_animal': True}
+           },
+        "Other" :  {
+            "Whale" : {'name': 'Blue Whale', 'speed': 35, 'land_animal': False},
+            "Orca" : {'name': 'Orca', 'speed': 45, 'land_animal': False},
+            "Snake" : {'name': 'Python', 'speed': 25, 'land_animal': True}
+            }
+        },
         
-        "Imaginary": {
-                "Winged" : {
-                            "Dragon" : {'name': 'Fire Dragon','speed': 100, 'land_animal': True},
-                            "Phoenix" : {'name': 'Phoenix', 'speed': 1500, 'land_animal': True}
-                            },
-                "Legged" : {
-                            "Sphinx" : {'name': 'Sphinx','speed': 10, 'land_animal': True},
-                            "Minotaur" : {'name': 'Minotaur', 'speed': 5, 'land_animal': True}
-                            },
-                "Other" :  {}
-                }
-       }
+    "Imaginary": {
+        "Winged" : {
+            "Dragon" : {'name': 'Fire Dragon','speed': 100, 'land_animal': True},
+            "Phoenix" : {'name': 'Phoenix', 'speed': 1500, 'land_animal': True}
+            },
+        "Legged" : {
+            "Sphinx" : {'name': 'Sphinx','speed': 10, 'land_animal': True},
+            "Minotaur" : {'name': 'Minotaur', 'speed': 5, 'land_animal': True}
+            },
+        "Other" :  {}
+        }
+   }
 ```
 
 ## Accessing Values in a `dict`
@@ -183,9 +186,9 @@ New `key`:`value` pairs can be _added_ in the same fashion:
 
 ## Removing (Pop-ing and del) Dictionary Entries
 
-You can use the `.pop(<key>)` method to delete a dictionary entry.
-`.pop()` removes the (`key`, `value`) pair and returns the `value` for use.
-Like `.get()`, `.pop(<key>)` accepts second argument (_`dict.pop(<key>, <default value>)`_) that will be returned if the `key` is not found.
+You can use the `<dict>.pop(<key>)` method to delete a dictionary entry.
+`<dict>.pop()` removes the (`key`, `value`) pair and returns the `value` for use.
+Like `<dict>.get()`, `<dict>.pop(<key>)` accepts second argument (_`<dict>.pop(<key>, <default value>)`_) that will be returned if the `key` is not found.
 This prevents a `KeyError` being raised:
 
 ```python
@@ -208,8 +211,8 @@ KeyError: 'name'
 'Unknown'
 ```
 
-You can also use the `del` statement to remove a single or multiple entries.
-A `KeError` is raised if the entry to be removed is not found in the dictionary:
+You can also use the `del` statement to remove one or more entries.
+A `KeyError` is raised if the entry to be removed is not found in the dictionary:
 
 ```python
 >>> wombat = {'name': 'Wombat',
@@ -245,7 +248,7 @@ You can access _values_ within the same loop by using _square brackets_:
 
 ```python
 >>> for key in bear:
->>>     print((key, bear[key])) #this prints a tuple of (key, value)
+...     print((key, bear[key])) # <--This prints a tuple of (key, value).
 ('name', 'Black Bear')
 ('speed', 40)
 ('land_animal', True)
@@ -257,7 +260,7 @@ You can also use the `.items()` method, which returns (`key`, `value`) tuples:
 # dict.items() forms (key, value tuples) that can be 
 # unpacked and iterated over.
 >>> for key, value in whale.items():
->>>     print(key, ":", value)
+...     print(key, ":", value)
 name : Blue Whale
 speed : 25
 land_animal : False
@@ -271,11 +274,11 @@ For a detailed explanation of dictionaries in Python, the [official documentatio
 
 ## Extending Dictionary Functionality: The Collections Module
 
-The [`collections`][collections-docs] module adds specialized functionality to Python's standard collection-based datatypes (`dictionary`, `set`, `list`, `tuple`).
+The [`collections`][collections-docs] module adds specialized functionality to Python's standard collection-based datatypes (`dict`, `set`, `list`, `tuple`).
 Three of the most useful dictionary-based classes are:
 
 - [`Counter`][counter-dicts] automatically counts items and returns them in a `dict` with the items as keys and their counts as values.
-- [`OrderedDict`][ordered-dicts-docs], has methods specialized for arranging the order of dictionary entries.
+- [`OrderedDict`][ordered-dicts-docs] has methods specialized for arranging the order of dictionary entries.
 - [`defaultdict`][default-dicts] uses a factory method to set a default value if a `key` is not found when trying to retrieve or assign to a dictionary entry.
 
 [associative-array]: https://en.wikipedia.org/wiki/Associative_array#:~:text=In%20computer%20science%2C%20an%20associative,a%20function%20with%20finite%20domain.
