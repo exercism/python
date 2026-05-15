@@ -31,7 +31,7 @@ def clean_up_spacing(sentence):
     """Trim any leading or trailing whitespace from the sentence.
 
     Parameters:
-    sentence (str):  A sentence to clean of leading and trailing space characters.
+        sentence (str): A sentence to clean of leading and trailing space characters.
 
     Returns:
         str: A sentence that has been cleaned of leading and trailing space characters.

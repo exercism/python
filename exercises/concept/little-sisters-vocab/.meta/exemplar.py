@@ -21,12 +21,10 @@ def make_word_groups(vocab_words):
         vocab_words (list[str]): Vocabulary words with prefix at first index.
 
     Returns:
-        str: Prefix followed by vocabulary words with
-            prefix applied.
+        str: Prefix followed by vocabulary words with prefix applied.
 
     This function takes a `vocab_words` list of strings and returns a string
-    with the prefix and the words with prefix applied, separated
-     by ' :: '.
+    with the prefix and the words with prefix applied, separated by ' :: '.
 
     Examples:
         >>> list('en', 'close', 'joy', 'lighten')

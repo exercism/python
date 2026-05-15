@@ -4,12 +4,13 @@ A `str` in Python is an [immutable sequence][text sequence] of [Unicode code poi
 These may include letters, diacritical marks, positioning characters, numbers, currency symbols, emoji, punctuation, space and line break characters, and more.
 
 For a deep dive on what information a string encodes (or, _"how does a computer know how to translate zeroes and ones into letters?"_), [this blog post is enduringly helpful][joel-on-text].
-The Python docs also provide a very detailed [unicode HOWTO][unicode how-to] that discusses Pythons support for the Unicode specification in the `str`, `bytes` and `re` modules, considerations for locales, and some common issues with encoding and translation.
+The Python docs also provide a very detailed [unicode HOWTO][unicode how-to] that discusses Python's support for the Unicode specification in the `str`, `bytes` and `re` modules, considerations for locales, and some common issues with encoding and translation.
 
 Strings implement all [common sequence operations][common sequence operations] and can be iterated through using `for item in <str>` or `for index, item in enumerate(<str>)` syntax.
  Individual code points (_strings of length 1_) can be referenced by `0-based index` number from the left, or `-1-based index` number from the right.
 
-Strings can be concatenated with `<str> + <other str>`, or `<str>.join(<iterable>)`, split via `<str>.split(<separator>)`, and offer multiple formatting, assembly, and templating options.
+Strings can be concatenated with `<str> + <other str>`, or `<str>.join(<iterable>)` and split via `<str>.split(<separator>)`.
+They also offer multiple additional formatting, assembly, and templating options.
 
 
 A `str` literal can be declared using single `'` or double `"` quotes. The escape `\` character is available as needed.
@@ -101,7 +102,7 @@ There is no separate “character” or "rune" type in Python, so indexing a str
 True
 ```
 
-Substrings can be selected via _slice notation_, using [`<str>[<start>:stop:<step>]`][common sequence operations] to produce a new string.
+Substrings can be selected via _slice notation_, using [`<str>[<start>:<stop>:<step>]`][common sequence operations] to produce a new string.
 Results exclude the `stop` index.
 If no `start` is given, the starting index will be 0.
 If no `stop` is given, the `stop` index will be the end of the string.

@@ -10,7 +10,7 @@ Strings can be concatenated with `<str> + <other str>`, or `<str>.join(<iterable
 Being immutable, a `str` object's value in memory doesn't change; methods that appear to modify a string return a new copy or instance of `str`.
 
 For a deep dive on what information a string encodes (or, _"how does a computer know how to translate zeroes and ones into letters?"_), [this blog post is enduringly helpful][joel-on-text].
-The Python docs also provide a very detailed [unicode HOWTO][unicode how-to] that discusses Pythons support for the Unicode specification in the `str`, `bytes` and `re` modules, considerations for locales, and some common issues with encoding and translation.
+The Python docs also provide a very detailed [unicode HOWTO][unicode how-to] that discusses Python's support for the Unicode specification in the `str`, `bytes` and `re` modules, considerations for locales, and some common issues with encoding and translation.
 
 
 [common sequence operations]: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations

@@ -6,13 +6,14 @@ This may include letters, diacritical marks, positioning characters, numbers, cu
 Strings implement all [common sequence operations][common sequence operations] and can be iterated through using `for item in <str>` or `for index, item in enumerate(<str>)` syntax.
  Individual code points (_strings of length 1_) can be referenced by `0-based index` number from the left, or `-1-based index` number from the right.
 
-  Strings can be concatenated using `<str> + <other str>` or `<str>.join(<iterable>)`, split via `<str>.split(<separator>)`, and offer multiple formatting and assembly options.
+  Strings can be concatenated using `<str> + <other str>` or `<str>.join(<iterable>)` and split via `<str>.split(<separator>)`.
+   They also offer multiple other formatting and assembly options.
 
  To further work with strings, Python provides a rich set of [string methods][str-methods] for searching, cleaning, transforming, translating, and many other operations.
 
 Some of the more commonly used `str` methods include:
 
-- Checking for prefixes/suffixes with `startswith(<substr>)` and `endswith(<substr>)`
+- Checking for prefixes/suffixes with `<str>.startswith(<substr>)` and `<str>.endswith(<substr>)`
 - Altering string casing with methods like `<str>.title()`, `<str>.upper()`/`<str>.lower()`, and `<str>.swapcase()`
 - Removing leading or trailing characters from a string using `<str>.strip(<chars>)`, `<str>.lstrip(<chars>)`, or `<str>.rstrip(<chars>)`
 - Replacing substrings with the `<str>.replace(<old>, <new>)` method
@@ -33,7 +34,7 @@ True
 >>> 'Do you want to 💃?'.endswith('💃')
 False
 
->> 'The quick brown fox jumped over the lazy dog.'.endswith('dog')
+>>> 'The quick brown fox jumped over the lazy dog.'.endswith('dog')
 False
 ```
 
@@ -117,7 +118,7 @@ Just the place for a Snark! I have said it thrice:
 'book keeper'
 ```
 
-:star:**Newly added in Python `3.9`**
+🌟**Newly added in Python `3.9`**
 
 Python `3.9` introduces two new string methods that make removing prefixes and suffixes much easier.
 
@@ -144,7 +145,7 @@ Python `3.9` introduces two new string methods that make removing prefixes and s
 For more examples and methods the [informal tutorial][informal tutorial] is a nice jumping-off point.
 [How to Unicode][howto unicode] in the Python docs offers great detail on Unicode, encoding, bytes, and other technical considerations for working with strings in Python.
 
-Python also supports regular expressions via the `re` module, which will be covered in a future exercise.
+Python also supports regular expressions via the `re` module, which will be covered in a future concept.
 
 
 [Lewis Carroll]: https://www.poetryfoundation.org/poets/lewis-carroll
