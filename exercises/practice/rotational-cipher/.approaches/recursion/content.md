@@ -1,7 +1,7 @@
 # Recursion
 
 ```python
-AlPHABET = "abcdefghijklmnopqrstuvwxyz"
+ALPHABET = "abcdefghijklmnopqrstuvwxyz"
 
 def rotate(text, key):
     if text == "":
@@ -9,9 +9,9 @@ def rotate(text, key):
     first_letter, rest = text[0], text[1:]
     if first_letter.isalpha():
         if first_letter.isupper():
-            return AlPHABET[(AlPHABET.index(first_letter.lower()) + key) % 26].upper() + rotate(rest, key)
+            return ALPHABET[(ALPHABET.index(first_letter.lower()) + key) % 26].upper() + rotate(rest, key)
         else:
-            return AlPHABET[(AlPHABET.index(first_letter) + key) % 26] + rotate(rest, key)
+            return ALPHABET[(ALPHABET.index(first_letter) + key) % 26] + rotate(rest, key)
     else:
         return first_letter + rotate(rest, key)
 ```

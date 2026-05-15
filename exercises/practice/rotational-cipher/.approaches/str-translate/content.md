@@ -1,11 +1,11 @@
 # Str Translate
 
 ```python
-AlPHABET = "abcdefghijklmnopqrstuvwxyz"
+ALPHABET = "abcdefghijklmnopqrstuvwxyz"
 
 def rotate(text, key):
-    translator = AlPHABET[key:] + AlPHABET[:key]
-    return text.translate(str.maketrans(AlPHABET + AlPHABET.upper(), translator + translator.upper()))
+    translator = ALPHABET[key:] + ALPHABET[:key]
+    return text.translate(str.maketrans(ALPHABET + ALPHABET.upper(), translator + translator.upper()))
 ```
 
 This approach uses the [`<str>.translate`][translate] method.
@@ -14,10 +14,10 @@ To create a translation table we use [`str.makestrans`][maketrans].
 
 This approach starts with defining a constant of all the lowercase letters in the alphabet.
 Then the function `rotate()` is declared.
-A `translator` variable defined with the value of the `AlPHABET` constant [sliced][slicing] from the key to the end and then sliced from the start to the key.
+A `translator` variable defined with the value of the `ALPHABET` constant [sliced][slicing] from the key to the end and then sliced from the start to the key.
 
 This is done so we have 2 strings which are the same but shifted by the key value.
-Say we have the `AlPHABET` constant with the value of `abcdefghijklmnopqrstuvwxyz` and the key is 3.
+Say we have the `ALPHABET` constant with the value of `abcdefghijklmnopqrstuvwxyz` and the key is 3.
 Then the `translator` variable will have the value of `defghijklmnopqrstuvwxyzabc`.
 
 `str.translate` is then called on the `text` argument.
@@ -25,7 +25,7 @@ Then the `translator` variable will have the value of `defghijklmnopqrstuvwxyzab
 To create a translation table, `str.makestrans` is used.
 `makestrans` takes 2 arguments: the first is the string to be translated, and the second is the string the first argument should be translated to.
 
-For our solution, the first argument is the `AlPHABET` constant + the `AlPHABET` constant in uppercase.
+For our solution, the first argument is the `ALPHABET` constant + the `ALPHABET` constant in uppercase.
 The second argument is the `translator` variable + uppercase `translator` variable.
 
 `str.makestrans` takes the [Unicode][unicode] values of the first argument and maps them to the corresponding Unicode values in the second argument, creating a `dict`.
