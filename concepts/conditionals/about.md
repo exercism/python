@@ -161,7 +161,7 @@ Objects that are evaluated in this fashion are considered "truthy" or "falsy", a
 
 # Empty container objects are considered Falsy.
 >>> truthy_test([])
-'Nope. It's Falsy.'
+"Nope. It's Falsy."
 
 >>> truthy_test(['bear', 'pig', 'giraffe'])
 'This is Truthy.'
