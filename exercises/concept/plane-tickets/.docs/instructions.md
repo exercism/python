@@ -75,10 +75,10 @@ The function should then return a _dictionary_ of `passenger` as _key_, and `sea
 Conda Airlines would like to have a unique code for each ticket.
 Since they are a big airline, they have a lot of flights.
 This means that there are multiple flights with the same seat number.
-They want you to create a system that creates a unique ticket that is _12_ characters long string code for identification.
+They want you to create a system that formulates a unique ticket that is a _12_ character long string.
 
 This code begins with the `assigned_seat` followed by the `flight_id`.
-The rest of the code is appended by `0s`.
+The rest of the code is filled with `0s`.
 
 Implement a function `generate_codes(<seat_numbers>, <flight_id>)` that accepts a `list` of `seat_numbers` and a `string` with the flight number.
 The function should then return a `generator` that yields a `ticket_number`.

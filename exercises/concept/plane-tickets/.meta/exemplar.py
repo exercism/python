@@ -39,7 +39,7 @@ def generate_seats(number):
         There is no row 13, and each row has 4 seats.
 
         Seats should be sorted from low to high.
-        For exampl: 3C, 3D, 4A, 4B
+        For example: 3C, 3D, 4A, 4B
 
     """
 
@@ -71,6 +71,7 @@ def assign_seats(passengers):
     for passenger, seat_number in zip(passengers, generate_seats(number)):
         output[passenger] = seat_number
     return output
+
 
 def generate_codes(seat_numbers, flight_id):
     """Generate codes for a ticket.
