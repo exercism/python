@@ -2,15 +2,15 @@
 
 ## General
 
-- [`while`][while-loops] loops are used for _indefinite_ (uncounted) iteration
-- [`for`][for-loops] loops are used for _definite_, (counted) iteration.
+- [`while`][while-loops] loops are used for _indefinite_ (uncounted) iteration.
+- [`for`][for-loops] loops are used for _definite_ (counted) iteration.
 - The keywords [`break` and `continue`][control flow] help customize loop behavior.
-- [`range(<start>, stop, <step>)`][range] can be used to generate a sequence for a loop counter.
+- [`range(<start>, <stop>, <step>)`][range] can be used to generate a sequence for a loop counter.
 - The built-in [`enumerate()`][enumerate] will return (`<value>`, `<index>`) pairs to iterate over.
 
 Also being familiar with the following can help with completing the tasks:
 
-- [`lists`][list]: indexing, nested lists, [`<list>.append`][append and pop], [`<list>.pop()`][append and pop].
+- [`lists`][list]: indexing, nested lists, [`<list>.append()`][append and pop], [`<list>.pop()`][append and pop].
 - [`str`][str]: `str()` constructor, using the `+` to concatenate strings, optionally, [`f-strings`][f-strings].
 
 ## 1. Rounding Scores
@@ -22,7 +22,7 @@ Also being familiar with the following can help with completing the tasks:
 ## 2. Non-Passing Students
 
 - There's no need to declare `loop` counters or `index` counters when iterating through an object using a `for` loop.
-- A results counter does need to be set up and _incremented_ -- you'll want to `return` the count of non-passing students when the loop terminates. 
+- A results counter does need to be set up and _incremented_ — you'll want to `return` the count of non-passing students when the loop terminates.
 
 ## 3. The "Best"
 

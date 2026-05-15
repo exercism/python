@@ -5,7 +5,7 @@ def round_scores(student_scores):
     """Round all provided student scores.
 
     Parameters:
-        student_scores (list[float|int]): Student exam scores.
+        student_scores (list[float]): Student exam scores.
 
     Returns:
         list[int]: Student scores *rounded* to the nearest integer value.
@@ -42,7 +42,7 @@ def above_threshold(student_scores, threshold):
         threshold (int): The threshold to cross to be the "best" score.
 
     Returns:
-        list[int]:  Integer scores that are at or above the "best" threshold.
+        list[int]: Integer scores that are at or above the "best" threshold.
     """
 
     above = []
@@ -57,7 +57,7 @@ def letter_grades(highest):
     """Create a list of grade thresholds based on the provided highest grade.
 
     Parameters:
-        highest: int - value of the highest exam score.
+        highest (int): The value of the highest exam score.
 
     Returns:
         list[int]: Lower threshold scores for each D-A letter grade interval.
@@ -85,7 +85,7 @@ def student_ranking(student_scores, student_names):
         student_names (list[str]): Student names by exam score in descending order.
 
     Returns:
-        list[str]:  Strings in format ["<rank>. <student name>: <score>"].
+        list[str]: Strings in format ["<rank>. <student name>: <score>"].
     """
 
     results = []

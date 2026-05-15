@@ -31,7 +31,6 @@ The keywords `break`, `continue`, and `else` help customize loop behavior.
 The basic [`for`][for statement] `loop` in Python is better described as a _`for each`_ which cycles through the values of any [iterable object][iterable], terminating when there are no values returned from calling [`next()`][next built-in] (_raising a [`StopIteration`][stopiteration]_).
 
 ```python
-
 >>> word_list = ["bird", "chicken", "barrel", "bongo"]
 
 >>> for word in word_list:
@@ -95,7 +94,6 @@ Interestingly, `range()` [_is not an iterator_][range is not an iterator], and c
 If both values and indexes are needed, the built-in [`enumerate(<iterable>)`][enumerate] will return an [`iterator`][iterator] over (`index`, `value`) pairs:
 
 ```python
-
 >>> word_list = ["bird", "chicken", "barrel", "apple"]
 
 # *index* and *word* are the loop variables.
@@ -152,15 +150,15 @@ The `enumerate(<iterable>)` function can also be set to `start` the index count 
 The [`continue`][continue statement] keyword can be used to skip forward to the next iteration cycle:
 
 ```python
-word_list = ["bird", "chicken", "barrel", "bongo", "sliver", "apple", "bear"]
-
-# This will skip *bird*, at index 0
-for index, word in enumerate(word_list):
-    if index == 0:
-        continue
-    if word.startswith("b"):
-        print(f"{word.title()} (at index {index}) starts with a b.")
-
+>>> word_list = ["bird", "chicken", "barrel", "bongo", "sliver", "apple", "bear"]
+...
+... # This will skip *bird*, at index 0
+... for index, word in enumerate(word_list):
+...     if index == 0:
+...         continue
+...     if word.startswith("b"):
+...         print(f"{word.title()} (at index {index}) starts with a b.")
+...
 'Barrel (at index 2) starts with a b.'
 'Bongo (at index 3) starts with a b.'
 'Bear (at index 6) starts with a b.'
@@ -176,9 +174,9 @@ The [`break`][break statement] (_like in many C-related languages_) keyword can 
 ...    if word.startswith("b"):
 ...        print(f"{word.title()} (at index {index}) starts with a B.")
 ...    elif word == "sliver":
-...       break
+...        break
 ...    else:
-...       print(f"{word.title()} doesn't start with a B.")
+...        print(f"{word.title()} doesn't start with a B.")
 ... print("loop broken.")
 ...
 'Bird (at index 0) starts with a B.'
@@ -202,11 +200,11 @@ The loop [`else` clause][loop else] is unique to Python and can be used for "wra
 ...    word = word.title()
 ...    if word.startswith("B"):
 ...        print(f"{word} (at index {index}) starts with a B.")
-
-...# This executes once *StopIteration* is raised and 
-...# there are no more items to iterate through.
-...# Note the indentation, which lines up with the for keyword.
-...else:
+...
+... # This executes once *StopIteration* is raised and 
+... # There are no more items to iterate through.
+... # Note the indentation, which lines up with the for keyword.
+... else:
 ...    print(f"Found the above b-words, out of {len(word_list)} words in the word list.")
 ...
 'Bird (at index 0) starts with a B.'
@@ -227,7 +225,7 @@ The loop [`else` clause][loop else] is unique to Python and can be used for "wra
 
 ... # This statement does not run, because a *break* was triggered.
 ... else:
-...   print(f"Found the above b-words, out of {len(word_list)} words in the word list.")
+...    print(f"Found the above b-words, out of {len(word_list)} words in the word list.")
 ...
 'Bird (at index 0) starts with a B.'
 'Barrel (at index 2) starts with a B.'
