@@ -4,9 +4,9 @@ A dictionary (`dict`) in Python is a data structure that associates [hashable][t
 Dictionaries are Python's only built-in [mapping type][mapping-types-dict].
 
 
-`Keys` must be hashable and unique across the dictionary.
-Key types can include `numbers`, `str`, or `tuples` (of _immutable_ values).
-They cannot contain _mutable_ data structures such as `lists`, `dict`s, or `set`s.
+`keys` must be hashable and unique across the dictionary.
+Key types can include `number`s, `str`s, or `tuple`s (of _immutable_ values).
+They cannot contain _mutable_ data structures such as `list`s, `dict`s, or `set`s.
 As of Python 3.7, `dict` key order is guaranteed to be the order in which entries are inserted.
 
 `values` can be of any data type or structure.
