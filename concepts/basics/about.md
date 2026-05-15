@@ -55,8 +55,8 @@ For example, `my_first_variable` can be re-assigned many times using `=`, and ca
 
 
 ```python
->>> my_first_variable = 1  # <--my_first_variable bound to an integer object of value one.
->>> my_first_variable = 2  # <--my_first_variable re-assigned to integer value 2.
+>>> my_first_variable = 1  # my_first_variable bound to an integer object of value one.
+>>> my_first_variable = 2  # my_first_variable re-assigned to integer value 2.
 
 >>> print(type(my_first_variable))
 <class 'int'>
