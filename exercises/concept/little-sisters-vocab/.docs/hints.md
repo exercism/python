@@ -19,12 +19,11 @@ There's four activities in the assignment, each with a set of text or words to w
 - Remember that delimiter strings go between elements and "glue" them together into a single string. Delimiters are inserted _without_ space, although you can include space characters within them.
 - Like [`str.split()`][str-split], `str.join()` can process an arbitrary-length string, made up of any unicode code points. _Unlike_ `str.split()`, it can also process arbitrary-length iterables like `list`, `tuple`, and `set`.
 
-
 ## 3. Remove a suffix from a word
 
 - Strings can be indexed or sliced from either the left (starting at 0) or the right (starting at -1).
-- If you want the last code point of an arbitrary-length string, you can use [-1].
-- The last three letters in a string can be "sliced off" using a negative index. e.g. 'beautiful'[:-3] == 'beauti'
+- If you want the last code point of an arbitrary-length string, you can use `[-1]`.
+- The last three letters in a string can be "sliced off" using a negative index. e.g. `beautiful'[:-3] == 'beauti`
 
 ## 4. Extract and transform a word
 
