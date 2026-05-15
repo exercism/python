@@ -57,8 +57,7 @@ To include both keys and values in a tuple made from a dictionary, use `<dict>.i
 which will return an iterator of (`key`, `value`) `tuples`.
 
 ```python
-source_data = {"fish": "gold", 
-               "monkey": "brown"}
+>>> source_data = {"fish": "gold", "monkey": "brown"}
 
 >>> multiple_elements_dict_1 = tuple(source_data)
 ('fish', 'monkey')
@@ -179,11 +178,11 @@ Using a mutable data type within a `tuple` will make the enclosing `tuple` **un-
 
 ```python
 >>> cmyk_color_map = {
-                      (.69, .3, .48, .1) : ("Teal 700", (59, 178, 146), 0x3BB292),
-                      (0, .5, 1, 0) : ("Pantone 151", (247, 127, 1), 0xF77F01),
-                      (.37, .89, 0, .44) : ("Pantone 267", (89, 16, 142), 0x59108E),
-                      (0, 1, .46, .45) : ("Pantone 228", (140, 0, 76), 0x8C004C)
-                     }
+        (.69, .3, .48, .1) : ("Teal 700", (59, 178, 146), 0x3BB292),
+        (0, .5, 1, 0) : ("Pantone 151", (247, 127, 1), 0xF77F01),
+        (.37, .89, 0, .44) : ("Pantone 267", (89, 16, 142), 0x59108E),
+        (0, 1, .46, .45) : ("Pantone 228", (140, 0, 76), 0x8C004C)
+    }
 
 >>> unique_rgb_colors = {
         (59, 178, 146),
