@@ -142,3 +142,24 @@ class GhostGobbleGameTest(unittest.TestCase):
 
         self.assertIs(actual_result, False, msg=error_message)
 
+    @pytest.mark.task(taskno=4)
+    def test_win_if_all_dots_eaten_with_power_pellet_and_not_touching_ghost(self):
+        actual_result = win(True, True, False)
+        error_message = ('Called win(True, True, False).'
+                         f'The function returned {actual_result}, but the '
+                         f'tests expected that the player wins, '
+                         f'because all dots were eaten and they were not '
+                         f'touching a ghost.')
+
+        self.assertIs(actual_result, True, msg=error_message)
+
+    @pytest.mark.task(taskno=4)
+    def test_dont_win_if_not_all_dots_eaten_and_not_touching_ghost(self):
+        actual_result = win(False, False, False)
+        error_message = ('Called win(False, False, False).'
+                         f'The function returned {actual_result}, but the '
+                         f'tests expected that the player **does not** win, '
+                         f'because the player did not eat all of the dots.')
+
+        self.assertIs(actual_result, False, msg=error_message)
+
