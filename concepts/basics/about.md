@@ -64,16 +64,16 @@ For example, `my_first_variable` can be re-assigned many times using `=`, and ca
 >>> print(my_first_variable)
 2
 
->>> my_first_variable = "Now, I'm a string." # You may re-bind a name to a different object type and value.
+>>> my_first_variable = "Now, I'm a string." # <--You may re-bind a name to a different object type and value.
 >>> print(type(my_first_variable))
 <class 'str'>
 
->>> my_first_variable = 'You can call me "str".' # Strings can be declared using single or double quote marks.
+>>> my_first_variable = 'You can call me "str".' # <--Strings can be declared using single or double quote marks.
 >>> print(my_first_variable)
 You can call me "str".
 
-import collections
->>> my_first_variable = collections.Counter([1,1,2,3,3,3,4,5,6,7]) # Now my_first_variable has been re-bound to a Counter object.
+>>> import collections
+>>> my_first_variable = collections.Counter([1,1,2,3,3,3,4,5,6,7]) # <--Now my_first_variable has been re-bound to a Counter object.
 >>> print(type(my_first_variable))
 <class 'collections.Counter'>
 
@@ -102,7 +102,7 @@ MY_FIRST_CONSTANT = "Some other value"
 
 ## Functions
 
-In Python, units of functionality are encapsulated in [_functions._][functions], which are themselves [objects][objects] (_it's [turtles all the way down][turtles all the way down]_).
+In Python, units of functionality are encapsulated in [_functions_][functions], which are themselves [objects][objects] (_it's [turtles all the way down][turtles all the way down]_).
 
 Functions can be executed by themselves, passed as arguments to other functions, nested, or bound to a class.
 When functions are bound to a [class][classes] name, they're referred to as [methods][method objects].
@@ -114,7 +114,7 @@ Statements for the _body_ of the function begin on the line following `def` and 
 
 
 ```python
-# The body of a function is indented by 2 spaces, & prints the sum of the numbers.
+# The body of a function is indented by 2 spaces & prints the sum of the numbers.
 def add_two_numbers(number_one, number_two):
   total = number_one + number_two
   print(total)  
@@ -126,7 +126,7 @@ def add_two_numbers(number_one, number_two):
 # Inconsistent indentation in your code blocks will raise an error.
 >>> def add_three_numbers_misformatted(number_one, number_two, number_three):
 ...     result = number_one + number_two + number_three   # This was indented by 4 spaces.
-...    print(result)     #this was only indented by 3 spaces
+...    print(result)     # <--This was only indented by 3 spaces.
 ...
 ...
   File "<stdin>", line 3
@@ -157,7 +157,7 @@ def add_two_numbers(number_one, number_two):
 ```
 
 Functions that do not have an _explicit_ expression following a `return` will _implicitly_ return the [`None`][none] object.
-The details of `None` will be covered in a later exercise.
+The details of `None` will be covered in a later concept.
 For the purposes of this exercise and explanation, `None` is a placeholder that represents nothing, or null:
 
 
@@ -208,7 +208,7 @@ Dot (`.`) notation is used for calling functions defined inside a class or modul
 
 ```python
 >>> def raise_to_power(number, power):
-        return number ** power
+...     return number ** power
 ...
 
 >>> raise_to_power(3,3) # Invoking the function with the arguments 3 and 3.
@@ -225,12 +225,12 @@ TypeError: raise_to_power() missing 1 required positional argument: 'power'
 
 # Calling methods or functions in classes and modules.
 >>> start_text = "my silly sentence for examples."
->>> str.upper(start_text)  # Calling the upper() method from the built-in str class on start_text.
+>>> str.upper(start_text)  # <--Calling the upper() method from the built-in str class on start_text.
 'MY SILLY SENTENCE FOR EXAMPLES.'
 
 # Because a string is an instance of the str class, methods can also be called on them "directly".
 >>> start_text = "my silly sentence for examples."
->>> start_text.upper()  # Calling the upper() method on start_text directly.
+>>> start_text.upper()  # <--Calling the upper() method on start_text directly.
 'MY SILLY SENTENCE FOR EXAMPLES.'
 
 # Alternatively, we can skip the variable assignment (although this gets messy quick).
@@ -239,9 +239,8 @@ TypeError: raise_to_power() missing 1 required positional argument: 'power'
 
 
 # Importing the math module
-import math
-
->>> math.pow(2,4)  # Calling the pow() function from the math module
+>>> import math
+>>> math.pow(2,4)  # <--Calling the pow() function from the math module.
 16.0
 ```
 
@@ -273,14 +272,18 @@ Docstrings are declared using triple double quotes (""") indented at the same le
 
 
 ```python
+# An example from PEP257 of a multi-line docstring
+# reformatted to use Google style non-type hinted docstrings.
+# Some additional details can be found in the Sphinx documentation:
+# https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html#getting-started
 
-# An example from PEP257 of a multi-line docstring.
 def complex(real=0.0, imag=0.0):
     """Form a complex number.
 
-    Keyword arguments:
-    real -- the real part (default 0.0)
-    imag -- the imaginary part (default 0.0)
+    Keyword Arguments:
+        real (float): The real part of the number (default 0.0)
+        imag (float): The imaginary part of the number (default 0.0)
+        
     """
 
     if imag == 0.0 and real == 0.0:
@@ -297,31 +300,38 @@ Testing and `doctest` will be covered in a later concept.
 
 
 ```python
-# An example on a user-defined function.
+# An example on a user-defined function using a Google style docstring. 
 >>> def raise_to_power(number, power):
-        """Raise a number to an arbitrary power.
+    """Raise a number to an arbitrary power.
 
-        :param number: int the base number.
-        :param power: int the power to raise the base number to.
-        :return: int - number raised to the specified power.
+    Parameters:
+        number (int): The base number.
+        power (int): The power to raise the base number to.
+    
+    Returns:
+        int: The number raised to the specified power.
+    
+    Takes a number and raises it to the specified power, returning the result.
 
-        Takes a number and raises it to the specified power, returning the result.
-        """
+    """
 
-        return number ** power
+    return number ** power
 ...
 
 # Calling the .__doc__ attribute of the function and printing the result.
 >>> print(raise_to_power.__doc__)
 Raise a number to an arbitrary power.
 
-    :param number: int the base number.
-    :param power: int the power to raise the base number to.
-    :return: int - number raised to the specified power.
+Parameters:
+    number (int): The base number.
+    power (int): The power to raise the base number to.
 
-    Takes a number and raises it to the specified power, returning the result.
+Returns:
+    int: The number raised to the specified power.
 
+Takes a number and raises it to the specified power, returning the result.
 
+...
 
 # Printing the __doc__ attribute of the built-in type: str.
 >>> print(str.__doc__)
@@ -333,9 +343,10 @@ errors is specified, then the object must expose a data buffer
 that will be decoded using the given encoding and error handler.
 Otherwise, returns the result of object.__str__() (if defined)
 or repr(object).
-encoding defaults to sys.getdefaultencoding().
+encoding defaults to 'utf-8'.
 errors defaults to 'strict'.
 ```
+
 
 [PEP257]: https://www.python.org/dev/peps/pep-0257/
 [calls]: https://docs.python.org/3/reference/expressions.html#calls

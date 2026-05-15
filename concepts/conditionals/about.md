@@ -56,20 +56,20 @@ else:
 
 [Boolean operations][boolean operations] and [comparisons][comparisons] can be combined with conditionals for more complex testing:
 
+
 ```python
-
 >>> def classic_fizzbuzz(number):
-        if number % 3 == 0 and number % 5 == 0:
-            say = 'FizzBuzz!'
-        elif number % 5 == 0:
-            say = 'Buzz!'
-        elif number % 3 == 0:
-            say = 'Fizz!'
-        else:
-            say = str(number)
+...     if number % 3 == 0 and number % 5 == 0:
+...         say = 'FizzBuzz!'
+...     elif number % 5 == 0:
+...         say = 'Buzz!'
+...     elif number % 3 == 0:
+...         say = 'Fizz!'
+...     else:
+...         say = str(number)
+...
+...     return say
         
-        return say
-
 >>> classic_fizzbuzz(15)
 'FizzBuzz!'
 
@@ -83,14 +83,14 @@ However, re-writing in this way might obscure that the conditions are intended t
 
 ```python
 >>> def classic_fizzbuzz(number):
-        if number % 3 == 0 and number % 5 == 0:
-            return 'FizzBuzz!'
-        if number % 5 == 0:
-            return 'Buzz!'
-        if number % 3 == 0:
-            return 'Fizz!'
-        
-        return str(number)
+...     if number % 3 == 0 and number % 5 == 0:
+...         return 'FizzBuzz!'
+...     if number % 5 == 0:
+...         return 'Buzz!'
+...     if number % 3 == 0:
+...         return 'Fizz!'
+...
+...     return str(number)
 
 >>> classic_fizzbuzz(15)
 'FizzBuzz!'
@@ -102,19 +102,20 @@ However, re-writing in this way might obscure that the conditions are intended t
 
 Conditionals can also be nested.
 
+
 ```python
 >>> def driving_status(driver_age, test_score):
-        if test_score >= 80: 
-            if 18 > driver_age >= 16:
-                status = "Student driver, needs supervision."
-            elif driver_age == 18:
-                status = "Permitted driver, on probation."
-            elif driver_age > 18:
-                status = "Fully licensed driver."
-        else:
-             status = "Unlicensed!"
-        
-        return status
+...     if test_score >= 80:
+...         if 18 > driver_age >= 16:
+...             status = "Student driver, needs supervision."
+...         elif driver_age == 18:
+...             status = "Permitted driver, on probation."
+...         elif driver_age > 18:
+...             status = "Fully licensed driver."
+...     else:
+...         status = "Unlicensed!"
+...
+...     return status
 
 
 >>> driving_status(63, 78)
@@ -130,13 +131,13 @@ Conditionals can also be nested.
 ## Conditional expressions or "ternary operators"
 
 While Python has no specific `?` ternary operator, it is possible to write single-line `conditional expressions`.
-These take the form of `<value if True>` if `<conditional test>` else `<value if False>`.
+These take the form of `<value if True> if <conditional test> else <value if False>`.
 Since these expressions can become hard to read, it's recommended to use this single-line form only if it shortens code and helps readability.
 
 
 ```python
-def just_the_buzz(number):
-    return 'Buzz!' if number % 5 == 0 else str(number)
+>>> def just_the_buzz(number):
+...     return 'Buzz!' if number % 5 == 0 else str(number)
     
 >>> just_the_buzz(15)
 'Buzz!'
@@ -152,29 +153,29 @@ Objects that are evaluated in this fashion are considered "truthy" or "falsy", a
 
 ```python
 >>> def truthy_test(thing):
-        if thing:
-            print('This is Truthy.')
-        else:
-            print("Nope. It's Falsey.")
+...     if thing:
+...         print('This is Truthy.')
+...     else:
+...         print("Nope. It's Falsy.")
 
 
-# Empty container objects are considered Falsey.
+# Empty container objects are considered Falsy.
 >>> truthy_test([])
-Nope. It's Falsey.
+"Nope. It's Falsy."
 
 >>> truthy_test(['bear', 'pig', 'giraffe'])
-This is Truthy.
+'This is Truthy.'
 
-# Empty strings are considered Falsey.
+# Empty strings are considered Falsy.
 >>> truthy_test('')
-Nope. It's Falsey.
+"Nope. It's Falsy."
 
 >>> truthy_test('yes')
-This is Truthy.
+'This is Truthy.'
 
-# 0 is also considered Falsey.
+# 0 is also considered Falsy.
 >>> truthy_test(0)
-Nope. It's Falsey.
+"Nope. It's Falsy."
 ```
 
 [boolean operations]: https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not

@@ -58,16 +58,15 @@ else:
 
 ```python
 >>> def classic_fizzbuzz(number):
-        if number % 3 == 0 and number % 5 == 0:
-            say = 'FizzBuzz!'
-        elif number % 5 == 0:
-            say = 'Buzz!'
-        elif number % 3 == 0:
-            say = 'Fizz!'
-        else:
-            say = str(number)
-        
-        return say
+...     if number % 3 == 0 and number % 5 == 0:
+...         say = 'FizzBuzz!'
+...     elif number % 5 == 0:
+...         say = 'Buzz!'
+...     elif number % 3 == 0:
+...         say = 'Fizz!'
+...     else:
+...         say = str(number)
+...     return say
 
 >>> classic_fizzbuzz(15)
 'FizzBuzz!'
@@ -75,6 +74,7 @@ else:
 >>> classic_fizzbuzz(13)
 '13'
 ```
+
 
 [boolean operations]: https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not
 [comparisons]: https://docs.python.org/3/library/stdtypes.html#comparisons

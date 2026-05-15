@@ -141,8 +141,7 @@ Functions that omit `return` will also  _implicitly_ return the [`None`][none] o
 This means that if you do not use `return` in a function, Python will return the `None` object for you.
 
 ```python
-
-# This function omits a return keyword altogether
+# This function omits a return keyword altogether.
 def add_two_numbers(number_one, number_two):
   result = number_one + number_two
 
@@ -165,10 +164,10 @@ Dot (`.`) notation is used for calling functions defined inside a class or modul
 
 ```python
 >>> def raise_to_power(number, power):
-        return number ** power
+...     return number ** power
 ...
 
->>> raise_to_power(3,3) # Invoking the function with the arguments 3 and 3.
+>>> raise_to_power(3,3) # <--Invoking the function with the arguments 3 and 3.
 27
 
 
@@ -182,14 +181,14 @@ TypeError: raise_to_power() missing 1 required positional argument: 'power'
 
 # Calling methods or functions in classes and modules.
 >>> start_text = "my silly sentence for examples."
->>> str.upper(start_text)  # Calling the upper() method from the built-in str class on start_text.
+>>> str.upper(start_text)  # <--Calling the upper() method from the built-in str class on start_text.
 'MY SILLY SENTENCE FOR EXAMPLES.'
 
 
 # Importing the math module
-import math
+>>> import math
 
->>> math.pow(2,4)  # Calling the pow() function from the math module
+>>> math.pow(2,4)  # <--Calling the pow() function from the math module.
 16.0
 ```
 
@@ -237,8 +236,7 @@ Docstrings can also function as [lightweight unit tests][doctests], which will b
 
 
 ```python
-# An example on a user-defined function.
-# This uses Google style docstrings.
+# An example on a user-defined function using a Google style docstring. 
 >>> def raise_to_power(number, power):
     """Raise a number to an arbitrary power.
 
@@ -269,6 +267,7 @@ Returns:
 
 Takes a number and raises it to the specified power, returning the result.
 ```
+
 
 [calls]: https://docs.python.org/3/reference/expressions.html#calls
 [comments]: https://realpython.com/python-comments-guide/#python-commenting-basics
