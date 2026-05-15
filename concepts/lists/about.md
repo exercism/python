@@ -57,7 +57,7 @@ For readability, line breaks can be used when there are many elements or nested 
 ...    "Fuchsia",
 ...    "Cyclamen",
 ...    "Lavender"
-...    ]
+... ]
 
 >>> lots_of_entries
 ['Rose', 'Sunflower', 'Poppy', 'Pansy', 'Tulip', 'Fuchsia', 'Cyclamen', 'Lavender']
@@ -68,7 +68,7 @@ For readability, line breaks can be used when there are many elements or nested 
 ...    {"fish": "gold", "monkey": "brown", "parrot": "grey"},
 ...    ("fish", "mammal", "bird"),
 ...    ['water', 'jungle', 'sky']
-...    ]
+... ]
 
 >>> nested_data_structures
 [{'fish': 'gold', 'monkey': 'brown', 'parrot': 'grey'}, ('fish', 'mammal', 'bird'), ['water', 'jungle', 'sky']]
