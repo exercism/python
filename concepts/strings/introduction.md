@@ -5,7 +5,7 @@ These could include letters, diacritical marks, positioning characters, numbers,
 
 Strings implement all [common sequence operations][common sequence operations], and can be iterated through using `for item in <string>` or `for index, item in enumerate(<string>)` syntax.
 
-Strings can be concatenated with `<str> + <other str>`, or `<str>.join(<iterable>)` and split via `<str>.split(<separator>)`.
+Strings can be concatenated with `<str> + <other str>` or `<str>.join(<iterable>)` and split via `<str>.split(<separator>)`.
 They also offer multiple additional formatting, assembly, and templating options.
 
 Being immutable, a `str` object's value in memory doesn't change; methods that appear to modify a string return a new copy or instance of `str`.
