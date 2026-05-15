@@ -22,10 +22,10 @@ Each of the operators has a different precedence, where `not` is evaluated befor
  Brackets can be used to evaluate one part of the expression before the others:
 
 ```python
->>>not True and True
+>>> not True and True
 False
 
->>>not (True and False)
+>>> not (True and False)
 True
 ```
 
@@ -45,25 +45,25 @@ A few `built-ins` are always considered `False` by definition:
 
 
 ```python
->>>bool(None)
+>>> bool(None)
 False
 
->>>bool(1)
+>>> bool(1)
 True
 
->>>bool(0)
+>>> bool(0)
 False
 
->>>bool([1,2,3])
+>>> bool([1,2,3])
 True
 
->>>bool([])
+>>> bool([])
 False
 
->>>bool({"Pig" : 1, "Cow": 3})
+>>> bool({"Pig" : 1, "Cow": 3})
 True
 
->>>bool({})
+>>> bool({})
 False
 ```
 
@@ -95,10 +95,10 @@ The `bool` type is implemented as a _sub-type_ of _int_.
 
 
 ```python
->>>1 == True
+>>> 1 == True
 True
 
->>>0 == False
+>>> 0 == False
 True
 ```
 
@@ -106,14 +106,14 @@ However, `bools` are **still different** from `ints`, as noted when comparing th
 
 
 ```python
->>>1 is True
+>>> 1 is True
 False
 
->>>0 is False
+>>> 0 is False
 False
 ```
 
-> Note: in python >= 3.8, using a literal (such as 1, '', [], or {}) on the _left side_ of `is` will raise a warning.
+> Note: in python >= 3.8, using a literal (such as `1`, `''`, `[]`, or `{}`) on the _left side_ of `is` will raise a warning.
 
 
 It is considered a [Python anti-pattern][comparing to true in the wrong way] to use the equality operator to compare a boolean variable to `True` or `False`.
