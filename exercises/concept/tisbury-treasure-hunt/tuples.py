@@ -31,7 +31,7 @@ def compare_records(azara_record, rui_record):
     """Compare two record types and determine if their coordinates match.
 
     Parameters:
-        azara_record (tuple):  A (treasure, coordinate) pair.
+        azara_record (tuple): A (treasure, coordinate) pair.
         rui_record (tuple): A (location, tuple(coordinate_1, coordinate_2), quadrant) trio.
 
     Returns:

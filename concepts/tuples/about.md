@@ -81,7 +81,7 @@ Because the `tuple()` constructor only takes _iterables_ (or nothing) as argumen
 ```
 
 Note that generally parentheses are **not** required to create a `tuple` literal - only commas.
-However, using `(<element)1>, <element_2>)` is considered more readable in most circumstances.
+However, using `(<element_1>, <element_2>)` is considered more readable in most circumstances.
 Parentheses are also required in cases of ambiguity, such as an empty or one-item tuple or where a function takes a tuple as an argument.
 
 ```python
@@ -102,7 +102,7 @@ Other data structures can be included as `tuple` elements, including other `tupl
 (["fish", "gold", "monkey", "brown", "parrot", "grey"], ("fish", "mammal", "bird"))
 ```
 
-Tuples can be concatenated using plus `+` operator, which unpacks each `tuple` creating a new, combined `tuple`.
+Tuples can be concatenated using plus `+` operator, which unpacks each `tuple`, creating a new, combined `tuple`.
 
 ```python
 >>> new_via_concatenate = ("George", 5) + ("cat", "Tabby")
@@ -122,8 +122,7 @@ Indexes can be from **`left`** --> **`right`** (_starting at zero_) or **`right`
 Tuples can also be copied in whole or in part via _slice notation_ or using `<tuple>.copy()`.
 
 ```python
-
->>> student_info = ("Alyssa", "grade 3", "female", 8 )
+>>> student_info = ("Alyssa", "grade 3", "female", 8)
 
 #name is at index 0 or index -4
 >>> student_name = student_info[0]
@@ -146,10 +145,9 @@ Elements inside tuples can be _iterated over_ in a loop using `for item in <tupl
 If both indexes and values are needed, `for index, item in enumerate(<tuple>)` can be used.
 
 ```python
->>> student_info = ("Alyssa", "grade 3", "female", 8 )
+>>> student_info = ("Alyssa", "grade 3", "female", 8)
 >>> for item in student_info:
 ...   print(item)
-
 ...
 Alyssa
 grade 3
@@ -157,8 +155,7 @@ female
 8
 
 >>> for index, item in enumerate(student_info):
-...  print("Index is: " + str(index) + ", value is: " + str(item) +".")
-
+...  print("Index is: " + str(index) + ", value is: " + str(item) + ".")
 ...
 Index is: 0, value is: Alyssa.
 Index is: 1, value is: grade 3.
@@ -172,9 +169,7 @@ Index is: 3, value is: 8.
 Tuples are often used as _records_ containing data that is _organizationally_ or _conceptually_ homogeneous and treated as a single unit of information -- even if individual elements are of  _heterogeneous_ data types.
 
 ```python
-
->>> student_info = ("Alyssa", "grade 3", "female", 8 )
-
+>>> student_info = ("Alyssa", "grade 3", "female", 8)
 ```
 
 Tuples are also used when homogeneous immutable sequences of data are needed for [`hashability`][hashability], storage in a `set`, or creation of keys in a dictionary.
@@ -183,7 +178,6 @@ Note that while `tuples` are in most cases _immutable_, because they can contain
 Using a mutable data type within a `tuple` will make the enclosing `tuple` **un-hashable**.
 
 ```python
-
 >>> cmyk_color_map = {
                       (.69, .3, .48, .1) : ("Teal 700", (59, 178, 146), 0x3BB292),
                       (0, .5, 1, 0) : ("Pantone 151", (247, 127, 1), 0xF77F01),
@@ -191,13 +185,13 @@ Using a mutable data type within a `tuple` will make the enclosing `tuple` **un-
                       (0, 1, .46, .45) : ("Pantone 228", (140, 0, 76), 0x8C004C)
                      }
 
->>>> unique_rgb_colors = {
-                          (59, 178, 146),
-                          (247, 127, 1),
-                          (89, 16, 142),
-                          (140, 0, 76),
-                          (76, 0, 140)
-                         }
+>>> unique_rgb_colors = {
+        (59, 178, 146),
+        (247, 127, 1),
+        (89, 16, 142),
+        (140, 0, 76),
+        (76, 0, 140)
+     }
 
 >>> teal_700 = hash((59, 178, 146))
 
@@ -205,7 +199,6 @@ Using a mutable data type within a `tuple` will make the enclosing `tuple` **un-
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: unhashable type: 'list'
-
 ```
 
 ## Extended tuples and related data types
