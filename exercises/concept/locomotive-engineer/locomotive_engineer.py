@@ -5,7 +5,7 @@ def get_list_of_wagons():
     """Return a list of wagons, given an arbitrary amount of wagon numbers.
 
     Parameters:
-       An arbitrary number of wagon numbers, unpacked.
+        An arbitrary number of wagon numbers, unpacked.
 
     Returns:
         list: A list of wagon numbers.
@@ -18,7 +18,7 @@ def fix_list_of_wagons(each_wagons_id, missing_wagons):
 
     Parameters:
         each_wagons_id (list[int]): The list of wagons.
-        missing_wagons (list[int]) The list of missing wagons.
+        missing_wagons (list[int]): The list of missing wagons.
 
     Returns:
         list[int]: The corrected list of wagons.
@@ -31,7 +31,7 @@ def add_missing_stops(route):
 
     Parameters:
         route (dict): The dict of routing information.
-        (dict): arbitrary number of stops.
+        (dict): An arbitrary number of stops.
 
     Returns:
         dict: The updated route dictionary.
@@ -56,9 +56,9 @@ def fix_wagon_depot(wagons_rows):
     """Fix the list of rows of wagons.
 
     Parameters:
-        wagons_rows (list[tuple]) The list of rows of wagons.
+        wagons_rows (list[list[tuple]]): The list of rows of wagons.
 
     Returns:
-        list[tuple]: the list of rows of wagons.
+        list[list[tuple]]: the list of rows of wagons.
     """
     pass
