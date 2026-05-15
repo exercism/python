@@ -49,14 +49,14 @@ For readability, line breaks can be used when there are many elements or nested 
 
 ```python
 >>> lots_of_entries = [
-...       "Rose",
-...       "Sunflower",
-...       "Poppy",
-...       "Pansy",
-...       "Tulip",
-...       "Fuchsia",
-...       "Cyclamen",
-...       "Lavender"
+...    "Rose",
+...    "Sunflower",
+...    "Poppy",
+...    "Pansy",
+...    "Tulip",
+...    "Fuchsia",
+...    "Cyclamen",
+...    "Lavender"
 ...    ]
 
 >>> lots_of_entries
@@ -65,9 +65,9 @@ For readability, line breaks can be used when there are many elements or nested 
 
 # Each data structure is on its own line to help clarify what they are.
 >>> nested_data_structures = [
-...       {"fish": "gold", "monkey": "brown", "parrot": "grey"},
-...       ("fish", "mammal", "bird"),
-...       ['water', 'jungle', 'sky']
+...    {"fish": "gold", "monkey": "brown", "parrot": "grey"},
+...    ("fish", "mammal", "bird"),
+...    ['water', 'jungle', 'sky']
 ...    ]
 
 >>> nested_data_structures
