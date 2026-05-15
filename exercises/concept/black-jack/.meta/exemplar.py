@@ -12,7 +12,7 @@ def value_of_card(card):
         card (str): The given card.
 
     Returns:
-        int:  The value of a given card.  See below for values.
+        int: The value of a given card.  See below for values.
 
         1.  'J', 'Q', or 'K' (otherwise known as "face cards") = 10
         2.  'A' (ace card) = 1
@@ -43,7 +43,7 @@ def higher_card(card_one, card_two):
         3.  '2' - '10' = numerical value.
 
     Returns:
-        str or tuple: The resulting Tuple contains both cards if they are of equal value.
+        str or tuple: The resulting tuple contains both cards if they are of equal value.
     """
 
     card_one_value = value_of_card(card_one)

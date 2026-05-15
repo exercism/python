@@ -13,7 +13,7 @@ The table below shows the most common Python comparison operators:
 | `<=`     | "less than or equal to"    | `a <= b` is `True` if `a < b` or `a == b` in value                        |
 | `!=`     | "not equal to"             | `a != b` is `True` if `a == b` is `False`                                 |
 | `is`     | "identity"                 | `a is b` is `True` if **_and only if_** `a` and `b` are the same _object_ |
-| `is not` | "negated identity"         | `a is not b` is `True` if `a` and `b` are **not** the same _object_       |
+| `is not` | "negated identity"         | `a is not b` is `True` if  **_and only if_** `a` and `b` are **not** the same _object_       |
 | `in`     | "containment test"         | `a in b` is `True` if `a` is member, subset, or element of `b`            |
 | `not in` | "negated containment test" | `a not in b` is `True` if `a` is not a member, subset, or element of `b`  |
 
