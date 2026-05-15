@@ -48,7 +48,7 @@ A few `built-ins` are always considered `False` by definition:
 >>> bool(None)
 False
 
->> >bool(1)
+>>> bool(1)
 True
 
 >>> bool(0)
