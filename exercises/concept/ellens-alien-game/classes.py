@@ -6,9 +6,9 @@ class Alien:
 
     Attributes:
         (class) total_aliens_created (int): Total number of Alien instances.
-        x_coordinate (int):  Position on the x-axis.
+        x_coordinate (int): Position on the x-axis.
         y_coordinate (int): Position on the y-axis.
-        health (int):  Number of health points.
+        health (int): Number of health points.
 
     Methods:
         hit(): Decrement Alien health by one point.
@@ -21,5 +21,5 @@ class Alien:
     pass
 
 
-#TODO (Student):  Create the new_aliens_collection() function below to call your Alien class with a list of coordinates
+#TODO (Student): Create the new_aliens_collection() function below to call your Alien class with a list of coordinates
 

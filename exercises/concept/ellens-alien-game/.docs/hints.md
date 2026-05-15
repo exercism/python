@@ -20,7 +20,7 @@
 ## 4. The `teleport` Method
 
 - Remember that `object methods` are always passed `self` as the first parameter.
-- Instance attributes can be updated from a method by using `self.<attribute>` = `<new attribute value>`.
+- Instance attributes can be updated from a method by using `self.<attribute> = <new attribute value>`.
 
 ## 5. The `collision_detection` Method
 
@@ -39,4 +39,4 @@
 - A `tuple` would be a _single_ parameter.
 - The Alien constructor takes _2 parameters_.
 - Unpacking what is _inside_ the tuple would yield two parameters.
-- The standalone function is outside of the `class`
+- The standalone function is outside of the `class`.
