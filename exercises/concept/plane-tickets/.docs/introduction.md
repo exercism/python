@@ -1,7 +1,7 @@
 # Generators
 
-A `generator` is a function or expression that returns a special type of [iterator][iterator] called [generator iterator][generator-iterator].
-`Generator-iterators` are [lazy][lazy iterator]: they do not store their `values` in memory, but _generate_ their values when needed.
+A `generator` is a function or expression that returns a special type of [iterator][iterator] called a [`generator iterator`][generator-iterator].
+`Generator-iterator`s are [lazy][lazy iterator]: they do not store their `values` in memory, but _generate_ their values when needed.
 
 A generator function looks like any other function, but contains one or more [yield expressions][yield expression].
 Each `yield` will suspend code execution, saving the current execution state (_including all local variables and try-statements_).

@@ -38,7 +38,7 @@ This saves memory and processing power, since only the value you are _currently 
 
 ## Using a generator
 
-Generators (_technically [`generator-iterators`][generator-iterator] — see the note below._) are a type of `iterator` and can be used anywhere in Python where an `iterator` or `iterable` is expected.
+Generators (_technically [`generator-iterator`s][generator-iterator] — see the note below._) are a type of `iterator` and can be used anywhere in Python where an `iterator` or `iterable` is expected.
 This includes _functions_ or _objects_ that require an `iterable`/`iterator` as an argument.
 For a deeper dive, see [How to Make an Iterator in Python][how-to-iterator].
 
