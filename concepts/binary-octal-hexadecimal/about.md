@@ -18,7 +18,7 @@ A snippet from the base 2 system looks like this, although it continues infinite
 | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
 | 2 \*\* 7 | 2 \*\* 6 | 2 \*\* 5 | 2 \*\* 4 | 2 \*\* 3 | 2 \*\* 2 | 2 \*\* 1 | 2 \*\* 0 |
 
-So if we want to represent the number 6, it would in binary be: 110
+So if we want to represent the number 6 in binary, it would be 110.
 
 | Place value   | 4   | 2   | 1   |
 | ------------- | --- | --- | --- |
@@ -41,7 +41,6 @@ In Python, we can represent binary literals using the `0b` prefix.
 If we write `0b10011`, Python will interpret it as a binary number and convert it to base 10.
 
 ```python
-# 0b10011
 >>> 0b10011
 19
 
@@ -86,6 +85,8 @@ However, the usual mathematical operator rules apply:  dividing two binary numbe
 
 >>> 0b10011/3
 6.333333333333333
+```
+
 
 ### Converting to and from Binary Representation
 
@@ -133,6 +134,9 @@ For example, `bit_count()` on '0b11011' will return 4:
 ```python
 >>> 0b11011.bit_count()
 4
+```
+
+
 ~~~~exercism/note
 If you are working locally, `bit_count()` requires at least Python 3.10.
 The Exercism online editor currently supports all features through Python 3.11.
@@ -148,7 +152,6 @@ In Python, we can represent octal numbers using the `0o` prefix.
 As with binary, Python automatically converts an octal representation to an `int`.
 
 ```python
-# 0o123
 >>> 0o123
 83
 ```
@@ -157,7 +160,6 @@ As with binary, octal numbers **are ints** and support all integer operations.
 Prefixing a number with `0o` that is not in the octal system will raise a `SyntaxError`.
 
  ### Converting to and from Octal Representation
- 
 
 To convert an `int` into an octal representation, you can use the built-in [`oct()`][oct] function.
 This acts similarly to the `bin()` function, returning a string:
@@ -165,6 +167,8 @@ This acts similarly to the `bin()` function, returning a string:
 ```python
 >>> oct(83)
 '0o123'
+```
+
 
 To convert an octal number to an integer, we can use the `int()` function, passing an octal string representation and the base (8) as arguments:
 
@@ -175,22 +179,21 @@ To convert an octal number to an integer, we can use the `int()` function, passi
 
 As with binary, giving the wrong base will raise a `ValueError`.
 
-### Hexadecimal
+## Hexadecimal
 
 [Hexadecimal][hexadecimal] is a base 16 numeral system.
 It uses the digits 0 - 9 and the letters A, B, C, D, E, and F.
 A is 10, B is 11, C is 12, D is 13, E is 14, and F is 15.
 
 We can represent hexadecimal numbers in Python using the `0x` prefix.
-As with binary and octal, Python will automatically convert hexadecimal literals to `int`.
+As with binary and octal, Python will automatically convert hexadecimal literals to `int`s.
 
 ```python
-# 0x123
 >>> 0x123
 291
 ```
 
-As with binary and octal - hexadecimal literals **are ints**, and you can perform all integer operations.  
+As with binary and octal — hexadecimal literals **are ints**, and you can perform all integer operations with them.
 Prefixing a non-hexadecimal number with `0x` will raise a `SyntaxError`.
 
 
@@ -202,6 +205,8 @@ This acts similarly to the `bin()` function, returning a string:
 ```python
 >>> hex(291)
 '0x123'
+```
+
 
 To convert a hexadecimal representation to an integer, we can use the `int()` function, passing a hexadecimal string with the base (16) as arguments:
 

@@ -144,8 +144,6 @@ Now whenever `__next__()` is called on the `infinite_sequence` object, it will r
 
 
 [generator-iterator]: https://docs.python.org/3.11/glossary.html#term-generator-iterator
-[iterables]: https://wiki.python.org/moin/Iterator
 [iterator]: https://docs.python.org/3.11/glossary.html#term-iterator
-[lazy evaluation]: https://en.wikipedia.org/wiki/Lazy_evaluation
 [lazy iterator]: https://en.wikipedia.org/wiki/Lazy_evaluation
 [yield expression]: https://docs.python.org/3.11/reference/expressions.html#yield-expressions
