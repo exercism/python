@@ -1,5 +1,5 @@
-AlPHABET = "abcdefghijklmnopqrstuvwxyz"
+ALPHABET = "abcdefghijklmnopqrstuvwxyz"
 
 def rotate(text, key):
-    translator = AlPHABET[key:] + AlPHABET[:key]
-    return text.translate(str.maketrans(AlPHABET + AlPHABET.upper(), translator + translator.upper()))
+    translator = ALPHABET[key:] + ALPHABET[:key]
+    return text.translate(str.maketrans(ALPHABET + ALPHABET.upper(), translator + translator.upper()))
