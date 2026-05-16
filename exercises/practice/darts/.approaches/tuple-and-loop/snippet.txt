@@ -1,7 +1,8 @@
 def score(x_coord, y_coord):
-    distance = x_coord**2 + y_coord**2
-    rules = (1.0, 10), (25.0, 5), (100.0, 1), (200.0, 0)
-
-    for distance, point in rules:
-        if length <= distance:
-            return point
+    throw = x_coord**2 + y_coord**2
+    rules = (1, 10), (25, 5), (100, 1)
+    
+    for distance, points in rules:
+        if throw <= distance:
+            return points
+    return 0

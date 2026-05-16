@@ -3,11 +3,11 @@
 
 ```python
 def score(x_coord, y_coord):
-    point = (x_coord**2 + y_coord**2)
+    point = x_coord**2 + y_coord**2
     scores = {
         point <= 100: 1,
         point <= 25: 5,
-        point <= 1: 10
+        point <= 1: 10,
     }
     
     return scores.get(True, 0)
@@ -17,10 +17,10 @@ At first glance, this approach looks similar to the [Booleans as Integers][appro
 However, this approach is **not** interpreting Booleans as integers and is instead exploiting three key properties of [dictionaries][dicts]:
 
 
-1.  [Keys must be hashable][hashable-keys] — in other words, keys have to be _unique_.
-2.  Insertion order is preserved (_as of `Python 3.7`_), and evaluation/iteration happens in insertion order.
-3.  Duplicate keys _overwrite_ existing keys.
-    If the first key is `True` and the third key is `True`, the _value_ from the third key will overwrite the value from the first key.
+1. [Keys must be hashable][hashable-keys] — in other words, keys have to be _unique_.
+2. Insertion order is preserved (_as of `Python 3.7`_), and evaluation/iteration happens in insertion order.
+3. Duplicate keys _overwrite_ existing keys.
+   If the first key is `True` and the third key is `True`, the _value_ from the third key will overwrite the value from the first key.
 
 Finally, the `return` line uses [`dict.get()`][dict-get] to `return` a default value of 0 when a throw is outside the existing circle radii.
 To see this in action, you can view this code on [Python Tutor][dict-get-python-tutor].
@@ -34,9 +34,8 @@ The following code variations do not pass the exercise tests:
 
 
 ```python
-
 def score(x_coord, y_coord):
-    point = (x_coord**2 + y_coord**2)
+    point = x_coord**2 + y_coord**2
     scores = {
         point <= 1: 10,
         point <= 25: 5,
@@ -44,11 +43,11 @@ def score(x_coord, y_coord):
     }
     
     return scores.get(True, 0)
-    
-    #OR#
+
+#OR#
 
 def score(x_coord, y_coord):
-    point = (x_coord**2 + y_coord**2)
+    point = x_coord**2 + y_coord**2
     scores = {
         point <= 25: 5,
         point <= 1: 10,
@@ -56,7 +55,6 @@ def score(x_coord, y_coord):
     }
     
     return scores.get(True, 0)
-    
 ```
 
 While this approach is a _very clever_ use of dictionary properties, it is likely to be very hard to reason about for those who are not deeply knowledgeable.
