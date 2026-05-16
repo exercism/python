@@ -1,27 +1,28 @@
 # Dictionary Methods in Python
 
 The `dict` class in Python provides many useful [methods][dict-methods] for working with dictionaries.
-Some were introduced in the concept for `dicts`.
+Some were introduced in the concept for `dict`s.
 Here we cover a few more - along with some techniques for iterating through and manipulating dictionaries.
 
-- `dict.setdefault()` automatically adds keys without throwing a KeyError.
-- `dict.fromkeys(iterable, <default value>)` creates a new `dict` from any number of iterables.
-- `.keys()`, `.values()`, and `.items()` provide convenient iterators.
-- `sorted(<dict>.items())`. can easily re-order entries in a `dict`.
-- `dict_one.update(<dict_two>)` updates one `dict` with overlapping values from another `dict`.
-- `dict | other_dict` and `dict |= other_dict` merges or updates two `dict`s via operators.
-- `reversed(dict.keys())`, `reversed(dict.values())`, or `reversed(dict.items())` produce _reversed_ views.
+- `<dict>.setdefault()` automatically adds keys without throwing a KeyError.
+- `<dict>.fromkeys(iterable, <default value>)` creates a new `dict` from any number of iterables.
+- `<dict>.keys()`, `<dict>.values()`, and `<dict>.items()` provide convenient iterators.
+- `sorted(<dict>.items())` can easily re-order entries in a `dict`.
+- `<dict_one>.update(<dict_two>)` updates one `dict` with overlapping values from another `dict`.
+- `<dict> | <other_dict>` and `<dict> |= <other_dict>` merges or updates two `dict`s via operators.
+- `reversed(<dict>.keys())`, `reversed(<dict>.values())`, or `reversed(<dict>.items())` produce _reversed_ views.
 - `<dict>.popitem()` removes and returns a `key`, `value` pair.
 
 
 ## `setdefault()` for Error-Free Insertion
 
-The dictionary concept previously covered that `.get(key, <default value>)` returns an existing `value` or the `default value` if a `key` is not found in a dictionary, thereby avoiding a `KeyError`.
+The dictionary concept previously covered that `<dict>.get(<key>, <default value>)` returns an existing `value` or the `default value` if a `key` is not found in a dictionary, thereby avoiding a `KeyError`.
 This works well in situations where you would rather not have extra error handling but cannot trust that a looked-for `key` will be present.
 
-For a similarly "safe" (_without KeyError_) insertion operation, there is the `.setdefault(key, <default value>)` method.
-`setdefault(key, <default value>)` will return the `value` if the `key` is found in the dictionary.
+For a similarly "safe" (_without `KeyError`_) insertion operation, there is the `<dict>.setdefault(<key>, <default value>)` method.
+`<dict>.setdefault(<key>, <default value>)` will return the `value` if the `key` is found in the dictionary.
 If the key is **not** found, it will _insert_ the (`key`, `default value`) pair and return the `default value` for use.
+
 
 ```python
 >>> palette_I = {'Grassy Green': '#9bc400', 'Purple Mountains Majesty': '#8076a3', 'Misty Mountain Pink': '#f9c5bd'}
@@ -38,7 +39,7 @@ If the key is **not** found, it will _insert_ the (`key`, `default value`) pair 
 
 ## `fromkeys()` to Populate a Dictionary from an Iterable
 
-To quickly populate a dictionary with various `keys` and default values, the _class method_ [`fromkeys(iterable, <default value>)`][fromkeys] will iterate through an iterable of `keys` and create a new `dict`.
+To quickly populate a dictionary with various `keys` and default values, the _class method_ [`fromkeys(<iterable>, <default value>)`][fromkeys] will iterate through an iterable of `keys` and create a new `dict`.
 All `values` will be set to the `default value` provided:
 
 ```python
@@ -71,12 +72,11 @@ If the dictionary is empty, calling `popitem()` will raise a `KeyError`:
 # All (key, value) pairs have been removed.
 >>> palette_I.popitem()
 Traceback (most recent call last):
-
   line 1, in <module>
     palette_I.popitem()
-
 KeyError: 'popitem(): dictionary is empty'
 ```
+
 
 ## Iterating Over Entries in a Dictionary Via Views
 
@@ -136,7 +136,7 @@ This allows keys, values, or (`key`, `value`) pairs to be iterated over in Last-
 ('Purple baseline', '#161748')
 
 >>> for item in reversed(palette_II.items()):
-...    print (item)
+...     print(item)
 ...
 ('Purple baseline', '#161748')
 ('Green Treeline', '#478559')
@@ -166,12 +166,12 @@ This method will take the (`key`,`value`) pairs of `<dict_two>` and write them i
 Where keys in the two dictionaries _overlap_, the `value` in `dict_one` will be _overwritten_ by the corresponding `value` from `dict_two`:
 
 ```python
->>> palette_I =   {'Grassy Green': '#9bc400', 
-                   'Purple Mountains Majesty': '#8076a3', 
-                   'Misty Mountain Pink': '#f9c5bd', 
-                   'Factory Stone Purple': '#7c677f', 
-                   'Green Treeline': '#478559', 
-                   'Purple baseline': '#161748'}
+>>> palette_I = {'Grassy Green': '#9bc400', 
+                 'Purple Mountains Majesty': '#8076a3', 
+                 'Misty Mountain Pink': '#f9c5bd', 
+                 'Factory Stone Purple': '#7c677f', 
+                 'Green Treeline': '#478559', 
+                 'Purple baseline': '#161748'}
                    
 >>> palette_III = {'Grassy Green': (155, 196, 0), 
                    'Purple Mountains Majesty': (128, 118, 163),
@@ -333,10 +333,10 @@ If the values stored in the `dict` are not unique, extra checks become necessary
 
 # Iterating over (key, value) pairs using .items()
 >>> for key, value in extended_color_reference.items():
-...    if value in consolidated_colors: #Check if key has already been created.
+...    if value in consolidated_colors: # <--Check if key has already been created.
 ...        consolidated_colors[value].append(key)
 ...    else:
-...        consolidated_colors[value] = [key]  #Create a value list with the former key in it.
+...        consolidated_colors[value] = [key]  # <--Create a value list with the former key in it.
 
 >>> consolidated_colors
 {'Purple Mountains Majesty': ['#8076a3', (128, 118, 163), (21, 28, 0, 36)],

@@ -3,16 +3,16 @@
 A [`set`][type-set] is a _mutable_ and _unordered_ collection of [_hashable_][hashable] objects.
 Set members must be distinct — duplicate items are not allowed.
 They can hold multiple different data types and even nested structures like a `tuple` of `tuples` — as long as all elements can be _hashed_.
-Sets also come in an immutable [`frozensets`][type-frozenset] flavor.
+Sets also come in an immutable [`frozenset`][type-frozenset] flavor.
 
 Sets are most commonly used to quickly remove duplicates from other data structures or item groupings.
 They are also used for efficient comparisons when sequencing and duplicate tracking are not needed.
 
 Like other collection types (_dictionaries, lists, tuples_), `sets` support:
-- Iteration via `for item in <set>`
+- Iteration via `for item in <set>`,
 - Membership checking via `in` and `not in`,
 - Length calculation through `len()`, and
-- Shallow copies through `copy()`
+- Shallow copies through `copy()`.
 
 `sets` do not support:
 - Indexing of any kind
@@ -174,7 +174,7 @@ Traceback (most recent call last):
 
 Sets have methods that generally mimic [mathematical set operations][mathematical-sets].
 Most (_not all_) of these methods have an [operator][operator] equivalent.
-Methods generally take any `iterable` as an argument, while operators require that both sides of the operation are `sets` or `frozensets`.
+Methods generally take any `iterable` as an argument, while operators require that both sides of the operation are `set`s or `frozenset`s.
 
 
 ### Membership Testing Between Sets
@@ -275,9 +275,9 @@ True
 ### 'Proper' Subsets and Supersets
 
 `<set> < <other_set>` and `<set> > <other_set>` are used to test for _proper subsets_.
-A `set` is a proper subset if (`<set>` <= `<other_set>`) **AND** (`<set>` != `<other_set>`) for the `<` operator.
+A `set` is a proper subset if (`<set> <= <other_set>`) **AND** (`<set> != <other_set>`) for the `<` operator.
 
-A `set is a proper superset if `(`<set>` >= `<other_set>`) **AND** (`<set>` != `<other_set>`) for the `>` operator.
+A `set` is a proper superset if (`<set> >= <other_set>`) **AND** (`<set> != <other_set>`) for the `>` operator.
 These operators have no method equivalent:
 
 ```python
@@ -336,7 +336,7 @@ The operator form of this method is `<set> | <other set 1> | <other set 2> | ...
 ### Set Differences
 
 `<set>.difference(*<other iterables>)` returns a new `set` with elements from the original `<set>` that are not in `<others>`.
-The operator version of this method is `<set> - <other set 1> - <other set 2> - ...<other set n>`.
+The operator version of this method is `<set> - <other set 1> - <other set 2>  -  ...<other set n>`.
 
 ```python
 >>> berries_and_veggies = {'Asparagus', 
@@ -370,7 +370,7 @@ The operator version of this method is `<set> - <other set 1> - <other set 2> - 
 ### Set Intersections
 
 `<set>.intersection(*<other iterables>)` returns a new `set` with elements common to the original `set` and all `<others>` (in other words, the `set` where everything [intersects][intersection]).
-The operator version of this method is  `<set> & <other set> & <other set 2> & ... <other set n>`
+The operator version of this method is  `<set> & <other set> & <other set 2> & ... & <other set n>`
 
 ```python
 >>> perennials = {'Annatto','Asafetida','Asparagus','Azalea',
