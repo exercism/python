@@ -1,7 +1,7 @@
 # Generators
 
-A `generator` is a function or expression that returns a special type of [iterator][iterator] called [generator iterator][generator-iterator].
-`Generator-iterators` are [lazy][lazy iterator]: they do not store their `values` in memory, but _generate_ their values when needed.
+A `generator` is a function or expression that returns a special type of [iterator][iterator] called a [`generator iterator`][generator-iterator].
+`Generator-iterator`s are [lazy][lazy iterator]: they do not store their `values` in memory, but _generate_ their values when needed.
 
 A generator function looks like any other function, but contains one or more [yield expressions][yield expression].
 Each `yield` will suspend code execution, saving the current execution state (_including all local variables and try-statements_).
@@ -144,8 +144,6 @@ Now whenever `__next__()` is called on the `infinite_sequence` object, it will r
 
 
 [generator-iterator]: https://docs.python.org/3.11/glossary.html#term-generator-iterator
-[iterables]: https://wiki.python.org/moin/Iterator
 [iterator]: https://docs.python.org/3.11/glossary.html#term-iterator
-[lazy evaluation]: https://en.wikipedia.org/wiki/Lazy_evaluation
 [lazy iterator]: https://en.wikipedia.org/wiki/Lazy_evaluation
 [yield expression]: https://docs.python.org/3.11/reference/expressions.html#yield-expressions
