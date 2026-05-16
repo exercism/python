@@ -5,7 +5,7 @@ Some were introduced in the concept for `dict`s.
 Here we cover a few more - along with some techniques for iterating through and manipulating dictionaries.
 
 - `<dict>.setdefault()` automatically adds keys without throwing a KeyError.
-- `<dict>.fromkeys(iterable, <default value>)` creates a new `dict` from any number of iterables.
+- `<dict>.fromkeys(<iterable>, <default value>)` creates a new `dict` from any number of iterables.
 - `<dict>.keys()`, `<dict>.values()`, and `<dict>.items()` provide convenient iterators.
 - `sorted(<dict>.items())` can easily re-order entries in a `dict`.
 - `<dict_one>.update(<dict_two>)` updates one `dict` with overlapping values from another `dict`.

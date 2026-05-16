@@ -179,7 +179,7 @@ Methods generally take any `iterable` as an argument, while operators require th
 
 ### Membership Testing Between Sets
 
-The `<set>.isdisjoint(<other_collection>)` method is used to test if a `sets` elements have any overlap with the elements of another.
+The `<set>.isdisjoint(<other_collection>)` method is used to test if a `set`'s elements have any overlap with the elements of another.
 The method will accept any `iterable` or `set` as an argument.
 It will return `True` if the two sets have **no elements in common**, `False` if elements are **shared**.
 
@@ -336,7 +336,7 @@ The operator form of this method is `<set> | <other set 1> | <other set 2> | ...
 ### Set Differences
 
 `<set>.difference(*<other iterables>)` returns a new `set` with elements from the original `<set>` that are not in `<others>`.
-The operator version of this method is `<set> - <other set 1> - <other set 2>  -  ...<other set n>`.
+The operator version of this method is `<set> - <other set 1> - <other set 2>  -  ... - <other set n>`.
 
 ```python
 >>> berries_and_veggies = {'Asparagus', 

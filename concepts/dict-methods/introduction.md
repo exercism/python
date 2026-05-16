@@ -5,7 +5,7 @@ The `dict` class in Python provides many useful [methods][dict-methods], some of
 This concept tackles a few more:
 
 - `<dict>.setdefault()` automatically adds keys without throwing a KeyError.
-- `<dict>.fromkeys(iterable, <default value>)` creates a new `dict` from any number of iterables.
+- `<dict>.fromkeys(<iterable>, <default value>)` creates a new `dict` from any number of iterables.
 - `<dict>.keys()`, `<dict>.values()`, and `<dict>.items()` provide convenient iterators.
 - `sorted(<dict>.items())` can easily re-order entries in a `dict`.
 - `<dict_one>.update(<dict_two>)` updates one `dict` with overlapping values from another `dict`.
