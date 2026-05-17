@@ -6,8 +6,8 @@ def score(x_coord, y_coord):
     rules = {1: 10, 25: 5, 100: 1}
     
     return max(point for distance, point in
-               rules.items() if throw <= distance,
-               default=0)
+                rules.items() if throw <= distance,
+                default=0)
 ```
 
 
@@ -33,23 +33,23 @@ def score(x_coord, y_coord):
 A `list` or `tuple` can also be used in place of `max()`, but then requires an index to return the max score:
 
 ```python
+from math import inf
+
 def score(x_coord, y_coord):
     throw = x_coord**2 + y_coord**2
-    rules = {1: 10, 25: 5, 100: 1}
+    rules = {1: 10, 25: 5, 100: 1, inf: 0}
     
-    return ([point for distance, point in
-               rules.items() if throw <= distance]
-               or [0])[0] # <-- Have to specify index 0.
+    return [point for distance, point in
+                rules.items() if throw <= distance][0] # <-- Have to specify index 0.
 
 #OR#
 
 def score(x_coord, y_coord):
     throw = x_coord**2 + y_coord**2
-    rules = {1: 10, 25: 5, 100: 1}
+    rules = {1: 10, 25: 5, 100: 1, inf: 0}
     
-    return (tuple(point for distance, point in
-               rules.items() if throw <= distance)
-               or (0,))[0]
+    return tuple(point for distance, point in
+                rules.items() if throw <= distance)[0]
 ```
 
 
@@ -59,9 +59,9 @@ However, this is not performant, and is difficult to read:
 ```python
 def score(x_coord, y_coord):
     return max(point for distance, point in
-               {1: 10, 25: 5, 100: 1}.items() if
-               (x_coord**2 + y_coord**2) <= distance,
-               default=0)
+                {1: 10, 25: 5, 100: 1}.items() if
+                (x_coord**2 + y_coord**2) <= distance,
+                default=0)
 ```
 
 While all of these variations do pass the tests, they suffer from even more over-engineering/performance caution than the earlier tuple and loop approach (_although for the data in this problem, the performance hit is slight_).

@@ -3,5 +3,5 @@ def score(x_coord, y_coord):
     rules = {1: 10, 25: 5, 100: 1}
     
     return max(point for distance, point in
-               rules.items() if throw <= distance,
-               default=0)
+                rules.items() if throw <= distance,
+                default=0)
