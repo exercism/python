@@ -24,8 +24,8 @@ def sublist(list_one, list_two):
     return UNEQUAL
 ```
 
-We first check for equality using the `==` operator, if so, then we return `EQUAL`.
-After that, we call `check_sub_sequences` passing in `list_one` and `list_two`.
+We first check for equality using the `==` operator, and if the lists are equal, then we return `EQUAL`.
+After that, we call `check_sub_sequences()`, passing in `list_one` and `list_two`.
 
 In the helper function, we check if `any` of the possible sub-sequences in `list_two` of length `n1` (the length of the first list) are equal to the first list.
 If so, then we conclude that `list_one` is a `SUBLIST` of `list_two`.

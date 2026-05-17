@@ -39,7 +39,7 @@ list_one_check = str(list_one).strip("[]") + ","
 list_two_check = str(list_two).strip("[]") + ","
 ```
 
-Yet, even though the code would pass all of the tests in the Exercism test suite, it would still fail in some cases.
+Yet, even though this code would pass all of the tests in the Exercism test suite, it would still fail in some cases.
 For example, if we call `sublist` with `[1, 2]` and `[5, "1, 2,", 7]`, the function would return `SUBLIST` when it should actually return `UNEQUAL`.
 
 This could be avoided by changing the code to use a separator that isn't the default one:

@@ -26,6 +26,13 @@
       "title": "Manual looping",
       "blurb": "Manually track indexes while looping through the lists to solve the exercise",
       "authors": ["yrahcaz7"]
+    },
+    {
+      "uuid": "a1eeaf9b-a9b3-421e-bfad-44f7e1575450",
+      "slug": "sort-lists",
+      "title": "Sorting lists",
+      "blurb": "Sort the lists to determine the shorter and longer ones to solve the exercise",
+      "authors": ["yrahcaz7"]
     }
   ]
 }

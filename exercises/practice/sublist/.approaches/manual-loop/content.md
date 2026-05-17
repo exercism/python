@@ -1,7 +1,7 @@
 # Manual looping
 
 This approach uses a helper function that manually loops through the lists to determine if the first list is a sublist of the second one.
-This approach is significantly longer than the [list manipulation approach][approach-list-manipulation], though it may be more comprehensible to some.
+This approach is the longest one by far, though it may be more comprehensible to some.
 
 ```python
 SUBLIST = 1
@@ -46,5 +46,3 @@ That is why if the helper function returns `UNEQUAL`, `sublist()` needs to make 
 If the result is `SUBLIST`, that means `list_two` is a sublist of `list_one`, thus `list_one` must be a superlist of `list_two`.
 
 Thus all possibilities are covered, and `sublist()` returns the result.
-
-[approach-list-manipulation]: https://exercism.org/tracks/python/exercises/sublist/approaches/list-manipulation
