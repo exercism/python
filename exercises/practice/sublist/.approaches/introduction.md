@@ -72,11 +72,6 @@ This approach uses the `sorted()` function to determine which list is shorter an
 Knowing this information, one can implement a simplified version of the list manipulation approach.
 
 ```python
-SUBLIST = 1
-SUPERLIST = 2
-EQUAL = 3
-UNEQUAL = 4
-
 def sublist(list_one, list_two):
     if list_one == list_two:
         return EQUAL
