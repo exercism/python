@@ -4,19 +4,16 @@ There are two broad ways to solve Sublist.
 
 ## General guidance
 
-To write the code, you need to branch out (probably with `if`) into the four different possible conditions, and return the appropriate name of the category.
+To write the code, you need to branch out (probably with `if`) into the four different possible conditions, and return the appropriate category (`SUBLIST`, `SUPERLIST`, `EQUAL`, or `UNEQUAL`).
 
-## Approach: list manipulation
+Note that you shouldn't return the category's value directly, as that would introduce [magic values][magic-values] into your code.
+
+## Approach: List manipulation
 
 The direct approach would be to manipulate and check the given lists to solve this.
 This solution uses a helper function, which simplifies things, but the approach can be implemented without it.
 
 ```python
-SUBLIST = 1
-SUPERLIST = 2
-EQUAL = 3
-UNEQUAL = 4
-
 def check_sub_sequences(list_one, list_two):
     n1 = len(list_one)
     n2 = len(list_two)
@@ -34,21 +31,51 @@ def sublist(list_one, list_two):
 
 Read more on the [detail of this approach][approach-list-manipulation].
 
-## Approach: using strings
+## Approach: Manual looping
+
+This approach uses a helper function that manually loops through the lists to determine if the first list is a sublist of the second one.
+This approach is the longest one by far, though it may be more comprehensible to some.
+
+```python
+def check_sub_sequences(list_one, list_two):
+    index_one = 0
+    index_two = 0
+    next_index_two = 1
+
+    while index_one < len(list_one) and index_two < len(list_two):
+        if list_one[index_one] == list_two[index_two]:
+            index_one += 1
+        else:
+            index_one = 0
+            index_two = next_index_two
+            next_index_two += 1
+        index_two += 1
+
+    if index_one == len(list_one):
+        if len(list_one) == len(list_two):
+            return EQUAL
+        return SUBLIST
+    return UNEQUAL
+
+def sublist(list_one, list_two):
+    result = check_sub_sequences(list_one, list_two)
+    if result == UNEQUAL and check_sub_sequences(list_two, list_one) == SUBLIST:
+        result = SUPERLIST
+    return result
+```
+
+Learn more about the [details of this approach here][approach-manual-loop].
+
+## Approach: Using strings
 
 Another seemingly clever approach is to convert the lists to strings and then use the `in` operator to check for sub-sequences.
 **However, this does not work.**
 
 ```python
-SUBLIST = 1
-SUPERLIST = 2
-EQUAL = 3
-UNEQUAL = 4
-
 def sublist(list_one, list_two):
     list_one_check = str(list_one).strip("[]") + ","
     list_two_check = str(list_two).strip("[]") + ","
-    
+
     if list_one_check == list_two_check:
         return EQUAL
     if list_one_check in list_two_check:
@@ -60,5 +87,7 @@ def sublist(list_one, list_two):
 
 To understand more about this approach and **why it fails**, [read here][approach-using-strings].
 
+[magic-values]: https://stackoverflow.com/questions/47882/what-is-a-magic-number-and-why-is-it-bad
 [approach-list-manipulation]: https://exercism.org/tracks/python/exercises/sublist/approaches/list-manipulation
+[approach-manual-loop]: https://exercism.org/tracks/python/exercises/sublist/approaches/manual-loop
 [approach-using-strings]: https://exercism.org/tracks/python/exercises/sublist/approaches/using-strings

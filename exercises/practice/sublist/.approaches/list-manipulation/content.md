@@ -25,9 +25,8 @@ def sublist(list_one, list_two):
 ```
 
 We first check for equality using the `==` operator, if so, then we return `EQUAL`.
-A common way to do this differently would be to return `1` directly, but this is better practice as we [remove magic values][magic values].
+After that, we call `check_sub_sequences` passing in `list_one` and `list_two`.
 
-After that we call `check_sub_sequences` passing in `list_one` and `list_two`.
 In the helper function, we check if `any` of the possible sub-sequences in `list_two` of length `n1` (the length of the first list) are equal to the first list.
 If so, then we conclude that `list_one` is a `SUBLIST` of `list_two`.
 
@@ -35,5 +34,3 @@ To find whether `list_one` is a `SUPERLIST` of `list_two`, we just reverse this 
 Thus, we check if `any` of the possible sub-sequences in `list_one` of length `n2` (the length of the second list) are equal to the second list.
 
 If none of the above conditions are true, we conclude that the two lists are unequal.
-
-[magic values]: https://stackoverflow.com/questions/47882/what-is-a-magic-number-and-why-is-it-bad

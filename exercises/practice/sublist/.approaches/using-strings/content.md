@@ -6,7 +6,6 @@ Please do not use it in your code.
 ~~~~
 
 Another seemingly clever solution is to convert the lists to strings and then use the `in` operator to check for sub-sequences.
-Note that this approach, even if it worked, is not as performant as the previous one.
 
 ```python
 SUBLIST = 1

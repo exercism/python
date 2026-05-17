@@ -19,6 +19,13 @@
       "blurb": "Convert the lists to string and use string manipulation to solve the exercise",
       "authors": ["safwansamsudeen"],
       "contributors": ["yrahcaz7"]
+    },
+    {
+      "uuid": "b2695c39-c1c7-47f0-bfcd-5e9703674bea",
+      "slug": "manual-loop",
+      "title": "Manual looping",
+      "blurb": "Manually track indexes while looping through the lists to solve the exercise",
+      "authors": ["yrahcaz7"]
     }
   ]
 }
