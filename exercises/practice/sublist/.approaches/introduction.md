@@ -14,10 +14,10 @@ The direct approach would be to manipulate and check the given lists to solve th
 This solution uses a helper function, which simplifies things, but the approach can be implemented without it.
 
 ```python
-def check_sub_sequences(list_one, list_two):
-    n1 = len(list_one)
-    n2 = len(list_two)
-    return any(list_two[i:i+n1] == list_one for i in range(n2 - n1 + 1))
+def check_sub_sequences(list_a, list_b):
+    len_a = len(list_a)
+    len_b = len(list_b)
+    return any(list_b[i : i + len_a] == list_a for i in range(len_b - len_a + 1))
 
 def sublist(list_one, list_two):
     if list_one == list_two:
@@ -37,28 +37,28 @@ This approach uses a helper function that manually loops through the lists to de
 This approach is the longest one by far, though it may be more comprehensible to some.
 
 ```python
-def check_sub_sequences(list_one, list_two):
-    index_one = 0
-    index_two = 0
-    next_index_two = 1
+def check_sub_sequences(list_a, list_b):
+    len_a, len_b = len(list_a), len(list_b)
+    index_a, index_b = 0, 0
+    next_index_b = 1
 
-    while index_one < len(list_one) and index_two < len(list_two):
-        if list_one[index_one] == list_two[index_two]:
-            index_one += 1
+    while index_a < len_a and index_b < len_b:
+        if list_a[index_a] == list_b[index_b]:
+            index_a += 1
         else:
-            index_one = 0
-            index_two = next_index_two
-            next_index_two += 1
-        index_two += 1
+            index_a, index_b = 0, next_index_b
+            next_index_b += 1
+        index_b += 1
 
-    if index_one == len(list_one):
-        if len(list_one) == len(list_two):
+    if index_a == len_a:
+        if len_a == len_b:
             return EQUAL
         return SUBLIST
     return UNEQUAL
 
 def sublist(list_one, list_two):
     result = check_sub_sequences(list_one, list_two)
+
     if result == UNEQUAL and check_sub_sequences(list_two, list_one) == SUBLIST:
         result = SUPERLIST
     return result

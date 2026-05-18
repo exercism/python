@@ -9,32 +9,40 @@ SUPERLIST = 2
 EQUAL = 3
 UNEQUAL = 4
 
-def check_sub_sequences(list_one, list_two):
-    index_one = 0
-    index_two = 0
-    next_index_two = 1
+def check_sub_sequences(list_a, list_b):
+    len_a, len_b = len(list_a), len(list_b)
+    index_a, index_b = 0, 0
+    next_index_b = 1
 
-    while index_one < len(list_one) and index_two < len(list_two):
-        if list_one[index_one] == list_two[index_two]:
-            index_one += 1
+    while index_a < len_a and index_b < len_b:
+        if list_a[index_a] == list_b[index_b]:
+            index_a += 1
         else:
-            index_one = 0
-            index_two = next_index_two
-            next_index_two += 1
-        index_two += 1
+            index_a, index_b = 0, next_index_b
+            next_index_b += 1
+        index_b += 1
 
-    if index_one == len(list_one):
-        if len(list_one) == len(list_two):
+    if index_a == len_a:
+        if len_a == len_b:
             return EQUAL
         return SUBLIST
     return UNEQUAL
 
 def sublist(list_one, list_two):
     result = check_sub_sequences(list_one, list_two)
+
     if result == UNEQUAL and check_sub_sequences(list_two, list_one) == SUBLIST:
         result = SUPERLIST
     return result
 ```
+
+~~~~exercism/note
+You might wonder why the lists in the helper function are named `list_a` and `list_b` instead of `list_one` and `list_two`.
+This is because if the parameters have the same name, Pylint thinks the parameters are being passed in incorrectly when we call `check_sub_sequences(list_two, list_one)`.
+(The exact warning generated is [`W1114 arguments-out-of-order`][w1114].)
+
+[w1114]: https://pylint.readthedocs.io/en/stable/user_guide/messages/warning/arguments-out-of-order.html
+~~~~
 
 In this approach, the first thing `sublist()` does is call the helper function.
 That function then loops through the lists, keeping track of an index for both lists so it can test all necessary combinations to determine if `list_one` is a sublist of `list_two`.
