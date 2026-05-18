@@ -3,8 +3,8 @@
 
 ```python
 def score(x_coord, y_coord):
-    radius = (x_coord**2 + y_coord**2)
-    return (radius<=1)*5 + (radius<=25)*4 + (radius<=100)*1
+    radius_squared = x_coord**2 + y_coord**2
+    return (radius_squared<=1)*5 + (radius_squared<=25)*4 + (radius_squared<=100)*1
 ```
 
 
@@ -25,12 +25,12 @@ Instead, the Python documentation recommends an explicit conversion to `int`:
 
 ```python
 def score(x_coord, y_coord):
-    radius = (x_coord**2 + y_coord**2)
-    return int(radius<=1)*5 + int(radius<=25)*4 + int(radius<=100)*1
+    radius_squared = x_coord**2 + y_coord**2
+    return int(radius_squared<=1)*5 + int(radius_squared<=25)*4 + int(radius_squared<=100)*1
 ```
 
 Beyond that recommendation, the terseness of this approach might be harder to reason about or decode — especially if a programmer is coming from a programming langauge that does not treat Boolean values as `ints`.
-Despite the "radius" variable name, it is also more difficult to relate the scoring "rings" of the Dartboard to the values being checked and calculated in the `return` statement.
+Despite the "radius_squared" variable name, it is also more difficult to relate the scoring "rings" of the Dartboard to the values being checked and calculated in the `return` statement.
 If using this code in a larger program, it would be strongly recommended that a docstring be provided to explain the Dartboard rings, scoring rules, and the corresponding scores.
 
 [bools-as-ints]: https://docs.python.org/3/library/stdtypes.html#boolean-type-bool

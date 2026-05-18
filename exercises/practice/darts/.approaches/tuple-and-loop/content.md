@@ -3,11 +3,13 @@
 ```python
 def score(x_coord, y_coord):
     throw = x_coord**2 + y_coord**2
-    rules = (1, 10), (25, 5), (100, 1), (200, 0)
+    rules = (1, 10), (25, 5), (100, 1)
     
     for distance, points in rules:
         if throw <= distance:
             return points
+    
+    return 0
 ```
 
 This approach uses a loop to iterate through the _rules_ `tuple`, unpacking each (`distance`, `points`) pair (_For a little more on unpacking, see [Tuple Unpacking Improves Python Code Readability][tuple-unpacking]_).
@@ -24,16 +26,18 @@ def score(x_coord, y_coord):
             return points
     
     return 0
-            
+
 #OR#
 
 def score(x_coord, y_coord):
     throw = x_coord**2 + y_coord**2
-    rules = [(1, 10), (25, 5), (100, 1), (200, 0)]
+    rules = [(1, 10), (25, 5), (100, 1)]
     
     for distance, points in rules:
         if throw <= distance:
             return points
+    
+    return 0
 
 #OR#
 
@@ -48,8 +52,8 @@ def score(x_coord, y_coord):
     return 0
 ```
 
-This approach would work nicely in a scenario where you expect to be adding more scoring "rings", since it is cleaner to edit the data structure than to add additional `if-statements` as you would have to in the [`if-statement` approach][approach-if-statements ].
+This approach would work nicely in a scenario where you expect to be adding more scoring "rings", since it is cleaner to edit the data structure than to add additional `if-statements` as you would have to in the [`if-statement` approach][approach-if-statements].
 For the three rings as defined by the current exercise, it is a bit over-engineered to use a data structure + `loop`, and results in a slight (_**very** slight_) slowdown over using `if-statements`.
 
 [tuple-unpacking]: https://treyhunner.com/2018/03/tuple-unpacking-improves-python-code-readability/#Unpacking_in_a_for_loop
-[approach-if-statements ]: https://exercism.org/tracks/python/exercises/darts/approaches/if-statements
+[approach-if-statements]: https://exercism.org/tracks/python/exercises/darts/approaches/if-statements
