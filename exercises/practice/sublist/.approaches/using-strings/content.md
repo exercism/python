@@ -1,7 +1,7 @@
 # Using strings
 
 ~~~~exercism/caution
-**This approach does not work, and this document exists to explain that.**
+**This approach does not work (_it will not generalize to all cases_), and this document exists to explain that.**
 Please do not use it in your code.
 ~~~~
 
