@@ -1,6 +1,7 @@
 {
   "introduction": {
-    "authors": ["safwansamsudeen"]
+    "authors": ["safwansamsudeen"],
+    "contributors": ["yrahcaz7"]
   },
   "approaches": [
     {
@@ -8,14 +9,30 @@
       "slug": "list-manipulation",
       "title": "List manipulation",
       "blurb": "Manipulate and check lists to solve the exercise",
-      "authors": ["safwansamsudeen"]
+      "authors": ["safwansamsudeen"],
+      "contributors": ["yrahcaz7"]
     },
     {
       "uuid": "61366160-c859-4d16-9085-171428209b8d",
       "slug": "using-strings",
       "title": "Using strings",
       "blurb": "Convert the lists to string and use string manipulation to solve the exercise",
-      "authors": ["safwansamsudeen"]
+      "authors": ["safwansamsudeen"],
+      "contributors": ["yrahcaz7"]
+    },
+    {
+      "uuid": "b2695c39-c1c7-47f0-bfcd-5e9703674bea",
+      "slug": "manual-loop",
+      "title": "Manual looping",
+      "blurb": "Manually track indexes while looping through the lists to solve the exercise",
+      "authors": ["yrahcaz7"]
+    },
+    {
+      "uuid": "a1eeaf9b-a9b3-421e-bfad-44f7e1575450",
+      "slug": "sort-lists",
+      "title": "Sorting lists",
+      "blurb": "Sort the lists to determine the shorter and longer ones to solve the exercise",
+      "authors": ["yrahcaz7"]
     }
   ]
 }
