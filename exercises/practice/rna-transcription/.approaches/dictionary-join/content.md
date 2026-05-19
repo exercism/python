@@ -17,7 +17,7 @@ It indicates that the value is not intended to be changed.
 In the `to_rna()` function, the [`join()`][join] method is called on an empty string,
 and is passed the list created from a [generator expression][generator-expression].
 
-The generator expression iterates over each character in the input,
+The generator expression iterates over each code point in the input,
 looks up the DNA character in the look-up dictionary, and outputs its matching RNA character as an element in the list.
 
 The `join()` method collects the RNA characters back into a string.

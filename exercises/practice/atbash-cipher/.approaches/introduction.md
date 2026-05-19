@@ -5,10 +5,10 @@ Atbash cipher in Python can be solved in many ways.
 ## General guidance
 
 The first thing is to have a "key" mapping — possibly in a `dict` or `str.maketrans()`, otherwise the value would have to be calculated on the fly.
-Then, you have to "clean" up the string to be encoded by removing punctuation/whitespace.
+Next, you have to "clean" up the string to be encoded by removing punctuation/whitespace.
 Finally, you break it up into chunks of five before returning it.
 
-For decoding, it's similar — clean up (which automatically joins the chunks) and translate using the _same_ key — the realization that the same key can be used is crucial in solving this in an idiomatic manner.
+For decoding, the process is similar — clean up (_which automatically joins the chunks_) and translate using the **_same_** key — realizing that the same key can be used is crucial in solving this in an idiomatic manner.
 
 ## Approach: Separate functions
 

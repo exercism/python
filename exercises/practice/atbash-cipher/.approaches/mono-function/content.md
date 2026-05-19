@@ -17,16 +17,16 @@ def decode(text):
     return encode(text, True)
 ```
 
-Here, we use a dictionary comprehension in which we reverse the ASCII lowercase digits, and enumerate through them — that is, `z` has index 0, `y` has index 1, and so on.
-For each character, we set the value of `chr` in the resulting dictionary to the character at the respective index — so `z` would translate to `a`.
+Here, we use a dictionary comprehension in which we reverse the order of the ASCII lowercase digits and enumerate through them — that is, `z` is at index 0, `y` is at index 1, and so on.
+For each code point, we set the value of `chr` in the resulting dictionary to the code point at the respective index — so `z` translates to `a`.
 
-In the calculation of the result, we try to obtain the value of the character using `dict.get()`, which accepts a default parameter.
-In this case, the character itself is the default — that is, numbers won't be found in the translation key, and thus should remain as numbers.
+In the calculation of the result, we try to obtain the value of the code point using `dict.get()`, which accepts a default parameter.
+In this case, the code point itself is the default — that is, numbers won't be found in the translation key, and thus should remain as numbers.
 
 We use a [conditional expression (also known as a ternary operator)][conditional-expression] to check if we actually mean to decode the function, in which case we return the result as is.
-If not, we chunk the result by joining every five characters with a space.
+If not, we "chunk" the result by joining every five code points with a space.
 
-Another possible way to solve this would be to use a function that returns another function that encodes or decodes based on the outer function's parameter:
+Another possible way to solve this would be to use a function that returns another function (_a higher-order function or [closure][closure]_) that encodes or decodes based on the outer function's parameter:
 
 ```python
 from string import ascii_lowercase as asc_low
@@ -50,4 +50,5 @@ Then we call `code(True)` to get the decoding version of the function and set `d
 
 After that, we can call `encode()` and `decode()` as normal, and both functions successfully perform their indended task.
 
+[closure]: https://realpython.com/python-closure/
 [conditional-expression]: https://docs.python.org/3/reference/expressions.html#conditional-expressions
