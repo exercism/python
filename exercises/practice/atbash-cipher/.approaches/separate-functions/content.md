@@ -19,11 +19,11 @@ def decode(text):
     return "".join(chr.lower() for chr in text if not chr.isspace()).translate(ENCODING)
 ```
 
-In `encode()`, we first join together every character that is alphanumeric — as we use `text.lower()`, the characters are all lowercase as needed.
-Then, we translate it and return a version joining every five characters with a space in between.
+In `encode()`, we first join together every code point that is an alphanumeric character — as we use `text.lower()`, the characters are all lowercase as needed.
+Then, we translate it and return a version joining every five code points with a space in between.
 
 `decode()` does the exact same thing, except it doesn't return a chunked output and it cleans the input differently.
-To clean the input, `decode()` only removes whitespace characters instead of all non-alphanumeric characters.
+To clean the input, `decode()` only removes code points that are whitespace characters instead of all non-alphanumeric characters.
 
 It might be cleaner to use helper functions:
 
