@@ -6,7 +6,6 @@ LOOKUP = str.maketrans('GCTA', 'CGAU')
 
 def to_rna(dna_strand):
     return dna_strand.translate(LOOKUP)
-
 ```
 
 This approach starts by defining a [dictionary][dictionaries] (also called a translation table in this context) by calling the [`maketrans()`][maketrans] method.
@@ -18,7 +17,7 @@ It indicates that the value is not intended to be changed.
 The translation table that is created uses the [Unicode][Unicode] _code points_ (sometimes called the ordinal values) for each letter in the two strings.
 As Unicode was designed to be backwards compatible with [ASCII][ASCII] and because the exercise uses Latin letters, the code points in the translation table can be interpreted as ASCII.
 However, the functions can deal with any Unicode character.
-You can learn more by reading about [strings and their representation in the Exercism Python syllabus][concept-string].
+You can learn more by reading about [strings and their representation in the Exercism Python syllabus][concept-strings].
 
 The Unicode value for "G" in the first string is the key for the Unicode value of "C" in the second string, and so on.
 

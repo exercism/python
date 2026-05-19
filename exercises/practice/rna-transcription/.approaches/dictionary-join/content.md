@@ -6,7 +6,6 @@ LOOKUP = {'G': 'C', 'C': 'G', 'T': 'A', 'A': 'U'}
 
 def to_rna(dna_strand):
     return ''.join(LOOKUP[nucleotide] for nucleotide in dna_strand)
-
 ```
 
 This approach starts by defining a [dictionary][dictionaries] to map the DNA values to RNA values.
@@ -18,7 +17,7 @@ It indicates that the value is not intended to be changed.
 In the `to_rna()` function, the [`join()`][join] method is called on an empty string,
 and is passed the list created from a [generator expression][generator-expression].
 
-The generator expression iterates each character in the input,
+The generator expression iterates over each code point in the input,
 looks up the DNA character in the look-up dictionary, and outputs its matching RNA character as an element in the list.
 
 The `join()` method collects the RNA characters back into a string.
