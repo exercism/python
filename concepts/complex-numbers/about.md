@@ -3,7 +3,7 @@
 `Complex numbers` are not complicated.
 They just need a less alarming name.
 
-They are so useful, especially in engineering and science, that Python includes [`complex`][complex] as a standard numeric type alongside integers ([`int`s][ints]) and floating-point numbers ([`float`s][floats]).
+They are so useful — especially in engineering and science — that Python includes [`complex`][complex] as a standard numeric type, alongside integers ([`int`s][ints]) and floating-point numbers ([`float`s][floats]).
 
 
 ## Basics
@@ -143,7 +143,7 @@ Any [mathematical][math-complex] or [electrical engineering][engineering-complex
 Alternatively, Exercism has a `Complex Numbers` practice exercise where you can implement a complex number class with these operations from first principles.
 
 
-Integer division is ___not___ possible on complex numbers, so the `//` and `%` operators and `divmod()` functions will fail for the complex number type.
+Integer division is ___not___ possible on complex numbers, so the `//` and `%` operators and the `divmod()` function will fail for the complex number type.
 
 
 There are two functions implemented for numeric types that are very useful when working with complex numbers:
@@ -235,13 +235,13 @@ If you are reading this on any sort of screen, you are utterly dependent on some
 
 1. __Semiconductor chips__. 
     - These make no sense in classical physics and can only be explained (and designed) by quantum mechanics (QM).
-    - In QM, everything is complex-valued by definition. (_its waveforms all the way down_)
+    - In QM, everything is complex-valued by definition. (_it's waveforms all the way down_)
 
-2. __The Fast Fourier Transform algorithm__. 
+2. __The Fast Fourier Transform (FFT) algorithm__.
     - FFT is an application of complex numbers, and it is in _everything_ connected to sound transmission, audio processing, photos, and video.
 
-    -MP3 and other audio formats use FFT for compression, ensuring more audio can fit within a smaller storage space. 
-    - JPEG compression and MP4 video, among many other image and video formats also use FTT for compression.
+    - MP3 and other audio formats use FFT for compression, ensuring more audio can fit within a smaller storage space.
+    - JPEG compression and MP4 video, among many other image and video formats, also use FTT for compression.
 
     - FFT is also deployed in the digital filters that allow cellphone towers to separate your personal cell signal from everyone else's.
 

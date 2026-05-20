@@ -112,7 +112,7 @@ See the section below for details.
 In decimal representation, we distinguish positive and negative numbers by using a `+` or `-` sign to the left of the digits.
 Using these symbols at a binary level proved inefficient for digital computing and raised the problem that `+0` is not the same as `-0`.
 
-Rather than using `-` and `+`, all modern computers use a [`twos-complement`][twos-complement] representation for negative numbers, right down to the silicon chip level.
+Rather than using `-` and `+`, all modern computers use a [`two's-complement`][twos-complement] representation for negative numbers, right down to the silicon chip level.
 This means that all bits are inverted and a number is _**interpreted as negative**_ if the left-most bit (also termed the "most significant bit", or MSB) is a `1`.
 Positive numbers have an MSB of `0`.
 This representation has the advantage of only having one version of zero, so that the programmer doesn't have to manage `-0` and `+0`.
@@ -145,7 +145,7 @@ This is **not** the `0b10011001` we would see in languages with fixed-size integ
 The `~` operator only works as expected with _**unsigned**_ byte or integer types, or with fixed-sized integer types.
 These numeric types are supported in third-party packages such as [`NumPy`][numpy], [`pandas`][pandas], and [`sympy`][sympy] but not in core Python.
 
-In practice, Python programmers quite often use the shift operators described below and `& | ^` with positive numbers only.
+In practice, Python programmers quite often use `& | ^`, and the shift operators described below with positive numbers only.
 Bitwise operations with negative numbers are much less common.
 One technique is to add [`2**32 (or 1 << 32)`][unsigned-int-python] to a negative value to make an `int` unsigned, but this gets difficult to manage.
 Another strategy is to work with the [`ctypes`][ctypes-module] module, and use c-style integer types, but this is equally unwieldy.
@@ -153,13 +153,13 @@ Another strategy is to work with the [`ctypes`][ctypes-module] module, and use c
 
 ## [`Shift operators`][bitwise-shift-operators]
 
-The left-shift operator `x << y` simply moves all the bits in `x` by `y` places to the left, filling the new gaps with zeros.
-Note that this is arithmetically identical to multiplying a number by `2**y`.
+The left-shift operator `x << y` moves all the bits in `x` by `y` places to the left, filling the new gaps with zeros.
+Note that this is arithmetically identical to multiplying a number by `(2**y)`.
 
 The right-shift operator `x >> y` does the opposite.
-This is arithmetically identical to integer division `x // 2**y`.
+This is arithmetically identical to integer division `x // (2**y)`.
 
-Keep in mind the previous section on negative numbers and their pitfalls when shifting.
+Keep in mind the previous section on negative numbers and their pitfalls when shifting them in Python.
 
 
 ```python
@@ -191,7 +191,7 @@ Keep in mind the previous section on negative numbers and their pitfalls when sh
 [symmetric-difference]: https://math.stackexchange.com/questions/84184/relation-between-xor-and-symmetric-difference#:~:text=It%20is%20the%20same%20thing,they%20are%20indeed%20the%20same.
 [sympy]: https://docs.sympy.org/latest/modules/codegen.html#predefined-types
 [tilde]: https://en.wikipedia.org/wiki/Tilde
-[twos-complement]: https://en.wikipedia.org/wiki/Two%27s_complement#:~:text=Two's%20complement%20is%20the%20most,number%20is%20positive%20or%20negative.
+[twos-complement]: https://en.wikipedia.org/wiki/Two%27s_complement#
 [unsigned-int-python]: https://stackoverflow.com/a/20768199
 [xor-cipher]: https://en.wikipedia.org/wiki/XOR_cipher
 [xor]: https://stackoverflow.com/a/2451393

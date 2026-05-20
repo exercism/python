@@ -1,9 +1,5 @@
 [
   {
-    "url": "https://wiki.python.org/moin/BitwiseOperators/",
-    "description": "BitwiseOperators on the Python wiki."
-  },
-  {
     "url": "https://realpython.com/python-bitwise-operators",
     "description": "Real Python: Bitwise Operators in Python."
   },
