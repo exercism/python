@@ -1,13 +1,13 @@
 # Introduction
 
-The [`Fractions`][fractions] module allows us to create and work with [`rational numbers`][rational]: fractions with an integer numerator divided by an integer denominator.
+The [`fractions`][fractions] module allows us to create and work with [`rational numbers`][rational]: fractions with an integer numerator divided by an integer denominator.
 For example, we can store `2/3` as an exact fraction instead of the approximate `float` value `0.6666...`.
 
 Unlike `int`, `float`, and `complex` numbers, fractions do not have a literal form.
-However, the fractions constructor is quite flexible.
+However, the fraction constructor is quite flexible.
 
-Most obviously, it can take take two integers as arguments.
-Common factors are automatically removed, converting the fraction to its "lowest form": the smallest integers that accurately represent the fraction:
+Most obviously, it can take two integers as arguments.
+Common factors are automatically removed, converting the fraction to its "lowest form" (_the smallest integers that accurately represent the fraction_):
 
 ```python
 >>> from fractions import Fraction
@@ -24,7 +24,7 @@ Fraction(2, 3)  # automatically simplified
 True
 ```
 
-The fractions constructor can also parse a string representation:
+The fraction constructor can also parse a string representation:
 
 ```python
 >>> f3 = Fraction('2/3')
