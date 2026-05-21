@@ -194,6 +194,14 @@ Note that the `for-loop` and `VALIDATE` use [`re.match`][re-match], but the `DIG
 
 ## Variation 2: Use regex, recurse within the for-loop
 
+~~~~exercism/caution
+As of the time of writing, this variation of the approach passes all of the tests that are currently in the Exercism test suite.
+**However**, it gives an incorrect answer to any sufficiently long problem, such as the following: "What is 1 plus -10 multiplied by 3 minus 4?"
+
+Parsing this example from left to right, we get `((1 + -10) * 3) - 4 == -31`.
+However, this variation returns `9` in this case, [as seen here][recursion-in-loop-pythontutor].
+~~~~
+
 ```python
 import re
 from operator import add, mul, sub
@@ -245,7 +253,7 @@ For example:
 4. The loop runs again — and so do the calls to `calculate()` — until there isn't any match that splits the question or any errors.
 5. One at a time, the numbers are returned from the `calculate()` calls on the stack, until the main `mul(calculate("1 plus -10"), calculate("13 divided by 2"))` is solved, at which point the answer is returned.
 
-For a more visual picture, you can step through the code on [pythontutor.com][recursion-in-loop-pythontutor].
+For a more visual picture of the process (including how it fails on long inputs), you can step through the code on [pythontutor.com][recursion-in-loop-pythontutor].
 
 [amortization]: https://www.investopedia.com/terms/a/amortization.asp
 [approach-import-callables-from-operator]: https://exercism.org/tracks/python/exercises/wordy/approaches/import-callables-from-operator
@@ -268,7 +276,7 @@ For a more visual picture, you can step through the code on [pythontutor.com][re
 [re-match]: https://docs.python.org/3/library/re.html#re.match
 [re]: https://docs.python.org/3/library/re.html
 [recursion-and-iteration]: https://web.mit.edu/6.102/www/sp23/classes/11-recursive-data-types/recursion-and-iteration-review.html#:~:text=The%20converse%20is%20also%20true,we%20are%20trying%20to%20solve.
-[recursion-in-loop-pythontutor]: https://pythontutor.com/visualize.html#code=import%20re%0Afrom%20operator%20import%20add,%20mul,%20sub%0Afrom%20operator%20import%20floordiv%20as%20div%0A%0ADIGITS%20%3D%20re.compile%28r%22-%3F%5Cd%2B%22%29%0A%0AOPERATORS%20%3D%20%28%0A%20%20%20%20%28mul,%20re.compile%28r%22%28%3FP%3Cx%3E.*%29%20multiplied%20by%20%28%3FP%3Cy%3E.*%29%22%29%29,%0A%20%20%20%20%28div,%20re.compile%28r%22%28%3FP%3Cx%3E.*%29%20divided%20by%20%28%3FP%3Cy%3E.*%29%22%29%29,%0A%20%20%20%20%28add,%20re.compile%28r%22%28%3FP%3Cx%3E.*%29%20plus%20%28%3FP%3Cy%3E.*%29%22%29%29,%0A%20%20%20%20%28sub,%20re.compile%28r%22%28%3FP%3Cx%3E.*%29%20minus%20%28%3FP%3Cy%3E.*%29%22%29%29,%0A%29%0A%0Adef%20answer%28question%29%3A%0A%20%20%20%20if%20not%20question.startswith%28%22What%20is%22%29%20or%20%22cubed%22%20in%20question%3A%0A%20%20%20%20%20%20%20%20raise%20ValueError%28%22unknown%20operation%22%29%0A%0A%20%20%20%20question%20%3D%20question.removeprefix%28%22What%20is%22%29.removesuffix%28%22%3F%22%29.strip%28%29%0A%0A%20%20%20%20if%20not%20question%3A%0A%20%20%20%20%20%20%20%20raise%20ValueError%28%22syntax%20error%22%29%0A%0A%20%20%20%20return%20calculate%28question%29%0A%0Adef%20calculate%28question%29%3A%0A%20%20%20%20if%20DIGITS.fullmatch%28question%29%3A%0A%20%20%20%20%20%20%20%20return%20int%28question%29%0A%0A%20%20%20%20for%20operation,%20pattern%20in%20OPERATORS%3A%0A%20%20%20%20%20%20%20%20if%20match%20%3A%3D%20pattern.match%28question%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20operation%28calculate%28match%5B%22x%22%5D%29,%20calculate%28match%5B%22y%22%5D%29%29%20%23%20%3C--%20the%20loop%20is%20paused%20here%20to%20make%20the%20two%20recursive%20calls.%0A%20%20%20%20raise%20ValueError%28%22syntax%20error%22%29%0A%0Aprint%28answer%28%22What%20is%201%20plus%20-10%20multiplied%20by%2013%20divided%20by%202%3F%22%29%29&curInstr=0&mode=display&origin=opt-frontend.js&py=311
+[recursion-in-loop-pythontutor]: https://pythontutor.com/visualize.html#code=import%20re%0Afrom%20operator%20import%20add,%20mul,%20sub%0Afrom%20operator%20import%20floordiv%20as%20div%0A%0ADIGITS%20%3D%20re.compile%28r%22-%3F%5Cd%2B%22%29%0A%0AOPERATORS%20%3D%20%28%0A%20%20%20%20%28mul,%20re.compile%28r%22%28%3FP%3Cx%3E.*%29%20multiplied%20by%20%28%3FP%3Cy%3E.*%29%22%29%29,%0A%20%20%20%20%28div,%20re.compile%28r%22%28%3FP%3Cx%3E.*%29%20divided%20by%20%28%3FP%3Cy%3E.*%29%22%29%29,%0A%20%20%20%20%28add,%20re.compile%28r%22%28%3FP%3Cx%3E.*%29%20plus%20%28%3FP%3Cy%3E.*%29%22%29%29,%0A%20%20%20%20%28sub,%20re.compile%28r%22%28%3FP%3Cx%3E.*%29%20minus%20%28%3FP%3Cy%3E.*%29%22%29%29,%0A%29%0A%0Adef%20answer%28question%29%3A%0A%20%20%20%20if%20not%20question.startswith%28%22What%20is%22%29%20or%20%22cubed%22%20in%20question%3A%0A%20%20%20%20%20%20%20%20raise%20ValueError%28%22unknown%20operation%22%29%0A%0A%20%20%20%20question%20%3D%20question.removeprefix%28%22What%20is%22%29.removesuffix%28%22%3F%22%29.strip%28%29%0A%0A%20%20%20%20if%20not%20question%3A%0A%20%20%20%20%20%20%20%20raise%20ValueError%28%22syntax%20error%22%29%0A%0A%20%20%20%20return%20calculate%28question%29%0A%0Adef%20calculate%28question%29%3A%0A%20%20%20%20if%20DIGITS.fullmatch%28question%29%3A%0A%20%20%20%20%20%20%20%20return%20int%28question%29%0A%0A%20%20%20%20for%20operation,%20pattern%20in%20OPERATORS%3A%0A%20%20%20%20%20%20%20%20if%20matches%20%3A%3D%20pattern.match%28question%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20operation%28calculate%28matches%5B%22x%22%5D%29,%20calculate%28matches%5B%22y%22%5D%29%29%20%23%20%3C--%20the%20loop%20is%20paused%20here%20to%20make%20the%20two%20recursive%20calls.%0A%20%20%20%20raise%20ValueError%28%22syntax%20error%22%29%0A%0Aprint%28answer%28%22What%20is%201%20plus%20-10%20multiplied%20by%203%20minus%204%3F%22%29%29%0A%0Aprint%28%22Answer%20should%20be%3A%22,%20%28%281%20%2B%20-10%29%20*%203%29%20-%204%29%0A%0Aprint%28%22Result%20from%20wrong%20order%3A%22,%20%281%20%2B%20-10%29%20*%20%283%20-%204%29%29&curInstr=0&mode=display&origin=opt-frontend.js&py=311
 [recursion-is-not-a-superpower]: https://inventwithpython.com/blog/2021/09/05/recursion-is-not-a-superpower-an-iterative-ackermann/
 [recursion-within-loops]: https://stackoverflow.com/questions/4795527/how-recursion-works-inside-a-for-loop
 [tail-call-optimization]: https://neopythonic.blogspot.com/2009/04/tail-recursion-elimination.html
