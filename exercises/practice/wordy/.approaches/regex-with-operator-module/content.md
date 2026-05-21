@@ -1,6 +1,5 @@
 # Regex and the Operator Module
 
-
 ```python
 import re
 from operator import add, mul, sub
@@ -9,14 +8,14 @@ from operator import floordiv as div
 OPERATIONS = {"plus": add, "minus": sub, "multiplied by": mul, "divided by": div}
 
 REGEX = {
-    'number': re.compile(r'-?\d+'),
-    'operator': re.compile(f'(?:{"|".join(OPERATIONS)})\\b')
+    "number": re.compile(r'-?\d+'),
+    "operator": re.compile(f'(?:{"|".join(OPERATIONS)})\\b')
 }
 
 # Helper function to extract a number from the question.
 def get_number(question):
     # Match a number.
-    pattern = REGEX['number'].match(question)
+    pattern = REGEX["number"].match(question)
     
     # Toss an error if there is no match.
     if not pattern:
@@ -30,7 +29,7 @@ def get_number(question):
 # Helper function to extract an operation from the question.
 def get_operation(question):
     # Match an operation word
-    pattern = REGEX['operator'].match(question)
+    pattern = REGEX["operator"].match(question)
     
     # Toss an error if there is no match.
     if not pattern:
@@ -56,8 +55,8 @@ def answer(question):
 
     # While there are portions of the question left, continue to process.
     while len(question) > 0:
-        # can't have a number followed by a number
-        if REGEX['number'].match(question):
+        # Can't have a number followed by a number
+        if REGEX["number"].match(question):
             raise ValueError("syntax error")
 
         # Call get_operation and unpack the result

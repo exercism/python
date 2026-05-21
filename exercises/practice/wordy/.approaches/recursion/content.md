@@ -1,6 +1,5 @@
 # Recursion for Iteration
 
-
 [Any function that can be written iteratively (_with loops_) can be written using recursion][recursion-and-iteration], and [vice-versa][recursion-is-not-a-superpower].
 A recursive strategy [may not always be obvious][looping-vs-recursion] or easy — but it is always possible.
 So the `while-loop`s used in other approaches to Wordy can be re-written to use recursive calls.
@@ -71,9 +70,9 @@ def calculate(equation):
 
 This approach separates the solution into three functions:
 
-1.  `answer()`, which takes the question and calls `calculate(clean())`, returning the answer to the question.
-2.  `clean()`, which takes a question string and returns a `list` of parsed words and numbers to calculate from.
-3.  `calculate()`, which performs the calculations on the `list` recursively, until a single number (_the base case check_) is returned as the answer — or an error is thrown.
+1. `answer()`, which takes the question and calls `calculate(clean())`, returning the answer to the question.
+2. `clean()`, which takes a question string and returns a `list` of parsed words and numbers to calculate from.
+3. `calculate()`, which performs the calculations on the `list` recursively, until a single number (_the base case check_) is returned as the answer — or an error is thrown.
 
 <br>
 
@@ -89,7 +88,7 @@ The difference being that the `while-loop` test for `len()` 1 now occurs as an `
 `clean()` can also use any of the strategies detailed in other approaches, two of which are below:
 
 ```python
-    # Alternative 1 to the chained calls is to use a list-comprehension:
+    # Alternative 1 to the chained calls is to use a list comprehension:
     return [item for item in
             question.strip("?").split()
             if item not in ("What", "is", "by")] # <-- The [] of the comprehension invokes implicit concatenation.
@@ -103,8 +102,7 @@ The difference being that the `while-loop` test for `len()` 1 now occurs as an `
 
 <br>
 
-## Variation 1:  Use Regex for matching, cleaning, and calculating
-
+## Variation 1: Use Regex for matching, cleaning, and calculating
 
 ```python
 
@@ -129,7 +127,7 @@ VALIDATE = re.compile(r"(?P<x>-?\d+) (multiplied by|divided by|plus|minus) (?P<y
 
 
 def answer(question):
-    if (not question.startswith( "What is") or "cubed" in question):
+    if not question.startswith( "What is") or "cubed" in question:
         raise ValueError("unknown operation")
     
     question = question.removeprefix( "What is").removesuffix("?").strip()
@@ -197,8 +195,7 @@ Note that the `for-loop` and VALIDATE use [`re.match`][re-match], but DIGITS val
 
 <br>
 
-## Variation 2: Use Regex, Recurse within the For-loop
-
+## Variation 2: Use Regex, Recurse within the for-loop
 
 ```python
 import re
@@ -206,6 +203,7 @@ from operator import add, mul, sub
 from operator import floordiv as div
 
 DIGITS = re.compile(r"-?\d+")
+
 OPERATORS = (
     (mul, re.compile(r"(?P<x>.*) multiplied by (?P<y>.*)")),
     (div, re.compile(r"(?P<x>.*) divided by (?P<y>.*)")),

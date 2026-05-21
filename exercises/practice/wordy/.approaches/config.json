@@ -17,42 +17,48 @@
       "slug": "import-callables-from-operator",
       "title": "Import Callables from the Operator Module",
       "blurb": "Use Operator Module Methods to Solve Word Problems.",
-      "authors": ["BethanyG"]
+      "authors": ["BethanyG"],
+      "contributors": ["yrahcaz7"]
     },
     {
       "uuid": "61f44943-8a12-471b-ab15-d0d10fa4f72f",
       "slug": "regex-with-operator-module",
       "title": "Regex with the Operator Module",
       "blurb": "Use Regex with the Callables from Operator to solve word problems.",
-      "authors": ["BethanyG"]
+      "authors": ["BethanyG"],
+      "contributors": ["yrahcaz7"]
     },
     {
       "uuid": "46bd15dd-cae4-4eb3-ac63-a8b631a508d1",
       "slug": "lambdas-in-a-dictionary",
       "title": "Lambdas in a Dictionary to Return Functions",
       "blurb": "Use lambdas in a dictionary to return functions for solving word problems.",
-      "authors": ["BethanyG"]
+      "authors": ["BethanyG"],
+      "contributors": ["yrahcaz7"]
     },
     {
       "uuid": "2e643b88-9b76-45a1-98f4-b211919af061",
       "slug": "recursion",
       "title": "Recursion for Iteration.",
       "blurb": "Use recursion with other strategies to solve word problems.",
-      "authors": ["BethanyG"]
+      "authors": ["BethanyG"],
+      "contributors": ["yrahcaz7"]
     },
     {
       "uuid": "1e136304-959c-4ad1-bc4a-450d13e5f668",
       "slug": "functools-reduce",
-      "title": "Functools.reduce for Calculation",
+      "title": "functools.reduce for Calculation",
       "blurb": "Use functools.reduce with other strategies to calculate solutions.",
-      "authors": ["BethanyG"]
+      "authors": ["BethanyG"],
+      "contributors": ["yrahcaz7"]
     },
     {
       "uuid": "d643e2b4-daee-422d-b8d3-2cad2f439db5",
       "slug": "dunder-getattribute",
       "title": "dunder with __getattribute__",
       "blurb": "Use dunder methods with __getattribute__.",
-      "authors": ["bobahop"]
+      "authors": ["bobahop"],
+      "contributors": ["yrahcaz7"]
     }
   ]
 }

@@ -1,6 +1,5 @@
 # Dunder methods with `__getattribute__`
 
-
 ```python
 OPS = {
     "plus": "__add__",
@@ -35,7 +34,6 @@ def answer(question):
         except:
             raise ValueError("syntax error")
     return ret[0]
-
 ```
 
 This approach begins by defining a [dictionary][dictionaries] of the word keys with their related [`dunder-methods`][dunder] methods.

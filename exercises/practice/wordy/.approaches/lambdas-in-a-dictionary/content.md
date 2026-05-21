@@ -1,12 +1,11 @@
 # Lambdas in a Dictionary to Return Functions
 
-
 ```python
 OPERATIONS = {
-    'minus': lambda a, b: a - b,
-    'plus': lambda a, b: a + b,
-    'multiplied': lambda a, b: a * b,
-    'divided': lambda a, b: a / b
+    "minus": lambda a, b: a - b,
+    "plus": lambda a, b: a + b,
+    "multiplied": lambda a, b: a * b,
+    "divided": lambda a, b: a / b
 }
 
 
@@ -45,7 +44,6 @@ The two forms are parsed identically (_they are both function definitions_), but
 
 For example, the code above could be re-written to include user-defined functions as opposed to `lambda expressions`:
 
-
 ```python
 def add_(x, y):
     return x + y
@@ -60,7 +58,7 @@ def sub_(x, y):
     return x - y
 
 def answer(question):
-    operations = {'minus': sub_,'plus': add_,'multiplied': mul_,'divided': div_}
+    operations = {"minus": sub_, "plus": add_, "multiplied": mul_, "divided": div_}
     
     if not question.startswith("What is") or "cubed" in question:
         raise ValueError("unknown operation")

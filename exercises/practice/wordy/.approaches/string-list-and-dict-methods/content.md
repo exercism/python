@@ -64,9 +64,9 @@ If `symbol` doesn't match any known operators, a `ValueError("syntax error")` is
 
 Once `len(formula) == 1`, the first element (`formula[0]`) is converted to an `int()` and returned as the answer.
 
+<br>
 
-## Variation 1:  Use a Dictionary for Lookup/Replace
-
+## Variation 1: Use a Dictionary for Lookup/Replace
 
 ```python
 OPERATIONS = {"plus": "+", "minus": "-", "multiplied": "*", "divided": "/"}
@@ -108,14 +108,12 @@ def answer(question):
     return int(formula[0])
 ```
 
-
-````exercism/note
+~~~~exercism/note
 [Method chaining][method-chaining] is used in the clean step for this variation, and is the equivalent of assigning and re-assigning `question` as is done in the initial approach.
 This is because `str.startswith`, `str.endswith`, and `str.replace` all return strings, so the output of one can be used as the input to the next.
 
 [method-chaining]: https://www.tutorialspoint.com/Explain-Python-class-method-chaining
-````
-
+~~~~
 
 This variation creates a dictionary to map operation words to symbols.
 It pre-processes the question string into a `formula` list by looking up the operation words and replacing them with the symbols via the [`<dict>.get`][dict-get] method, which takes a [default argument][default-argument] for when a [`KeyError`][keyerror] is thrown.
@@ -128,18 +126,17 @@ This dictionary is not necessary, but does potentially make adding/tracking futu
 
 The `while-loop`, `if-elif-else` block, and the `try-except` block are then the same as in the initial approach.
 
-
-````exercism/note
+~~~~exercism/note
 There are a couple of common alternatives to the `loop-append` used here:
 
-1.  [`list-comprehensions`][list-comprehension] duplicate the same process in a more succinct and declarative fashion. This one also includes filtering out "by":
+1. [List comprehensions][list-comprehension] duplicate the same process in a more succinct and declarative fashion. This one also includes filtering out "by":
     ```python
     formula = [OPERATIONS.get(operation, operation) for
                 operation in question.split() if operation != "by"]
     ```
 
 2. The built-in [`filter()`][filter] and [`map()`][map] functions used with a [`lambda`][lambdas] to process the elements of the list.
-    This is identical in process to both the `loop-append` and the `list-comprehension`, but might be easier to reason about for those coming from a more functional programming language:
+    This is identical in process to both the `loop-append` and the list comprehension, but might be easier to reason about for those coming from a more functional programming language:
 
     ```python
     formula = list(map(lambda op: OPERATIONS.get(op, op),
@@ -150,11 +147,10 @@ There are a couple of common alternatives to the `loop-append` used here:
 [lambdas]: https://docs.python.org/3/howto/functional.html#small-functions-and-the-lambda-expression
 [filter]: https://docs.python.org/3/library/functions.html#filter
 [map]: https://docs.python.org/3/library/functions.html#map
-````
+~~~~
 
-Rather than indexing and slicing, [concept: unpacking and multiple assignment](/tracks/python/concepts/unpacking-and-multiple-assignment) can be used to assign the variables.
+Rather than indexing and slicing, [concept:python/unpacking-and-multiple-assignment]() can be used to assign the variables.
 However, this does require a modification to the returned formula `list`:
-
 
 ```python
     x_value, operation, y_value, *remainder = formula  # <-- Unpacking won't allow conversion to int() here.
@@ -167,13 +163,12 @@ However, this does require a modification to the returned formula `list`:
     return int(formula[0])
 ```
 
+<br>
 
-## Variation 2:  Structural Pattern Matching to Replace `if-elif-else`
-
+## Variation 2: Structural Pattern Matching to Replace `if-elif-else`
 
 Introduced in Python 3.10, [structural pattern matching][structural-pattern-matching] can be used to replace the `if-elif-else` chain in the `while-loop` used in the two approaches above.
 In some circumstances, this could be easier to read and/or reason about:
-
 
 ```python
 def answer(question):

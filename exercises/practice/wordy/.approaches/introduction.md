@@ -6,17 +6,14 @@ This means that for some of the test cases, the solution will not be the same as
 
 <br>
 
-
 ## General Guidance
 
 The key to a Wordy solution is to remove the "question" portion of the sentence (_"What is", "?"_) and process the remaining words between numbers as [operators][mathematical operators].
 If a single number remains after removing the "question" pieces, it should be converted to an [`int`][int] and returned as the answer.
 
-
 Any words or word-number combinations that do not fall into the simple mathematical evaluation pattern (_number-operator-number_) should [`raise`][raise-statement] a [`ValueError`][value-error] with a message.
 This includes any "extra" spaces between numbers.
 As shown in various approaches, there are multiple strategies for validating questions, with no one "canonical" solution.
-
 
 A whole class of error can be eliminated up front by checking if a question starts with "What is", ends with "?", and does not include the word "cubed".
 Any other question formulation becomes a `ValueError("unknown operation")`.
@@ -45,40 +42,36 @@ However, solutions all follow the same general steps:
 For question cleaning, [`str.removeprefix`][removeprefix] and
 [`str.removesuffix`][removesuffix] introduced in `Python 3.9` can be very useful:
 
-
 ```python
->>> 'Supercalifragilisticexpialidocious'.removeprefix('Super')
+>>> "Supercalifragilisticexpialidocious".removeprefix("Super")
 'califragilisticexpialidocious'
 
->>> 'Supercalifragilisticexpialidocious'.removesuffix('expialidocious')
+>>> "Supercalifragilisticexpialidocious".removesuffix("expialidocious")
 'Supercalifragilistic'
 
 
-#The two methods can be chained to remove both a suffix and prefix in "one line".
-#The line has been broken up here for better display.
->>> ('Supercalifragilisticexpialidocious'
-     .removesuffix('expialidocious')
-     .removeprefix('Super'))
+# The two methods can be chained to remove both a suffix and prefix in "one line".
+# The line has been broken up here for better display.
+>>> ("Supercalifragilisticexpialidocious"
+        .removesuffix("expialidocious")
+        .removeprefix("Super"))
 'califragilistic'
 ```
 
-
 You can also use [`str.startswith`][startswith] and [`str.endswith`][endswith] in conjunction with [string slicing][sequence-operations] for cleaning:
 
-
 ```python
->>> if 'Supercalifragilisticexpialidocious'.startswith('Super'):
-        new_string = 'Supercalifragilisticexpialidocious'[5:]
+>>> if "Supercalifragilisticexpialidocious".startswith("Super"):
+        new_string = "Supercalifragilisticexpialidocious"[5:]
 >>> new_string
 'califragilisticexpialidocious'
 
 
->>> if new_string.endswith('expialidocious'):
+>>> if new_string.endswith("expialidocious"):
         new_string = new_string[:15]
 >>> new_string
 'califragilistic'
 ```
-
 
 Different combinations of [`str.find`][find], [`str.rfind`][rfind], or [`str.index`][index] with string slicing could also be used to clean up the initial question.
 A [regex][regex] could be used to process the question as well, but might be considered overkill given the fixed nature of the prefix/suffix and operations.
@@ -86,17 +79,14 @@ Finally, [`str.strip`][strip] and its variants are very useful for cleaning up a
 
 Many solutions then use [`str.split`][split] to process the remaining "cleaned" question into a `list` for convenient looping/iteration, although other strategies can also be used:
 
-
 ```python
 >>> sentence = "The quick brown fox jumped over the lazy dog 10 times"
 >>> sentence.split()
 ['The', 'quick', 'brown', 'fox', 'jumped', 'over', 'the', 'lazy', 'dog', '10', 'times']
 ```
 
-
 For math operations, many solutions involve importing and using methods from the [operator][operator] module.
 Some solutions use either [lambda][lambdas] expressions, [dunder/"special" methods][dunder-methods], or even `eval()` to replace words with arithmetic operations.
-
 
 However, the exercise can be solved without using `operator`, `lambdas`, `dunder-methods` or `eval`.
 It is recommended that you first start by solving it _without_ "advanced" strategies, and then refine your solution into something more compact or complex as you learn and practice.
@@ -116,9 +106,7 @@ It is also entirely unnecessary, as the other methods described here are safer a
 
 _____________
 
-
 ## Approach: String, List, and Dictionary Methods
-
 
 ```python
 def answer(question):
@@ -160,9 +148,10 @@ def answer(question):
 This approach uses only data structures and methods (_[`str` methods][str-methods], [`list()`][list], loops, etc._) from core Python, and does not import any extra modules.
 It may have more lines of code than average, but it is clear to follow and fairly straightforward to reason about.
 
-This approach uses a [`try-except`][handling-exceptions] statment for handling unknown operators.
+This approach uses a [`try-except`][handling-exceptions] statement for handling unknown operators.
 It does this by raising an error inside the `try` block when `symbol` does not match any operator word.
-The `except` block will catch this error (or any other error raised inside the `try` block), and `raise` a `ValueError("syntax error")` instead. (You can look at [exception chaining in the Python docs][exception-chaining] for further detail on this subject.)
+The `except` block will catch this error (or any other error raised inside the `try` block), and `raise` a `ValueError("syntax error")` instead.
+(You can look at [exception chaining in the Python docs][exception-chaining] for further detail on this subject.)
 
 Alternatives could use a [dictionary][dict] to store word to operator mappings that could be looked up in the `while-loop` using [`<dict>.get()`][dict-get], among other strategies.
 
@@ -171,7 +160,6 @@ For more details and variations, read the [String, List and Dictionary Methods][
 <br>
 
 ## Approach: Import Callables from the Operator Module
-
 
 ```python
 from operator import add, mul, sub
@@ -191,7 +179,7 @@ def answer(question):
     if not question:
         raise ValueError("syntax error")
     
-    equation = [word for word in question.split() if word != 'by']
+    equation = [word for word in question.split() if word != "by"]
     
     while len(equation) > 1:
         try:
@@ -205,8 +193,8 @@ def answer(question):
 ```
 
 This solution imports methods from the `operator` module, and uses them in a dictionary/lookup map.
-Like the first approach, it uses a [try-except][handling-exceptions] block for handling unknown operators.
-It also uses a [list-comprehension][list-comprehension] to create the parsed "formula" and employs [concept: unpacking and multiple assignment](/tracks/python/concepts/unpacking-and-multiple-assignment).
+Like the first approach, it uses a [`try-except`][handling-exceptions] block for handling unknown operators.
+It also uses a [list comprehension][list-comprehension] to create the parsed "formula" and employs [concept:python/unpacking-and-multiple-assignment]().
 
 For more details and options, take a look at the [Import Callables from the Operator Module][approach-import-callables-from-operator] approach.
 
@@ -214,28 +202,28 @@ For more details and options, take a look at the [Import Callables from the Oper
 
 ## Approach: Regex and the Operator Module
 
-
 ```python
 import re
 from operator import add, mul, sub
 from operator import floordiv as div
 
 OPERATIONS = {"plus": add, "minus": sub, "multiplied by": mul, "divided by": div}
+
 REGEX = {
-    'number': re.compile(r'-?\d+'),
-    'operator': re.compile(f'(?:{"|".join(OPERATIONS)})\\b')
+    "number": re.compile(r'-?\d+'),
+    "operator": re.compile(f'(?:{"|".join(OPERATIONS)})\\b')
 }
 
 
 def get_number(question):
-    pattern = REGEX['number'].match(question)
+    pattern = REGEX["number"].match(question)
     if not pattern:
         raise ValueError("syntax error")
     return [question.removeprefix(pattern.group(0)).lstrip(),
             int(pattern.group(0))]
 
 def get_operation(question):
-    pattern = REGEX['operator'].match(question)
+    pattern = REGEX["operator"].match(question)
     if not pattern:
         raise ValueError("unknown operation")
     return [question.removeprefix(pattern.group(0)).lstrip(),
@@ -250,7 +238,7 @@ def answer(question):
     question, result = get_number(question)
 
     while len(question) > 0:
-        if REGEX['number'].match(question):
+        if REGEX["number"].match(question):
             raise ValueError("syntax error")
 
         question, operation = get_operation(question)
@@ -260,7 +248,6 @@ def answer(question):
 
     return result
 ```
-
 
 This approach uses a dictionary of regex patterns for matching numbers and operators, paired with a dictionary of operations imported from the `operator` module.
 It pulls number and operator processing out into separate functions and uses a while loop in `answer()` to evaluate the word problem.
@@ -273,14 +260,13 @@ For more details, take a look at the [regex-with-operator-module][approach-regex
 
 ## Approach: Lambdas in a Dictionary to return Functions
 
-
 ```python
 OPERATIONS = {
-        'minus': lambda a, b: a - b,
-        'plus': lambda a, b: a + b,
-        'multiplied': lambda a, b: a * b,
-        'divided': lambda a, b: a / b
-    }
+    "minus": lambda a, b: a - b,
+    "plus": lambda a, b: a + b,
+    "multiplied": lambda a, b: a * b,
+    "divided": lambda a, b: a / b
+}
 
 
 def answer(question):
@@ -295,7 +281,7 @@ def answer(question):
     if not question:
         raise ValueError("syntax error")
     
-    equation = [word for word in question.split() if word != 'by']
+    equation = [word for word in question.split() if word != "by"]
     
     while len(equation) > 1:
         try:
@@ -307,7 +293,6 @@ def answer(question):
     
     return equation[0]
 ```
-
 
 Rather than import methods from the `operator` module, this approach defines a series of [`lambda expressions`][lambdas] in the OPERATIONS dictionary.
 These `lambdas` then return a function that takes two numbers as arguments, returning the result.
@@ -322,7 +307,6 @@ For more details, take a look at the [Lambdas in a Dictionary][approach-lambdas-
 <br>
 
 ## Approach: Recursion
-
 
 ```python
 from operator import add, mul, sub
@@ -356,8 +340,7 @@ def calculate(equation):
         return calculate(equation)
 ```
 
-
-Like previous approaches that substitute methods from `operator` for `lambdas` or `list-comprehensions` for `loops` that append to a `list` -- `recursion` can be substituted for the `while-loop` that many solutions use to process a parsed word problem.
+Like previous approaches that substitute methods from `operator` for `lambdas` or list comprehensions for `loops` that append to a `list` -- `recursion` can be substituted for the `while-loop` that many solutions use to process a parsed word problem.
 Depending on who is reading the code, `recursion` may or may not be easier to reason about.
 It may also be more (_or less!_) performant than using a `while-loop` or `functools.reduce` (_see below_), depending on how the various cleaning and error-checking actions are performed.
 
@@ -367,8 +350,7 @@ For more details, take a look at the [recursion][approach-recursion] approach.
 
 <br>
 
-## Approach:  functools.reduce()
-
+## Approach: `functools.reduce()`
 
 ```python
 from operator import add, mul, sub
@@ -399,9 +381,8 @@ def answer(question):
     return result
 ```
 
-
 This approach replaces the `while-loop` used in many solutions (_or the `recursion` strategy outlined in the approach above_) with a call to [`functools.reduce`][functools-reduce].
-It also employs a lookup dictionary for methods imported from the `operator` module, as well as a `list-comprehension`, the built-in [`filter`][filter] function, and multiple string [slices][sequence-operations].
+It also employs a lookup dictionary for methods imported from the `operator` module, as well as a list comprehension, the built-in [`filter`][filter] function, and multiple string [slices][sequence-operations].
 If desired, the `operator` imports can be replaced with a dictionary of `lambda` expressions or `dunder-methods`.
 
 This solution may be a little less clear to follow or reason about due to the slicing syntax and the particular syntax of both `filter` and `fuctools.reduce`.
@@ -411,7 +392,6 @@ For more details and variations, take a look at the [functools.reduce for Calcul
 <br>
 
 ## Approach: Dunder methods with `__getattribute__`
-
 
 ```python
 OPS = {
@@ -447,7 +427,6 @@ def answer(question):
         except:
             raise ValueError("syntax error")
     return ret[0]
-
 ```
 
 This approach uses the [`dunder methods`][dunder-methods] / ["special methods"][special-methods] / "magic methods" associated with the `int()` class, using the `dunder-method` called [`<object>.__getattribute__`][getattribute] to find the [callable][callable] operation in the `int()` class [namespace][namespace] / dictionary.
