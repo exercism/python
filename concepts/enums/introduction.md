@@ -1,6 +1,6 @@
 # Introduction
 
-In Python, [an `enum`](https://docs.python.org/3/library/enum.html) is a set of names that are bound to unique `literal`, or `constant` values.
+In Python, [an `enum`][enum-docs] is a set of names that are bound to unique `literal`, or `constant` values.
 `Enums` are defined by inheriting from or subclassing an `Enum` class.
 Built-in `enum` types are available in the module `enum` and the class `Enum` can be imported using `from enum import Enum`.
 
@@ -45,7 +45,7 @@ for member in Color:
 #=> (GREEN, 2)
 ```
 
-`Enum` members can be compared using [`is` (_identity operator_)](https://www.w3schools.com/python/ref_keyword_is.asp) or `is not`. The `==` or `!=` (_equality operators_) work likewise:
+`Enum` members can be compared using [`is` (_identity operator_)][identity-keyword] or `is not`. The `==` or `!=` (_equality operators_) work likewise:
 
 ```python
 a = Color.RED
@@ -68,3 +68,6 @@ g is Color.GREEN
 g
 #=> <Color.GREEN: 2>
 ```
+
+[enum-docs]: https://docs.python.org/3/library/enum.html
+[identity-keyword]: https://www.w3schools.com/python/ref_keyword_is.asp
