@@ -22,9 +22,9 @@ def get_number(question):
     if not pattern:
         raise ValueError("syntax error")
     
-    # Remove the matched pattern from the question, and convert 
+    # Remove the matched pattern from the question, and convert
     # that same pattern to an int. Return the modified question and the int.
-    return [question.removeprefix(pattern.group(0)).lstrip(), 
+    return [question.removeprefix(pattern.group(0)).lstrip(),
             int(pattern.group(0))]
 
 # Helper function to extract an operation from the question.
@@ -36,7 +36,7 @@ def get_operation(question):
     if not pattern:
         raise ValueError("unknown operation")
         
-    # Remove the matched pattern from the question, and look up 
+    # Remove the matched pattern from the question, and look up
     # that same pattern in OPERATIONS. Return the modified question and the operator.
     return [question.removeprefix(pattern.group(0)).lstrip(),
             OPERATIONS[pattern.group(0)]]
@@ -64,11 +64,11 @@ def answer(question):
         # into question and operation.
         question, operation = get_operation(question)
         
-        # Call get_number and unpack the result 
+        # Call get_number and unpack the result
         # into question and num
         question, num = get_number(question)
 
-        # Perform the calculation, using result and num as 
+        # Perform the calculation, using result and num as
         # arguments to operation.
         result = operation(result, num)
 

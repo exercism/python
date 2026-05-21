@@ -13,9 +13,9 @@ That being said, Python famously does not perform [tail-call optimization][tail-
 <br>
 
 Recursion works best with problem spaces that resemble trees, include [backtracking][backtracking], or become progressively smaller.
- Some examples include financial processes like calculating [amortization][amortization] and [depreciation][depreciation], tracking [radiation reduction through nuclei decay][nuclei-decay], and algorithms like [biscetion search][bisection-search], [depth-first search][dfs], and [merge sort][merge-sort].
+Some examples include financial processes like calculating [amortization][amortization] and [depreciation][depreciation], tracking [radiation reduction through nuclei decay][nuclei-decay], and algorithms like [biscetion search][bisection-search], [depth-first search][dfs], and [merge sort][merge-sort].
 
- <br>
+<br>
 
 Other algorithms such as [breadth-first search][bfs], [Dijkstra's algorithm][dijkstra], and the [Bellman-Ford Algorithm][bellman-ford] lend themselves better to loops.
 
@@ -44,9 +44,9 @@ def clean(question):
     return (question.removeprefix("What is")
             .removesuffix("?")
             .replace("by", "")
-            .strip()).split() # <-- this split() turns the string into a list.
+            .strip()).split() # <-- This split() turns the string into a list.
 
-# Recursively calculate the first piece of the equation, calling 
+# Recursively calculate the first piece of the equation, calling
 # calculate() on the product + the remainder.
 # Return the solution when len(equation) is one.
 def calculate(equation):
@@ -60,7 +60,7 @@ def calculate(equation):
             
             # Redefine the equation list as the product of the first three
             # variables concatenated with the unpacked remainder.
-            equation = [OPERATIONS[operation](int(x_value), 
+            equation = [OPERATIONS[operation](int(x_value),
                         int(y_value)), *rest]
         except:
             raise ValueError("syntax error")
@@ -90,15 +90,15 @@ The difference being that the `while-loop` test for `len()` 1 now occurs as an `
 
 ```python
     # Alternative 1 to the chained calls is to use a list-comprehension:
-    return [item for item in 
-            question.strip("?").split() 
-            if item not in ("What", "is", "by")] #<-- The [] of the comprehension invokes implicit concatenation.
+    return [item for item in
+            question.strip("?").split()
+            if item not in ("What", "is", "by")] # <-- The [] of the comprehension invokes implicit concatenation.
     
     
     # Alternative 2 is the built-in filter(), but it can be somewhat hard to read.
-    return list(filter(lambda x: 
-                x not in ("What", "is", "by"), 
-                question.strip("?").split())) #<-- The () in list() also invokes implicit concatenation.
+    return list(filter(lambda x:
+                x not in ("What", "is", "by"),
+                question.strip("?").split())) # <-- The () in list() also invokes implicit concatenation.
 ```
 
 <br>
@@ -115,13 +115,13 @@ from operator import floordiv as div
 # This regex looks for any number 0-9 that may or may not have a - in front of it.
 DIGITS = re.compile(r"-?\d+")
 
-# These regex look for a number (x or y) before and after a phrase or word. 
+# These regex look for a number (x or y) before and after a phrase or word.
 OPERATORS = {
-            mul: re.compile(r"(?P<x>-?\d+) multiplied by (?P<y>-?\d+)"),
-            div: re.compile(r"(?P<x>-?\d+) divided by (?P<y>-?\d+)"),
-            add: re.compile(r"(?P<x>-?\d+) plus (?P<y>-?\d+)"),
-            sub: re.compile(r"(?P<x>-?\d+) minus (?P<y>-?\d+)"),
-            }
+    mul: re.compile(r"(?P<x>-?\d+) multiplied by (?P<y>-?\d+)"),
+    div: re.compile(r"(?P<x>-?\d+) divided by (?P<y>-?\d+)"),
+    add: re.compile(r"(?P<x>-?\d+) plus (?P<y>-?\d+)"),
+    sub: re.compile(r"(?P<x>-?\d+) minus (?P<y>-?\d+)"),
+}
 
 # This regex looks for any digit 0-9 (optionally negative) followed by any valid operation,
 # ending in any digit (optionally negative).
@@ -145,7 +145,7 @@ def answer(question):
     # Call the recursive calculate() function.
     return calculate(question)
 
-# Recursively calculate the first piece of the equation, calling 
+# Recursively calculate the first piece of the equation, calling
 # calculate() on the product + the remainder.
 # Return the solution when len(equation) is one.
 def calculate(question):
@@ -211,7 +211,7 @@ OPERATORS = (
     (div, re.compile(r"(?P<x>.*) divided by (?P<y>.*)")),
     (add, re.compile(r"(?P<x>.*) plus (?P<y>.*)")),
     (sub, re.compile(r"(?P<x>.*) minus (?P<y>.*)")),
-    )
+)
 
 def answer(question):
     if not question.startswith( "What is") or "cubed" in question:
@@ -230,13 +230,13 @@ def calculate(question):
         
     for operation, pattern in OPERATORS:
         if match := pattern.match(question):
-            return operation(calculate(match['x']), calculate(match['y'])) #<-- the loop is paused here to make the two recursive calls.
+            return operation(calculate(match['x']), calculate(match['y'])) # <-- The loop is paused here to make the two recursive calls.
     raise ValueError("syntax error")
 ```
 
 This solution uses a `tuple` of nested `tuples` containing the operators from `operator` and regex in place of the dictionaries that have been used in the previous approaches.
 This saves some space, but requires that the nested `tuples` be unpacked as the main `tuple` is iterated over (_note the `for operation, pattern in OPERATORS:` in the `for-loop`_ ) so that operations can be matched to strings in the question.
- The regex is also more generic than the example above (_anything before and after the operation words is allowed_).
+The regex is also more generic than the example above (_anything before and after the operation words is allowed_).
 
 Recursion is used a bit differently here from the previous variations — the calls are placed [within the `for-loop`][recursion-within-loops].
 Because the regex are more generic, they will match a `digit-operation-digit` trio in a longer question, so the line `return operation(calculate(match['x']), calculate(match['y']))` is effectively splitting a question into parts that can then be worked on in their own stack frames.

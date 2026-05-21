@@ -66,7 +66,7 @@ Using a `list-comprehension` to filter out "by" can be replaced with the [`str.r
 question = (question.removeprefix("What is")
             .removesuffix("?")
             .replace("by", "")
-            .strip()) #<-- Enclosing () means these lines are automatically joined by the interpreter.
+            .strip()) # <-- Enclosing () means these lines are automatically joined by the interpreter.
 ```
 
 

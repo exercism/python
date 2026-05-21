@@ -16,8 +16,8 @@ def answer(question):
         raise ValueError("unknown operation")
         
     # Using the built-in filter() to clean & split the question..
-    question = list(filter(lambda x: 
-                    x not in ("What", "is", "by"), 
+    question = list(filter(lambda x:
+                    x not in ("What", "is", "by"),
                     question.strip("?").split()))
 
     # Separate candidate operators and numbers into two lists.
@@ -25,8 +25,8 @@ def answer(question):
     
     # Convert candidate elements to int(), checking for "-".
     # All other values are replaced with None.
-    digits = [int(element) if 
-             (element.isdigit() or element[1:].isdigit()) 
+    digits = [int(element) if
+             (element.isdigit() or element[1:].isdigit())
               else None for element in question[::2]]
     
     # If there is a mis-match between operators and numbers, toss error.
@@ -51,13 +51,13 @@ However, this could easily be accomplished by either using [chained][method-chai
     return (question.removeprefix("What is")
             .removesuffix("?")
             .replace("by", "")
-            .strip()).split() # <-- this split() turns the string into a list.
+            .strip()).split() # <-- This split() turns the string into a list.
             
     
     # Alternative 2 to the nested calls to filter and split is to use a list-comprehension:
-    return [item for item in 
-            question.strip("?").split() 
-            if item not in ("What", "is", "by")] #<-- The [] of the comprehension invokes implicit concatenation.
+    return [item for item in
+            question.strip("?").split()
+            if item not in ("What", "is", "by")] # <-- The [] of the comprehension invokes implicit concatenation.
 ```
 
 
@@ -98,8 +98,8 @@ def answer(question):
         raise ValueError("unknown operation")
     
     # Clean and split the question into a list for processing.
-    question = [item for item in 
-                question.strip("?").split() if 
+    question = [item for item in
+                question.strip("?").split() if
                 item not in ("What", "is", "by")]
     
     # Separate candidate operators and numbers into two lists.
@@ -107,8 +107,8 @@ def answer(question):
     
     # Convert candidate elements to int(), checking for "-".
     # All other values are replaced with None.
-    digits = [int(element) if 
-              (element.isdigit() or element[1:].isdigit()) 
+    digits = [int(element) if
+              (element.isdigit() or element[1:].isdigit())
               else None for element in question[::2]]
     
     # If there is a mis-match between operators and numbers, toss error.

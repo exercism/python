@@ -13,7 +13,7 @@ The key to a Wordy solution is to remove the "question" portion of the sentence 
 If a single number remains after removing the "question" pieces, it should be converted to an [`int`][int] and returned as the answer.
 
 
-Any words or word-number combinations that do not fall into the simple mathematical evaluation pattern (_number-operator-number_) should [`raise`][raise-statement] a ["ValueError('syntax error")`][value-error] with a message.
+Any words or word-number combinations that do not fall into the simple mathematical evaluation pattern (_number-operator-number_) should [`raise`][raise-statement] a [`ValueError`][value-error] with a message.
 This includes any "extra" spaces between numbers.
 As shown in various approaches, there are multiple strategies for validating questions, with no one "canonical" solution.
 
@@ -26,18 +26,18 @@ This could lead to future maintenance issues if the definition of a question eve
 
 ~~~~exercism/note
 There are many Pythonic ways to go about the cleaning, parsing, and calculation steps of Wordy.
-However, solutions all follow the same general steps:  
+However, solutions all follow the same general steps:
 
 
-1.  Remove the parts of the question string that do not apply to calculating the answer.
-2.  Iterate over the question, determining which words are numbers, and which are meant to be mathematical operations.
-    — _Converting the question string into a `list` of words is hugely helpful here._
-3.  **_Starting from the left_**,  take the first three elements and convert number strings to `int` and operations words to the mathematical operations +, -, *, and /.
+1. Remove the parts of the question string that do not apply to calculating the answer.
+2. Iterate over the question, determining which words are numbers, and which are meant to be mathematical operations.
+  - _Converting the question string into a `list` of words is hugely helpful here._
+3. **_Starting from the left_**, take the first three elements and convert number strings to `int`s and operation words to the mathematical operations `+`, `-`, `*`, and `/`.
 4. Apply the operation to the numbers, which should result in a single number.
-   — _Employing a `try-except` block can trap any errors thrown and make the code both "safer" and less complex._
-5. Use the calculated number from step 4 as the start for the next "trio" (_number, operation, number_) in the question. The calculated number + the remainder of the question becomes the question being worked on in the next iteration.
-   — _Using a `while-loop` with a test on the length of the question to do calculation is a very common strategy._
-6.  Once the question is calculated down to a single number, that is the answer.  Anything else that happens in the loop/iteration or within the accumulated result is a `ValueError("syntax error")`.
+  - _Employing a `try-except` block can trap any errors thrown and make the code both "safer" and less complex._
+5. Use the calculated number from step 4 as the start for the next "trio" (_number, operation, number_) in the question. The calculated number plus the remainder of the question becomes the question being worked on in the next iteration.
+  - _Using a `while-loop` with a test on the length of the question to do calculation is a very common strategy._
+6. Once the question is calculated down to a single number, that is the answer. Anything else that happens in the loop/iteration or within the accumulated result is a `ValueError("syntax error")`.
 ~~~~
 
 <br>
@@ -99,7 +99,7 @@ Some solutions use either [lambda][lambdas] expressions, [dunder/"special" metho
 
 
 However, the exercise can be solved without using `operator`, `lambdas`, `dunder-methods` or `eval`.
- It is recommended that you first start by solving it _without_ "advanced" strategies, and then refine your solution into something more compact or complex as you learn and practice.
+It is recommended that you first start by solving it _without_ "advanced" strategies, and then refine your solution into something more compact or complex as you learn and practice.
 
 <br>
 
@@ -157,11 +157,14 @@ def answer(question):
     return int(formula[0])
 ```
 
-This approach uses only data structures and methods (_[str methods][str-methods], [list()][list], loops, etc._) from core Python, and does not import any extra modules.
+This approach uses only data structures and methods (_[`str` methods][str-methods], [`list()`][list], loops, etc._) from core Python, and does not import any extra modules.
 It may have more lines of code than average, but it is clear to follow and fairly straightforward to reason about.
-It does use a [try-except][handling-exceptions] block for handling unknown operators.
 
-Alternatives could use a [dictionary][dict] to store word --> operator mappings that could be looked up in the `while-loop` using [`<dict>.get()`][dict-get], among other strategies.
+This approach uses a [`try-except`][handling-exceptions] statment for handling unknown operators.
+It does this by raising an error inside the `try` block when `symbol` does not match any operator word.
+The `except` block will catch this error (or any other error raised inside the `try` block), and `raise` a `ValueError("syntax error")` instead. (You can look at [exception chaining in the Python docs][exception-chaining] for further detail on this subject.)
+
+Alternatives could use a [dictionary][dict] to store word to operator mappings that could be looked up in the `while-loop` using [`<dict>.get()`][dict-get], among other strategies.
 
 For more details and variations, read the [String, List and Dictionary Methods][approach-string-list-and-dict-methods] approach.
 
@@ -185,7 +188,7 @@ def answer(question):
     if (question.startswith("-") and question[1:].isdigit()) or question.isdigit():
         return int(question)
     
-    if not question: 
+    if not question:
         raise ValueError("syntax error")
     
     equation = [word for word in question.split() if word != 'by']
@@ -203,7 +206,7 @@ def answer(question):
 
 This solution imports methods from the `operator` module, and uses them in a dictionary/lookup map.
 Like the first approach, it uses a [try-except][handling-exceptions] block for handling unknown operators.
- It also uses a [list-comprehension][list-comprehension] to create the parsed "formula" and employs [concept: unpacking and multiple assignment](/tracks/python/concepts/unpacking-and-multiple-assignment).
+It also uses a [list-comprehension][list-comprehension] to create the parsed "formula" and employs [concept: unpacking and multiple assignment](/tracks/python/concepts/unpacking-and-multiple-assignment).
 
 For more details and options, take a look at the [Import Callables from the Operator Module][approach-import-callables-from-operator] approach.
 
@@ -228,7 +231,7 @@ def get_number(question):
     pattern = REGEX['number'].match(question)
     if not pattern:
         raise ValueError("syntax error")
-    return [question.removeprefix(pattern.group(0)).lstrip(), 
+    return [question.removeprefix(pattern.group(0)).lstrip(),
             int(pattern.group(0))]
 
 def get_operation(question):
@@ -289,7 +292,7 @@ def answer(question):
     if (question.startswith("-") and question[1:].isdigit()) or question.isdigit():
         return int(question)
     
-    if not question: 
+    if not question:
         raise ValueError("syntax error")
     
     equation = [word for word in question.split() if word != 'by']
@@ -345,7 +348,7 @@ def calculate(equation):
     else:
         try:
             x_value, operation, y_value, *rest = equation
-            equation = [OPERATIONS[operation](int(x_value), 
+            equation = [OPERATIONS[operation](int(x_value),
                         int(y_value)), *rest]
         except:
             raise ValueError("syntax error")
@@ -379,13 +382,13 @@ def answer(question):
     if not question.startswith( "What is") or "cubed" in question:
         raise ValueError("unknown operation")
         
-    question = list(filter(lambda x: 
-                x not in ("What", "is", "by"), 
-                question.strip("?").split()))          
+    question = list(filter(lambda x:
+                x not in ("What", "is", "by"),
+                question.strip("?").split()))
 
     operations = question[1::2]
-    digits = [int(element) if (element.isdigit() or 
-              element[1:].isdigit()) else None for 
+    digits = [int(element) if (element.isdigit() or
+              element[1:].isdigit()) else None for
               element in question[::2]]
 
     if len(digits)-1 != len(operations) or None in digits:
@@ -456,8 +459,7 @@ This is why the `operator` module exists - as a vehicle for providing callable m
 
 For more detail on this solution, take a look at the [dunder method with `__getattribute__` approach][approach-dunder-getattribute].
 
-
-[PEMDAS]: https://www.mathnasium.com/math-centers/eagan/news/what-pemdas-e
+[PEMDAS]: https://www.mathnasium.com/blog/what-is-pemdas
 [approach-dunder-getattribute]: https://exercism.org/tracks/python/exercises/wordy/approaches/dunder-getattribute
 [approach-functools-reduce]: https://exercism.org/tracks/python/exercises/wordy/approaches/functools-reduce
 [approach-import-callables-from-operator]: https://exercism.org/tracks/python/exercises/wordy/approaches/import-callables-from-operator
@@ -470,6 +472,7 @@ For more detail on this solution, take a look at the [dunder method with `__geta
 [dict]: https://docs.python.org/3/library/stdtypes.html#dict
 [dunder-methods]: https://www.pythonmorsels.com/what-are-dunder-methods/?watch
 [endswith]: https://docs.python.org/3.9/library/stdtypes.html#str.endswith
+[exception-chaining]: https://docs.python.org/3/tutorial/errors.html#exception-chaining
 [filter]: https://docs.python.org/3/library/functions.html#filter
 [find]: https://docs.python.org/3.9/library/stdtypes.html#str.find
 [functools-reduce]: https://docs.python.org/3/library/functools.html#functools.reduce
