@@ -196,7 +196,7 @@ This solution imports methods from the `operator` module, and uses them in a dic
 Like the first approach, it uses a [`try-except`][handling-exceptions] block for handling unknown operators.
 It also uses a [list comprehension][list-comprehension] to create the parsed "formula" and employs [concept:python/unpacking-and-multiple-assignment]().
 
-For more details and options, take a look at the [Import Callables from the Operator Module][approach-import-callables-from-operator] approach.
+For more details and options, take a look at the [Import Callables from the `operator` Module][approach-import-callables-from-operator] approach.
 
 <br>
 
@@ -325,28 +325,28 @@ def clean(question):
             .removesuffix("?")
             .replace("by", "")
             .strip()).split()
-    
+
 def calculate(equation):
     if len(equation) == 1:
         return int(equation[0])
-    else:
-        try:
-            x_value, operation, y_value, *rest = equation
-            equation = [OPERATIONS[operation](int(x_value),
-                        int(y_value)), *rest]
-        except:
-            raise ValueError("syntax error")
-            
-        return calculate(equation)
+
+    try:
+        x_value, operation, y_value, *rest = equation
+        equation = [OPERATIONS[operation](int(x_value),
+                    int(y_value)), *rest]
+    except:
+        raise ValueError("syntax error")
+
+    return calculate(equation)
 ```
 
-Like previous approaches that substitute methods from `operator` for `lambdas` or list comprehensions for `loops` that append to a `list` -- `recursion` can be substituted for the `while-loop` that many solutions use to process a parsed word problem.
+Like previous approaches that substitute methods from `operator` for `lambdas` or list comprehensions for `loops` that append to a `list` — `recursion` can be substituted for the `while-loop` that many solutions use to process a parsed word problem.
 Depending on who is reading the code, `recursion` may or may not be easier to reason about.
 It may also be more (_or less!_) performant than using a `while-loop` or `functools.reduce` (_see below_), depending on how the various cleaning and error-checking actions are performed.
 
-The dictionary in this example could use functions from `operator`, `lambdas`, `dunder-methods`, or other strategies -- as long as they can be applied in the `calculate()` function.
+The dictionary in this example could use functions from `operator`, `lambdas`, `dunder-methods`, or other strategies — as long as they can be applied in the `calculate()` function.
 
-For more details, take a look at the [recursion][approach-recursion] approach.
+For more details, take a look at the [Recursion for Iteration][approach-recursion] approach.
 
 <br>
 
@@ -370,8 +370,8 @@ def answer(question):
 
     operations = question[1::2]
     digits = [int(element) if (element.isdigit() or
-              element[1:].isdigit()) else None for
-              element in question[::2]]
+                element[1:].isdigit()) else None for
+                element in question[::2]]
 
     if len(digits)-1 != len(operations) or None in digits:
         raise ValueError("syntax error")
