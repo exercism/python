@@ -1,14 +1,19 @@
 # About
 
-In Python, [an enum][enum-docs] is a set of unique names that are bound unique, **constant** values. Enums are defined by inheriting an `Enum` class. Built-in enum types are available in the module `enum` and the class `Enum` can be imported using `from enum import Enum`.
+In Python, [an enum][enum-docs] is a set of unique names that are bound unique, **constant** values.
+Enums are defined by inheriting an `Enum` class.
+Built-in enum types are available in the module `enum` and the class `Enum` can be imported using `from enum import Enum`.
+
 
 ```python
+from enum import Enum
+
 class Color(Enum):
     RED = 1
     GREEN = 2
 ```
 
-Note that the values of the enum members can be any data types such as str, tuple, float, etc.
+Note that the values of the `enum` members can be any data types such as `str`, `tuple`, `float`, etc.
 
 ```python
 class Color(Enum):
@@ -16,9 +21,11 @@ class Color(Enum):
     GREEN = 'green'
 ```
 
-Enums can also be created via the following [functional API][enum-functional-api].
+`Enums` can also be created using [function-call syntax][enum-functional-example].
 
 ```python
+from enum import Enum
+
 Animal = Enum('Animal', 'ANT BEE CAT DOG')
 list(Animal)
 #=> [<Animal.ANT: 1>, <Animal.BEE: 2>, <Animal.CAT: 3>, <Animal.DOG: 4>]
@@ -27,7 +34,7 @@ Animal.ANT.value
 #=> 1
 ```
 
-When assigning the same value to two members in an enum, the latter assigned member will be an alias to the formed one. It is not allowed to use the same name for two members of an enum.
+When assigning the same value to two members in an `enum`, the latter assigned member will be an alias to the former one. It is not allowed to use the same name for two different members of an `enum`.
 
 ```python
 class Color(Enum):
@@ -50,12 +57,13 @@ for member in Color:
 # __members__.items() helps you to loop through alias as well
 for member in Color.__members__.items():
     print(member)
-#=>('RED', <Color.RED: 1>)
-#=>('GREEN', <Color.GREEN: 2>)
-#=>('ALIAS_OF_RED', <Color.RED: 1>)
+#=> ('RED', <Color.RED: 1>)
+#=> ('GREEN', <Color.GREEN: 2>)
+#=> ('ALIAS_OF_RED', <Color.RED: 1>)
 ```
 
-Enum members can be compared using [`is` (_identity operator_)][identity-keyword] or `is not`. The `==` or `!=` (_equality operators_) work likewise.
+`Enum` members can be compared using [`is` (_identity operator_)][identity-keyword] or `is not`. The `==` or `!=` (_equality operators_) work likewise:
+
 
 ```python
 a = Color.RED
@@ -76,10 +84,10 @@ class Shape(Enum):
     OVAL = auto()
 ```
 
-To disallow aliasing (_preventing duplicate values with different names_), the `@unique` decorator may be used.
+To disallow aliasing (_preventing duplicate values with different names_), the [class decorator][class-decorator] [`@enum.unique`][enum-unique-decorator] decorator may be used.
 
 ```python
-@unique
+@enum.unique
 class Shape(Enum):
     CIRCLE = 1
     SQUARE = 2
@@ -87,7 +95,7 @@ class Shape(Enum):
 #=> ValueError: duplicate values found in <enum 'Shape'>: TRIANGLE -> CIRCLE
 ```
 
-To access an enum member for a given value, this notation can be used: `EnumName(value)`.
+To access an `enum` member for a given value, this notation can be used: `<EnumName>(<value>)`.
 
 ```python
 g = Color(2)
@@ -99,15 +107,23 @@ g
 #=> <Color.GREEN: 2>
 ```
 
-A custom [restricted `Enum`][restricted-enums] can be written by subclassing `Enum` with any mix-in or data-type. For example:
+A custom [restricted `Enum`][restricted-enums] can be written by subclassing the `Enum` class with any mix-in or data-type.
+For example:
+
 
 ```python
 class StrEnum(str, Enum):
     pass
 ```
 
-[enum-docs]: https://docs.python.org/3/library/enum.html
-[enum-auto-docs]: https://docs.python.org/3/library/enum.html#using-auto
-[enum-functional-api]: https://docs.python.org/3/library/enum.html#functional-api
-[restricted-enums]: https://docs.python.org/3/library/enum.html#restricted-enum-subclassing
+Subclassing `Enum` is only allowed if the `enum` does **not** define any members.
+See the [`enum` how-to][enum-docs] and the [`enum` cookbook][cookbook] for more details and explanations.
+
+[class-decorator]: https://docs.python.org/3/reference/compound_stmts.html#class-definitions
+[cookbook]: https://docs.python.org/3/howto/enum.html#enum-cookbook
+[enum-auto-docs]: https://docs.python.org/3/library/enum.html#enum.auto
+[enum-docs]: https://docs.python.org/3/howto/enum.html#enum-basic-tutorial
+[enum-functional-example]: https://docs.python.org/3/library/enum.html
 [identity-keyword]: https://www.w3schools.com/python/ref_keyword_is.asp
+[restricted-enums]: https://docs.python.org/3/howto/enum.html#restricted-enum-subclassing
+[enum-unique-decorator]: https://docs.python.org/3/library/enum.html#enum.unique
