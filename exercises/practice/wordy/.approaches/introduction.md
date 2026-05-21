@@ -210,8 +210,8 @@ from operator import floordiv as div
 OPERATIONS = {"plus": add, "minus": sub, "multiplied by": mul, "divided by": div}
 
 REGEX = {
-    "number": re.compile(r'-?\d+'),
-    "operator": re.compile(f'(?:{"|".join(OPERATIONS)})\\b')
+    "number": re.compile(r"-?\d+"),
+    "operator": re.compile(f"(?:{'|'.join(OPERATIONS)})\\b")
 }
 
 
@@ -233,7 +233,7 @@ def answer(question):
     prefix = "What is"
     if not question.startswith(prefix):
         raise ValueError("unknown operation")
-    
+
     question = question.removesuffix("?").removeprefix(prefix).lstrip()
     question, result = get_number(question)
 
@@ -254,7 +254,7 @@ It pulls number and operator processing out into separate functions and uses a w
 It also uses multiple assignment for various variables.
 It is longer than some solutions, but clearer and potentially easier to maintain due to the separate `get_operation()` and `get_number()` functions.
 
-For more details, take a look at the [regex-with-operator-module][approach-regex-with-operator-module] approach.
+For more details, take a look at the [Regex with the `operator` Module][approach-regex-with-operator-module] approach.
 
 <br>
 

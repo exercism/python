@@ -71,8 +71,8 @@ def answer(question):
     if not question:
         raise ValueError("syntax error")
     
-    equation = question.replace("by", "").split()    
-     
+    equation = question.replace("by", "").split()
+    
     while len(equation) > 1:
         try:
             x_value, operation, y_value, *rest = equation

@@ -40,7 +40,7 @@ The two major differences are the `operator` module, and the elimination of the 
 The solution begins by importing basic mathematical operations as methods from the [`operator`][operator] module.
 `add`, `mul` and `sub` keep their original names, while `floordiv` is [aliased][aliasing] to `div`.
 These functions are then stored in a dictionary that serves as a lookup table when the problems are processed.
-These operations are later used as [callables][callables] by putting `()` after the name, and supplying arguments between the parentheses.
+These operations are later used as [callables][callable] by putting `()` after the name, and supplying arguments between the parentheses.
 
 
 In `answer()`, the question is first checked for validity, cleaned, and finally split into a `list` using [`str.startswith`][startswith], [`str.removeprefix`][removeprefix]/[`str.removesuffix`][removesuffix], [`str.strip()`][strip], and [`str.split()`][split].
@@ -75,7 +75,7 @@ equation = question.replace("by", "").split()
 
 [aliasing]: https://mimo.org/glossary/python
 [approach-string-list-and-dict-methods]: https://exercism.org/tracks/python/exercises/wordy/approaches/string-list-and-dict-methods
-[callables]: https://treyhunner.com/2019/04/is-it-a-class-or-a-function-its-a-callable/
+[callable]: https://treyhunner.com/2019/04/is-it-a-class-or-a-function-its-a-callable/
 [chaining-method-calls]: https://nikhilakki.in/understanding-method-chaining-in-python
 [handling-exceptions]: https://docs.python.org/3.11/tutorial/errors.html#handling-exceptions
 [implicit-concatenation]: https://docs.python.org/3/reference/lexical_analysis.html#implicit-line-joining
