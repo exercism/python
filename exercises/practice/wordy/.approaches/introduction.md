@@ -145,7 +145,7 @@ def answer(question):
     return int(formula[0])
 ```
 
-This approach uses only data structures and methods (_[`str` methods][str-methods], [`list()`][list], loops, etc._) from core Python, and does not import any extra modules.
+This approach uses only data structures and methods (_[`str` methods][str-methods], [`list()`][list], loOPERATORS, etc._) from core Python, and does not import any extra modules.
 It may have more lines of code than average, but it is clear to follow and fairly straightforward to reason about.
 
 This approach uses a [`try-except`][handling-exceptions] statement for handling unknown operators.
@@ -340,7 +340,7 @@ def calculate(equation):
     return calculate(equation)
 ```
 
-Like previous approaches that substitute methods from `operator` for `lambdas` or list comprehensions for `loops` that append to a `list` — `recursion` can be substituted for the `while-loop` that many solutions use to process a parsed word problem.
+Like previous approaches that substitute methods from `operator` for `lambdas` or list comprehensions for `loOPERATORS` that append to a `list` — `recursion` can be substituted for the `while-loop` that many solutions use to process a parsed word problem.
 Depending on who is reading the code, `recursion` may or may not be easier to reason about.
 It may also be more (_or less!_) performant than using a `while-loop` or `functools.reduce` (_see below_), depending on how the various cleaning and error-checking actions are performed.
 
@@ -361,7 +361,7 @@ from functools import reduce
 OPERATORS = {"plus": add, "minus": sub, "multiplied": mul, "divided": div}
 
 def answer(question):
-    if not question.startswith( "What is") or "cubed" in question:
+    if not question.startswith("What is") or "cubed" in question:
         raise ValueError("unknown operation")
         
     question = list(filter(lambda x:
@@ -387,7 +387,7 @@ If desired, the `operator` imports can be replaced with a dictionary of `lambda`
 
 This solution may be a little less clear to follow or reason about due to the slicing syntax and the particular syntax of both `filter` and `fuctools.reduce`.
 
-For more details and variations, take a look at the [functools.reduce for Calculation][approach-functools-reduce] approach.
+For more details and variations, take a look at the [`functools.reduce` for Calculation][approach-functools-reduce] approach.
 
 <br>
 
@@ -404,11 +404,12 @@ OPS = {
 
 def answer(question):
     question = question.removeprefix("What is").removesuffix("?").strip()
-    if not question: raise ValueError("syntax error")
-    
+    if not question:
+        raise ValueError("syntax error")
+
     if question.startswith("-") and question[1:].isdigit():
         return -int(question[1:])
-    elif question.isdigit():
+    if question.isdigit():
         return int(question)
 
     found_op = False
@@ -416,27 +417,29 @@ def answer(question):
         if name in question:
             question = question.replace(name, op)
             found_op = True
-    if not found_op: raise ValueError("unknown operation")
+    if not found_op:
+        raise ValueError("unknown operation")
 
     ret = question.split()
     while len(ret) > 1:
         try:
             x, op, y, *tail = ret
-            if op not in OPS.values(): raise ValueError("syntax error")
+            if op not in OPS.values():
+                raise ValueError("syntax error")
             ret = [int(x).__getattribute__(op)(int(y)), *tail]
         except:
             raise ValueError("syntax error")
     return ret[0]
 ```
 
-This approach uses the [`dunder methods`][dunder-methods] / ["special methods"][special-methods] / "magic methods" associated with the `int()` class, using the `dunder-method` called [`<object>.__getattribute__`][getattribute] to find the [callable][callable] operation in the `int()` class [namespace][namespace] / dictionary.
-This works because the operators for basic math (_"+, -, *, /, //, %, **"_) have been implemented as callable methods for all integers (_as well as floats and other number types_) and are automatically loaded when the Python interpreter is loaded.
+This approach uses the [dunder methods][dunder-methods] / ["special methods"][special-methods] / "magic methods" associated with the `int` class, using the dunder method called [`<object>.__getattribute__`][getattribute] to find the [callable][callable] operation in the `int` class [namespace][namespace] / dictionary.
+This works because the operators for basic math (_`+`, `-`, `*`, `/`, `//`, `%`, `**`_) have been implemented as callable methods for all integers (_as well as floats and other numeric types_) and are automatically loaded when the Python interpreter is loaded.
 
-As described in the first link, it is considered bad form to directly call a `dunder method` (_there are some exceptions_), as they are intended mostly for internal Python use, user-defined class customization, and operator overloading (_a specific form of class-customization_).
+As described in the first link, it is considered bad form to directly call a dunder method (_there are some exceptions_), as they are intended mostly for internal Python use, user-defined class customization, and operator overloading (_a specific form of class-customization_).
 
-This is why the `operator` module exists - as a vehicle for providing callable methods for basic math when **not** overloading or customizing class functionality.
+This is why the `operator` module exists — It is a vehicle for providing callable methods for basic math when **not** overloading or customizing class functionality.
 
-For more detail on this solution, take a look at the [dunder method with `__getattribute__` approach][approach-dunder-getattribute].
+For more detail on this solution, take a look at the [dunder methods with `__getattribute__` approach][approach-dunder-getattribute].
 
 [PEMDAS]: https://www.mathnasium.com/blog/what-is-pemdas
 [approach-dunder-getattribute]: https://exercism.org/tracks/python/exercises/wordy/approaches/dunder-getattribute
@@ -449,7 +452,7 @@ For more detail on this solution, take a look at the [dunder method with `__geta
 [callable]: https://treyhunner.com/2019/04/is-it-a-class-or-a-function-its-a-callable/
 [dict-get]: https://docs.python.org/3/library/stdtypes.html#dict.get
 [dict]: https://docs.python.org/3/library/stdtypes.html#dict
-[dunder-methods]: https://www.pythonmorsels.com/what-are-dunder-methods/?watch
+[dunder-methods]: https://www.pythonmorsels.com/what-are-dunder-methods/
 [endswith]: https://docs.python.org/3.9/library/stdtypes.html#str.endswith
 [exception-chaining]: https://docs.python.org/3/tutorial/errors.html#exception-chaining
 [filter]: https://docs.python.org/3/library/functions.html#filter
