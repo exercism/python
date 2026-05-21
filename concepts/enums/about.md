@@ -1,7 +1,7 @@
 # About
 
 In Python, [an enum][enum-docs] is a set of unique names that are bound unique, **constant** values.
-Enums are defined by inheriting an `Enum` class.
+`Enums` are defined by inheriting an `Enum` class.
 Built-in enum types are available in the module `enum` and the class `Enum` can be imported using `from enum import Enum`.
 
 
