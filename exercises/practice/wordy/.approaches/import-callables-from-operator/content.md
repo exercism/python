@@ -1,4 +1,4 @@
-# Import Callables from the Operator Module
+# Import Callables from the `operator` Module
 
 ```python
 from operator import add, mul, sub

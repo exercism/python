@@ -159,7 +159,7 @@ For more details and variations, read the [String, List and Dictionary Methods][
 
 <br>
 
-## Approach: Import Callables from the Operator Module
+## Approach: Import Callables from the `operator` Module
 
 ```python
 from operator import add, mul, sub
@@ -200,7 +200,7 @@ For more details and options, take a look at the [Import Callables from the Oper
 
 <br>
 
-## Approach: Regex and the Operator Module
+## Approach: Regex with the `operator` Module
 
 ```python
 import re
@@ -258,7 +258,7 @@ For more details, take a look at the [Regex with the `operator` Module][approach
 
 <br>
 
-## Approach: Lambdas in a Dictionary to return Functions
+## Approach: Lambdas in a Dictionary to Return Functions
 
 ```python
 OPERATIONS = {
@@ -294,7 +294,7 @@ def answer(question):
     return equation[0]
 ```
 
-Rather than import methods from the `operator` module, this approach defines a series of [`lambda expressions`][lambdas] in the OPERATIONS dictionary.
+Rather than import methods from the `operator` module, this approach defines a series of [`lambda expressions`][lambdas] in the `OPERATIONS` dictionary.
 These `lambdas` then return a function that takes two numbers as arguments, returning the result.
 
 One drawback of this strategy over using named functions or methods from `operator` is the lack of debugging information should something go wrong with evaluation.
