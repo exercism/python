@@ -153,7 +153,7 @@ Rather than indexing and slicing, [concept:python/unpacking-and-multiple-assignm
 However, this does require a modification to the returned formula `list`:
 
 ```python
-    x_value, operation, y_value, *remainder = formula  # <-- Unpacking won't allow conversion to int() here.
+    x_value, symbol, y_value, *remainder = formula  # <-- Unpacking won't allow conversion to int() here.
     
     ...
     if symbol == "+":

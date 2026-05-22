@@ -46,14 +46,14 @@ However, this could easily be accomplished by either using [chained][method-chai
 ```python
     # Alternative 1 is chaining various string methods together.
     # The wrapping () invoke implicit concatenation for the chained functions.
-    return (question.removeprefix("What is")
+    question = (question.removeprefix("What is")
             .removesuffix("?")
             .replace("by", "")
             .strip()).split() # <-- This split() turns the string into a list.
 
 
     # Alternative 2 to the nested calls is to use a list comprehension:
-    return [item for item in
+    question = [item for item in
             question.strip("?").split()
             if item not in ("What", "is", "by")] # <-- The [] of the comprehension invokes implicit concatenation.
 ```
