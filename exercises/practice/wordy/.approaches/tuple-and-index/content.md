@@ -64,8 +64,8 @@ If `words[index]` is not an operator word, the raised `ValueError` will be caugh
 
 Next, we need to get the second operand for the operator (we already have `result` for the first one), so we set `operand_index = index + 1`.
 However, some operator phrases are multiple words long, so we need to check if `EXTRA_OPERATOR_WORDS[operator_index] is not None`.
-If there is an extra operator word, we need to check if it is present as the next word in `words`.
-If it is not, we raise a `ValueError`, else we increment `operand_index` by `1` to get the correct index.
+If there *is* an extra operator word, then we need to check if it is present as the next word in `words`.
+If it is not present, we raise a `ValueError`, else we increment `operand_index` by `1` to get the correct index.
 
 Here we call the helper function again, setting `operand` to the number at index `operand_index`, and raising a `ValueError` if it is not a number.
 After this, the approach uses [structural pattern matching][structural-pattern-matching] to modify `result` using `+=`, `-=`, `*=`, or `//=` depending on the `operator_index`.
