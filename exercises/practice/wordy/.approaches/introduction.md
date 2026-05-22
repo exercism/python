@@ -73,7 +73,7 @@ You can also use [`str.startswith`][startswith] and [`str.endswith`][endswith] i
 'califragilistic'
 ```
 
-Different combinations of [`str.find`][find], [`str.rfind`][rfind], or [`str.index`][index] with string slicing could also be used to clean up the initial question.
+Different combinations of [`str.find`][find], [`str.rfind`][rfind], or [`str.index`][str-index] with string slicing could also be used to clean up the initial question.
 A [regex][regex] could be used to process the question as well, but might be considered overkill given the fixed nature of the prefix/suffix and operations.
 Finally, [`str.strip`][strip] and its variants are very useful for cleaning up any leftover leading or trailing whitespace.
 
@@ -88,7 +88,7 @@ Many solutions then use [`str.split`][split] to process the remaining "cleaned" 
 For math operations, many solutions involve importing and using methods from the [operator][operator] module.
 Some solutions use either [lambda][lambdas] expressions, [dunder/"special" methods][dunder-methods], or even `eval()` to replace words with arithmetic operations.
 
-However, the exercise can be solved without using `operator`, `lambdas`, `dunder-methods` or `eval`.
+However, the exercise can be solved without using `operator`, `lambda`s, `dunder-methods` or `eval`.
 It is recommended that you first start by solving it _without_ "advanced" strategies, and then refine your solution into something more compact or complex as you learn and practice.
 
 <br>
@@ -145,7 +145,7 @@ def answer(question):
     return int(formula[0])
 ```
 
-This approach uses only data structures and methods (_[`str` methods][str-methods], [`list()`][list], loOPERATORS, etc._) from core Python, and does not import any extra modules.
+This approach uses only data structures and methods (_[`str` methods][str-methods], [`list()`][list], loops, etc._) from core Python, and does not import any extra modules.
 It may have more lines of code than average, but it is clear to follow and fairly straightforward to reason about.
 
 This approach uses a [`try-except`][handling-exceptions] statement for handling unknown operators.
@@ -295,12 +295,12 @@ def answer(question):
 ```
 
 Rather than import methods from the `operator` module, this approach defines a series of [`lambda expressions`][lambdas] in the `OPERATIONS` dictionary.
-These `lambdas` then return a function that takes two numbers as arguments, returning the result.
+These `lambda`s then return a function that takes two numbers as arguments, returning the result.
 
 One drawback of this strategy over using named functions or methods from `operator` is the lack of debugging information should something go wrong with evaluation.
 Lambda expressions are all named `"lambda"` in stack traces, so it becomes less clear where an error is coming from if you have a number of lambda expressions within a large program.
-Since this is not a large program, debugging these `lambdas` is fairly straightforward.
-These "hand-crafted" `lambdas` could also introduce a mathematical error, although for the simple problems in Wordy, this is a fairly small consideration.
+Since this is not a large program, debugging these `lambda`s is fairly straightforward.
+These "hand-crafted" `lambda`s could also introduce a mathematical error, although for the simple problems in Wordy, this is a fairly small consideration.
 
 For more details, take a look at the [Lambdas in a Dictionary][approach-lambdas-in-a-dictionary] approach.
 
@@ -340,11 +340,11 @@ def calculate(equation):
     return calculate(equation)
 ```
 
-Like previous approaches that substitute methods from `operator` for `lambdas` or list comprehensions for `loOPERATORS` that append to a `list` — `recursion` can be substituted for the `while-loop` that many solutions use to process a parsed word problem.
+Like previous approaches that substitute methods from `operator` for `lambda`s or list comprehensions for `loops` that append to a `list` — `recursion` can be substituted for the `while-loop` that many solutions use to process a parsed word problem.
 Depending on who is reading the code, `recursion` may or may not be easier to reason about.
 It may also be more (_or less!_) performant than using a `while-loop` or `functools.reduce` (_see below_), depending on how the various cleaning and error-checking actions are performed.
 
-The dictionary in this example could use functions from `operator`, `lambdas`, `dunder-methods`, or other strategies — as long as they can be applied in the `calculate()` function.
+The dictionary in this example could use functions from `operator`, `lambda`s, `dunder-methods`, or other strategies — as long as they can be applied in the `calculate()` function.
 
 For more details, take a look at the [Recursion for Iteration][approach-recursion] approach.
 
@@ -441,6 +441,67 @@ This is why the `operator` module exists — It is a vehicle for providing calla
 
 For more detail on this solution, take a look at the [dunder methods with `__getattribute__` approach][approach-dunder-getattribute].
 
+## Tuples with `sequence.index()`
+
+```python
+OPERATOR_WORDS = ("plus", "minus", "multiplied", "divided")
+
+EXTRA_OPERATOR_WORDS = (None, None, "by", "by")
+
+
+def answer(question):
+    if not question.startswith("What is ") or not question.endswith("?"):
+        raise ValueError("syntax error")
+
+    words = question[:-1].split(" ")
+    result = str_to_int(words[2])
+    index = 3
+
+    while index < len(words):
+        try:
+            operator_index = OPERATOR_WORDS.index(words[index])
+        except ValueError:
+            str_to_int(words[index], "unknown operation")
+            raise ValueError("syntax error")
+
+        operand_index = index + 1
+        if EXTRA_OPERATOR_WORDS[operator_index] is not None:
+            if index + 1 >= len(words) or words[index + 1] != EXTRA_OPERATOR_WORDS[operator_index]:
+                raise ValueError("syntax error")
+            operand_index += 1
+
+        if operand_index >= len(words):
+            raise ValueError("syntax error")
+
+        operand = str_to_int(words[operand_index])
+        match operator_index:
+            case 0: result += operand
+            case 1: result -= operand
+            case 2: result *= operand
+            case 3: result //= operand
+
+        index = operand_index + 1
+
+    return result
+
+
+def str_to_int(string, err_msg = "syntax error"):
+    try:
+        return int(string)
+    except ValueError:
+        raise ValueError(err_msg)
+```
+
+This approach only uses data structures and methods from core Python, and does not import any modules.
+However, it is rather different from the [String, List and Dictionary Methods][approach-string-list-and-dict-methods] approach.
+
+This approach uses a [`try-except`][handling-exceptions] block for handling incorrect operator placement and unknown operators.
+It does this by using [`OPERATOR_WORDS.index()`][sequence-index-method] to find the index of the operator, as `.index()` will throw an error if it does not find the item in `OPERATOR_WORDS`.
+The `except` block will catch this error and `raise` either a `ValueError("syntax error")` or a `ValueError("unknown operation")` instead.
+(You can look at [exception chaining in the Python docs][exception-chaining] for further detail on this subject.)
+
+For more details, read the [Tuples with `sequence.index()`][approach-tuple-and-index] approach.
+
 [PEMDAS]: https://www.mathnasium.com/blog/what-is-pemdas
 [approach-dunder-getattribute]: https://exercism.org/tracks/python/exercises/wordy/approaches/dunder-getattribute
 [approach-functools-reduce]: https://exercism.org/tracks/python/exercises/wordy/approaches/functools-reduce
@@ -449,6 +510,7 @@ For more detail on this solution, take a look at the [dunder methods with `__get
 [approach-recursion]: https://exercism.org/tracks/python/exercises/wordy/approaches/recursion
 [approach-regex-with-operator-module]: https://exercism.org/tracks/python/exercises/wordy/approaches/regex-with-operator-module
 [approach-string-list-and-dict-methods]: https://exercism.org/tracks/python/exercises/wordy/approaches/string-list-and-dict-methods
+[approach-tuple-and-index]: https://exercism.org/tracks/python/exercises/wordy/approaches/tuple-and-index
 [callable]: https://treyhunner.com/2019/04/is-it-a-class-or-a-function-its-a-callable/
 [dict-get]: https://docs.python.org/3/library/stdtypes.html#dict.get
 [dict]: https://docs.python.org/3/library/stdtypes.html#dict
@@ -460,7 +522,6 @@ For more detail on this solution, take a look at the [dunder methods with `__get
 [functools-reduce]: https://docs.python.org/3/library/functools.html#functools.reduce
 [getattribute]: https://docs.python.org/3/reference/datamodel.html#object.__getattribute__
 [handling-exceptions]: https://docs.python.org/3.11/tutorial/errors.html#handling-exceptions
-[index]: https://docs.python.org/3.9/library/stdtypes.html#str.index
 [int]: https://docs.python.org/3/library/stdtypes.html#typesnumeric
 [lambdas]: https://docs.python.org/3/howto/functional.html#small-functions-and-the-lambda-expression
 [list-comprehension]: https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions
@@ -473,10 +534,12 @@ For more detail on this solution, take a look at the [dunder methods with `__get
 [removeprefix]: https://docs.python.org/3.9/library/stdtypes.html#str.removeprefix
 [removesuffix]: https://docs.python.org/3.9/library/stdtypes.html#str.removesuffix
 [rfind]: https://docs.python.org/3.9/library/stdtypes.html#str.rfind
+[sequence-index-method]: https://docs.python.org/3/library/stdtypes.html#sequence.index
 [sequence-operations]: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations
 [special-methods]: https://docs.python.org/3/reference/datamodel.html#specialnames
 [split]: https://docs.python.org/3.9/library/stdtypes.html#str.split
 [startswith]: https://docs.python.org/3.9/library/stdtypes.html#str.startswith
 [strip]: https://docs.python.org/3.9/library/stdtypes.html#str.strip
+[str-index]: https://docs.python.org/3.9/library/stdtypes.html#str.index
 [str-methods]: https://docs.python.org/3/library/stdtypes.html#string-methods
 [value-error]: https://docs.python.org/3.11/library/exceptions.html#ValueError

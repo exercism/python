@@ -60,7 +60,7 @@ However, this could easily be accomplished by either using [chained][method-chai
 
 Since "valid" questions are all in the form of `digit-operator-digit` (_and so on_), it is safe to assume that every other element beginning at index 0 is a "number", and every other element beginning at index 1 is an operator.
 By that definition, the `operators` list is 1 shorter in `len()` than the `digits` list.
-Anything else (_or having `None`/an unknown operation in the operations list_) is a `ValueError("syntax error")`.
+Anything else (_or having [`None`][none]/an unknown operation in the operations list_) is a `ValueError("syntax error")`.
 
 
 The final call to `functools.reduce` essentially performs the same steps as the `while-loop` implementation, with the `lambda-expression` passing successive items of the `digits` list to the popped and looked-up operation from the operations `list` (_used as a [callable][callable] with `()`_), until it is reduced to one number and returned.
@@ -72,7 +72,7 @@ It could be argued that writing the code as a `while-loop` or recursive function
 
 <br>
 
-## Variation 1: Use a dictionary of `lambdas` instead of importing from `operator`
+## Variation 1: Use a dictionary of `lambda`s instead of importing from `operator`
 
 The imports from the `operator` module can be swapped out for a dictionary of `lambda-expressions` (or calls to `dunder-methods`), if so desired.
 The same cautions apply here as were discussed in the [lambdas in a dictionary][approach-lambdas-in-a-dictionary] approach:
@@ -122,4 +122,5 @@ def answer(question):
 [callable]: https://treyhunner.com/2019/04/is-it-a-class-or-a-function-its-a-callable/
 [functools-reduce]: https://docs.python.org/3/library/functools.html#functools.reduce
 [method-chaining]: https://www.tutorialspoint.com/Explain-Python-class-method-chaining
+[none]: https://docs.python.org/3/library/constants.html#None
 [sequence-operations]: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations

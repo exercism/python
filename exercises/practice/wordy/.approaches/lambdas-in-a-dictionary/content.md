@@ -39,8 +39,8 @@ The major difference here is the use of [`lambda expressions`][lambdas] in place
 
 `lambda expressions` are small "throwaway" expressions that are simple enough to not require a formal function definition or name.
 They are most commonly used in [`key functions`][key-functions], the built-ins [`map`][map] and [`filter`][filter], and in [`functools.reduce`][functools-reduce].
-`lambdas` are also often defined in areas where a function is needed for one-time use or callback but it would be onerous or confusing to create a full function definition.
-The two forms are parsed identically (_they are both function definitions_), but in the case of [`lambdas`][lambda], the function name is always "lambda" and the expression cannot contain statements or annotations.
+`lambda`s are also often defined in areas where a function is needed for one-time use or callback but it would be onerous or confusing to create a full function definition.
+The two forms are parsed identically (_they are both function definitions_), but in the case of [`lambda`s][lambda], the function name is always "lambda" and the expression cannot contain statements or annotations.
 
 For example, the code above could be re-written to include user-defined functions as opposed to `lambda expressions`:
 
