@@ -1,6 +1,30 @@
 {
   "cases": [
     {
+      "description": "4 number question",
+      "property": "answer",
+      "input": {
+        "question": "What is 1 plus -10 multiplied by 3 minus 4?"
+      },
+      "expected": -31
+    },
+    {
+      "description": "4 number question with zero",
+      "property": "answer",
+      "input": {
+        "question": "What is 12 minus 0 divided by 6 plus 5?"
+      },
+      "expected": 7
+    },
+    {
+      "description": "5 number question",
+      "property": "answer",
+      "input": {
+        "question": "What is 3 multiplied by 6 minus 2 divided by 4 plus 11?"
+      },
+      "expected": 15
+    },
+    {
       "description": "Missing operation",
       "property": "answer",
       "input": {
