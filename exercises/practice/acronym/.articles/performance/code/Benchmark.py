@@ -12,9 +12,19 @@ Created Feb 2024
 import timeit
 import re
 from functools import reduce
+from string import ascii_letters
 
 import pandas as pd
 import numpy as np
+
+
+FIND_INCLUSION_REGEX = re.compile(r"[a-zA-Z']+")
+
+SUB_EXCLUSION_REGEX = re.compile(r"(?<!_)\B[\w']+|[ ,\-_]")
+
+FINDALL_EXCLUSION_REGEX = re.compile(r"(?<!')\b[a-zA-Z]|(?<=_)[^ _']")
+
+VALID_CHARS = {' ', '-'} | set(ascii_letters)
 
 
 # ------------ FUNCTIONS TO TIME ------------- #
@@ -52,27 +62,34 @@ def abbreviate_reduce(to_abbreviate):
 
 
 def abbreviate_regex_join(phrase):
-    removed = re.findall(r"[a-zA-Z']+", phrase)
+    removed = re.findall(FIND_INCLUSION_REGEX, phrase)
     return ''.join(word[0] for word in removed).upper()
 
 
 def abbreviate_finditer_join(to_abbreviate):
     return ''.join(word[0][0] for word in
-                   re.finditer(r"[a-zA-Z']+", to_abbreviate)).upper()
+                   re.finditer(FIND_INCLUSION_REGEX, to_abbreviate)).upper()
 
 
 def abbreviate_regex_sub(to_abbreviate):
-    pattern = re.compile(r"(?<!_)\B[\w']+|[ ,\-_]")
-    return re.sub(pattern, "", to_abbreviate).upper()
+    return re.sub(SUB_EXCLUSION_REGEX, "", to_abbreviate).upper()
 
 
 def abbreviate_regex_findall(to_abbreviate):
-    return ''.join(re.findall(r"(?<!')\b[a-zA-Z]|(?<=_)[^ _']", to_abbreviate.upper()))
+    return ''.join(re.findall(FINDALL_EXCLUSION_REGEX, to_abbreviate.upper()))
+
+
+def abbreviate_double_genex_join(to_abbreviate):
+    to_abbreviate = ''.join(' ' if char == '-' else char
+                            for char in to_abbreviate
+                            if char in VALID_CHARS)
+
+    return ''.join(word[0] for word in to_abbreviate.split()).upper()
 
 
 ## ---------END FUNCTIONS TO BE TIMED-------------------- ##
 
-## --------  Timing Code Starts Here ---------------------##
+## --------- Timing Code Starts Here -------------------- ##
 
 
 # Input Data Setup
@@ -109,8 +126,8 @@ inputs = ['Ruby on Rails',
 ]
 
 
-# #Set up columns and rows for Pandas Data Frame
-col_headers = [f'Length: {len(item)}'for item in inputs]
+# Set up columns and rows for Pandas Data Frame
+col_headers = [f'Length: {len(item)}' for item in inputs]
 row_headers = ["loop with str.replace",
                "list_comprehension with str.join()",
                "map() with str.replace()",
@@ -119,12 +136,13 @@ row_headers = ["loop with str.replace",
                "regex to clean with str.join()",
                "re.finditer() with str.join()",
                "re.sub() to clean and join",
-               "re.findall() 1st letters w/ str.join()"]
+               "re.findall() 1st letters w/ str.join()",
+               "two generator expressions and str.join()"]
 
-# # empty dataframe will be filled in one cell at a time later
+# Empty dataframe will be filled in one cell at a time later
 df = pd.DataFrame(np.nan, index=row_headers, columns=col_headers)
 
-# #Function List to Call When Timing
+# Function List to Call When Timing
 functions = [abbreviate_loop,
              abbreviate_list_comprehension,
              abbreviate_map,
@@ -133,9 +151,10 @@ functions = [abbreviate_loop,
              abbreviate_regex_join,
              abbreviate_finditer_join,
              abbreviate_regex_sub,
-             abbreviate_regex_findall]
+             abbreviate_regex_findall,
+             abbreviate_double_genex_join]
 
-# Run timings using timeit.autorange().  Run Each Set 3 Times.
+# Run timings using timeit.autorange(). Run Each Set 3 Times.
 for function, title in zip(functions, row_headers):
     timings = [[
             timeit.Timer(lambda: function(data), globals=globals()).autorange()[1] /
@@ -149,7 +168,7 @@ for function, title in zip(functions, row_headers):
     print(f'{title}', f'Timings : {timing_result}')
 
     # Insert results into the dataframe
-    df.loc[title, 'Length: 13':'Length: 1114'] = timing_result
+    df.loc[title, 'Length: 13':'Length: 2940'] = timing_result
 
 # The next bit is useful for `introduction.md`
 pd.options.display.float_format = '{:,.2e}'.format
