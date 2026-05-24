@@ -8,15 +8,15 @@
       "uuid": "4eeb0638-671a-4289-a83c-583b616dc698",
       "slug": "string-list-and-dict-methods",
       "title": "String, List, and Dictionary Methods",
-      "blurb": "Use Core Python Features to Solve Word Problems.",
+      "blurb": "Use core Python features to solve word problems.",
       "authors": ["BethanyG"],
       "contributors": ["yrahcaz7"]
     },
     {
       "uuid": "d3ff485a-defe-42d9-b9c6-c38019221ffa",
       "slug": "import-callables-from-operator",
-      "title": "Import Callables from the Operator Module",
-      "blurb": "Use Operator Module Methods to Solve Word Problems.",
+      "title": "Import callables from the operator module",
+      "blurb": "Use operator module methods to solve word problems.",
       "authors": ["BethanyG"],
       "contributors": ["yrahcaz7"]
     },
@@ -24,7 +24,7 @@
       "uuid": "61f44943-8a12-471b-ab15-d0d10fa4f72f",
       "slug": "regex-with-operator-module",
       "title": "Regex with the Operator Module",
-      "blurb": "Use Regex with the Callables from Operator to solve word problems.",
+      "blurb": "Use regex with the callables from the operator module to solve word problems.",
       "authors": ["BethanyG"],
       "contributors": ["yrahcaz7"]
     },
@@ -56,9 +56,16 @@
       "uuid": "d643e2b4-daee-422d-b8d3-2cad2f439db5",
       "slug": "dunder-getattribute",
       "title": "Dunder with __getattribute__",
-      "blurb": "Use dunder methods with __getattribute__.",
+      "blurb": "Use dunder methods with __getattribute__ to calculate solutions.",
       "authors": ["bobahop"],
       "contributors": ["yrahcaz7"]
+    },
+    {
+      "uuid": "924aa814-0b03-40c1-9ee4-90b7fcdc1ff8",
+      "slug": "tuple-and-index",
+      "title": "Tuples with sequence.index",
+      "blurb": "Use tuples with the sequence.index method to calculate solutions.",
+      "authors": ["yrahcaz7"]
     }
   ]
 }
