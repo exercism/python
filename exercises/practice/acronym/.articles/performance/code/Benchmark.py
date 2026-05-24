@@ -22,7 +22,7 @@ FIND_INCLUSION_REGEX = re.compile(r"[a-zA-Z']+")
 
 SUB_EXCLUSION_REGEX = re.compile(r"(?<!_)\B[\w']+|[ ,\-_]")
 
-FINDALL_EXCLUSION_REGEX = re.compile(r"(?<!')\b[a-zA-Z]|(?<=_)[^ _']")
+FINDALL_INCLUSION_REGEX = re.compile(r"(?<!')\b[a-zA-Z]|(?<=_)[^ _']")
 
 VALID_CHARS = {' ', '-'} | set(ascii_letters)
 
@@ -76,7 +76,7 @@ def abbreviate_regex_sub(to_abbreviate):
 
 
 def abbreviate_regex_findall(to_abbreviate):
-    return ''.join(re.findall(FINDALL_EXCLUSION_REGEX, to_abbreviate.upper()))
+    return ''.join(re.findall(FINDALL_INCLUSION_REGEX, to_abbreviate.upper()))
 
 
 def abbreviate_double_genex_join(to_abbreviate):
@@ -129,14 +129,14 @@ inputs = ['Ruby on Rails',
 # Set up columns and rows for Pandas Data Frame
 col_headers = [f'Length: {len(item)}' for item in inputs]
 row_headers = ["loop with str.replace",
-               "list_comprehension with str.join()",
+               "list comprehension with str.join()",
                "map() with str.replace()",
                "functools.reduce() with str.replace()",
                "generator expression with str.join()",
                "regex to clean with str.join()",
                "re.finditer() with str.join()",
                "re.sub() to clean and join",
-               "re.findall() 1st letters w/ str.join()",
+               "re.findall() 1st letters with str.join()",
                "two generator expressions and str.join()"]
 
 # Empty dataframe will be filled in one cell at a time later
