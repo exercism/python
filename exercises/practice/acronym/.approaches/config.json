@@ -1,6 +1,7 @@
 {
   "introduction": {
-    "authors": ["bethanyg"]
+    "authors": ["bethanyg"],
+    "contributors": ["yrahcaz7"]
   },
   "approaches": [
     {
@@ -51,6 +52,13 @@
       "title": "Regex Sub",
       "blurb": "Use re.sub() to clean the input string and create the acronym in one step.",
       "authors": ["bethanyg"]
+    },
+    {
+      "uuid": "0ce3eaf7-da79-403d-a481-5dd8f476d286",
+      "slug": "double-generator-expression",
+      "title": "Double Generator Expression",
+      "blurb": "Use generator expressions for both cleaning and joining the input.",
+      "authors": ["yrahcaz7"]
     }
   ]
 }

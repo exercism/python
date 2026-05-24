@@ -6,13 +6,12 @@ Among them are:
 - Using `str.replace()` to scrub the input, and:
   - joining with a `for loop` with string concatenation via the `+` operator.
   - joining via `str.join()`, passing a `list-comprehension` or `generator-expression`.
-  - joining via `str.join()`,  passing `map()`.
+  - joining via `str.join()`, passing `map()`.
   - joining via `functools.reduce()`.
 
 - Using `re.findall()`/`re.finditer()` to scrub the input, and:
   - joining via `str.join()`, passing a `generator-expression`.
-
- - Using `re.sub()` for both cleaning and joining (_using "only" regex for almost everything_)`
+  - Using `re.sub()` for both cleaning and joining (_using "only" regex for almost everything_)`
 
 
 ## General Guidance
@@ -51,7 +50,7 @@ def abbreviate(to_abbreviate):
 For more information, take a look at the [loop approach][approach-loop].
 
 
-## Approach: scrub with `replace()` and join via `list comprehension` or `Generator expression`
+## Approach: scrub with `replace()` and join via `list comprehension` or `generator expression`
 
 
 ```python
@@ -59,17 +58,17 @@ def abbreviate(to_abbreviate):
     phrase = to_abbreviate.replace('-', ' ').replace('_', ' ').upper().split()
     
     return ''.join([word[0] for word in phrase])
-    
-###OR### 
-    
+
+###OR###
+
 def abbreviate(to_abbreviate):
     phrase = to_abbreviate.replace('-', ' ').replace('_', ' ').upper().split()
     
-    # note the parenthesis instead of square brackets.    
+    # note the parenthesis instead of square brackets.
     return ''.join((word[0] for word in phrase))
 ```
 
-For more information, check out the [list-comprehension][approach-list-comprehension]  approach or the [generator-expression][approach-generator-expression] approach.
+For more information, check out the [list-comprehension][approach-list-comprehension] approach or the [generator-expression][approach-generator-expression] approach.
 
 
 ## Approach: scrub with `replace()` and join via `map()`
@@ -96,7 +95,7 @@ def abbreviate(to_abbreviate):
     return reduce(lambda start, word: start + word[0], phrase, "")
 ```
 
-For more information, take a look at the [functools.reduce()][approach-functools-reduce] approach.
+For more information, take a look at the [`functools.reduce()`][approach-functools-reduce] approach.
 
 
 ## Approach: filter with `re.findall()` and join via `str.join()`
@@ -105,8 +104,8 @@ For more information, take a look at the [functools.reduce()][approach-functools
 import re
 
 
-def abbreviate(phrase):
-    removed = re.findall(r"[a-zA-Z']+", phrase)
+def abbreviate(to_abbreviate):
+    removed = re.findall(r"[a-zA-Z']+", to_abbreviate)
     
     return ''.join(word[0] for word in removed).upper()
 ```
@@ -120,36 +119,57 @@ For more information, take a look at the [regex-join][approach-regex-join] appro
 import re
 
 
-def abbreviate_regex_sub(to_abbreviate):
+def abbreviate(to_abbreviate):
     pattern = re.compile(r"(?<!_)\B[\w']+|[ ,\-_]")
  
-    return  re.sub(pattern, "", to_abbreviate.upper())
+    return re.sub(pattern, "", to_abbreviate.upper())
 ```
 
 For more information, read the [regex-sub][approach-regex-sub] approach.
 
 
+## Approach: use a `generator-expression` for both cleaning and joining
+
+```python
+from string import ascii_letters
+
+
+VALID_CHARS = {' ', '-'} | set(ascii_letters)
+
+
+def abbreviate(to_abbreviate):
+    to_abbreviate = ''.join(' ' if char == '-' else char
+                            for char in to_abbreviate
+                            if char in VALID_CHARS)
+
+    return ''.join(word[0] for word in to_abbreviate.split()).upper()
+```
+
+For more information, take a look at the [double `generator-expression` approach][approach-double-generator-expression].
+
+
 ## Other approaches
 
-Besides these seven idiomatic approaches, there are a multitude of possible variations using different string cleaning and joining methods.
+Besides these eight idiomatic approaches, there are a multitude of possible variations using different string cleaning and joining methods.
 
 However, these listed approaches cover the majority of 'mainstream' strategies.
 
 
 ## Which approach to use?
 
-All seven approaches are idiomatic, and show multiple paradigms and possibilities.
+All eight approaches are idiomatic, and show multiple paradigms and possibilities.
 All approaches are also `O(n)`, with `n` being the length of the input string.
 No matter the removal method, the entire input string must be iterated through to be cleaned and the first letters extracted.
 
-Of these strategies, the `loop` approach is the fastest, although `list-comprehension`, `map`,  and `reduce` have near-identical performance for the test data.
+Of these strategies, the `loop` approach is the fastest, although `list-comprehension`, `map`, and `reduce` have near-identical performance for the test data.
 All approaches are fairly succinct and readable, although the 'classic' loop is probably the easiest understood by those coming to Python from other programming languages.
 
 
-The least performant for the test data was using a `generator-expression`, `re.findall` and  `re.sub` (_least performant_).
+The least performant for the test data was using `generator-expression`s (both one and two), `re.findall`, and `re.sub`.
 
 To compare performance of the approaches, take a look at the [Performance article][article-performance].
 
+[approach-double-generator-expression]: https://exercism.org/tracks/python/exercises/acronym/approaches/double-generator-expression
 [approach-functools-reduce]: https://exercism.org/tracks/python/exercises/acronym/approaches/functools-reduce
 [approach-generator-expression]: https://exercism.org/tracks/python/exercises/acronym/approaches/generator-expression
 [approach-list-comprehension]: https://exercism.org/tracks/python/exercises/acronym/approaches/list-comprehension

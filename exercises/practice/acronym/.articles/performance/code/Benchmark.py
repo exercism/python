@@ -79,7 +79,7 @@ def abbreviate_regex_findall(to_abbreviate):
     return ''.join(re.findall(FINDALL_INCLUSION_REGEX, to_abbreviate.upper()))
 
 
-def abbreviate_double_genex_join(to_abbreviate):
+def abbreviate_double_genex(to_abbreviate):
     to_abbreviate = ''.join(' ' if char == '-' else char
                             for char in to_abbreviate
                             if char in VALID_CHARS)
@@ -137,7 +137,7 @@ row_headers = ["loop with str.replace",
                "re.finditer() with str.join()",
                "re.sub() to clean and join",
                "re.findall() 1st letters with str.join()",
-               "two generator expressions and str.join()"]
+               "two generator expressions"]
 
 # Empty dataframe will be filled in one cell at a time later
 df = pd.DataFrame(np.nan, index=row_headers, columns=col_headers)
@@ -152,7 +152,7 @@ functions = [abbreviate_loop,
              abbreviate_finditer_join,
              abbreviate_regex_sub,
              abbreviate_regex_findall,
-             abbreviate_double_genex_join]
+             abbreviate_double_genex]
 
 # Run timings using timeit.autorange(). Run Each Set 3 Times.
 for function, title in zip(functions, row_headers):
@@ -170,7 +170,7 @@ for function, title in zip(functions, row_headers):
     # Insert results into the dataframe
     df.loc[title, 'Length: 13':'Length: 2940'] = timing_result
 
-# The next bit is useful for `introduction.md`
+# The next bit is useful for `content.md`
 pd.options.display.float_format = '{:,.2e}'.format
 print('\nDataframe in Markdown format:\n')
 print(df.to_markdown(floatfmt=".2e"))
