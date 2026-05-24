@@ -15,7 +15,7 @@ The [approaches page][approaches] lists many idiomatic approaches to this exerci
 8. [Using `re.sub()`][approach-regex-sub]
 9. Using two `generator-expression`s and `str.join()`
 
-We will also include a ninth approach, which is a variant of the `re.findall()` approach. This variant uses a regex to select the _first letters_ of each word, instead of the _entirety_ of each word.
+We will also include a tenth approach, which is a variant of the `re.findall()` approach. This variant uses a regex to select the _first letters_ of each word, instead of the _entirety_ of each word.
 
 ## Benchmarks
 

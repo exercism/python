@@ -5,7 +5,8 @@
       "slug": "performance",
       "title": "Performance deep dive",
       "blurb": "Deep dive to find out the most performant approach to forming an acronym.",
-      "authors": ["bethanyg, colinleach"]
+      "authors": ["bethanyg", "colinleach"],
+      "contributors": ["yrahcaz7"]
     }
   ]
 }
