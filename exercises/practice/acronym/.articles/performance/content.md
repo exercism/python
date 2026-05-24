@@ -60,6 +60,7 @@ Time is reported in seconds taken per string after calculating the 'best of' tim
 The [timeit module][timeit] docs have more details, and [note.nkmk.me][note_nkmk_me] has a nice summary of methods.
 
 [approaches]: https://exercism.org/tracks/python/exercises/acronym/dig_deeper
+[approach-double-generator-expression]: https://exercism.org/tracks/python/exercises/acronym/approaches/double-generator-expression
 [approach-functools-reduce]: https://exercism.org/tracks/python/exercises/acronym/approaches/functools-reduce
 [approach-generator-expression]: https://exercism.org/tracks/python/exercises/acronym/approaches/generator-expression
 [approach-list-comprehension]: https://exercism.org/tracks/python/exercises/acronym/approaches/list-comprehension
@@ -67,7 +68,6 @@ The [timeit module][timeit] docs have more details, and [note.nkmk.me][note_nkmk
 [approach-map-function]: https://exercism.org/tracks/python/exercises/acronym/approaches/map-function
 [approach-regex-join]: https://exercism.org/tracks/python/exercises/acronym/approaches/regex-join
 [approach-regex-sub]: https://exercism.org/tracks/python/exercises/acronym/approaches/regex-sub
-[approach-double-generator-expression]: https://exercism.org/tracks/python/exercises/acronym/approaches/double-generator-expression
 [benchmark-application]: https://github.com/exercism/python/tree/main/exercises/practice/acronym/.articles/performance/code/Benchmark.py
 [biased-benchmarks]: https://matthewrocklin.com/blog/work/2017/03/09/biased-benchmarks
 [note_nkmk_me]: https://note.nkmk.me/en/python-timeit-measure/

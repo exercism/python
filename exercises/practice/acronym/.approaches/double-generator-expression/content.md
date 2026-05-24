@@ -24,7 +24,7 @@ In `abbreviate()`, the first generator expression iterates over `to_abbreviate`,
 For each code point that is not excluded, the expression passes it into [`str.join()`][str-join] (unless it is a hyphen, in which case it replaces the hyphen with a space).
 `to_abbreviate` is then set to the result of the `str.join()`, preparing it for the next step.
 
-Next, [`to_abbreviate.split()`][str-split] is used to split `to_abbreviate` into words separated by whitespace -- we can ignore the case of hyphens as we already replaced all of them with spaces.
+Next, [`to_abbreviate.split()`][str-split] is used to split `to_abbreviate` into words separated by whitespace — we can ignore the case of hyphens as we already replaced all of them with spaces.
 Now the second generator expression iterates over the list returned by `to_abbreviate.split()`, yeilding the first code point in each word.
 These code points are passed to another `str.join()`, which is then [chained][chaining] to [`str.upper()`][str-upper].
 Now that both steps are complete, we return the result of `str.upper()` directly on the same line.
