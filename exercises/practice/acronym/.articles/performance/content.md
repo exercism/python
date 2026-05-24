@@ -54,7 +54,7 @@ Even though the `re.sub()` solution takes only 652 steps in the regex engine, `r
 
 Keep in mind that all these approaches are very fast, and that [benchmarking at this granularity can be unstable, especially on modern CPUs][timeit-issue]. Note that there can also be [bias in benchmarking][biased-benchmarks].
 
-Measurements were taken on a 3.1 GHz Quad-Core Intel Core i7 Mac running MacOS Ventura.
+Measurements were taken on an M3 Mac running MacOS Sonoma.
 Tests used `timeit.Timer.autorange()`, repeated 3 times.
 Time is reported in seconds taken per string after calculating the 'best of' time.
 The [timeit module][timeit] docs have more details, and [note.nkmk.me][note_nkmk_me] has a nice summary of methods.
