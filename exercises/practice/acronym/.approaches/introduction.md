@@ -64,7 +64,7 @@ def abbreviate(to_abbreviate):
 def abbreviate(to_abbreviate):
     phrase = to_abbreviate.replace('-', ' ').replace('_', ' ').upper().split()
     
-    # note the parenthesis instead of square brackets.
+    # Note the parenthesis instead of square brackets.
     return ''.join((word[0] for word in phrase))
 ```
 

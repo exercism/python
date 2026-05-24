@@ -13,7 +13,7 @@ The [approaches page][approaches] lists many idiomatic approaches to this exerci
 6. [Using `re.finditer()` with `str.join()`][approach-regex-join]
 7. [Using `re.findall()` with `str.join()`][approach-regex-join]
 8. [Using `re.sub()`][approach-regex-sub]
-9. Using two `generator-expression`s and `str.join()`
+9. [Using two `generator-expression`s][approach-double-generator-expression] and `str.join()`
 
 We will also include a tenth approach, which is a variant of the `re.findall()` approach. This variant uses a regex to select the _first letters_ of each word, instead of the _entirety_ of each word.
 
@@ -22,7 +22,7 @@ We will also include a tenth approach, which is a variant of the `re.findall()` 
 To benchmark these approaches, we wrote a [small benchmarking script][benchmark-application] using the [`timeit`][timeit] module along with the third party libraries [`numpy`][numpy] and [`pandas`][pandas].
 
 All approaches are `O(n)` — they require (_at minimum_) a loop through the entire input to create results, and the work scales in line with the length of the function input.
-However, that doesn't mean that all of these approaches take the _same amount of time to run_.
+That doesn't mean that all of these approaches take the _same amount of time to run_.
 Despite being `O(n)`, overhead such as number of function calls, module importing/loading, regex backtracking, generator tracking, string concatenation, and `lambda` evaluation can add significant time.
 Some of the slowest strategies (_mostly regex solutions_) are _**10 (or more) times times slower**_ than the fastest methods (_straight looping and list comprehensions_).
 
@@ -67,6 +67,7 @@ The [timeit module][timeit] docs have more details, and [note.nkmk.me][note_nkmk
 [approach-map-function]: https://exercism.org/tracks/python/exercises/acronym/approaches/map-function
 [approach-regex-join]: https://exercism.org/tracks/python/exercises/acronym/approaches/regex-join
 [approach-regex-sub]: https://exercism.org/tracks/python/exercises/acronym/approaches/regex-sub
+[approach-double-generator-expression]: https://exercism.org/tracks/python/exercises/acronym/approaches/double-generator-expression
 [benchmark-application]: https://github.com/exercism/python/tree/main/exercises/practice/acronym/.articles/performance/code/Benchmark.py
 [biased-benchmarks]: https://matthewrocklin.com/blog/work/2017/03/09/biased-benchmarks
 [note_nkmk_me]: https://note.nkmk.me/en/python-timeit-measure/

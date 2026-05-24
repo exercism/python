@@ -19,11 +19,8 @@ import numpy as np
 
 
 FIND_INCLUSION_REGEX = re.compile(r"[a-zA-Z']+")
-
 SUB_EXCLUSION_REGEX = re.compile(r"(?<!_)\B[\w']+|[ ,\-_]")
-
 FINDALL_INCLUSION_REGEX = re.compile(r"(?<!')\b[a-zA-Z]|(?<=_)[^ _']")
-
 VALID_CHARS = {' ', '-'} | set(ascii_letters)
 
 
@@ -139,10 +136,10 @@ row_headers = ["loop with str.replace",
                "re.findall() 1st letters with str.join()",
                "two generator expressions"]
 
-# Empty dataframe will be filled in one cell at a time later
+# Empty dataframe will be filled in one cell at a time later.
 df = pd.DataFrame(np.nan, index=row_headers, columns=col_headers)
 
-# Function List to Call When Timing
+# Function List to Call When Timing.
 functions = [abbreviate_loop,
              abbreviate_list_comprehension,
              abbreviate_map,
@@ -170,7 +167,7 @@ for function, title in zip(functions, row_headers):
     # Insert results into the dataframe
     df.loc[title, 'Length: 13':'Length: 2940'] = timing_result
 
-# The next bit is useful for `content.md`
+# The next bit is useful for updating `content.md` with new results.
 pd.options.display.float_format = '{:,.2e}'.format
 print('\nDataframe in Markdown format:\n')
 print(df.to_markdown(floatfmt=".2e"))
