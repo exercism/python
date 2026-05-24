@@ -72,8 +72,8 @@ After this, the approach uses [structural pattern matching][structural-pattern-m
 However, this section could easily be modified to use a similar method to any of the other approaches, such as an `if-elif-else` block or a tuple of `lambda`s.
 
 At the end of the loop, we set `index` to `operand_index + 1`, as we have finished processing everything up to and including `operand_index`.
-Then the loop continues until `index` reaches or exceeds `len(words)` or something raises an uncaught error.
-When the loop ends, we know that we have finished processing the whole string, and thus we return `result`.
+Then the loop continues until `index` reaches or exceeds `len(words)` or an uncaught error is raised.
+When the loop ends, we know that we have finished processing the entire string, and thus we return `result`.
 
 [handling-exceptions]: https://docs.python.org/3.11/tutorial/errors.html#handling-exceptions
 [none]: https://docs.python.org/3/library/constants.html#None
