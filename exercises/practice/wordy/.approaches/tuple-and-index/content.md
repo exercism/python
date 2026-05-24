@@ -67,7 +67,7 @@ However, some operator phrases are multiple words long, so we need to check if `
 If there *is* an extra operator word, then we need to check if it is present as the next word in `words`.
 If it is not present, we raise a `ValueError`, else we increment `operand_index` by `1` to get the correct index.
 
-Here we call the helper function again, setting `operand` to the number at index `operand_index`, and raising a `ValueError` if it is not a number.
+Here we use the helper function `str_to_int()` again, setting `operand` to the number at index `operand_index` (and raising a `ValueError` if it is not a number).
 After this, the approach uses [structural pattern matching][structural-pattern-matching] to modify `result` using `+=`, `-=`, `*=`, or `//=` depending on the `operator_index`.
 However, this section could easily be modified to use a similar method to any of the other approaches, such as an `if-elif-else` block or a tuple of `lambda`s.
 
