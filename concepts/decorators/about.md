@@ -120,26 +120,27 @@ The inner function may then return the original function argument.
 Following is an example of a decorator being used for validation:
 
 ```python
->>> def my_validator(func):
-...     def my_wrapper(world):
-...         print(f"Entering {func.__name__} with {world} argument")
-...         if ("Pluto" == world):
-...             print("Pluto is not a planet!")
-...         else:
-...             return func(world)
-...     return my_wrapper
-...
-... @my_validator
-... def my_func(planet):
-...     print(f"Hello, {planet}!")
-...
->>> my_func("World")
-Entering my_func with World argument
-Hello, World!
-...
->>> my_func("Pluto")
-Entering my_func with Pluto argument
-Pluto is not a planet!
+def my_validator(func):
+    def my_wrapper(world):
+        print(f"Entering {func.__name__} with {world} argument")
+        
+        if (world == "Pluto"):
+            print("Pluto is not a planet!")
+        else:
+            return func(world)
+    return my_wrapper
+
+@my_validator
+def my_func(planet):
+    print(f"Hello, {planet}!")
+
+my_func("World")
+#-> Entering my_func with World argument
+#-> Hello, World!
+
+my_func("Pluto")
+#-> Entering my_func with Pluto argument
+#-> Pluto is not a planet!
 ```
 
 On the first line, we have the definition for the decorator with its `func` argument.
@@ -148,7 +149,7 @@ Since the _inner function_ wraps the decorator's `func` argument, it is passed t
 Note that the wrapper doesn't have to use the same name for the argument that was defined in `func`.
 The original function uses `planet` and the decorator uses `world`, and the decorator still works.
 
-The inner function returns either `func` or, if `planet` equals `Pluto`, it will print that Pluto is not a planet.
+The inner function returns either `func` or, if `world` equals "Pluto", it will print that Pluto is not a planet.
 It could be coded to raise a `ValueError` instead.
 So, the inner function wraps `func`, and returns either `func` or does something that substitutes what `func` would do.
 The decorator returns its _inner function_.
@@ -162,19 +163,20 @@ Decorators can be written for functions that take an arbitrary number of argumen
 Following is an example of a decorator for a function that takes an arbitrary number of arguments:
 
 ```python
->>> def double(func):
-...     def wrapper(*args, **kwargs):
-...         return func(*args, **kwargs) * 2
-...     return wrapper
-...
-... @double
-... def add(*args):
-...     return sum(args)
-...
->>> print(add(2, 3, 4))
-18
->>> print(add(2, 3, 4, 5, 6))
-40
+def double(func):
+    def wrapper(*args, **kwargs):
+        return func(*args, **kwargs) * 2
+    return wrapper
+
+@double
+def add(*args):
+    return sum(args)
+
+print(add(2, 3, 4))
+#->18
+
+print(add(2, 3, 4, 5, 6))
+#->40
 ```
 
 This works for doubling the return value from the function argument.
@@ -185,24 +187,25 @@ If we want to triple, quadruple, etc. the return value, we can add a parameter t
 Following is an example of a decorator that can be configured to multiply the decorated function's return value by an arbitrary amount:
 
 ```python
->>> def multi(factor=1):
-...     if (factor == 0):
-...         raise ValueError("factor must not be 0")
-...
-...     def outer_wrapper(func):
-...         def inner_wrapper(*args, **kwargs):
-...             return func(*args, **kwargs) * factor
-...         return inner_wrapper
-...     return outer_wrapper
-...
-... @multi(factor=3)
-... def add(*args):
-...     return sum(args)
-...
->>> print(add(2, 3, 4))
-27
->>> print(add(2, 3, 4, 5, 6))
-60
+def multi(factor=1):
+     if factor == 0:
+        raise ValueError("factor must not be 0")
+
+     def outer_wrapper(func):
+         def inner_wrapper(*args, **kwargs):
+             return func(*args, **kwargs) * factor
+         return inner_wrapper
+     return outer_wrapper
+
+@multi(factor=3)
+ def add(*args):
+     return sum(args)
+
+ print(add(2, 3, 4))
+#->27
+
+print(add(2, 3, 4, 5, 6))
+#->60
 ```
 
 The first lines validate that `factor` is not `0`.
@@ -215,27 +218,29 @@ The outer wrapper returns the inner wrapper, and the decorator returns the outer
 Following is an example of a parameterized decorator that controls whether it validates the argument passed to the original function:
 
 ```python
->>> def check_for_pluto(check=True):
-...     def my_validator(func):
-...         def my_wrapper(world):
-...             print(f"Entering {func.__name__} with {world} argument")
-...             if (check and "Pluto" == world):
-...                 print("Pluto is not a planet!")
-...             else:
-...                 return func(world)
-...         return my_wrapper
-...     return my_validator
-...
-... @check_for_pluto(check=False)
-... def my_func(planet):
-...     print(f"Hello, {planet}!")
-...
->>> my_func("World")
-Entering my_func with World argument
-Hello, World!
->>> my_func("Pluto")
-Entering my_func with Pluto argument
-Hello, Pluto!
+def check_for_pluto(check=True):
+    def my_validator(func):
+        def my_wrapper(world):
+            print(f"Entering {func.__name__} with {world} argument")
+            if check and world == "Pluto":
+                print("Pluto is not a planet!")
+            else:
+                return func(world)
+        
+        return my_wrapper
+    return my_validator
+
+@check_for_pluto(check=False)
+def my_func(planet):
+    print(f"Hello, {planet}!")
+
+my_func("World")
+#-> Entering my_func with World argument
+#-> Hello, World!
+
+my_func("Pluto")
+#-> Entering my_func with Pluto argument
+#-> Hello, Pluto!
 ```
 
 This allows for easy toggling between checking for `Pluto` or not, and is done without having to modify `my_func`.
