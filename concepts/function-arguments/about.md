@@ -33,22 +33,20 @@ The second call to `concat` passes the arguments by name, allowing their positio
 
 Note that positional arguments cannot follow keyword arguments.
 
-This
+This set of arguments:
 
 ```python
 >>> print(concat(greeting="Hello, ", "Gregor"))
 ```
 
-results in this error:
+Results in this error:
 
 ```
 SyntaxError: positional argument follows keyword argument
 ```
 
-Requiring positional-only arguments for function calls can be done through the use of the `/` operator in the parameter list.
+Requiring positional-only arguments for function calls can be done through the use of the `/` operator in the parameter list:
 
-
-Positional-only arguments:
 
 ```python
 # Parameters showing a position-only operator. 
@@ -163,20 +161,19 @@ def my_function(*args, **kwargs):
 The `*` is the operator which transforms the group of separate arguments into a [`tuple`][tuple].
 
 ~~~~exercism/note
-If you have ever [unpacked a tuple][unpack a tuple] you may find the `*` in `*args` to be confusing.
+If you have ever [unpacked a tuple][unpack-a-tuple] you may find the `*` in `*args` to be confusing.
 The `*` in a _parameter_ definition, instead of unpacking a tuple, converts one or more positional arguments _into_ a tuple.
 
 We say that the `*` operator is [_overloaded_][overloading], as it has different behavior in different contexts.
 For instance, `*` is used for multiplication, it is used for unpacking, and it is used to define an arbitrary number of positional parameters.
 
 [overloading]: https://therenegadecoder.com/code/abusing-pythons-operator-overloading-feature/
-[unpacking]: https://www.geeksforgeeks.org/unpacking-a-tuple-in-python/
+[unpack-a-tuple]: https://www.geeksforgeeks.org/unpacking-a-tuple-in-python/
 ~~~~
     
 Since a tuple can be iterated over, `args` can be passed to any other function which takes an iterable.
-Although `*args` is commonly juxtaposed with `**kwargs`, it doesn't have to be.
+Although `*args` is commonly juxtaposed with `**kwargs`, it doesn't have to be:
 
-An arbitrary number of values being passed to a function:
 
 ```python
 >>> def add(*args):
@@ -187,9 +184,8 @@ An arbitrary number of values being passed to a function:
 6
 ```
 
-If `*args` follows one or more positional arguments, then `*args` will be what is left over after the positional arguments.
+If `*args` follows one or more positional arguments, then `*args` will be what is left over after the positional arguments:
 
-An arbitrary number of values being passed to a function after a positional argument:
 
 ```python
 >>> def add(first, *args):
@@ -226,7 +222,7 @@ This is accomplished by using `*`, which is the [unpacking operator][unpacking o
 `*` in this context _unpacks_ the container into its separate elements which are then transformed by `*args` into a tuple.
 Where there are only positional arguments, the unpacking action must result in the same number of arguments as there are formal parameters defined.
 
-Without unpacking the list passed into `add`, the program would error.
+Without unpacking the list passed into `add`, the program would error:
 
 ```python
 >>> def add(first, *args, last=0):
@@ -246,9 +242,8 @@ TypeError: can only concatenate list (not "int") to list
 The `**` transforms the group of named arguments into a [`dictionary`][dictionary] of `{argument name: argument value}` pairs.
 
 Since a dictionary can be iterated over, `kwargs` can be passed to any other function which takes an iterable.
-Although `**kwargs` is commonly juxtaposed with `*args`, it doesn't have to be.
+Although `**kwargs` is commonly juxtaposed with `*args`, it doesn't have to be:
 
-An arbitrary number of key-value pairs being passed to a function:
 
 ```python
 >>> def add(**kwargs):
@@ -259,7 +254,7 @@ An arbitrary number of key-value pairs being passed to a function:
 ```
 
 Note that the `dict.values()` method is called to iterate through the `kwargs` dictionary values.
-When iterating over a dictionary the default is to iterate through the _keys_, so `dict.values()` needs to be specified explicitly.
+When iterating over a dictionary, the default is to iterate through the _keys_, so `dict.values()` needs to be specified explicitly.
 Following is an example of an arbitrary number of key-value pairs being passed to a function that then iterates over `kwargs.items()`:
 
 ```python
@@ -273,7 +268,7 @@ Following is an example of an arbitrary number of key-value pairs being passed t
 
 [default arguments]: https://www.geeksforgeeks.org/default-arguments-in-python/
 [dictionary]: https://exercism.org/tracks/python/concepts/dicts
-[function concept]: https://github.com/exercism/python/blob/main/concepts/functions/about.md
+[function concept]: https://exercism.org/tracks/python/concepts/functions
 [key-value]: https://www.pythontutorial.net/python-basics/python-dictionary/
 [tuple]: https://www.w3schools.com/python/python_tuples.asp
 [unpacking operator]: https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists
