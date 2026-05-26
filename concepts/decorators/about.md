@@ -143,15 +143,15 @@ my_func("Pluto")
 #-> Pluto is not a planet!
 ```
 
-On the first line, we have the definition for the decorator with its `func` argument.
-On the next line is the definition for the decorators _inner function_, which wraps the `func` argument.
+On the first line, we have the definition for the decorator's `func` argument.
+On the next line is the definition for the decorator's _inner function_, which wraps the `func` argument.
 Since the _inner function_ wraps the decorator's `func` argument, it is passed the same argument that is passed to `func`.
 Note that the wrapper doesn't have to use the same name for the argument that was defined in `func`.
-The original function uses `planet` and the decorator uses `world`, and the decorator still works.
+The original function uses `planet` and the decorator uses `world` — and the decorator still works.
 
-The inner function returns either `func` or, if `world` equals "Pluto", it will print that Pluto is not a planet.
+The _inner function_ returns either `func` or if `world` equals "Pluto", it will print that Pluto is not a planet.
 It could be coded to raise a `ValueError` instead.
-So, the inner function wraps `func`, and returns either `func` or does something that substitutes what `func` would do.
+So, the _inner function_ wraps `func`, and returns either `func` or does something that substitutes for what `func` would do.
 The decorator returns its _inner function_.
 The _inner_function_ may or may not return the original, passed-in function.
 Depending on what code conditionally executes in the wrapper function or _inner_function_, `func` may be returned, an error could be raised, or a value of `func`'s return type could be returned.
@@ -173,10 +173,10 @@ def add(*args):
     return sum(args)
 
 print(add(2, 3, 4))
-#->18
+#-> 18
 
 print(add(2, 3, 4, 5, 6))
-#->40
+#-> 40
 ```
 
 This works for doubling the return value from the function argument.
@@ -198,14 +198,14 @@ def multi(factor=1):
      return outer_wrapper
 
 @multi(factor=3)
- def add(*args):
-     return sum(args)
+def add(*args):
+    return sum(args)
 
- print(add(2, 3, 4))
-#->27
+print(add(2, 3, 4))
+#-> 27
 
 print(add(2, 3, 4, 5, 6))
-#->60
+#-> 60
 ```
 
 The first lines validate that `factor` is not `0`.
