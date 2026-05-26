@@ -28,6 +28,6 @@ def add_to_todos(new_task, todo_list=None):
 
 ```python
 a = None
-if a: #=> a will be evaluated to False when its used in a conditional check.
+if a: #<-- a will be evaluated to False when it is used in a conditional check.
     print("This will not be printed")
 ```

@@ -92,7 +92,7 @@ Possible results from `randint()` _include_ the upper bound, so `randint(a, b)` 
 These two functions assume that you are starting from some [sequence][sequence-types] or other container.
 This will typically be a `list`, or with some limitations, a `tuple` or a `set` (_a `tuple` is immutable, and `set` is unordered_).
 
-The `choice()` function will return one member chosen at random from a given sequence and `choices()` will return a specified number of members (`k`) chosen at random from a given sequence.
+The `choice()` function will return one member chosen at random from a given sequence, and `choices()` will return a specified number of members (`k`) chosen at random from a given sequence.
 In the examples shown above, we assumed a fair coin with equal probability of heads or tails, but weights can also be specified.
 
 For example, if a bag contains 10 red balls and 15 green balls, and we would like to pull one out at random:
