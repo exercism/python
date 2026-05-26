@@ -24,7 +24,7 @@ def add_to_todos(new_task, todo_list=None):
   return todo_list
 ```
 
-`None` will evaluate to `False` when used in a conditional check, so it is useful for validating the "presence of" or "absence of" a value - _any_ value — a pattern frequently used when a function or process might hand back an `error`, `object`, or message.
+`None` will evaluate to `False` when used in a conditional check, so it is useful for validating the "presence of" or "absence of" a value — _any_ value — a pattern frequently used when a function or process might hand back an `error`, `object`, or message.
 
 ```python
 a = None
