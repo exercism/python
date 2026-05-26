@@ -124,7 +124,7 @@ def my_validator(func):
     def my_wrapper(world):
         print(f"Entering {func.__name__} with {world} argument")
         
-        if (world == "Pluto"):
+        if world == "Pluto":
             print("Pluto is not a planet!")
         else:
             return func(world)
