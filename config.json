@@ -2425,11 +2425,6 @@
       "name": "Enums"
     },
     {
-      "uuid": "8ac7c6b5-5786-45dd-8ce3-5b139da06471",
-      "slug": "fractions",
-      "name": "Fractions"
-    },
-    {
       "uuid": "26b147e0-2cdc-4325-a6b4-6a2dd5bb69b1",
       "slug": "function-arguments",
       "name": "Function Arguments"
@@ -2500,11 +2495,6 @@
       "name": "Loops"
     },
     {
-      "uuid": "5b8c09b9-4fb5-4922-827f-f6c2bed2b860",
-      "slug": "memoryview",
-      "name": "Memoryview"
-    },
-    {
       "uuid": "0a449447-a93b-4b0b-8694-bf48ee1bdeed",
       "slug": "none",
       "name": "None"
@@ -2568,11 +2558,6 @@
       "uuid": "5c83eaf7-b0de-4279-a904-8531f7555266",
       "slug": "string-methods",
       "name": "String Methods"
-    },
-    {
-      "uuid": "a89ce4fb-ef49-4d4f-bbfb-b43d5a9645d7",
-      "slug": "string-methods-splitting",
-      "name": "String Methods Splitting"
     },
     {
       "uuid": "1eec0dde-4599-450f-909d-2b20ea40e73d",
