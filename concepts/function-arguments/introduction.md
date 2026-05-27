@@ -62,7 +62,7 @@ print(concat(name="Jerry", greeting="Hello, "))
 
 # Function call without arguments resulting in the defaults being used.
 print(concat())
-#--> Hello, you
+#-> Hello, you
 ```
 
 ## Keyword Arguments

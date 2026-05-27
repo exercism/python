@@ -23,7 +23,6 @@ print(concat("Hello, ", "Lilly"))
 
 # Passing data to the function using the parameter name.
 print(concat(name="Glenn", greeting="Hello, "))
-
 #-> Hello, Glenn
 ```
 
@@ -72,7 +71,7 @@ def concat(greeting, name):
 
 # Function call using parameter names as argument keywords.
 print(concat(name="Eliza", greeting="Hello, "))
-#--> Hello, Eliza
+#-> Hello, Eliza
 
 # Function call with positional data as arguments.
 print(concat("Hello, ", "Tim"))
@@ -109,11 +108,11 @@ def concat(greeting, name="you", punctuation="!"):
     return f"{greeting}, {name}{punctuation}"
 
 print(concat("Hello"))
-Hello, you!
+#-> Hello, you!
 
 # Overriding the default values
 print(concat("Hello", name="Polly", punctuation="."))
-Hello, Polly.
+#-> Hello, Polly.
 ```
 
 
@@ -128,12 +127,12 @@ def concat(greeting, /, name, *, ending):
     return f"{greeting}{name}{ending}"
 
 print(concat("Hello, ", "Mark", ending="!"))
-Hello, Mark!
+#-> Hello, Mark!
 
 print(concat("Hello, ", name="Rachel", ending="!"))
-Hello, Rachel!
+#-> Hello, Rachel!
 
->>> print(concat(greeting="Hello, ", name="JoJo", ending="!"))
+print(concat(greeting="Hello, ", name="JoJo", ending="!"))
 Traceback (most recent call last):
     print(concat(greeting="Hello, ", name="JoJo", ending="!"))
 TypeError: concat() got some positional-only arguments passed as keyword arguments: 'greeting'
@@ -209,7 +208,7 @@ print(add(*[1, 2, 3]))
 #-> 6
 ```
 
-Note that when an argument is already inside an `iterable` such as a `tuple` or `list`, it needs to be [_unpacked_][unpacking-and-multiple-assignment] before being passed to a function that takes an arbitrary number of separate arguments.
+Note that when an argument is already inside an `iterable` (_such as a `tuple` or `list`_), it needs to be [_unpacked_][unpacking-and-multiple-assignment] before being passed to a function that takes an arbitrary number of separate arguments.
 This is accomplished by using `*`, which is the [unpacking operator][unpacking operator].
 
 `*` in this context _unpacks_ the container into its separate elements which are then transformed by `*args` into a `tuple`.
