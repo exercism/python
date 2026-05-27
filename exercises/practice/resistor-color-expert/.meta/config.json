@@ -3,6 +3,9 @@
     "meatball133",
     "bethanyg"
   ],
+  "contributors": [
+    "yrahcaz7"
+  ],
   "files": {
     "solution": [
       "resistor_color_expert.py"
