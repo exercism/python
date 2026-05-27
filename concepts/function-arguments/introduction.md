@@ -86,7 +86,7 @@ print(concat("Hello, ", "Isaac"))
 ```
 
 [default arguments]: https://www.geeksforgeeks.org/default-arguments-in-python/
-[function concept]: https://github.com/exercism/python/blob/main/concepts/functions/about.md
+[function concept]: https://exercism.org/tracks/python/concepts/functions
 [keyword-arguments]: https://docs.python.org/3/glossary.html#term-argument
 [kwargs]: https://docs.python.org/3/glossary.html#term-parameter
 [parameters]: https://www.codecademy.com/learn/flask-introduction-to-python/modules/learn-python3-functions/cheatsheet
