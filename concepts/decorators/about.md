@@ -149,12 +149,12 @@ Since the _inner function_ wraps the decorator's `func` argument, it is passed t
 Note that the wrapper doesn't have to use the same name for the argument that was defined in `func`.
 The original function uses `planet` and the decorator uses `world` — and the decorator still works.
 
-The _inner function_ returns either `func` or if `world` equals "Pluto", it will print that Pluto is not a planet.
+The inner function returns either func — or if `world == "Pluto"` — prints that Pluto is not a planet.
 It could be coded to raise a `ValueError` instead.
 So, the _inner function_ wraps `func`, and returns either `func` or does something that substitutes for what `func` would do.
 The decorator returns its _inner function_.
-The _inner_function_ may or may not return the original, passed-in function.
-Depending on what code conditionally executes in the wrapper function or _inner_function_, `func` may be returned, an error could be raised, or a value of `func`'s return type could be returned.
+The _inner function_ may or may not return the original, passed-in function.
+Depending on what code conditionally executes in the wrapper function or _inner function_, `func` may be returned, an error could be raised, or a value of `func`'s return type could be returned.
 
 ### Decorating a Function that Takes an Arbitrary Number of Arguments
 
