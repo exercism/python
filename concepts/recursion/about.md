@@ -203,7 +203,7 @@ To learn more about using recursion in Python you can start with
 [RecursionError]: https://docs.python.org/3.8/library/exceptions.html#RecursionError
 [cumulative]: https://www.geeksforgeeks.org/sum-of-natural-numbers-using-recursion/
 [divide and conquer]: https://afteracademy.com/blog/divide-and-conquer-approach-in-programming
-[itermonthssates]: https://docs.python.org/3/library/calendar.html#calendar.Calendar.itermonthdates
+[itermonthdates]: https://docs.python.org/3/library/calendar.html#calendar.Calendar.itermonthdates
 [list-comprehension]: https://treyhunner.com/2015/12/python-list-comprehensions-now-in-color/
 [memoization]: https://dbader.org/blog/python-memoization
 [python-programming: recursion]: https://www.programiz.com/python-programming/recursion
