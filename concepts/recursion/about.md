@@ -127,7 +127,7 @@ In the future, Adya may try to work through problems recursively first.
 She may find it easier to initially walk through the problem in clear steps when nesting, mutation, and complexity are minimized.
 After working out the basic logic, she can then focus on optimizing her initial recursive steps into a more performant looping approach.
 
-Even later, when she learns about [concept:python/tuples](), Adya could consider further "optimizing" approaches, such as using a [`list comprehension`][list-comprehension] with [`Calendar.itermonthdates`][itermonthssates], or [memoizing][memoization] certain values.
+Even later, when she learns about [concept:python/tuples](), Adya could consider further "optimizing" approaches, such as using a [`list comprehension`][list-comprehension] with [`Calendar.itermonthdates`][itermonthdates], or [memoizing][memoization] certain values.
 
 
 ## Recursive Variation: The Tail Call
