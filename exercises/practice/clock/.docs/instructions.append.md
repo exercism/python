@@ -4,7 +4,7 @@
 ## How this exercise is implemented for the Python track
 
 
-The tests for this exercise expect that your clock will be implemented in a `Clock` `class`.
+The tests for this exercise expect that your clock will be implemented in a Clock `class`.
 If you are unfamiliar with classes in Python, [concept:python/classes]() and [classes][classes in python] (_from the Python docs_) are good places to start.
 
 
