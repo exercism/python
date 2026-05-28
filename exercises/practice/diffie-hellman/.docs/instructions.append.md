@@ -1,16 +1,25 @@
-# Should I use random or secrets?
+# Instructions Append
 
-Python, as of version 3.6, includes two different random modules.
+## Should I use random or secrets here?
 
-The module called `random` is pseudo-random, meaning it does not generate
-true randomness, but follows an algorithm that simulates randomness.
-Since random numbers are generated through a known algorithm, they are not truly random.
+As of Python 3.6, there are two different modules for producing "random" numbers:
 
-The `random` module is not correctly suited for cryptography and should not be used,
+The module called [`random`][random] is [_pseudo-random_][pseudo-random], meaning it **does not** generate
+true randomness, but follows an algorithm that _simulates_ randomness.
+Since these "random numbers" are generated through a known algorithm, they are not truly random.
+As a result, th `random` module is not correctly suited for cryptography and should not be used,
 precisely because it is pseudo-random.
 
-For this reason, in version 3.6, Python introduced the `secrets` module, which generates
-cryptographically strong random numbers that provide the greater security required for cryptography.
 
-Since this is only an exercise, `random` is fine to use, but note that **it would be
+The module called [`secrets`][secrets] generates
+[cryptographically strong][crypto-strong] "random" numbers that provide the greater security required for cryptography.
+They are still pseudo-random in the strictest sense — but they have guarantees that the numbers they produce are absolutely unpredictable.
+
+
+Since this is only a practice exercise, using the `random` module is fine, but note that **it would be
 very insecure if actually used for cryptography.**
+
+[crypto-strong]: https://cryptobook.nakov.com/secure-random-generators/secure-random-generators-csprng
+[pseudo-random]: https://en.wikipedia.org/wiki/Pseudorandomness
+[random]: https://docs.python.org/3/library/random.html
+[secrets]: https://docs.python.org/3/library/secrets.html
