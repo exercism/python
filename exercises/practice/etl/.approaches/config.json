@@ -1,0 +1,43 @@
+{
+  "introduction": {
+    "authors": ["BethanyG"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "0a408f3f-d1ea-4739-a900-dbb65ab34520",
+      "slug": "dict-keys-and-generator",
+      "title": "Iterate Over Dictionary Keys and Use a Generator to Lowercase Strings.",
+      "blurb": "Use dict.keys() to iterate, and a generator to lowercase values.",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "a35a1496-b092-4634-a514-2c02d7c899c5",
+      "slug": "dict-keys-and-dict-methods",
+      "title": "Iterate Over Dictionary Keys and Use Dictionary Methods to Update.",
+      "blurb": "Used dict.keys() for iteration and dict.get() with dict.setdefault() to Update",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "c8de8d53-154c-4f05-ba44-44d8fcd739aa",
+      "slug": "dict-items",
+      "title": "Iterate over Dictionary Items",
+      "blurb": "Use dict.items() for iteration.",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "5105b287-5062-4404-81df-0afe865315da",
+      "slug": "dict-constructor-and-generator",
+      "title": "Dictionary Constructor with a Passed Generator Expression.",
+      "blurb": "Pass a generator expression to a dictionary constructor to create a new dictionary.",
+      "authors": ["BethanyG"]
+    },
+    {
+      "uuid": "59fad251-66ca-4f7d-a466-3bbd19260849",
+      "slug": "dictionary-comprehension",
+      "title": "Dictionary Comprehension",
+      "blurb": "Use a dictionary comprehension to process and transform data into new dictionary.",
+      "authors": ["BethanyG"]
+    }
+  ]
+}
