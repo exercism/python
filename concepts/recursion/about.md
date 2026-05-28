@@ -18,7 +18,7 @@ This is usually managed by updating one or more variable values to progressively
 This is an efficient implementation, but it can be somewhat cluttered when looking at the code.
 
 Recursion, rather than updating _variable state_, can pass _updated values_ directly as arguments to the next call (iteration) of the same function.
-This declutters the body of the function and can clarify how each update happens.
+This de-clutters the body of the function and can clarify how each update happens.
 However,  it is also a less efficient implementation, as each call to the same function adds another frame to the stack.
 
 ## Recursion: Why and Why Not?
@@ -55,7 +55,7 @@ def paydates_for_year(year, weekday, ordinal):
     """Returns a list of the matching weekday dates.
     
     Arguments:
-        year (int): The year (e.g. 2022)/
+        year (int): The year (e.g. 2022).
         weekday (int): The weekday number (e.g. 3 for Wednesday).
         ordinal (int): Which weekday of the month (e.g. 2 for the second day).
     
@@ -121,13 +121,13 @@ Adya is happy that there are no more nested loops, no mutated state, and 2 fewer
 
 She is a little concerned that the recursive approach uses more steps than the looping approach, and so is less "performant".
 But re-writing the problem using recursion has definitely helped her deal with ugly nested looping (_a performance hazard_), extensive state mutation, and confusion around complex conditional logic.
-It also feels more "readable" - she is sure that when she comes back to this code after a break, she will be able to read through and remember what it does more easily. 
+It also feels more "readable" — she is sure that when she comes back to this code after a break, she will be able to read through and remember what it does more easily.
 
 In the future, Adya may try to work through problems recursively first.
 She may find it easier to initially walk through the problem in clear steps when nesting, mutation, and complexity are minimized.
 After working out the basic logic, she can then focus on optimizing her initial recursive steps into a more performant looping approach.
 
-Even later, when she learns about `tuples`, Adya could consider further "optimizing" approaches, such as using a `list comprehension` with `Calendar.itermonthdates`, or memoizing certain values.
+Even later, when she learns about [concept:python/tuples](), Adya could consider further "optimizing" approaches, such as using a [`list comprehension`][list-comprehension] with [`Calendar.itermonthdates`][itermonthssates], or [memoizing][memoization] certain values.
 
 
 ## Recursive Variation: The Tail Call
@@ -187,8 +187,8 @@ However, it is always important when using recursion to know that there will not
 Some languages are able to optimize tail calls so that each recursive call reuses the [stack frame][stack-frame] of the first call to the function (_similar to the way a loop reuses a frame_), instead of adding an additional frame to the stack.
 Python is not one of those languages.
 To guard against stack overflow, Python has a recursion limit that defaults to one thousand frames.
-A [RecursionError](https://docs.python.org/3.8/library/exceptions.html#RecursionError) exception is raised when the interpreter detects that the recursion limit has been exceeded.
-It is possible to use the [sys.setrecursionlimit](https://docs.python.org/3.8/library/sys.html#sys.setrecursionlimit) method to increase the recursion limit, but doing so runs the risk of having a runtime segmentation fault that will crash the program, and possibly the operating system.
+A [RecursionError][RecursionError] exception is raised when the interpreter detects that the recursion limit has been exceeded.
+It is possible to use the [sys.setrecursionlimit][sys.setrecursionlimit] method to increase the recursion limit, but doing so runs the risk of having a runtime segmentation fault that will crash the program, and possibly the operating system.
 
 ## Resources
 
@@ -197,12 +197,16 @@ To learn more about using recursion in Python you can start with
 - [Real Python: python-recursion][Real Python: python-recursion]
 - [Real Python: python-thinking-recursively][Real Python: python-thinking-recursively]
 
-[python-programming: recursion]: https://www.programiz.com/python-programming/recursion
+
 [Real Python: python-recursion]: https://realpython.com/python-recursion/
 [Real Python: python-thinking-recursively]: https://realpython.com/python-thinking-recursively/
 [RecursionError]: https://docs.python.org/3.8/library/exceptions.html#RecursionError
-[setrecursionlimit]: https://docs.python.org/3.8/library/sys.html#sys.setrecursionlimit
-[divide and conquer]: https://afteracademy.com/blog/divide-and-conquer-approach-in-programming
 [cumulative]: https://www.geeksforgeeks.org/sum-of-natural-numbers-using-recursion/
+[divide and conquer]: https://afteracademy.com/blog/divide-and-conquer-approach-in-programming
+[itermonthssates]: https://docs.python.org/3/library/calendar.html#calendar.Calendar.itermonthdates
+[list-comprehension]: https://treyhunner.com/2015/12/python-list-comprehensions-now-in-color/
+[memoization]: https://dbader.org/blog/python-memoization
+[python-programming: recursion]: https://www.programiz.com/python-programming/recursion
 [stack-frame]: https://shanechang.com/p/python-frames-systems-programming-connection/
+[sys.setrecursionlimit]:  https://docs.python.org/3.8/library/sys.html#sys.setrecursionlimit
 [what-is-the-call-stack]: https://en.wikipedia.org/wiki/Call_stack
