@@ -11,7 +11,7 @@ As a result, the concurrency requirement has been set aside for this exercise.
 Account operations are sequential on a single thread, and no concurrency or "race condition" tests are run.  
 
 
-If you would like to experiment with free-threading or concurrency tests, we as that you do so [locally][testing-locally].
+If you would like to experiment with free-threading or concurrency tests, we ask that you do so [locally][testing-locally].
 For help with downloading and working on exercises locally, we recommend the [Exercism CLI][exercism-cli].
 
 [exercism-cli]: https://exercism.org/cli-walkthrough
