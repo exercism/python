@@ -30,5 +30,5 @@
       ".meta/example.py"
     ]
   },
-  "blurb": "Write a function to determine if a list is a sublist of another list."
+  "blurb": "Determine if a list is a sublist of another list."
 }
