@@ -1,18 +1,25 @@
 # Instructions append
 
 ~~~~exercism/note
+
 Python doesn't support "true" concurrency due to the [Global Interpreter Lock][GIL].
 While work is ongoing to create support for [free-threading in Python][free-threading], it is still experimental.
 Current standard library solutions such as [multiprocessing][multiprocessing-module] and [threading][threading-module] are difficult to implement with the current track tooling.  
 
 
 As a result, the concurrency requirement has been set aside for this exercise. 
-Account operations are sequential on a single thread, and no concurrency or "race condition" tests are run.
+Account operations are sequential on a single thread, and no concurrency or "race condition" tests are run.  
 
-[GIL]: https://realpython.com/python-gil/
+
+If you would like to experiment with free-threading or concurrency tests, we as that you do so [locally][testing-locally].
+For help with downloading and working on exercises locally, we recommend the [Exercism CLI][exercism-cli].
+
+[exercism-cli]: https://exercism.org/cli-walkthrough
 [free-threading]: https://docs.python.org/3/howto/free-threading-python.html
-[threading-module]: https://docs.python.org/3/library/threading.html#module-threading
+[GIL]: https://realpython.com/python-gil/
 [multiprocessing-module]: https://docs.python.org/3/library/multiprocessing.html#sharing-state-between-processes
+[testing-locally]: https://exercism.org/docs/tracks/python/tests
+[threading-module]: https://docs.python.org/3/library/threading.html#module-threading
 ~~~~
 
 <br>
