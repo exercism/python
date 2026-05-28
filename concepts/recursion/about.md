@@ -92,7 +92,7 @@ def paydates_for_year_rec(year, weekday, ordinal, month, day_num, output):
     """Returns a list of the matching weekday dates
     
     Arguments:
-        year (int): The year (e.g. 2022)/
+        year (int): The year (e.g. 2022).
         weekday (int): The weekday number (e.g. 3 for Wednesday).
         ordinal (int): Which weekday of the month (e.g. 2 for the second day).
         month (int): The month number currently being processed.
