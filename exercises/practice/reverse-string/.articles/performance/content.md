@@ -51,7 +51,7 @@ The [`timeit`][timeit] module docs have more details, and [note.nkmk.me][note_nk
 [approach-list-and-join]: https://exercism.org/tracks/python/exercises/reverse-string/approaches/list-and-join
 [approach-sequence-slicing]: https://exercism.org/tracks/python/exercises/reverse-string/approaches/sequence-slicing
 [introduction]: https://exercism.org/tracks/python/exercises/reverse-string/approaches/introduction.md
-[map-in-alternative-approaches]: https://exercism.org/tracks/python/exercises/reverse-string/approaches/additional-approaches#h-using-map-and-lambbda-with-join-instead-of-a-loop
+[map-in-alternative-approaches]: https://exercism.org/tracks/python/exercises/reverse-string/approaches/additional-approaches#h-using-map-and-a-lambda-with-str-join-instead-of-a-loop
 [numpy]: https://numpy.org/
 [pandas]: https://pandas.pydata.org/
 [note_nkmk_me]: https://note.nkmk.me/en/python-timeit-measure/
