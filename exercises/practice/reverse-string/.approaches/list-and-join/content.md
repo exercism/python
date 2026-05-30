@@ -1,4 +1,4 @@
-# Create a List and Use `str.join()` to Make A New String
+# Create a `list` and Use `str.join()` to Make A New String
 
 To avoid performance issues with concatenating to a string, this group of approaches uses one or more `list`s to perform swaps or reversals before joining the codepoints back into a string.
 This avoids the `O(n**2)` danger of repeated shifting/reallocation when concatenating long strings.
@@ -14,9 +14,9 @@ def reverse(text):
     return "".join(output)
 ```
 
-The code above iterates over the codepoints in the input text and uses `list.insert()` to insert each one into the output list.
+The code above iterates over the codepoints in the input text and uses `list.insert()` to insert each one into the `output` list.
 Note that `list.insert(0, codepoint)` _prepends_, which is very inefficient for `lists`, while appending takes place in (amortized) `O(1)` time.
-So this code incurs a time penalty because it forces repeated shifts of every element in the list with every insertion.
+So this code incurs a time penalty because it forces repeated shifts of every element in the `list` with every insertion.
 A small re-write using `range()` to change the iteration direction will boost performance:
 
 
@@ -33,12 +33,12 @@ def reverse(text):
     return "".join(output)
 ```
 
-This code iterates backward over the string using `range()`, and can therefore use `list.append()` to append to the output list in (amortized) constant time.
-However, the use of `str.join()` to unpack the list and create a string still makes this `O(n)`.
+This code iterates backward over the string using `range()`, and can therefore use `list.append()` to append to the `output` list in (amortized) constant time.
+However, the use of `str.join()` to unpack the `list` and create a string still makes this `O(n)`.
 This also takes `O(n)` space for the output `list`.
 
 
-## Variation #2: Convert Text to List and Use `range()` to Iterate Over Half the String, Swapping Values
+## Variation #2: Convert Text to a `list` and Use `range()` to Iterate Over Half the String, Swapping Values
 
 ```python
 def reverse(text):
@@ -54,7 +54,7 @@ def reverse(text):
 
 This variation calculates the midpoint which is then used with `range()` in a `for loop` to iterate over _half_ the indexes in the `output` list, swapping values into their reversed places.
 `str.join()` is then used to create a new string.
-This technique is quite speedy, and re-arranges the list of codepoints _in place_, avoiding expensive string concatenation.
+This technique is quite speedy, and re-arranges the `list` of codepoints _in place_, avoiding expensive string concatenation.
 It is still `O(n)` time complexity because `list()` and `str.join()` both iterate over the entire length of the input string.
 
 
@@ -101,7 +101,7 @@ Because of this issue, no timings are available for this variation.
 For code that keeps bytes together correctly, see the `bytearray` variation in the [additional approaches][approach-additional-approaches] approach.
 
 
-## Variation #5:  Use Generator Expression with Join to Iterate Backwards Over Codepoints List
+## Variation #5: Use Generator Expression with `str.join()` to Iterate Backwards Over Codepoints `list`
 
 ```python
 def reverse(text):
@@ -111,7 +111,7 @@ def reverse(text):
 ```
 
 This variation puts the for/while loop used in other strategies directly into `str.join()` using a generator expression.
-The text is first converted to a list and the generator-expression "swaps" the codepoints over the whole `list`, using `range()` for the indexes.
+The text is first converted to a `list` and the generator-expression "swaps" the codepoints over the whole `list`, using `range()` for the indexes.
 Interestingly, because of the work to create and manage the generator, this variation is actually _slower_ than using an auxiliary `list` and `loop` to manage codepoints and then calling `str.join()` separately.
 
 

@@ -36,7 +36,7 @@ def reverse(text):
 This strategy encodes the string into a UTF-8 [`bytearray`][bytearray].
 It then uses a `while` loop to iterate through the text, calculating the length of a sequence (or 'window') to slice from `given` and prepend to `output`.
 The `index` counter is then incremented by the length of the 'window'.
-Once the `index` is greater than the length of `given`, the `output` `bytearray` is decoded into a UTF-8 string and returned.
+Once the `index` is greater than the length of `given`, the `output` bytearray is decoded into a UTF-8 string and returned.
 This is (_almost_) the same set of operations as described in the next approach, but operating on bytes in a `bytearray`, as opposed to text/codepoints in a `list` — although this strategy does not use `list.pop()` (_`bytearray` objects do not have a pop method_).
 
 This uses `O(n)` space for the output array.
@@ -56,14 +56,14 @@ def reverse(text):
     return "".join(output)
 ```
 
-This strategy uses two lists.
+This strategy uses two `list`s.
 One `list` for the codepoints in the text, and one to hold the codepoints in reverse order.
-First, the input text is turned into the `codepoints` `list`, and iterated over.
-Each codepoint is `pop()`ped from `codepoints` and appended to the `output` `list`.
+First, the input text is turned into the `codepoints` list, and iterated over.
+Each codepoint is `pop()`ped from `codepoints` and appended to the `output` list.
 Finally, `output` is joined via `str.join()` to create the reversed string.
 
-While this is a straightforward and readable approach, it creates both memory and performance overhead, due to the creation of the lists and the use of `str.join()`.
-This is much faster than the bytearray strategy or using string concatenation, but is still slightly slower than the slicing strategy.
+While this is a straightforward and readable approach, it creates both memory and performance overhead, due to the creation of the `list`s and the use of `str.join()`.
+This is much faster than the `bytearray` strategy or using string concatenation, but is still slightly slower than the slicing strategy.
 It also takes up `O(n)` auxiliary space with the `output` list.
 
 
@@ -134,8 +134,8 @@ As a (very) rough comparison, below is a timing table for these functions vs the
 | reverse bytes          | 1.92e-06 | 3.82e-06 | 7.36e-06 | 1.65e-05 | 2.17e-05 | 2.71e-05 | 4.47e-05 | 5.17e-04 | 6.10e-03 | 2.16e-01 |
 
 
-As you can see, the reverse using two lists and the reverse using a bytearray are orders of magnitude slower than using a reverse slice.
-For the largest inputs measured, the dual list solution was almost 55x slower, and the bytearray solution was almost 1800x slower.
+As you can see, the reverse using two lists and the reverse using a `bytearray` are orders of magnitude slower than using a reverse slice.
+For the largest inputs measured, the dual list solution was almost 55x slower, and the `bytearray` solution was almost 1800x slower.
 Timings for strings over 142 characters could not be run for the recursive strategy, due to Python's 1000 call recursion limit.
 
 

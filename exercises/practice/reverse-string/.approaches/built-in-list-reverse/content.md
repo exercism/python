@@ -10,7 +10,7 @@ def reverse(text):
 
 These approaches start with turning the text into a `list` of codepoints.
 Rather than use a loop and `list.append()` to then reverse the text, the [`list.reverse()`][list-reverse-method] method is used to perform an in-place reversal.
-`str.join()` is then used to turn the list into a string.
+`str.join()` is then used to turn the `list` into a string.
 
 This takes `O(n)` time complexity because `list.reverse()` and `str.join()` iterate through the entire `list`.
 It uses `O(n)` space for the output `list`.
@@ -28,7 +28,7 @@ def reverse(text):
     return "".join(output)
 ```
 
-This variation is essentially the same as the solution above, but makes a codepoints list to keep the original codepoint ordering of the input text.
+This variation is essentially the same as the solution above, but makes a codepoints `list` to keep the original codepoint ordering of the input text.
 This does add some time and space overhead.
 
 
@@ -57,8 +57,8 @@ Calling the constructor is also quite a bit faster than using a "written out" `f
 
 As a (very) rough comparison, below is a timing table for these functions vs the canonical reverse slice:
 
-As you can see, using `list.reverse()` after converting the input text to a list is much slower than using a reverse slice.
-Iterating in a loop to create the output list also adds even more time.
+As you can see, using `list.reverse()` after converting the input text to a `list` is much slower than using a reverse slice.
+Iterating in a loop to create the output `list` also adds even more time.
 
 
 | **string length >>>>** |     5    |    11    |    22    |    52    |    66    |    86    |    142   |   1420   |   14200  |  142000  |

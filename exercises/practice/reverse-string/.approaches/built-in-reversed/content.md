@@ -18,7 +18,7 @@ def reverse(text):
 ```
 
 This version uses `reversed()` to reverse a `range()` object rather than feed a `start`/`stop`/`step` to `range()` itself.
-It then uses the reverse range to iterate over the input string and concatenate each code point to a new `output` string.
+It then uses the reverse `range` to iterate over the input string and concatenate each code point to a new `output` string.
 This has over-complicated `reversed()`, as it can be called directly on the input string with almost no overhead.
 This has also incurs the performance hit of repeated concatenation to the `output` string.
 

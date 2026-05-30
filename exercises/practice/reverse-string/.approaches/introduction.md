@@ -14,8 +14,8 @@ In this introduction, we cover six general approaches and an additional group of
 1. Sequence Slice with Negative Step
 2. Iteration with String Concatenation
 3. Reverse Iteration with `range()`
-4. Make a list and Use `str.join()`
-5. Make a list and use `list.reverse()`
+4. Make a `list` and Use `str.join()`
+5. Make a `list` and use `list.reverse()`
 6. Use the built-in `reversed()`
 7. Other [interesting approaches][approach-additional-approaches]
 
@@ -72,7 +72,7 @@ This is essentially the same technique as the approach above, but incurs slightl
 
 For very long strings, this approach will still degrade to `O(n**2)` performance, due to the use of string concatenation.
 Using `str.join()` here can avoid the concatenation penalty.
-For more information and relative performance timings for this group, check out the [backwards iteration with range][approach-backward-iteration-with-range] approach.
+For more information and relative performance timings for this group, check out the [backwards iteration with `range()`][approach-backward-iteration-with-range] approach.
 
 
 ## Approach: Create a `list` and Use `str.join()` to make new String
@@ -87,8 +87,8 @@ def reverse(text):
     return "".join(output)
 ```
 
-This approach either breaks the string up into a list of codepoints to swap or creates an empty list as a "parking place" to insert or append codepoints.
-It then iterates over the text, swapping, inserting, or appending each codepoint to the output list.
+This approach either breaks the string up into a `list` of codepoints to swap or creates an empty `list` as a "parking place" to insert or append codepoints.
+It then iterates over the text, swapping, inserting, or appending each codepoint to the output `list`.
 Finally, `str.join()` is used to re-assemble the `list` into a string.
 
 For more variations and relative performance timings for this group, check out the [`list` and `str.join()`][approach-list-and-join] approach.
@@ -104,8 +104,8 @@ def reverse(text):
     return "".join(output)
 ```
 
-This approach turns the string into a list of codepoints and then uses the `list.reverse()` method to re-arrange the list _in place_.
-After the reversal of the list, `str.join()` is used to create the reversed string.
+This approach turns the string into a `list` of codepoints and then uses the `list.reverse()` method to re-arrange the `list` _in place_.
+After the reversal of the `list`, `str.join()` is used to create the reversed string.
 
 For more details, see the [built-in `list.reverse()`][approach-built-in-list-reverse] approach.
 
