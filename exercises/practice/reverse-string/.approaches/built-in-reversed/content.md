@@ -20,7 +20,7 @@ def reverse(text):
 This version uses `reversed()` to reverse a `range()` object rather than feed a `start`/`stop`/`step` to `range()` itself.
 It then uses the reverse `range` to iterate over the input string and concatenate each code point to a new `output` string.
 This has over-complicated `reversed()`, as it can be called directly on the input string with almost no overhead.
-This has also incurs the performance hit of repeated concatenation to the `output` string.
+This has also incured the performance hit of repeated concatenation to the `output` string.
 
 While this approach _looks_ as if it would be similar to the first, it is actually `O(n**2)` in time complexity due to string concatenation.
 It was also the slowest in benchmarks.

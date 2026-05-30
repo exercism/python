@@ -91,7 +91,7 @@ def reverse(text):
     return output.decode("utf-8")
 ```
 
-This variation is operationally the same as variations #2 and #3 above, except that it encodes the string to a `utf-8` [`bytearray`](https://docs.python.org/3/library/stdtypes.html#bytearray).
+This variation is operationally the same as variations #2 and #3 above, except that it encodes the string to a `utf-8` [`bytearray`][bytearray-docs].
 It then iterates over the `bytearray` to perform the swaps.
 Finally, the `bytearray` is decoded into a `utf-8` string to return the reversed word.
 This incurs overhead when encoding/decoding to and from the `bytearray`.
@@ -138,3 +138,4 @@ The [`timeit`][timeit] module docs have more details, and [note.nkmk.me][note_nk
 [note_nkmk_me]: https://note.nkmk.me/en/python-timeit-measure/
 [timeit]: https://docs.python.org/3/library/timeit.html#python-interface
 [approach-additional-approaches]: https://exercism.org/tracks/python/exercises/reverse-string/approaches/additional-approaches
+[bytearray-docs]: https://docs.python.org/3/library/stdtypes.html#bytearray

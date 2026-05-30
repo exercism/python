@@ -100,10 +100,10 @@ row_headers = ['reverse slice', 'iterate & prepend', 'iterate with range', 'list
                'reversed builtin', 'map and join']
 labels = row_headers
 
-# Empty dataframe will be filled in one cell at a time later
+# Empty dataframe will be filled in one cell at a time later.
 df = pd.DataFrame(np.nan, index=row_headers, columns=col_headers)
 
-# Function List to Call When Timing
+# Function List to Call When Timing.
 functions = [reverse_slice, reverse_iterate_and_prepend, reverse_range, reverse_half_swap, reverse_list_reverse,
              reverse_reversed, reverse_map]
 

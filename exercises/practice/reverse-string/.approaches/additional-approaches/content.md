@@ -23,7 +23,7 @@ def reverse(text):
         # Calculate the index start.
         location = index + seq_len + 1
         
-        # Prepend the byte segment to the output bytearray
+        # Prepend the byte segment to the output bytearray.
         output[-location:-index or None] = given[index:index + seq_len]
         
         # Increment the index count / slide the 'window'.
