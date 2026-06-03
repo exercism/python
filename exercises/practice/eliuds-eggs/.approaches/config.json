@@ -1,0 +1,15 @@
+{
+  "introduction": {
+    "authors": ["yrahcaz7"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "27fb20ed-a4c2-4f73-a8fc-86ba384c7b35",
+      "slug": "parameter-modification",
+      "title": "Modify the Parameter in a Loop",
+      "blurb": "Modify the Parameter in a while-loop to Calculate the Number of Eggs.",
+      "authors": ["yrahcaz7"]
+    }
+  ]
+}
