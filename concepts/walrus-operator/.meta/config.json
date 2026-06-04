@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for this concept",
-  "authors": ["bethanyg", "cmccandless"],
+  "blurb": "Properly called assignment expressions, the walrus operator assigns values to variables as part of a larger expression.",
+  "authors": ["BethanyG", "colinleach"],
   "contributors": []
 }
