@@ -59,7 +59,6 @@ if prime_count == number:
 ```
 The else block is executed if the `for` loop completes normally - that is, without `break`ing.
 Read more on [for/else][for-else]
-~~~~
-
 
 [for-else]: https://book.pythontips.com/en/latest/for_-_else.html
+~~~~
