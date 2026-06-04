@@ -4,7 +4,7 @@ The `dict` class in Python provides many useful [methods][dict-methods] for work
 Some were introduced in the concept for `dicts`.
 Here we cover a few more - along with some techniques for iterating through and manipulating dictionaries.
 
-### Use `setdefault()` for Error-Free Insertion
+## Use `setdefault()` for Error-Free Insertion
 
 The dictionary concept previously covered that `.get(key, <default value>)` returns an existing `value` or the `default value` if a `key` is not found in a dictionary, thereby avoiding a `KeyError`.
 This works well in situations where you would rather not have extra error handling but cannot trust that a looked-for `key` will be present.
