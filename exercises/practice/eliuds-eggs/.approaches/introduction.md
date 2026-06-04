@@ -40,7 +40,33 @@ This essentially removes the least significant bit of `display_value`, setting u
 
 The loop repeats until `display_value` reaches `0` (which indicates that we have no more bits to check), and then we return `eggs`.
 
-To see more variants of this solution, see the [modify the parameter in a loop][parameter-modification] approach.
+To see more variations of this solution, see the [modify the parameter in a loop][approach-parameter-modification] approach.
 
 
-[parameter-modification]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/parameter-modification
+## Approach: Looping Without Modifying the Parameter
+
+```python
+from math import ceil, log2
+
+def egg_count(display_value):
+    eggs = 0
+    for bit_position in range(ceil(log2(display_value + 1))):
+        eggs += (display_value >> bit_position) & 1
+    return eggs
+```
+
+This solution uses a `for-loop` with `range()` to iterate over all of the bits in `display_value`.
+To determine how many bits `display_value` has, this solution imports `ceil` and `log2` from the `math` module.
+It then feeds this number into `range()` to make the `for-loop` iterate over all the `bit_position`s.
+
+For each `bit_position`, we determine the value of the bit at that position by using the [right-shift operator][right-shift-operator] and the bitwise AND operator.
+Once we determine the bit's value, we increment `eggs` by that number.
+
+After the loop ends, we know that we have checked all of the bits in `display_value`, thus we return `eggs`.
+
+For more details and variations, read the [loop without modifying the parameter][approach-no-parameter-modification] approach.
+
+
+[approach-parameter-modification]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/parameter-modification
+[approach-no-parameter-modification]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/no-parameter-modification
+[right-shift-operator]: https://www.geeksforgeeks.org/software-engineering/right-shift-operator-in-programming/
