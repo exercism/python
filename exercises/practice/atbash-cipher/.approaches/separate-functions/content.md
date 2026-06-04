@@ -59,5 +59,5 @@ def chunk(text):
     return text[:5] + " " + chunk(text[5:])
 ```
 
-[generator-expression]: https://www.programiz.com/python-programming/generator
+[generator-expression]: https://www.programiz.com/python-programming/generator#expression
 [str-maketrans]: https://www.programiz.com/python-programming/methods/string/maketrans

@@ -72,9 +72,9 @@ Once `findall()` or `finditer()` completes, a [`generator-expression`][generator
 Note that when using `finditer()`, the `Match object` has to be unpacked via `match.group(0)`/`match[0]` before the first letter can be selected.
 
 
-Generator expressions are short-form [generators][generators] - lazy iterators that produce their values _on demand_, instead of saving them to memory.
+Generator expressions are short-form [generators][generators] — lazy iterators that produce their values _on demand_, instead of saving them to memory.
 This generator expression is consumed by [`str.join()`][str-join], which joins the generated letters together using an empty string.
-Other "separator" strings can be used with `str.join()` - see [concept:python/string-methods]() for some additional examples.
+Other "separator" strings can be used with `str.join()` — see [concept:python/string-methods]() for some additional examples.
 
 
 Finally, the result of `.join()` is capitalized using the [chained][chaining] [`.upper()`][str-upper].
@@ -82,7 +82,7 @@ Alternatively, `.upper()` can be used on `to_abbreviate` within `findall()`/`fin
 Since the generator expression + join + upper is fairly succinct, they can be placed directly on the `return` line rather than assigning and returning an intermediate variable for the acronym.
 
 
-This approach was less performant in benchmarks than those using `loop`, `map`,  `list-comprehension`, and `reduce`.
+This approach was less performant in benchmarks than those using `loop`, `map`, `list-comprehension`, and `reduce`.
 
 [chaining]: https://pyneng.readthedocs.io/en/latest/book/04_data_structures/method_chaining.html
 [generator-expression]: https://dbader.org/blog/python-generator-expressions

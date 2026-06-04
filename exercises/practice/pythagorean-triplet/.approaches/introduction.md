@@ -184,7 +184,7 @@ This is likely due to the overhead of creating and tracking the iterator for the
 [approaches-linear]: https://exercism.org/tracks/python/exercises/pythagorean-triplet/approaches/linear
 [approaches-quadratic]: https://exercism.org/tracks/python/exercises/pythagorean-triplet/approaches/quadratic
 [article-performance]:https://exercism.org/tracks/python/exercises/pythagorean-triplet/articles/performance
-[asymptotic-notation]:  https://www.khanacademy.org/computing/computer-science/algorithms/asymptotic-notation/a/asymptotic-notation
+[asymptotic-notation]: https://www.khanacademy.org/computing/computer-science/algorithms/asymptotic-notation/a/asymptotic-notation
 [numba]: https://numba.pydata.org/
 [numpy]: https://numpy.org/
 [time-complexity]: https://yourbasic.org/algorithms/time-complexity-explained/

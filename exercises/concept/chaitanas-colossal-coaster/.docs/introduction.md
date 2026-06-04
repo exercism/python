@@ -1,20 +1,20 @@
 # Introduction
 
 A [`list`][list] is a mutable collection of items in _sequence_.
- Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold reference to any (or multiple) data type(s) - including other lists.
- Lists can be copied in whole or in part via [slice notation][slice notation] or through the use of `<list>.copy()`.
- Like any [sequence][sequence type], elements within `lists` are referenced by `0-based index` number from the left, or `-1-based index` number from the right.
+Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold reference to any (or multiple) data type(s) — including other lists.
+Lists can be copied in whole or in part via [slice notation][slice notation] or through the use of `<list>.copy()`.
+Like any [sequence][sequence type], elements within `lists` are referenced by `0-based index` number from the left, or `-1-based index` number from the right.
 
 Lists support both [common][common sequence operations] and [mutable][mutable sequence operations] sequence operations such as `min(<list>)`/`max(<list>)`, `<list>.index()`, `<list>.append()` and `<list>.reverse()`.
- Elements inside a `list`  can be iterated over using the `for item in <list>` construct.
- `for index, item in enumerate(<list>)` can be used when both the element index and element value are needed.
+Elements inside a `list`  can be iterated over using the `for item in <list>` construct.
+`for index, item in enumerate(<list>)` can be used when both the element index and element value are needed.
 
 Python also provides many useful [list-methods][list-methods] for working with lists.
- A selection of these `list methods` is covered below.
+A selection of these `list methods` is covered below.
 
 
 Note that when you manipulate a `list` with a `list-method`, **you alter the list** object that has been passed.
- If you do not wish to mutate the original `list`, you will need to at least make a `shallow copy` of it via slice or `<list>.copy()`.
+If you do not wish to mutate the original `list`, you will need to at least make a `shallow copy` of it via slice or `<list>.copy()`.
 
 
 ## Adding Items
@@ -36,7 +36,7 @@ It takes 2 parameters:
 2. the `<item>` to be inserted.
 
 **Note**: If the given `index` is 0, the item will be added to the start ("left-hand side") of the `list`.
- If the supplied `index` is greater than the final `index` on the `list`, the item will be added in the final position -- the equivalent of using `<list>.append(<item>)`.
+If the supplied `index` is greater than the final `index` on the `list`, the item will be added in the final position — the equivalent of using `<list>.append(<item>)`.
 
 
 ```python
@@ -54,7 +54,7 @@ It takes 2 parameters:
 
 
 `<list>.extend(<item>)` can be used to combine an existing list with the elements from another iterable (for example, a `set`, `tuple`, `str`, or `list`).
-  The iterable is _unpacked_ and elements are appended in order (_Using `<list>.append(<item>)` in this circumstance would add the entire iterable as a **single item**._).
+The iterable is _unpacked_ and elements are appended in order (_Using `<list>.append(<item>)` in this circumstance would add the entire iterable as a **single item**._).
 
 
 ```python
@@ -81,7 +81,7 @@ It takes 2 parameters:
 ## Removing Items
 
 To delete an item from a list use `<list>.remove(<item>)`, passing the item to be removed as an argument.
- `<list>.remove(<item>)` will throw a `ValueError` if the item is not present in the `list`.
+`<list>.remove(<item>)` will throw a `ValueError` if the item is not present in the `list`.
 
 
 ```python
@@ -101,8 +101,8 @@ Alternatively, using the `<list>.pop(<index>)` method will both remove **and** `
 
 
 `<list>.pop(<index>)` takes one optional parameter: the `index` of the item to be removed and returned.
- If the (optional) `index` argument is not specified, the final element of the `list` will be removed and returned.
- If the `index` specified is higher than the final item `index`, an `IndexError` is raised.
+If the (optional) `index` argument is not specified, the final element of the `list` will be removed and returned.
+If the `index` specified is higher than the final item `index`, an `IndexError` is raised.
 
 
 ```python
@@ -155,7 +155,7 @@ Default sort order is _ascending_ from the left.
 The Python docs offer [additional tips and techniques for sorting][sorting how to].
 
 ~~~~exercism/note
- From 2002 to 2022, Python used an algorithm called [`Timsort`][timsort] internally to arrange lists, but switched to [`Powersort`][powersort] from `Python 3.11` onward.
+From 2002 to 2022, Python used an algorithm called [`Timsort`][timsort] internally to arrange lists, but switched to [`Powersort`][powersort] from `Python 3.11` onward.
 
 [powersort]: https://www.wild-inter.net/publications/munro-wild-2018
 [timsort]: https://en.wikipedia.org/wiki/Timsort
@@ -209,8 +209,8 @@ The number of occurrences of an element in a list can be calculated with the hel
 ## Finding the index of items
 
 `<list>.index(<item>)` will return the `index` number of the _first occurrence_ of an item passed in.
- If there are no occurrences, a `ValueError` is raised.
- If the exact position of an item isn't needed, the built-in `in` operator is more efficient for checking if a list contains a given value.
+If there are no occurrences, a `ValueError` is raised.
+If the exact position of an item isn't needed, the built-in `in` operator is more efficient for checking if a list contains a given value.
 
 
 Indexing is zero-based from the left, so the position of the "first" item is `0`.

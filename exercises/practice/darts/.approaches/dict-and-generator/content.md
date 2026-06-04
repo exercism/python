@@ -66,7 +66,7 @@ def score(x_coord, y_coord):
 
 While all of these variations do pass the tests, they suffer from even more over-engineering/performance caution than the earlier tuple and loop approach (_although for the data in this problem, the performance hit is slight_).
 Additionally, the dictionary will take much more space in memory than using a `tuple` of tuples to hold scoring values.
-In some circumstances, these variations might also be harder to reason about for those not familiar with `generator-expressions` or `list comprehensions`.
+In some circumstances, these variations might also be harder to reason about for those not familiar with `generator-expressions` or `list-comprehensions`.
 
 
 [approach-tuple-and-loop]: https://exercism.org/tracks/python/exercises/darts/approaches/tuple-and-loop

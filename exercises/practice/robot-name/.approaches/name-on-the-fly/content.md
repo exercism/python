@@ -53,7 +53,7 @@ def reset(self):
     self.name = name
 ```
 
-We call `reset` from `__init__` - it is syntactically valid to do it the other way around, but it is not considered good practice to call [dunder methods][dunder-methods] directly.
+We call `reset` from `__init__` — it is syntactically valid to do it the other way around, but it is not considered good practice to call [dunder methods][dunder-methods] directly.
 
 This has almost no startup time and memory, apart from declaring an empty `set`.
 Note that the _generation_ time is the same as the [mass generation approach][approach-mass-name-generation], as a similar method is used.

@@ -208,5 +208,5 @@ To learn more about using recursion in Python you can start with
 [memoization]: https://dbader.org/blog/python-memoization
 [python-programming: recursion]: https://www.programiz.com/python-programming/recursion
 [stack-frame]: https://shanechang.com/p/python-frames-systems-programming-connection/
-[sys.setrecursionlimit]:  https://docs.python.org/3.8/library/sys.html#sys.setrecursionlimit
+[sys.setrecursionlimit]: https://docs.python.org/3.8/library/sys.html#sys.setrecursionlimit
 [what-is-the-call-stack]: https://en.wikipedia.org/wiki/Call_stack

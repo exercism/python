@@ -24,12 +24,12 @@ As of this writing, both of these methods benchmark slower than using `str.repla
 
 
 A [`list comprehension`][list comprehension] is then used to iterate through the phrase and select the first letters of each word via [`bracket notation`][subscript notation].
-This comprehension is passed into [`str.join()`][str-join], which unpacks the `list` of first letters and joins them together using an empty string - the acronym.
-Other "separator" strings besides an empty string can be used with `str.join()` - see [concept:python/string-methods]() for some additional examples.
+This comprehension is passed into [`str.join()`][str-join], which unpacks the `list` of first letters and joins them together using an empty string — the acronym.
+Other "separator" strings besides an empty string can be used with `str.join()` — see [concept:python/string-methods]() for some additional examples.
 Since the comprehension and `join()` are fairly succinct, they are put directly on the `return` line rather than assigning and returning an intermediate variable for the acronym.
 
 
-The weakness of this solution is that it is taking up extra space with the `list comprehension`, which is creating and saving a `list` in memory - only to have that list immediately unpacked by the `str.join()` method.
+The weakness of this solution is that it is taking up extra space with the `list comprehension`, which is creating and saving a `list` in memory — only to have that list immediately unpacked by the `str.join()` method.
 While this is trivial for the inputs this problem is tested against, it could become a problem if the inputs get longer.
 It could also be an issue if the code were deployed in a memory-constrained environment.
 A [generator expression][generator-expression] here would be more memory-efficient, though there are speed tradeoffs.

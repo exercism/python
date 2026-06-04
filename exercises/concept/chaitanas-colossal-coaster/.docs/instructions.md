@@ -7,7 +7,7 @@ Chaitana owns a very popular theme park.
 There are two queues for this ride, each represented as a `list`:
 
 1. Normal Queue
-2. Express Queue (_also known as the Fast-track_) - where people pay extra for priority access.
+2. Express Queue (_also known as the Fast-track_) — where people pay extra for priority access.
 
 
 You have been asked to write some code to better manage the guests at the park.

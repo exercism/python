@@ -53,7 +53,7 @@ This means that this expression will match any collection or repeat of the lette
 3. `[ ,\-_]` matches any of the characters ` -_,` (_space, hyphen, underscore, comma_) once.
 
 
-Because these matches are used in the `re.sub()` method, an empty string is _substituted_  - so the matches are _removed_ from the result.
+Because these matches are used in the `re.sub()` method, an empty string is _substituted_  — so the matches are _removed_ from the result.
 
 
 As an example, for the input phrase `The Road _Not_ Taken`, the regex will match `he`, ` `, `oad`, ` `, `-`, `ot`, `-`, ` `, and `aken`, replacing each match with ''.

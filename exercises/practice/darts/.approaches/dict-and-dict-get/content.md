@@ -1,6 +1,5 @@
 # Using a Dictionary and `dict.get()`
 
-
 ```python
 def score(x_coord, y_coord):
     point = x_coord**2 + y_coord**2
@@ -27,8 +26,7 @@ To see this in action, you can view this code on [Python Tutor][dict-get-python-
 
 
 Because of the listed dictionary qualities, **_order matters_**.
-This approach depends on the outermost scoring circle containing all smaller circles and that
-checks proceed from largest --> smallest circle.
+This approach depends on the outermost scoring circle containing all smaller circles, and that checks proceed from largest to smallest circle.
 Iterating in the opposite direction will not resolve to the correct score.
 The following code variations do not pass the exercise tests:
 

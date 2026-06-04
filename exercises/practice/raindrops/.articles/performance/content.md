@@ -47,9 +47,9 @@ The [`timeit`][timeit] module docs have more details, and [note.nkmk.me][note_nk
 
 [PEP0622]: https://peps.python.org/pep-0622/
 [approach-dict-and-join ]: https://exercism.org/tracks/python/exercises/raindrops/approaches/dict-and-join
-[approach-functools-reduce]:  https://exercism.org/tracks/python/exercises/raindrops/approaches/functools-reduce
-[approach-if-statements]:  https://exercism.org/tracks/python/exercises/raindrops/approaches/if-statements
-[approach-itertools-compress]:  https://exercism.org/tracks/python/exercises/raindrops/approaches/itertools-compress
+[approach-functools-reduce]: https://exercism.org/tracks/python/exercises/raindrops/approaches/functools-reduce
+[approach-if-statements]: https://exercism.org/tracks/python/exercises/raindrops/approaches/if-statements
+[approach-itertools-compress]: https://exercism.org/tracks/python/exercises/raindrops/approaches/itertools-compress
 [approach-loop-and-fstring]: https://exercism.org/tracks/python/exercises/raindrops/approaches/loop-and-fstring
 [approach-sequence-with-join]: https://exercism.org/tracks/python/exercises/raindrops/approaches/sequence-with-join
 [approach-truthy-and-falsey-with-fstring]: https://exercism.org/tracks/python/exercises/raindrops/approaches/truthy-and-falsey-with-fstring

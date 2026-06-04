@@ -36,5 +36,5 @@ def convert(number):
 
 [lambda]: https://dbader.org/blog/python-lambda-functions
 [functools-reduce]: https://docs.python.org/3/library/functools.html#functools.reduce
-[approach-itertools-compress]:  https://exercism.org/tracks/python/exercises/raindrops/approaches/itertools-compress
+[approach-itertools-compress]: https://exercism.org/tracks/python/exercises/raindrops/approaches/itertools-compress
 [zip]: https://docs.python.org/3/library/functions.html#zip

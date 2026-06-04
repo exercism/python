@@ -7,7 +7,7 @@ Among them are:
 - Using `if-statements`
 - Using a `tuple` (or `list` or `dict`) and a `for-loop`
 - Using a `dict` (or `tuple` or `list`) and a `generator-expression`
-- Using `boolean` values as `ints`
+- Using `boolean` values as `int`s
 - Using a `dict` and `dict.get()`
 - Using `match/case` (_Python 3.10+ only_)
 
@@ -29,11 +29,10 @@ Darts that fall on a _boundary_ are scored based on the area below the line (_cl
 
 ## Approach: Using `if` statements
 
-
 ```python
 import math
 
-# Checks scores from the center --> edge.
+# Checks scores from the center to the edge.
 def score(x_coord, y_coord):
     distance = math.sqrt(x_coord**2 + y_coord**2)
     
@@ -111,7 +110,7 @@ def score(x_coord, y_coord):
     return scores.get(True, 0)
 ```
 
-This approach uses a dictionary to hold the distance --> scoring mappings and `dict.get()` to retrieve the correct points value.
+This approach uses a dictionary to hold the distance-to-scoring mappings and `dict.get()` to retrieve the correct points value.
 For more details, read the [`Dictionary and dict.get()`][approach-dict-and-dict-get] approach.
 
 
@@ -137,8 +136,9 @@ For more details, see the [structural pattern matching][approach-match-case] app
 
 ## Which approach to use?
 
-Many of these approaches are a matter of personal preference - there are not significant memory or performance differences.
+Many of these approaches are a matter of personal preference — there are not significant memory or performance differences.
 Although a strong argument could be made for simplicity and clarity — many listed solutions (_while interesting_) are harder to reason about or are over-engineered for the current scope of the exercise.
+
 
 [approach-booleans-as-ints]: https://exercism.org/tracks/python/exercises/darts/approaches/booleans-as-ints
 [approach-dict-and-dict-get]: https://exercism.org/tracks/python/exercises/darts/approaches/dict-and-dict-get

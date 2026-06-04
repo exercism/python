@@ -53,4 +53,4 @@ For more detail, [read here][approach-mono-function].
 
 [approach-separate-functions]: https://exercism.org/tracks/python/exercises/atbash-cipher/approaches/separate-functions
 [approach-mono-function]: https://exercism.org/tracks/python/exercises/atbash-cipher/approaches/mono-function
-[generator-expression]: https://www.programiz.com/python-programming/generator
+[generator-expression]: https://www.programiz.com/python-programming/generator#expression

@@ -219,7 +219,7 @@ As with binary and octal, giving the wrong base will raise a `ValueError`.
 
 
 [binary]: https://en.wikipedia.org/wiki/Binary_number
-[bit_count]:  https://docs.python.org/3/library/stdtypes.html#int.bit_count
+[bit_count]: https://docs.python.org/3/library/stdtypes.html#int.bit_count
 [bit_length]: https://docs.python.org/3/library/stdtypes.html#int.bit_length
 [hexadecimal]: https://en.wikipedia.org/wiki/Hexadecimal
 [numeral-systems]: https://en.wikipedia.org/wiki/Numeral_system

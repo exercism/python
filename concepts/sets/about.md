@@ -358,13 +358,13 @@ The operator version of this method is `<set> - <other set 1> - <other set 2>  -
 
 # Methods will take any iterable as an argument.
 >>> berries = berries_and_veggies.difference(veggies)
-{'Blackberries','Currants','Goji Berries',
+{'Blackberries', 'Currants', 'Goji Berries',
  'Goose Berries', 'Strawberries'}
 
 # Operators require sets.
 >>> berries_and_veggies - berries
-{'Artichokes','Asparagus','Broccoli','Kale',
-'Ramps','Rhubarb','Walking Onions','Watercress'}
+{'Artichokes', 'Asparagus', 'Broccoli', 'Kale',
+ 'Ramps', 'Rhubarb', 'Walking Onions', 'Watercress'}
 ```
 
 ### Set Intersections
@@ -373,20 +373,20 @@ The operator version of this method is `<set> - <other set 1> - <other set 2>  -
 The operator version of this method is  `<set> & <other set> & <other set 2> & ... & <other set n>`
 
 ```python
->>> perennials = {'Annatto','Asafetida','Asparagus','Azalea',
-                 'Winter Savory', 'Broccoli','Curry Leaf','Fennel', 
-                 'Kaffir Lime','Kale','Lavender','Mint','Oranges',
+>>> perennials = {'Annatto', 'Asafetida', 'Asparagus', 'Azalea',
+                 'Winter Savory', 'Broccoli', 'Curry Leaf', 'Fennel', 
+                 'Kaffir Lime', 'Kale', 'Lavender', 'Mint', 'Oranges',
                  'Oregano', 'Tarragon', 'Wild Bergamot'}
 
 >>> annuals = {'Corn', 'Zucchini', 'Sweet Peas', 'Marjoram', 
-              'Summer Squash', 'Okra','Shallots', 'Basil', 
+              'Summer Squash', 'Okra', 'Shallots', 'Basil', 
               'Cilantro', 'Cumin', 'Sunflower', 'Chervil', 
               'Summer Savory'}
 
->>> herbs = ['Annatto','Asafetida','Basil','Chervil','Cilantro',
-            'Curry Leaf','Fennel','Kaffir Lime','Lavender',
-            'Marjoram','Mint','Oregano','Summer Savory', 
-            'Tarragon','Wild Bergamot','Wild Celery',
+>>> herbs = ['Annatto', 'Asafetida', 'Basil', 'Chervil', 'Cilantro',
+            'Curry Leaf', 'Fennel', 'Kaffir Lime', 'Lavender',
+            'Marjoram', 'Mint','Oregano', 'Summer Savory', 
+            'Tarragon', 'Wild Bergamot', 'Wild Celery',
             'Winter Savory']
 
 
@@ -397,13 +397,13 @@ The operator version of this method is  `<set> & <other set> & <other set 2> & .
 
 # Operators require both groups be sets.
 >>> annuals & set(herbs)
- {'Basil', 'Chervil', 'Marjoram', 'Cilantro'}
+{'Basil', 'Chervil', 'Marjoram', 'Cilantro'}
 ```
 
 ### Set Symmetric Differences
 
 `<set>.symmetric_difference(<other iterable>)` returns a new `set` that contains elements that are in `<set>` OR `<other>`, but **not in both**.
-The operator version of this method is  `<set> ^ <other set>`.
+The operator version of this method is `<set> ^ <other set>`.
 
 ```python
 >>> plants_1 = {'🌲','🍈','🌵', '🥑','🌴', '🥭'}
@@ -457,7 +457,7 @@ To obtain only items unique to each `set` in the series, intersections between a
 'olive oil','salt','soy sauce', 'sugar','water'}
 
 # The ^ operation will include some of the items in intersections, 
-# which means it is not a "clean" symmetric difference - there
+# which means it is not a "clean" symmetric difference — there
 # are overlapping members.
 >>> (one ^ two ^ three ^ four) & intersections
 {'black pepper', 'garlic', 'soy sauce', 'water'}

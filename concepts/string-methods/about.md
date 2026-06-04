@@ -4,12 +4,12 @@ A `str` is an [immutable sequence][text sequence] of [Unicode code points][unico
 This may include letters, diacritical marks, positioning characters, numbers, currency symbols, emoji, punctuation, space and line breaks, and more.
 
 Strings implement all [common sequence operations][common sequence operations] and can be iterated through using `for item in <str>` or `for index, item in enumerate(<str>)` syntax.
- Individual code points (_strings of length 1_) can be referenced by `0-based index` number from the left, or `-1-based index` number from the right.
+Individual code points (_strings of length 1_) can be referenced by `0-based index` number from the left, or `-1-based index` number from the right.
 
-  Strings can be concatenated using `<str> + <other str>` or `<str>.join(<iterable>)` and split via `<str>.split(<separator>)`.
-   They also offer multiple other formatting and assembly options.
+Strings can be concatenated using `<str> + <other str>` or `<str>.join(<iterable>)` and split via `<str>.split(<separator>)`.
+They also offer multiple other formatting and assembly options.
 
- To further work with strings, Python provides a rich set of [string methods][str-methods] for searching, cleaning, transforming, translating, and many other operations.
+To further work with strings, Python provides a rich set of [string methods][str-methods] for searching, cleaning, transforming, translating, and many other operations.
 
 Some of the more commonly used `str` methods include:
 
@@ -64,12 +64,12 @@ There may also be [locale][locale] rules in place for a language or character se
 
 
 [`<str>.strip(<chars>)`][str-strip] returns a copy of the `str` with leading and trailing `<chars>` removed.
-The code points specified in `<chars>` are not a prefix or suffix - **all combinations** of the code points will be removed starting from **both ends** of the string.
- If nothing is specified for `<chars>`, all combinations of whitespace code points will be removed.
- If only left-side or right-side removal is wanted, `<str>.lstrip(<chars>)` and `<str>.rstrip(<chars>)` can be used.
+The code points specified in `<chars>` are not a prefix or suffix — **all combinations** of the code points will be removed starting from **both ends** of the string.
+If nothing is specified for `<chars>`, all combinations of whitespace code points will be removed.
+If only left-side or right-side removal is wanted, `<str>.lstrip(<chars>)` and `<str>.rstrip(<chars>)` can be used.
 
 
- ```python
+```python
 # This will remove "https://", because it can be formed from "/stph:". 
 >>> 'https://unicode.org/emoji/'.strip('/stph:')
 'unicode.org/emoji'
@@ -88,7 +88,7 @@ The code points specified in `<chars>` are not a prefix or suffix - **all combin
 
 >>> '  unaddressed  '.strip('dnue ')
 'address'
- ```
+```
 
 
 [`<str>.replace(<substring>, <replacement substring>)`][str-replace] returns a copy of the string with all occurrences of `<substring>` replaced with `<replacement substring>`.

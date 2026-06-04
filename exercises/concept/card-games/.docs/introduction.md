@@ -1,15 +1,15 @@
 # Introduction
 
 A [`list`][list] is a mutable collection of items in _sequence_.
-Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold reference to any (or multiple) data type(s) - including other lists.
+Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold reference to any (or multiple) data type(s) — including other lists.
 Like any [sequence][sequence type], items can be accessed via `0-based index` number from the left and `-1-based index` from the right.
 Lists can be copied in whole or in part via [slice notation][slice notation] or `<list>.copy()`.
 
 Lists support both [common][common sequence operations] and [mutable][mutable sequence operations] sequence operations such as `min()`/`max()`, `<list>.index()`, `<list>.append()` and `<list>.reverse()`.
 List elements can be iterated over using the `for item in <list>` construct.
- `for index, item in enumerate(<list>)` can be used when both the element index and the element value are needed.
+`for index, item in enumerate(<list>)` can be used when both the element index and the element value are needed.
 
-Under the hood, `lists` are implemented as [dynamic arrays][dynamic array] -- similar to Java's [`ArrayList`][arraylist] type, and are most often used to store groups of similar data (_strings, numbers, sets etc._) of unknown length.
+Under the hood, `lists` are implemented as [dynamic arrays][dynamic array] — similar to Java's [`ArrayList`][arraylist] type, and are most often used to store groups of similar data (_strings, numbers, sets etc._) of unknown length.
 Lists are an extremely flexible and useful data structure and many built-in methods and operations in Python produce lists as their output.
 
 
@@ -65,7 +65,7 @@ For readability, line breaks can be used when there are many elements or nested 
 ```
 
 The `list()` constructor can be used empty or with an _iterable_ as an argument.
- Elements in the iterable are cycled through by the constructor and added to the `list` in order:
+Elements in the iterable are cycled through by the constructor and added to the `list` in order:
 
 
 ```python
@@ -111,7 +111,7 @@ Results when using a `list` constructor with a `string` or a `dict` may be surpr
 ```
 
 Because the `list` constructor will only take _iterables_ (or nothing) as arguments, objects that are _not_ iterable will throw a type error.
- Consequently, it is much easier to create a one-item `list` via the literal method.
+Consequently, it is much easier to create a one-item `list` via the literal method.
 
 ```python
 # Numbers are not iterable, and so attempting to create a list with a number passed to the constructor fails.
@@ -130,7 +130,7 @@ TypeError: 'int' object is not iterable
 ## Accessing elements
 
 Items inside lists (_as well as items in other sequence types `str` & `tuple`_) can be accessed via `0-based index` and _bracket notation_.
- Indexes can be from **`left`** --> **`right`** (_starting at zero_) or **`right`** --> **`left`** (_starting at -1_).
+Indexes can be from **`left`** --> **`right`** (_starting at zero_) or **`right`** --> **`left`** (_starting at -1_).
 
 
 <table>
@@ -169,8 +169,8 @@ Items inside lists (_as well as items in other sequence types `str` & `tuple`_) 
 ```
 
 A section of the elements inside a `list` can be accessed via _slice notation_ (`<list>[start:stop]`).
- A _slice_ is defined as an element sequence at position `index`, such that `start <= index < stop`.
- _Slicing_ returns a copy of the "sliced" items and does not modify the original `list`.
+A _slice_ is defined as an element sequence at position `index`, such that `start <= index < stop`.
+_Slicing_ returns a copy of the "sliced" items and does not modify the original `list`.
 
 
 A `step` parameter can also be used `[start:stop:step]` to "skip over" or filter the `list` elements (_for example, a `step` of 2 will select every other element in the range_):

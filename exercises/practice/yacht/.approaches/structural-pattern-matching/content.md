@@ -1,11 +1,12 @@
 # Structural Pattern Matching
 
-Another very interesting approach is to use [structural pattern matching][structural pattern matching]. 
+Another very interesting approach is to use [structural pattern matching][structural pattern matching].
 Existing in Python since 3.10, this feature allows for neater code than traditional if structures.
- 
-By and large, we reuse the code from the [if structure approach][approach-if-structure]. 
-We set the constants to random values and check for them in the `match` structure. 
-`category` is the "subject", and in every other line, we check it against a "pattern". 
+
+By and large, we reuse the code from the [if structure approach][approach-if-structure].
+We set the constants to random values and check for them in the `match` structure.
+`category` is the "subject", and in every other line, we check it against a "pattern".
+
 ```python
 ONES = 1
 TWOS = 2
@@ -39,15 +40,16 @@ def score(dice, category):
         case _:
             return 0
 ```
-For the first pattern, we utilize "or patterns", using the `|` operator. 
+
+For the first pattern, we utilize "or patterns", using the `|` operator.
 This checks whether the subject is any of the provided patterns.
 
-In the next five patterns, we check an additional condition along with the pattern matching. 
-Finally, we use the wildcard operator `_` to match anything. 
-As the compiler checks the patterns (`case`s) in order, `return 0` will be executed if none of the other patterns match. 
+In the next five patterns, we check an additional condition along with the pattern matching.
+Finally, we use the wildcard operator `_` to match anything.
+As the compiler checks the patterns (`case`s) in order, `return 0` will be executed if none of the other patterns match.
 
-Note that the conditions might differ, but the patterns must have hard coded values - that is, you can't say `case ONES ...` instead of `case 1 ...`. 
-This will capture the category and lead to unexpected behavior. 
+Note that the conditions might differ, but the patterns must have hard coded values — that is, you can't say `case ONES ...` instead of `case 1 ...`.
+This will capture the category and lead to unexpected behavior.
 
 This code is much clenaer than the corresponding `if` structure code.
 

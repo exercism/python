@@ -14,7 +14,7 @@ def score(x_coord, y_coord):
 
 This approach uses a loop to iterate through the _rules_ `tuple`, unpacking each (`distance`, `points`) pair (_For a little more on unpacking, see [Tuple Unpacking Improves Python Code Readability][tuple-unpacking]_).
 If the calculated distance of the throw is less than or equal to a given distance, the score for that region is returned.
-A `list` of `lists`, a `list` of `tuples`, or a dictionary could be used here to the same effect:
+A `list` of `list`s, a `list` of `tuple`s, or a dictionary could be used here to the same effect:
 
 ```python
 def score(x_coord, y_coord):

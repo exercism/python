@@ -1,16 +1,20 @@
 # Introduction
+
 Yacht in Python can be solved in many ways. The most intuitive approach is to use an `if` structure. 
 Alternatively, you can create functions and set their names to the constant names.
 
 ## General guidance
-The main thing in this exercise is to map a category (_here defined as constants in the stub file_) to a function or a standalone piece of code. 
+
+The main thing in this exercise is to map a category (_here defined as constants in the stub file_) to a function or a standalone piece of code.
 While mapping generally reminds us of dictionaries, here the constants are global.
 This indicates that the most idiomatic approach is not using a `dict`.
-Adhering to the principles of DRY is important - don't repeat yourself if you can help it, especially in the `ONES` through `SIXES` categories!
+Adhering to the principles of DRY is important — don't repeat yourself if you can help it, especially in the `ONES` through `SIXES` categories!
 
 ## Approach: functions
+
 Each bit of functionality for each category can be encoded in a function, and the constant name set to that function. 
-This can be done by assigning the constant name to a `lambda` or creating a one-line function using the constant as a function name. 
+This can be done by assigning the constant name to a `lambda` or creating a one-line function using the constant as a function name.
+
 ```python
 def digits(num):
     return lambda dice: dice.count(num) * num
@@ -29,12 +33,15 @@ CHOICE = sum
 def score(dice, category):
     return category(dice)
 ```
+
 This is a very succinct way to solve the exercise, although some one-liners get a little long. 
 For more information on this approach, read [this document][approach-functions].
 
 ## Approach: if structure
-The constants can be set to random, null, or numeric values, and an `if` structure inside `score` determines the code to be executed. 
+
+The constants can be set to random, null, or numeric values, and an `if` structure inside `score` determines the code to be executed.
 As one-liners aren't necessary here, we can spread out the code to make it look neater:
+
 ```python
 ONES = 1
 TWOS = 2
@@ -70,6 +77,7 @@ def score(dice, category):
         return sum(dice)
     return 0
 ```
+
 Read more on this approach [here][approach-if-structure].
 
 [approach-functions]: https://exercism.org/tracks/python/exercises/yacht/approaches/functions

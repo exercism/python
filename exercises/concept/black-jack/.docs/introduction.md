@@ -1,3 +1,5 @@
+# Introduction
+
 ## Comparisons
 
 Python supports the following basic comparison operators:
@@ -79,7 +81,7 @@ False
 
 Unlike numbers, strings (`str`) are compared [_lexicographically_][lexographic order], using their individual Unicode code points (_the result of passing each code point in the `str` to the built-in function [`ord()`][ord], which returns an `int`_).
 If all code points in both strings match and are _**in the same order**_, the two strings are considered equal.
-This comparison is done in a 'pair-wise' fashion - first-to-first, second-to-second, etc.
+This comparison is done in a 'pair-wise' fashion — first-to-first, second-to-second, etc.
 In Python 3.x, `str` and `bytes` cannot be directly coerced/compared.
 
 ```python
@@ -113,12 +115,12 @@ False
 
 ## Comparison Chaining
 
-Comparison operators can be chained _arbitrarily_ -- meaning that they can be used in any combination of any length.
+Comparison operators can be chained _arbitrarily_ — meaning that they can be used in any combination of any length.
 Note that the evaluation of an expression takes place from `left` to `right`.
 
 As an example, `x < y <= z` is equivalent to `x < y` `and` `y <= z`, except that `y` is evaluated **only once**.
 In both cases, `z` is _not_ evaluated **at all** when `x < y` is found to be `False`.
-This is often called `short-circuit evaluation` - the evaluation stops if the truth value of the expression has already been determined.
+This is often called `short-circuit evaluation` — the evaluation stops if the truth value of the expression has already been determined.
 
 `Short circuiting` is supported by various boolean operators, functions, and also by comparison chaining in Python.
 Unlike many other programming languages, including `C`, `C++`, `C#`, and `Java`, chained expressions like `a < b < c` in Python have a conventional [mathematical interpretation][three way boolean comparison] and precedence.

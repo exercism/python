@@ -5,7 +5,7 @@ A `generator` is a function or expression that returns a special type of [iterat
 
 A generator function looks like any other function, but contains one or more [yield expressions][yield expression].
 Each `yield` will suspend code execution, saving the current execution state (_including all local variables and try-statements_).
-When the generator resumes, it picks up state from the suspension - unlike regular functions which reset with every call.
+When the generator resumes, it picks up state from the suspension — unlike regular functions which reset with every call.
 
 
 ## Constructing a generator
@@ -55,7 +55,7 @@ Generator-iterators and the iterators returned by common Python [`iterables`][it
 - They are not sequence types, and _do not_ have `indexes`. 
   You cannot reference a previous or future value using addition or subtraction and you cannot use bracket (`[]`) notation or slicing.
 - They cannot be used with the `len()` function, as they have no length.
-- They can be _finite_ or _infinite_ - be careful when collecting all values from an _infinite_ `generator-iterator`!
+- They can be _finite_ or _infinite_ — be careful when collecting all values from an _infinite_ `generator-iterator`!
 
 [iterator]: https://docs.python.org/3.11/glossary.html#term-iterator
 [iterables]: https://wiki.python.org/moin/Iterator

@@ -4,7 +4,7 @@
 
 If you have been programming in a [functional][functional], [declarative][declarative], or [imperative][imperative] style, shifting focus to [object oriented programming][oop] (OOP) may feel a bit foreign.
 An OOP approach asks the programmer to think about modeling a problem as one or more `objects` that interact with one another, keep state, and act upon data.
-Objects can represent real world entities (_such as cars or cats_) - or more abstract concepts (_such as integers, vehicles, or mammals_).
+Objects can represent real world entities (_such as cars or cats_) — or more abstract concepts (_such as integers, vehicles, or mammals_).
 Each object becomes a unique instance in computer memory and represents some part of the overall model.
 
 ## Classes
@@ -43,7 +43,7 @@ An instance (_object_) of `MyClass` can be created and bound to a name by [_call
 <__main__.MyClass at 0x15adc55b0>
 ```
 
-`Class attributes` are shared across all objects (_or instances_) created from a class, and can be accessed via [`dot notation`][dot notation]  -  a `.` placed after the object name and before the attribute name:
+`Class attributes` are shared across all objects (_or instances_) created from a class, and can be accessed via [`dot notation`][dot notation] — a `.` placed after the object name and before the attribute name:
 
 ```python
 >>> new_object = MyClass()
@@ -69,7 +69,7 @@ True
 ```
 
 Class attributes are defined in the body of the class itself, before any other methods.
-They are owned by the class - allowing them to be shared across instances of the class.
+They are owned by the class — allowing them to be shared across instances of the class.
 Because these attributes are shared, their value can be accessed and manipulated from the class _directly_.
 Altering the value of class attributes alters the value _**for all objects instantiated from the class**_:
 
@@ -230,7 +230,7 @@ class MyClass:
 ## Placeholding or Stubbing Implementation with Pass
 
 In previous concept exercises and practice exercise stubs, you will have seen the `pass` keyword used within the body of  functions in place of actual code.
-The `pass` keyword is a syntactically valid placeholder - it prevents Python from throwing a syntax error for an empty function or class definition.
+The `pass` keyword is a syntactically valid placeholder — it prevents Python from throwing a syntax error for an empty function or class definition.
 Essentially, it is a way to say to the Python interpreter, 'Don't worry! I _will_ put code here eventually, I just haven't done it yet.'
 
 ```python

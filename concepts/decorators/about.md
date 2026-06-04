@@ -71,10 +71,11 @@ function3 = decorator_with_default_arg()(function3)
 
 Most decorators are intended to _extend_ or _replace_ the behavior of another function, but some decorators may do nothing but return the functions they are wrapping.
 
-Decorators are functions which take at least one argument - the function which they are wrapping.
+Decorators are functions which take at least one argument — the function which they are wrapping.
 They usually return either the wrapped function or the result of an expression that uses the wrapped function.
 
-A simple decorator - one that simply returns its wrapped function - can be written as follows:
+A simple decorator — one that simply returns its wrapped function — can be written as follows:
+
 ```python
 >>> def do_nothing(func):
 ...     return func

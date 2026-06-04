@@ -66,10 +66,9 @@ which will return an iterator of (`key`, `value`) `tuples`.
 (('fish', 'gold'), ('monkey', 'brown'))
 ```
 
-#### Declaring a tuple as a _literal_ :
+#### Declaring a tuple as a _literal_:
 
-Because the `tuple()` constructor only takes _iterables_ (or nothing) as arguments, it is much easier to create
- a one-tuple via the literal method.
+Because the `tuple()` constructor only takes _iterables_ (or nothing) as arguments, it is much easier to create a one-tuple via the literal method.
 
 ```python
 >>> no_elements = ()
@@ -79,7 +78,7 @@ Because the `tuple()` constructor only takes _iterables_ (or nothing) as argumen
 ("Guava",)
 ```
 
-Note that generally parentheses are **not** required to create a `tuple` literal - only commas.
+Note that generally parentheses are **not** required to create a `tuple` literal — only commas.
 However, using `(<element_1>, <element_2>)` is considered more readable in most circumstances.
 Parentheses are also required in cases of ambiguity, such as an empty or one-item tuple or where a function takes a tuple as an argument.
 
@@ -178,19 +177,19 @@ Using a mutable data type within a `tuple` will make the enclosing `tuple` **un-
 
 ```python
 >>> cmyk_color_map = {
-        (.69, .3, .48, .1) : ("Teal 700", (59, 178, 146), 0x3BB292),
-        (0, .5, 1, 0) : ("Pantone 151", (247, 127, 1), 0xF77F01),
-        (.37, .89, 0, .44) : ("Pantone 267", (89, 16, 142), 0x59108E),
-        (0, 1, .46, .45) : ("Pantone 228", (140, 0, 76), 0x8C004C)
-    }
+    (.69, .3, .48, .1) : ("Teal 700", (59, 178, 146), 0x3BB292),
+    (0, .5, 1, 0) : ("Pantone 151", (247, 127, 1), 0xF77F01),
+    (.37, .89, 0, .44) : ("Pantone 267", (89, 16, 142), 0x59108E),
+    (0, 1, .46, .45) : ("Pantone 228", (140, 0, 76), 0x8C004C)
+}
 
 >>> unique_rgb_colors = {
-        (59, 178, 146),
-        (247, 127, 1),
-        (89, 16, 142),
-        (140, 0, 76),
-        (76, 0, 140)
-     }
+    (59, 178, 146),
+    (247, 127, 1),
+    (89, 16, 142),
+    (140, 0, 76),
+    (76, 0, 140)
+}
 
 >>> teal_700 = hash((59, 178, 146))
 

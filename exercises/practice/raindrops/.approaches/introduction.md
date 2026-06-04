@@ -54,7 +54,7 @@ def convert(num):
     return sounds if sounds else str(num)
 ```
 
-This approach is the most straightforward or 'naive' - it replicates in code what the instructions say, using `if` statements to check the modulus for each factor.
+This approach is the most straightforward or 'naive' — it replicates in code what the instructions say, using `if` statements to check the modulus for each factor.
 Each is then concatenated to the 'sounds' string.
 If the 'sounds' string is empty, a string version of the number is returned instead.
 
@@ -265,12 +265,12 @@ Since the number of factors is fixed here, this is unlikely to create issues unl
 To compare the performance of this and the other approaches, take a look at the [Performance article][article-performance].
 
 [approach-dict-and-join ]: https://exercism.org/tracks/python/exercises/raindrops/approaches/dict-and-join
-[approach-functools-reduce]:  https://exercism.org/tracks/python/exercises/raindrops/approaches/functools-reduce
-[approach-if-statements]:  https://exercism.org/tracks/python/exercises/raindrops/approaches/if-statements
-[approach-itertools-compress]:  https://exercism.org/tracks/python/exercises/raindrops/approaches/itertools-compress
+[approach-functools-reduce]: https://exercism.org/tracks/python/exercises/raindrops/approaches/functools-reduce
+[approach-if-statements]: https://exercism.org/tracks/python/exercises/raindrops/approaches/if-statements
+[approach-itertools-compress]: https://exercism.org/tracks/python/exercises/raindrops/approaches/itertools-compress
 [approach-loop-and-fstring]: https://exercism.org/tracks/python/exercises/raindrops/approaches/loop-and-fstring
 [approach-sequence-with-join]: https://exercism.org/tracks/python/exercises/raindrops/approaches/sequence-with-join
-[approach-truthy-and-falsey-with-fstring]:   https://exercism.org/tracks/python/exercises/raindrops/approaches/truthy-and-falsey-with-fstring
+[approach-truthy-and-falsey-with-fstring]: https://exercism.org/tracks/python/exercises/raindrops/approaches/truthy-and-falsey-with-fstring
 [article-performance]: https://exercism.org/tracks/python/exercises/raindrops/articles/performance
 [divmod]: https://docs.python.org/3/library/functions.html#divmod
 [fmod]: https://docs.python.org/3/library/math.html#math.fmod

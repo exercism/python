@@ -1,12 +1,13 @@
 # Learning
 
 ## Learning Python From Scratch
-Python is (_as [Wikipedia says][wikipython]_), a *general-purpose and high-level programming language*.
- It can be used to write a wide variety of different kinds of software, from video games to HTTP servers to command-line tools - and a whole lot else.
- It is especially good at 'gluing' different systems and programs together.
+
+Python is (_as [Wikipedia says][wikipython]_), a _general-purpose and high-level programming language_.
+It can be used to write a wide variety of different kinds of software, from video games to HTTP servers to command-line tools — and a whole lot else.
+It is especially good at 'gluing' different systems and programs together.
 
 
-And we think the best way to learn is to _play_ and to _practice_ with coding projects big and small - or with small problems like the ones here on exercism!
+And we think the best way to learn is to _play_ and to _practice_ with coding projects big and small — or with small problems like the ones here on Exercism!
 
 
 Below you will find some additional jumping-off places to start your learning journey, recommended by our community.

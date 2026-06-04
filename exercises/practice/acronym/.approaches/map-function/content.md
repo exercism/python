@@ -29,8 +29,8 @@ The application of the function travels from left to right, and function results
 
 
 Using code from the example above, `map(lambda word: word[0], ['GNU', 'IMAGE', 'MANIPULATION', 'PROGRAM'])` would calculate `'GNU'[0], 'IMAGE'[0], 'MANIPULATION'[0]), 'PROGRAM'[0]` in order as a stream of data.
- `word[0]` is the function, which extracts the letter at index zero for every word in the phrase list.
-This stream of data can then be 'consumed' - either in a `loop`, or by being 'unpacked' by another function or process.
+`word[0]` is the function, which extracts the letter at index zero for every word in the phrase list.
+This stream of data can then be 'consumed' — either in a `loop`, or by being 'unpacked' by another function or process.
 Here, the `iterator` from `map()` is immediately consumed/unpacked by [`join()`][str-join], which glues the results together with an empty string to produce the acronym.
 
 

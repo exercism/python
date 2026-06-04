@@ -1,25 +1,25 @@
 # About
 
 A [`list`][list] is a mutable collection of items in _sequence_.
- Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold reference to any (or multiple) data type(s) - including other lists.
- Like any [sequence][sequence type], items can be accessed via `0-based index` number from the left and `-1-based index` from the right.
- Lists can be copied in whole or in part via [slice notation][slice notation] or `<list>.copy()`.
+Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold reference to any (or multiple) data type(s) — including other lists.
+Like any [sequence][sequence type], items can be accessed via `0-based index` number from the left and `-1-based index` from the right.
+Lists can be copied in whole or in part via [slice notation][slice notation] or `<list>.copy()`.
 
 
 Lists support both [common][common sequence operations] and [mutable][mutable sequence operations] sequence operations such as `min()`/`max()`, `<list>.index()`, `.append()` and `.reverse()`.
- List elements can be iterated over using the `for item in <list>` construct. `for index, item in enumerate(<list>)` can be used when both the element index and the element value are needed.
+List elements can be iterated over using the `for item in <list>` construct. `for index, item in enumerate(<list>)` can be used when both the element index and the element value are needed.
 
 
 Lists are implemented as [dynamic arrays][dynamic array] -- similar to Java's [`Arraylist`][arraylist] type, and are most often used to store groups of similar data (_strings, numbers, sets etc._) of unknown length (_the number of entries may arbitrarily expand or shrink_).
 
 
 Accessing elements, checking for membership via `in`, or appending items to the "right-hand" side of a list are all very efficient.
- Prepending (_appending to the "left-hand" side_) or inserting into the middle of a list are much _less_ efficient because those operations require shifting elements to keep them in sequence.
- For a similar data structure that supports memory efficient `appends`/`pops` from both sides, see [`collections.deque`][deque], which has approximately the same O(1) performance in either direction.
+Prepending (_appending to the "left-hand" side_) or inserting into the middle of a list are much _less_ efficient because those operations require shifting elements to keep them in sequence.
+For a similar data structure that supports memory efficient `appends`/`pops` from both sides, see [`collections.deque`][deque], which has approximately the same O(1) performance in either direction.
 
 
 Because lists are mutable and can contain references to arbitrary Python objects, they also take up more space in memory than an [`array.array`][array.array] or a [`tuple`][tuple] (_which is immutable_) of the same apparent length.
- Despite this, lists are an extremely flexible and useful data structure and many built-in methods and operations in Python produce lists as their output.
+Despite this, lists are an extremely flexible and useful data structure and many built-in methods and operations in Python produce lists as their output.
 
 
 ## Construction
@@ -292,6 +292,7 @@ This can lead to multiple potential issues when working with lists, if not handl
 
 
 ### Assigning more than one variable name
+
 Assigning a `list` object to a new variable _name_ **does not copy the `list` object nor its elements**.
 Any change made to the elements in the `list` under the _new_ name _impact the original_.
 

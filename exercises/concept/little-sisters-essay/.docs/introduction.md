@@ -59,11 +59,11 @@ False
 ```
 
 [`<str>.strip(<chars>)`][str-strip] returns a copy of the `str` with leading and trailing `<chars>` removed.
-The code points specified in `<chars>` are not a prefix or suffix - **all combinations** of the code points will be removed starting from **both ends** of the string.
- If nothing is specified for `<chars>`, all combinations of whitespace code points will be removed.
+The code points specified in `<chars>` are not a prefix or suffix — **all combinations** of the code points will be removed starting from **both ends** of the string.
+If nothing is specified for `<chars>`, all combinations of whitespace code points will be removed.
 
 
- ```python
+```python
 # This will remove "https://", because it can be formed from "/stph:". 
 >>> 'https://unicode.org/emoji/'.strip('/stph:')
 'unicode.org/emoji'

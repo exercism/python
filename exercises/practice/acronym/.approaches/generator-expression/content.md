@@ -28,9 +28,9 @@ As of this writing, both of these methods benchmark slower than using `str.repla
 A [`generator-expression`][generator-expression] is then used to iterate through the phrase and select the first letters of each word via [`bracket notation`][subscript notation].
 
 
-Generator expressions are short-form [generators][generators] - lazy iterators that produce their values _on demand_, instead of saving them to memory.
+Generator expressions are short-form [generators][generators] — lazy iterators that produce their values _on demand_, instead of saving them to memory.
 This generator expression is consumed by [`str.join()`][str-join], which joins the generated letters together using an empty string.
-Other "separator" strings can be used with `str.join()` - see [concept:python/string-methods]() for some additional examples.
+Other "separator" strings can be used with `str.join()` — see [concept:python/string-methods]() for some additional examples.
 Since the generator expression and `join()` are fairly succinct, they are put directly on the `return` line rather than assigning and returning an intermediate variable for the acronym.
 
 

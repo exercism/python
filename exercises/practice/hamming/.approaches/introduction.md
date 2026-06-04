@@ -1,7 +1,7 @@
 # Introduction
 
 There are various ways to solve Hamming.
-One approach is to iterate over either a range of indexes or to use [zip][zip].
+One approach is to iterate over either a range of indexes or to use [`zip`][zip].
 Another approach is to use the range of indexes.
 Some other approaches include the use of [`enumerate`][enumerate], or [`filter`][filter] with a [`lambda`][lambda].
 
@@ -49,7 +49,7 @@ def distance(strand_a, strand_b):
     return count
 ```
 
-For more information, check the [zip approach][approach-zip].
+For more information, check the [`zip` approach][approach-zip].
 
 ## Approach: Using sum
 
@@ -78,18 +78,17 @@ def distance(strand_a, strand_b):
     index in range(len(strand_a)))
 ```
 
-For more information, check the [sum approach][approach-sum].
+For more information, check the [`sum` approach][approach-sum].
 
 [approach-range]: https://exercism.org/tracks/python/exercises/hamming/approaches/range
 [approach-sum]: https://exercism.org/tracks/python/exercises/hamming/approaches/sum
 [approach-zip]: https://exercism.org/tracks/python/exercises/hamming/approaches/zip
-[built-in-functions]:  https://docs.python.org/3.10/library/functions.html
-[enumerate]:  https://docs.python.org/3.10/library/functions.html#enumerate
+[built-in-functions]: https://docs.python.org/3.10/library/functions.html
+[enumerate]: https://docs.python.org/3.10/library/functions.html#enumerate
 [filter]: https://docs.python.org/3.10/library/functions.html#filter
-[generator-expression]: https://docs.python.org/3/reference/expressions.html#grammar-token-python-grammar-generator_expression
+[generator-expression]: https://peps.python.org/pep-0289/
 [iterators]: https://docs.python.org/3/glossary.html#term-iterator
 [lambda]: https://docs.python.org/3/glossary.html#term-lambda
-[range]:  https://docs.python.org/3.10/library/functions.html#func-range
+[range]: https://docs.python.org/3.10/library/functions.html#func-range
 [sum]: https://docs.python.org/3/library/functions.html#sum
 [zip]: https://docs.python.org/3.10/library/functions.html#zip
-

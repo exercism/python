@@ -1,7 +1,9 @@
 # Generator Fun
+
 The key of this approach is to not store the elements you do not need.
 
 This is a code representation:
+
 ```python
 from itertools import islice, count
 
@@ -13,10 +15,10 @@ def prime(number):
     return next(gen)
 ```
 
-Let's dissect it! `itertools.count` is like `range` without un upper bound - calling it returns a generator, and `for ... in count_obj` will result in an infinite loop.
+Let's dissect it! `itertools.count` is like `range` without un upper bound — calling it returns a generator, and `for ... in count_obj` will result in an infinite loop.
 
 Using a lambda expression, we `filter` out any numbers above two that are prime.
-Doesn't this result in an infinite loop? 
+Doesn't this result in an infinite loop?
 No - `filter` _also_ returns a generator object (which are [evaluated lazily][generator]), so while it's too will produce values infinitely if evaluated, it doesn't hang to program at the time of instantiation.
 
 `itertools.islice` takes in a generator object and an end count, returning a generator object which _only evaluates until that end count_.

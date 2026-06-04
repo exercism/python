@@ -44,6 +44,7 @@ ValueError: complex() arg is a malformed string
 >>> z2
 (2+1.5j)
 ```
+
 The end result is identical to using the `complex()` constructor.
 
 
@@ -98,6 +99,7 @@ However, it is still a complex number in Python:
 You may have heard that "`i` (or `j`) is the square root of -1".
 
 For now, all this means is that the imaginary part _by definition_ satisfies the equality
+
 ```python
 1j * 1j == -1  # => True
 ```
@@ -148,7 +150,7 @@ Integer division is ___not___ possible on complex numbers, so the `//` and `%` o
 
 There are two functions implemented for numeric types that are very useful when working with complex numbers:
 
-- `<complex number>.conjugate()` simply flips the sign of the imaginary part of a complex number (_from + to - or vice-versa_).
+- `<complex number>.conjugate()` simply flips the sign of the imaginary part of a complex number (_from `+` to `-` or vice-versa_).
     - Because of the way complex multiplication works, this is more useful than you might think.
 - `abs(<complex number>)` is guaranteed to return a real number with no imaginary part.
 
@@ -212,7 +214,7 @@ It was strange and new in the 16th century.
 ### Why would anyone use these?
 
 It turns out that complex numbers are the simplest way to describe anything that rotates or anything with a wave-like property.
-So they are used widely in electrical engineering, audio processing, physics, computer gaming, and navigation - to name only a few applications.
+So they are used widely in electrical engineering, audio processing, physics, computer gaming, and navigation — to name only a few applications.
 
 You can see things rotate.
 Complex numbers may not make the world go round, but they are great for explaining _what happens_ as a result of the world going round: look at any satellite image of a major storm.
@@ -257,4 +259,3 @@ So, you are probably using technology that relies on complex number calculations
 [engineering-complex]: https://www.khanacademy.org/science/electrical-engineering/ee-circuit-analysis-topic/ee-ac-analysis/v/ee-complex-numbers
 [ints]: https://docs.python.org/3/library/functions.html#int
 [floats]: https://docs.python.org/3/library/functions.html#float
-

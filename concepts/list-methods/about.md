@@ -1,16 +1,16 @@
 # About
 
 A [`list`][list] is a mutable collection of items in _sequence_.
- Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold references to any (or multiple) data type(s) - including other lists.
- They're considered a [sequence][sequence type] in Python, and can be copied in whole or in part via [slice notation][slice notation].
+Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold references to any (or multiple) data type(s) — including other lists.
+They're considered a [sequence][sequence type] in Python, and can be copied in whole or in part via [slice notation][slice notation].
 Like any sequence, elements within `lists` can be referenced by `0-based index` number from the left, or `-1-based index` number from the right.
 
 Lists support both [common][common sequence operations] and [mutable][mutable sequence operations] sequence operations such as `min(<list>)`/`max(<list>)`, `<list>.index()`, `<list>.append()` and `<list>.reverse()`.
- Items can be iterated over using the `for item in <list>` construct, and `for index, item in enumerate(<list>)` when both the element and element index are needed.
+Items can be iterated over using the `for item in <list>` construct, and `for index, item in enumerate(<list>)` when both the element and element index are needed.
 
 Python provides many useful [methods][list-methods] for working with lists.
 
- Because lists are mutable, list-methods **alter the original list object** passed into the method.
+Because lists are mutable, list-methods **alter the original list object** passed into the method.
 If mutation is undesirable, a `shallow copy` (_at minimum_) of the original `list` needs to be made via `slice` or `<list>.copy()`.
 
 
@@ -70,7 +70,7 @@ Using `<list>.append(<item>)` in this circumstance would add the entire iterable
 ## Removing Items
 
 `<list>.remove(<item>)` can be used to remove an element from the list.
- `<list>.remove(<item>)` will throw a `ValueError` if the element is not present in the list.
+`<list>.remove(<item>)` will throw a `ValueError` if the element is not present in the list.
 
 
 ```python
@@ -143,7 +143,7 @@ The Python docs offer [additional tips and techniques for sorting][sorting how t
 
 
 ~~~~exercism/note
- From 2002 to 2022, Python used an algorithm called [`Timsort`][timsort] internally to arrange lists, but switched to [`Powersort`][powersort] from `Python 3.11` onward.
+From 2002 to 2022, Python used an algorithm called [`Timsort`][timsort] internally to arrange lists, but switched to [`Powersort`][powersort] from `Python 3.11` onward.
 You can read more details and discussion on the change from the core Python team in the GitHub [issue 78742][78742].  
 
 For technical details on the algorithm, see the J. Ian Munro and Sebastian Wild paper [Nearly-Optimal Mergesorts: Fast, Practical Sorting Methods That Optimally Adapt to Existing Runs][nearly-optimal-mergesorts]
@@ -178,15 +178,15 @@ To sort a list in _descending_ order, pass a `reverse=True` argument to the meth
 
 
 For cases where mutating the original `list` is undesirable, the built-in functions [`sorted()`][sorted] and [`reversed()`][reversed] can be used.
- `sorted(<list>)` will return a sorted _copy_, and takes the same parameters as `<list>.sort()`.
- `reversed(<list>)` returns an _iterator_ that yields the list's items in reverse order.
- `Iterators` will be covered in detail in another exercise.
+`sorted(<list>)` will return a sorted _copy_, and takes the same parameters as `<list>.sort()`.
+`reversed(<list>)` returns an _iterator_ that yields the list's items in reverse order.
+`Iterators` will be covered in detail in another exercise.
 
 
 ## Occurrences of an item in a list
 
 Finding the number of occurrences of an element in a list can be done with the help of `<list>.count(<item>)`.
- It returns the total number of times `<item>` appears as an element in the list.
+It returns the total number of times `<item>` appears as an element in the list.
 
 
 ```python
@@ -200,9 +200,9 @@ Finding the number of occurrences of an element in a list can be done with the h
 ## Finding the index of items
 
 `<list>.index(<item>)` will return the index number of the _first occurrence_ of an item passed in.
- If there are no occurrences, a `ValueError` is raised.
- Indexing is `0-based` from the left, meaning the position of the first item is index `0`.
- Indexing from the right is also supported, starting with index `-1`.
+If there are no occurrences, a `ValueError` is raised.
+Indexing is `0-based` from the left, meaning the position of the first item is index `0`.
+Indexing from the right is also supported, starting with index `-1`.
 
 
 ```python
@@ -240,18 +240,18 @@ True
 ## Making Copies
 
 Remember that variables in Python are names that point to underlying objects.
- Names can be bound or re-bound to different objects over the life of a program.
- Assigning a `list` object to a new variable _**name**_ does not copy the object or any of its referenced data.
- The new name and old name will both point at the same `list` object.
- Additionally, lists are a _container_ type object - to save space, containers only hold _references_ to member items, not the items themselves.
- This "optimization" can have unintended consequences for the unwary.
+Names can be bound or re-bound to different objects over the life of a program.
+Assigning a `list` object to a new variable _**name**_ does not copy the object or any of its referenced data.
+The new name and old name will both point at the same `list` object.
+Additionally, lists are a _container_ type object — to save space, containers only hold _references_ to member items, not the items themselves.
+This "optimization" can have unintended consequences for the unwary.
 
 `<list>.copy()` will create a new `list` object, but **will not** create new objects for the referenced list _elements_ -- the copy is "shallow".
- A `shallow copy` is usually enough when you want to add or remove items from one of the `list` objects without modifying the other.
- But if there is any chance that the _underlying elements_ of a `list` might be accidentally mutated (_thereby mutating all related shallow copies_), [`copy.deepcopy()`][deepcopy] in the `copy` module should be used to create a complete or "deep" copy of **all** references and objects.
+A `shallow copy` is usually enough when you want to add or remove items from one of the `list` objects without modifying the other.
+But if there is any chance that the _underlying elements_ of a `list` might be accidentally mutated (_thereby mutating all related shallow copies_), [`copy.deepcopy()`][deepcopy] in the `copy` module should be used to create a complete or "deep" copy of **all** references and objects.
 
 For a detailed explanation of names, values, list, and nested list behavior, take a look at this excellent blog post from [Ned Batchelder][ned batchelder] -- [Names and values: making a game board][names and values].
- [Shallow vs Deep Copying of Python Objects][shallow vs deep] also offers a good rundown of copy considerations.
+[Shallow vs Deep Copying of Python Objects][shallow vs deep] also offers a good rundown of copy considerations.
 
 
 [common sequence operations]: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations

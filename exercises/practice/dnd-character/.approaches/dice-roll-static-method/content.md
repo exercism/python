@@ -32,7 +32,7 @@ This approach separates the `ability()` method from a [`static method`][staticme
 `ability()` returns the value of a randomly chosen character ability using [`random.choice`][random-choice] but does not roll dice or calculate values.
 Instead, `dice_rolls()` handles the rolls/values using [`random.choice`][random-choice] for selection.
 
-The argument for this is that the logic/functionality of rolling dice 4 times and summing the top three values is not really related to a DnD character or their abilities - it is independent and likely useful across a wider scope than just the character class.
+The argument for this is that the logic/functionality of rolling dice 4 times and summing the top three values is not really related to a DnD character or their abilities — it is independent and likely useful across a wider scope than just the character class.
 However, it might be tidier to include it in the character class, rather than "clutter" the program or module with an additional stand-alone function.
 Declaring `dice_rolls()` as a static method allows other callers to use the function with or without instantiating a new  `Character` object.
 It also makes it cleaner to maintain, should the method or number of the dice rolls change.

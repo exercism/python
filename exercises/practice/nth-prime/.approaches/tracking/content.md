@@ -47,6 +47,7 @@ def prime(number):
 
 ~~~~exercism/advanced
 Tip: you can use `for... else` to make your code more idiomatic here.
+
 ```python
 ...
 for test in range(2, int(counter ** 0.5) + 1):
@@ -57,9 +58,9 @@ else:
 if prime_count == number:
     return counter
 ```
-The else block is executed if the `for` loop completes normally - that is, without `break`ing.
-Read more on [for/else][for-else]
-~~~~
 
+The else block is executed if the `for` loop completes normally — that is, without `break`ing.
+Read more on [`for`/`else`][for-else]
 
 [for-else]: https://book.pythontips.com/en/latest/for_-_else.html
+~~~~

@@ -24,7 +24,7 @@ The `reversed()` with a `for` loop approach was a bit slower, at `10783` nanosec
 The recursive approach was much slower, at about `24321` nanoseconds.
 
 [approaches]: https://exercism.org/tracks/python/exercises/luhn/approaches
-[approach-reversed-for]:  https://exercism.org/tracks/python/exercises/luhn/approaches/reversed-for
+[approach-reversed-for]: https://exercism.org/tracks/python/exercises/luhn/approaches/reversed-for
 [approach-replace-reverse-enumerate]: https://exercism.org/tracks/python/exercises/luhn/approaches/replace-reverse-enumerate
 [approach-recursion]: https://exercism.org/tracks/python/exercises/luhn/approaches/recursion
 [benchmark-application]: https://github.com/exercism/python/blob/main/exercises/practice/luhn/.articles/performance/code/Benchmark.py

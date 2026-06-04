@@ -82,7 +82,7 @@ False
 
 Strings (`str`) are compared [_lexicographically_][lexographic order], using their individual Unicode code points (_the result of passing each code point in the `str` to the built-in function [`ord()`][ord], which returns an `int`_).
 If all code points in both strings match and are _**in the same order**_, the two strings are considered equal.
-This comparison is done in a 'pair-wise' fashion - first-to-first, second-to-second, etc.
+This comparison is done in a 'pair-wise' fashion — first-to-first, second-to-second, etc.
 In Python 3.x, `str` and `bytes` cannot be directly coerced/compared.
 
 ```python
@@ -116,7 +116,7 @@ False
 
 ## Comparing Container Data Types
 
-Container data types (_`lists`, `tuples`, `sets`, `dicts`, etc._) also compare [_lexicographically_][lexographic order] - they are equal if both containers have the same data **and** the same data types (_in the case of `lists` and `tuples`, they must also have the same **ordering**_), unequal otherwise.
+Container data types (_`lists`, `tuples`, `sets`, `dicts`, etc._) also compare [_lexicographically_][lexographic order] — they are equal if both containers have the same data **and** the same data types (_in the case of `lists` and `tuples`, they must also have the same **ordering**_), unequal otherwise.
 
 ```python
 >>> [1, 2] == [1, 2]
@@ -148,7 +148,7 @@ Comparison operators can be chained _arbitrarily_.
 Note that the evaluation of an expression takes place from `left` to `right`.
 For example, `x < y <= z` is equivalent to `x < y and y <= z`, except that `y` is evaluated **only once**.
 In both cases, `z` is _not_ evaluated **at all** when `x < y` is found to be `False`.
-This is often called `short-circuit evaluation` - the evaluation stops if the truth value of the expression has already been determined.
+This is often called `short-circuit evaluation` — the evaluation stops if the truth value of the expression has already been determined.
 
 `Short circuiting` is supported by various boolean operators, functions, and also by comparison chaining in Python.
 Unlike many other programming languages, including `C`, `C++`, `C#`, and `Java`, chained expressions like `a < b < c` in Python have a conventional [mathematical interpretation][three way boolean comparison] and precedence.

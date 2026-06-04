@@ -1,10 +1,9 @@
 # Use `if-statements`
 
-
 ```python
 import math
 
-# Checks scores from the center --> edge.
+# Checks scores from the center to the edge.
 def score(x_coord, y_coord):
     distance = math.sqrt(x_coord**2 + y_coord**2)
     
@@ -25,7 +24,7 @@ To avoid importing the `math` module (_for a very very slight speedup_), (`x**2 
 
 
 ```python
-# Checks scores from the center --> edge.
+# Checks scores from the center to the edge.
 def score(x_coord, y_coord):
     distance_squared = x_coord**2 + y_coord**2
     
@@ -39,11 +38,10 @@ def score(x_coord, y_coord):
 
 ## Variation 1: Check from Edge to Center Using Upper and Lower Bounds
 
-
 ```python
 import math
 
-# Checks scores from the edge --> center
+# Checks scores from the edge to the center
 def score(x_coord, y_coord):
     distance = math.sqrt(x_coord**2 + y_coord**2)
     
@@ -56,10 +54,10 @@ def score(x_coord, y_coord):
 
 This variant checks from the edge moving inward, checking both a lower and upper bound due to the overlapping scoring circles in this direction.
 
-Scores for any of these solutions can also be assigned to a variable to avoid multiple `returns`, but this isn't really necessary:
+Scores for any of these solutions can also be assigned to a variable to avoid multiple `return`s, but this isn't really necessary:
 
 ```python
-# Checks scores from the edge --> center
+# Checks scores from the edge to the center
 def score(x_coord, y_coord):
     distance_squared = x_coord**2 + y_coord**2
     points = 10

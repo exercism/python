@@ -2,7 +2,7 @@
 
 The `dict` class in Python provides many useful [methods][dict-methods] for working with dictionaries.
 Some were introduced in the concept for `dict`s.
-Here we cover a few more - along with some techniques for iterating through and manipulating dictionaries.
+Here we cover a few more — along with some techniques for iterating through and manipulating dictionaries.
 
 - `<dict>.setdefault()` automatically adds keys without throwing a KeyError.
 - `<dict>.fromkeys(<iterable>, <default value>)` creates a new `dict` from any number of iterables.

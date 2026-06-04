@@ -5,10 +5,10 @@ You and your business partners operate a small catering company. You've just agr
 ## 1. Clean up Dish Ingredients
 
 The event recipes were added from various sources and their ingredients appear to have duplicate (_or more_) entries — you don't want to end up purchasing excess items!
- Before the shopping and cooking can commence, each dish's ingredient list needs to be "cleaned".
+Before the shopping and cooking can commence, each dish's ingredient list needs to be "cleaned".
 
 Implement the `clean_ingredients(<dish_name>, <dish_ingredients>)` function that takes the name of a dish and a `list` of ingredients.
- This function should return a `tuple` with the name of the dish as the first item, followed by the de-duped `set` of ingredients.
+This function should return a `tuple` with the name of the dish as the first item, followed by the de-duped `set` of ingredients.
 
 
 ```python
@@ -19,12 +19,12 @@ Implement the `clean_ingredients(<dish_name>, <dish_ingredients>)` function that
 
 ## 2. Cocktails and Mocktails
 
-The event is going to include both cocktails and "mocktails" - mixed drinks _without_ the alcohol.
- You need to ensure that "mocktail" drinks are truly non-alcoholic and the cocktails do indeed _include_ alcohol.
+The event is going to include both cocktails and "mocktails" — mixed drinks _without_ the alcohol.
+You need to ensure that "mocktail" drinks are truly non-alcoholic and the cocktails do indeed _include_ alcohol.
 
 Implement the `check_drinks(<drink_name>, <drink_ingredients>)` function that takes the name of a drink and a `list` of ingredients.
- The function should return the name of the drink followed by "Mocktail" if the drink has no alcoholic ingredients, and drink name followed by "Cocktail" if the drink includes alcohol.
-  For the purposes of this exercise, cocktails will only include alcohols from the ALCOHOLS constant in `sets_categories_data.py`:
+The function should return the name of the drink followed by "Mocktail" if the drink has no alcoholic ingredients, and drink name followed by "Cocktail" if the drink includes alcohol.
+For the purposes of this exercise, cocktails will only include alcohols from the ALCOHOLS constant in `sets_categories_data.py`:
 
 ```python
 >>> from sets_categories_data import ALCOHOLS 
@@ -68,7 +68,7 @@ These ingredients need to be tagged/annotated for each dish so that they don't c
 Implement the `tag_special_ingredients(<dish>)` function that takes a `tuple` with the dish name in the first position, and a `list` or `set` of ingredients for that dish in the second position.
 Return the dish name followed by the `set` of ingredients that require a special note on the dish description.
 Dish ingredients inside a `list` may or may not have duplicates.
- For the purposes of this exercise, all allergens or special ingredients that need to be labeled are in the SPECIAL_INGREDIENTS constant imported from `sets_categories_data.py`.
+For the purposes of this exercise, all allergens or special ingredients that need to be labeled are in the SPECIAL_INGREDIENTS constant imported from `sets_categories_data.py`.
 
 ```python
 >>> from sets_categories_data import SPECIAL_INGREDIENTS
@@ -103,7 +103,7 @@ dishes = [ {'tofu', 'soy sauce', 'ginger', 'corn starch', 'garlic', 'brown sugar
 ## 6. Pull out Appetizers for Passing on Trays
 
 The hosts have given you a list of dishes they'd like prepped as "bite-sized" appetizers to be served on trays.
- You need to pull these from the main list of dishes being prepared as larger servings.
+You need to pull these from the main list of dishes being prepared as larger servings.
 
 Implement the `separate_appetizers(<dishes>, <appetizers>)` function that takes a `list` of dish names and a `list` of appetizer names.
 The function should return the `list` of dish names with appetizer names removed.

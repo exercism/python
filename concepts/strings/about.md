@@ -7,7 +7,7 @@ For a deep dive on what information a string encodes (or, _"how does a computer 
 The Python docs also provide a very detailed [unicode HOWTO][unicode how-to] that discusses Python's support for the Unicode specification in the `str`, `bytes` and `re` modules, considerations for locales, and some common issues with encoding and translation.
 
 Strings implement all [common sequence operations][common sequence operations] and can be iterated through using `for item in <str>` or `for index, item in enumerate(<str>)` syntax.
- Individual code points (_strings of length 1_) can be referenced by `0-based index` number from the left, or `-1-based index` number from the right.
+Individual code points (_strings of length 1_) can be referenced by `0-based index` number from the left, or `-1-based index` number from the right.
 
 Strings can be concatenated with `<str> + <other str>` or `<str>.join(<iterable>)` and split via `<str>.split(<separator>)`.
 They also offer multiple additional formatting, assembly, and templating options.
@@ -27,11 +27,11 @@ Multi-line strings are declared with `'''` or `"""`.
 
 ```python
 >>> triple_quoted = '''Three single quotes or "double quotes" in a row allow for multi-line string literals.
-  Line break characters, tabs and other whitespace is fully supported. Remember - The escape "\" character is also available if needed (as can be seen below). 
+  Line break characters, tabs and other whitespace is fully supported. Remember — The escape "\" character is also available if needed (as can be seen below). 
   
   You\'ll most often encounter multi-line strings as "doc strings" or "doc tests" written just below the first line of a function or class definition.
-    They\'re often used with auto documentation ✍ tools.
-    '''
+  They\'re often used with auto documentation ✍ tools.
+  '''
 ```
 
 The [`str(<object>)` constructor][str-constructor] can be used to create/coerce strings from other objects:
@@ -68,7 +68,6 @@ creative = '창의적인'
 
 >>> creative[3]
 '인'
-
 ```
 
 Indexing also works from the right, starting with a `-1-based index`:
@@ -84,7 +83,6 @@ creative = '창의적인'
 
 >>> creative[-1]
 '인'
-
 ```
 
 There is no separate “character” or "rune" type in Python, so indexing a string produces a new `str` of **length 1**:
@@ -211,7 +209,7 @@ If a `list`, `tuple`, `set` or other collection of individual strings needs to b
 >>> upper_words = ['upper', 'crust', 'case', 'classmen', 'most', 'cut']
 >>> separator = ' 🌟 ' + upper_words[0] # This becomes one string, similar to ' ⤴️ under'.
 >>> separator.join(upper_words)
- 'upper 🌟 uppercrust 🌟 uppercase 🌟 upperclassmen 🌟 uppermost 🌟 uppercut'
+'upper 🌟 uppercrust 🌟 uppercase 🌟 upperclassmen 🌟 uppermost 🌟 uppercut'
 ```
 
 Strings support all [common sequence operations][common sequence operations].

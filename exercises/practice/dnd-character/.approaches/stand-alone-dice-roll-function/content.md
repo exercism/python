@@ -33,7 +33,7 @@ def modifier(constitution):
 This approach separates the `ability()` method from a stand-alone function that calculates dice rolls.
 `ability()` returns the value of a randomly chosen character ability using [`random.choice`][randon-choice], but does not roll dice or calculate values.
 Instead, `dice_rolls()` handles the rolls/values, using [`random.randint`][random-randint] to generate them.
-The argument for this is that the logic/functionality of rolling dice 4 times and summing the top three values is not really related to a DnD character or their abilities - it is independent and likely useful across a wider scope than just the character class.
+The argument for this is that the logic/functionality of rolling dice 4 times and summing the top three values is not really related to a DnD character or their abilities — it is independent and likely useful across a wider scope than just the character class.
 It also makes it cleaner to maintain, should the method or number of the dice rolls change.
 
 `dice_rolls()` is then called in `__init__()` to populate the listed-out character attributes.
@@ -47,7 +47,7 @@ The "too few" rule encourages you to think about the design of the class: is it 
 What other functionality should this class hold?
 Should the `dice_roll()` function be outside or inside (_as a regular method or a static method_) the class?
 
-None of these (_including the analyzer complaint about too few methods_) is a hard and fast rule or requirement - all are considerations for the class as you build out a larger program.
+None of these (_including the analyzer complaint about too few methods_) is a hard and fast rule or requirement — all are considerations for the class as you build out a larger program.
 
 An alternative is to write a [dataclass][dataclass], although the design discussion and questions above remain the same:
 
