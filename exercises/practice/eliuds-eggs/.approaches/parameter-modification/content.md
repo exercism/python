@@ -35,7 +35,7 @@ This is essentially just a more verbose formulation of the previous version.
 Instead of relying on Python converting `int`s to `bool`s, this solution manually compares `display_value` to `0`.
 It also uses an `if` statement to check if `eggs` should be incremented by `1`, instead of directly using the result of `display_value % 2`.
 
-Even though this variant is more verbose, some may consider it to be more readable.
+Even though this variant is more verbose than the others, some may consider it to be more readable.
 
 
 ## Variation #2: Using Bitwise Operators

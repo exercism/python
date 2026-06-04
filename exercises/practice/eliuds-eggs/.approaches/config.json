@@ -8,7 +8,14 @@
       "uuid": "27fb20ed-a4c2-4f73-a8fc-86ba384c7b35",
       "slug": "parameter-modification",
       "title": "Modify the Parameter in a Loop",
-      "blurb": "Modify the Parameter in a while-loop to Calculate the Number of Eggs.",
+      "blurb": "Modify the parameter in a while-loop to calculate the number of eggs.",
+      "authors": ["yrahcaz7"]
+    },
+    {
+      "uuid": "65fd717c-0e50-444b-a4b2-b51862f1f810",
+      "slug": "no-parameter-modification",
+      "title": "Loop Without Modifying the Parameter",
+      "blurb": "Loop over the bits without modifying the parameter to determine the number of eggs.",
       "authors": ["yrahcaz7"]
     }
   ]
