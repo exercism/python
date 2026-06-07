@@ -1,6 +1,6 @@
 # Introduction
 
-There are many Pythonic approaches to solving the Eliud's Eggs exercise:
+There are many different approaches to solving the Eliud's Eggs exercise:
 
 - Using a `while-loop`, modifying the parameter on each iteration
 - Looping over every binary digit _without_ modifying the parameter
@@ -67,6 +67,30 @@ After the loop ends, we know that we have checked all of the bits in `display_va
 For more details and variations, read the [loop without modifying the parameter][approach-no-parameter-modification] approach.
 
 
+## Approach: Converting the Parameter to a Binary String
+
+```python
+def egg_count(display_value):
+    binary_value = bin(display_value)[2:]
+    eggs = 0
+    for digit in binary_value:
+        eggs += int(digit)
+    return eggs
+```
+
+This approach uses [`bin()`][bin-built-in] (or some other means, such as an [`f-string`][f-string]) to convert `display_value` to a binary string.
+Then, the first two characters of the binary string are removed, as the string has "0b" prefixed before the binary digits.
+
+After the binary digits are obtained, this solution loops across all of them, turning each one into an integer and adding it to `eggs`.
+This effectively counts up all of the instances of "1" in the binary string, as 0 and 1 are the only valid binary digits.
+
+Many variations of this approach use a built-in function like `sum()` to make the iteration more concise.
+For more details, check out the [convert to a binary string][approach-convert-to-binary-string] approach.
+
+
 [approach-parameter-modification]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/parameter-modification
 [approach-no-parameter-modification]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/no-parameter-modification
+[approach-convert-to-binary-string]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/convert-to-binary-string
+[bin-built-in]: https://docs.python.org/3/library/functions.html#bin
 [right-shift-operator]: https://www.geeksforgeeks.org/software-engineering/right-shift-operator-in-programming/
+[f-string]: https://docs.python.org/3/reference/lexical_analysis.html#f-strings

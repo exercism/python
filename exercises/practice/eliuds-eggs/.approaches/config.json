@@ -17,6 +17,13 @@
       "title": "Loop Without Modifying the Parameter",
       "blurb": "Loop over the bits without modifying the parameter to determine the number of eggs.",
       "authors": ["yrahcaz7"]
+    },
+    {
+      "uuid": "df202fa9-3757-4808-a416-7ec3ee1e9680",
+      "slug": "convert-to-binary-string",
+      "title": "Convert to a Binary String",
+      "blurb": "Convert the parameter to a binary string and count its ones to determine the number of eggs.",
+      "authors": ["yrahcaz7"]
     }
   ]
 }
