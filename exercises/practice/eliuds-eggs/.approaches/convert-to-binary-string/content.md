@@ -105,7 +105,6 @@ However, the creation and repeated calling of the `lambda` adds unnecessary over
 
 
 [bin-built-in]: https://docs.python.org/3/library/functions.html#bin
-[f-string]: https://docs.python.org/3/reference/lexical_analysis.html#f-strings
 [generator-expression]: https://dbader.org/blog/python-generator-expressions
 [lambda-expression]: https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions
 [list-comprehension]: https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions
