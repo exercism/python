@@ -88,10 +88,29 @@ Many variations of this approach use a built-in function like `sum()` to make th
 For more details, check out the [convert to a binary string][approach-convert-to-binary-string] approach.
 
 
-[approach-parameter-modification]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/parameter-modification
-[approach-no-parameter-modification]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/no-parameter-modification
+## Approach: Using the Built-In Bit-Count Functionality
+
+~~~~exercism/caution
+This approach does _not_ follow the instructions, as it uses the bit-count functionality from the standard library.
+It is only described here to show what an idiomatic way of counting bits in a _different context_ would be. 
+~~~~
+
+```python
+def egg_count(display_value):
+    return display_value.bit_count()
+```
+
+This approach uses [`int.bit_count()`][int-bit_count] from the Python standard library to count the number of ones in the binary representation of `display_value`.
+
+For more details and variations, read the [built-in bit-count][approach-built-in-bit-count] approach.
+
+
+[approach-built-in-bit-count]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/built-in-bit-count
 [approach-convert-to-binary-string]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/convert-to-binary-string
+[approach-no-parameter-modification]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/no-parameter-modification
+[approach-parameter-modification]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/parameter-modification
 [bin-built-in]: https://docs.python.org/3/library/functions.html#bin
 [concept-numbers]: https://exercism.org/tracks/python/concepts/numbers
-[right-shift-operator]: https://www.geeksforgeeks.org/software-engineering/right-shift-operator-in-programming/
 [f-string]: https://docs.python.org/3/reference/lexical_analysis.html#f-strings
+[int-bit_count]: https://docs.python.org/3/library/stdtypes.html#int.bit_count
+[right-shift-operator]: https://www.geeksforgeeks.org/software-engineering/right-shift-operator-in-programming/
