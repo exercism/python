@@ -1,0 +1,6 @@
+def egg_count(display_value):
+    binary_value = bin(display_value)[2:]
+    eggs = 0
+    for digit in binary_value:
+        eggs += int(digit)
+    return eggs
