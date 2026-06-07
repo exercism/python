@@ -14,7 +14,7 @@ There are also some approaches that aren't recommended:
 
 ## General guidance
 
-The goal of the Eliud's Eggs exercise is to count the number of ones in the binary representation of a number.
+The goal of the Eliud's Eggs exercise is to count the number of ones in the binary representation of a [number][concept-numbers].
 In essence, this requires you to loop over each bit (binary digit) of the number in some way.
 
 The approaches below represent categories of the most common ways of accomplishing this.
@@ -92,5 +92,6 @@ For more details, check out the [convert to a binary string][approach-convert-to
 [approach-no-parameter-modification]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/no-parameter-modification
 [approach-convert-to-binary-string]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/convert-to-binary-string
 [bin-built-in]: https://docs.python.org/3/library/functions.html#bin
+[concept-numbers]: https://exercism.org/tracks/python/concepts/numbers
 [right-shift-operator]: https://www.geeksforgeeks.org/software-engineering/right-shift-operator-in-programming/
 [f-string]: https://docs.python.org/3/reference/lexical_analysis.html#f-strings

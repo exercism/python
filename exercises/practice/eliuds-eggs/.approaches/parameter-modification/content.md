@@ -76,5 +76,48 @@ For example, if we used the numbers `5` (`101` in binary) and `1`, we get `2` (`
 You can see how `& 1` and `>>= 1` perform the same function as the `% 2` and `//= 2` used in earier variants.
 
 
+## Variation #3: Using a `list`
+
+```python
+def egg_count(display_value):
+    egg_positions = []
+
+    while display_value:
+        egg_positions.append(display_value % 2)
+        display_value //= 2
+
+    return egg_positions.count(1)
+```
+
+Here, we append the binary digits to a `list` and then count the number of ones using [`list.count()`][sequence-count].
+This solution would make sense if the positions of the eggs mattered, but since we only need the amount here, tracking the positions just adds unecessary overhead.
+
+
+## Variation #4: Using `divmod()`
+
+```python
+def egg_count(display_value):
+    eggs = 0
+    while display_value:
+        display_value, remainder = divmod(display_value, 2)
+        eggs += remainder
+    return eggs
+```
+
+This variant uses the [`divmod()`][divmod-built-in] built-in instead of `%` and `//`.
+(For `int` arguments, `divmod(a, b)` returns a [`tuple`][concept-tuples] of `(a // b, a % b)`.)
+
+In the loop, we use `divmod(display_value, 2)` to get both the quotient and the remainder of the division.
+The `tuple` returned by `divmod()` is [unpacked][concept-unpacking-and-multiple-assignment] into `display_value` and `remainder` using [multiple assignment][concept-unpacking-and-multiple-assignment].
+Then, we increment `eggs` by `remainder`.
+
+As `display_value` is updated in the multiple assignment expression, we don't need to do anything else inside the loop.
+Just like the previous variations, the loop will continue until `display_value` reaches 0, and then we return `eggs`.
+
+
 [bitwise-operators]: https://www.w3schools.com/programming/prog_operators_bitwise.php
+[concept-tuples]: https://exercism.org/tracks/python/concepts/tuples
+[concept-unpacking-and-multiple-assignment]: https://exercism.org/tracks/python/concepts/unpacking-and-multiple-assignment
+[divmod-built-in]: https://docs.python.org/3/library/functions.html#divmod
 [right-shift-operator]: https://www.geeksforgeeks.org/software-engineering/right-shift-operator-in-programming/
+[sequence-count]: https://docs.python.org/3/library/stdtypes.html#sequence.count
