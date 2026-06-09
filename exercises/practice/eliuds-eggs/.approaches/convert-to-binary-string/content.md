@@ -88,7 +88,7 @@ def egg_count(display_value):
     return sum(map(int, bin(display_value)[2:]))
 ```
 
-Here, we directly `map` the elements of the binary string to `int`s without using a generator expression or a list comprehension.
+Here, we directly [`map`][map-built-in] the elements of the binary string to `int`s without using a generator expression or a list comprehension.
 
 This variant is the most concise of them all, but it may be not very comprehensible to those unfamilar with functional programming.
 
@@ -100,11 +100,30 @@ def egg_count(display_value):
     return len(list(filter(lambda digit: digit == "1", bin(display_value))))
 ```
 
-Another alternative to a generator expression (or list comprehension) is to use the `filter()` built-in along with a [`lambda` expression][lambda-expression].
+Another alternative to a generator expression (or list comprehension) is to use the [`filter()` built-in][filter-built-in] along with a [`lambda` expression][lambda-expression].
 However, the creation and repeated calling of the `lambda` adds unnecessary overhead to the solution.
 
 
+## Variation #6: Using `functools.reduce()` with a `lambda`
+
+```python
+from functools import reduce
+
+def egg_count(display_value):
+    return reduce(lambda eggs, digit: eggs + int(digit), bin(display_value)[2:], 0)
+```
+
+This variant uses [`reduce()`][functools-reduce] from the [`functools` module][functools-module] along with a `lambda` expression.
+Here, `functools.reduce()` calls the `lambda` on each codepoint in `bin(display_value)[2:]`, accumulating the value of `eggs` from the initial `0`.
+
+Similar to the previous variant, the creation and repeated calling of the `lambda` causes extra overhead.
+
+
 [bin-built-in]: https://docs.python.org/3/library/functions.html#bin
+[filter-built-in]: https://docs.python.org/3/library/functions.html#filter
+[functools-module]: https://docs.python.org/3/library/functools.html
+[functools-reduce]: https://docs.python.org/3/library/functools.html#functools.reduce
 [generator-expression]: https://dbader.org/blog/python-generator-expressions
 [lambda-expression]: https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions
 [list-comprehension]: https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions
+[map-built-in]: https://docs.python.org/3/library/functions.html#map
