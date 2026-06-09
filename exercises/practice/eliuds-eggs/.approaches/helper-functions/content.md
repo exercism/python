@@ -29,10 +29,10 @@ First, `convert_to_binary()` is used to convert `display_value` to a binary stri
 Then, `count_ones()` is called to count the number of ones in that string.
 
 In this specific version of the approach, `convert_to_binary()` is implemented similarly to the [modify the parameter in a loop][approach-parameter-modification] approach.
-The main differences are that the bits are converted to strings and appended together (rather being added together), and that a [ternary expression][ternary-expression] is used to handle the edge case of a `0`.
+The main differences are that the bits are converted to strings and appended together (rather being added together), and that a [conditional expression][conditional-expression] (also called a ternary operator) is used to handle the edge case of a `0`.
 
 ~~~~exercism/note
-Here, the [`or` operator][boolean-operations-default-or] could be used instead of a ternary expression:
+Here, the [`or` operator][boolean-operations-default-or] could be used instead of a conditional expression:
 
 ```python
 return binary_value[::-1] or "0"
@@ -70,4 +70,4 @@ However, if there are any unhandled edge cases, when you (or someone else) tries
 
 [approach-convert-to-binary-string]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/convert-to-binary-string
 [approach-parameter-modification]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/parameter-modification
-[ternary-expression]: https://docs.python.org/3/reference/expressions.html#conditional-expressions
+[conditional-expression]: https://docs.python.org/3/reference/expressions.html#conditional-expressions
