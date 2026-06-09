@@ -64,7 +64,7 @@ def egg_count(display_value):
 ```
 
 This variant is actually a one-liner, it is just split up here for readability.
-Here, we replace the `for-loop` with a [generator expression][generator-expression] and use `sum()` to collect the values into the result.
+Here, we replace the `for-loop` with a [generator expression][generator-expression] and use [`sum()`][sum-built-in] to collect the values into the result.
 
 
 ## Variation #3: Manually Tracking the Place Value
@@ -89,3 +89,4 @@ The main differences are not having to calculate the `place_value` from the bit 
 
 [generator-expression]: https://dbader.org/blog/python-generator-expressions
 [right-shift-operator]: https://www.geeksforgeeks.org/software-engineering/right-shift-operator-in-programming/
+[sum-built-in]: https://docs.python.org/3/library/functions.html#sum
