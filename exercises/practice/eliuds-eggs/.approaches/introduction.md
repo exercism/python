@@ -14,7 +14,7 @@ There are also some approaches that aren't recommended:
 
 ## General guidance
 
-The goal of the Eliud's Eggs exercise is to count the number of ones in the binary representation of a [number][concept-numbers].
+The goal of the Eliud's Eggs exercise is to count the number of ones in the [binary representation of a number][concept-numbers].
 In essence, this requires you to loop over each bit (binary digit) of the number in some way.
 
 The approaches below represent categories of the most common ways of accomplishing this.
@@ -100,13 +100,53 @@ def egg_count(display_value):
     return display_value.bit_count()
 ```
 
-This approach uses [`int.bit_count()`][int-bit_count] from the Python standard library to count the number of ones in the binary representation of `display_value`.
+This solution uses [`int.bit_count()`][int-bit_count] from the Python standard library to count the number of ones in the binary representation of `display_value`.
 
 For more details and variations, read the [built-in bit-count][approach-built-in-bit-count] approach.
 
 
+## Approach: Using Helper Functions
+
+```python
+def egg_count(display_value):
+    return count_ones(convert_to_binary(display_value))
+
+
+def convert_to_binary(decimal_value):
+    binary_value = ""
+
+    while decimal_value > 0:
+        binary_value += str(decimal_value % 2)
+        decimal_value //= 2
+
+    return binary_value[::-1] if binary_value else "0"
+
+
+def count_ones(binary_value):
+    count = 0
+
+    for digit in binary_value:
+        count += int(digit)
+
+    return count
+```
+
+This approach breaks the problem down into multiple helper functions that are called from `egg_count()`.
+First, `convert_to_binary()` is used to convert `display_value` to a binary string.
+Then, `count_ones()` is called to count the number of ones in that string.
+
+The actual implementations of `convert_to_binary()` and `count_ones()` could use almost any of the techniques mentioned in earlier approaches.
+
+Though breaking the problem up into helper functions may facilitate code reuse, it also adds unnecessary overhead to the solution.
+It can also overcomplicate things, as you may need to consider additional edge cases, such as making `convert_to_binary()` return "0" instead of an empty string when given the number `0`.
+If you do not handle all of these cases, when you (or someone else) tries to reuse the function later, they may get unexpected results, such as getting "0" when inputting a negative number.
+
+For more details, check out the [helper functions][approach-helper-functions] approach.
+
+
 [approach-built-in-bit-count]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/built-in-bit-count
 [approach-convert-to-binary-string]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/convert-to-binary-string
+[approach-helper-functions]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/helper-functions
 [approach-no-parameter-modification]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/no-parameter-modification
 [approach-parameter-modification]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/parameter-modification
 [bin-built-in]: https://docs.python.org/3/library/functions.html#bin

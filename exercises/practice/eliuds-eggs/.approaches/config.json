@@ -29,7 +29,14 @@
       "uuid": "97b06094-7ce8-4874-b66a-af7391adc853",
       "slug": "built-in-bit-count",
       "title": "Use the Built-In Bit-Count Functionality",
-      "blurb": "Use Python's Built-In Bit-Count Functionality to calculate the number of eggs.",
+      "blurb": "Use Python's built-in bit-count functionality to calculate the number of eggs.",
+      "authors": ["yrahcaz7"]
+    },
+    {
+      "uuid": "618491ca-480e-4e32-bf91-4940affb48a8",
+      "slug": "helper-functions",
+      "title": "Use Helper Functions",
+      "blurb": "Split the problem into multiple helper functions to calculate the number of eggs.",
       "authors": ["yrahcaz7"]
     }
   ]
