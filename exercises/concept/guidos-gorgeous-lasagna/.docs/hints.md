@@ -49,6 +49,7 @@
 [naming]: https://realpython.com/python-variables/
 [napoleon]: https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html#module-sphinx.ext.napoleon
 [numbers]: https://docs.python.org/3/tutorial/introduction.html#numbers
+[pep8]: https://www.python.org/dev/peps/pep-0008/
 [pep257]: https://www.python.org/dev/peps/pep-0257/
 [python as a calculator]: https://docs.python.org/3/tutorial/introduction.html#using-python-as-a-calculator
 [return]: https://docs.python.org/3/reference/simple_stmts.html#return
