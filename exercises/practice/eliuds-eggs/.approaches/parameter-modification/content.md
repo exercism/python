@@ -115,9 +115,50 @@ As `display_value` is updated in the multiple assignment expression, we don't ne
 Just like the previous variations, the loop will continue until `display_value` reaches 0, and then we return `eggs`.
 
 
+## Variation #5: Overcomplicated One-Liner
+
+~~~~exercism/caution
+This approach is not idiomatic and can be quite confusing.
+It is only provided here to show how one could apply various advanced techniques to turn this approach into a one-liner.
+~~~~
+
+```python
+def egg_count(display_value):
+    return sum(
+        (value % 2, display_value := value // 2)[0]
+        for value in iter(lambda: display_value, 0)
+    )
+```
+
+This variation uses [the `sum()` built-in][sum-built-in], a [generator expression][generator-expression], a [`lambda` expression][lambda-expression], and a [walrus operator (`:=`)][walrus-operator] to reduce the solution to a one-liner.
+The line is only broken up here for readability.
+
+Here, the `while-loop` is converted into a generator expression, with `sum()` adding up the result of each iteration.
+As the `while` keyword is not allowed in generator expressions, instead we iterate over an iterable with `for`.
+This iterable is constructed from a `lambda` that returns `display_value`, with the [sentinel value][sentinel-value] set to `0`.
+This means that [`iter()`][iter-built-in] returns an iterable that calls the `lambda` until the returned `display_value` equals `0`.
+
+For each iteration of the generator expression, we assign `value` to the return value of the `lambda`.
+Then we construct a `tuple` with two elements, using `[0]` to get its first element and feed it to `sum()`.
+That element is the least significant bit of `value`, which can be calculated via `value % 2` or `value & 1`, as shown in the previous variations.
+
+The second element is more complicated.
+Here, we update `display_value`, cutting off the least significant bit (via `// 2` or `>> 1`) by using the walrus operator (`:=`).
+The walrus operator acts like a simple assignment statement, except that it returns the right-hand value and it can be used anywhere that an expression can be used.
+(See the [Python docs][assignment-expression-docs] for more details.)
+Thus we can use walrus operator here to update `display_value` in the generator expression, then simply ignore the return value by only feeding the first element of the `tuple` to `sum()`.
+
+
+[assignment-expression-docs]: https://docs.python.org/3/reference/expressions.html#assignment-expressions
 [bitwise-operators]: https://www.w3schools.com/programming/prog_operators_bitwise.php
 [concept-tuples]: https://exercism.org/tracks/python/concepts/tuples
 [concept-unpacking-and-multiple-assignment]: https://exercism.org/tracks/python/concepts/unpacking-and-multiple-assignment
 [divmod-built-in]: https://docs.python.org/3/library/functions.html#divmod
+[generator-expression]: https://dbader.org/blog/python-generator-expressions
+[iter-built-in]: https://docs.python.org/3/library/functions.html#iter
+[lambda-expression]: https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions
 [right-shift-operator]: https://www.geeksforgeeks.org/software-engineering/right-shift-operator-in-programming/
+[sentinel-value]: https://python-patterns.guide/python/sentinel-object/
 [sequence-count]: https://docs.python.org/3/library/stdtypes.html#sequence.count
+[sum-built-in]: https://docs.python.org/3/library/functions.html#sum
+[walrus-operator]: https://mathspp.com/blog/pydonts/assignment-expressions-and-the-walrus-operator
