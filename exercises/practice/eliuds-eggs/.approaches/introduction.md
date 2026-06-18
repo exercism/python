@@ -1,26 +1,26 @@
 # Introduction
 
-There are many different approaches to solving the Eliud's Eggs exercise:
+There are many different approaches to solving the Eliud's Eggs exercise, among them are:
 
-- Using a `while-loop`, modifying the parameter on each iteration
-- Looping over every binary digit _without_ modifying the parameter
-- Converting the `int` to a binary string and counting the ones
+- Using a `while-loop` and modifying the function argument on each iteration
+- Looping over every binary digit _without_ modifying the function argument
+- Converting the `int` argument into a binary string and counting the "ones" in it
 
 There are also some approaches that aren't recommended:
 
-- Using the bit-count functionality from the Python standard library, as the instructions forbid it
-- Breaking up the proccess into many functions, overcomplicating the solution
+- Using the bit-count functionality from the Python standard library, as the instructions ask this challenge be solved "manually".
+- Breaking up the counting process into many small functions, which can overcomplicate or slow the solution.
 
 
 ## General guidance
 
-The goal of the Eliud's Eggs exercise is to count the number of ones in the [binary representation of a number][concept-numbers].
-In essence, this requires you to loop over each bit (binary digit) of the number in some way.
+The goal of the Eliud's Eggs exercise is to count the number of ones in a [binary representation of a number][concept-numbers] (_e.g. the "filled gg slots" a chicken coop_).
+In essence, this requires you to iterate through each "slot" or bit (binary digit) of the binary number in some way.
 
 The approaches below represent categories of the most common ways of accomplishing this.
 
 
-## Approach: Modifying the Parameter in a `while-loop`
+## Approach: Modifying the Argument in a `while-loop`
 
 ```python
 def egg_count(display_value):
@@ -31,19 +31,19 @@ def egg_count(display_value):
     return eggs
 ```
 
-This approach uses a `while-loop` to count up all of the ones.
+This approach uses a `while-loop` to count up the ones in the calculated binary equivalent of `display value`.
 In the loop, we increment `eggs` by `display_value % 2`.
-This adds the least significant bit (the rightmost digit in the binary representation) of `display_value` to `eggs`.
+This adds the least significant bit (_the rightmost digit in the binary representation_) of `display_value` to `eggs`.
 
-Next, we divide `display_value` by `2`, discarding any remainder.
-This essentially removes the least significant bit of `display_value`, setting up `display_value` for processing the next bit.
+Next, `display_value` is divided by `2`, discarding any remainder.
+This removes the least significant bit of the current `display_value`, setting up the next iteration of `display_value` for processing.
 
-The loop repeats until `display_value` reaches `0` (which indicates that we have no more bits to check), and then we return `eggs`.
+The loop repeats until `display_value` reaches `0` (_which indicates that there are no more bits to process_), at which point `eggs` is returned.
 
-To see more variations of this solution, see the [modify the parameter in a loop][approach-parameter-modification] approach.
+To see more variations of this solution, read the [modify the argument in a loop][approach-argument-modification] approach.
 
 
-## Approach: Looping Without Modifying the Parameter
+## Approach: Looping Without Modifying the Argument
 
 ```python
 from math import ceil, log2
@@ -59,15 +59,15 @@ This solution uses a `for-loop` with `range()` to iterate over all of the bits i
 To determine how many bits `display_value` has, this solution imports `ceil` and `log2` from the `math` module.
 It then feeds this number into `range()` to make the `for-loop` iterate over all the `bit_position`s.
 
-For each `bit_position`, we determine the value of the bit at that position by using the [right-shift operator][right-shift-operator] and the bitwise AND operator.
+For each `bit_position`, we determine the value of the bit at that position by using the [right-shift operator][right-shift-operator] and the [bitwise AND][bit-AND] operator.
 Once we determine the bit's value, we increment `eggs` by that number.
 
-After the loop ends, we know that we have checked all of the bits in `display_value`, thus we return `eggs`.
+After the loop ends, we know that we have processed all bits in `display_value`, so we return `eggs`.
 
-For more details and variations, read the [loop without modifying the parameter][approach-no-parameter-modification] approach.
+For more details and variations, read the [loop without modifying the argument][approach-no-argument-modification] approach.
 
 
-## Approach: Converting the Parameter to a Binary String
+## Approach: Converting the Argument to a Binary String
 
 ```python
 def egg_count(display_value):
@@ -79,9 +79,9 @@ def egg_count(display_value):
 ```
 
 This approach uses [`bin()`][bin-built-in] (or some other means, such as an [`f-string`][f-string]) to convert `display_value` to a binary string.
-Then, the first two characters of the binary string are removed, as the string has "0b" prefixed before the binary digits.
+The first two characters of the binary string are removed as "0b" is used as a prefix to the binary digits.
 
-After the binary digits are obtained, this solution loops across all of them, turning each one into an integer and adding it to `eggs`.
+After the binary digits are obtained, this solution loops through them, turning each one into an integer and adding it to `eggs`.
 This effectively counts up all of the instances of "1" in the binary string, as 0 and 1 are the only valid binary digits.
 
 Many variations of this approach use a built-in function like `sum()` to make the iteration more concise.
@@ -139,7 +139,7 @@ The actual implementations of `convert_to_binary()` and `count_ones()` could use
 
 Though breaking the problem up into helper functions may facilitate code reuse, it also adds unnecessary overhead to the solution.
 It can also overcomplicate things, as you may need to consider additional edge cases, such as making `convert_to_binary()` return "0" instead of an empty string when given the number `0`.
-If you do not handle all of these cases, when you (or someone else) tries to reuse the function later, they may get unexpected results, such as getting "0" when inputting a negative number.
+If you do not handle all of these cases, when you (_or someone else_) tries to reuse the function later, they may get unexpected results, such as "0" being returned when a negative number in input.
 
 For more details, check out the [helper functions][approach-helper-functions] approach.
 
@@ -147,9 +147,10 @@ For more details, check out the [helper functions][approach-helper-functions] ap
 [approach-built-in-bit-count]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/built-in-bit-count
 [approach-convert-to-binary-string]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/convert-to-binary-string
 [approach-helper-functions]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/helper-functions
-[approach-no-parameter-modification]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/no-parameter-modification
-[approach-parameter-modification]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/parameter-modification
+[approach-no-argument-modification]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/no-argument-modification
+[approach-argument-modification]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/argument-modification
 [bin-built-in]: https://docs.python.org/3/library/functions.html#bin
+[bit-AND]: https://docs.python.org/3/library/stdtypes.html#bitwise-operations-on-integer-types
 [concept-numbers]: https://exercism.org/tracks/python/concepts/numbers
 [f-string]: https://docs.python.org/3/reference/lexical_analysis.html#f-strings
 [int-bit_count]: https://docs.python.org/3/library/stdtypes.html#int.bit_count
