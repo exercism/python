@@ -109,10 +109,12 @@ This variant uses the [`divmod()`][divmod-built-in] built-in instead of `%` and 
 
 Within the loop, `divmod(display_value, 2)` is used to get both the quotient and the remainder of the division.
 The `tuple` returned by `divmod()` is [unpacked][concept-unpacking-and-multiple-assignment] into `display_value` and `remainder` using [multiple assignment][concept-unpacking-and-multiple-assignment].
-`eggs` is then incremented by `remainder`.
+Then, `eggs` is incremented by `remainder`.
 
 As `display_value` is updated in the multiple assignment expression, we don't need to do anything else inside the loop.
 Just like the previous variations, the loop will continue until `display_value` reaches 0, and then we return `eggs`.
+
+
 ## Variation #5: Overcomplicated One-Liner
 
 ~~~~exercism/caution

@@ -1,6 +1,5 @@
 # Loop Without Modifying the Argument
 
-
 ```python
 from math import ceil, log2
 
@@ -40,7 +39,6 @@ After the loop ends, we know that we have checked all bits in `display_value`, t
 
 
 ## Variation #1: Using an `if` Statement
-
 
 ```python
 from math import ceil, log2

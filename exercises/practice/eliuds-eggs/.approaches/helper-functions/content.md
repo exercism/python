@@ -30,7 +30,8 @@ First, `convert_to_binary()` is used to convert `display_value` to a binary stri
 Then, `count_ones()` is called to count the number of ones in that string.
 
 In this specific version of the approach, `convert_to_binary()` is implemented similarly to the [modify the argument in a loop][approach-argument-modification] approach.
-The main differences are that the bits are converted to strings and concatenated (_rather being added together_), and that a [conditional expression][conditional-expression] (_also called a ternary operator_) is used to handle the edge case of a `0`.
+The main differences are that the bits are converted to strings and concatenated (_rather than being added together_), and that a [conditional expression][conditional-expression] (_also called a ternary operator_) is used to handle the edge case of a `0`.
+
 
 ~~~~exercism/note
 Here, the [`or` operator][boolean-operations-default-or] could be used instead of a conditional expression:
@@ -50,7 +51,7 @@ The only difference is that it takes the binary string as an argument rather tha
 
 Though breaking a problem up into helper functions may facilitate code reuse, here it adds unnecessary overhead to the solution.
 This approach is also complicated by additional edge cases, such as making `convert_to_binary()` return "0" instead of an empty string when given the number `0`.
-The edge case of negative numbers is also not handled, and doing so would complicate the solution even further:
+Additionally, the edge case of negative numbers is not handled, and doing so would complicate the solution even further:
 
 ```python
 def convert_to_binary(decimal_value):
@@ -68,6 +69,7 @@ def convert_to_binary(decimal_value):
 
 Due to these scenarios, one may decide to forego handling all the edge cases.
 However, when your future self (_or someone else_) tries to reuse the function, edge cases could produce errors or unexpected results.
+
 
 [approach-argument-modification]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/argument-modification
 [approach-convert-to-binary-string]: https://exercism.org/tracks/python/exercises/eliuds-eggs/approaches/convert-to-binary-string
