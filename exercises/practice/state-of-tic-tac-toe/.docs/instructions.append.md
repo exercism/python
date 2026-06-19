@@ -2,7 +2,7 @@
 
 ## Exception messages
 
-Sometimes it is necessary to [raise an exception][raising-exceptions]].
+Sometimes it is necessary to [raise an exception][raising-exceptions].
 When you do this, you should always include a **meaningful error message** to indicate what the source of the error is.
 This makes your code more readable and helps significantly with debugging.
 For situations where you know that the error source will be a certain type, you can choose to raise one of the [built in error types][error-base-classes], but should still include a meaningful message.
