@@ -9,7 +9,7 @@ For situations where you know that the error source will be a certain type, you 
 
 
 A valid game of `Tic Tac Toe` ends when one player wins.
-If both players are in a winning state, or there is a mismatch between the winner and their number of moves, this exercise expects you to use the [raise statement][raise] and "throw" a `ValueError` in your solution.
+If both players are in a winning state, this exercise expects you to use the [raise statement][raise] and "throw" a `ValueError` in your solution.
 Your code is also expected to throw a `ValueError` if one player is assessed as playing two turns in a row, or playing the first move when they were assigned to play the second move.
 
 
