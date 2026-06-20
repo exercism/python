@@ -11,7 +11,7 @@ def exchange_money(budget, exchange_rate):
     """Calculate estimated value after exchange.
 
     Parameters:
-        budget (float): Tthe amount of money you are planning to exchange.
+        budget (float): The amount of money you are planning to exchange.
         exchange_rate (float): The unit value of the foreign currency.
 
     Returns:
@@ -48,7 +48,7 @@ def get_change(budget, exchanging_value):
         >>> get_change(300.75, 150.25)
         150.50
 
-    This function calcultes and returns the amount of money left over from the budget
+    This function calculates and returns the amount of money left over from the budget
     after an exchange.
 
     """
@@ -73,7 +73,7 @@ def get_value_of_bills(denomination, number_of_bills):
         >>> get_value_of_bills(15.13, 16)
         242
 
-    This function calculates and returns the total value of the bills (excluding fractionaal amounts).
+    This function calculates and returns the total value of the bills (excluding fractional amounts).
 
     """
 
@@ -97,8 +97,8 @@ def get_number_of_bills(amount, denomination):
         >>> get_number_of_bills(35.16, 10)
         3
 
-    This function calcluates and returns the number pf currency units (bills) that can
-    be obtained from the given amount. Whole bills only - no fractioal amounts.
+    This function calculates and returns the number pf currency units (bills) that can
+    be obtained from the given amount. Whole bills only - no fractional amounts.
 
     """
 
