@@ -1,0 +1,7 @@
+from math import ceil, log2
+
+def egg_count(display_value):
+    eggs = 0
+    for bit_position in range(ceil(log2(display_value + 1))):
+        eggs += (display_value >> bit_position) & 1
+    return eggs
