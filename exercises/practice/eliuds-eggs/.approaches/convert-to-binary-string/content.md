@@ -21,7 +21,7 @@ However, it does have the added overhead of converting to and from a string.
 
 ~~~~exercism/note
 There are three other Pythonic ways of obtaining a binary string.
-These strategies use the [string format specification][string-format-spec] in different ways.  
+These strategies use the [string format specification][string-format-spec] in different ways.
 
 The first is to use an [`f-string`][f-string]:
 

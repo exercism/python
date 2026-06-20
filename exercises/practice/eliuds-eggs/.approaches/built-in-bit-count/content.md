@@ -2,7 +2,7 @@
 
 ~~~~exercism/caution
 This approach does _not_ follow the instructions, as it uses the bit-count functionality from the standard library.
-It is only described here to show what an idiomatic way of counting bits in a _different context_ would be. 
+It is only described here to show what an idiomatic way of counting bits in a _different context_ would be.
 ~~~~
 
 ```python

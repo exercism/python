@@ -15,7 +15,7 @@ There are also some approaches that aren't recommended:
 
 ## General guidance
 
-The goal of the Eliud's Eggs exercise is to count the number of ones in a [binary representation of a number][concept-numbers] (_e.g. the "filled egg slots" a chicken coop_).
+The goal of the Eliud's Eggs exercise is to count the number of ones in a [binary representation of a number][concept-numbers] (_e.g. the "filled egg slots" of a chicken coop_).
 In essence, this requires you to iterate through each "slot" or bit (binary digit) of the binary number in some way.
 
 The approaches below represent categories of the most common ways of accomplishing this.
@@ -93,7 +93,7 @@ For more details, check out the [convert to a binary string][approach-convert-to
 
 ~~~~exercism/caution
 This approach does _not_ follow the instructions, as it uses the bit-count functionality from the standard library.
-It is only described here to show what an idiomatic way of counting bits in a _different context_ would be. 
+It is only described here to show what an idiomatic way of counting bits in a _different context_ would be.
 ~~~~
 
 ```python
