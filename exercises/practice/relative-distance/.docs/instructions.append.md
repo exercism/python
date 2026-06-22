@@ -3,7 +3,7 @@
 ## How this exercise is structured for the Python track
 
 The tests for this exercise expect your solution to be implemented as a RelativeDistance `class` in Python.
-If you are unfamiliar with `class`es in Python, [concept:python/classes]() and [`classe`s in the official Python documentation][classes in python] are good places to start.
+If you are unfamiliar with `class`es in Python, [concept:python/classes]() and [`classes` in the official Python documentation][classes in python] are good places to start.
 
 
 `RelativeDistance` should be initialized (_see [`__init__()`][init] for more information_) using `family_tree`, a dictionary where the `keys` are individuals and `values` are `list`s of that individual's children.
