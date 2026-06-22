@@ -19,8 +19,8 @@ Next, we `return` zero if `number == 1`.
 This is the [`base case`][recursion-base-case].
 
 We then assign `number` to the same `conditional expression` as seen in the [`ternary operator`][ternary-operator] approach.
-Finally, we `return` one plus the result of calling `steps()`.
-This is the [`recursive case`][recursive-case], where the function calls itself with a new `number` value.
+Finally, we `return` one plus the result of calling `steps()`, with the updated `number` value.
+This is the [`recursive case`][recursive-case].
 
 Solving this exercise in this way removes the need for a `counter` variable and the creation of a `loop`.
 If `number` is not equal to one, we call `1 + steps(number)`.

@@ -1,6 +1,6 @@
 # Introduction
 
-There are multiple approaches to solving the Collatz Conjecture exercise idiomatically in Python.
+There are multiple idiomatic approaches to solving the Collatz Conjecture exercise in Python.
 You can, for example, use a `while loop` or a `recursive` function.
 You can also solve the exercise by using `if`/`else` statements or the `ternary operator`.
 
@@ -62,7 +62,7 @@ This approach can be more concise than other approaches, but may or may not be m
 
 You might not want to use this approach due to Python's [`recursion` limit][recursion-limit], which has a default of 1000 stack frames.
 While the current tests for this exercise all have input that is easily calculated in under the `recursion` limit, this is not true for arbitrary numbers.
-Numbers with a large number of steps may need to employ memoization or other techniques to make `recursion` work.
+To make this approach work with large numbers of steps, techniques such as memoization may need to be employed.
 
 
 ```python

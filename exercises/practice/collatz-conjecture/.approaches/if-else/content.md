@@ -16,7 +16,7 @@ def steps(number):
 
 This approach starts with checking if the number is less than or equal to zero.
 If it is, then it raises a [`ValueError`][value-error].
-After that, we declare a counter variable and set it to zero.
+After that, we declare a `counter` variable and set it to zero.
 Next, we start a [`while loop`][while-loop] that will run until the number is equal to one, at which point it will terminate.
 
 Inside the `loop`, we check if the number is even, and if it is, we divide it by two.
