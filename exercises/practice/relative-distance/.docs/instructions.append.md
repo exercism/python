@@ -6,7 +6,7 @@ The tests for this exercise expect your solution to be implemented as a Relative
 If you are unfamiliar with `class`es in Python, [concept:python/classes]() and [`classe`s in the official Python documentation][classes in python] are good places to start.
 
 
-`RelativeDistance` should be initialized (_see [`__init__()`][init] for more information_)_ using `family_tree`, a dictionary where the `keys` are individuals and `values` are `list`s of that individual's children.
+`RelativeDistance` should be initialized (_see [`__init__()`][init] for more information_) using `family_tree`, a dictionary where the `keys` are individuals and `values` are `list`s of that individual's children.
 You will also need to implement a `degree_of_separation` [method][methods] which will return the degree of separation between `person_a` and `person_b` who are individuals in the passed-in family tree.
 
 
