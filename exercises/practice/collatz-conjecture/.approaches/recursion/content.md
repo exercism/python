@@ -10,46 +10,41 @@ def steps(number):
     return 1 + steps(number)
 ```
 
-This approach uses [concept:python/recursion]() to solve the problem.
-Recursion is a programming technique where a function calls itself.
-It is a powerful technique, but can be more tricky to implement than a while loop.
-Recursion isn't that common in Python, it is more common in functional programming languages, like: [Elixir][elixir], [Haskell][haskell], and [Clojure][clojure].
+This approach uses [concept:python/recursion]() to solve the challenge.
+`Recursion` is less common as a strategy in Python than in other "fully-functional" programming languages such as [Elixir][elixir], [Haskell][haskell], and [Clojure][clojure].
+While it can be powerful, it can also be trickier to implement than looping constructs.
 
-This approach starts with checking if the number is less than or equal to zero.
-If it is, then it raises a [`ValueError`][value-error].
+This approach starts with checking if `number <= 0` and raising a [`ValueError`][value-error] if it is.
+Next, we `return` zero if `number == 1`.
+This is the [`base case`][recursion-base-case].
 
-After that, we check if the number is equal to one.
-If it is, then we return zero.
+We then assign `number` to the same `conditional expression` as seen in the [`ternary operator`][ternary-operator] approach.
+Finally, we `return` one plus the result of calling `steps()`.
+This is the [`recursive case`][recursive-case], where the function calls itself with a new `number` value.
 
-We then use the same conditional expression/ternary operator as the [ternary operator][ternary-operator] approach does.
-We assign **number** to the result of the conditional expression.
-The expression checks if the number is even.
-If the number is even, we divide it by two.
-If it isn't, we multiply it by three and add one.
+Solving this exercise in this way removes the need for a `counter` variable and the creation of a `loop`.
+If `number` is not equal to one, we call `1 + steps(number)`.
+Then `steps()` can execute the same code again with new values.
+This makes a long chain (_or stack_) of `1 + steps(number)` — until `number == 1` and the code adds zero and exits.
+That translates to something like: `1 + 1 + 1 + 1 + 0`.
 
-After that, we `return` one plus the result of calling the `steps` function with the new number value.
-This is the recursion part.
+Python doesn't have [tail call optimization][tail-call], so the stack of `1 + steps(number)` will continue to grow until the `base case` triggers resolution, or the code reaches the `recursion limit`.
 
-Solving this exercise with recursion removes the need for a "counter" variable and the instantiation of a `loop`.
-If the number is not equal to one,  we call `1 + steps(number)`.
-Then the `steps` function can execute the same code again with new values.
-Meaning we can get a long chain or stack of `1 + steps(number)` until the number reaches one and the code adds 0.
-That translates to something like this: `1 + 1 + 1 + 1 + 0`.
-
-Python doesn't have [tail call optimization][tail-call].
-Which means that the stack of `1 + steps(number)` will grow until it reaches the recursion limit.
 
 ~~~~exercism/caution
-In Python, we can't have a function call itself more than 1000 times by default.
-Code that exceeds this recursion limit will throw a  [RecursionError](https://docs.python.org/3/library/exceptions.html#RecursionError).
-While it is possible to adjust the [recursion limit](https://docs.python.org/3/library/sys.html#sys.setrecursionlimit), doing so risks crashing Python and may also crash your system.
-Casually raising the recursion limit is not recommended.
+In Python, we can't have a function call itself more than 1000 times by default. 
+Code that exceeds this `recursion limit` will throw a [RecursionError](https://docs.python.org/3/library/exceptions.html#RecursionError).  
+
+While it is possible to adjust the [`recursion limit`](https://docs.python.org/3/library/sys.html#sys.setrecursionlimit), doing so risks crashing Python and may also crash your system with a [`stack overflow`](https://en.wikipedia.org/wiki/Stack_overflow).
+Casually raising the limit is not recommended and seldom helps the performance situation. 
+Instead, applying [memoization techniques](https://dbader.org/blog/python-memoization) or [dynamic programming strategies](https://medium.com/@conniezhou678/mastering-data-algorithms-part-18-dynamic-programming-in-python-3077c01f4a15) is a better path.
 ~~~~
 
 [clojure]: https://exercism.org/tracks/clojure
 [elixir]: https://exercism.org/tracks/elixir
 [haskell]: https://exercism.org/tracks/haskell
-[recursion]: https://realpython.com/python-thinking-recursively/
 [tail-call]: https://en.wikipedia.org/wiki/Tail_call
 [ternary-operator]: https://exercism.org/tracks/python/exercises/collatz-conjecture/approaches/ternary-operator
 [value-error]: https://docs.python.org/3/library/exceptions.html#ValueError
+[recursion-base-case]: https://www.geeksforgeeks.org/dsa/what-is-base-case-in-recursion/
+[recursive-case]: https://inventwithpython.com/blog/how-many-recursive-cases-and-base-cases-does-recursive-function-need.html
