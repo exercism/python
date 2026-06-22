@@ -33,11 +33,17 @@ Python doesn't have [tail call optimization][tail-call], so the stack of `1 + st
 
 ~~~~exercism/caution
 In Python, we can't have a function call itself more than 1000 times by default. 
-Code that exceeds this `recursion limit` will throw a [RecursionError](https://docs.python.org/3/library/exceptions.html#RecursionError).  
+Code that exceeds this `recursion limit` will throw a [RecursionError][recursion-error].  
 
-While it is possible to adjust the [`recursion limit`](https://docs.python.org/3/library/sys.html#sys.setrecursionlimit), doing so risks crashing Python and may also crash your system with a [`stack overflow`](https://en.wikipedia.org/wiki/Stack_overflow).
+While it is possible to adjust the [`recursion limit`][recursion-limit], doing so risks crashing Python and may also crash your system with a [`stack overflow`][stack-overflow-def].
 Casually raising the limit is not recommended and seldom helps the performance situation. 
-Instead, applying [memoization techniques](https://dbader.org/blog/python-memoization) or [dynamic programming strategies](https://medium.com/@conniezhou678/mastering-data-algorithms-part-18-dynamic-programming-in-python-3077c01f4a15) is a better path.
+Instead, applying [memoization techniques][memoization] or [dynamic programming strategies][dynamic-programming] is a better path.
+
+[recursion-error]: https://docs.python.org/3/library/exceptions.html#RecursionError
+[recursion-limit]: https://docs.python.org/3/library/sys.html#sys.setrecursionlimit
+[stack-overflow-def]: https://en.wikipedia.org/wiki/Stack_overflow
+[memoization]: https://dbader.org/blog/python-memoization
+[dynamic-programming]: https://medium.com/@conniezhou678/mastering-data-algorithms-part-18-dynamic-programming-in-python-3077c01f4a15
 ~~~~
 
 [clojure]: https://exercism.org/tracks/clojure

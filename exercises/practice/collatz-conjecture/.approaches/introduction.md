@@ -7,7 +7,7 @@ You can also solve the exercise by using `if`/`else` statements or the `ternary 
 ## General guidance
 
 The key to this exercise is to check if the number is even or odd and then perform the correct operation.
-Under this process (_if the data is not [pathological][collatz-pathological]_), the result will settle at 1.
+Under this process (_if the input number doesn't create an excessively [long cycle][collatz-pathological]_), the result will settle at 1.
 Your task is to count how many steps it takes to get there.
 
 
