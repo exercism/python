@@ -1,6 +1,6 @@
 # The `calendar.isleap()` function
 
-```pythoon
+```python
 from calendar import isleap
 
 def leap_year(year):
@@ -8,20 +8,20 @@ def leap_year(year):
 ```
 
 ~~~~exercism/caution
-This approach may be considered a "cheat" for this exercise, which is intended to practice Boolean operators and logic.
+This approach may be considered a "cheat" for this exercise, which is intended to practice Boolean operators and Boolean logic.
 ~~~~
 
 
 The Python standard library includes a [`calendar`][calendar] module for working with many aspects of dates in the [Gregorian calendar][gregorian-calendar].
-
 One of the methods provided is [`isleap()`][isleap], which implements exactly the same functionality as this exercise.
 
 This is not a good way to practice the use of Booleans, as the exercise intends.
-However, it may be convenient (_and better tested_) if you are working with calendar functions more broadly.
+However, it may be convenient (_and better tested_) if you are working with `calendar` functions more broadly.
+
 
 ## The library function
 
-This is the [implementation][implementation]:
+This is the actual [implementation][implementation] in the CPython code:
 
 ```python
 def isleap(year):
@@ -29,10 +29,10 @@ def isleap(year):
     return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
 ```
 
-We can see that `calendar.isleap()` is just syntactic sugar for the `boolean-chain` approach.
+We can see that `calendar.isleap()` is just syntactic sugar for the [`boolean-chain`][approach-boolean-chain] approach.
 
-
+[approach-boolean-chain]: https://exercism.org/tracks/python/exercises/leap/approaches/boolean-chain
 [calendar]: https://docs.python.org/3/library/calendar.html
 [gregorian-calendar]: https://en.wikipedia.org/wiki/Gregorian_calendar
-[implementation]: https://github.com/python/cpython/blob/main/Lib/calendar.py
+[implementation]: https://github.com/python/cpython/blob/main/Lib/calendar.py#L162C1-L164C66
 [isleap]: https://docs.python.org/3/library/calendar.html
