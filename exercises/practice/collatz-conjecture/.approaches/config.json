@@ -1,6 +1,6 @@
 {
   "introduction": {
-    "authors": ["bethanyg", "meatball133"],
+    "authors": ["Bethanyg", "meatball133"],
     "contributors": ["Yrahcaz7"]
   },
   "approaches": [
@@ -9,7 +9,7 @@
       "slug": "if-else",
       "title": "If/Else",
       "blurb": "Use if and else",
-      "authors": ["bethanyg", "meatball133"],
+      "authors": ["Bethanyg", "meatball133"],
       "contributors": ["Yrahcaz7"]
     },
     {
@@ -17,7 +17,7 @@
       "slug": "ternary-operator",
       "title": "Ternary operator",
       "blurb": "Use a ternary operator",
-      "authors": ["bethanyg", "meatball133"],
+      "authors": ["Bethanyg", "meatball133"],
       "contributors": ["Yrahcaz7"]
     },
     {
@@ -25,7 +25,7 @@
       "slug": "recursion",
       "title": "Recursion",
       "blurb": "Use recursion",
-      "authors": ["bethanyg", "meatball133"],
+      "authors": ["Bethanyg", "meatball133"],
       "contributors": ["Yrahcaz7"]
     }
   ]
