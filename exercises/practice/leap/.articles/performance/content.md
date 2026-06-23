@@ -37,11 +37,11 @@ All methods are "fast", but the difference may be easier to see graphically.
 
 <br>
 
-- The `if-statements` approach (_boolean chain_) is the fastest approach when testing a year that is not evenly divisible by `100` and is not a leap year.
+- The `if-statements` (_boolean chain_) approach is the fastest approach when testing a year that is not evenly divisible by `100` and is not a leap year.
 Since most years fit those conditions, it is overall the most efficient approach.
 - The `ternary operator` approach is faster in benchmarking when the year is a leap year or is evenly divisible by `100`,
 but those are the _least likely_ conditions.
-- Adding to the `datetime` approach may not only be a "cheat", but it also slower than the other approaches.
+- Adding to the `datetime` approach may not only be a "cheat", it is also slower than the other approaches.
   - Comparing `import datatime` and `from datetime import datetime, timedelta` showed  little speed difference _(data not shown)_.
 - Using the built-in `calendar.isleap()` function is terse, convenient and very readable, but not quite as fast as writing your own logic.
 This is likely due to the overhead of both loading the `calendar` module and then calling the `calendar.isleap()` method.

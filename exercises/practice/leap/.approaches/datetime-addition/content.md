@@ -21,7 +21,7 @@ By adding a day to February 28th for a given year, you can see if the new day fa
 If it is February 29th, then the function returns `True` for the year being a leap year.
 
 - A new [`datetime`][datetime] object is created for February 28th of the year.
-- A [`timedelta`][timedelta] of one day is added to that `datetime`,
+- A [`timedelta`][timedelta] of one day is added to that `datetime`.
 - The function returns if the [`day`][day] property of the resulting `datetime` object is the 29th.
 
 [datetime]: https://docs.python.org/3/library/datetime.html#datetime-objects

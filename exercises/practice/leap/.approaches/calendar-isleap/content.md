@@ -34,5 +34,5 @@ We can see that `calendar.isleap()` is just syntactic sugar for the [`boolean-ch
 [approach-boolean-chain]: https://exercism.org/tracks/python/exercises/leap/approaches/boolean-chain
 [calendar]: https://docs.python.org/3/library/calendar.html
 [gregorian-calendar]: https://en.wikipedia.org/wiki/Gregorian_calendar
-[implementation]: https://github.com/python/cpython/blob/main/Lib/calendar.py#L162C1-L164C66
+[implementation]: https://github.com/python/cpython/blob/3.13/Lib/calendar.py#L143-L145
 [isleap]: https://docs.python.org/3/library/calendar.html

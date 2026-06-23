@@ -36,7 +36,7 @@ For more information, see the [Ternary operator approach][approach-ternary-opera
 
 ## Other Approaches
 
-Besides the aforementioned and idiomatic approaches, you could also approach the exercise as follows:
+Besides the aforementioned idiomatic approaches, you could also approach the exercise as follows:
 
 
 ### Approach: Using `datetime` Addition
