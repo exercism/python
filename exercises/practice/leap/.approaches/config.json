@@ -1,7 +1,7 @@
 {
   "introduction": {
     "authors": ["bobahop"],
-    "contributors": ["colinleach"]
+    "contributors": ["colinleach", "Yrahcaz7", "Bethanyg"]
   },
   "approaches": [
     {
@@ -9,29 +9,33 @@
       "slug": "boolean-chain",
       "title": "Boolean chain",
       "blurb": "Use a chain of boolean expressions.",
-      "authors": ["bobahop"]
+      "authors": ["bobahop"],
+      "contributors": ["colinleach", "Yrahcaz7", "Bethanyg"]
     },
     {
-      "uuid": "9952fef5-9f2f-4575-94fc-bc4e96593cd6",
+      "uuid": "37193c94-1b5f-4891-a685-11def9204839",
       "slug": "ternary-operator",
       "title": "Ternary operator",
       "blurb": "Use a ternary operator of boolean expressions.",
-      "authors": ["bobahop"]
+      "authors": ["bobahop"],
+      "contributors": ["colinleach", "Yrahcaz7", "Bethanyg"]
     },
     {
       "uuid": "66302791-0770-4f08-beaa-251c49e280a2",
       "slug": "datetime-addition",
       "title": "datetime addition",
       "blurb": "Use datetime addition.",
-      "authors": ["bobahop"]
+      "authors": ["bobahop"],
+      "contributors": ["colinleach", "Yrahcaz7", "Bethanyg"]
     },
     {
       "uuid": "d85be356-211a-4d2f-8af0-fa92e390b0b3",
       "slug": "calendar-isleap",
       "title": "calendar.isleap() function",
       "blurb": "Use the calendar module.",
-      "authors": ["colinleach",
-                  "BethanyG"]
+      "authors": ["colinleach", "BethanyG"],
+      "contributors": ["Yrahcaz7"]
     }
   ]
 }
+
