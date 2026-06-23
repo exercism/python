@@ -1,0 +1,8 @@
+IGNORE = punctuation + whitespace
+words = (word.strip(IGNORE) for word in
+         phrase.replace(',', ' ')
+         .replace('_', ' ')
+         .lower()
+         .split() if word)
+
+return Counter(words)
