@@ -1,7 +1,7 @@
 {
   "introduction": {
-    "authors": ["bethanyg", "meatball133"],
-    "contributors": []
+    "authors": ["Bethanyg", "meatball133"],
+    "contributors": ["Yrahcaz7"]
   },
   "approaches": [
     {
@@ -9,21 +9,24 @@
       "slug": "if-else",
       "title": "If/Else",
       "blurb": "Use if and else",
-      "authors": ["bethanyg", "meatball133"]
+      "authors": ["Bethanyg", "meatball133"],
+      "contributors": ["Yrahcaz7"]
     },
     {
       "uuid": "d7703aef-1510-4ec8-b6ce-ca608b5b8f70",
       "slug": "ternary-operator",
       "title": "Ternary operator",
       "blurb": "Use a ternary operator",
-      "authors": ["bethanyg", "meatball133"]
+      "authors": ["Bethanyg", "meatball133"],
+      "contributors": ["Yrahcaz7"]
     },
     {
       "uuid": "b1220645-124a-4994-96c4-3b2b710fd562",
       "slug": "recursion",
       "title": "Recursion",
       "blurb": "Use recursion",
-      "authors": ["bethanyg", "meatball133"]
+      "authors": ["Bethanyg", "meatball133"],
+      "contributors": ["Yrahcaz7"]
     }
   ]
 }
