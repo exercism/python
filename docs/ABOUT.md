@@ -7,12 +7,12 @@ But do not be fooled: while programming across paradigms is fully supported, [ev
 
 
 Python was created by Guido van Rossum and first released in 1991.
-The [Python Software Foundation][psf] manages and directs resources for Python and CPython development and receives proposals for changes to the language from [members][psf membership] of the community via [Python Enhancement Proposals or PEPs][peps].
-It is considered a strong language for programmers [starting their journey][python for beginners], with a welcoming community and many resources available to learners of all levels and persuasions.
+The [Python Software Foundation][psf] manages and directs resources for Python and CPython development and receives proposals for changes to the language from [members][psf membership] of the community via [Python Enhancement Proposals (PEPs)][peps].
+It is considered a strong language for programmers [starting their journey][python for beginners], with a welcoming community and many resources available to learners of all levels and interests.
 
 
 Python puts a strong emphasis on code readability and (_similar to Haskell_) uses [significant indentation][significant indentation] to denote function, method, and class definitions.
-Code can be written and executed from the command line, in an interactive interpreter session, in [JupyterLab][jupyter] (Jupyter notebook), or a wide variety of [code editors and IDEs][editors for python].
+Code can be written and executed from the command line, in an interactive interpreter session, in [JupyterLab][jupyter] (Jupyter Notebooks), or a wide variety of [code editors and IDEs][editors for python].
 
 [Python is used extensively][python is used extensively] in scientific computing, finance, games, networking, internet development, and in assembling pipelines of other programs.
 
@@ -20,14 +20,14 @@ Code can be written and executed from the command line, in an interactive interp
 The [zen of Python (PEP 20)][the zen of python] and [What is Pythonic?][what is pythonic] lay out additional philosophies and perspectives on the language.
 
 
-Tests and tooling for this track currently support `3.10` - `3.13.5` (_tests_) and [`Python 3.13.5`][313-new-features] (_tooling_).
+Tests and tooling for this track currently support `Python 3.10 - 3.13.7` (_tests_) and [`Python 3.13.7`][313-new-features] (_tooling_).
 It is highly recommended that students upgrade to at least `Python 3.10`, as some features used by this track may not be supported in earlier versions.
 That being said, most of the exercises will work with `Python 3.6+`, or even earlier versions.
 But we don't guarantee support for versions not listed under [Active Python Releases][active-python-releases].
 We will try to note when a feature is only available in a certain version.
 
 
-Complete documentation for the current release of Python (3.13.x) can be found at [docs.python.org][python docs].
+Complete documentation for the track's in-use release of Python (`3.13.x`) can be found at [docs.python.org][python docs].
 
 - [Python Tutorial][python tutorial]
 - [Python Library Reference][python library reference]
@@ -46,9 +46,9 @@ Complete documentation for the current release of Python (3.13.x) can be found a
 [gradual typing]: https://en.wikipedia.org/wiki/Gradual_typing
 [jupyter]: http://jupyter.org
 [object oriented programming]: https://en.wikipedia.org/wiki/Object-oriented_programming
-[peps]: https://www.python.org/dev/peps/
+[peps]: https://peps.python.org/
 [psf membership]: https://www.python.org/psf/membership/
-[psf]: https://www.python.org/psf/
+[psf]: https://www.python.org/psf-landing/
 [python docs]: https://docs.python.org/3.13/
 [python faqs]: https://docs.python.org/3.13/faq/index.html
 [python for beginners]: https://www.python.org/about/gettingstarted/
@@ -61,4 +61,4 @@ Complete documentation for the current release of Python (3.13.x) can be found a
 [significant indentation]: https://docs.python.org/3.13/reference/lexical_analysis.html#indentation
 [the zen of python]: https://www.python.org/dev/peps/pep-0020/
 [type hints]: https://docs.python.org/3/library/typing.html
-[what is pythonic]: https://blog.startifact.com/posts/older/what-is-pythonic.html
+[what is pythonic]: https://blog.startifact.com/posts/what-is-pythonic/
