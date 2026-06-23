@@ -19,6 +19,7 @@ For more information, see the performance article for this exercise.
 
 By adding a day to February 28th for a given year, you can see if the new day falls on the 29th of February or the 1st of March.
 If it is February 29th, then the function returns `True` for the year being a leap year.
+The exact steps are as follows:
 
 - A new [`datetime`][datetime] object is created for February 28th of the year.
 - A [`timedelta`][timedelta] of one day is added to that `datetime`.
