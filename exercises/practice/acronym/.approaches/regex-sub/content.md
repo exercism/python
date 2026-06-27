@@ -47,7 +47,7 @@ Alternatives are seperated with the pipe (`|`) symbol:
 
 
 1. `(?<!_)` is a [negative lookbehind][negative lookbehind], which ensures that `_` followed by letter characters (_see the pattern explanation below_) is **not** matched (_for example, `"_none"` is **not** matched, but `" _"` with a preceding space **is** matched_).
-2. `\B[\w']+`, which starts searching at a [non-word boundary][re-non-word boundary], looks for any character that is a letter, number, underscore, or apostrophe.
+2. `\B[\w']+`, which starts searching at a [non-word boundary][re-non-word boundary], looks for any character that is an ASCII letter, number, underscore, or apostrophe.
     The `+` operator is a 'greedy' modifier that matches a character in the previous group one or more (unlimited) times.
     This means that this expression will match any collection or repeat of alphanumeric characters (_plus `_` and `'`_), but will not match anything else.
 3. `[ ,\-_]` matches any exactly one space, comma, hyphen, or underscore.
