@@ -3,4 +3,4 @@ import re
 def abbreviate(phrase):
     removed = re.findall(r"[a-zA-Z']+", phrase)
 
-    return ''.join(word[0] for word in removed).upper()
+    return "".join(word[0] for word in removed).upper()

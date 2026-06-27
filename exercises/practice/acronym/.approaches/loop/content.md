@@ -1,10 +1,10 @@
-# Scrub with `replace()` and join via `for` loop
+# Clean with `replace()` and join via `for` loop
 
 
 ```python
 def abbreviate(to_abbreviate):
-    phrase = to_abbreviate.replace('-', ' ').replace('_', ' ').upper().split()
-    acronym = ''
+    phrase = to_abbreviate.replace("-", " ").replace("_", " ").upper().split()
+    acronym = ""
     
     for word in phrase:
         acronym += word[0]
@@ -13,7 +13,7 @@ def abbreviate(to_abbreviate):
 ```
 
 
--  This approach begins by using  [`str.replace()`][str-replace] to "scrub" (_remove_) non-letter characters such as `'`,`-`,`_`, and white space from `to_abbreviate`.
+- This approach begins by using [`str.replace()`][str-replace] to remove non-letter characters such as `'`, `-`, `_`, and whitespace from `to_abbreviate`.
 - The phrase is then upper-cased by calling [`str.upper()`][str-upper],
 - Finally, the phrase is turned into a `list` of words by calling [`str.split()`][str-split].
 
@@ -28,9 +28,9 @@ When the loop is complete, `acronym` is returned from the function.
 
 
 ~~~~exercism/note
-`re.findall()` or `re.finditer()` can also be used to "scrub" `to_abbreviate`.
+`re.findall()` or `re.finditer()` can also be used to "clean" `to_abbreviate`.
 These two methods from the `re` module will return a `list` or a lazy `iterator` of results, respectively.
-As of this writing, both of these methods benchmark slower than using `str.replace()` for scrubbing.
+As of this writing, both of these methods benchmark slower than using `str.replace()` for cleaning.
 ~~~~
 
 [chaining]: https://pyneng.readthedocs.io/en/latest/book/04_data_structures/method_chaining.html
