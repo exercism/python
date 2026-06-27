@@ -27,7 +27,7 @@ As of this writing, both of these methods benchmark slower than using `str.repla
 A [`list comprehension`][list comprehension] is then used to iterate through the phrase and select the first letters of each word via [`bracket notation`][subscript notation].
 This comprehension is passed into [`str.join()`][str-join], which unpacks the `list` of first letters and joins them together using an empty string — the acronym.
 Other "separator" strings besides an empty string can be used with `str.join()` — see [concept:python/string-methods]() for some additional examples.
-Since the comprehension and `join()` are fairly succinct, they are put directly on the `return` line rather than assigning and returning an intermediate variable for the acronym.
+Since the comprehension and `join()` are fairly succinct, they are put directly on the `return` line, rather than assigning and returning an intermediate variable for the acronym.
 
 
 The weakness of this solution is that it is taking up extra space with the `list comprehension`, which is creating and saving a `list` in memory — only to have that list immediately unpacked by the `str.join()` method.

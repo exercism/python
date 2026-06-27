@@ -38,10 +38,10 @@ The application of the function travels from left to right, so that the iterable
 
 Using code from the example above, `reduce(lambda start, word: start + word[0], ["GNU", "IMAGE", "MANIPULATION", "PROGRAM"])` would calculate `((("GNU"[0] + "IMAGE"[0]) + "MANIPULATION"[0]) + "PROGRAM"[0])`, or `GIMP`.
 The left argument, `start`, is the _accumulated value_ and the right argument, `word`, is the value from the iterable that is used to update the accumulated 'total'.
-The optional 'initializer' value `""` is used here, and is placed ahead/before the items of the iterable in the calculation, and serves as a default if the iterable that is passed is empty.
+The optional 'initializer' value `""` is used here, and is placed before the items of the iterable in the calculation, and serves as a default if the iterable that is passed is empty.
 
 
-Since using `reduce()` is fairly succinct, it is put directly on the `return` line to produce the acronym rather than assigning and returning an intermediate variable.
+Since using `reduce()` is fairly succinct, it is put directly on the `return` line to produce the acronym, rather than assigning and returning an intermediate variable.
 
 
 In benchmarks, this solution performed about as well as both the `loops` and the `list-comprehension` solutions.

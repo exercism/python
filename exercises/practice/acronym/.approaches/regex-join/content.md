@@ -54,7 +54,7 @@ This means that `re.finditer()` produces matches _on demand_ instead of saving t
 
 The regular expression `r[a-zA-Z']+` in the code example looks for any single character in the range `a-z` lowercase and `A-Z` uppercase, plus the `'` (_apostrophe_) character.
 The `+` operator is a 'greedy' modifier that matches the previous range one to unlimited times.
-This means that the expression will match any collection or repeat of letters (_word_), but will omit matching on any sort of space or 'non-letter' character, such as `\t`, `\n`, ` `, `_`, or `-`.
+This means that the expression will match any collection or repeat of letters (_a word_), but will not match any sort of space or 'non-letter' character, such as a tab, space, hyphen, or underscore.
 
 For example, in `Complementary metal-oxide semiconductor`, the regex will match `Complementary`, `metal`, `oxide`, and `semiconductor`.
 The regex will not match on ` ` or `-`.
@@ -78,9 +78,9 @@ This generator expression is consumed by [`str.join()`][str-join], which joins t
 Other "separator" strings can be used with `str.join()` — see [concept:python/string-methods]() for some additional examples.
 
 
-Finally, the result of `.join()` is capitalized using the [chained][chaining] [`.upper()`][str-upper].
-Alternatively, `.upper()` can be used on `to_abbreviate` within `findall()`/`finditer()`, to uppercase the input before cleaning.
-Since the generator expression + join + upper is fairly succinct, they can be placed directly on the `return` line rather than assigning and returning an intermediate variable for the acronym.
+Finally, the result of `.join()` is capitalized using the [chained][chaining] [`str.upper()`][str-upper].
+Alternatively, `str.upper()` can be used on `to_abbreviate` within `findall()`/`finditer()`, to uppercase the input before cleaning.
+Since the solution is fairly succinct, it can be condensed onto the `return` line, rather than assigning and returning an intermediate variable for the acronym.
 
 
 This approach was less performant in benchmarks than those using `loop`, `map`, `list-comprehension`, and `reduce`.

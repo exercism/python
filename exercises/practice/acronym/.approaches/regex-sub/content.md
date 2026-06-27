@@ -16,7 +16,7 @@ def abbreviate_regex_sub(to_abbreviate):
     return re.sub(r"(?<!_)\B[\w']+|[ ,\-_]", "", to_abbreviate.upper())
 ```
 
-This approach begins by using the [`re.sub()`][re-sub] method from the [`re` module][re-module] to remove unwanted characters such as `,`, `-`, `_`, whitespace, and all but the first letters of each word from `to_abbreviate`.
+This approach begins by using the [`re.sub()`][re-sub] method from the [`re` module][re-module] to remove unwanted characters such as spaces, commas, hyphens, underscores, and all but the first letters of each word from `to_abbreviate`.
 Python's `re` module provides support for [regular expressions][regular expressions] within the language, and has many useful methods for searching, parsing, and modifying text.
 
 
@@ -28,7 +28,7 @@ While it is a fun experiment to see if the entire problem can be more or less so
 This approach was one of the slowest solutions in benchmarking, taking 652 steps in the regex engine to find and replace 82 matches.
 
 
-A more performant method of cleaning would be to use [`re.findall()`][re-findall] or [`re.finditer()`][re-finditer] to clean the phrase of unwanted characters, and then process the results with a `list-comprehension` or `loop` to extract the first letters of words.
+A more performant method of cleaning would be to use [`re.findall()`][re-findall] or [`re.finditer()`][re-finditer] to clean `to_abbreviate` of unwanted characters, and then process the results with a `list-comprehension` or `loop` to extract the first letters of words.
 `to_abbreviate.replace("-", " ").replace("_", " ").upper().split()` can also be used, and is even more performant here for cleaning test inputs.
 
 
@@ -46,21 +46,21 @@ For convenience and reuse, the regex is compiled using [`re.compile()`][re-compi
 Alternatives are seperated with the pipe (`|`) symbol:
 
 
-1. `(?<!_)` is a [negative lookbehind][negative lookbehind], which ensures that `_` followed by letter characters (_see the pattern explanation below_) is **not** matched (_for example, `_none` is **not** matched, but ` _` with a preceding space **is** matched_).
-2. `\B[\w']+`, which starts searching at a [non-word boundary][re-non-word boundary], looks for any character in the group `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_'`.
-The `+` operator is a 'greedy' modifier that matches a character in the previous group one to unlimited times.
-This means that this expression will match any collection or repeat of the letters (_plus `'`_), but will not match on anything else.
-3. `[ ,\-_]` matches any of the characters ` -_,` (_space, hyphen, underscore, comma_) once.
+1. `(?<!_)` is a [negative lookbehind][negative lookbehind], which ensures that `_` followed by letter characters (_see the pattern explanation below_) is **not** matched (_for example, `"_none"` is **not** matched, but `" _"` with a preceding space **is** matched_).
+2. `\B[\w']+`, which starts searching at a [non-word boundary][re-non-word boundary], looks for any character that is a letter, number, underscore, or apostrophe.
+    The `+` operator is a 'greedy' modifier that matches a character in the previous group one or more (unlimited) times.
+    This means that this expression will match any collection or repeat of alphanumeric characters (_plus `_` and `'`_), but will not match anything else.
+3. `[ ,\-_]` matches any exactly one space, comma, hyphen, or underscore.
 
 
-Because these matches are used in the `re.sub()` method, an empty string is _substituted_ — so the matches are _removed_ from the result.
+Because these matches are used in the `re.sub()` method, each match is _substituted_ with an empty string — so the matches are _removed_ from the result.
 
 
-As an example, for the input phrase `The Road _Not_ Taken`, the regex will match `he`, ` `, `oad`, ` `, `-`, `ot`, `-`, ` `, and `aken`, replacing each match with "".
-The result is the string `TRNT`.
+As an example, for the input phrase `"The Road _Not_ Taken"`, the regex will match `"he"`, `" "`, `"oad"`, `" "`, `"_"`, `"ot_"`, `" "`, and `"aken"`, replacing each match with `""`.
+The result is the string `"TRNT"`.
 
 
-To ensure that all results are capitalized for any input, the approach then [chains][chaining] [`.upper()`][str-upper] to `re.sub()` on the `return` line to produce the final acronym.
+To ensure that all results are capitalized for any input, the approach then [chains][chaining] [`str.upper()`][str-upper] to `re.sub()` on the `return` line to produce the final acronym.
 
 To play with this regex and see a more in-depth explanation, you can use it on [regex101][regex101].
 

@@ -30,15 +30,15 @@ Once the phrase is cleaned and turned into a word `list`, the acronym is created
 The application of the function travels from left to right, and function results are produced as needed.
 
 
-Using code from the example above, `map(lambda word: word[0], ["GNU", "IMAGE", "MANIPULATION", "PROGRAM"])` would calculate `"GNU"[0], "IMAGE"[0], "MANIPULATION"[0]), "PROGRAM"[0]` in order as a stream of data.
+Using code from the example above, `map(lambda word: word[0], ["GNU", "IMAGE", "MANIPULATION", "PROGRAM"])` would calculate `"GNU"[0], "IMAGE"[0], "MANIPULATION"[0], "PROGRAM"[0]` in order as a stream of data.
 `word[0]` is the function, which extracts the letter at index zero for every word in the phrase list.
 This stream of data can then be 'consumed' — either in a `loop`, or by being 'unpacked' by another function or process.
-Here, the `iterator` from `map()` is immediately consumed/unpacked by [`join()`][str-join], which glues the results together with an empty string to produce the acronym.
+Here, the `iterator` from `map()` is immediately consumed/unpacked by [`str.join()`][str-join], which glues the results together with an empty string to produce the acronym.
 
 
-Since using `join()` with `map()` is fairly succinct, the combination is put directly on the `return` line to produce the acronym rather than assigning and returning an intermediate variable.
+Since using `join()` with `map()` is fairly succinct, the combination is put directly on the `return` line to produce the acronym, rather than assigning and returning an intermediate variable.
 
-In benchmarks, this solution performed about as well as the `loops`, `reduce` and `list-comprehension` solutions.
+In benchmarks, this solution performed about as well as the `loops`, `reduce` and `list-comprehension` approaches.
 
 [chaining]: https://pyneng.readthedocs.io/en/latest/book/04_data_structures/method_chaining.html
 [lazy iterator]: https://www.pythonmorsels.com/what-is-an-iterator/
