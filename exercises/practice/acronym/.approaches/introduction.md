@@ -167,9 +167,10 @@ Of these strategies, the `loop` approach is the fastest, although `list-comprehe
 All approaches are fairly succinct and readable, although the 'classic' loop is probably the easiest understood by those coming to Python from other programming languages.
 
 
-The least performant for the test data was using `generator-expression`s (both one and two), `re.findall`, and `re.sub`.
+The least performant for the test data was the `re.findall`, `re.sub`, and double `generator-expression` approaches.
 
-To compare performance of the approaches, take a look at the [Performance article][article-performance].
+To compare performance of the approaches, take a look at the [performance article][article-performance].
+
 
 [approach-double-generator-expression]: https://exercism.org/tracks/python/exercises/acronym/approaches/double-generator-expression
 [approach-functools-reduce]: https://exercism.org/tracks/python/exercises/acronym/approaches/functools-reduce
