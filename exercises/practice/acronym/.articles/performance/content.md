@@ -17,6 +17,7 @@ The [approaches page][approaches] lists many idiomatic approaches to this exerci
 
 We will also include a tenth approach, which is a variant of the `re.findall()` approach. This variant uses a regex to select the _first letters_ of each word, instead of the _entirety_ of each word.
 
+
 ## Benchmarks
 
 To benchmark these approaches, we wrote a [small benchmarking script][benchmark-application] using the [`timeit`][timeit] module along with the third party libraries [`numpy`][numpy] and [`pandas`][pandas].
@@ -24,7 +25,7 @@ To benchmark these approaches, we wrote a [small benchmarking script][benchmark-
 All approaches are `O(n)` — they require (_at minimum_) a loop through the entire input to create results, and the work scales in line with the length of the function input.
 That doesn't mean that all of these approaches take the _same amount of time to run_.
 Despite being `O(n)`, overhead such as number of function calls, module importing/loading, regex backtracking, generator tracking, string concatenation, and `lambda` evaluation can add significant time.
-Some of the slowest strategies (_mostly regex solutions_) are _**10 (or more) times times slower**_ than the fastest methods (_straight looping and list comprehensions_).
+Some of the slowest strategies (_mostly regex solutions_) are _**5 (or more) times times slower**_ than the fastest methods (_straight looping and list comprehensions_).
 
 Of these variants, the `loop` approach is by far the fastest (and easiest to read) for inputs under length 45.
 Above length 45, repeated string creation and concatenation via `+` starts to slow things down, and the `list-comprehension` approach becomes more efficient due to its loop optimizations and use of `str.join()`.
@@ -32,10 +33,10 @@ Above length 45, repeated string creation and concatenation via `+` starts to sl
 
 At the largest input sizes, `map()` and `generator expressions` become more efficient (_as does `functools.reduce()` for certain inputs_), as they are not saving intermediary results to memory in the same way `list comprehensions` or string concatenation do.
 
-The least efficient and least readable are the regex solutions.
+Among the least efficient and least readable are the regex solutions.
 While regex definitely has its place, the lack of readability and significant slowdown in this case become an issue.
 Of particular interest is the `re.sub()` vs `re.findall()` (_first letters_) solutions.
-Even though the `re.sub()` solution takes only 652 steps in the regex engine, `re.sub()` and its unpacking is slow enough that the 1766 steps for the first letters `re.findall()` solution is faster.
+Even though the `re.sub()` solution takes only 652 steps in the regex engine, `re.sub()` and its unpacking is slow enough that the 1766 steps for the first letters `re.findall()` solution is often faster.
 
 
 | **String Length >>>**                    |   Length: 13 |   Length: 14 |   Length: 19 |   Length: 20 |   Length: 25 |   Length: 30 |   Length: 35 |   Length: 39 |   Length: 42 |   Length: 45 |   Length: 60 |   Length: 63 |   Length: 74 |   Length: 78 |   Length: 93 |   Length: 108 |   Length: 120 |   Length: 140 |   Length: 150 |   Length: 200 |   Length: 210 |   Length: 225 |   Length: 260 |   Length: 310 |   Length: 360 |   Length: 400 |   Length: 2940 |
@@ -52,12 +53,13 @@ Even though the `re.sub()` solution takes only 652 steps in the regex engine, `r
 | two generator expressions                |     1.14e-06 |     1.12e-06 |     1.47e-06 |     1.49e-06 |     1.79e-06 |     2.09e-06 |     2.48e-06 |     2.54e-06 |     2.90e-06 |     2.85e-06 |     3.87e-06 |     3.92e-06 |     4.79e-06 |     4.88e-06 |     5.81e-06 |      6.92e-06 |      7.14e-06 |      8.99e-06 |      8.80e-06 |      1.24e-05 |      1.26e-05 |      1.41e-05 |      1.53e-05 |      1.83e-05 |      2.21e-05 |      2.25e-05 |       1.65e-04 |
 
 
-Keep in mind that all these approaches are very fast, and that [benchmarking at this granularity can be unstable, especially on modern CPUs][timeit-issue]. Note that there can also be [bias in benchmarking][biased-benchmarks].
+Keep in mind that all these approaches are very fast, and that [benchmarking at this granularity can be unstable, especially on modern CPUs][timeit-issue].
+Note that there can also be [bias in benchmarking][biased-benchmarks].
 
 Measurements were taken on an M3 Mac running MacOS Sonoma.
 Tests used `timeit.Timer.autorange()`, repeated 3 times.
 Time is reported in seconds taken per string after calculating the 'best of' time.
-The [timeit module][timeit] docs have more details, and [note.nkmk.me][note_nkmk_me] has a nice summary of methods.
+The [`timeit` module][timeit] docs have more details, and [note.nkmk.me][note_nkmk_me] has a nice summary of methods.
 
 [approaches]: https://exercism.org/tracks/python/exercises/acronym/dig_deeper
 [approach-double-generator-expression]: https://exercism.org/tracks/python/exercises/acronym/approaches/double-generator-expression

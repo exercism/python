@@ -3,26 +3,29 @@
 There are multiple Pythonic ways to solve the Acronym exercise.
 Among them are:
 
-- Using `str.replace()` to scrub the input, and:
+- Using `str.replace()` to clean the input, and:
+
   - joining with a `for loop` with string concatenation via the `+` operator.
   - joining via `str.join()`, passing a `list-comprehension` or `generator-expression`.
   - joining via `str.join()`, passing `map()`.
   - joining via `functools.reduce()`.
 
-- Using `re.findall()`/`re.finditer()` to scrub the input, and:
+- Using `re.findall()`/`re.finditer()` to clean the input, and:
+
   - joining via `str.join()`, passing a `generator-expression`.
-  - Using `re.sub()` for both cleaning and joining (_using "only" regex for almost everything_)`
+  - using `re.sub()` for both cleaning and joining (_using "only" regex for almost everything_)
 
 
 ## General Guidance
 
 The goal of the Acronym exercise is to collect the first letters of each word in the input phrase and return them as a single capitalized string (_the acronym_).
-The challenge is to efficiently identify and capitalize the first letters while removing or ignoring non-letter characters such as `'`,`-`,`_`, and white space.
+The challenge is to efficiently identify and capitalize the first letters while removing or ignoring non-letter characters such as `'`, `-`, `_`, and whitespace.
 
 
 There are two idiomatic strategies for non-letter character removal:
+
 - Python's built-in [`str.replace()`][str-replace].
-- The [`re`][re] module, (_regular expressions_).
+- The [`re`][re-module] module, (_regular expressions_).
 
 For all but the most complex scenarios, using `str.replace()` is generally more efficient than using a regular expression.
 
@@ -34,12 +37,12 @@ Some `regex` methods can avoid looping altogether, although they can become very
 Strings are _immutable_, so any method to produce an acronym will be creating and returning a new `str`.
 
 
-## Approach: scrub with `replace()` and join via `for` loop
+## Approach: Clean with `replace()` and join via `for` loop
 
 ```python
 def abbreviate(to_abbreviate):
-    phrase = to_abbreviate.replace('-', ' ').replace('_', ' ').upper().split()
-    acronym = ''
+    phrase = to_abbreviate.replace("-", " ").replace("_", " ").upper().split()
+    acronym = ""
     
     for word in phrase:
         acronym += word[0]
@@ -50,47 +53,46 @@ def abbreviate(to_abbreviate):
 For more information, take a look at the [loop approach][approach-loop].
 
 
-## Approach: scrub with `replace()` and join via `list comprehension` or `generator expression`
-
+## Approach: Clean with `replace()` and join via `list comprehension` or `generator expression`
 
 ```python
 def abbreviate(to_abbreviate):
-    phrase = to_abbreviate.replace('-', ' ').replace('_', ' ').upper().split()
+    phrase = to_abbreviate.replace("-", " ").replace("_", " ").upper().split()
     
-    return ''.join([word[0] for word in phrase])
+    return "".join([word[0] for word in phrase])
 
 ###OR###
 
 def abbreviate(to_abbreviate):
-    phrase = to_abbreviate.replace('-', ' ').replace('_', ' ').upper().split()
+    phrase = to_abbreviate.replace("-", " ").replace("_", " ").upper().split()
     
-    # Note the parenthesis instead of square brackets.
-    return ''.join((word[0] for word in phrase))
+    # Note the parentheses instead of square brackets.
+    return "".join((word[0] for word in phrase))
 ```
 
-For more information, check out the [list-comprehension][approach-list-comprehension] approach or the [generator-expression][approach-generator-expression] approach.
+For more information, check out the [list comprehension][approach-list-comprehension] approach or the [generator expression][approach-generator-expression] approach.
 
 
-## Approach: scrub with `replace()` and join via `map()`
+## Approach: Clean with `replace()` and join via `map()`
 
 ```python
 def abbreviate(to_abbreviate):
-    phrase = to_abbreviate.replace("_", " ").replace("-", " ").upper().split()
+    phrase = to_abbreviate.replace("-", " ").replace("_", " ").upper().split()
     
-    return ''.join(map(lambda word: word[0], phrase))
+    return "".join(map(lambda word: word[0], phrase))
 ```
 
-For more information, read the [map][approach-map-function] approach.
+For more information, read the [`map()`][approach-map-function] approach.
 
 
-## Approach: scrub with `replace()` and join via `functools.reduce()`
+## Approach: Clean with `replace()` and join via `functools.reduce()`
 
 ```python
 from functools import reduce
 
 
 def abbreviate(to_abbreviate):
-    phrase = to_abbreviate.replace("_", " ").replace("-", " ").upper().split()
+    phrase = to_abbreviate.replace("-", " ").replace("_", " ").upper().split()
     
     return reduce(lambda start, word: start + word[0], phrase, "")
 ```
@@ -98,7 +100,7 @@ def abbreviate(to_abbreviate):
 For more information, take a look at the [`functools.reduce()`][approach-functools-reduce] approach.
 
 
-## Approach: filter with `re.findall()` and join via `str.join()`
+## Approach: Clean with `re.findall()` and join via `str.join()`
 
 ```python
 import re
@@ -107,13 +109,13 @@ import re
 def abbreviate(to_abbreviate):
     removed = re.findall(r"[a-zA-Z']+", to_abbreviate)
     
-    return ''.join(word[0] for word in removed).upper()
+    return "".join(word[0] for word in removed).upper()
 ```
 
 For more information, take a look at the [regex-join][approach-regex-join] approach.
 
 
-## Approach: use `re.sub()`
+## Approach: Use `re.sub()`
 
 ```python
 import re
@@ -125,24 +127,24 @@ def abbreviate(to_abbreviate):
     return re.sub(pattern, "", to_abbreviate.upper())
 ```
 
-For more information, read the [regex-sub][approach-regex-sub] approach.
+For more information, read the [`re.sub()`][approach-regex-sub] approach.
 
 
-## Approach: use a `generator-expression` for both cleaning and joining
+## Approach: Use a `generator-expression` for both cleaning and joining
 
 ```python
 from string import ascii_letters
 
 
-VALID_CHARS = {' ', '-'} | set(ascii_letters)
+VALID_CHARS = {" ", "-"} | set(ascii_letters)
 
 
 def abbreviate(to_abbreviate):
-    to_abbreviate = ''.join(' ' if char == '-' else char
+    to_abbreviate = "".join(" " if char == "-" else char
                             for char in to_abbreviate
                             if char in VALID_CHARS)
 
-    return ''.join(word[0] for word in to_abbreviate.split()).upper()
+    return "".join(word[0] for word in to_abbreviate.split()).upper()
 ```
 
 For more information, take a look at the [double `generator-expression` approach][approach-double-generator-expression].
@@ -165,9 +167,10 @@ Of these strategies, the `loop` approach is the fastest, although `list-comprehe
 All approaches are fairly succinct and readable, although the 'classic' loop is probably the easiest understood by those coming to Python from other programming languages.
 
 
-The least performant for the test data was using `generator-expression`s (both one and two), `re.findall`, and `re.sub`.
+The least performant for the test data was the `re.findall`, `re.sub`, and double `generator-expression` approaches.
 
-To compare performance of the approaches, take a look at the [Performance article][article-performance].
+To compare performance of the approaches, take a look at the [performance article][article-performance].
+
 
 [approach-double-generator-expression]: https://exercism.org/tracks/python/exercises/acronym/approaches/double-generator-expression
 [approach-functools-reduce]: https://exercism.org/tracks/python/exercises/acronym/approaches/functools-reduce
@@ -178,3 +181,6 @@ To compare performance of the approaches, take a look at the [Performance articl
 [approach-regex-join]: https://exercism.org/tracks/python/exercises/acronym/approaches/regex-join
 [approach-regex-sub]: https://exercism.org/tracks/python/exercises/acronym/approaches/regex-sub
 [article-performance]: https://exercism.org/tracks/python/exercises/acronym/articles/performance
+[re-module]: https://docs.python.org/3/library/re.html
+[str-replace]: https://docs.python.org/3/library/stdtypes.html#str.replace
+[str-split]: https://docs.python.org/3/library/stdtypes.html#str.split

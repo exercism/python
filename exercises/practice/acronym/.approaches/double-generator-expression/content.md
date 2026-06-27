@@ -4,15 +4,15 @@
 from string import ascii_letters
 
 
-VALID_CHARS = {' ', '-'} | set(ascii_letters)
+VALID_CHARS = {" ", "-"} | set(ascii_letters)
 
 
 def abbreviate(to_abbreviate):
-    to_abbreviate = ''.join(' ' if char == '-' else char
+    to_abbreviate = "".join(" " if char == "-" else char
                             for char in to_abbreviate
                             if char in VALID_CHARS)
 
-    return ''.join(word[0] for word in to_abbreviate.split()).upper()
+    return "".join(word[0] for word in to_abbreviate.split()).upper()
 ```
 
 One way someone might try to increase performce is to use a single [generator expression][generator-expression] to clean the input, rather than using multiple calls to [`str.replace()`][str-replace].
