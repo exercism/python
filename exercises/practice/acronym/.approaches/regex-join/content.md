@@ -8,9 +8,9 @@ import re
 
 def abbreviate(to_abbreviate):
     # Capitalize the input before cleaning.
-    removed = re.findall(r"[a-zA-Z']+", to_abbreviate.upper())
+    cleaned = re.findall(r"[a-zA-Z']+", to_abbreviate.upper())
     
-    return "".join(word[0] for word in removed)
+    return "".join(word[0] for word in cleaned)
 
 #OR#
 
@@ -23,11 +23,11 @@ def abbreviate(to_abbreviate):
 
 def abbreviate(to_abbreviate):
     # Capitalize the input before cleaning.
-    removed = re.finditer(r"[a-zA-Z']+", to_abbreviate.upper())
+    cleaned = re.finditer(r"[a-zA-Z']+", to_abbreviate.upper())
 
     # word.group(0)[0] (first letter of Matched word) can also be written as
     # word[0][0], with the first bracketed number referring to Match group 0.
-    return "".join(word.group(0)[0] for word in removed)
+    return "".join(word.group(0)[0] for word in cleaned)
 
 #OR#
 
@@ -39,7 +39,8 @@ def abbreviate(to_abbreviate):
 ```
 
 
-This approach begins by using [`re.findall()`][re-findall] method from the [`re` module][re-module] to remove non-letter characters such as `'`, `-`, `_`, and whitespace from `to_abbreviate`.
+This approach begins by using the [`re.findall()`][re-findall] method from the [`re` module][re-module] to clean `to_abbreviate` and split it into words.
+
 Python's `re` module provides support for [regular expressions][regular expressions] within the language, and has many useful methods for searching, parsing, and modifying text.
 Regular expression matching starts at the left-hand side of the input and travels toward the right.
 
@@ -47,8 +48,8 @@ Regular expression matching starts at the left-hand side of the input and travel
 `re.findall()` searches text for all matching patterns, returning results (_including 'empty' matches_) in a `list` of strings.
 
 
-The [`re.finditer()`][re-finditer] method works in the same fashion as `re.findall()`, but returns results as a _[lazy iterator][lazy iterator]_ over [Match objects][match objects].
-This means that `re.finditer()` produces matches _on demand_ instead of saving them to memory, but needs to have both the iterator and the Match objects _unpacked_.
+The [`re.finditer()`][re-finditer] method works in the same fashion as `re.findall()`, but returns results as a _[lazy iterator][lazy iterator]_ over [`Match` objects][match objects].
+This means that `re.finditer()` produces matches _on demand_ instead of saving them to memory, but needs to have both the iterator and the `Match` objects _unpacked_.
 
 
 The regular expression `r[a-zA-Z']+` in the code example looks for any single character in the range `a-z` lowercase and `A-Z` uppercase, plus the `'` (_apostrophe_) character.
@@ -61,7 +62,7 @@ The result returned by `findall()` will then be `["Complementary", "metal", "oxi
 
 
 ~~~~exercism/note
-`to_abbreviate.replace("_", " ").replace("-", " ").upper().split()` can also be used to clean `to_abbreviate` and turn the results into a `list`.
+`to_abbreviate.replace("-", " ").replace("_", " ").upper().split()` can also be used to clean `to_abbreviate` and turn the results into a `list`.
 The `.replace()` approach benchmarked faster than using `re.findall()`/`re.finditer()` to clean, most likely due to overhead in importing the `re` module and in the [backtracking][backtracking] behavior of regex searching and matching.
 
 [backtracking]: https://stackoverflow.com/questions/9011592/in-regular-expressions-what-is-a-backtracking-back-referencing

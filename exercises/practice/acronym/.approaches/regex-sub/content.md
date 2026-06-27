@@ -16,7 +16,7 @@ def abbreviate_regex_sub(to_abbreviate):
     return re.sub(r"(?<!_)\B[\w']+|[ ,\-_]", "", to_abbreviate.upper())
 ```
 
-This approach begins by using the [`re.sub()`][re-sub] method from the [`re` module][re-module] to remove unwanted characters such as `'`, `-`, `_`, whitespace, and all but the first letters of each word from `to_abbreviate`.
+This approach begins by using the [`re.sub()`][re-sub] method from the [`re` module][re-module] to remove unwanted characters such as `,`, `-`, `_`, whitespace, and all but the first letters of each word from `to_abbreviate`.
 Python's `re` module provides support for [regular expressions][regular expressions] within the language, and has many useful methods for searching, parsing, and modifying text.
 
 
@@ -25,20 +25,20 @@ Regular expression matching starts at the left-hand side of the input and travel
 
 ~~~~exercism/caution
 While it is a fun experiment to see if the entire problem can be more or less solved with a single regex, the excessive [backtracking][backtracking] used in this solution slows down performance considerably.
-This solution tested the slowest of all solutions during benchmarking, taking 652 steps in the regex engine to find and replace 82 matches.
+This approach was one of the slowest solutions in benchmarking, taking 652 steps in the regex engine to find and replace 82 matches.
 
 
 A more performant method of cleaning would be to use [`re.findall()`][re-findall] or [`re.finditer()`][re-finditer] to clean the phrase of unwanted characters, and then process the results with a `list-comprehension` or `loop` to extract the first letters of words.
-`to_abbreviate.replace("_", " ").replace("-", " ").upper().split()` can also be used, and is even more performant here for cleaning test inputs.
+`to_abbreviate.replace("-", " ").replace("_", " ").upper().split()` can also be used, and is even more performant here for cleaning test inputs.
 
 
-However, if nothing but a regular expression will do, the third-party [regex][regex] module provides more tools for lookarounds, recursion, partial matches, and nested sets.
+However, if nothing but a regular expression will do, the third-party [`regex` module][regex-module] provides more tools for lookarounds, recursion, partial matches, and nested sets.
 Experimenting with that third-party library on your local environment (_the exercism Python track does not support third-party libraries_) could aid in optimizing this complicated regular expression and help with extracting first letters to form acronyms.
 
 [backtracking]: https://stackoverflow.com/questions/9011592/in-regular-expressions-what-is-a-backtracking-back-referencing
 [re-findall]: https://docs.python.org/3/library/re.html#re.findall
 [re-finditer]: https://docs.python.org/3/library/re.html#re.finditer
-[regex]: https://github.com/mrabarnett/mrab-regex
+[regex-module]: https://github.com/mrabarnett/mrab-regex
 ~~~~
 
 The regular expression `(?<!_)\B[\w']+|[ ,\-_]` in the code example above has two alternatives for matching.

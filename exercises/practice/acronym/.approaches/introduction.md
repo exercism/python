@@ -77,7 +77,7 @@ For more information, check out the [list comprehension][approach-list-comprehen
 
 ```python
 def abbreviate(to_abbreviate):
-    phrase = to_abbreviate.replace("_", " ").replace("-", " ").upper().split()
+    phrase = to_abbreviate.replace("-", " ").replace("_", " ").upper().split()
     
     return "".join(map(lambda word: word[0], phrase))
 ```
@@ -92,7 +92,7 @@ from functools import reduce
 
 
 def abbreviate(to_abbreviate):
-    phrase = to_abbreviate.replace("_", " ").replace("-", " ").upper().split()
+    phrase = to_abbreviate.replace("-", " ").replace("_", " ").upper().split()
     
     return reduce(lambda start, word: start + word[0], phrase, "")
 ```

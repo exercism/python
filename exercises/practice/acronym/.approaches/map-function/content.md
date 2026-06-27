@@ -3,23 +3,25 @@
 
 ```python
 def abbreviate(to_abbreviate):
-    phrase = to_abbreviate.replace("_", " ").replace("-", " ").upper().split()
+    phrase = to_abbreviate.replace("-", " ").replace("_", " ").upper().split()
     
     return "".join(map(lambda word: word[0], phrase))
 ```
 
-- This approach begins by using [`str.replace()`][str-replace] to remove non-letter characters such as `'`, `-`, `_`, and whitespace from `to_abbreviate`.
-- The phrase is then upper-cased by calling [`str.upper()`][str-upper],
+- This approach begins by using [`str.replace()`][str-replace] on `to_abbreviate` to convert non-letter characters such as `-` and `_` into spaces.
+- The phrase is then upper-cased by calling [`str.upper()`][str-upper].
 - Finally, the phrase is turned into a `list` of words by calling [`str.split()`][str-split].
 
-The three methods above are all [chained][chaining] together, with the output of one method serving as the input to the next method in the "chain".
-This works because both `replace()` and `upper()` return strings, and both `upper()` and `split()` take strings as arguments.
-However, if `split()` were called first, `replace()` and `upper()` would fail, since neither method will take a `list` as input.
+The three methods above are all [chained][chaining] together, with each method operating on the output of the method before it in the "chain".
+This works because both `replace()` and `upper()` _operate on_ strings (as they are `str` methods) and _return_ strings.
+If `split()` was called first, `replace()` and `upper()` would fail, since they cannot operate on the `list` returned by `split()`.
 
 ~~~~exercism/note
-`re.findall()` or `re.finditer()` can also be used to "clean" `to_abbreviate`.
-These two methods from the `re` module will return a `list` or a lazy `iterator` of results, respectively.
+`re.findall()` or `re.finditer()` can also be used to clean `to_abbreviate`.
+These two methods from the [`re` module][re-module] will return a `list` or a lazy `iterator` of results, respectively.
 As of this writing, both of these methods benchmark slower than using `str.replace()` for cleaning.
+
+[re-module]: https://docs.python.org/3/library/re.html
 ~~~~
 
 
