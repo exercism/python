@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "meatball133",
+    "BethanyG"
+  ],
+  "files": {
+    "solution": [
+      "ice_cream_stand.py"
+    ],
+    "test": [
+      "ice_cream_stand_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
+  },
+  "icon": "custom-set",
+  "blurb": "Learn about itertools while helping the local ice cream stand"
+}
