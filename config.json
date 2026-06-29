@@ -225,6 +225,14 @@
           "loops"
         ],
         "status": "wip"
+      },
+      {
+        "slug": "booking-up-for-beauty",
+        "name": "Booking Up For Beauty",
+        "uuid": "287abffa-7989-4e84-9993-b3aae3a0fba3",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "wip"
       }
     ],
     "practice": [
