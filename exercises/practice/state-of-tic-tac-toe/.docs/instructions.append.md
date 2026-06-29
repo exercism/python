@@ -16,7 +16,7 @@ Your code is also expected to throw a `ValueError` if one player is assessed as 
 To raise a `ValueError` with a message, write the message as an argument to the `exception` type:
 
 ```python
-# Example when player X goes before player O.
+# Example when player O goes before player X.
 raise ValueError("Wrong turn order: O started")
 
 # Example when player X goes twice.
