@@ -368,13 +368,13 @@ Implementing Track-specific Practice Exercises is similar to implementing a `can
 <p><b>For Individual Exercises</b><p><img id="regenerating-individual-exercise-documents" align="left" width="45" height="45" src="https://github.com/exercism/website-icons/blob/main/exercises/doubly-linked-list.svg"></p>
 
 ```bash
-configlet generate <path/to/track> --spec-path path/to/problem/specifications --only example-exercise
+configlet sync --docs --filepaths --metadata --exercise example-exercise -u -y --spec-path path/to/problem/specifications
 ```
 
 <p><b>For all Practice Exercises</b><p><img id="regenerating-all-practice-exercise-documents" align="left" width="45" height="45" src="https://github.com/exercism/website-icons/blob/main/exercises/doubly-linked-list.svg"></p>
 
 ```bash
-configlet generate <path/to/track> --spec-path path/to/problem/specifications
+configlet sync --docs --filepaths --metadata -u -y --spec-path path/to/problem/specifications
 ```
 
 
