@@ -7,7 +7,7 @@ try:
 except ImportError as import_fail:
     # pylint: disable=raise-missing-from
     raise ImportError("\n\nMISSING CLASS --> We tried to import the 'Alien' class from "
-                      "your classes.py file, but could not find it." 
+                      "your classes.py file, but could not find it."
                       "Did you misname or forget to create it?") from None
 
 try:
@@ -144,7 +144,6 @@ class ClassesTest(unittest.TestCase):
         """Test class attribute/variables are identical across instances."""
 
         alien_one, alien_two = Alien(0, 2), Alien(-6, -1)
-        Alien.health = 6
 
         created_error_message = ('Created two new Aliens and requested the '
                                  'total_aliens_created attribute for each one. '
@@ -164,6 +163,22 @@ class ClassesTest(unittest.TestCase):
         self.assertEqual(alien_two.health,
                          alien_one.health,
                          msg=health_error_message)
+
+    @pytest.mark.task(taskno=6)
+    def test_alien_health_is_instance_variable(self):
+        """Test the health is an instance variable and not a class variable."""
+
+        alien_one, alien_two = Alien(0, 2), Alien(-6, -1)
+        alien_one.hit()
+
+        error_message = ('Created two new Aliens and called hit() on one of them. '
+                         f'Received {alien_one.health, alien_two.health} for health, '
+                         'but the tests expect them to have different health as '
+                         'only one was hit. Are you using a class variable for the health?')
+
+        self.assertNotEqual(alien_two.health,
+                         alien_one.health,
+                         msg=error_message)
 
     @pytest.mark.task(taskno=6)
     def test_alien_total_aliens_created(self):
