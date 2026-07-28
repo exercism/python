@@ -144,7 +144,6 @@ class ClassesTest(unittest.TestCase):
         """Test class attribute/variables are identical across instances."""
 
         alien_one, alien_two = Alien(0, 2), Alien(-6, -1)
-        Alien.health = 6
 
         created_error_message = ('Created two new Aliens and requested the '
                                  'total_aliens_created attribute for each one. '
