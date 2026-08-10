@@ -98,7 +98,7 @@ class ClassesTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=3)
     def test_alien_is_alive_method(self):
-    	"""Test the is_alive() method returns the expected values after a number of hits."""
+        """Test the is_alive() method returns the expected values after a number of hits."""
         alien = Alien(0, 1)
 
         alive_error = ('Created a new Alien and called hit(). '
@@ -118,7 +118,7 @@ class ClassesTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=4)
     def test_alien_teleport_method(self):
-    	"""Test the teleport method updates the alien's coordinates."""
+        """Test the teleport method updates the alien's coordinates."""
         alien = Alien(0, 0)
         alien.teleport(-1, -4)
 
@@ -131,7 +131,7 @@ class ClassesTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=5)
     def test_alien_collision_detection_method(self):
-    	"""Test the collision_detection() method can be called and returns None."""
+        """Test the collision_detection() method can be called and returns None."""
         alien = Alien(7, 3)
         error_message = ('Created a new Alien at (7,3) and called '
                          'alien.collision_detection(Alien(7, 2)). '
