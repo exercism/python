@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/etl/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2026-02-19
 
 import unittest
 
@@ -10,6 +10,7 @@ from etl import (
 
 
 class EtlTest(unittest.TestCase):
+
     def test_single_letter(self):
         legacy_data = {1: ["A"]}
         data = {"a": 1}

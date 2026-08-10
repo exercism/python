@@ -9,7 +9,7 @@
 
 - You need a [for loop][for-loop] to iterate the list of items, then insert each item in the dictionary if missing and increment the item count using the dictionary accessor.
 - You can use [`dict.setdefault`][dict setdefault] to make sure the value is set before incrementing the count of the item.
-- This function should [return][return-keyword] a dict].
+- This function should [return][return-keyword] a dict.
 
 ## 2. Add items from a list to an existing dictionary
 

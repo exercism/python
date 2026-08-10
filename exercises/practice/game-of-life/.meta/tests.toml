@@ -1,0 +1,34 @@
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
+
+[ae86ea7d-bd07-4357-90b3-ac7d256bd5c5]
+description = "empty matrix"
+
+[4ea5ccb7-7b73-4281-954a-bed1b0f139a5]
+description = "live cells with zero live neighbors die"
+
+[df245adc-14ff-4f9c-b2ae-f465ef5321b2]
+description = "live cells with only one live neighbor die"
+
+[2a713b56-283c-48c8-adae-1d21306c80ae]
+description = "live cells with two live neighbors stay alive"
+
+[86d5c5a5-ab7b-41a1-8907-c9b3fc5e9dae]
+description = "live cells with three live neighbors stay alive"
+
+[015f60ac-39d8-4c6c-8328-57f334fc9f89]
+description = "dead cells with three live neighbors become alive"
+
+[2ee69c00-9d41-4b8b-89da-5832e735ccf1]
+description = "live cells with four or more neighbors die"
+
+[a79b42be-ed6c-4e27-9206-43da08697ef6]
+description = "bigger matrix"

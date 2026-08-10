@@ -34,25 +34,25 @@ The tolerance band will have one of these values:
 
 The four-band resistor is built up like this:
 
-| Band_1  | Band_2  | Band_3     | band_4    |
+| Band_1  | Band_2  | Band_3     | Band_4    |
 | ------- | ------- | ---------- | --------- |
 | Value_1 | Value_2 | Multiplier | Tolerance |
 
 Examples:
 
 - orange-orange-brown-green would be `330` ohms with a `±0.5%` tolerance.
-- orange-orange-red-grey would be `3300` ohms with `±0.05%` tolerance.
+- orange-orange-red-grey would be `3300` ohms with a `±0.05%` tolerance.
 
 The difference between a four and five-band resistor is that the five-band resistor has an extra band to indicate a more precise value.
 
-| Band_1  | Band_2  | Band_3  | Band_4     | band_5    |
+| Band_1  | Band_2  | Band_3  | Band_4     | Band_5    |
 | ------- | ------- | ------- | ---------- | --------- |
 | Value_1 | Value_2 | Value_3 | Multiplier | Tolerance |
 
 Examples:
 
 - orange-orange-orange-black-green would be `333` ohms with a `±0.5%` tolerance.
-- orange-red-orange-blue-violet would be `323M` ohms with a `±0.10` tolerance.
+- orange-red-orange-blue-violet would be `323 million` ohms with a `±0.1%` tolerance.
 
 There are also one band resistors.
 One band resistors only have the color black with a value of 0.
@@ -60,20 +60,20 @@ One band resistors only have the color black with a value of 0.
 
 Your program should translate an input `list` of resistor band colors into a label:
 
-"... ohms ...%"
+"... ohms ±...%"
 
 So an input `list` of `["orange", "orange", "black", "green"]` should return:
 
 "33 ohms ±0.5%"
 
-When there are more than a thousand ohms, we say "kiloohms".
- That's similar to saying "kilometer" for 1000 meters, and "kilograms" for 1000 grams.
+When there are thousands of ohms, we say "kiloohms".
+That's similar to saying "kilometer" for 1000 meters, and "kilograms" for 1000 grams.
 
 So an input `list` of `["orange", "orange", "orange", "grey"]` should return:
 
 "33 kiloohms ±0.05%"
 
-When there are more than a million ohms, we say "megaohms".
+When there are millions of ohms, we say "megaohms".
 
 So an input `list` of `["orange", "orange", "blue", "red"]` should return:
 

@@ -4,7 +4,7 @@ The `dict` class in Python provides many useful [methods][dict-methods] for work
 Some were introduced in the concept for `dicts`.
 Here we cover a few more - along with some techniques for iterating through and manipulating dictionaries.
 
-### Use `setdefault()` for Error-Free Insertion
+## Use `setdefault()` for Error-Free Insertion
 
 The dictionary concept previously covered that `.get(key, <default value>)` returns an existing `value` or the `default value` if a `key` is not found in a dictionary, thereby avoiding a `KeyError`.
 This works well in situations where you would rather not have extra error handling but cannot trust that a looked-for `key` will be present.
@@ -171,7 +171,7 @@ Where keys in the two dictionaries _overlap_, the `value` in `dict_one` will be 
   'Green Treeline': '#478559', 'Purple baseline': '#161748'}
 ```
 
-## Merge or Update Dictionaries Via the Union (`|`) Operators
+## Merge or Update Dictionaries Using Union (`|` and `|=`) Operators
 
 Python 3.9 introduces a different means of merging `dicts`: the `union` operators.
 `dict_one | dict_two` will create a **new dictionary**, made up of the (`key`, `value`) pairs of `dict_one` and `dict_two`.

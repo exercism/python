@@ -49,15 +49,15 @@ For readability, line breaks can be used when there are many elements or nested 
 
 ```python
 >>> lots_of_entries = [
-      "Rose",
-      "Sunflower",
-      "Poppy",
-      "Pansy",
-      "Tulip",
-      "Fuchsia",
-      "Cyclamen",
-      "Lavender"
-   ]
+...    "Rose",
+...    "Sunflower",
+...    "Poppy",
+...    "Pansy",
+...    "Tulip",
+...    "Fuchsia",
+...    "Cyclamen",
+...    "Lavender"
+... ]
 
 >>> lots_of_entries
 ['Rose', 'Sunflower', 'Poppy', 'Pansy', 'Tulip', 'Fuchsia', 'Cyclamen', 'Lavender']
@@ -65,10 +65,10 @@ For readability, line breaks can be used when there are many elements or nested 
 
 # Each data structure is on its own line to help clarify what they are.
 >>> nested_data_structures = [
-      {"fish": "gold", "monkey": "brown", "parrot": "grey"},
-      ("fish", "mammal", "bird"),
-      ['water', 'jungle', 'sky']
-   ]
+...    {"fish": "gold", "monkey": "brown", "parrot": "grey"},
+...    ("fish", "mammal", "bird"),
+...    ['water', 'jungle', 'sky']
+... ]
 
 >>> nested_data_structures
 [{'fish': 'gold', 'monkey': 'brown', 'parrot': 'grey'}, ('fish', 'mammal', 'bird'), ['water', 'jungle', 'sky']]
@@ -174,7 +174,7 @@ Indexes can be from **`left`** --> **`right`** (_starting at zero_) or **`right`
 'Toast'
 ```
 
-A section of a list can be accessed via _slice notation_ (`<list>[start:stop]`).
+A section of a list can be accessed via _slice notation_ (`<list>[<start>:<stop>]`).
 A _slice_ is defined as an element sequence at position `index`, such that `start <= index < stop`.
 [_Slicing_][slice notation] returns a copy of the "sliced" items and does not modify the original `list`.
 
@@ -207,7 +207,7 @@ Lists supply an [_iterator_][iterator], and can be looped through/over in the sa
 >>> colors = ["Orange", "Green", "Grey", "Blue"]
 >>> for item in colors:
 ...     print(item)
-...
+
 Orange
 Green
 Grey
@@ -218,7 +218,7 @@ Blue
 >>> colors = ["Orange", "Green", "Grey", "Blue"]
 >>> for index, item in enumerate(colors):
 ...     print(item, ":", index)
-...
+
 Orange : 0
 Green : 1
 Grey : 2
@@ -229,7 +229,7 @@ Blue : 3
 >>> numbers_to_cube = [5, 13, 12, 16]
 >>> for number in numbers_to_cube:
 ...     print(number**3)
-...
+
 125
 2197
 1728
@@ -335,7 +335,7 @@ This reference complication becomes exacerbated when working with nested or mult
 from pprint import pprint
 
 # This will produce a game grid that is 8x8, pre-populated with zeros.
->>> game_grid = [[0]*8] *8
+>>> game_grid = [[0]*8]*8
 
 >>> pprint(game_grid)
 [[0, 0, 0, 0, 0, 0, 0, 0],

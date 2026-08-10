@@ -1,6 +1,6 @@
 # Introduction
 
-Python represents true and false values with the [`bool`][bools] type, which is a subtype of `int`.
+Python represents true and false values with the [`bool`][bools] type, which is a subclass of `int`.
  There are only two values under that type: `True` and `False`.
   These values can be bound to a variable:
 

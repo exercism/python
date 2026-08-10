@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/rail-fence-cipher/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2026-02-19
 
 import unittest
 
@@ -11,6 +11,7 @@ from rail_fence_cipher import (
 
 
 class RailFenceCipherTest(unittest.TestCase):
+
     def test_encode_with_two_rails(self):
         self.assertMultiLineEqual(encode("XOXOXOXOXOXOXOXOXO", 2), "XXXXXXXXXOOOOOOOOO")
 

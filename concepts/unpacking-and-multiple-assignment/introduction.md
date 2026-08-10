@@ -8,7 +8,7 @@ A very common example of this behavior is `for item in list`, where `item` takes
 This allows for code to be more concise and readable, and is done by separating the variables to be assigned with a comma such as `first, second, third = (1,2,3)` or `for index, item in enumerate(iterable)`.
 
 The special operators `*` and `**` are often used in unpacking contexts.
-`*` can be used to combine multiple `lists`/`tuples` into one `list`/`tuple` by _unpacking_ each into a new common `list`/`tuple`.
+`*` can be used to combine multiple `list`s/`tuple`s into one `list`/`tuple` by _unpacking_ each into a new common `list`/`tuple`.
 `**` can be used to combine multiple dictionaries into one dictionary by _unpacking_ each into a new common `dict`.
 
 When the `*` operator is used without a collection, it _packs_ a number of values into a `list`.

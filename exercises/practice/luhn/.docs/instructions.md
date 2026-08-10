@@ -41,7 +41,7 @@ If the sum is evenly divisible by 10, the original number is valid.
 
 ### Invalid Canadian SIN
 
-The number to be checked is `066 123 468`.
+The number to be checked is `066 123 478`.
 
 We start at the end of the number and double every second digit, beginning with the second digit from the right and moving left.
 

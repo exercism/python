@@ -3,7 +3,7 @@
 ## General
 
 
-- [Tuples][tuples] are immutable [sequence Types][sequence types] that can contain any data type.
+- [Tuples][tuples] are immutable [sequence types][sequence types] that can contain any data type.
 - Tuples are [iterable][iterable].  If you need indexes as well as values, use [`enumerate()`][enumerate]
 - Elements within tuples can be accessed via [bracket notation][bracket notation], using a zero-based index from the left, or -1 from the right. Other [Common Sequence Operations][common sequence operations] can also be used when working with tuples.
 
@@ -32,7 +32,7 @@
 - Remember: tuples are _immutable_, but the contents can be accessed via _index_ using _bracket notation_.
 - Tuples don't have to use parentheses unless there is _ambiguity_.
 - Python has multiple methods of string formatting. [`str.format()`][str.format] and [`f-strings`][f-strings] are two very common ones.
-- There are multiple textual formatting options available via Pythons [`format specification mini-language`][format specification mini-language].
+- There are multiple textual formatting options available via Python's [`format specification mini-language`][format specification mini-language].
 
 
 [bracket notation]: https://stackoverflow.com/questions/30250282/whats-the-difference-between-the-square-bracket-and-dot-notations-in-python

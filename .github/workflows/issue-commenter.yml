@@ -9,11 +9,11 @@ jobs:
     name: Comments for every NEW issue.
     steps:
       - name: Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
       - name: Read issue-comment.md
         id: issue-comment
-        uses: juliangruber/read-file-action@b549046febe0fe86f8cb4f93c24e284433f9ab58
+        uses: juliangruber/read-file-action@271ff311a4947af354c6abcd696a306553b9ec18
         with:
           path: .github/issue-comment.md
 

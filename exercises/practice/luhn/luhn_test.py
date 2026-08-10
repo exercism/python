@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/luhn/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2026-02-19
 
 import unittest
 
@@ -10,6 +10,7 @@ from luhn import (
 
 
 class LuhnTest(unittest.TestCase):
+
     def test_single_digit_strings_can_not_be_valid(self):
         self.assertIs(Luhn("1").valid(), False)
 

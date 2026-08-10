@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/grains/canonical-data.json
-# File last updated on 2023-09-27
+# File last updated on 2026-02-19
 
 import unittest
 
@@ -11,6 +11,7 @@ from grains import (
 
 
 class GrainsTest(unittest.TestCase):
+
     def test_grains_on_square_1(self):
         self.assertEqual(square(1), 1)
 

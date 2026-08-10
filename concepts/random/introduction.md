@@ -1,9 +1,9 @@
 # Introduction
 
-Many programs need (apparently) random values to simulate real-world events.
+Many programs need (_seemingly_) random values to simulate real-world events.
 
 Common, familiar examples include:
-- A coin toss: a random value from `('H', 'T')`.
+- A coin toss: a random value from `('Heads', 'Tails')`.
 - The roll of a die: a random integer from 1 to 6.
 - Shuffling a deck of cards: a random ordering of a card list.
 - The creation of trees and bushes in a 3-D graphics simulation.
@@ -18,7 +18,7 @@ We encourage you to explore the full [`random`][random] documentation, as there 
 
 ~~~~exercism/caution
 
-The `random` module should __NOT__ be used for security and cryptographic applications!!
+The `random` module should __NOT__ be used for security or cryptographic applications!!
 
 Instead, Python provides the [`secrets`][secrets] module.
 This is specially optimized for cryptographic security.
@@ -57,8 +57,8 @@ To avoid typing the name of the module, you can import specific functions by nam
 
 # Using choice() to pick Heads or Tails 10 times
 >>> tosses = []
->>> for side in range(10):
->>>    tosses.append(choice(['H', 'T']))    
+... for side in range(10):
+...    tosses.append(choice(['H', 'T']))    
 
 >>> print(tosses)
 ['H', 'H', 'H', 'H', 'H', 'H', 'H', 'T', 'T', 'H']
@@ -66,8 +66,8 @@ To avoid typing the name of the module, you can import specific functions by nam
 
 # Using choices() to pick Heads or Tails 8 times
 >>> picks = []
->>> picks.extend(choices(['H', 'T'], k=8))
->>> print(picks)
+... picks.extend(choices(['H', 'T'], k=8))
+... print(picks)
 ['T', 'H', 'H', 'T', 'H', 'H', 'T', 'T']
 ```
 
@@ -89,10 +89,10 @@ Possible results from `randint()` _include_ the upper bound, so `randint(a, b)` 
 
 ## `choice()` and `choices()`
 
-These two functions assume that you are starting from some [sequence][sequence-types], or other container.
-This will typically be a `list`, or with some limitations a `tuple` or a `set` (_a `tuple` is immutable, and `set` is unordered_).
+These two functions assume that you are starting from some [sequence][sequence-types] or other container.
+This will typically be a `list`, or with some limitations, a `tuple` or a `set` (_a `tuple` is immutable, and `set` is unordered_).
 
-The `choice()` function will return one entry chosen at random from a given sequence, and `choices()` will return `k` number of entries chosen at random from a given sequence.
+The `choice()` function will return one member chosen at random from a given sequence, and `choices()` will return a specified number of members (`k`) chosen at random from a given sequence.
 In the examples shown above, we assumed a fair coin with equal probability of heads or tails, but weights can also be specified.
 
 For example, if a bag contains 10 red balls and 15 green balls, and we would like to pull one out at random:

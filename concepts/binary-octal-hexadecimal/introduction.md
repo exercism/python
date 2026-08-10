@@ -1,4 +1,4 @@
-# binary, octal, hexadecimal
+# Binary, Octal, Hexadecimal
 
 Binary, octal, and hexadecimal (_also known as hex_) are different [numeral systems][numeral-systems] with different bases.
 Binary is base 2, octal is base 8, and hexadecimal is base 16.

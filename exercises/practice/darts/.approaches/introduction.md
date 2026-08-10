@@ -1,7 +1,7 @@
 # Introduction
 
 
-There are multiple  Pythonic ways to solve the Darts exercise.
+There are multiple Pythonic ways to solve the Darts exercise.
 Among them are:
 
 - Using `if-statements`
@@ -17,10 +17,10 @@ Among them are:
 
 The goal of the Darts exercise is to score a single throw in a Darts game.
 The scoring areas are _concentric circles_, so boundary values need to be checked in order to properly score a throw.
-The key is to determine how far from the center the dart lands (_by calculating sqrt(x**2 + y**2), or a variation_) and then determine what scoring ring it falls into.
+The key is to determine how far from the center the dart lands (_by calculating `sqrt(x**2 + y**2)`, or a variation_) and then determine what scoring ring it falls into.
 
 
-**_Order matters_** - each bigger target circle contains all the smaller circles, so the most straightforward solution is to check the smallest circle first.
+**_Order matters_** — each bigger target circle contains all the smaller circles, so the most straightforward solution is to check the smallest circle first.
 Otherwise, you must box your scoring by checking both a _lower bound_ and an _upper bound_.
 
 
@@ -38,8 +38,8 @@ def score(x_coord, y_coord):
     distance = math.sqrt(x_coord**2 + y_coord**2)
     
     if distance <= 1: return 10
-    if distance <= 5: return  5
-    if distance <= 10: return  1
+    if distance <= 5: return 5
+    if distance <= 10: return 1
     
     return 0
 ```
@@ -49,16 +49,18 @@ This approach uses [concept:python/conditionals]() to check the boundaries for e
 For more details, see the [if statements][approach-if-statements] approach.
 
 
-## Approach: Using a `tuple` and a  `loop`
+## Approach: Using a `tuple` and a `loop`
 
 ```python
 def score(x_coord, y_coord):
     throw = x_coord**2 + y_coord**2
-    rules = (1, 10), (25, 5), (100, 1), (200, 0)
+    rules = (1, 10), (25, 5), (100, 1)
     
     for distance, points in rules:
         if throw <= distance:
             return points
+    
+    return 0
 ```
 
 
@@ -71,34 +73,35 @@ For more details, see the [tuple and loop][approach-tuple-and-loop] approach.
 ```python
 def score(x_coord, y_coord):
     throw = x_coord**2 + y_coord**2
-    rules = {1: 10, 25: 5, 100: 1, 200: 0}
+    rules = {1: 10, 25: 5, 100: 1}
     
-    return max(point for distance, point in 
-               rules.items() if throw <= distance)
+    return max(point for distance, point in
+               rules.items() if throw <= distance,
+               default=0)
 ```
 
-This approach is very similar to the  [tuple and loop][approach-tuple-and-loop] approach, but iterates over [`dict.items()`][dict-items].
-For more information, see the [dict and generator][approach-dict-and-generator]  approach.
+This approach is very similar to the [tuple and loop][approach-tuple-and-loop] approach, but iterates over [`dict.items()`][dict-items].
+For more information, see the [dict and generator][approach-dict-and-generator] approach.
 
 
 ## Approach: Using Boolean Values as Integers
 
 ```python
 def score(x_coord, y_coord):
-    radius = (x_coord**2 + y_coord**2)
-    return (radius<=1)*5 + (radius<=25)*4 +(radius<=100)*1
+    radius_squared = x_coord**2 + y_coord**2
+    return (radius_squared<=1)*5 + (radius_squared<=25)*4 + (radius_squared<=100)*1
 ```
 
 
 This approach exploits the fact that Boolean values are an integer subtype in Python.
-For more information, see the [boolean values as integers][approach-boolean-values-as-integers]  approach.
+For more information, see the [boolean values as integers][approach-booleans-as-ints] approach.
 
 
 ## Approach: Using a `Dictionary` and `dict.get()`
 
 ```python
 def score(x_coord, y_coord):
-    point = (x_coord**2 + y_coord**2)
+    point = x_coord**2 + y_coord**2
     scores = {
         point <= 100: 1,
         point <= 25: 5,
@@ -109,17 +112,17 @@ def score(x_coord, y_coord):
 ```
 
 This approach uses a dictionary to hold the distance --> scoring mappings and `dict.get()` to retrieve the correct points value.
-For more details, read the [`Dictionary and dict.get()`][approach-dict-and-dict-get]  approach.
+For more details, read the [`Dictionary and dict.get()`][approach-dict-and-dict-get] approach.
 
 
-## Approach:  Using `match/case` (structural pattern matching)
+## Approach: Using `match/case` (structural pattern matching)
 
 ```python
 from math import hypot, ceil
 
 
-def score(x, y):
-    match ceil(hypot(x, y)):
+def score(x_coord, y_coord):
+    match ceil(hypot(x_coord, y_coord)):
         case 0 | 1: return 10
         case 2 | 3 | 4 | 5: return 5
         case 6 | 7 | 8 | 9 | 10: return 1
@@ -129,7 +132,7 @@ def score(x, y):
 
 This approach uses `Python 3.10`'s structural pattern matching with `return` values on the same line as `case`.
 A fallthrough case (`_`) is used if the dart throw is outside the outer circle of the target (_greater than 10_).
-For more details, see the [structural pattern matching][approach-struct-pattern-matching] approach.
+For more details, see the [structural pattern matching][approach-match-case] approach.
 
 
 ## Which approach to use?
@@ -137,10 +140,10 @@ For more details, see the [structural pattern matching][approach-struct-pattern-
 Many of these approaches are a matter of personal preference - there are not significant memory or performance differences.
 Although a strong argument could be made for simplicity and clarity — many listed solutions (_while interesting_) are harder to reason about or are over-engineered for the current scope of the exercise.
 
-[approach-boolean-values-as-integers]:  https://exercism.org/tracks/python/exercises/darts/approaches/boolean-values-as-integers
-[approach-dict-and-dict-get]:  https://exercism.org/tracks/python/exercises/darts/approaches/dict-and-dict-get
+[approach-booleans-as-ints]: https://exercism.org/tracks/python/exercises/darts/approaches/booleans-as-ints
+[approach-dict-and-dict-get]: https://exercism.org/tracks/python/exercises/darts/approaches/dict-and-dict-get
 [approach-dict-and-generator]: https://exercism.org/tracks/python/exercises/darts/approaches/dict-and-generator
-[approach-if-statements ]:  https://exercism.org/tracks/python/exercises/darts/approaches/if-statements
-[approach-struct-pattern-matching]:  https://exercism.org/tracks/python/exercises/darts/approaches/struct-pattern-matching
-[approach-tuple-and-loop]:  https://exercism.org/tracks/python/exercises/darts/approaches/tuple-and-loop
+[approach-if-statements ]: https://exercism.org/tracks/python/exercises/darts/approaches/if-statements
+[approach-match-case]: https://exercism.org/tracks/python/exercises/darts/approaches/match-case
+[approach-tuple-and-loop]: https://exercism.org/tracks/python/exercises/darts/approaches/tuple-and-loop
 [dict-items]: https://docs.python.org/3/library/stdtypes.html#dict.items

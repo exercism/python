@@ -1,0 +1,33 @@
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
+
+[4a1ded74-5d32-47fb-8ae5-321f51d06b5b]
+description = "Direct parent-child relation"
+
+[30d17269-83e9-4f82-a0d7-8ef9656d8dce]
+description = "Sibling relationship"
+
+[8dffa27d-a8ab-496d-80b3-2f21c77648b5]
+description = "Two degrees of separation, grandchild"
+
+[34e56ec1-d528-4a42-908e-020a4606ee60]
+description = "Unrelated individuals"
+comment = "skipped in favor of test-specific tests"
+include = false
+
+[93ffe989-bad2-48c4-878f-3acb1ce2611b]
+description = "Complex graph, cousins"
+
+[2cc2e76b-013a-433c-9486-1dbe29bf06e5]
+description = "Complex graph, no shortcut, far removed nephew"
+
+[46c9fbcb-e464-455f-a718-049ea3c7400a]
+description = "Complex graph, some shortcuts, cross-down and cross-up, cousins several times removed, with unrelated family tree"

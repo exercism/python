@@ -49,7 +49,7 @@ A `dict` can also be directly entered as a _dictionary literal_, using curly bra
 ## Accessing Values in a Dictionary
 
 You can access an entry in a dictionary using a _key_ in square (`[]`) brackets.
-If a `key` does not exist n the `dict`, a `KeyError` is thrown:
+If a `key` does not exist in the `dict`, a `KeyError` is thrown:
 
 ```python
 >>> bear["speed"]
@@ -84,7 +84,7 @@ You can change an entry `value` by assigning to its _key_:
 New `key`:`value` pairs can be _added_ in the same fashion:
 
 ```python
-# Adding an new "color" key with a new "tawney" value.
+# Adding a new "color" key with a new "tawney" value.
 >>> bear["color"] = 'tawney'
 {'name': 'Grizzly Bear', 'speed': 40, 'land_animal': True, 'color': 'tawney'}
 

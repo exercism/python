@@ -31,9 +31,9 @@ It is up to you if `hit()` takes healths points _to_ or _below_ zero.
 
 ```python
 >>> alien = Alien(0, 0)
->>> alien.health
 
 # Initialized health value.
+>>> alien.health
 3
 
 # Decrements health by 1 point.
@@ -103,8 +103,8 @@ For example:
 2
 >>> alien_one.total_aliens_created
 2
->>> Alien.total_aliens_created
 # Accessing the variable from the class directly
+>>> Alien.total_aliens_created
 2
 ```
 
@@ -120,7 +120,7 @@ For example:
 >>> aliens = new_aliens_collection(alien_start_positions)
 ...
 >>> for alien in aliens:
-    	print(alien.x_coordinate, alien.y_coordinate)
+...     print(alien.x_coordinate, alien.y_coordinate)
 (4, 7)
 (-1, 0)
 ```

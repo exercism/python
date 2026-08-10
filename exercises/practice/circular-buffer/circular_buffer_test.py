@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/circular-buffer/canonical-data.json
-# File last updated on 2023-07-20
+# File last updated on 2026-02-19
 
 import unittest
 
@@ -12,6 +12,7 @@ from circular_buffer import (
 
 
 class CircularBufferTest(unittest.TestCase):
+
     def test_reading_empty_buffer_should_fail(self):
         buf = CircularBuffer(1)
         with self.assertRaises(BufferError) as err:

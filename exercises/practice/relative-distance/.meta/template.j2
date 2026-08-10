@@ -1,0 +1,44 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header(imports=['RelativeDistance']) }}
+
+class {{ exercise | camel_case }}Test(unittest.TestCase):
+    {% for case in cases -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        family_tree = {
+        {%- for person, relatives in case["input"]["familyTree"].items() %}
+            "{{ person }}": {{ relatives }},
+        {%- endfor %}
+        }
+        {%- if case["expected"] is none %}
+        with self.assertRaises(ValueError):
+            RelativeDistance(family_tree).degree_of_separation("{{ case["input"]["personA"] }}", "{{ case["input"]["personB"] }}")
+        {%- else %}
+        self.assertEqual(
+            RelativeDistance(family_tree).degree_of_separation("{{ case["input"]["personA"] }}", "{{ case["input"]["personB"] }}"),
+            {{ case["expected"] }}
+        )
+        {%- endif %}
+    {% endfor -%}
+
+    # Additional track-specific tests
+    {% for case in additional_cases -%}
+    def test_{{ case["description"] | to_snake }}(self):
+        family_tree = {
+        {%- for person, relatives in case["input"]["family_tree"].items() %}
+            "{{ person }}": {{ relatives }},
+        {%- endfor %}
+        }
+        {%- if case["expected"]["error"] %}
+        with self.assertRaises(ValueError) as err:
+            RelativeDistance(family_tree).degree_of_separation("{{ case["input"]["person_a"] }}", "{{ case["input"]["person_b"] }}")
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(err.exception.args[0], "{{ case["expected"]["error"] }}")
+        {%- else %}
+        self.assertEqual(
+            RelativeDistance(family_tree).degree_of_separation("{{ case["input"]["person_a"] }}", "{{ case["input"]["person_b"] }}"),
+            {{ case["expected"] }}
+        )
+        {%- endif %}
+    {% endfor -%}

@@ -3,10 +3,11 @@
 The `str` class offers [many useful methods][str methods] for working with and composing strings.
 These include searching, cleaning, splitting, transforming, translating, and many other techniques.
 
-Strings are [immutable sequences][text sequence] of [Unicode code points][unicode code points] -- individual "characters" or code points (_strings of length 1_) can be referenced by `0-based index` number from the left, or `-1-based index` number from the right.
+Strings are [sequences][text sequence] of [Unicode code points][unicode code points] -- individual "characters" or code points (_strings of length 1_) can be referenced by `0-based index` number from the left, or `-1-based index` number from the right.
+Strings implement all [common sequence operations][common sequence operations].
 
-Strings can be iterated through using `for item in <str>` or `for index, item in enumerate(<str>)` syntax.
-They can be concatenated using the `+` operator or via `<string>.join(<iterable>)` and implement all [common sequence operations][common sequence operations].
+They can be iterated through using `for item in <str>` or `for index, item in enumerate(<str>)` syntax.
+They can also be concatenated using `<str> + <other str>` or `<str>.join(<iterable>)`.
 
 Strings are _immutable_, meaning the value of a `str` object in memory cannot change.
 Functions or methods that operate on a `str` (_like the ones we are learning about here_) will return a new `instance` of that `str` object instead of modifying the original `str`.

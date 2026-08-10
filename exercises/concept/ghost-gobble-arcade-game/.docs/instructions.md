@@ -42,7 +42,7 @@ True
 ## 4. Define if Pac-Man wins
 
 Define the `win()` function that takes three parameters (_if Pac-Man has eaten all of the dots_, _if Pac-Man has a power pellet active_, and _if Pac-Man is touching a ghost_) and returns a Boolean value if Pac-Man wins.
- The function should return `True` if Pac-Man has eaten all of the dots and has not lost based on the parameters defined in part 3.
+ The function should return `True` if Pac-Man has eaten all of the dots and has not lost based on the rules defined in part 3.
 
 ```python
 >>> win(False, True, False)

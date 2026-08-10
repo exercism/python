@@ -1,0 +1,8 @@
+def sublist(list_one, list_two):
+    ...
+    shorter, longer = sorted((list_one, list_two), key=len)
+
+    for index in range(len(longer) - len(shorter) + 1):
+        if longer[index : index + len(shorter)] == shorter:
+            return SUPERLIST if longer is list_one else SUBLIST
+    return UNEQUAL

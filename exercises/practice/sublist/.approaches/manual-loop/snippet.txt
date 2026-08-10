@@ -1,0 +1,8 @@
+while index_one < len(list_one) and index_two < len(list_two):
+    if list_one[index_one] == list_two[index_two]:
+        index_one += 1
+    else:
+        index_one = 0
+        index_two = next_index_two
+        next_index_two += 1
+    index_two += 1

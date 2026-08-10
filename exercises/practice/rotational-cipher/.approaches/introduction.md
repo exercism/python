@@ -54,16 +54,16 @@ Here, if we want to use the Scandinavian letter: **å**, we can simply insert it
 
 ```python
 # This only uses English characters
-AlPHABET = "abcdefghijklmnopqrstuvwxyz"
+ALPHABET = "abcdefghijklmnopqrstuvwxyz"
 
 def rotate(text, key):
     result = ""
     for letter in text:
         if letter.isalpha():
             if letter.isupper():
-                result += AlPHABET[(AlPHABET.index(letter.lower()) + key) % 26].upper()
+                result += ALPHABET[(ALPHABET.index(letter.lower()) + key) % 26].upper()
             else:
-                result += AlPHABET[(AlPHABET.index(letter) + key) % 26]
+                result += ALPHABET[(ALPHABET.index(letter) + key) % 26]
         else:
             result += letter
     return result
@@ -82,11 +82,11 @@ The benefit of this approach is that it has no visible loop, making the code mor
 
 
 ```python
-AlPHABET = "abcdefghijklmnopqrstuvwxyz"
+ALPHABET = "abcdefghijklmnopqrstuvwxyz"
 
 def rotate(text, key):
-    translator = AlPHABET[key:] + AlPHABET[:key]
-    return text.translate(str.maketrans(AlPHABET + AlPHABET.upper(), translator + translator.upper()))
+    translator = ALPHABET[key:] + ALPHABET[:key]
+    return text.translate(str.maketrans(ALPHABET + ALPHABET.upper(), translator + translator.upper()))
 ```
 
 For more information, check out the [Str translate approach][approach-str-translate].
@@ -106,7 +106,7 @@ Calculate your base case carefully to avoid errors.
 
 
 ```python
-AlPHABET = "abcdefghijklmnopqrstuvwxyz"
+ALPHABET = "abcdefghijklmnopqrstuvwxyz"
 
 def rotate(text, key):
     if text == "":
@@ -114,9 +114,9 @@ def rotate(text, key):
     first_letter, rest = text[0], text[1:]
     if first_letter.isalpha():
         if first_letter.isupper():
-            return AlPHABET[(AlPHABET.index(first_letter.lower()) + key) % 26].upper() + rotate(rest, key)
+            return ALPHABET[(ALPHABET.index(first_letter.lower()) + key) % 26].upper() + rotate(rest, key)
         else:
-            return AlPHABET[(AlPHABET.index(first_letter) + key) % 26] + rotate(rest, key)
+            return ALPHABET[(ALPHABET.index(first_letter) + key) % 26] + rotate(rest, key)
     else:
         return first_letter + rotate(rest, key)
 ```

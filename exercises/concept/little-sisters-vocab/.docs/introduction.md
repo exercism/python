@@ -12,7 +12,7 @@ A `str` literal can be declared via single `'` or double `"` quotes. The escape 
 
 >>> single_quoted = 'These allow "double quoting" without "escape" characters.'
 
->>> double_quoted = "These allow embedded 'single quoting', so you don't have to use an 'escape' character".
+>>> double_quoted = "These allow embedded 'single quoting', so you don't have to use an 'escape' character."
 
 >>> escapes = 'If needed, a \'slash\' can be used as an escape character within a string when switching quote styles won\'t work.'
 ```
@@ -50,7 +50,7 @@ If a `list`, `tuple`, `set` or other collection of individual strings needs to b
 
 ```python
 # str.join() makes a new string from the iterables elements.
->>> chickens = ["hen", "egg", "rooster"]
+>>> chickens = ["hen", "egg", "rooster"] # Lists are iterable.
 >>> ' '.join(chickens)
 'hen egg rooster'
 
@@ -60,6 +60,34 @@ If a `list`, `tuple`, `set` or other collection of individual strings needs to b
 
 >>> ' 🌿 '.join(chickens)
 'hen 🌿 egg 🌿 rooster'
+
+
+# Any iterable can be used as input.
+>>> flowers = ("rose", "daisy", "carnation")  # Tuples are iterable.
+>>> '*-*'.join(flowers)
+'rose*-*daisy*-*carnation'
+
+>>> flowers = {"rose", "daisy", "carnation"}  # Sets are iterable, but output order is not guaranteed.
+>>> '*-*'.join(flowers)
+'rose*-*carnation*-*daisy'
+
+>>> phrase = "This is my string"  # Strings are iterable, but be careful!
+>>> '..'.join(phrase)
+'T..h..i..s.. ..i..s.. ..m..y.. ..s..t..r..i..n..g'
+
+
+# Separators are inserted **between** elements, but can be any string (including spaces).
+# This can be exploited for interesting effects.
+>>> under_words = ['under', 'current', 'sea', 'pin', 'dog', 'lay']
+>>> separator = ' ⤴️ under'
+>>> separator.join(under_words)
+'under ⤴️ undercurrent ⤴️ undersea ⤴️ underpin ⤴️ underdog ⤴️ underlay'
+
+# The separator can be composed different ways, as long as the result is a string.
+>>> upper_words = ['upper', 'crust', 'case', 'classmen', 'most', 'cut']
+>>> separator = ' 🌟 ' + upper_words[0]
+>>> separator.join(upper_words)
+ 'upper 🌟 uppercrust 🌟 uppercase 🌟 upperclassmen 🌟 uppermost 🌟 uppercut'
 ```
 
 Code points within a `str` can be referenced by `0-based index` number from the left:
@@ -94,7 +122,6 @@ creative = '창의적인'
 '인'
 
 ```
-
 
 There is no separate “character” or "rune" type in Python, so indexing a string produces a new `str` of length 1:
 
@@ -168,7 +195,6 @@ Strings can also be broken into smaller strings via [`<str>.split(<separator>)`]
 ...
 ['feline', 'four-footed', 'ferocious', 'furry']
 ```
-
 
 Separators for `<str>.split()` can be more than one character.
 The **whole string** is used for split matching.

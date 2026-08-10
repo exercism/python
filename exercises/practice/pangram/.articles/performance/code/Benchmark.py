@@ -28,7 +28,7 @@ print(f"set:   {val}")
 val = timeit.timeit("""is_pangram("Victor jagt zwölf_(12) Boxkämpfer quer über den großen Sylter Deich.")""",
                     """
 def is_pangram(sentence):
-    return len([ltr for ltr in set(sentence.lower()) if ltr.isalpha()]) == 26
+    return len(set(ltr for ltr in sentence.lower() if ltr.isalpha())) == 26
 
 """, number=loops) / loops
 

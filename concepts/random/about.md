@@ -1,9 +1,9 @@
 # About
 
-Many programs need (apparently) random values to simulate real-world events.
+Many programs need (_seemingly_) random values to simulate real-world events.
 
 Common, familiar examples include:
-- A coin toss: a random value from `('H', 'T')`.
+- A coin toss: a random value from `('Heads', 'Tails')`.
 - The roll of a die: a random integer from 1 to 6.
 - Shuffling a deck of cards: a random ordering of a card list.
 
@@ -18,7 +18,7 @@ We encourage you to explore the full `random` documentation, as there are many m
 
 ~~~~exercism/caution
 
-The `random` module should __NOT__ be used for security and cryptographic applications.
+The `random` module should __NOT__ be used for security or cryptographic applications.
 
 Instead, Python provides the [`secrets`][secrets] module.
 This is specially optimized for cryptographic security.
@@ -60,8 +60,8 @@ To avoid typing the name of the module, you can import specific functions by nam
 
 # Using choice() to pick Heads or Tails 10 times
 >>> tosses = []
->>> for side in range(10):
->>>    tosses.append(choice(['H', 'T']))    
+... for side in range(10):
+...    tosses.append(choice(['H', 'T']))    
 
 >>> print(tosses)
 ['H', 'H', 'H', 'H', 'H', 'H', 'H', 'T', 'T', 'H']
@@ -69,8 +69,8 @@ To avoid typing the name of the module, you can import specific functions by nam
 
 # Using choices() to pick Heads or Tails 8 times
 >>> picks = []
->>> picks.extend(choices(['H', 'T'], k=8))
->>> print(picks)
+... picks.extend(choices(['H', 'T'], k=8))
+... print(picks)
 ['T', 'H', 'H', 'T', 'H', 'H', 'T', 'T']
 ```
 
@@ -94,8 +94,9 @@ Possible results from `randint()` _include_ the upper bound, so `randint(a, b)` 
 
 # Select 10 numbers at random between 0 and 9 two steps apart.
 >>> numbers = []
->>> for integer in range(10):
->>>    numbers.append(random.randrange(0, 10, 2))
+... for integer in range(10):
+...    numbers.append(random.randrange(0, 10, 2))
+
 >>> print(numbers)
 [2, 8, 4, 0, 4, 2, 6, 6, 8, 8]
 
@@ -108,10 +109,10 @@ Possible results from `randint()` _include_ the upper bound, so `randint(a, b)` 
 
 ## Working with sequences
 
-The functions in this section assume that you are starting from some [sequence][sequence-types], or other container.
+The functions in this section assume that you are starting from some [sequence][sequence-types] or other container.
 
 
-This will typically be a `list`, or with some limitations a `tuple` or a `set` (_a `tuple` is immutable, and `set` is unordered_).
+This will typically be a `list`, or with some limitations, a `tuple` or a `set` (_a `tuple` is immutable, and `set` is unordered_).
 
 
 
@@ -124,9 +125,10 @@ At its simplest, this might be a coin-flip:
 # This will pick one of the two values in the list at random 5 separate times 
 >>> [random.choice(['H', 'T']) for _ in range(5)]
 ['T', 'H', 'H', 'T', 'H']
+```
+
 
 We could accomplish essentially the same thing using the `choices()` function, supplying a keyword argument with the list length:
-
 
 ```python
 >>> random.choices(['H', 'T'], k=5)

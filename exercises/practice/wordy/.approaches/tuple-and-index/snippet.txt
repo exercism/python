@@ -1,0 +1,8 @@
+OPERATOR_WORDS = ("plus", "minus", "multiplied", "divided")
+EXTRA_OPERATOR_WORDS = (None, None, "by", "by")
+...
+try:
+    operator_index = OPERATOR_WORDS.index(words[index])
+except ValueError:
+    str_to_int(words[index], "unknown operation")
+    raise ValueError("syntax error")

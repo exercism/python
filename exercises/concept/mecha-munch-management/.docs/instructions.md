@@ -1,10 +1,10 @@
 # Instructions
 
-Mecha Munch™, a grocery shopping automation company has just hired you to work on their ordering app.
+Mecha Munch™, a grocery shopping automation company, has just hired you to work on their ordering app.
 Your team is tasked with building an MVP (_[minimum viable product][mvp]_) that manages all the basic shopping cart activities, allowing users to add, remove, and sort their grocery orders.
 Thankfully, a different team is handling all the money and check-out functions!
 
-## 1. Add Item(s) to the Users Shopping Cart
+## 1. Add Item(s) to the User's Shopping Cart
 
 The MVP should allow the user to add items to their shopping cart.
 This could be a single item or multiple items at once.
@@ -26,12 +26,12 @@ It should return a new/updated shopping cart dictionary for the user.
 {'Banana': 5, 'Apple': 2, 'Orange': 2, 'Blueberries': 1}
 ```
 
-## 2. Read in Items Listed in the Users Notes App
+## 2. Read in Items Listed in the User's Notes App
 
 Uh-oh.
 Looks like the product team is engaging in [feature creep][feature creep].
 They want to add extra functionality to the MVP.
-The application now has to create a shopping cart by reading items off a users notes app.
+The application now has to create a shopping cart by reading items off a user's notes app.
 Convenient for the users, but slightly more work for the team.
 
 Create the function `read_notes(<notes>)` that can take any list-like iterable as an argument.
@@ -97,7 +97,7 @@ Create the function `sort_entries(<cart>)` that takes a shopping cart/dictionary
 
 ## 5. Send User Shopping Cart to Store for Fulfillment
 
-The app needs to send a given users cart to the store for fulfillment.
+The app needs to send a given user's cart to the store for fulfillment.
 However, the shoppers in the store need to know which store aisle the item can be found in and if the item needs refrigeration.
 So (_rather arbitrarily_) the "fulfillment cart" needs to be sorted in reverse alphabetical order with item quantities combined with location and refrigeration information.
 

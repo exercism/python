@@ -9,14 +9,16 @@
       "slug": "translate-maketrans",
       "title": "translate maketrans",
       "blurb": "Use translate with maketrans to return the value.",
-      "authors": ["bobahop"]
+      "authors": ["bobahop"],
+      "contributors": ["yrahcaz7"]
     },
     {
       "uuid": "fbc6be87-dec4-4c4b-84cf-fcc1ed2d6d41",
       "slug": "dictionary-join",
       "title": "dictionary join",
       "blurb": "Use a dictionary look-up with join to return the value.",
-      "authors": ["bobahop"]
+      "authors": ["bobahop"],
+      "contributors": ["yrahcaz7"]
     }
   ]
 }

@@ -16,17 +16,16 @@ def steps(number):
 
 This approach starts with checking if the number is less than or equal to zero.
 If it is, then it raises a [`ValueError`][value-error].
-After that, we declare a counter variable and set it to zero.
-Then we start a [`while` loop][while-loop] that will run until the number is equal to one.
-Meaning the loop won't run if the number is already one.
+After that, we declare a `counter` variable and set it to zero.
+Next, we start a [`while loop`][while-loop] that will run until the number is equal to one, at which point it will terminate.
 
-Inside the loop we check if the number is even.
-If it is, then we divide it by two.
-If it isn't, then we multiply it by three and add one.
-After that, we increment the counter by one.
-After the loop completes, we return the counter variable.
+Inside the `loop`, we check if the number is even, and if it is, we divide it by two.
+If the number is odd, we multiply it by three and add one.
+After that, we increment the `counter` by one.
+When the `loop` completes, we return the `counter` value.
 
-We use a `while` loop here because we don't know exactly how many times the loop will run.
+We use a `while loop` here because we don't know exactly how many times the `loop` will run — only that it will run until the number is equal to one.
+
 
 [value-error]: https://docs.python.org/3/library/exceptions.html#ValueError
 [while-loop]: https://realpython.com/python-while-loop/

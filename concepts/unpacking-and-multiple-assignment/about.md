@@ -8,7 +8,7 @@ A very common example of this behavior is `for item in list`, where `item` takes
 This allows for code to be more concise and readable, and is done by separating the variables to be assigned with a comma such as `first, second, third = (1,2,3)` or `for index, item in enumerate(iterable)`.
 
 The special operators `*` and `**` are often used in unpacking contexts.
-`*` can be used to combine multiple `lists`/`tuples` into one `list`/`tuple` by _unpacking_ each into a new common `list`/`tuple`.
+`*` can be used to combine multiple `list`s/`tuple`s into one `list`/`tuple` by _unpacking_ each into a new common `list`/`tuple`.
 `**` can be used to combine multiple dictionaries into one dictionary by _unpacking_ each into a new common `dict`.
 
 When the `*` operator is used without a collection, it _packs_ a number of values into a `list`.
@@ -73,7 +73,7 @@ Since `tuples` are immutable, you can't swap elements in a `tuple`.
 The examples below use `lists` but the same concepts apply to `tuples`.
 ~~~~
 
-In Python, it is possible to [unpack the elements of `list`/`tuple`/`dictionary`][unpacking] into distinct variables.
+In Python, it is possible to [unpack the elements of a `list`/`tuple`/`dict`][unpacking] into distinct variables.
 Since values appear within `lists`/`tuples` in a specific order, they are unpacked into variables in the same order:
 
 ```python
@@ -94,7 +94,7 @@ If there are values that are not needed then you can use `_` to flag them:
 
 ### Deep unpacking
 
-Unpacking and assigning values from a `list`/`tuple` inside of a `list` or `tuple` (_also known as nested lists/tuples_), works in the same way a shallow unpacking does, but often needs qualifiers to clarify the values context or position:
+Unpacking and assigning values from a `list`/`tuple` inside of a `list` or `tuple` (_also known as nested lists/tuples_), works in the same way a shallow unpacking does, but often needs qualifiers to clarify the value's context or position:
 
 ```python
 >>> fruits_vegetables = [["apple", "banana"], ["carrot", "potato"]]
@@ -364,8 +364,8 @@ numbers = [1, 2, 3]
 1
 ```
 
-Using `*` unpacking with the `zip()` function is another common use case.
-Since `zip()` takes multiple iterables and returns a `list` of `tuples` with the values from each `iterable` grouped:
+Using `*` unpacking with the [`zip()` built-in][zip] is another common use case.
+The `zip()` function takes multiple iterables and returns a `list` of `tuples` with the values from each `iterable` grouped:
 
 ```python
 >>> values = (['x', 'y', 'z'], [1, 2, 3], [True, False, True])
@@ -383,3 +383,4 @@ Since `zip()` takes multiple iterables and returns a `list` of `tuples` with the
 [sorting algorithms]: https://realpython.com/sorting-algorithms-python/
 [unpacking]: https://www.geeksforgeeks.org/unpacking-arguments-in-python/?ref=rp
 [view-objects]: https://docs.python.org/3/library/stdtypes.html#dict-views
+[zip]: https://docs.python.org/3/library/functions.html#zip

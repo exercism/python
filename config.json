@@ -512,6 +512,14 @@
         "difficulty": 1
       },
       {
+        "slug": "line-up",
+        "name": "Line Up",
+        "uuid": "e09d877e-489b-4dbd-89c5-f6b15e867b67",
+        "practices": ["string-formatting"],
+        "prerequisites": ["basics", "strings"],
+        "difficulty": 1
+      },
+      {
         "slug": "difference-of-squares",
         "name": "Difference of Squares",
         "uuid": "913b6099-d75a-4c27-8243-476081752c31",
@@ -586,7 +594,7 @@
         "slug": "square-root",
         "name": "Square Root",
         "uuid": "c32f994a-1080-4f05-bf88-051975a75d64",
-        "practices": ["numbers"],
+        "practices": [],
         "prerequisites": ["basics", "numbers", "conditionals", "loops"],
         "difficulty": 2
       },
@@ -657,6 +665,21 @@
           "loops",
           "strings",
           "string-methods"
+        ],
+        "difficulty": 2
+      },
+      {
+        "slug": "eliuds-eggs",
+        "name": "Eliud's Eggs",
+        "uuid": "356e2d29-7efc-4fa3-bec7-8b61c3e967da",
+        "practices": ["loops"],
+        "prerequisites": [
+            "basics",
+            "lists",
+            "list-methods",
+            "loops",
+            "strings",
+            "string-methods"
         ],
         "difficulty": 2
       },
@@ -952,17 +975,24 @@
         "difficulty": 2
       },
       {
-        "slug": "eliuds-eggs",
-        "name": "Eliud's Eggs",
-        "uuid": "356e2d29-7efc-4fa3-bec7-8b61c3e967da",
+        "slug": "game-of-life",
+        "name": "Conway's Game of Life",
+        "uuid": "1675a497-d3b2-4772-bbee-4edae5a44e91",
+        "practices": [],
+        "prerequisites": [
+          "lists"
+        ],
+        "difficulty": 3
+      },
+      {
+        "slug": "state-of-tic-tac-toe",
+        "name": "State of Tic-Tac-Toe",
+        "uuid": "cb40b36f-f7dc-4018-aad5-38976defb352",
         "practices": ["loops"],
         "prerequisites": [
-            "basics",
-            "lists",
-            "list-methods",
-            "loops",
-            "strings",
-            "string-methods"
+          "conditionals",
+          "lists",
+          "loops"
         ],
         "difficulty": 3
       },
@@ -1731,6 +1761,14 @@
         "difficulty": 5
       },
       {
+        "slug": "camicia",
+        "name": "Camicia",
+        "uuid": "ec314b34-2ee3-4eec-9a97-aece9e5fd6c2",
+        "practices": [],
+        "prerequisites": ["lists", "sets", "strings"],
+        "difficulty": 5
+      },
+      {
         "slug": "rational-numbers",
         "name": "Rational Numbers",
         "uuid": "1d21cd68-10ac-427d-be6d-77152bceacc4",
@@ -1780,6 +1818,17 @@
           "lists",
           "loops",
           "strings"
+        ],
+        "difficulty": 5
+      },
+      {
+        "slug": "relative-distance",
+        "name": "Relative Distance",
+        "uuid": "d590865c-ef30-424a-8cfb-7f31f04dee1b",
+        "practices": [],
+        "prerequisites": [
+          "lists",
+          "dicts"
         ],
         "difficulty": 5
       },
@@ -2374,11 +2423,6 @@
       "uuid": "8565ae2a-9bfc-4657-b471-8a8a61cbb7ea",
       "slug": "enums",
       "name": "Enums"
-    },
-    {
-      "uuid": "8ac7c6b5-5786-45dd-8ce3-5b139da06471",
-      "slug": "fractions",
-      "name": "Fractions"
     },
     {
       "uuid": "26b147e0-2cdc-4325-a6b4-6a2dd5bb69b1",

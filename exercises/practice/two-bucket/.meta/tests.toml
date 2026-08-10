@@ -27,6 +27,12 @@ description = "Measure one step using bucket one of size 1 and bucket two of siz
 [eb329c63-5540-4735-b30b-97f7f4df0f84]
 description = "Measure using bucket one of size 2 and bucket two of size 3 - start with bucket one and end with bucket two"
 
+[58d70152-bf2b-46bb-ad54-be58ebe94c03]
+description = "Measure using bucket one much bigger than bucket two"
+
+[9dbe6499-caa5-4a58-b5ce-c988d71b8981]
+description = "Measure using bucket one much smaller than bucket two"
+
 [449be72d-b10a-4f4b-a959-ca741e333b72]
 description = "Not possible to reach the goal"
 

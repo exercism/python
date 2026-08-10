@@ -1,46 +1,54 @@
-## Approach: Mono-function
-Notice that there the majority of the code is repetitive? 
-A fun way to solve this would be to keep it all inside the `encode` function, and merely chunk it if `decode` is False:
-For variation, this approach shows a different way to translate the text.
+# Approach: Mono-function
+
+Notice that the majority of the code is repetitive?
+A fun way to solve this would be to keep it all inside the `encode()` function, and merely chunk it if `decode` is `False`:
+For variation, this approach also shows a different way to translate the text.
+
 ```python
 from string import ascii_lowercase as asc_low
+
 ENCODING = {chr: asc_low[id] for id, chr in enumerate(asc_low[::-1])}
 
-def encode(text: str, decode: bool = False):
-    res = "".join(ENCODING.get(chr, chr) for chr in text.lower() if chr.isalnum())
-    return res if decode else " ".join(res[index:index+5] for index in range(0, len(res), 5))
+def encode(text, decode = False):
+    line = "".join(ENCODING.get(chr, chr) for chr in text.lower() if chr.isalnum())
+    return line if decode else " ".join(line[index:index+5] for index in range(0, len(line), 5))
 
-def decode(text: str):
+def decode(text):
     return encode(text, True)
 ```
-To explain the translation: we use a `dict` comprehension in which we reverse the ASCII lowercase digits, and enumerate through them - that is, `z` is 0, `y` is 1, and so on. 
-We access the character at that index and set it to the value of `c` - so `z` translates to `a`.
 
-In the calculation of the result, we try to obtain the value of the character using `dict.get`, which accepts a default parameter. 
-In this case, the character itself is the default - that is, numbers won't be found in the translation key, and thus should remain as numbers.
+Here, we use a dictionary comprehension in which we reverse the order of the ASCII lowercase digits and enumerate through them — that is, `z` is at index 0, `y` is at index 1, and so on.
+For each code point, we set the value of `chr` in the resulting dictionary to the code point at the respective index — so `z` translates to `a`.
 
-We use a [ternary operator][ternary-operator] to check if we actually mean to decode the function, in which case we return the result as is. 
-If not, we chunk the result by joining every five characters with a space.
+In the calculation of the result, we try to obtain the value of the code point using `dict.get()`, which accepts a default parameter.
+In this case, the code point itself is the default — that is, numbers won't be found in the translation key, and thus should remain as numbers.
 
-Another possible way to solve this would be to use a function that returns a function that encodes or decodes based on the parameters:
+We use a [conditional expression (also known as a ternary operator)][conditional-expression] to check if we actually mean to decode the function, in which case we return the result as is.
+If not, we "chunk" the result by joining every five code points with a space.
+
+Another possible way to solve this would be to use a function that returns another function (_a higher-order function or [closure][closure]_) that encodes or decodes based on the outer function's parameter:
+
 ```python
-from string import ascii_lowercase as alc
+from string import ascii_lowercase as asc_low
 
-lowercase = {chr: alc[id] for id, chr in enumerate(alc[::-1])}
+ENCODING = {chr: asc_low[id] for id, chr in enumerate(asc_low[::-1])}
 
-def code(decode=False):
+def code(decode = False):
     def func(text):
-        line = "".join(lowercase.get(chr, chr) for chr in text.lower() if chr.isalnum())
+        line = "".join(ENCODING.get(chr, chr) for chr in text.lower() if chr.isalnum())
         return line if decode else " ".join(line[index:index+5] for index in range(0, len(line), 5))
     return func
 
-    
 encode = code()
 decode = code(True)
 ```
-The logic is the same - we've instead used one function that generates two _other_ functions based on the boolean value of its parameter.
-`encode` is set to the function that's returned, and performs encoding.
-`decode` is set a function that _decodes_.
 
-[ternary-operator]: https://www.tutorialspoint.com/ternary-operator-in-python
-[decorator]: https://realpython.com/primer-on-python-decorators/
+The logic is the same — the only change is that now we use use one function that generates two _other_ functions based on the boolean value of its parameter.
+
+Here, we first call `code()` with no argument and set `encode` to the function that's returned, which performs encoding.
+Then we call `code(True)` to get the decoding version of the function and set `decode` to that function.
+
+After that, we can call `encode()` and `decode()` as normal, and both functions successfully perform their indended task.
+
+[closure]: https://realpython.com/python-closure/
+[conditional-expression]: https://docs.python.org/3/reference/expressions.html#conditional-expressions

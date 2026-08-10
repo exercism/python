@@ -20,14 +20,14 @@ raise ValueError("syntax error")
 ```
 
 To _handle_ a raised error within a particular code block, one can use a [try-except][handling-exceptions].
- `try-except` blocks "wrap" the code that could potentially cause an error, mapping all the exceptions to one error, multiple errors, or other pieces of code to deal with the problem:
+`try-except` blocks "wrap" the code that could potentially cause an error, mapping all the exceptions to one error, multiple errors, or other pieces of code to deal with the problem:
 
 
 ```python
 while len(equation) > 1:
-        try: 
+        try:
            # The questionable/error-prone code goes here,in an indented block
-           # It can contain statements, loops, if-else blocks, or other executable code. 
+           # It can contain statements, loops, if-else blocks, or other executable code.
            x_value, operation, y_value, *rest = equation
            ...
            ...

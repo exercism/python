@@ -1,4 +1,5 @@
-## Approach: Using Lambdas with Functions
+# Approach: Using Lambdas with Functions
+
 Each bit of functionality for each category can be encoded in an anonymous function (otherwise known as a [`lambda` expression][lambda] or lambda form), and the constant name set to that function.
 
 In `score`, we call the category (as it now points to a function) passing in `dice` as an argument.

@@ -1,5 +1,5 @@
 def reverse(text):
-    output = ''
+    output = ""
     for codepoint in text:
         output = codepoint + output
     return output

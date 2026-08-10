@@ -1,0 +1,8 @@
+    ...
+    def __init__(self):
+        for ability_type in self.ABILITIES:
+            setattr(self, ability_type, self.ability())
+
+    def ability(self):
+        values = sample(range(1, 7), 4)
+        return sum(values) - min(values)

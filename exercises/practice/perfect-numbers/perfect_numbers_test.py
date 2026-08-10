@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/perfect-numbers/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2026-02-25
 
 import unittest
 
@@ -29,6 +29,9 @@ class AbundantNumbersTest(unittest.TestCase):
 
     def test_large_abundant_number_is_classified_correctly(self):
         self.assertEqual(classify(33550335), "abundant")
+
+    def test_perfect_square_abundant_number_is_classified_correctly(self):
+        self.assertEqual(classify(196), "abundant")
 
 
 class DeficientNumbersTest(unittest.TestCase):

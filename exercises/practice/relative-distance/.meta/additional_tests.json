@@ -1,0 +1,41 @@
+{
+  "cases": [
+    {
+      "description": "person A not in tree",
+      "property": "degreeOfSeparation",
+      "input": {
+        "family_tree": {
+          "Priya": ["Rami"]
+        },
+        "person_a": "Kaito",
+        "person_b": "Priya"
+      },
+      "expected":  {"error": "Person A not in family tree."}
+    },
+    {
+      "description": "person B not in tree",
+      "property": "degreeOfSeparation",
+      "input": {
+        "family_tree": {
+          "Priya": ["Rami"]
+        },
+        "person_a": "Priya",
+        "person_b": "Kaito"
+      },
+      "expected":  {"error": "Person B not in family tree."}
+    },
+    {
+      "description": "no connection between individuals",
+      "property": "degreeOfSeparation",
+      "input": {
+        "family_tree": {
+          "Priya": ["Rami"],
+          "Kaito": ["Elif"]
+        },
+        "person_a": "Priya",
+        "person_b": "Kaito"
+      },
+      "expected":  {"error": "No connection between person A and person B."}
+    }
+  ]
+}

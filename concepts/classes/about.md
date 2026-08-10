@@ -185,10 +185,10 @@ class Demo:
 The moment that `<object>.add_two()` is called, and `self.new_var += 2` is read, `new_var` changes from a class variable to an instance variable of the same name.
 
 This can be useful during initialization when all instances of a class will need some attribute(s) to start with the same value.
-However, the instance variable then shadows* the class variable, making the class variable inaccessible from the instance where it is shadowed.
+However, the instance variable then [_shadows_](https://oznetnerd.com/2017/07/17/python-shadowing/) the class variable, making the class variable inaccessible from the instance where it is shadowed.
 Given this situation, it may be safer and clearer to set instance attributes from the `__init__()` method as `self.<attribute>`.
 ~~~~
-_*[_shadows_][shadowing]
+
 
 ## Methods
 
@@ -240,7 +240,7 @@ class MyClass:
     def change_location(self, amount):
         self.location_x += amount
         self.location_y += amount
-        return  self.location_x, self.location_y
+        return self.location_x, self.location_y
 
 # Make a new test_object with location (3,7)
 >>> test_object = MyClass((3,7))
@@ -267,7 +267,7 @@ class MyClass:
     def change_location(self, amount):
         self.location_x += amount
         self.location_y += amount
-        return  self.location_x, self.location_y
+        return self.location_x, self.location_y
 
     # Alter class variable number for all instances from within an instance.
     def increment_number(self):
@@ -322,4 +322,3 @@ class MyClass:
 [dunder]: https://mathspp.com/blog/pydonts/dunder-methods
 [oop]: https://www.educative.io/blog/object-oriented-programming
 [dot notation]: https://stackoverflow.com/questions/45179186/understanding-the-dot-notation-in-python
-[shadowing]: https://oznetnerd.com/2017/07/17/python-shadowing/

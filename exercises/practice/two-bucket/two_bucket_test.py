@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/two-bucket/canonical-data.json
-# File last updated on 2023-07-21
+# File last updated on 2025-09-23
 
 import unittest
 
@@ -39,6 +39,12 @@ class TwoBucketTest(unittest.TestCase):
         self,
     ):
         self.assertEqual(measure(2, 3, 3, "one"), (2, "two", 2))
+
+    def test_measure_using_bucket_one_much_bigger_than_bucket_two(self):
+        self.assertEqual(measure(5, 1, 2, "one"), (6, "one", 1))
+
+    def test_measure_using_bucket_one_much_smaller_than_bucket_two(self):
+        self.assertEqual(measure(3, 15, 9, "one"), (6, "two", 0))
 
     def test_not_possible_to_reach_the_goal(self):
         with self.assertRaisesWithMessage(ValueError):

@@ -35,6 +35,7 @@ For a short string as input, is the alphabet approach the fastest, followed by a
 This means that if you know the input is a short string, the fastest approach is to use the alphabet, and forgo the overhead of making and saving a translation dictionary.
 On the other hand, if the input is a long string, the overhead of making a dictionary is amortized over the length of the text to be translated, and the fastest approach becomes `str.translate`.
 
+[approaches]: https://exercism.org/tracks/python/exercises/rotational-cipher/dig_deeper
 [approach-recursion]: https://exercism.org/tracks/python/exercises/rotational-cipher/approaches/recursion
 [approach-str-translate]: https://exercism.org/tracks/python/exercises/rotational-cipher/approaches/str-translate
 [approach-ascii-values]: https://exercism.org/tracks/python/exercises/rotational-cipher/approaches/ascii-values

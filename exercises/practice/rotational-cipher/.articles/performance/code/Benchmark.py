@@ -6,8 +6,8 @@ import itertools
 print(sys.version)
 
 
-AlPHABET = "abcdefghijklmnopqrstuvwxyz"
-COMBINATIONS = itertools.combinations_with_replacement(f"{AlPHABET[:13]}{AlPHABET[:13].upper()} 12,", 2)
+ALPHABET = "abcdefghijklmnopqrstuvwxyz"
+COMBINATIONS = itertools.combinations_with_replacement(f"{ALPHABET[:13]}{ALPHABET[:13].upper()} 12,", 2)
 TEST_TEST = "".join([element for sublist in COMBINATIONS for element in sublist])
 
 def rotate_ascii(text, key):
@@ -28,17 +28,17 @@ def rotate_alphabet(text, key):
     for letter in text:
         if letter.isalpha():
             if letter.isupper():
-                result += AlPHABET[(AlPHABET.index(letter.lower()) + key) % 26].upper()
+                result += ALPHABET[(ALPHABET.index(letter.lower()) + key) % 26].upper()
             else:
-                result += AlPHABET[(AlPHABET.index(letter) + key) % 26]
+                result += ALPHABET[(ALPHABET.index(letter) + key) % 26]
         else:
             result += letter
     return result
 
 
 def rotate_translate(text, key):
-    translator = AlPHABET[key:] + AlPHABET[:key]
-    return text.translate(str.maketrans(AlPHABET + AlPHABET.upper(), translator + translator.upper()))
+    translator = ALPHABET[key:] + ALPHABET[:key]
+    return text.translate(str.maketrans(ALPHABET + ALPHABET.upper(), translator + translator.upper()))
 
 
 def rotate_recursion(text, key):
@@ -47,9 +47,9 @@ def rotate_recursion(text, key):
     first_letter, rest = text[0], text[1:]
     if first_letter.isalpha():
         if first_letter.isupper():
-            return AlPHABET[(AlPHABET.index(first_letter.lower()) + key) % 26].upper() + rotate_recursion(rest, key)
+            return ALPHABET[(ALPHABET.index(first_letter.lower()) + key) % 26].upper() + rotate_recursion(rest, key)
         else:
-            return AlPHABET[(AlPHABET.index(first_letter) + key) % 26] + rotate_recursion(rest, key)
+            return ALPHABET[(ALPHABET.index(first_letter) + key) % 26] + rotate_recursion(rest, key)
     else:
         return first_letter + rotate_recursion(rest, key)
 

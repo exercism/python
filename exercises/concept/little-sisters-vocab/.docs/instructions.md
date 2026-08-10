@@ -40,6 +40,9 @@ Implement the `make_word_groups(<vocab_words>)` function that takes a `vocab_wor
  `[<prefix>, <word_1>, <word_2> .... <word_n>]`, and returns a string with the prefix applied to each word that looks like:
   `'<prefix> :: <prefix><word_1> :: <prefix><word_2> :: <prefix><word_n>'`.
 
+Creating a `for` or `while` loop to process the input is not needed here.
+Think carefully about which string methods (and delimiters) you could use instead.
+
 
 ```python
 >>> make_word_groups(['en', 'close', 'joy', 'lighten'])

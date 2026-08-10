@@ -135,7 +135,7 @@ Numbers can be converted from `int` to `floats` and `floats` to `int` using the 
 
 ## Round
 
-Python provides a built-in function [`round(number, <decimal_places>)`][round] to round off a floating point number to a given number of decimal places.
+Python provides a built-in function [`round(<number>, <decimal_places>)`][round] to round off a floating point number to a given number of decimal places.
 If no number of decimal places is specified, the number is rounded off to the nearest integer and will return an `int`:
 
 ```python

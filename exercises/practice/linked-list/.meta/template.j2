@@ -39,13 +39,23 @@
         {%- if error_operation == "pop" or error_operation == "shift" %}
         with self.assertRaises(IndexError) as err:
             lst.{{ error_operation }}()
-            self.assertEqual(type(err.exception), IndexError)
+
+        to_validate = err.exception
+        to_validate_msg = err.exception.args[0]
+
+        self.assertEqual(type(to_validate), IndexError)
+        self.assertEqual(to_validate_msg, "{{ error_msg }}")
+
         {%- elif error_operation == "delete" %}
         with self.assertRaises(ValueError) as err:
             lst.{{ error_operation }}({{ value if value else 0 }})
-            self.assertEqual(type(err.exception), ValueError)
+
+        to_validate = err.exception
+        to_validate_msg = err.exception.args[0]
+
+        self.assertEqual(type(to_validate), ValueError)
+        self.assertEqual(to_validate_msg, "{{ error_msg }}")
         {%- endif  %}
-            self.assertEqual(err.exception.args[0], "{{ error_msg }}")
     {%- endif  %}
 {%- endmacro %}
 

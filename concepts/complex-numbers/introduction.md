@@ -3,7 +3,9 @@
 `Complex numbers` are not complicated.
 They just need a less alarming name.
 
-They are so useful, especially in engineering and science (_everything from JPEG compression to quantum mechanics_), that Python includes [`complex`][complex] as a standard numeric type alongside integers ([`int`s][ints]) and floating-point numbers ([`float`s][floats]).
+
+They are so useful — especially in engineering and science — that Python includes [`complex`][complex] as a standard numeric type, alongside integers ([`int`s][ints]) and floating-point numbers ([`float`s][floats]).
+
 
 A `complex` value in Python is essentially a pair of floating-point numbers:
 
@@ -74,13 +76,13 @@ There are two common ways to create complex numbers.
 
 Most of the [`operators`][operators] used with floats and ints also work with complex numbers.
 
-Integer division is _**not**_ possible on complex numbers, so the `//` and `%` operators and `divmod()` functions will fail for the complex number type.
+Integer division is _**not**_ possible on complex numbers, so the `//` and `%` operators and the `divmod()` function will fail for the complex number type.
 
 Explaining the rules for complex number multiplication and division is out of scope for this concept (_and you are unlikely to have to perform those operations "by hand" very often_).
 
 Any [mathematical][math-complex] or [electrical engineering][engineering-complex] introduction to complex numbers will cover these scenarios, should you want to dig into the topic.
 
-The Python standard library has a [`math`][math-module] module full of useful functionality for working with real numbers and the [`cmath`][cmath] module is its equivalent for working with complex numbers.
+The Python standard library has a [`math`][math-module] module full of useful functionality for working with real numbers, and the [`cmath`][cmath] module is its equivalent for working with complex numbers.
 
 
 [cmath]: https://docs.python.org/3/library/cmath.html

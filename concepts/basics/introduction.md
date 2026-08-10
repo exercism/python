@@ -25,8 +25,8 @@ A name can be reassigned (or re-bound) to different values (different object typ
 
 
 ```python
->>> my_first_variable = 1  # my_first_variable bound to an integer object of value one.
->>> my_first_variable = 2  # my_first_variable re-assigned to integer value 2.
+>>> my_first_variable = 1  # <--my_first_variable bound to an integer object of value one.
+>>> my_first_variable = 2  # <--my_first_variable re-assigned to integer value 2.
 
 >>> print(type(my_first_variable))
 <class 'int'>
@@ -34,12 +34,13 @@ A name can be reassigned (or re-bound) to different values (different object typ
 >>> print(my_first_variable)
 2
 
->>> my_first_variable = "Now, I'm a string." # You may re-bind a name to a different object type and value.
+>>> my_first_variable = "Now, I'm a string." # <--You may re-bind a name to a different object type and value.
 >>> print(type(my_first_variable))
 <class 'str'>
 
+>>> my_first_variable = 'You can call me "str".' # <--Strings can be declared using single or double quote marks.
 >>> print(my_first_variable)
-"Now, I'm a string."  # Strings can be declared using single or double quote marks.
+You can call me "str".
 ```
 
 
@@ -54,12 +55,12 @@ Constants should be defined at a [module][module] (file) level, and are typicall
 ## Functions
 
 The `def` keyword begins a [function definition][function definition].
-Each function can have zero or more formal [parameters][parameters] in `()` parenthesis, followed by a `:` colon.
+Each function can have zero or more formal [parameters][parameters] in `()` parentheses, followed by a `:` colon.
 Statements for the _body_ of the function begin on the line following `def` and must be _indented in a block_.
 
 
 ```python
-# The body of this function is indented by 2 spaces,& prints the sum of the numbers.
+# The body of this function is indented by 2 spaces & prints the sum of the numbers.
 def add_two_numbers(number_one, number_two):
   total = number_one + number_two
   print(total)  
@@ -71,7 +72,7 @@ def add_two_numbers(number_one, number_two):
 # Inconsistent indentation in your code blocks will raise an error.
 >>> def add_three_numbers_misformatted(number_one, number_two, number_three):
 ...     result = number_one + number_two + number_three   # This was indented by 4 spaces.
-...    print(result)     #this was only indented by 3 spaces
+...    print(result)     # <--This was only indented by 3 spaces.
 ...
 ...
   File "<stdin>", line 3
@@ -90,7 +91,7 @@ def add_two_numbers(number_one, number_two):
   return number_one + number_two   
 
 
-# Calling the function in the Python terminal returns the sum of the numbers.
+# Calling the function in the Python shell returns the sum of the numbers.
 >>> add_two_numbers(3, 4)
 7
 
@@ -102,29 +103,40 @@ def add_two_numbers(number_one, number_two):
 ```
 
 
-Functions that do not have an _explicit_ `return` expression will _implicitly_ return the [`None`][none] object.
-This means that if you do not use `return` in a function, Python will return the `None` object for you.
-The details of `None` will be covered in a later exercise.
+Functions that do not have an _explicit_ expression following a `return` will _implicitly_ return the [`None`][none] object.
+The details of `None` will be covered in a later concept.
 For the purposes of this exercise and explanation, `None` is a placeholder that represents nothing, or null:
 
 
 ```python
-# This function does not have an explicit return.
-def add_two_numbers(number_one, number_two):
-  result = number_one + number_two
+# This function will return `None`
+def square_a_number(number):
+    square = number * number
+    return # <-- note that this return is not followed by an expression
 
-
-# Calling the function in the Python terminal appears 
+# Calling the function in the Python shell appears 
 # to not return anything at all.
->>> add_two_numbers(5, 7)
+>>> square_a_number(2)
 >>>
 
 
 # Using print() with the function call shows that 
 # the function is actually returning the **None** object.
+>>> print(square_a_number(2))
+None
+```
+
+Functions that omit `return` will also  _implicitly_ return the [`None`][none] object.
+This means that if you do not use `return` in a function, Python will return the `None` object for you.
+
+```python
+# This function omits a return keyword altogether.
+def add_two_numbers(number_one, number_two):
+  result = number_one + number_two
+
+>>> add_two_numbers(5, 7)
 >>> print(add_two_numbers(5, 7))
 None
-
 
 # Assigning the function call to a variable and printing 
 # the variable will also show None.
@@ -144,29 +156,35 @@ Each line of a comment block must start with the `#` character.
 ## Docstrings
 
 The first statement of a function body can optionally be a [_docstring_][docstring], which concisely summarizes the function or object's purpose.
-Docstring conventions are laid out in [PEP257][pep257].
+Docstrings are read by automated documentation tools such as [Sphinx][sphinx] and are returned by calling the special attribute `.__doc__` on the function, method, or class name.
+General docstring conventions are laid out in [PEP257][pep257], but exact formats will vary by project and team.
 Docstrings are declared using triple double quotes (""") indented at the same level as the code block:
 
 
 ```python
-
-# An example from PEP257 of a multi-line docstring.
+# An example from PEP257 of a multi-line docstring
+# reformatted to use Google style non-type hinted docstrings.
+# Some additional details can be found in the Sphinx documentation:
+# https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html#getting-started
 def complex(real=0.0, imag=0.0):
     """Form a complex number.
 
-    Keyword arguments:
-    real -- the real part (default 0.0)
-    imag -- the imaginary part (default 0.0)
+    Keyword Arguments:
+        real (float): The real part of the number (default 0.0)
+        imag (float): The imaginary part of the number (default 0.0)
+        
     """
 
     if imag == 0.0 and real == 0.0:
         return complex_zero
-
 ```
 
-[pep257]: https://www.python.org/dev/peps/pep-0257/
+Docstrings can also function as [lightweight unit tests][doctests], which will be covered in a later concept.
+
+
 [comments]: https://realpython.com/python-comments-guide/#python-commenting-basics
 [docstring]: https://docs.python.org/3/tutorial/controlflow.html#tut-docstrings
+[doctests]: https://docs.python.org/3/library/doctest.html
 [duck typing]: https://en.wikipedia.org/wiki/Duck_typing
 [dynamic typing in python]: https://stackoverflow.com/questions/11328920/is-python-strongly-typed
 [everythings an object]: https://docs.python.org/3/reference/datamodel.html
@@ -176,6 +194,8 @@ def complex(real=0.0, imag=0.0):
 [module]: https://docs.python.org/3/tutorial/modules.html
 [none]: https://docs.python.org/3/library/constants.html
 [parameters]: https://docs.python.org/3/glossary.html#term-parameter
+[pep257]: https://www.python.org/dev/peps/pep-0257/
 [return]: https://docs.python.org/3/reference/simple_stmts.html#return
-[type hints]: https://docs.python.org/3/library/typing.html
 [significant indentation]: https://docs.python.org/3/reference/lexical_analysis.html#indentation
+[sphinx]: https://www.sphinx-doc.org/en/master/usage/index.html
+[type hints]: https://docs.python.org/3/library/typing.html

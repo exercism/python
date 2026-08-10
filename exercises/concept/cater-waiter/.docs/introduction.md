@@ -32,11 +32,11 @@ A `set` can be directly entered as a _set literal_ with curly `{}` brackets and 
 Duplicates are silently omitted:
 
 ```python
->>> one_element = {'😀'}
-{'😀'}
+>>> one_element = {'➕'}
+{'➕'}
 
->>> multiple_elements = {'😀', '😃', '😄', '😁'}
-{'😀', '😃', '😄', '😁'}
+>>> multiple_elements = {'➕', '🔻', '🔹', '🔆'}
+{'➕', '🔻', '🔹', '🔆'}
 
 >>> multiple_duplicates =  {'Hello!', 'Hello!', 'Hello!', 
                             '¡Hola!','Привіт!', 'こんにちは！', 
@@ -91,9 +91,9 @@ Sets can hold different datatypes and _nested_ datatypes, but all `set` elements
 
 ```python
 # Attempting to use a list for a set member throws a TypeError
->>> lists_as_elements = {['😅','🤣'], 
-                        ['😂','🙂','🙃'], 
-                        ['😜', '🤪', '😝']}
+>>> lists_as_elements = {['🌈','💦'], 
+                        ['☁️','⭐️','🌍'], 
+                        ['⛵️', '🚲', '🚀']}
 
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -101,9 +101,9 @@ TypeError: unhashable type: 'list'
 
 
 # Standard sets are mutable, so they cannot be hashed.
->>> sets_as_elements = {{'😅','🤣'}, 
-                        {'😂','🙂','🙃'}, 
-                        {'😜', '🤪', '😝'}}
+>>> sets_as_elements = {{'🌈','💦'}, 
+                        {'☁️','⭐️','🌍'}, 
+                        {'⛵️', '🚲', '🚀'}}
 
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -258,7 +258,7 @@ The operator version of this method is `<set> & <other set> & <other set 2> & ..
 
 >>> herbs = ['Annatto','Asafetida','Basil','Chervil','Cilantro',
             'Curry Leaf','Fennel','Kaffir Lime','Lavender',
-            'Marjoram','Mint','Oregano','Summer Savory' 
+            'Marjoram','Mint','Oregano','Summer Savory', 
             'Tarragon','Wild Bergamot','Wild Celery',
             'Winter Savory']
 
@@ -360,8 +360,8 @@ The operator version of this method is  `<set> ^ <other set>`:
 >>> fruit_and_flowers ^ plants_1
 {'🌲',  '🌸', '🌴', '🌵','🌺', '🌻'}
 
->>> fruit_and_flowers ^ plants_2
-{ '🥑', '🌴','🌲', '🌵', '🍈', '🥭'}
+>>> fruit_and_flowers ^ set(plants_2)
+{'🥭', '🌴', '🌵', '🍈', '🌲', '🥑'}
 ```
 
 ~~~~exercism/note

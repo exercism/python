@@ -1,0 +1,8 @@
+def egg_count(display_value):
+    return count_ones(convert_to_binary(display_value))
+
+def convert_to_binary(decimal_value):
+    ...
+
+def count_ones(binary_value):
+    ...

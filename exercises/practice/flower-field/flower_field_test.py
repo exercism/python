@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/flower-field/canonical-data.json
-# File last updated on 2025-06-25
+# File last updated on 2025-12-30
 
 import unittest
 
@@ -51,6 +51,9 @@ class FlowerFieldTest(unittest.TestCase):
             annotate([" *  * ", "  *   ", "    * ", "   * *", " *  * ", "      "]),
             ["1*22*1", "12*322", " 123*2", "112*4*", "1*22*2", "111111"],
         )
+
+    def test_multiple_adjacent_flowers(self):
+        self.assertEqual(annotate([" ** "]), ["1**1"])
 
     # Additional tests for this track
     def test_annotate_9(self):

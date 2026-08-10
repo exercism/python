@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/connect/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2026-05-01
 
 import unittest
 
@@ -10,6 +10,7 @@ from connect import (
 
 
 class ConnectTest(unittest.TestCase):
+
     def test_an_empty_board_has_no_winner(self):
         game = ConnectGame(
             """. . . . .
@@ -70,6 +71,26 @@ class ConnectTest(unittest.TestCase):
                  O X O .
                   X X O X
                    . O X ."""
+        )
+        winner = game.get_winner()
+        self.assertEqual(winner, "X")
+
+    def test_x_wins_with_left_hand_dead_end_fork(self):
+        game = ConnectGame(
+            """. . X .
+                X X . .
+                 . X X X
+                  O O O O"""
+        )
+        winner = game.get_winner()
+        self.assertEqual(winner, "X")
+
+    def test_x_wins_with_right_hand_dead_end_fork(self):
+        game = ConnectGame(
+            """. . X X
+                X X . .
+                 . X X .
+                  O O O O"""
         )
         winner = game.get_winner()
         self.assertEqual(winner, "X")

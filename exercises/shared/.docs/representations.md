@@ -7,7 +7,7 @@ The [Python representer][representer] processes and normalizes student solutions
 - For troubleshooting purposes, `representation.out` includes starting AST, edited AST, and a code representation with normalizations applied.
 
 - Removals:
-    - typehints
+    - typehints (_including typehints in dataclasses, see Normalizations below_)
     - `print()` statements
     - `if __name__ == __main__` blocks
     -  comments
@@ -28,6 +28,8 @@ The [Python representer][representer] processes and normalizes student solutions
     - **1e2+1_23e0+4.4e-1** --> 100.0 + 123.0 + 0.44 #223.44
     - **7e6+7e5+5e4+9.98e2+4.45_779e-1** -->7000000.0 + 700000.0 + 50000.0 + 998.0 + 0.445779 #7750998.445779
     - **(7e6+7e5+5e4+9.98e1+4.457_79e-1)+(1e2+1.23e1+4.444_23e-1)*1*j** --> (7000000.0 + 700000.0 + 50000.0 + 99.8 + 0.445779 + (100.0 + 12.3 + 0.444423) * 1j)  #7750100.245779+112.744423j
+  - functions and classes that have empty bodies after docstring removal have `pass` assigned to the body.
+  - dataclasses that have type hinted but unassigned data members have those data members assigned `None` as a value. See the docstring starting on line 153 of normalizer.py for more details.
 
 [representer]: https://github.com/exercism/python-representer/tree/main/representer
 [python-ast]: https://docs.python.org/3/library/ast.html#module-ast

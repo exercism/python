@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/isbn-verifier/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2025-12-30
 
 import unittest
 
@@ -30,6 +30,12 @@ class IsbnVerifierTest(unittest.TestCase):
 
     def test_x_is_only_valid_as_a_check_digit(self):
         self.assertIs(is_valid("3-598-2X507-9"), False)
+
+    def test_only_one_check_digit_is_allowed(self):
+        self.assertIs(is_valid("3-598-21508-96"), False)
+
+    def test_x_is_not_substituted_by_the_value_10(self):
+        self.assertIs(is_valid("3-598-2X507-5"), False)
 
     def test_valid_isbn_without_separating_dashes(self):
         self.assertIs(is_valid("3598215088"), True)

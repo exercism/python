@@ -1,0 +1,45 @@
+{
+  "introduction": {
+    "authors": ["yrahcaz7"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "27fb20ed-a4c2-4f73-a8fc-86ba384c7b35",
+      "slug": "argument-modification",
+      "title": "Modify the Argument in a Loop",
+      "blurb": "Modify the argument in a while-loop to determine the number of eggs.",
+      "authors": ["yrahcaz7"]
+    },
+    {
+      "uuid": "65fd717c-0e50-444b-a4b2-b51862f1f810",
+      "slug": "no-argument-modification",
+      "title": "Loop Without Modifying the Argument",
+      "blurb": "Loop over the bits without modifying the argument to calculate the number of eggs.",
+      "authors": ["yrahcaz7"]
+    },
+    {
+      "uuid": "df202fa9-3757-4808-a416-7ec3ee1e9680",
+      "slug": "convert-to-binary-string",
+      "title": "Convert to a Binary String",
+      "blurb": "Convert the argument to a binary string and count its ones to determine the number of eggs.",
+      "authors": ["yrahcaz7"],
+      "contributors": ["BethanyG"]
+    },
+    {
+      "uuid": "97b06094-7ce8-4874-b66a-af7391adc853",
+      "slug": "built-in-bit-count",
+      "title": "Use the Built-In Bit-Count Functionality",
+      "blurb": "Use Python's built-in bit-count functionality to calculate the number of eggs.",
+      "authors": ["yrahcaz7"],
+      "contributors": ["BethanyG"]
+    },
+    {
+      "uuid": "618491ca-480e-4e32-bf91-4940affb48a8",
+      "slug": "helper-functions",
+      "title": "Use Helper Functions",
+      "blurb": "Split the problem into multiple helper functions to calculate the number of eggs.",
+      "authors": ["yrahcaz7"]
+    }
+  ]
+}

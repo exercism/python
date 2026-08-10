@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/satellite/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2025-12-30
 
 import unittest
 
@@ -67,3 +67,56 @@ class SatelliteTest(unittest.TestCase):
             tree_from_traversals(preorder, inorder)
         self.assertEqual(type(err.exception), ValueError)
         self.assertEqual(err.exception.args[0], "traversals must contain unique items")
+
+    def test_a_degenerate_binary_tree(self):
+        preorder = ["a", "b", "c", "d"]
+        inorder = ["d", "c", "b", "a"]
+
+        expected = {
+            "v": "a",
+            "l": {
+                "v": "b",
+                "l": {"v": "c", "l": {"v": "d", "l": {}, "r": {}}, "r": {}},
+                "r": {},
+            },
+            "r": {},
+        }
+        self.assertEqual(tree_from_traversals(preorder, inorder), expected)
+
+    def test_another_degenerate_binary_tree(self):
+        preorder = ["a", "b", "c", "d"]
+        inorder = ["a", "b", "c", "d"]
+
+        expected = {
+            "v": "a",
+            "l": {},
+            "r": {
+                "v": "b",
+                "l": {},
+                "r": {"v": "c", "l": {}, "r": {"v": "d", "l": {}, "r": {}}},
+            },
+        }
+        self.assertEqual(tree_from_traversals(preorder, inorder), expected)
+
+    def test_tree_with_many_more_items(self):
+        preorder = ["a", "b", "d", "g", "h", "c", "e", "f", "i"]
+        inorder = ["g", "d", "h", "b", "a", "e", "c", "i", "f"]
+
+        expected = {
+            "v": "a",
+            "l": {
+                "v": "b",
+                "l": {
+                    "v": "d",
+                    "l": {"v": "g", "l": {}, "r": {}},
+                    "r": {"v": "h", "l": {}, "r": {}},
+                },
+                "r": {},
+            },
+            "r": {
+                "v": "c",
+                "l": {"v": "e", "l": {}, "r": {}},
+                "r": {"v": "f", "l": {"v": "i", "l": {}, "r": {}}, "r": {}},
+            },
+        }
+        self.assertEqual(tree_from_traversals(preorder, inorder), expected)

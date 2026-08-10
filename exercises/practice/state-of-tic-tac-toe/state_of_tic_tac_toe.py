@@ -1,0 +1,2 @@
+def gamestate(board):
+    pass

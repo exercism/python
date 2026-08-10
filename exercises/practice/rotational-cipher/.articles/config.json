@@ -5,7 +5,8 @@
       "slug": "performance",
       "title": "Performance deep dive",
       "blurb": "Deep dive to find out the performance between different approaches",
-      "authors": ["meatball133", "bethanyg"]
+      "authors": ["meatball133", "bethanyg"],
+      "contributors": ["yrahcaz7"]
     }
   ]
 }

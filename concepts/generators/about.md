@@ -35,9 +35,33 @@ The rationale behind this is that you use a generator when you do not need all t
 
 This saves memory and processing power, since only the value you are _currently working on_ is calculated.
 
+
 ## Using a generator
 
-Generators may be used in place of most `iterables` in Python. This includes _functions_ or _objects_ that require an `iterable`/`iterator` as an argument.
+Generators (_technically [`generator-iterator`s][generator-iterator] — see the note below._) are a type of `iterator` and can be used anywhere in Python where an `iterator` or `iterable` is expected.
+This includes _functions_ or _objects_ that require an `iterable`/`iterator` as an argument.
+For a deeper dive, see [How to Make an Iterator in Python][how-to-iterator].
+
+
+~~~~exercism/note
+
+Generator-iterators are a special sub-set of [iterators][iterator].
+`Iterators` are the mechanism/protocol that enables looping over _iterables_.
+Generator-iterators and the iterators returned by common Python [`iterables`][iterables] act very similarly, but there are some important differences to note:
+
+- They are _[lazily evaluated][lazy evaluation]_; iteration is _one-way_ and there is no "backing up" to a previous value.
+- They are _consumed_ by iterating over the returned values; there is no resetting or saving in memory.
+- They are not sortable and cannot be reversed.
+- They are not sequence types, and _do not_ have `indexes`. 
+  You cannot reference a previous or future value using addition or subtraction and you cannot use bracket (`[]`) notation or slicing.
+- They cannot be used with the `len()` function, as they have no length.
+- They can be _finite_ or _infinite_ - be careful when collecting all values from an _infinite_ `generator-iterator`!
+
+[iterator]: https://docs.python.org/3.11/glossary.html#term-iterator
+[iterables]: https://wiki.python.org/moin/Iterator
+[lazy evaluation]: https://en.wikipedia.org/wiki/Lazy_evaluation
+~~~~
+
 
 To use the `squares_generator()` generator:
 
@@ -140,7 +164,8 @@ Generators are also very helpful when a process or calculation is _complex_, _ex
 Now whenever `__next__()` is called on the `infinite_sequence` object, it will return the _previous number_ + 1.
 
 
-[generator-iterator]: https://docs.python.org/3.11/glossary.html#term-generator-iterator
+[generator-iterator]: https://docs.python.org/3/glossary.html#term-generator-iterator
+[how-to-iterator]: https://treyhunner.com/2018/06/how-to-make-an-iterator-in-python/#Generators:_the_easy_way_to_make_an_iterator
 [iterables]: https://wiki.python.org/moin/Iterator
 [iterator]: https://docs.python.org/3.11/glossary.html#term-iterator
 [lazy iterator]: https://en.wikipedia.org/wiki/Lazy_evaluation

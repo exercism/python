@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/wordy/canonical-data.json
-# File last updated on 2025-06-20
+# File last updated on 2026-05-22
 
 import unittest
 
@@ -110,6 +110,17 @@ class WordyTest(unittest.TestCase):
         self.assertEqual(err.exception.args[0], "syntax error")
 
     # Additional tests for this track
+
+    def test_4_number_question(self):
+        self.assertEqual(answer("What is 1 plus -10 multiplied by 3 minus 4?"), -31)
+
+    def test_4_number_question_with_zero(self):
+        self.assertEqual(answer("What is 12 minus 0 divided by 6 plus 5?"), 7)
+
+    def test_5_number_question(self):
+        self.assertEqual(
+            answer("What is 3 multiplied by 6 minus 2 divided by 4 plus 11?"), 15
+        )
 
     def test_missing_operation(self):
         with self.assertRaises(ValueError) as err:

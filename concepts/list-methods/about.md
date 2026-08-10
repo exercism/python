@@ -11,7 +11,7 @@ Lists support both [common][common sequence operations] and [mutable][mutable se
 Python provides many useful [methods][list-methods] for working with lists.
 
  Because lists are mutable, list-methods **alter the original list object** passed into the method.
-If mutation is undesirable, a `shallow copy` (_at minimum__) of the original `list` needs to be made via `slice` or `<list>.copy()`.
+If mutation is undesirable, a `shallow copy` (_at minimum_) of the original `list` needs to be made via `slice` or `<list>.copy()`.
 
 
 ## Adding Items
@@ -47,7 +47,8 @@ If `<index>` is greater than the final index on the list, the item will be added
 ```
 
 An `iterable` can be _combined_ with an existing list (concatenating the two) via `<list>.extend(<iterable>)`.
-`<list>.extend(<iterable>)` will _unpack_ the supplied iterable, adding its elements in the same order to the end of the target list (_using `<list>.append(<item>)` in this circumstance would add the entire iterable as a **single item**._).
+`<list>.extend(<iterable>)` will _unpack_ the supplied iterable, adding its elements in the same order to the end of the target list.
+Using `<list>.append(<item>)` in this circumstance would add the entire iterable as a _**single item**_.
 
 
 ```python
