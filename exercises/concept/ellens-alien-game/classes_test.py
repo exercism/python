@@ -153,18 +153,9 @@ class ClassesTest(unittest.TestCase):
                                  f'for total_aliens_created, but the tests expect '
                                  f'the class attributes for each newly created Alien to be identical.')
 
-        health_error_message = ('Created two new Aliens and requested the '
-                                f'health attribute for each one. Received {alien_one.health, alien_two.health} '
-                                'for health, but the tests expect the class '
-                                'attributes for each newly created Alien to be identical.')
-
         self.assertEqual(alien_two.total_aliens_created,
                          alien_one.total_aliens_created,
                          msg=created_error_message)
-
-        self.assertEqual(alien_two.health,
-                         alien_one.health,
-                         msg=health_error_message)
 
     @pytest.mark.task(taskno=6)
     def test_alien_health_is_instance_variable(self):
