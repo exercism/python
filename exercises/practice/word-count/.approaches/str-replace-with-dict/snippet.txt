@@ -1,0 +1,8 @@
+counts = {}
+
+for word in words:
+    word = word.strip(IGNORE)
+    if word:
+        counts[word] = counts.get(word, 0) + 1
+
+return counts
