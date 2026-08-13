@@ -157,6 +157,14 @@
         "name": "Locomotive Engineer",
         "uuid": "e1b8b9c9-21c3-47b1-b645-5938b3110c78",
         "concepts": ["unpacking-and-multiple-assignment"],
+        "prerequisites": ["loops", "lists", "tuples", "dicts", "unpacking-and-multiple-assignment"],
+        "status": "wip"
+      },
+      {
+        "slug": "thallias-tram-troubles",
+        "name": "Thallias Tram Troubles",
+        "uuid": "d1cf6301-d8fe-47a8-95a8-5ec0765aef7b",
+        "concepts": ["sequences"],
         "prerequisites": ["loops", "lists", "tuples", "dicts"],
         "status": "beta"
       },
