@@ -11,7 +11,7 @@ Python also offers additional 'remainder' methods in the [math module][math-modu
 [`math.remainder()`][remainder] implements a "step closest to zero" algorithm for the remainder of division.
 While we encourage you to get familiar with these methods, neither of these will exactly match the result of `%`, and are not recommended for use with this exercise.
 
-The built-in function [`divmod()`][divmod] will also give a remainder than matches `%` if used with two positive integers, but returns a `tuple` that needs to be unpacked.
+The built-in function [`divmod()`][divmod] will also give a remainder that matches `%` if used with two positive integers, but returns a `tuple` that needs to be unpacked.
 
 [divmod]: https://docs.python.org/3/library/functions.html#divmod
 [fmod]: https://docs.python.org/3/library/math.html#math.fmod
