@@ -7,16 +7,16 @@ try:
 except ImportError as import_fail:
     # pylint: disable=raise-missing-from
     raise ImportError("\n\nMISSING CLASS --> We tried to import the 'Alien' class from "
-                      "your classes.py file, but could not find it." 
-                      "Did you misname or forget to create it?") from None
+                      'your classes.py file, but could not find it. '
+                      'Did you misname or forget to create it?') from None
 
 try:
     from classes import new_aliens_collection
 except ImportError as err:
-    raise ImportError("\n\nMISSING FUNCTION --> We tried to import the "
-                      "new_aliens_collection() function "
-                      "from your classes.py file, but could not find it. "
-                      "Did you misname or forget to create it?") from None
+    raise ImportError('\n\nMISSING FUNCTION --> We tried to import the '
+                      'new_aliens_collection() function '
+                      'from your classes.py file, but could not find it. '
+                      'Did you misname or forget to create it?') from None
 
 
 class ClassesTest(unittest.TestCase):
@@ -38,7 +38,7 @@ class ClassesTest(unittest.TestCase):
         alien = Alien(0, 0)
         error_message = (f'Created a new Alien by calling Alien(0, 0). '
                          f'The new Alien has a health of {alien.health}, '
-                         f'but the tests expect health = 3')
+                         f'but the tests expect health = 3.')
 
         self.assertEqual(3, alien.health, msg=error_message)
 
@@ -72,7 +72,6 @@ class ClassesTest(unittest.TestCase):
         There are two valid interpretations for this method/task.
         `self.health -= 1` and `self.health = max(0, self.health - 1)`
         The tests for this task reflect this ambiguity.
-
         """
 
         test_data = [1, 2, 3, 4, 5, 6]
@@ -99,6 +98,7 @@ class ClassesTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=3)
     def test_alien_is_alive_method(self):
+        """Test the is_alive() method returns the expected values after a number of hits."""
         alien = Alien(0, 1)
 
         alive_error = ('Created a new Alien and called hit(). '
@@ -106,8 +106,8 @@ class ClassesTest(unittest.TestCase):
                        'while alien.health is greater than 0.')
 
         dead_error = ('Created a new Alien and called hit(). '
-                       'The function is_alive() is returning True (alive) '
-                       'while alien.health is less than or equal to 0.')
+                      'The function is_alive() is returning True (alive) '
+                      'while alien.health is less than or equal to 0.')
 
         for _ in range(5):
             alien.hit()
@@ -118,6 +118,7 @@ class ClassesTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=4)
     def test_alien_teleport_method(self):
+        """Test the teleport method updates the alien's coordinates."""
         alien = Alien(0, 0)
         alien.teleport(-1, -4)
 
@@ -130,11 +131,12 @@ class ClassesTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=5)
     def test_alien_collision_detection_method(self):
+        """Test the collision_detection() method can be called and returns None."""
         alien = Alien(7, 3)
         error_message = ('Created a new Alien at (7,3) and called '
                          'alien.collision_detection(Alien(7, 2)). '
                          f'The method returned {alien.collision_detection(Alien(7, 2))}, '
-                         'but the tests expected None. ')
+                         'but the tests expected None.')
 
         self.assertIsNone(alien.collision_detection(Alien(7, 2)), msg=error_message)
 
@@ -144,26 +146,35 @@ class ClassesTest(unittest.TestCase):
         """Test class attribute/variables are identical across instances."""
 
         alien_one, alien_two = Alien(0, 2), Alien(-6, -1)
-        Alien.health = 6
 
         created_error_message = ('Created two new Aliens and requested the '
                                  'total_aliens_created attribute for each one. '
                                  f'Received {alien_one.total_aliens_created, alien_two.total_aliens_created} '
                                  f'for total_aliens_created, but the tests expect '
-                                 f'the class attributes for each newly created Alien to be identical. ')
-
-        health_error_message = ('Created two new Aliens and requested the '
-                                f'health attribute for each one. Received {alien_one.health, alien_two.health} '
-                                'for health, but the tests expect the class '
-                                'attributes for each newly created Alien to be identical. ')
+                                 f'the class attributes for each newly created Alien to be identical.')
 
         self.assertEqual(alien_two.total_aliens_created,
                          alien_one.total_aliens_created,
                          msg=created_error_message)
 
-        self.assertEqual(alien_two.health,
-                         alien_one.health,
-                         msg=health_error_message)
+    @pytest.mark.task(taskno=6)
+    def test_alien_health_is_instance_variable(self):
+        """Test the health is an instance variable and not a class variable."""
+
+        alien_one, alien_two = Alien(0, 2), Alien(-6, -1)
+        alien_one.hit()
+
+        error_message = ('Created two new Aliens and called hit() on one of them. '
+                         f'Received {alien_one.health, alien_two.health} for health, '
+                         'but the tests expect them to have different health as '
+                         'only one was hit. Are you using a class variable for the health?')
+
+        # This checks that a class attribute, Alien.health, is not being used.
+        # If a class attribute is being used, hit() would update the health across
+        # all instances of the class.
+        self.assertNotEqual(alien_two.health,
+                            alien_one.health,
+                            msg=error_message)
 
     @pytest.mark.task(taskno=6)
     def test_alien_total_aliens_created(self):
@@ -182,9 +193,9 @@ class ClassesTest(unittest.TestCase):
         aliens.append(Alien(-5, -5))
 
         def error_text(alien, variable):
-            return ('Created two additional Aliens for the session.'
+            return ('Created two additional Aliens for the session. '
                     f"Alien number {alien}'s total_aliens_created variable "
-                    f"is equal to {variable}, but the tests expected all "
+                    f'is equal to {variable}, but the tests expected all '
                     'total_aliens_created variables for all instances to be '
                     'equal to number of alien instances created (i.e. 3).')
 
