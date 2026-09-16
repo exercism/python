@@ -9,7 +9,7 @@ def roman(number: int) -> str:
     result = ''
     while number:
         for arabic in ROMAN.keys():
-            if number >= arabic: 
+            if number >= arabic:
                 result += ROMAN[arabic]
                 number -= arabic
                 break
@@ -38,7 +38,7 @@ def roman(number: int) -> str:
 Using a pair of lists is also possible, with a shared index from `enumerate()`.
 
 ```python
-# Use a translation 
+# Use a translation
 numbers = [1000, 900, 500, 400, 100,  90, 50,  40,  10,  9,  5,    4,   1]
 names   = [ 'M', 'CM','D','CD', 'C','XC','L','XL', 'X','IX','V','IV', 'I']
 

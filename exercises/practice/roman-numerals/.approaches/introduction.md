@@ -51,7 +51,7 @@ def roman(number: int) -> str:
     return res
 ```
 
-See [`if-else`][if-else] for details.
+See the [`if-else`][if-else] approach for details.
 
 ### With table lookup
 
@@ -68,7 +68,7 @@ def roman(number):
     digits = [int(d) for d in str(number)]
     
     # get the row in the lookup table for the most-significant decimal digit
-    inverter = len(digits) - 1 
+    inverter = len(digits) - 1
 
     # translate decimal digits list to Roman numerals list
     roman_digits = [table[inverter - i][d - 1] for i, d in enumerate(digits) if d != 0]
@@ -77,7 +77,7 @@ def roman(number):
     return ''.join(roman_digits)
 ```
 
-See [`table-lookup`][table-lookup] for details.
+See the [`table-lookup`][table-lookup] approach for details.
 
 
 ## Loop over Romans approaches
@@ -101,7 +101,7 @@ def roman(number: int) -> str:
     result = ''
     while number:
         for arabic in ROMAN.keys():
-            if number >= arabic: 
+            if number >= arabic:
                 result += ROMAN[arabic]
                 number -= arabic
                 break
@@ -109,7 +109,7 @@ def roman(number: int) -> str:
 ```
 
 There are a number of variants.
-See [`loop-over-romans`][loop-over-romans] for details.
+See the [`loop-over-romans`][loop-over-romans] approach for details.
 
 ## Other approaches
 
@@ -163,7 +163,7 @@ def roman_recur(num: int, idx: int, digits: list[str]):
             return roman_recur(num, idx + 1, digits)
 ```
 
-See  [`recurse-match`][recurse-match] for details.
+See the [`recurse-match`][recurse-match] approach for details.
 
 
 ### Over-use a functional approach

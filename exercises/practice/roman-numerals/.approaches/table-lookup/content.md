@@ -13,7 +13,7 @@ def roman(number):
     digits = [int(d) for d in str(number)]
     
     # get the row in the lookup table for the most-significant decimal digit
-    inverter = len(digits) - 1 
+    inverter = len(digits) - 1
 
     # translate decimal digits list to Roman numerals list
     roman_digits = [table[inverter - i][d - 1] for i, d in enumerate(digits) if d != 0]
