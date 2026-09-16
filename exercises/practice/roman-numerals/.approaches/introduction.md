@@ -12,12 +12,14 @@ The system is inherently decimal: the number of human fingers has not changed si
 However, there is no zero value available, so Roman numerals represent powers of 10 with different letters (I, X, C, and M), not by position (1, 10, 100, 1000, etc).
 
 The approaches to this exercise break down into two groups, with many variants in each:
+
 1. Split the input number into digits, and translate each separately.
 2. Iterate through the Roman numbers, from large to small, and convert the largest valid number at each step.
 
 ## Digit-by-digit approaches
 
-The concept behind this class of approaches:
+The process behind this class of approaches:
+
 1. Split the input number into decimal digits.
 2. For each digit, get the Roman equivalent and append to a list.
 3. Join the list into a string and return it.
@@ -83,6 +85,7 @@ See the [`table-lookup`][table-lookup] approach for details.
 ## Loop over Romans approaches
 
 In this class of approaches we:
+
 1. Create a mapping from Roman to Arabic numbers, in some suitable format. (_`dicts` or `tuples` work well._)
 2. Iterate nested loops, a `for` and a `while`, in either order.
 3. At each step, append the largest possible Roman number to a list and subtract the corresponding value from the number being converted.

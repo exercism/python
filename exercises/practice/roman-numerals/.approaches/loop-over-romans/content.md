@@ -104,6 +104,7 @@ def roman(number: int) -> str:
 
 
 These five solutions all share some common features:
+
 - Some sort of translation lookup.
 - Nested loops, a `while` and a `for`, in either order (except the last one).
 - At each step, find the largest number that can be subtracted from the decimal input and appended to the Roman representation.
