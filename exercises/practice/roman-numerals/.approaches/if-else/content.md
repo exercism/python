@@ -14,27 +14,27 @@ def roman(number):
     res = ''
 
     if m > 0:
-        res +=  m * 'M'
+        res += m * 'M'
     
     if 4 > c > 0:
-        res +=  c * 'C'
+        res += c * 'C'
     elif c == 4:
-        res +=  'CD'
+        res += 'CD'
     elif 9 > c > 4:
-        res +=  'D' + ((c - 5) * 'C')
+        res += 'D' + ((c - 5) * 'C')
     elif c == 9:
-        res +=  'CM'
+        res += 'CM'
 
-    if 4 > x >  0:
+    if 4 > x > 0:
         res += x * 'X'
     elif x == 4:
         res += 'XL'
     elif 9 > x > 4:
         res += 'L' + ((x - 5) * 'X')
     elif x == 9:
-        res +=  'XC'
+        res += 'XC'
 
-    if 4 > i >  0:
+    if 4 > i > 0:
         res += i * 'I'
     elif i == 4:
         res += 'IV'
@@ -61,19 +61,16 @@ This can be done with a list comprehension, left-padding with zeros as necessary
 digits = ([0, 0, 0, 0] + [int(d) for d in str(number)])[-4:]
 ```
 
-The blocks for hundreds, tens and units are all essentially the same, so we can put that code in a function.
+The blocks for hundreds, tens, and units are all essentially the same, so we can put that code in a function.
 We just need to pass in the digit, plus a tuple of translations for `(1, 4, 5, 9)` or their 10x and 100x equivalents.
 
 It is also unnecessary to keep retesting the lower bounds within an `elif`, as the code line will only be reached if that is satisfied.
 
-Using `return` instead of `elif` is a matter of personal preference.
 Given that, the code simplifies to:
 
 ```python
 def roman(number: int) -> str:
     def translate_digit(digit: int, translations: iter) -> str:
-        assert isinstance(digit, int) and 0 <= digit <= 9
-
         units, four, five, nine = translations
         if digit < 4:
             return digit * units
@@ -83,7 +80,6 @@ def roman(number: int) -> str:
             return five + (digit - 5) * units
         return nine
 
-    assert isinstance(number, int)
     m, c, x, i = ([0, 0, 0, 0] + [int(d) for d in str(number)])[-4:]
     res = ''
 
@@ -99,5 +95,6 @@ def roman(number: int) -> str:
     return res
 ```
 
-The last few lines are quite similar and it would be possible to refactor them into a loop, but this is enough to illustrate the principle.
+(Using `return` instead of `elif` is a matter of personal preference.)
 
+The last few lines are quite similar and it would be possible to refactor them into a loop, but this is enough to illustrate the principle.
