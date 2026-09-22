@@ -1,0 +1,26 @@
+# This workflow is installed as .github/workflows/i18n-completeness.yml in
+# every repo that holds English. Don't edit it in those repos. Edit it in
+# exercism/i18n/source-repo-workflows/ and copy it to each repo. Keep the file
+# name, because exercism/i18n's rerun-source-check.yml looks for it.
+#
+# This workflow checks that exercism/i18n has a translation of all the English
+# a PR changes, and fails if anything is missing. The work happens in
+# exercism/i18n/.github/workflows/source-completeness.yml. This file only sets
+# when it runs and what it is allowed to do.
+#
+# GitHub reports this check as `i18n / completeness`. To make it a required
+# check, require that name.
+
+name: i18n completeness
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions: {}
+
+jobs:
+  i18n:
+    permissions:
+      contents: read
+    uses: exercism/i18n/.github/workflows/source-completeness.yml@main
