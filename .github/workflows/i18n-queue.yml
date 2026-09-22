@@ -1,0 +1,31 @@
+# This workflow is installed as .github/workflows/i18n-queue.yml in every repo
+# that holds English. Don't edit it in those repos. Edit it in
+# exercism/i18n/source-repo-workflows/ and copy it to each repo.
+#
+# When a maintainer adds the `ready-to-translate` label to a PR, this workflow
+# opens an issue in exercism/i18n asking for the PR's English to be translated.
+# The work happens in exercism/i18n/.github/workflows/source-queue.yml. This
+# file only sets when it runs and what it is allowed to do.
+#
+# It runs on `pull_request_target` so that PRs from forks can use the
+# organisation's secrets. That is safe because nothing in this workflow checks
+# out or runs code from the PR. It only checks out exercism/i18n.
+# `secrets: inherit` passes on the Exercism i18n app's private key, which the
+# workflow uses to open the issue.
+
+name: i18n queue
+
+on:
+  pull_request_target:
+    types: [labeled, unlabeled, synchronize]
+    branches: [main]
+
+permissions: {}
+
+jobs:
+  i18n:
+    permissions:
+      contents: read
+      pull-requests: write
+    uses: exercism/i18n/.github/workflows/source-queue.yml@main
+    secrets: inherit
