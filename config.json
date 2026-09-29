@@ -2294,9 +2294,27 @@
         "prerequisites": [],
         "difficulty": 4,
         "status": "deprecated"
+      },
+      {
+        "slug": "nucleotide-count",
+        "name": "Nucleotide Count",
+        "uuid": "105f25ec-7ce2-4797-893e-05e3792ebd91",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "status": "deprecated"
+      },
+      {
+        "slug": "parallel-letter-frequency",
+        "name": "Parallel Letter Frequency",
+        "uuid": "da03fca4-4606-48d8-9137-6e40396f7759",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "status": "deprecated"
       }
     ],
-    "foregone": ["lens-person", "nucleotide-count", "parallel-letter-frequency"]
+    "foregone": ["lens-person"]
   },
   "concepts": [
     {
