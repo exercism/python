@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/list-ops/canonical-data.json
-# File last updated on 2023-07-19
+# File last updated on 2026-09-29
 
 import unittest
 
@@ -80,8 +80,11 @@ class ListOpsTest(unittest.TestCase):
     def test_reverse_empty_list(self):
         self.assertEqual(reverse([]), [])
 
-    def test_reverse_non_empty_list(self):
+    def test_reverse_non_empty_even_length_list(self):
         self.assertEqual(reverse([1, 3, 5, 7]), [7, 5, 3, 1])
+
+    def test_reverse_non_empty_odd_length_list(self):
+        self.assertEqual(reverse([1, 3, 5, 7, 9, 11, 13]), [13, 11, 9, 7, 5, 3, 1])
 
     def test_reverse_list_of_lists_is_not_flattened(self):
         self.assertEqual(
