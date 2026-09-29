@@ -100,7 +100,10 @@ reimplements = "be396a53-c074-4db3-8dd6-f7ed003cce7c"
 description = "reverse the elements of the list -> empty list"
 
 [fcc03d1e-42e0-4712-b689-d54ad761f360]
-description = "reverse the elements of the list -> non-empty list"
+description = "reverse the elements of the list -> non-empty even-length list"
+
+[64d77184-5f74-4845-b158-545d2dd2df98]
+description = "reverse the elements of the list -> non-empty odd-length list"
 
 [40872990-b5b8-4cb8-9085-d91fc0d05d26]
 description = "reverse the elements of the list -> list of lists is not flattened"
