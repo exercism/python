@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/state-of-tic-tac-toe/canonical-data.json
-# File last updated on 2026-01-30
+# File last updated on 2026-09-30
 
 import unittest
 
@@ -235,6 +235,34 @@ class StateOfTicTacToeTest(unittest.TestCase):
             "XXX",
             "OOO",
             "XOX",
+        ]
+        with self.assertRaises(ValueError) as err:
+            gamestate(board)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(
+            err.exception.args[0],
+            "Impossible board: game should have ended after the game was won",
+        )
+
+    def test_invalid_board_o_kept_playing_after_x_wins(self):
+        board = [
+            "OO ",
+            "XXX",
+            " O ",
+        ]
+        with self.assertRaises(ValueError) as err:
+            gamestate(board)
+        self.assertEqual(type(err.exception), ValueError)
+        self.assertEqual(
+            err.exception.args[0],
+            "Impossible board: game should have ended after the game was won",
+        )
+
+    def test_invalid_board_x_kept_playing_after_o_wins(self):
+        board = [
+            "XX ",
+            "OOO",
+            " XX",
         ]
         with self.assertRaises(ValueError) as err:
             gamestate(board)
