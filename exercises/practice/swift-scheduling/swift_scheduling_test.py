@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/swift-scheduling/canonical-data.json
-# File last updated on 2026-02-19
+# File last updated on 2026-09-30
 
 import unittest
 
@@ -107,4 +107,11 @@ class SwiftSchedulingTest(unittest.TestCase):
     ):
         self.assertEqual(
             delivery_date("2022-10-06T11:00:00", "Q3"), "2023-09-29T08:00:00"
+        )
+
+    def test_q2_starting_in_the_last_month_of_the_second_quarter_translates_to_the_last_workday_of_the_second_quarter_of_this_year(
+        self,
+    ):
+        self.assertEqual(
+            delivery_date("2019-06-15T09:50:00", "Q2"), "2019-06-28T08:00:00"
         )
