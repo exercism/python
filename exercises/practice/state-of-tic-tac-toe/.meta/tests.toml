@@ -99,3 +99,9 @@ reimplements = "b1dc8b13-46c4-47db-a96d-aa90eedc4e8d"
 
 [4801cda2-f5b7-4c36-8317-3cdd167ac22c]
 description = "Invalid boards -> Invalid board: players kept playing after a win"
+
+[5a84757a-fc86-4328-aec9-a5759e6ed35d]
+description = "Invalid boards -> Invalid board: O kept playing after X wins"
+
+[cf25543d-583a-4656-b9ab-f82dc00a4a02]
+description = "Invalid boards -> Invalid board: X kept playing after O wins"
