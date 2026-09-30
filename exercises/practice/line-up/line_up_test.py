@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/line-up/canonical-data.json
-# File last updated on 2026-01-23
+# File last updated on 2026-09-30
 
 import unittest
 
@@ -94,10 +94,50 @@ class LineUpTest(unittest.TestCase):
             "Washi, you are the 21st customer we serve today. Thank you!",
         )
 
+    def test_format_exceptional_ordinal_numeral_22_ending_in_nd_even_though_it_is_a_multiple_of_11(
+        self,
+    ):
+        self.assertEqual(
+            line_up("Ingrid", 22),
+            "Ingrid, you are the 22nd customer we serve today. Thank you!",
+        )
+
+    def test_format_exceptional_ordinal_numeral_33_ending_in_rd_even_though_it_is_a_multiple_of_11(
+        self,
+    ):
+        self.assertEqual(
+            line_up("Mario", 33),
+            "Mario, you are the 33rd customer we serve today. Thank you!",
+        )
+
+    def test_format_exceptional_ordinal_numeral_52_ending_in_nd_even_though_it_is_a_multiple_of_13(
+        self,
+    ):
+        self.assertEqual(
+            line_up("Quentin", 52),
+            "Quentin, you are the 52nd customer we serve today. Thank you!",
+        )
+
     def test_format_exceptional_ordinal_numeral_62(self):
         self.assertEqual(
             line_up("Nayra", 62),
             "Nayra, you are the 62nd customer we serve today. Thank you!",
+        )
+
+    def test_format_non_exceptional_ordinal_numeral_72_ending_in_nd_even_though_it_is_a_multiple_of_12(
+        self,
+    ):
+        self.assertEqual(
+            line_up("Ugo", 72),
+            "Ugo, you are the 72nd customer we serve today. Thank you!",
+        )
+
+    def test_format_exceptional_ordinal_numeral_91_ending_in_st_even_though_it_is_a_multiple_of_13(
+        self,
+    ):
+        self.assertEqual(
+            line_up("Boris", 91),
+            "Boris, you are the 91st customer we serve today. Thank you!",
         )
 
     def test_format_exceptional_ordinal_numeral_100(self):
@@ -122,4 +162,12 @@ class LineUpTest(unittest.TestCase):
         self.assertEqual(
             line_up("Yma", 123),
             "Yma, you are the 123rd customer we serve today. Thank you!",
+        )
+
+    def test_format_large_number_972_ending_in_nd_even_though_it_is_a_multiple_of_12(
+        self,
+    ):
+        self.assertEqual(
+            line_up("Elias", 972),
+            "Elias, you are the 972nd customer we serve today. Thank you!",
         )
