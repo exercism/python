@@ -1,6 +1,13 @@
-# This is an auto-generated file. Regular comments will be removed when this
-# file is regenerated. Regenerating will not touch any manually added keys,
-# so comments can be added in a "comment" key.
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
 [1d0e6e72-f370-408c-bc64-5dafa9c6da73]
 description = "NOW translates to two hours later"
@@ -49,3 +56,6 @@ description = "Q4 in the second quarter translates to the last workday of the fo
 
 [c920886c-44ad-4d34-a156-dc4176186581]
 description = "Q3 in the fourth quarter translates to the last workday of the third quarter of next year"
+
+[7c8f1616-be62-417e-bbd5-a60fa743eccc]
+description = "Q2 starting in the last month of the second quarter translates to the last workday of the second quarter of this year"
