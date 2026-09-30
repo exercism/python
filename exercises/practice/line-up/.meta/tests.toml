@@ -51,8 +51,23 @@ description = "format non-exceptional ordinal numeral 13"
 [2bdcebc5-c029-4874-b6cc-e9bec80d603a]
 description = "format exceptional ordinal numeral 21"
 
+[a98e2e22-ab41-4557-a7c2-efedc19c16da]
+description = "format exceptional ordinal numeral 22 ending in nd even though it is a multiple of 11"
+
+[ab45d2fb-e0ee-4016-b605-76917584db0a]
+description = "format exceptional ordinal numeral 33 ending in rd even though it is a multiple of 11"
+
+[c9243603-9f17-45b3-9a41-db9ebdbf08e1]
+description = "format exceptional ordinal numeral 52 ending in nd even though it is a multiple of 13"
+
 [74ee2317-0295-49d2-baf0-d56bcefa14e3]
 description = "format exceptional ordinal numeral 62"
+
+[3f6c408c-4331-42b6-bb6c-3ad0823e568a]
+description = "format non-exceptional ordinal numeral 72 ending in nd even though it is a multiple of 12"
+
+[8db52cd9-9689-413f-a812-6c36fcfd0d07]
+description = "format exceptional ordinal numeral 91 ending in st even though it is a multiple of 13"
 
 [b37c332d-7f68-40e3-8503-e43cbd67a0c4]
 description = "format exceptional ordinal numeral 100"
@@ -65,3 +80,6 @@ description = "format non-exceptional ordinal numeral 112"
 
 [06b62efe-199e-4ce7-970d-4bf73945713f]
 description = "format exceptional ordinal numeral 123"
+
+[6792c54e-59a7-4faf-839a-c4bb61014229]
+description = "format large number 972 ending in nd even though it is a multiple of 12"
