@@ -152,9 +152,25 @@ def roman_recur(num, idx, digits):
 See the [recurse match][recurse-match] approach for details.
 
 
-### `itertools.starmap()`
+### With `itertools.starmap()`
 
-TBA
+```python
+from itertools import starmap
+
+
+def roman(number):
+    def options(i, v, x):
+        return ['', i, i * 2, i * 3, i + v, v, v + i, v + i * 2, v + i * 3, i + x]
+
+    def compute(val, chars):
+        return options(*chars)[number % (val * 10) // val]
+
+    orders = [(1000, 'M  '), (100, 'CDM'), (10, 'XLC'), (1, 'IVX')]
+    return ''.join(starmap(compute, orders))
+```
+
+See the [`itertools.starmap()`][itertools-starmap] approach for details.
+
 
 ### Over-use a functional approach
 
@@ -192,5 +208,6 @@ The problem is inherently limited in scope by the design of Roman numerals, so a
 [table-lookup]: https://exercism.org/tracks/python/exercises/roman-numerals/approaches/table-lookup
 [loop-over-romans]: https://exercism.org/tracks/python/exercises/roman-numerals/approaches/loop-over-romans
 [recurse-match]: https://exercism.org/tracks/python/exercises/roman-numerals/approaches/recurse-match
+[itertools-starmap]: https://exercism.org/tracks/python/exercises/roman-numerals/approaches/itertools-starmap
 [roman-module]: https://github.com/zopefoundation/roman
 [roman-module-implementation]: https://github.com/zopefoundation/roman/blob/6c0a134c091df4b63fc60c7e720fe1fb645f521d/src/roman/__init__.py#L73-L78
