@@ -142,9 +142,9 @@ def roman(number):
 def roman_recur(num, idx, digits):
     match (num, idx, digits):
         case [_, 13, digits]:
-            return ''.join(digits[::-1])
+            return ''.join(digits)
         case [num, idx, digits] if num >= ARABIC_NUM[idx]:
-            return roman_recur(num - ARABIC_NUM[idx], idx, [ROMAN_NUM[idx]] + digits)
+            return roman_recur(num - ARABIC_NUM[idx], idx, digits + [ROMAN_NUM[idx]])
         case _:
             return roman_recur(num, idx + 1, digits)
 ```
@@ -159,13 +159,14 @@ from itertools import starmap
 
 
 def roman(number):
+    orders = [(1000, 'M  '), (100, 'CDM'), (10, 'XLC'), (1, 'IVX')]
+
     def options(i, v, x):
         return ['', i, i * 2, i * 3, i + v, v, v + i, v + i * 2, v + i * 3, i + x]
 
     def compute(val, chars):
         return options(*chars)[number % (val * 10) // val]
 
-    orders = [(1000, 'M  '), (100, 'CDM'), (10, 'XLC'), (1, 'IVX')]
     return ''.join(starmap(compute, orders))
 ```
 
