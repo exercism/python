@@ -3,6 +3,6 @@ table = (
     ('X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC'),
     ('C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM'),
     ('M', 'MM', 'MMM'))
-digits = [int(d) for d in str(number)][::-1]
-roman_digits = [table[i][d - 1] for i, d in enumerate(digits) if d != 0]
+digits = [int(digit) for digit in str(number)][::-1]
+roman_digits = [table[idx][digit - 1] for idx, digit in enumerate(digits) if digit != 0]
 return ''.join(roman_digits[::-1])

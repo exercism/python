@@ -1,4 +1,4 @@
-    def translate_digit(digit: int, translations: iter) -> str:
+    def translate_digit(digit, translations):
         units, four, five, nine = translations
         if digit < 4: return digit * units
         if digit == 4: return four
