@@ -1,0 +1,7 @@
+def transform(input_dict):
+    new_data = {}
+
+    for key, value in input_dict.items():
+        for item in value:
+            new_data[item.lower()] = key
+    return new_data
