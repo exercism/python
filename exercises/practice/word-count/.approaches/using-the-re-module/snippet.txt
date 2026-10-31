@@ -1,0 +1,7 @@
+import re
+from collections import Counter
+
+
+def count_words(phrase):
+  conditions = re.compile(r"[a-z0-9]+(?:'[a-z]+)?")
+  return Counter(conditions.findall(phrase.lower()))
