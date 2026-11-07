@@ -1,0 +1,10 @@
+def most_common_word(text):
+  counts = {}
+  best = ""
+  for word in text.lower().split(" "):
+    if len(word) < 3:
+      continue
+    counts[word] = counts.get(word, 0) + 1
+    if counts[word] > counts.get(best, 0):
+      best = word
+  return f'"{best}" appears {counts[best]} times'
