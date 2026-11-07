@@ -1,5 +1,8 @@
 # Code owners
 .github/CODEOWNERS      @exercism/maintainers-admin
 
+# The code sample shown in the code check when people sign up to Exercism
+docs/SIGN_UP_SNIPPET.txt    @exercism/maintainers-admin
+
 # Changes to `fetch-configlet` should be made in the `exercism/configlet` repo
 bin/fetch-configlet     @exercism/maintainers-admin
