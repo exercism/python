@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "colinleach",
+    "BethanyG"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "booking_up_for_beauty.py"
+    ],
+    "test": [
+      "booking_up_for_beauty_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
+  },
+  "forked_from": ["csharp/booking-up-for-beauty"],
+   "blurb": "Learn about datetime manipulation by handling beauty salon appointments."
+}
