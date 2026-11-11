@@ -35,6 +35,9 @@ def convert(number):
 The advantage of the generator expression is that no intermediary `list` is created in memory.
 This will definitely save memory, and might also be slightly faster than a "classic" loop that appends to a `list`.
 
+
+## Variation 1
+
 Finally, this could all be done as a 'one liner'.
 But this becomes both harder to read and harder to maintain:
 
@@ -42,12 +45,11 @@ But this becomes both harder to read and harder to maintain:
 def convert(number):
     return ''.join(sound for divisor, sound in 
                    {3: 'Pling', 5: 'Plang', 7: 'Plong'}.items()
-                   if (number % divisor == 0)) or str(number)
+                   if number % divisor == 0) or str(number)
 ```
 
-[dict-view-object]: https://docs.python.org/3/library/stdtypes.html#dictionary-view-objects
-[dict.keys()]: https://docs.python.org/3/library/stdtypes.html#dict.keys
+[dict-view-object]: https://docs.python.org/3/builtins/stdtypes.html#dictionary-view-objects
+[dict.keys()]: https://docs.python.org/3/builtins/stdtypes.html#dict.keys
 [dict]: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
 [generator-expressions]: https://www.pythonmorsels.com/how-write-generator-expression/
-[str.join]: https://docs.python.org/3/library/stdtypes.html#str.join
-
+[str.join]: https://docs.python.org/3/builtins/stdtypes.html#str.join

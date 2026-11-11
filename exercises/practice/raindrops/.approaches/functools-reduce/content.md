@@ -1,12 +1,12 @@
-# Use functools.reduce()
+# Use `functools.reduce()`
 
 
 ```python
 from functools import reduce
 
 def convert(number):
-    sounds = ('Pling','Plang','Plong')
-    factors = ((number % factor) == 0 for factor in (3,5,7)) #1 if no remainder, 0 if a remainder.
+    sounds = ('Pling', 'Plang', 'Plong')
+    factors = (number % factor == 0 for factor in (3, 5, 7)) # 1 if no remainder, 0 if a remainder.
     result = reduce(lambda sound, item : sound + (item[0] * item[1]), zip(sounds, factors), '')
     
     return result or str(number)
@@ -20,16 +20,16 @@ The result is then 'reduced' to a combined result string with an empty string as
 If the result is empty, the number as a string is returned instead.
 
 This is an interesting use of `functools.reduce()`, but not necessarily the most readable way to solve this exercise.
-Importing `functools` adds overhead and separating the sounds from the factors risks errors as the factor list expands.
+Importing `functools` adds overhead and separating the sounds from the factors risks errors if the factor list is expanded.
 The syntax of `reduce()` also obfuscates string creation/concatenation.
 Unless the team maintaining this code is comfortable with `functools.reduce()`, this might be better re-written using `join()`:
 
 
 ```python
 def convert(number):
-    sounds = ('Pling','Plang','Plong')
-    factors = ((number % factor) == 0 for factor in (3,5,7))
-    result = ''.join((item[0] * item[1]) for item in zip(sounds, factors))
+    sounds = ('Pling', 'Plang', 'Plong')
+    factors = (number % factor == 0 for factor in (3, 5, 7))
+    result = ''.join(item[0] * item[1] for item in zip(sounds, factors))
     
     return result or str(number)
 ```
