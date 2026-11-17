@@ -11,7 +11,9 @@ def round_scores(student_scores):
         list[int]: Student scores *rounded* to the nearest integer value.
     """
 
-    pass
+    for i in range(len(student_scores)):
+        student_scores[i] = round(student_scores[i])
+    return student_scores
 
 
 def count_failed_students(student_scores):
@@ -24,7 +26,11 @@ def count_failed_students(student_scores):
         int: The count of student scores at or below 40.
     """
 
-    pass
+    count = 0
+    for score in student_scores:
+        if score <= 40:
+            count += 1
+    return count
 
 
 def above_threshold(student_scores, threshold):
@@ -38,7 +44,11 @@ def above_threshold(student_scores, threshold):
         list[int]: Integer scores that are at or above the "best" threshold.
     """
 
-    pass
+    list_of_best_scores = []
+    for score in student_scores:
+        if score >= threshold:
+            list_of_best_scores.append(score)
+    return list_of_best_scores
 
 
 def letter_grades(highest):
@@ -58,7 +68,11 @@ def letter_grades(highest):
             86 <= "A" <= 100
     """
 
-    pass
+    step = (highest - 40) // 4
+    thresholds = []
+    for i in range(4):
+        thresholds.append(41 + i * step)
+    return thresholds
 
 
 def student_ranking(student_scores, student_names):
@@ -72,7 +86,10 @@ def student_ranking(student_scores, student_names):
         list[str]: Strings in format ["<rank>. <student name>: <score>"].
     """
 
-    pass
+    final_list = []
+    for i in range(len(student_scores)):
+        final_list.append(f"{i + 1}. {student_names[i]}: {student_scores[i]}")
+    return final_list
 
 
 def perfect_score(student_info):
@@ -84,5 +101,8 @@ def perfect_score(student_info):
     Returns:
         list: First `[<student name>, 100]` found OR `[]` if no student score of 100 is found.
     """
-
-    pass
+    
+    for student in student_info:
+        if student[1] == 100:
+            return student
+    return []

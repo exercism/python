@@ -4,7 +4,26 @@ from enum import Enum
 class LogLevel(Enum):
     """Represent different log levels by their verbose codes."""
 
-    pass
+    TRACE = "TRC"
+    DEBUG = "DBG"
+    INFO = "INF"
+    WARNING = "WRN"
+    WARN = "WRN"
+    ERROR = "ERR"
+    FATAL = "FTL"
+    UNKNOWN = "UKN"
+
+class LogLevelInt(Enum):
+    """Represent different log levels by their short codes."""
+
+    TRACE = 0
+    DEBUG = 1
+    INFO = 4
+    WARNING = 5
+    WARN = 5
+    ERROR = 6
+    FATAL = 7
+    UNKNOWN = 42
 
 
 def parse_log_level(message):
@@ -14,7 +33,11 @@ def parse_log_level(message):
     :return: enum - 'LogLevel.<level>'.  Return 'LogLevel.Unknown' if an unknown severity is passed.
     """
 
-    pass
+    str_split = message.split(':')
+    lvl = str_split[0][1:-1]
+    if lvl in [level.value for level in LogLevel]:
+        return LogLevel(lvl)
+    return LogLevel('UKN')
 
 
 def convert_to_short_log(log_level, message):
@@ -25,7 +48,8 @@ def convert_to_short_log(log_level, message):
     :return: enum -  'LogLevelInt.<value>` e.g. 'LogLevelInt.5'
     """
 
-    pass
+    answer = f"{LogLevelInt[log_level.name].value}:{message}"
+    return answer
 
 
 def get_warn_alias():
@@ -34,7 +58,7 @@ def get_warn_alias():
     :return: enum - 'LogLevel'.<alias>'
     """
 
-    pass
+    return LogLevel.WARN
 
 
 def get_members():
@@ -43,4 +67,4 @@ def get_members():
     :return: list of tuples -  [(name1, value1), (name2, value2)]
     """
 
-    pass
+    return [(level.name, level.value) for level in LogLevel]
